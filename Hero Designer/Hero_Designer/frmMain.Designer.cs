@@ -1,0 +1,1554 @@
+﻿namespace Hero_Designer
+{
+	// Token: 0x02000049 RID: 73
+	public partial class frmMain : global::System.Windows.Forms.Form
+	{
+		// Token: 0x06000E39 RID: 3641 RVA: 0x00084E68 File Offset: 0x00083068
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && this.components != null)
+			{
+				this.components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		// Token: 0x06000E75 RID: 3701 RVA: 0x00088848 File Offset: 0x00086A48
+		private void InitializeComponent()
+		{
+			this.components = new global::System.ComponentModel.Container();
+			global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmMain));
+			this.txtName = new global::System.Windows.Forms.TextBox();
+			this.cbAT = new global::System.Windows.Forms.ComboBox();
+			this.cbOrigin = new global::System.Windows.Forms.ComboBox();
+			this.cbPrimary = new global::System.Windows.Forms.ComboBox();
+			this.lblPrimary = new global::System.Windows.Forms.Label();
+			this.lblSecondary = new global::System.Windows.Forms.Label();
+			this.cbSecondary = new global::System.Windows.Forms.ComboBox();
+			this.cbPool0 = new global::System.Windows.Forms.ComboBox();
+			this.lblPool1 = new global::System.Windows.Forms.Label();
+			this.cbPool1 = new global::System.Windows.Forms.ComboBox();
+			this.lblPool2 = new global::System.Windows.Forms.Label();
+			this.cbPool2 = new global::System.Windows.Forms.ComboBox();
+			this.lblPool3 = new global::System.Windows.Forms.Label();
+			this.cbPool3 = new global::System.Windows.Forms.ComboBox();
+			this.lblPool4 = new global::System.Windows.Forms.Label();
+			this.cbAncillary = new global::System.Windows.Forms.ComboBox();
+			this.lblEpic = new global::System.Windows.Forms.Label();
+			this.lblATLocked = new global::System.Windows.Forms.Label();
+			this.dlgOpen = new global::System.Windows.Forms.OpenFileDialog();
+			this.dlgSave = new global::System.Windows.Forms.SaveFileDialog();
+			this.tTip = new global::System.Windows.Forms.ToolTip(this.components);
+			this.lblLocked0 = new global::System.Windows.Forms.Label();
+			this.lblLocked1 = new global::System.Windows.Forms.Label();
+			this.lblLocked2 = new global::System.Windows.Forms.Label();
+			this.lblLocked3 = new global::System.Windows.Forms.Label();
+			this.lblLockedAncillary = new global::System.Windows.Forms.Label();
+			this.lblLockedSecondary = new global::System.Windows.Forms.Label();
+			this.tmrGfx = new global::System.Windows.Forms.Timer(this.components);
+			this.MenuBar = new global::System.Windows.Forms.MenuStrip();
+			this.FileToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsFileNew = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator7 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsFileOpen = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsFileSave = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsFileSaveAs = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator8 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsFilePrint = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator9 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsFileQuit = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ImportExportToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsImport = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator12 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsExport = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsExportLong = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsExportDataLink = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.OptionsToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsConfig = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator14 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsUpdateCheck = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator22 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsLevelUp = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsDynamic = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator5 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.AdvancedToolStripMenuItem1 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsAdvDBEdit = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator15 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsAdvFreshInstall = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsAdvResetTips = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.CharacterToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.SetAllIOsToDefault35ToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsIODefault = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator11 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsIOMin = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsIOMax = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator16 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.ToolStripMenuItem1 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToSO = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToDO = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToTO = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem2 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToPlus5 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToPlus4 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToPlus3 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToPlus2 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToPlus1 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToEven = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToMinus1 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToMinus2 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToMinus3 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsEnhToNone = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator17 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.SlotsToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsFlipAllEnh = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator4 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsClearAllEnh = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsRemoveAllSlots = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator1 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.AutoArrangeAllSlotsToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ViewToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsView4Col = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsView3Col = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsView2Col = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator13 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsViewIOLevels = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewRelative = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewSlotLevels = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator2 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsViewActualDamage_New = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewDPS_New = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tlsDPA = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsAbout = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.HelpToolStripMenuItem1 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsHelp = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsPatchNotes = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator10 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsBug = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsTitanForum = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator23 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsDonate = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator24 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsTitanPlanner = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsTitanSite = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.WindowToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewSets = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewGraphs = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewSetCompare = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewData = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsViewTotals = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator18 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsRecipeViewer = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsDPSCalc = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator19 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsSetFind = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator21 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.InGameRespecHelperToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsHelperShort = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsHelperLong = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripSeparator20 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.tsHelperShort2 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.tsHelperLong2 = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem4 = new global::System.Windows.Forms.ToolStripSeparator();
+			this.AccoladesWindowToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.IncarnateWindowToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.TemporaryPowersWindowToolStripMenuItem = new global::System.Windows.Forms.ToolStripMenuItem();
+			this.pbDynMode = new global::System.Windows.Forms.PictureBox();
+			this.pnlGFX = new global::System.Windows.Forms.PictureBox();
+			this.pnlGFXFlow = new global::System.Windows.Forms.FlowLayoutPanel();
+			this.llAncillary = new global::midsControls.ListLabelV2();
+			this.lblName = new global::midsControls.GFXLabel();
+			this.lblOrigin = new global::midsControls.GFXLabel();
+			this.lblAT = new global::midsControls.GFXLabel();
+			this.llPool0 = new global::midsControls.ListLabelV2();
+			this.llPool1 = new global::midsControls.ListLabelV2();
+			this.llSecondary = new global::midsControls.ListLabelV2();
+			this.llPrimary = new global::midsControls.ListLabelV2();
+			this.llPool3 = new global::midsControls.ListLabelV2();
+			this.llPool2 = new global::midsControls.ListLabelV2();
+			this.lblHero = new global::midsControls.GFXLabel();
+			this.heroVillain = new global::midsControls.ImageButton();
+			this.tempPowersButton = new global::midsControls.ImageButton();
+			this.accoladeButton = new global::midsControls.ImageButton();
+			this.incarnateButton = new global::midsControls.ImageButton();
+			this.I9Picker = new global::midsControls.I9Picker();
+			this.I9Popup = new global::midsControls.ctlPopUp();
+			this.ibVetPools = new global::midsControls.ImageButton();
+			this.ibPvX = new global::midsControls.ImageButton();
+			this.dvAnchored = new global::Hero_Designer.DataView();
+			this.ibTotals = new global::midsControls.ImageButton();
+			this.ibSlotLevels = new global::midsControls.ImageButton();
+			this.ibMode = new global::midsControls.ImageButton();
+			this.ibSets = new global::midsControls.ImageButton();
+			this.ibAccolade = new global::midsControls.ImageButton();
+			this.ibRecipe = new global::midsControls.ImageButton();
+			this.ibPopup = new global::midsControls.ImageButton();
+			this.MenuBar.SuspendLayout();
+			((global::System.ComponentModel.ISupportInitialize)this.pbDynMode).BeginInit();
+			((global::System.ComponentModel.ISupportInitialize)this.pnlGFX).BeginInit();
+			this.pnlGFXFlow.SuspendLayout();
+			base.SuspendLayout();
+			this.txtName.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.txtName.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			global::System.Drawing.Point point = new global::System.Drawing.Point(96, 82);
+			this.txtName.Location = point;
+			this.txtName.Name = "txtName";
+			global::System.Drawing.Size size = new global::System.Drawing.Size(142, 20);
+			this.txtName.Size = size;
+			this.txtName.TabIndex = 1;
+			this.cbAT.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbAT.DisplayMember = "DisplayName";
+			this.cbAT.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbAT.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbAT.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbAT.ItemHeight = 16;
+			point = new global::System.Drawing.Point(94, 109);
+			this.cbAT.Location = point;
+			this.cbAT.MaxDropDownItems = 15;
+			this.cbAT.Name = "cbAT";
+			size = new global::System.Drawing.Size(144, 22);
+			this.cbAT.Size = size;
+			this.cbAT.TabIndex = 3;
+			this.cbAT.ValueMember = "Idx";
+			this.cbOrigin.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbOrigin.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbOrigin.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbOrigin.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbOrigin.ItemHeight = 16;
+			point = new global::System.Drawing.Point(94, 133);
+			this.cbOrigin.Location = point;
+			this.cbOrigin.Name = "cbOrigin";
+			size = new global::System.Drawing.Size(144, 22);
+			this.cbOrigin.Size = size;
+			this.cbOrigin.TabIndex = 5;
+			this.cbPrimary.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbPrimary.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPrimary.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbPrimary.ItemHeight = 16;
+			point = new global::System.Drawing.Point(16, 182);
+			this.cbPrimary.Location = point;
+			this.cbPrimary.MaxDropDownItems = 15;
+			this.cbPrimary.Name = "cbPrimary";
+			size = new global::System.Drawing.Size(144, 22);
+			this.cbPrimary.Size = size;
+			this.cbPrimary.TabIndex = 7;
+			this.lblPrimary.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblPrimary.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(20, 166);
+			this.lblPrimary.Location = point;
+			this.lblPrimary.Name = "lblPrimary";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblPrimary.Size = size;
+			this.lblPrimary.TabIndex = 9;
+			this.lblPrimary.Text = "Primary Power Set";
+			this.lblPrimary.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblSecondary.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblSecondary.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(172, 166);
+			this.lblSecondary.Location = point;
+			this.lblSecondary.Name = "lblSecondary";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblSecondary.Size = size;
+			this.lblSecondary.TabIndex = 10;
+			this.lblSecondary.Text = "Secondary Power Set";
+			this.lblSecondary.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.cbSecondary.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbSecondary.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbSecondary.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbSecondary.ItemHeight = 16;
+			point = new global::System.Drawing.Point(168, 182);
+			this.cbSecondary.Location = point;
+			this.cbSecondary.MaxDropDownItems = 15;
+			this.cbSecondary.Name = "cbSecondary";
+			size = new global::System.Drawing.Size(144, 22);
+			this.cbSecondary.Size = size;
+			this.cbSecondary.TabIndex = 11;
+			this.cbPool0.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbPool0.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbPool0.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPool0.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbPool0.ItemHeight = 16;
+			point = new global::System.Drawing.Point(328, 182);
+			this.cbPool0.Location = point;
+			this.cbPool0.MaxDropDownItems = 15;
+			this.cbPool0.Name = "cbPool0";
+			size = new global::System.Drawing.Size(136, 22);
+			this.cbPool0.Size = size;
+			this.cbPool0.TabIndex = 15;
+			this.lblPool1.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblPool1.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(328, 166);
+			this.lblPool1.Location = point;
+			this.lblPool1.Name = "lblPool1";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblPool1.Size = size;
+			this.lblPool1.TabIndex = 14;
+			this.lblPool1.Text = "Pool 1";
+			this.lblPool1.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.cbPool1.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbPool1.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbPool1.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPool1.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbPool1.ItemHeight = 16;
+			point = new global::System.Drawing.Point(328, 290);
+			this.cbPool1.Location = point;
+			this.cbPool1.MaxDropDownItems = 15;
+			this.cbPool1.Name = "cbPool1";
+			size = new global::System.Drawing.Size(136, 22);
+			this.cbPool1.Size = size;
+			this.cbPool1.TabIndex = 18;
+			this.lblPool2.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblPool2.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(328, 274);
+			this.lblPool2.Location = point;
+			this.lblPool2.Name = "lblPool2";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblPool2.Size = size;
+			this.lblPool2.TabIndex = 17;
+			this.lblPool2.Text = "Pool 2";
+			this.lblPool2.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.cbPool2.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbPool2.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbPool2.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPool2.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbPool2.ItemHeight = 16;
+			point = new global::System.Drawing.Point(328, 398);
+			this.cbPool2.Location = point;
+			this.cbPool2.MaxDropDownItems = 15;
+			this.cbPool2.Name = "cbPool2";
+			size = new global::System.Drawing.Size(136, 22);
+			this.cbPool2.Size = size;
+			this.cbPool2.TabIndex = 21;
+			this.lblPool3.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblPool3.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(328, 382);
+			this.lblPool3.Location = point;
+			this.lblPool3.Name = "lblPool3";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblPool3.Size = size;
+			this.lblPool3.TabIndex = 20;
+			this.lblPool3.Text = "Pool 3";
+			this.lblPool3.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.cbPool3.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbPool3.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbPool3.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPool3.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbPool3.ItemHeight = 16;
+			point = new global::System.Drawing.Point(328, 506);
+			this.cbPool3.Location = point;
+			this.cbPool3.MaxDropDownItems = 15;
+			this.cbPool3.Name = "cbPool3";
+			size = new global::System.Drawing.Size(136, 22);
+			this.cbPool3.Size = size;
+			this.cbPool3.TabIndex = 24;
+			this.lblPool4.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblPool4.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(328, 490);
+			this.lblPool4.Location = point;
+			this.lblPool4.Name = "lblPool4";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblPool4.Size = size;
+			this.lblPool4.TabIndex = 23;
+			this.lblPool4.Text = "Pool 4";
+			this.lblPool4.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.cbAncillary.BackColor = global::System.Drawing.Color.WhiteSmoke;
+			this.cbAncillary.DrawMode = global::System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cbAncillary.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbAncillary.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.cbAncillary.ItemHeight = 16;
+			point = new global::System.Drawing.Point(328, 614);
+			this.cbAncillary.Location = point;
+			this.cbAncillary.Name = "cbAncillary";
+			size = new global::System.Drawing.Size(136, 22);
+			this.cbAncillary.Size = size;
+			this.cbAncillary.TabIndex = 27;
+			this.lblEpic.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblEpic.ForeColor = global::System.Drawing.Color.White;
+			point = new global::System.Drawing.Point(328, 598);
+			this.lblEpic.Location = point;
+			this.lblEpic.Name = "lblEpic";
+			size = new global::System.Drawing.Size(136, 17);
+			this.lblEpic.Size = size;
+			this.lblEpic.TabIndex = 26;
+			this.lblEpic.Text = "Ancillary/Epic Pool";
+			this.lblEpic.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblATLocked.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblATLocked.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblATLocked.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblATLocked.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(94, 113);
+			this.lblATLocked.Location = point;
+			this.lblATLocked.Name = "lblATLocked";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblATLocked.Size = size;
+			this.lblATLocked.TabIndex = 53;
+			this.lblATLocked.Text = "Archetype Locked";
+			this.lblATLocked.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.dlgOpen.DefaultExt = "mxd";
+			this.dlgOpen.Filter = "Hero/Villain Builds (*.mxd)|*.mxd;*.txt|Text Files (*.txt)|*.txt";
+			this.dlgSave.DefaultExt = "mxd";
+			this.dlgSave.Filter = "Hero/Villain Builds (*.mxd)|*.mxd";
+			this.tTip.AutoPopDelay = 5000;
+			this.tTip.InitialDelay = 500;
+			this.tTip.ReshowDelay = 100;
+			this.lblLocked0.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLocked0.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLocked0.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLocked0.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(308, 166);
+			this.lblLocked0.Location = point;
+			this.lblLocked0.Name = "lblLocked0";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLocked0.Size = size;
+			this.lblLocked0.TabIndex = 72;
+			this.lblLocked0.Text = "Pool Locked";
+			this.lblLocked0.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblLocked1.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLocked1.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLocked1.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLocked1.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(308, 186);
+			this.lblLocked1.Location = point;
+			this.lblLocked1.Name = "lblLocked1";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLocked1.Size = size;
+			this.lblLocked1.TabIndex = 73;
+			this.lblLocked1.Text = "Pool Locked";
+			this.lblLocked1.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblLocked2.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLocked2.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLocked2.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLocked2.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(304, 194);
+			this.lblLocked2.Location = point;
+			this.lblLocked2.Name = "lblLocked2";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLocked2.Size = size;
+			this.lblLocked2.TabIndex = 74;
+			this.lblLocked2.Text = "Pool Locked";
+			this.lblLocked2.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblLocked3.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLocked3.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLocked3.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLocked3.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(284, 210);
+			this.lblLocked3.Location = point;
+			this.lblLocked3.Name = "lblLocked3";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLocked3.Size = size;
+			this.lblLocked3.TabIndex = 75;
+			this.lblLocked3.Text = "Pool Locked";
+			this.lblLocked3.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblLockedAncillary.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLockedAncillary.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLockedAncillary.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLockedAncillary.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(268, 230);
+			this.lblLockedAncillary.Location = point;
+			this.lblLockedAncillary.Name = "lblLockedAncillary";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLockedAncillary.Size = size;
+			this.lblLockedAncillary.TabIndex = 76;
+			this.lblLockedAncillary.Text = "Pool Locked";
+			this.lblLockedAncillary.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblLockedSecondary.BackColor = global::System.Drawing.Color.FromArgb(224, 224, 224);
+			this.lblLockedSecondary.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblLockedSecondary.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblLockedSecondary.ForeColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(257, 246);
+			this.lblLockedSecondary.Location = point;
+			this.lblLockedSecondary.Name = "lblLockedSecondary";
+			size = new global::System.Drawing.Size(92, 29);
+			this.lblLockedSecondary.Size = size;
+			this.lblLockedSecondary.TabIndex = 109;
+			this.lblLockedSecondary.Text = "Sec. Locked";
+			this.lblLockedSecondary.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			this.MenuBar.BackColor = global::System.Drawing.SystemColors.Control;
+			this.MenuBar.Items.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.FileToolStripMenuItem,
+				this.ImportExportToolStripMenuItem,
+				this.OptionsToolStripMenuItem,
+				this.CharacterToolStripMenuItem,
+				this.ViewToolStripMenuItem,
+				this.tsAbout,
+				this.HelpToolStripMenuItem1,
+				this.WindowToolStripMenuItem
+			});
+			point = new global::System.Drawing.Point(0, 0);
+			this.MenuBar.Location = point;
+			this.MenuBar.Name = "MenuBar";
+			size = new global::System.Drawing.Size(1056, 24);
+			this.MenuBar.Size = size;
+			this.MenuBar.TabIndex = 84;
+			this.MenuBar.Text = "MenuStrip1";
+			this.FileToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsFileNew,
+				this.ToolStripSeparator7,
+				this.tsFileOpen,
+				this.tsFileSave,
+				this.tsFileSaveAs,
+				this.ToolStripSeparator8,
+				this.tsFilePrint,
+				this.ToolStripSeparator9,
+				this.tsFileQuit
+			});
+			this.FileToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+			size = new global::System.Drawing.Size(37, 20);
+			this.FileToolStripMenuItem.Size = size;
+			this.FileToolStripMenuItem.Text = "&File";
+			this.tsFileNew.Name = "tsFileNew";
+			this.tsFileNew.ShortcutKeys = (global::System.Windows.Forms.Keys)131150;
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFileNew.Size = size;
+			this.tsFileNew.Text = "&New / Clear";
+			this.ToolStripSeparator7.Name = "ToolStripSeparator7";
+			size = new global::System.Drawing.Size(176, 6);
+			this.ToolStripSeparator7.Size = size;
+			this.tsFileOpen.Name = "tsFileOpen";
+			this.tsFileOpen.ShortcutKeys = (global::System.Windows.Forms.Keys)131151;
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFileOpen.Size = size;
+			this.tsFileOpen.Text = "&Open...";
+			this.tsFileSave.Name = "tsFileSave";
+			this.tsFileSave.ShortcutKeys = (global::System.Windows.Forms.Keys)131155;
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFileSave.Size = size;
+			this.tsFileSave.Text = "&Save";
+			this.tsFileSaveAs.Name = "tsFileSaveAs";
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFileSaveAs.Size = size;
+			this.tsFileSaveAs.Text = "Save &As...";
+			this.ToolStripSeparator8.Name = "ToolStripSeparator8";
+			size = new global::System.Drawing.Size(176, 6);
+			this.ToolStripSeparator8.Size = size;
+			this.tsFilePrint.Name = "tsFilePrint";
+			this.tsFilePrint.ShortcutKeys = (global::System.Windows.Forms.Keys)131152;
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFilePrint.Size = size;
+			this.tsFilePrint.Text = "&Print...";
+			this.ToolStripSeparator9.Name = "ToolStripSeparator9";
+			size = new global::System.Drawing.Size(176, 6);
+			this.ToolStripSeparator9.Size = size;
+			this.tsFileQuit.Name = "tsFileQuit";
+			this.tsFileQuit.ShortcutKeys = (global::System.Windows.Forms.Keys)131153;
+			size = new global::System.Drawing.Size(179, 22);
+			this.tsFileQuit.Size = size;
+			this.tsFileQuit.Text = "&Quit";
+			this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsImport,
+				this.ToolStripSeparator12,
+				this.tsExport,
+				this.tsExportLong,
+				this.tsExportDataLink
+			});
+			this.ImportExportToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.ImportExportToolStripMenuItem.Name = "ImportExportToolStripMenuItem";
+			size = new global::System.Drawing.Size(99, 20);
+			this.ImportExportToolStripMenuItem.Size = size;
+			this.ImportExportToolStripMenuItem.Text = "&Import / Export";
+			this.tsImport.Name = "tsImport";
+			this.tsImport.ShortcutKeys = (global::System.Windows.Forms.Keys)131145;
+			size = new global::System.Drawing.Size(240, 22);
+			this.tsImport.Size = size;
+			this.tsImport.Text = "&Import from Forum Post";
+			this.ToolStripSeparator12.Name = "ToolStripSeparator12";
+			size = new global::System.Drawing.Size(237, 6);
+			this.ToolStripSeparator12.Size = size;
+			this.tsExport.Name = "tsExport";
+			size = new global::System.Drawing.Size(240, 22);
+			this.tsExport.Size = size;
+			this.tsExport.Text = "&Short Forum Export...";
+			this.tsExportLong.Name = "tsExportLong";
+			size = new global::System.Drawing.Size(240, 22);
+			this.tsExportLong.Size = size;
+			this.tsExportLong.Text = "&Long Forum Export...";
+			this.tsExportDataLink.Name = "tsExportDataLink";
+			size = new global::System.Drawing.Size(240, 22);
+			this.tsExportDataLink.Size = size;
+			this.tsExportDataLink.Text = "Export Data Link";
+			this.OptionsToolStripMenuItem.BackColor = global::System.Drawing.SystemColors.Control;
+			this.OptionsToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsConfig,
+				this.ToolStripSeparator14,
+				this.tsUpdateCheck,
+				this.ToolStripSeparator22,
+				this.tsLevelUp,
+				this.tsDynamic,
+				this.ToolStripSeparator5,
+				this.AdvancedToolStripMenuItem1
+			});
+			this.OptionsToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
+			size = new global::System.Drawing.Size(61, 20);
+			this.OptionsToolStripMenuItem.Size = size;
+			this.OptionsToolStripMenuItem.Text = "&Options";
+			this.tsConfig.Name = "tsConfig";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsConfig.Size = size;
+			this.tsConfig.Text = "&Configuration...";
+			this.ToolStripSeparator14.Name = "ToolStripSeparator14";
+			size = new global::System.Drawing.Size(196, 6);
+			this.ToolStripSeparator14.Size = size;
+			this.tsUpdateCheck.Name = "tsUpdateCheck";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsUpdateCheck.Size = size;
+			this.tsUpdateCheck.Text = "Check for &Updates Now";
+			this.ToolStripSeparator22.Name = "ToolStripSeparator22";
+			size = new global::System.Drawing.Size(196, 6);
+			this.ToolStripSeparator22.Size = size;
+			this.tsLevelUp.Name = "tsLevelUp";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsLevelUp.Size = size;
+			this.tsLevelUp.Text = "&Level-Up Mode";
+			this.tsLevelUp.ToolTipText = "Alternate between placing powers and slots, just like levelling up in-game.";
+			this.tsDynamic.Name = "tsDynamic";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsDynamic.Size = size;
+			this.tsDynamic.Text = "&Dynamic Mode";
+			this.tsDynamic.ToolTipText = "Place powers and slots in any order.";
+			this.ToolStripSeparator5.Name = "ToolStripSeparator5";
+			size = new global::System.Drawing.Size(196, 6);
+			this.ToolStripSeparator5.Size = size;
+			this.AdvancedToolStripMenuItem1.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsAdvDBEdit,
+				this.ToolStripSeparator15,
+				this.tsAdvFreshInstall,
+				this.tsAdvResetTips
+			});
+			this.AdvancedToolStripMenuItem1.Name = "AdvancedToolStripMenuItem1";
+			size = new global::System.Drawing.Size(199, 22);
+			this.AdvancedToolStripMenuItem1.Size = size;
+			this.AdvancedToolStripMenuItem1.Text = "&Advanced";
+			this.tsAdvDBEdit.Name = "tsAdvDBEdit";
+			size = new global::System.Drawing.Size(165, 22);
+			this.tsAdvDBEdit.Size = size;
+			this.tsAdvDBEdit.Text = "&Database Editor...";
+			this.ToolStripSeparator15.Name = "ToolStripSeparator15";
+			size = new global::System.Drawing.Size(162, 6);
+			this.ToolStripSeparator15.Size = size;
+			this.tsAdvFreshInstall.Name = "tsAdvFreshInstall";
+			size = new global::System.Drawing.Size(165, 22);
+			this.tsAdvFreshInstall.Size = size;
+			this.tsAdvFreshInstall.Text = "FreshInstall Flag";
+			this.tsAdvFreshInstall.Visible = false;
+			this.tsAdvResetTips.Name = "tsAdvResetTips";
+			size = new global::System.Drawing.Size(165, 22);
+			this.tsAdvResetTips.Size = size;
+			this.tsAdvResetTips.Text = "Reset Tips";
+			this.CharacterToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.SetAllIOsToDefault35ToolStripMenuItem,
+				this.ToolStripSeparator16,
+				this.ToolStripMenuItem1,
+				this.ToolStripMenuItem2,
+				this.ToolStripSeparator17,
+				this.SlotsToolStripMenuItem
+			});
+			this.CharacterToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.CharacterToolStripMenuItem.Name = "CharacterToolStripMenuItem";
+			size = new global::System.Drawing.Size(133, 20);
+			this.CharacterToolStripMenuItem.Size = size;
+			this.CharacterToolStripMenuItem.Text = "&Slots / Enhancements";
+			this.SetAllIOsToDefault35ToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsIODefault,
+				this.ToolStripSeparator11,
+				this.tsIOMin,
+				this.tsIOMax
+			});
+			this.SetAllIOsToDefault35ToolStripMenuItem.Name = "SetAllIOsToDefault35ToolStripMenuItem";
+			size = new global::System.Drawing.Size(245, 22);
+			this.SetAllIOsToDefault35ToolStripMenuItem.Size = size;
+			this.SetAllIOsToDefault35ToolStripMenuItem.Text = "&Set all IOs to...";
+			this.tsIODefault.Name = "tsIODefault";
+			size = new global::System.Drawing.Size(135, 22);
+			this.tsIODefault.Size = size;
+			this.tsIODefault.Text = "Default (35)";
+			this.ToolStripSeparator11.Name = "ToolStripSeparator11";
+			size = new global::System.Drawing.Size(132, 6);
+			this.ToolStripSeparator11.Size = size;
+			this.tsIOMin.Name = "tsIOMin";
+			size = new global::System.Drawing.Size(135, 22);
+			this.tsIOMin.Size = size;
+			this.tsIOMin.Text = "Minimum";
+			this.tsIOMax.Name = "tsIOMax";
+			size = new global::System.Drawing.Size(135, 22);
+			this.tsIOMax.Size = size;
+			this.tsIOMax.Text = "Maximum";
+			this.ToolStripSeparator16.Name = "ToolStripSeparator16";
+			size = new global::System.Drawing.Size(242, 6);
+			this.ToolStripSeparator16.Size = size;
+			this.ToolStripMenuItem1.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsEnhToSO,
+				this.tsEnhToDO,
+				this.tsEnhToTO
+			});
+			this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
+			size = new global::System.Drawing.Size(245, 22);
+			this.ToolStripMenuItem1.Size = size;
+			this.ToolStripMenuItem1.Text = "Set all Enhancement &Origins to...";
+			this.tsEnhToSO.Name = "tsEnhToSO";
+			size = new global::System.Drawing.Size(142, 22);
+			this.tsEnhToSO.Size = size;
+			this.tsEnhToSO.Text = "Single Origin";
+			this.tsEnhToDO.Name = "tsEnhToDO";
+			size = new global::System.Drawing.Size(142, 22);
+			this.tsEnhToDO.Size = size;
+			this.tsEnhToDO.Text = "Dual Origin";
+			this.tsEnhToTO.Name = "tsEnhToTO";
+			size = new global::System.Drawing.Size(142, 22);
+			this.tsEnhToTO.Size = size;
+			this.tsEnhToTO.Text = "Training";
+			this.ToolStripMenuItem2.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsEnhToPlus5,
+				this.tsEnhToPlus4,
+				this.tsEnhToPlus3,
+				this.tsEnhToPlus2,
+				this.tsEnhToPlus1,
+				this.tsEnhToEven,
+				this.tsEnhToMinus1,
+				this.tsEnhToMinus2,
+				this.tsEnhToMinus3,
+				this.tsEnhToNone
+			});
+			this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
+			size = new global::System.Drawing.Size(245, 22);
+			this.ToolStripMenuItem2.Size = size;
+			this.ToolStripMenuItem2.Text = "Set all &Relative Levels to...";
+			this.tsEnhToPlus5.Name = "tsEnhToPlus5";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToPlus5.Size = size;
+			this.tsEnhToPlus5.Text = "+5 Levels";
+			this.tsEnhToPlus4.Name = "tsEnhToPlus4";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToPlus4.Size = size;
+			this.tsEnhToPlus4.Text = "+4 Levels";
+			this.tsEnhToPlus3.Name = "tsEnhToPlus3";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToPlus3.Size = size;
+			this.tsEnhToPlus3.Text = "+3 Levels";
+			this.tsEnhToPlus2.Name = "tsEnhToPlus2";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToPlus2.Size = size;
+			this.tsEnhToPlus2.Text = "+2 Levels";
+			this.tsEnhToPlus1.Name = "tsEnhToPlus1";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToPlus1.Size = size;
+			this.tsEnhToPlus1.Text = "+1 Level";
+			this.tsEnhToEven.Name = "tsEnhToEven";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToEven.Size = size;
+			this.tsEnhToEven.Text = "Even Level";
+			this.tsEnhToMinus1.Name = "tsEnhToMinus1";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToMinus1.Size = size;
+			this.tsEnhToMinus1.Text = "-1 Level";
+			this.tsEnhToMinus2.Name = "tsEnhToMinus2";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToMinus2.Size = size;
+			this.tsEnhToMinus2.Text = "-2 Levels";
+			this.tsEnhToMinus3.Name = "tsEnhToMinus3";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToMinus3.Size = size;
+			this.tsEnhToMinus3.Text = "-3 Levels";
+			this.tsEnhToNone.Name = "tsEnhToNone";
+			size = new global::System.Drawing.Size(205, 22);
+			this.tsEnhToNone.Size = size;
+			this.tsEnhToNone.Text = "None (Enh has no effect)";
+			this.ToolStripSeparator17.Name = "ToolStripSeparator17";
+			size = new global::System.Drawing.Size(242, 6);
+			this.ToolStripSeparator17.Size = size;
+			this.SlotsToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsFlipAllEnh,
+				this.ToolStripSeparator4,
+				this.tsClearAllEnh,
+				this.tsRemoveAllSlots,
+				this.ToolStripSeparator1,
+				this.AutoArrangeAllSlotsToolStripMenuItem
+			});
+			this.SlotsToolStripMenuItem.Name = "SlotsToolStripMenuItem";
+			size = new global::System.Drawing.Size(245, 22);
+			this.SlotsToolStripMenuItem.Size = size;
+			this.SlotsToolStripMenuItem.Text = "Slo&ts";
+			this.tsFlipAllEnh.Name = "tsFlipAllEnh";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsFlipAllEnh.Size = size;
+			this.tsFlipAllEnh.Text = "Flip All to Alternate";
+			this.ToolStripSeparator4.Name = "ToolStripSeparator4";
+			size = new global::System.Drawing.Size(196, 6);
+			this.ToolStripSeparator4.Size = size;
+			this.tsClearAllEnh.Name = "tsClearAllEnh";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsClearAllEnh.Size = size;
+			this.tsClearAllEnh.Text = "Clear All Enhancements";
+			this.tsRemoveAllSlots.Name = "tsRemoveAllSlots";
+			size = new global::System.Drawing.Size(199, 22);
+			this.tsRemoveAllSlots.Size = size;
+			this.tsRemoveAllSlots.Text = "Remove All Slots";
+			this.ToolStripSeparator1.Name = "ToolStripSeparator1";
+			size = new global::System.Drawing.Size(196, 6);
+			this.ToolStripSeparator1.Size = size;
+			this.AutoArrangeAllSlotsToolStripMenuItem.Name = "AutoArrangeAllSlotsToolStripMenuItem";
+			size = new global::System.Drawing.Size(199, 22);
+			this.AutoArrangeAllSlotsToolStripMenuItem.Size = size;
+			this.AutoArrangeAllSlotsToolStripMenuItem.Text = "&Auto-Arrange All Slots";
+			this.ViewToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsView4Col,
+				this.tsView3Col,
+				this.tsView2Col,
+				this.ToolStripSeparator13,
+				this.tsViewIOLevels,
+				this.tsViewRelative,
+				this.tsViewSlotLevels,
+				this.ToolStripSeparator2,
+				this.tsViewActualDamage_New,
+				this.tsViewDPS_New,
+				this.tlsDPA
+			});
+			this.ViewToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
+			size = new global::System.Drawing.Size(44, 20);
+			this.ViewToolStripMenuItem.Size = size;
+			this.ViewToolStripMenuItem.Text = "&View";
+			this.tsView4Col.Name = "tsView4Col";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsView4Col.Size = size;
+			this.tsView4Col.Text = "&4 Columns";
+			this.tsView3Col.Checked = true;
+			this.tsView3Col.CheckState = global::System.Windows.Forms.CheckState.Checked;
+			this.tsView3Col.Name = "tsView3Col";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsView3Col.Size = size;
+			this.tsView3Col.Text = "&3 Columns";
+			this.tsView2Col.Name = "tsView2Col";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsView2Col.Size = size;
+			this.tsView2Col.Text = "&2 Columns";
+			this.ToolStripSeparator13.Name = "ToolStripSeparator13";
+			size = new global::System.Drawing.Size(279, 6);
+			this.ToolStripSeparator13.Size = size;
+			this.tsViewIOLevels.Checked = true;
+			this.tsViewIOLevels.CheckState = global::System.Windows.Forms.CheckState.Checked;
+			this.tsViewIOLevels.Name = "tsViewIOLevels";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsViewIOLevels.Size = size;
+			this.tsViewIOLevels.Text = "Show &IO Levels";
+			this.tsViewRelative.Name = "tsViewRelative";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsViewRelative.Size = size;
+			this.tsViewRelative.Text = "Show &Enhancement Relative Levels";
+			this.tsViewSlotLevels.Name = "tsViewSlotLevels";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsViewSlotLevels.Size = size;
+			this.tsViewSlotLevels.Text = "Show &Slot Placement Levels";
+			this.ToolStripSeparator2.Name = "ToolStripSeparator2";
+			size = new global::System.Drawing.Size(279, 6);
+			this.ToolStripSeparator2.Size = size;
+			this.tsViewActualDamage_New.Checked = true;
+			this.tsViewActualDamage_New.CheckState = global::System.Windows.Forms.CheckState.Checked;
+			this.tsViewActualDamage_New.Name = "tsViewActualDamage_New";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsViewActualDamage_New.Size = size;
+			this.tsViewActualDamage_New.Text = "Show Damage Per Activation (Level 50)";
+			this.tsViewDPS_New.Name = "tsViewDPS_New";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tsViewDPS_New.Size = size;
+			this.tsViewDPS_New.Text = "Show Damage Per Second (Level 50)";
+			this.tlsDPA.Name = "tlsDPA";
+			size = new global::System.Drawing.Size(282, 22);
+			this.tlsDPA.Size = size;
+			this.tlsDPA.Text = "Show Damage Per Animation (Level 50)";
+			this.tsAbout.Alignment = global::System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.tsAbout.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.tsAbout.Name = "tsAbout";
+			size = new global::System.Drawing.Size(52, 20);
+			this.tsAbout.Size = size;
+			this.tsAbout.Text = "&About";
+			this.HelpToolStripMenuItem1.Alignment = global::System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.HelpToolStripMenuItem1.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsHelp,
+				this.tsPatchNotes,
+				this.ToolStripSeparator10,
+				this.tsBug,
+				this.tsTitanForum,
+				this.ToolStripSeparator23,
+				this.tsDonate,
+				this.ToolStripSeparator24,
+				this.tsTitanPlanner,
+				this.tsTitanSite
+			});
+			this.HelpToolStripMenuItem1.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1";
+			size = new global::System.Drawing.Size(102, 20);
+			this.HelpToolStripMenuItem1.Size = size;
+			this.HelpToolStripMenuItem1.Text = "&Help && Support";
+			this.tsHelp.Name = "tsHelp";
+			this.tsHelp.ShortcutKeys = global::System.Windows.Forms.Keys.F1;
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsHelp.Size = size;
+			this.tsHelp.Text = "&Read Me - Instructions";
+			this.tsPatchNotes.Name = "tsPatchNotes";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsPatchNotes.Size = size;
+			this.tsPatchNotes.Text = "Read &Latest Patch Notes...";
+			this.ToolStripSeparator10.Name = "ToolStripSeparator10";
+			size = new global::System.Drawing.Size(255, 6);
+			this.ToolStripSeparator10.Size = size;
+			this.tsBug.Name = "tsBug";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsBug.Size = size;
+			this.tsBug.Text = "Feedback Form / &Bug Report";
+			this.tsBug.Visible = false;
+			this.tsTitanForum.Name = "tsTitanForum";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsTitanForum.Size = size;
+			this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
+			this.ToolStripSeparator23.Name = "ToolStripSeparator23";
+			size = new global::System.Drawing.Size(255, 6);
+			this.ToolStripSeparator23.Size = size;
+			this.tsDonate.Name = "tsDonate";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsDonate.Size = size;
+			this.tsDonate.Text = "Make a Donation (PayPal)";
+			this.ToolStripSeparator24.Name = "ToolStripSeparator24";
+			size = new global::System.Drawing.Size(255, 6);
+			this.ToolStripSeparator24.Size = size;
+			this.tsTitanPlanner.Name = "tsTitanPlanner";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsTitanPlanner.Size = size;
+			this.tsTitanPlanner.Text = "CoH &Planner Website";
+			this.tsTitanSite.Name = "tsTitanSite";
+			size = new global::System.Drawing.Size(258, 22);
+			this.tsTitanSite.Size = size;
+			this.tsTitanSite.Text = "&Titan Network Website";
+			this.WindowToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsViewSets,
+				this.tsViewGraphs,
+				this.tsViewSetCompare,
+				this.tsViewData,
+				this.tsViewTotals,
+				this.ToolStripSeparator18,
+				this.tsRecipeViewer,
+				this.tsDPSCalc,
+				this.ToolStripSeparator19,
+				this.tsSetFind,
+				this.ToolStripSeparator21,
+				this.InGameRespecHelperToolStripMenuItem,
+				this.ToolStripMenuItem4,
+				this.AccoladesWindowToolStripMenuItem,
+				this.IncarnateWindowToolStripMenuItem,
+				this.TemporaryPowersWindowToolStripMenuItem
+			});
+			this.WindowToolStripMenuItem.ForeColor = global::System.Drawing.SystemColors.ControlText;
+			this.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem";
+			size = new global::System.Drawing.Size(63, 20);
+			this.WindowToolStripMenuItem.Size = size;
+			this.WindowToolStripMenuItem.Text = "&Window";
+			this.tsViewSets.Name = "tsViewSets";
+			this.tsViewSets.ShortcutKeys = (global::System.Windows.Forms.Keys)131138;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsViewSets.Size = size;
+			this.tsViewSets.Text = "&Sets && Bonuses";
+			this.tsViewGraphs.Name = "tsViewGraphs";
+			this.tsViewGraphs.ShortcutKeys = (global::System.Windows.Forms.Keys)131143;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsViewGraphs.Size = size;
+			this.tsViewGraphs.Text = "Power &Graphs";
+			this.tsViewSetCompare.Name = "tsViewSetCompare";
+			this.tsViewSetCompare.ShortcutKeys = (global::System.Windows.Forms.Keys)131139;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsViewSetCompare.Size = size;
+			this.tsViewSetCompare.Text = "Powerset &Comparison";
+			this.tsViewData.Name = "tsViewData";
+			this.tsViewData.ShortcutKeys = (global::System.Windows.Forms.Keys)131140;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsViewData.Size = size;
+			this.tsViewData.Text = "&Data View";
+			this.tsViewTotals.Name = "tsViewTotals";
+			this.tsViewTotals.ShortcutKeys = (global::System.Windows.Forms.Keys)131156;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsViewTotals.Size = size;
+			this.tsViewTotals.Text = "Advanced &Totals";
+			this.ToolStripSeparator18.Name = "ToolStripSeparator18";
+			size = new global::System.Drawing.Size(229, 6);
+			this.ToolStripSeparator18.Size = size;
+			this.tsRecipeViewer.Name = "tsRecipeViewer";
+			this.tsRecipeViewer.ShortcutKeys = (global::System.Windows.Forms.Keys)131154;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsRecipeViewer.Size = size;
+			this.tsRecipeViewer.Text = "&Recipe Viewer";
+			this.tsDPSCalc.Name = "tsDPSCalc";
+			this.tsDPSCalc.ShortcutKeys = (global::System.Windows.Forms.Keys)131162;
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsDPSCalc.Size = size;
+			this.tsDPSCalc.Text = "DPS Calculator (Beta)";
+			this.ToolStripSeparator19.Name = "ToolStripSeparator19";
+			size = new global::System.Drawing.Size(229, 6);
+			this.ToolStripSeparator19.Size = size;
+			this.tsSetFind.Name = "tsSetFind";
+			size = new global::System.Drawing.Size(232, 22);
+			this.tsSetFind.Size = size;
+			this.tsSetFind.Text = "Set &Bonus Finder";
+			this.ToolStripSeparator21.Name = "ToolStripSeparator21";
+			size = new global::System.Drawing.Size(229, 6);
+			this.ToolStripSeparator21.Size = size;
+			this.InGameRespecHelperToolStripMenuItem.DropDownItems.AddRange(new global::System.Windows.Forms.ToolStripItem[]
+			{
+				this.tsHelperShort,
+				this.tsHelperLong,
+				this.ToolStripSeparator20,
+				this.tsHelperShort2,
+				this.tsHelperLong2
+			});
+			this.InGameRespecHelperToolStripMenuItem.Name = "InGameRespecHelperToolStripMenuItem";
+			size = new global::System.Drawing.Size(232, 22);
+			this.InGameRespecHelperToolStripMenuItem.Size = size;
+			this.InGameRespecHelperToolStripMenuItem.Text = "In-Game &Respec Helper";
+			this.tsHelperShort.Name = "tsHelperShort";
+			size = new global::System.Drawing.Size(143, 22);
+			this.tsHelperShort.Size = size;
+			this.tsHelperShort.Text = "Profile &Short";
+			this.tsHelperLong.Name = "tsHelperLong";
+			size = new global::System.Drawing.Size(143, 22);
+			this.tsHelperLong.Size = size;
+			this.tsHelperLong.Text = "Profile &Long";
+			this.ToolStripSeparator20.Name = "ToolStripSeparator20";
+			size = new global::System.Drawing.Size(140, 6);
+			this.ToolStripSeparator20.Size = size;
+			this.tsHelperShort2.Name = "tsHelperShort2";
+			size = new global::System.Drawing.Size(143, 22);
+			this.tsHelperShort2.Size = size;
+			this.tsHelperShort2.Text = "History S&hort";
+			this.tsHelperLong2.Name = "tsHelperLong2";
+			size = new global::System.Drawing.Size(143, 22);
+			this.tsHelperLong2.Size = size;
+			this.tsHelperLong2.Text = "History L&ong";
+			this.ToolStripMenuItem4.Name = "ToolStripMenuItem4";
+			size = new global::System.Drawing.Size(229, 6);
+			this.ToolStripMenuItem4.Size = size;
+			this.AccoladesWindowToolStripMenuItem.Name = "AccoladesWindowToolStripMenuItem";
+			size = new global::System.Drawing.Size(232, 22);
+			this.AccoladesWindowToolStripMenuItem.Size = size;
+			this.AccoladesWindowToolStripMenuItem.Text = "&Accolades Window";
+			this.IncarnateWindowToolStripMenuItem.Name = "IncarnateWindowToolStripMenuItem";
+			size = new global::System.Drawing.Size(232, 22);
+			this.IncarnateWindowToolStripMenuItem.Size = size;
+			this.IncarnateWindowToolStripMenuItem.Text = "&Incarnate Window";
+			this.TemporaryPowersWindowToolStripMenuItem.Name = "TemporaryPowersWindowToolStripMenuItem";
+			size = new global::System.Drawing.Size(232, 22);
+			this.TemporaryPowersWindowToolStripMenuItem.Size = size;
+			this.TemporaryPowersWindowToolStripMenuItem.Text = "T&emporary Powers Window";
+			point = new global::System.Drawing.Point(355, 80);
+			this.pbDynMode.Location = point;
+			this.pbDynMode.Name = "pbDynMode";
+			size = new global::System.Drawing.Size(105, 22);
+			this.pbDynMode.Size = size;
+			this.pbDynMode.TabIndex = 92;
+			this.pbDynMode.TabStop = false;
+			this.pnlGFX.BackColor = global::System.Drawing.Color.Black;
+			point = new global::System.Drawing.Point(3, 3);
+			this.pnlGFX.Location = point;
+			this.pnlGFX.Name = "pnlGFX";
+			size = new global::System.Drawing.Size(584, 709);
+			this.pnlGFX.Size = size;
+			this.pnlGFX.TabIndex = 103;
+			this.pnlGFX.TabStop = false;
+			this.pnlGFXFlow.AutoScroll = true;
+			this.pnlGFXFlow.Controls.Add(this.pnlGFX);
+			point = new global::System.Drawing.Point(472, 78);
+			this.pnlGFXFlow.Location = point;
+			this.pnlGFXFlow.Name = "pnlGFXFlow";
+			size = new global::System.Drawing.Size(584, 629);
+			this.pnlGFXFlow.Size = size;
+			this.pnlGFXFlow.TabIndex = 112;
+			this.llAncillary.Expandable = false;
+			this.llAncillary.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			this.llAncillary.HighVis = true;
+			this.llAncillary.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(328, 638);
+			this.llAncillary.Location = point;
+			this.llAncillary.MaxHeight = 500;
+			this.llAncillary.Name = "llAncillary";
+			this.llAncillary.PaddingX = 2;
+			this.llAncillary.PaddingY = 2;
+			this.llAncillary.Scrollable = true;
+			this.llAncillary.ScrollBarColor = global::System.Drawing.Color.Red;
+			this.llAncillary.ScrollBarWidth = 11;
+			this.llAncillary.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
+			size = new global::System.Drawing.Size(138, 69);
+			this.llAncillary.Size = size;
+			size = new global::System.Drawing.Size(138, 69);
+			this.llAncillary.SizeNormal = size;
+			this.llAncillary.SuspendRedraw = false;
+			this.llAncillary.TabIndex = 110;
+			this.lblName.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblName.ForeColor = global::System.Drawing.Color.White;
+			this.lblName.InitialText = "Name:";
+			point = new global::System.Drawing.Point(4, 82);
+			this.lblName.Location = point;
+			this.lblName.Name = "lblName";
+			size = new global::System.Drawing.Size(92, 21);
+			this.lblName.Size = size;
+			this.lblName.TabIndex = 44;
+			this.lblName.TextAlign = global::System.Drawing.ContentAlignment.MiddleRight;
+			this.lblOrigin.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblOrigin.InitialText = "Origin:";
+			point = new global::System.Drawing.Point(2, 133);
+			this.lblOrigin.Location = point;
+			this.lblOrigin.Name = "lblOrigin";
+			size = new global::System.Drawing.Size(92, 21);
+			this.lblOrigin.Size = size;
+			this.lblOrigin.TabIndex = 46;
+			this.lblOrigin.TextAlign = global::System.Drawing.ContentAlignment.MiddleRight;
+			this.lblAT.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblAT.InitialText = "Archetype:";
+			point = new global::System.Drawing.Point(2, 109);
+			this.lblAT.Location = point;
+			this.lblAT.Name = "lblAT";
+			size = new global::System.Drawing.Size(92, 21);
+			this.lblAT.Size = size;
+			this.lblAT.TabIndex = 45;
+			this.lblAT.TextAlign = global::System.Drawing.ContentAlignment.MiddleRight;
+			this.llPool0.Expandable = false;
+			this.llPool0.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.llPool0.HighVis = true;
+			this.llPool0.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(328, 206);
+			this.llPool0.Location = point;
+			this.llPool0.MaxHeight = 500;
+			this.llPool0.Name = "llPool0";
+			this.llPool0.PaddingX = 2;
+			this.llPool0.PaddingY = 2;
+			this.llPool0.Scrollable = true;
+			this.llPool0.ScrollBarColor = global::System.Drawing.Color.FromArgb(128, 96, 192);
+			this.llPool0.ScrollBarWidth = 11;
+			this.llPool0.ScrollButtonColor = global::System.Drawing.Color.FromArgb(96, 0, 192);
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool0.Size = size;
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool0.SizeNormal = size;
+			this.llPool0.SuspendRedraw = false;
+			this.llPool0.TabIndex = 34;
+			this.llPool1.Expandable = false;
+			this.llPool1.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.llPool1.ForeColor = global::System.Drawing.Color.Yellow;
+			this.llPool1.HighVis = true;
+			this.llPool1.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(328, 314);
+			this.llPool1.Location = point;
+			this.llPool1.MaxHeight = 500;
+			this.llPool1.Name = "llPool1";
+			this.llPool1.PaddingX = 2;
+			this.llPool1.PaddingY = 2;
+			this.llPool1.Scrollable = true;
+			this.llPool1.ScrollBarColor = global::System.Drawing.Color.FromArgb(128, 96, 192);
+			this.llPool1.ScrollBarWidth = 8;
+			this.llPool1.ScrollButtonColor = global::System.Drawing.Color.FromArgb(96, 0, 192);
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool1.Size = size;
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool1.SizeNormal = size;
+			this.llPool1.SuspendRedraw = false;
+			this.llPool1.TabIndex = 35;
+			this.llSecondary.Expandable = true;
+			this.llSecondary.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			this.llSecondary.HighVis = true;
+			this.llSecondary.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(168, 206);
+			this.llSecondary.Location = point;
+			this.llSecondary.MaxHeight = 600;
+			this.llSecondary.Name = "llSecondary";
+			this.llSecondary.PaddingX = 2;
+			this.llSecondary.PaddingY = 2;
+			this.llSecondary.Scrollable = true;
+			this.llSecondary.ScrollBarColor = global::System.Drawing.Color.Red;
+			this.llSecondary.ScrollBarWidth = 11;
+			this.llSecondary.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
+			size = new global::System.Drawing.Size(144, 160);
+			this.llSecondary.Size = size;
+			size = new global::System.Drawing.Size(144, 160);
+			this.llSecondary.SizeNormal = size;
+			this.llSecondary.SuspendRedraw = false;
+			this.llSecondary.TabIndex = 108;
+			this.llPrimary.Expandable = true;
+			this.llPrimary.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			this.llPrimary.HighVis = true;
+			this.llPrimary.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(16, 206);
+			this.llPrimary.Location = point;
+			this.llPrimary.MaxHeight = 600;
+			this.llPrimary.Name = "llPrimary";
+			this.llPrimary.PaddingX = 2;
+			this.llPrimary.PaddingY = 2;
+			this.llPrimary.Scrollable = true;
+			this.llPrimary.ScrollBarColor = global::System.Drawing.Color.Red;
+			this.llPrimary.ScrollBarWidth = 11;
+			this.llPrimary.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
+			size = new global::System.Drawing.Size(144, 160);
+			this.llPrimary.Size = size;
+			size = new global::System.Drawing.Size(144, 160);
+			this.llPrimary.SizeNormal = size;
+			this.llPrimary.SuspendRedraw = false;
+			this.llPrimary.TabIndex = 107;
+			this.llPool3.Expandable = false;
+			this.llPool3.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.llPool3.ForeColor = global::System.Drawing.Color.Yellow;
+			this.llPool3.HighVis = true;
+			this.llPool3.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(328, 530);
+			this.llPool3.Location = point;
+			this.llPool3.MaxHeight = 500;
+			this.llPool3.Name = "llPool3";
+			this.llPool3.PaddingX = 1;
+			this.llPool3.PaddingY = 1;
+			this.llPool3.Scrollable = true;
+			this.llPool3.ScrollBarColor = global::System.Drawing.Color.FromArgb(128, 96, 192);
+			this.llPool3.ScrollBarWidth = 8;
+			this.llPool3.ScrollButtonColor = global::System.Drawing.Color.FromArgb(96, 0, 192);
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool3.Size = size;
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool3.SizeNormal = size;
+			this.llPool3.SuspendRedraw = false;
+			this.llPool3.TabIndex = 37;
+			this.llPool2.Expandable = false;
+			this.llPool2.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.llPool2.ForeColor = global::System.Drawing.Color.Yellow;
+			this.llPool2.HighVis = true;
+			this.llPool2.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+			point = new global::System.Drawing.Point(328, 422);
+			this.llPool2.Location = point;
+			this.llPool2.MaxHeight = 500;
+			this.llPool2.Name = "llPool2";
+			this.llPool2.PaddingX = 1;
+			this.llPool2.PaddingY = 1;
+			this.llPool2.Scrollable = true;
+			this.llPool2.ScrollBarColor = global::System.Drawing.Color.FromArgb(128, 96, 192);
+			this.llPool2.ScrollBarWidth = 8;
+			this.llPool2.ScrollButtonColor = global::System.Drawing.Color.FromArgb(96, 0, 192);
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool2.Size = size;
+			size = new global::System.Drawing.Size(136, 69);
+			this.llPool2.SizeNormal = size;
+			this.llPool2.SuspendRedraw = false;
+			this.llPool2.TabIndex = 36;
+			this.lblHero.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
+			this.lblHero.ForeColor = global::System.Drawing.Color.White;
+			this.lblHero.InitialText = "Name: Level 0 Origin Archetype (Primary / Secondary)";
+			point = new global::System.Drawing.Point(4, 26);
+			this.lblHero.Location = point;
+			this.lblHero.Name = "lblHero";
+			size = new global::System.Drawing.Size(834, 46);
+			this.lblHero.Size = size;
+			this.lblHero.TabIndex = 43;
+			this.lblHero.TextAlign = global::System.Drawing.ContentAlignment.TopLeft;
+			this.heroVillain.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.heroVillain.Checked = false;
+			this.heroVillain.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.heroVillain.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(630, 27);
+			this.heroVillain.Location = point;
+			this.heroVillain.Name = "heroVillain";
+			size = new global::System.Drawing.Size(105, 22);
+			this.heroVillain.Size = size;
+			this.heroVillain.TabIndex = 116;
+			this.heroVillain.TextOff = "Hero";
+			this.heroVillain.TextOn = "Villain";
+			this.heroVillain.Toggle = true;
+			this.tempPowersButton.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.tempPowersButton.Checked = false;
+			this.tempPowersButton.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.tempPowersButton.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(951, 50);
+			this.tempPowersButton.Location = point;
+			this.tempPowersButton.Name = "tempPowersButton";
+			size = new global::System.Drawing.Size(105, 22);
+			this.tempPowersButton.Size = size;
+			this.tempPowersButton.TabIndex = 115;
+			this.tempPowersButton.TextOff = "Temp Pwrs (Off)";
+			this.tempPowersButton.TextOn = "Temp Pwrs (On)";
+			this.tempPowersButton.Toggle = true;
+			this.accoladeButton.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.accoladeButton.Checked = false;
+			this.accoladeButton.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.accoladeButton.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(737, 50);
+			this.accoladeButton.Location = point;
+			this.accoladeButton.Name = "accoladeButton";
+			size = new global::System.Drawing.Size(105, 22);
+			this.accoladeButton.Size = size;
+			this.accoladeButton.TabIndex = 114;
+			this.accoladeButton.TextOff = "Accolades (Off)";
+			this.accoladeButton.TextOn = "Accolades (On)";
+			this.accoladeButton.Toggle = true;
+			this.incarnateButton.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.incarnateButton.Checked = false;
+			this.incarnateButton.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.incarnateButton.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(844, 50);
+			this.incarnateButton.Location = point;
+			this.incarnateButton.Name = "incarnateButton";
+			size = new global::System.Drawing.Size(105, 22);
+			this.incarnateButton.Size = size;
+			this.incarnateButton.TabIndex = 113;
+			this.incarnateButton.TextOff = "Incarnate";
+			this.incarnateButton.TextOn = "Incarnate";
+			this.incarnateButton.Toggle = false;
+			this.I9Picker.BackColor = global::System.Drawing.Color.Black;
+			this.I9Picker.ForeColor = global::System.Drawing.Color.Blue;
+			this.I9Picker.Highlight = global::System.Drawing.Color.MediumSlateBlue;
+			this.I9Picker.ImageSize = 30;
+			point = new global::System.Drawing.Point(452, 131);
+			this.I9Picker.Location = point;
+			this.I9Picker.Name = "I9Picker";
+			this.I9Picker.Selected = global::System.Drawing.Color.SlateBlue;
+			size = new global::System.Drawing.Size(198, 235);
+			this.I9Picker.Size = size;
+			this.I9Picker.TabIndex = 83;
+			this.I9Picker.Visible = false;
+			this.I9Popup.BackColor = global::System.Drawing.Color.Black;
+			this.I9Popup.BXHeight = 600;
+			this.I9Popup.ColumnPosition = 0.5f;
+			this.I9Popup.ColumnRight = false;
+			this.I9Popup.Font = new global::System.Drawing.Font("Arial", 13f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			this.I9Popup.ForeColor = global::System.Drawing.Color.FromArgb(96, 48, 255);
+			this.I9Popup.InternalPadding = 3;
+			point = new global::System.Drawing.Point(513, 490);
+			this.I9Popup.Location = point;
+			this.I9Popup.Name = "I9Popup";
+			this.I9Popup.ScrollY = 0f;
+			this.I9Popup.SectionPadding = 8;
+			size = new global::System.Drawing.Size(400, 214);
+			this.I9Popup.Size = size;
+			this.I9Popup.TabIndex = 102;
+			this.I9Popup.Visible = false;
+			this.ibVetPools.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.ibVetPools.Checked = false;
+			this.ibVetPools.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibVetPools.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(441, 50);
+			this.ibVetPools.Location = point;
+			this.ibVetPools.Name = "ibVetPools";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibVetPools.Size = size;
+			this.ibVetPools.TabIndex = 111;
+			this.ibVetPools.TextOff = "Veteran Pools: Off";
+			this.ibVetPools.TextOn = "Veteran Pools: On";
+			this.ibVetPools.Toggle = true;
+			this.ibVetPools.Visible = false;
+			this.ibPvX.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.ibPvX.Checked = false;
+			this.ibPvX.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibPvX.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(737, 27);
+			this.ibPvX.Location = point;
+			this.ibPvX.Name = "ibPvX";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibPvX.Size = size;
+			this.ibPvX.TabIndex = 111;
+			this.ibPvX.TextOff = "Mode: PvE";
+			this.ibPvX.TextOn = "Mode: PvP";
+			this.ibPvX.Toggle = true;
+			this.dvAnchored.BackColor = global::System.Drawing.Color.Black;
+			this.dvAnchored.DrawVillain = false;
+			this.dvAnchored.Floating = false;
+			this.dvAnchored.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point, 0);
+			point = new global::System.Drawing.Point(16, 391);
+			this.dvAnchored.Location = point;
+			this.dvAnchored.Name = "dvAnchored";
+			size = new global::System.Drawing.Size(300, 347);
+			this.dvAnchored.Size = size;
+			this.dvAnchored.TabIndex = 69;
+			this.dvAnchored.VisibleSize = global::Enums.eVisibleSize.Full;
+			this.ibTotals.Checked = false;
+			this.ibTotals.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibTotals.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(355, 109);
+			this.ibTotals.Location = point;
+			this.ibTotals.Name = "ibTotals";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibTotals.Size = size;
+			this.ibTotals.TabIndex = 99;
+			this.ibTotals.TextOff = "View Totals";
+			this.ibTotals.TextOn = "Alt Text";
+			this.ibTotals.Toggle = false;
+			this.ibSlotLevels.Checked = false;
+			this.ibSlotLevels.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibSlotLevels.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(244, 133);
+			this.ibSlotLevels.Location = point;
+			this.ibSlotLevels.Name = "ibSlotLevels";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibSlotLevels.Size = size;
+			this.ibSlotLevels.TabIndex = 101;
+			this.ibSlotLevels.TextOff = "Slot Levels: Off";
+			this.ibSlotLevels.TextOn = "Slot Levels: On";
+			this.ibSlotLevels.Toggle = true;
+			this.ibMode.Checked = false;
+			this.ibMode.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibMode.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(244, 80);
+			this.ibMode.Location = point;
+			this.ibMode.Name = "ibMode";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibMode.Size = size;
+			this.ibMode.TabIndex = 100;
+			this.ibMode.TextOff = "Mode Switch";
+			this.ibMode.TextOn = "Alt Text";
+			this.ibMode.Toggle = false;
+			this.ibSets.Checked = false;
+			this.ibSets.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibSets.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(244, 109);
+			this.ibSets.Location = point;
+			this.ibSets.Name = "ibSets";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibSets.Size = size;
+			this.ibSets.TabIndex = 98;
+			this.ibSets.TextOff = "View Active Sets";
+			this.ibSets.TextOn = "Alt Text";
+			this.ibSets.Toggle = false;
+			this.ibAccolade.Checked = false;
+			this.ibAccolade.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibAccolade.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(355, 133);
+			this.ibAccolade.Location = point;
+			this.ibAccolade.Name = "ibAccolade";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibAccolade.Size = size;
+			this.ibAccolade.TabIndex = 106;
+			this.ibAccolade.TextOff = "67 Slots to go";
+			this.ibAccolade.TextOn = "0 Slots placed";
+			this.ibAccolade.Toggle = true;
+			this.ibRecipe.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.ibRecipe.Checked = false;
+			this.ibRecipe.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibRecipe.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(844, 27);
+			this.ibRecipe.Location = point;
+			this.ibRecipe.Name = "ibRecipe";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibRecipe.Size = size;
+			this.ibRecipe.TabIndex = 105;
+			this.ibRecipe.TextOff = "Recipes: Off";
+			this.ibRecipe.TextOn = "Recipes: On";
+			this.ibRecipe.Toggle = true;
+			this.ibPopup.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Right);
+			this.ibPopup.Checked = false;
+			this.ibPopup.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			point = new global::System.Drawing.Point(0, 0);
+			this.ibPopup.KnockoutLocationPoint = point;
+			point = new global::System.Drawing.Point(951, 27);
+			this.ibPopup.Location = point;
+			this.ibPopup.Name = "ibPopup";
+			size = new global::System.Drawing.Size(105, 22);
+			this.ibPopup.Size = size;
+			this.ibPopup.TabIndex = 104;
+			this.ibPopup.TextOff = "Pop-Up: Off";
+			this.ibPopup.TextOn = "Pop-Up: On";
+			this.ibPopup.Toggle = true;
+			base.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.None;
+			this.BackColor = global::System.Drawing.Color.Black;
+			size = new global::System.Drawing.Size(1056, 752);
+			base.ClientSize = size;
+			base.Controls.Add(this.heroVillain);
+			base.Controls.Add(this.tempPowersButton);
+			base.Controls.Add(this.accoladeButton);
+			base.Controls.Add(this.incarnateButton);
+			base.Controls.Add(this.I9Picker);
+			base.Controls.Add(this.I9Popup);
+			base.Controls.Add(this.ibVetPools);
+			base.Controls.Add(this.ibPvX);
+			base.Controls.Add(this.llAncillary);
+			base.Controls.Add(this.dvAnchored);
+			base.Controls.Add(this.lblLockedSecondary);
+			base.Controls.Add(this.ibTotals);
+			base.Controls.Add(this.ibSlotLevels);
+			base.Controls.Add(this.ibMode);
+			base.Controls.Add(this.ibSets);
+			base.Controls.Add(this.pbDynMode);
+			base.Controls.Add(this.MenuBar);
+			base.Controls.Add(this.lblLockedAncillary);
+			base.Controls.Add(this.lblLocked3);
+			base.Controls.Add(this.lblLocked2);
+			base.Controls.Add(this.lblLocked1);
+			base.Controls.Add(this.lblLocked0);
+			base.Controls.Add(this.lblName);
+			base.Controls.Add(this.lblATLocked);
+			base.Controls.Add(this.lblOrigin);
+			base.Controls.Add(this.lblAT);
+			base.Controls.Add(this.txtName);
+			base.Controls.Add(this.llPool0);
+			base.Controls.Add(this.llPool1);
+			base.Controls.Add(this.lblPool3);
+			base.Controls.Add(this.cbPool1);
+			base.Controls.Add(this.lblPool2);
+			base.Controls.Add(this.cbPool0);
+			base.Controls.Add(this.lblPool1);
+			base.Controls.Add(this.cbSecondary);
+			base.Controls.Add(this.lblSecondary);
+			base.Controls.Add(this.cbPrimary);
+			base.Controls.Add(this.cbOrigin);
+			base.Controls.Add(this.cbAT);
+			base.Controls.Add(this.ibAccolade);
+			base.Controls.Add(this.ibRecipe);
+			base.Controls.Add(this.ibPopup);
+			base.Controls.Add(this.lblPrimary);
+			base.Controls.Add(this.llSecondary);
+			base.Controls.Add(this.llPrimary);
+			base.Controls.Add(this.llPool3);
+			base.Controls.Add(this.llPool2);
+			base.Controls.Add(this.cbAncillary);
+			base.Controls.Add(this.lblEpic);
+			base.Controls.Add(this.cbPool3);
+			base.Controls.Add(this.lblPool4);
+			base.Controls.Add(this.cbPool2);
+			base.Controls.Add(this.pnlGFXFlow);
+			base.Controls.Add(this.lblHero);
+			this.DoubleBuffered = true;
+			this.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
+			this.ForeColor = global::System.Drawing.Color.White;
+			base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+			base.KeyPreview = true;
+			base.MainMenuStrip = this.MenuBar;
+			size = new global::System.Drawing.Size(640, 480);
+			this.MinimumSize = size;
+			base.Name = "frmMain";
+			base.StartPosition = global::System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Hero Designer";
+			this.MenuBar.ResumeLayout(false);
+			this.MenuBar.PerformLayout();
+			((global::System.ComponentModel.ISupportInitialize)this.pbDynMode).EndInit();
+			((global::System.ComponentModel.ISupportInitialize)this.pnlGFX).EndInit();
+			this.pnlGFXFlow.ResumeLayout(false);
+			base.ResumeLayout(false);
+			base.PerformLayout();
+		}
+
+		// Token: 0x040005DE RID: 1502
+		private global::System.ComponentModel.IContainer components;
+	}
+}

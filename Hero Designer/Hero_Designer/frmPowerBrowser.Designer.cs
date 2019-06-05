@@ -1,0 +1,446 @@
+﻿namespace Hero_Designer
+{
+	// Token: 0x0200004D RID: 77
+	[global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
+	public partial class frmPowerBrowser : global::System.Windows.Forms.Form
+	{
+		// Token: 0x06000FB1 RID: 4017 RVA: 0x0009CB40 File Offset: 0x0009AD40
+		[global::System.Diagnostics.DebuggerNonUserCode]
+		protected override void Dispose(bool disposing)
+		{
+			try
+			{
+				if (disposing && this.components != null)
+				{
+					this.components.Dispose();
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
+			}
+		}
+
+		// Token: 0x06000FB4 RID: 4020 RVA: 0x0009CCB8 File Offset: 0x0009AEB8
+		[global::System.Diagnostics.DebuggerStepThrough]
+		private void InitializeComponent()
+		{
+			this.components = new global::System.ComponentModel.Container();
+			global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmPowerBrowser));
+			this.lvPower = new global::System.Windows.Forms.ListView();
+			this.ColumnHeader3 = new global::System.Windows.Forms.ColumnHeader();
+			this.ColumnHeader5 = new global::System.Windows.Forms.ColumnHeader();
+			this.ColumnHeader7 = new global::System.Windows.Forms.ColumnHeader();
+			this.lvSet = new global::System.Windows.Forms.ListView();
+			this.ColumnHeader1 = new global::System.Windows.Forms.ColumnHeader();
+			this.ColumnHeader4 = new global::System.Windows.Forms.ColumnHeader();
+			this.ColumnHeader6 = new global::System.Windows.Forms.ColumnHeader();
+			this.ilPS = new global::System.Windows.Forms.ImageList(this.components);
+			this.lvGroup = new global::System.Windows.Forms.ListView();
+			this.ColumnHeader2 = new global::System.Windows.Forms.ColumnHeader();
+			this.ilAT = new global::System.Windows.Forms.ImageList(this.components);
+			this.cbFilter = new global::System.Windows.Forms.ComboBox();
+			this.Label1 = new global::System.Windows.Forms.Label();
+			this.btnPowerSort = new global::System.Windows.Forms.Button();
+			this.ilPower = new global::System.Windows.Forms.ImageList(this.components);
+			this.btnPowerUp = new global::System.Windows.Forms.Button();
+			this.btnPowerDown = new global::System.Windows.Forms.Button();
+			this.btnPowerAdd = new global::System.Windows.Forms.Button();
+			this.btnPowerDelete = new global::System.Windows.Forms.Button();
+			this.btnPowerClone = new global::System.Windows.Forms.Button();
+			this.btnPowerEdit = new global::System.Windows.Forms.Button();
+			this.btnSetSort = new global::System.Windows.Forms.Button();
+			this.btnSetEdit = new global::System.Windows.Forms.Button();
+			this.btnSetDelete = new global::System.Windows.Forms.Button();
+			this.btnSetAdd = new global::System.Windows.Forms.Button();
+			this.btnClassClone = new global::System.Windows.Forms.Button();
+			this.btnClassSort = new global::System.Windows.Forms.Button();
+			this.btnClassEdit = new global::System.Windows.Forms.Button();
+			this.btnClassDelete = new global::System.Windows.Forms.Button();
+			this.btnClassAdd = new global::System.Windows.Forms.Button();
+			this.pnlGroup = new global::System.Windows.Forms.Panel();
+			this.btnClassUp = new global::System.Windows.Forms.Button();
+			this.btnClassDown = new global::System.Windows.Forms.Button();
+			this.pnlSet = new global::System.Windows.Forms.Panel();
+			this.btnPSUp = new global::System.Windows.Forms.Button();
+			this.btnPSDown = new global::System.Windows.Forms.Button();
+			this.pnlPower = new global::System.Windows.Forms.Panel();
+			this.lblSet = new global::System.Windows.Forms.Label();
+			this.lblPower = new global::System.Windows.Forms.Label();
+			this.btnOK = new global::System.Windows.Forms.Button();
+			this.btnCancel = new global::System.Windows.Forms.Button();
+			this.Label2 = new global::System.Windows.Forms.Label();
+			this.pnlGroup.SuspendLayout();
+			this.pnlSet.SuspendLayout();
+			this.pnlPower.SuspendLayout();
+			base.SuspendLayout();
+			this.lvPower.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.lvPower.Columns.AddRange(new global::System.Windows.Forms.ColumnHeader[]
+			{
+				this.ColumnHeader3,
+				this.ColumnHeader5,
+				this.ColumnHeader7
+			});
+			this.lvPower.FullRowSelect = true;
+			this.lvPower.HeaderStyle = global::System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+			this.lvPower.HideSelection = false;
+			global::System.Drawing.Point point = new global::System.Drawing.Point(587, 37);
+			this.lvPower.Location = point;
+			this.lvPower.MultiSelect = false;
+			this.lvPower.Name = "lvPower";
+			global::System.Drawing.Size size = new global::System.Drawing.Size(400, 429);
+			this.lvPower.Size = size;
+			this.lvPower.TabIndex = 21;
+			this.lvPower.UseCompatibleStateImageBehavior = false;
+			this.lvPower.View = global::System.Windows.Forms.View.Details;
+			this.ColumnHeader3.Text = "Power";
+			this.ColumnHeader3.Width = 206;
+			this.ColumnHeader5.Text = "Name";
+			this.ColumnHeader5.Width = 108;
+			this.ColumnHeader7.Text = "Level";
+			this.lvSet.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.lvSet.Columns.AddRange(new global::System.Windows.Forms.ColumnHeader[]
+			{
+				this.ColumnHeader1,
+				this.ColumnHeader4,
+				this.ColumnHeader6
+			});
+			this.lvSet.FullRowSelect = true;
+			this.lvSet.HeaderStyle = global::System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+			this.lvSet.HideSelection = false;
+			point = new global::System.Drawing.Point(251, 37);
+			this.lvSet.Location = point;
+			this.lvSet.MultiSelect = false;
+			this.lvSet.Name = "lvSet";
+			size = new global::System.Drawing.Size(330, 429);
+			this.lvSet.Size = size;
+			this.lvSet.SmallImageList = this.ilPS;
+			this.lvSet.TabIndex = 20;
+			this.lvSet.UseCompatibleStateImageBehavior = false;
+			this.lvSet.View = global::System.Windows.Forms.View.Details;
+			this.ColumnHeader1.Text = "Set";
+			this.ColumnHeader1.Width = 129;
+			this.ColumnHeader4.Text = "Name";
+			this.ColumnHeader4.Width = 115;
+			this.ColumnHeader6.Text = "Type";
+			this.ilPS.ColorDepth = global::System.Windows.Forms.ColorDepth.Depth32Bit;
+			size = new global::System.Drawing.Size(34, 18);
+			this.ilPS.ImageSize = size;
+			this.ilPS.TransparentColor = global::System.Drawing.Color.Transparent;
+			this.lvGroup.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.lvGroup.Columns.AddRange(new global::System.Windows.Forms.ColumnHeader[]
+			{
+				this.ColumnHeader2
+			});
+			this.lvGroup.FullRowSelect = true;
+			this.lvGroup.HeaderStyle = global::System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+			this.lvGroup.HideSelection = false;
+			point = new global::System.Drawing.Point(12, 37);
+			this.lvGroup.Location = point;
+			this.lvGroup.MultiSelect = false;
+			this.lvGroup.Name = "lvGroup";
+			size = new global::System.Drawing.Size(233, 429);
+			this.lvGroup.Size = size;
+			this.lvGroup.SmallImageList = this.ilAT;
+			this.lvGroup.TabIndex = 19;
+			this.lvGroup.UseCompatibleStateImageBehavior = false;
+			this.lvGroup.View = global::System.Windows.Forms.View.Details;
+			this.ColumnHeader2.Text = "Group";
+			this.ColumnHeader2.Width = 207;
+			this.ilAT.ColorDepth = global::System.Windows.Forms.ColorDepth.Depth32Bit;
+			size = new global::System.Drawing.Size(16, 16);
+			this.ilAT.ImageSize = size;
+			this.ilAT.TransparentColor = global::System.Drawing.Color.Transparent;
+			this.cbFilter.DropDownStyle = global::System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbFilter.FormattingEnabled = true;
+			point = new global::System.Drawing.Point(86, 9);
+			this.cbFilter.Location = point;
+			this.cbFilter.Name = "cbFilter";
+			size = new global::System.Drawing.Size(221, 22);
+			this.cbFilter.Size = size;
+			this.cbFilter.TabIndex = 22;
+			point = new global::System.Drawing.Point(12, 9);
+			this.Label1.Location = point;
+			this.Label1.Name = "Label1";
+			size = new global::System.Drawing.Size(68, 22);
+			this.Label1.Size = size;
+			this.Label1.TabIndex = 23;
+			this.Label1.Text = "Filter By:";
+			this.Label1.TextAlign = global::System.Drawing.ContentAlignment.MiddleRight;
+			point = new global::System.Drawing.Point(239, 44);
+			this.btnPowerSort.Location = point;
+			this.btnPowerSort.Name = "btnPowerSort";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerSort.Size = size;
+			this.btnPowerSort.TabIndex = 26;
+			this.btnPowerSort.Text = "Re-Sort";
+			this.btnPowerSort.UseVisualStyleBackColor = true;
+			this.ilPower.ColorDepth = global::System.Windows.Forms.ColorDepth.Depth32Bit;
+			size = new global::System.Drawing.Size(16, 16);
+			this.ilPower.ImageSize = size;
+			this.ilPower.TransparentColor = global::System.Drawing.Color.Transparent;
+			point = new global::System.Drawing.Point(3, 15);
+			this.btnPowerUp.Location = point;
+			this.btnPowerUp.Name = "btnPowerUp";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerUp.Size = size;
+			this.btnPowerUp.TabIndex = 28;
+			this.btnPowerUp.Text = "Up";
+			this.btnPowerUp.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(3, 44);
+			this.btnPowerDown.Location = point;
+			this.btnPowerDown.Name = "btnPowerDown";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerDown.Size = size;
+			this.btnPowerDown.TabIndex = 29;
+			this.btnPowerDown.Text = "Down";
+			this.btnPowerDown.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(320, 15);
+			this.btnPowerAdd.Location = point;
+			this.btnPowerAdd.Name = "btnPowerAdd";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerAdd.Size = size;
+			this.btnPowerAdd.TabIndex = 30;
+			this.btnPowerAdd.Text = "Add";
+			this.btnPowerAdd.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(239, 15);
+			this.btnPowerDelete.Location = point;
+			this.btnPowerDelete.Name = "btnPowerDelete";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerDelete.Size = size;
+			this.btnPowerDelete.TabIndex = 31;
+			this.btnPowerDelete.Text = "Delete";
+			this.btnPowerDelete.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(320, 44);
+			this.btnPowerClone.Location = point;
+			this.btnPowerClone.Name = "btnPowerClone";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerClone.Size = size;
+			this.btnPowerClone.TabIndex = 33;
+			this.btnPowerClone.Text = "Clone";
+			this.btnPowerClone.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(320, 73);
+			this.btnPowerEdit.Location = point;
+			this.btnPowerEdit.Name = "btnPowerEdit";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPowerEdit.Size = size;
+			this.btnPowerEdit.TabIndex = 32;
+			this.btnPowerEdit.Text = "Edit";
+			this.btnPowerEdit.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(169, 44);
+			this.btnSetSort.Location = point;
+			this.btnSetSort.Name = "btnSetSort";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnSetSort.Size = size;
+			this.btnSetSort.TabIndex = 35;
+			this.btnSetSort.Text = "Re-Sort";
+			this.btnSetSort.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(250, 44);
+			this.btnSetEdit.Location = point;
+			this.btnSetEdit.Name = "btnSetEdit";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnSetEdit.Size = size;
+			this.btnSetEdit.TabIndex = 40;
+			this.btnSetEdit.Text = "Edit";
+			this.btnSetEdit.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(169, 15);
+			this.btnSetDelete.Location = point;
+			this.btnSetDelete.Name = "btnSetDelete";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnSetDelete.Size = size;
+			this.btnSetDelete.TabIndex = 39;
+			this.btnSetDelete.Text = "Delete";
+			this.btnSetDelete.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(250, 15);
+			this.btnSetAdd.Location = point;
+			this.btnSetAdd.Name = "btnSetAdd";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnSetAdd.Size = size;
+			this.btnSetAdd.TabIndex = 38;
+			this.btnSetAdd.Text = "Add";
+			this.btnSetAdd.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(153, 44);
+			this.btnClassClone.Location = point;
+			this.btnClassClone.Name = "btnClassClone";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnClassClone.Size = size;
+			this.btnClassClone.TabIndex = 46;
+			this.btnClassClone.Text = "Clone";
+			this.btnClassClone.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(72, 44);
+			this.btnClassSort.Location = point;
+			this.btnClassSort.Name = "btnClassSort";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnClassSort.Size = size;
+			this.btnClassSort.TabIndex = 42;
+			this.btnClassSort.Text = "Re-Sort";
+			this.btnClassSort.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(153, 73);
+			this.btnClassEdit.Location = point;
+			this.btnClassEdit.Name = "btnClassEdit";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnClassEdit.Size = size;
+			this.btnClassEdit.TabIndex = 45;
+			this.btnClassEdit.Text = "Edit";
+			this.btnClassEdit.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(72, 15);
+			this.btnClassDelete.Location = point;
+			this.btnClassDelete.Name = "btnClassDelete";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnClassDelete.Size = size;
+			this.btnClassDelete.TabIndex = 44;
+			this.btnClassDelete.Text = "Delete";
+			this.btnClassDelete.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(153, 15);
+			this.btnClassAdd.Location = point;
+			this.btnClassAdd.Name = "btnClassAdd";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnClassAdd.Size = size;
+			this.btnClassAdd.TabIndex = 43;
+			this.btnClassAdd.Text = "Add";
+			this.btnClassAdd.UseVisualStyleBackColor = true;
+			this.pnlGroup.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlGroup.Controls.Add(this.btnClassUp);
+			this.pnlGroup.Controls.Add(this.btnClassDown);
+			this.pnlGroup.Controls.Add(this.btnClassClone);
+			this.pnlGroup.Controls.Add(this.btnClassDelete);
+			this.pnlGroup.Controls.Add(this.btnClassSort);
+			this.pnlGroup.Controls.Add(this.btnClassAdd);
+			this.pnlGroup.Controls.Add(this.btnClassEdit);
+			point = new global::System.Drawing.Point(12, 494);
+			this.pnlGroup.Location = point;
+			this.pnlGroup.Name = "pnlGroup";
+			size = new global::System.Drawing.Size(233, 105);
+			this.pnlGroup.Size = size;
+			this.pnlGroup.TabIndex = 47;
+			point = new global::System.Drawing.Point(3, 15);
+			this.btnClassUp.Location = point;
+			this.btnClassUp.Name = "btnClassUp";
+			size = new global::System.Drawing.Size(64, 23);
+			this.btnClassUp.Size = size;
+			this.btnClassUp.TabIndex = 47;
+			this.btnClassUp.Text = "Up";
+			this.btnClassUp.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(3, 44);
+			this.btnClassDown.Location = point;
+			this.btnClassDown.Name = "btnClassDown";
+			size = new global::System.Drawing.Size(64, 23);
+			this.btnClassDown.Size = size;
+			this.btnClassDown.TabIndex = 48;
+			this.btnClassDown.Text = "Down";
+			this.btnClassDown.UseVisualStyleBackColor = true;
+			this.pnlSet.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlSet.Controls.Add(this.btnPSUp);
+			this.pnlSet.Controls.Add(this.btnPSDown);
+			this.pnlSet.Controls.Add(this.btnSetDelete);
+			this.pnlSet.Controls.Add(this.btnSetSort);
+			this.pnlSet.Controls.Add(this.btnSetAdd);
+			this.pnlSet.Controls.Add(this.btnSetEdit);
+			point = new global::System.Drawing.Point(251, 494);
+			this.pnlSet.Location = point;
+			this.pnlSet.Name = "pnlSet";
+			size = new global::System.Drawing.Size(330, 105);
+			this.pnlSet.Size = size;
+			this.pnlSet.TabIndex = 48;
+			point = new global::System.Drawing.Point(3, 15);
+			this.btnPSUp.Location = point;
+			this.btnPSUp.Name = "btnPSUp";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPSUp.Size = size;
+			this.btnPSUp.TabIndex = 41;
+			this.btnPSUp.Text = "Up";
+			this.btnPSUp.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(3, 44);
+			this.btnPSDown.Location = point;
+			this.btnPSDown.Name = "btnPSDown";
+			size = new global::System.Drawing.Size(75, 23);
+			this.btnPSDown.Size = size;
+			this.btnPSDown.TabIndex = 42;
+			this.btnPSDown.Text = "Down";
+			this.btnPSDown.UseVisualStyleBackColor = true;
+			this.pnlPower.BorderStyle = global::System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlPower.Controls.Add(this.btnPowerClone);
+			this.pnlPower.Controls.Add(this.btnPowerUp);
+			this.pnlPower.Controls.Add(this.btnPowerSort);
+			this.pnlPower.Controls.Add(this.btnPowerDown);
+			this.pnlPower.Controls.Add(this.btnPowerEdit);
+			this.pnlPower.Controls.Add(this.btnPowerDelete);
+			this.pnlPower.Controls.Add(this.btnPowerAdd);
+			point = new global::System.Drawing.Point(587, 494);
+			this.pnlPower.Location = point;
+			this.pnlPower.Name = "pnlPower";
+			size = new global::System.Drawing.Size(400, 105);
+			this.pnlPower.Size = size;
+			this.pnlPower.TabIndex = 49;
+			point = new global::System.Drawing.Point(251, 467);
+			this.lblSet.Location = point;
+			this.lblSet.Name = "lblSet";
+			size = new global::System.Drawing.Size(326, 24);
+			this.lblSet.Size = size;
+			this.lblSet.TabIndex = 50;
+			this.lblSet.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			point = new global::System.Drawing.Point(587, 467);
+			this.lblPower.Location = point;
+			this.lblPower.Name = "lblPower";
+			size = new global::System.Drawing.Size(400, 24);
+			this.lblPower.Size = size;
+			this.lblPower.TabIndex = 51;
+			this.lblPower.TextAlign = global::System.Drawing.ContentAlignment.MiddleCenter;
+			point = new global::System.Drawing.Point(855, 607);
+			this.btnOK.Location = point;
+			this.btnOK.Name = "btnOK";
+			size = new global::System.Drawing.Size(132, 32);
+			this.btnOK.Size = size;
+			this.btnOK.TabIndex = 52;
+			this.btnOK.Text = "Save && Close";
+			this.btnOK.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(717, 607);
+			this.btnCancel.Location = point;
+			this.btnCancel.Name = "btnCancel";
+			size = new global::System.Drawing.Size(132, 32);
+			this.btnCancel.Size = size;
+			this.btnCancel.TabIndex = 53;
+			this.btnCancel.Text = "Cancel && Discard";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			point = new global::System.Drawing.Point(313, 13);
+			this.Label2.Location = point;
+			this.Label2.Name = "Label2";
+			size = new global::System.Drawing.Size(323, 16);
+			this.Label2.Size = size;
+			this.Label2.TabIndex = 54;
+			this.Label2.Text = "To edit Archetype Classes, change filtering to Classes";
+			base.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.None;
+			size = new global::System.Drawing.Size(999, 651);
+			base.ClientSize = size;
+			base.Controls.Add(this.Label2);
+			base.Controls.Add(this.btnCancel);
+			base.Controls.Add(this.btnOK);
+			base.Controls.Add(this.lblPower);
+			base.Controls.Add(this.lblSet);
+			base.Controls.Add(this.Label1);
+			base.Controls.Add(this.cbFilter);
+			base.Controls.Add(this.lvPower);
+			base.Controls.Add(this.lvSet);
+			base.Controls.Add(this.lvGroup);
+			base.Controls.Add(this.pnlGroup);
+			base.Controls.Add(this.pnlSet);
+			base.Controls.Add(this.pnlPower);
+			this.Font = new global::System.Drawing.Font("Arial", 8.25f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point, 0);
+			base.FormBorderStyle = global::System.Windows.Forms.FormBorderStyle.FixedDialog;
+			base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+			base.MaximizeBox = false;
+			base.MinimizeBox = false;
+			base.Name = "frmPowerBrowser";
+			base.ShowInTaskbar = false;
+			base.StartPosition = global::System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Power Database Browser";
+			this.pnlGroup.ResumeLayout(false);
+			this.pnlSet.ResumeLayout(false);
+			this.pnlPower.ResumeLayout(false);
+			base.ResumeLayout(false);
+		}
+
+		// Token: 0x04000664 RID: 1636
+		private global::System.ComponentModel.IContainer components;
+	}
+}
