@@ -11,7 +11,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 	// Token: 0x0200003C RID: 60
-	[DesignerGenerated]
+	
 	public partial class frmImport_Entities : Form
 	{
 		// Token: 0x170003C7 RID: 967

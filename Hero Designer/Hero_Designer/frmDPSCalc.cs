@@ -13,7 +13,6 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000029 RID: 41
-	[DesignerGenerated]
 	public partial class frmDPSCalc : Form
 	{
 		// Token: 0x17000191 RID: 401

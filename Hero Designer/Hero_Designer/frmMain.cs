@@ -3894,7 +3894,10 @@ namespace Hero_Designer
 		// Token: 0x06000E03 RID: 3587 RVA: 0x00082DAC File Offset: 0x00080FAC
 		public frmMain()
 		{
-			base.Load += this.frmMain_Load;
+			//base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+			//base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("Hero_Designer");
+
+            base.Load += this.frmMain_Load;
 			base.Closed += this.frmMain_Closed;
 			base.FormClosing += this.frmMain_Closing;
 			base.ResizeEnd += this.frmMain_Resize;
@@ -3944,6 +3947,7 @@ namespace Hero_Designer
 			this.dragStartSlot = -1;
 			this.ddsa = new short[20];
 			this.DoneDblClick = false;
+
 			this.InitializeComponent();
 		}
 

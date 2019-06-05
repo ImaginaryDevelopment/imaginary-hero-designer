@@ -15,7 +15,6 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000020 RID: 32
-	[DesignerGenerated]
 	public partial class frmAccolade : Form
 	{
 		// Token: 0x17000065 RID: 101

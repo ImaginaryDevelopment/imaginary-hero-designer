@@ -14,7 +14,7 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000044 RID: 68
-	[DesignerGenerated]
+	
 	public partial class frmIncarnate : Form
 	{
 		// Token: 0x1700041F RID: 1055

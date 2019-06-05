@@ -1511,7 +1511,7 @@ namespace Hero_Designer
 		// Token: 0x060008C5 RID: 2245 RVA: 0x0005B6C8 File Offset: 0x000598C8
 		private void btnAddFX_Click(object sender, EventArgs e)
 		{
-			IEffect iFX = new Effect(null);
+			IEffect iFX = new Effect();
 			frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
 			if (frmPowerEffect.ShowDialog() == DialogResult.OK)
 			{

@@ -11,7 +11,6 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000023 RID: 35
-	[DesignerGenerated]
 	public partial class frmColourSettings : Form
 	{
 		// Token: 0x170000F9 RID: 249

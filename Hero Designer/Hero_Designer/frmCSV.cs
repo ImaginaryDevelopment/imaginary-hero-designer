@@ -11,7 +11,6 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 	// Token: 0x02000026 RID: 38
-	[DesignerGenerated]
 	public partial class frmCSV : Form
 	{
 		// Token: 0x1700012A RID: 298

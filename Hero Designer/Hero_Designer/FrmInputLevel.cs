@@ -10,7 +10,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 	// Token: 0x02000046 RID: 70
-	[DesignerGenerated]
+	
 	public partial class FrmInputLevel : Form
 	{
 		// Token: 0x17000430 RID: 1072

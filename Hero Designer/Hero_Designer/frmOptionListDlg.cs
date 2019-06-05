@@ -9,7 +9,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 	// Token: 0x0200004C RID: 76
-	[DesignerGenerated]
+	
 	public partial class frmOptionListDlg : Form
 	{
 		// Token: 0x170004DC RID: 1244

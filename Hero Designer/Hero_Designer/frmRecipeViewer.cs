@@ -14,7 +14,7 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000052 RID: 82
-	[DesignerGenerated]
+	
 	public partial class frmRecipeViewer : Form
 	{
 		// Token: 0x1700059A RID: 1434

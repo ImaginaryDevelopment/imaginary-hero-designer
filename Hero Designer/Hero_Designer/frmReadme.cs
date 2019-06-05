@@ -10,7 +10,7 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000050 RID: 80
-	[DesignerGenerated]
+	
 	public partial class frmReadme : Form
 	{
 		// Token: 0x17000557 RID: 1367

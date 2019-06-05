@@ -13,7 +13,7 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 	// Token: 0x0200004D RID: 77
-	[DesignerGenerated]
+	
 	public partial class frmPowerBrowser : Form
 	{
 		// Token: 0x170004E2 RID: 1250

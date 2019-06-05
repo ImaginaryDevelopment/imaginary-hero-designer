@@ -11,7 +11,7 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x0200004B RID: 75
-	[DesignerGenerated]
+	
 	public partial class frmMiniList : Form
 	{
 		// Token: 0x170004DA RID: 1242

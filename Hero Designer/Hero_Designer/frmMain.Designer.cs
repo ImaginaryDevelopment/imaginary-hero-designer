@@ -1531,7 +1531,6 @@
 			this.DoubleBuffered = true;
 			this.Font = new global::System.Drawing.Font("Arial", 11f, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Pixel, 0);
 			this.ForeColor = global::System.Drawing.Color.White;
-			base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
 			base.KeyPreview = true;
 			base.MainMenuStrip = this.MenuBar;
 			size = new global::System.Drawing.Size(640, 480);

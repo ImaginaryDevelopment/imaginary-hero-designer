@@ -15,7 +15,7 @@ using midsControls;
 namespace Hero_Designer
 {
 	// Token: 0x02000056 RID: 86
-	[DesignerGenerated]
+	
 	public partial class frmSetFind : Form
 	{
 		// Token: 0x170005E9 RID: 1513
