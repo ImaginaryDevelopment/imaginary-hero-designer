@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -37,7 +37,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="midsControls">
-      <HintPath>..\..\..\Users\bdimp\Downloads\Hero Designer\Pine's Hero Designer\midsControls.dll</HintPath>
+      <HintPath>..\midsControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -580,8 +580,6 @@
     <EmbeddedResource Include="Hero_Designer\frmZStatus.resx">
       <DependentUpon>frmZStatus.cs</DependentUpon>
     </EmbeddedResource>
-
-
     <EmbeddedResource Include="Hero_Designer\Resources.resources" />
   </ItemGroup>
   <ItemGroup>
