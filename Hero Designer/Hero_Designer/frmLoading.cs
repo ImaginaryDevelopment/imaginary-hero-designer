@@ -29,7 +29,7 @@ namespace Hero_Designer
 		// Token: 0x17000434 RID: 1076
 		// (get) Token: 0x06000CAE RID: 3246 RVA: 0x0007E31C File Offset: 0x0007C51C
 		// (set) Token: 0x06000CAF RID: 3247 RVA: 0x0007E334 File Offset: 0x0007C534
-		internal virtual PictureBox PictureBox1
+		public PictureBox PictureBox1
 		{
 			get
 			{

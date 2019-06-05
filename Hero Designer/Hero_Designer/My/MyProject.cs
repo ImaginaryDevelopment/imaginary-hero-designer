@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.ComponentModel;
@@ -837,8 +837,7 @@ namespace Hero_Designer.My
 			}
 
 			// Token: 0x06000051 RID: 81 RVA: 0x00002FC4 File Offset: 0x000011C4
-			[DebuggerHidden]
-			private static T Create__Instance__<T>(T Instance) where T : Form, new()
+			static T Create__Instance__<T>(T Instance) where T : Form, new()
 			{
 				T obj;
 				if (Instance != null && !Instance.IsDisposed)

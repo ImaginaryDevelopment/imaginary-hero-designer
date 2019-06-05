@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{E287B135-A916-4492-93A7-EBA82000773E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hero Designer</RootNamespace>
+    <RootNamespace>Hero_Designer</RootNamespace>
     <AssemblyName>Hero Designer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -40,6 +40,7 @@
       <HintPath>..\..\..\Users\bdimp\Downloads\Hero Designer\Pine's Hero Designer\midsControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -369,6 +370,12 @@
     <Compile Include="Hero_Designer\frmStats.Designer.cs">
       <DependentUpon>frmStats.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hero_Designer\FrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hero_Designer\FrmTest.Designer.cs">
+      <DependentUpon>FrmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hero_Designer\frmTotals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,62 +412,176 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Hero_Designer\DataView.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmAbout.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmAccolade.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmBusy.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmCalcOpt.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmColourSettings.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmCompare.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmCSV.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmData.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmDBEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmDPSCalc.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEditArchetype.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEditPower.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEditPowerset.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEnhData.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEnhEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEnhMiniPick.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEntityEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmEntityListing.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmExportColor.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmFloatingStats.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmForum.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImportEffects.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImportEnhSets.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImportPowerLevels.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_Archetype.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_EnhancementEffects.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_Entities.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_mod.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_Power.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_Powerset.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_Recipe.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_SalvageReq.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_SetAssignments.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmImport_SetBonusAssignment.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmIncarnate.resources" />
-    <EmbeddedResource Include="Hero_Designer\FrmInputLevel.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmLoading.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmMain.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmMiniList.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmOptionListDlg.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmPowerBrowser.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmPowerEffect.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmPrint.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmReadme.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmRecipeEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmRecipeViewer.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmSalvageEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmSetEdit.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmSetFind.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmSetListing.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmSetViewer.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmStats.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmTotals.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmTweakMatching.resources" />
-    <EmbeddedResource Include="Hero_Designer\frmZStatus.resources" />
+    <EmbeddedResource Include="Hero_Designer\DataView.resx">
+      <DependentUpon>DataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmAccolade.resx">
+      <DependentUpon>frmAccolade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmBusy.resx">
+      <DependentUpon>frmBusy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmCalcOpt.resx">
+      <DependentUpon>frmCalcOpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmColourSettings.resx">
+      <DependentUpon>frmColourSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmCompare.resx">
+      <DependentUpon>frmCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmCSV.resx">
+      <DependentUpon>frmCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmData.resx">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmDBEdit.resx">
+      <DependentUpon>frmDBEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmDPSCalc.resx">
+      <DependentUpon>frmDPSCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEditArchetype.resx">
+      <DependentUpon>frmEditArchetype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEditPower.resx">
+      <DependentUpon>frmEditPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEditPowerset.resx">
+      <DependentUpon>frmEditPowerset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEnhData.resx">
+      <DependentUpon>frmEnhData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEnhEdit.resx">
+      <DependentUpon>frmEnhEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEnhMiniPick.resx">
+      <DependentUpon>frmEnhMiniPick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEntityEdit.resx">
+      <DependentUpon>frmEntityEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmEntityListing.resx">
+      <DependentUpon>frmEntityListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmExportColor.resx">
+      <DependentUpon>frmExportColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmFloatingStats.resx">
+      <DependentUpon>frmFloatingStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmForum.resx">
+      <DependentUpon>frmForum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImportEffects.resx">
+      <DependentUpon>frmImportEffects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImportEnhSets.resx">
+      <DependentUpon>frmImportEnhSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImportPowerLevels.resx">
+      <DependentUpon>frmImportPowerLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_Archetype.resx">
+      <DependentUpon>frmImport_Archetype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_EnhancementEffects.resx">
+      <DependentUpon>frmImport_EnhancementEffects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_Entities.resx">
+      <DependentUpon>frmImport_Entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_mod.resx">
+      <DependentUpon>frmImport_mod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_Power.resx">
+      <DependentUpon>frmImport_Power.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_Powerset.resx">
+      <DependentUpon>frmImport_Powerset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_Recipe.resx">
+      <DependentUpon>frmImport_Recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_SalvageReq.resx">
+      <DependentUpon>frmImport_SalvageReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_SetAssignments.resx">
+      <DependentUpon>frmImport_SetAssignments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmImport_SetBonusAssignment.resx">
+      <DependentUpon>frmImport_SetBonusAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmIncarnate.resx">
+      <DependentUpon>frmIncarnate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\FrmInputLevel.resx">
+      <DependentUpon>FrmInputLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmMiniList.resx">
+      <DependentUpon>frmMiniList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmOptionListDlg.resx">
+      <DependentUpon>frmOptionListDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmPowerBrowser.resx">
+      <DependentUpon>frmPowerBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmPowerEffect.resx">
+      <DependentUpon>frmPowerEffect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmReadme.resx">
+      <DependentUpon>frmReadme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmRecipeEdit.resx">
+      <DependentUpon>frmRecipeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmRecipeViewer.resx">
+      <DependentUpon>frmRecipeViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmSalvageEdit.resx">
+      <DependentUpon>frmSalvageEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmSetEdit.resx">
+      <DependentUpon>frmSetEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmSetFind.resx">
+      <DependentUpon>frmSetFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmSetListing.resx">
+      <DependentUpon>frmSetListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmSetViewer.resx">
+      <DependentUpon>frmSetViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmStats.resx">
+      <DependentUpon>frmStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmTotals.resx">
+      <DependentUpon>frmTotals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmTweakMatching.resx">
+      <DependentUpon>frmTweakMatching.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hero_Designer\frmZStatus.resx">
+      <DependentUpon>frmZStatus.cs</DependentUpon>
+    </EmbeddedResource>
+
+
     <EmbeddedResource Include="Hero_Designer\Resources.resources" />
   </ItemGroup>
   <ItemGroup>
