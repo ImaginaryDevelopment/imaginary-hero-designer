@@ -130,7 +130,7 @@ namespace Hero_Designer
         }
 
 
-        private void All_MouseMove(MouseEventArgs e)
+        void All_MouseMove(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -141,18 +141,18 @@ namespace Hero_Designer
         }
 
 
-        private void btnClose_ButtonClicked()
+        void btnClose_ButtonClicked()
         {
             base.Close();
         }
 
 
-        private void btnClose_Load(object sender, EventArgs e)
+        void btnClose_Load(object sender, EventArgs e)
         {
         }
 
 
-        private void frmReadme_Load(object sender, EventArgs e)
+        void frmReadme_Load(object sender, EventArgs e)
         {
             this.rtW = base.Size.Width - (this.rtfRead.Width + this.rtfRead.Left);
             this.rtH = base.Size.Height - (this.rtfRead.Height + this.rtfRead.Top);
@@ -173,19 +173,19 @@ namespace Hero_Designer
         }
 
 
-        private void frmReadme_MouseDown(object sender, MouseEventArgs e)
+        void frmReadme_MouseDown(object sender, MouseEventArgs e)
         {
             this.pbBackground_MouseDown(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
-        private void frmReadme_MouseMove(object sender, MouseEventArgs e)
+        void frmReadme_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
 
 
-        private void frmReadme_Resize(object sender, EventArgs e)
+        void frmReadme_Resize(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -197,66 +197,66 @@ namespace Hero_Designer
         }
 
 
-        private void pbBackground_Click(object sender, EventArgs e)
+        void pbBackground_Click(object sender, EventArgs e)
         {
         }
 
 
-        private void pbBackground_MouseDown(object sender, MouseEventArgs e)
+        void pbBackground_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
 
 
-        private void pbBackground_MouseMove(object sender, MouseEventArgs e)
+        void pbBackground_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
 
 
-        private void pbBottom_MouseDown(object sender, MouseEventArgs e)
+        void pbBottom_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -this.pbBottom.Top + -e.Y);
         }
 
 
-        private void pbBottom_MouseMove(object sender, MouseEventArgs e)
+        void pbBottom_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
 
 
         [AccessedThroughProperty("btnClose")]
-        private ImageButton _btnClose;
+        ImageButton _btnClose;
 
 
         [AccessedThroughProperty("pbBackground")]
-        private PictureBox _pbBackground;
+        PictureBox _pbBackground;
 
 
         [AccessedThroughProperty("pbBottom")]
-        private PictureBox _pbBottom;
+        PictureBox _pbBottom;
 
 
         [AccessedThroughProperty("rtfRead")]
-        private RichTextBox _rtfRead;
+        RichTextBox _rtfRead;
 
 
-        private int btnY;
+        int btnY;
 
 
-        private bool Loading;
+        bool Loading;
 
 
-        private Point mouse_offset;
+        Point mouse_offset;
 
 
-        private string myFile;
+        string myFile;
 
 
-        private int rtH;
+        int rtH;
 
 
-        private int rtW;
+        int rtW;
     }
 }

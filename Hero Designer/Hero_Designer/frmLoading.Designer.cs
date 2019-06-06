@@ -15,7 +15,7 @@
         }
 
 
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             this.components = new global::System.ComponentModel.Container();
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmLoading));
@@ -63,6 +63,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

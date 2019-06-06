@@ -600,7 +600,7 @@ namespace Hero_Designer
         }
 
 
-        private void csList_SelectedIndexChanged(object sender, EventArgs e)
+        void csList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.csList.SelectedIndex > -1)
             {
@@ -621,7 +621,7 @@ namespace Hero_Designer
         }
 
 
-        private void csPopulateList(int HighlightID = -1)
+        void csPopulateList(int HighlightID = -1)
         {
             this.csList.Items.Clear();
             ExportConfig export = MidsContext.Config.Export;
@@ -641,7 +641,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmForum_Load(object sender, EventArgs e)
+        void frmForum_Load(object sender, EventArgs e)
         {
             this.pbTitle.Left = (int)Math.Round((double)(base.Width - this.pbTitle.Width) / 2.0);
             if (MidsContext.Config.Export.ColorSchemes.Length < 1)
@@ -691,13 +691,13 @@ namespace Hero_Designer
         }
 
 
-        private void frmForum_MouseDown(object sender, MouseEventArgs e)
+        void frmForum_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
 
 
-        private void frmForum_MouseMove(object sender, MouseEventArgs e)
+        void frmForum_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -708,7 +708,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmForum_Paint(object sender, PaintEventArgs e)
+        void frmForum_Paint(object sender, PaintEventArgs e)
         {
             Pen pen = new Pen(Color.Black, 1f);
             Rectangle rect = new Rectangle(0, 0, base.Width - 1, base.Height - 1);
@@ -716,13 +716,13 @@ namespace Hero_Designer
         }
 
 
-        private void ibCancel_ButtonClicked()
+        void ibCancel_ButtonClicked()
         {
             base.Hide();
         }
 
 
-        private void ibExport_ButtonClicked()
+        void ibExport_ButtonClicked()
         {
             MidsContext.Config.ExportScheme = this.csList.SelectedIndex;
             MidsContext.Config.ExportTarget = this.lstCodes.SelectedIndex;
@@ -759,19 +759,19 @@ namespace Hero_Designer
         }
 
 
-        private void lstCodes_SelectedIndexChanged(object sender, EventArgs e)
+        void lstCodes_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.lblCodeInf.Text = MidsContext.Config.Export.FormatCode[this.lstCodes.SelectedIndex].Notes;
         }
 
 
-        private void pbTitle_MouseDown(object sender, MouseEventArgs e)
+        void pbTitle_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-this.pbTitle.Left + -e.X, -this.pbTitle.Top + -e.Y);
         }
 
 
-        private void pbTitle_MouseMove(object sender, MouseEventArgs e)
+        void pbTitle_MouseMove(object sender, MouseEventArgs e)
         {
             this.frmForum_MouseMove(RuntimeHelpers.GetObjectValue(sender), e);
         }
@@ -785,140 +785,140 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("chkAlwaysDataChunk")]
-        private CheckBox _chkAlwaysDataChunk;
+        CheckBox _chkAlwaysDataChunk;
 
 
         [AccessedThroughProperty("chkBonusList")]
-        private CheckBox _chkBonusList;
+        CheckBox _chkBonusList;
 
 
         [AccessedThroughProperty("chkBreakdown")]
-        private CheckBox _chkBreakdown;
+        CheckBox _chkBreakdown;
 
 
         [AccessedThroughProperty("chkChunkOnly")]
-        private CheckBox _chkChunkOnly;
+        CheckBox _chkChunkOnly;
 
 
         [AccessedThroughProperty("chkDataChunk")]
-        private CheckBox _chkDataChunk;
+        CheckBox _chkDataChunk;
 
 
         [AccessedThroughProperty("chkNoEnh")]
-        private CheckBox _chkNoEnh;
+        CheckBox _chkNoEnh;
 
 
         [AccessedThroughProperty("chkNoIOLevel")]
-        private CheckBox _chkNoIOLevel;
+        CheckBox _chkNoIOLevel;
 
 
         [AccessedThroughProperty("chkNoSetName")]
-        private CheckBox _chkNoSetName;
+        CheckBox _chkNoSetName;
 
 
         [AccessedThroughProperty("csHeading")]
-        private Label _csHeading;
+        Label _csHeading;
 
 
         [AccessedThroughProperty("csLevel")]
-        private Label _csLevel;
+        Label _csLevel;
 
 
         [AccessedThroughProperty("csList")]
-        private ListBox _csList;
+        ListBox _csList;
 
 
         [AccessedThroughProperty("csSlots")]
-        private Label _csSlots;
+        Label _csSlots;
 
 
         [AccessedThroughProperty("csTitle")]
-        private Label _csTitle;
+        Label _csTitle;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("GroupBox3")]
-        private GroupBox _GroupBox3;
+        GroupBox _GroupBox3;
 
 
         [AccessedThroughProperty("GroupBox4")]
-        private GroupBox _GroupBox4;
+        GroupBox _GroupBox4;
 
 
         [AccessedThroughProperty("GroupBox5")]
-        private GroupBox _GroupBox5;
+        GroupBox _GroupBox5;
 
 
         [AccessedThroughProperty("ibCancel")]
-        private ImageButton _ibCancel;
+        ImageButton _ibCancel;
 
 
         [AccessedThroughProperty("ibExport")]
-        private ImageButton _ibExport;
+        ImageButton _ibExport;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label19")]
-        private Label _Label19;
+        Label _Label19;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label20")]
-        private Label _Label20;
+        Label _Label20;
 
 
         [AccessedThroughProperty("Label21")]
-        private Label _Label21;
+        Label _Label21;
 
 
         [AccessedThroughProperty("Label22")]
-        private Label _Label22;
+        Label _Label22;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("lblCodeInf")]
-        private Label _lblCodeInf;
+        Label _lblCodeInf;
 
 
         [AccessedThroughProperty("lblRecess")]
-        private Label _lblRecess;
+        Label _lblRecess;
 
 
         [AccessedThroughProperty("lstCodes")]
-        private ListBox _lstCodes;
+        ListBox _lstCodes;
 
 
         [AccessedThroughProperty("pbTitle")]
-        private PictureBox _pbTitle;
+        PictureBox _pbTitle;
 
 
         [AccessedThroughProperty("ToolTip1")]
-        private ToolTip _ToolTip1;
+        ToolTip _ToolTip1;
 
 
         public clsOutput Exporter;
 
 
-        private Point mouse_offset;
+        Point mouse_offset;
     }
 }

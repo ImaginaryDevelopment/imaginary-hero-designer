@@ -199,13 +199,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnClose_Click(object sender, EventArgs e)
+        void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void btnFile_Click(object sender, EventArgs e)
+        void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
             if (this.dlgBrowse.ShowDialog(this) == DialogResult.OK)
@@ -217,7 +217,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnImport_Click(object sender, EventArgs e)
+        void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
@@ -225,7 +225,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyHide()
+        void BusyHide()
         {
             if (this.bFrm != null)
             {
@@ -235,7 +235,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyMsg(string sMessage)
+        void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
             {
@@ -254,14 +254,14 @@ namespace Hero_Designer
         }
 
 
-        private void frmImport_SetAssignments_Load(object sender, EventArgs e)
+        void frmImport_SetAssignments_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.IOAssignmentVersion.SourceFile;
             this.DisplayInfo();
         }
 
 
-        private bool ParseClasses(string iFileName)
+        bool ParseClasses(string iFileName)
         {
             int num = 0;
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
@@ -355,40 +355,40 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnClose")]
-        private Button _btnClose;
+        Button _btnClose;
 
 
         [AccessedThroughProperty("btnFile")]
-        private Button _btnFile;
+        Button _btnFile;
 
 
         [AccessedThroughProperty("btnImport")]
-        private Button _btnImport;
+        Button _btnImport;
 
 
         [AccessedThroughProperty("dlgBrowse")]
-        private OpenFileDialog _dlgBrowse;
+        OpenFileDialog _dlgBrowse;
 
 
         [AccessedThroughProperty("Label8")]
-        private Label _Label8;
+        Label _Label8;
 
 
         [AccessedThroughProperty("lblDate")]
-        private Label _lblDate;
+        Label _lblDate;
 
 
         [AccessedThroughProperty("lblFile")]
-        private Label _lblFile;
+        Label _lblFile;
 
 
         [AccessedThroughProperty("udRevision")]
-        private NumericUpDown _udRevision;
+        NumericUpDown _udRevision;
 
 
-        private frmBusy bFrm;
+        frmBusy bFrm;
 
 
-        private string FullFileName;
+        string FullFileName;
     }
 }

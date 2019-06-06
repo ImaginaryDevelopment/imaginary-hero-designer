@@ -191,7 +191,7 @@ namespace Hero_Designer
         }
 
 
-        private string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
+        string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
         {
             string str = "";
             string str2 = this.WhiteSpace();
@@ -495,7 +495,7 @@ namespace Hero_Designer
         }
 
 
-        private string buildSetBonusListLong()
+        string buildSetBonusListLong()
         {
             string str = this.formatColor(this.formatUnderline(this.formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + this.LineBreak();
             int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
@@ -561,7 +561,7 @@ namespace Hero_Designer
         }
 
 
-        private string BuildSetBonusListShort()
+        string BuildSetBonusListShort()
         {
             IEffect[] cumulativeSetBonuses = MidsContext.Character.CurrentBuild.GetCumulativeSetBonuses();
             Array.Sort<IEffect>(cumulativeSetBonuses);
@@ -580,13 +580,13 @@ namespace Hero_Designer
         }
 
 
-        private string formatBold(string iText)
+        string formatBold(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].BoldOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].BoldOff;
         }
 
 
-        private string formatColor(string iText, ExportConfig.Element iElement)
+        string formatColor(string iText, ExportConfig.Element iElement)
         {
             string str;
             if (this.Plain)
@@ -647,19 +647,19 @@ namespace Hero_Designer
         }
 
 
-        private string formatItalic(string iText)
+        string formatItalic(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOff;
         }
 
 
-        private string formatUnderline(string iText)
+        string formatUnderline(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOff;
         }
 
 
-        private string LineBreak()
+        string LineBreak()
         {
             string result;
             if (this.HTML & !this.NoHTMLBr)
@@ -674,7 +674,7 @@ namespace Hero_Designer
         }
 
 
-        private string List(string iText)
+        string List(string iText)
         {
             string result;
             if (this.HTML)
@@ -697,7 +697,7 @@ namespace Hero_Designer
         }
 
 
-        private string ListItemOff()
+        string ListItemOff()
         {
             string result;
             if (this.HTML)
@@ -712,7 +712,7 @@ namespace Hero_Designer
         }
 
 
-        private string ListItemOn()
+        string ListItemOn()
         {
             string result;
             if (this.HTML)
@@ -735,7 +735,7 @@ namespace Hero_Designer
         }
 
 
-        private string WhiteSpace()
+        string WhiteSpace()
         {
             string result;
             if (this.HTML)
@@ -750,7 +750,7 @@ namespace Hero_Designer
         }
 
 
-        private string[] BBWhite = new string[]
+        string[] BBWhite = new string[]
         {
             " ",
             "\t"
@@ -763,18 +763,18 @@ namespace Hero_Designer
         public int idFormat = MidsContext.Config.ExportTarget;
 
 
-        private int idScheme = MidsContext.Config.ExportScheme;
+        int idScheme = MidsContext.Config.ExportScheme;
 
 
-        private bool LongExport = true;
+        bool LongExport = true;
 
 
-        private bool NoHTMLBr = false;
+        bool NoHTMLBr = false;
 
 
         public bool Plain;
 
 
-        private bool UNB = false;
+        bool UNB = false;
     }
 }

@@ -23,7 +23,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmMiniList));
             this.pInfo = new global::midsControls.ctlPopUp();
@@ -68,6 +68,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

@@ -293,7 +293,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmAbout_Load(object sender, EventArgs e)
+        void frmAbout_Load(object sender, EventArgs e)
         {
             string str = "http://www.cohplanner.com/".Replace("http://", "");
             if (str.EndsWith("/") & str.IndexOf("/") == str.Length - 1)
@@ -307,43 +307,43 @@ namespace Hero_Designer
         }
 
 
-        private void ibClose_ButtonClicked()
+        void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
 
-        private void lblDonate_Click(object sender, EventArgs e)
+        void lblDonate_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
 
-        private void lblEmail_Click(object sender, EventArgs e)
+        void lblEmail_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.MailMe();
         }
 
 
-        private void lblWebPage_Click(object sender, EventArgs e)
+        void lblWebPage_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToCoHPlanner();
         }
 
 
-        private void pbPayPal_Click(object sender, EventArgs e)
+        void pbPayPal_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
 
-        private void PictureBox1_MouseDown(object sender, MouseEventArgs e)
+        void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
 
 
-        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
+        void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -355,61 +355,61 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("ibClose")]
-        private ImageButton _ibClose;
+        ImageButton _ibClose;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("lblDBDate")]
-        private Label _lblDBDate;
+        Label _lblDBDate;
 
 
         [AccessedThroughProperty("lblDBIssue")]
-        private Label _lblDBIssue;
+        Label _lblDBIssue;
 
 
         [AccessedThroughProperty("lblDonate")]
-        private Label _lblDonate;
+        Label _lblDonate;
 
 
         [AccessedThroughProperty("lblEmail")]
-        private Label _lblEmail;
+        Label _lblEmail;
 
 
         [AccessedThroughProperty("lblLegal")]
-        private Label _lblLegal;
+        Label _lblLegal;
 
 
         [AccessedThroughProperty("lblVersion")]
-        private Label _lblVersion;
+        Label _lblVersion;
 
 
         [AccessedThroughProperty("lblWebPage")]
-        private Label _lblWebPage;
+        Label _lblWebPage;
 
 
         [AccessedThroughProperty("pbBackground")]
-        private PictureBox _pbBackground;
+        PictureBox _pbBackground;
 
 
         [AccessedThroughProperty("tTip")]
-        private ToolTip _tTip;
+        ToolTip _tTip;
 
 
-        private Point mouse_offset;
+        Point mouse_offset;
     }
 }

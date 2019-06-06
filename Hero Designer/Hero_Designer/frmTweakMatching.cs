@@ -327,7 +327,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void btnAdd_Click(object sender, EventArgs e)
         {
             int num = -1;
             int num2 = MidsContext.Config.CompOverride.Length - 1;
@@ -362,7 +362,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnDel_Click(object sender, EventArgs e)
+        void btnDel_Click(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
             {
@@ -397,13 +397,13 @@ namespace Hero_Designer
         }
 
 
-        private void Button1_Click(object sender, EventArgs e)
+        void Button1_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
 
 
-        private void Button2_Click(object sender, EventArgs e)
+        void Button2_Click(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
             {
@@ -415,7 +415,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
+        void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
             {
@@ -424,7 +424,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPower_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPower_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cbPower.SelectedIndex >= 0)
             {
@@ -434,7 +434,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
             {
@@ -443,7 +443,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbType1_SelectedIndexChanged(object sender, EventArgs e)
+        void cbType1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
             {
@@ -452,7 +452,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmTweakMatching_Load(object sender, EventArgs e)
+        void frmTweakMatching_Load(object sender, EventArgs e)
         {
             this.list_AT();
             this.list_Type();
@@ -592,7 +592,7 @@ namespace Hero_Designer
         }
 
 
-        private void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
+        void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
             {
@@ -602,59 +602,59 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnAdd")]
-        private Button _btnAdd;
+        Button _btnAdd;
 
 
         [AccessedThroughProperty("btnDel")]
-        private Button _btnDel;
+        Button _btnDel;
 
 
         [AccessedThroughProperty("Button1")]
-        private Button _Button1;
+        Button _Button1;
 
 
         [AccessedThroughProperty("Button2")]
-        private Button _Button2;
+        Button _Button2;
 
 
         [AccessedThroughProperty("cbAT1")]
-        private ComboBox _cbAT1;
+        ComboBox _cbAT1;
 
 
         [AccessedThroughProperty("cbPower")]
-        private ComboBox _cbPower;
+        ComboBox _cbPower;
 
 
         [AccessedThroughProperty("cbSet1")]
-        private ComboBox _cbSet1;
+        ComboBox _cbSet1;
 
 
         [AccessedThroughProperty("cbType1")]
-        private ComboBox _cbType1;
+        ComboBox _cbType1;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("lstTweaks")]
-        private ListBox _lstTweaks;
+        ListBox _lstTweaks;
 
 
         [AccessedThroughProperty("txtAddActual")]
-        private TextBox _txtAddActual;
+        TextBox _txtAddActual;
 
 
         [AccessedThroughProperty("txtAddOvr")]
-        private TextBox _txtAddOvr;
+        TextBox _txtAddOvr;
 
 
         [AccessedThroughProperty("txtOvr")]
-        private TextBox _txtOvr;
+        TextBox _txtOvr;
 
 
         protected bool Loaded;

@@ -15,7 +15,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             this.lbList = new global::System.Windows.Forms.ListBox();
             this.btnOK = new global::System.Windows.Forms.Button();
@@ -64,6 +64,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

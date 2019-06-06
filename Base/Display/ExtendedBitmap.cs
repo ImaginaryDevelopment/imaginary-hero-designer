@@ -58,7 +58,7 @@ namespace Base.Display
 
 
     
-        private bool CanInitialise
+        bool CanInitialise
         {
             get
             {
@@ -116,7 +116,7 @@ namespace Base.Display
 
     
     
-        private Region Clip
+        Region Clip
         {
             get
             {
@@ -218,7 +218,7 @@ namespace Base.Display
         }
 
 
-        private bool Initialise()
+        bool Initialise()
         {
             bool flag;
             if (!this.CanInitialise)
@@ -248,7 +248,7 @@ namespace Base.Display
         }
 
 
-        private void Initialise(string fileName)
+        void Initialise(string fileName)
         {
             if (this._surface != null)
             {
@@ -279,7 +279,7 @@ namespace Base.Display
         }
 
 
-        private ExtendedBitmap()
+        ExtendedBitmap()
         {
             this.Cache = new ExtendedBitmap.PropertyCache();
             this._isNew = true;
@@ -314,22 +314,22 @@ namespace Base.Display
         }
 
 
-        private bool _isDisposed;
+        bool _isDisposed;
 
 
-        private Bitmap _bits;
+        Bitmap _bits;
 
 
-        private Graphics _surface;
+        Graphics _surface;
 
 
         protected ExtendedBitmap.PropertyCache Cache;
 
 
-        private bool _isNew;
+        bool _isNew;
 
 
-        private bool _isInitialised;
+        bool _isInitialised;
 
 
         protected class PropertyCache
@@ -355,7 +355,7 @@ namespace Base.Display
             }
 
 
-            private static Rectangle RectConvert(RectangleF iRect)
+            static Rectangle RectConvert(RectangleF iRect)
             {
                 int x;
                 if (iRect.X > 2.14748365E+09f)
@@ -416,7 +416,7 @@ namespace Base.Display
             public Size Size;
 
 
-            private Point _location;
+            Point _location;
 
 
             public Rectangle Bounds;

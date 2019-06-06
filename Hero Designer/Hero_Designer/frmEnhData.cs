@@ -1503,13 +1503,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void btnAdd_Click(object sender, EventArgs e)
         {
             this.EffectList_Add();
         }
 
 
-        private void btnAddFX_Click(object sender, EventArgs e)
+        void btnAddFX_Click(object sender, EventArgs e)
         {
             IEffect iFX = new Effect();
             frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
@@ -1533,7 +1533,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAutoFill_Click(object sender, EventArgs e)
+        void btnAutoFill_Click(object sender, EventArgs e)
         {
             Enums.eEnhance id = Enums.eEnhance.None;
             Enums.eEnhanceShort eEnhanceShort = Enums.eEnhanceShort.None;
@@ -1634,14 +1634,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
 
 
-        private void btnDown_Click(object sender, EventArgs e)
+        void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndices.Count > 0)
             {
@@ -1661,13 +1661,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        void btnEdit_Click(object sender, EventArgs e)
         {
             this.EditClick();
         }
 
 
-        private void btnEditPowerData_Click(object sender, EventArgs e)
+        void btnEditPowerData_Click(object sender, EventArgs e)
         {
             IEnhancement enh = this.myEnh;
             IPower power = enh.Power;
@@ -1686,7 +1686,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnImage_Click(object sender, EventArgs e)
+        void btnImage_Click(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1710,7 +1710,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnNoImage_Click(object sender, EventArgs e)
+        void btnNoImage_Click(object sender, EventArgs e)
         {
             this.myEnh.Image = "";
             this.SetTypeIcons();
@@ -1718,14 +1718,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
 
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        void btnRemove_Click(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndex > -1)
             {
@@ -1761,7 +1761,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnUp_Click(object sender, EventArgs e)
+        void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndices.Count > 0)
             {
@@ -1781,7 +1781,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbMutEx_SelectedIndexChanged(object sender, EventArgs e)
+        void cbMutEx_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1790,7 +1790,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbRecipe_SelectedIndexChanged(object sender, EventArgs e)
+        void cbRecipe_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cbRecipe.SelectedIndex > 0)
             {
@@ -1805,7 +1805,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSched_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSched_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndex > -1)
             {
@@ -1818,7 +1818,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSet_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1837,13 +1837,13 @@ namespace Hero_Designer
         }
 
 
-        private void cbSubType_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSubType_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.myEnh.SubTypeID = (Enums.eSubtype)this.cbSubType.SelectedIndex;
         }
 
 
-        private void chkSuperior_CheckedChanged(object sender, EventArgs e)
+        void chkSuperior_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1860,7 +1860,7 @@ namespace Hero_Designer
         }
 
 
-        private void chkUnique_CheckedChanged(object sender, EventArgs e)
+        void chkUnique_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2324,7 +2324,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmEnhData_Load(object sender, EventArgs e)
+        void frmEnhData_Load(object sender, EventArgs e)
         {
             this.FillSetList();
             this.FillEffectList();
@@ -2371,13 +2371,13 @@ namespace Hero_Designer
         }
 
 
-        private void lstAvailable_DoubleClick(object sender, EventArgs e)
+        void lstAvailable_DoubleClick(object sender, EventArgs e)
         {
             this.EffectList_Add();
         }
 
 
-        private void lstSelected_SelectedIndexChanged(object sender, EventArgs e)
+        void lstSelected_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.DisplayEnhanceData();
             this.tTip.SetToolTip(this.lstSelected, Conversions.ToString(this.lstSelected.SelectedItem));
@@ -2407,7 +2407,7 @@ namespace Hero_Designer
         }
 
 
-        private void PickerExpand()
+        void PickerExpand()
         {
             if (this.gbClass.Width == 84)
             {
@@ -2424,7 +2424,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClass_MouseDown(object sender, MouseEventArgs e)
+        void pnlClass_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -2481,7 +2481,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClass_MouseMove(object sender, MouseEventArgs e)
+        void pnlClass_MouseMove(object sender, MouseEventArgs e)
         {
             int num = -1;
             int num2 = -1;
@@ -2524,7 +2524,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClass_Paint(object sender, PaintEventArgs e)
+        void pnlClass_Paint(object sender, PaintEventArgs e)
         {
             if (this.bxClass != null)
             {
@@ -2533,7 +2533,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClassList_MouseDown(object sender, MouseEventArgs e)
+        void pnlClassList_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -2588,7 +2588,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClassList_MouseMove(object sender, MouseEventArgs e)
+        void pnlClassList_MouseMove(object sender, MouseEventArgs e)
         {
             int num = -1;
             int num2 = -1;
@@ -2623,7 +2623,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlClassList_Paint(object sender, PaintEventArgs e)
+        void pnlClassList_Paint(object sender, PaintEventArgs e)
         {
             if (this.bxClassList != null)
             {
@@ -2632,7 +2632,7 @@ namespace Hero_Designer
         }
 
 
-        private void rbBuffDebuff_CheckedChanged(object sender, EventArgs e)
+        void rbBuffDebuff_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.lstSelected.SelectedIndex > -1)
             {
@@ -2656,7 +2656,7 @@ namespace Hero_Designer
         }
 
 
-        private void rbMod_CheckedChanged(object sender, EventArgs e)
+        void rbMod_CheckedChanged(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndex > -1)
             {
@@ -2751,13 +2751,13 @@ namespace Hero_Designer
         }
 
 
-        private void StaticIndex_TextChanged(object sender, EventArgs e)
+        void StaticIndex_TextChanged(object sender, EventArgs e)
         {
             this.myEnh.StaticIndex = Conversions.ToInteger(this.StaticIndex.Text);
         }
 
 
-        private void txtDesc_TextChanged(object sender, EventArgs e)
+        void txtDesc_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2766,7 +2766,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtInternal_TextChanged(object sender, EventArgs e)
+        void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2775,7 +2775,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtModOther_TextChanged(object sender, EventArgs e)
+        void txtModOther_TextChanged(object sender, EventArgs e)
         {
             if (this.lstSelected.SelectedIndex > -1)
             {
@@ -2788,7 +2788,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameFull_TextChanged(object sender, EventArgs e)
+        void txtNameFull_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2798,7 +2798,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameShort_TextChanged(object sender, EventArgs e)
+        void txtNameShort_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2807,7 +2807,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtProb_Leave(object sender, EventArgs e)
+        void txtProb_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2816,7 +2816,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtProb_TextChanged(object sender, EventArgs e)
+        void txtProb_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2834,7 +2834,7 @@ namespace Hero_Designer
         }
 
 
-        private void type_CheckedChanged(object sender, EventArgs e)
+        void type_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2881,14 +2881,14 @@ namespace Hero_Designer
         }
 
 
-        private void udMaxLevel_Leave(object sender, EventArgs e)
+        void udMaxLevel_Leave(object sender, EventArgs e)
         {
             this.SetMaxLevel((int)Math.Round(Conversion.Val(this.udMaxLevel.Text)));
             this.myEnh.LevelMax = Convert.ToInt32(decimal.Subtract(this.udMaxLevel.Value, 1m));
         }
 
 
-        private void udMaxLevel_ValueChanged(object sender, EventArgs e)
+        void udMaxLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2898,14 +2898,14 @@ namespace Hero_Designer
         }
 
 
-        private void udMinLevel_Leave(object sender, EventArgs e)
+        void udMinLevel_Leave(object sender, EventArgs e)
         {
             this.SetMinLevel((int)Math.Round(Conversion.Val(this.udMinLevel.Text)));
             this.myEnh.LevelMin = Convert.ToInt32(decimal.Subtract(this.udMinLevel.Value, 1m));
         }
 
 
-        private void udMinLevel_ValueChanged(object sender, EventArgs e)
+        void udMinLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -2946,267 +2946,267 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnAdd")]
-        private Button _btnAdd;
+        Button _btnAdd;
 
 
         [AccessedThroughProperty("btnAddFX")]
-        private Button _btnAddFX;
+        Button _btnAddFX;
 
 
         [AccessedThroughProperty("btnAutoFill")]
-        private Button _btnAutoFill;
+        Button _btnAutoFill;
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnDown")]
-        private Button _btnDown;
+        Button _btnDown;
 
 
         [AccessedThroughProperty("btnEdit")]
-        private Button _btnEdit;
+        Button _btnEdit;
 
 
         [AccessedThroughProperty("btnEditPowerData")]
-        private Button _btnEditPowerData;
+        Button _btnEditPowerData;
 
 
         [AccessedThroughProperty("btnImage")]
-        private Button _btnImage;
+        Button _btnImage;
 
 
         [AccessedThroughProperty("btnNoImage")]
-        private Button _btnNoImage;
+        Button _btnNoImage;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("btnRemove")]
-        private Button _btnRemove;
+        Button _btnRemove;
 
 
         [AccessedThroughProperty("btnUp")]
-        private Button _btnUp;
+        Button _btnUp;
 
 
         [AccessedThroughProperty("cbMutEx")]
-        private ComboBox _cbMutEx;
+        ComboBox _cbMutEx;
 
 
         [AccessedThroughProperty("cbRecipe")]
-        private ComboBox _cbRecipe;
+        ComboBox _cbRecipe;
 
 
         [AccessedThroughProperty("cbSched")]
-        private ComboBox _cbSched;
+        ComboBox _cbSched;
 
 
         [AccessedThroughProperty("cbSet")]
-        private ComboBox _cbSet;
+        ComboBox _cbSet;
 
 
         [AccessedThroughProperty("cbSubType")]
-        private ComboBox _cbSubType;
+        ComboBox _cbSubType;
 
 
         [AccessedThroughProperty("chkSuperior")]
-        private CheckBox _chkSuperior;
+        CheckBox _chkSuperior;
 
 
         [AccessedThroughProperty("chkUnique")]
-        private CheckBox _chkUnique;
+        CheckBox _chkUnique;
 
 
         [AccessedThroughProperty("gbBasic")]
-        private GroupBox _gbBasic;
+        GroupBox _gbBasic;
 
 
         [AccessedThroughProperty("gbClass")]
-        private GroupBox _gbClass;
+        GroupBox _gbClass;
 
 
         [AccessedThroughProperty("gbEffects")]
-        private GroupBox _gbEffects;
+        GroupBox _gbEffects;
 
 
         [AccessedThroughProperty("gbMod")]
-        private GroupBox _gbMod;
+        GroupBox _gbMod;
 
 
         [AccessedThroughProperty("gbSet")]
-        private GroupBox _gbSet;
+        GroupBox _gbSet;
 
 
         [AccessedThroughProperty("gbType")]
-        private GroupBox _gbType;
+        GroupBox _gbType;
 
 
         [AccessedThroughProperty("ImagePicker")]
-        private OpenFileDialog _ImagePicker;
+        OpenFileDialog _ImagePicker;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label10")]
-        private Label _Label10;
+        Label _Label10;
 
 
         [AccessedThroughProperty("Label11")]
-        private Label _Label11;
+        Label _Label11;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label8")]
-        private Label _Label8;
+        Label _Label8;
 
 
         [AccessedThroughProperty("Label9")]
-        private Label _Label9;
+        Label _Label9;
 
 
         [AccessedThroughProperty("lblClass")]
-        private Label _lblClass;
+        Label _lblClass;
 
 
         [AccessedThroughProperty("lblSched")]
-        private Label _lblSched;
+        Label _lblSched;
 
 
         [AccessedThroughProperty("lstAvailable")]
-        private ListBox _lstAvailable;
+        ListBox _lstAvailable;
 
 
         [AccessedThroughProperty("lstSelected")]
-        private ListBox _lstSelected;
+        ListBox _lstSelected;
 
 
         [AccessedThroughProperty("pbSet")]
-        private PictureBox _pbSet;
+        PictureBox _pbSet;
 
 
         [AccessedThroughProperty("pnlClass")]
-        private Panel _pnlClass;
+        Panel _pnlClass;
 
 
         [AccessedThroughProperty("pnlClassList")]
-        private Panel _pnlClassList;
+        Panel _pnlClassList;
 
 
         [AccessedThroughProperty("rbBoth")]
-        private RadioButton _rbBoth;
+        RadioButton _rbBoth;
 
 
         [AccessedThroughProperty("rbBuff")]
-        private RadioButton _rbBuff;
+        RadioButton _rbBuff;
 
 
         [AccessedThroughProperty("rbDebuff")]
-        private RadioButton _rbDebuff;
+        RadioButton _rbDebuff;
 
 
         [AccessedThroughProperty("rbMod1")]
-        private RadioButton _rbMod1;
+        RadioButton _rbMod1;
 
 
         [AccessedThroughProperty("rbMod2")]
-        private RadioButton _rbMod2;
+        RadioButton _rbMod2;
 
 
         [AccessedThroughProperty("rbMod3")]
-        private RadioButton _rbMod3;
+        RadioButton _rbMod3;
 
 
         [AccessedThroughProperty("rbMod4")]
-        private RadioButton _rbMod4;
+        RadioButton _rbMod4;
 
 
         [AccessedThroughProperty("rbModOther")]
-        private RadioButton _rbModOther;
+        RadioButton _rbModOther;
 
 
         [AccessedThroughProperty("StaticIndex")]
-        private TextBox _StaticIndex;
+        TextBox _StaticIndex;
 
 
         [AccessedThroughProperty("tTip")]
-        private ToolTip _tTip;
+        ToolTip _tTip;
 
 
         [AccessedThroughProperty("txtDesc")]
-        private TextBox _txtDesc;
+        TextBox _txtDesc;
 
 
         [AccessedThroughProperty("txtInternal")]
-        private TextBox _txtInternal;
+        TextBox _txtInternal;
 
 
         [AccessedThroughProperty("txtModOther")]
-        private TextBox _txtModOther;
+        TextBox _txtModOther;
 
 
         [AccessedThroughProperty("txtNameFull")]
-        private TextBox _txtNameFull;
+        TextBox _txtNameFull;
 
 
         [AccessedThroughProperty("txtNameShort")]
-        private TextBox _txtNameShort;
+        TextBox _txtNameShort;
 
 
         [AccessedThroughProperty("txtProb")]
-        private TextBox _txtProb;
+        TextBox _txtProb;
 
 
         [AccessedThroughProperty("typeHO")]
-        private RadioButton _typeHO;
+        RadioButton _typeHO;
 
 
         [AccessedThroughProperty("typeIO")]
-        private RadioButton _typeIO;
+        RadioButton _typeIO;
 
 
         [AccessedThroughProperty("typeRegular")]
-        private RadioButton _typeRegular;
+        RadioButton _typeRegular;
 
 
         [AccessedThroughProperty("typeSet")]
-        private RadioButton _typeSet;
+        RadioButton _typeSet;
 
 
         [AccessedThroughProperty("udMaxLevel")]
-        private NumericUpDown _udMaxLevel;
+        NumericUpDown _udMaxLevel;
 
 
         [AccessedThroughProperty("udMinLevel")]
-        private NumericUpDown _udMinLevel;
+        NumericUpDown _udMinLevel;
 
 
         protected ExtendedBitmap bxClass;

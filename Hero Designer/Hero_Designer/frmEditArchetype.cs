@@ -939,14 +939,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             if (this.CheckClassName())
             {
@@ -1068,7 +1068,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
+        void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1077,7 +1077,7 @@ namespace Hero_Designer
         }
 
 
-        private bool CheckClassName()
+        bool CheckClassName()
         {
             if (!this.ONDuplicate)
             {
@@ -1095,7 +1095,7 @@ namespace Hero_Designer
         }
 
 
-        private void chkPlayable_CheckedChanged(object sender, EventArgs e)
+        void chkPlayable_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1104,7 +1104,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayData()
+        void DisplayData()
         {
             this.Text = string.Concat(new string[]
             {
@@ -1190,14 +1190,14 @@ namespace Hero_Designer
         }
 
 
-        private void frmEditArchetype_Load(object sender, EventArgs e)
+        void frmEditArchetype_Load(object sender, EventArgs e)
         {
             this.DisplayData();
             this.Loading = false;
         }
 
 
-        private void txtClassName_TextChanged(object sender, EventArgs e)
+        void txtClassName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1206,7 +1206,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtDescLong_TextChanged(object sender, EventArgs e)
+        void txtDescLong_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1215,7 +1215,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtDescShort_TextChanged(object sender, EventArgs e)
+        void txtDescShort_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1224,7 +1224,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1234,211 +1234,211 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("cbClassType")]
-        private ComboBox _cbClassType;
+        ComboBox _cbClassType;
 
 
         [AccessedThroughProperty("cbPriGroup")]
-        private ComboBox _cbPriGroup;
+        ComboBox _cbPriGroup;
 
 
         [AccessedThroughProperty("cbSecGroup")]
-        private ComboBox _cbSecGroup;
+        ComboBox _cbSecGroup;
 
 
         [AccessedThroughProperty("chkPlayable")]
-        private CheckBox _chkPlayable;
+        CheckBox _chkPlayable;
 
 
         [AccessedThroughProperty("clbOrigin")]
-        private CheckedListBox _clbOrigin;
+        CheckedListBox _clbOrigin;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("GroupBox3")]
-        private GroupBox _GroupBox3;
+        GroupBox _GroupBox3;
 
 
         [AccessedThroughProperty("GroupBox4")]
-        private GroupBox _GroupBox4;
+        GroupBox _GroupBox4;
 
 
         [AccessedThroughProperty("GroupBox5")]
-        private GroupBox _GroupBox5;
+        GroupBox _GroupBox5;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label10")]
-        private Label _Label10;
+        Label _Label10;
 
 
         [AccessedThroughProperty("Label11")]
-        private Label _Label11;
+        Label _Label11;
 
 
         [AccessedThroughProperty("Label12")]
-        private Label _Label12;
+        Label _Label12;
 
 
         [AccessedThroughProperty("Label13")]
-        private Label _Label13;
+        Label _Label13;
 
 
         [AccessedThroughProperty("Label14")]
-        private Label _Label14;
+        Label _Label14;
 
 
         [AccessedThroughProperty("Label15")]
-        private Label _Label15;
+        Label _Label15;
 
 
         [AccessedThroughProperty("Label16")]
-        private Label _Label16;
+        Label _Label16;
 
 
         [AccessedThroughProperty("Label17")]
-        private Label _Label17;
+        Label _Label17;
 
 
         [AccessedThroughProperty("Label18")]
-        private Label _Label18;
+        Label _Label18;
 
 
         [AccessedThroughProperty("Label19")]
-        private Label _Label19;
+        Label _Label19;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label20")]
-        private Label _Label20;
+        Label _Label20;
 
 
         [AccessedThroughProperty("Label21")]
-        private Label _Label21;
+        Label _Label21;
 
 
         [AccessedThroughProperty("Label22")]
-        private Label _Label22;
+        Label _Label22;
 
 
         [AccessedThroughProperty("Label23")]
-        private Label _Label23;
+        Label _Label23;
 
 
         [AccessedThroughProperty("Label24")]
-        private Label _Label24;
+        Label _Label24;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label8")]
-        private Label _Label8;
+        Label _Label8;
 
 
         [AccessedThroughProperty("Label9")]
-        private Label _Label9;
+        Label _Label9;
 
 
         [AccessedThroughProperty("txtBaseRec")]
-        private TextBox _txtBaseRec;
+        TextBox _txtBaseRec;
 
 
         [AccessedThroughProperty("txtBaseRegen")]
-        private TextBox _txtBaseRegen;
+        TextBox _txtBaseRegen;
 
 
         [AccessedThroughProperty("txtClassName")]
-        private TextBox _txtClassName;
+        TextBox _txtClassName;
 
 
         [AccessedThroughProperty("txtDamCap")]
-        private TextBox _txtDamCap;
+        TextBox _txtDamCap;
 
 
         [AccessedThroughProperty("txtDescLong")]
-        private TextBox _txtDescLong;
+        TextBox _txtDescLong;
 
 
         [AccessedThroughProperty("txtDescShort")]
-        private TextBox _txtDescShort;
+        TextBox _txtDescShort;
 
 
         [AccessedThroughProperty("txtHP")]
-        private TextBox _txtHP;
+        TextBox _txtHP;
 
 
         [AccessedThroughProperty("txtHPCap")]
-        private TextBox _txtHPCap;
+        TextBox _txtHPCap;
 
 
         [AccessedThroughProperty("txtName")]
-        private TextBox _txtName;
+        TextBox _txtName;
 
 
         [AccessedThroughProperty("txtPerceptionCap")]
-        private TextBox _txtPerceptionCap;
+        TextBox _txtPerceptionCap;
 
 
         [AccessedThroughProperty("txtRecCap")]
-        private TextBox _txtRecCap;
+        TextBox _txtRecCap;
 
 
         [AccessedThroughProperty("txtRechargeCap")]
-        private TextBox _txtRechargeCap;
+        TextBox _txtRechargeCap;
 
 
         [AccessedThroughProperty("txtRegCap")]
-        private TextBox _txtRegCap;
+        TextBox _txtRegCap;
 
 
         [AccessedThroughProperty("txtResCap")]
-        private TextBox _txtResCap;
+        TextBox _txtResCap;
 
 
         [AccessedThroughProperty("udColumn")]
-        private NumericUpDown _udColumn;
+        NumericUpDown _udColumn;
 
 
         [AccessedThroughProperty("udThreat")]
-        private NumericUpDown _udThreat;
+        NumericUpDown _udThreat;
 
 
         public bool Loading;

@@ -246,7 +246,7 @@ public class EnhancementSet
     }
 
 
-    private static string GenerateShortName(string displayName)
+    static string GenerateShortName(string displayName)
     {
         string[] strArray = displayName.Split(new char[]
         {

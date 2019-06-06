@@ -1450,7 +1450,7 @@ namespace Base.Data_Classes
         }
 
 
-        private bool GreOverride(int iID1, int iID2)
+        bool GreOverride(int iID1, int iID2)
         {
             return (iID1 < 0 & iID2 > -1) || (iID2 >= 0 && (!(this.Effects[iID1].EffectType == this.Effects[iID2].EffectType & this.Effects[iID1].ETModifies == this.Effects[iID2].ETModifies & this.Effects[iID1].MezType == this.Effects[iID2].MezType) || ((double)Math.Abs(this.Effects[iID1].Mag - this.Effects[iID2].Mag) >= 0.01 && this.Effects[iID1].ToWho != this.Effects[iID2].ToWho)));
         }
@@ -2010,7 +2010,7 @@ namespace Base.Data_Classes
         }
 
 
-        private Requirement ImportRequirementString(string iReq)
+        Requirement ImportRequirementString(string iReq)
         {
             Requirement requirement;
             if (this.NeverAutoUpdateRequirements)
@@ -2640,7 +2640,7 @@ namespace Base.Data_Classes
         }
 
 
-        private int[] GetValidEnhancementsFromSets()
+        int[] GetValidEnhancementsFromSets()
         {
             List<int> intList = new List<int>();
             foreach (EnhancementSet enhancementSet in DatabaseAPI.Database.EnhancementSets)

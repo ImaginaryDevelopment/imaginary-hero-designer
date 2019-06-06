@@ -23,7 +23,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmAccolade));
             this.Panel1 = new global::System.Windows.Forms.Panel();
@@ -168,7 +168,7 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
 
 
         internal global::Hero_Designer.frmIncarnate.CustomPanel Panel2;

@@ -77,13 +77,13 @@ namespace Hero_Designer
         }
 
 
-        private void frmMiniList_FormClosed(object sender, FormClosedEventArgs e)
+        void frmMiniList_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.UnSetMiniList();
         }
 
 
-        private void frmMiniList_ResizeEnd(object sender, EventArgs e)
+        void frmMiniList_ResizeEnd(object sender, EventArgs e)
         {
             this.VScrollBar1.Height = base.ClientSize.Height;
             this.VScrollBar1.Left = base.ClientSize.Width - this.VScrollBar1.Width;
@@ -91,13 +91,13 @@ namespace Hero_Designer
         }
 
 
-        private void pInfo_MouseEnter(object sender, EventArgs e)
+        void pInfo_MouseEnter(object sender, EventArgs e)
         {
             this.VScrollBar1.Focus();
         }
 
 
-        private void pInfo_MouseWheel(object sender, MouseEventArgs e)
+        void pInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             int num = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (num < this.VScrollBar1.Minimum)
@@ -119,18 +119,18 @@ namespace Hero_Designer
         }
 
 
-        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.pInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.pInfo.lHeight - (float)base.ClientSize.Height));
         }
 
 
         [AccessedThroughProperty("pInfo")]
-        private ctlPopUp _pInfo;
+        ctlPopUp _pInfo;
 
 
         [AccessedThroughProperty("VScrollBar1")]
-        private VScrollBar _VScrollBar1;
+        VScrollBar _VScrollBar1;
 
 
         protected frmMain myParent;

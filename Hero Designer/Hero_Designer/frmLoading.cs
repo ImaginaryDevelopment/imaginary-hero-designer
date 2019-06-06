@@ -93,7 +93,7 @@ namespace Hero_Designer
         }
 
 
-        private void tmrOpacity_Tick(object sender, EventArgs e)
+        void tmrOpacity_Tick(object sender, EventArgs e)
         {
             if (base.Opacity < 1.0)
             {
@@ -107,15 +107,15 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("PictureBox1")]
-        private PictureBox _PictureBox1;
+        PictureBox _PictureBox1;
 
 
         [AccessedThroughProperty("tmrOpacity")]
-        private Timer _tmrOpacity;
+        Timer _tmrOpacity;
 
 
         // (Invoke) Token: 0x06000CB8 RID: 3256

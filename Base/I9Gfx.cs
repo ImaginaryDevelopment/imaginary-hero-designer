@@ -455,7 +455,7 @@ public static class I9Gfx
     }
 
 
-    private static RectangleF GetOverlayRectF(Origin.Grade iGrade)
+    static RectangleF GetOverlayRectF(Origin.Grade iGrade)
     {
         Rectangle overlayRect = I9Gfx.GetOverlayRect(iGrade);
         return new RectangleF((float)overlayRect.X, (float)overlayRect.Y, (float)overlayRect.Width, (float)overlayRect.Height);
@@ -468,7 +468,7 @@ public static class I9Gfx
     }
 
 
-    private static RectangleF GetImageRectF(int index)
+    static RectangleF GetImageRectF(int index)
     {
         Rectangle imageRect = I9Gfx.GetImageRect(index);
         return new RectangleF((float)imageRect.X, (float)imageRect.Y, (float)imageRect.Width, (float)imageRect.Height);
@@ -478,34 +478,34 @@ public static class I9Gfx
     public const int IconLarge = 30;
 
 
-    private const int IconSmall = 16;
+    const int IconSmall = 16;
 
 
     public const string ImageExtension = ".png";
 
 
-    private const string FileOverlayClass = "Class.png";
+    const string FileOverlayClass = "Class.png";
 
 
-    private const string GfxPath = "Images\\";
+    const string GfxPath = "Images\\";
 
 
-    private const string PathClass = "Classes\\";
+    const string PathClass = "Classes\\";
 
 
-    private const string PathOverlay = "Overlay\\";
+    const string PathOverlay = "Overlay\\";
 
 
-    private const string PathEnh = "Enhancements\\";
+    const string PathEnh = "Enhancements\\";
 
 
-    private const string PathSetType = "Sets\\";
+    const string PathSetType = "Sets\\";
 
 
-    private const string PathOriginAT = "OriginAT\\";
+    const string PathOriginAT = "OriginAT\\";
 
 
-    private const string PathPowersets = "Powersets\\";
+    const string PathPowersets = "Powersets\\";
 
 
     public static int OriginIndex;

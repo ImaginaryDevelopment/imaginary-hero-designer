@@ -15,7 +15,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmDBEdit));
             this.udIssue = new global::System.Windows.Forms.NumericUpDown();
@@ -435,6 +435,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

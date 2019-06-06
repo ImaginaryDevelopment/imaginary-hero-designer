@@ -302,13 +302,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void btnLayout_Click(object sender, EventArgs e)
+        void btnLayout_Click(object sender, EventArgs e)
         {
             this.dlgSetup.Document = this._printer.Document;
             this.dlgSetup.ShowDialog();
@@ -316,7 +316,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        void btnPrint_Click(object sender, EventArgs e)
         {
             MidsContext.Config.LastPrinter = this._printer.Document.PrinterSettings.PrinterName;
             MidsContext.Config.PrintHistory = this.chkPrintHistory.Checked;
@@ -346,7 +346,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnPrinter_Click(object sender, EventArgs e)
+        void btnPrinter_Click(object sender, EventArgs e)
         {
             new PrintDialog
             {
@@ -356,13 +356,13 @@ namespace Hero_Designer
         }
 
 
-        private void chkPrintHistory_CheckedChanged(object sender, EventArgs e)
+        void chkPrintHistory_CheckedChanged(object sender, EventArgs e)
         {
             this.chkPrintHistoryEnh.Enabled = this.chkPrintHistory.Checked;
         }
 
 
-        private void frmPrint_Load(object sender, EventArgs e)
+        void frmPrint_Load(object sender, EventArgs e)
         {
             if (PrinterSettings.InstalledPrinters.Count < 1)
             {
@@ -414,68 +414,68 @@ namespace Hero_Designer
         }
 
 
-        private void rbProfileShort_CheckedChanged(object sender, EventArgs e)
+        void rbProfileShort_CheckedChanged(object sender, EventArgs e)
         {
             this.chkProfileEnh.Enabled = this.rbProfileShort.Checked;
         }
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnLayout")]
-        private Button _btnLayout;
+        Button _btnLayout;
 
 
         [AccessedThroughProperty("btnPrint")]
-        private Button _btnPrint;
+        Button _btnPrint;
 
 
         [AccessedThroughProperty("btnPrinter")]
-        private Button _btnPrinter;
+        Button _btnPrinter;
 
 
         [AccessedThroughProperty("chkPrintHistory")]
-        private CheckBox _chkPrintHistory;
+        CheckBox _chkPrintHistory;
 
 
         [AccessedThroughProperty("chkPrintHistoryEnh")]
-        private CheckBox _chkPrintHistoryEnh;
+        CheckBox _chkPrintHistoryEnh;
 
 
         [AccessedThroughProperty("chkProfileEnh")]
-        private CheckBox _chkProfileEnh;
+        CheckBox _chkProfileEnh;
 
 
         [AccessedThroughProperty("dlgSetup")]
-        private PageSetupDialog _dlgSetup;
+        PageSetupDialog _dlgSetup;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("lblPrinter")]
-        private Label _lblPrinter;
+        Label _lblPrinter;
 
 
-        private Print _printer;
+        Print _printer;
 
 
         [AccessedThroughProperty("rbProfileLong")]
-        private RadioButton _rbProfileLong;
+        RadioButton _rbProfileLong;
 
 
         [AccessedThroughProperty("rbProfileNone")]
-        private RadioButton _rbProfileNone;
+        RadioButton _rbProfileNone;
 
 
         [AccessedThroughProperty("rbProfileShort")]
-        private RadioButton _rbProfileShort;
+        RadioButton _rbProfileShort;
     }
 }

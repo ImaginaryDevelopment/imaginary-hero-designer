@@ -677,65 +677,65 @@ namespace Hero_Designer
         }
 
 
-        private void btnClose_Click(object sender, EventArgs e)
+        void btnClose_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
 
 
-        private void btnCSV_Click(object sender, EventArgs e)
+        void btnCSV_Click(object sender, EventArgs e)
         {
             new frmCSV().ShowDialog();
         }
 
 
-        private void btnDate_Click(object sender, EventArgs e)
+        void btnDate_Click(object sender, EventArgs e)
         {
             DatabaseAPI.Database.Date = DateTime.Now;
             this.DisplayInfo();
         }
 
 
-        private void btnEditEnh_Click(object sender, EventArgs e)
+        void btnEditEnh_Click(object sender, EventArgs e)
         {
             new frmEnhEdit().ShowDialog();
             this.DisplayInfo();
         }
 
 
-        private void btnEditEntity_Click(object sender, EventArgs e)
+        void btnEditEntity_Click(object sender, EventArgs e)
         {
             new frmEntityListing().ShowDialog();
         }
 
 
-        private void btnEditIOSet_Click(object sender, EventArgs e)
+        void btnEditIOSet_Click(object sender, EventArgs e)
         {
             new frmSetListing().ShowDialog();
             this.DisplayInfo();
         }
 
 
-        private void btnFileReport_Click(object sender, EventArgs e)
+        void btnFileReport_Click(object sender, EventArgs e)
         {
             Interaction.MsgBox(Files.FileData, MsgBoxStyle.Information, "File Loading Report");
         }
 
 
-        private void btnPSBrowse_Click(object sender, EventArgs e)
+        void btnPSBrowse_Click(object sender, EventArgs e)
         {
             new frmPowerBrowser().ShowDialog();
             this.DisplayInfo();
         }
 
 
-        private void btnRecipe_Click(object sender, EventArgs e)
+        void btnRecipe_Click(object sender, EventArgs e)
         {
             new frmRecipeEdit().ShowDialog();
         }
 
 
-        private void btnSalvage_Click(object sender, EventArgs e)
+        void btnSalvage_Click(object sender, EventArgs e)
         {
             new frmSalvageEdit().ShowDialog();
         }
@@ -773,7 +773,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmDBEdit_Load(object sender, EventArgs e)
+        void frmDBEdit_Load(object sender, EventArgs e)
         {
             this.btnDate.Visible = MidsContext.Config.MasterMode;
             this.btnCSV.Visible = MidsContext.Config.MasterMode;
@@ -784,7 +784,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtDBVer_TextChanged(object sender, EventArgs e)
+        void txtDBVer_TextChanged(object sender, EventArgs e)
         {
             float num = (float)Conversion.Val(this.txtDBVer.Text);
             if (num < 1f)
@@ -795,7 +795,7 @@ namespace Hero_Designer
         }
 
 
-        private void udIssue_KeyPress(object sender, KeyPressEventArgs e)
+        void udIssue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -804,7 +804,7 @@ namespace Hero_Designer
         }
 
 
-        private void udIssue_ValueChanged(object sender, EventArgs e)
+        void udIssue_ValueChanged(object sender, EventArgs e)
         {
             if (!(!MainModule.MidsController.IsAppInitialized | !this.Initialized))
             {
@@ -814,141 +814,141 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnClose")]
-        private Button _btnClose;
+        Button _btnClose;
 
 
         [AccessedThroughProperty("btnCSV")]
-        private Button _btnCSV;
+        Button _btnCSV;
 
 
         [AccessedThroughProperty("btnDate")]
-        private Button _btnDate;
+        Button _btnDate;
 
 
         [AccessedThroughProperty("btnEditEnh")]
-        private Button _btnEditEnh;
+        Button _btnEditEnh;
 
 
         [AccessedThroughProperty("btnEditEntity")]
-        private Button _btnEditEntity;
+        Button _btnEditEntity;
 
 
         [AccessedThroughProperty("btnEditIOSet")]
-        private Button _btnEditIOSet;
+        Button _btnEditIOSet;
 
 
         [AccessedThroughProperty("btnFileReport")]
-        private Button _btnFileReport;
+        Button _btnFileReport;
 
 
         [AccessedThroughProperty("btnPSBrowse")]
-        private Button _btnPSBrowse;
+        Button _btnPSBrowse;
 
 
         [AccessedThroughProperty("btnRecipe")]
-        private Button _btnRecipe;
+        Button _btnRecipe;
 
 
         [AccessedThroughProperty("btnSalvage")]
-        private Button _btnSalvage;
+        Button _btnSalvage;
 
 
         [AccessedThroughProperty("exportIndexes")]
-        private Button _exportIndexes;
+        Button _exportIndexes;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label11")]
-        private Label _Label11;
+        Label _Label11;
 
 
         [AccessedThroughProperty("Label13")]
-        private Label _Label13;
+        Label _Label13;
 
 
         [AccessedThroughProperty("Label15")]
-        private Label _Label15;
+        Label _Label15;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label9")]
-        private Label _Label9;
+        Label _Label9;
 
 
         [AccessedThroughProperty("lblCountAT")]
-        private Label _lblCountAT;
+        Label _lblCountAT;
 
 
         [AccessedThroughProperty("lblCountEnh")]
-        private Label _lblCountEnh;
+        Label _lblCountEnh;
 
 
         [AccessedThroughProperty("lblCountFX")]
-        private Label _lblCountFX;
+        Label _lblCountFX;
 
 
         [AccessedThroughProperty("lblCountIOSet")]
-        private Label _lblCountIOSet;
+        Label _lblCountIOSet;
 
 
         [AccessedThroughProperty("lblCountPS")]
-        private Label _lblCountPS;
+        Label _lblCountPS;
 
 
         [AccessedThroughProperty("lblCountPwr")]
-        private Label _lblCountPwr;
+        Label _lblCountPwr;
 
 
         [AccessedThroughProperty("lblCountRecipe")]
-        private Label _lblCountRecipe;
+        Label _lblCountRecipe;
 
 
         [AccessedThroughProperty("lblCountSalvage")]
-        private Label _lblCountSalvage;
+        Label _lblCountSalvage;
 
 
         [AccessedThroughProperty("lblDate")]
-        private Label _lblDate;
+        Label _lblDate;
 
 
         [AccessedThroughProperty("txtDBVer")]
-        private TextBox _txtDBVer;
+        TextBox _txtDBVer;
 
 
         [AccessedThroughProperty("udIssue")]
-        private NumericUpDown _udIssue;
+        NumericUpDown _udIssue;
 
 
-        private bool Initialized;
+        bool Initialized;
     }
 }

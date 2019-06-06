@@ -34,7 +34,7 @@ public class ConfigData
     }
 
 
-    private ConfigData(string iFilename = "")
+    ConfigData(string iFilename = "")
     {
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
@@ -80,7 +80,7 @@ public class ConfigData
     }
 
 
-    private void Load(string iFilename)
+    void Load(string iFilename)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
@@ -324,7 +324,7 @@ public class ConfigData
     }
 
 
-    private void Save(string iFilename, float version)
+    void Save(string iFilename, float version)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
         {
@@ -464,7 +464,7 @@ public class ConfigData
     }
 
 
-    private static Color ReadRGB(BinaryReader reader)
+    static Color ReadRGB(BinaryReader reader)
     {
         byte red = reader.ReadByte();
         byte green = reader.ReadByte();
@@ -473,7 +473,7 @@ public class ConfigData
     }
 
 
-    private static void WriteRGB(BinaryWriter writer, Color iColor)
+    static void WriteRGB(BinaryWriter writer, Color iColor)
     {
         writer.Write(iColor.R);
         writer.Write(iColor.G);
@@ -481,7 +481,7 @@ public class ConfigData
     }
 
 
-    private void RelocateSaveFolder(bool manual)
+    void RelocateSaveFolder(bool manual)
     {
         if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked || manual))
         {
@@ -531,7 +531,7 @@ public class ConfigData
     }
 
 
-    private void LoadOverrides()
+    void LoadOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
         {
@@ -556,7 +556,7 @@ public class ConfigData
     }
 
 
-    private void SaveOverrides()
+    void SaveOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
         {
@@ -578,7 +578,7 @@ public class ConfigData
     public const string UpdatePathDefault = "http://repo.cohtitan.com/mids_updates/";
 
 
-    private static ConfigData _current;
+    static ConfigData _current;
 
 
     public float BaseAcc = 0.75f;
@@ -626,7 +626,7 @@ public class ConfigData
     public bool DataDamageGraphPercentageOnly;
 
 
-    private bool _hideOriginEnhancements;
+    bool _hideOriginEnhancements;
 
 
     public bool ShowVillainColours = true;
@@ -677,7 +677,7 @@ public class ConfigData
     public bool PrintInColour;
 
 
-    private int _printScheme;
+    int _printScheme;
 
 
     public ConfigData.PrintOptionProfile PrintProfile = ConfigData.PrintOptionProfile.SinglePage;

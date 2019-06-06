@@ -269,13 +269,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnClose_Click()
+        void btnClose_Click()
         {
             base.Close();
         }
 
 
-        private void btnSmall_Click()
+        void btnSmall_Click()
         {
             if (base.Width > 600)
             {
@@ -303,7 +303,7 @@ namespace Hero_Designer
         }
 
 
-        private void chkOnTop_CheckedChanged()
+        void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
@@ -348,7 +348,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillEffectView()
+        void FillEffectView()
         {
             string str9 = "";
             int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
@@ -512,7 +512,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillImageList()
+        void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSet.ImageSize.Width, this.ilSet.ImageSize.Height);
             this.ilSet.Images.Clear();
@@ -542,24 +542,24 @@ namespace Hero_Designer
         }
 
 
-        private void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
+        void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatSets(false);
         }
 
 
-        private void frmSetViewer_Load(object sender, EventArgs e)
+        void frmSetViewer_Load(object sender, EventArgs e)
         {
         }
 
 
-        private void frmSetViewer_Move(object sender, EventArgs e)
+        void frmSetViewer_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
 
-        private void lstSets_SelectedIndexChanged(object sender, EventArgs e)
+        void lstSets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstSets.SelectedItems.Count >= 1)
             {
@@ -594,7 +594,7 @@ namespace Hero_Designer
         }
 
 
-        private void StoreLocation()
+        void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -637,55 +637,55 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnClose")]
-        private ImageButton _btnClose;
+        ImageButton _btnClose;
 
 
         [AccessedThroughProperty("btnSmall")]
-        private ImageButton _btnSmall;
+        ImageButton _btnSmall;
 
 
         [AccessedThroughProperty("chkOnTop")]
-        private ImageButton _chkOnTop;
+        ImageButton _chkOnTop;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("ilSet")]
-        private ImageList _ilSet;
+        ImageList _ilSet;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("lstSets")]
-        private ListView _lstSets;
+        ListView _lstSets;
 
 
         [AccessedThroughProperty("rtApplied")]
-        private RichTextBox _rtApplied;
+        RichTextBox _rtApplied;
 
 
         [AccessedThroughProperty("rtxtFX")]
-        private RichTextBox _rtxtFX;
+        RichTextBox _rtxtFX;
 
 
         [AccessedThroughProperty("rtxtInfo")]
-        private RichTextBox _rtxtInfo;
+        RichTextBox _rtxtInfo;
 
 
         protected frmMain myParent;

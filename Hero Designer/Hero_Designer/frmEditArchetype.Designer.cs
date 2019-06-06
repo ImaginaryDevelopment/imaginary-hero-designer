@@ -15,7 +15,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmEditArchetype));
             this.txtName = new global::System.Windows.Forms.TextBox();
@@ -572,6 +572,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

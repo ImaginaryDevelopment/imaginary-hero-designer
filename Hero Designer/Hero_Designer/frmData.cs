@@ -42,20 +42,20 @@ namespace Hero_Designer
         }
 
 
-        private void frmData_FormClosed(object sender, FormClosedEventArgs e)
+        void frmData_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatData(false);
         }
 
 
-        private void frmData_Load(object sender, EventArgs e)
+        void frmData_Load(object sender, EventArgs e)
         {
             this.pInfo.SetPopup(default(PopUp.PopupData));
         }
 
 
-        private void frmData_ResizeEnd(object sender, EventArgs e)
+        void frmData_ResizeEnd(object sender, EventArgs e)
         {
             this.pInfo.Size = base.ClientSize;
         }
@@ -99,7 +99,7 @@ namespace Hero_Designer
         }
 
 
-        private void StoreLocation()
+        void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -111,7 +111,7 @@ namespace Hero_Designer
         }
 
 
-        private string TwoDP(float iValue)
+        string TwoDP(float iValue)
         {
             return Strings.Format(iValue, "###,##0.00");
         }
@@ -231,9 +231,9 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("pInfo")]
-        private ctlPopUp _pInfo;
+        ctlPopUp _pInfo;
 
 
-        private frmMain myParent;
+        frmMain myParent;
     }
 }

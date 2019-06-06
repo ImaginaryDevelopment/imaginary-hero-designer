@@ -386,7 +386,7 @@ namespace Hero_Designer
         }
 
 
-        private void AddListItem(int Index)
+        void AddListItem(int Index)
         {
             string[] items = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];
@@ -433,7 +433,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void btnAdd_Click(object sender, EventArgs e)
         {
             IEnhancement iEnh = new Enhancement();
             frmEnhData frmEnhData = new frmEnhData(ref iEnh);
@@ -452,13 +452,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
 
 
-        private void btnClone_Click(object sender, EventArgs e)
+        void btnClone_Click(object sender, EventArgs e)
         {
             if (this.lvEnh.SelectedIndices.Count > 0)
             {
@@ -479,7 +479,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvEnh.SelectedIndices.Count > 0 && Interaction.MsgBox("Really delete enhancement: " + this.lvEnh.SelectedItems[0].Text + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
             {
@@ -519,7 +519,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnDown_Click(object sender, EventArgs e)
+        void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lvEnh.SelectedIndices.Count > 0)
             {
@@ -541,7 +541,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lvEnh.SelectedIndices.Count > 0)
             {
@@ -559,7 +559,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        void btnSave_Click(object sender, EventArgs e)
         {
             I9Gfx.LoadEnhancements();
             DatabaseAPI.AssignStaticIndexValues();
@@ -569,7 +569,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnUp_Click(object sender, EventArgs e)
+        void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lvEnh.SelectedIndices.Count > 0)
             {
@@ -591,7 +591,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayList()
+        void DisplayList()
         {
             this.ImageUpdate();
             this.lvEnh.BeginUpdate();
@@ -633,7 +633,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmEnhEdit_Load(object sender, EventArgs e)
+        void frmEnhEdit_Load(object sender, EventArgs e)
         {
             base.Show();
             this.Refresh();
@@ -653,24 +653,24 @@ namespace Hero_Designer
         }
 
 
-        private void lvEnh_DoubleClick(object sender, EventArgs e)
+        void lvEnh_DoubleClick(object sender, EventArgs e)
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
-        private void lvEnh_SelectedIndexChanged(object sender, EventArgs e)
+        void lvEnh_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
 
-        private void NoReload_CheckedChanged(object sender, EventArgs e)
+        void NoReload_CheckedChanged(object sender, EventArgs e)
         {
             this.ImageUpdate();
         }
 
 
-        private void UpdateListItem(int Index)
+        void UpdateListItem(int Index)
         {
             string[] strArray = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];
@@ -723,70 +723,70 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnAdd")]
-        private Button _btnAdd;
+        Button _btnAdd;
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnClone")]
-        private Button _btnClone;
+        Button _btnClone;
 
 
         [AccessedThroughProperty("btnDelete")]
-        private Button _btnDelete;
+        Button _btnDelete;
 
 
         [AccessedThroughProperty("btnDown")]
-        private Button _btnDown;
+        Button _btnDown;
 
 
         [AccessedThroughProperty("btnEdit")]
-        private Button _btnEdit;
+        Button _btnEdit;
 
 
         [AccessedThroughProperty("btnSave")]
-        private Button _btnSave;
+        Button _btnSave;
 
 
         [AccessedThroughProperty("btnUp")]
-        private Button _btnUp;
+        Button _btnUp;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("ColumnHeader4")]
-        private ColumnHeader _ColumnHeader4;
+        ColumnHeader _ColumnHeader4;
 
 
         [AccessedThroughProperty("ColumnHeader5")]
-        private ColumnHeader _ColumnHeader5;
+        ColumnHeader _ColumnHeader5;
 
 
         [AccessedThroughProperty("ilEnh")]
-        private ImageList _ilEnh;
+        ImageList _ilEnh;
 
 
         [AccessedThroughProperty("lblLoading")]
-        private Label _lblLoading;
+        Label _lblLoading;
 
 
         [AccessedThroughProperty("lvEnh")]
-        private ListView _lvEnh;
+        ListView _lvEnh;
 
 
         [AccessedThroughProperty("NoReload")]
-        private CheckBox _NoReload;
+        CheckBox _NoReload;
     }
 }

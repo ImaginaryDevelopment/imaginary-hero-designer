@@ -172,7 +172,7 @@ public class Statistics
     }
 
 
-    private float EnduranceRecovery(bool uncapped)
+    float EnduranceRecovery(bool uncapped)
     {
         float result;
         if (!uncapped)
@@ -193,7 +193,7 @@ public class Statistics
     }
 
 
-    private float HealthRegen(bool uncapped)
+    float HealthRegen(bool uncapped)
     {
         float result;
         if (!uncapped)
@@ -429,5 +429,5 @@ public class Statistics
     public const float BasePerception = 500f;
 
 
-    private readonly Character _character;
+    readonly Character _character;
 }

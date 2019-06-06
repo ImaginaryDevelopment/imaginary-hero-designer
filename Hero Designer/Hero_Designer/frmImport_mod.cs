@@ -266,7 +266,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAttribIndex_Click(object sender, EventArgs e)
+        void btnAttribIndex_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.lblAttribIndex.Text;
             if (this.dlgBrowse.ShowDialog(this) == DialogResult.OK)
@@ -276,7 +276,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAttribLoad_Click(object sender, EventArgs e)
+        void btnAttribLoad_Click(object sender, EventArgs e)
         {
             if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
             {
@@ -309,7 +309,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAttribTable_Click(object sender, EventArgs e)
+        void btnAttribTable_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.lblAttribTables.Text;
             if (this.dlgBrowse.ShowDialog(this) == DialogResult.OK)
@@ -319,13 +319,13 @@ namespace Hero_Designer
         }
 
 
-        private void Button1_Click(object sender, EventArgs e)
+        void Button1_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void DisplayInfo()
+        void DisplayInfo()
         {
             this.lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
             this.lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
@@ -335,61 +335,61 @@ namespace Hero_Designer
         }
 
 
-        private void frmImport_mod_Load(object sender, EventArgs e)
+        void frmImport_mod_Load(object sender, EventArgs e)
         {
             this.DisplayInfo();
         }
 
 
         [AccessedThroughProperty("btnAttribIndex")]
-        private Button _btnAttribIndex;
+        Button _btnAttribIndex;
 
 
         [AccessedThroughProperty("btnAttribLoad")]
-        private Button _btnAttribLoad;
+        Button _btnAttribLoad;
 
 
         [AccessedThroughProperty("btnAttribTable")]
-        private Button _btnAttribTable;
+        Button _btnAttribTable;
 
 
         [AccessedThroughProperty("Button1")]
-        private Button _Button1;
+        Button _Button1;
 
 
         [AccessedThroughProperty("dlgBrowse")]
-        private OpenFileDialog _dlgBrowse;
+        OpenFileDialog _dlgBrowse;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("lblAttribDate")]
-        private Label _lblAttribDate;
+        Label _lblAttribDate;
 
 
         [AccessedThroughProperty("lblAttribIndex")]
-        private Label _lblAttribIndex;
+        Label _lblAttribIndex;
 
 
         [AccessedThroughProperty("lblAttribTableCount")]
-        private Label _lblAttribTableCount;
+        Label _lblAttribTableCount;
 
 
         [AccessedThroughProperty("lblAttribTables")]
-        private Label _lblAttribTables;
+        Label _lblAttribTables;
 
 
         [AccessedThroughProperty("udAttribRevision")]
-        private NumericUpDown _udAttribRevision;
+        NumericUpDown _udAttribRevision;
     }
 }

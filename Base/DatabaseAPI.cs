@@ -21,7 +21,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void ClearLookups()
+    static void ClearLookups()
     {
         DatabaseAPI.AttribMod.Clear();
         DatabaseAPI.Classes.Clear();
@@ -119,7 +119,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void FillGroupArray()
+    static void FillGroupArray()
     {
         DatabaseAPI.Database.PowersetGroups = new Dictionary<string, PowersetGroup>();
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -317,7 +317,7 @@ public static class DatabaseAPI
     }
 
 
-    private static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
+    static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
     {
         int[] array = new int[0];
         int[] numArray;
@@ -1147,7 +1147,7 @@ public static class DatabaseAPI
     }
 
 
-    private static float GetDatabaseVersion(string fName)
+    static float GetDatabaseVersion(string fName)
     {
         float num = -1f;
         float num2;
@@ -1968,7 +1968,7 @@ public static class DatabaseAPI
     }
 
 
-    private static float GetModifier(int iClass, int iTable, int iLevel)
+    static float GetModifier(int iClass, int iTable, int iLevel)
     {
         float num;
         if (iClass < 0)
@@ -2036,7 +2036,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void UpdateMessage(IMessager iFrm, string iMsg)
+    static void UpdateMessage(IMessager iFrm, string iMsg)
     {
         if (iFrm != null)
         {
@@ -2045,7 +2045,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void MatchArchetypeIDs()
+    static void MatchArchetypeIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; index++)
         {
@@ -2058,7 +2058,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void MatchPowersetIDs()
+    static void MatchPowersetIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; index++)
         {
@@ -2095,7 +2095,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void MatchPowerIDs()
+    static void MatchPowerIDs()
     {
         DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
         for (int index = 0; index < DatabaseAPI.Database.Power.Length; index++)
@@ -2186,7 +2186,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void MatchRequirementId(IPower power)
+    static void MatchRequirementId(IPower power)
     {
         if (power.Requires.ClassName.Length > 0)
         {
@@ -2245,7 +2245,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void SetPowersetsFromGroups()
+    static void SetPowersetsFromGroups()
     {
         for (int index = 0; index < DatabaseAPI.Database.Classes.Length; index++)
         {
@@ -2335,7 +2335,7 @@ public static class DatabaseAPI
     }
 
 
-    private static int EnhancementClassIdFromName(string iName)
+    static int EnhancementClassIdFromName(string iName)
     {
         int num;
         if (string.IsNullOrEmpty(iName))
@@ -2357,7 +2357,7 @@ public static class DatabaseAPI
     }
 
 
-    private static void MatchModifierIDs()
+    static void MatchModifierIDs()
     {
         foreach (IPower power in DatabaseAPI.Database.Power)
         {
@@ -2446,8 +2446,8 @@ public static class DatabaseAPI
     public const int TempPowers = 3259;
 
 
-    private static readonly IDictionary<string, int> AttribMod = new Dictionary<string, int>();
+    static readonly IDictionary<string, int> AttribMod = new Dictionary<string, int>();
 
 
-    private static readonly IDictionary<string, int> Classes = new Dictionary<string, int>();
+    static readonly IDictionary<string, int> Classes = new Dictionary<string, int>();
 }

@@ -388,7 +388,7 @@ namespace Base.Data_Classes
 
     
     
-        private int? SummonId { get; set; }
+        int? SummonId { get; set; }
 
 
     
@@ -587,7 +587,7 @@ namespace Base.Data_Classes
 
     
     
-        private int? OverrideId { get; set; }
+        int? OverrideId { get; set; }
 
 
         public bool isDamage()
@@ -997,7 +997,7 @@ namespace Base.Data_Classes
         }
 
 
-        private static string BuildCs(string iValue, string iStr, bool noComma = false)
+        static string BuildCs(string iValue, string iStr, bool noComma = false)
         {
             if (!string.IsNullOrEmpty(iValue))
             {
@@ -2531,7 +2531,7 @@ namespace Base.Data_Classes
         }
 
 
-        private float ParseMagnitudeExpression()
+        float ParseMagnitudeExpression()
         {
             float num3;
             if (this.MagnitudeExpression.IndexOf(".8 rechargetime power.base> 1 30 minmax * 1.8 + 2 * @StdResult * 10 / areafactor power.base> /", StringComparison.OrdinalIgnoreCase) > -1)
@@ -2748,7 +2748,7 @@ namespace Base.Data_Classes
         }
 
 
-        private Effect()
+        Effect()
         {
             this.BaseProbability = 1f;
             this.MagnitudeExpression = string.Empty;
@@ -2837,7 +2837,7 @@ namespace Base.Data_Classes
         }
 
 
-        private Effect(IEffect template) : this()
+        Effect(IEffect template) : this()
         {
             this.PowerFullName = template.PowerFullName;
             this.Power = template.Power;
@@ -2892,6 +2892,6 @@ namespace Base.Data_Classes
         }
 
 
-        private static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
+        static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
     }
 }

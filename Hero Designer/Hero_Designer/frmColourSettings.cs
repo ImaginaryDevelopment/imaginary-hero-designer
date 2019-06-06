@@ -612,27 +612,27 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             MidsContext.Config.RtFont.Assign(this.myFS);
             base.Hide();
         }
 
 
-        private void btnReset_Click(object sender, EventArgs e)
+        void btnReset_Click(object sender, EventArgs e)
         {
             this.myFS.SetDefault();
             this.updateColours();
         }
 
 
-        private void csAlert_Click(object sender, EventArgs e)
+        void csAlert_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorWarning;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -643,7 +643,7 @@ namespace Hero_Designer
         }
 
 
-        private void csEnh_Click(object sender, EventArgs e)
+        void csEnh_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorEnhancement;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -654,7 +654,7 @@ namespace Hero_Designer
         }
 
 
-        private void csFade_Click(object sender, EventArgs e)
+        void csFade_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorFaded;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -665,7 +665,7 @@ namespace Hero_Designer
         }
 
 
-        private void csHero_Click(object sender, EventArgs e)
+        void csHero_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorBackgroundHero;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -676,7 +676,7 @@ namespace Hero_Designer
         }
 
 
-        private void csInv_Click(object sender, EventArgs e)
+        void csInv_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorInvention;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -687,7 +687,7 @@ namespace Hero_Designer
         }
 
 
-        private void csInvInv_Click(object sender, EventArgs e)
+        void csInvInv_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorInventionInv;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -698,7 +698,7 @@ namespace Hero_Designer
         }
 
 
-        private void csSpecial_Click(object sender, EventArgs e)
+        void csSpecial_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorPlSpecial;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -709,7 +709,7 @@ namespace Hero_Designer
         }
 
 
-        private void csText_Click(object sender, EventArgs e)
+        void csText_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorText;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -720,7 +720,7 @@ namespace Hero_Designer
         }
 
 
-        private void csValue_Click(object sender, EventArgs e)
+        void csValue_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorPlName;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -731,7 +731,7 @@ namespace Hero_Designer
         }
 
 
-        private void csVillain_Click(object sender, EventArgs e)
+        void csVillain_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorBackgroundVillain;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -742,13 +742,13 @@ namespace Hero_Designer
         }
 
 
-        private void frmColourSettings_Load(object sender, EventArgs e)
+        void frmColourSettings_Load(object sender, EventArgs e)
         {
             this.updateColours();
         }
 
 
-        private void Listlabel1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void Listlabel1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             switch (Item.Index)
             {
@@ -898,119 +898,119 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("btnReset")]
-        private Button _btnReset;
+        Button _btnReset;
 
 
         [AccessedThroughProperty("cPicker")]
-        private ColorDialog _cPicker;
+        ColorDialog _cPicker;
 
 
         [AccessedThroughProperty("csAlert")]
-        private Label _csAlert;
+        Label _csAlert;
 
 
         [AccessedThroughProperty("csEnh")]
-        private Label _csEnh;
+        Label _csEnh;
 
 
         [AccessedThroughProperty("csFade")]
-        private Label _csFade;
+        Label _csFade;
 
 
         [AccessedThroughProperty("csHero")]
-        private Label _csHero;
+        Label _csHero;
 
 
         [AccessedThroughProperty("csInv")]
-        private Label _csInv;
+        Label _csInv;
 
 
         [AccessedThroughProperty("csInvInv")]
-        private Label _csInvInv;
+        Label _csInvInv;
 
 
         [AccessedThroughProperty("csSpecial")]
-        private Label _csSpecial;
+        Label _csSpecial;
 
 
         [AccessedThroughProperty("csText")]
-        private Label _csText;
+        Label _csText;
 
 
         [AccessedThroughProperty("csValue")]
-        private Label _csValue;
+        Label _csValue;
 
 
         [AccessedThroughProperty("csVillain")]
-        private Label _csVillain;
+        Label _csVillain;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label10")]
-        private Label _Label10;
+        Label _Label10;
 
 
         [AccessedThroughProperty("Label19")]
-        private Label _Label19;
+        Label _Label19;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label20")]
-        private Label _Label20;
+        Label _Label20;
 
 
         [AccessedThroughProperty("Label21")]
-        private Label _Label21;
+        Label _Label21;
 
 
         [AccessedThroughProperty("Label22")]
-        private Label _Label22;
+        Label _Label22;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label9")]
-        private Label _Label9;
+        Label _Label9;
 
 
         [AccessedThroughProperty("Listlabel1")]
-        private ListLabelV2 _Listlabel1;
+        ListLabelV2 _Listlabel1;
 
 
         [AccessedThroughProperty("rtPreview")]
-        private RichTextBox _rtPreview;
+        RichTextBox _rtPreview;
 
 
         protected ConfigData.FontSettings myFS;

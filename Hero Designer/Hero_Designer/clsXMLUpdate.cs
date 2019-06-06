@@ -24,7 +24,7 @@ namespace Hero_Designer
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private bool ApplyUpdate(ref int updateId)
+        bool ApplyUpdate(ref int updateId)
         {
             DateTime iDate = new DateTime(1, 1, 1);
             string empty = string.Empty;
@@ -42,7 +42,7 @@ namespace Hero_Designer
         }
 
 
-        private static void BugReport(string sData)
+        static void BugReport(string sData)
         {
             try
             {
@@ -153,7 +153,7 @@ namespace Hero_Designer
         }
 
 
-        private void HideMessage()
+        void HideMessage()
         {
             if (this.sFrm != null)
             {
@@ -164,7 +164,7 @@ namespace Hero_Designer
         }
 
 
-        private static void LaunchBrowser(string iURI)
+        static void LaunchBrowser(string iURI)
         {
             try
             {
@@ -212,7 +212,7 @@ namespace Hero_Designer
         }
 
 
-        private bool LoadXMLStrings(string iString)
+        bool LoadXMLStrings(string iString)
         {
             this.Updates = new clsXMLUpdate.clsXMLItem[2];
             int num = this.Updates.Length - 1;
@@ -244,7 +244,7 @@ namespace Hero_Designer
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
+        bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
         {
             bool flag;
             try
@@ -318,7 +318,7 @@ namespace Hero_Designer
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private bool RequestWithProgress(ref int updateId)
+        bool RequestWithProgress(ref int updateId)
         {
             bool flag = false;
             byte[] buffer = new byte[16385];
@@ -563,7 +563,7 @@ namespace Hero_Designer
         }
 
 
-        private bool RequestXMLVersionInfo()
+        bool RequestXMLVersionInfo()
         {
             string requestUriString = this._uriUpdatePath + "version.xml";
             byte[] bytes = new byte[16385];
@@ -675,7 +675,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetMessage(string messageA, string messageB)
+        void SetMessage(string messageA, string messageB)
         {
             if (this.sFrm != null)
             {
@@ -690,7 +690,7 @@ namespace Hero_Designer
         }
 
 
-        private void ShowMessage(bool silent, ref IMessager iLoadFrm)
+        void ShowMessage(bool silent, ref IMessager iLoadFrm)
         {
             if (!silent & iLoadFrm == null)
             {
@@ -865,19 +865,19 @@ namespace Hero_Designer
         }
 
 
-        private const string TempFile = "Autoupdate.tmp";
+        const string TempFile = "Autoupdate.tmp";
 
 
-        private readonly string _uriUpdatePath = "";
+        readonly string _uriUpdatePath = "";
 
 
-        private IMessager mFrm = null;
+        IMessager mFrm = null;
 
 
         public bool RestartNeeded = false;
 
 
-        private frmZStatus sFrm = null;
+        frmZStatus sFrm = null;
 
 
         protected clsXMLUpdate.clsXMLItem[] Updates = new clsXMLUpdate.clsXMLItem[0];
@@ -942,7 +942,7 @@ namespace Hero_Designer
         }
 
 
-        private struct Keys
+        struct Keys
         {
 
             public const string DisplayName = "Name";

@@ -486,20 +486,20 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
 
 
-        private void csHeading_Click(object sender, EventArgs e)
+        void csHeading_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Heading;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -510,7 +510,7 @@ namespace Hero_Designer
         }
 
 
-        private void csHO_Click(object sender, EventArgs e)
+        void csHO_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.HOColor;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -521,7 +521,7 @@ namespace Hero_Designer
         }
 
 
-        private void csIO_Click(object sender, EventArgs e)
+        void csIO_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.IOColor;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -532,7 +532,7 @@ namespace Hero_Designer
         }
 
 
-        private void csLevel_Click(object sender, EventArgs e)
+        void csLevel_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Level;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -543,7 +543,7 @@ namespace Hero_Designer
         }
 
 
-        private void csPower_Click(object sender, EventArgs e)
+        void csPower_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Power;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -554,7 +554,7 @@ namespace Hero_Designer
         }
 
 
-        private void csSet_Click(object sender, EventArgs e)
+        void csSet_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.SetColor;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -565,7 +565,7 @@ namespace Hero_Designer
         }
 
 
-        private void csSlots_Click(object sender, EventArgs e)
+        void csSlots_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Slots;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -576,7 +576,7 @@ namespace Hero_Designer
         }
 
 
-        private void csTitle_Click(object sender, EventArgs e)
+        void csTitle_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Title;
             if (this.cPicker.ShowDialog(this) == DialogResult.OK)
@@ -587,14 +587,14 @@ namespace Hero_Designer
         }
 
 
-        private void frmExportColor_Load(object sender, EventArgs e)
+        void frmExportColor_Load(object sender, EventArgs e)
         {
             this.txtName.Text = this.myScheme.SchemeName;
             this.updateColours();
         }
 
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        void txtName_TextChanged(object sender, EventArgs e)
         {
             this.myScheme.SchemeName = this.txtName.Text;
         }
@@ -614,95 +614,95 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("cPicker")]
-        private ColorDialog _cPicker;
+        ColorDialog _cPicker;
 
 
         [AccessedThroughProperty("csHeading")]
-        private Label _csHeading;
+        Label _csHeading;
 
 
         [AccessedThroughProperty("csHO")]
-        private Label _csHO;
+        Label _csHO;
 
 
         [AccessedThroughProperty("csIO")]
-        private Label _csIO;
+        Label _csIO;
 
 
         [AccessedThroughProperty("csLevel")]
-        private Label _csLevel;
+        Label _csLevel;
 
 
         [AccessedThroughProperty("csPower")]
-        private Label _csPower;
+        Label _csPower;
 
 
         [AccessedThroughProperty("csSet")]
-        private Label _csSet;
+        Label _csSet;
 
 
         [AccessedThroughProperty("csSlots")]
-        private Label _csSlots;
+        Label _csSlots;
 
 
         [AccessedThroughProperty("csTitle")]
-        private Label _csTitle;
+        Label _csTitle;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label19")]
-        private Label _Label19;
+        Label _Label19;
 
 
         [AccessedThroughProperty("Label20")]
-        private Label _Label20;
+        Label _Label20;
 
 
         [AccessedThroughProperty("Label21")]
-        private Label _Label21;
+        Label _Label21;
 
 
         [AccessedThroughProperty("Label22")]
-        private Label _Label22;
+        Label _Label22;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label9")]
-        private Label _Label9;
+        Label _Label9;
 
 
         [AccessedThroughProperty("myTip")]
-        private ToolTip _myTip;
+        ToolTip _myTip;
 
 
         [AccessedThroughProperty("txtName")]
-        private TextBox _txtName;
+        TextBox _txtName;
 
 
         public ExportConfig.ColorScheme myScheme;

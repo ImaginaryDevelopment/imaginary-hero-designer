@@ -3952,13 +3952,13 @@ namespace Hero_Designer
         }
 
 
-        private void accoladeButton_ButtonClicked()
+        void accoladeButton_ButtonClicked()
         {
             this.PowerModified();
         }
 
 
-        private void accoladeButton_MouseDown(object sender, MouseEventArgs e)
+        void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
             {
@@ -4001,14 +4001,14 @@ namespace Hero_Designer
         }
 
 
-        private void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.accoladeButton.Checked = true;
         }
 
 
-        private static int ArchetypeIndirectToIndex(int iIndirect)
+        static int ArchetypeIndirectToIndex(int iIndirect)
         {
             int num = -1;
             int num2 = DatabaseAPI.Database.Classes.Length - 1;
@@ -4027,7 +4027,7 @@ namespace Hero_Designer
         }
 
 
-        private void AssemblePowerList(ref ListLabelV2 llPower, IPowerset Powerset)
+        void AssemblePowerList(ref ListLabelV2 llPower, IPowerset Powerset)
         {
             if (Powerset == null)
             {
@@ -4092,7 +4092,7 @@ namespace Hero_Designer
         }
 
 
-        private void AutoArrangeAllSlotsToolStripMenuItem_Click(object sender, EventArgs e)
+        void AutoArrangeAllSlotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PowerEntry[] powerEntryArray = frmMain.DeepCopyPowerList();
             this.RearrangeAllSlotsInBuild(powerEntryArray, true);
@@ -4102,7 +4102,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
+        void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbAncillary = this.cbAncillary;
             frmMain.cbDrawItem(ref cbAncillary, Enums.ePowerSetType.Ancillary, e);
@@ -4110,7 +4110,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAncillary_MouseMove(object sender, MouseEventArgs e)
+        void cbAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
             {
@@ -4120,7 +4120,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAncillery_SelectedIndexChanged(object sender, EventArgs e)
+        void cbAncillery_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4130,7 +4130,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAT_DrawItem(object sender, DrawItemEventArgs e)
+        void cbAT_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -4155,13 +4155,13 @@ namespace Hero_Designer
         }
 
 
-        private void cbAT_MouseLeave(object sender, EventArgs e)
+        void cbAT_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void cbAT_MouseMove(object sender, MouseEventArgs e)
+        void cbAT_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
             {
@@ -4170,7 +4170,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAT_SelectedIndexChanged(object sender, EventArgs e)
+        void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4182,7 +4182,7 @@ namespace Hero_Designer
         }
 
 
-        private static void cbDrawItem(ref ComboBox Target, Enums.ePowerSetType SetType, DrawItemEventArgs e)
+        static void cbDrawItem(ref ComboBox Target, Enums.ePowerSetType SetType, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -4222,7 +4222,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbOrigin_DrawItem(object sender, DrawItemEventArgs e)
+        void cbOrigin_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -4246,7 +4246,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
+        void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4261,7 +4261,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
+        void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool0 = this.cbPool0;
             frmMain.cbDrawItem(ref cbPool0, Enums.ePowerSetType.Pool, e);
@@ -4269,13 +4269,13 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool0_MouseLeave(object sender, EventArgs e)
+        void cbPool0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void cbPool0_MouseMove(object sender, MouseEventArgs e)
+        void cbPool0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
             {
@@ -4285,7 +4285,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool0_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPool0_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4295,7 +4295,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
+        void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool = this.cbPool1;
             frmMain.cbDrawItem(ref cbPool, Enums.ePowerSetType.Pool, e);
@@ -4303,7 +4303,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool1_MouseMove(object sender, MouseEventArgs e)
+        void cbPool1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
             {
@@ -4313,7 +4313,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool1_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPool1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4323,7 +4323,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
+        void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool2 = this.cbPool2;
             frmMain.cbDrawItem(ref cbPool2, Enums.ePowerSetType.Pool, e);
@@ -4331,7 +4331,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool2_MouseMove(object sender, MouseEventArgs e)
+        void cbPool2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
             {
@@ -4341,7 +4341,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool2_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPool2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4351,7 +4351,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
+        void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool3 = this.cbPool3;
             frmMain.cbDrawItem(ref cbPool3, Enums.ePowerSetType.Pool, e);
@@ -4359,7 +4359,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool3_MouseMove(object sender, MouseEventArgs e)
+        void cbPool3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
             {
@@ -4369,7 +4369,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPool3_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPool3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4379,7 +4379,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
+        void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPrimary = this.cbPrimary;
             frmMain.cbDrawItem(ref cbPrimary, Enums.ePowerSetType.Primary, e);
@@ -4387,13 +4387,13 @@ namespace Hero_Designer
         }
 
 
-        private void cbPrimary_MouseLeave(object sender, EventArgs e)
+        void cbPrimary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void cbPrimary_MouseMove(object sender, MouseEventArgs e)
+        void cbPrimary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MidsContext.Character != null && MidsContext.Character.Archetype != null && this.cbPrimary.SelectedIndex >= 0)
             {
@@ -4403,7 +4403,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbPrimary_SelectedIndexChanged(object sender, EventArgs e)
+        void cbPrimary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4413,7 +4413,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
+        void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbSecondary = this.cbSecondary;
             frmMain.cbDrawItem(ref cbSecondary, Enums.ePowerSetType.Secondary, e);
@@ -4421,13 +4421,13 @@ namespace Hero_Designer
         }
 
 
-        private void cbSecondary_MouseLeave(object sender, EventArgs e)
+        void cbSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void cbSecondary_MouseMove(object sender, MouseEventArgs e)
+        void cbSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
             {
@@ -4445,7 +4445,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSecondary_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSecondary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -4455,7 +4455,7 @@ namespace Hero_Designer
         }
 
 
-        private void ChangeSets()
+        void ChangeSets()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary);
             IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary);
@@ -4512,7 +4512,7 @@ namespace Hero_Designer
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private void CheckForDownloadedUpdate()
+        void CheckForDownloadedUpdate()
         {
             try
             {
@@ -4530,7 +4530,7 @@ namespace Hero_Designer
         }
 
 
-        private void clearPower(PowerEntry[] tp, int pwrIdx)
+        void clearPower(PowerEntry[] tp, int pwrIdx)
         {
             tp[pwrIdx].Slots = new SlotEntry[0];
             tp[pwrIdx].SubPowers = new PowerSubEntry[0];
@@ -4572,7 +4572,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ComboCheckAT(ref Archetype[] playableClasses)
+        bool ComboCheckAT(ref Archetype[] playableClasses)
         {
             bool flag;
             if (this.cbAT.Items.Count != playableClasses.Length)
@@ -4595,7 +4595,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ComboCheckOrigin()
+        bool ComboCheckOrigin()
         {
             bool flag;
             if (this.cbOrigin.Items.Count != MidsContext.Character.Archetype.Origin.Length)
@@ -4621,7 +4621,7 @@ namespace Hero_Designer
         }
 
 
-        private static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
+        static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
             bool flag2 = false;
@@ -4659,7 +4659,7 @@ namespace Hero_Designer
         }
 
 
-        private static bool ComboCheckPS(ref ComboBox iCB, Enums.PowersetType iSetID, Enums.ePowerSetType iSetType)
+        static bool ComboCheckPS(ref ComboBox iCB, Enums.PowersetType iSetID, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
             bool flag2 = false;
@@ -4690,7 +4690,7 @@ namespace Hero_Designer
         }
 
 
-        private void command_ForumImport()
+        void command_ForumImport()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
@@ -4766,7 +4766,7 @@ namespace Hero_Designer
         }
 
 
-        private void command_New()
+        void command_New()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
@@ -4801,7 +4801,7 @@ namespace Hero_Designer
         }
 
 
-        private static PowerEntry[] DeepCopyPowerList()
+        static PowerEntry[] DeepCopyPowerList()
         {
             PowerEntry[] powerEntryArray = new PowerEntry[MidsContext.Character.CurrentBuild.Powers.Count - 1 + 1];
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
@@ -4813,7 +4813,7 @@ namespace Hero_Designer
         }
 
 
-        private Rectangle Dilate(Rectangle irect, int iAdd)
+        Rectangle Dilate(Rectangle irect, int iAdd)
         {
             irect.X -= iAdd;
             irect.Y -= iAdd;
@@ -4823,7 +4823,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayFormatChanged()
+        void DisplayFormatChanged()
         {
             this.GetBestDamageValues();
             this.RefreshInfo();
@@ -4887,7 +4887,7 @@ namespace Hero_Designer
         }
 
 
-        private void doFlipStep()
+        void doFlipStep()
         {
             if (this.FlipActive)
             {
@@ -4988,7 +4988,7 @@ namespace Hero_Designer
         }
 
 
-        private bool DoOpen(string fName)
+        bool DoOpen(string fName)
         {
             bool flag;
             if (!File.Exists(fName))
@@ -5061,7 +5061,7 @@ namespace Hero_Designer
         }
 
 
-        private void DoResize()
+        void DoResize()
         {
             this.lblHero.Width = this.ibRecipe.Left - 4;
             if (!this.NoResizeEvent && this.Drawing != null)
@@ -5104,7 +5104,7 @@ namespace Hero_Designer
         }
 
 
-        private bool doSave()
+        bool doSave()
         {
             bool flag;
             if (this.LastFileName == "")
@@ -5125,7 +5125,7 @@ namespace Hero_Designer
         }
 
 
-        private bool doSaveAs()
+        bool doSaveAs()
         {
             this.FloatTop(false);
             if (this.LastFileName != "")
@@ -5193,7 +5193,7 @@ namespace Hero_Designer
         }
 
 
-        private void dvAnchored_Float()
+        void dvAnchored_Float()
         {
             frmMain iOwner = this;
             this.FloatingDataForm = new frmFloatingStats(ref iOwner);
@@ -5218,14 +5218,14 @@ namespace Hero_Designer
         }
 
 
-        private void dvAnchored_Move()
+        void dvAnchored_Move()
         {
             this.PriSec_ExpandChanged(true);
             this.ReArrange(false);
         }
 
 
-        private void dvAnchored_SizeChange(Size newSize, bool Compact)
+        void dvAnchored_SizeChange(Size newSize, bool Compact)
         {
             this.ReArrange(false);
             if (MainModule.MidsController.IsAppInitialized & base.Visible)
@@ -5235,13 +5235,13 @@ namespace Hero_Designer
         }
 
 
-        private void dvAnchored_TabChanged(int Index)
+        void dvAnchored_TabChanged(int Index)
         {
             this.SetDataViewTab(Index);
         }
 
 
-        private void dvAnchored_Unlock()
+        void dvAnchored_Unlock()
         {
             this.DataViewLocked = false;
             if (this.dvLastPower > -1)
@@ -5251,7 +5251,7 @@ namespace Hero_Designer
         }
 
 
-        private bool EditAccoladesOrTemps(int hIDPower)
+        bool EditAccoladesOrTemps(int hIDPower)
         {
             bool flag;
             if (hIDPower <= -1 || MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length <= 0)
@@ -5279,7 +5279,7 @@ namespace Hero_Designer
         }
 
 
-        private void EndFlip()
+        void EndFlip()
         {
             this.FlipActive = false;
             this.tmrGfx.Enabled = false;
@@ -5289,20 +5289,20 @@ namespace Hero_Designer
         }
 
 
-        private void EnhancementModified()
+        void EnhancementModified()
         {
             this.DoRedraw();
             this.RefreshInfo();
         }
 
 
-        private int[] fakeInitialize(params int[] nums)
+        int[] fakeInitialize(params int[] nums)
         {
             return nums;
         }
 
 
-        private void FixPrimarySecondaryHeight()
+        void FixPrimarySecondaryHeight()
         {
             if (this.dvAnchored.Visible & this.dvAnchored.Bounds.IntersectsWith(this.dvAnchored.SnapLocation))
             {
@@ -5348,7 +5348,7 @@ namespace Hero_Designer
         }
 
 
-        private void fixStatIncludes()
+        void fixStatIncludes()
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -5524,7 +5524,7 @@ namespace Hero_Designer
         }
 
 
-        private void FloatTop(bool OnTop)
+        void FloatTop(bool OnTop)
         {
             if (!OnTop)
             {
@@ -5673,7 +5673,7 @@ namespace Hero_Designer
         }
 
 
-        private void FloatUpdate(bool NewData = false)
+        void FloatUpdate(bool NewData = false)
         {
             if (this.fSets != null)
             {
@@ -5706,20 +5706,20 @@ namespace Hero_Designer
         }
 
 
-        private void frmMain_Closed(object sender, EventArgs e)
+        void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = base.Size;
             MidsContext.Config.SaveConfig();
         }
 
 
-        private void frmMain_Closing(object sender, FormClosingEventArgs e)
+        void frmMain_Closing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = this.CloseCommand();
         }
 
 
-        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Alt & e.Control & e.Shift & e.KeyCode == Keys.A)
             {
@@ -5731,7 +5731,7 @@ namespace Hero_Designer
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private void frmMain_Load(object sender, EventArgs e)
+        void frmMain_Load(object sender, EventArgs e)
         {
             try
             {
@@ -5908,7 +5908,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmMain_Maximize(object sender, EventArgs e)
+        void frmMain_Maximize(object sender, EventArgs e)
         {
             if (base.WindowState != this.LastState)
             {
@@ -5918,13 +5918,13 @@ namespace Hero_Designer
         }
 
 
-        private void frmMain_MouseWheel(object sender, MouseEventArgs e)
+        void frmMain_MouseWheel(object sender, MouseEventArgs e)
         {
             this.dvAnchored.info_txtLarge.Focus();
         }
 
 
-        private void frmMain_Resize(object sender, EventArgs e)
+        void frmMain_Resize(object sender, EventArgs e)
         {
             if (this.dvAnchored != null)
             {
@@ -5998,7 +5998,7 @@ namespace Hero_Designer
         }
 
 
-        private int GetFirstValidSetEnh(int SlotIndex, int hID)
+        int GetFirstValidSetEnh(int SlotIndex, int hID)
         {
             if (this.LastEnhPlaced != null)
             {
@@ -6032,13 +6032,13 @@ namespace Hero_Designer
         }
 
 
-        private bool GetPlayableClasses(Archetype a)
+        bool GetPlayableClasses(Archetype a)
         {
             return a.Playable;
         }
 
 
-        private I9Slot GetRepeatEnhancement(int powerIndex, int iSlotIndex)
+        I9Slot GetRepeatEnhancement(int powerIndex, int iSlotIndex)
         {
             if (this.LastEnhPlaced != null)
             {
@@ -6073,7 +6073,7 @@ namespace Hero_Designer
         }
 
 
-        private void heroVillain_ButtonClicked()
+        void heroVillain_ButtonClicked()
         {
             if (this.heroVillain.Checked)
             {
@@ -6114,7 +6114,7 @@ namespace Hero_Designer
         }
 
 
-        private void HidePopup()
+        void HidePopup()
         {
             if (this.PopUpVisible)
             {
@@ -6133,7 +6133,7 @@ namespace Hero_Designer
         }
 
 
-        private void I9Picker_EnhancementPicked(I9Slot e)
+        void I9Picker_EnhancementPicked(I9Slot e)
         {
             e.RelativeLevel = this.I9Picker.UI.View.RelLevel;
             if (this.EnhancingSlot > -1)
@@ -6183,7 +6183,7 @@ namespace Hero_Designer
         }
 
 
-        private void I9Picker_Hiding(object sender, EventArgs e)
+        void I9Picker_Hiding(object sender, EventArgs e)
         {
             if (this.I9Picker.Visible)
             {
@@ -6195,7 +6195,7 @@ namespace Hero_Designer
         }
 
 
-        private void I9Picker_HoverEnhancement(int e)
+        void I9Picker_HoverEnhancement(int e)
         {
             I9Slot i9Slot = new I9Slot
             {
@@ -6209,14 +6209,14 @@ namespace Hero_Designer
         }
 
 
-        private void I9Picker_HoverSet(int e)
+        void I9Picker_HoverSet(int e)
         {
             this.myDataView.SetSetPicker(e);
             this.ShowPopup(this.PickerHID, -1, -1, default(Point), this.I9Picker.Bounds, null, e);
         }
 
 
-        private void I9Picker_MouseDown(object sender, MouseEventArgs e)
+        void I9Picker_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && this.EnhancingSlot > -1)
             {
@@ -6227,20 +6227,20 @@ namespace Hero_Designer
         }
 
 
-        private void I9Picker_Moved(Rectangle NewBounds, Rectangle OldBounds)
+        void I9Picker_Moved(Rectangle NewBounds, Rectangle OldBounds)
         {
             this.MovePopup(this.I9Picker.Bounds);
             this.RedrawUnderPopup(OldBounds);
         }
 
 
-        private void I9Popup_MouseMove(object sender, MouseEventArgs e)
+        void I9Popup_MouseMove(object sender, MouseEventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void ibMode_ButtonClicked()
+        void ibMode_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -6260,13 +6260,13 @@ namespace Hero_Designer
         }
 
 
-        private void ibPopup_ButtonClicked()
+        void ibPopup_ButtonClicked()
         {
             MidsContext.Config.ShowPopup = this.ibPopup.Checked;
         }
 
 
-        private void ibPvX_ButtonClicked()
+        void ibPvX_ButtonClicked()
         {
             if (!this.ibPvX.Checked)
             {
@@ -6280,13 +6280,13 @@ namespace Hero_Designer
         }
 
 
-        private void ibRecipe_ButtonClicked()
+        void ibRecipe_ButtonClicked()
         {
             MidsContext.Config.PopupRecipes = this.ibRecipe.Checked;
         }
 
 
-        private void ibSets_ButtonClicked()
+        void ibSets_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -6295,19 +6295,19 @@ namespace Hero_Designer
         }
 
 
-        private void ibSlotLevels_ButtonClicked()
+        void ibSlotLevels_ButtonClicked()
         {
             this.tsViewSlotLevels_Click(this, new EventArgs());
         }
 
 
-        private void ibTotals_ButtonClicked()
+        void ibTotals_ButtonClicked()
         {
             this.FloatTotals(true);
         }
 
 
-        private void incarnateButton_MouseDown(object sender, MouseEventArgs e)
+        void incarnateButton_MouseDown(object sender, MouseEventArgs e)
         {
             bool flag = false;
             if (this.fIncarnate == null)
@@ -6330,13 +6330,13 @@ namespace Hero_Designer
         }
 
 
-        private void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
         }
 
 
-        private void Info_Enhancement(I9Slot iEnh, int iLevel = -1)
+        void Info_Enhancement(I9Slot iEnh, int iLevel = -1)
         {
             this.myDataView.SetEnhancement(iEnh, iLevel);
         }
@@ -6388,7 +6388,7 @@ namespace Hero_Designer
         }
 
 
-        private void info_Totals()
+        void info_Totals()
         {
             if (!(MainModule.MidsController.Toon == null | !MainModule.MidsController.IsAppInitialized))
             {
@@ -6399,13 +6399,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblATLocked_MouseLeave(object sender, EventArgs e)
+        void lblATLocked_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void lblATLocked_MouseMove(object sender, MouseEventArgs e)
+        void lblATLocked_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
             {
@@ -6414,7 +6414,7 @@ namespace Hero_Designer
         }
 
 
-        private void lblATLocked_Paint(object sender, PaintEventArgs e)
+        void lblATLocked_Paint(object sender, PaintEventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -6429,13 +6429,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblLocked0_MouseLeave(object sender, EventArgs e)
+        void lblLocked0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void lblLocked0_MouseMove(object sender, MouseEventArgs e)
+        void lblLocked0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
             {
@@ -6445,13 +6445,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblLocked0_Paint(object sender, PaintEventArgs e)
+        void lblLocked0_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool0);
         }
 
 
-        private void lblLocked1_MouseMove(object sender, MouseEventArgs e)
+        void lblLocked1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
             {
@@ -6461,13 +6461,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblLocked1_Paint(object sender, PaintEventArgs e)
+        void lblLocked1_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool1);
         }
 
 
-        private void lblLocked2_MouseMove(object sender, MouseEventArgs e)
+        void lblLocked2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
             {
@@ -6477,13 +6477,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblLocked2_Paint(object sender, PaintEventArgs e)
+        void lblLocked2_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool2);
         }
 
 
-        private void lblLocked3_MouseMove(object sender, MouseEventArgs e)
+        void lblLocked3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
             {
@@ -6493,13 +6493,13 @@ namespace Hero_Designer
         }
 
 
-        private void lblLocked3_Paint(object sender, PaintEventArgs e)
+        void lblLocked3_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool3);
         }
 
 
-        private void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
+        void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
             {
@@ -6509,19 +6509,19 @@ namespace Hero_Designer
         }
 
 
-        private void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
+        void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
         }
 
 
-        private void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
+        void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void lblLockedSecondary_MouseMove(object sender, MouseEventArgs e)
+        void lblLockedSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
             {
@@ -6539,19 +6539,19 @@ namespace Hero_Designer
         }
 
 
-        private void llAll_EmptyHover()
+        void llAll_EmptyHover()
         {
             this.HidePopup();
         }
 
 
-        private void llALL_MouseLeave(object sender, EventArgs e)
+        void llALL_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
 
-        private void llAncillary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llAncillary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
             {
@@ -6567,7 +6567,7 @@ namespace Hero_Designer
         }
 
 
-        private void llAncillary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llAncillary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6583,7 +6583,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool0_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llPool0_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
             {
@@ -6596,7 +6596,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool0_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llPool0_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6605,7 +6605,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
             {
@@ -6618,7 +6618,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool1_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llPool1_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6627,7 +6627,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
             {
@@ -6640,7 +6640,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool2_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llPool2_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6649,7 +6649,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
             {
@@ -6662,7 +6662,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPool3_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llPool3_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6671,7 +6671,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
             {
@@ -6687,7 +6687,7 @@ namespace Hero_Designer
         }
 
 
-        private void llPrimary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llPrimary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6703,7 +6703,7 @@ namespace Hero_Designer
         }
 
 
-        private void llSecondary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llSecondary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
             {
@@ -6719,7 +6719,7 @@ namespace Hero_Designer
         }
 
 
-        private void llSecondary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llSecondary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
@@ -6735,7 +6735,7 @@ namespace Hero_Designer
         }
 
 
-        private void MiniPaint(ref PaintEventArgs e, Enums.PowersetType iId)
+        void MiniPaint(ref PaintEventArgs e, Enums.PowersetType iId)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[(int)iId] != null)
             {
@@ -6750,7 +6750,7 @@ namespace Hero_Designer
         }
 
 
-        private void MovePopup(Rectangle rBounds)
+        void MovePopup(Rectangle rBounds)
         {
             if (this.PopUpVisible)
             {
@@ -6764,7 +6764,7 @@ namespace Hero_Designer
         }
 
 
-        private void NewDraw(bool skipDraw = false)
+        void NewDraw(bool skipDraw = false)
         {
             if (this.Drawing == null)
             {
@@ -6790,7 +6790,7 @@ namespace Hero_Designer
         }
 
 
-        private void NewToon(bool Init = true, bool SkipDraw = false)
+        void NewToon(bool Init = true, bool SkipDraw = false)
         {
             if (MainModule.MidsController.Toon == null)
             {
@@ -6839,7 +6839,7 @@ namespace Hero_Designer
         }
 
 
-        private void pbDynMode_Click(object sender, EventArgs e)
+        void pbDynMode_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
             {
@@ -6857,7 +6857,7 @@ namespace Hero_Designer
         }
 
 
-        private void pbDynMode_Paint(object sender, PaintEventArgs e)
+        void pbDynMode_Paint(object sender, PaintEventArgs e)
         {
             if (this.dmBuffer == null)
             {
@@ -6870,7 +6870,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_DragDrop(object sender, DragEventArgs e)
+        void pnlGFX_DragDrop(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
             {
@@ -6913,7 +6913,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_DragEnter(object sender, DragEventArgs e)
+        void pnlGFX_DragEnter(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
             {
@@ -6926,7 +6926,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_DragOver(object sender, DragEventArgs e)
+        void pnlGFX_DragOver(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX) && (this.dragRect.IsEmpty || (this.dragRect.Top != Cursor.Position.Y - this.dragYOffset | this.dragRect.Left != Cursor.Position.X - this.dragXOffset)))
             {
@@ -6955,7 +6955,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_MouseDoubleClick(object sender, MouseEventArgs e)
+        void pnlGFX_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (!this.LastClickPlacedSlot & this.dragStartSlot >= 0)
             {
@@ -6968,7 +6968,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_MouseDown(object sender, MouseEventArgs e)
+        void pnlGFX_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -6981,20 +6981,20 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_MouseEnter(object sender, EventArgs e)
+        void pnlGFX_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
 
 
-        private void pnlGFX_MouseLeave(object sender, EventArgs e)
+        void pnlGFX_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
             this.Drawing.HighlightSlot(-1, false);
         }
 
 
-        private void pnlGFX_MouseMove(object sender, MouseEventArgs e)
+        void pnlGFX_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button == MouseButtons.Left & this.pnlGFX.AllowDrop) && Math.Abs(e.X - this.dragStartX) + Math.Abs(e.Y - this.dragStartY) > 7)
             {
@@ -7073,7 +7073,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFX_MouseUp(object sender, MouseEventArgs e)
+        void pnlGFX_MouseUp(object sender, MouseEventArgs e)
         {
             this.pnlGFX.AllowDrop = false;
             if (this.DoneDblClick)
@@ -7230,7 +7230,7 @@ namespace Hero_Designer
         }
 
 
-        private void pnlGFXFlow_MouseEnter(object sender, EventArgs e)
+        void pnlGFXFlow_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
@@ -7290,7 +7290,7 @@ namespace Hero_Designer
         }
 
 
-        private int PowerMove(PowerEntry[] tp, params int[] pow)
+        int PowerMove(PowerEntry[] tp, params int[] pow)
         {
             if (tp[pow[0]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 > tp[pow[1]].Level)
             {
@@ -7607,7 +7607,7 @@ namespace Hero_Designer
         }
 
 
-        private void PowerMoveByUser(params int[] pow)
+        void PowerMoveByUser(params int[] pow)
         {
             if (!(pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1]))
             {
@@ -7629,7 +7629,7 @@ namespace Hero_Designer
         }
 
 
-        private void PowerPicked(Enums.PowersetType SetID, int nIDPower)
+        void PowerPicked(Enums.PowersetType SetID, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
             this.PowerModified();
@@ -7637,7 +7637,7 @@ namespace Hero_Designer
         }
 
 
-        private void PowerPicked(int nIDPowerset, int nIDPower)
+        void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
             this.PowerModified();
@@ -7646,7 +7646,7 @@ namespace Hero_Designer
         }
 
 
-        private int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
+        int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
         {
             int num;
             if (pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1])
@@ -8059,7 +8059,7 @@ namespace Hero_Designer
         }
 
 
-        private void PowerSwapByUser(params int[] pow)
+        void PowerSwapByUser(params int[] pow)
         {
             int index = 0;
             do
@@ -8078,7 +8078,7 @@ namespace Hero_Designer
         }
 
 
-        private void PriSec_ExpandChanged(bool Expanded)
+        void PriSec_ExpandChanged(bool Expanded)
         {
             if (this.llPrimary.isExpanded | (this.llSecondary.isExpanded & this.dvAnchored.IsDocked & !this.HasSentForwards))
             {
@@ -8097,7 +8097,7 @@ namespace Hero_Designer
         }
 
 
-        private Rectangle raGetPoolRect(int Index)
+        Rectangle raGetPoolRect(int Index)
         {
             Label label;
             object Instance;
@@ -8137,7 +8137,7 @@ namespace Hero_Designer
         }
 
 
-        private int raGetTop()
+        int raGetTop()
         {
             int result;
             if (MainModule.MidsController.Toon == null)
@@ -8152,7 +8152,7 @@ namespace Hero_Designer
         }
 
 
-        private int raGreater(int iVal1, int iVal2)
+        int raGreater(int iVal1, int iVal2)
         {
             int result;
             if (iVal1 > iVal2)
@@ -8167,7 +8167,7 @@ namespace Hero_Designer
         }
 
 
-        private void raMovePool(int Index, int X, int Y)
+        void raMovePool(int Index, int X, int Y)
         {
             Label label;
             ComboBox comboBox;
@@ -8225,7 +8225,7 @@ namespace Hero_Designer
         }
 
 
-        private bool raToFloat()
+        bool raToFloat()
         {
             bool flag = false;
             this.llPool0.Height = this.llPool0.DesiredHeight;
@@ -8258,7 +8258,7 @@ namespace Hero_Designer
         }
 
 
-        private bool raToNormal()
+        bool raToNormal()
         {
             bool flag = false;
             this.llPool0.SuspendRedraw = true;
@@ -8339,7 +8339,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ReArrange(bool Init)
+        bool ReArrange(bool Init)
         {
             bool flag = false;
             bool flag2;
@@ -8372,7 +8372,7 @@ namespace Hero_Designer
         }
 
 
-        private void RearrangeAllSlotsInBuild(PowerEntry[] tp, bool notifyUser = false)
+        void RearrangeAllSlotsInBuild(PowerEntry[] tp, bool notifyUser = false)
         {
             int index = 0;
             int[] numArray = new int[tp.Length - 1 + 1];
@@ -8525,7 +8525,7 @@ namespace Hero_Designer
         }
 
 
-        private void RedrawUnderPopup(Rectangle RectRedraw)
+        void RedrawUnderPopup(Rectangle RectRedraw)
         {
             Rectangle Clip = RectRedraw;
             Clip.Offset(-this.pnlGFXFlow.Location.X, -this.pnlGFXFlow.Location.Y);
@@ -8586,7 +8586,7 @@ namespace Hero_Designer
         }
 
 
-        private void RefreshTabs(int iPower, I9Slot iEnh, int iLevel = -1)
+        void RefreshTabs(int iPower, I9Slot iEnh, int iLevel = -1)
         {
             if (iEnh.Enh > -1)
             {
@@ -8600,7 +8600,7 @@ namespace Hero_Designer
         }
 
 
-        private void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
+        void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
         {
             int num = tp.SlotCount - 2;
             for (int index = slotIDX; index <= num; index++)
@@ -8611,7 +8611,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetAncilPoolHeight()
+        void SetAncilPoolHeight()
         {
             int num = this.llAncillary.ActualLineHeight * 2;
             int num2 = 1;
@@ -8632,7 +8632,7 @@ namespace Hero_Designer
         }
 
 
-        private void setColumns(int columns)
+        void setColumns(int columns)
         {
             MidsContext.Config.Columns = columns;
             this.Drawing.Columns = columns;
@@ -8645,7 +8645,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetDamageMenuCheckMarks()
+        void SetDamageMenuCheckMarks()
         {
             switch (MidsContext.Config.DamageMath.ReturnValue)
             {
@@ -8684,7 +8684,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetFormHeight(bool Force = false)
+        void SetFormHeight(bool Force = false)
         {
             int iVal2 = 0;
             int num = base.Height - base.ClientSize.Height;
@@ -8733,7 +8733,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetFormWidth(bool ToFull = false)
+        void SetFormWidth(bool ToFull = false)
         {
             this.NoResizeEvent = true;
             int num = base.Width - base.ClientSize.Width;
@@ -8785,7 +8785,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetPopupLocation(Rectangle ObjectBounds, bool PowerListing = false, bool Picker = false)
+        void SetPopupLocation(Rectangle ObjectBounds, bool PowerListing = false, bool Picker = false)
         {
             int y = 0;
             int top = ObjectBounds.Top;
@@ -8882,7 +8882,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetTitleBar(bool Hero = true)
+        void SetTitleBar(bool Hero = true)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -8947,7 +8947,7 @@ namespace Hero_Designer
         }
 
 
-        private void ShallowCopyPowerList(PowerEntry[] source)
+        void ShallowCopyPowerList(PowerEntry[] source)
         {
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int index = 0; index <= num; index++)
@@ -8978,7 +8978,7 @@ namespace Hero_Designer
         }
 
 
-        private void ShowPopup(int nIDPowerset, int nIDClass, Rectangle rBounds, string ExtraString = "")
+        void ShowPopup(int nIDPowerset, int nIDClass, Rectangle rBounds, string ExtraString = "")
         {
             if (!MidsContext.Config.ShowPopup)
             {
@@ -9037,7 +9037,7 @@ namespace Hero_Designer
         }
 
 
-        private void ShowPopup(int hIDX, int pIDX, int sIDX, Point e, Rectangle rBounds, I9Slot eSlot = null, int setIDX = -1)
+        void ShowPopup(int hIDX, int pIDX, int sIDX, Point e, Rectangle rBounds, I9Slot eSlot = null, int setIDX = -1)
         {
             if (!MidsContext.Config.ShowPopup)
             {
@@ -9136,7 +9136,7 @@ namespace Hero_Designer
         }
 
 
-        private void SlotLevelSwap(int sourcePower, int sourceSlot, int destPower, int destSlot)
+        void SlotLevelSwap(int sourcePower, int sourceSlot, int destPower, int destSlot)
         {
             int index = 0;
             do
@@ -9222,7 +9222,7 @@ namespace Hero_Designer
         }
 
 
-        private void StartFlip(int iPowerIndex)
+        void StartFlip(int iPowerIndex)
         {
             if (this.FlipActive)
             {
@@ -9255,20 +9255,20 @@ namespace Hero_Designer
         }
 
 
-        private void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tempPowersButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.tempPowersButton.Checked = true;
         }
 
 
-        private void tempPowersButton_ButtonClicked()
+        void tempPowersButton_ButtonClicked()
         {
             this.PowerModified();
         }
 
 
-        private void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
+        void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
             {
@@ -9303,7 +9303,7 @@ namespace Hero_Designer
         }
 
 
-        private void tlsDPA_Click(object sender, EventArgs e)
+        void tlsDPA_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPA;
             this.SetDamageMenuCheckMarks();
@@ -9311,7 +9311,7 @@ namespace Hero_Designer
         }
 
 
-        private void tmrGfx_Tick(object sender, EventArgs e)
+        void tmrGfx_Tick(object sender, EventArgs e)
         {
             if (this.FlipActive)
             {
@@ -9320,7 +9320,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ToggleClicked(int hID, int iX, int iY)
+        bool ToggleClicked(int hID, int iX, int iY)
         {
             Rectangle rectangle = default(Rectangle);
             bool flag;
@@ -9349,7 +9349,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsAbout_Click(object sender, EventArgs e)
+        void tsAbout_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             new frmAbout
@@ -9365,7 +9365,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsAdvDBEdit_Click(object sender, EventArgs e)
+        void tsAdvDBEdit_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             new frmDBEdit().ShowDialog(this);
@@ -9373,7 +9373,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsAdvFreshInstall_Click(object sender, EventArgs e)
+        void tsAdvFreshInstall_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             if (MidsContext.Config.FreshInstall)
@@ -9393,13 +9393,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsAdvResetTips_Click(object sender, EventArgs e)
+        void tsAdvResetTips_Click(object sender, EventArgs e)
         {
             MidsContext.Config.Tips = new Tips();
         }
 
 
-        private void tsBug_Click(object sender, EventArgs e)
+        void tsBug_Click(object sender, EventArgs e)
         {
             string at = "ATFailed";
             string pri = "PriFailed";
@@ -9417,7 +9417,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsClearAllEnh_Click(object sender, EventArgs e)
+        void tsClearAllEnh_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             if (Interaction.MsgBox("Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -9438,7 +9438,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsConfig_Click(object sender, EventArgs e)
+        void tsConfig_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             frmMain iParent = this;
@@ -9454,13 +9454,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsDonate_Click(object sender, EventArgs e)
+        void tsDonate_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
 
-        private void tsDynamic_Click(object sender, EventArgs e)
+        void tsDynamic_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9471,7 +9471,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToDO_Click(object sender, EventArgs e)
+        void tsEnhToDO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
             {
@@ -9485,7 +9485,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToEven_Click(object sender, EventArgs e)
+        void tsEnhToEven_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9500,7 +9500,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToMinus1_Click(object sender, EventArgs e)
+        void tsEnhToMinus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9515,7 +9515,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToMinus2_Click(object sender, EventArgs e)
+        void tsEnhToMinus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9530,7 +9530,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToMinus3_Click(object sender, EventArgs e)
+        void tsEnhToMinus3_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9545,7 +9545,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToNone_Click(object sender, EventArgs e)
+        void tsEnhToNone_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9560,7 +9560,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToPlus1_Click(object sender, EventArgs e)
+        void tsEnhToPlus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9575,7 +9575,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToPlus2_Click(object sender, EventArgs e)
+        void tsEnhToPlus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9590,7 +9590,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToPlus3_Click(object sender, EventArgs e)
+        void tsEnhToPlus3_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
             {
@@ -9605,7 +9605,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToPlus4_Click(object sender, EventArgs e)
+        void tsEnhToPlus4_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9620,7 +9620,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToPlus5_Click(object sender, EventArgs e)
+        void tsEnhToPlus5_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9635,7 +9635,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToSO_Click(object sender, EventArgs e)
+        void tsEnhToSO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
             {
@@ -9649,7 +9649,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsEnhToTO_Click(object sender, EventArgs e)
+        void tsEnhToTO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
             {
@@ -9663,7 +9663,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsExport_Click(object sender, EventArgs e)
+        void tsExport_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             MidsContext.Config.LongExport = false;
@@ -9682,14 +9682,14 @@ namespace Hero_Designer
         }
 
 
-        private void tsExportDataLink_Click(object sender, EventArgs e)
+        void tsExportDataLink_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
             Interaction.MsgBox("The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, "Export Done");
         }
 
 
-        private void tsExportLong_Click(object sender, EventArgs e)
+        void tsExportLong_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             MidsContext.Config.LongExport = true;
@@ -9709,13 +9709,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsFileNew_Click(object sender, EventArgs e)
+        void tsFileNew_Click(object sender, EventArgs e)
         {
             this.command_New();
         }
 
 
-        private void tsFileOpen_Click(object sender, EventArgs e)
+        void tsFileOpen_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
@@ -9736,31 +9736,31 @@ namespace Hero_Designer
         }
 
 
-        private void tsFilePrint_Click(object sender, EventArgs e)
+        void tsFilePrint_Click(object sender, EventArgs e)
         {
             new frmPrint().ShowDialog(this);
         }
 
 
-        private void tsFileQuit_Click(object sender, EventArgs e)
+        void tsFileQuit_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void tsFileSave_Click(object sender, EventArgs e)
+        void tsFileSave_Click(object sender, EventArgs e)
         {
             this.doSave();
         }
 
 
-        private void tsFileSaveAs_Click(object sender, EventArgs e)
+        void tsFileSaveAs_Click(object sender, EventArgs e)
         {
             this.doSaveAs();
         }
 
 
-        private void tsFlipAllEnh_Click(object sender, EventArgs e)
+        void tsFlipAllEnh_Click(object sender, EventArgs e)
         {
             MainModule.MidsController.Toon.FlipAllSlots();
             this.DoRedraw();
@@ -9769,7 +9769,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsHelp_Click(object sender, EventArgs e)
+        void tsHelp_Click(object sender, EventArgs e)
         {
             frmReadme frmReadme = new frmReadme(OS.GetApplicationPath() + "readme.rtf")
             {
@@ -9786,41 +9786,41 @@ namespace Hero_Designer
         }
 
 
-        private void tsHelperLong_Click(object sender, EventArgs e)
+        void tsHelperLong_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, false).ShowDialog(this);
         }
 
 
-        private void tsHelperLong2_Click(object sender, EventArgs e)
+        void tsHelperLong2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, true).ShowDialog(this);
         }
 
 
-        private void tsHelperShort_Click(object sender, EventArgs e)
+        void tsHelperShort_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, false).ShowDialog(this);
         }
 
 
-        private void tsHelperShort2_Click(object sender, EventArgs e)
+        void tsHelperShort2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, true).ShowDialog(this);
         }
 
 
-        private void tsImport_Click(object sender, EventArgs e)
+        void tsImport_Click(object sender, EventArgs e)
         {
             this.command_ForumImport();
         }
 
 
-        private void tsIODefault_Click(object sender, EventArgs e)
+        void tsIODefault_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, false))
             {
@@ -9833,7 +9833,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsIOMax_Click(object sender, EventArgs e)
+        void tsIOMax_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, true))
             {
@@ -9846,7 +9846,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsIOMin_Click(object sender, EventArgs e)
+        void tsIOMin_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, true, false))
             {
@@ -9859,7 +9859,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsLevelUp_Click(object sender, EventArgs e)
+        void tsLevelUp_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -9870,7 +9870,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsPatchNotes_Click(object sender, EventArgs e)
+        void tsPatchNotes_Click(object sender, EventArgs e)
         {
             string str = OS.GetApplicationPath() + "Data\\patch.rtf";
             if (File.Exists(str))
@@ -9897,19 +9897,19 @@ namespace Hero_Designer
         }
 
 
-        private void tsRecipeViewer_Click(object sender, EventArgs e)
+        void tsRecipeViewer_Click(object sender, EventArgs e)
         {
             this.FloatRecipe(true);
         }
 
 
-        private void tsDPSCalc_Click(object sender, EventArgs e)
+        void tsDPSCalc_Click(object sender, EventArgs e)
         {
             this.FloatDPSCalc(true);
         }
 
 
-        private void tsRemoveAllSlots_Click(object sender, EventArgs e)
+        void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             if (Interaction.MsgBox("Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -9931,32 +9931,32 @@ namespace Hero_Designer
         }
 
 
-        private void tsSetFind_Click(object sender, EventArgs e)
+        void tsSetFind_Click(object sender, EventArgs e)
         {
             this.FloatSetFinder(true);
         }
 
 
-        private void tsTitanForum_Click(object sender, EventArgs e)
+        void tsTitanForum_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToForums();
         }
 
 
-        private void tsTitanPlanner_Click(object sender, EventArgs e)
+        void tsTitanPlanner_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToCoHPlanner();
         }
 
 
-        private void tsTitanSite_Click(object sender, EventArgs e)
+        void tsTitanSite_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToTitan();
         }
 
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private void tsUpdateCheck_Click(object sender, EventArgs e)
+        void tsUpdateCheck_Click(object sender, EventArgs e)
         {
             clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
             IMessager iLoadFrm = null;
@@ -9974,25 +9974,25 @@ namespace Hero_Designer
         }
 
 
-        private void tsView2Col_Click(object sender, EventArgs e)
+        void tsView2Col_Click(object sender, EventArgs e)
         {
             this.setColumns(2);
         }
 
 
-        private void tsView3Col_Click(object sender, EventArgs e)
+        void tsView3Col_Click(object sender, EventArgs e)
         {
             this.setColumns(3);
         }
 
 
-        private void tsView4Col_Click(object sender, EventArgs e)
+        void tsView4Col_Click(object sender, EventArgs e)
         {
             this.setColumns(4);
         }
 
 
-        private void tsViewActualDamage_New_Click(object sender, EventArgs e)
+        void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
             this.SetDamageMenuCheckMarks();
@@ -10000,13 +10000,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewData_Click(object sender, EventArgs e)
+        void tsViewData_Click(object sender, EventArgs e)
         {
             this.FloatData(true);
         }
 
 
-        private void tsViewDPS_New_Click(object sender, EventArgs e)
+        void tsViewDPS_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPS;
             this.SetDamageMenuCheckMarks();
@@ -10014,13 +10014,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewGraphs_Click(object sender, EventArgs e)
+        void tsViewGraphs_Click(object sender, EventArgs e)
         {
             this.FloatStatGraph(true);
         }
 
 
-        private void tsViewIOLevels_Click(object sender, EventArgs e)
+        void tsViewIOLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.I9.DisplayIOLevels = !MidsContext.Config.I9.DisplayIOLevels;
             this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
@@ -10028,7 +10028,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewRelative_Click(object sender, EventArgs e)
+        void tsViewRelative_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowEnhRel = !MidsContext.Config.ShowEnhRel;
             this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
@@ -10036,13 +10036,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewSetCompare_Click(object sender, EventArgs e)
+        void tsViewSetCompare_Click(object sender, EventArgs e)
         {
             this.FloatCompareGraph(true);
         }
 
 
-        private void tsViewSets_Click(object sender, EventArgs e)
+        void tsViewSets_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
             {
@@ -10051,7 +10051,7 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewSlotLevels_Click(object sender, EventArgs e)
+        void tsViewSlotLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowSlotLevels = !MidsContext.Config.ShowSlotLevels;
             this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
@@ -10060,13 +10060,13 @@ namespace Hero_Designer
         }
 
 
-        private void tsViewTotals_Click(object sender, EventArgs e)
+        void tsViewTotals_Click(object sender, EventArgs e)
         {
             this.FloatTotals(true);
         }
 
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
             {
@@ -10181,7 +10181,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdateControls(bool ForceComplete = false)
+        void UpdateControls(bool ForceComplete = false)
         {
             this.NoUpdate = true;
             Archetype[] all = Array.FindAll<Archetype>(DatabaseAPI.Database.Classes, new Predicate<Archetype>(this.GetPlayableClasses));
@@ -10408,7 +10408,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdateDynamicModeInfo()
+        void UpdateDynamicModeInfo()
         {
             if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
             {
@@ -10437,7 +10437,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdateLLColours(ref ListLabelV2 iList)
+        void UpdateLLColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
@@ -10458,7 +10458,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdateOtherFormsFonts()
+        void UpdateOtherFormsFonts()
         {
             if (this.fIncarnate != null)
             {
@@ -10574,7 +10574,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdatePowerList(ref ListLabelV2 llPower)
+        void UpdatePowerList(ref ListLabelV2 llPower)
         {
             llPower.SuspendRedraw = true;
             if (llPower.Items.Length == 0)
@@ -10604,7 +10604,7 @@ namespace Hero_Designer
         }
 
 
-        private void UpdatePowerLists()
+        void UpdatePowerLists()
         {
             bool flag = false;
             if (this.llPrimary.Items.Length == 0)
@@ -10981,14 +10981,14 @@ namespace Hero_Designer
         }
 
 
-        private List<PowerEntry> sortPowerEntryList(List<PowerEntry> listPowerEntry)
+        List<PowerEntry> sortPowerEntryList(List<PowerEntry> listPowerEntry)
         {
             listPowerEntry.Sort((PowerEntry p1, PowerEntry p2) => p1.Level.CompareTo(p2.Level));
             return listPowerEntry;
         }
 
 
-        private string[] BuildLineSplitter(string build)
+        string[] BuildLineSplitter(string build)
         {
             string[] strArray = build.Split(new char[]
             {
@@ -11004,659 +11004,659 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("accoladeButton")]
-        private ImageButton _accoladeButton;
+        ImageButton _accoladeButton;
 
 
         [AccessedThroughProperty("AccoladesWindowToolStripMenuItem")]
-        private ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
+        ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
 
 
         [AccessedThroughProperty("AdvancedToolStripMenuItem1")]
-        private ToolStripMenuItem _AdvancedToolStripMenuItem1;
+        ToolStripMenuItem _AdvancedToolStripMenuItem1;
 
 
         [AccessedThroughProperty("AutoArrangeAllSlotsToolStripMenuItem")]
-        private ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
+        ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
 
 
         [AccessedThroughProperty("cbAncillary")]
-        private ComboBox _cbAncillary;
+        ComboBox _cbAncillary;
 
 
         [AccessedThroughProperty("cbAT")]
-        private ComboBox _cbAT;
+        ComboBox _cbAT;
 
 
         [AccessedThroughProperty("cbOrigin")]
-        private ComboBox _cbOrigin;
+        ComboBox _cbOrigin;
 
 
         [AccessedThroughProperty("cbPool0")]
-        private ComboBox _cbPool0;
+        ComboBox _cbPool0;
 
 
         [AccessedThroughProperty("cbPool1")]
-        private ComboBox _cbPool1;
+        ComboBox _cbPool1;
 
 
         [AccessedThroughProperty("cbPool2")]
-        private ComboBox _cbPool2;
+        ComboBox _cbPool2;
 
 
         [AccessedThroughProperty("cbPool3")]
-        private ComboBox _cbPool3;
+        ComboBox _cbPool3;
 
 
         [AccessedThroughProperty("cbPrimary")]
-        private ComboBox _cbPrimary;
+        ComboBox _cbPrimary;
 
 
         [AccessedThroughProperty("cbSecondary")]
-        private ComboBox _cbSecondary;
+        ComboBox _cbSecondary;
 
 
         [AccessedThroughProperty("CharacterToolStripMenuItem")]
-        private ToolStripMenuItem _CharacterToolStripMenuItem;
+        ToolStripMenuItem _CharacterToolStripMenuItem;
 
 
         [AccessedThroughProperty("dlgOpen")]
-        private OpenFileDialog _dlgOpen;
+        OpenFileDialog _dlgOpen;
 
 
         [AccessedThroughProperty("dlgSave")]
-        private SaveFileDialog _dlgSave;
+        SaveFileDialog _dlgSave;
 
 
         [AccessedThroughProperty("dvAnchored")]
-        private DataView _dvAnchored;
+        DataView _dvAnchored;
 
 
         [AccessedThroughProperty("FileToolStripMenuItem")]
-        private ToolStripMenuItem _FileToolStripMenuItem;
+        ToolStripMenuItem _FileToolStripMenuItem;
 
 
         [AccessedThroughProperty("HelpToolStripMenuItem1")]
-        private ToolStripMenuItem _HelpToolStripMenuItem1;
+        ToolStripMenuItem _HelpToolStripMenuItem1;
 
 
         [AccessedThroughProperty("heroVillain")]
-        private ImageButton _heroVillain;
+        ImageButton _heroVillain;
 
 
         [AccessedThroughProperty("I9Picker")]
-        private I9Picker _I9Picker;
+        I9Picker _I9Picker;
 
 
         [AccessedThroughProperty("I9Popup")]
-        private ctlPopUp _I9Popup;
+        ctlPopUp _I9Popup;
 
 
         [AccessedThroughProperty("ibAccolade")]
-        private ImageButton _ibAccolade;
+        ImageButton _ibAccolade;
 
 
         [AccessedThroughProperty("ibMode")]
-        private ImageButton _ibMode;
+        ImageButton _ibMode;
 
 
         [AccessedThroughProperty("ibPopup")]
-        private ImageButton _ibPopup;
+        ImageButton _ibPopup;
 
 
         [AccessedThroughProperty("ibPvX")]
-        private ImageButton _ibPvX;
+        ImageButton _ibPvX;
 
 
         [AccessedThroughProperty("ibRecipe")]
-        private ImageButton _ibRecipe;
+        ImageButton _ibRecipe;
 
 
         [AccessedThroughProperty("ibSets")]
-        private ImageButton _ibSets;
+        ImageButton _ibSets;
 
 
         [AccessedThroughProperty("ibSlotLevels")]
-        private ImageButton _ibSlotLevels;
+        ImageButton _ibSlotLevels;
 
 
         [AccessedThroughProperty("ibTotals")]
-        private ImageButton _ibTotals;
+        ImageButton _ibTotals;
 
 
         [AccessedThroughProperty("ibVetPools")]
-        private ImageButton _ibVetPools;
+        ImageButton _ibVetPools;
 
 
         [AccessedThroughProperty("ImportExportToolStripMenuItem")]
-        private ToolStripMenuItem _ImportExportToolStripMenuItem;
+        ToolStripMenuItem _ImportExportToolStripMenuItem;
 
 
         [AccessedThroughProperty("incarnateButton")]
-        private ImageButton _incarnateButton;
+        ImageButton _incarnateButton;
 
 
         [AccessedThroughProperty("IncarnateWindowToolStripMenuItem")]
-        private ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
+        ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
 
 
         [AccessedThroughProperty("InGameRespecHelperToolStripMenuItem")]
-        private ToolStripMenuItem _InGameRespecHelperToolStripMenuItem;
+        ToolStripMenuItem _InGameRespecHelperToolStripMenuItem;
 
 
         [AccessedThroughProperty("lblAT")]
-        private GFXLabel _lblAT;
+        GFXLabel _lblAT;
 
 
         [AccessedThroughProperty("lblATLocked")]
-        private Label _lblATLocked;
+        Label _lblATLocked;
 
 
         [AccessedThroughProperty("lblEpic")]
-        private Label _lblEpic;
+        Label _lblEpic;
 
 
         [AccessedThroughProperty("lblHero")]
-        private GFXLabel _lblHero;
+        GFXLabel _lblHero;
 
 
         [AccessedThroughProperty("lblLocked0")]
-        private Label _lblLocked0;
+        Label _lblLocked0;
 
 
         [AccessedThroughProperty("lblLocked1")]
-        private Label _lblLocked1;
+        Label _lblLocked1;
 
 
         [AccessedThroughProperty("lblLocked2")]
-        private Label _lblLocked2;
+        Label _lblLocked2;
 
 
         [AccessedThroughProperty("lblLocked3")]
-        private Label _lblLocked3;
+        Label _lblLocked3;
 
 
         [AccessedThroughProperty("lblLockedAncillary")]
-        private Label _lblLockedAncillary;
+        Label _lblLockedAncillary;
 
 
         [AccessedThroughProperty("lblLockedSecondary")]
-        private Label _lblLockedSecondary;
+        Label _lblLockedSecondary;
 
 
         [AccessedThroughProperty("lblName")]
-        private GFXLabel _lblName;
+        GFXLabel _lblName;
 
 
         [AccessedThroughProperty("lblOrigin")]
-        private GFXLabel _lblOrigin;
+        GFXLabel _lblOrigin;
 
 
         [AccessedThroughProperty("lblPool1")]
-        private Label _lblPool1;
+        Label _lblPool1;
 
 
         [AccessedThroughProperty("lblPool2")]
-        private Label _lblPool2;
+        Label _lblPool2;
 
 
         [AccessedThroughProperty("lblPool3")]
-        private Label _lblPool3;
+        Label _lblPool3;
 
 
         [AccessedThroughProperty("lblPool4")]
-        private Label _lblPool4;
+        Label _lblPool4;
 
 
         [AccessedThroughProperty("lblPrimary")]
-        private Label _lblPrimary;
+        Label _lblPrimary;
 
 
         [AccessedThroughProperty("lblSecondary")]
-        private Label _lblSecondary;
+        Label _lblSecondary;
 
 
         [AccessedThroughProperty("llAncillary")]
-        private ListLabelV2 _llAncillary;
+        ListLabelV2 _llAncillary;
 
 
         [AccessedThroughProperty("llPool0")]
-        private ListLabelV2 _llPool0;
+        ListLabelV2 _llPool0;
 
 
         [AccessedThroughProperty("llPool1")]
-        private ListLabelV2 _llPool1;
+        ListLabelV2 _llPool1;
 
 
         [AccessedThroughProperty("llPool2")]
-        private ListLabelV2 _llPool2;
+        ListLabelV2 _llPool2;
 
 
         [AccessedThroughProperty("llPool3")]
-        private ListLabelV2 _llPool3;
+        ListLabelV2 _llPool3;
 
 
         [AccessedThroughProperty("llPrimary")]
-        private ListLabelV2 _llPrimary;
+        ListLabelV2 _llPrimary;
 
 
         [AccessedThroughProperty("llSecondary")]
-        private ListLabelV2 _llSecondary;
+        ListLabelV2 _llSecondary;
 
 
         [AccessedThroughProperty("MenuBar")]
-        private MenuStrip _MenuBar;
+        MenuStrip _MenuBar;
 
 
         [AccessedThroughProperty("OptionsToolStripMenuItem")]
-        private ToolStripMenuItem _OptionsToolStripMenuItem;
+        ToolStripMenuItem _OptionsToolStripMenuItem;
 
 
         [AccessedThroughProperty("pbDynMode")]
-        private PictureBox _pbDynMode;
+        PictureBox _pbDynMode;
 
 
         [AccessedThroughProperty("pnlGFX")]
-        private PictureBox _pnlGFX;
+        PictureBox _pnlGFX;
 
 
         [AccessedThroughProperty("pnlGFXFlow")]
-        private FlowLayoutPanel _pnlGFXFlow;
+        FlowLayoutPanel _pnlGFXFlow;
 
 
         [AccessedThroughProperty("SetAllIOsToDefault35ToolStripMenuItem")]
-        private ToolStripMenuItem _SetAllIOsToDefault35ToolStripMenuItem;
+        ToolStripMenuItem _SetAllIOsToDefault35ToolStripMenuItem;
 
 
         [AccessedThroughProperty("SlotsToolStripMenuItem")]
-        private ToolStripMenuItem _SlotsToolStripMenuItem;
+        ToolStripMenuItem _SlotsToolStripMenuItem;
 
 
         [AccessedThroughProperty("TemporaryPowersWindowToolStripMenuItem")]
-        private ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
+        ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
 
 
         [AccessedThroughProperty("tempPowersButton")]
-        private ImageButton _tempPowersButton;
+        ImageButton _tempPowersButton;
 
 
         [AccessedThroughProperty("tlsDPA")]
-        private ToolStripMenuItem _tlsDPA;
+        ToolStripMenuItem _tlsDPA;
 
 
         [AccessedThroughProperty("tmrGfx")]
-        private System.Windows.Forms.Timer _tmrGfx;
+        System.Windows.Forms.Timer _tmrGfx;
 
 
         [AccessedThroughProperty("ToolStripMenuItem1")]
-        private ToolStripMenuItem _ToolStripMenuItem1;
+        ToolStripMenuItem _ToolStripMenuItem1;
 
 
         [AccessedThroughProperty("ToolStripMenuItem2")]
-        private ToolStripMenuItem _ToolStripMenuItem2;
+        ToolStripMenuItem _ToolStripMenuItem2;
 
 
         [AccessedThroughProperty("ToolStripMenuItem4")]
-        private ToolStripSeparator _ToolStripMenuItem4;
+        ToolStripSeparator _ToolStripMenuItem4;
 
 
         [AccessedThroughProperty("ToolStripSeparator1")]
-        private ToolStripSeparator _ToolStripSeparator1;
+        ToolStripSeparator _ToolStripSeparator1;
 
 
         [AccessedThroughProperty("ToolStripSeparator10")]
-        private ToolStripSeparator _ToolStripSeparator10;
+        ToolStripSeparator _ToolStripSeparator10;
 
 
         [AccessedThroughProperty("ToolStripSeparator11")]
-        private ToolStripSeparator _ToolStripSeparator11;
+        ToolStripSeparator _ToolStripSeparator11;
 
 
         [AccessedThroughProperty("ToolStripSeparator12")]
-        private ToolStripSeparator _ToolStripSeparator12;
+        ToolStripSeparator _ToolStripSeparator12;
 
 
         [AccessedThroughProperty("ToolStripSeparator13")]
-        private ToolStripSeparator _ToolStripSeparator13;
+        ToolStripSeparator _ToolStripSeparator13;
 
 
         [AccessedThroughProperty("ToolStripSeparator14")]
-        private ToolStripSeparator _ToolStripSeparator14;
+        ToolStripSeparator _ToolStripSeparator14;
 
 
         [AccessedThroughProperty("ToolStripSeparator15")]
-        private ToolStripSeparator _ToolStripSeparator15;
+        ToolStripSeparator _ToolStripSeparator15;
 
 
         [AccessedThroughProperty("ToolStripSeparator16")]
-        private ToolStripSeparator _ToolStripSeparator16;
+        ToolStripSeparator _ToolStripSeparator16;
 
 
         [AccessedThroughProperty("ToolStripSeparator17")]
-        private ToolStripSeparator _ToolStripSeparator17;
+        ToolStripSeparator _ToolStripSeparator17;
 
 
         [AccessedThroughProperty("ToolStripSeparator18")]
-        private ToolStripSeparator _ToolStripSeparator18;
+        ToolStripSeparator _ToolStripSeparator18;
 
 
         [AccessedThroughProperty("ToolStripSeparator19")]
-        private ToolStripSeparator _ToolStripSeparator19;
+        ToolStripSeparator _ToolStripSeparator19;
 
 
         [AccessedThroughProperty("ToolStripSeparator2")]
-        private ToolStripSeparator _ToolStripSeparator2;
+        ToolStripSeparator _ToolStripSeparator2;
 
 
         [AccessedThroughProperty("ToolStripSeparator20")]
-        private ToolStripSeparator _ToolStripSeparator20;
+        ToolStripSeparator _ToolStripSeparator20;
 
 
         [AccessedThroughProperty("ToolStripSeparator21")]
-        private ToolStripSeparator _ToolStripSeparator21;
+        ToolStripSeparator _ToolStripSeparator21;
 
 
         [AccessedThroughProperty("ToolStripSeparator22")]
-        private ToolStripSeparator _ToolStripSeparator22;
+        ToolStripSeparator _ToolStripSeparator22;
 
 
         [AccessedThroughProperty("ToolStripSeparator23")]
-        private ToolStripSeparator _ToolStripSeparator23;
+        ToolStripSeparator _ToolStripSeparator23;
 
 
         [AccessedThroughProperty("ToolStripSeparator24")]
-        private ToolStripSeparator _ToolStripSeparator24;
+        ToolStripSeparator _ToolStripSeparator24;
 
 
         [AccessedThroughProperty("ToolStripSeparator4")]
-        private ToolStripSeparator _ToolStripSeparator4;
+        ToolStripSeparator _ToolStripSeparator4;
 
 
         [AccessedThroughProperty("ToolStripSeparator5")]
-        private ToolStripSeparator _ToolStripSeparator5;
+        ToolStripSeparator _ToolStripSeparator5;
 
 
         [AccessedThroughProperty("ToolStripSeparator7")]
-        private ToolStripSeparator _ToolStripSeparator7;
+        ToolStripSeparator _ToolStripSeparator7;
 
 
         [AccessedThroughProperty("ToolStripSeparator8")]
-        private ToolStripSeparator _ToolStripSeparator8;
+        ToolStripSeparator _ToolStripSeparator8;
 
 
         [AccessedThroughProperty("ToolStripSeparator9")]
-        private ToolStripSeparator _ToolStripSeparator9;
+        ToolStripSeparator _ToolStripSeparator9;
 
 
         [AccessedThroughProperty("tsAbout")]
-        private ToolStripMenuItem _tsAbout;
+        ToolStripMenuItem _tsAbout;
 
 
         [AccessedThroughProperty("tsAdvDBEdit")]
-        private ToolStripMenuItem _tsAdvDBEdit;
+        ToolStripMenuItem _tsAdvDBEdit;
 
 
         [AccessedThroughProperty("tsAdvFreshInstall")]
-        private ToolStripMenuItem _tsAdvFreshInstall;
+        ToolStripMenuItem _tsAdvFreshInstall;
 
 
         [AccessedThroughProperty("tsAdvResetTips")]
-        private ToolStripMenuItem _tsAdvResetTips;
+        ToolStripMenuItem _tsAdvResetTips;
 
 
         [AccessedThroughProperty("tsBug")]
-        private ToolStripMenuItem _tsBug;
+        ToolStripMenuItem _tsBug;
 
 
         [AccessedThroughProperty("tsClearAllEnh")]
-        private ToolStripMenuItem _tsClearAllEnh;
+        ToolStripMenuItem _tsClearAllEnh;
 
 
         [AccessedThroughProperty("tsConfig")]
-        private ToolStripMenuItem _tsConfig;
+        ToolStripMenuItem _tsConfig;
 
 
         [AccessedThroughProperty("tsDonate")]
-        private ToolStripMenuItem _tsDonate;
+        ToolStripMenuItem _tsDonate;
 
 
         [AccessedThroughProperty("tsDynamic")]
-        private ToolStripMenuItem _tsDynamic;
+        ToolStripMenuItem _tsDynamic;
 
 
         [AccessedThroughProperty("tsEnhToDO")]
-        private ToolStripMenuItem _tsEnhToDO;
+        ToolStripMenuItem _tsEnhToDO;
 
 
         [AccessedThroughProperty("tsEnhToEven")]
-        private ToolStripMenuItem _tsEnhToEven;
+        ToolStripMenuItem _tsEnhToEven;
 
 
         [AccessedThroughProperty("tsEnhToMinus1")]
-        private ToolStripMenuItem _tsEnhToMinus1;
+        ToolStripMenuItem _tsEnhToMinus1;
 
 
         [AccessedThroughProperty("tsEnhToMinus2")]
-        private ToolStripMenuItem _tsEnhToMinus2;
+        ToolStripMenuItem _tsEnhToMinus2;
 
 
         [AccessedThroughProperty("tsEnhToMinus3")]
-        private ToolStripMenuItem _tsEnhToMinus3;
+        ToolStripMenuItem _tsEnhToMinus3;
 
 
         [AccessedThroughProperty("tsEnhToNone")]
-        private ToolStripMenuItem _tsEnhToNone;
+        ToolStripMenuItem _tsEnhToNone;
 
 
         [AccessedThroughProperty("tsEnhToPlus1")]
-        private ToolStripMenuItem _tsEnhToPlus1;
+        ToolStripMenuItem _tsEnhToPlus1;
 
 
         [AccessedThroughProperty("tsEnhToPlus2")]
-        private ToolStripMenuItem _tsEnhToPlus2;
+        ToolStripMenuItem _tsEnhToPlus2;
 
 
         [AccessedThroughProperty("tsEnhToPlus3")]
-        private ToolStripMenuItem _tsEnhToPlus3;
+        ToolStripMenuItem _tsEnhToPlus3;
 
 
         [AccessedThroughProperty("tsEnhToPlus4")]
-        private ToolStripMenuItem _tsEnhToPlus4;
+        ToolStripMenuItem _tsEnhToPlus4;
 
 
         [AccessedThroughProperty("tsEnhToPlus5")]
-        private ToolStripMenuItem _tsEnhToPlus5;
+        ToolStripMenuItem _tsEnhToPlus5;
 
 
         [AccessedThroughProperty("tsEnhToSO")]
-        private ToolStripMenuItem _tsEnhToSO;
+        ToolStripMenuItem _tsEnhToSO;
 
 
         [AccessedThroughProperty("tsEnhToTO")]
-        private ToolStripMenuItem _tsEnhToTO;
+        ToolStripMenuItem _tsEnhToTO;
 
 
         [AccessedThroughProperty("tsExport")]
-        private ToolStripMenuItem _tsExport;
+        ToolStripMenuItem _tsExport;
 
 
         [AccessedThroughProperty("tsExportDataLink")]
-        private ToolStripMenuItem _tsExportDataLink;
+        ToolStripMenuItem _tsExportDataLink;
 
 
         [AccessedThroughProperty("tsExportLong")]
-        private ToolStripMenuItem _tsExportLong;
+        ToolStripMenuItem _tsExportLong;
 
 
         [AccessedThroughProperty("tsFileNew")]
-        private ToolStripMenuItem _tsFileNew;
+        ToolStripMenuItem _tsFileNew;
 
 
         [AccessedThroughProperty("tsFileOpen")]
-        private ToolStripMenuItem _tsFileOpen;
+        ToolStripMenuItem _tsFileOpen;
 
 
         [AccessedThroughProperty("tsFilePrint")]
-        private ToolStripMenuItem _tsFilePrint;
+        ToolStripMenuItem _tsFilePrint;
 
 
         [AccessedThroughProperty("tsFileQuit")]
-        private ToolStripMenuItem _tsFileQuit;
+        ToolStripMenuItem _tsFileQuit;
 
 
         [AccessedThroughProperty("tsFileSave")]
-        private ToolStripMenuItem _tsFileSave;
+        ToolStripMenuItem _tsFileSave;
 
 
         [AccessedThroughProperty("tsFileSaveAs")]
-        private ToolStripMenuItem _tsFileSaveAs;
+        ToolStripMenuItem _tsFileSaveAs;
 
 
         [AccessedThroughProperty("tsFlipAllEnh")]
-        private ToolStripMenuItem _tsFlipAllEnh;
+        ToolStripMenuItem _tsFlipAllEnh;
 
 
         [AccessedThroughProperty("tsHelp")]
-        private ToolStripMenuItem _tsHelp;
+        ToolStripMenuItem _tsHelp;
 
 
         [AccessedThroughProperty("tsHelperLong")]
-        private ToolStripMenuItem _tsHelperLong;
+        ToolStripMenuItem _tsHelperLong;
 
 
         [AccessedThroughProperty("tsHelperLong2")]
-        private ToolStripMenuItem _tsHelperLong2;
+        ToolStripMenuItem _tsHelperLong2;
 
 
         [AccessedThroughProperty("tsHelperShort")]
-        private ToolStripMenuItem _tsHelperShort;
+        ToolStripMenuItem _tsHelperShort;
 
 
         [AccessedThroughProperty("tsHelperShort2")]
-        private ToolStripMenuItem _tsHelperShort2;
+        ToolStripMenuItem _tsHelperShort2;
 
 
         [AccessedThroughProperty("tsImport")]
-        private ToolStripMenuItem _tsImport;
+        ToolStripMenuItem _tsImport;
 
 
         [AccessedThroughProperty("tsIODefault")]
-        private ToolStripMenuItem _tsIODefault;
+        ToolStripMenuItem _tsIODefault;
 
 
         [AccessedThroughProperty("tsIOMax")]
-        private ToolStripMenuItem _tsIOMax;
+        ToolStripMenuItem _tsIOMax;
 
 
         [AccessedThroughProperty("tsIOMin")]
-        private ToolStripMenuItem _tsIOMin;
+        ToolStripMenuItem _tsIOMin;
 
 
         [AccessedThroughProperty("tsLevelUp")]
-        private ToolStripMenuItem _tsLevelUp;
+        ToolStripMenuItem _tsLevelUp;
 
 
         [AccessedThroughProperty("tsPatchNotes")]
-        private ToolStripMenuItem _tsPatchNotes;
+        ToolStripMenuItem _tsPatchNotes;
 
 
         [AccessedThroughProperty("tsRecipeViewer")]
-        private ToolStripMenuItem _tsRecipeViewer;
+        ToolStripMenuItem _tsRecipeViewer;
 
 
         [AccessedThroughProperty("tsDPSCalc")]
-        private ToolStripMenuItem _tsDPSCalc;
+        ToolStripMenuItem _tsDPSCalc;
 
 
         [AccessedThroughProperty("tsRemoveAllSlots")]
-        private ToolStripMenuItem _tsRemoveAllSlots;
+        ToolStripMenuItem _tsRemoveAllSlots;
 
 
         [AccessedThroughProperty("tsSetFind")]
-        private ToolStripMenuItem _tsSetFind;
+        ToolStripMenuItem _tsSetFind;
 
 
         [AccessedThroughProperty("tsTitanForum")]
-        private ToolStripMenuItem _tsTitanForum;
+        ToolStripMenuItem _tsTitanForum;
 
 
         [AccessedThroughProperty("tsTitanPlanner")]
-        private ToolStripMenuItem _tsTitanPlanner;
+        ToolStripMenuItem _tsTitanPlanner;
 
 
         [AccessedThroughProperty("tsTitanSite")]
-        private ToolStripMenuItem _tsTitanSite;
+        ToolStripMenuItem _tsTitanSite;
 
 
         [AccessedThroughProperty("tsUpdateCheck")]
-        private ToolStripMenuItem _tsUpdateCheck;
+        ToolStripMenuItem _tsUpdateCheck;
 
 
         [AccessedThroughProperty("tsView2Col")]
-        private ToolStripMenuItem _tsView2Col;
+        ToolStripMenuItem _tsView2Col;
 
 
         [AccessedThroughProperty("tsView3Col")]
-        private ToolStripMenuItem _tsView3Col;
+        ToolStripMenuItem _tsView3Col;
 
 
         [AccessedThroughProperty("tsView4Col")]
-        private ToolStripMenuItem _tsView4Col;
+        ToolStripMenuItem _tsView4Col;
 
 
         [AccessedThroughProperty("tsViewActualDamage_New")]
-        private ToolStripMenuItem _tsViewActualDamage_New;
+        ToolStripMenuItem _tsViewActualDamage_New;
 
 
         [AccessedThroughProperty("tsViewData")]
-        private ToolStripMenuItem _tsViewData;
+        ToolStripMenuItem _tsViewData;
 
 
         [AccessedThroughProperty("tsViewDPS_New")]
-        private ToolStripMenuItem _tsViewDPS_New;
+        ToolStripMenuItem _tsViewDPS_New;
 
 
         [AccessedThroughProperty("tsViewGraphs")]
-        private ToolStripMenuItem _tsViewGraphs;
+        ToolStripMenuItem _tsViewGraphs;
 
 
         [AccessedThroughProperty("tsViewIOLevels")]
-        private ToolStripMenuItem _tsViewIOLevels;
+        ToolStripMenuItem _tsViewIOLevels;
 
 
         [AccessedThroughProperty("tsViewRelative")]
-        private ToolStripMenuItem _tsViewRelative;
+        ToolStripMenuItem _tsViewRelative;
 
 
         [AccessedThroughProperty("tsViewSetCompare")]
-        private ToolStripMenuItem _tsViewSetCompare;
+        ToolStripMenuItem _tsViewSetCompare;
 
 
         [AccessedThroughProperty("tsViewSets")]
-        private ToolStripMenuItem _tsViewSets;
+        ToolStripMenuItem _tsViewSets;
 
 
         [AccessedThroughProperty("tsViewSlotLevels")]
-        private ToolStripMenuItem _tsViewSlotLevels;
+        ToolStripMenuItem _tsViewSlotLevels;
 
 
         [AccessedThroughProperty("tsViewTotals")]
-        private ToolStripMenuItem _tsViewTotals;
+        ToolStripMenuItem _tsViewTotals;
 
 
         [AccessedThroughProperty("tTip")]
-        private ToolTip _tTip;
+        ToolTip _tTip;
 
 
         [AccessedThroughProperty("txtName")]
-        private TextBox _txtName;
+        TextBox _txtName;
 
 
         [AccessedThroughProperty("ViewToolStripMenuItem")]
-        private ToolStripMenuItem _ViewToolStripMenuItem;
+        ToolStripMenuItem _ViewToolStripMenuItem;
 
 
         [AccessedThroughProperty("WindowToolStripMenuItem")]
-        private ToolStripMenuItem _WindowToolStripMenuItem;
+        ToolStripMenuItem _WindowToolStripMenuItem;
 
 
         protected Rectangle ActivePopupBounds;
@@ -11665,40 +11665,40 @@ namespace Hero_Designer
         public bool DataViewLocked;
 
 
-        private short[] ddsa;
+        short[] ddsa;
 
 
-        private ExtendedBitmap dmBuffer;
+        ExtendedBitmap dmBuffer;
 
 
-        private bool DoneDblClick;
+        bool DoneDblClick;
 
 
-        private int dragFinishPower;
+        int dragFinishPower;
 
 
-        private int dragFinishSlot;
+        int dragFinishSlot;
 
 
-        private Rectangle dragRect;
+        Rectangle dragRect;
 
 
-        private int dragStartPower;
+        int dragStartPower;
 
 
-        private int dragStartSlot;
+        int dragStartSlot;
 
 
-        private int dragStartX;
+        int dragStartX;
 
 
-        private int dragStartY;
+        int dragStartY;
 
 
-        private int dragXOffset;
+        int dragXOffset;
 
 
-        private int dragYOffset;
+        int dragYOffset;
 
 
         public clsDrawX Drawing;
@@ -11785,10 +11785,10 @@ namespace Hero_Designer
         protected frmTotals fTotals;
 
 
-        private bool HasSentBack;
+        bool HasSentBack;
 
 
-        private bool HasSentForwards;
+        bool HasSentForwards;
 
 
         public bool LastClickPlacedSlot;
@@ -11812,13 +11812,13 @@ namespace Hero_Designer
         public DataView myDataView;
 
 
-        private bool NoResizeEvent;
+        bool NoResizeEvent;
 
 
         public bool NoUpdate;
 
 
-        private Rectangle oldDragRect;
+        Rectangle oldDragRect;
 
 
         public int PickerHID;
@@ -11827,34 +11827,34 @@ namespace Hero_Designer
         protected bool PopUpVisible;
 
 
-        private bool top_fData;
+        bool top_fData;
 
 
-        private bool top_fGraphCompare;
+        bool top_fGraphCompare;
 
 
-        private bool top_fGraphStats;
+        bool top_fGraphStats;
 
 
-        private bool top_fRecipe;
+        bool top_fRecipe;
 
 
-        private bool top_fSetFinder;
+        bool top_fSetFinder;
 
 
-        private bool top_fSets;
+        bool top_fSets;
 
 
-        private bool top_fTotals;
+        bool top_fTotals;
 
 
-        private int xCursorOffset;
+        int xCursorOffset;
 
 
-        private int yCursorOffset;
+        int yCursorOffset;
 
 
-        private struct BuildFileLines
+        struct BuildFileLines
         {
 
             public string powerSetName;

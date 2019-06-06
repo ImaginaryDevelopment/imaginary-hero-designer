@@ -99,7 +99,7 @@ public class Build
     }
 
 
-    private PowerEntry GetPowerEntry(IPower power)
+    PowerEntry GetPowerEntry(IPower power)
     {
         foreach (PowerEntry power2 in this.Powers)
         {
@@ -158,7 +158,7 @@ public class Build
     }
 
 
-    private void FillMissingSubPowers()
+    void FillMissingSubPowers()
     {
         foreach (PowerEntry power in this.Powers)
         {
@@ -193,7 +193,7 @@ public class Build
     }
 
 
-    private void ValidateEnhancements()
+    void ValidateEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
         {
@@ -455,7 +455,7 @@ public class Build
     }
 
 
-    private int SlotsAtLevel(int powerEntryId, int iLevel)
+    int SlotsAtLevel(int powerEntryId, int iLevel)
     {
         int num;
         if (powerEntryId < 0)
@@ -749,7 +749,7 @@ public class Build
     }
 
 
-    private void CheckAndFixAllEnhancements()
+    void CheckAndFixAllEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
         {
@@ -793,7 +793,7 @@ public class Build
     }
 
 
-    private void CheckAllVariableBounds()
+    void CheckAllVariableBounds()
     {
         for (int index = 0; index <= this.Powers.Count - 1; index++)
         {
@@ -834,7 +834,7 @@ public class Build
     }
 
 
-    private void ClearInvisibleSlots()
+    void ClearInvisibleSlots()
     {
         foreach (PowerEntry power in this.Powers)
         {
@@ -850,7 +850,7 @@ public class Build
     }
 
 
-    private void ScanAndCleanAutomaticallyGrantedPowers()
+    void ScanAndCleanAutomaticallyGrantedPowers()
     {
         bool flag = false;
         int maxLevel = this.GetMaxLevel();
@@ -1027,7 +1027,7 @@ public class Build
     }
 
 
-    private void AddAutomaticGrantedPowers()
+    void AddAutomaticGrantedPowers()
     {
         int maxLevel = this.GetMaxLevel();
         List<IPowerset> powersetList = new List<IPowerset>();
@@ -1181,7 +1181,7 @@ public class Build
     }
 
 
-    private IPower GetSetBonusVirtualPower()
+    IPower GetSetBonusVirtualPower()
     {
         IPower power = new Power();
         IPower power2;
@@ -1250,7 +1250,7 @@ public class Build
     }
 
 
-    private static int GcsbCheck(IEffect[] fxList, IEffect testFX)
+    static int GcsbCheck(IEffect[] fxList, IEffect testFX)
     {
         for (int index = 0; index < fxList.Length; index++)
         {
@@ -1414,7 +1414,7 @@ public class Build
     }
 
 
-    private readonly Character _character;
+    readonly Character _character;
 
 
     public readonly List<PowerEntry> Powers;
@@ -1423,7 +1423,7 @@ public class Build
     public readonly List<I9SetData> SetBonus;
 
 
-    private IPower _setBonusVirtualPower;
+    IPower _setBonusVirtualPower;
 
 
     public int LastPower;

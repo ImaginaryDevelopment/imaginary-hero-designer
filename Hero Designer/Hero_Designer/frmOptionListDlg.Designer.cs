@@ -23,7 +23,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             this.TableLayoutPanel1 = new global::System.Windows.Forms.TableLayoutPanel();
             this.OK_Button = new global::System.Windows.Forms.Button();
@@ -113,6 +113,6 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
     }
 }

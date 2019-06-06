@@ -70,7 +70,7 @@ public class ExportConfig
     }
 
 
-    private static bool GrabString(out string dest, ref StreamReader reader)
+    static bool GrabString(out string dest, ref StreamReader reader)
     {
         dest = reader.ReadLine();
         return dest == "#CODE#" | dest == "#END#";
@@ -492,7 +492,7 @@ public class ExportConfig
         }
 
 
-        private const string Placeholder = "%VAL%";
+        const string Placeholder = "%VAL%";
 
 
         public string Name;

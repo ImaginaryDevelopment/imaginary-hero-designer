@@ -8,7 +8,7 @@ using Base.Master_Classes;
 public static class MidsCharacterFileFormat
 {
 
-    private static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
+    static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
     {
         MemoryStream memoryStream;
         BinaryWriter writer;
@@ -127,7 +127,7 @@ public static class MidsCharacterFileFormat
     }
 
 
-    private static string MxDBuildSaveStringShared(ref MidsCharacterFileFormat.CompressionData cData, bool inncludeAltEnh, bool @break)
+    static string MxDBuildSaveStringShared(ref MidsCharacterFileFormat.CompressionData cData, bool inncludeAltEnh, bool @break)
     {
         byte[] numArray = new byte[0];
         string str;
@@ -204,7 +204,7 @@ public static class MidsCharacterFileFormat
     }
 
 
-    private static bool MxDReadSaveData(ref byte[] buffer, bool silent)
+    static bool MxDReadSaveData(ref byte[] buffer, bool silent)
     {
         bool flag;
         if (buffer.Length < 1)
@@ -661,7 +661,7 @@ public static class MidsCharacterFileFormat
     }
 
 
-    private static void ReadSlotData(ref BinaryReader reader, ref I9Slot slot, bool qualifiedNames, float fVersion)
+    static void ReadSlotData(ref BinaryReader reader, ref I9Slot slot, bool qualifiedNames, float fVersion)
     {
         int num = -1;
         if (qualifiedNames)
@@ -706,19 +706,19 @@ public static class MidsCharacterFileFormat
     public const string MagicUncompressed = "MxDu";
 
 
-    private const float SaveVersion = 1.01f;
+    const float SaveVersion = 1.01f;
 
 
-    private const int DataLinkMaxLength = 2048;
+    const int DataLinkMaxLength = 2048;
 
 
-    private const bool UseQualifiedNames = false;
+    const bool UseQualifiedNames = false;
 
 
-    private const bool UseOldSubpowerFields = true;
+    const bool UseOldSubpowerFields = true;
 
 
-    private const bool UseHexEncoding = true;
+    const bool UseHexEncoding = true;
 
 
     public static readonly byte[] MagicNumber = new byte[]
@@ -741,7 +741,7 @@ public static class MidsCharacterFileFormat
     }
 
 
-    private struct CompressionData
+    struct CompressionData
     {
 
         public int SzUncompressed;

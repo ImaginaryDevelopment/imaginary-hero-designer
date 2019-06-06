@@ -82,7 +82,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmZStatus_VisibleChanged(object sender, EventArgs e)
+        void frmZStatus_VisibleChanged(object sender, EventArgs e)
         {
             this.Refresh();
         }
@@ -123,19 +123,19 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("lblStatus1")]
-        private Label _lblStatus1;
+        Label _lblStatus1;
 
 
         [AccessedThroughProperty("lblStatus2")]
-        private Label _lblStatus2;
+        Label _lblStatus2;
 
 
         [AccessedThroughProperty("lblTitle")]
-        private Label _lblTitle;
+        Label _lblTitle;
 
 
         [AccessedThroughProperty("PictureBox1")]
-        private PictureBox _PictureBox1;
+        PictureBox _PictureBox1;
 
 
         // (Invoke) Token: 0x060013CC RID: 5068

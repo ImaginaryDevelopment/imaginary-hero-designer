@@ -58,7 +58,7 @@ namespace Base.Document_Classes
         }
 
 
-        private void PrintBegin(object sender, PrintEventArgs e)
+        void PrintBegin(object sender, PrintEventArgs e)
         {
             this._pageNumber = 0;
             this._pIndex = 0;
@@ -68,13 +68,13 @@ namespace Base.Document_Classes
         }
 
 
-        private void PrintEnd(object sender, PrintEventArgs e)
+        void PrintEnd(object sender, PrintEventArgs e)
         {
             this.Document = new PrintDocument();
         }
 
 
-        private void PrintPage(object sender, PrintPageEventArgs args)
+        void PrintPage(object sender, PrintPageEventArgs args)
         {
             RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
             this._pageNumber++;
@@ -104,7 +104,7 @@ namespace Base.Document_Classes
         }
 
 
-        private int PageBorder(Rectangle bounds, PrintPageEventArgs args)
+        int PageBorder(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.Black, 3f);
@@ -160,7 +160,7 @@ namespace Base.Document_Classes
         }
 
 
-        private void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
+        void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
         {
             int num2 = bounds.Top;
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -209,7 +209,7 @@ namespace Base.Document_Classes
         }
 
 
-        private static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
+        static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
             int num2 = bounds.Top;
@@ -264,7 +264,7 @@ namespace Base.Document_Classes
         }
 
 
-        private void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
+        void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
             int vPos = bounds.Top;
@@ -327,7 +327,7 @@ namespace Base.Document_Classes
         }
 
 
-        private int BuildPowerListLong(ref int vPos, RectangleF bounds, int fontSize, Print.PrintWhat selection, PrintPageEventArgs args)
+        int BuildPowerListLong(ref int vPos, RectangleF bounds, int fontSize, Print.PrintWhat selection, PrintPageEventArgs args)
         {
             int num;
             if (this._pIndex < 0)
@@ -534,7 +534,7 @@ namespace Base.Document_Classes
         }
 
 
-        private void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
+        void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
         {
             this._printingProfile = false;
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -566,7 +566,7 @@ namespace Base.Document_Classes
         }
 
 
-        private static void BuildPowerListShort(ref int vPos, RectangleF bounds, int fontSize, bool skipInherent, bool skipNormal, bool kheldian, PrintPageEventArgs args)
+        static void BuildPowerListShort(ref int vPos, RectangleF bounds, int fontSize, bool skipInherent, bool skipNormal, bool kheldian, PrintPageEventArgs args)
         {
             bool printIoLevels = MidsContext.Config.I9.PrintIOLevels;
             StringFormat format = new StringFormat(StringFormatFlags.NoClip);
@@ -727,7 +727,7 @@ namespace Base.Document_Classes
         }
 
 
-        private static Rectangle RectConvert(RectangleF iRect)
+        static Rectangle RectConvert(RectangleF iRect)
         {
             return new Rectangle((int)iRect.X, (int)iRect.Y, (int)iRect.Width, (int)iRect.Height);
         }
@@ -753,34 +753,34 @@ namespace Base.Document_Classes
         }
 
 
-        private const int TextBase = 8;
+        const int TextBase = 8;
 
 
-        private const float LineSpace = 1.25f;
+        const float LineSpace = 1.25f;
 
 
         public PrintDocument Document;
 
 
-        private int _pageNumber;
+        int _pageNumber;
 
 
-        private int _pIndex;
+        int _pIndex;
 
 
-        private bool _printingProfile;
+        bool _printingProfile;
 
 
-        private bool _printingHistory;
+        bool _printingHistory;
 
 
-        private bool _endOfPage;
+        bool _endOfPage;
 
 
-        private Print.PrintWhat _sectionCompleted;
+        Print.PrintWhat _sectionCompleted;
 
 
-        private enum PrintWhat
+        enum PrintWhat
         {
 
             None = -1,

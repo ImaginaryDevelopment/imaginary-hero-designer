@@ -22,7 +22,7 @@
         }
 
 
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             this.GlobalPowerList = new global::Hero_Designer.frmDPSCalc.PowerList[0];
             this.components = new global::System.ComponentModel.Container();
@@ -280,9 +280,9 @@
         }
 
 
-        private global::System.ComponentModel.IContainer components;
+        global::System.ComponentModel.IContainer components;
 
 
-        private global::Hero_Designer.frmDPSCalc.PowerList[] GlobalPowerList;
+        global::Hero_Designer.frmDPSCalc.PowerList[] GlobalPowerList;
     }
 }

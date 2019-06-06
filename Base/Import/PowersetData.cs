@@ -113,12 +113,12 @@ namespace Import
         public readonly bool IsNew;
 
 
-        private int _index = -1;
+        int _index = -1;
 
 
         public readonly bool IsValid;
 
 
-        private readonly string _csvString = string.Empty;
+        readonly string _csvString = string.Empty;
     }
 }

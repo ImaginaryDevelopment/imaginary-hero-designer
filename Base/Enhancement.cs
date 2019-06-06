@@ -614,5 +614,5 @@ public class Enhancement : IEnhancement
     }
 
 
-    private IPower _power;
+    IPower _power;
 }

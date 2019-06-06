@@ -132,7 +132,7 @@ namespace Hero_Designer
         }
 
 
-        private void Cancel_Button_Click(object sender, EventArgs e)
+        void Cancel_Button_Click(object sender, EventArgs e)
         {
             this.chkRemember.Checked = false;
             base.DialogResult = DialogResult.OK;
@@ -140,7 +140,7 @@ namespace Hero_Designer
         }
 
 
-        private void OK_Button_Click(object sender, EventArgs e)
+        void OK_Button_Click(object sender, EventArgs e)
         {
             base.DialogResult = this.cmbAction.SelectedIndex + DialogResult.Cancel;
             base.Close();
@@ -168,26 +168,26 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("Cancel_Button")]
-        private Button _Cancel_Button;
+        Button _Cancel_Button;
 
 
         [AccessedThroughProperty("chkRemember")]
-        private CheckBox _chkRemember;
+        CheckBox _chkRemember;
 
 
         [AccessedThroughProperty("cmbAction")]
-        private ComboBox _cmbAction;
+        ComboBox _cmbAction;
 
 
         [AccessedThroughProperty("lblDescript")]
-        private Label _lblDescript;
+        Label _lblDescript;
 
 
         [AccessedThroughProperty("OK_Button")]
-        private Button _OK_Button;
+        Button _OK_Button;
 
 
         [AccessedThroughProperty("TableLayoutPanel1")]
-        private TableLayoutPanel _TableLayoutPanel1;
+        TableLayoutPanel _TableLayoutPanel1;
     }
 }

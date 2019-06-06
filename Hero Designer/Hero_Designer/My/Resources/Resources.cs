@@ -62,9 +62,9 @@ namespace Hero_Designer.My.Resources
         }
 
 
-        private static CultureInfo resourceCulture;
+        static CultureInfo resourceCulture;
 
 
-        private static ResourceManager resourceMan;
+        static ResourceManager resourceMan;
     }
 }

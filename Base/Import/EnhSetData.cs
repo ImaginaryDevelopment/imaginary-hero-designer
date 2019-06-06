@@ -107,6 +107,6 @@ namespace Import
         public readonly bool IsValid = true;
 
 
-        private readonly string _csvString = string.Empty;
+        readonly string _csvString = string.Empty;
     }
 }

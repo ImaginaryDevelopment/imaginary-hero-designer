@@ -140,10 +140,10 @@ namespace Import
         public readonly bool IsNew;
 
 
-        private int _index = -1;
+        int _index = -1;
 
 
-        private readonly string _csvString = string.Empty;
+        readonly string _csvString = string.Empty;
 
 
         public readonly bool IsValid = true;

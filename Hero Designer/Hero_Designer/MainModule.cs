@@ -134,7 +134,7 @@ namespace Hero_Designer
             public static float HeroDesignerVersion = 2.21f;
 
 
-            private static bool _appInitialized = false;
+            static bool _appInitialized = false;
 
 
             public static Rectangle SzFrmCompare = default(Rectangle);

@@ -196,10 +196,10 @@ namespace Base.Display
             public PopUp.Section[] Sections;
 
 
-            private float _columnPosition;
+            float _columnPosition;
 
 
-            private bool _rightAlignColumn;
+            bool _rightAlignColumn;
         }
     }
 }

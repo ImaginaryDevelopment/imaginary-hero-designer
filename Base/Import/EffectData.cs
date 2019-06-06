@@ -280,7 +280,7 @@ namespace Import
         public bool IndexChanged;
 
 
-        private readonly string _csvString = string.Empty;
+        readonly string _csvString = string.Empty;
 
 
         public readonly bool IsLocked;

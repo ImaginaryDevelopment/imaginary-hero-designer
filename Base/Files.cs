@@ -7,7 +7,7 @@ public static class Files
 {
 
     
-    private static string FNameConfig
+    static string FNameConfig
     {
         get
         {
@@ -127,7 +127,7 @@ public static class Files
     public const string MxdbFileModifiers = "AttribMod.mhd";
 
 
-    private const string MxdbFileConfig = "Config.mhd";
+    const string MxdbFileConfig = "Config.mhd";
 
 
     public const string RoamingFolder = "Data\\";

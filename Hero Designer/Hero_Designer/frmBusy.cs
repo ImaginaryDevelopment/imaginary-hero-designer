@@ -35,7 +35,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmBusy_Load(object sender, EventArgs e)
+        void frmBusy_Load(object sender, EventArgs e)
         {
         }
 
@@ -51,6 +51,6 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("Message")]
-        private Label _Message;
+        Label _Message;
     }
 }

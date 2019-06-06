@@ -90,7 +90,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             int num;
             if (Conversion.Val(this.udLevel.Text) != Convert.ToDouble(this.udLevel.Value))
@@ -121,35 +121,35 @@ namespace Hero_Designer
         }
 
 
-        private void FrmInputLevel_Load(object sender, EventArgs e)
+        void FrmInputLevel_Load(object sender, EventArgs e)
         {
         }
 
 
-        private void udLevel_Leave(object sender, EventArgs e)
+        void udLevel_Leave(object sender, EventArgs e)
         {
             this.udLevel.Validate();
         }
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("udLevel")]
-        private NumericUpDown _udLevel;
+        NumericUpDown _udLevel;
 
 
-        private bool LongFormat;
+        bool LongFormat;
 
 
-        private bool Mode2;
+        bool Mode2;
 
 
-        private frmMain myparent;
+        frmMain myparent;
     }
 }

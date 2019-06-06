@@ -807,13 +807,13 @@ namespace Hero_Designer
         }
 
 
-        private void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
+        void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
         {
             this._myParent.FloatTotals(false);
         }
 
 
-        private void FrmTotalsLoad(object sender, EventArgs e)
+        void FrmTotalsLoad(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -837,13 +837,13 @@ namespace Hero_Designer
         }
 
 
-        private void FrmTotalsMove(object sender, EventArgs e)
+        void FrmTotalsMove(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
 
-        private void FrmTotalsResize(object sender, EventArgs e)
+        void FrmTotalsResize(object sender, EventArgs e)
         {
             if (this._loaded)
             {
@@ -868,13 +868,13 @@ namespace Hero_Designer
         }
 
 
-        private void PbCloseClick(object sender, EventArgs e)
+        void PbCloseClick(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void PbClosePaint(object sender, PaintEventArgs e)
+        void PbClosePaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
             {
@@ -897,7 +897,7 @@ namespace Hero_Designer
         }
 
 
-        private void PbTopMostClick(object sender, EventArgs e)
+        void PbTopMostClick(object sender, EventArgs e)
         {
             this._keepOnTop = !this._keepOnTop;
             base.TopMost = this._keepOnTop;
@@ -905,7 +905,7 @@ namespace Hero_Designer
         }
 
 
-        private void PbTopMostPaint(object sender, PaintEventArgs e)
+        void PbTopMostPaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
             {
@@ -940,7 +940,7 @@ namespace Hero_Designer
         }
 
 
-        private string PM(float iValue, string iFormat, string iSuff)
+        string PM(float iValue, string iFormat, string iSuff)
         {
             string result;
             if (iValue < 0f)
@@ -959,7 +959,7 @@ namespace Hero_Designer
         }
 
 
-        private void RbSpeedCheckedChanged(object sender, EventArgs e)
+        void RbSpeedCheckedChanged(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -984,13 +984,13 @@ namespace Hero_Designer
         }
 
 
-        private static void SetFontDataSingle(ref ctlMultiGraph iGraph)
+        static void SetFontDataSingle(ref ctlMultiGraph iGraph)
         {
             iGraph.Font = new Font(iGraph.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
 
 
-        private void SetFonts()
+        void SetFonts()
         {
             ctlMultiGraph graphSdeb = this.graphAcc;
             frmTotals.SetFontDataSingle(ref graphSdeb);
@@ -1101,7 +1101,7 @@ namespace Hero_Designer
         }
 
 
-        private void StoreLocation()
+        void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
             {
@@ -1113,13 +1113,13 @@ namespace Hero_Designer
         }
 
 
-        private void Tab0Click(object sender, EventArgs e)
+        void Tab0Click(object sender, EventArgs e)
         {
             this.TabPageChange(0);
         }
 
 
-        private void Tab0Paint(object sender, PaintEventArgs e)
+        void Tab0Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab0 = this.tab0;
             this.TabPaint(ref tab0, e, "Survival", this._tabPage == 0);
@@ -1127,13 +1127,13 @@ namespace Hero_Designer
         }
 
 
-        private void Tab1Click(object sender, EventArgs e)
+        void Tab1Click(object sender, EventArgs e)
         {
             this.TabPageChange(1);
         }
 
 
-        private void Tab1Paint(object sender, PaintEventArgs e)
+        void Tab1Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab = this.tab1;
             this.TabPaint(ref tab, e, "Misc Buffs", this._tabPage == 1);
@@ -1141,13 +1141,13 @@ namespace Hero_Designer
         }
 
 
-        private void Tab2Click(object sender, EventArgs e)
+        void Tab2Click(object sender, EventArgs e)
         {
             this.TabPageChange(2);
         }
 
 
-        private void Tab2Paint(object sender, PaintEventArgs e)
+        void Tab2Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab2 = this.tab2;
             this.TabPaint(ref tab2, e, "Status", this._tabPage == 2);
@@ -1155,7 +1155,7 @@ namespace Hero_Designer
         }
 
 
-        private void TabPageChange(int index)
+        void TabPageChange(int index)
         {
             switch (index)
             {
@@ -1182,7 +1182,7 @@ namespace Hero_Designer
         }
 
 
-        private void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
+        void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
             {
@@ -1673,182 +1673,182 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("graphAcc")]
-        private ctlMultiGraph _graphAcc;
+        ctlMultiGraph _graphAcc;
 
 
         [AccessedThroughProperty("graphDam")]
-        private ctlMultiGraph _graphDam;
+        ctlMultiGraph _graphDam;
 
 
         [AccessedThroughProperty("graphDef")]
-        private ctlMultiGraph _graphDef;
+        ctlMultiGraph _graphDef;
 
 
         [AccessedThroughProperty("graphDrain")]
-        private ctlMultiGraph _graphDrain;
+        ctlMultiGraph _graphDrain;
 
 
         [AccessedThroughProperty("graphElusivity")]
-        private ctlMultiGraph _graphElusivity;
+        ctlMultiGraph _graphElusivity;
 
 
         [AccessedThroughProperty("graphEndRdx")]
-        private ctlMultiGraph _graphEndRdx;
+        ctlMultiGraph _graphEndRdx;
 
 
         [AccessedThroughProperty("graphHaste")]
-        private ctlMultiGraph _graphHaste;
+        ctlMultiGraph _graphHaste;
 
 
         [AccessedThroughProperty("graphHP")]
-        private ctlMultiGraph _graphHP;
+        ctlMultiGraph _graphHP;
 
 
         [AccessedThroughProperty("graphMaxEnd")]
-        private ctlMultiGraph _graphMaxEnd;
+        ctlMultiGraph _graphMaxEnd;
 
 
         [AccessedThroughProperty("graphMovement")]
-        private ctlMultiGraph _graphMovement;
+        ctlMultiGraph _graphMovement;
 
 
         [AccessedThroughProperty("graphRec")]
-        private ctlMultiGraph _graphRec;
+        ctlMultiGraph _graphRec;
 
 
         [AccessedThroughProperty("graphRegen")]
-        private ctlMultiGraph _graphRegen;
+        ctlMultiGraph _graphRegen;
 
 
         [AccessedThroughProperty("graphRes")]
-        private ctlMultiGraph _graphRes;
+        ctlMultiGraph _graphRes;
 
 
         [AccessedThroughProperty("graphSDeb")]
-        private ctlMultiGraph _graphSDeb;
+        ctlMultiGraph _graphSDeb;
 
 
         [AccessedThroughProperty("graphSProt")]
-        private ctlMultiGraph _graphSProt;
+        ctlMultiGraph _graphSProt;
 
 
         [AccessedThroughProperty("graphSRes")]
-        private ctlMultiGraph _graphSRes;
+        ctlMultiGraph _graphSRes;
 
 
         [AccessedThroughProperty("graphStealth")]
-        private ctlMultiGraph _graphStealth;
+        ctlMultiGraph _graphStealth;
 
 
         [AccessedThroughProperty("graphThreat")]
-        private ctlMultiGraph _graphThreat;
+        ctlMultiGraph _graphThreat;
 
 
         [AccessedThroughProperty("graphToHit")]
-        private ctlMultiGraph _graphToHit;
+        ctlMultiGraph _graphToHit;
 
 
-        private bool _keepOnTop;
+        bool _keepOnTop;
 
 
         [AccessedThroughProperty("lblDef")]
-        private Label _lblDef;
+        Label _lblDef;
 
 
         [AccessedThroughProperty("lblMisc")]
-        private Label _lblMisc;
+        Label _lblMisc;
 
 
         [AccessedThroughProperty("lblMovement")]
-        private Label _lblMovement;
+        Label _lblMovement;
 
 
         [AccessedThroughProperty("lblRegenRec")]
-        private Label _lblRegenRec;
+        Label _lblRegenRec;
 
 
         [AccessedThroughProperty("lblRes")]
-        private Label _lblRes;
+        Label _lblRes;
 
 
         [AccessedThroughProperty("lblSDeb")]
-        private Label _lblSDeb;
+        Label _lblSDeb;
 
 
         [AccessedThroughProperty("lblSProt")]
-        private Label _lblSProt;
+        Label _lblSProt;
 
 
         [AccessedThroughProperty("lblSRes")]
-        private Label _lblSRes;
+        Label _lblSRes;
 
 
         [AccessedThroughProperty("lblStealth")]
-        private Label _lblStealth;
+        Label _lblStealth;
 
 
-        private bool _loaded;
+        bool _loaded;
 
 
-        private readonly frmMain _myParent;
+        readonly frmMain _myParent;
 
 
         [AccessedThroughProperty("Panel1")]
-        private Panel _Panel1;
+        Panel _Panel1;
 
 
         [AccessedThroughProperty("Panel2")]
-        private Panel _Panel2;
+        Panel _Panel2;
 
 
         [AccessedThroughProperty("pbClose")]
-        private PictureBox _pbClose;
+        PictureBox _pbClose;
 
 
         [AccessedThroughProperty("pbTopMost")]
-        private PictureBox _pbTopMost;
+        PictureBox _pbTopMost;
 
 
         [AccessedThroughProperty("pnlDRHE")]
-        private Panel _pnlDRHE;
+        Panel _pnlDRHE;
 
 
         [AccessedThroughProperty("pnlMisc")]
-        private Panel _pnlMisc;
+        Panel _pnlMisc;
 
 
         [AccessedThroughProperty("pnlStatus")]
-        private Panel _pnlStatus;
+        Panel _pnlStatus;
 
 
         [AccessedThroughProperty("rbFPS")]
-        private RadioButton _rbFPS;
+        RadioButton _rbFPS;
 
 
         [AccessedThroughProperty("rbKPH")]
-        private RadioButton _rbKPH;
+        RadioButton _rbKPH;
 
 
         [AccessedThroughProperty("rbMPH")]
-        private RadioButton _rbMPH;
+        RadioButton _rbMPH;
 
 
         [AccessedThroughProperty("rbMSec")]
-        private RadioButton _rbMSec;
+        RadioButton _rbMSec;
 
 
         [AccessedThroughProperty("tab0")]
-        private PictureBox _tab0;
+        PictureBox _tab0;
 
 
         [AccessedThroughProperty("tab1")]
-        private PictureBox _tab1;
+        PictureBox _tab1;
 
 
         [AccessedThroughProperty("tab2")]
-        private PictureBox _tab2;
+        PictureBox _tab2;
 
 
-        private int _tabPage;
+        int _tabPage;
     }
 }

@@ -455,7 +455,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void btnAdd_Click(object sender, EventArgs e)
         {
             IDatabase database = DatabaseAPI.Database;
             Salvage[] salvageArray = (Salvage[])Utils.CopyArray(database.Salvage, new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
@@ -467,14 +467,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             DatabaseAPI.LoadSalvage();
             base.Close();
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -513,7 +513,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnImport_Click(object sender, EventArgs e)
+        void btnImport_Click(object sender, EventArgs e)
         {
             char[] chArray = new char[]
             {
@@ -570,14 +570,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.SaveSalvage();
             base.Close();
         }
 
 
-        private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -602,7 +602,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
+        void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -613,7 +613,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
+        void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -664,7 +664,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmSalvageEdit_Load(object sender, EventArgs e)
+        void frmSalvageEdit_Load(object sender, EventArgs e)
         {
             Salvage.SalvageOrigin salvageOrigin = Salvage.SalvageOrigin.Tech;
             Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
@@ -682,7 +682,7 @@ namespace Hero_Designer
         }
 
 
-        private void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
+        void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedIndices.Count > 0)
             {
@@ -691,7 +691,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtExternal_TextChanged(object sender, EventArgs e)
+        void txtExternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -702,7 +702,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtInternal_TextChanged(object sender, EventArgs e)
+        void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
             {
@@ -726,83 +726,83 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnAdd")]
-        private Button _btnAdd;
+        Button _btnAdd;
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnDelete")]
-        private Button _btnDelete;
+        Button _btnDelete;
 
 
         [AccessedThroughProperty("btnImport")]
-        private Button _btnImport;
+        Button _btnImport;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("cbLevel")]
-        private ComboBox _cbLevel;
+        ComboBox _cbLevel;
 
 
         [AccessedThroughProperty("cbOrigin")]
-        private ComboBox _cbOrigin;
+        ComboBox _cbOrigin;
 
 
         [AccessedThroughProperty("cbRarity")]
-        private ComboBox _cbRarity;
+        ComboBox _cbRarity;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("ColumnHeader4")]
-        private ColumnHeader _ColumnHeader4;
+        ColumnHeader _ColumnHeader4;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("lvSalvage")]
-        private ListView _lvSalvage;
+        ListView _lvSalvage;
 
 
         [AccessedThroughProperty("txtExternal")]
-        private TextBox _txtExternal;
+        TextBox _txtExternal;
 
 
         [AccessedThroughProperty("txtInternal")]
-        private TextBox _txtInternal;
+        TextBox _txtInternal;
 
 
         public bool Updating;

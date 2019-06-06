@@ -897,21 +897,21 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
 
 
-        private void btnClearIcon_Click(object sender, EventArgs e)
+        void btnClearIcon_Click(object sender, EventArgs e)
         {
             this.myPS.ImageName = "";
             this.DisplayIcon();
         }
 
 
-        private void btnClose_Click(object sender, EventArgs e)
+        void btnClose_Click(object sender, EventArgs e)
         {
             IPowerset ps = this.myPS;
             this.lblNameFull.Text = ps.GroupName + "." + ps.SetName;
@@ -932,7 +932,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnIcon_Click(object sender, EventArgs e)
+        void btnIcon_Click(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -955,7 +955,7 @@ namespace Hero_Designer
         }
 
 
-        private string BuildFullName()
+        string BuildFullName()
         {
             string str = this.cbNameGroup.Text + "." + this.txtNameSet.Text;
             this.lblNameFull.Text = str;
@@ -965,7 +965,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbAT_SelectedIndexChanged(object sender, EventArgs e)
+        void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -982,7 +982,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
+        void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -991,7 +991,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
+        void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1011,7 +1011,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
+        void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1020,7 +1020,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbNameGroup_Leave(object sender, EventArgs e)
+        void cbNameGroup_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1029,7 +1029,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+        void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1038,7 +1038,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbNameGroup_TextChanged(object sender, EventArgs e)
+        void cbNameGroup_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1047,7 +1047,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1070,7 +1070,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
+        void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1079,7 +1079,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
+        void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1099,13 +1099,13 @@ namespace Hero_Designer
         }
 
 
-        private void chkNoLink_CheckedChanged(object sender, EventArgs e)
+        void chkNoLink_CheckedChanged(object sender, EventArgs e)
         {
             this.cbLinkSet_SelectedIndexChanged(this, new EventArgs());
         }
 
 
-        private void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
+        void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
         {
             this.cbTrunkSet_SelectedIndexChanged(this, new EventArgs());
         }
@@ -1128,7 +1128,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayNameData()
+        void DisplayNameData()
         {
             IPowerset ps = this.myPS;
             this.lblNameFull.Text = this.BuildFullName();
@@ -1147,7 +1147,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillLinkGroupCombo()
+        void FillLinkGroupCombo()
         {
             this.cbLinkGroup.BeginUpdate();
             this.cbLinkGroup.Items.Clear();
@@ -1167,7 +1167,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillLinkSetCombo()
+        void FillLinkSetCombo()
         {
             this.cbLinkSet.BeginUpdate();
             this.cbLinkSet.Items.Clear();
@@ -1190,7 +1190,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillTrunkGroupCombo()
+        void FillTrunkGroupCombo()
         {
             this.cbTrunkGroup.BeginUpdate();
             this.cbTrunkGroup.Items.Clear();
@@ -1210,7 +1210,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillTrunkSetCombo()
+        void FillTrunkSetCombo()
         {
             this.cbTrunkSet.BeginUpdate();
             this.cbTrunkSet.Items.Clear();
@@ -1233,7 +1233,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmEditPowerset_Load(object sender, EventArgs e)
+        void frmEditPowerset_Load(object sender, EventArgs e)
         {
             Enums.ePowerSetType ePowerSetType = Enums.ePowerSetType.None;
             this.ListPowers();
@@ -1288,7 +1288,7 @@ namespace Hero_Designer
         }
 
 
-        private void ListMutexGroups()
+        void ListMutexGroups()
         {
             this.cbMutexGroup.BeginUpdate();
             this.cbMutexGroup.Items.Clear();
@@ -1308,7 +1308,7 @@ namespace Hero_Designer
         }
 
 
-        private void ListMutexSets()
+        void ListMutexSets()
         {
             this.lvMutexSets.BeginUpdate();
             this.lvMutexSets.Items.Clear();
@@ -1352,7 +1352,7 @@ namespace Hero_Designer
         }
 
 
-        private void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
+        void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbMutexGroup.SelectedIndex >= 0)
             {
@@ -1370,7 +1370,7 @@ namespace Hero_Designer
         }
 
 
-        private static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
+        static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
         {
             if (!string.IsNullOrEmpty(iFullName))
             {
@@ -1391,7 +1391,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtDesc_TextChanged(object sender, EventArgs e)
+        void txtDesc_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1400,7 +1400,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1409,7 +1409,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameSet_Leave(object sender, EventArgs e)
+        void txtNameSet_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1418,7 +1418,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameSet_TextChanged(object sender, EventArgs e)
+        void txtNameSet_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1428,175 +1428,175 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnClearIcon")]
-        private Button _btnClearIcon;
+        Button _btnClearIcon;
 
 
         [AccessedThroughProperty("btnClose")]
-        private Button _btnClose;
+        Button _btnClose;
 
 
         [AccessedThroughProperty("btnIcon")]
-        private Button _btnIcon;
+        Button _btnIcon;
 
 
         [AccessedThroughProperty("cbAT")]
-        private ComboBox _cbAT;
+        ComboBox _cbAT;
 
 
         [AccessedThroughProperty("cbLinkGroup")]
-        private ComboBox _cbLinkGroup;
+        ComboBox _cbLinkGroup;
 
 
         [AccessedThroughProperty("cbLinkSet")]
-        private ComboBox _cbLinkSet;
+        ComboBox _cbLinkSet;
 
 
         [AccessedThroughProperty("cbMutexGroup")]
-        private ComboBox _cbMutexGroup;
+        ComboBox _cbMutexGroup;
 
 
         [AccessedThroughProperty("cbNameGroup")]
-        private ComboBox _cbNameGroup;
+        ComboBox _cbNameGroup;
 
 
         [AccessedThroughProperty("cbSetType")]
-        private ComboBox _cbSetType;
+        ComboBox _cbSetType;
 
 
         [AccessedThroughProperty("cbTrunkGroup")]
-        private ComboBox _cbTrunkGroup;
+        ComboBox _cbTrunkGroup;
 
 
         [AccessedThroughProperty("cbTrunkSet")]
-        private ComboBox _cbTrunkSet;
+        ComboBox _cbTrunkSet;
 
 
         [AccessedThroughProperty("chkNoLink")]
-        private CheckBox _chkNoLink;
+        CheckBox _chkNoLink;
 
 
         [AccessedThroughProperty("chkNoTrunk")]
-        private CheckBox _chkNoTrunk;
+        CheckBox _chkNoTrunk;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("gbLink")]
-        private GroupBox _gbLink;
+        GroupBox _gbLink;
 
 
         [AccessedThroughProperty("GroupBox1")]
-        private GroupBox _GroupBox1;
+        GroupBox _GroupBox1;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("GroupBox3")]
-        private GroupBox _GroupBox3;
+        GroupBox _GroupBox3;
 
 
         [AccessedThroughProperty("GroupBox4")]
-        private GroupBox _GroupBox4;
+        GroupBox _GroupBox4;
 
 
         [AccessedThroughProperty("GroupBox5")]
-        private GroupBox _GroupBox5;
+        GroupBox _GroupBox5;
 
 
         [AccessedThroughProperty("ImagePicker")]
-        private OpenFileDialog _ImagePicker;
+        OpenFileDialog _ImagePicker;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label22")]
-        private Label _Label22;
+        Label _Label22;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label31")]
-        private Label _Label31;
+        Label _Label31;
 
 
         [AccessedThroughProperty("Label33")]
-        private Label _Label33;
+        Label _Label33;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("Label8")]
-        private Label _Label8;
+        Label _Label8;
 
 
         [AccessedThroughProperty("lblNameFull")]
-        private Label _lblNameFull;
+        Label _lblNameFull;
 
 
         [AccessedThroughProperty("lblNameUnique")]
-        private Label _lblNameUnique;
+        Label _lblNameUnique;
 
 
         [AccessedThroughProperty("lvMutexSets")]
-        private ListBox _lvMutexSets;
+        ListBox _lvMutexSets;
 
 
         [AccessedThroughProperty("lvPowers")]
-        private ListView _lvPowers;
+        ListView _lvPowers;
 
 
         [AccessedThroughProperty("picIcon")]
-        private PictureBox _picIcon;
+        PictureBox _picIcon;
 
 
         [AccessedThroughProperty("txtDesc")]
-        private TextBox _txtDesc;
+        TextBox _txtDesc;
 
 
         [AccessedThroughProperty("txtName")]
-        private TextBox _txtName;
+        TextBox _txtName;
 
 
         [AccessedThroughProperty("txtNameSet")]
-        private TextBox _txtNameSet;
+        TextBox _txtNameSet;
 
 
         protected bool Loading;

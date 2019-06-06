@@ -66,7 +66,7 @@ namespace Base.Data_Classes
 
     
     
-        private Build[] Builds { get; set; }
+        Build[] Builds { get; set; }
 
 
     
@@ -219,7 +219,7 @@ namespace Base.Data_Classes
 
     
     
-        private string PerfectionType { get; set; }
+        string PerfectionType { get; set; }
 
 
     
@@ -587,7 +587,7 @@ namespace Base.Data_Classes
         }
 
 
-        private void RefreshActiveSpecial()
+        void RefreshActiveSpecial()
         {
             this.ActiveComboLevel = 0;
             this.AcceleratedActive = false;
@@ -652,7 +652,7 @@ namespace Base.Data_Classes
         }
 
 
-        private void CheckAncillaryPowerSet()
+        void CheckAncillaryPowerSet()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
             if (powersetIndexes.Length == 0)
@@ -681,7 +681,7 @@ namespace Base.Data_Classes
         }
 
 
-        private IEnumerable<int> PoolGetAvailable(int iPool)
+        IEnumerable<int> PoolGetAvailable(int iPool)
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
             List<int> intList = new List<int>();
@@ -884,7 +884,7 @@ namespace Base.Data_Classes
         }
 
 
-        private int GetFirstAvailablePowerLevel(int iLevel = 0)
+        int GetFirstAvailablePowerLevel(int iLevel = 0)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
             {
@@ -960,7 +960,7 @@ namespace Base.Data_Classes
         }
 
 
-        private static string[] BreakByNewLine(string iString)
+        static string[] BreakByNewLine(string iString)
         {
             iString = iString.Replace('\n', '^');
             return iString.Split(new char[]
@@ -970,7 +970,7 @@ namespace Base.Data_Classes
         }
 
 
-        private static string[] BreakByBracket(string iString)
+        static string[] BreakByBracket(string iString)
         {
             string[] strArray = new string[]
             {
@@ -996,7 +996,7 @@ namespace Base.Data_Classes
         }
 
 
-        private static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
+        static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
             section.Add("Set Bonus:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
@@ -1253,7 +1253,7 @@ namespace Base.Data_Classes
         }
 
 
-        private static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
+        static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
             PopUp.Section section2;
@@ -1356,7 +1356,7 @@ namespace Base.Data_Classes
         }
 
 
-        private int GetEarliestPowerIndex(int iSet)
+        int GetEarliestPowerIndex(int iSet)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
             {
@@ -1369,7 +1369,7 @@ namespace Base.Data_Classes
         }
 
 
-        private bool PoolUnique(Enums.PowersetType pool)
+        bool PoolUnique(Enums.PowersetType pool)
         {
             bool flag = true;
             for (int index = 3; index < (int)pool; index++)
@@ -1383,7 +1383,7 @@ namespace Base.Data_Classes
         }
 
 
-        private bool PowersetUsed(IPowerset powerset)
+        bool PowersetUsed(IPowerset powerset)
         {
             bool flag;
             if (powerset == null)
@@ -1561,10 +1561,10 @@ namespace Base.Data_Classes
         }
 
 
-        private Archetype _archetype;
+        Archetype _archetype;
 
 
-        private bool? _completeCache;
+        bool? _completeCache;
 
 
         public class TotalStatistics

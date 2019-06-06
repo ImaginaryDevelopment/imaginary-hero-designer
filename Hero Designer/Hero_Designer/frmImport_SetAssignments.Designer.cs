@@ -1,4 +1,4 @@
-﻿namespace Hero_Designer
+namespace Hero_Designer
 {
 
     [global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
@@ -23,7 +23,7 @@
 
 
         [global::System.Diagnostics.DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmImport_SetAssignments));
             this.Label8 = new global::System.Windows.Forms.Label();

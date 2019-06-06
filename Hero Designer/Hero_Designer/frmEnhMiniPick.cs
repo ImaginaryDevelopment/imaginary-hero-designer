@@ -87,38 +87,38 @@ namespace Hero_Designer
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
 
 
-        private void frmEnhMez_Load(object sender, EventArgs e)
+        void frmEnhMez_Load(object sender, EventArgs e)
         {
         }
 
 
-        private void lbList_DoubleClick(object sender, EventArgs e)
+        void lbList_DoubleClick(object sender, EventArgs e)
         {
             this.btnOK_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
-        private void lbList_SelectedIndexChanged(object sender, EventArgs e)
+        void lbList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("lbList")]
-        private ListBox _lbList;
+        ListBox _lbList;
 
 
         [AccessedThroughProperty("lblMessage")]
-        private Label _lblMessage;
+        Label _lblMessage;
     }
 }

@@ -81,19 +81,19 @@ namespace Hero_Designer.My
         }
 
 
-        private static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
+        static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
 
 
-        private static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
+        static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
 
 
-        private static MyProject.ThreadSafeObjectProvider<MyProject.MyForms> m_MyFormsObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyForms>();
+        static MyProject.ThreadSafeObjectProvider<MyProject.MyForms> m_MyFormsObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyForms>();
 
 
-        private static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
+        static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
 
 
-        private static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
+        static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
 
 
         [MyGroupCollection("System.Windows.Forms.Form", "Create__Instance__", "Dispose__Instance__", "My.MyProject.Forms")]
@@ -883,7 +883,7 @@ namespace Hero_Designer.My
 
 
             [DebuggerHidden]
-            private void Dispose__Instance__<T>(ref T instance) where T : Form
+            void Dispose__Instance__<T>(ref T instance) where T : Form
             {
                 instance.Dispose();
                 instance = default(T);
@@ -919,7 +919,7 @@ namespace Hero_Designer.My
 
 
             [ThreadStatic]
-            private static Hashtable m_FormBeingCreated;
+            static Hashtable m_FormBeingCreated;
 
 
             public frmAbout m_frmAbout;
@@ -1025,7 +1025,7 @@ namespace Hero_Designer.My
         {
 
             [DebuggerHidden]
-            private static T Create__Instance__<T>(T instance) where T : new()
+            static T Create__Instance__<T>(T instance) where T : new()
             {
                 T result;
                 if (instance == null)
@@ -1041,7 +1041,7 @@ namespace Hero_Designer.My
 
 
             [DebuggerHidden]
-            private void Dispose__Instance__<T>(ref T instance)
+            void Dispose__Instance__<T>(ref T instance)
             {
                 instance = default(T);
             }
@@ -1102,7 +1102,7 @@ namespace Hero_Designer.My
 
             [CompilerGenerated]
             [ThreadStatic]
-            private static T m_ThreadStaticValue;
+            static T m_ThreadStaticValue;
         }
     }
 }

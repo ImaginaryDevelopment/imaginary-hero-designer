@@ -294,7 +294,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        void btnAdd_Click(object sender, EventArgs e)
         {
             SummonedEntity iEntity = new SummonedEntity();
             int num = 0;
@@ -328,7 +328,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             this.BusyMsg("Re-Indexing...");
             DatabaseAPI.LoadMainDatabase();
@@ -338,7 +338,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnClone_Click(object sender, EventArgs e)
+        void btnClone_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
             {
@@ -361,7 +361,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0 && Interaction.MsgBox("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
             {
@@ -399,7 +399,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnDown_Click(object sender, EventArgs e)
+        void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
             {
@@ -421,7 +421,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
             {
@@ -436,7 +436,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.MatchSummonIDs();
             DatabaseAPI.SaveMainDatabase();
@@ -444,7 +444,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnUp_Click(object sender, EventArgs e)
+        void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
             {
@@ -466,7 +466,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyHide()
+        void BusyHide()
         {
             if (this.bFrm != null)
             {
@@ -476,7 +476,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyMsg(string sMessage)
+        void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
             {
@@ -505,7 +505,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmEntityListing_Load(object sender, EventArgs e)
+        void frmEntityListing_Load(object sender, EventArgs e)
         {
             this.DisplayList();
         }
@@ -543,60 +543,60 @@ namespace Hero_Designer
         }
 
 
-        private void lvEntity_DoubleClick(object sender, EventArgs e)
+        void lvEntity_DoubleClick(object sender, EventArgs e)
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
         [AccessedThroughProperty("btnAdd")]
-        private Button _btnAdd;
+        Button _btnAdd;
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnClone")]
-        private Button _btnClone;
+        Button _btnClone;
 
 
         [AccessedThroughProperty("btnDelete")]
-        private Button _btnDelete;
+        Button _btnDelete;
 
 
         [AccessedThroughProperty("btnDown")]
-        private Button _btnDown;
+        Button _btnDown;
 
 
         [AccessedThroughProperty("btnedit")]
-        private Button _btnedit;
+        Button _btnedit;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("btnUp")]
-        private Button _btnUp;
+        Button _btnUp;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("lvEntity")]
-        private ListView _lvEntity;
+        ListView _lvEntity;
 
 
-        private frmBusy bFrm;
+        frmBusy bFrm;
     }
 }

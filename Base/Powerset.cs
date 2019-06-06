@@ -348,8 +348,8 @@ public class Powerset : IPowerset, IComparable
     }
 
 
-    private string _fullName;
+    string _fullName;
 
 
-    private string _groupName;
+    string _groupName;
 }

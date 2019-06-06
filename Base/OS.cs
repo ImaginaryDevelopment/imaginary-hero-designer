@@ -5,7 +5,7 @@ using System.Windows.Forms;
 public static class OS
 {
 
-    private static string AddSlash(string iPath)
+    static string AddSlash(string iPath)
     {
         string result;
         if (iPath.EndsWith("\\"))
@@ -20,7 +20,7 @@ public static class OS
     }
 
 
-    private static OS.WindowsVersion GetWindowsVersion()
+    static OS.WindowsVersion GetWindowsVersion()
     {
         OS.WindowsVersion result;
         if (Environment.OSVersion.Platform == PlatformID.Unix)
@@ -111,34 +111,34 @@ public static class OS
     }
 
 
-    private const int Windows2000Major = 5;
+    const int Windows2000Major = 5;
 
 
-    private const int Windows2000Minor = 0;
+    const int Windows2000Minor = 0;
 
 
-    private const int WindowsXpMajor = 5;
+    const int WindowsXpMajor = 5;
 
 
-    private const int WindowsXpMinor = 1;
+    const int WindowsXpMinor = 1;
 
 
-    private const int Windows2003Major = 5;
+    const int Windows2003Major = 5;
 
 
-    private const int Windows2003Minor = 2;
+    const int Windows2003Minor = 2;
 
 
-    private const int WindowsVistaMajor = 6;
+    const int WindowsVistaMajor = 6;
 
 
-    private const int WindowsVistaMinor = 0;
+    const int WindowsVistaMinor = 0;
 
 
     public const string SaveFolderName = "Hero & Villain Builds";
 
 
-    private enum WindowsVersion
+    enum WindowsVersion
     {
 
         OlderThan2K,

@@ -45,7 +45,7 @@ public class I9Slot : ICloneable
     }
 
 
-    private float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
+    float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
     {
         if (this.Grade < Enums.eEnhGrade.None)
         {
@@ -117,7 +117,7 @@ public class I9Slot : ICloneable
     }
 
 
-    private float GetRelativeLevelMultiplier()
+    float GetRelativeLevelMultiplier()
     {
         float num;
         if (this.RelativeLevel == Enums.eEnhRelative.None)
@@ -468,7 +468,7 @@ public class I9Slot : ICloneable
     }
 
 
-    private const float SuperiorMult = 1.25f;
+    const float SuperiorMult = 1.25f;
 
 
     public int Enh;

@@ -811,14 +811,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
 
 
-        private void btnImage_Click(object sender, EventArgs e)
+        void btnImage_Click(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -841,14 +841,14 @@ namespace Hero_Designer
         }
 
 
-        private void btnNoImage_Click(object sender, EventArgs e)
+        void btnNoImage_Click(object sender, EventArgs e)
         {
             this.mySet.Image = "";
             this.DisplayIcon();
         }
 
 
-        private void btnOK_Click(object sender, EventArgs e)
+        void btnOK_Click(object sender, EventArgs e)
         {
             this.mySet.LevelMin = Convert.ToInt32(decimal.Subtract(this.udMinLevel.Value, 1m));
             this.mySet.LevelMax = Convert.ToInt32(decimal.Subtract(this.udMaxLevel.Value, 1m));
@@ -857,7 +857,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnPaste_Click(object sender, EventArgs e)
+        void btnPaste_Click(object sender, EventArgs e)
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
             char[] chArray = new char[]
@@ -892,7 +892,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -901,7 +901,7 @@ namespace Hero_Designer
         }
 
 
-        private void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
+        void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1023,7 +1023,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayIcon()
+        void DisplayIcon()
         {
             if (this.mySet.Image != "")
             {
@@ -1196,7 +1196,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmSetEdit_Load(object sender, EventArgs e)
+        void frmSetEdit_Load(object sender, EventArgs e)
         {
             if (MidsContext.Config.MasterMode)
             {
@@ -1229,7 +1229,7 @@ namespace Hero_Designer
         }
 
 
-        private void lstBonus_DoubleClick(object sender, EventArgs e)
+        void lstBonus_DoubleClick(object sender, EventArgs e)
         {
             if (this.lstBonus.SelectedIndex >= 0)
             {
@@ -1293,7 +1293,7 @@ namespace Hero_Designer
         }
 
 
-        private void lvBonusList_DoubleClick(object sender, EventArgs e)
+        void lvBonusList_DoubleClick(object sender, EventArgs e)
         {
             if (this.lvBonusList.SelectedIndices.Count >= 1)
             {
@@ -1326,7 +1326,7 @@ namespace Hero_Designer
         }
 
 
-        private void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
+        void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
@@ -1365,7 +1365,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtAlternate_TextChanged(object sender, EventArgs e)
+        void txtAlternate_TextChanged(object sender, EventArgs e)
         {
             if (this.isBonus())
             {
@@ -1379,7 +1379,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtDesc_TextChanged(object sender, EventArgs e)
+        void txtDesc_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1388,7 +1388,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtInternal_TextChanged(object sender, EventArgs e)
+        void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1397,7 +1397,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameFull_TextChanged(object sender, EventArgs e)
+        void txtNameFull_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1406,7 +1406,7 @@ namespace Hero_Designer
         }
 
 
-        private void txtNameShort_TextChanged(object sender, EventArgs e)
+        void txtNameShort_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1415,14 +1415,14 @@ namespace Hero_Designer
         }
 
 
-        private void udMaxLevel_Leave(object sender, EventArgs e)
+        void udMaxLevel_Leave(object sender, EventArgs e)
         {
             this.SetMaxLevel((int)Math.Round(Conversion.Val(this.udMaxLevel.Text)));
             this.mySet.LevelMax = Convert.ToInt32(decimal.Subtract(this.udMaxLevel.Value, 1m));
         }
 
 
-        private void udMaxLevel_ValueChanged(object sender, EventArgs e)
+        void udMaxLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1432,14 +1432,14 @@ namespace Hero_Designer
         }
 
 
-        private void udMinLevel_Leave(object sender, EventArgs e)
+        void udMinLevel_Leave(object sender, EventArgs e)
         {
             this.SetMinLevel((int)Math.Round(Conversion.Val(this.udMinLevel.Text)));
             this.mySet.LevelMin = Convert.ToInt32(decimal.Subtract(this.udMinLevel.Value, 1m));
         }
 
 
-        private void udMinLevel_ValueChanged(object sender, EventArgs e)
+        void udMinLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
             {
@@ -1450,159 +1450,159 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("btnCancel")]
-        private Button _btnCancel;
+        Button _btnCancel;
 
 
         [AccessedThroughProperty("btnImage")]
-        private Button _btnImage;
+        Button _btnImage;
 
 
         [AccessedThroughProperty("btnNoImage")]
-        private Button _btnNoImage;
+        Button _btnNoImage;
 
 
         [AccessedThroughProperty("btnOK")]
-        private Button _btnOK;
+        Button _btnOK;
 
 
         [AccessedThroughProperty("btnPaste")]
-        private Button _btnPaste;
+        Button _btnPaste;
 
 
         [AccessedThroughProperty("cbSetType")]
-        private ComboBox _cbSetType;
+        ComboBox _cbSetType;
 
 
         [AccessedThroughProperty("cbSlotCount")]
-        private ComboBox _cbSlotCount;
+        ComboBox _cbSlotCount;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("ColumnHeader4")]
-        private ColumnHeader _ColumnHeader4;
+        ColumnHeader _ColumnHeader4;
 
 
         [AccessedThroughProperty("gbBasic")]
-        private GroupBox _gbBasic;
+        GroupBox _gbBasic;
 
 
         [AccessedThroughProperty("GroupBox2")]
-        private GroupBox _GroupBox2;
+        GroupBox _GroupBox2;
 
 
         [AccessedThroughProperty("GroupBox3")]
-        private GroupBox _GroupBox3;
+        GroupBox _GroupBox3;
 
 
         [AccessedThroughProperty("ilEnh")]
-        private ImageList _ilEnh;
+        ImageList _ilEnh;
 
 
         [AccessedThroughProperty("ImagePicker")]
-        private OpenFileDialog _ImagePicker;
+        OpenFileDialog _ImagePicker;
 
 
         [AccessedThroughProperty("Label1")]
-        private Label _Label1;
+        Label _Label1;
 
 
         [AccessedThroughProperty("Label16")]
-        private Label _Label16;
+        Label _Label16;
 
 
         [AccessedThroughProperty("Label2")]
-        private Label _Label2;
+        Label _Label2;
 
 
         [AccessedThroughProperty("Label27")]
-        private Label _Label27;
+        Label _Label27;
 
 
         [AccessedThroughProperty("Label3")]
-        private Label _Label3;
+        Label _Label3;
 
 
         [AccessedThroughProperty("Label4")]
-        private Label _Label4;
+        Label _Label4;
 
 
         [AccessedThroughProperty("Label5")]
-        private Label _Label5;
+        Label _Label5;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label7")]
-        private Label _Label7;
+        Label _Label7;
 
 
         [AccessedThroughProperty("lstBonus")]
-        private ListBox _lstBonus;
+        ListBox _lstBonus;
 
 
         [AccessedThroughProperty("lvBonusList")]
-        private ListView _lvBonusList;
+        ListView _lvBonusList;
 
 
         [AccessedThroughProperty("lvEnh")]
-        private ListView _lvEnh;
+        ListView _lvEnh;
 
 
         [AccessedThroughProperty("rbIfAny")]
-        private RadioButton _rbIfAny;
+        RadioButton _rbIfAny;
 
 
         [AccessedThroughProperty("rbIfCritter")]
-        private RadioButton _rbIfCritter;
+        RadioButton _rbIfCritter;
 
 
         [AccessedThroughProperty("rbIfPlayer")]
-        private RadioButton _rbIfPlayer;
+        RadioButton _rbIfPlayer;
 
 
         [AccessedThroughProperty("rtbBonus")]
-        private RichTextBox _rtbBonus;
+        RichTextBox _rtbBonus;
 
 
         [AccessedThroughProperty("txtAlternate")]
-        private TextBox _txtAlternate;
+        TextBox _txtAlternate;
 
 
         [AccessedThroughProperty("txtDesc")]
-        private TextBox _txtDesc;
+        TextBox _txtDesc;
 
 
         [AccessedThroughProperty("txtInternal")]
-        private TextBox _txtInternal;
+        TextBox _txtInternal;
 
 
         [AccessedThroughProperty("txtNameFull")]
-        private TextBox _txtNameFull;
+        TextBox _txtNameFull;
 
 
         [AccessedThroughProperty("txtNameShort")]
-        private TextBox _txtNameShort;
+        TextBox _txtNameShort;
 
 
         [AccessedThroughProperty("udMaxLevel")]
-        private NumericUpDown _udMaxLevel;
+        NumericUpDown _udMaxLevel;
 
 
         [AccessedThroughProperty("udMinLevel")]
-        private NumericUpDown _udMinLevel;
+        NumericUpDown _udMinLevel;
 
 
         protected bool Loading;

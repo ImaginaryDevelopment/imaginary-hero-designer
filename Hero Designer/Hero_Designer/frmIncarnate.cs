@@ -461,7 +461,7 @@ namespace Hero_Designer
         }
 
 
-        private void alphaBtn_ButtonClicked()
+        void alphaBtn_ButtonClicked()
         {
             ImageButton alphaBtn = this.alphaBtn;
             this.SetPowerSet("Alpha", ref alphaBtn);
@@ -469,7 +469,7 @@ namespace Hero_Designer
         }
 
 
-        private void ChangedScrollFrameContents()
+        void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
@@ -477,7 +477,7 @@ namespace Hero_Designer
         }
 
 
-        private void destinyBtn_ButtonClicked()
+        void destinyBtn_ButtonClicked()
         {
             ImageButton destinyBtn = this.destinyBtn;
             this.SetPowerSet("Destiny", ref destinyBtn);
@@ -558,7 +558,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmIncarnate_Load(object sender, EventArgs e)
+        void frmIncarnate_Load(object sender, EventArgs e)
         {
             this.buttonArray[0] = this.alphaBtn;
             this.buttonArray[1] = this.destinyBtn;
@@ -597,7 +597,7 @@ namespace Hero_Designer
         }
 
 
-        private void GenesisButton_ButtonClicked()
+        void GenesisButton_ButtonClicked()
         {
             ImageButton genesisButton = this.GenesisButton;
             this.SetPowerSet("Genesis", ref genesisButton);
@@ -605,7 +605,7 @@ namespace Hero_Designer
         }
 
 
-        private void hybridBtn_ButtonClicked()
+        void hybridBtn_ButtonClicked()
         {
             ImageButton hybridBtn = this.hybridBtn;
             this.SetPowerSet("Hybrid", ref hybridBtn);
@@ -613,13 +613,13 @@ namespace Hero_Designer
         }
 
 
-        private void ibClose_ButtonClicked()
+        void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
 
-        private void interfaceBtn_ButtonClicked()
+        void interfaceBtn_ButtonClicked()
         {
             ImageButton interfaceBtn = this.interfaceBtn;
             this.SetPowerSet("Interface", ref interfaceBtn);
@@ -627,7 +627,7 @@ namespace Hero_Designer
         }
 
 
-        private void judgementBtn_ButtonClicked()
+        void judgementBtn_ButtonClicked()
         {
             ImageButton judgementBtn = this.judgementBtn;
             this.SetPowerSet("Judgement", ref judgementBtn);
@@ -635,14 +635,14 @@ namespace Hero_Designer
         }
 
 
-        private void lblLock_Click(object sender, EventArgs e)
+        void lblLock_Click(object sender, EventArgs e)
         {
             this.Locked = false;
             this.lblLock.Visible = false;
         }
 
 
-        private void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
             {
@@ -690,13 +690,13 @@ namespace Hero_Designer
         }
 
 
-        private void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.miniPowerInfo(Item.Index);
         }
 
 
-        private void llLeft_MouseEnter(object sender, EventArgs e)
+        void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
             {
@@ -705,7 +705,7 @@ namespace Hero_Designer
         }
 
 
-        private void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             if (Button == MouseButtons.Right)
@@ -754,20 +754,20 @@ namespace Hero_Designer
         }
 
 
-        private void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.miniPowerInfo(pIDX);
         }
 
 
-        private void llRight_MouseEnter(object sender, EventArgs e)
+        void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
-        private void loreBtn_ButtonClicked()
+        void loreBtn_ButtonClicked()
         {
             ImageButton loreBtn = this.loreBtn;
             this.SetPowerSet("Lore", ref loreBtn);
@@ -895,7 +895,7 @@ namespace Hero_Designer
         }
 
 
-        private void OmegaButton_ButtonClicked()
+        void OmegaButton_ButtonClicked()
         {
             ImageButton omegaButton = this.OmegaButton;
             this.SetPowerSet("Omega", ref omegaButton);
@@ -903,7 +903,7 @@ namespace Hero_Designer
         }
 
 
-        private void PopInfo_MouseEnter(object sender, EventArgs e)
+        void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
             {
@@ -912,7 +912,7 @@ namespace Hero_Designer
         }
 
 
-        private void PopInfo_MouseWheel(object sender, MouseEventArgs e)
+        void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
@@ -923,7 +923,7 @@ namespace Hero_Designer
         }
 
 
-        private void SetPowerSet(string Setname, ref ImageButton button)
+        void SetPowerSet(string Setname, ref ImageButton button)
         {
             foreach (ImageButton button2 in this.buttonArray)
             {
@@ -935,7 +935,7 @@ namespace Hero_Designer
         }
 
 
-        private void StanceButton_ButtonClicked()
+        void StanceButton_ButtonClicked()
         {
             ImageButton stanceButton = this.StanceButton;
             this.SetPowerSet("Stance", ref stanceButton);
@@ -955,7 +955,7 @@ namespace Hero_Designer
         }
 
 
-        private void VitaeButton_ButtonClicked()
+        void VitaeButton_ButtonClicked()
         {
             ImageButton vitaeButton = this.VitaeButton;
             this.SetPowerSet("Vitae", ref vitaeButton);
@@ -963,7 +963,7 @@ namespace Hero_Designer
         }
 
 
-        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             if (this.PopInfo.lHeight > (float)this.Panel1.Height & this.VScrollBar1.Maximum > this.VScrollBar1.LargeChange)
             {
@@ -977,74 +977,74 @@ namespace Hero_Designer
 
 
         [AccessedThroughProperty("alphaBtn")]
-        private ImageButton _alphaBtn;
+        ImageButton _alphaBtn;
 
 
         [AccessedThroughProperty("destinyBtn")]
-        private ImageButton _destinyBtn;
+        ImageButton _destinyBtn;
 
 
         [AccessedThroughProperty("GenesisButton")]
-        private ImageButton _GenesisButton;
+        ImageButton _GenesisButton;
 
 
         [AccessedThroughProperty("hybridBtn")]
-        private ImageButton _hybridBtn;
+        ImageButton _hybridBtn;
 
 
         [AccessedThroughProperty("ibClose")]
-        private ImageButton _ibClose;
+        ImageButton _ibClose;
 
 
         [AccessedThroughProperty("interfaceBtn")]
-        private ImageButton _interfaceBtn;
+        ImageButton _interfaceBtn;
 
 
         [AccessedThroughProperty("judgementBtn")]
-        private ImageButton _judgementBtn;
+        ImageButton _judgementBtn;
 
 
         [AccessedThroughProperty("lblLock")]
-        private Label _lblLock;
+        Label _lblLock;
 
 
         [AccessedThroughProperty("llLeft")]
-        private ListLabelV2 _llLeft;
+        ListLabelV2 _llLeft;
 
 
         [AccessedThroughProperty("llRight")]
-        private ListLabelV2 _llRight;
+        ListLabelV2 _llRight;
 
 
         [AccessedThroughProperty("loreBtn")]
-        private ImageButton _loreBtn;
+        ImageButton _loreBtn;
 
 
         [AccessedThroughProperty("OmegaButton")]
-        private ImageButton _OmegaButton;
+        ImageButton _OmegaButton;
 
 
         [AccessedThroughProperty("Panel1")]
-        private Panel _Panel1;
+        Panel _Panel1;
 
 
         [AccessedThroughProperty("PopInfo")]
-        private ctlPopUp _PopInfo;
+        ctlPopUp _PopInfo;
 
 
         [AccessedThroughProperty("StanceButton")]
-        private ImageButton _StanceButton;
+        ImageButton _StanceButton;
 
 
         [AccessedThroughProperty("VitaeButton")]
-        private ImageButton _VitaeButton;
+        ImageButton _VitaeButton;
 
 
         [AccessedThroughProperty("VScrollBar1")]
-        private VScrollBar _VScrollBar1;
+        VScrollBar _VScrollBar1;
 
 
-        private ImageButton[] buttonArray;
+        ImageButton[] buttonArray;
 
 
         protected bool Locked;

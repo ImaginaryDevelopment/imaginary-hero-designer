@@ -334,30 +334,30 @@ namespace Base.Data_Classes
         }
 
 
-        private Enums.VersionData _powerVersion = new Enums.VersionData();
+        Enums.VersionData _powerVersion = new Enums.VersionData();
 
 
-        private Enums.VersionData _powerEffectVersion = new Enums.VersionData();
+        Enums.VersionData _powerEffectVersion = new Enums.VersionData();
 
 
-        private Enums.VersionData _powerLevelVersion = new Enums.VersionData();
+        Enums.VersionData _powerLevelVersion = new Enums.VersionData();
 
 
-        private Enums.VersionData _powersetVersion = new Enums.VersionData();
+        Enums.VersionData _powersetVersion = new Enums.VersionData();
 
 
-        private Enums.VersionData _archetypeVersion = new Enums.VersionData();
+        Enums.VersionData _archetypeVersion = new Enums.VersionData();
 
 
-        private Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
+        Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
 
 
-        private SummonedEntity[] _entities = new SummonedEntity[0];
+        SummonedEntity[] _entities = new SummonedEntity[0];
 
 
-        private ArrayList _effectIds = new ArrayList();
+        ArrayList _effectIds = new ArrayList();
 
 
-        private static readonly Database _instance = new Database();
+        static readonly Database _instance = new Database();
     }
 }

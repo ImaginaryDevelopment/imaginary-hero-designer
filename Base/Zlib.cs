@@ -10,11 +10,11 @@ public class Zlib
 {
 
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "compress2", ExactSpelling = true, SetLastError = true)]
-    private static extern int Compress(ref byte destBytes, ref int destLength, ref byte srcBytes, int srcLength, int compressionLevel);
+    static extern int Compress(ref byte destBytes, ref int destLength, ref byte srcBytes, int srcLength, int compressionLevel);
 
 
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "uncompress", ExactSpelling = true, SetLastError = true)]
-    private static extern int Uncompress(ref byte destBytes, ref int destLength, ref byte srceBytes, int srcLength);
+    static extern int Uncompress(ref byte destBytes, ref int destLength, ref byte srceBytes, int srcLength);
 
 
     public int UnPack(string iRoot, string iFileName, ref DateTime iDate, ref string iComments)
@@ -77,7 +77,7 @@ public class Zlib
     }
 
 
-    private static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
+    static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
     {
         int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
         Zlib.FileHeader fileHeader = default(Zlib.FileHeader);
@@ -126,7 +126,7 @@ public class Zlib
     }
 
 
-    private bool UncompressFile(string iRoot, BinaryReader reader)
+    bool UncompressFile(string iRoot, BinaryReader reader)
     {
         Zlib.FileHeader fileHeader = default(Zlib.FileHeader);
         string str = reader.ReadString();
@@ -513,31 +513,31 @@ public class Zlib
     }
 
 
-    private const float Version = 1f;
+    const float Version = 1f;
 
 
-    private const string PackHeaderToken = "MHDPackZ";
+    const string PackHeaderToken = "MHDPackZ";
 
 
-    private const int ErrorNone = 0;
+    const int ErrorNone = 0;
 
 
-    private const int ErrorStream = -2;
+    const int ErrorStream = -2;
 
 
-    private const int ErrorData = -3;
+    const int ErrorData = -3;
 
 
-    private const int ErrorOutOfMem = -4;
+    const int ErrorOutOfMem = -4;
 
 
-    private const int ErrorBuffer = -5;
+    const int ErrorBuffer = -5;
 
 
-    private ZStatus _sFrm;
+    ZStatus _sFrm;
 
 
-    private enum ECompressionLevel
+    enum ECompressionLevel
     {
 
         None,
@@ -550,7 +550,7 @@ public class Zlib
     }
 
 
-    private struct PackHeader
+    struct PackHeader
     {
 
         public float PackVersion;
@@ -572,7 +572,7 @@ public class Zlib
     }
 
 
-    private struct FileHeader
+    struct FileHeader
     {
 
         public string FileName;

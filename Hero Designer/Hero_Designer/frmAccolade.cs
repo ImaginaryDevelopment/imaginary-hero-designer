@@ -207,7 +207,7 @@ namespace Hero_Designer
         }
 
 
-        private void ChangedScrollFrameContents()
+        void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
@@ -215,7 +215,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillLists()
+        void FillLists()
         {
             this.llLeft.SuspendRedraw = true;
             this.llRight.SuspendRedraw = true;
@@ -266,7 +266,7 @@ namespace Hero_Designer
         }
 
 
-        private void frmAccolade_Load(object sender, EventArgs e)
+        void frmAccolade_Load(object sender, EventArgs e)
         {
             this.BackColor = this._myParent.BackColor;
             this.PopInfo.ForeColor = this.BackColor;
@@ -289,20 +289,20 @@ namespace Hero_Designer
         }
 
 
-        private void ibClose_ButtonClicked()
+        void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
 
-        private void lblLock_Click(object sender, EventArgs e)
+        void lblLock_Click(object sender, EventArgs e)
         {
             this._locked = false;
             this.lblLock.Visible = false;
         }
 
 
-        private void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
             {
@@ -329,13 +329,13 @@ namespace Hero_Designer
         }
 
 
-        private void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.MiniPowerInfo(Item.Index);
         }
 
 
-        private void llLeft_MouseEnter(object sender, EventArgs e)
+        void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
             {
@@ -344,7 +344,7 @@ namespace Hero_Designer
         }
 
 
-        private void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
+        void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             if (Button == MouseButtons.Right)
@@ -372,20 +372,20 @@ namespace Hero_Designer
         }
 
 
-        private void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
+        void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.MiniPowerInfo(pIDX);
         }
 
 
-        private void llRight_MouseEnter(object sender, EventArgs e)
+        void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
 
-        private void MiniPowerInfo(int pIDX)
+        void MiniPowerInfo(int pIDX)
         {
             if (!this._locked)
             {
@@ -498,7 +498,7 @@ namespace Hero_Designer
         }
 
 
-        private void PopInfo_MouseEnter(object sender, EventArgs e)
+        void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
             {
@@ -507,7 +507,7 @@ namespace Hero_Designer
         }
 
 
-        private void PopInfo_MouseWheel(object sender, MouseEventArgs e)
+        void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
@@ -518,7 +518,7 @@ namespace Hero_Designer
         }
 
 
-        private static void UpdateLlColours(ref ListLabelV2 iList)
+        static void UpdateLlColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
@@ -530,46 +530,46 @@ namespace Hero_Designer
         }
 
 
-        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.PopInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.PopInfo.lHeight - (float)this.Panel1.Height));
         }
 
 
         [AccessedThroughProperty("ibClose")]
-        private ImageButton _ibClose;
+        ImageButton _ibClose;
 
 
         [AccessedThroughProperty("lblLock")]
-        private Label _lblLock;
+        Label _lblLock;
 
 
         [AccessedThroughProperty("llLeft")]
-        private ListLabelV2 _llLeft;
+        ListLabelV2 _llLeft;
 
 
         [AccessedThroughProperty("llRight")]
-        private ListLabelV2 _llRight;
+        ListLabelV2 _llRight;
 
 
-        private bool _locked;
+        bool _locked;
 
 
-        private readonly frmMain _myParent;
+        readonly frmMain _myParent;
 
 
-        private readonly List<IPower> _myPowers;
+        readonly List<IPower> _myPowers;
 
 
         [AccessedThroughProperty("Panel1")]
-        private Panel _Panel1;
+        Panel _Panel1;
 
 
         [AccessedThroughProperty("PopInfo")]
-        private ctlPopUp _PopInfo;
+        ctlPopUp _PopInfo;
 
 
         [AccessedThroughProperty("VScrollBar1")]
-        private VScrollBar _VScrollBar1;
+        VScrollBar _VScrollBar1;
     }
 }

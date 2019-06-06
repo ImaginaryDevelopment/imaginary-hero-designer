@@ -427,7 +427,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnCheckAll_Click(object sender, EventArgs e)
+        void btnCheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -439,13 +439,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnClose_Click(object sender, EventArgs e)
+        void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
 
-        private void btnEraseAll_Click(object sender, EventArgs e)
+        void btnEraseAll_Click(object sender, EventArgs e)
         {
             int num = DatabaseAPI.Database.Power.Length - 1;
             for (int index = 0; index <= num; index++)
@@ -464,7 +464,7 @@ namespace Hero_Designer
         }
 
 
-        private void btnFile_Click(object sender, EventArgs e)
+        void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this._fullFileName;
             if (this.dlgBrowse.ShowDialog(this) == DialogResult.OK)
@@ -482,13 +482,13 @@ namespace Hero_Designer
         }
 
 
-        private void btnImport_Click(object sender, EventArgs e)
+        void btnImport_Click(object sender, EventArgs e)
         {
             this.ProcessImport();
         }
 
 
-        private void btnUncheckAll_Click(object sender, EventArgs e)
+        void btnUncheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -500,7 +500,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyHide()
+        void BusyHide()
         {
             if (this._bFrm != null)
             {
@@ -510,7 +510,7 @@ namespace Hero_Designer
         }
 
 
-        private void BusyMsg(string sMessage)
+        void BusyMsg(string sMessage)
         {
             if (this._bFrm == null)
             {
@@ -521,7 +521,7 @@ namespace Hero_Designer
         }
 
 
-        private void DisplayInfo()
+        void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this._fullFileName);
             this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerEffectVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
@@ -539,7 +539,7 @@ namespace Hero_Designer
         }
 
 
-        private void FillListView()
+        void FillListView()
         {
             string[] items = new string[6];
             this.lstImport.BeginUpdate();
@@ -630,14 +630,14 @@ namespace Hero_Designer
         }
 
 
-        private void frmImportEffects_Load(object sender, EventArgs e)
+        void frmImportEffects_Load(object sender, EventArgs e)
         {
             this._fullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
             this.DisplayInfo();
         }
 
 
-        private void HideUnchanged_Click(object sender, EventArgs e)
+        void HideUnchanged_Click(object sender, EventArgs e)
         {
             this._showUnchanged = !this._showUnchanged;
             this.lstImport.BeginUpdate();
@@ -654,7 +654,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ParseClasses(string iFileName)
+        bool ParseClasses(string iFileName)
         {
             int num = 0;
             StreamReader iStream;
@@ -785,7 +785,7 @@ namespace Hero_Designer
         }
 
 
-        private bool ProcessImport()
+        bool ProcessImport()
         {
             bool flag = false;
             int num = 0;
@@ -833,102 +833,102 @@ namespace Hero_Designer
         }
 
 
-        private frmBusy _bFrm;
+        frmBusy _bFrm;
 
 
         [AccessedThroughProperty("btnCheckAll")]
-        private Button _btnCheckAll;
+        Button _btnCheckAll;
 
 
         [AccessedThroughProperty("btnClose")]
-        private Button _btnClose;
+        Button _btnClose;
 
 
         [AccessedThroughProperty("btnEraseAll")]
-        private Button _btnEraseAll;
+        Button _btnEraseAll;
 
 
         [AccessedThroughProperty("btnFile")]
-        private Button _btnFile;
+        Button _btnFile;
 
 
         [AccessedThroughProperty("btnImport")]
-        private Button _btnImport;
+        Button _btnImport;
 
 
         [AccessedThroughProperty("btnUncheckAll")]
-        private Button _btnUncheckAll;
+        Button _btnUncheckAll;
 
 
         [AccessedThroughProperty("ColumnHeader1")]
-        private ColumnHeader _ColumnHeader1;
+        ColumnHeader _ColumnHeader1;
 
 
         [AccessedThroughProperty("ColumnHeader2")]
-        private ColumnHeader _ColumnHeader2;
+        ColumnHeader _ColumnHeader2;
 
 
         [AccessedThroughProperty("ColumnHeader3")]
-        private ColumnHeader _ColumnHeader3;
+        ColumnHeader _ColumnHeader3;
 
 
         [AccessedThroughProperty("ColumnHeader4")]
-        private ColumnHeader _ColumnHeader4;
+        ColumnHeader _ColumnHeader4;
 
 
         [AccessedThroughProperty("ColumnHeader5")]
-        private ColumnHeader _ColumnHeader5;
+        ColumnHeader _ColumnHeader5;
 
 
         [AccessedThroughProperty("ColumnHeader6")]
-        private ColumnHeader _ColumnHeader6;
+        ColumnHeader _ColumnHeader6;
 
 
-        private readonly List<ListViewItem> _currentItems;
+        readonly List<ListViewItem> _currentItems;
 
 
         [AccessedThroughProperty("dlgBrowse")]
-        private OpenFileDialog _dlgBrowse;
+        OpenFileDialog _dlgBrowse;
 
 
-        private string _fullFileName;
+        string _fullFileName;
 
 
         [AccessedThroughProperty("HideUnchanged")]
-        private Button _HideUnchanged;
+        Button _HideUnchanged;
 
 
-        private List<EffectData> _importBuffer;
+        List<EffectData> _importBuffer;
 
 
         [AccessedThroughProperty("Label6")]
-        private Label _Label6;
+        Label _Label6;
 
 
         [AccessedThroughProperty("Label8")]
-        private Label _Label8;
+        Label _Label8;
 
 
         [AccessedThroughProperty("lblDate")]
-        private Label _lblDate;
+        Label _lblDate;
 
 
         [AccessedThroughProperty("lblFile")]
-        private Label _lblFile;
+        Label _lblFile;
 
 
         [AccessedThroughProperty("lstImport")]
-        private ListView _lstImport;
+        ListView _lstImport;
 
 
-        private bool _showUnchanged;
+        bool _showUnchanged;
 
 
         [AccessedThroughProperty("txtNoAU")]
-        private Label _txtNoAU;
+        Label _txtNoAU;
 
 
         [AccessedThroughProperty("udRevision")]
-        private NumericUpDown _udRevision;
+        NumericUpDown _udRevision;
     }
 }
