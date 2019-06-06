@@ -6,6 +6,7 @@
 		// Token: 0x06000CB3 RID: 3251 RVA: 0x0007E3C4 File Offset: 0x0007C5C4
 		protected override void Dispose(bool disposing)
 		{
+
 			if (disposing && this.components != null)
 			{
 				this.components.Dispose();

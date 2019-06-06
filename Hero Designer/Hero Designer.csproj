@@ -370,12 +370,6 @@
     <Compile Include="Hero_Designer\frmStats.Designer.cs">
       <DependentUpon>frmStats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hero_Designer\FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hero_Designer\FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Hero_Designer\frmTotals.cs">
       <SubType>Form</SubType>
     </Compile>
