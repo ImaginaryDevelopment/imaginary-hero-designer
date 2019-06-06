@@ -1982,27 +1982,6 @@ namespace Hero_Designer
                 }
             }
         }
-        internal virtual ToolStripMenuItem tsDonate
-        {
-            get
-            {
-                return this._tsDonate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsDonate_Click);
-                if (this._tsDonate != null)
-                {
-                    this._tsDonate.Click -= eventHandler;
-                }
-                this._tsDonate = value;
-                if (this._tsDonate != null)
-                {
-                    this._tsDonate.Click += eventHandler;
-                }
-            }
-        }
         internal virtual ToolStripMenuItem tsDynamic
         {
             get
@@ -8376,10 +8355,6 @@ namespace Hero_Designer
             this.tsIODefault.Text = "Default (" + Conversions.ToString(MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
             this.FloatTop(true);
         }
-        void tsDonate_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.Donate();
-        }
         void tsDynamic_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9991,8 +9966,6 @@ namespace Hero_Designer
         ToolStripMenuItem _tsClearAllEnh;
         [AccessedThroughProperty("tsConfig")]
         ToolStripMenuItem _tsConfig;
-        [AccessedThroughProperty("tsDonate")]
-        ToolStripMenuItem _tsDonate;
         [AccessedThroughProperty("tsDynamic")]
         ToolStripMenuItem _tsDynamic;
         [AccessedThroughProperty("tsEnhToDO")]

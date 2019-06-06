@@ -124,7 +124,6 @@
             this.tsBug = new global::System.Windows.Forms.ToolStripMenuItem();
             this.tsTitanForum = new global::System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator23 = new global::System.Windows.Forms.ToolStripSeparator();
-            this.tsDonate = new global::System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator24 = new global::System.Windows.Forms.ToolStripSeparator();
             this.tsTitanPlanner = new global::System.Windows.Forms.ToolStripMenuItem();
             this.tsTitanSite = new global::System.Windows.Forms.ToolStripMenuItem();
@@ -880,7 +879,6 @@
                 this.tsBug,
                 this.tsTitanForum,
                 this.ToolStripSeparator23,
-                this.tsDonate,
                 this.ToolStripSeparator24,
                 this.tsTitanPlanner,
                 this.tsTitanSite
@@ -914,10 +912,7 @@
             this.ToolStripSeparator23.Name = "ToolStripSeparator23";
             size = new global::System.Drawing.Size(255, 6);
             this.ToolStripSeparator23.Size = size;
-            this.tsDonate.Name = "tsDonate";
             size = new global::System.Drawing.Size(258, 22);
-            this.tsDonate.Size = size;
-            this.tsDonate.Text = "Make a Donation (PayPal)";
             this.ToolStripSeparator24.Name = "ToolStripSeparator24";
             size = new global::System.Drawing.Size(255, 6);
             this.ToolStripSeparator24.Size = size;

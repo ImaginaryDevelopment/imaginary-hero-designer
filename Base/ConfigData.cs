@@ -766,7 +766,7 @@ public class ConfigData
         public const string Forums = "http://www.cohtitan.com/forum/";
         public const string Titan = "http://www.cohtitan.com/";
         public const string Planner = "http://www.cohplanner.com/";
-        public const string Donate = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167";
+        //public const string Donate = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167";
         public const string UpdateExe = "MHDLoader.exe";
     }
 }

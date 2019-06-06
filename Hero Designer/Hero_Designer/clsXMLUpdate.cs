@@ -121,9 +121,10 @@ namespace Hero_Designer
                 Interaction.MsgBox("There was an error launching the default web browser to visit:\r\nhttp://www.honourableunited.org.uk/mhdreport.php\r\n\r\n" + ex2.Message, MsgBoxStyle.Critical, "Error");
             }
         }
+
         public static void Donate()
         {
-            clsXMLUpdate.LaunchBrowser("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167");
+            //clsXMLUpdate.LaunchBrowser("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167");
         }
         public static void GoToCoHPlanner()
         {
