@@ -17,8 +17,8 @@ namespace Hero_Designer
     public partial class frmImportEffects : Form
     {
 
-        // (get) Token: 0x06000A7D RID: 2685 RVA: 0x0006CBC8 File Offset: 0x0006ADC8
-        // (set) Token: 0x06000A7E RID: 2686 RVA: 0x0006CBE0 File Offset: 0x0006ADE0
+    
+    
         internal virtual Button btnCheckAll
         {
             get
@@ -42,8 +42,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A7F RID: 2687 RVA: 0x0006CC3C File Offset: 0x0006AE3C
-        // (set) Token: 0x06000A80 RID: 2688 RVA: 0x0006CC54 File Offset: 0x0006AE54
+    
+    
         internal virtual Button btnClose
         {
             get
@@ -67,8 +67,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A81 RID: 2689 RVA: 0x0006CCB0 File Offset: 0x0006AEB0
-        // (set) Token: 0x06000A82 RID: 2690 RVA: 0x0006CCC8 File Offset: 0x0006AEC8
+    
+    
         internal virtual Button btnEraseAll
         {
             get
@@ -92,8 +92,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A83 RID: 2691 RVA: 0x0006CD24 File Offset: 0x0006AF24
-        // (set) Token: 0x06000A84 RID: 2692 RVA: 0x0006CD3C File Offset: 0x0006AF3C
+    
+    
         internal virtual Button btnFile
         {
             get
@@ -117,8 +117,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A85 RID: 2693 RVA: 0x0006CD98 File Offset: 0x0006AF98
-        // (set) Token: 0x06000A86 RID: 2694 RVA: 0x0006CDB0 File Offset: 0x0006AFB0
+    
+    
         internal virtual Button btnImport
         {
             get
@@ -142,8 +142,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A87 RID: 2695 RVA: 0x0006CE0C File Offset: 0x0006B00C
-        // (set) Token: 0x06000A88 RID: 2696 RVA: 0x0006CE24 File Offset: 0x0006B024
+    
+    
         internal virtual Button btnUncheckAll
         {
             get
@@ -167,8 +167,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A89 RID: 2697 RVA: 0x0006CE80 File Offset: 0x0006B080
-        // (set) Token: 0x06000A8A RID: 2698 RVA: 0x0006CE98 File Offset: 0x0006B098
+    
+    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -183,8 +183,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A8B RID: 2699 RVA: 0x0006CEA4 File Offset: 0x0006B0A4
-        // (set) Token: 0x06000A8C RID: 2700 RVA: 0x0006CEBC File Offset: 0x0006B0BC
+    
+    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -199,8 +199,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A8D RID: 2701 RVA: 0x0006CEC8 File Offset: 0x0006B0C8
-        // (set) Token: 0x06000A8E RID: 2702 RVA: 0x0006CEE0 File Offset: 0x0006B0E0
+    
+    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -215,8 +215,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A8F RID: 2703 RVA: 0x0006CEEC File Offset: 0x0006B0EC
-        // (set) Token: 0x06000A90 RID: 2704 RVA: 0x0006CF04 File Offset: 0x0006B104
+    
+    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -231,8 +231,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A91 RID: 2705 RVA: 0x0006CF10 File Offset: 0x0006B110
-        // (set) Token: 0x06000A92 RID: 2706 RVA: 0x0006CF28 File Offset: 0x0006B128
+    
+    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -247,8 +247,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A93 RID: 2707 RVA: 0x0006CF34 File Offset: 0x0006B134
-        // (set) Token: 0x06000A94 RID: 2708 RVA: 0x0006CF4C File Offset: 0x0006B14C
+    
+    
         internal virtual ColumnHeader ColumnHeader6
         {
             get
@@ -263,8 +263,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A95 RID: 2709 RVA: 0x0006CF58 File Offset: 0x0006B158
-        // (set) Token: 0x06000A96 RID: 2710 RVA: 0x0006CF70 File Offset: 0x0006B170
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -279,8 +279,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A97 RID: 2711 RVA: 0x0006CF7C File Offset: 0x0006B17C
-        // (set) Token: 0x06000A98 RID: 2712 RVA: 0x0006CF94 File Offset: 0x0006B194
+    
+    
         internal virtual Button HideUnchanged
         {
             get
@@ -304,8 +304,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A99 RID: 2713 RVA: 0x0006CFF0 File Offset: 0x0006B1F0
-        // (set) Token: 0x06000A9A RID: 2714 RVA: 0x0006D008 File Offset: 0x0006B208
+    
+    
         internal virtual Label Label6
         {
             get
@@ -320,8 +320,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A9B RID: 2715 RVA: 0x0006D014 File Offset: 0x0006B214
-        // (set) Token: 0x06000A9C RID: 2716 RVA: 0x0006D02C File Offset: 0x0006B22C
+    
+    
         internal virtual Label Label8
         {
             get
@@ -336,8 +336,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A9D RID: 2717 RVA: 0x0006D038 File Offset: 0x0006B238
-        // (set) Token: 0x06000A9E RID: 2718 RVA: 0x0006D050 File Offset: 0x0006B250
+    
+    
         internal virtual Label lblDate
         {
             get
@@ -352,8 +352,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000A9F RID: 2719 RVA: 0x0006D05C File Offset: 0x0006B25C
-        // (set) Token: 0x06000AA0 RID: 2720 RVA: 0x0006D074 File Offset: 0x0006B274
+    
+    
         internal virtual Label lblFile
         {
             get
@@ -368,8 +368,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000AA1 RID: 2721 RVA: 0x0006D080 File Offset: 0x0006B280
-        // (set) Token: 0x06000AA2 RID: 2722 RVA: 0x0006D098 File Offset: 0x0006B298
+    
+    
         internal virtual ListView lstImport
         {
             get
@@ -384,8 +384,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000AA3 RID: 2723 RVA: 0x0006D0A4 File Offset: 0x0006B2A4
-        // (set) Token: 0x06000AA4 RID: 2724 RVA: 0x0006D0BC File Offset: 0x0006B2BC
+    
+    
         internal virtual Label txtNoAU
         {
             get
@@ -400,8 +400,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000AA5 RID: 2725 RVA: 0x0006D0C8 File Offset: 0x0006B2C8
-        // (set) Token: 0x06000AA6 RID: 2726 RVA: 0x0006D0E0 File Offset: 0x0006B2E0
+    
+    
         internal virtual NumericUpDown udRevision
         {
             get

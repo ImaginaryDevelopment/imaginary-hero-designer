@@ -9,7 +9,7 @@ namespace Base.Display
     public class ExtendedBitmap : IDisposable, ICloneable
     {
 
-        // (get) Token: 0x0600045E RID: 1118 RVA: 0x00013920 File Offset: 0x00011B20
+    
         public Graphics Graphics
         {
             get
@@ -34,7 +34,7 @@ namespace Base.Display
         }
 
 
-        // (get) Token: 0x0600045F RID: 1119 RVA: 0x00013978 File Offset: 0x00011B78
+    
         public Bitmap Bitmap
         {
             get
@@ -57,7 +57,7 @@ namespace Base.Display
         }
 
 
-        // (get) Token: 0x06000460 RID: 1120 RVA: 0x000139BC File Offset: 0x00011BBC
+    
         private bool CanInitialise
         {
             get
@@ -86,8 +86,8 @@ namespace Base.Display
         }
 
 
-        // (get) Token: 0x06000461 RID: 1121 RVA: 0x00013A94 File Offset: 0x00011C94
-        // (set) Token: 0x06000462 RID: 1122 RVA: 0x00013ACC File Offset: 0x00011CCC
+    
+    
         public Size Size
         {
             get
@@ -114,8 +114,8 @@ namespace Base.Display
         }
 
 
-        // (get) Token: 0x06000463 RID: 1123 RVA: 0x00013B2C File Offset: 0x00011D2C
-        // (set) Token: 0x06000464 RID: 1124 RVA: 0x00013B64 File Offset: 0x00011D64
+    
+    
         private Region Clip
         {
             get
@@ -143,7 +143,7 @@ namespace Base.Display
         }
 
 
-        // (get) Token: 0x06000465 RID: 1125 RVA: 0x00013BA8 File Offset: 0x00011DA8
+    
         public Rectangle ClipRect
         {
             get

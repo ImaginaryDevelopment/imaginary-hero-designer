@@ -12,8 +12,8 @@ namespace Hero_Designer
     public partial class frmBusy : Form
     {
 
-        // (get) Token: 0x060001DC RID: 476 RVA: 0x00023B5C File Offset: 0x00021D5C
-        // (set) Token: 0x060001DD RID: 477 RVA: 0x00023B74 File Offset: 0x00021D74
+    
+    
         internal virtual Label Message
         {
             get

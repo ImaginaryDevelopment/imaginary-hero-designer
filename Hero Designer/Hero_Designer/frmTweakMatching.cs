@@ -14,8 +14,8 @@ namespace Hero_Designer
     public partial class frmTweakMatching : Form
     {
 
-        // (get) Token: 0x0600138C RID: 5004 RVA: 0x000C821C File Offset: 0x000C641C
-        // (set) Token: 0x0600138D RID: 5005 RVA: 0x000C8234 File Offset: 0x000C6434
+    
+    
         internal virtual Button btnAdd
         {
             get
@@ -39,8 +39,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600138E RID: 5006 RVA: 0x000C8290 File Offset: 0x000C6490
-        // (set) Token: 0x0600138F RID: 5007 RVA: 0x000C82A8 File Offset: 0x000C64A8
+    
+    
         internal virtual Button btnDel
         {
             get
@@ -64,8 +64,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001390 RID: 5008 RVA: 0x000C8304 File Offset: 0x000C6504
-        // (set) Token: 0x06001391 RID: 5009 RVA: 0x000C831C File Offset: 0x000C651C
+    
+    
         internal virtual Button Button1
         {
             get
@@ -89,8 +89,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001392 RID: 5010 RVA: 0x000C8378 File Offset: 0x000C6578
-        // (set) Token: 0x06001393 RID: 5011 RVA: 0x000C8390 File Offset: 0x000C6590
+    
+    
         internal virtual Button Button2
         {
             get
@@ -114,8 +114,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001394 RID: 5012 RVA: 0x000C83EC File Offset: 0x000C65EC
-        // (set) Token: 0x06001395 RID: 5013 RVA: 0x000C8404 File Offset: 0x000C6604
+    
+    
         internal virtual ComboBox cbAT1
         {
             get
@@ -139,8 +139,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001396 RID: 5014 RVA: 0x000C8460 File Offset: 0x000C6660
-        // (set) Token: 0x06001397 RID: 5015 RVA: 0x000C8478 File Offset: 0x000C6678
+    
+    
         internal virtual ComboBox cbPower
         {
             get
@@ -164,8 +164,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001398 RID: 5016 RVA: 0x000C84D4 File Offset: 0x000C66D4
-        // (set) Token: 0x06001399 RID: 5017 RVA: 0x000C84EC File Offset: 0x000C66EC
+    
+    
         internal virtual ComboBox cbSet1
         {
             get
@@ -189,8 +189,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600139A RID: 5018 RVA: 0x000C8548 File Offset: 0x000C6748
-        // (set) Token: 0x0600139B RID: 5019 RVA: 0x000C8560 File Offset: 0x000C6760
+    
+    
         internal virtual ComboBox cbType1
         {
             get
@@ -214,8 +214,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600139C RID: 5020 RVA: 0x000C85BC File Offset: 0x000C67BC
-        // (set) Token: 0x0600139D RID: 5021 RVA: 0x000C85D4 File Offset: 0x000C67D4
+    
+    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -230,8 +230,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600139E RID: 5022 RVA: 0x000C85E0 File Offset: 0x000C67E0
-        // (set) Token: 0x0600139F RID: 5023 RVA: 0x000C85F8 File Offset: 0x000C67F8
+    
+    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -246,8 +246,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013A0 RID: 5024 RVA: 0x000C8604 File Offset: 0x000C6804
-        // (set) Token: 0x060013A1 RID: 5025 RVA: 0x000C861C File Offset: 0x000C681C
+    
+    
         internal virtual ListBox lstTweaks
         {
             get
@@ -271,8 +271,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013A2 RID: 5026 RVA: 0x000C8678 File Offset: 0x000C6878
-        // (set) Token: 0x060013A3 RID: 5027 RVA: 0x000C8690 File Offset: 0x000C6890
+    
+    
         internal virtual TextBox txtAddActual
         {
             get
@@ -287,8 +287,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013A4 RID: 5028 RVA: 0x000C869C File Offset: 0x000C689C
-        // (set) Token: 0x060013A5 RID: 5029 RVA: 0x000C86B4 File Offset: 0x000C68B4
+    
+    
         internal virtual TextBox txtAddOvr
         {
             get
@@ -303,8 +303,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013A6 RID: 5030 RVA: 0x000C86C0 File Offset: 0x000C68C0
-        // (set) Token: 0x060013A7 RID: 5031 RVA: 0x000C86D8 File Offset: 0x000C68D8
+    
+    
         internal virtual TextBox txtOvr
         {
             get

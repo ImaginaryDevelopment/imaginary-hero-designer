@@ -7,7 +7,7 @@ namespace Base.Master_Classes
     public static class MidsContext
     {
 
-        // (get) Token: 0x06000490 RID: 1168 RVA: 0x000169D4 File Offset: 0x00014BD4
+    
         public static ConfigData Config
         {
             get

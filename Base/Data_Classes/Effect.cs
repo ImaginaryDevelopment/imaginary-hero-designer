@@ -11,23 +11,23 @@ namespace Base.Data_Classes
     public class Effect : IEffect, IComparable, ICloneable
     {
 
-        // (get) Token: 0x0600021D RID: 541 RVA: 0x00006D0C File Offset: 0x00004F0C
-        // (set) Token: 0x0600021E RID: 542 RVA: 0x00006D23 File Offset: 0x00004F23
+    
+    
         public string MagnitudeExpression { get; set; }
 
 
-        // (get) Token: 0x0600021F RID: 543 RVA: 0x00006D2C File Offset: 0x00004F2C
-        // (set) Token: 0x06000220 RID: 544 RVA: 0x00006D43 File Offset: 0x00004F43
+    
+    
         public float ProcsPerMinute { get; set; }
 
 
-        // (get) Token: 0x06000221 RID: 545 RVA: 0x00006D4C File Offset: 0x00004F4C
-        // (set) Token: 0x06000222 RID: 546 RVA: 0x00006D63 File Offset: 0x00004F63
+    
+    
         public bool CancelOnMiss { get; set; }
 
 
-        // (get) Token: 0x06000223 RID: 547 RVA: 0x00006D6C File Offset: 0x00004F6C
-        // (set) Token: 0x06000224 RID: 548 RVA: 0x00006EC3 File Offset: 0x000050C3
+    
+    
         public float Probability
         {
             get
@@ -70,7 +70,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000225 RID: 549 RVA: 0x00006ED0 File Offset: 0x000050D0
+    
         public float Mag
         {
             get
@@ -114,7 +114,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000226 RID: 550 RVA: 0x00006FE8 File Offset: 0x000051E8
+    
         public float MagPercent
         {
             get
@@ -133,7 +133,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000227 RID: 551 RVA: 0x00007024 File Offset: 0x00005224
+    
         public float Duration
         {
             get
@@ -170,7 +170,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000228 RID: 552 RVA: 0x000070D0 File Offset: 0x000052D0
+    
         public bool DisplayPercentage
         {
             get
@@ -217,8 +217,8 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000229 RID: 553 RVA: 0x000071CC File Offset: 0x000053CC
-        // (set) Token: 0x0600022A RID: 554 RVA: 0x000073D5 File Offset: 0x000055D5
+    
+    
         public bool VariableModified
         {
             get
@@ -282,7 +282,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x0600022B RID: 555 RVA: 0x000073D8 File Offset: 0x000055D8
+    
         public bool InherentSpecial
         {
             get
@@ -292,83 +292,83 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x0600022C RID: 556 RVA: 0x00007428 File Offset: 0x00005628
-        // (set) Token: 0x0600022D RID: 557 RVA: 0x0000743F File Offset: 0x0000563F
+    
+    
         public float BaseProbability { get; set; }
 
 
-        // (get) Token: 0x0600022E RID: 558 RVA: 0x00007448 File Offset: 0x00005648
-        // (set) Token: 0x0600022F RID: 559 RVA: 0x0000745F File Offset: 0x0000565F
+    
+    
         public bool IgnoreED { get; set; }
 
 
-        // (get) Token: 0x06000230 RID: 560 RVA: 0x00007468 File Offset: 0x00005668
-        // (set) Token: 0x06000231 RID: 561 RVA: 0x0000747F File Offset: 0x0000567F
+    
+    
         public string Reward { get; set; }
 
 
-        // (get) Token: 0x06000232 RID: 562 RVA: 0x00007488 File Offset: 0x00005688
-        // (set) Token: 0x06000233 RID: 563 RVA: 0x0000749F File Offset: 0x0000569F
+    
+    
         public string EffectId { get; set; }
 
 
-        // (get) Token: 0x06000234 RID: 564 RVA: 0x000074A8 File Offset: 0x000056A8
-        // (set) Token: 0x06000235 RID: 565 RVA: 0x000074BF File Offset: 0x000056BF
+    
+    
         public string Special { get; set; }
 
 
-        // (get) Token: 0x06000236 RID: 566 RVA: 0x000074C8 File Offset: 0x000056C8
-        // (set) Token: 0x06000237 RID: 567 RVA: 0x000074DF File Offset: 0x000056DF
+    
+    
         public IPower Power { get; set; }
 
 
-        // (get) Token: 0x06000238 RID: 568 RVA: 0x000074E8 File Offset: 0x000056E8
-        // (set) Token: 0x06000239 RID: 569 RVA: 0x000074FF File Offset: 0x000056FF
+    
+    
         public IEnhancement Enhancement { get; set; }
 
 
-        // (get) Token: 0x0600023A RID: 570 RVA: 0x00007508 File Offset: 0x00005708
-        // (set) Token: 0x0600023B RID: 571 RVA: 0x0000751F File Offset: 0x0000571F
+    
+    
         public int nID { get; set; }
 
 
-        // (get) Token: 0x0600023C RID: 572 RVA: 0x00007528 File Offset: 0x00005728
-        // (set) Token: 0x0600023D RID: 573 RVA: 0x0000753F File Offset: 0x0000573F
+    
+    
         public Enums.eEffectClass EffectClass { get; set; }
 
 
-        // (get) Token: 0x0600023E RID: 574 RVA: 0x00007548 File Offset: 0x00005748
-        // (set) Token: 0x0600023F RID: 575 RVA: 0x0000755F File Offset: 0x0000575F
+    
+    
         public Enums.eEffectType EffectType { get; set; }
 
 
-        // (get) Token: 0x06000240 RID: 576 RVA: 0x00007568 File Offset: 0x00005768
-        // (set) Token: 0x06000241 RID: 577 RVA: 0x0000757F File Offset: 0x0000577F
+    
+    
         public Enums.eOverrideBoolean DisplayPercentageOverride { get; set; }
 
 
-        // (get) Token: 0x06000242 RID: 578 RVA: 0x00007588 File Offset: 0x00005788
-        // (set) Token: 0x06000243 RID: 579 RVA: 0x0000759F File Offset: 0x0000579F
+    
+    
         public Enums.eDamage DamageType { get; set; }
 
 
-        // (get) Token: 0x06000244 RID: 580 RVA: 0x000075A8 File Offset: 0x000057A8
-        // (set) Token: 0x06000245 RID: 581 RVA: 0x000075BF File Offset: 0x000057BF
+    
+    
         public Enums.eMez MezType { get; set; }
 
 
-        // (get) Token: 0x06000246 RID: 582 RVA: 0x000075C8 File Offset: 0x000057C8
-        // (set) Token: 0x06000247 RID: 583 RVA: 0x000075DF File Offset: 0x000057DF
+    
+    
         public Enums.eEffectType ETModifies { get; set; }
 
 
-        // (get) Token: 0x06000248 RID: 584 RVA: 0x000075E8 File Offset: 0x000057E8
-        // (set) Token: 0x06000249 RID: 585 RVA: 0x000075FF File Offset: 0x000057FF
+    
+    
         public string Summon { get; set; }
 
 
-        // (get) Token: 0x0600024A RID: 586 RVA: 0x00007608 File Offset: 0x00005808
-        // (set) Token: 0x0600024B RID: 587 RVA: 0x0000766B File Offset: 0x0000586B
+    
+    
         public int nSummon
         {
             get
@@ -386,188 +386,188 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x0600024C RID: 588 RVA: 0x0000767C File Offset: 0x0000587C
-        // (set) Token: 0x0600024D RID: 589 RVA: 0x00007693 File Offset: 0x00005893
+    
+    
         private int? SummonId { get; set; }
 
 
-        // (get) Token: 0x0600024E RID: 590 RVA: 0x0000769C File Offset: 0x0000589C
-        // (set) Token: 0x0600024F RID: 591 RVA: 0x000076B3 File Offset: 0x000058B3
+    
+    
         public int Ticks { get; set; }
 
 
-        // (get) Token: 0x06000250 RID: 592 RVA: 0x000076BC File Offset: 0x000058BC
-        // (set) Token: 0x06000251 RID: 593 RVA: 0x000076D3 File Offset: 0x000058D3
+    
+    
         public float DelayedTime { get; set; }
 
 
-        // (get) Token: 0x06000252 RID: 594 RVA: 0x000076DC File Offset: 0x000058DC
-        // (set) Token: 0x06000253 RID: 595 RVA: 0x000076F3 File Offset: 0x000058F3
+    
+    
         public Enums.eStacking Stacking { get; set; }
 
 
-        // (get) Token: 0x06000254 RID: 596 RVA: 0x000076FC File Offset: 0x000058FC
-        // (set) Token: 0x06000255 RID: 597 RVA: 0x00007713 File Offset: 0x00005913
+    
+    
         public Enums.eSuppress Suppression { get; set; }
 
 
-        // (get) Token: 0x06000256 RID: 598 RVA: 0x0000771C File Offset: 0x0000591C
-        // (set) Token: 0x06000257 RID: 599 RVA: 0x00007733 File Offset: 0x00005933
+    
+    
         public bool Buffable { get; set; }
 
 
-        // (get) Token: 0x06000258 RID: 600 RVA: 0x0000773C File Offset: 0x0000593C
-        // (set) Token: 0x06000259 RID: 601 RVA: 0x00007753 File Offset: 0x00005953
+    
+    
         public bool Resistible { get; set; }
 
 
-        // (get) Token: 0x0600025A RID: 602 RVA: 0x0000775C File Offset: 0x0000595C
-        // (set) Token: 0x0600025B RID: 603 RVA: 0x00007773 File Offset: 0x00005973
+    
+    
         public Enums.eSpecialCase SpecialCase { get; set; }
 
 
-        // (get) Token: 0x0600025C RID: 604 RVA: 0x0000777C File Offset: 0x0000597C
-        // (set) Token: 0x0600025D RID: 605 RVA: 0x00007793 File Offset: 0x00005993
+    
+    
         public string UIDClassName { get; set; }
 
 
-        // (get) Token: 0x0600025E RID: 606 RVA: 0x0000779C File Offset: 0x0000599C
-        // (set) Token: 0x0600025F RID: 607 RVA: 0x000077B3 File Offset: 0x000059B3
+    
+    
         public int nIDClassName { get; set; }
 
 
-        // (get) Token: 0x06000260 RID: 608 RVA: 0x000077BC File Offset: 0x000059BC
-        // (set) Token: 0x06000261 RID: 609 RVA: 0x000077D3 File Offset: 0x000059D3
+    
+    
         public bool VariableModifiedOverride { get; set; }
 
 
-        // (get) Token: 0x06000262 RID: 610 RVA: 0x000077DC File Offset: 0x000059DC
-        // (set) Token: 0x06000263 RID: 611 RVA: 0x000077F3 File Offset: 0x000059F3
+    
+    
         public bool isEnahncementEffect { get; set; }
 
 
-        // (get) Token: 0x06000264 RID: 612 RVA: 0x000077FC File Offset: 0x000059FC
-        // (set) Token: 0x06000265 RID: 613 RVA: 0x00007813 File Offset: 0x00005A13
+    
+    
         public Enums.ePvX PvMode { get; set; }
 
 
-        // (get) Token: 0x06000266 RID: 614 RVA: 0x0000781C File Offset: 0x00005A1C
-        // (set) Token: 0x06000267 RID: 615 RVA: 0x00007833 File Offset: 0x00005A33
+    
+    
         public Enums.eToWho ToWho { get; set; }
 
 
-        // (get) Token: 0x06000268 RID: 616 RVA: 0x0000783C File Offset: 0x00005A3C
-        // (set) Token: 0x06000269 RID: 617 RVA: 0x00007853 File Offset: 0x00005A53
+    
+    
         public float Scale { get; set; }
 
 
-        // (get) Token: 0x0600026A RID: 618 RVA: 0x0000785C File Offset: 0x00005A5C
-        // (set) Token: 0x0600026B RID: 619 RVA: 0x00007873 File Offset: 0x00005A73
+    
+    
         public float nMagnitude { get; set; }
 
 
-        // (get) Token: 0x0600026C RID: 620 RVA: 0x0000787C File Offset: 0x00005A7C
-        // (set) Token: 0x0600026D RID: 621 RVA: 0x00007893 File Offset: 0x00005A93
+    
+    
         public float nDuration { get; set; }
 
 
-        // (get) Token: 0x0600026E RID: 622 RVA: 0x0000789C File Offset: 0x00005A9C
-        // (set) Token: 0x0600026F RID: 623 RVA: 0x000078B3 File Offset: 0x00005AB3
+    
+    
         public Enums.eAttribType AttribType { get; set; }
 
 
-        // (get) Token: 0x06000270 RID: 624 RVA: 0x000078BC File Offset: 0x00005ABC
-        // (set) Token: 0x06000271 RID: 625 RVA: 0x000078D3 File Offset: 0x00005AD3
+    
+    
         public Enums.eAspect Aspect { get; set; }
 
 
-        // (get) Token: 0x06000272 RID: 626 RVA: 0x000078DC File Offset: 0x00005ADC
-        // (set) Token: 0x06000273 RID: 627 RVA: 0x000078F3 File Offset: 0x00005AF3
+    
+    
         public string ModifierTable { get; set; }
 
 
-        // (get) Token: 0x06000274 RID: 628 RVA: 0x000078FC File Offset: 0x00005AFC
-        // (set) Token: 0x06000275 RID: 629 RVA: 0x00007913 File Offset: 0x00005B13
+    
+    
         public int nModifierTable { get; set; }
 
 
-        // (get) Token: 0x06000276 RID: 630 RVA: 0x0000791C File Offset: 0x00005B1C
-        // (set) Token: 0x06000277 RID: 631 RVA: 0x00007933 File Offset: 0x00005B33
+    
+    
         public string PowerFullName { get; set; }
 
 
-        // (get) Token: 0x06000278 RID: 632 RVA: 0x0000793C File Offset: 0x00005B3C
-        // (set) Token: 0x06000279 RID: 633 RVA: 0x00007953 File Offset: 0x00005B53
+    
+    
         public bool NearGround { get; set; }
 
 
-        // (get) Token: 0x0600027A RID: 634 RVA: 0x0000795C File Offset: 0x00005B5C
-        // (set) Token: 0x0600027B RID: 635 RVA: 0x00007973 File Offset: 0x00005B73
+    
+    
         public bool RequiresToHitCheck { get; set; }
 
 
-        // (get) Token: 0x0600027C RID: 636 RVA: 0x0000797C File Offset: 0x00005B7C
-        // (set) Token: 0x0600027D RID: 637 RVA: 0x00007993 File Offset: 0x00005B93
+    
+    
         public float Math_Mag { get; set; }
 
 
-        // (get) Token: 0x0600027E RID: 638 RVA: 0x0000799C File Offset: 0x00005B9C
-        // (set) Token: 0x0600027F RID: 639 RVA: 0x000079B3 File Offset: 0x00005BB3
+    
+    
         public float Math_Duration { get; set; }
 
 
-        // (get) Token: 0x06000280 RID: 640 RVA: 0x000079BC File Offset: 0x00005BBC
-        // (set) Token: 0x06000281 RID: 641 RVA: 0x000079D3 File Offset: 0x00005BD3
+    
+    
         public bool Absorbed_Effect { get; set; }
 
 
-        // (get) Token: 0x06000282 RID: 642 RVA: 0x000079DC File Offset: 0x00005BDC
-        // (set) Token: 0x06000283 RID: 643 RVA: 0x000079F3 File Offset: 0x00005BF3
+    
+    
         public Enums.ePowerType Absorbed_PowerType { get; set; }
 
 
-        // (get) Token: 0x06000284 RID: 644 RVA: 0x000079FC File Offset: 0x00005BFC
-        // (set) Token: 0x06000285 RID: 645 RVA: 0x00007A13 File Offset: 0x00005C13
+    
+    
         public int Absorbed_Power_nID { get; set; }
 
 
-        // (get) Token: 0x06000286 RID: 646 RVA: 0x00007A1C File Offset: 0x00005C1C
-        // (set) Token: 0x06000287 RID: 647 RVA: 0x00007A33 File Offset: 0x00005C33
+    
+    
         public float Absorbed_Duration { get; set; }
 
 
-        // (get) Token: 0x06000288 RID: 648 RVA: 0x00007A3C File Offset: 0x00005C3C
-        // (set) Token: 0x06000289 RID: 649 RVA: 0x00007A53 File Offset: 0x00005C53
+    
+    
         public int Absorbed_Class_nID { get; set; }
 
 
-        // (get) Token: 0x0600028A RID: 650 RVA: 0x00007A5C File Offset: 0x00005C5C
-        // (set) Token: 0x0600028B RID: 651 RVA: 0x00007A73 File Offset: 0x00005C73
+    
+    
         public float Absorbed_Interval { get; set; }
 
 
-        // (get) Token: 0x0600028C RID: 652 RVA: 0x00007A7C File Offset: 0x00005C7C
-        // (set) Token: 0x0600028D RID: 653 RVA: 0x00007A93 File Offset: 0x00005C93
+    
+    
         public int Absorbed_EffectID { get; set; }
 
 
-        // (get) Token: 0x0600028E RID: 654 RVA: 0x00007A9C File Offset: 0x00005C9C
-        // (set) Token: 0x0600028F RID: 655 RVA: 0x00007AB3 File Offset: 0x00005CB3
+    
+    
         public Enums.eBuffMode buffMode { get; set; }
 
 
-        // (get) Token: 0x06000290 RID: 656 RVA: 0x00007ABC File Offset: 0x00005CBC
-        // (set) Token: 0x06000291 RID: 657 RVA: 0x00007AD3 File Offset: 0x00005CD3
+    
+    
         public int UniqueID { get; set; }
 
 
-        // (get) Token: 0x06000292 RID: 658 RVA: 0x00007ADC File Offset: 0x00005CDC
-        // (set) Token: 0x06000293 RID: 659 RVA: 0x00007AF3 File Offset: 0x00005CF3
+    
+    
         public string Override { get; set; }
 
 
-        // (get) Token: 0x06000294 RID: 660 RVA: 0x00007AFC File Offset: 0x00005CFC
-        // (set) Token: 0x06000295 RID: 661 RVA: 0x00007B47 File Offset: 0x00005D47
+    
+    
         public int nOverride
         {
             get
@@ -585,8 +585,8 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000296 RID: 662 RVA: 0x00007B58 File Offset: 0x00005D58
-        // (set) Token: 0x06000297 RID: 663 RVA: 0x00007B6F File Offset: 0x00005D6F
+    
+    
         private int? OverrideId { get; set; }
 
 

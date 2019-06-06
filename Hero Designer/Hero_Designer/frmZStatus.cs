@@ -11,8 +11,8 @@ namespace Hero_Designer
     public partial class frmZStatus : Form
     {
 
-        // (get) Token: 0x060013BD RID: 5053 RVA: 0x000C9A68 File Offset: 0x000C7C68
-        // (set) Token: 0x060013BE RID: 5054 RVA: 0x000C9A80 File Offset: 0x000C7C80
+    
+    
         internal virtual Label lblStatus1
         {
             get
@@ -27,8 +27,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013BF RID: 5055 RVA: 0x000C9A8C File Offset: 0x000C7C8C
-        // (set) Token: 0x060013C0 RID: 5056 RVA: 0x000C9AA4 File Offset: 0x000C7CA4
+    
+    
         internal virtual Label lblStatus2
         {
             get
@@ -43,8 +43,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013C1 RID: 5057 RVA: 0x000C9AB0 File Offset: 0x000C7CB0
-        // (set) Token: 0x060013C2 RID: 5058 RVA: 0x000C9AC8 File Offset: 0x000C7CC8
+    
+    
         internal virtual Label lblTitle
         {
             get
@@ -59,8 +59,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060013C3 RID: 5059 RVA: 0x000C9AD4 File Offset: 0x000C7CD4
-        // (set) Token: 0x060013C4 RID: 5060 RVA: 0x000C9AEC File Offset: 0x000C7CEC
+    
+    
         internal virtual PictureBox PictureBox1
         {
             get

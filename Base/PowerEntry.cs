@@ -6,12 +6,12 @@ using Base.Display;
 public class PowerEntry : ICloneable
 {
 
-    // (get) Token: 0x06000662 RID: 1634 RVA: 0x0002EA18 File Offset: 0x0002CC18
-    // (set) Token: 0x06000663 RID: 1635 RVA: 0x0002EA2F File Offset: 0x0002CC2F
+    
+    
     public bool Chosen { get; private set; }
 
 
-    // (get) Token: 0x06000664 RID: 1636 RVA: 0x0002EA38 File Offset: 0x0002CC38
+    
     public Enums.ePowerState State
     {
         get
@@ -34,7 +34,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x06000665 RID: 1637 RVA: 0x0002EA74 File Offset: 0x0002CC74
+    
     public IPower Power
     {
         get
@@ -53,7 +53,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x06000666 RID: 1638 RVA: 0x0002EACC File Offset: 0x0002CCCC
+    
     public IPowerset PowerSet
     {
         get
@@ -72,7 +72,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x06000667 RID: 1639 RVA: 0x0002EB10 File Offset: 0x0002CD10
+    
     public bool AllowFrontLoading
     {
         get
@@ -82,7 +82,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x06000668 RID: 1640 RVA: 0x0002EB3C File Offset: 0x0002CD3C
+    
     public string Name
     {
         get
@@ -101,7 +101,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x06000669 RID: 1641 RVA: 0x0002EB78 File Offset: 0x0002CD78
+    
     public bool Virtual
     {
         get
@@ -111,7 +111,7 @@ public class PowerEntry : ICloneable
     }
 
 
-    // (get) Token: 0x0600066A RID: 1642 RVA: 0x0002EBA4 File Offset: 0x0002CDA4
+    
     public int SlotCount
     {
         get

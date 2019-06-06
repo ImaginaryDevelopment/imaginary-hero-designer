@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmImport_mod : Form
     {
 
-        // (get) Token: 0x06000B66 RID: 2918 RVA: 0x000734B8 File Offset: 0x000716B8
-        // (set) Token: 0x06000B67 RID: 2919 RVA: 0x000734D0 File Offset: 0x000716D0
+    
+    
         internal virtual Button btnAttribIndex
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B68 RID: 2920 RVA: 0x0007352C File Offset: 0x0007172C
-        // (set) Token: 0x06000B69 RID: 2921 RVA: 0x00073544 File Offset: 0x00071744
+    
+    
         internal virtual Button btnAttribLoad
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B6A RID: 2922 RVA: 0x000735A0 File Offset: 0x000717A0
-        // (set) Token: 0x06000B6B RID: 2923 RVA: 0x000735B8 File Offset: 0x000717B8
+    
+    
         internal virtual Button btnAttribTable
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B6C RID: 2924 RVA: 0x00073614 File Offset: 0x00071814
-        // (set) Token: 0x06000B6D RID: 2925 RVA: 0x0007362C File Offset: 0x0007182C
+    
+    
         internal virtual Button Button1
         {
             get
@@ -115,8 +115,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B6E RID: 2926 RVA: 0x00073688 File Offset: 0x00071888
-        // (set) Token: 0x06000B6F RID: 2927 RVA: 0x000736A0 File Offset: 0x000718A0
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -131,8 +131,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B70 RID: 2928 RVA: 0x000736AC File Offset: 0x000718AC
-        // (set) Token: 0x06000B71 RID: 2929 RVA: 0x000736C4 File Offset: 0x000718C4
+    
+    
         internal virtual Label Label1
         {
             get
@@ -147,8 +147,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B72 RID: 2930 RVA: 0x000736D0 File Offset: 0x000718D0
-        // (set) Token: 0x06000B73 RID: 2931 RVA: 0x000736E8 File Offset: 0x000718E8
+    
+    
         internal virtual Label Label3
         {
             get
@@ -163,8 +163,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B74 RID: 2932 RVA: 0x000736F4 File Offset: 0x000718F4
-        // (set) Token: 0x06000B75 RID: 2933 RVA: 0x0007370C File Offset: 0x0007190C
+    
+    
         internal virtual Label Label4
         {
             get
@@ -179,8 +179,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B76 RID: 2934 RVA: 0x00073718 File Offset: 0x00071918
-        // (set) Token: 0x06000B77 RID: 2935 RVA: 0x00073730 File Offset: 0x00071930
+    
+    
         internal virtual Label lblAttribDate
         {
             get
@@ -195,8 +195,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B78 RID: 2936 RVA: 0x0007373C File Offset: 0x0007193C
-        // (set) Token: 0x06000B79 RID: 2937 RVA: 0x00073754 File Offset: 0x00071954
+    
+    
         internal virtual Label lblAttribIndex
         {
             get
@@ -211,8 +211,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B7A RID: 2938 RVA: 0x00073760 File Offset: 0x00071960
-        // (set) Token: 0x06000B7B RID: 2939 RVA: 0x00073778 File Offset: 0x00071978
+    
+    
         internal virtual Label lblAttribTableCount
         {
             get
@@ -227,8 +227,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B7C RID: 2940 RVA: 0x00073784 File Offset: 0x00071984
-        // (set) Token: 0x06000B7D RID: 2941 RVA: 0x0007379C File Offset: 0x0007199C
+    
+    
         internal virtual Label lblAttribTables
         {
             get
@@ -243,8 +243,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B7E RID: 2942 RVA: 0x000737A8 File Offset: 0x000719A8
-        // (set) Token: 0x06000B7F RID: 2943 RVA: 0x000737C0 File Offset: 0x000719C0
+    
+    
         internal virtual NumericUpDown udAttribRevision
         {
             get

@@ -17,8 +17,8 @@ namespace Hero_Designer
     public partial class frmPrint : Form
     {
 
-        // (get) Token: 0x0600106D RID: 4205 RVA: 0x000A4AD8 File Offset: 0x000A2CD8
-        // (set) Token: 0x0600106E RID: 4206 RVA: 0x000A4AF0 File Offset: 0x000A2CF0
+    
+    
         internal virtual Button btnCancel
         {
             get
@@ -42,8 +42,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600106F RID: 4207 RVA: 0x000A4B4C File Offset: 0x000A2D4C
-        // (set) Token: 0x06001070 RID: 4208 RVA: 0x000A4B64 File Offset: 0x000A2D64
+    
+    
         internal virtual Button btnLayout
         {
             get
@@ -67,8 +67,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001071 RID: 4209 RVA: 0x000A4BC0 File Offset: 0x000A2DC0
-        // (set) Token: 0x06001072 RID: 4210 RVA: 0x000A4BD8 File Offset: 0x000A2DD8
+    
+    
         internal virtual Button btnPrint
         {
             get
@@ -92,8 +92,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001073 RID: 4211 RVA: 0x000A4C34 File Offset: 0x000A2E34
-        // (set) Token: 0x06001074 RID: 4212 RVA: 0x000A4C4C File Offset: 0x000A2E4C
+    
+    
         internal virtual Button btnPrinter
         {
             get
@@ -117,8 +117,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001075 RID: 4213 RVA: 0x000A4CA8 File Offset: 0x000A2EA8
-        // (set) Token: 0x06001076 RID: 4214 RVA: 0x000A4CC0 File Offset: 0x000A2EC0
+    
+    
         internal virtual CheckBox chkPrintHistory
         {
             get
@@ -142,8 +142,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001077 RID: 4215 RVA: 0x000A4D1C File Offset: 0x000A2F1C
-        // (set) Token: 0x06001078 RID: 4216 RVA: 0x000A4D34 File Offset: 0x000A2F34
+    
+    
         internal virtual CheckBox chkPrintHistoryEnh
         {
             get
@@ -158,8 +158,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001079 RID: 4217 RVA: 0x000A4D40 File Offset: 0x000A2F40
-        // (set) Token: 0x0600107A RID: 4218 RVA: 0x000A4D58 File Offset: 0x000A2F58
+    
+    
         internal virtual CheckBox chkProfileEnh
         {
             get
@@ -174,8 +174,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600107B RID: 4219 RVA: 0x000A4D64 File Offset: 0x000A2F64
-        // (set) Token: 0x0600107C RID: 4220 RVA: 0x000A4D7C File Offset: 0x000A2F7C
+    
+    
         internal virtual PageSetupDialog dlgSetup
         {
             get
@@ -190,8 +190,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600107D RID: 4221 RVA: 0x000A4D88 File Offset: 0x000A2F88
-        // (set) Token: 0x0600107E RID: 4222 RVA: 0x000A4DA0 File Offset: 0x000A2FA0
+    
+    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -206,8 +206,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600107F RID: 4223 RVA: 0x000A4DAC File Offset: 0x000A2FAC
-        // (set) Token: 0x06001080 RID: 4224 RVA: 0x000A4DC4 File Offset: 0x000A2FC4
+    
+    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -222,8 +222,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001081 RID: 4225 RVA: 0x000A4DD0 File Offset: 0x000A2FD0
-        // (set) Token: 0x06001082 RID: 4226 RVA: 0x000A4DE8 File Offset: 0x000A2FE8
+    
+    
         internal virtual Label lblPrinter
         {
             get
@@ -238,8 +238,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001083 RID: 4227 RVA: 0x000A4DF4 File Offset: 0x000A2FF4
-        // (set) Token: 0x06001084 RID: 4228 RVA: 0x000A4E0C File Offset: 0x000A300C
+    
+    
         internal virtual RadioButton rbProfileLong
         {
             get
@@ -254,8 +254,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001085 RID: 4229 RVA: 0x000A4E18 File Offset: 0x000A3018
-        // (set) Token: 0x06001086 RID: 4230 RVA: 0x000A4E30 File Offset: 0x000A3030
+    
+    
         internal virtual RadioButton rbProfileNone
         {
             get
@@ -270,8 +270,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001087 RID: 4231 RVA: 0x000A4E3C File Offset: 0x000A303C
-        // (set) Token: 0x06001088 RID: 4232 RVA: 0x000A4E54 File Offset: 0x000A3054
+    
+    
         internal virtual RadioButton rbProfileShort
         {
             get

@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmMiniList : Form
     {
 
-        // (get) Token: 0x06000F1F RID: 3871 RVA: 0x00099038 File Offset: 0x00097238
-        // (set) Token: 0x06000F20 RID: 3872 RVA: 0x00099050 File Offset: 0x00097250
+    
+    
         internal virtual ctlPopUp pInfo
         {
             get
@@ -43,8 +43,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F21 RID: 3873 RVA: 0x000990D4 File Offset: 0x000972D4
-        // (set) Token: 0x06000F22 RID: 3874 RVA: 0x000990EC File Offset: 0x000972EC
+    
+    
         internal virtual VScrollBar VScrollBar1
         {
             get

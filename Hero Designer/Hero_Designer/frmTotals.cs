@@ -18,8 +18,8 @@ namespace Hero_Designer
     public partial class frmTotals : Form
     {
 
-        // (get) Token: 0x0600131D RID: 4893 RVA: 0x000C11F8 File Offset: 0x000BF3F8
-        // (set) Token: 0x0600131E RID: 4894 RVA: 0x000C1210 File Offset: 0x000BF410
+    
+    
         internal virtual ctlMultiGraph graphAcc
         {
             get
@@ -34,8 +34,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600131F RID: 4895 RVA: 0x000C121C File Offset: 0x000BF41C
-        // (set) Token: 0x06001320 RID: 4896 RVA: 0x000C1234 File Offset: 0x000BF434
+    
+    
         internal virtual ctlMultiGraph graphDam
         {
             get
@@ -50,8 +50,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001321 RID: 4897 RVA: 0x000C1240 File Offset: 0x000BF440
-        // (set) Token: 0x06001322 RID: 4898 RVA: 0x000C1258 File Offset: 0x000BF458
+    
+    
         internal virtual ctlMultiGraph graphDef
         {
             get
@@ -66,8 +66,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001323 RID: 4899 RVA: 0x000C1264 File Offset: 0x000BF464
-        // (set) Token: 0x06001324 RID: 4900 RVA: 0x000C127C File Offset: 0x000BF47C
+    
+    
         internal virtual ctlMultiGraph graphDrain
         {
             get
@@ -82,8 +82,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001325 RID: 4901 RVA: 0x000C1288 File Offset: 0x000BF488
-        // (set) Token: 0x06001326 RID: 4902 RVA: 0x000C12A0 File Offset: 0x000BF4A0
+    
+    
         internal virtual ctlMultiGraph graphElusivity
         {
             get
@@ -98,8 +98,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001327 RID: 4903 RVA: 0x000C12AC File Offset: 0x000BF4AC
-        // (set) Token: 0x06001328 RID: 4904 RVA: 0x000C12C4 File Offset: 0x000BF4C4
+    
+    
         internal virtual ctlMultiGraph graphEndRdx
         {
             get
@@ -114,8 +114,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001329 RID: 4905 RVA: 0x000C12D0 File Offset: 0x000BF4D0
-        // (set) Token: 0x0600132A RID: 4906 RVA: 0x000C12E8 File Offset: 0x000BF4E8
+    
+    
         internal virtual ctlMultiGraph graphHaste
         {
             get
@@ -130,8 +130,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600132B RID: 4907 RVA: 0x000C12F4 File Offset: 0x000BF4F4
-        // (set) Token: 0x0600132C RID: 4908 RVA: 0x000C130C File Offset: 0x000BF50C
+    
+    
         internal virtual ctlMultiGraph graphHP
         {
             get
@@ -146,8 +146,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600132D RID: 4909 RVA: 0x000C1318 File Offset: 0x000BF518
-        // (set) Token: 0x0600132E RID: 4910 RVA: 0x000C1330 File Offset: 0x000BF530
+    
+    
         internal virtual ctlMultiGraph graphMaxEnd
         {
             get
@@ -162,8 +162,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600132F RID: 4911 RVA: 0x000C133C File Offset: 0x000BF53C
-        // (set) Token: 0x06001330 RID: 4912 RVA: 0x000C1354 File Offset: 0x000BF554
+    
+    
         internal virtual ctlMultiGraph graphMovement
         {
             get
@@ -178,8 +178,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001331 RID: 4913 RVA: 0x000C1360 File Offset: 0x000BF560
-        // (set) Token: 0x06001332 RID: 4914 RVA: 0x000C1378 File Offset: 0x000BF578
+    
+    
         internal virtual ctlMultiGraph graphRec
         {
             get
@@ -194,8 +194,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001333 RID: 4915 RVA: 0x000C1384 File Offset: 0x000BF584
-        // (set) Token: 0x06001334 RID: 4916 RVA: 0x000C139C File Offset: 0x000BF59C
+    
+    
         internal virtual ctlMultiGraph graphRegen
         {
             get
@@ -210,8 +210,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001335 RID: 4917 RVA: 0x000C13A8 File Offset: 0x000BF5A8
-        // (set) Token: 0x06001336 RID: 4918 RVA: 0x000C13C0 File Offset: 0x000BF5C0
+    
+    
         internal virtual ctlMultiGraph graphRes
         {
             get
@@ -226,8 +226,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001337 RID: 4919 RVA: 0x000C13CC File Offset: 0x000BF5CC
-        // (set) Token: 0x06001338 RID: 4920 RVA: 0x000C13E4 File Offset: 0x000BF5E4
+    
+    
         internal virtual ctlMultiGraph graphSDeb
         {
             get
@@ -242,8 +242,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001339 RID: 4921 RVA: 0x000C13F0 File Offset: 0x000BF5F0
-        // (set) Token: 0x0600133A RID: 4922 RVA: 0x000C1408 File Offset: 0x000BF608
+    
+    
         internal virtual ctlMultiGraph graphSProt
         {
             get
@@ -258,8 +258,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600133B RID: 4923 RVA: 0x000C1414 File Offset: 0x000BF614
-        // (set) Token: 0x0600133C RID: 4924 RVA: 0x000C142C File Offset: 0x000BF62C
+    
+    
         internal virtual ctlMultiGraph graphSRes
         {
             get
@@ -274,8 +274,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600133D RID: 4925 RVA: 0x000C1438 File Offset: 0x000BF638
-        // (set) Token: 0x0600133E RID: 4926 RVA: 0x000C1450 File Offset: 0x000BF650
+    
+    
         internal virtual ctlMultiGraph graphStealth
         {
             get
@@ -290,8 +290,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600133F RID: 4927 RVA: 0x000C145C File Offset: 0x000BF65C
-        // (set) Token: 0x06001340 RID: 4928 RVA: 0x000C1474 File Offset: 0x000BF674
+    
+    
         internal virtual ctlMultiGraph graphThreat
         {
             get
@@ -306,8 +306,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001341 RID: 4929 RVA: 0x000C1480 File Offset: 0x000BF680
-        // (set) Token: 0x06001342 RID: 4930 RVA: 0x000C1498 File Offset: 0x000BF698
+    
+    
         internal virtual ctlMultiGraph graphToHit
         {
             get
@@ -322,8 +322,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001343 RID: 4931 RVA: 0x000C14A4 File Offset: 0x000BF6A4
-        // (set) Token: 0x06001344 RID: 4932 RVA: 0x000C14BC File Offset: 0x000BF6BC
+    
+    
         internal virtual Label lblDef
         {
             get
@@ -338,8 +338,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001345 RID: 4933 RVA: 0x000C14C8 File Offset: 0x000BF6C8
-        // (set) Token: 0x06001346 RID: 4934 RVA: 0x000C14E0 File Offset: 0x000BF6E0
+    
+    
         internal virtual Label lblMisc
         {
             get
@@ -354,8 +354,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001347 RID: 4935 RVA: 0x000C14EC File Offset: 0x000BF6EC
-        // (set) Token: 0x06001348 RID: 4936 RVA: 0x000C1504 File Offset: 0x000BF704
+    
+    
         internal virtual Label lblMovement
         {
             get
@@ -370,8 +370,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001349 RID: 4937 RVA: 0x000C1510 File Offset: 0x000BF710
-        // (set) Token: 0x0600134A RID: 4938 RVA: 0x000C1528 File Offset: 0x000BF728
+    
+    
         internal virtual Label lblRegenRec
         {
             get
@@ -386,8 +386,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600134B RID: 4939 RVA: 0x000C1534 File Offset: 0x000BF734
-        // (set) Token: 0x0600134C RID: 4940 RVA: 0x000C154C File Offset: 0x000BF74C
+    
+    
         internal virtual Label lblRes
         {
             get
@@ -402,8 +402,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600134D RID: 4941 RVA: 0x000C1558 File Offset: 0x000BF758
-        // (set) Token: 0x0600134E RID: 4942 RVA: 0x000C1570 File Offset: 0x000BF770
+    
+    
         internal virtual Label lblSDeb
         {
             get
@@ -418,8 +418,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600134F RID: 4943 RVA: 0x000C157C File Offset: 0x000BF77C
-        // (set) Token: 0x06001350 RID: 4944 RVA: 0x000C1594 File Offset: 0x000BF794
+    
+    
         internal virtual Label lblSProt
         {
             get
@@ -434,8 +434,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001351 RID: 4945 RVA: 0x000C15A0 File Offset: 0x000BF7A0
-        // (set) Token: 0x06001352 RID: 4946 RVA: 0x000C15B8 File Offset: 0x000BF7B8
+    
+    
         internal virtual Label lblSRes
         {
             get
@@ -450,8 +450,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001353 RID: 4947 RVA: 0x000C15C4 File Offset: 0x000BF7C4
-        // (set) Token: 0x06001354 RID: 4948 RVA: 0x000C15DC File Offset: 0x000BF7DC
+    
+    
         internal virtual Label lblStealth
         {
             get
@@ -466,8 +466,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001355 RID: 4949 RVA: 0x000C15E8 File Offset: 0x000BF7E8
-        // (set) Token: 0x06001356 RID: 4950 RVA: 0x000C1600 File Offset: 0x000BF800
+    
+    
         internal virtual Panel Panel1
         {
             get
@@ -482,8 +482,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001357 RID: 4951 RVA: 0x000C160C File Offset: 0x000BF80C
-        // (set) Token: 0x06001358 RID: 4952 RVA: 0x000C1624 File Offset: 0x000BF824
+    
+    
         internal virtual Panel Panel2
         {
             get
@@ -498,8 +498,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001359 RID: 4953 RVA: 0x000C1630 File Offset: 0x000BF830
-        // (set) Token: 0x0600135A RID: 4954 RVA: 0x000C1648 File Offset: 0x000BF848
+    
+    
         internal virtual PictureBox pbClose
         {
             get
@@ -526,8 +526,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600135B RID: 4955 RVA: 0x000C16CC File Offset: 0x000BF8CC
-        // (set) Token: 0x0600135C RID: 4956 RVA: 0x000C16E4 File Offset: 0x000BF8E4
+    
+    
         internal virtual PictureBox pbTopMost
         {
             get
@@ -554,8 +554,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600135D RID: 4957 RVA: 0x000C1768 File Offset: 0x000BF968
-        // (set) Token: 0x0600135E RID: 4958 RVA: 0x000C1780 File Offset: 0x000BF980
+    
+    
         internal virtual Panel pnlDRHE
         {
             get
@@ -570,8 +570,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600135F RID: 4959 RVA: 0x000C178C File Offset: 0x000BF98C
-        // (set) Token: 0x06001360 RID: 4960 RVA: 0x000C17A4 File Offset: 0x000BF9A4
+    
+    
         internal virtual Panel pnlMisc
         {
             get
@@ -586,8 +586,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001361 RID: 4961 RVA: 0x000C17B0 File Offset: 0x000BF9B0
-        // (set) Token: 0x06001362 RID: 4962 RVA: 0x000C17C8 File Offset: 0x000BF9C8
+    
+    
         internal virtual Panel pnlStatus
         {
             get
@@ -602,8 +602,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001363 RID: 4963 RVA: 0x000C17D4 File Offset: 0x000BF9D4
-        // (set) Token: 0x06001364 RID: 4964 RVA: 0x000C17EC File Offset: 0x000BF9EC
+    
+    
         internal virtual RadioButton rbFPS
         {
             get
@@ -627,8 +627,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001365 RID: 4965 RVA: 0x000C1848 File Offset: 0x000BFA48
-        // (set) Token: 0x06001366 RID: 4966 RVA: 0x000C1860 File Offset: 0x000BFA60
+    
+    
         internal virtual RadioButton rbKPH
         {
             get
@@ -652,8 +652,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001367 RID: 4967 RVA: 0x000C18BC File Offset: 0x000BFABC
-        // (set) Token: 0x06001368 RID: 4968 RVA: 0x000C18D4 File Offset: 0x000BFAD4
+    
+    
         internal virtual RadioButton rbMPH
         {
             get
@@ -677,8 +677,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001369 RID: 4969 RVA: 0x000C1930 File Offset: 0x000BFB30
-        // (set) Token: 0x0600136A RID: 4970 RVA: 0x000C1948 File Offset: 0x000BFB48
+    
+    
         internal virtual RadioButton rbMSec
         {
             get
@@ -702,8 +702,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600136B RID: 4971 RVA: 0x000C19A4 File Offset: 0x000BFBA4
-        // (set) Token: 0x0600136C RID: 4972 RVA: 0x000C19BC File Offset: 0x000BFBBC
+    
+    
         internal virtual PictureBox tab0
         {
             get
@@ -730,8 +730,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600136D RID: 4973 RVA: 0x000C1A40 File Offset: 0x000BFC40
-        // (set) Token: 0x0600136E RID: 4974 RVA: 0x000C1A58 File Offset: 0x000BFC58
+    
+    
         internal virtual PictureBox tab1
         {
             get
@@ -758,8 +758,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600136F RID: 4975 RVA: 0x000C1ADC File Offset: 0x000BFCDC
-        // (set) Token: 0x06001370 RID: 4976 RVA: 0x000C1AF4 File Offset: 0x000BFCF4
+    
+    
         internal virtual PictureBox tab2
         {
             get

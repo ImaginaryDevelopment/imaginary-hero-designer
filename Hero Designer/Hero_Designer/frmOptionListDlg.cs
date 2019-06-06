@@ -12,8 +12,8 @@ namespace Hero_Designer
     public partial class frmOptionListDlg : Form
     {
 
-        // (get) Token: 0x06000F2C RID: 3884 RVA: 0x000995E4 File Offset: 0x000977E4
-        // (set) Token: 0x06000F2D RID: 3885 RVA: 0x000995FC File Offset: 0x000977FC
+    
+    
         internal virtual Button Cancel_Button
         {
             get
@@ -37,8 +37,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F2E RID: 3886 RVA: 0x00099658 File Offset: 0x00097858
-        // (set) Token: 0x06000F2F RID: 3887 RVA: 0x00099670 File Offset: 0x00097870
+    
+    
         internal virtual CheckBox chkRemember
         {
             get
@@ -53,8 +53,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F30 RID: 3888 RVA: 0x0009967C File Offset: 0x0009787C
-        // (set) Token: 0x06000F31 RID: 3889 RVA: 0x00099694 File Offset: 0x00097894
+    
+    
         internal virtual ComboBox cmbAction
         {
             get
@@ -69,8 +69,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F32 RID: 3890 RVA: 0x000996A0 File Offset: 0x000978A0
-        // (set) Token: 0x06000F33 RID: 3891 RVA: 0x000996B8 File Offset: 0x000978B8
+    
+    
         internal virtual Label lblDescript
         {
             get
@@ -85,8 +85,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F34 RID: 3892 RVA: 0x000996C4 File Offset: 0x000978C4
-        // (set) Token: 0x06000F35 RID: 3893 RVA: 0x000996DC File Offset: 0x000978DC
+    
+    
         internal virtual Button OK_Button
         {
             get
@@ -110,8 +110,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000F36 RID: 3894 RVA: 0x00099738 File Offset: 0x00097938
-        // (set) Token: 0x06000F37 RID: 3895 RVA: 0x00099750 File Offset: 0x00097950
+    
+    
         internal virtual TableLayoutPanel TableLayoutPanel1
         {
             get

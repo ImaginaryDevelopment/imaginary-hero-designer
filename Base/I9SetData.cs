@@ -4,7 +4,7 @@
 public class I9SetData
 {
 
-    // (get) Token: 0x060005FC RID: 1532 RVA: 0x00027FD0 File Offset: 0x000261D0
+    
     public bool Empty
     {
         get

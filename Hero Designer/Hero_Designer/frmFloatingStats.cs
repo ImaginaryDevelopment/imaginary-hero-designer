@@ -11,8 +11,8 @@ namespace Hero_Designer
     public partial class frmFloatingStats : Form
     {
 
-        // (get) Token: 0x06000A1E RID: 2590 RVA: 0x0006A158 File Offset: 0x00068358
-        // (set) Token: 0x06000A1F RID: 2591 RVA: 0x0006A170 File Offset: 0x00068370
+    
+    
         internal virtual DataView dvFloat
         {
             get

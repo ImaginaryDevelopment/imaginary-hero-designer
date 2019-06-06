@@ -11,8 +11,8 @@ namespace Hero_Designer
     public partial class frmLoading : Form, IMessager
     {
 
-        // (get) Token: 0x06000CAC RID: 3244 RVA: 0x0007E2F8 File Offset: 0x0007C4F8
-        // (set) Token: 0x06000CAD RID: 3245 RVA: 0x0007E310 File Offset: 0x0007C510
+    
+    
         internal virtual Label Label1
         {
             get
@@ -27,8 +27,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CAE RID: 3246 RVA: 0x0007E31C File Offset: 0x0007C51C
-        // (set) Token: 0x06000CAF RID: 3247 RVA: 0x0007E334 File Offset: 0x0007C534
+    
+    
         public PictureBox PictureBox1
         {
             get
@@ -43,8 +43,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CB0 RID: 3248 RVA: 0x0007E340 File Offset: 0x0007C540
-        // (set) Token: 0x06000CB1 RID: 3249 RVA: 0x0007E358 File Offset: 0x0007C558
+    
+    
         internal virtual Timer tmrOpacity
         {
             get

@@ -6,73 +6,73 @@ using Base.Data_Classes;
 public class Enhancement : IEnhancement
 {
 
-    // (get) Token: 0x06000558 RID: 1368 RVA: 0x000212D0 File Offset: 0x0001F4D0
-    // (set) Token: 0x06000559 RID: 1369 RVA: 0x000212E7 File Offset: 0x0001F4E7
+    
+    
     public bool IsModified { get; set; }
 
 
-    // (get) Token: 0x0600055A RID: 1370 RVA: 0x000212F0 File Offset: 0x0001F4F0
-    // (set) Token: 0x0600055B RID: 1371 RVA: 0x00021307 File Offset: 0x0001F507
+    
+    
     public bool IsNew { get; set; }
 
 
-    // (get) Token: 0x0600055C RID: 1372 RVA: 0x00021310 File Offset: 0x0001F510
-    // (set) Token: 0x0600055D RID: 1373 RVA: 0x00021327 File Offset: 0x0001F527
+    
+    
     public int StaticIndex { get; set; }
 
 
-    // (get) Token: 0x0600055E RID: 1374 RVA: 0x00021330 File Offset: 0x0001F530
-    // (set) Token: 0x0600055F RID: 1375 RVA: 0x00021347 File Offset: 0x0001F547
+    
+    
     public string Name { get; set; }
 
 
-    // (get) Token: 0x06000560 RID: 1376 RVA: 0x00021350 File Offset: 0x0001F550
-    // (set) Token: 0x06000561 RID: 1377 RVA: 0x00021367 File Offset: 0x0001F567
+    
+    
     public string ShortName { get; set; }
 
 
-    // (get) Token: 0x06000562 RID: 1378 RVA: 0x00021370 File Offset: 0x0001F570
-    // (set) Token: 0x06000563 RID: 1379 RVA: 0x00021387 File Offset: 0x0001F587
+    
+    
     public string Desc { get; set; }
 
 
-    // (get) Token: 0x06000564 RID: 1380 RVA: 0x00021390 File Offset: 0x0001F590
-    // (set) Token: 0x06000565 RID: 1381 RVA: 0x000213A7 File Offset: 0x0001F5A7
+    
+    
     public Enums.eType TypeID { get; set; }
 
 
-    // (get) Token: 0x06000566 RID: 1382 RVA: 0x000213B0 File Offset: 0x0001F5B0
-    // (set) Token: 0x06000567 RID: 1383 RVA: 0x000213C7 File Offset: 0x0001F5C7
+    
+    
     public Enums.eSubtype SubTypeID { get; set; }
 
 
-    // (get) Token: 0x06000568 RID: 1384 RVA: 0x000213D0 File Offset: 0x0001F5D0
-    // (set) Token: 0x06000569 RID: 1385 RVA: 0x000213E7 File Offset: 0x0001F5E7
+    
+    
     public int[] ClassID { get; set; }
 
 
-    // (get) Token: 0x0600056A RID: 1386 RVA: 0x000213F0 File Offset: 0x0001F5F0
-    // (set) Token: 0x0600056B RID: 1387 RVA: 0x00021407 File Offset: 0x0001F607
+    
+    
     public string Image { get; set; }
 
 
-    // (get) Token: 0x0600056C RID: 1388 RVA: 0x00021410 File Offset: 0x0001F610
-    // (set) Token: 0x0600056D RID: 1389 RVA: 0x00021427 File Offset: 0x0001F627
+    
+    
     public int ImageIdx { get; set; }
 
 
-    // (get) Token: 0x0600056E RID: 1390 RVA: 0x00021430 File Offset: 0x0001F630
-    // (set) Token: 0x0600056F RID: 1391 RVA: 0x00021447 File Offset: 0x0001F647
+    
+    
     public int nIDSet { get; set; }
 
 
-    // (get) Token: 0x06000570 RID: 1392 RVA: 0x00021450 File Offset: 0x0001F650
-    // (set) Token: 0x06000571 RID: 1393 RVA: 0x00021467 File Offset: 0x0001F667
+    
+    
     public string UIDSet { get; set; }
 
 
-    // (get) Token: 0x06000572 RID: 1394 RVA: 0x00021470 File Offset: 0x0001F670
-    // (set) Token: 0x06000573 RID: 1395 RVA: 0x000214C1 File Offset: 0x0001F6C1
+    
+    
     public IPower Power
     {
         get
@@ -91,62 +91,62 @@ public class Enhancement : IEnhancement
     }
 
 
-    // (get) Token: 0x06000574 RID: 1396 RVA: 0x000214CC File Offset: 0x0001F6CC
-    // (set) Token: 0x06000575 RID: 1397 RVA: 0x000214E3 File Offset: 0x0001F6E3
+    
+    
     public Enums.sEffect[] Effect { get; set; }
 
 
-    // (get) Token: 0x06000576 RID: 1398 RVA: 0x000214EC File Offset: 0x0001F6EC
-    // (set) Token: 0x06000577 RID: 1399 RVA: 0x00021503 File Offset: 0x0001F703
+    
+    
     public float EffectChance { get; set; }
 
 
-    // (get) Token: 0x06000578 RID: 1400 RVA: 0x0002150C File Offset: 0x0001F70C
-    // (set) Token: 0x06000579 RID: 1401 RVA: 0x00021523 File Offset: 0x0001F723
+    
+    
     public int LevelMin { get; set; }
 
 
-    // (get) Token: 0x0600057A RID: 1402 RVA: 0x0002152C File Offset: 0x0001F72C
-    // (set) Token: 0x0600057B RID: 1403 RVA: 0x00021543 File Offset: 0x0001F743
+    
+    
     public int LevelMax { get; set; }
 
 
-    // (get) Token: 0x0600057C RID: 1404 RVA: 0x0002154C File Offset: 0x0001F74C
-    // (set) Token: 0x0600057D RID: 1405 RVA: 0x00021563 File Offset: 0x0001F763
+    
+    
     public bool Unique { get; set; }
 
 
-    // (get) Token: 0x0600057E RID: 1406 RVA: 0x0002156C File Offset: 0x0001F76C
-    // (set) Token: 0x0600057F RID: 1407 RVA: 0x00021583 File Offset: 0x0001F783
+    
+    
     public Enums.eEnhMutex MutExID { get; set; }
 
 
-    // (get) Token: 0x06000580 RID: 1408 RVA: 0x0002158C File Offset: 0x0001F78C
-    // (set) Token: 0x06000581 RID: 1409 RVA: 0x000215A3 File Offset: 0x0001F7A3
+    
+    
     public Enums.eBuffDebuff BuffMode { get; set; }
 
 
-    // (get) Token: 0x06000582 RID: 1410 RVA: 0x000215AC File Offset: 0x0001F7AC
-    // (set) Token: 0x06000583 RID: 1411 RVA: 0x000215C3 File Offset: 0x0001F7C3
+    
+    
     public string RecipeName { get; set; }
 
 
-    // (get) Token: 0x06000584 RID: 1412 RVA: 0x000215CC File Offset: 0x0001F7CC
-    // (set) Token: 0x06000585 RID: 1413 RVA: 0x000215E3 File Offset: 0x0001F7E3
+    
+    
     public int RecipeIDX { get; set; }
 
 
-    // (get) Token: 0x06000586 RID: 1414 RVA: 0x000215EC File Offset: 0x0001F7EC
-    // (set) Token: 0x06000587 RID: 1415 RVA: 0x00021603 File Offset: 0x0001F803
+    
+    
     public string UID { get; set; }
 
 
-    // (get) Token: 0x06000588 RID: 1416 RVA: 0x0002160C File Offset: 0x0001F80C
-    // (set) Token: 0x06000589 RID: 1417 RVA: 0x00021623 File Offset: 0x0001F823
+    
+    
     public bool Superior { get; set; }
 
 
-    // (get) Token: 0x0600058A RID: 1418 RVA: 0x0002162C File Offset: 0x0001F82C
+    
     public float Probability
     {
         get
@@ -163,7 +163,7 @@ public class Enhancement : IEnhancement
     }
 
 
-    // (get) Token: 0x0600058B RID: 1419 RVA: 0x0002169C File Offset: 0x0001F89C
+    
     public bool HasEnhEffect
     {
         get
@@ -180,7 +180,7 @@ public class Enhancement : IEnhancement
     }
 
 
-    // (get) Token: 0x0600058C RID: 1420 RVA: 0x000216F4 File Offset: 0x0001F8F4
+    
     public bool HasPowerEffect
     {
         get
@@ -197,7 +197,7 @@ public class Enhancement : IEnhancement
     }
 
 
-    // (get) Token: 0x0600058D RID: 1421 RVA: 0x0002174C File Offset: 0x0001F94C
+    
     public string LongName
     {
         get
@@ -224,7 +224,7 @@ public class Enhancement : IEnhancement
     }
 
 
-    // (get) Token: 0x0600058E RID: 1422 RVA: 0x000217D4 File Offset: 0x0001F9D4
+    
     public Enums.eSchedule Schedule
     {
         get

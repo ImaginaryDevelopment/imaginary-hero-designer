@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmImport_SetBonusAssignment : Form
     {
 
-        // (get) Token: 0x06000C49 RID: 3145 RVA: 0x0007A04C File Offset: 0x0007824C
-        // (set) Token: 0x06000C4A RID: 3146 RVA: 0x0007A064 File Offset: 0x00078264
+    
+    
         internal virtual Button btnClose
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C4B RID: 3147 RVA: 0x0007A0C0 File Offset: 0x000782C0
-        // (set) Token: 0x06000C4C RID: 3148 RVA: 0x0007A0D8 File Offset: 0x000782D8
+    
+    
         internal virtual Button btnFile
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C4D RID: 3149 RVA: 0x0007A134 File Offset: 0x00078334
-        // (set) Token: 0x06000C4E RID: 3150 RVA: 0x0007A14C File Offset: 0x0007834C
+    
+    
         internal virtual Button btnImport
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C4F RID: 3151 RVA: 0x0007A1A8 File Offset: 0x000783A8
-        // (set) Token: 0x06000C50 RID: 3152 RVA: 0x0007A1C0 File Offset: 0x000783C0
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -106,8 +106,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C51 RID: 3153 RVA: 0x0007A1CC File Offset: 0x000783CC
-        // (set) Token: 0x06000C52 RID: 3154 RVA: 0x0007A1E4 File Offset: 0x000783E4
+    
+    
         internal virtual Label lblFile
         {
             get

@@ -14,8 +14,8 @@ namespace Hero_Designer
     public partial class frmAbout : Form
     {
 
-        // (get) Token: 0x06000194 RID: 404 RVA: 0x00020FF4 File Offset: 0x0001F1F4
-        // (set) Token: 0x06000195 RID: 405 RVA: 0x0002100C File Offset: 0x0001F20C
+    
+    
         internal virtual ImageButton ibClose
         {
             get
@@ -39,8 +39,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000196 RID: 406 RVA: 0x00021068 File Offset: 0x0001F268
-        // (set) Token: 0x06000197 RID: 407 RVA: 0x00021080 File Offset: 0x0001F280
+    
+    
         internal virtual Label Label1
         {
             get
@@ -55,8 +55,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000198 RID: 408 RVA: 0x0002108C File Offset: 0x0001F28C
-        // (set) Token: 0x06000199 RID: 409 RVA: 0x000210A4 File Offset: 0x0001F2A4
+    
+    
         internal virtual Label Label3
         {
             get
@@ -71,8 +71,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600019A RID: 410 RVA: 0x000210B0 File Offset: 0x0001F2B0
-        // (set) Token: 0x0600019B RID: 411 RVA: 0x000210C8 File Offset: 0x0001F2C8
+    
+    
         internal virtual Label Label4
         {
             get
@@ -87,8 +87,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600019C RID: 412 RVA: 0x000210D4 File Offset: 0x0001F2D4
-        // (set) Token: 0x0600019D RID: 413 RVA: 0x000210EC File Offset: 0x0001F2EC
+    
+    
         internal virtual Label Label5
         {
             get
@@ -103,8 +103,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600019E RID: 414 RVA: 0x000210F8 File Offset: 0x0001F2F8
-        // (set) Token: 0x0600019F RID: 415 RVA: 0x00021110 File Offset: 0x0001F310
+    
+    
         internal virtual Label lblDBDate
         {
             get
@@ -119,8 +119,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001A0 RID: 416 RVA: 0x0002111C File Offset: 0x0001F31C
-        // (set) Token: 0x060001A1 RID: 417 RVA: 0x00021134 File Offset: 0x0001F334
+    
+    
         internal virtual Label lblDBIssue
         {
             get
@@ -135,8 +135,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001A2 RID: 418 RVA: 0x00021140 File Offset: 0x0001F340
-        // (set) Token: 0x060001A3 RID: 419 RVA: 0x00021158 File Offset: 0x0001F358
+    
+    
         internal virtual Label lblDonate
         {
             get
@@ -160,8 +160,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001A4 RID: 420 RVA: 0x000211B4 File Offset: 0x0001F3B4
-        // (set) Token: 0x060001A5 RID: 421 RVA: 0x000211CC File Offset: 0x0001F3CC
+    
+    
         internal virtual Label lblEmail
         {
             get
@@ -185,8 +185,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001A6 RID: 422 RVA: 0x00021228 File Offset: 0x0001F428
-        // (set) Token: 0x060001A7 RID: 423 RVA: 0x00021240 File Offset: 0x0001F440
+    
+    
         internal virtual Label lblLegal
         {
             get
@@ -201,8 +201,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001A8 RID: 424 RVA: 0x0002124C File Offset: 0x0001F44C
-        // (set) Token: 0x060001A9 RID: 425 RVA: 0x00021264 File Offset: 0x0001F464
+    
+    
         internal virtual Label lblVersion
         {
             get
@@ -217,8 +217,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001AA RID: 426 RVA: 0x00021270 File Offset: 0x0001F470
-        // (set) Token: 0x060001AB RID: 427 RVA: 0x00021288 File Offset: 0x0001F488
+    
+    
         internal virtual Label lblWebPage
         {
             get
@@ -242,8 +242,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001AC RID: 428 RVA: 0x000212E4 File Offset: 0x0001F4E4
-        // (set) Token: 0x060001AD RID: 429 RVA: 0x000212FC File Offset: 0x0001F4FC
+    
+    
         internal virtual PictureBox pbBackground
         {
             get
@@ -270,8 +270,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001AE RID: 430 RVA: 0x00021380 File Offset: 0x0001F580
-        // (set) Token: 0x060001AF RID: 431 RVA: 0x00021398 File Offset: 0x0001F598
+    
+    
         internal virtual ToolTip tTip
         {
             get

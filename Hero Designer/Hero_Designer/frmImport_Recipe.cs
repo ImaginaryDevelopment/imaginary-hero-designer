@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmImport_Recipe : Form
     {
 
-        // (get) Token: 0x06000BF7 RID: 3063 RVA: 0x00077370 File Offset: 0x00075570
-        // (set) Token: 0x06000BF8 RID: 3064 RVA: 0x00077388 File Offset: 0x00075588
+    
+    
         internal virtual Button btnAttribIndex
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000BF9 RID: 3065 RVA: 0x000773E4 File Offset: 0x000755E4
-        // (set) Token: 0x06000BFA RID: 3066 RVA: 0x000773FC File Offset: 0x000755FC
+    
+    
         internal virtual Button btnAttribLoad
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000BFB RID: 3067 RVA: 0x00077458 File Offset: 0x00075658
-        // (set) Token: 0x06000BFC RID: 3068 RVA: 0x00077470 File Offset: 0x00075670
+    
+    
         internal virtual Button btnAttribTable
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000BFD RID: 3069 RVA: 0x000774CC File Offset: 0x000756CC
-        // (set) Token: 0x06000BFE RID: 3070 RVA: 0x000774E4 File Offset: 0x000756E4
+    
+    
         internal virtual Button Button1
         {
             get
@@ -115,8 +115,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000BFF RID: 3071 RVA: 0x00077540 File Offset: 0x00075740
-        // (set) Token: 0x06000C00 RID: 3072 RVA: 0x00077558 File Offset: 0x00075758
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -131,8 +131,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C01 RID: 3073 RVA: 0x00077564 File Offset: 0x00075764
-        // (set) Token: 0x06000C02 RID: 3074 RVA: 0x0007757C File Offset: 0x0007577C
+    
+    
         internal virtual Label Label3
         {
             get
@@ -147,8 +147,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C03 RID: 3075 RVA: 0x00077588 File Offset: 0x00075788
-        // (set) Token: 0x06000C04 RID: 3076 RVA: 0x000775A0 File Offset: 0x000757A0
+    
+    
         internal virtual Label Label4
         {
             get
@@ -163,8 +163,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C05 RID: 3077 RVA: 0x000775AC File Offset: 0x000757AC
-        // (set) Token: 0x06000C06 RID: 3078 RVA: 0x000775C4 File Offset: 0x000757C4
+    
+    
         internal virtual Label lblAttribDate
         {
             get
@@ -179,8 +179,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C07 RID: 3079 RVA: 0x000775D0 File Offset: 0x000757D0
-        // (set) Token: 0x06000C08 RID: 3080 RVA: 0x000775E8 File Offset: 0x000757E8
+    
+    
         internal virtual Label lblAttribIndex
         {
             get
@@ -195,8 +195,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C09 RID: 3081 RVA: 0x000775F4 File Offset: 0x000757F4
-        // (set) Token: 0x06000C0A RID: 3082 RVA: 0x0007760C File Offset: 0x0007580C
+    
+    
         internal virtual Label lblAttribTableCount
         {
             get
@@ -211,8 +211,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C0B RID: 3083 RVA: 0x00077618 File Offset: 0x00075818
-        // (set) Token: 0x06000C0C RID: 3084 RVA: 0x00077630 File Offset: 0x00075830
+    
+    
         internal virtual Label lblAttribTables
         {
             get

@@ -18,8 +18,8 @@ namespace Hero_Designer
     public partial class frmIncarnate : Form
     {
 
-        // (get) Token: 0x06000C5E RID: 3166 RVA: 0x0007AE1C File Offset: 0x0007901C
-        // (set) Token: 0x06000C5F RID: 3167 RVA: 0x0007AE34 File Offset: 0x00079034
+    
+    
         internal virtual ImageButton alphaBtn
         {
             get
@@ -43,8 +43,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C60 RID: 3168 RVA: 0x0007AE90 File Offset: 0x00079090
-        // (set) Token: 0x06000C61 RID: 3169 RVA: 0x0007AEA8 File Offset: 0x000790A8
+    
+    
         internal virtual ImageButton destinyBtn
         {
             get
@@ -68,8 +68,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C62 RID: 3170 RVA: 0x0007AF04 File Offset: 0x00079104
-        // (set) Token: 0x06000C63 RID: 3171 RVA: 0x0007AF1C File Offset: 0x0007911C
+    
+    
         internal virtual ImageButton GenesisButton
         {
             get
@@ -93,8 +93,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C64 RID: 3172 RVA: 0x0007AF78 File Offset: 0x00079178
-        // (set) Token: 0x06000C65 RID: 3173 RVA: 0x0007AF90 File Offset: 0x00079190
+    
+    
         internal virtual ImageButton hybridBtn
         {
             get
@@ -118,8 +118,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C66 RID: 3174 RVA: 0x0007AFEC File Offset: 0x000791EC
-        // (set) Token: 0x06000C67 RID: 3175 RVA: 0x0007B004 File Offset: 0x00079204
+    
+    
         internal virtual ImageButton ibClose
         {
             get
@@ -143,8 +143,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C68 RID: 3176 RVA: 0x0007B060 File Offset: 0x00079260
-        // (set) Token: 0x06000C69 RID: 3177 RVA: 0x0007B078 File Offset: 0x00079278
+    
+    
         internal virtual ImageButton interfaceBtn
         {
             get
@@ -168,8 +168,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C6A RID: 3178 RVA: 0x0007B0D4 File Offset: 0x000792D4
-        // (set) Token: 0x06000C6B RID: 3179 RVA: 0x0007B0EC File Offset: 0x000792EC
+    
+    
         internal virtual ImageButton judgementBtn
         {
             get
@@ -193,8 +193,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C6C RID: 3180 RVA: 0x0007B148 File Offset: 0x00079348
-        // (set) Token: 0x06000C6D RID: 3181 RVA: 0x0007B160 File Offset: 0x00079360
+    
+    
         internal virtual Label lblLock
         {
             get
@@ -218,8 +218,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C6E RID: 3182 RVA: 0x0007B1BC File Offset: 0x000793BC
-        // (set) Token: 0x06000C6F RID: 3183 RVA: 0x0007B1D4 File Offset: 0x000793D4
+    
+    
         internal virtual ListLabelV2 llLeft
         {
             get
@@ -249,8 +249,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C70 RID: 3184 RVA: 0x0007B27C File Offset: 0x0007947C
-        // (set) Token: 0x06000C71 RID: 3185 RVA: 0x0007B294 File Offset: 0x00079494
+    
+    
         internal virtual ListLabelV2 llRight
         {
             get
@@ -280,8 +280,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C72 RID: 3186 RVA: 0x0007B33C File Offset: 0x0007953C
-        // (set) Token: 0x06000C73 RID: 3187 RVA: 0x0007B354 File Offset: 0x00079554
+    
+    
         internal virtual ImageButton loreBtn
         {
             get
@@ -305,8 +305,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C74 RID: 3188 RVA: 0x0007B3B0 File Offset: 0x000795B0
-        // (set) Token: 0x06000C75 RID: 3189 RVA: 0x0007B3C8 File Offset: 0x000795C8
+    
+    
         internal virtual ImageButton OmegaButton
         {
             get
@@ -330,8 +330,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C76 RID: 3190 RVA: 0x0007B424 File Offset: 0x00079624
-        // (set) Token: 0x06000C77 RID: 3191 RVA: 0x0007B43C File Offset: 0x0007963C
+    
+    
         internal virtual Panel Panel1
         {
             get
@@ -346,8 +346,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C78 RID: 3192 RVA: 0x0007B448 File Offset: 0x00079648
-        // (set) Token: 0x06000C79 RID: 3193 RVA: 0x0007B460 File Offset: 0x00079660
+    
+    
         internal virtual ctlPopUp PopInfo
         {
             get
@@ -374,8 +374,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C7A RID: 3194 RVA: 0x0007B4E4 File Offset: 0x000796E4
-        // (set) Token: 0x06000C7B RID: 3195 RVA: 0x0007B4FC File Offset: 0x000796FC
+    
+    
         internal virtual ImageButton StanceButton
         {
             get
@@ -399,8 +399,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C7C RID: 3196 RVA: 0x0007B558 File Offset: 0x00079758
-        // (set) Token: 0x06000C7D RID: 3197 RVA: 0x0007B570 File Offset: 0x00079770
+    
+    
         internal virtual ImageButton VitaeButton
         {
             get
@@ -424,8 +424,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C7E RID: 3198 RVA: 0x0007B5CC File Offset: 0x000797CC
-        // (set) Token: 0x06000C7F RID: 3199 RVA: 0x0007B5E4 File Offset: 0x000797E4
+    
+    
         internal virtual VScrollBar VScrollBar1
         {
             get

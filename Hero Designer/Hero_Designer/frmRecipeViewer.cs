@@ -18,8 +18,8 @@ namespace Hero_Designer
     public partial class frmRecipeViewer : Form
     {
 
-        // (get) Token: 0x06001154 RID: 4436 RVA: 0x000AD1A8 File Offset: 0x000AB3A8
-        // (set) Token: 0x06001155 RID: 4437 RVA: 0x000AD1C0 File Offset: 0x000AB3C0
+    
+    
         internal virtual CheckBox chkRecipe
         {
             get
@@ -43,8 +43,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001156 RID: 4438 RVA: 0x000AD21C File Offset: 0x000AB41C
-        // (set) Token: 0x06001157 RID: 4439 RVA: 0x000AD234 File Offset: 0x000AB434
+    
+    
         internal virtual CheckBox chkSortByLevel
         {
             get
@@ -68,8 +68,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001158 RID: 4440 RVA: 0x000AD290 File Offset: 0x000AB490
-        // (set) Token: 0x06001159 RID: 4441 RVA: 0x000AD2A8 File Offset: 0x000AB4A8
+    
+    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -84,8 +84,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600115A RID: 4442 RVA: 0x000AD2B4 File Offset: 0x000AB4B4
-        // (set) Token: 0x0600115B RID: 4443 RVA: 0x000AD2CC File Offset: 0x000AB4CC
+    
+    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -100,8 +100,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600115C RID: 4444 RVA: 0x000AD2D8 File Offset: 0x000AB4D8
-        // (set) Token: 0x0600115D RID: 4445 RVA: 0x000AD2F0 File Offset: 0x000AB4F0
+    
+    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -116,8 +116,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600115E RID: 4446 RVA: 0x000AD2FC File Offset: 0x000AB4FC
-        // (set) Token: 0x0600115F RID: 4447 RVA: 0x000AD314 File Offset: 0x000AB514
+    
+    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -132,8 +132,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001160 RID: 4448 RVA: 0x000AD320 File Offset: 0x000AB520
-        // (set) Token: 0x06001161 RID: 4449 RVA: 0x000AD338 File Offset: 0x000AB538
+    
+    
         internal virtual ImageButton ibClipboard
         {
             get
@@ -157,8 +157,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001162 RID: 4450 RVA: 0x000AD394 File Offset: 0x000AB594
-        // (set) Token: 0x06001163 RID: 4451 RVA: 0x000AD3AC File Offset: 0x000AB5AC
+    
+    
         internal virtual ImageButton ibClose
         {
             get
@@ -182,8 +182,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001164 RID: 4452 RVA: 0x000AD408 File Offset: 0x000AB608
-        // (set) Token: 0x06001165 RID: 4453 RVA: 0x000AD420 File Offset: 0x000AB620
+    
+    
         internal virtual ImageButton ibMiniList
         {
             get
@@ -207,8 +207,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001166 RID: 4454 RVA: 0x000AD47C File Offset: 0x000AB67C
-        // (set) Token: 0x06001167 RID: 4455 RVA: 0x000AD494 File Offset: 0x000AB694
+    
+    
         internal virtual ImageButton ibTopmost
         {
             get
@@ -232,8 +232,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001168 RID: 4456 RVA: 0x000AD4F0 File Offset: 0x000AB6F0
-        // (set) Token: 0x06001169 RID: 4457 RVA: 0x000AD508 File Offset: 0x000AB708
+    
+    
         internal virtual ImageList ilSets
         {
             get
@@ -248,8 +248,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600116A RID: 4458 RVA: 0x000AD514 File Offset: 0x000AB714
-        // (set) Token: 0x0600116B RID: 4459 RVA: 0x000AD52C File Offset: 0x000AB72C
+    
+    
         internal virtual Label lblHeader
         {
             get
@@ -264,8 +264,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600116C RID: 4460 RVA: 0x000AD538 File Offset: 0x000AB738
-        // (set) Token: 0x0600116D RID: 4461 RVA: 0x000AD550 File Offset: 0x000AB750
+    
+    
         internal virtual ListView lvPower
         {
             get
@@ -292,8 +292,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600116E RID: 4462 RVA: 0x000AD5D4 File Offset: 0x000AB7D4
-        // (set) Token: 0x0600116F RID: 4463 RVA: 0x000AD5EC File Offset: 0x000AB7EC
+    
+    
         internal virtual ListView lvDPA
         {
             get
@@ -320,8 +320,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001170 RID: 4464 RVA: 0x000AD670 File Offset: 0x000AB870
-        // (set) Token: 0x06001171 RID: 4465 RVA: 0x000AD688 File Offset: 0x000AB888
+    
+    
         internal virtual Panel Panel1
         {
             get
@@ -336,8 +336,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001172 RID: 4466 RVA: 0x000AD694 File Offset: 0x000AB894
-        // (set) Token: 0x06001173 RID: 4467 RVA: 0x000AD6AC File Offset: 0x000AB8AC
+    
+    
         internal virtual Panel Panel2
         {
             get
@@ -352,8 +352,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001174 RID: 4468 RVA: 0x000AD6B8 File Offset: 0x000AB8B8
-        // (set) Token: 0x06001175 RID: 4469 RVA: 0x000AD6D0 File Offset: 0x000AB8D0
+    
+    
         internal virtual PictureBox pbRecipe
         {
             get
@@ -368,8 +368,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001176 RID: 4470 RVA: 0x000AD6DC File Offset: 0x000AB8DC
-        // (set) Token: 0x06001177 RID: 4471 RVA: 0x000AD6F4 File Offset: 0x000AB8F4
+    
+    
         internal virtual ctlPopUp RecipeInfo
         {
             get
@@ -396,8 +396,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001178 RID: 4472 RVA: 0x000AD778 File Offset: 0x000AB978
-        // (set) Token: 0x06001179 RID: 4473 RVA: 0x000AD790 File Offset: 0x000AB990
+    
+    
         internal virtual ToolTip ToolTip1
         {
             get
@@ -412,8 +412,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600117A RID: 4474 RVA: 0x000AD79C File Offset: 0x000AB99C
-        // (set) Token: 0x0600117B RID: 4475 RVA: 0x000AD7B4 File Offset: 0x000AB9B4
+    
+    
         internal virtual VScrollBar VScrollBar1
         {
             get

@@ -44,7 +44,7 @@ namespace Base.Display
         public struct StringValue
         {
 
-            // (get) Token: 0x06000474 RID: 1140 RVA: 0x00014294 File Offset: 0x00012494
+    
             public bool HasColumn
             {
                 get
@@ -120,13 +120,13 @@ namespace Base.Display
         public struct PopupData
         {
 
-            // (get) Token: 0x06000478 RID: 1144 RVA: 0x000144C8 File Offset: 0x000126C8
-            // (set) Token: 0x06000479 RID: 1145 RVA: 0x000144DF File Offset: 0x000126DF
+    
+    
             public bool CustomSet { get; private set; }
 
 
-            // (get) Token: 0x0600047A RID: 1146 RVA: 0x000144E8 File Offset: 0x000126E8
-            // (set) Token: 0x0600047B RID: 1147 RVA: 0x00014500 File Offset: 0x00012700
+    
+    
             public float ColPos
             {
                 get
@@ -141,8 +141,8 @@ namespace Base.Display
             }
 
 
-            // (get) Token: 0x0600047C RID: 1148 RVA: 0x00014514 File Offset: 0x00012714
-            // (set) Token: 0x0600047D RID: 1149 RVA: 0x0001452C File Offset: 0x0001272C
+    
+    
             public bool ColRight
             {
                 get

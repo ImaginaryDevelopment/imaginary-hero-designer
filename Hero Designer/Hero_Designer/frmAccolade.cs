@@ -16,8 +16,8 @@ namespace Hero_Designer
     public partial class frmAccolade : Form
     {
 
-        // (get) Token: 0x060001BB RID: 443 RVA: 0x00022138 File Offset: 0x00020338
-        // (set) Token: 0x060001BC RID: 444 RVA: 0x00022150 File Offset: 0x00020350
+    
+    
         internal virtual ImageButton ibClose
         {
             get
@@ -41,8 +41,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001BD RID: 445 RVA: 0x000221AC File Offset: 0x000203AC
-        // (set) Token: 0x060001BE RID: 446 RVA: 0x000221C4 File Offset: 0x000203C4
+    
+    
         internal virtual Label lblLock
         {
             get
@@ -66,8 +66,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001BF RID: 447 RVA: 0x00022220 File Offset: 0x00020420
-        // (set) Token: 0x060001C0 RID: 448 RVA: 0x00022238 File Offset: 0x00020438
+    
+    
         internal virtual ListLabelV2 llLeft
         {
             get
@@ -97,8 +97,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001C1 RID: 449 RVA: 0x000222E0 File Offset: 0x000204E0
-        // (set) Token: 0x060001C2 RID: 450 RVA: 0x000222F8 File Offset: 0x000204F8
+    
+    
         internal virtual ListLabelV2 llRight
         {
             get
@@ -128,8 +128,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001C3 RID: 451 RVA: 0x000223A0 File Offset: 0x000205A0
-        // (set) Token: 0x060001C4 RID: 452 RVA: 0x000223B8 File Offset: 0x000205B8
+    
+    
         internal virtual Panel Panel1
         {
             get
@@ -144,8 +144,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001C5 RID: 453 RVA: 0x000223C4 File Offset: 0x000205C4
-        // (set) Token: 0x060001C6 RID: 454 RVA: 0x000223DC File Offset: 0x000205DC
+    
+    
         internal virtual ctlPopUp PopInfo
         {
             get
@@ -172,8 +172,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060001C7 RID: 455 RVA: 0x00022460 File Offset: 0x00020660
-        // (set) Token: 0x060001C8 RID: 456 RVA: 0x00022478 File Offset: 0x00020678
+    
+    
         internal virtual VScrollBar VScrollBar1
         {
             get

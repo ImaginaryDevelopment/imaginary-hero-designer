@@ -16,8 +16,8 @@ namespace Hero_Designer
     public partial class frmData : Form
     {
 
-        // (get) Token: 0x06000487 RID: 1159 RVA: 0x0003AAF0 File Offset: 0x00038CF0
-        // (set) Token: 0x06000488 RID: 1160 RVA: 0x0003AB08 File Offset: 0x00038D08
+    
+    
         internal virtual ctlPopUp pInfo
         {
             get

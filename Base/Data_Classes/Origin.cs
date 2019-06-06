@@ -6,13 +6,13 @@ namespace Base.Data_Classes
     public class Origin
     {
 
-        // (get) Token: 0x060002A9 RID: 681 RVA: 0x0000C5A8 File Offset: 0x0000A7A8
-        // (set) Token: 0x060002AA RID: 682 RVA: 0x0000C5BF File Offset: 0x0000A7BF
+    
+    
         public string Name { get; private set; }
 
 
-        // (get) Token: 0x060002AB RID: 683 RVA: 0x0000C5C8 File Offset: 0x0000A7C8
-        // (set) Token: 0x060002AC RID: 684 RVA: 0x0000C5DF File Offset: 0x0000A7DF
+    
+    
         public string[] Grades { get; private set; }
 
 

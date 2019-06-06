@@ -6,11 +6,9 @@ using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
 
-// Token: 0x02000019 RID: 25
 public class Build
 {
 
-    // (get) Token: 0x06000494 RID: 1172 RVA: 0x00016AA0 File Offset: 0x00014CA0
     public IPower SetBonusVirtualPower
     {
         get
@@ -25,7 +23,6 @@ public class Build
     }
 
 
-    // (get) Token: 0x06000495 RID: 1173 RVA: 0x00016AD8 File Offset: 0x00014CD8
     public int PowersPlaced
     {
         get
@@ -43,7 +40,7 @@ public class Build
     }
 
 
-    // (get) Token: 0x06000496 RID: 1174 RVA: 0x00016B58 File Offset: 0x00014D58
+
     public int SlotsPlaced
     {
         get
@@ -61,7 +58,7 @@ public class Build
     }
 
 
-    // (get) Token: 0x06000497 RID: 1175 RVA: 0x00016BD8 File Offset: 0x00014DD8
+
     public int TotalSlotsAvailable
     {
         get

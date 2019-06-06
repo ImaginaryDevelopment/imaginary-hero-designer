@@ -2040,7 +2040,7 @@ public static class Enums
     public struct ShortFX
     {
 
-        // (get) Token: 0x060005B4 RID: 1460 RVA: 0x00024260 File Offset: 0x00022460
+    
         public bool Present
         {
             get
@@ -2050,7 +2050,7 @@ public static class Enums
         }
 
 
-        // (get) Token: 0x060005B5 RID: 1461 RVA: 0x00024298 File Offset: 0x00022498
+    
         public bool Multiple
         {
             get
@@ -2060,7 +2060,7 @@ public static class Enums
         }
 
 
-        // (get) Token: 0x060005B6 RID: 1462 RVA: 0x000242C4 File Offset: 0x000224C4
+    
         public int Max
         {
             get

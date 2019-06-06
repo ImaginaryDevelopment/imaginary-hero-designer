@@ -16,8 +16,8 @@ namespace Hero_Designer
     public partial class frmStats : Form
     {
 
-        // (get) Token: 0x060012DB RID: 4827 RVA: 0x000BC728 File Offset: 0x000BA928
-        // (set) Token: 0x060012DC RID: 4828 RVA: 0x000BC740 File Offset: 0x000BA940
+    
+    
         internal virtual ImageButton btnClose
         {
             get
@@ -41,8 +41,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012DD RID: 4829 RVA: 0x000BC79C File Offset: 0x000BA99C
-        // (set) Token: 0x060012DE RID: 4830 RVA: 0x000BC7B4 File Offset: 0x000BA9B4
+    
+    
         internal virtual ComboBox cbSet
         {
             get
@@ -66,8 +66,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012DF RID: 4831 RVA: 0x000BC810 File Offset: 0x000BAA10
-        // (set) Token: 0x060012E0 RID: 4832 RVA: 0x000BC828 File Offset: 0x000BAA28
+    
+    
         internal virtual ComboBox cbStyle
         {
             get
@@ -91,8 +91,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012E1 RID: 4833 RVA: 0x000BC884 File Offset: 0x000BAA84
-        // (set) Token: 0x060012E2 RID: 4834 RVA: 0x000BC89C File Offset: 0x000BAA9C
+    
+    
         internal virtual ComboBox cbValues
         {
             get
@@ -116,8 +116,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012E3 RID: 4835 RVA: 0x000BC8F8 File Offset: 0x000BAAF8
-        // (set) Token: 0x060012E4 RID: 4836 RVA: 0x000BC910 File Offset: 0x000BAB10
+    
+    
         internal virtual ImageButton chkOnTop
         {
             get
@@ -141,8 +141,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012E5 RID: 4837 RVA: 0x000BC96C File Offset: 0x000BAB6C
-        // (set) Token: 0x060012E6 RID: 4838 RVA: 0x000BC984 File Offset: 0x000BAB84
+    
+    
         internal virtual ctlMultiGraph Graph
         {
             get
@@ -157,8 +157,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012E7 RID: 4839 RVA: 0x000BC990 File Offset: 0x000BAB90
-        // (set) Token: 0x060012E8 RID: 4840 RVA: 0x000BC9A8 File Offset: 0x000BABA8
+    
+    
         internal virtual Label lblKey1
         {
             get
@@ -173,8 +173,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012E9 RID: 4841 RVA: 0x000BC9B4 File Offset: 0x000BABB4
-        // (set) Token: 0x060012EA RID: 4842 RVA: 0x000BC9CC File Offset: 0x000BABCC
+    
+    
         internal virtual Label lblKey2
         {
             get
@@ -189,8 +189,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012EB RID: 4843 RVA: 0x000BC9D8 File Offset: 0x000BABD8
-        // (set) Token: 0x060012EC RID: 4844 RVA: 0x000BC9F0 File Offset: 0x000BABF0
+    
+    
         internal virtual Label lblKeyColor1
         {
             get
@@ -205,8 +205,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012ED RID: 4845 RVA: 0x000BC9FC File Offset: 0x000BABFC
-        // (set) Token: 0x060012EE RID: 4846 RVA: 0x000BCA14 File Offset: 0x000BAC14
+    
+    
         internal virtual Label lblKeyColor2
         {
             get
@@ -221,8 +221,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012EF RID: 4847 RVA: 0x000BCA20 File Offset: 0x000BAC20
-        // (set) Token: 0x060012F0 RID: 4848 RVA: 0x000BCA38 File Offset: 0x000BAC38
+    
+    
         internal virtual Label lblScale
         {
             get
@@ -237,8 +237,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012F1 RID: 4849 RVA: 0x000BCA44 File Offset: 0x000BAC44
-        // (set) Token: 0x060012F2 RID: 4850 RVA: 0x000BCA5C File Offset: 0x000BAC5C
+    
+    
         internal virtual TrackBar tbScaleX
         {
             get
@@ -262,8 +262,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012F3 RID: 4851 RVA: 0x000BCAB8 File Offset: 0x000BACB8
-        // (set) Token: 0x060012F4 RID: 4852 RVA: 0x000BCAD0 File Offset: 0x000BACD0
+    
+    
         internal virtual ToolTip tTip
         {
             get

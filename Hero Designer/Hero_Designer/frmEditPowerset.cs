@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmEditPowerset : Form
     {
 
-        // (get) Token: 0x060007C4 RID: 1988 RVA: 0x00056594 File Offset: 0x00054794
-        // (set) Token: 0x060007C5 RID: 1989 RVA: 0x000565AC File Offset: 0x000547AC
+    
+    
         internal virtual Button btnCancel
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007C6 RID: 1990 RVA: 0x00056608 File Offset: 0x00054808
-        // (set) Token: 0x060007C7 RID: 1991 RVA: 0x00056620 File Offset: 0x00054820
+    
+    
         internal virtual Button btnClearIcon
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007C8 RID: 1992 RVA: 0x0005667C File Offset: 0x0005487C
-        // (set) Token: 0x060007C9 RID: 1993 RVA: 0x00056694 File Offset: 0x00054894
+    
+    
         internal virtual Button btnClose
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007CA RID: 1994 RVA: 0x000566F0 File Offset: 0x000548F0
-        // (set) Token: 0x060007CB RID: 1995 RVA: 0x00056708 File Offset: 0x00054908
+    
+    
         internal virtual Button btnIcon
         {
             get
@@ -115,8 +115,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007CC RID: 1996 RVA: 0x00056764 File Offset: 0x00054964
-        // (set) Token: 0x060007CD RID: 1997 RVA: 0x0005677C File Offset: 0x0005497C
+    
+    
         internal virtual ComboBox cbAT
         {
             get
@@ -140,8 +140,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007CE RID: 1998 RVA: 0x000567D8 File Offset: 0x000549D8
-        // (set) Token: 0x060007CF RID: 1999 RVA: 0x000567F0 File Offset: 0x000549F0
+    
+    
         internal virtual ComboBox cbLinkGroup
         {
             get
@@ -165,8 +165,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007D0 RID: 2000 RVA: 0x0005684C File Offset: 0x00054A4C
-        // (set) Token: 0x060007D1 RID: 2001 RVA: 0x00056864 File Offset: 0x00054A64
+    
+    
         internal virtual ComboBox cbLinkSet
         {
             get
@@ -190,8 +190,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007D2 RID: 2002 RVA: 0x000568C0 File Offset: 0x00054AC0
-        // (set) Token: 0x060007D3 RID: 2003 RVA: 0x000568D8 File Offset: 0x00054AD8
+    
+    
         internal virtual ComboBox cbMutexGroup
         {
             get
@@ -215,8 +215,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007D4 RID: 2004 RVA: 0x00056934 File Offset: 0x00054B34
-        // (set) Token: 0x060007D5 RID: 2005 RVA: 0x0005694C File Offset: 0x00054B4C
+    
+    
         internal virtual ComboBox cbNameGroup
         {
             get
@@ -246,8 +246,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007D6 RID: 2006 RVA: 0x000569F4 File Offset: 0x00054BF4
-        // (set) Token: 0x060007D7 RID: 2007 RVA: 0x00056A0C File Offset: 0x00054C0C
+    
+    
         internal virtual ComboBox cbSetType
         {
             get
@@ -271,8 +271,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007D8 RID: 2008 RVA: 0x00056A68 File Offset: 0x00054C68
-        // (set) Token: 0x060007D9 RID: 2009 RVA: 0x00056A80 File Offset: 0x00054C80
+    
+    
         internal virtual ComboBox cbTrunkGroup
         {
             get
@@ -296,8 +296,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007DA RID: 2010 RVA: 0x00056ADC File Offset: 0x00054CDC
-        // (set) Token: 0x060007DB RID: 2011 RVA: 0x00056AF4 File Offset: 0x00054CF4
+    
+    
         internal virtual ComboBox cbTrunkSet
         {
             get
@@ -321,8 +321,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007DC RID: 2012 RVA: 0x00056B50 File Offset: 0x00054D50
-        // (set) Token: 0x060007DD RID: 2013 RVA: 0x00056B68 File Offset: 0x00054D68
+    
+    
         internal virtual CheckBox chkNoLink
         {
             get
@@ -346,8 +346,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007DE RID: 2014 RVA: 0x00056BC4 File Offset: 0x00054DC4
-        // (set) Token: 0x060007DF RID: 2015 RVA: 0x00056BDC File Offset: 0x00054DDC
+    
+    
         internal virtual CheckBox chkNoTrunk
         {
             get
@@ -371,8 +371,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007E0 RID: 2016 RVA: 0x00056C38 File Offset: 0x00054E38
-        // (set) Token: 0x060007E1 RID: 2017 RVA: 0x00056C50 File Offset: 0x00054E50
+    
+    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -387,8 +387,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007E2 RID: 2018 RVA: 0x00056C5C File Offset: 0x00054E5C
-        // (set) Token: 0x060007E3 RID: 2019 RVA: 0x00056C74 File Offset: 0x00054E74
+    
+    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -403,8 +403,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007E4 RID: 2020 RVA: 0x00056C80 File Offset: 0x00054E80
-        // (set) Token: 0x060007E5 RID: 2021 RVA: 0x00056C98 File Offset: 0x00054E98
+    
+    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -419,8 +419,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007E6 RID: 2022 RVA: 0x00056CA4 File Offset: 0x00054EA4
-        // (set) Token: 0x060007E7 RID: 2023 RVA: 0x00056CBC File Offset: 0x00054EBC
+    
+    
         internal virtual GroupBox gbLink
         {
             get
@@ -435,8 +435,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007E8 RID: 2024 RVA: 0x00056CC8 File Offset: 0x00054EC8
-        // (set) Token: 0x060007E9 RID: 2025 RVA: 0x00056CE0 File Offset: 0x00054EE0
+    
+    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -451,8 +451,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007EA RID: 2026 RVA: 0x00056CEC File Offset: 0x00054EEC
-        // (set) Token: 0x060007EB RID: 2027 RVA: 0x00056D04 File Offset: 0x00054F04
+    
+    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -467,8 +467,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007EC RID: 2028 RVA: 0x00056D10 File Offset: 0x00054F10
-        // (set) Token: 0x060007ED RID: 2029 RVA: 0x00056D28 File Offset: 0x00054F28
+    
+    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -483,8 +483,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007EE RID: 2030 RVA: 0x00056D34 File Offset: 0x00054F34
-        // (set) Token: 0x060007EF RID: 2031 RVA: 0x00056D4C File Offset: 0x00054F4C
+    
+    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -499,8 +499,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007F0 RID: 2032 RVA: 0x00056D58 File Offset: 0x00054F58
-        // (set) Token: 0x060007F1 RID: 2033 RVA: 0x00056D70 File Offset: 0x00054F70
+    
+    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -515,8 +515,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007F2 RID: 2034 RVA: 0x00056D7C File Offset: 0x00054F7C
-        // (set) Token: 0x060007F3 RID: 2035 RVA: 0x00056D94 File Offset: 0x00054F94
+    
+    
         internal virtual OpenFileDialog ImagePicker
         {
             get
@@ -531,8 +531,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007F4 RID: 2036 RVA: 0x00056DA0 File Offset: 0x00054FA0
-        // (set) Token: 0x060007F5 RID: 2037 RVA: 0x00056DB8 File Offset: 0x00054FB8
+    
+    
         internal virtual Label Label1
         {
             get
@@ -547,8 +547,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007F6 RID: 2038 RVA: 0x00056DC4 File Offset: 0x00054FC4
-        // (set) Token: 0x060007F7 RID: 2039 RVA: 0x00056DDC File Offset: 0x00054FDC
+    
+    
         internal virtual Label Label2
         {
             get
@@ -563,8 +563,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007F8 RID: 2040 RVA: 0x00056DE8 File Offset: 0x00054FE8
-        // (set) Token: 0x060007F9 RID: 2041 RVA: 0x00056E00 File Offset: 0x00055000
+    
+    
         internal virtual Label Label22
         {
             get
@@ -579,8 +579,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007FA RID: 2042 RVA: 0x00056E0C File Offset: 0x0005500C
-        // (set) Token: 0x060007FB RID: 2043 RVA: 0x00056E24 File Offset: 0x00055024
+    
+    
         internal virtual Label Label3
         {
             get
@@ -595,8 +595,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007FC RID: 2044 RVA: 0x00056E30 File Offset: 0x00055030
-        // (set) Token: 0x060007FD RID: 2045 RVA: 0x00056E48 File Offset: 0x00055048
+    
+    
         internal virtual Label Label31
         {
             get
@@ -611,8 +611,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060007FE RID: 2046 RVA: 0x00056E54 File Offset: 0x00055054
-        // (set) Token: 0x060007FF RID: 2047 RVA: 0x00056E6C File Offset: 0x0005506C
+    
+    
         internal virtual Label Label33
         {
             get
@@ -627,8 +627,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000800 RID: 2048 RVA: 0x00056E78 File Offset: 0x00055078
-        // (set) Token: 0x06000801 RID: 2049 RVA: 0x00056E90 File Offset: 0x00055090
+    
+    
         internal virtual Label Label4
         {
             get
@@ -643,8 +643,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000802 RID: 2050 RVA: 0x00056E9C File Offset: 0x0005509C
-        // (set) Token: 0x06000803 RID: 2051 RVA: 0x00056EB4 File Offset: 0x000550B4
+    
+    
         internal virtual Label Label5
         {
             get
@@ -659,8 +659,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000804 RID: 2052 RVA: 0x00056EC0 File Offset: 0x000550C0
-        // (set) Token: 0x06000805 RID: 2053 RVA: 0x00056ED8 File Offset: 0x000550D8
+    
+    
         internal virtual Label Label6
         {
             get
@@ -675,8 +675,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000806 RID: 2054 RVA: 0x00056EE4 File Offset: 0x000550E4
-        // (set) Token: 0x06000807 RID: 2055 RVA: 0x00056EFC File Offset: 0x000550FC
+    
+    
         internal virtual Label Label7
         {
             get
@@ -691,8 +691,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000808 RID: 2056 RVA: 0x00056F08 File Offset: 0x00055108
-        // (set) Token: 0x06000809 RID: 2057 RVA: 0x00056F20 File Offset: 0x00055120
+    
+    
         internal virtual Label Label8
         {
             get
@@ -707,8 +707,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600080A RID: 2058 RVA: 0x00056F2C File Offset: 0x0005512C
-        // (set) Token: 0x0600080B RID: 2059 RVA: 0x00056F44 File Offset: 0x00055144
+    
+    
         internal virtual Label lblNameFull
         {
             get
@@ -723,8 +723,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600080C RID: 2060 RVA: 0x00056F50 File Offset: 0x00055150
-        // (set) Token: 0x0600080D RID: 2061 RVA: 0x00056F68 File Offset: 0x00055168
+    
+    
         internal virtual Label lblNameUnique
         {
             get
@@ -739,8 +739,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600080E RID: 2062 RVA: 0x00056F74 File Offset: 0x00055174
-        // (set) Token: 0x0600080F RID: 2063 RVA: 0x00056F8C File Offset: 0x0005518C
+    
+    
         internal virtual ListBox lvMutexSets
         {
             get
@@ -764,8 +764,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000810 RID: 2064 RVA: 0x00056FE8 File Offset: 0x000551E8
-        // (set) Token: 0x06000811 RID: 2065 RVA: 0x00057000 File Offset: 0x00055200
+    
+    
         internal virtual ListView lvPowers
         {
             get
@@ -780,8 +780,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000812 RID: 2066 RVA: 0x0005700C File Offset: 0x0005520C
-        // (set) Token: 0x06000813 RID: 2067 RVA: 0x00057024 File Offset: 0x00055224
+    
+    
         internal virtual PictureBox picIcon
         {
             get
@@ -796,8 +796,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000814 RID: 2068 RVA: 0x00057030 File Offset: 0x00055230
-        // (set) Token: 0x06000815 RID: 2069 RVA: 0x00057048 File Offset: 0x00055248
+    
+    
         internal virtual TextBox txtDesc
         {
             get
@@ -821,8 +821,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000816 RID: 2070 RVA: 0x000570A4 File Offset: 0x000552A4
-        // (set) Token: 0x06000817 RID: 2071 RVA: 0x000570BC File Offset: 0x000552BC
+    
+    
         internal virtual TextBox txtName
         {
             get
@@ -846,8 +846,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000818 RID: 2072 RVA: 0x00057118 File Offset: 0x00055318
-        // (set) Token: 0x06000819 RID: 2073 RVA: 0x00057130 File Offset: 0x00055330
+    
+    
         internal virtual TextBox txtNameSet
         {
             get

@@ -5,7 +5,7 @@ using Base.Data_Classes;
 public class Statistics
 {
 
-    // (get) Token: 0x060006D4 RID: 1748 RVA: 0x00031FB8 File Offset: 0x000301B8
+    
     public float EnduranceMaxEnd
     {
         get
@@ -15,7 +15,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006D5 RID: 1749 RVA: 0x00031FE0 File Offset: 0x000301E0
+    
     public float EnduranceRecoveryNumeric
     {
         get
@@ -26,7 +26,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006D6 RID: 1750 RVA: 0x00032030 File Offset: 0x00030230
+    
     public float EnduranceTimeToFull
     {
         get
@@ -36,7 +36,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006D7 RID: 1751 RVA: 0x00032050 File Offset: 0x00030250
+    
     public float EnduranceRecoveryNet
     {
         get
@@ -46,7 +46,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006D8 RID: 1752 RVA: 0x00032070 File Offset: 0x00030270
+    
     public float EnduranceRecoveryLossNet
     {
         get
@@ -56,7 +56,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006D9 RID: 1753 RVA: 0x00032090 File Offset: 0x00030290
+    
     public float EnduranceTimeToZero
     {
         get
@@ -66,7 +66,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DA RID: 1754 RVA: 0x000320B8 File Offset: 0x000302B8
+    
     public float EnduranceTimeToFullNet
     {
         get
@@ -76,7 +76,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DB RID: 1755 RVA: 0x000320E0 File Offset: 0x000302E0
+    
     public float EnduranceUsage
     {
         get
@@ -86,7 +86,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DC RID: 1756 RVA: 0x00032104 File Offset: 0x00030304
+    
     public float HealthRegenHealthPerSec
     {
         get
@@ -96,7 +96,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DD RID: 1757 RVA: 0x00032134 File Offset: 0x00030334
+    
     public float HealthRegenHPPerSec
     {
         get
@@ -106,7 +106,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DE RID: 1758 RVA: 0x00032174 File Offset: 0x00030374
+    
     public float HealthRegenTimeToFull
     {
         get
@@ -116,7 +116,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006DF RID: 1759 RVA: 0x00032194 File Offset: 0x00030394
+    
     public float HealthHitpointsPercentage
     {
         get
@@ -126,7 +126,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006E0 RID: 1760 RVA: 0x000321D0 File Offset: 0x000303D0
+    
     public float BuffToHit
     {
         get
@@ -136,7 +136,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006E1 RID: 1761 RVA: 0x000321F8 File Offset: 0x000303F8
+    
     public float BuffAccuracy
     {
         get
@@ -146,7 +146,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006E2 RID: 1762 RVA: 0x00032220 File Offset: 0x00030420
+    
     public float BuffEndRdx
     {
         get
@@ -156,7 +156,7 @@ public class Statistics
     }
 
 
-    // (get) Token: 0x060006E3 RID: 1763 RVA: 0x00032248 File Offset: 0x00030448
+    
     public float ThreatLevel
     {
         get

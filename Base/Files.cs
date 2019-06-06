@@ -6,7 +6,7 @@ using System.Windows.Forms;
 public static class Files
 {
 
-    // (get) Token: 0x060005DA RID: 1498 RVA: 0x00026B84 File Offset: 0x00024D84
+    
     private static string FNameConfig
     {
         get
@@ -16,7 +16,7 @@ public static class Files
     }
 
 
-    // (get) Token: 0x060005DB RID: 1499 RVA: 0x00026BAC File Offset: 0x00024DAC
+    
     public static string FPathAppData
     {
         get

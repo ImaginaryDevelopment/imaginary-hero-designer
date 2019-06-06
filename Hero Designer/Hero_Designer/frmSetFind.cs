@@ -19,8 +19,8 @@ namespace Hero_Designer
     public partial class frmSetFind : Form
     {
 
-        // (get) Token: 0x0600124D RID: 4685 RVA: 0x000B6E44 File Offset: 0x000B5044
-        // (set) Token: 0x0600124E RID: 4686 RVA: 0x000B6E5C File Offset: 0x000B505C
+    
+    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -35,8 +35,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600124F RID: 4687 RVA: 0x000B6E68 File Offset: 0x000B5068
-        // (set) Token: 0x06001250 RID: 4688 RVA: 0x000B6E80 File Offset: 0x000B5080
+    
+    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -51,8 +51,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001251 RID: 4689 RVA: 0x000B6E8C File Offset: 0x000B508C
-        // (set) Token: 0x06001252 RID: 4690 RVA: 0x000B6EA4 File Offset: 0x000B50A4
+    
+    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -67,8 +67,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001253 RID: 4691 RVA: 0x000B6EB0 File Offset: 0x000B50B0
-        // (set) Token: 0x06001254 RID: 4692 RVA: 0x000B6EC8 File Offset: 0x000B50C8
+    
+    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -83,8 +83,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001255 RID: 4693 RVA: 0x000B6ED4 File Offset: 0x000B50D4
-        // (set) Token: 0x06001256 RID: 4694 RVA: 0x000B6EEC File Offset: 0x000B50EC
+    
+    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -99,8 +99,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001257 RID: 4695 RVA: 0x000B6EF8 File Offset: 0x000B50F8
-        // (set) Token: 0x06001258 RID: 4696 RVA: 0x000B6F10 File Offset: 0x000B5110
+    
+    
         internal virtual ColumnHeader ColumnHeader6
         {
             get
@@ -115,8 +115,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001259 RID: 4697 RVA: 0x000B6F1C File Offset: 0x000B511C
-        // (set) Token: 0x0600125A RID: 4698 RVA: 0x000B6F34 File Offset: 0x000B5134
+    
+    
         internal virtual ImageButton ibClose
         {
             get
@@ -140,8 +140,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600125B RID: 4699 RVA: 0x000B6F90 File Offset: 0x000B5190
-        // (set) Token: 0x0600125C RID: 4700 RVA: 0x000B6FA8 File Offset: 0x000B51A8
+    
+    
         internal virtual ImageButton ibTopmost
         {
             get
@@ -165,8 +165,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600125D RID: 4701 RVA: 0x000B7004 File Offset: 0x000B5204
-        // (set) Token: 0x0600125E RID: 4702 RVA: 0x000B701C File Offset: 0x000B521C
+    
+    
         internal virtual ImageList ilSets
         {
             get
@@ -181,8 +181,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600125F RID: 4703 RVA: 0x000B7028 File Offset: 0x000B5228
-        // (set) Token: 0x06001260 RID: 4704 RVA: 0x000B7040 File Offset: 0x000B5240
+    
+    
         internal virtual ListView lvBonus
         {
             get
@@ -206,8 +206,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001261 RID: 4705 RVA: 0x000B709C File Offset: 0x000B529C
-        // (set) Token: 0x06001262 RID: 4706 RVA: 0x000B70B4 File Offset: 0x000B52B4
+    
+    
         internal virtual ListView lvMag
         {
             get
@@ -231,8 +231,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001263 RID: 4707 RVA: 0x000B7110 File Offset: 0x000B5310
-        // (set) Token: 0x06001264 RID: 4708 RVA: 0x000B7128 File Offset: 0x000B5328
+    
+    
         internal virtual ListView lvSet
         {
             get
@@ -256,8 +256,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001265 RID: 4709 RVA: 0x000B7184 File Offset: 0x000B5384
-        // (set) Token: 0x06001266 RID: 4710 RVA: 0x000B719C File Offset: 0x000B539C
+    
+    
         internal virtual Panel Panel1
         {
             get
@@ -272,8 +272,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06001267 RID: 4711 RVA: 0x000B71A8 File Offset: 0x000B53A8
-        // (set) Token: 0x06001268 RID: 4712 RVA: 0x000B71C0 File Offset: 0x000B53C0
+    
+    
         internal virtual ctlPopUp SetInfo
         {
             get

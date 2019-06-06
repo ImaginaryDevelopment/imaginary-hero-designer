@@ -7,7 +7,7 @@ using System.Windows.Forms;
 public partial class ZStatus : Form
 {
 
-    // (set) Token: 0x0600070D RID: 1805 RVA: 0x00033CFC File Offset: 0x00031EFC
+    
     public string StatusText1
     {
         set
@@ -21,7 +21,7 @@ public partial class ZStatus : Form
     }
 
 
-    // (set) Token: 0x0600070E RID: 1806 RVA: 0x00033D40 File Offset: 0x00031F40
+    
     public string StatusText2
     {
         set

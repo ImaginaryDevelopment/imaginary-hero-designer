@@ -11,8 +11,8 @@ namespace Hero_Designer
     public partial class frmEnhMiniPick : Form
     {
 
-        // (get) Token: 0x0600093D RID: 2365 RVA: 0x0006362C File Offset: 0x0006182C
-        // (set) Token: 0x0600093E RID: 2366 RVA: 0x00063644 File Offset: 0x00061844
+    
+    
         internal virtual Button btnOK
         {
             get
@@ -36,8 +36,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x0600093F RID: 2367 RVA: 0x000636A0 File Offset: 0x000618A0
-        // (set) Token: 0x06000940 RID: 2368 RVA: 0x000636B8 File Offset: 0x000618B8
+    
+    
         internal virtual ListBox lbList
         {
             get
@@ -64,8 +64,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000941 RID: 2369 RVA: 0x0006373C File Offset: 0x0006193C
-        // (set) Token: 0x06000942 RID: 2370 RVA: 0x00063754 File Offset: 0x00061954
+    
+    
         internal virtual Label lblMessage
         {
             get

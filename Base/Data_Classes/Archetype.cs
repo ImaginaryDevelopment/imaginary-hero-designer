@@ -9,142 +9,142 @@ namespace Base.Data_Classes
     public class Archetype : IComparable
     {
 
-        // (get) Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
-        // (set) Token: 0x06000002 RID: 2 RVA: 0x00002067 File Offset: 0x00000267
+    
+    
         public int Idx { get; set; }
 
 
-        // (get) Token: 0x06000003 RID: 3 RVA: 0x00002070 File Offset: 0x00000270
-        // (set) Token: 0x06000004 RID: 4 RVA: 0x00002087 File Offset: 0x00000287
+    
+    
         public string DisplayName { get; set; }
 
 
-        // (get) Token: 0x06000005 RID: 5 RVA: 0x00002090 File Offset: 0x00000290
-        // (set) Token: 0x06000006 RID: 6 RVA: 0x000020A7 File Offset: 0x000002A7
+    
+    
         public Enums.eClassType ClassType { get; set; }
 
 
-        // (get) Token: 0x06000007 RID: 7 RVA: 0x000020B0 File Offset: 0x000002B0
-        // (set) Token: 0x06000008 RID: 8 RVA: 0x000020C7 File Offset: 0x000002C7
+    
+    
         public int Hitpoints { get; set; }
 
 
-        // (get) Token: 0x06000009 RID: 9 RVA: 0x000020D0 File Offset: 0x000002D0
-        // (set) Token: 0x0600000A RID: 10 RVA: 0x000020E7 File Offset: 0x000002E7
+    
+    
         public float HPCap { get; set; }
 
 
-        // (get) Token: 0x0600000B RID: 11 RVA: 0x000020F0 File Offset: 0x000002F0
-        // (set) Token: 0x0600000C RID: 12 RVA: 0x00002107 File Offset: 0x00000307
+    
+    
         public string DescLong { get; set; }
 
 
-        // (get) Token: 0x0600000D RID: 13 RVA: 0x00002110 File Offset: 0x00000310
-        // (set) Token: 0x0600000E RID: 14 RVA: 0x00002127 File Offset: 0x00000327
+    
+    
         public string DescShort { get; set; }
 
 
-        // (get) Token: 0x0600000F RID: 15 RVA: 0x00002130 File Offset: 0x00000330
-        // (set) Token: 0x06000010 RID: 16 RVA: 0x00002147 File Offset: 0x00000347
+    
+    
         public float ResCap { get; set; }
 
 
-        // (get) Token: 0x06000011 RID: 17 RVA: 0x00002150 File Offset: 0x00000350
-        // (set) Token: 0x06000012 RID: 18 RVA: 0x00002167 File Offset: 0x00000367
+    
+    
         public float RechargeCap { get; set; }
 
 
-        // (get) Token: 0x06000013 RID: 19 RVA: 0x00002170 File Offset: 0x00000370
-        // (set) Token: 0x06000014 RID: 20 RVA: 0x00002187 File Offset: 0x00000387
+    
+    
         public float DamageCap { get; set; }
 
 
-        // (get) Token: 0x06000015 RID: 21 RVA: 0x00002190 File Offset: 0x00000390
-        // (set) Token: 0x06000016 RID: 22 RVA: 0x000021A7 File Offset: 0x000003A7
+    
+    
         public float RegenCap { get; set; }
 
 
-        // (get) Token: 0x06000017 RID: 23 RVA: 0x000021B0 File Offset: 0x000003B0
-        // (set) Token: 0x06000018 RID: 24 RVA: 0x000021C7 File Offset: 0x000003C7
+    
+    
         public float RecoveryCap { get; set; }
 
 
-        // (get) Token: 0x06000019 RID: 25 RVA: 0x000021D0 File Offset: 0x000003D0
-        // (set) Token: 0x0600001A RID: 26 RVA: 0x000021E7 File Offset: 0x000003E7
+    
+    
         public string[] Origin { get; set; }
 
 
-        // (get) Token: 0x0600001B RID: 27 RVA: 0x000021F0 File Offset: 0x000003F0
-        // (set) Token: 0x0600001C RID: 28 RVA: 0x00002207 File Offset: 0x00000407
+    
+    
         public int[] Primary { get; set; }
 
 
-        // (get) Token: 0x0600001D RID: 29 RVA: 0x00002210 File Offset: 0x00000410
-        // (set) Token: 0x0600001E RID: 30 RVA: 0x00002227 File Offset: 0x00000427
+    
+    
         public int[] Secondary { get; set; }
 
 
-        // (get) Token: 0x0600001F RID: 31 RVA: 0x00002230 File Offset: 0x00000430
-        // (set) Token: 0x06000020 RID: 32 RVA: 0x00002247 File Offset: 0x00000447
+    
+    
         public int[] Ancillary { get; set; }
 
 
-        // (get) Token: 0x06000021 RID: 33 RVA: 0x00002250 File Offset: 0x00000450
-        // (set) Token: 0x06000022 RID: 34 RVA: 0x00002267 File Offset: 0x00000467
+    
+    
         public float PerceptionCap { get; set; }
 
 
-        // (get) Token: 0x06000023 RID: 35 RVA: 0x00002270 File Offset: 0x00000470
-        // (set) Token: 0x06000024 RID: 36 RVA: 0x00002287 File Offset: 0x00000487
+    
+    
         public string ClassName { get; set; }
 
 
-        // (get) Token: 0x06000025 RID: 37 RVA: 0x00002290 File Offset: 0x00000490
-        // (set) Token: 0x06000026 RID: 38 RVA: 0x000022A7 File Offset: 0x000004A7
+    
+    
         public int Column { get; set; }
 
 
-        // (get) Token: 0x06000027 RID: 39 RVA: 0x000022B0 File Offset: 0x000004B0
-        // (set) Token: 0x06000028 RID: 40 RVA: 0x000022C7 File Offset: 0x000004C7
+    
+    
         public string PrimaryGroup { get; set; }
 
 
-        // (get) Token: 0x06000029 RID: 41 RVA: 0x000022D0 File Offset: 0x000004D0
-        // (set) Token: 0x0600002A RID: 42 RVA: 0x000022E7 File Offset: 0x000004E7
+    
+    
         public string SecondaryGroup { get; set; }
 
 
-        // (get) Token: 0x0600002B RID: 43 RVA: 0x000022F0 File Offset: 0x000004F0
-        // (set) Token: 0x0600002C RID: 44 RVA: 0x00002307 File Offset: 0x00000507
+    
+    
         public string EpicGroup { get; set; }
 
 
-        // (get) Token: 0x0600002D RID: 45 RVA: 0x00002310 File Offset: 0x00000510
-        // (set) Token: 0x0600002E RID: 46 RVA: 0x00002327 File Offset: 0x00000527
+    
+    
         public string PoolGroup { get; set; }
 
 
-        // (get) Token: 0x0600002F RID: 47 RVA: 0x00002330 File Offset: 0x00000530
-        // (set) Token: 0x06000030 RID: 48 RVA: 0x00002347 File Offset: 0x00000547
+    
+    
         public bool Playable { get; set; }
 
 
-        // (get) Token: 0x06000031 RID: 49 RVA: 0x00002350 File Offset: 0x00000550
-        // (set) Token: 0x06000032 RID: 50 RVA: 0x00002367 File Offset: 0x00000567
+    
+    
         public float BaseRecovery { get; set; }
 
 
-        // (get) Token: 0x06000033 RID: 51 RVA: 0x00002370 File Offset: 0x00000570
-        // (set) Token: 0x06000034 RID: 52 RVA: 0x00002387 File Offset: 0x00000587
+    
+    
         public float BaseRegen { get; set; }
 
 
-        // (get) Token: 0x06000035 RID: 53 RVA: 0x00002390 File Offset: 0x00000590
-        // (set) Token: 0x06000036 RID: 54 RVA: 0x000023A7 File Offset: 0x000005A7
+    
+    
         public float BaseThreat { get; set; }
 
 
-        // (get) Token: 0x06000037 RID: 55 RVA: 0x000023B0 File Offset: 0x000005B0
+    
         public bool Hero
         {
             get
@@ -154,7 +154,7 @@ namespace Base.Data_Classes
         }
 
 
-        // (get) Token: 0x06000038 RID: 56 RVA: 0x000023D8 File Offset: 0x000005D8
+    
         public bool Epic
         {
             get

@@ -11,7 +11,7 @@ using Base.Master_Classes;
 public static class DatabaseAPI
 {
 
-    // (get) Token: 0x060004C9 RID: 1225 RVA: 0x0001C148 File Offset: 0x0001A348
+    
     public static IDatabase Database
     {
         get

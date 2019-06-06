@@ -25,8 +25,8 @@ namespace Hero_Designer
     public partial class frmMain : Form
     {
 
-        // (get) Token: 0x06000CBB RID: 3259 RVA: 0x0007E740 File Offset: 0x0007C940
-        // (set) Token: 0x06000CBC RID: 3260 RVA: 0x0007E758 File Offset: 0x0007C958
+    
+    
         internal virtual ImageButton accoladeButton
         {
             get
@@ -53,8 +53,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CBD RID: 3261 RVA: 0x0007E7DC File Offset: 0x0007C9DC
-        // (set) Token: 0x06000CBE RID: 3262 RVA: 0x0007E7F4 File Offset: 0x0007C9F4
+    
+    
         internal virtual ToolStripMenuItem AccoladesWindowToolStripMenuItem
         {
             get
@@ -78,8 +78,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CBF RID: 3263 RVA: 0x0007E850 File Offset: 0x0007CA50
-        // (set) Token: 0x06000CC0 RID: 3264 RVA: 0x0007E868 File Offset: 0x0007CA68
+    
+    
         internal virtual ToolStripMenuItem AdvancedToolStripMenuItem1
         {
             get
@@ -94,8 +94,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CC1 RID: 3265 RVA: 0x0007E874 File Offset: 0x0007CA74
-        // (set) Token: 0x06000CC2 RID: 3266 RVA: 0x0007E88C File Offset: 0x0007CA8C
+    
+    
         internal virtual ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem
         {
             get
@@ -119,8 +119,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CC3 RID: 3267 RVA: 0x0007E8E8 File Offset: 0x0007CAE8
-        // (set) Token: 0x06000CC4 RID: 3268 RVA: 0x0007E900 File Offset: 0x0007CB00
+    
+    
         internal virtual ComboBox cbAncillary
         {
             get
@@ -153,8 +153,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CC5 RID: 3269 RVA: 0x0007E9D4 File Offset: 0x0007CBD4
-        // (set) Token: 0x06000CC6 RID: 3270 RVA: 0x0007E9EC File Offset: 0x0007CBEC
+    
+    
         internal virtual ComboBox cbAT
         {
             get
@@ -187,8 +187,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CC7 RID: 3271 RVA: 0x0007EAC0 File Offset: 0x0007CCC0
-        // (set) Token: 0x06000CC8 RID: 3272 RVA: 0x0007EAD8 File Offset: 0x0007CCD8
+    
+    
         internal virtual ComboBox cbOrigin
         {
             get
@@ -215,8 +215,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CC9 RID: 3273 RVA: 0x0007EB5C File Offset: 0x0007CD5C
-        // (set) Token: 0x06000CCA RID: 3274 RVA: 0x0007EB74 File Offset: 0x0007CD74
+    
+    
         internal virtual ComboBox cbPool0
         {
             get
@@ -249,8 +249,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CCB RID: 3275 RVA: 0x0007EC48 File Offset: 0x0007CE48
-        // (set) Token: 0x06000CCC RID: 3276 RVA: 0x0007EC60 File Offset: 0x0007CE60
+    
+    
         internal virtual ComboBox cbPool1
         {
             get
@@ -283,8 +283,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CCD RID: 3277 RVA: 0x0007ED34 File Offset: 0x0007CF34
-        // (set) Token: 0x06000CCE RID: 3278 RVA: 0x0007ED4C File Offset: 0x0007CF4C
+    
+    
         internal virtual ComboBox cbPool2
         {
             get
@@ -317,8 +317,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CCF RID: 3279 RVA: 0x0007EE20 File Offset: 0x0007D020
-        // (set) Token: 0x06000CD0 RID: 3280 RVA: 0x0007EE38 File Offset: 0x0007D038
+    
+    
         internal virtual ComboBox cbPool3
         {
             get
@@ -351,8 +351,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CD1 RID: 3281 RVA: 0x0007EF0C File Offset: 0x0007D10C
-        // (set) Token: 0x06000CD2 RID: 3282 RVA: 0x0007EF24 File Offset: 0x0007D124
+    
+    
         internal virtual ComboBox cbPrimary
         {
             get
@@ -385,8 +385,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CD3 RID: 3283 RVA: 0x0007EFF8 File Offset: 0x0007D1F8
-        // (set) Token: 0x06000CD4 RID: 3284 RVA: 0x0007F010 File Offset: 0x0007D210
+    
+    
         internal virtual ComboBox cbSecondary
         {
             get
@@ -419,8 +419,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CD5 RID: 3285 RVA: 0x0007F0E4 File Offset: 0x0007D2E4
-        // (set) Token: 0x06000CD6 RID: 3286 RVA: 0x0007F0FC File Offset: 0x0007D2FC
+    
+    
         internal virtual ToolStripMenuItem CharacterToolStripMenuItem
         {
             get
@@ -435,8 +435,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CD7 RID: 3287 RVA: 0x0007F108 File Offset: 0x0007D308
-        // (set) Token: 0x06000CD8 RID: 3288 RVA: 0x0007F120 File Offset: 0x0007D320
+    
+    
         internal virtual OpenFileDialog dlgOpen
         {
             get
@@ -451,8 +451,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CD9 RID: 3289 RVA: 0x0007F12C File Offset: 0x0007D32C
-        // (set) Token: 0x06000CDA RID: 3290 RVA: 0x0007F144 File Offset: 0x0007D344
+    
+    
         internal virtual SaveFileDialog dlgSave
         {
             get
@@ -467,8 +467,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CDB RID: 3291 RVA: 0x0007F150 File Offset: 0x0007D350
-        // (set) Token: 0x06000CDC RID: 3292 RVA: 0x0007F168 File Offset: 0x0007D368
+    
+    
         internal virtual DataView dvAnchored
         {
             get
@@ -513,8 +513,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CDD RID: 3293 RVA: 0x0007F2E4 File Offset: 0x0007D4E4
-        // (set) Token: 0x06000CDE RID: 3294 RVA: 0x0007F2FC File Offset: 0x0007D4FC
+    
+    
         internal virtual ToolStripMenuItem FileToolStripMenuItem
         {
             get
@@ -529,8 +529,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CDF RID: 3295 RVA: 0x0007F308 File Offset: 0x0007D508
-        // (set) Token: 0x06000CE0 RID: 3296 RVA: 0x0007F320 File Offset: 0x0007D520
+    
+    
         internal virtual ToolStripMenuItem HelpToolStripMenuItem1
         {
             get
@@ -545,8 +545,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CE1 RID: 3297 RVA: 0x0007F32C File Offset: 0x0007D52C
-        // (set) Token: 0x06000CE2 RID: 3298 RVA: 0x0007F344 File Offset: 0x0007D544
+    
+    
         internal virtual ImageButton heroVillain
         {
             get
@@ -570,8 +570,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CE3 RID: 3299 RVA: 0x0007F3A0 File Offset: 0x0007D5A0
-        // (set) Token: 0x06000CE4 RID: 3300 RVA: 0x0007F3E4 File Offset: 0x0007D5E4
+    
+    
         internal virtual I9Picker I9Picker
         {
             get
@@ -614,8 +614,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CE5 RID: 3301 RVA: 0x0007F50C File Offset: 0x0007D70C
-        // (set) Token: 0x06000CE6 RID: 3302 RVA: 0x0007F524 File Offset: 0x0007D724
+    
+    
         internal virtual ctlPopUp I9Popup
         {
             get
@@ -639,8 +639,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CE7 RID: 3303 RVA: 0x0007F580 File Offset: 0x0007D780
-        // (set) Token: 0x06000CE8 RID: 3304 RVA: 0x0007F598 File Offset: 0x0007D798
+    
+    
         internal virtual ImageButton ibAccolade
         {
             get
@@ -655,8 +655,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CE9 RID: 3305 RVA: 0x0007F5A4 File Offset: 0x0007D7A4
-        // (set) Token: 0x06000CEA RID: 3306 RVA: 0x0007F5BC File Offset: 0x0007D7BC
+    
+    
         internal virtual ImageButton ibMode
         {
             get
@@ -680,8 +680,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CEB RID: 3307 RVA: 0x0007F618 File Offset: 0x0007D818
-        // (set) Token: 0x06000CEC RID: 3308 RVA: 0x0007F630 File Offset: 0x0007D830
+    
+    
         internal virtual ImageButton ibPopup
         {
             get
@@ -705,8 +705,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CED RID: 3309 RVA: 0x0007F68C File Offset: 0x0007D88C
-        // (set) Token: 0x06000CEE RID: 3310 RVA: 0x0007F6A4 File Offset: 0x0007D8A4
+    
+    
         internal virtual ImageButton ibPvX
         {
             get
@@ -730,8 +730,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CEF RID: 3311 RVA: 0x0007F700 File Offset: 0x0007D900
-        // (set) Token: 0x06000CF0 RID: 3312 RVA: 0x0007F718 File Offset: 0x0007D918
+    
+    
         internal virtual ImageButton ibRecipe
         {
             get
@@ -755,8 +755,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CF1 RID: 3313 RVA: 0x0007F774 File Offset: 0x0007D974
-        // (set) Token: 0x06000CF2 RID: 3314 RVA: 0x0007F78C File Offset: 0x0007D98C
+    
+    
         internal virtual ImageButton ibSets
         {
             get
@@ -780,8 +780,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CF3 RID: 3315 RVA: 0x0007F7E8 File Offset: 0x0007D9E8
-        // (set) Token: 0x06000CF4 RID: 3316 RVA: 0x0007F800 File Offset: 0x0007DA00
+    
+    
         internal virtual ImageButton ibSlotLevels
         {
             get
@@ -805,8 +805,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CF5 RID: 3317 RVA: 0x0007F85C File Offset: 0x0007DA5C
-        // (set) Token: 0x06000CF6 RID: 3318 RVA: 0x0007F874 File Offset: 0x0007DA74
+    
+    
         internal virtual ImageButton ibTotals
         {
             get
@@ -830,8 +830,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CF7 RID: 3319 RVA: 0x0007F8D0 File Offset: 0x0007DAD0
-        // (set) Token: 0x06000CF8 RID: 3320 RVA: 0x0007F8E8 File Offset: 0x0007DAE8
+    
+    
         internal virtual ImageButton ibVetPools
         {
             get
@@ -846,8 +846,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CF9 RID: 3321 RVA: 0x0007F8F4 File Offset: 0x0007DAF4
-        // (set) Token: 0x06000CFA RID: 3322 RVA: 0x0007F90C File Offset: 0x0007DB0C
+    
+    
         internal virtual ToolStripMenuItem ImportExportToolStripMenuItem
         {
             get
@@ -862,8 +862,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CFB RID: 3323 RVA: 0x0007F918 File Offset: 0x0007DB18
-        // (set) Token: 0x06000CFC RID: 3324 RVA: 0x0007F930 File Offset: 0x0007DB30
+    
+    
         internal virtual ImageButton incarnateButton
         {
             get
@@ -887,8 +887,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CFD RID: 3325 RVA: 0x0007F98C File Offset: 0x0007DB8C
-        // (set) Token: 0x06000CFE RID: 3326 RVA: 0x0007F9A4 File Offset: 0x0007DBA4
+    
+    
         internal virtual ToolStripMenuItem IncarnateWindowToolStripMenuItem
         {
             get
@@ -912,8 +912,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CFF RID: 3327 RVA: 0x0007FA00 File Offset: 0x0007DC00
-        // (set) Token: 0x06000D00 RID: 3328 RVA: 0x0007FA18 File Offset: 0x0007DC18
+    
+    
         internal virtual ToolStripMenuItem InGameRespecHelperToolStripMenuItem
         {
             get
@@ -928,8 +928,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D01 RID: 3329 RVA: 0x0007FA24 File Offset: 0x0007DC24
-        // (set) Token: 0x06000D02 RID: 3330 RVA: 0x0007FA3C File Offset: 0x0007DC3C
+    
+    
         internal virtual GFXLabel lblAT
         {
             get
@@ -944,8 +944,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D03 RID: 3331 RVA: 0x0007FA48 File Offset: 0x0007DC48
-        // (set) Token: 0x06000D04 RID: 3332 RVA: 0x0007FA60 File Offset: 0x0007DC60
+    
+    
         internal virtual Label lblATLocked
         {
             get
@@ -975,8 +975,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D05 RID: 3333 RVA: 0x0007FB08 File Offset: 0x0007DD08
-        // (set) Token: 0x06000D06 RID: 3334 RVA: 0x0007FB20 File Offset: 0x0007DD20
+    
+    
         internal virtual Label lblEpic
         {
             get
@@ -991,8 +991,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D07 RID: 3335 RVA: 0x0007FB2C File Offset: 0x0007DD2C
-        // (set) Token: 0x06000D08 RID: 3336 RVA: 0x0007FB44 File Offset: 0x0007DD44
+    
+    
         internal virtual GFXLabel lblHero
         {
             get
@@ -1007,8 +1007,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D09 RID: 3337 RVA: 0x0007FB50 File Offset: 0x0007DD50
-        // (set) Token: 0x06000D0A RID: 3338 RVA: 0x0007FB68 File Offset: 0x0007DD68
+    
+    
         internal virtual Label lblLocked0
         {
             get
@@ -1038,8 +1038,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D0B RID: 3339 RVA: 0x0007FC10 File Offset: 0x0007DE10
-        // (set) Token: 0x06000D0C RID: 3340 RVA: 0x0007FC28 File Offset: 0x0007DE28
+    
+    
         internal virtual Label lblLocked1
         {
             get
@@ -1069,8 +1069,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D0D RID: 3341 RVA: 0x0007FCD0 File Offset: 0x0007DED0
-        // (set) Token: 0x06000D0E RID: 3342 RVA: 0x0007FCE8 File Offset: 0x0007DEE8
+    
+    
         internal virtual Label lblLocked2
         {
             get
@@ -1100,8 +1100,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D0F RID: 3343 RVA: 0x0007FD90 File Offset: 0x0007DF90
-        // (set) Token: 0x06000D10 RID: 3344 RVA: 0x0007FDA8 File Offset: 0x0007DFA8
+    
+    
         internal virtual Label lblLocked3
         {
             get
@@ -1131,8 +1131,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D11 RID: 3345 RVA: 0x0007FE50 File Offset: 0x0007E050
-        // (set) Token: 0x06000D12 RID: 3346 RVA: 0x0007FE68 File Offset: 0x0007E068
+    
+    
         internal virtual Label lblLockedAncillary
         {
             get
@@ -1162,8 +1162,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D13 RID: 3347 RVA: 0x0007FF10 File Offset: 0x0007E110
-        // (set) Token: 0x06000D14 RID: 3348 RVA: 0x0007FF28 File Offset: 0x0007E128
+    
+    
         internal virtual Label lblLockedSecondary
         {
             get
@@ -1190,8 +1190,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D15 RID: 3349 RVA: 0x0007FFAC File Offset: 0x0007E1AC
-        // (set) Token: 0x06000D16 RID: 3350 RVA: 0x0007FFC4 File Offset: 0x0007E1C4
+    
+    
         internal virtual GFXLabel lblName
         {
             get
@@ -1206,8 +1206,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D17 RID: 3351 RVA: 0x0007FFD0 File Offset: 0x0007E1D0
-        // (set) Token: 0x06000D18 RID: 3352 RVA: 0x0007FFE8 File Offset: 0x0007E1E8
+    
+    
         internal virtual GFXLabel lblOrigin
         {
             get
@@ -1222,8 +1222,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D19 RID: 3353 RVA: 0x0007FFF4 File Offset: 0x0007E1F4
-        // (set) Token: 0x06000D1A RID: 3354 RVA: 0x0008000C File Offset: 0x0007E20C
+    
+    
         internal virtual Label lblPool1
         {
             get
@@ -1238,8 +1238,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D1B RID: 3355 RVA: 0x00080018 File Offset: 0x0007E218
-        // (set) Token: 0x06000D1C RID: 3356 RVA: 0x00080030 File Offset: 0x0007E230
+    
+    
         internal virtual Label lblPool2
         {
             get
@@ -1254,8 +1254,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D1D RID: 3357 RVA: 0x0008003C File Offset: 0x0007E23C
-        // (set) Token: 0x06000D1E RID: 3358 RVA: 0x00080054 File Offset: 0x0007E254
+    
+    
         internal virtual Label lblPool3
         {
             get
@@ -1270,8 +1270,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D1F RID: 3359 RVA: 0x00080060 File Offset: 0x0007E260
-        // (set) Token: 0x06000D20 RID: 3360 RVA: 0x00080078 File Offset: 0x0007E278
+    
+    
         internal virtual Label lblPool4
         {
             get
@@ -1286,8 +1286,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D21 RID: 3361 RVA: 0x00080084 File Offset: 0x0007E284
-        // (set) Token: 0x06000D22 RID: 3362 RVA: 0x0008009C File Offset: 0x0007E29C
+    
+    
         internal virtual Label lblPrimary
         {
             get
@@ -1302,8 +1302,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D23 RID: 3363 RVA: 0x000800A8 File Offset: 0x0007E2A8
-        // (set) Token: 0x06000D24 RID: 3364 RVA: 0x000800C0 File Offset: 0x0007E2C0
+    
+    
         internal virtual Label lblSecondary
         {
             get
@@ -1318,8 +1318,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D25 RID: 3365 RVA: 0x000800CC File Offset: 0x0007E2CC
-        // (set) Token: 0x06000D26 RID: 3366 RVA: 0x000800E4 File Offset: 0x0007E2E4
+    
+    
         internal virtual ListLabelV2 llAncillary
         {
             get
@@ -1346,8 +1346,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D27 RID: 3367 RVA: 0x00080168 File Offset: 0x0007E368
-        // (set) Token: 0x06000D28 RID: 3368 RVA: 0x00080180 File Offset: 0x0007E380
+    
+    
         internal virtual ListLabelV2 llPool0
         {
             get
@@ -1380,8 +1380,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D29 RID: 3369 RVA: 0x00080254 File Offset: 0x0007E454
-        // (set) Token: 0x06000D2A RID: 3370 RVA: 0x0008026C File Offset: 0x0007E46C
+    
+    
         internal virtual ListLabelV2 llPool1
         {
             get
@@ -1414,8 +1414,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D2B RID: 3371 RVA: 0x00080340 File Offset: 0x0007E540
-        // (set) Token: 0x06000D2C RID: 3372 RVA: 0x00080358 File Offset: 0x0007E558
+    
+    
         internal virtual ListLabelV2 llPool2
         {
             get
@@ -1448,8 +1448,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D2D RID: 3373 RVA: 0x0008042C File Offset: 0x0007E62C
-        // (set) Token: 0x06000D2E RID: 3374 RVA: 0x00080444 File Offset: 0x0007E644
+    
+    
         internal virtual ListLabelV2 llPool3
         {
             get
@@ -1482,8 +1482,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D2F RID: 3375 RVA: 0x00080518 File Offset: 0x0007E718
-        // (set) Token: 0x06000D30 RID: 3376 RVA: 0x00080530 File Offset: 0x0007E730
+    
+    
         internal virtual ListLabelV2 llPrimary
         {
             get
@@ -1516,8 +1516,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D31 RID: 3377 RVA: 0x00080604 File Offset: 0x0007E804
-        // (set) Token: 0x06000D32 RID: 3378 RVA: 0x0008061C File Offset: 0x0007E81C
+    
+    
         internal virtual ListLabelV2 llSecondary
         {
             get
@@ -1550,8 +1550,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D33 RID: 3379 RVA: 0x000806F0 File Offset: 0x0007E8F0
-        // (set) Token: 0x06000D34 RID: 3380 RVA: 0x00080708 File Offset: 0x0007E908
+    
+    
         internal virtual MenuStrip MenuBar
         {
             get
@@ -1566,8 +1566,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D35 RID: 3381 RVA: 0x00080714 File Offset: 0x0007E914
-        // (set) Token: 0x06000D36 RID: 3382 RVA: 0x0008072C File Offset: 0x0007E92C
+    
+    
         internal virtual ToolStripMenuItem OptionsToolStripMenuItem
         {
             get
@@ -1582,8 +1582,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D37 RID: 3383 RVA: 0x00080738 File Offset: 0x0007E938
-        // (set) Token: 0x06000D38 RID: 3384 RVA: 0x00080750 File Offset: 0x0007E950
+    
+    
         internal virtual PictureBox pbDynMode
         {
             get
@@ -1610,8 +1610,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D39 RID: 3385 RVA: 0x000807D4 File Offset: 0x0007E9D4
-        // (set) Token: 0x06000D3A RID: 3386 RVA: 0x000807EC File Offset: 0x0007E9EC
+    
+    
         internal virtual PictureBox pnlGFX
         {
             get
@@ -1659,8 +1659,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D3B RID: 3387 RVA: 0x00080994 File Offset: 0x0007EB94
-        // (set) Token: 0x06000D3C RID: 3388 RVA: 0x000809AC File Offset: 0x0007EBAC
+    
+    
         internal virtual FlowLayoutPanel pnlGFXFlow
         {
             get
@@ -1684,8 +1684,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D3D RID: 3389 RVA: 0x00080A08 File Offset: 0x0007EC08
-        // (set) Token: 0x06000D3E RID: 3390 RVA: 0x00080A20 File Offset: 0x0007EC20
+    
+    
         internal virtual ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem
         {
             get
@@ -1700,8 +1700,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D3F RID: 3391 RVA: 0x00080A2C File Offset: 0x0007EC2C
-        // (set) Token: 0x06000D40 RID: 3392 RVA: 0x00080A44 File Offset: 0x0007EC44
+    
+    
         internal virtual ToolStripMenuItem SlotsToolStripMenuItem
         {
             get
@@ -1716,8 +1716,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D41 RID: 3393 RVA: 0x00080A50 File Offset: 0x0007EC50
-        // (set) Token: 0x06000D42 RID: 3394 RVA: 0x00080A68 File Offset: 0x0007EC68
+    
+    
         internal virtual ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem
         {
             get
@@ -1741,8 +1741,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D43 RID: 3395 RVA: 0x00080AC4 File Offset: 0x0007ECC4
-        // (set) Token: 0x06000D44 RID: 3396 RVA: 0x00080ADC File Offset: 0x0007ECDC
+    
+    
         internal virtual ImageButton tempPowersButton
         {
             get
@@ -1769,8 +1769,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D45 RID: 3397 RVA: 0x00080B60 File Offset: 0x0007ED60
-        // (set) Token: 0x06000D46 RID: 3398 RVA: 0x00080B78 File Offset: 0x0007ED78
+    
+    
         internal virtual ToolStripMenuItem tlsDPA
         {
             get
@@ -1794,8 +1794,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D47 RID: 3399 RVA: 0x00080BD4 File Offset: 0x0007EDD4
-        // (set) Token: 0x06000D48 RID: 3400 RVA: 0x00080BEC File Offset: 0x0007EDEC
+    
+    
         internal virtual System.Windows.Forms.Timer tmrGfx
         {
             get
@@ -1819,8 +1819,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D49 RID: 3401 RVA: 0x00080C48 File Offset: 0x0007EE48
-        // (set) Token: 0x06000D4A RID: 3402 RVA: 0x00080C60 File Offset: 0x0007EE60
+    
+    
         internal virtual ToolStripMenuItem ToolStripMenuItem1
         {
             get
@@ -1835,8 +1835,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D4B RID: 3403 RVA: 0x00080C6C File Offset: 0x0007EE6C
-        // (set) Token: 0x06000D4C RID: 3404 RVA: 0x00080C84 File Offset: 0x0007EE84
+    
+    
         internal virtual ToolStripMenuItem ToolStripMenuItem2
         {
             get
@@ -1851,8 +1851,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D4D RID: 3405 RVA: 0x00080C90 File Offset: 0x0007EE90
-        // (set) Token: 0x06000D4E RID: 3406 RVA: 0x00080CA8 File Offset: 0x0007EEA8
+    
+    
         internal virtual ToolStripSeparator ToolStripMenuItem4
         {
             get
@@ -1867,8 +1867,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D4F RID: 3407 RVA: 0x00080CB4 File Offset: 0x0007EEB4
-        // (set) Token: 0x06000D50 RID: 3408 RVA: 0x00080CCC File Offset: 0x0007EECC
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator1
         {
             get
@@ -1883,8 +1883,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D51 RID: 3409 RVA: 0x00080CD8 File Offset: 0x0007EED8
-        // (set) Token: 0x06000D52 RID: 3410 RVA: 0x00080CF0 File Offset: 0x0007EEF0
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator10
         {
             get
@@ -1899,8 +1899,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D53 RID: 3411 RVA: 0x00080CFC File Offset: 0x0007EEFC
-        // (set) Token: 0x06000D54 RID: 3412 RVA: 0x00080D14 File Offset: 0x0007EF14
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator11
         {
             get
@@ -1915,8 +1915,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D55 RID: 3413 RVA: 0x00080D20 File Offset: 0x0007EF20
-        // (set) Token: 0x06000D56 RID: 3414 RVA: 0x00080D38 File Offset: 0x0007EF38
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator12
         {
             get
@@ -1931,8 +1931,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D57 RID: 3415 RVA: 0x00080D44 File Offset: 0x0007EF44
-        // (set) Token: 0x06000D58 RID: 3416 RVA: 0x00080D5C File Offset: 0x0007EF5C
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator13
         {
             get
@@ -1947,8 +1947,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D59 RID: 3417 RVA: 0x00080D68 File Offset: 0x0007EF68
-        // (set) Token: 0x06000D5A RID: 3418 RVA: 0x00080D80 File Offset: 0x0007EF80
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator14
         {
             get
@@ -1963,8 +1963,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D5B RID: 3419 RVA: 0x00080D8C File Offset: 0x0007EF8C
-        // (set) Token: 0x06000D5C RID: 3420 RVA: 0x00080DA4 File Offset: 0x0007EFA4
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator15
         {
             get
@@ -1979,8 +1979,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D5D RID: 3421 RVA: 0x00080DB0 File Offset: 0x0007EFB0
-        // (set) Token: 0x06000D5E RID: 3422 RVA: 0x00080DC8 File Offset: 0x0007EFC8
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator16
         {
             get
@@ -1995,8 +1995,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D5F RID: 3423 RVA: 0x00080DD4 File Offset: 0x0007EFD4
-        // (set) Token: 0x06000D60 RID: 3424 RVA: 0x00080DEC File Offset: 0x0007EFEC
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator17
         {
             get
@@ -2011,8 +2011,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D61 RID: 3425 RVA: 0x00080DF8 File Offset: 0x0007EFF8
-        // (set) Token: 0x06000D62 RID: 3426 RVA: 0x00080E10 File Offset: 0x0007F010
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator18
         {
             get
@@ -2027,8 +2027,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D63 RID: 3427 RVA: 0x00080E1C File Offset: 0x0007F01C
-        // (set) Token: 0x06000D64 RID: 3428 RVA: 0x00080E34 File Offset: 0x0007F034
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator19
         {
             get
@@ -2043,8 +2043,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D65 RID: 3429 RVA: 0x00080E40 File Offset: 0x0007F040
-        // (set) Token: 0x06000D66 RID: 3430 RVA: 0x00080E58 File Offset: 0x0007F058
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator2
         {
             get
@@ -2059,8 +2059,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D67 RID: 3431 RVA: 0x00080E64 File Offset: 0x0007F064
-        // (set) Token: 0x06000D68 RID: 3432 RVA: 0x00080E7C File Offset: 0x0007F07C
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator20
         {
             get
@@ -2075,8 +2075,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D69 RID: 3433 RVA: 0x00080E88 File Offset: 0x0007F088
-        // (set) Token: 0x06000D6A RID: 3434 RVA: 0x00080EA0 File Offset: 0x0007F0A0
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator21
         {
             get
@@ -2091,8 +2091,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D6B RID: 3435 RVA: 0x00080EAC File Offset: 0x0007F0AC
-        // (set) Token: 0x06000D6C RID: 3436 RVA: 0x00080EC4 File Offset: 0x0007F0C4
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator22
         {
             get
@@ -2107,8 +2107,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D6D RID: 3437 RVA: 0x00080ED0 File Offset: 0x0007F0D0
-        // (set) Token: 0x06000D6E RID: 3438 RVA: 0x00080EE8 File Offset: 0x0007F0E8
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator23
         {
             get
@@ -2123,8 +2123,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D6F RID: 3439 RVA: 0x00080EF4 File Offset: 0x0007F0F4
-        // (set) Token: 0x06000D70 RID: 3440 RVA: 0x00080F0C File Offset: 0x0007F10C
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator24
         {
             get
@@ -2139,8 +2139,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D71 RID: 3441 RVA: 0x00080F18 File Offset: 0x0007F118
-        // (set) Token: 0x06000D72 RID: 3442 RVA: 0x00080F30 File Offset: 0x0007F130
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator4
         {
             get
@@ -2155,8 +2155,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D73 RID: 3443 RVA: 0x00080F3C File Offset: 0x0007F13C
-        // (set) Token: 0x06000D74 RID: 3444 RVA: 0x00080F54 File Offset: 0x0007F154
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator5
         {
             get
@@ -2171,8 +2171,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D75 RID: 3445 RVA: 0x00080F60 File Offset: 0x0007F160
-        // (set) Token: 0x06000D76 RID: 3446 RVA: 0x00080F78 File Offset: 0x0007F178
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator7
         {
             get
@@ -2187,8 +2187,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D77 RID: 3447 RVA: 0x00080F84 File Offset: 0x0007F184
-        // (set) Token: 0x06000D78 RID: 3448 RVA: 0x00080F9C File Offset: 0x0007F19C
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator8
         {
             get
@@ -2203,8 +2203,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D79 RID: 3449 RVA: 0x00080FA8 File Offset: 0x0007F1A8
-        // (set) Token: 0x06000D7A RID: 3450 RVA: 0x00080FC0 File Offset: 0x0007F1C0
+    
+    
         internal virtual ToolStripSeparator ToolStripSeparator9
         {
             get
@@ -2219,8 +2219,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D7B RID: 3451 RVA: 0x00080FCC File Offset: 0x0007F1CC
-        // (set) Token: 0x06000D7C RID: 3452 RVA: 0x00080FE4 File Offset: 0x0007F1E4
+    
+    
         internal virtual ToolStripMenuItem tsAbout
         {
             get
@@ -2244,8 +2244,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D7D RID: 3453 RVA: 0x00081040 File Offset: 0x0007F240
-        // (set) Token: 0x06000D7E RID: 3454 RVA: 0x00081058 File Offset: 0x0007F258
+    
+    
         internal virtual ToolStripMenuItem tsAdvDBEdit
         {
             get
@@ -2269,8 +2269,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D7F RID: 3455 RVA: 0x000810B4 File Offset: 0x0007F2B4
-        // (set) Token: 0x06000D80 RID: 3456 RVA: 0x000810CC File Offset: 0x0007F2CC
+    
+    
         internal virtual ToolStripMenuItem tsAdvFreshInstall
         {
             get
@@ -2294,8 +2294,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D81 RID: 3457 RVA: 0x00081128 File Offset: 0x0007F328
-        // (set) Token: 0x06000D82 RID: 3458 RVA: 0x00081140 File Offset: 0x0007F340
+    
+    
         internal virtual ToolStripMenuItem tsAdvResetTips
         {
             get
@@ -2319,8 +2319,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D83 RID: 3459 RVA: 0x0008119C File Offset: 0x0007F39C
-        // (set) Token: 0x06000D84 RID: 3460 RVA: 0x000811B4 File Offset: 0x0007F3B4
+    
+    
         internal virtual ToolStripMenuItem tsBug
         {
             get
@@ -2344,8 +2344,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D85 RID: 3461 RVA: 0x00081210 File Offset: 0x0007F410
-        // (set) Token: 0x06000D86 RID: 3462 RVA: 0x00081228 File Offset: 0x0007F428
+    
+    
         internal virtual ToolStripMenuItem tsClearAllEnh
         {
             get
@@ -2369,8 +2369,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D87 RID: 3463 RVA: 0x00081284 File Offset: 0x0007F484
-        // (set) Token: 0x06000D88 RID: 3464 RVA: 0x0008129C File Offset: 0x0007F49C
+    
+    
         internal virtual ToolStripMenuItem tsConfig
         {
             get
@@ -2394,8 +2394,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D89 RID: 3465 RVA: 0x000812F8 File Offset: 0x0007F4F8
-        // (set) Token: 0x06000D8A RID: 3466 RVA: 0x00081310 File Offset: 0x0007F510
+    
+    
         internal virtual ToolStripMenuItem tsDonate
         {
             get
@@ -2419,8 +2419,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D8B RID: 3467 RVA: 0x0008136C File Offset: 0x0007F56C
-        // (set) Token: 0x06000D8C RID: 3468 RVA: 0x00081384 File Offset: 0x0007F584
+    
+    
         internal virtual ToolStripMenuItem tsDynamic
         {
             get
@@ -2444,8 +2444,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D8D RID: 3469 RVA: 0x000813E0 File Offset: 0x0007F5E0
-        // (set) Token: 0x06000D8E RID: 3470 RVA: 0x000813F8 File Offset: 0x0007F5F8
+    
+    
         internal virtual ToolStripMenuItem tsEnhToDO
         {
             get
@@ -2469,8 +2469,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D8F RID: 3471 RVA: 0x00081454 File Offset: 0x0007F654
-        // (set) Token: 0x06000D90 RID: 3472 RVA: 0x0008146C File Offset: 0x0007F66C
+    
+    
         internal virtual ToolStripMenuItem tsEnhToEven
         {
             get
@@ -2494,8 +2494,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D91 RID: 3473 RVA: 0x000814C8 File Offset: 0x0007F6C8
-        // (set) Token: 0x06000D92 RID: 3474 RVA: 0x000814E0 File Offset: 0x0007F6E0
+    
+    
         internal virtual ToolStripMenuItem tsEnhToMinus1
         {
             get
@@ -2519,8 +2519,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D93 RID: 3475 RVA: 0x0008153C File Offset: 0x0007F73C
-        // (set) Token: 0x06000D94 RID: 3476 RVA: 0x00081554 File Offset: 0x0007F754
+    
+    
         internal virtual ToolStripMenuItem tsEnhToMinus2
         {
             get
@@ -2544,8 +2544,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D95 RID: 3477 RVA: 0x000815B0 File Offset: 0x0007F7B0
-        // (set) Token: 0x06000D96 RID: 3478 RVA: 0x000815C8 File Offset: 0x0007F7C8
+    
+    
         internal virtual ToolStripMenuItem tsEnhToMinus3
         {
             get
@@ -2569,8 +2569,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D97 RID: 3479 RVA: 0x00081624 File Offset: 0x0007F824
-        // (set) Token: 0x06000D98 RID: 3480 RVA: 0x0008163C File Offset: 0x0007F83C
+    
+    
         internal virtual ToolStripMenuItem tsEnhToNone
         {
             get
@@ -2594,8 +2594,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D99 RID: 3481 RVA: 0x00081698 File Offset: 0x0007F898
-        // (set) Token: 0x06000D9A RID: 3482 RVA: 0x000816B0 File Offset: 0x0007F8B0
+    
+    
         internal virtual ToolStripMenuItem tsEnhToPlus1
         {
             get
@@ -2619,8 +2619,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D9B RID: 3483 RVA: 0x0008170C File Offset: 0x0007F90C
-        // (set) Token: 0x06000D9C RID: 3484 RVA: 0x00081724 File Offset: 0x0007F924
+    
+    
         internal virtual ToolStripMenuItem tsEnhToPlus2
         {
             get
@@ -2644,8 +2644,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D9D RID: 3485 RVA: 0x00081780 File Offset: 0x0007F980
-        // (set) Token: 0x06000D9E RID: 3486 RVA: 0x00081798 File Offset: 0x0007F998
+    
+    
         internal virtual ToolStripMenuItem tsEnhToPlus3
         {
             get
@@ -2669,8 +2669,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000D9F RID: 3487 RVA: 0x000817F4 File Offset: 0x0007F9F4
-        // (set) Token: 0x06000DA0 RID: 3488 RVA: 0x0008180C File Offset: 0x0007FA0C
+    
+    
         internal virtual ToolStripMenuItem tsEnhToPlus4
         {
             get
@@ -2694,8 +2694,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DA1 RID: 3489 RVA: 0x00081868 File Offset: 0x0007FA68
-        // (set) Token: 0x06000DA2 RID: 3490 RVA: 0x00081880 File Offset: 0x0007FA80
+    
+    
         internal virtual ToolStripMenuItem tsEnhToPlus5
         {
             get
@@ -2719,8 +2719,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DA3 RID: 3491 RVA: 0x000818DC File Offset: 0x0007FADC
-        // (set) Token: 0x06000DA4 RID: 3492 RVA: 0x000818F4 File Offset: 0x0007FAF4
+    
+    
         internal virtual ToolStripMenuItem tsEnhToSO
         {
             get
@@ -2744,8 +2744,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DA5 RID: 3493 RVA: 0x00081950 File Offset: 0x0007FB50
-        // (set) Token: 0x06000DA6 RID: 3494 RVA: 0x00081968 File Offset: 0x0007FB68
+    
+    
         internal virtual ToolStripMenuItem tsEnhToTO
         {
             get
@@ -2769,8 +2769,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DA7 RID: 3495 RVA: 0x000819C4 File Offset: 0x0007FBC4
-        // (set) Token: 0x06000DA8 RID: 3496 RVA: 0x000819DC File Offset: 0x0007FBDC
+    
+    
         internal virtual ToolStripMenuItem tsExport
         {
             get
@@ -2794,8 +2794,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DA9 RID: 3497 RVA: 0x00081A38 File Offset: 0x0007FC38
-        // (set) Token: 0x06000DAA RID: 3498 RVA: 0x00081A50 File Offset: 0x0007FC50
+    
+    
         internal virtual ToolStripMenuItem tsExportDataLink
         {
             get
@@ -2819,8 +2819,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DAB RID: 3499 RVA: 0x00081AAC File Offset: 0x0007FCAC
-        // (set) Token: 0x06000DAC RID: 3500 RVA: 0x00081AC4 File Offset: 0x0007FCC4
+    
+    
         internal virtual ToolStripMenuItem tsExportLong
         {
             get
@@ -2844,8 +2844,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DAD RID: 3501 RVA: 0x00081B20 File Offset: 0x0007FD20
-        // (set) Token: 0x06000DAE RID: 3502 RVA: 0x00081B38 File Offset: 0x0007FD38
+    
+    
         internal virtual ToolStripMenuItem tsFileNew
         {
             get
@@ -2869,8 +2869,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DAF RID: 3503 RVA: 0x00081B94 File Offset: 0x0007FD94
-        // (set) Token: 0x06000DB0 RID: 3504 RVA: 0x00081BAC File Offset: 0x0007FDAC
+    
+    
         internal virtual ToolStripMenuItem tsFileOpen
         {
             get
@@ -2894,8 +2894,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DB1 RID: 3505 RVA: 0x00081C08 File Offset: 0x0007FE08
-        // (set) Token: 0x06000DB2 RID: 3506 RVA: 0x00081C20 File Offset: 0x0007FE20
+    
+    
         internal virtual ToolStripMenuItem tsFilePrint
         {
             get
@@ -2919,8 +2919,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DB3 RID: 3507 RVA: 0x00081C7C File Offset: 0x0007FE7C
-        // (set) Token: 0x06000DB4 RID: 3508 RVA: 0x00081C94 File Offset: 0x0007FE94
+    
+    
         internal virtual ToolStripMenuItem tsFileQuit
         {
             get
@@ -2944,8 +2944,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DB5 RID: 3509 RVA: 0x00081CF0 File Offset: 0x0007FEF0
-        // (set) Token: 0x06000DB6 RID: 3510 RVA: 0x00081D08 File Offset: 0x0007FF08
+    
+    
         internal virtual ToolStripMenuItem tsFileSave
         {
             get
@@ -2969,8 +2969,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DB7 RID: 3511 RVA: 0x00081D64 File Offset: 0x0007FF64
-        // (set) Token: 0x06000DB8 RID: 3512 RVA: 0x00081D7C File Offset: 0x0007FF7C
+    
+    
         internal virtual ToolStripMenuItem tsFileSaveAs
         {
             get
@@ -2994,8 +2994,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DB9 RID: 3513 RVA: 0x00081DD8 File Offset: 0x0007FFD8
-        // (set) Token: 0x06000DBA RID: 3514 RVA: 0x00081DF0 File Offset: 0x0007FFF0
+    
+    
         internal virtual ToolStripMenuItem tsFlipAllEnh
         {
             get
@@ -3019,8 +3019,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DBB RID: 3515 RVA: 0x00081E4C File Offset: 0x0008004C
-        // (set) Token: 0x06000DBC RID: 3516 RVA: 0x00081E64 File Offset: 0x00080064
+    
+    
         internal virtual ToolStripMenuItem tsHelp
         {
             get
@@ -3044,8 +3044,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DBD RID: 3517 RVA: 0x00081EC0 File Offset: 0x000800C0
-        // (set) Token: 0x06000DBE RID: 3518 RVA: 0x00081ED8 File Offset: 0x000800D8
+    
+    
         internal virtual ToolStripMenuItem tsHelperLong
         {
             get
@@ -3069,8 +3069,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DBF RID: 3519 RVA: 0x00081F34 File Offset: 0x00080134
-        // (set) Token: 0x06000DC0 RID: 3520 RVA: 0x00081F4C File Offset: 0x0008014C
+    
+    
         internal virtual ToolStripMenuItem tsHelperLong2
         {
             get
@@ -3094,8 +3094,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DC1 RID: 3521 RVA: 0x00081FA8 File Offset: 0x000801A8
-        // (set) Token: 0x06000DC2 RID: 3522 RVA: 0x00081FC0 File Offset: 0x000801C0
+    
+    
         internal virtual ToolStripMenuItem tsHelperShort
         {
             get
@@ -3119,8 +3119,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DC3 RID: 3523 RVA: 0x0008201C File Offset: 0x0008021C
-        // (set) Token: 0x06000DC4 RID: 3524 RVA: 0x00082034 File Offset: 0x00080234
+    
+    
         internal virtual ToolStripMenuItem tsHelperShort2
         {
             get
@@ -3144,8 +3144,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DC5 RID: 3525 RVA: 0x00082090 File Offset: 0x00080290
-        // (set) Token: 0x06000DC6 RID: 3526 RVA: 0x000820A8 File Offset: 0x000802A8
+    
+    
         internal virtual ToolStripMenuItem tsImport
         {
             get
@@ -3169,8 +3169,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DC7 RID: 3527 RVA: 0x00082104 File Offset: 0x00080304
-        // (set) Token: 0x06000DC8 RID: 3528 RVA: 0x0008211C File Offset: 0x0008031C
+    
+    
         internal virtual ToolStripMenuItem tsIODefault
         {
             get
@@ -3194,8 +3194,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DC9 RID: 3529 RVA: 0x00082178 File Offset: 0x00080378
-        // (set) Token: 0x06000DCA RID: 3530 RVA: 0x00082190 File Offset: 0x00080390
+    
+    
         internal virtual ToolStripMenuItem tsIOMax
         {
             get
@@ -3219,8 +3219,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DCB RID: 3531 RVA: 0x000821EC File Offset: 0x000803EC
-        // (set) Token: 0x06000DCC RID: 3532 RVA: 0x00082204 File Offset: 0x00080404
+    
+    
         internal virtual ToolStripMenuItem tsIOMin
         {
             get
@@ -3244,8 +3244,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DCD RID: 3533 RVA: 0x00082260 File Offset: 0x00080460
-        // (set) Token: 0x06000DCE RID: 3534 RVA: 0x00082278 File Offset: 0x00080478
+    
+    
         internal virtual ToolStripMenuItem tsLevelUp
         {
             get
@@ -3269,8 +3269,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DCF RID: 3535 RVA: 0x000822D4 File Offset: 0x000804D4
-        // (set) Token: 0x06000DD0 RID: 3536 RVA: 0x000822EC File Offset: 0x000804EC
+    
+    
         internal virtual ToolStripMenuItem tsPatchNotes
         {
             get
@@ -3294,8 +3294,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DD1 RID: 3537 RVA: 0x00082348 File Offset: 0x00080548
-        // (set) Token: 0x06000DD2 RID: 3538 RVA: 0x00082360 File Offset: 0x00080560
+    
+    
         internal virtual ToolStripMenuItem tsRecipeViewer
         {
             get
@@ -3319,8 +3319,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DD3 RID: 3539 RVA: 0x000823BC File Offset: 0x000805BC
-        // (set) Token: 0x06000DD4 RID: 3540 RVA: 0x000823D4 File Offset: 0x000805D4
+    
+    
         internal virtual ToolStripMenuItem tsDPSCalc
         {
             get
@@ -3344,8 +3344,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DD5 RID: 3541 RVA: 0x00082430 File Offset: 0x00080630
-        // (set) Token: 0x06000DD6 RID: 3542 RVA: 0x00082448 File Offset: 0x00080648
+    
+    
         internal virtual ToolStripMenuItem tsRemoveAllSlots
         {
             get
@@ -3369,8 +3369,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DD7 RID: 3543 RVA: 0x000824A4 File Offset: 0x000806A4
-        // (set) Token: 0x06000DD8 RID: 3544 RVA: 0x000824BC File Offset: 0x000806BC
+    
+    
         internal virtual ToolStripMenuItem tsSetFind
         {
             get
@@ -3394,8 +3394,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DD9 RID: 3545 RVA: 0x00082518 File Offset: 0x00080718
-        // (set) Token: 0x06000DDA RID: 3546 RVA: 0x00082530 File Offset: 0x00080730
+    
+    
         internal virtual ToolStripMenuItem tsTitanForum
         {
             get
@@ -3419,8 +3419,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DDB RID: 3547 RVA: 0x0008258C File Offset: 0x0008078C
-        // (set) Token: 0x06000DDC RID: 3548 RVA: 0x000825A4 File Offset: 0x000807A4
+    
+    
         internal virtual ToolStripMenuItem tsTitanPlanner
         {
             get
@@ -3444,8 +3444,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DDD RID: 3549 RVA: 0x00082600 File Offset: 0x00080800
-        // (set) Token: 0x06000DDE RID: 3550 RVA: 0x00082618 File Offset: 0x00080818
+    
+    
         internal virtual ToolStripMenuItem tsTitanSite
         {
             get
@@ -3469,8 +3469,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DDF RID: 3551 RVA: 0x00082674 File Offset: 0x00080874
-        // (set) Token: 0x06000DE0 RID: 3552 RVA: 0x0008268C File Offset: 0x0008088C
+    
+    
         internal virtual ToolStripMenuItem tsUpdateCheck
         {
             get
@@ -3494,8 +3494,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DE1 RID: 3553 RVA: 0x000826E8 File Offset: 0x000808E8
-        // (set) Token: 0x06000DE2 RID: 3554 RVA: 0x00082700 File Offset: 0x00080900
+    
+    
         internal virtual ToolStripMenuItem tsView2Col
         {
             get
@@ -3519,8 +3519,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DE3 RID: 3555 RVA: 0x0008275C File Offset: 0x0008095C
-        // (set) Token: 0x06000DE4 RID: 3556 RVA: 0x00082774 File Offset: 0x00080974
+    
+    
         internal virtual ToolStripMenuItem tsView3Col
         {
             get
@@ -3544,8 +3544,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DE5 RID: 3557 RVA: 0x000827D0 File Offset: 0x000809D0
-        // (set) Token: 0x06000DE6 RID: 3558 RVA: 0x000827E8 File Offset: 0x000809E8
+    
+    
         internal virtual ToolStripMenuItem tsView4Col
         {
             get
@@ -3569,8 +3569,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DE7 RID: 3559 RVA: 0x00082844 File Offset: 0x00080A44
-        // (set) Token: 0x06000DE8 RID: 3560 RVA: 0x0008285C File Offset: 0x00080A5C
+    
+    
         internal virtual ToolStripMenuItem tsViewActualDamage_New
         {
             get
@@ -3594,8 +3594,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DE9 RID: 3561 RVA: 0x000828B8 File Offset: 0x00080AB8
-        // (set) Token: 0x06000DEA RID: 3562 RVA: 0x000828D0 File Offset: 0x00080AD0
+    
+    
         internal virtual ToolStripMenuItem tsViewData
         {
             get
@@ -3619,8 +3619,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DEB RID: 3563 RVA: 0x0008292C File Offset: 0x00080B2C
-        // (set) Token: 0x06000DEC RID: 3564 RVA: 0x00082944 File Offset: 0x00080B44
+    
+    
         internal virtual ToolStripMenuItem tsViewDPS_New
         {
             get
@@ -3644,8 +3644,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DED RID: 3565 RVA: 0x000829A0 File Offset: 0x00080BA0
-        // (set) Token: 0x06000DEE RID: 3566 RVA: 0x000829B8 File Offset: 0x00080BB8
+    
+    
         internal virtual ToolStripMenuItem tsViewGraphs
         {
             get
@@ -3669,8 +3669,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DEF RID: 3567 RVA: 0x00082A14 File Offset: 0x00080C14
-        // (set) Token: 0x06000DF0 RID: 3568 RVA: 0x00082A2C File Offset: 0x00080C2C
+    
+    
         internal virtual ToolStripMenuItem tsViewIOLevels
         {
             get
@@ -3694,8 +3694,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DF1 RID: 3569 RVA: 0x00082A88 File Offset: 0x00080C88
-        // (set) Token: 0x06000DF2 RID: 3570 RVA: 0x00082AA0 File Offset: 0x00080CA0
+    
+    
         internal virtual ToolStripMenuItem tsViewRelative
         {
             get
@@ -3719,8 +3719,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DF3 RID: 3571 RVA: 0x00082AFC File Offset: 0x00080CFC
-        // (set) Token: 0x06000DF4 RID: 3572 RVA: 0x00082B14 File Offset: 0x00080D14
+    
+    
         internal virtual ToolStripMenuItem tsViewSetCompare
         {
             get
@@ -3744,8 +3744,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DF5 RID: 3573 RVA: 0x00082B70 File Offset: 0x00080D70
-        // (set) Token: 0x06000DF6 RID: 3574 RVA: 0x00082B88 File Offset: 0x00080D88
+    
+    
         internal virtual ToolStripMenuItem tsViewSets
         {
             get
@@ -3769,8 +3769,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DF7 RID: 3575 RVA: 0x00082BE4 File Offset: 0x00080DE4
-        // (set) Token: 0x06000DF8 RID: 3576 RVA: 0x00082BFC File Offset: 0x00080DFC
+    
+    
         internal virtual ToolStripMenuItem tsViewSlotLevels
         {
             get
@@ -3794,8 +3794,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DF9 RID: 3577 RVA: 0x00082C58 File Offset: 0x00080E58
-        // (set) Token: 0x06000DFA RID: 3578 RVA: 0x00082C70 File Offset: 0x00080E70
+    
+    
         internal virtual ToolStripMenuItem tsViewTotals
         {
             get
@@ -3819,8 +3819,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DFB RID: 3579 RVA: 0x00082CCC File Offset: 0x00080ECC
-        // (set) Token: 0x06000DFC RID: 3580 RVA: 0x00082CE4 File Offset: 0x00080EE4
+    
+    
         internal virtual ToolTip tTip
         {
             get
@@ -3835,8 +3835,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DFD RID: 3581 RVA: 0x00082CF0 File Offset: 0x00080EF0
-        // (set) Token: 0x06000DFE RID: 3582 RVA: 0x00082D08 File Offset: 0x00080F08
+    
+    
         internal virtual TextBox txtName
         {
             get
@@ -3860,8 +3860,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000DFF RID: 3583 RVA: 0x00082D64 File Offset: 0x00080F64
-        // (set) Token: 0x06000E00 RID: 3584 RVA: 0x00082D7C File Offset: 0x00080F7C
+    
+    
         internal virtual ToolStripMenuItem ViewToolStripMenuItem
         {
             get
@@ -3876,8 +3876,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000E01 RID: 3585 RVA: 0x00082D88 File Offset: 0x00080F88
-        // (set) Token: 0x06000E02 RID: 3586 RVA: 0x00082DA0 File Offset: 0x00080FA0
+    
+    
         internal virtual ToolStripMenuItem WindowToolStripMenuItem
         {
             get

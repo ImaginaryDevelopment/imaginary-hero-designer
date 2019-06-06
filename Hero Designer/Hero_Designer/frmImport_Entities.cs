@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmImport_Entities : Form
     {
 
-        // (get) Token: 0x06000B4B RID: 2891 RVA: 0x000727F8 File Offset: 0x000709F8
-        // (set) Token: 0x06000B4C RID: 2892 RVA: 0x00072810 File Offset: 0x00070A10
+    
+    
         internal virtual Button btnClose
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B4D RID: 2893 RVA: 0x0007286C File Offset: 0x00070A6C
-        // (set) Token: 0x06000B4E RID: 2894 RVA: 0x00072884 File Offset: 0x00070A84
+    
+    
         internal virtual Button btnFile
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B4F RID: 2895 RVA: 0x000728E0 File Offset: 0x00070AE0
-        // (set) Token: 0x06000B50 RID: 2896 RVA: 0x000728F8 File Offset: 0x00070AF8
+    
+    
         internal virtual Button btnImport
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B51 RID: 2897 RVA: 0x00072954 File Offset: 0x00070B54
-        // (set) Token: 0x06000B52 RID: 2898 RVA: 0x0007296C File Offset: 0x00070B6C
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -106,8 +106,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B53 RID: 2899 RVA: 0x00072978 File Offset: 0x00070B78
-        // (set) Token: 0x06000B54 RID: 2900 RVA: 0x00072990 File Offset: 0x00070B90
+    
+    
         internal virtual Label Label8
         {
             get
@@ -122,8 +122,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B55 RID: 2901 RVA: 0x0007299C File Offset: 0x00070B9C
-        // (set) Token: 0x06000B56 RID: 2902 RVA: 0x000729B4 File Offset: 0x00070BB4
+    
+    
         internal virtual Label lblDate
         {
             get
@@ -138,8 +138,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B57 RID: 2903 RVA: 0x000729C0 File Offset: 0x00070BC0
-        // (set) Token: 0x06000B58 RID: 2904 RVA: 0x000729D8 File Offset: 0x00070BD8
+    
+    
         internal virtual Label lblFile
         {
             get
@@ -154,8 +154,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000B59 RID: 2905 RVA: 0x000729E4 File Offset: 0x00070BE4
-        // (set) Token: 0x06000B5A RID: 2906 RVA: 0x000729FC File Offset: 0x00070BFC
+    
+    
         internal virtual NumericUpDown udRevision
         {
             get

@@ -21,7 +21,7 @@ namespace Hero_Designer.My
     internal sealed class MyProject
     {
 
-        // (get) Token: 0x0600000A RID: 10 RVA: 0x0000217C File Offset: 0x0000037C
+    
         [HelpKeyword("My.Application")]
         internal static MyApplication Application
         {
@@ -33,7 +33,7 @@ namespace Hero_Designer.My
         }
 
 
-        // (get) Token: 0x0600000B RID: 11 RVA: 0x00002198 File Offset: 0x00000398
+    
         [HelpKeyword("My.Computer")]
         internal static MyComputer Computer
         {
@@ -45,7 +45,7 @@ namespace Hero_Designer.My
         }
 
 
-        // (get) Token: 0x0600000C RID: 12 RVA: 0x000021B4 File Offset: 0x000003B4
+    
         [HelpKeyword("My.Forms")]
         internal static MyProject.MyForms Forms
         {
@@ -57,7 +57,7 @@ namespace Hero_Designer.My
         }
 
 
-        // (get) Token: 0x0600000D RID: 13 RVA: 0x000021D0 File Offset: 0x000003D0
+    
         [HelpKeyword("My.User")]
         internal static User User
         {
@@ -69,7 +69,7 @@ namespace Hero_Designer.My
         }
 
 
-        // (get) Token: 0x0600000E RID: 14 RVA: 0x000021EC File Offset: 0x000003EC
+    
         [HelpKeyword("My.WebServices")]
         internal static MyProject.MyWebServices WebServices
         {
@@ -101,8 +101,8 @@ namespace Hero_Designer.My
         internal sealed class MyForms
         {
 
-            // (get) Token: 0x06000011 RID: 17 RVA: 0x00002244 File Offset: 0x00000444
-            // (set) Token: 0x06000012 RID: 18 RVA: 0x00002270 File Offset: 0x00000470
+    
+    
             public frmAbout frmAbout
             {
                 get
@@ -124,8 +124,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000013 RID: 19 RVA: 0x000022B0 File Offset: 0x000004B0
-            // (set) Token: 0x06000014 RID: 20 RVA: 0x000022DC File Offset: 0x000004DC
+    
+    
             public frmBusy frmBusy
             {
                 get
@@ -147,8 +147,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000015 RID: 21 RVA: 0x0000231C File Offset: 0x0000051C
-            // (set) Token: 0x06000016 RID: 22 RVA: 0x00002348 File Offset: 0x00000548
+    
+    
             public frmColourSettings frmColourSettings
             {
                 get
@@ -170,8 +170,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000017 RID: 23 RVA: 0x00002388 File Offset: 0x00000588
-            // (set) Token: 0x06000018 RID: 24 RVA: 0x000023B4 File Offset: 0x000005B4
+    
+    
             public frmCSV frmCSV
             {
                 get
@@ -193,8 +193,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000019 RID: 25 RVA: 0x000023F4 File Offset: 0x000005F4
-            // (set) Token: 0x0600001A RID: 26 RVA: 0x00002420 File Offset: 0x00000620
+    
+    
             public frmDBEdit frmDBEdit
             {
                 get
@@ -216,8 +216,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600001B RID: 27 RVA: 0x00002460 File Offset: 0x00000660
-            // (set) Token: 0x0600001C RID: 28 RVA: 0x0000248C File Offset: 0x0000068C
+    
+    
             public frmEnhEdit frmEnhEdit
             {
                 get
@@ -239,8 +239,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600001D RID: 29 RVA: 0x000024CC File Offset: 0x000006CC
-            // (set) Token: 0x0600001E RID: 30 RVA: 0x000024F8 File Offset: 0x000006F8
+    
+    
             public frmEnhMiniPick frmEnhMiniPick
             {
                 get
@@ -262,8 +262,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600001F RID: 31 RVA: 0x00002538 File Offset: 0x00000738
-            // (set) Token: 0x06000020 RID: 32 RVA: 0x00002564 File Offset: 0x00000764
+    
+    
             public frmEntityListing frmEntityListing
             {
                 get
@@ -285,8 +285,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000021 RID: 33 RVA: 0x000025A4 File Offset: 0x000007A4
-            // (set) Token: 0x06000022 RID: 34 RVA: 0x000025D0 File Offset: 0x000007D0
+    
+    
             public frmForum frmForum
             {
                 get
@@ -308,8 +308,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000023 RID: 35 RVA: 0x00002610 File Offset: 0x00000810
-            // (set) Token: 0x06000024 RID: 36 RVA: 0x0000263C File Offset: 0x0000083C
+    
+    
             public frmImport_Archetype frmImport_Archetype
             {
                 get
@@ -331,8 +331,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000025 RID: 37 RVA: 0x0000267C File Offset: 0x0000087C
-            // (set) Token: 0x06000026 RID: 38 RVA: 0x000026A8 File Offset: 0x000008A8
+    
+    
             public frmImport_EnhancementEffects frmImport_EnhancementEffects
             {
                 get
@@ -354,8 +354,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000027 RID: 39 RVA: 0x000026E8 File Offset: 0x000008E8
-            // (set) Token: 0x06000028 RID: 40 RVA: 0x00002714 File Offset: 0x00000914
+    
+    
             public frmImport_Entities frmImport_Entities
             {
                 get
@@ -377,8 +377,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000029 RID: 41 RVA: 0x00002754 File Offset: 0x00000954
-            // (set) Token: 0x0600002A RID: 42 RVA: 0x00002780 File Offset: 0x00000980
+    
+    
             public frmImport_mod frmImport_mod
             {
                 get
@@ -400,8 +400,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600002B RID: 43 RVA: 0x000027C0 File Offset: 0x000009C0
-            // (set) Token: 0x0600002C RID: 44 RVA: 0x000027EC File Offset: 0x000009EC
+    
+    
             public frmImport_Power frmImport_Power
             {
                 get
@@ -423,8 +423,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600002D RID: 45 RVA: 0x0000282C File Offset: 0x00000A2C
-            // (set) Token: 0x0600002E RID: 46 RVA: 0x00002858 File Offset: 0x00000A58
+    
+    
             public frmImport_Powerset frmImport_Powerset
             {
                 get
@@ -446,8 +446,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600002F RID: 47 RVA: 0x00002898 File Offset: 0x00000A98
-            // (set) Token: 0x06000030 RID: 48 RVA: 0x000028C4 File Offset: 0x00000AC4
+    
+    
             public frmImport_Recipe frmImport_Recipe
             {
                 get
@@ -469,8 +469,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000031 RID: 49 RVA: 0x00002904 File Offset: 0x00000B04
-            // (set) Token: 0x06000032 RID: 50 RVA: 0x00002930 File Offset: 0x00000B30
+    
+    
             public frmImport_SalvageReq frmImport_SalvageReq
             {
                 get
@@ -492,8 +492,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000033 RID: 51 RVA: 0x00002970 File Offset: 0x00000B70
-            // (set) Token: 0x06000034 RID: 52 RVA: 0x0000299C File Offset: 0x00000B9C
+    
+    
             public frmImport_SetAssignments frmImport_SetAssignments
             {
                 get
@@ -515,8 +515,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000035 RID: 53 RVA: 0x000029DC File Offset: 0x00000BDC
-            // (set) Token: 0x06000036 RID: 54 RVA: 0x00002A08 File Offset: 0x00000C08
+    
+    
             public frmImport_SetBonusAssignment frmImport_SetBonusAssignment
             {
                 get
@@ -538,8 +538,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000037 RID: 55 RVA: 0x00002A48 File Offset: 0x00000C48
-            // (set) Token: 0x06000038 RID: 56 RVA: 0x00002A74 File Offset: 0x00000C74
+    
+    
             public frmImportEffects frmImportEffects
             {
                 get
@@ -561,8 +561,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000039 RID: 57 RVA: 0x00002AB4 File Offset: 0x00000CB4
-            // (set) Token: 0x0600003A RID: 58 RVA: 0x00002AE0 File Offset: 0x00000CE0
+    
+    
             public frmImportEnhSets frmImportEnhSets
             {
                 get
@@ -584,8 +584,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600003B RID: 59 RVA: 0x00002B20 File Offset: 0x00000D20
-            // (set) Token: 0x0600003C RID: 60 RVA: 0x00002B4C File Offset: 0x00000D4C
+    
+    
             public frmImportPowerLevels frmImportPowerLevels
             {
                 get
@@ -607,8 +607,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600003D RID: 61 RVA: 0x00002B8C File Offset: 0x00000D8C
-            // (set) Token: 0x0600003E RID: 62 RVA: 0x00002BB8 File Offset: 0x00000DB8
+    
+    
             public frmLoading frmLoading
             {
                 get
@@ -630,8 +630,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600003F RID: 63 RVA: 0x00002BF8 File Offset: 0x00000DF8
-            // (set) Token: 0x06000040 RID: 64 RVA: 0x00002C24 File Offset: 0x00000E24
+    
+    
             public frmMain frmMain
             {
                 get
@@ -653,8 +653,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000041 RID: 65 RVA: 0x00002C64 File Offset: 0x00000E64
-            // (set) Token: 0x06000042 RID: 66 RVA: 0x00002C90 File Offset: 0x00000E90
+    
+    
             public frmOptionListDlg frmOptionListDlg
             {
                 get
@@ -676,8 +676,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000043 RID: 67 RVA: 0x00002CD0 File Offset: 0x00000ED0
-            // (set) Token: 0x06000044 RID: 68 RVA: 0x00002CFC File Offset: 0x00000EFC
+    
+    
             public frmPowerBrowser frmPowerBrowser
             {
                 get
@@ -699,8 +699,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000045 RID: 69 RVA: 0x00002D3C File Offset: 0x00000F3C
-            // (set) Token: 0x06000046 RID: 70 RVA: 0x00002D68 File Offset: 0x00000F68
+    
+    
             public frmPrint frmPrint
             {
                 get
@@ -722,8 +722,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000047 RID: 71 RVA: 0x00002DA8 File Offset: 0x00000FA8
-            // (set) Token: 0x06000048 RID: 72 RVA: 0x00002DD4 File Offset: 0x00000FD4
+    
+    
             public frmRecipeEdit frmRecipeEdit
             {
                 get
@@ -745,8 +745,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x06000049 RID: 73 RVA: 0x00002E14 File Offset: 0x00001014
-            // (set) Token: 0x0600004A RID: 74 RVA: 0x00002E40 File Offset: 0x00001040
+    
+    
             public frmSalvageEdit frmSalvageEdit
             {
                 get
@@ -768,8 +768,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600004B RID: 75 RVA: 0x00002E80 File Offset: 0x00001080
-            // (set) Token: 0x0600004C RID: 76 RVA: 0x00002EAC File Offset: 0x000010AC
+    
+    
             public frmSetListing frmSetListing
             {
                 get
@@ -791,8 +791,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600004D RID: 77 RVA: 0x00002EEC File Offset: 0x000010EC
-            // (set) Token: 0x0600004E RID: 78 RVA: 0x00002F18 File Offset: 0x00001118
+    
+    
             public frmTweakMatching frmTweakMatching
             {
                 get
@@ -814,8 +814,8 @@ namespace Hero_Designer.My
             }
 
 
-            // (get) Token: 0x0600004F RID: 79 RVA: 0x00002F58 File Offset: 0x00001158
-            // (set) Token: 0x06000050 RID: 80 RVA: 0x00002F84 File Offset: 0x00001184
+    
+    
             public frmZStatus frmZStatus
             {
                 get
@@ -1085,7 +1085,7 @@ namespace Hero_Designer.My
         internal sealed class ThreadSafeObjectProvider<T> where T : new()
         {
 
-            // (get) Token: 0x0600005F RID: 95 RVA: 0x0000322C File Offset: 0x0000142C
+    
             internal T GetInstance
             {
                 [DebuggerHidden]

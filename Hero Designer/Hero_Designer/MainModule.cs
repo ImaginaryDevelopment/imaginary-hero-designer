@@ -16,7 +16,7 @@ namespace Hero_Designer
         public class MidsController
         {
 
-            // (get) Token: 0x060013D0 RID: 5072 RVA: 0x000C9FD0 File Offset: 0x000C81D0
+    
             public static bool IsAppInitialized
             {
                 get
@@ -26,8 +26,8 @@ namespace Hero_Designer
             }
 
 
-            // (get) Token: 0x060013D1 RID: 5073 RVA: 0x000C9FE8 File Offset: 0x000C81E8
-            // (set) Token: 0x060013D2 RID: 5074 RVA: 0x000CA004 File Offset: 0x000C8204
+    
+    
             public static clsToonX Toon
             {
                 get

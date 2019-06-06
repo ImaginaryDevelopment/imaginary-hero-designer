@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmSetViewer : Form
     {
 
-        // (get) Token: 0x060012B1 RID: 4785 RVA: 0x000BA660 File Offset: 0x000B8860
-        // (set) Token: 0x060012B2 RID: 4786 RVA: 0x000BA678 File Offset: 0x000B8878
+    
+    
         internal virtual ImageButton btnClose
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012B3 RID: 4787 RVA: 0x000BA6D4 File Offset: 0x000B88D4
-        // (set) Token: 0x060012B4 RID: 4788 RVA: 0x000BA6EC File Offset: 0x000B88EC
+    
+    
         internal virtual ImageButton btnSmall
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012B5 RID: 4789 RVA: 0x000BA748 File Offset: 0x000B8948
-        // (set) Token: 0x060012B6 RID: 4790 RVA: 0x000BA760 File Offset: 0x000B8960
+    
+    
         internal virtual ImageButton chkOnTop
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012B7 RID: 4791 RVA: 0x000BA7BC File Offset: 0x000B89BC
-        // (set) Token: 0x060012B8 RID: 4792 RVA: 0x000BA7D4 File Offset: 0x000B89D4
+    
+    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -106,8 +106,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012B9 RID: 4793 RVA: 0x000BA7E0 File Offset: 0x000B89E0
-        // (set) Token: 0x060012BA RID: 4794 RVA: 0x000BA7F8 File Offset: 0x000B89F8
+    
+    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -122,8 +122,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012BB RID: 4795 RVA: 0x000BA804 File Offset: 0x000B8A04
-        // (set) Token: 0x060012BC RID: 4796 RVA: 0x000BA81C File Offset: 0x000B8A1C
+    
+    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -138,8 +138,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012BD RID: 4797 RVA: 0x000BA828 File Offset: 0x000B8A28
-        // (set) Token: 0x060012BE RID: 4798 RVA: 0x000BA840 File Offset: 0x000B8A40
+    
+    
         internal virtual ImageList ilSet
         {
             get
@@ -154,8 +154,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012BF RID: 4799 RVA: 0x000BA84C File Offset: 0x000B8A4C
-        // (set) Token: 0x060012C0 RID: 4800 RVA: 0x000BA864 File Offset: 0x000B8A64
+    
+    
         internal virtual Label Label1
         {
             get
@@ -170,8 +170,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012C1 RID: 4801 RVA: 0x000BA870 File Offset: 0x000B8A70
-        // (set) Token: 0x060012C2 RID: 4802 RVA: 0x000BA888 File Offset: 0x000B8A88
+    
+    
         internal virtual Label Label2
         {
             get
@@ -186,8 +186,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012C3 RID: 4803 RVA: 0x000BA894 File Offset: 0x000B8A94
-        // (set) Token: 0x060012C4 RID: 4804 RVA: 0x000BA8AC File Offset: 0x000B8AAC
+    
+    
         internal virtual ListView lstSets
         {
             get
@@ -211,8 +211,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012C5 RID: 4805 RVA: 0x000BA908 File Offset: 0x000B8B08
-        // (set) Token: 0x060012C6 RID: 4806 RVA: 0x000BA920 File Offset: 0x000B8B20
+    
+    
         internal virtual RichTextBox rtApplied
         {
             get
@@ -227,8 +227,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012C7 RID: 4807 RVA: 0x000BA92C File Offset: 0x000B8B2C
-        // (set) Token: 0x060012C8 RID: 4808 RVA: 0x000BA944 File Offset: 0x000B8B44
+    
+    
         internal virtual RichTextBox rtxtFX
         {
             get
@@ -243,8 +243,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x060012C9 RID: 4809 RVA: 0x000BA950 File Offset: 0x000B8B50
-        // (set) Token: 0x060012CA RID: 4810 RVA: 0x000BA968 File Offset: 0x000B8B68
+    
+    
         internal virtual RichTextBox rtxtInfo
         {
             get

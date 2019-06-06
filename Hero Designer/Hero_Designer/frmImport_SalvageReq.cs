@@ -15,8 +15,8 @@ namespace Hero_Designer
     public partial class frmImport_SalvageReq : Form
     {
 
-        // (get) Token: 0x06000C18 RID: 3096 RVA: 0x00078688 File Offset: 0x00076888
-        // (set) Token: 0x06000C19 RID: 3097 RVA: 0x000786A0 File Offset: 0x000768A0
+    
+    
         internal virtual Button btnClose
         {
             get
@@ -40,8 +40,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C1A RID: 3098 RVA: 0x000786FC File Offset: 0x000768FC
-        // (set) Token: 0x06000C1B RID: 3099 RVA: 0x00078714 File Offset: 0x00076914
+    
+    
         internal virtual Button btnFile
         {
             get
@@ -65,8 +65,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C1C RID: 3100 RVA: 0x00078770 File Offset: 0x00076970
-        // (set) Token: 0x06000C1D RID: 3101 RVA: 0x00078788 File Offset: 0x00076988
+    
+    
         internal virtual Button btnImport
         {
             get
@@ -90,8 +90,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C1E RID: 3102 RVA: 0x000787E4 File Offset: 0x000769E4
-        // (set) Token: 0x06000C1F RID: 3103 RVA: 0x000787FC File Offset: 0x000769FC
+    
+    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -106,8 +106,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000C20 RID: 3104 RVA: 0x00078808 File Offset: 0x00076A08
-        // (set) Token: 0x06000C21 RID: 3105 RVA: 0x00078820 File Offset: 0x00076A20
+    
+    
         internal virtual Label lblFile
         {
             get

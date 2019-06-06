@@ -14,8 +14,8 @@ namespace Hero_Designer
     public partial class FrmInputLevel : Form
     {
 
-        // (get) Token: 0x06000CA0 RID: 3232 RVA: 0x0007DD54 File Offset: 0x0007BF54
-        // (set) Token: 0x06000CA1 RID: 3233 RVA: 0x0007DD6C File Offset: 0x0007BF6C
+    
+    
         internal virtual Button btnOK
         {
             get
@@ -39,8 +39,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CA2 RID: 3234 RVA: 0x0007DDC8 File Offset: 0x0007BFC8
-        // (set) Token: 0x06000CA3 RID: 3235 RVA: 0x0007DDE0 File Offset: 0x0007BFE0
+    
+    
         internal virtual Label Label1
         {
             get
@@ -55,8 +55,8 @@ namespace Hero_Designer
         }
 
 
-        // (get) Token: 0x06000CA4 RID: 3236 RVA: 0x0007DDEC File Offset: 0x0007BFEC
-        // (set) Token: 0x06000CA5 RID: 3237 RVA: 0x0007DE04 File Offset: 0x0007C004
+    
+    
         internal virtual NumericUpDown udLevel
         {
             get

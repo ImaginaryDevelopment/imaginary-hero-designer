@@ -3,11 +3,10 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-// Token: 0x0200001A RID: 26
 public class ConfigData
 {
 
-    // (get) Token: 0x060004B8 RID: 1208 RVA: 0x0001A3A0 File Offset: 0x000185A0
+
     internal static ConfigData Current
     {
         get
@@ -22,8 +21,6 @@ public class ConfigData
     }
 
 
-    // (get) Token: 0x060004B9 RID: 1209 RVA: 0x0001A3D8 File Offset: 0x000185D8
-    // (set) Token: 0x060004BA RID: 1210 RVA: 0x0001A3F5 File Offset: 0x000185F5
     public bool PrintHistoryIOLevels
     {
         get
