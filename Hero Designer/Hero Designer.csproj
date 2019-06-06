@@ -594,6 +594,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Images\**\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\AttribMod.mhd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
