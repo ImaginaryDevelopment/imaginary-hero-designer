@@ -14,10 +14,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200000B RID: 11
+
     public class clsToonX : Character
     {
-        // Token: 0x06000073 RID: 115 RVA: 0x00005968 File Offset: 0x00003B68
+
         private void ApplyPvpDr()
         {
             if (MidsContext.Config.Inc.PvE)
@@ -25,7 +25,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000074 RID: 116 RVA: 0x00005990 File Offset: 0x00003B90
+
         private static PopUp.StringValue BuildEDItem(int index, float[] value, Enums.eSchedule[] schedule, string edName, float[] afterED)
         {
             PopUp.StringValue stringValue = default(PopUp.StringValue);
@@ -87,7 +87,7 @@ namespace Hero_Designer
             return stringValue2;
         }
 
-        // Token: 0x06000075 RID: 117 RVA: 0x00005BE4 File Offset: 0x00003DE4
+
         public void BuildPower(int iSet, int powerID, bool noPoolShuffle = false)
         {
             if (!(iSet < 0 | powerID < 0))
@@ -217,7 +217,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000076 RID: 118 RVA: 0x00005FF0 File Offset: 0x000041F0
+
         public int BuildSlot(int powerIDX, int slotIDX = -1)
         {
             int num;
@@ -261,13 +261,13 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000077 RID: 119 RVA: 0x0000614C File Offset: 0x0000434C
+
         private static float CalculatePvpDr(float val, float a, float b)
         {
             return (float)((double)val * (1.0 - Math.Abs(Math.Atan((double)(a * val))) * 0.63661977236758138 * (double)b));
         }
 
-        // Token: 0x06000078 RID: 120 RVA: 0x00006188 File Offset: 0x00004388
+
         public static string FixSpelling(string iString)
         {
             iString = iString.Replace("Armour", "Armor");
@@ -275,7 +275,7 @@ namespace Hero_Designer
             return iString;
         }
 
-        // Token: 0x06000079 RID: 121 RVA: 0x000061C0 File Offset: 0x000043C0
+
         public void FlipAllSlots()
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -286,7 +286,7 @@ namespace Hero_Designer
             this.GenerateBuffedPowerArray();
         }
 
-        // Token: 0x0600007A RID: 122 RVA: 0x00006208 File Offset: 0x00004408
+
         public void FlipSlots(int iPowerSlot)
         {
             if (iPowerSlot >= 0)
@@ -299,7 +299,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600007B RID: 123 RVA: 0x00006270 File Offset: 0x00004470
+
         private static void GBD_Stage(ref IPower tPwr, ref Enums.BuffsX nBuffs, bool enhancementPass)
         {
             if (tPwr != null && tPwr.PowerType != Enums.ePowerType.GlobalBoost)
@@ -492,7 +492,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600007C RID: 124 RVA: 0x00006AE0 File Offset: 0x00004CE0
+
         private void GBD_Totals()
         {
             base.Totals.Init();
@@ -634,7 +634,7 @@ namespace Hero_Designer
             base.TotalsCapped.Perception = Math.Min(base.TotalsCapped.Perception, base.Archetype.PerceptionCap);
         }
 
-        // Token: 0x0600007D RID: 125 RVA: 0x00007460 File Offset: 0x00005660
+
         private bool GBPA_AddEnhFX(ref IPower iPower, int iIndex)
         {
             bool flag;
@@ -692,7 +692,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600007E RID: 126 RVA: 0x000077B0 File Offset: 0x000059B0
+
         private bool GBPA_AddSubPowerEffects(ref IPower Ret, int hIDX)
         {
             bool flag;
@@ -744,7 +744,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600007F RID: 127 RVA: 0x00007A94 File Offset: 0x00005C94
+
         private void GBPA_ApplyArchetypeCaps(ref IPower powerMath)
         {
             if (powerMath.RechargeTime > base.Archetype.RechargeCap)
@@ -761,7 +761,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000080 RID: 128 RVA: 0x00007B48 File Offset: 0x00005D48
+
         private bool GBPA_ApplyIncarnateEnhancements(ref IPower powerMath, int hIDX, IPower power, bool ignoreED, ref Enums.eEffectType effectType)
         {
             bool flag = false;
@@ -1058,7 +1058,7 @@ namespace Hero_Designer
             return flag2;
         }
 
-        // Token: 0x06000081 RID: 129 RVA: 0x000087B4 File Offset: 0x000069B4
+
         private IPower GBPA_ApplyPowerOverride(ref IPower ret)
         {
             if (ret.HasPowerOverrideEffect)
@@ -1078,7 +1078,7 @@ namespace Hero_Designer
             return ret;
         }
 
-        // Token: 0x06000082 RID: 130 RVA: 0x000088AC File Offset: 0x00006AAC
+
         private bool GBPA_MultiplyVariable(ref IPower iPower, int hIDX)
         {
             bool flag;
@@ -1111,7 +1111,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000083 RID: 131 RVA: 0x00008974 File Offset: 0x00006B74
+
         private bool GBPA_Pass0_InitializePowerArray()
         {
             this._buffedPower = new IPower[base.CurrentBuild.Powers.Count - 1 + 1];
@@ -1153,7 +1153,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000084 RID: 132 RVA: 0x00008BB0 File Offset: 0x00006DB0
+
         private bool GBPA_Pass1_EnhancePreED(ref IPower powerMath, int hIDX)
         {
             Enums.eEffectType eEffectType2 = Enums.eEffectType.None;
@@ -1296,7 +1296,7 @@ namespace Hero_Designer
             return flag2;
         }
 
-        // Token: 0x06000085 RID: 133 RVA: 0x00009220 File Offset: 0x00007420
+
         private static bool GBPA_Pass2_ApplyED(ref IPower powerMath)
         {
             Enums.eEffectType eEffectType = Enums.eEffectType.None;
@@ -1363,7 +1363,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000086 RID: 134 RVA: 0x00009544 File Offset: 0x00007744
+
         private bool GBPA_Pass3_EnhancePostED(ref IPower powerMath, int hIDX)
         {
             bool flag = DatabaseAPI.Database.Power[base.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.Accuracy);
@@ -1571,7 +1571,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000087 RID: 135 RVA: 0x00009D90 File Offset: 0x00007F90
+
         private static bool GBPA_Pass4_Add(ref IPower powerMath)
         {
             IPower power = powerMath;
@@ -1595,7 +1595,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000088 RID: 136 RVA: 0x00009E64 File Offset: 0x00008064
+
         private static bool GBPA_Pass5_MultiplyPreBuff(ref IPower powerMath, ref IPower powerBuffed)
         {
             bool flag;
@@ -1624,7 +1624,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000089 RID: 137 RVA: 0x00009F70 File Offset: 0x00008170
+
         private bool GBPA_Pass6_MultiplyPostBuff(ref IPower powerMath, ref IPower powerBuffed)
         {
             bool flag;
@@ -1655,7 +1655,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600008A RID: 138 RVA: 0x0000A04C File Offset: 0x0000824C
+
         private IPower GBPA_SubPass0_AssemblePowerEntry(int nIDPower, int hIDX)
         {
             IPower power;
@@ -1676,7 +1676,7 @@ namespace Hero_Designer
             return power;
         }
 
-        // Token: 0x0600008B RID: 139 RVA: 0x0000A0B4 File Offset: 0x000082B4
+
         private void GenerateBuffData(ref Enums.BuffsX nBuffs, bool enhancementPass)
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -1710,7 +1710,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600008C RID: 140 RVA: 0x0000A21C File Offset: 0x0000841C
+
         public void GenerateBuffedPowerArray()
         {
             base.CurrentBuild.GenerateSetBonusData();
@@ -1747,7 +1747,7 @@ namespace Hero_Designer
             this.GBD_Totals();
         }
 
-        // Token: 0x0600008D RID: 141 RVA: 0x0000A3D0 File Offset: 0x000085D0
+
         private void GenerateModifyEffectsArray()
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -1794,7 +1794,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600008E RID: 142 RVA: 0x0000A5EC File Offset: 0x000087EC
+
         public IPower GetBasePower(int iPower, int nIDPower = -1)
         {
             if (iPower > -1)
@@ -1833,7 +1833,7 @@ namespace Hero_Designer
             return powerMath;
         }
 
-        // Token: 0x0600008F RID: 143 RVA: 0x0000A75C File Offset: 0x0000895C
+
         private static int GetClassByName(string iName)
         {
             int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
@@ -1859,7 +1859,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x06000090 RID: 144 RVA: 0x0000A81C File Offset: 0x00008A1C
+
         public IPower GetEnhancedPower(int iPower)
         {
             IPower result;
@@ -1874,7 +1874,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000091 RID: 145 RVA: 0x0000A85C File Offset: 0x00008A5C
+
         public int[] GetEnhancements(int iPowerSlot)
         {
             int[] numArray = new int[0];
@@ -1890,7 +1890,7 @@ namespace Hero_Designer
             return numArray;
         }
 
-        // Token: 0x06000092 RID: 146 RVA: 0x0000A914 File Offset: 0x00008B14
+
         private bool ImportInternalDataUC(StreamReader iStream, float nVer)
         {
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
@@ -2063,7 +2063,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000093 RID: 147 RVA: 0x0000B0F4 File Offset: 0x000092F4
+
         private static string[] IoGrab2(StreamReader iStream, string delimiter = ";", char fakeLf = '\0')
         {
             char[] chArray2 = new char[]
@@ -2088,7 +2088,7 @@ namespace Hero_Designer
             return strArray;
         }
 
-        // Token: 0x06000094 RID: 148 RVA: 0x0000B188 File Offset: 0x00009388
+
         public bool Load(string iFileName, ref Stream mStream)
         {
             Stream iStream;
@@ -2136,7 +2136,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000095 RID: 149 RVA: 0x0000B2A4 File Offset: 0x000094A4
+
         public PopUp.PopupData PopPowerInfo(int hIDX, int pIDX)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -2305,7 +2305,7 @@ namespace Hero_Designer
             return popupData;
         }
 
-        // Token: 0x06000096 RID: 150 RVA: 0x0000BD50 File Offset: 0x00009F50
+
         public PopUp.PopupData PopPowersetInfo(int nIDPowerset, string extraString = "")
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -2350,7 +2350,7 @@ namespace Hero_Designer
             return popupData;
         }
 
-        // Token: 0x06000097 RID: 151 RVA: 0x0000BFC8 File Offset: 0x0000A1C8
+
         private PopUp.Section PopSlottedEnhInfo(int hIDX)
         {
             PopUp.Section section = new PopUp.Section();
@@ -2680,7 +2680,7 @@ namespace Hero_Designer
             return section;
         }
 
-        // Token: 0x06000098 RID: 152 RVA: 0x0000CF3C File Offset: 0x0000B13C
+
         public ListLabelV2.LLItemState PowerState(int nIDPower, ref string message)
         {
             if (nIDPower >= 0)
@@ -2813,7 +2813,7 @@ namespace Hero_Designer
             return ListLabelV2.LLItemState.Disabled;
         }
 
-        // Token: 0x06000099 RID: 153 RVA: 0x0000D324 File Offset: 0x0000B524
+
         private bool ReadInternalData(StreamReader iStream)
         {
             iStream.BaseStream.Seek(0L, SeekOrigin.Begin);
@@ -2883,7 +2883,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600009A RID: 154 RVA: 0x0000D52C File Offset: 0x0000B72C
+
         private bool ReadInternalDataUC(StreamReader iStream)
         {
             string[] strArray4;
@@ -3016,7 +3016,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600009B RID: 155 RVA: 0x0000DB2C File Offset: 0x0000BD2C
+
         public void Save(string iFileName)
         {
             if (base.Archetype == null)
@@ -3057,7 +3057,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600009C RID: 156 RVA: 0x0000DC60 File Offset: 0x0000BE60
+
         private void SetPower_NID(int Index, int nIDPower)
         {
             if (!(Index < 0 | Index >= base.CurrentBuild.Powers.Count))
@@ -3098,7 +3098,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600009D RID: 157 RVA: 0x0000DE48 File Offset: 0x0000C048
+
         public bool StringToInternalData(string iString)
         {
             bool flag;
@@ -3180,7 +3180,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x0600009E RID: 158 RVA: 0x0000E150 File Offset: 0x0000C350
+
         private bool TestPower(int nIDPower)
         {
             bool flag;
@@ -3196,16 +3196,16 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x04000035 RID: 53
+
         private IPower[] _buffedPower = new IPower[0];
 
-        // Token: 0x04000036 RID: 54
+
         private IPower[] _mathPower = new IPower[0];
 
-        // Token: 0x04000037 RID: 55
+
         private Enums.BuffsX _selfBuffs;
 
-        // Token: 0x04000038 RID: 56
+
         private Enums.BuffsX _selfEnhance;
     }
 }

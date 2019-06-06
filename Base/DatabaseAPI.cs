@@ -10,7 +10,7 @@ using Base.Master_Classes;
 // Token: 0x02000027 RID: 39
 public static class DatabaseAPI
 {
-    // Token: 0x17000205 RID: 517
+
     // (get) Token: 0x060004C9 RID: 1225 RVA: 0x0001C148 File Offset: 0x0001A348
     public static IDatabase Database
     {
@@ -20,14 +20,14 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x060004CA RID: 1226 RVA: 0x0001C15F File Offset: 0x0001A35F
+
     private static void ClearLookups()
     {
         DatabaseAPI.AttribMod.Clear();
         DatabaseAPI.Classes.Clear();
     }
 
-    // Token: 0x060004CB RID: 1227 RVA: 0x0001C178 File Offset: 0x0001A378
+
     public static int NidFromUidAttribMod(string uID)
     {
         int num;
@@ -54,7 +54,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004CC RID: 1228 RVA: 0x0001C228 File Offset: 0x0001A428
+
     public static int NidFromUidClass(string uidClass)
     {
         int num;
@@ -81,7 +81,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004CD RID: 1229 RVA: 0x0001C2CC File Offset: 0x0001A4CC
+
     public static string UidFromNidClass(int nIDClass)
     {
         string result;
@@ -96,7 +96,7 @@ public static class DatabaseAPI
         return result;
     }
 
-    // Token: 0x060004CE RID: 1230 RVA: 0x0001C318 File Offset: 0x0001A518
+
     public static int NidFromUidOrigin(string uidOrigin, int nIDClass)
     {
         int num;
@@ -118,7 +118,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004CF RID: 1231 RVA: 0x0001C38C File Offset: 0x0001A58C
+
     private static void FillGroupArray()
     {
         DatabaseAPI.Database.PowersetGroups = new Dictionary<string, PowersetGroup>();
@@ -138,7 +138,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x060004D0 RID: 1232 RVA: 0x0001C444 File Offset: 0x0001A644
+
     public static int NidFromUidPowerset(string uidPowerset)
     {
         IPowerset powersetByName = DatabaseAPI.GetPowersetByName(uidPowerset);
@@ -154,7 +154,7 @@ public static class DatabaseAPI
         return result;
     }
 
-    // Token: 0x060004D1 RID: 1233 RVA: 0x0001C478 File Offset: 0x0001A678
+
     public static int NidFromStaticIndexPower(int sidPower)
     {
         int num;
@@ -176,7 +176,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004D2 RID: 1234 RVA: 0x0001C4E4 File Offset: 0x0001A6E4
+
     public static int NidFromUidPower(string name)
     {
         IPower powerByName = DatabaseAPI.GetPowerByName(name);
@@ -192,7 +192,7 @@ public static class DatabaseAPI
         return result;
     }
 
-    // Token: 0x060004D3 RID: 1235 RVA: 0x0001C518 File Offset: 0x0001A718
+
     public static int NidFromUidEntity(string uidEntity)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Entities.Length - 1; index++)
@@ -205,7 +205,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004D4 RID: 1236 RVA: 0x0001C578 File Offset: 0x0001A778
+
     public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType)
     {
         List<int> intList = new List<int>();
@@ -252,13 +252,13 @@ public static class DatabaseAPI
         return array;
     }
 
-    // Token: 0x060004D5 RID: 1237 RVA: 0x0001C760 File Offset: 0x0001A960
+
     public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
     {
         return DatabaseAPI.NidSets(DatabaseAPI.Database.PowersetGroups.ContainsKey(uidGroup) ? DatabaseAPI.Database.PowersetGroups[uidGroup] : null, DatabaseAPI.NidFromUidClass(uidClass), nType);
     }
 
-    // Token: 0x060004D6 RID: 1238 RVA: 0x0001C7A4 File Offset: 0x0001A9A4
+
     public static int[] NidPowers(int nIDPowerset, int nIDClass = -1)
     {
         int[] array = new int[0];
@@ -284,13 +284,13 @@ public static class DatabaseAPI
         return array;
     }
 
-    // Token: 0x060004D7 RID: 1239 RVA: 0x0001C890 File Offset: 0x0001AA90
+
     public static int[] NidPowers(string uidPowerset, string uidClass = "")
     {
         return DatabaseAPI.NidPowers(DatabaseAPI.NidFromUidPowerset(uidPowerset), DatabaseAPI.NidFromUidClass(uidClass));
     }
 
-    // Token: 0x060004D8 RID: 1240 RVA: 0x0001C8B4 File Offset: 0x0001AAB4
+
     public static string[] UidPowers(string uidPowerset, string uidClass = "")
     {
         string[] array = new string[0];
@@ -316,7 +316,7 @@ public static class DatabaseAPI
         return array;
     }
 
-    // Token: 0x060004D9 RID: 1241 RVA: 0x0001C9B8 File Offset: 0x0001ABB8
+
     private static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
     {
         int[] array = new int[0];
@@ -340,7 +340,7 @@ public static class DatabaseAPI
         return numArray;
     }
 
-    // Token: 0x060004DA RID: 1242 RVA: 0x0001CA6C File Offset: 0x0001AC6C
+
     public static int[] NidPowersAtLevelBranch(int iLevel, int nIDPowerset)
     {
         int[] numArray3 = new int[0];
@@ -371,7 +371,7 @@ public static class DatabaseAPI
         return numArray4;
     }
 
-    // Token: 0x060004DB RID: 1243 RVA: 0x0001CB30 File Offset: 0x0001AD30
+
     public static string[] UidMutexAll()
     {
         string[] array = new string[0];
@@ -402,7 +402,7 @@ public static class DatabaseAPI
         return array;
     }
 
-    // Token: 0x060004DC RID: 1244 RVA: 0x0001CC50 File Offset: 0x0001AE50
+
     public static IPowerset GetPowersetByName(string iName)
     {
         string[] strArray = iName.Split(new char[]
@@ -441,7 +441,7 @@ public static class DatabaseAPI
         return powerset;
     }
 
-    // Token: 0x060004DD RID: 1245 RVA: 0x0001CD10 File Offset: 0x0001AF10
+
     public static IPowerset GetPowersetByName(string iName, string iArchetype)
     {
         int idx = DatabaseAPI.GetArchetypeByName(iArchetype).Idx;
@@ -469,7 +469,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004DE RID: 1246 RVA: 0x0001CDE8 File Offset: 0x0001AFE8
+
     public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
     {
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -482,7 +482,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004DF RID: 1247 RVA: 0x0001CE50 File Offset: 0x0001B050
+
     public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
     {
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -495,7 +495,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004E0 RID: 1248 RVA: 0x0001CEB8 File Offset: 0x0001B0B8
+
     public static IPowerset GetInherentPowerset()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; index++)
@@ -508,7 +508,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004E1 RID: 1249 RVA: 0x0001CF1C File Offset: 0x0001B11C
+
     public static Archetype GetArchetypeByName(string iArchetype)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; index++)
@@ -521,7 +521,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004E2 RID: 1250 RVA: 0x0001CF84 File Offset: 0x0001B184
+
     public static int GetOriginByName(Archetype archetype, string iOrigin)
     {
         for (int index = 0; index <= archetype.Origin.Length - 1; index++)
@@ -534,7 +534,7 @@ public static class DatabaseAPI
         return 0;
     }
 
-    // Token: 0x060004E3 RID: 1251 RVA: 0x0001CFD4 File Offset: 0x0001B1D4
+
     public static int GetPowerByName(string iName, int iArchetype)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; index++)
@@ -552,7 +552,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004E4 RID: 1252 RVA: 0x0001D08C File Offset: 0x0001B28C
+
     public static IPower GetPowerByName(string name)
     {
         IPower power;
@@ -582,7 +582,7 @@ public static class DatabaseAPI
         return power;
     }
 
-    // Token: 0x060004E5 RID: 1253 RVA: 0x0001D118 File Offset: 0x0001B318
+
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
     {
         List<string> stringList = new List<string>();
@@ -633,7 +633,7 @@ public static class DatabaseAPI
         return strArray;
     }
 
-    // Token: 0x060004E6 RID: 1254 RVA: 0x0001D28C File Offset: 0x0001B48C
+
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
         List<int> intList = new List<int>();
@@ -644,7 +644,7 @@ public static class DatabaseAPI
         return intList.ToArray();
     }
 
-    // Token: 0x060004E7 RID: 1255 RVA: 0x0001D308 File Offset: 0x0001B508
+
     public static int[] GetPowersetIndexesByGroupName(string name)
     {
         int[] result;
@@ -659,13 +659,13 @@ public static class DatabaseAPI
         return result;
     }
 
-    // Token: 0x060004E8 RID: 1256 RVA: 0x0001D360 File Offset: 0x0001B560
+
     public static IPowerset[] GetPowersetIndexes(Archetype at, Enums.ePowerSetType iSet)
     {
         return DatabaseAPI.GetPowersetIndexes(at.Idx, iSet);
     }
 
-    // Token: 0x060004E9 RID: 1257 RVA: 0x0001D380 File Offset: 0x0001B580
+
     public static IPowerset[] GetPowersetIndexes(int iAT, Enums.ePowerSetType iSet)
     {
         List<IPowerset> powersetList = new List<IPowerset>();
@@ -697,7 +697,7 @@ public static class DatabaseAPI
         return powersetList.ToArray();
     }
 
-    // Token: 0x060004EA RID: 1258 RVA: 0x0001D4E0 File Offset: 0x0001B6E0
+
     public static int ToDisplayIndex(IPowerset iPowerset, IPowerset[] iIndexes)
     {
         for (int index = 0; index <= iIndexes.Length - 1; index++)
@@ -714,7 +714,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004EB RID: 1259 RVA: 0x0001D540 File Offset: 0x0001B740
+
     public static int GetEnhancementByUIDName(string iName)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; index++)
@@ -727,7 +727,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004EC RID: 1260 RVA: 0x0001D59C File Offset: 0x0001B79C
+
     public static int GetEnhancementByName(string iName)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; index++)
@@ -740,7 +740,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004ED RID: 1261 RVA: 0x0001D618 File Offset: 0x0001B818
+
     public static int GetEnhancementByName(string iName, Enums.eType iType)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; index++)
@@ -753,7 +753,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004EE RID: 1262 RVA: 0x0001D6AC File Offset: 0x0001B8AC
+
     public static int GetEnhancementByName(string iName, string iSet)
     {
         foreach (EnhancementSet enhancementSet in DatabaseAPI.Database.EnhancementSets)
@@ -772,7 +772,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004EF RID: 1263 RVA: 0x0001D788 File Offset: 0x0001B988
+
     public static int FindEnhancement(string setName, string enhName, int iType, int fallBack)
     {
         for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; index++)
@@ -803,7 +803,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004F0 RID: 1264 RVA: 0x0001D874 File Offset: 0x0001BA74
+
     public static int GetRecipeIdxByName(string iName)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Recipes.Length - 1; index++)
@@ -816,7 +816,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004F1 RID: 1265 RVA: 0x0001D8D4 File Offset: 0x0001BAD4
+
     public static Recipe GetRecipeByName(string iName)
     {
         foreach (Recipe recipe in DatabaseAPI.Database.Recipes)
@@ -829,7 +829,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    // Token: 0x060004F2 RID: 1266 RVA: 0x0001D930 File Offset: 0x0001BB30
+
     public static string[] UidReferencingPowerFix(string uidPower, string uidNew = "")
     {
         string[] array = new string[0];
@@ -853,7 +853,7 @@ public static class DatabaseAPI
         return array;
     }
 
-    // Token: 0x060004F3 RID: 1267 RVA: 0x0001DA68 File Offset: 0x0001BC68
+
     public static int NidFromStaticIndexEnh(int sidEnh)
     {
         int num;
@@ -875,7 +875,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004F4 RID: 1268 RVA: 0x0001DAD0 File Offset: 0x0001BCD0
+
     public static int NidFromUidioSet(string uidSet)
     {
         for (int index = 0; index < DatabaseAPI.Database.EnhancementSets.Count; index++)
@@ -888,7 +888,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004F5 RID: 1269 RVA: 0x0001DB30 File Offset: 0x0001BD30
+
     public static int NidFromUidRecipe(string uidRecipe, ref int subIndex)
     {
         bool flag = subIndex > -1 & uidRecipe.Contains("_");
@@ -928,7 +928,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004F6 RID: 1270 RVA: 0x0001DC6C File Offset: 0x0001BE6C
+
     public static int NidFromUidEnh(string uidEnh)
     {
         for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; index++)
@@ -941,7 +941,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x060004F7 RID: 1271 RVA: 0x0001DCC4 File Offset: 0x0001BEC4
+
     public static int NidFromUidEnhExtended(string uidEnh)
     {
         int num;
@@ -964,7 +964,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x060004F8 RID: 1272 RVA: 0x0001DD68 File Offset: 0x0001BF68
+
     public static void SaveMainDatabase()
     {
         string path = Files.SelectDataFileSave("I12.mhd");
@@ -1022,7 +1022,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x060004F9 RID: 1273 RVA: 0x0001DFD0 File Offset: 0x0001C1D0
+
     public static bool LoadMainDatabase()
     {
         DatabaseAPI.ClearLookups();
@@ -1140,13 +1140,13 @@ public static class DatabaseAPI
         return true;
     }
 
-    // Token: 0x060004FA RID: 1274 RVA: 0x0001E404 File Offset: 0x0001C604
+
     public static void LoadDatabaseVersion()
     {
         DatabaseAPI.Database.Version = DatabaseAPI.GetDatabaseVersion(Files.SelectDataFileLoad("I12.mhd"));
     }
 
-    // Token: 0x060004FB RID: 1275 RVA: 0x0001E424 File Offset: 0x0001C624
+
     private static float GetDatabaseVersion(string fName)
     {
         float num = -1f;
@@ -1183,7 +1183,7 @@ public static class DatabaseAPI
         return num2;
     }
 
-    // Token: 0x060004FC RID: 1276 RVA: 0x0001E510 File Offset: 0x0001C710
+
     public static bool LoadLevelsDatabase()
     {
         string path = Files.SelectDataFileLoad("Levels.mhd");
@@ -1224,7 +1224,7 @@ public static class DatabaseAPI
         return true;
     }
 
-    // Token: 0x060004FD RID: 1277 RVA: 0x0001E668 File Offset: 0x0001C868
+
     public static void LoadOrigins()
     {
         string path = Files.SelectDataFileLoad("Origins.mhd");
@@ -1271,7 +1271,7 @@ public static class DatabaseAPI
         streamReader.Close();
     }
 
-    // Token: 0x060004FE RID: 1278 RVA: 0x0001E790 File Offset: 0x0001C990
+
     public static int GetOriginIDByName(string iOrigin)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Origins.Count - 1; index++)
@@ -1284,7 +1284,7 @@ public static class DatabaseAPI
         return 0;
     }
 
-    // Token: 0x060004FF RID: 1279 RVA: 0x0001E7F4 File Offset: 0x0001C9F4
+
     public static int IsSpecialEnh(int enhID)
     {
         for (int index = 0; index < DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[enhID].nIDSet].Enhancements.Length; index++)
@@ -1297,7 +1297,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x06000500 RID: 1280 RVA: 0x0001E8B8 File Offset: 0x0001CAB8
+
     public static string GetEnhancementNameShortWSet(int iEnh)
     {
         string str;
@@ -1327,7 +1327,7 @@ public static class DatabaseAPI
         return str;
     }
 
-    // Token: 0x06000501 RID: 1281 RVA: 0x0001E9A4 File Offset: 0x0001CBA4
+
     public static int GetFirstValidEnhancement(int iClass)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; index++)
@@ -1343,7 +1343,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    // Token: 0x06000502 RID: 1282 RVA: 0x0001EA48 File Offset: 0x0001CC48
+
     public static void GuessRecipes()
     {
         foreach (IEnhancement enhancement in DatabaseAPI.Database.Enhancements)
@@ -1360,7 +1360,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000503 RID: 1283 RVA: 0x0001EAD8 File Offset: 0x0001CCD8
+
     public static void AssignRecipeSalvageIDs()
     {
         int[] numArray = new int[7];
@@ -1395,7 +1395,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000504 RID: 1284 RVA: 0x0001EC34 File Offset: 0x0001CE34
+
     public static void AssignRecipeIDs()
     {
         foreach (Recipe recipe in DatabaseAPI.Database.Recipes)
@@ -1423,7 +1423,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000505 RID: 1285 RVA: 0x0001ED88 File Offset: 0x0001CF88
+
     public static void LoadRecipes()
     {
         string path = Files.SelectDataFileLoad("Recipe.mhd");
@@ -1467,7 +1467,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000506 RID: 1286 RVA: 0x0001EEDC File Offset: 0x0001D0DC
+
     public static void SaveRecipes()
     {
         string path = Files.SelectDataFileSave("Recipe.mhd");
@@ -1505,7 +1505,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000507 RID: 1287 RVA: 0x0001F008 File Offset: 0x0001D208
+
     public static void LoadSalvage()
     {
         string path = Files.SelectDataFileLoad("Salvage.mhd");
@@ -1549,7 +1549,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000508 RID: 1288 RVA: 0x0001F154 File Offset: 0x0001D354
+
     public static void SaveSalvage()
     {
         string path = Files.SelectDataFileSave("Salvage.mhd");
@@ -1584,7 +1584,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000509 RID: 1289 RVA: 0x0001F244 File Offset: 0x0001D444
+
     public static void SaveEnhancementDb()
     {
         string path = Files.SelectDataFileSave("EnhDB.mhd");
@@ -1625,7 +1625,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x0600050A RID: 1290 RVA: 0x0001F3A0 File Offset: 0x0001D5A0
+
     public static void LoadEnhancementDb()
     {
         string path = Files.SelectDataFileLoad("EnhDB.mhd");
@@ -1692,7 +1692,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x0600050B RID: 1291 RVA: 0x0001F5C0 File Offset: 0x0001D7C0
+
     public static bool LoadEnhancementClasses()
     {
         string path = Files.SelectDataFileLoad("EClasses.mhd");
@@ -1741,7 +1741,7 @@ public static class DatabaseAPI
         return true;
     }
 
-    // Token: 0x0600050C RID: 1292 RVA: 0x0001F794 File Offset: 0x0001D994
+
     public static void LoadSetTypeStrings()
     {
         string path = Files.SelectDataFileLoad("SetTypes.mhd");
@@ -1818,7 +1818,7 @@ public static class DatabaseAPI
         streamReader.Close();
     }
 
-    // Token: 0x0600050D RID: 1293 RVA: 0x0001FAA0 File Offset: 0x0001DCA0
+
     public static bool LoadMaths()
     {
         string path = Files.SelectDataFileLoad("Maths.mhd");
@@ -1914,7 +1914,7 @@ public static class DatabaseAPI
         return true;
     }
 
-    // Token: 0x0600050E RID: 1294 RVA: 0x0001FE54 File Offset: 0x0001E054
+
     public static void AssignSetBonusIndexes()
     {
         foreach (EnhancementSet enhancementSet in DatabaseAPI.Database.EnhancementSets)
@@ -1936,7 +1936,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x0600050F RID: 1295 RVA: 0x0001FF8C File Offset: 0x0001E18C
+
     public static float GetModifier(IEffect iEffect)
     {
         int iClass = 0;
@@ -1967,7 +1967,7 @@ public static class DatabaseAPI
         return DatabaseAPI.GetModifier(iClass, iEffect.nModifierTable, iLevel);
     }
 
-    // Token: 0x06000510 RID: 1296 RVA: 0x0002006C File Offset: 0x0001E26C
+
     private static float GetModifier(int iClass, int iTable, int iLevel)
     {
         float num;
@@ -2014,7 +2014,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x06000511 RID: 1297 RVA: 0x000201BC File Offset: 0x0001E3BC
+
     public static void MatchAllIDs(IMessager iFrm = null)
     {
         DatabaseAPI.UpdateMessage(iFrm, "Matching Group IDs...");
@@ -2035,7 +2035,7 @@ public static class DatabaseAPI
         DatabaseAPI.MatchSummonIDs();
     }
 
-    // Token: 0x06000512 RID: 1298 RVA: 0x0002025C File Offset: 0x0001E45C
+
     private static void UpdateMessage(IMessager iFrm, string iMsg)
     {
         if (iFrm != null)
@@ -2044,7 +2044,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000513 RID: 1299 RVA: 0x0002027C File Offset: 0x0001E47C
+
     private static void MatchArchetypeIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; index++)
@@ -2057,7 +2057,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000514 RID: 1300 RVA: 0x00020324 File Offset: 0x0001E524
+
     private static void MatchPowersetIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; index++)
@@ -2094,7 +2094,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000515 RID: 1301 RVA: 0x00020450 File Offset: 0x0001E650
+
     private static void MatchPowerIDs()
     {
         DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
@@ -2185,7 +2185,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000516 RID: 1302 RVA: 0x000207EC File Offset: 0x0001E9EC
+
     private static void MatchRequirementId(IPower power)
     {
         if (power.Requires.ClassName.Length > 0)
@@ -2244,7 +2244,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000517 RID: 1303 RVA: 0x00020AF0 File Offset: 0x0001ECF0
+
     private static void SetPowersetsFromGroups()
     {
         for (int index = 0; index < DatabaseAPI.Database.Classes.Length; index++)
@@ -2287,7 +2287,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000518 RID: 1304 RVA: 0x00020CBC File Offset: 0x0001EEBC
+
     public static void MatchEnhancementIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; index++)
@@ -2334,7 +2334,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x06000519 RID: 1305 RVA: 0x00020F0C File Offset: 0x0001F10C
+
     private static int EnhancementClassIdFromName(string iName)
     {
         int num;
@@ -2356,7 +2356,7 @@ public static class DatabaseAPI
         return num;
     }
 
-    // Token: 0x0600051A RID: 1306 RVA: 0x00020F84 File Offset: 0x0001F184
+
     private static void MatchModifierIDs()
     {
         foreach (IPower power in DatabaseAPI.Database.Power)
@@ -2368,7 +2368,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x0600051B RID: 1307 RVA: 0x00020FF4 File Offset: 0x0001F1F4
+
     public static void MatchSummonIDs()
     {
         for (int index = 0; index <= DatabaseAPI.Database.Entities.Length - 1; index++)
@@ -2389,7 +2389,7 @@ public static class DatabaseAPI
         }
     }
 
-    // Token: 0x0600051C RID: 1308 RVA: 0x000210E4 File Offset: 0x0001F2E4
+
     public static void AssignStaticIndexValues()
     {
         int num2 = -2;
@@ -2436,18 +2436,18 @@ public static class DatabaseAPI
         DatabaseAPI.SaveEnhancementDb();
     }
 
-    // Token: 0x04000273 RID: 627
+
     public const int HeroAccolades = 3257;
 
-    // Token: 0x04000274 RID: 628
+
     public const int VillainAccolades = 3258;
 
-    // Token: 0x04000275 RID: 629
+
     public const int TempPowers = 3259;
 
-    // Token: 0x04000276 RID: 630
+
     private static readonly IDictionary<string, int> AttribMod = new Dictionary<string, int>();
 
-    // Token: 0x04000277 RID: 631
+
     private static readonly IDictionary<string, int> Classes = new Dictionary<string, int>();
 }

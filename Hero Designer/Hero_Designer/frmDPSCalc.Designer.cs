@@ -1,10 +1,10 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000029 RID: 41
+
 	[global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
 	public partial class frmDPSCalc : global::System.Windows.Forms.Form
 	{
-		// Token: 0x06000520 RID: 1312 RVA: 0x0003E4E8 File Offset: 0x0003C6E8
+
 		[global::System.Diagnostics.DebuggerNonUserCode]
 		protected override void Dispose(bool disposing)
 		{
@@ -21,7 +21,7 @@
 			}
 		}
 
-		// Token: 0x06000529 RID: 1321 RVA: 0x0003EEF4 File Offset: 0x0003D0F4
+
 		private void InitializeComponent()
 		{
 			this.GlobalPowerList = new global::Hero_Designer.frmDPSCalc.PowerList[0];
@@ -279,10 +279,10 @@
 			base.ResumeLayout(false);
 		}
 
-		// Token: 0x0400023A RID: 570
+
 		private global::System.ComponentModel.IContainer components;
 
-		// Token: 0x0400023D RID: 573
+
 		private global::Hero_Designer.frmDPSCalc.PowerList[] GlobalPowerList;
 	}
 }

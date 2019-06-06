@@ -3,7 +3,7 @@
 // Token: 0x0200009B RID: 155
 public struct SlotEntry
 {
-    // Token: 0x060006D1 RID: 1745 RVA: 0x00031D84 File Offset: 0x0002FF84
+
     public void Assign(SlotEntry slotEntry)
     {
         this.Level = slotEntry.Level;
@@ -11,7 +11,7 @@ public struct SlotEntry
         this.FlippedEnhancement = (slotEntry.FlippedEnhancement.Clone() as I9Slot);
     }
 
-    // Token: 0x060006D2 RID: 1746 RVA: 0x00031DC4 File Offset: 0x0002FFC4
+
     public void Flip()
     {
         I9Slot i9Slot = this.Enhancement.Clone() as I9Slot;
@@ -19,7 +19,7 @@ public struct SlotEntry
         this.FlippedEnhancement = ((i9Slot == null) ? new I9Slot() : (i9Slot.Clone() as I9Slot));
     }
 
-    // Token: 0x060006D3 RID: 1747 RVA: 0x00031E18 File Offset: 0x00030018
+
     public void LoadFromString(string iString, string delimiter)
     {
         string[] strArray = iString.Split(delimiter.ToCharArray());
@@ -62,12 +62,12 @@ public struct SlotEntry
         this.FlippedEnhancement = (i9Slot2.Clone() as I9Slot);
     }
 
-    // Token: 0x040006AF RID: 1711
+
     public int Level;
 
-    // Token: 0x040006B0 RID: 1712
+
     public I9Slot Enhancement;
 
-    // Token: 0x040006B1 RID: 1713
+
     public I9Slot FlippedEnhancement;
 }

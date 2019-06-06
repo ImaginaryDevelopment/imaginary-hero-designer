@@ -7,15 +7,15 @@ using Base.Master_Classes;
 
 namespace Base.Data_Classes
 {
-    // Token: 0x02000003 RID: 3
+
     public class Character
     {
-        // Token: 0x1700001E RID: 30
+
         // (get) Token: 0x06000040 RID: 64 RVA: 0x00002D68 File Offset: 0x00000F68
         // (set) Token: 0x06000041 RID: 65 RVA: 0x00002D7F File Offset: 0x00000F7F
         public string Name { get; set; }
 
-        // Token: 0x1700001F RID: 31
+
         // (get) Token: 0x06000042 RID: 66 RVA: 0x00002D88 File Offset: 0x00000F88
         public int Level
         {
@@ -58,17 +58,17 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x17000020 RID: 32
+
         // (get) Token: 0x06000043 RID: 67 RVA: 0x00002E40 File Offset: 0x00001040
         // (set) Token: 0x06000044 RID: 68 RVA: 0x00002E57 File Offset: 0x00001057
         public int RequestedLevel { get; set; }
 
-        // Token: 0x17000021 RID: 33
+
         // (get) Token: 0x06000045 RID: 69 RVA: 0x00002E60 File Offset: 0x00001060
         // (set) Token: 0x06000046 RID: 70 RVA: 0x00002E77 File Offset: 0x00001077
         private Build[] Builds { get; set; }
 
-        // Token: 0x17000022 RID: 34
+
         // (get) Token: 0x06000047 RID: 71 RVA: 0x00002E80 File Offset: 0x00001080
         public Build CurrentBuild
         {
@@ -87,7 +87,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x17000023 RID: 35
+
         // (get) Token: 0x06000048 RID: 72 RVA: 0x00002EB4 File Offset: 0x000010B4
         // (set) Token: 0x06000049 RID: 73 RVA: 0x00002ECC File Offset: 0x000010CC
         public Archetype Archetype
@@ -103,37 +103,37 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x17000024 RID: 36
+
         // (get) Token: 0x0600004A RID: 74 RVA: 0x00002EF0 File Offset: 0x000010F0
         // (set) Token: 0x0600004B RID: 75 RVA: 0x00002F07 File Offset: 0x00001107
         public Enums.Alignment Alignment { get; set; }
 
-        // Token: 0x17000025 RID: 37
+
         // (get) Token: 0x0600004C RID: 76 RVA: 0x00002F10 File Offset: 0x00001110
         // (set) Token: 0x0600004D RID: 77 RVA: 0x00002F27 File Offset: 0x00001127
         public int Origin { get; set; }
 
-        // Token: 0x17000026 RID: 38
+
         // (get) Token: 0x0600004E RID: 78 RVA: 0x00002F30 File Offset: 0x00001130
         // (set) Token: 0x0600004F RID: 79 RVA: 0x00002F47 File Offset: 0x00001147
         public IPowerset[] Powersets { get; set; }
 
-        // Token: 0x17000027 RID: 39
+
         // (get) Token: 0x06000050 RID: 80 RVA: 0x00002F50 File Offset: 0x00001150
         // (set) Token: 0x06000051 RID: 81 RVA: 0x00002F67 File Offset: 0x00001167
         public bool[] PoolLocked { get; set; }
 
-        // Token: 0x17000028 RID: 40
+
         // (get) Token: 0x06000052 RID: 82 RVA: 0x00002F70 File Offset: 0x00001170
         // (set) Token: 0x06000053 RID: 83 RVA: 0x00002F87 File Offset: 0x00001187
         protected int LevelCache { get; set; }
 
-        // Token: 0x17000029 RID: 41
+
         // (get) Token: 0x06000054 RID: 84 RVA: 0x00002F90 File Offset: 0x00001190
         // (set) Token: 0x06000055 RID: 85 RVA: 0x00002FA7 File Offset: 0x000011A7
         public bool Locked { get; set; }
 
-        // Token: 0x1700002A RID: 42
+
         // (get) Token: 0x06000056 RID: 86 RVA: 0x00002FB0 File Offset: 0x000011B0
         // (set) Token: 0x06000057 RID: 87 RVA: 0x00003028 File Offset: 0x00001228
         public bool Complete
@@ -154,12 +154,12 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x1700002B RID: 43
+
         // (get) Token: 0x06000058 RID: 88 RVA: 0x00003054 File Offset: 0x00001254
         // (set) Token: 0x06000059 RID: 89 RVA: 0x0000306B File Offset: 0x0000126B
         public int ActiveComboLevel { get; private set; }
 
-        // Token: 0x1700002C RID: 44
+
         // (get) Token: 0x0600005A RID: 90 RVA: 0x00003074 File Offset: 0x00001274
         public int PerfectionOfBodyLevel
         {
@@ -178,7 +178,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x1700002D RID: 45
+
         // (get) Token: 0x0600005B RID: 91 RVA: 0x000030B8 File Offset: 0x000012B8
         public int PerfectionOfMindLevel
         {
@@ -197,7 +197,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x1700002E RID: 46
+
         // (get) Token: 0x0600005C RID: 92 RVA: 0x000030FC File Offset: 0x000012FC
         public int PerfectionOfSoulLevel
         {
@@ -216,102 +216,102 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x1700002F RID: 47
+
         // (get) Token: 0x0600005D RID: 93 RVA: 0x00003140 File Offset: 0x00001340
         // (set) Token: 0x0600005E RID: 94 RVA: 0x00003157 File Offset: 0x00001357
         private string PerfectionType { get; set; }
 
-        // Token: 0x17000030 RID: 48
+
         // (get) Token: 0x0600005F RID: 95 RVA: 0x00003160 File Offset: 0x00001360
         // (set) Token: 0x06000060 RID: 96 RVA: 0x00003177 File Offset: 0x00001377
         public bool AcceleratedActive { get; private set; }
 
-        // Token: 0x17000031 RID: 49
+
         // (get) Token: 0x06000061 RID: 97 RVA: 0x00003180 File Offset: 0x00001380
         // (set) Token: 0x06000062 RID: 98 RVA: 0x00003197 File Offset: 0x00001397
         public bool DelayedActive { get; private set; }
 
-        // Token: 0x17000032 RID: 50
+
         // (get) Token: 0x06000063 RID: 99 RVA: 0x000031A0 File Offset: 0x000013A0
         // (set) Token: 0x06000064 RID: 100 RVA: 0x000031B7 File Offset: 0x000013B7
         public bool DisintegrateActive { get; private set; }
 
-        // Token: 0x17000033 RID: 51
+
         // (get) Token: 0x06000065 RID: 101 RVA: 0x000031C0 File Offset: 0x000013C0
         // (set) Token: 0x06000066 RID: 102 RVA: 0x000031D7 File Offset: 0x000013D7
         public bool TargetDroneActive { get; private set; }
 
-        // Token: 0x17000034 RID: 52
+
         // (get) Token: 0x06000067 RID: 103 RVA: 0x000031E0 File Offset: 0x000013E0
         // (set) Token: 0x06000068 RID: 104 RVA: 0x000031F7 File Offset: 0x000013F7
         public bool Assassination { get; private set; }
 
-        // Token: 0x17000035 RID: 53
+
         // (get) Token: 0x06000069 RID: 105 RVA: 0x00003200 File Offset: 0x00001400
         // (set) Token: 0x0600006A RID: 106 RVA: 0x00003217 File Offset: 0x00001417
         public bool Domination { get; private set; }
 
-        // Token: 0x17000036 RID: 54
+
         // (get) Token: 0x0600006B RID: 107 RVA: 0x00003220 File Offset: 0x00001420
         // (set) Token: 0x0600006C RID: 108 RVA: 0x00003237 File Offset: 0x00001437
         public bool Containment { get; private set; }
 
-        // Token: 0x17000037 RID: 55
+
         // (get) Token: 0x0600006D RID: 109 RVA: 0x00003240 File Offset: 0x00001440
         // (set) Token: 0x0600006E RID: 110 RVA: 0x00003257 File Offset: 0x00001457
         public bool Scourge { get; private set; }
 
-        // Token: 0x17000038 RID: 56
+
         // (get) Token: 0x0600006F RID: 111 RVA: 0x00003260 File Offset: 0x00001460
         // (set) Token: 0x06000070 RID: 112 RVA: 0x00003277 File Offset: 0x00001477
         public bool CriticalHits { get; private set; }
 
-        // Token: 0x17000039 RID: 57
+
         // (get) Token: 0x06000071 RID: 113 RVA: 0x00003280 File Offset: 0x00001480
         // (set) Token: 0x06000072 RID: 114 RVA: 0x00003297 File Offset: 0x00001497
         public bool FastModeActive { get; private set; }
 
-        // Token: 0x1700003A RID: 58
+
         // (get) Token: 0x06000073 RID: 115 RVA: 0x000032A0 File Offset: 0x000014A0
         // (set) Token: 0x06000074 RID: 116 RVA: 0x000032B7 File Offset: 0x000014B7
         public bool Defiance { get; private set; }
 
-        // Token: 0x1700003B RID: 59
+
         // (get) Token: 0x06000075 RID: 117 RVA: 0x000032C0 File Offset: 0x000014C0
         // (set) Token: 0x06000076 RID: 118 RVA: 0x000032D7 File Offset: 0x000014D7
         public bool DefensiveAdaptation { get; private set; }
 
-        // Token: 0x1700003C RID: 60
+
         // (get) Token: 0x06000077 RID: 119 RVA: 0x000032E0 File Offset: 0x000014E0
         // (set) Token: 0x06000078 RID: 120 RVA: 0x000032F7 File Offset: 0x000014F7
         public bool EfficientAdaptation { get; private set; }
 
-        // Token: 0x1700003D RID: 61
+
         // (get) Token: 0x06000079 RID: 121 RVA: 0x00003300 File Offset: 0x00001500
         // (set) Token: 0x0600007A RID: 122 RVA: 0x00003317 File Offset: 0x00001517
         public bool OffensiveAdaptation { get; private set; }
 
-        // Token: 0x1700003E RID: 62
+
         // (get) Token: 0x0600007B RID: 123 RVA: 0x00003320 File Offset: 0x00001520
         // (set) Token: 0x0600007C RID: 124 RVA: 0x00003337 File Offset: 0x00001537
         public Dictionary<string, float> ModifyEffects { get; protected set; }
 
-        // Token: 0x1700003F RID: 63
+
         // (get) Token: 0x0600007D RID: 125 RVA: 0x00003340 File Offset: 0x00001540
         // (set) Token: 0x0600007E RID: 126 RVA: 0x00003357 File Offset: 0x00001557
         public Character.TotalStatistics Totals { get; private set; }
 
-        // Token: 0x17000040 RID: 64
+
         // (get) Token: 0x0600007F RID: 127 RVA: 0x00003360 File Offset: 0x00001560
         // (set) Token: 0x06000080 RID: 128 RVA: 0x00003377 File Offset: 0x00001577
         public Character.TotalStatistics TotalsCapped { get; private set; }
 
-        // Token: 0x17000041 RID: 65
+
         // (get) Token: 0x06000081 RID: 129 RVA: 0x00003380 File Offset: 0x00001580
         // (set) Token: 0x06000082 RID: 130 RVA: 0x00003397 File Offset: 0x00001597
         public Statistics DisplayStats { get; private set; }
 
-        // Token: 0x17000042 RID: 66
+
         // (get) Token: 0x06000083 RID: 131 RVA: 0x000033A0 File Offset: 0x000015A0
         public int SlotsRemaining
         {
@@ -335,7 +335,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x17000043 RID: 67
+
         // (get) Token: 0x06000084 RID: 132 RVA: 0x00003430 File Offset: 0x00001630
         public bool CanPlaceSlot
         {
@@ -356,13 +356,13 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x06000085 RID: 133 RVA: 0x000034EA File Offset: 0x000016EA
+
         public void ResetLevel()
         {
             this.LevelCache = -1;
         }
 
-        // Token: 0x06000086 RID: 134 RVA: 0x000034F8 File Offset: 0x000016F8
+
         public void Lock()
         {
             int powersPlaced = this.CurrentBuild.PowersPlaced;
@@ -382,103 +382,103 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x06000087 RID: 135 RVA: 0x00003580 File Offset: 0x00001780
+
         public bool IsHero()
         {
             return this.Alignment == Enums.Alignment.Hero || this.Alignment == Enums.Alignment.Vigilante;
         }
 
-        // Token: 0x06000088 RID: 136 RVA: 0x000035A8 File Offset: 0x000017A8
+
         public bool IsVillain()
         {
             return this.Alignment == Enums.Alignment.Rogue || this.Alignment == Enums.Alignment.Villain;
         }
 
-        // Token: 0x06000089 RID: 137 RVA: 0x000035D0 File Offset: 0x000017D0
+
         public bool IsPraetorian()
         {
             return this.Alignment == Enums.Alignment.Loyalist || this.Alignment == Enums.Alignment.Resistance;
         }
 
-        // Token: 0x0600008A RID: 138 RVA: 0x000035F8 File Offset: 0x000017F8
+
         public bool IsBlaster()
         {
             return this.Archetype.DisplayName.ToLower() == "blaster";
         }
 
-        // Token: 0x0600008B RID: 139 RVA: 0x00003624 File Offset: 0x00001824
+
         public bool IsController()
         {
             return this.Archetype.DisplayName.ToLower() == "controller";
         }
 
-        // Token: 0x0600008C RID: 140 RVA: 0x00003650 File Offset: 0x00001850
+
         public bool IsDefender()
         {
             return this.Archetype.DisplayName.ToLower() == "defender";
         }
 
-        // Token: 0x0600008D RID: 141 RVA: 0x0000367C File Offset: 0x0000187C
+
         public bool IsScrapper()
         {
             return this.Archetype.DisplayName.ToLower() == "scrapper";
         }
 
-        // Token: 0x0600008E RID: 142 RVA: 0x000036A8 File Offset: 0x000018A8
+
         public bool IsTanker()
         {
             return this.Archetype.DisplayName.ToLower() == "tank";
         }
 
-        // Token: 0x0600008F RID: 143 RVA: 0x000036D4 File Offset: 0x000018D4
+
         public bool IsKheldian()
         {
             return this.Archetype.ClassType == Enums.eClassType.HeroEpic;
         }
 
-        // Token: 0x06000090 RID: 144 RVA: 0x000036F4 File Offset: 0x000018F4
+
         public bool IsBrute()
         {
             return this.Archetype.DisplayName.ToLower() == "brute";
         }
 
-        // Token: 0x06000091 RID: 145 RVA: 0x00003720 File Offset: 0x00001920
+
         public bool IsCorruptor()
         {
             return this.Archetype.DisplayName.ToLower() == "corruptor";
         }
 
-        // Token: 0x06000092 RID: 146 RVA: 0x0000374C File Offset: 0x0000194C
+
         public bool IsDominator()
         {
             return this.Archetype.DisplayName.ToLower() == "dominator";
         }
 
-        // Token: 0x06000093 RID: 147 RVA: 0x00003778 File Offset: 0x00001978
+
         public bool IsMastermind()
         {
             return this.Archetype.DisplayName.ToLower() == "mastermind";
         }
 
-        // Token: 0x06000094 RID: 148 RVA: 0x000037A4 File Offset: 0x000019A4
+
         public bool IsStalker()
         {
             return this.Archetype.DisplayName.ToLower() == "stalker";
         }
 
-        // Token: 0x06000095 RID: 149 RVA: 0x000037D0 File Offset: 0x000019D0
+
         public bool IsArachnos()
         {
             return this.Archetype.ClassType == Enums.eClassType.VillainEpic;
         }
 
-        // Token: 0x06000096 RID: 150 RVA: 0x000037F0 File Offset: 0x000019F0
+
         public bool PoolTaken(int poolID)
         {
             return this.Powersets[poolID] != null && poolID >= 3 && poolID <= 7 && this.PoolLocked[poolID - 3];
         }
 
-        // Token: 0x06000097 RID: 151 RVA: 0x00003824 File Offset: 0x00001A24
+
         protected Character()
         {
             this.Name = string.Empty;
@@ -494,7 +494,7 @@ namespace Base.Data_Classes
             this.Reset(null, 0);
         }
 
-        // Token: 0x06000098 RID: 152 RVA: 0x000038B0 File Offset: 0x00001AB0
+
         public void Reset(Archetype iArchetype = null, int iOrigin = 0)
         {
             this.Name = string.Empty;
@@ -562,7 +562,7 @@ namespace Base.Data_Classes
             this.LevelCache = -1;
         }
 
-        // Token: 0x06000099 RID: 153 RVA: 0x00003B10 File Offset: 0x00001D10
+
         protected void NewBuild()
         {
             this.Builds[0] = new Build(this, DatabaseAPI.Database.Levels);
@@ -586,7 +586,7 @@ namespace Base.Data_Classes
             this.RequestedLevel = -1;
         }
 
-        // Token: 0x0600009A RID: 154 RVA: 0x00003BD4 File Offset: 0x00001DD4
+
         private void RefreshActiveSpecial()
         {
             this.ActiveComboLevel = 0;
@@ -607,7 +607,7 @@ namespace Base.Data_Classes
             this.PerfectionType = string.Empty;
         }
 
-        // Token: 0x0600009B RID: 155 RVA: 0x00003C66 File Offset: 0x00001E66
+
         public void Validate()
         {
             this.CheckAncillaryPowerSet();
@@ -615,7 +615,7 @@ namespace Base.Data_Classes
             this.RefreshActiveSpecial();
         }
 
-        // Token: 0x0600009C RID: 156 RVA: 0x00003C84 File Offset: 0x00001E84
+
         protected bool PowersetMutexClash(int nIDPower)
         {
             int powerSetId = DatabaseAPI.Database.Power[nIDPower].PowerSetID;
@@ -651,7 +651,7 @@ namespace Base.Data_Classes
             return false;
         }
 
-        // Token: 0x0600009D RID: 157 RVA: 0x00003DA4 File Offset: 0x00001FA4
+
         private void CheckAncillaryPowerSet()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
@@ -680,7 +680,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x0600009E RID: 158 RVA: 0x00003E60 File Offset: 0x00002060
+
         private IEnumerable<int> PoolGetAvailable(int iPool)
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
@@ -703,7 +703,7 @@ namespace Base.Data_Classes
             return intList;
         }
 
-        // Token: 0x0600009F RID: 159 RVA: 0x00003F14 File Offset: 0x00002114
+
         public int PoolToComboID(int iPool, int index)
         {
             IEnumerable<int> available = this.PoolGetAvailable(iPool);
@@ -719,7 +719,7 @@ namespace Base.Data_Classes
             return 0;
         }
 
-        // Token: 0x060000A0 RID: 160 RVA: 0x00003F98 File Offset: 0x00002198
+
         public static PopUp.PopupData PopEnhInfo(I9Slot iSlot, int iLevel = -1, PowerEntry powerEntry = null)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -870,7 +870,7 @@ namespace Base.Data_Classes
             return popupData2;
         }
 
-        // Token: 0x060000A1 RID: 161 RVA: 0x00004698 File Offset: 0x00002898
+
         public int GetFirstAvailablePowerIndex(int iLevel = 0)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -883,7 +883,7 @@ namespace Base.Data_Classes
             return -1;
         }
 
-        // Token: 0x060000A2 RID: 162 RVA: 0x00004710 File Offset: 0x00002910
+
         private int GetFirstAvailablePowerLevel(int iLevel = 0)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -896,7 +896,7 @@ namespace Base.Data_Classes
             return -1;
         }
 
-        // Token: 0x060000A3 RID: 163 RVA: 0x000047A0 File Offset: 0x000029A0
+
         protected int GetFirstAvailableSlotLevel(int iLevel = 0)
         {
             if (iLevel < 0)
@@ -913,7 +913,7 @@ namespace Base.Data_Classes
             return -1;
         }
 
-        // Token: 0x060000A4 RID: 164 RVA: 0x0000482C File Offset: 0x00002A2C
+
         public int SlotCheck(PowerEntry power)
         {
             int num;
@@ -942,7 +942,7 @@ namespace Base.Data_Classes
             return num;
         }
 
-        // Token: 0x060000A5 RID: 165 RVA: 0x000048F4 File Offset: 0x00002AF4
+
         public int[] GetSlotCounts()
         {
             int[] array = new int[2];
@@ -959,7 +959,7 @@ namespace Base.Data_Classes
             return numArray;
         }
 
-        // Token: 0x060000A6 RID: 166 RVA: 0x0000499C File Offset: 0x00002B9C
+
         private static string[] BreakByNewLine(string iString)
         {
             iString = iString.Replace('\n', '^');
@@ -969,7 +969,7 @@ namespace Base.Data_Classes
             });
         }
 
-        // Token: 0x060000A7 RID: 167 RVA: 0x000049D0 File Offset: 0x00002BD0
+
         private static string[] BreakByBracket(string iString)
         {
             string[] strArray = new string[]
@@ -995,7 +995,7 @@ namespace Base.Data_Classes
             return strArray2;
         }
 
-        // Token: 0x060000A8 RID: 168 RVA: 0x00004A78 File Offset: 0x00002C78
+
         private static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1095,7 +1095,7 @@ namespace Base.Data_Classes
             return section2;
         }
 
-        // Token: 0x060000A9 RID: 169 RVA: 0x00004F04 File Offset: 0x00003104
+
         public static PopUp.Section PopRecipeInfo(int rIdx, int iLevel)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1198,7 +1198,7 @@ namespace Base.Data_Classes
             return section2;
         }
 
-        // Token: 0x060000AA RID: 170 RVA: 0x000052DC File Offset: 0x000034DC
+
         public static PopUp.PopupData PopSetInfo(int sIdx, PowerEntry powerEntry = null)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -1252,7 +1252,7 @@ namespace Base.Data_Classes
             return popupData2;
         }
 
-        // Token: 0x060000AB RID: 171 RVA: 0x000054E8 File Offset: 0x000036E8
+
         private static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1317,7 +1317,7 @@ namespace Base.Data_Classes
             return section2;
         }
 
-        // Token: 0x060000AC RID: 172 RVA: 0x00005764 File Offset: 0x00003964
+
         public void PoolShuffle(bool flagged = false)
         {
             int[] numArray = new int[4];
@@ -1355,7 +1355,7 @@ namespace Base.Data_Classes
             }
         }
 
-        // Token: 0x060000AD RID: 173 RVA: 0x000058F0 File Offset: 0x00003AF0
+
         private int GetEarliestPowerIndex(int iSet)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -1368,7 +1368,7 @@ namespace Base.Data_Classes
             return this.CurrentBuild.LastPower + 1;
         }
 
-        // Token: 0x060000AE RID: 174 RVA: 0x00005958 File Offset: 0x00003B58
+
         private bool PoolUnique(Enums.PowersetType pool)
         {
             bool flag = true;
@@ -1382,7 +1382,7 @@ namespace Base.Data_Classes
             return flag;
         }
 
-        // Token: 0x060000AF RID: 175 RVA: 0x000059A8 File Offset: 0x00003BA8
+
         private bool PowersetUsed(IPowerset powerset)
         {
             bool flag;
@@ -1404,7 +1404,7 @@ namespace Base.Data_Classes
             return flag;
         }
 
-        // Token: 0x060000B0 RID: 176 RVA: 0x00005A38 File Offset: 0x00003C38
+
         protected bool CanRemovePower(int index, bool allowSecondary, out string message)
         {
             message = string.Empty;
@@ -1431,7 +1431,7 @@ namespace Base.Data_Classes
             return flag;
         }
 
-        // Token: 0x060000B1 RID: 177 RVA: 0x00005AE8 File Offset: 0x00003CE8
+
         public void SwitchSets(IPowerset newPowerset, IPowerset oldPowerset)
         {
             int index;
@@ -1560,157 +1560,157 @@ namespace Base.Data_Classes
             this.CurrentBuild.FullMutexCheck();
         }
 
-        // Token: 0x0400001E RID: 30
+
         private Archetype _archetype;
 
-        // Token: 0x0400001F RID: 31
+
         private bool? _completeCache;
 
-        // Token: 0x02000004 RID: 4
+
         public class TotalStatistics
         {
-            // Token: 0x17000044 RID: 68
+
             // (get) Token: 0x060000B2 RID: 178 RVA: 0x00005FD8 File Offset: 0x000041D8
             // (set) Token: 0x060000B3 RID: 179 RVA: 0x00005FEF File Offset: 0x000041EF
             public float[] Def { get; set; }
 
-            // Token: 0x17000045 RID: 69
+
             // (get) Token: 0x060000B4 RID: 180 RVA: 0x00005FF8 File Offset: 0x000041F8
             // (set) Token: 0x060000B5 RID: 181 RVA: 0x0000600F File Offset: 0x0000420F
             public float[] Res { get; set; }
 
-            // Token: 0x17000046 RID: 70
+
             // (get) Token: 0x060000B6 RID: 182 RVA: 0x00006018 File Offset: 0x00004218
             // (set) Token: 0x060000B7 RID: 183 RVA: 0x0000602F File Offset: 0x0000422F
             public float[] Mez { get; set; }
 
-            // Token: 0x17000047 RID: 71
+
             // (get) Token: 0x060000B8 RID: 184 RVA: 0x00006038 File Offset: 0x00004238
             // (set) Token: 0x060000B9 RID: 185 RVA: 0x0000604F File Offset: 0x0000424F
             public float[] MezRes { get; set; }
 
-            // Token: 0x17000048 RID: 72
+
             // (get) Token: 0x060000BA RID: 186 RVA: 0x00006058 File Offset: 0x00004258
             // (set) Token: 0x060000BB RID: 187 RVA: 0x0000606F File Offset: 0x0000426F
             public float[] DebuffRes { get; set; }
 
-            // Token: 0x17000049 RID: 73
+
             // (get) Token: 0x060000BC RID: 188 RVA: 0x00006078 File Offset: 0x00004278
             // (set) Token: 0x060000BD RID: 189 RVA: 0x0000608F File Offset: 0x0000428F
             public float Elusivity { get; set; }
 
-            // Token: 0x1700004A RID: 74
+
             // (get) Token: 0x060000BE RID: 190 RVA: 0x00006098 File Offset: 0x00004298
             // (set) Token: 0x060000BF RID: 191 RVA: 0x000060AF File Offset: 0x000042AF
             public float HPRegen { get; set; }
 
-            // Token: 0x1700004B RID: 75
+
             // (get) Token: 0x060000C0 RID: 192 RVA: 0x000060B8 File Offset: 0x000042B8
             // (set) Token: 0x060000C1 RID: 193 RVA: 0x000060CF File Offset: 0x000042CF
             public float HPMax { get; set; }
 
-            // Token: 0x1700004C RID: 76
+
             // (get) Token: 0x060000C2 RID: 194 RVA: 0x000060D8 File Offset: 0x000042D8
             // (set) Token: 0x060000C3 RID: 195 RVA: 0x000060EF File Offset: 0x000042EF
             public float EndRec { get; set; }
 
-            // Token: 0x1700004D RID: 77
+
             // (get) Token: 0x060000C4 RID: 196 RVA: 0x000060F8 File Offset: 0x000042F8
             // (set) Token: 0x060000C5 RID: 197 RVA: 0x0000610F File Offset: 0x0000430F
             public float EndUse { get; set; }
 
-            // Token: 0x1700004E RID: 78
+
             // (get) Token: 0x060000C6 RID: 198 RVA: 0x00006118 File Offset: 0x00004318
             // (set) Token: 0x060000C7 RID: 199 RVA: 0x0000612F File Offset: 0x0000432F
             public float EndMax { get; set; }
 
-            // Token: 0x1700004F RID: 79
+
             // (get) Token: 0x060000C8 RID: 200 RVA: 0x00006138 File Offset: 0x00004338
             // (set) Token: 0x060000C9 RID: 201 RVA: 0x0000614F File Offset: 0x0000434F
             public float RunSpd { get; set; }
 
-            // Token: 0x17000050 RID: 80
+
             // (get) Token: 0x060000CA RID: 202 RVA: 0x00006158 File Offset: 0x00004358
             // (set) Token: 0x060000CB RID: 203 RVA: 0x0000616F File Offset: 0x0000436F
             public float MaxRunSpd { get; set; }
 
-            // Token: 0x17000051 RID: 81
+
             // (get) Token: 0x060000CC RID: 204 RVA: 0x00006178 File Offset: 0x00004378
             // (set) Token: 0x060000CD RID: 205 RVA: 0x0000618F File Offset: 0x0000438F
             public float JumpSpd { get; set; }
 
-            // Token: 0x17000052 RID: 82
+
             // (get) Token: 0x060000CE RID: 206 RVA: 0x00006198 File Offset: 0x00004398
             // (set) Token: 0x060000CF RID: 207 RVA: 0x000061AF File Offset: 0x000043AF
             public float MaxJumpSpd { get; set; }
 
-            // Token: 0x17000053 RID: 83
+
             // (get) Token: 0x060000D0 RID: 208 RVA: 0x000061B8 File Offset: 0x000043B8
             // (set) Token: 0x060000D1 RID: 209 RVA: 0x000061CF File Offset: 0x000043CF
             public float FlySpd { get; set; }
 
-            // Token: 0x17000054 RID: 84
+
             // (get) Token: 0x060000D2 RID: 210 RVA: 0x000061D8 File Offset: 0x000043D8
             // (set) Token: 0x060000D3 RID: 211 RVA: 0x000061EF File Offset: 0x000043EF
             public float MaxFlySpd { get; set; }
 
-            // Token: 0x17000055 RID: 85
+
             // (get) Token: 0x060000D4 RID: 212 RVA: 0x000061F8 File Offset: 0x000043F8
             // (set) Token: 0x060000D5 RID: 213 RVA: 0x0000620F File Offset: 0x0000440F
             public float JumpHeight { get; set; }
 
-            // Token: 0x17000056 RID: 86
+
             // (get) Token: 0x060000D6 RID: 214 RVA: 0x00006218 File Offset: 0x00004418
             // (set) Token: 0x060000D7 RID: 215 RVA: 0x0000622F File Offset: 0x0000442F
             public float StealthPvE { get; set; }
 
-            // Token: 0x17000057 RID: 87
+
             // (get) Token: 0x060000D8 RID: 216 RVA: 0x00006238 File Offset: 0x00004438
             // (set) Token: 0x060000D9 RID: 217 RVA: 0x0000624F File Offset: 0x0000444F
             public float StealthPvP { get; set; }
 
-            // Token: 0x17000058 RID: 88
+
             // (get) Token: 0x060000DA RID: 218 RVA: 0x00006258 File Offset: 0x00004458
             // (set) Token: 0x060000DB RID: 219 RVA: 0x0000626F File Offset: 0x0000446F
             public float ThreatLevel { get; set; }
 
-            // Token: 0x17000059 RID: 89
+
             // (get) Token: 0x060000DC RID: 220 RVA: 0x00006278 File Offset: 0x00004478
             // (set) Token: 0x060000DD RID: 221 RVA: 0x0000628F File Offset: 0x0000448F
             public float Perception { get; set; }
 
-            // Token: 0x1700005A RID: 90
+
             // (get) Token: 0x060000DE RID: 222 RVA: 0x00006298 File Offset: 0x00004498
             // (set) Token: 0x060000DF RID: 223 RVA: 0x000062AF File Offset: 0x000044AF
             public float BuffHaste { get; set; }
 
-            // Token: 0x1700005B RID: 91
+
             // (get) Token: 0x060000E0 RID: 224 RVA: 0x000062B8 File Offset: 0x000044B8
             // (set) Token: 0x060000E1 RID: 225 RVA: 0x000062CF File Offset: 0x000044CF
             public float BuffAcc { get; set; }
 
-            // Token: 0x1700005C RID: 92
+
             // (get) Token: 0x060000E2 RID: 226 RVA: 0x000062D8 File Offset: 0x000044D8
             // (set) Token: 0x060000E3 RID: 227 RVA: 0x000062EF File Offset: 0x000044EF
             public float BuffToHit { get; set; }
 
-            // Token: 0x1700005D RID: 93
+
             // (get) Token: 0x060000E4 RID: 228 RVA: 0x000062F8 File Offset: 0x000044F8
             // (set) Token: 0x060000E5 RID: 229 RVA: 0x0000630F File Offset: 0x0000450F
             public float BuffDam { get; set; }
 
-            // Token: 0x1700005E RID: 94
+
             // (get) Token: 0x060000E6 RID: 230 RVA: 0x00006318 File Offset: 0x00004518
             // (set) Token: 0x060000E7 RID: 231 RVA: 0x0000632F File Offset: 0x0000452F
             public float BuffEndRdx { get; set; }
 
-            // Token: 0x060000E8 RID: 232 RVA: 0x00006338 File Offset: 0x00004538
+
             internal TotalStatistics()
             {
                 this.Init();
             }
 
-            // Token: 0x060000E9 RID: 233 RVA: 0x0000634C File Offset: 0x0000454C
+
             public void Init()
             {
                 this.Def = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
@@ -1739,7 +1739,7 @@ namespace Base.Data_Classes
                 this.BuffEndRdx = 0f;
             }
 
-            // Token: 0x060000EA RID: 234 RVA: 0x000064E4 File Offset: 0x000046E4
+
             public void Assign(Character.TotalStatistics iSt)
             {
                 this.Def = (float[])iSt.Def.Clone();

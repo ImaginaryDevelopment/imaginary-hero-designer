@@ -3,10 +3,10 @@ using Base.Data_Classes;
 
 namespace Import
 {
-    // Token: 0x02000081 RID: 129
+
     public class EffectData
     {
-        // Token: 0x0600060D RID: 1549 RVA: 0x00029EC0 File Offset: 0x000280C0
+
         public EffectData(string iString)
         {
             if (iString == null)
@@ -49,7 +49,7 @@ namespace Import
             }
         }
 
-        // Token: 0x0600060E RID: 1550 RVA: 0x00029FF8 File Offset: 0x000281F8
+
         public bool Apply()
         {
             bool flag;
@@ -80,13 +80,13 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x0600060F RID: 1551 RVA: 0x0002A124 File Offset: 0x00028324
+
         public bool CheckSimilar(ref IEffect iEffect)
         {
             return this.IsValid && iEffect.EffectType == this.Data.EffectType && iEffect.DamageType == this.Data.DamageType && iEffect.MezType == this.Data.MezType && iEffect.ETModifies == this.Data.ETModifies && iEffect.PvMode == this.Data.PvMode && iEffect.ToWho == this.Data.ToWho && iEffect.SpecialCase == this.Data.SpecialCase && iEffect.AttribType == this.Data.AttribType && iEffect.Aspect == this.Data.Aspect && iEffect.Reward == this.Data.Reward && iEffect.EffectId == this.Data.EffectId && iEffect.Summon == this.Data.Summon;
         }
 
-        // Token: 0x06000610 RID: 1552 RVA: 0x0002A254 File Offset: 0x00028454
+
         public bool CheckDifference(ref IEffect iEffect, out string message)
         {
             message = string.Empty;
@@ -261,28 +261,28 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x0400060B RID: 1547
+
         public readonly IEffect Data;
 
-        // Token: 0x0400060C RID: 1548
+
         public bool IsNew;
 
-        // Token: 0x0400060D RID: 1549
+
         public readonly int Index = -1;
 
-        // Token: 0x0400060E RID: 1550
+
         public int Nid = -1;
 
-        // Token: 0x0400060F RID: 1551
+
         public readonly bool IsValid = true;
 
-        // Token: 0x04000610 RID: 1552
+
         public bool IndexChanged;
 
-        // Token: 0x04000611 RID: 1553
+
         private readonly string _csvString = string.Empty;
 
-        // Token: 0x04000612 RID: 1554
+
         public readonly bool IsLocked;
     }
 }

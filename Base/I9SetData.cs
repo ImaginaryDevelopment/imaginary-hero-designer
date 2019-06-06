@@ -3,7 +3,7 @@
 // Token: 0x0200007D RID: 125
 public class I9SetData
 {
-    // Token: 0x17000247 RID: 583
+
     // (get) Token: 0x060005FC RID: 1532 RVA: 0x00027FD0 File Offset: 0x000261D0
     public bool Empty
     {
@@ -13,12 +13,12 @@ public class I9SetData
         }
     }
 
-    // Token: 0x060005FD RID: 1533 RVA: 0x00027FED File Offset: 0x000261ED
+
     public I9SetData()
     {
     }
 
-    // Token: 0x060005FE RID: 1534 RVA: 0x00028004 File Offset: 0x00026204
+
     public I9SetData(I9SetData iSd)
     {
         this.PowerIndex = iSd.PowerIndex;
@@ -34,7 +34,7 @@ public class I9SetData
         }
     }
 
-    // Token: 0x060005FF RID: 1535 RVA: 0x00028178 File Offset: 0x00026378
+
     public void Add(ref I9Slot iEnh)
     {
         if (iEnh.Enh >= 0)
@@ -64,7 +64,7 @@ public class I9SetData
         }
     }
 
-    // Token: 0x06000600 RID: 1536 RVA: 0x00028358 File Offset: 0x00026558
+
     private int Lookup(int setID)
     {
         int num;
@@ -86,7 +86,7 @@ public class I9SetData
         return num;
     }
 
-    // Token: 0x06000601 RID: 1537 RVA: 0x000283C0 File Offset: 0x000265C0
+
     public void BuildEffects(Enums.ePvX pvMode)
     {
         for (int index = 0; index <= this.SetInfo.Length - 1; index++)
@@ -128,25 +128,25 @@ public class I9SetData
         }
     }
 
-    // Token: 0x040005FB RID: 1531
+
     public I9SetData.sSetInfo[] SetInfo = new I9SetData.sSetInfo[0];
 
-    // Token: 0x040005FC RID: 1532
+
     public int PowerIndex;
 
-    // Token: 0x0200007E RID: 126
+
     public struct sSetInfo
     {
-        // Token: 0x040005FD RID: 1533
+
         public int SetIDX;
 
-        // Token: 0x040005FE RID: 1534
+
         public int SlottedCount;
 
-        // Token: 0x040005FF RID: 1535
+
         public int[] Powers;
 
-        // Token: 0x04000600 RID: 1536
+
         public int[] EnhIndexes;
     }
 }

@@ -5,10 +5,10 @@ using System.IO;
 
 namespace Base.Display
 {
-    // Token: 0x0200000D RID: 13
+
     public class ExtendedBitmap : IDisposable, ICloneable
     {
-        // Token: 0x170001F4 RID: 500
+
         // (get) Token: 0x0600045E RID: 1118 RVA: 0x00013920 File Offset: 0x00011B20
         public Graphics Graphics
         {
@@ -33,7 +33,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x170001F5 RID: 501
+
         // (get) Token: 0x0600045F RID: 1119 RVA: 0x00013978 File Offset: 0x00011B78
         public Bitmap Bitmap
         {
@@ -56,7 +56,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x170001F6 RID: 502
+
         // (get) Token: 0x06000460 RID: 1120 RVA: 0x000139BC File Offset: 0x00011BBC
         private bool CanInitialise
         {
@@ -85,7 +85,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x170001F7 RID: 503
+
         // (get) Token: 0x06000461 RID: 1121 RVA: 0x00013A94 File Offset: 0x00011C94
         // (set) Token: 0x06000462 RID: 1122 RVA: 0x00013ACC File Offset: 0x00011CCC
         public Size Size
@@ -113,7 +113,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x170001F8 RID: 504
+
         // (get) Token: 0x06000463 RID: 1123 RVA: 0x00013B2C File Offset: 0x00011D2C
         // (set) Token: 0x06000464 RID: 1124 RVA: 0x00013B64 File Offset: 0x00011D64
         private Region Clip
@@ -142,7 +142,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x170001F9 RID: 505
+
         // (get) Token: 0x06000465 RID: 1125 RVA: 0x00013BA8 File Offset: 0x00011DA8
         public Rectangle ClipRect
         {
@@ -161,14 +161,14 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x06000466 RID: 1126 RVA: 0x00013BDF File Offset: 0x00011DDF
+
         public void Dispose()
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-        // Token: 0x06000467 RID: 1127 RVA: 0x00013BF4 File Offset: 0x00011DF4
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
@@ -194,7 +194,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x06000468 RID: 1128 RVA: 0x00013C88 File Offset: 0x00011E88
+
         public object Clone()
         {
             object obj;
@@ -217,7 +217,7 @@ namespace Base.Display
             return obj;
         }
 
-        // Token: 0x06000469 RID: 1129 RVA: 0x00013D10 File Offset: 0x00011F10
+
         private bool Initialise()
         {
             bool flag;
@@ -247,7 +247,7 @@ namespace Base.Display
             return flag;
         }
 
-        // Token: 0x0600046A RID: 1130 RVA: 0x00013E08 File Offset: 0x00012008
+
         private void Initialise(string fileName)
         {
             if (this._surface != null)
@@ -278,7 +278,7 @@ namespace Base.Display
             }
         }
 
-        // Token: 0x0600046B RID: 1131 RVA: 0x00013EEA File Offset: 0x000120EA
+
         private ExtendedBitmap()
         {
             this.Cache = new ExtendedBitmap.PropertyCache();
@@ -286,7 +286,7 @@ namespace Base.Display
             this._isInitialised = false;
         }
 
-        // Token: 0x0600046C RID: 1132 RVA: 0x00013F10 File Offset: 0x00012110
+
         public ExtendedBitmap(Size imageSize)
         {
             this.Cache = new ExtendedBitmap.PropertyCache
@@ -296,7 +296,7 @@ namespace Base.Display
             this.Initialise();
         }
 
-        // Token: 0x0600046D RID: 1133 RVA: 0x00013F44 File Offset: 0x00012144
+
         public ExtendedBitmap(int x, int y)
         {
             this.Cache = new ExtendedBitmap.PropertyCache
@@ -306,35 +306,35 @@ namespace Base.Display
             this.Initialise();
         }
 
-        // Token: 0x0600046E RID: 1134 RVA: 0x00013F7B File Offset: 0x0001217B
+
         public ExtendedBitmap(string fileName)
         {
             this.Cache = new ExtendedBitmap.PropertyCache();
             this.Initialise(fileName);
         }
 
-        // Token: 0x0400011E RID: 286
+
         private bool _isDisposed;
 
-        // Token: 0x0400011F RID: 287
+
         private Bitmap _bits;
 
-        // Token: 0x04000120 RID: 288
+
         private Graphics _surface;
 
-        // Token: 0x04000121 RID: 289
+
         protected ExtendedBitmap.PropertyCache Cache;
 
-        // Token: 0x04000122 RID: 290
+
         private bool _isNew;
 
-        // Token: 0x04000123 RID: 291
+
         private bool _isInitialised;
 
-        // Token: 0x0200000E RID: 14
+
         protected class PropertyCache
         {
-            // Token: 0x0600046F RID: 1135 RVA: 0x00013F9C File Offset: 0x0001219C
+
             public void Update(ref Bitmap args)
             {
                 this.Size = args.Size;
@@ -343,7 +343,7 @@ namespace Base.Display
                 this.BitDepth = args.PixelFormat;
             }
 
-            // Token: 0x06000470 RID: 1136 RVA: 0x00013FE8 File Offset: 0x000121E8
+
             public void Update(ref Graphics args)
             {
                 if (this.Clip != null)
@@ -354,7 +354,7 @@ namespace Base.Display
                 this.ClipRect = ExtendedBitmap.PropertyCache.RectConvert(args.ClipBounds);
             }
 
-            // Token: 0x06000471 RID: 1137 RVA: 0x00014030 File Offset: 0x00012230
+
             private static Rectangle RectConvert(RectangleF iRect)
             {
                 int x;
@@ -412,22 +412,22 @@ namespace Base.Display
                 return new Rectangle(x, y, width, height);
             }
 
-            // Token: 0x04000124 RID: 292
+
             public Size Size;
 
-            // Token: 0x04000125 RID: 293
+
             private Point _location;
 
-            // Token: 0x04000126 RID: 294
+
             public Rectangle Bounds;
 
-            // Token: 0x04000127 RID: 295
+
             public Region Clip;
 
-            // Token: 0x04000128 RID: 296
+
             public Rectangle ClipRect;
 
-            // Token: 0x04000129 RID: 297
+
             public PixelFormat BitDepth = PixelFormat.Format32bppArgb;
         }
     }

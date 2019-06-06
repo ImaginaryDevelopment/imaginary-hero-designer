@@ -21,10 +21,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000049 RID: 73
+
     public partial class frmMain : Form
     {
-        // Token: 0x17000436 RID: 1078
+
         // (get) Token: 0x06000CBB RID: 3259 RVA: 0x0007E740 File Offset: 0x0007C940
         // (set) Token: 0x06000CBC RID: 3260 RVA: 0x0007E758 File Offset: 0x0007C958
         internal virtual ImageButton accoladeButton
@@ -52,7 +52,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000437 RID: 1079
+
         // (get) Token: 0x06000CBD RID: 3261 RVA: 0x0007E7DC File Offset: 0x0007C9DC
         // (set) Token: 0x06000CBE RID: 3262 RVA: 0x0007E7F4 File Offset: 0x0007C9F4
         internal virtual ToolStripMenuItem AccoladesWindowToolStripMenuItem
@@ -77,7 +77,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000438 RID: 1080
+
         // (get) Token: 0x06000CBF RID: 3263 RVA: 0x0007E850 File Offset: 0x0007CA50
         // (set) Token: 0x06000CC0 RID: 3264 RVA: 0x0007E868 File Offset: 0x0007CA68
         internal virtual ToolStripMenuItem AdvancedToolStripMenuItem1
@@ -93,7 +93,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000439 RID: 1081
+
         // (get) Token: 0x06000CC1 RID: 3265 RVA: 0x0007E874 File Offset: 0x0007CA74
         // (set) Token: 0x06000CC2 RID: 3266 RVA: 0x0007E88C File Offset: 0x0007CA8C
         internal virtual ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem
@@ -118,7 +118,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043A RID: 1082
+
         // (get) Token: 0x06000CC3 RID: 3267 RVA: 0x0007E8E8 File Offset: 0x0007CAE8
         // (set) Token: 0x06000CC4 RID: 3268 RVA: 0x0007E900 File Offset: 0x0007CB00
         internal virtual ComboBox cbAncillary
@@ -152,7 +152,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043B RID: 1083
+
         // (get) Token: 0x06000CC5 RID: 3269 RVA: 0x0007E9D4 File Offset: 0x0007CBD4
         // (set) Token: 0x06000CC6 RID: 3270 RVA: 0x0007E9EC File Offset: 0x0007CBEC
         internal virtual ComboBox cbAT
@@ -186,7 +186,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043C RID: 1084
+
         // (get) Token: 0x06000CC7 RID: 3271 RVA: 0x0007EAC0 File Offset: 0x0007CCC0
         // (set) Token: 0x06000CC8 RID: 3272 RVA: 0x0007EAD8 File Offset: 0x0007CCD8
         internal virtual ComboBox cbOrigin
@@ -214,7 +214,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043D RID: 1085
+
         // (get) Token: 0x06000CC9 RID: 3273 RVA: 0x0007EB5C File Offset: 0x0007CD5C
         // (set) Token: 0x06000CCA RID: 3274 RVA: 0x0007EB74 File Offset: 0x0007CD74
         internal virtual ComboBox cbPool0
@@ -248,7 +248,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043E RID: 1086
+
         // (get) Token: 0x06000CCB RID: 3275 RVA: 0x0007EC48 File Offset: 0x0007CE48
         // (set) Token: 0x06000CCC RID: 3276 RVA: 0x0007EC60 File Offset: 0x0007CE60
         internal virtual ComboBox cbPool1
@@ -282,7 +282,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700043F RID: 1087
+
         // (get) Token: 0x06000CCD RID: 3277 RVA: 0x0007ED34 File Offset: 0x0007CF34
         // (set) Token: 0x06000CCE RID: 3278 RVA: 0x0007ED4C File Offset: 0x0007CF4C
         internal virtual ComboBox cbPool2
@@ -316,7 +316,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000440 RID: 1088
+
         // (get) Token: 0x06000CCF RID: 3279 RVA: 0x0007EE20 File Offset: 0x0007D020
         // (set) Token: 0x06000CD0 RID: 3280 RVA: 0x0007EE38 File Offset: 0x0007D038
         internal virtual ComboBox cbPool3
@@ -350,7 +350,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000441 RID: 1089
+
         // (get) Token: 0x06000CD1 RID: 3281 RVA: 0x0007EF0C File Offset: 0x0007D10C
         // (set) Token: 0x06000CD2 RID: 3282 RVA: 0x0007EF24 File Offset: 0x0007D124
         internal virtual ComboBox cbPrimary
@@ -384,7 +384,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000442 RID: 1090
+
         // (get) Token: 0x06000CD3 RID: 3283 RVA: 0x0007EFF8 File Offset: 0x0007D1F8
         // (set) Token: 0x06000CD4 RID: 3284 RVA: 0x0007F010 File Offset: 0x0007D210
         internal virtual ComboBox cbSecondary
@@ -418,7 +418,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000443 RID: 1091
+
         // (get) Token: 0x06000CD5 RID: 3285 RVA: 0x0007F0E4 File Offset: 0x0007D2E4
         // (set) Token: 0x06000CD6 RID: 3286 RVA: 0x0007F0FC File Offset: 0x0007D2FC
         internal virtual ToolStripMenuItem CharacterToolStripMenuItem
@@ -434,7 +434,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000444 RID: 1092
+
         // (get) Token: 0x06000CD7 RID: 3287 RVA: 0x0007F108 File Offset: 0x0007D308
         // (set) Token: 0x06000CD8 RID: 3288 RVA: 0x0007F120 File Offset: 0x0007D320
         internal virtual OpenFileDialog dlgOpen
@@ -450,7 +450,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000445 RID: 1093
+
         // (get) Token: 0x06000CD9 RID: 3289 RVA: 0x0007F12C File Offset: 0x0007D32C
         // (set) Token: 0x06000CDA RID: 3290 RVA: 0x0007F144 File Offset: 0x0007D344
         internal virtual SaveFileDialog dlgSave
@@ -466,7 +466,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000446 RID: 1094
+
         // (get) Token: 0x06000CDB RID: 3291 RVA: 0x0007F150 File Offset: 0x0007D350
         // (set) Token: 0x06000CDC RID: 3292 RVA: 0x0007F168 File Offset: 0x0007D368
         internal virtual DataView dvAnchored
@@ -512,7 +512,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000447 RID: 1095
+
         // (get) Token: 0x06000CDD RID: 3293 RVA: 0x0007F2E4 File Offset: 0x0007D4E4
         // (set) Token: 0x06000CDE RID: 3294 RVA: 0x0007F2FC File Offset: 0x0007D4FC
         internal virtual ToolStripMenuItem FileToolStripMenuItem
@@ -528,7 +528,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000448 RID: 1096
+
         // (get) Token: 0x06000CDF RID: 3295 RVA: 0x0007F308 File Offset: 0x0007D508
         // (set) Token: 0x06000CE0 RID: 3296 RVA: 0x0007F320 File Offset: 0x0007D520
         internal virtual ToolStripMenuItem HelpToolStripMenuItem1
@@ -544,7 +544,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000449 RID: 1097
+
         // (get) Token: 0x06000CE1 RID: 3297 RVA: 0x0007F32C File Offset: 0x0007D52C
         // (set) Token: 0x06000CE2 RID: 3298 RVA: 0x0007F344 File Offset: 0x0007D544
         internal virtual ImageButton heroVillain
@@ -569,7 +569,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044A RID: 1098
+
         // (get) Token: 0x06000CE3 RID: 3299 RVA: 0x0007F3A0 File Offset: 0x0007D5A0
         // (set) Token: 0x06000CE4 RID: 3300 RVA: 0x0007F3E4 File Offset: 0x0007D5E4
         internal virtual I9Picker I9Picker
@@ -613,7 +613,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044B RID: 1099
+
         // (get) Token: 0x06000CE5 RID: 3301 RVA: 0x0007F50C File Offset: 0x0007D70C
         // (set) Token: 0x06000CE6 RID: 3302 RVA: 0x0007F524 File Offset: 0x0007D724
         internal virtual ctlPopUp I9Popup
@@ -638,7 +638,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044C RID: 1100
+
         // (get) Token: 0x06000CE7 RID: 3303 RVA: 0x0007F580 File Offset: 0x0007D780
         // (set) Token: 0x06000CE8 RID: 3304 RVA: 0x0007F598 File Offset: 0x0007D798
         internal virtual ImageButton ibAccolade
@@ -654,7 +654,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044D RID: 1101
+
         // (get) Token: 0x06000CE9 RID: 3305 RVA: 0x0007F5A4 File Offset: 0x0007D7A4
         // (set) Token: 0x06000CEA RID: 3306 RVA: 0x0007F5BC File Offset: 0x0007D7BC
         internal virtual ImageButton ibMode
@@ -679,7 +679,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044E RID: 1102
+
         // (get) Token: 0x06000CEB RID: 3307 RVA: 0x0007F618 File Offset: 0x0007D818
         // (set) Token: 0x06000CEC RID: 3308 RVA: 0x0007F630 File Offset: 0x0007D830
         internal virtual ImageButton ibPopup
@@ -704,7 +704,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700044F RID: 1103
+
         // (get) Token: 0x06000CED RID: 3309 RVA: 0x0007F68C File Offset: 0x0007D88C
         // (set) Token: 0x06000CEE RID: 3310 RVA: 0x0007F6A4 File Offset: 0x0007D8A4
         internal virtual ImageButton ibPvX
@@ -729,7 +729,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000450 RID: 1104
+
         // (get) Token: 0x06000CEF RID: 3311 RVA: 0x0007F700 File Offset: 0x0007D900
         // (set) Token: 0x06000CF0 RID: 3312 RVA: 0x0007F718 File Offset: 0x0007D918
         internal virtual ImageButton ibRecipe
@@ -754,7 +754,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000451 RID: 1105
+
         // (get) Token: 0x06000CF1 RID: 3313 RVA: 0x0007F774 File Offset: 0x0007D974
         // (set) Token: 0x06000CF2 RID: 3314 RVA: 0x0007F78C File Offset: 0x0007D98C
         internal virtual ImageButton ibSets
@@ -779,7 +779,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000452 RID: 1106
+
         // (get) Token: 0x06000CF3 RID: 3315 RVA: 0x0007F7E8 File Offset: 0x0007D9E8
         // (set) Token: 0x06000CF4 RID: 3316 RVA: 0x0007F800 File Offset: 0x0007DA00
         internal virtual ImageButton ibSlotLevels
@@ -804,7 +804,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000453 RID: 1107
+
         // (get) Token: 0x06000CF5 RID: 3317 RVA: 0x0007F85C File Offset: 0x0007DA5C
         // (set) Token: 0x06000CF6 RID: 3318 RVA: 0x0007F874 File Offset: 0x0007DA74
         internal virtual ImageButton ibTotals
@@ -829,7 +829,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000454 RID: 1108
+
         // (get) Token: 0x06000CF7 RID: 3319 RVA: 0x0007F8D0 File Offset: 0x0007DAD0
         // (set) Token: 0x06000CF8 RID: 3320 RVA: 0x0007F8E8 File Offset: 0x0007DAE8
         internal virtual ImageButton ibVetPools
@@ -845,7 +845,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000455 RID: 1109
+
         // (get) Token: 0x06000CF9 RID: 3321 RVA: 0x0007F8F4 File Offset: 0x0007DAF4
         // (set) Token: 0x06000CFA RID: 3322 RVA: 0x0007F90C File Offset: 0x0007DB0C
         internal virtual ToolStripMenuItem ImportExportToolStripMenuItem
@@ -861,7 +861,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000456 RID: 1110
+
         // (get) Token: 0x06000CFB RID: 3323 RVA: 0x0007F918 File Offset: 0x0007DB18
         // (set) Token: 0x06000CFC RID: 3324 RVA: 0x0007F930 File Offset: 0x0007DB30
         internal virtual ImageButton incarnateButton
@@ -886,7 +886,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000457 RID: 1111
+
         // (get) Token: 0x06000CFD RID: 3325 RVA: 0x0007F98C File Offset: 0x0007DB8C
         // (set) Token: 0x06000CFE RID: 3326 RVA: 0x0007F9A4 File Offset: 0x0007DBA4
         internal virtual ToolStripMenuItem IncarnateWindowToolStripMenuItem
@@ -911,7 +911,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000458 RID: 1112
+
         // (get) Token: 0x06000CFF RID: 3327 RVA: 0x0007FA00 File Offset: 0x0007DC00
         // (set) Token: 0x06000D00 RID: 3328 RVA: 0x0007FA18 File Offset: 0x0007DC18
         internal virtual ToolStripMenuItem InGameRespecHelperToolStripMenuItem
@@ -927,7 +927,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000459 RID: 1113
+
         // (get) Token: 0x06000D01 RID: 3329 RVA: 0x0007FA24 File Offset: 0x0007DC24
         // (set) Token: 0x06000D02 RID: 3330 RVA: 0x0007FA3C File Offset: 0x0007DC3C
         internal virtual GFXLabel lblAT
@@ -943,7 +943,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045A RID: 1114
+
         // (get) Token: 0x06000D03 RID: 3331 RVA: 0x0007FA48 File Offset: 0x0007DC48
         // (set) Token: 0x06000D04 RID: 3332 RVA: 0x0007FA60 File Offset: 0x0007DC60
         internal virtual Label lblATLocked
@@ -974,7 +974,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045B RID: 1115
+
         // (get) Token: 0x06000D05 RID: 3333 RVA: 0x0007FB08 File Offset: 0x0007DD08
         // (set) Token: 0x06000D06 RID: 3334 RVA: 0x0007FB20 File Offset: 0x0007DD20
         internal virtual Label lblEpic
@@ -990,7 +990,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045C RID: 1116
+
         // (get) Token: 0x06000D07 RID: 3335 RVA: 0x0007FB2C File Offset: 0x0007DD2C
         // (set) Token: 0x06000D08 RID: 3336 RVA: 0x0007FB44 File Offset: 0x0007DD44
         internal virtual GFXLabel lblHero
@@ -1006,7 +1006,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045D RID: 1117
+
         // (get) Token: 0x06000D09 RID: 3337 RVA: 0x0007FB50 File Offset: 0x0007DD50
         // (set) Token: 0x06000D0A RID: 3338 RVA: 0x0007FB68 File Offset: 0x0007DD68
         internal virtual Label lblLocked0
@@ -1037,7 +1037,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045E RID: 1118
+
         // (get) Token: 0x06000D0B RID: 3339 RVA: 0x0007FC10 File Offset: 0x0007DE10
         // (set) Token: 0x06000D0C RID: 3340 RVA: 0x0007FC28 File Offset: 0x0007DE28
         internal virtual Label lblLocked1
@@ -1068,7 +1068,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700045F RID: 1119
+
         // (get) Token: 0x06000D0D RID: 3341 RVA: 0x0007FCD0 File Offset: 0x0007DED0
         // (set) Token: 0x06000D0E RID: 3342 RVA: 0x0007FCE8 File Offset: 0x0007DEE8
         internal virtual Label lblLocked2
@@ -1099,7 +1099,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000460 RID: 1120
+
         // (get) Token: 0x06000D0F RID: 3343 RVA: 0x0007FD90 File Offset: 0x0007DF90
         // (set) Token: 0x06000D10 RID: 3344 RVA: 0x0007FDA8 File Offset: 0x0007DFA8
         internal virtual Label lblLocked3
@@ -1130,7 +1130,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000461 RID: 1121
+
         // (get) Token: 0x06000D11 RID: 3345 RVA: 0x0007FE50 File Offset: 0x0007E050
         // (set) Token: 0x06000D12 RID: 3346 RVA: 0x0007FE68 File Offset: 0x0007E068
         internal virtual Label lblLockedAncillary
@@ -1161,7 +1161,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000462 RID: 1122
+
         // (get) Token: 0x06000D13 RID: 3347 RVA: 0x0007FF10 File Offset: 0x0007E110
         // (set) Token: 0x06000D14 RID: 3348 RVA: 0x0007FF28 File Offset: 0x0007E128
         internal virtual Label lblLockedSecondary
@@ -1189,7 +1189,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000463 RID: 1123
+
         // (get) Token: 0x06000D15 RID: 3349 RVA: 0x0007FFAC File Offset: 0x0007E1AC
         // (set) Token: 0x06000D16 RID: 3350 RVA: 0x0007FFC4 File Offset: 0x0007E1C4
         internal virtual GFXLabel lblName
@@ -1205,7 +1205,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000464 RID: 1124
+
         // (get) Token: 0x06000D17 RID: 3351 RVA: 0x0007FFD0 File Offset: 0x0007E1D0
         // (set) Token: 0x06000D18 RID: 3352 RVA: 0x0007FFE8 File Offset: 0x0007E1E8
         internal virtual GFXLabel lblOrigin
@@ -1221,7 +1221,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000465 RID: 1125
+
         // (get) Token: 0x06000D19 RID: 3353 RVA: 0x0007FFF4 File Offset: 0x0007E1F4
         // (set) Token: 0x06000D1A RID: 3354 RVA: 0x0008000C File Offset: 0x0007E20C
         internal virtual Label lblPool1
@@ -1237,7 +1237,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000466 RID: 1126
+
         // (get) Token: 0x06000D1B RID: 3355 RVA: 0x00080018 File Offset: 0x0007E218
         // (set) Token: 0x06000D1C RID: 3356 RVA: 0x00080030 File Offset: 0x0007E230
         internal virtual Label lblPool2
@@ -1253,7 +1253,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000467 RID: 1127
+
         // (get) Token: 0x06000D1D RID: 3357 RVA: 0x0008003C File Offset: 0x0007E23C
         // (set) Token: 0x06000D1E RID: 3358 RVA: 0x00080054 File Offset: 0x0007E254
         internal virtual Label lblPool3
@@ -1269,7 +1269,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000468 RID: 1128
+
         // (get) Token: 0x06000D1F RID: 3359 RVA: 0x00080060 File Offset: 0x0007E260
         // (set) Token: 0x06000D20 RID: 3360 RVA: 0x00080078 File Offset: 0x0007E278
         internal virtual Label lblPool4
@@ -1285,7 +1285,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000469 RID: 1129
+
         // (get) Token: 0x06000D21 RID: 3361 RVA: 0x00080084 File Offset: 0x0007E284
         // (set) Token: 0x06000D22 RID: 3362 RVA: 0x0008009C File Offset: 0x0007E29C
         internal virtual Label lblPrimary
@@ -1301,7 +1301,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046A RID: 1130
+
         // (get) Token: 0x06000D23 RID: 3363 RVA: 0x000800A8 File Offset: 0x0007E2A8
         // (set) Token: 0x06000D24 RID: 3364 RVA: 0x000800C0 File Offset: 0x0007E2C0
         internal virtual Label lblSecondary
@@ -1317,7 +1317,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046B RID: 1131
+
         // (get) Token: 0x06000D25 RID: 3365 RVA: 0x000800CC File Offset: 0x0007E2CC
         // (set) Token: 0x06000D26 RID: 3366 RVA: 0x000800E4 File Offset: 0x0007E2E4
         internal virtual ListLabelV2 llAncillary
@@ -1345,7 +1345,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046C RID: 1132
+
         // (get) Token: 0x06000D27 RID: 3367 RVA: 0x00080168 File Offset: 0x0007E368
         // (set) Token: 0x06000D28 RID: 3368 RVA: 0x00080180 File Offset: 0x0007E380
         internal virtual ListLabelV2 llPool0
@@ -1379,7 +1379,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046D RID: 1133
+
         // (get) Token: 0x06000D29 RID: 3369 RVA: 0x00080254 File Offset: 0x0007E454
         // (set) Token: 0x06000D2A RID: 3370 RVA: 0x0008026C File Offset: 0x0007E46C
         internal virtual ListLabelV2 llPool1
@@ -1413,7 +1413,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046E RID: 1134
+
         // (get) Token: 0x06000D2B RID: 3371 RVA: 0x00080340 File Offset: 0x0007E540
         // (set) Token: 0x06000D2C RID: 3372 RVA: 0x00080358 File Offset: 0x0007E558
         internal virtual ListLabelV2 llPool2
@@ -1447,7 +1447,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700046F RID: 1135
+
         // (get) Token: 0x06000D2D RID: 3373 RVA: 0x0008042C File Offset: 0x0007E62C
         // (set) Token: 0x06000D2E RID: 3374 RVA: 0x00080444 File Offset: 0x0007E644
         internal virtual ListLabelV2 llPool3
@@ -1481,7 +1481,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000470 RID: 1136
+
         // (get) Token: 0x06000D2F RID: 3375 RVA: 0x00080518 File Offset: 0x0007E718
         // (set) Token: 0x06000D30 RID: 3376 RVA: 0x00080530 File Offset: 0x0007E730
         internal virtual ListLabelV2 llPrimary
@@ -1515,7 +1515,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000471 RID: 1137
+
         // (get) Token: 0x06000D31 RID: 3377 RVA: 0x00080604 File Offset: 0x0007E804
         // (set) Token: 0x06000D32 RID: 3378 RVA: 0x0008061C File Offset: 0x0007E81C
         internal virtual ListLabelV2 llSecondary
@@ -1549,7 +1549,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000472 RID: 1138
+
         // (get) Token: 0x06000D33 RID: 3379 RVA: 0x000806F0 File Offset: 0x0007E8F0
         // (set) Token: 0x06000D34 RID: 3380 RVA: 0x00080708 File Offset: 0x0007E908
         internal virtual MenuStrip MenuBar
@@ -1565,7 +1565,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000473 RID: 1139
+
         // (get) Token: 0x06000D35 RID: 3381 RVA: 0x00080714 File Offset: 0x0007E914
         // (set) Token: 0x06000D36 RID: 3382 RVA: 0x0008072C File Offset: 0x0007E92C
         internal virtual ToolStripMenuItem OptionsToolStripMenuItem
@@ -1581,7 +1581,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000474 RID: 1140
+
         // (get) Token: 0x06000D37 RID: 3383 RVA: 0x00080738 File Offset: 0x0007E938
         // (set) Token: 0x06000D38 RID: 3384 RVA: 0x00080750 File Offset: 0x0007E950
         internal virtual PictureBox pbDynMode
@@ -1609,7 +1609,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000475 RID: 1141
+
         // (get) Token: 0x06000D39 RID: 3385 RVA: 0x000807D4 File Offset: 0x0007E9D4
         // (set) Token: 0x06000D3A RID: 3386 RVA: 0x000807EC File Offset: 0x0007E9EC
         internal virtual PictureBox pnlGFX
@@ -1658,7 +1658,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000476 RID: 1142
+
         // (get) Token: 0x06000D3B RID: 3387 RVA: 0x00080994 File Offset: 0x0007EB94
         // (set) Token: 0x06000D3C RID: 3388 RVA: 0x000809AC File Offset: 0x0007EBAC
         internal virtual FlowLayoutPanel pnlGFXFlow
@@ -1683,7 +1683,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000477 RID: 1143
+
         // (get) Token: 0x06000D3D RID: 3389 RVA: 0x00080A08 File Offset: 0x0007EC08
         // (set) Token: 0x06000D3E RID: 3390 RVA: 0x00080A20 File Offset: 0x0007EC20
         internal virtual ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem
@@ -1699,7 +1699,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000478 RID: 1144
+
         // (get) Token: 0x06000D3F RID: 3391 RVA: 0x00080A2C File Offset: 0x0007EC2C
         // (set) Token: 0x06000D40 RID: 3392 RVA: 0x00080A44 File Offset: 0x0007EC44
         internal virtual ToolStripMenuItem SlotsToolStripMenuItem
@@ -1715,7 +1715,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000479 RID: 1145
+
         // (get) Token: 0x06000D41 RID: 3393 RVA: 0x00080A50 File Offset: 0x0007EC50
         // (set) Token: 0x06000D42 RID: 3394 RVA: 0x00080A68 File Offset: 0x0007EC68
         internal virtual ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem
@@ -1740,7 +1740,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047A RID: 1146
+
         // (get) Token: 0x06000D43 RID: 3395 RVA: 0x00080AC4 File Offset: 0x0007ECC4
         // (set) Token: 0x06000D44 RID: 3396 RVA: 0x00080ADC File Offset: 0x0007ECDC
         internal virtual ImageButton tempPowersButton
@@ -1768,7 +1768,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047B RID: 1147
+
         // (get) Token: 0x06000D45 RID: 3397 RVA: 0x00080B60 File Offset: 0x0007ED60
         // (set) Token: 0x06000D46 RID: 3398 RVA: 0x00080B78 File Offset: 0x0007ED78
         internal virtual ToolStripMenuItem tlsDPA
@@ -1793,7 +1793,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047C RID: 1148
+
         // (get) Token: 0x06000D47 RID: 3399 RVA: 0x00080BD4 File Offset: 0x0007EDD4
         // (set) Token: 0x06000D48 RID: 3400 RVA: 0x00080BEC File Offset: 0x0007EDEC
         internal virtual System.Windows.Forms.Timer tmrGfx
@@ -1818,7 +1818,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047D RID: 1149
+
         // (get) Token: 0x06000D49 RID: 3401 RVA: 0x00080C48 File Offset: 0x0007EE48
         // (set) Token: 0x06000D4A RID: 3402 RVA: 0x00080C60 File Offset: 0x0007EE60
         internal virtual ToolStripMenuItem ToolStripMenuItem1
@@ -1834,7 +1834,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047E RID: 1150
+
         // (get) Token: 0x06000D4B RID: 3403 RVA: 0x00080C6C File Offset: 0x0007EE6C
         // (set) Token: 0x06000D4C RID: 3404 RVA: 0x00080C84 File Offset: 0x0007EE84
         internal virtual ToolStripMenuItem ToolStripMenuItem2
@@ -1850,7 +1850,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700047F RID: 1151
+
         // (get) Token: 0x06000D4D RID: 3405 RVA: 0x00080C90 File Offset: 0x0007EE90
         // (set) Token: 0x06000D4E RID: 3406 RVA: 0x00080CA8 File Offset: 0x0007EEA8
         internal virtual ToolStripSeparator ToolStripMenuItem4
@@ -1866,7 +1866,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000480 RID: 1152
+
         // (get) Token: 0x06000D4F RID: 3407 RVA: 0x00080CB4 File Offset: 0x0007EEB4
         // (set) Token: 0x06000D50 RID: 3408 RVA: 0x00080CCC File Offset: 0x0007EECC
         internal virtual ToolStripSeparator ToolStripSeparator1
@@ -1882,7 +1882,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000481 RID: 1153
+
         // (get) Token: 0x06000D51 RID: 3409 RVA: 0x00080CD8 File Offset: 0x0007EED8
         // (set) Token: 0x06000D52 RID: 3410 RVA: 0x00080CF0 File Offset: 0x0007EEF0
         internal virtual ToolStripSeparator ToolStripSeparator10
@@ -1898,7 +1898,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000482 RID: 1154
+
         // (get) Token: 0x06000D53 RID: 3411 RVA: 0x00080CFC File Offset: 0x0007EEFC
         // (set) Token: 0x06000D54 RID: 3412 RVA: 0x00080D14 File Offset: 0x0007EF14
         internal virtual ToolStripSeparator ToolStripSeparator11
@@ -1914,7 +1914,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000483 RID: 1155
+
         // (get) Token: 0x06000D55 RID: 3413 RVA: 0x00080D20 File Offset: 0x0007EF20
         // (set) Token: 0x06000D56 RID: 3414 RVA: 0x00080D38 File Offset: 0x0007EF38
         internal virtual ToolStripSeparator ToolStripSeparator12
@@ -1930,7 +1930,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000484 RID: 1156
+
         // (get) Token: 0x06000D57 RID: 3415 RVA: 0x00080D44 File Offset: 0x0007EF44
         // (set) Token: 0x06000D58 RID: 3416 RVA: 0x00080D5C File Offset: 0x0007EF5C
         internal virtual ToolStripSeparator ToolStripSeparator13
@@ -1946,7 +1946,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000485 RID: 1157
+
         // (get) Token: 0x06000D59 RID: 3417 RVA: 0x00080D68 File Offset: 0x0007EF68
         // (set) Token: 0x06000D5A RID: 3418 RVA: 0x00080D80 File Offset: 0x0007EF80
         internal virtual ToolStripSeparator ToolStripSeparator14
@@ -1962,7 +1962,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000486 RID: 1158
+
         // (get) Token: 0x06000D5B RID: 3419 RVA: 0x00080D8C File Offset: 0x0007EF8C
         // (set) Token: 0x06000D5C RID: 3420 RVA: 0x00080DA4 File Offset: 0x0007EFA4
         internal virtual ToolStripSeparator ToolStripSeparator15
@@ -1978,7 +1978,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000487 RID: 1159
+
         // (get) Token: 0x06000D5D RID: 3421 RVA: 0x00080DB0 File Offset: 0x0007EFB0
         // (set) Token: 0x06000D5E RID: 3422 RVA: 0x00080DC8 File Offset: 0x0007EFC8
         internal virtual ToolStripSeparator ToolStripSeparator16
@@ -1994,7 +1994,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000488 RID: 1160
+
         // (get) Token: 0x06000D5F RID: 3423 RVA: 0x00080DD4 File Offset: 0x0007EFD4
         // (set) Token: 0x06000D60 RID: 3424 RVA: 0x00080DEC File Offset: 0x0007EFEC
         internal virtual ToolStripSeparator ToolStripSeparator17
@@ -2010,7 +2010,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000489 RID: 1161
+
         // (get) Token: 0x06000D61 RID: 3425 RVA: 0x00080DF8 File Offset: 0x0007EFF8
         // (set) Token: 0x06000D62 RID: 3426 RVA: 0x00080E10 File Offset: 0x0007F010
         internal virtual ToolStripSeparator ToolStripSeparator18
@@ -2026,7 +2026,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048A RID: 1162
+
         // (get) Token: 0x06000D63 RID: 3427 RVA: 0x00080E1C File Offset: 0x0007F01C
         // (set) Token: 0x06000D64 RID: 3428 RVA: 0x00080E34 File Offset: 0x0007F034
         internal virtual ToolStripSeparator ToolStripSeparator19
@@ -2042,7 +2042,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048B RID: 1163
+
         // (get) Token: 0x06000D65 RID: 3429 RVA: 0x00080E40 File Offset: 0x0007F040
         // (set) Token: 0x06000D66 RID: 3430 RVA: 0x00080E58 File Offset: 0x0007F058
         internal virtual ToolStripSeparator ToolStripSeparator2
@@ -2058,7 +2058,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048C RID: 1164
+
         // (get) Token: 0x06000D67 RID: 3431 RVA: 0x00080E64 File Offset: 0x0007F064
         // (set) Token: 0x06000D68 RID: 3432 RVA: 0x00080E7C File Offset: 0x0007F07C
         internal virtual ToolStripSeparator ToolStripSeparator20
@@ -2074,7 +2074,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048D RID: 1165
+
         // (get) Token: 0x06000D69 RID: 3433 RVA: 0x00080E88 File Offset: 0x0007F088
         // (set) Token: 0x06000D6A RID: 3434 RVA: 0x00080EA0 File Offset: 0x0007F0A0
         internal virtual ToolStripSeparator ToolStripSeparator21
@@ -2090,7 +2090,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048E RID: 1166
+
         // (get) Token: 0x06000D6B RID: 3435 RVA: 0x00080EAC File Offset: 0x0007F0AC
         // (set) Token: 0x06000D6C RID: 3436 RVA: 0x00080EC4 File Offset: 0x0007F0C4
         internal virtual ToolStripSeparator ToolStripSeparator22
@@ -2106,7 +2106,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700048F RID: 1167
+
         // (get) Token: 0x06000D6D RID: 3437 RVA: 0x00080ED0 File Offset: 0x0007F0D0
         // (set) Token: 0x06000D6E RID: 3438 RVA: 0x00080EE8 File Offset: 0x0007F0E8
         internal virtual ToolStripSeparator ToolStripSeparator23
@@ -2122,7 +2122,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000490 RID: 1168
+
         // (get) Token: 0x06000D6F RID: 3439 RVA: 0x00080EF4 File Offset: 0x0007F0F4
         // (set) Token: 0x06000D70 RID: 3440 RVA: 0x00080F0C File Offset: 0x0007F10C
         internal virtual ToolStripSeparator ToolStripSeparator24
@@ -2138,7 +2138,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000491 RID: 1169
+
         // (get) Token: 0x06000D71 RID: 3441 RVA: 0x00080F18 File Offset: 0x0007F118
         // (set) Token: 0x06000D72 RID: 3442 RVA: 0x00080F30 File Offset: 0x0007F130
         internal virtual ToolStripSeparator ToolStripSeparator4
@@ -2154,7 +2154,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000492 RID: 1170
+
         // (get) Token: 0x06000D73 RID: 3443 RVA: 0x00080F3C File Offset: 0x0007F13C
         // (set) Token: 0x06000D74 RID: 3444 RVA: 0x00080F54 File Offset: 0x0007F154
         internal virtual ToolStripSeparator ToolStripSeparator5
@@ -2170,7 +2170,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000493 RID: 1171
+
         // (get) Token: 0x06000D75 RID: 3445 RVA: 0x00080F60 File Offset: 0x0007F160
         // (set) Token: 0x06000D76 RID: 3446 RVA: 0x00080F78 File Offset: 0x0007F178
         internal virtual ToolStripSeparator ToolStripSeparator7
@@ -2186,7 +2186,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000494 RID: 1172
+
         // (get) Token: 0x06000D77 RID: 3447 RVA: 0x00080F84 File Offset: 0x0007F184
         // (set) Token: 0x06000D78 RID: 3448 RVA: 0x00080F9C File Offset: 0x0007F19C
         internal virtual ToolStripSeparator ToolStripSeparator8
@@ -2202,7 +2202,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000495 RID: 1173
+
         // (get) Token: 0x06000D79 RID: 3449 RVA: 0x00080FA8 File Offset: 0x0007F1A8
         // (set) Token: 0x06000D7A RID: 3450 RVA: 0x00080FC0 File Offset: 0x0007F1C0
         internal virtual ToolStripSeparator ToolStripSeparator9
@@ -2218,7 +2218,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000496 RID: 1174
+
         // (get) Token: 0x06000D7B RID: 3451 RVA: 0x00080FCC File Offset: 0x0007F1CC
         // (set) Token: 0x06000D7C RID: 3452 RVA: 0x00080FE4 File Offset: 0x0007F1E4
         internal virtual ToolStripMenuItem tsAbout
@@ -2243,7 +2243,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000497 RID: 1175
+
         // (get) Token: 0x06000D7D RID: 3453 RVA: 0x00081040 File Offset: 0x0007F240
         // (set) Token: 0x06000D7E RID: 3454 RVA: 0x00081058 File Offset: 0x0007F258
         internal virtual ToolStripMenuItem tsAdvDBEdit
@@ -2268,7 +2268,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000498 RID: 1176
+
         // (get) Token: 0x06000D7F RID: 3455 RVA: 0x000810B4 File Offset: 0x0007F2B4
         // (set) Token: 0x06000D80 RID: 3456 RVA: 0x000810CC File Offset: 0x0007F2CC
         internal virtual ToolStripMenuItem tsAdvFreshInstall
@@ -2293,7 +2293,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000499 RID: 1177
+
         // (get) Token: 0x06000D81 RID: 3457 RVA: 0x00081128 File Offset: 0x0007F328
         // (set) Token: 0x06000D82 RID: 3458 RVA: 0x00081140 File Offset: 0x0007F340
         internal virtual ToolStripMenuItem tsAdvResetTips
@@ -2318,7 +2318,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049A RID: 1178
+
         // (get) Token: 0x06000D83 RID: 3459 RVA: 0x0008119C File Offset: 0x0007F39C
         // (set) Token: 0x06000D84 RID: 3460 RVA: 0x000811B4 File Offset: 0x0007F3B4
         internal virtual ToolStripMenuItem tsBug
@@ -2343,7 +2343,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049B RID: 1179
+
         // (get) Token: 0x06000D85 RID: 3461 RVA: 0x00081210 File Offset: 0x0007F410
         // (set) Token: 0x06000D86 RID: 3462 RVA: 0x00081228 File Offset: 0x0007F428
         internal virtual ToolStripMenuItem tsClearAllEnh
@@ -2368,7 +2368,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049C RID: 1180
+
         // (get) Token: 0x06000D87 RID: 3463 RVA: 0x00081284 File Offset: 0x0007F484
         // (set) Token: 0x06000D88 RID: 3464 RVA: 0x0008129C File Offset: 0x0007F49C
         internal virtual ToolStripMenuItem tsConfig
@@ -2393,7 +2393,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049D RID: 1181
+
         // (get) Token: 0x06000D89 RID: 3465 RVA: 0x000812F8 File Offset: 0x0007F4F8
         // (set) Token: 0x06000D8A RID: 3466 RVA: 0x00081310 File Offset: 0x0007F510
         internal virtual ToolStripMenuItem tsDonate
@@ -2418,7 +2418,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049E RID: 1182
+
         // (get) Token: 0x06000D8B RID: 3467 RVA: 0x0008136C File Offset: 0x0007F56C
         // (set) Token: 0x06000D8C RID: 3468 RVA: 0x00081384 File Offset: 0x0007F584
         internal virtual ToolStripMenuItem tsDynamic
@@ -2443,7 +2443,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700049F RID: 1183
+
         // (get) Token: 0x06000D8D RID: 3469 RVA: 0x000813E0 File Offset: 0x0007F5E0
         // (set) Token: 0x06000D8E RID: 3470 RVA: 0x000813F8 File Offset: 0x0007F5F8
         internal virtual ToolStripMenuItem tsEnhToDO
@@ -2468,7 +2468,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A0 RID: 1184
+
         // (get) Token: 0x06000D8F RID: 3471 RVA: 0x00081454 File Offset: 0x0007F654
         // (set) Token: 0x06000D90 RID: 3472 RVA: 0x0008146C File Offset: 0x0007F66C
         internal virtual ToolStripMenuItem tsEnhToEven
@@ -2493,7 +2493,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A1 RID: 1185
+
         // (get) Token: 0x06000D91 RID: 3473 RVA: 0x000814C8 File Offset: 0x0007F6C8
         // (set) Token: 0x06000D92 RID: 3474 RVA: 0x000814E0 File Offset: 0x0007F6E0
         internal virtual ToolStripMenuItem tsEnhToMinus1
@@ -2518,7 +2518,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A2 RID: 1186
+
         // (get) Token: 0x06000D93 RID: 3475 RVA: 0x0008153C File Offset: 0x0007F73C
         // (set) Token: 0x06000D94 RID: 3476 RVA: 0x00081554 File Offset: 0x0007F754
         internal virtual ToolStripMenuItem tsEnhToMinus2
@@ -2543,7 +2543,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A3 RID: 1187
+
         // (get) Token: 0x06000D95 RID: 3477 RVA: 0x000815B0 File Offset: 0x0007F7B0
         // (set) Token: 0x06000D96 RID: 3478 RVA: 0x000815C8 File Offset: 0x0007F7C8
         internal virtual ToolStripMenuItem tsEnhToMinus3
@@ -2568,7 +2568,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A4 RID: 1188
+
         // (get) Token: 0x06000D97 RID: 3479 RVA: 0x00081624 File Offset: 0x0007F824
         // (set) Token: 0x06000D98 RID: 3480 RVA: 0x0008163C File Offset: 0x0007F83C
         internal virtual ToolStripMenuItem tsEnhToNone
@@ -2593,7 +2593,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A5 RID: 1189
+
         // (get) Token: 0x06000D99 RID: 3481 RVA: 0x00081698 File Offset: 0x0007F898
         // (set) Token: 0x06000D9A RID: 3482 RVA: 0x000816B0 File Offset: 0x0007F8B0
         internal virtual ToolStripMenuItem tsEnhToPlus1
@@ -2618,7 +2618,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A6 RID: 1190
+
         // (get) Token: 0x06000D9B RID: 3483 RVA: 0x0008170C File Offset: 0x0007F90C
         // (set) Token: 0x06000D9C RID: 3484 RVA: 0x00081724 File Offset: 0x0007F924
         internal virtual ToolStripMenuItem tsEnhToPlus2
@@ -2643,7 +2643,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A7 RID: 1191
+
         // (get) Token: 0x06000D9D RID: 3485 RVA: 0x00081780 File Offset: 0x0007F980
         // (set) Token: 0x06000D9E RID: 3486 RVA: 0x00081798 File Offset: 0x0007F998
         internal virtual ToolStripMenuItem tsEnhToPlus3
@@ -2668,7 +2668,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A8 RID: 1192
+
         // (get) Token: 0x06000D9F RID: 3487 RVA: 0x000817F4 File Offset: 0x0007F9F4
         // (set) Token: 0x06000DA0 RID: 3488 RVA: 0x0008180C File Offset: 0x0007FA0C
         internal virtual ToolStripMenuItem tsEnhToPlus4
@@ -2693,7 +2693,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004A9 RID: 1193
+
         // (get) Token: 0x06000DA1 RID: 3489 RVA: 0x00081868 File Offset: 0x0007FA68
         // (set) Token: 0x06000DA2 RID: 3490 RVA: 0x00081880 File Offset: 0x0007FA80
         internal virtual ToolStripMenuItem tsEnhToPlus5
@@ -2718,7 +2718,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AA RID: 1194
+
         // (get) Token: 0x06000DA3 RID: 3491 RVA: 0x000818DC File Offset: 0x0007FADC
         // (set) Token: 0x06000DA4 RID: 3492 RVA: 0x000818F4 File Offset: 0x0007FAF4
         internal virtual ToolStripMenuItem tsEnhToSO
@@ -2743,7 +2743,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AB RID: 1195
+
         // (get) Token: 0x06000DA5 RID: 3493 RVA: 0x00081950 File Offset: 0x0007FB50
         // (set) Token: 0x06000DA6 RID: 3494 RVA: 0x00081968 File Offset: 0x0007FB68
         internal virtual ToolStripMenuItem tsEnhToTO
@@ -2768,7 +2768,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AC RID: 1196
+
         // (get) Token: 0x06000DA7 RID: 3495 RVA: 0x000819C4 File Offset: 0x0007FBC4
         // (set) Token: 0x06000DA8 RID: 3496 RVA: 0x000819DC File Offset: 0x0007FBDC
         internal virtual ToolStripMenuItem tsExport
@@ -2793,7 +2793,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AD RID: 1197
+
         // (get) Token: 0x06000DA9 RID: 3497 RVA: 0x00081A38 File Offset: 0x0007FC38
         // (set) Token: 0x06000DAA RID: 3498 RVA: 0x00081A50 File Offset: 0x0007FC50
         internal virtual ToolStripMenuItem tsExportDataLink
@@ -2818,7 +2818,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AE RID: 1198
+
         // (get) Token: 0x06000DAB RID: 3499 RVA: 0x00081AAC File Offset: 0x0007FCAC
         // (set) Token: 0x06000DAC RID: 3500 RVA: 0x00081AC4 File Offset: 0x0007FCC4
         internal virtual ToolStripMenuItem tsExportLong
@@ -2843,7 +2843,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004AF RID: 1199
+
         // (get) Token: 0x06000DAD RID: 3501 RVA: 0x00081B20 File Offset: 0x0007FD20
         // (set) Token: 0x06000DAE RID: 3502 RVA: 0x00081B38 File Offset: 0x0007FD38
         internal virtual ToolStripMenuItem tsFileNew
@@ -2868,7 +2868,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B0 RID: 1200
+
         // (get) Token: 0x06000DAF RID: 3503 RVA: 0x00081B94 File Offset: 0x0007FD94
         // (set) Token: 0x06000DB0 RID: 3504 RVA: 0x00081BAC File Offset: 0x0007FDAC
         internal virtual ToolStripMenuItem tsFileOpen
@@ -2893,7 +2893,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B1 RID: 1201
+
         // (get) Token: 0x06000DB1 RID: 3505 RVA: 0x00081C08 File Offset: 0x0007FE08
         // (set) Token: 0x06000DB2 RID: 3506 RVA: 0x00081C20 File Offset: 0x0007FE20
         internal virtual ToolStripMenuItem tsFilePrint
@@ -2918,7 +2918,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B2 RID: 1202
+
         // (get) Token: 0x06000DB3 RID: 3507 RVA: 0x00081C7C File Offset: 0x0007FE7C
         // (set) Token: 0x06000DB4 RID: 3508 RVA: 0x00081C94 File Offset: 0x0007FE94
         internal virtual ToolStripMenuItem tsFileQuit
@@ -2943,7 +2943,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B3 RID: 1203
+
         // (get) Token: 0x06000DB5 RID: 3509 RVA: 0x00081CF0 File Offset: 0x0007FEF0
         // (set) Token: 0x06000DB6 RID: 3510 RVA: 0x00081D08 File Offset: 0x0007FF08
         internal virtual ToolStripMenuItem tsFileSave
@@ -2968,7 +2968,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B4 RID: 1204
+
         // (get) Token: 0x06000DB7 RID: 3511 RVA: 0x00081D64 File Offset: 0x0007FF64
         // (set) Token: 0x06000DB8 RID: 3512 RVA: 0x00081D7C File Offset: 0x0007FF7C
         internal virtual ToolStripMenuItem tsFileSaveAs
@@ -2993,7 +2993,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B5 RID: 1205
+
         // (get) Token: 0x06000DB9 RID: 3513 RVA: 0x00081DD8 File Offset: 0x0007FFD8
         // (set) Token: 0x06000DBA RID: 3514 RVA: 0x00081DF0 File Offset: 0x0007FFF0
         internal virtual ToolStripMenuItem tsFlipAllEnh
@@ -3018,7 +3018,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B6 RID: 1206
+
         // (get) Token: 0x06000DBB RID: 3515 RVA: 0x00081E4C File Offset: 0x0008004C
         // (set) Token: 0x06000DBC RID: 3516 RVA: 0x00081E64 File Offset: 0x00080064
         internal virtual ToolStripMenuItem tsHelp
@@ -3043,7 +3043,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B7 RID: 1207
+
         // (get) Token: 0x06000DBD RID: 3517 RVA: 0x00081EC0 File Offset: 0x000800C0
         // (set) Token: 0x06000DBE RID: 3518 RVA: 0x00081ED8 File Offset: 0x000800D8
         internal virtual ToolStripMenuItem tsHelperLong
@@ -3068,7 +3068,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B8 RID: 1208
+
         // (get) Token: 0x06000DBF RID: 3519 RVA: 0x00081F34 File Offset: 0x00080134
         // (set) Token: 0x06000DC0 RID: 3520 RVA: 0x00081F4C File Offset: 0x0008014C
         internal virtual ToolStripMenuItem tsHelperLong2
@@ -3093,7 +3093,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004B9 RID: 1209
+
         // (get) Token: 0x06000DC1 RID: 3521 RVA: 0x00081FA8 File Offset: 0x000801A8
         // (set) Token: 0x06000DC2 RID: 3522 RVA: 0x00081FC0 File Offset: 0x000801C0
         internal virtual ToolStripMenuItem tsHelperShort
@@ -3118,7 +3118,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BA RID: 1210
+
         // (get) Token: 0x06000DC3 RID: 3523 RVA: 0x0008201C File Offset: 0x0008021C
         // (set) Token: 0x06000DC4 RID: 3524 RVA: 0x00082034 File Offset: 0x00080234
         internal virtual ToolStripMenuItem tsHelperShort2
@@ -3143,7 +3143,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BB RID: 1211
+
         // (get) Token: 0x06000DC5 RID: 3525 RVA: 0x00082090 File Offset: 0x00080290
         // (set) Token: 0x06000DC6 RID: 3526 RVA: 0x000820A8 File Offset: 0x000802A8
         internal virtual ToolStripMenuItem tsImport
@@ -3168,7 +3168,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BC RID: 1212
+
         // (get) Token: 0x06000DC7 RID: 3527 RVA: 0x00082104 File Offset: 0x00080304
         // (set) Token: 0x06000DC8 RID: 3528 RVA: 0x0008211C File Offset: 0x0008031C
         internal virtual ToolStripMenuItem tsIODefault
@@ -3193,7 +3193,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BD RID: 1213
+
         // (get) Token: 0x06000DC9 RID: 3529 RVA: 0x00082178 File Offset: 0x00080378
         // (set) Token: 0x06000DCA RID: 3530 RVA: 0x00082190 File Offset: 0x00080390
         internal virtual ToolStripMenuItem tsIOMax
@@ -3218,7 +3218,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BE RID: 1214
+
         // (get) Token: 0x06000DCB RID: 3531 RVA: 0x000821EC File Offset: 0x000803EC
         // (set) Token: 0x06000DCC RID: 3532 RVA: 0x00082204 File Offset: 0x00080404
         internal virtual ToolStripMenuItem tsIOMin
@@ -3243,7 +3243,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004BF RID: 1215
+
         // (get) Token: 0x06000DCD RID: 3533 RVA: 0x00082260 File Offset: 0x00080460
         // (set) Token: 0x06000DCE RID: 3534 RVA: 0x00082278 File Offset: 0x00080478
         internal virtual ToolStripMenuItem tsLevelUp
@@ -3268,7 +3268,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C0 RID: 1216
+
         // (get) Token: 0x06000DCF RID: 3535 RVA: 0x000822D4 File Offset: 0x000804D4
         // (set) Token: 0x06000DD0 RID: 3536 RVA: 0x000822EC File Offset: 0x000804EC
         internal virtual ToolStripMenuItem tsPatchNotes
@@ -3293,7 +3293,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C1 RID: 1217
+
         // (get) Token: 0x06000DD1 RID: 3537 RVA: 0x00082348 File Offset: 0x00080548
         // (set) Token: 0x06000DD2 RID: 3538 RVA: 0x00082360 File Offset: 0x00080560
         internal virtual ToolStripMenuItem tsRecipeViewer
@@ -3318,7 +3318,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C2 RID: 1218
+
         // (get) Token: 0x06000DD3 RID: 3539 RVA: 0x000823BC File Offset: 0x000805BC
         // (set) Token: 0x06000DD4 RID: 3540 RVA: 0x000823D4 File Offset: 0x000805D4
         internal virtual ToolStripMenuItem tsDPSCalc
@@ -3343,7 +3343,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C3 RID: 1219
+
         // (get) Token: 0x06000DD5 RID: 3541 RVA: 0x00082430 File Offset: 0x00080630
         // (set) Token: 0x06000DD6 RID: 3542 RVA: 0x00082448 File Offset: 0x00080648
         internal virtual ToolStripMenuItem tsRemoveAllSlots
@@ -3368,7 +3368,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C4 RID: 1220
+
         // (get) Token: 0x06000DD7 RID: 3543 RVA: 0x000824A4 File Offset: 0x000806A4
         // (set) Token: 0x06000DD8 RID: 3544 RVA: 0x000824BC File Offset: 0x000806BC
         internal virtual ToolStripMenuItem tsSetFind
@@ -3393,7 +3393,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C5 RID: 1221
+
         // (get) Token: 0x06000DD9 RID: 3545 RVA: 0x00082518 File Offset: 0x00080718
         // (set) Token: 0x06000DDA RID: 3546 RVA: 0x00082530 File Offset: 0x00080730
         internal virtual ToolStripMenuItem tsTitanForum
@@ -3418,7 +3418,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C6 RID: 1222
+
         // (get) Token: 0x06000DDB RID: 3547 RVA: 0x0008258C File Offset: 0x0008078C
         // (set) Token: 0x06000DDC RID: 3548 RVA: 0x000825A4 File Offset: 0x000807A4
         internal virtual ToolStripMenuItem tsTitanPlanner
@@ -3443,7 +3443,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C7 RID: 1223
+
         // (get) Token: 0x06000DDD RID: 3549 RVA: 0x00082600 File Offset: 0x00080800
         // (set) Token: 0x06000DDE RID: 3550 RVA: 0x00082618 File Offset: 0x00080818
         internal virtual ToolStripMenuItem tsTitanSite
@@ -3468,7 +3468,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C8 RID: 1224
+
         // (get) Token: 0x06000DDF RID: 3551 RVA: 0x00082674 File Offset: 0x00080874
         // (set) Token: 0x06000DE0 RID: 3552 RVA: 0x0008268C File Offset: 0x0008088C
         internal virtual ToolStripMenuItem tsUpdateCheck
@@ -3493,7 +3493,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004C9 RID: 1225
+
         // (get) Token: 0x06000DE1 RID: 3553 RVA: 0x000826E8 File Offset: 0x000808E8
         // (set) Token: 0x06000DE2 RID: 3554 RVA: 0x00082700 File Offset: 0x00080900
         internal virtual ToolStripMenuItem tsView2Col
@@ -3518,7 +3518,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CA RID: 1226
+
         // (get) Token: 0x06000DE3 RID: 3555 RVA: 0x0008275C File Offset: 0x0008095C
         // (set) Token: 0x06000DE4 RID: 3556 RVA: 0x00082774 File Offset: 0x00080974
         internal virtual ToolStripMenuItem tsView3Col
@@ -3543,7 +3543,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CB RID: 1227
+
         // (get) Token: 0x06000DE5 RID: 3557 RVA: 0x000827D0 File Offset: 0x000809D0
         // (set) Token: 0x06000DE6 RID: 3558 RVA: 0x000827E8 File Offset: 0x000809E8
         internal virtual ToolStripMenuItem tsView4Col
@@ -3568,7 +3568,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CC RID: 1228
+
         // (get) Token: 0x06000DE7 RID: 3559 RVA: 0x00082844 File Offset: 0x00080A44
         // (set) Token: 0x06000DE8 RID: 3560 RVA: 0x0008285C File Offset: 0x00080A5C
         internal virtual ToolStripMenuItem tsViewActualDamage_New
@@ -3593,7 +3593,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CD RID: 1229
+
         // (get) Token: 0x06000DE9 RID: 3561 RVA: 0x000828B8 File Offset: 0x00080AB8
         // (set) Token: 0x06000DEA RID: 3562 RVA: 0x000828D0 File Offset: 0x00080AD0
         internal virtual ToolStripMenuItem tsViewData
@@ -3618,7 +3618,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CE RID: 1230
+
         // (get) Token: 0x06000DEB RID: 3563 RVA: 0x0008292C File Offset: 0x00080B2C
         // (set) Token: 0x06000DEC RID: 3564 RVA: 0x00082944 File Offset: 0x00080B44
         internal virtual ToolStripMenuItem tsViewDPS_New
@@ -3643,7 +3643,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004CF RID: 1231
+
         // (get) Token: 0x06000DED RID: 3565 RVA: 0x000829A0 File Offset: 0x00080BA0
         // (set) Token: 0x06000DEE RID: 3566 RVA: 0x000829B8 File Offset: 0x00080BB8
         internal virtual ToolStripMenuItem tsViewGraphs
@@ -3668,7 +3668,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D0 RID: 1232
+
         // (get) Token: 0x06000DEF RID: 3567 RVA: 0x00082A14 File Offset: 0x00080C14
         // (set) Token: 0x06000DF0 RID: 3568 RVA: 0x00082A2C File Offset: 0x00080C2C
         internal virtual ToolStripMenuItem tsViewIOLevels
@@ -3693,7 +3693,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D1 RID: 1233
+
         // (get) Token: 0x06000DF1 RID: 3569 RVA: 0x00082A88 File Offset: 0x00080C88
         // (set) Token: 0x06000DF2 RID: 3570 RVA: 0x00082AA0 File Offset: 0x00080CA0
         internal virtual ToolStripMenuItem tsViewRelative
@@ -3718,7 +3718,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D2 RID: 1234
+
         // (get) Token: 0x06000DF3 RID: 3571 RVA: 0x00082AFC File Offset: 0x00080CFC
         // (set) Token: 0x06000DF4 RID: 3572 RVA: 0x00082B14 File Offset: 0x00080D14
         internal virtual ToolStripMenuItem tsViewSetCompare
@@ -3743,7 +3743,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D3 RID: 1235
+
         // (get) Token: 0x06000DF5 RID: 3573 RVA: 0x00082B70 File Offset: 0x00080D70
         // (set) Token: 0x06000DF6 RID: 3574 RVA: 0x00082B88 File Offset: 0x00080D88
         internal virtual ToolStripMenuItem tsViewSets
@@ -3768,7 +3768,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D4 RID: 1236
+
         // (get) Token: 0x06000DF7 RID: 3575 RVA: 0x00082BE4 File Offset: 0x00080DE4
         // (set) Token: 0x06000DF8 RID: 3576 RVA: 0x00082BFC File Offset: 0x00080DFC
         internal virtual ToolStripMenuItem tsViewSlotLevels
@@ -3793,7 +3793,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D5 RID: 1237
+
         // (get) Token: 0x06000DF9 RID: 3577 RVA: 0x00082C58 File Offset: 0x00080E58
         // (set) Token: 0x06000DFA RID: 3578 RVA: 0x00082C70 File Offset: 0x00080E70
         internal virtual ToolStripMenuItem tsViewTotals
@@ -3818,7 +3818,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D6 RID: 1238
+
         // (get) Token: 0x06000DFB RID: 3579 RVA: 0x00082CCC File Offset: 0x00080ECC
         // (set) Token: 0x06000DFC RID: 3580 RVA: 0x00082CE4 File Offset: 0x00080EE4
         internal virtual ToolTip tTip
@@ -3834,7 +3834,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D7 RID: 1239
+
         // (get) Token: 0x06000DFD RID: 3581 RVA: 0x00082CF0 File Offset: 0x00080EF0
         // (set) Token: 0x06000DFE RID: 3582 RVA: 0x00082D08 File Offset: 0x00080F08
         internal virtual TextBox txtName
@@ -3859,7 +3859,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D8 RID: 1240
+
         // (get) Token: 0x06000DFF RID: 3583 RVA: 0x00082D64 File Offset: 0x00080F64
         // (set) Token: 0x06000E00 RID: 3584 RVA: 0x00082D7C File Offset: 0x00080F7C
         internal virtual ToolStripMenuItem ViewToolStripMenuItem
@@ -3875,7 +3875,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170004D9 RID: 1241
+
         // (get) Token: 0x06000E01 RID: 3585 RVA: 0x00082D88 File Offset: 0x00080F88
         // (set) Token: 0x06000E02 RID: 3586 RVA: 0x00082DA0 File Offset: 0x00080FA0
         internal virtual ToolStripMenuItem WindowToolStripMenuItem
@@ -3891,7 +3891,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E03 RID: 3587 RVA: 0x00082DAC File Offset: 0x00080FAC
+
         public frmMain()
         {
             //base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
@@ -3951,13 +3951,13 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x06000E04 RID: 3588 RVA: 0x00082F93 File Offset: 0x00081193
+
         private void accoladeButton_ButtonClicked()
         {
             this.PowerModified();
         }
 
-        // Token: 0x06000E05 RID: 3589 RVA: 0x00082FA0 File Offset: 0x000811A0
+
         private void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
@@ -4000,14 +4000,14 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E06 RID: 3590 RVA: 0x000830E1 File Offset: 0x000812E1
+
         private void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.accoladeButton.Checked = true;
         }
 
-        // Token: 0x06000E07 RID: 3591 RVA: 0x0008310C File Offset: 0x0008130C
+
         private static int ArchetypeIndirectToIndex(int iIndirect)
         {
             int num = -1;
@@ -4026,7 +4026,7 @@ namespace Hero_Designer
             return 0;
         }
 
-        // Token: 0x06000E08 RID: 3592 RVA: 0x00083180 File Offset: 0x00081380
+
         private void AssemblePowerList(ref ListLabelV2 llPower, IPowerset Powerset)
         {
             if (Powerset == null)
@@ -4091,7 +4091,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E09 RID: 3593 RVA: 0x00083428 File Offset: 0x00081628
+
         private void AutoArrangeAllSlotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PowerEntry[] powerEntryArray = frmMain.DeepCopyPowerList();
@@ -4101,7 +4101,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000E0A RID: 3594 RVA: 0x0008345C File Offset: 0x0008165C
+
         private void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbAncillary = this.cbAncillary;
@@ -4109,7 +4109,7 @@ namespace Hero_Designer
             this.cbAncillary = cbAncillary;
         }
 
-        // Token: 0x06000E0B RID: 3595 RVA: 0x00083484 File Offset: 0x00081684
+
         private void cbAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
@@ -4119,7 +4119,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E0C RID: 3596 RVA: 0x000834EC File Offset: 0x000816EC
+
         private void cbAncillery_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4129,7 +4129,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E0D RID: 3597 RVA: 0x00083514 File Offset: 0x00081714
+
         private void cbAT_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4154,13 +4154,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E0E RID: 3598 RVA: 0x000836AE File Offset: 0x000818AE
+
         private void cbAT_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E0F RID: 3599 RVA: 0x000836B8 File Offset: 0x000818B8
+
         private void cbAT_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
@@ -4169,7 +4169,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E10 RID: 3600 RVA: 0x00083724 File Offset: 0x00081924
+
         private void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4181,7 +4181,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E11 RID: 3601 RVA: 0x00083760 File Offset: 0x00081960
+
         private static void cbDrawItem(ref ComboBox Target, Enums.ePowerSetType SetType, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4221,7 +4221,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E12 RID: 3602 RVA: 0x0008398C File Offset: 0x00081B8C
+
         private void cbOrigin_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4245,7 +4245,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E13 RID: 3603 RVA: 0x00083B24 File Offset: 0x00081D24
+
         private void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4260,7 +4260,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E14 RID: 3604 RVA: 0x00083B88 File Offset: 0x00081D88
+
         private void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool0 = this.cbPool0;
@@ -4268,13 +4268,13 @@ namespace Hero_Designer
             this.cbPool0 = cbPool0;
         }
 
-        // Token: 0x06000E15 RID: 3605 RVA: 0x00083BAF File Offset: 0x00081DAF
+
         private void cbPool0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E16 RID: 3606 RVA: 0x00083BBC File Offset: 0x00081DBC
+
         private void cbPool0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
@@ -4284,7 +4284,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E17 RID: 3607 RVA: 0x00083C24 File Offset: 0x00081E24
+
         private void cbPool0_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4294,7 +4294,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E18 RID: 3608 RVA: 0x00083C4C File Offset: 0x00081E4C
+
         private void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool = this.cbPool1;
@@ -4302,7 +4302,7 @@ namespace Hero_Designer
             this.cbPool1 = cbPool;
         }
 
-        // Token: 0x06000E19 RID: 3609 RVA: 0x00083C74 File Offset: 0x00081E74
+
         private void cbPool1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
@@ -4312,7 +4312,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E1A RID: 3610 RVA: 0x00083CDC File Offset: 0x00081EDC
+
         private void cbPool1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4322,7 +4322,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E1B RID: 3611 RVA: 0x00083D04 File Offset: 0x00081F04
+
         private void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool2 = this.cbPool2;
@@ -4330,7 +4330,7 @@ namespace Hero_Designer
             this.cbPool2 = cbPool2;
         }
 
-        // Token: 0x06000E1C RID: 3612 RVA: 0x00083D2C File Offset: 0x00081F2C
+
         private void cbPool2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
@@ -4340,7 +4340,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E1D RID: 3613 RVA: 0x00083D94 File Offset: 0x00081F94
+
         private void cbPool2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4350,7 +4350,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E1E RID: 3614 RVA: 0x00083DBC File Offset: 0x00081FBC
+
         private void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool3 = this.cbPool3;
@@ -4358,7 +4358,7 @@ namespace Hero_Designer
             this.cbPool3 = cbPool3;
         }
 
-        // Token: 0x06000E1F RID: 3615 RVA: 0x00083DE4 File Offset: 0x00081FE4
+
         private void cbPool3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
@@ -4368,7 +4368,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E20 RID: 3616 RVA: 0x00083E4C File Offset: 0x0008204C
+
         private void cbPool3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4378,7 +4378,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E21 RID: 3617 RVA: 0x00083E74 File Offset: 0x00082074
+
         private void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPrimary = this.cbPrimary;
@@ -4386,13 +4386,13 @@ namespace Hero_Designer
             this.cbPrimary = cbPrimary;
         }
 
-        // Token: 0x06000E22 RID: 3618 RVA: 0x00083E9B File Offset: 0x0008209B
+
         private void cbPrimary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E23 RID: 3619 RVA: 0x00083EA8 File Offset: 0x000820A8
+
         private void cbPrimary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MidsContext.Character != null && MidsContext.Character.Archetype != null && this.cbPrimary.SelectedIndex >= 0)
@@ -4402,7 +4402,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E24 RID: 3620 RVA: 0x00083F2C File Offset: 0x0008212C
+
         private void cbPrimary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4412,7 +4412,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E25 RID: 3621 RVA: 0x00083F54 File Offset: 0x00082154
+
         private void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbSecondary = this.cbSecondary;
@@ -4420,13 +4420,13 @@ namespace Hero_Designer
             this.cbSecondary = cbSecondary;
         }
 
-        // Token: 0x06000E26 RID: 3622 RVA: 0x00083F7B File Offset: 0x0008217B
+
         private void cbSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E27 RID: 3623 RVA: 0x00083F88 File Offset: 0x00082188
+
         private void cbSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
@@ -4444,7 +4444,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E28 RID: 3624 RVA: 0x00084038 File Offset: 0x00082238
+
         private void cbSecondary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4454,7 +4454,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E29 RID: 3625 RVA: 0x00084060 File Offset: 0x00082260
+
         private void ChangeSets()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary);
@@ -4510,7 +4510,7 @@ namespace Hero_Designer
             this.GetBestDamageValues();
         }
 
-        // Token: 0x06000E2A RID: 3626 RVA: 0x000842CC File Offset: 0x000824CC
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void CheckForDownloadedUpdate()
         {
@@ -4529,7 +4529,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E2B RID: 3627 RVA: 0x00084390 File Offset: 0x00082590
+
         private void clearPower(PowerEntry[] tp, int pwrIdx)
         {
             tp[pwrIdx].Slots = new SlotEntry[0];
@@ -4541,7 +4541,7 @@ namespace Hero_Designer
             tp[pwrIdx].StatInclude = false;
         }
 
-        // Token: 0x06000E2C RID: 3628 RVA: 0x000843E8 File Offset: 0x000825E8
+
         public bool CloseCommand()
         {
             bool flag = false;
@@ -4571,7 +4571,7 @@ namespace Hero_Designer
             return flag2;
         }
 
-        // Token: 0x06000E2D RID: 3629 RVA: 0x00084484 File Offset: 0x00082684
+
         private bool ComboCheckAT(ref Archetype[] playableClasses)
         {
             bool flag;
@@ -4594,7 +4594,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E2E RID: 3630 RVA: 0x00084524 File Offset: 0x00082724
+
         private bool ComboCheckOrigin()
         {
             bool flag;
@@ -4620,7 +4620,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E2F RID: 3631 RVA: 0x000845F0 File Offset: 0x000827F0
+
         private static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
@@ -4658,7 +4658,7 @@ namespace Hero_Designer
             return flag3;
         }
 
-        // Token: 0x06000E30 RID: 3632 RVA: 0x000846D4 File Offset: 0x000828D4
+
         private static bool ComboCheckPS(ref ComboBox iCB, Enums.PowersetType iSetID, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
@@ -4689,7 +4689,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E31 RID: 3633 RVA: 0x000847D8 File Offset: 0x000829D8
+
         private void command_ForumImport()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -4765,7 +4765,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E32 RID: 3634 RVA: 0x00084A24 File Offset: 0x00082C24
+
         private void command_New()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -4787,20 +4787,20 @@ namespace Hero_Designer
             this.myDataView.Clear();
         }
 
-        // Token: 0x06000E33 RID: 3635 RVA: 0x00084AC1 File Offset: 0x00082CC1
+
         public void DataView_SlotFlip(int PowerIndex)
         {
             this.StartFlip(PowerIndex);
         }
 
-        // Token: 0x06000E34 RID: 3636 RVA: 0x00084ACC File Offset: 0x00082CCC
+
         public void DataView_SlotUpdate()
         {
             this.DoRedraw();
             this.RefreshInfo();
         }
 
-        // Token: 0x06000E35 RID: 3637 RVA: 0x00084AE0 File Offset: 0x00082CE0
+
         private static PowerEntry[] DeepCopyPowerList()
         {
             PowerEntry[] powerEntryArray = new PowerEntry[MidsContext.Character.CurrentBuild.Powers.Count - 1 + 1];
@@ -4812,7 +4812,7 @@ namespace Hero_Designer
             return powerEntryArray;
         }
 
-        // Token: 0x06000E36 RID: 3638 RVA: 0x00084B64 File Offset: 0x00082D64
+
         private Rectangle Dilate(Rectangle irect, int iAdd)
         {
             irect.X -= iAdd;
@@ -4822,14 +4822,14 @@ namespace Hero_Designer
             return irect;
         }
 
-        // Token: 0x06000E37 RID: 3639 RVA: 0x00084BBB File Offset: 0x00082DBB
+
         private void DisplayFormatChanged()
         {
             this.GetBestDamageValues();
             this.RefreshInfo();
         }
 
-        // Token: 0x06000E38 RID: 3640 RVA: 0x00084BCC File Offset: 0x00082DCC
+
         public void DisplayName()
         {
             string str = "";
@@ -4886,7 +4886,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E3A RID: 3642 RVA: 0x00084EA0 File Offset: 0x000830A0
+
         private void doFlipStep()
         {
             if (this.FlipActive)
@@ -4987,7 +4987,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E3B RID: 3643 RVA: 0x00085664 File Offset: 0x00083864
+
         private bool DoOpen(string fName)
         {
             bool flag;
@@ -5037,7 +5037,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E3C RID: 3644 RVA: 0x00085794 File Offset: 0x00083994
+
         public void DoRedraw()
         {
             this.NoResizeEvent = true;
@@ -5060,7 +5060,7 @@ namespace Hero_Designer
             this.Drawing.FullRedraw();
         }
 
-        // Token: 0x06000E3D RID: 3645 RVA: 0x00085858 File Offset: 0x00083A58
+
         private void DoResize()
         {
             this.lblHero.Width = this.ibRecipe.Left - 4;
@@ -5103,7 +5103,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E3E RID: 3646 RVA: 0x00085A50 File Offset: 0x00083C50
+
         private bool doSave()
         {
             bool flag;
@@ -5124,7 +5124,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E3F RID: 3647 RVA: 0x00085ADC File Offset: 0x00083CDC
+
         private bool doSaveAs()
         {
             this.FloatTop(false);
@@ -5192,7 +5192,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E40 RID: 3648 RVA: 0x00085E30 File Offset: 0x00084030
+
         private void dvAnchored_Float()
         {
             frmMain iOwner = this;
@@ -5217,14 +5217,14 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E41 RID: 3649 RVA: 0x00085F7E File Offset: 0x0008417E
+
         private void dvAnchored_Move()
         {
             this.PriSec_ExpandChanged(true);
             this.ReArrange(false);
         }
 
-        // Token: 0x06000E42 RID: 3650 RVA: 0x00085F94 File Offset: 0x00084194
+
         private void dvAnchored_SizeChange(Size newSize, bool Compact)
         {
             this.ReArrange(false);
@@ -5234,13 +5234,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E43 RID: 3651 RVA: 0x00085FD4 File Offset: 0x000841D4
+
         private void dvAnchored_TabChanged(int Index)
         {
             this.SetDataViewTab(Index);
         }
 
-        // Token: 0x06000E44 RID: 3652 RVA: 0x00085FE0 File Offset: 0x000841E0
+
         private void dvAnchored_Unlock()
         {
             this.DataViewLocked = false;
@@ -5250,7 +5250,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E45 RID: 3653 RVA: 0x00086028 File Offset: 0x00084228
+
         private bool EditAccoladesOrTemps(int hIDPower)
         {
             bool flag;
@@ -5278,7 +5278,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000E46 RID: 3654 RVA: 0x0008613C File Offset: 0x0008433C
+
         private void EndFlip()
         {
             this.FlipActive = false;
@@ -5288,20 +5288,20 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000E47 RID: 3655 RVA: 0x0008616D File Offset: 0x0008436D
+
         private void EnhancementModified()
         {
             this.DoRedraw();
             this.RefreshInfo();
         }
 
-        // Token: 0x06000E48 RID: 3656 RVA: 0x00086180 File Offset: 0x00084380
+
         private int[] fakeInitialize(params int[] nums)
         {
             return nums;
         }
 
-        // Token: 0x06000E49 RID: 3657 RVA: 0x00086194 File Offset: 0x00084394
+
         private void FixPrimarySecondaryHeight()
         {
             if (this.dvAnchored.Visible & this.dvAnchored.Bounds.IntersectsWith(this.dvAnchored.SnapLocation))
@@ -5347,7 +5347,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4A RID: 3658 RVA: 0x00086398 File Offset: 0x00084598
+
         private void fixStatIncludes()
         {
             if (MainModule.MidsController.Toon != null)
@@ -5370,7 +5370,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4B RID: 3659 RVA: 0x000864C0 File Offset: 0x000846C0
+
         public void FloatCompareGraph(bool Show)
         {
             if (Show)
@@ -5392,7 +5392,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4C RID: 3660 RVA: 0x00086550 File Offset: 0x00084750
+
         public void FloatData(bool Show)
         {
             if (Show)
@@ -5415,7 +5415,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4D RID: 3661 RVA: 0x000865E8 File Offset: 0x000847E8
+
         public void FloatRecipe(bool Show)
         {
             if (Show)
@@ -5437,7 +5437,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4E RID: 3662 RVA: 0x0008667C File Offset: 0x0008487C
+
         public void FloatDPSCalc(bool Show)
         {
             if (Show)
@@ -5458,7 +5458,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E4F RID: 3663 RVA: 0x00086704 File Offset: 0x00084904
+
         public void FloatSetFinder(bool Show)
         {
             if (Show)
@@ -5478,7 +5478,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E50 RID: 3664 RVA: 0x00086784 File Offset: 0x00084984
+
         public void FloatSets(bool Show)
         {
             if (Show)
@@ -5501,7 +5501,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E51 RID: 3665 RVA: 0x0008681C File Offset: 0x00084A1C
+
         public void FloatStatGraph(bool Show)
         {
             if (Show)
@@ -5523,7 +5523,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E52 RID: 3666 RVA: 0x000868AC File Offset: 0x00084AAC
+
         private void FloatTop(bool OnTop)
         {
             if (!OnTop)
@@ -5647,7 +5647,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E53 RID: 3667 RVA: 0x00086CFC File Offset: 0x00084EFC
+
         public void FloatTotals(bool Show)
         {
             if (Show)
@@ -5672,7 +5672,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E54 RID: 3668 RVA: 0x00086DA8 File Offset: 0x00084FA8
+
         private void FloatUpdate(bool NewData = false)
         {
             if (this.fSets != null)
@@ -5705,20 +5705,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E55 RID: 3669 RVA: 0x00086E7A File Offset: 0x0008507A
+
         private void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = base.Size;
             MidsContext.Config.SaveConfig();
         }
 
-        // Token: 0x06000E56 RID: 3670 RVA: 0x00086E98 File Offset: 0x00085098
+
         private void frmMain_Closing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = this.CloseCommand();
         }
 
-        // Token: 0x06000E57 RID: 3671 RVA: 0x00086EA8 File Offset: 0x000850A8
+
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Alt & e.Control & e.Shift & e.KeyCode == Keys.A)
@@ -5729,7 +5729,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E58 RID: 3672 RVA: 0x00086F08 File Offset: 0x00085108
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -5907,7 +5907,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E59 RID: 3673 RVA: 0x000878D0 File Offset: 0x00085AD0
+
         private void frmMain_Maximize(object sender, EventArgs e)
         {
             if (base.WindowState != this.LastState)
@@ -5917,13 +5917,13 @@ namespace Hero_Designer
             this.LastState = base.WindowState;
         }
 
-        // Token: 0x06000E5A RID: 3674 RVA: 0x0008790C File Offset: 0x00085B0C
+
         private void frmMain_MouseWheel(object sender, MouseEventArgs e)
         {
             this.dvAnchored.info_txtLarge.Focus();
         }
 
-        // Token: 0x06000E5B RID: 3675 RVA: 0x00087920 File Offset: 0x00085B20
+
         private void frmMain_Resize(object sender, EventArgs e)
         {
             if (this.dvAnchored != null)
@@ -5953,7 +5953,7 @@ namespace Hero_Designer
             this.UpdateControls(false);
         }
 
-        // Token: 0x06000E5C RID: 3676 RVA: 0x000879F8 File Offset: 0x00085BF8
+
         public void GetBestDamageValues()
         {
             if (MainModule.MidsController.Toon != null)
@@ -5997,7 +5997,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E5D RID: 3677 RVA: 0x00087B94 File Offset: 0x00085D94
+
         private int GetFirstValidSetEnh(int SlotIndex, int hID)
         {
             if (this.LastEnhPlaced != null)
@@ -6031,13 +6031,13 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x06000E5E RID: 3678 RVA: 0x00087D00 File Offset: 0x00085F00
+
         private bool GetPlayableClasses(Archetype a)
         {
             return a.Playable;
         }
 
-        // Token: 0x06000E5F RID: 3679 RVA: 0x00087D18 File Offset: 0x00085F18
+
         private I9Slot GetRepeatEnhancement(int powerIndex, int iSlotIndex)
         {
             if (this.LastEnhPlaced != null)
@@ -6072,7 +6072,7 @@ namespace Hero_Designer
             return new I9Slot();
         }
 
-        // Token: 0x06000E60 RID: 3680 RVA: 0x00087E60 File Offset: 0x00086060
+
         private void heroVillain_ButtonClicked()
         {
             if (this.heroVillain.Checked)
@@ -6113,7 +6113,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000E61 RID: 3681 RVA: 0x00087FA0 File Offset: 0x000861A0
+
         private void HidePopup()
         {
             if (this.PopUpVisible)
@@ -6132,7 +6132,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E62 RID: 3682 RVA: 0x00088060 File Offset: 0x00086260
+
         private void I9Picker_EnhancementPicked(I9Slot e)
         {
             e.RelativeLevel = this.I9Picker.UI.View.RelLevel;
@@ -6182,7 +6182,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E63 RID: 3683 RVA: 0x0008833C File Offset: 0x0008653C
+
         private void I9Picker_Hiding(object sender, EventArgs e)
         {
             if (this.I9Picker.Visible)
@@ -6194,7 +6194,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E64 RID: 3684 RVA: 0x00088380 File Offset: 0x00086580
+
         private void I9Picker_HoverEnhancement(int e)
         {
             I9Slot i9Slot = new I9Slot
@@ -6208,14 +6208,14 @@ namespace Hero_Designer
             this.ShowPopup(this.PickerHID, -1, -1, default(Point), this.I9Picker.Bounds, i9Slot, -1);
         }
 
-        // Token: 0x06000E65 RID: 3685 RVA: 0x00088418 File Offset: 0x00086618
+
         private void I9Picker_HoverSet(int e)
         {
             this.myDataView.SetSetPicker(e);
             this.ShowPopup(this.PickerHID, -1, -1, default(Point), this.I9Picker.Bounds, null, e);
         }
 
-        // Token: 0x06000E66 RID: 3686 RVA: 0x00088458 File Offset: 0x00086658
+
         private void I9Picker_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && this.EnhancingSlot > -1)
@@ -6226,20 +6226,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E67 RID: 3687 RVA: 0x000884A4 File Offset: 0x000866A4
+
         private void I9Picker_Moved(Rectangle NewBounds, Rectangle OldBounds)
         {
             this.MovePopup(this.I9Picker.Bounds);
             this.RedrawUnderPopup(OldBounds);
         }
 
-        // Token: 0x06000E68 RID: 3688 RVA: 0x000884C1 File Offset: 0x000866C1
+
         private void I9Popup_MouseMove(object sender, MouseEventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E69 RID: 3689 RVA: 0x000884CC File Offset: 0x000866CC
+
         private void ibMode_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
@@ -6259,13 +6259,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E6A RID: 3690 RVA: 0x0008853D File Offset: 0x0008673D
+
         private void ibPopup_ButtonClicked()
         {
             MidsContext.Config.ShowPopup = this.ibPopup.Checked;
         }
 
-        // Token: 0x06000E6B RID: 3691 RVA: 0x00088558 File Offset: 0x00086758
+
         private void ibPvX_ButtonClicked()
         {
             if (!this.ibPvX.Checked)
@@ -6279,13 +6279,13 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        // Token: 0x06000E6C RID: 3692 RVA: 0x000885A2 File Offset: 0x000867A2
+
         private void ibRecipe_ButtonClicked()
         {
             MidsContext.Config.PopupRecipes = this.ibRecipe.Checked;
         }
 
-        // Token: 0x06000E6D RID: 3693 RVA: 0x000885BC File Offset: 0x000867BC
+
         private void ibSets_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
@@ -6294,19 +6294,19 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E6E RID: 3694 RVA: 0x000885E0 File Offset: 0x000867E0
+
         private void ibSlotLevels_ButtonClicked()
         {
             this.tsViewSlotLevels_Click(this, new EventArgs());
         }
 
-        // Token: 0x06000E6F RID: 3695 RVA: 0x000885F0 File Offset: 0x000867F0
+
         private void ibTotals_ButtonClicked()
         {
             this.FloatTotals(true);
         }
 
-        // Token: 0x06000E70 RID: 3696 RVA: 0x000885FC File Offset: 0x000867FC
+
         private void incarnateButton_MouseDown(object sender, MouseEventArgs e)
         {
             bool flag = false;
@@ -6329,19 +6329,19 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E71 RID: 3697 RVA: 0x0008866F File Offset: 0x0008686F
+
         private void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
         }
 
-        // Token: 0x06000E72 RID: 3698 RVA: 0x0008868D File Offset: 0x0008688D
+
         private void Info_Enhancement(I9Slot iEnh, int iLevel = -1)
         {
             this.myDataView.SetEnhancement(iEnh, iLevel);
         }
 
-        // Token: 0x06000E73 RID: 3699 RVA: 0x000886A0 File Offset: 0x000868A0
+
         public void Info_Power(int powerIdx, int iEnhLvl = -1, bool NoLevel = false, bool Lock = false)
         {
             if (!Lock & this.DataViewLocked)
@@ -6387,7 +6387,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E74 RID: 3700 RVA: 0x00088804 File Offset: 0x00086A04
+
         private void info_Totals()
         {
             if (!(MainModule.MidsController.Toon == null | !MainModule.MidsController.IsAppInitialized))
@@ -6398,13 +6398,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E76 RID: 3702 RVA: 0x0008DFB5 File Offset: 0x0008C1B5
+
         private void lblATLocked_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E77 RID: 3703 RVA: 0x0008DFC0 File Offset: 0x0008C1C0
+
         private void lblATLocked_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
@@ -6413,7 +6413,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E78 RID: 3704 RVA: 0x0008E02C File Offset: 0x0008C22C
+
         private void lblATLocked_Paint(object sender, PaintEventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -6428,13 +6428,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E79 RID: 3705 RVA: 0x0008E100 File Offset: 0x0008C300
+
         private void lblLocked0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E7A RID: 3706 RVA: 0x0008E10C File Offset: 0x0008C30C
+
         private void lblLocked0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
@@ -6444,13 +6444,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E7B RID: 3707 RVA: 0x0008E173 File Offset: 0x0008C373
+
         private void lblLocked0_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool0);
         }
 
-        // Token: 0x06000E7C RID: 3708 RVA: 0x0008E180 File Offset: 0x0008C380
+
         private void lblLocked1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
@@ -6460,13 +6460,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E7D RID: 3709 RVA: 0x0008E1E7 File Offset: 0x0008C3E7
+
         private void lblLocked1_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool1);
         }
 
-        // Token: 0x06000E7E RID: 3710 RVA: 0x0008E1F4 File Offset: 0x0008C3F4
+
         private void lblLocked2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
@@ -6476,13 +6476,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E7F RID: 3711 RVA: 0x0008E25B File Offset: 0x0008C45B
+
         private void lblLocked2_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool2);
         }
 
-        // Token: 0x06000E80 RID: 3712 RVA: 0x0008E268 File Offset: 0x0008C468
+
         private void lblLocked3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
@@ -6492,13 +6492,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E81 RID: 3713 RVA: 0x0008E2CF File Offset: 0x0008C4CF
+
         private void lblLocked3_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool3);
         }
 
-        // Token: 0x06000E82 RID: 3714 RVA: 0x0008E2DC File Offset: 0x0008C4DC
+
         private void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
@@ -6508,19 +6508,19 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E83 RID: 3715 RVA: 0x0008E343 File Offset: 0x0008C543
+
         private void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
         }
 
-        // Token: 0x06000E84 RID: 3716 RVA: 0x0008E350 File Offset: 0x0008C550
+
         private void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E85 RID: 3717 RVA: 0x0008E35C File Offset: 0x0008C55C
+
         private void lblLockedSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
@@ -6538,19 +6538,19 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E86 RID: 3718 RVA: 0x0008E40B File Offset: 0x0008C60B
+
         private void llAll_EmptyHover()
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E87 RID: 3719 RVA: 0x0008E415 File Offset: 0x0008C615
+
         private void llALL_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
 
-        // Token: 0x06000E88 RID: 3720 RVA: 0x0008E420 File Offset: 0x0008C620
+
         private void llAncillary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6566,7 +6566,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E89 RID: 3721 RVA: 0x0008E484 File Offset: 0x0008C684
+
         private void llAncillary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6582,7 +6582,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E8A RID: 3722 RVA: 0x0008E50C File Offset: 0x0008C70C
+
         private void llPool0_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6595,7 +6595,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E8B RID: 3723 RVA: 0x0008E55C File Offset: 0x0008C75C
+
         private void llPool0_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6604,7 +6604,7 @@ namespace Hero_Designer
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool0.Bounds, null, -1);
         }
 
-        // Token: 0x06000E8C RID: 3724 RVA: 0x0008E5B0 File Offset: 0x0008C7B0
+
         private void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6617,7 +6617,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E8D RID: 3725 RVA: 0x0008E600 File Offset: 0x0008C800
+
         private void llPool1_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6626,7 +6626,7 @@ namespace Hero_Designer
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool1.Bounds, null, -1);
         }
 
-        // Token: 0x06000E8E RID: 3726 RVA: 0x0008E654 File Offset: 0x0008C854
+
         private void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6639,7 +6639,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E8F RID: 3727 RVA: 0x0008E6A4 File Offset: 0x0008C8A4
+
         private void llPool2_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6648,7 +6648,7 @@ namespace Hero_Designer
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool2.Bounds, null, -1);
         }
 
-        // Token: 0x06000E90 RID: 3728 RVA: 0x0008E6F8 File Offset: 0x0008C8F8
+
         private void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6661,7 +6661,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E91 RID: 3729 RVA: 0x0008E748 File Offset: 0x0008C948
+
         private void llPool3_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6670,7 +6670,7 @@ namespace Hero_Designer
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool3.Bounds, null, -1);
         }
 
-        // Token: 0x06000E92 RID: 3730 RVA: 0x0008E79C File Offset: 0x0008C99C
+
         private void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6686,7 +6686,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E93 RID: 3731 RVA: 0x0008E800 File Offset: 0x0008CA00
+
         private void llPrimary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6702,7 +6702,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E94 RID: 3732 RVA: 0x0008E888 File Offset: 0x0008CA88
+
         private void llSecondary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6718,7 +6718,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E95 RID: 3733 RVA: 0x0008E8EC File Offset: 0x0008CAEC
+
         private void llSecondary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6734,7 +6734,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E96 RID: 3734 RVA: 0x0008E974 File Offset: 0x0008CB74
+
         private void MiniPaint(ref PaintEventArgs e, Enums.PowersetType iId)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[(int)iId] != null)
@@ -6749,7 +6749,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E97 RID: 3735 RVA: 0x0008EA60 File Offset: 0x0008CC60
+
         private void MovePopup(Rectangle rBounds)
         {
             if (this.PopUpVisible)
@@ -6763,7 +6763,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E98 RID: 3736 RVA: 0x0008EAAC File Offset: 0x0008CCAC
+
         private void NewDraw(bool skipDraw = false)
         {
             if (this.Drawing == null)
@@ -6789,7 +6789,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E99 RID: 3737 RVA: 0x0008EB58 File Offset: 0x0008CD58
+
         private void NewToon(bool Init = true, bool SkipDraw = false)
         {
             if (MainModule.MidsController.Toon == null)
@@ -6838,7 +6838,7 @@ namespace Hero_Designer
             this.FileModified = false;
         }
 
-        // Token: 0x06000E9A RID: 3738 RVA: 0x0008ECF8 File Offset: 0x0008CEF8
+
         private void pbDynMode_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
@@ -6856,7 +6856,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E9B RID: 3739 RVA: 0x0008ED68 File Offset: 0x0008CF68
+
         private void pbDynMode_Paint(object sender, PaintEventArgs e)
         {
             if (this.dmBuffer == null)
@@ -6869,7 +6869,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E9C RID: 3740 RVA: 0x0008EDC4 File Offset: 0x0008CFC4
+
         private void pnlGFX_DragDrop(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
@@ -6912,7 +6912,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E9D RID: 3741 RVA: 0x0008EF3C File Offset: 0x0008D13C
+
         private void pnlGFX_DragEnter(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
@@ -6925,7 +6925,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E9E RID: 3742 RVA: 0x0008EF74 File Offset: 0x0008D174
+
         private void pnlGFX_DragOver(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX) && (this.dragRect.IsEmpty || (this.dragRect.Top != Cursor.Position.Y - this.dragYOffset | this.dragRect.Left != Cursor.Position.X - this.dragXOffset)))
@@ -6954,7 +6954,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000E9F RID: 3743 RVA: 0x0008F154 File Offset: 0x0008D354
+
         private void pnlGFX_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (!this.LastClickPlacedSlot & this.dragStartSlot >= 0)
@@ -6967,7 +6967,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EA0 RID: 3744 RVA: 0x0008F1B4 File Offset: 0x0008D3B4
+
         private void pnlGFX_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -6980,20 +6980,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EA1 RID: 3745 RVA: 0x0008F266 File Offset: 0x0008D466
+
         private void pnlGFX_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
 
-        // Token: 0x06000EA2 RID: 3746 RVA: 0x0008F275 File Offset: 0x0008D475
+
         private void pnlGFX_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
             this.Drawing.HighlightSlot(-1, false);
         }
 
-        // Token: 0x06000EA3 RID: 3747 RVA: 0x0008F290 File Offset: 0x0008D490
+
         private void pnlGFX_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button == MouseButtons.Left & this.pnlGFX.AllowDrop) && Math.Abs(e.X - this.dragStartX) + Math.Abs(e.Y - this.dragStartY) > 7)
@@ -7072,7 +7072,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EA4 RID: 3748 RVA: 0x0008F6A4 File Offset: 0x0008D8A4
+
         private void pnlGFX_MouseUp(object sender, MouseEventArgs e)
         {
             this.pnlGFX.AllowDrop = false;
@@ -7229,13 +7229,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EA5 RID: 3749 RVA: 0x0008FF12 File Offset: 0x0008E112
+
         private void pnlGFXFlow_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
 
-        // Token: 0x06000EA6 RID: 3750 RVA: 0x0008FF24 File Offset: 0x0008E124
+
         public void PowerModified()
         {
             int index = -1;
@@ -7289,7 +7289,7 @@ namespace Hero_Designer
             this.pbDynMode.Refresh();
         }
 
-        // Token: 0x06000EA7 RID: 3751 RVA: 0x0009010C File Offset: 0x0008E30C
+
         private int PowerMove(PowerEntry[] tp, params int[] pow)
         {
             if (tp[pow[0]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 > tp[pow[1]].Level)
@@ -7606,7 +7606,7 @@ namespace Hero_Designer
             return num10;
         }
 
-        // Token: 0x06000EA8 RID: 3752 RVA: 0x00090AC4 File Offset: 0x0008ECC4
+
         private void PowerMoveByUser(params int[] pow)
         {
             if (!(pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1]))
@@ -7628,7 +7628,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EA9 RID: 3753 RVA: 0x00090B53 File Offset: 0x0008ED53
+
         private void PowerPicked(Enums.PowersetType SetID, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
@@ -7636,7 +7636,7 @@ namespace Hero_Designer
             MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
         }
 
-        // Token: 0x06000EAA RID: 3754 RVA: 0x00090B8C File Offset: 0x0008ED8C
+
         private void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
@@ -7645,7 +7645,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000EAB RID: 3755 RVA: 0x00090BBC File Offset: 0x0008EDBC
+
         private int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
         {
             int num;
@@ -8058,7 +8058,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000EAC RID: 3756 RVA: 0x00092004 File Offset: 0x00090204
+
         private void PowerSwapByUser(params int[] pow)
         {
             int index = 0;
@@ -8077,7 +8077,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EAD RID: 3757 RVA: 0x0009206C File Offset: 0x0009026C
+
         private void PriSec_ExpandChanged(bool Expanded)
         {
             if (this.llPrimary.isExpanded | (this.llSecondary.isExpanded & this.dvAnchored.IsDocked & !this.HasSentForwards))
@@ -8096,7 +8096,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EAE RID: 3758 RVA: 0x00092130 File Offset: 0x00090330
+
         private Rectangle raGetPoolRect(int Index)
         {
             Label label;
@@ -8136,7 +8136,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000EAF RID: 3759 RVA: 0x00092264 File Offset: 0x00090464
+
         private int raGetTop()
         {
             int result;
@@ -8151,7 +8151,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000EB0 RID: 3760 RVA: 0x000922D0 File Offset: 0x000904D0
+
         private int raGreater(int iVal1, int iVal2)
         {
             int result;
@@ -8166,7 +8166,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000EB1 RID: 3761 RVA: 0x000922F8 File Offset: 0x000904F8
+
         private void raMovePool(int Index, int X, int Y)
         {
             Label label;
@@ -8224,7 +8224,7 @@ namespace Hero_Designer
             }, null, null);
         }
 
-        // Token: 0x06000EB2 RID: 3762 RVA: 0x00092464 File Offset: 0x00090664
+
         private bool raToFloat()
         {
             bool flag = false;
@@ -8257,7 +8257,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000EB3 RID: 3763 RVA: 0x0009267C File Offset: 0x0009087C
+
         private bool raToNormal()
         {
             bool flag = false;
@@ -8338,7 +8338,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000EB4 RID: 3764 RVA: 0x00092C04 File Offset: 0x00090E04
+
         private bool ReArrange(bool Init)
         {
             bool flag = false;
@@ -8371,7 +8371,7 @@ namespace Hero_Designer
             return flag2;
         }
 
-        // Token: 0x06000EB5 RID: 3765 RVA: 0x00092DB4 File Offset: 0x00090FB4
+
         private void RearrangeAllSlotsInBuild(PowerEntry[] tp, bool notifyUser = false)
         {
             int index = 0;
@@ -8524,7 +8524,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EB6 RID: 3766 RVA: 0x000930A0 File Offset: 0x000912A0
+
         private void RedrawUnderPopup(Rectangle RectRedraw)
         {
             Rectangle Clip = RectRedraw;
@@ -8575,7 +8575,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EB7 RID: 3767 RVA: 0x000932AC File Offset: 0x000914AC
+
         public void RefreshInfo()
         {
             this.info_Totals();
@@ -8585,7 +8585,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EB8 RID: 3768 RVA: 0x000932F4 File Offset: 0x000914F4
+
         private void RefreshTabs(int iPower, I9Slot iEnh, int iLevel = -1)
         {
             if (iEnh.Enh > -1)
@@ -8599,7 +8599,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EB9 RID: 3769 RVA: 0x00093338 File Offset: 0x00091538
+
         private void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
         {
             int num = tp.SlotCount - 2;
@@ -8610,7 +8610,7 @@ namespace Hero_Designer
             tp.Slots = (SlotEntry[])Utils.CopyArray(tp.Slots, new SlotEntry[tp.SlotCount - 2 + 1]);
         }
 
-        // Token: 0x06000EBA RID: 3770 RVA: 0x000933B0 File Offset: 0x000915B0
+
         private void SetAncilPoolHeight()
         {
             int num = this.llAncillary.ActualLineHeight * 2;
@@ -8631,7 +8631,7 @@ namespace Hero_Designer
             this.llAncillary.Height = num;
         }
 
-        // Token: 0x06000EBB RID: 3771 RVA: 0x00093460 File Offset: 0x00091660
+
         private void setColumns(int columns)
         {
             MidsContext.Config.Columns = columns;
@@ -8644,7 +8644,7 @@ namespace Hero_Designer
             this.tsView2Col.Checked = (columns == 2);
         }
 
-        // Token: 0x06000EBC RID: 3772 RVA: 0x000934CC File Offset: 0x000916CC
+
         private void SetDamageMenuCheckMarks()
         {
             switch (MidsContext.Config.DamageMath.ReturnValue)
@@ -8667,7 +8667,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EBD RID: 3773 RVA: 0x0009357C File Offset: 0x0009177C
+
         public void SetDataViewTab(int Index)
         {
             if (Index == 2)
@@ -8683,7 +8683,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EBE RID: 3774 RVA: 0x000935E4 File Offset: 0x000917E4
+
         private void SetFormHeight(bool Force = false)
         {
             int iVal2 = 0;
@@ -8732,7 +8732,7 @@ namespace Hero_Designer
             this.NoResizeEvent = false;
         }
 
-        // Token: 0x06000EBF RID: 3775 RVA: 0x000937BC File Offset: 0x000919BC
+
         private void SetFormWidth(bool ToFull = false)
         {
             this.NoResizeEvent = true;
@@ -8769,7 +8769,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EC0 RID: 3776 RVA: 0x00093904 File Offset: 0x00091B04
+
         public void SetMiniList(PopUp.PopupData iData, string iTitle, int bxHeight = 2048)
         {
             if (this.fMini == null)
@@ -8784,7 +8784,7 @@ namespace Hero_Designer
             this.fMini.BringToFront();
         }
 
-        // Token: 0x06000EC1 RID: 3777 RVA: 0x00093988 File Offset: 0x00091B88
+
         private void SetPopupLocation(Rectangle ObjectBounds, bool PowerListing = false, bool Picker = false)
         {
             int y = 0;
@@ -8881,7 +8881,7 @@ namespace Hero_Designer
             this.I9Popup.Location = location;
         }
 
-        // Token: 0x06000EC2 RID: 3778 RVA: 0x00093DE8 File Offset: 0x00091FE8
+
         private void SetTitleBar(bool Hero = true)
         {
             if (MainModule.MidsController.Toon != null)
@@ -8946,7 +8946,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EC3 RID: 3779 RVA: 0x0009400C File Offset: 0x0009220C
+
         private void ShallowCopyPowerList(PowerEntry[] source)
         {
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
@@ -8956,7 +8956,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EC4 RID: 3780 RVA: 0x00094060 File Offset: 0x00092260
+
         public void ShowAnchoredDataView()
         {
             if (this.FloatingDataForm != null)
@@ -8977,7 +8977,7 @@ namespace Hero_Designer
             this.FloatingDataForm = null;
         }
 
-        // Token: 0x06000EC5 RID: 3781 RVA: 0x00094134 File Offset: 0x00092334
+
         private void ShowPopup(int nIDPowerset, int nIDClass, Rectangle rBounds, string ExtraString = "")
         {
             if (!MidsContext.Config.ShowPopup)
@@ -9036,7 +9036,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EC6 RID: 3782 RVA: 0x000942B4 File Offset: 0x000924B4
+
         private void ShowPopup(int hIDX, int pIDX, int sIDX, Point e, Rectangle rBounds, I9Slot eSlot = null, int setIDX = -1)
         {
             if (!MidsContext.Config.ShowPopup)
@@ -9135,7 +9135,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EC7 RID: 3783 RVA: 0x000946E4 File Offset: 0x000928E4
+
         private void SlotLevelSwap(int sourcePower, int sourceSlot, int destPower, int destSlot)
         {
             int index = 0;
@@ -9190,7 +9190,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000EC8 RID: 3784 RVA: 0x000949FC File Offset: 0x00092BFC
+
         public void smlRespecLong(int iLevel, bool Mode2)
         {
             if (Mode2)
@@ -9205,7 +9205,7 @@ namespace Hero_Designer
             this.fMini.SizeMe();
         }
 
-        // Token: 0x06000EC9 RID: 3785 RVA: 0x00094A7C File Offset: 0x00092C7C
+
         public void smlRespecShort(int iLevel, bool Mode2)
         {
             if (Mode2)
@@ -9221,7 +9221,7 @@ namespace Hero_Designer
             this.fMini.SizeMe();
         }
 
-        // Token: 0x06000ECA RID: 3786 RVA: 0x00094B0C File Offset: 0x00092D0C
+
         private void StartFlip(int iPowerIndex)
         {
             if (this.FlipActive)
@@ -9254,20 +9254,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000ECB RID: 3787 RVA: 0x00094C73 File Offset: 0x00092E73
+
         private void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tempPowersButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.tempPowersButton.Checked = true;
         }
 
-        // Token: 0x06000ECC RID: 3788 RVA: 0x00094C9E File Offset: 0x00092E9E
+
         private void tempPowersButton_ButtonClicked()
         {
             this.PowerModified();
         }
 
-        // Token: 0x06000ECD RID: 3789 RVA: 0x00094CA8 File Offset: 0x00092EA8
+
         private void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
@@ -9302,7 +9302,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000ECE RID: 3790 RVA: 0x00094DBA File Offset: 0x00092FBA
+
         private void tlsDPA_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPA;
@@ -9310,7 +9310,7 @@ namespace Hero_Designer
             this.DisplayFormatChanged();
         }
 
-        // Token: 0x06000ECF RID: 3791 RVA: 0x00094DDC File Offset: 0x00092FDC
+
         private void tmrGfx_Tick(object sender, EventArgs e)
         {
             if (this.FlipActive)
@@ -9319,7 +9319,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000ED0 RID: 3792 RVA: 0x00094E00 File Offset: 0x00093000
+
         private bool ToggleClicked(int hID, int iX, int iY)
         {
             Rectangle rectangle = default(Rectangle);
@@ -9348,7 +9348,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000ED1 RID: 3793 RVA: 0x00094F64 File Offset: 0x00093164
+
         private void tsAbout_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9364,7 +9364,7 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000ED2 RID: 3794 RVA: 0x00094FE3 File Offset: 0x000931E3
+
         private void tsAdvDBEdit_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9372,7 +9372,7 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000ED3 RID: 3795 RVA: 0x00095004 File Offset: 0x00093204
+
         private void tsAdvFreshInstall_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9392,13 +9392,13 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000ED4 RID: 3796 RVA: 0x00095095 File Offset: 0x00093295
+
         private void tsAdvResetTips_Click(object sender, EventArgs e)
         {
             MidsContext.Config.Tips = new Tips();
         }
 
-        // Token: 0x06000ED5 RID: 3797 RVA: 0x000950A8 File Offset: 0x000932A8
+
         private void tsBug_Click(object sender, EventArgs e)
         {
             string at = "ATFailed";
@@ -9416,7 +9416,7 @@ namespace Hero_Designer
             clsXMLUpdate.BugReport(at, pri, sec, "");
         }
 
-        // Token: 0x06000ED6 RID: 3798 RVA: 0x00095134 File Offset: 0x00093334
+
         private void tsClearAllEnh_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9437,7 +9437,7 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000ED7 RID: 3799 RVA: 0x00095214 File Offset: 0x00093414
+
         private void tsConfig_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9453,13 +9453,13 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000ED8 RID: 3800 RVA: 0x00095296 File Offset: 0x00093496
+
         private void tsDonate_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
-        // Token: 0x06000ED9 RID: 3801 RVA: 0x000952A0 File Offset: 0x000934A0
+
         private void tsDynamic_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9470,7 +9470,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDA RID: 3802 RVA: 0x000952DC File Offset: 0x000934DC
+
         private void tsEnhToDO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9484,7 +9484,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDB RID: 3803 RVA: 0x00095338 File Offset: 0x00093538
+
         private void tsEnhToEven_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9499,7 +9499,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDC RID: 3804 RVA: 0x00095394 File Offset: 0x00093594
+
         private void tsEnhToMinus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9514,7 +9514,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDD RID: 3805 RVA: 0x000953F0 File Offset: 0x000935F0
+
         private void tsEnhToMinus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9529,7 +9529,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDE RID: 3806 RVA: 0x0009544C File Offset: 0x0009364C
+
         private void tsEnhToMinus3_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9544,7 +9544,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EDF RID: 3807 RVA: 0x000954A8 File Offset: 0x000936A8
+
         private void tsEnhToNone_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9559,7 +9559,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE0 RID: 3808 RVA: 0x00095504 File Offset: 0x00093704
+
         private void tsEnhToPlus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9574,7 +9574,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE1 RID: 3809 RVA: 0x00095560 File Offset: 0x00093760
+
         private void tsEnhToPlus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9589,7 +9589,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE2 RID: 3810 RVA: 0x000955BC File Offset: 0x000937BC
+
         private void tsEnhToPlus3_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9604,7 +9604,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE3 RID: 3811 RVA: 0x00095618 File Offset: 0x00093818
+
         private void tsEnhToPlus4_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9619,7 +9619,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE4 RID: 3812 RVA: 0x00095674 File Offset: 0x00093874
+
         private void tsEnhToPlus5_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9634,7 +9634,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE5 RID: 3813 RVA: 0x000956D0 File Offset: 0x000938D0
+
         private void tsEnhToSO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9648,7 +9648,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE6 RID: 3814 RVA: 0x0009572C File Offset: 0x0009392C
+
         private void tsEnhToTO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9662,7 +9662,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EE7 RID: 3815 RVA: 0x00095788 File Offset: 0x00093988
+
         private void tsExport_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9681,14 +9681,14 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000EE8 RID: 3816 RVA: 0x00095874 File Offset: 0x00093A74
+
         private void tsExportDataLink_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
             Interaction.MsgBox("The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, "Export Done");
         }
 
-        // Token: 0x06000EE9 RID: 3817 RVA: 0x00095898 File Offset: 0x00093A98
+
         private void tsExportLong_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9708,13 +9708,13 @@ namespace Hero_Designer
             MidsContext.Config.LongExport = false;
         }
 
-        // Token: 0x06000EEA RID: 3818 RVA: 0x0009598F File Offset: 0x00093B8F
+
         private void tsFileNew_Click(object sender, EventArgs e)
         {
             this.command_New();
         }
 
-        // Token: 0x06000EEB RID: 3819 RVA: 0x0009599C File Offset: 0x00093B9C
+
         private void tsFileOpen_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -9735,31 +9735,31 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000EEC RID: 3820 RVA: 0x00095A2D File Offset: 0x00093C2D
+
         private void tsFilePrint_Click(object sender, EventArgs e)
         {
             new frmPrint().ShowDialog(this);
         }
 
-        // Token: 0x06000EED RID: 3821 RVA: 0x00095A3C File Offset: 0x00093C3C
+
         private void tsFileQuit_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
-        // Token: 0x06000EEE RID: 3822 RVA: 0x00095A46 File Offset: 0x00093C46
+
         private void tsFileSave_Click(object sender, EventArgs e)
         {
             this.doSave();
         }
 
-        // Token: 0x06000EEF RID: 3823 RVA: 0x00095A50 File Offset: 0x00093C50
+
         private void tsFileSaveAs_Click(object sender, EventArgs e)
         {
             this.doSaveAs();
         }
 
-        // Token: 0x06000EF0 RID: 3824 RVA: 0x00095A5A File Offset: 0x00093C5A
+
         private void tsFlipAllEnh_Click(object sender, EventArgs e)
         {
             MainModule.MidsController.Toon.FlipAllSlots();
@@ -9768,7 +9768,7 @@ namespace Hero_Designer
             this.FloatUpdate(false);
         }
 
-        // Token: 0x06000EF1 RID: 3825 RVA: 0x00095A80 File Offset: 0x00093C80
+
         private void tsHelp_Click(object sender, EventArgs e)
         {
             frmReadme frmReadme = new frmReadme(OS.GetApplicationPath() + "readme.rtf")
@@ -9785,41 +9785,41 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000EF2 RID: 3826 RVA: 0x00095B10 File Offset: 0x00093D10
+
         private void tsHelperLong_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, false).ShowDialog(this);
         }
 
-        // Token: 0x06000EF3 RID: 3827 RVA: 0x00095B30 File Offset: 0x00093D30
+
         private void tsHelperLong2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, true).ShowDialog(this);
         }
 
-        // Token: 0x06000EF4 RID: 3828 RVA: 0x00095B50 File Offset: 0x00093D50
+
         private void tsHelperShort_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, false).ShowDialog(this);
         }
 
-        // Token: 0x06000EF5 RID: 3829 RVA: 0x00095B70 File Offset: 0x00093D70
+
         private void tsHelperShort2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, true).ShowDialog(this);
         }
 
-        // Token: 0x06000EF6 RID: 3830 RVA: 0x00095B90 File Offset: 0x00093D90
+
         private void tsImport_Click(object sender, EventArgs e)
         {
             this.command_ForumImport();
         }
 
-        // Token: 0x06000EF7 RID: 3831 RVA: 0x00095B9C File Offset: 0x00093D9C
+
         private void tsIODefault_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, false))
@@ -9832,7 +9832,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EF8 RID: 3832 RVA: 0x00095C08 File Offset: 0x00093E08
+
         private void tsIOMax_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, true))
@@ -9845,7 +9845,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EF9 RID: 3833 RVA: 0x00095C64 File Offset: 0x00093E64
+
         private void tsIOMin_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, true, false))
@@ -9858,7 +9858,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EFA RID: 3834 RVA: 0x00095CC0 File Offset: 0x00093EC0
+
         private void tsLevelUp_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9869,7 +9869,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EFB RID: 3835 RVA: 0x00095CFC File Offset: 0x00093EFC
+
         private void tsPatchNotes_Click(object sender, EventArgs e)
         {
             string str = OS.GetApplicationPath() + "Data\\patch.rtf";
@@ -9896,19 +9896,19 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000EFC RID: 3836 RVA: 0x00095DC3 File Offset: 0x00093FC3
+
         private void tsRecipeViewer_Click(object sender, EventArgs e)
         {
             this.FloatRecipe(true);
         }
 
-        // Token: 0x06000EFD RID: 3837 RVA: 0x00095DCE File Offset: 0x00093FCE
+
         private void tsDPSCalc_Click(object sender, EventArgs e)
         {
             this.FloatDPSCalc(true);
         }
 
-        // Token: 0x06000EFE RID: 3838 RVA: 0x00095DDC File Offset: 0x00093FDC
+
         private void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9930,31 +9930,31 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        // Token: 0x06000EFF RID: 3839 RVA: 0x00095ED0 File Offset: 0x000940D0
+
         private void tsSetFind_Click(object sender, EventArgs e)
         {
             this.FloatSetFinder(true);
         }
 
-        // Token: 0x06000F00 RID: 3840 RVA: 0x00095EDB File Offset: 0x000940DB
+
         private void tsTitanForum_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToForums();
         }
 
-        // Token: 0x06000F01 RID: 3841 RVA: 0x00095EE4 File Offset: 0x000940E4
+
         private void tsTitanPlanner_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToCoHPlanner();
         }
 
-        // Token: 0x06000F02 RID: 3842 RVA: 0x00095EED File Offset: 0x000940ED
+
         private void tsTitanSite_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToTitan();
         }
 
-        // Token: 0x06000F03 RID: 3843 RVA: 0x00095EF8 File Offset: 0x000940F8
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void tsUpdateCheck_Click(object sender, EventArgs e)
         {
@@ -9973,25 +9973,25 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        // Token: 0x06000F04 RID: 3844 RVA: 0x00095F8A File Offset: 0x0009418A
+
         private void tsView2Col_Click(object sender, EventArgs e)
         {
             this.setColumns(2);
         }
 
-        // Token: 0x06000F05 RID: 3845 RVA: 0x00095F95 File Offset: 0x00094195
+
         private void tsView3Col_Click(object sender, EventArgs e)
         {
             this.setColumns(3);
         }
 
-        // Token: 0x06000F06 RID: 3846 RVA: 0x00095FA0 File Offset: 0x000941A0
+
         private void tsView4Col_Click(object sender, EventArgs e)
         {
             this.setColumns(4);
         }
 
-        // Token: 0x06000F07 RID: 3847 RVA: 0x00095FAB File Offset: 0x000941AB
+
         private void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
@@ -9999,13 +9999,13 @@ namespace Hero_Designer
             this.DisplayFormatChanged();
         }
 
-        // Token: 0x06000F08 RID: 3848 RVA: 0x00095FCC File Offset: 0x000941CC
+
         private void tsViewData_Click(object sender, EventArgs e)
         {
             this.FloatData(true);
         }
 
-        // Token: 0x06000F09 RID: 3849 RVA: 0x00095FD7 File Offset: 0x000941D7
+
         private void tsViewDPS_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPS;
@@ -10013,13 +10013,13 @@ namespace Hero_Designer
             this.DisplayFormatChanged();
         }
 
-        // Token: 0x06000F0A RID: 3850 RVA: 0x00095FF8 File Offset: 0x000941F8
+
         private void tsViewGraphs_Click(object sender, EventArgs e)
         {
             this.FloatStatGraph(true);
         }
 
-        // Token: 0x06000F0B RID: 3851 RVA: 0x00096004 File Offset: 0x00094204
+
         private void tsViewIOLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.I9.DisplayIOLevels = !MidsContext.Config.I9.DisplayIOLevels;
@@ -10027,7 +10027,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000F0C RID: 3852 RVA: 0x00096055 File Offset: 0x00094255
+
         private void tsViewRelative_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowEnhRel = !MidsContext.Config.ShowEnhRel;
@@ -10035,13 +10035,13 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000F0D RID: 3853 RVA: 0x0009608C File Offset: 0x0009428C
+
         private void tsViewSetCompare_Click(object sender, EventArgs e)
         {
             this.FloatCompareGraph(true);
         }
 
-        // Token: 0x06000F0E RID: 3854 RVA: 0x00096098 File Offset: 0x00094298
+
         private void tsViewSets_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -10050,7 +10050,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F0F RID: 3855 RVA: 0x000960BC File Offset: 0x000942BC
+
         private void tsViewSlotLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowSlotLevels = !MidsContext.Config.ShowSlotLevels;
@@ -10059,13 +10059,13 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        // Token: 0x06000F10 RID: 3856 RVA: 0x00096114 File Offset: 0x00094314
+
         private void tsViewTotals_Click(object sender, EventArgs e)
         {
             this.FloatTotals(true);
         }
 
-        // Token: 0x06000F11 RID: 3857 RVA: 0x00096120 File Offset: 0x00094320
+
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -10075,7 +10075,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F12 RID: 3858 RVA: 0x00096158 File Offset: 0x00094358
+
         public void UnSetMiniList()
         {
             if (this.fMini != null)
@@ -10086,7 +10086,7 @@ namespace Hero_Designer
             GC.Collect();
         }
 
-        // Token: 0x06000F13 RID: 3859 RVA: 0x00096190 File Offset: 0x00094390
+
         public void UpdateColours(bool skipDraw = false)
         {
             this.myDataView.DrawVillain = !MidsContext.Character.IsHero();
@@ -10180,7 +10180,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F14 RID: 3860 RVA: 0x000968EC File Offset: 0x00094AEC
+
         private void UpdateControls(bool ForceComplete = false)
         {
             this.NoUpdate = true;
@@ -10339,7 +10339,7 @@ namespace Hero_Designer
             this.NoUpdate = false;
         }
 
-        // Token: 0x06000F15 RID: 3861 RVA: 0x00097274 File Offset: 0x00095474
+
         void UpdateDMBuffer()
         {
             if (this.Drawing != null && MainModule.MidsController.Toon != null)
@@ -10407,7 +10407,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F16 RID: 3862 RVA: 0x00097560 File Offset: 0x00095760
+
         private void UpdateDynamicModeInfo()
         {
             if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
@@ -10436,7 +10436,7 @@ namespace Hero_Designer
             this.ibMode.TextOff = textOff;
         }
 
-        // Token: 0x06000F17 RID: 3863 RVA: 0x00097620 File Offset: 0x00095820
+
         private void UpdateLLColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -10457,7 +10457,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F18 RID: 3864 RVA: 0x00097728 File Offset: 0x00095928
+
         private void UpdateOtherFormsFonts()
         {
             if (this.fIncarnate != null)
@@ -10573,7 +10573,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F19 RID: 3865 RVA: 0x00097F14 File Offset: 0x00096114
+
         private void UpdatePowerList(ref ListLabelV2 llPower)
         {
             llPower.SuspendRedraw = true;
@@ -10603,7 +10603,7 @@ namespace Hero_Designer
             llPower.SuspendRedraw = false;
         }
 
-        // Token: 0x06000F1A RID: 3866 RVA: 0x00098018 File Offset: 0x00096218
+
         private void UpdatePowerLists()
         {
             bool flag = false;
@@ -10692,7 +10692,7 @@ namespace Hero_Designer
             this.llPool3 = llPower;
         }
 
-        // Token: 0x06000F1B RID: 3867 RVA: 0x0009831C File Offset: 0x0009651C
+
         public virtual void GameImport(string buildString)
         {
             string str = "";
@@ -10980,14 +10980,14 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000F1C RID: 3868 RVA: 0x00098FB0 File Offset: 0x000971B0
+
         private List<PowerEntry> sortPowerEntryList(List<PowerEntry> listPowerEntry)
         {
             listPowerEntry.Sort((PowerEntry p1, PowerEntry p2) => p1.Level.CompareTo(p2.Level));
             return listPowerEntry;
         }
 
-        // Token: 0x06000F1D RID: 3869 RVA: 0x00098FEC File Offset: 0x000971EC
+
         private string[] BuildLineSplitter(string build)
         {
             string[] strArray = build.Split(new char[]
@@ -11002,879 +11002,879 @@ namespace Hero_Designer
             return strArray;
         }
 
-        // Token: 0x04000539 RID: 1337
+
         [AccessedThroughProperty("accoladeButton")]
         private ImageButton _accoladeButton;
 
-        // Token: 0x0400053A RID: 1338
+
         [AccessedThroughProperty("AccoladesWindowToolStripMenuItem")]
         private ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
 
-        // Token: 0x0400053B RID: 1339
+
         [AccessedThroughProperty("AdvancedToolStripMenuItem1")]
         private ToolStripMenuItem _AdvancedToolStripMenuItem1;
 
-        // Token: 0x0400053C RID: 1340
+
         [AccessedThroughProperty("AutoArrangeAllSlotsToolStripMenuItem")]
         private ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
 
-        // Token: 0x0400053D RID: 1341
+
         [AccessedThroughProperty("cbAncillary")]
         private ComboBox _cbAncillary;
 
-        // Token: 0x0400053E RID: 1342
+
         [AccessedThroughProperty("cbAT")]
         private ComboBox _cbAT;
 
-        // Token: 0x0400053F RID: 1343
+
         [AccessedThroughProperty("cbOrigin")]
         private ComboBox _cbOrigin;
 
-        // Token: 0x04000540 RID: 1344
+
         [AccessedThroughProperty("cbPool0")]
         private ComboBox _cbPool0;
 
-        // Token: 0x04000541 RID: 1345
+
         [AccessedThroughProperty("cbPool1")]
         private ComboBox _cbPool1;
 
-        // Token: 0x04000542 RID: 1346
+
         [AccessedThroughProperty("cbPool2")]
         private ComboBox _cbPool2;
 
-        // Token: 0x04000543 RID: 1347
+
         [AccessedThroughProperty("cbPool3")]
         private ComboBox _cbPool3;
 
-        // Token: 0x04000544 RID: 1348
+
         [AccessedThroughProperty("cbPrimary")]
         private ComboBox _cbPrimary;
 
-        // Token: 0x04000545 RID: 1349
+
         [AccessedThroughProperty("cbSecondary")]
         private ComboBox _cbSecondary;
 
-        // Token: 0x04000546 RID: 1350
+
         [AccessedThroughProperty("CharacterToolStripMenuItem")]
         private ToolStripMenuItem _CharacterToolStripMenuItem;
 
-        // Token: 0x04000547 RID: 1351
+
         [AccessedThroughProperty("dlgOpen")]
         private OpenFileDialog _dlgOpen;
 
-        // Token: 0x04000548 RID: 1352
+
         [AccessedThroughProperty("dlgSave")]
         private SaveFileDialog _dlgSave;
 
-        // Token: 0x04000549 RID: 1353
+
         [AccessedThroughProperty("dvAnchored")]
         private DataView _dvAnchored;
 
-        // Token: 0x0400054A RID: 1354
+
         [AccessedThroughProperty("FileToolStripMenuItem")]
         private ToolStripMenuItem _FileToolStripMenuItem;
 
-        // Token: 0x0400054B RID: 1355
+
         [AccessedThroughProperty("HelpToolStripMenuItem1")]
         private ToolStripMenuItem _HelpToolStripMenuItem1;
 
-        // Token: 0x0400054C RID: 1356
+
         [AccessedThroughProperty("heroVillain")]
         private ImageButton _heroVillain;
 
-        // Token: 0x0400054D RID: 1357
+
         [AccessedThroughProperty("I9Picker")]
         private I9Picker _I9Picker;
 
-        // Token: 0x0400054E RID: 1358
+
         [AccessedThroughProperty("I9Popup")]
         private ctlPopUp _I9Popup;
 
-        // Token: 0x0400054F RID: 1359
+
         [AccessedThroughProperty("ibAccolade")]
         private ImageButton _ibAccolade;
 
-        // Token: 0x04000550 RID: 1360
+
         [AccessedThroughProperty("ibMode")]
         private ImageButton _ibMode;
 
-        // Token: 0x04000551 RID: 1361
+
         [AccessedThroughProperty("ibPopup")]
         private ImageButton _ibPopup;
 
-        // Token: 0x04000552 RID: 1362
+
         [AccessedThroughProperty("ibPvX")]
         private ImageButton _ibPvX;
 
-        // Token: 0x04000553 RID: 1363
+
         [AccessedThroughProperty("ibRecipe")]
         private ImageButton _ibRecipe;
 
-        // Token: 0x04000554 RID: 1364
+
         [AccessedThroughProperty("ibSets")]
         private ImageButton _ibSets;
 
-        // Token: 0x04000555 RID: 1365
+
         [AccessedThroughProperty("ibSlotLevels")]
         private ImageButton _ibSlotLevels;
 
-        // Token: 0x04000556 RID: 1366
+
         [AccessedThroughProperty("ibTotals")]
         private ImageButton _ibTotals;
 
-        // Token: 0x04000557 RID: 1367
+
         [AccessedThroughProperty("ibVetPools")]
         private ImageButton _ibVetPools;
 
-        // Token: 0x04000558 RID: 1368
+
         [AccessedThroughProperty("ImportExportToolStripMenuItem")]
         private ToolStripMenuItem _ImportExportToolStripMenuItem;
 
-        // Token: 0x04000559 RID: 1369
+
         [AccessedThroughProperty("incarnateButton")]
         private ImageButton _incarnateButton;
 
-        // Token: 0x0400055A RID: 1370
+
         [AccessedThroughProperty("IncarnateWindowToolStripMenuItem")]
         private ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
 
-        // Token: 0x0400055B RID: 1371
+
         [AccessedThroughProperty("InGameRespecHelperToolStripMenuItem")]
         private ToolStripMenuItem _InGameRespecHelperToolStripMenuItem;
 
-        // Token: 0x0400055C RID: 1372
+
         [AccessedThroughProperty("lblAT")]
         private GFXLabel _lblAT;
 
-        // Token: 0x0400055D RID: 1373
+
         [AccessedThroughProperty("lblATLocked")]
         private Label _lblATLocked;
 
-        // Token: 0x0400055E RID: 1374
+
         [AccessedThroughProperty("lblEpic")]
         private Label _lblEpic;
 
-        // Token: 0x0400055F RID: 1375
+
         [AccessedThroughProperty("lblHero")]
         private GFXLabel _lblHero;
 
-        // Token: 0x04000560 RID: 1376
+
         [AccessedThroughProperty("lblLocked0")]
         private Label _lblLocked0;
 
-        // Token: 0x04000561 RID: 1377
+
         [AccessedThroughProperty("lblLocked1")]
         private Label _lblLocked1;
 
-        // Token: 0x04000562 RID: 1378
+
         [AccessedThroughProperty("lblLocked2")]
         private Label _lblLocked2;
 
-        // Token: 0x04000563 RID: 1379
+
         [AccessedThroughProperty("lblLocked3")]
         private Label _lblLocked3;
 
-        // Token: 0x04000564 RID: 1380
+
         [AccessedThroughProperty("lblLockedAncillary")]
         private Label _lblLockedAncillary;
 
-        // Token: 0x04000565 RID: 1381
+
         [AccessedThroughProperty("lblLockedSecondary")]
         private Label _lblLockedSecondary;
 
-        // Token: 0x04000566 RID: 1382
+
         [AccessedThroughProperty("lblName")]
         private GFXLabel _lblName;
 
-        // Token: 0x04000567 RID: 1383
+
         [AccessedThroughProperty("lblOrigin")]
         private GFXLabel _lblOrigin;
 
-        // Token: 0x04000568 RID: 1384
+
         [AccessedThroughProperty("lblPool1")]
         private Label _lblPool1;
 
-        // Token: 0x04000569 RID: 1385
+
         [AccessedThroughProperty("lblPool2")]
         private Label _lblPool2;
 
-        // Token: 0x0400056A RID: 1386
+
         [AccessedThroughProperty("lblPool3")]
         private Label _lblPool3;
 
-        // Token: 0x0400056B RID: 1387
+
         [AccessedThroughProperty("lblPool4")]
         private Label _lblPool4;
 
-        // Token: 0x0400056C RID: 1388
+
         [AccessedThroughProperty("lblPrimary")]
         private Label _lblPrimary;
 
-        // Token: 0x0400056D RID: 1389
+
         [AccessedThroughProperty("lblSecondary")]
         private Label _lblSecondary;
 
-        // Token: 0x0400056E RID: 1390
+
         [AccessedThroughProperty("llAncillary")]
         private ListLabelV2 _llAncillary;
 
-        // Token: 0x0400056F RID: 1391
+
         [AccessedThroughProperty("llPool0")]
         private ListLabelV2 _llPool0;
 
-        // Token: 0x04000570 RID: 1392
+
         [AccessedThroughProperty("llPool1")]
         private ListLabelV2 _llPool1;
 
-        // Token: 0x04000571 RID: 1393
+
         [AccessedThroughProperty("llPool2")]
         private ListLabelV2 _llPool2;
 
-        // Token: 0x04000572 RID: 1394
+
         [AccessedThroughProperty("llPool3")]
         private ListLabelV2 _llPool3;
 
-        // Token: 0x04000573 RID: 1395
+
         [AccessedThroughProperty("llPrimary")]
         private ListLabelV2 _llPrimary;
 
-        // Token: 0x04000574 RID: 1396
+
         [AccessedThroughProperty("llSecondary")]
         private ListLabelV2 _llSecondary;
 
-        // Token: 0x04000575 RID: 1397
+
         [AccessedThroughProperty("MenuBar")]
         private MenuStrip _MenuBar;
 
-        // Token: 0x04000576 RID: 1398
+
         [AccessedThroughProperty("OptionsToolStripMenuItem")]
         private ToolStripMenuItem _OptionsToolStripMenuItem;
 
-        // Token: 0x04000577 RID: 1399
+
         [AccessedThroughProperty("pbDynMode")]
         private PictureBox _pbDynMode;
 
-        // Token: 0x04000578 RID: 1400
+
         [AccessedThroughProperty("pnlGFX")]
         private PictureBox _pnlGFX;
 
-        // Token: 0x04000579 RID: 1401
+
         [AccessedThroughProperty("pnlGFXFlow")]
         private FlowLayoutPanel _pnlGFXFlow;
 
-        // Token: 0x0400057A RID: 1402
+
         [AccessedThroughProperty("SetAllIOsToDefault35ToolStripMenuItem")]
         private ToolStripMenuItem _SetAllIOsToDefault35ToolStripMenuItem;
 
-        // Token: 0x0400057B RID: 1403
+
         [AccessedThroughProperty("SlotsToolStripMenuItem")]
         private ToolStripMenuItem _SlotsToolStripMenuItem;
 
-        // Token: 0x0400057C RID: 1404
+
         [AccessedThroughProperty("TemporaryPowersWindowToolStripMenuItem")]
         private ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
 
-        // Token: 0x0400057D RID: 1405
+
         [AccessedThroughProperty("tempPowersButton")]
         private ImageButton _tempPowersButton;
 
-        // Token: 0x0400057E RID: 1406
+
         [AccessedThroughProperty("tlsDPA")]
         private ToolStripMenuItem _tlsDPA;
 
-        // Token: 0x0400057F RID: 1407
+
         [AccessedThroughProperty("tmrGfx")]
         private System.Windows.Forms.Timer _tmrGfx;
 
-        // Token: 0x04000580 RID: 1408
+
         [AccessedThroughProperty("ToolStripMenuItem1")]
         private ToolStripMenuItem _ToolStripMenuItem1;
 
-        // Token: 0x04000581 RID: 1409
+
         [AccessedThroughProperty("ToolStripMenuItem2")]
         private ToolStripMenuItem _ToolStripMenuItem2;
 
-        // Token: 0x04000582 RID: 1410
+
         [AccessedThroughProperty("ToolStripMenuItem4")]
         private ToolStripSeparator _ToolStripMenuItem4;
 
-        // Token: 0x04000583 RID: 1411
+
         [AccessedThroughProperty("ToolStripSeparator1")]
         private ToolStripSeparator _ToolStripSeparator1;
 
-        // Token: 0x04000584 RID: 1412
+
         [AccessedThroughProperty("ToolStripSeparator10")]
         private ToolStripSeparator _ToolStripSeparator10;
 
-        // Token: 0x04000585 RID: 1413
+
         [AccessedThroughProperty("ToolStripSeparator11")]
         private ToolStripSeparator _ToolStripSeparator11;
 
-        // Token: 0x04000586 RID: 1414
+
         [AccessedThroughProperty("ToolStripSeparator12")]
         private ToolStripSeparator _ToolStripSeparator12;
 
-        // Token: 0x04000587 RID: 1415
+
         [AccessedThroughProperty("ToolStripSeparator13")]
         private ToolStripSeparator _ToolStripSeparator13;
 
-        // Token: 0x04000588 RID: 1416
+
         [AccessedThroughProperty("ToolStripSeparator14")]
         private ToolStripSeparator _ToolStripSeparator14;
 
-        // Token: 0x04000589 RID: 1417
+
         [AccessedThroughProperty("ToolStripSeparator15")]
         private ToolStripSeparator _ToolStripSeparator15;
 
-        // Token: 0x0400058A RID: 1418
+
         [AccessedThroughProperty("ToolStripSeparator16")]
         private ToolStripSeparator _ToolStripSeparator16;
 
-        // Token: 0x0400058B RID: 1419
+
         [AccessedThroughProperty("ToolStripSeparator17")]
         private ToolStripSeparator _ToolStripSeparator17;
 
-        // Token: 0x0400058C RID: 1420
+
         [AccessedThroughProperty("ToolStripSeparator18")]
         private ToolStripSeparator _ToolStripSeparator18;
 
-        // Token: 0x0400058D RID: 1421
+
         [AccessedThroughProperty("ToolStripSeparator19")]
         private ToolStripSeparator _ToolStripSeparator19;
 
-        // Token: 0x0400058E RID: 1422
+
         [AccessedThroughProperty("ToolStripSeparator2")]
         private ToolStripSeparator _ToolStripSeparator2;
 
-        // Token: 0x0400058F RID: 1423
+
         [AccessedThroughProperty("ToolStripSeparator20")]
         private ToolStripSeparator _ToolStripSeparator20;
 
-        // Token: 0x04000590 RID: 1424
+
         [AccessedThroughProperty("ToolStripSeparator21")]
         private ToolStripSeparator _ToolStripSeparator21;
 
-        // Token: 0x04000591 RID: 1425
+
         [AccessedThroughProperty("ToolStripSeparator22")]
         private ToolStripSeparator _ToolStripSeparator22;
 
-        // Token: 0x04000592 RID: 1426
+
         [AccessedThroughProperty("ToolStripSeparator23")]
         private ToolStripSeparator _ToolStripSeparator23;
 
-        // Token: 0x04000593 RID: 1427
+
         [AccessedThroughProperty("ToolStripSeparator24")]
         private ToolStripSeparator _ToolStripSeparator24;
 
-        // Token: 0x04000594 RID: 1428
+
         [AccessedThroughProperty("ToolStripSeparator4")]
         private ToolStripSeparator _ToolStripSeparator4;
 
-        // Token: 0x04000595 RID: 1429
+
         [AccessedThroughProperty("ToolStripSeparator5")]
         private ToolStripSeparator _ToolStripSeparator5;
 
-        // Token: 0x04000596 RID: 1430
+
         [AccessedThroughProperty("ToolStripSeparator7")]
         private ToolStripSeparator _ToolStripSeparator7;
 
-        // Token: 0x04000597 RID: 1431
+
         [AccessedThroughProperty("ToolStripSeparator8")]
         private ToolStripSeparator _ToolStripSeparator8;
 
-        // Token: 0x04000598 RID: 1432
+
         [AccessedThroughProperty("ToolStripSeparator9")]
         private ToolStripSeparator _ToolStripSeparator9;
 
-        // Token: 0x04000599 RID: 1433
+
         [AccessedThroughProperty("tsAbout")]
         private ToolStripMenuItem _tsAbout;
 
-        // Token: 0x0400059A RID: 1434
+
         [AccessedThroughProperty("tsAdvDBEdit")]
         private ToolStripMenuItem _tsAdvDBEdit;
 
-        // Token: 0x0400059B RID: 1435
+
         [AccessedThroughProperty("tsAdvFreshInstall")]
         private ToolStripMenuItem _tsAdvFreshInstall;
 
-        // Token: 0x0400059C RID: 1436
+
         [AccessedThroughProperty("tsAdvResetTips")]
         private ToolStripMenuItem _tsAdvResetTips;
 
-        // Token: 0x0400059D RID: 1437
+
         [AccessedThroughProperty("tsBug")]
         private ToolStripMenuItem _tsBug;
 
-        // Token: 0x0400059E RID: 1438
+
         [AccessedThroughProperty("tsClearAllEnh")]
         private ToolStripMenuItem _tsClearAllEnh;
 
-        // Token: 0x0400059F RID: 1439
+
         [AccessedThroughProperty("tsConfig")]
         private ToolStripMenuItem _tsConfig;
 
-        // Token: 0x040005A0 RID: 1440
+
         [AccessedThroughProperty("tsDonate")]
         private ToolStripMenuItem _tsDonate;
 
-        // Token: 0x040005A1 RID: 1441
+
         [AccessedThroughProperty("tsDynamic")]
         private ToolStripMenuItem _tsDynamic;
 
-        // Token: 0x040005A2 RID: 1442
+
         [AccessedThroughProperty("tsEnhToDO")]
         private ToolStripMenuItem _tsEnhToDO;
 
-        // Token: 0x040005A3 RID: 1443
+
         [AccessedThroughProperty("tsEnhToEven")]
         private ToolStripMenuItem _tsEnhToEven;
 
-        // Token: 0x040005A4 RID: 1444
+
         [AccessedThroughProperty("tsEnhToMinus1")]
         private ToolStripMenuItem _tsEnhToMinus1;
 
-        // Token: 0x040005A5 RID: 1445
+
         [AccessedThroughProperty("tsEnhToMinus2")]
         private ToolStripMenuItem _tsEnhToMinus2;
 
-        // Token: 0x040005A6 RID: 1446
+
         [AccessedThroughProperty("tsEnhToMinus3")]
         private ToolStripMenuItem _tsEnhToMinus3;
 
-        // Token: 0x040005A7 RID: 1447
+
         [AccessedThroughProperty("tsEnhToNone")]
         private ToolStripMenuItem _tsEnhToNone;
 
-        // Token: 0x040005A8 RID: 1448
+
         [AccessedThroughProperty("tsEnhToPlus1")]
         private ToolStripMenuItem _tsEnhToPlus1;
 
-        // Token: 0x040005A9 RID: 1449
+
         [AccessedThroughProperty("tsEnhToPlus2")]
         private ToolStripMenuItem _tsEnhToPlus2;
 
-        // Token: 0x040005AA RID: 1450
+
         [AccessedThroughProperty("tsEnhToPlus3")]
         private ToolStripMenuItem _tsEnhToPlus3;
 
-        // Token: 0x040005AB RID: 1451
+
         [AccessedThroughProperty("tsEnhToPlus4")]
         private ToolStripMenuItem _tsEnhToPlus4;
 
-        // Token: 0x040005AC RID: 1452
+
         [AccessedThroughProperty("tsEnhToPlus5")]
         private ToolStripMenuItem _tsEnhToPlus5;
 
-        // Token: 0x040005AD RID: 1453
+
         [AccessedThroughProperty("tsEnhToSO")]
         private ToolStripMenuItem _tsEnhToSO;
 
-        // Token: 0x040005AE RID: 1454
+
         [AccessedThroughProperty("tsEnhToTO")]
         private ToolStripMenuItem _tsEnhToTO;
 
-        // Token: 0x040005AF RID: 1455
+
         [AccessedThroughProperty("tsExport")]
         private ToolStripMenuItem _tsExport;
 
-        // Token: 0x040005B0 RID: 1456
+
         [AccessedThroughProperty("tsExportDataLink")]
         private ToolStripMenuItem _tsExportDataLink;
 
-        // Token: 0x040005B1 RID: 1457
+
         [AccessedThroughProperty("tsExportLong")]
         private ToolStripMenuItem _tsExportLong;
 
-        // Token: 0x040005B2 RID: 1458
+
         [AccessedThroughProperty("tsFileNew")]
         private ToolStripMenuItem _tsFileNew;
 
-        // Token: 0x040005B3 RID: 1459
+
         [AccessedThroughProperty("tsFileOpen")]
         private ToolStripMenuItem _tsFileOpen;
 
-        // Token: 0x040005B4 RID: 1460
+
         [AccessedThroughProperty("tsFilePrint")]
         private ToolStripMenuItem _tsFilePrint;
 
-        // Token: 0x040005B5 RID: 1461
+
         [AccessedThroughProperty("tsFileQuit")]
         private ToolStripMenuItem _tsFileQuit;
 
-        // Token: 0x040005B6 RID: 1462
+
         [AccessedThroughProperty("tsFileSave")]
         private ToolStripMenuItem _tsFileSave;
 
-        // Token: 0x040005B7 RID: 1463
+
         [AccessedThroughProperty("tsFileSaveAs")]
         private ToolStripMenuItem _tsFileSaveAs;
 
-        // Token: 0x040005B8 RID: 1464
+
         [AccessedThroughProperty("tsFlipAllEnh")]
         private ToolStripMenuItem _tsFlipAllEnh;
 
-        // Token: 0x040005B9 RID: 1465
+
         [AccessedThroughProperty("tsHelp")]
         private ToolStripMenuItem _tsHelp;
 
-        // Token: 0x040005BA RID: 1466
+
         [AccessedThroughProperty("tsHelperLong")]
         private ToolStripMenuItem _tsHelperLong;
 
-        // Token: 0x040005BB RID: 1467
+
         [AccessedThroughProperty("tsHelperLong2")]
         private ToolStripMenuItem _tsHelperLong2;
 
-        // Token: 0x040005BC RID: 1468
+
         [AccessedThroughProperty("tsHelperShort")]
         private ToolStripMenuItem _tsHelperShort;
 
-        // Token: 0x040005BD RID: 1469
+
         [AccessedThroughProperty("tsHelperShort2")]
         private ToolStripMenuItem _tsHelperShort2;
 
-        // Token: 0x040005BE RID: 1470
+
         [AccessedThroughProperty("tsImport")]
         private ToolStripMenuItem _tsImport;
 
-        // Token: 0x040005BF RID: 1471
+
         [AccessedThroughProperty("tsIODefault")]
         private ToolStripMenuItem _tsIODefault;
 
-        // Token: 0x040005C0 RID: 1472
+
         [AccessedThroughProperty("tsIOMax")]
         private ToolStripMenuItem _tsIOMax;
 
-        // Token: 0x040005C1 RID: 1473
+
         [AccessedThroughProperty("tsIOMin")]
         private ToolStripMenuItem _tsIOMin;
 
-        // Token: 0x040005C2 RID: 1474
+
         [AccessedThroughProperty("tsLevelUp")]
         private ToolStripMenuItem _tsLevelUp;
 
-        // Token: 0x040005C3 RID: 1475
+
         [AccessedThroughProperty("tsPatchNotes")]
         private ToolStripMenuItem _tsPatchNotes;
 
-        // Token: 0x040005C4 RID: 1476
+
         [AccessedThroughProperty("tsRecipeViewer")]
         private ToolStripMenuItem _tsRecipeViewer;
 
-        // Token: 0x040005C5 RID: 1477
+
         [AccessedThroughProperty("tsDPSCalc")]
         private ToolStripMenuItem _tsDPSCalc;
 
-        // Token: 0x040005C6 RID: 1478
+
         [AccessedThroughProperty("tsRemoveAllSlots")]
         private ToolStripMenuItem _tsRemoveAllSlots;
 
-        // Token: 0x040005C7 RID: 1479
+
         [AccessedThroughProperty("tsSetFind")]
         private ToolStripMenuItem _tsSetFind;
 
-        // Token: 0x040005C8 RID: 1480
+
         [AccessedThroughProperty("tsTitanForum")]
         private ToolStripMenuItem _tsTitanForum;
 
-        // Token: 0x040005C9 RID: 1481
+
         [AccessedThroughProperty("tsTitanPlanner")]
         private ToolStripMenuItem _tsTitanPlanner;
 
-        // Token: 0x040005CA RID: 1482
+
         [AccessedThroughProperty("tsTitanSite")]
         private ToolStripMenuItem _tsTitanSite;
 
-        // Token: 0x040005CB RID: 1483
+
         [AccessedThroughProperty("tsUpdateCheck")]
         private ToolStripMenuItem _tsUpdateCheck;
 
-        // Token: 0x040005CC RID: 1484
+
         [AccessedThroughProperty("tsView2Col")]
         private ToolStripMenuItem _tsView2Col;
 
-        // Token: 0x040005CD RID: 1485
+
         [AccessedThroughProperty("tsView3Col")]
         private ToolStripMenuItem _tsView3Col;
 
-        // Token: 0x040005CE RID: 1486
+
         [AccessedThroughProperty("tsView4Col")]
         private ToolStripMenuItem _tsView4Col;
 
-        // Token: 0x040005CF RID: 1487
+
         [AccessedThroughProperty("tsViewActualDamage_New")]
         private ToolStripMenuItem _tsViewActualDamage_New;
 
-        // Token: 0x040005D0 RID: 1488
+
         [AccessedThroughProperty("tsViewData")]
         private ToolStripMenuItem _tsViewData;
 
-        // Token: 0x040005D1 RID: 1489
+
         [AccessedThroughProperty("tsViewDPS_New")]
         private ToolStripMenuItem _tsViewDPS_New;
 
-        // Token: 0x040005D2 RID: 1490
+
         [AccessedThroughProperty("tsViewGraphs")]
         private ToolStripMenuItem _tsViewGraphs;
 
-        // Token: 0x040005D3 RID: 1491
+
         [AccessedThroughProperty("tsViewIOLevels")]
         private ToolStripMenuItem _tsViewIOLevels;
 
-        // Token: 0x040005D4 RID: 1492
+
         [AccessedThroughProperty("tsViewRelative")]
         private ToolStripMenuItem _tsViewRelative;
 
-        // Token: 0x040005D5 RID: 1493
+
         [AccessedThroughProperty("tsViewSetCompare")]
         private ToolStripMenuItem _tsViewSetCompare;
 
-        // Token: 0x040005D6 RID: 1494
+
         [AccessedThroughProperty("tsViewSets")]
         private ToolStripMenuItem _tsViewSets;
 
-        // Token: 0x040005D7 RID: 1495
+
         [AccessedThroughProperty("tsViewSlotLevels")]
         private ToolStripMenuItem _tsViewSlotLevels;
 
-        // Token: 0x040005D8 RID: 1496
+
         [AccessedThroughProperty("tsViewTotals")]
         private ToolStripMenuItem _tsViewTotals;
 
-        // Token: 0x040005D9 RID: 1497
+
         [AccessedThroughProperty("tTip")]
         private ToolTip _tTip;
 
-        // Token: 0x040005DA RID: 1498
+
         [AccessedThroughProperty("txtName")]
         private TextBox _txtName;
 
-        // Token: 0x040005DB RID: 1499
+
         [AccessedThroughProperty("ViewToolStripMenuItem")]
         private ToolStripMenuItem _ViewToolStripMenuItem;
 
-        // Token: 0x040005DC RID: 1500
+
         [AccessedThroughProperty("WindowToolStripMenuItem")]
         private ToolStripMenuItem _WindowToolStripMenuItem;
 
-        // Token: 0x040005DD RID: 1501
+
         protected Rectangle ActivePopupBounds;
 
-        // Token: 0x040005DF RID: 1503
+
         public bool DataViewLocked;
 
-        // Token: 0x040005E0 RID: 1504
+
         private short[] ddsa;
 
-        // Token: 0x040005E1 RID: 1505
+
         private ExtendedBitmap dmBuffer;
 
-        // Token: 0x040005E2 RID: 1506
+
         private bool DoneDblClick;
 
-        // Token: 0x040005E3 RID: 1507
+
         private int dragFinishPower;
 
-        // Token: 0x040005E4 RID: 1508
+
         private int dragFinishSlot;
 
-        // Token: 0x040005E5 RID: 1509
+
         private Rectangle dragRect;
 
-        // Token: 0x040005E6 RID: 1510
+
         private int dragStartPower;
 
-        // Token: 0x040005E7 RID: 1511
+
         private int dragStartSlot;
 
-        // Token: 0x040005E8 RID: 1512
+
         private int dragStartX;
 
-        // Token: 0x040005E9 RID: 1513
+
         private int dragStartY;
 
-        // Token: 0x040005EA RID: 1514
+
         private int dragXOffset;
 
-        // Token: 0x040005EB RID: 1515
+
         private int dragYOffset;
 
-        // Token: 0x040005EC RID: 1516
+
         public clsDrawX Drawing;
 
-        // Token: 0x040005ED RID: 1517
+
         public int dvLastEnh;
 
-        // Token: 0x040005EE RID: 1518
+
         public bool dvLastNoLev;
 
-        // Token: 0x040005EF RID: 1519
+
         public int dvLastPower;
 
-        // Token: 0x040005F0 RID: 1520
+
         public int EnhancingPower;
 
-        // Token: 0x040005F1 RID: 1521
+
         public int EnhancingSlot;
 
-        // Token: 0x040005F2 RID: 1522
+
         public bool EnhPickerActive;
 
-        // Token: 0x040005F3 RID: 1523
+
         protected frmAccolade fAccolade;
 
-        // Token: 0x040005F4 RID: 1524
+
         protected frmData fData;
 
-        // Token: 0x040005F5 RID: 1525
+
         protected frmCompare fGraphCompare;
 
-        // Token: 0x040005F6 RID: 1526
+
         protected frmStats fGraphStats;
 
-        // Token: 0x040005F7 RID: 1527
+
         public bool FileModified;
 
-        // Token: 0x040005F8 RID: 1528
+
         protected frmIncarnate fIncarnate;
 
-        // Token: 0x040005F9 RID: 1529
+
         protected bool FlipActive;
 
-        // Token: 0x040005FA RID: 1530
+
         protected PowerEntry FlipGP;
 
-        // Token: 0x040005FB RID: 1531
+
         protected int FlipInterval;
 
-        // Token: 0x040005FC RID: 1532
+
         protected int FlipPowerID;
 
-        // Token: 0x040005FD RID: 1533
+
         protected int[] FlipSlotState;
 
-        // Token: 0x040005FE RID: 1534
+
         protected int FlipStepDelay;
 
-        // Token: 0x040005FF RID: 1535
+
         protected int FlipSteps;
 
-        // Token: 0x04000600 RID: 1536
+
         public frmFloatingStats FloatingDataForm;
 
-        // Token: 0x04000601 RID: 1537
+
         protected frmMiniList fMini;
 
-        // Token: 0x04000602 RID: 1538
+
         protected frmRecipeViewer fRecipe;
 
-        // Token: 0x04000603 RID: 1539
+
         protected frmDPSCalc fDPSCalc;
 
-        // Token: 0x04000604 RID: 1540
+
         protected frmSetFind fSetFinder;
 
-        // Token: 0x04000605 RID: 1541
+
         protected frmSetViewer fSets;
 
-        // Token: 0x04000606 RID: 1542
+
         protected frmAccolade fTemp;
 
-        // Token: 0x04000607 RID: 1543
+
         protected frmTotals fTotals;
 
-        // Token: 0x04000608 RID: 1544
+
         private bool HasSentBack;
 
-        // Token: 0x04000609 RID: 1545
+
         private bool HasSentForwards;
 
-        // Token: 0x0400060A RID: 1546
+
         public bool LastClickPlacedSlot;
 
-        // Token: 0x0400060B RID: 1547
+
         public int LastEnhIndex;
 
-        // Token: 0x0400060C RID: 1548
+
         public I9Slot LastEnhPlaced;
 
-        // Token: 0x0400060D RID: 1549
+
         public string LastFileName;
 
-        // Token: 0x0400060E RID: 1550
+
         public int LastIndex;
 
-        // Token: 0x0400060F RID: 1551
+
         protected FormWindowState LastState;
 
-        // Token: 0x04000610 RID: 1552
+
         public DataView myDataView;
 
-        // Token: 0x04000611 RID: 1553
+
         private bool NoResizeEvent;
 
-        // Token: 0x04000612 RID: 1554
+
         public bool NoUpdate;
 
-        // Token: 0x04000613 RID: 1555
+
         private Rectangle oldDragRect;
 
-        // Token: 0x04000614 RID: 1556
+
         public int PickerHID;
 
-        // Token: 0x04000615 RID: 1557
+
         protected bool PopUpVisible;
 
-        // Token: 0x04000616 RID: 1558
+
         private bool top_fData;
 
-        // Token: 0x04000617 RID: 1559
+
         private bool top_fGraphCompare;
 
-        // Token: 0x04000618 RID: 1560
+
         private bool top_fGraphStats;
 
-        // Token: 0x04000619 RID: 1561
+
         private bool top_fRecipe;
 
-        // Token: 0x0400061A RID: 1562
+
         private bool top_fSetFinder;
 
-        // Token: 0x0400061B RID: 1563
+
         private bool top_fSets;
 
-        // Token: 0x0400061C RID: 1564
+
         private bool top_fTotals;
 
-        // Token: 0x0400061D RID: 1565
+
         private int xCursorOffset;
 
-        // Token: 0x0400061E RID: 1566
+
         private int yCursorOffset;
 
-        // Token: 0x0200004A RID: 74
+
         private struct BuildFileLines
         {
-            // Token: 0x04000620 RID: 1568
+
             public string powerSetName;
 
-            // Token: 0x04000621 RID: 1569
+
             public string powerName;
 
-            // Token: 0x04000622 RID: 1570
+
             public int powerLevel;
 
-            // Token: 0x04000623 RID: 1571
+
             public int powerSlotsAmount;
 
-            // Token: 0x04000624 RID: 1572
+
             public string enhancementName;
 
-            // Token: 0x04000625 RID: 1573
+
             public int enhancementLevel;
 
-            // Token: 0x04000626 RID: 1574
+
             public int enhancementRelativeLevel;
         }
     }

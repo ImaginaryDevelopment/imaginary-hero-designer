@@ -13,11 +13,11 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000044 RID: 68
+
 
     public partial class frmIncarnate : Form
     {
-        // Token: 0x1700041F RID: 1055
+
         // (get) Token: 0x06000C5E RID: 3166 RVA: 0x0007AE1C File Offset: 0x0007901C
         // (set) Token: 0x06000C5F RID: 3167 RVA: 0x0007AE34 File Offset: 0x00079034
         internal virtual ImageButton alphaBtn
@@ -42,7 +42,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000420 RID: 1056
+
         // (get) Token: 0x06000C60 RID: 3168 RVA: 0x0007AE90 File Offset: 0x00079090
         // (set) Token: 0x06000C61 RID: 3169 RVA: 0x0007AEA8 File Offset: 0x000790A8
         internal virtual ImageButton destinyBtn
@@ -67,7 +67,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000421 RID: 1057
+
         // (get) Token: 0x06000C62 RID: 3170 RVA: 0x0007AF04 File Offset: 0x00079104
         // (set) Token: 0x06000C63 RID: 3171 RVA: 0x0007AF1C File Offset: 0x0007911C
         internal virtual ImageButton GenesisButton
@@ -92,7 +92,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000422 RID: 1058
+
         // (get) Token: 0x06000C64 RID: 3172 RVA: 0x0007AF78 File Offset: 0x00079178
         // (set) Token: 0x06000C65 RID: 3173 RVA: 0x0007AF90 File Offset: 0x00079190
         internal virtual ImageButton hybridBtn
@@ -117,7 +117,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000423 RID: 1059
+
         // (get) Token: 0x06000C66 RID: 3174 RVA: 0x0007AFEC File Offset: 0x000791EC
         // (set) Token: 0x06000C67 RID: 3175 RVA: 0x0007B004 File Offset: 0x00079204
         internal virtual ImageButton ibClose
@@ -142,7 +142,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000424 RID: 1060
+
         // (get) Token: 0x06000C68 RID: 3176 RVA: 0x0007B060 File Offset: 0x00079260
         // (set) Token: 0x06000C69 RID: 3177 RVA: 0x0007B078 File Offset: 0x00079278
         internal virtual ImageButton interfaceBtn
@@ -167,7 +167,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000425 RID: 1061
+
         // (get) Token: 0x06000C6A RID: 3178 RVA: 0x0007B0D4 File Offset: 0x000792D4
         // (set) Token: 0x06000C6B RID: 3179 RVA: 0x0007B0EC File Offset: 0x000792EC
         internal virtual ImageButton judgementBtn
@@ -192,7 +192,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000426 RID: 1062
+
         // (get) Token: 0x06000C6C RID: 3180 RVA: 0x0007B148 File Offset: 0x00079348
         // (set) Token: 0x06000C6D RID: 3181 RVA: 0x0007B160 File Offset: 0x00079360
         internal virtual Label lblLock
@@ -217,7 +217,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000427 RID: 1063
+
         // (get) Token: 0x06000C6E RID: 3182 RVA: 0x0007B1BC File Offset: 0x000793BC
         // (set) Token: 0x06000C6F RID: 3183 RVA: 0x0007B1D4 File Offset: 0x000793D4
         internal virtual ListLabelV2 llLeft
@@ -248,7 +248,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000428 RID: 1064
+
         // (get) Token: 0x06000C70 RID: 3184 RVA: 0x0007B27C File Offset: 0x0007947C
         // (set) Token: 0x06000C71 RID: 3185 RVA: 0x0007B294 File Offset: 0x00079494
         internal virtual ListLabelV2 llRight
@@ -279,7 +279,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000429 RID: 1065
+
         // (get) Token: 0x06000C72 RID: 3186 RVA: 0x0007B33C File Offset: 0x0007953C
         // (set) Token: 0x06000C73 RID: 3187 RVA: 0x0007B354 File Offset: 0x00079554
         internal virtual ImageButton loreBtn
@@ -304,7 +304,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042A RID: 1066
+
         // (get) Token: 0x06000C74 RID: 3188 RVA: 0x0007B3B0 File Offset: 0x000795B0
         // (set) Token: 0x06000C75 RID: 3189 RVA: 0x0007B3C8 File Offset: 0x000795C8
         internal virtual ImageButton OmegaButton
@@ -329,7 +329,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042B RID: 1067
+
         // (get) Token: 0x06000C76 RID: 3190 RVA: 0x0007B424 File Offset: 0x00079624
         // (set) Token: 0x06000C77 RID: 3191 RVA: 0x0007B43C File Offset: 0x0007963C
         internal virtual Panel Panel1
@@ -345,7 +345,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042C RID: 1068
+
         // (get) Token: 0x06000C78 RID: 3192 RVA: 0x0007B448 File Offset: 0x00079648
         // (set) Token: 0x06000C79 RID: 3193 RVA: 0x0007B460 File Offset: 0x00079660
         internal virtual ctlPopUp PopInfo
@@ -373,7 +373,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042D RID: 1069
+
         // (get) Token: 0x06000C7A RID: 3194 RVA: 0x0007B4E4 File Offset: 0x000796E4
         // (set) Token: 0x06000C7B RID: 3195 RVA: 0x0007B4FC File Offset: 0x000796FC
         internal virtual ImageButton StanceButton
@@ -398,7 +398,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042E RID: 1070
+
         // (get) Token: 0x06000C7C RID: 3196 RVA: 0x0007B558 File Offset: 0x00079758
         // (set) Token: 0x06000C7D RID: 3197 RVA: 0x0007B570 File Offset: 0x00079770
         internal virtual ImageButton VitaeButton
@@ -423,7 +423,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700042F RID: 1071
+
         // (get) Token: 0x06000C7E RID: 3198 RVA: 0x0007B5CC File Offset: 0x000797CC
         // (set) Token: 0x06000C7F RID: 3199 RVA: 0x0007B5E4 File Offset: 0x000797E4
         internal virtual VScrollBar VScrollBar1
@@ -448,7 +448,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C80 RID: 3200 RVA: 0x0007B640 File Offset: 0x00079840
+
         public frmIncarnate(ref frmMain iParent)
         {
             base.Load += this.frmIncarnate_Load;
@@ -460,7 +460,7 @@ namespace Hero_Designer
             this.myPowers = DatabaseAPI.GetPowersetByName("Alpha", Enums.ePowerSetType.Incarnate).Powers;
         }
 
-        // Token: 0x06000C81 RID: 3201 RVA: 0x0007B6B0 File Offset: 0x000798B0
+
         private void alphaBtn_ButtonClicked()
         {
             ImageButton alphaBtn = this.alphaBtn;
@@ -468,7 +468,7 @@ namespace Hero_Designer
             this.alphaBtn = alphaBtn;
         }
 
-        // Token: 0x06000C82 RID: 3202 RVA: 0x0007B6DC File Offset: 0x000798DC
+
         private void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
@@ -476,7 +476,7 @@ namespace Hero_Designer
             this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
-        // Token: 0x06000C83 RID: 3203 RVA: 0x0007B744 File Offset: 0x00079944
+
         private void destinyBtn_ButtonClicked()
         {
             ImageButton destinyBtn = this.destinyBtn;
@@ -484,7 +484,7 @@ namespace Hero_Designer
             this.destinyBtn = destinyBtn;
         }
 
-        // Token: 0x06000C85 RID: 3205 RVA: 0x0007B7C0 File Offset: 0x000799C0
+
         public void FillLists()
         {
             this.llLeft.SuspendRedraw = true;
@@ -557,7 +557,7 @@ namespace Hero_Designer
             this.llRight.Refresh();
         }
 
-        // Token: 0x06000C86 RID: 3206 RVA: 0x0007BA48 File Offset: 0x00079C48
+
         private void frmIncarnate_Load(object sender, EventArgs e)
         {
             this.buttonArray[0] = this.alphaBtn;
@@ -596,7 +596,7 @@ namespace Hero_Designer
             this.FillLists();
         }
 
-        // Token: 0x06000C87 RID: 3207 RVA: 0x0007BC80 File Offset: 0x00079E80
+
         private void GenesisButton_ButtonClicked()
         {
             ImageButton genesisButton = this.GenesisButton;
@@ -604,7 +604,7 @@ namespace Hero_Designer
             this.GenesisButton = genesisButton;
         }
 
-        // Token: 0x06000C88 RID: 3208 RVA: 0x0007BCAC File Offset: 0x00079EAC
+
         private void hybridBtn_ButtonClicked()
         {
             ImageButton hybridBtn = this.hybridBtn;
@@ -612,13 +612,13 @@ namespace Hero_Designer
             this.hybridBtn = hybridBtn;
         }
 
-        // Token: 0x06000C89 RID: 3209 RVA: 0x0007BCD7 File Offset: 0x00079ED7
+
         private void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
-        // Token: 0x06000C8B RID: 3211 RVA: 0x0007CDFC File Offset: 0x0007AFFC
+
         private void interfaceBtn_ButtonClicked()
         {
             ImageButton interfaceBtn = this.interfaceBtn;
@@ -626,7 +626,7 @@ namespace Hero_Designer
             this.interfaceBtn = interfaceBtn;
         }
 
-        // Token: 0x06000C8C RID: 3212 RVA: 0x0007CE28 File Offset: 0x0007B028
+
         private void judgementBtn_ButtonClicked()
         {
             ImageButton judgementBtn = this.judgementBtn;
@@ -634,14 +634,14 @@ namespace Hero_Designer
             this.judgementBtn = judgementBtn;
         }
 
-        // Token: 0x06000C8D RID: 3213 RVA: 0x0007CE53 File Offset: 0x0007B053
+
         private void lblLock_Click(object sender, EventArgs e)
         {
             this.Locked = false;
             this.lblLock.Visible = false;
         }
 
-        // Token: 0x06000C8E RID: 3214 RVA: 0x0007CE6C File Offset: 0x0007B06C
+
         private void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
@@ -689,13 +689,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C8F RID: 3215 RVA: 0x0007D0A1 File Offset: 0x0007B2A1
+
         private void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.miniPowerInfo(Item.Index);
         }
 
-        // Token: 0x06000C90 RID: 3216 RVA: 0x0007D0B4 File Offset: 0x0007B2B4
+
         private void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -704,7 +704,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C91 RID: 3217 RVA: 0x0007D0E0 File Offset: 0x0007B2E0
+
         private void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
@@ -753,20 +753,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C92 RID: 3218 RVA: 0x0007D320 File Offset: 0x0007B520
+
         private void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.miniPowerInfo(pIDX);
         }
 
-        // Token: 0x06000C93 RID: 3219 RVA: 0x0007D34B File Offset: 0x0007B54B
+
         private void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        // Token: 0x06000C94 RID: 3220 RVA: 0x0007D35C File Offset: 0x0007B55C
+
         private void loreBtn_ButtonClicked()
         {
             ImageButton loreBtn = this.loreBtn;
@@ -774,7 +774,7 @@ namespace Hero_Designer
             this.loreBtn = loreBtn;
         }
 
-        // Token: 0x06000C95 RID: 3221 RVA: 0x0007D388 File Offset: 0x0007B588
+
         public void miniPowerInfo(int pIDX)
         {
             if (!this.Locked)
@@ -894,7 +894,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C96 RID: 3222 RVA: 0x0007DA14 File Offset: 0x0007BC14
+
         private void OmegaButton_ButtonClicked()
         {
             ImageButton omegaButton = this.OmegaButton;
@@ -902,7 +902,7 @@ namespace Hero_Designer
             this.OmegaButton = omegaButton;
         }
 
-        // Token: 0x06000C97 RID: 3223 RVA: 0x0007DA40 File Offset: 0x0007BC40
+
         private void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -911,7 +911,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C98 RID: 3224 RVA: 0x0007DA6C File Offset: 0x0007BC6C
+
         private void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -922,7 +922,7 @@ namespace Hero_Designer
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
-        // Token: 0x06000C99 RID: 3225 RVA: 0x0007DB0C File Offset: 0x0007BD0C
+
         private void SetPowerSet(string Setname, ref ImageButton button)
         {
             foreach (ImageButton button2 in this.buttonArray)
@@ -934,7 +934,7 @@ namespace Hero_Designer
             this.FillLists();
         }
 
-        // Token: 0x06000C9A RID: 3226 RVA: 0x0007DB64 File Offset: 0x0007BD64
+
         private void StanceButton_ButtonClicked()
         {
             ImageButton stanceButton = this.StanceButton;
@@ -942,7 +942,7 @@ namespace Hero_Designer
             this.StanceButton = stanceButton;
         }
 
-        // Token: 0x06000C9B RID: 3227 RVA: 0x0007DB90 File Offset: 0x0007BD90
+
         protected void UpdateLLColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -954,7 +954,7 @@ namespace Hero_Designer
             iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
 
-        // Token: 0x06000C9C RID: 3228 RVA: 0x0007DC54 File Offset: 0x0007BE54
+
         private void VitaeButton_ButtonClicked()
         {
             ImageButton vitaeButton = this.VitaeButton;
@@ -962,7 +962,7 @@ namespace Hero_Designer
             this.VitaeButton = vitaeButton;
         }
 
-        // Token: 0x06000C9D RID: 3229 RVA: 0x0007DC80 File Offset: 0x0007BE80
+
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             if (this.PopInfo.lHeight > (float)this.Panel1.Height & this.VScrollBar1.Maximum > this.VScrollBar1.LargeChange)
@@ -975,90 +975,90 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x04000517 RID: 1303
+
         [AccessedThroughProperty("alphaBtn")]
         private ImageButton _alphaBtn;
 
-        // Token: 0x04000518 RID: 1304
+
         [AccessedThroughProperty("destinyBtn")]
         private ImageButton _destinyBtn;
 
-        // Token: 0x04000519 RID: 1305
+
         [AccessedThroughProperty("GenesisButton")]
         private ImageButton _GenesisButton;
 
-        // Token: 0x0400051A RID: 1306
+
         [AccessedThroughProperty("hybridBtn")]
         private ImageButton _hybridBtn;
 
-        // Token: 0x0400051B RID: 1307
+
         [AccessedThroughProperty("ibClose")]
         private ImageButton _ibClose;
 
-        // Token: 0x0400051C RID: 1308
+
         [AccessedThroughProperty("interfaceBtn")]
         private ImageButton _interfaceBtn;
 
-        // Token: 0x0400051D RID: 1309
+
         [AccessedThroughProperty("judgementBtn")]
         private ImageButton _judgementBtn;
 
-        // Token: 0x0400051E RID: 1310
+
         [AccessedThroughProperty("lblLock")]
         private Label _lblLock;
 
-        // Token: 0x0400051F RID: 1311
+
         [AccessedThroughProperty("llLeft")]
         private ListLabelV2 _llLeft;
 
-        // Token: 0x04000520 RID: 1312
+
         [AccessedThroughProperty("llRight")]
         private ListLabelV2 _llRight;
 
-        // Token: 0x04000521 RID: 1313
+
         [AccessedThroughProperty("loreBtn")]
         private ImageButton _loreBtn;
 
-        // Token: 0x04000522 RID: 1314
+
         [AccessedThroughProperty("OmegaButton")]
         private ImageButton _OmegaButton;
 
-        // Token: 0x04000523 RID: 1315
+
         [AccessedThroughProperty("Panel1")]
         private Panel _Panel1;
 
-        // Token: 0x04000524 RID: 1316
+
         [AccessedThroughProperty("PopInfo")]
         private ctlPopUp _PopInfo;
 
-        // Token: 0x04000525 RID: 1317
+
         [AccessedThroughProperty("StanceButton")]
         private ImageButton _StanceButton;
 
-        // Token: 0x04000526 RID: 1318
+
         [AccessedThroughProperty("VitaeButton")]
         private ImageButton _VitaeButton;
 
-        // Token: 0x04000527 RID: 1319
+
         [AccessedThroughProperty("VScrollBar1")]
         private VScrollBar _VScrollBar1;
 
-        // Token: 0x04000528 RID: 1320
+
         private ImageButton[] buttonArray;
 
-        // Token: 0x0400052A RID: 1322
+
         protected bool Locked;
 
-        // Token: 0x0400052B RID: 1323
+
         protected frmMain myParent;
 
-        // Token: 0x0400052C RID: 1324
+
         public IPower[] myPowers;
 
-        // Token: 0x02000045 RID: 69
+
         public class CustomPanel : Panel
         {
-            // Token: 0x06000C9E RID: 3230 RVA: 0x0007DD2C File Offset: 0x0007BF2C
+
             protected override Point ScrollToControl(Control activeControl)
             {
                 return this.DisplayRectangle.Location;

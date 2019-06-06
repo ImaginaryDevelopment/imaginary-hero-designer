@@ -4,27 +4,27 @@ using System.IO;
 // Token: 0x0200008F RID: 143
 public class Powerset : IPowerset, IComparable
 {
-    // Token: 0x17000266 RID: 614
+
     // (get) Token: 0x06000677 RID: 1655 RVA: 0x0002F7F0 File Offset: 0x0002D9F0
     // (set) Token: 0x06000678 RID: 1656 RVA: 0x0002F807 File Offset: 0x0002DA07
     public bool IsModified { get; set; }
 
-    // Token: 0x17000267 RID: 615
+
     // (get) Token: 0x06000679 RID: 1657 RVA: 0x0002F810 File Offset: 0x0002DA10
     // (set) Token: 0x0600067A RID: 1658 RVA: 0x0002F827 File Offset: 0x0002DA27
     public bool IsNew { get; set; }
 
-    // Token: 0x17000268 RID: 616
+
     // (get) Token: 0x0600067B RID: 1659 RVA: 0x0002F830 File Offset: 0x0002DA30
     // (set) Token: 0x0600067C RID: 1660 RVA: 0x0002F847 File Offset: 0x0002DA47
     public string Description { get; set; }
 
-    // Token: 0x17000269 RID: 617
+
     // (get) Token: 0x0600067D RID: 1661 RVA: 0x0002F850 File Offset: 0x0002DA50
     // (set) Token: 0x0600067E RID: 1662 RVA: 0x0002F867 File Offset: 0x0002DA67
     public string SetName { get; set; }
 
-    // Token: 0x1700026A RID: 618
+
     // (get) Token: 0x0600067F RID: 1663 RVA: 0x0002F870 File Offset: 0x0002DA70
     // (set) Token: 0x06000680 RID: 1664 RVA: 0x0002F888 File Offset: 0x0002DA88
     public string FullName
@@ -40,82 +40,82 @@ public class Powerset : IPowerset, IComparable
         }
     }
 
-    // Token: 0x1700026B RID: 619
+
     // (get) Token: 0x06000681 RID: 1665 RVA: 0x0002F89C File Offset: 0x0002DA9C
     // (set) Token: 0x06000682 RID: 1666 RVA: 0x0002F8B3 File Offset: 0x0002DAB3
     public string ImageName { get; set; }
 
-    // Token: 0x1700026C RID: 620
+
     // (get) Token: 0x06000683 RID: 1667 RVA: 0x0002F8BC File Offset: 0x0002DABC
     // (set) Token: 0x06000684 RID: 1668 RVA: 0x0002F8D3 File Offset: 0x0002DAD3
     public int[] Power { get; set; }
 
-    // Token: 0x1700026D RID: 621
+
     // (get) Token: 0x06000685 RID: 1669 RVA: 0x0002F8DC File Offset: 0x0002DADC
     // (set) Token: 0x06000686 RID: 1670 RVA: 0x0002F8F3 File Offset: 0x0002DAF3
     public Enums.ePowerSetType SetType { get; set; }
 
-    // Token: 0x1700026E RID: 622
+
     // (get) Token: 0x06000687 RID: 1671 RVA: 0x0002F8FC File Offset: 0x0002DAFC
     // (set) Token: 0x06000688 RID: 1672 RVA: 0x0002F913 File Offset: 0x0002DB13
     public string DisplayName { get; set; }
 
-    // Token: 0x1700026F RID: 623
+
     // (get) Token: 0x06000689 RID: 1673 RVA: 0x0002F91C File Offset: 0x0002DB1C
     // (set) Token: 0x0600068A RID: 1674 RVA: 0x0002F933 File Offset: 0x0002DB33
     public int nArchetype { get; set; }
 
-    // Token: 0x17000270 RID: 624
+
     // (get) Token: 0x0600068B RID: 1675 RVA: 0x0002F93C File Offset: 0x0002DB3C
     // (set) Token: 0x0600068C RID: 1676 RVA: 0x0002F953 File Offset: 0x0002DB53
     public int nID { get; set; }
 
-    // Token: 0x17000271 RID: 625
+
     // (get) Token: 0x0600068D RID: 1677 RVA: 0x0002F95C File Offset: 0x0002DB5C
     // (set) Token: 0x0600068E RID: 1678 RVA: 0x0002F973 File Offset: 0x0002DB73
     public string SubName { get; set; }
 
-    // Token: 0x17000272 RID: 626
+
     // (get) Token: 0x0600068F RID: 1679 RVA: 0x0002F97C File Offset: 0x0002DB7C
     // (set) Token: 0x06000690 RID: 1680 RVA: 0x0002F993 File Offset: 0x0002DB93
     public string ATClass { get; set; }
 
-    // Token: 0x17000273 RID: 627
+
     // (get) Token: 0x06000691 RID: 1681 RVA: 0x0002F99C File Offset: 0x0002DB9C
     // (set) Token: 0x06000692 RID: 1682 RVA: 0x0002F9B3 File Offset: 0x0002DBB3
     public string UIDTrunkSet { get; set; }
 
-    // Token: 0x17000274 RID: 628
+
     // (get) Token: 0x06000693 RID: 1683 RVA: 0x0002F9BC File Offset: 0x0002DBBC
     // (set) Token: 0x06000694 RID: 1684 RVA: 0x0002F9D3 File Offset: 0x0002DBD3
     public int nIDTrunkSet { get; set; }
 
-    // Token: 0x17000275 RID: 629
+
     // (get) Token: 0x06000695 RID: 1685 RVA: 0x0002F9DC File Offset: 0x0002DBDC
     // (set) Token: 0x06000696 RID: 1686 RVA: 0x0002F9F3 File Offset: 0x0002DBF3
     public string UIDLinkSecondary { get; set; }
 
-    // Token: 0x17000276 RID: 630
+
     // (get) Token: 0x06000697 RID: 1687 RVA: 0x0002F9FC File Offset: 0x0002DBFC
     // (set) Token: 0x06000698 RID: 1688 RVA: 0x0002FA13 File Offset: 0x0002DC13
     public int nIDLinkSecondary { get; set; }
 
-    // Token: 0x17000277 RID: 631
+
     // (get) Token: 0x06000699 RID: 1689 RVA: 0x0002FA1C File Offset: 0x0002DC1C
     // (set) Token: 0x0600069A RID: 1690 RVA: 0x0002FA33 File Offset: 0x0002DC33
     public string[] UIDMutexSets { get; set; }
 
-    // Token: 0x17000278 RID: 632
+
     // (get) Token: 0x0600069B RID: 1691 RVA: 0x0002FA3C File Offset: 0x0002DC3C
     // (set) Token: 0x0600069C RID: 1692 RVA: 0x0002FA53 File Offset: 0x0002DC53
     public int[] nIDMutexSets { get; set; }
 
-    // Token: 0x17000279 RID: 633
+
     // (get) Token: 0x0600069D RID: 1693 RVA: 0x0002FA5C File Offset: 0x0002DC5C
     // (set) Token: 0x0600069E RID: 1694 RVA: 0x0002FA73 File Offset: 0x0002DC73
     public PowersetGroup Group { get; set; }
 
-    // Token: 0x1700027A RID: 634
+
     // (get) Token: 0x0600069F RID: 1695 RVA: 0x0002FA7C File Offset: 0x0002DC7C
     // (set) Token: 0x060006A0 RID: 1696 RVA: 0x0002FAE4 File Offset: 0x0002DCE4
     public string GroupName
@@ -135,18 +135,18 @@ public class Powerset : IPowerset, IComparable
         }
     }
 
-    // Token: 0x1700027B RID: 635
+
     // (get) Token: 0x060006A1 RID: 1697 RVA: 0x0002FAF0 File Offset: 0x0002DCF0
     // (set) Token: 0x060006A2 RID: 1698 RVA: 0x0002FB07 File Offset: 0x0002DD07
     public IPower[] Powers { get; set; }
 
-    // Token: 0x060006A3 RID: 1699 RVA: 0x0002FB10 File Offset: 0x0002DD10
+
     public bool ClassOk(int nIDClass)
     {
         return this.Powers.Length > 0 && this.Powers[0].Requires.ClassOk(nIDClass);
     }
 
-    // Token: 0x060006A4 RID: 1700 RVA: 0x0002FB44 File Offset: 0x0002DD44
+
     public Powerset()
     {
         this.nID = -1;
@@ -169,7 +169,7 @@ public class Powerset : IPowerset, IComparable
         this.UIDMutexSets = new string[0];
     }
 
-    // Token: 0x060006A5 RID: 1701 RVA: 0x0002FC24 File Offset: 0x0002DE24
+
     public Powerset(IPowerset template)
     {
         this.nID = template.nID;
@@ -201,7 +201,7 @@ public class Powerset : IPowerset, IComparable
         Array.Copy(template.UIDMutexSets, this.UIDMutexSets, this.UIDMutexSets.Length);
     }
 
-    // Token: 0x060006A6 RID: 1702 RVA: 0x0002FDD4 File Offset: 0x0002DFD4
+
     public Powerset(BinaryReader reader)
     {
         this.nID = -1;
@@ -231,7 +231,7 @@ public class Powerset : IPowerset, IComparable
         }
     }
 
-    // Token: 0x060006A7 RID: 1703 RVA: 0x0002FF20 File Offset: 0x0002E120
+
     public void StoreTo(ref BinaryWriter writer)
     {
         writer.Write(this.DisplayName);
@@ -253,7 +253,7 @@ public class Powerset : IPowerset, IComparable
         }
     }
 
-    // Token: 0x060006A8 RID: 1704 RVA: 0x00030014 File Offset: 0x0002E214
+
     public int CompareTo(object obj)
     {
         IPowerset powerset = obj as IPowerset;
@@ -269,7 +269,7 @@ public class Powerset : IPowerset, IComparable
         throw new ArgumentException("Comparison failed - Passed object was not a Powerset Class!");
     }
 
-    // Token: 0x060006A9 RID: 1705 RVA: 0x00030078 File Offset: 0x0002E278
+
     public bool ImportFromCSV(string csv)
     {
         bool flag;
@@ -347,9 +347,9 @@ public class Powerset : IPowerset, IComparable
         return flag;
     }
 
-    // Token: 0x04000655 RID: 1621
+
     private string _fullName;
 
-    // Token: 0x04000656 RID: 1622
+
     private string _groupName;
 }

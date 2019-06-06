@@ -5,7 +5,7 @@ using Base.Master_Classes;
 // Token: 0x0200002C RID: 44
 public class EnhancementSetCollection : List<EnhancementSet>
 {
-    // Token: 0x060005A1 RID: 1441 RVA: 0x0002335C File Offset: 0x0002155C
+
     public int GetSetBonusEnhCount(int sidx, int bonus)
     {
         int result;
@@ -36,7 +36,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
         return result;
     }
 
-    // Token: 0x060005A2 RID: 1442 RVA: 0x000233EC File Offset: 0x000215EC
+
     public static string GetSetInfoLongRTF(int iSet, int enhCount = -1)
     {
         string str;

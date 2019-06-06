@@ -7,7 +7,7 @@ using Base.Master_Classes;
 // Token: 0x02000087 RID: 135
 public static class MidsCharacterFileFormat
 {
-    // Token: 0x0600064B RID: 1611 RVA: 0x0002C674 File Offset: 0x0002A874
+
     private static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
     {
         MemoryStream memoryStream;
@@ -79,7 +79,7 @@ public static class MidsCharacterFileFormat
         return true;
     }
 
-    // Token: 0x0600064C RID: 1612 RVA: 0x0002CB20 File Offset: 0x0002AD20
+
     public static string MxDBuildSaveHyperlink(bool useBbCode, bool justLink = false)
     {
         MidsCharacterFileFormat.CompressionData cData = default(MidsCharacterFileFormat.CompressionData);
@@ -126,7 +126,7 @@ public static class MidsCharacterFileFormat
         return str2;
     }
 
-    // Token: 0x0600064D RID: 1613 RVA: 0x0002CC44 File Offset: 0x0002AE44
+
     private static string MxDBuildSaveStringShared(ref MidsCharacterFileFormat.CompressionData cData, bool inncludeAltEnh, bool @break)
     {
         byte[] numArray = new byte[0];
@@ -148,7 +148,7 @@ public static class MidsCharacterFileFormat
         return str;
     }
 
-    // Token: 0x0600064E RID: 1614 RVA: 0x0002CCC8 File Offset: 0x0002AEC8
+
     public static string MxDBuildSaveString(bool inncludeAltEnh, bool forumMode)
     {
         MidsCharacterFileFormat.CompressionData cData = default(MidsCharacterFileFormat.CompressionData);
@@ -203,7 +203,7 @@ public static class MidsCharacterFileFormat
         return str2;
     }
 
-    // Token: 0x0600064F RID: 1615 RVA: 0x0002CEA0 File Offset: 0x0002B0A0
+
     private static bool MxDReadSaveData(ref byte[] buffer, bool silent)
     {
         bool flag;
@@ -488,7 +488,7 @@ public static class MidsCharacterFileFormat
         return flag;
     }
 
-    // Token: 0x06000650 RID: 1616 RVA: 0x0002D8CC File Offset: 0x0002BACC
+
     public static MidsCharacterFileFormat.eLoadReturnCode MxDExtractAndLoad(Stream iStream)
     {
         StreamReader streamReader;
@@ -634,7 +634,7 @@ public static class MidsCharacterFileFormat
         return eLoadReturnCode;
     }
 
-    // Token: 0x06000651 RID: 1617 RVA: 0x0002DCF0 File Offset: 0x0002BEF0
+
     public static void WriteSlotData(ref BinaryWriter writer, ref I9Slot slot)
     {
         if (slot.Enh < 0)
@@ -660,7 +660,7 @@ public static class MidsCharacterFileFormat
         }
     }
 
-    // Token: 0x06000652 RID: 1618 RVA: 0x0002DE54 File Offset: 0x0002C054
+
     private static void ReadSlotData(ref BinaryReader reader, ref I9Slot slot, bool qualifiedNames, float fVersion)
     {
         int num = -1;
@@ -699,28 +699,28 @@ public static class MidsCharacterFileFormat
         }
     }
 
-    // Token: 0x04000624 RID: 1572
+
     public const string MagicCompressed = "MxDz";
 
-    // Token: 0x04000625 RID: 1573
+
     public const string MagicUncompressed = "MxDu";
 
-    // Token: 0x04000626 RID: 1574
+
     private const float SaveVersion = 1.01f;
 
-    // Token: 0x04000627 RID: 1575
+
     private const int DataLinkMaxLength = 2048;
 
-    // Token: 0x04000628 RID: 1576
+
     private const bool UseQualifiedNames = false;
 
-    // Token: 0x04000629 RID: 1577
+
     private const bool UseOldSubpowerFields = true;
 
-    // Token: 0x0400062A RID: 1578
+
     private const bool UseHexEncoding = true;
 
-    // Token: 0x0400062B RID: 1579
+
     public static readonly byte[] MagicNumber = new byte[]
     {
         Convert.ToByte('M'),
@@ -729,27 +729,27 @@ public static class MidsCharacterFileFormat
         Convert.ToByte(12)
     };
 
-    // Token: 0x02000088 RID: 136
+
     public enum eLoadReturnCode
     {
-        // Token: 0x0400062D RID: 1581
+
         Failure,
-        // Token: 0x0400062E RID: 1582
+
         Success,
-        // Token: 0x0400062F RID: 1583
+
         IsOldFormat
     }
 
-    // Token: 0x02000089 RID: 137
+
     private struct CompressionData
     {
-        // Token: 0x04000630 RID: 1584
+
         public int SzUncompressed;
 
-        // Token: 0x04000631 RID: 1585
+
         public int SzCompressed;
 
-        // Token: 0x04000632 RID: 1586
+
         public int SzEncoded;
     }
 }

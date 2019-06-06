@@ -6,7 +6,7 @@ using Base.Data_Classes;
 // Token: 0x0200007F RID: 127
 public class I9Slot : ICloneable
 {
-    // Token: 0x06000602 RID: 1538 RVA: 0x000287F0 File Offset: 0x000269F0
+
     public I9Slot()
     {
         this.Enh = -1;
@@ -15,7 +15,7 @@ public class I9Slot : ICloneable
         this.IOLevel = 1;
     }
 
-    // Token: 0x06000603 RID: 1539 RVA: 0x00028818 File Offset: 0x00026A18
+
     public float GetEnhancementEffect(Enums.eEnhance iEffect, int subEnh, float mag)
     {
         float num;
@@ -44,7 +44,7 @@ public class I9Slot : ICloneable
         return num;
     }
 
-    // Token: 0x06000604 RID: 1540 RVA: 0x00028954 File Offset: 0x00026B54
+
     private float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
     {
         if (this.Grade < Enums.eEnhGrade.None)
@@ -116,7 +116,7 @@ public class I9Slot : ICloneable
         return num2;
     }
 
-    // Token: 0x06000605 RID: 1541 RVA: 0x00028B38 File Offset: 0x00026D38
+
     private float GetRelativeLevelMultiplier()
     {
         float num;
@@ -139,7 +139,7 @@ public class I9Slot : ICloneable
         return num;
     }
 
-    // Token: 0x06000606 RID: 1542 RVA: 0x00028BA0 File Offset: 0x00026DA0
+
     public string GetEnhancementString()
     {
         string str;
@@ -248,7 +248,7 @@ public class I9Slot : ICloneable
         return str;
     }
 
-    // Token: 0x06000607 RID: 1543 RVA: 0x00028F4C File Offset: 0x0002714C
+
     public string GetEnhancementStringLong()
     {
         string str;
@@ -401,7 +401,7 @@ public class I9Slot : ICloneable
         return str;
     }
 
-    // Token: 0x06000608 RID: 1544 RVA: 0x000295D8 File Offset: 0x000277D8
+
     public object Clone()
     {
         return new I9Slot
@@ -413,7 +413,7 @@ public class I9Slot : ICloneable
         };
     }
 
-    // Token: 0x06000609 RID: 1545 RVA: 0x00029624 File Offset: 0x00027824
+
     public string GetRelativeString(bool onlySign)
     {
         if (onlySign)
@@ -467,18 +467,18 @@ public class I9Slot : ICloneable
         return string.Empty;
     }
 
-    // Token: 0x04000601 RID: 1537
+
     private const float SuperiorMult = 1.25f;
 
-    // Token: 0x04000602 RID: 1538
+
     public int Enh;
 
-    // Token: 0x04000603 RID: 1539
+
     public Enums.eEnhRelative RelativeLevel;
 
-    // Token: 0x04000604 RID: 1540
+
     public Enums.eEnhGrade Grade;
 
-    // Token: 0x04000605 RID: 1541
+
     public int IOLevel;
 }

@@ -9,7 +9,7 @@ using Base.Master_Classes;
 // Token: 0x02000019 RID: 25
 public class Build
 {
-    // Token: 0x170001FF RID: 511
+
     // (get) Token: 0x06000494 RID: 1172 RVA: 0x00016AA0 File Offset: 0x00014CA0
     public IPower SetBonusVirtualPower
     {
@@ -24,7 +24,7 @@ public class Build
         }
     }
 
-    // Token: 0x17000200 RID: 512
+
     // (get) Token: 0x06000495 RID: 1173 RVA: 0x00016AD8 File Offset: 0x00014CD8
     public int PowersPlaced
     {
@@ -42,7 +42,7 @@ public class Build
         }
     }
 
-    // Token: 0x17000201 RID: 513
+
     // (get) Token: 0x06000496 RID: 1174 RVA: 0x00016B58 File Offset: 0x00014D58
     public int SlotsPlaced
     {
@@ -60,7 +60,7 @@ public class Build
         }
     }
 
-    // Token: 0x17000202 RID: 514
+
     // (get) Token: 0x06000497 RID: 1175 RVA: 0x00016BD8 File Offset: 0x00014DD8
     public int TotalSlotsAvailable
     {
@@ -75,7 +75,7 @@ public class Build
         }
     }
 
-    // Token: 0x06000498 RID: 1176 RVA: 0x00016C20 File Offset: 0x00014E20
+
     public PowerEntry AddPower(IPower power, int specialLevel = -1)
     {
         PowerEntry powerEntry = this.GetPowerEntry(power);
@@ -88,7 +88,7 @@ public class Build
         return powerEntry;
     }
 
-    // Token: 0x06000499 RID: 1177 RVA: 0x00016C68 File Offset: 0x00014E68
+
     public void RemovePower(IPower powerToRemove)
     {
         foreach (PowerEntry power in this.Powers)
@@ -101,7 +101,7 @@ public class Build
         }
     }
 
-    // Token: 0x0600049A RID: 1178 RVA: 0x00016CF0 File Offset: 0x00014EF0
+
     private PowerEntry GetPowerEntry(IPower power)
     {
         foreach (PowerEntry power2 in this.Powers)
@@ -114,7 +114,7 @@ public class Build
         return null;
     }
 
-    // Token: 0x0600049B RID: 1179 RVA: 0x00016D80 File Offset: 0x00014F80
+
     public Build(Character owner, IList<LevelMap> iLevels)
     {
         this._character = owner;
@@ -134,7 +134,7 @@ public class Build
         }
     }
 
-    // Token: 0x0600049C RID: 1180 RVA: 0x00016E24 File Offset: 0x00015024
+
     public void RemoveSlotFromPower(int index, int slot)
     {
         if (index >= 0 && index <= this.Powers.Count - 1)
@@ -160,7 +160,7 @@ public class Build
         }
     }
 
-    // Token: 0x0600049D RID: 1181 RVA: 0x00016F70 File Offset: 0x00015170
+
     private void FillMissingSubPowers()
     {
         foreach (PowerEntry power in this.Powers)
@@ -195,7 +195,7 @@ public class Build
         }
     }
 
-    // Token: 0x0600049E RID: 1182 RVA: 0x0001713C File Offset: 0x0001533C
+
     private void ValidateEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
@@ -228,7 +228,7 @@ public class Build
         }
     }
 
-    // Token: 0x0600049F RID: 1183 RVA: 0x000173D8 File Offset: 0x000155D8
+
     public bool SetEnhGrades(Enums.eEnhGrade newVal)
     {
         string str = string.Empty;
@@ -269,7 +269,7 @@ public class Build
         return flag;
     }
 
-    // Token: 0x060004A0 RID: 1184 RVA: 0x00017528 File Offset: 0x00015728
+
     public bool SetIOLevels(int newVal, bool iSetMin, bool iSetMax)
     {
         string text;
@@ -357,7 +357,7 @@ public class Build
         return flag;
     }
 
-    // Token: 0x060004A1 RID: 1185 RVA: 0x00017868 File Offset: 0x00015A68
+
     public HistoryMap[] BuildHistoryMap(bool enhNames, bool ioLevel = true)
     {
         List<HistoryMap> historyMapList = new List<HistoryMap>();
@@ -457,7 +457,7 @@ public class Build
         return historyMapList.ToArray();
     }
 
-    // Token: 0x060004A2 RID: 1186 RVA: 0x00017D70 File Offset: 0x00015F70
+
     private int SlotsAtLevel(int powerEntryId, int iLevel)
     {
         int num;
@@ -480,7 +480,7 @@ public class Build
         return num;
     }
 
-    // Token: 0x060004A3 RID: 1187 RVA: 0x00017DEC File Offset: 0x00015FEC
+
     public int SlotsPlacedAtLevel(int level)
     {
         int num = 0;
@@ -497,7 +497,7 @@ public class Build
         return num;
     }
 
-    // Token: 0x060004A4 RID: 1188 RVA: 0x00017E74 File Offset: 0x00016074
+
     public PopUp.PopupData GetRespecHelper(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -566,7 +566,7 @@ public class Build
         return popupData;
     }
 
-    // Token: 0x060004A5 RID: 1189 RVA: 0x000181DC File Offset: 0x000163DC
+
     public PopUp.PopupData GetRespecHelper2(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -666,7 +666,7 @@ public class Build
         return popupData;
     }
 
-    // Token: 0x060004A6 RID: 1190 RVA: 0x00018710 File Offset: 0x00016910
+
     public bool SetEnhRelativelevels(Enums.eEnhRelative newVal)
     {
         string str = string.Empty;
@@ -751,7 +751,7 @@ public class Build
         return flag;
     }
 
-    // Token: 0x060004A7 RID: 1191 RVA: 0x00018958 File Offset: 0x00016B58
+
     private void CheckAndFixAllEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
@@ -795,7 +795,7 @@ public class Build
         this.ValidateEnhancements();
     }
 
-    // Token: 0x060004A8 RID: 1192 RVA: 0x00018B40 File Offset: 0x00016D40
+
     private void CheckAllVariableBounds()
     {
         for (int index = 0; index <= this.Powers.Count - 1; index++)
@@ -804,7 +804,7 @@ public class Build
         }
     }
 
-    // Token: 0x060004A9 RID: 1193 RVA: 0x00018B81 File Offset: 0x00016D81
+
     internal void Validate()
     {
         this.ClearInvisibleSlots();
@@ -815,7 +815,7 @@ public class Build
         this.CheckAllVariableBounds();
     }
 
-    // Token: 0x060004AA RID: 1194 RVA: 0x00018BB0 File Offset: 0x00016DB0
+
     public int GetMaxLevel()
     {
         int num = 0;
@@ -836,7 +836,7 @@ public class Build
         return num;
     }
 
-    // Token: 0x060004AB RID: 1195 RVA: 0x00018C74 File Offset: 0x00016E74
+
     private void ClearInvisibleSlots()
     {
         foreach (PowerEntry power in this.Powers)
@@ -852,7 +852,7 @@ public class Build
         }
     }
 
-    // Token: 0x060004AC RID: 1196 RVA: 0x00018D34 File Offset: 0x00016F34
+
     private void ScanAndCleanAutomaticallyGrantedPowers()
     {
         bool flag = false;
@@ -894,7 +894,7 @@ public class Build
         }
     }
 
-    // Token: 0x060004AD RID: 1197 RVA: 0x00018F08 File Offset: 0x00017108
+
     public bool MeetsRequirement(IPower power, int nLevel, int skipIdx = -1)
     {
         bool flag;
@@ -1010,7 +1010,7 @@ public class Build
         return flag;
     }
 
-    // Token: 0x060004AE RID: 1198 RVA: 0x00019260 File Offset: 0x00017460
+
     public int FindInToonHistory(int nIDPower)
     {
         for (int index = 0; index <= this.Powers.Count - 1; index++)
@@ -1023,13 +1023,13 @@ public class Build
         return -1;
     }
 
-    // Token: 0x060004AF RID: 1199 RVA: 0x000192D4 File Offset: 0x000174D4
+
     public bool PowerUsed(IPower power)
     {
         return this.FindInToonHistory(power.PowerIndex) > -1;
     }
 
-    // Token: 0x060004B0 RID: 1200 RVA: 0x000192F8 File Offset: 0x000174F8
+
     private void AddAutomaticGrantedPowers()
     {
         int maxLevel = this.GetMaxLevel();
@@ -1066,7 +1066,7 @@ public class Build
         }
     }
 
-    // Token: 0x060004B1 RID: 1201 RVA: 0x000194B8 File Offset: 0x000176B8
+
     public bool EnhancementTest(int iSlotID, int hIdx, int iEnh, bool silent = false)
     {
         bool flag;
@@ -1157,7 +1157,7 @@ public class Build
         return flag;
     }
 
-    // Token: 0x060004B2 RID: 1202 RVA: 0x00019820 File Offset: 0x00017A20
+
     public void GenerateSetBonusData()
     {
         this.SetBonus.Clear();
@@ -1183,7 +1183,7 @@ public class Build
         this._setBonusVirtualPower = null;
     }
 
-    // Token: 0x060004B3 RID: 1203 RVA: 0x00019918 File Offset: 0x00017B18
+
     private IPower GetSetBonusVirtualPower()
     {
         IPower power = new Power();
@@ -1226,7 +1226,7 @@ public class Build
         return power2;
     }
 
-    // Token: 0x060004B4 RID: 1204 RVA: 0x00019B60 File Offset: 0x00017D60
+
     public IEffect[] GetCumulativeSetBonuses()
     {
         IPower bonusVirtualPower = this.SetBonusVirtualPower;
@@ -1252,7 +1252,7 @@ public class Build
         return array;
     }
 
-    // Token: 0x060004B5 RID: 1205 RVA: 0x00019C50 File Offset: 0x00017E50
+
     private static int GcsbCheck(IEffect[] fxList, IEffect testFX)
     {
         for (int index = 0; index < fxList.Length; index++)
@@ -1279,7 +1279,7 @@ public class Build
         return -1;
     }
 
-    // Token: 0x060004B6 RID: 1206 RVA: 0x00019ED0 File Offset: 0x000180D0
+
     public Enums.eMutex MutexV2(int hIdx, bool silent = false, bool doDetoggle = false)
     {
         Enums.eMutex eMutex;
@@ -1407,7 +1407,7 @@ public class Build
         return eMutex;
     }
 
-    // Token: 0x060004B7 RID: 1207 RVA: 0x0001A364 File Offset: 0x00018564
+
     public void FullMutexCheck()
     {
         for (int hIdx = this.Powers.Count - 1; hIdx >= 0; hIdx += -1)
@@ -1416,18 +1416,18 @@ public class Build
         }
     }
 
-    // Token: 0x04000154 RID: 340
+
     private readonly Character _character;
 
-    // Token: 0x04000155 RID: 341
+
     public readonly List<PowerEntry> Powers;
 
-    // Token: 0x04000156 RID: 342
+
     public readonly List<I9SetData> SetBonus;
 
-    // Token: 0x04000157 RID: 343
+
     private IPower _setBonusVirtualPower;
 
-    // Token: 0x04000158 RID: 344
+
     public int LastPower;
 }

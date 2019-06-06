@@ -6,7 +6,7 @@ using System.Windows.Forms;
 // Token: 0x0200006C RID: 108
 public class ExportConfig
 {
-    // Token: 0x060005C1 RID: 1473 RVA: 0x000247B4 File Offset: 0x000229B4
+
     public void AddScheme()
     {
         Array.Resize<ExportConfig.ColorScheme>(ref this.ColorSchemes, this.ColorSchemes.Length + 1);
@@ -14,7 +14,7 @@ public class ExportConfig
         this.ColorSchemes[this.ColorSchemes.Length - 1].SchemeName = "New Colours";
     }
 
-    // Token: 0x060005C2 RID: 1474 RVA: 0x00024814 File Offset: 0x00022A14
+
     public void AddCodes()
     {
         Array.Resize<ExportConfig.FormatCodes>(ref this.FormatCode, this.FormatCode.Length + 1);
@@ -23,7 +23,7 @@ public class ExportConfig
         this.FormatCode[this.FormatCode.Length - 1].Notes = string.Empty;
     }
 
-    // Token: 0x060005C3 RID: 1475 RVA: 0x00024894 File Offset: 0x00022A94
+
     public void RemoveScheme(int index)
     {
         if (index > -1 & index < this.ColorSchemes.Length)
@@ -46,7 +46,7 @@ public class ExportConfig
         }
     }
 
-    // Token: 0x060005C4 RID: 1476 RVA: 0x00024960 File Offset: 0x00022B60
+
     public void RemoveCodes(int index)
     {
         if (index > -1 & index < this.FormatCode.Length)
@@ -69,14 +69,14 @@ public class ExportConfig
         }
     }
 
-    // Token: 0x060005C5 RID: 1477 RVA: 0x00024A2C File Offset: 0x00022C2C
+
     private static bool GrabString(out string dest, ref StreamReader reader)
     {
         dest = reader.ReadLine();
         return dest == "#CODE#" | dest == "#END#";
     }
 
-    // Token: 0x060005C6 RID: 1478 RVA: 0x00024A60 File Offset: 0x00022C60
+
     public void ResetColorsToDefaults()
     {
         this.ColorSchemes = new ExportConfig.ColorScheme[10];
@@ -172,7 +172,7 @@ public class ExportConfig
         this.ColorSchemes[9].HOColor = Color.FromArgb(223, 174, 255);
     }
 
-    // Token: 0x060005C7 RID: 1479 RVA: 0x00025590 File Offset: 0x00023790
+
     public void ResetCodesToDefaults()
     {
         this.FormatCode = new ExportConfig.FormatCodes[0];
@@ -262,7 +262,7 @@ public class ExportConfig
         this.FormatCode[this.FormatCode.Length - 1].Space = ExportConfig.WhiteSpace.Space;
     }
 
-    // Token: 0x060005C8 RID: 1480 RVA: 0x00025F30 File Offset: 0x00024130
+
     public void LoadCodes(string fName)
     {
         if (File.Exists(fName))
@@ -345,52 +345,52 @@ public class ExportConfig
         }
     }
 
-    // Token: 0x060005C9 RID: 1481 RVA: 0x00026228 File Offset: 0x00024428
+
     public ExportConfig()
     {
         this.ResetColorsToDefaults();
     }
 
-    // Token: 0x0400059E RID: 1438
+
     public ExportConfig.ColorScheme[] ColorSchemes = new ExportConfig.ColorScheme[0];
 
-    // Token: 0x0400059F RID: 1439
+
     public ExportConfig.FormatCodes[] FormatCode = new ExportConfig.FormatCodes[0];
 
-    // Token: 0x0200006D RID: 109
+
     public enum WhiteSpace
     {
-        // Token: 0x040005A1 RID: 1441
+
         Space,
-        // Token: 0x040005A2 RID: 1442
+
         Tab
     }
 
-    // Token: 0x0200006E RID: 110
+
     public enum Element
     {
-        // Token: 0x040005A4 RID: 1444
+
         Title,
-        // Token: 0x040005A5 RID: 1445
+
         Heading,
-        // Token: 0x040005A6 RID: 1446
+
         Level,
-        // Token: 0x040005A7 RID: 1447
+
         Power,
-        // Token: 0x040005A8 RID: 1448
+
         Slots,
-        // Token: 0x040005A9 RID: 1449
+
         IO,
-        // Token: 0x040005AA RID: 1450
+
         SetO,
-        // Token: 0x040005AB RID: 1451
+
         HO
     }
 
-    // Token: 0x0200006F RID: 111
+
     public struct ColorScheme
     {
-        // Token: 0x060005CA RID: 1482 RVA: 0x00026254 File Offset: 0x00024454
+
         public void Assign(ExportConfig.ColorScheme iCs)
         {
             this.SchemeName = iCs.SchemeName;
@@ -404,7 +404,7 @@ public class ExportConfig
             this.HOColor = iCs.HOColor;
         }
 
-        // Token: 0x060005CB RID: 1483 RVA: 0x000262D8 File Offset: 0x000244D8
+
         public void SetDefault()
         {
             this.SchemeName = string.Empty;
@@ -418,44 +418,44 @@ public class ExportConfig
             this.HOColor = Color.DarkCyan;
         }
 
-        // Token: 0x040005AC RID: 1452
+
         public string SchemeName;
 
-        // Token: 0x040005AD RID: 1453
+
         public Color Title;
 
-        // Token: 0x040005AE RID: 1454
+
         public Color Heading;
 
-        // Token: 0x040005AF RID: 1455
+
         public Color Level;
 
-        // Token: 0x040005B0 RID: 1456
+
         public Color Slots;
 
-        // Token: 0x040005B1 RID: 1457
+
         public Color Power;
 
-        // Token: 0x040005B2 RID: 1458
+
         public Color IOColor;
 
-        // Token: 0x040005B3 RID: 1459
+
         public Color SetColor;
 
-        // Token: 0x040005B4 RID: 1460
+
         public Color HOColor;
     }
 
-    // Token: 0x02000070 RID: 112
+
     public struct FormatCodes
     {
-        // Token: 0x060005CC RID: 1484 RVA: 0x0002634C File Offset: 0x0002454C
+
         public static string FillCode(string iCode, string iVal)
         {
             return iCode.Replace("%VAL%", iVal);
         }
 
-        // Token: 0x060005CD RID: 1485 RVA: 0x0002636C File Offset: 0x0002456C
+
         public void Assign(ExportConfig.FormatCodes iFc)
         {
             this.Name = iFc.Name;
@@ -473,7 +473,7 @@ public class ExportConfig
             this.Space = iFc.Space;
         }
 
-        // Token: 0x060005CE RID: 1486 RVA: 0x00026424 File Offset: 0x00024624
+
         public void SetDefault()
         {
             this.Name = string.Empty;
@@ -491,46 +491,46 @@ public class ExportConfig
             this.Space = ExportConfig.WhiteSpace.Space;
         }
 
-        // Token: 0x040005B5 RID: 1461
+
         private const string Placeholder = "%VAL%";
 
-        // Token: 0x040005B6 RID: 1462
+
         public string Name;
 
-        // Token: 0x040005B7 RID: 1463
+
         public string Notes;
 
-        // Token: 0x040005B8 RID: 1464
+
         public string ColourOn;
 
-        // Token: 0x040005B9 RID: 1465
+
         public string ColourOff;
 
-        // Token: 0x040005BA RID: 1466
+
         public string SizeOn;
 
-        // Token: 0x040005BB RID: 1467
+
         public string SizeOff;
 
-        // Token: 0x040005BC RID: 1468
+
         public string BoldOn;
 
-        // Token: 0x040005BD RID: 1469
+
         public string BoldOff;
 
-        // Token: 0x040005BE RID: 1470
+
         public string ItalicOn;
 
-        // Token: 0x040005BF RID: 1471
+
         public string ItalicOff;
 
-        // Token: 0x040005C0 RID: 1472
+
         public string UnderlineOn;
 
-        // Token: 0x040005C1 RID: 1473
+
         public string UnderlineOff;
 
-        // Token: 0x040005C2 RID: 1474
+
         public ExportConfig.WhiteSpace Space;
     }
 }

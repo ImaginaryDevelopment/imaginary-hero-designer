@@ -9,11 +9,11 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000054 RID: 84
+
 
     public partial class frmSalvageEdit : Form
     {
-        // Token: 0x170005AE RID: 1454
+
         // (get) Token: 0x0600119E RID: 4510 RVA: 0x000B0F80 File Offset: 0x000AF180
         // (set) Token: 0x0600119F RID: 4511 RVA: 0x000B0F98 File Offset: 0x000AF198
         internal virtual Button btnAdd
@@ -38,7 +38,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005AF RID: 1455
+
         // (get) Token: 0x060011A0 RID: 4512 RVA: 0x000B0FF4 File Offset: 0x000AF1F4
         // (set) Token: 0x060011A1 RID: 4513 RVA: 0x000B100C File Offset: 0x000AF20C
         internal virtual Button btnCancel
@@ -63,7 +63,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B0 RID: 1456
+
         // (get) Token: 0x060011A2 RID: 4514 RVA: 0x000B1068 File Offset: 0x000AF268
         // (set) Token: 0x060011A3 RID: 4515 RVA: 0x000B1080 File Offset: 0x000AF280
         internal virtual Button btnDelete
@@ -88,7 +88,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B1 RID: 1457
+
         // (get) Token: 0x060011A4 RID: 4516 RVA: 0x000B10DC File Offset: 0x000AF2DC
         // (set) Token: 0x060011A5 RID: 4517 RVA: 0x000B10F4 File Offset: 0x000AF2F4
         internal virtual Button btnImport
@@ -113,7 +113,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B2 RID: 1458
+
         // (get) Token: 0x060011A6 RID: 4518 RVA: 0x000B1150 File Offset: 0x000AF350
         // (set) Token: 0x060011A7 RID: 4519 RVA: 0x000B1168 File Offset: 0x000AF368
         internal virtual Button btnOK
@@ -138,7 +138,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B3 RID: 1459
+
         // (get) Token: 0x060011A8 RID: 4520 RVA: 0x000B11C4 File Offset: 0x000AF3C4
         // (set) Token: 0x060011A9 RID: 4521 RVA: 0x000B11DC File Offset: 0x000AF3DC
         internal virtual ComboBox cbLevel
@@ -163,7 +163,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B4 RID: 1460
+
         // (get) Token: 0x060011AA RID: 4522 RVA: 0x000B1238 File Offset: 0x000AF438
         // (set) Token: 0x060011AB RID: 4523 RVA: 0x000B1250 File Offset: 0x000AF450
         internal virtual ComboBox cbOrigin
@@ -188,7 +188,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B5 RID: 1461
+
         // (get) Token: 0x060011AC RID: 4524 RVA: 0x000B12AC File Offset: 0x000AF4AC
         // (set) Token: 0x060011AD RID: 4525 RVA: 0x000B12C4 File Offset: 0x000AF4C4
         internal virtual ComboBox cbRarity
@@ -213,7 +213,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B6 RID: 1462
+
         // (get) Token: 0x060011AE RID: 4526 RVA: 0x000B1320 File Offset: 0x000AF520
         // (set) Token: 0x060011AF RID: 4527 RVA: 0x000B1338 File Offset: 0x000AF538
         internal virtual ColumnHeader ColumnHeader1
@@ -229,7 +229,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B7 RID: 1463
+
         // (get) Token: 0x060011B0 RID: 4528 RVA: 0x000B1344 File Offset: 0x000AF544
         // (set) Token: 0x060011B1 RID: 4529 RVA: 0x000B135C File Offset: 0x000AF55C
         internal virtual ColumnHeader ColumnHeader2
@@ -245,7 +245,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B8 RID: 1464
+
         // (get) Token: 0x060011B2 RID: 4530 RVA: 0x000B1368 File Offset: 0x000AF568
         // (set) Token: 0x060011B3 RID: 4531 RVA: 0x000B1380 File Offset: 0x000AF580
         internal virtual ColumnHeader ColumnHeader3
@@ -261,7 +261,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005B9 RID: 1465
+
         // (get) Token: 0x060011B4 RID: 4532 RVA: 0x000B138C File Offset: 0x000AF58C
         // (set) Token: 0x060011B5 RID: 4533 RVA: 0x000B13A4 File Offset: 0x000AF5A4
         internal virtual ColumnHeader ColumnHeader4
@@ -277,7 +277,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BA RID: 1466
+
         // (get) Token: 0x060011B6 RID: 4534 RVA: 0x000B13B0 File Offset: 0x000AF5B0
         // (set) Token: 0x060011B7 RID: 4535 RVA: 0x000B13C8 File Offset: 0x000AF5C8
         internal virtual Label Label1
@@ -293,7 +293,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BB RID: 1467
+
         // (get) Token: 0x060011B8 RID: 4536 RVA: 0x000B13D4 File Offset: 0x000AF5D4
         // (set) Token: 0x060011B9 RID: 4537 RVA: 0x000B13EC File Offset: 0x000AF5EC
         internal virtual Label Label2
@@ -309,7 +309,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BC RID: 1468
+
         // (get) Token: 0x060011BA RID: 4538 RVA: 0x000B13F8 File Offset: 0x000AF5F8
         // (set) Token: 0x060011BB RID: 4539 RVA: 0x000B1410 File Offset: 0x000AF610
         internal virtual Label Label3
@@ -325,7 +325,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BD RID: 1469
+
         // (get) Token: 0x060011BC RID: 4540 RVA: 0x000B141C File Offset: 0x000AF61C
         // (set) Token: 0x060011BD RID: 4541 RVA: 0x000B1434 File Offset: 0x000AF634
         internal virtual Label Label4
@@ -341,7 +341,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BE RID: 1470
+
         // (get) Token: 0x060011BE RID: 4542 RVA: 0x000B1440 File Offset: 0x000AF640
         // (set) Token: 0x060011BF RID: 4543 RVA: 0x000B1458 File Offset: 0x000AF658
         internal virtual Label Label5
@@ -357,7 +357,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005BF RID: 1471
+
         // (get) Token: 0x060011C0 RID: 4544 RVA: 0x000B1464 File Offset: 0x000AF664
         // (set) Token: 0x060011C1 RID: 4545 RVA: 0x000B147C File Offset: 0x000AF67C
         internal virtual ListView lvSalvage
@@ -382,7 +382,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005C0 RID: 1472
+
         // (get) Token: 0x060011C2 RID: 4546 RVA: 0x000B14D8 File Offset: 0x000AF6D8
         // (set) Token: 0x060011C3 RID: 4547 RVA: 0x000B14F0 File Offset: 0x000AF6F0
         internal virtual TextBox txtExternal
@@ -407,7 +407,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005C1 RID: 1473
+
         // (get) Token: 0x060011C4 RID: 4548 RVA: 0x000B154C File Offset: 0x000AF74C
         // (set) Token: 0x060011C5 RID: 4549 RVA: 0x000B1564 File Offset: 0x000AF764
         internal virtual TextBox txtInternal
@@ -432,7 +432,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011C6 RID: 4550 RVA: 0x000B15BE File Offset: 0x000AF7BE
+
         public frmSalvageEdit()
         {
             base.Load += this.frmSalvageEdit_Load;
@@ -440,7 +440,7 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x060011C7 RID: 4551 RVA: 0x000B15EC File Offset: 0x000AF7EC
+
         protected void AddListItem(int Index)
         {
             string[] items = new string[4];
@@ -454,7 +454,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011C8 RID: 4552 RVA: 0x000B16FC File Offset: 0x000AF8FC
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             IDatabase database = DatabaseAPI.Database;
@@ -466,14 +466,14 @@ namespace Hero_Designer
             this.lvSalvage.Items[this.lvSalvage.Items.Count - 1].EnsureVisible();
         }
 
-        // Token: 0x060011C9 RID: 4553 RVA: 0x000B17C0 File Offset: 0x000AF9C0
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DatabaseAPI.LoadSalvage();
             base.Close();
         }
 
-        // Token: 0x060011CA RID: 4554 RVA: 0x000B17D0 File Offset: 0x000AF9D0
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -512,7 +512,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011CB RID: 4555 RVA: 0x000B1994 File Offset: 0x000AFB94
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             char[] chArray = new char[]
@@ -569,14 +569,14 @@ namespace Hero_Designer
             this.FillList();
         }
 
-        // Token: 0x060011CC RID: 4556 RVA: 0x000B1BB2 File Offset: 0x000AFDB2
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.SaveSalvage();
             base.Close();
         }
 
-        // Token: 0x060011CD RID: 4557 RVA: 0x000B1BC4 File Offset: 0x000AFDC4
+
         private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -601,7 +601,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011CE RID: 4558 RVA: 0x000B1CB8 File Offset: 0x000AFEB8
+
         private void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -612,7 +612,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011CF RID: 4559 RVA: 0x000B1D20 File Offset: 0x000AFF20
+
         private void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -623,7 +623,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D0 RID: 4560 RVA: 0x000B1D88 File Offset: 0x000AFF88
+
         protected void DisplayItem(int Index)
         {
             if (!(Index > DatabaseAPI.Database.Salvage.Length - 1 | Index < 0))
@@ -650,7 +650,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D2 RID: 4562 RVA: 0x000B1EF0 File Offset: 0x000B00F0
+
         protected void FillList()
         {
             this.lvSalvage.BeginUpdate();
@@ -663,7 +663,7 @@ namespace Hero_Designer
             this.lvSalvage.EndUpdate();
         }
 
-        // Token: 0x060011D3 RID: 4563 RVA: 0x000B1F54 File Offset: 0x000B0154
+
         private void frmSalvageEdit_Load(object sender, EventArgs e)
         {
             Salvage.SalvageOrigin salvageOrigin = Salvage.SalvageOrigin.Tech;
@@ -681,7 +681,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D5 RID: 4565 RVA: 0x000B2B10 File Offset: 0x000B0D10
+
         private void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedIndices.Count > 0)
@@ -690,7 +690,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D6 RID: 4566 RVA: 0x000B2B54 File Offset: 0x000B0D54
+
         private void txtExternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -701,7 +701,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D7 RID: 4567 RVA: 0x000B2BBC File Offset: 0x000B0DBC
+
         private void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -712,7 +712,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060011D8 RID: 4568 RVA: 0x000B2C24 File Offset: 0x000B0E24
+
         protected void UpdateListItem(int Index)
         {
             if (!(Index > DatabaseAPI.Database.Salvage.Length - 1 | Index < 0))
@@ -724,87 +724,87 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0400071C RID: 1820
+
         [AccessedThroughProperty("btnAdd")]
         private Button _btnAdd;
 
-        // Token: 0x0400071D RID: 1821
+
         [AccessedThroughProperty("btnCancel")]
         private Button _btnCancel;
 
-        // Token: 0x0400071E RID: 1822
+
         [AccessedThroughProperty("btnDelete")]
         private Button _btnDelete;
 
-        // Token: 0x0400071F RID: 1823
+
         [AccessedThroughProperty("btnImport")]
         private Button _btnImport;
 
-        // Token: 0x04000720 RID: 1824
+
         [AccessedThroughProperty("btnOK")]
         private Button _btnOK;
 
-        // Token: 0x04000721 RID: 1825
+
         [AccessedThroughProperty("cbLevel")]
         private ComboBox _cbLevel;
 
-        // Token: 0x04000722 RID: 1826
+
         [AccessedThroughProperty("cbOrigin")]
         private ComboBox _cbOrigin;
 
-        // Token: 0x04000723 RID: 1827
+
         [AccessedThroughProperty("cbRarity")]
         private ComboBox _cbRarity;
 
-        // Token: 0x04000724 RID: 1828
+
         [AccessedThroughProperty("ColumnHeader1")]
         private ColumnHeader _ColumnHeader1;
 
-        // Token: 0x04000725 RID: 1829
+
         [AccessedThroughProperty("ColumnHeader2")]
         private ColumnHeader _ColumnHeader2;
 
-        // Token: 0x04000726 RID: 1830
+
         [AccessedThroughProperty("ColumnHeader3")]
         private ColumnHeader _ColumnHeader3;
 
-        // Token: 0x04000727 RID: 1831
+
         [AccessedThroughProperty("ColumnHeader4")]
         private ColumnHeader _ColumnHeader4;
 
-        // Token: 0x04000728 RID: 1832
+
         [AccessedThroughProperty("Label1")]
         private Label _Label1;
 
-        // Token: 0x04000729 RID: 1833
+
         [AccessedThroughProperty("Label2")]
         private Label _Label2;
 
-        // Token: 0x0400072A RID: 1834
+
         [AccessedThroughProperty("Label3")]
         private Label _Label3;
 
-        // Token: 0x0400072B RID: 1835
+
         [AccessedThroughProperty("Label4")]
         private Label _Label4;
 
-        // Token: 0x0400072C RID: 1836
+
         [AccessedThroughProperty("Label5")]
         private Label _Label5;
 
-        // Token: 0x0400072D RID: 1837
+
         [AccessedThroughProperty("lvSalvage")]
         private ListView _lvSalvage;
 
-        // Token: 0x0400072E RID: 1838
+
         [AccessedThroughProperty("txtExternal")]
         private TextBox _txtExternal;
 
-        // Token: 0x0400072F RID: 1839
+
         [AccessedThroughProperty("txtInternal")]
         private TextBox _txtInternal;
 
-        // Token: 0x04000731 RID: 1841
+
         public bool Updating;
     }
 }

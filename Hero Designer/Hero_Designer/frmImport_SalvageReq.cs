@@ -10,11 +10,11 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000041 RID: 65
+
 
     public partial class frmImport_SalvageReq : Form
     {
-        // Token: 0x1700040D RID: 1037
+
         // (get) Token: 0x06000C18 RID: 3096 RVA: 0x00078688 File Offset: 0x00076888
         // (set) Token: 0x06000C19 RID: 3097 RVA: 0x000786A0 File Offset: 0x000768A0
         internal virtual Button btnClose
@@ -39,7 +39,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700040E RID: 1038
+
         // (get) Token: 0x06000C1A RID: 3098 RVA: 0x000786FC File Offset: 0x000768FC
         // (set) Token: 0x06000C1B RID: 3099 RVA: 0x00078714 File Offset: 0x00076914
         internal virtual Button btnFile
@@ -64,7 +64,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700040F RID: 1039
+
         // (get) Token: 0x06000C1C RID: 3100 RVA: 0x00078770 File Offset: 0x00076970
         // (set) Token: 0x06000C1D RID: 3101 RVA: 0x00078788 File Offset: 0x00076988
         internal virtual Button btnImport
@@ -89,7 +89,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000410 RID: 1040
+
         // (get) Token: 0x06000C1E RID: 3102 RVA: 0x000787E4 File Offset: 0x000769E4
         // (set) Token: 0x06000C1F RID: 3103 RVA: 0x000787FC File Offset: 0x000769FC
         internal virtual OpenFileDialog dlgBrowse
@@ -105,7 +105,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000411 RID: 1041
+
         // (get) Token: 0x06000C20 RID: 3104 RVA: 0x00078808 File Offset: 0x00076A08
         // (set) Token: 0x06000C21 RID: 3105 RVA: 0x00078820 File Offset: 0x00076A20
         internal virtual Label lblFile
@@ -121,7 +121,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C22 RID: 3106 RVA: 0x0007882A File Offset: 0x00076A2A
+
         public frmImport_SalvageReq()
         {
             base.Load += this.frmImport_SalvageReq_Load;
@@ -129,13 +129,13 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x06000C23 RID: 3107 RVA: 0x0007885A File Offset: 0x00076A5A
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
-        // Token: 0x06000C24 RID: 3108 RVA: 0x00078864 File Offset: 0x00076A64
+
         private void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
@@ -147,7 +147,7 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C25 RID: 3109 RVA: 0x000788BB File Offset: 0x00076ABB
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
@@ -155,7 +155,7 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C26 RID: 3110 RVA: 0x000788DC File Offset: 0x00076ADC
+
         private void BusyHide()
         {
             if (this.bFrm != null)
@@ -165,7 +165,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C27 RID: 3111 RVA: 0x0007890C File Offset: 0x00076B0C
+
         private void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -176,20 +176,20 @@ namespace Hero_Designer
             this.bFrm.SetMessage(sMessage);
         }
 
-        // Token: 0x06000C28 RID: 3112 RVA: 0x00078951 File Offset: 0x00076B51
+
         public void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
         }
 
-        // Token: 0x06000C2A RID: 3114 RVA: 0x000789BC File Offset: 0x00076BBC
+
         private void frmImport_SalvageReq_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets", "baserecipes");
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C2C RID: 3116 RVA: 0x00078D0C File Offset: 0x00076F0C
+
         private bool ParseClasses(string iFileName)
         {
             int num6 = 0;
@@ -351,30 +351,30 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x040004FC RID: 1276
+
         [AccessedThroughProperty("btnClose")]
         private Button _btnClose;
 
-        // Token: 0x040004FD RID: 1277
+
         [AccessedThroughProperty("btnFile")]
         private Button _btnFile;
 
-        // Token: 0x040004FE RID: 1278
+
         [AccessedThroughProperty("btnImport")]
         private Button _btnImport;
 
-        // Token: 0x040004FF RID: 1279
+
         [AccessedThroughProperty("dlgBrowse")]
         private OpenFileDialog _dlgBrowse;
 
-        // Token: 0x04000500 RID: 1280
+
         [AccessedThroughProperty("lblFile")]
         private Label _lblFile;
 
-        // Token: 0x04000501 RID: 1281
+
         private frmBusy bFrm;
 
-        // Token: 0x04000503 RID: 1283
+
         private string FullFileName;
     }
 }

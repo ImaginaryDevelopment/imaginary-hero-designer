@@ -12,10 +12,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000027 RID: 39
+
     public partial class frmData : Form
     {
-        // Token: 0x1700016E RID: 366
+
         // (get) Token: 0x06000487 RID: 1159 RVA: 0x0003AAF0 File Offset: 0x00038CF0
         // (set) Token: 0x06000488 RID: 1160 RVA: 0x0003AB08 File Offset: 0x00038D08
         internal virtual ctlPopUp pInfo
@@ -31,7 +31,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000489 RID: 1161 RVA: 0x0003AB14 File Offset: 0x00038D14
+
         public frmData(ref frmMain iParent)
         {
             base.FormClosed += this.frmData_FormClosed;
@@ -41,26 +41,26 @@ namespace Hero_Designer
             this.myParent = iParent;
         }
 
-        // Token: 0x0600048B RID: 1163 RVA: 0x0003ABC4 File Offset: 0x00038DC4
+
         private void frmData_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatData(false);
         }
 
-        // Token: 0x0600048C RID: 1164 RVA: 0x0003ABDC File Offset: 0x00038DDC
+
         private void frmData_Load(object sender, EventArgs e)
         {
             this.pInfo.SetPopup(default(PopUp.PopupData));
         }
 
-        // Token: 0x0600048D RID: 1165 RVA: 0x0003ABFF File Offset: 0x00038DFF
+
         private void frmData_ResizeEnd(object sender, EventArgs e)
         {
             this.pInfo.Size = base.ClientSize;
         }
 
-        // Token: 0x0600048F RID: 1167 RVA: 0x0003ADCC File Offset: 0x00038FCC
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -98,7 +98,7 @@ namespace Hero_Designer
             base.Width = rectangle.Width;
         }
 
-        // Token: 0x06000490 RID: 1168 RVA: 0x0003AF9C File Offset: 0x0003919C
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -110,13 +110,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000491 RID: 1169 RVA: 0x0003AFFC File Offset: 0x000391FC
+
         private string TwoDP(float iValue)
         {
             return Strings.Format(iValue, "###,##0.00");
         }
 
-        // Token: 0x06000492 RID: 1170 RVA: 0x0003B020 File Offset: 0x00039220
+
         public void UpdateData(int powerID)
         {
             PopUp.PopupData iPopup = default(PopUp.PopupData);
@@ -229,11 +229,11 @@ namespace Hero_Designer
             this.pInfo.Width = base.ClientSize.Width;
         }
 
-        // Token: 0x040001F8 RID: 504
+
         [AccessedThroughProperty("pInfo")]
         private ctlPopUp _pInfo;
 
-        // Token: 0x040001FA RID: 506
+
         private frmMain myParent;
     }
 }

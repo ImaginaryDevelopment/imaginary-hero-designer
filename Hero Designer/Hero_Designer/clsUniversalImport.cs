@@ -6,10 +6,10 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200000C RID: 12
+
     public class clsUniversalImport
     {
-        // Token: 0x060000A0 RID: 160 RVA: 0x0000E1B8 File Offset: 0x0000C3B8
+
         private static clsUniversalImport.sPowerLine BreakLine(string iLine, int nAT)
         {
             clsUniversalImport.sPowerLine sPowerLine = default(clsUniversalImport.sPowerLine);
@@ -77,7 +77,7 @@ namespace Hero_Designer
             return sPowerLine;
         }
 
-        // Token: 0x060000A1 RID: 161 RVA: 0x0000E44C File Offset: 0x0000C64C
+
         private static string EnhNameFix(string iStr)
         {
             iStr = iStr.Replace("Fly", "Flight");
@@ -127,7 +127,7 @@ namespace Hero_Designer
             return iStr;
         }
 
-        // Token: 0x060000A2 RID: 162 RVA: 0x0000E73C File Offset: 0x0000C93C
+
         private static int FindFirstPower(string[] haystack, int iAT)
         {
             int num = haystack.Length - 1;
@@ -142,7 +142,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000A3 RID: 163 RVA: 0x0000E7C0 File Offset: 0x0000C9C0
+
         private static clsUniversalImport.SetPair FindPower(string iName, int nAT)
         {
             IPowerset[] powersetIndexes2 = new IPowerset[2];
@@ -192,7 +192,7 @@ namespace Hero_Designer
             return setPair3;
         }
 
-        // Token: 0x060000A4 RID: 164 RVA: 0x0000E8FC File Offset: 0x0000CAFC
+
         private static int FindPowerSetAdvanced(string sSetType, Enums.ePowerSetType nSetType, int nAT, string[] haystack)
         {
             int num = haystack.Length - 1;
@@ -214,7 +214,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000A5 RID: 165 RVA: 0x0000E9A4 File Offset: 0x0000CBA4
+
         private static int FindString(string needle, string[] haystack)
         {
             int num = haystack.Length - 1;
@@ -228,7 +228,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000A6 RID: 166 RVA: 0x0000E9F4 File Offset: 0x0000CBF4
+
         private static int FindValue(string needle, string[] haystack, ref string dest)
         {
             char[] chArray = new char[]
@@ -253,7 +253,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000A7 RID: 167 RVA: 0x0000EAB8 File Offset: 0x0000CCB8
+
         public static bool InterpretForumPost(string iPost)
         {
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
@@ -485,7 +485,7 @@ namespace Hero_Designer
             return flag3;
         }
 
-        // Token: 0x060000A8 RID: 168 RVA: 0x0000F6D0 File Offset: 0x0000D8D0
+
         private static int MatchEnhancement(string iEnh)
         {
             int enhancementByName;
@@ -517,7 +517,7 @@ namespace Hero_Designer
             return enhancementByName;
         }
 
-        // Token: 0x060000A9 RID: 169 RVA: 0x0000F7C8 File Offset: 0x0000D9C8
+
         private static string PowerNameFix(string iStr)
         {
             iStr = clsToonX.FixSpelling(iStr);
@@ -527,7 +527,7 @@ namespace Hero_Designer
             return iStr;
         }
 
-        // Token: 0x060000AA RID: 170 RVA: 0x0000F81C File Offset: 0x0000DA1C
+
         private static clsUniversalImport.SetPair ScanSetArray(string iName, IPowerset[] sets)
         {
             int num = sets.Length - 1;
@@ -551,7 +551,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x060000AB RID: 171 RVA: 0x0000F8CC File Offset: 0x0000DACC
+
         private static int SeekAn(string iStr, int start)
         {
             if (start < 0)
@@ -569,7 +569,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000AC RID: 172 RVA: 0x0000F92C File Offset: 0x0000DB2C
+
         private static int SeekNumber(string iStr, int start)
         {
             if (start < 0)
@@ -587,7 +587,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000AD RID: 173 RVA: 0x0000F98C File Offset: 0x0000DB8C
+
         private static int SeekNumberSpecial(string iStr, int start)
         {
             if (start < 0)
@@ -619,7 +619,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000AE RID: 174 RVA: 0x0000FA28 File Offset: 0x0000DC28
+
         private static int SeekPowerAdvanced(string iString, int nAT)
         {
             int index = -1;
@@ -655,7 +655,7 @@ namespace Hero_Designer
             return index;
         }
 
-        // Token: 0x060000AF RID: 175 RVA: 0x0000FBA8 File Offset: 0x0000DDA8
+
         private static int SeekSep(string iStr, int start, bool readAhead = true)
         {
             if (start < 0)
@@ -691,7 +691,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000B0 RID: 176 RVA: 0x0000FC74 File Offset: 0x0000DE74
+
         private static int SeekSepSpecial(string iStr, int start)
         {
             if (start < 0)
@@ -709,7 +709,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x060000B1 RID: 177 RVA: 0x0000FD60 File Offset: 0x0000DF60
+
         private static string[] SmartBreak(string iStr, int nAT)
         {
             string[] strArray = new string[]
@@ -751,7 +751,7 @@ namespace Hero_Designer
             return strArray;
         }
 
-        // Token: 0x060000B2 RID: 178 RVA: 0x0000FE80 File Offset: 0x0000E080
+
         private static int SmartFind(string valueName, string[] haystack, ref string dest)
         {
             int num = haystack.Length - 1;
@@ -791,16 +791,16 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x04000039 RID: 57
+
         public const string MarkerA = "Primary";
 
-        // Token: 0x0400003A RID: 58
+
         public const string MarkerB = "Secondary";
 
-        // Token: 0x0200000D RID: 13
+
         private struct SetPair
         {
-            // Token: 0x060000B4 RID: 180 RVA: 0x0000FFCE File Offset: 0x0000E1CE
+
             public SetPair(int iSet, int iPower)
             {
                 this = default(clsUniversalImport.SetPair);
@@ -808,17 +808,17 @@ namespace Hero_Designer
                 this.Power = iPower;
             }
 
-            // Token: 0x0400003B RID: 59
+
             public readonly int Powerset;
 
-            // Token: 0x0400003C RID: 60
+
             public readonly int Power;
         }
 
-        // Token: 0x0200000E RID: 14
+
         public struct sPowerLine
         {
-            // Token: 0x060000B5 RID: 181 RVA: 0x0000FFE8 File Offset: 0x0000E1E8
+
             public void Assign(clsUniversalImport.sPowerLine iPL)
             {
                 this.Level = iPL.Level;
@@ -832,23 +832,23 @@ namespace Hero_Designer
                 }
             }
 
-            // Token: 0x0400003D RID: 61
+
             public int Level;
 
-            // Token: 0x0400003E RID: 62
+
             public string Power;
 
-            // Token: 0x0400003F RID: 63
+
             public int HistoryID;
 
-            // Token: 0x04000040 RID: 64
+
             public clsUniversalImport.sSlot[] Slots;
         }
 
-        // Token: 0x0200000F RID: 15
+
         public struct sSlot
         {
-            // Token: 0x060000B6 RID: 182 RVA: 0x00010079 File Offset: 0x0000E279
+
             public void Assign(clsUniversalImport.sSlot iSlot)
             {
                 this.Level = iSlot.Level;
@@ -856,13 +856,13 @@ namespace Hero_Designer
                 this.PowerName = iSlot.PowerName;
             }
 
-            // Token: 0x04000041 RID: 65
+
             public int Level;
 
-            // Token: 0x04000042 RID: 66
+
             public string Enh;
 
-            // Token: 0x04000043 RID: 67
+
             public string PowerName;
         }
     }

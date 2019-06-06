@@ -1,10 +1,10 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000044 RID: 68
+
 	[global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
 	public partial class frmIncarnate : global::System.Windows.Forms.Form
 	{
-		// Token: 0x06000C84 RID: 3204 RVA: 0x0007B770 File Offset: 0x00079970
+
 		[global::System.Diagnostics.DebuggerNonUserCode]
 		protected override void Dispose(bool disposing)
 		{
@@ -21,7 +21,7 @@
 			}
 		}
 
-		// Token: 0x06000C8A RID: 3210 RVA: 0x0007BCE4 File Offset: 0x00079EE4
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -317,10 +317,10 @@
 			base.ResumeLayout(false);
 		}
 
-		// Token: 0x04000529 RID: 1321
+
 		private global::System.ComponentModel.IContainer components;
 
-		// Token: 0x0400052D RID: 1325
+
 		internal global::Hero_Designer.frmIncarnate.CustomPanel Panel2;
 	}
 }

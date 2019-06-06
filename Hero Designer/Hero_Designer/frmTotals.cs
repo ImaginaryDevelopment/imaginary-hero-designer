@@ -13,11 +13,11 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200005A RID: 90
+
 
     public partial class frmTotals : Form
     {
-        // Token: 0x17000622 RID: 1570
+
         // (get) Token: 0x0600131D RID: 4893 RVA: 0x000C11F8 File Offset: 0x000BF3F8
         // (set) Token: 0x0600131E RID: 4894 RVA: 0x000C1210 File Offset: 0x000BF410
         internal virtual ctlMultiGraph graphAcc
@@ -33,7 +33,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000623 RID: 1571
+
         // (get) Token: 0x0600131F RID: 4895 RVA: 0x000C121C File Offset: 0x000BF41C
         // (set) Token: 0x06001320 RID: 4896 RVA: 0x000C1234 File Offset: 0x000BF434
         internal virtual ctlMultiGraph graphDam
@@ -49,7 +49,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000624 RID: 1572
+
         // (get) Token: 0x06001321 RID: 4897 RVA: 0x000C1240 File Offset: 0x000BF440
         // (set) Token: 0x06001322 RID: 4898 RVA: 0x000C1258 File Offset: 0x000BF458
         internal virtual ctlMultiGraph graphDef
@@ -65,7 +65,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000625 RID: 1573
+
         // (get) Token: 0x06001323 RID: 4899 RVA: 0x000C1264 File Offset: 0x000BF464
         // (set) Token: 0x06001324 RID: 4900 RVA: 0x000C127C File Offset: 0x000BF47C
         internal virtual ctlMultiGraph graphDrain
@@ -81,7 +81,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000626 RID: 1574
+
         // (get) Token: 0x06001325 RID: 4901 RVA: 0x000C1288 File Offset: 0x000BF488
         // (set) Token: 0x06001326 RID: 4902 RVA: 0x000C12A0 File Offset: 0x000BF4A0
         internal virtual ctlMultiGraph graphElusivity
@@ -97,7 +97,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000627 RID: 1575
+
         // (get) Token: 0x06001327 RID: 4903 RVA: 0x000C12AC File Offset: 0x000BF4AC
         // (set) Token: 0x06001328 RID: 4904 RVA: 0x000C12C4 File Offset: 0x000BF4C4
         internal virtual ctlMultiGraph graphEndRdx
@@ -113,7 +113,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000628 RID: 1576
+
         // (get) Token: 0x06001329 RID: 4905 RVA: 0x000C12D0 File Offset: 0x000BF4D0
         // (set) Token: 0x0600132A RID: 4906 RVA: 0x000C12E8 File Offset: 0x000BF4E8
         internal virtual ctlMultiGraph graphHaste
@@ -129,7 +129,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000629 RID: 1577
+
         // (get) Token: 0x0600132B RID: 4907 RVA: 0x000C12F4 File Offset: 0x000BF4F4
         // (set) Token: 0x0600132C RID: 4908 RVA: 0x000C130C File Offset: 0x000BF50C
         internal virtual ctlMultiGraph graphHP
@@ -145,7 +145,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062A RID: 1578
+
         // (get) Token: 0x0600132D RID: 4909 RVA: 0x000C1318 File Offset: 0x000BF518
         // (set) Token: 0x0600132E RID: 4910 RVA: 0x000C1330 File Offset: 0x000BF530
         internal virtual ctlMultiGraph graphMaxEnd
@@ -161,7 +161,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062B RID: 1579
+
         // (get) Token: 0x0600132F RID: 4911 RVA: 0x000C133C File Offset: 0x000BF53C
         // (set) Token: 0x06001330 RID: 4912 RVA: 0x000C1354 File Offset: 0x000BF554
         internal virtual ctlMultiGraph graphMovement
@@ -177,7 +177,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062C RID: 1580
+
         // (get) Token: 0x06001331 RID: 4913 RVA: 0x000C1360 File Offset: 0x000BF560
         // (set) Token: 0x06001332 RID: 4914 RVA: 0x000C1378 File Offset: 0x000BF578
         internal virtual ctlMultiGraph graphRec
@@ -193,7 +193,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062D RID: 1581
+
         // (get) Token: 0x06001333 RID: 4915 RVA: 0x000C1384 File Offset: 0x000BF584
         // (set) Token: 0x06001334 RID: 4916 RVA: 0x000C139C File Offset: 0x000BF59C
         internal virtual ctlMultiGraph graphRegen
@@ -209,7 +209,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062E RID: 1582
+
         // (get) Token: 0x06001335 RID: 4917 RVA: 0x000C13A8 File Offset: 0x000BF5A8
         // (set) Token: 0x06001336 RID: 4918 RVA: 0x000C13C0 File Offset: 0x000BF5C0
         internal virtual ctlMultiGraph graphRes
@@ -225,7 +225,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700062F RID: 1583
+
         // (get) Token: 0x06001337 RID: 4919 RVA: 0x000C13CC File Offset: 0x000BF5CC
         // (set) Token: 0x06001338 RID: 4920 RVA: 0x000C13E4 File Offset: 0x000BF5E4
         internal virtual ctlMultiGraph graphSDeb
@@ -241,7 +241,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000630 RID: 1584
+
         // (get) Token: 0x06001339 RID: 4921 RVA: 0x000C13F0 File Offset: 0x000BF5F0
         // (set) Token: 0x0600133A RID: 4922 RVA: 0x000C1408 File Offset: 0x000BF608
         internal virtual ctlMultiGraph graphSProt
@@ -257,7 +257,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000631 RID: 1585
+
         // (get) Token: 0x0600133B RID: 4923 RVA: 0x000C1414 File Offset: 0x000BF614
         // (set) Token: 0x0600133C RID: 4924 RVA: 0x000C142C File Offset: 0x000BF62C
         internal virtual ctlMultiGraph graphSRes
@@ -273,7 +273,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000632 RID: 1586
+
         // (get) Token: 0x0600133D RID: 4925 RVA: 0x000C1438 File Offset: 0x000BF638
         // (set) Token: 0x0600133E RID: 4926 RVA: 0x000C1450 File Offset: 0x000BF650
         internal virtual ctlMultiGraph graphStealth
@@ -289,7 +289,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000633 RID: 1587
+
         // (get) Token: 0x0600133F RID: 4927 RVA: 0x000C145C File Offset: 0x000BF65C
         // (set) Token: 0x06001340 RID: 4928 RVA: 0x000C1474 File Offset: 0x000BF674
         internal virtual ctlMultiGraph graphThreat
@@ -305,7 +305,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000634 RID: 1588
+
         // (get) Token: 0x06001341 RID: 4929 RVA: 0x000C1480 File Offset: 0x000BF680
         // (set) Token: 0x06001342 RID: 4930 RVA: 0x000C1498 File Offset: 0x000BF698
         internal virtual ctlMultiGraph graphToHit
@@ -321,7 +321,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000635 RID: 1589
+
         // (get) Token: 0x06001343 RID: 4931 RVA: 0x000C14A4 File Offset: 0x000BF6A4
         // (set) Token: 0x06001344 RID: 4932 RVA: 0x000C14BC File Offset: 0x000BF6BC
         internal virtual Label lblDef
@@ -337,7 +337,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000636 RID: 1590
+
         // (get) Token: 0x06001345 RID: 4933 RVA: 0x000C14C8 File Offset: 0x000BF6C8
         // (set) Token: 0x06001346 RID: 4934 RVA: 0x000C14E0 File Offset: 0x000BF6E0
         internal virtual Label lblMisc
@@ -353,7 +353,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000637 RID: 1591
+
         // (get) Token: 0x06001347 RID: 4935 RVA: 0x000C14EC File Offset: 0x000BF6EC
         // (set) Token: 0x06001348 RID: 4936 RVA: 0x000C1504 File Offset: 0x000BF704
         internal virtual Label lblMovement
@@ -369,7 +369,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000638 RID: 1592
+
         // (get) Token: 0x06001349 RID: 4937 RVA: 0x000C1510 File Offset: 0x000BF710
         // (set) Token: 0x0600134A RID: 4938 RVA: 0x000C1528 File Offset: 0x000BF728
         internal virtual Label lblRegenRec
@@ -385,7 +385,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000639 RID: 1593
+
         // (get) Token: 0x0600134B RID: 4939 RVA: 0x000C1534 File Offset: 0x000BF734
         // (set) Token: 0x0600134C RID: 4940 RVA: 0x000C154C File Offset: 0x000BF74C
         internal virtual Label lblRes
@@ -401,7 +401,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063A RID: 1594
+
         // (get) Token: 0x0600134D RID: 4941 RVA: 0x000C1558 File Offset: 0x000BF758
         // (set) Token: 0x0600134E RID: 4942 RVA: 0x000C1570 File Offset: 0x000BF770
         internal virtual Label lblSDeb
@@ -417,7 +417,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063B RID: 1595
+
         // (get) Token: 0x0600134F RID: 4943 RVA: 0x000C157C File Offset: 0x000BF77C
         // (set) Token: 0x06001350 RID: 4944 RVA: 0x000C1594 File Offset: 0x000BF794
         internal virtual Label lblSProt
@@ -433,7 +433,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063C RID: 1596
+
         // (get) Token: 0x06001351 RID: 4945 RVA: 0x000C15A0 File Offset: 0x000BF7A0
         // (set) Token: 0x06001352 RID: 4946 RVA: 0x000C15B8 File Offset: 0x000BF7B8
         internal virtual Label lblSRes
@@ -449,7 +449,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063D RID: 1597
+
         // (get) Token: 0x06001353 RID: 4947 RVA: 0x000C15C4 File Offset: 0x000BF7C4
         // (set) Token: 0x06001354 RID: 4948 RVA: 0x000C15DC File Offset: 0x000BF7DC
         internal virtual Label lblStealth
@@ -465,7 +465,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063E RID: 1598
+
         // (get) Token: 0x06001355 RID: 4949 RVA: 0x000C15E8 File Offset: 0x000BF7E8
         // (set) Token: 0x06001356 RID: 4950 RVA: 0x000C1600 File Offset: 0x000BF800
         internal virtual Panel Panel1
@@ -481,7 +481,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700063F RID: 1599
+
         // (get) Token: 0x06001357 RID: 4951 RVA: 0x000C160C File Offset: 0x000BF80C
         // (set) Token: 0x06001358 RID: 4952 RVA: 0x000C1624 File Offset: 0x000BF824
         internal virtual Panel Panel2
@@ -497,7 +497,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000640 RID: 1600
+
         // (get) Token: 0x06001359 RID: 4953 RVA: 0x000C1630 File Offset: 0x000BF830
         // (set) Token: 0x0600135A RID: 4954 RVA: 0x000C1648 File Offset: 0x000BF848
         internal virtual PictureBox pbClose
@@ -525,7 +525,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000641 RID: 1601
+
         // (get) Token: 0x0600135B RID: 4955 RVA: 0x000C16CC File Offset: 0x000BF8CC
         // (set) Token: 0x0600135C RID: 4956 RVA: 0x000C16E4 File Offset: 0x000BF8E4
         internal virtual PictureBox pbTopMost
@@ -553,7 +553,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000642 RID: 1602
+
         // (get) Token: 0x0600135D RID: 4957 RVA: 0x000C1768 File Offset: 0x000BF968
         // (set) Token: 0x0600135E RID: 4958 RVA: 0x000C1780 File Offset: 0x000BF980
         internal virtual Panel pnlDRHE
@@ -569,7 +569,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000643 RID: 1603
+
         // (get) Token: 0x0600135F RID: 4959 RVA: 0x000C178C File Offset: 0x000BF98C
         // (set) Token: 0x06001360 RID: 4960 RVA: 0x000C17A4 File Offset: 0x000BF9A4
         internal virtual Panel pnlMisc
@@ -585,7 +585,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000644 RID: 1604
+
         // (get) Token: 0x06001361 RID: 4961 RVA: 0x000C17B0 File Offset: 0x000BF9B0
         // (set) Token: 0x06001362 RID: 4962 RVA: 0x000C17C8 File Offset: 0x000BF9C8
         internal virtual Panel pnlStatus
@@ -601,7 +601,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000645 RID: 1605
+
         // (get) Token: 0x06001363 RID: 4963 RVA: 0x000C17D4 File Offset: 0x000BF9D4
         // (set) Token: 0x06001364 RID: 4964 RVA: 0x000C17EC File Offset: 0x000BF9EC
         internal virtual RadioButton rbFPS
@@ -626,7 +626,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000646 RID: 1606
+
         // (get) Token: 0x06001365 RID: 4965 RVA: 0x000C1848 File Offset: 0x000BFA48
         // (set) Token: 0x06001366 RID: 4966 RVA: 0x000C1860 File Offset: 0x000BFA60
         internal virtual RadioButton rbKPH
@@ -651,7 +651,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000647 RID: 1607
+
         // (get) Token: 0x06001367 RID: 4967 RVA: 0x000C18BC File Offset: 0x000BFABC
         // (set) Token: 0x06001368 RID: 4968 RVA: 0x000C18D4 File Offset: 0x000BFAD4
         internal virtual RadioButton rbMPH
@@ -676,7 +676,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000648 RID: 1608
+
         // (get) Token: 0x06001369 RID: 4969 RVA: 0x000C1930 File Offset: 0x000BFB30
         // (set) Token: 0x0600136A RID: 4970 RVA: 0x000C1948 File Offset: 0x000BFB48
         internal virtual RadioButton rbMSec
@@ -701,7 +701,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000649 RID: 1609
+
         // (get) Token: 0x0600136B RID: 4971 RVA: 0x000C19A4 File Offset: 0x000BFBA4
         // (set) Token: 0x0600136C RID: 4972 RVA: 0x000C19BC File Offset: 0x000BFBBC
         internal virtual PictureBox tab0
@@ -729,7 +729,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700064A RID: 1610
+
         // (get) Token: 0x0600136D RID: 4973 RVA: 0x000C1A40 File Offset: 0x000BFC40
         // (set) Token: 0x0600136E RID: 4974 RVA: 0x000C1A58 File Offset: 0x000BFC58
         internal virtual PictureBox tab1
@@ -757,7 +757,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700064B RID: 1611
+
         // (get) Token: 0x0600136F RID: 4975 RVA: 0x000C1ADC File Offset: 0x000BFCDC
         // (set) Token: 0x06001370 RID: 4976 RVA: 0x000C1AF4 File Offset: 0x000BFCF4
         internal virtual PictureBox tab2
@@ -785,7 +785,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06001371 RID: 4977 RVA: 0x000C1B78 File Offset: 0x000BFD78
+
         public frmTotals(ref frmMain iParent)
         {
             base.FormClosed += this.FrmTotalsFormClosed;
@@ -799,20 +799,20 @@ namespace Hero_Designer
             this._myParent = iParent;
         }
 
-        // Token: 0x06001372 RID: 4978 RVA: 0x000C1C00 File Offset: 0x000BFE00
+
         public bool A_GT_B(float A, float B)
         {
             double num = (double)Math.Abs(A - B);
             return num >= 1.0000000116860974E-07 && num > 0.0;
         }
 
-        // Token: 0x06001374 RID: 4980 RVA: 0x000C1C88 File Offset: 0x000BFE88
+
         private void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
         {
             this._myParent.FloatTotals(false);
         }
 
-        // Token: 0x06001375 RID: 4981 RVA: 0x000C1C98 File Offset: 0x000BFE98
+
         private void FrmTotalsLoad(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -836,13 +836,13 @@ namespace Hero_Designer
             this.SetFonts();
         }
 
-        // Token: 0x06001376 RID: 4982 RVA: 0x000C1D1F File Offset: 0x000BFF1F
+
         private void FrmTotalsMove(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
-        // Token: 0x06001377 RID: 4983 RVA: 0x000C1D2C File Offset: 0x000BFF2C
+
         private void FrmTotalsResize(object sender, EventArgs e)
         {
             if (this._loaded)
@@ -867,13 +867,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06001379 RID: 4985 RVA: 0x000C59F3 File Offset: 0x000C3BF3
+
         private void PbCloseClick(object sender, EventArgs e)
         {
             base.Close();
         }
 
-        // Token: 0x0600137A RID: 4986 RVA: 0x000C5A00 File Offset: 0x000C3C00
+
         private void PbClosePaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -896,7 +896,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600137B RID: 4987 RVA: 0x000C5BCF File Offset: 0x000C3DCF
+
         private void PbTopMostClick(object sender, EventArgs e)
         {
             this._keepOnTop = !this._keepOnTop;
@@ -904,7 +904,7 @@ namespace Hero_Designer
             this.pbTopMost.Refresh();
         }
 
-        // Token: 0x0600137C RID: 4988 RVA: 0x000C5BFC File Offset: 0x000C3DFC
+
         private void PbTopMostPaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -939,7 +939,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600137D RID: 4989 RVA: 0x000C5E2C File Offset: 0x000C402C
+
         private string PM(float iValue, string iFormat, string iSuff)
         {
             string result;
@@ -958,7 +958,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x0600137E RID: 4990 RVA: 0x000C5EA0 File Offset: 0x000C40A0
+
         private void RbSpeedCheckedChanged(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -983,13 +983,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600137F RID: 4991 RVA: 0x000C5F48 File Offset: 0x000C4148
+
         private static void SetFontDataSingle(ref ctlMultiGraph iGraph)
         {
             iGraph.Font = new Font(iGraph.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
 
-        // Token: 0x06001380 RID: 4992 RVA: 0x000C5F78 File Offset: 0x000C4178
+
         private void SetFonts()
         {
             ctlMultiGraph graphSdeb = this.graphAcc;
@@ -1057,7 +1057,7 @@ namespace Hero_Designer
             this.lblSDeb.Font = this.graphDef.Font;
         }
 
-        // Token: 0x06001381 RID: 4993 RVA: 0x000C61F4 File Offset: 0x000C43F4
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1100,7 +1100,7 @@ namespace Hero_Designer
             this.FrmTotalsResize(this, new EventArgs());
         }
 
-        // Token: 0x06001382 RID: 4994 RVA: 0x000C643C File Offset: 0x000C463C
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1112,13 +1112,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06001383 RID: 4995 RVA: 0x000C649C File Offset: 0x000C469C
+
         private void Tab0Click(object sender, EventArgs e)
         {
             this.TabPageChange(0);
         }
 
-        // Token: 0x06001384 RID: 4996 RVA: 0x000C64A8 File Offset: 0x000C46A8
+
         private void Tab0Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab0 = this.tab0;
@@ -1126,13 +1126,13 @@ namespace Hero_Designer
             this.tab0 = tab0;
         }
 
-        // Token: 0x06001385 RID: 4997 RVA: 0x000C64DD File Offset: 0x000C46DD
+
         private void Tab1Click(object sender, EventArgs e)
         {
             this.TabPageChange(1);
         }
 
-        // Token: 0x06001386 RID: 4998 RVA: 0x000C64E8 File Offset: 0x000C46E8
+
         private void Tab1Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab = this.tab1;
@@ -1140,13 +1140,13 @@ namespace Hero_Designer
             this.tab1 = tab;
         }
 
-        // Token: 0x06001387 RID: 4999 RVA: 0x000C651D File Offset: 0x000C471D
+
         private void Tab2Click(object sender, EventArgs e)
         {
             this.TabPageChange(2);
         }
 
-        // Token: 0x06001388 RID: 5000 RVA: 0x000C6528 File Offset: 0x000C4728
+
         private void Tab2Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab2 = this.tab2;
@@ -1154,7 +1154,7 @@ namespace Hero_Designer
             this.tab2 = tab2;
         }
 
-        // Token: 0x06001389 RID: 5001 RVA: 0x000C6560 File Offset: 0x000C4760
+
         private void TabPageChange(int index)
         {
             switch (index)
@@ -1181,7 +1181,7 @@ namespace Hero_Designer
             this.tab2.Refresh();
         }
 
-        // Token: 0x0600138A RID: 5002 RVA: 0x000C662C File Offset: 0x000C482C
+
         private void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -1215,7 +1215,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600138B RID: 5003 RVA: 0x000C6848 File Offset: 0x000C4A48
+
         public void UpdateData()
         {
             Enums.eDamage eDamage = Enums.eDamage.None;
@@ -1671,184 +1671,184 @@ namespace Hero_Designer
             this.graphSDeb.Draw();
         }
 
-        // Token: 0x040007A4 RID: 1956
+
         [AccessedThroughProperty("graphAcc")]
         private ctlMultiGraph _graphAcc;
 
-        // Token: 0x040007A5 RID: 1957
+
         [AccessedThroughProperty("graphDam")]
         private ctlMultiGraph _graphDam;
 
-        // Token: 0x040007A6 RID: 1958
+
         [AccessedThroughProperty("graphDef")]
         private ctlMultiGraph _graphDef;
 
-        // Token: 0x040007A7 RID: 1959
+
         [AccessedThroughProperty("graphDrain")]
         private ctlMultiGraph _graphDrain;
 
-        // Token: 0x040007A8 RID: 1960
+
         [AccessedThroughProperty("graphElusivity")]
         private ctlMultiGraph _graphElusivity;
 
-        // Token: 0x040007A9 RID: 1961
+
         [AccessedThroughProperty("graphEndRdx")]
         private ctlMultiGraph _graphEndRdx;
 
-        // Token: 0x040007AA RID: 1962
+
         [AccessedThroughProperty("graphHaste")]
         private ctlMultiGraph _graphHaste;
 
-        // Token: 0x040007AB RID: 1963
+
         [AccessedThroughProperty("graphHP")]
         private ctlMultiGraph _graphHP;
 
-        // Token: 0x040007AC RID: 1964
+
         [AccessedThroughProperty("graphMaxEnd")]
         private ctlMultiGraph _graphMaxEnd;
 
-        // Token: 0x040007AD RID: 1965
+
         [AccessedThroughProperty("graphMovement")]
         private ctlMultiGraph _graphMovement;
 
-        // Token: 0x040007AE RID: 1966
+
         [AccessedThroughProperty("graphRec")]
         private ctlMultiGraph _graphRec;
 
-        // Token: 0x040007AF RID: 1967
+
         [AccessedThroughProperty("graphRegen")]
         private ctlMultiGraph _graphRegen;
 
-        // Token: 0x040007B0 RID: 1968
+
         [AccessedThroughProperty("graphRes")]
         private ctlMultiGraph _graphRes;
 
-        // Token: 0x040007B1 RID: 1969
+
         [AccessedThroughProperty("graphSDeb")]
         private ctlMultiGraph _graphSDeb;
 
-        // Token: 0x040007B2 RID: 1970
+
         [AccessedThroughProperty("graphSProt")]
         private ctlMultiGraph _graphSProt;
 
-        // Token: 0x040007B3 RID: 1971
+
         [AccessedThroughProperty("graphSRes")]
         private ctlMultiGraph _graphSRes;
 
-        // Token: 0x040007B4 RID: 1972
+
         [AccessedThroughProperty("graphStealth")]
         private ctlMultiGraph _graphStealth;
 
-        // Token: 0x040007B5 RID: 1973
+
         [AccessedThroughProperty("graphThreat")]
         private ctlMultiGraph _graphThreat;
 
-        // Token: 0x040007B6 RID: 1974
+
         [AccessedThroughProperty("graphToHit")]
         private ctlMultiGraph _graphToHit;
 
-        // Token: 0x040007B7 RID: 1975
+
         private bool _keepOnTop;
 
-        // Token: 0x040007B8 RID: 1976
+
         [AccessedThroughProperty("lblDef")]
         private Label _lblDef;
 
-        // Token: 0x040007B9 RID: 1977
+
         [AccessedThroughProperty("lblMisc")]
         private Label _lblMisc;
 
-        // Token: 0x040007BA RID: 1978
+
         [AccessedThroughProperty("lblMovement")]
         private Label _lblMovement;
 
-        // Token: 0x040007BB RID: 1979
+
         [AccessedThroughProperty("lblRegenRec")]
         private Label _lblRegenRec;
 
-        // Token: 0x040007BC RID: 1980
+
         [AccessedThroughProperty("lblRes")]
         private Label _lblRes;
 
-        // Token: 0x040007BD RID: 1981
+
         [AccessedThroughProperty("lblSDeb")]
         private Label _lblSDeb;
 
-        // Token: 0x040007BE RID: 1982
+
         [AccessedThroughProperty("lblSProt")]
         private Label _lblSProt;
 
-        // Token: 0x040007BF RID: 1983
+
         [AccessedThroughProperty("lblSRes")]
         private Label _lblSRes;
 
-        // Token: 0x040007C0 RID: 1984
+
         [AccessedThroughProperty("lblStealth")]
         private Label _lblStealth;
 
-        // Token: 0x040007C1 RID: 1985
+
         private bool _loaded;
 
-        // Token: 0x040007C2 RID: 1986
+
         private readonly frmMain _myParent;
 
-        // Token: 0x040007C3 RID: 1987
+
         [AccessedThroughProperty("Panel1")]
         private Panel _Panel1;
 
-        // Token: 0x040007C4 RID: 1988
+
         [AccessedThroughProperty("Panel2")]
         private Panel _Panel2;
 
-        // Token: 0x040007C5 RID: 1989
+
         [AccessedThroughProperty("pbClose")]
         private PictureBox _pbClose;
 
-        // Token: 0x040007C6 RID: 1990
+
         [AccessedThroughProperty("pbTopMost")]
         private PictureBox _pbTopMost;
 
-        // Token: 0x040007C7 RID: 1991
+
         [AccessedThroughProperty("pnlDRHE")]
         private Panel _pnlDRHE;
 
-        // Token: 0x040007C8 RID: 1992
+
         [AccessedThroughProperty("pnlMisc")]
         private Panel _pnlMisc;
 
-        // Token: 0x040007C9 RID: 1993
+
         [AccessedThroughProperty("pnlStatus")]
         private Panel _pnlStatus;
 
-        // Token: 0x040007CA RID: 1994
+
         [AccessedThroughProperty("rbFPS")]
         private RadioButton _rbFPS;
 
-        // Token: 0x040007CB RID: 1995
+
         [AccessedThroughProperty("rbKPH")]
         private RadioButton _rbKPH;
 
-        // Token: 0x040007CC RID: 1996
+
         [AccessedThroughProperty("rbMPH")]
         private RadioButton _rbMPH;
 
-        // Token: 0x040007CD RID: 1997
+
         [AccessedThroughProperty("rbMSec")]
         private RadioButton _rbMSec;
 
-        // Token: 0x040007CE RID: 1998
+
         [AccessedThroughProperty("tab0")]
         private PictureBox _tab0;
 
-        // Token: 0x040007CF RID: 1999
+
         [AccessedThroughProperty("tab1")]
         private PictureBox _tab1;
 
-        // Token: 0x040007D0 RID: 2000
+
         [AccessedThroughProperty("tab2")]
         private PictureBox _tab2;
 
-        // Token: 0x040007D1 RID: 2001
+
         private int _tabPage;
     }
 }

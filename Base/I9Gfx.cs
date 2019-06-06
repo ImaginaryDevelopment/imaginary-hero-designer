@@ -9,13 +9,13 @@ using Base.Display;
 // Token: 0x0200007C RID: 124
 public static class I9Gfx
 {
-    // Token: 0x060005E2 RID: 1506 RVA: 0x00026DB1 File Offset: 0x00024FB1
+
     public static void SetOrigin(string iOrigin)
     {
         I9Gfx.OriginIndex = DatabaseAPI.GetOriginIDByName(iOrigin);
     }
 
-    // Token: 0x060005E3 RID: 1507 RVA: 0x00026DC0 File Offset: 0x00024FC0
+
     public static void LoadPowersetImages()
     {
         I9Gfx.Powersets = new ExtendedBitmap(DatabaseAPI.Database.Powersets.Length * 16, 16);
@@ -41,7 +41,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005E4 RID: 1508 RVA: 0x00026EEC File Offset: 0x000250EC
+
     public static void LoadOriginImages()
     {
         I9Gfx.Origins = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 16, 16);
@@ -62,7 +62,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005E5 RID: 1509 RVA: 0x00027004 File Offset: 0x00025204
+
     public static void LoadArchetypeImages()
     {
         I9Gfx.Archetypes = new ExtendedBitmap(DatabaseAPI.Database.Classes.Length * 16, 16);
@@ -88,7 +88,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005E6 RID: 1510 RVA: 0x00027134 File Offset: 0x00025334
+
     public static Origin.Grade ToGfxGrade(Enums.eType iType)
     {
         Origin.Grade grade;
@@ -116,7 +116,7 @@ public static class I9Gfx
         return grade;
     }
 
-    // Token: 0x060005E7 RID: 1511 RVA: 0x00027180 File Offset: 0x00025380
+
     public static Origin.Grade ToGfxGrade(Enums.eType iType, Enums.eEnhGrade iGrade)
     {
         switch (iType)
@@ -146,13 +146,13 @@ public static class I9Gfx
         return Origin.Grade.None;
     }
 
-    // Token: 0x060005E8 RID: 1512 RVA: 0x00027200 File Offset: 0x00025400
+
     public static string ImagePath()
     {
         return FileIO.AddSlash(Application.StartupPath) + "Images\\";
     }
 
-    // Token: 0x060005E9 RID: 1513 RVA: 0x00027228 File Offset: 0x00025428
+
     public static void LoadClasses()
     {
         I9Gfx.Classes = new ExtendedBitmap(DatabaseAPI.Database.EnhancementClasses.Length * 30, 30);
@@ -184,7 +184,7 @@ public static class I9Gfx
         GC.Collect();
     }
 
-    // Token: 0x060005EA RID: 1514 RVA: 0x000273D0 File Offset: 0x000255D0
+
     public static void LoadEnhancements()
     {
         I9Gfx.Enhancements = new Bitmap[DatabaseAPI.Database.Enhancements.Length];
@@ -214,7 +214,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005EB RID: 1515 RVA: 0x000274EC File Offset: 0x000256EC
+
     public static void LoadSets()
     {
         I9Gfx.Sets = new ExtendedBitmap(DatabaseAPI.Database.EnhancementSets.Count * 30, 30);
@@ -253,7 +253,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005EC RID: 1516 RVA: 0x00027664 File Offset: 0x00025864
+
     public static void LoadSetTypes()
     {
         Array values = Enum.GetValues(typeof(Enums.eSetType));
@@ -277,7 +277,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005ED RID: 1517 RVA: 0x00027788 File Offset: 0x00025988
+
     public static void LoadEnhTypes()
     {
         Array values3 = Enum.GetValues(typeof(Enums.eType));
@@ -337,7 +337,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005EE RID: 1518 RVA: 0x00027AD4 File Offset: 0x00025CD4
+
     public static void LoadBorders()
     {
         I9Gfx.Borders = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 30, 180);
@@ -361,31 +361,31 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005EF RID: 1519 RVA: 0x00027C1C File Offset: 0x00025E1C
+
     public static string GetRecipeName()
     {
         return I9Gfx.ImagePath() + "Overlay\\Recipe.png";
     }
 
-    // Token: 0x060005F0 RID: 1520 RVA: 0x00027C40 File Offset: 0x00025E40
+
     public static string GetPowersetsPath()
     {
         return I9Gfx.ImagePath() + "Powersets\\";
     }
 
-    // Token: 0x060005F1 RID: 1521 RVA: 0x00027C64 File Offset: 0x00025E64
+
     public static string GetEnhancementsPath()
     {
         return I9Gfx.ImagePath() + "Enhancements\\";
     }
 
-    // Token: 0x060005F2 RID: 1522 RVA: 0x00027C88 File Offset: 0x00025E88
+
     public static string GetOriginsPath()
     {
         return I9Gfx.ImagePath() + "OriginAT\\";
     }
 
-    // Token: 0x060005F3 RID: 1523 RVA: 0x00027CAC File Offset: 0x00025EAC
+
     public static void DrawFlippingEnhancement(ref Graphics iTarget, Rectangle iDest, float iSize, int iImageIndex, Origin.Grade iGrade)
     {
         Rectangle iDest2 = iDest;
@@ -394,14 +394,14 @@ public static class I9Gfx
         I9Gfx.DrawEnhancementAt(ref iTarget, iDest2, iImageIndex, iGrade);
     }
 
-    // Token: 0x060005F4 RID: 1524 RVA: 0x00027CFC File Offset: 0x00025EFC
+
     public static void DrawEnhancement(ref Graphics iTarget, int iImageIndex, Origin.Grade iGrade)
     {
         iTarget.DrawImage(I9Gfx.Borders.Bitmap, iTarget.ClipBounds, I9Gfx.GetOverlayRectF(iGrade), GraphicsUnit.Pixel);
         iTarget.DrawImage(I9Gfx.Enhancements[iImageIndex], iTarget.ClipBounds, new RectangleF(0f, 0f, 30f, 30f), GraphicsUnit.Pixel);
     }
 
-    // Token: 0x060005F5 RID: 1525 RVA: 0x00027D5C File Offset: 0x00025F5C
+
     public static void DrawEnhancementAt(ref Graphics iTarget, Rectangle iDest, int iImageIndex, Origin.Grade iGrade, ImageAttributes imageAttributes)
     {
         if (iDest.Width > 30)
@@ -419,7 +419,7 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005F6 RID: 1526 RVA: 0x00027E10 File Offset: 0x00026010
+
     public static void DrawEnhancementAt(ref Graphics iTarget, Rectangle iDest, int iImageIndex, Origin.Grade iGrade)
     {
         if (iDest.Width > 30)
@@ -437,14 +437,14 @@ public static class I9Gfx
         }
     }
 
-    // Token: 0x060005F7 RID: 1527 RVA: 0x00027EA8 File Offset: 0x000260A8
+
     public static void DrawEnhancementSet(ref Graphics iTarget, int iImageIndex)
     {
         iTarget.DrawImage(I9Gfx.Borders.Bitmap, iTarget.ClipBounds, I9Gfx.GetOverlayRectF(Origin.Grade.SetO), GraphicsUnit.Pixel);
         iTarget.DrawImage(I9Gfx.Sets.Bitmap, iTarget.ClipBounds, I9Gfx.GetImageRectF(iImageIndex), GraphicsUnit.Pixel);
     }
 
-    // Token: 0x060005F8 RID: 1528 RVA: 0x00027EF8 File Offset: 0x000260F8
+
     public static Rectangle GetOverlayRect(Origin.Grade iGrade)
     {
         if (iGrade == Origin.Grade.None)
@@ -454,92 +454,92 @@ public static class I9Gfx
         return new Rectangle(I9Gfx.OriginIndex * 30, (int)((int)iGrade * 30), 30, 30);
     }
 
-    // Token: 0x060005F9 RID: 1529 RVA: 0x00027F30 File Offset: 0x00026130
+
     private static RectangleF GetOverlayRectF(Origin.Grade iGrade)
     {
         Rectangle overlayRect = I9Gfx.GetOverlayRect(iGrade);
         return new RectangleF((float)overlayRect.X, (float)overlayRect.Y, (float)overlayRect.Width, (float)overlayRect.Height);
     }
 
-    // Token: 0x060005FA RID: 1530 RVA: 0x00027F70 File Offset: 0x00026170
+
     public static Rectangle GetImageRect(int index)
     {
         return new Rectangle(index * 30, 0, 30, 30);
     }
 
-    // Token: 0x060005FB RID: 1531 RVA: 0x00027F90 File Offset: 0x00026190
+
     private static RectangleF GetImageRectF(int index)
     {
         Rectangle imageRect = I9Gfx.GetImageRect(index);
         return new RectangleF((float)imageRect.X, (float)imageRect.Y, (float)imageRect.Width, (float)imageRect.Height);
     }
 
-    // Token: 0x040005E4 RID: 1508
+
     public const int IconLarge = 30;
 
-    // Token: 0x040005E5 RID: 1509
+
     private const int IconSmall = 16;
 
-    // Token: 0x040005E6 RID: 1510
+
     public const string ImageExtension = ".png";
 
-    // Token: 0x040005E7 RID: 1511
+
     private const string FileOverlayClass = "Class.png";
 
-    // Token: 0x040005E8 RID: 1512
+
     private const string GfxPath = "Images\\";
 
-    // Token: 0x040005E9 RID: 1513
+
     private const string PathClass = "Classes\\";
 
-    // Token: 0x040005EA RID: 1514
+
     private const string PathOverlay = "Overlay\\";
 
-    // Token: 0x040005EB RID: 1515
+
     private const string PathEnh = "Enhancements\\";
 
-    // Token: 0x040005EC RID: 1516
+
     private const string PathSetType = "Sets\\";
 
-    // Token: 0x040005ED RID: 1517
+
     private const string PathOriginAT = "OriginAT\\";
 
-    // Token: 0x040005EE RID: 1518
+
     private const string PathPowersets = "Powersets\\";
 
-    // Token: 0x040005EF RID: 1519
+
     public static int OriginIndex;
 
-    // Token: 0x040005F0 RID: 1520
+
     public static Bitmap[] Enhancements;
 
-    // Token: 0x040005F1 RID: 1521
+
     public static ExtendedBitmap Borders;
 
-    // Token: 0x040005F2 RID: 1522
+
     public static ExtendedBitmap Sets;
 
-    // Token: 0x040005F3 RID: 1523
+
     public static ExtendedBitmap Classes;
 
-    // Token: 0x040005F4 RID: 1524
+
     public static ExtendedBitmap SetTypes;
 
-    // Token: 0x040005F5 RID: 1525
+
     public static ExtendedBitmap EnhTypes;
 
-    // Token: 0x040005F6 RID: 1526
+
     public static ExtendedBitmap EnhGrades;
 
-    // Token: 0x040005F7 RID: 1527
+
     public static ExtendedBitmap EnhSpecials;
 
-    // Token: 0x040005F8 RID: 1528
+
     public static ExtendedBitmap Archetypes;
 
-    // Token: 0x040005F9 RID: 1529
+
     public static ExtendedBitmap Origins;
 
-    // Token: 0x040005FA RID: 1530
+
     public static ExtendedBitmap Powersets;
 }

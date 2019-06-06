@@ -15,45 +15,45 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000017 RID: 23
+
     public class DataView : UserControl
     {
-        // Token: 0x14000001 RID: 1
+
         // (add) Token: 0x060000CB RID: 203 RVA: 0x00011BF8 File Offset: 0x0000FDF8
         // (remove) Token: 0x060000CC RID: 204 RVA: 0x00011C34 File Offset: 0x0000FE34
         public event DataView.FloatChangeEventHandler FloatChange;
 
-        // Token: 0x14000002 RID: 2
+
         // (add) Token: 0x060000CD RID: 205 RVA: 0x00011C70 File Offset: 0x0000FE70
         // (remove) Token: 0x060000CE RID: 206 RVA: 0x00011CAC File Offset: 0x0000FEAC
         public event DataView.MovedEventHandler Moved;
 
-        // Token: 0x14000003 RID: 3
+
         // (add) Token: 0x060000CF RID: 207 RVA: 0x00011CE8 File Offset: 0x0000FEE8
         // (remove) Token: 0x060000D0 RID: 208 RVA: 0x00011D24 File Offset: 0x0000FF24
         public event DataView.SizeChangeEventHandler SizeChange;
 
-        // Token: 0x14000004 RID: 4
+
         // (add) Token: 0x060000D1 RID: 209 RVA: 0x00011D60 File Offset: 0x0000FF60
         // (remove) Token: 0x060000D2 RID: 210 RVA: 0x00011D9C File Offset: 0x0000FF9C
         public event DataView.SlotFlipEventHandler SlotFlip;
 
-        // Token: 0x14000005 RID: 5
+
         // (add) Token: 0x060000D3 RID: 211 RVA: 0x00011DD8 File Offset: 0x0000FFD8
         // (remove) Token: 0x060000D4 RID: 212 RVA: 0x00011E14 File Offset: 0x00010014
         public event DataView.SlotUpdateEventHandler SlotUpdate;
 
-        // Token: 0x14000006 RID: 6
+
         // (add) Token: 0x060000D5 RID: 213 RVA: 0x00011E50 File Offset: 0x00010050
         // (remove) Token: 0x060000D6 RID: 214 RVA: 0x00011E8C File Offset: 0x0001008C
         public event DataView.TabChangedEventHandler TabChanged;
 
-        // Token: 0x14000007 RID: 7
+
         // (add) Token: 0x060000D7 RID: 215 RVA: 0x00011EC8 File Offset: 0x000100C8
         // (remove) Token: 0x060000D8 RID: 216 RVA: 0x00011F04 File Offset: 0x00010104
         public event DataView.Unlock_ClickEventHandler Unlock_Click;
 
-        // Token: 0x1700002B RID: 43
+
         // (get) Token: 0x060000D9 RID: 217 RVA: 0x00011F40 File Offset: 0x00010140
         // (set) Token: 0x060000DA RID: 218 RVA: 0x00011F58 File Offset: 0x00010158
         internal virtual ctlDamageDisplay CtlDamageDisplay1
@@ -69,7 +69,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700002C RID: 44
+
         // (get) Token: 0x060000DB RID: 219 RVA: 0x00011F64 File Offset: 0x00010164
         // (set) Token: 0x060000DC RID: 220 RVA: 0x00011F7C File Offset: 0x0001017C
         internal virtual ToolTip dbTip
@@ -85,7 +85,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700002D RID: 45
+
         // (get) Token: 0x060000DD RID: 221 RVA: 0x00011F88 File Offset: 0x00010188
         // (set) Token: 0x060000DE RID: 222 RVA: 0x00011FA0 File Offset: 0x000101A0
         public bool DrawVillain
@@ -113,7 +113,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700002E RID: 46
+
         // (get) Token: 0x060000DF RID: 223 RVA: 0x00012008 File Offset: 0x00010208
         // (set) Token: 0x060000E0 RID: 224 RVA: 0x00012020 File Offset: 0x00010220
         internal virtual GFXLabel Enh_Title
@@ -141,7 +141,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700002F RID: 47
+
         // (get) Token: 0x060000E1 RID: 225 RVA: 0x000120A4 File Offset: 0x000102A4
         // (set) Token: 0x060000E2 RID: 226 RVA: 0x000120BC File Offset: 0x000102BC
         internal virtual ctlPairedList enhListing
@@ -166,7 +166,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000030 RID: 48
+
         // (get) Token: 0x060000E3 RID: 227 RVA: 0x00012118 File Offset: 0x00010318
         // (set) Token: 0x060000E4 RID: 228 RVA: 0x00012130 File Offset: 0x00010330
         internal virtual GFXLabel enhNameDisp
@@ -182,7 +182,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000031 RID: 49
+
         // (get) Token: 0x060000E5 RID: 229 RVA: 0x0001213C File Offset: 0x0001033C
         // (set) Token: 0x060000E6 RID: 230 RVA: 0x00012154 File Offset: 0x00010354
         public bool Floating
@@ -207,7 +207,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000032 RID: 50
+
         // (get) Token: 0x060000E7 RID: 231 RVA: 0x000121CC File Offset: 0x000103CC
         // (set) Token: 0x060000E8 RID: 232 RVA: 0x000121E4 File Offset: 0x000103E4
         internal virtual Label fx_lblHead1
@@ -223,7 +223,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000033 RID: 51
+
         // (get) Token: 0x060000E9 RID: 233 RVA: 0x000121F0 File Offset: 0x000103F0
         // (set) Token: 0x060000EA RID: 234 RVA: 0x00012208 File Offset: 0x00010408
         internal virtual Label fx_lblHead2
@@ -239,7 +239,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000034 RID: 52
+
         // (get) Token: 0x060000EB RID: 235 RVA: 0x00012214 File Offset: 0x00010414
         // (set) Token: 0x060000EC RID: 236 RVA: 0x0001222C File Offset: 0x0001042C
         internal virtual Label fx_LblHead3
@@ -255,7 +255,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000035 RID: 53
+
         // (get) Token: 0x060000ED RID: 237 RVA: 0x00012238 File Offset: 0x00010438
         // (set) Token: 0x060000EE RID: 238 RVA: 0x00012250 File Offset: 0x00010450
         internal virtual ctlPairedList fx_List1
@@ -280,7 +280,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000036 RID: 54
+
         // (get) Token: 0x060000EF RID: 239 RVA: 0x000122AC File Offset: 0x000104AC
         // (set) Token: 0x060000F0 RID: 240 RVA: 0x000122C4 File Offset: 0x000104C4
         internal virtual ctlPairedList fx_List2
@@ -305,7 +305,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000037 RID: 55
+
         // (get) Token: 0x060000F1 RID: 241 RVA: 0x00012320 File Offset: 0x00010520
         // (set) Token: 0x060000F2 RID: 242 RVA: 0x00012338 File Offset: 0x00010538
         internal virtual ctlPairedList fx_List3
@@ -330,7 +330,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000038 RID: 56
+
         // (get) Token: 0x060000F3 RID: 243 RVA: 0x00012394 File Offset: 0x00010594
         // (set) Token: 0x060000F4 RID: 244 RVA: 0x000123AC File Offset: 0x000105AC
         internal virtual GFXLabel fx_Title
@@ -358,7 +358,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000039 RID: 57
+
         // (get) Token: 0x060000F5 RID: 245 RVA: 0x00012430 File Offset: 0x00010630
         // (set) Token: 0x060000F6 RID: 246 RVA: 0x00012448 File Offset: 0x00010648
         internal virtual ctlMultiGraph gDef1
@@ -374,7 +374,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003A RID: 58
+
         // (get) Token: 0x060000F7 RID: 247 RVA: 0x00012454 File Offset: 0x00010654
         // (set) Token: 0x060000F8 RID: 248 RVA: 0x0001246C File Offset: 0x0001066C
         internal virtual ctlMultiGraph gDef2
@@ -390,7 +390,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003B RID: 59
+
         // (get) Token: 0x060000F9 RID: 249 RVA: 0x00012478 File Offset: 0x00010678
         // (set) Token: 0x060000FA RID: 250 RVA: 0x00012490 File Offset: 0x00010690
         internal virtual ctlMultiGraph gRes1
@@ -406,7 +406,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003C RID: 60
+
         // (get) Token: 0x060000FB RID: 251 RVA: 0x0001249C File Offset: 0x0001069C
         // (set) Token: 0x060000FC RID: 252 RVA: 0x000124B4 File Offset: 0x000106B4
         internal virtual ctlMultiGraph gRes2
@@ -422,7 +422,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003D RID: 61
+
         // (get) Token: 0x060000FD RID: 253 RVA: 0x000124C0 File Offset: 0x000106C0
         // (set) Token: 0x060000FE RID: 254 RVA: 0x000124D8 File Offset: 0x000106D8
         internal virtual ctlDamageDisplay info_Damage
@@ -438,7 +438,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003E RID: 62
+
         // (get) Token: 0x060000FF RID: 255 RVA: 0x000124E4 File Offset: 0x000106E4
         // (set) Token: 0x06000100 RID: 256 RVA: 0x000124FC File Offset: 0x000106FC
         internal virtual ctlPairedList info_DataList
@@ -463,7 +463,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700003F RID: 63
+
         // (get) Token: 0x06000101 RID: 257 RVA: 0x00012558 File Offset: 0x00010758
         // (set) Token: 0x06000102 RID: 258 RVA: 0x00012570 File Offset: 0x00010770
         internal virtual GFXLabel info_Title
@@ -491,7 +491,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000040 RID: 64
+
         // (get) Token: 0x06000103 RID: 259 RVA: 0x000125F4 File Offset: 0x000107F4
         // (set) Token: 0x06000104 RID: 260 RVA: 0x0001260C File Offset: 0x0001080C
         internal virtual RichTextBox info_txtLarge
@@ -507,7 +507,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000041 RID: 65
+
         // (get) Token: 0x06000105 RID: 261 RVA: 0x00012618 File Offset: 0x00010818
         // (set) Token: 0x06000106 RID: 262 RVA: 0x00012630 File Offset: 0x00010830
         internal virtual RichTextBox info_txtSmall
@@ -523,7 +523,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000042 RID: 66
+
         // (get) Token: 0x06000107 RID: 263 RVA: 0x0001263C File Offset: 0x0001083C
         public bool IsDocked
         {
@@ -533,7 +533,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000043 RID: 67
+
         // (get) Token: 0x06000108 RID: 264 RVA: 0x00012688 File Offset: 0x00010888
         // (set) Token: 0x06000109 RID: 265 RVA: 0x000126A0 File Offset: 0x000108A0
         internal virtual Label lblDmg
@@ -549,7 +549,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000044 RID: 68
+
         // (get) Token: 0x0600010A RID: 266 RVA: 0x000126AC File Offset: 0x000108AC
         // (set) Token: 0x0600010B RID: 267 RVA: 0x000126C4 File Offset: 0x000108C4
         internal virtual Label lblFloat
@@ -574,7 +574,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000045 RID: 69
+
         // (get) Token: 0x0600010C RID: 268 RVA: 0x00012720 File Offset: 0x00010920
         // (set) Token: 0x0600010D RID: 269 RVA: 0x00012738 File Offset: 0x00010938
         internal virtual Label lblLock
@@ -599,7 +599,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000046 RID: 70
+
         // (get) Token: 0x0600010E RID: 270 RVA: 0x00012794 File Offset: 0x00010994
         // (set) Token: 0x0600010F RID: 271 RVA: 0x000127AC File Offset: 0x000109AC
         internal virtual Label lblShrink
@@ -627,7 +627,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000047 RID: 71
+
         // (get) Token: 0x06000110 RID: 272 RVA: 0x00012830 File Offset: 0x00010A30
         // (set) Token: 0x06000111 RID: 273 RVA: 0x00012848 File Offset: 0x00010A48
         internal virtual Label lblTotal
@@ -643,7 +643,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000048 RID: 72
+
         // (get) Token: 0x06000112 RID: 274 RVA: 0x00012854 File Offset: 0x00010A54
         // (set) Token: 0x06000113 RID: 275 RVA: 0x0001286C File Offset: 0x00010A6C
         internal virtual Panel pnlEnh
@@ -659,7 +659,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000049 RID: 73
+
         // (get) Token: 0x06000114 RID: 276 RVA: 0x00012878 File Offset: 0x00010A78
         // (set) Token: 0x06000115 RID: 277 RVA: 0x00012890 File Offset: 0x00010A90
         internal virtual Panel pnlEnhActive
@@ -690,7 +690,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004A RID: 74
+
         // (get) Token: 0x06000116 RID: 278 RVA: 0x00012938 File Offset: 0x00010B38
         // (set) Token: 0x06000117 RID: 279 RVA: 0x00012950 File Offset: 0x00010B50
         internal virtual Panel pnlEnhInactive
@@ -721,7 +721,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004B RID: 75
+
         // (get) Token: 0x06000118 RID: 280 RVA: 0x000129F8 File Offset: 0x00010BF8
         // (set) Token: 0x06000119 RID: 281 RVA: 0x00012A10 File Offset: 0x00010C10
         internal virtual Panel pnlFX
@@ -737,7 +737,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004C RID: 76
+
         // (get) Token: 0x0600011A RID: 282 RVA: 0x00012A1C File Offset: 0x00010C1C
         // (set) Token: 0x0600011B RID: 283 RVA: 0x00012A34 File Offset: 0x00010C34
         internal virtual Panel pnlInfo
@@ -753,7 +753,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004D RID: 77
+
         // (get) Token: 0x0600011C RID: 284 RVA: 0x00012A40 File Offset: 0x00010C40
         // (set) Token: 0x0600011D RID: 285 RVA: 0x00012A58 File Offset: 0x00010C58
         internal virtual Panel pnlTabs
@@ -781,7 +781,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004E RID: 78
+
         // (get) Token: 0x0600011E RID: 286 RVA: 0x00012ADC File Offset: 0x00010CDC
         // (set) Token: 0x0600011F RID: 287 RVA: 0x00012AF4 File Offset: 0x00010CF4
         internal virtual Panel pnlTotal
@@ -797,7 +797,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700004F RID: 79
+
         // (get) Token: 0x06000120 RID: 288 RVA: 0x00012B00 File Offset: 0x00010D00
         // (set) Token: 0x06000121 RID: 289 RVA: 0x00012B18 File Offset: 0x00010D18
         internal virtual ctlMultiGraph PowerScaler
@@ -822,7 +822,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000050 RID: 80
+
         // (get) Token: 0x06000122 RID: 290 RVA: 0x00012B74 File Offset: 0x00010D74
         public int TabPageIndex
         {
@@ -832,7 +832,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000051 RID: 81
+
         // (get) Token: 0x06000123 RID: 291 RVA: 0x00012B8C File Offset: 0x00010D8C
         // (set) Token: 0x06000124 RID: 292 RVA: 0x00012BA4 File Offset: 0x00010DA4
         internal virtual Label total_lblDef
@@ -848,7 +848,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000052 RID: 82
+
         // (get) Token: 0x06000125 RID: 293 RVA: 0x00012BB0 File Offset: 0x00010DB0
         // (set) Token: 0x06000126 RID: 294 RVA: 0x00012BC8 File Offset: 0x00010DC8
         internal virtual Label total_lblMisc
@@ -864,7 +864,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000053 RID: 83
+
         // (get) Token: 0x06000127 RID: 295 RVA: 0x00012BD4 File Offset: 0x00010DD4
         // (set) Token: 0x06000128 RID: 296 RVA: 0x00012BEC File Offset: 0x00010DEC
         internal virtual Label total_lblRes
@@ -880,7 +880,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000054 RID: 84
+
         // (get) Token: 0x06000129 RID: 297 RVA: 0x00012BF8 File Offset: 0x00010DF8
         // (set) Token: 0x0600012A RID: 298 RVA: 0x00012C10 File Offset: 0x00010E10
         internal virtual ctlPairedList total_Misc
@@ -905,7 +905,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000055 RID: 85
+
         // (get) Token: 0x0600012B RID: 299 RVA: 0x00012C6C File Offset: 0x00010E6C
         // (set) Token: 0x0600012C RID: 300 RVA: 0x00012C84 File Offset: 0x00010E84
         internal virtual GFXLabel total_Title
@@ -933,7 +933,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000056 RID: 86
+
         // (get) Token: 0x0600012D RID: 301 RVA: 0x00012D08 File Offset: 0x00010F08
         // (set) Token: 0x0600012E RID: 302 RVA: 0x00012D32 File Offset: 0x00010F32
         public Enums.eVisibleSize VisibleSize
@@ -956,7 +956,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600012F RID: 303 RVA: 0x00012D38 File Offset: 0x00010F38
+
         public DataView()
         {
             base.BackColorChanged += this.DataView_BackColorChanged;
@@ -979,7 +979,7 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x06000130 RID: 304 RVA: 0x00012DE4 File Offset: 0x00010FE4
+
         private static ctlPairedList.ItemPair BuildEDItem(int index, float[] value, Enums.eSchedule[] schedule, string Name, float[] afterED)
         {
             bool flag = value[index] > DatabaseAPI.Database.MultED[(int)schedule[index]][0];
@@ -1056,7 +1056,7 @@ namespace Hero_Designer
             return itemPair;
         }
 
-        // Token: 0x06000131 RID: 305 RVA: 0x0001324C File Offset: 0x0001144C
+
         private static string CapString(string iString, int capLength)
         {
             string result;
@@ -1071,7 +1071,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000132 RID: 306 RVA: 0x00013280 File Offset: 0x00011480
+
         public void Clear()
         {
             this.info_DataList.Clear(true);
@@ -1091,7 +1091,7 @@ namespace Hero_Designer
             this.total_Misc.Clear(true);
         }
 
-        // Token: 0x06000133 RID: 307 RVA: 0x00013378 File Offset: 0x00011578
+
         private void CompactSize()
         {
             Size size = base.Size;
@@ -1132,13 +1132,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000134 RID: 308 RVA: 0x000135AF File Offset: 0x000117AF
+
         private void DataView_BackColorChanged(object sender, EventArgs e)
         {
             this.SetBackColor();
         }
 
-        // Token: 0x06000135 RID: 309 RVA: 0x000135BC File Offset: 0x000117BC
+
         private void DataView_Load(object sender, EventArgs e)
         {
             Panel pnlInfo = this.pnlInfo;
@@ -1164,7 +1164,7 @@ namespace Hero_Designer
             this.Clear();
         }
 
-        // Token: 0x06000136 RID: 310 RVA: 0x00013698 File Offset: 0x00011898
+
         private void Display_EDFigures()
         {
             this.Enh_Title.Text = this.pBase.DisplayName;
@@ -1510,7 +1510,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000137 RID: 311 RVA: 0x00014608 File Offset: 0x00012808
+
         private void display_Info(bool NoLevel = false, int iEnhLvl = -1)
         {
             if (!NoLevel & this.pBase.Level > 0)
@@ -1775,7 +1775,7 @@ namespace Hero_Designer
             this.SetPowerScaler();
         }
 
-        // Token: 0x06000138 RID: 312 RVA: 0x00015624 File Offset: 0x00013824
+
         private void DisplayData(bool noLevel = false, int iEnhLevel = -1)
         {
             if (MidsContext.Config.DataDamageGraph)
@@ -1825,7 +1825,7 @@ namespace Hero_Designer
             this.Display_EDFigures();
         }
 
-        // Token: 0x06000139 RID: 313 RVA: 0x00015744 File Offset: 0x00013944
+
         private void DisplayEffects(bool noLevel = false, int iEnhLvl = -1)
         {
             if (!noLevel & this.pBase.Level > 0)
@@ -1948,7 +1948,7 @@ namespace Hero_Designer
             this.fx_List3.Draw();
         }
 
-        // Token: 0x0600013A RID: 314 RVA: 0x00015B78 File Offset: 0x00013D78
+
         private void DisplayFlippedEnhancements()
         {
             Pen pen;
@@ -2094,7 +2094,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600013B RID: 315 RVA: 0x00016934 File Offset: 0x00014B34
+
         public void DisplayTotals()
         {
             if (MidsContext.Character != null)
@@ -2263,7 +2263,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600013C RID: 316 RVA: 0x000171BC File Offset: 0x000153BC
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && this.components != null)
@@ -2273,7 +2273,7 @@ namespace Hero_Designer
             base.Dispose(disposing);
         }
 
-        // Token: 0x0600013D RID: 317 RVA: 0x000171F4 File Offset: 0x000153F4
+
         private void DoPaint()
         {
             Graphics graphics = this.pnlTabs.CreateGraphics();
@@ -2345,7 +2345,7 @@ namespace Hero_Designer
             graphics.DrawImageUnscaled(extendedBitmap.Bitmap, 0, 0);
         }
 
-        // Token: 0x0600013E RID: 318 RVA: 0x000175FC File Offset: 0x000157FC
+
         private int effects_BuffDebuff(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX effectMagSum = this.pBase.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
@@ -2657,7 +2657,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x0600013F RID: 319 RVA: 0x000183EC File Offset: 0x000165EC
+
         private int effects_Elusivity(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2693,7 +2693,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000140 RID: 320 RVA: 0x000185BC File Offset: 0x000167BC
+
         private int effects_GrantPower(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2737,7 +2737,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000141 RID: 321 RVA: 0x000187DC File Offset: 0x000169DC
+
         private int effects_Heal(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX BaseSFX = default(Enums.ShortFX);
@@ -2853,7 +2853,7 @@ namespace Hero_Designer
             return num2;
         }
 
-        // Token: 0x06000142 RID: 322 RVA: 0x00018E78 File Offset: 0x00017078
+
         private int effects_ModifyEffect(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2881,7 +2881,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000143 RID: 323 RVA: 0x00018FEC File Offset: 0x000171EC
+
         private int effects_Movement(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -3015,7 +3015,7 @@ namespace Hero_Designer
             return num2;
         }
 
-        // Token: 0x06000144 RID: 324 RVA: 0x000195A8 File Offset: 0x000177A8
+
         private int effects_Status(Label iLabel, ctlPairedList iList)
         {
             Enums.eMezShort eMezShort = Enums.eMezShort.None;
@@ -3142,7 +3142,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000145 RID: 325 RVA: 0x00019E60 File Offset: 0x00018060
+
         private int effects_Summon(Label iLabel, ctlPairedList iList)
         {
             int num = 0;
@@ -3194,7 +3194,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06000146 RID: 326 RVA: 0x0001A090 File Offset: 0x00018290
+
         private void EffectsDef()
         {
             Enums.ShortFX effectMagSum = this.pEnh.GetEffectMagSum(Enums.eEffectType.Defense, true, false, false, false);
@@ -3363,7 +3363,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000147 RID: 327 RVA: 0x0001A6A8 File Offset: 0x000188A8
+
         private int EffectsDrh()
         {
             int index = 0;
@@ -3380,7 +3380,7 @@ namespace Hero_Designer
             return index;
         }
 
-        // Token: 0x06000148 RID: 328 RVA: 0x0001A6FC File Offset: 0x000188FC
+
         private void EffectsRes(int index)
         {
             Enums.eDamage iSub8 = Enums.eDamage.None;
@@ -3478,25 +3478,25 @@ namespace Hero_Designer
             ctlPairedList.AddItem(DataView.FastItem(names[(int)iSub8], res[(int)iSub8], res2[(int)iSub8], "%", false, true, false, false, shortFx));
         }
 
-        // Token: 0x06000149 RID: 329 RVA: 0x0001AAF0 File Offset: 0x00018CF0
+
         private static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, -1, -1);
         }
 
-        // Token: 0x0600014A RID: 330 RVA: 0x0001AB14 File Offset: 0x00018D14
+
         private static ctlPairedList.ItemPair FastItem(string Title, Enums.ShortFX s1, Enums.ShortFX s2, string Suffix, Enums.ShortFX Tag)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, Tag);
         }
 
-        // Token: 0x0600014B RID: 331 RVA: 0x0001AB38 File Offset: 0x00018D38
+
         private static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, string Tip)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, Tip);
         }
 
-        // Token: 0x0600014C RID: 332 RVA: 0x0001AB5C File Offset: 0x00018D5C
+
         private static ctlPairedList.ItemPair FastItem(string Title, Enums.ShortFX s1, Enums.ShortFX s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, Enums.ShortFX Tag)
         {
             string iValue = Utilities.FixDP(s2.Sum) + Suffix;
@@ -3529,7 +3529,7 @@ namespace Hero_Designer
             return itemPair;
         }
 
-        // Token: 0x0600014D RID: 333 RVA: 0x0001AC54 File Offset: 0x00018E54
+
         private static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, Enums.ShortFX Tag)
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
@@ -3562,7 +3562,7 @@ namespace Hero_Designer
             return itemPair;
         }
 
-        // Token: 0x0600014E RID: 334 RVA: 0x0001AD24 File Offset: 0x00018F24
+
         private static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, string Tip)
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
@@ -3595,7 +3595,7 @@ namespace Hero_Designer
             return itemPair;
         }
 
-        // Token: 0x0600014F RID: 335 RVA: 0x0001ADF4 File Offset: 0x00018FF4
+
         private static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, int TagID, int maxDecimal)
         {
             string iValue;
@@ -3632,7 +3632,7 @@ namespace Hero_Designer
             return itemPair;
         }
 
-        // Token: 0x06000150 RID: 336 RVA: 0x0001AEB4 File Offset: 0x000190B4
+
         public void FlipStage(int Index, int Enh1, int Enh2, float State, int PowerID, Enums.eEnhGrade Grade1, Enums.eEnhGrade Grade2)
         {
             SolidBrush solidBrush = new SolidBrush(this.enhListing.BackColor);
@@ -3675,7 +3675,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000151 RID: 337 RVA: 0x0001B1C4 File Offset: 0x000193C4
+
         private static string GetEnhancementStringLongRTF(I9Slot iEnh)
         {
             string iStr = iEnh.GetEnhancementStringLong();
@@ -3686,7 +3686,7 @@ namespace Hero_Designer
             return iStr;
         }
 
-        // Token: 0x06000152 RID: 338 RVA: 0x0001B20C File Offset: 0x0001940C
+
         private static string GetEnhancementStringRTF(I9Slot iEnh)
         {
             string str = iEnh.GetEnhancementString();
@@ -3697,7 +3697,7 @@ namespace Hero_Designer
             return str;
         }
 
-        // Token: 0x06000153 RID: 339 RVA: 0x0001B250 File Offset: 0x00019450
+
         private ctlPairedList.ItemPair GetRankedEffect(int[] Index, int ID)
         {
             string Title = string.Empty;
@@ -3882,12 +3882,12 @@ namespace Hero_Designer
             return DataView.FastItem(Title, shortFx, s2, Suffix, true, false, this.pBase.Effects[Index[ID]].Probability < 1f, this.pBase.Effects[Index[ID]].SpecialCase != Enums.eSpecialCase.None, Tag);
         }
 
-        // Token: 0x06000154 RID: 340 RVA: 0x0001BD5A File Offset: 0x00019F5A
+
         public void Init()
         {
         }
 
-        // Token: 0x06000155 RID: 341 RVA: 0x0001BD60 File Offset: 0x00019F60
+
         [DebuggerStepThrough]
         private void InitializeComponent()
         {
@@ -4545,7 +4545,7 @@ namespace Hero_Designer
             base.ResumeLayout(false);
         }
 
-        // Token: 0x06000156 RID: 342 RVA: 0x0001E830 File Offset: 0x0001CA30
+
         private static bool IsMezEffect(string iStr)
         {
             Enums.eMez eMez = Enums.eMez.None;
@@ -4561,7 +4561,7 @@ namespace Hero_Designer
             return false;
         }
 
-        // Token: 0x06000157 RID: 343 RVA: 0x0001E898 File Offset: 0x0001CA98
+
         private void lblFloat_Click(object sender, EventArgs e)
         {
             DataView.FloatChangeEventHandler floatChange = this.FloatChange;
@@ -4571,7 +4571,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000158 RID: 344 RVA: 0x0001E8C0 File Offset: 0x0001CAC0
+
         private void lblLock_Click(object sender, EventArgs e)
         {
             DataView.Unlock_ClickEventHandler unlockClick = this.Unlock_Click;
@@ -4583,7 +4583,7 @@ namespace Hero_Designer
             this.pnlTabs.Select();
         }
 
-        // Token: 0x06000159 RID: 345 RVA: 0x0001E900 File Offset: 0x0001CB00
+
         private void lblShrink_Click(object sender, EventArgs e)
         {
             if (this.Compact)
@@ -4596,13 +4596,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600015A RID: 346 RVA: 0x0001E92F File Offset: 0x0001CB2F
+
         private void lblShrink_DoubleClick(object sender, EventArgs e)
         {
             this.lblShrink_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        // Token: 0x0600015B RID: 347 RVA: 0x0001E940 File Offset: 0x0001CB40
+
         private int miniGetEnhIndex(int iX, int iY)
         {
             int num = this.bxFlip.Size.Width - 188;
@@ -4626,7 +4626,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        // Token: 0x0600015C RID: 348 RVA: 0x0001EA98 File Offset: 0x0001CC98
+
         private void PairedList_Hover(object Sender, int Index, Enums.ShortFX Tag)
         {
             string str2 = string.Empty;
@@ -4691,7 +4691,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600015D RID: 349 RVA: 0x0001ECDC File Offset: 0x0001CEDC
+
         private void pnlEnhActive_MouseClick(object sender, MouseEventArgs e)
         {
             if (this.pBase != null && e.Button == MouseButtons.Left)
@@ -4708,7 +4708,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600015E RID: 350 RVA: 0x0001ED50 File Offset: 0x0001CF50
+
         private void pnlEnhActive_MouseMove(object sender, MouseEventArgs e)
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
@@ -4719,13 +4719,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600015F RID: 351 RVA: 0x0001EDEA File Offset: 0x0001CFEA
+
         private void pnlEnhActive_Paint(object sender, PaintEventArgs e)
         {
             this.RedrawFlip();
         }
 
-        // Token: 0x06000160 RID: 352 RVA: 0x0001EDF4 File Offset: 0x0001CFF4
+
         private void pnlEnhInactive_MouseClick(object sender, MouseEventArgs e)
         {
             if (this.pBase != null && e.Button == MouseButtons.Left)
@@ -4742,7 +4742,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000161 RID: 353 RVA: 0x0001EE68 File Offset: 0x0001D068
+
         private void pnlEnhInactive_MouseMove(object sender, MouseEventArgs e)
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
@@ -4753,13 +4753,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000162 RID: 354 RVA: 0x0001EF02 File Offset: 0x0001D102
+
         private void pnlEnhInactive_Paint(object sender, PaintEventArgs e)
         {
             this.RedrawFlip();
         }
 
-        // Token: 0x06000163 RID: 355 RVA: 0x0001EF0C File Offset: 0x0001D10C
+
         private void pnlTabs_MouseDown(object sender, MouseEventArgs e)
         {
             Rectangle clipRect = new Rectangle(0, 0, 70, this.pnlTabs.Height);
@@ -4785,13 +4785,13 @@ namespace Hero_Designer
             this.pnlTabs_Paint(this, new PaintEventArgs(this.pnlTabs.CreateGraphics(), clipRect));
         }
 
-        // Token: 0x06000164 RID: 356 RVA: 0x0001EFDB File Offset: 0x0001D1DB
+
         private void pnlTabs_Paint(object sender, PaintEventArgs e)
         {
             this.DoPaint();
         }
 
-        // Token: 0x06000165 RID: 357 RVA: 0x0001EFE8 File Offset: 0x0001D1E8
+
         private void PowerScaler_BarClick(float Value)
         {
             int num = (int)Math.Round((double)Value);
@@ -4817,7 +4817,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000166 RID: 358 RVA: 0x0001F0A8 File Offset: 0x0001D2A8
+
         private void RedrawFlip()
         {
             if (this.bxFlip == null)
@@ -4831,7 +4831,7 @@ namespace Hero_Designer
             this.pnlEnhInactive.CreateGraphics().DrawImage(this.bxFlip.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
         }
 
-        // Token: 0x06000167 RID: 359 RVA: 0x0001F178 File Offset: 0x0001D378
+
         private void ResetSize()
         {
             Size size = base.Size;
@@ -4872,7 +4872,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000168 RID: 360 RVA: 0x0001F3B0 File Offset: 0x0001D5B0
+
         private void SetBackColor()
         {
             this.info_Title.BackColor = this.BackColor;
@@ -4901,7 +4901,7 @@ namespace Hero_Designer
             this.enhListing.Draw();
         }
 
-        // Token: 0x06000169 RID: 361 RVA: 0x0001F53C File Offset: 0x0001D73C
+
         private void SetDamageTip()
         {
             string iTip = string.Empty;
@@ -4953,7 +4953,7 @@ namespace Hero_Designer
             this.info_Damage.SetTip(iTip);
         }
 
-        // Token: 0x0600016A RID: 362 RVA: 0x0001F740 File Offset: 0x0001D940
+
         public void SetData(IPower iBase, IPower iEnhanced, bool noLevel = false, bool Locked = false, int iHistoryIDX = -1)
         {
             if (iBase != null)
@@ -4979,7 +4979,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600016B RID: 363 RVA: 0x0001F7E0 File Offset: 0x0001D9E0
+
         public void SetEnhancement(I9Slot iEnh, int iLevel = -1)
         {
             if (!(this.Lock & this.TabPage != 3) && iLevel >= 0)
@@ -5081,7 +5081,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600016C RID: 364 RVA: 0x0001FC50 File Offset: 0x0001DE50
+
         public void SetEnhancementPicker(I9Slot iEnh)
         {
             if (iEnh.Enh < 0)
@@ -5155,7 +5155,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600016D RID: 365 RVA: 0x0001FFA4 File Offset: 0x0001E1A4
+
         public void SetFontData()
         {
             this.info_DataList.Font = new Font(this.info_DataList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
@@ -5208,7 +5208,7 @@ namespace Hero_Designer
             this.total_Misc.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
         }
 
-        // Token: 0x0600016E RID: 366 RVA: 0x00020538 File Offset: 0x0001E738
+
         public void SetLocation(Point iLocation, bool Force)
         {
             bool flag = Force | (this.SnapLocation.X == base.Location.X & this.SnapLocation.Y == base.Location.Y);
@@ -5226,7 +5226,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600016F RID: 367 RVA: 0x00020614 File Offset: 0x0001E814
+
         private void SetPowerScaler()
         {
             if (this.pBase == null)
@@ -5253,13 +5253,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000170 RID: 368 RVA: 0x00020771 File Offset: 0x0001E971
+
         public void SetScreenBounds(Rectangle iBounds)
         {
             this.ScreenBounds = iBounds;
         }
 
-        // Token: 0x06000171 RID: 369 RVA: 0x0002077C File Offset: 0x0001E97C
+
         public void SetSetPicker(int iSet)
         {
             if (iSet < 0)
@@ -5298,7 +5298,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000172 RID: 370 RVA: 0x00020934 File Offset: 0x0001EB34
+
         private bool sFXCheck(Enums.ShortFX isFX)
         {
             if (isFX.Index != null)
@@ -5315,7 +5315,7 @@ namespace Hero_Designer
             return false;
         }
 
-        // Token: 0x06000173 RID: 371 RVA: 0x000209D4 File Offset: 0x0001EBD4
+
         private string ShortStr(string full, string brief)
         {
             float num = (float)(68.0 / (double)full.Length);
@@ -5331,7 +5331,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000174 RID: 372 RVA: 0x00020A20 File Offset: 0x0001EC20
+
         private void SizeRefresh()
         {
             if (this.Compact)
@@ -5344,7 +5344,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000175 RID: 373 RVA: 0x00020A50 File Offset: 0x0001EC50
+
         private bool SplitFX_AddToList(ref Enums.ShortFX BaseSFX, ref Enums.ShortFX EnhSFX, ref ctlPairedList iList, string SpecialTitle = "")
         {
             bool flag;
@@ -5418,13 +5418,13 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x06000176 RID: 374 RVA: 0x00020D64 File Offset: 0x0001EF64
+
         private void Title_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
 
-        // Token: 0x06000177 RID: 375 RVA: 0x00020D80 File Offset: 0x0001EF80
+
         private void Title_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && !this.MoveDisable)
@@ -5468,250 +5468,250 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0400006A RID: 106
+
         private const int SnapDistance = 10;
 
-        // Token: 0x0400006B RID: 107
+
         protected const int szDataList = 104;
 
-        // Token: 0x0400006C RID: 108
+
         protected const int szLargeText = 100;
 
-        // Token: 0x0400006D RID: 109
+
         protected const int szLineHeight = 16;
 
-        // Token: 0x0400006E RID: 110
+
         protected const int szPadding = 4;
 
-        // Token: 0x0400006F RID: 111
+
         [AccessedThroughProperty("CtlDamageDisplay1")]
         private ctlDamageDisplay _CtlDamageDisplay1;
 
-        // Token: 0x04000070 RID: 112
+
         [AccessedThroughProperty("dbTip")]
         private ToolTip _dbTip;
 
-        // Token: 0x04000071 RID: 113
+
         [AccessedThroughProperty("Enh_Title")]
         private GFXLabel _Enh_Title;
 
-        // Token: 0x04000072 RID: 114
+
         [AccessedThroughProperty("enhListing")]
         private ctlPairedList _enhListing;
 
-        // Token: 0x04000073 RID: 115
+
         [AccessedThroughProperty("enhNameDisp")]
         private GFXLabel _enhNameDisp;
 
-        // Token: 0x04000074 RID: 116
+
         [AccessedThroughProperty("fx_lblHead1")]
         private Label _fx_lblHead1;
 
-        // Token: 0x04000075 RID: 117
+
         [AccessedThroughProperty("fx_lblHead2")]
         private Label _fx_lblHead2;
 
-        // Token: 0x04000076 RID: 118
+
         [AccessedThroughProperty("fx_LblHead3")]
         private Label _fx_LblHead3;
 
-        // Token: 0x04000077 RID: 119
+
         [AccessedThroughProperty("fx_List1")]
         private ctlPairedList _fx_List1;
 
-        // Token: 0x04000078 RID: 120
+
         [AccessedThroughProperty("fx_List2")]
         private ctlPairedList _fx_List2;
 
-        // Token: 0x04000079 RID: 121
+
         [AccessedThroughProperty("fx_List3")]
         private ctlPairedList _fx_List3;
 
-        // Token: 0x0400007A RID: 122
+
         [AccessedThroughProperty("fx_Title")]
         private GFXLabel _fx_Title;
 
-        // Token: 0x0400007B RID: 123
+
         [AccessedThroughProperty("gDef1")]
         private ctlMultiGraph _gDef1;
 
-        // Token: 0x0400007C RID: 124
+
         [AccessedThroughProperty("gDef2")]
         private ctlMultiGraph _gDef2;
 
-        // Token: 0x0400007D RID: 125
+
         [AccessedThroughProperty("gRes1")]
         private ctlMultiGraph _gRes1;
 
-        // Token: 0x0400007E RID: 126
+
         [AccessedThroughProperty("gRes2")]
         private ctlMultiGraph _gRes2;
 
-        // Token: 0x0400007F RID: 127
+
         [AccessedThroughProperty("info_Damage")]
         private ctlDamageDisplay _info_Damage;
 
-        // Token: 0x04000080 RID: 128
+
         [AccessedThroughProperty("info_DataList")]
         private ctlPairedList _info_DataList;
 
-        // Token: 0x04000081 RID: 129
+
         [AccessedThroughProperty("info_Title")]
         private GFXLabel _info_Title;
 
-        // Token: 0x04000082 RID: 130
+
         [AccessedThroughProperty("info_txtLarge")]
         private RichTextBox _info_txtLarge;
 
-        // Token: 0x04000083 RID: 131
+
         [AccessedThroughProperty("info_txtSmall")]
         private RichTextBox _info_txtSmall;
 
-        // Token: 0x04000084 RID: 132
+
         [AccessedThroughProperty("lblDmg")]
         private Label _lblDmg;
 
-        // Token: 0x04000085 RID: 133
+
         [AccessedThroughProperty("lblFloat")]
         private Label _lblFloat;
 
-        // Token: 0x04000086 RID: 134
+
         [AccessedThroughProperty("lblLock")]
         private Label _lblLock;
 
-        // Token: 0x04000087 RID: 135
+
         [AccessedThroughProperty("lblShrink")]
         private Label _lblShrink;
 
-        // Token: 0x04000088 RID: 136
+
         [AccessedThroughProperty("lblTotal")]
         private Label _lblTotal;
 
-        // Token: 0x04000089 RID: 137
+
         [AccessedThroughProperty("pnlEnh")]
         private Panel _pnlEnh;
 
-        // Token: 0x0400008A RID: 138
+
         [AccessedThroughProperty("pnlEnhActive")]
         private Panel _pnlEnhActive;
 
-        // Token: 0x0400008B RID: 139
+
         [AccessedThroughProperty("pnlEnhInactive")]
         private Panel _pnlEnhInactive;
 
-        // Token: 0x0400008C RID: 140
+
         [AccessedThroughProperty("pnlFX")]
         private Panel _pnlFX;
 
-        // Token: 0x0400008D RID: 141
+
         [AccessedThroughProperty("pnlInfo")]
         private Panel _pnlInfo;
 
-        // Token: 0x0400008E RID: 142
+
         [AccessedThroughProperty("pnlTabs")]
         private Panel _pnlTabs;
 
-        // Token: 0x0400008F RID: 143
+
         [AccessedThroughProperty("pnlTotal")]
         private Panel _pnlTotal;
 
-        // Token: 0x04000090 RID: 144
+
         [AccessedThroughProperty("PowerScaler")]
         private ctlMultiGraph _PowerScaler;
 
-        // Token: 0x04000091 RID: 145
+
         [AccessedThroughProperty("total_lblDef")]
         private Label _total_lblDef;
 
-        // Token: 0x04000092 RID: 146
+
         [AccessedThroughProperty("total_lblMisc")]
         private Label _total_lblMisc;
 
-        // Token: 0x04000093 RID: 147
+
         [AccessedThroughProperty("total_lblRes")]
         private Label _total_lblRes;
 
-        // Token: 0x04000094 RID: 148
+
         [AccessedThroughProperty("total_Misc")]
         private ctlPairedList _total_Misc;
 
-        // Token: 0x04000095 RID: 149
+
         [AccessedThroughProperty("total_Title")]
         private GFXLabel _total_Title;
 
-        // Token: 0x04000096 RID: 150
+
         private bool bFloating;
 
-        // Token: 0x04000097 RID: 151
+
         private ExtendedBitmap bxFlip;
 
-        // Token: 0x04000098 RID: 152
+
         private bool Compact;
 
-        // Token: 0x04000099 RID: 153
+
         private IContainer components;
 
-        // Token: 0x0400009A RID: 154
+
         private int HistoryIDX;
 
-        // Token: 0x0400009B RID: 155
+
         private bool Lock;
 
-        // Token: 0x0400009C RID: 156
+
         private Point mouse_offset;
 
-        // Token: 0x0400009D RID: 157
+
         public bool MoveDisable;
 
-        // Token: 0x0400009E RID: 158
+
         private string[] Pages;
 
-        // Token: 0x0400009F RID: 159
+
         private IPower pBase;
 
-        // Token: 0x040000A0 RID: 160
+
         private IPower pEnh;
 
-        // Token: 0x040000A1 RID: 161
+
         private int pLastScaleVal;
 
-        // Token: 0x040000A2 RID: 162
+
         private Rectangle ScreenBounds;
 
-        // Token: 0x040000A3 RID: 163
+
         public Rectangle SnapLocation;
 
-        // Token: 0x040000A4 RID: 164
+
         public int TabPage;
 
-        // Token: 0x040000A5 RID: 165
+
         private bool VillainColour;
 
-        // Token: 0x02000018 RID: 24
+
         // (Invoke) Token: 0x06000179 RID: 377
         public delegate void FloatChangeEventHandler();
 
-        // Token: 0x02000019 RID: 25
+
         // (Invoke) Token: 0x0600017D RID: 381
         public delegate void MovedEventHandler();
 
-        // Token: 0x0200001A RID: 26
+
         // (Invoke) Token: 0x06000181 RID: 385
         public delegate void SizeChangeEventHandler(Size newSize, bool isCompact);
 
-        // Token: 0x0200001B RID: 27
+
         // (Invoke) Token: 0x06000185 RID: 389
         public delegate void SlotFlipEventHandler(int PowerIndex);
 
-        // Token: 0x0200001C RID: 28
+
         // (Invoke) Token: 0x06000189 RID: 393
         public delegate void SlotUpdateEventHandler();
 
-        // Token: 0x0200001D RID: 29
+
         // (Invoke) Token: 0x0600018D RID: 397
         public delegate void TabChangedEventHandler(int Index);
 
-        // Token: 0x0200001E RID: 30
+
         // (Invoke) Token: 0x06000191 RID: 401
         public delegate void Unlock_ClickEventHandler();
     }

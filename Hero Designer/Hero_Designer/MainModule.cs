@@ -8,14 +8,14 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200005E RID: 94
+
     [StandardModule]
     public sealed class MainModule
     {
-        // Token: 0x0200005F RID: 95
+
         public class MidsController
         {
-            // Token: 0x1700065E RID: 1630
+
             // (get) Token: 0x060013D0 RID: 5072 RVA: 0x000C9FD0 File Offset: 0x000C81D0
             public static bool IsAppInitialized
             {
@@ -25,7 +25,7 @@ namespace Hero_Designer
                 }
             }
 
-            // Token: 0x1700065F RID: 1631
+
             // (get) Token: 0x060013D1 RID: 5073 RVA: 0x000C9FE8 File Offset: 0x000C81E8
             // (set) Token: 0x060013D2 RID: 5074 RVA: 0x000CA004 File Offset: 0x000C8204
             public static clsToonX Toon
@@ -40,7 +40,7 @@ namespace Hero_Designer
                 }
             }
 
-            // Token: 0x060013D3 RID: 5075 RVA: 0x000CA010 File Offset: 0x000C8210
+
             [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
             public static void LoadData(ref frmLoading iFrm)
             {
@@ -130,28 +130,28 @@ namespace Hero_Designer
                 GC.Collect();
             }
 
-            // Token: 0x040007E8 RID: 2024
+
             public static float HeroDesignerVersion = 2.21f;
 
-            // Token: 0x040007E9 RID: 2025
+
             private static bool _appInitialized = false;
 
-            // Token: 0x040007EA RID: 2026
+
             public static Rectangle SzFrmCompare = default(Rectangle);
 
-            // Token: 0x040007EB RID: 2027
+
             public static Rectangle SzFrmData = default(Rectangle);
 
-            // Token: 0x040007EC RID: 2028
+
             public static Rectangle SzFrmRecipe = default(Rectangle);
 
-            // Token: 0x040007ED RID: 2029
+
             public static Rectangle SzFrmSets = default(Rectangle);
 
-            // Token: 0x040007EE RID: 2030
+
             public static Rectangle SzFrmStats = default(Rectangle);
 
-            // Token: 0x040007EF RID: 2031
+
             public static Rectangle SzFrmTotals = default(Rectangle);
         }
     }

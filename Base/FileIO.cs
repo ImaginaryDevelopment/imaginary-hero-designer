@@ -6,7 +6,7 @@ using System.Windows.Forms;
 // Token: 0x02000071 RID: 113
 public static class FileIO
 {
-    // Token: 0x060005CF RID: 1487 RVA: 0x000264C0 File Offset: 0x000246C0
+
     public static string AddSlash(string iPath)
     {
         string result;
@@ -21,7 +21,7 @@ public static class FileIO
         return result;
     }
 
-    // Token: 0x060005D0 RID: 1488 RVA: 0x000264F8 File Offset: 0x000246F8
+
     public static string StripSlash(string iPath)
     {
         string result;
@@ -36,7 +36,7 @@ public static class FileIO
         return result;
     }
 
-    // Token: 0x060005D1 RID: 1489 RVA: 0x00026534 File Offset: 0x00024734
+
     public static string StripPath(string iFileName)
     {
         int num = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
@@ -52,7 +52,7 @@ public static class FileIO
         return result;
     }
 
-    // Token: 0x060005D2 RID: 1490 RVA: 0x00026574 File Offset: 0x00024774
+
     public static string StripFileName(string iFileName)
     {
         int length = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
@@ -68,7 +68,7 @@ public static class FileIO
         return result;
     }
 
-    // Token: 0x060005D3 RID: 1491 RVA: 0x000265B8 File Offset: 0x000247B8
+
     public static string[] IOGrab(StreamReader iStream)
     {
         string[] strArray;
@@ -99,7 +99,7 @@ public static class FileIO
         return strArray;
     }
 
-    // Token: 0x060005D4 RID: 1492 RVA: 0x00026648 File Offset: 0x00024848
+
     public static string IOStrip(string iString)
     {
         string text;
@@ -115,7 +115,7 @@ public static class FileIO
         return text.Replace(char.ConvertFromUtf32(34), "");
     }
 
-    // Token: 0x060005D5 RID: 1493 RVA: 0x000266C0 File Offset: 0x000248C0
+
     public static string IOSeekReturn(StreamReader istream, string iString)
     {
         string str;
@@ -137,7 +137,7 @@ public static class FileIO
         return str;
     }
 
-    // Token: 0x060005D6 RID: 1494 RVA: 0x00026734 File Offset: 0x00024934
+
     public static bool IOSeek(StreamReader iStream, string iString)
     {
         bool flag;
@@ -159,7 +159,7 @@ public static class FileIO
         return flag;
     }
 
-    // Token: 0x060005D7 RID: 1495 RVA: 0x00026794 File Offset: 0x00024994
+
     public static bool CopyFolder(string src, string dest)
     {
         bool flag;
@@ -214,7 +214,7 @@ public static class FileIO
         return flag;
     }
 
-    // Token: 0x060005D8 RID: 1496 RVA: 0x000268CC File Offset: 0x00024ACC
+
     private static bool FolderCopy(DirectoryInfo iDi, string dest)
     {
         DirectoryInfo[] directories = iDi.GetDirectories();
@@ -254,7 +254,7 @@ public static class FileIO
         return true;
     }
 
-    // Token: 0x060005D9 RID: 1497 RVA: 0x00026A08 File Offset: 0x00024C08
+
     public static string ReadLineUnlimited(StreamReader iStream, char FakeLF)
     {
         byte[] bytes = new byte[65536];

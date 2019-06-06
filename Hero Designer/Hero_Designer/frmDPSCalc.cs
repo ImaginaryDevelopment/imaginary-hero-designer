@@ -12,10 +12,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000029 RID: 41
+
     public partial class frmDPSCalc : Form
     {
-        // Token: 0x17000191 RID: 401
+
         // (get) Token: 0x060004E9 RID: 1257 RVA: 0x0003DEA4 File Offset: 0x0003C0A4
         // (set) Token: 0x060004EA RID: 1258 RVA: 0x0003DEBC File Offset: 0x0003C0BC
         internal virtual CheckBox chkSortByLevel
@@ -40,7 +40,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000192 RID: 402
+
         // (get) Token: 0x060004EB RID: 1259 RVA: 0x0003DF18 File Offset: 0x0003C118
         // (set) Token: 0x060004EC RID: 1260 RVA: 0x0003DF30 File Offset: 0x0003C130
         internal virtual CheckBox chkDamageBuffs
@@ -56,7 +56,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000193 RID: 403
+
         // (get) Token: 0x060004ED RID: 1261 RVA: 0x0003DF3C File Offset: 0x0003C13C
         // (set) Token: 0x060004EE RID: 1262 RVA: 0x0003DF54 File Offset: 0x0003C154
         internal virtual ColumnHeader chPower
@@ -72,7 +72,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000194 RID: 404
+
         // (get) Token: 0x060004EF RID: 1263 RVA: 0x0003DF60 File Offset: 0x0003C160
         // (set) Token: 0x060004F0 RID: 1264 RVA: 0x0003DF78 File Offset: 0x0003C178
         internal virtual ColumnHeader chDPA
@@ -88,7 +88,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000195 RID: 405
+
         // (get) Token: 0x060004F1 RID: 1265 RVA: 0x0003DF84 File Offset: 0x0003C184
         // (set) Token: 0x060004F2 RID: 1266 RVA: 0x0003DF9C File Offset: 0x0003C19C
         internal virtual ColumnHeader chDamage
@@ -104,7 +104,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000196 RID: 406
+
         // (get) Token: 0x060004F3 RID: 1267 RVA: 0x0003DFA8 File Offset: 0x0003C1A8
         // (set) Token: 0x060004F4 RID: 1268 RVA: 0x0003DFC0 File Offset: 0x0003C1C0
         internal virtual ColumnHeader chRecharge
@@ -120,7 +120,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000197 RID: 407
+
         // (get) Token: 0x060004F5 RID: 1269 RVA: 0x0003DFCC File Offset: 0x0003C1CC
         // (set) Token: 0x060004F6 RID: 1270 RVA: 0x0003DFE4 File Offset: 0x0003C1E4
         internal virtual ColumnHeader chAnimation
@@ -136,7 +136,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000198 RID: 408
+
         // (get) Token: 0x060004F7 RID: 1271 RVA: 0x0003DFF0 File Offset: 0x0003C1F0
         // (set) Token: 0x060004F8 RID: 1272 RVA: 0x0003E008 File Offset: 0x0003C208
         internal virtual ColumnHeader chEndurance
@@ -152,7 +152,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000199 RID: 409
+
         // (get) Token: 0x060004F9 RID: 1273 RVA: 0x0003E014 File Offset: 0x0003C214
         // (set) Token: 0x060004FA RID: 1274 RVA: 0x0003E02C File Offset: 0x0003C22C
         internal virtual ColumnHeader chDamageBuff
@@ -168,7 +168,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019A RID: 410
+
         // (get) Token: 0x060004FB RID: 1275 RVA: 0x0003E038 File Offset: 0x0003C238
         // (set) Token: 0x060004FC RID: 1276 RVA: 0x0003E050 File Offset: 0x0003C250
         internal virtual ColumnHeader chResistanceDebuff
@@ -184,7 +184,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019B RID: 411
+
         // (get) Token: 0x060004FD RID: 1277 RVA: 0x0003E05C File Offset: 0x0003C25C
         // (set) Token: 0x060004FE RID: 1278 RVA: 0x0003E074 File Offset: 0x0003C274
         internal virtual ColumnHeader chBuildID
@@ -200,7 +200,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019C RID: 412
+
         // (get) Token: 0x060004FF RID: 1279 RVA: 0x0003E080 File Offset: 0x0003C280
         // (set) Token: 0x06000500 RID: 1280 RVA: 0x0003E098 File Offset: 0x0003C298
         internal virtual ImageButton ibClear
@@ -225,7 +225,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019D RID: 413
+
         // (get) Token: 0x06000501 RID: 1281 RVA: 0x0003E0F4 File Offset: 0x0003C2F4
         // (set) Token: 0x06000502 RID: 1282 RVA: 0x0003E10C File Offset: 0x0003C30C
         internal virtual ImageButton ibClose
@@ -250,7 +250,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019E RID: 414
+
         // (get) Token: 0x06000503 RID: 1283 RVA: 0x0003E168 File Offset: 0x0003C368
         // (set) Token: 0x06000504 RID: 1284 RVA: 0x0003E180 File Offset: 0x0003C380
         internal virtual ImageButton ibAutoMode
@@ -275,7 +275,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700019F RID: 415
+
         // (get) Token: 0x06000505 RID: 1285 RVA: 0x0003E1DC File Offset: 0x0003C3DC
         // (set) Token: 0x06000506 RID: 1286 RVA: 0x0003E1F4 File Offset: 0x0003C3F4
         internal virtual ImageButton ibTopmost
@@ -300,7 +300,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A0 RID: 416
+
         // (get) Token: 0x06000507 RID: 1287 RVA: 0x0003E250 File Offset: 0x0003C450
         // (set) Token: 0x06000508 RID: 1288 RVA: 0x0003E268 File Offset: 0x0003C468
         internal virtual ImageList ilAttackChain
@@ -316,7 +316,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A1 RID: 417
+
         // (get) Token: 0x06000509 RID: 1289 RVA: 0x0003E274 File Offset: 0x0003C474
         // (set) Token: 0x0600050A RID: 1290 RVA: 0x0003E28C File Offset: 0x0003C48C
         internal virtual Label lblHeader
@@ -332,7 +332,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A2 RID: 418
+
         // (get) Token: 0x0600050B RID: 1291 RVA: 0x0003E298 File Offset: 0x0003C498
         // (set) Token: 0x0600050C RID: 1292 RVA: 0x0003E2B0 File Offset: 0x0003C4B0
         internal virtual Label lblDPS
@@ -348,7 +348,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A3 RID: 419
+
         // (get) Token: 0x0600050D RID: 1293 RVA: 0x0003E2BC File Offset: 0x0003C4BC
         // (set) Token: 0x0600050E RID: 1294 RVA: 0x0003E2D4 File Offset: 0x0003C4D4
         internal virtual Label lblEPS
@@ -364,7 +364,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A4 RID: 420
+
         // (get) Token: 0x0600050F RID: 1295 RVA: 0x0003E2E0 File Offset: 0x0003C4E0
         // (set) Token: 0x06000510 RID: 1296 RVA: 0x0003E2F8 File Offset: 0x0003C4F8
         internal virtual Label lblDPSNum
@@ -380,7 +380,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A5 RID: 421
+
         // (get) Token: 0x06000511 RID: 1297 RVA: 0x0003E304 File Offset: 0x0003C504
         // (set) Token: 0x06000512 RID: 1298 RVA: 0x0003E31C File Offset: 0x0003C51C
         internal virtual Label lblEPSNum
@@ -396,7 +396,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A6 RID: 422
+
         // (get) Token: 0x06000513 RID: 1299 RVA: 0x0003E328 File Offset: 0x0003C528
         // (set) Token: 0x06000514 RID: 1300 RVA: 0x0003E340 File Offset: 0x0003C540
         internal virtual TextBox tbDPSOutput
@@ -412,7 +412,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A7 RID: 423
+
         // (get) Token: 0x06000515 RID: 1301 RVA: 0x0003E34C File Offset: 0x0003C54C
         // (set) Token: 0x06000516 RID: 1302 RVA: 0x0003E364 File Offset: 0x0003C564
         internal virtual ListView lvPower
@@ -443,7 +443,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A8 RID: 424
+
         // (get) Token: 0x06000517 RID: 1303 RVA: 0x0003E40C File Offset: 0x0003C60C
         // (set) Token: 0x06000518 RID: 1304 RVA: 0x0003E424 File Offset: 0x0003C624
         internal virtual Panel Panel1
@@ -459,7 +459,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001A9 RID: 425
+
         // (get) Token: 0x06000519 RID: 1305 RVA: 0x0003E430 File Offset: 0x0003C630
         // (set) Token: 0x0600051A RID: 1306 RVA: 0x0003E448 File Offset: 0x0003C648
         internal virtual Panel Panel2
@@ -475,7 +475,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170001AA RID: 426
+
         // (get) Token: 0x0600051B RID: 1307 RVA: 0x0003E454 File Offset: 0x0003C654
         // (set) Token: 0x0600051C RID: 1308 RVA: 0x0003E46C File Offset: 0x0003C66C
         internal virtual ToolTip ToolTip1
@@ -491,7 +491,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600051D RID: 1309 RVA: 0x0003E478 File Offset: 0x0003C678
+
         public frmDPSCalc(frmMain iParent)
         {
             base.FormClosed += this.frmDPSCalc_FormClosed;
@@ -502,18 +502,18 @@ namespace Hero_Designer
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
 
-        // Token: 0x0600051E RID: 1310 RVA: 0x0003E4D9 File Offset: 0x0003C6D9
+
         private void chkRecipe_CheckedChanged(object sender, EventArgs e)
         {
         }
 
-        // Token: 0x0600051F RID: 1311 RVA: 0x0003E4DC File Offset: 0x0003C6DC
+
         private void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
         {
             this.FillPowerList();
         }
 
-        // Token: 0x06000521 RID: 1313 RVA: 0x0003E538 File Offset: 0x0003C738
+
         private void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
         {
             int index;
@@ -549,7 +549,7 @@ namespace Hero_Designer
             this.tbDPSOutput.Text = str;
         }
 
-        // Token: 0x06000522 RID: 1314 RVA: 0x0003E6A0 File Offset: 0x0003C8A0
+
         private void FillPowerList()
         {
             this.GlobalDamageBuff = 0f;
@@ -598,14 +598,14 @@ namespace Hero_Designer
             this.lvPower.EndUpdate();
         }
 
-        // Token: 0x06000523 RID: 1315 RVA: 0x0003EAC1 File Offset: 0x0003CCC1
+
         private void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatDPSCalc(false);
         }
 
-        // Token: 0x06000524 RID: 1316 RVA: 0x0003EAD8 File Offset: 0x0003CCD8
+
         private void frmDPSCalc_Load(object sender, EventArgs e)
         {
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -617,7 +617,7 @@ namespace Hero_Designer
             this.Loading = false;
         }
 
-        // Token: 0x06000525 RID: 1317 RVA: 0x0003EBB4 File Offset: 0x0003CDB4
+
         private void ibClear_ButtonClicked()
         {
             this.ibClear.Checked = true;
@@ -640,13 +640,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000526 RID: 1318 RVA: 0x0003ECDA File Offset: 0x0003CEDA
+
         private void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
-        // Token: 0x06000527 RID: 1319 RVA: 0x0003ECE4 File Offset: 0x0003CEE4
+
         private void ibAutoMode_ButtonClicked()
         {
             if (this.ibAutoMode.TextOff == "Automagical")
@@ -704,7 +704,7 @@ namespace Hero_Designer
             this.CalculateDPS();
         }
 
-        // Token: 0x06000528 RID: 1320 RVA: 0x0003EEBC File Offset: 0x0003D0BC
+
         private void ibTopmost_ButtonClicked()
         {
             base.TopMost = this.ibTopmost.Checked;
@@ -714,7 +714,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600052A RID: 1322 RVA: 0x0003FE2C File Offset: 0x0003E02C
+
         private void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (e.Item.Index == 0)
@@ -735,7 +735,7 @@ namespace Hero_Designer
             this.CalculateDPS();
         }
 
-        // Token: 0x0600052B RID: 1323 RVA: 0x0003FEF8 File Offset: 0x0003E0F8
+
         private void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
@@ -788,13 +788,13 @@ namespace Hero_Designer
             this.CalculateDPS();
         }
 
-        // Token: 0x0600052C RID: 1324 RVA: 0x00040210 File Offset: 0x0003E410
+
         private void lvPower_MouseEnter(object sender, EventArgs e)
         {
             this.lvPower.Focus();
         }
 
-        // Token: 0x0600052D RID: 1325 RVA: 0x00040220 File Offset: 0x0003E420
+
         private static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
         {
             int num = tl.Length - 1;
@@ -813,7 +813,7 @@ namespace Hero_Designer
             tl[tl.Length - 1].Text = item;
         }
 
-        // Token: 0x0600052E RID: 1326 RVA: 0x000402CC File Offset: 0x0003E4CC
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -851,7 +851,7 @@ namespace Hero_Designer
             base.Width = rectangle.Width;
         }
 
-        // Token: 0x0600052F RID: 1327 RVA: 0x00040498 File Offset: 0x0003E698
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -863,7 +863,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000530 RID: 1328 RVA: 0x000404F8 File Offset: 0x0003E6F8
+
         public void UpdateData()
         {
             this.BackColor = this.myParent.BackColor;
@@ -882,7 +882,7 @@ namespace Hero_Designer
             this.FillPowerList();
         }
 
-        // Token: 0x06000531 RID: 1329 RVA: 0x000406A8 File Offset: 0x0003E8A8
+
         private string[] GetDamageData(int powerLocation)
         {
             IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
@@ -929,13 +929,13 @@ namespace Hero_Designer
             return strArray;
         }
 
-        // Token: 0x06000532 RID: 1330 RVA: 0x00040824 File Offset: 0x0003EA24
+
         private void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             this.lvPower.Sort();
         }
 
-        // Token: 0x06000533 RID: 1331 RVA: 0x00040834 File Offset: 0x0003EA34
+
         private frmDPSCalc.PowerList[] IncrementRecharge(frmDPSCalc.PowerList[] List, float Time)
         {
             for (int index = 0; index < List.Length; index++)
@@ -946,7 +946,7 @@ namespace Hero_Designer
             return List;
         }
 
-        // Token: 0x06000534 RID: 1332 RVA: 0x0004089C File Offset: 0x0003EA9C
+
         private void CalculateDPS()
         {
             if (this.ibAutoMode.TextOff == "Automagical")
@@ -1150,166 +1150,166 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0400021F RID: 543
+
         [AccessedThroughProperty("chkSortByLevel")]
         private CheckBox _chkSortByLevel;
 
-        // Token: 0x04000220 RID: 544
+
         [AccessedThroughProperty("chkDamageBuffs")]
         private CheckBox _chkDamageBuffs;
 
-        // Token: 0x04000221 RID: 545
+
         [AccessedThroughProperty("chPower")]
         private ColumnHeader _chPower;
 
-        // Token: 0x04000222 RID: 546
+
         [AccessedThroughProperty("chDPA")]
         private ColumnHeader _chDPA;
 
-        // Token: 0x04000223 RID: 547
+
         [AccessedThroughProperty("chDamage")]
         private ColumnHeader _chDamage;
 
-        // Token: 0x04000224 RID: 548
+
         [AccessedThroughProperty("chRecharge")]
         private ColumnHeader _chRecharge;
 
-        // Token: 0x04000225 RID: 549
+
         [AccessedThroughProperty("chAnimation")]
         private ColumnHeader _chAnimation;
 
-        // Token: 0x04000226 RID: 550
+
         [AccessedThroughProperty("chEndurance")]
         private ColumnHeader _chEndurance;
 
-        // Token: 0x04000227 RID: 551
+
         [AccessedThroughProperty("chDamageBuff")]
         private ColumnHeader _chDamageBuff;
 
-        // Token: 0x04000228 RID: 552
+
         [AccessedThroughProperty("chResistanceDebuff")]
         private ColumnHeader _chResistanceDebuff;
 
-        // Token: 0x04000229 RID: 553
+
         [AccessedThroughProperty("chBuildID")]
         private ColumnHeader _chBuildID;
 
-        // Token: 0x0400022A RID: 554
+
         [AccessedThroughProperty("ibClear")]
         private ImageButton _ibClear;
 
-        // Token: 0x0400022B RID: 555
+
         [AccessedThroughProperty("ibClose")]
         private ImageButton _ibClose;
 
-        // Token: 0x0400022C RID: 556
+
         [AccessedThroughProperty("ibAutoMode")]
         private ImageButton _ibAutoMode;
 
-        // Token: 0x0400022D RID: 557
+
         [AccessedThroughProperty("ibTopmost")]
         private ImageButton _ibTopmost;
 
-        // Token: 0x0400022E RID: 558
+
         [AccessedThroughProperty("ilAttackChain")]
         private ImageList _ilAttackChain;
 
-        // Token: 0x0400022F RID: 559
+
         [AccessedThroughProperty("lblHeader")]
         private Label _lblHeader;
 
-        // Token: 0x04000230 RID: 560
+
         [AccessedThroughProperty("lblDPS")]
         private Label _lblDPS;
 
-        // Token: 0x04000231 RID: 561
+
         [AccessedThroughProperty("lblEPS")]
         private Label _lblEPS;
 
-        // Token: 0x04000232 RID: 562
+
         [AccessedThroughProperty("lblDPSNum")]
         private Label _lblDPSNum;
 
-        // Token: 0x04000233 RID: 563
+
         [AccessedThroughProperty("lblEPSNum")]
         private Label _lblEPSNum;
 
-        // Token: 0x04000234 RID: 564
+
         [AccessedThroughProperty("tbDPSOutput")]
         private TextBox _tbDPSOutput;
 
-        // Token: 0x04000235 RID: 565
+
         [AccessedThroughProperty("lvPower")]
         private ListView _lvPower;
 
-        // Token: 0x04000236 RID: 566
+
         [AccessedThroughProperty("Panel1")]
         private Panel _Panel1;
 
-        // Token: 0x04000237 RID: 567
+
         [AccessedThroughProperty("Panel2")]
         private Panel _Panel2;
 
-        // Token: 0x04000238 RID: 568
+
         [AccessedThroughProperty("ToolTip1")]
         private ToolTip _ToolTip1;
 
-        // Token: 0x04000239 RID: 569
+
         protected ExtendedBitmap bxRecipe;
 
-        // Token: 0x0400023B RID: 571
+
         protected bool Loading;
 
-        // Token: 0x0400023C RID: 572
+
         protected frmMain myParent;
 
-        // Token: 0x0400023E RID: 574
+
         private float GlobalDamageBuff;
 
-        // Token: 0x0200002A RID: 42
+
         private struct CountingList
         {
-            // Token: 0x04000240 RID: 576
+
             public string Text;
 
-            // Token: 0x04000241 RID: 577
+
             public int Count;
         }
 
-        // Token: 0x0200002B RID: 43
+
         public struct PowerList
         {
-            // Token: 0x04000242 RID: 578
+
             public string PowerName;
 
-            // Token: 0x04000243 RID: 579
+
             public float baseDamage;
 
-            // Token: 0x04000244 RID: 580
+
             public float Damage;
 
-            // Token: 0x04000245 RID: 581
+
             public float DPA;
 
-            // Token: 0x04000246 RID: 582
+
             public float HidenDPA;
 
-            // Token: 0x04000247 RID: 583
+
             public float Recharge;
 
-            // Token: 0x04000248 RID: 584
+
             public float Animation;
 
-            // Token: 0x04000249 RID: 585
+
             public float Endurance;
 
-            // Token: 0x0400024A RID: 586
+
             public float DamageBuff;
 
-            // Token: 0x0400024B RID: 587
+
             public float ResistanceDeBuff;
 
-            // Token: 0x0400024C RID: 588
+
             public float RechargeTimer;
         }
     }

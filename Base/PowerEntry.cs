@@ -5,12 +5,12 @@ using Base.Display;
 // Token: 0x0200008E RID: 142
 public class PowerEntry : ICloneable
 {
-    // Token: 0x1700025E RID: 606
+
     // (get) Token: 0x06000662 RID: 1634 RVA: 0x0002EA18 File Offset: 0x0002CC18
     // (set) Token: 0x06000663 RID: 1635 RVA: 0x0002EA2F File Offset: 0x0002CC2F
     public bool Chosen { get; private set; }
 
-    // Token: 0x1700025F RID: 607
+
     // (get) Token: 0x06000664 RID: 1636 RVA: 0x0002EA38 File Offset: 0x0002CC38
     public Enums.ePowerState State
     {
@@ -33,7 +33,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000260 RID: 608
+
     // (get) Token: 0x06000665 RID: 1637 RVA: 0x0002EA74 File Offset: 0x0002CC74
     public IPower Power
     {
@@ -52,7 +52,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000261 RID: 609
+
     // (get) Token: 0x06000666 RID: 1638 RVA: 0x0002EACC File Offset: 0x0002CCCC
     public IPowerset PowerSet
     {
@@ -71,7 +71,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000262 RID: 610
+
     // (get) Token: 0x06000667 RID: 1639 RVA: 0x0002EB10 File Offset: 0x0002CD10
     public bool AllowFrontLoading
     {
@@ -81,7 +81,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000263 RID: 611
+
     // (get) Token: 0x06000668 RID: 1640 RVA: 0x0002EB3C File Offset: 0x0002CD3C
     public string Name
     {
@@ -100,7 +100,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000264 RID: 612
+
     // (get) Token: 0x06000669 RID: 1641 RVA: 0x0002EB78 File Offset: 0x0002CD78
     public bool Virtual
     {
@@ -110,7 +110,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x17000265 RID: 613
+
     // (get) Token: 0x0600066A RID: 1642 RVA: 0x0002EBA4 File Offset: 0x0002CDA4
     public int SlotCount
     {
@@ -129,7 +129,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x0600066B RID: 1643 RVA: 0x0002EBD8 File Offset: 0x0002CDD8
+
     public void Assign(PowerEntry iPe)
     {
         this.Level = iPe.Level;
@@ -165,7 +165,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x0600066C RID: 1644 RVA: 0x0002ED14 File Offset: 0x0002CF14
+
     public PowerEntry(IPower power)
     {
         this.StatInclude = false;
@@ -188,7 +188,7 @@ public class PowerEntry : ICloneable
         this.VariableValue = 0;
     }
 
-    // Token: 0x0600066D RID: 1645 RVA: 0x0002EDA8 File Offset: 0x0002CFA8
+
     public PowerEntry(int iLevel = -1, IPower power = null, bool chosen = false)
     {
         this.StatInclude = false;
@@ -244,7 +244,7 @@ public class PowerEntry : ICloneable
         this.VariableValue = 0;
     }
 
-    // Token: 0x0600066E RID: 1646 RVA: 0x0002EFB0 File Offset: 0x0002D1B0
+
     public bool HasProc()
     {
         for (int index = 0; index <= this.SlotCount - 1; index++)
@@ -264,13 +264,13 @@ public class PowerEntry : ICloneable
         return false;
     }
 
-    // Token: 0x0600066F RID: 1647 RVA: 0x0002F180 File Offset: 0x0002D380
+
     public bool CanIncludeForStats()
     {
         return (this.NIDPowerset > -1 & this.IDXPower > -1) && (this.HasProc() || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Toggle || (DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Click && DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].ClickBuff) || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Auto_);
     }
 
-    // Token: 0x06000670 RID: 1648 RVA: 0x0002F250 File Offset: 0x0002D450
+
     public void CheckVariableBounds()
     {
         if (this.Power == null || !this.Power.VariableEnabled)
@@ -287,7 +287,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x06000671 RID: 1649 RVA: 0x0002F2E0 File Offset: 0x0002D4E0
+
     public void ValidateSlots()
     {
         for (int index = 0; index <= this.Slots.Length - 1; index++)
@@ -303,7 +303,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x06000672 RID: 1650 RVA: 0x0002F38C File Offset: 0x0002D58C
+
     public void Reset()
     {
         this.NIDPowerset = -1;
@@ -318,7 +318,7 @@ public class PowerEntry : ICloneable
         }
     }
 
-    // Token: 0x06000673 RID: 1651 RVA: 0x0002F408 File Offset: 0x0002D608
+
     public object Clone()
     {
         PowerEntry powerEntry = new PowerEntry(this.Level, this.Power, this.Chosen)
@@ -338,7 +338,7 @@ public class PowerEntry : ICloneable
         return powerEntry;
     }
 
-    // Token: 0x06000674 RID: 1652 RVA: 0x0002F51C File Offset: 0x0002D71C
+
     public PopUp.Section PopSubPowerListing(string sTitle, Color disabledColor, Color enabledColor)
     {
         PopUp.Section section = new PopUp.Section();
@@ -353,7 +353,7 @@ public class PowerEntry : ICloneable
         return section;
     }
 
-    // Token: 0x06000675 RID: 1653 RVA: 0x0002F5B4 File Offset: 0x0002D7B4
+
     public int AddSlot(int iLevel)
     {
         int num;
@@ -407,7 +407,7 @@ public class PowerEntry : ICloneable
         return num;
     }
 
-    // Token: 0x06000676 RID: 1654 RVA: 0x0002F768 File Offset: 0x0002D968
+
     public bool CanRemoveSlot(int slotIdx, out string message)
     {
         message = string.Empty;
@@ -434,30 +434,30 @@ public class PowerEntry : ICloneable
         return flag2;
     }
 
-    // Token: 0x0400064B RID: 1611
+
     public int Level;
 
-    // Token: 0x0400064C RID: 1612
+
     public int NIDPowerset;
 
-    // Token: 0x0400064D RID: 1613
+
     public int IDXPower;
 
-    // Token: 0x0400064E RID: 1614
+
     public int NIDPower;
 
-    // Token: 0x0400064F RID: 1615
+
     public bool Tag;
 
-    // Token: 0x04000650 RID: 1616
+
     public bool StatInclude;
 
-    // Token: 0x04000651 RID: 1617
+
     public int VariableValue;
 
-    // Token: 0x04000652 RID: 1618
+
     public SlotEntry[] Slots;
 
-    // Token: 0x04000653 RID: 1619
+
     public PowerSubEntry[] SubPowers;
 }

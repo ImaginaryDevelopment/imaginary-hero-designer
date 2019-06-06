@@ -13,10 +13,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000024 RID: 36
+
     public partial class frmCompare : Form
     {
-        // Token: 0x17000116 RID: 278
+
         // (get) Token: 0x06000381 RID: 897 RVA: 0x000300C8 File Offset: 0x0002E2C8
         // (set) Token: 0x06000382 RID: 898 RVA: 0x000300E0 File Offset: 0x0002E2E0
         internal virtual ImageButton btnClose
@@ -44,7 +44,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000117 RID: 279
+
         // (get) Token: 0x06000383 RID: 899 RVA: 0x00030164 File Offset: 0x0002E364
         // (set) Token: 0x06000384 RID: 900 RVA: 0x0003017C File Offset: 0x0002E37C
         internal virtual Button btnTweakMatch
@@ -69,7 +69,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000118 RID: 280
+
         // (get) Token: 0x06000385 RID: 901 RVA: 0x000301D8 File Offset: 0x0002E3D8
         // (set) Token: 0x06000386 RID: 902 RVA: 0x000301F0 File Offset: 0x0002E3F0
         internal virtual ComboBox cbAT1
@@ -94,7 +94,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000119 RID: 281
+
         // (get) Token: 0x06000387 RID: 903 RVA: 0x0003024C File Offset: 0x0002E44C
         // (set) Token: 0x06000388 RID: 904 RVA: 0x00030264 File Offset: 0x0002E464
         internal virtual ComboBox cbAT2
@@ -119,7 +119,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011A RID: 282
+
         // (get) Token: 0x06000389 RID: 905 RVA: 0x000302C0 File Offset: 0x0002E4C0
         // (set) Token: 0x0600038A RID: 906 RVA: 0x000302D8 File Offset: 0x0002E4D8
         internal virtual ComboBox cbSet1
@@ -144,7 +144,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011B RID: 283
+
         // (get) Token: 0x0600038B RID: 907 RVA: 0x00030334 File Offset: 0x0002E534
         // (set) Token: 0x0600038C RID: 908 RVA: 0x0003034C File Offset: 0x0002E54C
         internal virtual ComboBox cbSet2
@@ -169,7 +169,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011C RID: 284
+
         // (get) Token: 0x0600038D RID: 909 RVA: 0x000303A8 File Offset: 0x0002E5A8
         // (set) Token: 0x0600038E RID: 910 RVA: 0x000303C0 File Offset: 0x0002E5C0
         internal virtual ComboBox cbType1
@@ -194,7 +194,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011D RID: 285
+
         // (get) Token: 0x0600038F RID: 911 RVA: 0x0003041C File Offset: 0x0002E61C
         // (set) Token: 0x06000390 RID: 912 RVA: 0x00030434 File Offset: 0x0002E634
         internal virtual ComboBox cbType2
@@ -219,7 +219,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011E RID: 286
+
         // (get) Token: 0x06000391 RID: 913 RVA: 0x00030490 File Offset: 0x0002E690
         // (set) Token: 0x06000392 RID: 914 RVA: 0x000304A8 File Offset: 0x0002E6A8
         internal virtual CheckBox chkMatching
@@ -244,7 +244,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700011F RID: 287
+
         // (get) Token: 0x06000393 RID: 915 RVA: 0x00030504 File Offset: 0x0002E704
         // (set) Token: 0x06000394 RID: 916 RVA: 0x0003051C File Offset: 0x0002E71C
         internal virtual ImageButton chkOnTop
@@ -269,7 +269,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000120 RID: 288
+
         // (get) Token: 0x06000395 RID: 917 RVA: 0x00030578 File Offset: 0x0002E778
         // (set) Token: 0x06000396 RID: 918 RVA: 0x00030590 File Offset: 0x0002E790
         internal virtual ctlMultiGraph Graph
@@ -294,7 +294,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000121 RID: 289
+
         // (get) Token: 0x06000397 RID: 919 RVA: 0x000305EC File Offset: 0x0002E7EC
         // (set) Token: 0x06000398 RID: 920 RVA: 0x00030604 File Offset: 0x0002E804
         internal virtual GroupBox GroupBox1
@@ -310,7 +310,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000122 RID: 290
+
         // (get) Token: 0x06000399 RID: 921 RVA: 0x00030610 File Offset: 0x0002E810
         // (set) Token: 0x0600039A RID: 922 RVA: 0x00030628 File Offset: 0x0002E828
         internal virtual GroupBox GroupBox2
@@ -326,7 +326,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000123 RID: 291
+
         // (get) Token: 0x0600039B RID: 923 RVA: 0x00030634 File Offset: 0x0002E834
         // (set) Token: 0x0600039C RID: 924 RVA: 0x0003064C File Offset: 0x0002E84C
         internal virtual GroupBox GroupBox4
@@ -342,7 +342,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000124 RID: 292
+
         // (get) Token: 0x0600039D RID: 925 RVA: 0x00030658 File Offset: 0x0002E858
         // (set) Token: 0x0600039E RID: 926 RVA: 0x00030670 File Offset: 0x0002E870
         internal virtual Label lblKeyColor1
@@ -358,7 +358,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000125 RID: 293
+
         // (get) Token: 0x0600039F RID: 927 RVA: 0x0003067C File Offset: 0x0002E87C
         // (set) Token: 0x060003A0 RID: 928 RVA: 0x00030694 File Offset: 0x0002E894
         internal virtual Label lblKeyColor2
@@ -374,7 +374,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000126 RID: 294
+
         // (get) Token: 0x060003A1 RID: 929 RVA: 0x000306A0 File Offset: 0x0002E8A0
         // (set) Token: 0x060003A2 RID: 930 RVA: 0x000306B8 File Offset: 0x0002E8B8
         internal virtual Label lblScale
@@ -390,7 +390,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000127 RID: 295
+
         // (get) Token: 0x060003A3 RID: 931 RVA: 0x000306C4 File Offset: 0x0002E8C4
         // (set) Token: 0x060003A4 RID: 932 RVA: 0x000306DC File Offset: 0x0002E8DC
         internal virtual ListBox lstDisplay
@@ -415,7 +415,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000128 RID: 296
+
         // (get) Token: 0x060003A5 RID: 933 RVA: 0x00030738 File Offset: 0x0002E938
         // (set) Token: 0x060003A6 RID: 934 RVA: 0x00030750 File Offset: 0x0002E950
         internal virtual TrackBar tbScaleX
@@ -440,7 +440,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000129 RID: 297
+
         // (get) Token: 0x060003A7 RID: 935 RVA: 0x000307AC File Offset: 0x0002E9AC
         // (set) Token: 0x060003A8 RID: 936 RVA: 0x000307C4 File Offset: 0x0002E9C4
         internal virtual ToolTip tTip
@@ -456,7 +456,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003A9 RID: 937 RVA: 0x000307D0 File Offset: 0x0002E9D0
+
         public frmCompare(ref frmMain iFrm)
         {
             base.Load += this.frmCompare_Load;
@@ -501,25 +501,25 @@ namespace Hero_Designer
             this.myParent = iFrm;
         }
 
-        // Token: 0x060003AA RID: 938 RVA: 0x00030979 File Offset: 0x0002EB79
+
         private void btnClose_ButtonClicked()
         {
             base.Close();
         }
 
-        // Token: 0x060003AB RID: 939 RVA: 0x00030983 File Offset: 0x0002EB83
+
         private void btnClose_Load(object sender, EventArgs e)
         {
         }
 
-        // Token: 0x060003AC RID: 940 RVA: 0x00030986 File Offset: 0x0002EB86
+
         private void btnTweakMatch_Click(object sender, EventArgs e)
         {
             new frmTweakMatching().ShowDialog(this);
             this.DisplayGraph();
         }
 
-        // Token: 0x060003AD RID: 941 RVA: 0x0003099C File Offset: 0x0002EB9C
+
         private void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -528,7 +528,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003AE RID: 942 RVA: 0x000309C4 File Offset: 0x0002EBC4
+
         private void cbAT2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -537,7 +537,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003AF RID: 943 RVA: 0x000309EC File Offset: 0x0002EBEC
+
         private void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -547,7 +547,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B0 RID: 944 RVA: 0x00030A18 File Offset: 0x0002EC18
+
         private void cbSet2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -557,7 +557,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B1 RID: 945 RVA: 0x00030A44 File Offset: 0x0002EC44
+
         private void cbType1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -566,7 +566,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B2 RID: 946 RVA: 0x00030A6C File Offset: 0x0002EC6C
+
         private void cbType2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -575,7 +575,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B3 RID: 947 RVA: 0x00030A94 File Offset: 0x0002EC94
+
         private void chkMatching_CheckedChanged(object sender, EventArgs e)
         {
             this.Matching = this.chkMatching.Checked;
@@ -585,13 +585,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B4 RID: 948 RVA: 0x00030AC9 File Offset: 0x0002ECC9
+
         private void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
 
-        // Token: 0x060003B5 RID: 949 RVA: 0x00030AE0 File Offset: 0x0002ECE0
+
         public void DisplayGraph()
         {
             if (this.lstDisplay.SelectedIndex >= 0)
@@ -740,7 +740,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003B7 RID: 951 RVA: 0x0003110C File Offset: 0x0002F30C
+
         protected void FillDisplayList()
         {
             ListBox lstDisplay = this.lstDisplay;
@@ -751,13 +751,13 @@ namespace Hero_Designer
             lstDisplay.EndUpdate();
         }
 
-        // Token: 0x060003B8 RID: 952 RVA: 0x0003115A File Offset: 0x0002F35A
+
         private void frmCompare_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatCompareGraph(false);
         }
 
-        // Token: 0x060003B9 RID: 953 RVA: 0x0003116C File Offset: 0x0002F36C
+
         private void frmCompare_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control & e.Shift & e.KeyCode == Keys.T)
@@ -766,7 +766,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003BA RID: 954 RVA: 0x000311A8 File Offset: 0x0002F3A8
+
         private void frmCompare_Load(object sender, EventArgs e)
         {
             this.FillDisplayList();
@@ -792,25 +792,25 @@ namespace Hero_Designer
             this.tTip.SetToolTip(this.chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
         }
 
-        // Token: 0x060003BB RID: 955 RVA: 0x000312B7 File Offset: 0x0002F4B7
+
         private void frmCompare_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
-        // Token: 0x060003BC RID: 956 RVA: 0x000312C1 File Offset: 0x0002F4C1
+
         private void frmCompare_Resize(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
-        // Token: 0x060003BD RID: 957 RVA: 0x000312CB File Offset: 0x0002F4CB
+
         private void frmCompare_VisibleChanged(object sender, EventArgs e)
         {
             this.Graph.BackColor = this.BackColor;
         }
 
-        // Token: 0x060003BE RID: 958 RVA: 0x000312E0 File Offset: 0x0002F4E0
+
         public int getAT(int Index)
         {
             int num;
@@ -829,7 +829,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x060003BF RID: 959 RVA: 0x00031330 File Offset: 0x0002F530
+
         public int getMax(int iVal1, int ival2)
         {
             int result;
@@ -844,7 +844,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x060003C0 RID: 960 RVA: 0x00031358 File Offset: 0x0002F558
+
         public int GetNextFreeSlot()
         {
             int index = 0;
@@ -859,7 +859,7 @@ namespace Hero_Designer
             return index;
         }
 
-        // Token: 0x060003C1 RID: 961 RVA: 0x000313A8 File Offset: 0x0002F5A8
+
         public void GetPowers()
         {
             int[] numArray = new int[2];
@@ -896,7 +896,7 @@ namespace Hero_Designer
             while (Index <= 1);
         }
 
-        // Token: 0x060003C2 RID: 962 RVA: 0x00031514 File Offset: 0x0002F714
+
         public int getSetIndex(int Index)
         {
             ComboBox comboBox;
@@ -915,7 +915,7 @@ namespace Hero_Designer
             return DatabaseAPI.GetPowersetIndexes(this.getAT(Index), this.getSetType(Index))[comboBox.SelectedIndex].nID;
         }
 
-        // Token: 0x060003C3 RID: 963 RVA: 0x00031578 File Offset: 0x0002F778
+
         public Enums.ePowerSetType getSetType(int Index)
         {
             ComboBox comboBox;
@@ -950,7 +950,7 @@ namespace Hero_Designer
             return ePowerSetType;
         }
 
-        // Token: 0x060003C4 RID: 964 RVA: 0x000315E8 File Offset: 0x0002F7E8
+
         public string GetUniversalTipString(Enums.ShortFX iSFX, ref IPower iPower)
         {
             string str = "";
@@ -1005,12 +1005,12 @@ namespace Hero_Designer
             return str3;
         }
 
-        // Token: 0x060003C5 RID: 965 RVA: 0x00031806 File Offset: 0x0002FA06
+
         private void Graph_Load(object sender, EventArgs e)
         {
         }
 
-        // Token: 0x060003C7 RID: 967 RVA: 0x0003275C File Offset: 0x0003095C
+
         private void list_AT()
         {
             this.cbAT1.BeginUpdate();
@@ -1032,7 +1032,7 @@ namespace Hero_Designer
             this.cbAT2.EndUpdate();
         }
 
-        // Token: 0x060003C8 RID: 968 RVA: 0x00032874 File Offset: 0x00030A74
+
         public void List_Sets(int Index)
         {
             Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
@@ -1078,7 +1078,7 @@ namespace Hero_Designer
             comboBox.EndUpdate();
         }
 
-        // Token: 0x060003C9 RID: 969 RVA: 0x00032974 File Offset: 0x00030B74
+
         public void list_Type()
         {
             this.cbType1.BeginUpdate();
@@ -1097,7 +1097,7 @@ namespace Hero_Designer
             this.cbType2.EndUpdate();
         }
 
-        // Token: 0x060003CA RID: 970 RVA: 0x00032A74 File Offset: 0x00030C74
+
         private void lstDisplay_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -1107,7 +1107,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003CB RID: 971 RVA: 0x00032AA0 File Offset: 0x00030CA0
+
         public void map_Advanced()
         {
             bool[] Placed = new bool[this.Powers[1].Length - 1 + 1];
@@ -1781,7 +1781,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003CC RID: 972 RVA: 0x00033D28 File Offset: 0x00031F28
+
         public void map_Simple()
         {
             this.Map.Init();
@@ -1812,7 +1812,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003CD RID: 973 RVA: 0x00033E14 File Offset: 0x00032014
+
         public int mapDescString(string[] iStrings, ref bool[] Placed)
         {
             int num = 0;
@@ -1854,7 +1854,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x060003CE RID: 974 RVA: 0x00033F84 File Offset: 0x00032184
+
         public void mapOverride()
         {
             int num = MidsContext.Config.CompOverride.Length - 1;
@@ -1866,7 +1866,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003CF RID: 975 RVA: 0x00033FF0 File Offset: 0x000321F0
+
         public void mapOverrideDo(string iSet, string iPower, string iNewStr)
         {
             int index = 0;
@@ -1885,7 +1885,7 @@ namespace Hero_Designer
             while (index <= 1);
         }
 
-        // Token: 0x060003D0 RID: 976 RVA: 0x000340AB File Offset: 0x000322AB
+
         private void ResetScale()
         {
             this.tbScaleX.Value = 10;
@@ -1893,7 +1893,7 @@ namespace Hero_Designer
             this.SetScaleLabel();
         }
 
-        // Token: 0x060003D1 RID: 977 RVA: 0x000340D8 File Offset: 0x000322D8
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1911,13 +1911,13 @@ namespace Hero_Designer
             base.Left = rectangle.X;
         }
 
-        // Token: 0x060003D2 RID: 978 RVA: 0x000341B9 File Offset: 0x000323B9
+
         private void SetScaleLabel()
         {
             this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
         }
 
-        // Token: 0x060003D3 RID: 979 RVA: 0x000341E4 File Offset: 0x000323E4
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1927,14 +1927,14 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003D4 RID: 980 RVA: 0x00034222 File Offset: 0x00032422
+
         private void tbScaleX_Scroll(object sender, EventArgs e)
         {
             this.Graph.ScaleIndex = this.tbScaleX.Value;
             this.SetScaleLabel();
         }
 
-        // Token: 0x060003D5 RID: 981 RVA: 0x00034244 File Offset: 0x00032444
+
         public void UpdateData()
         {
             this.btnClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -1950,7 +1950,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060003D6 RID: 982 RVA: 0x00034334 File Offset: 0x00032534
+
         public void values_Accuracy()
         {
             float num = 1f;
@@ -2010,7 +2010,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003D7 RID: 983 RVA: 0x000345CC File Offset: 0x000327CC
+
         public void values_Damage()
         {
             float num = 1f;
@@ -2060,7 +2060,7 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        // Token: 0x060003D8 RID: 984 RVA: 0x000347FC File Offset: 0x000329FC
+
         public void values_DPA()
         {
             float num = 1f;
@@ -2103,7 +2103,7 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        // Token: 0x060003D9 RID: 985 RVA: 0x000349D0 File Offset: 0x00032BD0
+
         public void values_DPE()
         {
             float num = 1f;
@@ -2154,7 +2154,7 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        // Token: 0x060003DA RID: 986 RVA: 0x00034C44 File Offset: 0x00032E44
+
         public void values_DPS()
         {
             float num = 1f;
@@ -2197,7 +2197,7 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        // Token: 0x060003DB RID: 987 RVA: 0x00034E18 File Offset: 0x00033018
+
         public void values_Duration()
         {
             float num = 1f;
@@ -2241,7 +2241,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003DC RID: 988 RVA: 0x00034FE4 File Offset: 0x000331E4
+
         public void values_End()
         {
             float num = 1f;
@@ -2288,7 +2288,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003DD RID: 989 RVA: 0x000351C4 File Offset: 0x000333C4
+
         public void values_EPS()
         {
             float num = 1f;
@@ -2343,7 +2343,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003DE RID: 990 RVA: 0x00035474 File Offset: 0x00033674
+
         public void values_Heal()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2387,7 +2387,7 @@ namespace Hero_Designer
             MidsContext.Archetype = archetype;
         }
 
-        // Token: 0x060003DF RID: 991 RVA: 0x00035650 File Offset: 0x00033850
+
         public void values_HPE()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2435,7 +2435,7 @@ namespace Hero_Designer
             MidsContext.Archetype = archetype;
         }
 
-        // Token: 0x060003E0 RID: 992 RVA: 0x00035884 File Offset: 0x00033A84
+
         public void values_HPS()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2483,7 +2483,7 @@ namespace Hero_Designer
             MidsContext.Archetype = archetype;
         }
 
-        // Token: 0x060003E1 RID: 993 RVA: 0x00035B14 File Offset: 0x00033D14
+
         public void values_MaxTargets()
         {
             float num = 1f;
@@ -2530,7 +2530,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003E2 RID: 994 RVA: 0x00035D04 File Offset: 0x00033F04
+
         public void values_Range()
         {
             float num = 1f;
@@ -2603,7 +2603,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003E3 RID: 995 RVA: 0x000360C4 File Offset: 0x000342C4
+
         public void values_Recharge()
         {
             float num = 1f;
@@ -2643,7 +2643,7 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
         }
 
-        // Token: 0x060003E4 RID: 996 RVA: 0x00036260 File Offset: 0x00034460
+
         public void Values_Universal(Enums.eEffectType iEffectType, bool Sum, bool Debuff)
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2763,161 +2763,161 @@ namespace Hero_Designer
             MidsContext.Archetype = archetype;
         }
 
-        // Token: 0x0400017C RID: 380
+
         [AccessedThroughProperty("btnClose")]
         private ImageButton _btnClose;
 
-        // Token: 0x0400017D RID: 381
+
         [AccessedThroughProperty("btnTweakMatch")]
         private Button _btnTweakMatch;
 
-        // Token: 0x0400017E RID: 382
+
         [AccessedThroughProperty("cbAT1")]
         private ComboBox _cbAT1;
 
-        // Token: 0x0400017F RID: 383
+
         [AccessedThroughProperty("cbAT2")]
         private ComboBox _cbAT2;
 
-        // Token: 0x04000180 RID: 384
+
         [AccessedThroughProperty("cbSet1")]
         private ComboBox _cbSet1;
 
-        // Token: 0x04000181 RID: 385
+
         [AccessedThroughProperty("cbSet2")]
         private ComboBox _cbSet2;
 
-        // Token: 0x04000182 RID: 386
+
         [AccessedThroughProperty("cbType1")]
         private ComboBox _cbType1;
 
-        // Token: 0x04000183 RID: 387
+
         [AccessedThroughProperty("cbType2")]
         private ComboBox _cbType2;
 
-        // Token: 0x04000184 RID: 388
+
         [AccessedThroughProperty("chkMatching")]
         private CheckBox _chkMatching;
 
-        // Token: 0x04000185 RID: 389
+
         [AccessedThroughProperty("chkOnTop")]
         private ImageButton _chkOnTop;
 
-        // Token: 0x04000186 RID: 390
+
         [AccessedThroughProperty("Graph")]
         private ctlMultiGraph _Graph;
 
-        // Token: 0x04000187 RID: 391
+
         [AccessedThroughProperty("GroupBox1")]
         private GroupBox _GroupBox1;
 
-        // Token: 0x04000188 RID: 392
+
         [AccessedThroughProperty("GroupBox2")]
         private GroupBox _GroupBox2;
 
-        // Token: 0x04000189 RID: 393
+
         [AccessedThroughProperty("GroupBox4")]
         private GroupBox _GroupBox4;
 
-        // Token: 0x0400018A RID: 394
+
         [AccessedThroughProperty("lblKeyColor1")]
         private Label _lblKeyColor1;
 
-        // Token: 0x0400018B RID: 395
+
         [AccessedThroughProperty("lblKeyColor2")]
         private Label _lblKeyColor2;
 
-        // Token: 0x0400018C RID: 396
+
         [AccessedThroughProperty("lblScale")]
         private Label _lblScale;
 
-        // Token: 0x0400018D RID: 397
+
         [AccessedThroughProperty("lstDisplay")]
         private ListBox _lstDisplay;
 
-        // Token: 0x0400018E RID: 398
+
         [AccessedThroughProperty("tbScaleX")]
         private TrackBar _tbScaleX;
 
-        // Token: 0x0400018F RID: 399
+
         [AccessedThroughProperty("tTip")]
         private ToolTip _tTip;
 
-        // Token: 0x04000191 RID: 401
+
         protected string[] DisplayValueStrings;
 
-        // Token: 0x04000192 RID: 402
+
         protected float GraphMax;
 
-        // Token: 0x04000193 RID: 403
+
         protected bool Loaded;
 
-        // Token: 0x04000194 RID: 404
+
         protected Enums.CompMap Map;
 
-        // Token: 0x04000195 RID: 405
+
         protected bool Matching;
 
-        // Token: 0x04000196 RID: 406
+
         protected frmMain myParent;
 
-        // Token: 0x04000197 RID: 407
+
         protected IPower[][] Powers;
 
-        // Token: 0x04000198 RID: 408
+
         protected string[][] Tips;
 
-        // Token: 0x04000199 RID: 409
+
         protected float[][] Values;
 
-        // Token: 0x02000025 RID: 37
+
         protected enum eDisplayItems
         {
-            // Token: 0x0400019B RID: 411
+
             Accuracy,
-            // Token: 0x0400019C RID: 412
+
             Damage,
-            // Token: 0x0400019D RID: 413
+
             DamagePA,
-            // Token: 0x0400019E RID: 414
+
             DamagePS,
-            // Token: 0x0400019F RID: 415
+
             DamagePE,
-            // Token: 0x040001A0 RID: 416
+
             DamageBuff,
-            // Token: 0x040001A1 RID: 417
+
             Defense,
-            // Token: 0x040001A2 RID: 418
+
             DefenseDebuff,
-            // Token: 0x040001A3 RID: 419
+
             Duration,
-            // Token: 0x040001A4 RID: 420
+
             EndUse,
-            // Token: 0x040001A5 RID: 421
+
             EndUsePS,
-            // Token: 0x040001A6 RID: 422
+
             Heal,
-            // Token: 0x040001A7 RID: 423
+
             HealPS,
-            // Token: 0x040001A8 RID: 424
+
             HealPE,
-            // Token: 0x040001A9 RID: 425
+
             HitPoints,
-            // Token: 0x040001AA RID: 426
+
             TargetCount,
-            // Token: 0x040001AB RID: 427
+
             Range,
-            // Token: 0x040001AC RID: 428
+
             Recharge,
-            // Token: 0x040001AD RID: 429
+
             Regen,
-            // Token: 0x040001AE RID: 430
+
             Resistance,
-            // Token: 0x040001AF RID: 431
+
             ResistanceDebuff,
-            // Token: 0x040001B0 RID: 432
+
             ToHitBuff,
-            // Token: 0x040001B1 RID: 433
+
             ToHitDeBuff
         }
     }

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 // Token: 0x0200008A RID: 138
 public class Modifiers
 {
-    // Token: 0x06000654 RID: 1620 RVA: 0x0002DFE4 File Offset: 0x0002C1E4
+
     public bool ImportModifierTablefromCSV(string baseFn, string tableFn, int iRevision)
     {
         StreamReader iStream2;
@@ -87,7 +87,7 @@ public class Modifiers
         return flag;
     }
 
-    // Token: 0x06000655 RID: 1621 RVA: 0x0002E27C File Offset: 0x0002C47C
+
     public bool Load()
     {
         string path = Files.SelectDataFileLoad("AttribMod.mhd");
@@ -161,7 +161,7 @@ public class Modifiers
         return flag;
     }
 
-    // Token: 0x06000656 RID: 1622 RVA: 0x0002E484 File Offset: 0x0002C684
+
     public void Store()
     {
         string path = Files.SelectDataFileSave("AttribMod.mhd");
@@ -201,25 +201,25 @@ public class Modifiers
         }
     }
 
-    // Token: 0x04000633 RID: 1587
+
     public Modifiers.ModifierTable[] Modifier = new Modifiers.ModifierTable[0];
 
-    // Token: 0x04000634 RID: 1588
+
     public int Revision;
 
-    // Token: 0x04000635 RID: 1589
+
     public DateTime RevisionDate = new DateTime(0L);
 
-    // Token: 0x04000636 RID: 1590
+
     public string SourceIndex = string.Empty;
 
-    // Token: 0x04000637 RID: 1591
+
     public string SourceTables = string.Empty;
 
-    // Token: 0x0200008B RID: 139
+
     public class ModifierTable
     {
-        // Token: 0x06000658 RID: 1624 RVA: 0x0002E5DC File Offset: 0x0002C7DC
+
         public ModifierTable()
         {
             for (int index = 0; index < this.Table.Length; index++)
@@ -228,7 +228,7 @@ public class Modifiers
             }
         }
 
-        // Token: 0x06000659 RID: 1625 RVA: 0x0002E634 File Offset: 0x0002C834
+
         public void StoreTo(BinaryWriter writer)
         {
             writer.Write(this.ID);
@@ -243,7 +243,7 @@ public class Modifiers
             }
         }
 
-        // Token: 0x0600065A RID: 1626 RVA: 0x0002E6C0 File Offset: 0x0002C8C0
+
         public void Load(BinaryReader reader)
         {
             this.ID = reader.ReadString();
@@ -258,13 +258,13 @@ public class Modifiers
             }
         }
 
-        // Token: 0x04000638 RID: 1592
+
         public string ID = string.Empty;
 
-        // Token: 0x04000639 RID: 1593
+
         public int BaseIndex;
 
-        // Token: 0x0400063A RID: 1594
+
         public readonly float[][] Table = new float[55][];
     }
 }

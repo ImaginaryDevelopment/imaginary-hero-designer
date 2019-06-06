@@ -13,11 +13,11 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000052 RID: 82
+
 
     public partial class frmRecipeViewer : Form
     {
-        // Token: 0x1700059A RID: 1434
+
         // (get) Token: 0x06001154 RID: 4436 RVA: 0x000AD1A8 File Offset: 0x000AB3A8
         // (set) Token: 0x06001155 RID: 4437 RVA: 0x000AD1C0 File Offset: 0x000AB3C0
         internal virtual CheckBox chkRecipe
@@ -42,7 +42,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700059B RID: 1435
+
         // (get) Token: 0x06001156 RID: 4438 RVA: 0x000AD21C File Offset: 0x000AB41C
         // (set) Token: 0x06001157 RID: 4439 RVA: 0x000AD234 File Offset: 0x000AB434
         internal virtual CheckBox chkSortByLevel
@@ -67,7 +67,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700059C RID: 1436
+
         // (get) Token: 0x06001158 RID: 4440 RVA: 0x000AD290 File Offset: 0x000AB490
         // (set) Token: 0x06001159 RID: 4441 RVA: 0x000AD2A8 File Offset: 0x000AB4A8
         internal virtual ColumnHeader ColumnHeader1
@@ -83,7 +83,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700059D RID: 1437
+
         // (get) Token: 0x0600115A RID: 4442 RVA: 0x000AD2B4 File Offset: 0x000AB4B4
         // (set) Token: 0x0600115B RID: 4443 RVA: 0x000AD2CC File Offset: 0x000AB4CC
         internal virtual ColumnHeader ColumnHeader3
@@ -99,7 +99,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700059E RID: 1438
+
         // (get) Token: 0x0600115C RID: 4444 RVA: 0x000AD2D8 File Offset: 0x000AB4D8
         // (set) Token: 0x0600115D RID: 4445 RVA: 0x000AD2F0 File Offset: 0x000AB4F0
         internal virtual ColumnHeader ColumnHeader4
@@ -115,7 +115,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700059F RID: 1439
+
         // (get) Token: 0x0600115E RID: 4446 RVA: 0x000AD2FC File Offset: 0x000AB4FC
         // (set) Token: 0x0600115F RID: 4447 RVA: 0x000AD314 File Offset: 0x000AB514
         internal virtual ColumnHeader ColumnHeader5
@@ -131,7 +131,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A0 RID: 1440
+
         // (get) Token: 0x06001160 RID: 4448 RVA: 0x000AD320 File Offset: 0x000AB520
         // (set) Token: 0x06001161 RID: 4449 RVA: 0x000AD338 File Offset: 0x000AB538
         internal virtual ImageButton ibClipboard
@@ -156,7 +156,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A1 RID: 1441
+
         // (get) Token: 0x06001162 RID: 4450 RVA: 0x000AD394 File Offset: 0x000AB594
         // (set) Token: 0x06001163 RID: 4451 RVA: 0x000AD3AC File Offset: 0x000AB5AC
         internal virtual ImageButton ibClose
@@ -181,7 +181,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A2 RID: 1442
+
         // (get) Token: 0x06001164 RID: 4452 RVA: 0x000AD408 File Offset: 0x000AB608
         // (set) Token: 0x06001165 RID: 4453 RVA: 0x000AD420 File Offset: 0x000AB620
         internal virtual ImageButton ibMiniList
@@ -206,7 +206,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A3 RID: 1443
+
         // (get) Token: 0x06001166 RID: 4454 RVA: 0x000AD47C File Offset: 0x000AB67C
         // (set) Token: 0x06001167 RID: 4455 RVA: 0x000AD494 File Offset: 0x000AB694
         internal virtual ImageButton ibTopmost
@@ -231,7 +231,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A4 RID: 1444
+
         // (get) Token: 0x06001168 RID: 4456 RVA: 0x000AD4F0 File Offset: 0x000AB6F0
         // (set) Token: 0x06001169 RID: 4457 RVA: 0x000AD508 File Offset: 0x000AB708
         internal virtual ImageList ilSets
@@ -247,7 +247,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A5 RID: 1445
+
         // (get) Token: 0x0600116A RID: 4458 RVA: 0x000AD514 File Offset: 0x000AB714
         // (set) Token: 0x0600116B RID: 4459 RVA: 0x000AD52C File Offset: 0x000AB72C
         internal virtual Label lblHeader
@@ -263,7 +263,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A6 RID: 1446
+
         // (get) Token: 0x0600116C RID: 4460 RVA: 0x000AD538 File Offset: 0x000AB738
         // (set) Token: 0x0600116D RID: 4461 RVA: 0x000AD550 File Offset: 0x000AB750
         internal virtual ListView lvPower
@@ -291,7 +291,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A7 RID: 1447
+
         // (get) Token: 0x0600116E RID: 4462 RVA: 0x000AD5D4 File Offset: 0x000AB7D4
         // (set) Token: 0x0600116F RID: 4463 RVA: 0x000AD5EC File Offset: 0x000AB7EC
         internal virtual ListView lvDPA
@@ -319,7 +319,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A8 RID: 1448
+
         // (get) Token: 0x06001170 RID: 4464 RVA: 0x000AD670 File Offset: 0x000AB870
         // (set) Token: 0x06001171 RID: 4465 RVA: 0x000AD688 File Offset: 0x000AB888
         internal virtual Panel Panel1
@@ -335,7 +335,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005A9 RID: 1449
+
         // (get) Token: 0x06001172 RID: 4466 RVA: 0x000AD694 File Offset: 0x000AB894
         // (set) Token: 0x06001173 RID: 4467 RVA: 0x000AD6AC File Offset: 0x000AB8AC
         internal virtual Panel Panel2
@@ -351,7 +351,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005AA RID: 1450
+
         // (get) Token: 0x06001174 RID: 4468 RVA: 0x000AD6B8 File Offset: 0x000AB8B8
         // (set) Token: 0x06001175 RID: 4469 RVA: 0x000AD6D0 File Offset: 0x000AB8D0
         internal virtual PictureBox pbRecipe
@@ -367,7 +367,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005AB RID: 1451
+
         // (get) Token: 0x06001176 RID: 4470 RVA: 0x000AD6DC File Offset: 0x000AB8DC
         // (set) Token: 0x06001177 RID: 4471 RVA: 0x000AD6F4 File Offset: 0x000AB8F4
         internal virtual ctlPopUp RecipeInfo
@@ -395,7 +395,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005AC RID: 1452
+
         // (get) Token: 0x06001178 RID: 4472 RVA: 0x000AD778 File Offset: 0x000AB978
         // (set) Token: 0x06001179 RID: 4473 RVA: 0x000AD790 File Offset: 0x000AB990
         internal virtual ToolTip ToolTip1
@@ -411,7 +411,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170005AD RID: 1453
+
         // (get) Token: 0x0600117A RID: 4474 RVA: 0x000AD79C File Offset: 0x000AB99C
         // (set) Token: 0x0600117B RID: 4475 RVA: 0x000AD7B4 File Offset: 0x000AB9B4
         internal virtual VScrollBar VScrollBar1
@@ -436,7 +436,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600117C RID: 4476 RVA: 0x000AD810 File Offset: 0x000ABA10
+
         public frmRecipeViewer(frmMain iParent)
         {
             base.FormClosed += this.frmRecipeViewer_FormClosed;
@@ -447,7 +447,7 @@ namespace Hero_Designer
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
 
-        // Token: 0x0600117D RID: 4477 RVA: 0x000AD874 File Offset: 0x000ABA74
+
         private void AddToImageList(int eIDX)
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height);
@@ -465,7 +465,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600117E RID: 4478 RVA: 0x000AD950 File Offset: 0x000ABB50
+
         private PopUp.PopupData BuildList(bool Mini)
         {
             int iIndent = 1;
@@ -759,27 +759,27 @@ namespace Hero_Designer
             return popupData;
         }
 
-        // Token: 0x0600117F RID: 4479 RVA: 0x000AE824 File Offset: 0x000ACA24
+
         private void ChangedRecipeInfoElements()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.RecipeInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
         }
 
-        // Token: 0x06001180 RID: 4480 RVA: 0x000AE877 File Offset: 0x000ACA77
+
         private void chkRecipe_CheckedChanged(object sender, EventArgs e)
         {
             this.lvDPA_SelectedIndexChanged(this, new EventArgs());
             MidsContext.Config.ShoppingListIncludesRecipes = this.chkRecipe.Checked;
         }
 
-        // Token: 0x06001181 RID: 4481 RVA: 0x000AE89C File Offset: 0x000ACA9C
+
         private void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
         {
             this.UpdatePowerList();
         }
 
-        // Token: 0x06001182 RID: 4482 RVA: 0x000AE8A8 File Offset: 0x000ACAA8
+
         private static int colorRarityCompare(Color t1, Color t2)
         {
             int num;
@@ -827,7 +827,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06001183 RID: 4483 RVA: 0x000AEAE8 File Offset: 0x000ACCE8
+
         private static int colorRarityCompareB(Color t1, Color t2)
         {
             int num;
@@ -868,7 +868,7 @@ namespace Hero_Designer
             return num;
         }
 
-        // Token: 0x06001185 RID: 4485 RVA: 0x000AED10 File Offset: 0x000ACF10
+
         private void DrawIcon(int Index)
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.bxRecipe.Size);
@@ -881,7 +881,7 @@ namespace Hero_Designer
             this.pbRecipe.Image = new Bitmap(extendedBitmap.Bitmap);
         }
 
-        // Token: 0x06001186 RID: 4486 RVA: 0x000AED94 File Offset: 0x000ACF94
+
         private void FillEnhList()
         {
             if (this.lvPower.CheckedIndices.Count < 1)
@@ -959,7 +959,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06001187 RID: 4487 RVA: 0x000AF308 File Offset: 0x000AD508
+
         private void FillPowerList()
         {
             this.lvPower.BeginUpdate();
@@ -991,7 +991,7 @@ namespace Hero_Designer
             this.lvPower.EndUpdate();
         }
 
-        // Token: 0x06001188 RID: 4488 RVA: 0x000AF510 File Offset: 0x000AD710
+
         private static int FindItemID(int rIDX, int iLevel)
         {
             int num = -1;
@@ -1039,14 +1039,14 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06001189 RID: 4489 RVA: 0x000AF6A3 File Offset: 0x000AD8A3
+
         private void frmRecipeViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatRecipe(false);
         }
 
-        // Token: 0x0600118A RID: 4490 RVA: 0x000AF6BC File Offset: 0x000AD8BC
+
         private void frmRecipeViewer_Load(object sender, EventArgs e)
         {
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -1061,7 +1061,7 @@ namespace Hero_Designer
             this.Loading = false;
         }
 
-        // Token: 0x0600118B RID: 4491 RVA: 0x000AF7C8 File Offset: 0x000AD9C8
+
         private bool HasIOs(int hIDX)
         {
             if (hIDX >= 0)
@@ -1078,7 +1078,7 @@ namespace Hero_Designer
             return false;
         }
 
-        // Token: 0x0600118C RID: 4492 RVA: 0x000AF85C File Offset: 0x000ADA5C
+
         private void ibClipboard_ButtonClicked()
         {
             string str = "";
@@ -1104,19 +1104,19 @@ namespace Hero_Designer
             Interaction.MsgBox("Data copied to clipboard!", MsgBoxStyle.Information, "Done");
         }
 
-        // Token: 0x0600118D RID: 4493 RVA: 0x000AF97E File Offset: 0x000ADB7E
+
         private void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
-        // Token: 0x0600118E RID: 4494 RVA: 0x000AF988 File Offset: 0x000ADB88
+
         private void ibMiniList_ButtonClicked()
         {
             this.myParent.SetMiniList(this.BuildList(true), "Shopping List", 2048);
         }
 
-        // Token: 0x0600118F RID: 4495 RVA: 0x000AF9A8 File Offset: 0x000ADBA8
+
         private void ibTopmost_ButtonClicked()
         {
             base.TopMost = this.ibTopmost.Checked;
@@ -1126,7 +1126,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06001191 RID: 4497 RVA: 0x000B06D8 File Offset: 0x000AE8D8
+
         private void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (e.Item.Index == 0)
@@ -1147,19 +1147,19 @@ namespace Hero_Designer
             this.FillEnhList();
         }
 
-        // Token: 0x06001192 RID: 4498 RVA: 0x000B07A3 File Offset: 0x000AE9A3
+
         private void lvPower_MouseEnter(object sender, EventArgs e)
         {
             this.lvPower.Focus();
         }
 
-        // Token: 0x06001193 RID: 4499 RVA: 0x000B07B2 File Offset: 0x000AE9B2
+
         private void lvDPA_MouseEnter(object sender, EventArgs e)
         {
             this.lvDPA.Focus();
         }
 
-        // Token: 0x06001194 RID: 4500 RVA: 0x000B07C1 File Offset: 0x000AE9C1
+
         private void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.RecipeInfo.ScrollY = 0f;
@@ -1167,7 +1167,7 @@ namespace Hero_Designer
             this.ChangedRecipeInfoElements();
         }
 
-        // Token: 0x06001195 RID: 4501 RVA: 0x000B07F0 File Offset: 0x000AE9F0
+
         private static void putInList(ref frmRecipeViewer.CountingList[] tl, string item)
         {
             int num = tl.Length - 1;
@@ -1186,13 +1186,13 @@ namespace Hero_Designer
             tl[tl.Length - 1].Text = item;
         }
 
-        // Token: 0x06001196 RID: 4502 RVA: 0x000B0899 File Offset: 0x000AEA99
+
         private void RecipeInfo_MouseEnter(object sender, EventArgs e)
         {
             this.VScrollBar1.Focus();
         }
 
-        // Token: 0x06001197 RID: 4503 RVA: 0x000B08A8 File Offset: 0x000AEAA8
+
         private void RecipeInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -1203,7 +1203,7 @@ namespace Hero_Designer
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
-        // Token: 0x06001198 RID: 4504 RVA: 0x000B0948 File Offset: 0x000AEB48
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1241,7 +1241,7 @@ namespace Hero_Designer
             base.Width = rectangle.Width;
         }
 
-        // Token: 0x06001199 RID: 4505 RVA: 0x000B0B18 File Offset: 0x000AED18
+
         private static PopUp.StringValue[] sortPopupStrings(bool Mini, int colorSortMode, PopUp.StringValue[] inStrs)
         {
             int num = 0;
@@ -1288,7 +1288,7 @@ namespace Hero_Designer
             return stringValueArray;
         }
 
-        // Token: 0x0600119A RID: 4506 RVA: 0x000B0CF0 File Offset: 0x000AEEF0
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1300,7 +1300,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600119B RID: 4507 RVA: 0x000B0D50 File Offset: 0x000AEF50
+
         public void UpdateData()
         {
             this.BackColor = this.myParent.BackColor;
@@ -1319,7 +1319,7 @@ namespace Hero_Designer
             this.FillPowerList();
         }
 
-        // Token: 0x0600119C RID: 4508 RVA: 0x000B0F00 File Offset: 0x000AF100
+
         private void UpdatePowerList()
         {
             if (!this.Loading)
@@ -1328,111 +1328,111 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x0600119D RID: 4509 RVA: 0x000B0F24 File Offset: 0x000AF124
+
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.RecipeInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.RecipeInfo.lHeight - (float)this.Panel1.Height));
         }
 
-        // Token: 0x04000701 RID: 1793
+
         [AccessedThroughProperty("chkRecipe")]
         private CheckBox _chkRecipe;
 
-        // Token: 0x04000702 RID: 1794
+
         [AccessedThroughProperty("chkSortByLevel")]
         private CheckBox _chkSortByLevel;
 
-        // Token: 0x04000703 RID: 1795
+
         [AccessedThroughProperty("ColumnHeader1")]
         private ColumnHeader _ColumnHeader1;
 
-        // Token: 0x04000704 RID: 1796
+
         [AccessedThroughProperty("ColumnHeader3")]
         private ColumnHeader _ColumnHeader3;
 
-        // Token: 0x04000705 RID: 1797
+
         [AccessedThroughProperty("ColumnHeader4")]
         private ColumnHeader _ColumnHeader4;
 
-        // Token: 0x04000706 RID: 1798
+
         [AccessedThroughProperty("ColumnHeader5")]
         private ColumnHeader _ColumnHeader5;
 
-        // Token: 0x04000707 RID: 1799
+
         [AccessedThroughProperty("ibClipboard")]
         private ImageButton _ibClipboard;
 
-        // Token: 0x04000708 RID: 1800
+
         [AccessedThroughProperty("ibClose")]
         private ImageButton _ibClose;
 
-        // Token: 0x04000709 RID: 1801
+
         [AccessedThroughProperty("ibMiniList")]
         private ImageButton _ibMiniList;
 
-        // Token: 0x0400070A RID: 1802
+
         [AccessedThroughProperty("ibTopmost")]
         private ImageButton _ibTopmost;
 
-        // Token: 0x0400070B RID: 1803
+
         [AccessedThroughProperty("ilSets")]
         private ImageList _ilSets;
 
-        // Token: 0x0400070C RID: 1804
+
         [AccessedThroughProperty("lblHeader")]
         private Label _lblHeader;
 
-        // Token: 0x0400070D RID: 1805
+
         [AccessedThroughProperty("lvPower")]
         private ListView _lvPower;
 
-        // Token: 0x0400070E RID: 1806
+
         [AccessedThroughProperty("lvDPA")]
         private ListView _lvDPA;
 
-        // Token: 0x0400070F RID: 1807
+
         [AccessedThroughProperty("Panel1")]
         private Panel _Panel1;
 
-        // Token: 0x04000710 RID: 1808
+
         [AccessedThroughProperty("Panel2")]
         private Panel _Panel2;
 
-        // Token: 0x04000711 RID: 1809
+
         [AccessedThroughProperty("pbRecipe")]
         private PictureBox _pbRecipe;
 
-        // Token: 0x04000712 RID: 1810
+
         [AccessedThroughProperty("RecipeInfo")]
         private ctlPopUp _RecipeInfo;
 
-        // Token: 0x04000713 RID: 1811
+
         [AccessedThroughProperty("ToolTip1")]
         private ToolTip _ToolTip1;
 
-        // Token: 0x04000714 RID: 1812
+
         [AccessedThroughProperty("VScrollBar1")]
         private VScrollBar _VScrollBar1;
 
-        // Token: 0x04000715 RID: 1813
+
         protected ExtendedBitmap bxRecipe;
 
-        // Token: 0x04000717 RID: 1815
+
         protected bool Loading;
 
-        // Token: 0x04000718 RID: 1816
+
         protected frmMain myParent;
 
-        // Token: 0x04000719 RID: 1817
+
         private int nonRecipeCount;
 
-        // Token: 0x02000053 RID: 83
+
         private struct CountingList
         {
-            // Token: 0x0400071A RID: 1818
+
             public string Text;
 
-            // Token: 0x0400071B RID: 1819
+
             public int Count;
         }
     }

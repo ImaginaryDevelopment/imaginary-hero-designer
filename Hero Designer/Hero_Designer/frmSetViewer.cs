@@ -11,10 +11,10 @@ using midsControls;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000058 RID: 88
+
     public partial class frmSetViewer : Form
     {
-        // Token: 0x17000608 RID: 1544
+
         // (get) Token: 0x060012B1 RID: 4785 RVA: 0x000BA660 File Offset: 0x000B8860
         // (set) Token: 0x060012B2 RID: 4786 RVA: 0x000BA678 File Offset: 0x000B8878
         internal virtual ImageButton btnClose
@@ -39,7 +39,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000609 RID: 1545
+
         // (get) Token: 0x060012B3 RID: 4787 RVA: 0x000BA6D4 File Offset: 0x000B88D4
         // (set) Token: 0x060012B4 RID: 4788 RVA: 0x000BA6EC File Offset: 0x000B88EC
         internal virtual ImageButton btnSmall
@@ -64,7 +64,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060A RID: 1546
+
         // (get) Token: 0x060012B5 RID: 4789 RVA: 0x000BA748 File Offset: 0x000B8948
         // (set) Token: 0x060012B6 RID: 4790 RVA: 0x000BA760 File Offset: 0x000B8960
         internal virtual ImageButton chkOnTop
@@ -89,7 +89,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060B RID: 1547
+
         // (get) Token: 0x060012B7 RID: 4791 RVA: 0x000BA7BC File Offset: 0x000B89BC
         // (set) Token: 0x060012B8 RID: 4792 RVA: 0x000BA7D4 File Offset: 0x000B89D4
         internal virtual ColumnHeader ColumnHeader1
@@ -105,7 +105,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060C RID: 1548
+
         // (get) Token: 0x060012B9 RID: 4793 RVA: 0x000BA7E0 File Offset: 0x000B89E0
         // (set) Token: 0x060012BA RID: 4794 RVA: 0x000BA7F8 File Offset: 0x000B89F8
         internal virtual ColumnHeader ColumnHeader2
@@ -121,7 +121,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060D RID: 1549
+
         // (get) Token: 0x060012BB RID: 4795 RVA: 0x000BA804 File Offset: 0x000B8A04
         // (set) Token: 0x060012BC RID: 4796 RVA: 0x000BA81C File Offset: 0x000B8A1C
         internal virtual ColumnHeader ColumnHeader3
@@ -137,7 +137,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060E RID: 1550
+
         // (get) Token: 0x060012BD RID: 4797 RVA: 0x000BA828 File Offset: 0x000B8A28
         // (set) Token: 0x060012BE RID: 4798 RVA: 0x000BA840 File Offset: 0x000B8A40
         internal virtual ImageList ilSet
@@ -153,7 +153,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700060F RID: 1551
+
         // (get) Token: 0x060012BF RID: 4799 RVA: 0x000BA84C File Offset: 0x000B8A4C
         // (set) Token: 0x060012C0 RID: 4800 RVA: 0x000BA864 File Offset: 0x000B8A64
         internal virtual Label Label1
@@ -169,7 +169,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000610 RID: 1552
+
         // (get) Token: 0x060012C1 RID: 4801 RVA: 0x000BA870 File Offset: 0x000B8A70
         // (set) Token: 0x060012C2 RID: 4802 RVA: 0x000BA888 File Offset: 0x000B8A88
         internal virtual Label Label2
@@ -185,7 +185,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000611 RID: 1553
+
         // (get) Token: 0x060012C3 RID: 4803 RVA: 0x000BA894 File Offset: 0x000B8A94
         // (set) Token: 0x060012C4 RID: 4804 RVA: 0x000BA8AC File Offset: 0x000B8AAC
         internal virtual ListView lstSets
@@ -210,7 +210,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000612 RID: 1554
+
         // (get) Token: 0x060012C5 RID: 4805 RVA: 0x000BA908 File Offset: 0x000B8B08
         // (set) Token: 0x060012C6 RID: 4806 RVA: 0x000BA920 File Offset: 0x000B8B20
         internal virtual RichTextBox rtApplied
@@ -226,7 +226,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000613 RID: 1555
+
         // (get) Token: 0x060012C7 RID: 4807 RVA: 0x000BA92C File Offset: 0x000B8B2C
         // (set) Token: 0x060012C8 RID: 4808 RVA: 0x000BA944 File Offset: 0x000B8B44
         internal virtual RichTextBox rtxtFX
@@ -242,7 +242,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000614 RID: 1556
+
         // (get) Token: 0x060012C9 RID: 4809 RVA: 0x000BA950 File Offset: 0x000B8B50
         // (set) Token: 0x060012CA RID: 4810 RVA: 0x000BA968 File Offset: 0x000B8B68
         internal virtual RichTextBox rtxtInfo
@@ -258,7 +258,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060012CB RID: 4811 RVA: 0x000BA974 File Offset: 0x000B8B74
+
         public frmSetViewer(ref frmMain iParent)
         {
             base.Move += this.frmSetViewer_Move;
@@ -268,13 +268,13 @@ namespace Hero_Designer
             this.myParent = iParent;
         }
 
-        // Token: 0x060012CC RID: 4812 RVA: 0x000BA9D2 File Offset: 0x000B8BD2
+
         private void btnClose_Click()
         {
             base.Close();
         }
 
-        // Token: 0x060012CD RID: 4813 RVA: 0x000BA9DC File Offset: 0x000B8BDC
+
         private void btnSmall_Click()
         {
             if (base.Width > 600)
@@ -302,13 +302,13 @@ namespace Hero_Designer
             this.StoreLocation();
         }
 
-        // Token: 0x060012CE RID: 4814 RVA: 0x000BABA1 File Offset: 0x000B8DA1
+
         private void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
 
-        // Token: 0x060012CF RID: 4815 RVA: 0x000BABB8 File Offset: 0x000B8DB8
+
         public void DisplayList()
         {
             string[] items = new string[3];
@@ -347,7 +347,7 @@ namespace Hero_Designer
             this.FillEffectView();
         }
 
-        // Token: 0x060012D1 RID: 4817 RVA: 0x000BAE6C File Offset: 0x000B906C
+
         private void FillEffectView()
         {
             string str9 = "";
@@ -511,7 +511,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060012D2 RID: 4818 RVA: 0x000BB7C8 File Offset: 0x000B99C8
+
         private void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSet.ImageSize.Width, this.ilSet.ImageSize.Height);
@@ -541,24 +541,24 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060012D3 RID: 4819 RVA: 0x000BB98D File Offset: 0x000B9B8D
+
         private void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatSets(false);
         }
 
-        // Token: 0x060012D4 RID: 4820 RVA: 0x000BB99D File Offset: 0x000B9B9D
+
         private void frmSetViewer_Load(object sender, EventArgs e)
         {
         }
 
-        // Token: 0x060012D5 RID: 4821 RVA: 0x000BB9A0 File Offset: 0x000B9BA0
+
         private void frmSetViewer_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
 
-        // Token: 0x060012D7 RID: 4823 RVA: 0x000BC318 File Offset: 0x000BA518
+
         private void lstSets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstSets.SelectedItems.Count >= 1)
@@ -567,7 +567,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060012D8 RID: 4824 RVA: 0x000BC3A0 File Offset: 0x000BA5A0
+
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -593,7 +593,7 @@ namespace Hero_Designer
             base.Left = rectangle.X;
         }
 
-        // Token: 0x060012D9 RID: 4825 RVA: 0x000BC4DC File Offset: 0x000BA6DC
+
         private void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -604,7 +604,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060012DA RID: 4826 RVA: 0x000BC534 File Offset: 0x000BA734
+
         public void UpdateData()
         {
             if (this.myParent != null)
@@ -635,59 +635,59 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x04000781 RID: 1921
+
         [AccessedThroughProperty("btnClose")]
         private ImageButton _btnClose;
 
-        // Token: 0x04000782 RID: 1922
+
         [AccessedThroughProperty("btnSmall")]
         private ImageButton _btnSmall;
 
-        // Token: 0x04000783 RID: 1923
+
         [AccessedThroughProperty("chkOnTop")]
         private ImageButton _chkOnTop;
 
-        // Token: 0x04000784 RID: 1924
+
         [AccessedThroughProperty("ColumnHeader1")]
         private ColumnHeader _ColumnHeader1;
 
-        // Token: 0x04000785 RID: 1925
+
         [AccessedThroughProperty("ColumnHeader2")]
         private ColumnHeader _ColumnHeader2;
 
-        // Token: 0x04000786 RID: 1926
+
         [AccessedThroughProperty("ColumnHeader3")]
         private ColumnHeader _ColumnHeader3;
 
-        // Token: 0x04000787 RID: 1927
+
         [AccessedThroughProperty("ilSet")]
         private ImageList _ilSet;
 
-        // Token: 0x04000788 RID: 1928
+
         [AccessedThroughProperty("Label1")]
         private Label _Label1;
 
-        // Token: 0x04000789 RID: 1929
+
         [AccessedThroughProperty("Label2")]
         private Label _Label2;
 
-        // Token: 0x0400078A RID: 1930
+
         [AccessedThroughProperty("lstSets")]
         private ListView _lstSets;
 
-        // Token: 0x0400078B RID: 1931
+
         [AccessedThroughProperty("rtApplied")]
         private RichTextBox _rtApplied;
 
-        // Token: 0x0400078C RID: 1932
+
         [AccessedThroughProperty("rtxtFX")]
         private RichTextBox _rtxtFX;
 
-        // Token: 0x0400078D RID: 1933
+
         [AccessedThroughProperty("rtxtInfo")]
         private RichTextBox _rtxtInfo;
 
-        // Token: 0x0400078F RID: 1935
+
         protected frmMain myParent;
     }
 }

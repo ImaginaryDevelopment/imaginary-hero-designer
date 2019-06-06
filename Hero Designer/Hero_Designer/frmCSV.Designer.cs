@@ -1,10 +1,10 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000026 RID: 38
+
 	[global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
 	public partial class frmCSV : global::System.Windows.Forms.Form
 	{
-		// Token: 0x0600047C RID: 1148 RVA: 0x00037ECC File Offset: 0x000360CC
+
 		[global::System.Diagnostics.DebuggerNonUserCode]
 		protected override void Dispose(bool disposing)
 		{
@@ -21,7 +21,7 @@
 			}
 		}
 
-		// Token: 0x0600047F RID: 1151 RVA: 0x00037F3C File Offset: 0x0003613C
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -747,7 +747,7 @@
 			base.ResumeLayout(false);
 		}
 
-		// Token: 0x040001F7 RID: 503
+
 		private global::System.ComponentModel.IContainer components;
 	}
 }

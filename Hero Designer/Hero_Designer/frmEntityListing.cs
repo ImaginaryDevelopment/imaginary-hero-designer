@@ -9,11 +9,11 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000033 RID: 51
+
 
     public partial class frmEntityListing : Form
     {
-        // Token: 0x1700033C RID: 828
+
         // (get) Token: 0x060009B6 RID: 2486 RVA: 0x00067260 File Offset: 0x00065460
         // (set) Token: 0x060009B7 RID: 2487 RVA: 0x00067278 File Offset: 0x00065478
         internal virtual Button btnAdd
@@ -38,7 +38,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700033D RID: 829
+
         // (get) Token: 0x060009B8 RID: 2488 RVA: 0x000672D4 File Offset: 0x000654D4
         // (set) Token: 0x060009B9 RID: 2489 RVA: 0x000672EC File Offset: 0x000654EC
         internal virtual Button btnCancel
@@ -63,7 +63,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700033E RID: 830
+
         // (get) Token: 0x060009BA RID: 2490 RVA: 0x00067348 File Offset: 0x00065548
         // (set) Token: 0x060009BB RID: 2491 RVA: 0x00067360 File Offset: 0x00065560
         internal virtual Button btnClone
@@ -88,7 +88,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700033F RID: 831
+
         // (get) Token: 0x060009BC RID: 2492 RVA: 0x000673BC File Offset: 0x000655BC
         // (set) Token: 0x060009BD RID: 2493 RVA: 0x000673D4 File Offset: 0x000655D4
         internal virtual Button btnDelete
@@ -113,7 +113,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000340 RID: 832
+
         // (get) Token: 0x060009BE RID: 2494 RVA: 0x00067430 File Offset: 0x00065630
         // (set) Token: 0x060009BF RID: 2495 RVA: 0x00067448 File Offset: 0x00065648
         internal virtual Button btnDown
@@ -138,7 +138,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000341 RID: 833
+
         // (get) Token: 0x060009C0 RID: 2496 RVA: 0x000674A4 File Offset: 0x000656A4
         // (set) Token: 0x060009C1 RID: 2497 RVA: 0x000674BC File Offset: 0x000656BC
         internal virtual Button btnedit
@@ -163,7 +163,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000342 RID: 834
+
         // (get) Token: 0x060009C2 RID: 2498 RVA: 0x00067518 File Offset: 0x00065718
         // (set) Token: 0x060009C3 RID: 2499 RVA: 0x00067530 File Offset: 0x00065730
         internal virtual Button btnOK
@@ -188,7 +188,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000343 RID: 835
+
         // (get) Token: 0x060009C4 RID: 2500 RVA: 0x0006758C File Offset: 0x0006578C
         // (set) Token: 0x060009C5 RID: 2501 RVA: 0x000675A4 File Offset: 0x000657A4
         internal virtual Button btnUp
@@ -213,7 +213,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000344 RID: 836
+
         // (get) Token: 0x060009C6 RID: 2502 RVA: 0x00067600 File Offset: 0x00065800
         // (set) Token: 0x060009C7 RID: 2503 RVA: 0x00067618 File Offset: 0x00065818
         internal virtual ColumnHeader ColumnHeader1
@@ -229,7 +229,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000345 RID: 837
+
         // (get) Token: 0x060009C8 RID: 2504 RVA: 0x00067624 File Offset: 0x00065824
         // (set) Token: 0x060009C9 RID: 2505 RVA: 0x0006763C File Offset: 0x0006583C
         internal virtual ColumnHeader ColumnHeader2
@@ -245,7 +245,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000346 RID: 838
+
         // (get) Token: 0x060009CA RID: 2506 RVA: 0x00067648 File Offset: 0x00065848
         // (set) Token: 0x060009CB RID: 2507 RVA: 0x00067660 File Offset: 0x00065860
         internal virtual ColumnHeader ColumnHeader3
@@ -261,7 +261,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000347 RID: 839
+
         // (get) Token: 0x060009CC RID: 2508 RVA: 0x0006766C File Offset: 0x0006586C
         // (set) Token: 0x060009CD RID: 2509 RVA: 0x00067684 File Offset: 0x00065884
         internal virtual ListView lvEntity
@@ -286,14 +286,14 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009CE RID: 2510 RVA: 0x000676DE File Offset: 0x000658DE
+
         public frmEntityListing()
         {
             base.Load += this.frmEntityListing_Load;
             this.InitializeComponent();
         }
 
-        // Token: 0x060009CF RID: 2511 RVA: 0x00067704 File Offset: 0x00065904
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SummonedEntity iEntity = new SummonedEntity();
@@ -327,7 +327,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D0 RID: 2512 RVA: 0x00067868 File Offset: 0x00065A68
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.BusyMsg("Re-Indexing...");
@@ -337,7 +337,7 @@ namespace Hero_Designer
             base.Hide();
         }
 
-        // Token: 0x060009D1 RID: 2513 RVA: 0x00067894 File Offset: 0x00065A94
+
         private void btnClone_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -360,7 +360,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D2 RID: 2514 RVA: 0x00067990 File Offset: 0x00065B90
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0 && Interaction.MsgBox("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -398,7 +398,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D3 RID: 2515 RVA: 0x00067B74 File Offset: 0x00065D74
+
         private void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -420,7 +420,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D4 RID: 2516 RVA: 0x00067C6C File Offset: 0x00065E6C
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -435,7 +435,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D5 RID: 2517 RVA: 0x00067CFB File Offset: 0x00065EFB
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.MatchSummonIDs();
@@ -443,7 +443,7 @@ namespace Hero_Designer
             base.Hide();
         }
 
-        // Token: 0x060009D6 RID: 2518 RVA: 0x00067D14 File Offset: 0x00065F14
+
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -465,7 +465,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D7 RID: 2519 RVA: 0x00067DF8 File Offset: 0x00065FF8
+
         private void BusyHide()
         {
             if (this.bFrm != null)
@@ -475,7 +475,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060009D8 RID: 2520 RVA: 0x00067E28 File Offset: 0x00066028
+
         private void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -486,7 +486,7 @@ namespace Hero_Designer
             this.bFrm.SetMessage(sMessage);
         }
 
-        // Token: 0x060009D9 RID: 2521 RVA: 0x00067E70 File Offset: 0x00066070
+
         public void DisplayList()
         {
             this.lvEntity.BeginUpdate();
@@ -504,13 +504,13 @@ namespace Hero_Designer
             this.lvEntity.EndUpdate();
         }
 
-        // Token: 0x060009DB RID: 2523 RVA: 0x00067F70 File Offset: 0x00066170
+
         private void frmEntityListing_Load(object sender, EventArgs e)
         {
             this.DisplayList();
         }
 
-        // Token: 0x060009DD RID: 2525 RVA: 0x0006863C File Offset: 0x0006683C
+
         public void ListAddItem(int Index)
         {
             string[] items = new string[]
@@ -524,7 +524,7 @@ namespace Hero_Designer
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].EnsureVisible();
         }
 
-        // Token: 0x060009DE RID: 2526 RVA: 0x00068720 File Offset: 0x00066920
+
         public void ListUpdateItem(int Index)
         {
             string[] strArray = new string[]
@@ -542,61 +542,61 @@ namespace Hero_Designer
             this.lvEntity.Refresh();
         }
 
-        // Token: 0x060009DF RID: 2527 RVA: 0x000687FD File Offset: 0x000669FD
+
         private void lvEntity_DoubleClick(object sender, EventArgs e)
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        // Token: 0x040003FF RID: 1023
+
         [AccessedThroughProperty("btnAdd")]
         private Button _btnAdd;
 
-        // Token: 0x04000400 RID: 1024
+
         [AccessedThroughProperty("btnCancel")]
         private Button _btnCancel;
 
-        // Token: 0x04000401 RID: 1025
+
         [AccessedThroughProperty("btnClone")]
         private Button _btnClone;
 
-        // Token: 0x04000402 RID: 1026
+
         [AccessedThroughProperty("btnDelete")]
         private Button _btnDelete;
 
-        // Token: 0x04000403 RID: 1027
+
         [AccessedThroughProperty("btnDown")]
         private Button _btnDown;
 
-        // Token: 0x04000404 RID: 1028
+
         [AccessedThroughProperty("btnedit")]
         private Button _btnedit;
 
-        // Token: 0x04000405 RID: 1029
+
         [AccessedThroughProperty("btnOK")]
         private Button _btnOK;
 
-        // Token: 0x04000406 RID: 1030
+
         [AccessedThroughProperty("btnUp")]
         private Button _btnUp;
 
-        // Token: 0x04000407 RID: 1031
+
         [AccessedThroughProperty("ColumnHeader1")]
         private ColumnHeader _ColumnHeader1;
 
-        // Token: 0x04000408 RID: 1032
+
         [AccessedThroughProperty("ColumnHeader2")]
         private ColumnHeader _ColumnHeader2;
 
-        // Token: 0x04000409 RID: 1033
+
         [AccessedThroughProperty("ColumnHeader3")]
         private ColumnHeader _ColumnHeader3;
 
-        // Token: 0x0400040A RID: 1034
+
         [AccessedThroughProperty("lvEntity")]
         private ListView _lvEntity;
 
-        // Token: 0x0400040B RID: 1035
+
         private frmBusy bFrm;
     }
 }

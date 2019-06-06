@@ -13,16 +13,16 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000010 RID: 16
+
     public class clsXMLUpdate
     {
-        // Token: 0x060000B7 RID: 183 RVA: 0x000100A3 File Offset: 0x0000E2A3
+
         public clsXMLUpdate(string path)
         {
             this._uriUpdatePath = path;
         }
 
-        // Token: 0x060000B8 RID: 184 RVA: 0x000100E4 File Offset: 0x0000E2E4
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private bool ApplyUpdate(ref int updateId)
         {
@@ -41,7 +41,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x060000B9 RID: 185 RVA: 0x0001017C File Offset: 0x0000E37C
+
         private static void BugReport(string sData)
         {
             try
@@ -78,7 +78,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000BA RID: 186 RVA: 0x000102D8 File Offset: 0x0000E4D8
+
         public static void BugReport(string at, string pri, string sec, string sData = "")
         {
             try
@@ -128,31 +128,31 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000BB RID: 187 RVA: 0x00010490 File Offset: 0x0000E690
+
         public static void Donate()
         {
             clsXMLUpdate.LaunchBrowser("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167");
         }
 
-        // Token: 0x060000BC RID: 188 RVA: 0x0001049E File Offset: 0x0000E69E
+
         public static void GoToCoHPlanner()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohplanner.com/");
         }
 
-        // Token: 0x060000BD RID: 189 RVA: 0x000104AC File Offset: 0x0000E6AC
+
         public static void GoToForums()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/forum/");
         }
 
-        // Token: 0x060000BE RID: 190 RVA: 0x000104BA File Offset: 0x0000E6BA
+
         public static void GoToTitan()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/");
         }
 
-        // Token: 0x060000BF RID: 191 RVA: 0x000104C8 File Offset: 0x0000E6C8
+
         private void HideMessage()
         {
             if (this.sFrm != null)
@@ -163,7 +163,7 @@ namespace Hero_Designer
             this.mFrm = null;
         }
 
-        // Token: 0x060000C0 RID: 192 RVA: 0x00010500 File Offset: 0x0000E700
+
         private static void LaunchBrowser(string iURI)
         {
             try
@@ -177,7 +177,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000C1 RID: 193 RVA: 0x0001055C File Offset: 0x0000E75C
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         public static void LaunchSelfUpdate()
         {
@@ -211,7 +211,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000C2 RID: 194 RVA: 0x00010648 File Offset: 0x0000E848
+
         private bool LoadXMLStrings(string iString)
         {
             this.Updates = new clsXMLUpdate.clsXMLItem[2];
@@ -236,13 +236,13 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x060000C3 RID: 195 RVA: 0x0001071C File Offset: 0x0000E91C
+
         public static void MailMe()
         {
             clsXMLUpdate.LaunchBrowser("mailto:midsteam@cohtitan.com&subject=Mids' Hero Designer");
         }
 
-        // Token: 0x060000C4 RID: 196 RVA: 0x0001072C File Offset: 0x0000E92C
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
         {
@@ -316,7 +316,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x060000C5 RID: 197 RVA: 0x00010A24 File Offset: 0x0000EC24
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private bool RequestWithProgress(ref int updateId)
         {
@@ -562,7 +562,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x060000C6 RID: 198 RVA: 0x0001130C File Offset: 0x0000F50C
+
         private bool RequestXMLVersionInfo()
         {
             string requestUriString = this._uriUpdatePath + "version.xml";
@@ -674,7 +674,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x060000C7 RID: 199 RVA: 0x00011624 File Offset: 0x0000F824
+
         private void SetMessage(string messageA, string messageB)
         {
             if (this.sFrm != null)
@@ -689,7 +689,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000C8 RID: 200 RVA: 0x00011688 File Offset: 0x0000F888
+
         private void ShowMessage(bool silent, ref IMessager iLoadFrm)
         {
             if (!silent & iLoadFrm == null)
@@ -704,7 +704,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060000C9 RID: 201 RVA: 0x000116D8 File Offset: 0x0000F8D8
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         public clsXMLUpdate.eCheckResponse UpdateCheck(bool silent, ref IMessager iLoadFrm)
         {
@@ -864,130 +864,130 @@ namespace Hero_Designer
             return eCheckResponse;
         }
 
-        // Token: 0x04000044 RID: 68
+
         private const string TempFile = "Autoupdate.tmp";
 
-        // Token: 0x04000045 RID: 69
+
         private readonly string _uriUpdatePath = "";
 
-        // Token: 0x04000046 RID: 70
+
         private IMessager mFrm = null;
 
-        // Token: 0x04000047 RID: 71
+
         public bool RestartNeeded = false;
 
-        // Token: 0x04000048 RID: 72
+
         private frmZStatus sFrm = null;
 
-        // Token: 0x04000049 RID: 73
+
         protected clsXMLUpdate.clsXMLItem[] Updates = new clsXMLUpdate.clsXMLItem[0];
 
-        // Token: 0x02000011 RID: 17
+
         protected class clsXMLItem
         {
-            // Token: 0x0400004A RID: 74
+
             public string DisplayName = "";
 
-            // Token: 0x0400004B RID: 75
+
             public string LocalDest = "";
 
-            // Token: 0x0400004C RID: 76
+
             public bool Manual = true;
 
-            // Token: 0x0400004D RID: 77
+
             public string NodeName = "";
 
-            // Token: 0x0400004E RID: 78
+
             public string Notes = "";
 
-            // Token: 0x0400004F RID: 79
+
             public clsXMLUpdate.eUpdateType nType = clsXMLUpdate.eUpdateType.None;
 
-            // Token: 0x04000050 RID: 80
+
             public bool Restart = false;
 
-            // Token: 0x04000051 RID: 81
+
             public int Size = 0;
 
-            // Token: 0x04000052 RID: 82
+
             public string SourceURI = "";
 
-            // Token: 0x04000053 RID: 83
+
             public float Version = 0f;
 
-            // Token: 0x04000054 RID: 84
+
             public DateTime VersionDate = new DateTime(1, 1, 1);
         }
 
-        // Token: 0x02000012 RID: 18
+
         public enum eCheckResponse
         {
-            // Token: 0x04000056 RID: 86
+
             NoUpdates,
-            // Token: 0x04000057 RID: 87
+
             Updates,
-            // Token: 0x04000058 RID: 88
+
             FailedWithMessage
         }
 
-        // Token: 0x02000013 RID: 19
+
         protected enum eUpdateType
         {
-            // Token: 0x0400005A RID: 90
+
             None,
-            // Token: 0x0400005B RID: 91
+
             AppUpdate,
-            // Token: 0x0400005C RID: 92
+
             DBUpdate
         }
 
-        // Token: 0x02000014 RID: 20
+
         private struct Keys
         {
-            // Token: 0x0400005D RID: 93
+
             public const string DisplayName = "Name";
 
-            // Token: 0x0400005E RID: 94
+
             public const string SourceURI = "URI";
 
-            // Token: 0x0400005F RID: 95
+
             public const string DestFn = "LocalDest";
 
-            // Token: 0x04000060 RID: 96
+
             public const string Size = "Size";
 
-            // Token: 0x04000061 RID: 97
+
             public const string Version = "Version";
 
-            // Token: 0x04000062 RID: 98
+
             public const string VersionDate = "Date";
 
-            // Token: 0x04000063 RID: 99
+
             public const string Restart = "Restart";
 
-            // Token: 0x04000064 RID: 100
+
             public const string Manual = "Manual";
 
-            // Token: 0x04000065 RID: 101
+
             public const string Notes = "Notes";
 
-            // Token: 0x02000015 RID: 21
+
             public struct Attribs
             {
-                // Token: 0x04000066 RID: 102
+
                 public const string Version = "Version";
             }
 
-            // Token: 0x02000016 RID: 22
+
             public struct Nodes
             {
-                // Token: 0x04000067 RID: 103
+
                 public const string Main = "Planner";
 
-                // Token: 0x04000068 RID: 104
+
                 public const string AppUpdate = "Update";
 
-                // Token: 0x04000069 RID: 105
+
                 public const string DBUpdate = "Database";
             }
         }

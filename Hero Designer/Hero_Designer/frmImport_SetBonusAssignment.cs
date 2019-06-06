@@ -10,11 +10,11 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000043 RID: 67
+
 
     public partial class frmImport_SetBonusAssignment : Form
     {
-        // Token: 0x1700041A RID: 1050
+
         // (get) Token: 0x06000C49 RID: 3145 RVA: 0x0007A04C File Offset: 0x0007824C
         // (set) Token: 0x06000C4A RID: 3146 RVA: 0x0007A064 File Offset: 0x00078264
         internal virtual Button btnClose
@@ -39,7 +39,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700041B RID: 1051
+
         // (get) Token: 0x06000C4B RID: 3147 RVA: 0x0007A0C0 File Offset: 0x000782C0
         // (set) Token: 0x06000C4C RID: 3148 RVA: 0x0007A0D8 File Offset: 0x000782D8
         internal virtual Button btnFile
@@ -64,7 +64,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700041C RID: 1052
+
         // (get) Token: 0x06000C4D RID: 3149 RVA: 0x0007A134 File Offset: 0x00078334
         // (set) Token: 0x06000C4E RID: 3150 RVA: 0x0007A14C File Offset: 0x0007834C
         internal virtual Button btnImport
@@ -89,7 +89,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700041D RID: 1053
+
         // (get) Token: 0x06000C4F RID: 3151 RVA: 0x0007A1A8 File Offset: 0x000783A8
         // (set) Token: 0x06000C50 RID: 3152 RVA: 0x0007A1C0 File Offset: 0x000783C0
         internal virtual OpenFileDialog dlgBrowse
@@ -105,7 +105,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700041E RID: 1054
+
         // (get) Token: 0x06000C51 RID: 3153 RVA: 0x0007A1CC File Offset: 0x000783CC
         // (set) Token: 0x06000C52 RID: 3154 RVA: 0x0007A1E4 File Offset: 0x000783E4
         internal virtual Label lblFile
@@ -121,7 +121,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C53 RID: 3155 RVA: 0x0007A1EE File Offset: 0x000783EE
+
         public frmImport_SetBonusAssignment()
         {
             base.Load += this.frmImport_SetBonusAssignment_Load;
@@ -129,13 +129,13 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x06000C54 RID: 3156 RVA: 0x0007A21E File Offset: 0x0007841E
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
-        // Token: 0x06000C55 RID: 3157 RVA: 0x0007A228 File Offset: 0x00078428
+
         private void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
@@ -147,7 +147,7 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C56 RID: 3158 RVA: 0x0007A27F File Offset: 0x0007847F
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
@@ -155,7 +155,7 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C57 RID: 3159 RVA: 0x0007A2A0 File Offset: 0x000784A0
+
         private void BusyHide()
         {
             if (this.bFrm != null)
@@ -165,7 +165,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000C58 RID: 3160 RVA: 0x0007A2D0 File Offset: 0x000784D0
+
         private void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -176,20 +176,20 @@ namespace Hero_Designer
             this.bFrm.SetMessage(sMessage);
         }
 
-        // Token: 0x06000C59 RID: 3161 RVA: 0x0007A315 File Offset: 0x00078515
+
         public void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
         }
 
-        // Token: 0x06000C5B RID: 3163 RVA: 0x0007A380 File Offset: 0x00078580
+
         private void frmImport_SetBonusAssignment_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets2", "boostsets4");
             this.DisplayInfo();
         }
 
-        // Token: 0x06000C5D RID: 3165 RVA: 0x0007A6D0 File Offset: 0x000788D0
+
         private bool ParseClasses(string iFileName)
         {
             int num = 0;
@@ -340,30 +340,30 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x0400050F RID: 1295
+
         [AccessedThroughProperty("btnClose")]
         private Button _btnClose;
 
-        // Token: 0x04000510 RID: 1296
+
         [AccessedThroughProperty("btnFile")]
         private Button _btnFile;
 
-        // Token: 0x04000511 RID: 1297
+
         [AccessedThroughProperty("btnImport")]
         private Button _btnImport;
 
-        // Token: 0x04000512 RID: 1298
+
         [AccessedThroughProperty("dlgBrowse")]
         private OpenFileDialog _dlgBrowse;
 
-        // Token: 0x04000513 RID: 1299
+
         [AccessedThroughProperty("lblFile")]
         private Label _lblFile;
 
-        // Token: 0x04000514 RID: 1300
+
         private frmBusy bFrm;
 
-        // Token: 0x04000516 RID: 1302
+
         private string FullFileName;
     }
 }

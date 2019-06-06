@@ -5,7 +5,7 @@ using System.Text;
 // Token: 0x0200002A RID: 42
 public class EnhancementSet
 {
-    // Token: 0x06000598 RID: 1432 RVA: 0x00022528 File Offset: 0x00020728
+
     public void InitBonus()
     {
         for (int index = 0; index <= this.Bonus.Length - 1; index++)
@@ -24,7 +24,7 @@ public class EnhancementSet
         }
     }
 
-    // Token: 0x06000599 RID: 1433 RVA: 0x00022620 File Offset: 0x00020820
+
     public string GetEffectString(int index, bool special, bool longForm = false)
     {
         EnhancementSet.BonusItem[] bonusItemArray = special ? this.SpecialBonus : this.Bonus;
@@ -83,7 +83,7 @@ public class EnhancementSet
         return str;
     }
 
-    // Token: 0x0600059A RID: 1434 RVA: 0x000228A8 File Offset: 0x00020AA8
+
     public EnhancementSet()
     {
         this.DisplayName = string.Empty;
@@ -97,7 +97,7 @@ public class EnhancementSet
         this.LevelMax = 52;
     }
 
-    // Token: 0x0600059B RID: 1435 RVA: 0x00022964 File Offset: 0x00020B64
+
     public EnhancementSet(EnhancementSet iIOSet)
     {
         this.DisplayName = iIOSet.DisplayName;
@@ -121,7 +121,7 @@ public class EnhancementSet
         this.Uid = iIOSet.Uid;
     }
 
-    // Token: 0x0600059C RID: 1436 RVA: 0x00022AE8 File Offset: 0x00020CE8
+
     public EnhancementSet(BinaryReader reader)
     {
         this.DisplayName = reader.ReadString();
@@ -168,7 +168,7 @@ public class EnhancementSet
         }
     }
 
-    // Token: 0x0600059D RID: 1437 RVA: 0x00022E1C File Offset: 0x0002101C
+
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.DisplayName);
@@ -212,7 +212,7 @@ public class EnhancementSet
         }
     }
 
-    // Token: 0x0600059E RID: 1438 RVA: 0x000230BC File Offset: 0x000212BC
+
     public bool ImportFromCSV(string iCSV)
     {
         bool flag;
@@ -245,7 +245,7 @@ public class EnhancementSet
         return flag;
     }
 
-    // Token: 0x0600059F RID: 1439 RVA: 0x00023194 File Offset: 0x00021394
+
     private static string GenerateShortName(string displayName)
     {
         string[] strArray = displayName.Split(new char[]
@@ -278,46 +278,46 @@ public class EnhancementSet
         return result;
     }
 
-    // Token: 0x04000291 RID: 657
+
     public string DisplayName = string.Empty;
 
-    // Token: 0x04000292 RID: 658
+
     public string ShortName = string.Empty;
 
-    // Token: 0x04000293 RID: 659
+
     public string Desc = string.Empty;
 
-    // Token: 0x04000294 RID: 660
+
     public Enums.eSetType SetType;
 
-    // Token: 0x04000295 RID: 661
+
     public int[] Enhancements;
 
-    // Token: 0x04000296 RID: 662
+
     public string Image = string.Empty;
 
-    // Token: 0x04000297 RID: 663
+
     public int ImageIdx;
 
-    // Token: 0x04000298 RID: 664
+
     public EnhancementSet.BonusItem[] Bonus = new EnhancementSet.BonusItem[5];
 
-    // Token: 0x04000299 RID: 665
+
     public EnhancementSet.BonusItem[] SpecialBonus = new EnhancementSet.BonusItem[6];
 
-    // Token: 0x0400029A RID: 666
+
     public int LevelMin;
 
-    // Token: 0x0400029B RID: 667
+
     public int LevelMax;
 
-    // Token: 0x0400029C RID: 668
+
     public string Uid = string.Empty;
 
-    // Token: 0x0200002B RID: 43
+
     public struct BonusItem
     {
-        // Token: 0x060005A0 RID: 1440 RVA: 0x000232B8 File Offset: 0x000214B8
+
         public void Assign(EnhancementSet.BonusItem iBi)
         {
             this.Special = iBi.Special;
@@ -330,22 +330,22 @@ public class EnhancementSet
             this.Slotted = iBi.Slotted;
         }
 
-        // Token: 0x0400029D RID: 669
+
         public int Special;
 
-        // Token: 0x0400029E RID: 670
+
         public string[] Name;
 
-        // Token: 0x0400029F RID: 671
+
         public int[] Index;
 
-        // Token: 0x040002A0 RID: 672
+
         public string AltString;
 
-        // Token: 0x040002A1 RID: 673
+
         public Enums.ePvX PvMode;
 
-        // Token: 0x040002A2 RID: 674
+
         public int Slotted;
     }
 }

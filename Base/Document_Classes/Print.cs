@@ -6,10 +6,10 @@ using Base.Master_Classes;
 
 namespace Base.Document_Classes
 {
-    // Token: 0x02000014 RID: 20
+
     public class Print : IDisposable
     {
-        // Token: 0x06000480 RID: 1152 RVA: 0x0001474C File Offset: 0x0001294C
+
         public Print()
         {
             this.Document = new PrintDocument();
@@ -20,7 +20,7 @@ namespace Base.Document_Classes
             this.Document.PrinterSettings.DefaultPageSettings.Landscape = false;
         }
 
-        // Token: 0x06000481 RID: 1153 RVA: 0x000147F8 File Offset: 0x000129F8
+
         public void InitiatePrint()
         {
             if (!this.Document.PrinterSettings.IsValid)
@@ -57,7 +57,7 @@ namespace Base.Document_Classes
             }
         }
 
-        // Token: 0x06000482 RID: 1154 RVA: 0x000149E4 File Offset: 0x00012BE4
+
         private void PrintBegin(object sender, PrintEventArgs e)
         {
             this._pageNumber = 0;
@@ -67,13 +67,13 @@ namespace Base.Document_Classes
             this._sectionCompleted = Print.PrintWhat.None;
         }
 
-        // Token: 0x06000483 RID: 1155 RVA: 0x00014A22 File Offset: 0x00012C22
+
         private void PrintEnd(object sender, PrintEventArgs e)
         {
             this.Document = new PrintDocument();
         }
 
-        // Token: 0x06000484 RID: 1156 RVA: 0x00014A30 File Offset: 0x00012C30
+
         private void PrintPage(object sender, PrintPageEventArgs args)
         {
             RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
@@ -103,7 +103,7 @@ namespace Base.Document_Classes
             }
         }
 
-        // Token: 0x06000485 RID: 1157 RVA: 0x00014B34 File Offset: 0x00012D34
+
         private int PageBorder(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -159,7 +159,7 @@ namespace Base.Document_Classes
             return Convert.ToInt32(num4 + 8);
         }
 
-        // Token: 0x06000486 RID: 1158 RVA: 0x00014E08 File Offset: 0x00013008
+
         private void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
         {
             int num2 = bounds.Top;
@@ -208,7 +208,7 @@ namespace Base.Document_Classes
             this._printingHistory = false;
         }
 
-        // Token: 0x06000487 RID: 1159 RVA: 0x00015024 File Offset: 0x00013224
+
         private static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -263,7 +263,7 @@ namespace Base.Document_Classes
             return num2;
         }
 
-        // Token: 0x06000488 RID: 1160 RVA: 0x0001537C File Offset: 0x0001357C
+
         private void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -326,7 +326,7 @@ namespace Base.Document_Classes
             this._printingProfile = false;
         }
 
-        // Token: 0x06000489 RID: 1161 RVA: 0x000155E8 File Offset: 0x000137E8
+
         private int BuildPowerListLong(ref int vPos, RectangleF bounds, int fontSize, Print.PrintWhat selection, PrintPageEventArgs args)
         {
             int num;
@@ -533,7 +533,7 @@ namespace Base.Document_Classes
             return num;
         }
 
-        // Token: 0x0600048A RID: 1162 RVA: 0x00015FB8 File Offset: 0x000141B8
+
         private void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
         {
             this._printingProfile = false;
@@ -565,7 +565,7 @@ namespace Base.Document_Classes
             }
         }
 
-        // Token: 0x0600048B RID: 1163 RVA: 0x00016154 File Offset: 0x00014354
+
         private static void BuildPowerListShort(ref int vPos, RectangleF bounds, int fontSize, bool skipInherent, bool skipNormal, bool kheldian, PrintPageEventArgs args)
         {
             bool printIoLevels = MidsContext.Config.I9.PrintIOLevels;
@@ -726,20 +726,20 @@ namespace Base.Document_Classes
             }
         }
 
-        // Token: 0x0600048C RID: 1164 RVA: 0x0001694C File Offset: 0x00014B4C
+
         private static Rectangle RectConvert(RectangleF iRect)
         {
             return new Rectangle((int)iRect.X, (int)iRect.Y, (int)iRect.Width, (int)iRect.Height);
         }
 
-        // Token: 0x0600048D RID: 1165 RVA: 0x00016983 File Offset: 0x00014B83
+
         public void Dispose()
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-        // Token: 0x0600048E RID: 1166 RVA: 0x00016998 File Offset: 0x00014B98
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
@@ -752,43 +752,43 @@ namespace Base.Document_Classes
             }
         }
 
-        // Token: 0x04000140 RID: 320
+
         private const int TextBase = 8;
 
-        // Token: 0x04000141 RID: 321
+
         private const float LineSpace = 1.25f;
 
-        // Token: 0x04000142 RID: 322
+
         public PrintDocument Document;
 
-        // Token: 0x04000143 RID: 323
+
         private int _pageNumber;
 
-        // Token: 0x04000144 RID: 324
+
         private int _pIndex;
 
-        // Token: 0x04000145 RID: 325
+
         private bool _printingProfile;
 
-        // Token: 0x04000146 RID: 326
+
         private bool _printingHistory;
 
-        // Token: 0x04000147 RID: 327
+
         private bool _endOfPage;
 
-        // Token: 0x04000148 RID: 328
+
         private Print.PrintWhat _sectionCompleted;
 
-        // Token: 0x02000015 RID: 21
+
         private enum PrintWhat
         {
-            // Token: 0x0400014A RID: 330
+
             None = -1,
-            // Token: 0x0400014B RID: 331
+
             Powers,
-            // Token: 0x0400014C RID: 332
+
             Inherent,
-            // Token: 0x0400014D RID: 333
+
             EpicInherent
         }
     }

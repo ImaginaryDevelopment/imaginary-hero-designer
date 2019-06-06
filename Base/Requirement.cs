@@ -5,12 +5,12 @@ using System.Windows.Forms;
 // Token: 0x02000095 RID: 149
 public class Requirement
 {
-    // Token: 0x060006B8 RID: 1720 RVA: 0x00030B14 File Offset: 0x0002ED14
+
     public Requirement()
     {
     }
 
-    // Token: 0x060006B9 RID: 1721 RVA: 0x00030B8C File Offset: 0x0002ED8C
+
     public Requirement(Requirement iReq)
     {
         this.ClassName = new string[iReq.ClassName.Length];
@@ -51,7 +51,7 @@ public class Requirement
         }
     }
 
-    // Token: 0x060006BA RID: 1722 RVA: 0x00030E54 File Offset: 0x0002F054
+
     public Requirement(BinaryReader reader)
     {
         this.ClassName = new string[reader.ReadInt32() + 1];
@@ -80,7 +80,7 @@ public class Requirement
         }
     }
 
-    // Token: 0x060006BB RID: 1723 RVA: 0x00030FF4 File Offset: 0x0002F1F4
+
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.ClassName.Length - 1);
@@ -107,7 +107,7 @@ public class Requirement
         }
     }
 
-    // Token: 0x060006BC RID: 1724 RVA: 0x0003110C File Offset: 0x0002F30C
+
     public bool ClassOk(string uidClass)
     {
         bool flag;
@@ -146,7 +146,7 @@ public class Requirement
         return flag;
     }
 
-    // Token: 0x060006BD RID: 1725 RVA: 0x000311E8 File Offset: 0x0002F3E8
+
     public bool ClassOk(int nidClass)
     {
         bool flag;
@@ -185,7 +185,7 @@ public class Requirement
         return flag;
     }
 
-    // Token: 0x060006BE RID: 1726 RVA: 0x000312B0 File Offset: 0x0002F4B0
+
     public bool ReferencesPower(string uidPower, string uidFix = "")
     {
         bool flag = false;
@@ -214,7 +214,7 @@ public class Requirement
         return flag;
     }
 
-    // Token: 0x060006BF RID: 1727 RVA: 0x00031388 File Offset: 0x0002F588
+
     public void AddPowers(string power1, string power2)
     {
         if (power1.StartsWith("!") & (power2.StartsWith("!") | string.IsNullOrEmpty(power2)))
@@ -237,27 +237,27 @@ public class Requirement
         }
     }
 
-    // Token: 0x04000684 RID: 1668
+
     public string[] ClassName = new string[0];
 
-    // Token: 0x04000685 RID: 1669
+
     public string[] ClassNameNot = new string[0];
 
-    // Token: 0x04000686 RID: 1670
+
     public string[][] PowerID = new string[0][];
 
-    // Token: 0x04000687 RID: 1671
+
     public string[][] PowerIDNot = new string[0][];
 
-    // Token: 0x04000688 RID: 1672
+
     public int[] NClassName = new int[0];
 
-    // Token: 0x04000689 RID: 1673
+
     public int[] NClassNameNot = new int[0];
 
-    // Token: 0x0400068A RID: 1674
+
     public int[][] NPowerID = new int[0][];
 
-    // Token: 0x0400068B RID: 1675
+
     public int[][] NPowerIDNot = new int[0][];
 }

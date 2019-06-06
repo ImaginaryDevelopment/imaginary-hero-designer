@@ -12,11 +12,11 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200003E RID: 62
+
 
     public partial class frmImport_Power : Form
     {
-        // Token: 0x170003DC RID: 988
+
         // (get) Token: 0x06000B89 RID: 2953 RVA: 0x000742C8 File Offset: 0x000724C8
         // (set) Token: 0x06000B8A RID: 2954 RVA: 0x000742E0 File Offset: 0x000724E0
         internal virtual Button btnCheckAll
@@ -41,7 +41,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003DD RID: 989
+
         // (get) Token: 0x06000B8B RID: 2955 RVA: 0x0007433C File Offset: 0x0007253C
         // (set) Token: 0x06000B8C RID: 2956 RVA: 0x00074354 File Offset: 0x00072554
         internal virtual Button btnCheckModified
@@ -66,7 +66,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003DE RID: 990
+
         // (get) Token: 0x06000B8D RID: 2957 RVA: 0x000743B0 File Offset: 0x000725B0
         // (set) Token: 0x06000B8E RID: 2958 RVA: 0x000743C8 File Offset: 0x000725C8
         internal virtual Button btnClose
@@ -91,7 +91,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003DF RID: 991
+
         // (get) Token: 0x06000B8F RID: 2959 RVA: 0x00074424 File Offset: 0x00072624
         // (set) Token: 0x06000B90 RID: 2960 RVA: 0x0007443C File Offset: 0x0007263C
         internal virtual Button btnEraseAll
@@ -116,7 +116,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E0 RID: 992
+
         // (get) Token: 0x06000B91 RID: 2961 RVA: 0x00074498 File Offset: 0x00072698
         // (set) Token: 0x06000B92 RID: 2962 RVA: 0x000744B0 File Offset: 0x000726B0
         internal virtual Button btnFile
@@ -141,7 +141,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E1 RID: 993
+
         // (get) Token: 0x06000B93 RID: 2963 RVA: 0x0007450C File Offset: 0x0007270C
         // (set) Token: 0x06000B94 RID: 2964 RVA: 0x00074524 File Offset: 0x00072724
         internal virtual Button btnImport
@@ -166,7 +166,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E2 RID: 994
+
         // (get) Token: 0x06000B95 RID: 2965 RVA: 0x00074580 File Offset: 0x00072780
         // (set) Token: 0x06000B96 RID: 2966 RVA: 0x00074598 File Offset: 0x00072798
         internal virtual Button btnUncheckAll
@@ -191,7 +191,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E3 RID: 995
+
         // (get) Token: 0x06000B97 RID: 2967 RVA: 0x000745F4 File Offset: 0x000727F4
         // (set) Token: 0x06000B98 RID: 2968 RVA: 0x0007460C File Offset: 0x0007280C
         internal virtual ColumnHeader ColumnHeader1
@@ -207,7 +207,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E4 RID: 996
+
         // (get) Token: 0x06000B99 RID: 2969 RVA: 0x00074618 File Offset: 0x00072818
         // (set) Token: 0x06000B9A RID: 2970 RVA: 0x00074630 File Offset: 0x00072830
         internal virtual ColumnHeader ColumnHeader2
@@ -223,7 +223,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E5 RID: 997
+
         // (get) Token: 0x06000B9B RID: 2971 RVA: 0x0007463C File Offset: 0x0007283C
         // (set) Token: 0x06000B9C RID: 2972 RVA: 0x00074654 File Offset: 0x00072854
         internal virtual ColumnHeader ColumnHeader3
@@ -239,7 +239,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E6 RID: 998
+
         // (get) Token: 0x06000B9D RID: 2973 RVA: 0x00074660 File Offset: 0x00072860
         // (set) Token: 0x06000B9E RID: 2974 RVA: 0x00074678 File Offset: 0x00072878
         internal virtual ColumnHeader ColumnHeader4
@@ -255,7 +255,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E7 RID: 999
+
         // (get) Token: 0x06000B9F RID: 2975 RVA: 0x00074684 File Offset: 0x00072884
         // (set) Token: 0x06000BA0 RID: 2976 RVA: 0x0007469C File Offset: 0x0007289C
         internal virtual ColumnHeader ColumnHeader5
@@ -271,7 +271,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E8 RID: 1000
+
         // (get) Token: 0x06000BA1 RID: 2977 RVA: 0x000746A8 File Offset: 0x000728A8
         // (set) Token: 0x06000BA2 RID: 2978 RVA: 0x000746C0 File Offset: 0x000728C0
         internal virtual OpenFileDialog dlgBrowse
@@ -287,7 +287,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003E9 RID: 1001
+
         // (get) Token: 0x06000BA3 RID: 2979 RVA: 0x000746CC File Offset: 0x000728CC
         // (set) Token: 0x06000BA4 RID: 2980 RVA: 0x000746E4 File Offset: 0x000728E4
         internal virtual Label Label6
@@ -303,7 +303,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003EA RID: 1002
+
         // (get) Token: 0x06000BA5 RID: 2981 RVA: 0x000746F0 File Offset: 0x000728F0
         // (set) Token: 0x06000BA6 RID: 2982 RVA: 0x00074708 File Offset: 0x00072908
         internal virtual Label Label8
@@ -319,7 +319,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003EB RID: 1003
+
         // (get) Token: 0x06000BA7 RID: 2983 RVA: 0x00074714 File Offset: 0x00072914
         // (set) Token: 0x06000BA8 RID: 2984 RVA: 0x0007472C File Offset: 0x0007292C
         internal virtual Label lblCount
@@ -335,7 +335,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003EC RID: 1004
+
         // (get) Token: 0x06000BA9 RID: 2985 RVA: 0x00074738 File Offset: 0x00072938
         // (set) Token: 0x06000BAA RID: 2986 RVA: 0x00074750 File Offset: 0x00072950
         internal virtual Label lblDate
@@ -351,7 +351,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003ED RID: 1005
+
         // (get) Token: 0x06000BAB RID: 2987 RVA: 0x0007475C File Offset: 0x0007295C
         // (set) Token: 0x06000BAC RID: 2988 RVA: 0x00074774 File Offset: 0x00072974
         internal virtual Label lblFile
@@ -367,7 +367,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003EE RID: 1006
+
         // (get) Token: 0x06000BAD RID: 2989 RVA: 0x00074780 File Offset: 0x00072980
         // (set) Token: 0x06000BAE RID: 2990 RVA: 0x00074798 File Offset: 0x00072998
         internal virtual ListView lstImport
@@ -383,7 +383,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x170003EF RID: 1007
+
         // (get) Token: 0x06000BAF RID: 2991 RVA: 0x000747A4 File Offset: 0x000729A4
         // (set) Token: 0x06000BB0 RID: 2992 RVA: 0x000747BC File Offset: 0x000729BC
         internal virtual NumericUpDown udRevision
@@ -399,7 +399,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000BB1 RID: 2993 RVA: 0x000747C6 File Offset: 0x000729C6
+
         public frmImport_Power()
         {
             base.Load += this.frmImport_Power_Load;
@@ -408,7 +408,7 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        // Token: 0x06000BB2 RID: 2994 RVA: 0x00074804 File Offset: 0x00072A04
+
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
@@ -420,7 +420,7 @@ namespace Hero_Designer
             this.lstImport.EndUpdate();
         }
 
-        // Token: 0x06000BB3 RID: 2995 RVA: 0x0007486C File Offset: 0x00072A6C
+
         private void btnCheckModified_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
@@ -439,13 +439,13 @@ namespace Hero_Designer
             this.lstImport.EndUpdate();
         }
 
-        // Token: 0x06000BB4 RID: 2996 RVA: 0x00074954 File Offset: 0x00072B54
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
 
-        // Token: 0x06000BB5 RID: 2997 RVA: 0x00074960 File Offset: 0x00072B60
+
         private void btnEraseAll_Click(object sender, EventArgs e)
         {
             if (Interaction.MsgBox("Really wipte the power array. You shouldn't do this if you want to preserve any special power settings.", MsgBoxStyle.YesNo, "Really?") != MsgBoxResult.No)
@@ -463,7 +463,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000BB6 RID: 2998 RVA: 0x000749EC File Offset: 0x00072BEC
+
         private void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
@@ -481,13 +481,13 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        // Token: 0x06000BB7 RID: 2999 RVA: 0x00074A6F File Offset: 0x00072C6F
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             this.ProcessImport();
         }
 
-        // Token: 0x06000BB8 RID: 3000 RVA: 0x00074A7C File Offset: 0x00072C7C
+
         private void btnUncheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
@@ -499,7 +499,7 @@ namespace Hero_Designer
             this.lstImport.EndUpdate();
         }
 
-        // Token: 0x06000BB9 RID: 3001 RVA: 0x00074AE4 File Offset: 0x00072CE4
+
         private void BusyHide()
         {
             if (this.bFrm != null)
@@ -509,7 +509,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000BBA RID: 3002 RVA: 0x00074B14 File Offset: 0x00072D14
+
         private void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -520,7 +520,7 @@ namespace Hero_Designer
             this.bFrm.SetMessage(sMessage);
         }
 
-        // Token: 0x06000BBB RID: 3003 RVA: 0x00074B5C File Offset: 0x00072D5C
+
         private int[] CheckForDeletedPowers()
         {
             int[] numArray = new int[0];
@@ -569,7 +569,7 @@ namespace Hero_Designer
             return numArray;
         }
 
-        // Token: 0x06000BBC RID: 3004 RVA: 0x00074CE4 File Offset: 0x00072EE4
+
         private static int DeletePowers(int[] pList)
         {
             int index = 0;
@@ -619,7 +619,7 @@ namespace Hero_Designer
             return num3;
         }
 
-        // Token: 0x06000BBD RID: 3005 RVA: 0x00074E50 File Offset: 0x00073050
+
         private void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
@@ -628,7 +628,7 @@ namespace Hero_Designer
             this.lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
         }
 
-        // Token: 0x06000BBF RID: 3007 RVA: 0x00074F40 File Offset: 0x00073140
+
         private void FillListView()
         {
             string[] items = new string[5];
@@ -681,14 +681,14 @@ namespace Hero_Designer
             this.lstImport.EndUpdate();
         }
 
-        // Token: 0x06000BC0 RID: 3008 RVA: 0x000750F8 File Offset: 0x000732F8
+
         private void frmImport_Power_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.PowerVersion.SourceFile;
             this.DisplayInfo();
         }
 
-        // Token: 0x06000BC2 RID: 3010 RVA: 0x00075AF8 File Offset: 0x00073CF8
+
         private bool ParseClasses(string iFileName)
         {
             int num = 0;
@@ -757,7 +757,7 @@ namespace Hero_Designer
             return true;
         }
 
-        // Token: 0x06000BC3 RID: 3011 RVA: 0x00075D10 File Offset: 0x00073F10
+
         private bool ProcessImport()
         {
             bool flag = false;
@@ -789,93 +789,93 @@ namespace Hero_Designer
             return flag;
         }
 
-        // Token: 0x040004C1 RID: 1217
+
         [AccessedThroughProperty("btnCheckAll")]
         private Button _btnCheckAll;
 
-        // Token: 0x040004C2 RID: 1218
+
         [AccessedThroughProperty("btnCheckModified")]
         private Button _btnCheckModified;
 
-        // Token: 0x040004C3 RID: 1219
+
         [AccessedThroughProperty("btnClose")]
         private Button _btnClose;
 
-        // Token: 0x040004C4 RID: 1220
+
         [AccessedThroughProperty("btnEraseAll")]
         private Button _btnEraseAll;
 
-        // Token: 0x040004C5 RID: 1221
+
         [AccessedThroughProperty("btnFile")]
         private Button _btnFile;
 
-        // Token: 0x040004C6 RID: 1222
+
         [AccessedThroughProperty("btnImport")]
         private Button _btnImport;
 
-        // Token: 0x040004C7 RID: 1223
+
         [AccessedThroughProperty("btnUncheckAll")]
         private Button _btnUncheckAll;
 
-        // Token: 0x040004C8 RID: 1224
+
         [AccessedThroughProperty("ColumnHeader1")]
         private ColumnHeader _ColumnHeader1;
 
-        // Token: 0x040004C9 RID: 1225
+
         [AccessedThroughProperty("ColumnHeader2")]
         private ColumnHeader _ColumnHeader2;
 
-        // Token: 0x040004CA RID: 1226
+
         [AccessedThroughProperty("ColumnHeader3")]
         private ColumnHeader _ColumnHeader3;
 
-        // Token: 0x040004CB RID: 1227
+
         [AccessedThroughProperty("ColumnHeader4")]
         private ColumnHeader _ColumnHeader4;
 
-        // Token: 0x040004CC RID: 1228
+
         [AccessedThroughProperty("ColumnHeader5")]
         private ColumnHeader _ColumnHeader5;
 
-        // Token: 0x040004CD RID: 1229
+
         [AccessedThroughProperty("dlgBrowse")]
         private OpenFileDialog _dlgBrowse;
 
-        // Token: 0x040004CE RID: 1230
+
         [AccessedThroughProperty("Label6")]
         private Label _Label6;
 
-        // Token: 0x040004CF RID: 1231
+
         [AccessedThroughProperty("Label8")]
         private Label _Label8;
 
-        // Token: 0x040004D0 RID: 1232
+
         [AccessedThroughProperty("lblCount")]
         private Label _lblCount;
 
-        // Token: 0x040004D1 RID: 1233
+
         [AccessedThroughProperty("lblDate")]
         private Label _lblDate;
 
-        // Token: 0x040004D2 RID: 1234
+
         [AccessedThroughProperty("lblFile")]
         private Label _lblFile;
 
-        // Token: 0x040004D3 RID: 1235
+
         [AccessedThroughProperty("lstImport")]
         private ListView _lstImport;
 
-        // Token: 0x040004D4 RID: 1236
+
         [AccessedThroughProperty("udRevision")]
         private NumericUpDown _udRevision;
 
-        // Token: 0x040004D5 RID: 1237
+
         private frmBusy bFrm;
 
-        // Token: 0x040004D7 RID: 1239
+
         private string FullFileName;
 
-        // Token: 0x040004D8 RID: 1240
+
         private PowerData[] ImportBuffer;
     }
 }

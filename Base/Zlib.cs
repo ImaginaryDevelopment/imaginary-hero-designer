@@ -8,15 +8,15 @@ using System.Windows.Forms;
 // Token: 0x020000A0 RID: 160
 public class Zlib
 {
-    // Token: 0x060006FD RID: 1789
+
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "compress2", ExactSpelling = true, SetLastError = true)]
     private static extern int Compress(ref byte destBytes, ref int destLength, ref byte srcBytes, int srcLength, int compressionLevel);
 
-    // Token: 0x060006FE RID: 1790
+
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "uncompress", ExactSpelling = true, SetLastError = true)]
     private static extern int Uncompress(ref byte destBytes, ref int destLength, ref byte srceBytes, int srcLength);
 
-    // Token: 0x060006FF RID: 1791 RVA: 0x00032DC8 File Offset: 0x00030FC8
+
     public int UnPack(string iRoot, string iFileName, ref DateTime iDate, ref string iComments)
     {
         this._sFrm = new ZStatus
@@ -76,7 +76,7 @@ public class Zlib
         return packHeader.PackContents;
     }
 
-    // Token: 0x06000700 RID: 1792 RVA: 0x00032FDC File Offset: 0x000311DC
+
     private static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
     {
         int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
@@ -125,7 +125,7 @@ public class Zlib
         return flag;
     }
 
-    // Token: 0x06000701 RID: 1793 RVA: 0x00033140 File Offset: 0x00031340
+
     private bool UncompressFile(string iRoot, BinaryReader reader)
     {
         Zlib.FileHeader fileHeader = default(Zlib.FileHeader);
@@ -179,7 +179,7 @@ public class Zlib
         return flag;
     }
 
-    // Token: 0x06000702 RID: 1794 RVA: 0x00033310 File Offset: 0x00031510
+
     public static byte[] CompressChunk(ref byte[] iBytes)
     {
         int length = iBytes.Length;
@@ -217,7 +217,7 @@ public class Zlib
         return numArray;
     }
 
-    // Token: 0x06000703 RID: 1795 RVA: 0x00033428 File Offset: 0x00031628
+
     public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
     {
         int length = iBytes.Length;
@@ -236,7 +236,7 @@ public class Zlib
         return numArray;
     }
 
-    // Token: 0x06000704 RID: 1796 RVA: 0x00033488 File Offset: 0x00031688
+
     public static byte[] UUEncodeBytes(byte[] iBytes)
     {
         if (iBytes.Length % 3 != 0)
@@ -280,7 +280,7 @@ public class Zlib
         return memoryStream.ToArray();
     }
 
-    // Token: 0x06000705 RID: 1797 RVA: 0x000335D4 File Offset: 0x000317D4
+
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {
         byte[] numArray;
@@ -330,7 +330,7 @@ public class Zlib
         return numArray;
     }
 
-    // Token: 0x06000706 RID: 1798 RVA: 0x00033748 File Offset: 0x00031948
+
     public static byte[] HexDecodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
@@ -347,7 +347,7 @@ public class Zlib
         return memoryStream.ToArray();
     }
 
-    // Token: 0x06000707 RID: 1799 RVA: 0x000337D4 File Offset: 0x000319D4
+
     public static byte[] HexEncodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
@@ -371,7 +371,7 @@ public class Zlib
         return memoryStream.ToArray();
     }
 
-    // Token: 0x06000708 RID: 1800 RVA: 0x000338A0 File Offset: 0x00031AA0
+
     public static string BreakString(string iString, int length, bool bookend = false)
     {
         string str = string.Empty;
@@ -406,7 +406,7 @@ public class Zlib
         return str;
     }
 
-    // Token: 0x06000709 RID: 1801 RVA: 0x00033974 File Offset: 0x00031B74
+
     public static string UnbreakHex(string iString)
     {
         string empty = string.Empty;
@@ -422,7 +422,7 @@ public class Zlib
         return empty;
     }
 
-    // Token: 0x0600070A RID: 1802 RVA: 0x000339F0 File Offset: 0x00031BF0
+
     public static string UnbreakString(string iString, bool bookend = false)
     {
         string str;
@@ -487,7 +487,7 @@ public class Zlib
         return str;
     }
 
-    // Token: 0x0600070B RID: 1803 RVA: 0x00033C58 File Offset: 0x00031E58
+
     public static bool CheckTag(string iFileName)
     {
         FileStream fileStream;
@@ -512,75 +512,75 @@ public class Zlib
         return flag;
     }
 
-    // Token: 0x040006EA RID: 1770
+
     private const float Version = 1f;
 
-    // Token: 0x040006EB RID: 1771
+
     private const string PackHeaderToken = "MHDPackZ";
 
-    // Token: 0x040006EC RID: 1772
+
     private const int ErrorNone = 0;
 
-    // Token: 0x040006ED RID: 1773
+
     private const int ErrorStream = -2;
 
-    // Token: 0x040006EE RID: 1774
+
     private const int ErrorData = -3;
 
-    // Token: 0x040006EF RID: 1775
+
     private const int ErrorOutOfMem = -4;
 
-    // Token: 0x040006F0 RID: 1776
+
     private const int ErrorBuffer = -5;
 
-    // Token: 0x040006F1 RID: 1777
+
     private ZStatus _sFrm;
 
-    // Token: 0x020000A1 RID: 161
+
     private enum ECompressionLevel
     {
-        // Token: 0x040006F3 RID: 1779
+
         None,
-        // Token: 0x040006F4 RID: 1780
+
         Fast,
-        // Token: 0x040006F5 RID: 1781
+
         Best = 9,
-        // Token: 0x040006F6 RID: 1782
+
         DefaultCompress = -1
     }
 
-    // Token: 0x020000A2 RID: 162
+
     private struct PackHeader
     {
-        // Token: 0x040006F7 RID: 1783
+
         public float PackVersion;
 
-        // Token: 0x040006F8 RID: 1784
+
         public int PackContents;
 
-        // Token: 0x040006F9 RID: 1785
+
         public string PackComments;
 
-        // Token: 0x040006FA RID: 1786
+
         public int DateD;
 
-        // Token: 0x040006FB RID: 1787
+
         public int DateM;
 
-        // Token: 0x040006FC RID: 1788
+
         public int DateY;
     }
 
-    // Token: 0x020000A3 RID: 163
+
     private struct FileHeader
     {
-        // Token: 0x040006FD RID: 1789
+
         public string FileName;
 
-        // Token: 0x040006FE RID: 1790
+
         public int DecompressedSize;
 
-        // Token: 0x040006FF RID: 1791
+
         public int CompressedSize;
     }
 }

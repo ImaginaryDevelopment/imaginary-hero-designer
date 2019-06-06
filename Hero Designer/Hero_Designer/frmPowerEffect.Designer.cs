@@ -1,9 +1,9 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x0200004E RID: 78
+
 	public partial class frmPowerEffect : global::System.Windows.Forms.Form
 	{
-		// Token: 0x0600104F RID: 4175 RVA: 0x000A1370 File Offset: 0x0009F570
+
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.components != null)
@@ -13,7 +13,7 @@
 			base.Dispose(disposing);
 		}
 
-		// Token: 0x06001055 RID: 4181 RVA: 0x000A1934 File Offset: 0x0009FB34
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -622,7 +622,7 @@
 			base.PerformLayout();
 		}
 
-		// Token: 0x040006A2 RID: 1698
+
 		private global::System.ComponentModel.IContainer components;
 	}
 }

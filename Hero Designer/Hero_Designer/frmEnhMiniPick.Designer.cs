@@ -1,9 +1,9 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000031 RID: 49
+
 	public partial class frmEnhMiniPick : global::System.Windows.Forms.Form
 	{
-		// Token: 0x06000945 RID: 2373 RVA: 0x00063798 File Offset: 0x00061998
+
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.components != null)
@@ -13,7 +13,7 @@
 			base.Dispose(disposing);
 		}
 
-		// Token: 0x06000947 RID: 2375 RVA: 0x000637D4 File Offset: 0x000619D4
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -63,7 +63,7 @@
 			base.ResumeLayout(false);
 		}
 
-		// Token: 0x040003D7 RID: 983
+
 		private global::System.ComponentModel.IContainer components;
 	}
 }

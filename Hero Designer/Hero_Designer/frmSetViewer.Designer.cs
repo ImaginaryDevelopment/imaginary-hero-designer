@@ -1,9 +1,9 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000058 RID: 88
+
 	public partial class frmSetViewer : global::System.Windows.Forms.Form
 	{
-		// Token: 0x060012D0 RID: 4816 RVA: 0x000BAE34 File Offset: 0x000B9034
+
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.components != null)
@@ -13,7 +13,7 @@
 			base.Dispose(disposing);
 		}
 
-		// Token: 0x060012D6 RID: 4822 RVA: 0x000BB9AC File Offset: 0x000B9BAC
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -181,7 +181,7 @@
 			base.ResumeLayout(false);
 		}
 
-		// Token: 0x0400078E RID: 1934
+
 		private global::System.ComponentModel.IContainer components;
 	}
 }

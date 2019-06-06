@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    // Token: 0x02000020 RID: 32
+
     public partial class frmAccolade : Form
     {
-        // Token: 0x17000065 RID: 101
+
         // (get) Token: 0x060001BB RID: 443 RVA: 0x00022138 File Offset: 0x00020338
         // (set) Token: 0x060001BC RID: 444 RVA: 0x00022150 File Offset: 0x00020350
         internal virtual ImageButton ibClose
@@ -40,7 +40,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000066 RID: 102
+
         // (get) Token: 0x060001BD RID: 445 RVA: 0x000221AC File Offset: 0x000203AC
         // (set) Token: 0x060001BE RID: 446 RVA: 0x000221C4 File Offset: 0x000203C4
         internal virtual Label lblLock
@@ -65,7 +65,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000067 RID: 103
+
         // (get) Token: 0x060001BF RID: 447 RVA: 0x00022220 File Offset: 0x00020420
         // (set) Token: 0x060001C0 RID: 448 RVA: 0x00022238 File Offset: 0x00020438
         internal virtual ListLabelV2 llLeft
@@ -96,7 +96,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000068 RID: 104
+
         // (get) Token: 0x060001C1 RID: 449 RVA: 0x000222E0 File Offset: 0x000204E0
         // (set) Token: 0x060001C2 RID: 450 RVA: 0x000222F8 File Offset: 0x000204F8
         internal virtual ListLabelV2 llRight
@@ -127,7 +127,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x17000069 RID: 105
+
         // (get) Token: 0x060001C3 RID: 451 RVA: 0x000223A0 File Offset: 0x000205A0
         // (set) Token: 0x060001C4 RID: 452 RVA: 0x000223B8 File Offset: 0x000205B8
         internal virtual Panel Panel1
@@ -143,7 +143,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700006A RID: 106
+
         // (get) Token: 0x060001C5 RID: 453 RVA: 0x000223C4 File Offset: 0x000205C4
         // (set) Token: 0x060001C6 RID: 454 RVA: 0x000223DC File Offset: 0x000205DC
         internal virtual ctlPopUp PopInfo
@@ -171,7 +171,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x1700006B RID: 107
+
         // (get) Token: 0x060001C7 RID: 455 RVA: 0x00022460 File Offset: 0x00020660
         // (set) Token: 0x060001C8 RID: 456 RVA: 0x00022478 File Offset: 0x00020678
         internal virtual VScrollBar VScrollBar1
@@ -196,7 +196,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001C9 RID: 457 RVA: 0x000224D2 File Offset: 0x000206D2
+
         public frmAccolade(ref frmMain iParent, List<IPower> iPowers)
         {
             base.Load += this.frmAccolade_Load;
@@ -206,7 +206,7 @@ namespace Hero_Designer
             this._myPowers = iPowers;
         }
 
-        // Token: 0x060001CA RID: 458 RVA: 0x00022510 File Offset: 0x00020710
+
         private void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
@@ -214,7 +214,7 @@ namespace Hero_Designer
             this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
-        // Token: 0x060001CC RID: 460 RVA: 0x000225C8 File Offset: 0x000207C8
+
         private void FillLists()
         {
             this.llLeft.SuspendRedraw = true;
@@ -265,7 +265,7 @@ namespace Hero_Designer
             this.llRight.Refresh();
         }
 
-        // Token: 0x060001CD RID: 461 RVA: 0x00022790 File Offset: 0x00020990
+
         private void frmAccolade_Load(object sender, EventArgs e)
         {
             this.BackColor = this._myParent.BackColor;
@@ -288,20 +288,20 @@ namespace Hero_Designer
             this.FillLists();
         }
 
-        // Token: 0x060001CE RID: 462 RVA: 0x000228BE File Offset: 0x00020ABE
+
         private void ibClose_ButtonClicked()
         {
             base.Close();
         }
 
-        // Token: 0x060001D0 RID: 464 RVA: 0x00023109 File Offset: 0x00021309
+
         private void lblLock_Click(object sender, EventArgs e)
         {
             this._locked = false;
             this.lblLock.Visible = false;
         }
 
-        // Token: 0x060001D1 RID: 465 RVA: 0x00023120 File Offset: 0x00021320
+
         private void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
@@ -328,13 +328,13 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001D2 RID: 466 RVA: 0x0002321B File Offset: 0x0002141B
+
         private void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.MiniPowerInfo(Item.Index);
         }
 
-        // Token: 0x060001D3 RID: 467 RVA: 0x0002322C File Offset: 0x0002142C
+
         private void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -343,7 +343,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001D4 RID: 468 RVA: 0x00023258 File Offset: 0x00021458
+
         private void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
@@ -371,20 +371,20 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001D5 RID: 469 RVA: 0x00023354 File Offset: 0x00021554
+
         private void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.MiniPowerInfo(pIDX);
         }
 
-        // Token: 0x060001D6 RID: 470 RVA: 0x0002337F File Offset: 0x0002157F
+
         private void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        // Token: 0x060001D7 RID: 471 RVA: 0x00023390 File Offset: 0x00021590
+
         private void MiniPowerInfo(int pIDX)
         {
             if (!this._locked)
@@ -497,7 +497,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001D8 RID: 472 RVA: 0x00023970 File Offset: 0x00021B70
+
         private void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -506,7 +506,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x060001D9 RID: 473 RVA: 0x0002399C File Offset: 0x00021B9C
+
         private void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -517,7 +517,7 @@ namespace Hero_Designer
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
-        // Token: 0x060001DA RID: 474 RVA: 0x00023A3C File Offset: 0x00021C3C
+
         private static void UpdateLlColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -529,46 +529,46 @@ namespace Hero_Designer
             iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
 
-        // Token: 0x060001DB RID: 475 RVA: 0x00023B00 File Offset: 0x00021D00
+
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.PopInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.PopInfo.lHeight - (float)this.Panel1.Height));
         }
 
-        // Token: 0x040000BD RID: 189
+
         [AccessedThroughProperty("ibClose")]
         private ImageButton _ibClose;
 
-        // Token: 0x040000BE RID: 190
+
         [AccessedThroughProperty("lblLock")]
         private Label _lblLock;
 
-        // Token: 0x040000BF RID: 191
+
         [AccessedThroughProperty("llLeft")]
         private ListLabelV2 _llLeft;
 
-        // Token: 0x040000C0 RID: 192
+
         [AccessedThroughProperty("llRight")]
         private ListLabelV2 _llRight;
 
-        // Token: 0x040000C1 RID: 193
+
         private bool _locked;
 
-        // Token: 0x040000C2 RID: 194
+
         private readonly frmMain _myParent;
 
-        // Token: 0x040000C3 RID: 195
+
         private readonly List<IPower> _myPowers;
 
-        // Token: 0x040000C4 RID: 196
+
         [AccessedThroughProperty("Panel1")]
         private Panel _Panel1;
 
-        // Token: 0x040000C5 RID: 197
+
         [AccessedThroughProperty("PopInfo")]
         private ctlPopUp _PopInfo;
 
-        // Token: 0x040000C6 RID: 198
+
         [AccessedThroughProperty("VScrollBar1")]
         private VScrollBar _VScrollBar1;
     }

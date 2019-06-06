@@ -6,7 +6,7 @@ using System.Windows.Forms;
 // Token: 0x0200001A RID: 26
 public class ConfigData
 {
-    // Token: 0x17000203 RID: 515
+
     // (get) Token: 0x060004B8 RID: 1208 RVA: 0x0001A3A0 File Offset: 0x000185A0
     internal static ConfigData Current
     {
@@ -21,7 +21,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x17000204 RID: 516
+
     // (get) Token: 0x060004B9 RID: 1209 RVA: 0x0001A3D8 File Offset: 0x000185D8
     // (set) Token: 0x060004BA RID: 1210 RVA: 0x0001A3F5 File Offset: 0x000185F5
     public bool PrintHistoryIOLevels
@@ -36,7 +36,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004BB RID: 1211 RVA: 0x0001A430 File Offset: 0x00018630
+
     private ConfigData(string iFilename = "")
     {
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
@@ -82,7 +82,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004BC RID: 1212 RVA: 0x0001A6CC File Offset: 0x000188CC
+
     private void Load(string iFilename)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
@@ -313,7 +313,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004BD RID: 1213 RVA: 0x0001B168 File Offset: 0x00019368
+
     public void CreateDefaultSaveFolder()
     {
         if (!Directory.Exists(this.DefaultSaveFolder))
@@ -326,7 +326,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004BE RID: 1214 RVA: 0x0001B1B0 File Offset: 0x000193B0
+
     private void Save(string iFilename, float version)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
@@ -466,7 +466,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004BF RID: 1215 RVA: 0x0001BAD8 File Offset: 0x00019CD8
+
     private static Color ReadRGB(BinaryReader reader)
     {
         byte red = reader.ReadByte();
@@ -475,7 +475,7 @@ public class ConfigData
         return Color.FromArgb((int)red, (int)green, (int)blue);
     }
 
-    // Token: 0x060004C0 RID: 1216 RVA: 0x0001BB07 File Offset: 0x00019D07
+
     private static void WriteRGB(BinaryWriter writer, Color iColor)
     {
         writer.Write(iColor.R);
@@ -483,7 +483,7 @@ public class ConfigData
         writer.Write(iColor.B);
     }
 
-    // Token: 0x060004C1 RID: 1217 RVA: 0x0001BB34 File Offset: 0x00019D34
+
     private void RelocateSaveFolder(bool manual)
     {
         if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked || manual))
@@ -519,7 +519,7 @@ public class ConfigData
         this.SaveFolderChecked = true;
     }
 
-    // Token: 0x060004C2 RID: 1218 RVA: 0x0001BC3C File Offset: 0x00019E3C
+
     public void SaveConfig()
     {
         try
@@ -533,7 +533,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004C3 RID: 1219 RVA: 0x0001BC88 File Offset: 0x00019E88
+
     private void LoadOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
@@ -558,7 +558,7 @@ public class ConfigData
         }
     }
 
-    // Token: 0x060004C4 RID: 1220 RVA: 0x0001BD94 File Offset: 0x00019F94
+
     private void SaveOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
@@ -577,184 +577,184 @@ public class ConfigData
         }
     }
 
-    // Token: 0x04000159 RID: 345
+
     public const string UpdatePathDefault = "http://repo.cohtitan.com/mids_updates/";
 
-    // Token: 0x0400015A RID: 346
+
     private static ConfigData _current;
 
-    // Token: 0x0400015B RID: 347
+
     public float BaseAcc = 0.75f;
 
-    // Token: 0x0400015C RID: 348
+
     public Enums.eEnhGrade CalcEnhOrigin = Enums.eEnhGrade.SingleO;
 
-    // Token: 0x0400015D RID: 349
+
     public Enums.eEnhRelative CalcEnhLevel = Enums.eEnhRelative.Even;
 
-    // Token: 0x0400015E RID: 350
+
     public int ExempHigh = 50;
 
-    // Token: 0x0400015F RID: 351
+
     public int TeamSize = 1;
 
-    // Token: 0x04000160 RID: 352
+
     public int ExempLow = 50;
 
-    // Token: 0x04000161 RID: 353
+
     public int ForceLevel = 50;
 
-    // Token: 0x04000162 RID: 354
+
     public int ExportScheme = 1;
 
-    // Token: 0x04000163 RID: 355
+
     public int ExportTarget = 1;
 
-    // Token: 0x04000164 RID: 356
+
     public bool ExportBonusTotals;
 
-    // Token: 0x04000165 RID: 357
+
     public bool ExportBonusList;
 
-    // Token: 0x04000166 RID: 358
+
     public bool NoToolTips;
 
-    // Token: 0x04000167 RID: 359
+
     public bool DataDamageGraph = true;
 
-    // Token: 0x04000168 RID: 360
+
     public Enums.eDDGraph DataGraphType = Enums.eDDGraph.Both;
 
-    // Token: 0x04000169 RID: 361
+
     public bool DataDamageGraphPercentageOnly;
 
-    // Token: 0x0400016A RID: 362
+
     private bool _hideOriginEnhancements;
 
-    // Token: 0x0400016B RID: 363
+
     public bool ShowVillainColours = true;
 
-    // Token: 0x0400016C RID: 364
+
     public bool CheckForUpdates;
 
-    // Token: 0x0400016D RID: 365
+
     public bool FreshInstall = true;
 
-    // Token: 0x0400016E RID: 366
+
     public int Columns = 3;
 
-    // Token: 0x0400016F RID: 367
+
     public Size LastSize = new Size(1072, 760);
 
-    // Token: 0x04000170 RID: 368
+
     public Enums.eVisibleSize DvState;
 
-    // Token: 0x04000171 RID: 369
+
     public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
 
-    // Token: 0x04000172 RID: 370
+
     public Enums.eSuppress Suppression;
 
-    // Token: 0x04000173 RID: 371
+
     public bool UseArcanaTime;
 
-    // Token: 0x04000174 RID: 372
+
     public ConfigData.SDamageMath DamageMath;
 
-    // Token: 0x04000175 RID: 373
+
     public ConfigData.IncludeExclude Inc;
 
-    // Token: 0x04000176 RID: 374
+
     public readonly ExportConfig Export;
 
-    // Token: 0x04000177 RID: 375
+
     public ConfigData.Si9 I9;
 
-    // Token: 0x04000178 RID: 376
+
     public ConfigData.FontSettings RtFont;
 
-    // Token: 0x04000179 RID: 377
+
     public Enums.CompOverride[] CompOverride = new Enums.CompOverride[0];
 
-    // Token: 0x0400017A RID: 378
+
     public bool PrintInColour;
 
-    // Token: 0x0400017B RID: 379
+
     private int _printScheme;
 
-    // Token: 0x0400017C RID: 380
+
     public ConfigData.PrintOptionProfile PrintProfile = ConfigData.PrintOptionProfile.SinglePage;
 
-    // Token: 0x0400017D RID: 381
+
     public bool PrintProfileEnh = true;
 
-    // Token: 0x0400017E RID: 382
+
     public bool PrintHistory;
 
-    // Token: 0x0400017F RID: 383
+
     public bool SaveFolderChecked;
 
-    // Token: 0x04000180 RID: 384
+
     public string LastPrinter = string.Empty;
 
-    // Token: 0x04000181 RID: 385
+
     public bool ShowSlotLevels;
 
-    // Token: 0x04000182 RID: 386
+
     public bool ShowEnhRel;
 
-    // Token: 0x04000183 RID: 387
+
     public bool ShowRelSymbols;
 
-    // Token: 0x04000184 RID: 388
+
     public bool LoadLastFileOnStart = true;
 
-    // Token: 0x04000185 RID: 389
+
     public string LastFileName = string.Empty;
 
-    // Token: 0x04000186 RID: 390
+
     public string DefaultSaveFolder = string.Empty;
 
-    // Token: 0x04000187 RID: 391
+
     public bool EnhanceVisibility;
 
-    // Token: 0x04000188 RID: 392
+
     public bool DesaturateInherent = true;
 
-    // Token: 0x04000189 RID: 393
+
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
 
-    // Token: 0x0400018A RID: 394
+
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
 
-    // Token: 0x0400018B RID: 395
+
     public string UpdatePath = "http://repo.cohtitan.com/mids_updates/";
 
-    // Token: 0x0400018C RID: 396
+
     public Tips Tips;
 
-    // Token: 0x0400018D RID: 397
+
     public bool ShowPopup = true;
 
-    // Token: 0x0400018E RID: 398
+
     public bool ShowAlphaPopup = true;
 
-    // Token: 0x0400018F RID: 399
+
     public bool PopupRecipes;
 
-    // Token: 0x04000190 RID: 400
+
     public bool ShoppingListIncludesRecipes;
 
-    // Token: 0x04000191 RID: 401
+
     public bool ReapeatOnMiddleClick = true;
 
-    // Token: 0x04000192 RID: 402
+
     public bool ExportHex = true;
 
-    // Token: 0x04000193 RID: 403
+
     public bool ExportChunkOnly;
 
-    // Token: 0x04000194 RID: 404
+
     public readonly short[] DragDropScenarioAction = new short[]
     {
         3,
@@ -779,112 +779,112 @@ public class ConfigData
         0
     };
 
-    // Token: 0x04000195 RID: 405
+
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
 
-    // Token: 0x04000196 RID: 406
+
     public bool LongExport;
 
-    // Token: 0x04000197 RID: 407
+
     public bool MasterMode;
 
-    // Token: 0x04000198 RID: 408
+
     public bool ShrinkFrmSets;
 
-    // Token: 0x04000199 RID: 409
+
     public readonly RTF RTF;
 
-    // Token: 0x0200001B RID: 27
+
     public enum EDamageMath
     {
-        // Token: 0x0400019B RID: 411
+
         Minimum,
-        // Token: 0x0400019C RID: 412
+
         Average,
-        // Token: 0x0400019D RID: 413
+
         Max
     }
 
-    // Token: 0x0200001C RID: 28
+
     public enum EDamageReturn
     {
-        // Token: 0x0400019F RID: 415
+
         Numeric,
-        // Token: 0x040001A0 RID: 416
+
         DPS,
-        // Token: 0x040001A1 RID: 417
+
         DPA
     }
 
-    // Token: 0x0200001D RID: 29
+
     public enum PrintOptionProfile
     {
-        // Token: 0x040001A3 RID: 419
+
         None,
-        // Token: 0x040001A4 RID: 420
+
         SinglePage,
-        // Token: 0x040001A5 RID: 421
+
         MultiPage
     }
 
-    // Token: 0x0200001E RID: 30
+
     public struct SDamageMath
     {
-        // Token: 0x040001A6 RID: 422
+
         public ConfigData.EDamageMath Calculate;
 
-        // Token: 0x040001A7 RID: 423
+
         public ConfigData.EDamageReturn ReturnValue;
     }
 
-    // Token: 0x0200001F RID: 31
+
     public struct IncludeExclude
     {
-        // Token: 0x040001A8 RID: 424
+
         public bool PvE;
     }
 
-    // Token: 0x02000020 RID: 32
+
     public struct Si9
     {
-        // Token: 0x040001A9 RID: 425
+
         public int DefaultIOLevel;
 
-        // Token: 0x040001AA RID: 426
+
         public bool DisplayIOLevels;
 
-        // Token: 0x040001AB RID: 427
+
         public bool CalculateEnahncementFX;
 
-        // Token: 0x040001AC RID: 428
+
         public bool CalculateSetBonusFX;
 
-        // Token: 0x040001AD RID: 429
+
         public bool PrintIOLevels;
 
-        // Token: 0x040001AE RID: 430
+
         public bool ExportIOLevels;
 
-        // Token: 0x040001AF RID: 431
+
         public bool ExportStripSetNames;
 
-        // Token: 0x040001B0 RID: 432
+
         public bool ExportStripEnh;
 
-        // Token: 0x040001B1 RID: 433
+
         public bool ExportDataChunk;
 
-        // Token: 0x040001B2 RID: 434
+
         public bool ExportCompress;
 
-        // Token: 0x040001B3 RID: 435
+
         public bool ExportExtraSep;
     }
 
-    // Token: 0x02000021 RID: 33
+
     public struct FontSettings
     {
-        // Token: 0x060004C5 RID: 1221 RVA: 0x0001BE84 File Offset: 0x0001A084
+
         public void Assign(ConfigData.FontSettings iFs)
         {
             this.RTFBase = iFs.RTFBase;
@@ -908,7 +908,7 @@ public class ConfigData
             this.PairedBase = iFs.PairedBase;
         }
 
-        // Token: 0x060004C6 RID: 1222 RVA: 0x0001BF8C File Offset: 0x0001A18C
+
         public void SetDefault()
         {
             this.RTFBase = 16;
@@ -932,92 +932,92 @@ public class ConfigData
             this.PairedBold = false;
         }
 
-        // Token: 0x040001B4 RID: 436
+
         public int RTFBase;
 
-        // Token: 0x040001B5 RID: 437
+
         public bool RTFBold;
 
-        // Token: 0x040001B6 RID: 438
+
         public Color ColorBackgroundHero;
 
-        // Token: 0x040001B7 RID: 439
+
         public Color ColorBackgroundVillain;
 
-        // Token: 0x040001B8 RID: 440
+
         public Color ColorText;
 
-        // Token: 0x040001B9 RID: 441
+
         public Color ColorInvention;
 
-        // Token: 0x040001BA RID: 442
+
         public Color ColorInventionInv;
 
-        // Token: 0x040001BB RID: 443
+
         public Color ColorFaded;
 
-        // Token: 0x040001BC RID: 444
+
         public Color ColorEnhancement;
 
-        // Token: 0x040001BD RID: 445
+
         public Color ColorWarning;
 
-        // Token: 0x040001BE RID: 446
+
         public Color ColorPlName;
 
-        // Token: 0x040001BF RID: 447
+
         public Color ColorPlSpecial;
 
-        // Token: 0x040001C0 RID: 448
+
         public Color ColorPowerAvailable;
 
-        // Token: 0x040001C1 RID: 449
+
         public Color ColorPowerTaken;
 
-        // Token: 0x040001C2 RID: 450
+
         public Color ColorPowerTakenDark;
 
-        // Token: 0x040001C3 RID: 451
+
         public Color ColorPowerHighlight;
 
-        // Token: 0x040001C4 RID: 452
+
         public Color ColorPowerDisabled;
 
-        // Token: 0x040001C5 RID: 453
+
         public bool PairedBold;
 
-        // Token: 0x040001C6 RID: 454
+
         public float PairedBase;
     }
 
-    // Token: 0x02000022 RID: 34
+
     public struct ExternalUris
     {
-        // Token: 0x040001C7 RID: 455
+
         public const string VersionFile = "version.xml";
 
-        // Token: 0x040001C8 RID: 456
+
         public const string EmailAddress = "midsteam@cohtitan.com";
 
-        // Token: 0x040001C9 RID: 457
+
         public const string BugReport = "http://www.honourableunited.org.uk/mhdreport.php";
 
-        // Token: 0x040001CA RID: 458
+
         public const string DataLinkDownload = "http://www.cohplanner.com/mids/download.php";
 
-        // Token: 0x040001CB RID: 459
+
         public const string Forums = "http://www.cohtitan.com/forum/";
 
-        // Token: 0x040001CC RID: 460
+
         public const string Titan = "http://www.cohtitan.com/";
 
-        // Token: 0x040001CD RID: 461
+
         public const string Planner = "http://www.cohplanner.com/";
 
-        // Token: 0x040001CE RID: 462
+
         public const string Donate = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167";
 
-        // Token: 0x040001CF RID: 463
+
         public const string UpdateExe = "MHDLoader.exe";
     }
 }

@@ -1,7 +1,7 @@
 ﻿// Token: 0x020000A4 RID: 164
 public partial class ZStatus : global::System.Windows.Forms.Form
 {
-	// Token: 0x06000710 RID: 1808 RVA: 0x00033D94 File Offset: 0x00031F94
+
 	protected override void Dispose(bool disposing)
 	{
 		if (disposing && this.components != null)
@@ -11,7 +11,7 @@ public partial class ZStatus : global::System.Windows.Forms.Form
 		base.Dispose(disposing);
 	}
 
-	// Token: 0x06000711 RID: 1809 RVA: 0x00033DCC File Offset: 0x00031FCC
+
 	private void InitializeComponent()
 	{
 		global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::ZStatus));
@@ -54,15 +54,15 @@ public partial class ZStatus : global::System.Windows.Forms.Form
 		base.ResumeLayout(false);
 	}
 
-	// Token: 0x04000700 RID: 1792
+
 	private global::System.ComponentModel.IContainer components;
 
-	// Token: 0x04000701 RID: 1793
+
 	internal global::System.Windows.Forms.Label lblStatus2;
 
-	// Token: 0x04000702 RID: 1794
+
 	internal global::System.Windows.Forms.Label lblStatus1;
 
-	// Token: 0x04000703 RID: 1795
+
 	internal global::System.Windows.Forms.Label lblTitle;
 }

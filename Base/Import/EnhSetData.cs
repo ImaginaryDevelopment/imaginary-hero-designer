@@ -2,10 +2,10 @@
 
 namespace Import
 {
-    // Token: 0x02000082 RID: 130
+
     public class EnhSetData
     {
-        // Token: 0x06000611 RID: 1553 RVA: 0x0002ABC8 File Offset: 0x00028DC8
+
         public EnhSetData(string iString)
         {
             if (!string.IsNullOrEmpty(iString))
@@ -26,7 +26,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000612 RID: 1554 RVA: 0x0002ACB0 File Offset: 0x00028EB0
+
         public void Apply()
         {
             if (this.IsValid)
@@ -44,7 +44,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000613 RID: 1555 RVA: 0x0002AD38 File Offset: 0x00028F38
+
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -94,19 +94,19 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x04000613 RID: 1555
+
         public readonly EnhancementSet Data;
 
-        // Token: 0x04000614 RID: 1556
+
         public bool IsNew;
 
-        // Token: 0x04000615 RID: 1557
+
         public readonly int Index = -1;
 
-        // Token: 0x04000616 RID: 1558
+
         public readonly bool IsValid = true;
 
-        // Token: 0x04000617 RID: 1559
+
         private readonly string _csvString = string.Empty;
     }
 }

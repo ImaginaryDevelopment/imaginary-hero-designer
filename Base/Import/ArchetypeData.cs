@@ -3,10 +3,10 @@ using Base.Data_Classes;
 
 namespace Import
 {
-    // Token: 0x02000080 RID: 128
+
     public class ArchetypeData
     {
-        // Token: 0x0600060A RID: 1546 RVA: 0x0002978C File Offset: 0x0002798C
+
         public ArchetypeData(string iString)
         {
             if (iString == null)
@@ -31,7 +31,7 @@ namespace Import
             }
         }
 
-        // Token: 0x0600060B RID: 1547 RVA: 0x00029880 File Offset: 0x00027A80
+
         public void Apply()
         {
             if (this.IsValid)
@@ -53,7 +53,7 @@ namespace Import
             }
         }
 
-        // Token: 0x0600060C RID: 1548 RVA: 0x00029970 File Offset: 0x00027B70
+
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -133,19 +133,19 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x04000606 RID: 1542
+
         public readonly Archetype Data;
 
-        // Token: 0x04000607 RID: 1543
+
         public readonly bool IsNew;
 
-        // Token: 0x04000608 RID: 1544
+
         private int _index = -1;
 
-        // Token: 0x04000609 RID: 1545
+
         private readonly string _csvString = string.Empty;
 
-        // Token: 0x0400060A RID: 1546
+
         public readonly bool IsValid = true;
     }
 }

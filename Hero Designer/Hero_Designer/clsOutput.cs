@@ -6,10 +6,10 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-    // Token: 0x0200000A RID: 10
+
     public class clsOutput
     {
-        // Token: 0x06000065 RID: 101 RVA: 0x00003348 File Offset: 0x00001548
+
         public clsOutput()
         {
             this.LongExport = MidsContext.Config.LongExport;
@@ -49,7 +49,7 @@ namespace Hero_Designer
             }
         }
 
-        // Token: 0x06000066 RID: 102 RVA: 0x000035AC File Offset: 0x000017AC
+
         public string Build(string iDataLink)
         {
             string str8 = "";
@@ -190,7 +190,7 @@ namespace Hero_Designer
             return str8 + this.LineBreak();
         }
 
-        // Token: 0x06000067 RID: 103 RVA: 0x00003C84 File Offset: 0x00001E84
+
         private string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
         {
             string str = "";
@@ -494,7 +494,7 @@ namespace Hero_Designer
             return str;
         }
 
-        // Token: 0x06000068 RID: 104 RVA: 0x00004DC0 File Offset: 0x00002FC0
+
         private string buildSetBonusListLong()
         {
             string str = this.formatColor(this.formatUnderline(this.formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + this.LineBreak();
@@ -560,7 +560,7 @@ namespace Hero_Designer
             return str;
         }
 
-        // Token: 0x06000069 RID: 105 RVA: 0x00005384 File Offset: 0x00003584
+
         private string BuildSetBonusListShort()
         {
             IEffect[] cumulativeSetBonuses = MidsContext.Character.CurrentBuild.GetCumulativeSetBonuses();
@@ -579,13 +579,13 @@ namespace Hero_Designer
             return this.formatColor(this.formatUnderline(this.formatBold("Set Bonus Totals:")), ExportConfig.Element.Heading) + this.List(iText);
         }
 
-        // Token: 0x0600006A RID: 106 RVA: 0x0000544C File Offset: 0x0000364C
+
         private string formatBold(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].BoldOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].BoldOff;
         }
 
-        // Token: 0x0600006B RID: 107 RVA: 0x000054A4 File Offset: 0x000036A4
+
         private string formatColor(string iText, ExportConfig.Element iElement)
         {
             string str;
@@ -646,19 +646,19 @@ namespace Hero_Designer
             return str;
         }
 
-        // Token: 0x0600006C RID: 108 RVA: 0x00005708 File Offset: 0x00003908
+
         private string formatItalic(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOff;
         }
 
-        // Token: 0x0600006D RID: 109 RVA: 0x00005760 File Offset: 0x00003960
+
         private string formatUnderline(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOff;
         }
 
-        // Token: 0x0600006E RID: 110 RVA: 0x000057B8 File Offset: 0x000039B8
+
         private string LineBreak()
         {
             string result;
@@ -673,7 +673,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x0600006F RID: 111 RVA: 0x000057F4 File Offset: 0x000039F4
+
         private string List(string iText)
         {
             string result;
@@ -696,7 +696,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000070 RID: 112 RVA: 0x00005880 File Offset: 0x00003A80
+
         private string ListItemOff()
         {
             string result;
@@ -711,7 +711,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000071 RID: 113 RVA: 0x000058B4 File Offset: 0x00003AB4
+
         private string ListItemOn()
         {
             string result;
@@ -734,7 +734,7 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x06000072 RID: 114 RVA: 0x00005914 File Offset: 0x00003B14
+
         private string WhiteSpace()
         {
             string result;
@@ -749,32 +749,32 @@ namespace Hero_Designer
             return result;
         }
 
-        // Token: 0x0400002D RID: 45
+
         private string[] BBWhite = new string[]
         {
             " ",
             "\t"
         };
 
-        // Token: 0x0400002E RID: 46
+
         public bool HTML = false;
 
-        // Token: 0x0400002F RID: 47
+
         public int idFormat = MidsContext.Config.ExportTarget;
 
-        // Token: 0x04000030 RID: 48
+
         private int idScheme = MidsContext.Config.ExportScheme;
 
-        // Token: 0x04000031 RID: 49
+
         private bool LongExport = true;
 
-        // Token: 0x04000032 RID: 50
+
         private bool NoHTMLBr = false;
 
-        // Token: 0x04000033 RID: 51
+
         public bool Plain;
 
-        // Token: 0x04000034 RID: 52
+
         private bool UNB = false;
     }
 }

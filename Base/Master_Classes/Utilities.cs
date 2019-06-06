@@ -2,10 +2,10 @@
 
 namespace Base.Master_Classes
 {
-    // Token: 0x02000018 RID: 24
+
     public static class Utilities
     {
-        // Token: 0x06000492 RID: 1170 RVA: 0x000169FC File Offset: 0x00014BFC
+
         public static string FixDP(float iNum)
         {
             string result;
@@ -20,7 +20,7 @@ namespace Base.Master_Classes
             return result;
         }
 
-        // Token: 0x06000493 RID: 1171 RVA: 0x00016A40 File Offset: 0x00014C40
+
         public static string FixDP(float iNum, int maxDecimal)
         {
             string format = "0.";

@@ -2,10 +2,10 @@
 
 namespace Import
 {
-    // Token: 0x02000084 RID: 132
+
     public class PowersetData
     {
-        // Token: 0x06000617 RID: 1559 RVA: 0x0002C0A4 File Offset: 0x0002A2A4
+
         public PowersetData(string iString)
         {
             if (!string.IsNullOrEmpty(iString))
@@ -26,7 +26,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000618 RID: 1560 RVA: 0x0002C180 File Offset: 0x0002A380
+
         public void Apply()
         {
             if (this.IsValid)
@@ -46,7 +46,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000619 RID: 1561 RVA: 0x0002C23C File Offset: 0x0002A43C
+
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -106,19 +106,19 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x0400061D RID: 1565
+
         public readonly Powerset Data;
 
-        // Token: 0x0400061E RID: 1566
+
         public readonly bool IsNew;
 
-        // Token: 0x0400061F RID: 1567
+
         private int _index = -1;
 
-        // Token: 0x04000620 RID: 1568
+
         public readonly bool IsValid;
 
-        // Token: 0x04000621 RID: 1569
+
         private readonly string _csvString = string.Empty;
     }
 }

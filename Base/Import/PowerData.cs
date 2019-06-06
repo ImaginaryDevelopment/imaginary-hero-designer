@@ -3,10 +3,10 @@ using Base.Data_Classes;
 
 namespace Import
 {
-    // Token: 0x02000083 RID: 131
+
     public class PowerData
     {
-        // Token: 0x06000614 RID: 1556 RVA: 0x0002AFF8 File Offset: 0x000291F8
+
         public PowerData(string iString)
         {
             if (string.IsNullOrEmpty(iString))
@@ -38,7 +38,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000615 RID: 1557 RVA: 0x0002B118 File Offset: 0x00029318
+
         public void Apply()
         {
             if (this.IsValid)
@@ -63,7 +63,7 @@ namespace Import
             }
         }
 
-        // Token: 0x06000616 RID: 1558 RVA: 0x0002B228 File Offset: 0x00029428
+
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -250,19 +250,19 @@ namespace Import
             return flag;
         }
 
-        // Token: 0x04000618 RID: 1560
+
         public readonly IPower Data;
 
-        // Token: 0x04000619 RID: 1561
+
         public bool IsNew;
 
-        // Token: 0x0400061A RID: 1562
+
         public int Index = -1;
 
-        // Token: 0x0400061B RID: 1563
+
         public readonly bool IsValid;
 
-        // Token: 0x0400061C RID: 1564
+
         private readonly string _csvString = string.Empty;
     }
 }

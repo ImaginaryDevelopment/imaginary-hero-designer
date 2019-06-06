@@ -1,9 +1,9 @@
 ﻿namespace Hero_Designer
 {
-	// Token: 0x02000034 RID: 52
+
 	public partial class frmExportColor : global::System.Windows.Forms.Form
 	{
-		// Token: 0x06000A19 RID: 2585 RVA: 0x000691F0 File Offset: 0x000673F0
+
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.components != null)
@@ -13,7 +13,7 @@
 			base.Dispose(disposing);
 		}
 
-		// Token: 0x06000A1B RID: 2587 RVA: 0x0006924C File Offset: 0x0006744C
+
 		[global::System.Diagnostics.DebuggerStepThrough]
 		private void InitializeComponent()
 		{
@@ -260,7 +260,7 @@
 			base.PerformLayout();
 		}
 
-		// Token: 0x04000424 RID: 1060
+
 		private global::System.ComponentModel.IContainer components;
 	}
 }
