@@ -86,8 +86,6 @@ public class Modifiers
         }
         return flag;
     }
-
-
     public bool Load()
     {
         string path = Files.SelectDataFileLoad("AttribMod.mhd");
@@ -160,8 +158,6 @@ public class Modifiers
         }
         return flag;
     }
-
-
     public void Store()
     {
         string path = Files.SelectDataFileSave("AttribMod.mhd");
@@ -200,23 +196,11 @@ public class Modifiers
             fileStream.Close();
         }
     }
-
-
     public Modifiers.ModifierTable[] Modifier = new Modifiers.ModifierTable[0];
-
-
     public int Revision;
-
-
     public DateTime RevisionDate = new DateTime(0L);
-
-
     public string SourceIndex = string.Empty;
-
-
     public string SourceTables = string.Empty;
-
-
     public class ModifierTable
     {
 
@@ -227,8 +211,6 @@ public class Modifiers
                 this.Table[index] = new float[0];
             }
         }
-
-
         public void StoreTo(BinaryWriter writer)
         {
             writer.Write(this.ID);
@@ -242,8 +224,6 @@ public class Modifiers
                 }
             }
         }
-
-
         public void Load(BinaryReader reader)
         {
             this.ID = reader.ReadString();
@@ -257,14 +237,8 @@ public class Modifiers
                 }
             }
         }
-
-
         public string ID = string.Empty;
-
-
         public int BaseIndex;
-
-
         public readonly float[][] Table = new float[55][];
     }
 }

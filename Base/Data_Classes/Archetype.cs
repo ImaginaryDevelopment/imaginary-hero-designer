@@ -8,142 +8,34 @@ namespace Base.Data_Classes
 
     public class Archetype : IComparable
     {
-
-    
     
         public int Idx { get; set; }
-
-
-    
-    
         public string DisplayName { get; set; }
-
-
-    
-    
         public Enums.eClassType ClassType { get; set; }
-
-
-    
-    
         public int Hitpoints { get; set; }
-
-
-    
-    
         public float HPCap { get; set; }
-
-
-    
-    
         public string DescLong { get; set; }
-
-
-    
-    
         public string DescShort { get; set; }
-
-
-    
-    
         public float ResCap { get; set; }
-
-
-    
-    
         public float RechargeCap { get; set; }
-
-
-    
-    
         public float DamageCap { get; set; }
-
-
-    
-    
         public float RegenCap { get; set; }
-
-
-    
-    
         public float RecoveryCap { get; set; }
-
-
-    
-    
         public string[] Origin { get; set; }
-
-
-    
-    
         public int[] Primary { get; set; }
-
-
-    
-    
         public int[] Secondary { get; set; }
-
-
-    
-    
         public int[] Ancillary { get; set; }
-
-
-    
-    
         public float PerceptionCap { get; set; }
-
-
-    
-    
         public string ClassName { get; set; }
-
-
-    
-    
         public int Column { get; set; }
-
-
-    
-    
         public string PrimaryGroup { get; set; }
-
-
-    
-    
         public string SecondaryGroup { get; set; }
-
-
-    
-    
         public string EpicGroup { get; set; }
-
-
-    
-    
         public string PoolGroup { get; set; }
-
-
-    
-    
         public bool Playable { get; set; }
-
-
-    
-    
         public float BaseRecovery { get; set; }
-
-
-    
-    
         public float BaseRegen { get; set; }
-
-
-    
-    
         public float BaseThreat { get; set; }
-
-
     
         public bool Hero
         {
@@ -152,8 +44,6 @@ namespace Base.Data_Classes
                 return this.ClassType == Enums.eClassType.Hero || this.ClassType == Enums.eClassType.HeroEpic;
             }
         }
-
-
     
         public bool Epic
         {
@@ -162,8 +52,6 @@ namespace Base.Data_Classes
                 return this.ClassType == Enums.eClassType.HeroEpic || this.ClassType == Enums.eClassType.VillainEpic;
             }
         }
-
-
         public Archetype()
         {
             this.BaseThreat = 1f;
@@ -202,8 +90,6 @@ namespace Base.Data_Classes
             this.DisplayName = "New Archetype";
             this.ClassName = "NewClass";
         }
-
-
         public Archetype(Archetype template) : this()
         {
             this.Idx = template.Idx;
@@ -232,8 +118,6 @@ namespace Base.Data_Classes
             this.BaseThreat = template.BaseThreat;
             this.PerceptionCap = template.PerceptionCap;
         }
-
-
         public Archetype(BinaryReader reader) : this()
         {
             this.DisplayName = reader.ReadString();
@@ -263,8 +147,6 @@ namespace Base.Data_Classes
             this.BaseThreat = reader.ReadSingle();
             this.PerceptionCap = reader.ReadSingle();
         }
-
-
         public void StoreTo(ref BinaryWriter writer)
         {
             writer.Write(this.DisplayName);
@@ -293,8 +175,6 @@ namespace Base.Data_Classes
             writer.Write(this.BaseThreat);
             writer.Write(this.PerceptionCap);
         }
-
-
         public int CompareTo(object obj)
         {
             Archetype archetype = obj as Archetype;
@@ -349,8 +229,6 @@ namespace Base.Data_Classes
             }
             return num;
         }
-
-
         public PopUp.PopupData PopInfo()
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -362,8 +240,6 @@ namespace Base.Data_Classes
             popupData.Sections[index2].Add("You can't change archetype once a build has been started.\nIf you want to pick a different archetype, you need to clear the current build and start a new one.", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 0);
             return popupData;
         }
-
-
         public bool UpdateFromCSV(string csv)
         {
             bool flag;
@@ -415,11 +291,7 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public bool IsModified;
-
-
         public bool IsNew;
     }
 }

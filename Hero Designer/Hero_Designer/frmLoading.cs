@@ -10,8 +10,6 @@ namespace Hero_Designer
 
     public partial class frmLoading : Form, IMessager
     {
-
-    
     
         internal virtual Label Label1
         {
@@ -25,10 +23,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         public PictureBox PictureBox1
         {
             get
@@ -41,10 +35,6 @@ namespace Hero_Designer
                 this._PictureBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual Timer tmrOpacity
         {
             get
@@ -66,14 +56,10 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmLoading()
         {
             this.InitializeComponent();
         }
-
-
         public void SetMessage(string text)
         {
             if (this.Label1.InvokeRequired)
@@ -91,8 +77,6 @@ namespace Hero_Designer
                 this.Refresh();
             }
         }
-
-
         void tmrOpacity_Tick(object sender, EventArgs e)
         {
             if (base.Opacity < 1.0)
@@ -104,20 +88,12 @@ namespace Hero_Designer
                 this.tmrOpacity.Enabled = false;
             }
         }
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("PictureBox1")]
         PictureBox _PictureBox1;
-
-
         [AccessedThroughProperty("tmrOpacity")]
         Timer _tmrOpacity;
-
-
         // (Invoke) Token: 0x06000CB8 RID: 3256
         public delegate void SetTextCallback(string text);
     }

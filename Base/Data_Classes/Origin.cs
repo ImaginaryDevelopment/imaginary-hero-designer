@@ -5,17 +5,9 @@ namespace Base.Data_Classes
 
     public class Origin
     {
-
-    
     
         public string Name { get; private set; }
-
-
-    
-    
         public string[] Grades { get; private set; }
-
-
         internal Origin(string name, string dualO, string singleO)
         {
             this.Name = name;
@@ -28,8 +20,6 @@ namespace Base.Data_Classes
             this.Grades[5] = "IO";
             this.Grades[6] = "IO";
         }
-
-
         public enum Grade
         {
 

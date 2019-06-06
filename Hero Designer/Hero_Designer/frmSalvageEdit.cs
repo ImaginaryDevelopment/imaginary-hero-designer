@@ -9,12 +9,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmSalvageEdit : Form
     {
-
-    
     
         internal virtual Button btnAdd
         {
@@ -37,10 +33,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCancel
         {
             get
@@ -62,10 +54,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDelete
         {
             get
@@ -87,10 +75,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -112,10 +96,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -137,10 +117,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbLevel
         {
             get
@@ -162,10 +138,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbOrigin
         {
             get
@@ -187,10 +159,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbRarity
         {
             get
@@ -212,10 +180,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -228,10 +192,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -244,10 +204,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -260,10 +216,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -276,10 +228,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -292,10 +240,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -308,10 +252,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -324,10 +264,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -340,10 +276,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -356,10 +288,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvSalvage
         {
             get
@@ -381,10 +309,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtExternal
         {
             get
@@ -406,10 +330,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtInternal
         {
             get
@@ -431,16 +351,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmSalvageEdit()
         {
             base.Load += this.frmSalvageEdit_Load;
             this.Updating = true;
             this.InitializeComponent();
         }
-
-
         protected void AddListItem(int Index)
         {
             string[] items = new string[4];
@@ -453,8 +369,6 @@ namespace Hero_Designer
                 this.lvSalvage.Items.Add(new ListViewItem(items));
             }
         }
-
-
         void btnAdd_Click(object sender, EventArgs e)
         {
             IDatabase database = DatabaseAPI.Database;
@@ -465,15 +379,11 @@ namespace Hero_Designer
             this.lvSalvage.Items[this.lvSalvage.Items.Count - 1].Selected = true;
             this.lvSalvage.Items[this.lvSalvage.Items.Count - 1].EnsureVisible();
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             DatabaseAPI.LoadSalvage();
             base.Close();
         }
-
-
         void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -511,8 +421,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnImport_Click(object sender, EventArgs e)
         {
             char[] chArray = new char[]
@@ -568,15 +476,11 @@ namespace Hero_Designer
             }
             this.FillList();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.SaveSalvage();
             base.Close();
         }
-
-
         void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -600,8 +504,6 @@ namespace Hero_Designer
                 this.UpdateListItem(selectedIndex);
             }
         }
-
-
         void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -611,8 +513,6 @@ namespace Hero_Designer
                 this.UpdateListItem(selectedIndex);
             }
         }
-
-
         void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -622,8 +522,6 @@ namespace Hero_Designer
                 this.UpdateListItem(selectedIndex);
             }
         }
-
-
         protected void DisplayItem(int Index)
         {
             if (!(Index > DatabaseAPI.Database.Salvage.Length - 1 | Index < 0))
@@ -649,8 +547,6 @@ namespace Hero_Designer
                 this.Updating = false;
             }
         }
-
-
         protected void FillList()
         {
             this.lvSalvage.BeginUpdate();
@@ -662,8 +558,6 @@ namespace Hero_Designer
             }
             this.lvSalvage.EndUpdate();
         }
-
-
         void frmSalvageEdit_Load(object sender, EventArgs e)
         {
             Salvage.SalvageOrigin salvageOrigin = Salvage.SalvageOrigin.Tech;
@@ -680,8 +574,6 @@ namespace Hero_Designer
                 this.lvSalvage.Items[0].Selected = true;
             }
         }
-
-
         void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedIndices.Count > 0)
@@ -689,8 +581,6 @@ namespace Hero_Designer
                 this.DisplayItem(this.lvSalvage.SelectedIndices[0]);
             }
         }
-
-
         void txtExternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -700,8 +590,6 @@ namespace Hero_Designer
                 this.UpdateListItem(selectedIndex);
             }
         }
-
-
         void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (this.lvSalvage.SelectedItems.Count >= 1 && !this.Updating)
@@ -711,8 +599,6 @@ namespace Hero_Designer
                 this.UpdateListItem(selectedIndex);
             }
         }
-
-
         protected void UpdateListItem(int Index)
         {
             if (!(Index > DatabaseAPI.Database.Salvage.Length - 1 | Index < 0))
@@ -723,88 +609,46 @@ namespace Hero_Designer
                 this.lvSalvage.Items[Index].SubItems[3].Text = Conversions.ToString(DatabaseAPI.Database.Salvage[Index].LevelMin + 1) + " - " + Conversions.ToString(DatabaseAPI.Database.Salvage[Index].LevelMax + 1);
             }
         }
-
-
         [AccessedThroughProperty("btnAdd")]
         Button _btnAdd;
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnDelete")]
         Button _btnDelete;
-
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("cbLevel")]
         ComboBox _cbLevel;
-
-
         [AccessedThroughProperty("cbOrigin")]
         ComboBox _cbOrigin;
-
-
         [AccessedThroughProperty("cbRarity")]
         ComboBox _cbRarity;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("lvSalvage")]
         ListView _lvSalvage;
-
-
         [AccessedThroughProperty("txtExternal")]
         TextBox _txtExternal;
-
-
         [AccessedThroughProperty("txtInternal")]
         TextBox _txtInternal;
-
-
         public bool Updating;
     }
 }

@@ -14,8 +14,6 @@ public static class I9Gfx
     {
         I9Gfx.OriginIndex = DatabaseAPI.GetOriginIDByName(iOrigin);
     }
-
-
     public static void LoadPowersetImages()
     {
         I9Gfx.Powersets = new ExtendedBitmap(DatabaseAPI.Database.Powersets.Length * 16, 16);
@@ -40,8 +38,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static void LoadOriginImages()
     {
         I9Gfx.Origins = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 16, 16);
@@ -61,8 +57,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static void LoadArchetypeImages()
     {
         I9Gfx.Archetypes = new ExtendedBitmap(DatabaseAPI.Database.Classes.Length * 16, 16);
@@ -87,8 +81,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static Origin.Grade ToGfxGrade(Enums.eType iType)
     {
         Origin.Grade grade;
@@ -115,8 +107,6 @@ public static class I9Gfx
         }
         return grade;
     }
-
-
     public static Origin.Grade ToGfxGrade(Enums.eType iType, Enums.eEnhGrade iGrade)
     {
         switch (iType)
@@ -145,14 +135,10 @@ public static class I9Gfx
         }
         return Origin.Grade.None;
     }
-
-
     public static string ImagePath()
     {
         return FileIO.AddSlash(Application.StartupPath) + "Images\\";
     }
-
-
     public static void LoadClasses()
     {
         I9Gfx.Classes = new ExtendedBitmap(DatabaseAPI.Database.EnhancementClasses.Length * 30, 30);
@@ -183,8 +169,6 @@ public static class I9Gfx
         }
         GC.Collect();
     }
-
-
     public static void LoadEnhancements()
     {
         I9Gfx.Enhancements = new Bitmap[DatabaseAPI.Database.Enhancements.Length];
@@ -213,8 +197,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static void LoadSets()
     {
         I9Gfx.Sets = new ExtendedBitmap(DatabaseAPI.Database.EnhancementSets.Count * 30, 30);
@@ -252,8 +234,6 @@ public static class I9Gfx
             goto IL_109;
         }
     }
-
-
     public static void LoadSetTypes()
     {
         Array values = Enum.GetValues(typeof(Enums.eSetType));
@@ -276,8 +256,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static void LoadEnhTypes()
     {
         Array values3 = Enum.GetValues(typeof(Enums.eType));
@@ -336,8 +314,6 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static void LoadBorders()
     {
         I9Gfx.Borders = new ExtendedBitmap(DatabaseAPI.Database.Origins.Count * 30, 180);
@@ -360,32 +336,22 @@ public static class I9Gfx
             }
         }
     }
-
-
     public static string GetRecipeName()
     {
         return I9Gfx.ImagePath() + "Overlay\\Recipe.png";
     }
-
-
     public static string GetPowersetsPath()
     {
         return I9Gfx.ImagePath() + "Powersets\\";
     }
-
-
     public static string GetEnhancementsPath()
     {
         return I9Gfx.ImagePath() + "Enhancements\\";
     }
-
-
     public static string GetOriginsPath()
     {
         return I9Gfx.ImagePath() + "OriginAT\\";
     }
-
-
     public static void DrawFlippingEnhancement(ref Graphics iTarget, Rectangle iDest, float iSize, int iImageIndex, Origin.Grade iGrade)
     {
         Rectangle iDest2 = iDest;
@@ -393,15 +359,11 @@ public static class I9Gfx
         iDest2.X += (iDest.Width - iDest2.Width) / 2;
         I9Gfx.DrawEnhancementAt(ref iTarget, iDest2, iImageIndex, iGrade);
     }
-
-
     public static void DrawEnhancement(ref Graphics iTarget, int iImageIndex, Origin.Grade iGrade)
     {
         iTarget.DrawImage(I9Gfx.Borders.Bitmap, iTarget.ClipBounds, I9Gfx.GetOverlayRectF(iGrade), GraphicsUnit.Pixel);
         iTarget.DrawImage(I9Gfx.Enhancements[iImageIndex], iTarget.ClipBounds, new RectangleF(0f, 0f, 30f, 30f), GraphicsUnit.Pixel);
     }
-
-
     public static void DrawEnhancementAt(ref Graphics iTarget, Rectangle iDest, int iImageIndex, Origin.Grade iGrade, ImageAttributes imageAttributes)
     {
         if (iDest.Width > 30)
@@ -418,8 +380,6 @@ public static class I9Gfx
             iTarget.DrawImage(I9Gfx.Enhancements[iImageIndex], iDest, 0, 0, 30, 30, GraphicsUnit.Pixel, imageAttributes);
         }
     }
-
-
     public static void DrawEnhancementAt(ref Graphics iTarget, Rectangle iDest, int iImageIndex, Origin.Grade iGrade)
     {
         if (iDest.Width > 30)
@@ -436,15 +396,11 @@ public static class I9Gfx
             iTarget.DrawImage(I9Gfx.Enhancements[iImageIndex], iDest, new Rectangle(0, 0, 30, 30), GraphicsUnit.Pixel);
         }
     }
-
-
     public static void DrawEnhancementSet(ref Graphics iTarget, int iImageIndex)
     {
         iTarget.DrawImage(I9Gfx.Borders.Bitmap, iTarget.ClipBounds, I9Gfx.GetOverlayRectF(Origin.Grade.SetO), GraphicsUnit.Pixel);
         iTarget.DrawImage(I9Gfx.Sets.Bitmap, iTarget.ClipBounds, I9Gfx.GetImageRectF(iImageIndex), GraphicsUnit.Pixel);
     }
-
-
     public static Rectangle GetOverlayRect(Origin.Grade iGrade)
     {
         if (iGrade == Origin.Grade.None)
@@ -453,93 +409,41 @@ public static class I9Gfx
         }
         return new Rectangle(I9Gfx.OriginIndex * 30, (int)((int)iGrade * 30), 30, 30);
     }
-
-
     static RectangleF GetOverlayRectF(Origin.Grade iGrade)
     {
         Rectangle overlayRect = I9Gfx.GetOverlayRect(iGrade);
         return new RectangleF((float)overlayRect.X, (float)overlayRect.Y, (float)overlayRect.Width, (float)overlayRect.Height);
     }
-
-
     public static Rectangle GetImageRect(int index)
     {
         return new Rectangle(index * 30, 0, 30, 30);
     }
-
-
     static RectangleF GetImageRectF(int index)
     {
         Rectangle imageRect = I9Gfx.GetImageRect(index);
         return new RectangleF((float)imageRect.X, (float)imageRect.Y, (float)imageRect.Width, (float)imageRect.Height);
     }
-
-
     public const int IconLarge = 30;
-
-
     const int IconSmall = 16;
-
-
     public const string ImageExtension = ".png";
-
-
     const string FileOverlayClass = "Class.png";
-
-
     const string GfxPath = "Images\\";
-
-
     const string PathClass = "Classes\\";
-
-
     const string PathOverlay = "Overlay\\";
-
-
     const string PathEnh = "Enhancements\\";
-
-
     const string PathSetType = "Sets\\";
-
-
     const string PathOriginAT = "OriginAT\\";
-
-
     const string PathPowersets = "Powersets\\";
-
-
     public static int OriginIndex;
-
-
     public static Bitmap[] Enhancements;
-
-
     public static ExtendedBitmap Borders;
-
-
     public static ExtendedBitmap Sets;
-
-
     public static ExtendedBitmap Classes;
-
-
     public static ExtendedBitmap SetTypes;
-
-
     public static ExtendedBitmap EnhTypes;
-
-
     public static ExtendedBitmap EnhGrades;
-
-
     public static ExtendedBitmap EnhSpecials;
-
-
     public static ExtendedBitmap Archetypes;
-
-
     public static ExtendedBitmap Origins;
-
-
     public static ExtendedBitmap Powersets;
 }

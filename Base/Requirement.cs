@@ -9,8 +9,6 @@ public class Requirement
     public Requirement()
     {
     }
-
-
     public Requirement(Requirement iReq)
     {
         this.ClassName = new string[iReq.ClassName.Length];
@@ -50,8 +48,6 @@ public class Requirement
             this.NPowerIDNot[index][1] = iReq.NPowerIDNot[index][1];
         }
     }
-
-
     public Requirement(BinaryReader reader)
     {
         this.ClassName = new string[reader.ReadInt32() + 1];
@@ -79,8 +75,6 @@ public class Requirement
             this.PowerIDNot[index][1] = reader.ReadString();
         }
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.ClassName.Length - 1);
@@ -106,8 +100,6 @@ public class Requirement
             writer.Write(this.PowerIDNot[index][1]);
         }
     }
-
-
     public bool ClassOk(string uidClass)
     {
         bool flag;
@@ -145,8 +137,6 @@ public class Requirement
         }
         return flag;
     }
-
-
     public bool ClassOk(int nidClass)
     {
         bool flag;
@@ -184,8 +174,6 @@ public class Requirement
         }
         return flag;
     }
-
-
     public bool ReferencesPower(string uidPower, string uidFix = "")
     {
         bool flag = false;
@@ -213,8 +201,6 @@ public class Requirement
         }
         return flag;
     }
-
-
     public void AddPowers(string power1, string power2)
     {
         if (power1.StartsWith("!") & (power2.StartsWith("!") | string.IsNullOrEmpty(power2)))
@@ -236,28 +222,12 @@ public class Requirement
             MessageBox.Show("An impossible power requirement has occurred: POWER AND NOT POWER. See clsPowerV2.addPowers()");
         }
     }
-
-
     public string[] ClassName = new string[0];
-
-
     public string[] ClassNameNot = new string[0];
-
-
     public string[][] PowerID = new string[0][];
-
-
     public string[][] PowerIDNot = new string[0][];
-
-
     public int[] NClassName = new int[0];
-
-
     public int[] NClassNameNot = new int[0];
-
-
     public int[][] NPowerID = new int[0][];
-
-
     public int[][] NPowerIDNot = new int[0][];
 }

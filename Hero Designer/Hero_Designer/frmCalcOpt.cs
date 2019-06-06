@@ -14,8 +14,6 @@ namespace Hero_Designer
 
     public partial class frmCalcOpt : Form
     {
-
-    
     
         internal virtual Button btnBaseReset
         {
@@ -38,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCancel
         {
             get
@@ -63,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnFontColour
         {
             get
@@ -88,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnForceUpdate
         {
             get
@@ -113,10 +99,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnIOReset
         {
             get
@@ -138,10 +120,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -163,10 +141,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnSaveFolder
         {
             get
@@ -188,10 +162,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnSaveFolderReset
         {
             get
@@ -213,10 +183,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUpdate
         {
             get
@@ -238,10 +204,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUpdatePathReset
         {
             get
@@ -263,10 +225,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbEnhLevel
         {
             get
@@ -279,10 +237,6 @@ namespace Hero_Designer
                 this._cbEnhLevel = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkColorInherent
         {
             get
@@ -295,10 +249,6 @@ namespace Hero_Designer
                 this._chkColorInherent = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkColourPrint
         {
             get
@@ -311,10 +261,6 @@ namespace Hero_Designer
                 this._chkColourPrint = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkHighVis
         {
             get
@@ -327,10 +273,6 @@ namespace Hero_Designer
                 this._chkHighVis = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkIOEffects
         {
             get
@@ -343,10 +285,6 @@ namespace Hero_Designer
                 this._chkIOEffects = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkIOLevel
         {
             get
@@ -359,10 +297,6 @@ namespace Hero_Designer
                 this._chkIOLevel = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkIOPrintLevels
         {
             get
@@ -375,10 +309,6 @@ namespace Hero_Designer
                 this._chkIOPrintLevels = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkLoadLastFile
         {
             get
@@ -391,10 +321,6 @@ namespace Hero_Designer
                 this._chkLoadLastFile = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkMiddle
         {
             get
@@ -407,10 +333,6 @@ namespace Hero_Designer
                 this._chkMiddle = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoTips
         {
             get
@@ -423,10 +345,6 @@ namespace Hero_Designer
                 this._chkNoTips = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkRelSignOnly
         {
             get
@@ -439,10 +357,6 @@ namespace Hero_Designer
                 this._chkRelSignOnly = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkSetBonus
         {
             get
@@ -455,10 +369,6 @@ namespace Hero_Designer
                 this._chkSetBonus = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkShowAlphaPopup
         {
             get
@@ -471,10 +381,6 @@ namespace Hero_Designer
                 this._chkShowAlphaPopup = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkStatBold
         {
             get
@@ -487,10 +393,6 @@ namespace Hero_Designer
                 this._chkStatBold = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkTextBold
         {
             get
@@ -503,10 +405,6 @@ namespace Hero_Designer
                 this._chkTextBold = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkUpdates
         {
             get
@@ -519,10 +417,6 @@ namespace Hero_Designer
                 this._chkUpdates = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkUseArcanaTime
         {
             get
@@ -535,10 +429,6 @@ namespace Hero_Designer
                 this._chkUseArcanaTime = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkVillainColour
         {
             get
@@ -551,10 +441,6 @@ namespace Hero_Designer
                 this._chkVillainColour = value;
             }
         }
-
-
-    
-    
         internal virtual CheckedListBox clbSuppression
         {
             get
@@ -576,10 +462,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cmbAction
         {
             get
@@ -601,10 +483,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColorDialog cPicker
         {
             get
@@ -617,10 +495,6 @@ namespace Hero_Designer
                 this._cPicker = value;
             }
         }
-
-
-    
-    
         internal virtual Button csAdd
         {
             get
@@ -642,10 +516,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button csBtnEdit
         {
             get
@@ -667,10 +537,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button csDelete
         {
             get
@@ -692,10 +558,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListBox csList
         {
             get
@@ -717,10 +579,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button csReset
         {
             get
@@ -742,10 +600,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual FolderBrowserDialog fbdSave
         {
             get
@@ -758,10 +612,6 @@ namespace Hero_Designer
                 this._fbdSave = value;
             }
         }
-
-
-    
-    
         internal virtual Button fcAdd
         {
             get
@@ -783,10 +633,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcBoldOff
         {
             get
@@ -808,10 +654,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcBoldOn
         {
             get
@@ -833,10 +675,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcColorOff
         {
             get
@@ -858,10 +696,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcColorOn
         {
             get
@@ -883,10 +717,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button fcDelete
         {
             get
@@ -908,10 +738,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcItalicOff
         {
             get
@@ -933,10 +759,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcItalicOn
         {
             get
@@ -958,10 +780,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListBox fcList
         {
             get
@@ -986,10 +804,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcName
         {
             get
@@ -1002,10 +816,6 @@ namespace Hero_Designer
                 this._fcName = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox fcNotes
         {
             get
@@ -1027,10 +837,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button fcReset
         {
             get
@@ -1052,10 +858,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button fcSet
         {
             get
@@ -1077,10 +879,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcTextOff
         {
             get
@@ -1102,10 +900,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcTextOn
         {
             get
@@ -1127,10 +921,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcUnderlineOff
         {
             get
@@ -1152,10 +942,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox fcUnderlineOn
         {
             get
@@ -1177,10 +963,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton fcWSSpace
         {
             get
@@ -1202,10 +984,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton fcWSTab
         {
             get
@@ -1227,10 +1005,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -1243,10 +1017,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox10
         {
             get
@@ -1259,10 +1029,6 @@ namespace Hero_Designer
                 this._GroupBox10 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox11
         {
             get
@@ -1275,10 +1041,6 @@ namespace Hero_Designer
                 this._GroupBox11 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox12
         {
             get
@@ -1291,10 +1053,6 @@ namespace Hero_Designer
                 this._GroupBox12 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox13
         {
             get
@@ -1307,10 +1065,6 @@ namespace Hero_Designer
                 this._GroupBox13 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox14
         {
             get
@@ -1323,10 +1077,6 @@ namespace Hero_Designer
                 this._GroupBox14 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox15
         {
             get
@@ -1339,10 +1089,6 @@ namespace Hero_Designer
                 this._GroupBox15 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox16
         {
             get
@@ -1355,10 +1101,6 @@ namespace Hero_Designer
                 this._GroupBox16 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox17
         {
             get
@@ -1371,10 +1113,6 @@ namespace Hero_Designer
                 this._GroupBox17 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -1387,10 +1125,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -1403,10 +1137,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -1419,10 +1149,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -1435,10 +1161,6 @@ namespace Hero_Designer
                 this._GroupBox5 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox6
         {
             get
@@ -1451,10 +1173,6 @@ namespace Hero_Designer
                 this._GroupBox6 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox7
         {
             get
@@ -1467,10 +1185,6 @@ namespace Hero_Designer
                 this._GroupBox7 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox8
         {
             get
@@ -1483,10 +1197,6 @@ namespace Hero_Designer
                 this._GroupBox8 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox9
         {
             get
@@ -1499,10 +1209,6 @@ namespace Hero_Designer
                 this._GroupBox9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -1515,10 +1221,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -1531,10 +1233,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -1547,10 +1245,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label12
         {
             get
@@ -1563,10 +1257,6 @@ namespace Hero_Designer
                 this._Label12 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label13
         {
             get
@@ -1579,10 +1269,6 @@ namespace Hero_Designer
                 this._Label13 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label14
         {
             get
@@ -1595,10 +1281,6 @@ namespace Hero_Designer
                 this._Label14 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label15
         {
             get
@@ -1611,10 +1293,6 @@ namespace Hero_Designer
                 this._Label15 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label16
         {
             get
@@ -1627,10 +1305,6 @@ namespace Hero_Designer
                 this._Label16 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -1643,10 +1317,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -1659,10 +1329,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label20
         {
             get
@@ -1675,10 +1341,6 @@ namespace Hero_Designer
                 this._Label20 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -1691,10 +1353,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -1707,10 +1365,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label24
         {
             get
@@ -1723,10 +1377,6 @@ namespace Hero_Designer
                 this._Label24 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label25
         {
             get
@@ -1739,10 +1389,6 @@ namespace Hero_Designer
                 this._Label25 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label26
         {
             get
@@ -1755,10 +1401,6 @@ namespace Hero_Designer
                 this._Label26 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label27
         {
             get
@@ -1771,10 +1413,6 @@ namespace Hero_Designer
                 this._Label27 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label28
         {
             get
@@ -1787,10 +1425,6 @@ namespace Hero_Designer
                 this._Label28 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label29
         {
             get
@@ -1803,10 +1437,6 @@ namespace Hero_Designer
                 this._Label29 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -1819,10 +1449,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label30
         {
             get
@@ -1835,10 +1461,6 @@ namespace Hero_Designer
                 this._Label30 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label31
         {
             get
@@ -1851,10 +1473,6 @@ namespace Hero_Designer
                 this._Label31 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label32
         {
             get
@@ -1867,10 +1485,6 @@ namespace Hero_Designer
                 this._Label32 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label33
         {
             get
@@ -1883,10 +1497,6 @@ namespace Hero_Designer
                 this._Label33 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label34
         {
             get
@@ -1899,10 +1509,6 @@ namespace Hero_Designer
                 this._Label34 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label36
         {
             get
@@ -1915,10 +1521,6 @@ namespace Hero_Designer
                 this._Label36 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label37
         {
             get
@@ -1931,10 +1533,6 @@ namespace Hero_Designer
                 this._Label37 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label38
         {
             get
@@ -1947,10 +1545,6 @@ namespace Hero_Designer
                 this._Label38 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -1963,10 +1557,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label40
         {
             get
@@ -1979,10 +1569,6 @@ namespace Hero_Designer
                 this._Label40 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -1995,10 +1581,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -2011,10 +1593,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -2027,10 +1605,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -2043,10 +1617,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -2059,10 +1629,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblExample
         {
             get
@@ -2075,10 +1641,6 @@ namespace Hero_Designer
                 this._lblExample = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblSaveFolder
         {
             get
@@ -2091,10 +1653,6 @@ namespace Hero_Designer
                 this._lblSaveFolder = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox listScenarios
         {
             get
@@ -2116,10 +1674,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip myTip
         {
             get
@@ -2132,10 +1686,6 @@ namespace Hero_Designer
                 this._myTip = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton optDO
         {
             get
@@ -2157,10 +1707,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label optEnh
         {
             get
@@ -2173,10 +1719,6 @@ namespace Hero_Designer
                 this._optEnh = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton optSO
         {
             get
@@ -2198,10 +1740,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton optTO
         {
             get
@@ -2223,10 +1761,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbChanceAverage
         {
             get
@@ -2239,10 +1773,6 @@ namespace Hero_Designer
                 this._rbChanceAverage = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbChanceIgnore
         {
             get
@@ -2255,10 +1785,6 @@ namespace Hero_Designer
                 this._rbChanceIgnore = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbChanceMax
         {
             get
@@ -2271,10 +1797,6 @@ namespace Hero_Designer
                 this._rbChanceMax = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbGraphSimple
         {
             get
@@ -2287,10 +1809,6 @@ namespace Hero_Designer
                 this._rbGraphSimple = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbGraphStacked
         {
             get
@@ -2303,10 +1821,6 @@ namespace Hero_Designer
                 this._rbGraphStacked = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbGraphTwoLine
         {
             get
@@ -2319,10 +1833,6 @@ namespace Hero_Designer
                 this._rbGraphTwoLine = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbPvE
         {
             get
@@ -2335,10 +1845,6 @@ namespace Hero_Designer
                 this._rbPvE = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbPvP
         {
             get
@@ -2351,10 +1857,6 @@ namespace Hero_Designer
                 this._rbPvP = value;
             }
         }
-
-
-    
-    
         internal virtual TabControl TabControl1
         {
             get
@@ -2367,10 +1869,6 @@ namespace Hero_Designer
                 this._TabControl1 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage1
         {
             get
@@ -2383,10 +1881,6 @@ namespace Hero_Designer
                 this._TabPage1 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage2
         {
             get
@@ -2399,10 +1893,6 @@ namespace Hero_Designer
                 this._TabPage2 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage3
         {
             get
@@ -2415,10 +1905,6 @@ namespace Hero_Designer
                 this._TabPage3 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage4
         {
             get
@@ -2431,10 +1917,6 @@ namespace Hero_Designer
                 this._TabPage4 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage5
         {
             get
@@ -2447,10 +1929,6 @@ namespace Hero_Designer
                 this._TabPage5 = value;
             }
         }
-
-
-    
-    
         internal virtual TabPage TabPage6
         {
             get
@@ -2463,10 +1941,6 @@ namespace Hero_Designer
                 this._TabPage6 = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown TeamSize
         {
             get
@@ -2479,10 +1953,6 @@ namespace Hero_Designer
                 this._TeamSize = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtUpdatePath
         {
             get
@@ -2495,10 +1965,6 @@ namespace Hero_Designer
                 this._txtUpdatePath = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udBaseToHit
         {
             get
@@ -2511,10 +1977,6 @@ namespace Hero_Designer
                 this._udBaseToHit = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udExHigh
         {
             get
@@ -2527,10 +1989,6 @@ namespace Hero_Designer
                 this._udExHigh = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udExLow
         {
             get
@@ -2543,10 +2001,6 @@ namespace Hero_Designer
                 this._udExLow = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udForceLevel
         {
             get
@@ -2559,10 +2013,6 @@ namespace Hero_Designer
                 this._udForceLevel = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udIOLevel
         {
             get
@@ -2575,10 +2025,6 @@ namespace Hero_Designer
                 this._udIOLevel = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udRTFSize
         {
             get
@@ -2591,10 +2037,6 @@ namespace Hero_Designer
                 this._udRTFSize = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udStatSize
         {
             get
@@ -2607,8 +2049,6 @@ namespace Hero_Designer
                 this._udStatSize = value;
             }
         }
-
-
         public frmCalcOpt(ref frmMain iParent)
         {
             base.Load += this.frmCalcOpt_Load;
@@ -2620,27 +2060,19 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iParent;
         }
-
-
         void btnBaseReset_Click(object sender, EventArgs e)
         {
             this.udBaseToHit.Value = 75m;
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
-
-
         void btnFontColour_Click(object sender, EventArgs e)
         {
             new frmColourSettings().ShowDialog();
         }
-
-
         void btnForceUpdate_Click(object sender, EventArgs e)
         {
             DateTime date = DatabaseAPI.Database.Date;
@@ -2653,8 +2085,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Date = date;
             }
         }
-
-
         void btnIOReset_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -2667,8 +2097,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
@@ -2676,8 +2104,6 @@ namespace Hero_Designer
             this.DoMiscUpdates();
             base.Hide();
         }
-
-
         void btnSaveFolder_Click(object sender, EventArgs e)
         {
             this.fbdSave.SelectedPath = this.lblSaveFolder.Text;
@@ -2686,16 +2112,12 @@ namespace Hero_Designer
                 this.lblSaveFolder.Text = this.fbdSave.SelectedPath;
             }
         }
-
-
         void btnSaveFolderReset_Click(object sender, EventArgs e)
         {
             MidsContext.Config.CreateDefaultSaveFolder();
             MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
             this.lblSaveFolder.Text = MidsContext.Config.DefaultSaveFolder;
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -2715,14 +2137,10 @@ namespace Hero_Designer
             this.myParent.RefreshInfo();
             base.Enabled = true;
         }
-
-
         void btnUpdatePathReset_Click(object sender, EventArgs e)
         {
             this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
         }
-
-
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
         {
             int[] values = (int[])Enum.GetValues(MidsContext.Config.Suppression.GetType());
@@ -2733,21 +2151,15 @@ namespace Hero_Designer
                 MidsContext.Config.Suppression += values[this.clbSuppression.CheckedIndices[index]];
             }
         }
-
-
         void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.defActs[this.listScenarios.SelectedIndex] = (short)this.cmbAction.SelectedIndex;
         }
-
-
         void csAdd_Click(object sender, EventArgs e)
         {
             MidsContext.Config.Export.AddScheme();
             this.csPopulateList(MidsContext.Config.Export.ColorSchemes.Length - 1);
         }
-
-
         void csBtnEdit_Click(object sender, EventArgs e)
         {
             if (this.csList.Items.Count > 0)
@@ -2761,8 +2173,6 @@ namespace Hero_Designer
                 base.BringToFront();
             }
         }
-
-
         void csDelete_Click(object sender, EventArgs e)
         {
             if (this.csList.Items.Count > 0 && Interaction.MsgBox("Delete " + this.csList.SelectedItem.ToString() + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -2771,8 +2181,6 @@ namespace Hero_Designer
                 this.csPopulateList(-1);
             }
         }
-
-
         void csList_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Conversions.ToString(e.KeyChar) == "[")
@@ -2784,8 +2192,6 @@ namespace Hero_Designer
                 this.ForumColorDown();
             }
         }
-
-
         void csPopulateList(int HighlightID = -1)
         {
             this.csList.Items.Clear();
@@ -2804,8 +2210,6 @@ namespace Hero_Designer
                 this.csList.SelectedIndex = HighlightID;
             }
         }
-
-
         void csReset_Click(object sender, EventArgs e)
         {
             if (Interaction.MsgBox("This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -2814,8 +2218,6 @@ namespace Hero_Designer
                 this.csPopulateList(-1);
             }
         }
-
-
         public void DoMiscUpdates()
         {
             this.myParent.GetBestDamageValues();
@@ -2836,15 +2238,11 @@ namespace Hero_Designer
             }
             this.myParent.UpdateColours(false);
         }
-
-
         void fcAdd_Click(object sender, EventArgs e)
         {
             MidsContext.Config.Export.AddCodes();
             this.fcPopulateList(MidsContext.Config.Export.FormatCode.Length - 1);
         }
-
-
         void fcBoldOff_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2854,8 +2252,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].BoldOff = this.fcBoldOff.Text;
             }
         }
-
-
         void fcBoldOn_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2865,8 +2261,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].BoldOn = this.fcBoldOn.Text;
             }
         }
-
-
         void fcColorOff_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2876,8 +2270,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].ColourOff = this.fcColorOff.Text;
             }
         }
-
-
         void fcColorOn_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2887,8 +2279,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].ColourOn = this.fcColorOn.Text;
             }
         }
-
-
         void fcDelete_Click(object sender, EventArgs e)
         {
             if (this.fcList.Items.Count > 0 && Interaction.MsgBox("Delete " + this.fcList.SelectedItem.ToString() + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -2897,8 +2287,6 @@ namespace Hero_Designer
                 this.fcPopulateList(-1);
             }
         }
-
-
         void fcDisplay()
         {
             this.fcNoUpdate = true;
@@ -2939,8 +2327,6 @@ namespace Hero_Designer
             }
             this.fcNoUpdate = false;
         }
-
-
         void fcItalicOff_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2950,8 +2336,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].ItalicOff = this.fcItalicOff.Text;
             }
         }
-
-
         void fcItalicOn_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2961,8 +2345,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].ItalicOn = this.fcItalicOn.Text;
             }
         }
-
-
         void fcList_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Conversions.ToString(e.KeyChar) == "[")
@@ -2974,14 +2356,10 @@ namespace Hero_Designer
                 this.ForumCodeDown();
             }
         }
-
-
         void fcList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.fcDisplay();
         }
-
-
         void fcNotes_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -2991,8 +2369,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].Notes = this.fcNotes.Text;
             }
         }
-
-
         void fcPopulateList(int HighlightID = -1)
         {
             this.fcList.Items.Clear();
@@ -3011,8 +2387,6 @@ namespace Hero_Designer
                 this.fcList.SelectedIndex = HighlightID;
             }
         }
-
-
         void fcReset_Click(object sender, EventArgs e)
         {
             if (Interaction.MsgBox("This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -3021,8 +2395,6 @@ namespace Hero_Designer
                 this.fcPopulateList(-1);
             }
         }
-
-
         void fcSet_Click(object sender, EventArgs e)
         {
             if (this.fcList.SelectedIndex >= 0)
@@ -3031,8 +2403,6 @@ namespace Hero_Designer
                 this.fcPopulateList(this.fcList.SelectedIndex);
             }
         }
-
-
         void fcTextOff_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -3042,8 +2412,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].SizeOff = this.fcTextOff.Text;
             }
         }
-
-
         void fcTextOn_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -3053,8 +2421,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].SizeOn = this.fcTextOn.Text;
             }
         }
-
-
         void fcUnderlineOff_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -3064,8 +2430,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].UnderlineOff = this.fcUnderlineOff.Text;
             }
         }
-
-
         void fcUnderlineOn_TextChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -3075,8 +2439,6 @@ namespace Hero_Designer
                 formatCode[selectedIndex].UnderlineOn = this.fcUnderlineOn.Text;
             }
         }
-
-
         void fcWSSpace_CheckedChanged(object sender, EventArgs e)
         {
             if (!(this.fcList.SelectedIndex < 0 | this.fcNoUpdate))
@@ -3093,8 +2455,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         protected void ForumCodeDown()
         {
             int selectedIndex = this.fcList.SelectedIndex;
@@ -3116,8 +2476,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         protected void forumCodeUp()
         {
             int selectedIndex = this.fcList.SelectedIndex;
@@ -3139,8 +2497,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         protected void ForumColorDown()
         {
             int selectedIndex = this.csList.SelectedIndex;
@@ -3162,8 +2518,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         protected void forumColorUp()
         {
             int selectedIndex = this.csList.SelectedIndex;
@@ -3185,8 +2539,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void frmCalcOpt_Closing(object sender, CancelEventArgs e)
         {
             if (base.DialogResult == DialogResult.Abort)
@@ -3194,8 +2546,6 @@ namespace Hero_Designer
                 e.Cancel = true;
             }
         }
-
-
         void frmCalcOpt_Load(object sender, EventArgs e)
         {
             this.setupScenarios();
@@ -3205,8 +2555,6 @@ namespace Hero_Designer
             this.PopulateSuppression();
             this.SetTips();
         }
-
-
         void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.lblExample.Text = this.scenarioExample[this.listScenarios.SelectedIndex];
@@ -3214,8 +2562,6 @@ namespace Hero_Designer
             this.cmbAction.Items.AddRange(this.scenActs[this.listScenarios.SelectedIndex]);
             this.cmbAction.SelectedIndex = (int)this.defActs[this.listScenarios.SelectedIndex];
         }
-
-
         void optDO_CheckedChanged(object sender, EventArgs e)
         {
             if (this.optDO.Checked)
@@ -3223,8 +2569,6 @@ namespace Hero_Designer
                 this.optEnh.Text = "Dual Origin";
             }
         }
-
-
         void optSO_CheckedChanged(object sender, EventArgs e)
         {
             if (this.optSO.Checked)
@@ -3232,8 +2576,6 @@ namespace Hero_Designer
                 this.optEnh.Text = "Single Origin";
             }
         }
-
-
         void optTO_CheckedChanged(object sender, EventArgs e)
         {
             if (this.optTO.Checked)
@@ -3241,8 +2583,6 @@ namespace Hero_Designer
                 this.optEnh.Text = "Training Origin";
             }
         }
-
-
         void PopulateSuppression()
         {
             this.clbSuppression.BeginUpdate();
@@ -3256,8 +2596,6 @@ namespace Hero_Designer
             }
             this.clbSuppression.EndUpdate();
         }
-
-
         void SetControls()
         {
             ConfigData config = MidsContext.Config;
@@ -3315,13 +2653,9 @@ namespace Hero_Designer
             }
             while (index <= 19);
         }
-
-
         public void SetTips()
         {
         }
-
-
         void setupScenarios()
         {
             int num = 0;
@@ -3439,8 +2773,6 @@ namespace Hero_Designer
             this.scenActs[num][2] = "Allow swap anyway (mark as invalid)";
             num++;
         }
-
-
         void StoreControls()
         {
             ConfigData config = MidsContext.Config;
@@ -3526,580 +2858,290 @@ namespace Hero_Designer
             }
             while (index <= 19);
         }
-
-
         [AccessedThroughProperty("btnBaseReset")]
         Button _btnBaseReset;
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnFontColour")]
         Button _btnFontColour;
-
-
         [AccessedThroughProperty("btnForceUpdate")]
         Button _btnForceUpdate;
-
-
         [AccessedThroughProperty("btnIOReset")]
         Button _btnIOReset;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnSaveFolder")]
         Button _btnSaveFolder;
-
-
         [AccessedThroughProperty("btnSaveFolderReset")]
         Button _btnSaveFolderReset;
-
-
         [AccessedThroughProperty("btnUpdate")]
         Button _btnUpdate;
-
-
         [AccessedThroughProperty("btnUpdatePathReset")]
         Button _btnUpdatePathReset;
-
-
         [AccessedThroughProperty("cbEnhLevel")]
         ComboBox _cbEnhLevel;
-
-
         [AccessedThroughProperty("chkColorInherent")]
         CheckBox _chkColorInherent;
-
-
         [AccessedThroughProperty("chkColourPrint")]
         CheckBox _chkColourPrint;
-
-
         [AccessedThroughProperty("chkHighVis")]
         CheckBox _chkHighVis;
-
-
         [AccessedThroughProperty("chkIOEffects")]
         CheckBox _chkIOEffects;
-
-
         [AccessedThroughProperty("chkIOLevel")]
         CheckBox _chkIOLevel;
-
-
         [AccessedThroughProperty("chkIOPrintLevels")]
         CheckBox _chkIOPrintLevels;
-
-
         [AccessedThroughProperty("chkLoadLastFile")]
         CheckBox _chkLoadLastFile;
-
-
         [AccessedThroughProperty("chkMiddle")]
         CheckBox _chkMiddle;
-
-
         [AccessedThroughProperty("chkNoTips")]
         CheckBox _chkNoTips;
-
-
         [AccessedThroughProperty("chkRelSignOnly")]
         CheckBox _chkRelSignOnly;
-
-
         [AccessedThroughProperty("chkSetBonus")]
         CheckBox _chkSetBonus;
-
-
         [AccessedThroughProperty("chkShowAlphaPopup")]
         CheckBox _chkShowAlphaPopup;
-
-
         [AccessedThroughProperty("chkStatBold")]
         CheckBox _chkStatBold;
-
-
         [AccessedThroughProperty("chkTextBold")]
         CheckBox _chkTextBold;
-
-
         [AccessedThroughProperty("chkUpdates")]
         CheckBox _chkUpdates;
-
-
         [AccessedThroughProperty("chkUseArcanaTime")]
         CheckBox _chkUseArcanaTime;
-
-
         [AccessedThroughProperty("chkVillainColour")]
         CheckBox _chkVillainColour;
-
-
         [AccessedThroughProperty("clbSuppression")]
         CheckedListBox _clbSuppression;
-
-
         [AccessedThroughProperty("cmbAction")]
         ComboBox _cmbAction;
-
-
         [AccessedThroughProperty("cPicker")]
         ColorDialog _cPicker;
-
-
         [AccessedThroughProperty("csAdd")]
         Button _csAdd;
-
-
         [AccessedThroughProperty("csBtnEdit")]
         Button _csBtnEdit;
-
-
         [AccessedThroughProperty("csDelete")]
         Button _csDelete;
-
-
         [AccessedThroughProperty("csList")]
         ListBox _csList;
-
-
         [AccessedThroughProperty("csReset")]
         Button _csReset;
-
-
         [AccessedThroughProperty("fbdSave")]
         FolderBrowserDialog _fbdSave;
-
-
         [AccessedThroughProperty("fcAdd")]
         Button _fcAdd;
-
-
         [AccessedThroughProperty("fcBoldOff")]
         TextBox _fcBoldOff;
-
-
         [AccessedThroughProperty("fcBoldOn")]
         TextBox _fcBoldOn;
-
-
         [AccessedThroughProperty("fcColorOff")]
         TextBox _fcColorOff;
-
-
         [AccessedThroughProperty("fcColorOn")]
         TextBox _fcColorOn;
-
-
         [AccessedThroughProperty("fcDelete")]
         Button _fcDelete;
-
-
         [AccessedThroughProperty("fcItalicOff")]
         TextBox _fcItalicOff;
-
-
         [AccessedThroughProperty("fcItalicOn")]
         TextBox _fcItalicOn;
-
-
         [AccessedThroughProperty("fcList")]
         ListBox _fcList;
-
-
         [AccessedThroughProperty("fcName")]
         TextBox _fcName;
-
-
         [AccessedThroughProperty("fcNotes")]
         TextBox _fcNotes;
-
-
         [AccessedThroughProperty("fcReset")]
         Button _fcReset;
-
-
         [AccessedThroughProperty("fcSet")]
         Button _fcSet;
-
-
         [AccessedThroughProperty("fcTextOff")]
         TextBox _fcTextOff;
-
-
         [AccessedThroughProperty("fcTextOn")]
         TextBox _fcTextOn;
-
-
         [AccessedThroughProperty("fcUnderlineOff")]
         TextBox _fcUnderlineOff;
-
-
         [AccessedThroughProperty("fcUnderlineOn")]
         TextBox _fcUnderlineOn;
-
-
         [AccessedThroughProperty("fcWSSpace")]
         RadioButton _fcWSSpace;
-
-
         [AccessedThroughProperty("fcWSTab")]
         RadioButton _fcWSTab;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox10")]
         GroupBox _GroupBox10;
-
-
         [AccessedThroughProperty("GroupBox11")]
         GroupBox _GroupBox11;
-
-
         [AccessedThroughProperty("GroupBox12")]
         GroupBox _GroupBox12;
-
-
         [AccessedThroughProperty("GroupBox13")]
         GroupBox _GroupBox13;
-
-
         [AccessedThroughProperty("GroupBox14")]
         GroupBox _GroupBox14;
-
-
         [AccessedThroughProperty("GroupBox15")]
         GroupBox _GroupBox15;
-
-
         [AccessedThroughProperty("GroupBox16")]
         GroupBox _GroupBox16;
-
-
         [AccessedThroughProperty("GroupBox17")]
         GroupBox _GroupBox17;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("GroupBox5")]
         GroupBox _GroupBox5;
-
-
         [AccessedThroughProperty("GroupBox6")]
         GroupBox _GroupBox6;
-
-
         [AccessedThroughProperty("GroupBox7")]
         GroupBox _GroupBox7;
-
-
         [AccessedThroughProperty("GroupBox8")]
         GroupBox _GroupBox8;
-
-
         [AccessedThroughProperty("GroupBox9")]
         GroupBox _GroupBox9;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label12")]
         Label _Label12;
-
-
         [AccessedThroughProperty("Label13")]
         Label _Label13;
-
-
         [AccessedThroughProperty("Label14")]
         Label _Label14;
-
-
         [AccessedThroughProperty("Label15")]
         Label _Label15;
-
-
         [AccessedThroughProperty("Label16")]
         Label _Label16;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label20")]
         Label _Label20;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label24")]
         Label _Label24;
-
-
         [AccessedThroughProperty("Label25")]
         Label _Label25;
-
-
         [AccessedThroughProperty("Label26")]
         Label _Label26;
-
-
         [AccessedThroughProperty("Label27")]
         Label _Label27;
-
-
         [AccessedThroughProperty("Label28")]
         Label _Label28;
-
-
         [AccessedThroughProperty("Label29")]
         Label _Label29;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label30")]
         Label _Label30;
-
-
         [AccessedThroughProperty("Label31")]
         Label _Label31;
-
-
         [AccessedThroughProperty("Label32")]
         Label _Label32;
-
-
         [AccessedThroughProperty("Label33")]
         Label _Label33;
-
-
         [AccessedThroughProperty("Label34")]
         Label _Label34;
-
-
         [AccessedThroughProperty("Label36")]
         Label _Label36;
-
-
         [AccessedThroughProperty("Label37")]
         Label _Label37;
-
-
         [AccessedThroughProperty("Label38")]
         Label _Label38;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label40")]
         Label _Label40;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("lblExample")]
         Label _lblExample;
-
-
         [AccessedThroughProperty("lblSaveFolder")]
         Label _lblSaveFolder;
-
-
         [AccessedThroughProperty("listScenarios")]
         ListBox _listScenarios;
-
-
         [AccessedThroughProperty("myTip")]
         ToolTip _myTip;
-
-
         [AccessedThroughProperty("optDO")]
         RadioButton _optDO;
-
-
         [AccessedThroughProperty("optEnh")]
         Label _optEnh;
-
-
         [AccessedThroughProperty("optSO")]
         RadioButton _optSO;
-
-
         [AccessedThroughProperty("optTO")]
         RadioButton _optTO;
-
-
         [AccessedThroughProperty("rbChanceAverage")]
         RadioButton _rbChanceAverage;
-
-
         [AccessedThroughProperty("rbChanceIgnore")]
         RadioButton _rbChanceIgnore;
-
-
         [AccessedThroughProperty("rbChanceMax")]
         RadioButton _rbChanceMax;
-
-
         [AccessedThroughProperty("rbGraphSimple")]
         RadioButton _rbGraphSimple;
-
-
         [AccessedThroughProperty("rbGraphStacked")]
         RadioButton _rbGraphStacked;
-
-
         [AccessedThroughProperty("rbGraphTwoLine")]
         RadioButton _rbGraphTwoLine;
-
-
         [AccessedThroughProperty("rbPvE")]
         RadioButton _rbPvE;
-
-
         [AccessedThroughProperty("rbPvP")]
         RadioButton _rbPvP;
-
-
         [AccessedThroughProperty("TabControl1")]
         TabControl _TabControl1;
-
-
         [AccessedThroughProperty("TabPage1")]
         TabPage _TabPage1;
-
-
         [AccessedThroughProperty("TabPage2")]
         TabPage _TabPage2;
-
-
         [AccessedThroughProperty("TabPage3")]
         TabPage _TabPage3;
-
-
         [AccessedThroughProperty("TabPage4")]
         TabPage _TabPage4;
-
-
         [AccessedThroughProperty("TabPage5")]
         TabPage _TabPage5;
-
-
         [AccessedThroughProperty("TabPage6")]
         TabPage _TabPage6;
-
-
         [AccessedThroughProperty("TeamSize")]
         NumericUpDown _TeamSize;
-
-
         [AccessedThroughProperty("txtUpdatePath")]
         TextBox _txtUpdatePath;
-
-
         [AccessedThroughProperty("udBaseToHit")]
         NumericUpDown _udBaseToHit;
-
-
         [AccessedThroughProperty("udExHigh")]
         NumericUpDown _udExHigh;
-
-
         [AccessedThroughProperty("udExLow")]
         NumericUpDown _udExLow;
-
-
         [AccessedThroughProperty("udForceLevel")]
         NumericUpDown _udForceLevel;
-
-
         [AccessedThroughProperty("udIOLevel")]
         NumericUpDown _udIOLevel;
-
-
         [AccessedThroughProperty("udRTFSize")]
         NumericUpDown _udRTFSize;
-
-
         [AccessedThroughProperty("udStatSize")]
         NumericUpDown _udStatSize;
-
-
         short[] defActs;
-
-
         protected bool fcNoUpdate;
-
-
         public frmMain myParent;
-
-
         string[][] scenActs;
-
-
         string[] scenarioExample;
     }
 }

@@ -10,12 +10,8 @@ namespace Base.Data_Classes
 
     public class Character
     {
-
-    
     
         public string Name { get; set; }
-
-
     
         public int Level
         {
@@ -57,18 +53,8 @@ namespace Base.Data_Classes
                 return num;
             }
         }
-
-
-    
-    
         public int RequestedLevel { get; set; }
-
-
-    
-    
         Build[] Builds { get; set; }
-
-
     
         public Build CurrentBuild
         {
@@ -86,10 +72,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
-    
-    
         public Archetype Archetype
         {
             get
@@ -102,40 +84,12 @@ namespace Base.Data_Classes
                 this.Alignment = (this._archetype.Hero ? Enums.Alignment.Hero : Enums.Alignment.Villain);
             }
         }
-
-
-    
-    
         public Enums.Alignment Alignment { get; set; }
-
-
-    
-    
         public int Origin { get; set; }
-
-
-    
-    
         public IPowerset[] Powersets { get; set; }
-
-
-    
-    
         public bool[] PoolLocked { get; set; }
-
-
-    
-    
         protected int LevelCache { get; set; }
-
-
-    
-    
         public bool Locked { get; set; }
-
-
-    
-    
         public bool Complete
         {
             get
@@ -153,13 +107,7 @@ namespace Base.Data_Classes
                 this._completeCache = (value ? this._completeCache : null);
             }
         }
-
-
-    
-    
         public int ActiveComboLevel { get; private set; }
-
-
     
         public int PerfectionOfBodyLevel
         {
@@ -177,8 +125,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
     
         public int PerfectionOfMindLevel
         {
@@ -196,8 +142,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
     
         public int PerfectionOfSoulLevel
         {
@@ -215,103 +159,25 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
-    
-    
         string PerfectionType { get; set; }
-
-
-    
-    
         public bool AcceleratedActive { get; private set; }
-
-
-    
-    
         public bool DelayedActive { get; private set; }
-
-
-    
-    
         public bool DisintegrateActive { get; private set; }
-
-
-    
-    
         public bool TargetDroneActive { get; private set; }
-
-
-    
-    
         public bool Assassination { get; private set; }
-
-
-    
-    
         public bool Domination { get; private set; }
-
-
-    
-    
         public bool Containment { get; private set; }
-
-
-    
-    
         public bool Scourge { get; private set; }
-
-
-    
-    
         public bool CriticalHits { get; private set; }
-
-
-    
-    
         public bool FastModeActive { get; private set; }
-
-
-    
-    
         public bool Defiance { get; private set; }
-
-
-    
-    
         public bool DefensiveAdaptation { get; private set; }
-
-
-    
-    
         public bool EfficientAdaptation { get; private set; }
-
-
-    
-    
         public bool OffensiveAdaptation { get; private set; }
-
-
-    
-    
         public Dictionary<string, float> ModifyEffects { get; protected set; }
-
-
-    
-    
         public Character.TotalStatistics Totals { get; private set; }
-
-
-    
-    
         public Character.TotalStatistics TotalsCapped { get; private set; }
-
-
-    
-    
         public Statistics DisplayStats { get; private set; }
-
-
     
         public int SlotsRemaining
         {
@@ -334,8 +200,6 @@ namespace Base.Data_Classes
                 return num3;
             }
         }
-
-
     
         public bool CanPlaceSlot
         {
@@ -355,14 +219,10 @@ namespace Base.Data_Classes
                 return false;
             }
         }
-
-
         public void ResetLevel()
         {
             this.LevelCache = -1;
         }
-
-
         public void Lock()
         {
             int powersPlaced = this.CurrentBuild.PowersPlaced;
@@ -381,104 +241,70 @@ namespace Base.Data_Classes
                 this.ResetLevel();
             }
         }
-
-
         public bool IsHero()
         {
             return this.Alignment == Enums.Alignment.Hero || this.Alignment == Enums.Alignment.Vigilante;
         }
-
-
         public bool IsVillain()
         {
             return this.Alignment == Enums.Alignment.Rogue || this.Alignment == Enums.Alignment.Villain;
         }
-
-
         public bool IsPraetorian()
         {
             return this.Alignment == Enums.Alignment.Loyalist || this.Alignment == Enums.Alignment.Resistance;
         }
-
-
         public bool IsBlaster()
         {
             return this.Archetype.DisplayName.ToLower() == "blaster";
         }
-
-
         public bool IsController()
         {
             return this.Archetype.DisplayName.ToLower() == "controller";
         }
-
-
         public bool IsDefender()
         {
             return this.Archetype.DisplayName.ToLower() == "defender";
         }
-
-
         public bool IsScrapper()
         {
             return this.Archetype.DisplayName.ToLower() == "scrapper";
         }
-
-
         public bool IsTanker()
         {
             return this.Archetype.DisplayName.ToLower() == "tank";
         }
-
-
         public bool IsKheldian()
         {
             return this.Archetype.ClassType == Enums.eClassType.HeroEpic;
         }
-
-
         public bool IsBrute()
         {
             return this.Archetype.DisplayName.ToLower() == "brute";
         }
-
-
         public bool IsCorruptor()
         {
             return this.Archetype.DisplayName.ToLower() == "corruptor";
         }
-
-
         public bool IsDominator()
         {
             return this.Archetype.DisplayName.ToLower() == "dominator";
         }
-
-
         public bool IsMastermind()
         {
             return this.Archetype.DisplayName.ToLower() == "mastermind";
         }
-
-
         public bool IsStalker()
         {
             return this.Archetype.DisplayName.ToLower() == "stalker";
         }
-
-
         public bool IsArachnos()
         {
             return this.Archetype.ClassType == Enums.eClassType.VillainEpic;
         }
-
-
         public bool PoolTaken(int poolID)
         {
             return this.Powersets[poolID] != null && poolID >= 3 && poolID <= 7 && this.PoolLocked[poolID - 3];
         }
-
-
         protected Character()
         {
             this.Name = string.Empty;
@@ -493,8 +319,6 @@ namespace Base.Data_Classes
             };
             this.Reset(null, 0);
         }
-
-
         public void Reset(Archetype iArchetype = null, int iOrigin = 0)
         {
             this.Name = string.Empty;
@@ -561,8 +385,6 @@ namespace Base.Data_Classes
             this.Locked = false;
             this.LevelCache = -1;
         }
-
-
         protected void NewBuild()
         {
             this.Builds[0] = new Build(this, DatabaseAPI.Database.Levels);
@@ -585,8 +407,6 @@ namespace Base.Data_Classes
             this.TotalsCapped.Init();
             this.RequestedLevel = -1;
         }
-
-
         void RefreshActiveSpecial()
         {
             this.ActiveComboLevel = 0;
@@ -606,16 +426,12 @@ namespace Base.Data_Classes
             this.OffensiveAdaptation = false;
             this.PerfectionType = string.Empty;
         }
-
-
         public void Validate()
         {
             this.CheckAncillaryPowerSet();
             this.CurrentBuild.Validate();
             this.RefreshActiveSpecial();
         }
-
-
         protected bool PowersetMutexClash(int nIDPower)
         {
             int powerSetId = DatabaseAPI.Database.Power[nIDPower].PowerSetID;
@@ -650,8 +466,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         void CheckAncillaryPowerSet()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
@@ -679,8 +493,6 @@ namespace Base.Data_Classes
                 }
             }
         }
-
-
         IEnumerable<int> PoolGetAvailable(int iPool)
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
@@ -702,8 +514,6 @@ namespace Base.Data_Classes
             }
             return intList;
         }
-
-
         public int PoolToComboID(int iPool, int index)
         {
             IEnumerable<int> available = this.PoolGetAvailable(iPool);
@@ -718,8 +528,6 @@ namespace Base.Data_Classes
             }
             return 0;
         }
-
-
         public static PopUp.PopupData PopEnhInfo(I9Slot iSlot, int iLevel = -1, PowerEntry powerEntry = null)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -869,8 +677,6 @@ namespace Base.Data_Classes
             }
             return popupData2;
         }
-
-
         public int GetFirstAvailablePowerIndex(int iLevel = 0)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -882,8 +688,6 @@ namespace Base.Data_Classes
             }
             return -1;
         }
-
-
         int GetFirstAvailablePowerLevel(int iLevel = 0)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -895,8 +699,6 @@ namespace Base.Data_Classes
             }
             return -1;
         }
-
-
         protected int GetFirstAvailableSlotLevel(int iLevel = 0)
         {
             if (iLevel < 0)
@@ -912,8 +714,6 @@ namespace Base.Data_Classes
             }
             return -1;
         }
-
-
         public int SlotCheck(PowerEntry power)
         {
             int num;
@@ -941,8 +741,6 @@ namespace Base.Data_Classes
             }
             return num;
         }
-
-
         public int[] GetSlotCounts()
         {
             int[] array = new int[2];
@@ -958,8 +756,6 @@ namespace Base.Data_Classes
             }
             return numArray;
         }
-
-
         static string[] BreakByNewLine(string iString)
         {
             iString = iString.Replace('\n', '^');
@@ -968,8 +764,6 @@ namespace Base.Data_Classes
                 '^'
             });
         }
-
-
         static string[] BreakByBracket(string iString)
         {
             string[] strArray = new string[]
@@ -994,8 +788,6 @@ namespace Base.Data_Classes
             }
             return strArray2;
         }
-
-
         static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1094,8 +886,6 @@ namespace Base.Data_Classes
             }
             return section2;
         }
-
-
         public static PopUp.Section PopRecipeInfo(int rIdx, int iLevel)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1197,8 +987,6 @@ namespace Base.Data_Classes
             }
             return section2;
         }
-
-
         public static PopUp.PopupData PopSetInfo(int sIdx, PowerEntry powerEntry = null)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -1251,8 +1039,6 @@ namespace Base.Data_Classes
             }
             return popupData2;
         }
-
-
         static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
         {
             PopUp.Section section = new PopUp.Section();
@@ -1316,8 +1102,6 @@ namespace Base.Data_Classes
             }
             return section2;
         }
-
-
         public void PoolShuffle(bool flagged = false)
         {
             int[] numArray = new int[4];
@@ -1354,8 +1138,6 @@ namespace Base.Data_Classes
                 this.PoolLocked[4] = this.PowersetUsed(this.Powersets[7]);
             }
         }
-
-
         int GetEarliestPowerIndex(int iSet)
         {
             for (int index = 0; index <= this.CurrentBuild.LastPower; index++)
@@ -1367,8 +1149,6 @@ namespace Base.Data_Classes
             }
             return this.CurrentBuild.LastPower + 1;
         }
-
-
         bool PoolUnique(Enums.PowersetType pool)
         {
             bool flag = true;
@@ -1381,8 +1161,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         bool PowersetUsed(IPowerset powerset)
         {
             bool flag;
@@ -1403,8 +1181,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         protected bool CanRemovePower(int index, bool allowSecondary, out string message)
         {
             message = string.Empty;
@@ -1430,8 +1206,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public void SwitchSets(IPowerset newPowerset, IPowerset oldPowerset)
         {
             int index;
@@ -1559,158 +1333,42 @@ namespace Base.Data_Classes
             }
             this.CurrentBuild.FullMutexCheck();
         }
-
-
         Archetype _archetype;
-
-
         bool? _completeCache;
-
-
         public class TotalStatistics
         {
-
-    
     
             public float[] Def { get; set; }
-
-
-    
-    
             public float[] Res { get; set; }
-
-
-    
-    
             public float[] Mez { get; set; }
-
-
-    
-    
             public float[] MezRes { get; set; }
-
-
-    
-    
             public float[] DebuffRes { get; set; }
-
-
-    
-    
             public float Elusivity { get; set; }
-
-
-    
-    
             public float HPRegen { get; set; }
-
-
-    
-    
             public float HPMax { get; set; }
-
-
-    
-    
             public float EndRec { get; set; }
-
-
-    
-    
             public float EndUse { get; set; }
-
-
-    
-    
             public float EndMax { get; set; }
-
-
-    
-    
             public float RunSpd { get; set; }
-
-
-    
-    
             public float MaxRunSpd { get; set; }
-
-
-    
-    
             public float JumpSpd { get; set; }
-
-
-    
-    
             public float MaxJumpSpd { get; set; }
-
-
-    
-    
             public float FlySpd { get; set; }
-
-
-    
-    
             public float MaxFlySpd { get; set; }
-
-
-    
-    
             public float JumpHeight { get; set; }
-
-
-    
-    
             public float StealthPvE { get; set; }
-
-
-    
-    
             public float StealthPvP { get; set; }
-
-
-    
-    
             public float ThreatLevel { get; set; }
-
-
-    
-    
             public float Perception { get; set; }
-
-
-    
-    
             public float BuffHaste { get; set; }
-
-
-    
-    
             public float BuffAcc { get; set; }
-
-
-    
-    
             public float BuffToHit { get; set; }
-
-
-    
-    
             public float BuffDam { get; set; }
-
-
-    
-    
             public float BuffEndRdx { get; set; }
-
-
             internal TotalStatistics()
             {
                 this.Init();
             }
-
-
             public void Init()
             {
                 this.Def = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
@@ -1738,8 +1396,6 @@ namespace Base.Data_Classes
                 this.BuffDam = 0f;
                 this.BuffEndRdx = 0f;
             }
-
-
             public void Assign(Character.TotalStatistics iSt)
             {
                 this.Def = (float[])iSt.Def.Clone();

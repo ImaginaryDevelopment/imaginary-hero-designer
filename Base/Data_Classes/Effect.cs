@@ -10,24 +10,10 @@ namespace Base.Data_Classes
 
     public class Effect : IEffect, IComparable, ICloneable
     {
-
-    
     
         public string MagnitudeExpression { get; set; }
-
-
-    
-    
         public float ProcsPerMinute { get; set; }
-
-
-    
-    
         public bool CancelOnMiss { get; set; }
-
-
-    
-    
         public float Probability
         {
             get
@@ -68,8 +54,6 @@ namespace Base.Data_Classes
                 this.BaseProbability = value;
             }
         }
-
-
     
         public float Mag
         {
@@ -112,8 +96,6 @@ namespace Base.Data_Classes
                 return num;
             }
         }
-
-
     
         public float MagPercent
         {
@@ -131,8 +113,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
     
         public float Duration
         {
@@ -168,8 +148,6 @@ namespace Base.Data_Classes
                 return num;
             }
         }
-
-
     
         public bool DisplayPercentage
         {
@@ -215,10 +193,6 @@ namespace Base.Data_Classes
                 return flag;
             }
         }
-
-
-    
-    
         public bool VariableModified
         {
             get
@@ -280,8 +254,6 @@ namespace Base.Data_Classes
             {
             }
         }
-
-
     
         public bool InherentSpecial
         {
@@ -290,85 +262,21 @@ namespace Base.Data_Classes
                 return this.SpecialCase == Enums.eSpecialCase.Assassination || this.SpecialCase == Enums.eSpecialCase.Hidden || this.SpecialCase == Enums.eSpecialCase.Containment || this.SpecialCase == Enums.eSpecialCase.CriticalHit || this.SpecialCase == Enums.eSpecialCase.Domination || this.SpecialCase == Enums.eSpecialCase.Scourge;
             }
         }
-
-
-    
-    
         public float BaseProbability { get; set; }
-
-
-    
-    
         public bool IgnoreED { get; set; }
-
-
-    
-    
         public string Reward { get; set; }
-
-
-    
-    
         public string EffectId { get; set; }
-
-
-    
-    
         public string Special { get; set; }
-
-
-    
-    
         public IPower Power { get; set; }
-
-
-    
-    
         public IEnhancement Enhancement { get; set; }
-
-
-    
-    
         public int nID { get; set; }
-
-
-    
-    
         public Enums.eEffectClass EffectClass { get; set; }
-
-
-    
-    
         public Enums.eEffectType EffectType { get; set; }
-
-
-    
-    
         public Enums.eOverrideBoolean DisplayPercentageOverride { get; set; }
-
-
-    
-    
         public Enums.eDamage DamageType { get; set; }
-
-
-    
-    
         public Enums.eMez MezType { get; set; }
-
-
-    
-    
         public Enums.eEffectType ETModifies { get; set; }
-
-
-    
-    
         public string Summon { get; set; }
-
-
-    
-    
         public int nSummon
         {
             get
@@ -384,190 +292,42 @@ namespace Base.Data_Classes
                 this.SummonId = new int?(value);
             }
         }
-
-
-    
-    
         int? SummonId { get; set; }
-
-
-    
-    
         public int Ticks { get; set; }
-
-
-    
-    
         public float DelayedTime { get; set; }
-
-
-    
-    
         public Enums.eStacking Stacking { get; set; }
-
-
-    
-    
         public Enums.eSuppress Suppression { get; set; }
-
-
-    
-    
         public bool Buffable { get; set; }
-
-
-    
-    
         public bool Resistible { get; set; }
-
-
-    
-    
         public Enums.eSpecialCase SpecialCase { get; set; }
-
-
-    
-    
         public string UIDClassName { get; set; }
-
-
-    
-    
         public int nIDClassName { get; set; }
-
-
-    
-    
         public bool VariableModifiedOverride { get; set; }
-
-
-    
-    
         public bool isEnahncementEffect { get; set; }
-
-
-    
-    
         public Enums.ePvX PvMode { get; set; }
-
-
-    
-    
         public Enums.eToWho ToWho { get; set; }
-
-
-    
-    
         public float Scale { get; set; }
-
-
-    
-    
         public float nMagnitude { get; set; }
-
-
-    
-    
         public float nDuration { get; set; }
-
-
-    
-    
         public Enums.eAttribType AttribType { get; set; }
-
-
-    
-    
         public Enums.eAspect Aspect { get; set; }
-
-
-    
-    
         public string ModifierTable { get; set; }
-
-
-    
-    
         public int nModifierTable { get; set; }
-
-
-    
-    
         public string PowerFullName { get; set; }
-
-
-    
-    
         public bool NearGround { get; set; }
-
-
-    
-    
         public bool RequiresToHitCheck { get; set; }
-
-
-    
-    
         public float Math_Mag { get; set; }
-
-
-    
-    
         public float Math_Duration { get; set; }
-
-
-    
-    
         public bool Absorbed_Effect { get; set; }
-
-
-    
-    
         public Enums.ePowerType Absorbed_PowerType { get; set; }
-
-
-    
-    
         public int Absorbed_Power_nID { get; set; }
-
-
-    
-    
         public float Absorbed_Duration { get; set; }
-
-
-    
-    
         public int Absorbed_Class_nID { get; set; }
-
-
-    
-    
         public float Absorbed_Interval { get; set; }
-
-
-    
-    
         public int Absorbed_EffectID { get; set; }
-
-
-    
-    
         public Enums.eBuffMode buffMode { get; set; }
-
-
-    
-    
         public int UniqueID { get; set; }
-
-
-    
-    
         public string Override { get; set; }
-
-
-    
-    
         public int nOverride
         {
             get
@@ -583,19 +343,11 @@ namespace Base.Data_Classes
                 this.OverrideId = new int?(value);
             }
         }
-
-
-    
-    
         int? OverrideId { get; set; }
-
-
         public bool isDamage()
         {
             return this.EffectType == Enums.eEffectType.Defense || this.EffectType == Enums.eEffectType.DamageBuff || this.EffectType == Enums.eEffectType.Resistance || this.EffectType == Enums.eEffectType.Damage || this.EffectType == Enums.eEffectType.Elusivity;
         }
-
-
         public string BuildEffectStringShort(bool noMag = false, bool simple = false, bool useBaseProbability = false)
         {
             string str = string.Empty;
@@ -995,8 +747,6 @@ namespace Base.Data_Classes
             }
             return str5.Trim() + iStr + str4;
         }
-
-
         static string BuildCs(string iValue, string iStr, bool noComma = false)
         {
             if (!string.IsNullOrEmpty(iValue))
@@ -1014,8 +764,6 @@ namespace Base.Data_Classes
             }
             return iStr;
         }
-
-
         public string BuildEffectString(bool simple = false, string specialCat = "", bool noMag = false, bool grouped = false, bool useBaseProbability = false)
         {
             string str = string.Empty;
@@ -1617,8 +1365,6 @@ namespace Base.Data_Classes
                 empty
             });
         }
-
-
         public void StoreTo(ref BinaryWriter writer)
         {
             writer.Write(this.PowerFullName);
@@ -1659,8 +1405,6 @@ namespace Base.Data_Classes
             writer.Write(this.Override);
             writer.Write(this.ProcsPerMinute);
         }
-
-
         public bool ImportFromCSV(string iCSV)
         {
             bool flag;
@@ -2230,8 +1974,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public int SetTicks(float iDuration, float iInterval)
         {
             this.Ticks = 0;
@@ -2241,8 +1983,6 @@ namespace Base.Data_Classes
             }
             return this.Ticks;
         }
-
-
         public bool CanInclude()
         {
             bool flag;
@@ -2523,14 +2263,10 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public bool PvXInclude()
         {
             return MidsContext.Archetype == null || (((this.PvMode != Enums.ePvX.PvP && MidsContext.Config.Inc.PvE) || (this.PvMode != Enums.ePvX.PvE && !MidsContext.Config.Inc.PvE)) && (this.nIDClassName == -1 || this.nIDClassName == MidsContext.Archetype.Idx));
         }
-
-
         float ParseMagnitudeExpression()
         {
             float num3;
@@ -2549,8 +2285,6 @@ namespace Base.Data_Classes
             }
             return num3;
         }
-
-
         public int CompareTo(object obj)
         {
             int num;
@@ -2740,14 +2474,10 @@ namespace Base.Data_Classes
             }
             return num;
         }
-
-
         public object Clone()
         {
             return new Effect(this);
         }
-
-
         Effect()
         {
             this.BaseProbability = 1f;
@@ -2782,14 +2512,10 @@ namespace Base.Data_Classes
             this.Special = string.Empty;
             this.EffectId = "Ones";
         }
-
-
         public Effect(IPower power = null) : this()
         {
             this.Power = power;
         }
-
-
         public Effect(BinaryReader reader) : this()
         {
             this.PowerFullName = reader.ReadString();
@@ -2835,8 +2561,6 @@ namespace Base.Data_Classes
                 DatabaseAPI.Database.EffectIds.Add(this.EffectId);
             }
         }
-
-
         Effect(IEffect template) : this()
         {
             this.PowerFullName = template.PowerFullName;
@@ -2890,8 +2614,6 @@ namespace Base.Data_Classes
             this.IgnoreED = template.IgnoreED;
             this.Override = template.Override;
         }
-
-
         static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
     }
 }

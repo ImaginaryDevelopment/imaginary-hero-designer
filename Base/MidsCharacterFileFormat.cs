@@ -78,8 +78,6 @@ public static class MidsCharacterFileFormat
         buffer = memoryStream.ToArray();
         return true;
     }
-
-
     public static string MxDBuildSaveHyperlink(bool useBbCode, bool justLink = false)
     {
         MidsCharacterFileFormat.CompressionData cData = default(MidsCharacterFileFormat.CompressionData);
@@ -125,8 +123,6 @@ public static class MidsCharacterFileFormat
         }
         return str2;
     }
-
-
     static string MxDBuildSaveStringShared(ref MidsCharacterFileFormat.CompressionData cData, bool inncludeAltEnh, bool @break)
     {
         byte[] numArray = new byte[0];
@@ -147,8 +143,6 @@ public static class MidsCharacterFileFormat
         }
         return str;
     }
-
-
     public static string MxDBuildSaveString(bool inncludeAltEnh, bool forumMode)
     {
         MidsCharacterFileFormat.CompressionData cData = default(MidsCharacterFileFormat.CompressionData);
@@ -202,8 +196,6 @@ public static class MidsCharacterFileFormat
         }
         return str2;
     }
-
-
     static bool MxDReadSaveData(ref byte[] buffer, bool silent)
     {
         bool flag;
@@ -487,8 +479,6 @@ public static class MidsCharacterFileFormat
         }
         return flag;
     }
-
-
     public static MidsCharacterFileFormat.eLoadReturnCode MxDExtractAndLoad(Stream iStream)
     {
         StreamReader streamReader;
@@ -633,8 +623,6 @@ public static class MidsCharacterFileFormat
         }
         return eLoadReturnCode;
     }
-
-
     public static void WriteSlotData(ref BinaryWriter writer, ref I9Slot slot)
     {
         if (slot.Enh < 0)
@@ -659,8 +647,6 @@ public static class MidsCharacterFileFormat
             }
         }
     }
-
-
     static void ReadSlotData(ref BinaryReader reader, ref I9Slot slot, bool qualifiedNames, float fVersion)
     {
         int num = -1;
@@ -698,29 +684,13 @@ public static class MidsCharacterFileFormat
             }
         }
     }
-
-
     public const string MagicCompressed = "MxDz";
-
-
     public const string MagicUncompressed = "MxDu";
-
-
     const float SaveVersion = 1.01f;
-
-
     const int DataLinkMaxLength = 2048;
-
-
     const bool UseQualifiedNames = false;
-
-
     const bool UseOldSubpowerFields = true;
-
-
     const bool UseHexEncoding = true;
-
-
     public static readonly byte[] MagicNumber = new byte[]
     {
         Convert.ToByte('M'),
@@ -728,8 +698,6 @@ public static class MidsCharacterFileFormat
         Convert.ToByte('D'),
         Convert.ToByte(12)
     };
-
-
     public enum eLoadReturnCode
     {
 
@@ -739,17 +707,11 @@ public static class MidsCharacterFileFormat
 
         IsOldFormat
     }
-
-
     struct CompressionData
     {
 
         public int SzUncompressed;
-
-
         public int SzCompressed;
-
-
         public int SzEncoded;
     }
 }

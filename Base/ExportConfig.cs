@@ -13,8 +13,6 @@ public class ExportConfig
         this.ColorSchemes[this.ColorSchemes.Length - 1].SetDefault();
         this.ColorSchemes[this.ColorSchemes.Length - 1].SchemeName = "New Colours";
     }
-
-
     public void AddCodes()
     {
         Array.Resize<ExportConfig.FormatCodes>(ref this.FormatCode, this.FormatCode.Length + 1);
@@ -22,8 +20,6 @@ public class ExportConfig
         this.FormatCode[this.FormatCode.Length - 1].Name = "New Format";
         this.FormatCode[this.FormatCode.Length - 1].Notes = string.Empty;
     }
-
-
     public void RemoveScheme(int index)
     {
         if (index > -1 & index < this.ColorSchemes.Length)
@@ -45,8 +41,6 @@ public class ExportConfig
             }
         }
     }
-
-
     public void RemoveCodes(int index)
     {
         if (index > -1 & index < this.FormatCode.Length)
@@ -68,15 +62,11 @@ public class ExportConfig
             }
         }
     }
-
-
     static bool GrabString(out string dest, ref StreamReader reader)
     {
         dest = reader.ReadLine();
         return dest == "#CODE#" | dest == "#END#";
     }
-
-
     public void ResetColorsToDefaults()
     {
         this.ColorSchemes = new ExportConfig.ColorScheme[10];
@@ -171,8 +161,6 @@ public class ExportConfig
         this.ColorSchemes[9].SetColor = Color.FromArgb(255, 174, 213);
         this.ColorSchemes[9].HOColor = Color.FromArgb(223, 174, 255);
     }
-
-
     public void ResetCodesToDefaults()
     {
         this.FormatCode = new ExportConfig.FormatCodes[0];
@@ -261,8 +249,6 @@ public class ExportConfig
         this.FormatCode[this.FormatCode.Length - 1].UnderlineOff = "[/u]";
         this.FormatCode[this.FormatCode.Length - 1].Space = ExportConfig.WhiteSpace.Space;
     }
-
-
     public void LoadCodes(string fName)
     {
         if (File.Exists(fName))
@@ -344,20 +330,12 @@ public class ExportConfig
             }
         }
     }
-
-
     public ExportConfig()
     {
         this.ResetColorsToDefaults();
     }
-
-
     public ExportConfig.ColorScheme[] ColorSchemes = new ExportConfig.ColorScheme[0];
-
-
     public ExportConfig.FormatCodes[] FormatCode = new ExportConfig.FormatCodes[0];
-
-
     public enum WhiteSpace
     {
 
@@ -365,8 +343,6 @@ public class ExportConfig
 
         Tab
     }
-
-
     public enum Element
     {
 
@@ -386,8 +362,6 @@ public class ExportConfig
 
         HO
     }
-
-
     public struct ColorScheme
     {
 
@@ -403,8 +377,6 @@ public class ExportConfig
             this.SetColor = iCs.SetColor;
             this.HOColor = iCs.HOColor;
         }
-
-
         public void SetDefault()
         {
             this.SchemeName = string.Empty;
@@ -417,36 +389,16 @@ public class ExportConfig
             this.SetColor = Color.Navy;
             this.HOColor = Color.DarkCyan;
         }
-
-
         public string SchemeName;
-
-
         public Color Title;
-
-
         public Color Heading;
-
-
         public Color Level;
-
-
         public Color Slots;
-
-
         public Color Power;
-
-
         public Color IOColor;
-
-
         public Color SetColor;
-
-
         public Color HOColor;
     }
-
-
     public struct FormatCodes
     {
 
@@ -454,8 +406,6 @@ public class ExportConfig
         {
             return iCode.Replace("%VAL%", iVal);
         }
-
-
         public void Assign(ExportConfig.FormatCodes iFc)
         {
             this.Name = iFc.Name;
@@ -472,8 +422,6 @@ public class ExportConfig
             this.UnderlineOff = iFc.UnderlineOff;
             this.Space = iFc.Space;
         }
-
-
         public void SetDefault()
         {
             this.Name = string.Empty;
@@ -490,47 +438,19 @@ public class ExportConfig
             this.UnderlineOff = string.Empty;
             this.Space = ExportConfig.WhiteSpace.Space;
         }
-
-
         const string Placeholder = "%VAL%";
-
-
         public string Name;
-
-
         public string Notes;
-
-
         public string ColourOn;
-
-
         public string ColourOff;
-
-
         public string SizeOn;
-
-
         public string SizeOff;
-
-
         public string BoldOn;
-
-
         public string BoldOff;
-
-
         public string ItalicOn;
-
-
         public string ItalicOff;
-
-
         public string UnderlineOn;
-
-
         public string UnderlineOff;
-
-
         public ExportConfig.WhiteSpace Space;
     }
 }

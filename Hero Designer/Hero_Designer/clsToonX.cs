@@ -24,8 +24,6 @@ namespace Hero_Designer
             {
             }
         }
-
-
         static PopUp.StringValue BuildEDItem(int index, float[] value, Enums.eSchedule[] schedule, string edName, float[] afterED)
         {
             PopUp.StringValue stringValue = default(PopUp.StringValue);
@@ -86,8 +84,6 @@ namespace Hero_Designer
             }
             return stringValue2;
         }
-
-
         public void BuildPower(int iSet, int powerID, bool noPoolShuffle = false)
         {
             if (!(iSet < 0 | powerID < 0))
@@ -216,8 +212,6 @@ namespace Hero_Designer
                 base.ResetLevel();
             }
         }
-
-
         public int BuildSlot(int powerIDX, int slotIDX = -1)
         {
             int num;
@@ -260,22 +254,16 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         static float CalculatePvpDr(float val, float a, float b)
         {
             return (float)((double)val * (1.0 - Math.Abs(Math.Atan((double)(a * val))) * 0.63661977236758138 * (double)b));
         }
-
-
         public static string FixSpelling(string iString)
         {
             iString = iString.Replace("Armour", "Armor");
             iString = iString.Replace("Electric Mastery", "Electrical Mastery");
             return iString;
         }
-
-
         public void FlipAllSlots()
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -285,8 +273,6 @@ namespace Hero_Designer
             }
             this.GenerateBuffedPowerArray();
         }
-
-
         public void FlipSlots(int iPowerSlot)
         {
             if (iPowerSlot >= 0)
@@ -298,8 +284,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         static void GBD_Stage(ref IPower tPwr, ref Enums.BuffsX nBuffs, bool enhancementPass)
         {
             if (tPwr != null && tPwr.PowerType != Enums.ePowerType.GlobalBoost)
@@ -491,8 +475,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void GBD_Totals()
         {
             base.Totals.Init();
@@ -633,8 +615,6 @@ namespace Hero_Designer
             base.TotalsCapped.FlySpd = Math.Min(base.TotalsCapped.FlySpd, 86f);
             base.TotalsCapped.Perception = Math.Min(base.TotalsCapped.Perception, base.Archetype.PerceptionCap);
         }
-
-
         bool GBPA_AddEnhFX(ref IPower iPower, int iIndex)
         {
             bool flag;
@@ -691,8 +671,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool GBPA_AddSubPowerEffects(ref IPower Ret, int hIDX)
         {
             bool flag;
@@ -743,8 +721,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void GBPA_ApplyArchetypeCaps(ref IPower powerMath)
         {
             if (powerMath.RechargeTime > base.Archetype.RechargeCap)
@@ -760,8 +736,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         bool GBPA_ApplyIncarnateEnhancements(ref IPower powerMath, int hIDX, IPower power, bool ignoreED, ref Enums.eEffectType effectType)
         {
             bool flag = false;
@@ -1057,8 +1031,6 @@ namespace Hero_Designer
             }
             return flag2;
         }
-
-
         IPower GBPA_ApplyPowerOverride(ref IPower ret)
         {
             if (ret.HasPowerOverrideEffect)
@@ -1077,8 +1049,6 @@ namespace Hero_Designer
             }
             return ret;
         }
-
-
         bool GBPA_MultiplyVariable(ref IPower iPower, int hIDX)
         {
             bool flag;
@@ -1110,8 +1080,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool GBPA_Pass0_InitializePowerArray()
         {
             this._buffedPower = new IPower[base.CurrentBuild.Powers.Count - 1 + 1];
@@ -1152,8 +1120,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         bool GBPA_Pass1_EnhancePreED(ref IPower powerMath, int hIDX)
         {
             Enums.eEffectType eEffectType2 = Enums.eEffectType.None;
@@ -1295,8 +1261,6 @@ namespace Hero_Designer
             }
             return flag2;
         }
-
-
         static bool GBPA_Pass2_ApplyED(ref IPower powerMath)
         {
             Enums.eEffectType eEffectType = Enums.eEffectType.None;
@@ -1362,8 +1326,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         bool GBPA_Pass3_EnhancePostED(ref IPower powerMath, int hIDX)
         {
             bool flag = DatabaseAPI.Database.Power[base.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.Accuracy);
@@ -1570,8 +1532,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         static bool GBPA_Pass4_Add(ref IPower powerMath)
         {
             IPower power = powerMath;
@@ -1594,8 +1554,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         static bool GBPA_Pass5_MultiplyPreBuff(ref IPower powerMath, ref IPower powerBuffed)
         {
             bool flag;
@@ -1623,8 +1581,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool GBPA_Pass6_MultiplyPostBuff(ref IPower powerMath, ref IPower powerBuffed)
         {
             bool flag;
@@ -1654,8 +1610,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         IPower GBPA_SubPass0_AssemblePowerEntry(int nIDPower, int hIDX)
         {
             IPower power;
@@ -1675,8 +1629,6 @@ namespace Hero_Designer
             }
             return power;
         }
-
-
         void GenerateBuffData(ref Enums.BuffsX nBuffs, bool enhancementPass)
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -1709,8 +1661,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void GenerateBuffedPowerArray()
         {
             base.CurrentBuild.GenerateSetBonusData();
@@ -1746,8 +1696,6 @@ namespace Hero_Designer
             }
             this.GBD_Totals();
         }
-
-
         void GenerateModifyEffectsArray()
         {
             int num = base.CurrentBuild.Powers.Count - 1;
@@ -1793,8 +1741,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public IPower GetBasePower(int iPower, int nIDPower = -1)
         {
             if (iPower > -1)
@@ -1832,8 +1778,6 @@ namespace Hero_Designer
             }
             return powerMath;
         }
-
-
         static int GetClassByName(string iName)
         {
             int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
@@ -1858,8 +1802,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         public IPower GetEnhancedPower(int iPower)
         {
             IPower result;
@@ -1873,8 +1815,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         public int[] GetEnhancements(int iPowerSlot)
         {
             int[] numArray = new int[0];
@@ -1889,8 +1829,6 @@ namespace Hero_Designer
             }
             return numArray;
         }
-
-
         bool ImportInternalDataUC(StreamReader iStream, float nVer)
         {
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
@@ -2062,8 +2000,6 @@ namespace Hero_Designer
             MidsContext.Archetype = base.Archetype;
             return true;
         }
-
-
         static string[] IoGrab2(StreamReader iStream, string delimiter = ";", char fakeLf = '\0')
         {
             char[] chArray2 = new char[]
@@ -2087,8 +2023,6 @@ namespace Hero_Designer
             }
             return strArray;
         }
-
-
         public bool Load(string iFileName, ref Stream mStream)
         {
             Stream iStream;
@@ -2135,8 +2069,6 @@ namespace Hero_Designer
             base.Validate();
             return flag;
         }
-
-
         public PopUp.PopupData PopPowerInfo(int hIDX, int pIDX)
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -2304,8 +2236,6 @@ namespace Hero_Designer
             }
             return popupData;
         }
-
-
         public PopUp.PopupData PopPowersetInfo(int nIDPowerset, string extraString = "")
         {
             PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -2349,8 +2279,6 @@ namespace Hero_Designer
             }
             return popupData;
         }
-
-
         PopUp.Section PopSlottedEnhInfo(int hIDX)
         {
             PopUp.Section section = new PopUp.Section();
@@ -2679,8 +2607,6 @@ namespace Hero_Designer
             }
             return section;
         }
-
-
         public ListLabelV2.LLItemState PowerState(int nIDPower, ref string message)
         {
             if (nIDPower >= 0)
@@ -2812,8 +2738,6 @@ namespace Hero_Designer
             }
             return ListLabelV2.LLItemState.Disabled;
         }
-
-
         bool ReadInternalData(StreamReader iStream)
         {
             iStream.BaseStream.Seek(0L, SeekOrigin.Begin);
@@ -2882,8 +2806,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool ReadInternalDataUC(StreamReader iStream)
         {
             string[] strArray4;
@@ -3015,8 +2937,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         public void Save(string iFileName)
         {
             if (base.Archetype == null)
@@ -3056,8 +2976,6 @@ namespace Hero_Designer
                 streamWriter.Close();
             }
         }
-
-
         void SetPower_NID(int Index, int nIDPower)
         {
             if (!(Index < 0 | Index >= base.CurrentBuild.Powers.Count))
@@ -3097,8 +3015,6 @@ namespace Hero_Designer
                 base.CurrentBuild.Powers[Index].ValidateSlots();
             }
         }
-
-
         public bool StringToInternalData(string iString)
         {
             bool flag;
@@ -3179,8 +3095,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool TestPower(int nIDPower)
         {
             bool flag;
@@ -3195,17 +3109,9 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         IPower[] _buffedPower = new IPower[0];
-
-
         IPower[] _mathPower = new IPower[0];
-
-
         Enums.BuffsX _selfBuffs;
-
-
         Enums.BuffsX _selfEnhance;
     }
 }

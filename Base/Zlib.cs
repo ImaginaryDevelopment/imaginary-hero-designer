@@ -11,12 +11,8 @@ public class Zlib
 
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "compress2", ExactSpelling = true, SetLastError = true)]
     static extern int Compress(ref byte destBytes, ref int destLength, ref byte srcBytes, int srcLength, int compressionLevel);
-
-
     [DllImport("ZLIB1.DLL", CharSet = CharSet.Ansi, EntryPoint = "uncompress", ExactSpelling = true, SetLastError = true)]
     static extern int Uncompress(ref byte destBytes, ref int destLength, ref byte srceBytes, int srcLength);
-
-
     public int UnPack(string iRoot, string iFileName, ref DateTime iDate, ref string iComments)
     {
         this._sFrm = new ZStatus
@@ -75,8 +71,6 @@ public class Zlib
         this._sFrm = null;
         return packHeader.PackContents;
     }
-
-
     static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
     {
         int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
@@ -124,8 +118,6 @@ public class Zlib
         }
         return flag;
     }
-
-
     bool UncompressFile(string iRoot, BinaryReader reader)
     {
         Zlib.FileHeader fileHeader = default(Zlib.FileHeader);
@@ -178,8 +170,6 @@ public class Zlib
         }
         return flag;
     }
-
-
     public static byte[] CompressChunk(ref byte[] iBytes)
     {
         int length = iBytes.Length;
@@ -216,8 +206,6 @@ public class Zlib
         }
         return numArray;
     }
-
-
     public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
     {
         int length = iBytes.Length;
@@ -235,8 +223,6 @@ public class Zlib
         }
         return numArray;
     }
-
-
     public static byte[] UUEncodeBytes(byte[] iBytes)
     {
         if (iBytes.Length % 3 != 0)
@@ -279,8 +265,6 @@ public class Zlib
         memoryStream.Close();
         return memoryStream.ToArray();
     }
-
-
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {
         byte[] numArray;
@@ -329,8 +313,6 @@ public class Zlib
         }
         return numArray;
     }
-
-
     public static byte[] HexDecodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
@@ -346,8 +328,6 @@ public class Zlib
         memoryStream.Close();
         return memoryStream.ToArray();
     }
-
-
     public static byte[] HexEncodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
@@ -370,8 +350,6 @@ public class Zlib
         memoryStream.Close();
         return memoryStream.ToArray();
     }
-
-
     public static string BreakString(string iString, int length, bool bookend = false)
     {
         string str = string.Empty;
@@ -405,8 +383,6 @@ public class Zlib
         }
         return str;
     }
-
-
     public static string UnbreakHex(string iString)
     {
         string empty = string.Empty;
@@ -421,8 +397,6 @@ public class Zlib
         }
         return empty;
     }
-
-
     public static string UnbreakString(string iString, bool bookend = false)
     {
         string str;
@@ -486,8 +460,6 @@ public class Zlib
         }
         return str;
     }
-
-
     public static bool CheckTag(string iFileName)
     {
         FileStream fileStream;
@@ -511,32 +483,14 @@ public class Zlib
         fileStream.Close();
         return flag;
     }
-
-
     const float Version = 1f;
-
-
     const string PackHeaderToken = "MHDPackZ";
-
-
     const int ErrorNone = 0;
-
-
     const int ErrorStream = -2;
-
-
     const int ErrorData = -3;
-
-
     const int ErrorOutOfMem = -4;
-
-
     const int ErrorBuffer = -5;
-
-
     ZStatus _sFrm;
-
-
     enum ECompressionLevel
     {
 
@@ -548,39 +502,21 @@ public class Zlib
 
         DefaultCompress = -1
     }
-
-
     struct PackHeader
     {
 
         public float PackVersion;
-
-
         public int PackContents;
-
-
         public string PackComments;
-
-
         public int DateD;
-
-
         public int DateM;
-
-
         public int DateY;
     }
-
-
     struct FileHeader
     {
 
         public string FileName;
-
-
         public int DecompressedSize;
-
-
         public int CompressedSize;
     }
 }

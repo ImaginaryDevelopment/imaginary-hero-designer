@@ -20,8 +20,6 @@
                 base.Dispose(disposing);
             }
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -316,11 +314,7 @@
             this.Panel2.PerformLayout();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
-
-
         internal global::Hero_Designer.frmIncarnate.CustomPanel Panel2;
     }
 }

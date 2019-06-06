@@ -14,8 +14,6 @@ namespace Hero_Designer
 
     public partial class frmSetViewer : Form
     {
-
-    
     
         internal virtual ImageButton btnClose
         {
@@ -38,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton btnSmall
         {
             get
@@ -63,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton chkOnTop
         {
             get
@@ -88,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -104,10 +90,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -120,10 +102,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -136,10 +114,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageList ilSet
         {
             get
@@ -152,10 +126,6 @@ namespace Hero_Designer
                 this._ilSet = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -168,10 +138,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -184,10 +150,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lstSets
         {
             get
@@ -209,10 +171,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtApplied
         {
             get
@@ -225,10 +183,6 @@ namespace Hero_Designer
                 this._rtApplied = value;
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtxtFX
         {
             get
@@ -241,10 +195,6 @@ namespace Hero_Designer
                 this._rtxtFX = value;
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtxtInfo
         {
             get
@@ -257,8 +207,6 @@ namespace Hero_Designer
                 this._rtxtInfo = value;
             }
         }
-
-
         public frmSetViewer(ref frmMain iParent)
         {
             base.Move += this.frmSetViewer_Move;
@@ -267,14 +215,10 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iParent;
         }
-
-
         void btnClose_Click()
         {
             base.Close();
         }
-
-
         void btnSmall_Click()
         {
             if (base.Width > 600)
@@ -301,14 +245,10 @@ namespace Hero_Designer
             }
             this.StoreLocation();
         }
-
-
         void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
-
-
         public void DisplayList()
         {
             string[] items = new string[3];
@@ -346,8 +286,6 @@ namespace Hero_Designer
             }
             this.FillEffectView();
         }
-
-
         void FillEffectView()
         {
             string str9 = "";
@@ -510,8 +448,6 @@ namespace Hero_Designer
                 this.rtApplied.Rtf = str9;
             }
         }
-
-
         void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSet.ImageSize.Width, this.ilSet.ImageSize.Height);
@@ -540,25 +476,17 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatSets(false);
         }
-
-
         void frmSetViewer_Load(object sender, EventArgs e)
         {
         }
-
-
         void frmSetViewer_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
-
-
         void lstSets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstSets.SelectedItems.Count >= 1)
@@ -566,8 +494,6 @@ namespace Hero_Designer
                 this.rtxtInfo.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(Conversions.ToInteger(this.lstSets.SelectedItems[0].Tag), Conversions.ToInteger(this.lstSets.SelectedItems[0].SubItems[2].Text)) + RTF.EndRTF();
             }
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -592,8 +518,6 @@ namespace Hero_Designer
             base.Top = rectangle.Y;
             base.Left = rectangle.X;
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -603,8 +527,6 @@ namespace Hero_Designer
                 MidsContext.Config.ShrinkFrmSets = (base.Width < 600);
             }
         }
-
-
         public void UpdateData()
         {
             if (this.myParent != null)
@@ -634,60 +556,32 @@ namespace Hero_Designer
                 this.DisplayList();
             }
         }
-
-
         [AccessedThroughProperty("btnClose")]
         ImageButton _btnClose;
-
-
         [AccessedThroughProperty("btnSmall")]
         ImageButton _btnSmall;
-
-
         [AccessedThroughProperty("chkOnTop")]
         ImageButton _chkOnTop;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ilSet")]
         ImageList _ilSet;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("lstSets")]
         ListView _lstSets;
-
-
         [AccessedThroughProperty("rtApplied")]
         RichTextBox _rtApplied;
-
-
         [AccessedThroughProperty("rtxtFX")]
         RichTextBox _rtxtFX;
-
-
         [AccessedThroughProperty("rtxtInfo")]
         RichTextBox _rtxtInfo;
-
-
         protected frmMain myParent;
     }
 }

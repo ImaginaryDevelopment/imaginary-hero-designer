@@ -10,8 +10,6 @@ namespace Hero_Designer
 
     public partial class frmExportColor : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -34,10 +32,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -59,10 +53,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColorDialog cPicker
         {
             get
@@ -75,10 +65,6 @@ namespace Hero_Designer
                 this._cPicker = value;
             }
         }
-
-
-    
-    
         internal virtual Label csHeading
         {
             get
@@ -100,10 +86,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csHO
         {
             get
@@ -125,10 +107,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csIO
         {
             get
@@ -150,10 +128,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csLevel
         {
             get
@@ -175,10 +149,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csPower
         {
             get
@@ -200,10 +170,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csSet
         {
             get
@@ -225,10 +191,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csSlots
         {
             get
@@ -250,10 +212,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csTitle
         {
             get
@@ -275,10 +233,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -291,10 +245,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -307,10 +257,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label20
         {
             get
@@ -323,10 +269,6 @@ namespace Hero_Designer
                 this._Label20 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -339,10 +281,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -355,10 +293,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -371,10 +305,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -387,10 +317,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -403,10 +329,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -419,10 +341,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -435,10 +353,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolTip myTip
         {
             get
@@ -451,10 +365,6 @@ namespace Hero_Designer
                 this._myTip = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtName
         {
             get
@@ -476,29 +386,21 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmExportColor(ref ExportConfig.ColorScheme iScheme)
         {
             base.Load += this.frmExportColor_Load;
             this.InitializeComponent();
             this.myScheme.Assign(iScheme);
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
-
-
         void csHeading_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Heading;
@@ -508,8 +410,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csHO_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.HOColor;
@@ -519,8 +419,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csIO_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.IOColor;
@@ -530,8 +428,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csLevel_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Level;
@@ -541,8 +437,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csPower_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Power;
@@ -552,8 +446,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csSet_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.SetColor;
@@ -563,8 +455,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csSlots_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Slots;
@@ -574,8 +464,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csTitle_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myScheme.Title;
@@ -585,21 +473,15 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void frmExportColor_Load(object sender, EventArgs e)
         {
             this.txtName.Text = this.myScheme.SchemeName;
             this.updateColours();
         }
-
-
         void txtName_TextChanged(object sender, EventArgs e)
         {
             this.myScheme.SchemeName = this.txtName.Text;
         }
-
-
         public void updateColours()
         {
             this.csTitle.BackColor = this.myScheme.Title;
@@ -611,100 +493,52 @@ namespace Hero_Designer
             this.csHO.BackColor = this.myScheme.HOColor;
             this.csPower.BackColor = this.myScheme.Power;
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("cPicker")]
         ColorDialog _cPicker;
-
-
         [AccessedThroughProperty("csHeading")]
         Label _csHeading;
-
-
         [AccessedThroughProperty("csHO")]
         Label _csHO;
-
-
         [AccessedThroughProperty("csIO")]
         Label _csIO;
-
-
         [AccessedThroughProperty("csLevel")]
         Label _csLevel;
-
-
         [AccessedThroughProperty("csPower")]
         Label _csPower;
-
-
         [AccessedThroughProperty("csSet")]
         Label _csSet;
-
-
         [AccessedThroughProperty("csSlots")]
         Label _csSlots;
-
-
         [AccessedThroughProperty("csTitle")]
         Label _csTitle;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label20")]
         Label _Label20;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("myTip")]
         ToolTip _myTip;
-
-
         [AccessedThroughProperty("txtName")]
         TextBox _txtName;
-
-
         public ExportConfig.ColorScheme myScheme;
     }
 }

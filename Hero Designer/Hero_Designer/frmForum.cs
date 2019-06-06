@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmForum : Form
     {
-
-    
     
         internal virtual CheckBox chkAlwaysDataChunk
         {
@@ -28,10 +26,6 @@ namespace Hero_Designer
                 this._chkAlwaysDataChunk = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkBonusList
         {
             get
@@ -44,10 +38,6 @@ namespace Hero_Designer
                 this._chkBonusList = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkBreakdown
         {
             get
@@ -60,10 +50,6 @@ namespace Hero_Designer
                 this._chkBreakdown = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkChunkOnly
         {
             get
@@ -76,10 +62,6 @@ namespace Hero_Designer
                 this._chkChunkOnly = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkDataChunk
         {
             get
@@ -92,10 +74,6 @@ namespace Hero_Designer
                 this._chkDataChunk = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoEnh
         {
             get
@@ -108,10 +86,6 @@ namespace Hero_Designer
                 this._chkNoEnh = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoIOLevel
         {
             get
@@ -124,10 +98,6 @@ namespace Hero_Designer
                 this._chkNoIOLevel = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoSetName
         {
             get
@@ -140,10 +110,6 @@ namespace Hero_Designer
                 this._chkNoSetName = value;
             }
         }
-
-
-    
-    
         internal virtual Label csHeading
         {
             get
@@ -156,10 +122,6 @@ namespace Hero_Designer
                 this._csHeading = value;
             }
         }
-
-
-    
-    
         internal virtual Label csLevel
         {
             get
@@ -172,10 +134,6 @@ namespace Hero_Designer
                 this._csLevel = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox csList
         {
             get
@@ -197,10 +155,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csSlots
         {
             get
@@ -213,10 +167,6 @@ namespace Hero_Designer
                 this._csSlots = value;
             }
         }
-
-
-    
-    
         internal virtual Label csTitle
         {
             get
@@ -229,10 +179,6 @@ namespace Hero_Designer
                 this._csTitle = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -245,10 +191,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -261,10 +203,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -277,10 +215,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -293,10 +227,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -309,10 +239,6 @@ namespace Hero_Designer
                 this._GroupBox5 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibCancel
         {
             get
@@ -334,10 +260,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibExport
         {
             get
@@ -359,10 +281,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -375,10 +293,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -391,10 +305,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -407,10 +317,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label20
         {
             get
@@ -423,10 +329,6 @@ namespace Hero_Designer
                 this._Label20 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -439,10 +341,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -455,10 +353,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -471,10 +365,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -487,10 +377,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCodeInf
         {
             get
@@ -503,10 +389,6 @@ namespace Hero_Designer
                 this._lblCodeInf = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblRecess
         {
             get
@@ -519,10 +401,6 @@ namespace Hero_Designer
                 this._lblRecess = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lstCodes
         {
             get
@@ -544,10 +422,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbTitle
         {
             get
@@ -572,10 +446,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip ToolTip1
         {
             get
@@ -588,8 +458,6 @@ namespace Hero_Designer
                 this._ToolTip1 = value;
             }
         }
-
-
         public frmForum()
         {
             base.Load += this.frmForum_Load;
@@ -598,8 +466,6 @@ namespace Hero_Designer
             base.Paint += this.frmForum_Paint;
             this.InitializeComponent();
         }
-
-
         void csList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.csList.SelectedIndex > -1)
@@ -619,8 +485,6 @@ namespace Hero_Designer
                 this.csTitle.BackColor = Color.MediumBlue;
             }
         }
-
-
         void csPopulateList(int HighlightID = -1)
         {
             this.csList.Items.Clear();
@@ -639,8 +503,6 @@ namespace Hero_Designer
                 this.csList.SelectedIndex = HighlightID;
             }
         }
-
-
         void frmForum_Load(object sender, EventArgs e)
         {
             this.pbTitle.Left = (int)Math.Round((double)(base.Width - this.pbTitle.Width) / 2.0);
@@ -689,14 +551,10 @@ namespace Hero_Designer
             this.chkBreakdown.Checked = MidsContext.Config.ExportBonusList;
             this.chkChunkOnly.Checked = MidsContext.Config.ExportChunkOnly;
         }
-
-
         void frmForum_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
-
-
         void frmForum_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -706,22 +564,16 @@ namespace Hero_Designer
                 base.Location = mousePosition;
             }
         }
-
-
         void frmForum_Paint(object sender, PaintEventArgs e)
         {
             Pen pen = new Pen(Color.Black, 1f);
             Rectangle rect = new Rectangle(0, 0, base.Width - 1, base.Height - 1);
             e.Graphics.DrawRectangle(pen, rect);
         }
-
-
         void ibCancel_ButtonClicked()
         {
             base.Hide();
         }
-
-
         void ibExport_ButtonClicked()
         {
             MidsContext.Config.ExportScheme = this.csList.SelectedIndex;
@@ -757,168 +609,90 @@ namespace Hero_Designer
             Interaction.MsgBox(prompt, MsgBoxStyle.Information, "Export Done");
             base.Hide();
         }
-
-
         void lstCodes_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.lblCodeInf.Text = MidsContext.Config.Export.FormatCode[this.lstCodes.SelectedIndex].Notes;
         }
-
-
         void pbTitle_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-this.pbTitle.Left + -e.X, -this.pbTitle.Top + -e.Y);
         }
-
-
         void pbTitle_MouseMove(object sender, MouseEventArgs e)
         {
             this.frmForum_MouseMove(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         public void SetTips()
         {
             string caption = "Enable this to include a data chunk which can be copied by other forum users and imported into the Hero Designer.\r\nIf your build contains Inventions or Invention Sets, you should enable this option, as the import filter\r\ncan't interpret those from the human-readable part of a build post.";
             this.ToolTip1.SetToolTip(this.chkDataChunk, caption);
         }
-
-
         [AccessedThroughProperty("chkAlwaysDataChunk")]
         CheckBox _chkAlwaysDataChunk;
-
-
         [AccessedThroughProperty("chkBonusList")]
         CheckBox _chkBonusList;
-
-
         [AccessedThroughProperty("chkBreakdown")]
         CheckBox _chkBreakdown;
-
-
         [AccessedThroughProperty("chkChunkOnly")]
         CheckBox _chkChunkOnly;
-
-
         [AccessedThroughProperty("chkDataChunk")]
         CheckBox _chkDataChunk;
-
-
         [AccessedThroughProperty("chkNoEnh")]
         CheckBox _chkNoEnh;
-
-
         [AccessedThroughProperty("chkNoIOLevel")]
         CheckBox _chkNoIOLevel;
-
-
         [AccessedThroughProperty("chkNoSetName")]
         CheckBox _chkNoSetName;
-
-
         [AccessedThroughProperty("csHeading")]
         Label _csHeading;
-
-
         [AccessedThroughProperty("csLevel")]
         Label _csLevel;
-
-
         [AccessedThroughProperty("csList")]
         ListBox _csList;
-
-
         [AccessedThroughProperty("csSlots")]
         Label _csSlots;
-
-
         [AccessedThroughProperty("csTitle")]
         Label _csTitle;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("GroupBox5")]
         GroupBox _GroupBox5;
-
-
         [AccessedThroughProperty("ibCancel")]
         ImageButton _ibCancel;
-
-
         [AccessedThroughProperty("ibExport")]
         ImageButton _ibExport;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label20")]
         Label _Label20;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("lblCodeInf")]
         Label _lblCodeInf;
-
-
         [AccessedThroughProperty("lblRecess")]
         Label _lblRecess;
-
-
         [AccessedThroughProperty("lstCodes")]
         ListBox _lstCodes;
-
-
         [AccessedThroughProperty("pbTitle")]
         PictureBox _pbTitle;
-
-
         [AccessedThroughProperty("ToolTip1")]
         ToolTip _ToolTip1;
-
-
         public clsOutput Exporter;
-
-
         Point mouse_offset;
     }
 }

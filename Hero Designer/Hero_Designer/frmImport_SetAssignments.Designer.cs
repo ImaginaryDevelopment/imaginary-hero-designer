@@ -21,7 +21,6 @@ namespace Hero_Designer
             }
         }
 
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -117,7 +116,6 @@ namespace Hero_Designer
             this.udRevision.EndInit();
             base.ResumeLayout(false);
         }
-
 
         private global::System.ComponentModel.IContainer components;
     }

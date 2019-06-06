@@ -10,12 +10,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmImportPowerLevels : Form
     {
-
-    
     
         internal virtual Button btnClose
         {
@@ -38,10 +34,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnFile
         {
             get
@@ -63,10 +55,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -88,10 +76,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -104,10 +88,6 @@ namespace Hero_Designer
                 this._dlgBrowse = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -120,10 +100,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -136,10 +112,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDate
         {
             get
@@ -152,10 +124,6 @@ namespace Hero_Designer
                 this._lblDate = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblFile
         {
             get
@@ -168,10 +136,6 @@ namespace Hero_Designer
                 this._lblFile = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udRevision
         {
             get
@@ -184,22 +148,16 @@ namespace Hero_Designer
                 this._udRevision = value;
             }
         }
-
-
         public frmImportPowerLevels()
         {
             base.Load += this.frmImportPowerLevels_Load;
             this.FullFileName = "";
             this.InitializeComponent();
         }
-
-
         void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
@@ -210,16 +168,12 @@ namespace Hero_Designer
             this.BusyHide();
             this.DisplayInfo();
         }
-
-
         void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
             this.DisplayInfo();
         }
-
-
         void BusyHide()
         {
             if (this.bFrm != null)
@@ -228,8 +182,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -239,23 +191,17 @@ namespace Hero_Designer
             }
             this.bFrm.SetMessage(sMessage);
         }
-
-
         public void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
             this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.udRevision.Value = new decimal(DatabaseAPI.Database.PowerLevelVersion.Revision);
         }
-
-
         void frmImportPowerLevels_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile;
             this.DisplayInfo();
         }
-
-
         bool ParseClasses(string iFileName)
         {
             int num = 0;
@@ -332,47 +278,25 @@ namespace Hero_Designer
             }), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
-
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
-
         [AccessedThroughProperty("btnFile")]
         Button _btnFile;
-
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
-
         [AccessedThroughProperty("dlgBrowse")]
         OpenFileDialog _dlgBrowse;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("lblDate")]
         Label _lblDate;
-
-
         [AccessedThroughProperty("lblFile")]
         Label _lblFile;
-
-
         [AccessedThroughProperty("udRevision")]
         NumericUpDown _udRevision;
-
-
         frmBusy bFrm;
-
-
         string FullFileName;
     }
 }

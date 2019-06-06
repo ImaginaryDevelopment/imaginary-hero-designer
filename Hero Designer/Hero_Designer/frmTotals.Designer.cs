@@ -20,8 +20,6 @@
                 base.Dispose(disposing);
             }
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -964,8 +962,6 @@
             ((global::System.ComponentModel.ISupportInitialize)this.tab2).EndInit();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

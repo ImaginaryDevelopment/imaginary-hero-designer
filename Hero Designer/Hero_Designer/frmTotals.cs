@@ -13,12 +13,8 @@ using midsControls;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmTotals : Form
     {
-
-    
     
         internal virtual ctlMultiGraph graphAcc
         {
@@ -32,10 +28,6 @@ namespace Hero_Designer
                 this._graphAcc = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphDam
         {
             get
@@ -48,10 +40,6 @@ namespace Hero_Designer
                 this._graphDam = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphDef
         {
             get
@@ -64,10 +52,6 @@ namespace Hero_Designer
                 this._graphDef = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphDrain
         {
             get
@@ -80,10 +64,6 @@ namespace Hero_Designer
                 this._graphDrain = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphElusivity
         {
             get
@@ -96,10 +76,6 @@ namespace Hero_Designer
                 this._graphElusivity = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphEndRdx
         {
             get
@@ -112,10 +88,6 @@ namespace Hero_Designer
                 this._graphEndRdx = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphHaste
         {
             get
@@ -128,10 +100,6 @@ namespace Hero_Designer
                 this._graphHaste = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphHP
         {
             get
@@ -144,10 +112,6 @@ namespace Hero_Designer
                 this._graphHP = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphMaxEnd
         {
             get
@@ -160,10 +124,6 @@ namespace Hero_Designer
                 this._graphMaxEnd = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphMovement
         {
             get
@@ -176,10 +136,6 @@ namespace Hero_Designer
                 this._graphMovement = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphRec
         {
             get
@@ -192,10 +148,6 @@ namespace Hero_Designer
                 this._graphRec = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphRegen
         {
             get
@@ -208,10 +160,6 @@ namespace Hero_Designer
                 this._graphRegen = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphRes
         {
             get
@@ -224,10 +172,6 @@ namespace Hero_Designer
                 this._graphRes = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphSDeb
         {
             get
@@ -240,10 +184,6 @@ namespace Hero_Designer
                 this._graphSDeb = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphSProt
         {
             get
@@ -256,10 +196,6 @@ namespace Hero_Designer
                 this._graphSProt = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphSRes
         {
             get
@@ -272,10 +208,6 @@ namespace Hero_Designer
                 this._graphSRes = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphStealth
         {
             get
@@ -288,10 +220,6 @@ namespace Hero_Designer
                 this._graphStealth = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphThreat
         {
             get
@@ -304,10 +232,6 @@ namespace Hero_Designer
                 this._graphThreat = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph graphToHit
         {
             get
@@ -320,10 +244,6 @@ namespace Hero_Designer
                 this._graphToHit = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDef
         {
             get
@@ -336,10 +256,6 @@ namespace Hero_Designer
                 this._lblDef = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblMisc
         {
             get
@@ -352,10 +268,6 @@ namespace Hero_Designer
                 this._lblMisc = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblMovement
         {
             get
@@ -368,10 +280,6 @@ namespace Hero_Designer
                 this._lblMovement = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblRegenRec
         {
             get
@@ -384,10 +292,6 @@ namespace Hero_Designer
                 this._lblRegenRec = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblRes
         {
             get
@@ -400,10 +304,6 @@ namespace Hero_Designer
                 this._lblRes = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblSDeb
         {
             get
@@ -416,10 +316,6 @@ namespace Hero_Designer
                 this._lblSDeb = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblSProt
         {
             get
@@ -432,10 +328,6 @@ namespace Hero_Designer
                 this._lblSProt = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblSRes
         {
             get
@@ -448,10 +340,6 @@ namespace Hero_Designer
                 this._lblSRes = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblStealth
         {
             get
@@ -464,10 +352,6 @@ namespace Hero_Designer
                 this._lblStealth = value;
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -480,10 +364,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual Panel Panel2
         {
             get
@@ -496,10 +376,6 @@ namespace Hero_Designer
                 this._Panel2 = value;
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbClose
         {
             get
@@ -524,10 +400,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbTopMost
         {
             get
@@ -552,10 +424,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel pnlDRHE
         {
             get
@@ -568,10 +436,6 @@ namespace Hero_Designer
                 this._pnlDRHE = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlMisc
         {
             get
@@ -584,10 +448,6 @@ namespace Hero_Designer
                 this._pnlMisc = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlStatus
         {
             get
@@ -600,10 +460,6 @@ namespace Hero_Designer
                 this._pnlStatus = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbFPS
         {
             get
@@ -625,10 +481,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbKPH
         {
             get
@@ -650,10 +502,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbMPH
         {
             get
@@ -675,10 +523,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbMSec
         {
             get
@@ -700,10 +544,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox tab0
         {
             get
@@ -728,10 +568,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox tab1
         {
             get
@@ -756,10 +592,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox tab2
         {
             get
@@ -784,8 +616,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmTotals(ref frmMain iParent)
         {
             base.FormClosed += this.FrmTotalsFormClosed;
@@ -798,21 +628,15 @@ namespace Hero_Designer
             this.InitializeComponent();
             this._myParent = iParent;
         }
-
-
         public bool A_GT_B(float A, float B)
         {
             double num = (double)Math.Abs(A - B);
             return num >= 1.0000000116860974E-07 && num > 0.0;
         }
-
-
         void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
         {
             this._myParent.FloatTotals(false);
         }
-
-
         void FrmTotalsLoad(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -835,14 +659,10 @@ namespace Hero_Designer
             this._loaded = true;
             this.SetFonts();
         }
-
-
         void FrmTotalsMove(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
-
-
         void FrmTotalsResize(object sender, EventArgs e)
         {
             if (this._loaded)
@@ -866,14 +686,10 @@ namespace Hero_Designer
                 this.StoreLocation();
             }
         }
-
-
         void PbCloseClick(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void PbClosePaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -895,16 +711,12 @@ namespace Hero_Designer
                 e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
             }
         }
-
-
         void PbTopMostClick(object sender, EventArgs e)
         {
             this._keepOnTop = !this._keepOnTop;
             base.TopMost = this._keepOnTop;
             this.pbTopMost.Refresh();
         }
-
-
         void PbTopMostPaint(object sender, PaintEventArgs e)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -938,8 +750,6 @@ namespace Hero_Designer
                 e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
             }
         }
-
-
         string PM(float iValue, string iFormat, string iSuff)
         {
             string result;
@@ -957,8 +767,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         void RbSpeedCheckedChanged(object sender, EventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -982,14 +790,10 @@ namespace Hero_Designer
                 this.UpdateData();
             }
         }
-
-
         static void SetFontDataSingle(ref ctlMultiGraph iGraph)
         {
             iGraph.Font = new Font(iGraph.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
-
-
         void SetFonts()
         {
             ctlMultiGraph graphSdeb = this.graphAcc;
@@ -1056,8 +860,6 @@ namespace Hero_Designer
             this.lblSProt.Font = this.graphDef.Font;
             this.lblSDeb.Font = this.graphDef.Font;
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1099,8 +901,6 @@ namespace Hero_Designer
             this._loaded = true;
             this.FrmTotalsResize(this, new EventArgs());
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1111,50 +911,36 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmTotals.Height = base.Height;
             }
         }
-
-
         void Tab0Click(object sender, EventArgs e)
         {
             this.TabPageChange(0);
         }
-
-
         void Tab0Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab0 = this.tab0;
             this.TabPaint(ref tab0, e, "Survival", this._tabPage == 0);
             this.tab0 = tab0;
         }
-
-
         void Tab1Click(object sender, EventArgs e)
         {
             this.TabPageChange(1);
         }
-
-
         void Tab1Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab = this.tab1;
             this.TabPaint(ref tab, e, "Misc Buffs", this._tabPage == 1);
             this.tab1 = tab;
         }
-
-
         void Tab2Click(object sender, EventArgs e)
         {
             this.TabPageChange(2);
         }
-
-
         void Tab2Paint(object sender, PaintEventArgs e)
         {
             PictureBox tab2 = this.tab2;
             this.TabPaint(ref tab2, e, "Status", this._tabPage == 2);
             this.tab2 = tab2;
         }
-
-
         void TabPageChange(int index)
         {
             switch (index)
@@ -1180,8 +966,6 @@ namespace Hero_Designer
             this.tab1.Refresh();
             this.tab2.Refresh();
         }
-
-
         void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
         {
             if (this._myParent != null && this._myParent.Drawing != null)
@@ -1214,8 +998,6 @@ namespace Hero_Designer
                 e.Graphics.DrawImage(extendedBitmap.Bitmap, 0, 0);
             }
         }
-
-
         public void UpdateData()
         {
             Enums.eDamage eDamage = Enums.eDamage.None;
@@ -1670,185 +1452,93 @@ namespace Hero_Designer
             this.graphSDeb.Max = this.graphSDeb.GetMaxValue() + 1f;
             this.graphSDeb.Draw();
         }
-
-
         [AccessedThroughProperty("graphAcc")]
         ctlMultiGraph _graphAcc;
-
-
         [AccessedThroughProperty("graphDam")]
         ctlMultiGraph _graphDam;
-
-
         [AccessedThroughProperty("graphDef")]
         ctlMultiGraph _graphDef;
-
-
         [AccessedThroughProperty("graphDrain")]
         ctlMultiGraph _graphDrain;
-
-
         [AccessedThroughProperty("graphElusivity")]
         ctlMultiGraph _graphElusivity;
-
-
         [AccessedThroughProperty("graphEndRdx")]
         ctlMultiGraph _graphEndRdx;
-
-
         [AccessedThroughProperty("graphHaste")]
         ctlMultiGraph _graphHaste;
-
-
         [AccessedThroughProperty("graphHP")]
         ctlMultiGraph _graphHP;
-
-
         [AccessedThroughProperty("graphMaxEnd")]
         ctlMultiGraph _graphMaxEnd;
-
-
         [AccessedThroughProperty("graphMovement")]
         ctlMultiGraph _graphMovement;
-
-
         [AccessedThroughProperty("graphRec")]
         ctlMultiGraph _graphRec;
-
-
         [AccessedThroughProperty("graphRegen")]
         ctlMultiGraph _graphRegen;
-
-
         [AccessedThroughProperty("graphRes")]
         ctlMultiGraph _graphRes;
-
-
         [AccessedThroughProperty("graphSDeb")]
         ctlMultiGraph _graphSDeb;
-
-
         [AccessedThroughProperty("graphSProt")]
         ctlMultiGraph _graphSProt;
-
-
         [AccessedThroughProperty("graphSRes")]
         ctlMultiGraph _graphSRes;
-
-
         [AccessedThroughProperty("graphStealth")]
         ctlMultiGraph _graphStealth;
-
-
         [AccessedThroughProperty("graphThreat")]
         ctlMultiGraph _graphThreat;
-
-
         [AccessedThroughProperty("graphToHit")]
         ctlMultiGraph _graphToHit;
-
-
         bool _keepOnTop;
-
-
         [AccessedThroughProperty("lblDef")]
         Label _lblDef;
-
-
         [AccessedThroughProperty("lblMisc")]
         Label _lblMisc;
-
-
         [AccessedThroughProperty("lblMovement")]
         Label _lblMovement;
-
-
         [AccessedThroughProperty("lblRegenRec")]
         Label _lblRegenRec;
-
-
         [AccessedThroughProperty("lblRes")]
         Label _lblRes;
-
-
         [AccessedThroughProperty("lblSDeb")]
         Label _lblSDeb;
-
-
         [AccessedThroughProperty("lblSProt")]
         Label _lblSProt;
-
-
         [AccessedThroughProperty("lblSRes")]
         Label _lblSRes;
-
-
         [AccessedThroughProperty("lblStealth")]
         Label _lblStealth;
-
-
         bool _loaded;
-
-
         readonly frmMain _myParent;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("Panel2")]
         Panel _Panel2;
-
-
         [AccessedThroughProperty("pbClose")]
         PictureBox _pbClose;
-
-
         [AccessedThroughProperty("pbTopMost")]
         PictureBox _pbTopMost;
-
-
         [AccessedThroughProperty("pnlDRHE")]
         Panel _pnlDRHE;
-
-
         [AccessedThroughProperty("pnlMisc")]
         Panel _pnlMisc;
-
-
         [AccessedThroughProperty("pnlStatus")]
         Panel _pnlStatus;
-
-
         [AccessedThroughProperty("rbFPS")]
         RadioButton _rbFPS;
-
-
         [AccessedThroughProperty("rbKPH")]
         RadioButton _rbKPH;
-
-
         [AccessedThroughProperty("rbMPH")]
         RadioButton _rbMPH;
-
-
         [AccessedThroughProperty("rbMSec")]
         RadioButton _rbMSec;
-
-
         [AccessedThroughProperty("tab0")]
         PictureBox _tab0;
-
-
         [AccessedThroughProperty("tab1")]
         PictureBox _tab1;
-
-
         [AccessedThroughProperty("tab2")]
         PictureBox _tab2;
-
-
         int _tabPage;
     }
 }

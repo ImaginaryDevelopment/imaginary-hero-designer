@@ -15,8 +15,6 @@ namespace Hero_Designer
 
     public partial class frmData : Form
     {
-
-    
     
         internal virtual ctlPopUp pInfo
         {
@@ -30,8 +28,6 @@ namespace Hero_Designer
                 this._pInfo = value;
             }
         }
-
-
         public frmData(ref frmMain iParent)
         {
             base.FormClosed += this.frmData_FormClosed;
@@ -40,27 +36,19 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iParent;
         }
-
-
         void frmData_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatData(false);
         }
-
-
         void frmData_Load(object sender, EventArgs e)
         {
             this.pInfo.SetPopup(default(PopUp.PopupData));
         }
-
-
         void frmData_ResizeEnd(object sender, EventArgs e)
         {
             this.pInfo.Size = base.ClientSize;
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -97,8 +85,6 @@ namespace Hero_Designer
             base.Height = rectangle.Height;
             base.Width = rectangle.Width;
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -109,14 +95,10 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmData.Height = base.Height;
             }
         }
-
-
         string TwoDP(float iValue)
         {
             return Strings.Format(iValue, "###,##0.00");
         }
-
-
         public void UpdateData(int powerID)
         {
             PopUp.PopupData iPopup = default(PopUp.PopupData);
@@ -228,12 +210,8 @@ namespace Hero_Designer
             this.pInfo.SetPopup(iPopup);
             this.pInfo.Width = base.ClientSize.Width;
         }
-
-
         [AccessedThroughProperty("pInfo")]
         ctlPopUp _pInfo;
-
-
         frmMain myParent;
     }
 }

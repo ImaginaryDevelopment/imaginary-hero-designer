@@ -10,12 +10,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmImport_Recipe : Form
     {
-
-    
     
         internal virtual Button btnAttribIndex
         {
@@ -38,10 +34,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnAttribLoad
         {
             get
@@ -63,10 +55,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnAttribTable
         {
             get
@@ -88,10 +76,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button Button1
         {
             get
@@ -113,10 +97,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -129,10 +109,6 @@ namespace Hero_Designer
                 this._dlgBrowse = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -145,10 +121,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -161,10 +133,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblAttribDate
         {
             get
@@ -177,10 +145,6 @@ namespace Hero_Designer
                 this._lblAttribDate = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblAttribIndex
         {
             get
@@ -193,10 +157,6 @@ namespace Hero_Designer
                 this._lblAttribIndex = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblAttribTableCount
         {
             get
@@ -209,10 +169,6 @@ namespace Hero_Designer
                 this._lblAttribTableCount = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblAttribTables
         {
             get
@@ -225,15 +181,11 @@ namespace Hero_Designer
                 this._lblAttribTables = value;
             }
         }
-
-
         public frmImport_Recipe()
         {
             base.Load += this.frmImport_Recipe_Load;
             this.InitializeComponent();
         }
-
-
         void btnAttribIndex_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.lblAttribIndex.Text;
@@ -242,8 +194,6 @@ namespace Hero_Designer
                 this.lblAttribIndex.Text = this.dlgBrowse.FileName;
             }
         }
-
-
         void btnAttribLoad_Click(object sender, EventArgs e)
         {
             if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
@@ -262,8 +212,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
             }
         }
-
-
         void btnAttribTable_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.lblAttribTables.Text;
@@ -272,8 +220,6 @@ namespace Hero_Designer
                 this.lblAttribTables.Text = this.dlgBrowse.FileName;
             }
         }
-
-
         void BusyHide()
         {
             if (this.bFrm != null)
@@ -282,8 +228,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -293,19 +237,13 @@ namespace Hero_Designer
             }
             this.bFrm.SetMessage(sMessage);
         }
-
-
         void Button1_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void frmImport_Recipe_Load(object sender, EventArgs e)
         {
         }
-
-
         bool ImportRecipeCSV(string iFName1, string iFName2)
         {
             StreamReader iStream;
@@ -516,52 +454,28 @@ namespace Hero_Designer
             DatabaseAPI.SaveEnhancementDb();
             return true;
         }
-
-
         [AccessedThroughProperty("btnAttribIndex")]
         Button _btnAttribIndex;
-
-
         [AccessedThroughProperty("btnAttribLoad")]
         Button _btnAttribLoad;
-
-
         [AccessedThroughProperty("btnAttribTable")]
         Button _btnAttribTable;
-
-
         [AccessedThroughProperty("Button1")]
         Button _Button1;
-
-
         [AccessedThroughProperty("dlgBrowse")]
         OpenFileDialog _dlgBrowse;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("lblAttribDate")]
         Label _lblAttribDate;
-
-
         [AccessedThroughProperty("lblAttribIndex")]
         Label _lblAttribIndex;
-
-
         [AccessedThroughProperty("lblAttribTableCount")]
         Label _lblAttribTableCount;
-
-
         [AccessedThroughProperty("lblAttribTables")]
         Label _lblAttribTables;
-
-
         frmBusy bFrm;
     }
 }

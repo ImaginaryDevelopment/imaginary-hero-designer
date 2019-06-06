@@ -9,8 +9,6 @@ namespace Base.Data_Classes
 
     public class Power : IPower, IComparable
     {
-
-    
     
         public IPowerset PowerSet
         {
@@ -32,8 +30,6 @@ namespace Base.Data_Classes
                 this.PowerSetID = value.nID;
             }
         }
-
-
     
         public string FullSetName
         {
@@ -56,10 +52,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
-    
-    
         public float CastTime
         {
             get
@@ -82,13 +74,7 @@ namespace Base.Data_Classes
                 this.CastTimeReal = value;
             }
         }
-
-
-    
-    
         public float CastTimeReal { get; set; }
-
-
     
         public float ToggleCost
         {
@@ -106,8 +92,6 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
     
         public bool IsEpic
         {
@@ -116,8 +100,6 @@ namespace Base.Data_Classes
                 return this.Requires.NPowerID.Length > 0 && this.Requires.NPowerID[0][0] != -1;
             }
         }
-
-
     
         public bool Slottable
         {
@@ -126,188 +108,42 @@ namespace Base.Data_Classes
                 return this.Enhancements.Length > 0 && (this.PowerSet.SetType == Enums.ePowerSetType.Primary || this.PowerSet.SetType == Enums.ePowerSetType.Secondary || this.PowerSet.SetType == Enums.ePowerSetType.Ancillary || this.PowerSet.SetType == Enums.ePowerSetType.Inherent || this.PowerSet.SetType == Enums.ePowerSetType.Pool);
             }
         }
-
-
-    
-    
         public int LocationIndex { get; private set; }
-
-
-    
-    
         public bool IsModified { get; set; }
-
-
-    
-    
         public bool IsNew { get; set; }
-
-
-    
-    
         public int PowerIndex { get; set; }
-
-
-    
-    
         public int PowerSetID { get; set; }
-
-
-    
-    
         public int PowerSetIndex { get; set; }
-
-
-    
-    
         public bool HasAbsorbedEffects { get; set; }
-
-
-    
-    
         public int StaticIndex { get; set; }
-
-
-    
-    
         public int[] NGroupMembership { get; set; }
-
-
-    
-    
         public string FullName { get; set; }
-
-
-    
-    
         public string GroupName { get; set; }
-
-
-    
-    
         public string SetName { get; set; }
-
-
-    
-    
         public string PowerName { get; set; }
-
-
-    
-    
         public string DisplayName { get; set; }
-
-
-    
-    
         public int Available { get; set; }
-
-
-    
-    
         public Requirement Requires { get; set; }
-
-
-    
-    
         public Enums.eModeFlags ModesRequired { get; set; }
-
-
-    
-    
         public Enums.eModeFlags ModesDisallowed { get; set; }
-
-
-    
-    
         public Enums.ePowerType PowerType { get; set; }
-
-
-    
-    
         public float Accuracy { get; set; }
-
-
-    
-    
         public float AccuracyMult { get; set; }
-
-
-    
-    
         public Enums.eVector AttackTypes { get; set; }
-
-
-    
-    
         public string[] GroupMembership { get; set; }
-
-
-    
-    
         public Enums.eEntity EntitiesAffected { get; set; }
-
-
-    
-    
         public Enums.eEntity EntitiesAutoHit { get; set; }
-
-
-    
-    
         public Enums.eEntity Target { get; set; }
-
-
-    
-    
         public bool TargetLoS { get; set; }
-
-
-    
-    
         public float Range { get; set; }
-
-
-    
-    
         public Enums.eEntity TargetSecondary { get; set; }
-
-
-    
-    
         public float RangeSecondary { get; set; }
-
-
-    
-    
         public float EndCost { get; set; }
-
-
-    
-    
         public float InterruptTime { get; set; }
-
-
-    
-    
         public float RechargeTime { get; set; }
-
-
-    
-    
         public float ActivatePeriod { get; set; }
-
-
-    
-    
         public Enums.eEffectArea EffectArea { get; set; }
-
-
-    
-    
         public float Radius { get; set; }
-
-
     
         public float AoEModifier
         {
@@ -329,180 +165,40 @@ namespace Base.Data_Classes
                 return result;
             }
         }
-
-
-    
-    
         public int Arc { get; set; }
-
-
-    
-    
         public int MaxTargets { get; set; }
-
-
-    
-    
         public string MaxBoosts { get; set; }
-
-
-    
-    
         public Enums.eCastFlags CastFlags { get; set; }
-
-
-    
-    
         public Enums.eNotify AIReport { get; set; }
-
-
-    
-    
         public int NumCharges { get; set; }
-
-
-    
-    
         public int UsageTime { get; set; }
-
-
-    
-    
         public int LifeTime { get; set; }
-
-
-    
-    
         public int LifeTimeInGame { get; set; }
-
-
-    
-    
         public int NumAllowed { get; set; }
-
-
-    
-    
         public bool DoNotSave { get; set; }
-
-
-    
-    
         public string[] BoostsAllowed { get; set; }
-
-
-    
-    
         public int[] Enhancements { get; set; }
-
-
-    
-    
         public bool CastThroughHold { get; set; }
-
-
-    
-    
         public bool IgnoreStrength { get; set; }
-
-
-    
-    
         public string DescShort { get; set; }
-
-
-    
-    
         public string DescLong { get; set; }
-
-
-    
-    
         public bool SortOverride { get; set; }
-
-
-    
-    
         public bool HiddenPower { get; set; }
-
-
-    
-    
         public Enums.eSetType[] SetTypes { get; set; }
-
-
-    
-    
         public bool ClickBuff { get; set; }
-
-
-    
-    
         public bool AlwaysToggle { get; set; }
-
-
-    
-    
         public int Level { get; set; }
-
-
-    
-    
         public bool AllowFrontLoading { get; set; }
-
-
-    
-    
         public bool VariableEnabled { get; set; }
-
-
-    
-    
         public string VariableName { get; set; }
-
-
-    
-    
         public int VariableMin { get; set; }
-
-
-    
-    
         public int VariableMax { get; set; }
-
-
-    
-    
         public int[] NIDSubPower { get; set; }
-
-
-    
-    
         public string[] UIDSubPower { get; set; }
-
-
-    
-    
         public bool SubIsAltColour { get; set; }
-
-
-    
-    
         public Enums.eEnhance[] IgnoreEnh { get; set; }
-
-
-    
-    
         public Enums.eEnhance[] Ignore_Buff { get; set; }
-
-
-    
-    
         public bool SkipMax { get; set; }
-
-
-    
-    
         public int DisplayLocation
         {
             get
@@ -514,88 +210,22 @@ namespace Base.Data_Classes
                 this.LocationIndex = value;
             }
         }
-
-
-    
-    
         public bool MutexAuto { get; set; }
-
-
-    
-    
         public bool MutexIgnore { get; set; }
-
-
-    
-    
         public bool AbsorbSummonEffects { get; set; }
-
-
-    
-    
         public bool AbsorbSummonAttributes { get; set; }
-
-
-    
-    
         public bool ShowSummonAnyway { get; set; }
-
-
-    
-    
         public bool NeverAutoUpdate { get; set; }
-
-
-    
-    
         public bool NeverAutoUpdateRequirements { get; set; }
-
-
-    
-    
         public bool IncludeFlag { get; set; }
-
-
-    
-    
         public string ForcedClass { get; set; }
-
-
-    
-    
         public int ForcedClassID { get; set; }
-
-
-    
-    
         public IEffect[] Effects { get; set; }
-
-
-    
-    
         public Enums.eBuffMode BuffMode { get; set; }
-
-
-    
-    
         public bool HasGrantPowerEffect { get; set; }
-
-
-    
-    
         public bool HasPowerOverrideEffect { get; set; }
-
-
-    
-    
         public bool BoostBoostable { get; set; }
-
-
-    
-    
         public bool BoostUsePlayerLevel { get; set; }
-
-
         public bool HasMutexID(int index)
         {
             for (int index2 = 0; index2 <= this.NGroupMembership.Length - 1; index2++)
@@ -607,8 +237,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public Power()
         {
             this.DescLong = string.Empty;
@@ -650,8 +278,6 @@ namespace Base.Data_Classes
             }
             this.StaticIndex = num + 1;
         }
-
-
         public Power(IPower template)
         {
             this.DescLong = string.Empty;
@@ -788,8 +414,6 @@ namespace Base.Data_Classes
                 this.HiddenPower = template.HiddenPower;
             }
         }
-
-
         public Power(BinaryReader reader)
         {
             this.Enhancements = new int[0];
@@ -919,8 +543,6 @@ namespace Base.Data_Classes
             }
             this.HiddenPower = reader.ReadBoolean();
         }
-
-
         public void StoreTo(ref BinaryWriter writer)
         {
             writer.Write(this.StaticIndex);
@@ -1024,8 +646,6 @@ namespace Base.Data_Classes
             }
             writer.Write(this.HiddenPower);
         }
-
-
         public float FXGetDamageValue()
         {
             float num = 0f;
@@ -1081,8 +701,6 @@ namespace Base.Data_Classes
             }
             return num;
         }
-
-
         public string FXGetDamageString()
         {
             string[] names = Enum.GetNames(Enums.eDamage.None.GetType());
@@ -1188,8 +806,6 @@ namespace Base.Data_Classes
             }
             return str;
         }
-
-
         public int[] GetRankedEffects()
         {
             int[] numArray = new int[this.Effects.Length];
@@ -1448,14 +1064,10 @@ namespace Base.Data_Classes
                 num
             };
         }
-
-
         bool GreOverride(int iID1, int iID2)
         {
             return (iID1 < 0 & iID2 > -1) || (iID2 >= 0 && (!(this.Effects[iID1].EffectType == this.Effects[iID2].EffectType & this.Effects[iID1].ETModifies == this.Effects[iID2].ETModifies & this.Effects[iID1].MezType == this.Effects[iID2].MezType) || ((double)Math.Abs(this.Effects[iID1].Mag - this.Effects[iID2].Mag) >= 0.01 && this.Effects[iID1].ToWho != this.Effects[iID2].ToWho)));
         }
-
-
         public int GetDurationEffectID()
         {
             int num = -1;
@@ -1565,8 +1177,6 @@ namespace Base.Data_Classes
             }
             return num;
         }
-
-
         public float[] GetDef(int buffDebuff = 0)
         {
             float[] numArray = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
@@ -1593,8 +1203,6 @@ namespace Base.Data_Classes
             }
             return numArray;
         }
-
-
         public float[] GetRes(bool pvE = true)
         {
             float[] numArray = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
@@ -1620,8 +1228,6 @@ namespace Base.Data_Classes
             }
             return numArray;
         }
-
-
         public bool HasDefEffects()
         {
             for (int index = 0; index <= this.Effects.Length - 1; index++)
@@ -1633,8 +1239,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public bool HasResEffects()
         {
             for (int index = 0; index <= this.Effects.Length - 1; index++)
@@ -1646,8 +1250,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public Enums.ShortFX GetEnhancementMagSum(Enums.eEffectType iEffect, int subType = 0)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -1670,8 +1272,6 @@ namespace Base.Data_Classes
             }
             return shortFx;
         }
-
-
         public Enums.ShortFX GetEffectMagSum(Enums.eEffectType iEffect, bool includeDelayed = false, bool onlySelf = false, bool onlyTarget = false, bool maxMode = false)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -1698,8 +1298,6 @@ namespace Base.Data_Classes
             }
             return shortFx;
         }
-
-
         public Enums.ShortFX GetDamageMagSum(Enums.eEffectType iEffect, Enums.eDamage iSub, bool includeDelayed = false)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -1717,8 +1315,6 @@ namespace Base.Data_Classes
             }
             return shortFx;
         }
-
-
         public Enums.ShortFX GetEffectMag(Enums.eEffectType iEffect, Enums.eToWho iTarget = Enums.eToWho.Unspecified, bool allowDelay = false)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -1748,8 +1344,6 @@ namespace Base.Data_Classes
             }
             return shortFx;
         }
-
-
         public bool AffectsTarget(Enums.eEffectType iEffect)
         {
             for (int index = 0; index <= this.Effects.Length - 1; index++)
@@ -1761,8 +1355,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public bool AffectsSelf(Enums.eEffectType iEffect)
         {
             for (int index = 0; index <= this.Effects.Length - 1; index++)
@@ -1774,8 +1366,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public bool I9FXPresentP(Enums.eEffectType iEffect, Enums.eMez iMez = Enums.eMez.None)
         {
             for (int index = 0; index <= this.Effects.Length - 1; index++)
@@ -1801,8 +1391,6 @@ namespace Base.Data_Classes
             }
             return false;
         }
-
-
         public static Enums.ShortFX[] SplitFX(ref Enums.ShortFX iSfx, ref IPower iPower)
         {
             Enums.ShortFX[] array = new Enums.ShortFX[0];
@@ -1837,8 +1425,6 @@ namespace Base.Data_Classes
             }
             return shortFxArray2;
         }
-
-
         public static string SplitFXGroupTip(ref Enums.ShortFX iSfx, ref IPower iPower, bool shortForm)
         {
             string str = iPower.Effects[iSfx.Index[0]].BuildEffectString(false, string.Empty, false, true, false);
@@ -1861,8 +1447,6 @@ namespace Base.Data_Classes
             }
             return str.Replace("%VALUE%", newValue);
         }
-
-
         public bool UpdateFromCSV(string iCSV)
         {
             bool flag;
@@ -2008,8 +1592,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         Requirement ImportRequirementString(string iReq)
         {
             Requirement requirement;
@@ -2251,8 +1833,6 @@ namespace Base.Data_Classes
             }
             return requirement;
         }
-
-
         public bool IgnoreEnhancement(Enums.eEnhance iEffect)
         {
             bool flag;
@@ -2273,8 +1853,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public bool IgnoreBuff(Enums.eEnhance iEffect)
         {
             bool flag;
@@ -2295,8 +1873,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public int CompareTo(object obj)
         {
             Power power = obj as Power;
@@ -2332,8 +1908,6 @@ namespace Base.Data_Classes
             }
             return result;
         }
-
-
         public void SetMathMag()
         {
             for (int index = 0; index < this.Effects.Length; index++)
@@ -2342,8 +1916,6 @@ namespace Base.Data_Classes
                 this.Effects[index].Math_Mag = this.Effects[index].Mag;
             }
         }
-
-
         public bool GetEffectStringGrouped(int idEffect, ref string returnString, ref int[] returnMask, bool shortForm, bool simple, bool noMag = false)
         {
             bool flag;
@@ -2461,8 +2033,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public int[] AbsorbEffects(IPower source, float nDuration, float nDelay, Archetype archetype, int stacking, bool isGrantPower = false, int fxid = -1, int effectId = -1)
         {
             int num3 = -1;
@@ -2582,8 +2152,6 @@ namespace Base.Data_Classes
             }
             return array;
         }
-
-
         public void ApplyGrantPowerEffects()
         {
             bool flag = true;
@@ -2638,8 +2206,6 @@ namespace Base.Data_Classes
                 }
             }
         }
-
-
         int[] GetValidEnhancementsFromSets()
         {
             List<int> intList = new List<int>();
@@ -2664,8 +2230,6 @@ namespace Base.Data_Classes
             }
             return intList.ToArray();
         }
-
-
         public int[] GetValidEnhancements(Enums.eType iType, Enums.eSubtype iSubType = Enums.eSubtype.None)
         {
             List<int> intList = new List<int>();
@@ -2702,8 +2266,6 @@ namespace Base.Data_Classes
             }
             return numArray;
         }
-
-
         public bool IsEnhancementValid(int iEnh)
         {
             bool flag;
@@ -2725,8 +2287,6 @@ namespace Base.Data_Classes
             }
             return flag;
         }
-
-
         public void AbsorbPetEffects(int hIdx = -1)
         {
             if (this.AbsorbSummonAttributes || this.AbsorbSummonEffects)

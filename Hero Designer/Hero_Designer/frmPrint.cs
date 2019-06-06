@@ -12,12 +12,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmPrint : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -40,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnLayout
         {
             get
@@ -65,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPrint
         {
             get
@@ -90,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPrinter
         {
             get
@@ -115,10 +99,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkPrintHistory
         {
             get
@@ -140,10 +120,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkPrintHistoryEnh
         {
             get
@@ -156,10 +132,6 @@ namespace Hero_Designer
                 this._chkPrintHistoryEnh = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkProfileEnh
         {
             get
@@ -172,10 +144,6 @@ namespace Hero_Designer
                 this._chkProfileEnh = value;
             }
         }
-
-
-    
-    
         internal virtual PageSetupDialog dlgSetup
         {
             get
@@ -188,10 +156,6 @@ namespace Hero_Designer
                 this._dlgSetup = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -204,10 +168,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -220,10 +180,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPrinter
         {
             get
@@ -236,10 +192,6 @@ namespace Hero_Designer
                 this._lblPrinter = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbProfileLong
         {
             get
@@ -252,10 +204,6 @@ namespace Hero_Designer
                 this._rbProfileLong = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbProfileNone
         {
             get
@@ -268,10 +216,6 @@ namespace Hero_Designer
                 this._rbProfileNone = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbProfileShort
         {
             get
@@ -293,29 +237,21 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmPrint()
         {
             base.Load += this.frmPrint_Load;
             this.InitializeComponent();
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void btnLayout_Click(object sender, EventArgs e)
         {
             this.dlgSetup.Document = this._printer.Document;
             this.dlgSetup.ShowDialog();
             this.lblPrinter.Text = this._printer.Document.PrinterSettings.PrinterName;
         }
-
-
         void btnPrint_Click(object sender, EventArgs e)
         {
             MidsContext.Config.LastPrinter = this._printer.Document.PrinterSettings.PrinterName;
@@ -344,8 +280,6 @@ namespace Hero_Designer
                 base.Close();
             }
         }
-
-
         void btnPrinter_Click(object sender, EventArgs e)
         {
             new PrintDialog
@@ -354,14 +288,10 @@ namespace Hero_Designer
             }.ShowDialog();
             this.lblPrinter.Text = this._printer.Document.PrinterSettings.PrinterName;
         }
-
-
         void chkPrintHistory_CheckedChanged(object sender, EventArgs e)
         {
             this.chkPrintHistoryEnh.Enabled = this.chkPrintHistory.Checked;
         }
-
-
         void frmPrint_Load(object sender, EventArgs e)
         {
             if (PrinterSettings.InstalledPrinters.Count < 1)
@@ -412,69 +342,37 @@ namespace Hero_Designer
             this.chkProfileEnh.Checked = MidsContext.Config.PrintProfileEnh;
             this.chkProfileEnh.Enabled = this.rbProfileShort.Checked;
         }
-
-
         void rbProfileShort_CheckedChanged(object sender, EventArgs e)
         {
             this.chkProfileEnh.Enabled = this.rbProfileShort.Checked;
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnLayout")]
         Button _btnLayout;
-
-
         [AccessedThroughProperty("btnPrint")]
         Button _btnPrint;
-
-
         [AccessedThroughProperty("btnPrinter")]
         Button _btnPrinter;
-
-
         [AccessedThroughProperty("chkPrintHistory")]
         CheckBox _chkPrintHistory;
-
-
         [AccessedThroughProperty("chkPrintHistoryEnh")]
         CheckBox _chkPrintHistoryEnh;
-
-
         [AccessedThroughProperty("chkProfileEnh")]
         CheckBox _chkProfileEnh;
-
-
         [AccessedThroughProperty("dlgSetup")]
         PageSetupDialog _dlgSetup;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("lblPrinter")]
         Label _lblPrinter;
-
-
         Print _printer;
-
-
         [AccessedThroughProperty("rbProfileLong")]
         RadioButton _rbProfileLong;
-
-
         [AccessedThroughProperty("rbProfileNone")]
         RadioButton _rbProfileNone;
-
-
         [AccessedThroughProperty("rbProfileShort")]
         RadioButton _rbProfileShort;
     }

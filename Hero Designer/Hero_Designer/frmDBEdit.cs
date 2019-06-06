@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmDBEdit : Form
     {
-
-    
     
         internal virtual Button btnClose
         {
@@ -37,10 +35,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCSV
         {
             get
@@ -62,10 +56,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDate
         {
             get
@@ -87,10 +77,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEditEnh
         {
             get
@@ -112,10 +98,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEditEntity
         {
             get
@@ -137,10 +119,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEditIOSet
         {
             get
@@ -162,10 +140,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnFileReport
         {
             get
@@ -187,10 +161,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPSBrowse
         {
             get
@@ -212,10 +182,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRecipe
         {
             get
@@ -237,10 +203,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnSalvage
         {
             get
@@ -262,10 +224,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button exportIndexes
         {
             get
@@ -278,10 +236,6 @@ namespace Hero_Designer
                 this._exportIndexes = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -294,10 +248,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -310,10 +260,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -326,10 +272,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label13
         {
             get
@@ -342,10 +284,6 @@ namespace Hero_Designer
                 this._Label13 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label15
         {
             get
@@ -358,10 +296,6 @@ namespace Hero_Designer
                 this._Label15 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -374,10 +308,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -390,10 +320,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -406,10 +332,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -422,10 +344,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -438,10 +356,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -454,10 +368,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -470,10 +380,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountAT
         {
             get
@@ -486,10 +392,6 @@ namespace Hero_Designer
                 this._lblCountAT = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountEnh
         {
             get
@@ -502,10 +404,6 @@ namespace Hero_Designer
                 this._lblCountEnh = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountFX
         {
             get
@@ -518,10 +416,6 @@ namespace Hero_Designer
                 this._lblCountFX = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountIOSet
         {
             get
@@ -534,10 +428,6 @@ namespace Hero_Designer
                 this._lblCountIOSet = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountPS
         {
             get
@@ -550,10 +440,6 @@ namespace Hero_Designer
                 this._lblCountPS = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountPwr
         {
             get
@@ -566,10 +452,6 @@ namespace Hero_Designer
                 this._lblCountPwr = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountRecipe
         {
             get
@@ -582,10 +464,6 @@ namespace Hero_Designer
                 this._lblCountRecipe = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblCountSalvage
         {
             get
@@ -598,10 +476,6 @@ namespace Hero_Designer
                 this._lblCountSalvage = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDate
         {
             get
@@ -614,10 +488,6 @@ namespace Hero_Designer
                 this._lblDate = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDBVer
         {
             get
@@ -639,10 +509,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udIssue
         {
             get
@@ -667,80 +533,56 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmDBEdit()
         {
             base.Load += this.frmDBEdit_Load;
             this.Initialized = false;
             this.InitializeComponent();
         }
-
-
         void btnClose_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
-
-
         void btnCSV_Click(object sender, EventArgs e)
         {
             new frmCSV().ShowDialog();
         }
-
-
         void btnDate_Click(object sender, EventArgs e)
         {
             DatabaseAPI.Database.Date = DateTime.Now;
             this.DisplayInfo();
         }
-
-
         void btnEditEnh_Click(object sender, EventArgs e)
         {
             new frmEnhEdit().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnEditEntity_Click(object sender, EventArgs e)
         {
             new frmEntityListing().ShowDialog();
         }
-
-
         void btnEditIOSet_Click(object sender, EventArgs e)
         {
             new frmSetListing().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnFileReport_Click(object sender, EventArgs e)
         {
             Interaction.MsgBox(Files.FileData, MsgBoxStyle.Information, "File Loading Report");
         }
-
-
         void btnPSBrowse_Click(object sender, EventArgs e)
         {
             new frmPowerBrowser().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnRecipe_Click(object sender, EventArgs e)
         {
             new frmRecipeEdit().ShowDialog();
         }
-
-
         void btnSalvage_Click(object sender, EventArgs e)
         {
             new frmSalvageEdit().ShowDialog();
         }
-
-
         public void DisplayInfo()
         {
             if (MainModule.MidsController.Toon != null)
@@ -771,8 +613,6 @@ namespace Hero_Designer
                 this.Initialized = true;
             }
         }
-
-
         void frmDBEdit_Load(object sender, EventArgs e)
         {
             this.btnDate.Visible = MidsContext.Config.MasterMode;
@@ -782,8 +622,6 @@ namespace Hero_Designer
             this.btnFileReport.Visible = MidsContext.Config.MasterMode;
             this.DisplayInfo();
         }
-
-
         void txtDBVer_TextChanged(object sender, EventArgs e)
         {
             float num = (float)Conversion.Val(this.txtDBVer.Text);
@@ -793,8 +631,6 @@ namespace Hero_Designer
             }
             DatabaseAPI.Database.Version = num;
         }
-
-
         void udIssue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -802,8 +638,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Issue = Convert.ToInt32(this.udIssue.Value);
             }
         }
-
-
         void udIssue_ValueChanged(object sender, EventArgs e)
         {
             if (!(!MainModule.MidsController.IsAppInitialized | !this.Initialized))
@@ -811,144 +645,74 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Issue = Convert.ToInt32(this.udIssue.Value);
             }
         }
-
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
-
         [AccessedThroughProperty("btnCSV")]
         Button _btnCSV;
-
-
         [AccessedThroughProperty("btnDate")]
         Button _btnDate;
-
-
         [AccessedThroughProperty("btnEditEnh")]
         Button _btnEditEnh;
-
-
         [AccessedThroughProperty("btnEditEntity")]
         Button _btnEditEntity;
-
-
         [AccessedThroughProperty("btnEditIOSet")]
         Button _btnEditIOSet;
-
-
         [AccessedThroughProperty("btnFileReport")]
         Button _btnFileReport;
-
-
         [AccessedThroughProperty("btnPSBrowse")]
         Button _btnPSBrowse;
-
-
         [AccessedThroughProperty("btnRecipe")]
         Button _btnRecipe;
-
-
         [AccessedThroughProperty("btnSalvage")]
         Button _btnSalvage;
-
-
         [AccessedThroughProperty("exportIndexes")]
         Button _exportIndexes;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label13")]
         Label _Label13;
-
-
         [AccessedThroughProperty("Label15")]
         Label _Label15;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("lblCountAT")]
         Label _lblCountAT;
-
-
         [AccessedThroughProperty("lblCountEnh")]
         Label _lblCountEnh;
-
-
         [AccessedThroughProperty("lblCountFX")]
         Label _lblCountFX;
-
-
         [AccessedThroughProperty("lblCountIOSet")]
         Label _lblCountIOSet;
-
-
         [AccessedThroughProperty("lblCountPS")]
         Label _lblCountPS;
-
-
         [AccessedThroughProperty("lblCountPwr")]
         Label _lblCountPwr;
-
-
         [AccessedThroughProperty("lblCountRecipe")]
         Label _lblCountRecipe;
-
-
         [AccessedThroughProperty("lblCountSalvage")]
         Label _lblCountSalvage;
-
-
         [AccessedThroughProperty("lblDate")]
         Label _lblDate;
-
-
         [AccessedThroughProperty("txtDBVer")]
         TextBox _txtDBVer;
-
-
         [AccessedThroughProperty("udIssue")]
         NumericUpDown _udIssue;
-
-
         bool Initialized;
     }
 }

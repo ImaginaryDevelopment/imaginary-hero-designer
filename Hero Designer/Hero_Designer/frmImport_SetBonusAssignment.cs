@@ -10,12 +10,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmImport_SetBonusAssignment : Form
     {
-
-    
     
         internal virtual Button btnClose
         {
@@ -38,10 +34,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnFile
         {
             get
@@ -63,10 +55,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -88,10 +76,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -104,10 +88,6 @@ namespace Hero_Designer
                 this._dlgBrowse = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblFile
         {
             get
@@ -120,22 +100,16 @@ namespace Hero_Designer
                 this._lblFile = value;
             }
         }
-
-
         public frmImport_SetBonusAssignment()
         {
             base.Load += this.frmImport_SetBonusAssignment_Load;
             this.FullFileName = "";
             this.InitializeComponent();
         }
-
-
         void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this.FullFileName;
@@ -146,16 +120,12 @@ namespace Hero_Designer
             this.BusyHide();
             this.DisplayInfo();
         }
-
-
         void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
             this.DisplayInfo();
         }
-
-
         void BusyHide()
         {
             if (this.bFrm != null)
@@ -164,8 +134,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -175,21 +143,15 @@ namespace Hero_Designer
             }
             this.bFrm.SetMessage(sMessage);
         }
-
-
         public void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
         }
-
-
         void frmImport_SetBonusAssignment_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets2", "boostsets4");
             this.DisplayInfo();
         }
-
-
         bool ParseClasses(string iFileName)
         {
             int num = 0;
@@ -339,31 +301,17 @@ namespace Hero_Designer
             }), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
-
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
-
         [AccessedThroughProperty("btnFile")]
         Button _btnFile;
-
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
-
         [AccessedThroughProperty("dlgBrowse")]
         OpenFileDialog _dlgBrowse;
-
-
         [AccessedThroughProperty("lblFile")]
         Label _lblFile;
-
-
         frmBusy bFrm;
-
-
         string FullFileName;
     }
 }

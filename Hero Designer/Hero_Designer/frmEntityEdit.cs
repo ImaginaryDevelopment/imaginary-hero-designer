@@ -9,12 +9,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmEntityEdit : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -28,10 +24,6 @@ namespace Hero_Designer
                 this._btnCancel = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -53,10 +45,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPAdd
         {
             get
@@ -78,10 +66,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPDelete
         {
             get
@@ -103,10 +87,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPDown
         {
             get
@@ -128,10 +108,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPUp
         {
             get
@@ -153,10 +129,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUGAdd
         {
             get
@@ -178,10 +150,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUGDelete
         {
             get
@@ -203,10 +171,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUGDown
         {
             get
@@ -228,10 +192,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUGUp
         {
             get
@@ -253,10 +213,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbClass
         {
             get
@@ -278,10 +234,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbEntType
         {
             get
@@ -303,10 +255,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -319,10 +267,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader10
         {
             get
@@ -335,10 +279,6 @@ namespace Hero_Designer
                 this._ColumnHeader10 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader11
         {
             get
@@ -351,10 +291,6 @@ namespace Hero_Designer
                 this._ColumnHeader11 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -367,10 +303,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -383,10 +315,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -399,10 +327,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -415,10 +339,6 @@ namespace Hero_Designer
                 this._ColumnHeader5 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -431,10 +351,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -447,10 +363,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -463,10 +375,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -479,10 +387,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -495,10 +399,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -511,10 +411,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -527,10 +423,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvPower
         {
             get
@@ -552,10 +444,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvPSGroup
         {
             get
@@ -577,10 +465,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvPSSet
         {
             get
@@ -605,10 +489,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvUGGroup
         {
             get
@@ -630,10 +510,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvUGPower
         {
             get
@@ -658,10 +534,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvUGSet
         {
             get
@@ -683,10 +555,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvUpgrade
         {
             get
@@ -708,10 +576,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDisplayName
         {
             get
@@ -733,10 +597,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtEntName
         {
             get
@@ -758,8 +618,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmEntityEdit(SummonedEntity iEntity)
         {
             base.Load += this.frmEntityEdit_Load;
@@ -768,8 +626,6 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myEntity = new SummonedEntity(iEntity);
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             int num = DatabaseAPI.Database.Entities.Length - 1;
@@ -789,8 +645,6 @@ namespace Hero_Designer
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
-
-
         void btnPAdd_Click(object sender, EventArgs e)
         {
             this.myEntity.PowersetFullName = (string[])Utils.CopyArray(this.myEntity.PowersetFullName, new string[this.myEntity.PowersetFullName.Length + 1]);
@@ -799,8 +653,6 @@ namespace Hero_Designer
             this.lvPower.Items[this.lvPower.Items.Count - 1].Selected = true;
             this.lvPower.Items[this.lvPower.Items.Count - 1].EnsureVisible();
         }
-
-
         void btnPDelete_Click(object sender, EventArgs e)
         {
             if (this.lvPower.SelectedItems.Count >= 1)
@@ -828,8 +680,6 @@ namespace Hero_Designer
                 this.PS_FillList();
             }
         }
-
-
         void btnPDown_Click(object sender, EventArgs e)
         {
             if (this.lvPower.SelectedItems.Count >= 1 && this.lvPower.SelectedIndices[0] <= this.lvPower.Items.Count - 2)
@@ -850,8 +700,6 @@ namespace Hero_Designer
                 this.lvPower.Items[index].EnsureVisible();
             }
         }
-
-
         void btnPUp_Click(object sender, EventArgs e)
         {
             if (this.lvPower.SelectedItems.Count >= 1 && this.lvPower.SelectedIndices[0] >= 1)
@@ -872,8 +720,6 @@ namespace Hero_Designer
                 this.lvPower.Items[index].EnsureVisible();
             }
         }
-
-
         void btnUGAdd_Click(object sender, EventArgs e)
         {
             this.myEntity.UpgradePowerFullName = (string[])Utils.CopyArray(this.myEntity.UpgradePowerFullName, new string[this.myEntity.UpgradePowerFullName.Length + 1]);
@@ -882,8 +728,6 @@ namespace Hero_Designer
             this.lvUpgrade.Items[this.lvUpgrade.Items.Count - 1].Selected = true;
             this.lvUpgrade.Items[this.lvUpgrade.Items.Count - 1].EnsureVisible();
         }
-
-
         void btnUGDelete_Click(object sender, EventArgs e)
         {
             if (this.lvUpgrade.SelectedItems.Count >= 1)
@@ -911,8 +755,6 @@ namespace Hero_Designer
                 this.UG_FillList();
             }
         }
-
-
         void btnUGDown_Click(object sender, EventArgs e)
         {
             if (this.lvUpgrade.SelectedItems.Count >= 1 && this.lvUpgrade.SelectedIndices[0] <= this.lvUpgrade.Items.Count - 2)
@@ -933,8 +775,6 @@ namespace Hero_Designer
                 this.lvUpgrade.Items[index].EnsureVisible();
             }
         }
-
-
         void btnUGUp_Click(object sender, EventArgs e)
         {
             if (this.lvUpgrade.SelectedItems.Count >= 1 && this.lvUpgrade.SelectedIndices[0] >= 1)
@@ -955,8 +795,6 @@ namespace Hero_Designer
                 this.lvUpgrade.Items[index].EnsureVisible();
             }
         }
-
-
         void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.loading)
@@ -964,8 +802,6 @@ namespace Hero_Designer
                 this.myEntity.ClassName = this.cbClass.SelectedItem.ToString();
             }
         }
-
-
         void cbEntType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.loading)
@@ -973,8 +809,6 @@ namespace Hero_Designer
                 this.myEntity.EntityType = (Enums.eSummonEntity)this.cbEntType.SelectedIndex;
             }
         }
-
-
         protected void DisplayInfo()
         {
             this.PS_FillList();
@@ -984,8 +818,6 @@ namespace Hero_Designer
             this.cbEntType.SelectedIndex = (int)this.myEntity.EntityType;
             this.cbClass.SelectedIndex = this.myEntity.nClassID;
         }
-
-
         void frmEntityEdit_Load(object sender, EventArgs e)
         {
             this.Text = "Editing Entity: " + this.myEntity.UID;
@@ -1006,8 +838,6 @@ namespace Hero_Designer
             this.DisplayInfo();
             this.loading = false;
         }
-
-
         void lvPower_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvPower.SelectedIndices.Count >= 1)
@@ -1016,8 +846,6 @@ namespace Hero_Designer
                 this.PS_DisplaySet(iPower);
             }
         }
-
-
         void lvPSGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Updating && this.lvPSGroup.SelectedItems.Count > 0)
@@ -1029,8 +857,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void lvPSSet_Click(object sender, EventArgs e)
         {
             if (!this.Updating)
@@ -1038,8 +864,6 @@ namespace Hero_Designer
                 this.PS_UpdateItem();
             }
         }
-
-
         void lvPSSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Updating)
@@ -1047,8 +871,6 @@ namespace Hero_Designer
                 this.PS_UpdateItem();
             }
         }
-
-
         void lvUGGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Updating && this.lvUGGroup.SelectedItems.Count > 0)
@@ -1060,8 +882,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void lvUGPower_Click(object sender, EventArgs e)
         {
             if (!this.Updating)
@@ -1069,8 +889,6 @@ namespace Hero_Designer
                 this.PS_UpdateItem();
             }
         }
-
-
         void lvUGPower_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Updating)
@@ -1078,8 +896,6 @@ namespace Hero_Designer
                 this.UG_UpdateItem();
             }
         }
-
-
         void lvUGSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Updating && this.lvUGSet.SelectedItems.Count > 0)
@@ -1087,8 +903,6 @@ namespace Hero_Designer
                 this.UG_PowerList();
             }
         }
-
-
         void lvUpgrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvUpgrade.SelectedIndices.Count >= 1)
@@ -1097,8 +911,6 @@ namespace Hero_Designer
                 this.UG_DisplayPower(iPower);
             }
         }
-
-
         void PS_DisplaySet(string iPower)
         {
             this.Updating = true;
@@ -1132,8 +944,6 @@ namespace Hero_Designer
             }
             this.Updating = false;
         }
-
-
         void PS_FillList()
         {
             this.Updating = true;
@@ -1151,8 +961,6 @@ namespace Hero_Designer
                 this.lvPower.Items[0].Selected = true;
             }
         }
-
-
         void PS_GroupList()
         {
             this.lvPSGroup.BeginUpdate();
@@ -1163,8 +971,6 @@ namespace Hero_Designer
             }
             this.lvPSGroup.EndUpdate();
         }
-
-
         void PS_SetList()
         {
             this.lvPSSet.BeginUpdate();
@@ -1185,8 +991,6 @@ namespace Hero_Designer
                 this.lvPSSet.EndUpdate();
             }
         }
-
-
         void PS_UpdateItem()
         {
             if (!(this.lvPower.SelectedIndices.Count < 1 | this.lvPSGroup.SelectedIndices.Count < 1 | this.lvPSSet.SelectedIndices.Count < 1))
@@ -1196,8 +1000,6 @@ namespace Hero_Designer
                 this.lvPower.SelectedItems[0].SubItems[0].Text = str;
             }
         }
-
-
         void txtDisplayName_TextChanged(object sender, EventArgs e)
         {
             if (!this.loading)
@@ -1205,8 +1007,6 @@ namespace Hero_Designer
                 this.myEntity.DisplayName = this.txtDisplayName.Text;
             }
         }
-
-
         void txtEntName_TextChanged(object sender, EventArgs e)
         {
             if (!this.loading)
@@ -1214,8 +1014,6 @@ namespace Hero_Designer
                 this.myEntity.UID = this.txtEntName.Text;
             }
         }
-
-
         void UG_DisplayPower(string iPower)
         {
             this.Updating = true;
@@ -1263,8 +1061,6 @@ namespace Hero_Designer
             }
             this.Updating = false;
         }
-
-
         void UG_FillList()
         {
             this.Updating = true;
@@ -1282,8 +1078,6 @@ namespace Hero_Designer
                 this.lvUpgrade.Items[0].Selected = true;
             }
         }
-
-
         void UG_GroupList()
         {
             this.lvUGGroup.BeginUpdate();
@@ -1294,8 +1088,6 @@ namespace Hero_Designer
             }
             this.lvUGGroup.EndUpdate();
         }
-
-
         void UG_PowerList()
         {
             this.lvUGPower.BeginUpdate();
@@ -1318,8 +1110,6 @@ namespace Hero_Designer
                 this.lvUGPower.EndUpdate();
             }
         }
-
-
         void UG_SetList()
         {
             this.lvUGSet.BeginUpdate();
@@ -1340,8 +1130,6 @@ namespace Hero_Designer
                 this.lvUGSet.EndUpdate();
             }
         }
-
-
         void UG_UpdateItem()
         {
             if (!(this.lvUpgrade.SelectedIndices.Count < 1 | this.lvUGGroup.SelectedIndices.Count < 1 | this.lvUGSet.SelectedIndices.Count < 1 | this.lvUGPower.SelectedIndices.Count < 1))
@@ -1358,154 +1146,78 @@ namespace Hero_Designer
                 this.lvUpgrade.SelectedItems[0].SubItems[0].Text = str;
             }
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnPAdd")]
         Button _btnPAdd;
-
-
         [AccessedThroughProperty("btnPDelete")]
         Button _btnPDelete;
-
-
         [AccessedThroughProperty("btnPDown")]
         Button _btnPDown;
-
-
         [AccessedThroughProperty("btnPUp")]
         Button _btnPUp;
-
-
         [AccessedThroughProperty("btnUGAdd")]
         Button _btnUGAdd;
-
-
         [AccessedThroughProperty("btnUGDelete")]
         Button _btnUGDelete;
-
-
         [AccessedThroughProperty("btnUGDown")]
         Button _btnUGDown;
-
-
         [AccessedThroughProperty("btnUGUp")]
         Button _btnUGUp;
-
-
         [AccessedThroughProperty("cbClass")]
         ComboBox _cbClass;
-
-
         [AccessedThroughProperty("cbEntType")]
         ComboBox _cbEntType;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader10")]
         ColumnHeader _ColumnHeader10;
-
-
         [AccessedThroughProperty("ColumnHeader11")]
         ColumnHeader _ColumnHeader11;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("ColumnHeader5")]
         ColumnHeader _ColumnHeader5;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("lvPower")]
         ListView _lvPower;
-
-
         [AccessedThroughProperty("lvPSGroup")]
         ListView _lvPSGroup;
-
-
         [AccessedThroughProperty("lvPSSet")]
         ListView _lvPSSet;
-
-
         [AccessedThroughProperty("lvUGGroup")]
         ListView _lvUGGroup;
-
-
         [AccessedThroughProperty("lvUGPower")]
         ListView _lvUGPower;
-
-
         [AccessedThroughProperty("lvUGSet")]
         ListView _lvUGSet;
-
-
         [AccessedThroughProperty("lvUpgrade")]
         ListView _lvUpgrade;
-
-
         [AccessedThroughProperty("txtDisplayName")]
         TextBox _txtDisplayName;
-
-
         [AccessedThroughProperty("txtEntName")]
         TextBox _txtEntName;
-
-
         protected bool loading;
-
-
         public SummonedEntity myEntity;
-
-
         protected bool Updating;
     }
 }

@@ -15,8 +15,6 @@ namespace Hero_Designer
 
     public partial class frmStats : Form
     {
-
-    
     
         internal virtual ImageButton btnClose
         {
@@ -39,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSet
         {
             get
@@ -64,10 +58,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbStyle
         {
             get
@@ -89,10 +79,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbValues
         {
             get
@@ -114,10 +100,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton chkOnTop
         {
             get
@@ -139,10 +121,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph Graph
         {
             get
@@ -155,10 +133,6 @@ namespace Hero_Designer
                 this._Graph = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKey1
         {
             get
@@ -171,10 +145,6 @@ namespace Hero_Designer
                 this._lblKey1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKey2
         {
             get
@@ -187,10 +157,6 @@ namespace Hero_Designer
                 this._lblKey2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKeyColor1
         {
             get
@@ -203,10 +169,6 @@ namespace Hero_Designer
                 this._lblKeyColor1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKeyColor2
         {
             get
@@ -219,10 +181,6 @@ namespace Hero_Designer
                 this._lblKeyColor2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblScale
         {
             get
@@ -235,10 +193,6 @@ namespace Hero_Designer
                 this._lblScale = value;
             }
         }
-
-
-    
-    
         internal virtual TrackBar tbScaleX
         {
             get
@@ -260,10 +214,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip tTip
         {
             get
@@ -276,8 +226,6 @@ namespace Hero_Designer
                 this._tTip = value;
             }
         }
-
-
         public frmStats(ref frmMain iParent)
         {
             base.FormClosed += this.frmStats_FormClosed;
@@ -293,14 +241,10 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iParent;
         }
-
-
         void btnClose_Click()
         {
             base.Close();
         }
-
-
         void cbSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -309,8 +253,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void cbStyle_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -319,8 +261,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void cbValues_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -328,14 +268,10 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
-
-
         public void DisplayGraph()
         {
             if (!(MainModule.MidsController.Toon == null | !MainModule.MidsController.IsAppInitialized))
@@ -411,8 +347,6 @@ namespace Hero_Designer
                 this.Graph.EndUpdate();
             }
         }
-
-
         void FillComboBoxes()
         {
             this.NewSets();
@@ -451,14 +385,10 @@ namespace Hero_Designer
             this.cbStyle.SelectedIndex = (int)MidsContext.Config.StatGraphStyle;
             this.cbStyle.EndUpdate();
         }
-
-
         void frmStats_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatStatGraph(false);
         }
-
-
         void frmStats_Load(object sender, EventArgs e)
         {
             this.FillComboBoxes();
@@ -467,14 +397,10 @@ namespace Hero_Designer
             this.tbScaleX.Maximum = this.Graph.ScaleCount - 1;
             this.UpdateData(false);
         }
-
-
         void frmStats_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
-
-
         void frmStats_Resize(object sender, EventArgs e)
         {
             if (this.Graph != null)
@@ -494,13 +420,9 @@ namespace Hero_Designer
             }
             this.StoreLocation();
         }
-
-
         void frmStats_VisibleChanged(object sender, EventArgs e)
         {
         }
-
-
         public void GetPowerArray()
         {
             if (!(MainModule.MidsController.Toon == null | !MainModule.MidsController.IsAppInitialized))
@@ -604,8 +526,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void GetSetArray(Enums.PowersetType SetType, Enums.ePowerType iType)
         {
             if (MidsContext.Character.Powersets[(int)SetType] != null)
@@ -670,8 +590,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public int GrabPlaced(int iSet, int iPower)
         {
             if (MainModule.MidsController.Toon.Locked)
@@ -687,8 +605,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         public void Graph_Acc()
         {
             float num = 1f;
@@ -754,8 +670,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_Damage()
         {
             float num = 1f;
@@ -818,8 +732,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void Graph_DPA()
         {
             float num = 1f;
@@ -879,8 +791,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void Graph_DPE()
         {
             float num = 1f;
@@ -952,8 +862,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void Graph_DPS()
         {
             float num = 1f;
@@ -1013,8 +921,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void Graph_Duration()
         {
             float num = 1f;
@@ -1095,8 +1001,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_End()
         {
             float num = 1f;
@@ -1149,8 +1053,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_EPS()
         {
             float num = 1f;
@@ -1213,8 +1115,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_Heal()
         {
             float num = 1f;
@@ -1282,8 +1182,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_HealPE()
         {
             float num = 1f;
@@ -1356,8 +1254,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_HealPS()
         {
             float num = 1f;
@@ -1438,8 +1334,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_Range()
         {
             float num = 1f;
@@ -1499,8 +1393,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_Recharge()
         {
             float num = 1f;
@@ -1550,8 +1442,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Graph_Regen()
         {
             float num = 1f;
@@ -1655,8 +1545,6 @@ namespace Hero_Designer
             }
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         void NewSets()
         {
             this.cbSet.BeginUpdate();
@@ -1674,8 +1562,6 @@ namespace Hero_Designer
             this.cbSet.SelectedIndex = 1;
             this.cbSet.EndUpdate();
         }
-
-
         public void SetGraphMetrics()
         {
             if ((double)this.Graph.ItemCount < 13.5)
@@ -1709,8 +1595,6 @@ namespace Hero_Designer
                 this.Graph.PaddingY = 4f;
             }
         }
-
-
         public void SetGraphType()
         {
             if (this.cbStyle.SelectedIndex > -1 & this.cbStyle.SelectedIndex < this.cbStyle.Items.Count - 2)
@@ -1742,8 +1626,6 @@ namespace Hero_Designer
             }
             MidsContext.Config.StatGraphStyle = this.Graph.Style;
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1780,14 +1662,10 @@ namespace Hero_Designer
             base.Height = rectangle.Height;
             base.Width = rectangle.Width;
         }
-
-
         public void SetScaleLabel()
         {
             this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1798,15 +1676,11 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmStats.Height = base.Height;
             }
         }
-
-
         void tbScaleX_Scroll(object sender, EventArgs e)
         {
             this.Graph.ScaleIndex = this.tbScaleX.Value;
             this.SetScaleLabel();
         }
-
-
         public void UpdateData(bool NewData)
         {
             this.BackColor = this.myParent.BackColor;
@@ -1825,75 +1699,37 @@ namespace Hero_Designer
             this.GetPowerArray();
             this.DisplayGraph();
         }
-
-
         [AccessedThroughProperty("btnClose")]
         ImageButton _btnClose;
-
-
         [AccessedThroughProperty("cbSet")]
         ComboBox _cbSet;
-
-
         [AccessedThroughProperty("cbStyle")]
         ComboBox _cbStyle;
-
-
         [AccessedThroughProperty("cbValues")]
         ComboBox _cbValues;
-
-
         [AccessedThroughProperty("chkOnTop")]
         ImageButton _chkOnTop;
-
-
         [AccessedThroughProperty("Graph")]
         ctlMultiGraph _Graph;
-
-
         [AccessedThroughProperty("lblKey1")]
         Label _lblKey1;
-
-
         [AccessedThroughProperty("lblKey2")]
         Label _lblKey2;
-
-
         [AccessedThroughProperty("lblKeyColor1")]
         Label _lblKeyColor1;
-
-
         [AccessedThroughProperty("lblKeyColor2")]
         Label _lblKeyColor2;
-
-
         [AccessedThroughProperty("lblScale")]
         Label _lblScale;
-
-
         [AccessedThroughProperty("tbScaleX")]
         TrackBar _tbScaleX;
-
-
         [AccessedThroughProperty("tTip")]
         ToolTip _tTip;
-
-
         protected IPower[] BaseArray;
-
-
         protected bool BaseOverride;
-
-
         protected IPower[] EnhArray;
-
-
         protected float GraphMax;
-
-
         bool Loaded;
-
-
         protected frmMain myParent;
     }
 }

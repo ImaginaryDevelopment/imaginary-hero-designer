@@ -20,8 +20,6 @@
                 base.Dispose(disposing);
             }
         }
-
-
         void InitializeComponent()
         {
             this.GlobalPowerList = new global::Hero_Designer.frmDPSCalc.PowerList[0];
@@ -278,11 +276,7 @@
             this.Panel2.ResumeLayout(false);
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
-
-
         global::Hero_Designer.frmDPSCalc.PowerList[] GlobalPowerList;
     }
 }

@@ -30,8 +30,6 @@ namespace Import
                 }
             }
         }
-
-
         public void Apply()
         {
             if (this.IsValid)
@@ -52,8 +50,6 @@ namespace Import
                 }
             }
         }
-
-
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -132,20 +128,10 @@ namespace Import
             }
             return flag;
         }
-
-
         public readonly Archetype Data;
-
-
         public readonly bool IsNew;
-
-
         int _index = -1;
-
-
         readonly string _csvString = string.Empty;
-
-
         public readonly bool IsValid = true;
     }
 }

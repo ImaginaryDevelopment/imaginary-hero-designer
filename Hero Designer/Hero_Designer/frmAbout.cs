@@ -14,8 +14,6 @@ namespace Hero_Designer
     public partial class frmAbout : Form
     {
 
-    
-    
         internal virtual ImageButton ibClose
         {
             get
@@ -38,9 +36,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -54,9 +49,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -70,9 +62,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -86,9 +75,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -102,9 +88,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblDBDate
         {
             get
@@ -118,9 +101,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblDBIssue
         {
             get
@@ -134,9 +114,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblDonate
         {
             get
@@ -159,9 +136,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblEmail
         {
             get
@@ -184,9 +158,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblLegal
         {
             get
@@ -200,9 +171,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblVersion
         {
             get
@@ -216,9 +184,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblWebPage
         {
             get
@@ -241,9 +206,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual PictureBox pbBackground
         {
             get
@@ -269,9 +231,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual ToolTip tTip
         {
             get
@@ -285,13 +244,11 @@ namespace Hero_Designer
             }
         }
 
-
         public frmAbout()
         {
             base.Load += this.frmAbout_Load;
             this.InitializeComponent();
         }
-
 
         void frmAbout_Load(object sender, EventArgs e)
         {
@@ -306,42 +263,35 @@ namespace Hero_Designer
             this.lblDBDate.Text = Strings.Format(DatabaseAPI.Database.Version, "#0.0####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MMM/yyyy") + ")";
         }
 
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
 
         void lblDonate_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
-
         void lblEmail_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.MailMe();
         }
-
 
         void lblWebPage_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToCoHPlanner();
         }
 
-
         void pbPayPal_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
 
-
         void PictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
-
 
         void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -353,62 +303,47 @@ namespace Hero_Designer
             }
         }
 
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
 
         [AccessedThroughProperty("Label1")]
         Label _Label1;
 
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
 
         [AccessedThroughProperty("Label4")]
         Label _Label4;
 
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
 
         [AccessedThroughProperty("lblDBDate")]
         Label _lblDBDate;
 
-
         [AccessedThroughProperty("lblDBIssue")]
         Label _lblDBIssue;
-
 
         [AccessedThroughProperty("lblDonate")]
         Label _lblDonate;
 
-
         [AccessedThroughProperty("lblEmail")]
         Label _lblEmail;
-
 
         [AccessedThroughProperty("lblLegal")]
         Label _lblLegal;
 
-
         [AccessedThroughProperty("lblVersion")]
         Label _lblVersion;
-
 
         [AccessedThroughProperty("lblWebPage")]
         Label _lblWebPage;
 
-
         [AccessedThroughProperty("pbBackground")]
         PictureBox _pbBackground;
 
-
         [AccessedThroughProperty("tTip")]
         ToolTip _tTip;
-
 
         Point mouse_offset;
     }

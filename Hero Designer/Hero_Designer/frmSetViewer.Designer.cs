@@ -12,8 +12,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -180,8 +178,6 @@
             base.TopMost = true;
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

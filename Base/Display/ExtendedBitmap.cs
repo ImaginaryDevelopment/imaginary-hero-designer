@@ -8,8 +8,6 @@ namespace Base.Display
 
     public class ExtendedBitmap : IDisposable, ICloneable
     {
-
-    
         public Graphics Graphics
         {
             get
@@ -32,8 +30,6 @@ namespace Base.Display
                 return graphics;
             }
         }
-
-
     
         public Bitmap Bitmap
         {
@@ -55,8 +51,6 @@ namespace Base.Display
                 return result;
             }
         }
-
-
     
         bool CanInitialise
         {
@@ -84,10 +78,6 @@ namespace Base.Display
                 return flag;
             }
         }
-
-
-    
-    
         public Size Size
         {
             get
@@ -112,10 +102,6 @@ namespace Base.Display
                 }
             }
         }
-
-
-    
-    
         Region Clip
         {
             get
@@ -141,8 +127,6 @@ namespace Base.Display
                 }
             }
         }
-
-
     
         public Rectangle ClipRect
         {
@@ -160,15 +144,11 @@ namespace Base.Display
                 return result;
             }
         }
-
-
         public void Dispose()
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
@@ -193,8 +173,6 @@ namespace Base.Display
                 }
             }
         }
-
-
         public object Clone()
         {
             object obj;
@@ -216,8 +194,6 @@ namespace Base.Display
             }
             return obj;
         }
-
-
         bool Initialise()
         {
             bool flag;
@@ -246,8 +222,6 @@ namespace Base.Display
             }
             return flag;
         }
-
-
         void Initialise(string fileName)
         {
             if (this._surface != null)
@@ -277,16 +251,12 @@ namespace Base.Display
                 this._isInitialised = true;
             }
         }
-
-
         ExtendedBitmap()
         {
             this.Cache = new ExtendedBitmap.PropertyCache();
             this._isNew = true;
             this._isInitialised = false;
         }
-
-
         public ExtendedBitmap(Size imageSize)
         {
             this.Cache = new ExtendedBitmap.PropertyCache
@@ -295,8 +265,6 @@ namespace Base.Display
             };
             this.Initialise();
         }
-
-
         public ExtendedBitmap(int x, int y)
         {
             this.Cache = new ExtendedBitmap.PropertyCache
@@ -305,33 +273,17 @@ namespace Base.Display
             };
             this.Initialise();
         }
-
-
         public ExtendedBitmap(string fileName)
         {
             this.Cache = new ExtendedBitmap.PropertyCache();
             this.Initialise(fileName);
         }
-
-
         bool _isDisposed;
-
-
         Bitmap _bits;
-
-
         Graphics _surface;
-
-
         protected ExtendedBitmap.PropertyCache Cache;
-
-
         bool _isNew;
-
-
         bool _isInitialised;
-
-
         protected class PropertyCache
         {
 
@@ -342,8 +294,6 @@ namespace Base.Display
                 this.Bounds = new Rectangle(this._location, this.Size);
                 this.BitDepth = args.PixelFormat;
             }
-
-
             public void Update(ref Graphics args)
             {
                 if (this.Clip != null)
@@ -353,8 +303,6 @@ namespace Base.Display
                 this.Clip = args.Clip;
                 this.ClipRect = ExtendedBitmap.PropertyCache.RectConvert(args.ClipBounds);
             }
-
-
             static Rectangle RectConvert(RectangleF iRect)
             {
                 int x;
@@ -411,23 +359,11 @@ namespace Base.Display
                 }
                 return new Rectangle(x, y, width, height);
             }
-
-
             public Size Size;
-
-
             Point _location;
-
-
             public Rectangle Bounds;
-
-
             public Region Clip;
-
-
             public Rectangle ClipRect;
-
-
             public PixelFormat BitDepth = PixelFormat.Format32bppArgb;
         }
     }

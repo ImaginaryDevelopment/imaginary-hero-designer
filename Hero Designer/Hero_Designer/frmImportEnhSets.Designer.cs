@@ -20,8 +20,6 @@
                 base.Dispose(disposing);
             }
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -189,8 +187,6 @@
             this.udRevision.EndInit();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

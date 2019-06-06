@@ -5,8 +5,6 @@ using System.Windows.Forms;
 
 public class ConfigData
 {
-
-
     internal static ConfigData Current
     {
         get
@@ -19,8 +17,6 @@ public class ConfigData
             return configData;
         }
     }
-
-
     public bool PrintHistoryIOLevels
     {
         get
@@ -32,8 +28,6 @@ public class ConfigData
             this.I9.PrintIOLevels = value;
         }
     }
-
-
     ConfigData(string iFilename = "")
     {
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
@@ -78,8 +72,6 @@ public class ConfigData
             MessageBox.Show(ex2.Message);
         }
     }
-
-
     void Load(string iFilename)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
@@ -309,8 +301,6 @@ public class ConfigData
         IL_A44:;
         }
     }
-
-
     public void CreateDefaultSaveFolder()
     {
         if (!Directory.Exists(this.DefaultSaveFolder))
@@ -322,8 +312,6 @@ public class ConfigData
             Directory.CreateDirectory(this.DefaultSaveFolder);
         }
     }
-
-
     void Save(string iFilename, float version)
     {
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
@@ -462,8 +450,6 @@ public class ConfigData
             }
         }
     }
-
-
     static Color ReadRGB(BinaryReader reader)
     {
         byte red = reader.ReadByte();
@@ -471,16 +457,12 @@ public class ConfigData
         byte blue = reader.ReadByte();
         return Color.FromArgb((int)red, (int)green, (int)blue);
     }
-
-
     static void WriteRGB(BinaryWriter writer, Color iColor)
     {
         writer.Write(iColor.R);
         writer.Write(iColor.G);
         writer.Write(iColor.B);
     }
-
-
     void RelocateSaveFolder(bool manual)
     {
         if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked || manual))
@@ -515,8 +497,6 @@ public class ConfigData
         }
         this.SaveFolderChecked = true;
     }
-
-
     public void SaveConfig()
     {
         try
@@ -529,8 +509,6 @@ public class ConfigData
             MessageBox.Show(ex.Message);
         }
     }
-
-
     void LoadOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
@@ -554,8 +532,6 @@ public class ConfigData
             }
         }
     }
-
-
     void SaveOverrides()
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
@@ -573,185 +549,65 @@ public class ConfigData
             }
         }
     }
-
-
     public const string UpdatePathDefault = "http://repo.cohtitan.com/mids_updates/";
-
-
     static ConfigData _current;
-
-
     public float BaseAcc = 0.75f;
-
-
     public Enums.eEnhGrade CalcEnhOrigin = Enums.eEnhGrade.SingleO;
-
-
     public Enums.eEnhRelative CalcEnhLevel = Enums.eEnhRelative.Even;
-
-
     public int ExempHigh = 50;
-
-
     public int TeamSize = 1;
-
-
     public int ExempLow = 50;
-
-
     public int ForceLevel = 50;
-
-
     public int ExportScheme = 1;
-
-
     public int ExportTarget = 1;
-
-
     public bool ExportBonusTotals;
-
-
     public bool ExportBonusList;
-
-
     public bool NoToolTips;
-
-
     public bool DataDamageGraph = true;
-
-
     public Enums.eDDGraph DataGraphType = Enums.eDDGraph.Both;
-
-
     public bool DataDamageGraphPercentageOnly;
-
-
     bool _hideOriginEnhancements;
-
-
     public bool ShowVillainColours = true;
-
-
     public bool CheckForUpdates;
-
-
     public bool FreshInstall = true;
-
-
     public int Columns = 3;
-
-
     public Size LastSize = new Size(1072, 760);
-
-
     public Enums.eVisibleSize DvState;
-
-
     public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
-
-
     public Enums.eSuppress Suppression;
-
-
     public bool UseArcanaTime;
-
-
     public ConfigData.SDamageMath DamageMath;
-
-
     public ConfigData.IncludeExclude Inc;
-
-
     public readonly ExportConfig Export;
-
-
     public ConfigData.Si9 I9;
-
-
     public ConfigData.FontSettings RtFont;
-
-
     public Enums.CompOverride[] CompOverride = new Enums.CompOverride[0];
-
-
     public bool PrintInColour;
-
-
     int _printScheme;
-
-
     public ConfigData.PrintOptionProfile PrintProfile = ConfigData.PrintOptionProfile.SinglePage;
-
-
     public bool PrintProfileEnh = true;
-
-
     public bool PrintHistory;
-
-
     public bool SaveFolderChecked;
-
-
     public string LastPrinter = string.Empty;
-
-
     public bool ShowSlotLevels;
-
-
     public bool ShowEnhRel;
-
-
     public bool ShowRelSymbols;
-
-
     public bool LoadLastFileOnStart = true;
-
-
     public string LastFileName = string.Empty;
-
-
     public string DefaultSaveFolder = string.Empty;
-
-
     public bool EnhanceVisibility;
-
-
     public bool DesaturateInherent = true;
-
-
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
-
-
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
-
-
     public string UpdatePath = "http://repo.cohtitan.com/mids_updates/";
-
-
     public Tips Tips;
-
-
     public bool ShowPopup = true;
-
-
     public bool ShowAlphaPopup = true;
-
-
     public bool PopupRecipes;
-
-
     public bool ShoppingListIncludesRecipes;
-
-
     public bool ReapeatOnMiddleClick = true;
-
-
     public bool ExportHex = true;
-
-
     public bool ExportChunkOnly;
-
-
     public readonly short[] DragDropScenarioAction = new short[]
     {
         3,
@@ -775,23 +631,11 @@ public class ConfigData
         0,
         0
     };
-
-
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
-
-
     public bool LongExport;
-
-
     public bool MasterMode;
-
-
     public bool ShrinkFrmSets;
-
-
     public readonly RTF RTF;
-
-
     public enum EDamageMath
     {
 
@@ -801,8 +645,6 @@ public class ConfigData
 
         Max
     }
-
-
     public enum EDamageReturn
     {
 
@@ -812,8 +654,6 @@ public class ConfigData
 
         DPA
     }
-
-
     public enum PrintOptionProfile
     {
 
@@ -823,62 +663,32 @@ public class ConfigData
 
         MultiPage
     }
-
-
     public struct SDamageMath
     {
 
         public ConfigData.EDamageMath Calculate;
-
-
         public ConfigData.EDamageReturn ReturnValue;
     }
-
-
     public struct IncludeExclude
     {
 
         public bool PvE;
     }
-
-
     public struct Si9
     {
 
         public int DefaultIOLevel;
-
-
         public bool DisplayIOLevels;
-
-
         public bool CalculateEnahncementFX;
-
-
         public bool CalculateSetBonusFX;
-
-
         public bool PrintIOLevels;
-
-
         public bool ExportIOLevels;
-
-
         public bool ExportStripSetNames;
-
-
         public bool ExportStripEnh;
-
-
         public bool ExportDataChunk;
-
-
         public bool ExportCompress;
-
-
         public bool ExportExtraSep;
     }
-
-
     public struct FontSettings
     {
 
@@ -904,8 +714,6 @@ public class ConfigData
             this.PairedBold = iFs.PairedBold;
             this.PairedBase = iFs.PairedBase;
         }
-
-
         public void SetDefault()
         {
             this.RTFBase = 16;
@@ -928,93 +736,37 @@ public class ConfigData
             this.PairedBase = 8.25f;
             this.PairedBold = false;
         }
-
-
         public int RTFBase;
-
-
         public bool RTFBold;
-
-
         public Color ColorBackgroundHero;
-
-
         public Color ColorBackgroundVillain;
-
-
         public Color ColorText;
-
-
         public Color ColorInvention;
-
-
         public Color ColorInventionInv;
-
-
         public Color ColorFaded;
-
-
         public Color ColorEnhancement;
-
-
         public Color ColorWarning;
-
-
         public Color ColorPlName;
-
-
         public Color ColorPlSpecial;
-
-
         public Color ColorPowerAvailable;
-
-
         public Color ColorPowerTaken;
-
-
         public Color ColorPowerTakenDark;
-
-
         public Color ColorPowerHighlight;
-
-
         public Color ColorPowerDisabled;
-
-
         public bool PairedBold;
-
-
         public float PairedBase;
     }
-
-
     public struct ExternalUris
     {
 
         public const string VersionFile = "version.xml";
-
-
         public const string EmailAddress = "midsteam@cohtitan.com";
-
-
         public const string BugReport = "http://www.honourableunited.org.uk/mhdreport.php";
-
-
         public const string DataLinkDownload = "http://www.cohplanner.com/mids/download.php";
-
-
         public const string Forums = "http://www.cohtitan.com/forum/";
-
-
         public const string Titan = "http://www.cohtitan.com/";
-
-
         public const string Planner = "http://www.cohplanner.com/";
-
-
         public const string Donate = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167";
-
-
         public const string UpdateExe = "MHDLoader.exe";
     }
 }

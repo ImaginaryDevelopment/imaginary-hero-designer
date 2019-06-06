@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmCSV : Form
     {
-
-    
     
         internal virtual Label at_Count
         {
@@ -28,10 +26,6 @@ namespace Hero_Designer
                 this._at_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label at_Date
         {
             get
@@ -44,10 +38,6 @@ namespace Hero_Designer
                 this._at_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button at_Import
         {
             get
@@ -69,10 +59,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label at_Revision
         {
             get
@@ -85,10 +71,6 @@ namespace Hero_Designer
                 this._at_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnBonusLookup
         {
             get
@@ -110,10 +92,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClearSI
         {
             get
@@ -135,10 +113,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDefiance
         {
             get
@@ -160,10 +134,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEnhEffects
         {
             get
@@ -185,10 +155,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEntities
         {
             get
@@ -210,10 +176,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImportRecipes
         {
             get
@@ -235,10 +197,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnIOLevels
         {
             get
@@ -260,10 +218,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnSalvageUpdate
         {
             get
@@ -285,10 +239,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnStaticExport
         {
             get
@@ -310,10 +260,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnStaticIndex
         {
             get
@@ -335,10 +281,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label fx_Count
         {
             get
@@ -351,10 +293,6 @@ namespace Hero_Designer
                 this._fx_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label fx_Date
         {
             get
@@ -367,10 +305,6 @@ namespace Hero_Designer
                 this._fx_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button fx_Import
         {
             get
@@ -392,10 +326,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label fx_Revision
         {
             get
@@ -408,10 +338,6 @@ namespace Hero_Designer
                 this._fx_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -424,10 +350,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -440,10 +362,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -456,10 +374,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -472,10 +386,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -488,10 +398,6 @@ namespace Hero_Designer
                 this._GroupBox5 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox6
         {
             get
@@ -504,10 +410,6 @@ namespace Hero_Designer
                 this._GroupBox6 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox7
         {
             get
@@ -520,10 +422,6 @@ namespace Hero_Designer
                 this._GroupBox7 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox8
         {
             get
@@ -536,10 +434,6 @@ namespace Hero_Designer
                 this._GroupBox8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label invent_Date
         {
             get
@@ -552,10 +446,6 @@ namespace Hero_Designer
                 this._invent_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button invent_Import
         {
             get
@@ -577,10 +467,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label invent_RecipeDate
         {
             get
@@ -593,10 +479,6 @@ namespace Hero_Designer
                 this._invent_RecipeDate = value;
             }
         }
-
-
-    
-    
         internal virtual Label invent_Revision
         {
             get
@@ -609,10 +491,6 @@ namespace Hero_Designer
                 this._invent_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual Button inventSetImport
         {
             get
@@ -634,10 +512,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -650,10 +524,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -666,10 +536,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -682,10 +548,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label12
         {
             get
@@ -698,10 +560,6 @@ namespace Hero_Designer
                 this._Label12 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label13
         {
             get
@@ -714,10 +572,6 @@ namespace Hero_Designer
                 this._Label13 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label14
         {
             get
@@ -730,10 +584,6 @@ namespace Hero_Designer
                 this._Label14 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label15
         {
             get
@@ -746,10 +596,6 @@ namespace Hero_Designer
                 this._Label15 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label16
         {
             get
@@ -762,10 +608,6 @@ namespace Hero_Designer
                 this._Label16 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label17
         {
             get
@@ -778,10 +620,6 @@ namespace Hero_Designer
                 this._Label17 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -794,10 +632,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -810,10 +644,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -826,10 +656,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -842,10 +668,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label23
         {
             get
@@ -858,10 +680,6 @@ namespace Hero_Designer
                 this._Label23 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label24
         {
             get
@@ -874,10 +692,6 @@ namespace Hero_Designer
                 this._Label24 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -890,10 +704,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -906,10 +716,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -922,10 +728,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -938,10 +740,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -954,10 +752,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -970,10 +764,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lev_Count
         {
             get
@@ -986,10 +776,6 @@ namespace Hero_Designer
                 this._lev_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label lev_date
         {
             get
@@ -1002,10 +788,6 @@ namespace Hero_Designer
                 this._lev_date = value;
             }
         }
-
-
-    
-    
         internal virtual Label lev_Revision
         {
             get
@@ -1018,10 +800,6 @@ namespace Hero_Designer
                 this._lev_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual Button level_import
         {
             get
@@ -1043,10 +821,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label mod_Count
         {
             get
@@ -1059,10 +833,6 @@ namespace Hero_Designer
                 this._mod_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label mod_Date
         {
             get
@@ -1075,10 +845,6 @@ namespace Hero_Designer
                 this._mod_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button mod_Import
         {
             get
@@ -1100,10 +866,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label mod_Revision
         {
             get
@@ -1116,10 +878,6 @@ namespace Hero_Designer
                 this._mod_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual Label pow_Count
         {
             get
@@ -1132,10 +890,6 @@ namespace Hero_Designer
                 this._pow_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label pow_Date
         {
             get
@@ -1148,10 +902,6 @@ namespace Hero_Designer
                 this._pow_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button pow_Import
         {
             get
@@ -1173,10 +923,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label pow_Revision
         {
             get
@@ -1189,10 +935,6 @@ namespace Hero_Designer
                 this._pow_Revision = value;
             }
         }
-
-
-    
-    
         internal virtual Label set_Count
         {
             get
@@ -1205,10 +947,6 @@ namespace Hero_Designer
                 this._set_Count = value;
             }
         }
-
-
-    
-    
         internal virtual Label set_Date
         {
             get
@@ -1221,10 +959,6 @@ namespace Hero_Designer
                 this._set_Date = value;
             }
         }
-
-
-    
-    
         internal virtual Button set_Import
         {
             get
@@ -1246,10 +980,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label set_Revision
         {
             get
@@ -1262,29 +992,21 @@ namespace Hero_Designer
                 this._set_Revision = value;
             }
         }
-
-
         public frmCSV()
         {
             base.Load += this.frmCSV_Load;
             this.InitializeComponent();
         }
-
-
         void at_Import_Click(object sender, EventArgs e)
         {
             new frmImport_Archetype().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnBonusLookup_Click(object sender, EventArgs e)
         {
             new frmImport_SetBonusAssignment().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnClearSI_Click(object sender, EventArgs e)
         {
             if (Interaction.MsgBox("Really set all StaticIndex values to -1?\r\nIf not using qualified names for Save/Load, files will be unopenable until Statics are re-indexed. Full Re-Indexing may result in changed index assignments.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.No)
@@ -1302,8 +1024,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("Static Index values cleared.", MsgBoxStyle.Information, "De-Indexing Complete");
             }
         }
-
-
         void btnDefiance_Click(object sender, EventArgs e)
         {
             this.BusyMsg("Working...");
@@ -1332,29 +1052,21 @@ namespace Hero_Designer
             DatabaseAPI.SaveMainDatabase();
             this.BusyHide();
         }
-
-
         void btnEnhEffects_Click(object sender, EventArgs e)
         {
             new frmImport_EnhancementEffects().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnEntities_Click(object sender, EventArgs e)
         {
             new frmImport_Entities().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnImportRecipes_Click(object sender, EventArgs e)
         {
             new frmImport_Recipe().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void btnIOLevels_Click(object sender, EventArgs e)
         {
             this.BusyMsg("Working...");
@@ -1363,15 +1075,11 @@ namespace Hero_Designer
             DatabaseAPI.SaveEnhancementDb();
             this.BusyHide();
         }
-
-
         void btnSalvageUpdate_Click(object sender, EventArgs e)
         {
             new frmImport_SalvageReq().ShowDialog();
             this.DisplayInfo();
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         static void btnStaticExport_Click(object sender, EventArgs e)
         {
@@ -1432,8 +1140,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("Copied to clipboard only", MsgBoxStyle.OkOnly, null);
             }
         }
-
-
         void BusyHide()
         {
             if (this.bFrm != null)
@@ -1442,8 +1148,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -1453,15 +1157,11 @@ namespace Hero_Designer
             }
             this.bFrm.SetMessage(sMessage);
         }
-
-
         void Button2_Click(object sender, EventArgs e)
         {
             DatabaseAPI.AssignStaticIndexValues();
             Interaction.MsgBox("Static Index values assigned.", MsgBoxStyle.Information, "Indexing Complete");
         }
-
-
         void DisplayInfo()
         {
             this.mod_Date.Text = Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
@@ -1486,63 +1186,45 @@ namespace Hero_Designer
             this.invent_Revision.Text = Conversions.ToString(DatabaseAPI.Database.IOAssignmentVersion.Revision);
             this.invent_RecipeDate.Text = Strings.Format(DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
         }
-
-
         void frmCSV_Load(object sender, EventArgs e)
         {
             this.DisplayInfo();
         }
-
-
         void fx_Import_Click(object sender, EventArgs e)
         {
             new frmImportEffects().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void invent_Import_Click(object sender, EventArgs e)
         {
             new frmImport_SetAssignments().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void inventSetImport_Click(object sender, EventArgs e)
         {
             new frmImportEnhSets().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void level_import_Click(object sender, EventArgs e)
         {
             new frmImportPowerLevels().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void mod_Import_Click(object sender, EventArgs e)
         {
             new frmImport_mod().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void pow_Import_Click(object sender, EventArgs e)
         {
             new frmImport_Power().ShowDialog();
             this.DisplayInfo();
         }
-
-
         void set_Import_Click(object sender, EventArgs e)
         {
             new frmImport_Powerset().ShowDialog();
             this.DisplayInfo();
         }
-
-
         static void SetEnhancementLevels()
         {
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
@@ -1564,280 +1246,142 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         [AccessedThroughProperty("at_Count")]
         Label _at_Count;
-
-
         [AccessedThroughProperty("at_Date")]
         Label _at_Date;
-
-
         [AccessedThroughProperty("at_Import")]
         Button _at_Import;
-
-
         [AccessedThroughProperty("at_Revision")]
         Label _at_Revision;
-
-
         [AccessedThroughProperty("btnBonusLookup")]
         Button _btnBonusLookup;
-
-
         [AccessedThroughProperty("btnClearSI")]
         Button _btnClearSI;
-
-
         [AccessedThroughProperty("btnDefiance")]
         Button _btnDefiance;
-
-
         [AccessedThroughProperty("btnEnhEffects")]
         Button _btnEnhEffects;
-
-
         [AccessedThroughProperty("btnEntities")]
         Button _btnEntities;
-
-
         [AccessedThroughProperty("btnImportRecipes")]
         Button _btnImportRecipes;
-
-
         [AccessedThroughProperty("btnIOLevels")]
         Button _btnIOLevels;
-
-
         [AccessedThroughProperty("btnSalvageUpdate")]
         Button _btnSalvageUpdate;
-
-
         [AccessedThroughProperty("btnStaticExport")]
         Button _btnStaticExport;
-
-
         [AccessedThroughProperty("btnStaticIndex")]
         Button _btnStaticIndex;
-
-
         [AccessedThroughProperty("fx_Count")]
         Label _fx_Count;
-
-
         [AccessedThroughProperty("fx_Date")]
         Label _fx_Date;
-
-
         [AccessedThroughProperty("fx_Import")]
         Button _fx_Import;
-
-
         [AccessedThroughProperty("fx_Revision")]
         Label _fx_Revision;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("GroupBox5")]
         GroupBox _GroupBox5;
-
-
         [AccessedThroughProperty("GroupBox6")]
         GroupBox _GroupBox6;
-
-
         [AccessedThroughProperty("GroupBox7")]
         GroupBox _GroupBox7;
-
-
         [AccessedThroughProperty("GroupBox8")]
         GroupBox _GroupBox8;
-
-
         [AccessedThroughProperty("invent_Date")]
         Label _invent_Date;
-
-
         [AccessedThroughProperty("invent_Import")]
         Button _invent_Import;
-
-
         [AccessedThroughProperty("invent_RecipeDate")]
         Label _invent_RecipeDate;
-
-
         [AccessedThroughProperty("invent_Revision")]
         Label _invent_Revision;
-
-
         [AccessedThroughProperty("inventSetImport")]
         Button _inventSetImport;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label12")]
         Label _Label12;
-
-
         [AccessedThroughProperty("Label13")]
         Label _Label13;
-
-
         [AccessedThroughProperty("Label14")]
         Label _Label14;
-
-
         [AccessedThroughProperty("Label15")]
         Label _Label15;
-
-
         [AccessedThroughProperty("Label16")]
         Label _Label16;
-
-
         [AccessedThroughProperty("Label17")]
         Label _Label17;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label23")]
         Label _Label23;
-
-
         [AccessedThroughProperty("Label24")]
         Label _Label24;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("lev_Count")]
         Label _lev_Count;
-
-
         [AccessedThroughProperty("lev_date")]
         Label _lev_date;
-
-
         [AccessedThroughProperty("lev_Revision")]
         Label _lev_Revision;
-
-
         [AccessedThroughProperty("level_import")]
         Button _level_import;
-
-
         [AccessedThroughProperty("mod_Count")]
         Label _mod_Count;
-
-
         [AccessedThroughProperty("mod_Date")]
         Label _mod_Date;
-
-
         [AccessedThroughProperty("mod_Import")]
         Button _mod_Import;
-
-
         [AccessedThroughProperty("mod_Revision")]
         Label _mod_Revision;
-
-
         [AccessedThroughProperty("pow_Count")]
         Label _pow_Count;
-
-
         [AccessedThroughProperty("pow_Date")]
         Label _pow_Date;
-
-
         [AccessedThroughProperty("pow_Import")]
         Button _pow_Import;
-
-
         [AccessedThroughProperty("pow_Revision")]
         Label _pow_Revision;
-
-
         [AccessedThroughProperty("set_Count")]
         Label _set_Count;
-
-
         [AccessedThroughProperty("set_Date")]
         Label _set_Date;
-
-
         [AccessedThroughProperty("set_Import")]
         Button _set_Import;
-
-
         [AccessedThroughProperty("set_Revision")]
         Label _set_Revision;
-
-
         frmBusy bFrm;
     }
 }

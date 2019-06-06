@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmTweakMatching : Form
     {
-
-    
     
         internal virtual Button btnAdd
         {
@@ -37,10 +35,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDel
         {
             get
@@ -62,10 +56,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button Button1
         {
             get
@@ -87,10 +77,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button Button2
         {
             get
@@ -112,10 +98,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAT1
         {
             get
@@ -137,10 +119,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPower
         {
             get
@@ -162,10 +140,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSet1
         {
             get
@@ -187,10 +161,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbType1
         {
             get
@@ -212,10 +182,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -228,10 +194,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -244,10 +206,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lstTweaks
         {
             get
@@ -269,10 +227,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtAddActual
         {
             get
@@ -285,10 +239,6 @@ namespace Hero_Designer
                 this._txtAddActual = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtAddOvr
         {
             get
@@ -301,10 +251,6 @@ namespace Hero_Designer
                 this._txtAddOvr = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtOvr
         {
             get
@@ -317,16 +263,12 @@ namespace Hero_Designer
                 this._txtOvr = value;
             }
         }
-
-
         public frmTweakMatching()
         {
             base.Load += this.frmTweakMatching_Load;
             this.Loaded = false;
             this.InitializeComponent();
         }
-
-
         void btnAdd_Click(object sender, EventArgs e)
         {
             int num = -1;
@@ -360,8 +302,6 @@ namespace Hero_Designer
                 this.lstTweaks.SelectedIndex = this.lstTweaks.Items.Count - 1;
             }
         }
-
-
         void btnDel_Click(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
@@ -395,14 +335,10 @@ namespace Hero_Designer
                 this.listOverrides();
             }
         }
-
-
         void Button1_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
-
-
         void Button2_Click(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
@@ -413,8 +349,6 @@ namespace Hero_Designer
                 this.lstTweaks.SelectedIndex = selectedIndex;
             }
         }
-
-
         void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -422,8 +356,6 @@ namespace Hero_Designer
                 this.List_Sets();
             }
         }
-
-
         void cbPower_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cbPower.SelectedIndex >= 0)
@@ -432,8 +364,6 @@ namespace Hero_Designer
                 this.txtAddOvr.Text = this.txtAddActual.Text;
             }
         }
-
-
         void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -441,8 +371,6 @@ namespace Hero_Designer
                 this.GetPowers();
             }
         }
-
-
         void cbType1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -450,8 +378,6 @@ namespace Hero_Designer
                 this.List_Sets();
             }
         }
-
-
         void frmTweakMatching_Load(object sender, EventArgs e)
         {
             this.list_AT();
@@ -461,14 +387,10 @@ namespace Hero_Designer
             this.listOverrides();
             this.Loaded = true;
         }
-
-
         public int getAT()
         {
             return this.cbAT1.SelectedIndex;
         }
-
-
         public void GetPowers()
         {
             int index = 0;
@@ -484,15 +406,11 @@ namespace Hero_Designer
             this.cbPower.SelectedIndex = 0;
             this.cbPower.EndUpdate();
         }
-
-
         public int getSetIndex()
         {
             ComboBox cbSet = this.cbSet1;
             return DatabaseAPI.GetPowersetIndexes(this.getAT(), this.getSetType())[cbSet.SelectedIndex].nID;
         }
-
-
         public Enums.ePowerSetType getSetType()
         {
             Enums.ePowerSetType ePowerSetType;
@@ -513,8 +431,6 @@ namespace Hero_Designer
             }
             return ePowerSetType;
         }
-
-
         public void list_AT()
         {
             this.cbAT1.BeginUpdate();
@@ -527,8 +443,6 @@ namespace Hero_Designer
             this.cbAT1.SelectedIndex = 0;
             this.cbAT1.EndUpdate();
         }
-
-
         public void List_Sets()
         {
             Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
@@ -561,8 +475,6 @@ namespace Hero_Designer
             }
             cbSet.EndUpdate();
         }
-
-
         public void list_Type()
         {
             this.cbType1.BeginUpdate();
@@ -573,8 +485,6 @@ namespace Hero_Designer
             this.cbType1.SelectedIndex = 0;
             this.cbType1.EndUpdate();
         }
-
-
         public void listOverrides()
         {
             this.lstTweaks.BeginUpdate();
@@ -590,8 +500,6 @@ namespace Hero_Designer
             }
             this.lstTweaks.EndUpdate();
         }
-
-
         void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lstTweaks.SelectedIndex >= 0)
@@ -599,64 +507,34 @@ namespace Hero_Designer
                 this.txtOvr.Text = MidsContext.Config.CompOverride[this.lstTweaks.SelectedIndex].Override;
             }
         }
-
-
         [AccessedThroughProperty("btnAdd")]
         Button _btnAdd;
-
-
         [AccessedThroughProperty("btnDel")]
         Button _btnDel;
-
-
         [AccessedThroughProperty("Button1")]
         Button _Button1;
-
-
         [AccessedThroughProperty("Button2")]
         Button _Button2;
-
-
         [AccessedThroughProperty("cbAT1")]
         ComboBox _cbAT1;
-
-
         [AccessedThroughProperty("cbPower")]
         ComboBox _cbPower;
-
-
         [AccessedThroughProperty("cbSet1")]
         ComboBox _cbSet1;
-
-
         [AccessedThroughProperty("cbType1")]
         ComboBox _cbType1;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("lstTweaks")]
         ListBox _lstTweaks;
-
-
         [AccessedThroughProperty("txtAddActual")]
         TextBox _txtAddActual;
-
-
         [AccessedThroughProperty("txtAddOvr")]
         TextBox _txtAddOvr;
-
-
         [AccessedThroughProperty("txtOvr")]
         TextBox _txtOvr;
-
-
         protected bool Loaded;
     }
 }

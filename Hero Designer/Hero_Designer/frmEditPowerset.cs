@@ -14,8 +14,6 @@ namespace Hero_Designer
 
     public partial class frmEditPowerset : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -38,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClearIcon
         {
             get
@@ -63,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClose
         {
             get
@@ -88,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnIcon
         {
             get
@@ -113,10 +99,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAT
         {
             get
@@ -138,10 +120,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbLinkGroup
         {
             get
@@ -163,10 +141,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbLinkSet
         {
             get
@@ -188,10 +162,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbMutexGroup
         {
             get
@@ -213,10 +183,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbNameGroup
         {
             get
@@ -244,10 +210,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSetType
         {
             get
@@ -269,10 +231,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbTrunkGroup
         {
             get
@@ -294,10 +252,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbTrunkSet
         {
             get
@@ -319,10 +273,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoLink
         {
             get
@@ -344,10 +294,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNoTrunk
         {
             get
@@ -369,10 +315,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -385,10 +327,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -401,10 +339,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -417,10 +351,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox gbLink
         {
             get
@@ -433,10 +363,6 @@ namespace Hero_Designer
                 this._gbLink = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -449,10 +375,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -465,10 +387,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -481,10 +399,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -497,10 +411,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -513,10 +423,6 @@ namespace Hero_Designer
                 this._GroupBox5 = value;
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog ImagePicker
         {
             get
@@ -529,10 +435,6 @@ namespace Hero_Designer
                 this._ImagePicker = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -545,10 +447,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -561,10 +459,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -577,10 +471,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -593,10 +483,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label31
         {
             get
@@ -609,10 +495,6 @@ namespace Hero_Designer
                 this._Label31 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label33
         {
             get
@@ -625,10 +507,6 @@ namespace Hero_Designer
                 this._Label33 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -641,10 +519,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -657,10 +531,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -673,10 +543,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -689,10 +555,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -705,10 +567,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblNameFull
         {
             get
@@ -721,10 +579,6 @@ namespace Hero_Designer
                 this._lblNameFull = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblNameUnique
         {
             get
@@ -737,10 +591,6 @@ namespace Hero_Designer
                 this._lblNameUnique = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lvMutexSets
         {
             get
@@ -762,10 +612,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvPowers
         {
             get
@@ -778,10 +624,6 @@ namespace Hero_Designer
                 this._lvPowers = value;
             }
         }
-
-
-    
-    
         internal virtual PictureBox picIcon
         {
             get
@@ -794,10 +636,6 @@ namespace Hero_Designer
                 this._picIcon = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDesc
         {
             get
@@ -819,10 +657,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtName
         {
             get
@@ -844,10 +678,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtNameSet
         {
             get
@@ -872,8 +702,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmEditPowerset(ref IPowerset iSet)
         {
             base.Load += this.frmEditPowerset_Load;
@@ -881,8 +709,6 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myPS = new Powerset(iSet);
         }
-
-
         public void AddListItem(int Index)
         {
             string[] items = new string[]
@@ -895,22 +721,16 @@ namespace Hero_Designer
             this.lvPowers.Items[Index].Selected = true;
             this.lvPowers.Items[Index].EnsureVisible();
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
-
-
         void btnClearIcon_Click(object sender, EventArgs e)
         {
             this.myPS.ImageName = "";
             this.DisplayIcon();
         }
-
-
         void btnClose_Click(object sender, EventArgs e)
         {
             IPowerset ps = this.myPS;
@@ -930,8 +750,6 @@ namespace Hero_Designer
                 base.Hide();
             }
         }
-
-
         void btnIcon_Click(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -953,8 +771,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         string BuildFullName()
         {
             string str = this.cbNameGroup.Text + "." + this.txtNameSet.Text;
@@ -963,8 +779,6 @@ namespace Hero_Designer
             this.myPS.SetName = this.txtNameSet.Text;
             return str;
         }
-
-
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -980,8 +794,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -989,8 +801,6 @@ namespace Hero_Designer
                 this.FillLinkSetCombo();
             }
         }
-
-
         void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1009,8 +819,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1018,8 +826,6 @@ namespace Hero_Designer
                 this.ListMutexSets();
             }
         }
-
-
         void cbNameGroup_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1027,8 +833,6 @@ namespace Hero_Designer
                 this.DisplayNameData();
             }
         }
-
-
         void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1036,8 +840,6 @@ namespace Hero_Designer
                 this.BuildFullName();
             }
         }
-
-
         void cbNameGroup_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1045,8 +847,6 @@ namespace Hero_Designer
                 this.BuildFullName();
             }
         }
-
-
         void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1068,8 +868,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1077,8 +875,6 @@ namespace Hero_Designer
                 this.FillTrunkSetCombo();
             }
         }
-
-
         void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1097,20 +893,14 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void chkNoLink_CheckedChanged(object sender, EventArgs e)
         {
             this.cbLinkSet_SelectedIndexChanged(this, new EventArgs());
         }
-
-
         void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
         {
             this.cbTrunkSet_SelectedIndexChanged(this, new EventArgs());
         }
-
-
         public void DisplayIcon()
         {
             if (this.myPS.ImageName != "")
@@ -1126,8 +916,6 @@ namespace Hero_Designer
                 this.btnIcon.Text = "Select Icon";
             }
         }
-
-
         void DisplayNameData()
         {
             IPowerset ps = this.myPS;
@@ -1145,8 +933,6 @@ namespace Hero_Designer
                 this.lblNameUnique.Text = "This name is NOT unique.";
             }
         }
-
-
         void FillLinkGroupCombo()
         {
             this.cbLinkGroup.BeginUpdate();
@@ -1165,8 +951,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void FillLinkSetCombo()
         {
             this.cbLinkSet.BeginUpdate();
@@ -1188,8 +972,6 @@ namespace Hero_Designer
             }
             this.cbLinkSet.EndUpdate();
         }
-
-
         void FillTrunkGroupCombo()
         {
             this.cbTrunkGroup.BeginUpdate();
@@ -1208,8 +990,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void FillTrunkSetCombo()
         {
             this.cbTrunkSet.BeginUpdate();
@@ -1231,8 +1011,6 @@ namespace Hero_Designer
             }
             this.cbTrunkSet.EndUpdate();
         }
-
-
         void frmEditPowerset_Load(object sender, EventArgs e)
         {
             Enums.ePowerSetType ePowerSetType = Enums.ePowerSetType.None;
@@ -1286,8 +1064,6 @@ namespace Hero_Designer
             this.Loading = false;
             this.DisplayNameData();
         }
-
-
         void ListMutexGroups()
         {
             this.cbMutexGroup.BeginUpdate();
@@ -1306,8 +1082,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void ListMutexSets()
         {
             this.lvMutexSets.BeginUpdate();
@@ -1332,8 +1106,6 @@ namespace Hero_Designer
             }
             this.lvMutexSets.EndUpdate();
         }
-
-
         public void ListPowers()
         {
             this.lvPowers.BeginUpdate();
@@ -1350,8 +1122,6 @@ namespace Hero_Designer
             }
             this.lvPowers.EndUpdate();
         }
-
-
         void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbMutexGroup.SelectedIndex >= 0)
@@ -1368,8 +1138,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
         {
             if (!string.IsNullOrEmpty(iFullName))
@@ -1389,8 +1157,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         void txtDesc_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1398,8 +1164,6 @@ namespace Hero_Designer
                 this.myPS.Description = this.txtDesc.Text;
             }
         }
-
-
         void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1407,8 +1171,6 @@ namespace Hero_Designer
                 this.myPS.DisplayName = this.txtName.Text;
             }
         }
-
-
         void txtNameSet_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1416,8 +1178,6 @@ namespace Hero_Designer
                 this.DisplayNameData();
             }
         }
-
-
         void txtNameSet_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1425,183 +1185,93 @@ namespace Hero_Designer
                 this.BuildFullName();
             }
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnClearIcon")]
         Button _btnClearIcon;
-
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
-
         [AccessedThroughProperty("btnIcon")]
         Button _btnIcon;
-
-
         [AccessedThroughProperty("cbAT")]
         ComboBox _cbAT;
-
-
         [AccessedThroughProperty("cbLinkGroup")]
         ComboBox _cbLinkGroup;
-
-
         [AccessedThroughProperty("cbLinkSet")]
         ComboBox _cbLinkSet;
-
-
         [AccessedThroughProperty("cbMutexGroup")]
         ComboBox _cbMutexGroup;
-
-
         [AccessedThroughProperty("cbNameGroup")]
         ComboBox _cbNameGroup;
-
-
         [AccessedThroughProperty("cbSetType")]
         ComboBox _cbSetType;
-
-
         [AccessedThroughProperty("cbTrunkGroup")]
         ComboBox _cbTrunkGroup;
-
-
         [AccessedThroughProperty("cbTrunkSet")]
         ComboBox _cbTrunkSet;
-
-
         [AccessedThroughProperty("chkNoLink")]
         CheckBox _chkNoLink;
-
-
         [AccessedThroughProperty("chkNoTrunk")]
         CheckBox _chkNoTrunk;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("gbLink")]
         GroupBox _gbLink;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("GroupBox5")]
         GroupBox _GroupBox5;
-
-
         [AccessedThroughProperty("ImagePicker")]
         OpenFileDialog _ImagePicker;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label31")]
         Label _Label31;
-
-
         [AccessedThroughProperty("Label33")]
         Label _Label33;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("lblNameFull")]
         Label _lblNameFull;
-
-
         [AccessedThroughProperty("lblNameUnique")]
         Label _lblNameUnique;
-
-
         [AccessedThroughProperty("lvMutexSets")]
         ListBox _lvMutexSets;
-
-
         [AccessedThroughProperty("lvPowers")]
         ListView _lvPowers;
-
-
         [AccessedThroughProperty("picIcon")]
         PictureBox _picIcon;
-
-
         [AccessedThroughProperty("txtDesc")]
         TextBox _txtDesc;
-
-
         [AccessedThroughProperty("txtName")]
         TextBox _txtName;
-
-
         [AccessedThroughProperty("txtNameSet")]
         TextBox _txtNameSet;
-
-
         protected bool Loading;
-
-
         public IPowerset myPS;
     }
 }

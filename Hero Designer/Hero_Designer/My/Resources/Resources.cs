@@ -19,8 +19,6 @@ namespace Hero_Designer.My.Resources
     [DebuggerNonUserCode]
     internal sealed class Resources
     {
-
-    
     
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static CultureInfo Culture
@@ -34,8 +32,6 @@ namespace Hero_Designer.My.Resources
                 Resources.resourceCulture = value;
             }
         }
-
-
     
         internal static Bitmap Gradient
         {
@@ -44,8 +40,6 @@ namespace Hero_Designer.My.Resources
                 return (Bitmap)RuntimeHelpers.GetObjectValue(Resources.ResourceManager.GetObject("Gradient", Resources.resourceCulture));
             }
         }
-
-
     
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         internal static ResourceManager ResourceManager
@@ -60,11 +54,7 @@ namespace Hero_Designer.My.Resources
                 return Resources.resourceMan;
             }
         }
-
-
         static CultureInfo resourceCulture;
-
-
         static ResourceManager resourceMan;
     }
 }

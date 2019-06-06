@@ -9,12 +9,8 @@ using midsControls;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmReadme : Form
     {
-
-    
     
         internal virtual ImageButton btnClose
         {
@@ -40,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbBackground
         {
             get
@@ -71,10 +63,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbBottom
         {
             get
@@ -99,10 +87,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtfRead
         {
             get
@@ -115,8 +99,6 @@ namespace Hero_Designer
                 this._rtfRead = value;
             }
         }
-
-
         public frmReadme(string iFile)
         {
             base.MouseDown += this.frmReadme_MouseDown;
@@ -128,8 +110,6 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myFile = iFile;
         }
-
-
         void All_MouseMove(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -139,19 +119,13 @@ namespace Hero_Designer
                 base.Location = mousePosition;
             }
         }
-
-
         void btnClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void btnClose_Load(object sender, EventArgs e)
         {
         }
-
-
         void frmReadme_Load(object sender, EventArgs e)
         {
             this.rtW = base.Size.Width - (this.rtfRead.Width + this.rtfRead.Left);
@@ -171,20 +145,14 @@ namespace Hero_Designer
             }
             this.Loading = false;
         }
-
-
         void frmReadme_MouseDown(object sender, MouseEventArgs e)
         {
             this.pbBackground_MouseDown(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         void frmReadme_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
-
-
         void frmReadme_Resize(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -195,68 +163,38 @@ namespace Hero_Designer
                 this.btnClose.Left = (int)Math.Round((double)(base.Size.Width - this.btnClose.Width) / 2.0);
             }
         }
-
-
         void pbBackground_Click(object sender, EventArgs e)
         {
         }
-
-
         void pbBackground_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
-
-
         void pbBackground_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
-
-
         void pbBottom_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -this.pbBottom.Top + -e.Y);
         }
-
-
         void pbBottom_MouseMove(object sender, MouseEventArgs e)
         {
             this.All_MouseMove(e);
         }
-
-
         [AccessedThroughProperty("btnClose")]
         ImageButton _btnClose;
-
-
         [AccessedThroughProperty("pbBackground")]
         PictureBox _pbBackground;
-
-
         [AccessedThroughProperty("pbBottom")]
         PictureBox _pbBottom;
-
-
         [AccessedThroughProperty("rtfRead")]
         RichTextBox _rtfRead;
-
-
         int btnY;
-
-
         bool Loading;
-
-
         Point mouse_offset;
-
-
         string myFile;
-
-
         int rtH;
-
-
         int rtW;
     }
 }

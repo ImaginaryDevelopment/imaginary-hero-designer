@@ -48,8 +48,6 @@ namespace Hero_Designer
                 this.NoHTMLBr = true;
             }
         }
-
-
         public string Build(string iDataLink)
         {
             string str8 = "";
@@ -189,8 +187,6 @@ namespace Hero_Designer
             }
             return str8 + this.LineBreak();
         }
-
-
         string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
         {
             string str = "";
@@ -493,8 +489,6 @@ namespace Hero_Designer
             }
             return str;
         }
-
-
         string buildSetBonusListLong()
         {
             string str = this.formatColor(this.formatUnderline(this.formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + this.LineBreak();
@@ -559,8 +553,6 @@ namespace Hero_Designer
             }
             return str;
         }
-
-
         string BuildSetBonusListShort()
         {
             IEffect[] cumulativeSetBonuses = MidsContext.Character.CurrentBuild.GetCumulativeSetBonuses();
@@ -578,14 +570,10 @@ namespace Hero_Designer
             }
             return this.formatColor(this.formatUnderline(this.formatBold("Set Bonus Totals:")), ExportConfig.Element.Heading) + this.List(iText);
         }
-
-
         string formatBold(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].BoldOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].BoldOff;
         }
-
-
         string formatColor(string iText, ExportConfig.Element iElement)
         {
             string str;
@@ -645,20 +633,14 @@ namespace Hero_Designer
             }
             return str;
         }
-
-
         string formatItalic(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOff;
         }
-
-
         string formatUnderline(string iText)
         {
             return MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOff;
         }
-
-
         string LineBreak()
         {
             string result;
@@ -672,8 +654,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         string List(string iText)
         {
             string result;
@@ -695,8 +675,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         string ListItemOff()
         {
             string result;
@@ -710,8 +688,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         string ListItemOn()
         {
             string result;
@@ -733,8 +709,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         string WhiteSpace()
         {
             string result;
@@ -748,33 +722,17 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         string[] BBWhite = new string[]
         {
             " ",
             "\t"
         };
-
-
         public bool HTML = false;
-
-
         public int idFormat = MidsContext.Config.ExportTarget;
-
-
         int idScheme = MidsContext.Config.ExportScheme;
-
-
         bool LongExport = true;
-
-
         bool NoHTMLBr = false;
-
-
         public bool Plain;
-
-
         bool UNB = false;
     }
 }

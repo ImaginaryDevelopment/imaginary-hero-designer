@@ -12,8 +12,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -1559,8 +1557,6 @@
             this.TeamSize.EndInit();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

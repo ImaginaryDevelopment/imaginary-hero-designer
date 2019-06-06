@@ -13,8 +13,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         void InitializeComponent()
         {
             this.components = new global::System.ComponentModel.Container();
@@ -61,8 +59,6 @@
             ((global::System.ComponentModel.ISupportInitialize)this.PictureBox1).EndInit();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

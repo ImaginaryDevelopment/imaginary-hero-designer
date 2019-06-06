@@ -5,74 +5,20 @@ using Base.Data_Classes;
 // Token: 0x02000029 RID: 41
 public class Enhancement : IEnhancement
 {
-
-    
     
     public bool IsModified { get; set; }
-
-
-    
-    
     public bool IsNew { get; set; }
-
-
-    
-    
     public int StaticIndex { get; set; }
-
-
-    
-    
     public string Name { get; set; }
-
-
-    
-    
     public string ShortName { get; set; }
-
-
-    
-    
     public string Desc { get; set; }
-
-
-    
-    
     public Enums.eType TypeID { get; set; }
-
-
-    
-    
     public Enums.eSubtype SubTypeID { get; set; }
-
-
-    
-    
     public int[] ClassID { get; set; }
-
-
-    
-    
     public string Image { get; set; }
-
-
-    
-    
     public int ImageIdx { get; set; }
-
-
-    
-    
     public int nIDSet { get; set; }
-
-
-    
-    
     public string UIDSet { get; set; }
-
-
-    
-    
     public IPower Power
     {
         get
@@ -89,63 +35,17 @@ public class Enhancement : IEnhancement
             this._power = value;
         }
     }
-
-
-    
-    
     public Enums.sEffect[] Effect { get; set; }
-
-
-    
-    
     public float EffectChance { get; set; }
-
-
-    
-    
     public int LevelMin { get; set; }
-
-
-    
-    
     public int LevelMax { get; set; }
-
-
-    
-    
     public bool Unique { get; set; }
-
-
-    
-    
     public Enums.eEnhMutex MutExID { get; set; }
-
-
-    
-    
     public Enums.eBuffDebuff BuffMode { get; set; }
-
-
-    
-    
     public string RecipeName { get; set; }
-
-
-    
-    
     public int RecipeIDX { get; set; }
-
-
-    
-    
     public string UID { get; set; }
-
-
-    
-    
     public bool Superior { get; set; }
-
-
     
     public float Probability
     {
@@ -161,8 +61,6 @@ public class Enhancement : IEnhancement
             return 0f;
         }
     }
-
-
     
     public bool HasEnhEffect
     {
@@ -178,8 +76,6 @@ public class Enhancement : IEnhancement
             return false;
         }
     }
-
-
     
     public bool HasPowerEffect
     {
@@ -195,8 +91,6 @@ public class Enhancement : IEnhancement
             return false;
         }
     }
-
-
     
     public string LongName
     {
@@ -222,8 +116,6 @@ public class Enhancement : IEnhancement
             return str;
         }
     }
-
-
     
     public Enums.eSchedule Schedule
     {
@@ -261,8 +153,6 @@ public class Enhancement : IEnhancement
             return eSchedule;
         }
     }
-
-
     public static int GranularLevelZb(int iLevel, int iMin, int iMax, int iStep = 5)
     {
         iMin++;
@@ -293,8 +183,6 @@ public class Enhancement : IEnhancement
         }
         return iLevel - 1;
     }
-
-
     public Enhancement()
     {
         this.UID = string.Empty;
@@ -324,8 +212,6 @@ public class Enhancement : IEnhancement
         this.RecipeIDX = -1;
         this.UID = string.Empty;
     }
-
-
     public Enhancement(IEnhancement iEnh)
     {
         this.IsModified = false;
@@ -371,8 +257,6 @@ public class Enhancement : IEnhancement
         this.RecipeIDX = iEnh.RecipeIDX;
         this.Superior = iEnh.Superior;
     }
-
-
     public Enhancement(BinaryReader reader)
     {
         this.RecipeIDX = -1;
@@ -420,8 +304,6 @@ public class Enhancement : IEnhancement
         this.RecipeName = reader.ReadString();
         this.Superior = reader.ReadBoolean();
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.StaticIndex);
@@ -467,8 +349,6 @@ public class Enhancement : IEnhancement
         writer.Write(this.RecipeName);
         writer.Write(this.Superior);
     }
-
-
     public static Enums.eSchedule GetSchedule(Enums.eEnhance iEnh, int tSub = -1)
     {
         Enums.eSchedule eSchedule;
@@ -511,8 +391,6 @@ public class Enhancement : IEnhancement
         }
         return eSchedule;
     }
-
-
     public int CheckAndFixIOLevel(int level)
     {
         int num;
@@ -558,14 +436,10 @@ public class Enhancement : IEnhancement
         }
         return num;
     }
-
-
     public string GetSpecialName()
     {
         return this.SubTypeID + " Origin";
     }
-
-
     public static float ApplyED(Enums.eSchedule iSched, float iVal)
     {
         float num;
@@ -612,7 +486,5 @@ public class Enhancement : IEnhancement
         }
         return num;
     }
-
-
     IPower _power;
 }

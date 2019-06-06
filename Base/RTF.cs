@@ -10,8 +10,6 @@ public class RTF
     {
         return iStr.Replace(Environment.NewLine, "\\par ").Replace("\t", "\\tab ");
     }
-
-
     public static string Size(RTF.SizeID iSize)
     {
         StringBuilder stringBuilder = new StringBuilder("\\fs");
@@ -20,8 +18,6 @@ public class RTF
         stringBuilder.Append(" ");
         return stringBuilder.ToString();
     }
-
-
     static string GetColorTable()
     {
         StringBuilder stringBuilder = new StringBuilder("{\\colortbl ;");
@@ -108,8 +104,6 @@ public class RTF
         stringBuilder.Append("}");
         return stringBuilder.ToString();
     }
-
-
     static string GetInitialLine()
     {
         StringBuilder stringBuilder = new StringBuilder("{\\*\\generator MHD_RTFClass;}\\viewkind4\\uc1\\pard\\f0\\fs");
@@ -122,8 +116,6 @@ public class RTF
         }
         return stringBuilder.ToString();
     }
-
-
     static string GetFooter()
     {
         StringBuilder stringBuilder = new StringBuilder();
@@ -134,8 +126,6 @@ public class RTF
         stringBuilder.Append("\\par}");
         return stringBuilder.ToString();
     }
-
-
     public static string StartRTF()
     {
         StringBuilder stringBuilder = new StringBuilder("{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}");
@@ -145,8 +135,6 @@ public class RTF
         stringBuilder.Append(RTF.GetInitialLine());
         return stringBuilder.ToString();
     }
-
-
     public static string EndRTF()
     {
         StringBuilder stringBuilder = new StringBuilder(RTF.Size(RTF.SizeID.Regular));
@@ -154,8 +142,6 @@ public class RTF
         stringBuilder.Append(RTF.GetFooter());
         return stringBuilder.ToString();
     }
-
-
     public static string Bold(string iStr)
     {
         string str;
@@ -172,8 +158,6 @@ public class RTF
         }
         return str;
     }
-
-
     public static string Italic(string iStr)
     {
         StringBuilder stringBuilder = new StringBuilder("\\i ");
@@ -181,8 +165,6 @@ public class RTF
         stringBuilder.Append("\\i0 ");
         return stringBuilder.ToString();
     }
-
-
     public static string Underline(string iStr)
     {
         StringBuilder stringBuilder = new StringBuilder("\\ul ");
@@ -190,14 +172,10 @@ public class RTF
         stringBuilder.Append("\\ulnone ");
         return stringBuilder.ToString();
     }
-
-
     public static string Crlf()
     {
         return "\\par ";
     }
-
-
     public static string Color(RTF.ElementID iElement)
     {
         StringBuilder stringBuilder = new StringBuilder("\\cf");
@@ -205,35 +183,15 @@ public class RTF
         stringBuilder.Append(" ");
         return stringBuilder.ToString();
     }
-
-
     const string Header = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}";
-
-
     const string CharTab = "\\tab ";
-
-
     const string CharCrlf = "\\par ";
-
-
     const string BoldOn = "\\b ";
-
-
     const string BoldOff = "\\b0 ";
-
-
     const string ItalicOn = "\\i ";
-
-
     const string ItalicOff = "\\i0 ";
-
-
     const string UnderlineOn = "\\ul ";
-
-
     const string UnderlineOff = "\\ulnone ";
-
-
     public enum ElementID
     {
 
@@ -255,8 +213,6 @@ public class RTF
 
         BackgroundVillain
     }
-
-
     public enum SizeID
     {
 

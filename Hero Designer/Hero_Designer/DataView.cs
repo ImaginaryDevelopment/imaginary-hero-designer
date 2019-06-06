@@ -22,40 +22,24 @@ namespace Hero_Designer
         // (add) Token: 0x060000CB RID: 203 RVA: 0x00011BF8 File Offset: 0x0000FDF8
         // (remove) Token: 0x060000CC RID: 204 RVA: 0x00011C34 File Offset: 0x0000FE34
         public event DataView.FloatChangeEventHandler FloatChange;
-
-
         // (add) Token: 0x060000CD RID: 205 RVA: 0x00011C70 File Offset: 0x0000FE70
         // (remove) Token: 0x060000CE RID: 206 RVA: 0x00011CAC File Offset: 0x0000FEAC
         public event DataView.MovedEventHandler Moved;
-
-
         // (add) Token: 0x060000CF RID: 207 RVA: 0x00011CE8 File Offset: 0x0000FEE8
         // (remove) Token: 0x060000D0 RID: 208 RVA: 0x00011D24 File Offset: 0x0000FF24
         public event DataView.SizeChangeEventHandler SizeChange;
-
-
         // (add) Token: 0x060000D1 RID: 209 RVA: 0x00011D60 File Offset: 0x0000FF60
         // (remove) Token: 0x060000D2 RID: 210 RVA: 0x00011D9C File Offset: 0x0000FF9C
         public event DataView.SlotFlipEventHandler SlotFlip;
-
-
         // (add) Token: 0x060000D3 RID: 211 RVA: 0x00011DD8 File Offset: 0x0000FFD8
         // (remove) Token: 0x060000D4 RID: 212 RVA: 0x00011E14 File Offset: 0x00010014
         public event DataView.SlotUpdateEventHandler SlotUpdate;
-
-
         // (add) Token: 0x060000D5 RID: 213 RVA: 0x00011E50 File Offset: 0x00010050
         // (remove) Token: 0x060000D6 RID: 214 RVA: 0x00011E8C File Offset: 0x0001008C
         public event DataView.TabChangedEventHandler TabChanged;
-
-
         // (add) Token: 0x060000D7 RID: 215 RVA: 0x00011EC8 File Offset: 0x000100C8
         // (remove) Token: 0x060000D8 RID: 216 RVA: 0x00011F04 File Offset: 0x00010104
         public event DataView.Unlock_ClickEventHandler Unlock_Click;
-
-
-    
-    
         internal virtual ctlDamageDisplay CtlDamageDisplay1
         {
             get
@@ -68,10 +52,6 @@ namespace Hero_Designer
                 this._CtlDamageDisplay1 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolTip dbTip
         {
             get
@@ -84,10 +64,6 @@ namespace Hero_Designer
                 this._dbTip = value;
             }
         }
-
-
-    
-    
         public bool DrawVillain
         {
             get
@@ -112,10 +88,6 @@ namespace Hero_Designer
                 this.DoPaint();
             }
         }
-
-
-    
-    
         internal virtual GFXLabel Enh_Title
         {
             get
@@ -140,10 +112,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList enhListing
         {
             get
@@ -165,10 +133,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GFXLabel enhNameDisp
         {
             get
@@ -181,10 +145,6 @@ namespace Hero_Designer
                 this._enhNameDisp = value;
             }
         }
-
-
-    
-    
         public bool Floating
         {
             get
@@ -206,10 +166,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label fx_lblHead1
         {
             get
@@ -222,10 +178,6 @@ namespace Hero_Designer
                 this._fx_lblHead1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label fx_lblHead2
         {
             get
@@ -238,10 +190,6 @@ namespace Hero_Designer
                 this._fx_lblHead2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label fx_LblHead3
         {
             get
@@ -254,10 +202,6 @@ namespace Hero_Designer
                 this._fx_LblHead3 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList fx_List1
         {
             get
@@ -279,10 +223,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList fx_List2
         {
             get
@@ -304,10 +244,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList fx_List3
         {
             get
@@ -329,10 +265,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GFXLabel fx_Title
         {
             get
@@ -357,10 +289,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph gDef1
         {
             get
@@ -373,10 +301,6 @@ namespace Hero_Designer
                 this._gDef1 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph gDef2
         {
             get
@@ -389,10 +313,6 @@ namespace Hero_Designer
                 this._gDef2 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph gRes1
         {
             get
@@ -405,10 +325,6 @@ namespace Hero_Designer
                 this._gRes1 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph gRes2
         {
             get
@@ -421,10 +337,6 @@ namespace Hero_Designer
                 this._gRes2 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlDamageDisplay info_Damage
         {
             get
@@ -437,10 +349,6 @@ namespace Hero_Designer
                 this._info_Damage = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList info_DataList
         {
             get
@@ -462,10 +370,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GFXLabel info_Title
         {
             get
@@ -490,10 +394,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RichTextBox info_txtLarge
         {
             get
@@ -506,10 +406,6 @@ namespace Hero_Designer
                 this._info_txtLarge = value;
             }
         }
-
-
-    
-    
         internal virtual RichTextBox info_txtSmall
         {
             get
@@ -522,8 +418,6 @@ namespace Hero_Designer
                 this._info_txtSmall = value;
             }
         }
-
-
     
         public bool IsDocked
         {
@@ -532,10 +426,6 @@ namespace Hero_Designer
                 return this.SnapLocation.X == base.Location.X & this.SnapLocation.Y == base.Location.Y;
             }
         }
-
-
-    
-    
         internal virtual Label lblDmg
         {
             get
@@ -548,10 +438,6 @@ namespace Hero_Designer
                 this._lblDmg = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblFloat
         {
             get
@@ -573,10 +459,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLock
         {
             get
@@ -598,10 +480,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblShrink
         {
             get
@@ -626,10 +504,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblTotal
         {
             get
@@ -642,10 +516,6 @@ namespace Hero_Designer
                 this._lblTotal = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlEnh
         {
             get
@@ -658,10 +528,6 @@ namespace Hero_Designer
                 this._pnlEnh = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlEnhActive
         {
             get
@@ -689,10 +555,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel pnlEnhInactive
         {
             get
@@ -720,10 +582,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel pnlFX
         {
             get
@@ -736,10 +594,6 @@ namespace Hero_Designer
                 this._pnlFX = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlInfo
         {
             get
@@ -752,10 +606,6 @@ namespace Hero_Designer
                 this._pnlInfo = value;
             }
         }
-
-
-    
-    
         internal virtual Panel pnlTabs
         {
             get
@@ -780,10 +630,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel pnlTotal
         {
             get
@@ -796,10 +642,6 @@ namespace Hero_Designer
                 this._pnlTotal = value;
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph PowerScaler
         {
             get
@@ -821,8 +663,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
     
         public int TabPageIndex
         {
@@ -831,10 +671,6 @@ namespace Hero_Designer
                 return this.TabPage;
             }
         }
-
-
-    
-    
         internal virtual Label total_lblDef
         {
             get
@@ -847,10 +683,6 @@ namespace Hero_Designer
                 this._total_lblDef = value;
             }
         }
-
-
-    
-    
         internal virtual Label total_lblMisc
         {
             get
@@ -863,10 +695,6 @@ namespace Hero_Designer
                 this._total_lblMisc = value;
             }
         }
-
-
-    
-    
         internal virtual Label total_lblRes
         {
             get
@@ -879,10 +707,6 @@ namespace Hero_Designer
                 this._total_lblRes = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPairedList total_Misc
         {
             get
@@ -904,10 +728,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GFXLabel total_Title
         {
             get
@@ -932,10 +752,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         public Enums.eVisibleSize VisibleSize
         {
             get
@@ -955,8 +771,6 @@ namespace Hero_Designer
             {
             }
         }
-
-
         public DataView()
         {
             base.BackColorChanged += this.DataView_BackColorChanged;
@@ -978,8 +792,6 @@ namespace Hero_Designer
             this.bxFlip = null;
             this.InitializeComponent();
         }
-
-
         static ctlPairedList.ItemPair BuildEDItem(int index, float[] value, Enums.eSchedule[] schedule, string Name, float[] afterED)
         {
             bool flag = value[index] > DatabaseAPI.Database.MultED[(int)schedule[index]][0];
@@ -1055,8 +867,6 @@ namespace Hero_Designer
             }
             return itemPair;
         }
-
-
         static string CapString(string iString, int capLength)
         {
             string result;
@@ -1070,8 +880,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         public void Clear()
         {
             this.info_DataList.Clear(true);
@@ -1090,8 +898,6 @@ namespace Hero_Designer
             this.Enh_Title.Text = "Enhancements";
             this.total_Misc.Clear(true);
         }
-
-
         void CompactSize()
         {
             Size size = base.Size;
@@ -1131,14 +937,10 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void DataView_BackColorChanged(object sender, EventArgs e)
         {
             this.SetBackColor();
         }
-
-
         void DataView_Load(object sender, EventArgs e)
         {
             Panel pnlInfo = this.pnlInfo;
@@ -1163,8 +965,6 @@ namespace Hero_Designer
             this.Floating = this.bFloating;
             this.Clear();
         }
-
-
         void Display_EDFigures()
         {
             this.Enh_Title.Text = this.pBase.DisplayName;
@@ -1509,8 +1309,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void display_Info(bool NoLevel = false, int iEnhLvl = -1)
         {
             if (!NoLevel & this.pBase.Level > 0)
@@ -1774,8 +1572,6 @@ namespace Hero_Designer
             }
             this.SetPowerScaler();
         }
-
-
         void DisplayData(bool noLevel = false, int iEnhLevel = -1)
         {
             if (MidsContext.Config.DataDamageGraph)
@@ -1824,8 +1620,6 @@ namespace Hero_Designer
             this.DisplayEffects(noLevel, iEnhLevel);
             this.Display_EDFigures();
         }
-
-
         void DisplayEffects(bool noLevel = false, int iEnhLvl = -1)
         {
             if (!noLevel & this.pBase.Level > 0)
@@ -1947,8 +1741,6 @@ namespace Hero_Designer
             this.fx_List2.Draw();
             this.fx_List3.Draw();
         }
-
-
         void DisplayFlippedEnhancements()
         {
             Pen pen;
@@ -2093,8 +1885,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void DisplayTotals()
         {
             if (MidsContext.Character != null)
@@ -2262,8 +2052,6 @@ namespace Hero_Designer
                 this.total_Misc.Draw();
             }
         }
-
-
         protected override void Dispose(bool disposing)
         {
             if (disposing && this.components != null)
@@ -2272,8 +2060,6 @@ namespace Hero_Designer
             }
             base.Dispose(disposing);
         }
-
-
         void DoPaint()
         {
             Graphics graphics = this.pnlTabs.CreateGraphics();
@@ -2344,8 +2130,6 @@ namespace Hero_Designer
             extendedBitmap.Graphics.DrawString(this.Pages[this.TabPage], font2, solidBrush, layoutRectangle, format);
             graphics.DrawImageUnscaled(extendedBitmap.Bitmap, 0, 0);
         }
-
-
         int effects_BuffDebuff(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX effectMagSum = this.pBase.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
@@ -2656,8 +2440,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         int effects_Elusivity(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2692,8 +2474,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         int effects_GrantPower(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2736,8 +2516,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         int effects_Heal(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX BaseSFX = default(Enums.ShortFX);
@@ -2852,8 +2630,6 @@ namespace Hero_Designer
             }
             return num2;
         }
-
-
         int effects_ModifyEffect(Label iLabel, ctlPairedList iList)
         {
             bool flag = iList.ItemCount == 0;
@@ -2880,8 +2656,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         int effects_Movement(Label iLabel, ctlPairedList iList)
         {
             Enums.ShortFX shortFx = default(Enums.ShortFX);
@@ -3014,8 +2788,6 @@ namespace Hero_Designer
             }
             return num2;
         }
-
-
         int effects_Status(Label iLabel, ctlPairedList iList)
         {
             Enums.eMezShort eMezShort = Enums.eMezShort.None;
@@ -3141,8 +2913,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         int effects_Summon(Label iLabel, ctlPairedList iList)
         {
             int num = 0;
@@ -3193,8 +2963,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         void EffectsDef()
         {
             Enums.ShortFX effectMagSum = this.pEnh.GetEffectMagSum(Enums.eEffectType.Defense, true, false, false, false);
@@ -3362,8 +3130,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         int EffectsDrh()
         {
             int index = 0;
@@ -3379,8 +3145,6 @@ namespace Hero_Designer
             }
             return index;
         }
-
-
         void EffectsRes(int index)
         {
             Enums.eDamage iSub8 = Enums.eDamage.None;
@@ -3477,26 +3241,18 @@ namespace Hero_Designer
             shortFx.Assign(this.pEnh.GetDamageMagSum(Enums.eEffectType.Resistance, iSub8, true));
             ctlPairedList.AddItem(DataView.FastItem(names[(int)iSub8], res[(int)iSub8], res2[(int)iSub8], "%", false, true, false, false, shortFx));
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, -1, -1);
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, Enums.ShortFX s1, Enums.ShortFX s2, string Suffix, Enums.ShortFX Tag)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, Tag);
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, string Tip)
         {
             return DataView.FastItem(Title, s1, s2, Suffix, false, false, false, false, Tip);
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, Enums.ShortFX s1, Enums.ShortFX s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, Enums.ShortFX Tag)
         {
             string iValue = Utilities.FixDP(s2.Sum) + Suffix;
@@ -3528,8 +3284,6 @@ namespace Hero_Designer
             }
             return itemPair;
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, Enums.ShortFX Tag)
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
@@ -3561,8 +3315,6 @@ namespace Hero_Designer
             }
             return itemPair;
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, string Tip)
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
@@ -3594,8 +3346,6 @@ namespace Hero_Designer
             }
             return itemPair;
         }
-
-
         static ctlPairedList.ItemPair FastItem(string Title, float s1, float s2, string Suffix, bool SkipBase, bool AlwaysShow, bool isChance, bool isSpecial, int TagID, int maxDecimal)
         {
             string iValue;
@@ -3631,8 +3381,6 @@ namespace Hero_Designer
             }
             return itemPair;
         }
-
-
         public void FlipStage(int Index, int Enh1, int Enh2, float State, int PowerID, Enums.eEnhGrade Grade1, Enums.eEnhGrade Grade2)
         {
             SolidBrush solidBrush = new SolidBrush(this.enhListing.BackColor);
@@ -3674,8 +3422,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         static string GetEnhancementStringLongRTF(I9Slot iEnh)
         {
             string iStr = iEnh.GetEnhancementStringLong();
@@ -3685,8 +3431,6 @@ namespace Hero_Designer
             }
             return iStr;
         }
-
-
         static string GetEnhancementStringRTF(I9Slot iEnh)
         {
             string str = iEnh.GetEnhancementString();
@@ -3696,8 +3440,6 @@ namespace Hero_Designer
             }
             return str;
         }
-
-
         ctlPairedList.ItemPair GetRankedEffect(int[] Index, int ID)
         {
             string Title = string.Empty;
@@ -3881,13 +3623,9 @@ namespace Hero_Designer
             }
             return DataView.FastItem(Title, shortFx, s2, Suffix, true, false, this.pBase.Effects[Index[ID]].Probability < 1f, this.pBase.Effects[Index[ID]].SpecialCase != Enums.eSpecialCase.None, Tag);
         }
-
-
         public void Init()
         {
         }
-
-
         [DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -4544,8 +4282,6 @@ namespace Hero_Designer
             this.pnlEnh.ResumeLayout(false);
             base.ResumeLayout(false);
         }
-
-
         static bool IsMezEffect(string iStr)
         {
             Enums.eMez eMez = Enums.eMez.None;
@@ -4560,8 +4296,6 @@ namespace Hero_Designer
             }
             return false;
         }
-
-
         void lblFloat_Click(object sender, EventArgs e)
         {
             DataView.FloatChangeEventHandler floatChange = this.FloatChange;
@@ -4570,8 +4304,6 @@ namespace Hero_Designer
                 floatChange();
             }
         }
-
-
         void lblLock_Click(object sender, EventArgs e)
         {
             DataView.Unlock_ClickEventHandler unlockClick = this.Unlock_Click;
@@ -4582,8 +4314,6 @@ namespace Hero_Designer
             this.lblLock.Visible = false;
             this.pnlTabs.Select();
         }
-
-
         void lblShrink_Click(object sender, EventArgs e)
         {
             if (this.Compact)
@@ -4595,14 +4325,10 @@ namespace Hero_Designer
                 this.CompactSize();
             }
         }
-
-
         void lblShrink_DoubleClick(object sender, EventArgs e)
         {
             this.lblShrink_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         int miniGetEnhIndex(int iX, int iY)
         {
             int num = this.bxFlip.Size.Width - 188;
@@ -4625,8 +4351,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         void PairedList_Hover(object Sender, int Index, Enums.ShortFX Tag)
         {
             string str2 = string.Empty;
@@ -4690,8 +4414,6 @@ namespace Hero_Designer
                 str2 = (string)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(Arguments[0]), typeof(string));
             }
         }
-
-
         void pnlEnhActive_MouseClick(object sender, MouseEventArgs e)
         {
             if (this.pBase != null && e.Button == MouseButtons.Left)
@@ -4707,8 +4429,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void pnlEnhActive_MouseMove(object sender, MouseEventArgs e)
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
@@ -4718,14 +4438,10 @@ namespace Hero_Designer
                 this.SetEnhancement(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[enhIndex].Enhancement, MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[enhIndex].Level);
             }
         }
-
-
         void pnlEnhActive_Paint(object sender, PaintEventArgs e)
         {
             this.RedrawFlip();
         }
-
-
         void pnlEnhInactive_MouseClick(object sender, MouseEventArgs e)
         {
             if (this.pBase != null && e.Button == MouseButtons.Left)
@@ -4741,8 +4457,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void pnlEnhInactive_MouseMove(object sender, MouseEventArgs e)
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
@@ -4752,14 +4466,10 @@ namespace Hero_Designer
                 this.SetEnhancement(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[enhIndex].FlippedEnhancement, MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[enhIndex].Level);
             }
         }
-
-
         void pnlEnhInactive_Paint(object sender, PaintEventArgs e)
         {
             this.RedrawFlip();
         }
-
-
         void pnlTabs_MouseDown(object sender, MouseEventArgs e)
         {
             Rectangle clipRect = new Rectangle(0, 0, 70, this.pnlTabs.Height);
@@ -4784,14 +4494,10 @@ namespace Hero_Designer
             this.TabPage = Index;
             this.pnlTabs_Paint(this, new PaintEventArgs(this.pnlTabs.CreateGraphics(), clipRect));
         }
-
-
         void pnlTabs_Paint(object sender, PaintEventArgs e)
         {
             this.DoPaint();
         }
-
-
         void PowerScaler_BarClick(float Value)
         {
             int num = (int)Math.Round((double)Value);
@@ -4816,8 +4522,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void RedrawFlip()
         {
             if (this.bxFlip == null)
@@ -4830,8 +4534,6 @@ namespace Hero_Designer
             srcRect = new Rectangle(0, this.pnlEnhActive.Height, this.pnlEnhInactive.Width, this.pnlEnhInactive.Height);
             this.pnlEnhInactive.CreateGraphics().DrawImage(this.bxFlip.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
         }
-
-
         void ResetSize()
         {
             Size size = base.Size;
@@ -4871,8 +4573,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void SetBackColor()
         {
             this.info_Title.BackColor = this.BackColor;
@@ -4900,8 +4600,6 @@ namespace Hero_Designer
             this.total_Misc.Draw();
             this.enhListing.Draw();
         }
-
-
         void SetDamageTip()
         {
             string iTip = string.Empty;
@@ -4952,8 +4650,6 @@ namespace Hero_Designer
             }
             this.info_Damage.SetTip(iTip);
         }
-
-
         public void SetData(IPower iBase, IPower iEnhanced, bool noLevel = false, bool Locked = false, int iHistoryIDX = -1)
         {
             if (iBase != null)
@@ -4978,8 +4674,6 @@ namespace Hero_Designer
                 this.SizeRefresh();
             }
         }
-
-
         public void SetEnhancement(I9Slot iEnh, int iLevel = -1)
         {
             if (!(this.Lock & this.TabPage != 3) && iLevel >= 0)
@@ -5080,8 +4774,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void SetEnhancementPicker(I9Slot iEnh)
         {
             if (iEnh.Enh < 0)
@@ -5154,8 +4846,6 @@ namespace Hero_Designer
                 this.info_txtLarge.Rtf = RTF.StartRTF() + RTF.ToRTF(iStr2) + RTF.EndRTF();
             }
         }
-
-
         public void SetFontData()
         {
             this.info_DataList.Font = new Font(this.info_DataList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
@@ -5207,8 +4897,6 @@ namespace Hero_Designer
             this.enhListing.ItemColorSpecial = Color.FromArgb(0, 255, 0);
             this.total_Misc.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
         }
-
-
         public void SetLocation(Point iLocation, bool Force)
         {
             bool flag = Force | (this.SnapLocation.X == base.Location.X & this.SnapLocation.Y == base.Location.Y);
@@ -5225,8 +4913,6 @@ namespace Hero_Designer
                 base.Top = this.SnapLocation.Y;
             }
         }
-
-
         void SetPowerScaler()
         {
             if (this.pBase == null)
@@ -5252,14 +4938,10 @@ namespace Hero_Designer
                 this.PowerScaler.Visible = false;
             }
         }
-
-
         public void SetScreenBounds(Rectangle iBounds)
         {
             this.ScreenBounds = iBounds;
         }
-
-
         public void SetSetPicker(int iSet)
         {
             if (iSet < 0)
@@ -5297,8 +4979,6 @@ namespace Hero_Designer
                 this.info_txtLarge.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(iSet, -1) + RTF.EndRTF();
             }
         }
-
-
         bool sFXCheck(Enums.ShortFX isFX)
         {
             if (isFX.Index != null)
@@ -5314,8 +4994,6 @@ namespace Hero_Designer
             }
             return false;
         }
-
-
         string ShortStr(string full, string brief)
         {
             float num = (float)(68.0 / (double)full.Length);
@@ -5330,8 +5008,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         void SizeRefresh()
         {
             if (this.Compact)
@@ -5343,8 +5019,6 @@ namespace Hero_Designer
                 this.ResetSize();
             }
         }
-
-
         bool SplitFX_AddToList(ref Enums.ShortFX BaseSFX, ref Enums.ShortFX EnhSFX, ref ctlPairedList iList, string SpecialTitle = "")
         {
             bool flag;
@@ -5417,14 +5091,10 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void Title_MouseDown(object sender, MouseEventArgs e)
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
-
-
         void Title_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && !this.MoveDisable)
@@ -5467,251 +5137,117 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         const int SnapDistance = 10;
-
-
         protected const int szDataList = 104;
-
-
         protected const int szLargeText = 100;
-
-
         protected const int szLineHeight = 16;
-
-
         protected const int szPadding = 4;
-
-
         [AccessedThroughProperty("CtlDamageDisplay1")]
         ctlDamageDisplay _CtlDamageDisplay1;
-
-
         [AccessedThroughProperty("dbTip")]
         ToolTip _dbTip;
-
-
         [AccessedThroughProperty("Enh_Title")]
         GFXLabel _Enh_Title;
-
-
         [AccessedThroughProperty("enhListing")]
         ctlPairedList _enhListing;
-
-
         [AccessedThroughProperty("enhNameDisp")]
         GFXLabel _enhNameDisp;
-
-
         [AccessedThroughProperty("fx_lblHead1")]
         Label _fx_lblHead1;
-
-
         [AccessedThroughProperty("fx_lblHead2")]
         Label _fx_lblHead2;
-
-
         [AccessedThroughProperty("fx_LblHead3")]
         Label _fx_LblHead3;
-
-
         [AccessedThroughProperty("fx_List1")]
         ctlPairedList _fx_List1;
-
-
         [AccessedThroughProperty("fx_List2")]
         ctlPairedList _fx_List2;
-
-
         [AccessedThroughProperty("fx_List3")]
         ctlPairedList _fx_List3;
-
-
         [AccessedThroughProperty("fx_Title")]
         GFXLabel _fx_Title;
-
-
         [AccessedThroughProperty("gDef1")]
         ctlMultiGraph _gDef1;
-
-
         [AccessedThroughProperty("gDef2")]
         ctlMultiGraph _gDef2;
-
-
         [AccessedThroughProperty("gRes1")]
         ctlMultiGraph _gRes1;
-
-
         [AccessedThroughProperty("gRes2")]
         ctlMultiGraph _gRes2;
-
-
         [AccessedThroughProperty("info_Damage")]
         ctlDamageDisplay _info_Damage;
-
-
         [AccessedThroughProperty("info_DataList")]
         ctlPairedList _info_DataList;
-
-
         [AccessedThroughProperty("info_Title")]
         GFXLabel _info_Title;
-
-
         [AccessedThroughProperty("info_txtLarge")]
         RichTextBox _info_txtLarge;
-
-
         [AccessedThroughProperty("info_txtSmall")]
         RichTextBox _info_txtSmall;
-
-
         [AccessedThroughProperty("lblDmg")]
         Label _lblDmg;
-
-
         [AccessedThroughProperty("lblFloat")]
         Label _lblFloat;
-
-
         [AccessedThroughProperty("lblLock")]
         Label _lblLock;
-
-
         [AccessedThroughProperty("lblShrink")]
         Label _lblShrink;
-
-
         [AccessedThroughProperty("lblTotal")]
         Label _lblTotal;
-
-
         [AccessedThroughProperty("pnlEnh")]
         Panel _pnlEnh;
-
-
         [AccessedThroughProperty("pnlEnhActive")]
         Panel _pnlEnhActive;
-
-
         [AccessedThroughProperty("pnlEnhInactive")]
         Panel _pnlEnhInactive;
-
-
         [AccessedThroughProperty("pnlFX")]
         Panel _pnlFX;
-
-
         [AccessedThroughProperty("pnlInfo")]
         Panel _pnlInfo;
-
-
         [AccessedThroughProperty("pnlTabs")]
         Panel _pnlTabs;
-
-
         [AccessedThroughProperty("pnlTotal")]
         Panel _pnlTotal;
-
-
         [AccessedThroughProperty("PowerScaler")]
         ctlMultiGraph _PowerScaler;
-
-
         [AccessedThroughProperty("total_lblDef")]
         Label _total_lblDef;
-
-
         [AccessedThroughProperty("total_lblMisc")]
         Label _total_lblMisc;
-
-
         [AccessedThroughProperty("total_lblRes")]
         Label _total_lblRes;
-
-
         [AccessedThroughProperty("total_Misc")]
         ctlPairedList _total_Misc;
-
-
         [AccessedThroughProperty("total_Title")]
         GFXLabel _total_Title;
-
-
         bool bFloating;
-
-
         ExtendedBitmap bxFlip;
-
-
         bool Compact;
-
-
         IContainer components;
-
-
         int HistoryIDX;
-
-
         bool Lock;
-
-
         Point mouse_offset;
-
-
         public bool MoveDisable;
-
-
         string[] Pages;
-
-
         IPower pBase;
-
-
         IPower pEnh;
-
-
         int pLastScaleVal;
-
-
         Rectangle ScreenBounds;
-
-
         public Rectangle SnapLocation;
-
-
         public int TabPage;
-
-
         bool VillainColour;
-
-
         // (Invoke) Token: 0x06000179 RID: 377
         public delegate void FloatChangeEventHandler();
-
-
         // (Invoke) Token: 0x0600017D RID: 381
         public delegate void MovedEventHandler();
-
-
         // (Invoke) Token: 0x06000181 RID: 385
         public delegate void SizeChangeEventHandler(Size newSize, bool isCompact);
-
-
         // (Invoke) Token: 0x06000185 RID: 389
         public delegate void SlotFlipEventHandler(int PowerIndex);
-
-
         // (Invoke) Token: 0x06000189 RID: 393
         public delegate void SlotUpdateEventHandler();
-
-
         // (Invoke) Token: 0x0600018D RID: 397
         public delegate void TabChangedEventHandler(int Index);
-
-
         // (Invoke) Token: 0x06000191 RID: 401
         public delegate void Unlock_ClickEventHandler();
     }

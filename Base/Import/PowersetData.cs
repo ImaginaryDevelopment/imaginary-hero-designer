@@ -25,8 +25,6 @@ namespace Import
                 }
             }
         }
-
-
         public void Apply()
         {
             if (this.IsValid)
@@ -45,8 +43,6 @@ namespace Import
                 }
             }
         }
-
-
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -105,20 +101,10 @@ namespace Import
             }
             return flag;
         }
-
-
         public readonly Powerset Data;
-
-
         public readonly bool IsNew;
-
-
         int _index = -1;
-
-
         public readonly bool IsValid;
-
-
         readonly string _csvString = string.Empty;
     }
 }

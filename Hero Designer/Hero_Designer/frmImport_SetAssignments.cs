@@ -11,12 +11,9 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace Hero_Designer
 {
 
-
     public partial class frmImport_SetAssignments : Form
     {
 
-    
-    
         internal virtual Button btnClose
         {
             get
@@ -39,9 +36,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Button btnFile
         {
             get
@@ -64,9 +58,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -89,9 +80,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -105,9 +93,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -121,9 +106,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblDate
         {
             get
@@ -137,9 +119,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual Label lblFile
         {
             get
@@ -153,9 +132,6 @@ namespace Hero_Designer
             }
         }
 
-
-    
-    
         internal virtual NumericUpDown udRevision
         {
             get
@@ -169,14 +145,12 @@ namespace Hero_Designer
             }
         }
 
-
         public frmImport_SetAssignments()
         {
             base.Load += this.frmImport_SetAssignments_Load;
             this.FullFileName = "";
             this.InitializeComponent();
         }
-
 
         protected void AddSetType(int nIDPower, Enums.eSetType nSetType)
         {
@@ -198,12 +172,10 @@ namespace Hero_Designer
             }
         }
 
-
         void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
 
         void btnFile_Click(object sender, EventArgs e)
         {
@@ -216,14 +188,12 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-
         void btnImport_Click(object sender, EventArgs e)
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
             this.DisplayInfo();
         }
-
 
         void BusyHide()
         {
@@ -233,7 +203,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
 
         void BusyMsg(string sMessage)
         {
@@ -245,7 +214,6 @@ namespace Hero_Designer
             this.bFrm.SetMessage(sMessage);
         }
 
-
         public void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
@@ -253,13 +221,11 @@ namespace Hero_Designer
             this.udRevision.Value = new decimal(DatabaseAPI.Database.IOAssignmentVersion.Revision);
         }
 
-
         void frmImport_SetAssignments_Load(object sender, EventArgs e)
         {
             this.FullFileName = DatabaseAPI.Database.IOAssignmentVersion.SourceFile;
             this.DisplayInfo();
         }
-
 
         bool ParseClasses(string iFileName)
         {
@@ -353,41 +319,31 @@ namespace Hero_Designer
             return true;
         }
 
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
 
         [AccessedThroughProperty("btnFile")]
         Button _btnFile;
 
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
 
         [AccessedThroughProperty("dlgBrowse")]
         OpenFileDialog _dlgBrowse;
 
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
 
         [AccessedThroughProperty("lblDate")]
         Label _lblDate;
 
-
         [AccessedThroughProperty("lblFile")]
         Label _lblFile;
-
 
         [AccessedThroughProperty("udRevision")]
         NumericUpDown _udRevision;
 
-
         frmBusy bFrm;
-
 
         string FullFileName;
     }

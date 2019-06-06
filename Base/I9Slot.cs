@@ -14,8 +14,6 @@ public class I9Slot : ICloneable
         this.Grade = Enums.eEnhGrade.None;
         this.IOLevel = 1;
     }
-
-
     public float GetEnhancementEffect(Enums.eEnhance iEffect, int subEnh, float mag)
     {
         float num;
@@ -43,8 +41,6 @@ public class I9Slot : ICloneable
         }
         return num;
     }
-
-
     float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
     {
         if (this.Grade < Enums.eEnhGrade.None)
@@ -115,8 +111,6 @@ public class I9Slot : ICloneable
         }
         return num2;
     }
-
-
     float GetRelativeLevelMultiplier()
     {
         float num;
@@ -138,8 +132,6 @@ public class I9Slot : ICloneable
         }
         return num;
     }
-
-
     public string GetEnhancementString()
     {
         string str;
@@ -247,8 +239,6 @@ public class I9Slot : ICloneable
         }
         return str;
     }
-
-
     public string GetEnhancementStringLong()
     {
         string str;
@@ -400,8 +390,6 @@ public class I9Slot : ICloneable
         }
         return str;
     }
-
-
     public object Clone()
     {
         return new I9Slot
@@ -412,8 +400,6 @@ public class I9Slot : ICloneable
             RelativeLevel = this.RelativeLevel
         };
     }
-
-
     public string GetRelativeString(bool onlySign)
     {
         if (onlySign)
@@ -466,19 +452,9 @@ public class I9Slot : ICloneable
         }
         return string.Empty;
     }
-
-
     const float SuperiorMult = 1.25f;
-
-
     public int Enh;
-
-
     public Enums.eEnhRelative RelativeLevel;
-
-
     public Enums.eEnhGrade Grade;
-
-
     public int IOLevel;
 }

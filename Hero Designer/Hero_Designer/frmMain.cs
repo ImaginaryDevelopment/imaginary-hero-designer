@@ -24,8 +24,6 @@ namespace Hero_Designer
 
     public partial class frmMain : Form
     {
-
-    
     
         internal virtual ImageButton accoladeButton
         {
@@ -51,10 +49,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem AccoladesWindowToolStripMenuItem
         {
             get
@@ -76,10 +70,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem AdvancedToolStripMenuItem1
         {
             get
@@ -92,10 +82,6 @@ namespace Hero_Designer
                 this._AdvancedToolStripMenuItem1 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem
         {
             get
@@ -117,10 +103,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAncillary
         {
             get
@@ -151,10 +133,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAT
         {
             get
@@ -185,10 +163,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbOrigin
         {
             get
@@ -213,10 +187,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPool0
         {
             get
@@ -247,10 +217,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPool1
         {
             get
@@ -281,10 +247,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPool2
         {
             get
@@ -315,10 +277,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPool3
         {
             get
@@ -349,10 +307,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPrimary
         {
             get
@@ -383,10 +337,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSecondary
         {
             get
@@ -417,10 +367,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem CharacterToolStripMenuItem
         {
             get
@@ -433,10 +379,6 @@ namespace Hero_Designer
                 this._CharacterToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog dlgOpen
         {
             get
@@ -449,10 +391,6 @@ namespace Hero_Designer
                 this._dlgOpen = value;
             }
         }
-
-
-    
-    
         internal virtual SaveFileDialog dlgSave
         {
             get
@@ -465,10 +403,6 @@ namespace Hero_Designer
                 this._dlgSave = value;
             }
         }
-
-
-    
-    
         internal virtual DataView dvAnchored
         {
             get
@@ -511,10 +445,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem FileToolStripMenuItem
         {
             get
@@ -527,10 +457,6 @@ namespace Hero_Designer
                 this._FileToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem HelpToolStripMenuItem1
         {
             get
@@ -543,10 +469,6 @@ namespace Hero_Designer
                 this._HelpToolStripMenuItem1 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton heroVillain
         {
             get
@@ -568,10 +490,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual I9Picker I9Picker
         {
             get
@@ -612,10 +530,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlPopUp I9Popup
         {
             get
@@ -637,10 +551,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibAccolade
         {
             get
@@ -653,10 +563,6 @@ namespace Hero_Designer
                 this._ibAccolade = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibMode
         {
             get
@@ -678,10 +584,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibPopup
         {
             get
@@ -703,10 +605,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibPvX
         {
             get
@@ -728,10 +626,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibRecipe
         {
             get
@@ -753,10 +647,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibSets
         {
             get
@@ -778,10 +668,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibSlotLevels
         {
             get
@@ -803,10 +689,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibTotals
         {
             get
@@ -828,10 +710,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibVetPools
         {
             get
@@ -844,10 +722,6 @@ namespace Hero_Designer
                 this._ibVetPools = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem ImportExportToolStripMenuItem
         {
             get
@@ -860,10 +734,6 @@ namespace Hero_Designer
                 this._ImportExportToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton incarnateButton
         {
             get
@@ -885,10 +755,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem IncarnateWindowToolStripMenuItem
         {
             get
@@ -910,10 +776,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem InGameRespecHelperToolStripMenuItem
         {
             get
@@ -926,10 +788,6 @@ namespace Hero_Designer
                 this._InGameRespecHelperToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual GFXLabel lblAT
         {
             get
@@ -942,10 +800,6 @@ namespace Hero_Designer
                 this._lblAT = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblATLocked
         {
             get
@@ -973,10 +827,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblEpic
         {
             get
@@ -989,10 +839,6 @@ namespace Hero_Designer
                 this._lblEpic = value;
             }
         }
-
-
-    
-    
         internal virtual GFXLabel lblHero
         {
             get
@@ -1005,10 +851,6 @@ namespace Hero_Designer
                 this._lblHero = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblLocked0
         {
             get
@@ -1036,10 +878,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLocked1
         {
             get
@@ -1067,10 +905,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLocked2
         {
             get
@@ -1098,10 +932,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLocked3
         {
             get
@@ -1129,10 +959,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLockedAncillary
         {
             get
@@ -1160,10 +986,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLockedSecondary
         {
             get
@@ -1188,10 +1010,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GFXLabel lblName
         {
             get
@@ -1204,10 +1022,6 @@ namespace Hero_Designer
                 this._lblName = value;
             }
         }
-
-
-    
-    
         internal virtual GFXLabel lblOrigin
         {
             get
@@ -1220,10 +1034,6 @@ namespace Hero_Designer
                 this._lblOrigin = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPool1
         {
             get
@@ -1236,10 +1046,6 @@ namespace Hero_Designer
                 this._lblPool1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPool2
         {
             get
@@ -1252,10 +1058,6 @@ namespace Hero_Designer
                 this._lblPool2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPool3
         {
             get
@@ -1268,10 +1070,6 @@ namespace Hero_Designer
                 this._lblPool3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPool4
         {
             get
@@ -1284,10 +1082,6 @@ namespace Hero_Designer
                 this._lblPool4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblPrimary
         {
             get
@@ -1300,10 +1094,6 @@ namespace Hero_Designer
                 this._lblPrimary = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblSecondary
         {
             get
@@ -1316,10 +1106,6 @@ namespace Hero_Designer
                 this._lblSecondary = value;
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llAncillary
         {
             get
@@ -1344,10 +1130,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llPool0
         {
             get
@@ -1378,10 +1160,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llPool1
         {
             get
@@ -1412,10 +1190,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llPool2
         {
             get
@@ -1446,10 +1220,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llPool3
         {
             get
@@ -1480,10 +1250,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llPrimary
         {
             get
@@ -1514,10 +1280,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llSecondary
         {
             get
@@ -1548,10 +1310,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual MenuStrip MenuBar
         {
             get
@@ -1564,10 +1322,6 @@ namespace Hero_Designer
                 this._MenuBar = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem OptionsToolStripMenuItem
         {
             get
@@ -1580,10 +1334,6 @@ namespace Hero_Designer
                 this._OptionsToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbDynMode
         {
             get
@@ -1608,10 +1358,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual PictureBox pnlGFX
         {
             get
@@ -1657,10 +1403,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual FlowLayoutPanel pnlGFXFlow
         {
             get
@@ -1682,10 +1424,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem
         {
             get
@@ -1698,10 +1436,6 @@ namespace Hero_Designer
                 this._SetAllIOsToDefault35ToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem SlotsToolStripMenuItem
         {
             get
@@ -1714,10 +1448,6 @@ namespace Hero_Designer
                 this._SlotsToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem
         {
             get
@@ -1739,10 +1469,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton tempPowersButton
         {
             get
@@ -1767,10 +1493,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tlsDPA
         {
             get
@@ -1792,10 +1514,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual System.Windows.Forms.Timer tmrGfx
         {
             get
@@ -1817,10 +1535,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem ToolStripMenuItem1
         {
             get
@@ -1833,10 +1547,6 @@ namespace Hero_Designer
                 this._ToolStripMenuItem1 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem ToolStripMenuItem2
         {
             get
@@ -1849,10 +1559,6 @@ namespace Hero_Designer
                 this._ToolStripMenuItem2 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripMenuItem4
         {
             get
@@ -1865,10 +1571,6 @@ namespace Hero_Designer
                 this._ToolStripMenuItem4 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator1
         {
             get
@@ -1881,10 +1583,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator1 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator10
         {
             get
@@ -1897,10 +1595,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator10 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator11
         {
             get
@@ -1913,10 +1607,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator11 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator12
         {
             get
@@ -1929,10 +1619,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator12 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator13
         {
             get
@@ -1945,10 +1631,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator13 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator14
         {
             get
@@ -1961,10 +1643,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator14 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator15
         {
             get
@@ -1977,10 +1655,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator15 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator16
         {
             get
@@ -1993,10 +1667,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator16 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator17
         {
             get
@@ -2009,10 +1679,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator17 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator18
         {
             get
@@ -2025,10 +1691,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator18 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator19
         {
             get
@@ -2041,10 +1703,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator19 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator2
         {
             get
@@ -2057,10 +1715,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator2 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator20
         {
             get
@@ -2073,10 +1727,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator20 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator21
         {
             get
@@ -2089,10 +1739,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator21 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator22
         {
             get
@@ -2105,10 +1751,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator22 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator23
         {
             get
@@ -2121,10 +1763,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator23 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator24
         {
             get
@@ -2137,10 +1775,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator24 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator4
         {
             get
@@ -2153,10 +1787,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator4 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator5
         {
             get
@@ -2169,10 +1799,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator5 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator7
         {
             get
@@ -2185,10 +1811,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator7 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator8
         {
             get
@@ -2201,10 +1823,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator8 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripSeparator ToolStripSeparator9
         {
             get
@@ -2217,10 +1835,6 @@ namespace Hero_Designer
                 this._ToolStripSeparator9 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsAbout
         {
             get
@@ -2242,10 +1856,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsAdvDBEdit
         {
             get
@@ -2267,10 +1877,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsAdvFreshInstall
         {
             get
@@ -2292,10 +1898,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsAdvResetTips
         {
             get
@@ -2317,10 +1919,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsBug
         {
             get
@@ -2342,10 +1940,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsClearAllEnh
         {
             get
@@ -2367,10 +1961,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsConfig
         {
             get
@@ -2392,10 +1982,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsDonate
         {
             get
@@ -2417,10 +2003,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsDynamic
         {
             get
@@ -2442,10 +2024,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToDO
         {
             get
@@ -2467,10 +2045,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToEven
         {
             get
@@ -2492,10 +2066,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToMinus1
         {
             get
@@ -2517,10 +2087,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToMinus2
         {
             get
@@ -2542,10 +2108,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToMinus3
         {
             get
@@ -2567,10 +2129,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToNone
         {
             get
@@ -2592,10 +2150,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToPlus1
         {
             get
@@ -2617,10 +2171,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToPlus2
         {
             get
@@ -2642,10 +2192,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToPlus3
         {
             get
@@ -2667,10 +2213,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToPlus4
         {
             get
@@ -2692,10 +2234,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToPlus5
         {
             get
@@ -2717,10 +2255,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToSO
         {
             get
@@ -2742,10 +2276,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsEnhToTO
         {
             get
@@ -2767,10 +2297,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsExport
         {
             get
@@ -2792,10 +2318,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsExportDataLink
         {
             get
@@ -2817,10 +2339,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsExportLong
         {
             get
@@ -2842,10 +2360,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFileNew
         {
             get
@@ -2867,10 +2381,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFileOpen
         {
             get
@@ -2892,10 +2402,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFilePrint
         {
             get
@@ -2917,10 +2423,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFileQuit
         {
             get
@@ -2942,10 +2444,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFileSave
         {
             get
@@ -2967,10 +2465,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFileSaveAs
         {
             get
@@ -2992,10 +2486,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsFlipAllEnh
         {
             get
@@ -3017,10 +2507,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsHelp
         {
             get
@@ -3042,10 +2528,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsHelperLong
         {
             get
@@ -3067,10 +2549,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsHelperLong2
         {
             get
@@ -3092,10 +2570,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsHelperShort
         {
             get
@@ -3117,10 +2591,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsHelperShort2
         {
             get
@@ -3142,10 +2612,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsImport
         {
             get
@@ -3167,10 +2633,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsIODefault
         {
             get
@@ -3192,10 +2654,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsIOMax
         {
             get
@@ -3217,10 +2675,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsIOMin
         {
             get
@@ -3242,10 +2696,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsLevelUp
         {
             get
@@ -3267,10 +2717,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsPatchNotes
         {
             get
@@ -3292,10 +2738,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsRecipeViewer
         {
             get
@@ -3317,10 +2759,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsDPSCalc
         {
             get
@@ -3342,10 +2780,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsRemoveAllSlots
         {
             get
@@ -3367,10 +2801,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsSetFind
         {
             get
@@ -3392,10 +2822,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsTitanForum
         {
             get
@@ -3417,10 +2843,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsTitanPlanner
         {
             get
@@ -3442,10 +2864,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsTitanSite
         {
             get
@@ -3467,10 +2885,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsUpdateCheck
         {
             get
@@ -3492,10 +2906,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsView2Col
         {
             get
@@ -3517,10 +2927,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsView3Col
         {
             get
@@ -3542,10 +2948,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsView4Col
         {
             get
@@ -3567,10 +2969,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewActualDamage_New
         {
             get
@@ -3592,10 +2990,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewData
         {
             get
@@ -3617,10 +3011,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewDPS_New
         {
             get
@@ -3642,10 +3032,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewGraphs
         {
             get
@@ -3667,10 +3053,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewIOLevels
         {
             get
@@ -3692,10 +3074,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewRelative
         {
             get
@@ -3717,10 +3095,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewSetCompare
         {
             get
@@ -3742,10 +3116,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewSets
         {
             get
@@ -3767,10 +3137,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewSlotLevels
         {
             get
@@ -3792,10 +3158,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem tsViewTotals
         {
             get
@@ -3817,10 +3179,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip tTip
         {
             get
@@ -3833,10 +3191,6 @@ namespace Hero_Designer
                 this._tTip = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtName
         {
             get
@@ -3858,10 +3212,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem ViewToolStripMenuItem
         {
             get
@@ -3874,10 +3224,6 @@ namespace Hero_Designer
                 this._ViewToolStripMenuItem = value;
             }
         }
-
-
-    
-    
         internal virtual ToolStripMenuItem WindowToolStripMenuItem
         {
             get
@@ -3890,8 +3236,6 @@ namespace Hero_Designer
                 this._WindowToolStripMenuItem = value;
             }
         }
-
-
         public frmMain()
         {
             //base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
@@ -3950,14 +3294,10 @@ namespace Hero_Designer
 
             this.InitializeComponent();
         }
-
-
         void accoladeButton_ButtonClicked()
         {
             this.PowerModified();
         }
-
-
         void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
@@ -3999,15 +3339,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.accoladeButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.accoladeButton.Checked = true;
         }
-
-
         static int ArchetypeIndirectToIndex(int iIndirect)
         {
             int num = -1;
@@ -4025,8 +3361,6 @@ namespace Hero_Designer
             }
             return 0;
         }
-
-
         void AssemblePowerList(ref ListLabelV2 llPower, IPowerset Powerset)
         {
             if (Powerset == null)
@@ -4090,8 +3424,6 @@ namespace Hero_Designer
                 llPower.SuspendRedraw = false;
             }
         }
-
-
         void AutoArrangeAllSlotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PowerEntry[] powerEntryArray = frmMain.DeepCopyPowerList();
@@ -4100,16 +3432,12 @@ namespace Hero_Designer
             this.PowerModified();
             this.DoRedraw();
         }
-
-
         void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbAncillary = this.cbAncillary;
             frmMain.cbDrawItem(ref cbAncillary, Enums.ePowerSetType.Ancillary, e);
             this.cbAncillary = cbAncillary;
         }
-
-
         void cbAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
@@ -4118,8 +3446,6 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[7].nID, MidsContext.Character.Archetype.Idx, this.cbAncillary.Bounds, ExtraString);
             }
         }
-
-
         void cbAncillery_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4128,8 +3454,6 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbAT_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4153,14 +3477,10 @@ namespace Hero_Designer
                 e.DrawFocusRectangle();
             }
         }
-
-
         void cbAT_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void cbAT_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
@@ -4168,8 +3488,6 @@ namespace Hero_Designer
                 this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], null, null, null)), this.cbAT.Bounds, "");
             }
         }
-
-
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4180,8 +3498,6 @@ namespace Hero_Designer
                 this.GetBestDamageValues();
             }
         }
-
-
         static void cbDrawItem(ref ComboBox Target, Enums.ePowerSetType SetType, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4220,8 +3536,6 @@ namespace Hero_Designer
                 e.DrawFocusRectangle();
             }
         }
-
-
         void cbOrigin_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -4244,8 +3558,6 @@ namespace Hero_Designer
                 e.DrawFocusRectangle();
             }
         }
-
-
         void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4259,22 +3571,16 @@ namespace Hero_Designer
                 this.DisplayName();
             }
         }
-
-
         void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool0 = this.cbPool0;
             frmMain.cbDrawItem(ref cbPool0, Enums.ePowerSetType.Pool, e);
             this.cbPool0 = cbPool0;
         }
-
-
         void cbPool0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void cbPool0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
@@ -4283,8 +3589,6 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[3].nID, MidsContext.Character.Archetype.Idx, this.cbPool0.Bounds, ExtraString);
             }
         }
-
-
         void cbPool0_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4293,16 +3597,12 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool = this.cbPool1;
             frmMain.cbDrawItem(ref cbPool, Enums.ePowerSetType.Pool, e);
             this.cbPool1 = cbPool;
         }
-
-
         void cbPool1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
@@ -4311,8 +3611,6 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[4].nID, MidsContext.Character.Archetype.Idx, this.cbPool1.Bounds, ExtraString);
             }
         }
-
-
         void cbPool1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4321,16 +3619,12 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool2 = this.cbPool2;
             frmMain.cbDrawItem(ref cbPool2, Enums.ePowerSetType.Pool, e);
             this.cbPool2 = cbPool2;
         }
-
-
         void cbPool2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
@@ -4339,8 +3633,6 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[5].nID, MidsContext.Character.Archetype.Idx, this.cbPool2.Bounds, ExtraString);
             }
         }
-
-
         void cbPool2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4349,16 +3641,12 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool3 = this.cbPool3;
             frmMain.cbDrawItem(ref cbPool3, Enums.ePowerSetType.Pool, e);
             this.cbPool3 = cbPool3;
         }
-
-
         void cbPool3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
@@ -4367,8 +3655,6 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[6].nID, MidsContext.Character.Archetype.Idx, this.cbPool3.Bounds, ExtraString);
             }
         }
-
-
         void cbPool3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4377,22 +3663,16 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPrimary = this.cbPrimary;
             frmMain.cbDrawItem(ref cbPrimary, Enums.ePowerSetType.Primary, e);
             this.cbPrimary = cbPrimary;
         }
-
-
         void cbPrimary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void cbPrimary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MidsContext.Character != null && MidsContext.Character.Archetype != null && this.cbPrimary.SelectedIndex >= 0)
@@ -4401,8 +3681,6 @@ namespace Hero_Designer
                 this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary)[this.cbPrimary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbPrimary.Bounds, ExtraString);
             }
         }
-
-
         void cbPrimary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4411,22 +3689,16 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbSecondary = this.cbSecondary;
             frmMain.cbDrawItem(ref cbSecondary, Enums.ePowerSetType.Secondary, e);
             this.cbSecondary = cbSecondary;
         }
-
-
         void cbSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void cbSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
@@ -4443,8 +3715,6 @@ namespace Hero_Designer
                 this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
             }
         }
-
-
         void cbSecondary_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -4453,8 +3723,6 @@ namespace Hero_Designer
                 this.UpdatePowerLists();
             }
         }
-
-
         void ChangeSets()
         {
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary);
@@ -4509,8 +3777,6 @@ namespace Hero_Designer
             this.FloatUpdate(true);
             this.GetBestDamageValues();
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void CheckForDownloadedUpdate()
         {
@@ -4528,8 +3794,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("An unexpected error was encountered when checking for a downloaded pack.\r\nIf you see this error again, delete the 'MHD.mhz' file from the " + Application.StartupPath + " directory.", MsgBoxStyle.Exclamation, "Non-Fatal Error");
             }
         }
-
-
         void clearPower(PowerEntry[] tp, int pwrIdx)
         {
             tp[pwrIdx].Slots = new SlotEntry[0];
@@ -4540,8 +3804,6 @@ namespace Hero_Designer
             tp[pwrIdx].Tag = false;
             tp[pwrIdx].StatInclude = false;
         }
-
-
         public bool CloseCommand()
         {
             bool flag = false;
@@ -4570,8 +3832,6 @@ namespace Hero_Designer
             }
             return flag2;
         }
-
-
         bool ComboCheckAT(ref Archetype[] playableClasses)
         {
             bool flag;
@@ -4593,8 +3853,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool ComboCheckOrigin()
         {
             bool flag;
@@ -4619,8 +3877,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
@@ -4657,8 +3913,6 @@ namespace Hero_Designer
             }
             return flag3;
         }
-
-
         static bool ComboCheckPS(ref ComboBox iCB, Enums.PowersetType iSetID, Enums.ePowerSetType iSetType)
         {
             bool flag = false;
@@ -4688,8 +3942,6 @@ namespace Hero_Designer
             iCB.SelectedIndex = DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[(int)iSetID], powersetIndexes);
             return flag;
         }
-
-
         void command_ForumImport()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -4764,8 +4016,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void command_New()
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -4786,21 +4036,15 @@ namespace Hero_Designer
             this.SetTitleBar(true);
             this.myDataView.Clear();
         }
-
-
         public void DataView_SlotFlip(int PowerIndex)
         {
             this.StartFlip(PowerIndex);
         }
-
-
         public void DataView_SlotUpdate()
         {
             this.DoRedraw();
             this.RefreshInfo();
         }
-
-
         static PowerEntry[] DeepCopyPowerList()
         {
             PowerEntry[] powerEntryArray = new PowerEntry[MidsContext.Character.CurrentBuild.Powers.Count - 1 + 1];
@@ -4811,8 +4055,6 @@ namespace Hero_Designer
             }
             return powerEntryArray;
         }
-
-
         Rectangle Dilate(Rectangle irect, int iAdd)
         {
             irect.X -= iAdd;
@@ -4821,15 +4063,11 @@ namespace Hero_Designer
             irect.Width += iAdd * 2;
             return irect;
         }
-
-
         void DisplayFormatChanged()
         {
             this.GetBestDamageValues();
             this.RefreshInfo();
         }
-
-
         public void DisplayName()
         {
             string str = "";
@@ -4885,8 +4123,6 @@ namespace Hero_Designer
                 this.txtName.Text = MidsContext.Character.Name;
             }
         }
-
-
         void doFlipStep()
         {
             if (this.FlipActive)
@@ -4986,8 +4222,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         bool DoOpen(string fName)
         {
             bool flag;
@@ -5036,8 +4270,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         public void DoRedraw()
         {
             this.NoResizeEvent = true;
@@ -5059,8 +4291,6 @@ namespace Hero_Designer
             this.NoResizeEvent = false;
             this.Drawing.FullRedraw();
         }
-
-
         void DoResize()
         {
             this.lblHero.Width = this.ibRecipe.Left - 4;
@@ -5102,8 +4332,6 @@ namespace Hero_Designer
                 this.ReArrange(false);
             }
         }
-
-
         bool doSave()
         {
             bool flag;
@@ -5123,8 +4351,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool doSaveAs()
         {
             this.FloatTop(false);
@@ -5191,8 +4417,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void dvAnchored_Float()
         {
             frmMain iOwner = this;
@@ -5216,15 +4440,11 @@ namespace Hero_Designer
                 this.Info_Power(this.dvLastPower, this.dvLastEnh, this.dvLastNoLev, this.DataViewLocked);
             }
         }
-
-
         void dvAnchored_Move()
         {
             this.PriSec_ExpandChanged(true);
             this.ReArrange(false);
         }
-
-
         void dvAnchored_SizeChange(Size newSize, bool Compact)
         {
             this.ReArrange(false);
@@ -5233,14 +4453,10 @@ namespace Hero_Designer
                 MidsContext.Config.DvState = this.dvAnchored.VisibleSize;
             }
         }
-
-
         void dvAnchored_TabChanged(int Index)
         {
             this.SetDataViewTab(Index);
         }
-
-
         void dvAnchored_Unlock()
         {
             this.DataViewLocked = false;
@@ -5249,8 +4465,6 @@ namespace Hero_Designer
                 this.Info_Power(this.dvLastPower, this.dvLastEnh, this.dvLastNoLev, this.DataViewLocked);
             }
         }
-
-
         bool EditAccoladesOrTemps(int hIDPower)
         {
             bool flag;
@@ -5277,8 +4491,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void EndFlip()
         {
             this.FlipActive = false;
@@ -5287,21 +4499,15 @@ namespace Hero_Designer
             this.FlipSlotState = new int[0];
             this.DoRedraw();
         }
-
-
         void EnhancementModified()
         {
             this.DoRedraw();
             this.RefreshInfo();
         }
-
-
         int[] fakeInitialize(params int[] nums)
         {
             return nums;
         }
-
-
         void FixPrimarySecondaryHeight()
         {
             if (this.dvAnchored.Visible & this.dvAnchored.Bounds.IntersectsWith(this.dvAnchored.SnapLocation))
@@ -5346,8 +4552,6 @@ namespace Hero_Designer
                 this.llSecondary.SizeNormal = size;
             }
         }
-
-
         void fixStatIncludes()
         {
             if (MainModule.MidsController.Toon != null)
@@ -5369,8 +4573,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void FloatCompareGraph(bool Show)
         {
             if (Show)
@@ -5391,8 +4593,6 @@ namespace Hero_Designer
                 this.fGraphCompare = null;
             }
         }
-
-
         public void FloatData(bool Show)
         {
             if (Show)
@@ -5414,8 +4614,6 @@ namespace Hero_Designer
                 this.fData = null;
             }
         }
-
-
         public void FloatRecipe(bool Show)
         {
             if (Show)
@@ -5436,8 +4634,6 @@ namespace Hero_Designer
                 this.fRecipe = null;
             }
         }
-
-
         public void FloatDPSCalc(bool Show)
         {
             if (Show)
@@ -5457,8 +4653,6 @@ namespace Hero_Designer
                 this.fDPSCalc = null;
             }
         }
-
-
         public void FloatSetFinder(bool Show)
         {
             if (Show)
@@ -5477,8 +4671,6 @@ namespace Hero_Designer
                 this.fSetFinder = null;
             }
         }
-
-
         public void FloatSets(bool Show)
         {
             if (Show)
@@ -5500,8 +4692,6 @@ namespace Hero_Designer
                 this.fSets = null;
             }
         }
-
-
         public void FloatStatGraph(bool Show)
         {
             if (Show)
@@ -5522,8 +4712,6 @@ namespace Hero_Designer
                 this.fGraphStats = null;
             }
         }
-
-
         void FloatTop(bool OnTop)
         {
             if (!OnTop)
@@ -5646,8 +4834,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void FloatTotals(bool Show)
         {
             if (Show)
@@ -5671,8 +4857,6 @@ namespace Hero_Designer
                 this.fTotals = null;
             }
         }
-
-
         void FloatUpdate(bool NewData = false)
         {
             if (this.fSets != null)
@@ -5704,21 +4888,15 @@ namespace Hero_Designer
                 this.fData.UpdateData(this.dvLastPower);
             }
         }
-
-
         void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = base.Size;
             MidsContext.Config.SaveConfig();
         }
-
-
         void frmMain_Closing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = this.CloseCommand();
         }
-
-
         void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Alt & e.Control & e.Shift & e.KeyCode == Keys.A)
@@ -5728,8 +4906,6 @@ namespace Hero_Designer
                 this.SetTitleBar(MainModule.MidsController.Toon.IsHero());
             }
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void frmMain_Load(object sender, EventArgs e)
         {
@@ -5906,8 +5082,6 @@ namespace Hero_Designer
                 throw;
             }
         }
-
-
         void frmMain_Maximize(object sender, EventArgs e)
         {
             if (base.WindowState != this.LastState)
@@ -5916,14 +5090,10 @@ namespace Hero_Designer
             }
             this.LastState = base.WindowState;
         }
-
-
         void frmMain_MouseWheel(object sender, MouseEventArgs e)
         {
             this.dvAnchored.info_txtLarge.Focus();
         }
-
-
         void frmMain_Resize(object sender, EventArgs e)
         {
             if (this.dvAnchored != null)
@@ -5952,8 +5122,6 @@ namespace Hero_Designer
             }
             this.UpdateControls(false);
         }
-
-
         public void GetBestDamageValues()
         {
             if (MainModule.MidsController.Toon != null)
@@ -5996,8 +5164,6 @@ namespace Hero_Designer
                 this.myDataView.info_Damage.nHighEnh = num5;
             }
         }
-
-
         int GetFirstValidSetEnh(int SlotIndex, int hID)
         {
             if (this.LastEnhPlaced != null)
@@ -6030,14 +5196,10 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         bool GetPlayableClasses(Archetype a)
         {
             return a.Playable;
         }
-
-
         I9Slot GetRepeatEnhancement(int powerIndex, int iSlotIndex)
         {
             if (this.LastEnhPlaced != null)
@@ -6071,8 +5233,6 @@ namespace Hero_Designer
             }
             return new I9Slot();
         }
-
-
         void heroVillain_ButtonClicked()
         {
             if (this.heroVillain.Checked)
@@ -6112,8 +5272,6 @@ namespace Hero_Designer
             this.UpdateColours(false);
             this.DoRedraw();
         }
-
-
         void HidePopup()
         {
             if (this.PopUpVisible)
@@ -6131,8 +5289,6 @@ namespace Hero_Designer
                 this.Drawing.Refresh(bounds);
             }
         }
-
-
         void I9Picker_EnhancementPicked(I9Slot e)
         {
             e.RelativeLevel = this.I9Picker.UI.View.RelLevel;
@@ -6181,8 +5337,6 @@ namespace Hero_Designer
                 this.EnhancingPower = -1;
             }
         }
-
-
         void I9Picker_Hiding(object sender, EventArgs e)
         {
             if (this.I9Picker.Visible)
@@ -6193,8 +5347,6 @@ namespace Hero_Designer
                 this.RefreshInfo();
             }
         }
-
-
         void I9Picker_HoverEnhancement(int e)
         {
             I9Slot i9Slot = new I9Slot
@@ -6207,15 +5359,11 @@ namespace Hero_Designer
             this.myDataView.SetEnhancementPicker(i9Slot);
             this.ShowPopup(this.PickerHID, -1, -1, default(Point), this.I9Picker.Bounds, i9Slot, -1);
         }
-
-
         void I9Picker_HoverSet(int e)
         {
             this.myDataView.SetSetPicker(e);
             this.ShowPopup(this.PickerHID, -1, -1, default(Point), this.I9Picker.Bounds, null, e);
         }
-
-
         void I9Picker_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && this.EnhancingSlot > -1)
@@ -6225,21 +5373,15 @@ namespace Hero_Designer
                 this.RefreshInfo();
             }
         }
-
-
         void I9Picker_Moved(Rectangle NewBounds, Rectangle OldBounds)
         {
             this.MovePopup(this.I9Picker.Bounds);
             this.RedrawUnderPopup(OldBounds);
         }
-
-
         void I9Popup_MouseMove(object sender, MouseEventArgs e)
         {
             this.HidePopup();
         }
-
-
         void ibMode_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
@@ -6258,14 +5400,10 @@ namespace Hero_Designer
                 this.pbDynMode.Refresh();
             }
         }
-
-
         void ibPopup_ButtonClicked()
         {
             MidsContext.Config.ShowPopup = this.ibPopup.Checked;
         }
-
-
         void ibPvX_ButtonClicked()
         {
             if (!this.ibPvX.Checked)
@@ -6278,14 +5416,10 @@ namespace Hero_Designer
             }
             this.RefreshInfo();
         }
-
-
         void ibRecipe_ButtonClicked()
         {
             MidsContext.Config.PopupRecipes = this.ibRecipe.Checked;
         }
-
-
         void ibSets_ButtonClicked()
         {
             if (MainModule.MidsController.Toon != null)
@@ -6293,20 +5427,14 @@ namespace Hero_Designer
                 this.FloatSets(true);
             }
         }
-
-
         void ibSlotLevels_ButtonClicked()
         {
             this.tsViewSlotLevels_Click(this, new EventArgs());
         }
-
-
         void ibTotals_ButtonClicked()
         {
             this.FloatTotals(true);
         }
-
-
         void incarnateButton_MouseDown(object sender, MouseEventArgs e)
         {
             bool flag = false;
@@ -6328,20 +5456,14 @@ namespace Hero_Designer
                 this.fIncarnate.Show(this);
             }
         }
-
-
         void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
         }
-
-
         void Info_Enhancement(I9Slot iEnh, int iLevel = -1)
         {
             this.myDataView.SetEnhancement(iEnh, iLevel);
         }
-
-
         public void Info_Power(int powerIdx, int iEnhLvl = -1, bool NoLevel = false, bool Lock = false)
         {
             if (!Lock & this.DataViewLocked)
@@ -6386,8 +5508,6 @@ namespace Hero_Designer
                 this.FloatingDataForm.Activate();
             }
         }
-
-
         void info_Totals()
         {
             if (!(MainModule.MidsController.Toon == null | !MainModule.MidsController.IsAppInitialized))
@@ -6397,14 +5517,10 @@ namespace Hero_Designer
                 this.FloatUpdate(false);
             }
         }
-
-
         void lblATLocked_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void lblATLocked_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && this.cbAT.SelectedIndex >= 0)
@@ -6412,8 +5528,6 @@ namespace Hero_Designer
                 this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], null, null, null)), this.cbAT.Bounds, "");
             }
         }
-
-
         void lblATLocked_Paint(object sender, PaintEventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -6427,14 +5541,10 @@ namespace Hero_Designer
                 graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
             }
         }
-
-
         void lblLocked0_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void lblLocked0_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[3] != null)
@@ -6443,14 +5553,10 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[3].nID, MidsContext.Character.Archetype.Idx, this.cbPool0.Bounds, ExtraString);
             }
         }
-
-
         void lblLocked0_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool0);
         }
-
-
         void lblLocked1_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[4] != null)
@@ -6459,14 +5565,10 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[4].nID, MidsContext.Character.Archetype.Idx, this.cbPool1.Bounds, ExtraString);
             }
         }
-
-
         void lblLocked1_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool1);
         }
-
-
         void lblLocked2_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[5] != null)
@@ -6475,14 +5577,10 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[5].nID, MidsContext.Character.Archetype.Idx, this.cbPool2.Bounds, ExtraString);
             }
         }
-
-
         void lblLocked2_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool2);
         }
-
-
         void lblLocked3_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[6] != null)
@@ -6491,14 +5589,10 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[6].nID, MidsContext.Character.Archetype.Idx, this.cbPool3.Bounds, ExtraString);
             }
         }
-
-
         void lblLocked3_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Pool3);
         }
-
-
         void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[7] != null)
@@ -6507,20 +5601,14 @@ namespace Hero_Designer
                 this.ShowPopup(MidsContext.Character.Powersets[7].nID, MidsContext.Character.Archetype.Idx, this.cbAncillary.Bounds, ExtraString);
             }
         }
-
-
         void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
         {
             this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
         }
-
-
         void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void lblLockedSecondary_MouseMove(object sender, MouseEventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Archetype.Idx >= 0 && this.cbSecondary.SelectedIndex >= 0)
@@ -6537,20 +5625,14 @@ namespace Hero_Designer
                 this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
             }
         }
-
-
         void llAll_EmptyHover()
         {
             this.HidePopup();
         }
-
-
         void llALL_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
         }
-
-
         void llAncillary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6565,8 +5647,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void llAncillary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6581,8 +5661,6 @@ namespace Hero_Designer
                 this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llAncillary.Bounds, null, -1);
             }
         }
-
-
         void llPool0_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6594,8 +5672,6 @@ namespace Hero_Designer
                 this.Info_Power(Item.nIDPower, -1, false, true);
             }
         }
-
-
         void llPool0_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6603,8 +5679,6 @@ namespace Hero_Designer
             this.Info_Power(Item.nIDPower, -1, false, false);
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool0.Bounds, null, -1);
         }
-
-
         void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6616,8 +5690,6 @@ namespace Hero_Designer
                 this.Info_Power(Item.nIDPower, -1, false, true);
             }
         }
-
-
         void llPool1_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6625,8 +5697,6 @@ namespace Hero_Designer
             this.Info_Power(Item.nIDPower, -1, false, false);
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool1.Bounds, null, -1);
         }
-
-
         void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6638,8 +5708,6 @@ namespace Hero_Designer
                 this.Info_Power(Item.nIDPower, -1, false, true);
             }
         }
-
-
         void llPool2_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6647,8 +5715,6 @@ namespace Hero_Designer
             this.Info_Power(Item.nIDPower, -1, false, false);
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool2.Bounds, null, -1);
         }
-
-
         void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Left)
@@ -6660,8 +5726,6 @@ namespace Hero_Designer
                 this.Info_Power(Item.nIDPower, -1, false, true);
             }
         }
-
-
         void llPool3_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6669,8 +5733,6 @@ namespace Hero_Designer
             this.Info_Power(Item.nIDPower, -1, false, false);
             this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPool3.Bounds, null, -1);
         }
-
-
         void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6685,8 +5747,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void llPrimary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6701,8 +5761,6 @@ namespace Hero_Designer
                 this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llPrimary.Bounds, null, -1);
             }
         }
-
-
         void llSecondary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Item.ItemState != ListLabelV2.LLItemState.Heading)
@@ -6717,8 +5775,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void llSecondary_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.LastIndex = -1;
@@ -6733,8 +5789,6 @@ namespace Hero_Designer
                 this.ShowPopup(-1, Item.nIDPower, -1, default(Point), this.llSecondary.Bounds, null, -1);
             }
         }
-
-
         void MiniPaint(ref PaintEventArgs e, Enums.PowersetType iId)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Character.Powersets[(int)iId] != null)
@@ -6748,8 +5802,6 @@ namespace Hero_Designer
                 graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
             }
         }
-
-
         void MovePopup(Rectangle rBounds)
         {
             if (this.PopUpVisible)
@@ -6762,8 +5814,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void NewDraw(bool skipDraw = false)
         {
             if (this.Drawing == null)
@@ -6788,8 +5838,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void NewToon(bool Init = true, bool SkipDraw = false)
         {
             if (MainModule.MidsController.Toon == null)
@@ -6837,8 +5885,6 @@ namespace Hero_Designer
             this.info_Totals();
             this.FileModified = false;
         }
-
-
         void pbDynMode_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null && MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
@@ -6855,8 +5901,6 @@ namespace Hero_Designer
                 this.pbDynMode.Refresh();
             }
         }
-
-
         void pbDynMode_Paint(object sender, PaintEventArgs e)
         {
             if (this.dmBuffer == null)
@@ -6868,8 +5912,6 @@ namespace Hero_Designer
                 e.Graphics.DrawImage(this.dmBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
             }
         }
-
-
         void pnlGFX_DragDrop(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
@@ -6911,8 +5953,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void pnlGFX_DragEnter(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX))
@@ -6924,8 +5964,6 @@ namespace Hero_Designer
                 e.Effect = DragDropEffects.None;
             }
         }
-
-
         void pnlGFX_DragOver(object sender, DragEventArgs e)
         {
             if (sender.Equals(this.pnlGFX) && (this.dragRect.IsEmpty || (this.dragRect.Top != Cursor.Position.Y - this.dragYOffset | this.dragRect.Left != Cursor.Position.X - this.dragXOffset)))
@@ -6953,8 +5991,6 @@ namespace Hero_Designer
                 ControlPaint.DrawReversibleFrame(this.dragRect, Color.White, FrameStyle.Thick);
             }
         }
-
-
         void pnlGFX_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (!this.LastClickPlacedSlot & this.dragStartSlot >= 0)
@@ -6966,8 +6002,6 @@ namespace Hero_Designer
                 this.LastClickPlacedSlot = false;
             }
         }
-
-
         void pnlGFX_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -6979,21 +6013,15 @@ namespace Hero_Designer
                 this.dragStartSlot = this.Drawing.WhichEnh(this.Drawing.ScaleUp(e.X), this.Drawing.ScaleUp(e.Y));
             }
         }
-
-
         void pnlGFX_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
-
-
         void pnlGFX_MouseLeave(object sender, EventArgs e)
         {
             this.HidePopup();
             this.Drawing.HighlightSlot(-1, false);
         }
-
-
         void pnlGFX_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button == MouseButtons.Left & this.pnlGFX.AllowDrop) && Math.Abs(e.X - this.dragStartX) + Math.Abs(e.Y - this.dragStartY) > 7)
@@ -7071,8 +6099,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void pnlGFX_MouseUp(object sender, MouseEventArgs e)
         {
             this.pnlGFX.AllowDrop = false;
@@ -7228,14 +6254,10 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void pnlGFXFlow_MouseEnter(object sender, EventArgs e)
         {
             this.pnlGFXFlow.Focus();
         }
-
-
         public void PowerModified()
         {
             int index = -1;
@@ -7288,8 +6310,6 @@ namespace Hero_Designer
             this.UpdateDynamicModeInfo();
             this.pbDynMode.Refresh();
         }
-
-
         int PowerMove(PowerEntry[] tp, params int[] pow)
         {
             if (tp[pow[0]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 > tp[pow[1]].Level)
@@ -7605,8 +6625,6 @@ namespace Hero_Designer
             }
             return num10;
         }
-
-
         void PowerMoveByUser(params int[] pow)
         {
             if (!(pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1]))
@@ -7627,16 +6645,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void PowerPicked(Enums.PowersetType SetID, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
             this.PowerModified();
             MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
         }
-
-
         void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
@@ -7644,8 +6658,6 @@ namespace Hero_Designer
             MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
             this.DoRedraw();
         }
-
-
         int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
         {
             int num;
@@ -8057,8 +7069,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         void PowerSwapByUser(params int[] pow)
         {
             int index = 0;
@@ -8076,8 +7086,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void PriSec_ExpandChanged(bool Expanded)
         {
             if (this.llPrimary.isExpanded | (this.llSecondary.isExpanded & this.dvAnchored.IsDocked & !this.HasSentForwards))
@@ -8095,8 +7103,6 @@ namespace Hero_Designer
                 this.HasSentForwards = false;
             }
         }
-
-
         Rectangle raGetPoolRect(int Index)
         {
             Label label;
@@ -8135,8 +7141,6 @@ namespace Hero_Designer
             result = new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, null, "Width", new object[0], null, null, null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, null, "Top", new object[0], null, null, null), NewLateBinding.LateGet(Instance, null, "Height", new object[0], null, null, null)), label.Top)));
             return result;
         }
-
-
         int raGetTop()
         {
             int result;
@@ -8150,8 +7154,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         int raGreater(int iVal1, int iVal2)
         {
             int result;
@@ -8165,8 +7167,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         void raMovePool(int Index, int X, int Y)
         {
             Label label;
@@ -8223,8 +7223,6 @@ namespace Hero_Designer
                 point
             }, null, null);
         }
-
-
         bool raToFloat()
         {
             bool flag = false;
@@ -8256,8 +7254,6 @@ namespace Hero_Designer
             this.raMovePool(3, poolRect3.Left, poolRect3.Top);
             return flag;
         }
-
-
         bool raToNormal()
         {
             bool flag = false;
@@ -8337,8 +7333,6 @@ namespace Hero_Designer
             this.llAncillary.SuspendRedraw = false;
             return flag;
         }
-
-
         bool ReArrange(bool Init)
         {
             bool flag = false;
@@ -8370,8 +7364,6 @@ namespace Hero_Designer
             }
             return flag2;
         }
-
-
         void RearrangeAllSlotsInBuild(PowerEntry[] tp, bool notifyUser = false)
         {
             int index = 0;
@@ -8523,8 +7515,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, null);
             }
         }
-
-
         void RedrawUnderPopup(Rectangle RectRedraw)
         {
             Rectangle Clip = RectRedraw;
@@ -8574,8 +7564,6 @@ namespace Hero_Designer
                 this.lblLockedAncillary.Refresh();
             }
         }
-
-
         public void RefreshInfo()
         {
             this.info_Totals();
@@ -8584,8 +7572,6 @@ namespace Hero_Designer
                 this.Info_Power(this.dvLastPower, this.dvLastEnh, this.dvLastNoLev, this.DataViewLocked);
             }
         }
-
-
         void RefreshTabs(int iPower, I9Slot iEnh, int iLevel = -1)
         {
             if (iEnh.Enh > -1)
@@ -8598,8 +7584,6 @@ namespace Hero_Designer
                 this.Info_Power(iPower, iLevel, true, false);
             }
         }
-
-
         void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
         {
             int num = tp.SlotCount - 2;
@@ -8609,8 +7593,6 @@ namespace Hero_Designer
             }
             tp.Slots = (SlotEntry[])Utils.CopyArray(tp.Slots, new SlotEntry[tp.SlotCount - 2 + 1]);
         }
-
-
         void SetAncilPoolHeight()
         {
             int num = this.llAncillary.ActualLineHeight * 2;
@@ -8630,8 +7612,6 @@ namespace Hero_Designer
             }
             this.llAncillary.Height = num;
         }
-
-
         void setColumns(int columns)
         {
             MidsContext.Config.Columns = columns;
@@ -8643,8 +7623,6 @@ namespace Hero_Designer
             this.tsView3Col.Checked = (columns == 3);
             this.tsView2Col.Checked = (columns == 2);
         }
-
-
         void SetDamageMenuCheckMarks()
         {
             switch (MidsContext.Config.DamageMath.ReturnValue)
@@ -8666,8 +7644,6 @@ namespace Hero_Designer
                     break;
             }
         }
-
-
         public void SetDataViewTab(int Index)
         {
             if (Index == 2)
@@ -8682,8 +7658,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void SetFormHeight(bool Force = false)
         {
             int iVal2 = 0;
@@ -8731,8 +7705,6 @@ namespace Hero_Designer
             }
             this.NoResizeEvent = false;
         }
-
-
         void SetFormWidth(bool ToFull = false)
         {
             this.NoResizeEvent = true;
@@ -8768,8 +7740,6 @@ namespace Hero_Designer
                 this.DoResize();
             }
         }
-
-
         public void SetMiniList(PopUp.PopupData iData, string iTitle, int bxHeight = 2048)
         {
             if (this.fMini == null)
@@ -8783,8 +7753,6 @@ namespace Hero_Designer
             this.fMini.Show();
             this.fMini.BringToFront();
         }
-
-
         void SetPopupLocation(Rectangle ObjectBounds, bool PowerListing = false, bool Picker = false)
         {
             int y = 0;
@@ -8880,8 +7848,6 @@ namespace Hero_Designer
             Point location = new Point(x, y);
             this.I9Popup.Location = location;
         }
-
-
         void SetTitleBar(bool Hero = true)
         {
             if (MainModule.MidsController.Toon != null)
@@ -8945,8 +7911,6 @@ namespace Hero_Designer
                 });
             }
         }
-
-
         void ShallowCopyPowerList(PowerEntry[] source)
         {
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
@@ -8955,8 +7919,6 @@ namespace Hero_Designer
                 MidsContext.Character.CurrentBuild.Powers[index] = source[index];
             }
         }
-
-
         public void ShowAnchoredDataView()
         {
             if (this.FloatingDataForm != null)
@@ -8976,8 +7938,6 @@ namespace Hero_Designer
             this.ReArrange(false);
             this.FloatingDataForm = null;
         }
-
-
         void ShowPopup(int nIDPowerset, int nIDClass, Rectangle rBounds, string ExtraString = "")
         {
             if (!MidsContext.Config.ShowPopup)
@@ -9035,8 +7995,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void ShowPopup(int hIDX, int pIDX, int sIDX, Point e, Rectangle rBounds, I9Slot eSlot = null, int setIDX = -1)
         {
             if (!MidsContext.Config.ShowPopup)
@@ -9134,8 +8092,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void SlotLevelSwap(int sourcePower, int sourceSlot, int destPower, int destSlot)
         {
             int index = 0;
@@ -9189,8 +8145,6 @@ namespace Hero_Designer
             this.PowerModified();
             this.DoRedraw();
         }
-
-
         public void smlRespecLong(int iLevel, bool Mode2)
         {
             if (Mode2)
@@ -9204,8 +8158,6 @@ namespace Hero_Designer
             this.fMini.Width = 350;
             this.fMini.SizeMe();
         }
-
-
         public void smlRespecShort(int iLevel, bool Mode2)
         {
             if (Mode2)
@@ -9220,8 +8172,6 @@ namespace Hero_Designer
             }
             this.fMini.SizeMe();
         }
-
-
         void StartFlip(int iPowerIndex)
         {
             if (this.FlipActive)
@@ -9253,21 +8203,15 @@ namespace Hero_Designer
                 this.tmrGfx.Start();
             }
         }
-
-
         void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.tempPowersButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.tempPowersButton.Checked = true;
         }
-
-
         void tempPowersButton_ButtonClicked()
         {
             this.PowerModified();
         }
-
-
         void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Clicks == 2)
@@ -9301,16 +8245,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void tlsDPA_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPA;
             this.SetDamageMenuCheckMarks();
             this.DisplayFormatChanged();
         }
-
-
         void tmrGfx_Tick(object sender, EventArgs e)
         {
             if (this.FlipActive)
@@ -9318,8 +8258,6 @@ namespace Hero_Designer
                 this.doFlipStep();
             }
         }
-
-
         bool ToggleClicked(int hID, int iX, int iY)
         {
             Rectangle rectangle = default(Rectangle);
@@ -9347,8 +8285,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void tsAbout_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9363,16 +8299,12 @@ namespace Hero_Designer
             }.ShowDialog(this);
             this.FloatTop(true);
         }
-
-
         void tsAdvDBEdit_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             new frmDBEdit().ShowDialog(this);
             this.FloatTop(true);
         }
-
-
         void tsAdvFreshInstall_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9391,14 +8323,10 @@ namespace Hero_Designer
             this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
             this.FloatTop(true);
         }
-
-
         void tsAdvResetTips_Click(object sender, EventArgs e)
         {
             MidsContext.Config.Tips = new Tips();
         }
-
-
         void tsBug_Click(object sender, EventArgs e)
         {
             string at = "ATFailed";
@@ -9415,8 +8343,6 @@ namespace Hero_Designer
             }
             clsXMLUpdate.BugReport(at, pri, sec, "");
         }
-
-
         void tsClearAllEnh_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9436,8 +8362,6 @@ namespace Hero_Designer
             }
             this.FloatTop(true);
         }
-
-
         void tsConfig_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9452,14 +8376,10 @@ namespace Hero_Designer
             this.tsIODefault.Text = "Default (" + Conversions.ToString(MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
             this.FloatTop(true);
         }
-
-
         void tsDonate_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.Donate();
         }
-
-
         void tsDynamic_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9469,8 +8389,6 @@ namespace Hero_Designer
                 this.PowerModified();
             }
         }
-
-
         void tsEnhToDO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9483,8 +8401,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToEven_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9498,8 +8414,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToMinus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9513,8 +8427,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToMinus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9528,8 +8440,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToMinus3_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9543,8 +8453,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToNone_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9558,8 +8466,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToPlus1_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9573,8 +8479,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToPlus2_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9588,8 +8492,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToPlus3_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9603,8 +8505,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToPlus4_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9618,8 +8518,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToPlus5_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9633,8 +8531,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToSO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9647,8 +8543,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsEnhToTO_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character != null)
@@ -9661,8 +8555,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsExport_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9680,15 +8572,11 @@ namespace Hero_Designer
             frmForum2.ShowDialog(this);
             this.FloatTop(true);
         }
-
-
         void tsExportDataLink_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
             Interaction.MsgBox("The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, "Export Done");
         }
-
-
         void tsExportLong_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9707,14 +8595,10 @@ namespace Hero_Designer
             this.FloatTop(true);
             MidsContext.Config.LongExport = false;
         }
-
-
         void tsFileNew_Click(object sender, EventArgs e)
         {
             this.command_New();
         }
-
-
         void tsFileOpen_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
@@ -9734,32 +8618,22 @@ namespace Hero_Designer
             }
             this.FloatTop(true);
         }
-
-
         void tsFilePrint_Click(object sender, EventArgs e)
         {
             new frmPrint().ShowDialog(this);
         }
-
-
         void tsFileQuit_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void tsFileSave_Click(object sender, EventArgs e)
         {
             this.doSave();
         }
-
-
         void tsFileSaveAs_Click(object sender, EventArgs e)
         {
             this.doSaveAs();
         }
-
-
         void tsFlipAllEnh_Click(object sender, EventArgs e)
         {
             MainModule.MidsController.Toon.FlipAllSlots();
@@ -9767,8 +8641,6 @@ namespace Hero_Designer
             this.RefreshInfo();
             this.FloatUpdate(false);
         }
-
-
         void tsHelp_Click(object sender, EventArgs e)
         {
             frmReadme frmReadme = new frmReadme(OS.GetApplicationPath() + "readme.rtf")
@@ -9784,42 +8656,30 @@ namespace Hero_Designer
             frmReadme.ShowDialog(this);
             this.FloatTop(true);
         }
-
-
         void tsHelperLong_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, false).ShowDialog(this);
         }
-
-
         void tsHelperLong2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, true, true).ShowDialog(this);
         }
-
-
         void tsHelperShort_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, false).ShowDialog(this);
         }
-
-
         void tsHelperShort2_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
             new FrmInputLevel(ref iParent, false, true).ShowDialog(this);
         }
-
-
         void tsImport_Click(object sender, EventArgs e)
         {
             this.command_ForumImport();
         }
-
-
         void tsIODefault_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, false))
@@ -9831,8 +8691,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsIOMax_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, true))
@@ -9844,8 +8702,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsIOMin_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, true, false))
@@ -9857,8 +8713,6 @@ namespace Hero_Designer
                 this.DoRedraw();
             }
         }
-
-
         void tsLevelUp_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -9868,8 +8722,6 @@ namespace Hero_Designer
                 this.PowerModified();
             }
         }
-
-
         void tsPatchNotes_Click(object sender, EventArgs e)
         {
             string str = OS.GetApplicationPath() + "Data\\patch.rtf";
@@ -9895,20 +8747,14 @@ namespace Hero_Designer
                 this.FloatTop(true);
             }
         }
-
-
         void tsRecipeViewer_Click(object sender, EventArgs e)
         {
             this.FloatRecipe(true);
         }
-
-
         void tsDPSCalc_Click(object sender, EventArgs e)
         {
             this.FloatDPSCalc(true);
         }
-
-
         void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
@@ -9929,32 +8775,22 @@ namespace Hero_Designer
             }
             this.FloatTop(true);
         }
-
-
         void tsSetFind_Click(object sender, EventArgs e)
         {
             this.FloatSetFinder(true);
         }
-
-
         void tsTitanForum_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToForums();
         }
-
-
         void tsTitanPlanner_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToCoHPlanner();
         }
-
-
         void tsTitanSite_Click(object sender, EventArgs e)
         {
             clsXMLUpdate.GoToTitan();
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
@@ -9972,76 +8808,54 @@ namespace Hero_Designer
             }
             this.RefreshInfo();
         }
-
-
         void tsView2Col_Click(object sender, EventArgs e)
         {
             this.setColumns(2);
         }
-
-
         void tsView3Col_Click(object sender, EventArgs e)
         {
             this.setColumns(3);
         }
-
-
         void tsView4Col_Click(object sender, EventArgs e)
         {
             this.setColumns(4);
         }
-
-
         void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
             this.SetDamageMenuCheckMarks();
             this.DisplayFormatChanged();
         }
-
-
         void tsViewData_Click(object sender, EventArgs e)
         {
             this.FloatData(true);
         }
-
-
         void tsViewDPS_New_Click(object sender, EventArgs e)
         {
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.DPS;
             this.SetDamageMenuCheckMarks();
             this.DisplayFormatChanged();
         }
-
-
         void tsViewGraphs_Click(object sender, EventArgs e)
         {
             this.FloatStatGraph(true);
         }
-
-
         void tsViewIOLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.I9.DisplayIOLevels = !MidsContext.Config.I9.DisplayIOLevels;
             this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
             this.DoRedraw();
         }
-
-
         void tsViewRelative_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowEnhRel = !MidsContext.Config.ShowEnhRel;
             this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
             this.DoRedraw();
         }
-
-
         void tsViewSetCompare_Click(object sender, EventArgs e)
         {
             this.FloatCompareGraph(true);
         }
-
-
         void tsViewSets_Click(object sender, EventArgs e)
         {
             if (MainModule.MidsController.Toon != null)
@@ -10049,8 +8863,6 @@ namespace Hero_Designer
                 this.FloatSets(true);
             }
         }
-
-
         void tsViewSlotLevels_Click(object sender, EventArgs e)
         {
             MidsContext.Config.ShowSlotLevels = !MidsContext.Config.ShowSlotLevels;
@@ -10058,14 +8870,10 @@ namespace Hero_Designer
             this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
             this.DoRedraw();
         }
-
-
         void tsViewTotals_Click(object sender, EventArgs e)
         {
             this.FloatTotals(true);
         }
-
-
         void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate)
@@ -10074,8 +8882,6 @@ namespace Hero_Designer
                 this.DisplayName();
             }
         }
-
-
         public void UnSetMiniList()
         {
             if (this.fMini != null)
@@ -10085,8 +8891,6 @@ namespace Hero_Designer
             this.fMini = null;
             GC.Collect();
         }
-
-
         public void UpdateColours(bool skipDraw = false)
         {
             this.myDataView.DrawVillain = !MidsContext.Character.IsHero();
@@ -10179,8 +8983,6 @@ namespace Hero_Designer
                 this.pbDynMode.Refresh();
             }
         }
-
-
         void UpdateControls(bool ForceComplete = false)
         {
             this.NoUpdate = true;
@@ -10338,8 +9140,6 @@ namespace Hero_Designer
             this.DoResize();
             this.NoUpdate = false;
         }
-
-
         void UpdateDMBuffer()
         {
             if (this.Drawing != null && MainModule.MidsController.Toon != null)
@@ -10406,8 +9206,6 @@ namespace Hero_Designer
                 clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
             }
         }
-
-
         void UpdateDynamicModeInfo()
         {
             if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
@@ -10435,8 +9233,6 @@ namespace Hero_Designer
             }
             this.ibMode.TextOff = textOff;
         }
-
-
         void UpdateLLColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -10456,8 +9252,6 @@ namespace Hero_Designer
                 iList.ScrollButtonColor = Color.FromArgb(32, 32, 255);
             }
         }
-
-
         void UpdateOtherFormsFonts()
         {
             if (this.fIncarnate != null)
@@ -10572,8 +9366,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void UpdatePowerList(ref ListLabelV2 llPower)
         {
             llPower.SuspendRedraw = true;
@@ -10602,8 +9394,6 @@ namespace Hero_Designer
             }
             llPower.SuspendRedraw = false;
         }
-
-
         void UpdatePowerLists()
         {
             bool flag = false;
@@ -10691,8 +9481,6 @@ namespace Hero_Designer
             this.UpdatePowerList(ref llPower);
             this.llPool3 = llPower;
         }
-
-
         public virtual void GameImport(string buildString)
         {
             string str = "";
@@ -10979,15 +9767,11 @@ namespace Hero_Designer
                 Interaction.MsgBox("Invalid Import Data, Blame Sai!\nError: " + str, MsgBoxStyle.OkOnly, null);
             }
         }
-
-
         List<PowerEntry> sortPowerEntryList(List<PowerEntry> listPowerEntry)
         {
             listPowerEntry.Sort((PowerEntry p1, PowerEntry p2) => p1.Level.CompareTo(p2.Level));
             return listPowerEntry;
         }
-
-
         string[] BuildLineSplitter(string build)
         {
             string[] strArray = build.Split(new char[]
@@ -11001,880 +9785,408 @@ namespace Hero_Designer
             });
             return strArray;
         }
-
-
         [AccessedThroughProperty("accoladeButton")]
         ImageButton _accoladeButton;
-
-
         [AccessedThroughProperty("AccoladesWindowToolStripMenuItem")]
         ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
-
-
         [AccessedThroughProperty("AdvancedToolStripMenuItem1")]
         ToolStripMenuItem _AdvancedToolStripMenuItem1;
-
-
         [AccessedThroughProperty("AutoArrangeAllSlotsToolStripMenuItem")]
         ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
-
-
         [AccessedThroughProperty("cbAncillary")]
         ComboBox _cbAncillary;
-
-
         [AccessedThroughProperty("cbAT")]
         ComboBox _cbAT;
-
-
         [AccessedThroughProperty("cbOrigin")]
         ComboBox _cbOrigin;
-
-
         [AccessedThroughProperty("cbPool0")]
         ComboBox _cbPool0;
-
-
         [AccessedThroughProperty("cbPool1")]
         ComboBox _cbPool1;
-
-
         [AccessedThroughProperty("cbPool2")]
         ComboBox _cbPool2;
-
-
         [AccessedThroughProperty("cbPool3")]
         ComboBox _cbPool3;
-
-
         [AccessedThroughProperty("cbPrimary")]
         ComboBox _cbPrimary;
-
-
         [AccessedThroughProperty("cbSecondary")]
         ComboBox _cbSecondary;
-
-
         [AccessedThroughProperty("CharacterToolStripMenuItem")]
         ToolStripMenuItem _CharacterToolStripMenuItem;
-
-
         [AccessedThroughProperty("dlgOpen")]
         OpenFileDialog _dlgOpen;
-
-
         [AccessedThroughProperty("dlgSave")]
         SaveFileDialog _dlgSave;
-
-
         [AccessedThroughProperty("dvAnchored")]
         DataView _dvAnchored;
-
-
         [AccessedThroughProperty("FileToolStripMenuItem")]
         ToolStripMenuItem _FileToolStripMenuItem;
-
-
         [AccessedThroughProperty("HelpToolStripMenuItem1")]
         ToolStripMenuItem _HelpToolStripMenuItem1;
-
-
         [AccessedThroughProperty("heroVillain")]
         ImageButton _heroVillain;
-
-
         [AccessedThroughProperty("I9Picker")]
         I9Picker _I9Picker;
-
-
         [AccessedThroughProperty("I9Popup")]
         ctlPopUp _I9Popup;
-
-
         [AccessedThroughProperty("ibAccolade")]
         ImageButton _ibAccolade;
-
-
         [AccessedThroughProperty("ibMode")]
         ImageButton _ibMode;
-
-
         [AccessedThroughProperty("ibPopup")]
         ImageButton _ibPopup;
-
-
         [AccessedThroughProperty("ibPvX")]
         ImageButton _ibPvX;
-
-
         [AccessedThroughProperty("ibRecipe")]
         ImageButton _ibRecipe;
-
-
         [AccessedThroughProperty("ibSets")]
         ImageButton _ibSets;
-
-
         [AccessedThroughProperty("ibSlotLevels")]
         ImageButton _ibSlotLevels;
-
-
         [AccessedThroughProperty("ibTotals")]
         ImageButton _ibTotals;
-
-
         [AccessedThroughProperty("ibVetPools")]
         ImageButton _ibVetPools;
-
-
         [AccessedThroughProperty("ImportExportToolStripMenuItem")]
         ToolStripMenuItem _ImportExportToolStripMenuItem;
-
-
         [AccessedThroughProperty("incarnateButton")]
         ImageButton _incarnateButton;
-
-
         [AccessedThroughProperty("IncarnateWindowToolStripMenuItem")]
         ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
-
-
         [AccessedThroughProperty("InGameRespecHelperToolStripMenuItem")]
         ToolStripMenuItem _InGameRespecHelperToolStripMenuItem;
-
-
         [AccessedThroughProperty("lblAT")]
         GFXLabel _lblAT;
-
-
         [AccessedThroughProperty("lblATLocked")]
         Label _lblATLocked;
-
-
         [AccessedThroughProperty("lblEpic")]
         Label _lblEpic;
-
-
         [AccessedThroughProperty("lblHero")]
         GFXLabel _lblHero;
-
-
         [AccessedThroughProperty("lblLocked0")]
         Label _lblLocked0;
-
-
         [AccessedThroughProperty("lblLocked1")]
         Label _lblLocked1;
-
-
         [AccessedThroughProperty("lblLocked2")]
         Label _lblLocked2;
-
-
         [AccessedThroughProperty("lblLocked3")]
         Label _lblLocked3;
-
-
         [AccessedThroughProperty("lblLockedAncillary")]
         Label _lblLockedAncillary;
-
-
         [AccessedThroughProperty("lblLockedSecondary")]
         Label _lblLockedSecondary;
-
-
         [AccessedThroughProperty("lblName")]
         GFXLabel _lblName;
-
-
         [AccessedThroughProperty("lblOrigin")]
         GFXLabel _lblOrigin;
-
-
         [AccessedThroughProperty("lblPool1")]
         Label _lblPool1;
-
-
         [AccessedThroughProperty("lblPool2")]
         Label _lblPool2;
-
-
         [AccessedThroughProperty("lblPool3")]
         Label _lblPool3;
-
-
         [AccessedThroughProperty("lblPool4")]
         Label _lblPool4;
-
-
         [AccessedThroughProperty("lblPrimary")]
         Label _lblPrimary;
-
-
         [AccessedThroughProperty("lblSecondary")]
         Label _lblSecondary;
-
-
         [AccessedThroughProperty("llAncillary")]
         ListLabelV2 _llAncillary;
-
-
         [AccessedThroughProperty("llPool0")]
         ListLabelV2 _llPool0;
-
-
         [AccessedThroughProperty("llPool1")]
         ListLabelV2 _llPool1;
-
-
         [AccessedThroughProperty("llPool2")]
         ListLabelV2 _llPool2;
-
-
         [AccessedThroughProperty("llPool3")]
         ListLabelV2 _llPool3;
-
-
         [AccessedThroughProperty("llPrimary")]
         ListLabelV2 _llPrimary;
-
-
         [AccessedThroughProperty("llSecondary")]
         ListLabelV2 _llSecondary;
-
-
         [AccessedThroughProperty("MenuBar")]
         MenuStrip _MenuBar;
-
-
         [AccessedThroughProperty("OptionsToolStripMenuItem")]
         ToolStripMenuItem _OptionsToolStripMenuItem;
-
-
         [AccessedThroughProperty("pbDynMode")]
         PictureBox _pbDynMode;
-
-
         [AccessedThroughProperty("pnlGFX")]
         PictureBox _pnlGFX;
-
-
         [AccessedThroughProperty("pnlGFXFlow")]
         FlowLayoutPanel _pnlGFXFlow;
-
-
         [AccessedThroughProperty("SetAllIOsToDefault35ToolStripMenuItem")]
         ToolStripMenuItem _SetAllIOsToDefault35ToolStripMenuItem;
-
-
         [AccessedThroughProperty("SlotsToolStripMenuItem")]
         ToolStripMenuItem _SlotsToolStripMenuItem;
-
-
         [AccessedThroughProperty("TemporaryPowersWindowToolStripMenuItem")]
         ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
-
-
         [AccessedThroughProperty("tempPowersButton")]
         ImageButton _tempPowersButton;
-
-
         [AccessedThroughProperty("tlsDPA")]
         ToolStripMenuItem _tlsDPA;
-
-
         [AccessedThroughProperty("tmrGfx")]
         System.Windows.Forms.Timer _tmrGfx;
-
-
         [AccessedThroughProperty("ToolStripMenuItem1")]
         ToolStripMenuItem _ToolStripMenuItem1;
-
-
         [AccessedThroughProperty("ToolStripMenuItem2")]
         ToolStripMenuItem _ToolStripMenuItem2;
-
-
         [AccessedThroughProperty("ToolStripMenuItem4")]
         ToolStripSeparator _ToolStripMenuItem4;
-
-
         [AccessedThroughProperty("ToolStripSeparator1")]
         ToolStripSeparator _ToolStripSeparator1;
-
-
         [AccessedThroughProperty("ToolStripSeparator10")]
         ToolStripSeparator _ToolStripSeparator10;
-
-
         [AccessedThroughProperty("ToolStripSeparator11")]
         ToolStripSeparator _ToolStripSeparator11;
-
-
         [AccessedThroughProperty("ToolStripSeparator12")]
         ToolStripSeparator _ToolStripSeparator12;
-
-
         [AccessedThroughProperty("ToolStripSeparator13")]
         ToolStripSeparator _ToolStripSeparator13;
-
-
         [AccessedThroughProperty("ToolStripSeparator14")]
         ToolStripSeparator _ToolStripSeparator14;
-
-
         [AccessedThroughProperty("ToolStripSeparator15")]
         ToolStripSeparator _ToolStripSeparator15;
-
-
         [AccessedThroughProperty("ToolStripSeparator16")]
         ToolStripSeparator _ToolStripSeparator16;
-
-
         [AccessedThroughProperty("ToolStripSeparator17")]
         ToolStripSeparator _ToolStripSeparator17;
-
-
         [AccessedThroughProperty("ToolStripSeparator18")]
         ToolStripSeparator _ToolStripSeparator18;
-
-
         [AccessedThroughProperty("ToolStripSeparator19")]
         ToolStripSeparator _ToolStripSeparator19;
-
-
         [AccessedThroughProperty("ToolStripSeparator2")]
         ToolStripSeparator _ToolStripSeparator2;
-
-
         [AccessedThroughProperty("ToolStripSeparator20")]
         ToolStripSeparator _ToolStripSeparator20;
-
-
         [AccessedThroughProperty("ToolStripSeparator21")]
         ToolStripSeparator _ToolStripSeparator21;
-
-
         [AccessedThroughProperty("ToolStripSeparator22")]
         ToolStripSeparator _ToolStripSeparator22;
-
-
         [AccessedThroughProperty("ToolStripSeparator23")]
         ToolStripSeparator _ToolStripSeparator23;
-
-
         [AccessedThroughProperty("ToolStripSeparator24")]
         ToolStripSeparator _ToolStripSeparator24;
-
-
         [AccessedThroughProperty("ToolStripSeparator4")]
         ToolStripSeparator _ToolStripSeparator4;
-
-
         [AccessedThroughProperty("ToolStripSeparator5")]
         ToolStripSeparator _ToolStripSeparator5;
-
-
         [AccessedThroughProperty("ToolStripSeparator7")]
         ToolStripSeparator _ToolStripSeparator7;
-
-
         [AccessedThroughProperty("ToolStripSeparator8")]
         ToolStripSeparator _ToolStripSeparator8;
-
-
         [AccessedThroughProperty("ToolStripSeparator9")]
         ToolStripSeparator _ToolStripSeparator9;
-
-
         [AccessedThroughProperty("tsAbout")]
         ToolStripMenuItem _tsAbout;
-
-
         [AccessedThroughProperty("tsAdvDBEdit")]
         ToolStripMenuItem _tsAdvDBEdit;
-
-
         [AccessedThroughProperty("tsAdvFreshInstall")]
         ToolStripMenuItem _tsAdvFreshInstall;
-
-
         [AccessedThroughProperty("tsAdvResetTips")]
         ToolStripMenuItem _tsAdvResetTips;
-
-
         [AccessedThroughProperty("tsBug")]
         ToolStripMenuItem _tsBug;
-
-
         [AccessedThroughProperty("tsClearAllEnh")]
         ToolStripMenuItem _tsClearAllEnh;
-
-
         [AccessedThroughProperty("tsConfig")]
         ToolStripMenuItem _tsConfig;
-
-
         [AccessedThroughProperty("tsDonate")]
         ToolStripMenuItem _tsDonate;
-
-
         [AccessedThroughProperty("tsDynamic")]
         ToolStripMenuItem _tsDynamic;
-
-
         [AccessedThroughProperty("tsEnhToDO")]
         ToolStripMenuItem _tsEnhToDO;
-
-
         [AccessedThroughProperty("tsEnhToEven")]
         ToolStripMenuItem _tsEnhToEven;
-
-
         [AccessedThroughProperty("tsEnhToMinus1")]
         ToolStripMenuItem _tsEnhToMinus1;
-
-
         [AccessedThroughProperty("tsEnhToMinus2")]
         ToolStripMenuItem _tsEnhToMinus2;
-
-
         [AccessedThroughProperty("tsEnhToMinus3")]
         ToolStripMenuItem _tsEnhToMinus3;
-
-
         [AccessedThroughProperty("tsEnhToNone")]
         ToolStripMenuItem _tsEnhToNone;
-
-
         [AccessedThroughProperty("tsEnhToPlus1")]
         ToolStripMenuItem _tsEnhToPlus1;
-
-
         [AccessedThroughProperty("tsEnhToPlus2")]
         ToolStripMenuItem _tsEnhToPlus2;
-
-
         [AccessedThroughProperty("tsEnhToPlus3")]
         ToolStripMenuItem _tsEnhToPlus3;
-
-
         [AccessedThroughProperty("tsEnhToPlus4")]
         ToolStripMenuItem _tsEnhToPlus4;
-
-
         [AccessedThroughProperty("tsEnhToPlus5")]
         ToolStripMenuItem _tsEnhToPlus5;
-
-
         [AccessedThroughProperty("tsEnhToSO")]
         ToolStripMenuItem _tsEnhToSO;
-
-
         [AccessedThroughProperty("tsEnhToTO")]
         ToolStripMenuItem _tsEnhToTO;
-
-
         [AccessedThroughProperty("tsExport")]
         ToolStripMenuItem _tsExport;
-
-
         [AccessedThroughProperty("tsExportDataLink")]
         ToolStripMenuItem _tsExportDataLink;
-
-
         [AccessedThroughProperty("tsExportLong")]
         ToolStripMenuItem _tsExportLong;
-
-
         [AccessedThroughProperty("tsFileNew")]
         ToolStripMenuItem _tsFileNew;
-
-
         [AccessedThroughProperty("tsFileOpen")]
         ToolStripMenuItem _tsFileOpen;
-
-
         [AccessedThroughProperty("tsFilePrint")]
         ToolStripMenuItem _tsFilePrint;
-
-
         [AccessedThroughProperty("tsFileQuit")]
         ToolStripMenuItem _tsFileQuit;
-
-
         [AccessedThroughProperty("tsFileSave")]
         ToolStripMenuItem _tsFileSave;
-
-
         [AccessedThroughProperty("tsFileSaveAs")]
         ToolStripMenuItem _tsFileSaveAs;
-
-
         [AccessedThroughProperty("tsFlipAllEnh")]
         ToolStripMenuItem _tsFlipAllEnh;
-
-
         [AccessedThroughProperty("tsHelp")]
         ToolStripMenuItem _tsHelp;
-
-
         [AccessedThroughProperty("tsHelperLong")]
         ToolStripMenuItem _tsHelperLong;
-
-
         [AccessedThroughProperty("tsHelperLong2")]
         ToolStripMenuItem _tsHelperLong2;
-
-
         [AccessedThroughProperty("tsHelperShort")]
         ToolStripMenuItem _tsHelperShort;
-
-
         [AccessedThroughProperty("tsHelperShort2")]
         ToolStripMenuItem _tsHelperShort2;
-
-
         [AccessedThroughProperty("tsImport")]
         ToolStripMenuItem _tsImport;
-
-
         [AccessedThroughProperty("tsIODefault")]
         ToolStripMenuItem _tsIODefault;
-
-
         [AccessedThroughProperty("tsIOMax")]
         ToolStripMenuItem _tsIOMax;
-
-
         [AccessedThroughProperty("tsIOMin")]
         ToolStripMenuItem _tsIOMin;
-
-
         [AccessedThroughProperty("tsLevelUp")]
         ToolStripMenuItem _tsLevelUp;
-
-
         [AccessedThroughProperty("tsPatchNotes")]
         ToolStripMenuItem _tsPatchNotes;
-
-
         [AccessedThroughProperty("tsRecipeViewer")]
         ToolStripMenuItem _tsRecipeViewer;
-
-
         [AccessedThroughProperty("tsDPSCalc")]
         ToolStripMenuItem _tsDPSCalc;
-
-
         [AccessedThroughProperty("tsRemoveAllSlots")]
         ToolStripMenuItem _tsRemoveAllSlots;
-
-
         [AccessedThroughProperty("tsSetFind")]
         ToolStripMenuItem _tsSetFind;
-
-
         [AccessedThroughProperty("tsTitanForum")]
         ToolStripMenuItem _tsTitanForum;
-
-
         [AccessedThroughProperty("tsTitanPlanner")]
         ToolStripMenuItem _tsTitanPlanner;
-
-
         [AccessedThroughProperty("tsTitanSite")]
         ToolStripMenuItem _tsTitanSite;
-
-
         [AccessedThroughProperty("tsUpdateCheck")]
         ToolStripMenuItem _tsUpdateCheck;
-
-
         [AccessedThroughProperty("tsView2Col")]
         ToolStripMenuItem _tsView2Col;
-
-
         [AccessedThroughProperty("tsView3Col")]
         ToolStripMenuItem _tsView3Col;
-
-
         [AccessedThroughProperty("tsView4Col")]
         ToolStripMenuItem _tsView4Col;
-
-
         [AccessedThroughProperty("tsViewActualDamage_New")]
         ToolStripMenuItem _tsViewActualDamage_New;
-
-
         [AccessedThroughProperty("tsViewData")]
         ToolStripMenuItem _tsViewData;
-
-
         [AccessedThroughProperty("tsViewDPS_New")]
         ToolStripMenuItem _tsViewDPS_New;
-
-
         [AccessedThroughProperty("tsViewGraphs")]
         ToolStripMenuItem _tsViewGraphs;
-
-
         [AccessedThroughProperty("tsViewIOLevels")]
         ToolStripMenuItem _tsViewIOLevels;
-
-
         [AccessedThroughProperty("tsViewRelative")]
         ToolStripMenuItem _tsViewRelative;
-
-
         [AccessedThroughProperty("tsViewSetCompare")]
         ToolStripMenuItem _tsViewSetCompare;
-
-
         [AccessedThroughProperty("tsViewSets")]
         ToolStripMenuItem _tsViewSets;
-
-
         [AccessedThroughProperty("tsViewSlotLevels")]
         ToolStripMenuItem _tsViewSlotLevels;
-
-
         [AccessedThroughProperty("tsViewTotals")]
         ToolStripMenuItem _tsViewTotals;
-
-
         [AccessedThroughProperty("tTip")]
         ToolTip _tTip;
-
-
         [AccessedThroughProperty("txtName")]
         TextBox _txtName;
-
-
         [AccessedThroughProperty("ViewToolStripMenuItem")]
         ToolStripMenuItem _ViewToolStripMenuItem;
-
-
         [AccessedThroughProperty("WindowToolStripMenuItem")]
         ToolStripMenuItem _WindowToolStripMenuItem;
-
-
         protected Rectangle ActivePopupBounds;
-
-
         public bool DataViewLocked;
-
-
         short[] ddsa;
-
-
         ExtendedBitmap dmBuffer;
-
-
         bool DoneDblClick;
-
-
         int dragFinishPower;
-
-
         int dragFinishSlot;
-
-
         Rectangle dragRect;
-
-
         int dragStartPower;
-
-
         int dragStartSlot;
-
-
         int dragStartX;
-
-
         int dragStartY;
-
-
         int dragXOffset;
-
-
         int dragYOffset;
-
-
         public clsDrawX Drawing;
-
-
         public int dvLastEnh;
-
-
         public bool dvLastNoLev;
-
-
         public int dvLastPower;
-
-
         public int EnhancingPower;
-
-
         public int EnhancingSlot;
-
-
         public bool EnhPickerActive;
-
-
         protected frmAccolade fAccolade;
-
-
         protected frmData fData;
-
-
         protected frmCompare fGraphCompare;
-
-
         protected frmStats fGraphStats;
-
-
         public bool FileModified;
-
-
         protected frmIncarnate fIncarnate;
-
-
         protected bool FlipActive;
-
-
         protected PowerEntry FlipGP;
-
-
         protected int FlipInterval;
-
-
         protected int FlipPowerID;
-
-
         protected int[] FlipSlotState;
-
-
         protected int FlipStepDelay;
-
-
         protected int FlipSteps;
-
-
         public frmFloatingStats FloatingDataForm;
-
-
         protected frmMiniList fMini;
-
-
         protected frmRecipeViewer fRecipe;
-
-
         protected frmDPSCalc fDPSCalc;
-
-
         protected frmSetFind fSetFinder;
-
-
         protected frmSetViewer fSets;
-
-
         protected frmAccolade fTemp;
-
-
         protected frmTotals fTotals;
-
-
         bool HasSentBack;
-
-
         bool HasSentForwards;
-
-
         public bool LastClickPlacedSlot;
-
-
         public int LastEnhIndex;
-
-
         public I9Slot LastEnhPlaced;
-
-
         public string LastFileName;
-
-
         public int LastIndex;
-
-
         protected FormWindowState LastState;
-
-
         public DataView myDataView;
-
-
         bool NoResizeEvent;
-
-
         public bool NoUpdate;
-
-
         Rectangle oldDragRect;
-
-
         public int PickerHID;
-
-
         protected bool PopUpVisible;
-
-
         bool top_fData;
-
-
         bool top_fGraphCompare;
-
-
         bool top_fGraphStats;
-
-
         bool top_fRecipe;
-
-
         bool top_fSetFinder;
-
-
         bool top_fSets;
-
-
         bool top_fTotals;
-
-
         int xCursorOffset;
-
-
         int yCursorOffset;
-
-
         struct BuildFileLines
         {
 
             public string powerSetName;
-
-
             public string powerName;
-
-
             public int powerLevel;
-
-
             public int powerSlotsAmount;
-
-
             public string enhancementName;
-
-
             public int enhancementLevel;
-
-
             public int enhancementRelativeLevel;
         }
     }

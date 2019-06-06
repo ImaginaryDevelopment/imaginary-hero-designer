@@ -15,8 +15,6 @@ namespace Hero_Designer
 
     public partial class frmAccolade : Form
     {
-
-    
     
         internal virtual ImageButton ibClose
         {
@@ -39,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLock
         {
             get
@@ -64,10 +58,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llLeft
         {
             get
@@ -95,10 +85,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llRight
         {
             get
@@ -126,10 +112,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -142,10 +124,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPopUp PopInfo
         {
             get
@@ -170,10 +148,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual VScrollBar VScrollBar1
         {
             get
@@ -195,8 +169,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmAccolade(ref frmMain iParent, List<IPower> iPowers)
         {
             base.Load += this.frmAccolade_Load;
@@ -205,16 +177,12 @@ namespace Hero_Designer
             this._myParent = iParent;
             this._myPowers = iPowers;
         }
-
-
         void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
             this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
-
-
         void FillLists()
         {
             this.llLeft.SuspendRedraw = true;
@@ -264,8 +232,6 @@ namespace Hero_Designer
             this.llLeft.Refresh();
             this.llRight.Refresh();
         }
-
-
         void frmAccolade_Load(object sender, EventArgs e)
         {
             this.BackColor = this._myParent.BackColor;
@@ -287,21 +253,15 @@ namespace Hero_Designer
             this.ChangedScrollFrameContents();
             this.FillLists();
         }
-
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void lblLock_Click(object sender, EventArgs e)
         {
             this._locked = false;
             this.lblLock.Visible = false;
         }
-
-
         void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
@@ -327,14 +287,10 @@ namespace Hero_Designer
                 this._myParent.PowerModified();
             }
         }
-
-
         void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.MiniPowerInfo(Item.Index);
         }
-
-
         void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -342,8 +298,6 @@ namespace Hero_Designer
                 this.Panel2.Focus();
             }
         }
-
-
         void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
@@ -370,21 +324,15 @@ namespace Hero_Designer
                 this._myParent.PowerModified();
             }
         }
-
-
         void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.MiniPowerInfo(pIDX);
         }
-
-
         void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         void MiniPowerInfo(int pIDX)
         {
             if (!this._locked)
@@ -496,8 +444,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -505,8 +451,6 @@ namespace Hero_Designer
                 this.VScrollBar1.Focus();
             }
         }
-
-
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -516,8 +460,6 @@ namespace Hero_Designer
             }
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
-
-
         static void UpdateLlColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -528,47 +470,25 @@ namespace Hero_Designer
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
             iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
-
-
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.PopInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.PopInfo.lHeight - (float)this.Panel1.Height));
         }
-
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-
         [AccessedThroughProperty("lblLock")]
         Label _lblLock;
-
-
         [AccessedThroughProperty("llLeft")]
         ListLabelV2 _llLeft;
-
-
         [AccessedThroughProperty("llRight")]
         ListLabelV2 _llRight;
-
-
         bool _locked;
-
-
         readonly frmMain _myParent;
-
-
         readonly List<IPower> _myPowers;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("PopInfo")]
         ctlPopUp _PopInfo;
-
-
         [AccessedThroughProperty("VScrollBar1")]
         VScrollBar _VScrollBar1;
     }

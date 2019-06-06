@@ -12,8 +12,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -205,8 +203,6 @@
             this.Text = "Enhancement Editor";
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

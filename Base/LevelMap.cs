@@ -25,8 +25,6 @@ public class LevelMap
             throw;
         }
     }
-
-
     public Enums.dmItem LevelType()
     {
         Enums.dmItem result;
@@ -44,10 +42,6 @@ public class LevelMap
         }
         return result;
     }
-
-
     public readonly int Powers;
-
-
     public readonly int Slots;
 }

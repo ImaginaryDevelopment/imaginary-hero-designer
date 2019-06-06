@@ -9,12 +9,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class FrmInputLevel : Form
     {
-
-    
     
         internal virtual Button btnOK
         {
@@ -37,10 +33,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -53,10 +45,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udLevel
         {
             get
@@ -78,8 +66,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public FrmInputLevel(ref frmMain iParent, bool iLF, bool iMode2)
         {
             base.Load += this.FrmInputLevel_Load;
@@ -88,8 +74,6 @@ namespace Hero_Designer
             this.LongFormat = iLF;
             this.Mode2 = iMode2;
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             int num;
@@ -119,37 +103,21 @@ namespace Hero_Designer
             }
             base.Close();
         }
-
-
         void FrmInputLevel_Load(object sender, EventArgs e)
         {
         }
-
-
         void udLevel_Leave(object sender, EventArgs e)
         {
             this.udLevel.Validate();
         }
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("udLevel")]
         NumericUpDown _udLevel;
-
-
         bool LongFormat;
-
-
         bool Mode2;
-
-
         frmMain myparent;
     }
 }

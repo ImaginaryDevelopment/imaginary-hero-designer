@@ -9,12 +9,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmRecipeEdit : Form
     {
-
-    
     
         internal virtual Button btnAdd
         {
@@ -37,10 +33,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCancel
         {
             get
@@ -62,10 +54,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDel
         {
             get
@@ -87,10 +75,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDown
         {
             get
@@ -103,10 +87,6 @@ namespace Hero_Designer
                 this._btnDown = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnGuessCost
         {
             get
@@ -128,10 +108,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnI20
         {
             get
@@ -153,10 +129,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnI25
         {
             get
@@ -178,10 +150,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnI40
         {
             get
@@ -203,10 +171,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnI50
         {
             get
@@ -228,10 +192,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -253,10 +213,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImportUpdate
         {
             get
@@ -269,10 +225,6 @@ namespace Hero_Designer
                 this._btnImportUpdate = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnIncrement
         {
             get
@@ -294,10 +246,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -319,10 +267,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRAdd
         {
             get
@@ -344,10 +288,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRDel
         {
             get
@@ -369,10 +309,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRDown
         {
             get
@@ -385,10 +321,6 @@ namespace Hero_Designer
                 this._btnRDown = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnReGuess
         {
             get
@@ -410,10 +342,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRunSeq
         {
             get
@@ -435,10 +363,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnRUp
         {
             get
@@ -451,10 +375,6 @@ namespace Hero_Designer
                 this._btnRUp = value;
             }
         }
-
-
-    
-    
         internal virtual Button btnUp
         {
             get
@@ -467,10 +387,6 @@ namespace Hero_Designer
                 this._btnUp = value;
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbEnh
         {
             get
@@ -492,10 +408,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbRarity
         {
             get
@@ -517,10 +429,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSal0
         {
             get
@@ -542,10 +450,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSal1
         {
             get
@@ -567,10 +471,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSal2
         {
             get
@@ -592,10 +492,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSal3
         {
             get
@@ -617,10 +513,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSal4
         {
             get
@@ -642,10 +534,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -658,10 +546,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -674,10 +558,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -690,10 +570,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -706,10 +582,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -722,10 +594,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -738,10 +606,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -754,10 +618,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -770,10 +630,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -786,10 +642,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label12
         {
             get
@@ -802,10 +654,6 @@ namespace Hero_Designer
                 this._Label12 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label13
         {
             get
@@ -818,10 +666,6 @@ namespace Hero_Designer
                 this._Label13 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label14
         {
             get
@@ -834,10 +678,6 @@ namespace Hero_Designer
                 this._Label14 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label15
         {
             get
@@ -850,10 +690,6 @@ namespace Hero_Designer
                 this._Label15 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -866,10 +702,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -882,10 +714,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -898,10 +726,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -914,10 +738,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -930,10 +750,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -946,10 +762,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -962,10 +774,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -978,10 +786,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblEnh
         {
             get
@@ -994,10 +798,6 @@ namespace Hero_Designer
                 this._lblEnh = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lstItems
         {
             get
@@ -1019,10 +819,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvDPA
         {
             get
@@ -1044,10 +840,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtExtern
         {
             get
@@ -1069,10 +861,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtRecipeName
         {
             get
@@ -1094,10 +882,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udBuy
         {
             get
@@ -1122,10 +906,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udBuyM
         {
             get
@@ -1150,10 +930,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udCraft
         {
             get
@@ -1178,10 +954,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udCraftM
         {
             get
@@ -1206,10 +978,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udLevel
         {
             get
@@ -1234,10 +1002,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udSal0
         {
             get
@@ -1262,10 +1026,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udSal1
         {
             get
@@ -1290,10 +1050,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udSal2
         {
             get
@@ -1318,10 +1074,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udSal3
         {
             get
@@ -1346,10 +1098,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udSal4
         {
             get
@@ -1374,16 +1122,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmRecipeEdit()
         {
             base.Load += this.frmRecipeEdit_Load;
             this.NoUpdate = true;
             this.InitializeComponent();
         }
-
-
         void AddListItem(int Index)
         {
             if (Index > -1 & Index < DatabaseAPI.Database.Recipes.Length)
@@ -1403,8 +1147,6 @@ namespace Hero_Designer
                 this.lvDPA.Items.Add(new ListViewItem(array));
             }
         }
-
-
         static void AssignNewRecipes()
         {
             int num = DatabaseAPI.Database.Recipes.Length - 1;
@@ -1417,8 +1159,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnAdd_Click(object sender, EventArgs e)
         {
             if (this.RecipeID() >= 0)
@@ -1430,15 +1170,11 @@ namespace Hero_Designer
                 this.UpdateListItem(this.RecipeID());
             }
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             DatabaseAPI.LoadRecipes();
             base.Close();
         }
-
-
         void btnDel_Click(object sender, EventArgs e)
         {
             if (this.RecipeID() >= 0 && this.lstItems.SelectedIndex >= 0)
@@ -1464,8 +1200,6 @@ namespace Hero_Designer
                 this.ShowRecipeInfo(this.RecipeID());
             }
         }
-
-
         void btnGuessCost_Click(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() >= 0 && this.EntryID() >= 0)
@@ -1474,32 +1208,22 @@ namespace Hero_Designer
                 this.udCraft.Value = new decimal(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCost);
             }
         }
-
-
         void btnI20_Click(object sender, EventArgs e)
         {
             this.IncrementX(19);
         }
-
-
         void btnI25_Click(object sender, EventArgs e)
         {
             this.IncrementX(24);
         }
-
-
         void btnI40_Click(object sender, EventArgs e)
         {
             this.IncrementX(39);
         }
-
-
         void btnI50_Click(object sender, EventArgs e)
         {
             this.IncrementX(49);
         }
-
-
         void btnImport_Click(object sender, EventArgs e)
         {
             if (Interaction.MsgBox("Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Careful...") == MsgBoxResult.Yes)
@@ -1599,8 +1323,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
             }
         }
-
-
         void btnIncrement_Click(object sender, EventArgs e)
         {
             if (this.RecipeID() >= 0 && !(DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53))
@@ -1615,8 +1337,6 @@ namespace Hero_Designer
                 this.lstItems.SelectedIndex = this.lstItems.Items.Count - 1;
             }
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             frmRecipeEdit.AssignNewRecipes();
@@ -1626,8 +1346,6 @@ namespace Hero_Designer
             DatabaseAPI.SaveEnhancementDb();
             base.Close();
         }
-
-
         void btnRAdd_Click(object sender, EventArgs e)
         {
             IDatabase database = DatabaseAPI.Database;
@@ -1640,8 +1358,6 @@ namespace Hero_Designer
             this.cbEnh.Select();
             this.cbEnh.SelectAll();
         }
-
-
         void btnRDel_Click(object sender, EventArgs e)
         {
             if (this.RecipeID() >= 0)
@@ -1679,8 +1395,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnRunSeq_Click(object sender, EventArgs e)
         {
             int enhIdx = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1].EnhIdx;
@@ -1704,15 +1418,11 @@ namespace Hero_Designer
             this.cbEnh.Select();
             this.cbEnh.SelectAll();
         }
-
-
         void Button1_Click(object sender, EventArgs e)
         {
             DatabaseAPI.GuessRecipes();
             DatabaseAPI.AssignRecipeIDs();
         }
-
-
         void cbEnh_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() > -1 && this.cbEnh.SelectedIndex > -1)
@@ -1739,8 +1449,6 @@ namespace Hero_Designer
                 this.UpdateListItem(this.RecipeID());
             }
         }
-
-
         void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() > -1 && this.cbRarity.SelectedIndex > -1)
@@ -1749,8 +1457,6 @@ namespace Hero_Designer
                 this.UpdateListItem(this.RecipeID());
             }
         }
-
-
         void cbSalX_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() >= 0 && this.EntryID() >= 0)
@@ -1787,8 +1493,6 @@ namespace Hero_Designer
                 this.SetSalvageStringFromIDX(this.RecipeID(), this.EntryID(), 4);
             }
         }
-
-
         protected void ClearEntryInfo()
         {
             this.udLevel.Value = 1m;
@@ -1822,8 +1526,6 @@ namespace Hero_Designer
             this.udSal4.Value = 0m;
             this.udSal4.Enabled = false;
         }
-
-
         protected void ClearInfo()
         {
             this.txtRecipeName.Text = "";
@@ -1834,8 +1536,6 @@ namespace Hero_Designer
             this.txtExtern.Text = "";
             this.ClearEntryInfo();
         }
-
-
         protected int EntryID()
         {
             int result;
@@ -1849,8 +1549,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         protected void FillList()
         {
             this.lvDPA.BeginUpdate();
@@ -1866,8 +1564,6 @@ namespace Hero_Designer
                 this.lvDPA.Items[0].Selected = true;
             }
         }
-
-
         void frmRecipeEdit_Load(object sender, EventArgs e)
         {
             Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
@@ -1923,8 +1619,6 @@ namespace Hero_Designer
             this.NoUpdate = false;
             this.FillList();
         }
-
-
         protected int GetCostByLevel(int iLevelZB)
         {
             int[] numArray = new int[]
@@ -1998,8 +1692,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         void IncrementX(int nMax)
         {
             if (this.RecipeID() >= 0 && !(DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53))
@@ -2019,8 +1711,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void lstItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvDPA.SelectedIndices.Count > 0)
@@ -2032,8 +1722,6 @@ namespace Hero_Designer
                 this.ClearEntryInfo();
             }
         }
-
-
         void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvDPA.SelectedIndices.Count > 0)
@@ -2045,8 +1733,6 @@ namespace Hero_Designer
                 this.ClearInfo();
             }
         }
-
-
         int MinMax(int iValue, NumericUpDown iControl)
         {
             if (decimal.Compare(new decimal(iValue), iControl.Minimum) < 0)
@@ -2059,8 +1745,6 @@ namespace Hero_Designer
             }
             return iValue;
         }
-
-
         protected int RecipeID()
         {
             int result;
@@ -2074,8 +1758,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         public void SetSalvageStringFromIDX(int iRecipe, int iItem, int iIndex)
         {
             if (DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].SalvageIdx[iIndex] > -1)
@@ -2087,8 +1769,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes[iRecipe].Item[iItem].Salvage[iIndex] = "";
             }
         }
-
-
         protected void ShowEntryInfo(int rIDX, int iIDX)
         {
             if (rIDX < 0 | rIDX > DatabaseAPI.Database.Recipes.Length - 1)
@@ -2136,8 +1816,6 @@ namespace Hero_Designer
                 this.NoUpdate = false;
             }
         }
-
-
         protected void ShowRecipeInfo(int Index)
         {
             if (Index < 0 | Index > DatabaseAPI.Database.Recipes.Length - 1)
@@ -2172,8 +1850,6 @@ namespace Hero_Designer
                 this.NoUpdate = false;
             }
         }
-
-
         void txtExtern_TextChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() > -1)
@@ -2181,8 +1857,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes[this.RecipeID()].ExternalName = this.txtExtern.Text;
             }
         }
-
-
         void txtRecipeName_TextChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() > -1)
@@ -2191,8 +1865,6 @@ namespace Hero_Designer
                 this.UpdateListItem(this.RecipeID());
             }
         }
-
-
         void udCostX_Leave(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() >= 0 && this.EntryID() >= 0)
@@ -2204,8 +1876,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCostM = this.MinMax((int)Math.Round(Conversion.Val(this.udCraftM.Text.Replace(",", "").Replace(".", ""))), this.udCraftM);
             }
         }
-
-
         void udCostX_ValueChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() >= 0 && this.EntryID() >= 0)
@@ -2217,8 +1887,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCostM = Convert.ToInt32(this.udCraftM.Value);
             }
         }
-
-
         void udSalX_Leave(object sender, EventArgs e)
         {
             DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[0] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal0.Text)), this.udSal0);
@@ -2227,8 +1895,6 @@ namespace Hero_Designer
             DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[3] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal3.Text)), this.udSal3);
             DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[4] = this.MinMax((int)Math.Round(Conversion.Val(this.udSal4.Text)), this.udSal4);
         }
-
-
         void udSalX_ValueChanged(object sender, EventArgs e)
         {
             if (!this.NoUpdate && this.RecipeID() >= 0 && this.EntryID() >= 0)
@@ -2240,8 +1906,6 @@ namespace Hero_Designer
                 DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[4] = Convert.ToInt32(this.udSal4.Value);
             }
         }
-
-
         protected void UpdateListItem(int index)
         {
             if (index > -1 & index < DatabaseAPI.Database.Recipes.Length)
@@ -2259,260 +1923,132 @@ namespace Hero_Designer
                 this.lvDPA.Items[index].SubItems[3].Text = Conversions.ToString(DatabaseAPI.Database.Recipes[index].Item.Length);
             }
         }
-
-
         [AccessedThroughProperty("btnAdd")]
         Button _btnAdd;
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnDel")]
         Button _btnDel;
-
-
         [AccessedThroughProperty("btnDown")]
         Button _btnDown;
-
-
         [AccessedThroughProperty("btnGuessCost")]
         Button _btnGuessCost;
-
-
         [AccessedThroughProperty("btnI20")]
         Button _btnI20;
-
-
         [AccessedThroughProperty("btnI25")]
         Button _btnI25;
-
-
         [AccessedThroughProperty("btnI40")]
         Button _btnI40;
-
-
         [AccessedThroughProperty("btnI50")]
         Button _btnI50;
-
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
-
         [AccessedThroughProperty("btnImportUpdate")]
         Button _btnImportUpdate;
-
-
         [AccessedThroughProperty("btnIncrement")]
         Button _btnIncrement;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnRAdd")]
         Button _btnRAdd;
-
-
         [AccessedThroughProperty("btnRDel")]
         Button _btnRDel;
-
-
         [AccessedThroughProperty("btnRDown")]
         Button _btnRDown;
-
-
         [AccessedThroughProperty("btnReGuess")]
         Button _btnReGuess;
-
-
         [AccessedThroughProperty("btnRunSeq")]
         Button _btnRunSeq;
-
-
         [AccessedThroughProperty("btnRUp")]
         Button _btnRUp;
-
-
         [AccessedThroughProperty("btnUp")]
         Button _btnUp;
-
-
         [AccessedThroughProperty("cbEnh")]
         ComboBox _cbEnh;
-
-
         [AccessedThroughProperty("cbRarity")]
         ComboBox _cbRarity;
-
-
         [AccessedThroughProperty("cbSal0")]
         ComboBox _cbSal0;
-
-
         [AccessedThroughProperty("cbSal1")]
         ComboBox _cbSal1;
-
-
         [AccessedThroughProperty("cbSal2")]
         ComboBox _cbSal2;
-
-
         [AccessedThroughProperty("cbSal3")]
         ComboBox _cbSal3;
-
-
         [AccessedThroughProperty("cbSal4")]
         ComboBox _cbSal4;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label12")]
         Label _Label12;
-
-
         [AccessedThroughProperty("Label13")]
         Label _Label13;
-
-
         [AccessedThroughProperty("Label14")]
         Label _Label14;
-
-
         [AccessedThroughProperty("Label15")]
         Label _Label15;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("lblEnh")]
         Label _lblEnh;
-
-
         [AccessedThroughProperty("lstItems")]
         ListBox _lstItems;
-
-
         [AccessedThroughProperty("lvDPA")]
         ListView _lvDPA;
-
-
         [AccessedThroughProperty("txtExtern")]
         TextBox _txtExtern;
-
-
         [AccessedThroughProperty("txtRecipeName")]
         TextBox _txtRecipeName;
-
-
         [AccessedThroughProperty("udBuy")]
         NumericUpDown _udBuy;
-
-
         [AccessedThroughProperty("udBuyM")]
         NumericUpDown _udBuyM;
-
-
         [AccessedThroughProperty("udCraft")]
         NumericUpDown _udCraft;
-
-
         [AccessedThroughProperty("udCraftM")]
         NumericUpDown _udCraftM;
-
-
         [AccessedThroughProperty("udLevel")]
         NumericUpDown _udLevel;
-
-
         [AccessedThroughProperty("udSal0")]
         NumericUpDown _udSal0;
-
-
         [AccessedThroughProperty("udSal1")]
         NumericUpDown _udSal1;
-
-
         [AccessedThroughProperty("udSal2")]
         NumericUpDown _udSal2;
-
-
         [AccessedThroughProperty("udSal3")]
         NumericUpDown _udSal3;
-
-
         [AccessedThroughProperty("udSal4")]
         NumericUpDown _udSal4;
-
-
         protected bool NoUpdate;
     }
 }

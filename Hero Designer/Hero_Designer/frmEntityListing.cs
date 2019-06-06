@@ -9,12 +9,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmEntityListing : Form
     {
-
-    
     
         internal virtual Button btnAdd
         {
@@ -37,10 +33,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCancel
         {
             get
@@ -62,10 +54,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClone
         {
             get
@@ -87,10 +75,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDelete
         {
             get
@@ -112,10 +96,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDown
         {
             get
@@ -137,10 +117,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnedit
         {
             get
@@ -162,10 +138,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -187,10 +159,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUp
         {
             get
@@ -212,10 +180,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -228,10 +192,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -244,10 +204,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -260,10 +216,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvEntity
         {
             get
@@ -285,15 +237,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmEntityListing()
         {
             base.Load += this.frmEntityListing_Load;
             this.InitializeComponent();
         }
-
-
         void btnAdd_Click(object sender, EventArgs e)
         {
             SummonedEntity iEntity = new SummonedEntity();
@@ -326,8 +274,6 @@ namespace Hero_Designer
                 this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
             }
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             this.BusyMsg("Re-Indexing...");
@@ -336,8 +282,6 @@ namespace Hero_Designer
             this.BusyHide();
             base.Hide();
         }
-
-
         void btnClone_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -359,8 +303,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0 && Interaction.MsgBox("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -397,8 +339,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -419,8 +359,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -434,16 +372,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.MatchSummonIDs();
             DatabaseAPI.SaveMainDatabase();
             base.Hide();
         }
-
-
         void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lvEntity.SelectedIndices.Count > 0)
@@ -464,8 +398,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void BusyHide()
         {
             if (this.bFrm != null)
@@ -474,8 +406,6 @@ namespace Hero_Designer
                 this.bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this.bFrm == null)
@@ -485,8 +415,6 @@ namespace Hero_Designer
             }
             this.bFrm.SetMessage(sMessage);
         }
-
-
         public void DisplayList()
         {
             this.lvEntity.BeginUpdate();
@@ -503,14 +431,10 @@ namespace Hero_Designer
             }
             this.lvEntity.EndUpdate();
         }
-
-
         void frmEntityListing_Load(object sender, EventArgs e)
         {
             this.DisplayList();
         }
-
-
         public void ListAddItem(int Index)
         {
             string[] items = new string[]
@@ -523,8 +447,6 @@ namespace Hero_Designer
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].Selected = true;
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].EnsureVisible();
         }
-
-
         public void ListUpdateItem(int Index)
         {
             string[] strArray = new string[]
@@ -541,62 +463,34 @@ namespace Hero_Designer
             this.lvEntity.Items[Index].EnsureVisible();
             this.lvEntity.Refresh();
         }
-
-
         void lvEntity_DoubleClick(object sender, EventArgs e)
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         [AccessedThroughProperty("btnAdd")]
         Button _btnAdd;
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnClone")]
         Button _btnClone;
-
-
         [AccessedThroughProperty("btnDelete")]
         Button _btnDelete;
-
-
         [AccessedThroughProperty("btnDown")]
         Button _btnDown;
-
-
         [AccessedThroughProperty("btnedit")]
         Button _btnedit;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnUp")]
         Button _btnUp;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("lvEntity")]
         ListView _lvEntity;
-
-
         frmBusy bFrm;
     }
 }

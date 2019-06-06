@@ -12,12 +12,8 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmImportEffects : Form
     {
-
-    
     
         internal virtual Button btnCheckAll
         {
@@ -40,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClose
         {
             get
@@ -65,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEraseAll
         {
             get
@@ -90,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnFile
         {
             get
@@ -115,10 +99,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImport
         {
             get
@@ -140,10 +120,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUncheckAll
         {
             get
@@ -165,10 +141,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -181,10 +153,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -197,10 +165,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -213,10 +177,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -229,10 +189,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -245,10 +201,6 @@ namespace Hero_Designer
                 this._ColumnHeader5 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader6
         {
             get
@@ -261,10 +213,6 @@ namespace Hero_Designer
                 this._ColumnHeader6 = value;
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog dlgBrowse
         {
             get
@@ -277,10 +225,6 @@ namespace Hero_Designer
                 this._dlgBrowse = value;
             }
         }
-
-
-    
-    
         internal virtual Button HideUnchanged
         {
             get
@@ -302,10 +246,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -318,10 +258,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -334,10 +270,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDate
         {
             get
@@ -350,10 +282,6 @@ namespace Hero_Designer
                 this._lblDate = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblFile
         {
             get
@@ -366,10 +294,6 @@ namespace Hero_Designer
                 this._lblFile = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lstImport
         {
             get
@@ -382,10 +306,6 @@ namespace Hero_Designer
                 this._lstImport = value;
             }
         }
-
-
-    
-    
         internal virtual Label txtNoAU
         {
             get
@@ -398,10 +318,6 @@ namespace Hero_Designer
                 this._txtNoAU = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udRevision
         {
             get
@@ -414,8 +330,6 @@ namespace Hero_Designer
                 this._udRevision = value;
             }
         }
-
-
         public frmImportEffects()
         {
             base.Load += this.frmImportEffects_Load;
@@ -425,8 +339,6 @@ namespace Hero_Designer
             this._importBuffer = new List<EffectData>();
             this._currentItems = new List<ListViewItem>();
         }
-
-
         void btnCheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
@@ -437,14 +349,10 @@ namespace Hero_Designer
             }
             this.lstImport.EndUpdate();
         }
-
-
         void btnClose_Click(object sender, EventArgs e)
         {
             base.Close();
         }
-
-
         void btnEraseAll_Click(object sender, EventArgs e)
         {
             int num = DatabaseAPI.Database.Power.Length - 1;
@@ -462,8 +370,6 @@ namespace Hero_Designer
             }
             Interaction.MsgBox("All power effects removed!", MsgBoxStyle.OkOnly, null);
         }
-
-
         void btnFile_Click(object sender, EventArgs e)
         {
             this.dlgBrowse.FileName = this._fullFileName;
@@ -480,14 +386,10 @@ namespace Hero_Designer
             this.BusyHide();
             this.DisplayInfo();
         }
-
-
         void btnImport_Click(object sender, EventArgs e)
         {
             this.ProcessImport();
         }
-
-
         void btnUncheckAll_Click(object sender, EventArgs e)
         {
             this.lstImport.BeginUpdate();
@@ -498,8 +400,6 @@ namespace Hero_Designer
             }
             this.lstImport.EndUpdate();
         }
-
-
         void BusyHide()
         {
             if (this._bFrm != null)
@@ -508,8 +408,6 @@ namespace Hero_Designer
                 this._bFrm = null;
             }
         }
-
-
         void BusyMsg(string sMessage)
         {
             if (this._bFrm == null)
@@ -519,8 +417,6 @@ namespace Hero_Designer
             }
             this._bFrm.SetMessage(sMessage);
         }
-
-
         void DisplayInfo()
         {
             this.lblFile.Text = FileIO.StripPath(this._fullFileName);
@@ -537,8 +433,6 @@ namespace Hero_Designer
             }
             this.txtNoAU.Text = Conversions.ToString(num) + " powers locked.";
         }
-
-
         void FillListView()
         {
             string[] items = new string[6];
@@ -628,15 +522,11 @@ namespace Hero_Designer
                 Conversions.ToString(num4)
             }), MsgBoxStyle.OkOnly, null);
         }
-
-
         void frmImportEffects_Load(object sender, EventArgs e)
         {
             this._fullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
             this.DisplayInfo();
         }
-
-
         void HideUnchanged_Click(object sender, EventArgs e)
         {
             this._showUnchanged = !this._showUnchanged;
@@ -652,8 +542,6 @@ namespace Hero_Designer
             }
             this.lstImport.EndUpdate();
         }
-
-
         bool ParseClasses(string iFileName)
         {
             int num = 0;
@@ -783,8 +671,6 @@ namespace Hero_Designer
             }), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
-
-
         bool ProcessImport()
         {
             bool flag = false;
@@ -831,103 +717,51 @@ namespace Hero_Designer
             this.DisplayInfo();
             return flag;
         }
-
-
         frmBusy _bFrm;
-
-
         [AccessedThroughProperty("btnCheckAll")]
         Button _btnCheckAll;
-
-
         [AccessedThroughProperty("btnClose")]
         Button _btnClose;
-
-
         [AccessedThroughProperty("btnEraseAll")]
         Button _btnEraseAll;
-
-
         [AccessedThroughProperty("btnFile")]
         Button _btnFile;
-
-
         [AccessedThroughProperty("btnImport")]
         Button _btnImport;
-
-
         [AccessedThroughProperty("btnUncheckAll")]
         Button _btnUncheckAll;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("ColumnHeader5")]
         ColumnHeader _ColumnHeader5;
-
-
         [AccessedThroughProperty("ColumnHeader6")]
         ColumnHeader _ColumnHeader6;
-
-
         readonly List<ListViewItem> _currentItems;
-
-
         [AccessedThroughProperty("dlgBrowse")]
         OpenFileDialog _dlgBrowse;
-
-
         string _fullFileName;
-
-
         [AccessedThroughProperty("HideUnchanged")]
         Button _HideUnchanged;
-
-
         List<EffectData> _importBuffer;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("lblDate")]
         Label _lblDate;
-
-
         [AccessedThroughProperty("lblFile")]
         Label _lblFile;
-
-
         [AccessedThroughProperty("lstImport")]
         ListView _lstImport;
-
-
         bool _showUnchanged;
-
-
         [AccessedThroughProperty("txtNoAU")]
         Label _txtNoAU;
-
-
         [AccessedThroughProperty("udRevision")]
         NumericUpDown _udRevision;
     }

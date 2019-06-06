@@ -35,8 +35,6 @@ public class EnhancementSetCollection : List<EnhancementSet>
         }
         return result;
     }
-
-
     public static string GetSetInfoLongRTF(int iSet, int enhCount = -1)
     {
         string str;

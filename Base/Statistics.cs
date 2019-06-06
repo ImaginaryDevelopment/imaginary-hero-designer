@@ -4,8 +4,6 @@ using Base.Data_Classes;
 // Token: 0x0200009C RID: 156
 public class Statistics
 {
-
-    
     public float EnduranceMaxEnd
     {
         get
@@ -13,8 +11,6 @@ public class Statistics
             return this._character.Totals.EndMax + 100f;
         }
     }
-
-
     
     public float EnduranceRecoveryNumeric
     {
@@ -24,8 +20,6 @@ public class Statistics
             return this.EnduranceRecovery(false) * num * (this._character.TotalsCapped.EndMax / 100f + 1f);
         }
     }
-
-
     
     public float EnduranceTimeToFull
     {
@@ -34,8 +28,6 @@ public class Statistics
             return this.EnduranceMaxEnd / this.EnduranceRecoveryNumeric;
         }
     }
-
-
     
     public float EnduranceRecoveryNet
     {
@@ -44,8 +36,6 @@ public class Statistics
             return this.EnduranceRecoveryNumeric - this.EnduranceUsage;
         }
     }
-
-
     
     public float EnduranceRecoveryLossNet
     {
@@ -54,8 +44,6 @@ public class Statistics
             return -(this.EnduranceRecoveryNumeric - this.EnduranceUsage);
         }
     }
-
-
     
     public float EnduranceTimeToZero
     {
@@ -64,8 +52,6 @@ public class Statistics
             return this.EnduranceMaxEnd / -(this.EnduranceRecoveryNumeric - this.EnduranceUsage);
         }
     }
-
-
     
     public float EnduranceTimeToFullNet
     {
@@ -74,8 +60,6 @@ public class Statistics
             return this.EnduranceMaxEnd / (this.EnduranceRecoveryNumeric - this.EnduranceUsage);
         }
     }
-
-
     
     public float EnduranceUsage
     {
@@ -84,8 +68,6 @@ public class Statistics
             return this._character.Totals.EndUse;
         }
     }
-
-
     
     public float HealthRegenHealthPerSec
     {
@@ -94,8 +76,6 @@ public class Statistics
             return this.HealthRegen(false) * this._character.Archetype.BaseRegen * 1.66666663f;
         }
     }
-
-
     
     public float HealthRegenHPPerSec
     {
@@ -104,8 +84,6 @@ public class Statistics
             return this.HealthRegen(false) * this._character.Archetype.BaseRegen * 1.66666663f * this.HealthHitpointsNumeric(false) / 100f;
         }
     }
-
-
     
     public float HealthRegenTimeToFull
     {
@@ -114,8 +92,6 @@ public class Statistics
             return this.HealthHitpointsNumeric(false) / this.HealthRegenHPPerSec;
         }
     }
-
-
     
     public float HealthHitpointsPercentage
     {
@@ -124,8 +100,6 @@ public class Statistics
             return this._character.TotalsCapped.HPMax / (float)this._character.Archetype.Hitpoints * 100f;
         }
     }
-
-
     
     public float BuffToHit
     {
@@ -134,8 +108,6 @@ public class Statistics
             return this._character.Totals.BuffToHit * 100f;
         }
     }
-
-
     
     public float BuffAccuracy
     {
@@ -144,8 +116,6 @@ public class Statistics
             return this._character.Totals.BuffAcc * 100f;
         }
     }
-
-
     
     public float BuffEndRdx
     {
@@ -154,8 +124,6 @@ public class Statistics
             return this._character.Totals.BuffEndRdx * 100f;
         }
     }
-
-
     
     public float ThreatLevel
     {
@@ -164,14 +132,10 @@ public class Statistics
             return (this._character.Totals.ThreatLevel + this._character.Archetype.BaseThreat) * 100f;
         }
     }
-
-
     internal Statistics(Character character)
     {
         this._character = character;
     }
-
-
     float EnduranceRecovery(bool uncapped)
     {
         float result;
@@ -185,14 +149,10 @@ public class Statistics
         }
         return result;
     }
-
-
     public float EnduranceRecoveryPercentage(bool uncapped)
     {
         return this.EnduranceRecovery(uncapped) * 100f;
     }
-
-
     float HealthRegen(bool uncapped)
     {
         float result;
@@ -206,14 +166,10 @@ public class Statistics
         }
         return result;
     }
-
-
     public float HealthRegenPercent(bool uncapped)
     {
         return this.HealthRegen(uncapped) * 100f;
     }
-
-
     public float HealthHitpointsNumeric(bool uncapped)
     {
         float hpmax;
@@ -227,8 +183,6 @@ public class Statistics
         }
         return hpmax;
     }
-
-
     public float DamageResistance(int dType, bool uncapped)
     {
         float result;
@@ -242,8 +196,6 @@ public class Statistics
         }
         return result;
     }
-
-
     public float Perception(bool uncapped)
     {
         float perception;
@@ -257,14 +209,10 @@ public class Statistics
         }
         return perception;
     }
-
-
     public float Defense(int dType)
     {
         return this._character.Totals.Def[dType] * 100f;
     }
-
-
     public float Speed(float iSpeed, Enums.eSpeedMeasure unit)
     {
         float num;
@@ -288,8 +236,6 @@ public class Statistics
         }
         return num;
     }
-
-
     public float Distance(float iDist, Enums.eSpeedMeasure unit)
     {
         float num;
@@ -313,8 +259,6 @@ public class Statistics
         }
         return num;
     }
-
-
     public float MovementRunSpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.RunSpd;
@@ -324,8 +268,6 @@ public class Statistics
         }
         return this.Speed(iSpeed, sType);
     }
-
-
     public float MovementFlySpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.FlySpd;
@@ -335,8 +277,6 @@ public class Statistics
         }
         return this.Speed(iSpeed, sType);
     }
-
-
     public float MovementJumpSpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.JumpSpd;
@@ -346,8 +286,6 @@ public class Statistics
         }
         return this.Speed(iSpeed, sType);
     }
-
-
     public float MovementJumpHeight(Enums.eSpeedMeasure sType)
     {
         float result;
@@ -361,8 +299,6 @@ public class Statistics
         }
         return result;
     }
-
-
     public float BuffHaste(bool uncapped)
     {
         float result;
@@ -376,8 +312,6 @@ public class Statistics
         }
         return result;
     }
-
-
     public float BuffDamage(bool uncapped)
     {
         float result;
@@ -391,43 +325,17 @@ public class Statistics
         }
         return result;
     }
-
-
     public const float MaxRunSpeed = 135.67f;
-
-
     public const float MaxJumpSpeed = 114.4f;
-
-
     public const float MaxFlySpeed = 86f;
-
-
     public const float CapRunSpeed = 135.67f;
-
-
     public const float CapJumpSpeed = 114.4f;
-
-
     public const float CapFlySpeed = 128.99f;
-
-
     public const float BaseRunSpeed = 21f;
-
-
     public const float BaseJumpSpeed = 21f;
-
-
     public const float BaseJumpHeight = 4f;
-
-
     public const float BaseFlySpeed = 31.5f;
-
-
     public const float BaseMagic = 1.66666663f;
-
-
     public const float BasePerception = 500f;
-
-
     readonly Character _character;
 }

@@ -6,8 +6,6 @@ using System.Windows.Forms;
 // Token: 0x020000A4 RID: 164
 public partial class ZStatus : Form
 {
-
-    
     public string StatusText1
     {
         set
@@ -19,8 +17,6 @@ public partial class ZStatus : Form
             }
         }
     }
-
-
     
     public string StatusText2
     {
@@ -33,8 +29,6 @@ public partial class ZStatus : Form
             }
         }
     }
-
-
     public ZStatus()
     {
         this.InitializeComponent();

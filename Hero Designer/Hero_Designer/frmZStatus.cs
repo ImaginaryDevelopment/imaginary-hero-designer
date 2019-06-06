@@ -10,8 +10,6 @@ namespace Hero_Designer
 
     public partial class frmZStatus : Form
     {
-
-    
     
         internal virtual Label lblStatus1
         {
@@ -25,10 +23,6 @@ namespace Hero_Designer
                 this._lblStatus1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblStatus2
         {
             get
@@ -41,10 +35,6 @@ namespace Hero_Designer
                 this._lblStatus2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblTitle
         {
             get
@@ -57,10 +47,6 @@ namespace Hero_Designer
                 this._lblTitle = value;
             }
         }
-
-
-    
-    
         internal virtual PictureBox PictureBox1
         {
             get
@@ -73,21 +59,15 @@ namespace Hero_Designer
                 this._PictureBox1 = value;
             }
         }
-
-
         public frmZStatus()
         {
             base.VisibleChanged += this.frmZStatus_VisibleChanged;
             this.InitializeComponent();
         }
-
-
         void frmZStatus_VisibleChanged(object sender, EventArgs e)
         {
             this.Refresh();
         }
-
-
         public void SetText1(string text)
         {
             if (this.lblStatus1.InvokeRequired)
@@ -103,8 +83,6 @@ namespace Hero_Designer
                 this.lblStatus1.Text = text;
             }
         }
-
-
         public void SetText2(string text)
         {
             if (this.lblStatus2.InvokeRequired)
@@ -120,24 +98,14 @@ namespace Hero_Designer
                 this.lblStatus2.Text = text;
             }
         }
-
-
         [AccessedThroughProperty("lblStatus1")]
         Label _lblStatus1;
-
-
         [AccessedThroughProperty("lblStatus2")]
         Label _lblStatus2;
-
-
         [AccessedThroughProperty("lblTitle")]
         Label _lblTitle;
-
-
         [AccessedThroughProperty("PictureBox1")]
         PictureBox _PictureBox1;
-
-
         // (Invoke) Token: 0x060013CC RID: 5068
         public delegate void SetTextCallback(string text);
     }

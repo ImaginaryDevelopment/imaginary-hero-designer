@@ -8,8 +8,6 @@ public class Salvage
     public Salvage()
     {
     }
-
-
     public Salvage(BinaryReader reader)
     {
         this.InternalName = reader.ReadString();
@@ -19,8 +17,6 @@ public class Salvage
         this.LevelMax = reader.ReadInt32();
         this.Origin = (Salvage.SalvageOrigin)reader.ReadInt32();
     }
-
-
     public Salvage(ref Salvage iSalvage)
     {
         this.InternalName = iSalvage.InternalName;
@@ -30,8 +26,6 @@ public class Salvage
         this.LevelMax = iSalvage.LevelMax;
         this.Origin = iSalvage.Origin;
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.InternalName);
@@ -41,26 +35,12 @@ public class Salvage
         writer.Write(this.LevelMax);
         writer.Write((int)this.Origin);
     }
-
-
     public string InternalName = string.Empty;
-
-
     public string ExternalName = string.Empty;
-
-
     public Recipe.RecipeRarity Rarity;
-
-
     public int LevelMin;
-
-
     public int LevelMax;
-
-
     public Salvage.SalvageOrigin Origin;
-
-
     public enum SalvageOrigin
     {
 

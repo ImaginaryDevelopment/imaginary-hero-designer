@@ -16,8 +16,6 @@ namespace Hero_Designer
 
     public partial class frmCompare : Form
     {
-
-    
     
         internal virtual ImageButton btnClose
         {
@@ -43,10 +41,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnTweakMatch
         {
             get
@@ -68,10 +62,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAT1
         {
             get
@@ -93,10 +83,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAT2
         {
             get
@@ -118,10 +104,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSet1
         {
             get
@@ -143,10 +125,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSet2
         {
             get
@@ -168,10 +146,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbType1
         {
             get
@@ -193,10 +167,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbType2
         {
             get
@@ -218,10 +188,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkMatching
         {
             get
@@ -243,10 +209,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton chkOnTop
         {
             get
@@ -268,10 +230,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ctlMultiGraph Graph
         {
             get
@@ -293,10 +251,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -309,10 +263,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -325,10 +275,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -341,10 +287,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKeyColor1
         {
             get
@@ -357,10 +299,6 @@ namespace Hero_Designer
                 this._lblKeyColor1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblKeyColor2
         {
             get
@@ -373,10 +311,6 @@ namespace Hero_Designer
                 this._lblKeyColor2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblScale
         {
             get
@@ -389,10 +323,6 @@ namespace Hero_Designer
                 this._lblScale = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lstDisplay
         {
             get
@@ -414,10 +344,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TrackBar tbScaleX
         {
             get
@@ -439,10 +365,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip tTip
         {
             get
@@ -455,8 +377,6 @@ namespace Hero_Designer
                 this._tTip = value;
             }
         }
-
-
         public frmCompare(ref frmMain iFrm)
         {
             base.Load += this.frmCompare_Load;
@@ -500,26 +420,18 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iFrm;
         }
-
-
         void btnClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void btnClose_Load(object sender, EventArgs e)
         {
         }
-
-
         void btnTweakMatch_Click(object sender, EventArgs e)
         {
             new frmTweakMatching().ShowDialog(this);
             this.DisplayGraph();
         }
-
-
         void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -527,8 +439,6 @@ namespace Hero_Designer
                 this.List_Sets(0);
             }
         }
-
-
         void cbAT2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -536,8 +446,6 @@ namespace Hero_Designer
                 this.List_Sets(1);
             }
         }
-
-
         void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -546,8 +454,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void cbSet2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -556,8 +462,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void cbType1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -565,8 +469,6 @@ namespace Hero_Designer
                 this.List_Sets(0);
             }
         }
-
-
         void cbType2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -574,8 +476,6 @@ namespace Hero_Designer
                 this.List_Sets(1);
             }
         }
-
-
         void chkMatching_CheckedChanged(object sender, EventArgs e)
         {
             this.Matching = this.chkMatching.Checked;
@@ -584,14 +484,10 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         void chkOnTop_CheckedChanged()
         {
             base.TopMost = this.chkOnTop.Checked;
         }
-
-
         public void DisplayGraph()
         {
             if (this.lstDisplay.SelectedIndex >= 0)
@@ -739,8 +635,6 @@ namespace Hero_Designer
                 this.Graph.EndUpdate();
             }
         }
-
-
         protected void FillDisplayList()
         {
             ListBox lstDisplay = this.lstDisplay;
@@ -750,14 +644,10 @@ namespace Hero_Designer
             this.lstDisplay.SelectedIndex = 0;
             lstDisplay.EndUpdate();
         }
-
-
         void frmCompare_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatCompareGraph(false);
         }
-
-
         void frmCompare_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control & e.Shift & e.KeyCode == Keys.T)
@@ -765,8 +655,6 @@ namespace Hero_Designer
                 this.btnTweakMatch.Visible = true;
             }
         }
-
-
         void frmCompare_Load(object sender, EventArgs e)
         {
             this.FillDisplayList();
@@ -791,26 +679,18 @@ namespace Hero_Designer
             this.DisplayGraph();
             this.tTip.SetToolTip(this.chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
         }
-
-
         void frmCompare_Move(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
-
-
         void frmCompare_Resize(object sender, EventArgs e)
         {
             this.StoreLocation();
         }
-
-
         void frmCompare_VisibleChanged(object sender, EventArgs e)
         {
             this.Graph.BackColor = this.BackColor;
         }
-
-
         public int getAT(int Index)
         {
             int num;
@@ -828,8 +708,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         public int getMax(int iVal1, int ival2)
         {
             int result;
@@ -843,8 +721,6 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         public int GetNextFreeSlot()
         {
             int index = 0;
@@ -858,8 +734,6 @@ namespace Hero_Designer
             }
             return index;
         }
-
-
         public void GetPowers()
         {
             int[] numArray = new int[2];
@@ -895,8 +769,6 @@ namespace Hero_Designer
             }
             while (Index <= 1);
         }
-
-
         public int getSetIndex(int Index)
         {
             ComboBox comboBox;
@@ -914,8 +786,6 @@ namespace Hero_Designer
             }
             return DatabaseAPI.GetPowersetIndexes(this.getAT(Index), this.getSetType(Index))[comboBox.SelectedIndex].nID;
         }
-
-
         public Enums.ePowerSetType getSetType(int Index)
         {
             ComboBox comboBox;
@@ -949,8 +819,6 @@ namespace Hero_Designer
             }
             return ePowerSetType;
         }
-
-
         public string GetUniversalTipString(Enums.ShortFX iSFX, ref IPower iPower)
         {
             string str = "";
@@ -1004,13 +872,9 @@ namespace Hero_Designer
             }
             return str3;
         }
-
-
         void Graph_Load(object sender, EventArgs e)
         {
         }
-
-
         void list_AT()
         {
             this.cbAT1.BeginUpdate();
@@ -1031,8 +895,6 @@ namespace Hero_Designer
             this.cbAT1.EndUpdate();
             this.cbAT2.EndUpdate();
         }
-
-
         public void List_Sets(int Index)
         {
             Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
@@ -1077,8 +939,6 @@ namespace Hero_Designer
             }
             comboBox.EndUpdate();
         }
-
-
         public void list_Type()
         {
             this.cbType1.BeginUpdate();
@@ -1096,8 +956,6 @@ namespace Hero_Designer
             this.cbType1.EndUpdate();
             this.cbType2.EndUpdate();
         }
-
-
         void lstDisplay_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.Loaded)
@@ -1106,8 +964,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         public void map_Advanced()
         {
             bool[] Placed = new bool[this.Powers[1].Length - 1 + 1];
@@ -1780,8 +1636,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void map_Simple()
         {
             this.Map.Init();
@@ -1811,8 +1665,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public int mapDescString(string[] iStrings, ref bool[] Placed)
         {
             int num = 0;
@@ -1853,8 +1705,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         public void mapOverride()
         {
             int num = MidsContext.Config.CompOverride.Length - 1;
@@ -1865,8 +1715,6 @@ namespace Hero_Designer
                 this.mapOverrideDo(compOverride[index2].Powerset, compOverride[index2].Power, compOverride[index2].Override);
             }
         }
-
-
         public void mapOverrideDo(string iSet, string iPower, string iNewStr)
         {
             int index = 0;
@@ -1884,16 +1732,12 @@ namespace Hero_Designer
             }
             while (index <= 1);
         }
-
-
         void ResetScale()
         {
             this.tbScaleX.Value = 10;
             this.Graph.Max = this.GraphMax;
             this.SetScaleLabel();
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1910,14 +1754,10 @@ namespace Hero_Designer
             base.Top = rectangle.Y;
             base.Left = rectangle.X;
         }
-
-
         void SetScaleLabel()
         {
             this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1926,15 +1766,11 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmCompare.Y = base.Top;
             }
         }
-
-
         void tbScaleX_Scroll(object sender, EventArgs e)
         {
             this.Graph.ScaleIndex = this.tbScaleX.Value;
             this.SetScaleLabel();
         }
-
-
         public void UpdateData()
         {
             this.btnClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -1949,8 +1785,6 @@ namespace Hero_Designer
                 this.DisplayGraph();
             }
         }
-
-
         public void values_Accuracy()
         {
             float num = 1f;
@@ -2009,8 +1843,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_Damage()
         {
             float num = 1f;
@@ -2059,8 +1891,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void values_DPA()
         {
             float num = 1f;
@@ -2102,8 +1932,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void values_DPE()
         {
             float num = 1f;
@@ -2153,8 +1981,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void values_DPS()
         {
             float num = 1f;
@@ -2196,8 +2022,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
-
-
         public void values_Duration()
         {
             float num = 1f;
@@ -2240,8 +2064,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_End()
         {
             float num = 1f;
@@ -2287,8 +2109,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_EPS()
         {
             float num = 1f;
@@ -2342,8 +2162,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_Heal()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2386,8 +2204,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Archetype = archetype;
         }
-
-
         public void values_HPE()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2434,8 +2250,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Archetype = archetype;
         }
-
-
         public void values_HPS()
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2482,8 +2296,6 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Archetype = archetype;
         }
-
-
         public void values_MaxTargets()
         {
             float num = 1f;
@@ -2529,8 +2341,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_Range()
         {
             float num = 1f;
@@ -2602,8 +2412,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void values_Recharge()
         {
             float num = 1f;
@@ -2642,8 +2450,6 @@ namespace Hero_Designer
             while (index <= 1);
             this.GraphMax = (float)((double)num * 1.025);
         }
-
-
         public void Values_Universal(Enums.eEffectType iEffectType, bool Sum, bool Debuff)
         {
             Archetype archetype = MidsContext.Archetype;
@@ -2762,115 +2568,55 @@ namespace Hero_Designer
             this.GraphMax = (float)((double)num * 1.025);
             MidsContext.Archetype = archetype;
         }
-
-
         [AccessedThroughProperty("btnClose")]
         ImageButton _btnClose;
-
-
         [AccessedThroughProperty("btnTweakMatch")]
         Button _btnTweakMatch;
-
-
         [AccessedThroughProperty("cbAT1")]
         ComboBox _cbAT1;
-
-
         [AccessedThroughProperty("cbAT2")]
         ComboBox _cbAT2;
-
-
         [AccessedThroughProperty("cbSet1")]
         ComboBox _cbSet1;
-
-
         [AccessedThroughProperty("cbSet2")]
         ComboBox _cbSet2;
-
-
         [AccessedThroughProperty("cbType1")]
         ComboBox _cbType1;
-
-
         [AccessedThroughProperty("cbType2")]
         ComboBox _cbType2;
-
-
         [AccessedThroughProperty("chkMatching")]
         CheckBox _chkMatching;
-
-
         [AccessedThroughProperty("chkOnTop")]
         ImageButton _chkOnTop;
-
-
         [AccessedThroughProperty("Graph")]
         ctlMultiGraph _Graph;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("lblKeyColor1")]
         Label _lblKeyColor1;
-
-
         [AccessedThroughProperty("lblKeyColor2")]
         Label _lblKeyColor2;
-
-
         [AccessedThroughProperty("lblScale")]
         Label _lblScale;
-
-
         [AccessedThroughProperty("lstDisplay")]
         ListBox _lstDisplay;
-
-
         [AccessedThroughProperty("tbScaleX")]
         TrackBar _tbScaleX;
-
-
         [AccessedThroughProperty("tTip")]
         ToolTip _tTip;
-
-
         protected string[] DisplayValueStrings;
-
-
         protected float GraphMax;
-
-
         protected bool Loaded;
-
-
         protected Enums.CompMap Map;
-
-
         protected bool Matching;
-
-
         protected frmMain myParent;
-
-
         protected IPower[][] Powers;
-
-
         protected string[][] Tips;
-
-
         protected float[][] Values;
-
-
         protected enum eDisplayItems
         {
 

@@ -8,29 +8,11 @@ namespace Base.Data_Classes
 
     public sealed class Database : IDatabase
     {
-
-    
     
         public float Version { get; set; }
-
-
-    
-    
         public int Issue { get; set; }
-
-
-    
-    
         public DateTime Date { get; set; }
-
-
-    
-    
         public IPower[] Power { get; set; }
-
-
-    
-    
         public Enums.VersionData PowerVersion
         {
             get
@@ -42,10 +24,6 @@ namespace Base.Data_Classes
                 this._powerVersion = value;
             }
         }
-
-
-    
-    
         public Enums.VersionData PowerEffectVersion
         {
             get
@@ -57,10 +35,6 @@ namespace Base.Data_Classes
                 this._powerEffectVersion = value;
             }
         }
-
-
-    
-    
         public Enums.VersionData PowerLevelVersion
         {
             get
@@ -72,15 +46,7 @@ namespace Base.Data_Classes
                 this._powerLevelVersion = value;
             }
         }
-
-
-    
-    
         public IPowerset[] Powersets { get; set; }
-
-
-    
-    
         public Enums.VersionData PowersetVersion
         {
             get
@@ -92,15 +58,7 @@ namespace Base.Data_Classes
                 this._powersetVersion = value;
             }
         }
-
-
-    
-    
         public Archetype[] Classes { get; set; }
-
-
-    
-    
         public Enums.VersionData ArchetypeVersion
         {
             get
@@ -112,70 +70,18 @@ namespace Base.Data_Classes
                 this._archetypeVersion = value;
             }
         }
-
-
-    
-    
         public IEnhancement[] Enhancements { get; set; }
-
-
-    
-    
         public EnhancementSetCollection EnhancementSets { get; set; }
-
-
-    
-    
         public Enums.sEnhClass[] EnhancementClasses { get; set; }
-
-
-    
-    
         public Recipe[] Recipes { get; set; }
-
-
-    
-    
         public DateTime RecipeRevisionDate { get; set; }
-
-
-    
-    
         public string RecipeSource1 { get; set; }
-
-
-    
-    
         public string RecipeSource2 { get; set; }
-
-
-    
-    
         public Salvage[] Salvage { get; set; }
-
-
-    
-    
         public List<Origin> Origins { get; set; }
-
-
-    
-    
         public IDictionary<string, PowersetGroup> PowersetGroups { get; set; }
-
-
-    
-    
         public bool Loading { get; set; }
-
-
-    
-    
         public object I9 { get; set; }
-
-
-    
-    
         public Enums.VersionData IOAssignmentVersion
         {
             get
@@ -187,10 +93,6 @@ namespace Base.Data_Classes
                 this._ioAssignmentVersion = value;
             }
         }
-
-
-    
-    
         public SummonedEntity[] Entities
         {
             get
@@ -202,25 +104,9 @@ namespace Base.Data_Classes
                 this._entities = value;
             }
         }
-
-
-    
-    
         public Modifiers AttribMods { get; set; }
-
-
-    
-    
         public LevelMap[] Levels { get; set; }
-
-
-    
-    
         public int[] Levels_MainPowers { get; set; }
-
-
-    
-    
         public ArrayList EffectIds
         {
             get
@@ -232,8 +118,6 @@ namespace Base.Data_Classes
                 this._effectIds = value;
             }
         }
-
-
     
         public static Database Instance
         {
@@ -242,78 +126,20 @@ namespace Base.Data_Classes
                 return Database._instance;
             }
         }
-
-
-    
-    
         public float VersionEnhDb { get; set; }
-
-
-    
-    
         public float[][] MultED { get; set; }
-
-
-    
-    
         public float[][] MultTO { get; set; }
-
-
-    
-    
         public float[][] MultDO { get; set; }
-
-
-    
-    
         public float[][] MultSO { get; set; }
-
-
-    
-    
         public float[][] MultHO { get; set; }
-
-
-    
-    
         public float[][] MultIO { get; set; }
-
-
-    
-    
         public string[] SetTypeStringLong { get; set; }
-
-
-    
-    
         public string[] SetTypeStringShort { get; set; }
-
-
-    
-    
         public string[] EnhGradeStringLong { get; set; }
-
-
-    
-    
         public string[] EnhGradeStringShort { get; set; }
-
-
-    
-    
         public string[] SpecialEnhStringLong { get; set; }
-
-
-    
-    
         public string[] SpecialEnhStringShort { get; set; }
-
-
-    
-    
         public string[] MutexList { get; set; }
-
-
         public void LoadEntities(BinaryReader reader)
         {
             this.Entities = new SummonedEntity[reader.ReadInt32() + 1];
@@ -322,8 +148,6 @@ namespace Base.Data_Classes
                 this.Entities[index] = new SummonedEntity(reader);
             }
         }
-
-
         public void StoreEntities(BinaryWriter writer)
         {
             writer.Write(this.Entities.Length - 1);
@@ -332,32 +156,14 @@ namespace Base.Data_Classes
                 this.Entities[index].StoreTo(writer);
             }
         }
-
-
         Enums.VersionData _powerVersion = new Enums.VersionData();
-
-
         Enums.VersionData _powerEffectVersion = new Enums.VersionData();
-
-
         Enums.VersionData _powerLevelVersion = new Enums.VersionData();
-
-
         Enums.VersionData _powersetVersion = new Enums.VersionData();
-
-
         Enums.VersionData _archetypeVersion = new Enums.VersionData();
-
-
         Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
-
-
         SummonedEntity[] _entities = new SummonedEntity[0];
-
-
         ArrayList _effectIds = new ArrayList();
-
-
         static readonly Database _instance = new Database();
     }
 }

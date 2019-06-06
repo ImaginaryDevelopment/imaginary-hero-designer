@@ -13,12 +13,8 @@ using midsControls;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmIncarnate : Form
     {
-
-    
     
         internal virtual ImageButton alphaBtn
         {
@@ -41,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton destinyBtn
         {
             get
@@ -66,10 +58,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton GenesisButton
         {
             get
@@ -91,10 +79,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton hybridBtn
         {
             get
@@ -116,10 +100,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClose
         {
             get
@@ -141,10 +121,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton interfaceBtn
         {
             get
@@ -166,10 +142,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton judgementBtn
         {
             get
@@ -191,10 +163,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblLock
         {
             get
@@ -216,10 +184,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llLeft
         {
             get
@@ -247,10 +211,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 llRight
         {
             get
@@ -278,10 +238,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton loreBtn
         {
             get
@@ -303,10 +259,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton OmegaButton
         {
             get
@@ -328,10 +280,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -344,10 +292,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPopUp PopInfo
         {
             get
@@ -372,10 +316,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton StanceButton
         {
             get
@@ -397,10 +337,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton VitaeButton
         {
             get
@@ -422,10 +358,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual VScrollBar VScrollBar1
         {
             get
@@ -447,8 +379,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmIncarnate(ref frmMain iParent)
         {
             base.Load += this.frmIncarnate_Load;
@@ -459,32 +389,24 @@ namespace Hero_Designer
             this.myParent = iParent;
             this.myPowers = DatabaseAPI.GetPowersetByName("Alpha", Enums.ePowerSetType.Incarnate).Powers;
         }
-
-
         void alphaBtn_ButtonClicked()
         {
             ImageButton alphaBtn = this.alphaBtn;
             this.SetPowerSet("Alpha", ref alphaBtn);
             this.alphaBtn = alphaBtn;
         }
-
-
         void ChangedScrollFrameContents()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
             this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
-
-
         void destinyBtn_ButtonClicked()
         {
             ImageButton destinyBtn = this.destinyBtn;
             this.SetPowerSet("Destiny", ref destinyBtn);
             this.destinyBtn = destinyBtn;
         }
-
-
         public void FillLists()
         {
             this.llLeft.SuspendRedraw = true;
@@ -556,8 +478,6 @@ namespace Hero_Designer
             this.llLeft.Refresh();
             this.llRight.Refresh();
         }
-
-
         void frmIncarnate_Load(object sender, EventArgs e)
         {
             this.buttonArray[0] = this.alphaBtn;
@@ -595,53 +515,39 @@ namespace Hero_Designer
             this.ChangedScrollFrameContents();
             this.FillLists();
         }
-
-
         void GenesisButton_ButtonClicked()
         {
             ImageButton genesisButton = this.GenesisButton;
             this.SetPowerSet("Genesis", ref genesisButton);
             this.GenesisButton = genesisButton;
         }
-
-
         void hybridBtn_ButtonClicked()
         {
             ImageButton hybridBtn = this.hybridBtn;
             this.SetPowerSet("Hybrid", ref hybridBtn);
             this.hybridBtn = hybridBtn;
         }
-
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void interfaceBtn_ButtonClicked()
         {
             ImageButton interfaceBtn = this.interfaceBtn;
             this.SetPowerSet("Interface", ref interfaceBtn);
             this.interfaceBtn = interfaceBtn;
         }
-
-
         void judgementBtn_ButtonClicked()
         {
             ImageButton judgementBtn = this.judgementBtn;
             this.SetPowerSet("Judgement", ref judgementBtn);
             this.judgementBtn = judgementBtn;
         }
-
-
         void lblLock_Click(object sender, EventArgs e)
         {
             this.Locked = false;
             this.lblLock.Visible = false;
         }
-
-
         void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             if (Button == MouseButtons.Right)
@@ -688,14 +594,10 @@ namespace Hero_Designer
                 this.myParent.PowerModified();
             }
         }
-
-
         void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             this.miniPowerInfo(Item.Index);
         }
-
-
         void llLeft_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -703,8 +605,6 @@ namespace Hero_Designer
                 this.Panel2.Focus();
             }
         }
-
-
         void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
@@ -752,29 +652,21 @@ namespace Hero_Designer
                 this.myParent.PowerModified();
             }
         }
-
-
         void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             this.miniPowerInfo(pIDX);
         }
-
-
         void llRight_MouseEnter(object sender, EventArgs e)
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         void loreBtn_ButtonClicked()
         {
             ImageButton loreBtn = this.loreBtn;
             this.SetPowerSet("Lore", ref loreBtn);
             this.loreBtn = loreBtn;
         }
-
-
         public void miniPowerInfo(int pIDX)
         {
             if (!this.Locked)
@@ -893,16 +785,12 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void OmegaButton_ButtonClicked()
         {
             ImageButton omegaButton = this.OmegaButton;
             this.SetPowerSet("Omega", ref omegaButton);
             this.OmegaButton = omegaButton;
         }
-
-
         void PopInfo_MouseEnter(object sender, EventArgs e)
         {
             if (base.ContainsFocus)
@@ -910,8 +798,6 @@ namespace Hero_Designer
                 this.VScrollBar1.Focus();
             }
         }
-
-
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -921,8 +807,6 @@ namespace Hero_Designer
             }
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
-
-
         void SetPowerSet(string Setname, ref ImageButton button)
         {
             foreach (ImageButton button2 in this.buttonArray)
@@ -933,16 +817,12 @@ namespace Hero_Designer
             this.myPowers = DatabaseAPI.GetPowersetByID(Setname, Enums.ePowerSetType.Incarnate).Powers;
             this.FillLists();
         }
-
-
         void StanceButton_ButtonClicked()
         {
             ImageButton stanceButton = this.StanceButton;
             this.SetPowerSet("Stance", ref stanceButton);
             this.StanceButton = stanceButton;
         }
-
-
         protected void UpdateLLColours(ref ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
@@ -953,16 +833,12 @@ namespace Hero_Designer
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
             iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
         }
-
-
         void VitaeButton_ButtonClicked()
         {
             ImageButton vitaeButton = this.VitaeButton;
             this.SetPowerSet("Vitae", ref vitaeButton);
             this.VitaeButton = vitaeButton;
         }
-
-
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             if (this.PopInfo.lHeight > (float)this.Panel1.Height & this.VScrollBar1.Maximum > this.VScrollBar1.LargeChange)
@@ -974,88 +850,44 @@ namespace Hero_Designer
                 this.PopInfo.ScrollY = 0f;
             }
         }
-
-
         [AccessedThroughProperty("alphaBtn")]
         ImageButton _alphaBtn;
-
-
         [AccessedThroughProperty("destinyBtn")]
         ImageButton _destinyBtn;
-
-
         [AccessedThroughProperty("GenesisButton")]
         ImageButton _GenesisButton;
-
-
         [AccessedThroughProperty("hybridBtn")]
         ImageButton _hybridBtn;
-
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-
         [AccessedThroughProperty("interfaceBtn")]
         ImageButton _interfaceBtn;
-
-
         [AccessedThroughProperty("judgementBtn")]
         ImageButton _judgementBtn;
-
-
         [AccessedThroughProperty("lblLock")]
         Label _lblLock;
-
-
         [AccessedThroughProperty("llLeft")]
         ListLabelV2 _llLeft;
-
-
         [AccessedThroughProperty("llRight")]
         ListLabelV2 _llRight;
-
-
         [AccessedThroughProperty("loreBtn")]
         ImageButton _loreBtn;
-
-
         [AccessedThroughProperty("OmegaButton")]
         ImageButton _OmegaButton;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("PopInfo")]
         ctlPopUp _PopInfo;
-
-
         [AccessedThroughProperty("StanceButton")]
         ImageButton _StanceButton;
-
-
         [AccessedThroughProperty("VitaeButton")]
         ImageButton _VitaeButton;
-
-
         [AccessedThroughProperty("VScrollBar1")]
         VScrollBar _VScrollBar1;
-
-
         ImageButton[] buttonArray;
-
-
         protected bool Locked;
-
-
         protected frmMain myParent;
-
-
         public IPower[] myPowers;
-
-
         public class CustomPanel : Panel
         {
 

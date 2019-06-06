@@ -25,8 +25,6 @@ namespace Import
                 }
             }
         }
-
-
         public void Apply()
         {
             if (this.IsValid)
@@ -43,8 +41,6 @@ namespace Import
                 }
             }
         }
-
-
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -93,20 +89,10 @@ namespace Import
             }
             return flag;
         }
-
-
         public readonly EnhancementSet Data;
-
-
         public bool IsNew;
-
-
         public readonly int Index = -1;
-
-
         public readonly bool IsValid = true;
-
-
         readonly string _csvString = string.Empty;
     }
 }

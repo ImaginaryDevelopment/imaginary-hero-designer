@@ -7,12 +7,8 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmOptionListDlg : Form
     {
-
-    
     
         internal virtual Button Cancel_Button
         {
@@ -35,10 +31,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkRemember
         {
             get
@@ -51,10 +43,6 @@ namespace Hero_Designer
                 this._chkRemember = value;
             }
         }
-
-
-    
-    
         internal virtual ComboBox cmbAction
         {
             get
@@ -67,10 +55,6 @@ namespace Hero_Designer
                 this._cmbAction = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDescript
         {
             get
@@ -83,10 +67,6 @@ namespace Hero_Designer
                 this._lblDescript = value;
             }
         }
-
-
-    
-    
         internal virtual Button OK_Button
         {
             get
@@ -108,10 +88,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TableLayoutPanel TableLayoutPanel1
         {
             get
@@ -124,29 +100,21 @@ namespace Hero_Designer
                 this._TableLayoutPanel1 = value;
             }
         }
-
-
         public frmOptionListDlg()
         {
             this.InitializeComponent();
         }
-
-
         void Cancel_Button_Click(object sender, EventArgs e)
         {
             this.chkRemember.Checked = false;
             base.DialogResult = DialogResult.OK;
             base.Close();
         }
-
-
         void OK_Button_Click(object sender, EventArgs e)
         {
             base.DialogResult = this.cmbAction.SelectedIndex + DialogResult.Cancel;
             base.Close();
         }
-
-
         public void ShowWithOptions(bool AllowRemember, int DefaultOption, string descript, params string[] OptionList)
         {
             this.chkRemember.Enabled = AllowRemember;
@@ -165,28 +133,16 @@ namespace Hero_Designer
             }
             base.ShowDialog();
         }
-
-
         [AccessedThroughProperty("Cancel_Button")]
         Button _Cancel_Button;
-
-
         [AccessedThroughProperty("chkRemember")]
         CheckBox _chkRemember;
-
-
         [AccessedThroughProperty("cmbAction")]
         ComboBox _cmbAction;
-
-
         [AccessedThroughProperty("lblDescript")]
         Label _lblDescript;
-
-
         [AccessedThroughProperty("OK_Button")]
         Button _OK_Button;
-
-
         [AccessedThroughProperty("TableLayoutPanel1")]
         TableLayoutPanel _TableLayoutPanel1;
     }

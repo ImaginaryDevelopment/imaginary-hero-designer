@@ -18,11 +18,7 @@ public static class CSV
         }
         return strArray;
     }
-
-
     static readonly Regex Reg = new Regex(",(?=(?:[^\"]|\"[^\"]*\")*$)", RegexOptions.CultureInvariant);
-
-
     internal enum HPower
     {
 
@@ -214,8 +210,6 @@ public static class CSV
 
         InterruptLikeSleep
     }
-
-
     internal enum HEffect
     {
 
@@ -339,8 +333,6 @@ public static class CSV
 
         ProcsPerMinute
     }
-
-
     internal enum BoostSet
     {
 

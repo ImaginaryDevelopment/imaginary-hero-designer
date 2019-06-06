@@ -37,8 +37,6 @@ namespace Import
                 }
             }
         }
-
-
         public void Apply()
         {
             if (this.IsValid)
@@ -62,8 +60,6 @@ namespace Import
                 }
             }
         }
-
-
         public bool CheckDifference(out string message)
         {
             message = string.Empty;
@@ -249,20 +245,10 @@ namespace Import
             }
             return flag;
         }
-
-
         public readonly IPower Data;
-
-
         public bool IsNew;
-
-
         public int Index = -1;
-
-
         public readonly bool IsValid;
-
-
         readonly string _csvString = string.Empty;
     }
 }

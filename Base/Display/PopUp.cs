@@ -11,40 +11,18 @@ namespace Base.Display
         {
 
             public static Color Title = Color.FromArgb(216, 216, 255);
-
-
             public static Color Text = Color.FromArgb(255, 255, 255);
-
-
             public static Color Disabled = Color.FromArgb(192, 192, 192);
-
-
             public static Color Invention = Color.FromArgb(0, 255, 255);
-
-
             public static Color Effect = Color.FromArgb(0, 255, 128);
-
-
             public static Color Alert = Color.FromArgb(255, 0, 0);
-
-
             public static Color UltraRare = Color.FromArgb(192, 96, 192);
-
-
             public static Color Rare = Color.FromArgb(255, 128, 0);
-
-
             public static Color Uncommon = Color.FromArgb(255, 255, 0);
-
-
             public static Color Common = Color.FromArgb(255, 255, 255);
         }
-
-
         public struct StringValue
         {
-
-    
             public bool HasColumn
             {
                 get
@@ -52,30 +30,14 @@ namespace Base.Display
                     return !string.IsNullOrEmpty(this.TextColumn);
                 }
             }
-
-
             public string Text;
-
-
             public Color tColor;
-
-
             public float tSize;
-
-
             public FontStyle tFormat;
-
-
             public int tIndent;
-
-
             public string TextColumn;
-
-
             public Color tColorColumn;
         }
-
-
         public class Section
         {
 
@@ -94,8 +56,6 @@ namespace Base.Display
                 this.Content[this.Content.Length - 1].TextColumn = "";
                 this.Content[this.Content.Length - 1].tColorColumn = iColor;
             }
-
-
             public void Add(string iText, Color iColor, string iColumnText, Color iColumnColor, float iSize = 1f, FontStyle iFormat = FontStyle.Bold, int iIndent = 0)
             {
                 if (this.Content == null)
@@ -111,22 +71,12 @@ namespace Base.Display
                 this.Content[this.Content.Length - 1].TextColumn = iColumnText;
                 this.Content[this.Content.Length - 1].tColorColumn = iColumnColor;
             }
-
-
             public PopUp.StringValue[] Content;
         }
-
-
         public struct PopupData
         {
-
-    
     
             public bool CustomSet { get; private set; }
-
-
-    
-    
             public float ColPos
             {
                 get
@@ -139,10 +89,6 @@ namespace Base.Display
                     this.CustomSet = true;
                 }
             }
-
-
-    
-    
             public bool ColRight
             {
                 get
@@ -155,8 +101,6 @@ namespace Base.Display
                     this.CustomSet = true;
                 }
             }
-
-
             public int Add(PopUp.Section section = null)
             {
                 if (this.Sections == null)
@@ -174,8 +118,6 @@ namespace Base.Display
                 this.Sections[this.Sections.Length - 1] = section;
                 return this.Sections.Length - 1;
             }
-
-
             public void Init()
             {
                 int index2 = this.Add(null);
@@ -191,14 +133,8 @@ namespace Base.Display
                 this.Sections[index2].Add("Page from the Malleus mundi", PopUp.Colors.Text, "1", PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
                 this.Sections[index2].Add("Extra long column list item 1234567890", PopUp.Colors.Text, "1", PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
             }
-
-
             public PopUp.Section[] Sections;
-
-
             float _columnPosition;
-
-
             bool _rightAlignColumn;
         }
     }

@@ -10,8 +10,6 @@ namespace Hero_Designer
 
     public partial class frmFloatingStats : Form
     {
-
-    
     
         internal virtual DataView dvFloat
         {
@@ -52,8 +50,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmFloatingStats(ref frmMain iOwner)
         {
             base.Load += this.frmFloatingStats_Load;
@@ -61,43 +57,29 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myOwner = iOwner;
         }
-
-
         void dvFloat_FloatChanged()
         {
             base.Close();
         }
-
-
         void dvFloat_Load(object sender, EventArgs e)
         {
         }
-
-
         void dvFloat_SizeChange(Size newSize, bool Compact)
         {
             base.ClientSize = newSize;
         }
-
-
         void dvFloat_SlotFlip(int PowerIndex)
         {
             this.myOwner.DataView_SlotFlip(PowerIndex);
         }
-
-
         void dvFloat_SlotUpdate()
         {
             this.myOwner.DataView_SlotUpdate();
         }
-
-
         void dvFloat_TabChanged(int Index)
         {
             this.myOwner.SetDataViewTab(Index);
         }
-
-
         void dvFloat_Unlock()
         {
             this.myOwner.DataViewLocked = false;
@@ -106,27 +88,19 @@ namespace Hero_Designer
                 this.myOwner.Info_Power(this.myOwner.dvLastPower, this.myOwner.dvLastEnh, this.myOwner.dvLastNoLev, this.myOwner.DataViewLocked);
             }
         }
-
-
         void frmFloatingStats_Closed(object sender, EventArgs e)
         {
             this.myOwner.ShowAnchoredDataView();
             base.Hide();
         }
-
-
         void frmFloatingStats_Load(object sender, EventArgs e)
         {
             this.dvFloat.MoveDisable = true;
             this.dvFloat.SetScreenBounds(this.dvFloat.Bounds);
             this.dvFloat.SetLocation(this.dvFloat.Location, true);
         }
-
-
         [AccessedThroughProperty("dvFloat")]
         DataView _dvFloat;
-
-
         protected frmMain myOwner;
     }
 }

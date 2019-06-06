@@ -3,8 +3,6 @@
 // Token: 0x0200007D RID: 125
 public class I9SetData
 {
-
-    
     public bool Empty
     {
         get
@@ -12,13 +10,9 @@ public class I9SetData
             return this.SetInfo.Length < 1;
         }
     }
-
-
     public I9SetData()
     {
     }
-
-
     public I9SetData(I9SetData iSd)
     {
         this.PowerIndex = iSd.PowerIndex;
@@ -33,8 +27,6 @@ public class I9SetData
             Array.Copy(iSd.SetInfo[index].EnhIndexes, this.SetInfo[index].EnhIndexes, iSd.SetInfo[index].EnhIndexes.Length);
         }
     }
-
-
     public void Add(ref I9Slot iEnh)
     {
         if (iEnh.Enh >= 0)
@@ -63,8 +55,6 @@ public class I9SetData
             }
         }
     }
-
-
     int Lookup(int setID)
     {
         int num;
@@ -85,8 +75,6 @@ public class I9SetData
         }
         return num;
     }
-
-
     public void BuildEffects(Enums.ePvX pvMode)
     {
         for (int index = 0; index <= this.SetInfo.Length - 1; index++)
@@ -127,26 +115,14 @@ public class I9SetData
             }
         }
     }
-
-
     public I9SetData.sSetInfo[] SetInfo = new I9SetData.sSetInfo[0];
-
-
     public int PowerIndex;
-
-
     public struct sSetInfo
     {
 
         public int SetIDX;
-
-
         public int SlottedCount;
-
-
         public int[] Powers;
-
-
         public int[] EnhIndexes;
     }
 }

@@ -11,8 +11,6 @@ namespace Hero_Designer
 
     public partial class frmBusy : Form
     {
-
-    
     
         internal virtual Label Message
         {
@@ -26,20 +24,14 @@ namespace Hero_Designer
                 this._Message = value;
             }
         }
-
-
         public frmBusy()
         {
             base.Load += this.frmBusy_Load;
             this.InitializeComponent();
         }
-
-
         void frmBusy_Load(object sender, EventArgs e)
         {
         }
-
-
         public void SetMessage(string iMsg)
         {
             if (this.Message.Text != iMsg)
@@ -48,8 +40,6 @@ namespace Hero_Designer
                 this.Refresh();
             }
         }
-
-
         [AccessedThroughProperty("Message")]
         Label _Message;
     }

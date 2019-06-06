@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmSetListing : Form
     {
-
-    
     
         internal virtual Button btnAdd
         {
@@ -37,10 +35,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCancel
         {
             get
@@ -62,10 +56,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnClone
         {
             get
@@ -87,10 +77,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDelete
         {
             get
@@ -112,10 +98,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnDown
         {
             get
@@ -137,10 +119,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnEdit
         {
             get
@@ -162,10 +140,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnSave
         {
             get
@@ -187,10 +161,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnUp
         {
             get
@@ -212,10 +182,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -228,10 +194,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -244,10 +206,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -260,10 +218,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -276,10 +230,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -292,10 +242,6 @@ namespace Hero_Designer
                 this._ColumnHeader5 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader6
         {
             get
@@ -308,10 +254,6 @@ namespace Hero_Designer
                 this._ColumnHeader6 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageList ilSets
         {
             get
@@ -324,10 +266,6 @@ namespace Hero_Designer
                 this._ilSets = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvSets
         {
             get
@@ -352,10 +290,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox NoReload
         {
             get
@@ -377,15 +311,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmSetListing()
         {
             base.Load += this.frmSetListing_Load;
             this.InitializeComponent();
         }
-
-
         public void AddListItem(int Index)
         {
             string[] items = new string[6];
@@ -409,8 +339,6 @@ namespace Hero_Designer
             this.lvSets.Items[this.lvSets.Items.Count - 1].Selected = true;
             this.lvSets.Items[this.lvSets.Items.Count - 1].EnsureVisible();
         }
-
-
         void btnAdd_Click(object sender, EventArgs e)
         {
             EnhancementSet iSet = new EnhancementSet();
@@ -423,14 +351,10 @@ namespace Hero_Designer
                 this.AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
             }
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
-
-
         void btnClone_Click(object sender, EventArgs e)
         {
             if (this.lvSets.SelectedIndices.Count > 0)
@@ -449,8 +373,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnDelete_Click(object sender, EventArgs e)
         {
             if (this.lvSets.SelectedIndices.Count > 0 && Interaction.MsgBox("Really delete set: " + this.lvSets.SelectedItems[0].Text + "?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
@@ -472,8 +394,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnDown_Click(object sender, EventArgs e)
         {
             if (this.lvSets.SelectedIndices.Count > 0)
@@ -498,8 +418,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lvSets.SelectedIndices.Count > 0)
@@ -531,15 +449,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnSave_Click(object sender, EventArgs e)
         {
             DatabaseAPI.SaveEnhancementDb();
             base.Hide();
         }
-
-
         void btnUp_Click(object sender, EventArgs e)
         {
             if (this.lvSets.SelectedIndices.Count > 0)
@@ -564,8 +478,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void DisplayList()
         {
             this.lvSets.BeginUpdate();
@@ -583,8 +495,6 @@ namespace Hero_Designer
             }
             this.lvSets.EndUpdate();
         }
-
-
         public void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height);
@@ -606,14 +516,10 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void frmSetListing_Load(object sender, EventArgs e)
         {
             this.DisplayList();
         }
-
-
         public void ImageUpdate()
         {
             if (!this.NoReload.Checked)
@@ -622,25 +528,17 @@ namespace Hero_Designer
                 this.FillImageList();
             }
         }
-
-
         void lvSets_DoubleClick(object sender, EventArgs e)
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         void lvSets_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
-
         void NoReload_CheckedChanged(object sender, EventArgs e)
         {
             this.ImageUpdate();
         }
-
-
         static void RenameIOSet(string uidOld, string uidNew)
         {
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
@@ -652,8 +550,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void UpdateListItem(int Index)
         {
             string[] strArray = new string[6];
@@ -681,72 +577,38 @@ namespace Hero_Designer
             this.lvSets.Items[Index].ImageIndex = Index;
             this.lvSets.Refresh();
         }
-
-
         [AccessedThroughProperty("btnAdd")]
         Button _btnAdd;
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnClone")]
         Button _btnClone;
-
-
         [AccessedThroughProperty("btnDelete")]
         Button _btnDelete;
-
-
         [AccessedThroughProperty("btnDown")]
         Button _btnDown;
-
-
         [AccessedThroughProperty("btnEdit")]
         Button _btnEdit;
-
-
         [AccessedThroughProperty("btnSave")]
         Button _btnSave;
-
-
         [AccessedThroughProperty("btnUp")]
         Button _btnUp;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("ColumnHeader5")]
         ColumnHeader _ColumnHeader5;
-
-
         [AccessedThroughProperty("ColumnHeader6")]
         ColumnHeader _ColumnHeader6;
-
-
         [AccessedThroughProperty("ilSets")]
         ImageList _ilSets;
-
-
         [AccessedThroughProperty("lvSets")]
         ListView _lvSets;
-
-
         [AccessedThroughProperty("NoReload")]
         CheckBox _NoReload;
     }

@@ -13,8 +13,6 @@ namespace Hero_Designer
 
     public partial class frmColourSettings : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -37,10 +35,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -62,10 +56,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnReset
         {
             get
@@ -87,10 +77,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColorDialog cPicker
         {
             get
@@ -103,10 +89,6 @@ namespace Hero_Designer
                 this._cPicker = value;
             }
         }
-
-
-    
-    
         internal virtual Label csAlert
         {
             get
@@ -128,10 +110,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csEnh
         {
             get
@@ -153,10 +131,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csFade
         {
             get
@@ -178,10 +152,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csHero
         {
             get
@@ -203,10 +173,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csInv
         {
             get
@@ -228,10 +194,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csInvInv
         {
             get
@@ -253,10 +215,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csSpecial
         {
             get
@@ -278,10 +236,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csText
         {
             get
@@ -303,10 +257,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csValue
         {
             get
@@ -328,10 +278,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label csVillain
         {
             get
@@ -353,10 +299,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -369,10 +311,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -385,10 +323,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -401,10 +335,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -417,10 +347,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label20
         {
             get
@@ -433,10 +359,6 @@ namespace Hero_Designer
                 this._Label20 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -449,10 +371,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -465,10 +383,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -481,10 +395,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -497,10 +407,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -513,10 +419,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -529,10 +431,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -545,10 +443,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -561,10 +455,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual ListLabelV2 Listlabel1
         {
             get
@@ -586,10 +476,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtPreview
         {
             get
@@ -602,36 +488,26 @@ namespace Hero_Designer
                 this._rtPreview = value;
             }
         }
-
-
         public frmColourSettings()
         {
             base.Load += this.frmColourSettings_Load;
             this.InitializeComponent();
             this.myFS.Assign(MidsContext.Config.RtFont);
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.Hide();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             MidsContext.Config.RtFont.Assign(this.myFS);
             base.Hide();
         }
-
-
         void btnReset_Click(object sender, EventArgs e)
         {
             this.myFS.SetDefault();
             this.updateColours();
         }
-
-
         void csAlert_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorWarning;
@@ -641,8 +517,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csEnh_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorEnhancement;
@@ -652,8 +526,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csFade_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorFaded;
@@ -663,8 +535,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csHero_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorBackgroundHero;
@@ -674,8 +544,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csInv_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorInvention;
@@ -685,8 +553,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csInvInv_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorInventionInv;
@@ -696,8 +562,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csSpecial_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorPlSpecial;
@@ -707,8 +571,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csText_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorText;
@@ -718,8 +580,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csValue_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorPlName;
@@ -729,8 +589,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void csVillain_Click(object sender, EventArgs e)
         {
             this.cPicker.Color = this.myFS.ColorBackgroundVillain;
@@ -740,14 +598,10 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         void frmColourSettings_Load(object sender, EventArgs e)
         {
             this.updateColours();
         }
-
-
         void Listlabel1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
             switch (Item.Index)
@@ -790,8 +644,6 @@ namespace Hero_Designer
             }
             this.updateColours();
         }
-
-
         public void updateColours()
         {
             ConfigData.FontSettings iFs = default(ConfigData.FontSettings);
@@ -895,124 +747,64 @@ namespace Hero_Designer
             this.Listlabel1.Refresh();
             MidsContext.Config.RtFont.Assign(iFs);
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnReset")]
         Button _btnReset;
-
-
         [AccessedThroughProperty("cPicker")]
         ColorDialog _cPicker;
-
-
         [AccessedThroughProperty("csAlert")]
         Label _csAlert;
-
-
         [AccessedThroughProperty("csEnh")]
         Label _csEnh;
-
-
         [AccessedThroughProperty("csFade")]
         Label _csFade;
-
-
         [AccessedThroughProperty("csHero")]
         Label _csHero;
-
-
         [AccessedThroughProperty("csInv")]
         Label _csInv;
-
-
         [AccessedThroughProperty("csInvInv")]
         Label _csInvInv;
-
-
         [AccessedThroughProperty("csSpecial")]
         Label _csSpecial;
-
-
         [AccessedThroughProperty("csText")]
         Label _csText;
-
-
         [AccessedThroughProperty("csValue")]
         Label _csValue;
-
-
         [AccessedThroughProperty("csVillain")]
         Label _csVillain;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label20")]
         Label _Label20;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("Listlabel1")]
         ListLabelV2 _Listlabel1;
-
-
         [AccessedThroughProperty("rtPreview")]
         RichTextBox _rtPreview;
-
-
         protected ConfigData.FontSettings myFS;
     }
 }

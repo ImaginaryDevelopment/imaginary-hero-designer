@@ -15,8 +15,6 @@ namespace Hero_Designer
 
         public class MidsController
         {
-
-    
             public static bool IsAppInitialized
             {
                 get
@@ -24,10 +22,6 @@ namespace Hero_Designer
                     return MainModule.MidsController._appInitialized;
                 }
             }
-
-
-    
-    
             public static clsToonX Toon
             {
                 get
@@ -39,8 +33,6 @@ namespace Hero_Designer
                     MidsContext.Character = value;
                 }
             }
-
-
             [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
             public static void LoadData(ref frmLoading iFrm)
             {
@@ -129,29 +121,13 @@ namespace Hero_Designer
                 DatabaseAPI.AssignRecipeIDs();
                 GC.Collect();
             }
-
-
             public static float HeroDesignerVersion = 2.21f;
-
-
             static bool _appInitialized = false;
-
-
             public static Rectangle SzFrmCompare = default(Rectangle);
-
-
             public static Rectangle SzFrmData = default(Rectangle);
-
-
             public static Rectangle SzFrmRecipe = default(Rectangle);
-
-
             public static Rectangle SzFrmSets = default(Rectangle);
-
-
             public static Rectangle SzFrmStats = default(Rectangle);
-
-
             public static Rectangle SzFrmTotals = default(Rectangle);
         }
     }

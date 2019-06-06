@@ -16,8 +16,6 @@ namespace Hero_Designer
 
     public partial class frmSetEdit : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -40,10 +38,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnImage
         {
             get
@@ -65,10 +59,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnNoImage
         {
             get
@@ -90,10 +80,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -115,10 +101,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPaste
         {
             get
@@ -140,10 +122,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSetType
         {
             get
@@ -165,10 +143,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSlotCount
         {
             get
@@ -190,10 +164,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -206,10 +176,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -222,10 +188,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -238,10 +200,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -254,10 +212,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox gbBasic
         {
             get
@@ -270,10 +224,6 @@ namespace Hero_Designer
                 this._gbBasic = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -286,10 +236,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -302,10 +248,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageList ilEnh
         {
             get
@@ -318,10 +260,6 @@ namespace Hero_Designer
                 this._ilEnh = value;
             }
         }
-
-
-    
-    
         internal virtual OpenFileDialog ImagePicker
         {
             get
@@ -334,10 +272,6 @@ namespace Hero_Designer
                 this._ImagePicker = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -350,10 +284,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label16
         {
             get
@@ -366,10 +296,6 @@ namespace Hero_Designer
                 this._Label16 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -382,10 +308,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label27
         {
             get
@@ -398,10 +320,6 @@ namespace Hero_Designer
                 this._Label27 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -414,10 +332,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -430,10 +344,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -446,10 +356,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -462,10 +368,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -478,10 +380,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual ListBox lstBonus
         {
             get
@@ -503,10 +401,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvBonusList
         {
             get
@@ -531,10 +425,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvEnh
         {
             get
@@ -547,10 +437,6 @@ namespace Hero_Designer
                 this._lvEnh = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfAny
         {
             get
@@ -563,10 +449,6 @@ namespace Hero_Designer
                 this._rbIfAny = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfCritter
         {
             get
@@ -579,10 +461,6 @@ namespace Hero_Designer
                 this._rbIfCritter = value;
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfPlayer
         {
             get
@@ -595,10 +473,6 @@ namespace Hero_Designer
                 this._rbIfPlayer = value;
             }
         }
-
-
-    
-    
         internal virtual RichTextBox rtbBonus
         {
             get
@@ -611,10 +485,6 @@ namespace Hero_Designer
                 this._rtbBonus = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtAlternate
         {
             get
@@ -636,10 +506,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDesc
         {
             get
@@ -661,10 +527,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtInternal
         {
             get
@@ -686,10 +548,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtNameFull
         {
             get
@@ -711,10 +569,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtNameShort
         {
             get
@@ -736,10 +590,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udMaxLevel
         {
             get
@@ -764,10 +614,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udMinLevel
         {
             get
@@ -792,8 +638,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmSetEdit(ref EnhancementSet iSet)
         {
             base.Load += this.frmSetEdit_Load;
@@ -803,21 +647,15 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.mySet = new EnhancementSet(iSet);
         }
-
-
         public int BonusID()
         {
             return this.cbSlotCount.SelectedIndex;
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
-
-
         void btnImage_Click(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -839,15 +677,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnNoImage_Click(object sender, EventArgs e)
         {
             this.mySet.Image = "";
             this.DisplayIcon();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             this.mySet.LevelMin = Convert.ToInt32(decimal.Subtract(this.udMinLevel.Value, 1m));
@@ -855,8 +689,6 @@ namespace Hero_Designer
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
-
-
         void btnPaste_Click(object sender, EventArgs e)
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
@@ -890,8 +722,6 @@ namespace Hero_Designer
             this.DisplayBonus();
             this.DisplayBonusText();
         }
-
-
         void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -899,8 +729,6 @@ namespace Hero_Designer
                 this.mySet.SetType = (Enums.eSetType)this.cbSetType.SelectedIndex;
             }
         }
-
-
         void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -909,8 +737,6 @@ namespace Hero_Designer
                 this.DisplayBonusText();
             }
         }
-
-
         public void DisplayBonus()
         {
             try
@@ -944,8 +770,6 @@ namespace Hero_Designer
             {
             }
         }
-
-
         public void DisplayBonusText()
         {
             string str = RTF.StartRTF();
@@ -1021,8 +845,6 @@ namespace Hero_Designer
             str += RTF.EndRTF();
             this.rtbBonus.Rtf = str;
         }
-
-
         void DisplayIcon()
         {
             if (this.mySet.Image != "")
@@ -1042,8 +864,6 @@ namespace Hero_Designer
                 this.btnImage.Text = "Select Image";
             }
         }
-
-
         public void DisplaySetData()
         {
             this.DisplaySetIcons();
@@ -1061,8 +881,6 @@ namespace Hero_Designer
             this.DisplayBonusText();
             this.DisplayBonus();
         }
-
-
         public void DisplaySetIcons()
         {
             this.FillImageList();
@@ -1097,8 +915,6 @@ namespace Hero_Designer
             }
             this.lvEnh.EndUpdate();
         }
-
-
         public void FillBonusCombos()
         {
             this.cbSlotCount.BeginUpdate();
@@ -1119,8 +935,6 @@ namespace Hero_Designer
             }
             this.cbSlotCount.EndUpdate();
         }
-
-
         public void FillBonusList()
         {
             this.lvBonusList.BeginUpdate();
@@ -1159,8 +973,6 @@ namespace Hero_Designer
             this.lvBonusList.Sort();
             this.lvBonusList.EndUpdate();
         }
-
-
         public void FillComboBoxes()
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
@@ -1170,8 +982,6 @@ namespace Hero_Designer
             this.cbSetType.Items.AddRange(names);
             this.cbSetType.EndUpdate();
         }
-
-
         public void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilEnh.ImageSize.Width, this.ilEnh.ImageSize.Height);
@@ -1194,8 +1004,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void frmSetEdit_Load(object sender, EventArgs e)
         {
             if (MidsContext.Config.MasterMode)
@@ -1215,20 +1023,14 @@ namespace Hero_Designer
             this.Loading = false;
             this.DisplayBonus();
         }
-
-
         public bool isBonus()
         {
             return this.cbSlotCount.SelectedIndex > -1 & this.cbSlotCount.SelectedIndex < this.mySet.Enhancements.Length - 1;
         }
-
-
         public bool isSpecial()
         {
             return this.cbSlotCount.SelectedIndex >= this.mySet.Enhancements.Length - 1 & this.cbSlotCount.SelectedIndex < this.mySet.Enhancements.Length + this.mySet.Enhancements.Length - 1;
         }
-
-
         void lstBonus_DoubleClick(object sender, EventArgs e)
         {
             if (this.lstBonus.SelectedIndex >= 0)
@@ -1291,8 +1093,6 @@ namespace Hero_Designer
                 this.DisplayBonusText();
             }
         }
-
-
         void lvBonusList_DoubleClick(object sender, EventArgs e)
         {
             if (this.lvBonusList.SelectedIndices.Count >= 1)
@@ -1324,13 +1124,9 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
-
         public void SetMaxLevel(int iValue)
         {
             if (decimal.Compare(new decimal(iValue), this.udMaxLevel.Minimum) < 0)
@@ -1343,8 +1139,6 @@ namespace Hero_Designer
             }
             this.udMaxLevel.Value = new decimal(iValue);
         }
-
-
         public void SetMinLevel(int iValue)
         {
             if (decimal.Compare(new decimal(iValue), this.udMinLevel.Minimum) < 0)
@@ -1357,14 +1151,10 @@ namespace Hero_Designer
             }
             this.udMinLevel.Value = new decimal(iValue);
         }
-
-
         public int SpecialID()
         {
             return this.cbSlotCount.SelectedIndex - (this.mySet.Enhancements.Length - 1);
         }
-
-
         void txtAlternate_TextChanged(object sender, EventArgs e)
         {
             if (this.isBonus())
@@ -1377,8 +1167,6 @@ namespace Hero_Designer
             }
             this.DisplayBonusText();
         }
-
-
         void txtDesc_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1386,8 +1174,6 @@ namespace Hero_Designer
                 this.mySet.Desc = this.txtDesc.Text;
             }
         }
-
-
         void txtInternal_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1395,8 +1181,6 @@ namespace Hero_Designer
                 this.mySet.Uid = this.txtInternal.Text;
             }
         }
-
-
         void txtNameFull_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1404,8 +1188,6 @@ namespace Hero_Designer
                 this.mySet.DisplayName = this.txtNameFull.Text;
             }
         }
-
-
         void txtNameShort_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1413,15 +1195,11 @@ namespace Hero_Designer
                 this.mySet.ShortName = this.txtNameShort.Text;
             }
         }
-
-
         void udMaxLevel_Leave(object sender, EventArgs e)
         {
             this.SetMaxLevel((int)Math.Round(Conversion.Val(this.udMaxLevel.Text)));
             this.mySet.LevelMax = Convert.ToInt32(decimal.Subtract(this.udMaxLevel.Value, 1m));
         }
-
-
         void udMaxLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1430,15 +1208,11 @@ namespace Hero_Designer
                 this.udMinLevel.Maximum = this.udMaxLevel.Value;
             }
         }
-
-
         void udMinLevel_Leave(object sender, EventArgs e)
         {
             this.SetMinLevel((int)Math.Round(Conversion.Val(this.udMinLevel.Text)));
             this.mySet.LevelMin = Convert.ToInt32(decimal.Subtract(this.udMinLevel.Value, 1m));
         }
-
-
         void udMinLevel_ValueChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1447,173 +1221,87 @@ namespace Hero_Designer
                 this.udMaxLevel.Minimum = this.udMinLevel.Value;
             }
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnImage")]
         Button _btnImage;
-
-
         [AccessedThroughProperty("btnNoImage")]
         Button _btnNoImage;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnPaste")]
         Button _btnPaste;
-
-
         [AccessedThroughProperty("cbSetType")]
         ComboBox _cbSetType;
-
-
         [AccessedThroughProperty("cbSlotCount")]
         ComboBox _cbSlotCount;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("gbBasic")]
         GroupBox _gbBasic;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("ilEnh")]
         ImageList _ilEnh;
-
-
         [AccessedThroughProperty("ImagePicker")]
         OpenFileDialog _ImagePicker;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label16")]
         Label _Label16;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label27")]
         Label _Label27;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("lstBonus")]
         ListBox _lstBonus;
-
-
         [AccessedThroughProperty("lvBonusList")]
         ListView _lvBonusList;
-
-
         [AccessedThroughProperty("lvEnh")]
         ListView _lvEnh;
-
-
         [AccessedThroughProperty("rbIfAny")]
         RadioButton _rbIfAny;
-
-
         [AccessedThroughProperty("rbIfCritter")]
         RadioButton _rbIfCritter;
-
-
         [AccessedThroughProperty("rbIfPlayer")]
         RadioButton _rbIfPlayer;
-
-
         [AccessedThroughProperty("rtbBonus")]
         RichTextBox _rtbBonus;
-
-
         [AccessedThroughProperty("txtAlternate")]
         TextBox _txtAlternate;
-
-
         [AccessedThroughProperty("txtDesc")]
         TextBox _txtDesc;
-
-
         [AccessedThroughProperty("txtInternal")]
         TextBox _txtInternal;
-
-
         [AccessedThroughProperty("txtNameFull")]
         TextBox _txtNameFull;
-
-
         [AccessedThroughProperty("txtNameShort")]
         TextBox _txtNameShort;
-
-
         [AccessedThroughProperty("udMaxLevel")]
         NumericUpDown _udMaxLevel;
-
-
         [AccessedThroughProperty("udMinLevel")]
         NumericUpDown _udMinLevel;
-
-
         protected bool Loading;
-
-
         public EnhancementSet mySet;
-
-
         protected int[] SetBonusList;
-
-
         protected int[] SetBonusListPVP;
     }
 }

@@ -11,16 +11,8 @@ public class PowerSubEntry
         this.nIDPower = iPowerSubEntry.nIDPower;
         this.StatInclude = iPowerSubEntry.StatInclude;
     }
-
-
     public int Powerset = -1;
-
-
     public int Power = -1;
-
-
     public int nIDPower = -1;
-
-
     public bool StatInclude;
 }

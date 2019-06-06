@@ -9,8 +9,6 @@
         }
         base.Dispose(disposing);
     }
-
-
     void InitializeComponent()
     {
         global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::ZStatus));
@@ -52,16 +50,8 @@
         base.TopMost = true;
         base.ResumeLayout(false);
     }
-
-
     global::System.ComponentModel.IContainer components;
-
-
     internal global::System.Windows.Forms.Label lblStatus2;
-
-
     internal global::System.Windows.Forms.Label lblStatus1;
-
-
     internal global::System.Windows.Forms.Label lblTitle;
 }

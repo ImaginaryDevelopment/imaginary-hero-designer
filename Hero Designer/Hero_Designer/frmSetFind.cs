@@ -14,12 +14,8 @@ using midsControls;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmSetFind : Form
     {
-
-    
     
         internal virtual ColumnHeader ColumnHeader1
         {
@@ -33,10 +29,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader2
         {
             get
@@ -49,10 +41,6 @@ namespace Hero_Designer
                 this._ColumnHeader2 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -65,10 +53,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -81,10 +65,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -97,10 +77,6 @@ namespace Hero_Designer
                 this._ColumnHeader5 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader6
         {
             get
@@ -113,10 +89,6 @@ namespace Hero_Designer
                 this._ColumnHeader6 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClose
         {
             get
@@ -138,10 +110,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibTopmost
         {
             get
@@ -163,10 +131,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageList ilSets
         {
             get
@@ -179,10 +143,6 @@ namespace Hero_Designer
                 this._ilSets = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvBonus
         {
             get
@@ -204,10 +164,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvMag
         {
             get
@@ -229,10 +185,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvSet
         {
             get
@@ -254,10 +206,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -270,10 +218,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPopUp SetInfo
         {
             get
@@ -286,8 +230,6 @@ namespace Hero_Designer
                 this._SetInfo = value;
             }
         }
-
-
         public frmSetFind(frmMain iParent)
         {
             base.FormClosed += this.frmSetFind_FormClosed;
@@ -296,8 +238,6 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myParent = iParent;
         }
-
-
         void AddEffect(ref string[] List, ref int[] nIDList, string Effect, int nID)
         {
             int num = List.Length - 1;
@@ -313,8 +253,6 @@ namespace Hero_Designer
             List[List.Length - 1] = Effect;
             nIDList[List.Length - 1] = nID;
         }
-
-
         void AddSetString(int nIDSet, int BonusID)
         {
             string[] array = new string[4];
@@ -332,8 +270,6 @@ namespace Hero_Designer
             this.lvSet.Items.Add(new ListViewItem(array, nIDSet));
             this.lvSet.Items[this.lvSet.Items.Count - 1].Tag = nIDSet;
         }
-
-
         public void FillEffectList()
         {
             string[] List = new string[0];
@@ -362,8 +298,6 @@ namespace Hero_Designer
             }
             this.lvBonus.EndUpdate();
         }
-
-
         public void FillImageList()
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height);
@@ -385,8 +319,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void FillMagList()
         {
             if (this.lvBonus.SelectedItems.Count < 1)
@@ -443,8 +375,6 @@ namespace Hero_Designer
                 this.lvMag.EndUpdate();
             }
         }
-
-
         void FillSetList()
         {
             if (this.lvBonus.SelectedItems.Count < 1 | this.lvMag.SelectedItems.Count < 1)
@@ -528,14 +458,10 @@ namespace Hero_Designer
                 this.lvSet.EndUpdate();
             }
         }
-
-
         void frmSetFind_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.myParent.FloatSetFinder(false);
         }
-
-
         void frmSetFind_Load(object sender, EventArgs e)
         {
             this.SetBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus", "");
@@ -550,8 +476,6 @@ namespace Hero_Designer
             this.FillImageList();
             this.FillEffectList();
         }
-
-
         string GetPowerString(int nIDPower)
         {
             string str = "";
@@ -611,14 +535,10 @@ namespace Hero_Designer
             }
             return str2;
         }
-
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void ibTopmost_ButtonClicked()
         {
             base.TopMost = this.ibTopmost.Checked;
@@ -627,20 +547,14 @@ namespace Hero_Designer
                 base.BringToFront();
             }
         }
-
-
         void lvBonus_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.FillMagList();
         }
-
-
         void lvMag_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.FillSetList();
         }
-
-
         void lvSet_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lvSet.SelectedItems.Count > 0)
@@ -648,67 +562,35 @@ namespace Hero_Designer
                 this.SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(this.lvSet.SelectedItems[0].Tag), null));
             }
         }
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader2")]
         ColumnHeader _ColumnHeader2;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("ColumnHeader5")]
         ColumnHeader _ColumnHeader5;
-
-
         [AccessedThroughProperty("ColumnHeader6")]
         ColumnHeader _ColumnHeader6;
-
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-
         [AccessedThroughProperty("ibTopmost")]
         ImageButton _ibTopmost;
-
-
         [AccessedThroughProperty("ilSets")]
         ImageList _ilSets;
-
-
         [AccessedThroughProperty("lvBonus")]
         ListView _lvBonus;
-
-
         [AccessedThroughProperty("lvMag")]
         ListView _lvMag;
-
-
         [AccessedThroughProperty("lvSet")]
         ListView _lvSet;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("SetInfo")]
         ctlPopUp _SetInfo;
-
-
         protected frmMain myParent;
-
-
         protected int[] SetBonusList;
     }
 }

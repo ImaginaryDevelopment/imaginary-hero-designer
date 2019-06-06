@@ -22,8 +22,6 @@ namespace Hero_Designer.My
             base.SaveMySettingsOnExit = false;
             base.ShutdownStyle = ShutdownMode.AfterMainFormCloses;
         }
-
-
         [STAThread]
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         [DebuggerHidden]
@@ -39,8 +37,6 @@ namespace Hero_Designer.My
             }
             MyProject.Application.Run(Args);
         }
-
-
         [DebuggerStepThrough]
         protected override void OnCreateMainForm()
         {

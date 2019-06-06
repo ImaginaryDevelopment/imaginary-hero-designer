@@ -20,8 +20,6 @@ public static class FileIO
         }
         return result;
     }
-
-
     public static string StripSlash(string iPath)
     {
         string result;
@@ -35,8 +33,6 @@ public static class FileIO
         }
         return result;
     }
-
-
     public static string StripPath(string iFileName)
     {
         int num = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
@@ -51,8 +47,6 @@ public static class FileIO
         }
         return result;
     }
-
-
     public static string StripFileName(string iFileName)
     {
         int length = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
@@ -67,8 +61,6 @@ public static class FileIO
         }
         return result;
     }
-
-
     public static string[] IOGrab(StreamReader iStream)
     {
         string[] strArray;
@@ -98,8 +90,6 @@ public static class FileIO
         }
         return strArray;
     }
-
-
     public static string IOStrip(string iString)
     {
         string text;
@@ -114,8 +104,6 @@ public static class FileIO
         text = (text.EndsWith(" ") ? iString.Substring(0, iString.Length - 1) : iString);
         return text.Replace(char.ConvertFromUtf32(34), "");
     }
-
-
     public static string IOSeekReturn(StreamReader istream, string iString)
     {
         string str;
@@ -136,8 +124,6 @@ public static class FileIO
         }
         return str;
     }
-
-
     public static bool IOSeek(StreamReader iStream, string iString)
     {
         bool flag;
@@ -158,8 +144,6 @@ public static class FileIO
         }
         return flag;
     }
-
-
     public static bool CopyFolder(string src, string dest)
     {
         bool flag;
@@ -213,8 +197,6 @@ public static class FileIO
         }
         return flag;
     }
-
-
     static bool FolderCopy(DirectoryInfo iDi, string dest)
     {
         DirectoryInfo[] directories = iDi.GetDirectories();
@@ -253,8 +235,6 @@ public static class FileIO
         }
         return true;
     }
-
-
     public static string ReadLineUnlimited(StreamReader iStream, char FakeLF)
     {
         byte[] bytes = new byte[65536];

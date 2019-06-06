@@ -21,8 +21,6 @@ namespace Hero_Designer
         {
             this._uriUpdatePath = path;
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         bool ApplyUpdate(ref int updateId)
         {
@@ -40,8 +38,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         static void BugReport(string sData)
         {
             try
@@ -77,8 +73,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("There was an error launching the default web browser to visit:\r\nhttp://www.honourableunited.org.uk/mhdreport.php\r\n\r\n" + ex2.Message, MsgBoxStyle.Critical, "Error");
             }
         }
-
-
         public static void BugReport(string at, string pri, string sec, string sData = "")
         {
             try
@@ -127,32 +121,22 @@ namespace Hero_Designer
                 Interaction.MsgBox("There was an error launching the default web browser to visit:\r\nhttp://www.honourableunited.org.uk/mhdreport.php\r\n\r\n" + ex2.Message, MsgBoxStyle.Critical, "Error");
             }
         }
-
-
         public static void Donate()
         {
             clsXMLUpdate.LaunchBrowser("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8057167");
         }
-
-
         public static void GoToCoHPlanner()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohplanner.com/");
         }
-
-
         public static void GoToForums()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/forum/");
         }
-
-
         public static void GoToTitan()
         {
             clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/");
         }
-
-
         void HideMessage()
         {
             if (this.sFrm != null)
@@ -162,8 +146,6 @@ namespace Hero_Designer
             this.sFrm = null;
             this.mFrm = null;
         }
-
-
         static void LaunchBrowser(string iURI)
         {
             try
@@ -176,8 +158,6 @@ namespace Hero_Designer
                 Interaction.MsgBox("There was an error starting the default web browser: " + ex2.Message, MsgBoxStyle.Exclamation, "Aiee!");
             }
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         public static void LaunchSelfUpdate()
         {
@@ -210,8 +190,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         bool LoadXMLStrings(string iString)
         {
             this.Updates = new clsXMLUpdate.clsXMLItem[2];
@@ -235,14 +213,10 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         public static void MailMe()
         {
             clsXMLUpdate.LaunchBrowser("mailto:midsteam@cohtitan.com&subject=Mids' Hero Designer");
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
         {
@@ -315,8 +289,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         bool RequestWithProgress(ref int updateId)
         {
@@ -561,8 +533,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         bool RequestXMLVersionInfo()
         {
             string requestUriString = this._uriUpdatePath + "version.xml";
@@ -673,8 +643,6 @@ namespace Hero_Designer
             }
             return flag;
         }
-
-
         void SetMessage(string messageA, string messageB)
         {
             if (this.sFrm != null)
@@ -688,8 +656,6 @@ namespace Hero_Designer
                 this.mFrm.SetMessage(messageA);
             }
         }
-
-
         void ShowMessage(bool silent, ref IMessager iLoadFrm)
         {
             if (!silent & iLoadFrm == null)
@@ -703,8 +669,6 @@ namespace Hero_Designer
                 this.mFrm = iLoadFrm;
             }
         }
-
-
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         public clsXMLUpdate.eCheckResponse UpdateCheck(bool silent, ref IMessager iLoadFrm)
         {
@@ -863,63 +827,27 @@ namespace Hero_Designer
             }
             return eCheckResponse;
         }
-
-
         const string TempFile = "Autoupdate.tmp";
-
-
         readonly string _uriUpdatePath = "";
-
-
         IMessager mFrm = null;
-
-
         public bool RestartNeeded = false;
-
-
         frmZStatus sFrm = null;
-
-
         protected clsXMLUpdate.clsXMLItem[] Updates = new clsXMLUpdate.clsXMLItem[0];
-
-
         protected class clsXMLItem
         {
 
             public string DisplayName = "";
-
-
             public string LocalDest = "";
-
-
             public bool Manual = true;
-
-
             public string NodeName = "";
-
-
             public string Notes = "";
-
-
             public clsXMLUpdate.eUpdateType nType = clsXMLUpdate.eUpdateType.None;
-
-
             public bool Restart = false;
-
-
             public int Size = 0;
-
-
             public string SourceURI = "";
-
-
             public float Version = 0f;
-
-
             public DateTime VersionDate = new DateTime(1, 1, 1);
         }
-
-
         public enum eCheckResponse
         {
 
@@ -929,8 +857,6 @@ namespace Hero_Designer
 
             FailedWithMessage
         }
-
-
         protected enum eUpdateType
         {
 
@@ -940,54 +866,28 @@ namespace Hero_Designer
 
             DBUpdate
         }
-
-
         struct Keys
         {
 
             public const string DisplayName = "Name";
-
-
             public const string SourceURI = "URI";
-
-
             public const string DestFn = "LocalDest";
-
-
             public const string Size = "Size";
-
-
             public const string Version = "Version";
-
-
             public const string VersionDate = "Date";
-
-
             public const string Restart = "Restart";
-
-
             public const string Manual = "Manual";
-
-
             public const string Notes = "Notes";
-
-
             public struct Attribs
             {
 
                 public const string Version = "Version";
             }
-
-
             public struct Nodes
             {
 
                 public const string Main = "Planner";
-
-
                 public const string AppUpdate = "Update";
-
-
                 public const string DBUpdate = "Database";
             }
         }

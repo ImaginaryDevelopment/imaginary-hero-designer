@@ -10,16 +10,12 @@ public struct SlotEntry
         this.Enhancement = (slotEntry.Enhancement.Clone() as I9Slot);
         this.FlippedEnhancement = (slotEntry.FlippedEnhancement.Clone() as I9Slot);
     }
-
-
     public void Flip()
     {
         I9Slot i9Slot = this.Enhancement.Clone() as I9Slot;
         this.Enhancement = (this.FlippedEnhancement.Clone() as I9Slot);
         this.FlippedEnhancement = ((i9Slot == null) ? new I9Slot() : (i9Slot.Clone() as I9Slot));
     }
-
-
     public void LoadFromString(string iString, string delimiter)
     {
         string[] strArray = iString.Split(delimiter.ToCharArray());
@@ -61,13 +57,7 @@ public struct SlotEntry
         this.Enhancement = (i9Slot.Clone() as I9Slot);
         this.FlippedEnhancement = (i9Slot2.Clone() as I9Slot);
     }
-
-
     public int Level;
-
-
     public I9Slot Enhancement;
-
-
     public I9Slot FlippedEnhancement;
 }

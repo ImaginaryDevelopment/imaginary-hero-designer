@@ -10,8 +10,6 @@ namespace Hero_Designer
 
     public partial class frmEnhMiniPick : Form
     {
-
-    
     
         internal virtual Button btnOK
         {
@@ -34,10 +32,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListBox lbList
         {
             get
@@ -62,10 +56,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label lblMessage
         {
             get
@@ -78,46 +68,30 @@ namespace Hero_Designer
                 this._lblMessage = value;
             }
         }
-
-
         public frmEnhMiniPick()
         {
             base.Load += this.frmEnhMez_Load;
             this.InitializeComponent();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
-
-
         void frmEnhMez_Load(object sender, EventArgs e)
         {
         }
-
-
         void lbList_DoubleClick(object sender, EventArgs e)
         {
             this.btnOK_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
-
-
         void lbList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("lbList")]
         ListBox _lbList;
-
-
         [AccessedThroughProperty("lblMessage")]
         Label _lblMessage;
     }

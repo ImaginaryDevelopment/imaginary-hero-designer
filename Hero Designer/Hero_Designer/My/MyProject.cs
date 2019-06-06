@@ -20,8 +20,6 @@ namespace Hero_Designer.My
     [StandardModule]
     internal sealed class MyProject
     {
-
-    
         [HelpKeyword("My.Application")]
         internal static MyApplication Application
         {
@@ -31,8 +29,6 @@ namespace Hero_Designer.My
                 return MyProject.m_AppObjectProvider.GetInstance;
             }
         }
-
-
     
         [HelpKeyword("My.Computer")]
         internal static MyComputer Computer
@@ -43,8 +39,6 @@ namespace Hero_Designer.My
                 return MyProject.m_ComputerObjectProvider.GetInstance;
             }
         }
-
-
     
         [HelpKeyword("My.Forms")]
         internal static MyProject.MyForms Forms
@@ -55,8 +49,6 @@ namespace Hero_Designer.My
                 return MyProject.m_MyFormsObjectProvider.GetInstance;
             }
         }
-
-
     
         [HelpKeyword("My.User")]
         internal static User User
@@ -67,8 +59,6 @@ namespace Hero_Designer.My
                 return MyProject.m_UserObjectProvider.GetInstance;
             }
         }
-
-
     
         [HelpKeyword("My.WebServices")]
         internal static MyProject.MyWebServices WebServices
@@ -79,29 +69,15 @@ namespace Hero_Designer.My
                 return MyProject.m_MyWebServicesObjectProvider.GetInstance;
             }
         }
-
-
         static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
-
-
         static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
-
-
         static MyProject.ThreadSafeObjectProvider<MyProject.MyForms> m_MyFormsObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyForms>();
-
-
         static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
-
-
         static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
-
-
         [MyGroupCollection("System.Windows.Forms.Form", "Create__Instance__", "Dispose__Instance__", "My.MyProject.Forms")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         internal sealed class MyForms
         {
-
-    
     
             public frmAbout frmAbout
             {
@@ -122,10 +98,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmBusy frmBusy
             {
                 get
@@ -145,10 +117,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmColourSettings frmColourSettings
             {
                 get
@@ -168,10 +136,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmCSV frmCSV
             {
                 get
@@ -191,10 +155,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmDBEdit frmDBEdit
             {
                 get
@@ -214,10 +174,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmEnhEdit frmEnhEdit
             {
                 get
@@ -237,10 +193,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmEnhMiniPick frmEnhMiniPick
             {
                 get
@@ -260,10 +212,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmEntityListing frmEntityListing
             {
                 get
@@ -283,10 +231,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmForum frmForum
             {
                 get
@@ -306,10 +250,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_Archetype frmImport_Archetype
             {
                 get
@@ -329,10 +269,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_EnhancementEffects frmImport_EnhancementEffects
             {
                 get
@@ -352,10 +288,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_Entities frmImport_Entities
             {
                 get
@@ -375,10 +307,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_mod frmImport_mod
             {
                 get
@@ -398,10 +326,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_Power frmImport_Power
             {
                 get
@@ -421,10 +345,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_Powerset frmImport_Powerset
             {
                 get
@@ -444,10 +364,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_Recipe frmImport_Recipe
             {
                 get
@@ -467,10 +383,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_SalvageReq frmImport_SalvageReq
             {
                 get
@@ -490,10 +402,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_SetAssignments frmImport_SetAssignments
             {
                 get
@@ -513,10 +421,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImport_SetBonusAssignment frmImport_SetBonusAssignment
             {
                 get
@@ -536,10 +440,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImportEffects frmImportEffects
             {
                 get
@@ -559,10 +459,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImportEnhSets frmImportEnhSets
             {
                 get
@@ -582,10 +478,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmImportPowerLevels frmImportPowerLevels
             {
                 get
@@ -605,10 +497,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmLoading frmLoading
             {
                 get
@@ -628,10 +516,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmMain frmMain
             {
                 get
@@ -651,10 +535,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmOptionListDlg frmOptionListDlg
             {
                 get
@@ -674,10 +554,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmPowerBrowser frmPowerBrowser
             {
                 get
@@ -697,10 +573,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmPrint frmPrint
             {
                 get
@@ -720,10 +592,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmRecipeEdit frmRecipeEdit
             {
                 get
@@ -743,10 +611,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmSalvageEdit frmSalvageEdit
             {
                 get
@@ -766,10 +630,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmSetListing frmSetListing
             {
                 get
@@ -789,10 +649,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmTweakMatching frmTweakMatching
             {
                 get
@@ -812,10 +668,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
-    
-    
             public frmZStatus frmZStatus
             {
                 get
@@ -835,8 +687,6 @@ namespace Hero_Designer.My
                     }
                 }
             }
-
-
             static T Create__Instance__<T>(T Instance) where T : Form, new()
             {
                 T obj;
@@ -880,145 +730,67 @@ namespace Hero_Designer.My
                 }
                 return obj;
             }
-
-
             [DebuggerHidden]
             void Dispose__Instance__<T>(ref T instance) where T : Form
             {
                 instance.Dispose();
                 instance = default(T);
             }
-
-
             [EditorBrowsable(EditorBrowsableState.Never)]
             public override bool Equals(object o)
             {
                 return base.Equals(RuntimeHelpers.GetObjectValue(o));
             }
-
-
             [EditorBrowsable(EditorBrowsableState.Never)]
             public override int GetHashCode()
             {
                 return base.GetHashCode();
             }
-
-
             [EditorBrowsable(EditorBrowsableState.Never)]
             internal new Type GetType()
             {
                 return typeof(MyProject.MyForms);
             }
-
-
             [EditorBrowsable(EditorBrowsableState.Never)]
             public override string ToString()
             {
                 return base.ToString();
             }
-
-
             [ThreadStatic]
             static Hashtable m_FormBeingCreated;
-
-
             public frmAbout m_frmAbout;
-
-
             public frmBusy m_frmBusy;
-
-
             public frmColourSettings m_frmColourSettings;
-
-
             public frmCSV m_frmCSV;
-
-
             public frmDBEdit m_frmDBEdit;
-
-
             public frmEnhEdit m_frmEnhEdit;
-
-
             public frmEnhMiniPick m_frmEnhMiniPick;
-
-
             public frmEntityListing m_frmEntityListing;
-
-
             public frmForum m_frmForum;
-
-
             public frmImport_Archetype m_frmImport_Archetype;
-
-
             public frmImport_EnhancementEffects m_frmImport_EnhancementEffects;
-
-
             public frmImport_Entities m_frmImport_Entities;
-
-
             public frmImport_mod m_frmImport_mod;
-
-
             public frmImport_Power m_frmImport_Power;
-
-
             public frmImport_Powerset m_frmImport_Powerset;
-
-
             public frmImport_Recipe m_frmImport_Recipe;
-
-
             public frmImport_SalvageReq m_frmImport_SalvageReq;
-
-
             public frmImport_SetAssignments m_frmImport_SetAssignments;
-
-
             public frmImport_SetBonusAssignment m_frmImport_SetBonusAssignment;
-
-
             public frmImportEffects m_frmImportEffects;
-
-
             public frmImportEnhSets m_frmImportEnhSets;
-
-
             public frmImportPowerLevels m_frmImportPowerLevels;
-
-
             public frmLoading m_frmLoading;
-
-
             public frmMain m_frmMain;
-
-
             public frmOptionListDlg m_frmOptionListDlg;
-
-
             public frmPowerBrowser m_frmPowerBrowser;
-
-
             public frmPrint m_frmPrint;
-
-
             public frmRecipeEdit m_frmRecipeEdit;
-
-
             public frmSalvageEdit m_frmSalvageEdit;
-
-
             public frmSetListing m_frmSetListing;
-
-
             public frmTweakMatching m_frmTweakMatching;
-
-
             public frmZStatus m_frmZStatus;
         }
-
-
         [EditorBrowsable(EditorBrowsableState.Never)]
         [MyGroupCollection("System.Web.Services.Protocols.SoapHttpClientProtocol", "Create__Instance__", "Dispose__Instance__", "")]
         internal sealed class MyWebServices
@@ -1038,39 +810,29 @@ namespace Hero_Designer.My
                 }
                 return result;
             }
-
-
             [DebuggerHidden]
             void Dispose__Instance__<T>(ref T instance)
             {
                 instance = default(T);
             }
-
-
             [DebuggerHidden]
             [EditorBrowsable(EditorBrowsableState.Never)]
             public override bool Equals(object o)
             {
                 return base.Equals(RuntimeHelpers.GetObjectValue(o));
             }
-
-
             [DebuggerHidden]
             [EditorBrowsable(EditorBrowsableState.Never)]
             public override int GetHashCode()
             {
                 return base.GetHashCode();
             }
-
-
             [DebuggerHidden]
             [EditorBrowsable(EditorBrowsableState.Never)]
             internal new Type GetType()
             {
                 return typeof(MyProject.MyWebServices);
             }
-
-
             [EditorBrowsable(EditorBrowsableState.Never)]
             [DebuggerHidden]
             public override string ToString()
@@ -1078,14 +840,10 @@ namespace Hero_Designer.My
                 return base.ToString();
             }
         }
-
-
         [EditorBrowsable(EditorBrowsableState.Never)]
         [ComVisible(false)]
         internal sealed class ThreadSafeObjectProvider<T> where T : new()
         {
-
-    
             internal T GetInstance
             {
                 [DebuggerHidden]
@@ -1098,8 +856,6 @@ namespace Hero_Designer.My
                     return MyProject.ThreadSafeObjectProvider<T>.m_ThreadStaticValue;
                 }
             }
-
-
             [CompilerGenerated]
             [ThreadStatic]
             static T m_ThreadStaticValue;

@@ -19,8 +19,6 @@ namespace Base.Document_Classes
             this.Document.PrinterSettings.DefaultPageSettings.Margins.Right = 25;
             this.Document.PrinterSettings.DefaultPageSettings.Landscape = false;
         }
-
-
         public void InitiatePrint()
         {
             if (!this.Document.PrinterSettings.IsValid)
@@ -56,8 +54,6 @@ namespace Base.Document_Classes
                 }
             }
         }
-
-
         void PrintBegin(object sender, PrintEventArgs e)
         {
             this._pageNumber = 0;
@@ -66,14 +62,10 @@ namespace Base.Document_Classes
             this._printingHistory = MidsContext.Config.PrintHistory;
             this._sectionCompleted = Print.PrintWhat.None;
         }
-
-
         void PrintEnd(object sender, PrintEventArgs e)
         {
             this.Document = new PrintDocument();
         }
-
-
         void PrintPage(object sender, PrintPageEventArgs args)
         {
             RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
@@ -102,8 +94,6 @@ namespace Base.Document_Classes
                 args.HasMorePages = false;
             }
         }
-
-
         int PageBorder(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -158,8 +148,6 @@ namespace Base.Document_Classes
             args.Graphics.DrawString(DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToShortTimeString(), font2, solidBrush, layoutRectangle, format);
             return Convert.ToInt32(num4 + 8);
         }
-
-
         void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
         {
             int num2 = bounds.Top;
@@ -207,8 +195,6 @@ namespace Base.Document_Classes
             }
             this._printingHistory = false;
         }
-
-
         static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -262,8 +248,6 @@ namespace Base.Document_Classes
             }
             return num2;
         }
-
-
         void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
         {
             SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -325,8 +309,6 @@ namespace Base.Document_Classes
             }
             this._printingProfile = false;
         }
-
-
         int BuildPowerListLong(ref int vPos, RectangleF bounds, int fontSize, Print.PrintWhat selection, PrintPageEventArgs args)
         {
             int num;
@@ -532,8 +514,6 @@ namespace Base.Document_Classes
             }
             return num;
         }
-
-
         void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
         {
             this._printingProfile = false;
@@ -564,8 +544,6 @@ namespace Base.Document_Classes
                 Print.BuildPowerListShort(ref vPos3, bounds, 12, false, true, true, args);
             }
         }
-
-
         static void BuildPowerListShort(ref int vPos, RectangleF bounds, int fontSize, bool skipInherent, bool skipNormal, bool kheldian, PrintPageEventArgs args)
         {
             bool printIoLevels = MidsContext.Config.I9.PrintIOLevels;
@@ -725,21 +703,15 @@ namespace Base.Document_Classes
                 }
             }
         }
-
-
         static Rectangle RectConvert(RectangleF iRect)
         {
             return new Rectangle((int)iRect.X, (int)iRect.Y, (int)iRect.Width, (int)iRect.Height);
         }
-
-
         public void Dispose()
         {
             this.Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
@@ -751,35 +723,15 @@ namespace Base.Document_Classes
                 }
             }
         }
-
-
         const int TextBase = 8;
-
-
         const float LineSpace = 1.25f;
-
-
         public PrintDocument Document;
-
-
         int _pageNumber;
-
-
         int _pIndex;
-
-
         bool _printingProfile;
-
-
         bool _printingHistory;
-
-
         bool _endOfPage;
-
-
         Print.PrintWhat _sectionCompleted;
-
-
         enum PrintWhat
         {
 

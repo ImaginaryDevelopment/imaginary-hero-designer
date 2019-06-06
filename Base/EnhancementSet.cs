@@ -23,8 +23,6 @@ public class EnhancementSet
             this.SpecialBonus[index].Index = new int[0];
         }
     }
-
-
     public string GetEffectString(int index, bool special, bool longForm = false)
     {
         EnhancementSet.BonusItem[] bonusItemArray = special ? this.SpecialBonus : this.Bonus;
@@ -82,8 +80,6 @@ public class EnhancementSet
         }
         return str;
     }
-
-
     public EnhancementSet()
     {
         this.DisplayName = string.Empty;
@@ -96,8 +92,6 @@ public class EnhancementSet
         this.LevelMin = 0;
         this.LevelMax = 52;
     }
-
-
     public EnhancementSet(EnhancementSet iIOSet)
     {
         this.DisplayName = iIOSet.DisplayName;
@@ -120,8 +114,6 @@ public class EnhancementSet
         }
         this.Uid = iIOSet.Uid;
     }
-
-
     public EnhancementSet(BinaryReader reader)
     {
         this.DisplayName = reader.ReadString();
@@ -167,8 +159,6 @@ public class EnhancementSet
             }
         }
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.DisplayName);
@@ -211,8 +201,6 @@ public class EnhancementSet
             }
         }
     }
-
-
     public bool ImportFromCSV(string iCSV)
     {
         bool flag;
@@ -244,8 +232,6 @@ public class EnhancementSet
         }
         return flag;
     }
-
-
     static string GenerateShortName(string displayName)
     {
         string[] strArray = displayName.Split(new char[]
@@ -277,44 +263,18 @@ public class EnhancementSet
         }
         return result;
     }
-
-
     public string DisplayName = string.Empty;
-
-
     public string ShortName = string.Empty;
-
-
     public string Desc = string.Empty;
-
-
     public Enums.eSetType SetType;
-
-
     public int[] Enhancements;
-
-
     public string Image = string.Empty;
-
-
     public int ImageIdx;
-
-
     public EnhancementSet.BonusItem[] Bonus = new EnhancementSet.BonusItem[5];
-
-
     public EnhancementSet.BonusItem[] SpecialBonus = new EnhancementSet.BonusItem[6];
-
-
     public int LevelMin;
-
-
     public int LevelMax;
-
-
     public string Uid = string.Empty;
-
-
     public struct BonusItem
     {
 
@@ -329,23 +289,11 @@ public class EnhancementSet
             this.PvMode = iBi.PvMode;
             this.Slotted = iBi.Slotted;
         }
-
-
         public int Special;
-
-
         public string[] Name;
-
-
         public int[] Index;
-
-
         public string AltString;
-
-
         public Enums.ePvX PvMode;
-
-
         public int Slotted;
     }
 }

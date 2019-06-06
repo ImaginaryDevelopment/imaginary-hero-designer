@@ -18,8 +18,6 @@ public static class OS
         }
         return result;
     }
-
-
     static OS.WindowsVersion GetWindowsVersion()
     {
         OS.WindowsVersion result;
@@ -57,33 +55,23 @@ public static class OS
         }
         return result;
     }
-
-
     public static string GetQuickOsid()
     {
         OS.WindowsVersion windowsVersion = OS.GetWindowsVersion();
         return Enum.GetName(windowsVersion.GetType(), windowsVersion);
     }
-
-
     public static string GetMyDocumentsPath()
     {
         return OS.AddSlash(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
     }
-
-
     public static string GetDefaultSaveFolder()
     {
         return OS.GetMyDocumentsPath() + "Hero & Villain Builds\\";
     }
-
-
     public static string GetApplicationPath()
     {
         return OS.AddSlash(Application.StartupPath);
     }
-
-
     public static string VistaUacErrorText()
     {
         string str2 = string.Concat(new object[]
@@ -109,35 +97,15 @@ public static class OS
         }
         return str2;
     }
-
-
     const int Windows2000Major = 5;
-
-
     const int Windows2000Minor = 0;
-
-
     const int WindowsXpMajor = 5;
-
-
     const int WindowsXpMinor = 1;
-
-
     const int Windows2003Major = 5;
-
-
     const int Windows2003Minor = 2;
-
-
     const int WindowsVistaMajor = 6;
-
-
     const int WindowsVistaMinor = 0;
-
-
     public const string SaveFolderName = "Hero & Villain Builds";
-
-
     enum WindowsVersion
     {
 

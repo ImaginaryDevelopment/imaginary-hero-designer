@@ -15,8 +15,6 @@ public class Tips
             this._tipStatus[index] = 0;
         }
     }
-
-
     public Tips(BinaryReader reader)
     {
         this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
@@ -30,8 +28,6 @@ public class Tips
             this._tipStatus[index] = reader.ReadInt32();
         }
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this._tipStatus.Length - 1);
@@ -40,8 +36,6 @@ public class Tips
             writer.Write(this._tipStatus[index]);
         }
     }
-
-
     public void Show(Tips.TipType tip)
     {
         if (this._tipStatus[(int)tip] <= 0)
@@ -74,11 +68,7 @@ public class Tips
             MessageBox.Show(stringBuilder.ToString(), "Instructions");
         }
     }
-
-
     readonly int[] _tipStatus;
-
-
     public enum TipType
     {
 

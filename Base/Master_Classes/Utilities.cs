@@ -19,8 +19,6 @@ namespace Base.Master_Classes
             }
             return result;
         }
-
-
         public static string FixDP(float iNum, int maxDecimal)
         {
             string format = "0.";

@@ -14,8 +14,6 @@ namespace Hero_Designer
 
     public partial class frmEditArchetype : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -38,10 +36,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -63,10 +57,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbClassType
         {
             get
@@ -88,10 +78,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPriGroup
         {
             get
@@ -104,10 +90,6 @@ namespace Hero_Designer
                 this._cbPriGroup = value;
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbSecGroup
         {
             get
@@ -120,10 +102,6 @@ namespace Hero_Designer
                 this._cbSecGroup = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkPlayable
         {
             get
@@ -145,10 +123,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckedListBox clbOrigin
         {
             get
@@ -161,10 +135,6 @@ namespace Hero_Designer
                 this._clbOrigin = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox1
         {
             get
@@ -177,10 +147,6 @@ namespace Hero_Designer
                 this._GroupBox1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox2
         {
             get
@@ -193,10 +159,6 @@ namespace Hero_Designer
                 this._GroupBox2 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -209,10 +171,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox4
         {
             get
@@ -225,10 +183,6 @@ namespace Hero_Designer
                 this._GroupBox4 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox5
         {
             get
@@ -241,10 +195,6 @@ namespace Hero_Designer
                 this._GroupBox5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -257,10 +207,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -273,10 +219,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -289,10 +231,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label12
         {
             get
@@ -305,10 +243,6 @@ namespace Hero_Designer
                 this._Label12 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label13
         {
             get
@@ -321,10 +255,6 @@ namespace Hero_Designer
                 this._Label13 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label14
         {
             get
@@ -337,10 +267,6 @@ namespace Hero_Designer
                 this._Label14 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label15
         {
             get
@@ -353,10 +279,6 @@ namespace Hero_Designer
                 this._Label15 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label16
         {
             get
@@ -369,10 +291,6 @@ namespace Hero_Designer
                 this._Label16 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label17
         {
             get
@@ -385,10 +303,6 @@ namespace Hero_Designer
                 this._Label17 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label18
         {
             get
@@ -401,10 +315,6 @@ namespace Hero_Designer
                 this._Label18 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label19
         {
             get
@@ -417,10 +327,6 @@ namespace Hero_Designer
                 this._Label19 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -433,10 +339,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label20
         {
             get
@@ -449,10 +351,6 @@ namespace Hero_Designer
                 this._Label20 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label21
         {
             get
@@ -465,10 +363,6 @@ namespace Hero_Designer
                 this._Label21 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -481,10 +375,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label23
         {
             get
@@ -497,10 +387,6 @@ namespace Hero_Designer
                 this._Label23 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label24
         {
             get
@@ -513,10 +399,6 @@ namespace Hero_Designer
                 this._Label24 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -529,10 +411,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -545,10 +423,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -561,10 +435,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -577,10 +447,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -593,10 +459,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -609,10 +471,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -625,10 +483,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtBaseRec
         {
             get
@@ -641,10 +495,6 @@ namespace Hero_Designer
                 this._txtBaseRec = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtBaseRegen
         {
             get
@@ -657,10 +507,6 @@ namespace Hero_Designer
                 this._txtBaseRegen = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtClassName
         {
             get
@@ -682,10 +528,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDamCap
         {
             get
@@ -698,10 +540,6 @@ namespace Hero_Designer
                 this._txtDamCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDescLong
         {
             get
@@ -723,10 +561,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtDescShort
         {
             get
@@ -748,10 +582,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtHP
         {
             get
@@ -764,10 +594,6 @@ namespace Hero_Designer
                 this._txtHP = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtHPCap
         {
             get
@@ -780,10 +606,6 @@ namespace Hero_Designer
                 this._txtHPCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtName
         {
             get
@@ -805,10 +627,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtPerceptionCap
         {
             get
@@ -821,10 +639,6 @@ namespace Hero_Designer
                 this._txtPerceptionCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtRecCap
         {
             get
@@ -837,10 +651,6 @@ namespace Hero_Designer
                 this._txtRecCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtRechargeCap
         {
             get
@@ -853,10 +663,6 @@ namespace Hero_Designer
                 this._txtRechargeCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtRegCap
         {
             get
@@ -869,10 +675,6 @@ namespace Hero_Designer
                 this._txtRegCap = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox txtResCap
         {
             get
@@ -885,10 +687,6 @@ namespace Hero_Designer
                 this._txtResCap = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udColumn
         {
             get
@@ -901,10 +699,6 @@ namespace Hero_Designer
                 this._udColumn = value;
             }
         }
-
-
-    
-    
         internal virtual NumericUpDown udThreat
         {
             get
@@ -917,8 +711,6 @@ namespace Hero_Designer
                 this._udThreat = value;
             }
         }
-
-
         public frmEditArchetype(ref Archetype iAT)
         {
             base.Load += this.frmEditArchetype_Load;
@@ -937,15 +729,11 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             if (this.CheckClassName())
@@ -1066,8 +854,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1075,8 +861,6 @@ namespace Hero_Designer
                 this.MyAT.ClassType = (Enums.eClassType)this.cbClassType.SelectedIndex;
             }
         }
-
-
         bool CheckClassName()
         {
             if (!this.ONDuplicate)
@@ -1093,8 +877,6 @@ namespace Hero_Designer
             }
             return true;
         }
-
-
         void chkPlayable_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1102,8 +884,6 @@ namespace Hero_Designer
                 this.MyAT.Playable = this.chkPlayable.Checked;
             }
         }
-
-
         void DisplayData()
         {
             this.Text = string.Concat(new string[]
@@ -1188,15 +968,11 @@ namespace Hero_Designer
             this.txtDescShort.Text = this.MyAT.DescShort;
             this.txtDescLong.Text = this.MyAT.DescLong;
         }
-
-
         void frmEditArchetype_Load(object sender, EventArgs e)
         {
             this.DisplayData();
             this.Loading = false;
         }
-
-
         void txtClassName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1204,8 +980,6 @@ namespace Hero_Designer
                 this.MyAT.ClassName = this.txtClassName.Text;
             }
         }
-
-
         void txtDescLong_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1213,8 +987,6 @@ namespace Hero_Designer
                 this.MyAT.DescLong = this.txtDescLong.Text;
             }
         }
-
-
         void txtDescShort_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1222,8 +994,6 @@ namespace Hero_Designer
                 this.MyAT.DescShort = this.txtDescShort.Text;
             }
         }
-
-
         void txtName_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1231,225 +1001,113 @@ namespace Hero_Designer
                 this.MyAT.DisplayName = this.txtName.Text;
             }
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("cbClassType")]
         ComboBox _cbClassType;
-
-
         [AccessedThroughProperty("cbPriGroup")]
         ComboBox _cbPriGroup;
-
-
         [AccessedThroughProperty("cbSecGroup")]
         ComboBox _cbSecGroup;
-
-
         [AccessedThroughProperty("chkPlayable")]
         CheckBox _chkPlayable;
-
-
         [AccessedThroughProperty("clbOrigin")]
         CheckedListBox _clbOrigin;
-
-
         [AccessedThroughProperty("GroupBox1")]
         GroupBox _GroupBox1;
-
-
         [AccessedThroughProperty("GroupBox2")]
         GroupBox _GroupBox2;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("GroupBox4")]
         GroupBox _GroupBox4;
-
-
         [AccessedThroughProperty("GroupBox5")]
         GroupBox _GroupBox5;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label12")]
         Label _Label12;
-
-
         [AccessedThroughProperty("Label13")]
         Label _Label13;
-
-
         [AccessedThroughProperty("Label14")]
         Label _Label14;
-
-
         [AccessedThroughProperty("Label15")]
         Label _Label15;
-
-
         [AccessedThroughProperty("Label16")]
         Label _Label16;
-
-
         [AccessedThroughProperty("Label17")]
         Label _Label17;
-
-
         [AccessedThroughProperty("Label18")]
         Label _Label18;
-
-
         [AccessedThroughProperty("Label19")]
         Label _Label19;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label20")]
         Label _Label20;
-
-
         [AccessedThroughProperty("Label21")]
         Label _Label21;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label23")]
         Label _Label23;
-
-
         [AccessedThroughProperty("Label24")]
         Label _Label24;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("txtBaseRec")]
         TextBox _txtBaseRec;
-
-
         [AccessedThroughProperty("txtBaseRegen")]
         TextBox _txtBaseRegen;
-
-
         [AccessedThroughProperty("txtClassName")]
         TextBox _txtClassName;
-
-
         [AccessedThroughProperty("txtDamCap")]
         TextBox _txtDamCap;
-
-
         [AccessedThroughProperty("txtDescLong")]
         TextBox _txtDescLong;
-
-
         [AccessedThroughProperty("txtDescShort")]
         TextBox _txtDescShort;
-
-
         [AccessedThroughProperty("txtHP")]
         TextBox _txtHP;
-
-
         [AccessedThroughProperty("txtHPCap")]
         TextBox _txtHPCap;
-
-
         [AccessedThroughProperty("txtName")]
         TextBox _txtName;
-
-
         [AccessedThroughProperty("txtPerceptionCap")]
         TextBox _txtPerceptionCap;
-
-
         [AccessedThroughProperty("txtRecCap")]
         TextBox _txtRecCap;
-
-
         [AccessedThroughProperty("txtRechargeCap")]
         TextBox _txtRechargeCap;
-
-
         [AccessedThroughProperty("txtRegCap")]
         TextBox _txtRegCap;
-
-
         [AccessedThroughProperty("txtResCap")]
         TextBox _txtResCap;
-
-
         [AccessedThroughProperty("udColumn")]
         NumericUpDown _udColumn;
-
-
         [AccessedThroughProperty("udThreat")]
         NumericUpDown _udThreat;
-
-
         public bool Loading;
-
-
         public Archetype MyAT;
-
-
         protected bool ONDuplicate;
-
-
         protected string OriginalName;
     }
 }

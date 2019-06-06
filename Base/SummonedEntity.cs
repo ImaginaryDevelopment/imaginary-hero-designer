@@ -8,8 +8,6 @@ public class SummonedEntity
     public SummonedEntity()
     {
     }
-
-
     public SummonedEntity(BinaryReader reader)
     {
         this.UID = reader.ReadString();
@@ -29,8 +27,6 @@ public class SummonedEntity
             this.UpgradePowerFullName[index] = reader.ReadString();
         }
     }
-
-
     public SummonedEntity(SummonedEntity template)
     {
         this.UID = template.UID;
@@ -60,8 +56,6 @@ public class SummonedEntity
             this.nUpgradePower[index] = template.nUpgradePower[index];
         }
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(this.UID);
@@ -79,34 +73,14 @@ public class SummonedEntity
             writer.Write(this.UpgradePowerFullName[index]);
         }
     }
-
-
     public int nID = -1;
-
-
     public string UID = string.Empty;
-
-
     public string DisplayName = string.Empty;
-
-
     public Enums.eSummonEntity EntityType;
-
-
     public string[] PowersetFullName = new string[0];
-
-
     public int[] nPowerset = new int[0];
-
-
     public string[] UpgradePowerFullName = new string[0];
-
-
     public int[] nUpgradePower = new int[0];
-
-
     public string ClassName = string.Empty;
-
-
     public int nClassID;
 }

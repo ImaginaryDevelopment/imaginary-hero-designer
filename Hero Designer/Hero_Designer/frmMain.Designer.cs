@@ -12,8 +12,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         void InitializeComponent()
         {
             this.components = new global::System.ComponentModel.Container();
@@ -1546,8 +1544,6 @@
             base.ResumeLayout(false);
             base.PerformLayout();
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }

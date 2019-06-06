@@ -76,8 +76,6 @@ namespace Hero_Designer
             }
             return sPowerLine;
         }
-
-
         static string EnhNameFix(string iStr)
         {
             iStr = iStr.Replace("Fly", "Flight");
@@ -126,8 +124,6 @@ namespace Hero_Designer
             }
             return iStr;
         }
-
-
         static int FindFirstPower(string[] haystack, int iAT)
         {
             int num = haystack.Length - 1;
@@ -141,8 +137,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static clsUniversalImport.SetPair FindPower(string iName, int nAT)
         {
             IPowerset[] powersetIndexes2 = new IPowerset[2];
@@ -191,8 +185,6 @@ namespace Hero_Designer
             }
             return setPair3;
         }
-
-
         static int FindPowerSetAdvanced(string sSetType, Enums.ePowerSetType nSetType, int nAT, string[] haystack)
         {
             int num = haystack.Length - 1;
@@ -213,8 +205,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int FindString(string needle, string[] haystack)
         {
             int num = haystack.Length - 1;
@@ -227,8 +217,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int FindValue(string needle, string[] haystack, ref string dest)
         {
             char[] chArray = new char[]
@@ -252,8 +240,6 @@ namespace Hero_Designer
             dest = "";
             return -1;
         }
-
-
         public static bool InterpretForumPost(string iPost)
         {
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
@@ -484,8 +470,6 @@ namespace Hero_Designer
             }
             return flag3;
         }
-
-
         static int MatchEnhancement(string iEnh)
         {
             int enhancementByName;
@@ -516,8 +500,6 @@ namespace Hero_Designer
             }
             return enhancementByName;
         }
-
-
         static string PowerNameFix(string iStr)
         {
             iStr = clsToonX.FixSpelling(iStr);
@@ -526,8 +508,6 @@ namespace Hero_Designer
             iStr = iStr.Replace("Dark Nova Emmanation", "Dark Nova Emanation");
             return iStr;
         }
-
-
         static clsUniversalImport.SetPair ScanSetArray(string iName, IPowerset[] sets)
         {
             int num = sets.Length - 1;
@@ -550,8 +530,6 @@ namespace Hero_Designer
             result = new clsUniversalImport.SetPair(-1, -1);
             return result;
         }
-
-
         static int SeekAn(string iStr, int start)
         {
             if (start < 0)
@@ -568,8 +546,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int SeekNumber(string iStr, int start)
         {
             if (start < 0)
@@ -586,8 +562,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int SeekNumberSpecial(string iStr, int start)
         {
             if (start < 0)
@@ -618,8 +592,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int SeekPowerAdvanced(string iString, int nAT)
         {
             int index = -1;
@@ -654,8 +626,6 @@ namespace Hero_Designer
             }
             return index;
         }
-
-
         static int SeekSep(string iStr, int start, bool readAhead = true)
         {
             if (start < 0)
@@ -690,8 +660,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static int SeekSepSpecial(string iStr, int start)
         {
             if (start < 0)
@@ -708,8 +676,6 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         static string[] SmartBreak(string iStr, int nAT)
         {
             string[] strArray = new string[]
@@ -750,8 +716,6 @@ namespace Hero_Designer
             }
             return strArray;
         }
-
-
         static int SmartFind(string valueName, string[] haystack, ref string dest)
         {
             int num = haystack.Length - 1;
@@ -790,14 +754,8 @@ namespace Hero_Designer
             }
             return -1;
         }
-
-
         public const string MarkerA = "Primary";
-
-
         public const string MarkerB = "Secondary";
-
-
         struct SetPair
         {
 
@@ -807,15 +765,9 @@ namespace Hero_Designer
                 this.Powerset = iSet;
                 this.Power = iPower;
             }
-
-
             public readonly int Powerset;
-
-
             public readonly int Power;
         }
-
-
         public struct sPowerLine
         {
 
@@ -831,21 +783,11 @@ namespace Hero_Designer
                     this.Slots[index].Assign(iPL.Slots[index]);
                 }
             }
-
-
             public int Level;
-
-
             public string Power;
-
-
             public int HistoryID;
-
-
             public clsUniversalImport.sSlot[] Slots;
         }
-
-
         public struct sSlot
         {
 
@@ -855,14 +797,8 @@ namespace Hero_Designer
                 this.Enh = iSlot.Enh;
                 this.PowerName = iSlot.PowerName;
             }
-
-
             public int Level;
-
-
             public string Enh;
-
-
             public string PowerName;
         }
     }

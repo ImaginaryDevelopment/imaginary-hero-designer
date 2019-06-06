@@ -5,12 +5,8 @@ using Base.Display;
 // Token: 0x0200008E RID: 142
 public class PowerEntry : ICloneable
 {
-
-    
     
     public bool Chosen { get; private set; }
-
-
     
     public Enums.ePowerState State
     {
@@ -32,8 +28,6 @@ public class PowerEntry : ICloneable
             return result;
         }
     }
-
-
     
     public IPower Power
     {
@@ -51,8 +45,6 @@ public class PowerEntry : ICloneable
             return result;
         }
     }
-
-
     
     public IPowerset PowerSet
     {
@@ -70,8 +62,6 @@ public class PowerEntry : ICloneable
             return result;
         }
     }
-
-
     
     public bool AllowFrontLoading
     {
@@ -80,8 +70,6 @@ public class PowerEntry : ICloneable
             return this.Power != null && this.Power.AllowFrontLoading;
         }
     }
-
-
     
     public string Name
     {
@@ -99,8 +87,6 @@ public class PowerEntry : ICloneable
             return result;
         }
     }
-
-
     
     public bool Virtual
     {
@@ -109,8 +95,6 @@ public class PowerEntry : ICloneable
             return !this.Chosen && this.SubPowers.Length > 0;
         }
     }
-
-
     
     public int SlotCount
     {
@@ -128,8 +112,6 @@ public class PowerEntry : ICloneable
             return result;
         }
     }
-
-
     public void Assign(PowerEntry iPe)
     {
         this.Level = iPe.Level;
@@ -164,8 +146,6 @@ public class PowerEntry : ICloneable
             this.SubPowers = new PowerSubEntry[0];
         }
     }
-
-
     public PowerEntry(IPower power)
     {
         this.StatInclude = false;
@@ -187,8 +167,6 @@ public class PowerEntry : ICloneable
         this.SubPowers = new PowerSubEntry[0];
         this.VariableValue = 0;
     }
-
-
     public PowerEntry(int iLevel = -1, IPower power = null, bool chosen = false)
     {
         this.StatInclude = false;
@@ -243,8 +221,6 @@ public class PowerEntry : ICloneable
         this.Tag = false;
         this.VariableValue = 0;
     }
-
-
     public bool HasProc()
     {
         for (int index = 0; index <= this.SlotCount - 1; index++)
@@ -263,14 +239,10 @@ public class PowerEntry : ICloneable
         }
         return false;
     }
-
-
     public bool CanIncludeForStats()
     {
         return (this.NIDPowerset > -1 & this.IDXPower > -1) && (this.HasProc() || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Toggle || (DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Click && DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].ClickBuff) || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Auto_);
     }
-
-
     public void CheckVariableBounds()
     {
         if (this.Power == null || !this.Power.VariableEnabled)
@@ -286,8 +258,6 @@ public class PowerEntry : ICloneable
             this.VariableValue = this.Power.VariableMax;
         }
     }
-
-
     public void ValidateSlots()
     {
         for (int index = 0; index <= this.Slots.Length - 1; index++)
@@ -302,8 +272,6 @@ public class PowerEntry : ICloneable
             }
         }
     }
-
-
     public void Reset()
     {
         this.NIDPowerset = -1;
@@ -317,8 +285,6 @@ public class PowerEntry : ICloneable
             this.Slots = new SlotEntry[0];
         }
     }
-
-
     public object Clone()
     {
         PowerEntry powerEntry = new PowerEntry(this.Level, this.Power, this.Chosen)
@@ -337,8 +303,6 @@ public class PowerEntry : ICloneable
         }
         return powerEntry;
     }
-
-
     public PopUp.Section PopSubPowerListing(string sTitle, Color disabledColor, Color enabledColor)
     {
         PopUp.Section section = new PopUp.Section();
@@ -352,8 +316,6 @@ public class PowerEntry : ICloneable
         }
         return section;
     }
-
-
     public int AddSlot(int iLevel)
     {
         int num;
@@ -406,8 +368,6 @@ public class PowerEntry : ICloneable
         }
         return num;
     }
-
-
     public bool CanRemoveSlot(int slotIdx, out string message)
     {
         message = string.Empty;
@@ -433,31 +393,13 @@ public class PowerEntry : ICloneable
         }
         return flag2;
     }
-
-
     public int Level;
-
-
     public int NIDPowerset;
-
-
     public int IDXPower;
-
-
     public int NIDPower;
-
-
     public bool Tag;
-
-
     public bool StatInclude;
-
-
     public int VariableValue;
-
-
     public SlotEntry[] Slots;
-
-
     public PowerSubEntry[] SubPowers;
 }

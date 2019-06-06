@@ -48,8 +48,6 @@ namespace Import
                 }
             }
         }
-
-
         public bool Apply()
         {
             bool flag;
@@ -79,14 +77,10 @@ namespace Import
             }
             return flag;
         }
-
-
         public bool CheckSimilar(ref IEffect iEffect)
         {
             return this.IsValid && iEffect.EffectType == this.Data.EffectType && iEffect.DamageType == this.Data.DamageType && iEffect.MezType == this.Data.MezType && iEffect.ETModifies == this.Data.ETModifies && iEffect.PvMode == this.Data.PvMode && iEffect.ToWho == this.Data.ToWho && iEffect.SpecialCase == this.Data.SpecialCase && iEffect.AttribType == this.Data.AttribType && iEffect.Aspect == this.Data.Aspect && iEffect.Reward == this.Data.Reward && iEffect.EffectId == this.Data.EffectId && iEffect.Summon == this.Data.Summon;
         }
-
-
         public bool CheckDifference(ref IEffect iEffect, out string message)
         {
             message = string.Empty;
@@ -260,29 +254,13 @@ namespace Import
             }
             return flag;
         }
-
-
         public readonly IEffect Data;
-
-
         public bool IsNew;
-
-
         public readonly int Index = -1;
-
-
         public int Nid = -1;
-
-
         public readonly bool IsValid = true;
-
-
         public bool IndexChanged;
-
-
         readonly string _csvString = string.Empty;
-
-
         public readonly bool IsLocked;
     }
 }

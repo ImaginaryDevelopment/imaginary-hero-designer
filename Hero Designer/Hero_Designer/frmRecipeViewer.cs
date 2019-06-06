@@ -13,12 +13,8 @@ using midsControls;
 
 namespace Hero_Designer
 {
-
-
     public partial class frmRecipeViewer : Form
     {
-
-    
     
         internal virtual CheckBox chkRecipe
         {
@@ -41,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkSortByLevel
         {
             get
@@ -66,10 +58,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -82,10 +70,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader3
         {
             get
@@ -98,10 +82,6 @@ namespace Hero_Designer
                 this._ColumnHeader3 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader4
         {
             get
@@ -114,10 +94,6 @@ namespace Hero_Designer
                 this._ColumnHeader4 = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader5
         {
             get
@@ -130,10 +106,6 @@ namespace Hero_Designer
                 this._ColumnHeader5 = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClipboard
         {
             get
@@ -155,10 +127,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClose
         {
             get
@@ -180,10 +148,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibMiniList
         {
             get
@@ -205,10 +169,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibTopmost
         {
             get
@@ -230,10 +190,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageList ilSets
         {
             get
@@ -246,10 +202,6 @@ namespace Hero_Designer
                 this._ilSets = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblHeader
         {
             get
@@ -262,10 +214,6 @@ namespace Hero_Designer
                 this._lblHeader = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvPower
         {
             get
@@ -290,10 +238,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvDPA
         {
             get
@@ -318,10 +262,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -334,10 +274,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual Panel Panel2
         {
             get
@@ -350,10 +286,6 @@ namespace Hero_Designer
                 this._Panel2 = value;
             }
         }
-
-
-    
-    
         internal virtual PictureBox pbRecipe
         {
             get
@@ -366,10 +298,6 @@ namespace Hero_Designer
                 this._pbRecipe = value;
             }
         }
-
-
-    
-    
         internal virtual ctlPopUp RecipeInfo
         {
             get
@@ -394,10 +322,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ToolTip ToolTip1
         {
             get
@@ -410,10 +334,6 @@ namespace Hero_Designer
                 this._ToolTip1 = value;
             }
         }
-
-
-    
-    
         internal virtual VScrollBar VScrollBar1
         {
             get
@@ -435,8 +355,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmRecipeViewer(frmMain iParent)
         {
             base.FormClosed += this.frmRecipeViewer_FormClosed;
@@ -446,8 +364,6 @@ namespace Hero_Designer
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
-
-
         void AddToImageList(int eIDX)
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height);
@@ -464,8 +380,6 @@ namespace Hero_Designer
                 this.ilSets.Images.Add(new Bitmap(this.ilSets.ImageSize.Width, this.ilSets.ImageSize.Height));
             }
         }
-
-
         PopUp.PopupData BuildList(bool Mini)
         {
             int iIndent = 1;
@@ -758,28 +672,20 @@ namespace Hero_Designer
             }
             return popupData;
         }
-
-
         void ChangedRecipeInfoElements()
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.RecipeInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
         }
-
-
         void chkRecipe_CheckedChanged(object sender, EventArgs e)
         {
             this.lvDPA_SelectedIndexChanged(this, new EventArgs());
             MidsContext.Config.ShoppingListIncludesRecipes = this.chkRecipe.Checked;
         }
-
-
         void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
         {
             this.UpdatePowerList();
         }
-
-
         static int colorRarityCompare(Color t1, Color t2)
         {
             int num;
@@ -826,8 +732,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         static int colorRarityCompareB(Color t1, Color t2)
         {
             int num;
@@ -867,8 +771,6 @@ namespace Hero_Designer
             }
             return num;
         }
-
-
         void DrawIcon(int Index)
         {
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(this.bxRecipe.Size);
@@ -880,8 +782,6 @@ namespace Hero_Designer
             }
             this.pbRecipe.Image = new Bitmap(extendedBitmap.Bitmap);
         }
-
-
         void FillEnhList()
         {
             if (this.lvPower.CheckedIndices.Count < 1)
@@ -958,8 +858,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         void FillPowerList()
         {
             this.lvPower.BeginUpdate();
@@ -990,8 +888,6 @@ namespace Hero_Designer
             }
             this.lvPower.EndUpdate();
         }
-
-
         static int FindItemID(int rIDX, int iLevel)
         {
             int num = -1;
@@ -1038,15 +934,11 @@ namespace Hero_Designer
             }
             return result;
         }
-
-
         void frmRecipeViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatRecipe(false);
         }
-
-
         void frmRecipeViewer_Load(object sender, EventArgs e)
         {
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -1060,8 +952,6 @@ namespace Hero_Designer
             this.chkRecipe.Checked = MidsContext.Config.ShoppingListIncludesRecipes;
             this.Loading = false;
         }
-
-
         bool HasIOs(int hIDX)
         {
             if (hIDX >= 0)
@@ -1077,8 +967,6 @@ namespace Hero_Designer
             }
             return false;
         }
-
-
         void ibClipboard_ButtonClicked()
         {
             string str = "";
@@ -1103,20 +991,14 @@ namespace Hero_Designer
             Clipboard.SetDataObject(str, true);
             Interaction.MsgBox("Data copied to clipboard!", MsgBoxStyle.Information, "Done");
         }
-
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void ibMiniList_ButtonClicked()
         {
             this.myParent.SetMiniList(this.BuildList(true), "Shopping List", 2048);
         }
-
-
         void ibTopmost_ButtonClicked()
         {
             base.TopMost = this.ibTopmost.Checked;
@@ -1125,8 +1007,6 @@ namespace Hero_Designer
                 base.BringToFront();
             }
         }
-
-
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (e.Item.Index == 0)
@@ -1146,28 +1026,20 @@ namespace Hero_Designer
             }
             this.FillEnhList();
         }
-
-
         void lvPower_MouseEnter(object sender, EventArgs e)
         {
             this.lvPower.Focus();
         }
-
-
         void lvDPA_MouseEnter(object sender, EventArgs e)
         {
             this.lvDPA.Focus();
         }
-
-
         void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.RecipeInfo.ScrollY = 0f;
             this.RecipeInfo.SetPopup(this.BuildList(false));
             this.ChangedRecipeInfoElements();
         }
-
-
         static void putInList(ref frmRecipeViewer.CountingList[] tl, string item)
         {
             int num = tl.Length - 1;
@@ -1185,14 +1057,10 @@ namespace Hero_Designer
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }
-
-
         void RecipeInfo_MouseEnter(object sender, EventArgs e)
         {
             this.VScrollBar1.Focus();
         }
-
-
         void RecipeInfo_MouseWheel(object sender, MouseEventArgs e)
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
@@ -1202,8 +1070,6 @@ namespace Hero_Designer
             }
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -1240,8 +1106,6 @@ namespace Hero_Designer
             base.Height = rectangle.Height;
             base.Width = rectangle.Width;
         }
-
-
         static PopUp.StringValue[] sortPopupStrings(bool Mini, int colorSortMode, PopUp.StringValue[] inStrs)
         {
             int num = 0;
@@ -1287,8 +1151,6 @@ namespace Hero_Designer
             }
             return stringValueArray;
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -1299,8 +1161,6 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmRecipe.Height = base.Height;
             }
         }
-
-
         public void UpdateData()
         {
             this.BackColor = this.myParent.BackColor;
@@ -1318,8 +1178,6 @@ namespace Hero_Designer
             this.ibMiniList.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
             this.FillPowerList();
         }
-
-
         void UpdatePowerList()
         {
             if (!this.Loading)
@@ -1327,112 +1185,58 @@ namespace Hero_Designer
                 this.FillPowerList();
             }
         }
-
-
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             this.RecipeInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (double)(this.RecipeInfo.lHeight - (float)this.Panel1.Height));
         }
-
-
         [AccessedThroughProperty("chkRecipe")]
         CheckBox _chkRecipe;
-
-
         [AccessedThroughProperty("chkSortByLevel")]
         CheckBox _chkSortByLevel;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("ColumnHeader3")]
         ColumnHeader _ColumnHeader3;
-
-
         [AccessedThroughProperty("ColumnHeader4")]
         ColumnHeader _ColumnHeader4;
-
-
         [AccessedThroughProperty("ColumnHeader5")]
         ColumnHeader _ColumnHeader5;
-
-
         [AccessedThroughProperty("ibClipboard")]
         ImageButton _ibClipboard;
-
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-
         [AccessedThroughProperty("ibMiniList")]
         ImageButton _ibMiniList;
-
-
         [AccessedThroughProperty("ibTopmost")]
         ImageButton _ibTopmost;
-
-
         [AccessedThroughProperty("ilSets")]
         ImageList _ilSets;
-
-
         [AccessedThroughProperty("lblHeader")]
         Label _lblHeader;
-
-
         [AccessedThroughProperty("lvPower")]
         ListView _lvPower;
-
-
         [AccessedThroughProperty("lvDPA")]
         ListView _lvDPA;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("Panel2")]
         Panel _Panel2;
-
-
         [AccessedThroughProperty("pbRecipe")]
         PictureBox _pbRecipe;
-
-
         [AccessedThroughProperty("RecipeInfo")]
         ctlPopUp _RecipeInfo;
-
-
         [AccessedThroughProperty("ToolTip1")]
         ToolTip _ToolTip1;
-
-
         [AccessedThroughProperty("VScrollBar1")]
         VScrollBar _VScrollBar1;
-
-
         protected ExtendedBitmap bxRecipe;
-
-
         protected bool Loading;
-
-
         protected frmMain myParent;
-
-
         int nonRecipeCount;
-
-
         struct CountingList
         {
 
             public string Text;
-
-
             public int Count;
         }
     }

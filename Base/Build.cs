@@ -21,8 +21,6 @@ public class Build
             return power;
         }
     }
-
-
     public int PowersPlaced
     {
         get
@@ -38,8 +36,6 @@ public class Build
             return num;
         }
     }
-
-
 
     public int SlotsPlaced
     {
@@ -57,8 +53,6 @@ public class Build
         }
     }
 
-
-
     public int TotalSlotsAvailable
     {
         get
@@ -71,8 +65,6 @@ public class Build
             return num;
         }
     }
-
-
     public PowerEntry AddPower(IPower power, int specialLevel = -1)
     {
         PowerEntry powerEntry = this.GetPowerEntry(power);
@@ -84,8 +76,6 @@ public class Build
         powerEntry.ValidateSlots();
         return powerEntry;
     }
-
-
     public void RemovePower(IPower powerToRemove)
     {
         foreach (PowerEntry power in this.Powers)
@@ -97,8 +87,6 @@ public class Build
             }
         }
     }
-
-
     PowerEntry GetPowerEntry(IPower power)
     {
         foreach (PowerEntry power2 in this.Powers)
@@ -110,8 +98,6 @@ public class Build
         }
         return null;
     }
-
-
     public Build(Character owner, IList<LevelMap> iLevels)
     {
         this._character = owner;
@@ -130,8 +116,6 @@ public class Build
             }
         }
     }
-
-
     public void RemoveSlotFromPower(int index, int slot)
     {
         if (index >= 0 && index <= this.Powers.Count - 1)
@@ -156,8 +140,6 @@ public class Build
             }
         }
     }
-
-
     void FillMissingSubPowers()
     {
         foreach (PowerEntry power in this.Powers)
@@ -191,8 +173,6 @@ public class Build
             }
         }
     }
-
-
     void ValidateEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
@@ -224,8 +204,6 @@ public class Build
             }
         }
     }
-
-
     public bool SetEnhGrades(Enums.eEnhGrade newVal)
     {
         string str = string.Empty;
@@ -265,8 +243,6 @@ public class Build
         }
         return flag;
     }
-
-
     public bool SetIOLevels(int newVal, bool iSetMin, bool iSetMax)
     {
         string text;
@@ -353,8 +329,6 @@ public class Build
         }
         return flag;
     }
-
-
     public HistoryMap[] BuildHistoryMap(bool enhNames, bool ioLevel = true)
     {
         List<HistoryMap> historyMapList = new List<HistoryMap>();
@@ -453,8 +427,6 @@ public class Build
         }
         return historyMapList.ToArray();
     }
-
-
     int SlotsAtLevel(int powerEntryId, int iLevel)
     {
         int num;
@@ -476,8 +448,6 @@ public class Build
         }
         return num;
     }
-
-
     public int SlotsPlacedAtLevel(int level)
     {
         int num = 0;
@@ -493,8 +463,6 @@ public class Build
         }
         return num;
     }
-
-
     public PopUp.PopupData GetRespecHelper(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -562,8 +530,6 @@ public class Build
         }
         return popupData;
     }
-
-
     public PopUp.PopupData GetRespecHelper2(bool longFormat, int iLevel = 49)
     {
         PopUp.PopupData popupData = default(PopUp.PopupData);
@@ -662,8 +628,6 @@ public class Build
         }
         return popupData;
     }
-
-
     public bool SetEnhRelativelevels(Enums.eEnhRelative newVal)
     {
         string str = string.Empty;
@@ -747,8 +711,6 @@ public class Build
         }
         return flag;
     }
-
-
     void CheckAndFixAllEnhancements()
     {
         foreach (PowerEntry power in this.Powers)
@@ -791,8 +753,6 @@ public class Build
         }
         this.ValidateEnhancements();
     }
-
-
     void CheckAllVariableBounds()
     {
         for (int index = 0; index <= this.Powers.Count - 1; index++)
@@ -800,8 +760,6 @@ public class Build
             this.Powers[index].CheckVariableBounds();
         }
     }
-
-
     internal void Validate()
     {
         this.ClearInvisibleSlots();
@@ -811,8 +769,6 @@ public class Build
         this.CheckAndFixAllEnhancements();
         this.CheckAllVariableBounds();
     }
-
-
     public int GetMaxLevel()
     {
         int num = 0;
@@ -832,8 +788,6 @@ public class Build
         }
         return num;
     }
-
-
     void ClearInvisibleSlots()
     {
         foreach (PowerEntry power in this.Powers)
@@ -848,8 +802,6 @@ public class Build
             }
         }
     }
-
-
     void ScanAndCleanAutomaticallyGrantedPowers()
     {
         bool flag = false;
@@ -890,8 +842,6 @@ public class Build
             }
         }
     }
-
-
     public bool MeetsRequirement(IPower power, int nLevel, int skipIdx = -1)
     {
         bool flag;
@@ -1006,8 +956,6 @@ public class Build
         }
         return flag;
     }
-
-
     public int FindInToonHistory(int nIDPower)
     {
         for (int index = 0; index <= this.Powers.Count - 1; index++)
@@ -1019,14 +967,10 @@ public class Build
         }
         return -1;
     }
-
-
     public bool PowerUsed(IPower power)
     {
         return this.FindInToonHistory(power.PowerIndex) > -1;
     }
-
-
     void AddAutomaticGrantedPowers()
     {
         int maxLevel = this.GetMaxLevel();
@@ -1062,8 +1006,6 @@ public class Build
             }
         }
     }
-
-
     public bool EnhancementTest(int iSlotID, int hIdx, int iEnh, bool silent = false)
     {
         bool flag;
@@ -1153,8 +1095,6 @@ public class Build
         }
         return flag;
     }
-
-
     public void GenerateSetBonusData()
     {
         this.SetBonus.Clear();
@@ -1179,8 +1119,6 @@ public class Build
         }
         this._setBonusVirtualPower = null;
     }
-
-
     IPower GetSetBonusVirtualPower()
     {
         IPower power = new Power();
@@ -1222,8 +1160,6 @@ public class Build
         }
         return power2;
     }
-
-
     public IEffect[] GetCumulativeSetBonuses()
     {
         IPower bonusVirtualPower = this.SetBonusVirtualPower;
@@ -1248,8 +1184,6 @@ public class Build
         }
         return array;
     }
-
-
     static int GcsbCheck(IEffect[] fxList, IEffect testFX)
     {
         for (int index = 0; index < fxList.Length; index++)
@@ -1275,8 +1209,6 @@ public class Build
         }
         return -1;
     }
-
-
     public Enums.eMutex MutexV2(int hIdx, bool silent = false, bool doDetoggle = false)
     {
         Enums.eMutex eMutex;
@@ -1403,8 +1335,6 @@ public class Build
         }
         return eMutex;
     }
-
-
     public void FullMutexCheck()
     {
         for (int hIdx = this.Powers.Count - 1; hIdx >= 0; hIdx += -1)
@@ -1412,19 +1342,9 @@ public class Build
             this.MutexV2(hIdx, true, true);
         }
     }
-
-
     readonly Character _character;
-
-
     public readonly List<PowerEntry> Powers;
-
-
     public readonly List<I9SetData> SetBonus;
-
-
     IPower _setBonusVirtualPower;
-
-
     public int LastPower;
 }

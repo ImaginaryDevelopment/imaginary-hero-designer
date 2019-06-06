@@ -15,8 +15,6 @@ namespace Hero_Designer
 
     public partial class frmDPSCalc : Form
     {
-
-    
     
         internal virtual CheckBox chkSortByLevel
         {
@@ -39,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkDamageBuffs
         {
             get
@@ -55,10 +49,6 @@ namespace Hero_Designer
                 this._chkDamageBuffs = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chPower
         {
             get
@@ -71,10 +61,6 @@ namespace Hero_Designer
                 this._chPower = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chDPA
         {
             get
@@ -87,10 +73,6 @@ namespace Hero_Designer
                 this._chDPA = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chDamage
         {
             get
@@ -103,10 +85,6 @@ namespace Hero_Designer
                 this._chDamage = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chRecharge
         {
             get
@@ -119,10 +97,6 @@ namespace Hero_Designer
                 this._chRecharge = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chAnimation
         {
             get
@@ -135,10 +109,6 @@ namespace Hero_Designer
                 this._chAnimation = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chEndurance
         {
             get
@@ -151,10 +121,6 @@ namespace Hero_Designer
                 this._chEndurance = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chDamageBuff
         {
             get
@@ -167,10 +133,6 @@ namespace Hero_Designer
                 this._chDamageBuff = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chResistanceDebuff
         {
             get
@@ -183,10 +145,6 @@ namespace Hero_Designer
                 this._chResistanceDebuff = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chBuildID
         {
             get
@@ -199,10 +157,6 @@ namespace Hero_Designer
                 this._chBuildID = value;
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClear
         {
             get
@@ -224,10 +178,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibClose
         {
             get
@@ -249,10 +199,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibAutoMode
         {
             get
@@ -274,10 +220,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageButton ibTopmost
         {
             get
@@ -299,10 +241,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ImageList ilAttackChain
         {
             get
@@ -315,10 +253,6 @@ namespace Hero_Designer
                 this._ilAttackChain = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblHeader
         {
             get
@@ -331,10 +265,6 @@ namespace Hero_Designer
                 this._lblHeader = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDPS
         {
             get
@@ -347,10 +277,6 @@ namespace Hero_Designer
                 this._lblDPS = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblEPS
         {
             get
@@ -363,10 +289,6 @@ namespace Hero_Designer
                 this._lblEPS = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblDPSNum
         {
             get
@@ -379,10 +301,6 @@ namespace Hero_Designer
                 this._lblDPSNum = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblEPSNum
         {
             get
@@ -395,10 +313,6 @@ namespace Hero_Designer
                 this._lblEPSNum = value;
             }
         }
-
-
-    
-    
         internal virtual TextBox tbDPSOutput
         {
             get
@@ -411,10 +325,6 @@ namespace Hero_Designer
                 this._tbDPSOutput = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvPower
         {
             get
@@ -442,10 +352,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Panel Panel1
         {
             get
@@ -458,10 +364,6 @@ namespace Hero_Designer
                 this._Panel1 = value;
             }
         }
-
-
-    
-    
         internal virtual Panel Panel2
         {
             get
@@ -474,10 +376,6 @@ namespace Hero_Designer
                 this._Panel2 = value;
             }
         }
-
-
-    
-    
         internal virtual ToolTip ToolTip1
         {
             get
@@ -490,8 +388,6 @@ namespace Hero_Designer
                 this._ToolTip1 = value;
             }
         }
-
-
         public frmDPSCalc(frmMain iParent)
         {
             base.FormClosed += this.frmDPSCalc_FormClosed;
@@ -501,19 +397,13 @@ namespace Hero_Designer
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
-
-
         void chkRecipe_CheckedChanged(object sender, EventArgs e)
         {
         }
-
-
         void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
         {
             this.FillPowerList();
         }
-
-
         void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
         {
             int index;
@@ -548,8 +438,6 @@ namespace Hero_Designer
             this.lblEPSNum.Text = (endurance / animation).ToString();
             this.tbDPSOutput.Text = str;
         }
-
-
         void FillPowerList()
         {
             this.GlobalDamageBuff = 0f;
@@ -597,15 +485,11 @@ namespace Hero_Designer
             }
             this.lvPower.EndUpdate();
         }
-
-
         void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.StoreLocation();
             this.myParent.FloatDPSCalc(false);
         }
-
-
         void frmDPSCalc_Load(object sender, EventArgs e)
         {
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
@@ -616,8 +500,6 @@ namespace Hero_Designer
             this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
             this.Loading = false;
         }
-
-
         void ibClear_ButtonClicked()
         {
             this.ibClear.Checked = true;
@@ -639,14 +521,10 @@ namespace Hero_Designer
                 this.CalculateDPS();
             }
         }
-
-
         void ibClose_ButtonClicked()
         {
             base.Close();
         }
-
-
         void ibAutoMode_ButtonClicked()
         {
             if (this.ibAutoMode.TextOff == "Automagical")
@@ -703,8 +581,6 @@ namespace Hero_Designer
             }
             this.CalculateDPS();
         }
-
-
         void ibTopmost_ButtonClicked()
         {
             base.TopMost = this.ibTopmost.Checked;
@@ -713,8 +589,6 @@ namespace Hero_Designer
                 base.BringToFront();
             }
         }
-
-
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (e.Item.Index == 0)
@@ -734,8 +608,6 @@ namespace Hero_Designer
             }
             this.CalculateDPS();
         }
-
-
         void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
@@ -787,14 +659,10 @@ namespace Hero_Designer
             }
             this.CalculateDPS();
         }
-
-
         void lvPower_MouseEnter(object sender, EventArgs e)
         {
             this.lvPower.Focus();
         }
-
-
         static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
         {
             int num = tl.Length - 1;
@@ -812,8 +680,6 @@ namespace Hero_Designer
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }
-
-
         public void SetLocation()
         {
             Rectangle rectangle = default(Rectangle);
@@ -850,8 +716,6 @@ namespace Hero_Designer
             base.Height = rectangle.Height;
             base.Width = rectangle.Width;
         }
-
-
         void StoreLocation()
         {
             if (MainModule.MidsController.IsAppInitialized)
@@ -862,8 +726,6 @@ namespace Hero_Designer
                 MainModule.MidsController.SzFrmRecipe.Height = base.Height;
             }
         }
-
-
         public void UpdateData()
         {
             this.BackColor = this.myParent.BackColor;
@@ -881,8 +743,6 @@ namespace Hero_Designer
             this.ibAutoMode.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
             this.FillPowerList();
         }
-
-
         string[] GetDamageData(int powerLocation)
         {
             IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
@@ -928,14 +788,10 @@ namespace Hero_Designer
             }
             return strArray;
         }
-
-
         void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             this.lvPower.Sort();
         }
-
-
         frmDPSCalc.PowerList[] IncrementRecharge(frmDPSCalc.PowerList[] List, float Time)
         {
             for (int index = 0; index < List.Length; index++)
@@ -945,8 +801,6 @@ namespace Hero_Designer
             }
             return List;
         }
-
-
         void CalculateDPS()
         {
             if (this.ibAutoMode.TextOff == "Automagical")
@@ -1149,167 +1003,81 @@ namespace Hero_Designer
                 this.lblEPSNum.Text = (num6 / num7).ToString();
             }
         }
-
-
         [AccessedThroughProperty("chkSortByLevel")]
         CheckBox _chkSortByLevel;
-
-
         [AccessedThroughProperty("chkDamageBuffs")]
         CheckBox _chkDamageBuffs;
-
-
         [AccessedThroughProperty("chPower")]
         ColumnHeader _chPower;
-
-
         [AccessedThroughProperty("chDPA")]
         ColumnHeader _chDPA;
-
-
         [AccessedThroughProperty("chDamage")]
         ColumnHeader _chDamage;
-
-
         [AccessedThroughProperty("chRecharge")]
         ColumnHeader _chRecharge;
-
-
         [AccessedThroughProperty("chAnimation")]
         ColumnHeader _chAnimation;
-
-
         [AccessedThroughProperty("chEndurance")]
         ColumnHeader _chEndurance;
-
-
         [AccessedThroughProperty("chDamageBuff")]
         ColumnHeader _chDamageBuff;
-
-
         [AccessedThroughProperty("chResistanceDebuff")]
         ColumnHeader _chResistanceDebuff;
-
-
         [AccessedThroughProperty("chBuildID")]
         ColumnHeader _chBuildID;
-
-
         [AccessedThroughProperty("ibClear")]
         ImageButton _ibClear;
-
-
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-
         [AccessedThroughProperty("ibAutoMode")]
         ImageButton _ibAutoMode;
-
-
         [AccessedThroughProperty("ibTopmost")]
         ImageButton _ibTopmost;
-
-
         [AccessedThroughProperty("ilAttackChain")]
         ImageList _ilAttackChain;
-
-
         [AccessedThroughProperty("lblHeader")]
         Label _lblHeader;
-
-
         [AccessedThroughProperty("lblDPS")]
         Label _lblDPS;
-
-
         [AccessedThroughProperty("lblEPS")]
         Label _lblEPS;
-
-
         [AccessedThroughProperty("lblDPSNum")]
         Label _lblDPSNum;
-
-
         [AccessedThroughProperty("lblEPSNum")]
         Label _lblEPSNum;
-
-
         [AccessedThroughProperty("tbDPSOutput")]
         TextBox _tbDPSOutput;
-
-
         [AccessedThroughProperty("lvPower")]
         ListView _lvPower;
-
-
         [AccessedThroughProperty("Panel1")]
         Panel _Panel1;
-
-
         [AccessedThroughProperty("Panel2")]
         Panel _Panel2;
-
-
         [AccessedThroughProperty("ToolTip1")]
         ToolTip _ToolTip1;
-
-
         protected ExtendedBitmap bxRecipe;
-
-
         protected bool Loading;
-
-
         protected frmMain myParent;
-
-
         float GlobalDamageBuff;
-
-
         struct CountingList
         {
 
             public string Text;
-
-
             public int Count;
         }
-
-
         public struct PowerList
         {
 
             public string PowerName;
-
-
             public float baseDamage;
-
-
             public float Damage;
-
-
             public float DPA;
-
-
             public float HidenDPA;
-
-
             public float Recharge;
-
-
             public float Animation;
-
-
             public float Endurance;
-
-
             public float DamageBuff;
-
-
             public float ResistanceDeBuff;
-
-
             public float RechargeTimer;
         }
     }

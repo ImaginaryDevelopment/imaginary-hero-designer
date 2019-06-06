@@ -15,8 +15,6 @@ namespace Hero_Designer
 
     public partial class frmPowerEffect : Form
     {
-
-    
     
         internal virtual Button btnCancel
         {
@@ -39,10 +37,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCopy
         {
             get
@@ -64,10 +58,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnCSV
         {
             get
@@ -89,10 +79,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnOK
         {
             get
@@ -114,10 +100,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Button btnPaste
         {
             get
@@ -139,10 +121,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAffects
         {
             get
@@ -164,10 +142,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAspect
         {
             get
@@ -189,10 +163,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbAttribute
         {
             get
@@ -214,10 +184,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbFXClass
         {
             get
@@ -239,10 +205,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbFXSpecialCase
         {
             get
@@ -264,10 +226,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbModifier
         {
             get
@@ -289,10 +247,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cbPercentageOverride
         {
             get
@@ -314,10 +268,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkFXBuffable
         {
             get
@@ -339,10 +289,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkFXResistable
         {
             get
@@ -364,10 +310,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkNearGround
         {
             get
@@ -380,10 +322,6 @@ namespace Hero_Designer
                 this._chkNearGround = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkStack
         {
             get
@@ -405,10 +343,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual CheckBox chkVariable
         {
             get
@@ -430,10 +364,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chSub
         {
             get
@@ -446,10 +376,6 @@ namespace Hero_Designer
                 this._chSub = value;
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader chSubSub
         {
             get
@@ -462,10 +388,6 @@ namespace Hero_Designer
                 this._chSubSub = value;
             }
         }
-
-
-    
-    
         internal virtual CheckedListBox clbSuppression
         {
             get
@@ -487,10 +409,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ComboBox cmbEffectId
         {
             get
@@ -512,10 +430,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ColumnHeader ColumnHeader1
         {
             get
@@ -528,10 +442,6 @@ namespace Hero_Designer
                 this._ColumnHeader1 = value;
             }
         }
-
-
-    
-    
         internal virtual GroupBox GroupBox3
         {
             get
@@ -544,10 +454,6 @@ namespace Hero_Designer
                 this._GroupBox3 = value;
             }
         }
-
-
-    
-    
         internal virtual CheckBox IgnoreED
         {
             get
@@ -569,10 +475,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual Label Label1
         {
             get
@@ -585,10 +487,6 @@ namespace Hero_Designer
                 this._Label1 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label10
         {
             get
@@ -601,10 +499,6 @@ namespace Hero_Designer
                 this._Label10 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label11
         {
             get
@@ -617,10 +511,6 @@ namespace Hero_Designer
                 this._Label11 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label2
         {
             get
@@ -633,10 +523,6 @@ namespace Hero_Designer
                 this._Label2 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label22
         {
             get
@@ -649,10 +535,6 @@ namespace Hero_Designer
                 this._Label22 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label23
         {
             get
@@ -665,10 +547,6 @@ namespace Hero_Designer
                 this._Label23 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label24
         {
             get
@@ -681,10 +559,6 @@ namespace Hero_Designer
                 this._Label24 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label25
         {
             get
@@ -697,10 +571,6 @@ namespace Hero_Designer
                 this._Label25 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label26
         {
             get
@@ -713,10 +583,6 @@ namespace Hero_Designer
                 this._Label26 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label27
         {
             get
@@ -729,10 +595,6 @@ namespace Hero_Designer
                 this._Label27 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label28
         {
             get
@@ -745,10 +607,6 @@ namespace Hero_Designer
                 this._Label28 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label3
         {
             get
@@ -761,10 +619,6 @@ namespace Hero_Designer
                 this._Label3 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label30
         {
             get
@@ -777,10 +631,6 @@ namespace Hero_Designer
                 this._Label30 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label4
         {
             get
@@ -793,10 +643,6 @@ namespace Hero_Designer
                 this._Label4 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label5
         {
             get
@@ -809,10 +655,6 @@ namespace Hero_Designer
                 this._Label5 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label6
         {
             get
@@ -825,10 +667,6 @@ namespace Hero_Designer
                 this._Label6 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label7
         {
             get
@@ -841,10 +679,6 @@ namespace Hero_Designer
                 this._Label7 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label8
         {
             get
@@ -857,10 +691,6 @@ namespace Hero_Designer
                 this._Label8 = value;
             }
         }
-
-
-    
-    
         internal virtual Label Label9
         {
             get
@@ -873,10 +703,6 @@ namespace Hero_Designer
                 this._Label9 = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblAffectsCaster
         {
             get
@@ -889,10 +715,6 @@ namespace Hero_Designer
                 this._lblAffectsCaster = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblEffectDescription
         {
             get
@@ -905,10 +727,6 @@ namespace Hero_Designer
                 this._lblEffectDescription = value;
             }
         }
-
-
-    
-    
         internal virtual Label lblProb
         {
             get
@@ -921,10 +739,6 @@ namespace Hero_Designer
                 this._lblProb = value;
             }
         }
-
-
-    
-    
         internal virtual ListView lvEffectType
         {
             get
@@ -946,10 +760,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvSubAttribute
         {
             get
@@ -971,10 +781,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual ListView lvSubSub
         {
             get
@@ -996,10 +802,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfAny
         {
             get
@@ -1021,10 +823,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfCritter
         {
             get
@@ -1046,10 +844,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual RadioButton rbIfPlayer
         {
             get
@@ -1071,10 +865,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXDelay
         {
             get
@@ -1099,10 +889,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXDuration
         {
             get
@@ -1127,10 +913,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXMag
         {
             get
@@ -1155,10 +937,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXProb
         {
             get
@@ -1183,10 +961,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXScale
         {
             get
@@ -1211,10 +985,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtFXTicks
         {
             get
@@ -1239,10 +1009,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtOverride
         {
             get
@@ -1264,10 +1030,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
-    
-    
         internal virtual TextBox txtPPM
         {
             get
@@ -1292,8 +1054,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public frmPowerEffect(ref IEffect iFX)
         {
             base.Load += this.frmPowerEffect_Load;
@@ -1301,21 +1061,15 @@ namespace Hero_Designer
             this.InitializeComponent();
             this.myFX = (IEffect)iFX.Clone();
         }
-
-
         void btnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
             base.Hide();
         }
-
-
         void btnCopy_Click(object sender, EventArgs e)
         {
             this.FullCopy();
         }
-
-
         void btnCSV_Click(object sender, EventArgs e)
         {
             IEffect effect = (IEffect)this.myFX.Clone();
@@ -1332,22 +1086,16 @@ namespace Hero_Designer
             this.myFX.ImportFromCSV(Clipboard.GetDataObject().GetData("System.String", true).ToString());
             this.DisplayEffectData();
         }
-
-
         void btnOK_Click(object sender, EventArgs e)
         {
             this.StoreSuppression();
             base.DialogResult = DialogResult.OK;
             base.Hide();
         }
-
-
         void btnPaste_Click(object sender, EventArgs e)
         {
             this.FullPaste();
         }
-
-
         void cbAffects_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbAffects.SelectedIndex >= 0)
@@ -1361,8 +1109,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbAspect_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbAspect.SelectedIndex >= 0)
@@ -1371,8 +1117,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbAttribute_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbAttribute.SelectedIndex >= 0)
@@ -1381,8 +1125,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbFXClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1391,8 +1133,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbFXSpecialCase_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1401,8 +1141,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbModifier_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbModifier.SelectedIndex >= 0)
@@ -1412,8 +1150,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void cbPercentageOverride_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.cbPercentageOverride.SelectedIndex >= 0)
@@ -1422,8 +1158,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void chkFXBuffable_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1432,8 +1166,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void chkFxNoStack_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1450,8 +1182,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void chkFXResistable_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1460,8 +1190,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void chkVariable_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1470,15 +1198,11 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.StoreSuppression();
             this.UpdateFXText();
         }
-
-
         void cmbEffectId_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1487,8 +1211,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         public void DisplayEffectData()
         {
             string Style = "####0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0##";
@@ -1561,8 +1283,6 @@ namespace Hero_Designer
             this.lvEffectType.EndUpdate();
             this.UpdateEffectSubAttribList();
         }
-
-
         void FillComboBoxes()
         {
             this.cbFXClass.BeginUpdate();
@@ -1617,8 +1337,6 @@ namespace Hero_Designer
                 this.lvSubAttribute.Enabled = true;
             }
         }
-
-
         void frmPowerEffect_Load(object sender, EventArgs e)
         {
             this.FillComboBoxes();
@@ -1638,8 +1356,6 @@ namespace Hero_Designer
             this.Loading = false;
             this.UpdateFXText();
         }
-
-
         void FullCopy()
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
@@ -1651,8 +1367,6 @@ namespace Hero_Designer
             Clipboard.SetDataObject(dataObject);
             memoryStream.Close();
         }
-
-
         void FullPaste()
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
@@ -1677,8 +1391,6 @@ namespace Hero_Designer
                 memoryStream.Close();
             }
         }
-
-
         void IgnoreED_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1687,8 +1399,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void lvEffectType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.lvEffectType.SelectedIndices.Count >= 1)
@@ -1698,8 +1408,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void lvSubAttribute_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.lvSubAttribute.SelectedIndices.Count >= 1)
@@ -1733,8 +1441,6 @@ namespace Hero_Designer
                 this.UpdateSubSubList();
             }
         }
-
-
         void lvSubSub_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!this.Loading && this.lvSubSub.SelectedIndices.Count >= 1)
@@ -1747,8 +1453,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void rbIfACP_CheckedChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1769,8 +1473,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void StoreSuppression()
         {
             int[] values = (int[])Enum.GetValues(this.myFX.Suppression.GetType());
@@ -1781,8 +1483,6 @@ namespace Hero_Designer
                 this.myFX.Suppression += values[this.clbSuppression.CheckedIndices[index]];
             }
         }
-
-
         void txtFXDelay_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1792,8 +1492,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXDelay_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1807,8 +1505,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXDuration_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1818,8 +1514,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXDuration_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1833,8 +1527,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXMag_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1844,8 +1536,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXMag_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1864,8 +1554,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXProb_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1875,8 +1563,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXProb_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1895,8 +1581,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXScale_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1906,8 +1590,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXScale_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1926,8 +1608,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXTicks_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1937,8 +1617,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtFXTicks_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1952,8 +1630,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtOverride_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1962,8 +1638,6 @@ namespace Hero_Designer
                 this.UpdateFXText();
             }
         }
-
-
         void txtPPM_Leave(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1971,8 +1645,6 @@ namespace Hero_Designer
                 this.txtPPM.Text = Conversions.ToString(this.myFX.ProcsPerMinute);
             }
         }
-
-
         void txtPPM_TextChanged(object sender, EventArgs e)
         {
             if (!this.Loading)
@@ -1984,8 +1656,6 @@ namespace Hero_Designer
                 }
             }
         }
-
-
         public void UpdateEffectSubAttribList()
         {
             int index = 0;
@@ -2084,8 +1754,6 @@ namespace Hero_Designer
             this.lvSubAttribute.EndUpdate();
             this.UpdateSubSubList();
         }
-
-
         void UpdateFXText()
         {
             if (!this.Loading)
@@ -2093,8 +1761,6 @@ namespace Hero_Designer
                 this.lblEffectDescription.Text = this.myFX.BuildEffectString(false, "", false, false, false);
             }
         }
-
-
         public void UpdateSubSubList()
         {
             int index = 0;
@@ -2129,251 +1795,127 @@ namespace Hero_Designer
             }
             this.lvSubSub.EndUpdate();
         }
-
-
         [AccessedThroughProperty("btnCancel")]
         Button _btnCancel;
-
-
         [AccessedThroughProperty("btnCopy")]
         Button _btnCopy;
-
-
         [AccessedThroughProperty("btnCSV")]
         Button _btnCSV;
-
-
         [AccessedThroughProperty("btnOK")]
         Button _btnOK;
-
-
         [AccessedThroughProperty("btnPaste")]
         Button _btnPaste;
-
-
         [AccessedThroughProperty("cbAffects")]
         ComboBox _cbAffects;
-
-
         [AccessedThroughProperty("cbAspect")]
         ComboBox _cbAspect;
-
-
         [AccessedThroughProperty("cbAttribute")]
         ComboBox _cbAttribute;
-
-
         [AccessedThroughProperty("cbFXClass")]
         ComboBox _cbFXClass;
-
-
         [AccessedThroughProperty("cbFXSpecialCase")]
         ComboBox _cbFXSpecialCase;
-
-
         [AccessedThroughProperty("cbModifier")]
         ComboBox _cbModifier;
-
-
         [AccessedThroughProperty("cbPercentageOverride")]
         ComboBox _cbPercentageOverride;
-
-
         [AccessedThroughProperty("chkFXBuffable")]
         CheckBox _chkFXBuffable;
-
-
         [AccessedThroughProperty("chkFXResistable")]
         CheckBox _chkFXResistable;
-
-
         [AccessedThroughProperty("chkNearGround")]
         CheckBox _chkNearGround;
-
-
         [AccessedThroughProperty("chkStack")]
         CheckBox _chkStack;
-
-
         [AccessedThroughProperty("chkVariable")]
         CheckBox _chkVariable;
-
-
         [AccessedThroughProperty("chSub")]
         ColumnHeader _chSub;
-
-
         [AccessedThroughProperty("chSubSub")]
         ColumnHeader _chSubSub;
-
-
         [AccessedThroughProperty("clbSuppression")]
         CheckedListBox _clbSuppression;
-
-
         [AccessedThroughProperty("cmbEffectId")]
         ComboBox _cmbEffectId;
-
-
         [AccessedThroughProperty("ColumnHeader1")]
         ColumnHeader _ColumnHeader1;
-
-
         [AccessedThroughProperty("GroupBox3")]
         GroupBox _GroupBox3;
-
-
         [AccessedThroughProperty("IgnoreED")]
         CheckBox _IgnoreED;
-
-
         [AccessedThroughProperty("Label1")]
         Label _Label1;
-
-
         [AccessedThroughProperty("Label10")]
         Label _Label10;
-
-
         [AccessedThroughProperty("Label11")]
         Label _Label11;
-
-
         [AccessedThroughProperty("Label2")]
         Label _Label2;
-
-
         [AccessedThroughProperty("Label22")]
         Label _Label22;
-
-
         [AccessedThroughProperty("Label23")]
         Label _Label23;
-
-
         [AccessedThroughProperty("Label24")]
         Label _Label24;
-
-
         [AccessedThroughProperty("Label25")]
         Label _Label25;
-
-
         [AccessedThroughProperty("Label26")]
         Label _Label26;
-
-
         [AccessedThroughProperty("Label27")]
         Label _Label27;
-
-
         [AccessedThroughProperty("Label28")]
         Label _Label28;
-
-
         [AccessedThroughProperty("Label3")]
         Label _Label3;
-
-
         [AccessedThroughProperty("Label30")]
         Label _Label30;
-
-
         [AccessedThroughProperty("Label4")]
         Label _Label4;
-
-
         [AccessedThroughProperty("Label5")]
         Label _Label5;
-
-
         [AccessedThroughProperty("Label6")]
         Label _Label6;
-
-
         [AccessedThroughProperty("Label7")]
         Label _Label7;
-
-
         [AccessedThroughProperty("Label8")]
         Label _Label8;
-
-
         [AccessedThroughProperty("Label9")]
         Label _Label9;
-
-
         [AccessedThroughProperty("lblAffectsCaster")]
         Label _lblAffectsCaster;
-
-
         [AccessedThroughProperty("lblEffectDescription")]
         Label _lblEffectDescription;
-
-
         [AccessedThroughProperty("lblProb")]
         Label _lblProb;
-
-
         [AccessedThroughProperty("lvEffectType")]
         ListView _lvEffectType;
-
-
         [AccessedThroughProperty("lvSubAttribute")]
         ListView _lvSubAttribute;
-
-
         [AccessedThroughProperty("lvSubSub")]
         ListView _lvSubSub;
-
-
         [AccessedThroughProperty("rbIfAny")]
         RadioButton _rbIfAny;
-
-
         [AccessedThroughProperty("rbIfCritter")]
         RadioButton _rbIfCritter;
-
-
         [AccessedThroughProperty("rbIfPlayer")]
         RadioButton _rbIfPlayer;
-
-
         [AccessedThroughProperty("txtFXDelay")]
         TextBox _txtFXDelay;
-
-
         [AccessedThroughProperty("txtFXDuration")]
         TextBox _txtFXDuration;
-
-
         [AccessedThroughProperty("txtFXMag")]
         TextBox _txtFXMag;
-
-
         [AccessedThroughProperty("txtFXProb")]
         TextBox _txtFXProb;
-
-
         [AccessedThroughProperty("txtFXScale")]
         TextBox _txtFXScale;
-
-
         [AccessedThroughProperty("txtFXTicks")]
         TextBox _txtFXTicks;
-
-
         [AccessedThroughProperty("txtOverride")]
         TextBox _txtOverride;
-
-
         [AccessedThroughProperty("txtPPM")]
         TextBox _txtPPM;
-
-
         bool Loading;
-
-
         public IEffect myFX;
     }
 }

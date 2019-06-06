@@ -8,8 +8,6 @@ public class Recipe
     public Recipe()
     {
     }
-
-
     public Recipe(BinaryReader reader)
     {
         this.Rarity = (Recipe.RecipeRarity)reader.ReadInt32();
@@ -39,8 +37,6 @@ public class Recipe
             }
         }
     }
-
-
     public Recipe(ref Recipe iRecipe)
     {
         this.Rarity = iRecipe.Rarity;
@@ -70,8 +66,6 @@ public class Recipe
             }
         }
     }
-
-
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write((int)this.Rarity);
@@ -95,26 +89,12 @@ public class Recipe
             }
         }
     }
-
-
     public string InternalName = string.Empty;
-
-
     public string ExternalName = string.Empty;
-
-
     public string Enhancement = string.Empty;
-
-
     public int EnhIdx = -1;
-
-
     public Recipe.RecipeRarity Rarity;
-
-
     public Recipe.RecipeEntry[] Item = new Recipe.RecipeEntry[0];
-
-
     public enum RecipeRarity
     {
 
@@ -126,8 +106,6 @@ public class Recipe
 
         UltraRare
     }
-
-
     public class RecipeEntry
     {
 
@@ -140,8 +118,6 @@ public class Recipe
                 this.Count[index] = 0;
             }
         }
-
-
         public RecipeEntry(Recipe.RecipeEntry iRe)
         {
             this.Level = iRe.Level;
@@ -159,29 +135,13 @@ public class Recipe
                 this.Count[index] = iRe.Count[index];
             }
         }
-
-
         public int Level;
-
-
         public int BuyCost;
-
-
         public int CraftCost;
-
-
         public int BuyCostM;
-
-
         public int CraftCostM;
-
-
         public string[] Salvage = new string[7];
-
-
         public int[] SalvageIdx = new int[7];
-
-
         public int[] Count = new int[7];
     }
 }

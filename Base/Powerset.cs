@@ -4,29 +4,11 @@ using System.IO;
 // Token: 0x0200008F RID: 143
 public class Powerset : IPowerset, IComparable
 {
-
-    
     
     public bool IsModified { get; set; }
-
-
-    
-    
     public bool IsNew { get; set; }
-
-
-    
-    
     public string Description { get; set; }
-
-
-    
-    
     public string SetName { get; set; }
-
-
-    
-    
     public string FullName
     {
         get
@@ -39,85 +21,21 @@ public class Powerset : IPowerset, IComparable
             this._groupName = null;
         }
     }
-
-
-    
-    
     public string ImageName { get; set; }
-
-
-    
-    
     public int[] Power { get; set; }
-
-
-    
-    
     public Enums.ePowerSetType SetType { get; set; }
-
-
-    
-    
     public string DisplayName { get; set; }
-
-
-    
-    
     public int nArchetype { get; set; }
-
-
-    
-    
     public int nID { get; set; }
-
-
-    
-    
     public string SubName { get; set; }
-
-
-    
-    
     public string ATClass { get; set; }
-
-
-    
-    
     public string UIDTrunkSet { get; set; }
-
-
-    
-    
     public int nIDTrunkSet { get; set; }
-
-
-    
-    
     public string UIDLinkSecondary { get; set; }
-
-
-    
-    
     public int nIDLinkSecondary { get; set; }
-
-
-    
-    
     public string[] UIDMutexSets { get; set; }
-
-
-    
-    
     public int[] nIDMutexSets { get; set; }
-
-
-    
-    
     public PowersetGroup Group { get; set; }
-
-
-    
-    
     public string GroupName
     {
         get
@@ -134,19 +52,11 @@ public class Powerset : IPowerset, IComparable
             this._groupName = value;
         }
     }
-
-
-    
-    
     public IPower[] Powers { get; set; }
-
-
     public bool ClassOk(int nIDClass)
     {
         return this.Powers.Length > 0 && this.Powers[0].Requires.ClassOk(nIDClass);
     }
-
-
     public Powerset()
     {
         this.nID = -1;
@@ -168,8 +78,6 @@ public class Powerset : IPowerset, IComparable
         this.nIDMutexSets = new int[0];
         this.UIDMutexSets = new string[0];
     }
-
-
     public Powerset(IPowerset template)
     {
         this.nID = template.nID;
@@ -200,8 +108,6 @@ public class Powerset : IPowerset, IComparable
         Array.Copy(template.nIDMutexSets, this.nIDMutexSets, this.nIDMutexSets.Length);
         Array.Copy(template.UIDMutexSets, this.UIDMutexSets, this.UIDMutexSets.Length);
     }
-
-
     public Powerset(BinaryReader reader)
     {
         this.nID = -1;
@@ -230,8 +136,6 @@ public class Powerset : IPowerset, IComparable
             this.nIDMutexSets[index] = reader.ReadInt32();
         }
     }
-
-
     public void StoreTo(ref BinaryWriter writer)
     {
         writer.Write(this.DisplayName);
@@ -252,8 +156,6 @@ public class Powerset : IPowerset, IComparable
             writer.Write(this.nIDMutexSets[index]);
         }
     }
-
-
     public int CompareTo(object obj)
     {
         IPowerset powerset = obj as IPowerset;
@@ -268,8 +170,6 @@ public class Powerset : IPowerset, IComparable
         }
         throw new ArgumentException("Comparison failed - Passed object was not a Powerset Class!");
     }
-
-
     public bool ImportFromCSV(string csv)
     {
         bool flag;
@@ -346,10 +246,6 @@ public class Powerset : IPowerset, IComparable
         }
         return flag;
     }
-
-
     string _fullName;
-
-
     string _groupName;
 }

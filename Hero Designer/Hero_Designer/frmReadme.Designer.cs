@@ -14,8 +14,6 @@
             }
             base.Dispose(disposing);
         }
-
-
         [global::System.Diagnostics.DebuggerStepThrough]
         void InitializeComponent()
         {
@@ -91,8 +89,6 @@
             ((global::System.ComponentModel.ISupportInitialize)this.pbBottom).EndInit();
             base.ResumeLayout(false);
         }
-
-
         global::System.ComponentModel.IContainer components;
     }
 }
