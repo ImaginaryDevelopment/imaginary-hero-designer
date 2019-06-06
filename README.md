@@ -1,1 +1,1 @@
-CoHDesigner2
+City of Heroes' Hero Designer lives again
