@@ -1,11 +1,13 @@
 ﻿namespace Hero_Designer
 {
 
-    [global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
-    public partial class frmAccolade : global::System.Windows.Forms.Form
+    public partial class frmAccolade
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        global::System.ComponentModel.IContainer components = null;
 
-        [global::System.Diagnostics.DebuggerNonUserCode]
         protected override void Dispose(bool disposing)
         {
             try
@@ -20,18 +22,27 @@
                 base.Dispose(disposing);
             }
         }
-        [global::System.Diagnostics.DebuggerStepThrough]
+
         void InitializeComponent()
         {
             global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmAccolade));
+
             this.Panel1 = new global::System.Windows.Forms.Panel();
             this.VScrollBar1 = new global::System.Windows.Forms.VScrollBar();
             this.PopInfo = new global::midsControls.ctlPopUp();
             this.lblLock = new global::System.Windows.Forms.Label();
             this.ibClose = new global::midsControls.ImageButton();
             this.Panel2 = new global::Hero_Designer.frmIncarnate.CustomPanel();
-            this.llRight = new global::midsControls.ListLabelV2();
-            this.llLeft = new global::midsControls.ListLabelV2();
+            try
+            {
+                this.llRight = new global::midsControls.ListLabelV2();
+                this.llLeft = new global::midsControls.ListLabelV2();
+
+            }
+            catch
+            {
+
+            }
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             base.SuspendLayout();
@@ -92,8 +103,10 @@
             this.ibClose.Toggle = false;
             this.Panel2.AutoScroll = true;
             this.Panel2.BorderStyle = global::System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Panel2.Controls.Add(this.llRight);
-            this.Panel2.Controls.Add(this.llLeft);
+            if (this.llRight != null)
+                this.Panel2.Controls.Add(this.llRight);
+            if (this.llLeft != null)
+                this.Panel2.Controls.Add(this.llLeft);
             point = new global::System.Drawing.Point(12, 12);
             this.Panel2.Location = point;
             this.Panel2.Name = "Panel2";
@@ -101,48 +114,56 @@
             this.Panel2.Size = size;
             this.Panel2.TabIndex = 126;
             this.Panel2.TabStop = true;
-            this.llRight.AutoSize = true;
-            this.llRight.Expandable = false;
-            this.llRight.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel);
-            this.llRight.HighVis = true;
-            this.llRight.HoverColor = global::System.Drawing.Color.WhiteSmoke;
-            point = new global::System.Drawing.Point(196, 3);
-            this.llRight.Location = point;
-            this.llRight.MaxHeight = 600;
-            this.llRight.Name = "llRight";
-            this.llRight.PaddingX = 2;
-            this.llRight.PaddingY = 2;
-            this.llRight.Scrollable = false;
-            this.llRight.ScrollBarColor = global::System.Drawing.Color.Red;
-            this.llRight.ScrollBarWidth = 11;
-            this.llRight.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
-            size = new global::System.Drawing.Size(190, 414);
-            this.llRight.Size = size;
-            size = new global::System.Drawing.Size(190, 120);
-            this.llRight.SizeNormal = size;
-            this.llRight.SuspendRedraw = false;
-            this.llRight.TabIndex = 111;
-            this.llLeft.AutoSize = true;
-            this.llLeft.Expandable = false;
-            this.llLeft.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel);
-            this.llLeft.HighVis = true;
-            this.llLeft.HoverColor = global::System.Drawing.Color.WhiteSmoke;
-            point = new global::System.Drawing.Point(3, 3);
-            this.llLeft.Location = point;
-            this.llLeft.MaxHeight = 600;
-            this.llLeft.Name = "llLeft";
-            this.llLeft.PaddingX = 2;
-            this.llLeft.PaddingY = 2;
-            this.llLeft.Scrollable = false;
-            this.llLeft.ScrollBarColor = global::System.Drawing.Color.Red;
-            this.llLeft.ScrollBarWidth = 11;
-            this.llLeft.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
-            size = new global::System.Drawing.Size(187, 414);
-            this.llLeft.Size = size;
-            size = new global::System.Drawing.Size(187, 120);
-            this.llLeft.SizeNormal = size;
-            this.llLeft.SuspendRedraw = false;
-            this.llLeft.TabIndex = 110;
+            if (this.llRight != null)
+            {
+
+                this.llRight.AutoSize = true;
+                this.llRight.Expandable = false;
+                this.llRight.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel);
+                this.llRight.HighVis = true;
+                this.llRight.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+                point = new global::System.Drawing.Point(196, 3);
+                this.llRight.Location = point;
+                this.llRight.MaxHeight = 600;
+                this.llRight.Name = "llRight";
+                this.llRight.PaddingX = 2;
+                this.llRight.PaddingY = 2;
+                this.llRight.Scrollable = false;
+                this.llRight.ScrollBarColor = global::System.Drawing.Color.Red;
+                this.llRight.ScrollBarWidth = 11;
+                this.llRight.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
+                size = new global::System.Drawing.Size(190, 414);
+                this.llRight.Size = size;
+                size = new global::System.Drawing.Size(190, 120);
+                this.llRight.SizeNormal = size;
+                this.llRight.SuspendRedraw = false;
+                this.llRight.TabIndex = 111;
+            }
+            if (this.llLeft != null)
+            {
+                this.llLeft.AutoSize = true;
+                this.llLeft.Expandable = false;
+                this.llLeft.Font = new global::System.Drawing.Font("Arial", 12f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Pixel);
+                this.llLeft.HighVis = true;
+                this.llLeft.HoverColor = global::System.Drawing.Color.WhiteSmoke;
+                point = new global::System.Drawing.Point(3, 3);
+                this.llLeft.Location = point;
+                this.llLeft.MaxHeight = 600;
+                this.llLeft.Name = "llLeft";
+                this.llLeft.PaddingX = 2;
+                this.llLeft.PaddingY = 2;
+                this.llLeft.Scrollable = false;
+                this.llLeft.ScrollBarColor = global::System.Drawing.Color.Red;
+                this.llLeft.ScrollBarWidth = 11;
+                this.llLeft.ScrollButtonColor = global::System.Drawing.Color.FromArgb(192, 0, 0);
+                size = new global::System.Drawing.Size(187, 414);
+                this.llLeft.Size = size;
+                size = new global::System.Drawing.Size(187, 120);
+                this.llLeft.SizeNormal = size;
+                this.llLeft.SuspendRedraw = false;
+                this.llLeft.TabIndex = 110;
+
+            }
             base.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = global::System.Drawing.Color.FromArgb(0, 0, 32);
             size = new global::System.Drawing.Size(438, 403);
@@ -164,7 +185,6 @@
             this.Panel2.PerformLayout();
             base.ResumeLayout(false);
         }
-        global::System.ComponentModel.IContainer components;
         internal global::Hero_Designer.frmIncarnate.CustomPanel Panel2;
     }
 }

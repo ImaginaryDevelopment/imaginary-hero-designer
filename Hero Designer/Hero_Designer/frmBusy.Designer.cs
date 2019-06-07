@@ -1,10 +1,12 @@
-﻿namespace Hero_Designer
-{
+﻿using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
-    [global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
+namespace Hero_Designer
+{
     public partial class frmBusy : global::System.Windows.Forms.Form
     {
 
+        System.ComponentModel.IContainer components = null;
         [global::System.Diagnostics.DebuggerNonUserCode]
         protected override void Dispose(bool disposing)
         {
@@ -20,16 +22,17 @@
                 base.Dispose(disposing);
             }
         }
-        [global::System.Diagnostics.DebuggerStepThrough]
+
+        #region Windows Form Designer generated code
         void InitializeComponent()
         {
-            global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmBusy));
+            var componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::Hero_Designer.frmBusy));
             this.Message = new global::System.Windows.Forms.Label();
             base.SuspendLayout();
-            global::System.Drawing.Point location = new global::System.Drawing.Point(12, 9);
+            global::System.Drawing.Point location = new System.Drawing.Point(12, 9);
             this.Message.Location = location;
             this.Message.Name = "Message";
-            global::System.Drawing.Size size = new global::System.Drawing.Size(381, 61);
+            global::System.Drawing.Size size = new System.Drawing.Size(381, 61);
             this.Message.Size = size;
             this.Message.TabIndex = 0;
             this.Message.Text = "Busy";
@@ -41,7 +44,7 @@
             base.Controls.Add(this.Message);
             this.Font = new global::System.Drawing.Font("Arial", 9.75f, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point, 0);
             base.FormBorderStyle = global::System.Windows.Forms.FormBorderStyle.FixedDialog;
-            base.Icon = (global::System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            base.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             base.MaximizeBox = false;
             base.MinimizeBox = false;
             base.Name = "frmBusy";
@@ -52,6 +55,23 @@
             base.TopMost = true;
             base.ResumeLayout(false);
         }
-        global::System.ComponentModel.IContainer components;
+
+        #endregion
+
+        [AccessedThroughProperty("Message")]
+        Label _Message;
+
+        internal virtual Label Message
+        {
+            get
+            {
+                return this._Message;
+            }
+            [MethodImpl(MethodImplOptions.Synchronized)]
+            set
+            {
+                this._Message = value;
+            }
+        }
     }
 }
