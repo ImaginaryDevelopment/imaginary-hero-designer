@@ -643,6 +643,18 @@ namespace Hero_Designer
                         }
                         if (flag2)
                         {
+                            var ecIndex = base.CurrentBuild.Powers?[iIndex]?.Slots?[index].Enhancement?.Enh;
+                            if(ecIndex == null)
+                            {
+                                MessageBox.Show($"Error getting power information (1) for {iIndex},{index}");
+                                return false;
+                            }
+                            var ec = DatabaseAPI.Database.Enhancements?[ecIndex.Value];
+                            if (ec == null || ec.Power == null)
+                            {
+                                MessageBox.Show($"Error getting power information (2) for {iIndex},{index}");
+                                return false;
+                            }
                             IPower power = DatabaseAPI.Database.Enhancements[base.CurrentBuild.Powers[iIndex].Slots[index].Enhancement.Enh].Power;
                             int num3 = power.Effects.Length - 1;
                             for (int index2 = 0; index2 <= num3; index2++)

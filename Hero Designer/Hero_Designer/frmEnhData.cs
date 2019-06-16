@@ -2385,7 +2385,9 @@ namespace Hero_Designer
         }
         void StaticIndex_TextChanged(object sender, EventArgs e)
         {
-            this.myEnh.StaticIndex = Conversions.ToInteger(this.StaticIndex.Text);
+            if(int.TryParse(this.StaticIndex.Text, out var si)){
+            this.myEnh.StaticIndex = si;
+            }
         }
         void txtDesc_TextChanged(object sender, EventArgs e)
         {
