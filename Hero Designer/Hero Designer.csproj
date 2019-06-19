@@ -68,15 +68,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="midsControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Pines Hero Designer 2.21\DISK1\program files\Pine's Hero Designer\Pine's Hero Designer\midsControls.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
@@ -340,6 +332,14 @@
     <ProjectReference Include="..\Base\Base.csproj">
       <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\midsControls\midsControls.csproj">
+      <Project>{718d75be-301c-4ddf-8312-266bbdfbaf67}</Project>
+      <Name>midsControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zlib2\ICSharpCode.SharpZipLib\ICSharpCode.SharpZipLib.csproj">
+      <Project>{f85d0de7-f41f-45db-a952-ed4031e0a8b5}</Project>
+      <Name>ICSharpCode.SharpZipLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

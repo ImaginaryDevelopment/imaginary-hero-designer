@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "..\Base\Base.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "midsControls", "..\midsControls\midsControls.csproj", "{718D75BE-301C-4DDF-8312-266BBDFBAF67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.SharpZipLib", "..\Zlib2\ICSharpCode.SharpZipLib\ICSharpCode.SharpZipLib.csproj", "{F85D0DE7-F41F-45DB-A952-ED4031E0A8B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85D0DE7-F41F-45DB-A952-ED4031E0A8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85D0DE7-F41F-45DB-A952-ED4031E0A8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85D0DE7-F41F-45DB-A952-ED4031E0A8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85D0DE7-F41F-45DB-A952-ED4031E0A8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

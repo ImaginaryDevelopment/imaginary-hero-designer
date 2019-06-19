@@ -8,10 +8,10 @@ using System;
 
 namespace ICSharpCode.SharpZipLib.Checksums
 {
-  public sealed class Crc32 : IChecksum
-  {
-    private static readonly uint[] CrcTable = new uint[256]
+    public sealed class Crc32 : IChecksum
     {
+        private static readonly uint[] CrcTable = new uint[256]
+        {
       0U,
       1996959894U,
       3993919788U,
@@ -268,58 +268,59 @@ namespace ICSharpCode.SharpZipLib.Checksums
       3272380065U,
       1510334235U,
       755167117U
-    };
-    private const uint CrcSeed = 4294967295;
-    private uint crc;
+        };
+        private const uint CrcSeed = 4294967295;
+        private uint crc;
 
-    internal static uint ComputeCrc32(uint oldCrc, byte value)
-    {
-      return Crc32.CrcTable[(IntPtr) (uint) (((int) oldCrc ^ (int) value) & (int) byte.MaxValue)] ^ oldCrc >> 8;
-    }
+        internal static uint ComputeCrc32(uint oldCrc, byte value)
+        {
+            var index = (((int)oldCrc ^ (int)value) & (int)byte.MaxValue);
+            return Crc32.CrcTable[index] ^ oldCrc >> 8;
+        }
 
-    public long Value
-    {
-      get
-      {
-        return (long) this.crc;
-      }
-      set
-      {
-        this.crc = (uint) value;
-      }
-    }
+        public long Value
+        {
+            get
+            {
+                return (long)this.crc;
+            }
+            set
+            {
+                this.crc = (uint)value;
+            }
+        }
 
-    public void Reset()
-    {
-      this.crc = 0U;
-    }
+        public void Reset()
+        {
+            this.crc = 0U;
+        }
 
-    public void Update(int value)
-    {
-      this.crc ^= uint.MaxValue;
-      this.crc = Crc32.CrcTable[((long) this.crc ^ (long) value) & (long) byte.MaxValue] ^ this.crc >> 8;
-      this.crc ^= uint.MaxValue;
-    }
+        public void Update(int value)
+        {
+            this.crc ^= uint.MaxValue;
+            this.crc = Crc32.CrcTable[((long)this.crc ^ (long)value) & (long)byte.MaxValue] ^ this.crc >> 8;
+            this.crc ^= uint.MaxValue;
+        }
 
-    public void Update(byte[] buffer)
-    {
-      if (buffer == null)
-        throw new ArgumentNullException(nameof (buffer));
-      this.Update(buffer, 0, buffer.Length);
-    }
+        public void Update(byte[] buffer)
+        {
+            if (buffer == null)
+                throw new ArgumentNullException(nameof(buffer));
+            this.Update(buffer, 0, buffer.Length);
+        }
 
-    public void Update(byte[] buffer, int offset, int count)
-    {
-      if (buffer == null)
-        throw new ArgumentNullException(nameof (buffer));
-      if (count < 0)
-        throw new ArgumentOutOfRangeException(nameof (count), "Count cannot be less than zero");
-      if (offset < 0 || offset + count > buffer.Length)
-        throw new ArgumentOutOfRangeException(nameof (offset));
-      this.crc ^= uint.MaxValue;
-      while (--count >= 0)
-        this.crc = Crc32.CrcTable[(IntPtr) (uint) (((int) this.crc ^ (int) buffer[offset++]) & (int) byte.MaxValue)] ^ this.crc >> 8;
-      this.crc ^= uint.MaxValue;
+        public void Update(byte[] buffer, int offset, int count)
+        {
+            if (buffer == null)
+                throw new ArgumentNullException(nameof(buffer));
+            if (count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count), "Count cannot be less than zero");
+            if (offset < 0 || offset + count > buffer.Length)
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            this.crc ^= uint.MaxValue;
+            while (--count >= 0)
+                this.crc = Crc32.CrcTable[(((int)this.crc ^ (int)buffer[offset++]) & (int)byte.MaxValue)] ^ this.crc >> 8;
+            this.crc ^= uint.MaxValue;
+        }
     }
-  }
 }
