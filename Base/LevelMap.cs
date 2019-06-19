@@ -1,47 +1,37 @@
-﻿using System;
+﻿// Decompiled with JetBrains decompiler
+// Type: LevelMap
+// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
+// Assembly location: C:\Users\Xbass\Desktop\Base.dll
+
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-// Token: 0x02000086 RID: 134
 public class LevelMap
 {
+  public readonly int Powers;
+  public readonly int Slots;
 
-    public LevelMap(IList<string> ioString)
+  public LevelMap(IList<string> ioString)
+  {
+    try
     {
-        try
-        {
-            if (!int.TryParse(ioString[1], out this.Powers))
-            {
-                this.Powers = 0;
-            }
-            if (ioString.Count > 2 && !int.TryParse(ioString[2], out this.Slots))
-            {
-                this.Slots = 0;
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error has occurred reading level data from database. Error: " + ex.Message);
-            throw;
-        }
+      if (!int.TryParse(ioString[1], out this.Powers))
+        this.Powers = 0;
+      if (ioString.Count <= 2 || int.TryParse(ioString[2], out this.Slots))
+        return;
+      this.Slots = 0;
     }
-    public Enums.dmItem LevelType()
+    catch (Exception ex)
     {
-        Enums.dmItem result;
-        if (this.Powers > 0)
-        {
-            result = Enums.dmItem.Power;
-        }
-        else if (this.Slots > 0)
-        {
-            result = Enums.dmItem.Slot;
-        }
-        else
-        {
-            result = Enums.dmItem.None;
-        }
-        return result;
+      int num = (int) MessageBox.Show("An error has occurred reading level data from database. Error: " + ex.Message);
+      throw;
     }
-    public readonly int Powers;
-    public readonly int Slots;
+  }
+
+  public Enums.dmItem LevelType()
+  {
+    return this.Powers <= 0 ? (this.Slots <= 0 ? Enums.dmItem.None : Enums.dmItem.Slot) : Enums.dmItem.Power;
+  }
 }

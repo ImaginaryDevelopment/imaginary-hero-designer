@@ -1,21 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Xbass\Desktop\Hero Designer.exe-->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{E287B135-A916-4492-93A7-EBA82000773E}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27BD82DA-4B3E-4D6B-BAEA-BE59A28A96EB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hero_Designer</RootNamespace>
     <AssemblyName>Hero Designer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>Hero Designer.ico</ApplicationIcon>
-    <StartupObject>Hero_Designer.My.MyApplication</StartupObject>
+    <RootNamespace>Hero_Designer</RootNamespace>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Xbass\Dropbox\Pine Patch Mids Live\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.22.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -25,8 +38,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,612 +47,303 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9A5C89CE957EFE8B03CE44B6154EC6A1EE7CCDC0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Hero Designer_2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Hero_Designer.My.MyApplication</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="midsControls">
-      <HintPath>..\midsControls.dll</HintPath>
+    <Reference Include="midsControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Pines Hero Designer 2.21\DISK1\program files\Pine's Hero Designer\Pine's Hero Designer\midsControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Hero_Designer\clsOutput.cs" />
-    <Compile Include="Hero_Designer\clsToonX.cs" />
-    <Compile Include="Hero_Designer\clsUniversalImport.cs" />
-    <Compile Include="Hero_Designer\clsXMLUpdate.cs" />
-    <Compile Include="Hero_Designer\DataView.cs">
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="clsOutput.cs" />
+    <Compile Include="clsToonX.cs" />
+    <Compile Include="clsUniversalImport.cs" />
+    <Compile Include="clsXMLUpdate.cs" />
+    <Compile Include="DataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmAbout.cs">
+    <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmAbout.Designer.cs">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmAccolade.cs">
+    <Compile Include="frmAccolade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmAccolade.Designer.cs">
-      <DependentUpon>frmAccolade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmBusy.cs">
+    <Compile Include="frmBusy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmBusy.Designer.cs">
-      <DependentUpon>frmBusy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmCalcOpt.cs">
+    <Compile Include="frmCalcOpt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmCalcOpt.Designer.cs">
-      <DependentUpon>frmCalcOpt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmColourSettings.cs">
+    <Compile Include="frmColourSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmColourSettings.Designer.cs">
-      <DependentUpon>frmColourSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmCompare.cs">
+    <Compile Include="frmCompare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmCompare.Designer.cs">
-      <DependentUpon>frmCompare.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmCSV.cs">
+    <Compile Include="frmCSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmCSV.Designer.cs">
-      <DependentUpon>frmCSV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmData.cs">
+    <Compile Include="frmData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmData.Designer.cs">
-      <DependentUpon>frmData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmDBEdit.cs">
+    <Compile Include="frmDBEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmDBEdit.Designer.cs">
-      <DependentUpon>frmDBEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmDPSCalc.cs">
+    <Compile Include="frmDPSCalc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmDPSCalc.Designer.cs">
-      <DependentUpon>frmDPSCalc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEditArchetype.cs">
+    <Compile Include="frmEditArchetype.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEditArchetype.Designer.cs">
-      <DependentUpon>frmEditArchetype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEditPower.cs">
+    <Compile Include="frmEditPower.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEditPower.Designer.cs">
-      <DependentUpon>frmEditPower.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEditPowerset.cs">
+    <Compile Include="frmEditPowerset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEditPowerset.Designer.cs">
-      <DependentUpon>frmEditPowerset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEnhData.cs">
+    <Compile Include="frmEnhData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEnhData.Designer.cs">
-      <DependentUpon>frmEnhData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEnhEdit.cs">
+    <Compile Include="frmEnhEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEnhEdit.Designer.cs">
-      <DependentUpon>frmEnhEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEnhMiniPick.cs">
+    <Compile Include="frmEnhMiniPick.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEnhMiniPick.Designer.cs">
-      <DependentUpon>frmEnhMiniPick.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEntityEdit.cs">
+    <Compile Include="frmEntityEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEntityEdit.Designer.cs">
-      <DependentUpon>frmEntityEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmEntityListing.cs">
+    <Compile Include="frmEntityListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmEntityListing.Designer.cs">
-      <DependentUpon>frmEntityListing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmExportColor.cs">
+    <Compile Include="frmExportColor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmExportColor.Designer.cs">
-      <DependentUpon>frmExportColor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmFloatingStats.cs">
+    <Compile Include="frmFloatingStats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmFloatingStats.Designer.cs">
-      <DependentUpon>frmFloatingStats.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmForum.cs">
+    <Compile Include="frmForum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmForum.Designer.cs">
-      <DependentUpon>frmForum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImportEffects.cs">
+    <Compile Include="frmImportEffects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImportEffects.Designer.cs">
-      <DependentUpon>frmImportEffects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImportEnhSets.cs">
+    <Compile Include="frmImportEnhSets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImportEnhSets.Designer.cs">
-      <DependentUpon>frmImportEnhSets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImportPowerLevels.cs">
+    <Compile Include="frmImportPowerLevels.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImportPowerLevels.Designer.cs">
-      <DependentUpon>frmImportPowerLevels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_Archetype.cs">
+    <Compile Include="frmImport_Archetype.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_Archetype.Designer.cs">
-      <DependentUpon>frmImport_Archetype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_EnhancementEffects.cs">
+    <Compile Include="frmImport_EnhancementEffects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_EnhancementEffects.Designer.cs">
-      <DependentUpon>frmImport_EnhancementEffects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_Entities.cs">
+    <Compile Include="frmImport_Entities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_Entities.Designer.cs">
-      <DependentUpon>frmImport_Entities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_mod.cs">
+    <Compile Include="frmImport_mod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_mod.Designer.cs">
-      <DependentUpon>frmImport_mod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_Power.cs">
+    <Compile Include="frmImport_Power.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_Power.Designer.cs">
-      <DependentUpon>frmImport_Power.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_Powerset.cs">
+    <Compile Include="frmImport_Powerset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_Powerset.Designer.cs">
-      <DependentUpon>frmImport_Powerset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_Recipe.cs">
+    <Compile Include="frmImport_Recipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_Recipe.Designer.cs">
-      <DependentUpon>frmImport_Recipe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_SalvageReq.cs">
+    <Compile Include="frmImport_SalvageReq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_SalvageReq.Designer.cs">
-      <DependentUpon>frmImport_SalvageReq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_SetAssignments.cs">
+    <Compile Include="frmImport_SetAssignments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_SetAssignments.Designer.cs">
-      <DependentUpon>frmImport_SetAssignments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmImport_SetBonusAssignment.cs">
+    <Compile Include="frmImport_SetBonusAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmImport_SetBonusAssignment.Designer.cs">
-      <DependentUpon>frmImport_SetBonusAssignment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmIncarnate.cs">
+    <Compile Include="frmIncarnate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmIncarnate.Designer.cs">
-      <DependentUpon>frmIncarnate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\FrmInputLevel.cs">
+    <Compile Include="FrmInputLevel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\FrmInputLevel.Designer.cs">
-      <DependentUpon>FrmInputLevel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmLoading.cs">
+    <Compile Include="frmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmLoading.Designer.cs">
-      <DependentUpon>frmLoading.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmMain.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmMiniList.cs">
+    <Compile Include="frmMiniList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmMiniList.Designer.cs">
-      <DependentUpon>frmMiniList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmOptionListDlg.cs">
+    <Compile Include="frmOptionListDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmOptionListDlg.Designer.cs">
-      <DependentUpon>frmOptionListDlg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmPowerBrowser.cs">
+    <Compile Include="frmPowerBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmPowerBrowser.Designer.cs">
-      <DependentUpon>frmPowerBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmPowerEffect.cs">
+    <Compile Include="frmPowerEffect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmPowerEffect.Designer.cs">
-      <DependentUpon>frmPowerEffect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmPrint.cs">
+    <Compile Include="frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmPrint.Designer.cs">
-      <DependentUpon>frmPrint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmReadme.cs">
+    <Compile Include="frmReadme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmReadme.Designer.cs">
-      <DependentUpon>frmReadme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmRecipeEdit.cs">
+    <Compile Include="frmRecipeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmRecipeEdit.Designer.cs">
-      <DependentUpon>frmRecipeEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmRecipeViewer.cs">
+    <Compile Include="frmRecipeViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmRecipeViewer.Designer.cs">
-      <DependentUpon>frmRecipeViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmSalvageEdit.cs">
+    <Compile Include="frmSalvageEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmSalvageEdit.Designer.cs">
-      <DependentUpon>frmSalvageEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmSetEdit.cs">
+    <Compile Include="frmSetEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmSetEdit.Designer.cs">
-      <DependentUpon>frmSetEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmSetFind.cs">
+    <Compile Include="frmSetFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmSetFind.Designer.cs">
-      <DependentUpon>frmSetFind.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmSetListing.cs">
+    <Compile Include="frmSetListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmSetListing.Designer.cs">
-      <DependentUpon>frmSetListing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmSetViewer.cs">
+    <Compile Include="frmSetViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmSetViewer.Designer.cs">
-      <DependentUpon>frmSetViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmStats.cs">
+    <Compile Include="frmStats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmStats.Designer.cs">
-      <DependentUpon>frmStats.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmTotals.cs">
+    <Compile Include="frmTotals.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmTotals.Designer.cs">
-      <DependentUpon>frmTotals.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmTweakMatching.cs">
+    <Compile Include="frmTweakMatching.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmTweakMatching.Designer.cs">
-      <DependentUpon>frmTweakMatching.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\frmZStatus.cs">
+    <Compile Include="frmZStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hero_Designer\frmZStatus.Designer.cs">
-      <DependentUpon>frmZStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Hero_Designer\MainModule.cs" />
-    <Compile Include="Hero_Designer\My\MyApplication.cs" />
-    <Compile Include="Hero_Designer\My\MyComputer.cs" />
-    <Compile Include="Hero_Designer\My\MyProject.cs" />
-    <Compile Include="Hero_Designer\My\MySettings.Designer.cs">
-      <DependentUpon>MySettings.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Hero_Designer\My\Resources\Resources.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <DependentUpon>Settings.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="MainModule.cs" />
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My\MySettings.cs" />
+    <Compile Include="My\Resources\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Hero_Designer\DataView.resx">
-      <DependentUpon>DataView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmAccolade.resx">
-      <DependentUpon>frmAccolade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmBusy.resx">
-      <DependentUpon>frmBusy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmCalcOpt.resx">
-      <DependentUpon>frmCalcOpt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmColourSettings.resx">
-      <DependentUpon>frmColourSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmCompare.resx">
-      <DependentUpon>frmCompare.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmCSV.resx">
-      <DependentUpon>frmCSV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmData.resx">
-      <DependentUpon>frmData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmDBEdit.resx">
-      <DependentUpon>frmDBEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmDPSCalc.resx">
-      <DependentUpon>frmDPSCalc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEditArchetype.resx">
-      <DependentUpon>frmEditArchetype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEditPower.resx">
-      <DependentUpon>frmEditPower.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEditPowerset.resx">
-      <DependentUpon>frmEditPowerset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEnhData.resx">
-      <DependentUpon>frmEnhData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEnhEdit.resx">
-      <DependentUpon>frmEnhEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEnhMiniPick.resx">
-      <DependentUpon>frmEnhMiniPick.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEntityEdit.resx">
-      <DependentUpon>frmEntityEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmEntityListing.resx">
-      <DependentUpon>frmEntityListing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmExportColor.resx">
-      <DependentUpon>frmExportColor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmFloatingStats.resx">
-      <DependentUpon>frmFloatingStats.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmForum.resx">
-      <DependentUpon>frmForum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImportEffects.resx">
-      <DependentUpon>frmImportEffects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImportEnhSets.resx">
-      <DependentUpon>frmImportEnhSets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImportPowerLevels.resx">
-      <DependentUpon>frmImportPowerLevels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_Archetype.resx">
-      <DependentUpon>frmImport_Archetype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_EnhancementEffects.resx">
-      <DependentUpon>frmImport_EnhancementEffects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_Entities.resx">
-      <DependentUpon>frmImport_Entities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_mod.resx">
-      <DependentUpon>frmImport_mod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_Power.resx">
-      <DependentUpon>frmImport_Power.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_Powerset.resx">
-      <DependentUpon>frmImport_Powerset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_Recipe.resx">
-      <DependentUpon>frmImport_Recipe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_SalvageReq.resx">
-      <DependentUpon>frmImport_SalvageReq.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_SetAssignments.resx">
-      <DependentUpon>frmImport_SetAssignments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmImport_SetBonusAssignment.resx">
-      <DependentUpon>frmImport_SetBonusAssignment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmIncarnate.resx">
-      <DependentUpon>frmIncarnate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\FrmInputLevel.resx">
-      <DependentUpon>FrmInputLevel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmLoading.resx">
-      <DependentUpon>frmLoading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmMiniList.resx">
-      <DependentUpon>frmMiniList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmOptionListDlg.resx">
-      <DependentUpon>frmOptionListDlg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmPowerBrowser.resx">
-      <DependentUpon>frmPowerBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmPowerEffect.resx">
-      <DependentUpon>frmPowerEffect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmPrint.resx">
-      <DependentUpon>frmPrint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmReadme.resx">
-      <DependentUpon>frmReadme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmRecipeEdit.resx">
-      <DependentUpon>frmRecipeEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmRecipeViewer.resx">
-      <DependentUpon>frmRecipeViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmSalvageEdit.resx">
-      <DependentUpon>frmSalvageEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmSetEdit.resx">
-      <DependentUpon>frmSetEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmSetFind.resx">
-      <DependentUpon>frmSetFind.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmSetListing.resx">
-      <DependentUpon>frmSetListing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmSetViewer.resx">
-      <DependentUpon>frmSetViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmStats.resx">
-      <DependentUpon>frmStats.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmTotals.resx">
-      <DependentUpon>frmTotals.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmTweakMatching.resx">
-      <DependentUpon>frmTweakMatching.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\frmZStatus.resx">
-      <DependentUpon>frmZStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hero_Designer\Resources.resources" />
+    <EmbeddedResource Include="DataView.resx" />
+    <EmbeddedResource Include="frmAbout.resx" />
+    <EmbeddedResource Include="frmAccolade.resx" />
+    <EmbeddedResource Include="frmBusy.resx" />
+    <EmbeddedResource Include="frmCalcOpt.resx" />
+    <EmbeddedResource Include="frmColourSettings.resx" />
+    <EmbeddedResource Include="frmCompare.resx" />
+    <EmbeddedResource Include="frmCSV.resx" />
+    <EmbeddedResource Include="frmData.resx" />
+    <EmbeddedResource Include="frmDBEdit.resx" />
+    <EmbeddedResource Include="frmDPSCalc.resx" />
+    <EmbeddedResource Include="frmEditArchetype.resx" />
+    <EmbeddedResource Include="frmEditPower.resx" />
+    <EmbeddedResource Include="frmEditPowerset.resx" />
+    <EmbeddedResource Include="frmEnhData.resx" />
+    <EmbeddedResource Include="frmEnhEdit.resx" />
+    <EmbeddedResource Include="frmEnhMiniPick.resx" />
+    <EmbeddedResource Include="frmEntityEdit.resx" />
+    <EmbeddedResource Include="frmEntityListing.resx" />
+    <EmbeddedResource Include="frmExportColor.resx" />
+    <EmbeddedResource Include="frmFloatingStats.resx" />
+    <EmbeddedResource Include="frmForum.resx" />
+    <EmbeddedResource Include="frmImport_Archetype.resx" />
+    <EmbeddedResource Include="frmImport_EnhancementEffects.resx" />
+    <EmbeddedResource Include="frmImport_Entities.resx" />
+    <EmbeddedResource Include="frmImport_mod.resx" />
+    <EmbeddedResource Include="frmImport_Power.resx" />
+    <EmbeddedResource Include="frmImport_Powerset.resx" />
+    <EmbeddedResource Include="frmImport_Recipe.resx" />
+    <EmbeddedResource Include="frmImport_SalvageReq.resx" />
+    <EmbeddedResource Include="frmImport_SetAssignments.resx" />
+    <EmbeddedResource Include="frmImport_SetBonusAssignment.resx" />
+    <EmbeddedResource Include="frmImportEffects.resx" />
+    <EmbeddedResource Include="frmImportEnhSets.resx" />
+    <EmbeddedResource Include="frmImportPowerLevels.resx" />
+    <EmbeddedResource Include="frmIncarnate.resx" />
+    <EmbeddedResource Include="FrmInputLevel.resx" />
+    <EmbeddedResource Include="frmLoading.resx" />
+    <EmbeddedResource Include="frmMain.resx" />
+    <EmbeddedResource Include="frmMiniList.resx" />
+    <EmbeddedResource Include="frmOptionListDlg.resx" />
+    <EmbeddedResource Include="frmPowerBrowser.resx" />
+    <EmbeddedResource Include="frmPowerEffect.resx" />
+    <EmbeddedResource Include="frmPrint.resx" />
+    <EmbeddedResource Include="frmReadme.resx" />
+    <EmbeddedResource Include="frmRecipeEdit.resx" />
+    <EmbeddedResource Include="frmRecipeViewer.resx" />
+    <EmbeddedResource Include="frmSalvageEdit.resx" />
+    <EmbeddedResource Include="frmSetEdit.resx" />
+    <EmbeddedResource Include="frmSetFind.resx" />
+    <EmbeddedResource Include="frmSetListing.resx" />
+    <EmbeddedResource Include="frmSetViewer.resx" />
+    <EmbeddedResource Include="frmStats.resx" />
+    <EmbeddedResource Include="frmTotals.resx" />
+    <EmbeddedResource Include="frmTweakMatching.resx" />
+    <EmbeddedResource Include="frmZStatus.resx" />
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="phd_iE7_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base\Base.csproj">
-      <Project>{e287b135-a916-4492-93a7-eba82000773d}</Project>
+      <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.manifest" />
-    <None Include="Hero_Designer\My\MySettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="Images\**\*.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\AttribMod.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\bbcode.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Compare.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Config.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\EClasses.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\EnhDB.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\I12.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\I9.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Levels.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Maths.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Origins.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Recipe.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Salvage.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\SetTypes.mhd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Hero Designer.ico" />
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

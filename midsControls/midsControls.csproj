@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Xbass\Desktop\midsControls.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{718D75BE-301C-4DDF-8312-266BBDFBAF67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>midsControls</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>midsControls</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Base">
+      <HintPath>lib\Base.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsDrawX.cs" />
+    <Compile Include="ctlDamageDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlMultiGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlPairedList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlPopUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GFXLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="I9Picker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListLabelV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My\MySettings.cs" />
+    <Compile Include="My\MySettingsProperty.cs" />
+    <Compile Include="My\Resources\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ctlDamageDisplay.resx" />
+    <EmbeddedResource Include="ctlMultiGraph.resx" />
+    <EmbeddedResource Include="ctlPairedList.resx" />
+    <EmbeddedResource Include="ctlPopUp.resx" />
+    <EmbeddedResource Include="GFXLabel.resx" />
+    <EmbeddedResource Include="I9Picker.resx" />
+    <EmbeddedResource Include="ImageButton.resx" />
+    <EmbeddedResource Include="ListLabelV2.resx" />
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
