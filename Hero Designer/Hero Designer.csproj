@@ -68,7 +68,13 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Base2">
+      <HintPath>lib\Base2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="midsControls2">
+      <HintPath>lib\midsControls2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
@@ -327,20 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Base\Base.csproj">
-      <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
-      <Name>Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\midsControls\midsControls.csproj">
-      <Project>{718d75be-301c-4ddf-8312-266bbdfbaf67}</Project>
-      <Name>midsControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Zlib2\ICSharpCode.SharpZipLib\ICSharpCode.SharpZipLib.csproj">
-      <Project>{f85d0de7-f41f-45db-a952-ed4031e0a8b5}</Project>
-      <Name>ICSharpCode.SharpZipLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
