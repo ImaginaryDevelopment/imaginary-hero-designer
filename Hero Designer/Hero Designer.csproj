@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: C:\Users\Xbass\Desktop\Hero Designer.exe-->
   <PropertyGroup>
@@ -84,12 +84,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="clsOutput.cs" />
     <Compile Include="clsToonX.cs" />
@@ -440,7 +434,7 @@
     <EmbeddedResource Include="frmZStatus.resx">
       <DependentUpon>frmZStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources.resx"/>
+    <EmbeddedResource Include="Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
