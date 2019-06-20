@@ -440,9 +440,7 @@
     <EmbeddedResource Include="frmZStatus.resx">
       <DependentUpon>frmZStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources.resx">
-      <DependentUpon>Resources.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx"/>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
