@@ -15,293 +15,437 @@ namespace Hero_Designer
   public class frmCalcOpt : Form
   {
     [AccessedThroughProperty("btnBaseReset")]
-    private Button _btnBaseReset;
+    Button _btnBaseReset;
+
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnFontColour")]
-    private Button _btnFontColour;
+    Button _btnFontColour;
+
     [AccessedThroughProperty("btnForceUpdate")]
-    private Button _btnForceUpdate;
+    Button _btnForceUpdate;
+
     [AccessedThroughProperty("btnIOReset")]
-    private Button _btnIOReset;
+    Button _btnIOReset;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnSaveFolder")]
-    private Button _btnSaveFolder;
+    Button _btnSaveFolder;
+
     [AccessedThroughProperty("btnSaveFolderReset")]
-    private Button _btnSaveFolderReset;
+    Button _btnSaveFolderReset;
+
     [AccessedThroughProperty("btnUpdate")]
-    private Button _btnUpdate;
+    Button _btnUpdate;
+
     [AccessedThroughProperty("btnUpdatePathReset")]
-    private Button _btnUpdatePathReset;
+    Button _btnUpdatePathReset;
+
     [AccessedThroughProperty("cbEnhLevel")]
-    private ComboBox _cbEnhLevel;
+    ComboBox _cbEnhLevel;
+
     [AccessedThroughProperty("chkColorInherent")]
-    private CheckBox _chkColorInherent;
+    CheckBox _chkColorInherent;
+
     [AccessedThroughProperty("chkColourPrint")]
-    private CheckBox _chkColourPrint;
+    CheckBox _chkColourPrint;
+
     [AccessedThroughProperty("chkHighVis")]
-    private CheckBox _chkHighVis;
+    CheckBox _chkHighVis;
+
     [AccessedThroughProperty("chkIOEffects")]
-    private CheckBox _chkIOEffects;
+    CheckBox _chkIOEffects;
+
     [AccessedThroughProperty("chkIOLevel")]
-    private CheckBox _chkIOLevel;
+    CheckBox _chkIOLevel;
+
     [AccessedThroughProperty("chkIOPrintLevels")]
-    private CheckBox _chkIOPrintLevels;
+    CheckBox _chkIOPrintLevels;
+
     [AccessedThroughProperty("chkLoadLastFile")]
-    private CheckBox _chkLoadLastFile;
+    CheckBox _chkLoadLastFile;
+
     [AccessedThroughProperty("chkMiddle")]
-    private CheckBox _chkMiddle;
+    CheckBox _chkMiddle;
+
     [AccessedThroughProperty("chkNoTips")]
-    private CheckBox _chkNoTips;
+    CheckBox _chkNoTips;
+
     [AccessedThroughProperty("chkRelSignOnly")]
-    private CheckBox _chkRelSignOnly;
+    CheckBox _chkRelSignOnly;
+
     [AccessedThroughProperty("chkSetBonus")]
-    private CheckBox _chkSetBonus;
+    CheckBox _chkSetBonus;
+
     [AccessedThroughProperty("chkShowAlphaPopup")]
-    private CheckBox _chkShowAlphaPopup;
+    CheckBox _chkShowAlphaPopup;
+
     [AccessedThroughProperty("chkStatBold")]
-    private CheckBox _chkStatBold;
+    CheckBox _chkStatBold;
+
     [AccessedThroughProperty("chkTextBold")]
-    private CheckBox _chkTextBold;
+    CheckBox _chkTextBold;
+
     [AccessedThroughProperty("chkUpdates")]
-    private CheckBox _chkUpdates;
+    CheckBox _chkUpdates;
+
     [AccessedThroughProperty("chkUseArcanaTime")]
-    private CheckBox _chkUseArcanaTime;
+    CheckBox _chkUseArcanaTime;
+
     [AccessedThroughProperty("chkVillainColour")]
-    private CheckBox _chkVillainColour;
+    CheckBox _chkVillainColour;
+
     [AccessedThroughProperty("clbSuppression")]
-    private CheckedListBox _clbSuppression;
+    CheckedListBox _clbSuppression;
+
     [AccessedThroughProperty("cmbAction")]
-    private ComboBox _cmbAction;
+    ComboBox _cmbAction;
+
     [AccessedThroughProperty("cPicker")]
-    private ColorDialog _cPicker;
+    ColorDialog _cPicker;
+
     [AccessedThroughProperty("csAdd")]
-    private Button _csAdd;
+    Button _csAdd;
+
     [AccessedThroughProperty("csBtnEdit")]
-    private Button _csBtnEdit;
+    Button _csBtnEdit;
+
     [AccessedThroughProperty("csDelete")]
-    private Button _csDelete;
+    Button _csDelete;
+
     [AccessedThroughProperty("csList")]
-    private ListBox _csList;
+    ListBox _csList;
+
     [AccessedThroughProperty("csReset")]
-    private Button _csReset;
+    Button _csReset;
+
     [AccessedThroughProperty("fbdSave")]
-    private FolderBrowserDialog _fbdSave;
+    FolderBrowserDialog _fbdSave;
+
     [AccessedThroughProperty("fcAdd")]
-    private Button _fcAdd;
+    Button _fcAdd;
+
     [AccessedThroughProperty("fcBoldOff")]
-    private TextBox _fcBoldOff;
+    TextBox _fcBoldOff;
+
     [AccessedThroughProperty("fcBoldOn")]
-    private TextBox _fcBoldOn;
+    TextBox _fcBoldOn;
+
     [AccessedThroughProperty("fcColorOff")]
-    private TextBox _fcColorOff;
+    TextBox _fcColorOff;
+
     [AccessedThroughProperty("fcColorOn")]
-    private TextBox _fcColorOn;
+    TextBox _fcColorOn;
+
     [AccessedThroughProperty("fcDelete")]
-    private Button _fcDelete;
+    Button _fcDelete;
+
     [AccessedThroughProperty("fcItalicOff")]
-    private TextBox _fcItalicOff;
+    TextBox _fcItalicOff;
+
     [AccessedThroughProperty("fcItalicOn")]
-    private TextBox _fcItalicOn;
+    TextBox _fcItalicOn;
+
     [AccessedThroughProperty("fcList")]
-    private ListBox _fcList;
+    ListBox _fcList;
+
     [AccessedThroughProperty("fcName")]
-    private TextBox _fcName;
+    TextBox _fcName;
+
     [AccessedThroughProperty("fcNotes")]
-    private TextBox _fcNotes;
+    TextBox _fcNotes;
+
     [AccessedThroughProperty("fcReset")]
-    private Button _fcReset;
+    Button _fcReset;
+
     [AccessedThroughProperty("fcSet")]
-    private Button _fcSet;
+    Button _fcSet;
+
     [AccessedThroughProperty("fcTextOff")]
-    private TextBox _fcTextOff;
+    TextBox _fcTextOff;
+
     [AccessedThroughProperty("fcTextOn")]
-    private TextBox _fcTextOn;
+    TextBox _fcTextOn;
+
     [AccessedThroughProperty("fcUnderlineOff")]
-    private TextBox _fcUnderlineOff;
+    TextBox _fcUnderlineOff;
+
     [AccessedThroughProperty("fcUnderlineOn")]
-    private TextBox _fcUnderlineOn;
+    TextBox _fcUnderlineOn;
+
     [AccessedThroughProperty("fcWSSpace")]
-    private RadioButton _fcWSSpace;
+    RadioButton _fcWSSpace;
+
     [AccessedThroughProperty("fcWSTab")]
-    private RadioButton _fcWSTab;
+    RadioButton _fcWSTab;
+
     [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
+    GroupBox _GroupBox1;
+
     [AccessedThroughProperty("GroupBox10")]
-    private GroupBox _GroupBox10;
+    GroupBox _GroupBox10;
+
     [AccessedThroughProperty("GroupBox11")]
-    private GroupBox _GroupBox11;
+    GroupBox _GroupBox11;
+
     [AccessedThroughProperty("GroupBox12")]
-    private GroupBox _GroupBox12;
+    GroupBox _GroupBox12;
+
     [AccessedThroughProperty("GroupBox13")]
-    private GroupBox _GroupBox13;
+    GroupBox _GroupBox13;
+
     [AccessedThroughProperty("GroupBox14")]
-    private GroupBox _GroupBox14;
+    GroupBox _GroupBox14;
+
     [AccessedThroughProperty("GroupBox15")]
-    private GroupBox _GroupBox15;
+    GroupBox _GroupBox15;
+
     [AccessedThroughProperty("GroupBox16")]
-    private GroupBox _GroupBox16;
+    GroupBox _GroupBox16;
+
     [AccessedThroughProperty("GroupBox17")]
-    private GroupBox _GroupBox17;
+    GroupBox _GroupBox17;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
+    GroupBox _GroupBox3;
+
     [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
+    GroupBox _GroupBox4;
+
     [AccessedThroughProperty("GroupBox5")]
-    private GroupBox _GroupBox5;
+    GroupBox _GroupBox5;
+
     [AccessedThroughProperty("GroupBox6")]
-    private GroupBox _GroupBox6;
+    GroupBox _GroupBox6;
+
     [AccessedThroughProperty("GroupBox7")]
-    private GroupBox _GroupBox7;
+    GroupBox _GroupBox7;
+
     [AccessedThroughProperty("GroupBox8")]
-    private GroupBox _GroupBox8;
+    GroupBox _GroupBox8;
+
     [AccessedThroughProperty("GroupBox9")]
-    private GroupBox _GroupBox9;
+    GroupBox _GroupBox9;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label10")]
-    private Label _Label10;
+    Label _Label10;
+
     [AccessedThroughProperty("Label11")]
-    private Label _Label11;
+    Label _Label11;
+
     [AccessedThroughProperty("Label12")]
-    private Label _Label12;
+    Label _Label12;
+
     [AccessedThroughProperty("Label13")]
-    private Label _Label13;
+    Label _Label13;
+
     [AccessedThroughProperty("Label14")]
-    private Label _Label14;
+    Label _Label14;
+
     [AccessedThroughProperty("Label15")]
-    private Label _Label15;
+    Label _Label15;
+
     [AccessedThroughProperty("Label16")]
-    private Label _Label16;
+    Label _Label16;
+
     [AccessedThroughProperty("Label19")]
-    private Label _Label19;
+    Label _Label19;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label20")]
-    private Label _Label20;
+    Label _Label20;
+
     [AccessedThroughProperty("Label21")]
-    private Label _Label21;
+    Label _Label21;
+
     [AccessedThroughProperty("Label22")]
-    private Label _Label22;
+    Label _Label22;
+
     [AccessedThroughProperty("Label24")]
-    private Label _Label24;
+    Label _Label24;
+
     [AccessedThroughProperty("Label25")]
-    private Label _Label25;
+    Label _Label25;
+
     [AccessedThroughProperty("Label26")]
-    private Label _Label26;
+    Label _Label26;
+
     [AccessedThroughProperty("Label27")]
-    private Label _Label27;
+    Label _Label27;
+
     [AccessedThroughProperty("Label28")]
-    private Label _Label28;
+    Label _Label28;
+
     [AccessedThroughProperty("Label29")]
-    private Label _Label29;
+    Label _Label29;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label30")]
-    private Label _Label30;
+    Label _Label30;
+
     [AccessedThroughProperty("Label31")]
-    private Label _Label31;
+    Label _Label31;
+
     [AccessedThroughProperty("Label32")]
-    private Label _Label32;
+    Label _Label32;
+
     [AccessedThroughProperty("Label33")]
-    private Label _Label33;
+    Label _Label33;
+
     [AccessedThroughProperty("Label34")]
-    private Label _Label34;
+    Label _Label34;
+
     [AccessedThroughProperty("Label36")]
-    private Label _Label36;
+    Label _Label36;
+
     [AccessedThroughProperty("Label37")]
-    private Label _Label37;
+    Label _Label37;
+
     [AccessedThroughProperty("Label38")]
-    private Label _Label38;
+    Label _Label38;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label40")]
-    private Label _Label40;
+    Label _Label40;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("Label8")]
-    private Label _Label8;
+    Label _Label8;
+
     [AccessedThroughProperty("Label9")]
-    private Label _Label9;
+    Label _Label9;
+
     [AccessedThroughProperty("lblExample")]
-    private Label _lblExample;
+    Label _lblExample;
+
     [AccessedThroughProperty("lblSaveFolder")]
-    private Label _lblSaveFolder;
+    Label _lblSaveFolder;
+
     [AccessedThroughProperty("listScenarios")]
-    private ListBox _listScenarios;
+    ListBox _listScenarios;
+
     [AccessedThroughProperty("myTip")]
-    private ToolTip _myTip;
+    ToolTip _myTip;
+
     [AccessedThroughProperty("optDO")]
-    private RadioButton _optDO;
+    RadioButton _optDO;
+
     [AccessedThroughProperty("optEnh")]
-    private Label _optEnh;
+    Label _optEnh;
+
     [AccessedThroughProperty("optSO")]
-    private RadioButton _optSO;
+    RadioButton _optSO;
+
     [AccessedThroughProperty("optTO")]
-    private RadioButton _optTO;
+    RadioButton _optTO;
+
     [AccessedThroughProperty("rbChanceAverage")]
-    private RadioButton _rbChanceAverage;
+    RadioButton _rbChanceAverage;
+
     [AccessedThroughProperty("rbChanceIgnore")]
-    private RadioButton _rbChanceIgnore;
+    RadioButton _rbChanceIgnore;
+
     [AccessedThroughProperty("rbChanceMax")]
-    private RadioButton _rbChanceMax;
+    RadioButton _rbChanceMax;
+
     [AccessedThroughProperty("rbGraphSimple")]
-    private RadioButton _rbGraphSimple;
+    RadioButton _rbGraphSimple;
+
     [AccessedThroughProperty("rbGraphStacked")]
-    private RadioButton _rbGraphStacked;
+    RadioButton _rbGraphStacked;
+
     [AccessedThroughProperty("rbGraphTwoLine")]
-    private RadioButton _rbGraphTwoLine;
+    RadioButton _rbGraphTwoLine;
+
     [AccessedThroughProperty("rbPvE")]
-    private RadioButton _rbPvE;
+    RadioButton _rbPvE;
+
     [AccessedThroughProperty("rbPvP")]
-    private RadioButton _rbPvP;
+    RadioButton _rbPvP;
+
     [AccessedThroughProperty("TabControl1")]
-    private TabControl _TabControl1;
+    TabControl _TabControl1;
+
     [AccessedThroughProperty("TabPage1")]
-    private TabPage _TabPage1;
+    TabPage _TabPage1;
+
     [AccessedThroughProperty("TabPage2")]
-    private TabPage _TabPage2;
+    TabPage _TabPage2;
+
     [AccessedThroughProperty("TabPage3")]
-    private TabPage _TabPage3;
+    TabPage _TabPage3;
+
     [AccessedThroughProperty("TabPage4")]
-    private TabPage _TabPage4;
+    TabPage _TabPage4;
+
     [AccessedThroughProperty("TabPage5")]
-    private TabPage _TabPage5;
+    TabPage _TabPage5;
+
     [AccessedThroughProperty("TabPage6")]
-    private TabPage _TabPage6;
+    TabPage _TabPage6;
+
     [AccessedThroughProperty("TeamSize")]
-    private NumericUpDown _TeamSize;
+    NumericUpDown _TeamSize;
+
     [AccessedThroughProperty("txtUpdatePath")]
-    private TextBox _txtUpdatePath;
+    TextBox _txtUpdatePath;
+
     [AccessedThroughProperty("udBaseToHit")]
-    private NumericUpDown _udBaseToHit;
+    NumericUpDown _udBaseToHit;
+
     [AccessedThroughProperty("udExHigh")]
-    private NumericUpDown _udExHigh;
+    NumericUpDown _udExHigh;
+
     [AccessedThroughProperty("udExLow")]
-    private NumericUpDown _udExLow;
+    NumericUpDown _udExLow;
+
     [AccessedThroughProperty("udForceLevel")]
-    private NumericUpDown _udForceLevel;
+    NumericUpDown _udForceLevel;
+
     [AccessedThroughProperty("udIOLevel")]
-    private NumericUpDown _udIOLevel;
+    NumericUpDown _udIOLevel;
+
     [AccessedThroughProperty("udRTFSize")]
-    private NumericUpDown _udRTFSize;
+    NumericUpDown _udRTFSize;
+
     [AccessedThroughProperty("udStatSize")]
-    private NumericUpDown _udStatSize;
-    private IContainer components;
-    private short[] defActs;
+    NumericUpDown _udStatSize;
+
+    IContainer components;
+
+    short[] defActs;
+
     protected bool fcNoUpdate;
     public frmMain myParent;
-    private string[][] scenActs;
-    private string[] scenarioExample;
+    string[][] scenActs;
 
-    internal virtual Button btnBaseReset
+    string[] scenarioExample;
+
+
+    Button btnBaseReset
     {
       get
       {
@@ -319,7 +463,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -337,7 +481,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFontColour
+    Button btnFontColour
     {
       get
       {
@@ -355,7 +499,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnForceUpdate
+    Button btnForceUpdate
     {
       get
       {
@@ -373,7 +517,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnIOReset
+    Button btnIOReset
     {
       get
       {
@@ -391,7 +535,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -409,7 +553,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSaveFolder
+    Button btnSaveFolder
     {
       get
       {
@@ -427,7 +571,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSaveFolderReset
+    Button btnSaveFolderReset
     {
       get
       {
@@ -445,7 +589,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUpdate
+    Button btnUpdate
     {
       get
       {
@@ -463,7 +607,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUpdatePathReset
+    Button btnUpdatePathReset
     {
       get
       {
@@ -481,7 +625,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbEnhLevel
+    ComboBox cbEnhLevel
     {
       get
       {
@@ -493,7 +637,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkColorInherent
+    CheckBox chkColorInherent
     {
       get
       {
@@ -505,7 +649,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkColourPrint
+    CheckBox chkColourPrint
     {
       get
       {
@@ -517,7 +661,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkHighVis
+    CheckBox chkHighVis
     {
       get
       {
@@ -529,7 +673,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkIOEffects
+    CheckBox chkIOEffects
     {
       get
       {
@@ -541,7 +685,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkIOLevel
+    CheckBox chkIOLevel
     {
       get
       {
@@ -553,7 +697,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkIOPrintLevels
+    CheckBox chkIOPrintLevels
     {
       get
       {
@@ -565,7 +709,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkLoadLastFile
+    CheckBox chkLoadLastFile
     {
       get
       {
@@ -577,7 +721,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkMiddle
+    CheckBox chkMiddle
     {
       get
       {
@@ -589,7 +733,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNoTips
+    CheckBox chkNoTips
     {
       get
       {
@@ -601,7 +745,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkRelSignOnly
+    CheckBox chkRelSignOnly
     {
       get
       {
@@ -613,7 +757,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSetBonus
+    CheckBox chkSetBonus
     {
       get
       {
@@ -625,7 +769,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkShowAlphaPopup
+    CheckBox chkShowAlphaPopup
     {
       get
       {
@@ -637,7 +781,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkStatBold
+    CheckBox chkStatBold
     {
       get
       {
@@ -649,7 +793,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkTextBold
+    CheckBox chkTextBold
     {
       get
       {
@@ -661,7 +805,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkUpdates
+    CheckBox chkUpdates
     {
       get
       {
@@ -673,7 +817,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkUseArcanaTime
+    CheckBox chkUseArcanaTime
     {
       get
       {
@@ -685,7 +829,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkVillainColour
+    CheckBox chkVillainColour
     {
       get
       {
@@ -697,7 +841,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckedListBox clbSuppression
+    CheckedListBox clbSuppression
     {
       get
       {
@@ -715,7 +859,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cmbAction
+    ComboBox cmbAction
     {
       get
       {
@@ -733,7 +877,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColorDialog cPicker
+    ColorDialog cPicker
     {
       get
       {
@@ -745,7 +889,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csAdd
+    Button csAdd
     {
       get
       {
@@ -763,7 +907,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csBtnEdit
+    Button csBtnEdit
     {
       get
       {
@@ -781,7 +925,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csDelete
+    Button csDelete
     {
       get
       {
@@ -799,7 +943,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox csList
+    ListBox csList
     {
       get
       {
@@ -817,7 +961,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csReset
+    Button csReset
     {
       get
       {
@@ -835,7 +979,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual FolderBrowserDialog fbdSave
+    FolderBrowserDialog fbdSave
     {
       get
       {
@@ -847,7 +991,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcAdd
+    Button fcAdd
     {
       get
       {
@@ -865,7 +1009,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcBoldOff
+    TextBox fcBoldOff
     {
       get
       {
@@ -883,7 +1027,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcBoldOn
+    TextBox fcBoldOn
     {
       get
       {
@@ -901,7 +1045,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcColorOff
+    TextBox fcColorOff
     {
       get
       {
@@ -919,7 +1063,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcColorOn
+    TextBox fcColorOn
     {
       get
       {
@@ -937,7 +1081,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcDelete
+    Button fcDelete
     {
       get
       {
@@ -955,7 +1099,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcItalicOff
+    TextBox fcItalicOff
     {
       get
       {
@@ -973,7 +1117,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcItalicOn
+    TextBox fcItalicOn
     {
       get
       {
@@ -991,7 +1135,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox fcList
+    ListBox fcList
     {
       get
       {
@@ -1014,7 +1158,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcName
+    TextBox fcName
     {
       get
       {
@@ -1026,7 +1170,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcNotes
+    TextBox fcNotes
     {
       get
       {
@@ -1044,7 +1188,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcReset
+    Button fcReset
     {
       get
       {
@@ -1062,7 +1206,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcSet
+    Button fcSet
     {
       get
       {
@@ -1080,7 +1224,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcTextOff
+    TextBox fcTextOff
     {
       get
       {
@@ -1098,7 +1242,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcTextOn
+    TextBox fcTextOn
     {
       get
       {
@@ -1116,7 +1260,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcUnderlineOff
+    TextBox fcUnderlineOff
     {
       get
       {
@@ -1134,7 +1278,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcUnderlineOn
+    TextBox fcUnderlineOn
     {
       get
       {
@@ -1152,7 +1296,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton fcWSSpace
+    RadioButton fcWSSpace
     {
       get
       {
@@ -1170,7 +1314,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton fcWSTab
+    RadioButton fcWSTab
     {
       get
       {
@@ -1188,7 +1332,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
+    GroupBox GroupBox1
     {
       get
       {
@@ -1200,7 +1344,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox10
+    GroupBox GroupBox10
     {
       get
       {
@@ -1212,7 +1356,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox11
+    GroupBox GroupBox11
     {
       get
       {
@@ -1224,7 +1368,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox12
+    GroupBox GroupBox12
     {
       get
       {
@@ -1236,7 +1380,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox13
+    GroupBox GroupBox13
     {
       get
       {
@@ -1248,7 +1392,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox14
+    GroupBox GroupBox14
     {
       get
       {
@@ -1260,7 +1404,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox15
+    GroupBox GroupBox15
     {
       get
       {
@@ -1272,7 +1416,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox16
+    GroupBox GroupBox16
     {
       get
       {
@@ -1284,7 +1428,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox17
+    GroupBox GroupBox17
     {
       get
       {
@@ -1296,7 +1440,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -1308,7 +1452,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox3
+    GroupBox GroupBox3
     {
       get
       {
@@ -1320,7 +1464,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox4
+    GroupBox GroupBox4
     {
       get
       {
@@ -1332,7 +1476,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox5
+    GroupBox GroupBox5
     {
       get
       {
@@ -1344,7 +1488,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox6
+    GroupBox GroupBox6
     {
       get
       {
@@ -1356,7 +1500,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox7
+    GroupBox GroupBox7
     {
       get
       {
@@ -1368,7 +1512,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox8
+    GroupBox GroupBox8
     {
       get
       {
@@ -1380,7 +1524,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox9
+    GroupBox GroupBox9
     {
       get
       {
@@ -1392,7 +1536,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -1404,7 +1548,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label10
+    Label Label10
     {
       get
       {
@@ -1416,7 +1560,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label11
+    Label Label11
     {
       get
       {
@@ -1428,7 +1572,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label12
+    Label Label12
     {
       get
       {
@@ -1440,7 +1584,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label13
+    Label Label13
     {
       get
       {
@@ -1452,7 +1596,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label14
+    Label Label14
     {
       get
       {
@@ -1464,7 +1608,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label15
+    Label Label15
     {
       get
       {
@@ -1476,7 +1620,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label16
+    Label Label16
     {
       get
       {
@@ -1488,7 +1632,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label19
+    Label Label19
     {
       get
       {
@@ -1500,7 +1644,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -1512,7 +1656,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label20
+    Label Label20
     {
       get
       {
@@ -1524,7 +1668,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label21
+    Label Label21
     {
       get
       {
@@ -1536,7 +1680,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label22
+    Label Label22
     {
       get
       {
@@ -1548,7 +1692,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label24
+    Label Label24
     {
       get
       {
@@ -1560,7 +1704,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label25
+    Label Label25
     {
       get
       {
@@ -1572,7 +1716,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label26
+    Label Label26
     {
       get
       {
@@ -1584,7 +1728,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label27
+    Label Label27
     {
       get
       {
@@ -1596,7 +1740,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label28
+    Label Label28
     {
       get
       {
@@ -1608,7 +1752,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label29
+    Label Label29
     {
       get
       {
@@ -1620,7 +1764,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -1632,7 +1776,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label30
+    Label Label30
     {
       get
       {
@@ -1644,7 +1788,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label31
+    Label Label31
     {
       get
       {
@@ -1656,7 +1800,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label32
+    Label Label32
     {
       get
       {
@@ -1668,7 +1812,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label33
+    Label Label33
     {
       get
       {
@@ -1680,7 +1824,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label34
+    Label Label34
     {
       get
       {
@@ -1692,7 +1836,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label36
+    Label Label36
     {
       get
       {
@@ -1704,7 +1848,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label37
+    Label Label37
     {
       get
       {
@@ -1716,7 +1860,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label38
+    Label Label38
     {
       get
       {
@@ -1728,7 +1872,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -1740,7 +1884,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label40
+    Label Label40
     {
       get
       {
@@ -1752,7 +1896,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -1764,7 +1908,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -1776,7 +1920,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -1788,7 +1932,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -1800,7 +1944,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label9
+    Label Label9
     {
       get
       {
@@ -1812,7 +1956,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblExample
+    Label lblExample
     {
       get
       {
@@ -1824,7 +1968,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblSaveFolder
+    Label lblSaveFolder
     {
       get
       {
@@ -1836,7 +1980,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox listScenarios
+    ListBox listScenarios
     {
       get
       {
@@ -1854,7 +1998,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ToolTip myTip
+    ToolTip myTip
     {
       get
       {
@@ -1866,7 +2010,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton optDO
+    RadioButton optDO
     {
       get
       {
@@ -1884,7 +2028,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label optEnh
+    Label optEnh
     {
       get
       {
@@ -1896,7 +2040,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton optSO
+    RadioButton optSO
     {
       get
       {
@@ -1914,7 +2058,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton optTO
+    RadioButton optTO
     {
       get
       {
@@ -1932,7 +2076,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbChanceAverage
+    RadioButton rbChanceAverage
     {
       get
       {
@@ -1944,7 +2088,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbChanceIgnore
+    RadioButton rbChanceIgnore
     {
       get
       {
@@ -1956,7 +2100,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbChanceMax
+    RadioButton rbChanceMax
     {
       get
       {
@@ -1968,7 +2112,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbGraphSimple
+    RadioButton rbGraphSimple
     {
       get
       {
@@ -1980,7 +2124,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbGraphStacked
+    RadioButton rbGraphStacked
     {
       get
       {
@@ -1992,7 +2136,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbGraphTwoLine
+    RadioButton rbGraphTwoLine
     {
       get
       {
@@ -2004,7 +2148,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbPvE
+    RadioButton rbPvE
     {
       get
       {
@@ -2016,7 +2160,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbPvP
+    RadioButton rbPvP
     {
       get
       {
@@ -2028,7 +2172,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabControl TabControl1
+    TabControl TabControl1
     {
       get
       {
@@ -2040,7 +2184,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage1
+    TabPage TabPage1
     {
       get
       {
@@ -2052,7 +2196,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage2
+    TabPage TabPage2
     {
       get
       {
@@ -2064,7 +2208,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage3
+    TabPage TabPage3
     {
       get
       {
@@ -2076,7 +2220,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage4
+    TabPage TabPage4
     {
       get
       {
@@ -2088,7 +2232,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage5
+    TabPage TabPage5
     {
       get
       {
@@ -2100,7 +2244,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabPage TabPage6
+    TabPage TabPage6
     {
       get
       {
@@ -2112,7 +2256,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown TeamSize
+    NumericUpDown TeamSize
     {
       get
       {
@@ -2124,7 +2268,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtUpdatePath
+    TextBox txtUpdatePath
     {
       get
       {
@@ -2136,7 +2280,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udBaseToHit
+    NumericUpDown udBaseToHit
     {
       get
       {
@@ -2148,7 +2292,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udExHigh
+    NumericUpDown udExHigh
     {
       get
       {
@@ -2160,7 +2304,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udExLow
+    NumericUpDown udExLow
     {
       get
       {
@@ -2172,7 +2316,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udForceLevel
+    NumericUpDown udForceLevel
     {
       get
       {
@@ -2184,7 +2328,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udIOLevel
+    NumericUpDown udIOLevel
     {
       get
       {
@@ -2196,7 +2340,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udRTFSize
+    NumericUpDown udRTFSize
     {
       get
       {
@@ -2208,7 +2352,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udStatSize
+    NumericUpDown udStatSize
     {
       get
       {
@@ -2232,23 +2376,27 @@ namespace Hero_Designer
       this.myParent = iParent;
     }
 
-    private void btnBaseReset_Click(object sender, EventArgs e)
+    void btnBaseReset_Click(object sender, EventArgs e)
+
     {
       this.udBaseToHit.Value = new Decimal(75);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnFontColour_Click(object sender, EventArgs e)
+    void btnFontColour_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmColourSettings().ShowDialog();
     }
 
-    private void btnForceUpdate_Click(object sender, EventArgs e)
+    void btnForceUpdate_Click(object sender, EventArgs e)
+
     {
       DateTime date = DatabaseAPI.Database.Date;
       DateTime t2 = new DateTime(1, 1, 1);
@@ -2260,7 +2408,8 @@ namespace Hero_Designer
       DatabaseAPI.Database.Date = date;
     }
 
-    private void btnIOReset_Click(object sender, EventArgs e)
+    void btnIOReset_Click(object sender, EventArgs e)
+
     {
       if (MidsContext.Character == null)
         return;
@@ -2270,7 +2419,8 @@ namespace Hero_Designer
         this.myParent.DoRedraw();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.OK;
       this.StoreControls();
@@ -2278,7 +2428,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnSaveFolder_Click(object sender, EventArgs e)
+    void btnSaveFolder_Click(object sender, EventArgs e)
+
     {
       this.fbdSave.SelectedPath = this.lblSaveFolder.Text;
       if (this.fbdSave.ShowDialog() != DialogResult.OK)
@@ -2286,7 +2437,8 @@ namespace Hero_Designer
       this.lblSaveFolder.Text = this.fbdSave.SelectedPath;
     }
 
-    private void btnSaveFolderReset_Click(object sender, EventArgs e)
+    void btnSaveFolderReset_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.CreateDefaultSaveFolder();
       MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
@@ -2294,7 +2446,8 @@ namespace Hero_Designer
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private void btnUpdate_Click(object sender, EventArgs e)
+    void btnUpdate_Click(object sender, EventArgs e)
+
     {
       clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
       this.Enabled = false;
@@ -2313,12 +2466,14 @@ namespace Hero_Designer
       this.Enabled = true;
     }
 
-    private void btnUpdatePathReset_Click(object sender, EventArgs e)
+    void btnUpdatePathReset_Click(object sender, EventArgs e)
+
     {
       this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
     }
 
-    private void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+    void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       int[] values = (int[]) Enum.GetValues(MidsContext.Config.Suppression.GetType());
       MidsContext.Config.Suppression = Enums.eSuppress.None;
@@ -2327,18 +2482,21 @@ namespace Hero_Designer
         MidsContext.Config.Suppression += values[this.clbSuppression.CheckedIndices[index]];
     }
 
-    private void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
+    void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.defActs[this.listScenarios.SelectedIndex] = (short) this.cmbAction.SelectedIndex;
     }
 
-    private void csAdd_Click(object sender, EventArgs e)
+    void csAdd_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.Export.AddScheme();
       this.csPopulateList(MidsContext.Config.Export.ColorSchemes.Length - 1);
     }
 
-    private void csBtnEdit_Click(object sender, EventArgs e)
+    void csBtnEdit_Click(object sender, EventArgs e)
+
     {
       if (this.csList.Items.Count <= 0)
         return;
@@ -2351,7 +2509,8 @@ namespace Hero_Designer
       this.BringToFront();
     }
 
-    private void csDelete_Click(object sender, EventArgs e)
+    void csDelete_Click(object sender, EventArgs e)
+
     {
       if (this.csList.Items.Count <= 0 || Interaction.MsgBox((object) ("Delete " + this.csList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2359,7 +2518,8 @@ namespace Hero_Designer
       this.csPopulateList(-1);
     }
 
-    private void csList_KeyPress(object sender, KeyPressEventArgs e)
+    void csList_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       if (Conversions.ToString(e.KeyChar) == "[")
       {
@@ -2373,7 +2533,8 @@ namespace Hero_Designer
       }
     }
 
-    private void csPopulateList(int HighlightID = -1)
+    void csPopulateList(int HighlightID = -1)
+
     {
       this.csList.Items.Clear();
       ExportConfig export = MidsContext.Config.Export;
@@ -2387,7 +2548,8 @@ namespace Hero_Designer
       this.csList.SelectedIndex = HighlightID;
     }
 
-    private void csReset_Click(object sender, EventArgs e)
+    void csReset_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2417,41 +2579,47 @@ namespace Hero_Designer
       this.myParent.UpdateColours(false);
     }
 
-    private void fcAdd_Click(object sender, EventArgs e)
+    void fcAdd_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.Export.AddCodes();
       this.fcPopulateList(MidsContext.Config.Export.FormatCode.Length - 1);
     }
 
-    private void fcBoldOff_TextChanged(object sender, EventArgs e)
+    void fcBoldOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].BoldOff = this.fcBoldOff.Text;
     }
 
-    private void fcBoldOn_TextChanged(object sender, EventArgs e)
+    void fcBoldOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].BoldOn = this.fcBoldOn.Text;
     }
 
-    private void fcColorOff_TextChanged(object sender, EventArgs e)
+    void fcColorOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ColourOff = this.fcColorOff.Text;
     }
 
-    private void fcColorOn_TextChanged(object sender, EventArgs e)
+    void fcColorOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ColourOn = this.fcColorOn.Text;
     }
 
-    private void fcDelete_Click(object sender, EventArgs e)
+    void fcDelete_Click(object sender, EventArgs e)
+
     {
       if (this.fcList.Items.Count <= 0 || Interaction.MsgBox((object) ("Delete " + this.fcList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2459,7 +2627,8 @@ namespace Hero_Designer
       this.fcPopulateList(-1);
     }
 
-    private void fcDisplay()
+    void fcDisplay()
+
     {
       this.fcNoUpdate = true;
       if (this.fcList.SelectedIndex > -1)
@@ -2500,21 +2669,24 @@ namespace Hero_Designer
       this.fcNoUpdate = false;
     }
 
-    private void fcItalicOff_TextChanged(object sender, EventArgs e)
+    void fcItalicOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ItalicOff = this.fcItalicOff.Text;
     }
 
-    private void fcItalicOn_TextChanged(object sender, EventArgs e)
+    void fcItalicOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ItalicOn = this.fcItalicOn.Text;
     }
 
-    private void fcList_KeyPress(object sender, KeyPressEventArgs e)
+    void fcList_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       if (Conversions.ToString(e.KeyChar) == "[")
       {
@@ -2528,19 +2700,22 @@ namespace Hero_Designer
       }
     }
 
-    private void fcList_SelectedIndexChanged(object sender, EventArgs e)
+    void fcList_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.fcDisplay();
     }
 
-    private void fcNotes_TextChanged(object sender, EventArgs e)
+    void fcNotes_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].Notes = this.fcNotes.Text;
     }
 
-    private void fcPopulateList(int HighlightID = -1)
+    void fcPopulateList(int HighlightID = -1)
+
     {
       this.fcList.Items.Clear();
       ExportConfig export = MidsContext.Config.Export;
@@ -2554,7 +2729,8 @@ namespace Hero_Designer
       this.fcList.SelectedIndex = HighlightID;
     }
 
-    private void fcReset_Click(object sender, EventArgs e)
+    void fcReset_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2562,7 +2738,8 @@ namespace Hero_Designer
       this.fcPopulateList(-1);
     }
 
-    private void fcSet_Click(object sender, EventArgs e)
+    void fcSet_Click(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0)
         return;
@@ -2570,35 +2747,40 @@ namespace Hero_Designer
       this.fcPopulateList(this.fcList.SelectedIndex);
     }
 
-    private void fcTextOff_TextChanged(object sender, EventArgs e)
+    void fcTextOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].SizeOff = this.fcTextOff.Text;
     }
 
-    private void fcTextOn_TextChanged(object sender, EventArgs e)
+    void fcTextOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].SizeOn = this.fcTextOn.Text;
     }
 
-    private void fcUnderlineOff_TextChanged(object sender, EventArgs e)
+    void fcUnderlineOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].UnderlineOff = this.fcUnderlineOff.Text;
     }
 
-    private void fcUnderlineOn_TextChanged(object sender, EventArgs e)
+    void fcUnderlineOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].UnderlineOn = this.fcUnderlineOn.Text;
     }
 
-    private void fcWSSpace_CheckedChanged(object sender, EventArgs e)
+    void fcWSSpace_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
@@ -2673,14 +2855,16 @@ namespace Hero_Designer
         this.csList.SelectedIndex = 0;
     }
 
-    private void frmCalcOpt_Closing(object sender, CancelEventArgs e)
+    void frmCalcOpt_Closing(object sender, CancelEventArgs e)
+
     {
       if (this.DialogResult != DialogResult.Abort)
         return;
       e.Cancel = true;
     }
 
-    private void frmCalcOpt_Load(object sender, EventArgs e)
+    void frmCalcOpt_Load(object sender, EventArgs e)
+
     {
       this.setupScenarios();
       this.SetControls();
@@ -2691,7 +2875,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmCalcOpt));
@@ -4192,7 +4377,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
+    void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.lblExample.Text = this.scenarioExample[this.listScenarios.SelectedIndex];
       this.cmbAction.Items.Clear();
@@ -4200,28 +4386,32 @@ namespace Hero_Designer
       this.cmbAction.SelectedIndex = (int) this.defActs[this.listScenarios.SelectedIndex];
     }
 
-    private void optDO_CheckedChanged(object sender, EventArgs e)
+    void optDO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optDO.Checked)
         return;
       this.optEnh.Text = "Dual Origin";
     }
 
-    private void optSO_CheckedChanged(object sender, EventArgs e)
+    void optSO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optSO.Checked)
         return;
       this.optEnh.Text = "Single Origin";
     }
 
-    private void optTO_CheckedChanged(object sender, EventArgs e)
+    void optTO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optTO.Checked)
         return;
       this.optEnh.Text = "Training Origin";
     }
 
-    private void PopulateSuppression()
+    void PopulateSuppression()
+
     {
       this.clbSuppression.BeginUpdate();
       this.clbSuppression.Items.Clear();
@@ -4233,7 +4423,8 @@ namespace Hero_Designer
       this.clbSuppression.EndUpdate();
     }
 
-    private void SetControls()
+    void SetControls()
+
     {
       ConfigData config = MidsContext.Config;
       this.optSO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.SingleO;
@@ -4288,7 +4479,8 @@ namespace Hero_Designer
     {
     }
 
-    private void setupScenarios()
+    void setupScenarios()
+
     {
       int index1 = 0;
       this.scenarioExample[index1] = "Swap a travel power with a power taken at level 2.";
@@ -4406,7 +4598,8 @@ namespace Hero_Designer
       int num = index15 + 1;
     }
 
-    private void StoreControls()
+    void StoreControls()
+
     {
       ConfigData config = MidsContext.Config;
       if (this.optSO.Checked)

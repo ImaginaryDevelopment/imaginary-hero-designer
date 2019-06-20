@@ -28,8 +28,7 @@ namespace Hero_Designer
         ImageButton _accoladeButton;
         [AccessedThroughProperty("AccoladesWindowToolStripMenuItem")]
         ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
-        [AccessedThroughProperty("AdvancedToolStripMenuItem1")]
-        ToolStripMenuItem _AdvancedToolStripMenuItem1;
+        ToolStripMenuItem AdvancedToolStripMenuItem1;
         [AccessedThroughProperty("AutoArrangeAllSlotsToolStripMenuItem")]
         ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
         [AccessedThroughProperty("cbAncillary")]
@@ -50,26 +49,22 @@ namespace Hero_Designer
         ComboBox _cbPrimary;
         [AccessedThroughProperty("cbSecondary")]
         ComboBox _cbSecondary;
-        [AccessedThroughProperty("CharacterToolStripMenuItem")]
-        ToolStripMenuItem _CharacterToolStripMenuItem;
+        ToolStripMenuItem CharacterToolStripMenuItem;
         [AccessedThroughProperty("dlgOpen")]
         OpenFileDialog _dlgOpen;
         [AccessedThroughProperty("dlgSave")]
         SaveFileDialog _dlgSave;
         [AccessedThroughProperty("dvAnchored")]
         DataView _dvAnchored;
-        [AccessedThroughProperty("FileToolStripMenuItem")]
-        ToolStripMenuItem _FileToolStripMenuItem;
-        [AccessedThroughProperty("HelpToolStripMenuItem1")]
-        ToolStripMenuItem _HelpToolStripMenuItem1;
+        ToolStripMenuItem FileToolStripMenuItem;
+        ToolStripMenuItem HelpToolStripMenuItem1;
         [AccessedThroughProperty("heroVillain")]
         ImageButton _heroVillain;
         [AccessedThroughProperty("I9Picker")]
         I9Picker _I9Picker;
         [AccessedThroughProperty("I9Popup")]
         ctlPopUp _I9Popup;
-        [AccessedThroughProperty("ibAccolade")]
-        ImageButton _ibAccolade;
+        ImageButton ibAccolade;
         [AccessedThroughProperty("ibMode")]
         ImageButton _ibMode;
         [AccessedThroughProperty("ibPopup")]
@@ -84,24 +79,18 @@ namespace Hero_Designer
         ImageButton _ibSlotLevels;
         [AccessedThroughProperty("ibTotals")]
         ImageButton _ibTotals;
-        [AccessedThroughProperty("ibVetPools")]
-        ImageButton _ibVetPools;
-        [AccessedThroughProperty("ImportExportToolStripMenuItem")]
-        ToolStripMenuItem _ImportExportToolStripMenuItem;
+        ImageButton ibVetPools;
+        ToolStripMenuItem ImportExportToolStripMenuItem;
         [AccessedThroughProperty("incarnateButton")]
         ImageButton _incarnateButton;
         [AccessedThroughProperty("IncarnateWindowToolStripMenuItem")]
         ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
-        [AccessedThroughProperty("InGameRespecHelperToolStripMenuItem")]
-        ToolStripMenuItem _InGameRespecHelperToolStripMenuItem;
-        [AccessedThroughProperty("lblAT")]
-        GFXLabel _lblAT;
+        ToolStripMenuItem InGameRespecHelperToolStripMenuItem;
+        GFXLabel lblAT;
         [AccessedThroughProperty("lblATLocked")]
         Label _lblATLocked;
-        [AccessedThroughProperty("lblEpic")]
-        Label _lblEpic;
-        [AccessedThroughProperty("lblHero")]
-        GFXLabel _lblHero;
+        Label lblEpic;
+        GFXLabel lblHero;
         [AccessedThroughProperty("lblLocked0")]
         Label _lblLocked0;
         [AccessedThroughProperty("lblLocked1")]
@@ -114,22 +103,14 @@ namespace Hero_Designer
         Label _lblLockedAncillary;
         [AccessedThroughProperty("lblLockedSecondary")]
         Label _lblLockedSecondary;
-        [AccessedThroughProperty("lblName")]
-        GFXLabel _lblName;
-        [AccessedThroughProperty("lblOrigin")]
-        GFXLabel _lblOrigin;
-        [AccessedThroughProperty("lblPool1")]
-        Label _lblPool1;
-        [AccessedThroughProperty("lblPool2")]
-        Label _lblPool2;
-        [AccessedThroughProperty("lblPool3")]
-        Label _lblPool3;
-        [AccessedThroughProperty("lblPool4")]
-        Label _lblPool4;
-        [AccessedThroughProperty("lblPrimary")]
-        Label _lblPrimary;
-        [AccessedThroughProperty("lblSecondary")]
-        Label _lblSecondary;
+        GFXLabel lblName;
+        GFXLabel lblOrigin;
+        Label lblPool1;
+        Label lblPool2;
+        Label lblPool3;
+        Label lblPool4;
+        Label lblPrimary;
+        Label lblSecondary;
         [AccessedThroughProperty("llAncillary")]
         ListLabelV2 _llAncillary;
         [AccessedThroughProperty("llPool0")]
@@ -144,20 +125,16 @@ namespace Hero_Designer
         ListLabelV2 _llPrimary;
         [AccessedThroughProperty("llSecondary")]
         ListLabelV2 _llSecondary;
-        [AccessedThroughProperty("MenuBar")]
-        MenuStrip _MenuBar;
-        [AccessedThroughProperty("OptionsToolStripMenuItem")]
-        ToolStripMenuItem _OptionsToolStripMenuItem;
+        MenuStrip MenuBar;
+        ToolStripMenuItem OptionsToolStripMenuItem;
         [AccessedThroughProperty("pbDynMode")]
         PictureBox _pbDynMode;
         [AccessedThroughProperty("pnlGFX")]
         PictureBox _pnlGFX;
         [AccessedThroughProperty("pnlGFXFlow")]
         FlowLayoutPanel _pnlGFXFlow;
-        [AccessedThroughProperty("SetAllIOsToDefault35ToolStripMenuItem")]
-        ToolStripMenuItem _SetAllIOsToDefault35ToolStripMenuItem;
-        [AccessedThroughProperty("SlotsToolStripMenuItem")]
-        ToolStripMenuItem _SlotsToolStripMenuItem;
+        ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem;
+        ToolStripMenuItem SlotsToolStripMenuItem;
         [AccessedThroughProperty("TemporaryPowersWindowToolStripMenuItem")]
         ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
         [AccessedThroughProperty("tempPowersButton")]
@@ -166,56 +143,31 @@ namespace Hero_Designer
         ToolStripMenuItem _tlsDPA;
         [AccessedThroughProperty("tmrGfx")]
         System.Windows.Forms.Timer _tmrGfx;
-        [AccessedThroughProperty("ToolStripMenuItem1")]
-        ToolStripMenuItem _ToolStripMenuItem1;
-        [AccessedThroughProperty("ToolStripMenuItem2")]
-        ToolStripMenuItem _ToolStripMenuItem2;
-        [AccessedThroughProperty("ToolStripMenuItem4")]
-        ToolStripSeparator _ToolStripMenuItem4;
-        [AccessedThroughProperty("ToolStripSeparator1")]
-        ToolStripSeparator _ToolStripSeparator1;
-        [AccessedThroughProperty("ToolStripSeparator10")]
-        ToolStripSeparator _ToolStripSeparator10;
-        [AccessedThroughProperty("ToolStripSeparator11")]
-        ToolStripSeparator _ToolStripSeparator11;
-        [AccessedThroughProperty("ToolStripSeparator12")]
-        ToolStripSeparator _ToolStripSeparator12;
-        [AccessedThroughProperty("ToolStripSeparator13")]
-        ToolStripSeparator _ToolStripSeparator13;
-        [AccessedThroughProperty("ToolStripSeparator14")]
-        ToolStripSeparator _ToolStripSeparator14;
-        [AccessedThroughProperty("ToolStripSeparator15")]
-        ToolStripSeparator _ToolStripSeparator15;
-        [AccessedThroughProperty("ToolStripSeparator16")]
-        ToolStripSeparator _ToolStripSeparator16;
-        [AccessedThroughProperty("ToolStripSeparator17")]
-        ToolStripSeparator _ToolStripSeparator17;
-        [AccessedThroughProperty("ToolStripSeparator18")]
-        ToolStripSeparator _ToolStripSeparator18;
-        [AccessedThroughProperty("ToolStripSeparator19")]
-        ToolStripSeparator _ToolStripSeparator19;
-        [AccessedThroughProperty("ToolStripSeparator2")]
-        ToolStripSeparator _ToolStripSeparator2;
-        [AccessedThroughProperty("ToolStripSeparator20")]
-        ToolStripSeparator _ToolStripSeparator20;
-        [AccessedThroughProperty("ToolStripSeparator21")]
-        ToolStripSeparator _ToolStripSeparator21;
-        [AccessedThroughProperty("ToolStripSeparator22")]
-        ToolStripSeparator _ToolStripSeparator22;
-        [AccessedThroughProperty("ToolStripSeparator23")]
-        ToolStripSeparator _ToolStripSeparator23;
-        [AccessedThroughProperty("ToolStripSeparator24")]
-        ToolStripSeparator _ToolStripSeparator24;
-        [AccessedThroughProperty("ToolStripSeparator4")]
-        ToolStripSeparator _ToolStripSeparator4;
-        [AccessedThroughProperty("ToolStripSeparator5")]
-        ToolStripSeparator _ToolStripSeparator5;
-        [AccessedThroughProperty("ToolStripSeparator7")]
-        ToolStripSeparator _ToolStripSeparator7;
-        [AccessedThroughProperty("ToolStripSeparator8")]
-        ToolStripSeparator _ToolStripSeparator8;
-        [AccessedThroughProperty("ToolStripSeparator9")]
-        ToolStripSeparator _ToolStripSeparator9;
+        ToolStripMenuItem ToolStripMenuItem1;
+        ToolStripMenuItem ToolStripMenuItem2;
+        ToolStripSeparator ToolStripMenuItem4;
+        ToolStripSeparator ToolStripSeparator1;
+        ToolStripSeparator ToolStripSeparator10;
+        ToolStripSeparator ToolStripSeparator11;
+        ToolStripSeparator ToolStripSeparator12;
+        ToolStripSeparator ToolStripSeparator13;
+        ToolStripSeparator ToolStripSeparator14;
+        ToolStripSeparator ToolStripSeparator15;
+        ToolStripSeparator ToolStripSeparator16;
+        ToolStripSeparator ToolStripSeparator17;
+        ToolStripSeparator ToolStripSeparator18;
+        ToolStripSeparator ToolStripSeparator19;
+        ToolStripSeparator ToolStripSeparator2;
+        ToolStripSeparator ToolStripSeparator20;
+        ToolStripSeparator ToolStripSeparator21;
+        ToolStripSeparator ToolStripSeparator22;
+        ToolStripSeparator ToolStripSeparator23;
+        ToolStripSeparator ToolStripSeparator24;
+        ToolStripSeparator ToolStripSeparator4;
+        ToolStripSeparator ToolStripSeparator5;
+        ToolStripSeparator ToolStripSeparator7;
+        ToolStripSeparator ToolStripSeparator8;
+        ToolStripSeparator ToolStripSeparator9;
         [AccessedThroughProperty("tsAbout")]
         ToolStripMenuItem _tsAbout;
         [AccessedThroughProperty("tsAdvDBEdit")]
@@ -344,14 +296,11 @@ namespace Hero_Designer
         ToolStripMenuItem _tsViewSlotLevels;
         [AccessedThroughProperty("tsViewTotals")]
         ToolStripMenuItem _tsViewTotals;
-        [AccessedThroughProperty("tTip")]
-        ToolTip _tTip;
+        ToolTip tTip;
         [AccessedThroughProperty("txtName")]
         TextBox _txtName;
-        [AccessedThroughProperty("ViewToolStripMenuItem")]
-        ToolStripMenuItem _ViewToolStripMenuItem;
-        [AccessedThroughProperty("WindowToolStripMenuItem")]
-        ToolStripMenuItem _WindowToolStripMenuItem;
+        ToolStripMenuItem ViewToolStripMenuItem;
+        ToolStripMenuItem WindowToolStripMenuItem;
         protected Rectangle ActivePopupBounds;
         IContainer components;
         public bool DataViewLocked;
@@ -462,18 +411,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem AdvancedToolStripMenuItem1
-        {
-            get
-            {
-                return this._AdvancedToolStripMenuItem1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._AdvancedToolStripMenuItem1 = value;
-            }
-        }
 
         ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem
         {
@@ -758,18 +695,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem CharacterToolStripMenuItem
-        {
-            get
-            {
-                return this._CharacterToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._CharacterToolStripMenuItem = value;
-            }
-        }
 
         internal OpenFileDialog dlgOpen
         {
@@ -839,31 +764,7 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem FileToolStripMenuItem
-        {
-            get
-            {
-                return this._FileToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._FileToolStripMenuItem = value;
-            }
-        }
 
-        ToolStripMenuItem HelpToolStripMenuItem1
-        {
-            get
-            {
-                return this._HelpToolStripMenuItem1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._HelpToolStripMenuItem1 = value;
-            }
-        }
 
         ImageButton heroVillain
         {
@@ -941,18 +842,6 @@ namespace Hero_Designer
             }
         }
 
-        ImageButton ibAccolade
-        {
-            get
-            {
-                return this._ibAccolade;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ibAccolade = value;
-            }
-        }
 
         ImageButton ibMode
         {
@@ -1087,31 +976,7 @@ namespace Hero_Designer
             }
         }
 
-        ImageButton ibVetPools
-        {
-            get
-            {
-                return this._ibVetPools;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ibVetPools = value;
-            }
-        }
 
-        ToolStripMenuItem ImportExportToolStripMenuItem
-        {
-            get
-            {
-                return this._ImportExportToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ImportExportToolStripMenuItem = value;
-            }
-        }
 
         ImageButton incarnateButton
         {
@@ -1151,31 +1016,7 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem InGameRespecHelperToolStripMenuItem
-        {
-            get
-            {
-                return this._InGameRespecHelperToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._InGameRespecHelperToolStripMenuItem = value;
-            }
-        }
 
-        GFXLabel lblAT
-        {
-            get
-            {
-                return this._lblAT;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblAT = value;
-            }
-        }
 
         Label lblATLocked
         {
@@ -1204,31 +1045,7 @@ namespace Hero_Designer
             }
         }
 
-        Label lblEpic
-        {
-            get
-            {
-                return this._lblEpic;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblEpic = value;
-            }
-        }
 
-        GFXLabel lblHero
-        {
-            get
-            {
-                return this._lblHero;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblHero = value;
-            }
-        }
 
         Label lblLocked0
         {
@@ -1389,109 +1206,13 @@ namespace Hero_Designer
             }
         }
 
-        GFXLabel lblName
-        {
-            get
-            {
-                return this._lblName;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblName = value;
-            }
-        }
 
-        GFXLabel lblOrigin
-        {
-            get
-            {
-                return this._lblOrigin;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblOrigin = value;
-            }
-        }
 
-        Label lblPool1
-        {
-            get
-            {
-                return this._lblPool1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblPool1 = value;
-            }
-        }
 
-        Label lblPool2
-        {
-            get
-            {
-                return this._lblPool2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblPool2 = value;
-            }
-        }
 
-        Label lblPool3
-        {
-            get
-            {
-                return this._lblPool3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblPool3 = value;
-            }
-        }
 
-        Label lblPool4
-        {
-            get
-            {
-                return this._lblPool4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblPool4 = value;
-            }
-        }
 
-        Label lblPrimary
-        {
-            get
-            {
-                return this._lblPrimary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblPrimary = value;
-            }
-        }
 
-        Label lblSecondary
-        {
-            get
-            {
-                return this._lblSecondary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblSecondary = value;
-            }
-        }
 
         ListLabelV2 llAncillary
         {
@@ -1697,31 +1418,7 @@ namespace Hero_Designer
             }
         }
 
-        MenuStrip MenuBar
-        {
-            get
-            {
-                return this._MenuBar;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._MenuBar = value;
-            }
-        }
 
-        ToolStripMenuItem OptionsToolStripMenuItem
-        {
-            get
-            {
-                return this._OptionsToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._OptionsToolStripMenuItem = value;
-            }
-        }
 
         PictureBox pbDynMode
         {
@@ -1811,31 +1508,7 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem
-        {
-            get
-            {
-                return this._SetAllIOsToDefault35ToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._SetAllIOsToDefault35ToolStripMenuItem = value;
-            }
-        }
 
-        ToolStripMenuItem SlotsToolStripMenuItem
-        {
-            get
-            {
-                return this._SlotsToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._SlotsToolStripMenuItem = value;
-            }
-        }
 
         ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem
         {
@@ -1918,330 +1591,30 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem ToolStripMenuItem1
-        {
-            get
-            {
-                return this._ToolStripMenuItem1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripMenuItem1 = value;
-            }
-        }
 
-        ToolStripMenuItem ToolStripMenuItem2
-        {
-            get
-            {
-                return this._ToolStripMenuItem2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripMenuItem2 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripMenuItem4
-        {
-            get
-            {
-                return this._ToolStripMenuItem4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripMenuItem4 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator1
-        {
-            get
-            {
-                return this._ToolStripSeparator1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator1 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator10
-        {
-            get
-            {
-                return this._ToolStripSeparator10;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator10 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator11
-        {
-            get
-            {
-                return this._ToolStripSeparator11;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator11 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator12
-        {
-            get
-            {
-                return this._ToolStripSeparator12;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator12 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator13
-        {
-            get
-            {
-                return this._ToolStripSeparator13;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator13 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator14
-        {
-            get
-            {
-                return this._ToolStripSeparator14;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator14 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator15
-        {
-            get
-            {
-                return this._ToolStripSeparator15;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator15 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator16
-        {
-            get
-            {
-                return this._ToolStripSeparator16;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator16 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator17
-        {
-            get
-            {
-                return this._ToolStripSeparator17;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator17 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator18
-        {
-            get
-            {
-                return this._ToolStripSeparator18;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator18 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator19
-        {
-            get
-            {
-                return this._ToolStripSeparator19;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator19 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator2
-        {
-            get
-            {
-                return this._ToolStripSeparator2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator2 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator20
-        {
-            get
-            {
-                return this._ToolStripSeparator20;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator20 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator21
-        {
-            get
-            {
-                return this._ToolStripSeparator21;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator21 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator22
-        {
-            get
-            {
-                return this._ToolStripSeparator22;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator22 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator23
-        {
-            get
-            {
-                return this._ToolStripSeparator23;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator23 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator24
-        {
-            get
-            {
-                return this._ToolStripSeparator24;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator24 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator4
-        {
-            get
-            {
-                return this._ToolStripSeparator4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator4 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator5
-        {
-            get
-            {
-                return this._ToolStripSeparator5;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator5 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator7
-        {
-            get
-            {
-                return this._ToolStripSeparator7;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator7 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator8
-        {
-            get
-            {
-                return this._ToolStripSeparator8;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator8 = value;
-            }
-        }
 
-        ToolStripSeparator ToolStripSeparator9
-        {
-            get
-            {
-                return this._ToolStripSeparator9;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolStripSeparator9 = value;
-            }
-        }
 
         ToolStripMenuItem tsAbout
         {
@@ -3459,18 +2832,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolTip tTip
-        {
-            get
-            {
-                return this._tTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._tTip = value;
-            }
-        }
 
         TextBox txtName
         {
@@ -3491,31 +2852,7 @@ namespace Hero_Designer
             }
         }
 
-        ToolStripMenuItem ViewToolStripMenuItem
-        {
-            get
-            {
-                return this._ViewToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ViewToolStripMenuItem = value;
-            }
-        }
 
-        ToolStripMenuItem WindowToolStripMenuItem
-        {
-            get
-            {
-                return this._WindowToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._WindowToolStripMenuItem = value;
-            }
-        }
 
         public frmMain()
         {
@@ -7959,7 +7296,7 @@ namespace Hero_Designer
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
                         this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                     }
-                    if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                    if (MyProject.Forms.frmOptionListDlg.remember == true)
                         MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                 }
                 if (this.ddsa[0] == (short)1)
@@ -8014,7 +7351,7 @@ namespace Hero_Designer
                 {
                     MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
                     this.ddsa[1] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                    if (MyProject.Forms.frmOptionListDlg.remember == true)
                         MidsContext.Config.DragDropScenarioAction[1] = this.ddsa[1];
                 }
                 if (this.ddsa[1] == (short)1)
@@ -8068,7 +7405,7 @@ namespace Hero_Designer
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
                         this.ddsa[7] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[7] = this.ddsa[7];
                     }
                     if (this.ddsa[7] == (short)1)
@@ -8089,7 +7426,7 @@ namespace Hero_Designer
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
                         this.ddsa[10] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[10] = this.ddsa[10];
                     }
                     if (this.ddsa[10] == (short)1)
@@ -8213,7 +7550,7 @@ namespace Hero_Designer
                                 {
                                     MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
                                     this.ddsa[4] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                    if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                                    if (MyProject.Forms.frmOptionListDlg.remember == true)
                                         MidsContext.Config.DragDropScenarioAction[4] = this.ddsa[4];
                                 }
                                 if (this.ddsa[4] == (short)1)
@@ -8260,7 +7597,7 @@ namespace Hero_Designer
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
                             this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                         }
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                     }
                     if (this.ddsa[0] == (short)1)
@@ -8294,7 +7631,7 @@ namespace Hero_Designer
                         {
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
                             this.ddsa[12] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                            if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                            if (MyProject.Forms.frmOptionListDlg.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
                         }
                         if (this.ddsa[12] == (short)1)
@@ -8313,7 +7650,7 @@ namespace Hero_Designer
                         {
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
                             this.ddsa[11] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                            if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                            if (MyProject.Forms.frmOptionListDlg.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
                         }
                         if (this.ddsa[11] == (short)1)
@@ -8330,7 +7667,7 @@ namespace Hero_Designer
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[6] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[6] = this.ddsa[6];
                     }
                     num6 = 6;
@@ -8341,7 +7678,7 @@ namespace Hero_Designer
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[3] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[3] = this.ddsa[3];
                     }
                     num6 = 3;
@@ -8352,7 +7689,7 @@ namespace Hero_Designer
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[9] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                        if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[9] = this.ddsa[9];
                     }
                     num6 = 9;
@@ -8429,21 +7766,21 @@ namespace Hero_Designer
                                         {
                                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                             this.ddsa[2] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[2] = this.ddsa[2];
                                         }
                                         else if (mode == 0 & index3 == 1 & this.ddsa[5] == (short)0)
                                         {
                                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                             this.ddsa[5] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[5] = this.ddsa[5];
                                         }
                                         else if (mode == 2 & this.ddsa[8] == (short)0)
                                         {
                                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                             this.ddsa[8] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
                                         }
                                         if (!(mode < 2 & index3 == 0 & this.ddsa[2] == (short)1 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)1 | mode == 2 & this.ddsa[8] == (short)1))
@@ -9355,7 +8692,7 @@ namespace Hero_Designer
                 {
                     MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
                     this.ddsa[13] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                    if (MyProject.Forms.frmOptionListDlg.remember == true)
                         MidsContext.Config.DragDropScenarioAction[13] = this.ddsa[13];
                 }
                 if (this.ddsa[13] == (short)1)
@@ -9367,7 +8704,7 @@ namespace Hero_Designer
                 {
                     MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
                     this.ddsa[14] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.chkRemember.Checked)
+                    if (MyProject.Forms.frmOptionListDlg.remember == true)
                         MidsContext.Config.DragDropScenarioAction[14] = this.ddsa[14];
                 }
                 if (this.ddsa[14] == (short)1)

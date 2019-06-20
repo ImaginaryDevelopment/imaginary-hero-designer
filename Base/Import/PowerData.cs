@@ -7,7 +7,8 @@ namespace Import
   public class PowerData
   {
     public int Index = -1;
-    private readonly string _csvString = string.Empty;
+    readonly string _csvString = string.Empty;
+
     public readonly IPower Data;
     public bool IsNew;
     public readonly bool IsValid;

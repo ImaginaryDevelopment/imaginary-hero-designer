@@ -9,10 +9,12 @@ using System.Windows.Forms;
 
 public class Build
 {
-  private readonly Character _character;
+  readonly Character _character;
+
   public readonly List<PowerEntry> Powers;
   public readonly List<I9SetData> SetBonus;
-  private IPower _setBonusVirtualPower;
+  IPower _setBonusVirtualPower;
+
   public int LastPower;
 
   public IPower SetBonusVirtualPower
@@ -89,7 +91,8 @@ public class Build
     }
   }
 
-  private PowerEntry GetPowerEntry(IPower power)
+  PowerEntry GetPowerEntry(IPower power)
+
   {
     foreach (PowerEntry power1 in this.Powers)
     {
@@ -137,7 +140,8 @@ public class Build
       this.Powers[index].Slots[index2].Assign(slotEntryArray[index2]);
   }
 
-  private void FillMissingSubPowers()
+  void FillMissingSubPowers()
+
   {
     foreach (PowerEntry power in this.Powers)
     {
@@ -169,7 +173,8 @@ public class Build
     }
   }
 
-  private void ValidateEnhancements()
+  void ValidateEnhancements()
+
   {
     foreach (PowerEntry power in this.Powers)
     {
@@ -374,7 +379,8 @@ public class Build
     return historyMapList.ToArray();
   }
 
-  private int SlotsAtLevel(int powerEntryId, int iLevel)
+  int SlotsAtLevel(int powerEntryId, int iLevel)
+
   {
     int num1;
     if (powerEntryId < 0)
@@ -590,7 +596,8 @@ public class Build
     return flag;
   }
 
-  private void CheckAndFixAllEnhancements()
+  void CheckAndFixAllEnhancements()
+
   {
     foreach (PowerEntry power in this.Powers)
     {
@@ -625,7 +632,8 @@ public class Build
     this.ValidateEnhancements();
   }
 
-  private void CheckAllVariableBounds()
+  void CheckAllVariableBounds()
+
   {
     for (int index = 0; index <= this.Powers.Count - 1; ++index)
       this.Powers[index].CheckVariableBounds();
@@ -657,7 +665,8 @@ public class Build
     return num;
   }
 
-  private void ClearInvisibleSlots()
+  void ClearInvisibleSlots()
+
   {
     foreach (PowerEntry power in this.Powers)
     {
@@ -668,7 +677,8 @@ public class Build
     }
   }
 
-  private void ScanAndCleanAutomaticallyGrantedPowers()
+  void ScanAndCleanAutomaticallyGrantedPowers()
+
   {
     bool flag = false;
     int maxLevel = this.GetMaxLevel();
@@ -814,7 +824,8 @@ public class Build
     return this.FindInToonHistory(power.PowerIndex) > -1;
   }
 
-  private void AddAutomaticGrantedPowers()
+  void AddAutomaticGrantedPowers()
+
   {
     int maxLevel = this.GetMaxLevel();
     List<IPowerset> powersetList = new List<IPowerset>();
@@ -955,7 +966,8 @@ public class Build
     this._setBonusVirtualPower = (IPower) null;
   }
 
-  private IPower GetSetBonusVirtualPower()
+  IPower GetSetBonusVirtualPower()
+
   {
     IPower power1 = (IPower) new Power();
     IPower power2;
@@ -1016,7 +1028,8 @@ public class Build
     return array;
   }
 
-  private static int GcsbCheck(IEffect[] fxList, IEffect testFX)
+  static int GcsbCheck(IEffect[] fxList, IEffect testFX)
+
   {
     for (int index = 0; index < fxList.Length; ++index)
     {

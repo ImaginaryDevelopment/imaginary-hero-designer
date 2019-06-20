@@ -15,28 +15,40 @@ namespace Hero_Designer
   public class frmImportPowerLevels : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
-    [AccessedThroughProperty("btnFile")]
-    private Button _btnFile;
-    [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label8")]
-    private Label _Label8;
-    [AccessedThroughProperty("lblDate")]
-    private Label _lblDate;
-    [AccessedThroughProperty("lblFile")]
-    private Label _lblFile;
-    [AccessedThroughProperty("udRevision")]
-    private NumericUpDown _udRevision;
-    private frmBusy bFrm;
-    private IContainer components;
-    private string FullFileName;
+    Button _btnClose;
 
-    internal virtual Button btnClose
+    [AccessedThroughProperty("btnFile")]
+    Button _btnFile;
+
+    [AccessedThroughProperty("btnImport")]
+    Button _btnImport;
+
+    [AccessedThroughProperty("dlgBrowse")]
+    OpenFileDialog _dlgBrowse;
+
+    [AccessedThroughProperty("Label3")]
+    Label _Label3;
+
+    [AccessedThroughProperty("Label8")]
+    Label _Label8;
+
+    [AccessedThroughProperty("lblDate")]
+    Label _lblDate;
+
+    [AccessedThroughProperty("lblFile")]
+    Label _lblFile;
+
+    [AccessedThroughProperty("udRevision")]
+    NumericUpDown _udRevision;
+
+    frmBusy bFrm;
+
+    IContainer components;
+
+    string FullFileName;
+
+
+    Button btnClose
     {
       get
       {
@@ -54,7 +66,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFile
+    Button btnFile
     {
       get
       {
@@ -72,7 +84,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -90,7 +102,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog dlgBrowse
+    OpenFileDialog dlgBrowse
     {
       get
       {
@@ -102,7 +114,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -114,7 +126,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -126,7 +138,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblDate
+    Label lblDate
     {
       get
       {
@@ -138,7 +150,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblFile
+    Label lblFile
     {
       get
       {
@@ -150,7 +162,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udRevision
+    NumericUpDown udRevision
     {
       get
       {
@@ -169,12 +181,14 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void btnFile_Click(object sender, EventArgs e)
+    void btnFile_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.FullFileName;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -183,14 +197,16 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       this.ParseClasses(this.FullFileName);
       this.BusyHide();
       this.DisplayInfo();
     }
 
-    private void BusyHide()
+    void BusyHide()
+
     {
       if (this.bFrm == null)
         return;
@@ -198,7 +214,8 @@ namespace Hero_Designer
       this.bFrm = (frmBusy) null;
     }
 
-    private void BusyMsg(string sMessage)
+    void BusyMsg(string sMessage)
+
     {
       if (this.bFrm == null)
       {
@@ -230,14 +247,16 @@ namespace Hero_Designer
       }
     }
 
-    private void frmImportPowerLevels_Load(object sender, EventArgs e)
+    void frmImportPowerLevels_Load(object sender, EventArgs e)
+
     {
       this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile;
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImportPowerLevels));
       this.btnClose = new Button();
@@ -344,7 +363,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private bool ParseClasses(string iFileName)
+    bool ParseClasses(string iFileName)
+
     {
       int num1 = 0;
       StreamReader iStream;

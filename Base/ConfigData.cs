@@ -63,12 +63,14 @@ public class ConfigData
   };
   public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
   public const string UpdatePathDefault = "http://repo.cohtitan.com/mids_updates/";
-  private static ConfigData _current;
+  static ConfigData _current;
+
   public bool ExportBonusTotals;
   public bool ExportBonusList;
   public bool NoToolTips;
   public bool DataDamageGraphPercentageOnly;
-  private bool _hideOriginEnhancements;
+  bool _hideOriginEnhancements;
+
   public bool CheckForUpdates;
   public Enums.eVisibleSize DvState;
   public Enums.eSuppress Suppression;
@@ -79,7 +81,8 @@ public class ConfigData
   public ConfigData.Si9 I9;
   public ConfigData.FontSettings RtFont;
   public bool PrintInColour;
-  private int _printScheme;
+  int _printScheme;
+
   public bool PrintHistory;
   public bool SaveFolderChecked;
   public bool ShowSlotLevels;
@@ -118,7 +121,8 @@ public class ConfigData
     }
   }
 
-  private ConfigData(string iFilename = "")
+  ConfigData(string iFilename = "")
+
   {
 
     this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
@@ -164,7 +168,8 @@ public class ConfigData
     }
   }
 
-  private void Load(string iFilename)
+  void Load(string iFilename)
+
   {
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
@@ -376,7 +381,8 @@ public class ConfigData
     Directory.CreateDirectory(this.DefaultSaveFolder);
   }
 
-  private void Save(string iFilename, float version)
+  void Save(string iFilename, float version)
+
   {
     using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
     {
@@ -514,19 +520,22 @@ public class ConfigData
     }
   }
 
-  private static Color ReadRGB(BinaryReader reader)
+  static Color ReadRGB(BinaryReader reader)
+
   {
     return Color.FromArgb((int) reader.ReadByte(), (int) reader.ReadByte(), (int) reader.ReadByte());
   }
 
-  private static void WriteRGB(BinaryWriter writer, Color iColor)
+  static void WriteRGB(BinaryWriter writer, Color iColor)
+
   {
     writer.Write(iColor.R);
     writer.Write(iColor.G);
     writer.Write(iColor.B);
   }
 
-  private void RelocateSaveFolder(bool manual)
+  void RelocateSaveFolder(bool manual)
+
   {
     if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked | manual))
     {
@@ -572,7 +581,8 @@ public class ConfigData
     }
   }
 
-  private void LoadOverrides()
+  void LoadOverrides()
+
   {
     using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
     {
@@ -596,7 +606,8 @@ public class ConfigData
     }
   }
 
-  private void SaveOverrides()
+  void SaveOverrides()
+
   {
     using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
     {

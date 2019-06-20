@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 public static class DatabaseAPI
 {
-  private static readonly IDictionary<string, int> AttribMod = (IDictionary<string, int>) new Dictionary<string, int>();
-  private static readonly IDictionary<string, int> Classes = (IDictionary<string, int>) new Dictionary<string, int>();
+  static readonly IDictionary<string, int> AttribMod = (IDictionary<string, int>) new Dictionary<string, int>();
+
+  static readonly IDictionary<string, int> Classes = (IDictionary<string, int>) new Dictionary<string, int>();
+
   public const int HeroAccolades = 3257;
   public const int VillainAccolades = 3258;
   public const int TempPowers = 3259;
@@ -24,7 +26,8 @@ public static class DatabaseAPI
     }
   }
 
-  private static void ClearLookups()
+  static void ClearLookups()
+
   {
     DatabaseAPI.AttribMod.Clear();
     DatabaseAPI.Classes.Clear();
@@ -102,7 +105,8 @@ public static class DatabaseAPI
     return num;
   }
 
-  private static void FillGroupArray()
+  static void FillGroupArray()
+
   {
     DatabaseAPI.Database.PowersetGroups = (IDictionary<string, PowersetGroup>) new Dictionary<string, PowersetGroup>();
     foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -256,7 +260,8 @@ public static class DatabaseAPI
     return array;
   }
 
-  private static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
+  static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
+
   {
     int[] array = new int[0];
     int[] numArray;
@@ -945,7 +950,8 @@ public static class DatabaseAPI
     DatabaseAPI.Database.Version = DatabaseAPI.GetDatabaseVersion(Files.SelectDataFileLoad("I12.mhd"));
   }
 
-  private static float GetDatabaseVersion(string fName)
+  static float GetDatabaseVersion(string fName)
+
   {
     float num1 = -1f;
     float num2;
@@ -1659,7 +1665,8 @@ public static class DatabaseAPI
     return DatabaseAPI.GetModifier(iClass, iEffect.nModifierTable, iLevel);
   }
 
-  private static float GetModifier(int iClass, int iTable, int iLevel)
+  static float GetModifier(int iClass, int iTable, int iLevel)
+
   {
     float num;
     if (iClass < 0)
@@ -1700,12 +1707,14 @@ public static class DatabaseAPI
     DatabaseAPI.MatchSummonIDs();
   }
 
-  private static void UpdateMessage(IMessager iFrm, string iMsg)
+  static void UpdateMessage(IMessager iFrm, string iMsg)
+
   {
     iFrm?.SetMessage(iMsg);
   }
 
-  private static void MatchArchetypeIDs()
+  static void MatchArchetypeIDs()
+
   {
     for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
     {
@@ -1717,7 +1726,8 @@ public static class DatabaseAPI
     }
   }
 
-  private static void MatchPowersetIDs()
+  static void MatchPowersetIDs()
+
   {
     for (int index1 = 0; index1 <= DatabaseAPI.Database.Powersets.Length - 1; ++index1)
     {
@@ -1737,7 +1747,8 @@ public static class DatabaseAPI
     }
   }
 
-  private static void MatchPowerIDs()
+  static void MatchPowerIDs()
+
   {
     DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
     for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
@@ -1812,7 +1823,8 @@ public static class DatabaseAPI
     }
   }
 
-  private static void MatchRequirementId(IPower power)
+  static void MatchRequirementId(IPower power)
+
   {
     if (power.Requires.ClassName.Length > 0)
     {
@@ -1847,7 +1859,8 @@ public static class DatabaseAPI
     }
   }
 
-  private static void SetPowersetsFromGroups()
+  static void SetPowersetsFromGroups()
+
   {
     for (int index1 = 0; index1 < DatabaseAPI.Database.Classes.Length; ++index1)
     {
@@ -1922,7 +1935,8 @@ public static class DatabaseAPI
     int num = (int) MessageBox.Show("One or more enhancements had difficulty being matched to their invention set. You should check the database for misplaced Invention Set enhancements.\n" + str, "Mismatch Detected");
   }
 
-  private static int EnhancementClassIdFromName(string iName)
+  static int EnhancementClassIdFromName(string iName)
+
   {
     int num;
     if (string.IsNullOrEmpty(iName))
@@ -1941,7 +1955,8 @@ public static class DatabaseAPI
     return num;
   }
 
-  private static void MatchModifierIDs()
+  static void MatchModifierIDs()
+
   {
     foreach (IPower power in DatabaseAPI.Database.Power)
     {

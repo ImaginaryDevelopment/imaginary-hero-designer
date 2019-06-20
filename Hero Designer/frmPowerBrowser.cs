@@ -18,103 +18,154 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmPowerBrowser : Form
   {
-    private const int FILTER_ALL_POWERS = 3;
-    private const int FILTER_ALL_SETS = 2;
-    private const int FILTER_CLASSES = 1;
-    private const int FILTER_GROUPS = 0;
-    private const int FILTER_ORPHAN_POWERS = 5;
-    private const int FILTER_ORPHAN_SETS = 4;
+    const int FILTER_ALL_POWERS = 3;
+
+    const int FILTER_ALL_SETS = 2;
+
+    const int FILTER_CLASSES = 1;
+
+    const int FILTER_GROUPS = 0;
+
+    const int FILTER_ORPHAN_POWERS = 5;
+
+    const int FILTER_ORPHAN_SETS = 4;
+
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnClassAdd")]
-    private Button _btnClassAdd;
+    Button _btnClassAdd;
+
     [AccessedThroughProperty("btnClassClone")]
-    private Button _btnClassClone;
+    Button _btnClassClone;
+
     [AccessedThroughProperty("btnClassDelete")]
-    private Button _btnClassDelete;
+    Button _btnClassDelete;
+
     [AccessedThroughProperty("btnClassDown")]
-    private Button _btnClassDown;
+    Button _btnClassDown;
+
     [AccessedThroughProperty("btnClassEdit")]
-    private Button _btnClassEdit;
+    Button _btnClassEdit;
+
     [AccessedThroughProperty("btnClassSort")]
-    private Button _btnClassSort;
+    Button _btnClassSort;
+
     [AccessedThroughProperty("btnClassUp")]
-    private Button _btnClassUp;
+    Button _btnClassUp;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnPowerAdd")]
-    private Button _btnPowerAdd;
+    Button _btnPowerAdd;
+
     [AccessedThroughProperty("btnPowerClone")]
-    private Button _btnPowerClone;
+    Button _btnPowerClone;
+
     [AccessedThroughProperty("btnPowerDelete")]
-    private Button _btnPowerDelete;
+    Button _btnPowerDelete;
+
     [AccessedThroughProperty("btnPowerDown")]
-    private Button _btnPowerDown;
+    Button _btnPowerDown;
+
     [AccessedThroughProperty("btnPowerEdit")]
-    private Button _btnPowerEdit;
+    Button _btnPowerEdit;
+
     [AccessedThroughProperty("btnPowerSort")]
-    private Button _btnPowerSort;
+    Button _btnPowerSort;
+
     [AccessedThroughProperty("btnPowerUp")]
-    private Button _btnPowerUp;
+    Button _btnPowerUp;
+
     [AccessedThroughProperty("btnPSDown")]
-    private Button _btnPSDown;
+    Button _btnPSDown;
+
     [AccessedThroughProperty("btnPSUp")]
-    private Button _btnPSUp;
+    Button _btnPSUp;
+
     [AccessedThroughProperty("btnSetAdd")]
-    private Button _btnSetAdd;
+    Button _btnSetAdd;
+
     [AccessedThroughProperty("btnSetDelete")]
-    private Button _btnSetDelete;
+    Button _btnSetDelete;
+
     [AccessedThroughProperty("btnSetEdit")]
-    private Button _btnSetEdit;
+    Button _btnSetEdit;
+
     [AccessedThroughProperty("btnSetSort")]
-    private Button _btnSetSort;
+    Button _btnSetSort;
+
     [AccessedThroughProperty("cbFilter")]
-    private ComboBox _cbFilter;
+    ComboBox _cbFilter;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
+    ColumnHeader _ColumnHeader4;
+
     [AccessedThroughProperty("ColumnHeader5")]
-    private ColumnHeader _ColumnHeader5;
+    ColumnHeader _ColumnHeader5;
+
     [AccessedThroughProperty("ColumnHeader6")]
-    private ColumnHeader _ColumnHeader6;
+    ColumnHeader _ColumnHeader6;
+
     [AccessedThroughProperty("ColumnHeader7")]
-    private ColumnHeader _ColumnHeader7;
+    ColumnHeader _ColumnHeader7;
+
     [AccessedThroughProperty("ilAT")]
-    private ImageList _ilAT;
+    ImageList _ilAT;
+
     [AccessedThroughProperty("ilPower")]
-    private ImageList _ilPower;
+    ImageList _ilPower;
+
     [AccessedThroughProperty("ilPS")]
-    private ImageList _ilPS;
+    ImageList _ilPS;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("lblPower")]
-    private Label _lblPower;
+    Label _lblPower;
+
     [AccessedThroughProperty("lblSet")]
-    private Label _lblSet;
+    Label _lblSet;
+
     [AccessedThroughProperty("lvGroup")]
-    private ListView _lvGroup;
+    ListView _lvGroup;
+
     [AccessedThroughProperty("lvPower")]
-    private ListView _lvPower;
+    ListView _lvPower;
+
     [AccessedThroughProperty("lvSet")]
-    private ListView _lvSet;
+    ListView _lvSet;
+
     [AccessedThroughProperty("pnlGroup")]
-    private Panel _pnlGroup;
+    Panel _pnlGroup;
+
     [AccessedThroughProperty("pnlPower")]
-    private Panel _pnlPower;
+    Panel _pnlPower;
+
     [AccessedThroughProperty("pnlSet")]
-    private Panel _pnlSet;
-    private frmBusy bFrm;
-    private IContainer components;
+    Panel _pnlSet;
+
+    frmBusy bFrm;
+
+    IContainer components;
+
     protected bool Updating;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -132,7 +183,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassAdd
+    Button btnClassAdd
     {
       get
       {
@@ -150,7 +201,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassClone
+    Button btnClassClone
     {
       get
       {
@@ -168,7 +219,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassDelete
+    Button btnClassDelete
     {
       get
       {
@@ -186,7 +237,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassDown
+    Button btnClassDown
     {
       get
       {
@@ -204,7 +255,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassEdit
+    Button btnClassEdit
     {
       get
       {
@@ -222,7 +273,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassSort
+    Button btnClassSort
     {
       get
       {
@@ -240,7 +291,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClassUp
+    Button btnClassUp
     {
       get
       {
@@ -258,7 +309,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -276,7 +327,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerAdd
+    Button btnPowerAdd
     {
       get
       {
@@ -294,7 +345,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerClone
+    Button btnPowerClone
     {
       get
       {
@@ -312,7 +363,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerDelete
+    Button btnPowerDelete
     {
       get
       {
@@ -330,7 +381,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerDown
+    Button btnPowerDown
     {
       get
       {
@@ -348,7 +399,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerEdit
+    Button btnPowerEdit
     {
       get
       {
@@ -366,7 +417,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerSort
+    Button btnPowerSort
     {
       get
       {
@@ -384,7 +435,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPowerUp
+    Button btnPowerUp
     {
       get
       {
@@ -402,7 +453,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPSDown
+    Button btnPSDown
     {
       get
       {
@@ -420,7 +471,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPSUp
+    Button btnPSUp
     {
       get
       {
@@ -438,7 +489,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSetAdd
+    Button btnSetAdd
     {
       get
       {
@@ -456,7 +507,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSetDelete
+    Button btnSetDelete
     {
       get
       {
@@ -474,7 +525,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSetEdit
+    Button btnSetEdit
     {
       get
       {
@@ -492,7 +543,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSetSort
+    Button btnSetSort
     {
       get
       {
@@ -510,7 +561,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbFilter
+    ComboBox cbFilter
     {
       get
       {
@@ -528,7 +579,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -540,7 +591,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -552,7 +603,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -564,7 +615,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -576,7 +627,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader5
+    ColumnHeader ColumnHeader5
     {
       get
       {
@@ -588,7 +639,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader6
+    ColumnHeader ColumnHeader6
     {
       get
       {
@@ -600,7 +651,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader7
+    ColumnHeader ColumnHeader7
     {
       get
       {
@@ -612,7 +663,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilAT
+    ImageList ilAT
     {
       get
       {
@@ -624,7 +675,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilPower
+    ImageList ilPower
     {
       get
       {
@@ -636,7 +687,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilPS
+    ImageList ilPS
     {
       get
       {
@@ -648,7 +699,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -660,7 +711,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -672,7 +723,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblPower
+    Label lblPower
     {
       get
       {
@@ -684,7 +735,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblSet
+    Label lblSet
     {
       get
       {
@@ -696,7 +747,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvGroup
+    ListView lvGroup
     {
       get
       {
@@ -719,7 +770,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPower
+    ListView lvPower
     {
       get
       {
@@ -742,7 +793,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSet
+    ListView lvSet
     {
       get
       {
@@ -765,7 +816,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlGroup
+    Panel pnlGroup
     {
       get
       {
@@ -777,7 +828,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlPower
+    Panel pnlPower
     {
       get
       {
@@ -789,7 +840,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlSet
+    Panel pnlSet
     {
       get
       {
@@ -808,7 +859,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Discarding Changes...");
       DatabaseAPI.LoadMainDatabase();
@@ -818,7 +870,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnClassAdd_Click(object sender, EventArgs e)
+    void btnClassAdd_Click(object sender, EventArgs e)
+
     {
       Archetype iAT = new Archetype()
       {
@@ -837,7 +890,8 @@ namespace Hero_Designer
       this.UpdateLists(this.lvGroup.Items.Count - 1, -1, -1);
     }
 
-    private void btnClassClone_Click(object sender, EventArgs e)
+    void btnClassClone_Click(object sender, EventArgs e)
+
     {
       if (this.lvGroup.SelectedIndices.Count <= 0)
         return;
@@ -865,7 +919,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnClassDelete_Click(object sender, EventArgs e)
+    void btnClassDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvGroup.SelectedIndices.Count <= 0)
         return;
@@ -907,7 +962,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnClassDown_Click(object sender, EventArgs e)
+    void btnClassDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvGroup.SelectedIndices.Count <= 0)
         return;
@@ -928,7 +984,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnClassEdit_Click(object sender, EventArgs e)
+    void btnClassEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvGroup.SelectedIndices.Count <= 0)
         return;
@@ -951,7 +1008,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnClassSort_Click(object sender, EventArgs e)
+    void btnClassSort_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Discarding Changes...");
       Array.Sort<Archetype>(DatabaseAPI.Database.Classes);
@@ -960,7 +1018,8 @@ namespace Hero_Designer
       this.BusyHide();
     }
 
-    private void btnClassUp_Click(object sender, EventArgs e)
+    void btnClassUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvGroup.SelectedIndices.Count <= 0)
         return;
@@ -981,7 +1040,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Re-Indexing && Saving...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
@@ -993,7 +1053,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnPowerAdd_Click(object sender, EventArgs e)
+    void btnPowerAdd_Click(object sender, EventArgs e)
+
     {
       IPower iPower = (IPower) new Power();
       if (this.cbFilter.SelectedIndex == 0)
@@ -1015,7 +1076,8 @@ namespace Hero_Designer
       this.UpdateLists(-1, -1, -1);
     }
 
-    private void btnPowerClone_Click(object sender, EventArgs e)
+    void btnPowerClone_Click(object sender, EventArgs e)
+
     {
       IPower iPower = (IPower) new Power();
       if (DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text) < 0)
@@ -1040,7 +1102,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPowerDelete_Click(object sender, EventArgs e)
+    void btnPowerDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvPower.SelectedIndices.Count <= 0 || Interaction.MsgBox((object) ("Really delete Power: " + this.lvPower.SelectedItems[0].SubItems[3].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -1078,7 +1141,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPowerDown_Click(object sender, EventArgs e)
+    void btnPowerDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvPower.SelectedIndices.Count <= 0)
         return;
@@ -1105,7 +1169,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPowerEdit_Click(object sender, EventArgs e)
+    void btnPowerEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvPower.SelectedIndices.Count <= 0)
         return;
@@ -1144,7 +1209,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPowerSort_Click(object sender, EventArgs e)
+    void btnPowerSort_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
@@ -1153,7 +1219,8 @@ namespace Hero_Designer
       this.BusyHide();
     }
 
-    private void btnPowerUp_Click(object sender, EventArgs e)
+    void btnPowerUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvPower.SelectedIndices.Count <= 0)
         return;
@@ -1180,7 +1247,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPSDown_Click(object sender, EventArgs e)
+    void btnPSDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvSet.SelectedIndices.Count <= 0)
         return;
@@ -1207,7 +1275,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPSUp_Click(object sender, EventArgs e)
+    void btnPSUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvSet.SelectedIndices.Count <= 0)
         return;
@@ -1234,7 +1303,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnSetAdd_Click(object sender, EventArgs e)
+    void btnSetAdd_Click(object sender, EventArgs e)
+
     {
       IPowerset iSet = (IPowerset) new Powerset();
       if (this.cbFilter.SelectedIndex == 0)
@@ -1258,7 +1328,8 @@ namespace Hero_Designer
       this.UpdateLists(-1, -1, -1);
     }
 
-    private void btnSetDelete_Click(object sender, EventArgs e)
+    void btnSetDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvSet.SelectedIndices.Count <= 0)
         return;
@@ -1308,7 +1379,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnSetEdit_Click(object sender, EventArgs e)
+    void btnSetEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvSet.SelectedIndices.Count <= 0)
         return;
@@ -1337,7 +1409,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnSetSort_Click(object sender, EventArgs e)
+    void btnSetSort_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPowerset>(DatabaseAPI.Database.Powersets);
@@ -1346,7 +1419,8 @@ namespace Hero_Designer
       this.BusyHide();
     }
 
-    private void BuildATImageList()
+    void BuildATImageList()
+
     {
       this.ilAT.Images.Clear();
       int num = DatabaseAPI.Database.Classes.Length - 1;
@@ -1359,7 +1433,8 @@ namespace Hero_Designer
       }
     }
 
-    private void BuildPowersetImageList(int[] iSets)
+    void BuildPowersetImageList(int[] iSets)
+
     {
       this.ilPS.Images.Clear();
       Size imageSize = this.ilPS.ImageSize;
@@ -1441,7 +1516,8 @@ namespace Hero_Designer
       }
     }
 
-    private void BusyHide()
+    void BusyHide()
+
     {
       if (this.bFrm == null)
         return;
@@ -1449,7 +1525,8 @@ namespace Hero_Designer
       this.bFrm = (frmBusy) null;
     }
 
-    private void BusyMsg(string sMessage)
+    void BusyMsg(string sMessage)
+
     {
       if (this.bFrm == null)
       {
@@ -1459,7 +1536,8 @@ namespace Hero_Designer
       this.bFrm.SetMessage(sMessage);
     }
 
-    private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+    void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -1508,7 +1586,8 @@ namespace Hero_Designer
       this.cbFilter.SelectedIndex = this.cbFilter.Items.IndexOf((object) "Groups");
     }
 
-    private void frmPowerBrowser_Load(object sender, EventArgs e)
+    void frmPowerBrowser_Load(object sender, EventArgs e)
+
     {
       try
       {
@@ -1523,7 +1602,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmPowerBrowser));
@@ -2242,14 +2322,16 @@ namespace Hero_Designer
       }
     }
 
-    private void lvGroup_DoubleClick(object sender, EventArgs e)
+    void lvGroup_DoubleClick(object sender, EventArgs e)
+
     {
       if (this.cbFilter.SelectedIndex != 1)
         return;
       this.btnClassEdit_Click((object) this, new EventArgs());
     }
 
-    private void lvGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void lvGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -2258,24 +2340,28 @@ namespace Hero_Designer
       this.List_Powers(0);
     }
 
-    private void lvPower_DoubleClick(object sender, EventArgs e)
+    void lvPower_DoubleClick(object sender, EventArgs e)
+
     {
       this.btnPowerEdit_Click((object) this, new EventArgs());
     }
 
-    private void lvPower_SelectedIndexChanged(object sender, EventArgs e)
+    void lvPower_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvPower.SelectedItems.Count <= 0)
         return;
       this.lblPower.Text = this.lvPower.SelectedItems[0].SubItems[3].Text;
     }
 
-    private void lvSet_DoubleClick(object sender, EventArgs e)
+    void lvSet_DoubleClick(object sender, EventArgs e)
+
     {
       this.btnSetEdit_Click((object) this, new EventArgs());
     }
 
-    private void lvSet_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -2284,7 +2370,8 @@ namespace Hero_Designer
       this.List_Powers(0);
     }
 
-    private void RefreshLists(int Group = -1, int Powerset = -1, int Power = -1)
+    void RefreshLists(int Group = -1, int Powerset = -1, int Power = -1)
+
     {
       int SelectGroup = Group;
       int SelectSet = Powerset;
@@ -2298,7 +2385,8 @@ namespace Hero_Designer
       this.UpdateLists(SelectGroup, SelectSet, SelectPower);
     }
 
-    private void UpdateLists(int SelectGroup = -1, int SelectSet = -1, int SelectPower = -1)
+    void UpdateLists(int SelectGroup = -1, int SelectSet = -1, int SelectPower = -1)
+
     {
       this.List_Groups(SelectGroup);
       Application.DoEvents();

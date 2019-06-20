@@ -6,7 +6,8 @@ using System.Windows.Forms;
 
 public class Tips
 {
-  private readonly int[] _tipStatus;
+  readonly int[] _tipStatus;
+
 
   public Tips()
   {

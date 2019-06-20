@@ -11,16 +11,21 @@ namespace Hero_Designer
   public class frmZStatus : Form
   {
     [AccessedThroughProperty("lblStatus1")]
-    private Label _lblStatus1;
-    [AccessedThroughProperty("lblStatus2")]
-    private Label _lblStatus2;
-    [AccessedThroughProperty("lblTitle")]
-    private Label _lblTitle;
-    [AccessedThroughProperty("PictureBox1")]
-    private PictureBox _PictureBox1;
-    private IContainer components;
+    Label _lblStatus1;
 
-    internal virtual Label lblStatus1
+    [AccessedThroughProperty("lblStatus2")]
+    Label _lblStatus2;
+
+    [AccessedThroughProperty("lblTitle")]
+    Label _lblTitle;
+
+    [AccessedThroughProperty("PictureBox1")]
+    PictureBox _PictureBox1;
+
+    IContainer components;
+
+
+    Label lblStatus1
     {
       get
       {
@@ -32,7 +37,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblStatus2
+    Label lblStatus2
     {
       get
       {
@@ -44,7 +49,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblTitle
+    Label lblTitle
     {
       get
       {
@@ -56,7 +61,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox PictureBox1
+    PictureBox PictureBox1
     {
       get
       {
@@ -81,13 +86,15 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmZStatus_VisibleChanged(object sender, EventArgs e)
+    void frmZStatus_VisibleChanged(object sender, EventArgs e)
+
     {
       this.Refresh();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmZStatus));
       this.lblTitle = new Label();

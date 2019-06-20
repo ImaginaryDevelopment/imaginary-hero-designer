@@ -15,33 +15,47 @@ namespace Hero_Designer
   public class frmEntityListing : Form
   {
     [AccessedThroughProperty("btnAdd")]
-    private Button _btnAdd;
-    [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
-    [AccessedThroughProperty("btnClone")]
-    private Button _btnClone;
-    [AccessedThroughProperty("btnDelete")]
-    private Button _btnDelete;
-    [AccessedThroughProperty("btnDown")]
-    private Button _btnDown;
-    [AccessedThroughProperty("btnedit")]
-    private Button _btnedit;
-    [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
-    [AccessedThroughProperty("btnUp")]
-    private Button _btnUp;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("lvEntity")]
-    private ListView _lvEntity;
-    private frmBusy bFrm;
-    private IContainer components;
+    Button _btnAdd;
 
-    internal virtual Button btnAdd
+    [AccessedThroughProperty("btnCancel")]
+    Button _btnCancel;
+
+    [AccessedThroughProperty("btnClone")]
+    Button _btnClone;
+
+    [AccessedThroughProperty("btnDelete")]
+    Button _btnDelete;
+
+    [AccessedThroughProperty("btnDown")]
+    Button _btnDown;
+
+    [AccessedThroughProperty("btnedit")]
+    Button _btnedit;
+
+    [AccessedThroughProperty("btnOK")]
+    Button _btnOK;
+
+    [AccessedThroughProperty("btnUp")]
+    Button _btnUp;
+
+    [AccessedThroughProperty("ColumnHeader1")]
+    ColumnHeader _ColumnHeader1;
+
+    [AccessedThroughProperty("ColumnHeader2")]
+    ColumnHeader _ColumnHeader2;
+
+    [AccessedThroughProperty("ColumnHeader3")]
+    ColumnHeader _ColumnHeader3;
+
+    [AccessedThroughProperty("lvEntity")]
+    ListView _lvEntity;
+
+    frmBusy bFrm;
+
+    IContainer components;
+
+
+    Button btnAdd
     {
       get
       {
@@ -59,7 +73,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -77,7 +91,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClone
+    Button btnClone
     {
       get
       {
@@ -95,7 +109,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDelete
+    Button btnDelete
     {
       get
       {
@@ -113,7 +127,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDown
+    Button btnDown
     {
       get
       {
@@ -131,7 +145,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnedit
+    Button btnedit
     {
       get
       {
@@ -149,7 +163,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -167,7 +181,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUp
+    Button btnUp
     {
       get
       {
@@ -185,7 +199,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -197,7 +211,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -209,7 +223,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -221,7 +235,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvEntity
+    ListView lvEntity
     {
       get
       {
@@ -245,7 +259,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
+    void btnAdd_Click(object sender, EventArgs e)
+
     {
       SummonedEntity iEntity = new SummonedEntity();
       int num1 = 0;
@@ -275,7 +290,8 @@ namespace Hero_Designer
       this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.BusyMsg("Re-Indexing...");
       DatabaseAPI.LoadMainDatabase();
@@ -284,7 +300,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnClone_Click(object sender, EventArgs e)
+    void btnClone_Click(object sender, EventArgs e)
+
     {
       if (this.lvEntity.SelectedIndices.Count <= 0)
         return;
@@ -303,7 +320,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnDelete_Click(object sender, EventArgs e)
+    void btnDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox((object) ("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -333,7 +351,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnDown_Click(object sender, EventArgs e)
+    void btnDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvEntity.SelectedIndices.Count <= 0)
         return;
@@ -353,7 +372,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnEdit_Click(object sender, EventArgs e)
+    void btnEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvEntity.SelectedIndices.Count <= 0)
         return;
@@ -366,14 +386,16 @@ namespace Hero_Designer
       }
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.MatchSummonIDs();
       DatabaseAPI.SaveMainDatabase();
       this.Hide();
     }
 
-    private void btnUp_Click(object sender, EventArgs e)
+    void btnUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvEntity.SelectedIndices.Count <= 0)
         return;
@@ -393,7 +415,8 @@ namespace Hero_Designer
       }
     }
 
-    private void BusyHide()
+    void BusyHide()
+
     {
       if (this.bFrm == null)
         return;
@@ -401,7 +424,8 @@ namespace Hero_Designer
       this.bFrm = (frmBusy) null;
     }
 
-    private void BusyMsg(string sMessage)
+    void BusyMsg(string sMessage)
+
     {
       if (this.bFrm == null)
       {
@@ -441,13 +465,15 @@ namespace Hero_Designer
       }
     }
 
-    private void frmEntityListing_Load(object sender, EventArgs e)
+    void frmEntityListing_Load(object sender, EventArgs e)
+
     {
       this.DisplayList();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmEntityListing));
       this.lvEntity = new ListView();
@@ -602,7 +628,8 @@ namespace Hero_Designer
       this.lvEntity.Refresh();
     }
 
-    private void lvEntity_DoubleClick(object sender, EventArgs e)
+    void lvEntity_DoubleClick(object sender, EventArgs e)
+
     {
       this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
     }

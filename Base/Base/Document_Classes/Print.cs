@@ -9,15 +9,23 @@ namespace Base.Document_Classes
 {
   public class Print : IDisposable
   {
-    private const int TextBase = 8;
-    private const float LineSpace = 1.25f;
+    const int TextBase = 8;
+
+    const float LineSpace = 1.25f;
+
     public PrintDocument Document;
-    private int _pageNumber;
-    private int _pIndex;
-    private bool _printingProfile;
-    private bool _printingHistory;
-    private bool _endOfPage;
-    private Print.PrintWhat _sectionCompleted;
+    int _pageNumber;
+
+    int _pIndex;
+
+    bool _printingProfile;
+
+    bool _printingHistory;
+
+    bool _endOfPage;
+
+    Print.PrintWhat _sectionCompleted;
+
 
     public Print()
     {
@@ -58,7 +66,8 @@ namespace Base.Document_Classes
       }
     }
 
-    private void PrintBegin(object sender, PrintEventArgs e)
+    void PrintBegin(object sender, PrintEventArgs e)
+
     {
       this._pageNumber = 0;
       this._pIndex = 0;
@@ -67,12 +76,14 @@ namespace Base.Document_Classes
       this._sectionCompleted = Print.PrintWhat.None;
     }
 
-    private void PrintEnd(object sender, PrintEventArgs e)
+    void PrintEnd(object sender, PrintEventArgs e)
+
     {
       this.Document = new PrintDocument();
     }
 
-    private void PrintPage(object sender, PrintPageEventArgs args)
+    void PrintPage(object sender, PrintPageEventArgs args)
+
     {
       RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
       ++this._pageNumber;
@@ -91,7 +102,8 @@ namespace Base.Document_Classes
         args.HasMorePages = false;
     }
 
-    private int PageBorder(Rectangle bounds, PrintPageEventArgs args)
+    int PageBorder(Rectangle bounds, PrintPageEventArgs args)
+
     {
       SolidBrush solidBrush = new SolidBrush(Color.Black);
       Pen pen = new Pen(Color.Black, 3f);
@@ -127,7 +139,8 @@ namespace Base.Document_Classes
       return Convert.ToInt32(num4 + 8);
     }
 
-    private void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
+    void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
+
     {
       int top = bounds.Top;
       SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -173,7 +186,8 @@ namespace Base.Document_Classes
       this._printingHistory = false;
     }
 
-    private static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
+    static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
+
     {
       SolidBrush solidBrush = new SolidBrush(Color.Black);
       int top = bounds.Top;
@@ -227,7 +241,8 @@ namespace Base.Document_Classes
       return num2;
     }
 
-    private void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
+    void PrintProfileLong(Rectangle bounds, PrintPageEventArgs args)
+
     {
       SolidBrush solidBrush = new SolidBrush(Color.Black);
       int vPos = bounds.Top;
@@ -282,7 +297,8 @@ namespace Base.Document_Classes
       this._printingProfile = false;
     }
 
-    private int BuildPowerListLong(
+    int BuildPowerListLong(
+
       ref int vPos,
       RectangleF bounds,
       int fontSize,
@@ -417,7 +433,8 @@ namespace Base.Document_Classes
       return num1;
     }
 
-    private void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
+    void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
+
     {
       this._printingProfile = false;
       SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -446,7 +463,8 @@ namespace Base.Document_Classes
       Print.BuildPowerListShort(ref vPos3, (RectangleF) bounds, 12, false, true, true, args);
     }
 
-    private static void BuildPowerListShort(
+    static void BuildPowerListShort(
+
       ref int vPos,
       RectangleF bounds,
       int fontSize,
@@ -572,7 +590,8 @@ namespace Base.Document_Classes
       }
     }
 
-    private static Rectangle RectConvert(RectangleF iRect)
+    static Rectangle RectConvert(RectangleF iRect)
+
     {
       return new Rectangle((int) iRect.X, (int) iRect.Y, (int) iRect.Width, (int) iRect.Height);
     }
@@ -591,7 +610,8 @@ namespace Base.Document_Classes
       this.Document = (PrintDocument) null;
     }
 
-    private enum PrintWhat
+    enum PrintWhat
+
     {
       None = -1,
       Powers = 0,

@@ -14,42 +14,60 @@ namespace Hero_Designer
   public class frmSetListing : Form
   {
     [AccessedThroughProperty("btnAdd")]
-    private Button _btnAdd;
-    [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
-    [AccessedThroughProperty("btnClone")]
-    private Button _btnClone;
-    [AccessedThroughProperty("btnDelete")]
-    private Button _btnDelete;
-    [AccessedThroughProperty("btnDown")]
-    private Button _btnDown;
-    [AccessedThroughProperty("btnEdit")]
-    private Button _btnEdit;
-    [AccessedThroughProperty("btnSave")]
-    private Button _btnSave;
-    [AccessedThroughProperty("btnUp")]
-    private Button _btnUp;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
-    [AccessedThroughProperty("ColumnHeader5")]
-    private ColumnHeader _ColumnHeader5;
-    [AccessedThroughProperty("ColumnHeader6")]
-    private ColumnHeader _ColumnHeader6;
-    [AccessedThroughProperty("ilSets")]
-    private ImageList _ilSets;
-    [AccessedThroughProperty("lvSets")]
-    private ListView _lvSets;
-    [AccessedThroughProperty("NoReload")]
-    private CheckBox _NoReload;
-    private IContainer components;
+    Button _btnAdd;
 
-    internal virtual Button btnAdd
+    [AccessedThroughProperty("btnCancel")]
+    Button _btnCancel;
+
+    [AccessedThroughProperty("btnClone")]
+    Button _btnClone;
+
+    [AccessedThroughProperty("btnDelete")]
+    Button _btnDelete;
+
+    [AccessedThroughProperty("btnDown")]
+    Button _btnDown;
+
+    [AccessedThroughProperty("btnEdit")]
+    Button _btnEdit;
+
+    [AccessedThroughProperty("btnSave")]
+    Button _btnSave;
+
+    [AccessedThroughProperty("btnUp")]
+    Button _btnUp;
+
+    [AccessedThroughProperty("ColumnHeader1")]
+    ColumnHeader _ColumnHeader1;
+
+    [AccessedThroughProperty("ColumnHeader2")]
+    ColumnHeader _ColumnHeader2;
+
+    [AccessedThroughProperty("ColumnHeader3")]
+    ColumnHeader _ColumnHeader3;
+
+    [AccessedThroughProperty("ColumnHeader4")]
+    ColumnHeader _ColumnHeader4;
+
+    [AccessedThroughProperty("ColumnHeader5")]
+    ColumnHeader _ColumnHeader5;
+
+    [AccessedThroughProperty("ColumnHeader6")]
+    ColumnHeader _ColumnHeader6;
+
+    [AccessedThroughProperty("ilSets")]
+    ImageList _ilSets;
+
+    [AccessedThroughProperty("lvSets")]
+    ListView _lvSets;
+
+    [AccessedThroughProperty("NoReload")]
+    CheckBox _NoReload;
+
+    IContainer components;
+
+
+    Button btnAdd
     {
       get
       {
@@ -67,7 +85,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -85,7 +103,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClone
+    Button btnClone
     {
       get
       {
@@ -103,7 +121,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDelete
+    Button btnDelete
     {
       get
       {
@@ -121,7 +139,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDown
+    Button btnDown
     {
       get
       {
@@ -139,7 +157,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnEdit
+    Button btnEdit
     {
       get
       {
@@ -157,7 +175,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSave
+    Button btnSave
     {
       get
       {
@@ -175,7 +193,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUp
+    Button btnUp
     {
       get
       {
@@ -193,7 +211,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -205,7 +223,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -217,7 +235,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -229,7 +247,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -241,7 +259,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader5
+    ColumnHeader ColumnHeader5
     {
       get
       {
@@ -253,7 +271,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader6
+    ColumnHeader ColumnHeader6
     {
       get
       {
@@ -265,7 +283,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilSets
+    ImageList ilSets
     {
       get
       {
@@ -277,7 +295,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSets
+    ListView lvSets
     {
       get
       {
@@ -300,7 +318,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox NoReload
+    CheckBox NoReload
     {
       get
       {
@@ -346,7 +364,8 @@ namespace Hero_Designer
       this.lvSets.Items[this.lvSets.Items.Count - 1].EnsureVisible();
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
+    void btnAdd_Click(object sender, EventArgs e)
+
     {
       EnhancementSet iSet = new EnhancementSet();
       frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
@@ -358,12 +377,14 @@ namespace Hero_Designer
       this.AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.Hide();
     }
 
-    private void btnClone_Click(object sender, EventArgs e)
+    void btnClone_Click(object sender, EventArgs e)
+
     {
       if (this.lvSets.SelectedIndices.Count <= 0)
         return;
@@ -379,7 +400,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnDelete_Click(object sender, EventArgs e)
+    void btnDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvSets.SelectedIndices.Count <= 0 || Interaction.MsgBox((object) ("Really delete set: " + this.lvSets.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -396,7 +418,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnDown_Click(object sender, EventArgs e)
+    void btnDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvSets.SelectedIndices.Count <= 0)
         return;
@@ -420,7 +443,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnEdit_Click(object sender, EventArgs e)
+    void btnEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvSets.SelectedIndices.Count <= 0)
         return;
@@ -451,13 +475,15 @@ namespace Hero_Designer
       }
     }
 
-    private void btnSave_Click(object sender, EventArgs e)
+    void btnSave_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.SaveEnhancementDb();
       this.Hide();
     }
 
-    private void btnUp_Click(object sender, EventArgs e)
+    void btnUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvSets.SelectedIndices.Count <= 0)
         return;
@@ -535,7 +561,8 @@ namespace Hero_Designer
       }
     }
 
-    private void frmSetListing_Load(object sender, EventArgs e)
+    void frmSetListing_Load(object sender, EventArgs e)
+
     {
       this.DisplayList();
     }
@@ -549,7 +576,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSetListing));
@@ -725,21 +753,25 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lvSets_DoubleClick(object sender, EventArgs e)
+    void lvSets_DoubleClick(object sender, EventArgs e)
+
     {
       this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
     }
 
-    private void lvSets_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSets_SelectedIndexChanged(object sender, EventArgs e)
+
     {
     }
 
-    private void NoReload_CheckedChanged(object sender, EventArgs e)
+    void NoReload_CheckedChanged(object sender, EventArgs e)
+
     {
       this.ImageUpdate();
     }
 
-    private static void RenameIOSet(string uidOld, string uidNew)
+    static void RenameIOSet(string uidOld, string uidNew)
+
     {
       int num = DatabaseAPI.Database.Enhancements.Length - 1;
       for (int index = 0; index <= num; ++index)

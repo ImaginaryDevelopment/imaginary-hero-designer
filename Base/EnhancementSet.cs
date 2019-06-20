@@ -227,7 +227,8 @@ public class EnhancementSet
     return flag;
   }
 
-  private static string GenerateShortName(string displayName)
+  static string GenerateShortName(string displayName)
+
   {
     string[] strArray = displayName.Split(' ');
     StringBuilder stringBuilder = new StringBuilder();

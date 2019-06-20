@@ -15,7 +15,8 @@ public class Statistics
   public const float BaseFlySpeed = 31.5f;
   public const float BaseMagic = 1.666667f;
   public const float BasePerception = 500f;
-  private readonly Character _character;
+  readonly Character _character;
+
 
   public float EnduranceMaxEnd
   {
@@ -150,7 +151,8 @@ public class Statistics
     this._character = character;
   }
 
-  private float EnduranceRecovery(bool uncapped)
+  float EnduranceRecovery(bool uncapped)
+
   {
     return uncapped ? this._character.Totals.EndRec + 1f : this._character.TotalsCapped.EndRec + 1f;
   }
@@ -160,7 +162,8 @@ public class Statistics
     return this.EnduranceRecovery(uncapped) * 100f;
   }
 
-  private float HealthRegen(bool uncapped)
+  float HealthRegen(bool uncapped)
+
   {
     return uncapped ? this._character.Totals.HPRegen + 1f : this._character.TotalsCapped.HPRegen + 1f;
   }

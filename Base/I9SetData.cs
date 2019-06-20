@@ -56,7 +56,8 @@ public class I9SetData
     }
   }
 
-  private int Lookup(int setID)
+  int Lookup(int setID)
+
   {
     int num;
     if (setID < 0)

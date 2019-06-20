@@ -18,96 +18,143 @@ namespace Hero_Designer
   public class frmTotals : Form
   {
     [AccessedThroughProperty("graphAcc")]
-    private ctlMultiGraph _graphAcc;
-    [AccessedThroughProperty("graphDam")]
-    private ctlMultiGraph _graphDam;
-    [AccessedThroughProperty("graphDef")]
-    private ctlMultiGraph _graphDef;
-    [AccessedThroughProperty("graphDrain")]
-    private ctlMultiGraph _graphDrain;
-    [AccessedThroughProperty("graphElusivity")]
-    private ctlMultiGraph _graphElusivity;
-    [AccessedThroughProperty("graphEndRdx")]
-    private ctlMultiGraph _graphEndRdx;
-    [AccessedThroughProperty("graphHaste")]
-    private ctlMultiGraph _graphHaste;
-    [AccessedThroughProperty("graphHP")]
-    private ctlMultiGraph _graphHP;
-    [AccessedThroughProperty("graphMaxEnd")]
-    private ctlMultiGraph _graphMaxEnd;
-    [AccessedThroughProperty("graphMovement")]
-    private ctlMultiGraph _graphMovement;
-    [AccessedThroughProperty("graphRec")]
-    private ctlMultiGraph _graphRec;
-    [AccessedThroughProperty("graphRegen")]
-    private ctlMultiGraph _graphRegen;
-    [AccessedThroughProperty("graphRes")]
-    private ctlMultiGraph _graphRes;
-    [AccessedThroughProperty("graphSDeb")]
-    private ctlMultiGraph _graphSDeb;
-    [AccessedThroughProperty("graphSProt")]
-    private ctlMultiGraph _graphSProt;
-    [AccessedThroughProperty("graphSRes")]
-    private ctlMultiGraph _graphSRes;
-    [AccessedThroughProperty("graphStealth")]
-    private ctlMultiGraph _graphStealth;
-    [AccessedThroughProperty("graphThreat")]
-    private ctlMultiGraph _graphThreat;
-    [AccessedThroughProperty("graphToHit")]
-    private ctlMultiGraph _graphToHit;
-    private bool _keepOnTop;
-    [AccessedThroughProperty("lblDef")]
-    private Label _lblDef;
-    [AccessedThroughProperty("lblMisc")]
-    private Label _lblMisc;
-    [AccessedThroughProperty("lblMovement")]
-    private Label _lblMovement;
-    [AccessedThroughProperty("lblRegenRec")]
-    private Label _lblRegenRec;
-    [AccessedThroughProperty("lblRes")]
-    private Label _lblRes;
-    [AccessedThroughProperty("lblSDeb")]
-    private Label _lblSDeb;
-    [AccessedThroughProperty("lblSProt")]
-    private Label _lblSProt;
-    [AccessedThroughProperty("lblSRes")]
-    private Label _lblSRes;
-    [AccessedThroughProperty("lblStealth")]
-    private Label _lblStealth;
-    private bool _loaded;
-    private readonly frmMain _myParent;
-    [AccessedThroughProperty("Panel1")]
-    private Panel _Panel1;
-    [AccessedThroughProperty("Panel2")]
-    private Panel _Panel2;
-    [AccessedThroughProperty("pbClose")]
-    private PictureBox _pbClose;
-    [AccessedThroughProperty("pbTopMost")]
-    private PictureBox _pbTopMost;
-    [AccessedThroughProperty("pnlDRHE")]
-    private Panel _pnlDRHE;
-    [AccessedThroughProperty("pnlMisc")]
-    private Panel _pnlMisc;
-    [AccessedThroughProperty("pnlStatus")]
-    private Panel _pnlStatus;
-    [AccessedThroughProperty("rbFPS")]
-    private RadioButton _rbFPS;
-    [AccessedThroughProperty("rbKPH")]
-    private RadioButton _rbKPH;
-    [AccessedThroughProperty("rbMPH")]
-    private RadioButton _rbMPH;
-    [AccessedThroughProperty("rbMSec")]
-    private RadioButton _rbMSec;
-    [AccessedThroughProperty("tab0")]
-    private PictureBox _tab0;
-    [AccessedThroughProperty("tab1")]
-    private PictureBox _tab1;
-    [AccessedThroughProperty("tab2")]
-    private PictureBox _tab2;
-    private int _tabPage;
-    private IContainer components;
+    ctlMultiGraph _graphAcc;
 
-    internal virtual ctlMultiGraph graphAcc
+    [AccessedThroughProperty("graphDam")]
+    ctlMultiGraph _graphDam;
+
+    [AccessedThroughProperty("graphDef")]
+    ctlMultiGraph _graphDef;
+
+    [AccessedThroughProperty("graphDrain")]
+    ctlMultiGraph _graphDrain;
+
+    [AccessedThroughProperty("graphElusivity")]
+    ctlMultiGraph _graphElusivity;
+
+    [AccessedThroughProperty("graphEndRdx")]
+    ctlMultiGraph _graphEndRdx;
+
+    [AccessedThroughProperty("graphHaste")]
+    ctlMultiGraph _graphHaste;
+
+    [AccessedThroughProperty("graphHP")]
+    ctlMultiGraph _graphHP;
+
+    [AccessedThroughProperty("graphMaxEnd")]
+    ctlMultiGraph _graphMaxEnd;
+
+    [AccessedThroughProperty("graphMovement")]
+    ctlMultiGraph _graphMovement;
+
+    [AccessedThroughProperty("graphRec")]
+    ctlMultiGraph _graphRec;
+
+    [AccessedThroughProperty("graphRegen")]
+    ctlMultiGraph _graphRegen;
+
+    [AccessedThroughProperty("graphRes")]
+    ctlMultiGraph _graphRes;
+
+    [AccessedThroughProperty("graphSDeb")]
+    ctlMultiGraph _graphSDeb;
+
+    [AccessedThroughProperty("graphSProt")]
+    ctlMultiGraph _graphSProt;
+
+    [AccessedThroughProperty("graphSRes")]
+    ctlMultiGraph _graphSRes;
+
+    [AccessedThroughProperty("graphStealth")]
+    ctlMultiGraph _graphStealth;
+
+    [AccessedThroughProperty("graphThreat")]
+    ctlMultiGraph _graphThreat;
+
+    [AccessedThroughProperty("graphToHit")]
+    ctlMultiGraph _graphToHit;
+
+    bool _keepOnTop;
+
+    [AccessedThroughProperty("lblDef")]
+    Label _lblDef;
+
+    [AccessedThroughProperty("lblMisc")]
+    Label _lblMisc;
+
+    [AccessedThroughProperty("lblMovement")]
+    Label _lblMovement;
+
+    [AccessedThroughProperty("lblRegenRec")]
+    Label _lblRegenRec;
+
+    [AccessedThroughProperty("lblRes")]
+    Label _lblRes;
+
+    [AccessedThroughProperty("lblSDeb")]
+    Label _lblSDeb;
+
+    [AccessedThroughProperty("lblSProt")]
+    Label _lblSProt;
+
+    [AccessedThroughProperty("lblSRes")]
+    Label _lblSRes;
+
+    [AccessedThroughProperty("lblStealth")]
+    Label _lblStealth;
+
+    bool _loaded;
+
+    readonly frmMain _myParent;
+
+    [AccessedThroughProperty("Panel1")]
+    Panel _Panel1;
+
+    [AccessedThroughProperty("Panel2")]
+    Panel _Panel2;
+
+    [AccessedThroughProperty("pbClose")]
+    PictureBox _pbClose;
+
+    [AccessedThroughProperty("pbTopMost")]
+    PictureBox _pbTopMost;
+
+    [AccessedThroughProperty("pnlDRHE")]
+    Panel _pnlDRHE;
+
+    [AccessedThroughProperty("pnlMisc")]
+    Panel _pnlMisc;
+
+    [AccessedThroughProperty("pnlStatus")]
+    Panel _pnlStatus;
+
+    [AccessedThroughProperty("rbFPS")]
+    RadioButton _rbFPS;
+
+    [AccessedThroughProperty("rbKPH")]
+    RadioButton _rbKPH;
+
+    [AccessedThroughProperty("rbMPH")]
+    RadioButton _rbMPH;
+
+    [AccessedThroughProperty("rbMSec")]
+    RadioButton _rbMSec;
+
+    [AccessedThroughProperty("tab0")]
+    PictureBox _tab0;
+
+    [AccessedThroughProperty("tab1")]
+    PictureBox _tab1;
+
+    [AccessedThroughProperty("tab2")]
+    PictureBox _tab2;
+
+    int _tabPage;
+
+    IContainer components;
+
+
+    ctlMultiGraph graphAcc
     {
       get
       {
@@ -119,7 +166,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphDam
+    ctlMultiGraph graphDam
     {
       get
       {
@@ -131,7 +178,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphDef
+    ctlMultiGraph graphDef
     {
       get
       {
@@ -143,7 +190,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphDrain
+    ctlMultiGraph graphDrain
     {
       get
       {
@@ -155,7 +202,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphElusivity
+    ctlMultiGraph graphElusivity
     {
       get
       {
@@ -167,7 +214,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphEndRdx
+    ctlMultiGraph graphEndRdx
     {
       get
       {
@@ -179,7 +226,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphHaste
+    ctlMultiGraph graphHaste
     {
       get
       {
@@ -191,7 +238,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphHP
+    ctlMultiGraph graphHP
     {
       get
       {
@@ -203,7 +250,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphMaxEnd
+    ctlMultiGraph graphMaxEnd
     {
       get
       {
@@ -215,7 +262,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphMovement
+    ctlMultiGraph graphMovement
     {
       get
       {
@@ -227,7 +274,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphRec
+    ctlMultiGraph graphRec
     {
       get
       {
@@ -239,7 +286,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphRegen
+    ctlMultiGraph graphRegen
     {
       get
       {
@@ -251,7 +298,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphRes
+    ctlMultiGraph graphRes
     {
       get
       {
@@ -263,7 +310,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphSDeb
+    ctlMultiGraph graphSDeb
     {
       get
       {
@@ -275,7 +322,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphSProt
+    ctlMultiGraph graphSProt
     {
       get
       {
@@ -287,7 +334,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphSRes
+    ctlMultiGraph graphSRes
     {
       get
       {
@@ -299,7 +346,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphStealth
+    ctlMultiGraph graphStealth
     {
       get
       {
@@ -311,7 +358,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphThreat
+    ctlMultiGraph graphThreat
     {
       get
       {
@@ -323,7 +370,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph graphToHit
+    ctlMultiGraph graphToHit
     {
       get
       {
@@ -335,7 +382,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblDef
+    Label lblDef
     {
       get
       {
@@ -347,7 +394,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblMisc
+    Label lblMisc
     {
       get
       {
@@ -359,7 +406,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblMovement
+    Label lblMovement
     {
       get
       {
@@ -371,7 +418,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblRegenRec
+    Label lblRegenRec
     {
       get
       {
@@ -383,7 +430,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblRes
+    Label lblRes
     {
       get
       {
@@ -395,7 +442,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblSDeb
+    Label lblSDeb
     {
       get
       {
@@ -407,7 +454,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblSProt
+    Label lblSProt
     {
       get
       {
@@ -419,7 +466,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblSRes
+    Label lblSRes
     {
       get
       {
@@ -431,7 +478,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblStealth
+    Label lblStealth
     {
       get
       {
@@ -443,7 +490,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel1
+    Panel Panel1
     {
       get
       {
@@ -455,7 +502,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel2
+    Panel Panel2
     {
       get
       {
@@ -467,7 +514,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbClose
+    PictureBox pbClose
     {
       get
       {
@@ -490,7 +537,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbTopMost
+    PictureBox pbTopMost
     {
       get
       {
@@ -513,7 +560,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlDRHE
+    Panel pnlDRHE
     {
       get
       {
@@ -525,7 +572,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlMisc
+    Panel pnlMisc
     {
       get
       {
@@ -537,7 +584,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlStatus
+    Panel pnlStatus
     {
       get
       {
@@ -549,7 +596,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFPS
+    RadioButton rbFPS
     {
       get
       {
@@ -567,7 +614,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbKPH
+    RadioButton rbKPH
     {
       get
       {
@@ -585,7 +632,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbMPH
+    RadioButton rbMPH
     {
       get
       {
@@ -603,7 +650,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbMSec
+    RadioButton rbMSec
     {
       get
       {
@@ -621,7 +668,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox tab0
+    PictureBox tab0
     {
       get
       {
@@ -644,7 +691,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox tab1
+    PictureBox tab1
     {
       get
       {
@@ -667,7 +714,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox tab2
+    PictureBox tab2
     {
       get
       {
@@ -724,12 +771,14 @@ namespace Hero_Designer
       }
     }
 
-    private void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
+    void FrmTotalsFormClosed(object sender, FormClosedEventArgs e)
+
     {
       this._myParent.FloatTotals(false);
     }
 
-    private void FrmTotalsLoad(object sender, EventArgs e)
+    void FrmTotalsLoad(object sender, EventArgs e)
+
     {
       if (MainModule.MidsController.IsAppInitialized)
       {
@@ -753,12 +802,14 @@ namespace Hero_Designer
       this.SetFonts();
     }
 
-    private void FrmTotalsMove(object sender, EventArgs e)
+    void FrmTotalsMove(object sender, EventArgs e)
+
     {
       this.StoreLocation();
     }
 
-    private void FrmTotalsResize(object sender, EventArgs e)
+    void FrmTotalsResize(object sender, EventArgs e)
+
     {
       if (!this._loaded)
         return;
@@ -782,7 +833,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmTotals));
       this.lblDef = new Label();
@@ -1724,12 +1776,14 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void PbCloseClick(object sender, EventArgs e)
+    void PbCloseClick(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void PbClosePaint(object sender, PaintEventArgs e)
+    void PbClosePaint(object sender, PaintEventArgs e)
+
     {
       if (this._myParent == null || this._myParent.Drawing == null)
         return;
@@ -1756,14 +1810,16 @@ namespace Hero_Designer
       e.Graphics.DrawImage((Image) extendedBitmap.Bitmap, 0, 0);
     }
 
-    private void PbTopMostClick(object sender, EventArgs e)
+    void PbTopMostClick(object sender, EventArgs e)
+
     {
       this._keepOnTop = !this._keepOnTop;
       this.TopMost = this._keepOnTop;
       this.pbTopMost.Refresh();
     }
 
-    private void PbTopMostPaint(object sender, PaintEventArgs e)
+    void PbTopMostPaint(object sender, PaintEventArgs e)
+
     {
       if (this._myParent == null || this._myParent.Drawing == null)
         return;
@@ -1790,12 +1846,14 @@ namespace Hero_Designer
       e.Graphics.DrawImage((Image) extendedBitmap.Bitmap, 0, 0);
     }
 
-    private string PM(float iValue, string iFormat, string iSuff)
+    string PM(float iValue, string iFormat, string iSuff)
+
     {
       return (double) iValue >= 0.0 ? ((double) iValue <= 0.0 ? "+0" + iSuff : "+" + Strings.Format((object) iValue, iFormat) + iSuff) : Strings.Format((object) iValue, iFormat) + iSuff;
     }
 
-    private void RbSpeedCheckedChanged(object sender, EventArgs e)
+    void RbSpeedCheckedChanged(object sender, EventArgs e)
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1810,12 +1868,14 @@ namespace Hero_Designer
       this.UpdateData();
     }
 
-    private static void SetFontDataSingle(ref ctlMultiGraph iGraph)
+    static void SetFontDataSingle(ref ctlMultiGraph iGraph)
+
     {
       iGraph.Font = new Font(iGraph.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
     }
 
-    private void SetFonts()
+    void SetFonts()
+
     {
       ctlMultiGraph graphAcc = this.graphAcc;
       frmTotals.SetFontDataSingle(ref graphAcc);
@@ -1912,7 +1972,8 @@ namespace Hero_Designer
       this.FrmTotalsResize((object) this, new EventArgs());
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1922,43 +1983,50 @@ namespace Hero_Designer
       MainModule.MidsController.SzFrmTotals.Height = this.Height;
     }
 
-    private void Tab0Click(object sender, EventArgs e)
+    void Tab0Click(object sender, EventArgs e)
+
     {
       this.TabPageChange(0);
     }
 
-    private void Tab0Paint(object sender, PaintEventArgs e)
+    void Tab0Paint(object sender, PaintEventArgs e)
+
     {
       PictureBox tab0 = this.tab0;
       this.TabPaint(ref tab0, e, "Survival", this._tabPage == 0);
       this.tab0 = tab0;
     }
 
-    private void Tab1Click(object sender, EventArgs e)
+    void Tab1Click(object sender, EventArgs e)
+
     {
       this.TabPageChange(1);
     }
 
-    private void Tab1Paint(object sender, PaintEventArgs e)
+    void Tab1Paint(object sender, PaintEventArgs e)
+
     {
       PictureBox tab1 = this.tab1;
       this.TabPaint(ref tab1, e, "Misc Buffs", this._tabPage == 1);
       this.tab1 = tab1;
     }
 
-    private void Tab2Click(object sender, EventArgs e)
+    void Tab2Click(object sender, EventArgs e)
+
     {
       this.TabPageChange(2);
     }
 
-    private void Tab2Paint(object sender, PaintEventArgs e)
+    void Tab2Paint(object sender, PaintEventArgs e)
+
     {
       PictureBox tab2 = this.tab2;
       this.TabPaint(ref tab2, e, "Status", this._tabPage == 2);
       this.tab2 = tab2;
     }
 
-    private void TabPageChange(int index)
+    void TabPageChange(int index)
+
     {
       switch (index)
       {
@@ -1984,7 +2052,8 @@ namespace Hero_Designer
       this.tab2.Refresh();
     }
 
-    private void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
+    void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
+
     {
       if (this._myParent == null || this._myParent.Drawing == null)
         return;

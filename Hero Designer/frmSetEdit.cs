@@ -17,90 +17,130 @@ namespace Hero_Designer
   public class frmSetEdit : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnImage")]
-    private Button _btnImage;
+    Button _btnImage;
+
     [AccessedThroughProperty("btnNoImage")]
-    private Button _btnNoImage;
+    Button _btnNoImage;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnPaste")]
-    private Button _btnPaste;
+    Button _btnPaste;
+
     [AccessedThroughProperty("cbSetType")]
-    private ComboBox _cbSetType;
+    ComboBox _cbSetType;
+
     [AccessedThroughProperty("cbSlotCount")]
-    private ComboBox _cbSlotCount;
+    ComboBox _cbSlotCount;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
+    ColumnHeader _ColumnHeader4;
+
     [AccessedThroughProperty("gbBasic")]
-    private GroupBox _gbBasic;
+    GroupBox _gbBasic;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
+    GroupBox _GroupBox3;
+
     [AccessedThroughProperty("ilEnh")]
-    private ImageList _ilEnh;
+    ImageList _ilEnh;
+
     [AccessedThroughProperty("ImagePicker")]
-    private OpenFileDialog _ImagePicker;
+    OpenFileDialog _ImagePicker;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label16")]
-    private Label _Label16;
+    Label _Label16;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label27")]
-    private Label _Label27;
+    Label _Label27;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("lstBonus")]
-    private ListBox _lstBonus;
+    ListBox _lstBonus;
+
     [AccessedThroughProperty("lvBonusList")]
-    private ListView _lvBonusList;
+    ListView _lvBonusList;
+
     [AccessedThroughProperty("lvEnh")]
-    private ListView _lvEnh;
+    ListView _lvEnh;
+
     [AccessedThroughProperty("rbIfAny")]
-    private RadioButton _rbIfAny;
+    RadioButton _rbIfAny;
+
     [AccessedThroughProperty("rbIfCritter")]
-    private RadioButton _rbIfCritter;
+    RadioButton _rbIfCritter;
+
     [AccessedThroughProperty("rbIfPlayer")]
-    private RadioButton _rbIfPlayer;
+    RadioButton _rbIfPlayer;
+
     [AccessedThroughProperty("rtbBonus")]
-    private RichTextBox _rtbBonus;
+    RichTextBox _rtbBonus;
+
     [AccessedThroughProperty("txtAlternate")]
-    private TextBox _txtAlternate;
+    TextBox _txtAlternate;
+
     [AccessedThroughProperty("txtDesc")]
-    private TextBox _txtDesc;
+    TextBox _txtDesc;
+
     [AccessedThroughProperty("txtInternal")]
-    private TextBox _txtInternal;
+    TextBox _txtInternal;
+
     [AccessedThroughProperty("txtNameFull")]
-    private TextBox _txtNameFull;
+    TextBox _txtNameFull;
+
     [AccessedThroughProperty("txtNameShort")]
-    private TextBox _txtNameShort;
+    TextBox _txtNameShort;
+
     [AccessedThroughProperty("udMaxLevel")]
-    private NumericUpDown _udMaxLevel;
+    NumericUpDown _udMaxLevel;
+
     [AccessedThroughProperty("udMinLevel")]
-    private NumericUpDown _udMinLevel;
-    private IContainer components;
+    NumericUpDown _udMinLevel;
+
+    IContainer components;
+
     protected bool Loading;
     public EnhancementSet mySet;
     protected int[] SetBonusList;
     protected int[] SetBonusListPVP;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -118,7 +158,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImage
+    Button btnImage
     {
       get
       {
@@ -136,7 +176,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnNoImage
+    Button btnNoImage
     {
       get
       {
@@ -154,7 +194,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -172,7 +212,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPaste
+    Button btnPaste
     {
       get
       {
@@ -190,7 +230,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSetType
+    ComboBox cbSetType
     {
       get
       {
@@ -208,7 +248,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSlotCount
+    ComboBox cbSlotCount
     {
       get
       {
@@ -226,7 +266,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -238,7 +278,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -250,7 +290,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -262,7 +302,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -274,7 +314,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox gbBasic
+    GroupBox gbBasic
     {
       get
       {
@@ -286,7 +326,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -298,7 +338,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox3
+    GroupBox GroupBox3
     {
       get
       {
@@ -310,7 +350,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilEnh
+    ImageList ilEnh
     {
       get
       {
@@ -322,7 +362,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog ImagePicker
+    OpenFileDialog ImagePicker
     {
       get
       {
@@ -334,7 +374,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -346,7 +386,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label16
+    Label Label16
     {
       get
       {
@@ -358,7 +398,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -370,7 +410,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label27
+    Label Label27
     {
       get
       {
@@ -382,7 +422,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -394,7 +434,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -406,7 +446,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -418,7 +458,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -430,7 +470,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -442,7 +482,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lstBonus
+    ListBox lstBonus
     {
       get
       {
@@ -460,7 +500,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvBonusList
+    ListView lvBonusList
     {
       get
       {
@@ -483,7 +523,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvEnh
+    ListView lvEnh
     {
       get
       {
@@ -495,7 +535,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfAny
+    RadioButton rbIfAny
     {
       get
       {
@@ -507,7 +547,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfCritter
+    RadioButton rbIfCritter
     {
       get
       {
@@ -519,7 +559,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfPlayer
+    RadioButton rbIfPlayer
     {
       get
       {
@@ -531,7 +571,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RichTextBox rtbBonus
+    RichTextBox rtbBonus
     {
       get
       {
@@ -543,7 +583,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtAlternate
+    TextBox txtAlternate
     {
       get
       {
@@ -561,7 +601,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDesc
+    TextBox txtDesc
     {
       get
       {
@@ -579,7 +619,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtInternal
+    TextBox txtInternal
     {
       get
       {
@@ -597,7 +637,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNameFull
+    TextBox txtNameFull
     {
       get
       {
@@ -615,7 +655,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNameShort
+    TextBox txtNameShort
     {
       get
       {
@@ -633,7 +673,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udMaxLevel
+    NumericUpDown udMaxLevel
     {
       get
       {
@@ -656,7 +696,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udMinLevel
+    NumericUpDown udMinLevel
     {
       get
       {
@@ -694,13 +734,15 @@ namespace Hero_Designer
       return this.cbSlotCount.SelectedIndex;
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnImage_Click(object sender, EventArgs e)
+    void btnImage_Click(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -721,13 +763,15 @@ namespace Hero_Designer
       }
     }
 
-    private void btnNoImage_Click(object sender, EventArgs e)
+    void btnNoImage_Click(object sender, EventArgs e)
+
     {
       this.mySet.Image = "";
       this.DisplayIcon();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.mySet.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
       this.mySet.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
@@ -735,7 +779,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnPaste_Click(object sender, EventArgs e)
+    void btnPaste_Click(object sender, EventArgs e)
+
     {
       string str = Conversions.ToString(Clipboard.GetData("System.String"));
       char[] chArray = new char[1]{ '^' };
@@ -766,14 +811,16 @@ namespace Hero_Designer
       this.DisplayBonusText();
     }
 
-    private void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.mySet.SetType = (Enums.eSetType) this.cbSetType.SelectedIndex;
     }
 
-    private void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -865,7 +912,8 @@ namespace Hero_Designer
       this.rtbBonus.Rtf = str1 + RTF.EndRTF();
     }
 
-    private void DisplayIcon()
+    void DisplayIcon()
+
     {
       if (this.mySet.Image != "")
       {
@@ -1035,7 +1083,8 @@ namespace Hero_Designer
       }
     }
 
-    private void frmSetEdit_Load(object sender, EventArgs e)
+    void frmSetEdit_Load(object sender, EventArgs e)
+
     {
       if (MidsContext.Config.MasterMode)
         this.btnPaste.Visible = true;
@@ -1052,7 +1101,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer)new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSetEdit));
@@ -1477,7 +1527,8 @@ namespace Hero_Designer
       return this.cbSlotCount.SelectedIndex >= this.mySet.Enhancements.Length - 1 & this.cbSlotCount.SelectedIndex < this.mySet.Enhancements.Length + this.mySet.Enhancements.Length - 1;
     }
 
-    private void lstBonus_DoubleClick(object sender, EventArgs e)
+    void lstBonus_DoubleClick(object sender, EventArgs e)
+
     {
       if (this.lstBonus.SelectedIndex < 0)
         return;
@@ -1537,7 +1588,8 @@ namespace Hero_Designer
       this.DisplayBonusText();
     }
 
-    private void lvBonusList_DoubleClick(object sender, EventArgs e)
+    void lvBonusList_DoubleClick(object sender, EventArgs e)
+
     {
       if (this.lvBonusList.SelectedIndices.Count < 1)
         return;
@@ -1568,7 +1620,8 @@ namespace Hero_Designer
       }
     }
 
-    private void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
+    void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
+
     {
     }
 
@@ -1595,7 +1648,8 @@ namespace Hero_Designer
       return this.cbSlotCount.SelectedIndex - (this.mySet.Enhancements.Length - 1);
     }
 
-    private void txtAlternate_TextChanged(object sender, EventArgs e)
+    void txtAlternate_TextChanged(object sender, EventArgs e)
+
     {
       if (this.isBonus())
         this.mySet.Bonus[this.BonusID()].AltString = this.txtAlternate.Text;
@@ -1604,41 +1658,47 @@ namespace Hero_Designer
       this.DisplayBonusText();
     }
 
-    private void txtDesc_TextChanged(object sender, EventArgs e)
+    void txtDesc_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.mySet.Desc = this.txtDesc.Text;
     }
 
-    private void txtInternal_TextChanged(object sender, EventArgs e)
+    void txtInternal_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.mySet.Uid = this.txtInternal.Text;
     }
 
-    private void txtNameFull_TextChanged(object sender, EventArgs e)
+    void txtNameFull_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.mySet.DisplayName = this.txtNameFull.Text;
     }
 
-    private void txtNameShort_TextChanged(object sender, EventArgs e)
+    void txtNameShort_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.mySet.ShortName = this.txtNameShort.Text;
     }
 
-    private void udMaxLevel_Leave(object sender, EventArgs e)
+    void udMaxLevel_Leave(object sender, EventArgs e)
+
     {
       this.SetMaxLevel((int) Math.Round(Conversion.Val(this.udMaxLevel.Text)));
       this.mySet.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
     }
 
-    private void udMaxLevel_ValueChanged(object sender, EventArgs e)
+    void udMaxLevel_ValueChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1646,13 +1706,15 @@ namespace Hero_Designer
       this.udMinLevel.Maximum = this.udMaxLevel.Value;
     }
 
-    private void udMinLevel_Leave(object sender, EventArgs e)
+    void udMinLevel_Leave(object sender, EventArgs e)
+
     {
       this.SetMinLevel((int) Math.Round(Conversion.Val(this.udMinLevel.Text)));
       this.mySet.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
     }
 
-    private void udMinLevel_ValueChanged(object sender, EventArgs e)
+    void udMinLevel_ValueChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;

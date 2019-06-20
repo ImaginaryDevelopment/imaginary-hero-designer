@@ -4,22 +4,32 @@ using System.Windows.Forms;
 
 public static class OS
 {
-  private const int Windows2000Major = 5;
-  private const int Windows2000Minor = 0;
-  private const int WindowsXpMajor = 5;
-  private const int WindowsXpMinor = 1;
-  private const int Windows2003Major = 5;
-  private const int Windows2003Minor = 2;
-  private const int WindowsVistaMajor = 6;
-  private const int WindowsVistaMinor = 0;
+  const int Windows2000Major = 5;
+
+  const int Windows2000Minor = 0;
+
+  const int WindowsXpMajor = 5;
+
+  const int WindowsXpMinor = 1;
+
+  const int Windows2003Major = 5;
+
+  const int Windows2003Minor = 2;
+
+  const int WindowsVistaMajor = 6;
+
+  const int WindowsVistaMinor = 0;
+
   public const string SaveFolderName = "Hero & Villain Builds";
 
-  private static string AddSlash(string iPath)
+  static string AddSlash(string iPath)
+
   {
     return !iPath.EndsWith("\\") ? iPath + "\\" : iPath;
   }
 
-  private static OS.WindowsVersion GetWindowsVersion()
+  static OS.WindowsVersion GetWindowsVersion()
+
   {
     return Environment.OSVersion.Platform != PlatformID.Unix ? (Environment.OSVersion.Version.Major >= 5 ? (!(Environment.OSVersion.Version.Major == 5 & Environment.OSVersion.Version.Minor == 0) ? (!(Environment.OSVersion.Version.Major == 5 & Environment.OSVersion.Version.Minor == 1) ? (!(Environment.OSVersion.Version.Major == 5 & Environment.OSVersion.Version.Minor == 2) ? (!(Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor == 0) ? (!(Environment.OSVersion.Version.Major >= 6 & Environment.OSVersion.Version.Minor >= 0) ? OS.WindowsVersion.WinXP : OS.WindowsVersion.NewerThanVista) : OS.WindowsVersion.Vista) : OS.WindowsVersion.Win2K3) : OS.WindowsVersion.WinXP) : OS.WindowsVersion.Win2K) : OS.WindowsVersion.OlderThan2K) : OS.WindowsVersion.WinXP;
   }
@@ -64,7 +74,8 @@ public static class OS
     return str2;
   }
 
-  private enum WindowsVersion
+  enum WindowsVersion
+
   {
     OlderThan2K,
     Win2K,

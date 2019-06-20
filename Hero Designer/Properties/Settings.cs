@@ -9,7 +9,8 @@ namespace Properties
   [GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
   internal sealed class Settings : ApplicationSettingsBase
   {
-    private static Settings defaultInstance = (Settings) SettingsBase.Synchronized((SettingsBase) new Settings());
+    static Settings defaultInstance = (Settings) SettingsBase.Synchronized((SettingsBase) new Settings());
+
 
     public static Settings Default
     {

@@ -145,7 +145,8 @@ public static class FileIO
     return flag;
   }
 
-  private static bool FolderCopy(DirectoryInfo iDi, string dest)
+  static bool FolderCopy(DirectoryInfo iDi, string dest)
+
   {
     DirectoryInfo[] directories = iDi.GetDirectories();
     FileInfo[] files = iDi.GetFiles();

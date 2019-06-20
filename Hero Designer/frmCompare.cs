@@ -17,46 +17,67 @@ namespace Hero_Designer
   public class frmCompare : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private ImageButton _btnClose;
+    ImageButton _btnClose;
+
     [AccessedThroughProperty("btnTweakMatch")]
-    private Button _btnTweakMatch;
+    Button _btnTweakMatch;
+
     [AccessedThroughProperty("cbAT1")]
-    private ComboBox _cbAT1;
+    ComboBox _cbAT1;
+
     [AccessedThroughProperty("cbAT2")]
-    private ComboBox _cbAT2;
+    ComboBox _cbAT2;
+
     [AccessedThroughProperty("cbSet1")]
-    private ComboBox _cbSet1;
+    ComboBox _cbSet1;
+
     [AccessedThroughProperty("cbSet2")]
-    private ComboBox _cbSet2;
+    ComboBox _cbSet2;
+
     [AccessedThroughProperty("cbType1")]
-    private ComboBox _cbType1;
+    ComboBox _cbType1;
+
     [AccessedThroughProperty("cbType2")]
-    private ComboBox _cbType2;
+    ComboBox _cbType2;
+
     [AccessedThroughProperty("chkMatching")]
-    private CheckBox _chkMatching;
+    CheckBox _chkMatching;
+
     [AccessedThroughProperty("chkOnTop")]
-    private ImageButton _chkOnTop;
+    ImageButton _chkOnTop;
+
     [AccessedThroughProperty("Graph")]
-    private ctlMultiGraph _Graph;
+    ctlMultiGraph _Graph;
+
     [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
+    GroupBox _GroupBox1;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
+    GroupBox _GroupBox4;
+
     [AccessedThroughProperty("lblKeyColor1")]
-    private Label _lblKeyColor1;
+    Label _lblKeyColor1;
+
     [AccessedThroughProperty("lblKeyColor2")]
-    private Label _lblKeyColor2;
+    Label _lblKeyColor2;
+
     [AccessedThroughProperty("lblScale")]
-    private Label _lblScale;
+    Label _lblScale;
+
     [AccessedThroughProperty("lstDisplay")]
-    private ListBox _lstDisplay;
+    ListBox _lstDisplay;
+
     [AccessedThroughProperty("tbScaleX")]
-    private TrackBar _tbScaleX;
+    TrackBar _tbScaleX;
+
     [AccessedThroughProperty("tTip")]
-    private ToolTip _tTip;
-    private IContainer components;
+    ToolTip _tTip;
+
+    IContainer components;
+
     protected string[] DisplayValueStrings;
     protected float GraphMax;
     protected bool Loaded;
@@ -67,7 +88,7 @@ namespace Hero_Designer
     protected string[][] Tips;
     protected float[][] Values;
 
-    internal virtual ImageButton btnClose
+    ImageButton btnClose
     {
       get
       {
@@ -90,7 +111,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnTweakMatch
+    Button btnTweakMatch
     {
       get
       {
@@ -108,7 +129,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAT1
+    ComboBox cbAT1
     {
       get
       {
@@ -126,7 +147,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAT2
+    ComboBox cbAT2
     {
       get
       {
@@ -144,7 +165,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSet1
+    ComboBox cbSet1
     {
       get
       {
@@ -162,7 +183,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSet2
+    ComboBox cbSet2
     {
       get
       {
@@ -180,7 +201,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbType1
+    ComboBox cbType1
     {
       get
       {
@@ -198,7 +219,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbType2
+    ComboBox cbType2
     {
       get
       {
@@ -216,7 +237,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkMatching
+    CheckBox chkMatching
     {
       get
       {
@@ -234,7 +255,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton chkOnTop
+    ImageButton chkOnTop
     {
       get
       {
@@ -252,7 +273,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph Graph
+    ctlMultiGraph Graph
     {
       get
       {
@@ -270,7 +291,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
+    GroupBox GroupBox1
     {
       get
       {
@@ -282,7 +303,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -294,7 +315,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox4
+    GroupBox GroupBox4
     {
       get
       {
@@ -306,7 +327,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblKeyColor1
+    Label lblKeyColor1
     {
       get
       {
@@ -318,7 +339,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblKeyColor2
+    Label lblKeyColor2
     {
       get
       {
@@ -330,7 +351,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblScale
+    Label lblScale
     {
       get
       {
@@ -342,7 +363,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lstDisplay
+    ListBox lstDisplay
     {
       get
       {
@@ -360,7 +381,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TrackBar tbScaleX
+    TrackBar tbScaleX
     {
       get
       {
@@ -378,7 +399,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ToolTip tTip
+    ToolTip tTip
     {
       get
       {
@@ -434,36 +455,42 @@ namespace Hero_Designer
       this.myParent = iFrm;
     }
 
-    private void btnClose_ButtonClicked()
+    void btnClose_ButtonClicked()
+
     {
       this.Close();
     }
 
-    private void btnClose_Load(object sender, EventArgs e)
+    void btnClose_Load(object sender, EventArgs e)
+
     {
     }
 
-    private void btnTweakMatch_Click(object sender, EventArgs e)
+    void btnTweakMatch_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmTweakMatching().ShowDialog((IWin32Window) this);
       this.DisplayGraph();
     }
 
-    private void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.List_Sets(0);
     }
 
-    private void cbAT2_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAT2_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.List_Sets(1);
     }
 
-    private void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -471,7 +498,8 @@ namespace Hero_Designer
       this.DisplayGraph();
     }
 
-    private void cbSet2_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSet2_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -479,21 +507,24 @@ namespace Hero_Designer
       this.DisplayGraph();
     }
 
-    private void cbType1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbType1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.List_Sets(0);
     }
 
-    private void cbType2_SelectedIndexChanged(object sender, EventArgs e)
+    void cbType2_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.List_Sets(1);
     }
 
-    private void chkMatching_CheckedChanged(object sender, EventArgs e)
+    void chkMatching_CheckedChanged(object sender, EventArgs e)
+
     {
       this.Matching = this.chkMatching.Checked;
       if (!this.Loaded)
@@ -501,7 +532,8 @@ namespace Hero_Designer
       this.DisplayGraph();
     }
 
-    private void chkOnTop_CheckedChanged()
+    void chkOnTop_CheckedChanged()
+
     {
       this.TopMost = this.chkOnTop.Checked;
     }
@@ -659,19 +691,22 @@ namespace Hero_Designer
       lstDisplay.EndUpdate();
     }
 
-    private void frmCompare_FormClosed(object sender, FormClosedEventArgs e)
+    void frmCompare_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.myParent.FloatCompareGraph(false);
     }
 
-    private void frmCompare_KeyDown(object sender, KeyEventArgs e)
+    void frmCompare_KeyDown(object sender, KeyEventArgs e)
+
     {
       if (!(e.Control & e.Shift & e.KeyCode == System.Windows.Forms.Keys.T))
         return;
       this.btnTweakMatch.Visible = true;
     }
 
-    private void frmCompare_Load(object sender, EventArgs e)
+    void frmCompare_Load(object sender, EventArgs e)
+
     {
       this.FillDisplayList();
       this.UpdateData();
@@ -692,17 +727,20 @@ namespace Hero_Designer
       this.tTip.SetToolTip((Control) this.chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
     }
 
-    private void frmCompare_Move(object sender, EventArgs e)
+    void frmCompare_Move(object sender, EventArgs e)
+
     {
       this.StoreLocation();
     }
 
-    private void frmCompare_Resize(object sender, EventArgs e)
+    void frmCompare_Resize(object sender, EventArgs e)
+
     {
       this.StoreLocation();
     }
 
-    private void frmCompare_VisibleChanged(object sender, EventArgs e)
+    void frmCompare_VisibleChanged(object sender, EventArgs e)
+
     {
       this.Graph.BackColor = this.BackColor;
     }
@@ -865,12 +903,14 @@ namespace Hero_Designer
       return str2;
     }
 
-    private void Graph_Load(object sender, EventArgs e)
+    void Graph_Load(object sender, EventArgs e)
+
     {
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmCompare));
@@ -1138,7 +1178,8 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void list_AT()
+    void list_AT()
+
     {
       this.cbAT1.BeginUpdate();
       this.cbAT1.Items.Clear();
@@ -1218,7 +1259,8 @@ namespace Hero_Designer
       this.cbType2.EndUpdate();
     }
 
-    private void lstDisplay_SelectedIndexChanged(object sender, EventArgs e)
+    void lstDisplay_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -1622,7 +1664,8 @@ namespace Hero_Designer
       while (index1 <= 1);
     }
 
-    private void ResetScale()
+    void ResetScale()
+
     {
       this.tbScaleX.Value = 10;
       this.Graph.Max = this.GraphMax;
@@ -1642,12 +1685,14 @@ namespace Hero_Designer
       this.Left = rectangle.X;
     }
 
-    private void SetScaleLabel()
+    void SetScaleLabel()
+
     {
       this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1655,7 +1700,8 @@ namespace Hero_Designer
       MainModule.MidsController.SzFrmCompare.Y = this.Top;
     }
 
-    private void tbScaleX_Scroll(object sender, EventArgs e)
+    void tbScaleX_Scroll(object sender, EventArgs e)
+
     {
       this.Graph.ScaleIndex = this.tbScaleX.Value;
       this.SetScaleLabel();

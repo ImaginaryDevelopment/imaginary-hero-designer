@@ -17,65 +17,94 @@ namespace Hero_Designer
   public class frmDPSCalc : Form
   {
     [AccessedThroughProperty("chkSortByLevel")]
-    private CheckBox _chkSortByLevel;
+    CheckBox _chkSortByLevel;
+
     [AccessedThroughProperty("chkDamageBuffs")]
-    private CheckBox _chkDamageBuffs;
+    CheckBox _chkDamageBuffs;
+
     [AccessedThroughProperty("chPower")]
-    private ColumnHeader _chPower;
+    ColumnHeader _chPower;
+
     [AccessedThroughProperty("chDPA")]
-    private ColumnHeader _chDPA;
+    ColumnHeader _chDPA;
+
     [AccessedThroughProperty("chDamage")]
-    private ColumnHeader _chDamage;
+    ColumnHeader _chDamage;
+
     [AccessedThroughProperty("chRecharge")]
-    private ColumnHeader _chRecharge;
+    ColumnHeader _chRecharge;
+
     [AccessedThroughProperty("chAnimation")]
-    private ColumnHeader _chAnimation;
+    ColumnHeader _chAnimation;
+
     [AccessedThroughProperty("chEndurance")]
-    private ColumnHeader _chEndurance;
+    ColumnHeader _chEndurance;
+
     [AccessedThroughProperty("chDamageBuff")]
-    private ColumnHeader _chDamageBuff;
+    ColumnHeader _chDamageBuff;
+
     [AccessedThroughProperty("chResistanceDebuff")]
-    private ColumnHeader _chResistanceDebuff;
+    ColumnHeader _chResistanceDebuff;
+
     [AccessedThroughProperty("chBuildID")]
-    private ColumnHeader _chBuildID;
+    ColumnHeader _chBuildID;
+
     [AccessedThroughProperty("ibClear")]
-    private ImageButton _ibClear;
+    ImageButton _ibClear;
+
     [AccessedThroughProperty("ibClose")]
-    private ImageButton _ibClose;
+    ImageButton _ibClose;
+
     [AccessedThroughProperty("ibAutoMode")]
-    private ImageButton _ibAutoMode;
+    ImageButton _ibAutoMode;
+
     [AccessedThroughProperty("ibTopmost")]
-    private ImageButton _ibTopmost;
+    ImageButton _ibTopmost;
+
     [AccessedThroughProperty("ilAttackChain")]
-    private ImageList _ilAttackChain;
+    ImageList _ilAttackChain;
+
     [AccessedThroughProperty("lblHeader")]
-    private Label _lblHeader;
+    Label _lblHeader;
+
     [AccessedThroughProperty("lblDPS")]
-    private Label _lblDPS;
+    Label _lblDPS;
+
     [AccessedThroughProperty("lblEPS")]
-    private Label _lblEPS;
+    Label _lblEPS;
+
     [AccessedThroughProperty("lblDPSNum")]
-    private Label _lblDPSNum;
+    Label _lblDPSNum;
+
     [AccessedThroughProperty("lblEPSNum")]
-    private Label _lblEPSNum;
+    Label _lblEPSNum;
+
     [AccessedThroughProperty("tbDPSOutput")]
-    private TextBox _tbDPSOutput;
+    TextBox _tbDPSOutput;
+
     [AccessedThroughProperty("lvPower")]
-    private ListView _lvPower;
+    ListView _lvPower;
+
     [AccessedThroughProperty("Panel1")]
-    private Panel _Panel1;
+    Panel _Panel1;
+
     [AccessedThroughProperty("Panel2")]
-    private Panel _Panel2;
+    Panel _Panel2;
+
     [AccessedThroughProperty("ToolTip1")]
-    private ToolTip _ToolTip1;
+    ToolTip _ToolTip1;
+
     protected ExtendedBitmap bxRecipe;
-    private IContainer components;
+    IContainer components;
+
     protected bool Loading;
     protected frmMain myParent;
-    private frmDPSCalc.PowerList[] GlobalPowerList;
-    private float GlobalDamageBuff;
+    frmDPSCalc.PowerList[] GlobalPowerList;
 
-    internal virtual CheckBox chkSortByLevel
+    float GlobalDamageBuff;
+
+
+    CheckBox chkSortByLevel
     {
       get
       {
@@ -93,7 +122,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkDamageBuffs
+    CheckBox chkDamageBuffs
     {
       get
       {
@@ -105,7 +134,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chPower
+    ColumnHeader chPower
     {
       get
       {
@@ -117,7 +146,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chDPA
+    ColumnHeader chDPA
     {
       get
       {
@@ -129,7 +158,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chDamage
+    ColumnHeader chDamage
     {
       get
       {
@@ -141,7 +170,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chRecharge
+    ColumnHeader chRecharge
     {
       get
       {
@@ -153,7 +182,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chAnimation
+    ColumnHeader chAnimation
     {
       get
       {
@@ -165,7 +194,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chEndurance
+    ColumnHeader chEndurance
     {
       get
       {
@@ -177,7 +206,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chDamageBuff
+    ColumnHeader chDamageBuff
     {
       get
       {
@@ -189,7 +218,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chResistanceDebuff
+    ColumnHeader chResistanceDebuff
     {
       get
       {
@@ -201,7 +230,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chBuildID
+    ColumnHeader chBuildID
     {
       get
       {
@@ -213,7 +242,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibClear
+    ImageButton ibClear
     {
       get
       {
@@ -231,7 +260,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibClose
+    ImageButton ibClose
     {
       get
       {
@@ -249,7 +278,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibAutoMode
+    ImageButton ibAutoMode
     {
       get
       {
@@ -267,7 +296,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibTopmost
+    ImageButton ibTopmost
     {
       get
       {
@@ -285,7 +314,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilAttackChain
+    ImageList ilAttackChain
     {
       get
       {
@@ -297,7 +326,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblHeader
+    Label lblHeader
     {
       get
       {
@@ -309,7 +338,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblDPS
+    Label lblDPS
     {
       get
       {
@@ -321,7 +350,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblEPS
+    Label lblEPS
     {
       get
       {
@@ -333,7 +362,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblDPSNum
+    Label lblDPSNum
     {
       get
       {
@@ -345,7 +374,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblEPSNum
+    Label lblEPSNum
     {
       get
       {
@@ -357,7 +386,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox tbDPSOutput
+    TextBox tbDPSOutput
     {
       get
       {
@@ -369,7 +398,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPower
+    ListView lvPower
     {
       get
       {
@@ -395,7 +424,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel1
+    Panel Panel1
     {
       get
       {
@@ -407,7 +436,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel2
+    Panel Panel2
     {
       get
       {
@@ -419,7 +448,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ToolTip ToolTip1
+    ToolTip ToolTip1
     {
       get
       {
@@ -441,11 +470,13 @@ namespace Hero_Designer
       this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
     }
 
-    private void chkRecipe_CheckedChanged(object sender, EventArgs e)
+    void chkRecipe_CheckedChanged(object sender, EventArgs e)
+
     {
     }
 
-    private void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
+    void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
+
     {
       this.FillPowerList();
     }
@@ -465,7 +496,8 @@ namespace Hero_Designer
       }
     }
 
-    private void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
+    void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
+
     {
       if (this.chkSortByLevel.Checked)
       {
@@ -497,7 +529,8 @@ namespace Hero_Designer
       this.tbDPSOutput.Text = str1;
     }
 
-    private void FillPowerList()
+    void FillPowerList()
+
     {
       this.GlobalDamageBuff = 0.0f;
       this.lvPower.BeginUpdate();
@@ -539,13 +572,15 @@ namespace Hero_Designer
       this.lvPower.EndUpdate();
     }
 
-    private void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
+    void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.StoreLocation();
       this.myParent.FloatDPSCalc(false);
     }
 
-    private void frmDPSCalc_Load(object sender, EventArgs e)
+    void frmDPSCalc_Load(object sender, EventArgs e)
+
     {
       this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
       this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
@@ -556,7 +591,8 @@ namespace Hero_Designer
       this.Loading = false;
     }
 
-    private void ibClear_ButtonClicked()
+    void ibClear_ButtonClicked()
+
     {
       this.ibClear.Checked = true;
       for (int index = 1; index < this.lvPower.Items.Count; ++index)
@@ -575,12 +611,14 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void ibClose_ButtonClicked()
+    void ibClose_ButtonClicked()
+
     {
       this.Close();
     }
 
-    private void ibAutoMode_ButtonClicked()
+    void ibAutoMode_ButtonClicked()
+
     {
       if (this.ibAutoMode.TextOff == "Automagical")
       {
@@ -620,7 +658,8 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void ibTopmost_ButtonClicked()
+    void ibTopmost_ButtonClicked()
+
     {
       this.TopMost = this.ibTopmost.Checked;
       if (!this.TopMost)
@@ -628,7 +667,8 @@ namespace Hero_Designer
       this.BringToFront();
     }
 
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.GlobalPowerList = new frmDPSCalc.PowerList[0];
       this.components = (IContainer) new Container();
@@ -885,7 +925,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
+    void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
+
     {
       if (e.Item.Index == 0)
       {
@@ -901,7 +942,8 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
+    void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
+
     {
       if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
       {
@@ -936,12 +978,14 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void lvPower_MouseEnter(object sender, EventArgs e)
+    void lvPower_MouseEnter(object sender, EventArgs e)
+
     {
       this.lvPower.Focus();
     }
 
-    private static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
+    static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
+
     {
       int num = tl.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -982,7 +1026,8 @@ namespace Hero_Designer
       this.Width = rectangle.Width;
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1010,7 +1055,8 @@ namespace Hero_Designer
       this.FillPowerList();
     }
 
-    private string[] GetDamageData(int powerLocation)
+    string[] GetDamageData(int powerLocation)
+
     {
       IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
       float damageValue = enhancedPower.FXGetDamageValue();
@@ -1050,12 +1096,14 @@ namespace Hero_Designer
       return strArray;
     }
 
-    private void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
+    void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
+
     {
       this.lvPower.Sort();
     }
 
-    private frmDPSCalc.PowerList[] IncrementRecharge(
+    frmDPSCalc.PowerList[] IncrementRecharge(
+
       frmDPSCalc.PowerList[] List,
       float Time)
     {
@@ -1067,7 +1115,8 @@ namespace Hero_Designer
       return List;
     }
 
-    private void CalculateDPS()
+    void CalculateDPS()
+
     {
       if (this.ibAutoMode.TextOff == "Automagical")
       {
@@ -1239,7 +1288,8 @@ namespace Hero_Designer
       }
     }
 
-    private struct CountingList
+    struct CountingList
+
     {
       public string Text;
       public int Count;

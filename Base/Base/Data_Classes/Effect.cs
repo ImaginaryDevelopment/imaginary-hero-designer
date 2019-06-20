@@ -10,7 +10,8 @@ namespace Base.Data_Classes
 {
   public class Effect : IEffect, IComparable, ICloneable
   {
-    private static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
+    static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
+
 
     public string MagnitudeExpression { get; set; }
 
@@ -248,7 +249,8 @@ namespace Base.Data_Classes
       }
     }
 
-    private int? SummonId { get; set; }
+    int? SummonId { get; set; }
+
 
     public int Ticks { get; set; }
 
@@ -334,7 +336,8 @@ namespace Base.Data_Classes
       }
     }
 
-    private int? OverrideId { get; set; }
+    int? OverrideId { get; set; }
+
 
     public bool isDamage()
     {
@@ -512,7 +515,8 @@ namespace Base.Data_Classes
       return str5.Trim() + iStr + str4;
     }
 
-    private static string BuildCs(string iValue, string iStr, bool noComma = false)
+    static string BuildCs(string iValue, string iStr, bool noComma = false)
+
     {
       if (!string.IsNullOrEmpty(iValue))
       {
@@ -1472,7 +1476,8 @@ label_101:
       return MidsContext.Archetype == null || (this.PvMode != Enums.ePvX.PvP && MidsContext.Config.Inc.PvE || this.PvMode != Enums.ePvX.PvE && !MidsContext.Config.Inc.PvE) && (this.nIDClassName == -1 || this.nIDClassName == MidsContext.Archetype.Idx);
     }
 
-    private float ParseMagnitudeExpression()
+    float ParseMagnitudeExpression()
+
     {
       float num1;
       if (this.MagnitudeExpression.IndexOf(".8 rechargetime power.base> 1 30 minmax * 1.8 + 2 * @StdResult * 10 / areafactor power.base> /", StringComparison.OrdinalIgnoreCase) > -1)
@@ -1521,7 +1526,8 @@ label_101:
       return (object) new Effect((IEffect) this);
     }
 
-    private Effect()
+    Effect()
+
     {
       this.BaseProbability = 1f;
       this.MagnitudeExpression = string.Empty;
@@ -1608,7 +1614,8 @@ label_101:
       DatabaseAPI.Database.EffectIds.Add((object) this.EffectId);
     }
 
-    private Effect(IEffect template)
+    Effect(IEffect template)
+
       : this()
     {
       this.PowerFullName = template.PowerFullName;

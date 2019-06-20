@@ -5,7 +5,8 @@ using System.Windows.Forms;
 
 public class ZStatus : Form
 {
-  private IContainer components;
+  IContainer components;
+
   internal Label lblStatus2;
   internal Label lblStatus1;
   internal Label lblTitle;
@@ -44,7 +45,8 @@ public class ZStatus : Form
     base.Dispose(disposing);
   }
 
-  private void InitializeComponent()
+  void InitializeComponent()
+
   {
     ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (ZStatus));
     this.lblStatus2 = new Label();

@@ -16,96 +16,140 @@ namespace Hero_Designer
   public class frmEditPowerset : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnClearIcon")]
-    private Button _btnClearIcon;
+    Button _btnClearIcon;
+
     [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
+    Button _btnClose;
+
     [AccessedThroughProperty("btnIcon")]
-    private Button _btnIcon;
+    Button _btnIcon;
+
     [AccessedThroughProperty("cbAT")]
-    private ComboBox _cbAT;
+    ComboBox _cbAT;
+
     [AccessedThroughProperty("cbLinkGroup")]
-    private ComboBox _cbLinkGroup;
+    ComboBox _cbLinkGroup;
+
     [AccessedThroughProperty("cbLinkSet")]
-    private ComboBox _cbLinkSet;
+    ComboBox _cbLinkSet;
+
     [AccessedThroughProperty("cbMutexGroup")]
-    private ComboBox _cbMutexGroup;
+    ComboBox _cbMutexGroup;
+
     [AccessedThroughProperty("cbNameGroup")]
-    private ComboBox _cbNameGroup;
+    ComboBox _cbNameGroup;
+
     [AccessedThroughProperty("cbSetType")]
-    private ComboBox _cbSetType;
+    ComboBox _cbSetType;
+
     [AccessedThroughProperty("cbTrunkGroup")]
-    private ComboBox _cbTrunkGroup;
+    ComboBox _cbTrunkGroup;
+
     [AccessedThroughProperty("cbTrunkSet")]
-    private ComboBox _cbTrunkSet;
+    ComboBox _cbTrunkSet;
+
     [AccessedThroughProperty("chkNoLink")]
-    private CheckBox _chkNoLink;
+    CheckBox _chkNoLink;
+
     [AccessedThroughProperty("chkNoTrunk")]
-    private CheckBox _chkNoTrunk;
+    CheckBox _chkNoTrunk;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("gbLink")]
-    private GroupBox _gbLink;
+    GroupBox _gbLink;
+
     [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
+    GroupBox _GroupBox1;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
+    GroupBox _GroupBox3;
+
     [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
+    GroupBox _GroupBox4;
+
     [AccessedThroughProperty("GroupBox5")]
-    private GroupBox _GroupBox5;
+    GroupBox _GroupBox5;
+
     [AccessedThroughProperty("ImagePicker")]
-    private OpenFileDialog _ImagePicker;
+    OpenFileDialog _ImagePicker;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label22")]
-    private Label _Label22;
+    Label _Label22;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label31")]
-    private Label _Label31;
+    Label _Label31;
+
     [AccessedThroughProperty("Label33")]
-    private Label _Label33;
+    Label _Label33;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("Label8")]
-    private Label _Label8;
+    Label _Label8;
+
     [AccessedThroughProperty("lblNameFull")]
-    private Label _lblNameFull;
+    Label _lblNameFull;
+
     [AccessedThroughProperty("lblNameUnique")]
-    private Label _lblNameUnique;
+    Label _lblNameUnique;
+
     [AccessedThroughProperty("lvMutexSets")]
-    private ListBox _lvMutexSets;
+    ListBox _lvMutexSets;
+
     [AccessedThroughProperty("lvPowers")]
-    private ListView _lvPowers;
+    ListView _lvPowers;
+
     [AccessedThroughProperty("picIcon")]
-    private PictureBox _picIcon;
+    PictureBox _picIcon;
+
     [AccessedThroughProperty("txtDesc")]
-    private TextBox _txtDesc;
+    TextBox _txtDesc;
+
     [AccessedThroughProperty("txtName")]
-    private TextBox _txtName;
+    TextBox _txtName;
+
     [AccessedThroughProperty("txtNameSet")]
-    private TextBox _txtNameSet;
-    private IContainer components;
+    TextBox _txtNameSet;
+
+    IContainer components;
+
     protected bool Loading;
     public IPowerset myPS;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -123,7 +167,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClearIcon
+    Button btnClearIcon
     {
       get
       {
@@ -141,7 +185,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClose
+    Button btnClose
     {
       get
       {
@@ -159,7 +203,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnIcon
+    Button btnIcon
     {
       get
       {
@@ -177,7 +221,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAT
+    ComboBox cbAT
     {
       get
       {
@@ -195,7 +239,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbLinkGroup
+    ComboBox cbLinkGroup
     {
       get
       {
@@ -213,7 +257,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbLinkSet
+    ComboBox cbLinkSet
     {
       get
       {
@@ -231,7 +275,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbMutexGroup
+    ComboBox cbMutexGroup
     {
       get
       {
@@ -249,7 +293,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbNameGroup
+    ComboBox cbNameGroup
     {
       get
       {
@@ -275,7 +319,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSetType
+    ComboBox cbSetType
     {
       get
       {
@@ -293,7 +337,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbTrunkGroup
+    ComboBox cbTrunkGroup
     {
       get
       {
@@ -311,7 +355,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbTrunkSet
+    ComboBox cbTrunkSet
     {
       get
       {
@@ -329,7 +373,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNoLink
+    CheckBox chkNoLink
     {
       get
       {
@@ -347,7 +391,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNoTrunk
+    CheckBox chkNoTrunk
     {
       get
       {
@@ -365,7 +409,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -377,7 +421,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -389,7 +433,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -401,7 +445,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox gbLink
+    GroupBox gbLink
     {
       get
       {
@@ -413,7 +457,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
+    GroupBox GroupBox1
     {
       get
       {
@@ -425,7 +469,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -437,7 +481,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox3
+    GroupBox GroupBox3
     {
       get
       {
@@ -449,7 +493,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox4
+    GroupBox GroupBox4
     {
       get
       {
@@ -461,7 +505,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox5
+    GroupBox GroupBox5
     {
       get
       {
@@ -473,7 +517,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog ImagePicker
+    OpenFileDialog ImagePicker
     {
       get
       {
@@ -485,7 +529,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -497,7 +541,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -509,7 +553,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label22
+    Label Label22
     {
       get
       {
@@ -521,7 +565,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -533,7 +577,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label31
+    Label Label31
     {
       get
       {
@@ -545,7 +589,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label33
+    Label Label33
     {
       get
       {
@@ -557,7 +601,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -569,7 +613,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -581,7 +625,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -593,7 +637,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -605,7 +649,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -617,7 +661,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblNameFull
+    Label lblNameFull
     {
       get
       {
@@ -629,7 +673,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblNameUnique
+    Label lblNameUnique
     {
       get
       {
@@ -641,7 +685,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lvMutexSets
+    ListBox lvMutexSets
     {
       get
       {
@@ -659,7 +703,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPowers
+    ListView lvPowers
     {
       get
       {
@@ -671,7 +715,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox picIcon
+    PictureBox picIcon
     {
       get
       {
@@ -683,7 +727,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDesc
+    TextBox txtDesc
     {
       get
       {
@@ -701,7 +745,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtName
+    TextBox txtName
     {
       get
       {
@@ -719,7 +763,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNameSet
+    TextBox txtNameSet
     {
       get
       {
@@ -762,19 +806,22 @@ namespace Hero_Designer
       this.lvPowers.Items[Index].EnsureVisible();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnClearIcon_Click(object sender, EventArgs e)
+    void btnClearIcon_Click(object sender, EventArgs e)
+
     {
       this.myPS.ImageName = "";
       this.DisplayIcon();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       IPowerset ps = this.myPS;
       this.lblNameFull.Text = ps.GroupName + "." + ps.SetName;
@@ -794,7 +841,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnIcon_Click(object sender, EventArgs e)
+    void btnIcon_Click(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -815,7 +863,8 @@ namespace Hero_Designer
       }
     }
 
-    private string BuildFullName()
+    string BuildFullName()
+
     {
       string str = this.cbNameGroup.Text + "." + this.txtNameSet.Text;
       this.lblNameFull.Text = str;
@@ -824,7 +873,8 @@ namespace Hero_Designer
       return str;
     }
 
-    private void cbAT_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAT_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -837,14 +887,16 @@ namespace Hero_Designer
         this.myPS.nArchetype = -1;
     }
 
-    private void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.FillLinkSetCombo();
     }
 
-    private void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
+    void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -862,35 +914,40 @@ namespace Hero_Designer
       }
     }
 
-    private void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
+    void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.ListMutexSets();
     }
 
-    private void cbNameGroup_Leave(object sender, EventArgs e)
+    void cbNameGroup_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.DisplayNameData();
     }
 
-    private void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.BuildFullName();
     }
 
-    private void cbNameGroup_TextChanged(object sender, EventArgs e)
+    void cbNameGroup_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.BuildFullName();
     }
 
-    private void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -909,14 +966,16 @@ namespace Hero_Designer
       }
     }
 
-    private void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.FillTrunkSetCombo();
     }
 
-    private void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
+    void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -934,12 +993,14 @@ namespace Hero_Designer
       }
     }
 
-    private void chkNoLink_CheckedChanged(object sender, EventArgs e)
+    void chkNoLink_CheckedChanged(object sender, EventArgs e)
+
     {
       this.cbLinkSet_SelectedIndexChanged((object) this, new EventArgs());
     }
 
-    private void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
+    void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
+
     {
       this.cbTrunkSet_SelectedIndexChanged((object) this, new EventArgs());
     }
@@ -958,7 +1019,8 @@ namespace Hero_Designer
       }
     }
 
-    private void DisplayNameData()
+    void DisplayNameData()
+
     {
       IPowerset ps = this.myPS;
       this.lblNameFull.Text = this.BuildFullName();
@@ -977,7 +1039,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void FillLinkGroupCombo()
+    void FillLinkGroupCombo()
+
     {
       this.cbLinkGroup.BeginUpdate();
       this.cbLinkGroup.Items.Clear();
@@ -991,7 +1054,8 @@ namespace Hero_Designer
         this.cbLinkGroup.SelectedValue = (object) DatabaseAPI.Database.Powersets[index].GroupName;
     }
 
-    private void FillLinkSetCombo()
+    void FillLinkSetCombo()
+
     {
       this.cbLinkSet.BeginUpdate();
       this.cbLinkSet.Items.Clear();
@@ -1011,7 +1075,8 @@ namespace Hero_Designer
       this.cbLinkSet.EndUpdate();
     }
 
-    private void FillTrunkGroupCombo()
+    void FillTrunkGroupCombo()
+
     {
       this.cbTrunkGroup.BeginUpdate();
       this.cbTrunkGroup.Items.Clear();
@@ -1025,7 +1090,8 @@ namespace Hero_Designer
         this.cbTrunkGroup.SelectedValue = (object) DatabaseAPI.Database.Powersets[index].GroupName;
     }
 
-    private void FillTrunkSetCombo()
+    void FillTrunkSetCombo()
+
     {
       this.cbTrunkSet.BeginUpdate();
       this.cbTrunkSet.Items.Clear();
@@ -1045,7 +1111,8 @@ namespace Hero_Designer
       this.cbTrunkSet.EndUpdate();
     }
 
-    private void frmEditPowerset_Load(object sender, EventArgs e)
+    void frmEditPowerset_Load(object sender, EventArgs e)
+
     {
       Enums.ePowerSetType ePowerSetType = Enums.ePowerSetType.None;
       this.ListPowers();
@@ -1096,7 +1163,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmEditPowerset));
       this.txtName = new TextBox();
@@ -1538,7 +1606,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void ListMutexGroups()
+    void ListMutexGroups()
+
     {
       this.cbMutexGroup.BeginUpdate();
       this.cbMutexGroup.Items.Clear();
@@ -1552,7 +1621,8 @@ namespace Hero_Designer
         this.cbMutexGroup.SelectedValue = (object) DatabaseAPI.Database.Powersets[index].GroupName;
     }
 
-    private void ListMutexSets()
+    void ListMutexSets()
+
     {
       this.lvMutexSets.BeginUpdate();
       this.lvMutexSets.Items.Clear();
@@ -1592,7 +1662,8 @@ namespace Hero_Designer
       this.lvPowers.EndUpdate();
     }
 
-    private void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
+    void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbMutexGroup.SelectedIndex < 0)
         return;
@@ -1608,7 +1679,8 @@ namespace Hero_Designer
       }
     }
 
-    private static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
+    static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
+
     {
       if (!string.IsNullOrEmpty(iFullName))
       {
@@ -1622,28 +1694,32 @@ namespace Hero_Designer
       return true;
     }
 
-    private void txtDesc_TextChanged(object sender, EventArgs e)
+    void txtDesc_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.myPS.Description = this.txtDesc.Text;
     }
 
-    private void txtName_TextChanged(object sender, EventArgs e)
+    void txtName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.myPS.DisplayName = this.txtName.Text;
     }
 
-    private void txtNameSet_Leave(object sender, EventArgs e)
+    void txtNameSet_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.DisplayNameData();
     }
 
-    private void txtNameSet_TextChanged(object sender, EventArgs e)
+    void txtNameSet_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;

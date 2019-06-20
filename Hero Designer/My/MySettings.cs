@@ -15,9 +15,12 @@ namespace Hero_Designer.My
   [EditorBrowsable(EditorBrowsableState.Advanced)]
   internal sealed class MySettings : ApplicationSettingsBase
   {
-    private static object addedHandlerLockObject = RuntimeHelpers.GetObjectValue(new object());
-    private static MySettings defaultInstance = (MySettings) SettingsBase.Synchronized((SettingsBase) new MySettings());
-    private static bool addedHandler;
+    static object addedHandlerLockObject = RuntimeHelpers.GetObjectValue(new object());
+
+    static MySettings defaultInstance = (MySettings) SettingsBase.Synchronized((SettingsBase) new MySettings());
+
+    static bool addedHandler;
+
 
     public static MySettings Default
     {
@@ -47,7 +50,8 @@ namespace Hero_Designer.My
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     [DebuggerNonUserCode]
-    private static void AutoSaveSettings(object sender, EventArgs e)
+    static void AutoSaveSettings(object sender, EventArgs e)
+
     {
       if (!MyProject.Application.SaveMySettingsOnExit)
         ;

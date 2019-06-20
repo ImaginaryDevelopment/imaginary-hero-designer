@@ -15,35 +15,49 @@ namespace Hero_Designer
   public class frmSetViewer : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private ImageButton _btnClose;
+    ImageButton _btnClose;
+
     [AccessedThroughProperty("btnSmall")]
-    private ImageButton _btnSmall;
+    ImageButton _btnSmall;
+
     [AccessedThroughProperty("chkOnTop")]
-    private ImageButton _chkOnTop;
+    ImageButton _chkOnTop;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("ilSet")]
-    private ImageList _ilSet;
+    ImageList _ilSet;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("lstSets")]
-    private ListView _lstSets;
+    ListView _lstSets;
+
     [AccessedThroughProperty("rtApplied")]
-    private RichTextBox _rtApplied;
+    RichTextBox _rtApplied;
+
     [AccessedThroughProperty("rtxtFX")]
-    private RichTextBox _rtxtFX;
+    RichTextBox _rtxtFX;
+
     [AccessedThroughProperty("rtxtInfo")]
-    private RichTextBox _rtxtInfo;
-    private IContainer components;
+    RichTextBox _rtxtInfo;
+
+    IContainer components;
+
     protected frmMain myParent;
 
-    internal virtual ImageButton btnClose
+    ImageButton btnClose
     {
       get
       {
@@ -61,7 +75,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton btnSmall
+    ImageButton btnSmall
     {
       get
       {
@@ -79,7 +93,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton chkOnTop
+    ImageButton chkOnTop
     {
       get
       {
@@ -97,7 +111,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -109,7 +123,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -121,7 +135,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -133,7 +147,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilSet
+    ImageList ilSet
     {
       get
       {
@@ -145,7 +159,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -157,7 +171,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -169,7 +183,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lstSets
+    ListView lstSets
     {
       get
       {
@@ -187,7 +201,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RichTextBox rtApplied
+    RichTextBox rtApplied
     {
       get
       {
@@ -199,7 +213,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RichTextBox rtxtFX
+    RichTextBox rtxtFX
     {
       get
       {
@@ -211,7 +225,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RichTextBox rtxtInfo
+    RichTextBox rtxtInfo
     {
       get
       {
@@ -232,12 +246,14 @@ namespace Hero_Designer
       this.myParent = iParent;
     }
 
-    private void btnClose_Click()
+    void btnClose_Click()
+
     {
       this.Close();
     }
 
-    private void btnSmall_Click()
+    void btnSmall_Click()
+
     {
       if (this.Width > 600)
       {
@@ -264,7 +280,8 @@ namespace Hero_Designer
       this.StoreLocation();
     }
 
-    private void chkOnTop_CheckedChanged()
+    void chkOnTop_CheckedChanged()
+
     {
       this.TopMost = this.chkOnTop.Checked;
     }
@@ -305,7 +322,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void FillEffectView()
+    void FillEffectView()
+
     {
       string str1 = "";
       int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
@@ -413,7 +431,8 @@ namespace Hero_Designer
       this.rtApplied.Rtf = str9;
     }
 
-    private void FillImageList()
+    void FillImageList()
+
     {
       Size imageSize1 = this.ilSet.ImageSize;
       int width1 = imageSize1.Width;
@@ -452,22 +471,26 @@ namespace Hero_Designer
       }
     }
 
-    private void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
+    void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.myParent.FloatSets(false);
     }
 
-    private void frmSetViewer_Load(object sender, EventArgs e)
+    void frmSetViewer_Load(object sender, EventArgs e)
+
     {
     }
 
-    private void frmSetViewer_Move(object sender, EventArgs e)
+    void frmSetViewer_Move(object sender, EventArgs e)
+
     {
       this.StoreLocation();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSetViewer));
@@ -633,7 +656,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lstSets_SelectedIndexChanged(object sender, EventArgs e)
+    void lstSets_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lstSets.SelectedItems.Count < 1)
         return;
@@ -657,7 +681,8 @@ namespace Hero_Designer
       this.Left = rectangle.X;
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;

@@ -82,8 +82,10 @@ namespace Base.Display
     public struct PopupData
     {
       public PopUp.Section[] Sections;
-      private float _columnPosition;
-      private bool _rightAlignColumn;
+      float _columnPosition;
+
+      bool _rightAlignColumn;
+
 
       public bool CustomSet { get; private set; }
 

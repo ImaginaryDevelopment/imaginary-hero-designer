@@ -16,130 +16,192 @@ namespace Hero_Designer
   public class frmPowerEffect : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnCopy")]
-    private Button _btnCopy;
+    Button _btnCopy;
+
     [AccessedThroughProperty("btnCSV")]
-    private Button _btnCSV;
+    Button _btnCSV;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnPaste")]
-    private Button _btnPaste;
+    Button _btnPaste;
+
     [AccessedThroughProperty("cbAffects")]
-    private ComboBox _cbAffects;
+    ComboBox _cbAffects;
+
     [AccessedThroughProperty("cbAspect")]
-    private ComboBox _cbAspect;
+    ComboBox _cbAspect;
+
     [AccessedThroughProperty("cbAttribute")]
-    private ComboBox _cbAttribute;
+    ComboBox _cbAttribute;
+
     [AccessedThroughProperty("cbFXClass")]
-    private ComboBox _cbFXClass;
+    ComboBox _cbFXClass;
+
     [AccessedThroughProperty("cbFXSpecialCase")]
-    private ComboBox _cbFXSpecialCase;
+    ComboBox _cbFXSpecialCase;
+
     [AccessedThroughProperty("cbModifier")]
-    private ComboBox _cbModifier;
+    ComboBox _cbModifier;
+
     [AccessedThroughProperty("cbPercentageOverride")]
-    private ComboBox _cbPercentageOverride;
+    ComboBox _cbPercentageOverride;
+
     [AccessedThroughProperty("chkFXBuffable")]
-    private CheckBox _chkFXBuffable;
+    CheckBox _chkFXBuffable;
+
     [AccessedThroughProperty("chkFXResistable")]
-    private CheckBox _chkFXResistable;
+    CheckBox _chkFXResistable;
+
     [AccessedThroughProperty("chkNearGround")]
-    private CheckBox _chkNearGround;
+    CheckBox _chkNearGround;
+
     [AccessedThroughProperty("chkStack")]
-    private CheckBox _chkStack;
+    CheckBox _chkStack;
+
     [AccessedThroughProperty("chkVariable")]
-    private CheckBox _chkVariable;
+    CheckBox _chkVariable;
+
     [AccessedThroughProperty("chSub")]
-    private ColumnHeader _chSub;
+    ColumnHeader _chSub;
+
     [AccessedThroughProperty("chSubSub")]
-    private ColumnHeader _chSubSub;
+    ColumnHeader _chSubSub;
+
     [AccessedThroughProperty("clbSuppression")]
-    private CheckedListBox _clbSuppression;
+    CheckedListBox _clbSuppression;
+
     [AccessedThroughProperty("cmbEffectId")]
-    private ComboBox _cmbEffectId;
+    ComboBox _cmbEffectId;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
+    GroupBox _GroupBox3;
+
     [AccessedThroughProperty("IgnoreED")]
-    private CheckBox _IgnoreED;
+    CheckBox _IgnoreED;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label10")]
-    private Label _Label10;
+    Label _Label10;
+
     [AccessedThroughProperty("Label11")]
-    private Label _Label11;
+    Label _Label11;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label22")]
-    private Label _Label22;
+    Label _Label22;
+
     [AccessedThroughProperty("Label23")]
-    private Label _Label23;
+    Label _Label23;
+
     [AccessedThroughProperty("Label24")]
-    private Label _Label24;
+    Label _Label24;
+
     [AccessedThroughProperty("Label25")]
-    private Label _Label25;
+    Label _Label25;
+
     [AccessedThroughProperty("Label26")]
-    private Label _Label26;
+    Label _Label26;
+
     [AccessedThroughProperty("Label27")]
-    private Label _Label27;
+    Label _Label27;
+
     [AccessedThroughProperty("Label28")]
-    private Label _Label28;
+    Label _Label28;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label30")]
-    private Label _Label30;
+    Label _Label30;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("Label8")]
-    private Label _Label8;
+    Label _Label8;
+
     [AccessedThroughProperty("Label9")]
-    private Label _Label9;
+    Label _Label9;
+
     [AccessedThroughProperty("lblAffectsCaster")]
-    private Label _lblAffectsCaster;
+    Label _lblAffectsCaster;
+
     [AccessedThroughProperty("lblEffectDescription")]
-    private Label _lblEffectDescription;
+    Label _lblEffectDescription;
+
     [AccessedThroughProperty("lblProb")]
-    private Label _lblProb;
+    Label _lblProb;
+
     [AccessedThroughProperty("lvEffectType")]
-    private ListView _lvEffectType;
+    ListView _lvEffectType;
+
     [AccessedThroughProperty("lvSubAttribute")]
-    private ListView _lvSubAttribute;
+    ListView _lvSubAttribute;
+
     [AccessedThroughProperty("lvSubSub")]
-    private ListView _lvSubSub;
+    ListView _lvSubSub;
+
     [AccessedThroughProperty("rbIfAny")]
-    private RadioButton _rbIfAny;
+    RadioButton _rbIfAny;
+
     [AccessedThroughProperty("rbIfCritter")]
-    private RadioButton _rbIfCritter;
+    RadioButton _rbIfCritter;
+
     [AccessedThroughProperty("rbIfPlayer")]
-    private RadioButton _rbIfPlayer;
+    RadioButton _rbIfPlayer;
+
     [AccessedThroughProperty("txtFXDelay")]
-    private TextBox _txtFXDelay;
+    TextBox _txtFXDelay;
+
     [AccessedThroughProperty("txtFXDuration")]
-    private TextBox _txtFXDuration;
+    TextBox _txtFXDuration;
+
     [AccessedThroughProperty("txtFXMag")]
-    private TextBox _txtFXMag;
+    TextBox _txtFXMag;
+
     [AccessedThroughProperty("txtFXProb")]
-    private TextBox _txtFXProb;
+    TextBox _txtFXProb;
+
     [AccessedThroughProperty("txtFXScale")]
-    private TextBox _txtFXScale;
+    TextBox _txtFXScale;
+
     [AccessedThroughProperty("txtFXTicks")]
-    private TextBox _txtFXTicks;
+    TextBox _txtFXTicks;
+
     [AccessedThroughProperty("txtOverride")]
-    private TextBox _txtOverride;
+    TextBox _txtOverride;
+
     [AccessedThroughProperty("txtPPM")]
-    private TextBox _txtPPM;
-    private IContainer components;
-    private bool Loading;
+    TextBox _txtPPM;
+
+    IContainer components;
+
+    bool Loading;
+
     public IEffect myFX;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -157,7 +219,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCopy
+    Button btnCopy
     {
       get
       {
@@ -175,7 +237,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCSV
+    Button btnCSV
     {
       get
       {
@@ -193,7 +255,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -211,7 +273,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPaste
+    Button btnPaste
     {
       get
       {
@@ -229,7 +291,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAffects
+    ComboBox cbAffects
     {
       get
       {
@@ -247,7 +309,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAspect
+    ComboBox cbAspect
     {
       get
       {
@@ -265,7 +327,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAttribute
+    ComboBox cbAttribute
     {
       get
       {
@@ -283,7 +345,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbFXClass
+    ComboBox cbFXClass
     {
       get
       {
@@ -301,7 +363,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbFXSpecialCase
+    ComboBox cbFXSpecialCase
     {
       get
       {
@@ -319,7 +381,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbModifier
+    ComboBox cbModifier
     {
       get
       {
@@ -337,7 +399,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbPercentageOverride
+    ComboBox cbPercentageOverride
     {
       get
       {
@@ -355,7 +417,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkFXBuffable
+    CheckBox chkFXBuffable
     {
       get
       {
@@ -373,7 +435,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkFXResistable
+    CheckBox chkFXResistable
     {
       get
       {
@@ -391,7 +453,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNearGround
+    CheckBox chkNearGround
     {
       get
       {
@@ -403,7 +465,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkStack
+    CheckBox chkStack
     {
       get
       {
@@ -421,7 +483,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkVariable
+    CheckBox chkVariable
     {
       get
       {
@@ -439,7 +501,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chSub
+    ColumnHeader chSub
     {
       get
       {
@@ -451,7 +513,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader chSubSub
+    ColumnHeader chSubSub
     {
       get
       {
@@ -463,7 +525,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckedListBox clbSuppression
+    CheckedListBox clbSuppression
     {
       get
       {
@@ -481,7 +543,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cmbEffectId
+    ComboBox cmbEffectId
     {
       get
       {
@@ -499,7 +561,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -511,7 +573,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox3
+    GroupBox GroupBox3
     {
       get
       {
@@ -523,7 +585,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox IgnoreED
+    CheckBox IgnoreED
     {
       get
       {
@@ -541,7 +603,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -553,7 +615,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label10
+    Label Label10
     {
       get
       {
@@ -565,7 +627,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label11
+    Label Label11
     {
       get
       {
@@ -577,7 +639,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -589,7 +651,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label22
+    Label Label22
     {
       get
       {
@@ -601,7 +663,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label23
+    Label Label23
     {
       get
       {
@@ -613,7 +675,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label24
+    Label Label24
     {
       get
       {
@@ -625,7 +687,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label25
+    Label Label25
     {
       get
       {
@@ -637,7 +699,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label26
+    Label Label26
     {
       get
       {
@@ -649,7 +711,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label27
+    Label Label27
     {
       get
       {
@@ -661,7 +723,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label28
+    Label Label28
     {
       get
       {
@@ -673,7 +735,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -685,7 +747,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label30
+    Label Label30
     {
       get
       {
@@ -697,7 +759,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -709,7 +771,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -721,7 +783,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -733,7 +795,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -745,7 +807,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -757,7 +819,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label9
+    Label Label9
     {
       get
       {
@@ -769,7 +831,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblAffectsCaster
+    Label lblAffectsCaster
     {
       get
       {
@@ -781,7 +843,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblEffectDescription
+    Label lblEffectDescription
     {
       get
       {
@@ -793,7 +855,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblProb
+    Label lblProb
     {
       get
       {
@@ -805,7 +867,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvEffectType
+    ListView lvEffectType
     {
       get
       {
@@ -823,7 +885,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSubAttribute
+    ListView lvSubAttribute
     {
       get
       {
@@ -841,7 +903,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSubSub
+    ListView lvSubSub
     {
       get
       {
@@ -859,7 +921,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfAny
+    RadioButton rbIfAny
     {
       get
       {
@@ -877,7 +939,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfCritter
+    RadioButton rbIfCritter
     {
       get
       {
@@ -895,7 +957,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbIfPlayer
+    RadioButton rbIfPlayer
     {
       get
       {
@@ -913,7 +975,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXDelay
+    TextBox txtFXDelay
     {
       get
       {
@@ -936,7 +998,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXDuration
+    TextBox txtFXDuration
     {
       get
       {
@@ -959,7 +1021,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXMag
+    TextBox txtFXMag
     {
       get
       {
@@ -982,7 +1044,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXProb
+    TextBox txtFXProb
     {
       get
       {
@@ -1005,7 +1067,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXScale
+    TextBox txtFXScale
     {
       get
       {
@@ -1028,7 +1090,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtFXTicks
+    TextBox txtFXTicks
     {
       get
       {
@@ -1051,7 +1113,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtOverride
+    TextBox txtOverride
     {
       get
       {
@@ -1069,7 +1131,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtPPM
+    TextBox txtPPM
     {
       get
       {
@@ -1100,18 +1162,21 @@ namespace Hero_Designer
       this.myFX = (IEffect) iFX.Clone();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnCopy_Click(object sender, EventArgs e)
+    void btnCopy_Click(object sender, EventArgs e)
+
     {
       this.FullCopy();
     }
 
-    private void btnCSV_Click(object sender, EventArgs e)
+    void btnCSV_Click(object sender, EventArgs e)
+
     {
       IEffect effect = (IEffect) this.myFX.Clone();
       try
@@ -1129,19 +1194,22 @@ namespace Hero_Designer
       this.DisplayEffectData();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.StoreSuppression();
       this.DialogResult = DialogResult.OK;
       this.Hide();
     }
 
-    private void btnPaste_Click(object sender, EventArgs e)
+    void btnPaste_Click(object sender, EventArgs e)
+
     {
       this.FullPaste();
     }
 
-    private void cbAffects_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAffects_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbAffects.SelectedIndex < 0)
         return;
@@ -1152,7 +1220,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbAspect_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAspect_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbAspect.SelectedIndex < 0)
         return;
@@ -1160,7 +1229,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbAttribute_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAttribute_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbAttribute.SelectedIndex < 0)
         return;
@@ -1168,7 +1238,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbFXClass_SelectedIndexChanged(object sender, EventArgs e)
+    void cbFXClass_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1176,7 +1247,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbFXSpecialCase_SelectedIndexChanged(object sender, EventArgs e)
+    void cbFXSpecialCase_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1184,7 +1256,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbModifier_SelectedIndexChanged(object sender, EventArgs e)
+    void cbModifier_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbModifier.SelectedIndex < 0)
         return;
@@ -1193,7 +1266,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void cbPercentageOverride_SelectedIndexChanged(object sender, EventArgs e)
+    void cbPercentageOverride_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.cbPercentageOverride.SelectedIndex < 0)
         return;
@@ -1201,7 +1275,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void chkFXBuffable_CheckedChanged(object sender, EventArgs e)
+    void chkFXBuffable_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1209,7 +1284,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void chkFxNoStack_CheckedChanged(object sender, EventArgs e)
+    void chkFxNoStack_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1217,7 +1293,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void chkFXResistable_CheckedChanged(object sender, EventArgs e)
+    void chkFXResistable_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1225,7 +1302,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void chkVariable_CheckedChanged(object sender, EventArgs e)
+    void chkVariable_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1233,13 +1311,15 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+    void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.StoreSuppression();
       this.UpdateFXText();
     }
 
-    private void cmbEffectId_TextChanged(object sender, EventArgs e)
+    void cmbEffectId_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1317,7 +1397,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void FillComboBoxes()
+    void FillComboBoxes()
+
     {
       this.cbFXClass.BeginUpdate();
       this.cbFXSpecialCase.BeginUpdate();
@@ -1365,7 +1446,8 @@ namespace Hero_Designer
       this.lvSubAttribute.Enabled = true;
     }
 
-    private void frmPowerEffect_Load(object sender, EventArgs e)
+    void frmPowerEffect_Load(object sender, EventArgs e)
+
     {
       this.FillComboBoxes();
       this.DisplayEffectData();
@@ -1379,7 +1461,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void FullCopy()
+    void FullCopy()
+
     {
       DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
       MemoryStream memoryStream = new MemoryStream();
@@ -1390,7 +1473,8 @@ namespace Hero_Designer
       memoryStream.Close();
     }
 
-    private void FullPaste()
+    void FullPaste()
+
     {
       DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
       if (!Clipboard.ContainsData(format.Name))
@@ -1414,7 +1498,8 @@ namespace Hero_Designer
       }
     }
 
-    private void IgnoreED_CheckedChanged(object sender, EventArgs e)
+    void IgnoreED_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -1423,7 +1508,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmPowerEffect));
       this.btnPaste = new Button();
@@ -2030,7 +2116,8 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void lvEffectType_SelectedIndexChanged(object sender, EventArgs e)
+    void lvEffectType_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.lvEffectType.SelectedIndices.Count < 1)
         return;
@@ -2039,7 +2126,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void lvSubAttribute_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSubAttribute_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.lvSubAttribute.SelectedIndices.Count < 1)
         return;
@@ -2060,7 +2148,8 @@ namespace Hero_Designer
       this.UpdateSubSubList();
     }
 
-    private void lvSubSub_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSubSub_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading || this.lvSubSub.SelectedIndices.Count < 1)
         return;
@@ -2070,7 +2159,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void rbIfACP_CheckedChanged(object sender, EventArgs e)
+    void rbIfACP_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2078,7 +2168,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void StoreSuppression()
+    void StoreSuppression()
+
     {
       int[] values = (int[]) Enum.GetValues(this.myFX.Suppression.GetType());
       this.myFX.Suppression = Enums.eSuppress.None;
@@ -2088,7 +2179,8 @@ namespace Hero_Designer
             myFX.Suppression += values[clbSuppression.CheckedIndices[index]];
         }
 
-    private void txtFXDelay_Leave(object sender, EventArgs e)
+    void txtFXDelay_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2096,7 +2188,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXDelay_TextChanged(object sender, EventArgs e)
+    void txtFXDelay_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2107,7 +2200,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXDuration_Leave(object sender, EventArgs e)
+    void txtFXDuration_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2115,7 +2209,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXDuration_TextChanged(object sender, EventArgs e)
+    void txtFXDuration_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2126,7 +2221,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXMag_Leave(object sender, EventArgs e)
+    void txtFXMag_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2134,7 +2230,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXMag_TextChanged(object sender, EventArgs e)
+    void txtFXMag_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2148,7 +2245,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXProb_Leave(object sender, EventArgs e)
+    void txtFXProb_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2156,7 +2254,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXProb_TextChanged(object sender, EventArgs e)
+    void txtFXProb_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2172,7 +2271,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXScale_Leave(object sender, EventArgs e)
+    void txtFXScale_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2180,7 +2280,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXScale_TextChanged(object sender, EventArgs e)
+    void txtFXScale_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2194,7 +2295,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXTicks_Leave(object sender, EventArgs e)
+    void txtFXTicks_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2202,7 +2304,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtFXTicks_TextChanged(object sender, EventArgs e)
+    void txtFXTicks_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2213,7 +2316,8 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtOverride_TextChanged(object sender, EventArgs e)
+    void txtOverride_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2221,14 +2325,16 @@ namespace Hero_Designer
       this.UpdateFXText();
     }
 
-    private void txtPPM_Leave(object sender, EventArgs e)
+    void txtPPM_Leave(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.txtPPM.Text = Conversions.ToString(this.myFX.ProcsPerMinute);
     }
 
-    private void txtPPM_TextChanged(object sender, EventArgs e)
+    void txtPPM_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
@@ -2328,7 +2434,8 @@ namespace Hero_Designer
       this.UpdateSubSubList();
     }
 
-    private void UpdateFXText()
+    void UpdateFXText()
+
     {
       if (this.Loading)
         return;

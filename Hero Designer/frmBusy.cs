@@ -13,10 +13,12 @@ namespace Hero_Designer
   public class frmBusy : Form
   {
     [AccessedThroughProperty("Message")]
-    private Label _Message;
-    private IContainer components;
+    Label _Message;
 
-    internal virtual Label Message
+    IContainer components;
+
+
+    Label Message
     {
       get
       {
@@ -49,12 +51,14 @@ namespace Hero_Designer
       }
     }
 
-    private void frmBusy_Load(object sender, EventArgs e)
+    void frmBusy_Load(object sender, EventArgs e)
+
     {
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmBusy));
       this.Message = new Label();

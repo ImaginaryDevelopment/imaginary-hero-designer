@@ -5,8 +5,10 @@ namespace Import
 {
   public class PowersetData
   {
-    private int _index = -1;
-    private readonly string _csvString = string.Empty;
+    int _index = -1;
+
+    readonly string _csvString = string.Empty;
+
     public readonly Powerset Data;
     public readonly bool IsNew;
     public readonly bool IsValid;

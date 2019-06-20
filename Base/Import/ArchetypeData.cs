@@ -6,8 +6,10 @@ namespace Import
 {
   public class ArchetypeData
   {
-    private int _index = -1;
-    private readonly string _csvString = string.Empty;
+    int _index = -1;
+
+    readonly string _csvString = string.Empty;
+
     public readonly bool IsValid = true;
     public readonly Archetype Data;
     public readonly bool IsNew;

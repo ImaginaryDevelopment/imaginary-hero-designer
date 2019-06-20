@@ -14,135 +14,199 @@ namespace Hero_Designer
   public class frmRecipeEdit : Form
   {
     [AccessedThroughProperty("btnAdd")]
-    private Button _btnAdd;
+    Button _btnAdd;
+
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnDel")]
-    private Button _btnDel;
+    Button _btnDel;
+
     [AccessedThroughProperty("btnDown")]
-    private Button _btnDown;
+    Button _btnDown;
+
     [AccessedThroughProperty("btnGuessCost")]
-    private Button _btnGuessCost;
+    Button _btnGuessCost;
+
     [AccessedThroughProperty("btnI20")]
-    private Button _btnI20;
+    Button _btnI20;
+
     [AccessedThroughProperty("btnI25")]
-    private Button _btnI25;
+    Button _btnI25;
+
     [AccessedThroughProperty("btnI40")]
-    private Button _btnI40;
+    Button _btnI40;
+
     [AccessedThroughProperty("btnI50")]
-    private Button _btnI50;
+    Button _btnI50;
+
     [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
+    Button _btnImport;
+
     [AccessedThroughProperty("btnImportUpdate")]
-    private Button _btnImportUpdate;
+    Button _btnImportUpdate;
+
     [AccessedThroughProperty("btnIncrement")]
-    private Button _btnIncrement;
+    Button _btnIncrement;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnRAdd")]
-    private Button _btnRAdd;
+    Button _btnRAdd;
+
     [AccessedThroughProperty("btnRDel")]
-    private Button _btnRDel;
+    Button _btnRDel;
+
     [AccessedThroughProperty("btnRDown")]
-    private Button _btnRDown;
+    Button _btnRDown;
+
     [AccessedThroughProperty("btnReGuess")]
-    private Button _btnReGuess;
+    Button _btnReGuess;
+
     [AccessedThroughProperty("btnRunSeq")]
-    private Button _btnRunSeq;
+    Button _btnRunSeq;
+
     [AccessedThroughProperty("btnRUp")]
-    private Button _btnRUp;
+    Button _btnRUp;
+
     [AccessedThroughProperty("btnUp")]
-    private Button _btnUp;
+    Button _btnUp;
+
     [AccessedThroughProperty("cbEnh")]
-    private ComboBox _cbEnh;
+    ComboBox _cbEnh;
+
     [AccessedThroughProperty("cbRarity")]
-    private ComboBox _cbRarity;
+    ComboBox _cbRarity;
+
     [AccessedThroughProperty("cbSal0")]
-    private ComboBox _cbSal0;
+    ComboBox _cbSal0;
+
     [AccessedThroughProperty("cbSal1")]
-    private ComboBox _cbSal1;
+    ComboBox _cbSal1;
+
     [AccessedThroughProperty("cbSal2")]
-    private ComboBox _cbSal2;
+    ComboBox _cbSal2;
+
     [AccessedThroughProperty("cbSal3")]
-    private ComboBox _cbSal3;
+    ComboBox _cbSal3;
+
     [AccessedThroughProperty("cbSal4")]
-    private ComboBox _cbSal4;
+    ComboBox _cbSal4;
+
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
+    ColumnHeader _ColumnHeader4;
+
     [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
+    GroupBox _GroupBox1;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label10")]
-    private Label _Label10;
+    Label _Label10;
+
     [AccessedThroughProperty("Label11")]
-    private Label _Label11;
+    Label _Label11;
+
     [AccessedThroughProperty("Label12")]
-    private Label _Label12;
+    Label _Label12;
+
     [AccessedThroughProperty("Label13")]
-    private Label _Label13;
+    Label _Label13;
+
     [AccessedThroughProperty("Label14")]
-    private Label _Label14;
+    Label _Label14;
+
     [AccessedThroughProperty("Label15")]
-    private Label _Label15;
+    Label _Label15;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("Label8")]
-    private Label _Label8;
+    Label _Label8;
+
     [AccessedThroughProperty("Label9")]
-    private Label _Label9;
+    Label _Label9;
+
     [AccessedThroughProperty("lblEnh")]
-    private Label _lblEnh;
+    Label _lblEnh;
+
     [AccessedThroughProperty("lstItems")]
-    private ListBox _lstItems;
+    ListBox _lstItems;
+
     [AccessedThroughProperty("lvDPA")]
-    private ListView _lvDPA;
+    ListView _lvDPA;
+
     [AccessedThroughProperty("txtExtern")]
-    private TextBox _txtExtern;
+    TextBox _txtExtern;
+
     [AccessedThroughProperty("txtRecipeName")]
-    private TextBox _txtRecipeName;
+    TextBox _txtRecipeName;
+
     [AccessedThroughProperty("udBuy")]
-    private NumericUpDown _udBuy;
+    NumericUpDown _udBuy;
+
     [AccessedThroughProperty("udBuyM")]
-    private NumericUpDown _udBuyM;
+    NumericUpDown _udBuyM;
+
     [AccessedThroughProperty("udCraft")]
-    private NumericUpDown _udCraft;
+    NumericUpDown _udCraft;
+
     [AccessedThroughProperty("udCraftM")]
-    private NumericUpDown _udCraftM;
+    NumericUpDown _udCraftM;
+
     [AccessedThroughProperty("udLevel")]
-    private NumericUpDown _udLevel;
+    NumericUpDown _udLevel;
+
     [AccessedThroughProperty("udSal0")]
-    private NumericUpDown _udSal0;
+    NumericUpDown _udSal0;
+
     [AccessedThroughProperty("udSal1")]
-    private NumericUpDown _udSal1;
+    NumericUpDown _udSal1;
+
     [AccessedThroughProperty("udSal2")]
-    private NumericUpDown _udSal2;
+    NumericUpDown _udSal2;
+
     [AccessedThroughProperty("udSal3")]
-    private NumericUpDown _udSal3;
+    NumericUpDown _udSal3;
+
     [AccessedThroughProperty("udSal4")]
-    private NumericUpDown _udSal4;
-    private IContainer components;
+    NumericUpDown _udSal4;
+
+    IContainer components;
+
     protected bool NoUpdate;
 
-    internal virtual Button btnAdd
+    Button btnAdd
     {
       get
       {
@@ -160,7 +224,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -178,7 +242,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDel
+    Button btnDel
     {
       get
       {
@@ -196,7 +260,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDown
+    Button btnDown
     {
       get
       {
@@ -208,7 +272,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnGuessCost
+    Button btnGuessCost
     {
       get
       {
@@ -226,7 +290,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnI20
+    Button btnI20
     {
       get
       {
@@ -244,7 +308,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnI25
+    Button btnI25
     {
       get
       {
@@ -262,7 +326,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnI40
+    Button btnI40
     {
       get
       {
@@ -280,7 +344,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnI50
+    Button btnI50
     {
       get
       {
@@ -298,7 +362,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -316,7 +380,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImportUpdate
+    Button btnImportUpdate
     {
       get
       {
@@ -328,7 +392,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnIncrement
+    Button btnIncrement
     {
       get
       {
@@ -346,7 +410,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -364,7 +428,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRAdd
+    Button btnRAdd
     {
       get
       {
@@ -382,7 +446,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRDel
+    Button btnRDel
     {
       get
       {
@@ -400,7 +464,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRDown
+    Button btnRDown
     {
       get
       {
@@ -412,7 +476,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnReGuess
+    Button btnReGuess
     {
       get
       {
@@ -430,7 +494,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRunSeq
+    Button btnRunSeq
     {
       get
       {
@@ -448,7 +512,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRUp
+    Button btnRUp
     {
       get
       {
@@ -460,7 +524,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUp
+    Button btnUp
     {
       get
       {
@@ -472,7 +536,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbEnh
+    ComboBox cbEnh
     {
       get
       {
@@ -490,7 +554,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbRarity
+    ComboBox cbRarity
     {
       get
       {
@@ -508,7 +572,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSal0
+    ComboBox cbSal0
     {
       get
       {
@@ -526,7 +590,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSal1
+    ComboBox cbSal1
     {
       get
       {
@@ -544,7 +608,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSal2
+    ComboBox cbSal2
     {
       get
       {
@@ -562,7 +626,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSal3
+    ComboBox cbSal3
     {
       get
       {
@@ -580,7 +644,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSal4
+    ComboBox cbSal4
     {
       get
       {
@@ -598,7 +662,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -610,7 +674,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -622,7 +686,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -634,7 +698,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -646,7 +710,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
+    GroupBox GroupBox1
     {
       get
       {
@@ -658,7 +722,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -670,7 +734,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -682,7 +746,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label10
+    Label Label10
     {
       get
       {
@@ -694,7 +758,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label11
+    Label Label11
     {
       get
       {
@@ -706,7 +770,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label12
+    Label Label12
     {
       get
       {
@@ -718,7 +782,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label13
+    Label Label13
     {
       get
       {
@@ -730,7 +794,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label14
+    Label Label14
     {
       get
       {
@@ -742,7 +806,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label15
+    Label Label15
     {
       get
       {
@@ -754,7 +818,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -766,7 +830,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -778,7 +842,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -790,7 +854,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -802,7 +866,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -814,7 +878,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -826,7 +890,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -838,7 +902,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label9
+    Label Label9
     {
       get
       {
@@ -850,7 +914,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblEnh
+    Label lblEnh
     {
       get
       {
@@ -862,7 +926,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lstItems
+    ListBox lstItems
     {
       get
       {
@@ -880,7 +944,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvDPA
+    ListView lvDPA
     {
       get
       {
@@ -898,7 +962,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtExtern
+    TextBox txtExtern
     {
       get
       {
@@ -916,7 +980,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRecipeName
+    TextBox txtRecipeName
     {
       get
       {
@@ -934,7 +998,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udBuy
+    NumericUpDown udBuy
     {
       get
       {
@@ -957,7 +1021,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udBuyM
+    NumericUpDown udBuyM
     {
       get
       {
@@ -980,7 +1044,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udCraft
+    NumericUpDown udCraft
     {
       get
       {
@@ -1003,7 +1067,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udCraftM
+    NumericUpDown udCraftM
     {
       get
       {
@@ -1026,7 +1090,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udLevel
+    NumericUpDown udLevel
     {
       get
       {
@@ -1049,7 +1113,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udSal0
+    NumericUpDown udSal0
     {
       get
       {
@@ -1072,7 +1136,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udSal1
+    NumericUpDown udSal1
     {
       get
       {
@@ -1095,7 +1159,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udSal2
+    NumericUpDown udSal2
     {
       get
       {
@@ -1118,7 +1182,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udSal3
+    NumericUpDown udSal3
     {
       get
       {
@@ -1141,7 +1205,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udSal4
+    NumericUpDown udSal4
     {
       get
       {
@@ -1171,7 +1235,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void AddListItem(int Index)
+    void AddListItem(int Index)
+
     {
       if (!(Index > -1 & Index < DatabaseAPI.Database.Recipes.Length))
         return;
@@ -1184,7 +1249,8 @@ namespace Hero_Designer
       }));
     }
 
-    private static void AssignNewRecipes()
+    static void AssignNewRecipes()
+
     {
       int num = DatabaseAPI.Database.Recipes.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -1197,7 +1263,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
+    void btnAdd_Click(object sender, EventArgs e)
+
     {
       if (this.RecipeID() < 0)
         return;
@@ -1208,13 +1275,15 @@ namespace Hero_Designer
       this.UpdateListItem(this.RecipeID());
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.LoadRecipes();
       this.Close();
     }
 
-    private void btnDel_Click(object sender, EventArgs e)
+    void btnDel_Click(object sender, EventArgs e)
+
     {
       if (this.RecipeID() < 0 || this.lstItems.SelectedIndex < 0)
         return;
@@ -1237,7 +1306,8 @@ namespace Hero_Designer
       this.ShowRecipeInfo(this.RecipeID());
     }
 
-    private void btnGuessCost_Click(object sender, EventArgs e)
+    void btnGuessCost_Click(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
         return;
@@ -1245,27 +1315,32 @@ namespace Hero_Designer
       this.udCraft.Value = new Decimal(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCost);
     }
 
-    private void btnI20_Click(object sender, EventArgs e)
+    void btnI20_Click(object sender, EventArgs e)
+
     {
       this.IncrementX(19);
     }
 
-    private void btnI25_Click(object sender, EventArgs e)
+    void btnI25_Click(object sender, EventArgs e)
+
     {
       this.IncrementX(24);
     }
 
-    private void btnI40_Click(object sender, EventArgs e)
+    void btnI40_Click(object sender, EventArgs e)
+
     {
       this.IncrementX(39);
     }
 
-    private void btnI50_Click(object sender, EventArgs e)
+    void btnI50_Click(object sender, EventArgs e)
+
     {
       this.IncrementX(49);
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Careful...") != MsgBoxResult.Yes)
         return;
@@ -1341,7 +1416,8 @@ namespace Hero_Designer
       int num3 = (int) Interaction.MsgBox((object) "Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, (object) "Import");
     }
 
-    private void btnIncrement_Click(object sender, EventArgs e)
+    void btnIncrement_Click(object sender, EventArgs e)
+
     {
       if (this.RecipeID() < 0 || DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53)
         return;
@@ -1353,7 +1429,8 @@ namespace Hero_Designer
       this.lstItems.SelectedIndex = this.lstItems.Items.Count - 1;
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       frmRecipeEdit.AssignNewRecipes();
       DatabaseAPI.AssignRecipeSalvageIDs();
@@ -1363,7 +1440,8 @@ namespace Hero_Designer
       this.Close();
     }
 
-    private void btnRAdd_Click(object sender, EventArgs e)
+    void btnRAdd_Click(object sender, EventArgs e)
+
     {
       IDatabase database = DatabaseAPI.Database;
       Recipe[] recipeArray = (Recipe[]) Utils.CopyArray((Array) database.Recipes, (Array) new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);
@@ -1376,7 +1454,8 @@ namespace Hero_Designer
       this.cbEnh.SelectAll();
     }
 
-    private void btnRDel_Click(object sender, EventArgs e)
+    void btnRDel_Click(object sender, EventArgs e)
+
     {
       if (this.RecipeID() < 0)
         return;
@@ -1405,7 +1484,8 @@ namespace Hero_Designer
         this.lvDPA.Items[0].Selected = true;
     }
 
-    private void btnRunSeq_Click(object sender, EventArgs e)
+    void btnRunSeq_Click(object sender, EventArgs e)
+
     {
       int enhIdx = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1].EnhIdx;
       int num = DatabaseAPI.Database.Enhancements.Length - 1;
@@ -1429,13 +1509,15 @@ namespace Hero_Designer
       this.cbEnh.SelectAll();
     }
 
-    private void Button1_Click(object sender, EventArgs e)
+    void Button1_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.GuessRecipes();
       DatabaseAPI.AssignRecipeIDs();
     }
 
-    private void cbEnh_SelectedIndexChanged(object sender, EventArgs e)
+    void cbEnh_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() <= -1 || this.cbEnh.SelectedIndex <= -1)
         return;
@@ -1461,7 +1543,8 @@ namespace Hero_Designer
       this.UpdateListItem(this.RecipeID());
     }
 
-    private void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
+    void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() <= -1 || this.cbRarity.SelectedIndex <= -1)
         return;
@@ -1469,7 +1552,8 @@ namespace Hero_Designer
       this.UpdateListItem(this.RecipeID());
     }
 
-    private void cbSalX_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSalX_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
         return;
@@ -1573,7 +1657,8 @@ namespace Hero_Designer
       this.lvDPA.Items[0].Selected = true;
     }
 
-    private void frmRecipeEdit_Load(object sender, EventArgs e)
+    void frmRecipeEdit_Load(object sender, EventArgs e)
+
     {
       Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
       this.cbRarity.BeginUpdate();
@@ -1686,7 +1771,8 @@ namespace Hero_Designer
       return iLevelZB >= 0 ? (iLevelZB <= numArray.Length - 1 ? numArray[iLevelZB] : 0) : 0;
     }
 
-    private void IncrementX(int nMax)
+    void IncrementX(int nMax)
+
     {
       if (this.RecipeID() < 0 || DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length < 1 | DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length > 53)
         return;
@@ -1706,7 +1792,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmRecipeEdit));
       this.lvDPA = new ListView();
@@ -2400,7 +2487,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lstItems_SelectedIndexChanged(object sender, EventArgs e)
+    void lstItems_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvDPA.SelectedIndices.Count > 0)
         this.ShowEntryInfo(this.lvDPA.SelectedIndices[0], this.lstItems.SelectedIndex);
@@ -2408,7 +2496,8 @@ namespace Hero_Designer
         this.ClearEntryInfo();
     }
 
-    private void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
+    void lvDPA_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvDPA.SelectedIndices.Count > 0)
         this.ShowRecipeInfo(this.lvDPA.SelectedIndices[0]);
@@ -2416,7 +2505,8 @@ namespace Hero_Designer
         this.ClearInfo();
     }
 
-    private int MinMax(int iValue, NumericUpDown iControl)
+    int MinMax(int iValue, NumericUpDown iControl)
+
     {
       if (Decimal.Compare(new Decimal(iValue), iControl.Minimum) < 0)
         iValue = Convert.ToInt32(iControl.Minimum);
@@ -2517,14 +2607,16 @@ namespace Hero_Designer
       }
     }
 
-    private void txtExtern_TextChanged(object sender, EventArgs e)
+    void txtExtern_TextChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() <= -1)
         return;
       DatabaseAPI.Database.Recipes[this.RecipeID()].ExternalName = this.txtExtern.Text;
     }
 
-    private void txtRecipeName_TextChanged(object sender, EventArgs e)
+    void txtRecipeName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() <= -1)
         return;
@@ -2532,7 +2624,8 @@ namespace Hero_Designer
       this.UpdateListItem(this.RecipeID());
     }
 
-    private void udCostX_Leave(object sender, EventArgs e)
+    void udCostX_Leave(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
         return;
@@ -2543,7 +2636,8 @@ namespace Hero_Designer
       DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCostM = this.MinMax((int) Math.Round(Conversion.Val(this.udCraftM.Text.Replace(",", "").Replace(".", ""))), this.udCraftM);
     }
 
-    private void udCostX_ValueChanged(object sender, EventArgs e)
+    void udCostX_ValueChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
         return;
@@ -2554,7 +2648,8 @@ namespace Hero_Designer
       DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].CraftCostM = Convert.ToInt32(this.udCraftM.Value);
     }
 
-    private void udSalX_Leave(object sender, EventArgs e)
+    void udSalX_Leave(object sender, EventArgs e)
+
     {
       DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[0] = this.MinMax((int) Math.Round(Conversion.Val(this.udSal0.Text)), this.udSal0);
       DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[1] = this.MinMax((int) Math.Round(Conversion.Val(this.udSal1.Text)), this.udSal1);
@@ -2563,7 +2658,8 @@ namespace Hero_Designer
       DatabaseAPI.Database.Recipes[this.RecipeID()].Item[this.EntryID()].Count[4] = this.MinMax((int) Math.Round(Conversion.Val(this.udSal4.Text)), this.udSal4);
     }
 
-    private void udSalX_ValueChanged(object sender, EventArgs e)
+    void udSalX_ValueChanged(object sender, EventArgs e)
+
     {
       if (this.NoUpdate || this.RecipeID() < 0 || this.EntryID() < 0)
         return;

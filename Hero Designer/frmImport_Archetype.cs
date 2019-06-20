@@ -16,44 +16,64 @@ namespace Hero_Designer
   public class frmImport_Archetype : Form
   {
     [AccessedThroughProperty("btnATFile")]
-    private Button _btnATFile;
-    [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
-    [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
-    [AccessedThroughProperty("ColumnHeader5")]
-    private ColumnHeader _ColumnHeader5;
-    [AccessedThroughProperty("ColumnHeader6")]
-    private ColumnHeader _ColumnHeader6;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("Label6")]
-    private Label _Label6;
-    [AccessedThroughProperty("Label8")]
-    private Label _Label8;
-    [AccessedThroughProperty("lblATCount")]
-    private Label _lblATCount;
-    [AccessedThroughProperty("lblATDate")]
-    private Label _lblATDate;
-    [AccessedThroughProperty("lblATFile")]
-    private Label _lblATFile;
-    [AccessedThroughProperty("lstImport")]
-    private ListView _lstImport;
-    [AccessedThroughProperty("udATRevision")]
-    private NumericUpDown _udATRevision;
-    private IContainer components;
-    private string FullFileName;
-    private ArchetypeData[] ImportBuffer;
+    Button _btnATFile;
 
-    internal virtual Button btnATFile
+    [AccessedThroughProperty("btnClose")]
+    Button _btnClose;
+
+    [AccessedThroughProperty("btnImport")]
+    Button _btnImport;
+
+    [AccessedThroughProperty("ColumnHeader1")]
+    ColumnHeader _ColumnHeader1;
+
+    [AccessedThroughProperty("ColumnHeader2")]
+    ColumnHeader _ColumnHeader2;
+
+    [AccessedThroughProperty("ColumnHeader3")]
+    ColumnHeader _ColumnHeader3;
+
+    [AccessedThroughProperty("ColumnHeader4")]
+    ColumnHeader _ColumnHeader4;
+
+    [AccessedThroughProperty("ColumnHeader5")]
+    ColumnHeader _ColumnHeader5;
+
+    [AccessedThroughProperty("ColumnHeader6")]
+    ColumnHeader _ColumnHeader6;
+
+    [AccessedThroughProperty("dlgBrowse")]
+    OpenFileDialog _dlgBrowse;
+
+    [AccessedThroughProperty("Label6")]
+    Label _Label6;
+
+    [AccessedThroughProperty("Label8")]
+    Label _Label8;
+
+    [AccessedThroughProperty("lblATCount")]
+    Label _lblATCount;
+
+    [AccessedThroughProperty("lblATDate")]
+    Label _lblATDate;
+
+    [AccessedThroughProperty("lblATFile")]
+    Label _lblATFile;
+
+    [AccessedThroughProperty("lstImport")]
+    ListView _lstImport;
+
+    [AccessedThroughProperty("udATRevision")]
+    NumericUpDown _udATRevision;
+
+    IContainer components;
+
+    string FullFileName;
+
+    ArchetypeData[] ImportBuffer;
+
+
+    Button btnATFile
     {
       get
       {
@@ -71,7 +91,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClose
+    Button btnClose
     {
       get
       {
@@ -89,7 +109,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -107,7 +127,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -119,7 +139,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -131,7 +151,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -143,7 +163,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -155,7 +175,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader5
+    ColumnHeader ColumnHeader5
     {
       get
       {
@@ -167,7 +187,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader6
+    ColumnHeader ColumnHeader6
     {
       get
       {
@@ -179,7 +199,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog dlgBrowse
+    OpenFileDialog dlgBrowse
     {
       get
       {
@@ -191,7 +211,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -203,7 +223,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -215,7 +235,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblATCount
+    Label lblATCount
     {
       get
       {
@@ -227,7 +247,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblATDate
+    Label lblATDate
     {
       get
       {
@@ -239,7 +259,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblATFile
+    Label lblATFile
     {
       get
       {
@@ -251,7 +271,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lstImport
+    ListView lstImport
     {
       get
       {
@@ -263,7 +283,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udATRevision
+    NumericUpDown udATRevision
     {
       get
       {
@@ -283,7 +303,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnATFile_Click(object sender, EventArgs e)
+    void btnATFile_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.FullFileName;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -295,12 +316,14 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       this.ProcessImport();
     }
@@ -328,7 +351,8 @@ namespace Hero_Designer
       }
     }
 
-    private void FillListView()
+    void FillListView()
+
     {
       string[] items = new string[6];
       this.lstImport.BeginUpdate();
@@ -356,14 +380,16 @@ namespace Hero_Designer
       this.lstImport.EndUpdate();
     }
 
-    private void frmImport_Archetype_Load(object sender, EventArgs e)
+    void frmImport_Archetype_Load(object sender, EventArgs e)
+
     {
       this.FullFileName = DatabaseAPI.Database.ArchetypeVersion.SourceFile;
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_Archetype));
       this.Label8 = new Label();
@@ -516,7 +542,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private bool ParseClasses(string iFileName)
+    bool ParseClasses(string iFileName)
+
     {
       int num1 = 0;
       StreamReader iStream;
@@ -569,7 +596,8 @@ namespace Hero_Designer
       return true;
     }
 
-    private bool ProcessImport()
+    bool ProcessImport()
+
     {
       bool flag = false;
       int num1 = 0;

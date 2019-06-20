@@ -15,34 +15,48 @@ namespace Hero_Designer
   public class frmImport_mod : Form
   {
     [AccessedThroughProperty("btnAttribIndex")]
-    private Button _btnAttribIndex;
-    [AccessedThroughProperty("btnAttribLoad")]
-    private Button _btnAttribLoad;
-    [AccessedThroughProperty("btnAttribTable")]
-    private Button _btnAttribTable;
-    [AccessedThroughProperty("Button1")]
-    private Button _Button1;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("lblAttribDate")]
-    private Label _lblAttribDate;
-    [AccessedThroughProperty("lblAttribIndex")]
-    private Label _lblAttribIndex;
-    [AccessedThroughProperty("lblAttribTableCount")]
-    private Label _lblAttribTableCount;
-    [AccessedThroughProperty("lblAttribTables")]
-    private Label _lblAttribTables;
-    [AccessedThroughProperty("udAttribRevision")]
-    private NumericUpDown _udAttribRevision;
-    private IContainer components;
+    Button _btnAttribIndex;
 
-    internal virtual Button btnAttribIndex
+    [AccessedThroughProperty("btnAttribLoad")]
+    Button _btnAttribLoad;
+
+    [AccessedThroughProperty("btnAttribTable")]
+    Button _btnAttribTable;
+
+    [AccessedThroughProperty("Button1")]
+    Button _Button1;
+
+    [AccessedThroughProperty("dlgBrowse")]
+    OpenFileDialog _dlgBrowse;
+
+    [AccessedThroughProperty("Label1")]
+    Label _Label1;
+
+    [AccessedThroughProperty("Label3")]
+    Label _Label3;
+
+    [AccessedThroughProperty("Label4")]
+    Label _Label4;
+
+    [AccessedThroughProperty("lblAttribDate")]
+    Label _lblAttribDate;
+
+    [AccessedThroughProperty("lblAttribIndex")]
+    Label _lblAttribIndex;
+
+    [AccessedThroughProperty("lblAttribTableCount")]
+    Label _lblAttribTableCount;
+
+    [AccessedThroughProperty("lblAttribTables")]
+    Label _lblAttribTables;
+
+    [AccessedThroughProperty("udAttribRevision")]
+    NumericUpDown _udAttribRevision;
+
+    IContainer components;
+
+
+    Button btnAttribIndex
     {
       get
       {
@@ -60,7 +74,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnAttribLoad
+    Button btnAttribLoad
     {
       get
       {
@@ -78,7 +92,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnAttribTable
+    Button btnAttribTable
     {
       get
       {
@@ -96,7 +110,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button Button1
+    Button Button1
     {
       get
       {
@@ -114,7 +128,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog dlgBrowse
+    OpenFileDialog dlgBrowse
     {
       get
       {
@@ -126,7 +140,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -138,7 +152,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -150,7 +164,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -162,7 +176,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblAttribDate
+    Label lblAttribDate
     {
       get
       {
@@ -174,7 +188,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblAttribIndex
+    Label lblAttribIndex
     {
       get
       {
@@ -186,7 +200,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblAttribTableCount
+    Label lblAttribTableCount
     {
       get
       {
@@ -198,7 +212,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label lblAttribTables
+    Label lblAttribTables
     {
       get
       {
@@ -210,7 +224,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udAttribRevision
+    NumericUpDown udAttribRevision
     {
       get
       {
@@ -228,7 +242,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnAttribIndex_Click(object sender, EventArgs e)
+    void btnAttribIndex_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.lblAttribIndex.Text;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) != DialogResult.OK)
@@ -236,7 +251,8 @@ namespace Hero_Designer
       this.lblAttribIndex.Text = this.dlgBrowse.FileName;
     }
 
-    private void btnAttribLoad_Click(object sender, EventArgs e)
+    void btnAttribLoad_Click(object sender, EventArgs e)
+
     {
       if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
       {
@@ -268,7 +284,8 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnAttribTable_Click(object sender, EventArgs e)
+    void btnAttribTable_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.lblAttribTables.Text;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) != DialogResult.OK)
@@ -276,12 +293,14 @@ namespace Hero_Designer
       this.lblAttribTables.Text = this.dlgBrowse.FileName;
     }
 
-    private void Button1_Click(object sender, EventArgs e)
+    void Button1_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void DisplayInfo()
+    void DisplayInfo()
+
     {
       this.lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
       this.lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
@@ -305,13 +324,15 @@ namespace Hero_Designer
       }
     }
 
-    private void frmImport_mod_Load(object sender, EventArgs e)
+    void frmImport_mod_Load(object sender, EventArgs e)
+
     {
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_mod));
       this.lblAttribTableCount = new Label();

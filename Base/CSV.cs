@@ -3,7 +3,8 @@ using System.Text.RegularExpressions;
 
 public static class CSV
 {
-  private static readonly Regex Reg = new Regex(",(?=(?:[^\"]|\"[^\"]*\")*$)", RegexOptions.CultureInvariant);
+  static readonly Regex Reg = new Regex(",(?=(?:[^\"]|\"[^\"]*\")*$)", RegexOptions.CultureInvariant);
+
 
   public static string[] ToArray(string iLine)
   {

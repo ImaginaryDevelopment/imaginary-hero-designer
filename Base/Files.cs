@@ -18,10 +18,12 @@ public static class Files
   public const string MxdbFileBbCodeUpdate = "BBCode.mhd";
   public const string MxdbFileOverrides = "Compare.mhd";
   public const string MxdbFileModifiers = "AttribMod.mhd";
-  private const string MxdbFileConfig = "Config.mhd";
+  const string MxdbFileConfig = "Config.mhd";
+
   public const string RoamingFolder = "Data\\";
 
-  private static string FNameConfig
+  static string FNameConfig
+
   {
     get
     {

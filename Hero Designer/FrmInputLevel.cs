@@ -14,17 +14,24 @@ namespace Hero_Designer
   public class FrmInputLevel : Form
   {
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("udLevel")]
-    private NumericUpDown _udLevel;
-    private IContainer components;
-    private bool LongFormat;
-    private bool Mode2;
-    private frmMain myparent;
+    Button _btnOK;
 
-    internal virtual Button btnOK
+    [AccessedThroughProperty("Label1")]
+    Label _Label1;
+
+    [AccessedThroughProperty("udLevel")]
+    NumericUpDown _udLevel;
+
+    IContainer components;
+
+    bool LongFormat;
+
+    bool Mode2;
+
+    frmMain myparent;
+
+
+    Button btnOK
     {
       get
       {
@@ -42,7 +49,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -54,7 +61,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udLevel
+    NumericUpDown udLevel
     {
       get
       {
@@ -81,7 +88,8 @@ namespace Hero_Designer
       this.Mode2 = iMode2;
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       int num;
       if (Conversion.Val(this.udLevel.Text) != Convert.ToDouble(this.udLevel.Value))
@@ -116,12 +124,14 @@ namespace Hero_Designer
       }
     }
 
-    private void FrmInputLevel_Load(object sender, EventArgs e)
+    void FrmInputLevel_Load(object sender, EventArgs e)
+
     {
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (FrmInputLevel));
       this.udLevel = new NumericUpDown();
@@ -183,7 +193,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void udLevel_Leave(object sender, EventArgs e)
+    void udLevel_Leave(object sender, EventArgs e)
+
     {
       this.udLevel.Validate();
     }

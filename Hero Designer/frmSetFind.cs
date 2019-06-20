@@ -19,38 +19,53 @@ namespace Hero_Designer
   public class frmSetFind : Form
   {
     [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
+    ColumnHeader _ColumnHeader1;
+
     [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
+    ColumnHeader _ColumnHeader2;
+
     [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
+    ColumnHeader _ColumnHeader3;
+
     [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
+    ColumnHeader _ColumnHeader4;
+
     [AccessedThroughProperty("ColumnHeader5")]
-    private ColumnHeader _ColumnHeader5;
+    ColumnHeader _ColumnHeader5;
+
     [AccessedThroughProperty("ColumnHeader6")]
-    private ColumnHeader _ColumnHeader6;
+    ColumnHeader _ColumnHeader6;
+
     [AccessedThroughProperty("ibClose")]
-    private ImageButton _ibClose;
+    ImageButton _ibClose;
+
     [AccessedThroughProperty("ibTopmost")]
-    private ImageButton _ibTopmost;
+    ImageButton _ibTopmost;
+
     [AccessedThroughProperty("ilSets")]
-    private ImageList _ilSets;
+    ImageList _ilSets;
+
     [AccessedThroughProperty("lvBonus")]
-    private ListView _lvBonus;
+    ListView _lvBonus;
+
     [AccessedThroughProperty("lvMag")]
-    private ListView _lvMag;
+    ListView _lvMag;
+
     [AccessedThroughProperty("lvSet")]
-    private ListView _lvSet;
+    ListView _lvSet;
+
     [AccessedThroughProperty("Panel1")]
-    private Panel _Panel1;
+    Panel _Panel1;
+
     [AccessedThroughProperty("SetInfo")]
-    private ctlPopUp _SetInfo;
-    private IContainer components;
+    ctlPopUp _SetInfo;
+
+    IContainer components;
+
     protected frmMain myParent;
     protected int[] SetBonusList;
 
-    internal virtual ColumnHeader ColumnHeader1
+    ColumnHeader ColumnHeader1
     {
       get
       {
@@ -62,7 +77,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader2
+    ColumnHeader ColumnHeader2
     {
       get
       {
@@ -74,7 +89,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader3
+    ColumnHeader ColumnHeader3
     {
       get
       {
@@ -86,7 +101,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader4
+    ColumnHeader ColumnHeader4
     {
       get
       {
@@ -98,7 +113,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader5
+    ColumnHeader ColumnHeader5
     {
       get
       {
@@ -110,7 +125,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader6
+    ColumnHeader ColumnHeader6
     {
       get
       {
@@ -122,7 +137,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibClose
+    ImageButton ibClose
     {
       get
       {
@@ -140,7 +155,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibTopmost
+    ImageButton ibTopmost
     {
       get
       {
@@ -158,7 +173,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilSets
+    ImageList ilSets
     {
       get
       {
@@ -170,7 +185,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvBonus
+    ListView lvBonus
     {
       get
       {
@@ -188,7 +203,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvMag
+    ListView lvMag
     {
       get
       {
@@ -206,7 +221,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSet
+    ListView lvSet
     {
       get
       {
@@ -224,7 +239,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel1
+    Panel Panel1
     {
       get
       {
@@ -236,7 +251,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlPopUp SetInfo
+    ctlPopUp SetInfo
     {
       get
       {
@@ -257,7 +272,8 @@ namespace Hero_Designer
       this.myParent = iParent;
     }
 
-    private void AddEffect(ref string[] List, ref int[] nIDList, string Effect, int nID)
+    void AddEffect(ref string[] List, ref int[] nIDList, string Effect, int nID)
+
     {
       int num = List.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -271,7 +287,8 @@ namespace Hero_Designer
       nIDList[List.Length - 1] = nID;
     }
 
-    private void AddSetString(int nIDSet, int BonusID)
+    void AddSetString(int nIDSet, int BonusID)
+
     {
       this.lvSet.Items.Add(new ListViewItem(new string[4]
       {
@@ -390,7 +407,8 @@ namespace Hero_Designer
       }
     }
 
-    private void FillSetList()
+    void FillSetList()
+
     {
       if (this.lvBonus.SelectedItems.Count < 1 | this.lvMag.SelectedItems.Count < 1)
       {
@@ -462,12 +480,14 @@ namespace Hero_Designer
       }
     }
 
-    private void frmSetFind_FormClosed(object sender, FormClosedEventArgs e)
+    void frmSetFind_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.myParent.FloatSetFinder(false);
     }
 
-    private void frmSetFind_Load(object sender, EventArgs e)
+    void frmSetFind_Load(object sender, EventArgs e)
+
     {
       this.SetBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus", "");
       this.BackColor = this.myParent.BackColor;
@@ -482,7 +502,8 @@ namespace Hero_Designer
       this.FillEffectList();
     }
 
-    private string GetPowerString(int nIDPower)
+    string GetPowerString(int nIDPower)
+
     {
       string str1 = "";
       string returnString = "";
@@ -528,12 +549,14 @@ namespace Hero_Designer
       return str2;
     }
 
-    private void ibClose_ButtonClicked()
+    void ibClose_ButtonClicked()
+
     {
       this.Close();
     }
 
-    private void ibTopmost_ButtonClicked()
+    void ibTopmost_ButtonClicked()
+
     {
       this.TopMost = this.ibTopmost.Checked;
       if (!this.TopMost)
@@ -542,7 +565,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSetFind));
@@ -692,17 +716,20 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lvBonus_SelectedIndexChanged(object sender, EventArgs e)
+    void lvBonus_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.FillMagList();
     }
 
-    private void lvMag_SelectedIndexChanged(object sender, EventArgs e)
+    void lvMag_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.FillSetList();
     }
 
-    private void lvSet_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvSet.SelectedItems.Count <= 0)
         return;

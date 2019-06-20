@@ -16,116 +16,169 @@ namespace Hero_Designer
   public class frmEditArchetype : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("cbClassType")]
-    private ComboBox _cbClassType;
+    ComboBox _cbClassType;
+
     [AccessedThroughProperty("cbPriGroup")]
-    private ComboBox _cbPriGroup;
+    ComboBox _cbPriGroup;
+
     [AccessedThroughProperty("cbSecGroup")]
-    private ComboBox _cbSecGroup;
+    ComboBox _cbSecGroup;
+
     [AccessedThroughProperty("chkPlayable")]
-    private CheckBox _chkPlayable;
+    CheckBox _chkPlayable;
+
     [AccessedThroughProperty("clbOrigin")]
-    private CheckedListBox _clbOrigin;
+    CheckedListBox _clbOrigin;
+
     [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
+    GroupBox _GroupBox1;
+
     [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    GroupBox _GroupBox2;
+
     [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
+    GroupBox _GroupBox3;
+
     [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
+    GroupBox _GroupBox4;
+
     [AccessedThroughProperty("GroupBox5")]
-    private GroupBox _GroupBox5;
+    GroupBox _GroupBox5;
+
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
+    Label _Label1;
+
     [AccessedThroughProperty("Label10")]
-    private Label _Label10;
+    Label _Label10;
+
     [AccessedThroughProperty("Label11")]
-    private Label _Label11;
+    Label _Label11;
+
     [AccessedThroughProperty("Label12")]
-    private Label _Label12;
+    Label _Label12;
+
     [AccessedThroughProperty("Label13")]
-    private Label _Label13;
+    Label _Label13;
+
     [AccessedThroughProperty("Label14")]
-    private Label _Label14;
+    Label _Label14;
+
     [AccessedThroughProperty("Label15")]
-    private Label _Label15;
+    Label _Label15;
+
     [AccessedThroughProperty("Label16")]
-    private Label _Label16;
+    Label _Label16;
+
     [AccessedThroughProperty("Label17")]
-    private Label _Label17;
+    Label _Label17;
+
     [AccessedThroughProperty("Label18")]
-    private Label _Label18;
+    Label _Label18;
+
     [AccessedThroughProperty("Label19")]
-    private Label _Label19;
+    Label _Label19;
+
     [AccessedThroughProperty("Label2")]
-    private Label _Label2;
+    Label _Label2;
+
     [AccessedThroughProperty("Label20")]
-    private Label _Label20;
+    Label _Label20;
+
     [AccessedThroughProperty("Label21")]
-    private Label _Label21;
+    Label _Label21;
+
     [AccessedThroughProperty("Label22")]
-    private Label _Label22;
+    Label _Label22;
+
     [AccessedThroughProperty("Label23")]
-    private Label _Label23;
+    Label _Label23;
+
     [AccessedThroughProperty("Label24")]
-    private Label _Label24;
+    Label _Label24;
+
     [AccessedThroughProperty("Label3")]
-    private Label _Label3;
+    Label _Label3;
+
     [AccessedThroughProperty("Label4")]
-    private Label _Label4;
+    Label _Label4;
+
     [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    Label _Label5;
+
     [AccessedThroughProperty("Label6")]
-    private Label _Label6;
+    Label _Label6;
+
     [AccessedThroughProperty("Label7")]
-    private Label _Label7;
+    Label _Label7;
+
     [AccessedThroughProperty("Label8")]
-    private Label _Label8;
+    Label _Label8;
+
     [AccessedThroughProperty("Label9")]
-    private Label _Label9;
+    Label _Label9;
+
     [AccessedThroughProperty("txtBaseRec")]
-    private TextBox _txtBaseRec;
+    TextBox _txtBaseRec;
+
     [AccessedThroughProperty("txtBaseRegen")]
-    private TextBox _txtBaseRegen;
+    TextBox _txtBaseRegen;
+
     [AccessedThroughProperty("txtClassName")]
-    private TextBox _txtClassName;
+    TextBox _txtClassName;
+
     [AccessedThroughProperty("txtDamCap")]
-    private TextBox _txtDamCap;
+    TextBox _txtDamCap;
+
     [AccessedThroughProperty("txtDescLong")]
-    private TextBox _txtDescLong;
+    TextBox _txtDescLong;
+
     [AccessedThroughProperty("txtDescShort")]
-    private TextBox _txtDescShort;
+    TextBox _txtDescShort;
+
     [AccessedThroughProperty("txtHP")]
-    private TextBox _txtHP;
+    TextBox _txtHP;
+
     [AccessedThroughProperty("txtHPCap")]
-    private TextBox _txtHPCap;
+    TextBox _txtHPCap;
+
     [AccessedThroughProperty("txtName")]
-    private TextBox _txtName;
+    TextBox _txtName;
+
     [AccessedThroughProperty("txtPerceptionCap")]
-    private TextBox _txtPerceptionCap;
+    TextBox _txtPerceptionCap;
+
     [AccessedThroughProperty("txtRecCap")]
-    private TextBox _txtRecCap;
+    TextBox _txtRecCap;
+
     [AccessedThroughProperty("txtRechargeCap")]
-    private TextBox _txtRechargeCap;
+    TextBox _txtRechargeCap;
+
     [AccessedThroughProperty("txtRegCap")]
-    private TextBox _txtRegCap;
+    TextBox _txtRegCap;
+
     [AccessedThroughProperty("txtResCap")]
-    private TextBox _txtResCap;
+    TextBox _txtResCap;
+
     [AccessedThroughProperty("udColumn")]
-    private NumericUpDown _udColumn;
+    NumericUpDown _udColumn;
+
     [AccessedThroughProperty("udThreat")]
-    private NumericUpDown _udThreat;
-    private IContainer components;
+    NumericUpDown _udThreat;
+
+    IContainer components;
+
     public bool Loading;
     public Archetype MyAT;
     protected bool ONDuplicate;
     protected string OriginalName;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -143,7 +196,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -161,7 +214,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbClassType
+    ComboBox cbClassType
     {
       get
       {
@@ -179,7 +232,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbPriGroup
+    ComboBox cbPriGroup
     {
       get
       {
@@ -191,7 +244,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSecGroup
+    ComboBox cbSecGroup
     {
       get
       {
@@ -203,7 +256,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkPlayable
+    CheckBox chkPlayable
     {
       get
       {
@@ -221,7 +274,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckedListBox clbOrigin
+    CheckedListBox clbOrigin
     {
       get
       {
@@ -233,7 +286,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
+    GroupBox GroupBox1
     {
       get
       {
@@ -245,7 +298,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox2
+    GroupBox GroupBox2
     {
       get
       {
@@ -257,7 +310,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox3
+    GroupBox GroupBox3
     {
       get
       {
@@ -269,7 +322,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox4
+    GroupBox GroupBox4
     {
       get
       {
@@ -281,7 +334,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox5
+    GroupBox GroupBox5
     {
       get
       {
@@ -293,7 +346,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
+    Label Label1
     {
       get
       {
@@ -305,7 +358,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label10
+    Label Label10
     {
       get
       {
@@ -317,7 +370,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label11
+    Label Label11
     {
       get
       {
@@ -329,7 +382,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label12
+    Label Label12
     {
       get
       {
@@ -341,7 +394,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label13
+    Label Label13
     {
       get
       {
@@ -353,7 +406,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label14
+    Label Label14
     {
       get
       {
@@ -365,7 +418,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label15
+    Label Label15
     {
       get
       {
@@ -377,7 +430,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label16
+    Label Label16
     {
       get
       {
@@ -389,7 +442,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label17
+    Label Label17
     {
       get
       {
@@ -401,7 +454,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label18
+    Label Label18
     {
       get
       {
@@ -413,7 +466,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label19
+    Label Label19
     {
       get
       {
@@ -425,7 +478,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label2
+    Label Label2
     {
       get
       {
@@ -437,7 +490,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label20
+    Label Label20
     {
       get
       {
@@ -449,7 +502,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label21
+    Label Label21
     {
       get
       {
@@ -461,7 +514,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label22
+    Label Label22
     {
       get
       {
@@ -473,7 +526,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label23
+    Label Label23
     {
       get
       {
@@ -485,7 +538,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label24
+    Label Label24
     {
       get
       {
@@ -497,7 +550,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label3
+    Label Label3
     {
       get
       {
@@ -509,7 +562,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label4
+    Label Label4
     {
       get
       {
@@ -521,7 +574,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label5
+    Label Label5
     {
       get
       {
@@ -533,7 +586,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label6
+    Label Label6
     {
       get
       {
@@ -545,7 +598,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label7
+    Label Label7
     {
       get
       {
@@ -557,7 +610,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label8
+    Label Label8
     {
       get
       {
@@ -569,7 +622,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label9
+    Label Label9
     {
       get
       {
@@ -581,7 +634,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtBaseRec
+    TextBox txtBaseRec
     {
       get
       {
@@ -593,7 +646,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtBaseRegen
+    TextBox txtBaseRegen
     {
       get
       {
@@ -605,7 +658,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtClassName
+    TextBox txtClassName
     {
       get
       {
@@ -623,7 +676,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDamCap
+    TextBox txtDamCap
     {
       get
       {
@@ -635,7 +688,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDescLong
+    TextBox txtDescLong
     {
       get
       {
@@ -653,7 +706,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDescShort
+    TextBox txtDescShort
     {
       get
       {
@@ -671,7 +724,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtHP
+    TextBox txtHP
     {
       get
       {
@@ -683,7 +736,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtHPCap
+    TextBox txtHPCap
     {
       get
       {
@@ -695,7 +748,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtName
+    TextBox txtName
     {
       get
       {
@@ -713,7 +766,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtPerceptionCap
+    TextBox txtPerceptionCap
     {
       get
       {
@@ -725,7 +778,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRecCap
+    TextBox txtRecCap
     {
       get
       {
@@ -737,7 +790,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRechargeCap
+    TextBox txtRechargeCap
     {
       get
       {
@@ -749,7 +802,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRegCap
+    TextBox txtRegCap
     {
       get
       {
@@ -761,7 +814,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtResCap
+    TextBox txtResCap
     {
       get
       {
@@ -773,7 +826,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udColumn
+    NumericUpDown udColumn
     {
       get
       {
@@ -785,7 +838,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udThreat
+    NumericUpDown udThreat
     {
       get
       {
@@ -814,13 +867,15 @@ namespace Hero_Designer
       }
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       if (!this.CheckClassName())
         return;
@@ -898,14 +953,16 @@ namespace Hero_Designer
       }
     }
 
-    private void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
+    void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.MyAT.ClassType = (Enums.eClassType) this.cbClassType.SelectedIndex;
     }
 
-    private bool CheckClassName()
+    bool CheckClassName()
+
     {
       if (!this.ONDuplicate)
       {
@@ -922,14 +979,16 @@ namespace Hero_Designer
       return true;
     }
 
-    private void chkPlayable_CheckedChanged(object sender, EventArgs e)
+    void chkPlayable_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.MyAT.Playable = this.chkPlayable.Checked;
     }
 
-    private void DisplayData()
+    void DisplayData()
+
     {
       this.Text = "Edit Class (" + this.MyAT.ClassName + " - " + this.MyAT.DisplayName + ")";
       this.txtName.Text = this.MyAT.DisplayName;
@@ -994,14 +1053,16 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmEditArchetype_Load(object sender, EventArgs e)
+    void frmEditArchetype_Load(object sender, EventArgs e)
+
     {
       this.DisplayData();
       this.Loading = false;
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmEditArchetype));
       this.txtName = new TextBox();
@@ -1557,28 +1618,32 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void txtClassName_TextChanged(object sender, EventArgs e)
+    void txtClassName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.MyAT.ClassName = this.txtClassName.Text;
     }
 
-    private void txtDescLong_TextChanged(object sender, EventArgs e)
+    void txtDescLong_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.MyAT.DescLong = this.txtDescLong.Text;
     }
 
-    private void txtDescShort_TextChanged(object sender, EventArgs e)
+    void txtDescShort_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;
       this.MyAT.DescShort = this.txtDescShort.Text;
     }
 
-    private void txtName_TextChanged(object sender, EventArgs e)
+    void txtName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Loading)
         return;

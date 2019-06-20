@@ -16,13 +16,19 @@ public static class MidsCharacterFileFormat
   };
   public const string MagicCompressed = "MxDz";
   public const string MagicUncompressed = "MxDu";
-  private const float SaveVersion = 1.01f;
-  private const int DataLinkMaxLength = 2048;
-  private const bool UseQualifiedNames = false;
-  private const bool UseOldSubpowerFields = true;
-  private const bool UseHexEncoding = true;
+  const float SaveVersion = 1.01f;
 
-  private static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
+  const int DataLinkMaxLength = 2048;
+
+  const bool UseQualifiedNames = false;
+
+  const bool UseOldSubpowerFields = true;
+
+  const bool UseHexEncoding = true;
+
+
+  static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
+
   {
     MemoryStream memoryStream;
     BinaryWriter writer;
@@ -102,7 +108,8 @@ public static class MidsCharacterFileFormat
     return str2;
   }
 
-  private static string MxDBuildSaveStringShared(
+  static string MxDBuildSaveStringShared(
+
     ref MidsCharacterFileFormat.CompressionData cData,
     bool inncludeAltEnh,
     bool @break)
@@ -161,7 +168,8 @@ public static class MidsCharacterFileFormat
     return str2;
   }
 
-  private static bool MxDReadSaveData(ref byte[] buffer, bool silent)
+  static bool MxDReadSaveData(ref byte[] buffer, bool silent)
+
   {
     bool flag1;
     if (buffer.Length < 1)
@@ -546,7 +554,8 @@ label_17:
     }
   }
 
-  private static void ReadSlotData(
+  static void ReadSlotData(
+
     ref BinaryReader reader,
     ref I9Slot slot,
     bool qualifiedNames,
@@ -586,7 +595,8 @@ label_17:
     IsOldFormat,
   }
 
-  private struct CompressionData
+  struct CompressionData
+
   {
     public int SzUncompressed;
     public int SzCompressed;

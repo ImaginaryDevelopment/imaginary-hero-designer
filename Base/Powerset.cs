@@ -4,8 +4,10 @@ using System.IO;
 
 public class Powerset : IPowerset, IComparable
 {
-  private string _fullName;
-  private string _groupName;
+  string _fullName;
+
+  string _groupName;
+
 
   public bool IsModified { get; set; }
 

@@ -5,15 +5,24 @@ using System.Text;
 
 public class RTF
 {
-  private const string Header = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}";
-  private const string CharTab = "\\tab ";
-  private const string CharCrlf = "\\par ";
-  private const string BoldOn = "\\b ";
-  private const string BoldOff = "\\b0 ";
-  private const string ItalicOn = "\\i ";
-  private const string ItalicOff = "\\i0 ";
-  private const string UnderlineOn = "\\ul ";
-  private const string UnderlineOff = "\\ulnone ";
+  const string Header = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}";
+
+  const string CharTab = "\\tab ";
+
+  const string CharCrlf = "\\par ";
+
+  const string BoldOn = "\\b ";
+
+  const string BoldOff = "\\b0 ";
+
+  const string ItalicOn = "\\i ";
+
+  const string ItalicOff = "\\i0 ";
+
+  const string UnderlineOn = "\\ul ";
+
+  const string UnderlineOff = "\\ulnone ";
+
 
   public static string ToRTF(string iStr)
   {
@@ -29,7 +38,8 @@ public class RTF
     return stringBuilder.ToString();
   }
 
-  private static string GetColorTable()
+  static string GetColorTable()
+
   {
     StringBuilder stringBuilder = new StringBuilder("{\\colortbl ;");
     stringBuilder.Append("\\red" + (object) MidsContext.Config.RtFont.ColorEnhancement.R + "\\green" + (object) MidsContext.Config.RtFont.ColorEnhancement.G + "\\blue" + (object) MidsContext.Config.RtFont.ColorEnhancement.B + ";");
@@ -44,7 +54,8 @@ public class RTF
     return stringBuilder.ToString();
   }
 
-  private static string GetInitialLine()
+  static string GetInitialLine()
+
   {
     StringBuilder stringBuilder = new StringBuilder("{\\*\\generator MHD_RTFClass;}\\viewkind4\\uc1\\pard\\f0\\fs");
     stringBuilder.Append(MidsContext.Config.RtFont.RTFBase);
@@ -55,7 +66,8 @@ public class RTF
     return stringBuilder.ToString();
   }
 
-  private static string GetFooter()
+  static string GetFooter()
+
   {
     StringBuilder stringBuilder = new StringBuilder();
     if (MidsContext.Config.RtFont.RTFBold)
