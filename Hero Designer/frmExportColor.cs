@@ -15,9 +15,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnOK")]
     Button _btnOK;
-
-    [AccessedThroughProperty("cPicker")]
-    ColorDialog _cPicker;
+        ColorDialog cPicker;
 
     [AccessedThroughProperty("csHeading")]
     Label _csHeading;
@@ -42,39 +40,17 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("csTitle")]
     Label _csTitle;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label19")]
-    Label _Label19;
-
-    [AccessedThroughProperty("Label20")]
-    Label _Label20;
-
-    [AccessedThroughProperty("Label21")]
-    Label _Label21;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("myTip")]
-    ToolTip _myTip;
+        Label Label1;
+        Label Label19;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label7;
+        Label Label9;
+        ToolTip myTip;
 
     [AccessedThroughProperty("txtName")]
     TextBox _txtName;
@@ -119,17 +95,6 @@ namespace Hero_Designer
       }
     }
 
-    ColorDialog cPicker
-    {
-      get
-      {
-        return this._cPicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cPicker = value;
-      }
-    }
 
     Label csHeading
     {
@@ -275,137 +240,16 @@ namespace Hero_Designer
       }
     }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    ToolTip myTip
-    {
-      get
-      {
-        return this._myTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._myTip = value;
-      }
-    }
 
     TextBox txtName
     {

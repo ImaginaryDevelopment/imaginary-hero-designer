@@ -30,32 +30,16 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkPrintHistory")]
     CheckBox _chkPrintHistory;
-
-    [AccessedThroughProperty("chkPrintHistoryEnh")]
-    CheckBox _chkPrintHistoryEnh;
-
-    [AccessedThroughProperty("chkProfileEnh")]
-    CheckBox _chkProfileEnh;
-
-    [AccessedThroughProperty("dlgSetup")]
-    PageSetupDialog _dlgSetup;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("lblPrinter")]
-    Label _lblPrinter;
+        CheckBox chkPrintHistoryEnh;
+        CheckBox chkProfileEnh;
+        PageSetupDialog dlgSetup;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label lblPrinter;
 
     Print _printer;
-
-    [AccessedThroughProperty("rbProfileLong")]
-    RadioButton _rbProfileLong;
-
-    [AccessedThroughProperty("rbProfileNone")]
-    RadioButton _rbProfileNone;
+        RadioButton rbProfileLong;
+        RadioButton rbProfileNone;
 
     [AccessedThroughProperty("rbProfileShort")]
     RadioButton _rbProfileShort;
@@ -153,101 +137,13 @@ namespace Hero_Designer
       }
     }
 
-    CheckBox chkPrintHistoryEnh
-    {
-      get
-      {
-        return this._chkPrintHistoryEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkPrintHistoryEnh = value;
-      }
-    }
 
-    CheckBox chkProfileEnh
-    {
-      get
-      {
-        return this._chkProfileEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkProfileEnh = value;
-      }
-    }
 
-    PageSetupDialog dlgSetup
-    {
-      get
-      {
-        return this._dlgSetup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgSetup = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    Label lblPrinter
-    {
-      get
-      {
-        return this._lblPrinter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblPrinter = value;
-      }
-    }
 
-    RadioButton rbProfileLong
-    {
-      get
-      {
-        return this._rbProfileLong;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbProfileLong = value;
-      }
-    }
 
-    RadioButton rbProfileNone
-    {
-      get
-      {
-        return this._rbProfileNone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbProfileNone = value;
-      }
-    }
 
     RadioButton rbProfileShort
     {

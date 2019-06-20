@@ -22,24 +22,12 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnImport")]
     Button _btnImport;
-
-    [AccessedThroughProperty("dlgBrowse")]
-    OpenFileDialog _dlgBrowse;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("lblDate")]
-    Label _lblDate;
-
-    [AccessedThroughProperty("lblFile")]
-    Label _lblFile;
-
-    [AccessedThroughProperty("udRevision")]
-    NumericUpDown _udRevision;
+        OpenFileDialog dlgBrowse;
+        Label Label3;
+        Label Label8;
+        Label lblDate;
+        Label lblFile;
+        NumericUpDown udRevision;
 
     frmBusy bFrm;
 
@@ -102,77 +90,11 @@ namespace Hero_Designer
       }
     }
 
-    OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label lblDate
-    {
-      get
-      {
-        return this._lblDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDate = value;
-      }
-    }
 
-    Label lblFile
-    {
-      get
-      {
-        return this._lblFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblFile = value;
-      }
-    }
 
-    NumericUpDown udRevision
-    {
-      get
-      {
-        return this._udRevision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udRevision = value;
-      }
-    }
 
     public frmImportPowerLevels()
     {

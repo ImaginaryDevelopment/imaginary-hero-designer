@@ -23,48 +23,20 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnImport")]
     Button _btnImport;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("ColumnHeader5")]
-    ColumnHeader _ColumnHeader5;
-
-    [AccessedThroughProperty("ColumnHeader6")]
-    ColumnHeader _ColumnHeader6;
-
-    [AccessedThroughProperty("dlgBrowse")]
-    OpenFileDialog _dlgBrowse;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("lblATCount")]
-    Label _lblATCount;
-
-    [AccessedThroughProperty("lblATDate")]
-    Label _lblATDate;
-
-    [AccessedThroughProperty("lblATFile")]
-    Label _lblATFile;
-
-    [AccessedThroughProperty("lstImport")]
-    ListView _lstImport;
-
-    [AccessedThroughProperty("udATRevision")]
-    NumericUpDown _udATRevision;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        OpenFileDialog dlgBrowse;
+        Label Label6;
+        Label Label8;
+        Label lblATCount;
+        Label lblATDate;
+        Label lblATFile;
+        ListView lstImport;
+        NumericUpDown udATRevision;
 
     IContainer components;
 
@@ -127,173 +99,19 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader6
-    {
-      get
-      {
-        return this._ColumnHeader6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader6 = value;
-      }
-    }
 
-    OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label lblATCount
-    {
-      get
-      {
-        return this._lblATCount;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblATCount = value;
-      }
-    }
 
-    Label lblATDate
-    {
-      get
-      {
-        return this._lblATDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblATDate = value;
-      }
-    }
 
-    Label lblATFile
-    {
-      get
-      {
-        return this._lblATFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblATFile = value;
-      }
-    }
 
-    ListView lstImport
-    {
-      get
-      {
-        return this._lstImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lstImport = value;
-      }
-    }
 
-    NumericUpDown udATRevision
-    {
-      get
-      {
-        return this._udATRevision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udATRevision = value;
-      }
-    }
 
     public frmImport_Archetype()
     {

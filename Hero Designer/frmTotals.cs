@@ -17,116 +17,51 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmTotals : Form
   {
-    [AccessedThroughProperty("graphAcc")]
-    ctlMultiGraph _graphAcc;
-
-    [AccessedThroughProperty("graphDam")]
-    ctlMultiGraph _graphDam;
-
-    [AccessedThroughProperty("graphDef")]
-    ctlMultiGraph _graphDef;
-
-    [AccessedThroughProperty("graphDrain")]
-    ctlMultiGraph _graphDrain;
-
-    [AccessedThroughProperty("graphElusivity")]
-    ctlMultiGraph _graphElusivity;
-
-    [AccessedThroughProperty("graphEndRdx")]
-    ctlMultiGraph _graphEndRdx;
-
-    [AccessedThroughProperty("graphHaste")]
-    ctlMultiGraph _graphHaste;
-
-    [AccessedThroughProperty("graphHP")]
-    ctlMultiGraph _graphHP;
-
-    [AccessedThroughProperty("graphMaxEnd")]
-    ctlMultiGraph _graphMaxEnd;
-
-    [AccessedThroughProperty("graphMovement")]
-    ctlMultiGraph _graphMovement;
-
-    [AccessedThroughProperty("graphRec")]
-    ctlMultiGraph _graphRec;
-
-    [AccessedThroughProperty("graphRegen")]
-    ctlMultiGraph _graphRegen;
-
-    [AccessedThroughProperty("graphRes")]
-    ctlMultiGraph _graphRes;
-
-    [AccessedThroughProperty("graphSDeb")]
-    ctlMultiGraph _graphSDeb;
-
-    [AccessedThroughProperty("graphSProt")]
-    ctlMultiGraph _graphSProt;
-
-    [AccessedThroughProperty("graphSRes")]
-    ctlMultiGraph _graphSRes;
-
-    [AccessedThroughProperty("graphStealth")]
-    ctlMultiGraph _graphStealth;
-
-    [AccessedThroughProperty("graphThreat")]
-    ctlMultiGraph _graphThreat;
-
-    [AccessedThroughProperty("graphToHit")]
-    ctlMultiGraph _graphToHit;
+        ctlMultiGraph graphAcc;
+        ctlMultiGraph graphDam;
+        ctlMultiGraph graphDef;
+        ctlMultiGraph graphDrain;
+        ctlMultiGraph graphElusivity;
+        ctlMultiGraph graphEndRdx;
+        ctlMultiGraph graphHaste;
+        ctlMultiGraph graphHP;
+        ctlMultiGraph graphMaxEnd;
+        ctlMultiGraph graphMovement;
+        ctlMultiGraph graphRec;
+        ctlMultiGraph graphRegen;
+        ctlMultiGraph graphRes;
+        ctlMultiGraph graphSDeb;
+        ctlMultiGraph graphSProt;
+        ctlMultiGraph graphSRes;
+        ctlMultiGraph graphStealth;
+        ctlMultiGraph graphThreat;
+        ctlMultiGraph graphToHit;
 
     bool _keepOnTop;
-
-    [AccessedThroughProperty("lblDef")]
-    Label _lblDef;
-
-    [AccessedThroughProperty("lblMisc")]
-    Label _lblMisc;
-
-    [AccessedThroughProperty("lblMovement")]
-    Label _lblMovement;
-
-    [AccessedThroughProperty("lblRegenRec")]
-    Label _lblRegenRec;
-
-    [AccessedThroughProperty("lblRes")]
-    Label _lblRes;
-
-    [AccessedThroughProperty("lblSDeb")]
-    Label _lblSDeb;
-
-    [AccessedThroughProperty("lblSProt")]
-    Label _lblSProt;
-
-    [AccessedThroughProperty("lblSRes")]
-    Label _lblSRes;
-
-    [AccessedThroughProperty("lblStealth")]
-    Label _lblStealth;
+        Label lblDef;
+        Label lblMisc;
+        Label lblMovement;
+        Label lblRegenRec;
+        Label lblRes;
+        Label lblSDeb;
+        Label lblSProt;
+        Label lblSRes;
+        Label lblStealth;
 
     bool _loaded;
 
     readonly frmMain _myParent;
-
-    [AccessedThroughProperty("Panel1")]
-    Panel _Panel1;
-
-    [AccessedThroughProperty("Panel2")]
-    Panel _Panel2;
+        Panel Panel1;
+        Panel Panel2;
 
     [AccessedThroughProperty("pbClose")]
     PictureBox _pbClose;
 
     [AccessedThroughProperty("pbTopMost")]
     PictureBox _pbTopMost;
-
-    [AccessedThroughProperty("pnlDRHE")]
-    Panel _pnlDRHE;
-
-    [AccessedThroughProperty("pnlMisc")]
-    Panel _pnlMisc;
-
-    [AccessedThroughProperty("pnlStatus")]
-    Panel _pnlStatus;
+        Panel pnlDRHE;
+        Panel pnlMisc;
+        Panel pnlStatus;
 
     [AccessedThroughProperty("rbFPS")]
     RadioButton _rbFPS;
@@ -154,365 +89,34 @@ namespace Hero_Designer
     IContainer components;
 
 
-    ctlMultiGraph graphAcc
-    {
-      get
-      {
-        return this._graphAcc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphAcc = value;
-      }
-    }
 
-    ctlMultiGraph graphDam
-    {
-      get
-      {
-        return this._graphDam;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphDam = value;
-      }
-    }
 
-    ctlMultiGraph graphDef
-    {
-      get
-      {
-        return this._graphDef;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphDef = value;
-      }
-    }
 
-    ctlMultiGraph graphDrain
-    {
-      get
-      {
-        return this._graphDrain;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphDrain = value;
-      }
-    }
 
-    ctlMultiGraph graphElusivity
-    {
-      get
-      {
-        return this._graphElusivity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphElusivity = value;
-      }
-    }
 
-    ctlMultiGraph graphEndRdx
-    {
-      get
-      {
-        return this._graphEndRdx;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphEndRdx = value;
-      }
-    }
 
-    ctlMultiGraph graphHaste
-    {
-      get
-      {
-        return this._graphHaste;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphHaste = value;
-      }
-    }
 
-    ctlMultiGraph graphHP
-    {
-      get
-      {
-        return this._graphHP;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphHP = value;
-      }
-    }
 
-    ctlMultiGraph graphMaxEnd
-    {
-      get
-      {
-        return this._graphMaxEnd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphMaxEnd = value;
-      }
-    }
 
-    ctlMultiGraph graphMovement
-    {
-      get
-      {
-        return this._graphMovement;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphMovement = value;
-      }
-    }
 
-    ctlMultiGraph graphRec
-    {
-      get
-      {
-        return this._graphRec;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphRec = value;
-      }
-    }
 
-    ctlMultiGraph graphRegen
-    {
-      get
-      {
-        return this._graphRegen;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphRegen = value;
-      }
-    }
 
-    ctlMultiGraph graphRes
-    {
-      get
-      {
-        return this._graphRes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphRes = value;
-      }
-    }
 
-    ctlMultiGraph graphSDeb
-    {
-      get
-      {
-        return this._graphSDeb;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphSDeb = value;
-      }
-    }
 
-    ctlMultiGraph graphSProt
-    {
-      get
-      {
-        return this._graphSProt;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphSProt = value;
-      }
-    }
 
-    ctlMultiGraph graphSRes
-    {
-      get
-      {
-        return this._graphSRes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphSRes = value;
-      }
-    }
 
-    ctlMultiGraph graphStealth
-    {
-      get
-      {
-        return this._graphStealth;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphStealth = value;
-      }
-    }
 
-    ctlMultiGraph graphThreat
-    {
-      get
-      {
-        return this._graphThreat;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphThreat = value;
-      }
-    }
 
-    ctlMultiGraph graphToHit
-    {
-      get
-      {
-        return this._graphToHit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._graphToHit = value;
-      }
-    }
 
-    Label lblDef
-    {
-      get
-      {
-        return this._lblDef;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDef = value;
-      }
-    }
 
-    Label lblMisc
-    {
-      get
-      {
-        return this._lblMisc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblMisc = value;
-      }
-    }
 
-    Label lblMovement
-    {
-      get
-      {
-        return this._lblMovement;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblMovement = value;
-      }
-    }
 
-    Label lblRegenRec
-    {
-      get
-      {
-        return this._lblRegenRec;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblRegenRec = value;
-      }
-    }
 
-    Label lblRes
-    {
-      get
-      {
-        return this._lblRes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblRes = value;
-      }
-    }
 
-    Label lblSDeb
-    {
-      get
-      {
-        return this._lblSDeb;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSDeb = value;
-      }
-    }
 
-    Label lblSProt
-    {
-      get
-      {
-        return this._lblSProt;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSProt = value;
-      }
-    }
 
-    Label lblSRes
-    {
-      get
-      {
-        return this._lblSRes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSRes = value;
-      }
-    }
 
-    Label lblStealth
-    {
-      get
-      {
-        return this._lblStealth;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblStealth = value;
-      }
-    }
 
-    Panel Panel1
-    {
-      get
-      {
-        return this._Panel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel1 = value;
-      }
-    }
-
-    Panel Panel2
-    {
-      get
-      {
-        return this._Panel2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel2 = value;
-      }
-    }
 
     PictureBox pbClose
     {
@@ -560,41 +164,8 @@ namespace Hero_Designer
       }
     }
 
-    Panel pnlDRHE
-    {
-      get
-      {
-        return this._pnlDRHE;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlDRHE = value;
-      }
-    }
 
-    Panel pnlMisc
-    {
-      get
-      {
-        return this._pnlMisc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlMisc = value;
-      }
-    }
 
-    Panel pnlStatus
-    {
-      get
-      {
-        return this._pnlStatus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlStatus = value;
-      }
-    }
 
     RadioButton rbFPS
     {

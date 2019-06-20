@@ -23,153 +23,65 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbClassType")]
     ComboBox _cbClassType;
-
-    [AccessedThroughProperty("cbPriGroup")]
-    ComboBox _cbPriGroup;
-
-    [AccessedThroughProperty("cbSecGroup")]
-    ComboBox _cbSecGroup;
+        ComboBox cbPriGroup;
+        ComboBox cbSecGroup;
 
     [AccessedThroughProperty("chkPlayable")]
     CheckBox _chkPlayable;
-
-    [AccessedThroughProperty("clbOrigin")]
-    CheckedListBox _clbOrigin;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
-
-    [AccessedThroughProperty("GroupBox4")]
-    GroupBox _GroupBox4;
-
-    [AccessedThroughProperty("GroupBox5")]
-    GroupBox _GroupBox5;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label12")]
-    Label _Label12;
-
-    [AccessedThroughProperty("Label13")]
-    Label _Label13;
-
-    [AccessedThroughProperty("Label14")]
-    Label _Label14;
-
-    [AccessedThroughProperty("Label15")]
-    Label _Label15;
-
-    [AccessedThroughProperty("Label16")]
-    Label _Label16;
-
-    [AccessedThroughProperty("Label17")]
-    Label _Label17;
-
-    [AccessedThroughProperty("Label18")]
-    Label _Label18;
-
-    [AccessedThroughProperty("Label19")]
-    Label _Label19;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label20")]
-    Label _Label20;
-
-    [AccessedThroughProperty("Label21")]
-    Label _Label21;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label23")]
-    Label _Label23;
-
-    [AccessedThroughProperty("Label24")]
-    Label _Label24;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("txtBaseRec")]
-    TextBox _txtBaseRec;
-
-    [AccessedThroughProperty("txtBaseRegen")]
-    TextBox _txtBaseRegen;
+        CheckedListBox clbOrigin;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label17;
+        Label Label18;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        TextBox txtBaseRec;
+        TextBox txtBaseRegen;
 
     [AccessedThroughProperty("txtClassName")]
     TextBox _txtClassName;
-
-    [AccessedThroughProperty("txtDamCap")]
-    TextBox _txtDamCap;
+        TextBox txtDamCap;
 
     [AccessedThroughProperty("txtDescLong")]
     TextBox _txtDescLong;
 
     [AccessedThroughProperty("txtDescShort")]
     TextBox _txtDescShort;
-
-    [AccessedThroughProperty("txtHP")]
-    TextBox _txtHP;
-
-    [AccessedThroughProperty("txtHPCap")]
-    TextBox _txtHPCap;
+        TextBox txtHP;
+        TextBox txtHPCap;
 
     [AccessedThroughProperty("txtName")]
     TextBox _txtName;
-
-    [AccessedThroughProperty("txtPerceptionCap")]
-    TextBox _txtPerceptionCap;
-
-    [AccessedThroughProperty("txtRecCap")]
-    TextBox _txtRecCap;
-
-    [AccessedThroughProperty("txtRechargeCap")]
-    TextBox _txtRechargeCap;
-
-    [AccessedThroughProperty("txtRegCap")]
-    TextBox _txtRegCap;
-
-    [AccessedThroughProperty("txtResCap")]
-    TextBox _txtResCap;
-
-    [AccessedThroughProperty("udColumn")]
-    NumericUpDown _udColumn;
-
-    [AccessedThroughProperty("udThreat")]
-    NumericUpDown _udThreat;
+        TextBox txtPerceptionCap;
+        TextBox txtRecCap;
+        TextBox txtRechargeCap;
+        TextBox txtRegCap;
+        TextBox txtResCap;
+        NumericUpDown udColumn;
+        NumericUpDown udThreat;
 
     IContainer components;
 
@@ -232,29 +144,7 @@ namespace Hero_Designer
       }
     }
 
-    ComboBox cbPriGroup
-    {
-      get
-      {
-        return this._cbPriGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cbPriGroup = value;
-      }
-    }
 
-    ComboBox cbSecGroup
-    {
-      get
-      {
-        return this._cbSecGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cbSecGroup = value;
-      }
-    }
 
     CheckBox chkPlayable
     {
@@ -274,389 +164,37 @@ namespace Hero_Designer
       }
     }
 
-    CheckedListBox clbOrigin
-    {
-      get
-      {
-        return this._clbOrigin;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._clbOrigin = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
 
-    Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
 
-    Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
 
-    Label Label17
-    {
-      get
-      {
-        return this._Label17;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label17 = value;
-      }
-    }
 
-    Label Label18
-    {
-      get
-      {
-        return this._Label18;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label18 = value;
-      }
-    }
 
-    Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label23
-    {
-      get
-      {
-        return this._Label23;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label23 = value;
-      }
-    }
 
-    Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    TextBox txtBaseRec
-    {
-      get
-      {
-        return this._txtBaseRec;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtBaseRec = value;
-      }
-    }
 
-    TextBox txtBaseRegen
-    {
-      get
-      {
-        return this._txtBaseRegen;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtBaseRegen = value;
-      }
-    }
 
     TextBox txtClassName
     {
@@ -676,17 +214,6 @@ namespace Hero_Designer
       }
     }
 
-    TextBox txtDamCap
-    {
-      get
-      {
-        return this._txtDamCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtDamCap = value;
-      }
-    }
 
     TextBox txtDescLong
     {
@@ -724,29 +251,7 @@ namespace Hero_Designer
       }
     }
 
-    TextBox txtHP
-    {
-      get
-      {
-        return this._txtHP;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtHP = value;
-      }
-    }
 
-    TextBox txtHPCap
-    {
-      get
-      {
-        return this._txtHPCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtHPCap = value;
-      }
-    }
 
     TextBox txtName
     {
@@ -766,89 +271,12 @@ namespace Hero_Designer
       }
     }
 
-    TextBox txtPerceptionCap
-    {
-      get
-      {
-        return this._txtPerceptionCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtPerceptionCap = value;
-      }
-    }
 
-    TextBox txtRecCap
-    {
-      get
-      {
-        return this._txtRecCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtRecCap = value;
-      }
-    }
 
-    TextBox txtRechargeCap
-    {
-      get
-      {
-        return this._txtRechargeCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtRechargeCap = value;
-      }
-    }
 
-    TextBox txtRegCap
-    {
-      get
-      {
-        return this._txtRegCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtRegCap = value;
-      }
-    }
 
-    TextBox txtResCap
-    {
-      get
-      {
-        return this._txtResCap;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtResCap = value;
-      }
-    }
 
-    NumericUpDown udColumn
-    {
-      get
-      {
-        return this._udColumn;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udColumn = value;
-      }
-    }
 
-    NumericUpDown udThreat
-    {
-      get
-      {
-        return this._udThreat;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udThreat = value;
-      }
-    }
 
     public frmEditArchetype(ref Archetype iAT)
     {

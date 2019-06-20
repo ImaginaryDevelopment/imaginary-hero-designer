@@ -48,33 +48,19 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("Graph")]
     ctlMultiGraph _Graph;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox4")]
-    GroupBox _GroupBox4;
-
-    [AccessedThroughProperty("lblKeyColor1")]
-    Label _lblKeyColor1;
-
-    [AccessedThroughProperty("lblKeyColor2")]
-    Label _lblKeyColor2;
-
-    [AccessedThroughProperty("lblScale")]
-    Label _lblScale;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox4;
+        Label lblKeyColor1;
+        Label lblKeyColor2;
+        Label lblScale;
 
     [AccessedThroughProperty("lstDisplay")]
     ListBox _lstDisplay;
 
     [AccessedThroughProperty("tbScaleX")]
     TrackBar _tbScaleX;
-
-    [AccessedThroughProperty("tTip")]
-    ToolTip _tTip;
+        ToolTip tTip;
 
     IContainer components;
 
@@ -291,77 +277,11 @@ namespace Hero_Designer
       }
     }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    Label lblKeyColor1
-    {
-      get
-      {
-        return this._lblKeyColor1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor1 = value;
-      }
-    }
 
-    Label lblKeyColor2
-    {
-      get
-      {
-        return this._lblKeyColor2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor2 = value;
-      }
-    }
 
-    Label lblScale
-    {
-      get
-      {
-        return this._lblScale;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblScale = value;
-      }
-    }
 
     ListBox lstDisplay
     {
@@ -399,17 +319,6 @@ namespace Hero_Designer
       }
     }
 
-    ToolTip tTip
-    {
-      get
-      {
-        return this._tTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tTip = value;
-      }
-    }
 
     public frmCompare(ref frmMain iFrm)
     {

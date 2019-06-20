@@ -15,45 +15,27 @@ namespace Hero_Designer
     {
         [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
-
-        [AccessedThroughProperty("Label1")]
-        Label _Label1;
-
-        [AccessedThroughProperty("Label3")]
-        Label _Label3;
-
-        [AccessedThroughProperty("Label4")]
-        Label _Label4;
-
-        [AccessedThroughProperty("Label5")]
-        Label _Label5;
-
-        [AccessedThroughProperty("lblDBDate")]
-        Label _lblDBDate;
-
-        [AccessedThroughProperty("lblDBIssue")]
-        Label _lblDBIssue;
+        Label Label1;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label lblDBDate;
+        Label lblDBIssue;
 
         [AccessedThroughProperty("lblDonate")]
         Label _lblDonate;
 
         [AccessedThroughProperty("lblEmail")]
         Label _lblEmail;
-
-        [AccessedThroughProperty("lblLegal")]
-        Label _lblLegal;
-
-        [AccessedThroughProperty("lblVersion")]
-        Label _lblVersion;
+        Label lblLegal;
+        Label lblVersion;
 
         [AccessedThroughProperty("lblWebPage")]
         Label _lblWebPage;
 
         [AccessedThroughProperty("pbBackground")]
         PictureBox _pbBackground;
-
-        [AccessedThroughProperty("tTip")]
-        ToolTip _tTip;
+        ToolTip tTip;
 
         IContainer components;
 
@@ -79,83 +61,11 @@ namespace Hero_Designer
             }
         }
 
-        Label Label1
-        {
-            get
-            {
-                return this._Label1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label1 = value;
-            }
-        }
 
-        Label Label3
-        {
-            get
-            {
-                return this._Label3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label3 = value;
-            }
-        }
 
-        Label Label4
-        {
-            get
-            {
-                return this._Label4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label4 = value;
-            }
-        }
 
-        Label Label5
-        {
-            get
-            {
-                return this._Label5;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label5 = value;
-            }
-        }
 
-        Label lblDBDate
-        {
-            get
-            {
-                return this._lblDBDate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblDBDate = value;
-            }
-        }
 
-        Label lblDBIssue
-        {
-            get
-            {
-                return this._lblDBIssue;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblDBIssue = value;
-            }
-        }
 
         Label lblDonate
         {
@@ -195,31 +105,7 @@ namespace Hero_Designer
             }
         }
 
-        Label lblLegal
-        {
-            get
-            {
-                return this._lblLegal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblLegal = value;
-            }
-        }
 
-        Label lblVersion
-        {
-            get
-            {
-                return this._lblVersion;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblVersion = value;
-            }
-        }
 
         Label lblWebPage
         {
@@ -264,18 +150,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolTip tTip
-        {
-            get
-            {
-                return this._tTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._tTip = value;
-            }
-        }
 
         public frmAbout()
         {

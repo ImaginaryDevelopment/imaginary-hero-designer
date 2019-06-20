@@ -29,30 +29,16 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkOnTop")]
     ImageButton _chkOnTop;
-
-    [AccessedThroughProperty("Graph")]
-    ctlMultiGraph _Graph;
-
-    [AccessedThroughProperty("lblKey1")]
-    Label _lblKey1;
-
-    [AccessedThroughProperty("lblKey2")]
-    Label _lblKey2;
-
-    [AccessedThroughProperty("lblKeyColor1")]
-    Label _lblKeyColor1;
-
-    [AccessedThroughProperty("lblKeyColor2")]
-    Label _lblKeyColor2;
-
-    [AccessedThroughProperty("lblScale")]
-    Label _lblScale;
+        ctlMultiGraph Graph;
+        Label lblKey1;
+        Label lblKey2;
+        Label lblKeyColor1;
+        Label lblKeyColor2;
+        Label lblScale;
 
     [AccessedThroughProperty("tbScaleX")]
     TrackBar _tbScaleX;
-
-    [AccessedThroughProperty("tTip")]
-    ToolTip _tTip;
+        ToolTip tTip;
 
     protected IPower[] BaseArray;
     protected bool BaseOverride;
@@ -154,77 +140,11 @@ namespace Hero_Designer
       }
     }
 
-    ctlMultiGraph Graph
-    {
-      get
-      {
-        return this._Graph;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Graph = value;
-      }
-    }
 
-    Label lblKey1
-    {
-      get
-      {
-        return this._lblKey1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKey1 = value;
-      }
-    }
 
-    Label lblKey2
-    {
-      get
-      {
-        return this._lblKey2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKey2 = value;
-      }
-    }
 
-    Label lblKeyColor1
-    {
-      get
-      {
-        return this._lblKeyColor1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor1 = value;
-      }
-    }
 
-    Label lblKeyColor2
-    {
-      get
-      {
-        return this._lblKeyColor2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor2 = value;
-      }
-    }
 
-    Label lblScale
-    {
-      get
-      {
-        return this._lblScale;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblScale = value;
-      }
-    }
 
     TrackBar tbScaleX
     {
@@ -244,17 +164,6 @@ namespace Hero_Designer
       }
     }
 
-    ToolTip tTip
-    {
-      get
-      {
-        return this._tTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tTip = value;
-      }
-    }
 
     public frmStats(ref frmMain iParent)
     {

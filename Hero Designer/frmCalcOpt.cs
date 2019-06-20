@@ -43,69 +43,31 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnUpdatePathReset")]
     Button _btnUpdatePathReset;
-
-    [AccessedThroughProperty("cbEnhLevel")]
-    ComboBox _cbEnhLevel;
-
-    [AccessedThroughProperty("chkColorInherent")]
-    CheckBox _chkColorInherent;
-
-    [AccessedThroughProperty("chkColourPrint")]
-    CheckBox _chkColourPrint;
-
-    [AccessedThroughProperty("chkHighVis")]
-    CheckBox _chkHighVis;
-
-    [AccessedThroughProperty("chkIOEffects")]
-    CheckBox _chkIOEffects;
-
-    [AccessedThroughProperty("chkIOLevel")]
-    CheckBox _chkIOLevel;
-
-    [AccessedThroughProperty("chkIOPrintLevels")]
-    CheckBox _chkIOPrintLevels;
-
-    [AccessedThroughProperty("chkLoadLastFile")]
-    CheckBox _chkLoadLastFile;
-
-    [AccessedThroughProperty("chkMiddle")]
-    CheckBox _chkMiddle;
-
-    [AccessedThroughProperty("chkNoTips")]
-    CheckBox _chkNoTips;
-
-    [AccessedThroughProperty("chkRelSignOnly")]
-    CheckBox _chkRelSignOnly;
-
-    [AccessedThroughProperty("chkSetBonus")]
-    CheckBox _chkSetBonus;
-
-    [AccessedThroughProperty("chkShowAlphaPopup")]
-    CheckBox _chkShowAlphaPopup;
-
-    [AccessedThroughProperty("chkStatBold")]
-    CheckBox _chkStatBold;
-
-    [AccessedThroughProperty("chkTextBold")]
-    CheckBox _chkTextBold;
-
-    [AccessedThroughProperty("chkUpdates")]
-    CheckBox _chkUpdates;
-
-    [AccessedThroughProperty("chkUseArcanaTime")]
-    CheckBox _chkUseArcanaTime;
-
-    [AccessedThroughProperty("chkVillainColour")]
-    CheckBox _chkVillainColour;
+        ComboBox cbEnhLevel;
+        CheckBox chkColorInherent;
+        CheckBox chkColourPrint;
+        CheckBox chkHighVis;
+        CheckBox chkIOEffects;
+        CheckBox chkIOLevel;
+        CheckBox chkIOPrintLevels;
+        CheckBox chkLoadLastFile;
+        CheckBox chkMiddle;
+        CheckBox chkNoTips;
+        CheckBox chkRelSignOnly;
+        CheckBox chkSetBonus;
+        CheckBox chkShowAlphaPopup;
+        CheckBox chkStatBold;
+        CheckBox chkTextBold;
+        CheckBox chkUpdates;
+        CheckBox chkUseArcanaTime;
+        CheckBox chkVillainColour;
 
     [AccessedThroughProperty("clbSuppression")]
     CheckedListBox _clbSuppression;
 
     [AccessedThroughProperty("cmbAction")]
     ComboBox _cmbAction;
-
-    [AccessedThroughProperty("cPicker")]
-    ColorDialog _cPicker;
+        ColorDialog cPicker;
 
     [AccessedThroughProperty("csAdd")]
     Button _csAdd;
@@ -121,9 +83,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("csReset")]
     Button _csReset;
-
-    [AccessedThroughProperty("fbdSave")]
-    FolderBrowserDialog _fbdSave;
+        FolderBrowserDialog fbdSave;
 
     [AccessedThroughProperty("fcAdd")]
     Button _fcAdd;
@@ -151,9 +111,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("fcList")]
     ListBox _fcList;
-
-    [AccessedThroughProperty("fcName")]
-    TextBox _fcName;
+        TextBox fcName;
 
     [AccessedThroughProperty("fcNotes")]
     TextBox _fcNotes;
@@ -181,258 +139,98 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("fcWSTab")]
     RadioButton _fcWSTab;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox10")]
-    GroupBox _GroupBox10;
-
-    [AccessedThroughProperty("GroupBox11")]
-    GroupBox _GroupBox11;
-
-    [AccessedThroughProperty("GroupBox12")]
-    GroupBox _GroupBox12;
-
-    [AccessedThroughProperty("GroupBox13")]
-    GroupBox _GroupBox13;
-
-    [AccessedThroughProperty("GroupBox14")]
-    GroupBox _GroupBox14;
-
-    [AccessedThroughProperty("GroupBox15")]
-    GroupBox _GroupBox15;
-
-    [AccessedThroughProperty("GroupBox16")]
-    GroupBox _GroupBox16;
-
-    [AccessedThroughProperty("GroupBox17")]
-    GroupBox _GroupBox17;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
-
-    [AccessedThroughProperty("GroupBox4")]
-    GroupBox _GroupBox4;
-
-    [AccessedThroughProperty("GroupBox5")]
-    GroupBox _GroupBox5;
-
-    [AccessedThroughProperty("GroupBox6")]
-    GroupBox _GroupBox6;
-
-    [AccessedThroughProperty("GroupBox7")]
-    GroupBox _GroupBox7;
-
-    [AccessedThroughProperty("GroupBox8")]
-    GroupBox _GroupBox8;
-
-    [AccessedThroughProperty("GroupBox9")]
-    GroupBox _GroupBox9;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label12")]
-    Label _Label12;
-
-    [AccessedThroughProperty("Label13")]
-    Label _Label13;
-
-    [AccessedThroughProperty("Label14")]
-    Label _Label14;
-
-    [AccessedThroughProperty("Label15")]
-    Label _Label15;
-
-    [AccessedThroughProperty("Label16")]
-    Label _Label16;
-
-    [AccessedThroughProperty("Label19")]
-    Label _Label19;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label20")]
-    Label _Label20;
-
-    [AccessedThroughProperty("Label21")]
-    Label _Label21;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label24")]
-    Label _Label24;
-
-    [AccessedThroughProperty("Label25")]
-    Label _Label25;
-
-    [AccessedThroughProperty("Label26")]
-    Label _Label26;
-
-    [AccessedThroughProperty("Label27")]
-    Label _Label27;
-
-    [AccessedThroughProperty("Label28")]
-    Label _Label28;
-
-    [AccessedThroughProperty("Label29")]
-    Label _Label29;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label30")]
-    Label _Label30;
-
-    [AccessedThroughProperty("Label31")]
-    Label _Label31;
-
-    [AccessedThroughProperty("Label32")]
-    Label _Label32;
-
-    [AccessedThroughProperty("Label33")]
-    Label _Label33;
-
-    [AccessedThroughProperty("Label34")]
-    Label _Label34;
-
-    [AccessedThroughProperty("Label36")]
-    Label _Label36;
-
-    [AccessedThroughProperty("Label37")]
-    Label _Label37;
-
-    [AccessedThroughProperty("Label38")]
-    Label _Label38;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label40")]
-    Label _Label40;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("lblExample")]
-    Label _lblExample;
-
-    [AccessedThroughProperty("lblSaveFolder")]
-    Label _lblSaveFolder;
+        GroupBox GroupBox1;
+        GroupBox GroupBox10;
+        GroupBox GroupBox11;
+        GroupBox GroupBox12;
+        GroupBox GroupBox13;
+        GroupBox GroupBox14;
+        GroupBox GroupBox15;
+        GroupBox GroupBox16;
+        GroupBox GroupBox17;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        GroupBox GroupBox6;
+        GroupBox GroupBox7;
+        GroupBox GroupBox8;
+        GroupBox GroupBox9;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label24;
+        Label Label25;
+        Label Label26;
+        Label Label27;
+        Label Label28;
+        Label Label29;
+        Label Label3;
+        Label Label30;
+        Label Label31;
+        Label Label32;
+        Label Label33;
+        Label Label34;
+        Label Label36;
+        Label Label37;
+        Label Label38;
+        Label Label4;
+        Label Label40;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblExample;
+        Label lblSaveFolder;
 
     [AccessedThroughProperty("listScenarios")]
     ListBox _listScenarios;
-
-    [AccessedThroughProperty("myTip")]
-    ToolTip _myTip;
+        ToolTip myTip;
 
     [AccessedThroughProperty("optDO")]
     RadioButton _optDO;
-
-    [AccessedThroughProperty("optEnh")]
-    Label _optEnh;
+        Label optEnh;
 
     [AccessedThroughProperty("optSO")]
     RadioButton _optSO;
 
     [AccessedThroughProperty("optTO")]
     RadioButton _optTO;
-
-    [AccessedThroughProperty("rbChanceAverage")]
-    RadioButton _rbChanceAverage;
-
-    [AccessedThroughProperty("rbChanceIgnore")]
-    RadioButton _rbChanceIgnore;
-
-    [AccessedThroughProperty("rbChanceMax")]
-    RadioButton _rbChanceMax;
-
-    [AccessedThroughProperty("rbGraphSimple")]
-    RadioButton _rbGraphSimple;
-
-    [AccessedThroughProperty("rbGraphStacked")]
-    RadioButton _rbGraphStacked;
-
-    [AccessedThroughProperty("rbGraphTwoLine")]
-    RadioButton _rbGraphTwoLine;
-
-    [AccessedThroughProperty("rbPvE")]
-    RadioButton _rbPvE;
-
-    [AccessedThroughProperty("rbPvP")]
-    RadioButton _rbPvP;
-
-    [AccessedThroughProperty("TabControl1")]
-    TabControl _TabControl1;
-
-    [AccessedThroughProperty("TabPage1")]
-    TabPage _TabPage1;
-
-    [AccessedThroughProperty("TabPage2")]
-    TabPage _TabPage2;
-
-    [AccessedThroughProperty("TabPage3")]
-    TabPage _TabPage3;
-
-    [AccessedThroughProperty("TabPage4")]
-    TabPage _TabPage4;
-
-    [AccessedThroughProperty("TabPage5")]
-    TabPage _TabPage5;
-
-    [AccessedThroughProperty("TabPage6")]
-    TabPage _TabPage6;
-
-    [AccessedThroughProperty("TeamSize")]
-    NumericUpDown _TeamSize;
-
-    [AccessedThroughProperty("txtUpdatePath")]
-    TextBox _txtUpdatePath;
-
-    [AccessedThroughProperty("udBaseToHit")]
-    NumericUpDown _udBaseToHit;
-
-    [AccessedThroughProperty("udExHigh")]
-    NumericUpDown _udExHigh;
-
-    [AccessedThroughProperty("udExLow")]
-    NumericUpDown _udExLow;
-
-    [AccessedThroughProperty("udForceLevel")]
-    NumericUpDown _udForceLevel;
-
-    [AccessedThroughProperty("udIOLevel")]
-    NumericUpDown _udIOLevel;
-
-    [AccessedThroughProperty("udRTFSize")]
-    NumericUpDown _udRTFSize;
-
-    [AccessedThroughProperty("udStatSize")]
-    NumericUpDown _udStatSize;
+        RadioButton rbChanceAverage;
+        RadioButton rbChanceIgnore;
+        RadioButton rbChanceMax;
+        RadioButton rbGraphSimple;
+        RadioButton rbGraphStacked;
+        RadioButton rbGraphTwoLine;
+        RadioButton rbPvE;
+        RadioButton rbPvP;
+        TabControl TabControl1;
+        TabPage TabPage1;
+        TabPage TabPage2;
+        TabPage TabPage3;
+        TabPage TabPage4;
+        TabPage TabPage5;
+        TabPage TabPage6;
+        NumericUpDown TeamSize;
+        TextBox txtUpdatePath;
+        NumericUpDown udBaseToHit;
+        NumericUpDown udExHigh;
+        NumericUpDown udExLow;
+        NumericUpDown udForceLevel;
+        NumericUpDown udIOLevel;
+        NumericUpDown udRTFSize;
+        NumericUpDown udStatSize;
 
     IContainer components;
 
@@ -625,221 +423,23 @@ namespace Hero_Designer
       }
     }
 
-    ComboBox cbEnhLevel
-    {
-      get
-      {
-        return this._cbEnhLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cbEnhLevel = value;
-      }
-    }
 
-    CheckBox chkColorInherent
-    {
-      get
-      {
-        return this._chkColorInherent;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkColorInherent = value;
-      }
-    }
 
-    CheckBox chkColourPrint
-    {
-      get
-      {
-        return this._chkColourPrint;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkColourPrint = value;
-      }
-    }
 
-    CheckBox chkHighVis
-    {
-      get
-      {
-        return this._chkHighVis;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkHighVis = value;
-      }
-    }
 
-    CheckBox chkIOEffects
-    {
-      get
-      {
-        return this._chkIOEffects;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOEffects = value;
-      }
-    }
 
-    CheckBox chkIOLevel
-    {
-      get
-      {
-        return this._chkIOLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOLevel = value;
-      }
-    }
 
-    CheckBox chkIOPrintLevels
-    {
-      get
-      {
-        return this._chkIOPrintLevels;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOPrintLevels = value;
-      }
-    }
 
-    CheckBox chkLoadLastFile
-    {
-      get
-      {
-        return this._chkLoadLastFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkLoadLastFile = value;
-      }
-    }
 
-    CheckBox chkMiddle
-    {
-      get
-      {
-        return this._chkMiddle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkMiddle = value;
-      }
-    }
 
-    CheckBox chkNoTips
-    {
-      get
-      {
-        return this._chkNoTips;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkNoTips = value;
-      }
-    }
 
-    CheckBox chkRelSignOnly
-    {
-      get
-      {
-        return this._chkRelSignOnly;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkRelSignOnly = value;
-      }
-    }
 
-    CheckBox chkSetBonus
-    {
-      get
-      {
-        return this._chkSetBonus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkSetBonus = value;
-      }
-    }
 
-    CheckBox chkShowAlphaPopup
-    {
-      get
-      {
-        return this._chkShowAlphaPopup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkShowAlphaPopup = value;
-      }
-    }
 
-    CheckBox chkStatBold
-    {
-      get
-      {
-        return this._chkStatBold;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkStatBold = value;
-      }
-    }
 
-    CheckBox chkTextBold
-    {
-      get
-      {
-        return this._chkTextBold;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkTextBold = value;
-      }
-    }
 
-    CheckBox chkUpdates
-    {
-      get
-      {
-        return this._chkUpdates;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkUpdates = value;
-      }
-    }
 
-    CheckBox chkUseArcanaTime
-    {
-      get
-      {
-        return this._chkUseArcanaTime;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkUseArcanaTime = value;
-      }
-    }
 
-    CheckBox chkVillainColour
-    {
-      get
-      {
-        return this._chkVillainColour;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkVillainColour = value;
-      }
-    }
 
     CheckedListBox clbSuppression
     {
@@ -877,17 +477,6 @@ namespace Hero_Designer
       }
     }
 
-    ColorDialog cPicker
-    {
-      get
-      {
-        return this._cPicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cPicker = value;
-      }
-    }
 
     Button csAdd
     {
@@ -979,17 +568,6 @@ namespace Hero_Designer
       }
     }
 
-    FolderBrowserDialog fbdSave
-    {
-      get
-      {
-        return this._fbdSave;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fbdSave = value;
-      }
-    }
 
     Button fcAdd
     {
@@ -1158,17 +736,6 @@ namespace Hero_Designer
       }
     }
 
-    TextBox fcName
-    {
-      get
-      {
-        return this._fcName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fcName = value;
-      }
-    }
 
     TextBox fcNotes
     {
@@ -1332,653 +899,59 @@ namespace Hero_Designer
       }
     }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox10
-    {
-      get
-      {
-        return this._GroupBox10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox10 = value;
-      }
-    }
 
-    GroupBox GroupBox11
-    {
-      get
-      {
-        return this._GroupBox11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox11 = value;
-      }
-    }
 
-    GroupBox GroupBox12
-    {
-      get
-      {
-        return this._GroupBox12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox12 = value;
-      }
-    }
 
-    GroupBox GroupBox13
-    {
-      get
-      {
-        return this._GroupBox13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox13 = value;
-      }
-    }
 
-    GroupBox GroupBox14
-    {
-      get
-      {
-        return this._GroupBox14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox14 = value;
-      }
-    }
 
-    GroupBox GroupBox15
-    {
-      get
-      {
-        return this._GroupBox15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox15 = value;
-      }
-    }
 
-    GroupBox GroupBox16
-    {
-      get
-      {
-        return this._GroupBox16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox16 = value;
-      }
-    }
 
-    GroupBox GroupBox17
-    {
-      get
-      {
-        return this._GroupBox17;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox17 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
 
-    GroupBox GroupBox6
-    {
-      get
-      {
-        return this._GroupBox6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox6 = value;
-      }
-    }
 
-    GroupBox GroupBox7
-    {
-      get
-      {
-        return this._GroupBox7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox7 = value;
-      }
-    }
 
-    GroupBox GroupBox8
-    {
-      get
-      {
-        return this._GroupBox8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox8 = value;
-      }
-    }
 
-    GroupBox GroupBox9
-    {
-      get
-      {
-        return this._GroupBox9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox9 = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
 
-    Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
 
-    Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
 
-    Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
 
-    Label Label25
-    {
-      get
-      {
-        return this._Label25;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label25 = value;
-      }
-    }
 
-    Label Label26
-    {
-      get
-      {
-        return this._Label26;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label26 = value;
-      }
-    }
 
-    Label Label27
-    {
-      get
-      {
-        return this._Label27;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label27 = value;
-      }
-    }
 
-    Label Label28
-    {
-      get
-      {
-        return this._Label28;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label28 = value;
-      }
-    }
 
-    Label Label29
-    {
-      get
-      {
-        return this._Label29;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label29 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label30
-    {
-      get
-      {
-        return this._Label30;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label30 = value;
-      }
-    }
 
-    Label Label31
-    {
-      get
-      {
-        return this._Label31;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label31 = value;
-      }
-    }
 
-    Label Label32
-    {
-      get
-      {
-        return this._Label32;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label32 = value;
-      }
-    }
 
-    Label Label33
-    {
-      get
-      {
-        return this._Label33;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label33 = value;
-      }
-    }
 
-    Label Label34
-    {
-      get
-      {
-        return this._Label34;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label34 = value;
-      }
-    }
 
-    Label Label36
-    {
-      get
-      {
-        return this._Label36;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label36 = value;
-      }
-    }
 
-    Label Label37
-    {
-      get
-      {
-        return this._Label37;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label37 = value;
-      }
-    }
 
-    Label Label38
-    {
-      get
-      {
-        return this._Label38;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label38 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label40
-    {
-      get
-      {
-        return this._Label40;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label40 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    Label lblExample
-    {
-      get
-      {
-        return this._lblExample;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblExample = value;
-      }
-    }
 
-    Label lblSaveFolder
-    {
-      get
-      {
-        return this._lblSaveFolder;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSaveFolder = value;
-      }
-    }
 
     ListBox listScenarios
     {
@@ -1998,17 +971,6 @@ namespace Hero_Designer
       }
     }
 
-    ToolTip myTip
-    {
-      get
-      {
-        return this._myTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._myTip = value;
-      }
-    }
 
     RadioButton optDO
     {
@@ -2028,17 +990,6 @@ namespace Hero_Designer
       }
     }
 
-    Label optEnh
-    {
-      get
-      {
-        return this._optEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._optEnh = value;
-      }
-    }
 
     RadioButton optSO
     {
@@ -2076,293 +1027,29 @@ namespace Hero_Designer
       }
     }
 
-    RadioButton rbChanceAverage
-    {
-      get
-      {
-        return this._rbChanceAverage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceAverage = value;
-      }
-    }
 
-    RadioButton rbChanceIgnore
-    {
-      get
-      {
-        return this._rbChanceIgnore;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceIgnore = value;
-      }
-    }
 
-    RadioButton rbChanceMax
-    {
-      get
-      {
-        return this._rbChanceMax;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceMax = value;
-      }
-    }
 
-    RadioButton rbGraphSimple
-    {
-      get
-      {
-        return this._rbGraphSimple;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphSimple = value;
-      }
-    }
 
-    RadioButton rbGraphStacked
-    {
-      get
-      {
-        return this._rbGraphStacked;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphStacked = value;
-      }
-    }
 
-    RadioButton rbGraphTwoLine
-    {
-      get
-      {
-        return this._rbGraphTwoLine;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphTwoLine = value;
-      }
-    }
 
-    RadioButton rbPvE
-    {
-      get
-      {
-        return this._rbPvE;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbPvE = value;
-      }
-    }
 
-    RadioButton rbPvP
-    {
-      get
-      {
-        return this._rbPvP;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbPvP = value;
-      }
-    }
 
-    TabControl TabControl1
-    {
-      get
-      {
-        return this._TabControl1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabControl1 = value;
-      }
-    }
 
-    TabPage TabPage1
-    {
-      get
-      {
-        return this._TabPage1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage1 = value;
-      }
-    }
 
-    TabPage TabPage2
-    {
-      get
-      {
-        return this._TabPage2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage2 = value;
-      }
-    }
 
-    TabPage TabPage3
-    {
-      get
-      {
-        return this._TabPage3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage3 = value;
-      }
-    }
 
-    TabPage TabPage4
-    {
-      get
-      {
-        return this._TabPage4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage4 = value;
-      }
-    }
 
-    TabPage TabPage5
-    {
-      get
-      {
-        return this._TabPage5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage5 = value;
-      }
-    }
 
-    TabPage TabPage6
-    {
-      get
-      {
-        return this._TabPage6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage6 = value;
-      }
-    }
 
-    NumericUpDown TeamSize
-    {
-      get
-      {
-        return this._TeamSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TeamSize = value;
-      }
-    }
 
-    TextBox txtUpdatePath
-    {
-      get
-      {
-        return this._txtUpdatePath;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtUpdatePath = value;
-      }
-    }
 
-    NumericUpDown udBaseToHit
-    {
-      get
-      {
-        return this._udBaseToHit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udBaseToHit = value;
-      }
-    }
 
-    NumericUpDown udExHigh
-    {
-      get
-      {
-        return this._udExHigh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udExHigh = value;
-      }
-    }
 
-    NumericUpDown udExLow
-    {
-      get
-      {
-        return this._udExLow;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udExLow = value;
-      }
-    }
 
-    NumericUpDown udForceLevel
-    {
-      get
-      {
-        return this._udForceLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udForceLevel = value;
-      }
-    }
 
-    NumericUpDown udIOLevel
-    {
-      get
-      {
-        return this._udIOLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udIOLevel = value;
-      }
-    }
 
-    NumericUpDown udRTFSize
-    {
-      get
-      {
-        return this._udRTFSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udRTFSize = value;
-      }
-    }
 
-    NumericUpDown udStatSize
-    {
-      get
-      {
-        return this._udStatSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udStatSize = value;
-      }
-    }
 
     public frmCalcOpt(ref frmMain iParent)
     {

@@ -36,33 +36,15 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbRarity")]
     ComboBox _cbRarity;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        Label Label1;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
 
     [AccessedThroughProperty("lvSalvage")]
     ListView _lvSalvage;
@@ -221,113 +203,14 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
     ListView lvSalvage
     {

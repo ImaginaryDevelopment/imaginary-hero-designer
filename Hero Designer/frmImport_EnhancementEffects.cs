@@ -23,12 +23,8 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnImport")]
     Button _btnImport;
-
-    [AccessedThroughProperty("dlgBrowse")]
-    OpenFileDialog _dlgBrowse;
-
-    [AccessedThroughProperty("lblFile")]
-    Label _lblFile;
+        OpenFileDialog dlgBrowse;
+        Label lblFile;
 
     frmBusy bFrm;
 
@@ -91,29 +87,7 @@ namespace Hero_Designer
       }
     }
 
-    OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    Label lblFile
-    {
-      get
-      {
-        return this._lblFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblFile = value;
-      }
-    }
 
     public frmImport_EnhancementEffects()
     {

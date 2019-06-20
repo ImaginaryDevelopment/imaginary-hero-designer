@@ -18,32 +18,19 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmSetFind : Form
   {
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("ColumnHeader5")]
-    ColumnHeader _ColumnHeader5;
-
-    [AccessedThroughProperty("ColumnHeader6")]
-    ColumnHeader _ColumnHeader6;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
 
     [AccessedThroughProperty("ibClose")]
     ImageButton _ibClose;
 
     [AccessedThroughProperty("ibTopmost")]
     ImageButton _ibTopmost;
-
-    [AccessedThroughProperty("ilSets")]
-    ImageList _ilSets;
+        ImageList ilSets;
 
     [AccessedThroughProperty("lvBonus")]
     ListView _lvBonus;
@@ -53,89 +40,19 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("lvSet")]
     ListView _lvSet;
-
-    [AccessedThroughProperty("Panel1")]
-    Panel _Panel1;
-
-    [AccessedThroughProperty("SetInfo")]
-    ctlPopUp _SetInfo;
+        Panel Panel1;
+        ctlPopUp SetInfo;
 
     IContainer components;
 
     protected frmMain myParent;
     protected int[] SetBonusList;
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader6
-    {
-      get
-      {
-        return this._ColumnHeader6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader6 = value;
-      }
-    }
 
     ImageButton ibClose
     {
@@ -173,17 +90,6 @@ namespace Hero_Designer
       }
     }
 
-    ImageList ilSets
-    {
-      get
-      {
-        return this._ilSets;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilSets = value;
-      }
-    }
 
     ListView lvBonus
     {
@@ -239,29 +145,7 @@ namespace Hero_Designer
       }
     }
 
-    Panel Panel1
-    {
-      get
-      {
-        return this._Panel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel1 = value;
-      }
-    }
 
-    ctlPopUp SetInfo
-    {
-      get
-      {
-        return this._SetInfo;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._SetInfo = value;
-      }
-    }
 
     public frmSetFind(frmMain iParent)
     {

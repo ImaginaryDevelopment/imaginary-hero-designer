@@ -21,9 +21,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnDel")]
     Button _btnDel;
-
-    [AccessedThroughProperty("btnDown")]
-    Button _btnDown;
+        Button btnDown;
 
     [AccessedThroughProperty("btnGuessCost")]
     Button _btnGuessCost;
@@ -42,9 +40,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnImport")]
     Button _btnImport;
-
-    [AccessedThroughProperty("btnImportUpdate")]
-    Button _btnImportUpdate;
+        Button btnImportUpdate;
 
     [AccessedThroughProperty("btnIncrement")]
     Button _btnIncrement;
@@ -57,21 +53,15 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnRDel")]
     Button _btnRDel;
-
-    [AccessedThroughProperty("btnRDown")]
-    Button _btnRDown;
+        Button btnRDown;
 
     [AccessedThroughProperty("btnReGuess")]
     Button _btnReGuess;
 
     [AccessedThroughProperty("btnRunSeq")]
     Button _btnRunSeq;
-
-    [AccessedThroughProperty("btnRUp")]
-    Button _btnRUp;
-
-    [AccessedThroughProperty("btnUp")]
-    Button _btnUp;
+        Button btnRUp;
+        Button btnUp;
 
     [AccessedThroughProperty("cbEnh")]
     ComboBox _cbEnh;
@@ -93,72 +83,28 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbSal4")]
     ComboBox _cbSal4;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label12")]
-    Label _Label12;
-
-    [AccessedThroughProperty("Label13")]
-    Label _Label13;
-
-    [AccessedThroughProperty("Label14")]
-    Label _Label14;
-
-    [AccessedThroughProperty("Label15")]
-    Label _Label15;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("lblEnh")]
-    Label _lblEnh;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblEnh;
 
     [AccessedThroughProperty("lstItems")]
     ListBox _lstItems;
@@ -260,17 +206,6 @@ namespace Hero_Designer
       }
     }
 
-    Button btnDown
-    {
-      get
-      {
-        return this._btnDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnDown = value;
-      }
-    }
 
     Button btnGuessCost
     {
@@ -380,17 +315,6 @@ namespace Hero_Designer
       }
     }
 
-    Button btnImportUpdate
-    {
-      get
-      {
-        return this._btnImportUpdate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnImportUpdate = value;
-      }
-    }
 
     Button btnIncrement
     {
@@ -464,17 +388,6 @@ namespace Hero_Designer
       }
     }
 
-    Button btnRDown
-    {
-      get
-      {
-        return this._btnRDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnRDown = value;
-      }
-    }
 
     Button btnReGuess
     {
@@ -512,29 +425,7 @@ namespace Hero_Designer
       }
     }
 
-    Button btnRUp
-    {
-      get
-      {
-        return this._btnRUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnRUp = value;
-      }
-    }
 
-    Button btnUp
-    {
-      get
-      {
-        return this._btnUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnUp = value;
-      }
-    }
 
     ComboBox cbEnh
     {
@@ -662,269 +553,27 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
 
-    Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
 
-    Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    Label lblEnh
-    {
-      get
-      {
-        return this._lblEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEnh = value;
-      }
-    }
 
     ListBox lstItems
     {

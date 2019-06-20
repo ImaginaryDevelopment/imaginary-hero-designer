@@ -13,104 +13,49 @@ namespace Hero_Designer
 {
     public class frmForum : Form
     {
-        [AccessedThroughProperty("chkAlwaysDataChunk")]
-        CheckBox _chkAlwaysDataChunk;
-
-        [AccessedThroughProperty("chkBonusList")]
-        CheckBox _chkBonusList;
-
-        [AccessedThroughProperty("chkBreakdown")]
-        CheckBox _chkBreakdown;
-
-        [AccessedThroughProperty("chkChunkOnly")]
-        CheckBox _chkChunkOnly;
-
-        [AccessedThroughProperty("chkDataChunk")]
-        CheckBox _chkDataChunk;
-
-        [AccessedThroughProperty("chkNoEnh")]
-        CheckBox _chkNoEnh;
-
-        [AccessedThroughProperty("chkNoIOLevel")]
-        CheckBox _chkNoIOLevel;
-
-        [AccessedThroughProperty("chkNoSetName")]
-        CheckBox _chkNoSetName;
-
-        [AccessedThroughProperty("csHeading")]
-        Label _csHeading;
-
-        [AccessedThroughProperty("csLevel")]
-        Label _csLevel;
+        CheckBox chkAlwaysDataChunk;
+        CheckBox chkBonusList;
+        CheckBox chkBreakdown;
+        CheckBox chkChunkOnly;
+        CheckBox chkDataChunk;
+        CheckBox chkNoEnh;
+        CheckBox chkNoIOLevel;
+        CheckBox chkNoSetName;
+        Label csHeading;
+        Label csLevel;
 
         [AccessedThroughProperty("csList")]
         ListBox _csList;
-
-        [AccessedThroughProperty("csSlots")]
-        Label _csSlots;
-
-        [AccessedThroughProperty("csTitle")]
-        Label _csTitle;
-
-        [AccessedThroughProperty("GroupBox1")]
-        GroupBox _GroupBox1;
-
-        [AccessedThroughProperty("GroupBox2")]
-        GroupBox _GroupBox2;
-
-        [AccessedThroughProperty("GroupBox3")]
-        GroupBox _GroupBox3;
-
-        [AccessedThroughProperty("GroupBox4")]
-        GroupBox _GroupBox4;
-
-        [AccessedThroughProperty("GroupBox5")]
-        GroupBox _GroupBox5;
+        Label csSlots;
+        Label csTitle;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
 
         [AccessedThroughProperty("ibCancel")]
         ImageButton _ibCancel;
 
         [AccessedThroughProperty("ibExport")]
         ImageButton _ibExport;
-
-        [AccessedThroughProperty("Label1")]
-        Label _Label1;
-
-        [AccessedThroughProperty("Label19")]
-        Label _Label19;
-
-        [AccessedThroughProperty("Label2")]
-        Label _Label2;
-
-        [AccessedThroughProperty("Label20")]
-        Label _Label20;
-
-        [AccessedThroughProperty("Label21")]
-        Label _Label21;
-
-        [AccessedThroughProperty("Label22")]
-        Label _Label22;
-
-        [AccessedThroughProperty("Label3")]
-        Label _Label3;
-
-        [AccessedThroughProperty("Label4")]
-        Label _Label4;
-
-        [AccessedThroughProperty("lblCodeInf")]
-        Label _lblCodeInf;
-
-        [AccessedThroughProperty("lblRecess")]
-        Label _lblRecess;
+        Label Label1;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label3;
+        Label Label4;
+        Label lblCodeInf;
+        Label lblRecess;
 
         [AccessedThroughProperty("lstCodes")]
         ListBox _lstCodes;
 
         [AccessedThroughProperty("pbTitle")]
         PictureBox _pbTitle;
-
-        [AccessedThroughProperty("ToolTip1")]
-        ToolTip _ToolTip1;
+        ToolTip ToolTip1;
 
         IContainer components;
 
@@ -118,135 +63,14 @@ namespace Hero_Designer
         Point mouse_offset;
 
 
-        CheckBox chkAlwaysDataChunk
-        {
-            get
-            {
-                return this._chkAlwaysDataChunk;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkAlwaysDataChunk = value;
-            }
-        }
 
-        CheckBox chkBonusList
-        {
-            get
-            {
-                return this._chkBonusList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkBonusList = value;
-            }
-        }
 
-        CheckBox chkBreakdown
-        {
-            get
-            {
-                return this._chkBreakdown;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkBreakdown = value;
-            }
-        }
 
-        CheckBox chkChunkOnly
-        {
-            get
-            {
-                return this._chkChunkOnly;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkChunkOnly = value;
-            }
-        }
 
-        CheckBox chkDataChunk
-        {
-            get
-            {
-                return this._chkDataChunk;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkDataChunk = value;
-            }
-        }
 
-        CheckBox chkNoEnh
-        {
-            get
-            {
-                return this._chkNoEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkNoEnh = value;
-            }
-        }
 
-        CheckBox chkNoIOLevel
-        {
-            get
-            {
-                return this._chkNoIOLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkNoIOLevel = value;
-            }
-        }
 
-        CheckBox chkNoSetName
-        {
-            get
-            {
-                return this._chkNoSetName;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkNoSetName = value;
-            }
-        }
 
-        Label csHeading
-        {
-            get
-            {
-                return this._csHeading;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._csHeading = value;
-            }
-        }
-
-        Label csLevel
-        {
-            get
-            {
-                return this._csLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._csLevel = value;
-            }
-        }
 
         ListBox csList
         {
@@ -267,96 +91,12 @@ namespace Hero_Designer
             }
         }
 
-        Label csSlots
-        {
-            get
-            {
-                return this._csSlots;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._csSlots = value;
-            }
-        }
 
-        Label csTitle
-        {
-            get
-            {
-                return this._csTitle;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._csTitle = value;
-            }
-        }
 
-        GroupBox GroupBox1
-        {
-            get
-            {
-                return this._GroupBox1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._GroupBox1 = value;
-            }
-        }
 
-        GroupBox GroupBox2
-        {
-            get
-            {
-                return this._GroupBox2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._GroupBox2 = value;
-            }
-        }
 
-        GroupBox GroupBox3
-        {
-            get
-            {
-                return this._GroupBox3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._GroupBox3 = value;
-            }
-        }
 
-        GroupBox GroupBox4
-        {
-            get
-            {
-                return this._GroupBox4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._GroupBox4 = value;
-            }
-        }
 
-        GroupBox GroupBox5
-        {
-            get
-            {
-                return this._GroupBox5;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._GroupBox5 = value;
-            }
-        }
 
         internal ImageButton ibCancel
         {
@@ -396,135 +136,15 @@ namespace Hero_Designer
             }
         }
 
-        Label Label1
-        {
-            get
-            {
-                return this._Label1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label1 = value;
-            }
-        }
 
-        Label Label19
-        {
-            get
-            {
-                return this._Label19;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label19 = value;
-            }
-        }
 
-        Label Label2
-        {
-            get
-            {
-                return this._Label2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label2 = value;
-            }
-        }
 
-        Label Label20
-        {
-            get
-            {
-                return this._Label20;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label20 = value;
-            }
-        }
 
-        Label Label21
-        {
-            get
-            {
-                return this._Label21;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label21 = value;
-            }
-        }
 
-        Label Label22
-        {
-            get
-            {
-                return this._Label22;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label22 = value;
-            }
-        }
 
-        Label Label3
-        {
-            get
-            {
-                return this._Label3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label3 = value;
-            }
-        }
 
-        Label Label4
-        {
-            get
-            {
-                return this._Label4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label4 = value;
-            }
-        }
 
-        Label lblCodeInf
-        {
-            get
-            {
-                return this._lblCodeInf;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblCodeInf = value;
-            }
-        }
 
-        Label lblRecess
-        {
-            get
-            {
-                return this._lblRecess;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblRecess = value;
-            }
-        }
 
         ListBox lstCodes
         {
@@ -569,18 +189,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolTip ToolTip1
-        {
-            get
-            {
-                return this._ToolTip1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ToolTip1 = value;
-            }
-        }
 
         public frmForum()
         {

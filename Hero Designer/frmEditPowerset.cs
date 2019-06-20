@@ -56,84 +56,34 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkNoTrunk")]
     CheckBox _chkNoTrunk;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("gbLink")]
-    GroupBox _gbLink;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
-
-    [AccessedThroughProperty("GroupBox4")]
-    GroupBox _GroupBox4;
-
-    [AccessedThroughProperty("GroupBox5")]
-    GroupBox _GroupBox5;
-
-    [AccessedThroughProperty("ImagePicker")]
-    OpenFileDialog _ImagePicker;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label31")]
-    Label _Label31;
-
-    [AccessedThroughProperty("Label33")]
-    Label _Label33;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("lblNameFull")]
-    Label _lblNameFull;
-
-    [AccessedThroughProperty("lblNameUnique")]
-    Label _lblNameUnique;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        GroupBox gbLink;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label2;
+        Label Label22;
+        Label Label3;
+        Label Label31;
+        Label Label33;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label lblNameFull;
+        Label lblNameUnique;
 
     [AccessedThroughProperty("lvMutexSets")]
     ListBox _lvMutexSets;
-
-    [AccessedThroughProperty("lvPowers")]
-    ListView _lvPowers;
-
-    [AccessedThroughProperty("picIcon")]
-    PictureBox _picIcon;
+        ListView lvPowers;
+        PictureBox picIcon;
 
     [AccessedThroughProperty("txtDesc")]
     TextBox _txtDesc;
@@ -409,281 +359,28 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    GroupBox gbLink
-    {
-      get
-      {
-        return this._gbLink;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._gbLink = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
 
-    OpenFileDialog ImagePicker
-    {
-      get
-      {
-        return this._ImagePicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ImagePicker = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label31
-    {
-      get
-      {
-        return this._Label31;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label31 = value;
-      }
-    }
 
-    Label Label33
-    {
-      get
-      {
-        return this._Label33;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label33 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label lblNameFull
-    {
-      get
-      {
-        return this._lblNameFull;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblNameFull = value;
-      }
-    }
 
-    Label lblNameUnique
-    {
-      get
-      {
-        return this._lblNameUnique;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblNameUnique = value;
-      }
-    }
 
     ListBox lvMutexSets
     {
@@ -703,29 +400,7 @@ namespace Hero_Designer
       }
     }
 
-    ListView lvPowers
-    {
-      get
-      {
-        return this._lvPowers;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lvPowers = value;
-      }
-    }
 
-    PictureBox picIcon
-    {
-      get
-      {
-        return this._picIcon;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._picIcon = value;
-      }
-    }
 
     TextBox txtDesc
     {

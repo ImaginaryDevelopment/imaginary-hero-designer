@@ -98,48 +98,20 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbFilter")]
     ComboBox _cbFilter;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("ColumnHeader5")]
-    ColumnHeader _ColumnHeader5;
-
-    [AccessedThroughProperty("ColumnHeader6")]
-    ColumnHeader _ColumnHeader6;
-
-    [AccessedThroughProperty("ColumnHeader7")]
-    ColumnHeader _ColumnHeader7;
-
-    [AccessedThroughProperty("ilAT")]
-    ImageList _ilAT;
-
-    [AccessedThroughProperty("ilPower")]
-    ImageList _ilPower;
-
-    [AccessedThroughProperty("ilPS")]
-    ImageList _ilPS;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("lblPower")]
-    Label _lblPower;
-
-    [AccessedThroughProperty("lblSet")]
-    Label _lblSet;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        ColumnHeader ColumnHeader7;
+        ImageList ilAT;
+        ImageList ilPower;
+        ImageList ilPS;
+        Label Label1;
+        Label Label2;
+        Label lblPower;
+        Label lblSet;
 
     [AccessedThroughProperty("lvGroup")]
     ListView _lvGroup;
@@ -149,15 +121,9 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("lvSet")]
     ListView _lvSet;
-
-    [AccessedThroughProperty("pnlGroup")]
-    Panel _pnlGroup;
-
-    [AccessedThroughProperty("pnlPower")]
-    Panel _pnlPower;
-
-    [AccessedThroughProperty("pnlSet")]
-    Panel _pnlSet;
+        Panel pnlGroup;
+        Panel pnlPower;
+        Panel pnlSet;
 
     frmBusy bFrm;
 
@@ -579,173 +545,19 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader6
-    {
-      get
-      {
-        return this._ColumnHeader6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader6 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader7
-    {
-      get
-      {
-        return this._ColumnHeader7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader7 = value;
-      }
-    }
 
-    ImageList ilAT
-    {
-      get
-      {
-        return this._ilAT;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilAT = value;
-      }
-    }
 
-    ImageList ilPower
-    {
-      get
-      {
-        return this._ilPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilPower = value;
-      }
-    }
 
-    ImageList ilPS
-    {
-      get
-      {
-        return this._ilPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilPS = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label lblPower
-    {
-      get
-      {
-        return this._lblPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblPower = value;
-      }
-    }
 
-    Label lblSet
-    {
-      get
-      {
-        return this._lblSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSet = value;
-      }
-    }
 
     ListView lvGroup
     {
@@ -816,41 +628,8 @@ namespace Hero_Designer
       }
     }
 
-    Panel pnlGroup
-    {
-      get
-      {
-        return this._pnlGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlGroup = value;
-      }
-    }
 
-    Panel pnlPower
-    {
-      get
-      {
-        return this._pnlPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlPower = value;
-      }
-    }
 
-    Panel pnlSet
-    {
-      get
-      {
-        return this._pnlSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlSet = value;
-      }
-    }
 
     public frmPowerBrowser()
     {

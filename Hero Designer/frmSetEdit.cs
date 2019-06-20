@@ -36,81 +36,35 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbSlotCount")]
     ComboBox _cbSlotCount;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("gbBasic")]
-    GroupBox _gbBasic;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
-
-    [AccessedThroughProperty("ilEnh")]
-    ImageList _ilEnh;
-
-    [AccessedThroughProperty("ImagePicker")]
-    OpenFileDialog _ImagePicker;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label16")]
-    Label _Label16;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label27")]
-    Label _Label27;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        GroupBox gbBasic;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        ImageList ilEnh;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label16;
+        Label Label2;
+        Label Label27;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
 
     [AccessedThroughProperty("lstBonus")]
     ListBox _lstBonus;
 
     [AccessedThroughProperty("lvBonusList")]
     ListView _lvBonusList;
-
-    [AccessedThroughProperty("lvEnh")]
-    ListView _lvEnh;
-
-    [AccessedThroughProperty("rbIfAny")]
-    RadioButton _rbIfAny;
-
-    [AccessedThroughProperty("rbIfCritter")]
-    RadioButton _rbIfCritter;
-
-    [AccessedThroughProperty("rbIfPlayer")]
-    RadioButton _rbIfPlayer;
-
-    [AccessedThroughProperty("rtbBonus")]
-    RichTextBox _rtbBonus;
+        ListView lvEnh;
+        RadioButton rbIfAny;
+        RadioButton rbIfCritter;
+        RadioButton rbIfPlayer;
+        RichTextBox rtbBonus;
 
     [AccessedThroughProperty("txtAlternate")]
     TextBox _txtAlternate;
@@ -266,221 +220,23 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    GroupBox gbBasic
-    {
-      get
-      {
-        return this._gbBasic;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._gbBasic = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    ImageList ilEnh
-    {
-      get
-      {
-        return this._ilEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilEnh = value;
-      }
-    }
 
-    OpenFileDialog ImagePicker
-    {
-      get
-      {
-        return this._ImagePicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ImagePicker = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label27
-    {
-      get
-      {
-        return this._Label27;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label27 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
     ListBox lstBonus
     {
@@ -523,65 +279,10 @@ namespace Hero_Designer
       }
     }
 
-    ListView lvEnh
-    {
-      get
-      {
-        return this._lvEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lvEnh = value;
-      }
-    }
 
-    RadioButton rbIfAny
-    {
-      get
-      {
-        return this._rbIfAny;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbIfAny = value;
-      }
-    }
 
-    RadioButton rbIfCritter
-    {
-      get
-      {
-        return this._rbIfCritter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbIfCritter = value;
-      }
-    }
 
-    RadioButton rbIfPlayer
-    {
-      get
-      {
-        return this._rbIfPlayer;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbIfPlayer = value;
-      }
-    }
 
-    RichTextBox rtbBonus
-    {
-      get
-      {
-        return this._rtbBonus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rtbBonus = value;
-      }
-    }
 
     TextBox txtAlternate
     {

@@ -22,9 +22,7 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnReset")]
     Button _btnReset;
-
-    [AccessedThroughProperty("cPicker")]
-    ColorDialog _cPicker;
+        ColorDialog cPicker;
 
     [AccessedThroughProperty("csAlert")]
     Label _csAlert;
@@ -55,51 +53,23 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("csVillain")]
     Label _csVillain;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label19")]
-    Label _Label19;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label20")]
-    Label _Label20;
-
-    [AccessedThroughProperty("Label21")]
-    Label _Label21;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
+        Label Label1;
+        Label Label10;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label9;
 
     [AccessedThroughProperty("Listlabel1")]
     ListLabelV2 _Listlabel1;
-
-    [AccessedThroughProperty("rtPreview")]
-    RichTextBox _rtPreview;
+        RichTextBox rtPreview;
 
     IContainer components;
 
@@ -159,17 +129,6 @@ namespace Hero_Designer
       }
     }
 
-    ColorDialog cPicker
-    {
-      get
-      {
-        return this._cPicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cPicker = value;
-      }
-    }
 
     Label csAlert
     {
@@ -351,161 +310,18 @@ namespace Hero_Designer
       }
     }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
     ListLabelV2 Listlabel1
     {
@@ -525,17 +341,6 @@ namespace Hero_Designer
       }
     }
 
-    RichTextBox rtPreview
-    {
-      get
-      {
-        return this._rtPreview;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rtPreview = value;
-      }
-    }
 
     public frmColourSettings()
     {

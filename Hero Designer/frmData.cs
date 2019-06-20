@@ -16,26 +16,12 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmData : Form
     {
-        [AccessedThroughProperty("pInfo")]
-        ctlPopUp _pInfo;
+        ctlPopUp pInfo;
 
         IContainer components;
 
         frmMain myParent;
 
-
-        ctlPopUp pInfo
-        {
-            get
-            {
-                return this._pInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pInfo = value;
-            }
-        }
 
         public frmData(ref frmMain iParent)
         {

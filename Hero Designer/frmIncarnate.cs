@@ -52,9 +52,7 @@ namespace Hero_Designer
 
         [AccessedThroughProperty("OmegaButton")]
         ImageButton _OmegaButton;
-
-        [AccessedThroughProperty("Panel1")]
-        Panel _Panel1;
+        Panel Panel1;
 
         [AccessedThroughProperty("PopInfo")]
         ctlPopUp _PopInfo;
@@ -321,18 +319,6 @@ namespace Hero_Designer
             }
         }
 
-        Panel Panel1
-        {
-            get
-            {
-                return this._Panel1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Panel1 = value;
-            }
-        }
 
         ctlPopUp PopInfo
         {

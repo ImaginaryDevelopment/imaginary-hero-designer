@@ -21,9 +21,7 @@ namespace Hero_Designer
 
         [AccessedThroughProperty("pbBottom")]
         PictureBox _pbBottom;
-
-        [AccessedThroughProperty("rtfRead")]
-        RichTextBox _rtfRead;
+        RichTextBox rtfRead;
 
         int btnY;
 
@@ -115,18 +113,6 @@ namespace Hero_Designer
             }
         }
 
-        RichTextBox rtfRead
-        {
-            get
-            {
-                return this._rtfRead;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._rtfRead = value;
-            }
-        }
 
         public frmReadme(string iFile)
         {

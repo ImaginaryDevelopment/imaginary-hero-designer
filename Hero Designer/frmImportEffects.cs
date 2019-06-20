@@ -36,29 +36,15 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnUncheckAll")]
     Button _btnUncheckAll;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("ColumnHeader5")]
-    ColumnHeader _ColumnHeader5;
-
-    [AccessedThroughProperty("ColumnHeader6")]
-    ColumnHeader _ColumnHeader6;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
 
     readonly List<ListViewItem> _currentItems;
-
-    [AccessedThroughProperty("dlgBrowse")]
-    OpenFileDialog _dlgBrowse;
+        OpenFileDialog dlgBrowse;
 
     string _fullFileName;
 
@@ -66,29 +52,15 @@ namespace Hero_Designer
     Button _HideUnchanged;
 
     List<EffectData> _importBuffer;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("lblDate")]
-    Label _lblDate;
-
-    [AccessedThroughProperty("lblFile")]
-    Label _lblFile;
-
-    [AccessedThroughProperty("lstImport")]
-    ListView _lstImport;
+        Label Label6;
+        Label Label8;
+        Label lblDate;
+        Label lblFile;
+        ListView lstImport;
 
     bool _showUnchanged;
-
-    [AccessedThroughProperty("txtNoAU")]
-    Label _txtNoAU;
-
-    [AccessedThroughProperty("udRevision")]
-    NumericUpDown _udRevision;
+        Label txtNoAU;
+        NumericUpDown udRevision;
 
     IContainer components;
 
@@ -201,89 +173,12 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader6
-    {
-      get
-      {
-        return this._ColumnHeader6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader6 = value;
-      }
-    }
 
-    OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
     Button HideUnchanged
     {
@@ -303,89 +198,12 @@ namespace Hero_Designer
       }
     }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label lblDate
-    {
-      get
-      {
-        return this._lblDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDate = value;
-      }
-    }
 
-    Label lblFile
-    {
-      get
-      {
-        return this._lblFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblFile = value;
-      }
-    }
 
-    ListView lstImport
-    {
-      get
-      {
-        return this._lstImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lstImport = value;
-      }
-    }
 
-    Label txtNoAU
-    {
-      get
-      {
-        return this._txtNoAU;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtNoAU = value;
-      }
-    }
 
-    NumericUpDown udRevision
-    {
-      get
-      {
-        return this._udRevision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udRevision = value;
-      }
-    }
 
     public frmImportEffects()
     {

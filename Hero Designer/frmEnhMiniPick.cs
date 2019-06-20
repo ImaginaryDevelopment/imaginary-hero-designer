@@ -15,9 +15,7 @@ namespace Hero_Designer
 
         [AccessedThroughProperty("lbList")]
         ListBox _lbList;
-
-        [AccessedThroughProperty("lblMessage")]
-        Label _lblMessage;
+        Label lblMessage;
 
         IContainer components;
 
@@ -65,18 +63,6 @@ namespace Hero_Designer
             }
         }
 
-        Label lblMessage
-        {
-            get
-            {
-                return this._lblMessage;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblMessage = value;
-            }
-        }
 
         public frmEnhMiniPick()
         {

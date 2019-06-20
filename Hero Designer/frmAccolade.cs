@@ -35,9 +35,7 @@ namespace Hero_Designer
         readonly frmMain _myParent;
 
         readonly List<IPower> _myPowers;
-
-        [AccessedThroughProperty("Panel1")]
-        Panel _Panel1;
+        Panel Panel1;
 
         [AccessedThroughProperty("PopInfo")]
         ctlPopUp _PopInfo;
@@ -141,18 +139,6 @@ namespace Hero_Designer
             }
         }
 
-        Panel Panel1
-        {
-            get
-            {
-                return this._Panel1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Panel1 = value;
-            }
-        }
 
         ctlPopUp PopInfo
         {

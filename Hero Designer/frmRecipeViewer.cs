@@ -22,18 +22,10 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkSortByLevel")]
     CheckBox _chkSortByLevel;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ColumnHeader4")]
-    ColumnHeader _ColumnHeader4;
-
-    [AccessedThroughProperty("ColumnHeader5")]
-    ColumnHeader _ColumnHeader5;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
 
     [AccessedThroughProperty("ibClipboard")]
     ImageButton _ibClipboard;
@@ -46,33 +38,21 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("ibTopmost")]
     ImageButton _ibTopmost;
-
-    [AccessedThroughProperty("ilSets")]
-    ImageList _ilSets;
-
-    [AccessedThroughProperty("lblHeader")]
-    Label _lblHeader;
+        ImageList ilSets;
+        Label lblHeader;
 
     [AccessedThroughProperty("lvPower")]
     ListView _lvPower;
 
     [AccessedThroughProperty("lvDPA")]
     ListView _lvDPA;
-
-    [AccessedThroughProperty("Panel1")]
-    Panel _Panel1;
-
-    [AccessedThroughProperty("Panel2")]
-    Panel _Panel2;
-
-    [AccessedThroughProperty("pbRecipe")]
-    PictureBox _pbRecipe;
+        Panel Panel1;
+        Panel Panel2;
+        PictureBox pbRecipe;
 
     [AccessedThroughProperty("RecipeInfo")]
     ctlPopUp _RecipeInfo;
-
-    [AccessedThroughProperty("ToolTip1")]
-    ToolTip _ToolTip1;
+        ToolTip ToolTip1;
 
     [AccessedThroughProperty("VScrollBar1")]
     VScrollBar _VScrollBar1;
@@ -121,53 +101,9 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
     ImageButton ibClipboard
     {
@@ -241,29 +177,7 @@ namespace Hero_Designer
       }
     }
 
-    ImageList ilSets
-    {
-      get
-      {
-        return this._ilSets;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilSets = value;
-      }
-    }
 
-    Label lblHeader
-    {
-      get
-      {
-        return this._lblHeader;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblHeader = value;
-      }
-    }
 
     ListView lvPower
     {
@@ -311,41 +225,8 @@ namespace Hero_Designer
       }
     }
 
-    Panel Panel1
-    {
-      get
-      {
-        return this._Panel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel1 = value;
-      }
-    }
 
-    Panel Panel2
-    {
-      get
-      {
-        return this._Panel2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel2 = value;
-      }
-    }
 
-    PictureBox pbRecipe
-    {
-      get
-      {
-        return this._pbRecipe;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pbRecipe = value;
-      }
-    }
 
     ctlPopUp RecipeInfo
     {
@@ -370,17 +251,6 @@ namespace Hero_Designer
       }
     }
 
-    ToolTip ToolTip1
-    {
-      get
-      {
-        return this._ToolTip1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ToolTip1 = value;
-      }
-    }
 
     VScrollBar VScrollBar1
     {

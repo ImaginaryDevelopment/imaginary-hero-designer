@@ -36,24 +36,14 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("cbType1")]
     ComboBox _cbType1;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
 
     [AccessedThroughProperty("lstTweaks")]
     ListBox _lstTweaks;
-
-    [AccessedThroughProperty("txtAddActual")]
-    TextBox _txtAddActual;
-
-    [AccessedThroughProperty("txtAddOvr")]
-    TextBox _txtAddOvr;
-
-    [AccessedThroughProperty("txtOvr")]
-    TextBox _txtOvr;
+        TextBox txtAddActual;
+        TextBox txtAddOvr;
+        TextBox txtOvr;
 
     IContainer components;
 
@@ -203,29 +193,7 @@ namespace Hero_Designer
       }
     }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
     ListBox lstTweaks
     {
@@ -245,41 +213,8 @@ namespace Hero_Designer
       }
     }
 
-    TextBox txtAddActual
-    {
-      get
-      {
-        return this._txtAddActual;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtAddActual = value;
-      }
-    }
 
-    TextBox txtAddOvr
-    {
-      get
-      {
-        return this._txtAddOvr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtAddOvr = value;
-      }
-    }
 
-    TextBox txtOvr
-    {
-      get
-      {
-        return this._txtOvr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtOvr = value;
-      }
-    }
 
     public frmTweakMatching()
     {

@@ -18,36 +18,16 @@ namespace Hero_Designer
   {
     [AccessedThroughProperty("chkSortByLevel")]
     CheckBox _chkSortByLevel;
-
-    [AccessedThroughProperty("chkDamageBuffs")]
-    CheckBox _chkDamageBuffs;
-
-    [AccessedThroughProperty("chPower")]
-    ColumnHeader _chPower;
-
-    [AccessedThroughProperty("chDPA")]
-    ColumnHeader _chDPA;
-
-    [AccessedThroughProperty("chDamage")]
-    ColumnHeader _chDamage;
-
-    [AccessedThroughProperty("chRecharge")]
-    ColumnHeader _chRecharge;
-
-    [AccessedThroughProperty("chAnimation")]
-    ColumnHeader _chAnimation;
-
-    [AccessedThroughProperty("chEndurance")]
-    ColumnHeader _chEndurance;
-
-    [AccessedThroughProperty("chDamageBuff")]
-    ColumnHeader _chDamageBuff;
-
-    [AccessedThroughProperty("chResistanceDebuff")]
-    ColumnHeader _chResistanceDebuff;
-
-    [AccessedThroughProperty("chBuildID")]
-    ColumnHeader _chBuildID;
+        CheckBox chkDamageBuffs;
+        ColumnHeader chPower;
+        ColumnHeader chDPA;
+        ColumnHeader chDamage;
+        ColumnHeader chRecharge;
+        ColumnHeader chAnimation;
+        ColumnHeader chEndurance;
+        ColumnHeader chDamageBuff;
+        ColumnHeader chResistanceDebuff;
+        ColumnHeader chBuildID;
 
     [AccessedThroughProperty("ibClear")]
     ImageButton _ibClear;
@@ -60,39 +40,19 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("ibTopmost")]
     ImageButton _ibTopmost;
-
-    [AccessedThroughProperty("ilAttackChain")]
-    ImageList _ilAttackChain;
-
-    [AccessedThroughProperty("lblHeader")]
-    Label _lblHeader;
-
-    [AccessedThroughProperty("lblDPS")]
-    Label _lblDPS;
-
-    [AccessedThroughProperty("lblEPS")]
-    Label _lblEPS;
-
-    [AccessedThroughProperty("lblDPSNum")]
-    Label _lblDPSNum;
-
-    [AccessedThroughProperty("lblEPSNum")]
-    Label _lblEPSNum;
-
-    [AccessedThroughProperty("tbDPSOutput")]
-    TextBox _tbDPSOutput;
+        ImageList ilAttackChain;
+        Label lblHeader;
+        Label lblDPS;
+        Label lblEPS;
+        Label lblDPSNum;
+        Label lblEPSNum;
+        TextBox tbDPSOutput;
 
     [AccessedThroughProperty("lvPower")]
     ListView _lvPower;
-
-    [AccessedThroughProperty("Panel1")]
-    Panel _Panel1;
-
-    [AccessedThroughProperty("Panel2")]
-    Panel _Panel2;
-
-    [AccessedThroughProperty("ToolTip1")]
-    ToolTip _ToolTip1;
+        Panel Panel1;
+        Panel Panel2;
+        ToolTip ToolTip1;
 
     protected ExtendedBitmap bxRecipe;
     IContainer components;
@@ -122,125 +82,15 @@ namespace Hero_Designer
       }
     }
 
-    CheckBox chkDamageBuffs
-    {
-      get
-      {
-        return this._chkDamageBuffs;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkDamageBuffs = value;
-      }
-    }
 
-    ColumnHeader chPower
-    {
-      get
-      {
-        return this._chPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chPower = value;
-      }
-    }
 
-    ColumnHeader chDPA
-    {
-      get
-      {
-        return this._chDPA;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDPA = value;
-      }
-    }
 
-    ColumnHeader chDamage
-    {
-      get
-      {
-        return this._chDamage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDamage = value;
-      }
-    }
 
-    ColumnHeader chRecharge
-    {
-      get
-      {
-        return this._chRecharge;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chRecharge = value;
-      }
-    }
 
-    ColumnHeader chAnimation
-    {
-      get
-      {
-        return this._chAnimation;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chAnimation = value;
-      }
-    }
 
-    ColumnHeader chEndurance
-    {
-      get
-      {
-        return this._chEndurance;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chEndurance = value;
-      }
-    }
 
-    ColumnHeader chDamageBuff
-    {
-      get
-      {
-        return this._chDamageBuff;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDamageBuff = value;
-      }
-    }
 
-    ColumnHeader chResistanceDebuff
-    {
-      get
-      {
-        return this._chResistanceDebuff;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chResistanceDebuff = value;
-      }
-    }
 
-    ColumnHeader chBuildID
-    {
-      get
-      {
-        return this._chBuildID;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chBuildID = value;
-      }
-    }
 
     ImageButton ibClear
     {
@@ -314,89 +164,12 @@ namespace Hero_Designer
       }
     }
 
-    ImageList ilAttackChain
-    {
-      get
-      {
-        return this._ilAttackChain;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilAttackChain = value;
-      }
-    }
 
-    Label lblHeader
-    {
-      get
-      {
-        return this._lblHeader;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblHeader = value;
-      }
-    }
 
-    Label lblDPS
-    {
-      get
-      {
-        return this._lblDPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDPS = value;
-      }
-    }
 
-    Label lblEPS
-    {
-      get
-      {
-        return this._lblEPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEPS = value;
-      }
-    }
 
-    Label lblDPSNum
-    {
-      get
-      {
-        return this._lblDPSNum;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDPSNum = value;
-      }
-    }
 
-    Label lblEPSNum
-    {
-      get
-      {
-        return this._lblEPSNum;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEPSNum = value;
-      }
-    }
 
-    TextBox tbDPSOutput
-    {
-      get
-      {
-        return this._tbDPSOutput;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tbDPSOutput = value;
-      }
-    }
 
     ListView lvPower
     {
@@ -424,41 +197,8 @@ namespace Hero_Designer
       }
     }
 
-    Panel Panel1
-    {
-      get
-      {
-        return this._Panel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel1 = value;
-      }
-    }
 
-    Panel Panel2
-    {
-      get
-      {
-        return this._Panel2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel2 = value;
-      }
-    }
 
-    ToolTip ToolTip1
-    {
-      get
-      {
-        return this._ToolTip1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ToolTip1 = value;
-      }
-    }
 
     public frmDPSCalc(frmMain iParent)
     {

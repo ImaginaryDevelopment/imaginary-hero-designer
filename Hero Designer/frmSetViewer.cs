@@ -22,36 +22,18 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkOnTop")]
     ImageButton _chkOnTop;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("ColumnHeader2")]
-    ColumnHeader _ColumnHeader2;
-
-    [AccessedThroughProperty("ColumnHeader3")]
-    ColumnHeader _ColumnHeader3;
-
-    [AccessedThroughProperty("ilSet")]
-    ImageList _ilSet;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ImageList ilSet;
+        Label Label1;
+        Label Label2;
 
     [AccessedThroughProperty("lstSets")]
     ListView _lstSets;
-
-    [AccessedThroughProperty("rtApplied")]
-    RichTextBox _rtApplied;
-
-    [AccessedThroughProperty("rtxtFX")]
-    RichTextBox _rtxtFX;
-
-    [AccessedThroughProperty("rtxtInfo")]
-    RichTextBox _rtxtInfo;
+        RichTextBox rtApplied;
+        RichTextBox rtxtFX;
+        RichTextBox rtxtInfo;
 
     IContainer components;
 
@@ -111,77 +93,11 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    ImageList ilSet
-    {
-      get
-      {
-        return this._ilSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilSet = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
     ListView lstSets
     {
@@ -201,41 +117,8 @@ namespace Hero_Designer
       }
     }
 
-    RichTextBox rtApplied
-    {
-      get
-      {
-        return this._rtApplied;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rtApplied = value;
-      }
-    }
 
-    RichTextBox rtxtFX
-    {
-      get
-      {
-        return this._rtxtFX;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rtxtFX = value;
-      }
-    }
 
-    RichTextBox rtxtInfo
-    {
-      get
-      {
-        return this._rtxtInfo;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rtxtInfo = value;
-      }
-    }
 
     public frmSetViewer(ref frmMain iParent)
     {

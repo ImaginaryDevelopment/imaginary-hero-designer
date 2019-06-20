@@ -15,9 +15,7 @@ namespace Hero_Designer
   {
     [AccessedThroughProperty("btnOK")]
     Button _btnOK;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
+        Label Label1;
 
     [AccessedThroughProperty("udLevel")]
     NumericUpDown _udLevel;
@@ -49,17 +47,6 @@ namespace Hero_Designer
       }
     }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
     NumericUpDown udLevel
     {

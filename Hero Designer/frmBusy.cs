@@ -12,23 +12,10 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmBusy : Form
   {
-    [AccessedThroughProperty("Message")]
-    Label _Message;
+        Label Message;
 
     IContainer components;
 
-
-    Label Message
-    {
-      get
-      {
-        return this._Message;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Message = value;
-      }
-    }
 
     public frmBusy()
     {

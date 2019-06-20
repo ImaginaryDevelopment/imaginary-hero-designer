@@ -14,21 +14,13 @@ namespace Hero_Designer
     {
         [AccessedThroughProperty("Cancel_Button")]
         Button _Cancel_Button;
-
-        [AccessedThroughProperty("chkRemember")]
-        CheckBox _chkRemember;
-
-        [AccessedThroughProperty("cmbAction")]
-        ComboBox _cmbAction;
-
-        [AccessedThroughProperty("lblDescript")]
-        Label _lblDescript;
+        CheckBox chkRemember;
+        ComboBox cmbAction;
+        Label lblDescript;
 
         [AccessedThroughProperty("OK_Button")]
         Button _OK_Button;
-
-        [AccessedThroughProperty("TableLayoutPanel1")]
-        TableLayoutPanel _TableLayoutPanel1;
+        TableLayoutPanel TableLayoutPanel1;
 
         IContainer components;
 
@@ -53,44 +45,9 @@ namespace Hero_Designer
         }
 
         internal bool? remember => chkRemember?.Checked;
-        CheckBox chkRemember
-        {
-            get
-            {
-                return this._chkRemember;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._chkRemember = value;
-            }
-        }
 
-        ComboBox cmbAction
-        {
-            get
-            {
-                return this._cmbAction;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._cmbAction = value;
-            }
-        }
 
-        Label lblDescript
-        {
-            get
-            {
-                return this._lblDescript;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblDescript = value;
-            }
-        }
+
 
         Button OK_Button
         {
@@ -111,18 +68,6 @@ namespace Hero_Designer
             }
         }
 
-        TableLayoutPanel TableLayoutPanel1
-        {
-            get
-            {
-                return this._TableLayoutPanel1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._TableLayoutPanel1 = value;
-            }
-        }
 
         public frmOptionListDlg()
         {

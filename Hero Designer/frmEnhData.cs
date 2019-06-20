@@ -72,75 +72,33 @@ namespace Hero_Designer
 
         [AccessedThroughProperty("chkUnique")]
         CheckBox _chkUnique;
-
-        [AccessedThroughProperty("gbBasic")]
-        GroupBox _gbBasic;
-
-        [AccessedThroughProperty("gbClass")]
-        GroupBox _gbClass;
-
-        [AccessedThroughProperty("gbEffects")]
-        GroupBox _gbEffects;
-
-        [AccessedThroughProperty("gbMod")]
-        GroupBox _gbMod;
-
-        [AccessedThroughProperty("gbSet")]
-        GroupBox _gbSet;
-
-        [AccessedThroughProperty("gbType")]
-        GroupBox _gbType;
-
-        [AccessedThroughProperty("ImagePicker")]
-        OpenFileDialog _ImagePicker;
-
-        [AccessedThroughProperty("Label1")]
-        Label _Label1;
-
-        [AccessedThroughProperty("Label10")]
-        Label _Label10;
-
-        [AccessedThroughProperty("Label11")]
-        Label _Label11;
-
-        [AccessedThroughProperty("Label2")]
-        Label _Label2;
-
-        [AccessedThroughProperty("Label3")]
-        Label _Label3;
-
-        [AccessedThroughProperty("Label4")]
-        Label _Label4;
-
-        [AccessedThroughProperty("Label5")]
-        Label _Label5;
-
-        [AccessedThroughProperty("Label6")]
-        Label _Label6;
-
-        [AccessedThroughProperty("Label7")]
-        Label _Label7;
-
-        [AccessedThroughProperty("Label8")]
-        Label _Label8;
-
-        [AccessedThroughProperty("Label9")]
-        Label _Label9;
-
-        [AccessedThroughProperty("lblClass")]
-        Label _lblClass;
-
-        [AccessedThroughProperty("lblSched")]
-        Label _lblSched;
+        GroupBox gbBasic;
+        GroupBox gbClass;
+        GroupBox gbEffects;
+        GroupBox gbMod;
+        GroupBox gbSet;
+        GroupBox gbType;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblClass;
+        Label lblSched;
 
         [AccessedThroughProperty("lstAvailable")]
         ListBox _lstAvailable;
 
         [AccessedThroughProperty("lstSelected")]
         ListBox _lstSelected;
-
-        [AccessedThroughProperty("pbSet")]
-        PictureBox _pbSet;
+        PictureBox pbSet;
 
         [AccessedThroughProperty("pnlClass")]
         Panel _pnlClass;
@@ -174,9 +132,7 @@ namespace Hero_Designer
 
         [AccessedThroughProperty("StaticIndex")]
         TextBox _StaticIndex;
-
-        [AccessedThroughProperty("tTip")]
-        ToolTip _tTip;
+        ToolTip tTip;
 
         [AccessedThroughProperty("txtDesc")]
         TextBox _txtDesc;
@@ -585,265 +541,25 @@ namespace Hero_Designer
             }
         }
 
-        GroupBox gbBasic
-        {
-            get
-            {
-                return this._gbBasic;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbBasic = value;
-            }
-        }
 
-        GroupBox gbClass
-        {
-            get
-            {
-                return this._gbClass;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbClass = value;
-            }
-        }
 
-        GroupBox gbEffects
-        {
-            get
-            {
-                return this._gbEffects;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbEffects = value;
-            }
-        }
 
-        GroupBox gbMod
-        {
-            get
-            {
-                return this._gbMod;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbMod = value;
-            }
-        }
 
-        GroupBox gbSet
-        {
-            get
-            {
-                return this._gbSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbSet = value;
-            }
-        }
 
-        GroupBox gbType
-        {
-            get
-            {
-                return this._gbType;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gbType = value;
-            }
-        }
 
-        OpenFileDialog ImagePicker
-        {
-            get
-            {
-                return this._ImagePicker;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._ImagePicker = value;
-            }
-        }
 
-        Label Label1
-        {
-            get
-            {
-                return this._Label1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label1 = value;
-            }
-        }
 
-        Label Label10
-        {
-            get
-            {
-                return this._Label10;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label10 = value;
-            }
-        }
 
-        Label Label11
-        {
-            get
-            {
-                return this._Label11;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label11 = value;
-            }
-        }
 
-        Label Label2
-        {
-            get
-            {
-                return this._Label2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label2 = value;
-            }
-        }
 
-        Label Label3
-        {
-            get
-            {
-                return this._Label3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label3 = value;
-            }
-        }
 
-        Label Label4
-        {
-            get
-            {
-                return this._Label4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label4 = value;
-            }
-        }
 
-        Label Label5
-        {
-            get
-            {
-                return this._Label5;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label5 = value;
-            }
-        }
 
-        Label Label6
-        {
-            get
-            {
-                return this._Label6;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label6 = value;
-            }
-        }
 
-        Label Label7
-        {
-            get
-            {
-                return this._Label7;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label7 = value;
-            }
-        }
 
-        Label Label8
-        {
-            get
-            {
-                return this._Label8;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label8 = value;
-            }
-        }
 
-        Label Label9
-        {
-            get
-            {
-                return this._Label9;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._Label9 = value;
-            }
-        }
 
-        Label lblClass
-        {
-            get
-            {
-                return this._lblClass;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblClass = value;
-            }
-        }
 
-        Label lblSched
-        {
-            get
-            {
-                return this._lblSched;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblSched = value;
-            }
-        }
 
         ListBox lstAvailable
         {
@@ -883,18 +599,6 @@ namespace Hero_Designer
             }
         }
 
-        PictureBox pbSet
-        {
-            get
-            {
-                return this._pbSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pbSet = value;
-            }
-        }
 
         Panel pnlClass
         {
@@ -1121,18 +825,6 @@ namespace Hero_Designer
             }
         }
 
-        ToolTip tTip
-        {
-            get
-            {
-                return this._tTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._tTip = value;
-            }
-        }
 
         TextBox txtDesc
         {

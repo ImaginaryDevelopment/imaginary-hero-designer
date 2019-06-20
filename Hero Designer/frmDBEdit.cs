@@ -42,72 +42,28 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnSalvage")]
     Button _btnSalvage;
-
-    [AccessedThroughProperty("exportIndexes")]
-    Button _exportIndexes;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label13")]
-    Label _Label13;
-
-    [AccessedThroughProperty("Label15")]
-    Label _Label15;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("lblCountAT")]
-    Label _lblCountAT;
-
-    [AccessedThroughProperty("lblCountEnh")]
-    Label _lblCountEnh;
-
-    [AccessedThroughProperty("lblCountFX")]
-    Label _lblCountFX;
-
-    [AccessedThroughProperty("lblCountIOSet")]
-    Label _lblCountIOSet;
-
-    [AccessedThroughProperty("lblCountPS")]
-    Label _lblCountPS;
-
-    [AccessedThroughProperty("lblCountPwr")]
-    Label _lblCountPwr;
-
-    [AccessedThroughProperty("lblCountRecipe")]
-    Label _lblCountRecipe;
-
-    [AccessedThroughProperty("lblCountSalvage")]
-    Label _lblCountSalvage;
-
-    [AccessedThroughProperty("lblDate")]
-    Label _lblDate;
+        Button exportIndexes;
+        GroupBox GroupBox1;
+        Label Label1;
+        Label Label11;
+        Label Label13;
+        Label Label15;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label9;
+        Label lblCountAT;
+        Label lblCountEnh;
+        Label lblCountFX;
+        Label lblCountIOSet;
+        Label lblCountPS;
+        Label lblCountPwr;
+        Label lblCountRecipe;
+        Label lblCountSalvage;
+        Label lblDate;
 
     [AccessedThroughProperty("txtDBVer")]
     TextBox _txtDBVer;
@@ -300,269 +256,27 @@ namespace Hero_Designer
       }
     }
 
-    Button exportIndexes
-    {
-      get
-      {
-        return this._exportIndexes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._exportIndexes = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    Label lblCountAT
-    {
-      get
-      {
-        return this._lblCountAT;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountAT = value;
-      }
-    }
 
-    Label lblCountEnh
-    {
-      get
-      {
-        return this._lblCountEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountEnh = value;
-      }
-    }
 
-    Label lblCountFX
-    {
-      get
-      {
-        return this._lblCountFX;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountFX = value;
-      }
-    }
 
-    Label lblCountIOSet
-    {
-      get
-      {
-        return this._lblCountIOSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountIOSet = value;
-      }
-    }
 
-    Label lblCountPS
-    {
-      get
-      {
-        return this._lblCountPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountPS = value;
-      }
-    }
 
-    Label lblCountPwr
-    {
-      get
-      {
-        return this._lblCountPwr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountPwr = value;
-      }
-    }
 
-    Label lblCountRecipe
-    {
-      get
-      {
-        return this._lblCountRecipe;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountRecipe = value;
-      }
-    }
 
-    Label lblCountSalvage
-    {
-      get
-      {
-        return this._lblCountSalvage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountSalvage = value;
-      }
-    }
 
-    Label lblDate
-    {
-      get
-      {
-        return this._lblDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDate = value;
-      }
-    }
 
     TextBox txtDBVer
     {

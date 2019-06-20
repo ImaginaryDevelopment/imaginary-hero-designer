@@ -15,17 +15,12 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmCSV : Form
   {
-    [AccessedThroughProperty("at_Count")]
-    Label _at_Count;
-
-    [AccessedThroughProperty("at_Date")]
-    Label _at_Date;
+        Label at_Count;
+        Label at_Date;
 
     [AccessedThroughProperty("at_Import")]
     Button _at_Import;
-
-    [AccessedThroughProperty("at_Revision")]
-    Label _at_Revision;
+        Label at_Revision;
 
     [AccessedThroughProperty("btnBonusLookup")]
     Button _btnBonusLookup;
@@ -56,197 +51,80 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("btnStaticIndex")]
     Button _btnStaticIndex;
-
-    [AccessedThroughProperty("fx_Count")]
-    Label _fx_Count;
-
-    [AccessedThroughProperty("fx_Date")]
-    Label _fx_Date;
+        Label fx_Count;
+        Label fx_Date;
 
     [AccessedThroughProperty("fx_Import")]
     Button _fx_Import;
-
-    [AccessedThroughProperty("fx_Revision")]
-    Label _fx_Revision;
-
-    [AccessedThroughProperty("GroupBox1")]
-    GroupBox _GroupBox1;
-
-    [AccessedThroughProperty("GroupBox2")]
-    GroupBox _GroupBox2;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
-
-    [AccessedThroughProperty("GroupBox4")]
-    GroupBox _GroupBox4;
-
-    [AccessedThroughProperty("GroupBox5")]
-    GroupBox _GroupBox5;
-
-    [AccessedThroughProperty("GroupBox6")]
-    GroupBox _GroupBox6;
-
-    [AccessedThroughProperty("GroupBox7")]
-    GroupBox _GroupBox7;
-
-    [AccessedThroughProperty("GroupBox8")]
-    GroupBox _GroupBox8;
-
-    [AccessedThroughProperty("invent_Date")]
-    Label _invent_Date;
+        Label fx_Revision;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        GroupBox GroupBox6;
+        GroupBox GroupBox7;
+        GroupBox GroupBox8;
+        Label invent_Date;
 
     [AccessedThroughProperty("invent_Import")]
     Button _invent_Import;
-
-    [AccessedThroughProperty("invent_RecipeDate")]
-    Label _invent_RecipeDate;
-
-    [AccessedThroughProperty("invent_Revision")]
-    Label _invent_Revision;
+        Label invent_RecipeDate;
+        Label invent_Revision;
 
     [AccessedThroughProperty("inventSetImport")]
     Button _inventSetImport;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label12")]
-    Label _Label12;
-
-    [AccessedThroughProperty("Label13")]
-    Label _Label13;
-
-    [AccessedThroughProperty("Label14")]
-    Label _Label14;
-
-    [AccessedThroughProperty("Label15")]
-    Label _Label15;
-
-    [AccessedThroughProperty("Label16")]
-    Label _Label16;
-
-    [AccessedThroughProperty("Label17")]
-    Label _Label17;
-
-    [AccessedThroughProperty("Label19")]
-    Label _Label19;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label21")]
-    Label _Label21;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label23")]
-    Label _Label23;
-
-    [AccessedThroughProperty("Label24")]
-    Label _Label24;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("lev_Count")]
-    Label _lev_Count;
-
-    [AccessedThroughProperty("lev_date")]
-    Label _lev_date;
-
-    [AccessedThroughProperty("lev_Revision")]
-    Label _lev_Revision;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label17;
+        Label Label19;
+        Label Label2;
+        Label Label21;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lev_Count;
+        Label lev_date;
+        Label lev_Revision;
 
     [AccessedThroughProperty("level_import")]
     Button _level_import;
-
-    [AccessedThroughProperty("mod_Count")]
-    Label _mod_Count;
-
-    [AccessedThroughProperty("mod_Date")]
-    Label _mod_Date;
+        Label mod_Count;
+        Label mod_Date;
 
     [AccessedThroughProperty("mod_Import")]
     Button _mod_Import;
-
-    [AccessedThroughProperty("mod_Revision")]
-    Label _mod_Revision;
-
-    [AccessedThroughProperty("pow_Count")]
-    Label _pow_Count;
-
-    [AccessedThroughProperty("pow_Date")]
-    Label _pow_Date;
+        Label mod_Revision;
+        Label pow_Count;
+        Label pow_Date;
 
     [AccessedThroughProperty("pow_Import")]
     Button _pow_Import;
-
-    [AccessedThroughProperty("pow_Revision")]
-    Label _pow_Revision;
-
-    [AccessedThroughProperty("set_Count")]
-    Label _set_Count;
-
-    [AccessedThroughProperty("set_Date")]
-    Label _set_Date;
+        Label pow_Revision;
+        Label set_Count;
+        Label set_Date;
 
     [AccessedThroughProperty("set_Import")]
     Button _set_Import;
-
-    [AccessedThroughProperty("set_Revision")]
-    Label _set_Revision;
+        Label set_Revision;
 
     frmBusy bFrm;
 
     IContainer components;
 
 
-    Label at_Count
-    {
-      get
-      {
-        return this._at_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._at_Count = value;
-      }
-    }
-
-    Label at_Date
-    {
-      get
-      {
-        return this._at_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._at_Date = value;
-      }
-    }
 
     Button at_Import
     {
@@ -266,17 +144,6 @@ namespace Hero_Designer
       }
     }
 
-    Label at_Revision
-    {
-      get
-      {
-        return this._at_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._at_Revision = value;
-      }
-    }
 
     Button btnBonusLookup
     {
@@ -458,29 +325,7 @@ namespace Hero_Designer
       }
     }
 
-    Label fx_Count
-    {
-      get
-      {
-        return this._fx_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fx_Count = value;
-      }
-    }
 
-    Label fx_Date
-    {
-      get
-      {
-        return this._fx_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fx_Date = value;
-      }
-    }
 
     Button fx_Import
     {
@@ -500,125 +345,15 @@ namespace Hero_Designer
       }
     }
 
-    Label fx_Revision
-    {
-      get
-      {
-        return this._fx_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fx_Revision = value;
-      }
-    }
 
-    GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
 
-    GroupBox GroupBox6
-    {
-      get
-      {
-        return this._GroupBox6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox6 = value;
-      }
-    }
 
-    GroupBox GroupBox7
-    {
-      get
-      {
-        return this._GroupBox7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox7 = value;
-      }
-    }
 
-    GroupBox GroupBox8
-    {
-      get
-      {
-        return this._GroupBox8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox8 = value;
-      }
-    }
 
-    Label invent_Date
-    {
-      get
-      {
-        return this._invent_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._invent_Date = value;
-      }
-    }
 
     Button invent_Import
     {
@@ -638,29 +373,7 @@ namespace Hero_Designer
       }
     }
 
-    Label invent_RecipeDate
-    {
-      get
-      {
-        return this._invent_RecipeDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._invent_RecipeDate = value;
-      }
-    }
 
-    Label invent_Revision
-    {
-      get
-      {
-        return this._invent_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._invent_Revision = value;
-      }
-    }
 
     Button inventSetImport
     {
@@ -680,293 +393,29 @@ namespace Hero_Designer
       }
     }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
 
-    Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
 
-    Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
 
-    Label Label17
-    {
-      get
-      {
-        return this._Label17;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label17 = value;
-      }
-    }
 
-    Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label23
-    {
-      get
-      {
-        return this._Label23;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label23 = value;
-      }
-    }
 
-    Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    Label lev_Count
-    {
-      get
-      {
-        return this._lev_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lev_Count = value;
-      }
-    }
 
-    Label lev_date
-    {
-      get
-      {
-        return this._lev_date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lev_date = value;
-      }
-    }
 
-    Label lev_Revision
-    {
-      get
-      {
-        return this._lev_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lev_Revision = value;
-      }
-    }
 
     Button level_import
     {
@@ -986,29 +435,7 @@ namespace Hero_Designer
       }
     }
 
-    Label mod_Count
-    {
-      get
-      {
-        return this._mod_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._mod_Count = value;
-      }
-    }
 
-    Label mod_Date
-    {
-      get
-      {
-        return this._mod_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._mod_Date = value;
-      }
-    }
 
     Button mod_Import
     {
@@ -1028,41 +455,8 @@ namespace Hero_Designer
       }
     }
 
-    Label mod_Revision
-    {
-      get
-      {
-        return this._mod_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._mod_Revision = value;
-      }
-    }
 
-    Label pow_Count
-    {
-      get
-      {
-        return this._pow_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pow_Count = value;
-      }
-    }
 
-    Label pow_Date
-    {
-      get
-      {
-        return this._pow_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pow_Date = value;
-      }
-    }
 
     Button pow_Import
     {
@@ -1082,41 +476,8 @@ namespace Hero_Designer
       }
     }
 
-    Label pow_Revision
-    {
-      get
-      {
-        return this._pow_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pow_Revision = value;
-      }
-    }
 
-    Label set_Count
-    {
-      get
-      {
-        return this._set_Count;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._set_Count = value;
-      }
-    }
 
-    Label set_Date
-    {
-      get
-      {
-        return this._set_Date;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._set_Date = value;
-      }
-    }
 
     Button set_Import
     {
@@ -1136,17 +497,6 @@ namespace Hero_Designer
       }
     }
 
-    Label set_Revision
-    {
-      get
-      {
-        return this._set_Revision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._set_Revision = value;
-      }
-    }
 
     public frmCSV()
     {

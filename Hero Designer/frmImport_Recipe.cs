@@ -25,27 +25,13 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("Button1")]
     Button _Button1;
-
-    [AccessedThroughProperty("dlgBrowse")]
-    OpenFileDialog _dlgBrowse;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("lblAttribDate")]
-    Label _lblAttribDate;
-
-    [AccessedThroughProperty("lblAttribIndex")]
-    Label _lblAttribIndex;
-
-    [AccessedThroughProperty("lblAttribTableCount")]
-    Label _lblAttribTableCount;
-
-    [AccessedThroughProperty("lblAttribTables")]
-    Label _lblAttribTables;
+        OpenFileDialog dlgBrowse;
+        Label Label3;
+        Label Label4;
+        Label lblAttribDate;
+        Label lblAttribIndex;
+        Label lblAttribTableCount;
+        Label lblAttribTables;
 
     frmBusy bFrm;
 
@@ -124,89 +110,12 @@ namespace Hero_Designer
       }
     }
 
-    OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label lblAttribDate
-    {
-      get
-      {
-        return this._lblAttribDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribDate = value;
-      }
-    }
 
-    Label lblAttribIndex
-    {
-      get
-      {
-        return this._lblAttribIndex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribIndex = value;
-      }
-    }
 
-    Label lblAttribTableCount
-    {
-      get
-      {
-        return this._lblAttribTableCount;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribTableCount = value;
-      }
-    }
 
-    Label lblAttribTables
-    {
-      get
-      {
-        return this._lblAttribTables;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribTables = value;
-      }
-    }
 
     public frmImport_Recipe()
     {

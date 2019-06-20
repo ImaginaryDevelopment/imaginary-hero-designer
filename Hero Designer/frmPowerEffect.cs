@@ -56,102 +56,48 @@ namespace Hero_Designer
 
     [AccessedThroughProperty("chkFXResistable")]
     CheckBox _chkFXResistable;
-
-    [AccessedThroughProperty("chkNearGround")]
-    CheckBox _chkNearGround;
+        CheckBox chkNearGround;
 
     [AccessedThroughProperty("chkStack")]
     CheckBox _chkStack;
 
     [AccessedThroughProperty("chkVariable")]
     CheckBox _chkVariable;
-
-    [AccessedThroughProperty("chSub")]
-    ColumnHeader _chSub;
-
-    [AccessedThroughProperty("chSubSub")]
-    ColumnHeader _chSubSub;
+        ColumnHeader chSub;
+        ColumnHeader chSubSub;
 
     [AccessedThroughProperty("clbSuppression")]
     CheckedListBox _clbSuppression;
 
     [AccessedThroughProperty("cmbEffectId")]
     ComboBox _cmbEffectId;
-
-    [AccessedThroughProperty("ColumnHeader1")]
-    ColumnHeader _ColumnHeader1;
-
-    [AccessedThroughProperty("GroupBox3")]
-    GroupBox _GroupBox3;
+        ColumnHeader ColumnHeader1;
+        GroupBox GroupBox3;
 
     [AccessedThroughProperty("IgnoreED")]
     CheckBox _IgnoreED;
-
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
-
-    [AccessedThroughProperty("Label10")]
-    Label _Label10;
-
-    [AccessedThroughProperty("Label11")]
-    Label _Label11;
-
-    [AccessedThroughProperty("Label2")]
-    Label _Label2;
-
-    [AccessedThroughProperty("Label22")]
-    Label _Label22;
-
-    [AccessedThroughProperty("Label23")]
-    Label _Label23;
-
-    [AccessedThroughProperty("Label24")]
-    Label _Label24;
-
-    [AccessedThroughProperty("Label25")]
-    Label _Label25;
-
-    [AccessedThroughProperty("Label26")]
-    Label _Label26;
-
-    [AccessedThroughProperty("Label27")]
-    Label _Label27;
-
-    [AccessedThroughProperty("Label28")]
-    Label _Label28;
-
-    [AccessedThroughProperty("Label3")]
-    Label _Label3;
-
-    [AccessedThroughProperty("Label30")]
-    Label _Label30;
-
-    [AccessedThroughProperty("Label4")]
-    Label _Label4;
-
-    [AccessedThroughProperty("Label5")]
-    Label _Label5;
-
-    [AccessedThroughProperty("Label6")]
-    Label _Label6;
-
-    [AccessedThroughProperty("Label7")]
-    Label _Label7;
-
-    [AccessedThroughProperty("Label8")]
-    Label _Label8;
-
-    [AccessedThroughProperty("Label9")]
-    Label _Label9;
-
-    [AccessedThroughProperty("lblAffectsCaster")]
-    Label _lblAffectsCaster;
-
-    [AccessedThroughProperty("lblEffectDescription")]
-    Label _lblEffectDescription;
-
-    [AccessedThroughProperty("lblProb")]
-    Label _lblProb;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label2;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label25;
+        Label Label26;
+        Label Label27;
+        Label Label28;
+        Label Label3;
+        Label Label30;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblAffectsCaster;
+        Label lblEffectDescription;
+        Label lblProb;
 
     [AccessedThroughProperty("lvEffectType")]
     ListView _lvEffectType;
@@ -453,17 +399,6 @@ namespace Hero_Designer
       }
     }
 
-    CheckBox chkNearGround
-    {
-      get
-      {
-        return this._chkNearGround;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkNearGround = value;
-      }
-    }
 
     CheckBox chkStack
     {
@@ -501,29 +436,7 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader chSub
-    {
-      get
-      {
-        return this._chSub;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chSub = value;
-      }
-    }
 
-    ColumnHeader chSubSub
-    {
-      get
-      {
-        return this._chSubSub;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chSubSub = value;
-      }
-    }
 
     CheckedListBox clbSuppression
     {
@@ -561,29 +474,7 @@ namespace Hero_Designer
       }
     }
 
-    ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
     CheckBox IgnoreED
     {
@@ -603,269 +494,27 @@ namespace Hero_Designer
       }
     }
 
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    Label Label23
-    {
-      get
-      {
-        return this._Label23;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label23 = value;
-      }
-    }
 
-    Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
 
-    Label Label25
-    {
-      get
-      {
-        return this._Label25;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label25 = value;
-      }
-    }
 
-    Label Label26
-    {
-      get
-      {
-        return this._Label26;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label26 = value;
-      }
-    }
 
-    Label Label27
-    {
-      get
-      {
-        return this._Label27;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label27 = value;
-      }
-    }
 
-    Label Label28
-    {
-      get
-      {
-        return this._Label28;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label28 = value;
-      }
-    }
 
-    Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    Label Label30
-    {
-      get
-      {
-        return this._Label30;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label30 = value;
-      }
-    }
 
-    Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    Label lblAffectsCaster
-    {
-      get
-      {
-        return this._lblAffectsCaster;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAffectsCaster = value;
-      }
-    }
 
-    Label lblEffectDescription
-    {
-      get
-      {
-        return this._lblEffectDescription;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEffectDescription = value;
-      }
-    }
 
-    Label lblProb
-    {
-      get
-      {
-        return this._lblProb;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblProb = value;
-      }
-    }
 
     ListView lvEffectType
     {

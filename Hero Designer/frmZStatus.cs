@@ -10,68 +10,16 @@ namespace Hero_Designer
 {
   public class frmZStatus : Form
   {
-    [AccessedThroughProperty("lblStatus1")]
-    Label _lblStatus1;
-
-    [AccessedThroughProperty("lblStatus2")]
-    Label _lblStatus2;
-
-    [AccessedThroughProperty("lblTitle")]
-    Label _lblTitle;
-
-    [AccessedThroughProperty("PictureBox1")]
-    PictureBox _PictureBox1;
+        Label lblStatus1;
+        Label lblStatus2;
+        Label lblTitle;
+        PictureBox PictureBox1;
 
     IContainer components;
 
 
-    Label lblStatus1
-    {
-      get
-      {
-        return this._lblStatus1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblStatus1 = value;
-      }
-    }
 
-    Label lblStatus2
-    {
-      get
-      {
-        return this._lblStatus2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblStatus2 = value;
-      }
-    }
 
-    Label lblTitle
-    {
-      get
-      {
-        return this._lblTitle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblTitle = value;
-      }
-    }
-
-    PictureBox PictureBox1
-    {
-      get
-      {
-        return this._PictureBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._PictureBox1 = value;
-      }
-    }
 
     public frmZStatus()
     {
