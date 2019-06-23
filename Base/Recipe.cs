@@ -81,6 +81,7 @@ public class Recipe
 
   public void StoreTo(BinaryWriter writer)
   {
+
     writer.Write((int) this.Rarity);
     writer.Write(this.InternalName);
     writer.Write(this.ExternalName);

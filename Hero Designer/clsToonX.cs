@@ -100,7 +100,7 @@ namespace Hero_Designer
       this.ResetLevel();
       int[] numArray = DatabaseAPI.NidPowersAtLevelBranch(0, this.Powersets[1].nID);
       bool flag1 = numArray.Length > 1;
-      string message = string.Empty;
+      string message = "";
       if (inToonHistory > -1)
       {
         if (this.CanRemovePower(inToonHistory, true, out message))

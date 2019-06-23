@@ -304,7 +304,7 @@ public class ConfigData
                     this.ShowPopup = reader.ReadBoolean();
                     if ((double)num1 >= 1.32000005245209)
                         this.ShowAlphaPopup = reader.ReadBoolean();
-                    this.PopupRecipes = reader.ReadBoolean();
+                    this.PopupRecipes = reader.ReadBoolean(); //reading true when should be false
                     this.ShoppingListIncludesRecipes = reader.ReadBoolean();
                     this.PrintProfile = (ConfigData.PrintOptionProfile)reader.ReadInt32();
                     this.PrintHistory = reader.ReadBoolean();
@@ -321,11 +321,10 @@ public class ConfigData
                     this.SaveFolderChecked = reader.ReadBoolean();
                 if ((double)num1 >= 1.28999996185303)
                     this.UseArcanaTime = reader.ReadBoolean(); //this is correct
-                /*Commented out to expidite release.... Will not load forum Export settings  or supression settings
-                 * if ((double)num1 >= 1.29999995231628)
+                /*//Commented out to expidite release.... Will not load forum Export settings  or supression settings
+                if ((double)num1 >= 1.29999995231628)
                 {  // numbers seem really off which is screwing up the rest of the read
-                    tempNum = reader.ReadInt16();
-                    this.Suppression = (Enums.eSuppress)tempNum;
+                    this.Suppression = (Enums.eSuppress)reader.ReadInt16();
                 }
                 if ((double)num1 >= 1.30999994277954)
                 {
@@ -333,8 +332,7 @@ public class ConfigData
                         this.DragDropScenarioAction[index] = reader.ReadInt16();
                 }
                 }//589825 or 2305
-                 tempNum = reader.ReadInt16();
-                this.Export.ColorSchemes = new ExportConfig.ColorScheme[(int)tempNum];
+                this.Export.ColorSchemes = new ExportConfig.ColorScheme[(int)reader.ReadInt16()];
                 for (int index = 0; index < this.Export.ColorSchemes.Length; ++index)
                 { //crashes at index 14
                     this.Export.ColorSchemes[index].SchemeName = reader.ReadString();
@@ -368,6 +366,7 @@ public class ConfigData
                     this.Export.FormatCode[index].Space = (ExportConfig.WhiteSpace)reader.ReadInt32();
                 } */
                 this.CreateDefaultSaveFolder();
+                reader.Close();
             }
     }
   }
@@ -380,7 +379,7 @@ public class ConfigData
       return;
     Directory.CreateDirectory(this.DefaultSaveFolder);
   }
-
+    //Pine: Save Settings
   private void Save(string iFilename, float version)
   {
     using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
@@ -515,8 +514,11 @@ public class ConfigData
           writer.Write(this.Export.FormatCode[index].UnderlineOn);
           writer.Write(Convert.ToInt32((object) this.Export.FormatCode[index].Space));
         }
+        writer.Close();
       }
+            fileStream.Close();
     }
+
   }
 
   private static Color ReadRGB(BinaryReader reader)
@@ -615,7 +617,9 @@ public class ConfigData
           binaryWriter.Write(this.CompOverride[index].Power);
           binaryWriter.Write(this.CompOverride[index].Override);
         }
+                binaryWriter.Close();
       }
+            fileStream.Close();
     }
   }
 
