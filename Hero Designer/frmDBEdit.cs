@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmDBEdit
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
@@ -19,77 +14,69 @@ namespace Hero_Designer
   public class frmDBEdit : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
-    [AccessedThroughProperty("btnCSV")]
-    private Button _btnCSV;
-    [AccessedThroughProperty("btnDate")]
-    private Button _btnDate;
-    [AccessedThroughProperty("btnEditEnh")]
-    private Button _btnEditEnh;
-    [AccessedThroughProperty("btnEditEntity")]
-    private Button _btnEditEntity;
-    [AccessedThroughProperty("btnEditIOSet")]
-    private Button _btnEditIOSet;
-    [AccessedThroughProperty("btnFileReport")]
-    private Button _btnFileReport;
-    [AccessedThroughProperty("btnPSBrowse")]
-    private Button _btnPSBrowse;
-    [AccessedThroughProperty("btnRecipe")]
-    private Button _btnRecipe;
-    [AccessedThroughProperty("btnSalvage")]
-    private Button _btnSalvage;
-    [AccessedThroughProperty("exportIndexes")]
-    private Button _exportIndexes;
-    [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label11")]
-    private Label _Label11;
-    [AccessedThroughProperty("Label13")]
-    private Label _Label13;
-    [AccessedThroughProperty("Label15")]
-    private Label _Label15;
-    [AccessedThroughProperty("Label2")]
-    private Label _Label2;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("Label5")]
-    private Label _Label5;
-    [AccessedThroughProperty("Label6")]
-    private Label _Label6;
-    [AccessedThroughProperty("Label7")]
-    private Label _Label7;
-    [AccessedThroughProperty("Label9")]
-    private Label _Label9;
-    [AccessedThroughProperty("lblCountAT")]
-    private Label _lblCountAT;
-    [AccessedThroughProperty("lblCountEnh")]
-    private Label _lblCountEnh;
-    [AccessedThroughProperty("lblCountFX")]
-    private Label _lblCountFX;
-    [AccessedThroughProperty("lblCountIOSet")]
-    private Label _lblCountIOSet;
-    [AccessedThroughProperty("lblCountPS")]
-    private Label _lblCountPS;
-    [AccessedThroughProperty("lblCountPwr")]
-    private Label _lblCountPwr;
-    [AccessedThroughProperty("lblCountRecipe")]
-    private Label _lblCountRecipe;
-    [AccessedThroughProperty("lblCountSalvage")]
-    private Label _lblCountSalvage;
-    [AccessedThroughProperty("lblDate")]
-    private Label _lblDate;
-    [AccessedThroughProperty("txtDBVer")]
-    private TextBox _txtDBVer;
-    [AccessedThroughProperty("udIssue")]
-    private NumericUpDown _udIssue;
-    private IContainer components;
-    private bool Initialized;
+    Button _btnClose;
 
-    internal virtual Button btnClose
+    [AccessedThroughProperty("btnCSV")]
+    Button _btnCSV;
+
+    [AccessedThroughProperty("btnDate")]
+    Button _btnDate;
+
+    [AccessedThroughProperty("btnEditEnh")]
+    Button _btnEditEnh;
+
+    [AccessedThroughProperty("btnEditEntity")]
+    Button _btnEditEntity;
+
+    [AccessedThroughProperty("btnEditIOSet")]
+    Button _btnEditIOSet;
+
+    [AccessedThroughProperty("btnFileReport")]
+    Button _btnFileReport;
+
+    [AccessedThroughProperty("btnPSBrowse")]
+    Button _btnPSBrowse;
+
+    [AccessedThroughProperty("btnRecipe")]
+    Button _btnRecipe;
+
+    [AccessedThroughProperty("btnSalvage")]
+    Button _btnSalvage;
+        Button exportIndexes;
+        GroupBox GroupBox1;
+        Label Label1;
+        Label Label11;
+        Label Label13;
+        Label Label15;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label9;
+        Label lblCountAT;
+        Label lblCountEnh;
+        Label lblCountFX;
+        Label lblCountIOSet;
+        Label lblCountPS;
+        Label lblCountPwr;
+        Label lblCountRecipe;
+        Label lblCountSalvage;
+        Label lblDate;
+
+    [AccessedThroughProperty("txtDBVer")]
+    TextBox _txtDBVer;
+
+    [AccessedThroughProperty("udIssue")]
+    NumericUpDown _udIssue;
+
+    IContainer components;
+
+    bool Initialized;
+
+
+    Button btnClose
     {
       get
       {
@@ -107,7 +94,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCSV
+    Button btnCSV
     {
       get
       {
@@ -125,7 +112,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDate
+    Button btnDate
     {
       get
       {
@@ -143,7 +130,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnEditEnh
+    Button btnEditEnh
     {
       get
       {
@@ -161,7 +148,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnEditEntity
+    Button btnEditEntity
     {
       get
       {
@@ -179,7 +166,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnEditIOSet
+    Button btnEditIOSet
     {
       get
       {
@@ -197,7 +184,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFileReport
+    Button btnFileReport
     {
       get
       {
@@ -215,7 +202,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPSBrowse
+    Button btnPSBrowse
     {
       get
       {
@@ -233,7 +220,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnRecipe
+    Button btnRecipe
     {
       get
       {
@@ -251,7 +238,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSalvage
+    Button btnSalvage
     {
       get
       {
@@ -269,271 +256,29 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button exportIndexes
-    {
-      get
-      {
-        return this._exportIndexes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._exportIndexes = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    internal virtual Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    internal virtual Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    internal virtual Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    internal virtual Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    internal virtual Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    internal virtual Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    internal virtual Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    internal virtual Label lblCountAT
-    {
-      get
-      {
-        return this._lblCountAT;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountAT = value;
-      }
-    }
 
-    internal virtual Label lblCountEnh
-    {
-      get
-      {
-        return this._lblCountEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountEnh = value;
-      }
-    }
 
-    internal virtual Label lblCountFX
-    {
-      get
-      {
-        return this._lblCountFX;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountFX = value;
-      }
-    }
 
-    internal virtual Label lblCountIOSet
-    {
-      get
-      {
-        return this._lblCountIOSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountIOSet = value;
-      }
-    }
 
-    internal virtual Label lblCountPS
-    {
-      get
-      {
-        return this._lblCountPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountPS = value;
-      }
-    }
 
-    internal virtual Label lblCountPwr
-    {
-      get
-      {
-        return this._lblCountPwr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountPwr = value;
-      }
-    }
 
-    internal virtual Label lblCountRecipe
-    {
-      get
-      {
-        return this._lblCountRecipe;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountRecipe = value;
-      }
-    }
 
-    internal virtual Label lblCountSalvage
-    {
-      get
-      {
-        return this._lblCountSalvage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCountSalvage = value;
-      }
-    }
 
-    internal virtual Label lblDate
-    {
-      get
-      {
-        return this._lblDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDate = value;
-      }
-    }
 
-    internal virtual TextBox txtDBVer
+    TextBox txtDBVer
     {
       get
       {
@@ -551,7 +296,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udIssue
+    NumericUpDown udIssue
     {
       get
       {
@@ -581,56 +326,66 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       this.Hide();
     }
 
-    private void btnCSV_Click(object sender, EventArgs e)
+    void btnCSV_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmCSV().ShowDialog();
     }
 
-    private void btnDate_Click(object sender, EventArgs e)
+    void btnDate_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.Database.Date = DateTime.Now;
       this.DisplayInfo();
     }
 
-    private void btnEditEnh_Click(object sender, EventArgs e)
+    void btnEditEnh_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmEnhEdit().ShowDialog();
       this.DisplayInfo();
     }
 
-    private void btnEditEntity_Click(object sender, EventArgs e)
+    void btnEditEntity_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmEntityListing().ShowDialog();
     }
 
-    private void btnEditIOSet_Click(object sender, EventArgs e)
+    void btnEditIOSet_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmSetListing().ShowDialog();
       this.DisplayInfo();
     }
 
-    private void btnFileReport_Click(object sender, EventArgs e)
+    void btnFileReport_Click(object sender, EventArgs e)
+
     {
       int num = (int) Interaction.MsgBox((object) Files.FileData, MsgBoxStyle.Information, (object) "File Loading Report");
     }
 
-    private void btnPSBrowse_Click(object sender, EventArgs e)
+    void btnPSBrowse_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmPowerBrowser().ShowDialog();
       this.DisplayInfo();
     }
 
-    private void btnRecipe_Click(object sender, EventArgs e)
+    void btnRecipe_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmRecipeEdit().ShowDialog();
     }
 
-    private void btnSalvage_Click(object sender, EventArgs e)
+    void btnSalvage_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmSalvageEdit().ShowDialog();
     }
@@ -668,7 +423,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmDBEdit_Load(object sender, EventArgs e)
+    void frmDBEdit_Load(object sender, EventArgs e)
+
     {
       this.btnDate.Visible = MidsContext.Config.MasterMode;
       this.btnCSV.Visible = MidsContext.Config.MasterMode;
@@ -679,7 +435,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmDBEdit));
       this.udIssue = new NumericUpDown();
@@ -1100,7 +857,8 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void txtDBVer_TextChanged(object sender, EventArgs e)
+    void txtDBVer_TextChanged(object sender, EventArgs e)
+
     {
       float num = (float) Conversion.Val(this.txtDBVer.Text);
       if ((double) num < 1.0)
@@ -1108,14 +866,16 @@ namespace Hero_Designer
       DatabaseAPI.Database.Version = num;
     }
 
-    private void udIssue_KeyPress(object sender, KeyPressEventArgs e)
+    void udIssue_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
       DatabaseAPI.Database.Issue = Convert.ToInt32(this.udIssue.Value);
     }
 
-    private void udIssue_ValueChanged(object sender, EventArgs e)
+    void udIssue_ValueChanged(object sender, EventArgs e)
+
     {
       if (!MainModule.MidsController.IsAppInitialized | !this.Initialized)
         return;

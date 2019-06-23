@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.My.MyProject
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.ApplicationServices;
@@ -25,11 +20,16 @@ namespace Hero_Designer.My
   [StandardModule]
   internal sealed class MyProject
   {
-    private static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
-    private static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
-    private static MyProject.ThreadSafeObjectProvider<MyProject.MyForms> m_MyFormsObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyForms>();
-    private static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
-    private static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
+    static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
+
+    static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
+
+    static MyProject.ThreadSafeObjectProvider<MyProject.MyForms> m_MyFormsObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyForms>();
+
+    static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
+
+    static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
+
 
     [HelpKeyword("My.Application")]
     internal static MyApplication Application
@@ -81,7 +81,8 @@ namespace Hero_Designer.My
     internal sealed class MyForms
     {
       [ThreadStatic]
-      private static Hashtable m_FormBeingCreated;
+      static Hashtable m_FormBeingCreated;
+
       public frmAbout m_frmAbout;
       public frmBusy m_frmBusy;
       public frmColourSettings m_frmColourSettings;
@@ -660,7 +661,8 @@ namespace Hero_Designer.My
       }
 
       [DebuggerHidden]
-      private static T Create__Instance__<T>(T Instance) where T : Form, new()
+      static T Create__Instance__<T>(T Instance) where T : Form, new()
+
       {
         T obj1;
         if ((object) Instance != null && !Instance.IsDisposed)
@@ -697,7 +699,8 @@ namespace Hero_Designer.My
       }
 
       [DebuggerHidden]
-      private void Dispose__Instance__<T>(ref T instance) where T : Form
+      void Dispose__Instance__<T>(ref T instance) where T : Form
+
       {
         instance.Dispose();
         instance = default (T);
@@ -733,13 +736,15 @@ namespace Hero_Designer.My
     internal sealed class MyWebServices
     {
       [DebuggerHidden]
-      private static T Create__Instance__<T>(T instance) where T : new()
+      static T Create__Instance__<T>(T instance) where T : new()
+
       {
         return (object) instance != null ? instance : new T();
       }
 
       [DebuggerHidden]
-      private void Dispose__Instance__<T>(ref T instance)
+      void Dispose__Instance__<T>(ref T instance)
+
       {
         instance = default (T);
       }

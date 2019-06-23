@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmExportColor
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using System;
 using System.ComponentModel;
@@ -16,55 +11,55 @@ namespace Hero_Designer
   public class frmExportColor : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
-    [AccessedThroughProperty("cPicker")]
-    private ColorDialog _cPicker;
+    Button _btnOK;
+        ColorDialog cPicker;
+
     [AccessedThroughProperty("csHeading")]
-    private Label _csHeading;
+    Label _csHeading;
+
     [AccessedThroughProperty("csHO")]
-    private Label _csHO;
+    Label _csHO;
+
     [AccessedThroughProperty("csIO")]
-    private Label _csIO;
+    Label _csIO;
+
     [AccessedThroughProperty("csLevel")]
-    private Label _csLevel;
+    Label _csLevel;
+
     [AccessedThroughProperty("csPower")]
-    private Label _csPower;
+    Label _csPower;
+
     [AccessedThroughProperty("csSet")]
-    private Label _csSet;
+    Label _csSet;
+
     [AccessedThroughProperty("csSlots")]
-    private Label _csSlots;
+    Label _csSlots;
+
     [AccessedThroughProperty("csTitle")]
-    private Label _csTitle;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label19")]
-    private Label _Label19;
-    [AccessedThroughProperty("Label20")]
-    private Label _Label20;
-    [AccessedThroughProperty("Label21")]
-    private Label _Label21;
-    [AccessedThroughProperty("Label22")]
-    private Label _Label22;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("Label5")]
-    private Label _Label5;
-    [AccessedThroughProperty("Label7")]
-    private Label _Label7;
-    [AccessedThroughProperty("Label9")]
-    private Label _Label9;
-    [AccessedThroughProperty("myTip")]
-    private ToolTip _myTip;
+    Label _csTitle;
+        Label Label1;
+        Label Label19;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label7;
+        Label Label9;
+        ToolTip myTip;
+
     [AccessedThroughProperty("txtName")]
-    private TextBox _txtName;
-    private IContainer components;
+    TextBox _txtName;
+
+    IContainer components;
+
     public ExportConfig.ColorScheme myScheme;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -82,7 +77,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -100,19 +95,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColorDialog cPicker
-    {
-      get
-      {
-        return this._cPicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cPicker = value;
-      }
-    }
 
-    internal virtual Label csHeading
+    Label csHeading
     {
       get
       {
@@ -130,7 +114,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csHO
+    Label csHO
     {
       get
       {
@@ -148,7 +132,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csIO
+    Label csIO
     {
       get
       {
@@ -166,7 +150,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csLevel
+    Label csLevel
     {
       get
       {
@@ -184,7 +168,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csPower
+    Label csPower
     {
       get
       {
@@ -202,7 +186,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csSet
+    Label csSet
     {
       get
       {
@@ -220,7 +204,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csSlots
+    Label csSlots
     {
       get
       {
@@ -238,7 +222,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label csTitle
+    Label csTitle
     {
       get
       {
@@ -256,139 +240,18 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    internal virtual Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    internal virtual Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    internal virtual Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    internal virtual Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    internal virtual Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    internal virtual Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    internal virtual ToolTip myTip
-    {
-      get
-      {
-        return this._myTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._myTip = value;
-      }
-    }
 
-    internal virtual TextBox txtName
+    TextBox txtName
     {
       get
       {
@@ -413,18 +276,21 @@ namespace Hero_Designer
       this.myScheme.Assign(iScheme);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.Hide();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.OK;
       this.Hide();
     }
 
-    private void csHeading_Click(object sender, EventArgs e)
+    void csHeading_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.Heading;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -432,7 +298,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csHO_Click(object sender, EventArgs e)
+    void csHO_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.HOColor;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -440,7 +307,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csIO_Click(object sender, EventArgs e)
+    void csIO_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.IOColor;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -448,7 +316,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csLevel_Click(object sender, EventArgs e)
+    void csLevel_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.Level;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -456,7 +325,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csPower_Click(object sender, EventArgs e)
+    void csPower_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.Power;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -464,7 +334,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csSet_Click(object sender, EventArgs e)
+    void csSet_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.SetColor;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -472,7 +343,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csSlots_Click(object sender, EventArgs e)
+    void csSlots_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.Slots;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -480,7 +352,8 @@ namespace Hero_Designer
       this.updateColours();
     }
 
-    private void csTitle_Click(object sender, EventArgs e)
+    void csTitle_Click(object sender, EventArgs e)
+
     {
       this.cPicker.Color = this.myScheme.Title;
       if (this.cPicker.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -495,14 +368,16 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmExportColor_Load(object sender, EventArgs e)
+    void frmExportColor_Load(object sender, EventArgs e)
+
     {
       this.txtName.Text = this.myScheme.SchemeName;
       this.updateColours();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmExportColor));
@@ -747,7 +622,8 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void txtName_TextChanged(object sender, EventArgs e)
+    void txtName_TextChanged(object sender, EventArgs e)
+
     {
       this.myScheme.SchemeName = this.txtName.Text;
     }

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: ZStatus
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System.ComponentModel;
 using System.Drawing;
@@ -10,7 +5,8 @@ using System.Windows.Forms;
 
 public class ZStatus : Form
 {
-  private IContainer components;
+  IContainer components;
+
   internal Label lblStatus2;
   internal Label lblStatus1;
   internal Label lblTitle;
@@ -49,7 +45,8 @@ public class ZStatus : Form
     base.Dispose(disposing);
   }
 
-  private void InitializeComponent()
+  void InitializeComponent()
+
   {
     ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (ZStatus));
     this.lblStatus2 = new Label();

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: I9SetData
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 
@@ -61,7 +56,8 @@ public class I9SetData
     }
   }
 
-  private int Lookup(int setID)
+  int Lookup(int setID)
+
   {
     int num;
     if (setID < 0)

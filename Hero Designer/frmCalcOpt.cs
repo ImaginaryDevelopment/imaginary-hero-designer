@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmCalcOpt
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.IO_Classes;
 using Base.Master_Classes;
@@ -20,293 +15,235 @@ namespace Hero_Designer
   public class frmCalcOpt : Form
   {
     [AccessedThroughProperty("btnBaseReset")]
-    private Button _btnBaseReset;
+    Button _btnBaseReset;
+
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnFontColour")]
-    private Button _btnFontColour;
+    Button _btnFontColour;
+
     [AccessedThroughProperty("btnForceUpdate")]
-    private Button _btnForceUpdate;
+    Button _btnForceUpdate;
+
     [AccessedThroughProperty("btnIOReset")]
-    private Button _btnIOReset;
+    Button _btnIOReset;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnSaveFolder")]
-    private Button _btnSaveFolder;
+    Button _btnSaveFolder;
+
     [AccessedThroughProperty("btnSaveFolderReset")]
-    private Button _btnSaveFolderReset;
+    Button _btnSaveFolderReset;
+
     [AccessedThroughProperty("btnUpdate")]
-    private Button _btnUpdate;
+    Button _btnUpdate;
+
     [AccessedThroughProperty("btnUpdatePathReset")]
-    private Button _btnUpdatePathReset;
-    [AccessedThroughProperty("cbEnhLevel")]
-    private ComboBox _cbEnhLevel;
-    [AccessedThroughProperty("chkColorInherent")]
-    private CheckBox _chkColorInherent;
-    [AccessedThroughProperty("chkColourPrint")]
-    private CheckBox _chkColourPrint;
-    [AccessedThroughProperty("chkHighVis")]
-    private CheckBox _chkHighVis;
-    [AccessedThroughProperty("chkIOEffects")]
-    private CheckBox _chkIOEffects;
-    [AccessedThroughProperty("chkIOLevel")]
-    private CheckBox _chkIOLevel;
-    [AccessedThroughProperty("chkIOPrintLevels")]
-    private CheckBox _chkIOPrintLevels;
-    [AccessedThroughProperty("chkLoadLastFile")]
-    private CheckBox _chkLoadLastFile;
-    [AccessedThroughProperty("chkMiddle")]
-    private CheckBox _chkMiddle;
-    [AccessedThroughProperty("chkNoTips")]
-    private CheckBox _chkNoTips;
-    [AccessedThroughProperty("chkRelSignOnly")]
-    private CheckBox _chkRelSignOnly;
-    [AccessedThroughProperty("chkSetBonus")]
-    private CheckBox _chkSetBonus;
-    [AccessedThroughProperty("chkShowAlphaPopup")]
-    private CheckBox _chkShowAlphaPopup;
-    [AccessedThroughProperty("chkStatBold")]
-    private CheckBox _chkStatBold;
-    [AccessedThroughProperty("chkTextBold")]
-    private CheckBox _chkTextBold;
-    [AccessedThroughProperty("chkUpdates")]
-    private CheckBox _chkUpdates;
-    [AccessedThroughProperty("chkUseArcanaTime")]
-    private CheckBox _chkUseArcanaTime;
-    [AccessedThroughProperty("chkVillainColour")]
-    private CheckBox _chkVillainColour;
+    Button _btnUpdatePathReset;
+        ComboBox cbEnhLevel;
+        CheckBox chkColorInherent;
+        CheckBox chkColourPrint;
+        CheckBox chkHighVis;
+        CheckBox chkIOEffects;
+        CheckBox chkIOLevel;
+        CheckBox chkIOPrintLevels;
+        CheckBox chkLoadLastFile;
+        CheckBox chkMiddle;
+        CheckBox chkNoTips;
+        CheckBox chkRelSignOnly;
+        CheckBox chkSetBonus;
+        CheckBox chkShowAlphaPopup;
+        CheckBox chkStatBold;
+        CheckBox chkTextBold;
+        CheckBox chkUpdates;
+        CheckBox chkUseArcanaTime;
+        CheckBox chkVillainColour;
+
     [AccessedThroughProperty("clbSuppression")]
-    private CheckedListBox _clbSuppression;
+    CheckedListBox _clbSuppression;
+
     [AccessedThroughProperty("cmbAction")]
-    private ComboBox _cmbAction;
-    [AccessedThroughProperty("cPicker")]
-    private ColorDialog _cPicker;
+    ComboBox _cmbAction;
+        ColorDialog cPicker;
+
     [AccessedThroughProperty("csAdd")]
-    private Button _csAdd;
+    Button _csAdd;
+
     [AccessedThroughProperty("csBtnEdit")]
-    private Button _csBtnEdit;
+    Button _csBtnEdit;
+
     [AccessedThroughProperty("csDelete")]
-    private Button _csDelete;
+    Button _csDelete;
+
     [AccessedThroughProperty("csList")]
-    private ListBox _csList;
+    ListBox _csList;
+
     [AccessedThroughProperty("csReset")]
-    private Button _csReset;
-    [AccessedThroughProperty("fbdSave")]
-    private FolderBrowserDialog _fbdSave;
+    Button _csReset;
+        FolderBrowserDialog fbdSave;
+
     [AccessedThroughProperty("fcAdd")]
-    private Button _fcAdd;
+    Button _fcAdd;
+
     [AccessedThroughProperty("fcBoldOff")]
-    private TextBox _fcBoldOff;
+    TextBox _fcBoldOff;
+
     [AccessedThroughProperty("fcBoldOn")]
-    private TextBox _fcBoldOn;
+    TextBox _fcBoldOn;
+
     [AccessedThroughProperty("fcColorOff")]
-    private TextBox _fcColorOff;
+    TextBox _fcColorOff;
+
     [AccessedThroughProperty("fcColorOn")]
-    private TextBox _fcColorOn;
+    TextBox _fcColorOn;
+
     [AccessedThroughProperty("fcDelete")]
-    private Button _fcDelete;
+    Button _fcDelete;
+
     [AccessedThroughProperty("fcItalicOff")]
-    private TextBox _fcItalicOff;
+    TextBox _fcItalicOff;
+
     [AccessedThroughProperty("fcItalicOn")]
-    private TextBox _fcItalicOn;
+    TextBox _fcItalicOn;
+
     [AccessedThroughProperty("fcList")]
-    private ListBox _fcList;
-    [AccessedThroughProperty("fcName")]
-    private TextBox _fcName;
+    ListBox _fcList;
+        TextBox fcName;
+
     [AccessedThroughProperty("fcNotes")]
-    private TextBox _fcNotes;
+    TextBox _fcNotes;
+
     [AccessedThroughProperty("fcReset")]
-    private Button _fcReset;
+    Button _fcReset;
+
     [AccessedThroughProperty("fcSet")]
-    private Button _fcSet;
+    Button _fcSet;
+
     [AccessedThroughProperty("fcTextOff")]
-    private TextBox _fcTextOff;
+    TextBox _fcTextOff;
+
     [AccessedThroughProperty("fcTextOn")]
-    private TextBox _fcTextOn;
+    TextBox _fcTextOn;
+
     [AccessedThroughProperty("fcUnderlineOff")]
-    private TextBox _fcUnderlineOff;
+    TextBox _fcUnderlineOff;
+
     [AccessedThroughProperty("fcUnderlineOn")]
-    private TextBox _fcUnderlineOn;
+    TextBox _fcUnderlineOn;
+
     [AccessedThroughProperty("fcWSSpace")]
-    private RadioButton _fcWSSpace;
+    RadioButton _fcWSSpace;
+
     [AccessedThroughProperty("fcWSTab")]
-    private RadioButton _fcWSTab;
-    [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
-    [AccessedThroughProperty("GroupBox10")]
-    private GroupBox _GroupBox10;
-    [AccessedThroughProperty("GroupBox11")]
-    private GroupBox _GroupBox11;
-    [AccessedThroughProperty("GroupBox12")]
-    private GroupBox _GroupBox12;
-    [AccessedThroughProperty("GroupBox13")]
-    private GroupBox _GroupBox13;
-    [AccessedThroughProperty("GroupBox14")]
-    private GroupBox _GroupBox14;
-    [AccessedThroughProperty("GroupBox15")]
-    private GroupBox _GroupBox15;
-    [AccessedThroughProperty("GroupBox16")]
-    private GroupBox _GroupBox16;
-    [AccessedThroughProperty("GroupBox17")]
-    private GroupBox _GroupBox17;
-    [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
-    [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
-    [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
-    [AccessedThroughProperty("GroupBox5")]
-    private GroupBox _GroupBox5;
-    [AccessedThroughProperty("GroupBox6")]
-    private GroupBox _GroupBox6;
-    [AccessedThroughProperty("GroupBox7")]
-    private GroupBox _GroupBox7;
-    [AccessedThroughProperty("GroupBox8")]
-    private GroupBox _GroupBox8;
-    [AccessedThroughProperty("GroupBox9")]
-    private GroupBox _GroupBox9;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label10")]
-    private Label _Label10;
-    [AccessedThroughProperty("Label11")]
-    private Label _Label11;
-    [AccessedThroughProperty("Label12")]
-    private Label _Label12;
-    [AccessedThroughProperty("Label13")]
-    private Label _Label13;
-    [AccessedThroughProperty("Label14")]
-    private Label _Label14;
-    [AccessedThroughProperty("Label15")]
-    private Label _Label15;
-    [AccessedThroughProperty("Label16")]
-    private Label _Label16;
-    [AccessedThroughProperty("Label19")]
-    private Label _Label19;
-    [AccessedThroughProperty("Label2")]
-    private Label _Label2;
-    [AccessedThroughProperty("Label20")]
-    private Label _Label20;
-    [AccessedThroughProperty("Label21")]
-    private Label _Label21;
-    [AccessedThroughProperty("Label22")]
-    private Label _Label22;
-    [AccessedThroughProperty("Label24")]
-    private Label _Label24;
-    [AccessedThroughProperty("Label25")]
-    private Label _Label25;
-    [AccessedThroughProperty("Label26")]
-    private Label _Label26;
-    [AccessedThroughProperty("Label27")]
-    private Label _Label27;
-    [AccessedThroughProperty("Label28")]
-    private Label _Label28;
-    [AccessedThroughProperty("Label29")]
-    private Label _Label29;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label30")]
-    private Label _Label30;
-    [AccessedThroughProperty("Label31")]
-    private Label _Label31;
-    [AccessedThroughProperty("Label32")]
-    private Label _Label32;
-    [AccessedThroughProperty("Label33")]
-    private Label _Label33;
-    [AccessedThroughProperty("Label34")]
-    private Label _Label34;
-    [AccessedThroughProperty("Label36")]
-    private Label _Label36;
-    [AccessedThroughProperty("Label37")]
-    private Label _Label37;
-    [AccessedThroughProperty("Label38")]
-    private Label _Label38;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("Label40")]
-    private Label _Label40;
-    [AccessedThroughProperty("Label5")]
-    private Label _Label5;
-    [AccessedThroughProperty("Label6")]
-    private Label _Label6;
-    [AccessedThroughProperty("Label7")]
-    private Label _Label7;
-    [AccessedThroughProperty("Label8")]
-    private Label _Label8;
-    [AccessedThroughProperty("Label9")]
-    private Label _Label9;
-    [AccessedThroughProperty("lblExample")]
-    private Label _lblExample;
-    [AccessedThroughProperty("lblSaveFolder")]
-    private Label _lblSaveFolder;
+    RadioButton _fcWSTab;
+        GroupBox GroupBox1;
+        GroupBox GroupBox10;
+        GroupBox GroupBox11;
+        GroupBox GroupBox12;
+        GroupBox GroupBox13;
+        GroupBox GroupBox14;
+        GroupBox GroupBox15;
+        GroupBox GroupBox16;
+        GroupBox GroupBox17;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        GroupBox GroupBox6;
+        GroupBox GroupBox7;
+        GroupBox GroupBox8;
+        GroupBox GroupBox9;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label24;
+        Label Label25;
+        Label Label26;
+        Label Label27;
+        Label Label28;
+        Label Label29;
+        Label Label3;
+        Label Label30;
+        Label Label31;
+        Label Label32;
+        Label Label33;
+        Label Label34;
+        Label Label36;
+        Label Label37;
+        Label Label38;
+        Label Label4;
+        Label Label40;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblExample;
+        Label lblSaveFolder;
+
     [AccessedThroughProperty("listScenarios")]
-    private ListBox _listScenarios;
-    [AccessedThroughProperty("myTip")]
-    private ToolTip _myTip;
+    ListBox _listScenarios;
+        ToolTip myTip;
+
     [AccessedThroughProperty("optDO")]
-    private RadioButton _optDO;
-    [AccessedThroughProperty("optEnh")]
-    private Label _optEnh;
+    RadioButton _optDO;
+        Label optEnh;
+
     [AccessedThroughProperty("optSO")]
-    private RadioButton _optSO;
+    RadioButton _optSO;
+
     [AccessedThroughProperty("optTO")]
-    private RadioButton _optTO;
-    [AccessedThroughProperty("rbChanceAverage")]
-    private RadioButton _rbChanceAverage;
-    [AccessedThroughProperty("rbChanceIgnore")]
-    private RadioButton _rbChanceIgnore;
-    [AccessedThroughProperty("rbChanceMax")]
-    private RadioButton _rbChanceMax;
-    [AccessedThroughProperty("rbGraphSimple")]
-    private RadioButton _rbGraphSimple;
-    [AccessedThroughProperty("rbGraphStacked")]
-    private RadioButton _rbGraphStacked;
-    [AccessedThroughProperty("rbGraphTwoLine")]
-    private RadioButton _rbGraphTwoLine;
-    [AccessedThroughProperty("rbPvE")]
-    private RadioButton _rbPvE;
-    [AccessedThroughProperty("rbPvP")]
-    private RadioButton _rbPvP;
-    [AccessedThroughProperty("TabControl1")]
-    private TabControl _TabControl1;
-    [AccessedThroughProperty("TabPage1")]
-    private TabPage _TabPage1;
-    [AccessedThroughProperty("TabPage2")]
-    private TabPage _TabPage2;
-    [AccessedThroughProperty("TabPage3")]
-    private TabPage _TabPage3;
-    [AccessedThroughProperty("TabPage4")]
-    private TabPage _TabPage4;
-    [AccessedThroughProperty("TabPage5")]
-    private TabPage _TabPage5;
-    [AccessedThroughProperty("TabPage6")]
-    private TabPage _TabPage6;
-    [AccessedThroughProperty("TeamSize")]
-    private NumericUpDown _TeamSize;
-    [AccessedThroughProperty("txtUpdatePath")]
-    private TextBox _txtUpdatePath;
-    [AccessedThroughProperty("udBaseToHit")]
-    private NumericUpDown _udBaseToHit;
-    [AccessedThroughProperty("udExHigh")]
-    private NumericUpDown _udExHigh;
-    [AccessedThroughProperty("udExLow")]
-    private NumericUpDown _udExLow;
-    [AccessedThroughProperty("udForceLevel")]
-    private NumericUpDown _udForceLevel;
-    [AccessedThroughProperty("udIOLevel")]
-    private NumericUpDown _udIOLevel;
-    [AccessedThroughProperty("udRTFSize")]
-    private NumericUpDown _udRTFSize;
-    [AccessedThroughProperty("udStatSize")]
-    private NumericUpDown _udStatSize;
-    private IContainer components;
-    private short[] defActs;
+    RadioButton _optTO;
+        RadioButton rbChanceAverage;
+        RadioButton rbChanceIgnore;
+        RadioButton rbChanceMax;
+        RadioButton rbGraphSimple;
+        RadioButton rbGraphStacked;
+        RadioButton rbGraphTwoLine;
+        RadioButton rbPvE;
+        RadioButton rbPvP;
+        TabControl TabControl1;
+        TabPage TabPage1;
+        TabPage TabPage2;
+        TabPage TabPage3;
+        TabPage TabPage4;
+        TabPage TabPage5;
+        TabPage TabPage6;
+        NumericUpDown TeamSize;
+        TextBox txtUpdatePath;
+        NumericUpDown udBaseToHit;
+        NumericUpDown udExHigh;
+        NumericUpDown udExLow;
+        NumericUpDown udForceLevel;
+        NumericUpDown udIOLevel;
+        NumericUpDown udRTFSize;
+        NumericUpDown udStatSize;
+
+    IContainer components;
+
+    short[] defActs;
+
     protected bool fcNoUpdate;
     public frmMain myParent;
-    private string[][] scenActs;
-    private string[] scenarioExample;
+    string[][] scenActs;
 
-    internal virtual Button btnBaseReset
+    string[] scenarioExample;
+
+
+    Button btnBaseReset
     {
       get
       {
@@ -324,7 +261,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -342,7 +279,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFontColour
+    Button btnFontColour
     {
       get
       {
@@ -360,7 +297,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnForceUpdate
+    Button btnForceUpdate
     {
       get
       {
@@ -378,7 +315,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnIOReset
+    Button btnIOReset
     {
       get
       {
@@ -396,7 +333,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -414,7 +351,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSaveFolder
+    Button btnSaveFolder
     {
       get
       {
@@ -432,7 +369,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSaveFolderReset
+    Button btnSaveFolderReset
     {
       get
       {
@@ -450,7 +387,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUpdate
+    Button btnUpdate
     {
       get
       {
@@ -468,7 +405,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUpdatePathReset
+    Button btnUpdatePathReset
     {
       get
       {
@@ -486,223 +423,25 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbEnhLevel
-    {
-      get
-      {
-        return this._cbEnhLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cbEnhLevel = value;
-      }
-    }
 
-    internal virtual CheckBox chkColorInherent
-    {
-      get
-      {
-        return this._chkColorInherent;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkColorInherent = value;
-      }
-    }
 
-    internal virtual CheckBox chkColourPrint
-    {
-      get
-      {
-        return this._chkColourPrint;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkColourPrint = value;
-      }
-    }
 
-    internal virtual CheckBox chkHighVis
-    {
-      get
-      {
-        return this._chkHighVis;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkHighVis = value;
-      }
-    }
 
-    internal virtual CheckBox chkIOEffects
-    {
-      get
-      {
-        return this._chkIOEffects;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOEffects = value;
-      }
-    }
 
-    internal virtual CheckBox chkIOLevel
-    {
-      get
-      {
-        return this._chkIOLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOLevel = value;
-      }
-    }
 
-    internal virtual CheckBox chkIOPrintLevels
-    {
-      get
-      {
-        return this._chkIOPrintLevels;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkIOPrintLevels = value;
-      }
-    }
 
-    internal virtual CheckBox chkLoadLastFile
-    {
-      get
-      {
-        return this._chkLoadLastFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkLoadLastFile = value;
-      }
-    }
 
-    internal virtual CheckBox chkMiddle
-    {
-      get
-      {
-        return this._chkMiddle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkMiddle = value;
-      }
-    }
 
-    internal virtual CheckBox chkNoTips
-    {
-      get
-      {
-        return this._chkNoTips;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkNoTips = value;
-      }
-    }
 
-    internal virtual CheckBox chkRelSignOnly
-    {
-      get
-      {
-        return this._chkRelSignOnly;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkRelSignOnly = value;
-      }
-    }
 
-    internal virtual CheckBox chkSetBonus
-    {
-      get
-      {
-        return this._chkSetBonus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkSetBonus = value;
-      }
-    }
 
-    internal virtual CheckBox chkShowAlphaPopup
-    {
-      get
-      {
-        return this._chkShowAlphaPopup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkShowAlphaPopup = value;
-      }
-    }
 
-    internal virtual CheckBox chkStatBold
-    {
-      get
-      {
-        return this._chkStatBold;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkStatBold = value;
-      }
-    }
 
-    internal virtual CheckBox chkTextBold
-    {
-      get
-      {
-        return this._chkTextBold;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkTextBold = value;
-      }
-    }
 
-    internal virtual CheckBox chkUpdates
-    {
-      get
-      {
-        return this._chkUpdates;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkUpdates = value;
-      }
-    }
 
-    internal virtual CheckBox chkUseArcanaTime
-    {
-      get
-      {
-        return this._chkUseArcanaTime;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkUseArcanaTime = value;
-      }
-    }
 
-    internal virtual CheckBox chkVillainColour
-    {
-      get
-      {
-        return this._chkVillainColour;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkVillainColour = value;
-      }
-    }
 
-    internal virtual CheckedListBox clbSuppression
+    CheckedListBox clbSuppression
     {
       get
       {
@@ -720,7 +459,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cmbAction
+    ComboBox cmbAction
     {
       get
       {
@@ -738,19 +477,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColorDialog cPicker
-    {
-      get
-      {
-        return this._cPicker;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._cPicker = value;
-      }
-    }
 
-    internal virtual Button csAdd
+    Button csAdd
     {
       get
       {
@@ -768,7 +496,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csBtnEdit
+    Button csBtnEdit
     {
       get
       {
@@ -786,7 +514,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csDelete
+    Button csDelete
     {
       get
       {
@@ -804,7 +532,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox csList
+    ListBox csList
     {
       get
       {
@@ -822,7 +550,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button csReset
+    Button csReset
     {
       get
       {
@@ -840,19 +568,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual FolderBrowserDialog fbdSave
-    {
-      get
-      {
-        return this._fbdSave;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fbdSave = value;
-      }
-    }
 
-    internal virtual Button fcAdd
+    Button fcAdd
     {
       get
       {
@@ -870,7 +587,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcBoldOff
+    TextBox fcBoldOff
     {
       get
       {
@@ -888,7 +605,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcBoldOn
+    TextBox fcBoldOn
     {
       get
       {
@@ -906,7 +623,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcColorOff
+    TextBox fcColorOff
     {
       get
       {
@@ -924,7 +641,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcColorOn
+    TextBox fcColorOn
     {
       get
       {
@@ -942,7 +659,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcDelete
+    Button fcDelete
     {
       get
       {
@@ -960,7 +677,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcItalicOff
+    TextBox fcItalicOff
     {
       get
       {
@@ -978,7 +695,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcItalicOn
+    TextBox fcItalicOn
     {
       get
       {
@@ -996,7 +713,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox fcList
+    ListBox fcList
     {
       get
       {
@@ -1019,19 +736,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcName
-    {
-      get
-      {
-        return this._fcName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._fcName = value;
-      }
-    }
 
-    internal virtual TextBox fcNotes
+    TextBox fcNotes
     {
       get
       {
@@ -1049,7 +755,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcReset
+    Button fcReset
     {
       get
       {
@@ -1067,7 +773,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button fcSet
+    Button fcSet
     {
       get
       {
@@ -1085,7 +791,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcTextOff
+    TextBox fcTextOff
     {
       get
       {
@@ -1103,7 +809,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcTextOn
+    TextBox fcTextOn
     {
       get
       {
@@ -1121,7 +827,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcUnderlineOff
+    TextBox fcUnderlineOff
     {
       get
       {
@@ -1139,7 +845,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox fcUnderlineOn
+    TextBox fcUnderlineOn
     {
       get
       {
@@ -1157,7 +863,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton fcWSSpace
+    RadioButton fcWSSpace
     {
       get
       {
@@ -1175,7 +881,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton fcWSTab
+    RadioButton fcWSTab
     {
       get
       {
@@ -1193,655 +899,61 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox10
-    {
-      get
-      {
-        return this._GroupBox10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox10 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox11
-    {
-      get
-      {
-        return this._GroupBox11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox11 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox12
-    {
-      get
-      {
-        return this._GroupBox12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox12 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox13
-    {
-      get
-      {
-        return this._GroupBox13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox13 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox14
-    {
-      get
-      {
-        return this._GroupBox14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox14 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox15
-    {
-      get
-      {
-        return this._GroupBox15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox15 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox16
-    {
-      get
-      {
-        return this._GroupBox16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox16 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox17
-    {
-      get
-      {
-        return this._GroupBox17;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox17 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox6
-    {
-      get
-      {
-        return this._GroupBox6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox6 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox7
-    {
-      get
-      {
-        return this._GroupBox7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox7 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox8
-    {
-      get
-      {
-        return this._GroupBox8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox8 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox9
-    {
-      get
-      {
-        return this._GroupBox9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox9 = value;
-      }
-    }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
 
-    internal virtual Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
 
-    internal virtual Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
 
-    internal virtual Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
 
-    internal virtual Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
 
-    internal virtual Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
 
-    internal virtual Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
 
-    internal virtual Label Label19
-    {
-      get
-      {
-        return this._Label19;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label19 = value;
-      }
-    }
 
-    internal virtual Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    internal virtual Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
 
-    internal virtual Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
 
-    internal virtual Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
 
-    internal virtual Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
 
-    internal virtual Label Label25
-    {
-      get
-      {
-        return this._Label25;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label25 = value;
-      }
-    }
 
-    internal virtual Label Label26
-    {
-      get
-      {
-        return this._Label26;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label26 = value;
-      }
-    }
 
-    internal virtual Label Label27
-    {
-      get
-      {
-        return this._Label27;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label27 = value;
-      }
-    }
 
-    internal virtual Label Label28
-    {
-      get
-      {
-        return this._Label28;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label28 = value;
-      }
-    }
 
-    internal virtual Label Label29
-    {
-      get
-      {
-        return this._Label29;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label29 = value;
-      }
-    }
 
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    internal virtual Label Label30
-    {
-      get
-      {
-        return this._Label30;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label30 = value;
-      }
-    }
 
-    internal virtual Label Label31
-    {
-      get
-      {
-        return this._Label31;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label31 = value;
-      }
-    }
 
-    internal virtual Label Label32
-    {
-      get
-      {
-        return this._Label32;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label32 = value;
-      }
-    }
 
-    internal virtual Label Label33
-    {
-      get
-      {
-        return this._Label33;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label33 = value;
-      }
-    }
 
-    internal virtual Label Label34
-    {
-      get
-      {
-        return this._Label34;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label34 = value;
-      }
-    }
 
-    internal virtual Label Label36
-    {
-      get
-      {
-        return this._Label36;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label36 = value;
-      }
-    }
 
-    internal virtual Label Label37
-    {
-      get
-      {
-        return this._Label37;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label37 = value;
-      }
-    }
 
-    internal virtual Label Label38
-    {
-      get
-      {
-        return this._Label38;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label38 = value;
-      }
-    }
 
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    internal virtual Label Label40
-    {
-      get
-      {
-        return this._Label40;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label40 = value;
-      }
-    }
 
-    internal virtual Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    internal virtual Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    internal virtual Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
 
-    internal virtual Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    internal virtual Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
 
-    internal virtual Label lblExample
-    {
-      get
-      {
-        return this._lblExample;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblExample = value;
-      }
-    }
 
-    internal virtual Label lblSaveFolder
-    {
-      get
-      {
-        return this._lblSaveFolder;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblSaveFolder = value;
-      }
-    }
 
-    internal virtual ListBox listScenarios
+    ListBox listScenarios
     {
       get
       {
@@ -1859,19 +971,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ToolTip myTip
-    {
-      get
-      {
-        return this._myTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._myTip = value;
-      }
-    }
 
-    internal virtual RadioButton optDO
+    RadioButton optDO
     {
       get
       {
@@ -1889,19 +990,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label optEnh
-    {
-      get
-      {
-        return this._optEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._optEnh = value;
-      }
-    }
 
-    internal virtual RadioButton optSO
+    RadioButton optSO
     {
       get
       {
@@ -1919,7 +1009,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton optTO
+    RadioButton optTO
     {
       get
       {
@@ -1937,293 +1027,29 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbChanceAverage
-    {
-      get
-      {
-        return this._rbChanceAverage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceAverage = value;
-      }
-    }
 
-    internal virtual RadioButton rbChanceIgnore
-    {
-      get
-      {
-        return this._rbChanceIgnore;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceIgnore = value;
-      }
-    }
 
-    internal virtual RadioButton rbChanceMax
-    {
-      get
-      {
-        return this._rbChanceMax;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbChanceMax = value;
-      }
-    }
 
-    internal virtual RadioButton rbGraphSimple
-    {
-      get
-      {
-        return this._rbGraphSimple;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphSimple = value;
-      }
-    }
 
-    internal virtual RadioButton rbGraphStacked
-    {
-      get
-      {
-        return this._rbGraphStacked;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphStacked = value;
-      }
-    }
 
-    internal virtual RadioButton rbGraphTwoLine
-    {
-      get
-      {
-        return this._rbGraphTwoLine;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbGraphTwoLine = value;
-      }
-    }
 
-    internal virtual RadioButton rbPvE
-    {
-      get
-      {
-        return this._rbPvE;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbPvE = value;
-      }
-    }
 
-    internal virtual RadioButton rbPvP
-    {
-      get
-      {
-        return this._rbPvP;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbPvP = value;
-      }
-    }
 
-    internal virtual TabControl TabControl1
-    {
-      get
-      {
-        return this._TabControl1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabControl1 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage1
-    {
-      get
-      {
-        return this._TabPage1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage1 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage2
-    {
-      get
-      {
-        return this._TabPage2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage2 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage3
-    {
-      get
-      {
-        return this._TabPage3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage3 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage4
-    {
-      get
-      {
-        return this._TabPage4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage4 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage5
-    {
-      get
-      {
-        return this._TabPage5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage5 = value;
-      }
-    }
 
-    internal virtual TabPage TabPage6
-    {
-      get
-      {
-        return this._TabPage6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TabPage6 = value;
-      }
-    }
 
-    internal virtual NumericUpDown TeamSize
-    {
-      get
-      {
-        return this._TeamSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._TeamSize = value;
-      }
-    }
 
-    internal virtual TextBox txtUpdatePath
-    {
-      get
-      {
-        return this._txtUpdatePath;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtUpdatePath = value;
-      }
-    }
 
-    internal virtual NumericUpDown udBaseToHit
-    {
-      get
-      {
-        return this._udBaseToHit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udBaseToHit = value;
-      }
-    }
 
-    internal virtual NumericUpDown udExHigh
-    {
-      get
-      {
-        return this._udExHigh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udExHigh = value;
-      }
-    }
 
-    internal virtual NumericUpDown udExLow
-    {
-      get
-      {
-        return this._udExLow;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udExLow = value;
-      }
-    }
 
-    internal virtual NumericUpDown udForceLevel
-    {
-      get
-      {
-        return this._udForceLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udForceLevel = value;
-      }
-    }
 
-    internal virtual NumericUpDown udIOLevel
-    {
-      get
-      {
-        return this._udIOLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udIOLevel = value;
-      }
-    }
 
-    internal virtual NumericUpDown udRTFSize
-    {
-      get
-      {
-        return this._udRTFSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udRTFSize = value;
-      }
-    }
 
-    internal virtual NumericUpDown udStatSize
-    {
-      get
-      {
-        return this._udStatSize;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udStatSize = value;
-      }
-    }
 
     public frmCalcOpt(ref frmMain iParent)
     {
@@ -2237,23 +1063,27 @@ namespace Hero_Designer
       this.myParent = iParent;
     }
 
-    private void btnBaseReset_Click(object sender, EventArgs e)
+    void btnBaseReset_Click(object sender, EventArgs e)
+
     {
       this.udBaseToHit.Value = new Decimal(75);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnFontColour_Click(object sender, EventArgs e)
+    void btnFontColour_Click(object sender, EventArgs e)
+
     {
       int num = (int) new frmColourSettings().ShowDialog();
     }
 
-    private void btnForceUpdate_Click(object sender, EventArgs e)
+    void btnForceUpdate_Click(object sender, EventArgs e)
+
     {
       DateTime date = DatabaseAPI.Database.Date;
       DateTime t2 = new DateTime(1, 1, 1);
@@ -2265,7 +1095,8 @@ namespace Hero_Designer
       DatabaseAPI.Database.Date = date;
     }
 
-    private void btnIOReset_Click(object sender, EventArgs e)
+    void btnIOReset_Click(object sender, EventArgs e)
+
     {
       if (MidsContext.Character == null)
         return;
@@ -2275,7 +1106,8 @@ namespace Hero_Designer
         this.myParent.DoRedraw();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.OK;
       this.StoreControls();
@@ -2283,7 +1115,8 @@ namespace Hero_Designer
       this.Hide();
     }
 
-    private void btnSaveFolder_Click(object sender, EventArgs e)
+    void btnSaveFolder_Click(object sender, EventArgs e)
+
     {
       this.fbdSave.SelectedPath = this.lblSaveFolder.Text;
       if (this.fbdSave.ShowDialog() != DialogResult.OK)
@@ -2291,7 +1124,8 @@ namespace Hero_Designer
       this.lblSaveFolder.Text = this.fbdSave.SelectedPath;
     }
 
-    private void btnSaveFolderReset_Click(object sender, EventArgs e)
+    void btnSaveFolderReset_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.CreateDefaultSaveFolder();
       MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
@@ -2299,7 +1133,8 @@ namespace Hero_Designer
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private void btnUpdate_Click(object sender, EventArgs e)
+    void btnUpdate_Click(object sender, EventArgs e)
+
     {
       clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
       this.Enabled = false;
@@ -2318,12 +1153,14 @@ namespace Hero_Designer
       this.Enabled = true;
     }
 
-    private void btnUpdatePathReset_Click(object sender, EventArgs e)
+    void btnUpdatePathReset_Click(object sender, EventArgs e)
+
     {
       this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
     }
 
-    private void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+    void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       int[] values = (int[]) Enum.GetValues(MidsContext.Config.Suppression.GetType());
       MidsContext.Config.Suppression = Enums.eSuppress.None;
@@ -2332,18 +1169,21 @@ namespace Hero_Designer
         MidsContext.Config.Suppression += values[this.clbSuppression.CheckedIndices[index]];
     }
 
-    private void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
+    void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.defActs[this.listScenarios.SelectedIndex] = (short) this.cmbAction.SelectedIndex;
     }
 
-    private void csAdd_Click(object sender, EventArgs e)
+    void csAdd_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.Export.AddScheme();
       this.csPopulateList(MidsContext.Config.Export.ColorSchemes.Length - 1);
     }
 
-    private void csBtnEdit_Click(object sender, EventArgs e)
+    void csBtnEdit_Click(object sender, EventArgs e)
+
     {
       if (this.csList.Items.Count <= 0)
         return;
@@ -2356,7 +1196,8 @@ namespace Hero_Designer
       this.BringToFront();
     }
 
-    private void csDelete_Click(object sender, EventArgs e)
+    void csDelete_Click(object sender, EventArgs e)
+
     {
       if (this.csList.Items.Count <= 0 || Interaction.MsgBox((object) ("Delete " + this.csList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2364,7 +1205,8 @@ namespace Hero_Designer
       this.csPopulateList(-1);
     }
 
-    private void csList_KeyPress(object sender, KeyPressEventArgs e)
+    void csList_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       if (Conversions.ToString(e.KeyChar) == "[")
       {
@@ -2378,7 +1220,8 @@ namespace Hero_Designer
       }
     }
 
-    private void csPopulateList(int HighlightID = -1)
+    void csPopulateList(int HighlightID = -1)
+
     {
       this.csList.Items.Clear();
       ExportConfig export = MidsContext.Config.Export;
@@ -2392,7 +1235,8 @@ namespace Hero_Designer
       this.csList.SelectedIndex = HighlightID;
     }
 
-    private void csReset_Click(object sender, EventArgs e)
+    void csReset_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2422,41 +1266,47 @@ namespace Hero_Designer
       this.myParent.UpdateColours(false);
     }
 
-    private void fcAdd_Click(object sender, EventArgs e)
+    void fcAdd_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.Export.AddCodes();
       this.fcPopulateList(MidsContext.Config.Export.FormatCode.Length - 1);
     }
 
-    private void fcBoldOff_TextChanged(object sender, EventArgs e)
+    void fcBoldOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].BoldOff = this.fcBoldOff.Text;
     }
 
-    private void fcBoldOn_TextChanged(object sender, EventArgs e)
+    void fcBoldOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].BoldOn = this.fcBoldOn.Text;
     }
 
-    private void fcColorOff_TextChanged(object sender, EventArgs e)
+    void fcColorOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ColourOff = this.fcColorOff.Text;
     }
 
-    private void fcColorOn_TextChanged(object sender, EventArgs e)
+    void fcColorOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ColourOn = this.fcColorOn.Text;
     }
 
-    private void fcDelete_Click(object sender, EventArgs e)
+    void fcDelete_Click(object sender, EventArgs e)
+
     {
       if (this.fcList.Items.Count <= 0 || Interaction.MsgBox((object) ("Delete " + this.fcList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2464,7 +1314,8 @@ namespace Hero_Designer
       this.fcPopulateList(-1);
     }
 
-    private void fcDisplay()
+    void fcDisplay()
+
     {
       this.fcNoUpdate = true;
       if (this.fcList.SelectedIndex > -1)
@@ -2505,21 +1356,24 @@ namespace Hero_Designer
       this.fcNoUpdate = false;
     }
 
-    private void fcItalicOff_TextChanged(object sender, EventArgs e)
+    void fcItalicOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ItalicOff = this.fcItalicOff.Text;
     }
 
-    private void fcItalicOn_TextChanged(object sender, EventArgs e)
+    void fcItalicOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].ItalicOn = this.fcItalicOn.Text;
     }
 
-    private void fcList_KeyPress(object sender, KeyPressEventArgs e)
+    void fcList_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       if (Conversions.ToString(e.KeyChar) == "[")
       {
@@ -2533,19 +1387,22 @@ namespace Hero_Designer
       }
     }
 
-    private void fcList_SelectedIndexChanged(object sender, EventArgs e)
+    void fcList_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.fcDisplay();
     }
 
-    private void fcNotes_TextChanged(object sender, EventArgs e)
+    void fcNotes_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].Notes = this.fcNotes.Text;
     }
 
-    private void fcPopulateList(int HighlightID = -1)
+    void fcPopulateList(int HighlightID = -1)
+
     {
       this.fcList.Items.Clear();
       ExportConfig export = MidsContext.Config.Export;
@@ -2559,7 +1416,8 @@ namespace Hero_Designer
       this.fcList.SelectedIndex = HighlightID;
     }
 
-    private void fcReset_Click(object sender, EventArgs e)
+    void fcReset_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object) "Are you sure?") != MsgBoxResult.Yes)
         return;
@@ -2567,7 +1425,8 @@ namespace Hero_Designer
       this.fcPopulateList(-1);
     }
 
-    private void fcSet_Click(object sender, EventArgs e)
+    void fcSet_Click(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0)
         return;
@@ -2575,35 +1434,40 @@ namespace Hero_Designer
       this.fcPopulateList(this.fcList.SelectedIndex);
     }
 
-    private void fcTextOff_TextChanged(object sender, EventArgs e)
+    void fcTextOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].SizeOff = this.fcTextOff.Text;
     }
 
-    private void fcTextOn_TextChanged(object sender, EventArgs e)
+    void fcTextOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].SizeOn = this.fcTextOn.Text;
     }
 
-    private void fcUnderlineOff_TextChanged(object sender, EventArgs e)
+    void fcUnderlineOff_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].UnderlineOff = this.fcUnderlineOff.Text;
     }
 
-    private void fcUnderlineOn_TextChanged(object sender, EventArgs e)
+    void fcUnderlineOn_TextChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
       MidsContext.Config.Export.FormatCode[this.fcList.SelectedIndex].UnderlineOn = this.fcUnderlineOn.Text;
     }
 
-    private void fcWSSpace_CheckedChanged(object sender, EventArgs e)
+    void fcWSSpace_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
         return;
@@ -2678,14 +1542,16 @@ namespace Hero_Designer
         this.csList.SelectedIndex = 0;
     }
 
-    private void frmCalcOpt_Closing(object sender, CancelEventArgs e)
+    void frmCalcOpt_Closing(object sender, CancelEventArgs e)
+
     {
       if (this.DialogResult != DialogResult.Abort)
         return;
       e.Cancel = true;
     }
 
-    private void frmCalcOpt_Load(object sender, EventArgs e)
+    void frmCalcOpt_Load(object sender, EventArgs e)
+
     {
       this.setupScenarios();
       this.SetControls();
@@ -2696,7 +1562,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmCalcOpt));
@@ -4197,7 +3064,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
+    void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.lblExample.Text = this.scenarioExample[this.listScenarios.SelectedIndex];
       this.cmbAction.Items.Clear();
@@ -4205,28 +3073,32 @@ namespace Hero_Designer
       this.cmbAction.SelectedIndex = (int) this.defActs[this.listScenarios.SelectedIndex];
     }
 
-    private void optDO_CheckedChanged(object sender, EventArgs e)
+    void optDO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optDO.Checked)
         return;
       this.optEnh.Text = "Dual Origin";
     }
 
-    private void optSO_CheckedChanged(object sender, EventArgs e)
+    void optSO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optSO.Checked)
         return;
       this.optEnh.Text = "Single Origin";
     }
 
-    private void optTO_CheckedChanged(object sender, EventArgs e)
+    void optTO_CheckedChanged(object sender, EventArgs e)
+
     {
       if (!this.optTO.Checked)
         return;
       this.optEnh.Text = "Training Origin";
     }
 
-    private void PopulateSuppression()
+    void PopulateSuppression()
+
     {
       this.clbSuppression.BeginUpdate();
       this.clbSuppression.Items.Clear();
@@ -4238,7 +3110,8 @@ namespace Hero_Designer
       this.clbSuppression.EndUpdate();
     }
 
-    private void SetControls()
+    void SetControls()
+
     {
       ConfigData config = MidsContext.Config;
       this.optSO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.SingleO;
@@ -4293,7 +3166,8 @@ namespace Hero_Designer
     {
     }
 
-    private void setupScenarios()
+    void setupScenarios()
+
     {
       int index1 = 0;
       this.scenarioExample[index1] = "Swap a travel power with a power taken at level 2.";
@@ -4411,7 +3285,8 @@ namespace Hero_Designer
       int num = index15 + 1;
     }
 
-    private void StoreControls()
+    void StoreControls()
+
     {
       ConfigData config = MidsContext.Config;
       if (this.optSO.Checked)

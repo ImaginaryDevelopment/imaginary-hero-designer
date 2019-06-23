@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmEditPower
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Data_Classes;
 using Base.Display;
@@ -25,388 +20,400 @@ namespace Hero_Designer
   public class frmEditPower : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnCSVImport")]
-    private Button _btnCSVImport;
+    Button _btnCSVImport;
+
     [AccessedThroughProperty("btnFullCopy")]
-    private Button _btnFullCopy;
+    Button _btnFullCopy;
+
     [AccessedThroughProperty("btnFullPaste")]
-    private Button _btnFullPaste;
+    Button _btnFullPaste;
+
     [AccessedThroughProperty("btnFXAdd")]
-    private Button _btnFXAdd;
+    Button _btnFXAdd;
+
     [AccessedThroughProperty("btnFXDown")]
-    private Button _btnFXDown;
+    Button _btnFXDown;
+
     [AccessedThroughProperty("btnFXDuplicate")]
-    private Button _btnFXDuplicate;
+    Button _btnFXDuplicate;
+
     [AccessedThroughProperty("btnFXEdit")]
-    private Button _btnFXEdit;
+    Button _btnFXEdit;
+
     [AccessedThroughProperty("btnFXRemove")]
-    private Button _btnFXRemove;
+    Button _btnFXRemove;
+
     [AccessedThroughProperty("btnFXUp")]
-    private Button _btnFXUp;
+    Button _btnFXUp;
+
     [AccessedThroughProperty("btnMutexAdd")]
-    private Button _btnMutexAdd;
+    Button _btnMutexAdd;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("btnPrDown")]
-    private Button _btnPrDown;
+    Button _btnPrDown;
+
     [AccessedThroughProperty("btnPrReset")]
-    private Button _btnPrReset;
+    Button _btnPrReset;
+
     [AccessedThroughProperty("btnPrSetNone")]
-    private Button _btnPrSetNone;
+    Button _btnPrSetNone;
+
     [AccessedThroughProperty("btnPrUp")]
-    private Button _btnPrUp;
-    [AccessedThroughProperty("btnSetDamage")]
-    private Button _btnSetDamage;
+    Button _btnPrUp;
+        Button btnSetDamage;
+
     [AccessedThroughProperty("btnSPAdd")]
-    private Button _btnSPAdd;
+    Button _btnSPAdd;
+
     [AccessedThroughProperty("btnSPRemove")]
-    private Button _btnSPRemove;
+    Button _btnSPRemove;
+
     [AccessedThroughProperty("cbEffectArea")]
-    private ComboBox _cbEffectArea;
+    ComboBox _cbEffectArea;
+
     [AccessedThroughProperty("cbForcedClass")]
-    private ComboBox _cbForcedClass;
+    ComboBox _cbForcedClass;
+
     [AccessedThroughProperty("cbNameGroup")]
-    private ComboBox _cbNameGroup;
+    ComboBox _cbNameGroup;
+
     [AccessedThroughProperty("cbNameSet")]
-    private ComboBox _cbNameSet;
+    ComboBox _cbNameSet;
+
     [AccessedThroughProperty("cbNotify")]
-    private ComboBox _cbNotify;
+    ComboBox _cbNotify;
+
     [AccessedThroughProperty("cbPowerType")]
-    private ComboBox _cbPowerType;
+    ComboBox _cbPowerType;
+
     [AccessedThroughProperty("chkAltSub")]
-    private CheckBox _chkAltSub;
+    CheckBox _chkAltSub;
+
     [AccessedThroughProperty("chkAlwaysToggle")]
-    private CheckBox _chkAlwaysToggle;
+    CheckBox _chkAlwaysToggle;
+
     [AccessedThroughProperty("chkBoostBoostable")]
-    private CheckBox _chkBoostBoostable;
+    CheckBox _chkBoostBoostable;
+
     [AccessedThroughProperty("chkBoostUsePlayerLevel")]
-    private CheckBox _chkBoostUsePlayerLevel;
+    CheckBox _chkBoostUsePlayerLevel;
+
     [AccessedThroughProperty("chkBuffCycle")]
-    private CheckBox _chkBuffCycle;
+    CheckBox _chkBuffCycle;
+
     [AccessedThroughProperty("chkGraphFix")]
-    private CheckBox _chkGraphFix;
+    CheckBox _chkGraphFix;
+
     [AccessedThroughProperty("chkHidden")]
-    private CheckBox _chkHidden;
+    CheckBox _chkHidden;
+
     [AccessedThroughProperty("chkIgnoreStrength")]
-    private CheckBox _chkIgnoreStrength;
+    CheckBox _chkIgnoreStrength;
+
     [AccessedThroughProperty("chkLos")]
-    private CheckBox _chkLos;
+    CheckBox _chkLos;
+
     [AccessedThroughProperty("chkMutexAuto")]
-    private CheckBox _chkMutexAuto;
+    CheckBox _chkMutexAuto;
+
     [AccessedThroughProperty("chkMutexSkip")]
-    private CheckBox _chkMutexSkip;
+    CheckBox _chkMutexSkip;
+
     [AccessedThroughProperty("chkNoAUReq")]
-    private CheckBox _chkNoAUReq;
+    CheckBox _chkNoAUReq;
+
     [AccessedThroughProperty("chkNoAutoUpdate")]
-    private CheckBox _chkNoAutoUpdate;
+    CheckBox _chkNoAutoUpdate;
+
     [AccessedThroughProperty("chkPRFrontLoad")]
-    private CheckBox _chkPRFrontLoad;
+    CheckBox _chkPRFrontLoad;
+
     [AccessedThroughProperty("chkScale")]
-    private CheckBox _chkScale;
+    CheckBox _chkScale;
+
     [AccessedThroughProperty("chkSortOverride")]
-    private CheckBox _chkSortOverride;
+    CheckBox _chkSortOverride;
+
     [AccessedThroughProperty("chkSubInclude")]
-    private CheckBox _chkSubInclude;
+    CheckBox _chkSubInclude;
+
     [AccessedThroughProperty("chkSummonDisplayEntity")]
-    private CheckBox _chkSummonDisplayEntity;
+    CheckBox _chkSummonDisplayEntity;
+
     [AccessedThroughProperty("chkSummonStealAttributes")]
-    private CheckBox _chkSummonStealAttributes;
+    CheckBox _chkSummonStealAttributes;
+
     [AccessedThroughProperty("chkSummonStealEffects")]
-    private CheckBox _chkSummonStealEffects;
-    [AccessedThroughProperty("clbClassExclude")]
-    private CheckedListBox _clbClassExclude;
-    [AccessedThroughProperty("clbClassReq")]
-    private CheckedListBox _clbClassReq;
+    CheckBox _chkSummonStealEffects;
+        CheckedListBox clbClassExclude;
+        CheckedListBox clbClassReq;
+
     [AccessedThroughProperty("clbFlags")]
-    private CheckedListBox _clbFlags;
-    [AccessedThroughProperty("clbMutex")]
-    private CheckedListBox _clbMutex;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader10")]
-    private ColumnHeader _ColumnHeader10;
-    [AccessedThroughProperty("ColumnHeader11")]
-    private ColumnHeader _ColumnHeader11;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
-    [AccessedThroughProperty("ColumnHeader6")]
-    private ColumnHeader _ColumnHeader6;
-    [AccessedThroughProperty("ColumnHeader7")]
-    private ColumnHeader _ColumnHeader7;
-    [AccessedThroughProperty("ColumnHeader8")]
-    private ColumnHeader _ColumnHeader8;
-    [AccessedThroughProperty("ColumnHeader9")]
-    private ColumnHeader _ColumnHeader9;
-    [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
-    [AccessedThroughProperty("GroupBox10")]
-    private GroupBox _GroupBox10;
-    [AccessedThroughProperty("GroupBox11")]
-    private GroupBox _GroupBox11;
-    [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
-    [AccessedThroughProperty("GroupBox3")]
-    private GroupBox _GroupBox3;
-    [AccessedThroughProperty("GroupBox4")]
-    private GroupBox _GroupBox4;
-    [AccessedThroughProperty("GroupBox5")]
-    private GroupBox _GroupBox5;
-    [AccessedThroughProperty("GroupBox6")]
-    private GroupBox _GroupBox6;
-    [AccessedThroughProperty("GroupBox7")]
-    private GroupBox _GroupBox7;
-    [AccessedThroughProperty("GroupBox8")]
-    private GroupBox _GroupBox8;
-    [AccessedThroughProperty("GroupBox9")]
-    private GroupBox _GroupBox9;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label10")]
-    private Label _Label10;
-    [AccessedThroughProperty("Label11")]
-    private Label _Label11;
-    [AccessedThroughProperty("Label12")]
-    private Label _Label12;
-    [AccessedThroughProperty("Label13")]
-    private Label _Label13;
-    [AccessedThroughProperty("Label14")]
-    private Label _Label14;
-    [AccessedThroughProperty("Label15")]
-    private Label _Label15;
-    [AccessedThroughProperty("Label16")]
-    private Label _Label16;
-    [AccessedThroughProperty("Label17")]
-    private Label _Label17;
-    [AccessedThroughProperty("Label18")]
-    private Label _Label18;
-    [AccessedThroughProperty("Label2")]
-    private Label _Label2;
-    [AccessedThroughProperty("Label20")]
-    private Label _Label20;
-    [AccessedThroughProperty("Label21")]
-    private Label _Label21;
-    [AccessedThroughProperty("Label22")]
-    private Label _Label22;
-    [AccessedThroughProperty("Label23")]
-    private Label _Label23;
-    [AccessedThroughProperty("Label24")]
-    private Label _Label24;
-    [AccessedThroughProperty("Label26")]
-    private Label _Label26;
-    [AccessedThroughProperty("Label27")]
-    private Label _Label27;
-    [AccessedThroughProperty("Label28")]
-    private Label _Label28;
-    [AccessedThroughProperty("Label29")]
-    private Label _Label29;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label30")]
-    private Label _Label30;
-    [AccessedThroughProperty("Label31")]
-    private Label _Label31;
-    [AccessedThroughProperty("Label32")]
-    private Label _Label32;
-    [AccessedThroughProperty("Label33")]
-    private Label _Label33;
-    [AccessedThroughProperty("Label34")]
-    private Label _Label34;
-    [AccessedThroughProperty("Label35")]
-    private Label _Label35;
-    [AccessedThroughProperty("Label36")]
-    private Label _Label36;
-    [AccessedThroughProperty("Label37")]
-    private Label _Label37;
-    [AccessedThroughProperty("Label38")]
-    private Label _Label38;
-    [AccessedThroughProperty("Label39")]
-    private Label _Label39;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("Label40")]
-    private Label _Label40;
-    [AccessedThroughProperty("Label41")]
-    private Label _Label41;
-    [AccessedThroughProperty("Label42")]
-    private Label _Label42;
-    [AccessedThroughProperty("Label43")]
-    private Label _Label43;
-    [AccessedThroughProperty("Label44")]
-    private Label _Label44;
-    [AccessedThroughProperty("Label45")]
-    private Label _Label45;
-    [AccessedThroughProperty("Label46")]
-    private Label _Label46;
-    [AccessedThroughProperty("Label47")]
-    private Label _Label47;
-    [AccessedThroughProperty("Label5")]
-    private Label _Label5;
-    [AccessedThroughProperty("Label6")]
-    private Label _Label6;
-    [AccessedThroughProperty("Label7")]
-    private Label _Label7;
-    [AccessedThroughProperty("Label8")]
-    private Label _Label8;
-    [AccessedThroughProperty("Label9")]
-    private Label _Label9;
-    [AccessedThroughProperty("lblAcc")]
-    private Label _lblAcc;
-    [AccessedThroughProperty("lblEndCost")]
-    private Label _lblEndCost;
-    [AccessedThroughProperty("lblEnhName")]
-    private Label _lblEnhName;
-    [AccessedThroughProperty("lblInvSet")]
-    private Label _lblInvSet;
-    [AccessedThroughProperty("lblNameFull")]
-    private Label _lblNameFull;
-    [AccessedThroughProperty("lblNameUnique")]
-    private Label _lblNameUnique;
+    CheckedListBox _clbFlags;
+        CheckedListBox clbMutex;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader10;
+        ColumnHeader ColumnHeader11;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader6;
+        ColumnHeader ColumnHeader7;
+        ColumnHeader ColumnHeader8;
+        ColumnHeader ColumnHeader9;
+        GroupBox GroupBox1;
+        GroupBox GroupBox10;
+        GroupBox GroupBox11;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        GroupBox GroupBox6;
+        GroupBox GroupBox7;
+        GroupBox GroupBox8;
+        GroupBox GroupBox9;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label17;
+        Label Label18;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label26;
+        Label Label27;
+        Label Label28;
+        Label Label29;
+        Label Label3;
+        Label Label30;
+        Label Label31;
+        Label Label32;
+        Label Label33;
+        Label Label34;
+        Label Label35;
+        Label Label36;
+        Label Label37;
+        Label Label38;
+        Label Label39;
+        Label Label4;
+        Label Label40;
+        Label Label41;
+        Label Label42;
+        Label Label43;
+        Label Label44;
+        Label Label45;
+        Label Label46;
+        Label Label47;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblAcc;
+        Label lblEndCost;
+        Label lblEnhName;
+        Label lblInvSet;
+        Label lblNameFull;
+        Label lblNameUnique;
+
     [AccessedThroughProperty("lblStaticIndex")]
-    private Label _lblStaticIndex;
+    Label _lblStaticIndex;
+
     [AccessedThroughProperty("lvDisablePass1")]
-    private ListBox _lvDisablePass1;
+    ListBox _lvDisablePass1;
+
     [AccessedThroughProperty("lvDisablePass4")]
-    private ListBox _lvDisablePass4;
+    ListBox _lvDisablePass4;
+
     [AccessedThroughProperty("lvFX")]
-    private ListBox _lvFX;
+    ListBox _lvFX;
+
     [AccessedThroughProperty("lvPrGroup")]
-    private ListView _lvPrGroup;
+    ListView _lvPrGroup;
+
     [AccessedThroughProperty("lvPrListing")]
-    private ListView _lvPrListing;
+    ListView _lvPrListing;
+
     [AccessedThroughProperty("lvPrPower")]
-    private ListView _lvPrPower;
+    ListView _lvPrPower;
+
     [AccessedThroughProperty("lvPrSet")]
-    private ListView _lvPrSet;
+    ListView _lvPrSet;
+
     [AccessedThroughProperty("lvSPGroup")]
-    private ListView _lvSPGroup;
+    ListView _lvSPGroup;
+
     [AccessedThroughProperty("lvSPPower")]
-    private ListView _lvSPPower;
-    [AccessedThroughProperty("lvSPSelected")]
-    private ListView _lvSPSelected;
+    ListView _lvSPPower;
+        ListView lvSPSelected;
+
     [AccessedThroughProperty("lvSPSet")]
-    private ListView _lvSPSet;
+    ListView _lvSPSet;
+
     [AccessedThroughProperty("pbEnhancementList")]
-    private PictureBox _pbEnhancementList;
+    PictureBox _pbEnhancementList;
+
     [AccessedThroughProperty("pbEnhancements")]
-    private PictureBox _pbEnhancements;
+    PictureBox _pbEnhancements;
+
     [AccessedThroughProperty("pbInvSetList")]
-    private PictureBox _pbInvSetList;
+    PictureBox _pbInvSetList;
+
     [AccessedThroughProperty("pbInvSetUsed")]
-    private PictureBox _pbInvSetUsed;
-    [AccessedThroughProperty("pnlFX")]
-    private Panel _pnlFX;
+    PictureBox _pbInvSetUsed;
+        Panel pnlFX;
+
     [AccessedThroughProperty("rbFlagAffected")]
-    private RadioButton _rbFlagAffected;
+    RadioButton _rbFlagAffected;
+
     [AccessedThroughProperty("rbFlagAutoHit")]
-    private RadioButton _rbFlagAutoHit;
+    RadioButton _rbFlagAutoHit;
+
     [AccessedThroughProperty("rbFlagCast")]
-    private RadioButton _rbFlagCast;
+    RadioButton _rbFlagCast;
+
     [AccessedThroughProperty("rbFlagCastThrough")]
-    private RadioButton _rbFlagCastThrough;
+    RadioButton _rbFlagCastThrough;
+
     [AccessedThroughProperty("rbFlagDisallow")]
-    private RadioButton _rbFlagDisallow;
+    RadioButton _rbFlagDisallow;
+
     [AccessedThroughProperty("rbFlagRequired")]
-    private RadioButton _rbFlagRequired;
+    RadioButton _rbFlagRequired;
+
     [AccessedThroughProperty("rbFlagTargets")]
-    private RadioButton _rbFlagTargets;
+    RadioButton _rbFlagTargets;
+
     [AccessedThroughProperty("rbFlagTargetsSec")]
-    private RadioButton _rbFlagTargetsSec;
+    RadioButton _rbFlagTargetsSec;
+
     [AccessedThroughProperty("rbFlagVector")]
-    private RadioButton _rbFlagVector;
+    RadioButton _rbFlagVector;
+
     [AccessedThroughProperty("rbPrAdd")]
-    private Button _rbPrAdd;
+    Button _rbPrAdd;
+
     [AccessedThroughProperty("rbPrPowerA")]
-    private RadioButton _rbPrPowerA;
+    RadioButton _rbPrPowerA;
+
     [AccessedThroughProperty("rbPrPowerB")]
-    private RadioButton _rbPrPowerB;
+    RadioButton _rbPrPowerB;
+
     [AccessedThroughProperty("rbPrRemove")]
-    private Button _rbPrRemove;
-    [AccessedThroughProperty("tcPower")]
-    private TabControl _tcPower;
-    [AccessedThroughProperty("tpBasic")]
-    private TabPage _tpBasic;
-    [AccessedThroughProperty("tpEffects")]
-    private TabPage _tpEffects;
-    [AccessedThroughProperty("tpEnh")]
-    private TabPage _tpEnh;
-    [AccessedThroughProperty("tpMutex")]
-    private TabPage _tpMutex;
-    [AccessedThroughProperty("tpPreReq")]
-    private TabPage _tpPreReq;
-    [AccessedThroughProperty("tpSets")]
-    private TabPage _tpSets;
-    [AccessedThroughProperty("tpSpecialEnh")]
-    private TabPage _tpSpecialEnh;
-    [AccessedThroughProperty("tpSubPower")]
-    private TabPage _tpSubPower;
-    [AccessedThroughProperty("tpText")]
-    private TabPage _tpText;
+    Button _rbPrRemove;
+        TabControl tcPower;
+        TabPage tpBasic;
+        TabPage tpEffects;
+        TabPage tpEnh;
+        TabPage tpMutex;
+        TabPage tpPreReq;
+        TabPage tpSets;
+        TabPage tpSpecialEnh;
+        TabPage tpSubPower;
+        TabPage tpText;
+
     [AccessedThroughProperty("txtAcc")]
-    private TextBox _txtAcc;
+    TextBox _txtAcc;
+
     [AccessedThroughProperty("txtActivate")]
-    private TextBox _txtActivate;
+    TextBox _txtActivate;
+
     [AccessedThroughProperty("txtArc")]
-    private TextBox _txtArc;
+    TextBox _txtArc;
+
     [AccessedThroughProperty("txtCastTime")]
-    private TextBox _txtCastTime;
+    TextBox _txtCastTime;
+
     [AccessedThroughProperty("txtDescLong")]
-    private TextBox _txtDescLong;
+    TextBox _txtDescLong;
+
     [AccessedThroughProperty("txtDescShort")]
-    private TextBox _txtDescShort;
+    TextBox _txtDescShort;
+
     [AccessedThroughProperty("txtEndCost")]
-    private TextBox _txtEndCost;
+    TextBox _txtEndCost;
+
     [AccessedThroughProperty("txtInterrupt")]
-    private TextBox _txtInterrupt;
+    TextBox _txtInterrupt;
+
     [AccessedThroughProperty("txtLevel")]
-    private TextBox _txtLevel;
+    TextBox _txtLevel;
+
     [AccessedThroughProperty("txtLifeTimeGame")]
-    private TextBox _txtLifeTimeGame;
+    TextBox _txtLifeTimeGame;
+
     [AccessedThroughProperty("txtLifeTimeReal")]
-    private TextBox _txtLifeTimeReal;
+    TextBox _txtLifeTimeReal;
+
     [AccessedThroughProperty("txtMaxTargets")]
-    private TextBox _txtMaxTargets;
+    TextBox _txtMaxTargets;
+
     [AccessedThroughProperty("txtNameDisplay")]
-    private TextBox _txtNameDisplay;
+    TextBox _txtNameDisplay;
+
     [AccessedThroughProperty("txtNamePower")]
-    private TextBox _txtNamePower;
+    TextBox _txtNamePower;
+
     [AccessedThroughProperty("txtNumCharges")]
-    private TextBox _txtNumCharges;
+    TextBox _txtNumCharges;
+
     [AccessedThroughProperty("txtRadius")]
-    private TextBox _txtRadius;
+    TextBox _txtRadius;
+
     [AccessedThroughProperty("txtRange")]
-    private TextBox _txtRange;
+    TextBox _txtRange;
+
     [AccessedThroughProperty("txtRangeSec")]
-    private TextBox _txtRangeSec;
+    TextBox _txtRangeSec;
+
     [AccessedThroughProperty("txtRechargeTime")]
-    private TextBox _txtRechargeTime;
+    TextBox _txtRechargeTime;
+
     [AccessedThroughProperty("txtScaleName")]
-    private TextBox _txtScaleName;
+    TextBox _txtScaleName;
+
     [AccessedThroughProperty("txtUseageTime")]
-    private TextBox _txtUseageTime;
+    TextBox _txtUseageTime;
+
     [AccessedThroughProperty("txtVisualLocation")]
-    private TextBox _txtVisualLocation;
+    TextBox _txtVisualLocation;
+
     [AccessedThroughProperty("udScaleMax")]
-    private NumericUpDown _udScaleMax;
+    NumericUpDown _udScaleMax;
+
     [AccessedThroughProperty("udScaleMin")]
-    private NumericUpDown _udScaleMin;
+    NumericUpDown _udScaleMin;
+
     protected Requirement backup_Requires;
-    private ExtendedBitmap bxEnhPicked;
-    private ExtendedBitmap bxEnhPicker;
+    ExtendedBitmap bxEnhPicked;
+
+    ExtendedBitmap bxEnhPicker;
+
     protected ExtendedBitmap bxSet;
     protected ExtendedBitmap bxSetList;
-    private IContainer components;
+    IContainer components;
+
     protected int enhAcross;
     protected int enhPadding;
     public IPower myPower;
     protected bool ReqChanging;
     protected bool Updating;
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -424,7 +431,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCSVImport
+    Button btnCSVImport
     {
       get
       {
@@ -442,7 +449,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFullCopy
+    Button btnFullCopy
     {
       get
       {
@@ -460,7 +467,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFullPaste
+    Button btnFullPaste
     {
       get
       {
@@ -478,7 +485,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXAdd
+    Button btnFXAdd
     {
       get
       {
@@ -496,7 +503,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXDown
+    Button btnFXDown
     {
       get
       {
@@ -514,7 +521,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXDuplicate
+    Button btnFXDuplicate
     {
       get
       {
@@ -532,7 +539,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXEdit
+    Button btnFXEdit
     {
       get
       {
@@ -550,7 +557,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXRemove
+    Button btnFXRemove
     {
       get
       {
@@ -568,7 +575,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFXUp
+    Button btnFXUp
     {
       get
       {
@@ -586,7 +593,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnMutexAdd
+    Button btnMutexAdd
     {
       get
       {
@@ -604,7 +611,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -622,7 +629,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrDown
+    Button btnPrDown
     {
       get
       {
@@ -640,7 +647,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrReset
+    Button btnPrReset
     {
       get
       {
@@ -658,7 +665,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrSetNone
+    Button btnPrSetNone
     {
       get
       {
@@ -676,7 +683,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrUp
+    Button btnPrUp
     {
       get
       {
@@ -694,19 +701,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSetDamage
-    {
-      get
-      {
-        return this._btnSetDamage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._btnSetDamage = value;
-      }
-    }
 
-    internal virtual Button btnSPAdd
+    Button btnSPAdd
     {
       get
       {
@@ -724,7 +720,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnSPRemove
+    Button btnSPRemove
     {
       get
       {
@@ -742,7 +738,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbEffectArea
+    ComboBox cbEffectArea
     {
       get
       {
@@ -760,7 +756,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbForcedClass
+    ComboBox cbForcedClass
     {
       get
       {
@@ -778,7 +774,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbNameGroup
+    ComboBox cbNameGroup
     {
       get
       {
@@ -804,7 +800,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbNameSet
+    ComboBox cbNameSet
     {
       get
       {
@@ -830,7 +826,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbNotify
+    ComboBox cbNotify
     {
       get
       {
@@ -848,7 +844,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbPowerType
+    ComboBox cbPowerType
     {
       get
       {
@@ -866,7 +862,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkAltSub
+    CheckBox chkAltSub
     {
       get
       {
@@ -884,7 +880,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkAlwaysToggle
+    CheckBox chkAlwaysToggle
     {
       get
       {
@@ -902,7 +898,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkBoostBoostable
+    CheckBox chkBoostBoostable
     {
       get
       {
@@ -920,7 +916,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkBoostUsePlayerLevel
+    CheckBox chkBoostUsePlayerLevel
     {
       get
       {
@@ -938,7 +934,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkBuffCycle
+    CheckBox chkBuffCycle
     {
       get
       {
@@ -956,7 +952,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkGraphFix
+    CheckBox chkGraphFix
     {
       get
       {
@@ -974,7 +970,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkHidden
+    CheckBox chkHidden
     {
       get
       {
@@ -992,7 +988,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkIgnoreStrength
+    CheckBox chkIgnoreStrength
     {
       get
       {
@@ -1010,7 +1006,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkLos
+    CheckBox chkLos
     {
       get
       {
@@ -1028,7 +1024,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkMutexAuto
+    CheckBox chkMutexAuto
     {
       get
       {
@@ -1046,7 +1042,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkMutexSkip
+    CheckBox chkMutexSkip
     {
       get
       {
@@ -1064,7 +1060,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNoAUReq
+    CheckBox chkNoAUReq
     {
       get
       {
@@ -1082,7 +1078,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkNoAutoUpdate
+    CheckBox chkNoAutoUpdate
     {
       get
       {
@@ -1100,7 +1096,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkPRFrontLoad
+    CheckBox chkPRFrontLoad
     {
       get
       {
@@ -1118,7 +1114,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkScale
+    CheckBox chkScale
     {
       get
       {
@@ -1136,7 +1132,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSortOverride
+    CheckBox chkSortOverride
     {
       get
       {
@@ -1154,7 +1150,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSubInclude
+    CheckBox chkSubInclude
     {
       get
       {
@@ -1172,7 +1168,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSummonDisplayEntity
+    CheckBox chkSummonDisplayEntity
     {
       get
       {
@@ -1190,7 +1186,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSummonStealAttributes
+    CheckBox chkSummonStealAttributes
     {
       get
       {
@@ -1208,7 +1204,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkSummonStealEffects
+    CheckBox chkSummonStealEffects
     {
       get
       {
@@ -1226,31 +1222,9 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckedListBox clbClassExclude
-    {
-      get
-      {
-        return this._clbClassExclude;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._clbClassExclude = value;
-      }
-    }
 
-    internal virtual CheckedListBox clbClassReq
-    {
-      get
-      {
-        return this._clbClassReq;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._clbClassReq = value;
-      }
-    }
 
-    internal virtual CheckedListBox clbFlags
+    CheckedListBox clbFlags
     {
       get
       {
@@ -1268,883 +1242,80 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckedListBox clbMutex
-    {
-      get
-      {
-        return this._clbMutex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._clbMutex = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader10
-    {
-      get
-      {
-        return this._ColumnHeader10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader10 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader11
-    {
-      get
-      {
-        return this._ColumnHeader11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader11 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader6
-    {
-      get
-      {
-        return this._ColumnHeader6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader6 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader7
-    {
-      get
-      {
-        return this._ColumnHeader7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader7 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader8
-    {
-      get
-      {
-        return this._ColumnHeader8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader8 = value;
-      }
-    }
-
-    internal virtual ColumnHeader ColumnHeader9
-    {
-      get
-      {
-        return this._ColumnHeader9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader9 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox10
-    {
-      get
-      {
-        return this._GroupBox10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox10 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox11
-    {
-      get
-      {
-        return this._GroupBox11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox11 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox3
-    {
-      get
-      {
-        return this._GroupBox3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox3 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox4
-    {
-      get
-      {
-        return this._GroupBox4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox4 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox5
-    {
-      get
-      {
-        return this._GroupBox5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox5 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox6
-    {
-      get
-      {
-        return this._GroupBox6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox6 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox7
-    {
-      get
-      {
-        return this._GroupBox7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox7 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox8
-    {
-      get
-      {
-        return this._GroupBox8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox8 = value;
-      }
-    }
-
-    internal virtual GroupBox GroupBox9
-    {
-      get
-      {
-        return this._GroupBox9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox9 = value;
-      }
-    }
-
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
-
-    internal virtual Label Label10
-    {
-      get
-      {
-        return this._Label10;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label10 = value;
-      }
-    }
-
-    internal virtual Label Label11
-    {
-      get
-      {
-        return this._Label11;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label11 = value;
-      }
-    }
-
-    internal virtual Label Label12
-    {
-      get
-      {
-        return this._Label12;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label12 = value;
-      }
-    }
-
-    internal virtual Label Label13
-    {
-      get
-      {
-        return this._Label13;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label13 = value;
-      }
-    }
-
-    internal virtual Label Label14
-    {
-      get
-      {
-        return this._Label14;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label14 = value;
-      }
-    }
-
-    internal virtual Label Label15
-    {
-      get
-      {
-        return this._Label15;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label15 = value;
-      }
-    }
-
-    internal virtual Label Label16
-    {
-      get
-      {
-        return this._Label16;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label16 = value;
-      }
-    }
-
-    internal virtual Label Label17
-    {
-      get
-      {
-        return this._Label17;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label17 = value;
-      }
-    }
-
-    internal virtual Label Label18
-    {
-      get
-      {
-        return this._Label18;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label18 = value;
-      }
-    }
-
-    internal virtual Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
-
-    internal virtual Label Label20
-    {
-      get
-      {
-        return this._Label20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label20 = value;
-      }
-    }
-
-    internal virtual Label Label21
-    {
-      get
-      {
-        return this._Label21;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label21 = value;
-      }
-    }
-
-    internal virtual Label Label22
-    {
-      get
-      {
-        return this._Label22;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label22 = value;
-      }
-    }
-
-    internal virtual Label Label23
-    {
-      get
-      {
-        return this._Label23;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label23 = value;
-      }
-    }
-
-    internal virtual Label Label24
-    {
-      get
-      {
-        return this._Label24;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label24 = value;
-      }
-    }
-
-    internal virtual Label Label26
-    {
-      get
-      {
-        return this._Label26;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label26 = value;
-      }
-    }
-
-    internal virtual Label Label27
-    {
-      get
-      {
-        return this._Label27;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label27 = value;
-      }
-    }
-
-    internal virtual Label Label28
-    {
-      get
-      {
-        return this._Label28;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label28 = value;
-      }
-    }
-
-    internal virtual Label Label29
-    {
-      get
-      {
-        return this._Label29;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label29 = value;
-      }
-    }
-
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
-
-    internal virtual Label Label30
-    {
-      get
-      {
-        return this._Label30;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label30 = value;
-      }
-    }
-
-    internal virtual Label Label31
-    {
-      get
-      {
-        return this._Label31;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label31 = value;
-      }
-    }
-
-    internal virtual Label Label32
-    {
-      get
-      {
-        return this._Label32;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label32 = value;
-      }
-    }
-
-    internal virtual Label Label33
-    {
-      get
-      {
-        return this._Label33;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label33 = value;
-      }
-    }
-
-    internal virtual Label Label34
-    {
-      get
-      {
-        return this._Label34;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label34 = value;
-      }
-    }
-
-    internal virtual Label Label35
-    {
-      get
-      {
-        return this._Label35;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label35 = value;
-      }
-    }
-
-    internal virtual Label Label36
-    {
-      get
-      {
-        return this._Label36;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label36 = value;
-      }
-    }
-
-    internal virtual Label Label37
-    {
-      get
-      {
-        return this._Label37;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label37 = value;
-      }
-    }
-
-    internal virtual Label Label38
-    {
-      get
-      {
-        return this._Label38;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label38 = value;
-      }
-    }
-
-    internal virtual Label Label39
-    {
-      get
-      {
-        return this._Label39;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label39 = value;
-      }
-    }
-
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
-
-    internal virtual Label Label40
-    {
-      get
-      {
-        return this._Label40;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label40 = value;
-      }
-    }
-
-    internal virtual Label Label41
-    {
-      get
-      {
-        return this._Label41;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label41 = value;
-      }
-    }
-
-    internal virtual Label Label42
-    {
-      get
-      {
-        return this._Label42;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label42 = value;
-      }
-    }
-
-    internal virtual Label Label43
-    {
-      get
-      {
-        return this._Label43;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label43 = value;
-      }
-    }
-
-    internal virtual Label Label44
-    {
-      get
-      {
-        return this._Label44;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label44 = value;
-      }
-    }
-
-    internal virtual Label Label45
-    {
-      get
-      {
-        return this._Label45;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label45 = value;
-      }
-    }
-
-    internal virtual Label Label46
-    {
-      get
-      {
-        return this._Label46;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label46 = value;
-      }
-    }
-
-    internal virtual Label Label47
-    {
-      get
-      {
-        return this._Label47;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label47 = value;
-      }
-    }
-
-    internal virtual Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
-
-    internal virtual Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
-
-    internal virtual Label Label7
-    {
-      get
-      {
-        return this._Label7;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label7 = value;
-      }
-    }
-
-    internal virtual Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
-
-    internal virtual Label Label9
-    {
-      get
-      {
-        return this._Label9;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label9 = value;
-      }
-    }
-
-    internal virtual Label lblAcc
-    {
-      get
-      {
-        return this._lblAcc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAcc = value;
-      }
-    }
-
-    internal virtual Label lblEndCost
-    {
-      get
-      {
-        return this._lblEndCost;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEndCost = value;
-      }
-    }
-
-    internal virtual Label lblEnhName
-    {
-      get
-      {
-        return this._lblEnhName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEnhName = value;
-      }
-    }
-
-    internal virtual Label lblInvSet
-    {
-      get
-      {
-        return this._lblInvSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblInvSet = value;
-      }
-    }
-
-    internal virtual Label lblNameFull
-    {
-      get
-      {
-        return this._lblNameFull;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblNameFull = value;
-      }
-    }
-
-    internal virtual Label lblNameUnique
-    {
-      get
-      {
-        return this._lblNameUnique;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblNameUnique = value;
-      }
-    }
-
-    internal virtual Label lblStaticIndex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Label lblStaticIndex
     {
       get
       {
@@ -2162,7 +1333,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lvDisablePass1
+    ListBox lvDisablePass1
     {
       get
       {
@@ -2180,7 +1351,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lvDisablePass4
+    ListBox lvDisablePass4
     {
       get
       {
@@ -2198,7 +1369,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListBox lvFX
+    ListBox lvFX
     {
       get
       {
@@ -2221,7 +1392,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPrGroup
+    ListView lvPrGroup
     {
       get
       {
@@ -2239,7 +1410,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPrListing
+    ListView lvPrListing
     {
       get
       {
@@ -2257,7 +1428,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPrPower
+    ListView lvPrPower
     {
       get
       {
@@ -2275,7 +1446,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvPrSet
+    ListView lvPrSet
     {
       get
       {
@@ -2293,7 +1464,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSPGroup
+    ListView lvSPGroup
     {
       get
       {
@@ -2311,7 +1482,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSPPower
+    ListView lvSPPower
     {
       get
       {
@@ -2329,19 +1500,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ListView lvSPSelected
-    {
-      get
-      {
-        return this._lvSPSelected;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lvSPSelected = value;
-      }
-    }
 
-    internal virtual ListView lvSPSet
+    ListView lvSPSet
     {
       get
       {
@@ -2359,7 +1519,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbEnhancementList
+    PictureBox pbEnhancementList
     {
       get
       {
@@ -2385,7 +1545,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbEnhancements
+    PictureBox pbEnhancements
     {
       get
       {
@@ -2411,7 +1571,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbInvSetList
+    PictureBox pbInvSetList
     {
       get
       {
@@ -2437,7 +1597,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox pbInvSetUsed
+    PictureBox pbInvSetUsed
     {
       get
       {
@@ -2463,19 +1623,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel pnlFX
-    {
-      get
-      {
-        return this._pnlFX;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._pnlFX = value;
-      }
-    }
 
-    internal virtual RadioButton rbFlagAffected
+    RadioButton rbFlagAffected
     {
       get
       {
@@ -2493,7 +1642,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagAutoHit
+    RadioButton rbFlagAutoHit
     {
       get
       {
@@ -2511,7 +1660,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagCast
+    RadioButton rbFlagCast
     {
       get
       {
@@ -2529,7 +1678,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagCastThrough
+    RadioButton rbFlagCastThrough
     {
       get
       {
@@ -2547,7 +1696,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagDisallow
+    RadioButton rbFlagDisallow
     {
       get
       {
@@ -2565,7 +1714,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagRequired
+    RadioButton rbFlagRequired
     {
       get
       {
@@ -2583,7 +1732,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagTargets
+    RadioButton rbFlagTargets
     {
       get
       {
@@ -2601,7 +1750,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagTargetsSec
+    RadioButton rbFlagTargetsSec
     {
       get
       {
@@ -2619,7 +1768,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbFlagVector
+    RadioButton rbFlagVector
     {
       get
       {
@@ -2637,7 +1786,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button rbPrAdd
+    Button rbPrAdd
     {
       get
       {
@@ -2655,7 +1804,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbPrPowerA
+    RadioButton rbPrPowerA
     {
       get
       {
@@ -2673,7 +1822,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual RadioButton rbPrPowerB
+    RadioButton rbPrPowerB
     {
       get
       {
@@ -2691,7 +1840,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button rbPrRemove
+    Button rbPrRemove
     {
       get
       {
@@ -2709,127 +1858,17 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TabControl tcPower
-    {
-      get
-      {
-        return this._tcPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tcPower = value;
-      }
-    }
 
-    internal virtual TabPage tpBasic
-    {
-      get
-      {
-        return this._tpBasic;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpBasic = value;
-      }
-    }
 
-    internal virtual TabPage tpEffects
-    {
-      get
-      {
-        return this._tpEffects;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpEffects = value;
-      }
-    }
 
-    internal virtual TabPage tpEnh
-    {
-      get
-      {
-        return this._tpEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpEnh = value;
-      }
-    }
 
-    internal virtual TabPage tpMutex
-    {
-      get
-      {
-        return this._tpMutex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpMutex = value;
-      }
-    }
 
-    internal virtual TabPage tpPreReq
-    {
-      get
-      {
-        return this._tpPreReq;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpPreReq = value;
-      }
-    }
 
-    internal virtual TabPage tpSets
-    {
-      get
-      {
-        return this._tpSets;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpSets = value;
-      }
-    }
 
-    internal virtual TabPage tpSpecialEnh
-    {
-      get
-      {
-        return this._tpSpecialEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpSpecialEnh = value;
-      }
-    }
 
-    internal virtual TabPage tpSubPower
-    {
-      get
-      {
-        return this._tpSubPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpSubPower = value;
-      }
-    }
 
-    internal virtual TabPage tpText
-    {
-      get
-      {
-        return this._tpText;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tpText = value;
-      }
-    }
 
-    internal virtual TextBox txtAcc
+    TextBox txtAcc
     {
       get
       {
@@ -2852,7 +1891,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtActivate
+    TextBox txtActivate
     {
       get
       {
@@ -2875,7 +1914,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtArc
+    TextBox txtArc
     {
       get
       {
@@ -2898,7 +1937,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtCastTime
+    TextBox txtCastTime
     {
       get
       {
@@ -2921,7 +1960,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDescLong
+    TextBox txtDescLong
     {
       get
       {
@@ -2939,7 +1978,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtDescShort
+    TextBox txtDescShort
     {
       get
       {
@@ -2957,7 +1996,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtEndCost
+    TextBox txtEndCost
     {
       get
       {
@@ -2980,7 +2019,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtInterrupt
+    TextBox txtInterrupt
     {
       get
       {
@@ -3003,7 +2042,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtLevel
+    TextBox txtLevel
     {
       get
       {
@@ -3026,7 +2065,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtLifeTimeGame
+    TextBox txtLifeTimeGame
     {
       get
       {
@@ -3049,7 +2088,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtLifeTimeReal
+    TextBox txtLifeTimeReal
     {
       get
       {
@@ -3072,7 +2111,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtMaxTargets
+    TextBox txtMaxTargets
     {
       get
       {
@@ -3095,7 +2134,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNameDisplay
+    TextBox txtNameDisplay
     {
       get
       {
@@ -3113,7 +2152,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNamePower
+    TextBox txtNamePower
     {
       get
       {
@@ -3136,7 +2175,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtNumCharges
+    TextBox txtNumCharges
     {
       get
       {
@@ -3159,7 +2198,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRadius
+    TextBox txtRadius
     {
       get
       {
@@ -3182,7 +2221,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRange
+    TextBox txtRange
     {
       get
       {
@@ -3205,7 +2244,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRangeSec
+    TextBox txtRangeSec
     {
       get
       {
@@ -3228,7 +2267,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtRechargeTime
+    TextBox txtRechargeTime
     {
       get
       {
@@ -3251,7 +2290,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtScaleName
+    TextBox txtScaleName
     {
       get
       {
@@ -3269,7 +2308,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtUseageTime
+    TextBox txtUseageTime
     {
       get
       {
@@ -3292,7 +2331,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtVisualLocation
+    TextBox txtVisualLocation
     {
       get
       {
@@ -3315,7 +2354,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udScaleMax
+    NumericUpDown udScaleMax
     {
       get
       {
@@ -3341,7 +2380,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual NumericUpDown udScaleMin
+    NumericUpDown udScaleMin
     {
       get
       {
@@ -3379,13 +2418,15 @@ namespace Hero_Designer
       this.backup_Requires = new Requirement(this.myPower.Requires);
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
     }
 
-    private void btnCSVImport_Click(object sender, EventArgs e)
+    void btnCSVImport_Click(object sender, EventArgs e)
+
     {
       string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
       if (!(str != ""))
@@ -3401,7 +2442,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnFullCopy_Click(object sender, EventArgs e)
+    void btnFullCopy_Click(object sender, EventArgs e)
+
     {
       DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
       MemoryStream memoryStream = new MemoryStream();
@@ -3412,7 +2454,8 @@ namespace Hero_Designer
       memoryStream.Close();
     }
 
-    private void btnFullPaste_Click(object sender, EventArgs e)
+    void btnFullPaste_Click(object sender, EventArgs e)
+
     {
       DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
       string groupName = this.myPower.GroupName;
@@ -3435,7 +2478,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnFXAdd_Click(object sender, EventArgs e)
+    void btnFXAdd_Click(object sender, EventArgs e)
+
     {
       IEffect iFX = (IEffect) new Effect((IPower) null);
       frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
@@ -3450,7 +2494,8 @@ namespace Hero_Designer
       this.lvFX.SelectedIndex = this.lvFX.Items.Count - 1;
     }
 
-    private void btnFXDown_Click(object sender, EventArgs e)
+    void btnFXDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvFX.SelectedIndices.Count <= 0)
         return;
@@ -3469,7 +2514,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnFXDuplicate_Click(object sender, EventArgs e)
+    void btnFXDuplicate_Click(object sender, EventArgs e)
+
     {
       if (this.lvFX.SelectedIndices.Count <= 0)
         return;
@@ -3487,7 +2533,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnFXEdit_Click(object sender, EventArgs e)
+    void btnFXEdit_Click(object sender, EventArgs e)
+
     {
       if (this.lvFX.SelectedIndices.Count <= 0)
         return;
@@ -3502,7 +2549,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnFXRemove_Click(object sender, EventArgs e)
+    void btnFXRemove_Click(object sender, EventArgs e)
+
     {
       if (this.lvFX.SelectedIndex < 0)
         return;
@@ -3529,7 +2577,8 @@ namespace Hero_Designer
         this.lvFX.SelectedIndex = selectedIndex - 1;
     }
 
-    private void btnFXUp_Click(object sender, EventArgs e)
+    void btnFXUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvFX.SelectedIndices.Count <= 0)
         return;
@@ -3546,7 +2595,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnMutexAdd_Click(object sender, EventArgs e)
+    void btnMutexAdd_Click(object sender, EventArgs e)
+
     {
       string b = Interaction.InputBox("Please enter a new group name. It must be different to all the others", "Add Mutex Group", "New_Group", -1, -1).Replace(" ", "_");
       int count = this.clbMutex.Items.Count;
@@ -3564,7 +2614,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       IPower power = this.myPower;
       this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
@@ -3605,7 +2656,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPrDown_Click(object sender, EventArgs e)
+    void btnPrDown_Click(object sender, EventArgs e)
+
     {
       if (this.lvPrListing.SelectedItems.Count < 1)
         return;
@@ -3650,13 +2702,15 @@ namespace Hero_Designer
       this.lvPrListing.Items[index2].EnsureVisible();
     }
 
-    private void btnPrReset_Click(object sender, EventArgs e)
+    void btnPrReset_Click(object sender, EventArgs e)
+
     {
       this.myPower.Requires = new Requirement(this.backup_Requires);
       this.FillTab_Req();
     }
 
-    private void btnPrSetNone_Click(object sender, EventArgs e)
+    void btnPrSetNone_Click(object sender, EventArgs e)
+
     {
       if (this.lvPrListing.SelectedItems.Count < 1)
         return;
@@ -3675,7 +2729,8 @@ namespace Hero_Designer
       this.FillTab_Req();
     }
 
-    private void btnPrUp_Click(object sender, EventArgs e)
+    void btnPrUp_Click(object sender, EventArgs e)
+
     {
       if (this.lvPrListing.SelectedItems.Count < 1)
         return;
@@ -3719,7 +2774,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnSPAdd_Click(object sender, EventArgs e)
+    void btnSPAdd_Click(object sender, EventArgs e)
+
     {
       if (this.lvSPPower.SelectedItems.Count < 1)
         return;
@@ -3739,7 +2795,8 @@ namespace Hero_Designer
       this.lvSPSelected.Items[this.lvSPSelected.Items.Count - 1].EnsureVisible();
     }
 
-    private void btnSPRemove_Click(object sender, EventArgs e)
+    void btnSPRemove_Click(object sender, EventArgs e)
+
     {
       if (this.lvSPSelected.SelectedItems.Count < 1)
         return;
@@ -3773,14 +2830,16 @@ namespace Hero_Designer
       }
     }
 
-    private void cbEffectArea_SelectedIndexChanged(object sender, EventArgs e)
+    void cbEffectArea_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.EffectArea = (Enums.eEffectArea) this.cbEffectArea.SelectedIndex;
     }
 
-    private void cbForcedClass_SelectedIndexChanged(object sender, EventArgs e)
+    void cbForcedClass_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3788,14 +2847,16 @@ namespace Hero_Designer
       this.myPower.ForcedClass = !(index < 0 | index > DatabaseAPI.Database.Classes.Length - 1) ? DatabaseAPI.Database.Classes[index].ClassName : "";
     }
 
-    private void cbNameGroup_Leave(object sender, EventArgs e)
+    void cbNameGroup_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.DisplayNameData();
     }
 
-    private void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3803,7 +2864,8 @@ namespace Hero_Designer
       this.SetFullName();
     }
 
-    private void cbNameGroup_TextChanged(object sender, EventArgs e)
+    void cbNameGroup_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3811,14 +2873,16 @@ namespace Hero_Designer
       this.SetFullName();
     }
 
-    private void cbNameSet_Leave(object sender, EventArgs e)
+    void cbNameSet_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.DisplayNameData();
     }
 
-    private void cbNameSet_SelectedIndexChanged(object sender, EventArgs e)
+    void cbNameSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3826,7 +2890,8 @@ namespace Hero_Designer
       this.SetFullName();
     }
 
-    private void cbNameSet_TextChanged(object sender, EventArgs e)
+    void cbNameSet_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3834,14 +2899,16 @@ namespace Hero_Designer
       this.SetFullName();
     }
 
-    private void cbNotify_SelectedIndexChanged(object sender, EventArgs e)
+    void cbNotify_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.AIReport = (Enums.eNotify) this.cbNotify.SelectedIndex;
     }
 
-    private void cbPowerType_SelectedIndexChanged(object sender, EventArgs e)
+    void cbPowerType_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3862,105 +2929,120 @@ namespace Hero_Designer
       }
     }
 
-    private void chkAltSub_CheckedChanged(object sender, EventArgs e)
+    void chkAltSub_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.SubIsAltColour = this.chkAltSub.Checked;
     }
 
-    private void chkAlwaysToggle_CheckedChanged(object sender, EventArgs e)
+    void chkAlwaysToggle_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.AlwaysToggle = this.chkAlwaysToggle.Checked;
     }
 
-    private void chkBoostBoostable_CheckedChanged(object sender, EventArgs e)
+    void chkBoostBoostable_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.BoostBoostable = this.chkPRFrontLoad.Checked;
     }
 
-    private void chkBoostUsePlayerLevel_CheckedChanged(object sender, EventArgs e)
+    void chkBoostUsePlayerLevel_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.BoostUsePlayerLevel = this.chkPRFrontLoad.Checked;
     }
 
-    private void chkBuffCycle_CheckedChanged(object sender, EventArgs e)
+    void chkBuffCycle_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.ClickBuff = this.chkBuffCycle.Checked;
     }
 
-    private void chkGraphFix_CheckedChanged(object sender, EventArgs e)
+    void chkGraphFix_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.SkipMax = this.chkGraphFix.Checked;
     }
 
-    private void chkHidden_CheckedChanged(object sender, EventArgs e)
+    void chkHidden_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.HiddenPower = this.chkHidden.Checked;
     }
 
-    private void chkIgnoreStrength_CheckedChanged(object sender, EventArgs e)
+    void chkIgnoreStrength_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.IgnoreStrength = this.chkIgnoreStrength.Checked;
     }
 
-    private void chkLos_CheckedChanged(object sender, EventArgs e)
+    void chkLos_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.TargetLoS = this.chkLos.Checked;
     }
 
-    private void chkMutexAuto_CheckedChanged(object sender, EventArgs e)
+    void chkMutexAuto_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.MutexAuto = this.chkMutexAuto.Checked;
     }
 
-    private void chkMutexSkip_CheckedChanged(object sender, EventArgs e)
+    void chkMutexSkip_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.MutexIgnore = this.chkMutexSkip.Checked;
     }
 
-    private void chkNoAUReq_CheckedChanged(object sender, EventArgs e)
+    void chkNoAUReq_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.NeverAutoUpdateRequirements = this.chkNoAUReq.Checked;
     }
 
-    private void chkNoAutoUpdate_CheckedChanged(object sender, EventArgs e)
+    void chkNoAutoUpdate_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.NeverAutoUpdate = this.chkNoAutoUpdate.Checked;
     }
 
-    private void chkPRFrontLoad_CheckedChanged(object sender, EventArgs e)
+    void chkPRFrontLoad_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.AllowFrontLoading = this.chkPRFrontLoad.Checked;
     }
 
-    private void chkScale_CheckedChanged(object sender, EventArgs e)
+    void chkScale_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -3975,42 +3057,48 @@ namespace Hero_Designer
       this.txtScaleName.Enabled = this.myPower.VariableEnabled;
     }
 
-    private void chkSortOverride_CheckedChanged(object sender, EventArgs e)
+    void chkSortOverride_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.SortOverride = this.chkSortOverride.Checked;
     }
 
-    private void chkSubInclude_CheckedChanged(object sender, EventArgs e)
+    void chkSubInclude_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.IncludeFlag = this.chkSubInclude.Checked;
     }
 
-    private void chkSummonDisplayEntity_CheckedChanged(object sender, EventArgs e)
+    void chkSummonDisplayEntity_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.ShowSummonAnyway = this.chkSummonDisplayEntity.Checked;
     }
 
-    private void chkSummonStealAttributes_CheckedChanged(object sender, EventArgs e)
+    void chkSummonStealAttributes_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.AbsorbSummonAttributes = this.chkSummonStealAttributes.Checked;
     }
 
-    private void chkSummonStealEffects_CheckedChanged(object sender, EventArgs e)
+    void chkSummonStealEffects_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.AbsorbSummonEffects = this.chkSummonStealEffects.Checked;
     }
 
-    private void clbFlags_ItemCheck(object sender, ItemCheckEventArgs e)
+    void clbFlags_ItemCheck(object sender, ItemCheckEventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -4069,7 +3157,8 @@ namespace Hero_Designer
       }
     }
 
-    private void DisplayNameData()
+    void DisplayNameData()
+
     {
       IPower power = this.myPower;
       this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
@@ -4088,7 +3177,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void DrawAcceptedSets()
+    void DrawAcceptedSets()
+
     {
       this.bxSet = new ExtendedBitmap(this.pbInvSetUsed.Width, this.pbInvSetUsed.Height);
       int enhPadding1 = this.enhPadding;
@@ -4151,7 +3241,8 @@ namespace Hero_Designer
       this.pbInvSetUsed.CreateGraphics().DrawImageUnscaled((Image) this.bxSet.Bitmap, 0, 0);
     }
 
-    private void DrawSetList()
+    void DrawSetList()
+
     {
       Enums.eSetType eSetType = Enums.eSetType.Untyped;
       this.bxSetList = new ExtendedBitmap(this.pbInvSetList.Width, this.pbInvSetList.Height);
@@ -4227,7 +3318,8 @@ namespace Hero_Designer
       this.pbInvSetList.CreateGraphics().DrawImageUnscaled((Image) this.bxSetList.Bitmap, 0, 0);
     }
 
-    private void FillAdvAtrList()
+    void FillAdvAtrList()
+
     {
       int num1 = 0;
       System.Type type = this.myPower.EntitiesAutoHit.GetType();
@@ -4296,7 +3388,8 @@ namespace Hero_Designer
       this.Updating = updating;
     }
 
-    private void FillCombo_Attribs()
+    void FillCombo_Attribs()
+
     {
       Enums.ePowerType ePowerType = Enums.ePowerType.Click;
       bool updating = this.Updating;
@@ -4320,7 +3413,8 @@ namespace Hero_Designer
       this.Updating = updating;
     }
 
-    private void FillCombo_Basic()
+    void FillCombo_Basic()
+
     {
       bool updating = this.Updating;
       this.Updating = true;
@@ -4346,7 +3440,8 @@ namespace Hero_Designer
       this.Updating = updating;
     }
 
-    private void FillComboBoxes()
+    void FillComboBoxes()
+
     {
       Enums.eEnhance eEnhance = Enums.eEnhance.X_RechargeTime;
       this.lvDisablePass1.BeginUpdate();
@@ -4359,7 +3454,8 @@ namespace Hero_Designer
       this.lvDisablePass4.EndUpdate();
     }
 
-    private void FillTab_Attribs()
+    void FillTab_Attribs()
+
     {
       IPower power = this.myPower;
       string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###";
@@ -4388,7 +3484,8 @@ namespace Hero_Designer
       this.FillAdvAtrList();
     }
 
-    private void FillTab_Basic()
+    void FillTab_Basic()
+
     {
       IPower power = this.myPower;
       this.txtNameDisplay.Text = power.DisplayName;
@@ -4419,7 +3516,8 @@ namespace Hero_Designer
       this.chkHidden.Checked = this.myPower.HiddenPower;
     }
 
-    private void FillTab_Disabling()
+    void FillTab_Disabling()
+
     {
       int num1 = this.myPower.IgnoreEnh.Length - 1;
       for (int index = 0; index <= num1; ++index)
@@ -4435,12 +3533,14 @@ namespace Hero_Designer
       }
     }
 
-    private void FillTab_Effects()
+    void FillTab_Effects()
+
     {
       this.RefreshFXData(0);
     }
 
-    private void FillTab_Enhancements()
+    void FillTab_Enhancements()
+
     {
       this.RedrawEnhList();
       this.chkPRFrontLoad.Checked = this.myPower.AllowFrontLoading;
@@ -4448,7 +3548,8 @@ namespace Hero_Designer
       this.chkBoostUsePlayerLevel.Checked = this.myPower.BoostUsePlayerLevel;
     }
 
-    private void FillTab_Mutex()
+    void FillTab_Mutex()
+
     {
       this.chkMutexAuto.Checked = this.myPower.MutexAuto;
       this.chkMutexSkip.Checked = this.myPower.MutexIgnore;
@@ -4473,7 +3574,8 @@ namespace Hero_Designer
       this.clbMutex.EndUpdate();
     }
 
-    private void FillTab_Req()
+    void FillTab_Req()
+
     {
       this.ReqChanging = true;
       this.lvPrListing.BeginUpdate();
@@ -4521,7 +3623,8 @@ namespace Hero_Designer
       this.lvPrListing.Items[0].Selected = true;
     }
 
-    private void Filltab_ReqClasses()
+    void Filltab_ReqClasses()
+
     {
       this.clbClassReq.BeginUpdate();
       this.clbClassReq.Items.Clear();
@@ -4555,12 +3658,14 @@ namespace Hero_Designer
       this.clbClassExclude.EndUpdate();
     }
 
-    private void FillTab_Sets()
+    void FillTab_Sets()
+
     {
       this.DrawAcceptedSets();
     }
 
-    private void FillTab_SubPowers()
+    void FillTab_SubPowers()
+
     {
       bool reqChanging = this.ReqChanging;
       this.ReqChanging = true;
@@ -4575,7 +3680,8 @@ namespace Hero_Designer
       this.SPFillList();
     }
 
-    private void frmEditPower_Load(object sender, EventArgs e)
+    void frmEditPower_Load(object sender, EventArgs e)
+
     {
       this.RedrawEnhPicker();
       this.FillComboBoxes();
@@ -4586,7 +3692,8 @@ namespace Hero_Designer
       this.Updating = false;
     }
 
-    private static int GetClassByID(int iID)
+    static int GetClassByID(int iID)
+
     {
       int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -4597,7 +3704,8 @@ namespace Hero_Designer
       return 0;
     }
 
-    private int GetInvSetIndex(Point e)
+    int GetInvSetIndex(Point e)
+
     {
       int num1 = -1;
       int num2 = -1;
@@ -4620,7 +3728,8 @@ namespace Hero_Designer
       return num1 + num2 * 10;
     }
 
-    private int GetInvSetListIndex(Point e)
+    int GetInvSetListIndex(Point e)
+
     {
       int num1 = -1;
       int num2 = -1;
@@ -4642,7 +3751,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmEditPower));
       this.tcPower = new TabControl();
@@ -6584,7 +5694,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lblStaticIndex_Click(object sender, EventArgs e)
+    void lblStaticIndex_Click(object sender, EventArgs e)
+
     {
       string s = Interaction.InputBox("Insert new static index for this power.", "", Conversions.ToString(this.myPower.StaticIndex), -1, -1);
       try
@@ -6608,7 +5719,8 @@ namespace Hero_Designer
       }
     }
 
-    private void lvDisablePass1_SelectedIndexChanged(object sender, EventArgs e)
+    void lvDisablePass1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -6619,7 +5731,8 @@ namespace Hero_Designer
         this.myPower.IgnoreEnh[index] = (Enums.eEnhance) this.lvDisablePass1.SelectedIndices[index];
     }
 
-    private void lvDisablePass4_SelectedIndexChanged(object sender, EventArgs e)
+    void lvDisablePass4_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -6630,16 +5743,19 @@ namespace Hero_Designer
         this.myPower.Ignore_Buff[index] = (Enums.eEnhance) this.lvDisablePass4.SelectedIndices[index];
     }
 
-    private void lvFX_DoubleClick(object sender, EventArgs e)
+    void lvFX_DoubleClick(object sender, EventArgs e)
+
     {
       this.btnFXEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
     }
 
-    private void lvFX_KeyPress(object sender, KeyPressEventArgs e)
+    void lvFX_KeyPress(object sender, KeyPressEventArgs e)
+
     {
     }
 
-    private void lvPrGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void lvPrGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.ReqChanging || this.lvPrGroup.SelectedItems.Count <= 0)
         return;
@@ -6648,26 +5764,30 @@ namespace Hero_Designer
         this.lvPrSet.Items[0].Selected = true;
     }
 
-    private void lvPrListing_SelectedIndexChanged(object sender, EventArgs e)
+    void lvPrListing_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       this.Req_Listing_IndexChanged();
     }
 
-    private void lvPrPower_SelectedIndexChanged(object sender, EventArgs e)
+    void lvPrPower_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.ReqChanging)
         return;
       this.Req_UpdateItem();
     }
 
-    private void lvPrSet_SelectedIndexChanged(object sender, EventArgs e)
+    void lvPrSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.ReqChanging || this.lvPrSet.SelectedItems.Count <= 0)
         return;
       this.Req_PowerList();
     }
 
-    private void lvSPGroup_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSPGroup_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.ReqChanging || this.lvSPGroup.SelectedItems.Count <= 0)
         return;
@@ -6676,18 +5796,21 @@ namespace Hero_Designer
         this.lvSPSet.Items[0].Selected = true;
     }
 
-    private void lvSPPower_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSPPower_SelectedIndexChanged(object sender, EventArgs e)
+
     {
     }
 
-    private void lvSPSet_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSPSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.ReqChanging || this.lvSPSet.SelectedItems.Count <= 0)
         return;
       this.SP_PowerList();
     }
 
-    private void pbEnhancementList_Hover(object sender, MouseEventArgs e)
+    void pbEnhancementList_Hover(object sender, MouseEventArgs e)
+
     {
       int num1 = -1;
       int num2 = -1;
@@ -6712,7 +5835,8 @@ namespace Hero_Designer
         this.lblEnhName.Text = "";
     }
 
-    private void pbEnhancementList_MouseDown(object sender, MouseEventArgs e)
+    void pbEnhancementList_MouseDown(object sender, MouseEventArgs e)
+
     {
       int num1 = -1;
       int num2 = -1;
@@ -6751,14 +5875,16 @@ namespace Hero_Designer
       }
     }
 
-    private void pbEnhancementList_Paint(object sender, PaintEventArgs e)
+    void pbEnhancementList_Paint(object sender, PaintEventArgs e)
+
     {
       if (this.bxEnhPicker == null)
         return;
       e.Graphics.DrawImageUnscaled((Image) this.bxEnhPicker.Bitmap, 0, 0);
     }
 
-    private void pbEnhancements_Hover(object sender, MouseEventArgs e)
+    void pbEnhancements_Hover(object sender, MouseEventArgs e)
+
     {
       int num = -1;
       int length = this.myPower.Enhancements.Length;
@@ -6774,7 +5900,8 @@ namespace Hero_Designer
         this.lblEnhName.Text = "";
     }
 
-    private void pbEnhancements_MouseDown(object sender, MouseEventArgs e)
+    void pbEnhancements_MouseDown(object sender, MouseEventArgs e)
+
     {
       int num1 = -1;
       int length = this.myPower.Enhancements.Length;
@@ -6806,14 +5933,16 @@ namespace Hero_Designer
       this.RedrawEnhList();
     }
 
-    private void pbEnhancements_Paint(object sender, PaintEventArgs e)
+    void pbEnhancements_Paint(object sender, PaintEventArgs e)
+
     {
       if (this.bxEnhPicked == null)
         return;
       e.Graphics.DrawImageUnscaled((Image) this.bxEnhPicked.Bitmap, 0, 0);
     }
 
-    private void pbInvSetList_MouseDown(object sender, MouseEventArgs e)
+    void pbInvSetList_MouseDown(object sender, MouseEventArgs e)
+
     {
       Enums.eSetType eSetType = Enums.eSetType.Untyped;
       int invSetListIndex = this.GetInvSetListIndex(new Point(e.X, e.Y));
@@ -6838,7 +5967,8 @@ namespace Hero_Designer
       }
     }
 
-    private void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
+    void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
+
     {
       Enums.eSetType eSetType = Enums.eSetType.Untyped;
       int invSetListIndex = this.GetInvSetListIndex(new Point(e.X, e.Y));
@@ -6849,14 +5979,16 @@ namespace Hero_Designer
         this.lblInvSet.Text = "";
     }
 
-    private void pbInvSetList_Paint(object sender, PaintEventArgs e)
+    void pbInvSetList_Paint(object sender, PaintEventArgs e)
+
     {
       if (this.bxSetList == null)
         return;
       e.Graphics.DrawImageUnscaled((Image) this.bxSetList.Bitmap, 0, 0);
     }
 
-    private void pbInvSetUsed_MouseDown(object sender, MouseEventArgs e)
+    void pbInvSetUsed_MouseDown(object sender, MouseEventArgs e)
+
     {
       int invSetIndex = this.GetInvSetIndex(new Point(e.X, e.Y));
       if (!(invSetIndex < this.myPower.SetTypes.Length & invSetIndex > -1))
@@ -6880,7 +6012,8 @@ namespace Hero_Designer
       this.DrawAcceptedSets();
     }
 
-    private void pbInvSetUsed_MouseMove(object sender, MouseEventArgs e)
+    void pbInvSetUsed_MouseMove(object sender, MouseEventArgs e)
+
     {
       Enums.eSetType eSetType = Enums.eSetType.Untyped;
       int invSetIndex = this.GetInvSetIndex(new Point(e.X, e.Y));
@@ -6891,14 +6024,16 @@ namespace Hero_Designer
         this.lblInvSet.Text = "";
     }
 
-    private void pbInvSetUsed_Paint(object sender, PaintEventArgs e)
+    void pbInvSetUsed_Paint(object sender, PaintEventArgs e)
+
     {
       if (this.bxSet == null)
         return;
       e.Graphics.DrawImageUnscaled((Image) this.bxSet.Bitmap, 0, 0);
     }
 
-    private static bool PowerFullNameIsUnique(string iFullName, int skipId = -1)
+    static bool PowerFullNameIsUnique(string iFullName, int skipId = -1)
+
     {
       if (!string.IsNullOrEmpty(iFullName))
       {
@@ -6912,14 +6047,16 @@ namespace Hero_Designer
       return true;
     }
 
-    private void rbFlagX_CheckedChanged(object sender, EventArgs e)
+    void rbFlagX_CheckedChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.FillAdvAtrList();
     }
 
-    private void rbPrAdd_Click(object sender, EventArgs e)
+    void rbPrAdd_Click(object sender, EventArgs e)
+
     {
       if (Interaction.MsgBox((object) "If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, (object) "Query") == MsgBoxResult.No)
       {
@@ -6943,7 +6080,8 @@ namespace Hero_Designer
       }
     }
 
-    private void rbPrPowerX_CheckedChanged(object sender, EventArgs e)
+    void rbPrPowerX_CheckedChanged(object sender, EventArgs e)
+
     {
       if (sender.GetType() == this.rbPrPowerB.GetType() && ((Control) sender).Text == "Power B")
         return;
@@ -6954,7 +6092,8 @@ namespace Hero_Designer
       this.Req_Listing_IndexChanged();
     }
 
-    private void rbPrRemove_Click(object sender, EventArgs e)
+    void rbPrRemove_Click(object sender, EventArgs e)
+
     {
       if (this.lvPrListing.SelectedItems.Count < 1)
         return;
@@ -7015,7 +6154,8 @@ namespace Hero_Designer
       this.FillTab_Req();
     }
 
-    private void RedrawEnhList()
+    void RedrawEnhList()
+
     {
       this.bxEnhPicked = new ExtendedBitmap(this.pbEnhancements.Width, this.pbEnhancements.Height);
       int enhPadding1 = this.enhPadding;
@@ -7038,7 +6178,8 @@ namespace Hero_Designer
       this.pbEnhancements.CreateGraphics().DrawImageUnscaled((Image) this.bxEnhPicked.Bitmap, 0, 0);
     }
 
-    private void RedrawEnhPicker()
+    void RedrawEnhPicker()
+
     {
       this.pbEnhancementList.Width = (this.enhPadding + 30) * this.enhAcross + this.enhPadding;
       this.pbEnhancementList.Height = (this.enhPadding + 30) * 6 + this.enhPadding;
@@ -7071,7 +6212,8 @@ namespace Hero_Designer
       this.pbEnhancementList.CreateGraphics().DrawImageUnscaled((Image) this.bxEnhPicker.Bitmap, 0, 0);
     }
 
-    private void refresh_PowerData()
+    void refresh_PowerData()
+
     {
       this.Text = "Edit Power (" + this.myPower.FullName + ")";
       this.lblStaticIndex.Text = Conversions.ToString(this.myPower.StaticIndex);
@@ -7089,7 +6231,8 @@ namespace Hero_Designer
       this.SetDynamics();
     }
 
-    private void RefreshFXData(int Index = 0)
+    void RefreshFXData(int Index = 0)
+
     {
       IPower power = this.myPower;
       this.lvFX.BeginUpdate();
@@ -7104,7 +6247,8 @@ namespace Hero_Designer
         this.lvFX.SelectedIndex = this.lvFX.Items.Count - 1;
     }
 
-    private void Req_GroupList()
+    void Req_GroupList()
+
     {
       this.lvPrGroup.BeginUpdate();
       this.lvPrGroup.Items.Clear();
@@ -7113,7 +6257,8 @@ namespace Hero_Designer
       this.lvPrGroup.EndUpdate();
     }
 
-    private void Req_Listing_IndexChanged()
+    void Req_Listing_IndexChanged()
+
     {
       if (this.lvPrListing.SelectedIndices.Count < 1)
         return;
@@ -7121,7 +6266,8 @@ namespace Hero_Designer
       this.ReqDisplayPower(this.lvPrListing.SelectedIndices[0] <= this.myPower.Requires.PowerID.Length - 1 ? (!this.rbPrPowerA.Checked ? this.myPower.Requires.PowerID[index][1] : this.myPower.Requires.PowerID[index][0]) : (!this.rbPrPowerA.Checked ? this.myPower.Requires.PowerIDNot[index][1] : this.myPower.Requires.PowerIDNot[index][0]));
     }
 
-    private void Req_PowerList()
+    void Req_PowerList()
+
     {
       this.lvPrPower.BeginUpdate();
       this.lvPrPower.Items.Clear();
@@ -7145,7 +6291,8 @@ namespace Hero_Designer
       }
     }
 
-    private void Req_SetList()
+    void Req_SetList()
+
     {
       this.lvPrSet.BeginUpdate();
       this.lvPrSet.Items.Clear();
@@ -7166,7 +6313,8 @@ namespace Hero_Designer
       }
     }
 
-    private void Req_UpdateItem()
+    void Req_UpdateItem()
+
     {
       if (this.lvPrListing.SelectedIndices.Count < 1 | this.lvPrGroup.SelectedIndices.Count < 1 | this.lvPrSet.SelectedIndices.Count < 1 | this.lvPrPower.SelectedIndices.Count < 1)
         return;
@@ -7197,7 +6345,8 @@ namespace Hero_Designer
       }
     }
 
-    private void ReqDisplayPower(string iPower)
+    void ReqDisplayPower(string iPower)
+
     {
       this.ReqChanging = true;
       string[] strArray = iPower.Split(".".ToCharArray());
@@ -7245,7 +6394,8 @@ namespace Hero_Designer
       this.ReqChanging = false;
     }
 
-    private void SetDynamics()
+    void SetDynamics()
+
     {
       IPower power = this.myPower;
       this.chkBuffCycle.Enabled = power.PowerType == Enums.ePowerType.Click;
@@ -7257,13 +6407,15 @@ namespace Hero_Designer
       this.lblAcc.Text = "(" + Strings.Format((object) (float) ((double) power.Accuracy * (double) MidsContext.Config.BaseAcc * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%)";
     }
 
-    private void SetFullName()
+    void SetFullName()
+
     {
       IPower power = this.myPower;
       power.FullName = power.GroupName + "." + power.SetName + "." + power.PowerName;
     }
 
-    private void SP_GroupList()
+    void SP_GroupList()
+
     {
       this.lvSPGroup.BeginUpdate();
       this.lvSPGroup.Items.Clear();
@@ -7272,7 +6424,8 @@ namespace Hero_Designer
       this.lvSPGroup.EndUpdate();
     }
 
-    private void SP_PowerList()
+    void SP_PowerList()
+
     {
       this.lvSPPower.BeginUpdate();
       this.lvSPPower.Items.Clear();
@@ -7299,7 +6452,8 @@ namespace Hero_Designer
       }
     }
 
-    private void SP_SetList()
+    void SP_SetList()
+
     {
       this.lvSPSet.BeginUpdate();
       this.lvSPSet.Items.Clear();
@@ -7320,7 +6474,8 @@ namespace Hero_Designer
       }
     }
 
-    private void SPFillList()
+    void SPFillList()
+
     {
       this.lvSPSelected.BeginUpdate();
       this.lvSPSelected.Items.Clear();
@@ -7330,7 +6485,8 @@ namespace Hero_Designer
       this.lvSPSelected.EndUpdate();
     }
 
-    private void Store_Req_Classes()
+    void Store_Req_Classes()
+
     {
       this.myPower.Requires.ClassName = new string[this.clbClassReq.CheckedIndices.Count - 1 + 1];
       int num1 = this.clbClassReq.CheckedIndices.Count - 1;
@@ -7342,14 +6498,16 @@ namespace Hero_Designer
         this.myPower.Requires.ClassNameNot[index] = DatabaseAPI.Database.Classes[this.clbClassExclude.CheckedIndices[index]].ClassName;
     }
 
-    private void txtAcc_Leave(object sender, EventArgs e)
+    void txtAcc_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtAcc.Text = Conversions.ToString(this.myPower.Accuracy);
     }
 
-    private void txtAcc_TextChanged(object sender, EventArgs e)
+    void txtAcc_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7359,14 +6517,16 @@ namespace Hero_Designer
         power.Accuracy = num;
     }
 
-    private void txtActivate_Leave(object sender, EventArgs e)
+    void txtActivate_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtActivate.Text = Conversions.ToString(this.myPower.ActivatePeriod);
     }
 
-    private void txtActivate_TextChanged(object sender, EventArgs e)
+    void txtActivate_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7376,14 +6536,16 @@ namespace Hero_Designer
         power.ActivatePeriod = num;
     }
 
-    private void txtArc_Leave(object sender, EventArgs e)
+    void txtArc_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtArc.Text = Conversions.ToString(this.myPower.Arc);
     }
 
-    private void txtArc_TextChanged(object sender, EventArgs e)
+    void txtArc_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7393,14 +6555,16 @@ namespace Hero_Designer
         power.Arc = (int) Math.Round((double) num);
     }
 
-    private void txtCastTime_Leave(object sender, EventArgs e)
+    void txtCastTime_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtCastTime.Text = Conversions.ToString(this.myPower.CastTimeReal);
     }
 
-    private void txtCastTime_TextChanged(object sender, EventArgs e)
+    void txtCastTime_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7410,28 +6574,32 @@ namespace Hero_Designer
         power.CastTimeReal = num;
     }
 
-    private void txtDescLong_TextChanged(object sender, EventArgs e)
+    void txtDescLong_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.DescLong = this.txtDescLong.Text;
     }
 
-    private void txtDescShort_TextChanged(object sender, EventArgs e)
+    void txtDescShort_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.DescShort = this.txtDescShort.Text;
     }
 
-    private void txtEndCost_Leave(object sender, EventArgs e)
+    void txtEndCost_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtEndCost.Text = Conversions.ToString(this.myPower.EndCost);
     }
 
-    private void txtEndCost_TextChanged(object sender, EventArgs e)
+    void txtEndCost_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7441,14 +6609,16 @@ namespace Hero_Designer
         power.EndCost = num;
     }
 
-    private void txtInterrupt_Leave(object sender, EventArgs e)
+    void txtInterrupt_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtInterrupt.Text = Conversions.ToString(this.myPower.InterruptTime);
     }
 
-    private void txtInterrupt_TextChanged(object sender, EventArgs e)
+    void txtInterrupt_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7458,14 +6628,16 @@ namespace Hero_Designer
         power.InterruptTime = num;
     }
 
-    private void txtLevel_Leave(object sender, EventArgs e)
+    void txtLevel_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtLevel.Text = Conversions.ToString(this.myPower.Level);
     }
 
-    private void txtLevel_TextChanged(object sender, EventArgs e)
+    void txtLevel_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7475,14 +6647,16 @@ namespace Hero_Designer
         power.Level = num;
     }
 
-    private void txtLifeTimeGame_Leave(object sender, EventArgs e)
+    void txtLifeTimeGame_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtLifeTimeGame.Text = Conversions.ToString(this.myPower.LifeTimeInGame);
     }
 
-    private void txtLifeTimeGame_TextChanged(object sender, EventArgs e)
+    void txtLifeTimeGame_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7492,14 +6666,16 @@ namespace Hero_Designer
         power.LifeTimeInGame = (int) Math.Round((double) num);
     }
 
-    private void txtLifeTimeReal_Leave(object sender, EventArgs e)
+    void txtLifeTimeReal_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtLifeTimeReal.Text = Conversions.ToString(this.myPower.LifeTime);
     }
 
-    private void txtLifeTimeReal_TextChanged(object sender, EventArgs e)
+    void txtLifeTimeReal_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7509,14 +6685,16 @@ namespace Hero_Designer
         power.LifeTime = (int) Math.Round((double) num);
     }
 
-    private void txtMaxTargets_Leave(object sender, EventArgs e)
+    void txtMaxTargets_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtMaxTargets.Text = Conversions.ToString(this.myPower.MaxTargets);
     }
 
-    private void txtMaxTargets_TextChanged(object sender, EventArgs e)
+    void txtMaxTargets_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7526,14 +6704,16 @@ namespace Hero_Designer
         power.MaxTargets = (int) Math.Round((double) num);
     }
 
-    private void txtNamePower_Leave(object sender, EventArgs e)
+    void txtNamePower_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.DisplayNameData();
     }
 
-    private void txtNamePower_TextChanged(object sender, EventArgs e)
+    void txtNamePower_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7541,14 +6721,16 @@ namespace Hero_Designer
       this.SetFullName();
     }
 
-    private void txtNumCharges_Leave(object sender, EventArgs e)
+    void txtNumCharges_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtNumCharges.Text = Conversions.ToString(this.myPower.NumCharges);
     }
 
-    private void txtNumCharges_TextChanged(object sender, EventArgs e)
+    void txtNumCharges_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7558,21 +6740,24 @@ namespace Hero_Designer
         power.NumCharges = (int) Math.Round((double) num);
     }
 
-    private void txtPowerName_TextChanged(object sender, EventArgs e)
+    void txtPowerName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.DisplayName = this.txtNameDisplay.Text;
     }
 
-    private void txtRadius_Leave(object sender, EventArgs e)
+    void txtRadius_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtRadius.Text = Conversions.ToString(this.myPower.Radius);
     }
 
-    private void txtRadius_TextChanged(object sender, EventArgs e)
+    void txtRadius_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7582,14 +6767,16 @@ namespace Hero_Designer
         power.Radius = (float) (int) Math.Round((double) num);
     }
 
-    private void txtRange_Leave(object sender, EventArgs e)
+    void txtRange_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtRange.Text = Conversions.ToString(this.myPower.Range);
     }
 
-    private void txtRange_TextChanged(object sender, EventArgs e)
+    void txtRange_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7599,14 +6786,16 @@ namespace Hero_Designer
         power.Range = num;
     }
 
-    private void txtRangeSec_Leave(object sender, EventArgs e)
+    void txtRangeSec_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtRangeSec.Text = Conversions.ToString(this.myPower.RangeSecondary);
     }
 
-    private void txtRangeSec_TextChanged(object sender, EventArgs e)
+    void txtRangeSec_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7616,14 +6805,16 @@ namespace Hero_Designer
         power.RangeSecondary = num;
     }
 
-    private void txtRechargeTime_Leave(object sender, EventArgs e)
+    void txtRechargeTime_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtRechargeTime.Text = Conversions.ToString(this.myPower.RechargeTime);
     }
 
-    private void txtRechargeTime_TextChanged(object sender, EventArgs e)
+    void txtRechargeTime_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7633,21 +6824,24 @@ namespace Hero_Designer
         power.RechargeTime = num;
     }
 
-    private void txtScaleName_TextChanged(object sender, EventArgs e)
+    void txtScaleName_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.myPower.VariableName = this.txtScaleName.Text;
     }
 
-    private void txtUseageTime_Leave(object sender, EventArgs e)
+    void txtUseageTime_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtUseageTime.Text = Conversions.ToString(this.myPower.UsageTime);
     }
 
-    private void txtUseageTime_TextChanged(object sender, EventArgs e)
+    void txtUseageTime_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7657,14 +6851,16 @@ namespace Hero_Designer
         power.UsageTime = (int) Math.Round((double) num);
     }
 
-    private void txtVisualLocation_Leave(object sender, EventArgs e)
+    void txtVisualLocation_Leave(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
       this.txtVisualLocation.Text = Conversions.ToString(this.myPower.DisplayLocation);
     }
 
-    private void txtVisualLocation_TextChanged(object sender, EventArgs e)
+    void txtVisualLocation_TextChanged(object sender, EventArgs e)
+
     {
       if (this.Updating)
         return;
@@ -7674,35 +6870,41 @@ namespace Hero_Designer
         power.DisplayLocation = (int) Math.Round((double) num);
     }
 
-    private void udScaleMax_KeyPress(object sender, KeyPressEventArgs e)
+    void udScaleMax_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       this.CheckScaleValues();
     }
 
-    private void udScaleMax_Leave(object sender, EventArgs e)
+    void udScaleMax_Leave(object sender, EventArgs e)
+
     {
       this.myPower.VariableMax = (int) Math.Round(Conversion.Val(this.udScaleMax.Text));
       this.CheckScaleValues();
     }
 
-    private void udScaleMax_ValueChanged(object sender, EventArgs e)
+    void udScaleMax_ValueChanged(object sender, EventArgs e)
+
     {
       this.myPower.VariableMax = Convert.ToInt32(this.udScaleMax.Value);
       this.CheckScaleValues();
     }
 
-    private void udScaleMin_KeyPress(object sender, KeyPressEventArgs e)
+    void udScaleMin_KeyPress(object sender, KeyPressEventArgs e)
+
     {
       this.CheckScaleValues();
     }
 
-    private void udScaleMin_Leave(object sender, EventArgs e)
+    void udScaleMin_Leave(object sender, EventArgs e)
+
     {
       this.myPower.VariableMin = (int) Math.Round(Conversion.Val(this.udScaleMin.Text));
       this.CheckScaleValues();
     }
 
-    private void udScaleMin_ValueChanged(object sender, EventArgs e)
+    void udScaleMin_ValueChanged(object sender, EventArgs e)
+
     {
       this.myPower.VariableMin = Convert.ToInt32(this.udScaleMin.Value);
       this.CheckScaleValues();

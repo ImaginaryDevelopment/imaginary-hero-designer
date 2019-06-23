@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmZStatus
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using System;
 using System.ComponentModel;
@@ -15,63 +10,16 @@ namespace Hero_Designer
 {
   public class frmZStatus : Form
   {
-    [AccessedThroughProperty("lblStatus1")]
-    private Label _lblStatus1;
-    [AccessedThroughProperty("lblStatus2")]
-    private Label _lblStatus2;
-    [AccessedThroughProperty("lblTitle")]
-    private Label _lblTitle;
-    [AccessedThroughProperty("PictureBox1")]
-    private PictureBox _PictureBox1;
-    private IContainer components;
+        Label lblStatus1;
+        Label lblStatus2;
+        Label lblTitle;
+        PictureBox PictureBox1;
 
-    internal virtual Label lblStatus1
-    {
-      get
-      {
-        return this._lblStatus1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblStatus1 = value;
-      }
-    }
+    IContainer components;
 
-    internal virtual Label lblStatus2
-    {
-      get
-      {
-        return this._lblStatus2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblStatus2 = value;
-      }
-    }
 
-    internal virtual Label lblTitle
-    {
-      get
-      {
-        return this._lblTitle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblTitle = value;
-      }
-    }
 
-    internal virtual PictureBox PictureBox1
-    {
-      get
-      {
-        return this._PictureBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._PictureBox1 = value;
-      }
-    }
+
 
     public frmZStatus()
     {
@@ -86,13 +34,15 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmZStatus_VisibleChanged(object sender, EventArgs e)
+    void frmZStatus_VisibleChanged(object sender, EventArgs e)
+
     {
       this.Refresh();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmZStatus));
       this.lblTitle = new Label();

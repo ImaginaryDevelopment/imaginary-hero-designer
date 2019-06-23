@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmBusy
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -17,21 +12,10 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmBusy : Form
   {
-    [AccessedThroughProperty("Message")]
-    private Label _Message;
-    private IContainer components;
+        Label Message;
 
-    internal virtual Label Message
-    {
-      get
-      {
-        return this._Message;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Message = value;
-      }
-    }
+    IContainer components;
+
 
     public frmBusy()
     {
@@ -54,12 +38,14 @@ namespace Hero_Designer
       }
     }
 
-    private void frmBusy_Load(object sender, EventArgs e)
+    void frmBusy_Load(object sender, EventArgs e)
+
     {
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmBusy));
       this.Message = new Label();

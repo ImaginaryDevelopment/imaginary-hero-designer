@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmTweakMatching
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
@@ -19,37 +14,42 @@ namespace Hero_Designer
   public class frmTweakMatching : Form
   {
     [AccessedThroughProperty("btnAdd")]
-    private Button _btnAdd;
+    Button _btnAdd;
+
     [AccessedThroughProperty("btnDel")]
-    private Button _btnDel;
+    Button _btnDel;
+
     [AccessedThroughProperty("Button1")]
-    private Button _Button1;
+    Button _Button1;
+
     [AccessedThroughProperty("Button2")]
-    private Button _Button2;
+    Button _Button2;
+
     [AccessedThroughProperty("cbAT1")]
-    private ComboBox _cbAT1;
+    ComboBox _cbAT1;
+
     [AccessedThroughProperty("cbPower")]
-    private ComboBox _cbPower;
+    ComboBox _cbPower;
+
     [AccessedThroughProperty("cbSet1")]
-    private ComboBox _cbSet1;
+    ComboBox _cbSet1;
+
     [AccessedThroughProperty("cbType1")]
-    private ComboBox _cbType1;
-    [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
-    [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
+    ComboBox _cbType1;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+
     [AccessedThroughProperty("lstTweaks")]
-    private ListBox _lstTweaks;
-    [AccessedThroughProperty("txtAddActual")]
-    private TextBox _txtAddActual;
-    [AccessedThroughProperty("txtAddOvr")]
-    private TextBox _txtAddOvr;
-    [AccessedThroughProperty("txtOvr")]
-    private TextBox _txtOvr;
-    private IContainer components;
+    ListBox _lstTweaks;
+        TextBox txtAddActual;
+        TextBox txtAddOvr;
+        TextBox txtOvr;
+
+    IContainer components;
+
     protected bool Loaded;
 
-    internal virtual Button btnAdd
+    Button btnAdd
     {
       get
       {
@@ -67,7 +67,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDel
+    Button btnDel
     {
       get
       {
@@ -85,7 +85,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button Button1
+    Button Button1
     {
       get
       {
@@ -103,7 +103,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button Button2
+    Button Button2
     {
       get
       {
@@ -121,7 +121,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbAT1
+    ComboBox cbAT1
     {
       get
       {
@@ -139,7 +139,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbPower
+    ComboBox cbPower
     {
       get
       {
@@ -157,7 +157,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSet1
+    ComboBox cbSet1
     {
       get
       {
@@ -175,7 +175,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbType1
+    ComboBox cbType1
     {
       get
       {
@@ -193,31 +193,9 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    internal virtual ListBox lstTweaks
+    ListBox lstTweaks
     {
       get
       {
@@ -235,41 +213,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtAddActual
-    {
-      get
-      {
-        return this._txtAddActual;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtAddActual = value;
-      }
-    }
 
-    internal virtual TextBox txtAddOvr
-    {
-      get
-      {
-        return this._txtAddOvr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtAddOvr = value;
-      }
-    }
 
-    internal virtual TextBox txtOvr
-    {
-      get
-      {
-        return this._txtOvr;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._txtOvr = value;
-      }
-    }
 
     public frmTweakMatching()
     {
@@ -278,7 +223,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
+    void btnAdd_Click(object sender, EventArgs e)
+
     {
       int num1 = -1;
       int num2 = MidsContext.Config.CompOverride.Length - 1;
@@ -310,7 +256,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnDel_Click(object sender, EventArgs e)
+    void btnDel_Click(object sender, EventArgs e)
+
     {
       if (this.lstTweaks.SelectedIndex < 0)
         return;
@@ -343,12 +290,14 @@ namespace Hero_Designer
       this.listOverrides();
     }
 
-    private void Button1_Click(object sender, EventArgs e)
+    void Button1_Click(object sender, EventArgs e)
+
     {
       this.Hide();
     }
 
-    private void Button2_Click(object sender, EventArgs e)
+    void Button2_Click(object sender, EventArgs e)
+
     {
       if (this.lstTweaks.SelectedIndex < 0)
         return;
@@ -358,14 +307,16 @@ namespace Hero_Designer
       this.lstTweaks.SelectedIndex = selectedIndex;
     }
 
-    private void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbAT1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.List_Sets();
     }
 
-    private void cbPower_SelectedIndexChanged(object sender, EventArgs e)
+    void cbPower_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.cbPower.SelectedIndex < 0)
         return;
@@ -373,14 +324,16 @@ namespace Hero_Designer
       this.txtAddOvr.Text = this.txtAddActual.Text;
     }
 
-    private void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSet1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.GetPowers();
     }
 
-    private void cbType1_SelectedIndexChanged(object sender, EventArgs e)
+    void cbType1_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -394,7 +347,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void frmTweakMatching_Load(object sender, EventArgs e)
+    void frmTweakMatching_Load(object sender, EventArgs e)
+
     {
       this.list_AT();
       this.list_Type();
@@ -450,7 +404,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmTweakMatching));
       this.GroupBox1 = new GroupBox();
@@ -683,7 +638,8 @@ namespace Hero_Designer
       this.lstTweaks.EndUpdate();
     }
 
-    private void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
+    void lstTweaks_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lstTweaks.SelectedIndex < 0)
         return;

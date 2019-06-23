@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.My.MySettings
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.CompilerServices;
@@ -20,9 +15,12 @@ namespace Hero_Designer.My
   [EditorBrowsable(EditorBrowsableState.Advanced)]
   internal sealed class MySettings : ApplicationSettingsBase
   {
-    private static object addedHandlerLockObject = RuntimeHelpers.GetObjectValue(new object());
-    private static MySettings defaultInstance = (MySettings) SettingsBase.Synchronized((SettingsBase) new MySettings());
-    private static bool addedHandler;
+    static object addedHandlerLockObject = RuntimeHelpers.GetObjectValue(new object());
+
+    static MySettings defaultInstance = (MySettings) SettingsBase.Synchronized((SettingsBase) new MySettings());
+
+    static bool addedHandler;
+
 
     public static MySettings Default
     {
@@ -52,7 +50,8 @@ namespace Hero_Designer.My
 
     [EditorBrowsable(EditorBrowsableState.Advanced)]
     [DebuggerNonUserCode]
-    private static void AutoSaveSettings(object sender, EventArgs e)
+    static void AutoSaveSettings(object sender, EventArgs e)
+
     {
       if (!MyProject.Application.SaveMySettingsOnExit)
         ;

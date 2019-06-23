@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Base.Data_Classes.Database
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Collections;
@@ -13,15 +8,24 @@ namespace Base.Data_Classes
 {
   public sealed class Database : IDatabase
   {
-    private static readonly Database _instance = new Database();
-    private Enums.VersionData _powerVersion = new Enums.VersionData();
-    private Enums.VersionData _powerEffectVersion = new Enums.VersionData();
-    private Enums.VersionData _powerLevelVersion = new Enums.VersionData();
-    private Enums.VersionData _powersetVersion = new Enums.VersionData();
-    private Enums.VersionData _archetypeVersion = new Enums.VersionData();
-    private Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
-    private SummonedEntity[] _entities = new SummonedEntity[0];
-    private ArrayList _effectIds = new ArrayList();
+    static readonly Database _instance = new Database();
+
+    Enums.VersionData _powerVersion = new Enums.VersionData();
+
+    Enums.VersionData _powerEffectVersion = new Enums.VersionData();
+
+    Enums.VersionData _powerLevelVersion = new Enums.VersionData();
+
+    Enums.VersionData _powersetVersion = new Enums.VersionData();
+
+    Enums.VersionData _archetypeVersion = new Enums.VersionData();
+
+    Enums.VersionData _ioAssignmentVersion = new Enums.VersionData();
+
+    SummonedEntity[] _entities = new SummonedEntity[0];
+
+    ArrayList _effectIds = new ArrayList();
+
 
     public float Version { get; set; }
 

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: ConfigData
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Drawing;
@@ -68,12 +63,14 @@ public class ConfigData
   };
   public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
   public const string UpdatePathDefault = "http://repo.cohtitan.com/mids_updates/";
-  private static ConfigData _current;
+  static ConfigData _current;
+
   public bool ExportBonusTotals;
   public bool ExportBonusList;
   public bool NoToolTips;
   public bool DataDamageGraphPercentageOnly;
-  private bool _hideOriginEnhancements;
+  bool _hideOriginEnhancements;
+
   public bool CheckForUpdates;
   public Enums.eVisibleSize DvState;
   public Enums.eSuppress Suppression;
@@ -84,7 +81,8 @@ public class ConfigData
   public ConfigData.Si9 I9;
   public ConfigData.FontSettings RtFont;
   public bool PrintInColour;
-  private int _printScheme;
+  int _printScheme;
+
   public bool PrintHistory;
   public bool SaveFolderChecked;
   public bool ShowSlotLevels;
@@ -123,7 +121,8 @@ public class ConfigData
     }
   }
 
-  private ConfigData(string iFilename = "")
+  ConfigData(string iFilename = "")
+
   {
 
     this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
@@ -169,7 +168,8 @@ public class ConfigData
     }
   }
 
-  private void Load(string iFilename)
+  void Load(string iFilename)
+
   {
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
@@ -304,7 +304,7 @@ public class ConfigData
                     this.ShowPopup = reader.ReadBoolean();
                     if ((double)num1 >= 1.32000005245209)
                         this.ShowAlphaPopup = reader.ReadBoolean();
-                    this.PopupRecipes = reader.ReadBoolean(); //reading true when should be false
+                    this.PopupRecipes = reader.ReadBoolean();
                     this.ShoppingListIncludesRecipes = reader.ReadBoolean();
                     this.PrintProfile = (ConfigData.PrintOptionProfile)reader.ReadInt32();
                     this.PrintHistory = reader.ReadBoolean();
@@ -321,10 +321,11 @@ public class ConfigData
                     this.SaveFolderChecked = reader.ReadBoolean();
                 if ((double)num1 >= 1.28999996185303)
                     this.UseArcanaTime = reader.ReadBoolean(); //this is correct
-                /*//Commented out to expidite release.... Will not load forum Export settings  or supression settings
-                if ((double)num1 >= 1.29999995231628)
+                /*Commented out to expidite release.... Will not load forum Export settings  or supression settings
+                 * if ((double)num1 >= 1.29999995231628)
                 {  // numbers seem really off which is screwing up the rest of the read
-                    this.Suppression = (Enums.eSuppress)reader.ReadInt16();
+                    tempNum = reader.ReadInt16();
+                    this.Suppression = (Enums.eSuppress)tempNum;
                 }
                 if ((double)num1 >= 1.30999994277954)
                 {
@@ -332,7 +333,8 @@ public class ConfigData
                         this.DragDropScenarioAction[index] = reader.ReadInt16();
                 }
                 }//589825 or 2305
-                this.Export.ColorSchemes = new ExportConfig.ColorScheme[(int)reader.ReadInt16()];
+                 tempNum = reader.ReadInt16();
+                this.Export.ColorSchemes = new ExportConfig.ColorScheme[(int)tempNum];
                 for (int index = 0; index < this.Export.ColorSchemes.Length; ++index)
                 { //crashes at index 14
                     this.Export.ColorSchemes[index].SchemeName = reader.ReadString();
@@ -366,7 +368,6 @@ public class ConfigData
                     this.Export.FormatCode[index].Space = (ExportConfig.WhiteSpace)reader.ReadInt32();
                 } */
                 this.CreateDefaultSaveFolder();
-                reader.Close();
             }
     }
   }
@@ -379,8 +380,9 @@ public class ConfigData
       return;
     Directory.CreateDirectory(this.DefaultSaveFolder);
   }
-    //Pine: Save Settings
-  private void Save(string iFilename, float version)
+
+  void Save(string iFilename, float version)
+
   {
     using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
     {
@@ -514,26 +516,26 @@ public class ConfigData
           writer.Write(this.Export.FormatCode[index].UnderlineOn);
           writer.Write(Convert.ToInt32((object) this.Export.FormatCode[index].Space));
         }
-        writer.Close();
       }
-            fileStream.Close();
     }
-
   }
 
-  private static Color ReadRGB(BinaryReader reader)
+  static Color ReadRGB(BinaryReader reader)
+
   {
     return Color.FromArgb((int) reader.ReadByte(), (int) reader.ReadByte(), (int) reader.ReadByte());
   }
 
-  private static void WriteRGB(BinaryWriter writer, Color iColor)
+  static void WriteRGB(BinaryWriter writer, Color iColor)
+
   {
     writer.Write(iColor.R);
     writer.Write(iColor.G);
     writer.Write(iColor.B);
   }
 
-  private void RelocateSaveFolder(bool manual)
+  void RelocateSaveFolder(bool manual)
+
   {
     if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked | manual))
     {
@@ -579,7 +581,8 @@ public class ConfigData
     }
   }
 
-  private void LoadOverrides()
+  void LoadOverrides()
+
   {
     using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
     {
@@ -603,7 +606,8 @@ public class ConfigData
     }
   }
 
-  private void SaveOverrides()
+  void SaveOverrides()
+
   {
     using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
     {
@@ -617,9 +621,7 @@ public class ConfigData
           binaryWriter.Write(this.CompOverride[index].Power);
           binaryWriter.Write(this.CompOverride[index].Override);
         }
-                binaryWriter.Close();
       }
-            fileStream.Close();
     }
   }
 

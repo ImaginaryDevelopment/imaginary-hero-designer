@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.FrmInputLevel
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -19,17 +14,22 @@ namespace Hero_Designer
   public class FrmInputLevel : Form
   {
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("udLevel")]
-    private NumericUpDown _udLevel;
-    private IContainer components;
-    private bool LongFormat;
-    private bool Mode2;
-    private frmMain myparent;
+    Button _btnOK;
+        Label Label1;
 
-    internal virtual Button btnOK
+    [AccessedThroughProperty("udLevel")]
+    NumericUpDown _udLevel;
+
+    IContainer components;
+
+    bool LongFormat;
+
+    bool Mode2;
+
+    frmMain myparent;
+
+
+    Button btnOK
     {
       get
       {
@@ -47,19 +47,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual NumericUpDown udLevel
+    NumericUpDown udLevel
     {
       get
       {
@@ -86,7 +75,8 @@ namespace Hero_Designer
       this.Mode2 = iMode2;
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       int num;
       if (Conversion.Val(this.udLevel.Text) != Convert.ToDouble(this.udLevel.Value))
@@ -121,12 +111,14 @@ namespace Hero_Designer
       }
     }
 
-    private void FrmInputLevel_Load(object sender, EventArgs e)
+    void FrmInputLevel_Load(object sender, EventArgs e)
+
     {
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (FrmInputLevel));
       this.udLevel = new NumericUpDown();
@@ -188,7 +180,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void udLevel_Leave(object sender, EventArgs e)
+    void udLevel_Leave(object sender, EventArgs e)
+
     {
       this.udLevel.Validate();
     }

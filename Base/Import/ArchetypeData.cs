@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Import.ArchetypeData
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using Base.Data_Classes;
 using System;
@@ -11,8 +6,10 @@ namespace Import
 {
   public class ArchetypeData
   {
-    private int _index = -1;
-    private readonly string _csvString = string.Empty;
+    int _index = -1;
+
+    readonly string _csvString = string.Empty;
+
     public readonly bool IsValid = true;
     public readonly Archetype Data;
     public readonly bool IsNew;

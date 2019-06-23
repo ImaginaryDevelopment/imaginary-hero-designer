@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmSalvageEdit
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -19,49 +14,52 @@ namespace Hero_Designer
   public class frmSalvageEdit : Form
   {
     [AccessedThroughProperty("btnAdd")]
-    private Button _btnAdd;
+    Button _btnAdd;
+
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
+    Button _btnCancel;
+
     [AccessedThroughProperty("btnDelete")]
-    private Button _btnDelete;
+    Button _btnDelete;
+
     [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
+    Button _btnImport;
+
     [AccessedThroughProperty("btnOK")]
-    private Button _btnOK;
+    Button _btnOK;
+
     [AccessedThroughProperty("cbLevel")]
-    private ComboBox _cbLevel;
+    ComboBox _cbLevel;
+
     [AccessedThroughProperty("cbOrigin")]
-    private ComboBox _cbOrigin;
+    ComboBox _cbOrigin;
+
     [AccessedThroughProperty("cbRarity")]
-    private ComboBox _cbRarity;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label2")]
-    private Label _Label2;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("Label5")]
-    private Label _Label5;
+    ComboBox _cbRarity;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        Label Label1;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+
     [AccessedThroughProperty("lvSalvage")]
-    private ListView _lvSalvage;
+    ListView _lvSalvage;
+
     [AccessedThroughProperty("txtExternal")]
-    private TextBox _txtExternal;
+    TextBox _txtExternal;
+
     [AccessedThroughProperty("txtInternal")]
-    private TextBox _txtInternal;
-    private IContainer components;
+    TextBox _txtInternal;
+
+    IContainer components;
+
     public bool Updating;
 
-    internal virtual Button btnAdd
+    Button btnAdd
     {
       get
       {
@@ -79,7 +77,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnCancel
+    Button btnCancel
     {
       get
       {
@@ -97,7 +95,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnDelete
+    Button btnDelete
     {
       get
       {
@@ -115,7 +113,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -133,7 +131,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnOK
+    Button btnOK
     {
       get
       {
@@ -151,7 +149,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbLevel
+    ComboBox cbLevel
     {
       get
       {
@@ -169,7 +167,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbOrigin
+    ComboBox cbOrigin
     {
       get
       {
@@ -187,7 +185,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbRarity
+    ComboBox cbRarity
     {
       get
       {
@@ -205,115 +203,16 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual Label Label2
-    {
-      get
-      {
-        return this._Label2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label2 = value;
-      }
-    }
 
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    internal virtual Label Label5
-    {
-      get
-      {
-        return this._Label5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label5 = value;
-      }
-    }
 
-    internal virtual ListView lvSalvage
+    ListView lvSalvage
     {
       get
       {
@@ -331,7 +230,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtExternal
+    TextBox txtExternal
     {
       get
       {
@@ -349,7 +248,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual TextBox txtInternal
+    TextBox txtInternal
     {
       get
       {
@@ -386,7 +285,8 @@ namespace Hero_Designer
       this.lvSalvage.Items.Add(new ListViewItem(items));
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
+    void btnAdd_Click(object sender, EventArgs e)
+
     {
       IDatabase database = DatabaseAPI.Database;
       Salvage[] salvageArray = (Salvage[]) Utils.CopyArray((Array) database.Salvage, (Array) new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
@@ -397,13 +297,15 @@ namespace Hero_Designer
       this.lvSalvage.Items[this.lvSalvage.Items.Count - 1].EnsureVisible();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.LoadSalvage();
       this.Close();
     }
 
-    private void btnDelete_Click(object sender, EventArgs e)
+    void btnDelete_Click(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;
@@ -432,7 +334,8 @@ namespace Hero_Designer
         this.lvSalvage.Items[0].Selected = true;
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       char[] chArray = new char[1]{ '\r' };
       string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(chArray);
@@ -475,13 +378,15 @@ namespace Hero_Designer
       this.FillList();
     }
 
-    private void btnOK_Click(object sender, EventArgs e)
+    void btnOK_Click(object sender, EventArgs e)
+
     {
       DatabaseAPI.SaveSalvage();
       this.Close();
     }
 
-    private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+    void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;
@@ -504,7 +409,8 @@ namespace Hero_Designer
       this.UpdateListItem(selectedIndex);
     }
 
-    private void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
+    void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;
@@ -513,7 +419,8 @@ namespace Hero_Designer
       this.UpdateListItem(selectedIndex);
     }
 
-    private void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
+    void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;
@@ -566,7 +473,8 @@ namespace Hero_Designer
       this.lvSalvage.EndUpdate();
     }
 
-    private void frmSalvageEdit_Load(object sender, EventArgs e)
+    void frmSalvageEdit_Load(object sender, EventArgs e)
+
     {
       Salvage.SalvageOrigin salvageOrigin = Salvage.SalvageOrigin.Tech;
       Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
@@ -583,7 +491,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSalvageEdit));
       this.lvSalvage = new ListView();
@@ -785,14 +694,16 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
+    void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedIndices.Count <= 0)
         return;
       this.DisplayItem(this.lvSalvage.SelectedIndices[0]);
     }
 
-    private void txtExternal_TextChanged(object sender, EventArgs e)
+    void txtExternal_TextChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;
@@ -801,7 +712,8 @@ namespace Hero_Designer
       this.UpdateListItem(selectedIndex);
     }
 
-    private void txtInternal_TextChanged(object sender, EventArgs e)
+    void txtInternal_TextChanged(object sender, EventArgs e)
+
     {
       if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
         return;

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.clsXMLUpdate
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.IO_Classes;
 using Hero_Designer.My;
@@ -22,12 +17,16 @@ namespace Hero_Designer
 {
   public class clsXMLUpdate
   {
-    private readonly string _uriUpdatePath = "";
-    private IMessager mFrm = (IMessager) null;
+    readonly string _uriUpdatePath = "";
+
+    IMessager mFrm = (IMessager) null;
+
     public bool RestartNeeded = false;
-    private frmZStatus sFrm = (frmZStatus) null;
+    frmZStatus sFrm = (frmZStatus) null;
+
     protected clsXMLUpdate.clsXMLItem[] Updates = new clsXMLUpdate.clsXMLItem[0];
-    private const string TempFile = "Autoupdate.tmp";
+    const string TempFile = "Autoupdate.tmp";
+
 
     public clsXMLUpdate(string path)
     {
@@ -35,7 +34,8 @@ namespace Hero_Designer
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private bool ApplyUpdate(ref int updateId)
+    bool ApplyUpdate(ref int updateId)
+
     {
       DateTime iDate = new DateTime(1, 1, 1);
       string empty = string.Empty;
@@ -50,7 +50,8 @@ namespace Hero_Designer
       return flag;
     }
 
-    private static void BugReport(string sData)
+    static void BugReport(string sData)
+
     {
       try
       {
@@ -113,7 +114,8 @@ namespace Hero_Designer
       clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/");
     }
 
-    private void HideMessage()
+    void HideMessage()
+
     {
       if (this.sFrm != null)
         this.sFrm.Hide();
@@ -121,7 +123,8 @@ namespace Hero_Designer
       this.mFrm = (IMessager) null;
     }
 
-    private static void LaunchBrowser(string iURI)
+    static void LaunchBrowser(string iURI)
+
     {
       try
       {
@@ -164,7 +167,8 @@ namespace Hero_Designer
       }
     }
 
-    private bool LoadXMLStrings(string iString)
+    bool LoadXMLStrings(string iString)
+
     {
       this.Updates = new clsXMLUpdate.clsXMLItem[2];
       int num1 = this.Updates.Length - 1;
@@ -190,7 +194,8 @@ namespace Hero_Designer
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
+    bool ReadXMLString(ref clsXMLUpdate.clsXMLItem item, string xmlString)
+
     {
       bool flag;
       try
@@ -259,7 +264,8 @@ namespace Hero_Designer
     }
 
     [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    private bool RequestWithProgress(ref int updateId)
+    bool RequestWithProgress(ref int updateId)
+
     {
       byte[] numArray = new byte[16385];
       int count = 16384;
@@ -408,7 +414,8 @@ namespace Hero_Designer
       return flag1;
     }
 
-    private bool RequestXMLVersionInfo()
+    bool RequestXMLVersionInfo()
+
     {
       string requestUriString = this._uriUpdatePath + "version.xml";
       byte[] numArray = new byte[16385];
@@ -492,7 +499,8 @@ namespace Hero_Designer
       return flag1;
     }
 
-    private void SetMessage(string messageA, string messageB)
+    void SetMessage(string messageA, string messageB)
+
     {
       if (this.sFrm != null)
       {
@@ -508,7 +516,8 @@ namespace Hero_Designer
       }
     }
 
-    private void ShowMessage(bool silent, ref IMessager iLoadFrm)
+    void ShowMessage(bool silent, ref IMessager iLoadFrm)
+
     {
       if (!silent & iLoadFrm == null)
       {
@@ -679,7 +688,8 @@ label_12:
     }
 
     [StructLayout(LayoutKind.Sequential, Size = 1)]
-    private struct Keys
+    struct Keys
+
     {
       public const string DisplayName = "Name";
       public const string SourceURI = "URI";

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmLoading
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.IO_Classes;
 using System;
@@ -16,14 +11,18 @@ namespace Hero_Designer
   public class frmLoading : Form, IMessager
   {
     [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("PictureBox1")]
-    private PictureBox _PictureBox1;
-    [AccessedThroughProperty("tmrOpacity")]
-    private Timer _tmrOpacity;
-    private IContainer components;
+    Label _Label1;
 
-    internal virtual Label Label1
+    [AccessedThroughProperty("PictureBox1")]
+    PictureBox _PictureBox1;
+
+    [AccessedThroughProperty("tmrOpacity")]
+    Timer _tmrOpacity;
+
+    IContainer components;
+
+
+    Label Label1
     {
       get
       {
@@ -35,7 +34,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual PictureBox PictureBox1
+    PictureBox PictureBox1
     {
       get
       {
@@ -47,7 +46,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Timer tmrOpacity
+    Timer tmrOpacity
     {
       get
       {
@@ -77,7 +76,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmLoading));
@@ -140,7 +140,8 @@ namespace Hero_Designer
       }
     }
 
-    private void tmrOpacity_Tick(object sender, EventArgs e)
+    void tmrOpacity_Tick(object sender, EventArgs e)
+
     {
       if (this.Opacity < 1.0)
         this.Opacity += 0.05;

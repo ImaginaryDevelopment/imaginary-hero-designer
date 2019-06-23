@@ -1,16 +1,13 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Powerset
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.IO;
 
 public class Powerset : IPowerset, IComparable
 {
-  private string _fullName;
-  private string _groupName;
+  string _fullName;
+
+  string _groupName;
+
 
   public bool IsModified { get; set; }
 

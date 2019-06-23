@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.clsUniversalImport
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Data_Classes;
 using Base.Master_Classes;
@@ -17,7 +12,8 @@ namespace Hero_Designer
     public const string MarkerA = "Primary";
     public const string MarkerB = "Secondary";
 
-    private static clsUniversalImport.sPowerLine BreakLine(string iLine, int nAT)
+    static clsUniversalImport.sPowerLine BreakLine(string iLine, int nAT)
+
     {
       clsUniversalImport.sPowerLine sPowerLine = new clsUniversalImport.sPowerLine();
       string[] strArray1 = clsUniversalImport.SmartBreak(iLine, nAT);
@@ -72,7 +68,8 @@ namespace Hero_Designer
       return sPowerLine;
     }
 
-    private static string EnhNameFix(string iStr)
+    static string EnhNameFix(string iStr)
+
     {
       iStr = iStr.Replace("Fly", "Flight");
       iStr = iStr.Replace("Rechg", "RechRdx");
@@ -117,7 +114,8 @@ namespace Hero_Designer
       return iStr;
     }
 
-    private static int FindFirstPower(string[] haystack, int iAT)
+    static int FindFirstPower(string[] haystack, int iAT)
+
     {
       int num = haystack.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -129,7 +127,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static clsUniversalImport.SetPair FindPower(string iName, int nAT)
+    static clsUniversalImport.SetPair FindPower(string iName, int nAT)
+
     {
       IPowerset[] sets = new IPowerset[2];
       if (MidsContext.Character != null)
@@ -166,7 +165,8 @@ namespace Hero_Designer
       return setPair1;
     }
 
-    private static int FindPowerSetAdvanced(
+    static int FindPowerSetAdvanced(
+
       string sSetType,
       Enums.ePowerSetType nSetType,
       int nAT,
@@ -189,7 +189,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int FindString(string needle, string[] haystack)
+    static int FindString(string needle, string[] haystack)
+
     {
       int num = haystack.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -200,7 +201,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int FindValue(string needle, string[] haystack, ref string dest)
+    static int FindValue(string needle, string[] haystack, ref string dest)
+
     {
       char[] chArray = new char[1]{ ':' };
       int num = haystack.Length - 1;
@@ -392,7 +394,8 @@ namespace Hero_Designer
       return flag1;
     }
 
-    private static int MatchEnhancement(string iEnh)
+    static int MatchEnhancement(string iEnh)
+
     {
       int enhancementByName;
       if (iEnh.IndexOf("-I") > -1)
@@ -412,7 +415,8 @@ namespace Hero_Designer
       return enhancementByName;
     }
 
-    private static string PowerNameFix(string iStr)
+    static string PowerNameFix(string iStr)
+
     {
       iStr = clsToonX.FixSpelling(iStr);
       iStr = iStr.Replace("Gravity Emanation", "Gravitic Emanation");
@@ -421,7 +425,8 @@ namespace Hero_Designer
       return iStr;
     }
 
-    private static clsUniversalImport.SetPair ScanSetArray(
+    static clsUniversalImport.SetPair ScanSetArray(
+
       string iName,
       IPowerset[] sets)
     {
@@ -441,7 +446,8 @@ namespace Hero_Designer
       return new clsUniversalImport.SetPair(-1, -1);
     }
 
-    private static int SeekAn(string iStr, int start)
+    static int SeekAn(string iStr, int start)
+
     {
       if (start < 0)
         start = 0;
@@ -454,7 +460,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int SeekNumber(string iStr, int start)
+    static int SeekNumber(string iStr, int start)
+
     {
       if (start < 0)
         start = 0;
@@ -467,7 +474,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int SeekNumberSpecial(string iStr, int start)
+    static int SeekNumberSpecial(string iStr, int start)
+
     {
       if (start < 0)
         start = 0;
@@ -489,7 +497,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int SeekPowerAdvanced(string iString, int nAT)
+    static int SeekPowerAdvanced(string iString, int nAT)
+
     {
       int index1 = -1;
       int num = DatabaseAPI.Database.Power.Length - 1;
@@ -516,7 +525,8 @@ namespace Hero_Designer
       return index1;
     }
 
-    private static int SeekSep(string iStr, int start, bool readAhead = true)
+    static int SeekSep(string iStr, int start, bool readAhead = true)
+
     {
       if (start < 0)
         start = 0;
@@ -540,7 +550,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static int SeekSepSpecial(string iStr, int start)
+    static int SeekSepSpecial(string iStr, int start)
+
     {
       if (start < 0)
         start = 0;
@@ -553,7 +564,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private static string[] SmartBreak(string iStr, int nAT)
+    static string[] SmartBreak(string iStr, int nAT)
+
     {
       string[] strArray = new string[3]{ "", "", "" };
       int num1 = clsUniversalImport.SeekNumber(iStr, 0);
@@ -584,7 +596,8 @@ namespace Hero_Designer
       return strArray;
     }
 
-    private static int SmartFind(string valueName, string[] haystack, ref string dest)
+    static int SmartFind(string valueName, string[] haystack, ref string dest)
+
     {
       int num1 = haystack.Length - 1;
       for (int index1 = 0; index1 <= num1; ++index1)
@@ -615,7 +628,8 @@ namespace Hero_Designer
       return -1;
     }
 
-    private struct SetPair
+    struct SetPair
+
     {
       public readonly int Powerset;
       public readonly int Power;

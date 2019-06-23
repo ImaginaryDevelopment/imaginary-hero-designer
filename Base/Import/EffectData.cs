@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Import.EffectData
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using Base.Data_Classes;
 using System;
@@ -14,7 +9,8 @@ namespace Import
     public readonly int Index = -1;
     public int Nid = -1;
     public readonly bool IsValid = true;
-    private readonly string _csvString = string.Empty;
+    readonly string _csvString = string.Empty;
+
     public readonly IEffect Data;
     public bool IsNew;
     public bool IndexChanged;

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmPrint
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Document_Classes;
 using Base.Master_Classes;
@@ -22,37 +17,37 @@ namespace Hero_Designer
   public class frmPrint : Form
   {
     [AccessedThroughProperty("btnCancel")]
-    private Button _btnCancel;
-    [AccessedThroughProperty("btnLayout")]
-    private Button _btnLayout;
-    [AccessedThroughProperty("btnPrint")]
-    private Button _btnPrint;
-    [AccessedThroughProperty("btnPrinter")]
-    private Button _btnPrinter;
-    [AccessedThroughProperty("chkPrintHistory")]
-    private CheckBox _chkPrintHistory;
-    [AccessedThroughProperty("chkPrintHistoryEnh")]
-    private CheckBox _chkPrintHistoryEnh;
-    [AccessedThroughProperty("chkProfileEnh")]
-    private CheckBox _chkProfileEnh;
-    [AccessedThroughProperty("dlgSetup")]
-    private PageSetupDialog _dlgSetup;
-    [AccessedThroughProperty("GroupBox1")]
-    private GroupBox _GroupBox1;
-    [AccessedThroughProperty("GroupBox2")]
-    private GroupBox _GroupBox2;
-    [AccessedThroughProperty("lblPrinter")]
-    private Label _lblPrinter;
-    private Print _printer;
-    [AccessedThroughProperty("rbProfileLong")]
-    private RadioButton _rbProfileLong;
-    [AccessedThroughProperty("rbProfileNone")]
-    private RadioButton _rbProfileNone;
-    [AccessedThroughProperty("rbProfileShort")]
-    private RadioButton _rbProfileShort;
-    private IContainer components;
+    Button _btnCancel;
 
-    internal virtual Button btnCancel
+    [AccessedThroughProperty("btnLayout")]
+    Button _btnLayout;
+
+    [AccessedThroughProperty("btnPrint")]
+    Button _btnPrint;
+
+    [AccessedThroughProperty("btnPrinter")]
+    Button _btnPrinter;
+
+    [AccessedThroughProperty("chkPrintHistory")]
+    CheckBox _chkPrintHistory;
+        CheckBox chkPrintHistoryEnh;
+        CheckBox chkProfileEnh;
+        PageSetupDialog dlgSetup;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label lblPrinter;
+
+    Print _printer;
+        RadioButton rbProfileLong;
+        RadioButton rbProfileNone;
+
+    [AccessedThroughProperty("rbProfileShort")]
+    RadioButton _rbProfileShort;
+
+    IContainer components;
+
+
+    Button btnCancel
     {
       get
       {
@@ -70,7 +65,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnLayout
+    Button btnLayout
     {
       get
       {
@@ -88,7 +83,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrint
+    Button btnPrint
     {
       get
       {
@@ -106,7 +101,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnPrinter
+    Button btnPrinter
     {
       get
       {
@@ -124,7 +119,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkPrintHistory
+    CheckBox chkPrintHistory
     {
       get
       {
@@ -142,103 +137,15 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkPrintHistoryEnh
-    {
-      get
-      {
-        return this._chkPrintHistoryEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkPrintHistoryEnh = value;
-      }
-    }
 
-    internal virtual CheckBox chkProfileEnh
-    {
-      get
-      {
-        return this._chkProfileEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkProfileEnh = value;
-      }
-    }
 
-    internal virtual PageSetupDialog dlgSetup
-    {
-      get
-      {
-        return this._dlgSetup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgSetup = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox1
-    {
-      get
-      {
-        return this._GroupBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox1 = value;
-      }
-    }
 
-    internal virtual GroupBox GroupBox2
-    {
-      get
-      {
-        return this._GroupBox2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._GroupBox2 = value;
-      }
-    }
 
-    internal virtual Label lblPrinter
-    {
-      get
-      {
-        return this._lblPrinter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblPrinter = value;
-      }
-    }
 
-    internal virtual RadioButton rbProfileLong
-    {
-      get
-      {
-        return this._rbProfileLong;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbProfileLong = value;
-      }
-    }
 
-    internal virtual RadioButton rbProfileNone
-    {
-      get
-      {
-        return this._rbProfileNone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._rbProfileNone = value;
-      }
-    }
 
-    internal virtual RadioButton rbProfileShort
+    RadioButton rbProfileShort
     {
       get
       {
@@ -262,19 +169,22 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    void btnCancel_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void btnLayout_Click(object sender, EventArgs e)
+    void btnLayout_Click(object sender, EventArgs e)
+
     {
       this.dlgSetup.Document = this._printer.Document;
       int num = (int) this.dlgSetup.ShowDialog();
       this.lblPrinter.Text = this._printer.Document.PrinterSettings.PrinterName;
     }
 
-    private void btnPrint_Click(object sender, EventArgs e)
+    void btnPrint_Click(object sender, EventArgs e)
+
     {
       MidsContext.Config.LastPrinter = this._printer.Document.PrinterSettings.PrinterName;
       MidsContext.Config.PrintHistory = this.chkPrintHistory.Checked;
@@ -292,7 +202,8 @@ namespace Hero_Designer
       }
     }
 
-    private void btnPrinter_Click(object sender, EventArgs e)
+    void btnPrinter_Click(object sender, EventArgs e)
+
     {
       int num = (int) new PrintDialog()
       {
@@ -301,7 +212,8 @@ namespace Hero_Designer
       this.lblPrinter.Text = this._printer.Document.PrinterSettings.PrinterName;
     }
 
-    private void chkPrintHistory_CheckedChanged(object sender, EventArgs e)
+    void chkPrintHistory_CheckedChanged(object sender, EventArgs e)
+
     {
       this.chkPrintHistoryEnh.Enabled = this.chkPrintHistory.Checked;
     }
@@ -321,7 +233,8 @@ namespace Hero_Designer
       }
     }
 
-    private void frmPrint_Load(object sender, EventArgs e)
+    void frmPrint_Load(object sender, EventArgs e)
+
     {
       if (PrinterSettings.InstalledPrinters.Count < 1)
       {
@@ -371,7 +284,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmPrint));
       this.btnPrinter = new Button();
@@ -534,7 +448,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void rbProfileShort_CheckedChanged(object sender, EventArgs e)
+    void rbProfileShort_CheckedChanged(object sender, EventArgs e)
+
     {
       this.chkProfileEnh.Enabled = this.rbProfileShort.Checked;
     }

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmDPSCalc
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Display;
 using Base.Master_Classes;
@@ -22,65 +17,54 @@ namespace Hero_Designer
   public class frmDPSCalc : Form
   {
     [AccessedThroughProperty("chkSortByLevel")]
-    private CheckBox _chkSortByLevel;
-    [AccessedThroughProperty("chkDamageBuffs")]
-    private CheckBox _chkDamageBuffs;
-    [AccessedThroughProperty("chPower")]
-    private ColumnHeader _chPower;
-    [AccessedThroughProperty("chDPA")]
-    private ColumnHeader _chDPA;
-    [AccessedThroughProperty("chDamage")]
-    private ColumnHeader _chDamage;
-    [AccessedThroughProperty("chRecharge")]
-    private ColumnHeader _chRecharge;
-    [AccessedThroughProperty("chAnimation")]
-    private ColumnHeader _chAnimation;
-    [AccessedThroughProperty("chEndurance")]
-    private ColumnHeader _chEndurance;
-    [AccessedThroughProperty("chDamageBuff")]
-    private ColumnHeader _chDamageBuff;
-    [AccessedThroughProperty("chResistanceDebuff")]
-    private ColumnHeader _chResistanceDebuff;
-    [AccessedThroughProperty("chBuildID")]
-    private ColumnHeader _chBuildID;
+    CheckBox _chkSortByLevel;
+        CheckBox chkDamageBuffs;
+        ColumnHeader chPower;
+        ColumnHeader chDPA;
+        ColumnHeader chDamage;
+        ColumnHeader chRecharge;
+        ColumnHeader chAnimation;
+        ColumnHeader chEndurance;
+        ColumnHeader chDamageBuff;
+        ColumnHeader chResistanceDebuff;
+        ColumnHeader chBuildID;
+
     [AccessedThroughProperty("ibClear")]
-    private ImageButton _ibClear;
+    ImageButton _ibClear;
+
     [AccessedThroughProperty("ibClose")]
-    private ImageButton _ibClose;
+    ImageButton _ibClose;
+
     [AccessedThroughProperty("ibAutoMode")]
-    private ImageButton _ibAutoMode;
+    ImageButton _ibAutoMode;
+
     [AccessedThroughProperty("ibTopmost")]
-    private ImageButton _ibTopmost;
-    [AccessedThroughProperty("ilAttackChain")]
-    private ImageList _ilAttackChain;
-    [AccessedThroughProperty("lblHeader")]
-    private Label _lblHeader;
-    [AccessedThroughProperty("lblDPS")]
-    private Label _lblDPS;
-    [AccessedThroughProperty("lblEPS")]
-    private Label _lblEPS;
-    [AccessedThroughProperty("lblDPSNum")]
-    private Label _lblDPSNum;
-    [AccessedThroughProperty("lblEPSNum")]
-    private Label _lblEPSNum;
-    [AccessedThroughProperty("tbDPSOutput")]
-    private TextBox _tbDPSOutput;
+    ImageButton _ibTopmost;
+        ImageList ilAttackChain;
+        Label lblHeader;
+        Label lblDPS;
+        Label lblEPS;
+        Label lblDPSNum;
+        Label lblEPSNum;
+        TextBox tbDPSOutput;
+
     [AccessedThroughProperty("lvPower")]
-    private ListView _lvPower;
-    [AccessedThroughProperty("Panel1")]
-    private Panel _Panel1;
-    [AccessedThroughProperty("Panel2")]
-    private Panel _Panel2;
-    [AccessedThroughProperty("ToolTip1")]
-    private ToolTip _ToolTip1;
+    ListView _lvPower;
+        Panel Panel1;
+        Panel Panel2;
+        ToolTip ToolTip1;
+
     protected ExtendedBitmap bxRecipe;
-    private IContainer components;
+    IContainer components;
+
     protected bool Loading;
     protected frmMain myParent;
-    private frmDPSCalc.PowerList[] GlobalPowerList;
-    private float GlobalDamageBuff;
+    frmDPSCalc.PowerList[] GlobalPowerList;
 
-    internal virtual CheckBox chkSortByLevel
+    float GlobalDamageBuff;
+
+
+    CheckBox chkSortByLevel
     {
       get
       {
@@ -98,127 +82,17 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual CheckBox chkDamageBuffs
-    {
-      get
-      {
-        return this._chkDamageBuffs;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chkDamageBuffs = value;
-      }
-    }
 
-    internal virtual ColumnHeader chPower
-    {
-      get
-      {
-        return this._chPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chPower = value;
-      }
-    }
 
-    internal virtual ColumnHeader chDPA
-    {
-      get
-      {
-        return this._chDPA;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDPA = value;
-      }
-    }
 
-    internal virtual ColumnHeader chDamage
-    {
-      get
-      {
-        return this._chDamage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDamage = value;
-      }
-    }
 
-    internal virtual ColumnHeader chRecharge
-    {
-      get
-      {
-        return this._chRecharge;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chRecharge = value;
-      }
-    }
 
-    internal virtual ColumnHeader chAnimation
-    {
-      get
-      {
-        return this._chAnimation;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chAnimation = value;
-      }
-    }
 
-    internal virtual ColumnHeader chEndurance
-    {
-      get
-      {
-        return this._chEndurance;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chEndurance = value;
-      }
-    }
 
-    internal virtual ColumnHeader chDamageBuff
-    {
-      get
-      {
-        return this._chDamageBuff;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chDamageBuff = value;
-      }
-    }
 
-    internal virtual ColumnHeader chResistanceDebuff
-    {
-      get
-      {
-        return this._chResistanceDebuff;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chResistanceDebuff = value;
-      }
-    }
 
-    internal virtual ColumnHeader chBuildID
-    {
-      get
-      {
-        return this._chBuildID;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._chBuildID = value;
-      }
-    }
 
-    internal virtual ImageButton ibClear
+    ImageButton ibClear
     {
       get
       {
@@ -236,7 +110,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibClose
+    ImageButton ibClose
     {
       get
       {
@@ -254,7 +128,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibAutoMode
+    ImageButton ibAutoMode
     {
       get
       {
@@ -272,7 +146,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton ibTopmost
+    ImageButton ibTopmost
     {
       get
       {
@@ -290,91 +164,14 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageList ilAttackChain
-    {
-      get
-      {
-        return this._ilAttackChain;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ilAttackChain = value;
-      }
-    }
 
-    internal virtual Label lblHeader
-    {
-      get
-      {
-        return this._lblHeader;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblHeader = value;
-      }
-    }
 
-    internal virtual Label lblDPS
-    {
-      get
-      {
-        return this._lblDPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDPS = value;
-      }
-    }
 
-    internal virtual Label lblEPS
-    {
-      get
-      {
-        return this._lblEPS;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEPS = value;
-      }
-    }
 
-    internal virtual Label lblDPSNum
-    {
-      get
-      {
-        return this._lblDPSNum;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDPSNum = value;
-      }
-    }
 
-    internal virtual Label lblEPSNum
-    {
-      get
-      {
-        return this._lblEPSNum;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblEPSNum = value;
-      }
-    }
 
-    internal virtual TextBox tbDPSOutput
-    {
-      get
-      {
-        return this._tbDPSOutput;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tbDPSOutput = value;
-      }
-    }
 
-    internal virtual ListView lvPower
+    ListView lvPower
     {
       get
       {
@@ -400,41 +197,8 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Panel Panel1
-    {
-      get
-      {
-        return this._Panel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel1 = value;
-      }
-    }
 
-    internal virtual Panel Panel2
-    {
-      get
-      {
-        return this._Panel2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Panel2 = value;
-      }
-    }
 
-    internal virtual ToolTip ToolTip1
-    {
-      get
-      {
-        return this._ToolTip1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ToolTip1 = value;
-      }
-    }
 
     public frmDPSCalc(frmMain iParent)
     {
@@ -446,11 +210,13 @@ namespace Hero_Designer
       this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
     }
 
-    private void chkRecipe_CheckedChanged(object sender, EventArgs e)
+    void chkRecipe_CheckedChanged(object sender, EventArgs e)
+
     {
     }
 
-    private void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
+    void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
+
     {
       this.FillPowerList();
     }
@@ -470,7 +236,8 @@ namespace Hero_Designer
       }
     }
 
-    private void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
+    void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
+
     {
       if (this.chkSortByLevel.Checked)
       {
@@ -502,7 +269,8 @@ namespace Hero_Designer
       this.tbDPSOutput.Text = str1;
     }
 
-    private void FillPowerList()
+    void FillPowerList()
+
     {
       this.GlobalDamageBuff = 0.0f;
       this.lvPower.BeginUpdate();
@@ -544,13 +312,15 @@ namespace Hero_Designer
       this.lvPower.EndUpdate();
     }
 
-    private void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
+    void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.StoreLocation();
       this.myParent.FloatDPSCalc(false);
     }
 
-    private void frmDPSCalc_Load(object sender, EventArgs e)
+    void frmDPSCalc_Load(object sender, EventArgs e)
+
     {
       this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
       this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
@@ -561,7 +331,8 @@ namespace Hero_Designer
       this.Loading = false;
     }
 
-    private void ibClear_ButtonClicked()
+    void ibClear_ButtonClicked()
+
     {
       this.ibClear.Checked = true;
       for (int index = 1; index < this.lvPower.Items.Count; ++index)
@@ -580,12 +351,14 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void ibClose_ButtonClicked()
+    void ibClose_ButtonClicked()
+
     {
       this.Close();
     }
 
-    private void ibAutoMode_ButtonClicked()
+    void ibAutoMode_ButtonClicked()
+
     {
       if (this.ibAutoMode.TextOff == "Automagical")
       {
@@ -625,7 +398,8 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void ibTopmost_ButtonClicked()
+    void ibTopmost_ButtonClicked()
+
     {
       this.TopMost = this.ibTopmost.Checked;
       if (!this.TopMost)
@@ -633,7 +407,8 @@ namespace Hero_Designer
       this.BringToFront();
     }
 
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.GlobalPowerList = new frmDPSCalc.PowerList[0];
       this.components = (IContainer) new Container();
@@ -890,7 +665,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
+    void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
+
     {
       if (e.Item.Index == 0)
       {
@@ -906,7 +682,8 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
+    void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
+
     {
       if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
       {
@@ -941,12 +718,14 @@ namespace Hero_Designer
       this.CalculateDPS();
     }
 
-    private void lvPower_MouseEnter(object sender, EventArgs e)
+    void lvPower_MouseEnter(object sender, EventArgs e)
+
     {
       this.lvPower.Focus();
     }
 
-    private static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
+    static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
+
     {
       int num = tl.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -987,7 +766,8 @@ namespace Hero_Designer
       this.Width = rectangle.Width;
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1015,7 +795,8 @@ namespace Hero_Designer
       this.FillPowerList();
     }
 
-    private string[] GetDamageData(int powerLocation)
+    string[] GetDamageData(int powerLocation)
+
     {
       IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
       float damageValue = enhancedPower.FXGetDamageValue();
@@ -1055,12 +836,14 @@ namespace Hero_Designer
       return strArray;
     }
 
-    private void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
+    void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
+
     {
       this.lvPower.Sort();
     }
 
-    private frmDPSCalc.PowerList[] IncrementRecharge(
+    frmDPSCalc.PowerList[] IncrementRecharge(
+
       frmDPSCalc.PowerList[] List,
       float Time)
     {
@@ -1072,7 +855,8 @@ namespace Hero_Designer
       return List;
     }
 
-    private void CalculateDPS()
+    void CalculateDPS()
+
     {
       if (this.ibAutoMode.TextOff == "Automagical")
       {
@@ -1244,7 +1028,8 @@ namespace Hero_Designer
       }
     }
 
-    private struct CountingList
+    struct CountingList
+
     {
       public string Text;
       public int Count;

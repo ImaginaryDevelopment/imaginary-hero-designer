@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Base.Display.ExtendedBitmap
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Drawing;
@@ -13,12 +8,17 @@ namespace Base.Display
 {
   public class ExtendedBitmap : IDisposable, ICloneable
   {
-    private bool _isDisposed;
-    private Bitmap _bits;
-    private Graphics _surface;
+    bool _isDisposed;
+
+    Bitmap _bits;
+
+    Graphics _surface;
+
     protected ExtendedBitmap.PropertyCache Cache;
-    private bool _isNew;
-    private bool _isInitialised;
+    bool _isNew;
+
+    bool _isInitialised;
+
 
     public Graphics Graphics
     {
@@ -49,7 +49,8 @@ namespace Base.Display
       }
     }
 
-    private bool CanInitialise
+    bool CanInitialise
+
     {
       get
       {
@@ -85,7 +86,8 @@ namespace Base.Display
       }
     }
 
-    private Region Clip
+    Region Clip
+
     {
       get
       {
@@ -152,7 +154,8 @@ namespace Base.Display
       return obj;
     }
 
-    private bool Initialise()
+    bool Initialise()
+
     {
       bool flag;
       if (!this.CanInitialise)
@@ -177,7 +180,8 @@ namespace Base.Display
       return flag;
     }
 
-    private void Initialise(string fileName)
+    void Initialise(string fileName)
+
     {
       if (this._surface != null)
         this._surface.Dispose();
@@ -203,7 +207,8 @@ namespace Base.Display
       }
     }
 
-    private ExtendedBitmap()
+    ExtendedBitmap()
+
     {
       this.Cache = new ExtendedBitmap.PropertyCache();
       this._isNew = true;
@@ -238,7 +243,8 @@ namespace Base.Display
     {
       public PixelFormat BitDepth = PixelFormat.Format32bppArgb;
       public Size Size;
-      private Point _location;
+      Point _location;
+
       public Rectangle Bounds;
       public Region Clip;
       public Rectangle ClipRect;
@@ -259,7 +265,8 @@ namespace Base.Display
         this.ClipRect = ExtendedBitmap.PropertyCache.RectConvert(args.ClipBounds);
       }
 
-      private static Rectangle RectConvert(RectangleF iRect)
+      static Rectangle RectConvert(RectangleF iRect)
+
       {
         return new Rectangle((double) iRect.X <= 2147483648.0 ? ((double) iRect.X >= (double) int.MinValue ? Convert.ToInt32(iRect.X) : int.MinValue) : int.MaxValue, (double) iRect.Y <= 2147483648.0 ? ((double) iRect.Y >= (double) int.MinValue ? Convert.ToInt32(iRect.Y) : int.MinValue) : int.MaxValue, (double) iRect.Width <= 2147483648.0 ? ((double) iRect.Width >= (double) int.MinValue ? Convert.ToInt32(iRect.Width) : int.MinValue) : int.MaxValue, (double) iRect.Height <= 2147483648.0 ? ((double) iRect.Height >= (double) int.MinValue ? Convert.ToInt32(iRect.Height) : int.MinValue) : int.MaxValue);
       }

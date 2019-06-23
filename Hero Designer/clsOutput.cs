@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.clsOutput
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
@@ -14,13 +9,18 @@ namespace Hero_Designer
 {
   public class clsOutput
   {
-    private string[] BBWhite = new string[2]{ " ", "\t" };
+    string[] BBWhite = new string[2]{ " ", "\t" };
+
     public bool HTML = false;
     public int idFormat = MidsContext.Config.ExportTarget;
-    private int idScheme = MidsContext.Config.ExportScheme;
-    private bool LongExport = true;
-    private bool NoHTMLBr = false;
-    private bool UNB = false;
+    int idScheme = MidsContext.Config.ExportScheme;
+
+    bool LongExport = true;
+
+    bool NoHTMLBr = false;
+
+    bool UNB = false;
+
     public bool Plain;
 
     public clsOutput()
@@ -94,7 +94,8 @@ namespace Hero_Designer
       return str8 + this.LineBreak();
     }
 
-    private string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
+    string BuildPowerList(bool SkipInherent, bool SkipNormal, bool Kheldian)
+
     {
       string str1 = "";
       string str2 = this.WhiteSpace();
@@ -253,7 +254,8 @@ namespace Hero_Designer
       return str1;
     }
 
-    private string buildSetBonusListLong()
+    string buildSetBonusListLong()
+
     {
       string str1 = this.formatColor(this.formatUnderline(this.formatBold("Set Bonuses:")), ExportConfig.Element.Heading) + this.LineBreak();
       int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
@@ -305,7 +307,8 @@ namespace Hero_Designer
       return str1;
     }
 
-    private string BuildSetBonusListShort()
+    string BuildSetBonusListShort()
+
     {
       IEffect[] cumulativeSetBonuses = MidsContext.Character.CurrentBuild.GetCumulativeSetBonuses();
       Array.Sort<IEffect>(cumulativeSetBonuses);
@@ -321,12 +324,14 @@ namespace Hero_Designer
       return this.formatColor(this.formatUnderline(this.formatBold("Set Bonus Totals:")), ExportConfig.Element.Heading) + this.List(iText);
     }
 
-    private string formatBold(string iText)
+    string formatBold(string iText)
+
     {
       return MidsContext.Config.Export.FormatCode[this.idFormat].BoldOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].BoldOff;
     }
 
-    private string formatColor(string iText, ExportConfig.Element iElement)
+    string formatColor(string iText, ExportConfig.Element iElement)
+
     {
       string str1;
       if (this.Plain)
@@ -380,37 +385,44 @@ namespace Hero_Designer
       return str1;
     }
 
-    private string formatItalic(string iText)
+    string formatItalic(string iText)
+
     {
       return MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].ItalicOff;
     }
 
-    private string formatUnderline(string iText)
+    string formatUnderline(string iText)
+
     {
       return MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOn + iText + MidsContext.Config.Export.FormatCode[this.idFormat].UnderlineOff;
     }
 
-    private string LineBreak()
+    string LineBreak()
+
     {
       return !(this.HTML & !this.NoHTMLBr) ? "\r\n" : "<br />\r\n";
     }
 
-    private string List(string iText)
+    string List(string iText)
+
     {
       return !this.HTML ? (!this.Plain ? (!this.UNB ? "[list]" + iText + "[/list]" : "\r\n" + iText + "\r\n\r\n") : "\r\n" + iText + "\r\n\r\n") : "<ul>" + iText + "</ul>";
     }
 
-    private string ListItemOff()
+    string ListItemOff()
+
     {
       return !this.HTML ? "\r\n" : "</li>\r\n";
     }
 
-    private string ListItemOn()
+    string ListItemOn()
+
     {
       return !this.HTML ? (!this.Plain ? (!this.UNB ? "[*]" : "* ") : "") : "<li>";
     }
 
-    private string WhiteSpace()
+    string WhiteSpace()
+
     {
       return !this.HTML ? this.BBWhite[(int) MidsContext.Config.Export.FormatCode[this.idFormat].Space] : "&nbsp;&nbsp;";
     }

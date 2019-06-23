@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: I9Gfx
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using Base.Data_Classes;
 using Base.Display;
@@ -15,16 +10,25 @@ using System.Windows.Forms;
 public static class I9Gfx
 {
   public const int IconLarge = 30;
-  private const int IconSmall = 16;
+  const int IconSmall = 16;
+
   public const string ImageExtension = ".png";
-  private const string FileOverlayClass = "Class.png";
-  private const string GfxPath = "Images\\";
-  private const string PathClass = "Classes\\";
-  private const string PathOverlay = "Overlay\\";
-  private const string PathEnh = "Enhancements\\";
-  private const string PathSetType = "Sets\\";
-  private const string PathOriginAT = "OriginAT\\";
-  private const string PathPowersets = "Powersets\\";
+  const string FileOverlayClass = "Class.png";
+
+  const string GfxPath = "Images\\";
+
+  const string PathClass = "Classes\\";
+
+  const string PathOverlay = "Overlay\\";
+
+  const string PathEnh = "Enhancements\\";
+
+  const string PathSetType = "Sets\\";
+
+  const string PathOriginAT = "OriginAT\\";
+
+  const string PathPowersets = "Powersets\\";
+
   public static int OriginIndex;
   public static Bitmap[] Enhancements;
   public static ExtendedBitmap Borders;
@@ -441,7 +445,8 @@ label_16:
     return new Rectangle(I9Gfx.OriginIndex * 30, (int) iGrade * 30, 30, 30);
   }
 
-  private static RectangleF GetOverlayRectF(Origin.Grade iGrade)
+  static RectangleF GetOverlayRectF(Origin.Grade iGrade)
+
   {
     Rectangle overlayRect = I9Gfx.GetOverlayRect(iGrade);
     return new RectangleF((float) overlayRect.X, (float) overlayRect.Y, (float) overlayRect.Width, (float) overlayRect.Height);
@@ -452,7 +457,8 @@ label_16:
     return new Rectangle(index * 30, 0, 30, 30);
   }
 
-  private static RectangleF GetImageRectF(int index)
+  static RectangleF GetImageRectF(int index)
+
   {
     Rectangle imageRect = I9Gfx.GetImageRect(index);
     return new RectangleF((float) imageRect.X, (float) imageRect.Y, (float) imageRect.Width, (float) imageRect.Height);

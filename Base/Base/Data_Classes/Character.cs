@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Base.Data_Classes.Character
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using Base.Display;
 using Base.Master_Classes;
@@ -15,8 +10,10 @@ namespace Base.Data_Classes
 {
   public class Character
   {
-    private Archetype _archetype;
-    private bool? _completeCache;
+    Archetype _archetype;
+
+    bool? _completeCache;
+
 
     public string Name { get; set; }
 
@@ -57,7 +54,8 @@ namespace Base.Data_Classes
 
     public int RequestedLevel { get; set; }
 
-    private Build[] Builds { get; set; }
+    Build[] Builds { get; set; }
+
 
     public Build CurrentBuild
     {
@@ -136,7 +134,8 @@ namespace Base.Data_Classes
       }
     }
 
-    private string PerfectionType { get; set; }
+    string PerfectionType { get; set; }
+
 
     public bool AcceleratedActive { get; private set; }
 
@@ -397,7 +396,8 @@ namespace Base.Data_Classes
       this.RequestedLevel = -1;
     }
 
-    private void RefreshActiveSpecial()
+    void RefreshActiveSpecial()
+
     {
       this.ActiveComboLevel = 0;
       this.AcceleratedActive = false;
@@ -455,7 +455,8 @@ namespace Base.Data_Classes
       return false;
     }
 
-    private void CheckAncillaryPowerSet()
+    void CheckAncillaryPowerSet()
+
     {
       IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
       if (powersetIndexes.Length == 0)
@@ -477,7 +478,8 @@ namespace Base.Data_Classes
       }
     }
 
-    private IEnumerable<int> PoolGetAvailable(int iPool)
+    IEnumerable<int> PoolGetAvailable(int iPool)
+
     {
       IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
       List<int> intList = new List<int>();
@@ -646,7 +648,8 @@ namespace Base.Data_Classes
       return -1;
     }
 
-    private int GetFirstAvailablePowerLevel(int iLevel = 0)
+    int GetFirstAvailablePowerLevel(int iLevel = 0)
+
     {
       for (int index = 0; index <= this.CurrentBuild.LastPower; ++index)
       {
@@ -705,13 +708,15 @@ namespace Base.Data_Classes
       return numArray;
     }
 
-    private static string[] BreakByNewLine(string iString)
+    static string[] BreakByNewLine(string iString)
+
     {
       iString = iString.Replace('\n', '^');
       return iString.Split('^');
     }
 
-    private static string[] BreakByBracket(string iString)
+    static string[] BreakByBracket(string iString)
+
     {
       string[] strArray1 = new string[2]
       {
@@ -734,7 +739,8 @@ namespace Base.Data_Classes
       return strArray2;
     }
 
-    private static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
+    static PopUp.Section PopSetBonusListing(int sIdx, PowerEntry power)
+
     {
       PopUp.Section section1 = new PopUp.Section();
       section1.Add("Set Bonus:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
@@ -926,7 +932,8 @@ namespace Base.Data_Classes
       return popupData2;
     }
 
-    private static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
+    static PopUp.Section PopSetEnhList(int sIdx, PowerEntry power)
+
     {
       PopUp.Section section1 = new PopUp.Section();
       PopUp.Section section2;
@@ -1007,7 +1014,8 @@ namespace Base.Data_Classes
       this.PoolLocked[4] = this.PowersetUsed(this.Powersets[7]);
     }
 
-    private int GetEarliestPowerIndex(int iSet)
+    int GetEarliestPowerIndex(int iSet)
+
     {
       for (int index = 0; index <= this.CurrentBuild.LastPower; ++index)
       {
@@ -1017,7 +1025,8 @@ namespace Base.Data_Classes
       return this.CurrentBuild.LastPower + 1;
     }
 
-    private bool PoolUnique(Enums.PowersetType pool)
+    bool PoolUnique(Enums.PowersetType pool)
+
     {
       bool flag = true;
       for (int index = 3; (Enums.PowersetType) index < pool; ++index)
@@ -1028,7 +1037,8 @@ namespace Base.Data_Classes
       return flag;
     }
 
-    private bool PowersetUsed(IPowerset powerset)
+    bool PowersetUsed(IPowerset powerset)
+
     {
       bool flag;
       if (powerset == null)

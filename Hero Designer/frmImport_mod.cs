@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmImport_mod
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -20,34 +15,30 @@ namespace Hero_Designer
   public class frmImport_mod : Form
   {
     [AccessedThroughProperty("btnAttribIndex")]
-    private Button _btnAttribIndex;
-    [AccessedThroughProperty("btnAttribLoad")]
-    private Button _btnAttribLoad;
-    [AccessedThroughProperty("btnAttribTable")]
-    private Button _btnAttribTable;
-    [AccessedThroughProperty("Button1")]
-    private Button _Button1;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("Label1")]
-    private Label _Label1;
-    [AccessedThroughProperty("Label3")]
-    private Label _Label3;
-    [AccessedThroughProperty("Label4")]
-    private Label _Label4;
-    [AccessedThroughProperty("lblAttribDate")]
-    private Label _lblAttribDate;
-    [AccessedThroughProperty("lblAttribIndex")]
-    private Label _lblAttribIndex;
-    [AccessedThroughProperty("lblAttribTableCount")]
-    private Label _lblAttribTableCount;
-    [AccessedThroughProperty("lblAttribTables")]
-    private Label _lblAttribTables;
-    [AccessedThroughProperty("udAttribRevision")]
-    private NumericUpDown _udAttribRevision;
-    private IContainer components;
+    Button _btnAttribIndex;
 
-    internal virtual Button btnAttribIndex
+    [AccessedThroughProperty("btnAttribLoad")]
+    Button _btnAttribLoad;
+
+    [AccessedThroughProperty("btnAttribTable")]
+    Button _btnAttribTable;
+
+    [AccessedThroughProperty("Button1")]
+    Button _Button1;
+        OpenFileDialog dlgBrowse;
+        Label Label1;
+        Label Label3;
+        Label Label4;
+        Label lblAttribDate;
+        Label lblAttribIndex;
+        Label lblAttribTableCount;
+        Label lblAttribTables;
+        NumericUpDown udAttribRevision;
+
+    IContainer components;
+
+
+    Button btnAttribIndex
     {
       get
       {
@@ -65,7 +56,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnAttribLoad
+    Button btnAttribLoad
     {
       get
       {
@@ -83,7 +74,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnAttribTable
+    Button btnAttribTable
     {
       get
       {
@@ -101,7 +92,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button Button1
+    Button Button1
     {
       get
       {
@@ -119,113 +110,14 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    internal virtual Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
 
-    internal virtual Label Label3
-    {
-      get
-      {
-        return this._Label3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label3 = value;
-      }
-    }
 
-    internal virtual Label Label4
-    {
-      get
-      {
-        return this._Label4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label4 = value;
-      }
-    }
 
-    internal virtual Label lblAttribDate
-    {
-      get
-      {
-        return this._lblAttribDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribDate = value;
-      }
-    }
 
-    internal virtual Label lblAttribIndex
-    {
-      get
-      {
-        return this._lblAttribIndex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribIndex = value;
-      }
-    }
 
-    internal virtual Label lblAttribTableCount
-    {
-      get
-      {
-        return this._lblAttribTableCount;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribTableCount = value;
-      }
-    }
 
-    internal virtual Label lblAttribTables
-    {
-      get
-      {
-        return this._lblAttribTables;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblAttribTables = value;
-      }
-    }
 
-    internal virtual NumericUpDown udAttribRevision
-    {
-      get
-      {
-        return this._udAttribRevision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udAttribRevision = value;
-      }
-    }
 
     public frmImport_mod()
     {
@@ -233,7 +125,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnAttribIndex_Click(object sender, EventArgs e)
+    void btnAttribIndex_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.lblAttribIndex.Text;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) != DialogResult.OK)
@@ -241,7 +134,8 @@ namespace Hero_Designer
       this.lblAttribIndex.Text = this.dlgBrowse.FileName;
     }
 
-    private void btnAttribLoad_Click(object sender, EventArgs e)
+    void btnAttribLoad_Click(object sender, EventArgs e)
+
     {
       if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
       {
@@ -273,7 +167,8 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnAttribTable_Click(object sender, EventArgs e)
+    void btnAttribTable_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.lblAttribTables.Text;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) != DialogResult.OK)
@@ -281,12 +176,14 @@ namespace Hero_Designer
       this.lblAttribTables.Text = this.dlgBrowse.FileName;
     }
 
-    private void Button1_Click(object sender, EventArgs e)
+    void Button1_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void DisplayInfo()
+    void DisplayInfo()
+
     {
       this.lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
       this.lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
@@ -310,13 +207,15 @@ namespace Hero_Designer
       }
     }
 
-    private void frmImport_mod_Load(object sender, EventArgs e)
+    void frmImport_mod_Load(object sender, EventArgs e)
+
     {
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_mod));
       this.lblAttribTableCount = new Label();

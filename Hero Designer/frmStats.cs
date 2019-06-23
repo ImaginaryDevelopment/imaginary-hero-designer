@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmStats
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Data_Classes;
 using Base.Master_Classes;
@@ -21,40 +16,41 @@ namespace Hero_Designer
   public class frmStats : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private ImageButton _btnClose;
+    ImageButton _btnClose;
+
     [AccessedThroughProperty("cbSet")]
-    private ComboBox _cbSet;
+    ComboBox _cbSet;
+
     [AccessedThroughProperty("cbStyle")]
-    private ComboBox _cbStyle;
+    ComboBox _cbStyle;
+
     [AccessedThroughProperty("cbValues")]
-    private ComboBox _cbValues;
+    ComboBox _cbValues;
+
     [AccessedThroughProperty("chkOnTop")]
-    private ImageButton _chkOnTop;
-    [AccessedThroughProperty("Graph")]
-    private ctlMultiGraph _Graph;
-    [AccessedThroughProperty("lblKey1")]
-    private Label _lblKey1;
-    [AccessedThroughProperty("lblKey2")]
-    private Label _lblKey2;
-    [AccessedThroughProperty("lblKeyColor1")]
-    private Label _lblKeyColor1;
-    [AccessedThroughProperty("lblKeyColor2")]
-    private Label _lblKeyColor2;
-    [AccessedThroughProperty("lblScale")]
-    private Label _lblScale;
+    ImageButton _chkOnTop;
+        ctlMultiGraph Graph;
+        Label lblKey1;
+        Label lblKey2;
+        Label lblKeyColor1;
+        Label lblKeyColor2;
+        Label lblScale;
+
     [AccessedThroughProperty("tbScaleX")]
-    private TrackBar _tbScaleX;
-    [AccessedThroughProperty("tTip")]
-    private ToolTip _tTip;
+    TrackBar _tbScaleX;
+        ToolTip tTip;
+
     protected IPower[] BaseArray;
     protected bool BaseOverride;
-    private IContainer components;
+    IContainer components;
+
     protected IPower[] EnhArray;
     protected float GraphMax;
-    private bool Loaded;
+    bool Loaded;
+
     protected frmMain myParent;
 
-    internal virtual ImageButton btnClose
+    ImageButton btnClose
     {
       get
       {
@@ -72,7 +68,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbSet
+    ComboBox cbSet
     {
       get
       {
@@ -90,7 +86,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbStyle
+    ComboBox cbStyle
     {
       get
       {
@@ -108,7 +104,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ComboBox cbValues
+    ComboBox cbValues
     {
       get
       {
@@ -126,7 +122,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ImageButton chkOnTop
+    ImageButton chkOnTop
     {
       get
       {
@@ -144,79 +140,13 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ctlMultiGraph Graph
-    {
-      get
-      {
-        return this._Graph;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Graph = value;
-      }
-    }
 
-    internal virtual Label lblKey1
-    {
-      get
-      {
-        return this._lblKey1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKey1 = value;
-      }
-    }
 
-    internal virtual Label lblKey2
-    {
-      get
-      {
-        return this._lblKey2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKey2 = value;
-      }
-    }
 
-    internal virtual Label lblKeyColor1
-    {
-      get
-      {
-        return this._lblKeyColor1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor1 = value;
-      }
-    }
 
-    internal virtual Label lblKeyColor2
-    {
-      get
-      {
-        return this._lblKeyColor2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblKeyColor2 = value;
-      }
-    }
 
-    internal virtual Label lblScale
-    {
-      get
-      {
-        return this._lblScale;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblScale = value;
-      }
-    }
 
-    internal virtual TrackBar tbScaleX
+    TrackBar tbScaleX
     {
       get
       {
@@ -234,17 +164,6 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ToolTip tTip
-    {
-      get
-      {
-        return this._tTip;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._tTip = value;
-      }
-    }
 
     public frmStats(ref frmMain iParent)
     {
@@ -262,12 +181,14 @@ namespace Hero_Designer
       this.myParent = iParent;
     }
 
-    private void btnClose_Click()
+    void btnClose_Click()
+
     {
       this.Close();
     }
 
-    private void cbSet_SelectedIndexChanged(object sender, EventArgs e)
+    void cbSet_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -275,7 +196,8 @@ namespace Hero_Designer
       this.DisplayGraph();
     }
 
-    private void cbStyle_SelectedIndexChanged(object sender, EventArgs e)
+    void cbStyle_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
@@ -283,14 +205,16 @@ namespace Hero_Designer
       this.DisplayGraph();
     }
 
-    private void cbValues_SelectedIndexChanged(object sender, EventArgs e)
+    void cbValues_SelectedIndexChanged(object sender, EventArgs e)
+
     {
       if (!this.Loaded)
         return;
       this.DisplayGraph();
     }
 
-    private void chkOnTop_CheckedChanged()
+    void chkOnTop_CheckedChanged()
+
     {
       this.TopMost = this.chkOnTop.Checked;
     }
@@ -377,7 +301,8 @@ namespace Hero_Designer
       base.Dispose(disposing);
     }
 
-    private void FillComboBoxes()
+    void FillComboBoxes()
+
     {
       this.NewSets();
       this.cbValues.BeginUpdate();
@@ -414,12 +339,14 @@ namespace Hero_Designer
       this.cbStyle.EndUpdate();
     }
 
-    private void frmStats_FormClosed(object sender, FormClosedEventArgs e)
+    void frmStats_FormClosed(object sender, FormClosedEventArgs e)
+
     {
       this.myParent.FloatStatGraph(false);
     }
 
-    private void frmStats_Load(object sender, EventArgs e)
+    void frmStats_Load(object sender, EventArgs e)
+
     {
       this.FillComboBoxes();
       this.Loaded = true;
@@ -428,12 +355,14 @@ namespace Hero_Designer
       this.UpdateData(false);
     }
 
-    private void frmStats_Move(object sender, EventArgs e)
+    void frmStats_Move(object sender, EventArgs e)
+
     {
       this.StoreLocation();
     }
 
-    private void frmStats_Resize(object sender, EventArgs e)
+    void frmStats_Resize(object sender, EventArgs e)
+
     {
       if (this.Graph != null)
       {
@@ -467,7 +396,8 @@ namespace Hero_Designer
       this.StoreLocation();
     }
 
-    private void frmStats_VisibleChanged(object sender, EventArgs e)
+    void frmStats_VisibleChanged(object sender, EventArgs e)
+
     {
     }
 
@@ -1329,7 +1259,8 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       this.components = (IContainer) new Container();
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmStats));
@@ -1524,7 +1455,8 @@ namespace Hero_Designer
       this.PerformLayout();
     }
 
-    private void NewSets()
+    void NewSets()
+
     {
       this.cbSet.BeginUpdate();
       ComboBox.ObjectCollection items = this.cbSet.Items;
@@ -1638,7 +1570,8 @@ namespace Hero_Designer
       this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
     }
 
-    private void StoreLocation()
+    void StoreLocation()
+
     {
       if (!MainModule.MidsController.IsAppInitialized)
         return;
@@ -1648,7 +1581,8 @@ namespace Hero_Designer
       MainModule.MidsController.SzFrmStats.Height = this.Height;
     }
 
-    private void tbScaleX_Scroll(object sender, EventArgs e)
+    void tbScaleX_Scroll(object sender, EventArgs e)
+
     {
       this.Graph.ScaleIndex = this.tbScaleX.Value;
       this.SetScaleLabel();

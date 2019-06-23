@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.MainModule
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.Data_Classes;
 using Base.IO_Classes;
@@ -21,7 +16,8 @@ namespace Hero_Designer
     public class MidsController
     {
       public static float HeroDesignerVersion = 2.23f;
-      private static bool _appInitialized = false;
+      static bool _appInitialized = false;
+
       public static Rectangle SzFrmCompare = new Rectangle();
       public static Rectangle SzFrmData = new Rectangle();
       public static Rectangle SzFrmRecipe = new Rectangle();

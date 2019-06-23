@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: ExportConfig
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Drawing;
@@ -67,7 +62,8 @@ public class ExportConfig
       this.FormatCode[index2].Assign(formatCodesArray[index2]);
   }
 
-  private static bool GrabString(out string dest, ref StreamReader reader)
+  static bool GrabString(out string dest, ref StreamReader reader)
+
   {
     dest = reader.ReadLine();
     return dest == "#CODE#" | dest == "#END#";
@@ -389,7 +385,8 @@ public class ExportConfig
 
   public struct FormatCodes
   {
-    private const string Placeholder = "%VAL%";
+    const string Placeholder = "%VAL%";
+
     public string Name;
     public string Notes;
     public string ColourOn;

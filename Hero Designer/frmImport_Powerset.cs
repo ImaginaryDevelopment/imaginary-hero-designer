@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmImport_Powerset
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Base.IO_Classes;
 using Import;
@@ -22,47 +17,43 @@ namespace Hero_Designer
   public class frmImport_Powerset : Form
   {
     [AccessedThroughProperty("btnCheckAll")]
-    private Button _btnCheckAll;
-    [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
-    [AccessedThroughProperty("btnFile")]
-    private Button _btnFile;
-    [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
-    [AccessedThroughProperty("btnUncheckAll")]
-    private Button _btnUncheckAll;
-    [AccessedThroughProperty("ColumnHeader1")]
-    private ColumnHeader _ColumnHeader1;
-    [AccessedThroughProperty("ColumnHeader2")]
-    private ColumnHeader _ColumnHeader2;
-    [AccessedThroughProperty("ColumnHeader3")]
-    private ColumnHeader _ColumnHeader3;
-    [AccessedThroughProperty("ColumnHeader4")]
-    private ColumnHeader _ColumnHeader4;
-    [AccessedThroughProperty("ColumnHeader5")]
-    private ColumnHeader _ColumnHeader5;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("Label6")]
-    private Label _Label6;
-    [AccessedThroughProperty("Label8")]
-    private Label _Label8;
-    [AccessedThroughProperty("lblCount")]
-    private Label _lblCount;
-    [AccessedThroughProperty("lblDate")]
-    private Label _lblDate;
-    [AccessedThroughProperty("lblFile")]
-    private Label _lblFile;
-    [AccessedThroughProperty("lstImport")]
-    private ListView _lstImport;
-    [AccessedThroughProperty("udRevision")]
-    private NumericUpDown _udRevision;
-    private frmBusy bFrm;
-    private IContainer components;
-    private string FullFileName;
-    private PowersetData[] ImportBuffer;
+    Button _btnCheckAll;
 
-    internal virtual Button btnCheckAll
+    [AccessedThroughProperty("btnClose")]
+    Button _btnClose;
+
+    [AccessedThroughProperty("btnFile")]
+    Button _btnFile;
+
+    [AccessedThroughProperty("btnImport")]
+    Button _btnImport;
+
+    [AccessedThroughProperty("btnUncheckAll")]
+    Button _btnUncheckAll;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        OpenFileDialog dlgBrowse;
+        Label Label6;
+        Label Label8;
+        Label lblCount;
+        Label lblDate;
+        Label lblFile;
+        ListView lstImport;
+        NumericUpDown udRevision;
+
+    frmBusy bFrm;
+
+    IContainer components;
+
+    string FullFileName;
+
+    PowersetData[] ImportBuffer;
+
+
+    Button btnCheckAll
     {
       get
       {
@@ -80,7 +71,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnClose
+    Button btnClose
     {
       get
       {
@@ -98,7 +89,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFile
+    Button btnFile
     {
       get
       {
@@ -116,7 +107,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -134,7 +125,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnUncheckAll
+    Button btnUncheckAll
     {
       get
       {
@@ -152,161 +143,18 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual ColumnHeader ColumnHeader1
-    {
-      get
-      {
-        return this._ColumnHeader1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader1 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader2
-    {
-      get
-      {
-        return this._ColumnHeader2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader2 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader3
-    {
-      get
-      {
-        return this._ColumnHeader3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader3 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader4
-    {
-      get
-      {
-        return this._ColumnHeader4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader4 = value;
-      }
-    }
 
-    internal virtual ColumnHeader ColumnHeader5
-    {
-      get
-      {
-        return this._ColumnHeader5;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._ColumnHeader5 = value;
-      }
-    }
 
-    internal virtual OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    internal virtual Label Label6
-    {
-      get
-      {
-        return this._Label6;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label6 = value;
-      }
-    }
 
-    internal virtual Label Label8
-    {
-      get
-      {
-        return this._Label8;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label8 = value;
-      }
-    }
 
-    internal virtual Label lblCount
-    {
-      get
-      {
-        return this._lblCount;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblCount = value;
-      }
-    }
 
-    internal virtual Label lblDate
-    {
-      get
-      {
-        return this._lblDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblDate = value;
-      }
-    }
 
-    internal virtual Label lblFile
-    {
-      get
-      {
-        return this._lblFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblFile = value;
-      }
-    }
 
-    internal virtual ListView lstImport
-    {
-      get
-      {
-        return this._lstImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lstImport = value;
-      }
-    }
 
-    internal virtual NumericUpDown udRevision
-    {
-      get
-      {
-        return this._udRevision;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._udRevision = value;
-      }
-    }
 
     public frmImport_Powerset()
     {
@@ -316,7 +164,8 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnCheckAll_Click(object sender, EventArgs e)
+    void btnCheckAll_Click(object sender, EventArgs e)
+
     {
       this.lstImport.BeginUpdate();
       int num = this.lstImport.Items.Count - 1;
@@ -325,12 +174,14 @@ namespace Hero_Designer
       this.lstImport.EndUpdate();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void btnFile_Click(object sender, EventArgs e)
+    void btnFile_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.FullFileName;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -343,12 +194,14 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       this.ProcessImport();
     }
 
-    private void btnUncheckAll_Click(object sender, EventArgs e)
+    void btnUncheckAll_Click(object sender, EventArgs e)
+
     {
       this.lstImport.BeginUpdate();
       int num = this.lstImport.Items.Count - 1;
@@ -357,7 +210,8 @@ namespace Hero_Designer
       this.lstImport.EndUpdate();
     }
 
-    private void BusyHide()
+    void BusyHide()
+
     {
       if (this.bFrm == null)
         return;
@@ -365,7 +219,8 @@ namespace Hero_Designer
       this.bFrm = (frmBusy) null;
     }
 
-    private void BusyMsg(string sMessage)
+    void BusyMsg(string sMessage)
+
     {
       if (this.bFrm == null)
       {
@@ -398,7 +253,8 @@ namespace Hero_Designer
       }
     }
 
-    private void FillListView()
+    void FillListView()
+
     {
       string[] items = new string[5];
       this.lstImport.BeginUpdate();
@@ -432,14 +288,16 @@ namespace Hero_Designer
       this.lstImport.EndUpdate();
     }
 
-    private void frmImport_Powerset_Load(object sender, EventArgs e)
+    void frmImport_Powerset_Load(object sender, EventArgs e)
+
     {
       this.FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_Powerset));
       this.Label8 = new Label();
@@ -608,7 +466,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private bool ParseClasses(string iFileName)
+    bool ParseClasses(string iFileName)
+
     {
       int num1 = 0;
       StreamReader iStream;
@@ -668,7 +527,8 @@ namespace Hero_Designer
       return true;
     }
 
-    private bool ProcessImport()
+    bool ProcessImport()
+
     {
       bool flag = false;
       int num1 = 0;

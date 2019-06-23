@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Zlib
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Diagnostics;
@@ -13,17 +8,26 @@ using System.Windows.Forms;
 
 public class Zlib
 {
-  private const float Version = 1f;
-  private const string PackHeaderToken = "MHDPackZ";
-  private const int ErrorNone = 0;
-  private const int ErrorStream = -2;
-  private const int ErrorData = -3;
-  private const int ErrorOutOfMem = -4;
-  private const int ErrorBuffer = -5;
-  private ZStatus _sFrm;
+  const float Version = 1f;
+
+  const string PackHeaderToken = "MHDPackZ";
+
+  const int ErrorNone = 0;
+
+  const int ErrorStream = -2;
+
+  const int ErrorData = -3;
+
+  const int ErrorOutOfMem = -4;
+
+  const int ErrorBuffer = -5;
+
+  ZStatus _sFrm;
+
     
   [DllImport("ZLIB1.DLL", EntryPoint = "compress2", CharSet = CharSet.Ansi, SetLastError = false)]
-  private static extern int Compress(
+  static extern int Compress(
+
     ref byte destBytes,
     ref int destLength,
     ref byte srcBytes,
@@ -31,7 +35,8 @@ public class Zlib
     int compressionLevel);
 
   [DllImport("ZLIB1.DLL", EntryPoint = "uncompress", CharSet = CharSet.Ansi, SetLastError = false)]
-  private static extern int Uncompress(
+  static extern int Uncompress(
+
     ref byte destBytes,
     ref int destLength,
     ref byte srceBytes,
@@ -88,7 +93,8 @@ public class Zlib
     return packHeader.PackContents;
   }
 
-  private static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
+  static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
+
   {
     int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
     Zlib.FileHeader fileHeader = new Zlib.FileHeader();
@@ -133,7 +139,8 @@ public class Zlib
     return flag;
   }
 
-  private bool UncompressFile(string iRoot, BinaryReader reader)
+  bool UncompressFile(string iRoot, BinaryReader reader)
+
   {
     Zlib.FileHeader fileHeader = new Zlib.FileHeader();
     string str = reader.ReadString();
@@ -453,7 +460,8 @@ label_8:
     return flag;
   }
 
-  private enum ECompressionLevel
+  enum ECompressionLevel
+
   {
     DefaultCompress = -1,
     None = 0,
@@ -461,7 +469,8 @@ label_8:
     Best = 9,
   }
 
-  private struct PackHeader
+  struct PackHeader
+
   {
     public float PackVersion;
     public int PackContents;
@@ -471,7 +480,8 @@ label_8:
     public int DateY;
   }
 
-  private struct FileHeader
+  struct FileHeader
+
   {
     public string FileName;
     public int DecompressedSize;

@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Hero_Designer.frmImport_SalvageReq
-// Assembly: Hero Designer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 971EB14D-7E2B-4ADC-89DF-A9C8225AA28C
-// Assembly location: C:\Users\Xbass\Desktop\Hero Designer.exe
 
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -20,20 +15,24 @@ namespace Hero_Designer
   public class frmImport_SalvageReq : Form
   {
     [AccessedThroughProperty("btnClose")]
-    private Button _btnClose;
-    [AccessedThroughProperty("btnFile")]
-    private Button _btnFile;
-    [AccessedThroughProperty("btnImport")]
-    private Button _btnImport;
-    [AccessedThroughProperty("dlgBrowse")]
-    private OpenFileDialog _dlgBrowse;
-    [AccessedThroughProperty("lblFile")]
-    private Label _lblFile;
-    private frmBusy bFrm;
-    private IContainer components;
-    private string FullFileName;
+    Button _btnClose;
 
-    internal virtual Button btnClose
+    [AccessedThroughProperty("btnFile")]
+    Button _btnFile;
+
+    [AccessedThroughProperty("btnImport")]
+    Button _btnImport;
+        OpenFileDialog dlgBrowse;
+        Label lblFile;
+
+    frmBusy bFrm;
+
+    IContainer components;
+
+    string FullFileName;
+
+
+    Button btnClose
     {
       get
       {
@@ -51,7 +50,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnFile
+    Button btnFile
     {
       get
       {
@@ -69,7 +68,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual Button btnImport
+    Button btnImport
     {
       get
       {
@@ -87,29 +86,7 @@ namespace Hero_Designer
       }
     }
 
-    internal virtual OpenFileDialog dlgBrowse
-    {
-      get
-      {
-        return this._dlgBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._dlgBrowse = value;
-      }
-    }
 
-    internal virtual Label lblFile
-    {
-      get
-      {
-        return this._lblFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._lblFile = value;
-      }
-    }
 
     public frmImport_SalvageReq()
     {
@@ -118,12 +95,14 @@ namespace Hero_Designer
       this.InitializeComponent();
     }
 
-    private void btnClose_Click(object sender, EventArgs e)
+    void btnClose_Click(object sender, EventArgs e)
+
     {
       this.Close();
     }
 
-    private void btnFile_Click(object sender, EventArgs e)
+    void btnFile_Click(object sender, EventArgs e)
+
     {
       this.dlgBrowse.FileName = this.FullFileName;
       if (this.dlgBrowse.ShowDialog((IWin32Window) this) == DialogResult.OK)
@@ -132,14 +111,16 @@ namespace Hero_Designer
       this.DisplayInfo();
     }
 
-    private void btnImport_Click(object sender, EventArgs e)
+    void btnImport_Click(object sender, EventArgs e)
+
     {
       this.ParseClasses(this.FullFileName);
       this.BusyHide();
       this.DisplayInfo();
     }
 
-    private void BusyHide()
+    void BusyHide()
+
     {
       if (this.bFrm == null)
         return;
@@ -147,7 +128,8 @@ namespace Hero_Designer
       this.bFrm = (frmBusy) null;
     }
 
-    private void BusyMsg(string sMessage)
+    void BusyMsg(string sMessage)
+
     {
       if (this.bFrm == null)
       {
@@ -177,14 +159,16 @@ namespace Hero_Designer
       }
     }
 
-    private void frmImport_SalvageReq_Load(object sender, EventArgs e)
+    void frmImport_SalvageReq_Load(object sender, EventArgs e)
+
     {
       this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets", "baserecipes");
       this.DisplayInfo();
     }
 
     [DebuggerStepThrough]
-    private void InitializeComponent()
+    void InitializeComponent()
+
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_SalvageReq));
       this.btnClose = new Button();
@@ -245,7 +229,8 @@ namespace Hero_Designer
       this.ResumeLayout(false);
     }
 
-    private bool ParseClasses(string iFileName)
+    bool ParseClasses(string iFileName)
+
     {
       int num1 = 0;
       StreamReader iStream1;

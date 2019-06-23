@@ -1,8 +1,3 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Base.Display.PopUp
-// Assembly: Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 4C585B90-7885-49F4-AC02-C3318CC8A42D
-// Assembly location: C:\Users\Xbass\Desktop\Base.dll
 
 using System;
 using System.Drawing;
@@ -87,8 +82,10 @@ namespace Base.Display
     public struct PopupData
     {
       public PopUp.Section[] Sections;
-      private float _columnPosition;
-      private bool _rightAlignColumn;
+      float _columnPosition;
+
+      bool _rightAlignColumn;
+
 
       public bool CustomSet { get; private set; }
 
