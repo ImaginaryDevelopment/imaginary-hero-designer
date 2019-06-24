@@ -389,7 +389,7 @@ public static class DatabaseAPI
     }
     return (IPowerset) null;
   }
-
+    //Pine
   public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
   {
     foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
@@ -643,7 +643,7 @@ public static class DatabaseAPI
       return fallBack;
     return -1;
   }
-
+    //Pine
   public static int GetRecipeIdxByName(string iName)
   {
     for (int index = 0; index <= DatabaseAPI.Database.Recipes.Length - 1; ++index)
@@ -800,7 +800,7 @@ public static class DatabaseAPI
     try
     {
       writer.Write("Mids' Hero Designer Database MK II");
-      writer.Write(DatabaseAPI.Database.Version);
+      writer.Write(Database.Version);
       writer.Write(-1);
       writer.Write(DatabaseAPI.Database.Date.ToBinary());
       writer.Write(DatabaseAPI.Database.Issue);
