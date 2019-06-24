@@ -14,35 +14,25 @@ namespace Hero_Designer
 {
     public class frmCalcOpt : Form
     {
-        [AccessedThroughProperty("btnBaseReset")]
-        Button _btnBaseReset;
+        Button btnBaseReset;
 
-        [AccessedThroughProperty("btnCancel")]
-        Button _btnCancel;
+        Button btnCancel;
 
-        [AccessedThroughProperty("btnFontColour")]
-        Button _btnFontColour;
+        Button btnFontColour;
 
-        [AccessedThroughProperty("btnForceUpdate")]
-        Button _btnForceUpdate;
+        Button btnForceUpdate;
 
-        [AccessedThroughProperty("btnIOReset")]
-        Button _btnIOReset;
+        Button btnIOReset;
 
-        [AccessedThroughProperty("btnOK")]
-        Button _btnOK;
+        Button btnOK;
 
-        [AccessedThroughProperty("btnSaveFolder")]
-        Button _btnSaveFolder;
+        Button btnSaveFolder;
 
-        [AccessedThroughProperty("btnSaveFolderReset")]
-        Button _btnSaveFolderReset;
+        Button btnSaveFolderReset;
 
-        [AccessedThroughProperty("btnUpdate")]
-        Button _btnUpdate;
+        Button btnUpdate;
 
-        [AccessedThroughProperty("btnUpdatePathReset")]
-        Button _btnUpdatePathReset;
+        Button btnUpdatePathReset;
         ComboBox cbEnhLevel;
         CheckBox chkColorInherent;
         CheckBox chkColourPrint;
@@ -62,83 +52,58 @@ namespace Hero_Designer
         CheckBox chkUseArcanaTime;
         CheckBox chkVillainColour;
 
-        [AccessedThroughProperty("clbSuppression")]
-        CheckedListBox _clbSuppression;
+        CheckedListBox clbSuppression;
 
-        [AccessedThroughProperty("cmbAction")]
-        ComboBox _cmbAction;
+        ComboBox cmbAction;
         ColorDialog cPicker;
 
-        [AccessedThroughProperty("csAdd")]
-        Button _csAdd;
+        Button csAdd;
 
-        [AccessedThroughProperty("csBtnEdit")]
-        Button _csBtnEdit;
+        Button csBtnEdit;
 
-        [AccessedThroughProperty("csDelete")]
-        Button _csDelete;
+        Button csDelete;
 
-        [AccessedThroughProperty("csList")]
-        ListBox _csList;
+        ListBox csList;
 
-        [AccessedThroughProperty("csReset")]
-        Button _csReset;
+        Button csReset;
         FolderBrowserDialog fbdSave;
 
-        [AccessedThroughProperty("fcAdd")]
-        Button _fcAdd;
+        Button fcAdd;
 
-        [AccessedThroughProperty("fcBoldOff")]
-        TextBox _fcBoldOff;
+        TextBox fcBoldOff;
 
-        [AccessedThroughProperty("fcBoldOn")]
-        TextBox _fcBoldOn;
+        TextBox fcBoldOn;
 
-        [AccessedThroughProperty("fcColorOff")]
-        TextBox _fcColorOff;
+        TextBox fcColorOff;
 
-        [AccessedThroughProperty("fcColorOn")]
-        TextBox _fcColorOn;
+        TextBox fcColorOn;
 
-        [AccessedThroughProperty("fcDelete")]
-        Button _fcDelete;
+        Button fcDelete;
 
-        [AccessedThroughProperty("fcItalicOff")]
-        TextBox _fcItalicOff;
+        TextBox fcItalicOff;
 
-        [AccessedThroughProperty("fcItalicOn")]
-        TextBox _fcItalicOn;
+        TextBox fcItalicOn;
 
-        [AccessedThroughProperty("fcList")]
-        ListBox _fcList;
+        ListBox fcList;
         TextBox fcName;
 
-        [AccessedThroughProperty("fcNotes")]
-        TextBox _fcNotes;
+        TextBox fcNotes;
 
-        [AccessedThroughProperty("fcReset")]
-        Button _fcReset;
+        Button fcReset;
 
-        [AccessedThroughProperty("fcSet")]
-        Button _fcSet;
+        Button fcSet;
 
-        [AccessedThroughProperty("fcTextOff")]
-        TextBox _fcTextOff;
+        TextBox fcTextOff;
 
-        [AccessedThroughProperty("fcTextOn")]
-        TextBox _fcTextOn;
+        TextBox fcTextOn;
 
-        [AccessedThroughProperty("fcUnderlineOff")]
-        TextBox _fcUnderlineOff;
+        TextBox fcUnderlineOff;
 
-        [AccessedThroughProperty("fcUnderlineOn")]
-        TextBox _fcUnderlineOn;
+        TextBox fcUnderlineOn;
 
-        [AccessedThroughProperty("fcWSSpace")]
-        RadioButton _fcWSSpace;
+        RadioButton fcWSSpace;
 
-        [AccessedThroughProperty("fcWSTab")]
-        RadioButton _fcWSTab;
+        RadioButton fcWSTab;
         GroupBox GroupBox1;
         GroupBox GroupBox10;
         GroupBox GroupBox11;
@@ -194,19 +159,15 @@ namespace Hero_Designer
         Label lblExample;
         Label lblSaveFolder;
 
-        [AccessedThroughProperty("listScenarios")]
-        ListBox _listScenarios;
+        ListBox listScenarios;
         ToolTip myTip;
 
-        [AccessedThroughProperty("optDO")]
-        RadioButton _optDO;
+        RadioButton optDO;
         Label optEnh;
 
-        [AccessedThroughProperty("optSO")]
-        RadioButton _optSO;
+        RadioButton optSO;
 
-        [AccessedThroughProperty("optTO")]
-        RadioButton _optTO;
+        RadioButton optTO;
         RadioButton rbChanceAverage;
         RadioButton rbChanceIgnore;
         RadioButton rbChanceMax;
@@ -243,828 +204,74 @@ namespace Hero_Designer
         string[] scenarioExample;
 
 
-        Button btnBaseReset
-        {
-            get
-            {
-                return this._btnBaseReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnBaseReset_Click);
-                if (this._btnBaseReset != null)
-                    this._btnBaseReset.Click -= eventHandler;
-                this._btnBaseReset = value;
-                if (this._btnBaseReset == null)
-                    return;
-                this._btnBaseReset.Click += eventHandler;
-            }
-        }
-
-        Button btnCancel
-        {
-            get
-            {
-                return this._btnCancel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-                if (this._btnCancel != null)
-                    this._btnCancel.Click -= eventHandler;
-                this._btnCancel = value;
-                if (this._btnCancel == null)
-                    return;
-                this._btnCancel.Click += eventHandler;
-            }
-        }
-
-        Button btnFontColour
-        {
-            get
-            {
-                return this._btnFontColour;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnFontColour_Click);
-                if (this._btnFontColour != null)
-                    this._btnFontColour.Click -= eventHandler;
-                this._btnFontColour = value;
-                if (this._btnFontColour == null)
-                    return;
-                this._btnFontColour.Click += eventHandler;
-            }
-        }
-
-        Button btnForceUpdate
-        {
-            get
-            {
-                return this._btnForceUpdate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnForceUpdate_Click);
-                if (this._btnForceUpdate != null)
-                    this._btnForceUpdate.Click -= eventHandler;
-                this._btnForceUpdate = value;
-                if (this._btnForceUpdate == null)
-                    return;
-                this._btnForceUpdate.Click += eventHandler;
-            }
-        }
-
-        Button btnIOReset
-        {
-            get
-            {
-                return this._btnIOReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnIOReset_Click);
-                if (this._btnIOReset != null)
-                    this._btnIOReset.Click -= eventHandler;
-                this._btnIOReset = value;
-                if (this._btnIOReset == null)
-                    return;
-                this._btnIOReset.Click += eventHandler;
-            }
-        }
-
-        Button btnOK
-        {
-            get
-            {
-                return this._btnOK;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-                if (this._btnOK != null)
-                    this._btnOK.Click -= eventHandler;
-                this._btnOK = value;
-                if (this._btnOK == null)
-                    return;
-                this._btnOK.Click += eventHandler;
-            }
-        }
-
-        Button btnSaveFolder
-        {
-            get
-            {
-                return this._btnSaveFolder;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnSaveFolder_Click);
-                if (this._btnSaveFolder != null)
-                    this._btnSaveFolder.Click -= eventHandler;
-                this._btnSaveFolder = value;
-                if (this._btnSaveFolder == null)
-                    return;
-                this._btnSaveFolder.Click += eventHandler;
-            }
-        }
-
-        Button btnSaveFolderReset
-        {
-            get
-            {
-                return this._btnSaveFolderReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnSaveFolderReset_Click);
-                if (this._btnSaveFolderReset != null)
-                    this._btnSaveFolderReset.Click -= eventHandler;
-                this._btnSaveFolderReset = value;
-                if (this._btnSaveFolderReset == null)
-                    return;
-                this._btnSaveFolderReset.Click += eventHandler;
-            }
-        }
-
-        Button btnUpdate
-        {
-            get
-            {
-                return this._btnUpdate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnUpdate_Click);
-                if (this._btnUpdate != null)
-                    this._btnUpdate.Click -= eventHandler;
-                this._btnUpdate = value;
-                if (this._btnUpdate == null)
-                    return;
-                this._btnUpdate.Click += eventHandler;
-            }
-        }
-
-        Button btnUpdatePathReset
-        {
-            get
-            {
-                return this._btnUpdatePathReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnUpdatePathReset_Click);
-                if (this._btnUpdatePathReset != null)
-                    this._btnUpdatePathReset.Click -= eventHandler;
-                this._btnUpdatePathReset = value;
-                if (this._btnUpdatePathReset == null)
-                    return;
-                this._btnUpdatePathReset.Click += eventHandler;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        CheckedListBox clbSuppression
-        {
-            get
-            {
-                return this._clbSuppression;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.clbSuppression_SelectedIndexChanged);
-                if (this._clbSuppression != null)
-                    this._clbSuppression.SelectedIndexChanged -= eventHandler;
-                this._clbSuppression = value;
-                if (this._clbSuppression == null)
-                    return;
-                this._clbSuppression.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cmbAction
-        {
-            get
-            {
-                return this._cmbAction;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cmbAction_SelectedIndexChanged);
-                if (this._cmbAction != null)
-                    this._cmbAction.SelectedIndexChanged -= eventHandler;
-                this._cmbAction = value;
-                if (this._cmbAction == null)
-                    return;
-                this._cmbAction.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-
-        Button csAdd
-        {
-            get
-            {
-                return this._csAdd;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.csAdd_Click);
-                if (this._csAdd != null)
-                    this._csAdd.Click -= eventHandler;
-                this._csAdd = value;
-                if (this._csAdd == null)
-                    return;
-                this._csAdd.Click += eventHandler;
-            }
-        }
-
-        Button csBtnEdit
-        {
-            get
-            {
-                return this._csBtnEdit;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.csBtnEdit_Click);
-                if (this._csBtnEdit != null)
-                    this._csBtnEdit.Click -= eventHandler;
-                this._csBtnEdit = value;
-                if (this._csBtnEdit == null)
-                    return;
-                this._csBtnEdit.Click += eventHandler;
-            }
-        }
-
-        Button csDelete
-        {
-            get
-            {
-                return this._csDelete;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.csDelete_Click);
-                if (this._csDelete != null)
-                    this._csDelete.Click -= eventHandler;
-                this._csDelete = value;
-                if (this._csDelete == null)
-                    return;
-                this._csDelete.Click += eventHandler;
-            }
-        }
-
-        ListBox csList
-        {
-            get
-            {
-                return this._csList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.csList_KeyPress);
-                if (this._csList != null)
-                    this._csList.KeyPress -= pressEventHandler;
-                this._csList = value;
-                if (this._csList == null)
-                    return;
-                this._csList.KeyPress += pressEventHandler;
-            }
-        }
-
-        Button csReset
-        {
-            get
-            {
-                return this._csReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.csReset_Click);
-                if (this._csReset != null)
-                    this._csReset.Click -= eventHandler;
-                this._csReset = value;
-                if (this._csReset == null)
-                    return;
-                this._csReset.Click += eventHandler;
-            }
-        }
-
-
-        Button fcAdd
-        {
-            get
-            {
-                return this._fcAdd;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcAdd_Click);
-                if (this._fcAdd != null)
-                    this._fcAdd.Click -= eventHandler;
-                this._fcAdd = value;
-                if (this._fcAdd == null)
-                    return;
-                this._fcAdd.Click += eventHandler;
-            }
-        }
-
-        TextBox fcBoldOff
-        {
-            get
-            {
-                return this._fcBoldOff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcBoldOff_TextChanged);
-                if (this._fcBoldOff != null)
-                    this._fcBoldOff.TextChanged -= eventHandler;
-                this._fcBoldOff = value;
-                if (this._fcBoldOff == null)
-                    return;
-                this._fcBoldOff.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcBoldOn
-        {
-            get
-            {
-                return this._fcBoldOn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcBoldOn_TextChanged);
-                if (this._fcBoldOn != null)
-                    this._fcBoldOn.TextChanged -= eventHandler;
-                this._fcBoldOn = value;
-                if (this._fcBoldOn == null)
-                    return;
-                this._fcBoldOn.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcColorOff
-        {
-            get
-            {
-                return this._fcColorOff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcColorOff_TextChanged);
-                if (this._fcColorOff != null)
-                    this._fcColorOff.TextChanged -= eventHandler;
-                this._fcColorOff = value;
-                if (this._fcColorOff == null)
-                    return;
-                this._fcColorOff.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcColorOn
-        {
-            get
-            {
-                return this._fcColorOn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcColorOn_TextChanged);
-                if (this._fcColorOn != null)
-                    this._fcColorOn.TextChanged -= eventHandler;
-                this._fcColorOn = value;
-                if (this._fcColorOn == null)
-                    return;
-                this._fcColorOn.TextChanged += eventHandler;
-            }
-        }
-
-        Button fcDelete
-        {
-            get
-            {
-                return this._fcDelete;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcDelete_Click);
-                if (this._fcDelete != null)
-                    this._fcDelete.Click -= eventHandler;
-                this._fcDelete = value;
-                if (this._fcDelete == null)
-                    return;
-                this._fcDelete.Click += eventHandler;
-            }
-        }
-
-        TextBox fcItalicOff
-        {
-            get
-            {
-                return this._fcItalicOff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcItalicOff_TextChanged);
-                if (this._fcItalicOff != null)
-                    this._fcItalicOff.TextChanged -= eventHandler;
-                this._fcItalicOff = value;
-                if (this._fcItalicOff == null)
-                    return;
-                this._fcItalicOff.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcItalicOn
-        {
-            get
-            {
-                return this._fcItalicOn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcItalicOn_TextChanged);
-                if (this._fcItalicOn != null)
-                    this._fcItalicOn.TextChanged -= eventHandler;
-                this._fcItalicOn = value;
-                if (this._fcItalicOn == null)
-                    return;
-                this._fcItalicOn.TextChanged += eventHandler;
-            }
-        }
-
-        ListBox fcList
-        {
-            get
-            {
-                return this._fcList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcList_SelectedIndexChanged);
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.fcList_KeyPress);
-                if (this._fcList != null)
-                {
-                    this._fcList.SelectedIndexChanged -= eventHandler;
-                    this._fcList.KeyPress -= pressEventHandler;
-                }
-                this._fcList = value;
-                if (this._fcList == null)
-                    return;
-                this._fcList.SelectedIndexChanged += eventHandler;
-                this._fcList.KeyPress += pressEventHandler;
-            }
-        }
-
-
-        TextBox fcNotes
-        {
-            get
-            {
-                return this._fcNotes;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcNotes_TextChanged);
-                if (this._fcNotes != null)
-                    this._fcNotes.TextChanged -= eventHandler;
-                this._fcNotes = value;
-                if (this._fcNotes == null)
-                    return;
-                this._fcNotes.TextChanged += eventHandler;
-            }
-        }
-
-        Button fcReset
-        {
-            get
-            {
-                return this._fcReset;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcReset_Click);
-                if (this._fcReset != null)
-                    this._fcReset.Click -= eventHandler;
-                this._fcReset = value;
-                if (this._fcReset == null)
-                    return;
-                this._fcReset.Click += eventHandler;
-            }
-        }
-
-        Button fcSet
-        {
-            get
-            {
-                return this._fcSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcSet_Click);
-                if (this._fcSet != null)
-                    this._fcSet.Click -= eventHandler;
-                this._fcSet = value;
-                if (this._fcSet == null)
-                    return;
-                this._fcSet.Click += eventHandler;
-            }
-        }
-
-        TextBox fcTextOff
-        {
-            get
-            {
-                return this._fcTextOff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcTextOff_TextChanged);
-                if (this._fcTextOff != null)
-                    this._fcTextOff.TextChanged -= eventHandler;
-                this._fcTextOff = value;
-                if (this._fcTextOff == null)
-                    return;
-                this._fcTextOff.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcTextOn
-        {
-            get
-            {
-                return this._fcTextOn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcTextOn_TextChanged);
-                if (this._fcTextOn != null)
-                    this._fcTextOn.TextChanged -= eventHandler;
-                this._fcTextOn = value;
-                if (this._fcTextOn == null)
-                    return;
-                this._fcTextOn.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcUnderlineOff
-        {
-            get
-            {
-                return this._fcUnderlineOff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcUnderlineOff_TextChanged);
-                if (this._fcUnderlineOff != null)
-                    this._fcUnderlineOff.TextChanged -= eventHandler;
-                this._fcUnderlineOff = value;
-                if (this._fcUnderlineOff == null)
-                    return;
-                this._fcUnderlineOff.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox fcUnderlineOn
-        {
-            get
-            {
-                return this._fcUnderlineOn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcUnderlineOn_TextChanged);
-                if (this._fcUnderlineOn != null)
-                    this._fcUnderlineOn.TextChanged -= eventHandler;
-                this._fcUnderlineOn = value;
-                if (this._fcUnderlineOn == null)
-                    return;
-                this._fcUnderlineOn.TextChanged += eventHandler;
-            }
-        }
-
-        RadioButton fcWSSpace
-        {
-            get
-            {
-                return this._fcWSSpace;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcWSSpace_CheckedChanged);
-                if (this._fcWSSpace != null)
-                    this._fcWSSpace.CheckedChanged -= eventHandler;
-                this._fcWSSpace = value;
-                if (this._fcWSSpace == null)
-                    return;
-                this._fcWSSpace.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton fcWSTab
-        {
-            get
-            {
-                return this._fcWSTab;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.fcWSSpace_CheckedChanged);
-                if (this._fcWSTab != null)
-                    this._fcWSTab.CheckedChanged -= eventHandler;
-                this._fcWSTab = value;
-                if (this._fcWSTab == null)
-                    return;
-                this._fcWSTab.CheckedChanged += eventHandler;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ListBox listScenarios
-        {
-            get
-            {
-                return this._listScenarios;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.listScenarios_SelectedIndexChanged);
-                if (this._listScenarios != null)
-                    this._listScenarios.SelectedIndexChanged -= eventHandler;
-                this._listScenarios = value;
-                if (this._listScenarios == null)
-                    return;
-                this._listScenarios.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-
-        RadioButton optDO
-        {
-            get
-            {
-                return this._optDO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.optDO_CheckedChanged);
-                if (this._optDO != null)
-                    this._optDO.CheckedChanged -= eventHandler;
-                this._optDO = value;
-                if (this._optDO == null)
-                    return;
-                this._optDO.CheckedChanged += eventHandler;
-            }
-        }
-
-
-        RadioButton optSO
-        {
-            get
-            {
-                return this._optSO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.optSO_CheckedChanged);
-                if (this._optSO != null)
-                    this._optSO.CheckedChanged -= eventHandler;
-                this._optSO = value;
-                if (this._optSO == null)
-                    return;
-                this._optSO.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton optTO
-        {
-            get
-            {
-                return this._optTO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.optTO_CheckedChanged);
-                if (this._optTO != null)
-                    this._optTO.CheckedChanged -= eventHandler;
-                this._optTO = value;
-                if (this._optTO == null)
-                    return;
-                this._optTO.CheckedChanged += eventHandler;
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3084,6 +2291,54 @@ namespace Hero_Designer
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
             this.TeamSize.EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnBaseReset.Click += btnBaseReset_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnFontColour.Click += btnFontColour_Click;
+                  this.btnForceUpdate.Click += btnForceUpdate_Click;
+                  this.btnIOReset.Click += btnIOReset_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnSaveFolder.Click += btnSaveFolder_Click;
+                  this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
+                  this.btnUpdate.Click += btnUpdate_Click;
+                  this.btnUpdatePathReset.Click += btnUpdatePathReset_Click;
+                  this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
+                  this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
+                  this.csAdd.Click += csAdd_Click;
+                  this.csBtnEdit.Click += csBtnEdit_Click;
+                  this.csDelete.Click += csDelete_Click;
+                  this.csList.KeyPress += csList_KeyPress;
+                  this.csReset.Click += csReset_Click;
+                  this.fcAdd.Click += fcAdd_Click;
+                  this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
+                  this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
+                  this.fcColorOff.TextChanged += fcColorOff_TextChanged;
+                  this.fcColorOn.TextChanged += fcColorOn_TextChanged;
+                  this.fcDelete.Click += fcDelete_Click;
+                  this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
+                  this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
+                  
+                  // fcList events
+                  this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
+                  this.fcList.KeyPress += fcList_KeyPress;
+                  
+                  this.fcNotes.TextChanged += fcNotes_TextChanged;
+                  this.fcReset.Click += fcReset_Click;
+                  this.fcSet.Click += fcSet_Click;
+                  this.fcTextOff.TextChanged += fcTextOff_TextChanged;
+                  this.fcTextOn.TextChanged += fcTextOn_TextChanged;
+                  this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
+                  this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
+                  this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
+                  this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
+                  this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
+                  this.optDO.CheckedChanged += optDO_CheckedChanged;
+                  this.optSO.CheckedChanged += optSO_CheckedChanged;
+                  this.optTO.CheckedChanged += optTO_CheckedChanged;
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

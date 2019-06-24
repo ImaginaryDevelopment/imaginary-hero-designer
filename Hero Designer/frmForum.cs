@@ -24,8 +24,7 @@ namespace Hero_Designer
         Label csHeading;
         Label csLevel;
 
-        [AccessedThroughProperty("csList")]
-        ListBox _csList;
+        ListBox csList;
         Label csSlots;
         Label csTitle;
         GroupBox GroupBox1;
@@ -34,10 +33,8 @@ namespace Hero_Designer
         GroupBox GroupBox4;
         GroupBox GroupBox5;
 
-        [AccessedThroughProperty("ibCancel")]
         ImageButton _ibCancel;
 
-        [AccessedThroughProperty("ibExport")]
         ImageButton _ibExport;
         Label Label1;
         Label Label19;
@@ -50,11 +47,9 @@ namespace Hero_Designer
         Label lblCodeInf;
         Label lblRecess;
 
-        [AccessedThroughProperty("lstCodes")]
-        ListBox _lstCodes;
+        ListBox lstCodes;
 
-        [AccessedThroughProperty("pbTitle")]
-        PictureBox _pbTitle;
+        PictureBox pbTitle;
         ToolTip ToolTip1;
 
         IContainer components;
@@ -72,27 +67,6 @@ namespace Hero_Designer
 
 
 
-        ListBox csList
-        {
-            get
-            {
-                return this._csList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.csList_SelectedIndexChanged);
-                if (this._csList != null)
-                    this._csList.SelectedIndexChanged -= eventHandler;
-                this._csList = value;
-                if (this._csList == null)
-                    return;
-                this._csList.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-
-
 
 
 
@@ -100,40 +74,13 @@ namespace Hero_Designer
 
         internal ImageButton ibCancel
         {
-            get
-            {
-                return this._ibCancel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibCancel_ButtonClicked);
-                if (this._ibCancel != null)
-                    this._ibCancel.ButtonClicked -= clickedEventHandler;
-                this._ibCancel = value;
-                if (this._ibCancel == null)
-                    return;
-                this._ibCancel.ButtonClicked += clickedEventHandler;
-            }
+            get => _ibCancel;
+            private set => _ibCancel = value;
         }
-
         internal ImageButton ibExport
         {
-            get
-            {
-                return this._ibExport;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibExport_ButtonClicked);
-                if (this._ibExport != null)
-                    this._ibExport.ButtonClicked -= clickedEventHandler;
-                this._ibExport = value;
-                if (this._ibExport == null)
-                    return;
-                this._ibExport.ButtonClicked += clickedEventHandler;
-            }
+            get => _ibExport;
+            private set => _ibExport = value;
         }
 
 
@@ -143,51 +90,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-        ListBox lstCodes
-        {
-            get
-            {
-                return this._lstCodes;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lstCodes_SelectedIndexChanged);
-                if (this._lstCodes != null)
-                    this._lstCodes.SelectedIndexChanged -= eventHandler;
-                this._lstCodes = value;
-                if (this._lstCodes == null)
-                    return;
-                this._lstCodes.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        PictureBox pbTitle
-        {
-            get
-            {
-                return this._pbTitle;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbTitle_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbTitle_MouseDown);
-                if (this._pbTitle != null)
-                {
-                    this._pbTitle.MouseMove -= mouseEventHandler1;
-                    this._pbTitle.MouseDown -= mouseEventHandler2;
-                }
-                this._pbTitle = value;
-                if (this._pbTitle == null)
-                    return;
-                this._pbTitle.MouseMove += mouseEventHandler1;
-                this._pbTitle.MouseDown += mouseEventHandler2;
-            }
-        }
 
 
         public frmForum()
@@ -734,6 +636,20 @@ namespace Hero_Designer
             this.GroupBox5.ResumeLayout(false);
             ((ISupportInitialize)this.pbTitle).EndInit();
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
+                  this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
+                  this.ibExport.ButtonClicked += ibExport_ButtonClicked;
+                  this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
+                  
+                  // pbTitle events
+                  this.pbTitle.MouseMove += pbTitle_MouseMove;
+                  this.pbTitle.MouseDown += pbTitle_MouseDown;
+                  
+              }
+              // finished with events
             this.PerformLayout();
         }
 

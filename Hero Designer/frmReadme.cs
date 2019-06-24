@@ -13,14 +13,11 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmReadme : Form
     {
-        [AccessedThroughProperty("btnClose")]
         ImageButton _btnClose;
 
-        [AccessedThroughProperty("pbBackground")]
-        PictureBox _pbBackground;
+        PictureBox pbBackground;
 
-        [AccessedThroughProperty("pbBottom")]
-        PictureBox _pbBottom;
+        PictureBox pbBottom;
         RichTextBox rtfRead;
 
         int btnY;
@@ -37,82 +34,11 @@ namespace Hero_Designer
 
         int rtW;
 
-
         internal ImageButton btnClose
         {
-            get
-            {
-                return this._btnClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnClose_Load);
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.btnClose_ButtonClicked);
-                if (this._btnClose != null)
-                {
-                    this._btnClose.Load -= eventHandler;
-                    this._btnClose.ButtonClicked -= clickedEventHandler;
-                }
-                this._btnClose = value;
-                if (this._btnClose == null)
-                    return;
-                this._btnClose.Load += eventHandler;
-                this._btnClose.ButtonClicked += clickedEventHandler;
-            }
+            get => _btnClose;
+            private set => _btnClose = value;
         }
-
-        PictureBox pbBackground
-        {
-            get
-            {
-                return this._pbBackground;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbBackground_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbBackground_MouseDown);
-                EventHandler eventHandler = new EventHandler(this.pbBackground_Click);
-                if (this._pbBackground != null)
-                {
-                    this._pbBackground.MouseMove -= mouseEventHandler1;
-                    this._pbBackground.MouseDown -= mouseEventHandler2;
-                    this._pbBackground.Click -= eventHandler;
-                }
-                this._pbBackground = value;
-                if (this._pbBackground == null)
-                    return;
-                this._pbBackground.MouseMove += mouseEventHandler1;
-                this._pbBackground.MouseDown += mouseEventHandler2;
-                this._pbBackground.Click += eventHandler;
-            }
-        }
-
-        PictureBox pbBottom
-        {
-            get
-            {
-                return this._pbBottom;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbBottom_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbBottom_MouseDown);
-                if (this._pbBottom != null)
-                {
-                    this._pbBottom.MouseMove -= mouseEventHandler1;
-                    this._pbBottom.MouseDown -= mouseEventHandler2;
-                }
-                this._pbBottom = value;
-                if (this._pbBottom == null)
-                    return;
-                this._pbBottom.MouseMove += mouseEventHandler1;
-                this._pbBottom.MouseDown += mouseEventHandler2;
-            }
-        }
-
 
         public frmReadme(string iFile)
         {
@@ -286,6 +212,27 @@ namespace Hero_Designer
             this.Text = "Readme / Help";
             ((ISupportInitialize)this.pbBackground).EndInit();
             ((ISupportInitialize)this.pbBottom).EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  
+                  // btnClose events
+                  this.btnClose.Load += btnClose_Load;
+                  this.btnClose.ButtonClicked += btnClose_ButtonClicked;
+                  
+                  
+                  // pbBackground events
+                  this.pbBackground.MouseMove += pbBackground_MouseMove;
+                  this.pbBackground.MouseDown += pbBackground_MouseDown;
+                  this.pbBackground.Click += pbBackground_Click;
+                  
+                  
+                  // pbBottom events
+                  this.pbBottom.MouseMove += pbBottom_MouseMove;
+                  this.pbBottom.MouseDown += pbBottom_MouseDown;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

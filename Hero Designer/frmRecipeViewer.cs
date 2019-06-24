@@ -17,27 +17,21 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmRecipeViewer : Form
   {
-    [AccessedThroughProperty("chkRecipe")]
-    CheckBox _chkRecipe;
+        CheckBox chkRecipe;
 
-    [AccessedThroughProperty("chkSortByLevel")]
-    CheckBox _chkSortByLevel;
+        CheckBox chkSortByLevel;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader3;
         ColumnHeader ColumnHeader4;
         ColumnHeader ColumnHeader5;
 
-    [AccessedThroughProperty("ibClipboard")]
-    ImageButton _ibClipboard;
+        ImageButton ibClipboard;
 
-    [AccessedThroughProperty("ibClose")]
-    ImageButton _ibClose;
+        ImageButton ibClose;
 
-    [AccessedThroughProperty("ibMiniList")]
-    ImageButton _ibMiniList;
+        ImageButton ibMiniList;
 
-    [AccessedThroughProperty("ibTopmost")]
-    ImageButton _ibTopmost;
+        ImageButton ibTopmost;
         ImageList ilSets;
         Label lblHeader;
 
@@ -54,8 +48,7 @@ namespace Hero_Designer
     ctlPopUp _RecipeInfo;
         ToolTip ToolTip1;
 
-    [AccessedThroughProperty("VScrollBar1")]
-    VScrollBar _VScrollBar1;
+        VScrollBar VScrollBar1;
 
     protected ExtendedBitmap bxRecipe;
     IContainer components;
@@ -65,117 +58,7 @@ namespace Hero_Designer
     int nonRecipeCount;
 
 
-    CheckBox chkRecipe
-    {
-      get
-      {
-        return this._chkRecipe;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkRecipe_CheckedChanged);
-        if (this._chkRecipe != null)
-          this._chkRecipe.CheckedChanged -= eventHandler;
-        this._chkRecipe = value;
-        if (this._chkRecipe == null)
-          return;
-        this._chkRecipe.CheckedChanged += eventHandler;
-      }
-    }
 
-    CheckBox chkSortByLevel
-    {
-      get
-      {
-        return this._chkSortByLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkSortByLevel_CheckedChanged);
-        if (this._chkSortByLevel != null)
-          this._chkSortByLevel.CheckedChanged -= eventHandler;
-        this._chkSortByLevel = value;
-        if (this._chkSortByLevel == null)
-          return;
-        this._chkSortByLevel.CheckedChanged += eventHandler;
-      }
-    }
-
-
-
-
-
-    ImageButton ibClipboard
-    {
-      get
-      {
-        return this._ibClipboard;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClipboard_ButtonClicked);
-        if (this._ibClipboard != null)
-          this._ibClipboard.ButtonClicked -= clickedEventHandler;
-        this._ibClipboard = value;
-        if (this._ibClipboard == null)
-          return;
-        this._ibClipboard.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-    ImageButton ibClose
-    {
-      get
-      {
-        return this._ibClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-        if (this._ibClose != null)
-          this._ibClose.ButtonClicked -= clickedEventHandler;
-        this._ibClose = value;
-        if (this._ibClose == null)
-          return;
-        this._ibClose.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-    ImageButton ibMiniList
-    {
-      get
-      {
-        return this._ibMiniList;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibMiniList_ButtonClicked);
-        if (this._ibMiniList != null)
-          this._ibMiniList.ButtonClicked -= clickedEventHandler;
-        this._ibMiniList = value;
-        if (this._ibMiniList == null)
-          return;
-        this._ibMiniList.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-    ImageButton ibTopmost
-    {
-      get
-      {
-        return this._ibTopmost;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibTopmost_ButtonClicked);
-        if (this._ibTopmost != null)
-          this._ibTopmost.ButtonClicked -= clickedEventHandler;
-        this._ibTopmost = value;
-        if (this._ibTopmost == null)
-          return;
-        this._ibTopmost.ButtonClicked += clickedEventHandler;
-      }
-    }
 
 
 
@@ -248,25 +131,6 @@ namespace Hero_Designer
           return;
         this._RecipeInfo.MouseWheel += mouseEventHandler;
         this._RecipeInfo.MouseEnter += eventHandler;
-      }
-    }
-
-
-    VScrollBar VScrollBar1
-    {
-      get
-      {
-        return this._VScrollBar1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ScrollEventHandler scrollEventHandler = new ScrollEventHandler(this.VScrollBar1_Scroll);
-        if (this._VScrollBar1 != null)
-          this._VScrollBar1.Scroll -= scrollEventHandler;
-        this._VScrollBar1 = value;
-        if (this._VScrollBar1 == null)
-          return;
-        this._VScrollBar1.Scroll += scrollEventHandler;
       }
     }
 
@@ -1085,6 +949,18 @@ namespace Hero_Designer
       ((ISupportInitialize) this.pbRecipe).EndInit();
       this.Panel1.ResumeLayout(false);
       this.Panel2.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+                  this.chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
+                  this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+                  this.ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
+                  this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

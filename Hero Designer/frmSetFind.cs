@@ -25,21 +25,16 @@ namespace Hero_Designer
         ColumnHeader ColumnHeader5;
         ColumnHeader ColumnHeader6;
 
-    [AccessedThroughProperty("ibClose")]
-    ImageButton _ibClose;
+        ImageButton ibClose;
 
-    [AccessedThroughProperty("ibTopmost")]
-    ImageButton _ibTopmost;
+        ImageButton ibTopmost;
         ImageList ilSets;
 
-    [AccessedThroughProperty("lvBonus")]
-    ListView _lvBonus;
+        ListView lvBonus;
 
-    [AccessedThroughProperty("lvMag")]
-    ListView _lvMag;
+        ListView lvMag;
 
-    [AccessedThroughProperty("lvSet")]
-    ListView _lvSet;
+        ListView lvSet;
         Panel Panel1;
         ctlPopUp SetInfo;
 
@@ -52,98 +47,6 @@ namespace Hero_Designer
 
 
 
-
-
-    ImageButton ibClose
-    {
-      get
-      {
-        return this._ibClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-        if (this._ibClose != null)
-          this._ibClose.ButtonClicked -= clickedEventHandler;
-        this._ibClose = value;
-        if (this._ibClose == null)
-          return;
-        this._ibClose.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-    ImageButton ibTopmost
-    {
-      get
-      {
-        return this._ibTopmost;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibTopmost_ButtonClicked);
-        if (this._ibTopmost != null)
-          this._ibTopmost.ButtonClicked -= clickedEventHandler;
-        this._ibTopmost = value;
-        if (this._ibTopmost == null)
-          return;
-        this._ibTopmost.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-
-    ListView lvBonus
-    {
-      get
-      {
-        return this._lvBonus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvBonus_SelectedIndexChanged);
-        if (this._lvBonus != null)
-          this._lvBonus.SelectedIndexChanged -= eventHandler;
-        this._lvBonus = value;
-        if (this._lvBonus == null)
-          return;
-        this._lvBonus.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvMag
-    {
-      get
-      {
-        return this._lvMag;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvMag_SelectedIndexChanged);
-        if (this._lvMag != null)
-          this._lvMag.SelectedIndexChanged -= eventHandler;
-        this._lvMag = value;
-        if (this._lvMag == null)
-          return;
-        this._lvMag.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvSet
-    {
-      get
-      {
-        return this._lvSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvSet_SelectedIndexChanged);
-        if (this._lvSet != null)
-          this._lvSet.SelectedIndexChanged -= eventHandler;
-        this._lvSet = value;
-        if (this._lvSet == null)
-          return;
-        this._lvSet.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
@@ -597,6 +500,16 @@ namespace Hero_Designer
       this.Text = "Set Bonus Finder";
       this.TopMost = true;
       this.Panel1.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+                  this.lvBonus.SelectedIndexChanged += lvBonus_SelectedIndexChanged;
+                  this.lvMag.SelectedIndexChanged += lvMag_SelectedIndexChanged;
+                  this.lvSet.SelectedIndexChanged += lvSet_SelectedIndexChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

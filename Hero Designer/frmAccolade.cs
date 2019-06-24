@@ -18,16 +18,12 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmAccolade : Form
     {
-        [AccessedThroughProperty("ibClose")]
-        ImageButton _ibClose;
+        ImageButton ibClose;
 
-        [AccessedThroughProperty("lblLock")]
-        Label _lblLock;
+        Label lblLock;
 
-        [AccessedThroughProperty("llLeft")]
         ListLabelV2 _llLeft;
 
-        [AccessedThroughProperty("llRight")]
         ListLabelV2 _llRight;
 
         bool _locked;
@@ -37,152 +33,23 @@ namespace Hero_Designer
         readonly List<IPower> _myPowers;
         Panel Panel1;
 
-        [AccessedThroughProperty("PopInfo")]
-        ctlPopUp _PopInfo;
+        ctlPopUp PopInfo;
 
-        [AccessedThroughProperty("VScrollBar1")]
-        VScrollBar _VScrollBar1;
+        VScrollBar VScrollBar1;
 
         IContainer components;
 
         internal frmIncarnate.CustomPanel Panel2;
-
-        ImageButton ibClose
-        {
-            get
-            {
-                return this._ibClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-                if (this._ibClose != null)
-                    this._ibClose.ButtonClicked -= clickedEventHandler;
-                this._ibClose = value;
-                if (this._ibClose == null)
-                    return;
-                this._ibClose.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        Label lblLock
-        {
-            get
-            {
-                return this._lblLock;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblLock_Click);
-                if (this._lblLock != null)
-                    this._lblLock.Click -= eventHandler;
-                this._lblLock = value;
-                if (this._lblLock == null)
-                    return;
-                this._lblLock.Click += eventHandler;
-            }
-        }
-
         internal ListLabelV2 llLeft
         {
-            get
-            {
-                return this._llLeft;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.llLeft_MouseEnter);
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler = new ListLabelV2.ItemHoverEventHandler(this.llLeft_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llLeft_ItemClick);
-                if (this._llLeft != null)
-                {
-                    this._llLeft.MouseEnter -= eventHandler;
-                    this._llLeft.ItemHover -= hoverEventHandler;
-                    this._llLeft.ItemClick -= clickEventHandler;
-                }
-                this._llLeft = value;
-                if (this._llLeft == null)
-                    return;
-                this._llLeft.MouseEnter += eventHandler;
-                this._llLeft.ItemHover += hoverEventHandler;
-                this._llLeft.ItemClick += clickEventHandler;
-            }
+            get => _llLeft;
+            private set => _llLeft = value;
         }
-
         internal ListLabelV2 llRight
         {
-            get
-            {
-                return this._llRight;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler = new ListLabelV2.ItemHoverEventHandler(this.llRight_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llRight_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llRight_MouseEnter);
-                if (this._llRight != null)
-                {
-                    this._llRight.ItemHover -= hoverEventHandler;
-                    this._llRight.ItemClick -= clickEventHandler;
-                    this._llRight.MouseEnter -= eventHandler;
-                }
-                this._llRight = value;
-                if (this._llRight == null)
-                    return;
-                this._llRight.ItemHover += hoverEventHandler;
-                this._llRight.ItemClick += clickEventHandler;
-                this._llRight.MouseEnter += eventHandler;
-            }
+            get => _llRight;
+            private set => _llRight = value;
         }
-
-
-        ctlPopUp PopInfo
-        {
-            get
-            {
-                return this._PopInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.PopInfo_MouseWheel);
-                EventHandler eventHandler = new EventHandler(this.PopInfo_MouseEnter);
-                if (this._PopInfo != null)
-                {
-                    this._PopInfo.MouseWheel -= mouseEventHandler;
-                    this._PopInfo.MouseEnter -= eventHandler;
-                }
-                this._PopInfo = value;
-                if (this._PopInfo == null)
-                    return;
-                this._PopInfo.MouseWheel += mouseEventHandler;
-                this._PopInfo.MouseEnter += eventHandler;
-            }
-        }
-
-        VScrollBar VScrollBar1
-        {
-            get
-            {
-                return this._VScrollBar1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ScrollEventHandler scrollEventHandler = new ScrollEventHandler(this.VScrollBar1_Scroll);
-                if (this._VScrollBar1 != null)
-                    this._VScrollBar1.Scroll -= scrollEventHandler;
-                this._VScrollBar1 = value;
-                if (this._VScrollBar1 == null)
-                    return;
-                this._VScrollBar1.Scroll += scrollEventHandler;
-            }
-        }
-
         public frmAccolade(frmMain iParent, List<IPower> iPowers)
         {
             this.Load += new EventHandler(this.frmAccolade_Load);
@@ -410,6 +277,31 @@ namespace Hero_Designer
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  
+                  // PopInfo events
+                  this.PopInfo.MouseWheel += PopInfo_MouseWheel;
+                  this.PopInfo.MouseEnter += PopInfo_MouseEnter;
+                  
+                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.lblLock.Click += lblLock_Click;
+                  
+                  // llLeft events
+                  this.llLeft.MouseEnter += llLeft_MouseEnter;
+                  this.llLeft.ItemHover += llLeft_ItemHover;
+                  this.llLeft.ItemClick += llLeft_ItemClick;
+                  
+                  
+                  // llRight events
+                  this.llRight.ItemHover += llRight_ItemHover;
+                  this.llRight.ItemClick += llRight_ItemClick;
+                  this.llRight.MouseEnter += llRight_MouseEnter;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

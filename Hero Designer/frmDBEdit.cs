@@ -13,35 +13,25 @@ namespace Hero_Designer
 {
   public class frmDBEdit : Form
   {
-    [AccessedThroughProperty("btnClose")]
-    Button _btnClose;
+        Button btnClose;
 
-    [AccessedThroughProperty("btnCSV")]
-    Button _btnCSV;
+        Button btnCSV;
 
-    [AccessedThroughProperty("btnDate")]
-    Button _btnDate;
+        Button btnDate;
 
-    [AccessedThroughProperty("btnEditEnh")]
-    Button _btnEditEnh;
+        Button btnEditEnh;
 
-    [AccessedThroughProperty("btnEditEntity")]
-    Button _btnEditEntity;
+        Button btnEditEntity;
 
-    [AccessedThroughProperty("btnEditIOSet")]
-    Button _btnEditIOSet;
+        Button btnEditIOSet;
 
-    [AccessedThroughProperty("btnFileReport")]
-    Button _btnFileReport;
+        Button btnFileReport;
 
-    [AccessedThroughProperty("btnPSBrowse")]
-    Button _btnPSBrowse;
+        Button btnPSBrowse;
 
-    [AccessedThroughProperty("btnRecipe")]
-    Button _btnRecipe;
+        Button btnRecipe;
 
-    [AccessedThroughProperty("btnSalvage")]
-    Button _btnSalvage;
+        Button btnSalvage;
         Button exportIndexes;
         GroupBox GroupBox1;
         Label Label1;
@@ -65,8 +55,7 @@ namespace Hero_Designer
         Label lblCountSalvage;
         Label lblDate;
 
-    [AccessedThroughProperty("txtDBVer")]
-    TextBox _txtDBVer;
+        TextBox txtDBVer;
 
     [AccessedThroughProperty("udIssue")]
     NumericUpDown _udIssue;
@@ -76,185 +65,6 @@ namespace Hero_Designer
     bool Initialized;
 
 
-    Button btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.Click -= eventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.Click += eventHandler;
-      }
-    }
-
-    Button btnCSV
-    {
-      get
-      {
-        return this._btnCSV;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCSV_Click);
-        if (this._btnCSV != null)
-          this._btnCSV.Click -= eventHandler;
-        this._btnCSV = value;
-        if (this._btnCSV == null)
-          return;
-        this._btnCSV.Click += eventHandler;
-      }
-    }
-
-    Button btnDate
-    {
-      get
-      {
-        return this._btnDate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDate_Click);
-        if (this._btnDate != null)
-          this._btnDate.Click -= eventHandler;
-        this._btnDate = value;
-        if (this._btnDate == null)
-          return;
-        this._btnDate.Click += eventHandler;
-      }
-    }
-
-    Button btnEditEnh
-    {
-      get
-      {
-        return this._btnEditEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEditEnh_Click);
-        if (this._btnEditEnh != null)
-          this._btnEditEnh.Click -= eventHandler;
-        this._btnEditEnh = value;
-        if (this._btnEditEnh == null)
-          return;
-        this._btnEditEnh.Click += eventHandler;
-      }
-    }
-
-    Button btnEditEntity
-    {
-      get
-      {
-        return this._btnEditEntity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEditEntity_Click);
-        if (this._btnEditEntity != null)
-          this._btnEditEntity.Click -= eventHandler;
-        this._btnEditEntity = value;
-        if (this._btnEditEntity == null)
-          return;
-        this._btnEditEntity.Click += eventHandler;
-      }
-    }
-
-    Button btnEditIOSet
-    {
-      get
-      {
-        return this._btnEditIOSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEditIOSet_Click);
-        if (this._btnEditIOSet != null)
-          this._btnEditIOSet.Click -= eventHandler;
-        this._btnEditIOSet = value;
-        if (this._btnEditIOSet == null)
-          return;
-        this._btnEditIOSet.Click += eventHandler;
-      }
-    }
-
-    Button btnFileReport
-    {
-      get
-      {
-        return this._btnFileReport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnFileReport_Click);
-        if (this._btnFileReport != null)
-          this._btnFileReport.Click -= eventHandler;
-        this._btnFileReport = value;
-        if (this._btnFileReport == null)
-          return;
-        this._btnFileReport.Click += eventHandler;
-      }
-    }
-
-    Button btnPSBrowse
-    {
-      get
-      {
-        return this._btnPSBrowse;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPSBrowse_Click);
-        if (this._btnPSBrowse != null)
-          this._btnPSBrowse.Click -= eventHandler;
-        this._btnPSBrowse = value;
-        if (this._btnPSBrowse == null)
-          return;
-        this._btnPSBrowse.Click += eventHandler;
-      }
-    }
-
-    Button btnRecipe
-    {
-      get
-      {
-        return this._btnRecipe;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnRecipe_Click);
-        if (this._btnRecipe != null)
-          this._btnRecipe.Click -= eventHandler;
-        this._btnRecipe = value;
-        if (this._btnRecipe == null)
-          return;
-        this._btnRecipe.Click += eventHandler;
-      }
-    }
-
-    Button btnSalvage
-    {
-      get
-      {
-        return this._btnSalvage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSalvage_Click);
-        if (this._btnSalvage != null)
-          this._btnSalvage.Click -= eventHandler;
-        this._btnSalvage = value;
-        if (this._btnSalvage == null)
-          return;
-        this._btnSalvage.Click += eventHandler;
-      }
-    }
 
 
 
@@ -274,27 +84,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-
-    TextBox txtDBVer
-    {
-      get
-      {
-        return this._txtDBVer;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDBVer_TextChanged);
-        if (this._txtDBVer != null)
-          this._txtDBVer.TextChanged -= eventHandler;
-        this._txtDBVer = value;
-        if (this._txtDBVer == null)
-          return;
-        this._txtDBVer.TextChanged += eventHandler;
-      }
-    }
 
     NumericUpDown udIssue
     {
@@ -854,6 +643,22 @@ namespace Hero_Designer
       this.udIssue.EndInit();
       this.GroupBox1.ResumeLayout(false);
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCSV.Click += btnCSV_Click;
+                  this.btnClose.Click += btnClose_Click;
+                  this.btnDate.Click += btnDate_Click;
+                  this.btnEditEnh.Click += btnEditEnh_Click;
+                  this.btnEditEntity.Click += btnEditEntity_Click;
+                  this.btnEditIOSet.Click += btnEditIOSet_Click;
+                  this.btnFileReport.Click += btnFileReport_Click;
+                  this.btnPSBrowse.Click += btnPSBrowse_Click;
+                  this.btnRecipe.Click += btnRecipe_Click;
+                  this.btnSalvage.Click += btnSalvage_Click;
+                  this.txtDBVer.TextChanged += txtDBVer_TextChanged;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

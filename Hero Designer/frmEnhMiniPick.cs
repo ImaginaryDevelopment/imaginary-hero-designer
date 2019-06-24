@@ -10,59 +10,18 @@ namespace Hero_Designer
 {
     public class frmEnhMiniPick : Form
     {
-        [AccessedThroughProperty("btnOK")]
-        Button _btnOK;
+        Button btnOK;
 
-        [AccessedThroughProperty("lbList")]
         ListBox _lbList;
         Label lblMessage;
 
         IContainer components;
 
-
-        Button btnOK
-        {
-            get
-            {
-                return this._btnOK;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-                if (this._btnOK != null)
-                    this._btnOK.Click -= eventHandler;
-                this._btnOK = value;
-                if (this._btnOK == null)
-                    return;
-                this._btnOK.Click += eventHandler;
-            }
-        }
-
         internal ListBox lbList
         {
-            get
-            {
-                return this._lbList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lbList_DoubleClick);
-                EventHandler eventHandler2 = new EventHandler(this.lbList_SelectedIndexChanged);
-                if (this._lbList != null)
-                {
-                    this._lbList.DoubleClick -= eventHandler1;
-                    this._lbList.SelectedIndexChanged -= eventHandler2;
-                }
-                this._lbList = value;
-                if (this._lbList == null)
-                    return;
-                this._lbList.DoubleClick += eventHandler1;
-                this._lbList.SelectedIndexChanged += eventHandler2;
-            }
+            get => _lbList;
+            private set => _lbList = value;
         }
-
 
         public frmEnhMiniPick()
         {
@@ -136,6 +95,17 @@ namespace Hero_Designer
             this.ShowInTaskbar = false;
             this.StartPosition = FormStartPosition.CenterParent;
             this.Text = "Details";
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnOK.Click += btnOK_Click;
+                  
+                  // lbList events
+                  this.lbList.DoubleClick += lbList_DoubleClick;
+                  this.lbList.SelectedIndexChanged += lbList_SelectedIndexChanged;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

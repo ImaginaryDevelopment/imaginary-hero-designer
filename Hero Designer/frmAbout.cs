@@ -13,7 +13,6 @@ namespace Hero_Designer
 {
     public class frmAbout : Form
     {
-        [AccessedThroughProperty("ibClose")]
         ImageButton _ibClose;
         Label Label1;
         Label Label3;
@@ -22,133 +21,31 @@ namespace Hero_Designer
         Label lblDBDate;
         Label lblDBIssue;
 
-        [AccessedThroughProperty("lblDonate")]
-        Label _lblDonate;
+        Label lblDonate;
 
-        [AccessedThroughProperty("lblEmail")]
-        Label _lblEmail;
+        Label lblEmail;
         Label lblLegal;
         Label lblVersion;
 
-        [AccessedThroughProperty("lblWebPage")]
-        Label _lblWebPage;
+        Label lblWebPage;
 
-        [AccessedThroughProperty("pbBackground")]
-        PictureBox _pbBackground;
+        PictureBox pbBackground;
         ToolTip tTip;
 
         IContainer components;
 
         Point mouse_offset;
 
-
         internal ImageButton ibClose
         {
-            get
-            {
-                return this._ibClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-                if (this._ibClose != null)
-                    this._ibClose.ButtonClicked -= clickedEventHandler;
-                this._ibClose = value;
-                if (this._ibClose == null)
-                    return;
-                this._ibClose.ButtonClicked += clickedEventHandler;
-            }
+            get => _ibClose;
+            private set => _ibClose = value;
         }
 
 
 
 
 
-
-
-        Label lblDonate
-        {
-            get
-            {
-                return this._lblDonate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblDonate_Click);
-                if (this._lblDonate != null)
-                    this._lblDonate.Click -= eventHandler;
-                this._lblDonate = value;
-                if (this._lblDonate == null)
-                    return;
-                this._lblDonate.Click += eventHandler;
-            }
-        }
-
-        Label lblEmail
-        {
-            get
-            {
-                return this._lblEmail;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblEmail_Click);
-                if (this._lblEmail != null)
-                    this._lblEmail.Click -= eventHandler;
-                this._lblEmail = value;
-                if (this._lblEmail == null)
-                    return;
-                this._lblEmail.Click += eventHandler;
-            }
-        }
-
-
-
-        Label lblWebPage
-        {
-            get
-            {
-                return this._lblWebPage;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblWebPage_Click);
-                if (this._lblWebPage != null)
-                    this._lblWebPage.Click -= eventHandler;
-                this._lblWebPage = value;
-                if (this._lblWebPage == null)
-                    return;
-                this._lblWebPage.Click += eventHandler;
-            }
-        }
-
-        PictureBox pbBackground
-        {
-            get
-            {
-                return this._pbBackground;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.PictureBox1_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.PictureBox1_MouseDown);
-                if (this._pbBackground != null)
-                {
-                    this._pbBackground.MouseMove -= mouseEventHandler1;
-                    this._pbBackground.MouseDown -= mouseEventHandler2;
-                }
-                this._pbBackground = value;
-                if (this._pbBackground == null)
-                    return;
-                this._pbBackground.MouseMove += mouseEventHandler1;
-                this._pbBackground.MouseDown += mouseEventHandler2;
-            }
-        }
 
 
         public frmAbout()
@@ -194,6 +91,20 @@ namespace Hero_Designer
             this.Name = "frmAbout";
             this.Load += new System.EventHandler(this.FrmAbout_Load_1);
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.lblDonate.Click += lblDonate_Click;
+                  this.lblEmail.Click += lblEmail_Click;
+                  this.lblWebPage.Click += lblWebPage_Click;
+                  
+                  // pbBackground events
+                  this.pbBackground.MouseMove += PictureBox1_MouseMove;
+                  this.pbBackground.MouseDown += PictureBox1_MouseDown;
+                  
+              }
+              // finished with events
 
         }
 

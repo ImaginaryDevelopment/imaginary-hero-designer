@@ -30,11 +30,9 @@ namespace Hero_Designer
         [AccessedThroughProperty("dbTip")]
         ToolTip _dbTip;
 
-        [AccessedThroughProperty("Enh_Title")]
-        GFXLabel _Enh_Title;
+        GFXLabel Enh_Title;
 
-        [AccessedThroughProperty("enhListing")]
-        ctlPairedList _enhListing;
+        ctlPairedList enhListing;
 
         [AccessedThroughProperty("enhNameDisp")]
         GFXLabel _enhNameDisp;
@@ -48,17 +46,13 @@ namespace Hero_Designer
         [AccessedThroughProperty("fx_LblHead3")]
         Label _fx_LblHead3;
 
-        [AccessedThroughProperty("fx_List1")]
-        ctlPairedList _fx_List1;
+        ctlPairedList fx_List1;
 
-        [AccessedThroughProperty("fx_List2")]
-        ctlPairedList _fx_List2;
+        ctlPairedList fx_List2;
 
-        [AccessedThroughProperty("fx_List3")]
-        ctlPairedList _fx_List3;
+        ctlPairedList fx_List3;
 
-        [AccessedThroughProperty("fx_Title")]
-        GFXLabel _fx_Title;
+        GFXLabel fx_Title;
 
         [AccessedThroughProperty("gDef1")]
         ctlMultiGraph _gDef1;
@@ -75,11 +69,9 @@ namespace Hero_Designer
         [AccessedThroughProperty("info_Damage")]
         ctlDamageDisplay _info_Damage;
 
-        [AccessedThroughProperty("info_DataList")]
-        ctlPairedList _info_DataList;
+        ctlPairedList info_DataList;
 
-        [AccessedThroughProperty("info_Title")]
-        GFXLabel _info_Title;
+        GFXLabel info_Title;
 
         [AccessedThroughProperty("info_txtLarge")]
         RichTextBox _info_txtLarge;
@@ -90,14 +82,11 @@ namespace Hero_Designer
         [AccessedThroughProperty("lblDmg")]
         Label _lblDmg;
 
-        [AccessedThroughProperty("lblFloat")]
-        Label _lblFloat;
+        Label lblFloat;
 
-        [AccessedThroughProperty("lblLock")]
-        Label _lblLock;
+        Label lblLock;
 
-        [AccessedThroughProperty("lblShrink")]
-        Label _lblShrink;
+        Label lblShrink;
 
         [AccessedThroughProperty("lblTotal")]
         Label _lblTotal;
@@ -105,11 +94,9 @@ namespace Hero_Designer
         [AccessedThroughProperty("pnlEnh")]
         Panel _pnlEnh;
 
-        [AccessedThroughProperty("pnlEnhActive")]
-        Panel _pnlEnhActive;
+        Panel pnlEnhActive;
 
-        [AccessedThroughProperty("pnlEnhInactive")]
-        Panel _pnlEnhInactive;
+        Panel pnlEnhInactive;
 
         [AccessedThroughProperty("pnlFX")]
         Panel _pnlFX;
@@ -117,14 +104,12 @@ namespace Hero_Designer
         [AccessedThroughProperty("pnlInfo")]
         Panel _pnlInfo;
 
-        [AccessedThroughProperty("pnlTabs")]
-        Panel _pnlTabs;
+        Panel pnlTabs;
 
         [AccessedThroughProperty("pnlTotal")]
         Panel _pnlTotal;
 
-        [AccessedThroughProperty("PowerScaler")]
-        ctlMultiGraph _PowerScaler;
+        ctlMultiGraph PowerScaler;
 
         [AccessedThroughProperty("total_lblDef")]
         Label _total_lblDef;
@@ -135,11 +120,9 @@ namespace Hero_Designer
         [AccessedThroughProperty("total_lblRes")]
         Label _total_lblRes;
 
-        [AccessedThroughProperty("total_Misc")]
-        ctlPairedList _total_Misc;
+        ctlPairedList total_Misc;
 
-        [AccessedThroughProperty("total_Title")]
-        GFXLabel _total_Title;
+        GFXLabel total_Title;
 
         bool bFloating;
 
@@ -229,50 +212,6 @@ namespace Hero_Designer
                 this.DoPaint();
             }
         }
-
-        GFXLabel Enh_Title
-        {
-            get
-            {
-                return this._Enh_Title;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.Title_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.Title_MouseDown);
-                if (this._Enh_Title != null)
-                {
-                    this._Enh_Title.MouseMove -= mouseEventHandler1;
-                    this._Enh_Title.MouseDown -= mouseEventHandler2;
-                }
-                this._Enh_Title = value;
-                if (this._Enh_Title == null)
-                    return;
-                this._Enh_Title.MouseMove += mouseEventHandler1;
-                this._Enh_Title.MouseDown += mouseEventHandler2;
-            }
-        }
-
-        ctlPairedList enhListing
-        {
-            get
-            {
-                return this._enhListing;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._enhListing != null)
-                    this._enhListing.ItemHover -= hoverEventHandler;
-                this._enhListing = value;
-                if (this._enhListing == null)
-                    return;
-                this._enhListing.ItemHover += hoverEventHandler;
-            }
-        }
-
         GFXLabel enhNameDisp
         {
             get
@@ -346,88 +285,6 @@ namespace Hero_Designer
                 this._fx_LblHead3 = value;
             }
         }
-
-        ctlPairedList fx_List1
-        {
-            get
-            {
-                return this._fx_List1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._fx_List1 != null)
-                    this._fx_List1.ItemHover -= hoverEventHandler;
-                this._fx_List1 = value;
-                if (this._fx_List1 == null)
-                    return;
-                this._fx_List1.ItemHover += hoverEventHandler;
-            }
-        }
-
-        ctlPairedList fx_List2
-        {
-            get
-            {
-                return this._fx_List2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._fx_List2 != null)
-                    this._fx_List2.ItemHover -= hoverEventHandler;
-                this._fx_List2 = value;
-                if (this._fx_List2 == null)
-                    return;
-                this._fx_List2.ItemHover += hoverEventHandler;
-            }
-        }
-
-        ctlPairedList fx_List3
-        {
-            get
-            {
-                return this._fx_List3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._fx_List3 != null)
-                    this._fx_List3.ItemHover -= hoverEventHandler;
-                this._fx_List3 = value;
-                if (this._fx_List3 == null)
-                    return;
-                this._fx_List3.ItemHover += hoverEventHandler;
-            }
-        }
-
-        GFXLabel fx_Title
-        {
-            get
-            {
-                return this._fx_Title;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.Title_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.Title_MouseDown);
-                if (this._fx_Title != null)
-                {
-                    this._fx_Title.MouseMove -= mouseEventHandler1;
-                    this._fx_Title.MouseDown -= mouseEventHandler2;
-                }
-                this._fx_Title = value;
-                if (this._fx_Title == null)
-                    return;
-                this._fx_Title.MouseMove += mouseEventHandler1;
-                this._fx_Title.MouseDown += mouseEventHandler2;
-            }
-        }
-
         ctlMultiGraph gDef1
         {
             get
@@ -492,50 +349,6 @@ namespace Hero_Designer
                 this._info_Damage = value;
             }
         }
-
-        ctlPairedList info_DataList
-        {
-            get
-            {
-                return this._info_DataList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._info_DataList != null)
-                    this._info_DataList.ItemHover -= hoverEventHandler;
-                this._info_DataList = value;
-                if (this._info_DataList == null)
-                    return;
-                this._info_DataList.ItemHover += hoverEventHandler;
-            }
-        }
-
-        GFXLabel info_Title
-        {
-            get
-            {
-                return this._info_Title;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.Title_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.Title_MouseDown);
-                if (this._info_Title != null)
-                {
-                    this._info_Title.MouseMove -= mouseEventHandler1;
-                    this._info_Title.MouseDown -= mouseEventHandler2;
-                }
-                this._info_Title = value;
-                if (this._info_Title == null)
-                    return;
-                this._info_Title.MouseMove += mouseEventHandler1;
-                this._info_Title.MouseDown += mouseEventHandler2;
-            }
-        }
-
         internal RichTextBox info_txtLarge
         {
             get
@@ -582,69 +395,6 @@ namespace Hero_Designer
                 this._lblDmg = value;
             }
         }
-
-        Label lblFloat
-        {
-            get
-            {
-                return this._lblFloat;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblFloat_Click);
-                if (this._lblFloat != null)
-                    this._lblFloat.Click -= eventHandler;
-                this._lblFloat = value;
-                if (this._lblFloat == null)
-                    return;
-                this._lblFloat.Click += eventHandler;
-            }
-        }
-
-        Label lblLock
-        {
-            get
-            {
-                return this._lblLock;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblLock_Click);
-                if (this._lblLock != null)
-                    this._lblLock.Click -= eventHandler;
-                this._lblLock = value;
-                if (this._lblLock == null)
-                    return;
-                this._lblLock.Click += eventHandler;
-            }
-        }
-
-        Label lblShrink
-        {
-            get
-            {
-                return this._lblShrink;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lblShrink_DoubleClick);
-                EventHandler eventHandler2 = new EventHandler(this.lblShrink_Click);
-                if (this._lblShrink != null)
-                {
-                    this._lblShrink.DoubleClick -= eventHandler1;
-                    this._lblShrink.Click -= eventHandler2;
-                }
-                this._lblShrink = value;
-                if (this._lblShrink == null)
-                    return;
-                this._lblShrink.DoubleClick += eventHandler1;
-                this._lblShrink.Click += eventHandler2;
-            }
-        }
-
         Label lblTotal
         {
             get
@@ -670,61 +420,6 @@ namespace Hero_Designer
                 this._pnlEnh = value;
             }
         }
-
-        Panel pnlEnhActive
-        {
-            get
-            {
-                return this._pnlEnhActive;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pnlEnhActive_Paint);
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pnlEnhActive_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pnlEnhActive_MouseClick);
-                if (this._pnlEnhActive != null)
-                {
-                    this._pnlEnhActive.Paint -= paintEventHandler;
-                    this._pnlEnhActive.MouseMove -= mouseEventHandler1;
-                    this._pnlEnhActive.MouseClick -= mouseEventHandler2;
-                }
-                this._pnlEnhActive = value;
-                if (this._pnlEnhActive == null)
-                    return;
-                this._pnlEnhActive.Paint += paintEventHandler;
-                this._pnlEnhActive.MouseMove += mouseEventHandler1;
-                this._pnlEnhActive.MouseClick += mouseEventHandler2;
-            }
-        }
-
-        Panel pnlEnhInactive
-        {
-            get
-            {
-                return this._pnlEnhInactive;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pnlEnhInactive_Paint);
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pnlEnhInactive_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pnlEnhInactive_MouseClick);
-                if (this._pnlEnhInactive != null)
-                {
-                    this._pnlEnhInactive.Paint -= paintEventHandler;
-                    this._pnlEnhInactive.MouseMove -= mouseEventHandler1;
-                    this._pnlEnhInactive.MouseClick -= mouseEventHandler2;
-                }
-                this._pnlEnhInactive = value;
-                if (this._pnlEnhInactive == null)
-                    return;
-                this._pnlEnhInactive.Paint += paintEventHandler;
-                this._pnlEnhInactive.MouseMove += mouseEventHandler1;
-                this._pnlEnhInactive.MouseClick += mouseEventHandler2;
-            }
-        }
-
         Panel pnlFX
         {
             get
@@ -750,31 +445,6 @@ namespace Hero_Designer
                 this._pnlInfo = value;
             }
         }
-
-        Panel pnlTabs
-        {
-            get
-            {
-                return this._pnlTabs;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.pnlTabs_MouseDown);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pnlTabs_Paint);
-                if (this._pnlTabs != null)
-                {
-                    this._pnlTabs.MouseDown -= mouseEventHandler;
-                    this._pnlTabs.Paint -= paintEventHandler;
-                }
-                this._pnlTabs = value;
-                if (this._pnlTabs == null)
-                    return;
-                this._pnlTabs.MouseDown += mouseEventHandler;
-                this._pnlTabs.Paint += paintEventHandler;
-            }
-        }
-
         Panel pnlTotal
         {
             get
@@ -787,26 +457,6 @@ namespace Hero_Designer
                 this._pnlTotal = value;
             }
         }
-
-        ctlMultiGraph PowerScaler
-        {
-            get
-            {
-                return this._PowerScaler;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlMultiGraph.BarClickEventHandler clickEventHandler = new ctlMultiGraph.BarClickEventHandler(this.PowerScaler_BarClick);
-                if (this._PowerScaler != null)
-                    this._PowerScaler.BarClick -= clickEventHandler;
-                this._PowerScaler = value;
-                if (this._PowerScaler == null)
-                    return;
-                this._PowerScaler.BarClick += clickEventHandler;
-            }
-        }
-
         public int TabPageIndex
         {
             get
@@ -853,50 +503,6 @@ namespace Hero_Designer
                 this._total_lblRes = value;
             }
         }
-
-        ctlPairedList total_Misc
-        {
-            get
-            {
-                return this._total_Misc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ctlPairedList.ItemHoverEventHandler hoverEventHandler = new ctlPairedList.ItemHoverEventHandler(this.PairedList_Hover);
-                if (this._total_Misc != null)
-                    this._total_Misc.ItemHover -= hoverEventHandler;
-                this._total_Misc = value;
-                if (this._total_Misc == null)
-                    return;
-                this._total_Misc.ItemHover += hoverEventHandler;
-            }
-        }
-
-        GFXLabel total_Title
-        {
-            get
-            {
-                return this._total_Title;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.Title_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.Title_MouseDown);
-                if (this._total_Title != null)
-                {
-                    this._total_Title.MouseMove -= mouseEventHandler1;
-                    this._total_Title.MouseDown -= mouseEventHandler2;
-                }
-                this._total_Title = value;
-                if (this._total_Title == null)
-                    return;
-                this._total_Title.MouseMove += mouseEventHandler1;
-                this._total_Title.MouseDown += mouseEventHandler2;
-            }
-        }
-
         public Enums.eVisibleSize VisibleSize
         {
             get
@@ -3840,6 +3446,62 @@ namespace Hero_Designer
             this.pnlFX.ResumeLayout(false);
             this.pnlTotal.ResumeLayout(false);
             this.pnlEnh.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  
+                  // Enh_Title events
+                  this.Enh_Title.MouseMove += Title_MouseMove;
+                  this.Enh_Title.MouseDown += Title_MouseDown;
+                  
+                  this.PowerScaler.BarClick += PowerScaler_BarClick;
+                  this.enhListing.ItemHover += PairedList_Hover;
+                  this.fx_List1.ItemHover += PairedList_Hover;
+                  this.fx_List2.ItemHover += PairedList_Hover;
+                  this.fx_List3.ItemHover += PairedList_Hover;
+                  
+                  // fx_Title events
+                  this.fx_Title.MouseMove += Title_MouseMove;
+                  this.fx_Title.MouseDown += Title_MouseDown;
+                  
+                  this.info_DataList.ItemHover += PairedList_Hover;
+                  
+                  // info_Title events
+                  this.info_Title.MouseMove += Title_MouseMove;
+                  this.info_Title.MouseDown += Title_MouseDown;
+                  
+                  this.lblFloat.Click += lblFloat_Click;
+                  this.lblLock.Click += lblLock_Click;
+                  
+                  // lblShrink events
+                  this.lblShrink.DoubleClick += lblShrink_DoubleClick;
+                  this.lblShrink.Click += lblShrink_Click;
+                  
+                  
+                  // pnlEnhActive events
+                  this.pnlEnhActive.Paint += pnlEnhActive_Paint;
+                  this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
+                  this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
+                  
+                  
+                  // pnlEnhInactive events
+                  this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
+                  this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
+                  this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
+                  
+                  
+                  // pnlTabs events
+                  this.pnlTabs.MouseDown += pnlTabs_MouseDown;
+                  this.pnlTabs.Paint += pnlTabs_Paint;
+                  
+                  this.total_Misc.ItemHover += PairedList_Hover;
+                  
+                  // total_Title events
+                  this.total_Title.MouseMove += Title_MouseMove;
+                  this.total_Title.MouseDown += Title_MouseDown;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

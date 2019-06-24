@@ -10,36 +10,26 @@ namespace Hero_Designer
 {
   public class frmExportColor : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
         ColorDialog cPicker;
 
-    [AccessedThroughProperty("csHeading")]
-    Label _csHeading;
+        Label csHeading;
 
-    [AccessedThroughProperty("csHO")]
-    Label _csHO;
+        Label csHO;
 
-    [AccessedThroughProperty("csIO")]
-    Label _csIO;
+        Label csIO;
 
-    [AccessedThroughProperty("csLevel")]
-    Label _csLevel;
+        Label csLevel;
 
-    [AccessedThroughProperty("csPower")]
-    Label _csPower;
+        Label csPower;
 
-    [AccessedThroughProperty("csSet")]
-    Label _csSet;
+        Label csSet;
 
-    [AccessedThroughProperty("csSlots")]
-    Label _csSlots;
+        Label csSlots;
 
-    [AccessedThroughProperty("csTitle")]
-    Label _csTitle;
+        Label csTitle;
         Label Label1;
         Label Label19;
         Label Label20;
@@ -52,193 +42,12 @@ namespace Hero_Designer
         Label Label9;
         ToolTip myTip;
 
-    [AccessedThroughProperty("txtName")]
-    TextBox _txtName;
+        TextBox txtName;
 
     IContainer components;
 
     public ExportConfig.ColorScheme myScheme;
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-
-    Label csHeading
-    {
-      get
-      {
-        return this._csHeading;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csHeading_Click);
-        if (this._csHeading != null)
-          this._csHeading.Click -= eventHandler;
-        this._csHeading = value;
-        if (this._csHeading == null)
-          return;
-        this._csHeading.Click += eventHandler;
-      }
-    }
-
-    Label csHO
-    {
-      get
-      {
-        return this._csHO;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csHO_Click);
-        if (this._csHO != null)
-          this._csHO.Click -= eventHandler;
-        this._csHO = value;
-        if (this._csHO == null)
-          return;
-        this._csHO.Click += eventHandler;
-      }
-    }
-
-    Label csIO
-    {
-      get
-      {
-        return this._csIO;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csIO_Click);
-        if (this._csIO != null)
-          this._csIO.Click -= eventHandler;
-        this._csIO = value;
-        if (this._csIO == null)
-          return;
-        this._csIO.Click += eventHandler;
-      }
-    }
-
-    Label csLevel
-    {
-      get
-      {
-        return this._csLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csLevel_Click);
-        if (this._csLevel != null)
-          this._csLevel.Click -= eventHandler;
-        this._csLevel = value;
-        if (this._csLevel == null)
-          return;
-        this._csLevel.Click += eventHandler;
-      }
-    }
-
-    Label csPower
-    {
-      get
-      {
-        return this._csPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csPower_Click);
-        if (this._csPower != null)
-          this._csPower.Click -= eventHandler;
-        this._csPower = value;
-        if (this._csPower == null)
-          return;
-        this._csPower.Click += eventHandler;
-      }
-    }
-
-    Label csSet
-    {
-      get
-      {
-        return this._csSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csSet_Click);
-        if (this._csSet != null)
-          this._csSet.Click -= eventHandler;
-        this._csSet = value;
-        if (this._csSet == null)
-          return;
-        this._csSet.Click += eventHandler;
-      }
-    }
-
-    Label csSlots
-    {
-      get
-      {
-        return this._csSlots;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csSlots_Click);
-        if (this._csSlots != null)
-          this._csSlots.Click -= eventHandler;
-        this._csSlots = value;
-        if (this._csSlots == null)
-          return;
-        this._csSlots.Click += eventHandler;
-      }
-    }
-
-    Label csTitle
-    {
-      get
-      {
-        return this._csTitle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csTitle_Click);
-        if (this._csTitle != null)
-          this._csTitle.Click -= eventHandler;
-        this._csTitle = value;
-        if (this._csTitle == null)
-          return;
-        this._csTitle.Click += eventHandler;
-      }
-    }
 
 
 
@@ -247,27 +56,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-
-    TextBox txtName
-    {
-      get
-      {
-        return this._txtName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtName_TextChanged);
-        if (this._txtName != null)
-          this._txtName.TextChanged -= eventHandler;
-        this._txtName = value;
-        if (this._txtName == null)
-          return;
-        this._txtName.TextChanged += eventHandler;
-      }
-    }
 
     public frmExportColor(ref ExportConfig.ColorScheme iScheme)
     {
@@ -619,6 +407,22 @@ namespace Hero_Designer
       this.StartPosition = FormStartPosition.CenterParent;
       this.Text = "Colour Scheme Editor";
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.csHO.Click += csHO_Click;
+                  this.csHeading.Click += csHeading_Click;
+                  this.csIO.Click += csIO_Click;
+                  this.csLevel.Click += csLevel_Click;
+                  this.csPower.Click += csPower_Click;
+                  this.csSet.Click += csSet_Click;
+                  this.csSlots.Click += csSlots_Click;
+                  this.csTitle.Click += csTitle_Click;
+                  this.txtName.TextChanged += txtName_TextChanged;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

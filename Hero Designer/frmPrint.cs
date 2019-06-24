@@ -16,20 +16,15 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmPrint : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnLayout")]
-    Button _btnLayout;
+        Button btnLayout;
 
-    [AccessedThroughProperty("btnPrint")]
-    Button _btnPrint;
+        Button btnPrint;
 
-    [AccessedThroughProperty("btnPrinter")]
-    Button _btnPrinter;
+        Button btnPrinter;
 
-    [AccessedThroughProperty("chkPrintHistory")]
-    CheckBox _chkPrintHistory;
+        CheckBox chkPrintHistory;
         CheckBox chkPrintHistoryEnh;
         CheckBox chkProfileEnh;
         PageSetupDialog dlgSetup;
@@ -41,127 +36,16 @@ namespace Hero_Designer
         RadioButton rbProfileLong;
         RadioButton rbProfileNone;
 
-    [AccessedThroughProperty("rbProfileShort")]
-    RadioButton _rbProfileShort;
+        RadioButton rbProfileShort;
 
     IContainer components;
 
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnLayout
-    {
-      get
-      {
-        return this._btnLayout;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnLayout_Click);
-        if (this._btnLayout != null)
-          this._btnLayout.Click -= eventHandler;
-        this._btnLayout = value;
-        if (this._btnLayout == null)
-          return;
-        this._btnLayout.Click += eventHandler;
-      }
-    }
-
-    Button btnPrint
-    {
-      get
-      {
-        return this._btnPrint;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPrint_Click);
-        if (this._btnPrint != null)
-          this._btnPrint.Click -= eventHandler;
-        this._btnPrint = value;
-        if (this._btnPrint == null)
-          return;
-        this._btnPrint.Click += eventHandler;
-      }
-    }
-
-    Button btnPrinter
-    {
-      get
-      {
-        return this._btnPrinter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPrinter_Click);
-        if (this._btnPrinter != null)
-          this._btnPrinter.Click -= eventHandler;
-        this._btnPrinter = value;
-        if (this._btnPrinter == null)
-          return;
-        this._btnPrinter.Click += eventHandler;
-      }
-    }
-
-    CheckBox chkPrintHistory
-    {
-      get
-      {
-        return this._chkPrintHistory;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkPrintHistory_CheckedChanged);
-        if (this._chkPrintHistory != null)
-          this._chkPrintHistory.CheckedChanged -= eventHandler;
-        this._chkPrintHistory = value;
-        if (this._chkPrintHistory == null)
-          return;
-        this._chkPrintHistory.CheckedChanged += eventHandler;
-      }
-    }
 
 
 
 
 
-
-
-
-
-    RadioButton rbProfileShort
-    {
-      get
-      {
-        return this._rbProfileShort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.rbProfileShort_CheckedChanged);
-        if (this._rbProfileShort != null)
-          this._rbProfileShort.CheckedChanged -= eventHandler;
-        this._rbProfileShort = value;
-        if (this._rbProfileShort == null)
-          return;
-        this._rbProfileShort.CheckedChanged += eventHandler;
-      }
-    }
 
     public frmPrint()
     {
@@ -445,6 +329,17 @@ namespace Hero_Designer
       this.Text = "Print";
       this.GroupBox1.ResumeLayout(false);
       this.GroupBox2.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnLayout.Click += btnLayout_Click;
+                  this.btnPrint.Click += btnPrint_Click;
+                  this.btnPrinter.Click += btnPrinter_Click;
+                  this.chkPrintHistory.CheckedChanged += chkPrintHistory_CheckedChanged;
+                  this.rbProfileShort.CheckedChanged += rbProfileShort_CheckedChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

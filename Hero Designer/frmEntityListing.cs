@@ -14,205 +14,32 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmEntityListing : Form
   {
-    [AccessedThroughProperty("btnAdd")]
-    Button _btnAdd;
+        Button btnAdd;
 
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnClone")]
-    Button _btnClone;
+        Button btnClone;
 
-    [AccessedThroughProperty("btnDelete")]
-    Button _btnDelete;
+        Button btnDelete;
 
-    [AccessedThroughProperty("btnDown")]
-    Button _btnDown;
+        Button btnDown;
 
-    [AccessedThroughProperty("btnedit")]
-    Button _btnedit;
+        Button btnedit;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnUp")]
-    Button _btnUp;
+        Button btnUp;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
 
-    [AccessedThroughProperty("lvEntity")]
-    ListView _lvEntity;
+        ListView lvEntity;
 
     frmBusy bFrm;
 
     IContainer components;
 
 
-    Button btnAdd
-    {
-      get
-      {
-        return this._btnAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-        if (this._btnAdd != null)
-          this._btnAdd.Click -= eventHandler;
-        this._btnAdd = value;
-        if (this._btnAdd == null)
-          return;
-        this._btnAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnClone
-    {
-      get
-      {
-        return this._btnClone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClone_Click);
-        if (this._btnClone != null)
-          this._btnClone.Click -= eventHandler;
-        this._btnClone = value;
-        if (this._btnClone == null)
-          return;
-        this._btnClone.Click += eventHandler;
-      }
-    }
-
-    Button btnDelete
-    {
-      get
-      {
-        return this._btnDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDelete_Click);
-        if (this._btnDelete != null)
-          this._btnDelete.Click -= eventHandler;
-        this._btnDelete = value;
-        if (this._btnDelete == null)
-          return;
-        this._btnDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnDown
-    {
-      get
-      {
-        return this._btnDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDown_Click);
-        if (this._btnDown != null)
-          this._btnDown.Click -= eventHandler;
-        this._btnDown = value;
-        if (this._btnDown == null)
-          return;
-        this._btnDown.Click += eventHandler;
-      }
-    }
-
-    Button btnedit
-    {
-      get
-      {
-        return this._btnedit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEdit_Click);
-        if (this._btnedit != null)
-          this._btnedit.Click -= eventHandler;
-        this._btnedit = value;
-        if (this._btnedit == null)
-          return;
-        this._btnedit.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnUp
-    {
-      get
-      {
-        return this._btnUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUp_Click);
-        if (this._btnUp != null)
-          this._btnUp.Click -= eventHandler;
-        this._btnUp = value;
-        if (this._btnUp == null)
-          return;
-        this._btnUp.Click += eventHandler;
-      }
-    }
-
-
-
-
-    ListView lvEntity
-    {
-      get
-      {
-        return this._lvEntity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvEntity_DoubleClick);
-        if (this._lvEntity != null)
-          this._lvEntity.DoubleClick -= eventHandler;
-        this._lvEntity = value;
-        if (this._lvEntity == null)
-          return;
-        this._lvEntity.DoubleClick += eventHandler;
-      }
-    }
 
     public frmEntityListing()
     {
@@ -559,6 +386,20 @@ namespace Hero_Designer
       this.ShowInTaskbar = false;
       this.StartPosition = FormStartPosition.CenterScreen;
       this.Text = "Entity Editor";
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnClone.Click += btnClone_Click;
+                  this.btnDelete.Click += btnDelete_Click;
+                  this.btnDown.Click += btnDown_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnUp.Click += btnUp_Click;
+                  this.btnedit.Click += btnEdit_Click;
+                  this.lvEntity.DoubleClick += lvEntity_DoubleClick;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

@@ -15,67 +15,48 @@ namespace Hero_Designer
 {
   public class frmPowerEffect : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnCopy")]
-    Button _btnCopy;
+        Button btnCopy;
 
-    [AccessedThroughProperty("btnCSV")]
-    Button _btnCSV;
+        Button btnCSV;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnPaste")]
-    Button _btnPaste;
+        Button btnPaste;
 
-    [AccessedThroughProperty("cbAffects")]
-    ComboBox _cbAffects;
+        ComboBox cbAffects;
 
-    [AccessedThroughProperty("cbAspect")]
-    ComboBox _cbAspect;
+        ComboBox cbAspect;
 
-    [AccessedThroughProperty("cbAttribute")]
-    ComboBox _cbAttribute;
+        ComboBox cbAttribute;
 
-    [AccessedThroughProperty("cbFXClass")]
-    ComboBox _cbFXClass;
+        ComboBox cbFXClass;
 
-    [AccessedThroughProperty("cbFXSpecialCase")]
-    ComboBox _cbFXSpecialCase;
+        ComboBox cbFXSpecialCase;
 
-    [AccessedThroughProperty("cbModifier")]
-    ComboBox _cbModifier;
+        ComboBox cbModifier;
 
-    [AccessedThroughProperty("cbPercentageOverride")]
-    ComboBox _cbPercentageOverride;
+        ComboBox cbPercentageOverride;
 
-    [AccessedThroughProperty("chkFXBuffable")]
-    CheckBox _chkFXBuffable;
+        CheckBox chkFXBuffable;
 
-    [AccessedThroughProperty("chkFXResistable")]
-    CheckBox _chkFXResistable;
+        CheckBox chkFXResistable;
         CheckBox chkNearGround;
 
-    [AccessedThroughProperty("chkStack")]
-    CheckBox _chkStack;
+        CheckBox chkStack;
 
-    [AccessedThroughProperty("chkVariable")]
-    CheckBox _chkVariable;
+        CheckBox chkVariable;
         ColumnHeader chSub;
         ColumnHeader chSubSub;
 
-    [AccessedThroughProperty("clbSuppression")]
-    CheckedListBox _clbSuppression;
+        CheckedListBox clbSuppression;
 
-    [AccessedThroughProperty("cmbEffectId")]
-    ComboBox _cmbEffectId;
+        ComboBox cmbEffectId;
         ColumnHeader ColumnHeader1;
         GroupBox GroupBox3;
 
-    [AccessedThroughProperty("IgnoreED")]
-    CheckBox _IgnoreED;
+        CheckBox IgnoreED;
         Label Label1;
         Label Label10;
         Label Label11;
@@ -99,23 +80,17 @@ namespace Hero_Designer
         Label lblEffectDescription;
         Label lblProb;
 
-    [AccessedThroughProperty("lvEffectType")]
-    ListView _lvEffectType;
+        ListView lvEffectType;
 
-    [AccessedThroughProperty("lvSubAttribute")]
-    ListView _lvSubAttribute;
+        ListView lvSubAttribute;
 
-    [AccessedThroughProperty("lvSubSub")]
-    ListView _lvSubSub;
+        ListView lvSubSub;
 
-    [AccessedThroughProperty("rbIfAny")]
-    RadioButton _rbIfAny;
+        RadioButton rbIfAny;
 
-    [AccessedThroughProperty("rbIfCritter")]
-    RadioButton _rbIfCritter;
+        RadioButton rbIfCritter;
 
-    [AccessedThroughProperty("rbIfPlayer")]
-    RadioButton _rbIfPlayer;
+        RadioButton rbIfPlayer;
 
     [AccessedThroughProperty("txtFXDelay")]
     TextBox _txtFXDelay;
@@ -135,8 +110,7 @@ namespace Hero_Designer
     [AccessedThroughProperty("txtFXTicks")]
     TextBox _txtFXTicks;
 
-    [AccessedThroughProperty("txtOverride")]
-    TextBox _txtOverride;
+        TextBox txtOverride;
 
     [AccessedThroughProperty("txtPPM")]
     TextBox _txtPPM;
@@ -147,352 +121,6 @@ namespace Hero_Designer
 
     public IEffect myFX;
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnCopy
-    {
-      get
-      {
-        return this._btnCopy;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCopy_Click);
-        if (this._btnCopy != null)
-          this._btnCopy.Click -= eventHandler;
-        this._btnCopy = value;
-        if (this._btnCopy == null)
-          return;
-        this._btnCopy.Click += eventHandler;
-      }
-    }
-
-    Button btnCSV
-    {
-      get
-      {
-        return this._btnCSV;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCSV_Click);
-        if (this._btnCSV != null)
-          this._btnCSV.Click -= eventHandler;
-        this._btnCSV = value;
-        if (this._btnCSV == null)
-          return;
-        this._btnCSV.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnPaste
-    {
-      get
-      {
-        return this._btnPaste;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPaste_Click);
-        if (this._btnPaste != null)
-          this._btnPaste.Click -= eventHandler;
-        this._btnPaste = value;
-        if (this._btnPaste == null)
-          return;
-        this._btnPaste.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbAffects
-    {
-      get
-      {
-        return this._cbAffects;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbAffects_SelectedIndexChanged);
-        if (this._cbAffects != null)
-          this._cbAffects.SelectedIndexChanged -= eventHandler;
-        this._cbAffects = value;
-        if (this._cbAffects == null)
-          return;
-        this._cbAffects.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbAspect
-    {
-      get
-      {
-        return this._cbAspect;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbAspect_SelectedIndexChanged);
-        if (this._cbAspect != null)
-          this._cbAspect.SelectedIndexChanged -= eventHandler;
-        this._cbAspect = value;
-        if (this._cbAspect == null)
-          return;
-        this._cbAspect.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbAttribute
-    {
-      get
-      {
-        return this._cbAttribute;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbAttribute_SelectedIndexChanged);
-        if (this._cbAttribute != null)
-          this._cbAttribute.SelectedIndexChanged -= eventHandler;
-        this._cbAttribute = value;
-        if (this._cbAttribute == null)
-          return;
-        this._cbAttribute.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbFXClass
-    {
-      get
-      {
-        return this._cbFXClass;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbFXClass_SelectedIndexChanged);
-        if (this._cbFXClass != null)
-          this._cbFXClass.SelectedIndexChanged -= eventHandler;
-        this._cbFXClass = value;
-        if (this._cbFXClass == null)
-          return;
-        this._cbFXClass.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbFXSpecialCase
-    {
-      get
-      {
-        return this._cbFXSpecialCase;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbFXSpecialCase_SelectedIndexChanged);
-        if (this._cbFXSpecialCase != null)
-          this._cbFXSpecialCase.SelectedIndexChanged -= eventHandler;
-        this._cbFXSpecialCase = value;
-        if (this._cbFXSpecialCase == null)
-          return;
-        this._cbFXSpecialCase.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbModifier
-    {
-      get
-      {
-        return this._cbModifier;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbModifier_SelectedIndexChanged);
-        if (this._cbModifier != null)
-          this._cbModifier.SelectedIndexChanged -= eventHandler;
-        this._cbModifier = value;
-        if (this._cbModifier == null)
-          return;
-        this._cbModifier.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbPercentageOverride
-    {
-      get
-      {
-        return this._cbPercentageOverride;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbPercentageOverride_SelectedIndexChanged);
-        if (this._cbPercentageOverride != null)
-          this._cbPercentageOverride.SelectedIndexChanged -= eventHandler;
-        this._cbPercentageOverride = value;
-        if (this._cbPercentageOverride == null)
-          return;
-        this._cbPercentageOverride.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    CheckBox chkFXBuffable
-    {
-      get
-      {
-        return this._chkFXBuffable;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkFXBuffable_CheckedChanged);
-        if (this._chkFXBuffable != null)
-          this._chkFXBuffable.CheckedChanged -= eventHandler;
-        this._chkFXBuffable = value;
-        if (this._chkFXBuffable == null)
-          return;
-        this._chkFXBuffable.CheckedChanged += eventHandler;
-      }
-    }
-
-    CheckBox chkFXResistable
-    {
-      get
-      {
-        return this._chkFXResistable;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkFXResistable_CheckedChanged);
-        if (this._chkFXResistable != null)
-          this._chkFXResistable.CheckedChanged -= eventHandler;
-        this._chkFXResistable = value;
-        if (this._chkFXResistable == null)
-          return;
-        this._chkFXResistable.CheckedChanged += eventHandler;
-      }
-    }
-
-
-    CheckBox chkStack
-    {
-      get
-      {
-        return this._chkStack;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkFxNoStack_CheckedChanged);
-        if (this._chkStack != null)
-          this._chkStack.CheckedChanged -= eventHandler;
-        this._chkStack = value;
-        if (this._chkStack == null)
-          return;
-        this._chkStack.CheckedChanged += eventHandler;
-      }
-    }
-
-    CheckBox chkVariable
-    {
-      get
-      {
-        return this._chkVariable;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkVariable_CheckedChanged);
-        if (this._chkVariable != null)
-          this._chkVariable.CheckedChanged -= eventHandler;
-        this._chkVariable = value;
-        if (this._chkVariable == null)
-          return;
-        this._chkVariable.CheckedChanged += eventHandler;
-      }
-    }
-
-
-
-    CheckedListBox clbSuppression
-    {
-      get
-      {
-        return this._clbSuppression;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.clbSuppression_SelectedIndexChanged);
-        if (this._clbSuppression != null)
-          this._clbSuppression.SelectedIndexChanged -= eventHandler;
-        this._clbSuppression = value;
-        if (this._clbSuppression == null)
-          return;
-        this._clbSuppression.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cmbEffectId
-    {
-      get
-      {
-        return this._cmbEffectId;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cmbEffectId_TextChanged);
-        if (this._cmbEffectId != null)
-          this._cmbEffectId.TextChanged -= eventHandler;
-        this._cmbEffectId = value;
-        if (this._cmbEffectId == null)
-          return;
-        this._cmbEffectId.TextChanged += eventHandler;
-      }
-    }
-
-
-
-    CheckBox IgnoreED
-    {
-      get
-      {
-        return this._IgnoreED;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.IgnoreED_CheckedChanged);
-        if (this._IgnoreED != null)
-          this._IgnoreED.CheckedChanged -= eventHandler;
-        this._IgnoreED = value;
-        if (this._IgnoreED == null)
-          return;
-        this._IgnoreED.CheckedChanged += eventHandler;
-      }
-    }
 
 
 
@@ -514,115 +142,6 @@ namespace Hero_Designer
 
 
 
-
-
-    ListView lvEffectType
-    {
-      get
-      {
-        return this._lvEffectType;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvEffectType_SelectedIndexChanged);
-        if (this._lvEffectType != null)
-          this._lvEffectType.SelectedIndexChanged -= eventHandler;
-        this._lvEffectType = value;
-        if (this._lvEffectType == null)
-          return;
-        this._lvEffectType.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvSubAttribute
-    {
-      get
-      {
-        return this._lvSubAttribute;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvSubAttribute_SelectedIndexChanged);
-        if (this._lvSubAttribute != null)
-          this._lvSubAttribute.SelectedIndexChanged -= eventHandler;
-        this._lvSubAttribute = value;
-        if (this._lvSubAttribute == null)
-          return;
-        this._lvSubAttribute.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvSubSub
-    {
-      get
-      {
-        return this._lvSubSub;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvSubSub_SelectedIndexChanged);
-        if (this._lvSubSub != null)
-          this._lvSubSub.SelectedIndexChanged -= eventHandler;
-        this._lvSubSub = value;
-        if (this._lvSubSub == null)
-          return;
-        this._lvSubSub.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    RadioButton rbIfAny
-    {
-      get
-      {
-        return this._rbIfAny;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.rbIfACP_CheckedChanged);
-        if (this._rbIfAny != null)
-          this._rbIfAny.CheckedChanged -= eventHandler;
-        this._rbIfAny = value;
-        if (this._rbIfAny == null)
-          return;
-        this._rbIfAny.CheckedChanged += eventHandler;
-      }
-    }
-
-    RadioButton rbIfCritter
-    {
-      get
-      {
-        return this._rbIfCritter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.rbIfACP_CheckedChanged);
-        if (this._rbIfCritter != null)
-          this._rbIfCritter.CheckedChanged -= eventHandler;
-        this._rbIfCritter = value;
-        if (this._rbIfCritter == null)
-          return;
-        this._rbIfCritter.CheckedChanged += eventHandler;
-      }
-    }
-
-    RadioButton rbIfPlayer
-    {
-      get
-      {
-        return this._rbIfPlayer;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.rbIfACP_CheckedChanged);
-        if (this._rbIfPlayer != null)
-          this._rbIfPlayer.CheckedChanged -= eventHandler;
-        this._rbIfPlayer = value;
-        if (this._rbIfPlayer == null)
-          return;
-        this._rbIfPlayer.CheckedChanged += eventHandler;
-      }
-    }
 
     TextBox txtFXDelay
     {
@@ -761,25 +280,6 @@ namespace Hero_Designer
         this._txtFXTicks.TextChanged += eventHandler2;
       }
     }
-
-    TextBox txtOverride
-    {
-      get
-      {
-        return this._txtOverride;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtOverride_TextChanged);
-        if (this._txtOverride != null)
-          this._txtOverride.TextChanged -= eventHandler;
-        this._txtOverride = value;
-        if (this._txtOverride == null)
-          return;
-        this._txtOverride.TextChanged += eventHandler;
-      }
-    }
-
     TextBox txtPPM
     {
       get
@@ -1762,6 +1262,37 @@ namespace Hero_Designer
       this.Text = "Edit Effect";
       this.GroupBox3.ResumeLayout(false);
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.IgnoreED.CheckedChanged += IgnoreED_CheckedChanged;
+                  this.btnCSV.Click += btnCSV_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnCopy.Click += btnCopy_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnPaste.Click += btnPaste_Click;
+                  this.cbAffects.SelectedIndexChanged += cbAffects_SelectedIndexChanged;
+                  this.cbAspect.SelectedIndexChanged += cbAspect_SelectedIndexChanged;
+                  this.cbAttribute.SelectedIndexChanged += cbAttribute_SelectedIndexChanged;
+                  this.cbFXClass.SelectedIndexChanged += cbFXClass_SelectedIndexChanged;
+                  this.cbFXSpecialCase.SelectedIndexChanged += cbFXSpecialCase_SelectedIndexChanged;
+                  this.cbModifier.SelectedIndexChanged += cbModifier_SelectedIndexChanged;
+                  this.cbPercentageOverride.SelectedIndexChanged += cbPercentageOverride_SelectedIndexChanged;
+                  this.chkFXBuffable.CheckedChanged += chkFXBuffable_CheckedChanged;
+                  this.chkFXResistable.CheckedChanged += chkFXResistable_CheckedChanged;
+                  this.chkStack.CheckedChanged += chkFxNoStack_CheckedChanged;
+                  this.chkVariable.CheckedChanged += chkVariable_CheckedChanged;
+                  this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
+                  this.cmbEffectId.TextChanged += cmbEffectId_TextChanged;
+                  this.lvEffectType.SelectedIndexChanged += lvEffectType_SelectedIndexChanged;
+                  this.lvSubAttribute.SelectedIndexChanged += lvSubAttribute_SelectedIndexChanged;
+                  this.lvSubSub.SelectedIndexChanged += lvSubSub_SelectedIndexChanged;
+                  this.rbIfAny.CheckedChanged += rbIfACP_CheckedChanged;
+                  this.rbIfCritter.CheckedChanged += rbIfACP_CheckedChanged;
+                  this.rbIfPlayer.CheckedChanged += rbIfACP_CheckedChanged;
+                  this.txtOverride.TextChanged += txtOverride_TextChanged;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

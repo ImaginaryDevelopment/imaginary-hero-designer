@@ -13,34 +13,25 @@ namespace Hero_Designer
 {
   public class frmTweakMatching : Form
   {
-    [AccessedThroughProperty("btnAdd")]
-    Button _btnAdd;
+        Button btnAdd;
 
-    [AccessedThroughProperty("btnDel")]
-    Button _btnDel;
+        Button btnDel;
 
-    [AccessedThroughProperty("Button1")]
-    Button _Button1;
+        Button Button1;
 
-    [AccessedThroughProperty("Button2")]
-    Button _Button2;
+        Button Button2;
 
-    [AccessedThroughProperty("cbAT1")]
-    ComboBox _cbAT1;
+        ComboBox cbAT1;
 
-    [AccessedThroughProperty("cbPower")]
-    ComboBox _cbPower;
+        ComboBox cbPower;
 
-    [AccessedThroughProperty("cbSet1")]
-    ComboBox _cbSet1;
+        ComboBox cbSet1;
 
-    [AccessedThroughProperty("cbType1")]
-    ComboBox _cbType1;
+        ComboBox cbType1;
         GroupBox GroupBox1;
         GroupBox GroupBox2;
 
-    [AccessedThroughProperty("lstTweaks")]
-    ListBox _lstTweaks;
+        ListBox lstTweaks;
         TextBox txtAddActual;
         TextBox txtAddOvr;
         TextBox txtOvr;
@@ -48,170 +39,6 @@ namespace Hero_Designer
     IContainer components;
 
     protected bool Loaded;
-
-    Button btnAdd
-    {
-      get
-      {
-        return this._btnAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-        if (this._btnAdd != null)
-          this._btnAdd.Click -= eventHandler;
-        this._btnAdd = value;
-        if (this._btnAdd == null)
-          return;
-        this._btnAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnDel
-    {
-      get
-      {
-        return this._btnDel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDel_Click);
-        if (this._btnDel != null)
-          this._btnDel.Click -= eventHandler;
-        this._btnDel = value;
-        if (this._btnDel == null)
-          return;
-        this._btnDel.Click += eventHandler;
-      }
-    }
-
-    Button Button1
-    {
-      get
-      {
-        return this._Button1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.Button1_Click);
-        if (this._Button1 != null)
-          this._Button1.Click -= eventHandler;
-        this._Button1 = value;
-        if (this._Button1 == null)
-          return;
-        this._Button1.Click += eventHandler;
-      }
-    }
-
-    Button Button2
-    {
-      get
-      {
-        return this._Button2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.Button2_Click);
-        if (this._Button2 != null)
-          this._Button2.Click -= eventHandler;
-        this._Button2 = value;
-        if (this._Button2 == null)
-          return;
-        this._Button2.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbAT1
-    {
-      get
-      {
-        return this._cbAT1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbAT1_SelectedIndexChanged);
-        if (this._cbAT1 != null)
-          this._cbAT1.SelectedIndexChanged -= eventHandler;
-        this._cbAT1 = value;
-        if (this._cbAT1 == null)
-          return;
-        this._cbAT1.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbPower
-    {
-      get
-      {
-        return this._cbPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbPower_SelectedIndexChanged);
-        if (this._cbPower != null)
-          this._cbPower.SelectedIndexChanged -= eventHandler;
-        this._cbPower = value;
-        if (this._cbPower == null)
-          return;
-        this._cbPower.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSet1
-    {
-      get
-      {
-        return this._cbSet1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSet1_SelectedIndexChanged);
-        if (this._cbSet1 != null)
-          this._cbSet1.SelectedIndexChanged -= eventHandler;
-        this._cbSet1 = value;
-        if (this._cbSet1 == null)
-          return;
-        this._cbSet1.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbType1
-    {
-      get
-      {
-        return this._cbType1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbType1_SelectedIndexChanged);
-        if (this._cbType1 != null)
-          this._cbType1.SelectedIndexChanged -= eventHandler;
-        this._cbType1 = value;
-        if (this._cbType1 == null)
-          return;
-        this._cbType1.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-
-
-    ListBox lstTweaks
-    {
-      get
-      {
-        return this._lstTweaks;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lstTweaks_SelectedIndexChanged);
-        if (this._lstTweaks != null)
-          this._lstTweaks.SelectedIndexChanged -= eventHandler;
-        this._lstTweaks = value;
-        if (this._lstTweaks == null)
-          return;
-        this._lstTweaks.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
@@ -572,6 +399,20 @@ namespace Hero_Designer
       this.GroupBox1.PerformLayout();
       this.GroupBox2.ResumeLayout(false);
       this.GroupBox2.PerformLayout();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.Button1.Click += Button1_Click;
+                  this.Button2.Click += Button2_Click;
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnDel.Click += btnDel_Click;
+                  this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
+                  this.cbPower.SelectedIndexChanged += cbPower_SelectedIndexChanged;
+                  this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
+                  this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
+                  this.lstTweaks.SelectedIndexChanged += lstTweaks_SelectedIndexChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

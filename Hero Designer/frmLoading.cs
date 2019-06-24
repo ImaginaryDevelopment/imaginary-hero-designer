@@ -10,59 +10,13 @@ namespace Hero_Designer
 {
   public class frmLoading : Form, IMessager
   {
-    [AccessedThroughProperty("Label1")]
-    Label _Label1;
+        Label Label1;
 
-    [AccessedThroughProperty("PictureBox1")]
-    PictureBox _PictureBox1;
+        PictureBox PictureBox1;
 
-    [AccessedThroughProperty("tmrOpacity")]
-    Timer _tmrOpacity;
+        Timer tmrOpacity;
 
     IContainer components;
-
-
-    Label Label1
-    {
-      get
-      {
-        return this._Label1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._Label1 = value;
-      }
-    }
-
-    PictureBox PictureBox1
-    {
-      get
-      {
-        return this._PictureBox1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        this._PictureBox1 = value;
-      }
-    }
-
-    Timer tmrOpacity
-    {
-      get
-      {
-        return this._tmrOpacity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.tmrOpacity_Tick);
-        if (this._tmrOpacity != null)
-          this._tmrOpacity.Tick -= eventHandler;
-        this._tmrOpacity = value;
-        if (this._tmrOpacity == null)
-          return;
-        this._tmrOpacity.Tick += eventHandler;
-      }
-    }
 
     public frmLoading()
     {
@@ -121,6 +75,12 @@ namespace Hero_Designer
       this.StartPosition = FormStartPosition.CenterScreen;
       this.Text = nameof (frmLoading);
       ((ISupportInitialize) this.PictureBox1).EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.tmrOpacity.Tick += tmrOpacity_Tick;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

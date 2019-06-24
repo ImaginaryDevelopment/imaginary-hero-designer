@@ -30,74 +30,51 @@ namespace Hero_Designer
 
     const int FILTER_ORPHAN_SETS = 4;
 
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnClassAdd")]
-    Button _btnClassAdd;
+        Button btnClassAdd;
 
-    [AccessedThroughProperty("btnClassClone")]
-    Button _btnClassClone;
+        Button btnClassClone;
 
-    [AccessedThroughProperty("btnClassDelete")]
-    Button _btnClassDelete;
+        Button btnClassDelete;
 
-    [AccessedThroughProperty("btnClassDown")]
-    Button _btnClassDown;
+        Button btnClassDown;
 
-    [AccessedThroughProperty("btnClassEdit")]
-    Button _btnClassEdit;
+        Button btnClassEdit;
 
-    [AccessedThroughProperty("btnClassSort")]
-    Button _btnClassSort;
+        Button btnClassSort;
 
-    [AccessedThroughProperty("btnClassUp")]
-    Button _btnClassUp;
+        Button btnClassUp;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnPowerAdd")]
-    Button _btnPowerAdd;
+        Button btnPowerAdd;
 
-    [AccessedThroughProperty("btnPowerClone")]
-    Button _btnPowerClone;
+        Button btnPowerClone;
 
-    [AccessedThroughProperty("btnPowerDelete")]
-    Button _btnPowerDelete;
+        Button btnPowerDelete;
 
-    [AccessedThroughProperty("btnPowerDown")]
-    Button _btnPowerDown;
+        Button btnPowerDown;
 
-    [AccessedThroughProperty("btnPowerEdit")]
-    Button _btnPowerEdit;
+        Button btnPowerEdit;
 
-    [AccessedThroughProperty("btnPowerSort")]
-    Button _btnPowerSort;
+        Button btnPowerSort;
 
-    [AccessedThroughProperty("btnPowerUp")]
-    Button _btnPowerUp;
+        Button btnPowerUp;
 
-    [AccessedThroughProperty("btnPSDown")]
-    Button _btnPSDown;
+        Button btnPSDown;
 
-    [AccessedThroughProperty("btnPSUp")]
-    Button _btnPSUp;
+        Button btnPSUp;
 
-    [AccessedThroughProperty("btnSetAdd")]
-    Button _btnSetAdd;
+        Button btnSetAdd;
 
-    [AccessedThroughProperty("btnSetDelete")]
-    Button _btnSetDelete;
+        Button btnSetDelete;
 
-    [AccessedThroughProperty("btnSetEdit")]
-    Button _btnSetEdit;
+        Button btnSetEdit;
 
-    [AccessedThroughProperty("btnSetSort")]
-    Button _btnSetSort;
+        Button btnSetSort;
 
-    [AccessedThroughProperty("cbFilter")]
-    ComboBox _cbFilter;
+        ComboBox cbFilter;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -130,421 +107,6 @@ namespace Hero_Designer
     IContainer components;
 
     protected bool Updating;
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnClassAdd
-    {
-      get
-      {
-        return this._btnClassAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassAdd_Click);
-        if (this._btnClassAdd != null)
-          this._btnClassAdd.Click -= eventHandler;
-        this._btnClassAdd = value;
-        if (this._btnClassAdd == null)
-          return;
-        this._btnClassAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnClassClone
-    {
-      get
-      {
-        return this._btnClassClone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassClone_Click);
-        if (this._btnClassClone != null)
-          this._btnClassClone.Click -= eventHandler;
-        this._btnClassClone = value;
-        if (this._btnClassClone == null)
-          return;
-        this._btnClassClone.Click += eventHandler;
-      }
-    }
-
-    Button btnClassDelete
-    {
-      get
-      {
-        return this._btnClassDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassDelete_Click);
-        if (this._btnClassDelete != null)
-          this._btnClassDelete.Click -= eventHandler;
-        this._btnClassDelete = value;
-        if (this._btnClassDelete == null)
-          return;
-        this._btnClassDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnClassDown
-    {
-      get
-      {
-        return this._btnClassDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassDown_Click);
-        if (this._btnClassDown != null)
-          this._btnClassDown.Click -= eventHandler;
-        this._btnClassDown = value;
-        if (this._btnClassDown == null)
-          return;
-        this._btnClassDown.Click += eventHandler;
-      }
-    }
-
-    Button btnClassEdit
-    {
-      get
-      {
-        return this._btnClassEdit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassEdit_Click);
-        if (this._btnClassEdit != null)
-          this._btnClassEdit.Click -= eventHandler;
-        this._btnClassEdit = value;
-        if (this._btnClassEdit == null)
-          return;
-        this._btnClassEdit.Click += eventHandler;
-      }
-    }
-
-    Button btnClassSort
-    {
-      get
-      {
-        return this._btnClassSort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassSort_Click);
-        if (this._btnClassSort != null)
-          this._btnClassSort.Click -= eventHandler;
-        this._btnClassSort = value;
-        if (this._btnClassSort == null)
-          return;
-        this._btnClassSort.Click += eventHandler;
-      }
-    }
-
-    Button btnClassUp
-    {
-      get
-      {
-        return this._btnClassUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClassUp_Click);
-        if (this._btnClassUp != null)
-          this._btnClassUp.Click -= eventHandler;
-        this._btnClassUp = value;
-        if (this._btnClassUp == null)
-          return;
-        this._btnClassUp.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerAdd
-    {
-      get
-      {
-        return this._btnPowerAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerAdd_Click);
-        if (this._btnPowerAdd != null)
-          this._btnPowerAdd.Click -= eventHandler;
-        this._btnPowerAdd = value;
-        if (this._btnPowerAdd == null)
-          return;
-        this._btnPowerAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerClone
-    {
-      get
-      {
-        return this._btnPowerClone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerClone_Click);
-        if (this._btnPowerClone != null)
-          this._btnPowerClone.Click -= eventHandler;
-        this._btnPowerClone = value;
-        if (this._btnPowerClone == null)
-          return;
-        this._btnPowerClone.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerDelete
-    {
-      get
-      {
-        return this._btnPowerDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerDelete_Click);
-        if (this._btnPowerDelete != null)
-          this._btnPowerDelete.Click -= eventHandler;
-        this._btnPowerDelete = value;
-        if (this._btnPowerDelete == null)
-          return;
-        this._btnPowerDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerDown
-    {
-      get
-      {
-        return this._btnPowerDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerDown_Click);
-        if (this._btnPowerDown != null)
-          this._btnPowerDown.Click -= eventHandler;
-        this._btnPowerDown = value;
-        if (this._btnPowerDown == null)
-          return;
-        this._btnPowerDown.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerEdit
-    {
-      get
-      {
-        return this._btnPowerEdit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerEdit_Click);
-        if (this._btnPowerEdit != null)
-          this._btnPowerEdit.Click -= eventHandler;
-        this._btnPowerEdit = value;
-        if (this._btnPowerEdit == null)
-          return;
-        this._btnPowerEdit.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerSort
-    {
-      get
-      {
-        return this._btnPowerSort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerSort_Click);
-        if (this._btnPowerSort != null)
-          this._btnPowerSort.Click -= eventHandler;
-        this._btnPowerSort = value;
-        if (this._btnPowerSort == null)
-          return;
-        this._btnPowerSort.Click += eventHandler;
-      }
-    }
-
-    Button btnPowerUp
-    {
-      get
-      {
-        return this._btnPowerUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPowerUp_Click);
-        if (this._btnPowerUp != null)
-          this._btnPowerUp.Click -= eventHandler;
-        this._btnPowerUp = value;
-        if (this._btnPowerUp == null)
-          return;
-        this._btnPowerUp.Click += eventHandler;
-      }
-    }
-
-    Button btnPSDown
-    {
-      get
-      {
-        return this._btnPSDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPSDown_Click);
-        if (this._btnPSDown != null)
-          this._btnPSDown.Click -= eventHandler;
-        this._btnPSDown = value;
-        if (this._btnPSDown == null)
-          return;
-        this._btnPSDown.Click += eventHandler;
-      }
-    }
-
-    Button btnPSUp
-    {
-      get
-      {
-        return this._btnPSUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPSUp_Click);
-        if (this._btnPSUp != null)
-          this._btnPSUp.Click -= eventHandler;
-        this._btnPSUp = value;
-        if (this._btnPSUp == null)
-          return;
-        this._btnPSUp.Click += eventHandler;
-      }
-    }
-
-    Button btnSetAdd
-    {
-      get
-      {
-        return this._btnSetAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSetAdd_Click);
-        if (this._btnSetAdd != null)
-          this._btnSetAdd.Click -= eventHandler;
-        this._btnSetAdd = value;
-        if (this._btnSetAdd == null)
-          return;
-        this._btnSetAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnSetDelete
-    {
-      get
-      {
-        return this._btnSetDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSetDelete_Click);
-        if (this._btnSetDelete != null)
-          this._btnSetDelete.Click -= eventHandler;
-        this._btnSetDelete = value;
-        if (this._btnSetDelete == null)
-          return;
-        this._btnSetDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnSetEdit
-    {
-      get
-      {
-        return this._btnSetEdit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSetEdit_Click);
-        if (this._btnSetEdit != null)
-          this._btnSetEdit.Click -= eventHandler;
-        this._btnSetEdit = value;
-        if (this._btnSetEdit == null)
-          return;
-        this._btnSetEdit.Click += eventHandler;
-      }
-    }
-
-    Button btnSetSort
-    {
-      get
-      {
-        return this._btnSetSort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSetSort_Click);
-        if (this._btnSetSort != null)
-          this._btnSetSort.Click -= eventHandler;
-        this._btnSetSort = value;
-        if (this._btnSetSort == null)
-          return;
-        this._btnSetSort.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbFilter
-    {
-      get
-      {
-        return this._cbFilter;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbFilter_SelectedIndexChanged);
-        if (this._cbFilter != null)
-          this._cbFilter.SelectedIndexChanged -= eventHandler;
-        this._cbFilter = value;
-        if (this._cbFilter == null)
-          return;
-        this._cbFilter.SelectedIndexChanged += eventHandler;
-      }
-    }
-
 
 
 
@@ -1796,6 +1358,34 @@ namespace Hero_Designer
       this.pnlGroup.ResumeLayout(false);
       this.pnlSet.ResumeLayout(false);
       this.pnlPower.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnClassAdd.Click += btnClassAdd_Click;
+                  this.btnClassClone.Click += btnClassClone_Click;
+                  this.btnClassDelete.Click += btnClassDelete_Click;
+                  this.btnClassDown.Click += btnClassDown_Click;
+                  this.btnClassEdit.Click += btnClassEdit_Click;
+                  this.btnClassSort.Click += btnClassSort_Click;
+                  this.btnClassUp.Click += btnClassUp_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnPSDown.Click += btnPSDown_Click;
+                  this.btnPSUp.Click += btnPSUp_Click;
+                  this.btnPowerAdd.Click += btnPowerAdd_Click;
+                  this.btnPowerClone.Click += btnPowerClone_Click;
+                  this.btnPowerDelete.Click += btnPowerDelete_Click;
+                  this.btnPowerDown.Click += btnPowerDown_Click;
+                  this.btnPowerEdit.Click += btnPowerEdit_Click;
+                  this.btnPowerSort.Click += btnPowerSort_Click;
+                  this.btnPowerUp.Click += btnPowerUp_Click;
+                  this.btnSetAdd.Click += btnSetAdd_Click;
+                  this.btnSetDelete.Click += btnSetDelete_Click;
+                  this.btnSetEdit.Click += btnSetEdit_Click;
+                  this.btnSetSort.Click += btnSetSort_Click;
+                  this.cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

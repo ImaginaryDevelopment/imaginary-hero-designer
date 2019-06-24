@@ -16,20 +16,15 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmImport_Powerset : Form
   {
-    [AccessedThroughProperty("btnCheckAll")]
-    Button _btnCheckAll;
+        Button btnCheckAll;
 
-    [AccessedThroughProperty("btnClose")]
-    Button _btnClose;
+        Button btnClose;
 
-    [AccessedThroughProperty("btnFile")]
-    Button _btnFile;
+        Button btnFile;
 
-    [AccessedThroughProperty("btnImport")]
-    Button _btnImport;
+        Button btnImport;
 
-    [AccessedThroughProperty("btnUncheckAll")]
-    Button _btnUncheckAll;
+        Button btnUncheckAll;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -51,97 +46,6 @@ namespace Hero_Designer
     string FullFileName;
 
     PowersetData[] ImportBuffer;
-
-
-    Button btnCheckAll
-    {
-      get
-      {
-        return this._btnCheckAll;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCheckAll_Click);
-        if (this._btnCheckAll != null)
-          this._btnCheckAll.Click -= eventHandler;
-        this._btnCheckAll = value;
-        if (this._btnCheckAll == null)
-          return;
-        this._btnCheckAll.Click += eventHandler;
-      }
-    }
-
-    Button btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.Click -= eventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.Click += eventHandler;
-      }
-    }
-
-    Button btnFile
-    {
-      get
-      {
-        return this._btnFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnFile_Click);
-        if (this._btnFile != null)
-          this._btnFile.Click -= eventHandler;
-        this._btnFile = value;
-        if (this._btnFile == null)
-          return;
-        this._btnFile.Click += eventHandler;
-      }
-    }
-
-    Button btnImport
-    {
-      get
-      {
-        return this._btnImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImport_Click);
-        if (this._btnImport != null)
-          this._btnImport.Click -= eventHandler;
-        this._btnImport = value;
-        if (this._btnImport == null)
-          return;
-        this._btnImport.Click += eventHandler;
-      }
-    }
-
-    Button btnUncheckAll
-    {
-      get
-      {
-        return this._btnUncheckAll;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUncheckAll_Click);
-        if (this._btnUncheckAll != null)
-          this._btnUncheckAll.Click -= eventHandler;
-        this._btnUncheckAll = value;
-        if (this._btnUncheckAll == null)
-          return;
-        this._btnUncheckAll.Click += eventHandler;
-      }
-    }
 
 
 
@@ -463,6 +367,16 @@ namespace Hero_Designer
       this.ShowInTaskbar = false;
       this.Text = "Powerset Import";
       this.udRevision.EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCheckAll.Click += btnCheckAll_Click;
+                  this.btnClose.Click += btnClose_Click;
+                  this.btnFile.Click += btnFile_Click;
+                  this.btnImport.Click += btnImport_Click;
+                  this.btnUncheckAll.Click += btnUncheckAll_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

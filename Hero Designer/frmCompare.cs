@@ -16,38 +16,27 @@ namespace Hero_Designer
 {
     public class frmCompare : Form
     {
-        [AccessedThroughProperty("btnClose")]
-        ImageButton _btnClose;
+        ImageButton btnClose;
 
-        [AccessedThroughProperty("btnTweakMatch")]
-        Button _btnTweakMatch;
+        Button btnTweakMatch;
 
-        [AccessedThroughProperty("cbAT1")]
-        ComboBox _cbAT1;
+        ComboBox cbAT1;
 
-        [AccessedThroughProperty("cbAT2")]
-        ComboBox _cbAT2;
+        ComboBox cbAT2;
 
-        [AccessedThroughProperty("cbSet1")]
-        ComboBox _cbSet1;
+        ComboBox cbSet1;
 
-        [AccessedThroughProperty("cbSet2")]
-        ComboBox _cbSet2;
+        ComboBox cbSet2;
 
-        [AccessedThroughProperty("cbType1")]
-        ComboBox _cbType1;
+        ComboBox cbType1;
 
-        [AccessedThroughProperty("cbType2")]
-        ComboBox _cbType2;
+        ComboBox cbType2;
 
-        [AccessedThroughProperty("chkMatching")]
-        CheckBox _chkMatching;
+        CheckBox chkMatching;
 
-        [AccessedThroughProperty("chkOnTop")]
-        ImageButton _chkOnTop;
+        ImageButton chkOnTop;
 
-        [AccessedThroughProperty("Graph")]
-        ctlMultiGraph _Graph;
+        ctlMultiGraph Graph;
         GroupBox GroupBox1;
         GroupBox GroupBox2;
         GroupBox GroupBox4;
@@ -55,11 +44,9 @@ namespace Hero_Designer
         Label lblKeyColor2;
         Label lblScale;
 
-        [AccessedThroughProperty("lstDisplay")]
-        ListBox _lstDisplay;
+        ListBox lstDisplay;
 
-        [AccessedThroughProperty("tbScaleX")]
-        TrackBar _tbScaleX;
+        TrackBar tbScaleX;
         ToolTip tTip;
 
         IContainer components;
@@ -74,263 +61,9 @@ namespace Hero_Designer
         protected string[][] Tips;
         protected float[][] Values;
 
-        ImageButton btnClose
-        {
-            get
-            {
-                return this._btnClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnClose_Load);
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.btnClose_ButtonClicked);
-                if (this._btnClose != null)
-                {
-                    this._btnClose.Load -= eventHandler;
-                    this._btnClose.ButtonClicked -= clickedEventHandler;
-                }
-                this._btnClose = value;
-                if (this._btnClose == null)
-                    return;
-                this._btnClose.Load += eventHandler;
-                this._btnClose.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        Button btnTweakMatch
-        {
-            get
-            {
-                return this._btnTweakMatch;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnTweakMatch_Click);
-                if (this._btnTweakMatch != null)
-                    this._btnTweakMatch.Click -= eventHandler;
-                this._btnTweakMatch = value;
-                if (this._btnTweakMatch == null)
-                    return;
-                this._btnTweakMatch.Click += eventHandler;
-            }
-        }
-
-        ComboBox cbAT1
-        {
-            get
-            {
-                return this._cbAT1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbAT1_SelectedIndexChanged);
-                if (this._cbAT1 != null)
-                    this._cbAT1.SelectedIndexChanged -= eventHandler;
-                this._cbAT1 = value;
-                if (this._cbAT1 == null)
-                    return;
-                this._cbAT1.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cbAT2
-        {
-            get
-            {
-                return this._cbAT2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbAT2_SelectedIndexChanged);
-                if (this._cbAT2 != null)
-                    this._cbAT2.SelectedIndexChanged -= eventHandler;
-                this._cbAT2 = value;
-                if (this._cbAT2 == null)
-                    return;
-                this._cbAT2.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cbSet1
-        {
-            get
-            {
-                return this._cbSet1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbSet1_SelectedIndexChanged);
-                if (this._cbSet1 != null)
-                    this._cbSet1.SelectedIndexChanged -= eventHandler;
-                this._cbSet1 = value;
-                if (this._cbSet1 == null)
-                    return;
-                this._cbSet1.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cbSet2
-        {
-            get
-            {
-                return this._cbSet2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbSet2_SelectedIndexChanged);
-                if (this._cbSet2 != null)
-                    this._cbSet2.SelectedIndexChanged -= eventHandler;
-                this._cbSet2 = value;
-                if (this._cbSet2 == null)
-                    return;
-                this._cbSet2.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cbType1
-        {
-            get
-            {
-                return this._cbType1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbType1_SelectedIndexChanged);
-                if (this._cbType1 != null)
-                    this._cbType1.SelectedIndexChanged -= eventHandler;
-                this._cbType1 = value;
-                if (this._cbType1 == null)
-                    return;
-                this._cbType1.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        ComboBox cbType2
-        {
-            get
-            {
-                return this._cbType2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbType2_SelectedIndexChanged);
-                if (this._cbType2 != null)
-                    this._cbType2.SelectedIndexChanged -= eventHandler;
-                this._cbType2 = value;
-                if (this._cbType2 == null)
-                    return;
-                this._cbType2.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        CheckBox chkMatching
-        {
-            get
-            {
-                return this._chkMatching;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.chkMatching_CheckedChanged);
-                if (this._chkMatching != null)
-                    this._chkMatching.CheckedChanged -= eventHandler;
-                this._chkMatching = value;
-                if (this._chkMatching == null)
-                    return;
-                this._chkMatching.CheckedChanged += eventHandler;
-            }
-        }
-
-        ImageButton chkOnTop
-        {
-            get
-            {
-                return this._chkOnTop;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.chkOnTop_CheckedChanged);
-                if (this._chkOnTop != null)
-                    this._chkOnTop.ButtonClicked -= clickedEventHandler;
-                this._chkOnTop = value;
-                if (this._chkOnTop == null)
-                    return;
-                this._chkOnTop.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ctlMultiGraph Graph
-        {
-            get
-            {
-                return this._Graph;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.Graph_Load);
-                if (this._Graph != null)
-                    this._Graph.Load -= eventHandler;
-                this._Graph = value;
-                if (this._Graph == null)
-                    return;
-                this._Graph.Load += eventHandler;
-            }
-        }
 
 
 
-
-
-
-
-        ListBox lstDisplay
-        {
-            get
-            {
-                return this._lstDisplay;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lstDisplay_SelectedIndexChanged);
-                if (this._lstDisplay != null)
-                    this._lstDisplay.SelectedIndexChanged -= eventHandler;
-                this._lstDisplay = value;
-                if (this._lstDisplay == null)
-                    return;
-                this._lstDisplay.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-        TrackBar tbScaleX
-        {
-            get
-            {
-                return this._tbScaleX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tbScaleX_Scroll);
-                if (this._tbScaleX != null)
-                    this._tbScaleX.Scroll -= eventHandler;
-                this._tbScaleX = value;
-                if (this._tbScaleX == null)
-                    return;
-                this._tbScaleX.Scroll += eventHandler;
-            }
-        }
 
 
         public frmCompare(ref frmMain iFrm)
@@ -1095,6 +828,28 @@ namespace Hero_Designer
             this.tbScaleX.EndInit();
             this.GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.Graph.Load += Graph_Load;
+                  
+                  // btnClose events
+                  this.btnClose.Load += btnClose_Load;
+                  this.btnClose.ButtonClicked += btnClose_ButtonClicked;
+                  
+                  this.btnTweakMatch.Click += btnTweakMatch_Click;
+                  this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
+                  this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
+                  this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
+                  this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
+                  this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
+                  this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
+                  this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
+                  this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+                  this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
+                  this.tbScaleX.Scroll += tbScaleX_Scroll;
+              }
+              // finished with events
             this.PerformLayout();
         }
 

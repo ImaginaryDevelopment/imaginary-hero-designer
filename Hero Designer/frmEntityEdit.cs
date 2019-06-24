@@ -16,38 +16,27 @@ namespace Hero_Designer
   {
         Button btnCancel;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnPAdd")]
-    Button _btnPAdd;
+        Button btnPAdd;
 
-    [AccessedThroughProperty("btnPDelete")]
-    Button _btnPDelete;
+        Button btnPDelete;
 
-    [AccessedThroughProperty("btnPDown")]
-    Button _btnPDown;
+        Button btnPDown;
 
-    [AccessedThroughProperty("btnPUp")]
-    Button _btnPUp;
+        Button btnPUp;
 
-    [AccessedThroughProperty("btnUGAdd")]
-    Button _btnUGAdd;
+        Button btnUGAdd;
 
-    [AccessedThroughProperty("btnUGDelete")]
-    Button _btnUGDelete;
+        Button btnUGDelete;
 
-    [AccessedThroughProperty("btnUGDown")]
-    Button _btnUGDown;
+        Button btnUGDown;
 
-    [AccessedThroughProperty("btnUGUp")]
-    Button _btnUGUp;
+        Button btnUGUp;
 
-    [AccessedThroughProperty("cbClass")]
-    ComboBox _cbClass;
+        ComboBox cbClass;
 
-    [AccessedThroughProperty("cbEntType")]
-    ComboBox _cbEntType;
+        ComboBox cbEntType;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader10;
         ColumnHeader ColumnHeader11;
@@ -63,32 +52,25 @@ namespace Hero_Designer
         Label Label4;
         Label Label5;
 
-    [AccessedThroughProperty("lvPower")]
-    ListView _lvPower;
+        ListView lvPower;
 
-    [AccessedThroughProperty("lvPSGroup")]
-    ListView _lvPSGroup;
+        ListView lvPSGroup;
 
     [AccessedThroughProperty("lvPSSet")]
     ListView _lvPSSet;
 
-    [AccessedThroughProperty("lvUGGroup")]
-    ListView _lvUGGroup;
+        ListView lvUGGroup;
 
     [AccessedThroughProperty("lvUGPower")]
     ListView _lvUGPower;
 
-    [AccessedThroughProperty("lvUGSet")]
-    ListView _lvUGSet;
+        ListView lvUGSet;
 
-    [AccessedThroughProperty("lvUpgrade")]
-    ListView _lvUpgrade;
+        ListView lvUpgrade;
 
-    [AccessedThroughProperty("txtDisplayName")]
-    TextBox _txtDisplayName;
+        TextBox txtDisplayName;
 
-    [AccessedThroughProperty("txtEntName")]
-    TextBox _txtEntName;
+        TextBox txtEntName;
 
     IContainer components;
 
@@ -97,203 +79,6 @@ namespace Hero_Designer
     protected bool Updating;
 
 
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnPAdd
-    {
-      get
-      {
-        return this._btnPAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPAdd_Click);
-        if (this._btnPAdd != null)
-          this._btnPAdd.Click -= eventHandler;
-        this._btnPAdd = value;
-        if (this._btnPAdd == null)
-          return;
-        this._btnPAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnPDelete
-    {
-      get
-      {
-        return this._btnPDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPDelete_Click);
-        if (this._btnPDelete != null)
-          this._btnPDelete.Click -= eventHandler;
-        this._btnPDelete = value;
-        if (this._btnPDelete == null)
-          return;
-        this._btnPDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnPDown
-    {
-      get
-      {
-        return this._btnPDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPDown_Click);
-        if (this._btnPDown != null)
-          this._btnPDown.Click -= eventHandler;
-        this._btnPDown = value;
-        if (this._btnPDown == null)
-          return;
-        this._btnPDown.Click += eventHandler;
-      }
-    }
-
-    Button btnPUp
-    {
-      get
-      {
-        return this._btnPUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPUp_Click);
-        if (this._btnPUp != null)
-          this._btnPUp.Click -= eventHandler;
-        this._btnPUp = value;
-        if (this._btnPUp == null)
-          return;
-        this._btnPUp.Click += eventHandler;
-      }
-    }
-
-    Button btnUGAdd
-    {
-      get
-      {
-        return this._btnUGAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUGAdd_Click);
-        if (this._btnUGAdd != null)
-          this._btnUGAdd.Click -= eventHandler;
-        this._btnUGAdd = value;
-        if (this._btnUGAdd == null)
-          return;
-        this._btnUGAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnUGDelete
-    {
-      get
-      {
-        return this._btnUGDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUGDelete_Click);
-        if (this._btnUGDelete != null)
-          this._btnUGDelete.Click -= eventHandler;
-        this._btnUGDelete = value;
-        if (this._btnUGDelete == null)
-          return;
-        this._btnUGDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnUGDown
-    {
-      get
-      {
-        return this._btnUGDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUGDown_Click);
-        if (this._btnUGDown != null)
-          this._btnUGDown.Click -= eventHandler;
-        this._btnUGDown = value;
-        if (this._btnUGDown == null)
-          return;
-        this._btnUGDown.Click += eventHandler;
-      }
-    }
-
-    Button btnUGUp
-    {
-      get
-      {
-        return this._btnUGUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUGUp_Click);
-        if (this._btnUGUp != null)
-          this._btnUGUp.Click -= eventHandler;
-        this._btnUGUp = value;
-        if (this._btnUGUp == null)
-          return;
-        this._btnUGUp.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbClass
-    {
-      get
-      {
-        return this._cbClass;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbClass_SelectedIndexChanged);
-        if (this._cbClass != null)
-          this._cbClass.SelectedIndexChanged -= eventHandler;
-        this._cbClass = value;
-        if (this._cbClass == null)
-          return;
-        this._cbClass.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbEntType
-    {
-      get
-      {
-        return this._cbEntType;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbEntType_SelectedIndexChanged);
-        if (this._cbEntType != null)
-          this._cbEntType.SelectedIndexChanged -= eventHandler;
-        this._cbEntType = value;
-        if (this._cbEntType == null)
-          return;
-        this._cbEntType.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
@@ -305,45 +90,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-
-    ListView lvPower
-    {
-      get
-      {
-        return this._lvPower;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvPower_SelectedIndexChanged);
-        if (this._lvPower != null)
-          this._lvPower.SelectedIndexChanged -= eventHandler;
-        this._lvPower = value;
-        if (this._lvPower == null)
-          return;
-        this._lvPower.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvPSGroup
-    {
-      get
-      {
-        return this._lvPSGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvPSGroup_SelectedIndexChanged);
-        if (this._lvPSGroup != null)
-          this._lvPSGroup.SelectedIndexChanged -= eventHandler;
-        this._lvPSGroup = value;
-        if (this._lvPSGroup == null)
-          return;
-        this._lvPSGroup.SelectedIndexChanged += eventHandler;
-      }
-    }
 
     ListView lvPSSet
     {
@@ -367,25 +113,6 @@ namespace Hero_Designer
         this._lvPSSet.Click += eventHandler2;
       }
     }
-
-    ListView lvUGGroup
-    {
-      get
-      {
-        return this._lvUGGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvUGGroup_SelectedIndexChanged);
-        if (this._lvUGGroup != null)
-          this._lvUGGroup.SelectedIndexChanged -= eventHandler;
-        this._lvUGGroup = value;
-        if (this._lvUGGroup == null)
-          return;
-        this._lvUGGroup.SelectedIndexChanged += eventHandler;
-      }
-    }
-
     ListView lvUGPower
     {
       get
@@ -408,79 +135,6 @@ namespace Hero_Designer
         this._lvUGPower.Click += eventHandler2;
       }
     }
-
-    ListView lvUGSet
-    {
-      get
-      {
-        return this._lvUGSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvUGSet_SelectedIndexChanged);
-        if (this._lvUGSet != null)
-          this._lvUGSet.SelectedIndexChanged -= eventHandler;
-        this._lvUGSet = value;
-        if (this._lvUGSet == null)
-          return;
-        this._lvUGSet.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvUpgrade
-    {
-      get
-      {
-        return this._lvUpgrade;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvUpgrade_SelectedIndexChanged);
-        if (this._lvUpgrade != null)
-          this._lvUpgrade.SelectedIndexChanged -= eventHandler;
-        this._lvUpgrade = value;
-        if (this._lvUpgrade == null)
-          return;
-        this._lvUpgrade.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    TextBox txtDisplayName
-    {
-      get
-      {
-        return this._txtDisplayName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDisplayName_TextChanged);
-        if (this._txtDisplayName != null)
-          this._txtDisplayName.TextChanged -= eventHandler;
-        this._txtDisplayName = value;
-        if (this._txtDisplayName == null)
-          return;
-        this._txtDisplayName.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtEntName
-    {
-      get
-      {
-        return this._txtEntName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtEntName_TextChanged);
-        if (this._txtEntName != null)
-          this._txtEntName.TextChanged -= eventHandler;
-        this._txtEntName = value;
-        if (this._txtEntName == null)
-          return;
-        this._txtEntName.TextChanged += eventHandler;
-      }
-    }
-
     public frmEntityEdit(SummonedEntity iEntity)
     {
       this.Load += new EventHandler(this.frmEntityEdit_Load);
@@ -1108,6 +762,29 @@ namespace Hero_Designer
       this.GroupBox1.ResumeLayout(false);
       this.GroupBox2.ResumeLayout(false);
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnPAdd.Click += btnPAdd_Click;
+                  this.btnPDelete.Click += btnPDelete_Click;
+                  this.btnPDown.Click += btnPDown_Click;
+                  this.btnPUp.Click += btnPUp_Click;
+                  this.btnUGAdd.Click += btnUGAdd_Click;
+                  this.btnUGDelete.Click += btnUGDelete_Click;
+                  this.btnUGDown.Click += btnUGDown_Click;
+                  this.btnUGUp.Click += btnUGUp_Click;
+                  this.cbClass.SelectedIndexChanged += cbClass_SelectedIndexChanged;
+                  this.cbEntType.SelectedIndexChanged += cbEntType_SelectedIndexChanged;
+                  this.lvPSGroup.SelectedIndexChanged += lvPSGroup_SelectedIndexChanged;
+                  this.lvPower.SelectedIndexChanged += lvPower_SelectedIndexChanged;
+                  this.lvUGGroup.SelectedIndexChanged += lvUGGroup_SelectedIndexChanged;
+                  this.lvUGSet.SelectedIndexChanged += lvUGSet_SelectedIndexChanged;
+                  this.lvUpgrade.SelectedIndexChanged += lvUpgrade_SelectedIndexChanged;
+                  this.txtDisplayName.TextChanged += txtDisplayName_TextChanged;
+                  this.txtEntName.TextChanged += txtEntName_TextChanged;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

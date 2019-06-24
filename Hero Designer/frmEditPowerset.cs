@@ -15,47 +15,34 @@ namespace Hero_Designer
 {
   public class frmEditPowerset : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnClearIcon")]
-    Button _btnClearIcon;
+        Button btnClearIcon;
 
-    [AccessedThroughProperty("btnClose")]
-    Button _btnClose;
+        Button btnClose;
 
-    [AccessedThroughProperty("btnIcon")]
-    Button _btnIcon;
+        Button btnIcon;
 
-    [AccessedThroughProperty("cbAT")]
-    ComboBox _cbAT;
+        ComboBox cbAT;
 
-    [AccessedThroughProperty("cbLinkGroup")]
-    ComboBox _cbLinkGroup;
+        ComboBox cbLinkGroup;
 
-    [AccessedThroughProperty("cbLinkSet")]
-    ComboBox _cbLinkSet;
+        ComboBox cbLinkSet;
 
-    [AccessedThroughProperty("cbMutexGroup")]
-    ComboBox _cbMutexGroup;
+        ComboBox cbMutexGroup;
 
     [AccessedThroughProperty("cbNameGroup")]
     ComboBox _cbNameGroup;
 
-    [AccessedThroughProperty("cbSetType")]
-    ComboBox _cbSetType;
+        ComboBox cbSetType;
 
-    [AccessedThroughProperty("cbTrunkGroup")]
-    ComboBox _cbTrunkGroup;
+        ComboBox cbTrunkGroup;
 
-    [AccessedThroughProperty("cbTrunkSet")]
-    ComboBox _cbTrunkSet;
+        ComboBox cbTrunkSet;
 
-    [AccessedThroughProperty("chkNoLink")]
-    CheckBox _chkNoLink;
+        CheckBox chkNoLink;
 
-    [AccessedThroughProperty("chkNoTrunk")]
-    CheckBox _chkNoTrunk;
+        CheckBox chkNoTrunk;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -80,16 +67,13 @@ namespace Hero_Designer
         Label lblNameFull;
         Label lblNameUnique;
 
-    [AccessedThroughProperty("lvMutexSets")]
-    ListBox _lvMutexSets;
+        ListBox lvMutexSets;
         ListView lvPowers;
         PictureBox picIcon;
 
-    [AccessedThroughProperty("txtDesc")]
-    TextBox _txtDesc;
+        TextBox txtDesc;
 
-    [AccessedThroughProperty("txtName")]
-    TextBox _txtName;
+        TextBox txtName;
 
     [AccessedThroughProperty("txtNameSet")]
     TextBox _txtNameSet;
@@ -98,151 +82,6 @@ namespace Hero_Designer
 
     protected bool Loading;
     public IPowerset myPS;
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnClearIcon
-    {
-      get
-      {
-        return this._btnClearIcon;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClearIcon_Click);
-        if (this._btnClearIcon != null)
-          this._btnClearIcon.Click -= eventHandler;
-        this._btnClearIcon = value;
-        if (this._btnClearIcon == null)
-          return;
-        this._btnClearIcon.Click += eventHandler;
-      }
-    }
-
-    Button btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.Click -= eventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.Click += eventHandler;
-      }
-    }
-
-    Button btnIcon
-    {
-      get
-      {
-        return this._btnIcon;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnIcon_Click);
-        if (this._btnIcon != null)
-          this._btnIcon.Click -= eventHandler;
-        this._btnIcon = value;
-        if (this._btnIcon == null)
-          return;
-        this._btnIcon.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbAT
-    {
-      get
-      {
-        return this._cbAT;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbAT_SelectedIndexChanged);
-        if (this._cbAT != null)
-          this._cbAT.SelectedIndexChanged -= eventHandler;
-        this._cbAT = value;
-        if (this._cbAT == null)
-          return;
-        this._cbAT.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbLinkGroup
-    {
-      get
-      {
-        return this._cbLinkGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbLinkGroup_SelectedIndexChanged);
-        if (this._cbLinkGroup != null)
-          this._cbLinkGroup.SelectedIndexChanged -= eventHandler;
-        this._cbLinkGroup = value;
-        if (this._cbLinkGroup == null)
-          return;
-        this._cbLinkGroup.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbLinkSet
-    {
-      get
-      {
-        return this._cbLinkSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbLinkSet_SelectedIndexChanged);
-        if (this._cbLinkSet != null)
-          this._cbLinkSet.SelectedIndexChanged -= eventHandler;
-        this._cbLinkSet = value;
-        if (this._cbLinkSet == null)
-          return;
-        this._cbLinkSet.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbMutexGroup
-    {
-      get
-      {
-        return this._cbMutexGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbMutexGroup_SelectionChangeCommitted);
-        if (this._cbMutexGroup != null)
-          this._cbMutexGroup.SelectionChangeCommitted -= eventHandler;
-        this._cbMutexGroup = value;
-        if (this._cbMutexGroup == null)
-          return;
-        this._cbMutexGroup.SelectionChangeCommitted += eventHandler;
-      }
-    }
-
     ComboBox cbNameGroup
     {
       get
@@ -269,95 +108,6 @@ namespace Hero_Designer
       }
     }
 
-    ComboBox cbSetType
-    {
-      get
-      {
-        return this._cbSetType;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSetType_SelectedIndexChanged);
-        if (this._cbSetType != null)
-          this._cbSetType.SelectedIndexChanged -= eventHandler;
-        this._cbSetType = value;
-        if (this._cbSetType == null)
-          return;
-        this._cbSetType.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbTrunkGroup
-    {
-      get
-      {
-        return this._cbTrunkGroup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbTrunkGroup_SelectedIndexChanged);
-        if (this._cbTrunkGroup != null)
-          this._cbTrunkGroup.SelectedIndexChanged -= eventHandler;
-        this._cbTrunkGroup = value;
-        if (this._cbTrunkGroup == null)
-          return;
-        this._cbTrunkGroup.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbTrunkSet
-    {
-      get
-      {
-        return this._cbTrunkSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbTrunkSet_SelectedIndexChanged);
-        if (this._cbTrunkSet != null)
-          this._cbTrunkSet.SelectedIndexChanged -= eventHandler;
-        this._cbTrunkSet = value;
-        if (this._cbTrunkSet == null)
-          return;
-        this._cbTrunkSet.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    CheckBox chkNoLink
-    {
-      get
-      {
-        return this._chkNoLink;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkNoLink_CheckedChanged);
-        if (this._chkNoLink != null)
-          this._chkNoLink.CheckedChanged -= eventHandler;
-        this._chkNoLink = value;
-        if (this._chkNoLink == null)
-          return;
-        this._chkNoLink.CheckedChanged += eventHandler;
-      }
-    }
-
-    CheckBox chkNoTrunk
-    {
-      get
-      {
-        return this._chkNoTrunk;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkNoTrunk_CheckedChanged);
-        if (this._chkNoTrunk != null)
-          this._chkNoTrunk.CheckedChanged -= eventHandler;
-        this._chkNoTrunk = value;
-        if (this._chkNoTrunk == null)
-          return;
-        this._chkNoTrunk.CheckedChanged += eventHandler;
-      }
-    }
 
 
 
@@ -379,64 +129,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-    ListBox lvMutexSets
-    {
-      get
-      {
-        return this._lvMutexSets;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvMutexSets_SelectedIndexChanged);
-        if (this._lvMutexSets != null)
-          this._lvMutexSets.SelectedIndexChanged -= eventHandler;
-        this._lvMutexSets = value;
-        if (this._lvMutexSets == null)
-          return;
-        this._lvMutexSets.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-
-
-    TextBox txtDesc
-    {
-      get
-      {
-        return this._txtDesc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDesc_TextChanged);
-        if (this._txtDesc != null)
-          this._txtDesc.TextChanged -= eventHandler;
-        this._txtDesc = value;
-        if (this._txtDesc == null)
-          return;
-        this._txtDesc.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtName
-    {
-      get
-      {
-        return this._txtName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtName_TextChanged);
-        if (this._txtName != null)
-          this._txtName.TextChanged -= eventHandler;
-        this._txtName = value;
-        if (this._txtName == null)
-          return;
-        this._txtName.TextChanged += eventHandler;
-      }
-    }
 
     TextBox txtNameSet
     {
@@ -1278,6 +970,27 @@ namespace Hero_Designer
       this.GroupBox4.ResumeLayout(false);
       this.gbLink.ResumeLayout(false);
       this.GroupBox5.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnClearIcon.Click += btnClearIcon_Click;
+                  this.btnClose.Click += btnClose_Click;
+                  this.btnIcon.Click += btnIcon_Click;
+                  this.cbAT.SelectedIndexChanged += cbAT_SelectedIndexChanged;
+                  this.cbLinkGroup.SelectedIndexChanged += cbLinkGroup_SelectedIndexChanged;
+                  this.cbLinkSet.SelectedIndexChanged += cbLinkSet_SelectedIndexChanged;
+                  this.cbMutexGroup.SelectionChangeCommitted += cbMutexGroup_SelectionChangeCommitted;
+                  this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
+                  this.cbTrunkGroup.SelectedIndexChanged += cbTrunkGroup_SelectedIndexChanged;
+                  this.cbTrunkSet.SelectedIndexChanged += cbTrunkSet_SelectedIndexChanged;
+                  this.chkNoLink.CheckedChanged += chkNoLink_CheckedChanged;
+                  this.chkNoTrunk.CheckedChanged += chkNoTrunk_CheckedChanged;
+                  this.lvMutexSets.SelectedIndexChanged += lvMutexSets_SelectedIndexChanged;
+                  this.txtDesc.TextChanged += txtDesc_TextChanged;
+                  this.txtName.TextChanged += txtName_TextChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

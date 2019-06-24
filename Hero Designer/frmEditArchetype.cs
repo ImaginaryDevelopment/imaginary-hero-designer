@@ -15,19 +15,15 @@ namespace Hero_Designer
 {
   public class frmEditArchetype : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("cbClassType")]
-    ComboBox _cbClassType;
+        ComboBox cbClassType;
         ComboBox cbPriGroup;
         ComboBox cbSecGroup;
 
-    [AccessedThroughProperty("chkPlayable")]
-    CheckBox _chkPlayable;
+        CheckBox chkPlayable;
         CheckedListBox clbOrigin;
         GroupBox GroupBox1;
         GroupBox GroupBox2;
@@ -61,20 +57,16 @@ namespace Hero_Designer
         TextBox txtBaseRec;
         TextBox txtBaseRegen;
 
-    [AccessedThroughProperty("txtClassName")]
-    TextBox _txtClassName;
+        TextBox txtClassName;
         TextBox txtDamCap;
 
-    [AccessedThroughProperty("txtDescLong")]
-    TextBox _txtDescLong;
+        TextBox txtDescLong;
 
-    [AccessedThroughProperty("txtDescShort")]
-    TextBox _txtDescShort;
+        TextBox txtDescShort;
         TextBox txtHP;
         TextBox txtHPCap;
 
-    [AccessedThroughProperty("txtName")]
-    TextBox _txtName;
+        TextBox txtName;
         TextBox txtPerceptionCap;
         TextBox txtRecCap;
         TextBox txtRechargeCap;
@@ -90,79 +82,6 @@ namespace Hero_Designer
     protected bool ONDuplicate;
     protected string OriginalName;
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbClassType
-    {
-      get
-      {
-        return this._cbClassType;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbClassType_SelectedIndexChanged);
-        if (this._cbClassType != null)
-          this._cbClassType.SelectedIndexChanged -= eventHandler;
-        this._cbClassType = value;
-        if (this._cbClassType == null)
-          return;
-        this._cbClassType.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-
-
-    CheckBox chkPlayable
-    {
-      get
-      {
-        return this._chkPlayable;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.chkPlayable_CheckedChanged);
-        if (this._chkPlayable != null)
-          this._chkPlayable.CheckedChanged -= eventHandler;
-        this._chkPlayable = value;
-        if (this._chkPlayable == null)
-          return;
-        this._chkPlayable.CheckedChanged += eventHandler;
-      }
-    }
 
 
 
@@ -194,82 +113,6 @@ namespace Hero_Designer
 
 
 
-
-
-    TextBox txtClassName
-    {
-      get
-      {
-        return this._txtClassName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtClassName_TextChanged);
-        if (this._txtClassName != null)
-          this._txtClassName.TextChanged -= eventHandler;
-        this._txtClassName = value;
-        if (this._txtClassName == null)
-          return;
-        this._txtClassName.TextChanged += eventHandler;
-      }
-    }
-
-
-    TextBox txtDescLong
-    {
-      get
-      {
-        return this._txtDescLong;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDescLong_TextChanged);
-        if (this._txtDescLong != null)
-          this._txtDescLong.TextChanged -= eventHandler;
-        this._txtDescLong = value;
-        if (this._txtDescLong == null)
-          return;
-        this._txtDescLong.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtDescShort
-    {
-      get
-      {
-        return this._txtDescShort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDescShort_TextChanged);
-        if (this._txtDescShort != null)
-          this._txtDescShort.TextChanged -= eventHandler;
-        this._txtDescShort = value;
-        if (this._txtDescShort == null)
-          return;
-        this._txtDescShort.TextChanged += eventHandler;
-      }
-    }
-
-
-
-    TextBox txtName
-    {
-      get
-      {
-        return this._txtName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtName_TextChanged);
-        if (this._txtName != null)
-          this._txtName.TextChanged -= eventHandler;
-        this._txtName = value;
-        if (this._txtName == null)
-          return;
-        this._txtName.TextChanged += eventHandler;
-      }
-    }
 
 
 
@@ -1043,6 +886,19 @@ namespace Hero_Designer
       this.GroupBox4.ResumeLayout(false);
       this.GroupBox4.PerformLayout();
       this.GroupBox5.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.cbClassType.SelectedIndexChanged += cbClassType_SelectedIndexChanged;
+                  this.chkPlayable.CheckedChanged += chkPlayable_CheckedChanged;
+                  this.txtClassName.TextChanged += txtClassName_TextChanged;
+                  this.txtDescLong.TextChanged += txtDescLong_TextChanged;
+                  this.txtDescShort.TextChanged += txtDescShort_TextChanged;
+                  this.txtName.TextChanged += txtName_TextChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

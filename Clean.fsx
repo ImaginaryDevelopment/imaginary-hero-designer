@@ -743,7 +743,7 @@ let clean (target:string,text:string[],changeList:ChangeContainer list) =
             appendLine "// finished with events"
             cc.Start
         | Regular (FieldChange(name,t,stop)) ->
-            appendLine <| sprintf "%s// Generated (%s) (%i,%i,%i)" inClassIndent name i cc.Start stop
+            //appendLine <| sprintf "%s// Generated (%s) (%i,%i,%i)" inClassIndent name i cc.Start stop
             appendLine <| sprintf "%s%s %s;" inClassIndent t name
             stop + 1
         | Regular (PropRemoval (_,stop)) ->
@@ -781,7 +781,8 @@ let cleanAll()=
         t,txt
     )
     |> Seq.iter (uncurry writeText)
-cleanTest()
+//cleanTest()
+cleanAll()
 
 
 flushDump()

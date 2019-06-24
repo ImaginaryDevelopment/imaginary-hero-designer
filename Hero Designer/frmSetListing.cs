@@ -13,29 +13,21 @@ namespace Hero_Designer
 {
   public class frmSetListing : Form
   {
-    [AccessedThroughProperty("btnAdd")]
-    Button _btnAdd;
+        Button btnAdd;
 
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnClone")]
-    Button _btnClone;
+        Button btnClone;
 
-    [AccessedThroughProperty("btnDelete")]
-    Button _btnDelete;
+        Button btnDelete;
 
-    [AccessedThroughProperty("btnDown")]
-    Button _btnDown;
+        Button btnDown;
 
-    [AccessedThroughProperty("btnEdit")]
-    Button _btnEdit;
+        Button btnEdit;
 
-    [AccessedThroughProperty("btnSave")]
-    Button _btnSave;
+        Button btnSave;
 
-    [AccessedThroughProperty("btnUp")]
-    Button _btnUp;
+        Button btnUp;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -47,155 +39,9 @@ namespace Hero_Designer
     [AccessedThroughProperty("lvSets")]
     ListView _lvSets;
 
-    [AccessedThroughProperty("NoReload")]
-    CheckBox _NoReload;
+        CheckBox NoReload;
 
     IContainer components;
-
-
-    Button btnAdd
-    {
-      get
-      {
-        return this._btnAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-        if (this._btnAdd != null)
-          this._btnAdd.Click -= eventHandler;
-        this._btnAdd = value;
-        if (this._btnAdd == null)
-          return;
-        this._btnAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnClone
-    {
-      get
-      {
-        return this._btnClone;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClone_Click);
-        if (this._btnClone != null)
-          this._btnClone.Click -= eventHandler;
-        this._btnClone = value;
-        if (this._btnClone == null)
-          return;
-        this._btnClone.Click += eventHandler;
-      }
-    }
-
-    Button btnDelete
-    {
-      get
-      {
-        return this._btnDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDelete_Click);
-        if (this._btnDelete != null)
-          this._btnDelete.Click -= eventHandler;
-        this._btnDelete = value;
-        if (this._btnDelete == null)
-          return;
-        this._btnDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnDown
-    {
-      get
-      {
-        return this._btnDown;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDown_Click);
-        if (this._btnDown != null)
-          this._btnDown.Click -= eventHandler;
-        this._btnDown = value;
-        if (this._btnDown == null)
-          return;
-        this._btnDown.Click += eventHandler;
-      }
-    }
-
-    Button btnEdit
-    {
-      get
-      {
-        return this._btnEdit;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEdit_Click);
-        if (this._btnEdit != null)
-          this._btnEdit.Click -= eventHandler;
-        this._btnEdit = value;
-        if (this._btnEdit == null)
-          return;
-        this._btnEdit.Click += eventHandler;
-      }
-    }
-
-    Button btnSave
-    {
-      get
-      {
-        return this._btnSave;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSave_Click);
-        if (this._btnSave != null)
-          this._btnSave.Click -= eventHandler;
-        this._btnSave = value;
-        if (this._btnSave == null)
-          return;
-        this._btnSave.Click += eventHandler;
-      }
-    }
-
-    Button btnUp
-    {
-      get
-      {
-        return this._btnUp;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnUp_Click);
-        if (this._btnUp != null)
-          this._btnUp.Click -= eventHandler;
-        this._btnUp = value;
-        if (this._btnUp == null)
-          return;
-        this._btnUp.Click += eventHandler;
-      }
-    }
 
 
 
@@ -226,25 +72,6 @@ namespace Hero_Designer
         this._lvSets.SelectedIndexChanged += eventHandler2;
       }
     }
-
-    CheckBox NoReload
-    {
-      get
-      {
-        return this._NoReload;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.NoReload_CheckedChanged);
-        if (this._NoReload != null)
-          this._NoReload.CheckedChanged -= eventHandler;
-        this._NoReload = value;
-        if (this._NoReload == null)
-          return;
-        this._NoReload.CheckedChanged += eventHandler;
-      }
-    }
-
     public frmSetListing()
     {
       this.Load += new EventHandler(this.frmSetListing_Load);
@@ -659,6 +486,20 @@ namespace Hero_Designer
       this.ShowInTaskbar = false;
       this.StartPosition = FormStartPosition.CenterParent;
       this.Text = "Invention Set Editor";
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.NoReload.CheckedChanged += NoReload_CheckedChanged;
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnClone.Click += btnClone_Click;
+                  this.btnDelete.Click += btnDelete_Click;
+                  this.btnDown.Click += btnDown_Click;
+                  this.btnEdit.Click += btnEdit_Click;
+                  this.btnSave.Click += btnSave_Click;
+                  this.btnUp.Click += btnUp_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

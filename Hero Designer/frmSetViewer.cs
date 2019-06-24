@@ -14,14 +14,11 @@ namespace Hero_Designer
 {
     public class frmSetViewer : Form
     {
-        [AccessedThroughProperty("btnClose")]
-        ImageButton _btnClose;
+        ImageButton btnClose;
 
-        [AccessedThroughProperty("btnSmall")]
-        ImageButton _btnSmall;
+        ImageButton btnSmall;
 
-        [AccessedThroughProperty("chkOnTop")]
-        ImageButton _chkOnTop;
+        ImageButton chkOnTop;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -29,8 +26,7 @@ namespace Hero_Designer
         Label Label1;
         Label Label2;
 
-        [AccessedThroughProperty("lstSets")]
-        ListView _lstSets;
+        ListView lstSets;
         RichTextBox rtApplied;
         RichTextBox rtxtFX;
         RichTextBox rtxtInfo;
@@ -39,87 +35,9 @@ namespace Hero_Designer
 
         protected frmMain myParent;
 
-        ImageButton btnClose
-        {
-            get
-            {
-                return this._btnClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.btnClose_Click);
-                if (this._btnClose != null)
-                    this._btnClose.ButtonClicked -= clickedEventHandler;
-                this._btnClose = value;
-                if (this._btnClose == null)
-                    return;
-                this._btnClose.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton btnSmall
-        {
-            get
-            {
-                return this._btnSmall;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.btnSmall_Click);
-                if (this._btnSmall != null)
-                    this._btnSmall.ButtonClicked -= clickedEventHandler;
-                this._btnSmall = value;
-                if (this._btnSmall == null)
-                    return;
-                this._btnSmall.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton chkOnTop
-        {
-            get
-            {
-                return this._chkOnTop;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.chkOnTop_CheckedChanged);
-                if (this._chkOnTop != null)
-                    this._chkOnTop.ButtonClicked -= clickedEventHandler;
-                this._chkOnTop = value;
-                if (this._chkOnTop == null)
-                    return;
-                this._chkOnTop.ButtonClicked += clickedEventHandler;
-            }
-        }
 
 
 
-
-
-
-
-        ListView lstSets
-        {
-            get
-            {
-                return this._lstSets;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lstSets_SelectedIndexChanged);
-                if (this._lstSets != null)
-                    this._lstSets.SelectedIndexChanged -= eventHandler;
-                this._lstSets = value;
-                if (this._lstSets == null)
-                    return;
-                this._lstSets.SelectedIndexChanged += eventHandler;
-            }
-        }
 
 
 
@@ -539,6 +457,15 @@ namespace Hero_Designer
             this.StartPosition = FormStartPosition.Manual;
             this.Text = "Currently Active Sets & Bonuses";
             this.TopMost = true;
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnClose.ButtonClicked += btnClose_Click;
+                  this.btnSmall.ButtonClicked += btnSmall_Click;
+                  this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+                  this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

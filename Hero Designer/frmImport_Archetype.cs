@@ -15,14 +15,11 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmImport_Archetype : Form
   {
-    [AccessedThroughProperty("btnATFile")]
-    Button _btnATFile;
+        Button btnATFile;
 
-    [AccessedThroughProperty("btnClose")]
-    Button _btnClose;
+        Button btnClose;
 
-    [AccessedThroughProperty("btnImport")]
-    Button _btnImport;
+        Button btnImport;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -43,61 +40,6 @@ namespace Hero_Designer
     string FullFileName;
 
     ArchetypeData[] ImportBuffer;
-
-
-    Button btnATFile
-    {
-      get
-      {
-        return this._btnATFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnATFile_Click);
-        if (this._btnATFile != null)
-          this._btnATFile.Click -= eventHandler;
-        this._btnATFile = value;
-        if (this._btnATFile == null)
-          return;
-        this._btnATFile.Click += eventHandler;
-      }
-    }
-
-    Button btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.Click -= eventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.Click += eventHandler;
-      }
-    }
-
-    Button btnImport
-    {
-      get
-      {
-        return this._btnImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImport_Click);
-        if (this._btnImport != null)
-          this._btnImport.Click -= eventHandler;
-        this._btnImport = value;
-        if (this._btnImport == null)
-          return;
-        this._btnImport.Click += eventHandler;
-      }
-    }
 
 
 
@@ -357,6 +299,14 @@ namespace Hero_Designer
       this.ShowInTaskbar = false;
       this.Text = "Archetype Class Import";
       this.udATRevision.EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnATFile.Click += btnATFile_Click;
+                  this.btnClose.Click += btnClose_Click;
+                  this.btnImport.Click += btnImport_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

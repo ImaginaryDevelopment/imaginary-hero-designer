@@ -14,14 +14,11 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmImport_SetAssignments : Form
   {
-    [AccessedThroughProperty("btnClose")]
-    Button _btnClose;
+        Button btnClose;
 
-    [AccessedThroughProperty("btnFile")]
-    Button _btnFile;
+        Button btnFile;
 
-    [AccessedThroughProperty("btnImport")]
-    Button _btnImport;
+        Button btnImport;
         OpenFileDialog dlgBrowse;
         Label Label8;
         Label lblDate;
@@ -33,61 +30,6 @@ namespace Hero_Designer
     IContainer components;
 
     string FullFileName;
-
-
-    Button btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.Click -= eventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.Click += eventHandler;
-      }
-    }
-
-    Button btnFile
-    {
-      get
-      {
-        return this._btnFile;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnFile_Click);
-        if (this._btnFile != null)
-          this._btnFile.Click -= eventHandler;
-        this._btnFile = value;
-        if (this._btnFile == null)
-          return;
-        this._btnFile.Click += eventHandler;
-      }
-    }
-
-    Button btnImport
-    {
-      get
-      {
-        return this._btnImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImport_Click);
-        if (this._btnImport != null)
-          this._btnImport.Click -= eventHandler;
-        this._btnImport = value;
-        if (this._btnImport == null)
-          return;
-        this._btnImport.Click += eventHandler;
-      }
-    }
 
 
 
@@ -287,6 +229,14 @@ namespace Hero_Designer
       this.ShowInTaskbar = false;
       this.Text = "Invention Set Assignment Import";
       this.udRevision.EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnClose.Click += btnClose_Click;
+                  this.btnFile.Click += btnFile_Click;
+                  this.btnImport.Click += btnImport_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

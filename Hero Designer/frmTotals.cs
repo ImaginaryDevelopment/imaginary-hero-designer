@@ -54,35 +54,26 @@ namespace Hero_Designer
         Panel Panel1;
         Panel Panel2;
 
-        [AccessedThroughProperty("pbClose")]
-        PictureBox _pbClose;
+        PictureBox pbClose;
 
-        [AccessedThroughProperty("pbTopMost")]
-        PictureBox _pbTopMost;
+        PictureBox pbTopMost;
         Panel pnlDRHE;
         Panel pnlMisc;
         Panel pnlStatus;
 
-        [AccessedThroughProperty("rbFPS")]
-        RadioButton _rbFPS;
+        RadioButton rbFPS;
 
-        [AccessedThroughProperty("rbKPH")]
-        RadioButton _rbKPH;
+        RadioButton rbKPH;
 
-        [AccessedThroughProperty("rbMPH")]
-        RadioButton _rbMPH;
+        RadioButton rbMPH;
 
-        [AccessedThroughProperty("rbMSec")]
-        RadioButton _rbMSec;
+        RadioButton rbMSec;
 
-        [AccessedThroughProperty("tab0")]
-        PictureBox _tab0;
+        PictureBox tab0;
 
-        [AccessedThroughProperty("tab1")]
-        PictureBox _tab1;
+        PictureBox tab1;
 
-        [AccessedThroughProperty("tab2")]
-        PictureBox _tab2;
+        PictureBox tab2;
 
         int _tabPage;
 
@@ -118,204 +109,6 @@ namespace Hero_Designer
 
 
 
-        PictureBox pbClose
-        {
-            get
-            {
-                return this._pbClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.PbClosePaint);
-                EventHandler eventHandler = new EventHandler(this.PbCloseClick);
-                if (this._pbClose != null)
-                {
-                    this._pbClose.Paint -= paintEventHandler;
-                    this._pbClose.Click -= eventHandler;
-                }
-                this._pbClose = value;
-                if (this._pbClose == null)
-                    return;
-                this._pbClose.Paint += paintEventHandler;
-                this._pbClose.Click += eventHandler;
-            }
-        }
-
-        PictureBox pbTopMost
-        {
-            get
-            {
-                return this._pbTopMost;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.PbTopMostPaint);
-                EventHandler eventHandler = new EventHandler(this.PbTopMostClick);
-                if (this._pbTopMost != null)
-                {
-                    this._pbTopMost.Paint -= paintEventHandler;
-                    this._pbTopMost.Click -= eventHandler;
-                }
-                this._pbTopMost = value;
-                if (this._pbTopMost == null)
-                    return;
-                this._pbTopMost.Paint += paintEventHandler;
-                this._pbTopMost.Click += eventHandler;
-            }
-        }
-
-
-
-
-        RadioButton rbFPS
-        {
-            get
-            {
-                return this._rbFPS;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.RbSpeedCheckedChanged);
-                if (this._rbFPS != null)
-                    this._rbFPS.CheckedChanged -= eventHandler;
-                this._rbFPS = value;
-                if (this._rbFPS == null)
-                    return;
-                this._rbFPS.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbKPH
-        {
-            get
-            {
-                return this._rbKPH;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.RbSpeedCheckedChanged);
-                if (this._rbKPH != null)
-                    this._rbKPH.CheckedChanged -= eventHandler;
-                this._rbKPH = value;
-                if (this._rbKPH == null)
-                    return;
-                this._rbKPH.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMPH
-        {
-            get
-            {
-                return this._rbMPH;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.RbSpeedCheckedChanged);
-                if (this._rbMPH != null)
-                    this._rbMPH.CheckedChanged -= eventHandler;
-                this._rbMPH = value;
-                if (this._rbMPH == null)
-                    return;
-                this._rbMPH.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMSec
-        {
-            get
-            {
-                return this._rbMSec;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.RbSpeedCheckedChanged);
-                if (this._rbMSec != null)
-                    this._rbMSec.CheckedChanged -= eventHandler;
-                this._rbMSec = value;
-                if (this._rbMSec == null)
-                    return;
-                this._rbMSec.CheckedChanged += eventHandler;
-            }
-        }
-
-        PictureBox tab0
-        {
-            get
-            {
-                return this._tab0;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.Tab0Paint);
-                EventHandler eventHandler = new EventHandler(this.Tab0Click);
-                if (this._tab0 != null)
-                {
-                    this._tab0.Paint -= paintEventHandler;
-                    this._tab0.Click -= eventHandler;
-                }
-                this._tab0 = value;
-                if (this._tab0 == null)
-                    return;
-                this._tab0.Paint += paintEventHandler;
-                this._tab0.Click += eventHandler;
-            }
-        }
-
-        PictureBox tab1
-        {
-            get
-            {
-                return this._tab1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.Tab1Paint);
-                EventHandler eventHandler = new EventHandler(this.Tab1Click);
-                if (this._tab1 != null)
-                {
-                    this._tab1.Paint -= paintEventHandler;
-                    this._tab1.Click -= eventHandler;
-                }
-                this._tab1 = value;
-                if (this._tab1 == null)
-                    return;
-                this._tab1.Paint += paintEventHandler;
-                this._tab1.Click += eventHandler;
-            }
-        }
-
-        PictureBox tab2
-        {
-            get
-            {
-                return this._tab2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.Tab2Paint);
-                EventHandler eventHandler = new EventHandler(this.Tab2Click);
-                if (this._tab2 != null)
-                {
-                    this._tab2.Paint -= paintEventHandler;
-                    this._tab2.Click -= eventHandler;
-                }
-                this._tab2 = value;
-                if (this._tab2 == null)
-                    return;
-                this._tab2.Paint += paintEventHandler;
-                this._tab2.Click += eventHandler;
-            }
-        }
 
         public frmTotals(ref frmMain iParent)
         {
@@ -1353,6 +1146,40 @@ namespace Hero_Designer
             ((ISupportInitialize)this.pbClose).EndInit();
             this.pnlStatus.ResumeLayout(false);
             ((ISupportInitialize)this.tab2).EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  
+                  // pbClose events
+                  this.pbClose.Paint += PbClosePaint;
+                  this.pbClose.Click += PbCloseClick;
+                  
+                  
+                  // pbTopMost events
+                  this.pbTopMost.Paint += PbTopMostPaint;
+                  this.pbTopMost.Click += PbTopMostClick;
+                  
+                  this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
+                  this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
+                  this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
+                  this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
+                  
+                  // tab0 events
+                  this.tab0.Paint += Tab0Paint;
+                  this.tab0.Click += Tab0Click;
+                  
+                  
+                  // tab1 events
+                  this.tab1.Paint += Tab1Paint;
+                  this.tab1.Click += Tab1Click;
+                  
+                  
+                  // tab2 events
+                  this.tab2.Paint += Tab2Paint;
+                  this.tab2.Click += Tab2Click;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

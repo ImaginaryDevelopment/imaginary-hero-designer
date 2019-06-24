@@ -14,45 +14,32 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmColourSettings : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnReset")]
-    Button _btnReset;
+        Button btnReset;
         ColorDialog cPicker;
 
-    [AccessedThroughProperty("csAlert")]
-    Label _csAlert;
+        Label csAlert;
 
-    [AccessedThroughProperty("csEnh")]
-    Label _csEnh;
+        Label csEnh;
 
-    [AccessedThroughProperty("csFade")]
-    Label _csFade;
+        Label csFade;
 
-    [AccessedThroughProperty("csHero")]
-    Label _csHero;
+        Label csHero;
 
-    [AccessedThroughProperty("csInv")]
-    Label _csInv;
+        Label csInv;
 
-    [AccessedThroughProperty("csInvInv")]
-    Label _csInvInv;
+        Label csInvInv;
 
-    [AccessedThroughProperty("csSpecial")]
-    Label _csSpecial;
+        Label csSpecial;
 
-    [AccessedThroughProperty("csText")]
-    Label _csText;
+        Label csText;
 
-    [AccessedThroughProperty("csValue")]
-    Label _csValue;
+        Label csValue;
 
-    [AccessedThroughProperty("csVillain")]
-    Label _csVillain;
+        Label csVillain;
         Label Label1;
         Label Label10;
         Label Label19;
@@ -67,248 +54,13 @@ namespace Hero_Designer
         Label Label7;
         Label Label9;
 
-    [AccessedThroughProperty("Listlabel1")]
-    ListLabelV2 _Listlabel1;
+        ListLabelV2 Listlabel1;
         RichTextBox rtPreview;
 
     IContainer components;
 
     protected ConfigData.FontSettings myFS;
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnReset
-    {
-      get
-      {
-        return this._btnReset;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnReset_Click);
-        if (this._btnReset != null)
-          this._btnReset.Click -= eventHandler;
-        this._btnReset = value;
-        if (this._btnReset == null)
-          return;
-        this._btnReset.Click += eventHandler;
-      }
-    }
-
-
-    Label csAlert
-    {
-      get
-      {
-        return this._csAlert;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csAlert_Click);
-        if (this._csAlert != null)
-          this._csAlert.Click -= eventHandler;
-        this._csAlert = value;
-        if (this._csAlert == null)
-          return;
-        this._csAlert.Click += eventHandler;
-      }
-    }
-
-    Label csEnh
-    {
-      get
-      {
-        return this._csEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csEnh_Click);
-        if (this._csEnh != null)
-          this._csEnh.Click -= eventHandler;
-        this._csEnh = value;
-        if (this._csEnh == null)
-          return;
-        this._csEnh.Click += eventHandler;
-      }
-    }
-
-    Label csFade
-    {
-      get
-      {
-        return this._csFade;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csFade_Click);
-        if (this._csFade != null)
-          this._csFade.Click -= eventHandler;
-        this._csFade = value;
-        if (this._csFade == null)
-          return;
-        this._csFade.Click += eventHandler;
-      }
-    }
-
-    Label csHero
-    {
-      get
-      {
-        return this._csHero;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csHero_Click);
-        if (this._csHero != null)
-          this._csHero.Click -= eventHandler;
-        this._csHero = value;
-        if (this._csHero == null)
-          return;
-        this._csHero.Click += eventHandler;
-      }
-    }
-
-    Label csInv
-    {
-      get
-      {
-        return this._csInv;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csInv_Click);
-        if (this._csInv != null)
-          this._csInv.Click -= eventHandler;
-        this._csInv = value;
-        if (this._csInv == null)
-          return;
-        this._csInv.Click += eventHandler;
-      }
-    }
-
-    Label csInvInv
-    {
-      get
-      {
-        return this._csInvInv;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csInvInv_Click);
-        if (this._csInvInv != null)
-          this._csInvInv.Click -= eventHandler;
-        this._csInvInv = value;
-        if (this._csInvInv == null)
-          return;
-        this._csInvInv.Click += eventHandler;
-      }
-    }
-
-    Label csSpecial
-    {
-      get
-      {
-        return this._csSpecial;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csSpecial_Click);
-        if (this._csSpecial != null)
-          this._csSpecial.Click -= eventHandler;
-        this._csSpecial = value;
-        if (this._csSpecial == null)
-          return;
-        this._csSpecial.Click += eventHandler;
-      }
-    }
-
-    Label csText
-    {
-      get
-      {
-        return this._csText;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csText_Click);
-        if (this._csText != null)
-          this._csText.Click -= eventHandler;
-        this._csText = value;
-        if (this._csText == null)
-          return;
-        this._csText.Click += eventHandler;
-      }
-    }
-
-    Label csValue
-    {
-      get
-      {
-        return this._csValue;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csValue_Click);
-        if (this._csValue != null)
-          this._csValue.Click -= eventHandler;
-        this._csValue = value;
-        if (this._csValue == null)
-          return;
-        this._csValue.Click += eventHandler;
-      }
-    }
-
-    Label csVillain
-    {
-      get
-      {
-        return this._csVillain;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.csVillain_Click);
-        if (this._csVillain != null)
-          this._csVillain.Click -= eventHandler;
-        this._csVillain = value;
-        if (this._csVillain == null)
-          return;
-        this._csVillain.Click += eventHandler;
-      }
-    }
 
 
 
@@ -319,27 +71,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-
-    ListLabelV2 Listlabel1
-    {
-      get
-      {
-        return this._Listlabel1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.Listlabel1_ItemClick);
-        if (this._Listlabel1 != null)
-          this._Listlabel1.ItemClick -= clickEventHandler;
-        this._Listlabel1 = value;
-        if (this._Listlabel1 == null)
-          return;
-        this._Listlabel1.ItemClick += clickEventHandler;
-      }
-    }
 
 
     public frmColourSettings()
@@ -785,6 +516,25 @@ namespace Hero_Designer
       this.StartPosition = FormStartPosition.CenterParent;
       this.Text = "Colors";
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.Listlabel1.ItemClick += Listlabel1_ItemClick;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnReset.Click += btnReset_Click;
+                  this.csAlert.Click += csAlert_Click;
+                  this.csEnh.Click += csEnh_Click;
+                  this.csFade.Click += csFade_Click;
+                  this.csHero.Click += csHero_Click;
+                  this.csInv.Click += csInv_Click;
+                  this.csInvInv.Click += csInvInv_Click;
+                  this.csSpecial.Click += csSpecial_Click;
+                  this.csText.Click += csText_Click;
+                  this.csValue.Click += csValue_Click;
+                  this.csVillain.Click += csVillain_Click;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

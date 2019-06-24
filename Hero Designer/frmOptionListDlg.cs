@@ -12,61 +12,19 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmOptionListDlg : Form
     {
-        [AccessedThroughProperty("Cancel_Button")]
-        Button _Cancel_Button;
+        Button Cancel_Button;
         CheckBox chkRemember;
         ComboBox cmbAction;
         Label lblDescript;
 
-        [AccessedThroughProperty("OK_Button")]
-        Button _OK_Button;
+        Button OK_Button;
         TableLayoutPanel TableLayoutPanel1;
 
         IContainer components;
 
-
-        Button Cancel_Button
-        {
-            get
-            {
-                return this._Cancel_Button;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.Cancel_Button_Click);
-                if (this._Cancel_Button != null)
-                    this._Cancel_Button.Click -= eventHandler;
-                this._Cancel_Button = value;
-                if (this._Cancel_Button == null)
-                    return;
-                this._Cancel_Button.Click += eventHandler;
-            }
-        }
-
         internal bool? remember => chkRemember?.Checked;
 
 
-
-
-        Button OK_Button
-        {
-            get
-            {
-                return this._OK_Button;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.OK_Button_Click);
-                if (this._OK_Button != null)
-                    this._OK_Button.Click -= eventHandler;
-                this._OK_Button = value;
-                if (this._OK_Button == null)
-                    return;
-                this._OK_Button.Click += eventHandler;
-            }
-        }
 
 
         public frmOptionListDlg()
@@ -184,6 +142,13 @@ namespace Hero_Designer
             this.Text = "Drag-Drop Issue Scenario";
             this.TableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.Cancel_Button.Click += Cancel_Button_Click;
+                  this.OK_Button.Click += OK_Button_Click;
+              }
+              // finished with events
             this.PerformLayout();
         }
 

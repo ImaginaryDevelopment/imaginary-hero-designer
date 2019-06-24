@@ -14,17 +14,13 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmImport_Recipe : Form
   {
-    [AccessedThroughProperty("btnAttribIndex")]
-    Button _btnAttribIndex;
+        Button btnAttribIndex;
 
-    [AccessedThroughProperty("btnAttribLoad")]
-    Button _btnAttribLoad;
+        Button btnAttribLoad;
 
-    [AccessedThroughProperty("btnAttribTable")]
-    Button _btnAttribTable;
+        Button btnAttribTable;
 
-    [AccessedThroughProperty("Button1")]
-    Button _Button1;
+        Button Button1;
         OpenFileDialog dlgBrowse;
         Label Label3;
         Label Label4;
@@ -36,79 +32,6 @@ namespace Hero_Designer
     frmBusy bFrm;
 
     IContainer components;
-
-
-    Button btnAttribIndex
-    {
-      get
-      {
-        return this._btnAttribIndex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAttribIndex_Click);
-        if (this._btnAttribIndex != null)
-          this._btnAttribIndex.Click -= eventHandler;
-        this._btnAttribIndex = value;
-        if (this._btnAttribIndex == null)
-          return;
-        this._btnAttribIndex.Click += eventHandler;
-      }
-    }
-
-    Button btnAttribLoad
-    {
-      get
-      {
-        return this._btnAttribLoad;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAttribLoad_Click);
-        if (this._btnAttribLoad != null)
-          this._btnAttribLoad.Click -= eventHandler;
-        this._btnAttribLoad = value;
-        if (this._btnAttribLoad == null)
-          return;
-        this._btnAttribLoad.Click += eventHandler;
-      }
-    }
-
-    Button btnAttribTable
-    {
-      get
-      {
-        return this._btnAttribTable;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAttribTable_Click);
-        if (this._btnAttribTable != null)
-          this._btnAttribTable.Click -= eventHandler;
-        this._btnAttribTable = value;
-        if (this._btnAttribTable == null)
-          return;
-        this._btnAttribTable.Click += eventHandler;
-      }
-    }
-
-    Button Button1
-    {
-      get
-      {
-        return this._Button1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.Button1_Click);
-        if (this._Button1 != null)
-          this._Button1.Click -= eventHandler;
-        this._Button1 = value;
-        if (this._Button1 == null)
-          return;
-        this._Button1.Click += eventHandler;
-      }
-    }
 
 
 
@@ -516,6 +439,15 @@ namespace Hero_Designer
       this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
       this.Name = nameof (frmImport_Recipe);
       this.Text = "Import Recipes";
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.Button1.Click += Button1_Click;
+                  this.btnAttribIndex.Click += btnAttribIndex_Click;
+                  this.btnAttribLoad.Click += btnAttribLoad_Click;
+                  this.btnAttribTable.Click += btnAttribTable_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
   }

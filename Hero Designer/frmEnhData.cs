@@ -16,62 +16,43 @@ namespace Hero_Designer
 {
     public class frmEnhData : Form
     {
-        [AccessedThroughProperty("btnAdd")]
-        Button _btnAdd;
+        Button btnAdd;
 
-        [AccessedThroughProperty("btnAddFX")]
-        Button _btnAddFX;
+        Button btnAddFX;
 
-        [AccessedThroughProperty("btnAutoFill")]
-        Button _btnAutoFill;
+        Button btnAutoFill;
 
-        [AccessedThroughProperty("btnCancel")]
-        Button _btnCancel;
+        Button btnCancel;
 
-        [AccessedThroughProperty("btnDown")]
-        Button _btnDown;
+        Button btnDown;
 
-        [AccessedThroughProperty("btnEdit")]
-        Button _btnEdit;
+        Button btnEdit;
 
-        [AccessedThroughProperty("btnEditPowerData")]
-        Button _btnEditPowerData;
+        Button btnEditPowerData;
 
-        [AccessedThroughProperty("btnImage")]
-        Button _btnImage;
+        Button btnImage;
 
-        [AccessedThroughProperty("btnNoImage")]
-        Button _btnNoImage;
+        Button btnNoImage;
 
-        [AccessedThroughProperty("btnOK")]
-        Button _btnOK;
+        Button btnOK;
 
-        [AccessedThroughProperty("btnRemove")]
-        Button _btnRemove;
+        Button btnRemove;
 
-        [AccessedThroughProperty("btnUp")]
-        Button _btnUp;
+        Button btnUp;
 
-        [AccessedThroughProperty("cbMutEx")]
-        ComboBox _cbMutEx;
+        ComboBox cbMutEx;
 
-        [AccessedThroughProperty("cbRecipe")]
-        ComboBox _cbRecipe;
+        ComboBox cbRecipe;
 
-        [AccessedThroughProperty("cbSched")]
-        ComboBox _cbSched;
+        ComboBox cbSched;
 
-        [AccessedThroughProperty("cbSet")]
-        ComboBox _cbSet;
+        ComboBox cbSet;
 
-        [AccessedThroughProperty("cbSubType")]
-        ComboBox _cbSubType;
+        ComboBox cbSubType;
 
-        [AccessedThroughProperty("chkSuperior")]
-        CheckBox _chkSuperior;
+        CheckBox chkSuperior;
 
-        [AccessedThroughProperty("chkUnique")]
-        CheckBox _chkUnique;
+        CheckBox chkUnique;
         GroupBox gbBasic;
         GroupBox gbClass;
         GroupBox gbEffects;
@@ -93,82 +74,57 @@ namespace Hero_Designer
         Label lblClass;
         Label lblSched;
 
-        [AccessedThroughProperty("lstAvailable")]
-        ListBox _lstAvailable;
+        ListBox lstAvailable;
 
-        [AccessedThroughProperty("lstSelected")]
-        ListBox _lstSelected;
+        ListBox lstSelected;
         PictureBox pbSet;
 
-        [AccessedThroughProperty("pnlClass")]
-        Panel _pnlClass;
+        Panel pnlClass;
 
-        [AccessedThroughProperty("pnlClassList")]
-        Panel _pnlClassList;
+        Panel pnlClassList;
 
-        [AccessedThroughProperty("rbBoth")]
-        RadioButton _rbBoth;
+        RadioButton rbBoth;
 
-        [AccessedThroughProperty("rbBuff")]
-        RadioButton _rbBuff;
+        RadioButton rbBuff;
 
-        [AccessedThroughProperty("rbDebuff")]
-        RadioButton _rbDebuff;
+        RadioButton rbDebuff;
 
-        [AccessedThroughProperty("rbMod1")]
-        RadioButton _rbMod1;
+        RadioButton rbMod1;
 
-        [AccessedThroughProperty("rbMod2")]
-        RadioButton _rbMod2;
+        RadioButton rbMod2;
 
-        [AccessedThroughProperty("rbMod3")]
-        RadioButton _rbMod3;
+        RadioButton rbMod3;
 
-        [AccessedThroughProperty("rbMod4")]
-        RadioButton _rbMod4;
+        RadioButton rbMod4;
 
-        [AccessedThroughProperty("rbModOther")]
-        RadioButton _rbModOther;
+        RadioButton rbModOther;
 
-        [AccessedThroughProperty("StaticIndex")]
-        TextBox _StaticIndex;
+        TextBox StaticIndex;
         ToolTip tTip;
 
-        [AccessedThroughProperty("txtDesc")]
-        TextBox _txtDesc;
+        TextBox txtDesc;
 
-        [AccessedThroughProperty("txtInternal")]
-        TextBox _txtInternal;
+        TextBox txtInternal;
 
-        [AccessedThroughProperty("txtModOther")]
-        TextBox _txtModOther;
+        TextBox txtModOther;
 
-        [AccessedThroughProperty("txtNameFull")]
-        TextBox _txtNameFull;
+        TextBox txtNameFull;
 
-        [AccessedThroughProperty("txtNameShort")]
-        TextBox _txtNameShort;
+        TextBox txtNameShort;
 
-        [AccessedThroughProperty("txtProb")]
-        TextBox _txtProb;
+        TextBox txtProb;
 
-        [AccessedThroughProperty("typeHO")]
-        RadioButton _typeHO;
+        RadioButton typeHO;
 
-        [AccessedThroughProperty("typeIO")]
-        RadioButton _typeIO;
+        RadioButton typeIO;
 
-        [AccessedThroughProperty("typeRegular")]
-        RadioButton _typeRegular;
+        RadioButton typeRegular;
 
-        [AccessedThroughProperty("typeSet")]
-        RadioButton _typeSet;
+        RadioButton typeSet;
 
-        [AccessedThroughProperty("udMaxLevel")]
-        NumericUpDown _udMaxLevel;
+        NumericUpDown udMaxLevel;
 
-        [AccessedThroughProperty("udMinLevel")]
-        NumericUpDown _udMinLevel;
+        NumericUpDown udMinLevel;
 
         protected ExtendedBitmap bxClass;
         protected ExtendedBitmap bxClassList;
@@ -180,894 +136,23 @@ namespace Hero_Designer
         protected bool Loading;
         public IEnhancement myEnh;
 
-        Button btnAdd
-        {
-            get
-            {
-                return this._btnAdd;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-                if (this._btnAdd != null)
-                    this._btnAdd.Click -= eventHandler;
-                this._btnAdd = value;
-                if (this._btnAdd == null)
-                    return;
-                this._btnAdd.Click += eventHandler;
-            }
-        }
 
-        Button btnAddFX
-        {
-            get
-            {
-                return this._btnAddFX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnAddFX_Click);
-                if (this._btnAddFX != null)
-                    this._btnAddFX.Click -= eventHandler;
-                this._btnAddFX = value;
-                if (this._btnAddFX == null)
-                    return;
-                this._btnAddFX.Click += eventHandler;
-            }
-        }
 
-        Button btnAutoFill
-        {
-            get
-            {
-                return this._btnAutoFill;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnAutoFill_Click);
-                if (this._btnAutoFill != null)
-                    this._btnAutoFill.Click -= eventHandler;
-                this._btnAutoFill = value;
-                if (this._btnAutoFill == null)
-                    return;
-                this._btnAutoFill.Click += eventHandler;
-            }
-        }
 
-        Button btnCancel
-        {
-            get
-            {
-                return this._btnCancel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-                if (this._btnCancel != null)
-                    this._btnCancel.Click -= eventHandler;
-                this._btnCancel = value;
-                if (this._btnCancel == null)
-                    return;
-                this._btnCancel.Click += eventHandler;
-            }
-        }
 
-        Button btnDown
-        {
-            get
-            {
-                return this._btnDown;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnDown_Click);
-                if (this._btnDown != null)
-                    this._btnDown.Click -= eventHandler;
-                this._btnDown = value;
-                if (this._btnDown == null)
-                    return;
-                this._btnDown.Click += eventHandler;
-            }
-        }
 
-        Button btnEdit
-        {
-            get
-            {
-                return this._btnEdit;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnEdit_Click);
-                if (this._btnEdit != null)
-                    this._btnEdit.Click -= eventHandler;
-                this._btnEdit = value;
-                if (this._btnEdit == null)
-                    return;
-                this._btnEdit.Click += eventHandler;
-            }
-        }
 
-        Button btnEditPowerData
-        {
-            get
-            {
-                return this._btnEditPowerData;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnEditPowerData_Click);
-                if (this._btnEditPowerData != null)
-                    this._btnEditPowerData.Click -= eventHandler;
-                this._btnEditPowerData = value;
-                if (this._btnEditPowerData == null)
-                    return;
-                this._btnEditPowerData.Click += eventHandler;
-            }
-        }
 
-        Button btnImage
-        {
-            get
-            {
-                return this._btnImage;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnImage_Click);
-                if (this._btnImage != null)
-                    this._btnImage.Click -= eventHandler;
-                this._btnImage = value;
-                if (this._btnImage == null)
-                    return;
-                this._btnImage.Click += eventHandler;
-            }
-        }
 
-        Button btnNoImage
-        {
-            get
-            {
-                return this._btnNoImage;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnNoImage_Click);
-                if (this._btnNoImage != null)
-                    this._btnNoImage.Click -= eventHandler;
-                this._btnNoImage = value;
-                if (this._btnNoImage == null)
-                    return;
-                this._btnNoImage.Click += eventHandler;
-            }
-        }
 
-        Button btnOK
-        {
-            get
-            {
-                return this._btnOK;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-                if (this._btnOK != null)
-                    this._btnOK.Click -= eventHandler;
-                this._btnOK = value;
-                if (this._btnOK == null)
-                    return;
-                this._btnOK.Click += eventHandler;
-            }
-        }
 
-        Button btnRemove
-        {
-            get
-            {
-                return this._btnRemove;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnRemove_Click);
-                if (this._btnRemove != null)
-                    this._btnRemove.Click -= eventHandler;
-                this._btnRemove = value;
-                if (this._btnRemove == null)
-                    return;
-                this._btnRemove.Click += eventHandler;
-            }
-        }
 
-        Button btnUp
-        {
-            get
-            {
-                return this._btnUp;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.btnUp_Click);
-                if (this._btnUp != null)
-                    this._btnUp.Click -= eventHandler;
-                this._btnUp = value;
-                if (this._btnUp == null)
-                    return;
-                this._btnUp.Click += eventHandler;
-            }
-        }
 
-        ComboBox cbMutEx
-        {
-            get
-            {
-                return this._cbMutEx;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbMutEx_SelectedIndexChanged);
-                if (this._cbMutEx != null)
-                    this._cbMutEx.SelectedIndexChanged -= eventHandler;
-                this._cbMutEx = value;
-                if (this._cbMutEx == null)
-                    return;
-                this._cbMutEx.SelectedIndexChanged += eventHandler;
-            }
-        }
 
-        ComboBox cbRecipe
-        {
-            get
-            {
-                return this._cbRecipe;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbRecipe_SelectedIndexChanged);
-                if (this._cbRecipe != null)
-                    this._cbRecipe.SelectedIndexChanged -= eventHandler;
-                this._cbRecipe = value;
-                if (this._cbRecipe == null)
-                    return;
-                this._cbRecipe.SelectedIndexChanged += eventHandler;
-            }
-        }
 
-        ComboBox cbSched
-        {
-            get
-            {
-                return this._cbSched;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbSched_SelectedIndexChanged);
-                if (this._cbSched != null)
-                    this._cbSched.SelectedIndexChanged -= eventHandler;
-                this._cbSched = value;
-                if (this._cbSched == null)
-                    return;
-                this._cbSched.SelectedIndexChanged += eventHandler;
-            }
-        }
 
-        ComboBox cbSet
-        {
-            get
-            {
-                return this._cbSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbSet_SelectedIndexChanged);
-                if (this._cbSet != null)
-                    this._cbSet.SelectedIndexChanged -= eventHandler;
-                this._cbSet = value;
-                if (this._cbSet == null)
-                    return;
-                this._cbSet.SelectedIndexChanged += eventHandler;
-            }
-        }
 
-        ComboBox cbSubType
-        {
-            get
-            {
-                return this._cbSubType;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.cbSubType_SelectedIndexChanged);
-                if (this._cbSubType != null)
-                    this._cbSubType.SelectedIndexChanged -= eventHandler;
-                this._cbSubType = value;
-                if (this._cbSubType == null)
-                    return;
-                this._cbSubType.SelectedIndexChanged += eventHandler;
-            }
-        }
 
-        CheckBox chkSuperior
-        {
-            get
-            {
-                return this._chkSuperior;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.chkSuperior_CheckedChanged);
-                if (this._chkSuperior != null)
-                    this._chkSuperior.CheckedChanged -= eventHandler;
-                this._chkSuperior = value;
-                if (this._chkSuperior == null)
-                    return;
-                this._chkSuperior.CheckedChanged += eventHandler;
-            }
-        }
-
-        CheckBox chkUnique
-        {
-            get
-            {
-                return this._chkUnique;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.chkUnique_CheckedChanged);
-                if (this._chkUnique != null)
-                    this._chkUnique.CheckedChanged -= eventHandler;
-                this._chkUnique = value;
-                if (this._chkUnique == null)
-                    return;
-                this._chkUnique.CheckedChanged += eventHandler;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ListBox lstAvailable
-        {
-            get
-            {
-                return this._lstAvailable;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lstAvailable_DoubleClick);
-                if (this._lstAvailable != null)
-                    this._lstAvailable.DoubleClick -= eventHandler;
-                this._lstAvailable = value;
-                if (this._lstAvailable == null)
-                    return;
-                this._lstAvailable.DoubleClick += eventHandler;
-            }
-        }
-
-        ListBox lstSelected
-        {
-            get
-            {
-                return this._lstSelected;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lstSelected_SelectedIndexChanged);
-                if (this._lstSelected != null)
-                    this._lstSelected.SelectedIndexChanged -= eventHandler;
-                this._lstSelected = value;
-                if (this._lstSelected == null)
-                    return;
-                this._lstSelected.SelectedIndexChanged += eventHandler;
-            }
-        }
-
-
-        Panel pnlClass
-        {
-            get
-            {
-                return this._pnlClass;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pnlClass_MouseMove);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pnlClass_Paint);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pnlClass_MouseDown);
-                if (this._pnlClass != null)
-                {
-                    this._pnlClass.MouseMove -= mouseEventHandler1;
-                    this._pnlClass.Paint -= paintEventHandler;
-                    this._pnlClass.MouseDown -= mouseEventHandler2;
-                }
-                this._pnlClass = value;
-                if (this._pnlClass == null)
-                    return;
-                this._pnlClass.MouseMove += mouseEventHandler1;
-                this._pnlClass.Paint += paintEventHandler;
-                this._pnlClass.MouseDown += mouseEventHandler2;
-            }
-        }
-
-        Panel pnlClassList
-        {
-            get
-            {
-                return this._pnlClassList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pnlClassList_MouseMove);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pnlClassList_Paint);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pnlClassList_MouseDown);
-                if (this._pnlClassList != null)
-                {
-                    this._pnlClassList.MouseMove -= mouseEventHandler1;
-                    this._pnlClassList.Paint -= paintEventHandler;
-                    this._pnlClassList.MouseDown -= mouseEventHandler2;
-                }
-                this._pnlClassList = value;
-                if (this._pnlClassList == null)
-                    return;
-                this._pnlClassList.MouseMove += mouseEventHandler1;
-                this._pnlClassList.Paint += paintEventHandler;
-                this._pnlClassList.MouseDown += mouseEventHandler2;
-            }
-        }
-
-        RadioButton rbBoth
-        {
-            get
-            {
-                return this._rbBoth;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbBuffDebuff_CheckedChanged);
-                if (this._rbBoth != null)
-                    this._rbBoth.CheckedChanged -= eventHandler;
-                this._rbBoth = value;
-                if (this._rbBoth == null)
-                    return;
-                this._rbBoth.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbBuff
-        {
-            get
-            {
-                return this._rbBuff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbBuffDebuff_CheckedChanged);
-                if (this._rbBuff != null)
-                    this._rbBuff.CheckedChanged -= eventHandler;
-                this._rbBuff = value;
-                if (this._rbBuff == null)
-                    return;
-                this._rbBuff.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbDebuff
-        {
-            get
-            {
-                return this._rbDebuff;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbBuffDebuff_CheckedChanged);
-                if (this._rbDebuff != null)
-                    this._rbDebuff.CheckedChanged -= eventHandler;
-                this._rbDebuff = value;
-                if (this._rbDebuff == null)
-                    return;
-                this._rbDebuff.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMod1
-        {
-            get
-            {
-                return this._rbMod1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbMod_CheckedChanged);
-                if (this._rbMod1 != null)
-                    this._rbMod1.CheckedChanged -= eventHandler;
-                this._rbMod1 = value;
-                if (this._rbMod1 == null)
-                    return;
-                this._rbMod1.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMod2
-        {
-            get
-            {
-                return this._rbMod2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbMod_CheckedChanged);
-                if (this._rbMod2 != null)
-                    this._rbMod2.CheckedChanged -= eventHandler;
-                this._rbMod2 = value;
-                if (this._rbMod2 == null)
-                    return;
-                this._rbMod2.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMod3
-        {
-            get
-            {
-                return this._rbMod3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbMod_CheckedChanged);
-                if (this._rbMod3 != null)
-                    this._rbMod3.CheckedChanged -= eventHandler;
-                this._rbMod3 = value;
-                if (this._rbMod3 == null)
-                    return;
-                this._rbMod3.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbMod4
-        {
-            get
-            {
-                return this._rbMod4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbMod_CheckedChanged);
-                if (this._rbMod4 != null)
-                    this._rbMod4.CheckedChanged -= eventHandler;
-                this._rbMod4 = value;
-                if (this._rbMod4 == null)
-                    return;
-                this._rbMod4.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton rbModOther
-        {
-            get
-            {
-                return this._rbModOther;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.rbMod_CheckedChanged);
-                if (this._rbModOther != null)
-                    this._rbModOther.CheckedChanged -= eventHandler;
-                this._rbModOther = value;
-                if (this._rbModOther == null)
-                    return;
-                this._rbModOther.CheckedChanged += eventHandler;
-            }
-        }
-
-        TextBox StaticIndex
-        {
-            get
-            {
-                return this._StaticIndex;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.StaticIndex_TextChanged);
-                if (this._StaticIndex != null)
-                    this._StaticIndex.TextChanged -= eventHandler;
-                this._StaticIndex = value;
-                if (this._StaticIndex == null)
-                    return;
-                this._StaticIndex.TextChanged += eventHandler;
-            }
-        }
-
-
-        TextBox txtDesc
-        {
-            get
-            {
-                return this._txtDesc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtDesc_TextChanged);
-                if (this._txtDesc != null)
-                    this._txtDesc.TextChanged -= eventHandler;
-                this._txtDesc = value;
-                if (this._txtDesc == null)
-                    return;
-                this._txtDesc.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox txtInternal
-        {
-            get
-            {
-                return this._txtInternal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtInternal_TextChanged);
-                if (this._txtInternal != null)
-                    this._txtInternal.TextChanged -= eventHandler;
-                this._txtInternal = value;
-                if (this._txtInternal == null)
-                    return;
-                this._txtInternal.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox txtModOther
-        {
-            get
-            {
-                return this._txtModOther;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtModOther_TextChanged);
-                if (this._txtModOther != null)
-                    this._txtModOther.TextChanged -= eventHandler;
-                this._txtModOther = value;
-                if (this._txtModOther == null)
-                    return;
-                this._txtModOther.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox txtNameFull
-        {
-            get
-            {
-                return this._txtNameFull;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtNameFull_TextChanged);
-                if (this._txtNameFull != null)
-                    this._txtNameFull.TextChanged -= eventHandler;
-                this._txtNameFull = value;
-                if (this._txtNameFull == null)
-                    return;
-                this._txtNameFull.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox txtNameShort
-        {
-            get
-            {
-                return this._txtNameShort;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtNameShort_TextChanged);
-                if (this._txtNameShort != null)
-                    this._txtNameShort.TextChanged -= eventHandler;
-                this._txtNameShort = value;
-                if (this._txtNameShort == null)
-                    return;
-                this._txtNameShort.TextChanged += eventHandler;
-            }
-        }
-
-        TextBox txtProb
-        {
-            get
-            {
-                return this._txtProb;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtProb_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtProb_TextChanged);
-                if (this._txtProb != null)
-                {
-                    this._txtProb.Leave -= eventHandler1;
-                    this._txtProb.TextChanged -= eventHandler2;
-                }
-                this._txtProb = value;
-                if (this._txtProb == null)
-                    return;
-                this._txtProb.Leave += eventHandler1;
-                this._txtProb.TextChanged += eventHandler2;
-            }
-        }
-
-        RadioButton typeHO
-        {
-            get
-            {
-                return this._typeHO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.type_CheckedChanged);
-                if (this._typeHO != null)
-                    this._typeHO.CheckedChanged -= eventHandler;
-                this._typeHO = value;
-                if (this._typeHO == null)
-                    return;
-                this._typeHO.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton typeIO
-        {
-            get
-            {
-                return this._typeIO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.type_CheckedChanged);
-                if (this._typeIO != null)
-                    this._typeIO.CheckedChanged -= eventHandler;
-                this._typeIO = value;
-                if (this._typeIO == null)
-                    return;
-                this._typeIO.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton typeRegular
-        {
-            get
-            {
-                return this._typeRegular;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.type_CheckedChanged);
-                if (this._typeRegular != null)
-                    this._typeRegular.CheckedChanged -= eventHandler;
-                this._typeRegular = value;
-                if (this._typeRegular == null)
-                    return;
-                this._typeRegular.CheckedChanged += eventHandler;
-            }
-        }
-
-        RadioButton typeSet
-        {
-            get
-            {
-                return this._typeSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.type_CheckedChanged);
-                if (this._typeSet != null)
-                    this._typeSet.CheckedChanged -= eventHandler;
-                this._typeSet = value;
-                if (this._typeSet == null)
-                    return;
-                this._typeSet.CheckedChanged += eventHandler;
-            }
-        }
-
-        NumericUpDown udMaxLevel
-        {
-            get
-            {
-                return this._udMaxLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.udMaxLevel_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.udMaxLevel_ValueChanged);
-                if (this._udMaxLevel != null)
-                {
-                    this._udMaxLevel.Leave -= eventHandler1;
-                    this._udMaxLevel.ValueChanged -= eventHandler2;
-                }
-                this._udMaxLevel = value;
-                if (this._udMaxLevel == null)
-                    return;
-                this._udMaxLevel.Leave += eventHandler1;
-                this._udMaxLevel.ValueChanged += eventHandler2;
-            }
-        }
-
-        NumericUpDown udMinLevel
-        {
-            get
-            {
-                return this._udMinLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.udMinLevel_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.udMinLevel_ValueChanged);
-                if (this._udMinLevel != null)
-                {
-                    this._udMinLevel.Leave -= eventHandler1;
-                    this._udMinLevel.ValueChanged -= eventHandler2;
-                }
-                this._udMinLevel = value;
-                if (this._udMinLevel == null)
-                    return;
-                this._udMinLevel.Leave += eventHandler1;
-                this._udMinLevel.ValueChanged += eventHandler2;
-            }
-        }
 
         public frmEnhData(ref IEnhancement iEnh)
         {
@@ -2518,6 +1603,77 @@ namespace Hero_Designer
             this.gbMod.PerformLayout();
             this.gbClass.ResumeLayout(false);
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.StaticIndex.TextChanged += StaticIndex_TextChanged;
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnAddFX.Click += btnAddFX_Click;
+                  this.btnAutoFill.Click += btnAutoFill_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnDown.Click += btnDown_Click;
+                  this.btnEdit.Click += btnEdit_Click;
+                  this.btnEditPowerData.Click += btnEditPowerData_Click;
+                  this.btnImage.Click += btnImage_Click;
+                  this.btnNoImage.Click += btnNoImage_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnRemove.Click += btnRemove_Click;
+                  this.btnUp.Click += btnUp_Click;
+                  this.cbMutEx.SelectedIndexChanged += cbMutEx_SelectedIndexChanged;
+                  this.cbRecipe.SelectedIndexChanged += cbRecipe_SelectedIndexChanged;
+                  this.cbSched.SelectedIndexChanged += cbSched_SelectedIndexChanged;
+                  this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
+                  this.cbSubType.SelectedIndexChanged += cbSubType_SelectedIndexChanged;
+                  this.chkSuperior.CheckedChanged += chkSuperior_CheckedChanged;
+                  this.chkUnique.CheckedChanged += chkUnique_CheckedChanged;
+                  this.lstAvailable.DoubleClick += lstAvailable_DoubleClick;
+                  this.lstSelected.SelectedIndexChanged += lstSelected_SelectedIndexChanged;
+                  
+                  // pnlClass events
+                  this.pnlClass.MouseMove += pnlClass_MouseMove;
+                  this.pnlClass.Paint += pnlClass_Paint;
+                  this.pnlClass.MouseDown += pnlClass_MouseDown;
+                  
+                  
+                  // pnlClassList events
+                  this.pnlClassList.MouseMove += pnlClassList_MouseMove;
+                  this.pnlClassList.Paint += pnlClassList_Paint;
+                  this.pnlClassList.MouseDown += pnlClassList_MouseDown;
+                  
+                  this.rbBoth.CheckedChanged += rbBuffDebuff_CheckedChanged;
+                  this.rbBuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
+                  this.rbDebuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
+                  this.rbMod1.CheckedChanged += rbMod_CheckedChanged;
+                  this.rbMod2.CheckedChanged += rbMod_CheckedChanged;
+                  this.rbMod3.CheckedChanged += rbMod_CheckedChanged;
+                  this.rbMod4.CheckedChanged += rbMod_CheckedChanged;
+                  this.rbModOther.CheckedChanged += rbMod_CheckedChanged;
+                  this.txtDesc.TextChanged += txtDesc_TextChanged;
+                  this.txtInternal.TextChanged += txtInternal_TextChanged;
+                  this.txtModOther.TextChanged += txtModOther_TextChanged;
+                  this.txtNameFull.TextChanged += txtNameFull_TextChanged;
+                  this.txtNameShort.TextChanged += txtNameShort_TextChanged;
+                  
+                  // txtProb events
+                  this.txtProb.Leave += txtProb_Leave;
+                  this.txtProb.TextChanged += txtProb_TextChanged;
+                  
+                  this.typeHO.CheckedChanged += type_CheckedChanged;
+                  this.typeIO.CheckedChanged += type_CheckedChanged;
+                  this.typeRegular.CheckedChanged += type_CheckedChanged;
+                  this.typeSet.CheckedChanged += type_CheckedChanged;
+                  
+                  // udMaxLevel events
+                  this.udMaxLevel.Leave += udMaxLevel_Leave;
+                  this.udMaxLevel.ValueChanged += udMaxLevel_ValueChanged;
+                  
+                  
+                  // udMinLevel events
+                  this.udMinLevel.Leave += udMinLevel_Leave;
+                  this.udMinLevel.ValueChanged += udMinLevel_ValueChanged;
+                  
+              }
+              // finished with events
             this.PerformLayout();
         }
 

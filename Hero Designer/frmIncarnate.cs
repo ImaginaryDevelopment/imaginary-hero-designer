@@ -17,54 +17,38 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmIncarnate : Form
     {
-        [AccessedThroughProperty("alphaBtn")]
-        ImageButton _alphaBtn;
+        ImageButton alphaBtn;
 
-        [AccessedThroughProperty("destinyBtn")]
-        ImageButton _destinyBtn;
+        ImageButton destinyBtn;
 
-        [AccessedThroughProperty("GenesisButton")]
-        ImageButton _GenesisButton;
+        ImageButton GenesisButton;
 
-        [AccessedThroughProperty("hybridBtn")]
-        ImageButton _hybridBtn;
+        ImageButton hybridBtn;
 
-        [AccessedThroughProperty("ibClose")]
-        ImageButton _ibClose;
+        ImageButton ibClose;
 
-        [AccessedThroughProperty("interfaceBtn")]
-        ImageButton _interfaceBtn;
+        ImageButton interfaceBtn;
 
-        [AccessedThroughProperty("judgementBtn")]
-        ImageButton _judgementBtn;
+        ImageButton judgementBtn;
 
-        [AccessedThroughProperty("lblLock")]
-        Label _lblLock;
+        Label lblLock;
 
-        [AccessedThroughProperty("llLeft")]
         ListLabelV2 _llLeft;
 
-        [AccessedThroughProperty("llRight")]
         ListLabelV2 _llRight;
 
-        [AccessedThroughProperty("loreBtn")]
-        ImageButton _loreBtn;
+        ImageButton loreBtn;
 
-        [AccessedThroughProperty("OmegaButton")]
-        ImageButton _OmegaButton;
+        ImageButton OmegaButton;
         Panel Panel1;
 
-        [AccessedThroughProperty("PopInfo")]
-        ctlPopUp _PopInfo;
+        ctlPopUp PopInfo;
 
-        [AccessedThroughProperty("StanceButton")]
-        ImageButton _StanceButton;
+        ImageButton StanceButton;
 
-        [AccessedThroughProperty("VitaeButton")]
-        ImageButton _VitaeButton;
+        ImageButton VitaeButton;
 
-        [AccessedThroughProperty("VScrollBar1")]
-        VScrollBar _VScrollBar1;
+        VScrollBar VScrollBar1;
 
         ImageButton[] buttonArray;
 
@@ -74,333 +58,16 @@ namespace Hero_Designer
         protected frmMain myParent;
         public IPower[] myPowers;
         internal frmIncarnate.CustomPanel Panel2;
-
-        ImageButton alphaBtn
-        {
-            get
-            {
-                return this._alphaBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.alphaBtn_ButtonClicked);
-                if (this._alphaBtn != null)
-                    this._alphaBtn.ButtonClicked -= clickedEventHandler;
-                this._alphaBtn = value;
-                if (this._alphaBtn == null)
-                    return;
-                this._alphaBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton destinyBtn
-        {
-            get
-            {
-                return this._destinyBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.destinyBtn_ButtonClicked);
-                if (this._destinyBtn != null)
-                    this._destinyBtn.ButtonClicked -= clickedEventHandler;
-                this._destinyBtn = value;
-                if (this._destinyBtn == null)
-                    return;
-                this._destinyBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton GenesisButton
-        {
-            get
-            {
-                return this._GenesisButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.GenesisButton_ButtonClicked);
-                if (this._GenesisButton != null)
-                    this._GenesisButton.ButtonClicked -= clickedEventHandler;
-                this._GenesisButton = value;
-                if (this._GenesisButton == null)
-                    return;
-                this._GenesisButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton hybridBtn
-        {
-            get
-            {
-                return this._hybridBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.hybridBtn_ButtonClicked);
-                if (this._hybridBtn != null)
-                    this._hybridBtn.ButtonClicked -= clickedEventHandler;
-                this._hybridBtn = value;
-                if (this._hybridBtn == null)
-                    return;
-                this._hybridBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibClose
-        {
-            get
-            {
-                return this._ibClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-                if (this._ibClose != null)
-                    this._ibClose.ButtonClicked -= clickedEventHandler;
-                this._ibClose = value;
-                if (this._ibClose == null)
-                    return;
-                this._ibClose.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton interfaceBtn
-        {
-            get
-            {
-                return this._interfaceBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.interfaceBtn_ButtonClicked);
-                if (this._interfaceBtn != null)
-                    this._interfaceBtn.ButtonClicked -= clickedEventHandler;
-                this._interfaceBtn = value;
-                if (this._interfaceBtn == null)
-                    return;
-                this._interfaceBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton judgementBtn
-        {
-            get
-            {
-                return this._judgementBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.judgementBtn_ButtonClicked);
-                if (this._judgementBtn != null)
-                    this._judgementBtn.ButtonClicked -= clickedEventHandler;
-                this._judgementBtn = value;
-                if (this._judgementBtn == null)
-                    return;
-                this._judgementBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        Label lblLock
-        {
-            get
-            {
-                return this._lblLock;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lblLock_Click);
-                if (this._lblLock != null)
-                    this._lblLock.Click -= eventHandler;
-                this._lblLock = value;
-                if (this._lblLock == null)
-                    return;
-                this._lblLock.Click += eventHandler;
-            }
-        }
-
         internal ListLabelV2 llLeft
         {
-            get
-            {
-                return this._llLeft;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llLeft_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llLeft_MouseEnter);
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler = new ListLabelV2.ItemHoverEventHandler(this.llLeft_ItemHover);
-                if (this._llLeft != null)
-                {
-                    this._llLeft.ItemClick -= clickEventHandler;
-                    this._llLeft.MouseEnter -= eventHandler;
-                    this._llLeft.ItemHover -= hoverEventHandler;
-                }
-                this._llLeft = value;
-                if (this._llLeft == null)
-                    return;
-                this._llLeft.ItemClick += clickEventHandler;
-                this._llLeft.MouseEnter += eventHandler;
-                this._llLeft.ItemHover += hoverEventHandler;
-            }
+            get => _llLeft;
+            private set => _llLeft = value;
         }
-
         internal ListLabelV2 llRight
         {
-            get
-            {
-                return this._llRight;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.llRight_MouseEnter);
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler = new ListLabelV2.ItemHoverEventHandler(this.llRight_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llRight_ItemClick);
-                if (this._llRight != null)
-                {
-                    this._llRight.MouseEnter -= eventHandler;
-                    this._llRight.ItemHover -= hoverEventHandler;
-                    this._llRight.ItemClick -= clickEventHandler;
-                }
-                this._llRight = value;
-                if (this._llRight == null)
-                    return;
-                this._llRight.MouseEnter += eventHandler;
-                this._llRight.ItemHover += hoverEventHandler;
-                this._llRight.ItemClick += clickEventHandler;
-            }
+            get => _llRight;
+            private set => _llRight = value;
         }
-
-        ImageButton loreBtn
-        {
-            get
-            {
-                return this._loreBtn;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.loreBtn_ButtonClicked);
-                if (this._loreBtn != null)
-                    this._loreBtn.ButtonClicked -= clickedEventHandler;
-                this._loreBtn = value;
-                if (this._loreBtn == null)
-                    return;
-                this._loreBtn.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton OmegaButton
-        {
-            get
-            {
-                return this._OmegaButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.OmegaButton_ButtonClicked);
-                if (this._OmegaButton != null)
-                    this._OmegaButton.ButtonClicked -= clickedEventHandler;
-                this._OmegaButton = value;
-                if (this._OmegaButton == null)
-                    return;
-                this._OmegaButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-
-        ctlPopUp PopInfo
-        {
-            get
-            {
-                return this._PopInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.PopInfo_MouseWheel);
-                EventHandler eventHandler = new EventHandler(this.PopInfo_MouseEnter);
-                if (this._PopInfo != null)
-                {
-                    this._PopInfo.MouseWheel -= mouseEventHandler;
-                    this._PopInfo.MouseEnter -= eventHandler;
-                }
-                this._PopInfo = value;
-                if (this._PopInfo == null)
-                    return;
-                this._PopInfo.MouseWheel += mouseEventHandler;
-                this._PopInfo.MouseEnter += eventHandler;
-            }
-        }
-
-        ImageButton StanceButton
-        {
-            get
-            {
-                return this._StanceButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.StanceButton_ButtonClicked);
-                if (this._StanceButton != null)
-                    this._StanceButton.ButtonClicked -= clickedEventHandler;
-                this._StanceButton = value;
-                if (this._StanceButton == null)
-                    return;
-                this._StanceButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton VitaeButton
-        {
-            get
-            {
-                return this._VitaeButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.VitaeButton_ButtonClicked);
-                if (this._VitaeButton != null)
-                    this._VitaeButton.ButtonClicked -= clickedEventHandler;
-                this._VitaeButton = value;
-                if (this._VitaeButton == null)
-                    return;
-                this._VitaeButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        VScrollBar VScrollBar1
-        {
-            get
-            {
-                return this._VScrollBar1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ScrollEventHandler scrollEventHandler = new ScrollEventHandler(this.VScrollBar1_Scroll);
-                if (this._VScrollBar1 != null)
-                    this._VScrollBar1.Scroll -= scrollEventHandler;
-                this._VScrollBar1 = value;
-                if (this._VScrollBar1 == null)
-                    return;
-                this._VScrollBar1.Scroll += scrollEventHandler;
-            }
-        }
-
         public frmIncarnate(ref frmMain iParent)
         {
             this.Load += new EventHandler(this.frmIncarnate_Load);
@@ -847,6 +514,41 @@ namespace Hero_Designer
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.GenesisButton.ButtonClicked += GenesisButton_ButtonClicked;
+                  this.OmegaButton.ButtonClicked += OmegaButton_ButtonClicked;
+                  
+                  // PopInfo events
+                  this.PopInfo.MouseWheel += PopInfo_MouseWheel;
+                  this.PopInfo.MouseEnter += PopInfo_MouseEnter;
+                  
+                  this.StanceButton.ButtonClicked += StanceButton_ButtonClicked;
+                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+                  this.VitaeButton.ButtonClicked += VitaeButton_ButtonClicked;
+                  this.alphaBtn.ButtonClicked += alphaBtn_ButtonClicked;
+                  this.destinyBtn.ButtonClicked += destinyBtn_ButtonClicked;
+                  this.hybridBtn.ButtonClicked += hybridBtn_ButtonClicked;
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.interfaceBtn.ButtonClicked += interfaceBtn_ButtonClicked;
+                  this.judgementBtn.ButtonClicked += judgementBtn_ButtonClicked;
+                  this.lblLock.Click += lblLock_Click;
+                  
+                  // llLeft events
+                  this.llLeft.ItemClick += llLeft_ItemClick;
+                  this.llLeft.MouseEnter += llLeft_MouseEnter;
+                  this.llLeft.ItemHover += llLeft_ItemHover;
+                  
+                  
+                  // llRight events
+                  this.llRight.MouseEnter += llRight_MouseEnter;
+                  this.llRight.ItemHover += llRight_ItemHover;
+                  this.llRight.ItemClick += llRight_ItemClick;
+                  
+                  this.loreBtn.ButtonClicked += loreBtn_ButtonClicked;
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

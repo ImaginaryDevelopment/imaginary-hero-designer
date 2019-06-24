@@ -14,59 +14,18 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmMiniList : Form
     {
-        [AccessedThroughProperty("pInfo")]
         ctlPopUp _pInfo;
 
-        [AccessedThroughProperty("VScrollBar1")]
-        VScrollBar _VScrollBar1;
+        VScrollBar VScrollBar1;
 
         IContainer components;
 
         protected frmMain myParent;
-
         internal ctlPopUp pInfo
         {
-            get
-            {
-                return this._pInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            private set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.pInfo_MouseWheel);
-                EventHandler eventHandler = new EventHandler(this.pInfo_MouseEnter);
-                if (this._pInfo != null)
-                {
-                    this._pInfo.MouseWheel -= mouseEventHandler;
-                    this._pInfo.MouseEnter -= eventHandler;
-                }
-                this._pInfo = value;
-                if (this._pInfo == null)
-                    return;
-                this._pInfo.MouseWheel += mouseEventHandler;
-                this._pInfo.MouseEnter += eventHandler;
-            }
+            get => _pInfo;
+            private set => _pInfo = value;
         }
-
-        VScrollBar VScrollBar1
-        {
-            get
-            {
-                return this._VScrollBar1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ScrollEventHandler scrollEventHandler = new ScrollEventHandler(this.VScrollBar1_Scroll);
-                if (this._VScrollBar1 != null)
-                    this._VScrollBar1.Scroll -= scrollEventHandler;
-                this._VScrollBar1 = value;
-                if (this._VScrollBar1 == null)
-                    return;
-                this._VScrollBar1.Scroll += scrollEventHandler;
-            }
-        }
-
         public frmMiniList(frmMain iParent)
         {
             this.FormClosed += new FormClosedEventHandler(this.frmMiniList_FormClosed);
@@ -147,6 +106,17 @@ namespace Hero_Designer
             this.Name = nameof(frmMiniList);
             this.Text = "Mini List";
             this.TopMost = true;
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+                  
+                  // pInfo events
+                  this.pInfo.MouseWheel += pInfo_MouseWheel;
+                  this.pInfo.MouseEnter += pInfo_MouseEnter;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

@@ -13,76 +13,54 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmRecipeEdit : Form
   {
-    [AccessedThroughProperty("btnAdd")]
-    Button _btnAdd;
+        Button btnAdd;
 
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnDel")]
-    Button _btnDel;
+        Button btnDel;
         Button btnDown;
 
-    [AccessedThroughProperty("btnGuessCost")]
-    Button _btnGuessCost;
+        Button btnGuessCost;
 
-    [AccessedThroughProperty("btnI20")]
-    Button _btnI20;
+        Button btnI20;
 
-    [AccessedThroughProperty("btnI25")]
-    Button _btnI25;
+        Button btnI25;
 
-    [AccessedThroughProperty("btnI40")]
-    Button _btnI40;
+        Button btnI40;
 
-    [AccessedThroughProperty("btnI50")]
-    Button _btnI50;
+        Button btnI50;
 
-    [AccessedThroughProperty("btnImport")]
-    Button _btnImport;
+        Button btnImport;
         Button btnImportUpdate;
 
-    [AccessedThroughProperty("btnIncrement")]
-    Button _btnIncrement;
+        Button btnIncrement;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnRAdd")]
-    Button _btnRAdd;
+        Button btnRAdd;
 
-    [AccessedThroughProperty("btnRDel")]
-    Button _btnRDel;
+        Button btnRDel;
         Button btnRDown;
 
-    [AccessedThroughProperty("btnReGuess")]
-    Button _btnReGuess;
+        Button btnReGuess;
 
-    [AccessedThroughProperty("btnRunSeq")]
-    Button _btnRunSeq;
+        Button btnRunSeq;
         Button btnRUp;
         Button btnUp;
 
-    [AccessedThroughProperty("cbEnh")]
-    ComboBox _cbEnh;
+        ComboBox cbEnh;
 
-    [AccessedThroughProperty("cbRarity")]
-    ComboBox _cbRarity;
+        ComboBox cbRarity;
 
-    [AccessedThroughProperty("cbSal0")]
-    ComboBox _cbSal0;
+        ComboBox cbSal0;
 
-    [AccessedThroughProperty("cbSal1")]
-    ComboBox _cbSal1;
+        ComboBox cbSal1;
 
-    [AccessedThroughProperty("cbSal2")]
-    ComboBox _cbSal2;
+        ComboBox cbSal2;
 
-    [AccessedThroughProperty("cbSal3")]
-    ComboBox _cbSal3;
+        ComboBox cbSal3;
 
-    [AccessedThroughProperty("cbSal4")]
-    ComboBox _cbSal4;
+        ComboBox cbSal4;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -106,17 +84,13 @@ namespace Hero_Designer
         Label Label9;
         Label lblEnh;
 
-    [AccessedThroughProperty("lstItems")]
-    ListBox _lstItems;
+        ListBox lstItems;
 
-    [AccessedThroughProperty("lvDPA")]
-    ListView _lvDPA;
+        ListView lvDPA;
 
-    [AccessedThroughProperty("txtExtern")]
-    TextBox _txtExtern;
+        TextBox txtExtern;
 
-    [AccessedThroughProperty("txtRecipeName")]
-    TextBox _txtRecipeName;
+        TextBox txtRecipeName;
 
     [AccessedThroughProperty("udBuy")]
     NumericUpDown _udBuy;
@@ -152,406 +126,6 @@ namespace Hero_Designer
 
     protected bool NoUpdate;
 
-    Button btnAdd
-    {
-      get
-      {
-        return this._btnAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-        if (this._btnAdd != null)
-          this._btnAdd.Click -= eventHandler;
-        this._btnAdd = value;
-        if (this._btnAdd == null)
-          return;
-        this._btnAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnDel
-    {
-      get
-      {
-        return this._btnDel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDel_Click);
-        if (this._btnDel != null)
-          this._btnDel.Click -= eventHandler;
-        this._btnDel = value;
-        if (this._btnDel == null)
-          return;
-        this._btnDel.Click += eventHandler;
-      }
-    }
-
-
-    Button btnGuessCost
-    {
-      get
-      {
-        return this._btnGuessCost;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnGuessCost_Click);
-        if (this._btnGuessCost != null)
-          this._btnGuessCost.Click -= eventHandler;
-        this._btnGuessCost = value;
-        if (this._btnGuessCost == null)
-          return;
-        this._btnGuessCost.Click += eventHandler;
-      }
-    }
-
-    Button btnI20
-    {
-      get
-      {
-        return this._btnI20;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnI20_Click);
-        if (this._btnI20 != null)
-          this._btnI20.Click -= eventHandler;
-        this._btnI20 = value;
-        if (this._btnI20 == null)
-          return;
-        this._btnI20.Click += eventHandler;
-      }
-    }
-
-    Button btnI25
-    {
-      get
-      {
-        return this._btnI25;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnI25_Click);
-        if (this._btnI25 != null)
-          this._btnI25.Click -= eventHandler;
-        this._btnI25 = value;
-        if (this._btnI25 == null)
-          return;
-        this._btnI25.Click += eventHandler;
-      }
-    }
-
-    Button btnI40
-    {
-      get
-      {
-        return this._btnI40;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnI40_Click);
-        if (this._btnI40 != null)
-          this._btnI40.Click -= eventHandler;
-        this._btnI40 = value;
-        if (this._btnI40 == null)
-          return;
-        this._btnI40.Click += eventHandler;
-      }
-    }
-
-    Button btnI50
-    {
-      get
-      {
-        return this._btnI50;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnI50_Click);
-        if (this._btnI50 != null)
-          this._btnI50.Click -= eventHandler;
-        this._btnI50 = value;
-        if (this._btnI50 == null)
-          return;
-        this._btnI50.Click += eventHandler;
-      }
-    }
-
-    Button btnImport
-    {
-      get
-      {
-        return this._btnImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImport_Click);
-        if (this._btnImport != null)
-          this._btnImport.Click -= eventHandler;
-        this._btnImport = value;
-        if (this._btnImport == null)
-          return;
-        this._btnImport.Click += eventHandler;
-      }
-    }
-
-
-    Button btnIncrement
-    {
-      get
-      {
-        return this._btnIncrement;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnIncrement_Click);
-        if (this._btnIncrement != null)
-          this._btnIncrement.Click -= eventHandler;
-        this._btnIncrement = value;
-        if (this._btnIncrement == null)
-          return;
-        this._btnIncrement.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnRAdd
-    {
-      get
-      {
-        return this._btnRAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnRAdd_Click);
-        if (this._btnRAdd != null)
-          this._btnRAdd.Click -= eventHandler;
-        this._btnRAdd = value;
-        if (this._btnRAdd == null)
-          return;
-        this._btnRAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnRDel
-    {
-      get
-      {
-        return this._btnRDel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnRDel_Click);
-        if (this._btnRDel != null)
-          this._btnRDel.Click -= eventHandler;
-        this._btnRDel = value;
-        if (this._btnRDel == null)
-          return;
-        this._btnRDel.Click += eventHandler;
-      }
-    }
-
-
-    Button btnReGuess
-    {
-      get
-      {
-        return this._btnReGuess;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.Button1_Click);
-        if (this._btnReGuess != null)
-          this._btnReGuess.Click -= eventHandler;
-        this._btnReGuess = value;
-        if (this._btnReGuess == null)
-          return;
-        this._btnReGuess.Click += eventHandler;
-      }
-    }
-
-    Button btnRunSeq
-    {
-      get
-      {
-        return this._btnRunSeq;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnRunSeq_Click);
-        if (this._btnRunSeq != null)
-          this._btnRunSeq.Click -= eventHandler;
-        this._btnRunSeq = value;
-        if (this._btnRunSeq == null)
-          return;
-        this._btnRunSeq.Click += eventHandler;
-      }
-    }
-
-
-
-    ComboBox cbEnh
-    {
-      get
-      {
-        return this._cbEnh;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbEnh_SelectedIndexChanged);
-        if (this._cbEnh != null)
-          this._cbEnh.SelectedIndexChanged -= eventHandler;
-        this._cbEnh = value;
-        if (this._cbEnh == null)
-          return;
-        this._cbEnh.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbRarity
-    {
-      get
-      {
-        return this._cbRarity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbRarity_SelectedIndexChanged);
-        if (this._cbRarity != null)
-          this._cbRarity.SelectedIndexChanged -= eventHandler;
-        this._cbRarity = value;
-        if (this._cbRarity == null)
-          return;
-        this._cbRarity.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSal0
-    {
-      get
-      {
-        return this._cbSal0;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSalX_SelectedIndexChanged);
-        if (this._cbSal0 != null)
-          this._cbSal0.SelectedIndexChanged -= eventHandler;
-        this._cbSal0 = value;
-        if (this._cbSal0 == null)
-          return;
-        this._cbSal0.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSal1
-    {
-      get
-      {
-        return this._cbSal1;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSalX_SelectedIndexChanged);
-        if (this._cbSal1 != null)
-          this._cbSal1.SelectedIndexChanged -= eventHandler;
-        this._cbSal1 = value;
-        if (this._cbSal1 == null)
-          return;
-        this._cbSal1.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSal2
-    {
-      get
-      {
-        return this._cbSal2;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSalX_SelectedIndexChanged);
-        if (this._cbSal2 != null)
-          this._cbSal2.SelectedIndexChanged -= eventHandler;
-        this._cbSal2 = value;
-        if (this._cbSal2 == null)
-          return;
-        this._cbSal2.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSal3
-    {
-      get
-      {
-        return this._cbSal3;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSalX_SelectedIndexChanged);
-        if (this._cbSal3 != null)
-          this._cbSal3.SelectedIndexChanged -= eventHandler;
-        this._cbSal3 = value;
-        if (this._cbSal3 == null)
-          return;
-        this._cbSal3.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSal4
-    {
-      get
-      {
-        return this._cbSal4;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSalX_SelectedIndexChanged);
-        if (this._cbSal4 != null)
-          this._cbSal4.SelectedIndexChanged -= eventHandler;
-        this._cbSal4 = value;
-        if (this._cbSal4 == null)
-          return;
-        this._cbSal4.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
@@ -572,80 +146,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-    ListBox lstItems
-    {
-      get
-      {
-        return this._lstItems;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lstItems_SelectedIndexChanged);
-        if (this._lstItems != null)
-          this._lstItems.SelectedIndexChanged -= eventHandler;
-        this._lstItems = value;
-        if (this._lstItems == null)
-          return;
-        this._lstItems.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ListView lvDPA
-    {
-      get
-      {
-        return this._lvDPA;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvDPA_SelectedIndexChanged);
-        if (this._lvDPA != null)
-          this._lvDPA.SelectedIndexChanged -= eventHandler;
-        this._lvDPA = value;
-        if (this._lvDPA == null)
-          return;
-        this._lvDPA.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    TextBox txtExtern
-    {
-      get
-      {
-        return this._txtExtern;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtExtern_TextChanged);
-        if (this._txtExtern != null)
-          this._txtExtern.TextChanged -= eventHandler;
-        this._txtExtern = value;
-        if (this._txtExtern == null)
-          return;
-        this._txtExtern.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtRecipeName
-    {
-      get
-      {
-        return this._txtRecipeName;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtRecipeName_TextChanged);
-        if (this._txtRecipeName != null)
-          this._txtRecipeName.TextChanged -= eventHandler;
-        this._txtRecipeName = value;
-        if (this._txtRecipeName == null)
-          return;
-        this._txtRecipeName.TextChanged += eventHandler;
-      }
-    }
 
     NumericUpDown udBuy
     {
@@ -2133,6 +1633,37 @@ namespace Hero_Designer
       this.udLevel.EndInit();
       this.GroupBox2.ResumeLayout(false);
       this.GroupBox2.PerformLayout();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnDel.Click += btnDel_Click;
+                  this.btnGuessCost.Click += btnGuessCost_Click;
+                  this.btnI20.Click += btnI20_Click;
+                  this.btnI25.Click += btnI25_Click;
+                  this.btnI40.Click += btnI40_Click;
+                  this.btnI50.Click += btnI50_Click;
+                  this.btnImport.Click += btnImport_Click;
+                  this.btnIncrement.Click += btnIncrement_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnRAdd.Click += btnRAdd_Click;
+                  this.btnRDel.Click += btnRDel_Click;
+                  this.btnReGuess.Click += Button1_Click;
+                  this.btnRunSeq.Click += btnRunSeq_Click;
+                  this.cbEnh.SelectedIndexChanged += cbEnh_SelectedIndexChanged;
+                  this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
+                  this.cbSal0.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
+                  this.cbSal1.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
+                  this.cbSal2.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
+                  this.cbSal3.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
+                  this.cbSal4.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
+                  this.lstItems.SelectedIndexChanged += lstItems_SelectedIndexChanged;
+                  this.lvDPA.SelectedIndexChanged += lvDPA_SelectedIndexChanged;
+                  this.txtExtern.TextChanged += txtExtern_TextChanged;
+                  this.txtRecipeName.TextChanged += txtRecipeName_TextChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

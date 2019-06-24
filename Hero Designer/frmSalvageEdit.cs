@@ -13,29 +13,21 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class frmSalvageEdit : Form
   {
-    [AccessedThroughProperty("btnAdd")]
-    Button _btnAdd;
+        Button btnAdd;
 
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnDelete")]
-    Button _btnDelete;
+        Button btnDelete;
 
-    [AccessedThroughProperty("btnImport")]
-    Button _btnImport;
+        Button btnImport;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("cbLevel")]
-    ComboBox _cbLevel;
+        ComboBox cbLevel;
 
-    [AccessedThroughProperty("cbOrigin")]
-    ComboBox _cbOrigin;
+        ComboBox cbOrigin;
 
-    [AccessedThroughProperty("cbRarity")]
-    ComboBox _cbRarity;
+        ComboBox cbRarity;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -46,225 +38,22 @@ namespace Hero_Designer
         Label Label4;
         Label Label5;
 
-    [AccessedThroughProperty("lvSalvage")]
-    ListView _lvSalvage;
+        ListView lvSalvage;
 
-    [AccessedThroughProperty("txtExternal")]
-    TextBox _txtExternal;
+        TextBox txtExternal;
 
-    [AccessedThroughProperty("txtInternal")]
-    TextBox _txtInternal;
+        TextBox txtInternal;
 
     IContainer components;
 
     public bool Updating;
 
-    Button btnAdd
-    {
-      get
-      {
-        return this._btnAdd;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnAdd_Click);
-        if (this._btnAdd != null)
-          this._btnAdd.Click -= eventHandler;
-        this._btnAdd = value;
-        if (this._btnAdd == null)
-          return;
-        this._btnAdd.Click += eventHandler;
-      }
-    }
-
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnDelete
-    {
-      get
-      {
-        return this._btnDelete;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDelete_Click);
-        if (this._btnDelete != null)
-          this._btnDelete.Click -= eventHandler;
-        this._btnDelete = value;
-        if (this._btnDelete == null)
-          return;
-        this._btnDelete.Click += eventHandler;
-      }
-    }
-
-    Button btnImport
-    {
-      get
-      {
-        return this._btnImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImport_Click);
-        if (this._btnImport != null)
-          this._btnImport.Click -= eventHandler;
-        this._btnImport = value;
-        if (this._btnImport == null)
-          return;
-        this._btnImport.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbLevel
-    {
-      get
-      {
-        return this._cbLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbLevel_SelectedIndexChanged);
-        if (this._cbLevel != null)
-          this._cbLevel.SelectedIndexChanged -= eventHandler;
-        this._cbLevel = value;
-        if (this._cbLevel == null)
-          return;
-        this._cbLevel.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbOrigin
-    {
-      get
-      {
-        return this._cbOrigin;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbOrigin_SelectedIndexChanged);
-        if (this._cbOrigin != null)
-          this._cbOrigin.SelectedIndexChanged -= eventHandler;
-        this._cbOrigin = value;
-        if (this._cbOrigin == null)
-          return;
-        this._cbOrigin.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbRarity
-    {
-      get
-      {
-        return this._cbRarity;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbRarity_SelectedIndexChanged);
-        if (this._cbRarity != null)
-          this._cbRarity.SelectedIndexChanged -= eventHandler;
-        this._cbRarity = value;
-        if (this._cbRarity == null)
-          return;
-        this._cbRarity.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
 
 
 
-
-
-
-
-    ListView lvSalvage
-    {
-      get
-      {
-        return this._lvSalvage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lvSalvage_SelectedIndexChanged);
-        if (this._lvSalvage != null)
-          this._lvSalvage.SelectedIndexChanged -= eventHandler;
-        this._lvSalvage = value;
-        if (this._lvSalvage == null)
-          return;
-        this._lvSalvage.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    TextBox txtExternal
-    {
-      get
-      {
-        return this._txtExternal;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtExternal_TextChanged);
-        if (this._txtExternal != null)
-          this._txtExternal.TextChanged -= eventHandler;
-        this._txtExternal = value;
-        if (this._txtExternal == null)
-          return;
-        this._txtExternal.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtInternal
-    {
-      get
-      {
-        return this._txtInternal;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtInternal_TextChanged);
-        if (this._txtInternal != null)
-          this._txtInternal.TextChanged -= eventHandler;
-        this._txtInternal = value;
-        if (this._txtInternal == null)
-          return;
-        this._txtInternal.TextChanged += eventHandler;
-      }
-    }
 
     public frmSalvageEdit()
     {
@@ -691,6 +480,22 @@ namespace Hero_Designer
       this.StartPosition = FormStartPosition.CenterParent;
       this.Text = "Salvage Editor";
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnAdd.Click += btnAdd_Click;
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnDelete.Click += btnDelete_Click;
+                  this.btnImport.Click += btnImport_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.cbLevel.SelectedIndexChanged += cbLevel_SelectedIndexChanged;
+                  this.cbOrigin.SelectedIndexChanged += cbOrigin_SelectedIndexChanged;
+                  this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
+                  this.lvSalvage.SelectedIndexChanged += lvSalvage_SelectedIndexChanged;
+                  this.txtExternal.TextChanged += txtExternal_TextChanged;
+                  this.txtInternal.TextChanged += txtInternal_TextChanged;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

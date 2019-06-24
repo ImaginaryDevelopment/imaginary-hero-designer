@@ -16,8 +16,7 @@ namespace Hero_Designer
     [DesignerGenerated]
     public class frmDPSCalc : Form
     {
-        [AccessedThroughProperty("chkSortByLevel")]
-        CheckBox _chkSortByLevel;
+        CheckBox chkSortByLevel;
         CheckBox chkDamageBuffs;
         ColumnHeader chPower;
         ColumnHeader chDPA;
@@ -29,17 +28,13 @@ namespace Hero_Designer
         ColumnHeader chResistanceDebuff;
         ColumnHeader chBuildID;
 
-        [AccessedThroughProperty("ibClear")]
-        ImageButton _ibClear;
+        ImageButton ibClear;
 
-        [AccessedThroughProperty("ibClose")]
-        ImageButton _ibClose;
+        ImageButton ibClose;
 
-        [AccessedThroughProperty("ibAutoMode")]
-        ImageButton _ibAutoMode;
+        ImageButton ibAutoMode;
 
-        [AccessedThroughProperty("ibTopmost")]
-        ImageButton _ibTopmost;
+        ImageButton ibTopmost;
         ImageList ilAttackChain;
         Label lblHeader;
         Label lblDPS;
@@ -48,8 +43,7 @@ namespace Hero_Designer
         Label lblEPSNum;
         TextBox tbDPSOutput;
 
-        [AccessedThroughProperty("lvPower")]
-        ListView _lvPower;
+        ListView lvPower;
         Panel Panel1;
         Panel Panel2;
         ToolTip ToolTip1;
@@ -64,24 +58,6 @@ namespace Hero_Designer
         float GlobalDamageBuff;
 
 
-        CheckBox chkSortByLevel
-        {
-            get
-            {
-                return this._chkSortByLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.chkSortByLevel_CheckedChanged);
-                if (this._chkSortByLevel != null)
-                    this._chkSortByLevel.CheckedChanged -= eventHandler;
-                this._chkSortByLevel = value;
-                if (this._chkSortByLevel == null)
-                    return;
-                this._chkSortByLevel.CheckedChanged += eventHandler;
-            }
-        }
 
 
 
@@ -93,115 +69,8 @@ namespace Hero_Designer
 
 
 
-        ImageButton ibClear
-        {
-            get
-            {
-                return this._ibClear;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClear_ButtonClicked);
-                if (this._ibClear != null)
-                    this._ibClear.ButtonClicked -= clickedEventHandler;
-                this._ibClear = value;
-                if (this._ibClear == null)
-                    return;
-                this._ibClear.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibClose
-        {
-            get
-            {
-                return this._ibClose;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibClose_ButtonClicked);
-                if (this._ibClose != null)
-                    this._ibClose.ButtonClicked -= clickedEventHandler;
-                this._ibClose = value;
-                if (this._ibClose == null)
-                    return;
-                this._ibClose.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibAutoMode
-        {
-            get
-            {
-                return this._ibAutoMode;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibAutoMode_ButtonClicked);
-                if (this._ibAutoMode != null)
-                    this._ibAutoMode.ButtonClicked -= clickedEventHandler;
-                this._ibAutoMode = value;
-                if (this._ibAutoMode == null)
-                    return;
-                this._ibAutoMode.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibTopmost
-        {
-            get
-            {
-                return this._ibTopmost;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibTopmost_ButtonClicked);
-                if (this._ibTopmost != null)
-                    this._ibTopmost.ButtonClicked -= clickedEventHandler;
-                this._ibTopmost = value;
-                if (this._ibTopmost == null)
-                    return;
-                this._ibTopmost.ButtonClicked += clickedEventHandler;
-            }
-        }
 
 
-
-
-
-
-
-
-        ListView lvPower
-        {
-            get
-            {
-                return this._lvPower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lvPower_MouseEnter);
-                ItemCheckedEventHandler checkedEventHandler = new ItemCheckedEventHandler(this.lvPower_ItemChecked);
-                ListViewItemSelectionChangedEventHandler changedEventHandler = new ListViewItemSelectionChangedEventHandler(this.lvPower_Clicked);
-                if (this._lvPower != null)
-                {
-                    this._lvPower.MouseEnter -= eventHandler;
-                    this._lvPower.ItemChecked -= checkedEventHandler;
-                    this._lvPower.ItemSelectionChanged -= changedEventHandler;
-                }
-                this._lvPower = value;
-                if (this._lvPower == null)
-                    return;
-                this._lvPower.MouseEnter += eventHandler;
-                this._lvPower.ItemChecked += checkedEventHandler;
-                this._lvPower.ItemSelectionChanged += changedEventHandler;
-            }
-        }
 
 
 
@@ -668,6 +537,22 @@ namespace Hero_Designer
             this.TopMost = true;
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+                  this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
+                  this.ibClear.ButtonClicked += ibClear_ButtonClicked;
+                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                  this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+                  
+                  // lvPower events
+                  this.lvPower.MouseEnter += lvPower_MouseEnter;
+                  this.lvPower.ItemChecked += lvPower_ItemChecked;
+                  this.lvPower.ItemSelectionChanged += lvPower_Clicked;
+                  
+              }
+              // finished with events
             this.ResumeLayout(false);
         }
 

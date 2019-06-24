@@ -15,20 +15,15 @@ namespace Hero_Designer
 {
   public class frmStats : Form
   {
-    [AccessedThroughProperty("btnClose")]
-    ImageButton _btnClose;
+        ImageButton btnClose;
 
-    [AccessedThroughProperty("cbSet")]
-    ComboBox _cbSet;
+        ComboBox cbSet;
 
-    [AccessedThroughProperty("cbStyle")]
-    ComboBox _cbStyle;
+        ComboBox cbStyle;
 
-    [AccessedThroughProperty("cbValues")]
-    ComboBox _cbValues;
+        ComboBox cbValues;
 
-    [AccessedThroughProperty("chkOnTop")]
-    ImageButton _chkOnTop;
+        ImageButton chkOnTop;
         ctlMultiGraph Graph;
         Label lblKey1;
         Label lblKey2;
@@ -36,8 +31,7 @@ namespace Hero_Designer
         Label lblKeyColor2;
         Label lblScale;
 
-    [AccessedThroughProperty("tbScaleX")]
-    TrackBar _tbScaleX;
+        TrackBar tbScaleX;
         ToolTip tTip;
 
     protected IPower[] BaseArray;
@@ -50,119 +44,9 @@ namespace Hero_Designer
 
     protected frmMain myParent;
 
-    ImageButton btnClose
-    {
-      get
-      {
-        return this._btnClose;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.btnClose_Click);
-        if (this._btnClose != null)
-          this._btnClose.ButtonClicked -= clickedEventHandler;
-        this._btnClose = value;
-        if (this._btnClose == null)
-          return;
-        this._btnClose.ButtonClicked += clickedEventHandler;
-      }
-    }
-
-    ComboBox cbSet
-    {
-      get
-      {
-        return this._cbSet;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSet_SelectedIndexChanged);
-        if (this._cbSet != null)
-          this._cbSet.SelectedIndexChanged -= eventHandler;
-        this._cbSet = value;
-        if (this._cbSet == null)
-          return;
-        this._cbSet.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbStyle
-    {
-      get
-      {
-        return this._cbStyle;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbStyle_SelectedIndexChanged);
-        if (this._cbStyle != null)
-          this._cbStyle.SelectedIndexChanged -= eventHandler;
-        this._cbStyle = value;
-        if (this._cbStyle == null)
-          return;
-        this._cbStyle.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbValues
-    {
-      get
-      {
-        return this._cbValues;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbValues_SelectedIndexChanged);
-        if (this._cbValues != null)
-          this._cbValues.SelectedIndexChanged -= eventHandler;
-        this._cbValues = value;
-        if (this._cbValues == null)
-          return;
-        this._cbValues.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ImageButton chkOnTop
-    {
-      get
-      {
-        return this._chkOnTop;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.chkOnTop_CheckedChanged);
-        if (this._chkOnTop != null)
-          this._chkOnTop.ButtonClicked -= clickedEventHandler;
-        this._chkOnTop = value;
-        if (this._chkOnTop == null)
-          return;
-        this._chkOnTop.ButtonClicked += clickedEventHandler;
-      }
-    }
 
 
 
-
-
-
-
-    TrackBar tbScaleX
-    {
-      get
-      {
-        return this._tbScaleX;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.tbScaleX_Scroll);
-        if (this._tbScaleX != null)
-          this._tbScaleX.Scroll -= eventHandler;
-        this._tbScaleX = value;
-        if (this._tbScaleX == null)
-          return;
-        this._tbScaleX.Scroll += eventHandler;
-      }
-    }
 
 
     public frmStats(ref frmMain iParent)
@@ -1452,6 +1336,17 @@ namespace Hero_Designer
       this.TopMost = true;
       this.tbScaleX.EndInit();
       this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnClose.ButtonClicked += btnClose_Click;
+                  this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
+                  this.cbStyle.SelectedIndexChanged += cbStyle_SelectedIndexChanged;
+                  this.cbValues.SelectedIndexChanged += cbValues_SelectedIndexChanged;
+                  this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+                  this.tbScaleX.Scroll += tbScaleX_Scroll;
+              }
+              // finished with events
       this.PerformLayout();
     }
 

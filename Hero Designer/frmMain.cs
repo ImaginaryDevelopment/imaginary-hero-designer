@@ -24,85 +24,54 @@ namespace Hero_Designer
 {
     public class frmMain : Form
     {
-        [AccessedThroughProperty("accoladeButton")]
-        ImageButton _accoladeButton;
-        [AccessedThroughProperty("AccoladesWindowToolStripMenuItem")]
-        ToolStripMenuItem _AccoladesWindowToolStripMenuItem;
+        ImageButton accoladeButton;
+        ToolStripMenuItem AccoladesWindowToolStripMenuItem;
         ToolStripMenuItem AdvancedToolStripMenuItem1;
-        [AccessedThroughProperty("AutoArrangeAllSlotsToolStripMenuItem")]
-        ToolStripMenuItem _AutoArrangeAllSlotsToolStripMenuItem;
-        [AccessedThroughProperty("cbAncillary")]
-        ComboBox _cbAncillary;
-        [AccessedThroughProperty("cbAT")]
-        ComboBox _cbAT;
-        [AccessedThroughProperty("cbOrigin")]
-        ComboBox _cbOrigin;
-        [AccessedThroughProperty("cbPool0")]
-        ComboBox _cbPool0;
-        [AccessedThroughProperty("cbPool1")]
-        ComboBox _cbPool1;
-        [AccessedThroughProperty("cbPool2")]
-        ComboBox _cbPool2;
-        [AccessedThroughProperty("cbPool3")]
-        ComboBox _cbPool3;
-        [AccessedThroughProperty("cbPrimary")]
+        ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem;
+        ComboBox cbAncillary;
+        ComboBox cbAT;
+        ComboBox cbOrigin;
+        ComboBox cbPool0;
+        ComboBox cbPool1;
+        ComboBox cbPool2;
+        ComboBox cbPool3;
         ComboBox _cbPrimary;
-        [AccessedThroughProperty("cbSecondary")]
-        ComboBox _cbSecondary;
+        ComboBox cbSecondary;
         ToolStripMenuItem CharacterToolStripMenuItem;
         [AccessedThroughProperty("dlgOpen")]
         OpenFileDialog _dlgOpen;
         [AccessedThroughProperty("dlgSave")]
         SaveFileDialog _dlgSave;
-        [AccessedThroughProperty("dvAnchored")]
-        DataView _dvAnchored;
+        DataView dvAnchored;
         ToolStripMenuItem FileToolStripMenuItem;
         ToolStripMenuItem HelpToolStripMenuItem1;
-        [AccessedThroughProperty("heroVillain")]
-        ImageButton _heroVillain;
+        ImageButton heroVillain;
         [AccessedThroughProperty("I9Picker")]
         I9Picker _I9Picker;
-        [AccessedThroughProperty("I9Popup")]
-        ctlPopUp _I9Popup;
+        ctlPopUp I9Popup;
         ImageButton ibAccolade;
-        [AccessedThroughProperty("ibMode")]
-        ImageButton _ibMode;
-        [AccessedThroughProperty("ibPopup")]
-        ImageButton _ibPopup;
-        [AccessedThroughProperty("ibPvX")]
-        ImageButton _ibPvX;
-        [AccessedThroughProperty("ibRecipe")]
-        ImageButton _ibRecipe;
-        [AccessedThroughProperty("ibSets")]
-        ImageButton _ibSets;
-        [AccessedThroughProperty("ibSlotLevels")]
-        ImageButton _ibSlotLevels;
-        [AccessedThroughProperty("ibTotals")]
-        ImageButton _ibTotals;
+        ImageButton ibMode;
+        ImageButton ibPopup;
+        ImageButton ibPvX;
+        ImageButton ibRecipe;
+        ImageButton ibSets;
+        ImageButton ibSlotLevels;
+        ImageButton ibTotals;
         ImageButton ibVetPools;
         ToolStripMenuItem ImportExportToolStripMenuItem;
-        [AccessedThroughProperty("incarnateButton")]
-        ImageButton _incarnateButton;
-        [AccessedThroughProperty("IncarnateWindowToolStripMenuItem")]
-        ToolStripMenuItem _IncarnateWindowToolStripMenuItem;
+        ImageButton incarnateButton;
+        ToolStripMenuItem IncarnateWindowToolStripMenuItem;
         ToolStripMenuItem InGameRespecHelperToolStripMenuItem;
         GFXLabel lblAT;
-        [AccessedThroughProperty("lblATLocked")]
-        Label _lblATLocked;
+        Label lblATLocked;
         Label lblEpic;
         GFXLabel lblHero;
-        [AccessedThroughProperty("lblLocked0")]
-        Label _lblLocked0;
-        [AccessedThroughProperty("lblLocked1")]
-        Label _lblLocked1;
-        [AccessedThroughProperty("lblLocked2")]
-        Label _lblLocked2;
-        [AccessedThroughProperty("lblLocked3")]
-        Label _lblLocked3;
-        [AccessedThroughProperty("lblLockedAncillary")]
-        Label _lblLockedAncillary;
-        [AccessedThroughProperty("lblLockedSecondary")]
-        Label _lblLockedSecondary;
+        Label lblLocked0;
+        Label lblLocked1;
+        Label lblLocked2;
+        Label lblLocked3;
+        Label lblLockedAncillary;
+        Label lblLockedSecondary;
         GFXLabel lblName;
         GFXLabel lblOrigin;
         Label lblPool1;
@@ -111,38 +80,24 @@ namespace Hero_Designer
         Label lblPool4;
         Label lblPrimary;
         Label lblSecondary;
-        [AccessedThroughProperty("llAncillary")]
-        ListLabelV2 _llAncillary;
-        [AccessedThroughProperty("llPool0")]
-        ListLabelV2 _llPool0;
-        [AccessedThroughProperty("llPool1")]
-        ListLabelV2 _llPool1;
-        [AccessedThroughProperty("llPool2")]
-        ListLabelV2 _llPool2;
-        [AccessedThroughProperty("llPool3")]
-        ListLabelV2 _llPool3;
-        [AccessedThroughProperty("llPrimary")]
-        ListLabelV2 _llPrimary;
-        [AccessedThroughProperty("llSecondary")]
-        ListLabelV2 _llSecondary;
+        ListLabelV2 llAncillary;
+        ListLabelV2 llPool0;
+        ListLabelV2 llPool1;
+        ListLabelV2 llPool2;
+        ListLabelV2 llPool3;
+        ListLabelV2 llPrimary;
+        ListLabelV2 llSecondary;
         MenuStrip MenuBar;
         ToolStripMenuItem OptionsToolStripMenuItem;
-        [AccessedThroughProperty("pbDynMode")]
-        PictureBox _pbDynMode;
-        [AccessedThroughProperty("pnlGFX")]
-        PictureBox _pnlGFX;
-        [AccessedThroughProperty("pnlGFXFlow")]
-        FlowLayoutPanel _pnlGFXFlow;
+        PictureBox pbDynMode;
+        PictureBox pnlGFX;
+        FlowLayoutPanel pnlGFXFlow;
         ToolStripMenuItem SetAllIOsToDefault35ToolStripMenuItem;
         ToolStripMenuItem SlotsToolStripMenuItem;
-        [AccessedThroughProperty("TemporaryPowersWindowToolStripMenuItem")]
-        ToolStripMenuItem _TemporaryPowersWindowToolStripMenuItem;
-        [AccessedThroughProperty("tempPowersButton")]
-        ImageButton _tempPowersButton;
-        [AccessedThroughProperty("tlsDPA")]
-        ToolStripMenuItem _tlsDPA;
-        [AccessedThroughProperty("tmrGfx")]
-        System.Windows.Forms.Timer _tmrGfx;
+        ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem;
+        ImageButton tempPowersButton;
+        ToolStripMenuItem tlsDPA;
+        System.Windows.Forms.Timer tmrGfx;
         ToolStripMenuItem ToolStripMenuItem1;
         ToolStripMenuItem ToolStripMenuItem2;
         ToolStripSeparator ToolStripMenuItem4;
@@ -168,137 +123,72 @@ namespace Hero_Designer
         ToolStripSeparator ToolStripSeparator7;
         ToolStripSeparator ToolStripSeparator8;
         ToolStripSeparator ToolStripSeparator9;
-        [AccessedThroughProperty("tsAbout")]
-        ToolStripMenuItem _tsAbout;
-        [AccessedThroughProperty("tsAdvDBEdit")]
-        ToolStripMenuItem _tsAdvDBEdit;
-        [AccessedThroughProperty("tsAdvFreshInstall")]
-        ToolStripMenuItem _tsAdvFreshInstall;
-        [AccessedThroughProperty("tsAdvResetTips")]
-        ToolStripMenuItem _tsAdvResetTips;
-        [AccessedThroughProperty("tsBug")]
-        ToolStripMenuItem _tsBug;
-        [AccessedThroughProperty("tsClearAllEnh")]
-        ToolStripMenuItem _tsClearAllEnh;
-        [AccessedThroughProperty("tsConfig")]
-        ToolStripMenuItem _tsConfig;
-        [AccessedThroughProperty("tsDonate")]
-        ToolStripMenuItem _tsDonate;
-        [AccessedThroughProperty("tsDynamic")]
-        ToolStripMenuItem _tsDynamic;
-        [AccessedThroughProperty("tsEnhToDO")]
-        ToolStripMenuItem _tsEnhToDO;
-        [AccessedThroughProperty("tsEnhToEven")]
-        ToolStripMenuItem _tsEnhToEven;
-        [AccessedThroughProperty("tsEnhToMinus1")]
-        ToolStripMenuItem _tsEnhToMinus1;
-        [AccessedThroughProperty("tsEnhToMinus2")]
-        ToolStripMenuItem _tsEnhToMinus2;
-        [AccessedThroughProperty("tsEnhToMinus3")]
-        ToolStripMenuItem _tsEnhToMinus3;
-        [AccessedThroughProperty("tsEnhToNone")]
-        ToolStripMenuItem _tsEnhToNone;
-        [AccessedThroughProperty("tsEnhToPlus1")]
-        ToolStripMenuItem _tsEnhToPlus1;
-        [AccessedThroughProperty("tsEnhToPlus2")]
-        ToolStripMenuItem _tsEnhToPlus2;
-        [AccessedThroughProperty("tsEnhToPlus3")]
-        ToolStripMenuItem _tsEnhToPlus3;
-        [AccessedThroughProperty("tsEnhToPlus4")]
-        ToolStripMenuItem _tsEnhToPlus4;
-        [AccessedThroughProperty("tsEnhToPlus5")]
-        ToolStripMenuItem _tsEnhToPlus5;
-        [AccessedThroughProperty("tsEnhToSO")]
-        ToolStripMenuItem _tsEnhToSO;
-        [AccessedThroughProperty("tsEnhToTO")]
-        ToolStripMenuItem _tsEnhToTO;
-        [AccessedThroughProperty("tsExport")]
-        ToolStripMenuItem _tsExport;
-        [AccessedThroughProperty("tsExportDataLink")]
-        ToolStripMenuItem _tsExportDataLink;
-        [AccessedThroughProperty("tsExportLong")]
-        ToolStripMenuItem _tsExportLong;
-        [AccessedThroughProperty("tsFileNew")]
-        ToolStripMenuItem _tsFileNew;
-        [AccessedThroughProperty("tsFileOpen")]
-        ToolStripMenuItem _tsFileOpen;
-        [AccessedThroughProperty("tsFilePrint")]
-        ToolStripMenuItem _tsFilePrint;
-        [AccessedThroughProperty("tsFileQuit")]
-        ToolStripMenuItem _tsFileQuit;
-        [AccessedThroughProperty("tsFileSave")]
-        ToolStripMenuItem _tsFileSave;
-        [AccessedThroughProperty("tsFileSaveAs")]
-        ToolStripMenuItem _tsFileSaveAs;
-        [AccessedThroughProperty("tsFlipAllEnh")]
-        ToolStripMenuItem _tsFlipAllEnh;
-        [AccessedThroughProperty("tsHelp")]
-        ToolStripMenuItem _tsHelp;
-        [AccessedThroughProperty("tsHelperLong")]
-        ToolStripMenuItem _tsHelperLong;
-        [AccessedThroughProperty("tsHelperLong2")]
-        ToolStripMenuItem _tsHelperLong2;
-        [AccessedThroughProperty("tsHelperShort")]
-        ToolStripMenuItem _tsHelperShort;
-        [AccessedThroughProperty("tsHelperShort2")]
-        ToolStripMenuItem _tsHelperShort2;
-        [AccessedThroughProperty("tsImport")]
-        ToolStripMenuItem _tsImport;
-        [AccessedThroughProperty("tsIODefault")]
-        ToolStripMenuItem _tsIODefault;
-        [AccessedThroughProperty("tsIOMax")]
-        ToolStripMenuItem _tsIOMax;
-        [AccessedThroughProperty("tsIOMin")]
-        ToolStripMenuItem _tsIOMin;
-        [AccessedThroughProperty("tsLevelUp")]
-        ToolStripMenuItem _tsLevelUp;
-        [AccessedThroughProperty("tsPatchNotes")]
-        ToolStripMenuItem _tsPatchNotes;
-        [AccessedThroughProperty("tsRecipeViewer")]
-        ToolStripMenuItem _tsRecipeViewer;
-        [AccessedThroughProperty("tsDPSCalc")]
-        ToolStripMenuItem _tsDPSCalc;
-        [AccessedThroughProperty("tsRemoveAllSlots")]
-        ToolStripMenuItem _tsRemoveAllSlots;
-        [AccessedThroughProperty("tsSetFind")]
-        ToolStripMenuItem _tsSetFind;
-        [AccessedThroughProperty("tsTitanForum")]
-        ToolStripMenuItem _tsTitanForum;
-        [AccessedThroughProperty("tsTitanPlanner")]
-        ToolStripMenuItem _tsTitanPlanner;
-        [AccessedThroughProperty("tsTitanSite")]
-        ToolStripMenuItem _tsTitanSite;
-        [AccessedThroughProperty("tsUpdateCheck")]
-        ToolStripMenuItem _tsUpdateCheck;
-        [AccessedThroughProperty("tsView2Col")]
-        ToolStripMenuItem _tsView2Col;
-        [AccessedThroughProperty("tsView3Col")]
-        ToolStripMenuItem _tsView3Col;
-        [AccessedThroughProperty("tsView4Col")]
-        ToolStripMenuItem _tsView4Col;
-        [AccessedThroughProperty("tsViewActualDamage_New")]
-        ToolStripMenuItem _tsViewActualDamage_New;
-        [AccessedThroughProperty("tsViewData")]
-        ToolStripMenuItem _tsViewData;
-        [AccessedThroughProperty("tsViewDPS_New")]
-        ToolStripMenuItem _tsViewDPS_New;
-        [AccessedThroughProperty("tsViewGraphs")]
-        ToolStripMenuItem _tsViewGraphs;
-        [AccessedThroughProperty("tsViewIOLevels")]
-        ToolStripMenuItem _tsViewIOLevels;
-        [AccessedThroughProperty("tsViewRelative")]
-        ToolStripMenuItem _tsViewRelative;
-        [AccessedThroughProperty("tsViewSetCompare")]
-        ToolStripMenuItem _tsViewSetCompare;
-        [AccessedThroughProperty("tsViewSets")]
-        ToolStripMenuItem _tsViewSets;
-        [AccessedThroughProperty("tsViewSlotLevels")]
-        ToolStripMenuItem _tsViewSlotLevels;
-        [AccessedThroughProperty("tsViewTotals")]
-        ToolStripMenuItem _tsViewTotals;
+        ToolStripMenuItem tsAbout;
+        ToolStripMenuItem tsAdvDBEdit;
+        ToolStripMenuItem tsAdvFreshInstall;
+        ToolStripMenuItem tsAdvResetTips;
+        ToolStripMenuItem tsBug;
+        ToolStripMenuItem tsClearAllEnh;
+        ToolStripMenuItem tsConfig;
+        ToolStripMenuItem tsDonate;
+        ToolStripMenuItem tsDynamic;
+        ToolStripMenuItem tsEnhToDO;
+        ToolStripMenuItem tsEnhToEven;
+        ToolStripMenuItem tsEnhToMinus1;
+        ToolStripMenuItem tsEnhToMinus2;
+        ToolStripMenuItem tsEnhToMinus3;
+        ToolStripMenuItem tsEnhToNone;
+        ToolStripMenuItem tsEnhToPlus1;
+        ToolStripMenuItem tsEnhToPlus2;
+        ToolStripMenuItem tsEnhToPlus3;
+        ToolStripMenuItem tsEnhToPlus4;
+        ToolStripMenuItem tsEnhToPlus5;
+        ToolStripMenuItem tsEnhToSO;
+        ToolStripMenuItem tsEnhToTO;
+        ToolStripMenuItem tsExport;
+        ToolStripMenuItem tsExportDataLink;
+        ToolStripMenuItem tsExportLong;
+        ToolStripMenuItem tsFileNew;
+        ToolStripMenuItem tsFileOpen;
+        ToolStripMenuItem tsFilePrint;
+        ToolStripMenuItem tsFileQuit;
+        ToolStripMenuItem tsFileSave;
+        ToolStripMenuItem tsFileSaveAs;
+        ToolStripMenuItem tsFlipAllEnh;
+        ToolStripMenuItem tsHelp;
+        ToolStripMenuItem tsHelperLong;
+        ToolStripMenuItem tsHelperLong2;
+        ToolStripMenuItem tsHelperShort;
+        ToolStripMenuItem tsHelperShort2;
+        ToolStripMenuItem tsImport;
+        ToolStripMenuItem tsIODefault;
+        ToolStripMenuItem tsIOMax;
+        ToolStripMenuItem tsIOMin;
+        ToolStripMenuItem tsLevelUp;
+        ToolStripMenuItem tsPatchNotes;
+        ToolStripMenuItem tsRecipeViewer;
+        ToolStripMenuItem tsDPSCalc;
+        ToolStripMenuItem tsRemoveAllSlots;
+        ToolStripMenuItem tsSetFind;
+        ToolStripMenuItem tsTitanForum;
+        ToolStripMenuItem tsTitanPlanner;
+        ToolStripMenuItem tsTitanSite;
+        ToolStripMenuItem tsUpdateCheck;
+        ToolStripMenuItem tsView2Col;
+        ToolStripMenuItem tsView3Col;
+        ToolStripMenuItem tsView4Col;
+        ToolStripMenuItem tsViewActualDamage_New;
+        ToolStripMenuItem tsViewData;
+        ToolStripMenuItem tsViewDPS_New;
+        ToolStripMenuItem tsViewGraphs;
+        ToolStripMenuItem tsViewIOLevels;
+        ToolStripMenuItem tsViewRelative;
+        ToolStripMenuItem tsViewSetCompare;
+        ToolStripMenuItem tsViewSets;
+        ToolStripMenuItem tsViewSlotLevels;
+        ToolStripMenuItem tsViewTotals;
         ToolTip tTip;
-        [AccessedThroughProperty("txtName")]
-        TextBox _txtName;
+        TextBox txtName;
         ToolStripMenuItem ViewToolStripMenuItem;
         ToolStripMenuItem WindowToolStripMenuItem;
         Rectangle ActivePopupBounds;
@@ -367,334 +257,11 @@ namespace Hero_Designer
         bool top_fTotals;
         int xCursorOffset;
         int yCursorOffset;
-
-        ImageButton accoladeButton
-        {
-            get
-            {
-                return this._accoladeButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.accoladeButton_MouseDown);
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.accoladeButton_ButtonClicked);
-                if (this._accoladeButton != null)
-                {
-                    this._accoladeButton.MouseDown -= mouseEventHandler;
-                    this._accoladeButton.ButtonClicked -= clickedEventHandler;
-                }
-                this._accoladeButton = value;
-                if (this._accoladeButton == null)
-                    return;
-                this._accoladeButton.MouseDown += mouseEventHandler;
-                this._accoladeButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ToolStripMenuItem AccoladesWindowToolStripMenuItem
-        {
-            get
-            {
-                return this._AccoladesWindowToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.AccoladesWindowToolStripMenuItem_Click);
-                if (this._AccoladesWindowToolStripMenuItem != null)
-                    this._AccoladesWindowToolStripMenuItem.Click -= eventHandler;
-                this._AccoladesWindowToolStripMenuItem = value;
-                if (this._AccoladesWindowToolStripMenuItem == null)
-                    return;
-                this._AccoladesWindowToolStripMenuItem.Click += eventHandler;
-            }
-        }
-
-
-        ToolStripMenuItem AutoArrangeAllSlotsToolStripMenuItem
-        {
-            get
-            {
-                return this._AutoArrangeAllSlotsToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.AutoArrangeAllSlotsToolStripMenuItem_Click);
-                if (this._AutoArrangeAllSlotsToolStripMenuItem != null)
-                    this._AutoArrangeAllSlotsToolStripMenuItem.Click -= eventHandler;
-                this._AutoArrangeAllSlotsToolStripMenuItem = value;
-                if (this._AutoArrangeAllSlotsToolStripMenuItem == null)
-                    return;
-                this._AutoArrangeAllSlotsToolStripMenuItem.Click += eventHandler;
-            }
-        }
-
-        ComboBox cbAncillary
-        {
-            get
-            {
-                return this._cbAncillary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbAncillary_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbAncillery_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbAncillary_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPool0_MouseLeave);
-                if (this._cbAncillary != null)
-                {
-                    this._cbAncillary.DrawItem -= itemEventHandler;
-                    this._cbAncillary.SelectionChangeCommitted -= eventHandler1;
-                    this._cbAncillary.MouseMove -= mouseEventHandler;
-                    this._cbAncillary.MouseLeave -= eventHandler2;
-                }
-                this._cbAncillary = value;
-                if (this._cbAncillary == null)
-                    return;
-                this._cbAncillary.DrawItem += itemEventHandler;
-                this._cbAncillary.SelectionChangeCommitted += eventHandler1;
-                this._cbAncillary.MouseMove += mouseEventHandler;
-                this._cbAncillary.MouseLeave += eventHandler2;
-            }
-        }
-
-        ComboBox cbAT
-        {
-            get
-            {
-                return this._cbAT;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbAT_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbAT_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbAT_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbAT_MouseLeave);
-                if (this._cbAT != null)
-                {
-                    this._cbAT.DrawItem -= itemEventHandler;
-                    this._cbAT.SelectionChangeCommitted -= eventHandler1;
-                    this._cbAT.MouseMove -= mouseEventHandler;
-                    this._cbAT.MouseLeave -= eventHandler2;
-                }
-                this._cbAT = value;
-                if (this._cbAT == null)
-                    return;
-                this._cbAT.DrawItem += itemEventHandler;
-                this._cbAT.SelectionChangeCommitted += eventHandler1;
-                this._cbAT.MouseMove += mouseEventHandler;
-                this._cbAT.MouseLeave += eventHandler2;
-            }
-        }
-
-        ComboBox cbOrigin
-        {
-            get
-            {
-                return this._cbOrigin;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbOrigin_DrawItem);
-                EventHandler eventHandler = new EventHandler(this.cbOrigin_SelectedIndexChanged);
-                if (this._cbOrigin != null)
-                {
-                    this._cbOrigin.DrawItem -= itemEventHandler;
-                    this._cbOrigin.SelectionChangeCommitted -= eventHandler;
-                }
-                this._cbOrigin = value;
-                if (this._cbOrigin == null)
-                    return;
-                this._cbOrigin.DrawItem += itemEventHandler;
-                this._cbOrigin.SelectionChangeCommitted += eventHandler;
-            }
-        }
-
-        ComboBox cbPool0
-        {
-            get
-            {
-                return this._cbPool0;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbPool0_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbPool0_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbPool0_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPool0_MouseLeave);
-                if (this._cbPool0 != null)
-                {
-                    this._cbPool0.DrawItem -= itemEventHandler;
-                    this._cbPool0.SelectionChangeCommitted -= eventHandler1;
-                    this._cbPool0.MouseMove -= mouseEventHandler;
-                    this._cbPool0.MouseLeave -= eventHandler2;
-                }
-                this._cbPool0 = value;
-                if (this._cbPool0 == null)
-                    return;
-                this._cbPool0.DrawItem += itemEventHandler;
-                this._cbPool0.SelectionChangeCommitted += eventHandler1;
-                this._cbPool0.MouseMove += mouseEventHandler;
-                this._cbPool0.MouseLeave += eventHandler2;
-            }
-        }
-
-        ComboBox cbPool1
-        {
-            get
-            {
-                return this._cbPool1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbPool1_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbPool1_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbPool1_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPool0_MouseLeave);
-                if (this._cbPool1 != null)
-                {
-                    this._cbPool1.DrawItem -= itemEventHandler;
-                    this._cbPool1.SelectionChangeCommitted -= eventHandler1;
-                    this._cbPool1.MouseMove -= mouseEventHandler;
-                    this._cbPool1.MouseLeave -= eventHandler2;
-                }
-                this._cbPool1 = value;
-                if (this._cbPool1 == null)
-                    return;
-                this._cbPool1.DrawItem += itemEventHandler;
-                this._cbPool1.SelectionChangeCommitted += eventHandler1;
-                this._cbPool1.MouseMove += mouseEventHandler;
-                this._cbPool1.MouseLeave += eventHandler2;
-            }
-        }
-
-        ComboBox cbPool2
-        {
-            get
-            {
-                return this._cbPool2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbPool2_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbPool2_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbPool2_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPool0_MouseLeave);
-                if (this._cbPool2 != null)
-                {
-                    this._cbPool2.DrawItem -= itemEventHandler;
-                    this._cbPool2.SelectionChangeCommitted -= eventHandler1;
-                    this._cbPool2.MouseMove -= mouseEventHandler;
-                    this._cbPool2.MouseLeave -= eventHandler2;
-                }
-                this._cbPool2 = value;
-                if (this._cbPool2 == null)
-                    return;
-                this._cbPool2.DrawItem += itemEventHandler;
-                this._cbPool2.SelectionChangeCommitted += eventHandler1;
-                this._cbPool2.MouseMove += mouseEventHandler;
-                this._cbPool2.MouseLeave += eventHandler2;
-            }
-        }
-
-        ComboBox cbPool3
-        {
-            get
-            {
-                return this._cbPool3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbPool3_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbPool3_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbPool3_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPool0_MouseLeave);
-                if (this._cbPool3 != null)
-                {
-                    this._cbPool3.DrawItem -= itemEventHandler;
-                    this._cbPool3.SelectionChangeCommitted -= eventHandler1;
-                    this._cbPool3.MouseMove -= mouseEventHandler;
-                    this._cbPool3.MouseLeave -= eventHandler2;
-                }
-                this._cbPool3 = value;
-                if (this._cbPool3 == null)
-                    return;
-                this._cbPool3.DrawItem += itemEventHandler;
-                this._cbPool3.SelectionChangeCommitted += eventHandler1;
-                this._cbPool3.MouseMove += mouseEventHandler;
-                this._cbPool3.MouseLeave += eventHandler2;
-            }
-        }
-
         internal ComboBox cbPrimary
         {
-            get
-            {
-                return this._cbPrimary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            private set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbPrimary_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbPrimary_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbPrimary_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbPrimary_MouseLeave);
-                if (this._cbPrimary != null)
-                {
-                    this._cbPrimary.DrawItem -= itemEventHandler;
-                    this._cbPrimary.SelectionChangeCommitted -= eventHandler1;
-                    this._cbPrimary.MouseMove -= mouseEventHandler;
-                    this._cbPrimary.MouseLeave -= eventHandler2;
-                }
-                this._cbPrimary = value;
-                if (this._cbPrimary == null)
-                    return;
-                this._cbPrimary.DrawItem += itemEventHandler;
-                this._cbPrimary.SelectionChangeCommitted += eventHandler1;
-                this._cbPrimary.MouseMove += mouseEventHandler;
-                this._cbPrimary.MouseLeave += eventHandler2;
-            }
+            get => _cbPrimary;
+            private set => _cbPrimary = value;
         }
-
-        ComboBox cbSecondary
-        {
-            get
-            {
-                return this._cbSecondary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                DrawItemEventHandler itemEventHandler = new DrawItemEventHandler(this.cbSecondary_DrawItem);
-                EventHandler eventHandler1 = new EventHandler(this.cbSecondary_SelectedIndexChanged);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.cbSecondary_MouseMove);
-                EventHandler eventHandler2 = new EventHandler(this.cbSecondary_MouseLeave);
-                if (this._cbSecondary != null)
-                {
-                    this._cbSecondary.DrawItem -= itemEventHandler;
-                    this._cbSecondary.SelectionChangeCommitted -= eventHandler1;
-                    this._cbSecondary.MouseMove -= mouseEventHandler;
-                    this._cbSecondary.MouseLeave -= eventHandler2;
-                }
-                this._cbSecondary = value;
-                if (this._cbSecondary == null)
-                    return;
-                this._cbSecondary.DrawItem += itemEventHandler;
-                this._cbSecondary.SelectionChangeCommitted += eventHandler1;
-                this._cbSecondary.MouseMove += mouseEventHandler;
-                this._cbSecondary.MouseLeave += eventHandler2;
-            }
-        }
-
 
         internal OpenFileDialog dlgOpen
         {
@@ -721,68 +288,6 @@ namespace Hero_Designer
                 this._dlgSave = value;
             }
         }
-
-        DataView dvAnchored
-        {
-            get
-            {
-                return this._dvAnchored;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.frmMain_MouseWheel);
-                DataView.SizeChangeEventHandler changeEventHandler1 = new DataView.SizeChangeEventHandler(this.dvAnchored_SizeChange);
-                DataView.FloatChangeEventHandler changeEventHandler2 = new DataView.FloatChangeEventHandler(this.dvAnchored_Float);
-                DataView.Unlock_ClickEventHandler clickEventHandler = new DataView.Unlock_ClickEventHandler(this.dvAnchored_Unlock);
-                DataView.SlotUpdateEventHandler updateEventHandler = new DataView.SlotUpdateEventHandler(this.DataView_SlotUpdate);
-                DataView.SlotFlipEventHandler flipEventHandler = new DataView.SlotFlipEventHandler(this.DataView_SlotFlip);
-                DataView.MovedEventHandler movedEventHandler = new DataView.MovedEventHandler(this.dvAnchored_Move);
-                DataView.TabChangedEventHandler changedEventHandler = new DataView.TabChangedEventHandler(this.dvAnchored_TabChanged);
-                if (this._dvAnchored != null)
-                {
-                    this._dvAnchored.MouseWheel -= mouseEventHandler;
-                    this._dvAnchored.SizeChange -= changeEventHandler1;
-                    this._dvAnchored.FloatChange -= changeEventHandler2;
-                    this._dvAnchored.Unlock_Click -= clickEventHandler;
-                    this._dvAnchored.SlotUpdate -= updateEventHandler;
-                    this._dvAnchored.SlotFlip -= flipEventHandler;
-                    this._dvAnchored.Moved -= movedEventHandler;
-                    this._dvAnchored.TabChanged -= changedEventHandler;
-                }
-                this._dvAnchored = value;
-                if (this._dvAnchored == null)
-                    return;
-                this._dvAnchored.MouseWheel += mouseEventHandler;
-                this._dvAnchored.SizeChange += changeEventHandler1;
-                this._dvAnchored.FloatChange += changeEventHandler2;
-                this._dvAnchored.Unlock_Click += clickEventHandler;
-                this._dvAnchored.SlotUpdate += updateEventHandler;
-                this._dvAnchored.SlotFlip += flipEventHandler;
-                this._dvAnchored.Moved += movedEventHandler;
-                this._dvAnchored.TabChanged += changedEventHandler;
-            }
-        }
-
-        ImageButton heroVillain
-        {
-            get
-            {
-                return this._heroVillain;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.heroVillain_ButtonClicked);
-                if (this._heroVillain != null)
-                    this._heroVillain.ButtonClicked -= clickedEventHandler;
-                this._heroVillain = value;
-                if (this._heroVillain == null)
-                    return;
-                this._heroVillain.ButtonClicked += clickedEventHandler;
-            }
-        }
-
         internal I9Picker I9Picker
         {
             get
@@ -820,1994 +325,6 @@ namespace Hero_Designer
                 this._I9Picker.MouseDown += mouseEventHandler;
             }
         }
-
-        ctlPopUp I9Popup
-        {
-            get
-            {
-                return this._I9Popup;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.I9Popup_MouseMove);
-                if (this._I9Popup != null)
-                    this._I9Popup.MouseMove -= mouseEventHandler;
-                this._I9Popup = value;
-                if (this._I9Popup == null)
-                    return;
-                this._I9Popup.MouseMove += mouseEventHandler;
-            }
-        }
-
-        ImageButton ibMode
-        {
-            get
-            {
-                return this._ibMode;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibMode_ButtonClicked);
-                if (this._ibMode != null)
-                    this._ibMode.ButtonClicked -= clickedEventHandler;
-                this._ibMode = value;
-                if (this._ibMode == null)
-                    return;
-                this._ibMode.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibPopup
-        {
-            get
-            {
-                return this._ibPopup;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibPopup_ButtonClicked);
-                if (this._ibPopup != null)
-                    this._ibPopup.ButtonClicked -= clickedEventHandler;
-                this._ibPopup = value;
-                if (this._ibPopup == null)
-                    return;
-                this._ibPopup.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibPvX
-        {
-            get
-            {
-                return this._ibPvX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibPvX_ButtonClicked);
-                if (this._ibPvX != null)
-                    this._ibPvX.ButtonClicked -= clickedEventHandler;
-                this._ibPvX = value;
-                if (this._ibPvX == null)
-                    return;
-                this._ibPvX.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibRecipe
-        {
-            get
-            {
-                return this._ibRecipe;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibRecipe_ButtonClicked);
-                if (this._ibRecipe != null)
-                    this._ibRecipe.ButtonClicked -= clickedEventHandler;
-                this._ibRecipe = value;
-                if (this._ibRecipe == null)
-                    return;
-                this._ibRecipe.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibSets
-        {
-            get
-            {
-                return this._ibSets;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibSets_ButtonClicked);
-                if (this._ibSets != null)
-                    this._ibSets.ButtonClicked -= clickedEventHandler;
-                this._ibSets = value;
-                if (this._ibSets == null)
-                    return;
-                this._ibSets.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibSlotLevels
-        {
-            get
-            {
-                return this._ibSlotLevels;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibSlotLevels_ButtonClicked);
-                if (this._ibSlotLevels != null)
-                    this._ibSlotLevels.ButtonClicked -= clickedEventHandler;
-                this._ibSlotLevels = value;
-                if (this._ibSlotLevels == null)
-                    return;
-                this._ibSlotLevels.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ImageButton ibTotals
-        {
-            get
-            {
-                return this._ibTotals;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.ibTotals_ButtonClicked);
-                if (this._ibTotals != null)
-                    this._ibTotals.ButtonClicked -= clickedEventHandler;
-                this._ibTotals = value;
-                if (this._ibTotals == null)
-                    return;
-                this._ibTotals.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-
-        ImageButton incarnateButton
-        {
-            get
-            {
-                return this._incarnateButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.incarnateButton_MouseDown);
-                if (this._incarnateButton != null)
-                    this._incarnateButton.MouseDown -= mouseEventHandler;
-                this._incarnateButton = value;
-                if (this._incarnateButton == null)
-                    return;
-                this._incarnateButton.MouseDown += mouseEventHandler;
-            }
-        }
-
-        ToolStripMenuItem IncarnateWindowToolStripMenuItem
-        {
-            get
-            {
-                return this._IncarnateWindowToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.IncarnateWindowToolStripMenuItem_Click);
-                if (this._IncarnateWindowToolStripMenuItem != null)
-                    this._IncarnateWindowToolStripMenuItem.Click -= eventHandler;
-                this._IncarnateWindowToolStripMenuItem = value;
-                if (this._IncarnateWindowToolStripMenuItem == null)
-                    return;
-                this._IncarnateWindowToolStripMenuItem.Click += eventHandler;
-            }
-        }
-
-        Label lblATLocked
-        {
-            get
-            {
-                return this._lblATLocked;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblATLocked_MouseMove);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblATLocked_Paint);
-                EventHandler eventHandler = new EventHandler(this.lblATLocked_MouseLeave);
-                if (this._lblATLocked != null)
-                {
-                    this._lblATLocked.MouseMove -= mouseEventHandler;
-                    this._lblATLocked.Paint -= paintEventHandler;
-                    this._lblATLocked.MouseLeave -= eventHandler;
-                }
-                this._lblATLocked = value;
-                if (this._lblATLocked == null)
-                    return;
-                this._lblATLocked.MouseMove += mouseEventHandler;
-                this._lblATLocked.Paint += paintEventHandler;
-                this._lblATLocked.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLocked0
-        {
-            get
-            {
-                return this._lblLocked0;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblLocked0_Paint);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLocked0_MouseMove);
-                EventHandler eventHandler = new EventHandler(this.lblLocked0_MouseLeave);
-                if (this._lblLocked0 != null)
-                {
-                    this._lblLocked0.Paint -= paintEventHandler;
-                    this._lblLocked0.MouseMove -= mouseEventHandler;
-                    this._lblLocked0.MouseLeave -= eventHandler;
-                }
-                this._lblLocked0 = value;
-                if (this._lblLocked0 == null)
-                    return;
-                this._lblLocked0.Paint += paintEventHandler;
-                this._lblLocked0.MouseMove += mouseEventHandler;
-                this._lblLocked0.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLocked1
-        {
-            get
-            {
-                return this._lblLocked1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblLocked1_Paint);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLocked1_MouseMove);
-                EventHandler eventHandler = new EventHandler(this.lblLocked0_MouseLeave);
-                if (this._lblLocked1 != null)
-                {
-                    this._lblLocked1.Paint -= paintEventHandler;
-                    this._lblLocked1.MouseMove -= mouseEventHandler;
-                    this._lblLocked1.MouseLeave -= eventHandler;
-                }
-                this._lblLocked1 = value;
-                if (this._lblLocked1 == null)
-                    return;
-                this._lblLocked1.Paint += paintEventHandler;
-                this._lblLocked1.MouseMove += mouseEventHandler;
-                this._lblLocked1.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLocked2
-        {
-            get
-            {
-                return this._lblLocked2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblLocked2_Paint);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLocked2_MouseMove);
-                EventHandler eventHandler = new EventHandler(this.lblLocked0_MouseLeave);
-                if (this._lblLocked2 != null)
-                {
-                    this._lblLocked2.Paint -= paintEventHandler;
-                    this._lblLocked2.MouseMove -= mouseEventHandler;
-                    this._lblLocked2.MouseLeave -= eventHandler;
-                }
-                this._lblLocked2 = value;
-                if (this._lblLocked2 == null)
-                    return;
-                this._lblLocked2.Paint += paintEventHandler;
-                this._lblLocked2.MouseMove += mouseEventHandler;
-                this._lblLocked2.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLocked3
-        {
-            get
-            {
-                return this._lblLocked3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblLocked3_Paint);
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLocked3_MouseMove);
-                EventHandler eventHandler = new EventHandler(this.lblLocked0_MouseLeave);
-                if (this._lblLocked3 != null)
-                {
-                    this._lblLocked3.Paint -= paintEventHandler;
-                    this._lblLocked3.MouseMove -= mouseEventHandler;
-                    this._lblLocked3.MouseLeave -= eventHandler;
-                }
-                this._lblLocked3 = value;
-                if (this._lblLocked3 == null)
-                    return;
-                this._lblLocked3.Paint += paintEventHandler;
-                this._lblLocked3.MouseMove += mouseEventHandler;
-                this._lblLocked3.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLockedAncillary
-        {
-            get
-            {
-                return this._lblLockedAncillary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLockedAncillary_MouseMove);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.lblLockedAncillary_Paint);
-                EventHandler eventHandler = new EventHandler(this.lblLocked0_MouseLeave);
-                if (this._lblLockedAncillary != null)
-                {
-                    this._lblLockedAncillary.MouseMove -= mouseEventHandler;
-                    this._lblLockedAncillary.Paint -= paintEventHandler;
-                    this._lblLockedAncillary.MouseLeave -= eventHandler;
-                }
-                this._lblLockedAncillary = value;
-                if (this._lblLockedAncillary == null)
-                    return;
-                this._lblLockedAncillary.MouseMove += mouseEventHandler;
-                this._lblLockedAncillary.Paint += paintEventHandler;
-                this._lblLockedAncillary.MouseLeave += eventHandler;
-            }
-        }
-
-        Label lblLockedSecondary
-        {
-            get
-            {
-                return this._lblLockedSecondary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.lblLockedSecondary_MouseMove);
-                EventHandler eventHandler = new EventHandler(this.lblLockedSecondary_MouseLeave);
-                if (this._lblLockedSecondary != null)
-                {
-                    this._lblLockedSecondary.MouseMove -= mouseEventHandler;
-                    this._lblLockedSecondary.MouseLeave -= eventHandler;
-                }
-                this._lblLockedSecondary = value;
-                if (this._lblLockedSecondary == null)
-                    return;
-                this._lblLockedSecondary.MouseMove += mouseEventHandler;
-                this._lblLockedSecondary.MouseLeave += eventHandler;
-            }
-        }
-
-        ListLabelV2 llAncillary
-        {
-            get
-            {
-                return this._llAncillary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler = new ListLabelV2.ItemHoverEventHandler(this.llAncillary_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llAncillary_ItemClick);
-                if (this._llAncillary != null)
-                {
-                    this._llAncillary.ItemHover -= hoverEventHandler;
-                    this._llAncillary.ItemClick -= clickEventHandler;
-                }
-                this._llAncillary = value;
-                if (this._llAncillary == null)
-                    return;
-                this._llAncillary.ItemHover += hoverEventHandler;
-                this._llAncillary.ItemClick += clickEventHandler;
-            }
-        }
-
-        ListLabelV2 llPool0
-        {
-            get
-            {
-                return this._llPool0;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llPool0_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llPool0_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llALL_MouseLeave);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                if (this._llPool0 != null)
-                {
-                    this._llPool0.ItemHover -= hoverEventHandler1;
-                    this._llPool0.ItemClick -= clickEventHandler;
-                    this._llPool0.MouseLeave -= eventHandler;
-                    this._llPool0.EmptyHover -= hoverEventHandler2;
-                }
-                this._llPool0 = value;
-                if (this._llPool0 == null)
-                    return;
-                this._llPool0.ItemHover += hoverEventHandler1;
-                this._llPool0.ItemClick += clickEventHandler;
-                this._llPool0.MouseLeave += eventHandler;
-                this._llPool0.EmptyHover += hoverEventHandler2;
-            }
-        }
-
-        ListLabelV2 llPool1
-        {
-            get
-            {
-                return this._llPool1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llPool1_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llPool1_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llALL_MouseLeave);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                if (this._llPool1 != null)
-                {
-                    this._llPool1.ItemHover -= hoverEventHandler1;
-                    this._llPool1.ItemClick -= clickEventHandler;
-                    this._llPool1.MouseLeave -= eventHandler;
-                    this._llPool1.EmptyHover -= hoverEventHandler2;
-                }
-                this._llPool1 = value;
-                if (this._llPool1 == null)
-                    return;
-                this._llPool1.ItemHover += hoverEventHandler1;
-                this._llPool1.ItemClick += clickEventHandler;
-                this._llPool1.MouseLeave += eventHandler;
-                this._llPool1.EmptyHover += hoverEventHandler2;
-            }
-        }
-
-        ListLabelV2 llPool2
-        {
-            get
-            {
-                return this._llPool2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llPool2_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llPool2_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llALL_MouseLeave);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                if (this._llPool2 != null)
-                {
-                    this._llPool2.ItemHover -= hoverEventHandler1;
-                    this._llPool2.ItemClick -= clickEventHandler;
-                    this._llPool2.MouseLeave -= eventHandler;
-                    this._llPool2.EmptyHover -= hoverEventHandler2;
-                }
-                this._llPool2 = value;
-                if (this._llPool2 == null)
-                    return;
-                this._llPool2.ItemHover += hoverEventHandler1;
-                this._llPool2.ItemClick += clickEventHandler;
-                this._llPool2.MouseLeave += eventHandler;
-                this._llPool2.EmptyHover += hoverEventHandler2;
-            }
-        }
-
-        ListLabelV2 llPool3
-        {
-            get
-            {
-                return this._llPool3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llPool3_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llPool3_ItemClick);
-                EventHandler eventHandler = new EventHandler(this.llALL_MouseLeave);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                if (this._llPool3 != null)
-                {
-                    this._llPool3.ItemHover -= hoverEventHandler1;
-                    this._llPool3.ItemClick -= clickEventHandler;
-                    this._llPool3.MouseLeave -= eventHandler;
-                    this._llPool3.EmptyHover -= hoverEventHandler2;
-                }
-                this._llPool3 = value;
-                if (this._llPool3 == null)
-                    return;
-                this._llPool3.ItemHover += hoverEventHandler1;
-                this._llPool3.ItemClick += clickEventHandler;
-                this._llPool3.MouseLeave += eventHandler;
-                this._llPool3.EmptyHover += hoverEventHandler2;
-            }
-        }
-
-        ListLabelV2 llPrimary
-        {
-            get
-            {
-                return this._llPrimary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llPrimary_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llPrimary_ItemClick);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                ListLabelV2.ExpandChangedEventHandler changedEventHandler = new ListLabelV2.ExpandChangedEventHandler(this.PriSec_ExpandChanged);
-                if (this._llPrimary != null)
-                {
-                    this._llPrimary.ItemHover -= hoverEventHandler1;
-                    this._llPrimary.ItemClick -= clickEventHandler;
-                    this._llPrimary.EmptyHover -= hoverEventHandler2;
-                    this._llPrimary.ExpandChanged -= changedEventHandler;
-                }
-                this._llPrimary = value;
-                if (this._llPrimary == null)
-                    return;
-                this._llPrimary.ItemHover += hoverEventHandler1;
-                this._llPrimary.ItemClick += clickEventHandler;
-                this._llPrimary.EmptyHover += hoverEventHandler2;
-                this._llPrimary.ExpandChanged += changedEventHandler;
-            }
-        }
-
-        ListLabelV2 llSecondary
-        {
-            get
-            {
-                return this._llSecondary;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                ListLabelV2.ItemHoverEventHandler hoverEventHandler1 = new ListLabelV2.ItemHoverEventHandler(this.llSecondary_ItemHover);
-                ListLabelV2.ItemClickEventHandler clickEventHandler = new ListLabelV2.ItemClickEventHandler(this.llSecondary_ItemClick);
-                ListLabelV2.EmptyHoverEventHandler hoverEventHandler2 = new ListLabelV2.EmptyHoverEventHandler(this.llAll_EmptyHover);
-                ListLabelV2.ExpandChangedEventHandler changedEventHandler = new ListLabelV2.ExpandChangedEventHandler(this.PriSec_ExpandChanged);
-                if (this._llSecondary != null)
-                {
-                    this._llSecondary.ItemHover -= hoverEventHandler1;
-                    this._llSecondary.ItemClick -= clickEventHandler;
-                    this._llSecondary.EmptyHover -= hoverEventHandler2;
-                    this._llSecondary.ExpandChanged -= changedEventHandler;
-                }
-                this._llSecondary = value;
-                if (this._llSecondary == null)
-                    return;
-                this._llSecondary.ItemHover += hoverEventHandler1;
-                this._llSecondary.ItemClick += clickEventHandler;
-                this._llSecondary.EmptyHover += hoverEventHandler2;
-                this._llSecondary.ExpandChanged += changedEventHandler;
-            }
-        }
-
-        PictureBox pbDynMode
-        {
-            get
-            {
-                return this._pbDynMode;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pbDynMode_Paint);
-                EventHandler eventHandler = new EventHandler(this.pbDynMode_Click);
-                if (this._pbDynMode != null)
-                {
-                    this._pbDynMode.Paint -= paintEventHandler;
-                    this._pbDynMode.Click -= eventHandler;
-                }
-                this._pbDynMode = value;
-                if (this._pbDynMode == null)
-                    return;
-                this._pbDynMode.Paint += paintEventHandler;
-                this._pbDynMode.Click += eventHandler;
-            }
-        }
-
-        PictureBox pnlGFX
-        {
-            get
-            {
-                return this._pnlGFX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.pnlGFX_MouseEnter);
-                EventHandler eventHandler2 = new EventHandler(this.pnlGFX_MouseLeave);
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pnlGFX_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pnlGFX_MouseUp);
-                MouseEventHandler mouseEventHandler3 = new MouseEventHandler(this.pnlGFX_MouseDoubleClick);
-                MouseEventHandler mouseEventHandler4 = new MouseEventHandler(this.pnlGFX_MouseDown);
-                DragEventHandler dragEventHandler1 = new DragEventHandler(this.pnlGFX_DragOver);
-                DragEventHandler dragEventHandler2 = new DragEventHandler(this.pnlGFX_DragEnter);
-                DragEventHandler dragEventHandler3 = new DragEventHandler(this.pnlGFX_DragDrop);
-                if (this._pnlGFX != null)
-                {
-                    this._pnlGFX.MouseEnter -= eventHandler1;
-                    this._pnlGFX.MouseLeave -= eventHandler2;
-                    this._pnlGFX.MouseMove -= mouseEventHandler1;
-                    this._pnlGFX.MouseUp -= mouseEventHandler2;
-                    this._pnlGFX.MouseDoubleClick -= mouseEventHandler3;
-                    this._pnlGFX.MouseDown -= mouseEventHandler4;
-                    this._pnlGFX.DragOver -= dragEventHandler1;
-                    this._pnlGFX.DragEnter -= dragEventHandler2;
-                    this._pnlGFX.DragDrop -= dragEventHandler3;
-                }
-                this._pnlGFX = value;
-                if (this._pnlGFX == null)
-                    return;
-                this._pnlGFX.MouseEnter += eventHandler1;
-                this._pnlGFX.MouseLeave += eventHandler2;
-                this._pnlGFX.MouseMove += mouseEventHandler1;
-                this._pnlGFX.MouseUp += mouseEventHandler2;
-                this._pnlGFX.MouseDoubleClick += mouseEventHandler3;
-                this._pnlGFX.MouseDown += mouseEventHandler4;
-                this._pnlGFX.DragOver += dragEventHandler1;
-                this._pnlGFX.DragEnter += dragEventHandler2;
-                this._pnlGFX.DragDrop += dragEventHandler3;
-            }
-        }
-
-        FlowLayoutPanel pnlGFXFlow
-        {
-            get
-            {
-                return this._pnlGFXFlow;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.pnlGFXFlow_MouseEnter);
-                if (this._pnlGFXFlow != null)
-                    this._pnlGFXFlow.MouseEnter -= eventHandler;
-                this._pnlGFXFlow = value;
-                if (this._pnlGFXFlow == null)
-                    return;
-                this._pnlGFXFlow.MouseEnter += eventHandler;
-            }
-        }
-
-
-        ToolStripMenuItem TemporaryPowersWindowToolStripMenuItem
-        {
-            get
-            {
-                return this._TemporaryPowersWindowToolStripMenuItem;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.TemporaryPowersWindowToolStripMenuItem_Click);
-                if (this._TemporaryPowersWindowToolStripMenuItem != null)
-                    this._TemporaryPowersWindowToolStripMenuItem.Click -= eventHandler;
-                this._TemporaryPowersWindowToolStripMenuItem = value;
-                if (this._TemporaryPowersWindowToolStripMenuItem == null)
-                    return;
-                this._TemporaryPowersWindowToolStripMenuItem.Click += eventHandler;
-            }
-        }
-
-        ImageButton tempPowersButton
-        {
-            get
-            {
-                return this._tempPowersButton;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.tempPowersButton_MouseDown);
-                ImageButton.ButtonClickedEventHandler clickedEventHandler = new ImageButton.ButtonClickedEventHandler(this.tempPowersButton_ButtonClicked);
-                if (this._tempPowersButton != null)
-                {
-                    this._tempPowersButton.MouseDown -= mouseEventHandler;
-                    this._tempPowersButton.ButtonClicked -= clickedEventHandler;
-                }
-                this._tempPowersButton = value;
-                if (this._tempPowersButton == null)
-                    return;
-                this._tempPowersButton.MouseDown += mouseEventHandler;
-                this._tempPowersButton.ButtonClicked += clickedEventHandler;
-            }
-        }
-
-        ToolStripMenuItem tlsDPA
-        {
-            get
-            {
-                return this._tlsDPA;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tlsDPA_Click);
-                if (this._tlsDPA != null)
-                    this._tlsDPA.Click -= eventHandler;
-                this._tlsDPA = value;
-                if (this._tlsDPA == null)
-                    return;
-                this._tlsDPA.Click += eventHandler;
-            }
-        }
-
-        System.Windows.Forms.Timer tmrGfx
-        {
-            get
-            {
-                return this._tmrGfx;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tmrGfx_Tick);
-                if (this._tmrGfx != null)
-                    this._tmrGfx.Tick -= eventHandler;
-                this._tmrGfx = value;
-                if (this._tmrGfx == null)
-                    return;
-                this._tmrGfx.Tick += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsAbout
-        {
-            get
-            {
-                return this._tsAbout;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsAbout_Click);
-                if (this._tsAbout != null)
-                    this._tsAbout.Click -= eventHandler;
-                this._tsAbout = value;
-                if (this._tsAbout == null)
-                    return;
-                this._tsAbout.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsAdvDBEdit
-        {
-            get
-            {
-                return this._tsAdvDBEdit;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsAdvDBEdit_Click);
-                if (this._tsAdvDBEdit != null)
-                    this._tsAdvDBEdit.Click -= eventHandler;
-                this._tsAdvDBEdit = value;
-                if (this._tsAdvDBEdit == null)
-                    return;
-                this._tsAdvDBEdit.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsAdvFreshInstall
-        {
-            get
-            {
-                return this._tsAdvFreshInstall;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsAdvFreshInstall_Click);
-                if (this._tsAdvFreshInstall != null)
-                    this._tsAdvFreshInstall.Click -= eventHandler;
-                this._tsAdvFreshInstall = value;
-                if (this._tsAdvFreshInstall == null)
-                    return;
-                this._tsAdvFreshInstall.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsAdvResetTips
-        {
-            get
-            {
-                return this._tsAdvResetTips;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsAdvResetTips_Click);
-                if (this._tsAdvResetTips != null)
-                    this._tsAdvResetTips.Click -= eventHandler;
-                this._tsAdvResetTips = value;
-                if (this._tsAdvResetTips == null)
-                    return;
-                this._tsAdvResetTips.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsBug
-        {
-            get
-            {
-                return this._tsBug;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsBug_Click);
-                if (this._tsBug != null)
-                    this._tsBug.Click -= eventHandler;
-                this._tsBug = value;
-                if (this._tsBug == null)
-                    return;
-                this._tsBug.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsClearAllEnh
-        {
-            get
-            {
-                return this._tsClearAllEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsClearAllEnh_Click);
-                if (this._tsClearAllEnh != null)
-                    this._tsClearAllEnh.Click -= eventHandler;
-                this._tsClearAllEnh = value;
-                if (this._tsClearAllEnh == null)
-                    return;
-                this._tsClearAllEnh.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsConfig
-        {
-            get
-            {
-                return this._tsConfig;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsConfig_Click);
-                if (this._tsConfig != null)
-                    this._tsConfig.Click -= eventHandler;
-                this._tsConfig = value;
-                if (this._tsConfig == null)
-                    return;
-                this._tsConfig.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsDonate
-        {
-            get
-            {
-                return this._tsDonate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsDonate_Click);
-                if (this._tsDonate != null)
-                    this._tsDonate.Click -= eventHandler;
-                this._tsDonate = value;
-                if (this._tsDonate == null)
-                    return;
-                this._tsDonate.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsDynamic
-        {
-            get
-            {
-                return this._tsDynamic;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsDynamic_Click);
-                if (this._tsDynamic != null)
-                    this._tsDynamic.Click -= eventHandler;
-                this._tsDynamic = value;
-                if (this._tsDynamic == null)
-                    return;
-                this._tsDynamic.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToDO
-        {
-            get
-            {
-                return this._tsEnhToDO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToDO_Click);
-                if (this._tsEnhToDO != null)
-                    this._tsEnhToDO.Click -= eventHandler;
-                this._tsEnhToDO = value;
-                if (this._tsEnhToDO == null)
-                    return;
-                this._tsEnhToDO.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToEven
-        {
-            get
-            {
-                return this._tsEnhToEven;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToEven_Click);
-                if (this._tsEnhToEven != null)
-                    this._tsEnhToEven.Click -= eventHandler;
-                this._tsEnhToEven = value;
-                if (this._tsEnhToEven == null)
-                    return;
-                this._tsEnhToEven.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToMinus1
-        {
-            get
-            {
-                return this._tsEnhToMinus1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToMinus1_Click);
-                if (this._tsEnhToMinus1 != null)
-                    this._tsEnhToMinus1.Click -= eventHandler;
-                this._tsEnhToMinus1 = value;
-                if (this._tsEnhToMinus1 == null)
-                    return;
-                this._tsEnhToMinus1.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToMinus2
-        {
-            get
-            {
-                return this._tsEnhToMinus2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToMinus2_Click);
-                if (this._tsEnhToMinus2 != null)
-                    this._tsEnhToMinus2.Click -= eventHandler;
-                this._tsEnhToMinus2 = value;
-                if (this._tsEnhToMinus2 == null)
-                    return;
-                this._tsEnhToMinus2.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToMinus3
-        {
-            get
-            {
-                return this._tsEnhToMinus3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToMinus3_Click);
-                if (this._tsEnhToMinus3 != null)
-                    this._tsEnhToMinus3.Click -= eventHandler;
-                this._tsEnhToMinus3 = value;
-                if (this._tsEnhToMinus3 == null)
-                    return;
-                this._tsEnhToMinus3.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToNone
-        {
-            get
-            {
-                return this._tsEnhToNone;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToNone_Click);
-                if (this._tsEnhToNone != null)
-                    this._tsEnhToNone.Click -= eventHandler;
-                this._tsEnhToNone = value;
-                if (this._tsEnhToNone == null)
-                    return;
-                this._tsEnhToNone.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToPlus1
-        {
-            get
-            {
-                return this._tsEnhToPlus1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToPlus1_Click);
-                if (this._tsEnhToPlus1 != null)
-                    this._tsEnhToPlus1.Click -= eventHandler;
-                this._tsEnhToPlus1 = value;
-                if (this._tsEnhToPlus1 == null)
-                    return;
-                this._tsEnhToPlus1.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToPlus2
-        {
-            get
-            {
-                return this._tsEnhToPlus2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToPlus2_Click);
-                if (this._tsEnhToPlus2 != null)
-                    this._tsEnhToPlus2.Click -= eventHandler;
-                this._tsEnhToPlus2 = value;
-                if (this._tsEnhToPlus2 == null)
-                    return;
-                this._tsEnhToPlus2.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToPlus3
-        {
-            get
-            {
-                return this._tsEnhToPlus3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToPlus3_Click);
-                if (this._tsEnhToPlus3 != null)
-                    this._tsEnhToPlus3.Click -= eventHandler;
-                this._tsEnhToPlus3 = value;
-                if (this._tsEnhToPlus3 == null)
-                    return;
-                this._tsEnhToPlus3.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToPlus4
-        {
-            get
-            {
-                return this._tsEnhToPlus4;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToPlus4_Click);
-                if (this._tsEnhToPlus4 != null)
-                    this._tsEnhToPlus4.Click -= eventHandler;
-                this._tsEnhToPlus4 = value;
-                if (this._tsEnhToPlus4 == null)
-                    return;
-                this._tsEnhToPlus4.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToPlus5
-        {
-            get
-            {
-                return this._tsEnhToPlus5;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToPlus5_Click);
-                if (this._tsEnhToPlus5 != null)
-                    this._tsEnhToPlus5.Click -= eventHandler;
-                this._tsEnhToPlus5 = value;
-                if (this._tsEnhToPlus5 == null)
-                    return;
-                this._tsEnhToPlus5.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToSO
-        {
-            get
-            {
-                return this._tsEnhToSO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToSO_Click);
-                if (this._tsEnhToSO != null)
-                    this._tsEnhToSO.Click -= eventHandler;
-                this._tsEnhToSO = value;
-                if (this._tsEnhToSO == null)
-                    return;
-                this._tsEnhToSO.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsEnhToTO
-        {
-            get
-            {
-                return this._tsEnhToTO;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsEnhToTO_Click);
-                if (this._tsEnhToTO != null)
-                    this._tsEnhToTO.Click -= eventHandler;
-                this._tsEnhToTO = value;
-                if (this._tsEnhToTO == null)
-                    return;
-                this._tsEnhToTO.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsExport
-        {
-            get
-            {
-                return this._tsExport;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsExport_Click);
-                if (this._tsExport != null)
-                    this._tsExport.Click -= eventHandler;
-                this._tsExport = value;
-                if (this._tsExport == null)
-                    return;
-                this._tsExport.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsExportDataLink
-        {
-            get
-            {
-                return this._tsExportDataLink;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsExportDataLink_Click);
-                if (this._tsExportDataLink != null)
-                    this._tsExportDataLink.Click -= eventHandler;
-                this._tsExportDataLink = value;
-                if (this._tsExportDataLink == null)
-                    return;
-                this._tsExportDataLink.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsExportLong
-        {
-            get
-            {
-                return this._tsExportLong;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsExportLong_Click);
-                if (this._tsExportLong != null)
-                    this._tsExportLong.Click -= eventHandler;
-                this._tsExportLong = value;
-                if (this._tsExportLong == null)
-                    return;
-                this._tsExportLong.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFileNew
-        {
-            get
-            {
-                return this._tsFileNew;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFileNew_Click);
-                if (this._tsFileNew != null)
-                    this._tsFileNew.Click -= eventHandler;
-                this._tsFileNew = value;
-                if (this._tsFileNew == null)
-                    return;
-                this._tsFileNew.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFileOpen
-        {
-            get
-            {
-                return this._tsFileOpen;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFileOpen_Click);
-                if (this._tsFileOpen != null)
-                    this._tsFileOpen.Click -= eventHandler;
-                this._tsFileOpen = value;
-                if (this._tsFileOpen == null)
-                    return;
-                this._tsFileOpen.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFilePrint
-        {
-            get
-            {
-                return this._tsFilePrint;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFilePrint_Click);
-                if (this._tsFilePrint != null)
-                    this._tsFilePrint.Click -= eventHandler;
-                this._tsFilePrint = value;
-                if (this._tsFilePrint == null)
-                    return;
-                this._tsFilePrint.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFileQuit
-        {
-            get
-            {
-                return this._tsFileQuit;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFileQuit_Click);
-                if (this._tsFileQuit != null)
-                    this._tsFileQuit.Click -= eventHandler;
-                this._tsFileQuit = value;
-                if (this._tsFileQuit == null)
-                    return;
-                this._tsFileQuit.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFileSave
-        {
-            get
-            {
-                return this._tsFileSave;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFileSave_Click);
-                if (this._tsFileSave != null)
-                    this._tsFileSave.Click -= eventHandler;
-                this._tsFileSave = value;
-                if (this._tsFileSave == null)
-                    return;
-                this._tsFileSave.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFileSaveAs
-        {
-            get
-            {
-                return this._tsFileSaveAs;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFileSaveAs_Click);
-                if (this._tsFileSaveAs != null)
-                    this._tsFileSaveAs.Click -= eventHandler;
-                this._tsFileSaveAs = value;
-                if (this._tsFileSaveAs == null)
-                    return;
-                this._tsFileSaveAs.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsFlipAllEnh
-        {
-            get
-            {
-                return this._tsFlipAllEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsFlipAllEnh_Click);
-                if (this._tsFlipAllEnh != null)
-                    this._tsFlipAllEnh.Click -= eventHandler;
-                this._tsFlipAllEnh = value;
-                if (this._tsFlipAllEnh == null)
-                    return;
-                this._tsFlipAllEnh.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsHelp
-        {
-            get
-            {
-                return this._tsHelp;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsHelp_Click);
-                if (this._tsHelp != null)
-                    this._tsHelp.Click -= eventHandler;
-                this._tsHelp = value;
-                if (this._tsHelp == null)
-                    return;
-                this._tsHelp.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsHelperLong
-        {
-            get
-            {
-                return this._tsHelperLong;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsHelperLong_Click);
-                if (this._tsHelperLong != null)
-                    this._tsHelperLong.Click -= eventHandler;
-                this._tsHelperLong = value;
-                if (this._tsHelperLong == null)
-                    return;
-                this._tsHelperLong.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsHelperLong2
-        {
-            get
-            {
-                return this._tsHelperLong2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsHelperLong2_Click);
-                if (this._tsHelperLong2 != null)
-                    this._tsHelperLong2.Click -= eventHandler;
-                this._tsHelperLong2 = value;
-                if (this._tsHelperLong2 == null)
-                    return;
-                this._tsHelperLong2.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsHelperShort
-        {
-            get
-            {
-                return this._tsHelperShort;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsHelperShort_Click);
-                if (this._tsHelperShort != null)
-                    this._tsHelperShort.Click -= eventHandler;
-                this._tsHelperShort = value;
-                if (this._tsHelperShort == null)
-                    return;
-                this._tsHelperShort.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsHelperShort2
-        {
-            get
-            {
-                return this._tsHelperShort2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsHelperShort2_Click);
-                if (this._tsHelperShort2 != null)
-                    this._tsHelperShort2.Click -= eventHandler;
-                this._tsHelperShort2 = value;
-                if (this._tsHelperShort2 == null)
-                    return;
-                this._tsHelperShort2.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsImport
-        {
-            get
-            {
-                return this._tsImport;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsImport_Click);
-                if (this._tsImport != null)
-                    this._tsImport.Click -= eventHandler;
-                this._tsImport = value;
-                if (this._tsImport == null)
-                    return;
-                this._tsImport.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsIODefault
-        {
-            get
-            {
-                return this._tsIODefault;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsIODefault_Click);
-                if (this._tsIODefault != null)
-                    this._tsIODefault.Click -= eventHandler;
-                this._tsIODefault = value;
-                if (this._tsIODefault == null)
-                    return;
-                this._tsIODefault.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsIOMax
-        {
-            get
-            {
-                return this._tsIOMax;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsIOMax_Click);
-                if (this._tsIOMax != null)
-                    this._tsIOMax.Click -= eventHandler;
-                this._tsIOMax = value;
-                if (this._tsIOMax == null)
-                    return;
-                this._tsIOMax.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsIOMin
-        {
-            get
-            {
-                return this._tsIOMin;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsIOMin_Click);
-                if (this._tsIOMin != null)
-                    this._tsIOMin.Click -= eventHandler;
-                this._tsIOMin = value;
-                if (this._tsIOMin == null)
-                    return;
-                this._tsIOMin.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsLevelUp
-        {
-            get
-            {
-                return this._tsLevelUp;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsLevelUp_Click);
-                if (this._tsLevelUp != null)
-                    this._tsLevelUp.Click -= eventHandler;
-                this._tsLevelUp = value;
-                if (this._tsLevelUp == null)
-                    return;
-                this._tsLevelUp.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsPatchNotes
-        {
-            get
-            {
-                return this._tsPatchNotes;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsPatchNotes_Click);
-                if (this._tsPatchNotes != null)
-                    this._tsPatchNotes.Click -= eventHandler;
-                this._tsPatchNotes = value;
-                if (this._tsPatchNotes == null)
-                    return;
-                this._tsPatchNotes.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsRecipeViewer
-        {
-            get
-            {
-                return this._tsRecipeViewer;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsRecipeViewer_Click);
-                if (this._tsRecipeViewer != null)
-                    this._tsRecipeViewer.Click -= eventHandler;
-                this._tsRecipeViewer = value;
-                if (this._tsRecipeViewer == null)
-                    return;
-                this._tsRecipeViewer.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsDPSCalc
-        {
-            get
-            {
-                return this._tsDPSCalc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsDPSCalc_Click);
-                if (this._tsDPSCalc != null)
-                    this._tsDPSCalc.Click -= eventHandler;
-                this._tsDPSCalc = value;
-                if (this._tsDPSCalc == null)
-                    return;
-                this._tsDPSCalc.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsRemoveAllSlots
-        {
-            get
-            {
-                return this._tsRemoveAllSlots;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsRemoveAllSlots_Click);
-                if (this._tsRemoveAllSlots != null)
-                    this._tsRemoveAllSlots.Click -= eventHandler;
-                this._tsRemoveAllSlots = value;
-                if (this._tsRemoveAllSlots == null)
-                    return;
-                this._tsRemoveAllSlots.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsSetFind
-        {
-            get
-            {
-                return this._tsSetFind;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsSetFind_Click);
-                if (this._tsSetFind != null)
-                    this._tsSetFind.Click -= eventHandler;
-                this._tsSetFind = value;
-                if (this._tsSetFind == null)
-                    return;
-                this._tsSetFind.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsTitanForum
-        {
-            get
-            {
-                return this._tsTitanForum;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsTitanForum_Click);
-                if (this._tsTitanForum != null)
-                    this._tsTitanForum.Click -= eventHandler;
-                this._tsTitanForum = value;
-                if (this._tsTitanForum == null)
-                    return;
-                this._tsTitanForum.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsTitanPlanner
-        {
-            get
-            {
-                return this._tsTitanPlanner;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsTitanPlanner_Click);
-                if (this._tsTitanPlanner != null)
-                    this._tsTitanPlanner.Click -= eventHandler;
-                this._tsTitanPlanner = value;
-                if (this._tsTitanPlanner == null)
-                    return;
-                this._tsTitanPlanner.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsTitanSite
-        {
-            get
-            {
-                return this._tsTitanSite;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsTitanSite_Click);
-                if (this._tsTitanSite != null)
-                    this._tsTitanSite.Click -= eventHandler;
-                this._tsTitanSite = value;
-                if (this._tsTitanSite == null)
-                    return;
-                this._tsTitanSite.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsUpdateCheck
-        {
-            get
-            {
-                return this._tsUpdateCheck;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsUpdateCheck_Click);
-                if (this._tsUpdateCheck != null)
-                    this._tsUpdateCheck.Click -= eventHandler;
-                this._tsUpdateCheck = value;
-                if (this._tsUpdateCheck == null)
-                    return;
-                this._tsUpdateCheck.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsView2Col
-        {
-            get
-            {
-                return this._tsView2Col;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsView2Col_Click);
-                if (this._tsView2Col != null)
-                    this._tsView2Col.Click -= eventHandler;
-                this._tsView2Col = value;
-                if (this._tsView2Col == null)
-                    return;
-                this._tsView2Col.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsView3Col
-        {
-            get
-            {
-                return this._tsView3Col;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsView3Col_Click);
-                if (this._tsView3Col != null)
-                    this._tsView3Col.Click -= eventHandler;
-                this._tsView3Col = value;
-                if (this._tsView3Col == null)
-                    return;
-                this._tsView3Col.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsView4Col
-        {
-            get
-            {
-                return this._tsView4Col;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsView4Col_Click);
-                if (this._tsView4Col != null)
-                    this._tsView4Col.Click -= eventHandler;
-                this._tsView4Col = value;
-                if (this._tsView4Col == null)
-                    return;
-                this._tsView4Col.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewActualDamage_New
-        {
-            get
-            {
-                return this._tsViewActualDamage_New;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewActualDamage_New_Click);
-                if (this._tsViewActualDamage_New != null)
-                    this._tsViewActualDamage_New.Click -= eventHandler;
-                this._tsViewActualDamage_New = value;
-                if (this._tsViewActualDamage_New == null)
-                    return;
-                this._tsViewActualDamage_New.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewData
-        {
-            get
-            {
-                return this._tsViewData;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewData_Click);
-                if (this._tsViewData != null)
-                    this._tsViewData.Click -= eventHandler;
-                this._tsViewData = value;
-                if (this._tsViewData == null)
-                    return;
-                this._tsViewData.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewDPS_New
-        {
-            get
-            {
-                return this._tsViewDPS_New;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewDPS_New_Click);
-                if (this._tsViewDPS_New != null)
-                    this._tsViewDPS_New.Click -= eventHandler;
-                this._tsViewDPS_New = value;
-                if (this._tsViewDPS_New == null)
-                    return;
-                this._tsViewDPS_New.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewGraphs
-        {
-            get
-            {
-                return this._tsViewGraphs;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewGraphs_Click);
-                if (this._tsViewGraphs != null)
-                    this._tsViewGraphs.Click -= eventHandler;
-                this._tsViewGraphs = value;
-                if (this._tsViewGraphs == null)
-                    return;
-                this._tsViewGraphs.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewIOLevels
-        {
-            get
-            {
-                return this._tsViewIOLevels;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewIOLevels_Click);
-                if (this._tsViewIOLevels != null)
-                    this._tsViewIOLevels.Click -= eventHandler;
-                this._tsViewIOLevels = value;
-                if (this._tsViewIOLevels == null)
-                    return;
-                this._tsViewIOLevels.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewRelative
-        {
-            get
-            {
-                return this._tsViewRelative;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewRelative_Click);
-                if (this._tsViewRelative != null)
-                    this._tsViewRelative.Click -= eventHandler;
-                this._tsViewRelative = value;
-                if (this._tsViewRelative == null)
-                    return;
-                this._tsViewRelative.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewSetCompare
-        {
-            get
-            {
-                return this._tsViewSetCompare;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewSetCompare_Click);
-                if (this._tsViewSetCompare != null)
-                    this._tsViewSetCompare.Click -= eventHandler;
-                this._tsViewSetCompare = value;
-                if (this._tsViewSetCompare == null)
-                    return;
-                this._tsViewSetCompare.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewSets
-        {
-            get
-            {
-                return this._tsViewSets;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewSets_Click);
-                if (this._tsViewSets != null)
-                    this._tsViewSets.Click -= eventHandler;
-                this._tsViewSets = value;
-                if (this._tsViewSets == null)
-                    return;
-                this._tsViewSets.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewSlotLevels
-        {
-            get
-            {
-                return this._tsViewSlotLevels;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewSlotLevels_Click);
-                if (this._tsViewSlotLevels != null)
-                    this._tsViewSlotLevels.Click -= eventHandler;
-                this._tsViewSlotLevels = value;
-                if (this._tsViewSlotLevels == null)
-                    return;
-                this._tsViewSlotLevels.Click += eventHandler;
-            }
-        }
-
-        ToolStripMenuItem tsViewTotals
-        {
-            get
-            {
-                return this._tsViewTotals;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.tsViewTotals_Click);
-                if (this._tsViewTotals != null)
-                    this._tsViewTotals.Click -= eventHandler;
-                this._tsViewTotals = value;
-                if (this._tsViewTotals == null)
-                    return;
-                this._tsViewTotals.Click += eventHandler;
-            }
-        }
-
-
-        TextBox txtName
-        {
-            get
-            {
-                return this._txtName;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.txtName_TextChanged);
-                if (this._txtName != null)
-                    this._txtName.TextChanged -= eventHandler;
-                this._txtName = value;
-                if (this._txtName == null)
-                    return;
-                this._txtName.TextChanged += eventHandler;
-            }
-        }
-
         internal clsDrawX Drawing => this.drawing;
 
         public frmMain()
@@ -6477,6 +3994,280 @@ namespace Hero_Designer
             ((ISupportInitialize)this.pnlGFX).EndInit();
             this.pnlGFXFlow.ResumeLayout(false);
             this.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
+                  this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
+                  this.I9Popup.MouseMove += I9Popup_MouseMove;
+                  this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
+                  this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
+                  
+                  // accoladeButton events
+                  this.accoladeButton.MouseDown += accoladeButton_MouseDown;
+                  this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
+                  
+                  
+                  // cbAT events
+                  this.cbAT.DrawItem += cbAT_DrawItem;
+                  this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
+                  this.cbAT.MouseMove += cbAT_MouseMove;
+                  this.cbAT.MouseLeave += cbAT_MouseLeave;
+                  
+                  
+                  // cbAncillary events
+                  this.cbAncillary.DrawItem += cbAncillary_DrawItem;
+                  this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
+                  this.cbAncillary.MouseMove += cbAncillary_MouseMove;
+                  this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
+                  
+                  
+                  // cbOrigin events
+                  this.cbOrigin.DrawItem += cbOrigin_DrawItem;
+                  this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
+                  
+                  
+                  // cbPool0 events
+                  this.cbPool0.DrawItem += cbPool0_DrawItem;
+                  this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
+                  this.cbPool0.MouseMove += cbPool0_MouseMove;
+                  this.cbPool0.MouseLeave += cbPool0_MouseLeave;
+                  
+                  
+                  // cbPool1 events
+                  this.cbPool1.DrawItem += cbPool1_DrawItem;
+                  this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
+                  this.cbPool1.MouseMove += cbPool1_MouseMove;
+                  this.cbPool1.MouseLeave += cbPool0_MouseLeave;
+                  
+                  
+                  // cbPool2 events
+                  this.cbPool2.DrawItem += cbPool2_DrawItem;
+                  this.cbPool2.SelectionChangeCommitted += cbPool2_SelectedIndexChanged;
+                  this.cbPool2.MouseMove += cbPool2_MouseMove;
+                  this.cbPool2.MouseLeave += cbPool0_MouseLeave;
+                  
+                  
+                  // cbPool3 events
+                  this.cbPool3.DrawItem += cbPool3_DrawItem;
+                  this.cbPool3.SelectionChangeCommitted += cbPool3_SelectedIndexChanged;
+                  this.cbPool3.MouseMove += cbPool3_MouseMove;
+                  this.cbPool3.MouseLeave += cbPool0_MouseLeave;
+                  
+                  
+                  // cbPrimary events
+                  this.cbPrimary.DrawItem += cbPrimary_DrawItem;
+                  this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
+                  this.cbPrimary.MouseMove += cbPrimary_MouseMove;
+                  this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
+                  
+                  
+                  // cbSecondary events
+                  this.cbSecondary.DrawItem += cbSecondary_DrawItem;
+                  this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
+                  this.cbSecondary.MouseMove += cbSecondary_MouseMove;
+                  this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
+                  
+                  
+                  // dvAnchored events
+                  this.dvAnchored.MouseWheel += frmMain_MouseWheel;
+                  this.dvAnchored.SizeChange += dvAnchored_SizeChange;
+                  this.dvAnchored.FloatChange += dvAnchored_Float;
+                  this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
+                  this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
+                  this.dvAnchored.SlotFlip += DataView_SlotFlip;
+                  this.dvAnchored.Moved += dvAnchored_Move;
+                  this.dvAnchored.TabChanged += dvAnchored_TabChanged;
+                  
+                  this.heroVillain.ButtonClicked += heroVillain_ButtonClicked;
+                  this.ibMode.ButtonClicked += ibMode_ButtonClicked;
+                  this.ibPopup.ButtonClicked += ibPopup_ButtonClicked;
+                  this.ibPvX.ButtonClicked += ibPvX_ButtonClicked;
+                  this.ibRecipe.ButtonClicked += ibRecipe_ButtonClicked;
+                  this.ibSets.ButtonClicked += ibSets_ButtonClicked;
+                  this.ibSlotLevels.ButtonClicked += ibSlotLevels_ButtonClicked;
+                  this.ibTotals.ButtonClicked += ibTotals_ButtonClicked;
+                  this.incarnateButton.MouseDown += incarnateButton_MouseDown;
+                  
+                  // lblATLocked events
+                  this.lblATLocked.MouseMove += lblATLocked_MouseMove;
+                  this.lblATLocked.Paint += lblATLocked_Paint;
+                  this.lblATLocked.MouseLeave += lblATLocked_MouseLeave;
+                  
+                  
+                  // lblLocked0 events
+                  this.lblLocked0.Paint += lblLocked0_Paint;
+                  this.lblLocked0.MouseMove += lblLocked0_MouseMove;
+                  this.lblLocked0.MouseLeave += lblLocked0_MouseLeave;
+                  
+                  
+                  // lblLocked1 events
+                  this.lblLocked1.Paint += lblLocked1_Paint;
+                  this.lblLocked1.MouseMove += lblLocked1_MouseMove;
+                  this.lblLocked1.MouseLeave += lblLocked0_MouseLeave;
+                  
+                  
+                  // lblLocked2 events
+                  this.lblLocked2.Paint += lblLocked2_Paint;
+                  this.lblLocked2.MouseMove += lblLocked2_MouseMove;
+                  this.lblLocked2.MouseLeave += lblLocked0_MouseLeave;
+                  
+                  
+                  // lblLocked3 events
+                  this.lblLocked3.Paint += lblLocked3_Paint;
+                  this.lblLocked3.MouseMove += lblLocked3_MouseMove;
+                  this.lblLocked3.MouseLeave += lblLocked0_MouseLeave;
+                  
+                  
+                  // lblLockedAncillary events
+                  this.lblLockedAncillary.MouseMove += lblLockedAncillary_MouseMove;
+                  this.lblLockedAncillary.Paint += lblLockedAncillary_Paint;
+                  this.lblLockedAncillary.MouseLeave += lblLocked0_MouseLeave;
+                  
+                  
+                  // lblLockedSecondary events
+                  this.lblLockedSecondary.MouseMove += lblLockedSecondary_MouseMove;
+                  this.lblLockedSecondary.MouseLeave += lblLockedSecondary_MouseLeave;
+                  
+                  
+                  // llAncillary events
+                  this.llAncillary.ItemHover += llAncillary_ItemHover;
+                  this.llAncillary.ItemClick += llAncillary_ItemClick;
+                  
+                  
+                  // llPool0 events
+                  this.llPool0.ItemHover += llPool0_ItemHover;
+                  this.llPool0.ItemClick += llPool0_ItemClick;
+                  this.llPool0.MouseLeave += llALL_MouseLeave;
+                  this.llPool0.EmptyHover += llAll_EmptyHover;
+                  
+                  
+                  // llPool1 events
+                  this.llPool1.ItemHover += llPool1_ItemHover;
+                  this.llPool1.ItemClick += llPool1_ItemClick;
+                  this.llPool1.MouseLeave += llALL_MouseLeave;
+                  this.llPool1.EmptyHover += llAll_EmptyHover;
+                  
+                  
+                  // llPool2 events
+                  this.llPool2.ItemHover += llPool2_ItemHover;
+                  this.llPool2.ItemClick += llPool2_ItemClick;
+                  this.llPool2.MouseLeave += llALL_MouseLeave;
+                  this.llPool2.EmptyHover += llAll_EmptyHover;
+                  
+                  
+                  // llPool3 events
+                  this.llPool3.ItemHover += llPool3_ItemHover;
+                  this.llPool3.ItemClick += llPool3_ItemClick;
+                  this.llPool3.MouseLeave += llALL_MouseLeave;
+                  this.llPool3.EmptyHover += llAll_EmptyHover;
+                  
+                  
+                  // llPrimary events
+                  this.llPrimary.ItemHover += llPrimary_ItemHover;
+                  this.llPrimary.ItemClick += llPrimary_ItemClick;
+                  this.llPrimary.EmptyHover += llAll_EmptyHover;
+                  this.llPrimary.ExpandChanged += PriSec_ExpandChanged;
+                  
+                  
+                  // llSecondary events
+                  this.llSecondary.ItemHover += llSecondary_ItemHover;
+                  this.llSecondary.ItemClick += llSecondary_ItemClick;
+                  this.llSecondary.EmptyHover += llAll_EmptyHover;
+                  this.llSecondary.ExpandChanged += PriSec_ExpandChanged;
+                  
+                  
+                  // pbDynMode events
+                  this.pbDynMode.Paint += pbDynMode_Paint;
+                  this.pbDynMode.Click += pbDynMode_Click;
+                  
+                  
+                  // pnlGFX events
+                  this.pnlGFX.MouseEnter += pnlGFX_MouseEnter;
+                  this.pnlGFX.MouseLeave += pnlGFX_MouseLeave;
+                  this.pnlGFX.MouseMove += pnlGFX_MouseMove;
+                  this.pnlGFX.MouseUp += pnlGFX_MouseUp;
+                  this.pnlGFX.MouseDoubleClick += pnlGFX_MouseDoubleClick;
+                  this.pnlGFX.MouseDown += pnlGFX_MouseDown;
+                  this.pnlGFX.DragOver += pnlGFX_DragOver;
+                  this.pnlGFX.DragEnter += pnlGFX_DragEnter;
+                  this.pnlGFX.DragDrop += pnlGFX_DragDrop;
+                  
+                  this.pnlGFXFlow.MouseEnter += pnlGFXFlow_MouseEnter;
+                  
+                  // tempPowersButton events
+                  this.tempPowersButton.MouseDown += tempPowersButton_MouseDown;
+                  this.tempPowersButton.ButtonClicked += tempPowersButton_ButtonClicked;
+                  
+                  this.tlsDPA.Click += tlsDPA_Click;
+                  this.tmrGfx.Tick += tmrGfx_Tick;
+                  this.tsAbout.Click += tsAbout_Click;
+                  this.tsAdvDBEdit.Click += tsAdvDBEdit_Click;
+                  this.tsAdvFreshInstall.Click += tsAdvFreshInstall_Click;
+                  this.tsAdvResetTips.Click += tsAdvResetTips_Click;
+                  this.tsBug.Click += tsBug_Click;
+                  this.tsClearAllEnh.Click += tsClearAllEnh_Click;
+                  this.tsConfig.Click += tsConfig_Click;
+                  this.tsDPSCalc.Click += tsDPSCalc_Click;
+                  this.tsDonate.Click += tsDonate_Click;
+                  this.tsDynamic.Click += tsDynamic_Click;
+                  this.tsEnhToDO.Click += tsEnhToDO_Click;
+                  this.tsEnhToEven.Click += tsEnhToEven_Click;
+                  this.tsEnhToMinus1.Click += tsEnhToMinus1_Click;
+                  this.tsEnhToMinus2.Click += tsEnhToMinus2_Click;
+                  this.tsEnhToMinus3.Click += tsEnhToMinus3_Click;
+                  this.tsEnhToNone.Click += tsEnhToNone_Click;
+                  this.tsEnhToPlus1.Click += tsEnhToPlus1_Click;
+                  this.tsEnhToPlus2.Click += tsEnhToPlus2_Click;
+                  this.tsEnhToPlus3.Click += tsEnhToPlus3_Click;
+                  this.tsEnhToPlus4.Click += tsEnhToPlus4_Click;
+                  this.tsEnhToPlus5.Click += tsEnhToPlus5_Click;
+                  this.tsEnhToSO.Click += tsEnhToSO_Click;
+                  this.tsEnhToTO.Click += tsEnhToTO_Click;
+                  this.tsExport.Click += tsExport_Click;
+                  this.tsExportDataLink.Click += tsExportDataLink_Click;
+                  this.tsExportLong.Click += tsExportLong_Click;
+                  this.tsFileNew.Click += tsFileNew_Click;
+                  this.tsFileOpen.Click += tsFileOpen_Click;
+                  this.tsFilePrint.Click += tsFilePrint_Click;
+                  this.tsFileQuit.Click += tsFileQuit_Click;
+                  this.tsFileSave.Click += tsFileSave_Click;
+                  this.tsFileSaveAs.Click += tsFileSaveAs_Click;
+                  this.tsFlipAllEnh.Click += tsFlipAllEnh_Click;
+                  this.tsHelp.Click += tsHelp_Click;
+                  this.tsHelperLong.Click += tsHelperLong_Click;
+                  this.tsHelperLong2.Click += tsHelperLong2_Click;
+                  this.tsHelperShort.Click += tsHelperShort_Click;
+                  this.tsHelperShort2.Click += tsHelperShort2_Click;
+                  this.tsIODefault.Click += tsIODefault_Click;
+                  this.tsIOMax.Click += tsIOMax_Click;
+                  this.tsIOMin.Click += tsIOMin_Click;
+                  this.tsImport.Click += tsImport_Click;
+                  this.tsLevelUp.Click += tsLevelUp_Click;
+                  this.tsPatchNotes.Click += tsPatchNotes_Click;
+                  this.tsRecipeViewer.Click += tsRecipeViewer_Click;
+                  this.tsRemoveAllSlots.Click += tsRemoveAllSlots_Click;
+                  this.tsSetFind.Click += tsSetFind_Click;
+                  this.tsTitanForum.Click += tsTitanForum_Click;
+                  this.tsTitanPlanner.Click += tsTitanPlanner_Click;
+                  this.tsTitanSite.Click += tsTitanSite_Click;
+                  this.tsUpdateCheck.Click += tsUpdateCheck_Click;
+                  this.tsView2Col.Click += tsView2Col_Click;
+                  this.tsView3Col.Click += tsView3Col_Click;
+                  this.tsView4Col.Click += tsView4Col_Click;
+                  this.tsViewActualDamage_New.Click += tsViewActualDamage_New_Click;
+                  this.tsViewDPS_New.Click += tsViewDPS_New_Click;
+                  this.tsViewData.Click += tsViewData_Click;
+                  this.tsViewGraphs.Click += tsViewGraphs_Click;
+                  this.tsViewIOLevels.Click += tsViewIOLevels_Click;
+                  this.tsViewRelative.Click += tsViewRelative_Click;
+                  this.tsViewSetCompare.Click += tsViewSetCompare_Click;
+                  this.tsViewSets.Click += tsViewSets_Click;
+                  this.tsViewSlotLevels.Click += tsViewSlotLevels_Click;
+                  this.tsViewTotals.Click += tsViewTotals_Click;
+                  this.txtName.TextChanged += txtName_TextChanged;
+              }
+              // finished with events
             this.PerformLayout();
         }
 

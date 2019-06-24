@@ -13,12 +13,10 @@ namespace Hero_Designer
   [DesignerGenerated]
   public class FrmInputLevel : Form
   {
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
         Label Label1;
 
-    [AccessedThroughProperty("udLevel")]
-    NumericUpDown _udLevel;
+        NumericUpDown udLevel;
 
     IContainer components;
 
@@ -27,44 +25,6 @@ namespace Hero_Designer
     bool Mode2;
 
     frmMain myparent;
-
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-
-    NumericUpDown udLevel
-    {
-      get
-      {
-        return this._udLevel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.udLevel_Leave);
-        if (this._udLevel != null)
-          this._udLevel.Leave -= eventHandler;
-        this._udLevel = value;
-        if (this._udLevel == null)
-          return;
-        this._udLevel.Leave += eventHandler;
-      }
-    }
 
     public FrmInputLevel(ref frmMain iParent, bool iLF, bool iMode2)
     {
@@ -177,6 +137,13 @@ namespace Hero_Designer
       this.StartPosition = FormStartPosition.CenterScreen;
       this.Text = "Respec Helper";
       this.udLevel.EndInit();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnOK.Click += btnOK_Click;
+                  this.udLevel.Leave += udLevel_Leave;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

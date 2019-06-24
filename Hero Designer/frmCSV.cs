@@ -18,44 +18,33 @@ namespace Hero_Designer
         Label at_Count;
         Label at_Date;
 
-    [AccessedThroughProperty("at_Import")]
-    Button _at_Import;
+        Button at_Import;
         Label at_Revision;
 
-    [AccessedThroughProperty("btnBonusLookup")]
-    Button _btnBonusLookup;
+        Button btnBonusLookup;
 
-    [AccessedThroughProperty("btnClearSI")]
-    Button _btnClearSI;
+        Button btnClearSI;
 
-    [AccessedThroughProperty("btnDefiance")]
-    Button _btnDefiance;
+        Button btnDefiance;
 
-    [AccessedThroughProperty("btnEnhEffects")]
-    Button _btnEnhEffects;
+        Button btnEnhEffects;
 
-    [AccessedThroughProperty("btnEntities")]
-    Button _btnEntities;
+        Button btnEntities;
 
-    [AccessedThroughProperty("btnImportRecipes")]
-    Button _btnImportRecipes;
+        Button btnImportRecipes;
 
-    [AccessedThroughProperty("btnIOLevels")]
-    Button _btnIOLevels;
+        Button btnIOLevels;
 
-    [AccessedThroughProperty("btnSalvageUpdate")]
-    Button _btnSalvageUpdate;
+        Button btnSalvageUpdate;
 
     [AccessedThroughProperty("btnStaticExport")]
     Button _btnStaticExport;
 
-    [AccessedThroughProperty("btnStaticIndex")]
-    Button _btnStaticIndex;
+        Button btnStaticIndex;
         Label fx_Count;
         Label fx_Date;
 
-    [AccessedThroughProperty("fx_Import")]
-    Button _fx_Import;
+        Button fx_Import;
         Label fx_Revision;
         GroupBox GroupBox1;
         GroupBox GroupBox2;
@@ -67,13 +56,11 @@ namespace Hero_Designer
         GroupBox GroupBox8;
         Label invent_Date;
 
-    [AccessedThroughProperty("invent_Import")]
-    Button _invent_Import;
+        Button invent_Import;
         Label invent_RecipeDate;
         Label invent_Revision;
 
-    [AccessedThroughProperty("inventSetImport")]
-    Button _inventSetImport;
+        Button inventSetImport;
         Label Label1;
         Label Label10;
         Label Label11;
@@ -99,195 +86,27 @@ namespace Hero_Designer
         Label lev_date;
         Label lev_Revision;
 
-    [AccessedThroughProperty("level_import")]
-    Button _level_import;
+        Button level_import;
         Label mod_Count;
         Label mod_Date;
 
-    [AccessedThroughProperty("mod_Import")]
-    Button _mod_Import;
+        Button mod_Import;
         Label mod_Revision;
         Label pow_Count;
         Label pow_Date;
 
-    [AccessedThroughProperty("pow_Import")]
-    Button _pow_Import;
+        Button pow_Import;
         Label pow_Revision;
         Label set_Count;
         Label set_Date;
 
-    [AccessedThroughProperty("set_Import")]
-    Button _set_Import;
+        Button set_Import;
         Label set_Revision;
 
     frmBusy bFrm;
 
     IContainer components;
 
-
-
-    Button at_Import
-    {
-      get
-      {
-        return this._at_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.at_Import_Click);
-        if (this._at_Import != null)
-          this._at_Import.Click -= eventHandler;
-        this._at_Import = value;
-        if (this._at_Import == null)
-          return;
-        this._at_Import.Click += eventHandler;
-      }
-    }
-
-
-    Button btnBonusLookup
-    {
-      get
-      {
-        return this._btnBonusLookup;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnBonusLookup_Click);
-        if (this._btnBonusLookup != null)
-          this._btnBonusLookup.Click -= eventHandler;
-        this._btnBonusLookup = value;
-        if (this._btnBonusLookup == null)
-          return;
-        this._btnBonusLookup.Click += eventHandler;
-      }
-    }
-
-    Button btnClearSI
-    {
-      get
-      {
-        return this._btnClearSI;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnClearSI_Click);
-        if (this._btnClearSI != null)
-          this._btnClearSI.Click -= eventHandler;
-        this._btnClearSI = value;
-        if (this._btnClearSI == null)
-          return;
-        this._btnClearSI.Click += eventHandler;
-      }
-    }
-
-    Button btnDefiance
-    {
-      get
-      {
-        return this._btnDefiance;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnDefiance_Click);
-        if (this._btnDefiance != null)
-          this._btnDefiance.Click -= eventHandler;
-        this._btnDefiance = value;
-        if (this._btnDefiance == null)
-          return;
-        this._btnDefiance.Click += eventHandler;
-      }
-    }
-
-    Button btnEnhEffects
-    {
-      get
-      {
-        return this._btnEnhEffects;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEnhEffects_Click);
-        if (this._btnEnhEffects != null)
-          this._btnEnhEffects.Click -= eventHandler;
-        this._btnEnhEffects = value;
-        if (this._btnEnhEffects == null)
-          return;
-        this._btnEnhEffects.Click += eventHandler;
-      }
-    }
-
-    Button btnEntities
-    {
-      get
-      {
-        return this._btnEntities;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnEntities_Click);
-        if (this._btnEntities != null)
-          this._btnEntities.Click -= eventHandler;
-        this._btnEntities = value;
-        if (this._btnEntities == null)
-          return;
-        this._btnEntities.Click += eventHandler;
-      }
-    }
-
-    Button btnImportRecipes
-    {
-      get
-      {
-        return this._btnImportRecipes;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImportRecipes_Click);
-        if (this._btnImportRecipes != null)
-          this._btnImportRecipes.Click -= eventHandler;
-        this._btnImportRecipes = value;
-        if (this._btnImportRecipes == null)
-          return;
-        this._btnImportRecipes.Click += eventHandler;
-      }
-    }
-
-    Button btnIOLevels
-    {
-      get
-      {
-        return this._btnIOLevels;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnIOLevels_Click);
-        if (this._btnIOLevels != null)
-          this._btnIOLevels.Click -= eventHandler;
-        this._btnIOLevels = value;
-        if (this._btnIOLevels == null)
-          return;
-        this._btnIOLevels.Click += eventHandler;
-      }
-    }
-
-    Button btnSalvageUpdate
-    {
-      get
-      {
-        return this._btnSalvageUpdate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnSalvageUpdate_Click);
-        if (this._btnSalvageUpdate != null)
-          this._btnSalvageUpdate.Click -= eventHandler;
-        this._btnSalvageUpdate = value;
-        if (this._btnSalvageUpdate == null)
-          return;
-        this._btnSalvageUpdate.Click += eventHandler;
-      }
-    }
 
     Button btnStaticExport
     {
@@ -307,91 +126,6 @@ namespace Hero_Designer
       }
     }
 
-    Button btnStaticIndex
-    {
-      get
-      {
-        return this._btnStaticIndex;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.Button2_Click);
-        if (this._btnStaticIndex != null)
-          this._btnStaticIndex.Click -= eventHandler;
-        this._btnStaticIndex = value;
-        if (this._btnStaticIndex == null)
-          return;
-        this._btnStaticIndex.Click += eventHandler;
-      }
-    }
-
-
-
-    Button fx_Import
-    {
-      get
-      {
-        return this._fx_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.fx_Import_Click);
-        if (this._fx_Import != null)
-          this._fx_Import.Click -= eventHandler;
-        this._fx_Import = value;
-        if (this._fx_Import == null)
-          return;
-        this._fx_Import.Click += eventHandler;
-      }
-    }
-
-
-
-
-
-
-
-
-
-
-
-    Button invent_Import
-    {
-      get
-      {
-        return this._invent_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.invent_Import_Click);
-        if (this._invent_Import != null)
-          this._invent_Import.Click -= eventHandler;
-        this._invent_Import = value;
-        if (this._invent_Import == null)
-          return;
-        this._invent_Import.Click += eventHandler;
-      }
-    }
-
-
-
-    Button inventSetImport
-    {
-      get
-      {
-        return this._inventSetImport;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.inventSetImport_Click);
-        if (this._inventSetImport != null)
-          this._inventSetImport.Click -= eventHandler;
-        this._inventSetImport = value;
-        if (this._inventSetImport == null)
-          return;
-        this._inventSetImport.Click += eventHandler;
-      }
-    }
 
 
 
@@ -417,85 +151,18 @@ namespace Hero_Designer
 
 
 
-    Button level_import
-    {
-      get
-      {
-        return this._level_import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.level_import_Click);
-        if (this._level_import != null)
-          this._level_import.Click -= eventHandler;
-        this._level_import = value;
-        if (this._level_import == null)
-          return;
-        this._level_import.Click += eventHandler;
-      }
-    }
-
-
-
-    Button mod_Import
-    {
-      get
-      {
-        return this._mod_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.mod_Import_Click);
-        if (this._mod_Import != null)
-          this._mod_Import.Click -= eventHandler;
-        this._mod_Import = value;
-        if (this._mod_Import == null)
-          return;
-        this._mod_Import.Click += eventHandler;
-      }
-    }
 
 
 
 
-    Button pow_Import
-    {
-      get
-      {
-        return this._pow_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.pow_Import_Click);
-        if (this._pow_Import != null)
-          this._pow_Import.Click -= eventHandler;
-        this._pow_Import = value;
-        if (this._pow_Import == null)
-          return;
-        this._pow_Import.Click += eventHandler;
-      }
-    }
 
 
 
 
-    Button set_Import
-    {
-      get
-      {
-        return this._set_Import;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.set_Import_Click);
-        if (this._set_Import != null)
-          this._set_Import.Click -= eventHandler;
-        this._set_Import = value;
-        if (this._set_Import == null)
-          return;
-        this._set_Import.Click += eventHandler;
-      }
-    }
+
+
+
+
 
 
     public frmCSV()
@@ -1441,6 +1108,28 @@ namespace Hero_Designer
       this.GroupBox6.ResumeLayout(false);
       this.GroupBox7.ResumeLayout(false);
       this.GroupBox8.ResumeLayout(false);
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.at_Import.Click += at_Import_Click;
+                  this.btnBonusLookup.Click += btnBonusLookup_Click;
+                  this.btnClearSI.Click += btnClearSI_Click;
+                  this.btnDefiance.Click += btnDefiance_Click;
+                  this.btnEnhEffects.Click += btnEnhEffects_Click;
+                  this.btnEntities.Click += btnEntities_Click;
+                  this.btnIOLevels.Click += btnIOLevels_Click;
+                  this.btnImportRecipes.Click += btnImportRecipes_Click;
+                  this.btnSalvageUpdate.Click += btnSalvageUpdate_Click;
+                  this.btnStaticIndex.Click += Button2_Click;
+                  this.fx_Import.Click += fx_Import_Click;
+                  this.inventSetImport.Click += inventSetImport_Click;
+                  this.invent_Import.Click += invent_Import_Click;
+                  this.level_import.Click += level_import_Click;
+                  this.mod_Import.Click += mod_Import_Click;
+                  this.pow_Import.Click += pow_Import_Click;
+                  this.set_Import.Click += set_Import_Click;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 

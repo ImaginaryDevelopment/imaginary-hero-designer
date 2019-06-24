@@ -16,26 +16,19 @@ namespace Hero_Designer
 {
   public class frmSetEdit : Form
   {
-    [AccessedThroughProperty("btnCancel")]
-    Button _btnCancel;
+        Button btnCancel;
 
-    [AccessedThroughProperty("btnImage")]
-    Button _btnImage;
+        Button btnImage;
 
-    [AccessedThroughProperty("btnNoImage")]
-    Button _btnNoImage;
+        Button btnNoImage;
 
-    [AccessedThroughProperty("btnOK")]
-    Button _btnOK;
+        Button btnOK;
 
-    [AccessedThroughProperty("btnPaste")]
-    Button _btnPaste;
+        Button btnPaste;
 
-    [AccessedThroughProperty("cbSetType")]
-    ComboBox _cbSetType;
+        ComboBox cbSetType;
 
-    [AccessedThroughProperty("cbSlotCount")]
-    ComboBox _cbSlotCount;
+        ComboBox cbSlotCount;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
@@ -55,8 +48,7 @@ namespace Hero_Designer
         Label Label6;
         Label Label7;
 
-    [AccessedThroughProperty("lstBonus")]
-    ListBox _lstBonus;
+        ListBox lstBonus;
 
     [AccessedThroughProperty("lvBonusList")]
     ListView _lvBonusList;
@@ -66,20 +58,15 @@ namespace Hero_Designer
         RadioButton rbIfPlayer;
         RichTextBox rtbBonus;
 
-    [AccessedThroughProperty("txtAlternate")]
-    TextBox _txtAlternate;
+        TextBox txtAlternate;
 
-    [AccessedThroughProperty("txtDesc")]
-    TextBox _txtDesc;
+        TextBox txtDesc;
 
-    [AccessedThroughProperty("txtInternal")]
-    TextBox _txtInternal;
+        TextBox txtInternal;
 
-    [AccessedThroughProperty("txtNameFull")]
-    TextBox _txtNameFull;
+        TextBox txtNameFull;
 
-    [AccessedThroughProperty("txtNameShort")]
-    TextBox _txtNameShort;
+        TextBox txtNameShort;
 
     [AccessedThroughProperty("udMaxLevel")]
     NumericUpDown _udMaxLevel;
@@ -94,131 +81,6 @@ namespace Hero_Designer
     protected int[] SetBonusList;
     protected int[] SetBonusListPVP;
 
-    Button btnCancel
-    {
-      get
-      {
-        return this._btnCancel;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnCancel_Click);
-        if (this._btnCancel != null)
-          this._btnCancel.Click -= eventHandler;
-        this._btnCancel = value;
-        if (this._btnCancel == null)
-          return;
-        this._btnCancel.Click += eventHandler;
-      }
-    }
-
-    Button btnImage
-    {
-      get
-      {
-        return this._btnImage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnImage_Click);
-        if (this._btnImage != null)
-          this._btnImage.Click -= eventHandler;
-        this._btnImage = value;
-        if (this._btnImage == null)
-          return;
-        this._btnImage.Click += eventHandler;
-      }
-    }
-
-    Button btnNoImage
-    {
-      get
-      {
-        return this._btnNoImage;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnNoImage_Click);
-        if (this._btnNoImage != null)
-          this._btnNoImage.Click -= eventHandler;
-        this._btnNoImage = value;
-        if (this._btnNoImage == null)
-          return;
-        this._btnNoImage.Click += eventHandler;
-      }
-    }
-
-    Button btnOK
-    {
-      get
-      {
-        return this._btnOK;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnOK_Click);
-        if (this._btnOK != null)
-          this._btnOK.Click -= eventHandler;
-        this._btnOK = value;
-        if (this._btnOK == null)
-          return;
-        this._btnOK.Click += eventHandler;
-      }
-    }
-
-    Button btnPaste
-    {
-      get
-      {
-        return this._btnPaste;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.btnPaste_Click);
-        if (this._btnPaste != null)
-          this._btnPaste.Click -= eventHandler;
-        this._btnPaste = value;
-        if (this._btnPaste == null)
-          return;
-        this._btnPaste.Click += eventHandler;
-      }
-    }
-
-    ComboBox cbSetType
-    {
-      get
-      {
-        return this._cbSetType;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSetType_SelectedIndexChanged);
-        if (this._cbSetType != null)
-          this._cbSetType.SelectedIndexChanged -= eventHandler;
-        this._cbSetType = value;
-        if (this._cbSetType == null)
-          return;
-        this._cbSetType.SelectedIndexChanged += eventHandler;
-      }
-    }
-
-    ComboBox cbSlotCount
-    {
-      get
-      {
-        return this._cbSlotCount;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.cbSlotX_SelectedIndexChanged);
-        if (this._cbSlotCount != null)
-          this._cbSlotCount.SelectedIndexChanged -= eventHandler;
-        this._cbSlotCount = value;
-        if (this._cbSlotCount == null)
-          return;
-        this._cbSlotCount.SelectedIndexChanged += eventHandler;
-      }
-    }
 
 
 
@@ -234,27 +96,6 @@ namespace Hero_Designer
 
 
 
-
-
-
-
-    ListBox lstBonus
-    {
-      get
-      {
-        return this._lstBonus;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.lstBonus_DoubleClick);
-        if (this._lstBonus != null)
-          this._lstBonus.DoubleClick -= eventHandler;
-        this._lstBonus = value;
-        if (this._lstBonus == null)
-          return;
-        this._lstBonus.DoubleClick += eventHandler;
-      }
-    }
 
     ListView lvBonusList
     {
@@ -282,97 +123,6 @@ namespace Hero_Designer
 
 
 
-
-
-    TextBox txtAlternate
-    {
-      get
-      {
-        return this._txtAlternate;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtAlternate_TextChanged);
-        if (this._txtAlternate != null)
-          this._txtAlternate.TextChanged -= eventHandler;
-        this._txtAlternate = value;
-        if (this._txtAlternate == null)
-          return;
-        this._txtAlternate.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtDesc
-    {
-      get
-      {
-        return this._txtDesc;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtDesc_TextChanged);
-        if (this._txtDesc != null)
-          this._txtDesc.TextChanged -= eventHandler;
-        this._txtDesc = value;
-        if (this._txtDesc == null)
-          return;
-        this._txtDesc.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtInternal
-    {
-      get
-      {
-        return this._txtInternal;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtInternal_TextChanged);
-        if (this._txtInternal != null)
-          this._txtInternal.TextChanged -= eventHandler;
-        this._txtInternal = value;
-        if (this._txtInternal == null)
-          return;
-        this._txtInternal.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtNameFull
-    {
-      get
-      {
-        return this._txtNameFull;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtNameFull_TextChanged);
-        if (this._txtNameFull != null)
-          this._txtNameFull.TextChanged -= eventHandler;
-        this._txtNameFull = value;
-        if (this._txtNameFull == null)
-          return;
-        this._txtNameFull.TextChanged += eventHandler;
-      }
-    }
-
-    TextBox txtNameShort
-    {
-      get
-      {
-        return this._txtNameShort;
-      }
-      [MethodImpl(MethodImplOptions.Synchronized)] set
-      {
-        EventHandler eventHandler = new EventHandler(this.txtNameShort_TextChanged);
-        if (this._txtNameShort != null)
-          this._txtNameShort.TextChanged -= eventHandler;
-        this._txtNameShort = value;
-        if (this._txtNameShort == null)
-          return;
-        this._txtNameShort.TextChanged += eventHandler;
-      }
-    }
 
     NumericUpDown udMaxLevel
     {
@@ -1215,6 +965,24 @@ namespace Hero_Designer
       this.GroupBox2.ResumeLayout(false);
       this.GroupBox3.ResumeLayout(false);
       this.GroupBox3.PerformLayout();
+              //adding events
+              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+              {
+                  this.btnCancel.Click += btnCancel_Click;
+                  this.btnImage.Click += btnImage_Click;
+                  this.btnNoImage.Click += btnNoImage_Click;
+                  this.btnOK.Click += btnOK_Click;
+                  this.btnPaste.Click += btnPaste_Click;
+                  this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
+                  this.cbSlotCount.SelectedIndexChanged += cbSlotX_SelectedIndexChanged;
+                  this.lstBonus.DoubleClick += lstBonus_DoubleClick;
+                  this.txtAlternate.TextChanged += txtAlternate_TextChanged;
+                  this.txtDesc.TextChanged += txtDesc_TextChanged;
+                  this.txtInternal.TextChanged += txtInternal_TextChanged;
+                  this.txtNameFull.TextChanged += txtNameFull_TextChanged;
+                  this.txtNameShort.TextChanged += txtNameShort_TextChanged;
+              }
+              // finished with events
       this.ResumeLayout(false);
     }
 
