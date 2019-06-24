@@ -8845,14 +8845,16 @@ namespace Hero_Designer
 
         void tsAbout_Click(object sender, EventArgs e)
         {
+            //About window crashing on open 6/24/19: Pine
+            // creating an int, casting a new form to the int? What?never use num after creating
             this.FloatTop(false);
             int num = (int)new frmAbout()
             {
                 ibClose = {
-          IA = this.Drawing.pImageAttributes,
-          ImageOff = this.Drawing.bxPower[2].Bitmap,
-          ImageOn = this.Drawing.bxPower[3].Bitmap
-        }
+                    IA = this.Drawing.pImageAttributes,
+                    ImageOff = this.Drawing.bxPower[2].Bitmap,
+                    ImageOn = this.Drawing.bxPower[3].Bitmap
+            }
             }.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
         }

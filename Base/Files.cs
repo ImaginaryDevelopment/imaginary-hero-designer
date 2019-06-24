@@ -48,7 +48,7 @@ public static class Files
 
   internal static string SelectDataFileSave(string iDataFile)
   {
-    string iFileName = string.Empty;
+    string iFileName = "";
     try
     {
       iFileName = Files.FPathAppData + iDataFile;
