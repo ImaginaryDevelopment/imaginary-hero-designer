@@ -68,6 +68,12 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Content Include="Images\**\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -84,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="clsOutput.cs" />
     <Compile Include="clsToonX.cs" />
@@ -456,6 +463,51 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Data\AttribMod.mhd">
+      <Link>Data\AttribMod.mhd</Link>
+    </None>
+    <None Include="..\Data\bbcode.mhd">
+      <Link>Data\bbcode.mhd</Link>
+    </None>
+    <None Include="..\Data\Compare.mhd">
+      <Link>Data\Compare.mhd</Link>
+    </None>
+    <None Include="..\Data\Config.mhd">
+      <Link>Data\Config.mhd</Link>
+    </None>
+    <None Include="..\Data\EClasses.mhd">
+      <Link>Data\EClasses.mhd</Link>
+    </None>
+    <None Include="..\Data\EnhDB.mhd">
+      <Link>Data\EnhDB.mhd</Link>
+    </None>
+    <None Include="..\Data\I12.mhd">
+      <Link>Data\I12.mhd</Link>
+    </None>
+    <None Include="..\Data\I9.mhd">
+      <Link>Data\I9.mhd</Link>
+    </None>
+    <None Include="..\Data\Levels.mhd">
+      <Link>Data\Levels.mhd</Link>
+    </None>
+    <None Include="..\Data\Maths.mhd">
+      <Link>Data\Maths.mhd</Link>
+    </None>
+    <None Include="..\Data\Origins.mhd">
+      <Link>Data\Origins.mhd</Link>
+    </None>
+    <None Include="..\Data\patchnotes.rtf">
+      <Link>Data\patchnotes.rtf</Link>
+    </None>
+    <None Include="..\Data\Recipe.mhd">
+      <Link>Data\Recipe.mhd</Link>
+    </None>
+    <None Include="..\Data\Salvage.mhd">
+      <Link>Data\Salvage.mhd</Link>
+    </None>
+    <None Include="..\Data\SetTypes.mhd">
+      <Link>Data\SetTypes.mhd</Link>
+    </None>
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
