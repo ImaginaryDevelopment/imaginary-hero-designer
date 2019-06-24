@@ -88,32 +88,13 @@ namespace Hero_Designer
             this.ClientSize = newSize;
         }
 
-        void dvFloat_SlotFlip(int PowerIndex)
+        void dvFloat_SlotFlip(int powerIndex) => this.myOwner.DataView_SlotFlip(powerIndex);
 
-        {
-            this.myOwner.DataView_SlotFlip(PowerIndex);
-        }
+        void dvFloat_SlotUpdate() => this.myOwner.DataView_SlotUpdate();
 
-        void dvFloat_SlotUpdate()
+        void dvFloat_TabChanged(int index) => this.myOwner.SetDataViewTab(index);
 
-        {
-            this.myOwner.DataView_SlotUpdate();
-        }
-
-        void dvFloat_TabChanged(int Index)
-
-        {
-            this.myOwner.SetDataViewTab(Index);
-        }
-
-        void dvFloat_Unlock()
-
-        {
-            this.myOwner.DataViewLocked = false;
-            if (this.myOwner.dvLastPower <= -1)
-                return;
-            this.myOwner.Info_Power(this.myOwner.dvLastPower, this.myOwner.dvLastEnh, this.myOwner.dvLastNoLev, this.myOwner.DataViewLocked);
-        }
+        void dvFloat_Unlock() => this.myOwner.UnlockFloatingStats();
 
         void frmFloatingStats_Closed(object sender, EventArgs e)
 
