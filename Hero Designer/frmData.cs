@@ -19,17 +19,15 @@ namespace Hero_Designer
         ctlPopUp pInfo;
 
         IContainer components;
+        readonly Action _onClosing;
 
-        frmMain myParent;
-
-
-        public frmData(ref frmMain iParent)
+        public frmData(Action onClosing)
         {
             this.FormClosed += new FormClosedEventHandler(this.frmData_FormClosed);
             this.Load += new EventHandler(this.frmData_Load);
             this.ResizeEnd += new EventHandler(this.frmData_ResizeEnd);
             this.InitializeComponent();
-            this.myParent = iParent;
+            this._onClosing = onClosing;
         }
 
         [DebuggerNonUserCode]
@@ -51,7 +49,7 @@ namespace Hero_Designer
 
         {
             this.StoreLocation();
-            this.myParent.FloatData(false);
+            this._onClosing();
         }
 
         void frmData_Load(object sender, EventArgs e)

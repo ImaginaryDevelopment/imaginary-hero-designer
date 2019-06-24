@@ -183,7 +183,7 @@ namespace Hero_Designer
             }
         }
 
-        public frmAccolade(ref frmMain iParent, List<IPower> iPowers)
+        public frmAccolade(frmMain iParent, List<IPower> iPowers)
         {
             this.Load += new EventHandler(this.frmAccolade_Load);
             this._locked = false;
