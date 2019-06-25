@@ -123,7 +123,6 @@ namespace Hero_Designer
         ToolStripSeparator ToolStripSeparator7;
         ToolStripSeparator ToolStripSeparator8;
         ToolStripSeparator ToolStripSeparator9;
-        ToolStripMenuItem tsAbout;
         ToolStripMenuItem tsAdvDBEdit;
         ToolStripMenuItem tsAdvFreshInstall;
         ToolStripMenuItem tsAdvResetTips;
@@ -1927,7 +1926,7 @@ namespace Hero_Designer
                 }
                 if (MidsContext.Config.FreshInstall)
                 {
-                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox((object)("Welcome to Mids' Hero Designer " + Strings.Format((object)1.962f, "#0.00") + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Welcome!") == MsgBoxResult.Yes;
+                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox((object)("Welcome to Pine's Hero Designer " + Strings.Format((object)1.962f, "#0.00") + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Welcome!") == MsgBoxResult.Yes;
                     MidsContext.Config.DefaultSaveFolder = "";
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
@@ -2567,7 +2566,6 @@ namespace Hero_Designer
             this.tsViewActualDamage_New = new ToolStripMenuItem();
             this.tsViewDPS_New = new ToolStripMenuItem();
             this.tlsDPA = new ToolStripMenuItem();
-            this.tsAbout = new ToolStripMenuItem();
             this.HelpToolStripMenuItem1 = new ToolStripMenuItem();
             this.tsHelp = new ToolStripMenuItem();
             this.tsPatchNotes = new ToolStripMenuItem();
@@ -2912,14 +2910,13 @@ namespace Hero_Designer
             this.lblLockedSecondary.Text = "Sec. Locked";
             this.lblLockedSecondary.TextAlign = ContentAlignment.MiddleCenter;
             this.MenuBar.BackColor = SystemColors.Control;
-            this.MenuBar.Items.AddRange(new ToolStripItem[8]
+            this.MenuBar.Items.AddRange(new ToolStripItem[7]
             {
         (ToolStripItem) this.FileToolStripMenuItem,
         (ToolStripItem) this.ImportExportToolStripMenuItem,
         (ToolStripItem) this.OptionsToolStripMenuItem,
         (ToolStripItem) this.CharacterToolStripMenuItem,
         (ToolStripItem) this.ViewToolStripMenuItem,
-        (ToolStripItem) this.tsAbout,
         (ToolStripItem) this.HelpToolStripMenuItem1,
         (ToolStripItem) this.WindowToolStripMenuItem
             });
@@ -3316,12 +3313,6 @@ namespace Hero_Designer
             size = new Size(282, 22);
             this.tlsDPA.Size = size;
             this.tlsDPA.Text = "Show Damage Per Animation (Level 50)";
-            this.tsAbout.Alignment = ToolStripItemAlignment.Right;
-            this.tsAbout.ForeColor = SystemColors.ControlText;
-            this.tsAbout.Name = "tsAbout";
-            size = new Size(52, 20);
-            this.tsAbout.Size = size;
-            this.tsAbout.Text = "&About";
             this.HelpToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right;
             this.HelpToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[10]
             {
@@ -3994,280 +3985,279 @@ namespace Hero_Designer
             ((ISupportInitialize)this.pnlGFX).EndInit();
             this.pnlGFXFlow.ResumeLayout(false);
             this.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
-                  this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
-                  this.I9Popup.MouseMove += I9Popup_MouseMove;
-                  this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
-                  this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
-                  
-                  // accoladeButton events
-                  this.accoladeButton.MouseDown += accoladeButton_MouseDown;
-                  this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
-                  
-                  
-                  // cbAT events
-                  this.cbAT.DrawItem += cbAT_DrawItem;
-                  this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
-                  this.cbAT.MouseMove += cbAT_MouseMove;
-                  this.cbAT.MouseLeave += cbAT_MouseLeave;
-                  
-                  
-                  // cbAncillary events
-                  this.cbAncillary.DrawItem += cbAncillary_DrawItem;
-                  this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
-                  this.cbAncillary.MouseMove += cbAncillary_MouseMove;
-                  this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
-                  
-                  
-                  // cbOrigin events
-                  this.cbOrigin.DrawItem += cbOrigin_DrawItem;
-                  this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
-                  
-                  
-                  // cbPool0 events
-                  this.cbPool0.DrawItem += cbPool0_DrawItem;
-                  this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
-                  this.cbPool0.MouseMove += cbPool0_MouseMove;
-                  this.cbPool0.MouseLeave += cbPool0_MouseLeave;
-                  
-                  
-                  // cbPool1 events
-                  this.cbPool1.DrawItem += cbPool1_DrawItem;
-                  this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
-                  this.cbPool1.MouseMove += cbPool1_MouseMove;
-                  this.cbPool1.MouseLeave += cbPool0_MouseLeave;
-                  
-                  
-                  // cbPool2 events
-                  this.cbPool2.DrawItem += cbPool2_DrawItem;
-                  this.cbPool2.SelectionChangeCommitted += cbPool2_SelectedIndexChanged;
-                  this.cbPool2.MouseMove += cbPool2_MouseMove;
-                  this.cbPool2.MouseLeave += cbPool0_MouseLeave;
-                  
-                  
-                  // cbPool3 events
-                  this.cbPool3.DrawItem += cbPool3_DrawItem;
-                  this.cbPool3.SelectionChangeCommitted += cbPool3_SelectedIndexChanged;
-                  this.cbPool3.MouseMove += cbPool3_MouseMove;
-                  this.cbPool3.MouseLeave += cbPool0_MouseLeave;
-                  
-                  
-                  // cbPrimary events
-                  this.cbPrimary.DrawItem += cbPrimary_DrawItem;
-                  this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
-                  this.cbPrimary.MouseMove += cbPrimary_MouseMove;
-                  this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
-                  
-                  
-                  // cbSecondary events
-                  this.cbSecondary.DrawItem += cbSecondary_DrawItem;
-                  this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
-                  this.cbSecondary.MouseMove += cbSecondary_MouseMove;
-                  this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
-                  
-                  
-                  // dvAnchored events
-                  this.dvAnchored.MouseWheel += frmMain_MouseWheel;
-                  this.dvAnchored.SizeChange += dvAnchored_SizeChange;
-                  this.dvAnchored.FloatChange += dvAnchored_Float;
-                  this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
-                  this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
-                  this.dvAnchored.SlotFlip += DataView_SlotFlip;
-                  this.dvAnchored.Moved += dvAnchored_Move;
-                  this.dvAnchored.TabChanged += dvAnchored_TabChanged;
-                  
-                  this.heroVillain.ButtonClicked += heroVillain_ButtonClicked;
-                  this.ibMode.ButtonClicked += ibMode_ButtonClicked;
-                  this.ibPopup.ButtonClicked += ibPopup_ButtonClicked;
-                  this.ibPvX.ButtonClicked += ibPvX_ButtonClicked;
-                  this.ibRecipe.ButtonClicked += ibRecipe_ButtonClicked;
-                  this.ibSets.ButtonClicked += ibSets_ButtonClicked;
-                  this.ibSlotLevels.ButtonClicked += ibSlotLevels_ButtonClicked;
-                  this.ibTotals.ButtonClicked += ibTotals_ButtonClicked;
-                  this.incarnateButton.MouseDown += incarnateButton_MouseDown;
-                  
-                  // lblATLocked events
-                  this.lblATLocked.MouseMove += lblATLocked_MouseMove;
-                  this.lblATLocked.Paint += lblATLocked_Paint;
-                  this.lblATLocked.MouseLeave += lblATLocked_MouseLeave;
-                  
-                  
-                  // lblLocked0 events
-                  this.lblLocked0.Paint += lblLocked0_Paint;
-                  this.lblLocked0.MouseMove += lblLocked0_MouseMove;
-                  this.lblLocked0.MouseLeave += lblLocked0_MouseLeave;
-                  
-                  
-                  // lblLocked1 events
-                  this.lblLocked1.Paint += lblLocked1_Paint;
-                  this.lblLocked1.MouseMove += lblLocked1_MouseMove;
-                  this.lblLocked1.MouseLeave += lblLocked0_MouseLeave;
-                  
-                  
-                  // lblLocked2 events
-                  this.lblLocked2.Paint += lblLocked2_Paint;
-                  this.lblLocked2.MouseMove += lblLocked2_MouseMove;
-                  this.lblLocked2.MouseLeave += lblLocked0_MouseLeave;
-                  
-                  
-                  // lblLocked3 events
-                  this.lblLocked3.Paint += lblLocked3_Paint;
-                  this.lblLocked3.MouseMove += lblLocked3_MouseMove;
-                  this.lblLocked3.MouseLeave += lblLocked0_MouseLeave;
-                  
-                  
-                  // lblLockedAncillary events
-                  this.lblLockedAncillary.MouseMove += lblLockedAncillary_MouseMove;
-                  this.lblLockedAncillary.Paint += lblLockedAncillary_Paint;
-                  this.lblLockedAncillary.MouseLeave += lblLocked0_MouseLeave;
-                  
-                  
-                  // lblLockedSecondary events
-                  this.lblLockedSecondary.MouseMove += lblLockedSecondary_MouseMove;
-                  this.lblLockedSecondary.MouseLeave += lblLockedSecondary_MouseLeave;
-                  
-                  
-                  // llAncillary events
-                  this.llAncillary.ItemHover += llAncillary_ItemHover;
-                  this.llAncillary.ItemClick += llAncillary_ItemClick;
-                  
-                  
-                  // llPool0 events
-                  this.llPool0.ItemHover += llPool0_ItemHover;
-                  this.llPool0.ItemClick += llPool0_ItemClick;
-                  this.llPool0.MouseLeave += llALL_MouseLeave;
-                  this.llPool0.EmptyHover += llAll_EmptyHover;
-                  
-                  
-                  // llPool1 events
-                  this.llPool1.ItemHover += llPool1_ItemHover;
-                  this.llPool1.ItemClick += llPool1_ItemClick;
-                  this.llPool1.MouseLeave += llALL_MouseLeave;
-                  this.llPool1.EmptyHover += llAll_EmptyHover;
-                  
-                  
-                  // llPool2 events
-                  this.llPool2.ItemHover += llPool2_ItemHover;
-                  this.llPool2.ItemClick += llPool2_ItemClick;
-                  this.llPool2.MouseLeave += llALL_MouseLeave;
-                  this.llPool2.EmptyHover += llAll_EmptyHover;
-                  
-                  
-                  // llPool3 events
-                  this.llPool3.ItemHover += llPool3_ItemHover;
-                  this.llPool3.ItemClick += llPool3_ItemClick;
-                  this.llPool3.MouseLeave += llALL_MouseLeave;
-                  this.llPool3.EmptyHover += llAll_EmptyHover;
-                  
-                  
-                  // llPrimary events
-                  this.llPrimary.ItemHover += llPrimary_ItemHover;
-                  this.llPrimary.ItemClick += llPrimary_ItemClick;
-                  this.llPrimary.EmptyHover += llAll_EmptyHover;
-                  this.llPrimary.ExpandChanged += PriSec_ExpandChanged;
-                  
-                  
-                  // llSecondary events
-                  this.llSecondary.ItemHover += llSecondary_ItemHover;
-                  this.llSecondary.ItemClick += llSecondary_ItemClick;
-                  this.llSecondary.EmptyHover += llAll_EmptyHover;
-                  this.llSecondary.ExpandChanged += PriSec_ExpandChanged;
-                  
-                  
-                  // pbDynMode events
-                  this.pbDynMode.Paint += pbDynMode_Paint;
-                  this.pbDynMode.Click += pbDynMode_Click;
-                  
-                  
-                  // pnlGFX events
-                  this.pnlGFX.MouseEnter += pnlGFX_MouseEnter;
-                  this.pnlGFX.MouseLeave += pnlGFX_MouseLeave;
-                  this.pnlGFX.MouseMove += pnlGFX_MouseMove;
-                  this.pnlGFX.MouseUp += pnlGFX_MouseUp;
-                  this.pnlGFX.MouseDoubleClick += pnlGFX_MouseDoubleClick;
-                  this.pnlGFX.MouseDown += pnlGFX_MouseDown;
-                  this.pnlGFX.DragOver += pnlGFX_DragOver;
-                  this.pnlGFX.DragEnter += pnlGFX_DragEnter;
-                  this.pnlGFX.DragDrop += pnlGFX_DragDrop;
-                  
-                  this.pnlGFXFlow.MouseEnter += pnlGFXFlow_MouseEnter;
-                  
-                  // tempPowersButton events
-                  this.tempPowersButton.MouseDown += tempPowersButton_MouseDown;
-                  this.tempPowersButton.ButtonClicked += tempPowersButton_ButtonClicked;
-                  
-                  this.tlsDPA.Click += tlsDPA_Click;
-                  this.tmrGfx.Tick += tmrGfx_Tick;
-                  this.tsAbout.Click += tsAbout_Click;
-                  this.tsAdvDBEdit.Click += tsAdvDBEdit_Click;
-                  this.tsAdvFreshInstall.Click += tsAdvFreshInstall_Click;
-                  this.tsAdvResetTips.Click += tsAdvResetTips_Click;
-                  this.tsBug.Click += tsBug_Click;
-                  this.tsClearAllEnh.Click += tsClearAllEnh_Click;
-                  this.tsConfig.Click += tsConfig_Click;
-                  this.tsDPSCalc.Click += tsDPSCalc_Click;
-                  this.tsDonate.Click += tsDonate_Click;
-                  this.tsDynamic.Click += tsDynamic_Click;
-                  this.tsEnhToDO.Click += tsEnhToDO_Click;
-                  this.tsEnhToEven.Click += tsEnhToEven_Click;
-                  this.tsEnhToMinus1.Click += tsEnhToMinus1_Click;
-                  this.tsEnhToMinus2.Click += tsEnhToMinus2_Click;
-                  this.tsEnhToMinus3.Click += tsEnhToMinus3_Click;
-                  this.tsEnhToNone.Click += tsEnhToNone_Click;
-                  this.tsEnhToPlus1.Click += tsEnhToPlus1_Click;
-                  this.tsEnhToPlus2.Click += tsEnhToPlus2_Click;
-                  this.tsEnhToPlus3.Click += tsEnhToPlus3_Click;
-                  this.tsEnhToPlus4.Click += tsEnhToPlus4_Click;
-                  this.tsEnhToPlus5.Click += tsEnhToPlus5_Click;
-                  this.tsEnhToSO.Click += tsEnhToSO_Click;
-                  this.tsEnhToTO.Click += tsEnhToTO_Click;
-                  this.tsExport.Click += tsExport_Click;
-                  this.tsExportDataLink.Click += tsExportDataLink_Click;
-                  this.tsExportLong.Click += tsExportLong_Click;
-                  this.tsFileNew.Click += tsFileNew_Click;
-                  this.tsFileOpen.Click += tsFileOpen_Click;
-                  this.tsFilePrint.Click += tsFilePrint_Click;
-                  this.tsFileQuit.Click += tsFileQuit_Click;
-                  this.tsFileSave.Click += tsFileSave_Click;
-                  this.tsFileSaveAs.Click += tsFileSaveAs_Click;
-                  this.tsFlipAllEnh.Click += tsFlipAllEnh_Click;
-                  this.tsHelp.Click += tsHelp_Click;
-                  this.tsHelperLong.Click += tsHelperLong_Click;
-                  this.tsHelperLong2.Click += tsHelperLong2_Click;
-                  this.tsHelperShort.Click += tsHelperShort_Click;
-                  this.tsHelperShort2.Click += tsHelperShort2_Click;
-                  this.tsIODefault.Click += tsIODefault_Click;
-                  this.tsIOMax.Click += tsIOMax_Click;
-                  this.tsIOMin.Click += tsIOMin_Click;
-                  this.tsImport.Click += tsImport_Click;
-                  this.tsLevelUp.Click += tsLevelUp_Click;
-                  this.tsPatchNotes.Click += tsPatchNotes_Click;
-                  this.tsRecipeViewer.Click += tsRecipeViewer_Click;
-                  this.tsRemoveAllSlots.Click += tsRemoveAllSlots_Click;
-                  this.tsSetFind.Click += tsSetFind_Click;
-                  this.tsTitanForum.Click += tsTitanForum_Click;
-                  this.tsTitanPlanner.Click += tsTitanPlanner_Click;
-                  this.tsTitanSite.Click += tsTitanSite_Click;
-                  this.tsUpdateCheck.Click += tsUpdateCheck_Click;
-                  this.tsView2Col.Click += tsView2Col_Click;
-                  this.tsView3Col.Click += tsView3Col_Click;
-                  this.tsView4Col.Click += tsView4Col_Click;
-                  this.tsViewActualDamage_New.Click += tsViewActualDamage_New_Click;
-                  this.tsViewDPS_New.Click += tsViewDPS_New_Click;
-                  this.tsViewData.Click += tsViewData_Click;
-                  this.tsViewGraphs.Click += tsViewGraphs_Click;
-                  this.tsViewIOLevels.Click += tsViewIOLevels_Click;
-                  this.tsViewRelative.Click += tsViewRelative_Click;
-                  this.tsViewSetCompare.Click += tsViewSetCompare_Click;
-                  this.tsViewSets.Click += tsViewSets_Click;
-                  this.tsViewSlotLevels.Click += tsViewSlotLevels_Click;
-                  this.tsViewTotals.Click += tsViewTotals_Click;
-                  this.txtName.TextChanged += txtName_TextChanged;
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
+                this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
+                this.I9Popup.MouseMove += I9Popup_MouseMove;
+                this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
+                this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
+
+                // accoladeButton events
+                this.accoladeButton.MouseDown += accoladeButton_MouseDown;
+                this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
+
+
+                // cbAT events
+                this.cbAT.DrawItem += cbAT_DrawItem;
+                this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
+                this.cbAT.MouseMove += cbAT_MouseMove;
+                this.cbAT.MouseLeave += cbAT_MouseLeave;
+
+
+                // cbAncillary events
+                this.cbAncillary.DrawItem += cbAncillary_DrawItem;
+                this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
+                this.cbAncillary.MouseMove += cbAncillary_MouseMove;
+                this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbOrigin events
+                this.cbOrigin.DrawItem += cbOrigin_DrawItem;
+                this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
+
+
+                // cbPool0 events
+                this.cbPool0.DrawItem += cbPool0_DrawItem;
+                this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
+                this.cbPool0.MouseMove += cbPool0_MouseMove;
+                this.cbPool0.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool1 events
+                this.cbPool1.DrawItem += cbPool1_DrawItem;
+                this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
+                this.cbPool1.MouseMove += cbPool1_MouseMove;
+                this.cbPool1.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool2 events
+                this.cbPool2.DrawItem += cbPool2_DrawItem;
+                this.cbPool2.SelectionChangeCommitted += cbPool2_SelectedIndexChanged;
+                this.cbPool2.MouseMove += cbPool2_MouseMove;
+                this.cbPool2.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool3 events
+                this.cbPool3.DrawItem += cbPool3_DrawItem;
+                this.cbPool3.SelectionChangeCommitted += cbPool3_SelectedIndexChanged;
+                this.cbPool3.MouseMove += cbPool3_MouseMove;
+                this.cbPool3.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPrimary events
+                this.cbPrimary.DrawItem += cbPrimary_DrawItem;
+                this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
+                this.cbPrimary.MouseMove += cbPrimary_MouseMove;
+                this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
+
+
+                // cbSecondary events
+                this.cbSecondary.DrawItem += cbSecondary_DrawItem;
+                this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
+                this.cbSecondary.MouseMove += cbSecondary_MouseMove;
+                this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
+
+
+                // dvAnchored events
+                this.dvAnchored.MouseWheel += frmMain_MouseWheel;
+                this.dvAnchored.SizeChange += dvAnchored_SizeChange;
+                this.dvAnchored.FloatChange += dvAnchored_Float;
+                this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
+                this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
+                this.dvAnchored.SlotFlip += DataView_SlotFlip;
+                this.dvAnchored.Moved += dvAnchored_Move;
+                this.dvAnchored.TabChanged += dvAnchored_TabChanged;
+
+                this.heroVillain.ButtonClicked += heroVillain_ButtonClicked;
+                this.ibMode.ButtonClicked += ibMode_ButtonClicked;
+                this.ibPopup.ButtonClicked += ibPopup_ButtonClicked;
+                this.ibPvX.ButtonClicked += ibPvX_ButtonClicked;
+                this.ibRecipe.ButtonClicked += ibRecipe_ButtonClicked;
+                this.ibSets.ButtonClicked += ibSets_ButtonClicked;
+                this.ibSlotLevels.ButtonClicked += ibSlotLevels_ButtonClicked;
+                this.ibTotals.ButtonClicked += ibTotals_ButtonClicked;
+                this.incarnateButton.MouseDown += incarnateButton_MouseDown;
+
+                // lblATLocked events
+                this.lblATLocked.MouseMove += lblATLocked_MouseMove;
+                this.lblATLocked.Paint += lblATLocked_Paint;
+                this.lblATLocked.MouseLeave += lblATLocked_MouseLeave;
+
+
+                // lblLocked0 events
+                this.lblLocked0.Paint += lblLocked0_Paint;
+                this.lblLocked0.MouseMove += lblLocked0_MouseMove;
+                this.lblLocked0.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked1 events
+                this.lblLocked1.Paint += lblLocked1_Paint;
+                this.lblLocked1.MouseMove += lblLocked1_MouseMove;
+                this.lblLocked1.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked2 events
+                this.lblLocked2.Paint += lblLocked2_Paint;
+                this.lblLocked2.MouseMove += lblLocked2_MouseMove;
+                this.lblLocked2.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked3 events
+                this.lblLocked3.Paint += lblLocked3_Paint;
+                this.lblLocked3.MouseMove += lblLocked3_MouseMove;
+                this.lblLocked3.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLockedAncillary events
+                this.lblLockedAncillary.MouseMove += lblLockedAncillary_MouseMove;
+                this.lblLockedAncillary.Paint += lblLockedAncillary_Paint;
+                this.lblLockedAncillary.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLockedSecondary events
+                this.lblLockedSecondary.MouseMove += lblLockedSecondary_MouseMove;
+                this.lblLockedSecondary.MouseLeave += lblLockedSecondary_MouseLeave;
+
+
+                // llAncillary events
+                this.llAncillary.ItemHover += llAncillary_ItemHover;
+                this.llAncillary.ItemClick += llAncillary_ItemClick;
+
+
+                // llPool0 events
+                this.llPool0.ItemHover += llPool0_ItemHover;
+                this.llPool0.ItemClick += llPool0_ItemClick;
+                this.llPool0.MouseLeave += llALL_MouseLeave;
+                this.llPool0.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool1 events
+                this.llPool1.ItemHover += llPool1_ItemHover;
+                this.llPool1.ItemClick += llPool1_ItemClick;
+                this.llPool1.MouseLeave += llALL_MouseLeave;
+                this.llPool1.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool2 events
+                this.llPool2.ItemHover += llPool2_ItemHover;
+                this.llPool2.ItemClick += llPool2_ItemClick;
+                this.llPool2.MouseLeave += llALL_MouseLeave;
+                this.llPool2.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool3 events
+                this.llPool3.ItemHover += llPool3_ItemHover;
+                this.llPool3.ItemClick += llPool3_ItemClick;
+                this.llPool3.MouseLeave += llALL_MouseLeave;
+                this.llPool3.EmptyHover += llAll_EmptyHover;
+
+
+                // llPrimary events
+                this.llPrimary.ItemHover += llPrimary_ItemHover;
+                this.llPrimary.ItemClick += llPrimary_ItemClick;
+                this.llPrimary.EmptyHover += llAll_EmptyHover;
+                this.llPrimary.ExpandChanged += PriSec_ExpandChanged;
+
+
+                // llSecondary events
+                this.llSecondary.ItemHover += llSecondary_ItemHover;
+                this.llSecondary.ItemClick += llSecondary_ItemClick;
+                this.llSecondary.EmptyHover += llAll_EmptyHover;
+                this.llSecondary.ExpandChanged += PriSec_ExpandChanged;
+
+
+                // pbDynMode events
+                this.pbDynMode.Paint += pbDynMode_Paint;
+                this.pbDynMode.Click += pbDynMode_Click;
+
+
+                // pnlGFX events
+                this.pnlGFX.MouseEnter += pnlGFX_MouseEnter;
+                this.pnlGFX.MouseLeave += pnlGFX_MouseLeave;
+                this.pnlGFX.MouseMove += pnlGFX_MouseMove;
+                this.pnlGFX.MouseUp += pnlGFX_MouseUp;
+                this.pnlGFX.MouseDoubleClick += pnlGFX_MouseDoubleClick;
+                this.pnlGFX.MouseDown += pnlGFX_MouseDown;
+                this.pnlGFX.DragOver += pnlGFX_DragOver;
+                this.pnlGFX.DragEnter += pnlGFX_DragEnter;
+                this.pnlGFX.DragDrop += pnlGFX_DragDrop;
+
+                this.pnlGFXFlow.MouseEnter += pnlGFXFlow_MouseEnter;
+
+                // tempPowersButton events
+                this.tempPowersButton.MouseDown += tempPowersButton_MouseDown;
+                this.tempPowersButton.ButtonClicked += tempPowersButton_ButtonClicked;
+
+                this.tlsDPA.Click += tlsDPA_Click;
+                this.tmrGfx.Tick += tmrGfx_Tick;
+                this.tsAdvDBEdit.Click += tsAdvDBEdit_Click;
+                this.tsAdvFreshInstall.Click += tsAdvFreshInstall_Click;
+                this.tsAdvResetTips.Click += tsAdvResetTips_Click;
+                this.tsBug.Click += tsBug_Click;
+                this.tsClearAllEnh.Click += tsClearAllEnh_Click;
+                this.tsConfig.Click += tsConfig_Click;
+                this.tsDPSCalc.Click += tsDPSCalc_Click;
+                this.tsDonate.Click += tsDonate_Click;
+                this.tsDynamic.Click += tsDynamic_Click;
+                this.tsEnhToDO.Click += tsEnhToDO_Click;
+                this.tsEnhToEven.Click += tsEnhToEven_Click;
+                this.tsEnhToMinus1.Click += tsEnhToMinus1_Click;
+                this.tsEnhToMinus2.Click += tsEnhToMinus2_Click;
+                this.tsEnhToMinus3.Click += tsEnhToMinus3_Click;
+                this.tsEnhToNone.Click += tsEnhToNone_Click;
+                this.tsEnhToPlus1.Click += tsEnhToPlus1_Click;
+                this.tsEnhToPlus2.Click += tsEnhToPlus2_Click;
+                this.tsEnhToPlus3.Click += tsEnhToPlus3_Click;
+                this.tsEnhToPlus4.Click += tsEnhToPlus4_Click;
+                this.tsEnhToPlus5.Click += tsEnhToPlus5_Click;
+                this.tsEnhToSO.Click += tsEnhToSO_Click;
+                this.tsEnhToTO.Click += tsEnhToTO_Click;
+                this.tsExport.Click += tsExport_Click;
+                this.tsExportDataLink.Click += tsExportDataLink_Click;
+                this.tsExportLong.Click += tsExportLong_Click;
+                this.tsFileNew.Click += tsFileNew_Click;
+                this.tsFileOpen.Click += tsFileOpen_Click;
+                this.tsFilePrint.Click += tsFilePrint_Click;
+                this.tsFileQuit.Click += tsFileQuit_Click;
+                this.tsFileSave.Click += tsFileSave_Click;
+                this.tsFileSaveAs.Click += tsFileSaveAs_Click;
+                this.tsFlipAllEnh.Click += tsFlipAllEnh_Click;
+                this.tsHelp.Click += tsHelp_Click;
+                this.tsHelperLong.Click += tsHelperLong_Click;
+                this.tsHelperLong2.Click += tsHelperLong2_Click;
+                this.tsHelperShort.Click += tsHelperShort_Click;
+                this.tsHelperShort2.Click += tsHelperShort2_Click;
+                this.tsIODefault.Click += tsIODefault_Click;
+                this.tsIOMax.Click += tsIOMax_Click;
+                this.tsIOMin.Click += tsIOMin_Click;
+                this.tsImport.Click += tsImport_Click;
+                this.tsLevelUp.Click += tsLevelUp_Click;
+                this.tsPatchNotes.Click += tsPatchNotes_Click;
+                this.tsRecipeViewer.Click += tsRecipeViewer_Click;
+                this.tsRemoveAllSlots.Click += tsRemoveAllSlots_Click;
+                this.tsSetFind.Click += tsSetFind_Click;
+                this.tsTitanForum.Click += tsTitanForum_Click;
+                this.tsTitanPlanner.Click += tsTitanPlanner_Click;
+                this.tsTitanSite.Click += tsTitanSite_Click;
+                this.tsUpdateCheck.Click += tsUpdateCheck_Click;
+                this.tsView2Col.Click += tsView2Col_Click;
+                this.tsView3Col.Click += tsView3Col_Click;
+                this.tsView4Col.Click += tsView4Col_Click;
+                this.tsViewActualDamage_New.Click += tsViewActualDamage_New_Click;
+                this.tsViewDPS_New.Click += tsViewDPS_New_Click;
+                this.tsViewData.Click += tsViewData_Click;
+                this.tsViewGraphs.Click += tsViewGraphs_Click;
+                this.tsViewIOLevels.Click += tsViewIOLevels_Click;
+                this.tsViewRelative.Click += tsViewRelative_Click;
+                this.tsViewSetCompare.Click += tsViewSetCompare_Click;
+                this.tsViewSets.Click += tsViewSets_Click;
+                this.tsViewSlotLevels.Click += tsViewSlotLevels_Click;
+                this.tsViewTotals.Click += tsViewTotals_Click;
+                this.txtName.TextChanged += txtName_TextChanged;
+            }
+            // finished with events
             this.PerformLayout();
         }
 
@@ -6607,20 +6597,6 @@ namespace Hero_Designer
                 flag = iX > rectangle1.X & iX < rectangle1.Right & iY > rectangle1.Top & iY < rectangle1.Bottom;
             }
             return flag;
-        }
-
-        void tsAbout_Click(object sender, EventArgs e)
-        {
-            this.FloatTop(false);
-            int num = (int)new frmAbout()
-            {
-                ibClose = {
-          IA = this.drawing.pImageAttributes,
-          ImageOff = this.drawing.bxPower[2].Bitmap,
-          ImageOn = this.drawing.bxPower[3].Bitmap
-        }
-            }.ShowDialog((IWin32Window)this);
-            this.FloatTop(true);
         }
 
         void tsAdvDBEdit_Click(object sender, EventArgs e)
