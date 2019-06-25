@@ -340,6 +340,7 @@ namespace Hero_Designer
             //adding events
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
+                this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
                 var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
                 this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 this.Name = nameof(frmMain);
@@ -4033,7 +4034,6 @@ namespace Hero_Designer
 
             this.dvAnchored.Size = new Size(300, 347);
             this.dvAnchored.TabIndex = 69;
-            this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
             this.ibTotals.Checked = false;
             this.ibTotals.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
 
