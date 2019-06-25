@@ -1146,40 +1146,40 @@ namespace Hero_Designer
             ((ISupportInitialize)this.pbClose).EndInit();
             this.pnlStatus.ResumeLayout(false);
             ((ISupportInitialize)this.tab2).EndInit();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  
-                  // pbClose events
-                  this.pbClose.Paint += PbClosePaint;
-                  this.pbClose.Click += PbCloseClick;
-                  
-                  
-                  // pbTopMost events
-                  this.pbTopMost.Paint += PbTopMostPaint;
-                  this.pbTopMost.Click += PbTopMostClick;
-                  
-                  this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
-                  this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
-                  this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
-                  this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
-                  
-                  // tab0 events
-                  this.tab0.Paint += Tab0Paint;
-                  this.tab0.Click += Tab0Click;
-                  
-                  
-                  // tab1 events
-                  this.tab1.Paint += Tab1Paint;
-                  this.tab1.Click += Tab1Click;
-                  
-                  
-                  // tab2 events
-                  this.tab2.Paint += Tab2Paint;
-                  this.tab2.Click += Tab2Click;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+
+                // pbClose events
+                this.pbClose.Paint += PbClosePaint;
+                this.pbClose.Click += PbCloseClick;
+
+
+                // pbTopMost events
+                this.pbTopMost.Paint += PbTopMostPaint;
+                this.pbTopMost.Click += PbTopMostClick;
+
+                this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
+                this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
+                this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
+                this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
+
+                // tab0 events
+                this.tab0.Paint += Tab0Paint;
+                this.tab0.Click += Tab0Click;
+
+
+                // tab1 events
+                this.tab1.Paint += Tab1Paint;
+                this.tab1.Click += Tab1Click;
+
+
+                // tab2 events
+                this.tab2.Paint += Tab2Paint;
+                this.tab2.Click += Tab2Click;
+
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
@@ -1370,7 +1370,7 @@ namespace Hero_Designer
             if (rectangle.X < 1)
                 rectangle.X = this._myParent.Left + 8;
             if (rectangle.Y < 32)
-                rectangle.Y = this._myParent.Top + (this._myParent.Height - this._myParent.ClientSize.Height) + this._myParent.cbPrimary.Top + this._myParent.cbPrimary.Height;
+                rectangle.Y = this._myParent.Top + (this._myParent.Height - this._myParent.ClientSize.Height) + this._myParent.CbPrimary.Top + this._myParent.CbPrimary.Height;
             this.Top = rectangle.Y;
             this.Left = rectangle.X;
             this.Height = rectangle.Height;

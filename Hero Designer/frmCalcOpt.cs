@@ -2291,54 +2291,54 @@ namespace Hero_Designer
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
             this.TeamSize.EndInit();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnBaseReset.Click += btnBaseReset_Click;
-                  this.btnCancel.Click += btnCancel_Click;
-                  this.btnFontColour.Click += btnFontColour_Click;
-                  this.btnForceUpdate.Click += btnForceUpdate_Click;
-                  this.btnIOReset.Click += btnIOReset_Click;
-                  this.btnOK.Click += btnOK_Click;
-                  this.btnSaveFolder.Click += btnSaveFolder_Click;
-                  this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
-                  this.btnUpdate.Click += btnUpdate_Click;
-                  this.btnUpdatePathReset.Click += btnUpdatePathReset_Click;
-                  this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
-                  this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
-                  this.csAdd.Click += csAdd_Click;
-                  this.csBtnEdit.Click += csBtnEdit_Click;
-                  this.csDelete.Click += csDelete_Click;
-                  this.csList.KeyPress += csList_KeyPress;
-                  this.csReset.Click += csReset_Click;
-                  this.fcAdd.Click += fcAdd_Click;
-                  this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
-                  this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
-                  this.fcColorOff.TextChanged += fcColorOff_TextChanged;
-                  this.fcColorOn.TextChanged += fcColorOn_TextChanged;
-                  this.fcDelete.Click += fcDelete_Click;
-                  this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
-                  this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
-                  
-                  // fcList events
-                  this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
-                  this.fcList.KeyPress += fcList_KeyPress;
-                  
-                  this.fcNotes.TextChanged += fcNotes_TextChanged;
-                  this.fcReset.Click += fcReset_Click;
-                  this.fcSet.Click += fcSet_Click;
-                  this.fcTextOff.TextChanged += fcTextOff_TextChanged;
-                  this.fcTextOn.TextChanged += fcTextOn_TextChanged;
-                  this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
-                  this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
-                  this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
-                  this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
-                  this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
-                  this.optDO.CheckedChanged += optDO_CheckedChanged;
-                  this.optSO.CheckedChanged += optSO_CheckedChanged;
-                  this.optTO.CheckedChanged += optTO_CheckedChanged;
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.btnBaseReset.Click += btnBaseReset_Click;
+                this.btnCancel.Click += btnCancel_Click;
+                this.btnFontColour.Click += btnFontColour_Click;
+                this.btnForceUpdate.Click += btnForceUpdate_Click;
+                this.btnIOReset.Click += btnIOReset_Click;
+                this.btnOK.Click += btnOK_Click;
+                this.btnSaveFolder.Click += btnSaveFolder_Click;
+                this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
+                this.btnUpdate.Click += btnUpdate_Click;
+                this.btnUpdatePathReset.Click += btnUpdatePathReset_Click;
+                this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
+                this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
+                this.csAdd.Click += csAdd_Click;
+                this.csBtnEdit.Click += csBtnEdit_Click;
+                this.csDelete.Click += csDelete_Click;
+                this.csList.KeyPress += csList_KeyPress;
+                this.csReset.Click += csReset_Click;
+                this.fcAdd.Click += fcAdd_Click;
+                this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
+                this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
+                this.fcColorOff.TextChanged += fcColorOff_TextChanged;
+                this.fcColorOn.TextChanged += fcColorOn_TextChanged;
+                this.fcDelete.Click += fcDelete_Click;
+                this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
+                this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
+
+                // fcList events
+                this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
+                this.fcList.KeyPress += fcList_KeyPress;
+
+                this.fcNotes.TextChanged += fcNotes_TextChanged;
+                this.fcReset.Click += fcReset_Click;
+                this.fcSet.Click += fcSet_Click;
+                this.fcTextOff.TextChanged += fcTextOff_TextChanged;
+                this.fcTextOn.TextChanged += fcTextOn_TextChanged;
+                this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
+                this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
+                this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
+                this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
+                this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
+                this.optDO.CheckedChanged += optDO_CheckedChanged;
+                this.optSO.CheckedChanged += optSO_CheckedChanged;
+                this.optTO.CheckedChanged += optTO_CheckedChanged;
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
@@ -2610,8 +2610,8 @@ namespace Hero_Designer
             if (config.DefaultSaveFolder != this.lblSaveFolder.Text)
             {
                 config.DefaultSaveFolder = this.lblSaveFolder.Text;
-                this.myParent.dlgOpen.InitialDirectory = config.DefaultSaveFolder;
-                this.myParent.dlgSave.InitialDirectory = config.DefaultSaveFolder;
+                this.myParent.DlgOpen.InitialDirectory = config.DefaultSaveFolder;
+                this.myParent.DlgSave.InitialDirectory = config.DefaultSaveFolder;
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;

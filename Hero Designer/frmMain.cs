@@ -24,7 +24,7 @@ namespace Hero_Designer
 {
     public class frmMain : Form
     {
-      #region "fields"
+        #region "fields"
         ImageButton accoladeButton;
         ToolStripMenuItem AccoladesWindowToolStripMenuItem;
         ToolStripMenuItem AdvancedToolStripMenuItem1;
@@ -36,15 +36,14 @@ namespace Hero_Designer
         ComboBox cbPool1;
         ComboBox cbPool2;
         ComboBox cbPool3;
-        ComboBox _cbPrimary;
+        ComboBox cbPrimary;
         ComboBox cbSecondary;
         ToolStripMenuItem CharacterToolStripMenuItem;
         DataView dvAnchored;
         ToolStripMenuItem FileToolStripMenuItem;
         ToolStripMenuItem HelpToolStripMenuItem1;
         ImageButton heroVillain;
-        [AccessedThroughProperty("I9Picker")]
-        I9Picker _I9Picker;
+        I9Picker i9Picker;
         ctlPopUp I9Popup;
         ImageButton ibAccolade;
         ImageButton ibMode;
@@ -190,7 +189,7 @@ namespace Hero_Designer
         Rectangle ActivePopupBounds;
         IContainer components;
         bool DataViewLocked;
-        short[] ddsa;
+        readonly short[] ddsa;
         ExtendedBitmap dmBuffer;
         bool DoneDblClick;
         int dragFinishPower;
@@ -208,7 +207,7 @@ namespace Hero_Designer
         int dvLastPower;
         int EnhancingPower;
         int EnhancingSlot;
-        bool EnhPickerActive;
+        readonly bool EnhPickerActive;
         frmAccolade fAccolade;
         frmData fData;
         frmCompare fGraphCompare;
@@ -217,11 +216,11 @@ namespace Hero_Designer
         frmIncarnate fIncarnate;
         bool FlipActive;
         PowerEntry FlipGP;
-        int FlipInterval;
+        readonly int FlipInterval;
         int FlipPowerID;
         int[] FlipSlotState;
-        int FlipStepDelay;
-        int FlipSteps;
+        readonly int FlipStepDelay;
+        readonly int FlipSteps;
         frmFloatingStats FloatingDataForm;
         frmMiniList fMini;
         frmRecipeViewer fRecipe;
@@ -253,37 +252,39 @@ namespace Hero_Designer
         bool top_fTotals;
         int xCursorOffset;
         int yCursorOffset;
+        OpenFileDialog dlgOpen;
+        SaveFileDialog dlgSave;
 
         #endregion
 
-        internal ComboBox cbPrimary
+        internal ComboBox CbPrimary
         {
-            get => _cbPrimary;
-            private set => _cbPrimary = value;
+            get => cbPrimary;
+            private set => cbPrimary = value;
         }
 
-        internal OpenFileDialog dlgOpen {get;set;}
+        internal OpenFileDialog DlgOpen => dlgOpen;
 
-        internal SaveFileDialog dlgSave {get;set;}
+        internal SaveFileDialog DlgSave => dlgSave;
         internal I9Picker I9Picker
         {
             get
             {
-                if (this._I9Picker.Height <= 235)
-                    this._I9Picker.Height = 315;
-                return this._I9Picker;
+                if (this.i9Picker.Height <= 235)
+                    this.i9Picker.Height = 315;
+                return this.i9Picker;
             }
             private set
             {
-                this._I9Picker = value;
+                this.i9Picker = value;
             }
         }
         internal clsDrawX Drawing => this.drawing;
 
         public frmMain()
         {
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
                 this.Load += new EventHandler(this.frmMain_Load);
                 this.Closed += new EventHandler(this.frmMain_Closed);
                 this.FormClosing += new FormClosingEventHandler(this.frmMain_Closing);
@@ -292,50 +293,326 @@ namespace Hero_Designer
                 this.Resize += new EventHandler(this.frmMain_Maximize);
                 this.MouseWheel += new MouseEventHandler(this.frmMain_MouseWheel);
                 this.NoUpdate = false;
-              }
-            this.EnhancingSlot = -1;
-            this.EnhancingPower = -1;
-            this.EnhPickerActive = false;
-            this.PickerHID = -1;
-            this.LastFileName = string.Empty;
-            this.FileModified = false;
-            this.LastIndex = -1;
-            this.LastEnhIndex = -1;
-            this.LastEnhPlaced = null;
-            this.dvLastPower = -1;
-            this.dvLastEnh = -1;
-            this.dvLastNoLev = true;
-            this.DataViewLocked = false;
-            this.fGraphCompare = null;
-            this.fGraphStats = null;
-            this.fSets = null;
-            this.fTotals = null;
-            this.fRecipe = null;
-            this.fData = null;
-            this.fSetFinder = null;
-            this.fAccolade = null;
-            this.fTemp = null;
-            this.fIncarnate = null;
-            this.fMini = null;
-            this.ActivePopupBounds = new Rectangle(0, 0, 1, 1);
-            this.LastState = FormWindowState.Normal;
-            this.PopUpVisible = false;
-            this.FlipSteps = 5;
-            this.FlipInterval = 10;
-            this.FlipStepDelay = 3;
-            this.FlipActive = false;
-            this.FlipPowerID = -1;
-            this.FlipSlotState = new int[0];
-            this.FlipGP = null;
-            this.LastClickPlacedSlot = false;
-            this.HasSentBack = false;
-            this.HasSentForwards = false;
-            this.NoResizeEvent = false;
-            this.dragStartPower = -1;
-            this.dragStartSlot = -1;
-            this.ddsa = new short[20];
-            this.DoneDblClick = false;
+                this.EnhancingSlot = -1;
+                this.EnhancingPower = -1;
+                this.EnhPickerActive = false;
+                this.PickerHID = -1;
+                this.LastFileName = string.Empty;
+                this.FileModified = false;
+                this.LastIndex = -1;
+                this.LastEnhIndex = -1;
+                this.LastEnhPlaced = null;
+                this.dvLastPower = -1;
+                this.dvLastEnh = -1;
+                this.dvLastNoLev = true;
+                this.DataViewLocked = false;
+                this.fGraphCompare = null;
+                this.fGraphStats = null;
+                this.fSets = null;
+                this.fTotals = null;
+                this.fRecipe = null;
+                this.fData = null;
+                this.fSetFinder = null;
+                this.fAccolade = null;
+                this.fTemp = null;
+                this.fIncarnate = null;
+                this.fMini = null;
+                this.ActivePopupBounds = new Rectangle(0, 0, 1, 1);
+                this.LastState = FormWindowState.Normal;
+                this.PopUpVisible = false;
+                this.FlipSteps = 5;
+                this.FlipInterval = 10;
+                this.FlipStepDelay = 3;
+                this.FlipActive = false;
+                this.FlipPowerID = -1;
+                this.FlipSlotState = new int[0];
+                this.FlipGP = null;
+                this.LastClickPlacedSlot = false;
+                this.HasSentBack = false;
+                this.HasSentForwards = false;
+                this.NoResizeEvent = false;
+                this.dragStartPower = -1;
+                this.dragStartSlot = -1;
+                this.ddsa = new short[20];
+                this.DoneDblClick = false;
+            }
             this.InitializeComponent();
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
+                this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+                this.Name = nameof(frmMain);
+                this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
+                this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
+                this.I9Popup.MouseMove += I9Popup_MouseMove;
+                this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
+                this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
+
+                // accoladeButton events
+                this.accoladeButton.MouseDown += accoladeButton_MouseDown;
+                this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
+
+
+                // cbAT events
+                this.cbAT.DrawItem += cbAT_DrawItem;
+                this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
+                this.cbAT.MouseMove += cbAT_MouseMove;
+                this.cbAT.MouseLeave += cbAT_MouseLeave;
+
+
+                // cbAncillary events
+                this.cbAncillary.DrawItem += cbAncillary_DrawItem;
+                this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
+                this.cbAncillary.MouseMove += cbAncillary_MouseMove;
+                this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbOrigin events
+                this.cbOrigin.DrawItem += cbOrigin_DrawItem;
+                this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
+
+
+                // cbPool0 events
+                this.cbPool0.DrawItem += cbPool0_DrawItem;
+                this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
+                this.cbPool0.MouseMove += cbPool0_MouseMove;
+                this.cbPool0.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool1 events
+                this.cbPool1.DrawItem += cbPool1_DrawItem;
+                this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
+                this.cbPool1.MouseMove += cbPool1_MouseMove;
+                this.cbPool1.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool2 events
+                this.cbPool2.DrawItem += cbPool2_DrawItem;
+                this.cbPool2.SelectionChangeCommitted += cbPool2_SelectedIndexChanged;
+                this.cbPool2.MouseMove += cbPool2_MouseMove;
+                this.cbPool2.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPool3 events
+                this.cbPool3.DrawItem += cbPool3_DrawItem;
+                this.cbPool3.SelectionChangeCommitted += cbPool3_SelectedIndexChanged;
+                this.cbPool3.MouseMove += cbPool3_MouseMove;
+                this.cbPool3.MouseLeave += cbPool0_MouseLeave;
+
+
+                // cbPrimary events
+                this.cbPrimary.DrawItem += cbPrimary_DrawItem;
+                this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
+                this.cbPrimary.MouseMove += cbPrimary_MouseMove;
+                this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
+
+
+                // cbSecondary events
+                this.cbSecondary.DrawItem += cbSecondary_DrawItem;
+                this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
+                this.cbSecondary.MouseMove += cbSecondary_MouseMove;
+                this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
+
+
+                // dvAnchored events
+                this.dvAnchored.MouseWheel += frmMain_MouseWheel;
+                this.dvAnchored.SizeChange += dvAnchored_SizeChange;
+                this.dvAnchored.FloatChange += dvAnchored_Float;
+                this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
+                this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
+                this.dvAnchored.SlotFlip += DataView_SlotFlip;
+                this.dvAnchored.Moved += dvAnchored_Move;
+                this.dvAnchored.TabChanged += dvAnchored_TabChanged;
+
+                this.heroVillain.ButtonClicked += heroVillain_ButtonClicked;
+                this.ibMode.ButtonClicked += ibMode_ButtonClicked;
+                this.ibPopup.ButtonClicked += ibPopup_ButtonClicked;
+                this.ibPvX.ButtonClicked += ibPvX_ButtonClicked;
+                this.ibRecipe.ButtonClicked += ibRecipe_ButtonClicked;
+                this.ibSets.ButtonClicked += ibSets_ButtonClicked;
+                this.ibSlotLevels.ButtonClicked += ibSlotLevels_ButtonClicked;
+                this.ibTotals.ButtonClicked += ibTotals_ButtonClicked;
+                this.incarnateButton.MouseDown += incarnateButton_MouseDown;
+
+                // lblATLocked events
+                this.lblATLocked.MouseMove += lblATLocked_MouseMove;
+                this.lblATLocked.Paint += lblATLocked_Paint;
+                this.lblATLocked.MouseLeave += lblATLocked_MouseLeave;
+
+
+                // lblLocked0 events
+                this.lblLocked0.Paint += lblLocked0_Paint;
+                this.lblLocked0.MouseMove += lblLocked0_MouseMove;
+                this.lblLocked0.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked1 events
+                this.lblLocked1.Paint += lblLocked1_Paint;
+                this.lblLocked1.MouseMove += lblLocked1_MouseMove;
+                this.lblLocked1.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked2 events
+                this.lblLocked2.Paint += lblLocked2_Paint;
+                this.lblLocked2.MouseMove += lblLocked2_MouseMove;
+                this.lblLocked2.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLocked3 events
+                this.lblLocked3.Paint += lblLocked3_Paint;
+                this.lblLocked3.MouseMove += lblLocked3_MouseMove;
+                this.lblLocked3.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLockedAncillary events
+                this.lblLockedAncillary.MouseMove += lblLockedAncillary_MouseMove;
+                this.lblLockedAncillary.Paint += lblLockedAncillary_Paint;
+                this.lblLockedAncillary.MouseLeave += lblLocked0_MouseLeave;
+
+
+                // lblLockedSecondary events
+                this.lblLockedSecondary.MouseMove += lblLockedSecondary_MouseMove;
+                this.lblLockedSecondary.MouseLeave += lblLockedSecondary_MouseLeave;
+
+
+                // llAncillary events
+                this.llAncillary.ItemHover += llAncillary_ItemHover;
+                this.llAncillary.ItemClick += llAncillary_ItemClick;
+
+
+                // llPool0 events
+                this.llPool0.ItemHover += llPool0_ItemHover;
+                this.llPool0.ItemClick += llPool0_ItemClick;
+                this.llPool0.MouseLeave += llALL_MouseLeave;
+                this.llPool0.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool1 events
+                this.llPool1.ItemHover += llPool1_ItemHover;
+                this.llPool1.ItemClick += llPool1_ItemClick;
+                this.llPool1.MouseLeave += llALL_MouseLeave;
+                this.llPool1.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool2 events
+                this.llPool2.ItemHover += llPool2_ItemHover;
+                this.llPool2.ItemClick += llPool2_ItemClick;
+                this.llPool2.MouseLeave += llALL_MouseLeave;
+                this.llPool2.EmptyHover += llAll_EmptyHover;
+
+
+                // llPool3 events
+                this.llPool3.ItemHover += llPool3_ItemHover;
+                this.llPool3.ItemClick += llPool3_ItemClick;
+                this.llPool3.MouseLeave += llALL_MouseLeave;
+                this.llPool3.EmptyHover += llAll_EmptyHover;
+
+
+                // llPrimary events
+                this.llPrimary.ItemHover += llPrimary_ItemHover;
+                this.llPrimary.ItemClick += llPrimary_ItemClick;
+                this.llPrimary.EmptyHover += llAll_EmptyHover;
+                this.llPrimary.ExpandChanged += PriSec_ExpandChanged;
+
+
+                // llSecondary events
+                this.llSecondary.ItemHover += llSecondary_ItemHover;
+                this.llSecondary.ItemClick += llSecondary_ItemClick;
+                this.llSecondary.EmptyHover += llAll_EmptyHover;
+                this.llSecondary.ExpandChanged += PriSec_ExpandChanged;
+
+
+                // pbDynMode events
+                this.pbDynMode.Paint += pbDynMode_Paint;
+                this.pbDynMode.Click += pbDynMode_Click;
+
+
+                // pnlGFX events
+                this.pnlGFX.MouseEnter += pnlGFX_MouseEnter;
+                this.pnlGFX.MouseLeave += pnlGFX_MouseLeave;
+                this.pnlGFX.MouseMove += pnlGFX_MouseMove;
+                this.pnlGFX.MouseUp += pnlGFX_MouseUp;
+                this.pnlGFX.MouseDoubleClick += pnlGFX_MouseDoubleClick;
+                this.pnlGFX.MouseDown += pnlGFX_MouseDown;
+                this.pnlGFX.DragOver += pnlGFX_DragOver;
+                this.pnlGFX.DragEnter += pnlGFX_DragEnter;
+                this.pnlGFX.DragDrop += pnlGFX_DragDrop;
+
+                this.pnlGFXFlow.MouseEnter += pnlGFXFlow_MouseEnter;
+
+                // tempPowersButton events
+                this.tempPowersButton.MouseDown += tempPowersButton_MouseDown;
+                this.tempPowersButton.ButtonClicked += tempPowersButton_ButtonClicked;
+
+                this.tlsDPA.Click += tlsDPA_Click;
+                this.tmrGfx.Tick += tmrGfx_Tick;
+                this.tsAdvDBEdit.Click += tsAdvDBEdit_Click;
+                this.tsAdvFreshInstall.Click += tsAdvFreshInstall_Click;
+                this.tsAdvResetTips.Click += tsAdvResetTips_Click;
+                this.tsBug.Click += tsBug_Click;
+                this.tsClearAllEnh.Click += tsClearAllEnh_Click;
+                this.tsConfig.Click += tsConfig_Click;
+                this.tsDPSCalc.Click += tsDPSCalc_Click;
+                this.tsDonate.Click += tsDonate_Click;
+                this.tsDynamic.Click += tsDynamic_Click;
+                this.tsEnhToDO.Click += tsEnhToDO_Click;
+                this.tsEnhToEven.Click += tsEnhToEven_Click;
+                this.tsEnhToMinus1.Click += tsEnhToMinus1_Click;
+                this.tsEnhToMinus2.Click += tsEnhToMinus2_Click;
+                this.tsEnhToMinus3.Click += tsEnhToMinus3_Click;
+                this.tsEnhToNone.Click += tsEnhToNone_Click;
+                this.tsEnhToPlus1.Click += tsEnhToPlus1_Click;
+                this.tsEnhToPlus2.Click += tsEnhToPlus2_Click;
+                this.tsEnhToPlus3.Click += tsEnhToPlus3_Click;
+                this.tsEnhToPlus4.Click += tsEnhToPlus4_Click;
+                this.tsEnhToPlus5.Click += tsEnhToPlus5_Click;
+                this.tsEnhToSO.Click += tsEnhToSO_Click;
+                this.tsEnhToTO.Click += tsEnhToTO_Click;
+                this.tsExport.Click += tsExport_Click;
+                this.tsExportDataLink.Click += tsExportDataLink_Click;
+                this.tsExportLong.Click += tsExportLong_Click;
+                this.tsFileNew.Click += tsFileNew_Click;
+                this.tsFileOpen.Click += tsFileOpen_Click;
+                this.tsFilePrint.Click += tsFilePrint_Click;
+                this.tsFileQuit.Click += tsFileQuit_Click;
+                this.tsFileSave.Click += tsFileSave_Click;
+                this.tsFileSaveAs.Click += tsFileSaveAs_Click;
+                this.tsFlipAllEnh.Click += tsFlipAllEnh_Click;
+                this.tsHelp.Click += tsHelp_Click;
+                this.tsHelperLong.Click += tsHelperLong_Click;
+                this.tsHelperLong2.Click += tsHelperLong2_Click;
+                this.tsHelperShort.Click += tsHelperShort_Click;
+                this.tsHelperShort2.Click += tsHelperShort2_Click;
+                this.tsIODefault.Click += tsIODefault_Click;
+                this.tsIOMax.Click += tsIOMax_Click;
+                this.tsIOMin.Click += tsIOMin_Click;
+                this.tsImport.Click += tsImport_Click;
+                this.tsLevelUp.Click += tsLevelUp_Click;
+                this.tsPatchNotes.Click += tsPatchNotes_Click;
+                this.tsRecipeViewer.Click += tsRecipeViewer_Click;
+                this.tsRemoveAllSlots.Click += tsRemoveAllSlots_Click;
+                this.tsSetFind.Click += tsSetFind_Click;
+                this.tsTitanForum.Click += tsTitanForum_Click;
+                this.tsTitanPlanner.Click += tsTitanPlanner_Click;
+                this.tsTitanSite.Click += tsTitanSite_Click;
+                this.tsUpdateCheck.Click += tsUpdateCheck_Click;
+                this.tsView2Col.Click += tsView2Col_Click;
+                this.tsView3Col.Click += tsView3Col_Click;
+                this.tsView4Col.Click += tsView4Col_Click;
+                this.tsViewActualDamage_New.Click += tsViewActualDamage_New_Click;
+                this.tsViewDPS_New.Click += tsViewDPS_New_Click;
+                this.tsViewData.Click += tsViewData_Click;
+                this.tsViewGraphs.Click += tsViewGraphs_Click;
+                this.tsViewIOLevels.Click += tsViewIOLevels_Click;
+                this.tsViewRelative.Click += tsViewRelative_Click;
+                this.tsViewSetCompare.Click += tsViewSetCompare_Click;
+                this.tsViewSets.Click += tsViewSets_Click;
+                this.tsViewSlotLevels.Click += tsViewSlotLevels_Click;
+                this.tsViewTotals.Click += tsViewTotals_Click;
+                this.txtName.TextChanged += txtName_TextChanged;
+            }
+            // finished with events
         }
 
         internal void ChildRequestedRedraw()
@@ -357,8 +634,7 @@ namespace Hero_Designer
                 int num = power.NIDSubPower.Length - 1;
                 for (int index = 0; index <= num; ++index)
                     iPowers.Add(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
-                this.fAccolade = new frmAccolade(this, iPowers);
-                this.fAccolade.Text = "Accolades";
+                this.fAccolade = new frmAccolade(this, iPowers) { Text = "Accolades" };
             }
             if (!this.fAccolade.Visible)
                 this.fAccolade.Show((IWin32Window)this);
@@ -386,9 +662,9 @@ namespace Hero_Designer
             return 0;
         }
 
-        void AssemblePowerList(ref ListLabelV2 llPower, IPowerset Powerset)
+        void AssemblePowerList(ListLabelV2 llPower, IPowerset Powerset)
         {
-            if (Powerset == null)
+            if (Powerset == null || Powerset.Powers?.Length < 1)
             {
                 llPower.SuspendRedraw = true;
                 llPower.ClearItems();
@@ -398,9 +674,8 @@ namespace Hero_Designer
             {
                 llPower.SuspendRedraw = true;
                 llPower.ClearItems();
-                bool flag = Powerset.nIDTrunkSet > -1;
                 string message;
-                if (flag)
+                if (Powerset.nIDTrunkSet > -1)
                 {
                     IPowerset powerset = DatabaseAPI.Database.Powersets[Powerset.nIDTrunkSet];
                     ListLabelV2.ListLabelItemV2 iItem1 = new ListLabelV2.ListLabelItemV2(powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nIDTrunkSet, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
@@ -411,7 +686,9 @@ namespace Hero_Designer
                         if (powerset.Powers[iIDXPower].Level > 0)
                         {
                             message = "";
-                            ListLabelV2.ListLabelItemV2 iItem2 = new ListLabelV2.ListLabelItemV2(powerset.Powers[iIDXPower].DisplayName, MainModule.MidsController.Toon.PowerState(powerset.Powers[iIDXPower].PowerIndex, ref message), Powerset.nIDTrunkSet, iIDXPower, powerset.Powers[iIDXPower].PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
+                            var iItem2 = new ListLabelV2.ListLabelItemV2(powerset.Powers[iIDXPower].DisplayName,
+                                MainModule.MidsController.Toon.PowerState(powerset.Powers[iIDXPower].PowerIndex,
+                                    ref message), Powerset.nIDTrunkSet, iIDXPower, powerset.Powers[iIDXPower].PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
                             {
                                 Bold = MidsContext.Config.RtFont.PairedBold
                             };
@@ -420,9 +697,6 @@ namespace Hero_Designer
                             llPower.AddItem(iItem2);
                         }
                     }
-                }
-                if (flag)
-                {
                     ListLabelV2.ListLabelItemV2 iItem = new ListLabelV2.ListLabelItemV2(Powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nID, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
                     llPower.AddItem(iItem);
                 }
@@ -433,7 +707,14 @@ namespace Hero_Designer
                     if (Powerset.Powers[iIDXPower].Level > 0)
                     {
                         message = "";
-                        ListLabelV2.ListLabelItemV2 iItem = new ListLabelV2.ListLabelItemV2(Powerset.Powers[iIDXPower].DisplayName, MainModule.MidsController.Toon.PowerState(Powerset.Powers[iIDXPower].PowerIndex, ref message), Powerset.nID, iIDXPower, Powerset.Powers[iIDXPower].PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
+                        var targetPs = MainModule.MidsController.Toon.PowerState(Powerset.Powers[iIDXPower].PowerIndex, ref message);
+                        var power = Powerset.Powers[iIDXPower];
+                        ListLabelV2.ListLabelItemV2 iItem = new ListLabelV2.ListLabelItemV2(
+                            Powerset.Powers[iIDXPower].DisplayName,
+                            targetPs,
+                            Powerset.nID,
+                            iIDXPower,
+                            power.PowerIndex, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left)
                         {
                             Bold = MidsContext.Config.RtFont.PairedBold
                         };
@@ -833,7 +1114,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
             {
-              return false;
+                return false;
             }
             else
             {
@@ -855,7 +1136,7 @@ namespace Hero_Designer
                             break;
                     }
                     if (num == 0)
-                    return true;
+                        return true;
                 }
                 return false;
             }
@@ -2015,7 +2296,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)MessageBox.Show("An error has occurred when loading the main form. Error: " + ex.Message, "OMIGODHAX");
+                MessageBox.Show("An error has occurred when loading the main form. Error: " + ex.Message, "OMIGODHAX");
                 throw;
             }
         }
@@ -2402,7 +2683,6 @@ namespace Hero_Designer
         void InitializeComponent()
         {
             this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmMain));
             this.txtName = new TextBox();
             this.cbAT = new ComboBox();
             this.cbOrigin = new ComboBox();
@@ -2554,7 +2834,7 @@ namespace Hero_Designer
             this.tempPowersButton = new ImageButton();
             this.accoladeButton = new ImageButton();
             this.incarnateButton = new ImageButton();
-            this.I9Picker = new I9Picker();
+            this.i9Picker = new I9Picker();
             this.I9Popup = new ctlPopUp();
             this.ibVetPools = new ImageButton();
             this.ibPvX = new ImageButton();
@@ -2573,11 +2853,11 @@ namespace Hero_Designer
             this.SuspendLayout();
             this.txtName.BackColor = Color.WhiteSmoke;
             this.txtName.ForeColor = SystemColors.ControlText;
-            Point point = new Point(96, 82);
-            this.txtName.Location = point;
+
+            this.txtName.Location = new Point(96, 82);
             this.txtName.Name = "txtName";
-            Size size = new Size(142, 20);
-            this.txtName.Size = size;
+
+            this.txtName.Size = new Size(142, 20);
             this.txtName.TabIndex = 1;
             this.cbAT.BackColor = Color.WhiteSmoke;
             this.cbAT.DisplayMember = "DisplayName";
@@ -2585,12 +2865,12 @@ namespace Hero_Designer
             this.cbAT.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbAT.ForeColor = SystemColors.ControlText;
             this.cbAT.ItemHeight = 16;
-            point = new Point(94, 109);
-            this.cbAT.Location = point;
+
+            this.cbAT.Location = new Point(94, 109);
             this.cbAT.MaxDropDownItems = 15;
             this.cbAT.Name = "cbAT";
-            size = new Size(144, 22);
-            this.cbAT.Size = size;
+
+            this.cbAT.Size = new Size(144, 22);
             this.cbAT.TabIndex = 3;
             this.cbAT.ValueMember = "Idx";
             this.cbOrigin.BackColor = Color.WhiteSmoke;
@@ -2598,40 +2878,40 @@ namespace Hero_Designer
             this.cbOrigin.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbOrigin.ForeColor = SystemColors.ControlText;
             this.cbOrigin.ItemHeight = 16;
-            point = new Point(94, 133);
-            this.cbOrigin.Location = point;
+
+            this.cbOrigin.Location = new Point(94, 133);
             this.cbOrigin.Name = "cbOrigin";
-            size = new Size(144, 22);
-            this.cbOrigin.Size = size;
+
+            this.cbOrigin.Size = new Size(144, 22);
             this.cbOrigin.TabIndex = 5;
             this.cbPrimary.DrawMode = DrawMode.OwnerDrawFixed;
             this.cbPrimary.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbPrimary.ForeColor = SystemColors.ControlText;
             this.cbPrimary.ItemHeight = 16;
-            point = new Point(16, 182);
-            this.cbPrimary.Location = point;
+
+            this.cbPrimary.Location = new Point(16, 182);
             this.cbPrimary.MaxDropDownItems = 15;
             this.cbPrimary.Name = "cbPrimary";
-            size = new Size(144, 22);
-            this.cbPrimary.Size = size;
+
+            this.cbPrimary.Size = new Size(144, 22);
             this.cbPrimary.TabIndex = 7;
             this.lblPrimary.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblPrimary.ForeColor = Color.White;
-            point = new Point(20, 166);
-            this.lblPrimary.Location = point;
+
+            this.lblPrimary.Location = new Point(20, 166);
             this.lblPrimary.Name = "lblPrimary";
-            size = new Size(136, 17);
-            this.lblPrimary.Size = size;
+
+            this.lblPrimary.Size = new Size(136, 17);
             this.lblPrimary.TabIndex = 9;
             this.lblPrimary.Text = "Primary Power Set";
             this.lblPrimary.TextAlign = ContentAlignment.MiddleCenter;
             this.lblSecondary.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblSecondary.ForeColor = Color.White;
-            point = new Point(172, 166);
-            this.lblSecondary.Location = point;
+
+            this.lblSecondary.Location = new Point(172, 166);
             this.lblSecondary.Name = "lblSecondary";
-            size = new Size(136, 17);
-            this.lblSecondary.Size = size;
+
+            this.lblSecondary.Size = new Size(136, 17);
             this.lblSecondary.TabIndex = 10;
             this.lblSecondary.Text = "Secondary Power Set";
             this.lblSecondary.TextAlign = ContentAlignment.MiddleCenter;
@@ -2639,32 +2919,32 @@ namespace Hero_Designer
             this.cbSecondary.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbSecondary.ForeColor = SystemColors.ControlText;
             this.cbSecondary.ItemHeight = 16;
-            point = new Point(168, 182);
-            this.cbSecondary.Location = point;
+
+            this.cbSecondary.Location = new Point(168, 182);
             this.cbSecondary.MaxDropDownItems = 15;
             this.cbSecondary.Name = "cbSecondary";
-            size = new Size(144, 22);
-            this.cbSecondary.Size = size;
+
+            this.cbSecondary.Size = new Size(144, 22);
             this.cbSecondary.TabIndex = 11;
             this.cbPool0.BackColor = Color.WhiteSmoke;
             this.cbPool0.DrawMode = DrawMode.OwnerDrawFixed;
             this.cbPool0.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbPool0.ForeColor = SystemColors.ControlText;
             this.cbPool0.ItemHeight = 16;
-            point = new Point(328, 182);
-            this.cbPool0.Location = point;
+
+            this.cbPool0.Location = new Point(328, 182);
             this.cbPool0.MaxDropDownItems = 15;
             this.cbPool0.Name = "cbPool0";
-            size = new Size(136, 22);
-            this.cbPool0.Size = size;
+
+            this.cbPool0.Size = new Size(136, 22);
             this.cbPool0.TabIndex = 15;
             this.lblPool1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblPool1.ForeColor = Color.White;
-            point = new Point(328, 166);
-            this.lblPool1.Location = point;
+
+            this.lblPool1.Location = new Point(328, 166);
             this.lblPool1.Name = "lblPool1";
-            size = new Size(136, 17);
-            this.lblPool1.Size = size;
+
+            this.lblPool1.Size = new Size(136, 17);
             this.lblPool1.TabIndex = 14;
             this.lblPool1.Text = "Pool 1";
             this.lblPool1.TextAlign = ContentAlignment.MiddleCenter;
@@ -2673,20 +2953,20 @@ namespace Hero_Designer
             this.cbPool1.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbPool1.ForeColor = SystemColors.ControlText;
             this.cbPool1.ItemHeight = 16;
-            point = new Point(328, 290);
-            this.cbPool1.Location = point;
+
+            this.cbPool1.Location = new Point(328, 290);
             this.cbPool1.MaxDropDownItems = 15;
             this.cbPool1.Name = "cbPool1";
-            size = new Size(136, 22);
-            this.cbPool1.Size = size;
+
+            this.cbPool1.Size = new Size(136, 22);
             this.cbPool1.TabIndex = 18;
             this.lblPool2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblPool2.ForeColor = Color.White;
-            point = new Point(328, 274);
-            this.lblPool2.Location = point;
+
+            this.lblPool2.Location = new Point(328, 274);
             this.lblPool2.Name = "lblPool2";
-            size = new Size(136, 17);
-            this.lblPool2.Size = size;
+
+            this.lblPool2.Size = new Size(136, 17);
             this.lblPool2.TabIndex = 17;
             this.lblPool2.Text = "Pool 2";
             this.lblPool2.TextAlign = ContentAlignment.MiddleCenter;
@@ -2695,20 +2975,20 @@ namespace Hero_Designer
             this.cbPool2.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbPool2.ForeColor = SystemColors.ControlText;
             this.cbPool2.ItemHeight = 16;
-            point = new Point(328, 398);
-            this.cbPool2.Location = point;
+
+            this.cbPool2.Location = new Point(328, 398);
             this.cbPool2.MaxDropDownItems = 15;
             this.cbPool2.Name = "cbPool2";
-            size = new Size(136, 22);
-            this.cbPool2.Size = size;
+
+            this.cbPool2.Size = new Size(136, 22);
             this.cbPool2.TabIndex = 21;
             this.lblPool3.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblPool3.ForeColor = Color.White;
-            point = new Point(328, 382);
-            this.lblPool3.Location = point;
+
+            this.lblPool3.Location = new Point(328, 382);
             this.lblPool3.Name = "lblPool3";
-            size = new Size(136, 17);
-            this.lblPool3.Size = size;
+
+            this.lblPool3.Size = new Size(136, 17);
             this.lblPool3.TabIndex = 20;
             this.lblPool3.Text = "Pool 3";
             this.lblPool3.TextAlign = ContentAlignment.MiddleCenter;
@@ -2717,20 +2997,20 @@ namespace Hero_Designer
             this.cbPool3.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbPool3.ForeColor = SystemColors.ControlText;
             this.cbPool3.ItemHeight = 16;
-            point = new Point(328, 506);
-            this.cbPool3.Location = point;
+
+            this.cbPool3.Location = new Point(328, 506);
             this.cbPool3.MaxDropDownItems = 15;
             this.cbPool3.Name = "cbPool3";
-            size = new Size(136, 22);
-            this.cbPool3.Size = size;
+
+            this.cbPool3.Size = new Size(136, 22);
             this.cbPool3.TabIndex = 24;
             this.lblPool4.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblPool4.ForeColor = Color.White;
-            point = new Point(328, 490);
-            this.lblPool4.Location = point;
+
+            this.lblPool4.Location = new Point(328, 490);
             this.lblPool4.Name = "lblPool4";
-            size = new Size(136, 17);
-            this.lblPool4.Size = size;
+
+            this.lblPool4.Size = new Size(136, 17);
             this.lblPool4.TabIndex = 23;
             this.lblPool4.Text = "Pool 4";
             this.lblPool4.TextAlign = ContentAlignment.MiddleCenter;
@@ -2739,19 +3019,19 @@ namespace Hero_Designer
             this.cbAncillary.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cbAncillary.ForeColor = SystemColors.ControlText;
             this.cbAncillary.ItemHeight = 16;
-            point = new Point(328, 614);
-            this.cbAncillary.Location = point;
+
+            this.cbAncillary.Location = new Point(328, 614);
             this.cbAncillary.Name = "cbAncillary";
-            size = new Size(136, 22);
-            this.cbAncillary.Size = size;
+
+            this.cbAncillary.Size = new Size(136, 22);
             this.cbAncillary.TabIndex = 27;
             this.lblEpic.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblEpic.ForeColor = Color.White;
-            point = new Point(328, 598);
-            this.lblEpic.Location = point;
+
+            this.lblEpic.Location = new Point(328, 598);
             this.lblEpic.Name = "lblEpic";
-            size = new Size(136, 17);
-            this.lblEpic.Size = size;
+
+            this.lblEpic.Size = new Size(136, 17);
             this.lblEpic.TabIndex = 26;
             this.lblEpic.Text = "Ancillary/Epic Pool";
             this.lblEpic.TextAlign = ContentAlignment.MiddleCenter;
@@ -2759,11 +3039,11 @@ namespace Hero_Designer
             this.lblATLocked.BorderStyle = BorderStyle.Fixed3D;
             this.lblATLocked.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblATLocked.ForeColor = Color.Black;
-            point = new Point(94, 113);
-            this.lblATLocked.Location = point;
+
+            this.lblATLocked.Location = new Point(94, 113);
             this.lblATLocked.Name = "lblATLocked";
-            size = new Size(92, 29);
-            this.lblATLocked.Size = size;
+
+            this.lblATLocked.Size = new Size(92, 29);
             this.lblATLocked.TabIndex = 53;
             this.lblATLocked.Text = "Archetype Locked";
             this.lblATLocked.TextAlign = ContentAlignment.MiddleCenter;
@@ -2778,11 +3058,11 @@ namespace Hero_Designer
             this.lblLocked0.BorderStyle = BorderStyle.Fixed3D;
             this.lblLocked0.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLocked0.ForeColor = Color.Black;
-            point = new Point(308, 166);
-            this.lblLocked0.Location = point;
+
+            this.lblLocked0.Location = new Point(308, 166);
             this.lblLocked0.Name = "lblLocked0";
-            size = new Size(92, 29);
-            this.lblLocked0.Size = size;
+
+            this.lblLocked0.Size = new Size(92, 29);
             this.lblLocked0.TabIndex = 72;
             this.lblLocked0.Text = "Pool Locked";
             this.lblLocked0.TextAlign = ContentAlignment.MiddleCenter;
@@ -2790,11 +3070,11 @@ namespace Hero_Designer
             this.lblLocked1.BorderStyle = BorderStyle.Fixed3D;
             this.lblLocked1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLocked1.ForeColor = Color.Black;
-            point = new Point(308, 186);
-            this.lblLocked1.Location = point;
+
+            this.lblLocked1.Location = new Point(308, 186);
             this.lblLocked1.Name = "lblLocked1";
-            size = new Size(92, 29);
-            this.lblLocked1.Size = size;
+
+            this.lblLocked1.Size = new Size(92, 29);
             this.lblLocked1.TabIndex = 73;
             this.lblLocked1.Text = "Pool Locked";
             this.lblLocked1.TextAlign = ContentAlignment.MiddleCenter;
@@ -2802,11 +3082,11 @@ namespace Hero_Designer
             this.lblLocked2.BorderStyle = BorderStyle.Fixed3D;
             this.lblLocked2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLocked2.ForeColor = Color.Black;
-            point = new Point(304, 194);
-            this.lblLocked2.Location = point;
+
+            this.lblLocked2.Location = new Point(304, 194);
             this.lblLocked2.Name = "lblLocked2";
-            size = new Size(92, 29);
-            this.lblLocked2.Size = size;
+
+            this.lblLocked2.Size = new Size(92, 29);
             this.lblLocked2.TabIndex = 74;
             this.lblLocked2.Text = "Pool Locked";
             this.lblLocked2.TextAlign = ContentAlignment.MiddleCenter;
@@ -2814,11 +3094,11 @@ namespace Hero_Designer
             this.lblLocked3.BorderStyle = BorderStyle.Fixed3D;
             this.lblLocked3.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLocked3.ForeColor = Color.Black;
-            point = new Point(284, 210);
-            this.lblLocked3.Location = point;
+
+            this.lblLocked3.Location = new Point(284, 210);
             this.lblLocked3.Name = "lblLocked3";
-            size = new Size(92, 29);
-            this.lblLocked3.Size = size;
+
+            this.lblLocked3.Size = new Size(92, 29);
             this.lblLocked3.TabIndex = 75;
             this.lblLocked3.Text = "Pool Locked";
             this.lblLocked3.TextAlign = ContentAlignment.MiddleCenter;
@@ -2826,11 +3106,11 @@ namespace Hero_Designer
             this.lblLockedAncillary.BorderStyle = BorderStyle.Fixed3D;
             this.lblLockedAncillary.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLockedAncillary.ForeColor = Color.Black;
-            point = new Point(268, 230);
-            this.lblLockedAncillary.Location = point;
+
+            this.lblLockedAncillary.Location = new Point(268, 230);
             this.lblLockedAncillary.Name = "lblLockedAncillary";
-            size = new Size(92, 29);
-            this.lblLockedAncillary.Size = size;
+
+            this.lblLockedAncillary.Size = new Size(92, 29);
             this.lblLockedAncillary.TabIndex = 76;
             this.lblLockedAncillary.Text = "Pool Locked";
             this.lblLockedAncillary.TextAlign = ContentAlignment.MiddleCenter;
@@ -2838,623 +3118,623 @@ namespace Hero_Designer
             this.lblLockedSecondary.BorderStyle = BorderStyle.Fixed3D;
             this.lblLockedSecondary.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLockedSecondary.ForeColor = Color.Black;
-            point = new Point(257, 246);
-            this.lblLockedSecondary.Location = point;
+
+            this.lblLockedSecondary.Location = new Point(257, 246);
             this.lblLockedSecondary.Name = "lblLockedSecondary";
-            size = new Size(92, 29);
-            this.lblLockedSecondary.Size = size;
+
+            this.lblLockedSecondary.Size = new Size(92, 29);
             this.lblLockedSecondary.TabIndex = 109;
             this.lblLockedSecondary.Text = "Sec. Locked";
             this.lblLockedSecondary.TextAlign = ContentAlignment.MiddleCenter;
             this.MenuBar.BackColor = SystemColors.Control;
             this.MenuBar.Items.AddRange(new ToolStripItem[7]
             {
-        (ToolStripItem) this.FileToolStripMenuItem,
-        (ToolStripItem) this.ImportExportToolStripMenuItem,
-        (ToolStripItem) this.OptionsToolStripMenuItem,
-        (ToolStripItem) this.CharacterToolStripMenuItem,
-        (ToolStripItem) this.ViewToolStripMenuItem,
-        (ToolStripItem) this.HelpToolStripMenuItem1,
-        (ToolStripItem) this.WindowToolStripMenuItem
+            (ToolStripItem) this.FileToolStripMenuItem,
+            (ToolStripItem) this.ImportExportToolStripMenuItem,
+            (ToolStripItem) this.OptionsToolStripMenuItem,
+            (ToolStripItem) this.CharacterToolStripMenuItem,
+            (ToolStripItem) this.ViewToolStripMenuItem,
+            (ToolStripItem) this.HelpToolStripMenuItem1,
+            (ToolStripItem) this.WindowToolStripMenuItem
             });
-            point = new Point(0, 0);
-            this.MenuBar.Location = point;
+
+            this.MenuBar.Location = new Point(0, 0);
             this.MenuBar.Name = "MenuBar";
-            size = new Size(1056, 24);
-            this.MenuBar.Size = size;
+
+            this.MenuBar.Size = new Size(1056, 24);
             this.MenuBar.TabIndex = 84;
             this.MenuBar.Text = "MenuStrip1";
             this.FileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[9]
             {
-        (ToolStripItem) this.tsFileNew,
-        (ToolStripItem) this.ToolStripSeparator7,
-        (ToolStripItem) this.tsFileOpen,
-        (ToolStripItem) this.tsFileSave,
-        (ToolStripItem) this.tsFileSaveAs,
-        (ToolStripItem) this.ToolStripSeparator8,
-        (ToolStripItem) this.tsFilePrint,
-        (ToolStripItem) this.ToolStripSeparator9,
-        (ToolStripItem) this.tsFileQuit
+            (ToolStripItem) this.tsFileNew,
+            (ToolStripItem) this.ToolStripSeparator7,
+            (ToolStripItem) this.tsFileOpen,
+            (ToolStripItem) this.tsFileSave,
+            (ToolStripItem) this.tsFileSaveAs,
+            (ToolStripItem) this.ToolStripSeparator8,
+            (ToolStripItem) this.tsFilePrint,
+            (ToolStripItem) this.ToolStripSeparator9,
+            (ToolStripItem) this.tsFileQuit
             });
             this.FileToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            size = new Size(37, 20);
-            this.FileToolStripMenuItem.Size = size;
+
+            this.FileToolStripMenuItem.Size = new Size(37, 20);
             this.FileToolStripMenuItem.Text = "&File";
             this.tsFileNew.Name = "tsFileNew";
             this.tsFileNew.ShortcutKeys = System.Windows.Forms.Keys.N | System.Windows.Forms.Keys.Control;
-            size = new Size(179, 22);
-            this.tsFileNew.Size = size;
+
+            this.tsFileNew.Size = new Size(179, 22);
             this.tsFileNew.Text = "&New / Clear";
             this.ToolStripSeparator7.Name = "ToolStripSeparator7";
-            size = new Size(176, 6);
-            this.ToolStripSeparator7.Size = size;
+
+            this.ToolStripSeparator7.Size = new Size(176, 6);
             this.tsFileOpen.Name = "tsFileOpen";
             this.tsFileOpen.ShortcutKeys = System.Windows.Forms.Keys.O | System.Windows.Forms.Keys.Control;
-            size = new Size(179, 22);
-            this.tsFileOpen.Size = size;
+
+            this.tsFileOpen.Size = new Size(179, 22);
             this.tsFileOpen.Text = "&Open...";
             this.tsFileSave.Name = "tsFileSave";
             this.tsFileSave.ShortcutKeys = System.Windows.Forms.Keys.S | System.Windows.Forms.Keys.Control;
-            size = new Size(179, 22);
-            this.tsFileSave.Size = size;
+
+            this.tsFileSave.Size = new Size(179, 22);
             this.tsFileSave.Text = "&Save";
             this.tsFileSaveAs.Name = "tsFileSaveAs";
-            size = new Size(179, 22);
-            this.tsFileSaveAs.Size = size;
+
+            this.tsFileSaveAs.Size = new Size(179, 22);
             this.tsFileSaveAs.Text = "Save &As...";
             this.ToolStripSeparator8.Name = "ToolStripSeparator8";
-            size = new Size(176, 6);
-            this.ToolStripSeparator8.Size = size;
+
+            this.ToolStripSeparator8.Size = new Size(176, 6);
             this.tsFilePrint.Name = "tsFilePrint";
             this.tsFilePrint.ShortcutKeys = System.Windows.Forms.Keys.P | System.Windows.Forms.Keys.Control;
-            size = new Size(179, 22);
-            this.tsFilePrint.Size = size;
+
+            this.tsFilePrint.Size = new Size(179, 22);
             this.tsFilePrint.Text = "&Print...";
             this.ToolStripSeparator9.Name = "ToolStripSeparator9";
-            size = new Size(176, 6);
-            this.ToolStripSeparator9.Size = size;
+
+            this.ToolStripSeparator9.Size = new Size(176, 6);
             this.tsFileQuit.Name = "tsFileQuit";
             this.tsFileQuit.ShortcutKeys = System.Windows.Forms.Keys.Q | System.Windows.Forms.Keys.Control;
-            size = new Size(179, 22);
-            this.tsFileQuit.Size = size;
+
+            this.tsFileQuit.Size = new Size(179, 22);
             this.tsFileQuit.Text = "&Quit";
             this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[5]
             {
-        (ToolStripItem) this.tsImport,
-        (ToolStripItem) this.ToolStripSeparator12,
-        (ToolStripItem) this.tsExport,
-        (ToolStripItem) this.tsExportLong,
-        (ToolStripItem) this.tsExportDataLink
+            (ToolStripItem) this.tsImport,
+            (ToolStripItem) this.ToolStripSeparator12,
+            (ToolStripItem) this.tsExport,
+            (ToolStripItem) this.tsExportLong,
+            (ToolStripItem) this.tsExportDataLink
             });
             this.ImportExportToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.ImportExportToolStripMenuItem.Name = "ImportExportToolStripMenuItem";
-            size = new Size(99, 20);
-            this.ImportExportToolStripMenuItem.Size = size;
+
+            this.ImportExportToolStripMenuItem.Size = new Size(99, 20);
             this.ImportExportToolStripMenuItem.Text = "&Import / Export";
             this.tsImport.Name = "tsImport";
             this.tsImport.ShortcutKeys = System.Windows.Forms.Keys.I | System.Windows.Forms.Keys.Control;
-            size = new Size(240, 22);
-            this.tsImport.Size = size;
+
+            this.tsImport.Size = new Size(240, 22);
             this.tsImport.Text = "&Import from Forum Post";
             this.ToolStripSeparator12.Name = "ToolStripSeparator12";
-            size = new Size(237, 6);
-            this.ToolStripSeparator12.Size = size;
+
+            this.ToolStripSeparator12.Size = new Size(237, 6);
             this.tsExport.Name = "tsExport";
-            size = new Size(240, 22);
-            this.tsExport.Size = size;
+
+            this.tsExport.Size = new Size(240, 22);
             this.tsExport.Text = "&Short Forum Export...";
             this.tsExportLong.Name = "tsExportLong";
-            size = new Size(240, 22);
-            this.tsExportLong.Size = size;
+
+            this.tsExportLong.Size = new Size(240, 22);
             this.tsExportLong.Text = "&Long Forum Export...";
             this.tsExportDataLink.Name = "tsExportDataLink";
-            size = new Size(240, 22);
-            this.tsExportDataLink.Size = size;
+
+            this.tsExportDataLink.Size = new Size(240, 22);
             this.tsExportDataLink.Text = "Export Data Link";
             this.OptionsToolStripMenuItem.BackColor = SystemColors.Control;
             this.OptionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[8]
             {
-        (ToolStripItem) this.tsConfig,
-        (ToolStripItem) this.ToolStripSeparator14,
-        (ToolStripItem) this.tsUpdateCheck,
-        (ToolStripItem) this.ToolStripSeparator22,
-        (ToolStripItem) this.tsLevelUp,
-        (ToolStripItem) this.tsDynamic,
-        (ToolStripItem) this.ToolStripSeparator5,
-        (ToolStripItem) this.AdvancedToolStripMenuItem1
+            (ToolStripItem) this.tsConfig,
+            (ToolStripItem) this.ToolStripSeparator14,
+            (ToolStripItem) this.tsUpdateCheck,
+            (ToolStripItem) this.ToolStripSeparator22,
+            (ToolStripItem) this.tsLevelUp,
+            (ToolStripItem) this.tsDynamic,
+            (ToolStripItem) this.ToolStripSeparator5,
+            (ToolStripItem) this.AdvancedToolStripMenuItem1
             });
             this.OptionsToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
-            size = new Size(61, 20);
-            this.OptionsToolStripMenuItem.Size = size;
+
+            this.OptionsToolStripMenuItem.Size = new Size(61, 20);
             this.OptionsToolStripMenuItem.Text = "&Options";
             this.tsConfig.Name = "tsConfig";
-            size = new Size(199, 22);
-            this.tsConfig.Size = size;
+
+            this.tsConfig.Size = new Size(199, 22);
             this.tsConfig.Text = "&Configuration...";
             this.ToolStripSeparator14.Name = "ToolStripSeparator14";
-            size = new Size(196, 6);
-            this.ToolStripSeparator14.Size = size;
+
+            this.ToolStripSeparator14.Size = new Size(196, 6);
             this.tsUpdateCheck.Name = "tsUpdateCheck";
-            size = new Size(199, 22);
-            this.tsUpdateCheck.Size = size;
+
+            this.tsUpdateCheck.Size = new Size(199, 22);
             this.tsUpdateCheck.Text = "Check for &Updates Now";
             this.ToolStripSeparator22.Name = "ToolStripSeparator22";
-            size = new Size(196, 6);
-            this.ToolStripSeparator22.Size = size;
+
+            this.ToolStripSeparator22.Size = new Size(196, 6);
             this.tsLevelUp.Name = "tsLevelUp";
-            size = new Size(199, 22);
-            this.tsLevelUp.Size = size;
+
+            this.tsLevelUp.Size = new Size(199, 22);
             this.tsLevelUp.Text = "&Level-Up Mode";
             this.tsLevelUp.ToolTipText = "Alternate between placing powers and slots, just like levelling up in-game.";
             this.tsDynamic.Name = "tsDynamic";
-            size = new Size(199, 22);
-            this.tsDynamic.Size = size;
+
+            this.tsDynamic.Size = new Size(199, 22);
             this.tsDynamic.Text = "&Dynamic Mode";
             this.tsDynamic.ToolTipText = "Place powers and slots in any order.";
             this.ToolStripSeparator5.Name = "ToolStripSeparator5";
-            size = new Size(196, 6);
-            this.ToolStripSeparator5.Size = size;
+
+            this.ToolStripSeparator5.Size = new Size(196, 6);
             this.AdvancedToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[4]
             {
-        (ToolStripItem) this.tsAdvDBEdit,
-        (ToolStripItem) this.ToolStripSeparator15,
-        (ToolStripItem) this.tsAdvFreshInstall,
-        (ToolStripItem) this.tsAdvResetTips
+            (ToolStripItem) this.tsAdvDBEdit,
+            (ToolStripItem) this.ToolStripSeparator15,
+            (ToolStripItem) this.tsAdvFreshInstall,
+            (ToolStripItem) this.tsAdvResetTips
             });
             this.AdvancedToolStripMenuItem1.Name = "AdvancedToolStripMenuItem1";
-            size = new Size(199, 22);
-            this.AdvancedToolStripMenuItem1.Size = size;
+
+            this.AdvancedToolStripMenuItem1.Size = new Size(199, 22);
             this.AdvancedToolStripMenuItem1.Text = "&Advanced";
             this.tsAdvDBEdit.Name = "tsAdvDBEdit";
-            size = new Size(165, 22);
-            this.tsAdvDBEdit.Size = size;
+
+            this.tsAdvDBEdit.Size = new Size(165, 22);
             this.tsAdvDBEdit.Text = "&Database Editor...";
             this.ToolStripSeparator15.Name = "ToolStripSeparator15";
-            size = new Size(162, 6);
-            this.ToolStripSeparator15.Size = size;
+
+            this.ToolStripSeparator15.Size = new Size(162, 6);
             this.tsAdvFreshInstall.Name = "tsAdvFreshInstall";
-            size = new Size(165, 22);
-            this.tsAdvFreshInstall.Size = size;
+
+            this.tsAdvFreshInstall.Size = new Size(165, 22);
             this.tsAdvFreshInstall.Text = "FreshInstall Flag";
             this.tsAdvFreshInstall.Visible = false;
             this.tsAdvResetTips.Name = "tsAdvResetTips";
-            size = new Size(165, 22);
-            this.tsAdvResetTips.Size = size;
+
+            this.tsAdvResetTips.Size = new Size(165, 22);
             this.tsAdvResetTips.Text = "Reset Tips";
             this.CharacterToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[6]
             {
-        (ToolStripItem) this.SetAllIOsToDefault35ToolStripMenuItem,
-        (ToolStripItem) this.ToolStripSeparator16,
-        (ToolStripItem) this.ToolStripMenuItem1,
-        (ToolStripItem) this.ToolStripMenuItem2,
-        (ToolStripItem) this.ToolStripSeparator17,
-        (ToolStripItem) this.SlotsToolStripMenuItem
+            (ToolStripItem) this.SetAllIOsToDefault35ToolStripMenuItem,
+            (ToolStripItem) this.ToolStripSeparator16,
+            (ToolStripItem) this.ToolStripMenuItem1,
+            (ToolStripItem) this.ToolStripMenuItem2,
+            (ToolStripItem) this.ToolStripSeparator17,
+            (ToolStripItem) this.SlotsToolStripMenuItem
             });
             this.CharacterToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.CharacterToolStripMenuItem.Name = "CharacterToolStripMenuItem";
-            size = new Size(133, 20);
-            this.CharacterToolStripMenuItem.Size = size;
+
+            this.CharacterToolStripMenuItem.Size = new Size(133, 20);
             this.CharacterToolStripMenuItem.Text = "&Slots / Enhancements";
             this.SetAllIOsToDefault35ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[4]
             {
-        (ToolStripItem) this.tsIODefault,
-        (ToolStripItem) this.ToolStripSeparator11,
-        (ToolStripItem) this.tsIOMin,
-        (ToolStripItem) this.tsIOMax
+            (ToolStripItem) this.tsIODefault,
+            (ToolStripItem) this.ToolStripSeparator11,
+            (ToolStripItem) this.tsIOMin,
+            (ToolStripItem) this.tsIOMax
             });
             this.SetAllIOsToDefault35ToolStripMenuItem.Name = "SetAllIOsToDefault35ToolStripMenuItem";
-            size = new Size(245, 22);
-            this.SetAllIOsToDefault35ToolStripMenuItem.Size = size;
+
+            this.SetAllIOsToDefault35ToolStripMenuItem.Size = new Size(245, 22);
             this.SetAllIOsToDefault35ToolStripMenuItem.Text = "&Set all IOs to...";
             this.tsIODefault.Name = "tsIODefault";
-            size = new Size(135, 22);
-            this.tsIODefault.Size = size;
+
+            this.tsIODefault.Size = new Size(135, 22);
             this.tsIODefault.Text = "Default (35)";
             this.ToolStripSeparator11.Name = "ToolStripSeparator11";
-            size = new Size(132, 6);
-            this.ToolStripSeparator11.Size = size;
+
+            this.ToolStripSeparator11.Size = new Size(132, 6);
             this.tsIOMin.Name = "tsIOMin";
-            size = new Size(135, 22);
-            this.tsIOMin.Size = size;
+
+            this.tsIOMin.Size = new Size(135, 22);
             this.tsIOMin.Text = "Minimum";
             this.tsIOMax.Name = "tsIOMax";
-            size = new Size(135, 22);
-            this.tsIOMax.Size = size;
+
+            this.tsIOMax.Size = new Size(135, 22);
             this.tsIOMax.Text = "Maximum";
             this.ToolStripSeparator16.Name = "ToolStripSeparator16";
-            size = new Size(242, 6);
-            this.ToolStripSeparator16.Size = size;
+
+            this.ToolStripSeparator16.Size = new Size(242, 6);
             this.ToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[3]
             {
-        (ToolStripItem) this.tsEnhToSO,
-        (ToolStripItem) this.tsEnhToDO,
-        (ToolStripItem) this.tsEnhToTO
+            (ToolStripItem) this.tsEnhToSO,
+            (ToolStripItem) this.tsEnhToDO,
+            (ToolStripItem) this.tsEnhToTO
             });
             this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            size = new Size(245, 22);
-            this.ToolStripMenuItem1.Size = size;
+
+            this.ToolStripMenuItem1.Size = new Size(245, 22);
             this.ToolStripMenuItem1.Text = "Set all Enhancement &Origins to...";
             this.tsEnhToSO.Name = "tsEnhToSO";
-            size = new Size(142, 22);
-            this.tsEnhToSO.Size = size;
+
+            this.tsEnhToSO.Size = new Size(142, 22);
             this.tsEnhToSO.Text = "Single Origin";
             this.tsEnhToDO.Name = "tsEnhToDO";
-            size = new Size(142, 22);
-            this.tsEnhToDO.Size = size;
+
+            this.tsEnhToDO.Size = new Size(142, 22);
             this.tsEnhToDO.Text = "Dual Origin";
             this.tsEnhToTO.Name = "tsEnhToTO";
-            size = new Size(142, 22);
-            this.tsEnhToTO.Size = size;
+
+            this.tsEnhToTO.Size = new Size(142, 22);
             this.tsEnhToTO.Text = "Training";
             this.ToolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[10]
             {
-        (ToolStripItem) this.tsEnhToPlus5,
-        (ToolStripItem) this.tsEnhToPlus4,
-        (ToolStripItem) this.tsEnhToPlus3,
-        (ToolStripItem) this.tsEnhToPlus2,
-        (ToolStripItem) this.tsEnhToPlus1,
-        (ToolStripItem) this.tsEnhToEven,
-        (ToolStripItem) this.tsEnhToMinus1,
-        (ToolStripItem) this.tsEnhToMinus2,
-        (ToolStripItem) this.tsEnhToMinus3,
-        (ToolStripItem) this.tsEnhToNone
+            (ToolStripItem) this.tsEnhToPlus5,
+            (ToolStripItem) this.tsEnhToPlus4,
+            (ToolStripItem) this.tsEnhToPlus3,
+            (ToolStripItem) this.tsEnhToPlus2,
+            (ToolStripItem) this.tsEnhToPlus1,
+            (ToolStripItem) this.tsEnhToEven,
+            (ToolStripItem) this.tsEnhToMinus1,
+            (ToolStripItem) this.tsEnhToMinus2,
+            (ToolStripItem) this.tsEnhToMinus3,
+            (ToolStripItem) this.tsEnhToNone
             });
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            size = new Size(245, 22);
-            this.ToolStripMenuItem2.Size = size;
+
+            this.ToolStripMenuItem2.Size = new Size(245, 22);
             this.ToolStripMenuItem2.Text = "Set all &Relative Levels to...";
             this.tsEnhToPlus5.Name = "tsEnhToPlus5";
-            size = new Size(205, 22);
-            this.tsEnhToPlus5.Size = size;
+
+            this.tsEnhToPlus5.Size = new Size(205, 22);
             this.tsEnhToPlus5.Text = "+5 Levels";
             this.tsEnhToPlus4.Name = "tsEnhToPlus4";
-            size = new Size(205, 22);
-            this.tsEnhToPlus4.Size = size;
+
+            this.tsEnhToPlus4.Size = new Size(205, 22);
             this.tsEnhToPlus4.Text = "+4 Levels";
             this.tsEnhToPlus3.Name = "tsEnhToPlus3";
-            size = new Size(205, 22);
-            this.tsEnhToPlus3.Size = size;
+
+            this.tsEnhToPlus3.Size = new Size(205, 22);
             this.tsEnhToPlus3.Text = "+3 Levels";
             this.tsEnhToPlus2.Name = "tsEnhToPlus2";
-            size = new Size(205, 22);
-            this.tsEnhToPlus2.Size = size;
+
+            this.tsEnhToPlus2.Size = new Size(205, 22);
             this.tsEnhToPlus2.Text = "+2 Levels";
             this.tsEnhToPlus1.Name = "tsEnhToPlus1";
-            size = new Size(205, 22);
-            this.tsEnhToPlus1.Size = size;
+
+            this.tsEnhToPlus1.Size = new Size(205, 22);
             this.tsEnhToPlus1.Text = "+1 Level";
             this.tsEnhToEven.Name = "tsEnhToEven";
-            size = new Size(205, 22);
-            this.tsEnhToEven.Size = size;
+
+            this.tsEnhToEven.Size = new Size(205, 22);
             this.tsEnhToEven.Text = "Even Level";
             this.tsEnhToMinus1.Name = "tsEnhToMinus1";
-            size = new Size(205, 22);
-            this.tsEnhToMinus1.Size = size;
+
+            this.tsEnhToMinus1.Size = new Size(205, 22);
             this.tsEnhToMinus1.Text = "-1 Level";
             this.tsEnhToMinus2.Name = "tsEnhToMinus2";
-            size = new Size(205, 22);
-            this.tsEnhToMinus2.Size = size;
+
+            this.tsEnhToMinus2.Size = new Size(205, 22);
             this.tsEnhToMinus2.Text = "-2 Levels";
             this.tsEnhToMinus3.Name = "tsEnhToMinus3";
-            size = new Size(205, 22);
-            this.tsEnhToMinus3.Size = size;
+
+            this.tsEnhToMinus3.Size = new Size(205, 22);
             this.tsEnhToMinus3.Text = "-3 Levels";
             this.tsEnhToNone.Name = "tsEnhToNone";
-            size = new Size(205, 22);
-            this.tsEnhToNone.Size = size;
+
+            this.tsEnhToNone.Size = new Size(205, 22);
             this.tsEnhToNone.Text = "None (Enh has no effect)";
             this.ToolStripSeparator17.Name = "ToolStripSeparator17";
-            size = new Size(242, 6);
-            this.ToolStripSeparator17.Size = size;
+
+            this.ToolStripSeparator17.Size = new Size(242, 6);
             this.SlotsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[6]
             {
-        (ToolStripItem) this.tsFlipAllEnh,
-        (ToolStripItem) this.ToolStripSeparator4,
-        (ToolStripItem) this.tsClearAllEnh,
-        (ToolStripItem) this.tsRemoveAllSlots,
-        (ToolStripItem) this.ToolStripSeparator1,
-        (ToolStripItem) this.AutoArrangeAllSlotsToolStripMenuItem
+            (ToolStripItem) this.tsFlipAllEnh,
+            (ToolStripItem) this.ToolStripSeparator4,
+            (ToolStripItem) this.tsClearAllEnh,
+            (ToolStripItem) this.tsRemoveAllSlots,
+            (ToolStripItem) this.ToolStripSeparator1,
+            (ToolStripItem) this.AutoArrangeAllSlotsToolStripMenuItem
             });
             this.SlotsToolStripMenuItem.Name = "SlotsToolStripMenuItem";
-            size = new Size(245, 22);
-            this.SlotsToolStripMenuItem.Size = size;
+
+            this.SlotsToolStripMenuItem.Size = new Size(245, 22);
             this.SlotsToolStripMenuItem.Text = "Slo&ts";
             this.tsFlipAllEnh.Name = "tsFlipAllEnh";
-            size = new Size(199, 22);
-            this.tsFlipAllEnh.Size = size;
+
+            this.tsFlipAllEnh.Size = new Size(199, 22);
             this.tsFlipAllEnh.Text = "Flip All to Alternate";
             this.ToolStripSeparator4.Name = "ToolStripSeparator4";
-            size = new Size(196, 6);
-            this.ToolStripSeparator4.Size = size;
+
+            this.ToolStripSeparator4.Size = new Size(196, 6);
             this.tsClearAllEnh.Name = "tsClearAllEnh";
-            size = new Size(199, 22);
-            this.tsClearAllEnh.Size = size;
+
+            this.tsClearAllEnh.Size = new Size(199, 22);
             this.tsClearAllEnh.Text = "Clear All Enhancements";
             this.tsRemoveAllSlots.Name = "tsRemoveAllSlots";
-            size = new Size(199, 22);
-            this.tsRemoveAllSlots.Size = size;
+
+            this.tsRemoveAllSlots.Size = new Size(199, 22);
             this.tsRemoveAllSlots.Text = "Remove All Slots";
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            size = new Size(196, 6);
-            this.ToolStripSeparator1.Size = size;
+
+            this.ToolStripSeparator1.Size = new Size(196, 6);
             this.AutoArrangeAllSlotsToolStripMenuItem.Name = "AutoArrangeAllSlotsToolStripMenuItem";
-            size = new Size(199, 22);
-            this.AutoArrangeAllSlotsToolStripMenuItem.Size = size;
+
+            this.AutoArrangeAllSlotsToolStripMenuItem.Size = new Size(199, 22);
             this.AutoArrangeAllSlotsToolStripMenuItem.Text = "&Auto-Arrange All Slots";
             this.ViewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[11]
             {
-        (ToolStripItem) this.tsView4Col,
-        (ToolStripItem) this.tsView3Col,
-        (ToolStripItem) this.tsView2Col,
-        (ToolStripItem) this.ToolStripSeparator13,
-        (ToolStripItem) this.tsViewIOLevels,
-        (ToolStripItem) this.tsViewRelative,
-        (ToolStripItem) this.tsViewSlotLevels,
-        (ToolStripItem) this.ToolStripSeparator2,
-        (ToolStripItem) this.tsViewActualDamage_New,
-        (ToolStripItem) this.tsViewDPS_New,
-        (ToolStripItem) this.tlsDPA
+            (ToolStripItem) this.tsView4Col,
+            (ToolStripItem) this.tsView3Col,
+            (ToolStripItem) this.tsView2Col,
+            (ToolStripItem) this.ToolStripSeparator13,
+            (ToolStripItem) this.tsViewIOLevels,
+            (ToolStripItem) this.tsViewRelative,
+            (ToolStripItem) this.tsViewSlotLevels,
+            (ToolStripItem) this.ToolStripSeparator2,
+            (ToolStripItem) this.tsViewActualDamage_New,
+            (ToolStripItem) this.tsViewDPS_New,
+            (ToolStripItem) this.tlsDPA
             });
             this.ViewToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            size = new Size(44, 20);
-            this.ViewToolStripMenuItem.Size = size;
+
+            this.ViewToolStripMenuItem.Size = new Size(44, 20);
             this.ViewToolStripMenuItem.Text = "&View";
             this.tsView4Col.Name = "tsView4Col";
-            size = new Size(282, 22);
-            this.tsView4Col.Size = size;
+
+            this.tsView4Col.Size = new Size(282, 22);
             this.tsView4Col.Text = "&4 Columns";
             this.tsView3Col.Checked = true;
             this.tsView3Col.CheckState = CheckState.Checked;
             this.tsView3Col.Name = "tsView3Col";
-            size = new Size(282, 22);
-            this.tsView3Col.Size = size;
+
+            this.tsView3Col.Size = new Size(282, 22);
             this.tsView3Col.Text = "&3 Columns";
             this.tsView2Col.Name = "tsView2Col";
-            size = new Size(282, 22);
-            this.tsView2Col.Size = size;
+
+            this.tsView2Col.Size = new Size(282, 22);
             this.tsView2Col.Text = "&2 Columns";
             this.ToolStripSeparator13.Name = "ToolStripSeparator13";
-            size = new Size(279, 6);
-            this.ToolStripSeparator13.Size = size;
+
+            this.ToolStripSeparator13.Size = new Size(279, 6);
             this.tsViewIOLevels.Checked = true;
             this.tsViewIOLevels.CheckState = CheckState.Checked;
             this.tsViewIOLevels.Name = "tsViewIOLevels";
-            size = new Size(282, 22);
-            this.tsViewIOLevels.Size = size;
+
+            this.tsViewIOLevels.Size = new Size(282, 22);
             this.tsViewIOLevels.Text = "Show &IO Levels";
             this.tsViewRelative.Name = "tsViewRelative";
-            size = new Size(282, 22);
-            this.tsViewRelative.Size = size;
+
+            this.tsViewRelative.Size = new Size(282, 22);
             this.tsViewRelative.Text = "Show &Enhancement Relative Levels";
             this.tsViewSlotLevels.Name = "tsViewSlotLevels";
-            size = new Size(282, 22);
-            this.tsViewSlotLevels.Size = size;
+
+            this.tsViewSlotLevels.Size = new Size(282, 22);
             this.tsViewSlotLevels.Text = "Show &Slot Placement Levels";
             this.ToolStripSeparator2.Name = "ToolStripSeparator2";
-            size = new Size(279, 6);
-            this.ToolStripSeparator2.Size = size;
+
+            this.ToolStripSeparator2.Size = new Size(279, 6);
             this.tsViewActualDamage_New.Checked = true;
             this.tsViewActualDamage_New.CheckState = CheckState.Checked;
             this.tsViewActualDamage_New.Name = "tsViewActualDamage_New";
-            size = new Size(282, 22);
-            this.tsViewActualDamage_New.Size = size;
+
+            this.tsViewActualDamage_New.Size = new Size(282, 22);
             this.tsViewActualDamage_New.Text = "Show Damage Per Activation (Level 50)";
             this.tsViewDPS_New.Name = "tsViewDPS_New";
-            size = new Size(282, 22);
-            this.tsViewDPS_New.Size = size;
+
+            this.tsViewDPS_New.Size = new Size(282, 22);
             this.tsViewDPS_New.Text = "Show Damage Per Second (Level 50)";
             this.tlsDPA.Name = "tlsDPA";
-            size = new Size(282, 22);
-            this.tlsDPA.Size = size;
+
+            this.tlsDPA.Size = new Size(282, 22);
             this.tlsDPA.Text = "Show Damage Per Animation (Level 50)";
             this.HelpToolStripMenuItem1.Alignment = ToolStripItemAlignment.Right;
             this.HelpToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[10]
             {
-        (ToolStripItem) this.tsHelp,
-        (ToolStripItem) this.tsPatchNotes,
-        (ToolStripItem) this.ToolStripSeparator10,
-        (ToolStripItem) this.tsBug,
-        (ToolStripItem) this.tsTitanForum,
-        (ToolStripItem) this.ToolStripSeparator23,
-        (ToolStripItem) this.tsDonate,
-        (ToolStripItem) this.ToolStripSeparator24,
-        (ToolStripItem) this.tsTitanPlanner,
-        (ToolStripItem) this.tsTitanSite
+            (ToolStripItem) this.tsHelp,
+            (ToolStripItem) this.tsPatchNotes,
+            (ToolStripItem) this.ToolStripSeparator10,
+            (ToolStripItem) this.tsBug,
+            (ToolStripItem) this.tsTitanForum,
+            (ToolStripItem) this.ToolStripSeparator23,
+            (ToolStripItem) this.tsDonate,
+            (ToolStripItem) this.ToolStripSeparator24,
+            (ToolStripItem) this.tsTitanPlanner,
+            (ToolStripItem) this.tsTitanSite
             });
             this.HelpToolStripMenuItem1.ForeColor = SystemColors.ControlText;
             this.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1";
-            size = new Size(102, 20);
-            this.HelpToolStripMenuItem1.Size = size;
+
+            this.HelpToolStripMenuItem1.Size = new Size(102, 20);
             this.HelpToolStripMenuItem1.Text = "&Help && Support";
             this.tsHelp.Name = "tsHelp";
             this.tsHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            size = new Size(258, 22);
-            this.tsHelp.Size = size;
+
+            this.tsHelp.Size = new Size(258, 22);
             this.tsHelp.Text = "&Read Me - Instructions";
             this.tsPatchNotes.Name = "tsPatchNotes";
-            size = new Size(258, 22);
-            this.tsPatchNotes.Size = size;
+
+            this.tsPatchNotes.Size = new Size(258, 22);
             this.tsPatchNotes.Text = "Read &Latest Patch Notes...";
             this.ToolStripSeparator10.Name = "ToolStripSeparator10";
-            size = new Size((int)byte.MaxValue, 6);
-            this.ToolStripSeparator10.Size = size;
+
+            this.ToolStripSeparator10.Size = new Size((int)byte.MaxValue, 6);
             this.tsBug.Name = "tsBug";
-            size = new Size(258, 22);
-            this.tsBug.Size = size;
+
+            this.tsBug.Size = new Size(258, 22);
             this.tsBug.Text = "Feedback Form / &Bug Report";
             this.tsBug.Visible = false;
             this.tsTitanForum.Name = "tsTitanForum";
-            size = new Size(258, 22);
-            this.tsTitanForum.Size = size;
+
+            this.tsTitanForum.Size = new Size(258, 22);
             this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
             this.ToolStripSeparator23.Name = "ToolStripSeparator23";
-            size = new Size((int)byte.MaxValue, 6);
-            this.ToolStripSeparator23.Size = size;
+
+            this.ToolStripSeparator23.Size = new Size((int)byte.MaxValue, 6);
             this.tsDonate.Name = "tsDonate";
-            size = new Size(258, 22);
-            this.tsDonate.Size = size;
+
+            this.tsDonate.Size = new Size(258, 22);
             this.tsDonate.Text = "Make a Donation (PayPal)";
             this.ToolStripSeparator24.Name = "ToolStripSeparator24";
-            size = new Size((int)byte.MaxValue, 6);
-            this.ToolStripSeparator24.Size = size;
+
+            this.ToolStripSeparator24.Size = new Size((int)byte.MaxValue, 6);
             this.tsTitanPlanner.Name = "tsTitanPlanner";
-            size = new Size(258, 22);
-            this.tsTitanPlanner.Size = size;
+
+            this.tsTitanPlanner.Size = new Size(258, 22);
             this.tsTitanPlanner.Text = "CoH &Planner Website";
             this.tsTitanSite.Name = "tsTitanSite";
-            size = new Size(258, 22);
-            this.tsTitanSite.Size = size;
+
+            this.tsTitanSite.Size = new Size(258, 22);
             this.tsTitanSite.Text = "&Titan Network Website";
             this.WindowToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[16]
             {
-        (ToolStripItem) this.tsViewSets,
-        (ToolStripItem) this.tsViewGraphs,
-        (ToolStripItem) this.tsViewSetCompare,
-        (ToolStripItem) this.tsViewData,
-        (ToolStripItem) this.tsViewTotals,
-        (ToolStripItem) this.ToolStripSeparator18,
-        (ToolStripItem) this.tsRecipeViewer,
-        (ToolStripItem) this.tsDPSCalc,
-        (ToolStripItem) this.ToolStripSeparator19,
-        (ToolStripItem) this.tsSetFind,
-        (ToolStripItem) this.ToolStripSeparator21,
-        (ToolStripItem) this.InGameRespecHelperToolStripMenuItem,
-        (ToolStripItem) this.ToolStripMenuItem4,
-        (ToolStripItem) this.AccoladesWindowToolStripMenuItem,
-        (ToolStripItem) this.IncarnateWindowToolStripMenuItem,
-        (ToolStripItem) this.TemporaryPowersWindowToolStripMenuItem
+            (ToolStripItem) this.tsViewSets,
+            (ToolStripItem) this.tsViewGraphs,
+            (ToolStripItem) this.tsViewSetCompare,
+            (ToolStripItem) this.tsViewData,
+            (ToolStripItem) this.tsViewTotals,
+            (ToolStripItem) this.ToolStripSeparator18,
+            (ToolStripItem) this.tsRecipeViewer,
+            (ToolStripItem) this.tsDPSCalc,
+            (ToolStripItem) this.ToolStripSeparator19,
+            (ToolStripItem) this.tsSetFind,
+            (ToolStripItem) this.ToolStripSeparator21,
+            (ToolStripItem) this.InGameRespecHelperToolStripMenuItem,
+            (ToolStripItem) this.ToolStripMenuItem4,
+            (ToolStripItem) this.AccoladesWindowToolStripMenuItem,
+            (ToolStripItem) this.IncarnateWindowToolStripMenuItem,
+            (ToolStripItem) this.TemporaryPowersWindowToolStripMenuItem
             });
             this.WindowToolStripMenuItem.ForeColor = SystemColors.ControlText;
             this.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem";
-            size = new Size(63, 20);
-            this.WindowToolStripMenuItem.Size = size;
+
+            this.WindowToolStripMenuItem.Size = new Size(63, 20);
             this.WindowToolStripMenuItem.Text = "&Window";
             this.tsViewSets.Name = "tsViewSets";
             this.tsViewSets.ShortcutKeys = System.Windows.Forms.Keys.B | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsViewSets.Size = size;
+
+            this.tsViewSets.Size = new Size(232, 22);
             this.tsViewSets.Text = "&Sets && Bonuses";
             this.tsViewGraphs.Name = "tsViewGraphs";
             this.tsViewGraphs.ShortcutKeys = System.Windows.Forms.Keys.G | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsViewGraphs.Size = size;
+
+            this.tsViewGraphs.Size = new Size(232, 22);
             this.tsViewGraphs.Text = "Power &Graphs";
             this.tsViewSetCompare.Name = "tsViewSetCompare";
             this.tsViewSetCompare.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsViewSetCompare.Size = size;
+
+            this.tsViewSetCompare.Size = new Size(232, 22);
             this.tsViewSetCompare.Text = "Powerset &Comparison";
             this.tsViewData.Name = "tsViewData";
             this.tsViewData.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsViewData.Size = size;
+
+            this.tsViewData.Size = new Size(232, 22);
             this.tsViewData.Text = "&Data View";
             this.tsViewTotals.Name = "tsViewTotals";
             this.tsViewTotals.ShortcutKeys = System.Windows.Forms.Keys.T | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsViewTotals.Size = size;
+
+            this.tsViewTotals.Size = new Size(232, 22);
             this.tsViewTotals.Text = "Advanced &Totals";
             this.ToolStripSeparator18.Name = "ToolStripSeparator18";
-            size = new Size(229, 6);
-            this.ToolStripSeparator18.Size = size;
+
+            this.ToolStripSeparator18.Size = new Size(229, 6);
             this.tsRecipeViewer.Name = "tsRecipeViewer";
             this.tsRecipeViewer.ShortcutKeys = System.Windows.Forms.Keys.R | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsRecipeViewer.Size = size;
+
+            this.tsRecipeViewer.Size = new Size(232, 22);
             this.tsRecipeViewer.Text = "&Recipe Viewer";
             this.tsDPSCalc.Name = "tsDPSCalc";
             this.tsDPSCalc.ShortcutKeys = System.Windows.Forms.Keys.Z | System.Windows.Forms.Keys.Control;
-            size = new Size(232, 22);
-            this.tsDPSCalc.Size = size;
+
+            this.tsDPSCalc.Size = new Size(232, 22);
             this.tsDPSCalc.Text = "DPS Calculator (Beta)";
             this.ToolStripSeparator19.Name = "ToolStripSeparator19";
-            size = new Size(229, 6);
-            this.ToolStripSeparator19.Size = size;
+
+            this.ToolStripSeparator19.Size = new Size(229, 6);
             this.tsSetFind.Name = "tsSetFind";
-            size = new Size(232, 22);
-            this.tsSetFind.Size = size;
+
+            this.tsSetFind.Size = new Size(232, 22);
             this.tsSetFind.Text = "Set &Bonus Finder";
             this.ToolStripSeparator21.Name = "ToolStripSeparator21";
-            size = new Size(229, 6);
-            this.ToolStripSeparator21.Size = size;
+
+            this.ToolStripSeparator21.Size = new Size(229, 6);
             this.InGameRespecHelperToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[5]
             {
-        (ToolStripItem) this.tsHelperShort,
-        (ToolStripItem) this.tsHelperLong,
-        (ToolStripItem) this.ToolStripSeparator20,
-        (ToolStripItem) this.tsHelperShort2,
-        (ToolStripItem) this.tsHelperLong2
+            (ToolStripItem) this.tsHelperShort,
+            (ToolStripItem) this.tsHelperLong,
+            (ToolStripItem) this.ToolStripSeparator20,
+            (ToolStripItem) this.tsHelperShort2,
+            (ToolStripItem) this.tsHelperLong2
             });
             this.InGameRespecHelperToolStripMenuItem.Name = "InGameRespecHelperToolStripMenuItem";
-            size = new Size(232, 22);
-            this.InGameRespecHelperToolStripMenuItem.Size = size;
+
+            this.InGameRespecHelperToolStripMenuItem.Size = new Size(232, 22);
             this.InGameRespecHelperToolStripMenuItem.Text = "In-Game &Respec Helper";
             this.tsHelperShort.Name = "tsHelperShort";
-            size = new Size(143, 22);
-            this.tsHelperShort.Size = size;
+
+            this.tsHelperShort.Size = new Size(143, 22);
             this.tsHelperShort.Text = "Profile &Short";
             this.tsHelperLong.Name = "tsHelperLong";
-            size = new Size(143, 22);
-            this.tsHelperLong.Size = size;
+
+            this.tsHelperLong.Size = new Size(143, 22);
             this.tsHelperLong.Text = "Profile &Long";
             this.ToolStripSeparator20.Name = "ToolStripSeparator20";
-            size = new Size(140, 6);
-            this.ToolStripSeparator20.Size = size;
+
+            this.ToolStripSeparator20.Size = new Size(140, 6);
             this.tsHelperShort2.Name = "tsHelperShort2";
-            size = new Size(143, 22);
-            this.tsHelperShort2.Size = size;
+
+            this.tsHelperShort2.Size = new Size(143, 22);
             this.tsHelperShort2.Text = "History S&hort";
             this.tsHelperLong2.Name = "tsHelperLong2";
-            size = new Size(143, 22);
-            this.tsHelperLong2.Size = size;
+
+            this.tsHelperLong2.Size = new Size(143, 22);
             this.tsHelperLong2.Text = "History L&ong";
             this.ToolStripMenuItem4.Name = "ToolStripMenuItem4";
-            size = new Size(229, 6);
-            this.ToolStripMenuItem4.Size = size;
+
+            this.ToolStripMenuItem4.Size = new Size(229, 6);
             this.AccoladesWindowToolStripMenuItem.Name = "AccoladesWindowToolStripMenuItem";
-            size = new Size(232, 22);
-            this.AccoladesWindowToolStripMenuItem.Size = size;
+
+            this.AccoladesWindowToolStripMenuItem.Size = new Size(232, 22);
             this.AccoladesWindowToolStripMenuItem.Text = "&Accolades Window";
             this.IncarnateWindowToolStripMenuItem.Name = "IncarnateWindowToolStripMenuItem";
-            size = new Size(232, 22);
-            this.IncarnateWindowToolStripMenuItem.Size = size;
+
+            this.IncarnateWindowToolStripMenuItem.Size = new Size(232, 22);
             this.IncarnateWindowToolStripMenuItem.Text = "&Incarnate Window";
             this.TemporaryPowersWindowToolStripMenuItem.Name = "TemporaryPowersWindowToolStripMenuItem";
-            size = new Size(232, 22);
-            this.TemporaryPowersWindowToolStripMenuItem.Size = size;
+
+            this.TemporaryPowersWindowToolStripMenuItem.Size = new Size(232, 22);
             this.TemporaryPowersWindowToolStripMenuItem.Text = "T&emporary Powers Window";
-            point = new Point(355, 80);
-            this.pbDynMode.Location = point;
+
+            this.pbDynMode.Location = new Point(355, 80);
             this.pbDynMode.Name = "pbDynMode";
-            size = new Size(105, 22);
-            this.pbDynMode.Size = size;
+
+            this.pbDynMode.Size = new Size(105, 22);
             this.pbDynMode.TabIndex = 92;
             this.pbDynMode.TabStop = false;
             this.pnlGFX.BackColor = Color.Black;
-            point = new Point(3, 3);
-            this.pnlGFX.Location = point;
+
+            this.pnlGFX.Location = new Point(3, 3);
             this.pnlGFX.Name = "pnlGFX";
-            size = new Size(584, 709);
-            this.pnlGFX.Size = size;
+
+            this.pnlGFX.Size = new Size(584, 709);
             this.pnlGFX.TabIndex = 103;
             this.pnlGFX.TabStop = false;
             this.pnlGFXFlow.AutoScroll = true;
             this.pnlGFXFlow.Controls.Add((Control)this.pnlGFX);
-            point = new Point(472, 78);
-            this.pnlGFXFlow.Location = point;
+
+            this.pnlGFXFlow.Location = new Point(472, 78);
             this.pnlGFXFlow.Name = "pnlGFXFlow";
-            size = new Size(584, 629);
-            this.pnlGFXFlow.Size = size;
+
+            this.pnlGFXFlow.Size = new Size(584, 629);
             this.pnlGFXFlow.TabIndex = 112;
             this.llAncillary.Expandable = false;
             this.llAncillary.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.llAncillary.HighVis = true;
             this.llAncillary.HoverColor = Color.WhiteSmoke;
-            point = new Point(328, 638);
-            this.llAncillary.Location = point;
+
+            this.llAncillary.Location = new Point(328, 638);
             this.llAncillary.MaxHeight = 500;
             this.llAncillary.Name = "llAncillary";
             this.llAncillary.PaddingX = 2;
@@ -3463,46 +3743,46 @@ namespace Hero_Designer
             this.llAncillary.ScrollBarColor = Color.Red;
             this.llAncillary.ScrollBarWidth = 11;
             this.llAncillary.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(138, 69);
-            this.llAncillary.Size = size;
-            size = new Size(138, 69);
-            this.llAncillary.SizeNormal = size;
+
+            this.llAncillary.Size = new Size(138, 69);
+
+            this.llAncillary.SizeNormal = new Size(138, 69);
             this.llAncillary.SuspendRedraw = false;
             this.llAncillary.TabIndex = 110;
             this.lblName.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblName.ForeColor = Color.White;
             this.lblName.InitialText = "Name:";
-            point = new Point(4, 82);
-            this.lblName.Location = point;
+
+            this.lblName.Location = new Point(4, 82);
             this.lblName.Name = "lblName";
-            size = new Size(92, 21);
-            this.lblName.Size = size;
+
+            this.lblName.Size = new Size(92, 21);
             this.lblName.TabIndex = 44;
             this.lblName.TextAlign = ContentAlignment.MiddleRight;
             this.lblOrigin.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblOrigin.InitialText = "Origin:";
-            point = new Point(2, 133);
-            this.lblOrigin.Location = point;
+
+            this.lblOrigin.Location = new Point(2, 133);
             this.lblOrigin.Name = "lblOrigin";
-            size = new Size(92, 21);
-            this.lblOrigin.Size = size;
+
+            this.lblOrigin.Size = new Size(92, 21);
             this.lblOrigin.TabIndex = 46;
             this.lblOrigin.TextAlign = ContentAlignment.MiddleRight;
             this.lblAT.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblAT.InitialText = "Archetype:";
-            point = new Point(2, 109);
-            this.lblAT.Location = point;
+
+            this.lblAT.Location = new Point(2, 109);
             this.lblAT.Name = "lblAT";
-            size = new Size(92, 21);
-            this.lblAT.Size = size;
+
+            this.lblAT.Size = new Size(92, 21);
             this.lblAT.TabIndex = 45;
             this.lblAT.TextAlign = ContentAlignment.MiddleRight;
             this.llPool0.Expandable = false;
             this.llPool0.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.llPool0.HighVis = true;
             this.llPool0.HoverColor = Color.WhiteSmoke;
-            point = new Point(328, 206);
-            this.llPool0.Location = point;
+
+            this.llPool0.Location = new Point(328, 206);
             this.llPool0.MaxHeight = 500;
             this.llPool0.Name = "llPool0";
             this.llPool0.PaddingX = 2;
@@ -3511,10 +3791,10 @@ namespace Hero_Designer
             this.llPool0.ScrollBarColor = Color.FromArgb(128, 96, 192);
             this.llPool0.ScrollBarWidth = 11;
             this.llPool0.ScrollButtonColor = Color.FromArgb(96, 0, 192);
-            size = new Size(136, 69);
-            this.llPool0.Size = size;
-            size = new Size(136, 69);
-            this.llPool0.SizeNormal = size;
+
+            this.llPool0.Size = new Size(136, 69);
+
+            this.llPool0.SizeNormal = new Size(136, 69);
             this.llPool0.SuspendRedraw = false;
             this.llPool0.TabIndex = 34;
             this.llPool1.Expandable = false;
@@ -3522,8 +3802,8 @@ namespace Hero_Designer
             this.llPool1.ForeColor = Color.Yellow;
             this.llPool1.HighVis = true;
             this.llPool1.HoverColor = Color.WhiteSmoke;
-            point = new Point(328, 314);
-            this.llPool1.Location = point;
+
+            this.llPool1.Location = new Point(328, 314);
             this.llPool1.MaxHeight = 500;
             this.llPool1.Name = "llPool1";
             this.llPool1.PaddingX = 2;
@@ -3532,18 +3812,18 @@ namespace Hero_Designer
             this.llPool1.ScrollBarColor = Color.FromArgb(128, 96, 192);
             this.llPool1.ScrollBarWidth = 8;
             this.llPool1.ScrollButtonColor = Color.FromArgb(96, 0, 192);
-            size = new Size(136, 69);
-            this.llPool1.Size = size;
-            size = new Size(136, 69);
-            this.llPool1.SizeNormal = size;
+
+            this.llPool1.Size = new Size(136, 69);
+
+            this.llPool1.SizeNormal = new Size(136, 69);
             this.llPool1.SuspendRedraw = false;
             this.llPool1.TabIndex = 35;
             this.llSecondary.Expandable = true;
             this.llSecondary.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.llSecondary.HighVis = true;
             this.llSecondary.HoverColor = Color.WhiteSmoke;
-            point = new Point(168, 206);
-            this.llSecondary.Location = point;
+
+            this.llSecondary.Location = new Point(168, 206);
             this.llSecondary.MaxHeight = 600;
             this.llSecondary.Name = "llSecondary";
             this.llSecondary.PaddingX = 2;
@@ -3552,18 +3832,18 @@ namespace Hero_Designer
             this.llSecondary.ScrollBarColor = Color.Red;
             this.llSecondary.ScrollBarWidth = 11;
             this.llSecondary.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(144, 160);
-            this.llSecondary.Size = size;
-            size = new Size(144, 160);
-            this.llSecondary.SizeNormal = size;
+
+            this.llSecondary.Size = new Size(144, 160);
+
+            this.llSecondary.SizeNormal = new Size(144, 160);
             this.llSecondary.SuspendRedraw = false;
             this.llSecondary.TabIndex = 108;
             this.llPrimary.Expandable = true;
             this.llPrimary.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.llPrimary.HighVis = true;
             this.llPrimary.HoverColor = Color.WhiteSmoke;
-            point = new Point(16, 206);
-            this.llPrimary.Location = point;
+
+            this.llPrimary.Location = new Point(16, 206);
             this.llPrimary.MaxHeight = 600;
             this.llPrimary.Name = "llPrimary";
             this.llPrimary.PaddingX = 2;
@@ -3572,10 +3852,10 @@ namespace Hero_Designer
             this.llPrimary.ScrollBarColor = Color.Red;
             this.llPrimary.ScrollBarWidth = 11;
             this.llPrimary.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(144, 160);
-            this.llPrimary.Size = size;
-            size = new Size(144, 160);
-            this.llPrimary.SizeNormal = size;
+
+            this.llPrimary.Size = new Size(144, 160);
+
+            this.llPrimary.SizeNormal = new Size(144, 160);
             this.llPrimary.SuspendRedraw = false;
             this.llPrimary.TabIndex = 107;
             this.llPool3.Expandable = false;
@@ -3583,8 +3863,8 @@ namespace Hero_Designer
             this.llPool3.ForeColor = Color.Yellow;
             this.llPool3.HighVis = true;
             this.llPool3.HoverColor = Color.WhiteSmoke;
-            point = new Point(328, 530);
-            this.llPool3.Location = point;
+
+            this.llPool3.Location = new Point(328, 530);
             this.llPool3.MaxHeight = 500;
             this.llPool3.Name = "llPool3";
             this.llPool3.PaddingX = 1;
@@ -3593,10 +3873,10 @@ namespace Hero_Designer
             this.llPool3.ScrollBarColor = Color.FromArgb(128, 96, 192);
             this.llPool3.ScrollBarWidth = 8;
             this.llPool3.ScrollButtonColor = Color.FromArgb(96, 0, 192);
-            size = new Size(136, 69);
-            this.llPool3.Size = size;
-            size = new Size(136, 69);
-            this.llPool3.SizeNormal = size;
+
+            this.llPool3.Size = new Size(136, 69);
+
+            this.llPool3.SizeNormal = new Size(136, 69);
             this.llPool3.SuspendRedraw = false;
             this.llPool3.TabIndex = 37;
             this.llPool2.Expandable = false;
@@ -3604,8 +3884,8 @@ namespace Hero_Designer
             this.llPool2.ForeColor = Color.Yellow;
             this.llPool2.HighVis = true;
             this.llPool2.HoverColor = Color.WhiteSmoke;
-            point = new Point(328, 422);
-            this.llPool2.Location = point;
+
+            this.llPool2.Location = new Point(328, 422);
             this.llPool2.MaxHeight = 500;
             this.llPool2.Name = "llPool2";
             this.llPool2.PaddingX = 1;
@@ -3614,32 +3894,32 @@ namespace Hero_Designer
             this.llPool2.ScrollBarColor = Color.FromArgb(128, 96, 192);
             this.llPool2.ScrollBarWidth = 8;
             this.llPool2.ScrollButtonColor = Color.FromArgb(96, 0, 192);
-            size = new Size(136, 69);
-            this.llPool2.Size = size;
-            size = new Size(136, 69);
-            this.llPool2.SizeNormal = size;
+
+            this.llPool2.Size = new Size(136, 69);
+
+            this.llPool2.SizeNormal = new Size(136, 69);
             this.llPool2.SuspendRedraw = false;
             this.llPool2.TabIndex = 36;
             this.lblHero.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblHero.ForeColor = Color.White;
             this.lblHero.InitialText = "Name: Level 0 Origin Archetype (Primary / Secondary)";
-            point = new Point(4, 26);
-            this.lblHero.Location = point;
+
+            this.lblHero.Location = new Point(4, 26);
             this.lblHero.Name = "lblHero";
-            size = new Size(834, 46);
-            this.lblHero.Size = size;
+
+            this.lblHero.Size = new Size(834, 46);
             this.lblHero.TabIndex = 43;
             this.lblHero.TextAlign = ContentAlignment.TopLeft;
             this.heroVillain.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.heroVillain.Checked = false;
             this.heroVillain.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.heroVillain.KnockoutLocationPoint = point;
-            point = new Point(630, 27);
-            this.heroVillain.Location = point;
+
+            this.heroVillain.KnockoutLocationPoint = new Point(0, 0);
+
+            this.heroVillain.Location = new Point(630, 27);
             this.heroVillain.Name = "heroVillain";
-            size = new Size(105, 22);
-            this.heroVillain.Size = size;
+
+            this.heroVillain.Size = new Size(105, 22);
             this.heroVillain.TabIndex = 116;
             this.heroVillain.TextOff = "Hero";
             this.heroVillain.TextOn = "Villain";
@@ -3647,13 +3927,13 @@ namespace Hero_Designer
             this.tempPowersButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.tempPowersButton.Checked = false;
             this.tempPowersButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.tempPowersButton.KnockoutLocationPoint = point;
-            point = new Point(951, 50);
-            this.tempPowersButton.Location = point;
+
+            this.tempPowersButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.tempPowersButton.Location = new Point(951, 50);
             this.tempPowersButton.Name = "tempPowersButton";
-            size = new Size(105, 22);
-            this.tempPowersButton.Size = size;
+
+            this.tempPowersButton.Size = new Size(105, 22);
             this.tempPowersButton.TabIndex = 115;
             this.tempPowersButton.TextOff = "Temp Pwrs (Off)";
             this.tempPowersButton.TextOn = "Temp Pwrs (On)";
@@ -3661,13 +3941,13 @@ namespace Hero_Designer
             this.accoladeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.accoladeButton.Checked = false;
             this.accoladeButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.accoladeButton.KnockoutLocationPoint = point;
-            point = new Point(737, 50);
-            this.accoladeButton.Location = point;
+
+            this.accoladeButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.accoladeButton.Location = new Point(737, 50);
             this.accoladeButton.Name = "accoladeButton";
-            size = new Size(105, 22);
-            this.accoladeButton.Size = size;
+
+            this.accoladeButton.Size = new Size(105, 22);
             this.accoladeButton.TabIndex = 114;
             this.accoladeButton.TextOff = "Accolades (Off)";
             this.accoladeButton.TextOn = "Accolades (On)";
@@ -3675,29 +3955,29 @@ namespace Hero_Designer
             this.incarnateButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.incarnateButton.Checked = false;
             this.incarnateButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.incarnateButton.KnockoutLocationPoint = point;
-            point = new Point(844, 50);
-            this.incarnateButton.Location = point;
+
+            this.incarnateButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.incarnateButton.Location = new Point(844, 50);
             this.incarnateButton.Name = "incarnateButton";
-            size = new Size(105, 22);
-            this.incarnateButton.Size = size;
+
+            this.incarnateButton.Size = new Size(105, 22);
             this.incarnateButton.TabIndex = 113;
             this.incarnateButton.TextOff = "Incarnate";
             this.incarnateButton.TextOn = "Incarnate";
             this.incarnateButton.Toggle = false;
-            this.I9Picker.BackColor = Color.Black;
-            this.I9Picker.ForeColor = Color.Blue;
-            this.I9Picker.Highlight = Color.MediumSlateBlue;
-            this.I9Picker.ImageSize = 30;
-            point = new Point(452, 131);
-            this.I9Picker.Location = point;
-            this.I9Picker.Name = "I9Picker";
-            this.I9Picker.Selected = Color.SlateBlue;
-            size = new Size(198, 235);
-            this.I9Picker.Size = size;
-            this.I9Picker.TabIndex = 83;
-            this.I9Picker.Visible = false;
+            this.i9Picker.BackColor = Color.Black;
+            this.i9Picker.ForeColor = Color.Blue;
+            this.i9Picker.Highlight = Color.MediumSlateBlue;
+            this.i9Picker.ImageSize = 30;
+
+            this.i9Picker.Location = new Point(452, 131);
+            this.i9Picker.Name = "I9Picker";
+            this.i9Picker.Selected = Color.SlateBlue;
+
+            this.i9Picker.Size = new Size(198, 235);
+            this.i9Picker.TabIndex = 83;
+            this.i9Picker.Visible = false;
             this.I9Popup.BackColor = Color.Black;
             this.I9Popup.BXHeight = 600;
             this.I9Popup.ColumnPosition = 0.5f;
@@ -3705,25 +3985,25 @@ namespace Hero_Designer
             this.I9Popup.Font = new Font("Arial", 13f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.I9Popup.ForeColor = Color.FromArgb(96, 48, (int)byte.MaxValue);
             this.I9Popup.InternalPadding = 3;
-            point = new Point(513, 490);
-            this.I9Popup.Location = point;
+
+            this.I9Popup.Location = new Point(513, 490);
             this.I9Popup.Name = "I9Popup";
             this.I9Popup.ScrollY = 0.0f;
             this.I9Popup.SectionPadding = 8;
-            size = new Size(400, 214);
-            this.I9Popup.Size = size;
+
+            this.I9Popup.Size = new Size(400, 214);
             this.I9Popup.TabIndex = 102;
             this.I9Popup.Visible = false;
             this.ibVetPools.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.ibVetPools.Checked = false;
             this.ibVetPools.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibVetPools.KnockoutLocationPoint = point;
-            point = new Point(441, 50);
-            this.ibVetPools.Location = point;
+
+            this.ibVetPools.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibVetPools.Location = new Point(441, 50);
             this.ibVetPools.Name = "ibVetPools";
-            size = new Size(105, 22);
-            this.ibVetPools.Size = size;
+
+            this.ibVetPools.Size = new Size(105, 22);
             this.ibVetPools.TabIndex = 111;
             this.ibVetPools.TextOff = "Veteran Pools: Off";
             this.ibVetPools.TextOn = "Veteran Pools: On";
@@ -3732,13 +4012,13 @@ namespace Hero_Designer
             this.ibPvX.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.ibPvX.Checked = false;
             this.ibPvX.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibPvX.KnockoutLocationPoint = point;
-            point = new Point(737, 27);
-            this.ibPvX.Location = point;
+
+            this.ibPvX.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibPvX.Location = new Point(737, 27);
             this.ibPvX.Name = "ibPvX";
-            size = new Size(105, 22);
-            this.ibPvX.Size = size;
+
+            this.ibPvX.Size = new Size(105, 22);
             this.ibPvX.TabIndex = 111;
             this.ibPvX.TextOff = "Mode: PvE";
             this.ibPvX.TextOn = "Mode: PvP";
@@ -3747,74 +4027,74 @@ namespace Hero_Designer
             this.dvAnchored.DrawVillain = false;
             this.dvAnchored.Floating = false;
             this.dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(16, 391);
-            this.dvAnchored.Location = point;
+
+            this.dvAnchored.Location = new Point(16, 391);
             this.dvAnchored.Name = "dvAnchored";
-            size = new Size(300, 347);
-            this.dvAnchored.Size = size;
+
+            this.dvAnchored.Size = new Size(300, 347);
             this.dvAnchored.TabIndex = 69;
             this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
             this.ibTotals.Checked = false;
             this.ibTotals.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibTotals.KnockoutLocationPoint = point;
-            point = new Point(355, 109);
-            this.ibTotals.Location = point;
+
+            this.ibTotals.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibTotals.Location = new Point(355, 109);
             this.ibTotals.Name = "ibTotals";
-            size = new Size(105, 22);
-            this.ibTotals.Size = size;
+
+            this.ibTotals.Size = new Size(105, 22);
             this.ibTotals.TabIndex = 99;
             this.ibTotals.TextOff = "View Totals";
             this.ibTotals.TextOn = "Alt Text";
             this.ibTotals.Toggle = false;
             this.ibSlotLevels.Checked = false;
             this.ibSlotLevels.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibSlotLevels.KnockoutLocationPoint = point;
-            point = new Point(244, 133);
-            this.ibSlotLevels.Location = point;
+
+            this.ibSlotLevels.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibSlotLevels.Location = new Point(244, 133);
             this.ibSlotLevels.Name = "ibSlotLevels";
-            size = new Size(105, 22);
-            this.ibSlotLevels.Size = size;
+
+            this.ibSlotLevels.Size = new Size(105, 22);
             this.ibSlotLevels.TabIndex = 101;
             this.ibSlotLevels.TextOff = "Slot Levels: Off";
             this.ibSlotLevels.TextOn = "Slot Levels: On";
             this.ibSlotLevels.Toggle = true;
             this.ibMode.Checked = false;
             this.ibMode.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibMode.KnockoutLocationPoint = point;
-            point = new Point(244, 80);
-            this.ibMode.Location = point;
+
+            this.ibMode.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibMode.Location = new Point(244, 80);
             this.ibMode.Name = "ibMode";
-            size = new Size(105, 22);
-            this.ibMode.Size = size;
+
+            this.ibMode.Size = new Size(105, 22);
             this.ibMode.TabIndex = 100;
             this.ibMode.TextOff = "Mode Switch";
             this.ibMode.TextOn = "Alt Text";
             this.ibMode.Toggle = false;
             this.ibSets.Checked = false;
             this.ibSets.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibSets.KnockoutLocationPoint = point;
-            point = new Point(244, 109);
-            this.ibSets.Location = point;
+
+            this.ibSets.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibSets.Location = new Point(244, 109);
             this.ibSets.Name = "ibSets";
-            size = new Size(105, 22);
-            this.ibSets.Size = size;
+
+            this.ibSets.Size = new Size(105, 22);
             this.ibSets.TabIndex = 98;
             this.ibSets.TextOff = "View Active Sets";
             this.ibSets.TextOn = "Alt Text";
             this.ibSets.Toggle = false;
             this.ibAccolade.Checked = false;
             this.ibAccolade.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibAccolade.KnockoutLocationPoint = point;
-            point = new Point(355, 133);
-            this.ibAccolade.Location = point;
+
+            this.ibAccolade.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibAccolade.Location = new Point(355, 133);
             this.ibAccolade.Name = "ibAccolade";
-            size = new Size(105, 22);
-            this.ibAccolade.Size = size;
+
+            this.ibAccolade.Size = new Size(105, 22);
             this.ibAccolade.TabIndex = 106;
             this.ibAccolade.TextOff = "67 Slots to go";
             this.ibAccolade.TextOn = "0 Slots placed";
@@ -3822,13 +4102,13 @@ namespace Hero_Designer
             this.ibRecipe.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.ibRecipe.Checked = false;
             this.ibRecipe.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibRecipe.KnockoutLocationPoint = point;
-            point = new Point(844, 27);
-            this.ibRecipe.Location = point;
+
+            this.ibRecipe.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibRecipe.Location = new Point(844, 27);
             this.ibRecipe.Name = "ibRecipe";
-            size = new Size(105, 22);
-            this.ibRecipe.Size = size;
+
+            this.ibRecipe.Size = new Size(105, 22);
             this.ibRecipe.TabIndex = 105;
             this.ibRecipe.TextOff = "Recipes: Off";
             this.ibRecipe.TextOn = "Recipes: On";
@@ -3836,26 +4116,26 @@ namespace Hero_Designer
             this.ibPopup.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.ibPopup.Checked = false;
             this.ibPopup.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibPopup.KnockoutLocationPoint = point;
-            point = new Point(951, 27);
-            this.ibPopup.Location = point;
+
+            this.ibPopup.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibPopup.Location = new Point(951, 27);
             this.ibPopup.Name = "ibPopup";
-            size = new Size(105, 22);
-            this.ibPopup.Size = size;
+
+            this.ibPopup.Size = new Size(105, 22);
             this.ibPopup.TabIndex = 104;
             this.ibPopup.TextOff = "Pop-Up: Off";
             this.ibPopup.TextOn = "Pop-Up: On";
             this.ibPopup.Toggle = true;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.Black;
-            size = new Size(1056, 752);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(1056, 752);
             this.Controls.Add((Control)this.heroVillain);
             this.Controls.Add((Control)this.tempPowersButton);
             this.Controls.Add((Control)this.accoladeButton);
             this.Controls.Add((Control)this.incarnateButton);
-            this.Controls.Add((Control)this.I9Picker);
+            this.Controls.Add((Control)this.i9Picker);
             this.Controls.Add((Control)this.I9Popup);
             this.Controls.Add((Control)this.ibVetPools);
             this.Controls.Add((Control)this.ibPvX);
@@ -3908,12 +4188,10 @@ namespace Hero_Designer
             this.DoubleBuffered = true;
             this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.ForeColor = Color.White;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             this.KeyPreview = true;
             this.MainMenuStrip = this.MenuBar;
-            size = new Size(640, 480);
-            this.MinimumSize = size;
-            this.Name = nameof(frmMain);
+
+            this.MinimumSize = new Size(640, 480);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Hero Designer";
             this.MenuBar.ResumeLayout(false);
@@ -3922,279 +4200,6 @@ namespace Hero_Designer
             ((ISupportInitialize)this.pnlGFX).EndInit();
             this.pnlGFXFlow.ResumeLayout(false);
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
-                this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
-                this.I9Popup.MouseMove += I9Popup_MouseMove;
-                this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
-                this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
-
-                // accoladeButton events
-                this.accoladeButton.MouseDown += accoladeButton_MouseDown;
-                this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
-
-
-                // cbAT events
-                this.cbAT.DrawItem += cbAT_DrawItem;
-                this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
-                this.cbAT.MouseMove += cbAT_MouseMove;
-                this.cbAT.MouseLeave += cbAT_MouseLeave;
-
-
-                // cbAncillary events
-                this.cbAncillary.DrawItem += cbAncillary_DrawItem;
-                this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
-                this.cbAncillary.MouseMove += cbAncillary_MouseMove;
-                this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
-
-
-                // cbOrigin events
-                this.cbOrigin.DrawItem += cbOrigin_DrawItem;
-                this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
-
-
-                // cbPool0 events
-                this.cbPool0.DrawItem += cbPool0_DrawItem;
-                this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
-                this.cbPool0.MouseMove += cbPool0_MouseMove;
-                this.cbPool0.MouseLeave += cbPool0_MouseLeave;
-
-
-                // cbPool1 events
-                this.cbPool1.DrawItem += cbPool1_DrawItem;
-                this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
-                this.cbPool1.MouseMove += cbPool1_MouseMove;
-                this.cbPool1.MouseLeave += cbPool0_MouseLeave;
-
-
-                // cbPool2 events
-                this.cbPool2.DrawItem += cbPool2_DrawItem;
-                this.cbPool2.SelectionChangeCommitted += cbPool2_SelectedIndexChanged;
-                this.cbPool2.MouseMove += cbPool2_MouseMove;
-                this.cbPool2.MouseLeave += cbPool0_MouseLeave;
-
-
-                // cbPool3 events
-                this.cbPool3.DrawItem += cbPool3_DrawItem;
-                this.cbPool3.SelectionChangeCommitted += cbPool3_SelectedIndexChanged;
-                this.cbPool3.MouseMove += cbPool3_MouseMove;
-                this.cbPool3.MouseLeave += cbPool0_MouseLeave;
-
-
-                // cbPrimary events
-                this.cbPrimary.DrawItem += cbPrimary_DrawItem;
-                this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
-                this.cbPrimary.MouseMove += cbPrimary_MouseMove;
-                this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
-
-
-                // cbSecondary events
-                this.cbSecondary.DrawItem += cbSecondary_DrawItem;
-                this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
-                this.cbSecondary.MouseMove += cbSecondary_MouseMove;
-                this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
-
-
-                // dvAnchored events
-                this.dvAnchored.MouseWheel += frmMain_MouseWheel;
-                this.dvAnchored.SizeChange += dvAnchored_SizeChange;
-                this.dvAnchored.FloatChange += dvAnchored_Float;
-                this.dvAnchored.Unlock_Click += dvAnchored_Unlock;
-                this.dvAnchored.SlotUpdate += DataView_SlotUpdate;
-                this.dvAnchored.SlotFlip += DataView_SlotFlip;
-                this.dvAnchored.Moved += dvAnchored_Move;
-                this.dvAnchored.TabChanged += dvAnchored_TabChanged;
-
-                this.heroVillain.ButtonClicked += heroVillain_ButtonClicked;
-                this.ibMode.ButtonClicked += ibMode_ButtonClicked;
-                this.ibPopup.ButtonClicked += ibPopup_ButtonClicked;
-                this.ibPvX.ButtonClicked += ibPvX_ButtonClicked;
-                this.ibRecipe.ButtonClicked += ibRecipe_ButtonClicked;
-                this.ibSets.ButtonClicked += ibSets_ButtonClicked;
-                this.ibSlotLevels.ButtonClicked += ibSlotLevels_ButtonClicked;
-                this.ibTotals.ButtonClicked += ibTotals_ButtonClicked;
-                this.incarnateButton.MouseDown += incarnateButton_MouseDown;
-
-                // lblATLocked events
-                this.lblATLocked.MouseMove += lblATLocked_MouseMove;
-                this.lblATLocked.Paint += lblATLocked_Paint;
-                this.lblATLocked.MouseLeave += lblATLocked_MouseLeave;
-
-
-                // lblLocked0 events
-                this.lblLocked0.Paint += lblLocked0_Paint;
-                this.lblLocked0.MouseMove += lblLocked0_MouseMove;
-                this.lblLocked0.MouseLeave += lblLocked0_MouseLeave;
-
-
-                // lblLocked1 events
-                this.lblLocked1.Paint += lblLocked1_Paint;
-                this.lblLocked1.MouseMove += lblLocked1_MouseMove;
-                this.lblLocked1.MouseLeave += lblLocked0_MouseLeave;
-
-
-                // lblLocked2 events
-                this.lblLocked2.Paint += lblLocked2_Paint;
-                this.lblLocked2.MouseMove += lblLocked2_MouseMove;
-                this.lblLocked2.MouseLeave += lblLocked0_MouseLeave;
-
-
-                // lblLocked3 events
-                this.lblLocked3.Paint += lblLocked3_Paint;
-                this.lblLocked3.MouseMove += lblLocked3_MouseMove;
-                this.lblLocked3.MouseLeave += lblLocked0_MouseLeave;
-
-
-                // lblLockedAncillary events
-                this.lblLockedAncillary.MouseMove += lblLockedAncillary_MouseMove;
-                this.lblLockedAncillary.Paint += lblLockedAncillary_Paint;
-                this.lblLockedAncillary.MouseLeave += lblLocked0_MouseLeave;
-
-
-                // lblLockedSecondary events
-                this.lblLockedSecondary.MouseMove += lblLockedSecondary_MouseMove;
-                this.lblLockedSecondary.MouseLeave += lblLockedSecondary_MouseLeave;
-
-
-                // llAncillary events
-                this.llAncillary.ItemHover += llAncillary_ItemHover;
-                this.llAncillary.ItemClick += llAncillary_ItemClick;
-
-
-                // llPool0 events
-                this.llPool0.ItemHover += llPool0_ItemHover;
-                this.llPool0.ItemClick += llPool0_ItemClick;
-                this.llPool0.MouseLeave += llALL_MouseLeave;
-                this.llPool0.EmptyHover += llAll_EmptyHover;
-
-
-                // llPool1 events
-                this.llPool1.ItemHover += llPool1_ItemHover;
-                this.llPool1.ItemClick += llPool1_ItemClick;
-                this.llPool1.MouseLeave += llALL_MouseLeave;
-                this.llPool1.EmptyHover += llAll_EmptyHover;
-
-
-                // llPool2 events
-                this.llPool2.ItemHover += llPool2_ItemHover;
-                this.llPool2.ItemClick += llPool2_ItemClick;
-                this.llPool2.MouseLeave += llALL_MouseLeave;
-                this.llPool2.EmptyHover += llAll_EmptyHover;
-
-
-                // llPool3 events
-                this.llPool3.ItemHover += llPool3_ItemHover;
-                this.llPool3.ItemClick += llPool3_ItemClick;
-                this.llPool3.MouseLeave += llALL_MouseLeave;
-                this.llPool3.EmptyHover += llAll_EmptyHover;
-
-
-                // llPrimary events
-                this.llPrimary.ItemHover += llPrimary_ItemHover;
-                this.llPrimary.ItemClick += llPrimary_ItemClick;
-                this.llPrimary.EmptyHover += llAll_EmptyHover;
-                this.llPrimary.ExpandChanged += PriSec_ExpandChanged;
-
-
-                // llSecondary events
-                this.llSecondary.ItemHover += llSecondary_ItemHover;
-                this.llSecondary.ItemClick += llSecondary_ItemClick;
-                this.llSecondary.EmptyHover += llAll_EmptyHover;
-                this.llSecondary.ExpandChanged += PriSec_ExpandChanged;
-
-
-                // pbDynMode events
-                this.pbDynMode.Paint += pbDynMode_Paint;
-                this.pbDynMode.Click += pbDynMode_Click;
-
-
-                // pnlGFX events
-                this.pnlGFX.MouseEnter += pnlGFX_MouseEnter;
-                this.pnlGFX.MouseLeave += pnlGFX_MouseLeave;
-                this.pnlGFX.MouseMove += pnlGFX_MouseMove;
-                this.pnlGFX.MouseUp += pnlGFX_MouseUp;
-                this.pnlGFX.MouseDoubleClick += pnlGFX_MouseDoubleClick;
-                this.pnlGFX.MouseDown += pnlGFX_MouseDown;
-                this.pnlGFX.DragOver += pnlGFX_DragOver;
-                this.pnlGFX.DragEnter += pnlGFX_DragEnter;
-                this.pnlGFX.DragDrop += pnlGFX_DragDrop;
-
-                this.pnlGFXFlow.MouseEnter += pnlGFXFlow_MouseEnter;
-
-                // tempPowersButton events
-                this.tempPowersButton.MouseDown += tempPowersButton_MouseDown;
-                this.tempPowersButton.ButtonClicked += tempPowersButton_ButtonClicked;
-
-                this.tlsDPA.Click += tlsDPA_Click;
-                this.tmrGfx.Tick += tmrGfx_Tick;
-                this.tsAdvDBEdit.Click += tsAdvDBEdit_Click;
-                this.tsAdvFreshInstall.Click += tsAdvFreshInstall_Click;
-                this.tsAdvResetTips.Click += tsAdvResetTips_Click;
-                this.tsBug.Click += tsBug_Click;
-                this.tsClearAllEnh.Click += tsClearAllEnh_Click;
-                this.tsConfig.Click += tsConfig_Click;
-                this.tsDPSCalc.Click += tsDPSCalc_Click;
-                this.tsDonate.Click += tsDonate_Click;
-                this.tsDynamic.Click += tsDynamic_Click;
-                this.tsEnhToDO.Click += tsEnhToDO_Click;
-                this.tsEnhToEven.Click += tsEnhToEven_Click;
-                this.tsEnhToMinus1.Click += tsEnhToMinus1_Click;
-                this.tsEnhToMinus2.Click += tsEnhToMinus2_Click;
-                this.tsEnhToMinus3.Click += tsEnhToMinus3_Click;
-                this.tsEnhToNone.Click += tsEnhToNone_Click;
-                this.tsEnhToPlus1.Click += tsEnhToPlus1_Click;
-                this.tsEnhToPlus2.Click += tsEnhToPlus2_Click;
-                this.tsEnhToPlus3.Click += tsEnhToPlus3_Click;
-                this.tsEnhToPlus4.Click += tsEnhToPlus4_Click;
-                this.tsEnhToPlus5.Click += tsEnhToPlus5_Click;
-                this.tsEnhToSO.Click += tsEnhToSO_Click;
-                this.tsEnhToTO.Click += tsEnhToTO_Click;
-                this.tsExport.Click += tsExport_Click;
-                this.tsExportDataLink.Click += tsExportDataLink_Click;
-                this.tsExportLong.Click += tsExportLong_Click;
-                this.tsFileNew.Click += tsFileNew_Click;
-                this.tsFileOpen.Click += tsFileOpen_Click;
-                this.tsFilePrint.Click += tsFilePrint_Click;
-                this.tsFileQuit.Click += tsFileQuit_Click;
-                this.tsFileSave.Click += tsFileSave_Click;
-                this.tsFileSaveAs.Click += tsFileSaveAs_Click;
-                this.tsFlipAllEnh.Click += tsFlipAllEnh_Click;
-                this.tsHelp.Click += tsHelp_Click;
-                this.tsHelperLong.Click += tsHelperLong_Click;
-                this.tsHelperLong2.Click += tsHelperLong2_Click;
-                this.tsHelperShort.Click += tsHelperShort_Click;
-                this.tsHelperShort2.Click += tsHelperShort2_Click;
-                this.tsIODefault.Click += tsIODefault_Click;
-                this.tsIOMax.Click += tsIOMax_Click;
-                this.tsIOMin.Click += tsIOMin_Click;
-                this.tsImport.Click += tsImport_Click;
-                this.tsLevelUp.Click += tsLevelUp_Click;
-                this.tsPatchNotes.Click += tsPatchNotes_Click;
-                this.tsRecipeViewer.Click += tsRecipeViewer_Click;
-                this.tsRemoveAllSlots.Click += tsRemoveAllSlots_Click;
-                this.tsSetFind.Click += tsSetFind_Click;
-                this.tsTitanForum.Click += tsTitanForum_Click;
-                this.tsTitanPlanner.Click += tsTitanPlanner_Click;
-                this.tsTitanSite.Click += tsTitanSite_Click;
-                this.tsUpdateCheck.Click += tsUpdateCheck_Click;
-                this.tsView2Col.Click += tsView2Col_Click;
-                this.tsView3Col.Click += tsView3Col_Click;
-                this.tsView4Col.Click += tsView4Col_Click;
-                this.tsViewActualDamage_New.Click += tsViewActualDamage_New_Click;
-                this.tsViewDPS_New.Click += tsViewDPS_New_Click;
-                this.tsViewData.Click += tsViewData_Click;
-                this.tsViewGraphs.Click += tsViewGraphs_Click;
-                this.tsViewIOLevels.Click += tsViewIOLevels_Click;
-                this.tsViewRelative.Click += tsViewRelative_Click;
-                this.tsViewSetCompare.Click += tsViewSetCompare_Click;
-                this.tsViewSets.Click += tsViewSets_Click;
-                this.tsViewSlotLevels.Click += tsViewSlotLevels_Click;
-                this.tsViewTotals.Click += tsViewTotals_Click;
-                this.txtName.TextChanged += txtName_TextChanged;
-            }
-            // finished with events
             this.PerformLayout();
         }
 
@@ -6244,7 +6249,6 @@ namespace Hero_Designer
             }
             else
             {
-                PopUp.PopupData popupData = new PopUp.PopupData();
                 Rectangle bounds = this.I9Popup.Bounds;
                 this.RedrawUnderPopup(bounds);
                 if (nIDPowerset > -1 | nIDClass > -1)
@@ -6830,8 +6834,8 @@ namespace Hero_Designer
                     return;
             }
             this.FloatTop(false);
-            if (this.dlgOpen.ShowDialog() == DialogResult.OK)
-                this.DoOpen(this.dlgOpen.FileName);
+            if (this.DlgOpen.ShowDialog() == DialogResult.OK)
+                this.DoOpen(this.DlgOpen.FileName);
             this.FloatTop(true);
         }
 
@@ -7549,7 +7553,7 @@ namespace Hero_Designer
             }
         }
 
-        void UpdatePowerList(ref ListLabelV2 llPower)
+        void UpdatePowerList(ListLabelV2 llPower)
         {
             llPower.SuspendRedraw = true;
             if (llPower.Items.Length == 0)
@@ -7571,78 +7575,49 @@ namespace Hero_Designer
 
         void UpdatePowerLists()
         {
-            bool flag1 = false;
+            bool noPrimary = false;
             if (this.llPrimary.Items.Length == 0)
-                flag1 = true;
+                noPrimary = true;
             else if (this.llPrimary.Items[this.llPrimary.Items.Length - 1].nIDSet != MidsContext.Character.Powersets[0].nID)
-                flag1 = true;
+                noPrimary = true;
             if (this.llSecondary.Items.Length == 0)
-                flag1 = true;
+                noPrimary = true;
             else if (this.llSecondary.Items[this.llSecondary.Items.Length - 1].nIDSet != MidsContext.Character.Powersets[1].nID)
-                flag1 = true;
-            bool flag2 = false;
-            if (this.llAncillary.Items.Length == 0 | MidsContext.Character.Powersets[7] == null)
-                flag2 = true;
+                noPrimary = true;
+            bool noAncillary = false;
+            if (this.llAncillary.Items.Length == 0 || MidsContext.Character.Powersets[7] == null)
+                noAncillary = true;
             else if (this.llAncillary.Items[this.llAncillary.Items.Length - 1].nIDSet != MidsContext.Character.Powersets[7].nID)
-                flag2 = true;
-            ListLabelV2 llPower;
-            if (flag1)
+                noAncillary = true;
+            if (noPrimary)
             {
                 ListLabelV2 llPrimary = this.llPrimary;
-                this.AssemblePowerList(ref llPrimary, MidsContext.Character.Powersets[0]);
+                this.AssemblePowerList(llPrimary, MidsContext.Character.Powersets[0]);
                 this.llPrimary = llPrimary;
-                llPower = this.llSecondary;
-                this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[1]);
-                this.llSecondary = llPower;
+                this.AssemblePowerList(this.llSecondary, MidsContext.Character.Powersets[1]);
             }
             else
             {
-                ListLabelV2 llPrimary = this.llPrimary;
-                this.UpdatePowerList(ref llPrimary);
-                this.llPrimary = llPrimary;
-                ListLabelV2 llSecondary = this.llSecondary;
-                this.UpdatePowerList(ref llSecondary);
-                this.llSecondary = llSecondary;
+                this.UpdatePowerList(this.llPrimary);
+                this.UpdatePowerList(this.llSecondary);
             }
-            if (flag2 | flag1)
+            if (noAncillary | noPrimary)
             {
-                llPower = this.llAncillary;
-                this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[7]);
-                this.llAncillary = llPower;
-                llPower = this.llAncillary;
-                this.UpdatePowerList(ref llPower);
-                this.llAncillary = llPower;
+                this.AssemblePowerList(this.llAncillary, MidsContext.Character.Powersets[7]);
+                this.UpdatePowerList(this.llAncillary);
             }
             else
             {
-                llPower = this.llAncillary;
-                this.UpdatePowerList(ref llPower);
-                this.llAncillary = llPower;
+                this.UpdatePowerList(this.llAncillary);
             }
-            llPower = this.llPool0;
-            this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[3]);
-            this.llPool0 = llPower;
-            llPower = this.llPool1;
-            this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[4]);
-            this.llPool1 = llPower;
-            llPower = this.llPool2;
-            this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[5]);
-            this.llPool2 = llPower;
-            llPower = this.llPool3;
-            this.AssemblePowerList(ref llPower, MidsContext.Character.Powersets[6]);
-            this.llPool3 = llPower;
-            llPower = this.llPool0;
-            this.UpdatePowerList(ref llPower);
-            this.llPool0 = llPower;
-            llPower = this.llPool1;
-            this.UpdatePowerList(ref llPower);
-            this.llPool1 = llPower;
-            llPower = this.llPool2;
-            this.UpdatePowerList(ref llPower);
-            this.llPool2 = llPower;
-            llPower = this.llPool3;
-            this.UpdatePowerList(ref llPower);
-            this.llPool3 = llPower;
+            this.AssemblePowerList(this.llPool0, MidsContext.Character.Powersets[3]);
+            this.AssemblePowerList(this.llPool1, MidsContext.Character.Powersets[4]);
+            this.AssemblePowerList(this.llPool2, MidsContext.Character.Powersets[5]);
+            this.AssemblePowerList(this.llPool3, MidsContext.Character.Powersets[6]);
+            this.UpdatePowerList(this.llPool0);
+            this.UpdatePowerList(this.llPool1);
+            this.UpdatePowerList(this.llPool2);
+            this.UpdatePowerList(this.llPool3);
         }
 
         void GameImport(string buildString)
@@ -7657,7 +7632,6 @@ namespace Hero_Designer
                     buildString = streamReader.ReadToEnd();
                     streamReader.Close();
                 }
-                frmMain.BuildFileLines[] buildFileLinesArray = new frmMain.BuildFileLines[200];
                 buildString = buildString.Replace("Level ", string.Empty);
                 string[] strArray1 = buildString.Split('\r');
                 string[] strArray2 = strArray1[0].Split(':');
@@ -7670,7 +7644,8 @@ namespace Hero_Designer
                 int num1 = 0;
                 int num2 = 0;
                 string str2 = string.Empty;
-                List<string> stringList = new List<string>();
+                var stringList = new List<string>();
+                var buildFileLinesArray = new frmMain.BuildFileLines[200];
                 for (int index1 = 0; index1 + 4 < strArray1.Length - 2; ++index1)
                 {
                     string[] strArray5 = this.BuildLineSplitter(strArray1[index1 + 4]);
