@@ -520,7 +520,11 @@ namespace Hero_Designer
             }
             if (flag2)
             {
-              IPower power1 = DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].Power;
+                            var enhIndex = this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh;
+                            var enh = DatabaseAPI.Database.Enhancements[enhIndex];
+                            IPower power1 = enh?.Power;
+                            if (power1 == null)
+                                return false;
               int num3 = power1.Effects.Length - 1;
               for (int index2 = 0; index2 <= num3; ++index2)
               {
