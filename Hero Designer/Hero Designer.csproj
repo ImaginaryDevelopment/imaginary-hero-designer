@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Hero_Designer</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Xbass\Dropbox\Pine Patch Mids Live\</PublishUrl>
+    <PublishUrl>C:\projects\CoHDesigner2\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,8 +22,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.22.0.0</ApplicationVersion>
+    <WebPage>publish.htm</WebPage>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.22.0.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -48,13 +50,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9A5C89CE957EFE8B03CE44B6154EC6A1EE7CCDC0</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A9F4DB51490BF63C9A54032AD70E1FB2F275AA72</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Hero Designer_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Hero Designer_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -69,6 +71,48 @@
   <PropertyGroup />
   <ItemGroup>
     <Content Include="Images\**\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\AttribMod.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\bbcode.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Compare.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Config.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\EClasses.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\EnhDB.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\I12.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\I9.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Levels.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Maths.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Origins.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Recipe.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Salvage.mhd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\SetTypes.mhd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Reference Include="Microsoft.VisualBasic" />
@@ -459,52 +503,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Data\AttribMod.mhd">
-      <Link>Data\AttribMod.mhd</Link>
-    </None>
-    <None Include="..\Data\bbcode.mhd">
-      <Link>Data\bbcode.mhd</Link>
-    </None>
-    <None Include="..\Data\Compare.mhd">
-      <Link>Data\Compare.mhd</Link>
-    </None>
-    <None Include="..\Data\Config.mhd">
-      <Link>Data\Config.mhd</Link>
-    </None>
-    <None Include="..\Data\EClasses.mhd">
-      <Link>Data\EClasses.mhd</Link>
-    </None>
-    <None Include="..\Data\EnhDB.mhd">
-      <Link>Data\EnhDB.mhd</Link>
-    </None>
-    <None Include="..\Data\I12.mhd">
-      <Link>Data\I12.mhd</Link>
-    </None>
-    <None Include="..\Data\I9.mhd">
-      <Link>Data\I9.mhd</Link>
-    </None>
-    <None Include="..\Data\Levels.mhd">
-      <Link>Data\Levels.mhd</Link>
-    </None>
-    <None Include="..\Data\Maths.mhd">
-      <Link>Data\Maths.mhd</Link>
-    </None>
-    <None Include="..\Data\Origins.mhd">
-      <Link>Data\Origins.mhd</Link>
-    </None>
-    <None Include="..\Data\patchnotes.rtf">
-      <Link>Data\patchnotes.rtf</Link>
-    </None>
-    <None Include="..\Data\Recipe.mhd">
-      <Link>Data\Recipe.mhd</Link>
-    </None>
-    <None Include="..\Data\Salvage.mhd">
-      <Link>Data\Salvage.mhd</Link>
-    </None>
-    <None Include="..\Data\SetTypes.mhd">
-      <Link>Data\SetTypes.mhd</Link>
-    </None>
     <None Include="app.config" />
+    <None Include="Hero Designer_TemporaryKey.pfx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
