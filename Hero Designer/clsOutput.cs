@@ -58,7 +58,7 @@ namespace Hero_Designer
       int idFormat = this.idFormat;
       this.Plain = formatCode[idFormat].BoldOn + formatCode[idFormat].ColourOn + formatCode[idFormat].ItalicOn + formatCode[idFormat].SizeOn + formatCode[idFormat].UnderlineOn == "";
       string str2 = MidsContext.Character.Alignment.ToString();
-      string str3 = str1 + this.formatColor(this.formatBold(str2 + " Plan by Mids' " + str2 + " Designer " + MainModule.MidsController.HeroDesignerVersion.ToString()), ExportConfig.Element.Heading) + this.LineBreak() + this.formatColor(this.formatBold("http://www.cohplanner.com/"), ExportConfig.Element.Heading) + this.LineBreak();
+      string str3 = str1 + this.formatColor(this.formatBold(str2 + " Plan by Hero " + str2 + " Designer " + MainModule.MidsController.HeroDesignerVersion.ToString()), ExportConfig.Element.Heading) + this.LineBreak() + this.formatColor(this.formatBold(@"https://github.com/ImaginaryDevelopment/imaginary-hero-designer"), ExportConfig.Element.Heading) + this.LineBreak();
       if (iDataLink != "" & !this.Plain)
         str3 = str3 + this.LineBreak() + this.formatColor(this.formatUnderline(this.formatBold(iDataLink)), ExportConfig.Element.Title) + this.LineBreak();
       string str4 = str3 + this.LineBreak();

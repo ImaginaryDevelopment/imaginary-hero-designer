@@ -124,7 +124,7 @@ public static class Files
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Unable to create output folder: " + ex.Message);
+            MessageBox.Show("Unable to create output folder: " + ex.Message);
         }
         return Files.FNameConfig;
     }

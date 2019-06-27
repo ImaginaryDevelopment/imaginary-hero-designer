@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: C:\Users\Xbass\Desktop\Hero Designer.exe-->
   <PropertyGroup>
@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
-    <Compile Include="frmMain.Designer.cs" >
+    <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
@@ -94,9 +94,6 @@
     <Compile Include="clsXMLUpdate.cs" />
     <Compile Include="DataView.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="frmAbout.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAccolade.cs">
       <SubType>Form</SubType>
@@ -271,9 +268,6 @@
   <ItemGroup>
     <EmbeddedResource Include="DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccolade.resx">
       <DependentUpon>frmAccolade.cs</DependentUpon>

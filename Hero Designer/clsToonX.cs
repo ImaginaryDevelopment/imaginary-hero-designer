@@ -1295,7 +1295,7 @@ namespace Hero_Designer
       IPower power1;
       if (nIDPower < 0)
       {
-        power1 = (IPower) null;
+        power1 = null;
       }
       else
       {
@@ -1420,11 +1420,11 @@ namespace Hero_Designer
       if (iPower > -1)
       {
         if (this.CurrentBuild.Powers.Count - 1 < iPower || this.CurrentBuild.Powers[iPower].NIDPower < 0)
-          return (IPower) null;
+          return null;
         nIDPower = this.CurrentBuild.Powers[iPower].NIDPower;
       }
       else if (nIDPower <= -1 || nIDPower > DatabaseAPI.Database.Power.Length - 1)
-        return (IPower) null;
+        return null;
       IPower powerMath = this.GBPA_SubPass0_AssemblePowerEntry(nIDPower, iPower);
       int num = this.CurrentBuild.Powers.Count - 1;
       for (int index = 0; index <= num; ++index)
@@ -1462,7 +1462,7 @@ namespace Hero_Designer
 
     public IPower GetEnhancedPower(int iPower)
     {
-      return !(iPower < 0 | this._buffedPower.Length - 1 < iPower) ? this._buffedPower[iPower] : (IPower) null;
+      return !(iPower < 0 | this._buffedPower.Length - 1 < iPower) ? this._buffedPower[iPower] : null;
     }
 
     public int[] GetEnhancements(int iPowerSlot)
@@ -2499,7 +2499,7 @@ label_6:
           ProjectData.ClearProjectError();
           return flag2;
         }
-        Stream mStream = (Stream) null;
+        Stream mStream = null;
         if (this.Load(FileIO.AddSlash(Application.StartupPath) + "import.tmp", ref mStream))
         {
           int num = (int) Interaction.MsgBox((object) "Build data imported!", MsgBoxStyle.Information, (object) "Forum Import");

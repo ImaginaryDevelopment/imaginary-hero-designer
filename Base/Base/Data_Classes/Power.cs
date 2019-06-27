@@ -13,7 +13,7 @@ namespace Base.Data_Classes
     {
       get
       {
-        return !(this.PowerSetID < 0 | this.PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[this.PowerSetID] : (IPowerset) null;
+        return !(this.PowerSetID < 0 | this.PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[this.PowerSetID] : null;
       }
       set
       {

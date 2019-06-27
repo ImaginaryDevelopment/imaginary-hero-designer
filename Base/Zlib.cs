@@ -60,7 +60,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error occurred while unpacking: " + ex.Message, "Buh?");
+            MessageBox.Show("An error occurred while unpacking: " + ex.Message, "Buh?");
             return 0;
         }
         Zlib.PackHeader packHeader = new Zlib.PackHeader();
@@ -110,7 +110,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error occurred while compressing: " + ex.Message, "Buh?");
+            MessageBox.Show("An error occurred while compressing: " + ex.Message, "Buh?");
             return false;
         }
         bool flag;
@@ -131,7 +131,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error occurred during compression: " + ex.Message, "Buh?");
+            MessageBox.Show("An error occurred during compression: " + ex.Message, "Buh?");
             binaryReader.Close();
             fileStream.Close();
             flag = false;
@@ -161,7 +161,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error occurred while opening files for writing for decompression: " + ex.Message, "Buh?");
+            MessageBox.Show("An error occurred while opening files for writing for decompression: " + ex.Message, "Buh?");
             return false;
         }
         bool flag;
@@ -178,7 +178,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error occurred during decompression: " + ex.Message, "Buh?");
+            MessageBox.Show("An error occurred during decompression: " + ex.Message, "Buh?");
             reader.Close();
             fileStream.Close();
             flag = false;
@@ -196,23 +196,23 @@ public class Zlib
         switch (num1)
         {
             case -5:
-                int num2 = (int)MessageBox.Show("Unable to compress data chunk, output buffer is too small.", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, output buffer is too small.", "Compression Error");
                 break;
             case -4:
-                int num3 = (int)MessageBox.Show("Unable to compress data chunk, out of memory.", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, out of memory.", "Compression Error");
                 break;
             case -3:
-                int num4 = (int)MessageBox.Show("Unable to compress data chunk, it seems to be corrupted. This should be impossible during compression.", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, it seems to be corrupted. This should be impossible during compression.", "Compression Error");
                 break;
             case -2:
-                int num5 = (int)MessageBox.Show("Unable to compress data chunk, compression level was invalid.", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, compression level was invalid.", "Compression Error");
                 break;
             case 0:
                 Array.Resize<byte>(ref array, destLength);
                 numArray = array;
                 goto label_8;
             default:
-                int num6 = (int)MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + (object)num1 + ".", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + (object)num1 + ".", "Compression Error");
                 return new byte[0];
         }
         numArray = new byte[0];
@@ -306,7 +306,7 @@ public class Zlib
         catch (Exception ex)
         {
             byte[] numArray2 = new byte[0];
-            int num = (int)MessageBox.Show("Conversion to binary failed at the 'DecodeBytes' stage. The data may be corrupt or incomplete. Error:" + ex.Message, "Error!");
+            MessageBox.Show("Conversion to binary failed at the 'DecodeBytes' stage. The data may be corrupt or incomplete. Error:" + ex.Message, "Error!");
             numArray1 = numArray2;
         }
         return numArray1;
@@ -449,7 +449,7 @@ public class Zlib
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error has occurred while checking to see if the downloaded file has been applied. Error: " + ex.Message, "Whoa!");
+            MessageBox.Show("An error has occurred while checking to see if the downloaded file has been applied. Error: " + ex.Message, "Whoa!");
             return false;
         }
         bool flag = binaryReader.ReadString() == "MHDPackZ";

@@ -269,7 +269,7 @@ namespace Hero_Designer
     static void btnStaticExport_Click(object sender, EventArgs e)
 
     {
-      string str1 = "Static Indexes, Mids' version " + Conversions.ToString(1.962f) + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
+      string str1 = "Static Indexes, App version " + Base.Master_Classes.MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
       foreach (Power power in DatabaseAPI.Database.Power)
       {
         if (power.PowerSet.SetType != Enums.ePowerSetType.Boost)
@@ -311,7 +311,7 @@ namespace Hero_Designer
       if (this.bFrm == null)
         return;
       this.bFrm.Close();
-      this.bFrm = (frmBusy) null;
+      this.bFrm = null;
     }
 
     void BusyMsg(string sMessage)
@@ -326,14 +326,12 @@ namespace Hero_Designer
     }
 
     void Button2_Click(object sender, EventArgs e)
-
     {
       DatabaseAPI.AssignStaticIndexValues();
       int num = (int) Interaction.MsgBox((object) "Static Index values assigned.", MsgBoxStyle.Information, (object) "Indexing Complete");
     }
 
     void DisplayInfo()
-
     {
       this.mod_Date.Text = Strings.Format((object) DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
       this.mod_Revision.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Revision);
@@ -374,13 +372,11 @@ namespace Hero_Designer
     }
 
     void frmCSV_Load(object sender, EventArgs e)
-
     {
       this.DisplayInfo();
     }
 
     void fx_Import_Click(object sender, EventArgs e)
-
     {
       int num = (int) new frmImportEffects().ShowDialog();
       this.DisplayInfo();
@@ -388,7 +384,6 @@ namespace Hero_Designer
 
     [DebuggerStepThrough]
     void InitializeComponent()
-
     {
       ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmCSV));
       this.GroupBox1 = new GroupBox();

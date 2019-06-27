@@ -99,7 +99,7 @@ public class Build
       if (power1.Power != null && power1.Power.PowerIndex == power.PowerIndex)
         return power1;
     }
-    return (PowerEntry) null;
+    return null;
   }
 
   public Build(Character owner, IList<LevelMap> iLevels)
@@ -963,7 +963,7 @@ public class Build
       if (!i9SetData.Empty)
         this.SetBonus.Add(i9SetData);
     }
-    this._setBonusVirtualPower = (IPower) null;
+    this._setBonusVirtualPower = null;
   }
 
   IPower GetSetBonusVirtualPower()

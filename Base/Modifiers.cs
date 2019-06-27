@@ -20,7 +20,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return false;
         }
         this.Modifier = new Modifiers.ModifierTable[0];
@@ -48,7 +48,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return false;
         }
         string iLine2;
@@ -103,14 +103,14 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message + (object)'\n' + (object)'\n' + "Modifier tables couldn't be loaded.");
+            MessageBox.Show(ex.Message + (object)'\n' + (object)'\n' + "Modifier tables couldn't be loaded.");
             return false;
         }
         try
         {
             if (reader.ReadString() != "Mids' Hero Designer Attribute Modifier Tables")
             {
-                int num = (int)MessageBox.Show("Modifier table header wasn't found, file may be corrupt!");
+                MessageBox.Show("Modifier table header wasn't found, file may be corrupt!");
                 reader.Close();
                 fileStream.Close();
                 return false;
@@ -138,7 +138,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Modifier table file isn't how it should be (" + ex.Message + ")" + (object)'\n' + "No modifiers loaded.");
+            MessageBox.Show("Modifier table file isn't how it should be (" + ex.Message + ")" + (object)'\n' + "No modifiers loaded.");
             this.Modifier = new Modifiers.ModifierTable[0];
             reader.Close();
             fileStream.Close();
@@ -158,7 +158,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return;
         }
         try
@@ -174,7 +174,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
         }
         finally
         {
