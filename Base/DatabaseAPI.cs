@@ -852,7 +852,7 @@ public static class DatabaseAPI
         {
             if (reader.ReadString() != "Mids' Hero Designer Database MK II")
             {
-                int num1 = (int)MessageBox.Show("Expected MHD header, got something else!", "Eeeeee!");
+                MessageBox.Show("Expected MHD header, got something else!", "Eeeeee!");
             }
             DatabaseAPI.Database.Version = reader.ReadSingle();
             int year = reader.ReadInt32();
@@ -867,7 +867,7 @@ public static class DatabaseAPI
             DatabaseAPI.Database.Issue = reader.ReadInt32();
             if (reader.ReadString() != "BEGIN:ARCHETYPES")
             {
-                int num2 = (int)MessageBox.Show("Expected Archetype Data, got something else!", "Eeeeee!");
+                MessageBox.Show("Expected Archetype Data, got something else!", "Eeeeee!");
                 reader.Close();
                 fileStream.Close();
                 return false;
@@ -881,7 +881,7 @@ public static class DatabaseAPI
                 };
             if (reader.ReadString() != "BEGIN:POWERSETS")
             {
-                int num2 = (int)MessageBox.Show("Expected Powerset Data, got something else!", "Eeeeee!");
+                MessageBox.Show("Expected Powerset Data, got something else!", "Eeeeee!");
                 reader.Close();
                 fileStream.Close();
                 return false;
@@ -904,7 +904,7 @@ public static class DatabaseAPI
             }
             if (reader.ReadString() != "BEGIN:POWERS")
             {
-                int num2 = (int)MessageBox.Show("Expected Power Data, got something else!", "Eeeeee!");
+                MessageBox.Show("Expected Power Data, got something else!", "Eeeeee!");
                 reader.Close();
                 fileStream.Close();
                 return false;
@@ -926,7 +926,7 @@ public static class DatabaseAPI
             }
             if (reader.ReadString() != "BEGIN:SUMMONS")
             {
-                int num2 = (int)MessageBox.Show("Expected Summon Data, got something else!", "Eeeeee!");
+                MessageBox.Show("Expected Summon Data, got something else!", "Eeeeee!");
                 reader.Close();
                 fileStream.Close();
                 return false;
@@ -969,7 +969,7 @@ public static class DatabaseAPI
                     {
                         if (binaryReader.ReadString() != "Mids' Hero Designer Database MK II")
                         {
-                            int num3 = (int)MessageBox.Show("Expected MHD header, got something else!");
+                            MessageBox.Show("Expected MHD header, got something else!");
                         }
                         num1 = binaryReader.ReadSingle();
                     }
@@ -997,7 +997,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message, "Error!");
+            MessageBox.Show(ex.Message, "Error!");
             return false;
         }
         string[] strArray = FileIO.IOGrab(iStream);
@@ -1050,7 +1050,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             streamReader.Close();
             return;
         }
@@ -1209,7 +1209,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message + "\n\nRecipe database couldn't be loaded.");
+            MessageBox.Show(ex.Message + "\n\nRecipe database couldn't be loaded.");
             return;
         }
         if (!(reader.ReadString() != "Mids' Hero Designer Recipe Database"))
@@ -1232,7 +1232,7 @@ public static class DatabaseAPI
         }
         else
         {
-            int num = (int)MessageBox.Show("Recipe Database header wasn't found, file may be corrupt!");
+            MessageBox.Show("Recipe Database header wasn't found, file may be corrupt!");
             reader.Close();
             fileStream.Close();
         }
@@ -1250,7 +1250,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return;
         }
         try
@@ -1267,7 +1267,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             writer.Close();
             fileStream.Close();
         }
@@ -1286,14 +1286,14 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message + "\n\nSalvage database couldn't be loaded.");
+            MessageBox.Show(ex.Message + "\n\nSalvage database couldn't be loaded.");
             return;
         }
         try
         {
             if (reader.ReadString() != "Mids' Hero Designer Salvage Database")
             {
-                int num = (int)MessageBox.Show("Salvage Database header wasn't found, file may be corrupt!");
+                MessageBox.Show("Salvage Database header wasn't found, file may be corrupt!");
                 reader.Close();
                 fileStream.Close();
             }
@@ -1306,7 +1306,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Salvage Database file isn't how it should be (" + ex.Message + ")\nNo salvage loaded.");
+            MessageBox.Show("Salvage Database file isn't how it should be (" + ex.Message + ")\nNo salvage loaded.");
             DatabaseAPI.Database.Salvage = new Salvage[0];
             reader.Close();
             fileStream.Close();
@@ -1325,7 +1325,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return;
         }
         try
@@ -1339,7 +1339,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             writer.Close();
             fileStream.Close();
         }
@@ -1357,7 +1357,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return;
         }
         try
@@ -1375,7 +1375,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             writer.Close();
             fileStream.Close();
         }
@@ -1394,14 +1394,14 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message + "\n\nNo Enhancements have been loaded.", "EnhDB Load Failed");
+            MessageBox.Show(ex.Message + "\n\nNo Enhancements have been loaded.", "EnhDB Load Failed");
             return;
         }
         try
         {
             if (reader.ReadString() != "Mids' Hero Designer Enhancement Database")
             {
-                int num = (int)MessageBox.Show("Enhancement Database header wasn't found, file may be corrupt!", "Meep!");
+                MessageBox.Show("Enhancement Database header wasn't found, file may be corrupt!", "Meep!");
                 reader.Close();
                 fileStream.Close();
             }
@@ -1439,7 +1439,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Enhancement Database file isn't how it should be (" + ex.Message + ")\nNo Enhancements have been loaded.", "Huh...");
+            MessageBox.Show("Enhancement Database file isn't how it should be (" + ex.Message + ")\nNo Enhancements have been loaded.", "Huh...");
             DatabaseAPI.Database.Enhancements = new IEnhancement[0];
             reader.Close();
             fileStream.Close();
@@ -1480,7 +1480,7 @@ public static class DatabaseAPI
             }
             catch (Exception ex)
             {
-                int num = (int)MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 streamReader.Close();
                 return false;
             }
@@ -1501,7 +1501,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return;
         }
         try
@@ -1554,7 +1554,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             streamReader.Close();
             return;
         }
@@ -1571,7 +1571,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             return false;
         }
         try
@@ -1624,7 +1624,7 @@ public static class DatabaseAPI
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message);
             streamReader.Close();
             return false;
         }
@@ -1932,7 +1932,7 @@ public static class DatabaseAPI
         }
         if (!flag)
             return;
-        int num = (int)MessageBox.Show("One or more enhancements had difficulty being matched to their invention set. You should check the database for misplaced Invention Set enhancements.\n" + str, "Mismatch Detected");
+        MessageBox.Show("One or more enhancements had difficulty being matched to their invention set. You should check the database for misplaced Invention Set enhancements.\n" + str, "Mismatch Detected");
     }
 
     static int EnhancementClassIdFromName(string iName)

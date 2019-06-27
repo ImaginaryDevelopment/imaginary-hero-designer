@@ -9,19 +9,11 @@ namespace Base.Document_Classes
 {
   public class Print : IDisposable
   {
-    const int TextBase = 8;
-
-    const float LineSpace = 1.25f;
-
     public PrintDocument Document;
     int _pageNumber;
-
     int _pIndex;
-
     bool _printingProfile;
-
     bool _printingHistory;
-
     bool _endOfPage;
 
     Print.PrintWhat _sectionCompleted;
@@ -42,7 +34,7 @@ namespace Base.Document_Classes
       if (!this.Document.PrinterSettings.IsValid)
       {
         int num = (int) MessageBox.Show(this.Document.PrinterSettings.PrinterName + " is not a valid printer!");
-        this.Document = (PrintDocument) null;
+        this.Document = null;
       }
       else
       {
@@ -67,7 +59,6 @@ namespace Base.Document_Classes
     }
 
     void PrintBegin(object sender, PrintEventArgs e)
-
     {
       this._pageNumber = 0;
       this._pIndex = 0;
@@ -77,13 +68,11 @@ namespace Base.Document_Classes
     }
 
     void PrintEnd(object sender, PrintEventArgs e)
-
     {
       this.Document = new PrintDocument();
     }
 
     void PrintPage(object sender, PrintPageEventArgs args)
-
     {
       RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
       ++this._pageNumber;
@@ -103,7 +92,6 @@ namespace Base.Document_Classes
     }
 
     int PageBorder(Rectangle bounds, PrintPageEventArgs args)
-
     {
       SolidBrush solidBrush = new SolidBrush(Color.Black);
       Pen pen = new Pen(Color.Black, 3f);
@@ -140,7 +128,6 @@ namespace Base.Document_Classes
     }
 
     void PrintHistory(Rectangle bounds, PrintPageEventArgs args)
-
     {
       int top = bounds.Top;
       SolidBrush solidBrush = new SolidBrush(Color.Black);
@@ -152,9 +139,9 @@ namespace Base.Document_Classes
       HistoryMap[] historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, MidsContext.Config.PrintHistoryIOLevels);
       int num1 = 0;
       string s = ((int) MidsContext.Character.Alignment).ToString() + " CurrentBuild";
-      RectangleF layoutRectangle = new RectangleF((float) (bounds.Left + 15), (float) top, (float) bounds.Width, 12.5f);
+      RectangleF layoutRectangle = new RectangleF(bounds.Left + 15, top, bounds.Width, 12.5f);
       Font font1 = new Font("Arial", 10f, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Pixel);
-      args.Graphics.DrawString(s, font1, (Brush) solidBrush, layoutRectangle, format);
+      args.Graphics.DrawString(s, font1, solidBrush, layoutRectangle, format);
       int num2 = top + Convert.ToInt32(12.5f);
       int num3 = num2;
       Font font2 = new Font("Arial", 10f, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -167,7 +154,7 @@ namespace Base.Document_Classes
             num2 += Convert.ToInt32(10f);
             num1 = historyMapArray[index].Level;
           }
-          layoutRectangle = new RectangleF((float) (bounds.Left + 15), (float) num2, (float) (bounds.Width / 2 - 15), 12.5f);
+          layoutRectangle = new RectangleF(bounds.Left + 15, num2, (float) (bounds.Width / 2 - 15), 12.5f);
           num2 += 12;
         }
         else
@@ -178,16 +165,15 @@ namespace Base.Document_Classes
               num3 += 10;
             num1 = historyMapArray[index].Level;
           }
-          layoutRectangle = new RectangleF((float) (bounds.Left + bounds.Width / 2), (float) num3, (float) bounds.Width / 2f, 12.5f);
+          layoutRectangle = new RectangleF(bounds.Left + bounds.Width / 2, num3, bounds.Width / 2f, 12.5f);
           num3 += 12;
         }
-        args.Graphics.DrawString(historyMapArray[index].Text, font2, (Brush) solidBrush, layoutRectangle, format);
+        args.Graphics.DrawString(historyMapArray[index].Text, font2, solidBrush, layoutRectangle, format);
       }
       this._printingHistory = false;
     }
 
     static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
-
     {
       SolidBrush solidBrush = new SolidBrush(Color.Black);
       int top = bounds.Top;
@@ -607,7 +593,7 @@ namespace Base.Document_Classes
       if (!disposing || this.Document == null)
         return;
       this.Document.Dispose();
-      this.Document = (PrintDocument) null;
+      this.Document = null;
     }
 
     enum PrintWhat

@@ -29,7 +29,7 @@ public class PowerEntry : ICloneable
   {
     get
     {
-      return this.NIDPower >= 0 && this.NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[this.NIDPower] : (IPower) null;
+      return this.NIDPower >= 0 && this.NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[this.NIDPower] : null;
     }
   }
 
@@ -37,7 +37,7 @@ public class PowerEntry : ICloneable
   {
     get
     {
-      return this.Power != null ? DatabaseAPI.Database.Powersets[this.Power.PowerSetID] : (IPowerset) null;
+      return this.Power != null ? DatabaseAPI.Database.Powersets[this.Power.PowerSetID] : null;
     }
   }
 

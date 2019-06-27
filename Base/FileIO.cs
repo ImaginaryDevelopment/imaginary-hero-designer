@@ -236,7 +236,7 @@ public static class FileIO
     }
     string str = Encoding.ASCII.GetString(bytes, 0, count);
     if (string.IsNullOrEmpty(str) & flag)
-      str = (string) null;
+      str = null;
     return str;
   }
 }

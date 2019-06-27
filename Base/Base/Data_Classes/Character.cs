@@ -61,7 +61,7 @@ namespace Base.Data_Classes
     {
       get
       {
-        return this.Builds.Length > 0 ? this.Builds[0] : (Build) null;
+        return this.Builds.Length > 0 ? this.Builds[0] : null;
       }
     }
 
@@ -460,7 +460,7 @@ namespace Base.Data_Classes
     {
       IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
       if (powersetIndexes.Length == 0)
-        this.Powersets[7] = (IPowerset) null;
+        this.Powersets[7] = null;
       else if (this.Powersets[7] == null)
       {
         this.Powersets[7] = powersetIndexes[0];

@@ -83,7 +83,6 @@ namespace Hero_Designer.My
       [ThreadStatic]
       static Hashtable m_FormBeingCreated;
 
-      public frmAbout m_frmAbout;
       public frmBusy m_frmBusy;
       public frmColourSettings m_frmColourSettings;
       public frmCSV m_frmCSV;
@@ -115,23 +114,6 @@ namespace Hero_Designer.My
       public frmSetListing m_frmSetListing;
       public frmTweakMatching m_frmTweakMatching;
       public frmZStatus m_frmZStatus;
-
-      public frmAbout frmAbout
-      {
-        get
-        {
-          this.m_frmAbout = MyProject.MyForms.Create__Instance__<frmAbout>(this.m_frmAbout);
-          return this.m_frmAbout;
-        }
-        set
-        {
-          if (value == this.m_frmAbout)
-            return;
-          if (value != null)
-            throw new ArgumentException("Property can only be set to Nothing");
-          this.Dispose__Instance__<frmAbout>(ref this.m_frmAbout);
-        }
-      }
 
       public frmBusy frmBusy
       {

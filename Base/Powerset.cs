@@ -26,7 +26,7 @@ public class Powerset : IPowerset, IComparable
     set
     {
       this._fullName = value;
-      this._groupName = (string) null;
+      this._groupName = null;
     }
   }
 

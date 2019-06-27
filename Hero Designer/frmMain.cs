@@ -1981,7 +1981,7 @@ namespace Hero_Designer
                 }
                 if (MidsContext.Config.FreshInstall)
                 {
-                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox((object)("Welcome to Pine's Hero Designer " + Strings.Format((object)1.962f, "#0.00") + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Welcome!") == MsgBoxResult.Yes;
+                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox(("Welcome to Pine's Hero Designer " + MidsContext.AppVersion + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Welcome!") == MsgBoxResult.Yes;
                     MidsContext.Config.DefaultSaveFolder = "";
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
@@ -1989,7 +1989,7 @@ namespace Hero_Designer
                 string str1 = Interaction.Command();
                 if (str1.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
-                    int num = (int)Interaction.MsgBox((object)"As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", MsgBoxStyle.Information, (object)"Recovery Mode");
+                    Interaction.MsgBox("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", MsgBoxStyle.Information, (object)"Recovery Mode");
                     clsXMLUpdate.GoToCoHPlanner();
                     ProjectData.EndApp();
                 }

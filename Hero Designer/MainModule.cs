@@ -63,20 +63,15 @@ namespace Hero_Designer
                     iFrm.SetMessage("Loading Powerset Database...");
                 if (!DatabaseAPI.LoadLevelsDatabase())
                 {
-                    int num = (int)Interaction.MsgBox((object)"Failed to load Levelling data file! The program is unable to proceed.\r\nSuggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, (object)"Error");
+                    Interaction.MsgBox(
+                        "Failed to load Levelling data file! The program is unable to proceed.\r\n" +
+                        "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, (object)"Error");
                     ProjectData.EndApp();
                 }
                 if (!DatabaseAPI.LoadMainDatabase())
                 {
-                    if (Interaction.MsgBox((object)"There was an error reading the database. Attempt to download replacement?", MsgBoxStyle.YesNo | MsgBoxStyle.Information, (object)"Dang") == MsgBoxResult.Yes)
-                    {
-                        DatabaseAPI.Database.Date = new DateTime(1, 1, 1);
-                        clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
-                        IMessager iLoadFrm = (IMessager)null;
-                        int num = (int)clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
-                    }
-                    else
-                        ProjectData.EndApp();
+                    Interaction.MsgBox("There was an error reading the database. Aborting.", MsgBoxStyle.Critical, "Dang");
+                    ProjectData.EndApp();
                 }
                 if (!DatabaseAPI.LoadMaths())
                     ProjectData.EndApp();

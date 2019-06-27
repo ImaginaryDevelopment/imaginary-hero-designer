@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("None")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyFileVersion("2.1.3.1")]
+[assembly: AssemblyFileVersion("2.1.3.2")]
 [assembly: AssemblyProduct("Pines' Hero/Villain Designer")]
 [assembly: AssemblyTitle("Pines' Hero Designer")]
 [assembly: AssemblyTrademark("")]

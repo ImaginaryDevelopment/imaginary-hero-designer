@@ -36,7 +36,7 @@ namespace Base.Display
           graphics = this._surface;
         }
         else
-          graphics = (Graphics) null;
+          graphics = null;
         return graphics;
       }
     }

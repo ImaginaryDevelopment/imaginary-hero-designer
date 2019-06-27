@@ -149,7 +149,7 @@ namespace Hero_Designer
       if (this._bFrm == null)
         return;
       this._bFrm.Close();
-      this._bFrm = (frmBusy) null;
+      this._bFrm = null;
     }
 
     void BusyMsg(string sMessage)
