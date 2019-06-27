@@ -946,12 +946,13 @@ public static class DatabaseAPI
 
     public static void LoadDatabaseVersion()
     {
-        DatabaseAPI.Database.Version = DatabaseAPI.GetDatabaseVersion(Files.SelectDataFileLoad("I12.mhd"));
+        var target = Files.SelectDataFileLoad("I12.mhd");
+        DatabaseAPI.Database.Version = DatabaseAPI.GetDatabaseVersion(target);
     }
 
-    static float GetDatabaseVersion(string fName)
-
+    static float GetDatabaseVersion(string fp)
     {
+        var fName = System.Diagnostics.Debugger.IsAttached? Files.SearchUp("Data", fp) : fp;
         float num1 = -1f;
         float num2;
         if (!File.Exists(fName))

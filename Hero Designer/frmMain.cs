@@ -2085,20 +2085,21 @@ namespace Hero_Designer
                 this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
                 this.ibPopup.Checked = MidsContext.Config.ShowPopup;
                 this.ibRecipe.Checked = MidsContext.Config.PopupRecipes;
-                string str2 = Files.FPathAppData + "patch.rtf";
+                string str2 = Path.Combine(Files.FPathAppData, "patch.rtf");
                 if (File.Exists(str2))
                 {
                     int num2 = (int)new frmReadme(str2)
                     {
                         btnClose = {
-              IA = this.drawing.pImageAttributes,
-              ImageOff = this.drawing.bxPower[2].Bitmap,
-              ImageOn = this.drawing.bxPower[3].Bitmap
-            }
+                              IA = this.drawing.pImageAttributes,
+                              ImageOff = this.drawing.bxPower[2].Bitmap,
+                              ImageOn = this.drawing.bxPower[3].Bitmap
+                        }
                     }.ShowDialog();
-                    if (File.Exists(Files.FPathAppData + "patchnotes.rtf"))
-                        File.Delete(Files.FPathAppData + "patchnotes.rtf");
-                    File.Move(Files.FPathAppData + "patch.rtf", Files.FPathAppData + "patchnotes.rtf");
+                    var patchNotesTgt = Path.Combine(Files.FPathAppData, "patchnotes.rtf");
+                    if (File.Exists(patchNotesTgt))
+                        File.Delete(patchNotesTgt);
+                    File.Move(Path.Combine(Files.FPathAppData, "patch.rtf"), patchNotesTgt);
                 }
                 if (str1 != string.Empty)
                 {
