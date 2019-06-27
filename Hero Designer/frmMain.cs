@@ -186,6 +186,13 @@ namespace Hero_Designer
                 this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
                 this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
 
+                this.i9Picker.Moved += this.I9Picker_Moved;
+                this.I9Picker.HoverSet += this.I9Picker_HoverSet;
+                this.i9Picker.HoverEnhancement += this.I9Picker_HoverEnhancement;
+                this.i9Picker.MouseLeave += this.I9Picker_Hiding;
+                this.i9Picker.EnhancementPicked += this.I9Picker_EnhancementPicked;
+                this.i9Picker.MouseDown += this.I9Picker_MouseDown;
+
                 // accoladeButton events
                 this.accoladeButton.MouseDown += accoladeButton_MouseDown;
                 this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
