@@ -1534,6 +1534,11 @@ namespace Hero_Designer
         {
             if (disposing && this.components != null)
                 this.components.Dispose();
+            try
+            {
+                bxFlip?.Dispose();
+            }
+            catch { }
             base.Dispose(disposing);
         }
 
@@ -3446,62 +3451,62 @@ namespace Hero_Designer
             this.pnlFX.ResumeLayout(false);
             this.pnlTotal.ResumeLayout(false);
             this.pnlEnh.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  
-                  // Enh_Title events
-                  this.Enh_Title.MouseMove += Title_MouseMove;
-                  this.Enh_Title.MouseDown += Title_MouseDown;
-                  
-                  this.PowerScaler.BarClick += PowerScaler_BarClick;
-                  this.enhListing.ItemHover += PairedList_Hover;
-                  this.fx_List1.ItemHover += PairedList_Hover;
-                  this.fx_List2.ItemHover += PairedList_Hover;
-                  this.fx_List3.ItemHover += PairedList_Hover;
-                  
-                  // fx_Title events
-                  this.fx_Title.MouseMove += Title_MouseMove;
-                  this.fx_Title.MouseDown += Title_MouseDown;
-                  
-                  this.info_DataList.ItemHover += PairedList_Hover;
-                  
-                  // info_Title events
-                  this.info_Title.MouseMove += Title_MouseMove;
-                  this.info_Title.MouseDown += Title_MouseDown;
-                  
-                  this.lblFloat.Click += lblFloat_Click;
-                  this.lblLock.Click += lblLock_Click;
-                  
-                  // lblShrink events
-                  this.lblShrink.DoubleClick += lblShrink_DoubleClick;
-                  this.lblShrink.Click += lblShrink_Click;
-                  
-                  
-                  // pnlEnhActive events
-                  this.pnlEnhActive.Paint += pnlEnhActive_Paint;
-                  this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
-                  this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
-                  
-                  
-                  // pnlEnhInactive events
-                  this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
-                  this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
-                  this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
-                  
-                  
-                  // pnlTabs events
-                  this.pnlTabs.MouseDown += pnlTabs_MouseDown;
-                  this.pnlTabs.Paint += pnlTabs_Paint;
-                  
-                  this.total_Misc.ItemHover += PairedList_Hover;
-                  
-                  // total_Title events
-                  this.total_Title.MouseMove += Title_MouseMove;
-                  this.total_Title.MouseDown += Title_MouseDown;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+
+                // Enh_Title events
+                this.Enh_Title.MouseMove += Title_MouseMove;
+                this.Enh_Title.MouseDown += Title_MouseDown;
+
+                this.PowerScaler.BarClick += PowerScaler_BarClick;
+                this.enhListing.ItemHover += PairedList_Hover;
+                this.fx_List1.ItemHover += PairedList_Hover;
+                this.fx_List2.ItemHover += PairedList_Hover;
+                this.fx_List3.ItemHover += PairedList_Hover;
+
+                // fx_Title events
+                this.fx_Title.MouseMove += Title_MouseMove;
+                this.fx_Title.MouseDown += Title_MouseDown;
+
+                this.info_DataList.ItemHover += PairedList_Hover;
+
+                // info_Title events
+                this.info_Title.MouseMove += Title_MouseMove;
+                this.info_Title.MouseDown += Title_MouseDown;
+
+                this.lblFloat.Click += lblFloat_Click;
+                this.lblLock.Click += lblLock_Click;
+
+                // lblShrink events
+                this.lblShrink.DoubleClick += lblShrink_DoubleClick;
+                this.lblShrink.Click += lblShrink_Click;
+
+
+                // pnlEnhActive events
+                this.pnlEnhActive.Paint += pnlEnhActive_Paint;
+                this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
+                this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
+
+
+                // pnlEnhInactive events
+                this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
+                this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
+                this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
+
+
+                // pnlTabs events
+                this.pnlTabs.MouseDown += pnlTabs_MouseDown;
+                this.pnlTabs.Paint += pnlTabs_Paint;
+
+                this.total_Misc.ItemHover += PairedList_Hover;
+
+                // total_Title events
+                this.total_Title.MouseMove += Title_MouseMove;
+                this.total_Title.MouseDown += Title_MouseDown;
+
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
