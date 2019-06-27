@@ -457,15 +457,15 @@ namespace Hero_Designer
             this.StartPosition = FormStartPosition.Manual;
             this.Text = "Currently Active Sets & Bonuses";
             this.TopMost = true;
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnClose.ButtonClicked += btnClose_Click;
-                  this.btnSmall.ButtonClicked += btnSmall_Click;
-                  this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                  this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.btnClose.ButtonClicked += btnClose_Click;
+                this.btnSmall.ButtonClicked += btnSmall_Click;
+                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+                this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
@@ -485,7 +485,7 @@ namespace Hero_Designer
             if (rectangle.X < 1)
                 rectangle.X = this.myParent.Left + 8;
             if (rectangle.Y < 32)
-                rectangle.Y = this.myParent.Top + (this.myParent.Height - this.myParent.ClientSize.Height) + this.myParent.cbPrimary.Top + this.myParent.cbPrimary.Height;
+                rectangle.Y = this.myParent.Top + (this.myParent.Height - this.myParent.ClientSize.Height) + this.myParent.CbPrimary.Top + this.myParent.CbPrimary.Height;
             if (MidsContext.Config.ShrinkFrmSets & this.Width > 600)
                 this.btnSmall_Click();
             else if (!MidsContext.Config.ShrinkFrmSets & this.Width < 600)
