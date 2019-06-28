@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace Hero_Designer
 {
     [DesignerGenerated]
-    public class frmRecipeViewer : Form
+    public class frmRecipeViewer : Form, HeroDesigner.Schema.Viewing.IControl
     {
         CheckBox chkRecipe;
 

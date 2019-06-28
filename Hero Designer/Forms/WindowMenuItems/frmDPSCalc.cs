@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace Hero_Designer
 {
     [DesignerGenerated]
-    public class frmDPSCalc : Form
+    public class frmDPSCalc : Form, HeroDesigner.Schema.Viewing.IControl
     {
         CheckBox chkSortByLevel;
         CheckBox chkDamageBuffs;

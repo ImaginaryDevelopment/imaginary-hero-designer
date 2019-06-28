@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmSetViewer : Form
+    public class frmSetViewer : Form, HeroDesigner.Schema.Viewing.IControl
     {
         ImageButton btnClose;
 
@@ -35,14 +35,7 @@ namespace Hero_Designer
 
         protected frmMain myParent;
 
-
-
-
-
-
-
-
-        public frmSetViewer(ref frmMain iParent)
+        public frmSetViewer(frmMain iParent)
         {
             this.Move += new EventHandler(this.frmSetViewer_Move);
             this.FormClosed += new FormClosedEventHandler(this.frmSetViewer_FormClosed);

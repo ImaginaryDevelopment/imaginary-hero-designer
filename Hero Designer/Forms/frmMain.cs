@@ -1541,10 +1541,7 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        int[] fakeInitialize(params int[] nums)
-        {
-            return nums;
-        }
+        int[] fakeInitialize(params int[] nums) => nums;
 
         void FixPrimarySecondaryHeight()
         {
@@ -1650,112 +1647,41 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatRecipe(bool show)
+        void FloatFrm<T>(T value, Func<T> constructor, Action<T> setter, bool show)
+            where T : Form, HeroDesigner.Schema.Viewing.IControl
         {
             if (show)
             {
-                if (this.fRecipe == null)
-                    this.fRecipe = new frmRecipeViewer(this);
-                this.fRecipe.SetLocation();
-                this.fRecipe.Show();
-                this.FloatUpdate(false);
-                this.fRecipe.Activate();
-            }
-            else
-            {
-                if (this.fRecipe == null)
-                    return;
-                this.fRecipe.Hide();
-                this.fRecipe.Dispose();
-                this.fRecipe = null;
-            }
-        }
-
-        internal void FloatDPSCalc(bool Show)
-        {
-            if (Show)
-            {
-                if (this.fDPSCalc == null)
-                    this.fDPSCalc = new frmDPSCalc(this);
-                this.fDPSCalc.SetLocation();
-                this.fDPSCalc.Show();
-                this.FloatUpdate(false);
-                this.fDPSCalc.Activate();
-            }
-            else
-            {
-                if (this.fDPSCalc == null)
-                    return;
-                this.fDPSCalc.Hide();
-                this.fDPSCalc = null;
-            }
-        }
-
-        internal void FloatSetFinder(bool Show)
-        {
-            if (Show)
-            {
-                if (this.fSetFinder == null)
-                    this.fSetFinder = new frmSetFind(this);
-                this.fSetFinder.Show();
-                this.fSetFinder.Activate();
-            }
-            else
-            {
-                if (this.fSetFinder == null)
-                    return;
-                this.fSetFinder.Hide();
-                this.fSetFinder.Dispose();
-                this.fSetFinder = null;
-            }
-        }
-
-        internal void FloatSets(bool Show)
-        {
-            if (Show)
-            {
-                if (this.fSets == null)
+                if (value == null)
                 {
-                    frmMain iParent = this;
-                    this.fSets = new frmSetViewer(ref iParent);
+                    value = constructor();
+                    setter(value);
                 }
-                this.fSets.SetLocation();
-                this.fSets.Show();
+                value.SetLocation();
+                value.Show();
                 this.FloatUpdate(false);
-                this.fSets.Activate();
+                value.Activate();
             }
             else
             {
-                if (this.fSets == null)
-                    return;
-                this.fSets.Hide();
-                this.fSets.Dispose();
-                this.fSets = null;
+                if (value == null) return;
+                value.Hide();
+                value.Dispose();
+                //if (value is IDisposable disp)
+                //    value.Dispose();
+                setter(null);
             }
         }
 
-        internal void FloatStatGraph(bool Show)
-        {
-            if (Show)
-            {
-                if (this.fGraphStats == null)
-                {
-                    frmMain iParent = this;
-                    this.fGraphStats = new frmStats(ref iParent);
-                }
-                this.fGraphStats.SetLocation();
-                this.fGraphStats.Show();
-                this.fGraphStats.Activate();
-            }
-            else
-            {
-                if (this.fGraphStats == null)
-                    return;
-                this.fGraphStats.Hide();
-                this.fGraphStats.Dispose();
-                this.fGraphStats = null;
-            }
-        }
+        internal void FloatRecipe(bool show) => FloatFrm(this.fRecipe, () => new frmRecipeViewer(this), v => this.fRecipe = v, show);
+
+        internal void FloatDPSCalc(bool show) => FloatFrm(this.fDPSCalc, () => new frmDPSCalc(this), v => this.fDPSCalc = v, show);
+
+        internal void FloatSetFinder(bool show) => FloatFrm(this.fSetFinder, () => new frmSetFind(this), v => this.fSetFinder = v, show);
+
+        internal void FloatSets(bool show) => FloatFrm(this.fSets, () => new frmSetViewer(this), v => this.fSets = v, show);
+
+        internal void FloatStatGraph(bool show) => FloatFrm(this.fGraphStats, () => new frmStats(this), v => this.fGraphStats = v, show);
 
         void FloatTop(bool OnTop)
         {

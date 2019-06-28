@@ -457,6 +457,10 @@
       <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HeroDesigner.Schema\HeroDesigner.Schema.fsproj">
+      <Project>{4a4ab25f-32a2-4d28-85c4-8976f5ce153b}</Project>
+      <Name>HeroDesigner.Schema</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\AttribMod.mhd">
