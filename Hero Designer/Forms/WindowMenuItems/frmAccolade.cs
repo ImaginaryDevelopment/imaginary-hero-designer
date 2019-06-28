@@ -15,7 +15,6 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    [DesignerGenerated]
     public class frmAccolade : Form
     {
         ImageButton ibClose;
@@ -106,7 +105,6 @@ namespace Hero_Designer
         }
 
         void frmAccolade_Load(object sender, EventArgs e)
-
         {
             this.BackColor = this._myParent.BackColor;
             this.PopInfo.ForeColor = this.BackColor;
@@ -277,31 +275,31 @@ namespace Hero_Designer
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  
-                  // PopInfo events
-                  this.PopInfo.MouseWheel += PopInfo_MouseWheel;
-                  this.PopInfo.MouseEnter += PopInfo_MouseEnter;
-                  
-                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                  this.lblLock.Click += lblLock_Click;
-                  
-                  // llLeft events
-                  this.llLeft.MouseEnter += llLeft_MouseEnter;
-                  this.llLeft.ItemHover += llLeft_ItemHover;
-                  this.llLeft.ItemClick += llLeft_ItemClick;
-                  
-                  
-                  // llRight events
-                  this.llRight.ItemHover += llRight_ItemHover;
-                  this.llRight.ItemClick += llRight_ItemClick;
-                  this.llRight.MouseEnter += llRight_MouseEnter;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+
+                // PopInfo events
+                this.PopInfo.MouseWheel += PopInfo_MouseWheel;
+                this.PopInfo.MouseEnter += PopInfo_MouseEnter;
+
+                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                this.lblLock.Click += lblLock_Click;
+
+                // llLeft events
+                this.llLeft.MouseEnter += llLeft_MouseEnter;
+                this.llLeft.ItemHover += llLeft_ItemHover;
+                this.llLeft.ItemClick += llLeft_ItemClick;
+
+
+                // llRight events
+                this.llRight.ItemHover += llRight_ItemHover;
+                this.llRight.ItemClick += llRight_ItemClick;
+                this.llRight.MouseEnter += llRight_MouseEnter;
+
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 

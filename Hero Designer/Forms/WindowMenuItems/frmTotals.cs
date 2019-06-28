@@ -1370,7 +1370,7 @@ namespace Hero_Designer
             if (rectangle.X < 1)
                 rectangle.X = this._myParent.Left + 8;
             if (rectangle.Y < 32)
-                rectangle.Y = this._myParent.Top + (this._myParent.Height - this._myParent.ClientSize.Height) + this._myParent.CbPrimary.Top + this._myParent.CbPrimary.Height;
+                rectangle.Y = this._myParent.Top + (this._myParent.Height - this._myParent.ClientSize.Height) + this._myParent.GetPrimaryBottom();
             this.Top = rectangle.Y;
             this.Left = rectangle.X;
             this.Height = rectangle.Height;

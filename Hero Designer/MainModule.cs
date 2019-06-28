@@ -25,13 +25,7 @@ namespace Hero_Designer
             public static Rectangle SzFrmStats = new Rectangle();
             public static Rectangle SzFrmTotals = new Rectangle();
 
-            public static bool IsAppInitialized
-            {
-                get
-                {
-                    return MainModule.MidsController._appInitialized;
-                }
-            }
+            public static bool IsAppInitialized => MainModule.MidsController._appInitialized;
 
             public static clsToonX Toon
             {
@@ -41,7 +35,7 @@ namespace Hero_Designer
                 }
                 set
                 {
-                    MidsContext.Character = (Character)value;
+                    MidsContext.Character = value;
                 }
             }
 

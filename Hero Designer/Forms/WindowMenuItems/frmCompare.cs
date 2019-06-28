@@ -111,13 +111,11 @@ namespace Hero_Designer
         }
 
         void btnClose_ButtonClicked()
-
         {
             this.Close();
         }
 
         void btnClose_Load(object sender, EventArgs e)
-
         {
         }
 
@@ -359,7 +357,6 @@ namespace Hero_Designer
         }
 
         void frmCompare_Load(object sender, EventArgs e)
-
         {
             this.FillDisplayList();
             this.UpdateData();
@@ -828,28 +825,28 @@ namespace Hero_Designer
             this.tbScaleX.EndInit();
             this.GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.Graph.Load += Graph_Load;
-                  
-                  // btnClose events
-                  this.btnClose.Load += btnClose_Load;
-                  this.btnClose.ButtonClicked += btnClose_ButtonClicked;
-                  
-                  this.btnTweakMatch.Click += btnTweakMatch_Click;
-                  this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
-                  this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
-                  this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
-                  this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
-                  this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
-                  this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
-                  this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
-                  this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                  this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
-                  this.tbScaleX.Scroll += tbScaleX_Scroll;
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.Graph.Load += Graph_Load;
+
+                // btnClose events
+                this.btnClose.Load += btnClose_Load;
+                this.btnClose.ButtonClicked += btnClose_ButtonClicked;
+
+                this.btnTweakMatch.Click += btnTweakMatch_Click;
+                this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
+                this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
+                this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
+                this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
+                this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
+                this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
+                this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
+                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+                this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
+                this.tbScaleX.Scroll += tbScaleX_Scroll;
+            }
+            // finished with events
             this.PerformLayout();
         }
 
