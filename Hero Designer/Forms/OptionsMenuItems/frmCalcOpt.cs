@@ -20,8 +20,6 @@ namespace Hero_Designer
 
         Button btnFontColour;
 
-        Button btnForceUpdate;
-
         Button btnIOReset;
 
         Button btnOK;
@@ -30,9 +28,6 @@ namespace Hero_Designer
 
         Button btnSaveFolderReset;
 
-        Button btnUpdate;
-
-        Button btnUpdatePathReset;
         ComboBox cbEnhLevel;
         CheckBox chkColorInherent;
         CheckBox chkColourPrint;
@@ -203,100 +198,6 @@ namespace Hero_Designer
 
         string[] scenarioExample;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public frmCalcOpt(ref frmMain iParent)
         {
             this.Load += new EventHandler(this.frmCalcOpt_Load);
@@ -326,19 +227,6 @@ namespace Hero_Designer
 
         {
             int num = (int)new frmColourSettings().ShowDialog();
-        }
-
-        void btnForceUpdate_Click(object sender, EventArgs e)
-
-        {
-            DateTime date = DatabaseAPI.Database.Date;
-            DateTime t2 = new DateTime(1, 1, 1);
-            DatabaseAPI.Database.Date = t2;
-            this.btnUpdate_Click(RuntimeHelpers.GetObjectValue(sender), e);
-            t2 = new DateTime(1, 1, 1);
-            if (DateTime.Compare(DatabaseAPI.Database.Date, t2) != 0)
-                return;
-            DatabaseAPI.Database.Date = date;
         }
 
         void btnIOReset_Click(object sender, EventArgs e)
@@ -375,27 +263,6 @@ namespace Hero_Designer
             MidsContext.Config.CreateDefaultSaveFolder();
             MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
             this.lblSaveFolder.Text = MidsContext.Config.DefaultSaveFolder;
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        void btnUpdate_Click(object sender, EventArgs e)
-
-        {
-            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
-            this.Enabled = false;
-            IMessager iLoadFrm = (IMessager)null;
-            clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
-            if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
-            {
-                int num = (int)Interaction.MsgBox((object)"No Updates.", MsgBoxStyle.Information, (object)"Update Check");
-            }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && Interaction.MsgBox((object)"Exit Now?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Update Downloaded") == MsgBoxResult.Yes && !this.myParent.CloseCommand())
-            {
-                clsXMLUpdate.LaunchSelfUpdate();
-                ProjectData.EndApp();
-            }
-            this.myParent.RefreshInfo();
-            this.Enabled = true;
         }
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
@@ -913,15 +780,12 @@ namespace Hero_Designer
             this.chkLoadLastFile = new CheckBox();
             this.Label1 = new Label();
             this.GroupBox16 = new GroupBox();
-            this.btnForceUpdate = new Button();
             this.Label19 = new Label();
             this.GroupBox1 = new GroupBox();
-            this.btnUpdatePathReset = new Button();
             this.Label2 = new Label();
             this.txtUpdatePath = new TextBox();
             this.Label37 = new Label();
             this.Label34 = new Label();
-            this.btnUpdate = new Button();
             this.chkUpdates = new CheckBox();
             this.TabPage1 = new TabPage();
             this.Label15 = new Label();
@@ -2023,7 +1887,6 @@ namespace Hero_Designer
             this.Label1.TabIndex = 8;
             this.Label1.Text = "Default Save Folder:";
             this.Label1.TextAlign = ContentAlignment.MiddleLeft;
-            this.GroupBox16.Controls.Add((Control)this.btnForceUpdate);
             this.GroupBox16.Controls.Add((Control)this.Label19);
             point = new Point(417, 3);
             this.GroupBox16.Location = point;
@@ -2035,12 +1898,6 @@ namespace Hero_Designer
             this.GroupBox16.Text = "Panic Button:";
             this.GroupBox16.Visible = false;
             point = new Point(6, 157);
-            this.btnForceUpdate.Location = point;
-            this.btnForceUpdate.Name = "btnForceUpdate";
-            size = new Size(140, 44);
-            this.btnForceUpdate.Size = size;
-            this.btnForceUpdate.TabIndex = 5;
-            this.btnForceUpdate.Text = "Force Database Re-Download";
             point = new Point(5, 21);
             this.Label19.Location = point;
             this.Label19.Name = "Label19";
@@ -2049,12 +1906,10 @@ namespace Hero_Designer
             this.Label19.TabIndex = 7;
             this.Label19.Text = "If the database is damaged and not working properly, you can force the application to redownload the most recent version.";
             this.Label19.TextAlign = ContentAlignment.MiddleCenter;
-            this.GroupBox1.Controls.Add((Control)this.btnUpdatePathReset);
             this.GroupBox1.Controls.Add((Control)this.Label2);
             this.GroupBox1.Controls.Add((Control)this.txtUpdatePath);
             this.GroupBox1.Controls.Add((Control)this.Label37);
             this.GroupBox1.Controls.Add((Control)this.Label34);
-            this.GroupBox1.Controls.Add((Control)this.btnUpdate);
             this.GroupBox1.Controls.Add((Control)this.chkUpdates);
             point = new Point(8, 3);
             this.GroupBox1.Location = point;
@@ -2064,14 +1919,6 @@ namespace Hero_Designer
             this.GroupBox1.TabIndex = 7;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Automatic Updates:";
-            point = new Point(142, 212);
-            this.btnUpdatePathReset.Location = point;
-            this.btnUpdatePathReset.Name = "btnUpdatePathReset";
-            size = new Size(119, 22);
-            this.btnUpdatePathReset.Size = size;
-            this.btnUpdatePathReset.TabIndex = 65;
-            this.btnUpdatePathReset.Text = "Reset to Default";
-            this.btnUpdatePathReset.UseVisualStyleBackColor = true;
             point = new Point(6, 168);
             this.Label2.Location = point;
             this.Label2.Name = "Label2";
@@ -2102,13 +1949,6 @@ namespace Hero_Designer
             this.Label34.TabIndex = 5;
             this.Label34.Text = "The hero designer can automatically check for updates and download newer versions when it starts. This feature requires an internet connection.";
             this.Label34.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(121, 133);
-            this.btnUpdate.Location = point;
-            this.btnUpdate.Name = "btnUpdate";
-            size = new Size(160, 28);
-            this.btnUpdate.Size = size;
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Check for updates now";
             point = new Point(9, 60);
             this.chkUpdates.Location = point;
             this.chkUpdates.Name = "chkUpdates";
@@ -2296,14 +2136,11 @@ namespace Hero_Designer
             {
                 this.btnBaseReset.Click += btnBaseReset_Click;
                 this.btnCancel.Click += btnCancel_Click;
-                this.btnFontColour.Click += btnFontColour_Click;
-                this.btnForceUpdate.Click += btnForceUpdate_Click;
+                this.btnFontColour.Click += this.btnFontColour_Click;
                 this.btnIOReset.Click += btnIOReset_Click;
                 this.btnOK.Click += btnOK_Click;
                 this.btnSaveFolder.Click += btnSaveFolder_Click;
                 this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
-                this.btnUpdate.Click += btnUpdate_Click;
-                this.btnUpdatePathReset.Click += btnUpdatePathReset_Click;
                 this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
                 this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
                 this.csAdd.Click += csAdd_Click;
@@ -2343,16 +2180,14 @@ namespace Hero_Designer
         }
 
         void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.lblExample.Text = this.scenarioExample[this.listScenarios.SelectedIndex];
             this.cmbAction.Items.Clear();
-            this.cmbAction.Items.AddRange((object[])this.scenActs[this.listScenarios.SelectedIndex]);
-            this.cmbAction.SelectedIndex = (int)this.defActs[this.listScenarios.SelectedIndex];
+            this.cmbAction.Items.AddRange(this.scenActs[this.listScenarios.SelectedIndex]);
+            this.cmbAction.SelectedIndex = this.defActs[this.listScenarios.SelectedIndex];
         }
 
         void optDO_CheckedChanged(object sender, EventArgs e)
-
         {
             if (!this.optDO.Checked)
                 return;
@@ -2360,7 +2195,6 @@ namespace Hero_Designer
         }
 
         void optSO_CheckedChanged(object sender, EventArgs e)
-
         {
             if (!this.optSO.Checked)
                 return;
@@ -2368,7 +2202,6 @@ namespace Hero_Designer
         }
 
         void optTO_CheckedChanged(object sender, EventArgs e)
-
         {
             if (!this.optTO.Checked)
                 return;
@@ -2376,7 +2209,6 @@ namespace Hero_Designer
         }
 
         void PopulateSuppression()
-
         {
             this.clbSuppression.BeginUpdate();
             this.clbSuppression.Items.Clear();
@@ -2389,7 +2221,6 @@ namespace Hero_Designer
         }
 
         void SetControls()
-
         {
             ConfigData config = MidsContext.Config;
             this.optSO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.SingleO;
@@ -2592,7 +2423,7 @@ namespace Hero_Designer
                 config.DamageMath.Calculate = ConfigData.EDamageMath.Max;
             else if (this.rbChanceIgnore.Checked)
                 config.DamageMath.Calculate = ConfigData.EDamageMath.Minimum;
-            config.BaseAcc = Convert.ToSingle(Decimal.Divide(this.udBaseToHit.Value, new Decimal(100)));
+            config.BaseAcc = Convert.ToSingle(decimal.Divide(this.udBaseToHit.Value, new decimal(100)));
             config.ShowVillainColours = this.chkVillainColour.Checked;
             config.CheckForUpdates = this.chkUpdates.Checked;
             config.I9.DefaultIOLevel = Convert.ToInt32(this.udIOLevel.Value) - 1;
@@ -2602,7 +2433,7 @@ namespace Hero_Designer
             config.ShowRelSymbols = this.chkRelSignOnly.Checked;
             config.I9.PrintIOLevels = this.chkIOPrintLevels.Checked;
             config.PrintInColour = this.chkColourPrint.Checked;
-            config.RtFont.RTFBase = Convert.ToInt32(Decimal.Multiply(this.udRTFSize.Value, new Decimal(2)));
+            config.RtFont.RTFBase = Convert.ToInt32(decimal.Multiply(this.udRTFSize.Value, new decimal(2)));
             config.RtFont.PairedBase = Convert.ToSingle(this.udStatSize.Value);
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;

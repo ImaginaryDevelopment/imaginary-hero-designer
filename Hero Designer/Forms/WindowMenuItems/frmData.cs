@@ -53,7 +53,6 @@ namespace Hero_Designer
         }
 
         void frmData_Load(object sender, EventArgs e)
-
         {
             this.pInfo.SetPopup(new PopUp.PopupData());
         }

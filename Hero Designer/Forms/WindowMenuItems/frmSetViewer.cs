@@ -479,13 +479,15 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmSets.X;
-            rectangle.Y = MainModule.MidsController.SzFrmSets.Y;
+            var rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmSets.X,
+                Y = MainModule.MidsController.SzFrmSets.Y
+            };
             if (rectangle.X < 1)
                 rectangle.X = this.myParent.Left + 8;
             if (rectangle.Y < 32)
-                rectangle.Y = this.myParent.Top + (this.myParent.Height - this.myParent.ClientSize.Height) + this.myParent.CbPrimary.Top + this.myParent.CbPrimary.Height;
+                rectangle.Y = this.myParent.Top + (this.myParent.Height - this.myParent.ClientSize.Height) + this.myParent.GetPrimaryBottom();
             if (MidsContext.Config.ShrinkFrmSets & this.Width > 600)
                 this.btnSmall_Click();
             else if (!MidsContext.Config.ShrinkFrmSets & this.Width < 600)

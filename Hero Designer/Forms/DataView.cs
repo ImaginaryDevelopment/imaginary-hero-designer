@@ -662,7 +662,6 @@ namespace Hero_Designer
         }
 
         void DataView_Load(object sender, EventArgs e)
-
         {
             Panel pnlInfo = this.pnlInfo;
             pnlInfo.Top = 20;

@@ -25,6 +25,7 @@ namespace Hero_Designer
     public partial class frmMain : Form
     {
         #region "fields"
+
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
         readonly short[] ddsa;
@@ -93,15 +94,12 @@ namespace Hero_Designer
 
         #endregion
 
-        internal ComboBox CbPrimary
-        {
-            get => cbPrimary;
-            private set => cbPrimary = value;
-        }
+        public int GetPrimaryBottom() => cbPrimary.Top + cbPrimary.Height;
 
         internal OpenFileDialog DlgOpen => dlgOpen;
 
         internal SaveFileDialog DlgSave => dlgSave;
+
         internal I9Picker I9Picker
         {
             get
@@ -115,6 +113,7 @@ namespace Hero_Designer
                 this.i9Picker = value;
             }
         }
+
         internal clsDrawX Drawing => this.drawing;
 
         public frmMain()
@@ -137,36 +136,16 @@ namespace Hero_Designer
                 this.FileModified = false;
                 this.LastIndex = -1;
                 this.LastEnhIndex = -1;
-                this.LastEnhPlaced = null;
                 this.dvLastPower = -1;
                 this.dvLastEnh = -1;
                 this.dvLastNoLev = true;
-                this.DataViewLocked = false;
-                this.fGraphCompare = null;
-                this.fGraphStats = null;
-                this.fSets = null;
-                this.fTotals = null;
-                this.fRecipe = null;
-                this.fData = null;
-                this.fSetFinder = null;
-                this.fAccolade = null;
-                this.fTemp = null;
-                this.fIncarnate = null;
-                this.fMini = null;
                 this.ActivePopupBounds = new Rectangle(0, 0, 1, 1);
                 this.LastState = FormWindowState.Normal;
-                this.PopUpVisible = false;
                 this.FlipSteps = 5;
                 this.FlipInterval = 10;
                 this.FlipStepDelay = 3;
-                this.FlipActive = false;
                 this.FlipPowerID = -1;
                 this.FlipSlotState = new int[0];
-                this.FlipGP = null;
-                this.LastClickPlacedSlot = false;
-                this.HasSentBack = false;
-                this.HasSentForwards = false;
-                this.NoResizeEvent = false;
                 this.dragStartPower = -1;
                 this.dragStartSlot = -1;
                 this.ddsa = new short[20];
@@ -481,7 +460,7 @@ namespace Hero_Designer
                 this.fAccolade = new frmAccolade(this, iPowers) { Text = "Accolades" };
             }
             if (!this.fAccolade.Visible)
-                this.fAccolade.Show((IWin32Window)this);
+                this.fAccolade.Show(this);
         }
 
         void AccoladesWindowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -922,25 +901,6 @@ namespace Hero_Designer
             this.PowerModified();
             this.FloatUpdate(true);
             this.GetBestDamageValues();
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        void CheckForDownloadedUpdate()
-        {
-            try
-            {
-                if (!File.Exists(FileIO.AddSlash(Application.StartupPath) + "MHD.mhz") || !Zlib.CheckTag(FileIO.AddSlash(Application.StartupPath) + "MHD.mhz"))
-                    return;
-                int num = (int)Interaction.MsgBox((object)("A recently downloaded update pack has not yet been applied!\r\n\r\nIn order for a previously downloaded update to be applied, Mids' Hero/Villain designer must restart.\r\n\r\nThe program will now exit to apply the update. Please close any other running instances of Mids' Hero/Villain Designer.If this message is in error, please delete the MHD.mhz file from " + Application.StartupPath + " directory."), MsgBoxStyle.Information, (object)"Update Pending");
-                clsXMLUpdate.LaunchSelfUpdate();
-                ProjectData.EndApp();
-            }
-            catch (Exception ex)
-            {
-                ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)("An unexpected error was encountered when checking for a downloaded pack.\r\nIf you see this error again, delete the 'MHD.mhz' file from the " + Application.StartupPath + " directory."), MsgBoxStyle.Exclamation, (object)"Non-Fatal Error");
-                ProjectData.ClearProjectError();
-            }
         }
 
         void clearPower(PowerEntry[] tp, int pwrIdx)
@@ -1971,7 +1931,6 @@ namespace Hero_Designer
                 this.myDataView = this.dvAnchored;
                 this.pnlGFX.BackColor = this.BackColor;
                 this.NoUpdate = true;
-                this.CheckForDownloadedUpdate();
                 if (MidsContext.Config.CheckForUpdates)
                 {
                     clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
@@ -2452,7 +2411,7 @@ namespace Hero_Designer
             }
             if (this.fIncarnate.Visible)
                 return;
-            this.fIncarnate.Show((IWin32Window)this);
+            this.fIncarnate.Show(this);
         }
 
         void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5344,11 +5303,10 @@ namespace Hero_Designer
             clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                int num = (int)Interaction.MsgBox((object)"No Updates.", MsgBoxStyle.Information, (object)"Update Check");
+                Interaction.MsgBox((object)"No Updates.", MsgBoxStyle.Information, (object)"Update Check");
             }
             if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && Interaction.MsgBox((object)"Exit Now?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Update Downloaded") == MsgBoxResult.Yes && !this.CloseCommand())
             {
-                clsXMLUpdate.LaunchSelfUpdate();
                 ProjectData.EndApp();
             }
             this.RefreshInfo();
@@ -6148,7 +6106,7 @@ namespace Hero_Designer
                 MidsContext.Character.Validate();
                 MidsContext.Character.Lock();
                 MidsContext.Character.ResetLevel();
-                MidsContext.Character.PoolShuffle(false);
+                MidsContext.Character.PoolShuffle();
                 I9Gfx.OriginIndex = MidsContext.Character.Origin;
                 MidsContext.Character.Validate();
             }

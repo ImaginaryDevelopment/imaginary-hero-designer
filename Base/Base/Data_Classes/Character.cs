@@ -206,7 +206,7 @@ namespace Base.Data_Classes
             }
         }
 
-        public bool IsHero => this.Alignment == Enums.Alignment.Hero || this.Alignment == Enums.Alignment.Vigilante;
+        public bool IsHero() => this.Alignment == Enums.Alignment.Hero || this.Alignment == Enums.Alignment.Vigilante;
 
         public bool IsVillain => this.Alignment == Enums.Alignment.Rogue || this.Alignment == Enums.Alignment.Villain;
 

@@ -57,21 +57,6 @@ namespace Hero_Designer
         public clsOutput Exporter;
         Point mouse_offset;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         internal ImageButton ibCancel
         {
             get => _ibCancel;
@@ -83,15 +68,6 @@ namespace Hero_Designer
             private set => _ibExport = value;
         }
 
-
-
-
-
-
-
-
-
-
         public frmForum()
         {
             this.Load += new EventHandler(this.frmForum_Load);
@@ -102,7 +78,6 @@ namespace Hero_Designer
         }
 
         void csList_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.csList.SelectedIndex > -1)
             {
@@ -123,7 +98,6 @@ namespace Hero_Designer
         }
 
         void csPopulateList(int HighlightID = -1)
-
         {
             this.csList.Items.Clear();
             ExportConfig export = MidsContext.Config.Export;
@@ -145,7 +119,6 @@ namespace Hero_Designer
         }
 
         void frmForum_Load(object sender, EventArgs e)
-
         {
             this.pbTitle.Left = (int)Math.Round((double)(this.Width - this.pbTitle.Width) / 2.0);
             if (MidsContext.Config.Export.ColorSchemes.Length < 1)
@@ -189,13 +162,11 @@ namespace Hero_Designer
         }
 
         void frmForum_MouseDown(object sender, MouseEventArgs e)
-
         {
             this.mouse_offset = new Point(-e.X, -e.Y);
         }
 
         void frmForum_MouseMove(object sender, MouseEventArgs e)
-
         {
             if (e.Button != MouseButtons.Left)
                 return;
@@ -636,20 +607,20 @@ namespace Hero_Designer
             this.GroupBox5.ResumeLayout(false);
             ((ISupportInitialize)this.pbTitle).EndInit();
             this.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
-                  this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
-                  this.ibExport.ButtonClicked += ibExport_ButtonClicked;
-                  this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
-                  
-                  // pbTitle events
-                  this.pbTitle.MouseMove += pbTitle_MouseMove;
-                  this.pbTitle.MouseDown += pbTitle_MouseDown;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
+                this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
+                this.ibExport.ButtonClicked += ibExport_ButtonClicked;
+                this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
+
+                // pbTitle events
+                this.pbTitle.MouseMove += pbTitle_MouseMove;
+                this.pbTitle.MouseDown += pbTitle_MouseDown;
+
+            }
+            // finished with events
             this.PerformLayout();
         }
 

@@ -57,24 +57,6 @@ namespace Hero_Designer
 
         float GlobalDamageBuff;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public frmDPSCalc(frmMain iParent)
         {
             this.FormClosed += new FormClosedEventHandler(this.frmDPSCalc_FormClosed);
@@ -188,14 +170,12 @@ namespace Hero_Designer
         }
 
         void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
-
         {
             this.StoreLocation();
             this.myParent.FloatDPSCalc(false);
         }
 
         void frmDPSCalc_Load(object sender, EventArgs e)
-
         {
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
             this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
@@ -537,22 +517,22 @@ namespace Hero_Designer
             this.TopMost = true;
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-                  this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
-                  this.ibClear.ButtonClicked += ibClear_ButtonClicked;
-                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                  this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-                  
-                  // lvPower events
-                  this.lvPower.MouseEnter += lvPower_MouseEnter;
-                  this.lvPower.ItemChecked += lvPower_ItemChecked;
-                  this.lvPower.ItemSelectionChanged += lvPower_Clicked;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+                this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
+                this.ibClear.ButtonClicked += ibClear_ButtonClicked;
+                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+
+                // lvPower events
+                this.lvPower.MouseEnter += lvPower_MouseEnter;
+                this.lvPower.ItemChecked += lvPower_ItemChecked;
+                this.lvPower.ItemSelectionChanged += lvPower_Clicked;
+
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
