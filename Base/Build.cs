@@ -902,7 +902,25 @@ public class Build
                 break;
               }
               if (enhancement.MutExID != Enums.eEnhMutex.None && DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].MutExID == enhancement.MutExID)
-              {
+              {//6/29/19 Pine: Added checker for ATO Mutex
+                if (enhancement.MutExID == Enums.eEnhMutex.ArchetypeA |
+                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeB |
+                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeC |
+                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeD |
+                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeE |
+                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeF)
+                {
+                    string compareStringSlottedEnh = DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].LongName;
+                    if (compareStringSlottedEnh.Contains("Superior"))
+                        compareStringSlottedEnh = compareStringSlottedEnh.Remove(0,9);
+                    string compareStringSlottingEnh = enhancement.LongName;
+                    if (compareStringSlottingEnh.Contains("Superior"))
+                        compareStringSlottingEnh = compareStringSlottingEnh.Remove(0, 9);
+                    if (compareStringSlottedEnh != compareStringSlottingEnh)
+                        break;
+                }
+
+
                 flag3 = true;
                 break;
               }
