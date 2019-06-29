@@ -1,4 +1,4 @@
-﻿namespace Hero_Designer
+namespace Hero_Designer
 {
     public partial class frmMain
     {
@@ -1037,34 +1037,48 @@
             this.tsViewIOLevels.Checked = true;
             this.tsViewIOLevels.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsViewIOLevels.Name = "tsViewIOLevels";
-
             this.tsViewIOLevels.Size = new System.Drawing.Size(282, 22);
             this.tsViewIOLevels.Text = "Show &IO Levels";
+            // 
+            // tsViewRelative
+            // 
             this.tsViewRelative.Name = "tsViewRelative";
-
             this.tsViewRelative.Size = new System.Drawing.Size(282, 22);
             this.tsViewRelative.Text = "Show &Enhancement Relative Levels";
+            // 
+            // tsViewSlotLevels
+            // 
             this.tsViewSlotLevels.Name = "tsViewSlotLevels";
-
             this.tsViewSlotLevels.Size = new System.Drawing.Size(282, 22);
             this.tsViewSlotLevels.Text = "Show &Slot Placement Levels";
+            // 
+            // ToolStripSeparator2
+            // 
             this.ToolStripSeparator2.Name = "ToolStripSeparator2";
-
             this.ToolStripSeparator2.Size = new System.Drawing.Size(279, 6);
+            // 
+            // tsViewActualDamage_New
+            // 
             this.tsViewActualDamage_New.Checked = true;
             this.tsViewActualDamage_New.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsViewActualDamage_New.Name = "tsViewActualDamage_New";
-
             this.tsViewActualDamage_New.Size = new System.Drawing.Size(282, 22);
             this.tsViewActualDamage_New.Text = "Show Damage Per Activation (Level 50)";
+            // 
+            // tsViewDPS_New
+            // 
             this.tsViewDPS_New.Name = "tsViewDPS_New";
-
             this.tsViewDPS_New.Size = new System.Drawing.Size(282, 22);
             this.tsViewDPS_New.Text = "Show Damage Per Second (Level 50)";
+            // 
+            // tlsDPA
+            // 
             this.tlsDPA.Name = "tlsDPA";
-
             this.tlsDPA.Size = new System.Drawing.Size(282, 22);
             this.tlsDPA.Text = "Show Damage Per Animation (Level 50)";
+            // 
+            // HelpToolStripMenuItem1
+            // 
             this.HelpToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.HelpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[10]
             {
@@ -1081,48 +1095,70 @@
             });
             this.HelpToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1";
-
             this.HelpToolStripMenuItem1.Size = new System.Drawing.Size(102, 20);
             this.HelpToolStripMenuItem1.Text = "&Help && Support";
+            // 
+            // tsHelp
+            // 
             this.tsHelp.Name = "tsHelp";
             this.tsHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
-
             this.tsHelp.Size = new System.Drawing.Size(258, 22);
             this.tsHelp.Text = "&Read Me - Instructions";
+            // 
+            // tsPatchNotes
+            // 
             this.tsPatchNotes.Name = "tsPatchNotes";
-
             this.tsPatchNotes.Size = new System.Drawing.Size(258, 22);
             this.tsPatchNotes.Text = "Read &Latest Patch Notes...";
+            // 
+            // ToolStripSeparator10
+            // 
             this.ToolStripSeparator10.Name = "ToolStripSeparator10";
-
             this.ToolStripSeparator10.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
+            // 
+            // tsBug
+            // 
             this.tsBug.Name = "tsBug";
-
             this.tsBug.Size = new System.Drawing.Size(258, 22);
             this.tsBug.Text = "Feedback Form / &Bug Report";
             this.tsBug.Visible = false;
+            // 
+            // tsTitanForum
+            // 
             this.tsTitanForum.Name = "tsTitanForum";
-
             this.tsTitanForum.Size = new System.Drawing.Size(258, 22);
             this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
+            // 
+            // ToolStripSeparator23
+            // 
             this.ToolStripSeparator23.Name = "ToolStripSeparator23";
-
             this.ToolStripSeparator23.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
+            // 
+            // tsDonate
+            // 
             this.tsDonate.Name = "tsDonate";
-
             this.tsDonate.Size = new System.Drawing.Size(258, 22);
             this.tsDonate.Text = "Make a Donation (PayPal)";
+            // 
+            // ToolStripSeparator24
+            // 
             this.ToolStripSeparator24.Name = "ToolStripSeparator24";
-
             this.ToolStripSeparator24.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
+            // 
+            // tsTitanPlanner
+            // 
             this.tsTitanPlanner.Name = "tsTitanPlanner";
-
             this.tsTitanPlanner.Size = new System.Drawing.Size(258, 22);
             this.tsTitanPlanner.Text = "CoH &Planner Website";
+            // 
+            // tsTitanSite
+            // 
             this.tsTitanSite.Name = "tsTitanSite";
-
             this.tsTitanSite.Size = new System.Drawing.Size(258, 22);
             this.tsTitanSite.Text = "&Titan Network Website";
+            // 
+            // WindowToolStripMenuItem
+            // 
             this.WindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[16]
             {
             (System.Windows.Forms.ToolStripItem) this.tsViewSets,
@@ -1144,57 +1180,81 @@
             });
             this.WindowToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem";
-
             this.WindowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.WindowToolStripMenuItem.Text = "&Window";
+            // 
+            // tsViewSets
+            // 
             this.tsViewSets.Name = "tsViewSets";
             this.tsViewSets.ShortcutKeys = System.Windows.Forms.Keys.B | System.Windows.Forms.Keys.Control;
-
             this.tsViewSets.Size = new System.Drawing.Size(232, 22);
             this.tsViewSets.Text = "&Sets && Bonuses";
+            // 
+            // tsViewGraphs
+            // 
             this.tsViewGraphs.Name = "tsViewGraphs";
             this.tsViewGraphs.ShortcutKeys = System.Windows.Forms.Keys.G | System.Windows.Forms.Keys.Control;
-
             this.tsViewGraphs.Size = new System.Drawing.Size(232, 22);
             this.tsViewGraphs.Text = "Power &Graphs";
+            // 
+            // tsViewSetCompare
+            // 
             this.tsViewSetCompare.Name = "tsViewSetCompare";
             this.tsViewSetCompare.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
-
             this.tsViewSetCompare.Size = new System.Drawing.Size(232, 22);
             this.tsViewSetCompare.Text = "Powerset &Comparison";
+            // 
+            // tsViewData
+            // 
             this.tsViewData.Name = "tsViewData";
             this.tsViewData.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Control;
-
             this.tsViewData.Size = new System.Drawing.Size(232, 22);
             this.tsViewData.Text = "&Data View";
+            // 
+            // tsViewTotals
+            // 
             this.tsViewTotals.Name = "tsViewTotals";
             this.tsViewTotals.ShortcutKeys = System.Windows.Forms.Keys.T | System.Windows.Forms.Keys.Control;
-
             this.tsViewTotals.Size = new System.Drawing.Size(232, 22);
             this.tsViewTotals.Text = "Advanced &Totals";
+            // 
+            // ToolStripSeparator18
+            // 
             this.ToolStripSeparator18.Name = "ToolStripSeparator18";
-
             this.ToolStripSeparator18.Size = new System.Drawing.Size(229, 6);
+            // 
+            // tsRecipeViewer
+            // 
             this.tsRecipeViewer.Name = "tsRecipeViewer";
             this.tsRecipeViewer.ShortcutKeys = System.Windows.Forms.Keys.R | System.Windows.Forms.Keys.Control;
-
             this.tsRecipeViewer.Size = new System.Drawing.Size(232, 22);
             this.tsRecipeViewer.Text = "&Recipe Viewer";
+            // 
+            // tsDPSCalc
+            // 
             this.tsDPSCalc.Name = "tsDPSCalc";
             this.tsDPSCalc.ShortcutKeys = System.Windows.Forms.Keys.Z | System.Windows.Forms.Keys.Control;
-
             this.tsDPSCalc.Size = new System.Drawing.Size(232, 22);
             this.tsDPSCalc.Text = "DPS Calculator (Beta)";
+            // 
+            // ToolStripSeparator19
+            // 
             this.ToolStripSeparator19.Name = "ToolStripSeparator19";
-
             this.ToolStripSeparator19.Size = new System.Drawing.Size(229, 6);
+            // 
+            // tsSetFind
+            // 
             this.tsSetFind.Name = "tsSetFind";
-
             this.tsSetFind.Size = new System.Drawing.Size(232, 22);
             this.tsSetFind.Text = "Set &Bonus Finder";
+            // 
+            // ToolStripSeparator21
+            // 
             this.ToolStripSeparator21.Name = "ToolStripSeparator21";
-
             this.ToolStripSeparator21.Size = new System.Drawing.Size(229, 6);
+            // 
+            // InGameRespecHelperToolStripMenuItem
+            // 
             this.InGameRespecHelperToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[5]
             {
             (System.Windows.Forms.ToolStripItem) this.tsHelperShort,
@@ -1204,30 +1264,41 @@
             (System.Windows.Forms.ToolStripItem) this.tsHelperLong2
             });
             this.InGameRespecHelperToolStripMenuItem.Name = "InGameRespecHelperToolStripMenuItem";
-
             this.InGameRespecHelperToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.InGameRespecHelperToolStripMenuItem.Text = "In-Game &Respec Helper";
+            // 
+            // tsHelperShort
+            // 
             this.tsHelperShort.Name = "tsHelperShort";
-
             this.tsHelperShort.Size = new System.Drawing.Size(143, 22);
             this.tsHelperShort.Text = "Profile &Short";
+            // 
+            // tsHelperLong
+            // 
             this.tsHelperLong.Name = "tsHelperLong";
-
             this.tsHelperLong.Size = new System.Drawing.Size(143, 22);
             this.tsHelperLong.Text = "Profile &Long";
+            // 
+            // ToolStripSeparator20
+            // 
             this.ToolStripSeparator20.Name = "ToolStripSeparator20";
-
             this.ToolStripSeparator20.Size = new System.Drawing.Size(140, 6);
+            // 
+            // tsHelperShort2
+            // 
             this.tsHelperShort2.Name = "tsHelperShort2";
-
             this.tsHelperShort2.Size = new System.Drawing.Size(143, 22);
             this.tsHelperShort2.Text = "History S&hort";
+            // 
+            // tsHelperLong2
+            // 
             this.tsHelperLong2.Name = "tsHelperLong2";
-
             this.tsHelperLong2.Size = new System.Drawing.Size(143, 22);
             this.tsHelperLong2.Text = "History L&ong";
+            // 
+            // ToolStripMenuItem4
+            // 
             this.ToolStripMenuItem4.Name = "ToolStripMenuItem4";
-
             this.ToolStripMenuItem4.Size = new System.Drawing.Size(229, 6);
             // 
             // AccoladesWindowToolStripMenuItem
@@ -1325,6 +1396,9 @@
             this.lblAT.Size = new System.Drawing.Size(92, 21);
             this.lblAT.TabIndex = 45;
             this.lblAT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // llPool0
+            // 
             this.llPool0.Expandable = false;
             this.llPool0.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.llPool0.HighVis = true;
@@ -1342,6 +1416,9 @@
             this.llPool0.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool0.SuspendRedraw = false;
             this.llPool0.TabIndex = 34;
+            // 
+            // llPool1
+            // 
             this.llPool1.Expandable = false;
             this.llPool1.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.llPool1.ForeColor = System.Drawing.Color.Yellow;
@@ -1360,6 +1437,9 @@
             this.llPool1.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool1.SuspendRedraw = false;
             this.llPool1.TabIndex = 35;
+            // 
+            // llSecondary
+            // 
             this.llSecondary.Expandable = true;
             this.llSecondary.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.llSecondary.HighVis = true;
@@ -1377,6 +1457,9 @@
             this.llSecondary.SizeNormal = new System.Drawing.Size(144, 160);
             this.llSecondary.SuspendRedraw = false;
             this.llSecondary.TabIndex = 108;
+            // 
+            // llPrimary
+            // 
             this.llPrimary.Expandable = true;
             this.llPrimary.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.llPrimary.HighVis = true;
@@ -1394,6 +1477,9 @@
             this.llPrimary.SizeNormal = new System.Drawing.Size(144, 160);
             this.llPrimary.SuspendRedraw = false;
             this.llPrimary.TabIndex = 107;
+            // 
+            // llPool3
+            // 
             this.llPool3.Expandable = false;
             this.llPool3.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.llPool3.ForeColor = System.Drawing.Color.Yellow;
@@ -1412,6 +1498,9 @@
             this.llPool3.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool3.SuspendRedraw = false;
             this.llPool3.TabIndex = 37;
+            // 
+            // llPool2
+            // 
             this.llPool2.Expandable = false;
             this.llPool2.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.llPool2.ForeColor = System.Drawing.Color.Yellow;
@@ -1430,6 +1519,9 @@
             this.llPool2.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool2.SuspendRedraw = false;
             this.llPool2.TabIndex = 36;
+            // 
+            // lblHero
+            // 
             this.lblHero.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.lblHero.ForeColor = System.Drawing.Color.White;
             this.lblHero.InitialText = "Name: Level 0 Origin Archetype (Primary / Secondary)";
@@ -1438,28 +1530,29 @@
             this.lblHero.Size = new System.Drawing.Size(834, 46);
             this.lblHero.TabIndex = 43;
             this.lblHero.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // heroVillain
+            // 
             this.heroVillain.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.heroVillain.Checked = false;
             this.heroVillain.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.heroVillain.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.heroVillain.Location = new System.Drawing.Point(630, 27);
             this.heroVillain.Name = "heroVillain";
-
             this.heroVillain.Size = new System.Drawing.Size(105, 22);
             this.heroVillain.TabIndex = 116;
             this.heroVillain.TextOff = "Hero";
             this.heroVillain.TextOn = "Villain";
             this.heroVillain.Toggle = true;
+            // 
+            // tempPowersButton
+            // 
             this.tempPowersButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.tempPowersButton.Checked = false;
             this.tempPowersButton.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.tempPowersButton.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.tempPowersButton.Location = new System.Drawing.Point(951, 50);
             this.tempPowersButton.Name = "tempPowersButton";
-
             this.tempPowersButton.Size = new System.Drawing.Size(105, 22);
             this.tempPowersButton.TabIndex = 115;
             this.tempPowersButton.TextOff = "Temp Pwrs (Off)";
@@ -1537,120 +1630,117 @@
             this.ibVetPools.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.ibVetPools.Checked = false;
             this.ibVetPools.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibVetPools.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibVetPools.Location = new System.Drawing.Point(441, 50);
             this.ibVetPools.Name = "ibVetPools";
-
             this.ibVetPools.Size = new System.Drawing.Size(105, 22);
             this.ibVetPools.TabIndex = 111;
             this.ibVetPools.TextOff = "Veteran Pools: Off";
             this.ibVetPools.TextOn = "Veteran Pools: On";
             this.ibVetPools.Toggle = true;
             this.ibVetPools.Visible = false;
+            // 
+            // ibPvX
+            // 
             this.ibPvX.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.ibPvX.Checked = false;
             this.ibPvX.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibPvX.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibPvX.Location = new System.Drawing.Point(737, 27);
             this.ibPvX.Name = "ibPvX";
-
             this.ibPvX.Size = new System.Drawing.Size(105, 22);
             this.ibPvX.TabIndex = 111;
             this.ibPvX.TextOff = "Mode: PvE";
             this.ibPvX.TextOn = "Mode: PvP";
             this.ibPvX.Toggle = true;
+            // 
+            // ibTotals
+            // 
             this.ibTotals.Checked = false;
             this.ibTotals.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibTotals.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibTotals.Location = new System.Drawing.Point(355, 109);
             this.ibTotals.Name = "ibTotals";
-
             this.ibTotals.Size = new System.Drawing.Size(105, 22);
             this.ibTotals.TabIndex = 99;
             this.ibTotals.TextOff = "View Totals";
             this.ibTotals.TextOn = "Alt Text";
             this.ibTotals.Toggle = false;
+            // 
+            // ibSlotLevels
+            // 
             this.ibSlotLevels.Checked = false;
             this.ibSlotLevels.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibSlotLevels.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibSlotLevels.Location = new System.Drawing.Point(244, 133);
             this.ibSlotLevels.Name = "ibSlotLevels";
-
             this.ibSlotLevels.Size = new System.Drawing.Size(105, 22);
             this.ibSlotLevels.TabIndex = 101;
             this.ibSlotLevels.TextOff = "Slot Levels: Off";
             this.ibSlotLevels.TextOn = "Slot Levels: On";
             this.ibSlotLevels.Toggle = true;
+            // 
+            // ibMode
+            // 
             this.ibMode.Checked = false;
             this.ibMode.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibMode.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibMode.Location = new System.Drawing.Point(244, 80);
             this.ibMode.Name = "ibMode";
-
             this.ibMode.Size = new System.Drawing.Size(105, 22);
             this.ibMode.TabIndex = 100;
             this.ibMode.TextOff = "Mode Switch";
             this.ibMode.TextOn = "Alt Text";
             this.ibMode.Toggle = false;
+            // 
+            // ibSets
+            // 
             this.ibSets.Checked = false;
             this.ibSets.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibSets.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibSets.Location = new System.Drawing.Point(244, 109);
             this.ibSets.Name = "ibSets";
-
             this.ibSets.Size = new System.Drawing.Size(105, 22);
             this.ibSets.TabIndex = 98;
             this.ibSets.TextOff = "View Active Sets";
             this.ibSets.TextOn = "Alt Text";
             this.ibSets.Toggle = false;
+            // 
+            // ibAccolade
+            // 
             this.ibAccolade.Checked = false;
             this.ibAccolade.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibAccolade.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibAccolade.Location = new System.Drawing.Point(355, 133);
             this.ibAccolade.Name = "ibAccolade";
-
             this.ibAccolade.Size = new System.Drawing.Size(105, 22);
             this.ibAccolade.TabIndex = 106;
             this.ibAccolade.TextOff = "67 Slots to go";
             this.ibAccolade.TextOn = "0 Slots placed";
             this.ibAccolade.Toggle = true;
+            // 
+            // ibRecipe
+            // 
             this.ibRecipe.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.ibRecipe.Checked = false;
             this.ibRecipe.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibRecipe.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibRecipe.Location = new System.Drawing.Point(844, 27);
             this.ibRecipe.Name = "ibRecipe";
-
             this.ibRecipe.Size = new System.Drawing.Size(105, 22);
             this.ibRecipe.TabIndex = 105;
             this.ibRecipe.TextOff = "Recipes: Off";
             this.ibRecipe.TextOn = "Recipes: On";
             this.ibRecipe.Toggle = true;
+            // 
+            // ibPopup
+            // 
             this.ibPopup.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.ibPopup.Checked = false;
             this.ibPopup.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibPopup.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibPopup.Location = new System.Drawing.Point(951, 27);
             this.ibPopup.Name = "ibPopup";
-
             this.ibPopup.Size = new System.Drawing.Size(105, 22);
             this.ibPopup.TabIndex = 104;
             this.ibPopup.TextOff = "Pop-Up: Off";
@@ -1658,7 +1748,6 @@
             this.ibPopup.Toggle = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
-
             this.ClientSize = new System.Drawing.Size(1056, 752);
             this.Controls.Add(this.heroVillain);
             this.Controls.Add(this.tempPowersButton);
