@@ -835,19 +835,19 @@ namespace Hero_Designer
             this.TeamSize.BeginInit();
             this.SuspendLayout();
             this.btnOK.DialogResult = DialogResult.OK;
-            Point point = new Point(504, 360);
-            this.btnOK.Location = point;
+
+            this.btnOK.Location = new Point(504, 360);
             this.btnOK.Name = "btnOK";
-            Size size = new Size(75, 28);
-            this.btnOK.Size = size;
+
+            this.btnOK.Size = new Size(75, 28);
             this.btnOK.TabIndex = 59;
             this.btnOK.Text = "OK";
             this.btnCancel.DialogResult = DialogResult.Cancel;
-            point = new Point(408, 360);
-            this.btnCancel.Location = point;
+
+            this.btnCancel.Location = new Point(408, 360);
             this.btnCancel.Name = "btnCancel";
-            size = new Size(75, 28);
-            this.btnCancel.Size = size;
+
+            this.btnCancel.Size = new Size(75, 28);
             this.btnCancel.TabIndex = 60;
             this.btnCancel.Text = "Cancel";
             this.TabControl1.Controls.Add((Control)this.TabPage3);
@@ -856,12 +856,12 @@ namespace Hero_Designer
             this.TabControl1.Controls.Add((Control)this.TabPage4);
             this.TabControl1.Controls.Add((Control)this.TabPage5);
             this.TabControl1.Controls.Add((Control)this.TabPage1);
-            point = new Point(0, 0);
-            this.TabControl1.Location = point;
+
+            this.TabControl1.Location = new Point(0, 0);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            size = new Size(638, 352);
-            this.TabControl1.Size = size;
+
+            this.TabControl1.Size = new Size(638, 352);
             this.TabControl1.TabIndex = 0;
             this.TabPage3.Controls.Add((Control)this.chkShowAlphaPopup);
             this.TabPage3.Controls.Add((Control)this.chkNoTips);
@@ -871,34 +871,34 @@ namespace Hero_Designer
             this.TabPage3.Controls.Add((Control)this.GroupBox5);
             this.TabPage3.Controls.Add((Control)this.GroupBox14);
             this.TabPage3.Controls.Add((Control)this.GroupBox3);
-            point = new Point(4, 23);
-            this.TabPage3.Location = point;
+
+            this.TabPage3.Location = new Point(4, 23);
             this.TabPage3.Name = "TabPage3";
-            size = new Size(700, 325);
-            this.TabPage3.Size = size;
+
+            this.TabPage3.Size = new Size(700, 325);
             this.TabPage3.TabIndex = 2;
             this.TabPage3.Text = "Enhancements & View";
             this.TabPage3.UseVisualStyleBackColor = true;
-            point = new Point(434, 285);
-            this.chkShowAlphaPopup.Location = point;
+
+            this.chkShowAlphaPopup.Location = new Point(434, 285);
             this.chkShowAlphaPopup.Name = "chkShowAlphaPopup";
-            size = new Size(190, 18);
-            this.chkShowAlphaPopup.Size = size;
+
+            this.chkShowAlphaPopup.Size = new Size(190, 18);
             this.chkShowAlphaPopup.TabIndex = 79;
             this.chkShowAlphaPopup.Text = "Include Alpha buffs in popups";
-            point = new Point(434, 304);
-            this.chkNoTips.Location = point;
+
+            this.chkNoTips.Location = new Point(434, 304);
             this.chkNoTips.Name = "chkNoTips";
-            size = new Size(141, 18);
-            this.chkNoTips.Size = size;
+
+            this.chkNoTips.Size = new Size(141, 18);
             this.chkNoTips.TabIndex = 78;
             this.chkNoTips.Text = "No Tooltips";
             this.chkNoTips.Visible = false;
-            point = new Point(206, 304);
-            this.chkMiddle.Location = point;
+
+            this.chkMiddle.Location = new Point(206, 304);
             this.chkMiddle.Name = "chkMiddle";
-            size = new Size(222, 18);
-            this.chkMiddle.Size = size;
+
+            this.chkMiddle.Size = new Size(222, 18);
             this.chkMiddle.TabIndex = 77;
             this.chkMiddle.Text = "Middle-Click repeats last enhancement";
             this.GroupBox17.Controls.Add((Control)this.chkColorInherent);
@@ -912,89 +912,89 @@ namespace Hero_Designer
             this.GroupBox17.Controls.Add((Control)this.Label21);
             this.GroupBox17.Controls.Add((Control)this.udStatSize);
             this.GroupBox17.Controls.Add((Control)this.udRTFSize);
-            point = new Point(196, 136);
-            this.GroupBox17.Location = point;
+
+            this.GroupBox17.Location = new Point(196, 136);
             this.GroupBox17.Name = "GroupBox17";
-            size = new Size(380, 143);
-            this.GroupBox17.Size = size;
+
+            this.GroupBox17.Size = new Size(380, 143);
             this.GroupBox17.TabIndex = 76;
             this.GroupBox17.TabStop = false;
             this.GroupBox17.Text = "Font Size/Colors:";
-            point = new Point(10, 118);
-            this.chkColorInherent.Location = point;
+
+            this.chkColorInherent.Location = new Point(10, 118);
             this.chkColorInherent.Name = "chkColorInherent";
-            size = new Size(222, 20);
-            this.chkColorInherent.Size = size;
+
+            this.chkColorInherent.Size = new Size(222, 20);
             this.chkColorInherent.TabIndex = 70;
             this.chkColorInherent.Text = "Use alternate colors for inherents";
             this.myTip.SetToolTip((Control)this.chkColorInherent, "Draws villain builds in red rather than blue.");
-            point = new Point(10, 74);
-            this.chkHighVis.Location = point;
+
+            this.chkHighVis.Location = new Point(10, 74);
             this.chkHighVis.Name = "chkHighVis";
-            size = new Size(222, 20);
-            this.chkHighVis.Size = size;
+
+            this.chkHighVis.Size = new Size(222, 20);
             this.chkHighVis.TabIndex = 69;
             this.chkHighVis.Text = "Use High-Visiblity text on the build view";
             this.myTip.SetToolTip((Control)this.chkHighVis, "Draw white text with a black outline on the build view (power bars on the right of the screen)");
-            point = new Point(141, 9);
-            this.Label36.Location = point;
+
+            this.Label36.Location = new Point(141, 9);
             this.Label36.Name = "Label36";
-            size = new Size(39, 16);
-            this.Label36.Size = size;
+
+            this.Label36.Size = new Size(39, 16);
             this.Label36.TabIndex = 64;
             this.Label36.Text = "Bold";
             this.Label36.TextAlign = ContentAlignment.MiddleCenter;
             this.chkStatBold.AutoSize = true;
-            point = new Point(150, 51);
-            this.chkStatBold.Location = point;
+
+            this.chkStatBold.Location = new Point(150, 51);
             this.chkStatBold.Name = "chkStatBold";
-            size = new Size(15, 14);
-            this.chkStatBold.Size = size;
+
+            this.chkStatBold.Size = new Size(15, 14);
             this.chkStatBold.TabIndex = 63;
             this.chkStatBold.UseVisualStyleBackColor = true;
             this.chkTextBold.AutoSize = true;
-            point = new Point(150, 26);
-            this.chkTextBold.Location = point;
+
+            this.chkTextBold.Location = new Point(150, 26);
             this.chkTextBold.Name = "chkTextBold";
-            size = new Size(15, 14);
-            this.chkTextBold.Size = size;
+
+            this.chkTextBold.Size = new Size(15, 14);
             this.chkTextBold.TabIndex = 62;
             this.chkTextBold.UseVisualStyleBackColor = true;
-            point = new Point(200, 19);
-            this.btnFontColour.Location = point;
+
+            this.btnFontColour.Location = new Point(200, 19);
             this.btnFontColour.Name = "btnFontColour";
-            size = new Size(172, 27);
-            this.btnFontColour.Size = size;
+
+            this.btnFontColour.Size = new Size(172, 27);
             this.btnFontColour.TabIndex = 61;
             this.btnFontColour.Text = "Set Colors...";
             this.btnFontColour.UseVisualStyleBackColor = true;
-            point = new Point(7, 48);
-            this.Label22.Location = point;
+
+            this.Label22.Location = new Point(7, 48);
             this.Label22.Name = "Label22";
-            size = new Size(78, 20);
-            this.Label22.Size = size;
+
+            this.Label22.Size = new Size(78, 20);
             this.Label22.TabIndex = 60;
             this.Label22.Text = "Stats/Powers:";
             this.Label22.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(10, 96);
-            this.chkVillainColour.Location = point;
+
+            this.chkVillainColour.Location = new Point(10, 96);
             this.chkVillainColour.Name = "chkVillainColour";
-            size = new Size(222, 20);
-            this.chkVillainColour.Size = size;
+
+            this.chkVillainColour.Size = new Size(222, 20);
             this.chkVillainColour.TabIndex = 68;
             this.chkVillainColour.Text = "Use alternate colors for villains";
             this.myTip.SetToolTip((Control)this.chkVillainColour, "Draws villain builds in red rather than blue.");
-            point = new Point(7, 23);
-            this.Label21.Location = point;
+
+            this.Label21.Location = new Point(7, 23);
             this.Label21.Name = "Label21";
-            size = new Size(78, 20);
-            this.Label21.Size = size;
+
+            this.Label21.Size = new Size(78, 20);
             this.Label21.TabIndex = 59;
             this.Label21.Text = "Info Tab Text:";
             this.Label21.TextAlign = ContentAlignment.MiddleRight;
             this.udStatSize.DecimalPlaces = 2;
-            point = new Point(87, 48);
-            this.udStatSize.Location = point;
+
+            this.udStatSize.Location = new Point(87, 48);
             Decimal num = new Decimal(new int[4]
             {
         14,
@@ -1006,63 +1006,63 @@ namespace Hero_Designer
             num = new Decimal(new int[4] { 6, 0, 0, 0 });
             this.udStatSize.Minimum = num;
             this.udStatSize.Name = "udStatSize";
-            size = new Size(52, 20);
-            this.udStatSize.Size = size;
+
+            this.udStatSize.Size = new Size(52, 20);
             this.udStatSize.TabIndex = 1;
             num = new Decimal(new int[4] { 825, 0, 0, 131072 });
             this.udStatSize.Value = num;
-            point = new Point(87, 22);
-            this.udRTFSize.Location = point;
+
+            this.udRTFSize.Location = new Point(87, 22);
             num = new Decimal(new int[4] { 14, 0, 0, 0 });
             this.udRTFSize.Maximum = num;
             num = new Decimal(new int[4] { 6, 0, 0, 0 });
             this.udRTFSize.Minimum = num;
             this.udRTFSize.Name = "udRTFSize";
-            size = new Size(52, 20);
-            this.udRTFSize.Size = size;
+
+            this.udRTFSize.Size = new Size(52, 20);
             this.udRTFSize.TabIndex = 0;
             num = new Decimal(new int[4] { 8, 0, 0, 0 });
             this.udRTFSize.Value = num;
-            point = new Point(207, 285);
-            this.chkIOPrintLevels.Location = point;
+
+            this.chkIOPrintLevels.Location = new Point(207, 285);
             this.chkIOPrintLevels.Name = "chkIOPrintLevels";
-            size = new Size(221, 18);
-            this.chkIOPrintLevels.Size = size;
+
+            this.chkIOPrintLevels.Size = new Size(221, 18);
             this.chkIOPrintLevels.TabIndex = 75;
             this.chkIOPrintLevels.Text = "Display Invention levels in printed builds";
             this.GroupBox5.Controls.Add((Control)this.rbGraphSimple);
             this.GroupBox5.Controls.Add((Control)this.rbGraphStacked);
             this.GroupBox5.Controls.Add((Control)this.rbGraphTwoLine);
-            point = new Point(388, 4);
-            this.GroupBox5.Location = point;
+
+            this.GroupBox5.Location = new Point(388, 4);
             this.GroupBox5.Name = "GroupBox5";
-            size = new Size(188, 125);
-            this.GroupBox5.Size = size;
+
+            this.GroupBox5.Size = new Size(188, 125);
             this.GroupBox5.TabIndex = 72;
             this.GroupBox5.TabStop = false;
             this.GroupBox5.Text = "Damage Graph Style:";
-            point = new Point(6, 89);
-            this.rbGraphSimple.Location = point;
+
+            this.rbGraphSimple.Location = new Point(6, 89);
             this.rbGraphSimple.Name = "rbGraphSimple";
-            size = new Size(164, 32);
-            this.rbGraphSimple.Size = size;
+
+            this.rbGraphSimple.Size = new Size(164, 32);
             this.rbGraphSimple.TabIndex = 5;
             this.rbGraphSimple.Text = "Base against Enhanced";
             this.myTip.SetToolTip((Control)this.rbGraphSimple, "This graph type doesn't reflect the max damage potential of other powers.");
-            point = new Point(6, 53);
-            this.rbGraphStacked.Location = point;
+
+            this.rbGraphStacked.Location = new Point(6, 53);
             this.rbGraphStacked.Name = "rbGraphStacked";
-            size = new Size(164, 32);
-            this.rbGraphStacked.Size = size;
+
+            this.rbGraphStacked.Size = new Size(164, 32);
             this.rbGraphStacked.TabIndex = 4;
             this.rbGraphStacked.Text = "Base + Enhanced (stacked) against Max Enhancable";
             this.myTip.SetToolTip((Control)this.rbGraphStacked, "'Max Enhacable' is damage if slotted with 6 +3 damage enhancements.");
             this.rbGraphTwoLine.Checked = true;
-            point = new Point(6, 17);
-            this.rbGraphTwoLine.Location = point;
+
+            this.rbGraphTwoLine.Location = new Point(6, 17);
             this.rbGraphTwoLine.Name = "rbGraphTwoLine";
-            size = new Size(164, 32);
-            this.rbGraphTwoLine.Size = size;
+
+            this.rbGraphTwoLine.Size = new Size(164, 32);
             this.rbGraphTwoLine.TabIndex = 3;
             this.rbGraphTwoLine.TabStop = true;
             this.rbGraphTwoLine.Text = "Base / Enhanced against Max Enhancable (Default)";
@@ -1071,46 +1071,46 @@ namespace Hero_Designer
             this.GroupBox14.Controls.Add((Control)this.btnIOReset);
             this.GroupBox14.Controls.Add((Control)this.Label40);
             this.GroupBox14.Controls.Add((Control)this.udIOLevel);
-            point = new Point(196, 4);
-            this.GroupBox14.Location = point;
+
+            this.GroupBox14.Location = new Point(196, 4);
             this.GroupBox14.Name = "GroupBox14";
-            size = new Size(188, 125);
-            this.GroupBox14.Size = size;
+
+            this.GroupBox14.Size = new Size(188, 125);
             this.GroupBox14.TabIndex = 69;
             this.GroupBox14.TabStop = false;
             this.GroupBox14.Text = "Inventions:";
-            point = new Point(8, 44);
-            this.chkIOLevel.Location = point;
+
+            this.chkIOLevel.Location = new Point(8, 44);
             this.chkIOLevel.Name = "chkIOLevel";
-            size = new Size(172, 24);
-            this.chkIOLevel.Size = size;
+
+            this.chkIOLevel.Size = new Size(172, 24);
             this.chkIOLevel.TabIndex = 60;
             this.chkIOLevel.Text = "Display IO Levels";
             this.myTip.SetToolTip((Control)this.chkIOLevel, "Show the level of Inventions in the build view");
-            point = new Point(8, 72);
-            this.btnIOReset.Location = point;
+
+            this.btnIOReset.Location = new Point(8, 72);
             this.btnIOReset.Name = "btnIOReset";
-            size = new Size(172, 44);
-            this.btnIOReset.Size = size;
+
+            this.btnIOReset.Size = new Size(172, 44);
             this.btnIOReset.TabIndex = 59;
             this.btnIOReset.Text = "Set All IO and SetO levels to default";
-            point = new Point(8, 20);
-            this.Label40.Location = point;
+
+            this.Label40.Location = new Point(8, 20);
             this.Label40.Name = "Label40";
-            size = new Size(96, 20);
-            this.Label40.Size = size;
+
+            this.Label40.Size = new Size(96, 20);
             this.Label40.TabIndex = 58;
             this.Label40.Text = "Default IO Level:";
             this.Label40.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(108, 20);
-            this.udIOLevel.Location = point;
+
+            this.udIOLevel.Location = new Point(108, 20);
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udIOLevel.Maximum = num;
             num = new Decimal(new int[4] { 10, 0, 0, 0 });
             this.udIOLevel.Minimum = num;
             this.udIOLevel.Name = "udIOLevel";
-            size = new Size(72, 20);
-            this.udIOLevel.Size = size;
+
+            this.udIOLevel.Size = new Size(72, 20);
             this.udIOLevel.TabIndex = 57;
             this.myTip.SetToolTip((Control)this.udIOLevel, "Inventions will be placed at this level by default. You can override the default by typing a level number in the picker.");
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
@@ -1123,49 +1123,49 @@ namespace Hero_Designer
             this.GroupBox3.Controls.Add((Control)this.optEnh);
             this.GroupBox3.Controls.Add((Control)this.cbEnhLevel);
             this.GroupBox3.Controls.Add((Control)this.Label4);
-            point = new Point(4, 4);
-            this.GroupBox3.Location = point;
+
+            this.GroupBox3.Location = new Point(4, 4);
             this.GroupBox3.Name = "GroupBox3";
-            size = new Size(184, 301);
-            this.GroupBox3.Size = size;
+
+            this.GroupBox3.Size = new Size(184, 301);
             this.GroupBox3.TabIndex = 62;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Regular Enhancements:";
-            point = new Point(11, 252);
-            this.chkRelSignOnly.Location = point;
+
+            this.chkRelSignOnly.Location = new Point(11, 252);
             this.chkRelSignOnly.Name = "chkRelSignOnly";
-            size = new Size(167, 43);
-            this.chkRelSignOnly.Size = size;
+
+            this.chkRelSignOnly.Size = new Size(167, 43);
             this.chkRelSignOnly.TabIndex = 69;
             this.chkRelSignOnly.Text = "Show signs only for relative levels ('++' rather than '+2')";
             this.myTip.SetToolTip((Control)this.chkRelSignOnly, "Draws villain builds in red rather than blue.");
-            point = new Point(6, 142);
-            this.Label3.Location = point;
+
+            this.Label3.Location = new Point(6, 142);
             this.Label3.Name = "Label3";
-            size = new Size(172, 79);
-            this.Label3.Size = size;
+
+            this.Label3.Size = new Size(172, 79);
             this.Label3.TabIndex = 59;
             this.Label3.Text = "Default Relative Level:\r\n(Ehancements can function up to five levels above or three below that of the character.)";
             this.Label3.TextAlign = ContentAlignment.MiddleCenter;
             this.optTO.Appearance = Appearance.Button;
             this.optTO.CheckAlign = ContentAlignment.TopCenter;
             this.optTO.Image = (Image)componentResourceManager.GetObject("optTO.Image");
-            point = new Point(24, 74);
-            this.optTO.Location = point;
+
+            this.optTO.Location = new Point(24, 74);
             this.optTO.Name = "optTO";
-            size = new Size(44, 44);
-            this.optTO.Size = size;
+
+            this.optTO.Size = new Size(44, 44);
             this.optTO.TabIndex = 48;
             this.optTO.TextAlign = ContentAlignment.MiddleCenter;
             this.myTip.SetToolTip((Control)this.optTO, "Training enhancements are the weakest kind.");
             this.optDO.Appearance = Appearance.Button;
             this.optDO.CheckAlign = ContentAlignment.TopCenter;
             this.optDO.Image = (Image)componentResourceManager.GetObject("optDO.Image");
-            point = new Point(72, 74);
-            this.optDO.Location = point;
+
+            this.optDO.Location = new Point(72, 74);
             this.optDO.Name = "optDO";
-            size = new Size(44, 44);
-            this.optDO.Size = size;
+
+            this.optDO.Size = new Size(44, 44);
             this.optDO.TabIndex = 49;
             this.optDO.TextAlign = ContentAlignment.MiddleCenter;
             this.myTip.SetToolTip((Control)this.optDO, "Dual Origin enhancements can be bought from level 12 onwards.");
@@ -1173,22 +1173,22 @@ namespace Hero_Designer
             this.optSO.CheckAlign = ContentAlignment.TopCenter;
             this.optSO.Checked = true;
             this.optSO.Image = (Image)componentResourceManager.GetObject("optSO.Image");
-            point = new Point(120, 74);
-            this.optSO.Location = point;
+
+            this.optSO.Location = new Point(120, 74);
             this.optSO.Name = "optSO";
-            size = new Size(44, 44);
-            this.optSO.Size = size;
+
+            this.optSO.Size = new Size(44, 44);
             this.optSO.TabIndex = 50;
             this.optSO.TabStop = true;
             this.optSO.TextAlign = ContentAlignment.MiddleCenter;
             this.myTip.SetToolTip((Control)this.optSO, "Single Origin enhancements are the most powerful kind, and can be bought from level 22.");
             this.optEnh.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.optEnh.ForeColor = SystemColors.ControlText;
-            point = new Point(21, 121);
-            this.optEnh.Location = point;
+
+            this.optEnh.Location = new Point(21, 121);
             this.optEnh.Name = "optEnh";
-            size = new Size(143, 16);
-            this.optEnh.Size = size;
+
+            this.optEnh.Size = new Size(143, 16);
             this.optEnh.TabIndex = 52;
             this.optEnh.Text = "Single Origin";
             this.optEnh.TextAlign = ContentAlignment.MiddleCenter;
@@ -1204,19 +1204,19 @@ namespace Hero_Designer
         (object) "+2 Levels",
         (object) "+3 Levels"
             });
-            point = new Point(9, 224);
-            this.cbEnhLevel.Location = point;
+
+            this.cbEnhLevel.Location = new Point(9, 224);
             this.cbEnhLevel.Name = "cbEnhLevel";
-            size = new Size(167, 22);
-            this.cbEnhLevel.Size = size;
+
+            this.cbEnhLevel.Size = new Size(167, 22);
             this.cbEnhLevel.TabIndex = 53;
             this.cbEnhLevel.Tag = (object)"";
             this.myTip.SetToolTip((Control)this.cbEnhLevel, "This is the relative level of the enhancements in relation to your own. ");
-            point = new Point(6, 18);
-            this.Label4.Location = point;
+
+            this.Label4.Location = new Point(6, 18);
             this.Label4.Name = "Label4";
-            size = new Size(172, 50);
-            this.Label4.Size = size;
+
+            this.Label4.Size = new Size(172, 50);
             this.Label4.TabIndex = 58;
             this.Label4.Text = "Default Enhancement Type:\r\n(This does not affect Inventions or Special enhancements)";
             this.Label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -1227,78 +1227,78 @@ namespace Hero_Designer
             this.TabPage2.Controls.Add((Control)this.GroupBox15);
             this.TabPage2.Controls.Add((Control)this.GroupBox8);
             this.TabPage2.Controls.Add((Control)this.GroupBox6);
-            point = new Point(4, 23);
-            this.TabPage2.Location = point;
+
+            this.TabPage2.Location = new Point(4, 23);
             this.TabPage2.Name = "TabPage2";
-            size = new Size(630, 325);
-            this.TabPage2.Size = size;
+
+            this.TabPage2.Size = new Size(630, 325);
             this.TabPage2.TabIndex = 1;
             this.TabPage2.Text = "Effects & Maths";
             this.TabPage2.UseVisualStyleBackColor = true;
             this.GroupBox2.Controls.Add((Control)this.clbSuppression);
             this.GroupBox2.Controls.Add((Control)this.Label8);
-            point = new Point(517, 4);
-            this.GroupBox2.Location = point;
+
+            this.GroupBox2.Location = new Point(517, 4);
             this.GroupBox2.Name = "GroupBox2";
-            size = new Size(107, 283);
-            this.GroupBox2.Size = size;
+
+            this.GroupBox2.Size = new Size(107, 283);
             this.GroupBox2.TabIndex = 69;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Suppression";
             this.clbSuppression.CheckOnClick = true;
             this.clbSuppression.FormattingEnabled = true;
-            point = new Point(9, 104);
-            this.clbSuppression.Location = point;
+
+            this.clbSuppression.Location = new Point(9, 104);
             this.clbSuppression.Name = "clbSuppression";
-            size = new Size(92, 169);
-            this.clbSuppression.Size = size;
+
+            this.clbSuppression.Size = new Size(92, 169);
             this.clbSuppression.TabIndex = 9;
-            point = new Point(6, 17);
-            this.Label8.Location = point;
+
+            this.Label8.Location = new Point(6, 17);
             this.Label8.Name = "Label8";
-            size = new Size(95, 86);
-            this.Label8.Size = size;
+
+            this.Label8.Size = new Size(95, 86);
             this.Label8.TabIndex = 65;
             this.Label8.Text = "Some effects are suppressed on specific conditions. You can enable those conditions here.";
-            point = new Point(15, 294);
-            this.chkUseArcanaTime.Location = point;
+
+            this.chkUseArcanaTime.Location = new Point(15, 294);
             this.chkUseArcanaTime.Name = "chkUseArcanaTime";
-            size = new Size(204, 22);
-            this.chkUseArcanaTime.Size = size;
+
+            this.chkUseArcanaTime.Size = new Size(204, 22);
             this.chkUseArcanaTime.TabIndex = 66;
             this.chkUseArcanaTime.Text = "Use ArcanaTime for Animation Times";
             this.myTip.SetToolTip((Control)this.chkUseArcanaTime, "Displays all cast times in ArcanaTime, the real time all animations take due to server clock ticks.");
             this.GroupBox15.Controls.Add((Control)this.Label20);
             this.GroupBox15.Controls.Add((Control)this.chkSetBonus);
             this.GroupBox15.Controls.Add((Control)this.chkIOEffects);
-            point = new Point(316, 166);
-            this.GroupBox15.Location = point;
+
+            this.GroupBox15.Location = new Point(316, 166);
             this.GroupBox15.Name = "GroupBox15";
-            size = new Size(195, 121);
-            this.GroupBox15.Size = size;
+
+            this.GroupBox15.Size = new Size(195, 121);
             this.GroupBox15.TabIndex = 68;
             this.GroupBox15.TabStop = false;
             this.GroupBox15.Text = "Invention Effects:";
-            point = new Point(6, 17);
-            this.Label20.Location = point;
+
+            this.Label20.Location = new Point(6, 17);
             this.Label20.Name = "Label20";
-            size = new Size(179, 49);
-            this.Label20.Size = size;
+
+            this.Label20.Size = new Size(179, 49);
             this.Label20.TabIndex = 65;
             this.Label20.Text = "The effects of set bonusses and special IO enhancements can be included when stats are calculated.";
-            point = new Point(11, 93);
-            this.chkSetBonus.Location = point;
+
+            this.chkSetBonus.Location = new Point(11, 93);
             this.chkSetBonus.Name = "chkSetBonus";
-            size = new Size(169, 22);
-            this.chkSetBonus.Size = size;
+
+            this.chkSetBonus.Size = new Size(169, 22);
             this.chkSetBonus.TabIndex = 64;
             this.chkSetBonus.Text = "Include Set Bonus effects\r\n";
             this.myTip.SetToolTip((Control)this.chkSetBonus, "Add set bonus effects to the totals view.");
-            point = new Point(11, 69);
-            this.chkIOEffects.Location = point;
+
+            this.chkIOEffects.Location = new Point(11, 69);
             this.chkIOEffects.Name = "chkIOEffects";
-            size = new Size(169, 22);
-            this.chkIOEffects.Size = size;
+
+            this.chkIOEffects.Size = new Size(169, 22);
             this.chkIOEffects.TabIndex = 63;
             this.chkIOEffects.Text = "Include Enhancement effects";
             this.myTip.SetToolTip((Control)this.chkIOEffects, "Some enhancments have power effects, such as minor Psionic resistance. This effect can be added into the power.");
@@ -1306,75 +1306,75 @@ namespace Hero_Designer
             this.GroupBox8.Controls.Add((Control)this.rbChanceAverage);
             this.GroupBox8.Controls.Add((Control)this.rbChanceMax);
             this.GroupBox8.Controls.Add((Control)this.Label9);
-            point = new Point(4, 4);
-            this.GroupBox8.Location = point;
+
+            this.GroupBox8.Location = new Point(4, 4);
             this.GroupBox8.Name = "GroupBox8";
-            size = new Size(507, 156);
-            this.GroupBox8.Size = size;
+
+            this.GroupBox8.Size = new Size(507, 156);
             this.GroupBox8.TabIndex = 3;
             this.GroupBox8.TabStop = false;
             this.GroupBox8.Text = "Chance of Damage:";
-            point = new Point(221, 113);
-            this.rbChanceIgnore.Location = point;
+
+            this.rbChanceIgnore.Location = new Point(221, 113);
             this.rbChanceIgnore.Name = "rbChanceIgnore";
-            size = new Size(224, 20);
-            this.rbChanceIgnore.Size = size;
+
+            this.rbChanceIgnore.Size = new Size(224, 20);
             this.rbChanceIgnore.TabIndex = 8;
             this.rbChanceIgnore.Text = "Ignore Extra Damage (Show minimum)";
             this.rbChanceAverage.Checked = true;
-            point = new Point(11, 97);
-            this.rbChanceAverage.Location = point;
+
+            this.rbChanceAverage.Location = new Point(11, 97);
             this.rbChanceAverage.Name = "rbChanceAverage";
-            size = new Size(204, 20);
-            this.rbChanceAverage.Size = size;
+
+            this.rbChanceAverage.Size = new Size(204, 20);
             this.rbChanceAverage.TabIndex = 7;
             this.rbChanceAverage.TabStop = true;
             this.rbChanceAverage.Text = "Show Average (Damage x Chance)";
-            point = new Point(221, 83);
-            this.rbChanceMax.Location = point;
+
+            this.rbChanceMax.Location = new Point(221, 83);
             this.rbChanceMax.Name = "rbChanceMax";
-            size = new Size(204, 20);
-            this.rbChanceMax.Size = size;
+
+            this.rbChanceMax.Size = new Size(204, 20);
             this.rbChanceMax.TabIndex = 6;
             this.rbChanceMax.Text = "Show Max Possible Damage";
-            point = new Point(8, 16);
-            this.Label9.Location = point;
+
+            this.Label9.Location = new Point(8, 16);
             this.Label9.Name = "Label9";
-            size = new Size(499, 56);
-            this.Label9.Size = size;
+
+            this.Label9.Size = new Size(499, 56);
             this.Label9.TabIndex = 4;
             this.Label9.Text = componentResourceManager.GetString("Label9.Text");
             this.GroupBox6.Controls.Add((Control)this.Label7);
             this.GroupBox6.Controls.Add((Control)this.rbPvP);
             this.GroupBox6.Controls.Add((Control)this.rbPvE);
-            point = new Point(8, 166);
-            this.GroupBox6.Location = point;
+
+            this.GroupBox6.Location = new Point(8, 166);
             this.GroupBox6.Name = "GroupBox6";
-            size = new Size(301, 122);
-            this.GroupBox6.Size = size;
+
+            this.GroupBox6.Size = new Size(301, 122);
             this.GroupBox6.TabIndex = 1;
             this.GroupBox6.TabStop = false;
             this.GroupBox6.Text = "Targets:";
-            point = new Point(8, 16);
-            this.Label7.Location = point;
+
+            this.Label7.Location = new Point(8, 16);
             this.Label7.Name = "Label7";
-            size = new Size(295, 54);
-            this.Label7.Size = size;
+
+            this.Label7.Size = new Size(295, 54);
             this.Label7.TabIndex = 2;
             this.Label7.Text = "Some powers  have different effects when used against players (Mez effects are a good example of this). Where a power has different effects, which should be displayed?";
-            point = new Point(11, 93);
-            this.rbPvP.Location = point;
+
+            this.rbPvP.Location = new Point(11, 93);
             this.rbPvP.Name = "rbPvP";
-            size = new Size(260, 20);
-            this.rbPvP.Size = size;
+
+            this.rbPvP.Size = new Size(260, 20);
             this.rbPvP.TabIndex = 1;
             this.rbPvP.Text = "Show values for Players (PvP)";
             this.rbPvE.Checked = true;
-            point = new Point(11, 73);
-            this.rbPvE.Location = point;
+
+            this.rbPvE.Location = new Point(11, 73);
             this.rbPvE.Name = "rbPvE";
-            size = new Size(260, 20);
-            this.rbPvE.Size = size;
+
+            this.rbPvE.Size = new Size(260, 20);
             this.rbPvE.TabIndex = 0;
             this.rbPvE.TabStop = true;
             this.rbPvE.Text = "Show values for Critters (PvE)";
@@ -1382,95 +1382,95 @@ namespace Hero_Designer
             this.TabPage6.Controls.Add((Control)this.GroupBox13);
             this.TabPage6.Controls.Add((Control)this.GroupBox10);
             this.TabPage6.Controls.Add((Control)this.GroupBox4);
-            point = new Point(4, 23);
-            this.TabPage6.Location = point;
+
+            this.TabPage6.Location = new Point(4, 23);
             this.TabPage6.Name = "TabPage6";
-            size = new Size(630, 325);
-            this.TabPage6.Size = size;
+
+            this.TabPage6.Size = new Size(630, 325);
             this.TabPage6.TabIndex = 5;
             this.TabPage6.Text = "Exemping & Base Values";
             this.TabPage6.UseVisualStyleBackColor = true;
-            point = new Point(401, 85);
-            this.Label6.Location = point;
+
+            this.Label6.Location = new Point(401, 85);
             this.Label6.Name = "Label6";
-            size = new Size(169, 119);
-            this.Label6.Size = size;
+
+            this.Label6.Size = new Size(169, 119);
             this.Label6.TabIndex = 71;
             this.Label6.Text = "Exemplar and level-accurate scaling features will be added in the future!";
             this.Label6.TextAlign = ContentAlignment.MiddleCenter;
             this.GroupBox13.Controls.Add((Control)this.udForceLevel);
             this.GroupBox13.Controls.Add((Control)this.Label38);
             this.GroupBox13.Enabled = false;
-            point = new Point(284, 4);
-            this.GroupBox13.Location = point;
+
+            this.GroupBox13.Location = new Point(284, 4);
             this.GroupBox13.Name = "GroupBox13";
-            size = new Size(96, 184);
-            this.GroupBox13.Size = size;
+
+            this.GroupBox13.Size = new Size(96, 184);
             this.GroupBox13.TabIndex = 70;
             this.GroupBox13.TabStop = false;
             this.GroupBox13.Text = "Forced Level:";
-            point = new Point(8, 124);
-            this.udForceLevel.Location = point;
+
+            this.udForceLevel.Location = new Point(8, 124);
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udForceLevel.Maximum = num;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udForceLevel.Minimum = num;
             this.udForceLevel.Name = "udForceLevel";
-            size = new Size(80, 20);
-            this.udForceLevel.Size = size;
+
+            this.udForceLevel.Size = new Size(80, 20);
             this.udForceLevel.TabIndex = 55;
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udForceLevel.Value = num;
-            point = new Point(4, 16);
-            this.Label38.Location = point;
+
+            this.Label38.Location = new Point(4, 16);
             this.Label38.Name = "Label38";
-            size = new Size(88, 100);
-            this.Label38.Size = size;
+
+            this.Label38.Size = new Size(88, 100);
             this.Label38.TabIndex = 1;
             this.Label38.Text = "Slots/Powers placed after this level won't be included in stats, and will be dimmed in the build view.";
             this.GroupBox10.Controls.Add((Control)this.btnBaseReset);
             this.GroupBox10.Controls.Add((Control)this.Label14);
             this.GroupBox10.Controls.Add((Control)this.udBaseToHit);
             this.GroupBox10.Controls.Add((Control)this.Label13);
-            point = new Point(4, 196);
-            this.GroupBox10.Location = point;
+
+            this.GroupBox10.Location = new Point(4, 196);
             this.GroupBox10.Name = "GroupBox10";
-            size = new Size(376, 104);
-            this.GroupBox10.Size = size;
+
+            this.GroupBox10.Size = new Size(376, 104);
             this.GroupBox10.TabIndex = 69;
             this.GroupBox10.TabStop = false;
             this.GroupBox10.Text = "Base Values:";
-            point = new Point(240, 76);
-            this.btnBaseReset.Location = point;
+
+            this.btnBaseReset.Location = new Point(240, 76);
             this.btnBaseReset.Name = "btnBaseReset";
-            size = new Size(120, 20);
-            this.btnBaseReset.Size = size;
+
+            this.btnBaseReset.Size = new Size(120, 20);
             this.btnBaseReset.TabIndex = 61;
             this.btnBaseReset.Text = "Reset Values";
-            point = new Point(147, 39);
-            this.Label14.Location = point;
+
+            this.Label14.Location = new Point(147, 39);
             this.Label14.Name = "Label14";
-            size = new Size(112, 20);
-            this.Label14.Size = size;
+
+            this.Label14.Size = new Size(112, 20);
             this.Label14.TabIndex = 58;
             this.Label14.Text = "Base ToHit:";
             this.Label14.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(263, 39);
-            this.udBaseToHit.Location = point;
+
+            this.udBaseToHit.Location = new Point(263, 39);
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udBaseToHit.Minimum = num;
             this.udBaseToHit.Name = "udBaseToHit";
-            size = new Size(88, 20);
-            this.udBaseToHit.Size = size;
+
+            this.udBaseToHit.Size = new Size(88, 20);
             this.udBaseToHit.TabIndex = 57;
             this.myTip.SetToolTip((Control)this.udBaseToHit, "Chance of hitting a foe. Accuracy = (Base ToHit + Buffs) * Enhancements");
             num = new Decimal(new int[4] { 75, 0, 0, 0 });
             this.udBaseToHit.Value = num;
-            point = new Point(8, 16);
-            this.Label13.Location = point;
+
+            this.Label13.Location = new Point(8, 16);
             this.Label13.Name = "Label13";
-            size = new Size(136, 84);
-            this.Label13.Size = size;
+
+            this.Label13.Size = new Size(136, 84);
             this.Label13.TabIndex = 0;
             this.Label13.Text = "These values are used as the base for stats calculation. They shouldn't ever need to be changed unless there's a change to the game.";
             this.GroupBox4.Controls.Add((Control)this.Label12);
@@ -1479,70 +1479,70 @@ namespace Hero_Designer
             this.GroupBox4.Controls.Add((Control)this.Label5);
             this.GroupBox4.Controls.Add((Control)this.udExHigh);
             this.GroupBox4.Enabled = false;
-            point = new Point(4, 4);
-            this.GroupBox4.Location = point;
+
+            this.GroupBox4.Location = new Point(4, 4);
             this.GroupBox4.Name = "GroupBox4";
-            size = new Size(276, 184);
-            this.GroupBox4.Size = size;
+
+            this.GroupBox4.Size = new Size(276, 184);
             this.GroupBox4.TabIndex = 68;
             this.GroupBox4.TabStop = false;
             this.GroupBox4.Text = "Exemplar Level:";
-            point = new Point(8, 148);
-            this.Label12.Location = point;
+
+            this.Label12.Location = new Point(8, 148);
             this.Label12.Name = "Label12";
-            size = new Size(160, 20);
-            this.Label12.Size = size;
+
+            this.Label12.Size = new Size(160, 20);
             this.Label12.TabIndex = 58;
             this.Label12.Text = "Exemplared (Lower) Level:";
             this.Label12.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(172, 148);
-            this.udExLow.Location = point;
+
+            this.udExLow.Location = new Point(172, 148);
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udExLow.Maximum = num;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udExLow.Minimum = num;
             this.udExLow.Name = "udExLow";
-            size = new Size(88, 20);
-            this.udExLow.Size = size;
+
+            this.udExLow.Size = new Size(88, 20);
             this.udExLow.TabIndex = 57;
             this.myTip.SetToolTip((Control)this.udExLow, "Set the target exemplar level. Your enhancements will be calculated as though you are exemplared to this level, and their effect will be reduced accordingly");
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udExLow.Value = num;
-            point = new Point(8, 124);
-            this.Label11.Location = point;
+
+            this.Label11.Location = new Point(8, 124);
             this.Label11.Name = "Label11";
-            size = new Size(160, 20);
-            this.Label11.Size = size;
+
+            this.Label11.Size = new Size(160, 20);
             this.Label11.TabIndex = 56;
             this.Label11.Text = "Starting (Higher) Level:";
             this.Label11.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(8, 16);
-            this.Label5.Location = point;
+
+            this.Label5.Location = new Point(8, 16);
             this.Label5.Name = "Label5";
-            size = new Size(264, 96);
-            this.Label5.Size = size;
+
+            this.Label5.Size = new Size(264, 96);
             this.Label5.TabIndex = 55;
             this.Label5.Text = componentResourceManager.GetString("Label5.Text");
-            point = new Point(172, 124);
-            this.udExHigh.Location = point;
+
+            this.udExHigh.Location = new Point(172, 124);
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udExHigh.Maximum = num;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udExHigh.Minimum = num;
             this.udExHigh.Name = "udExHigh";
-            size = new Size(88, 20);
-            this.udExHigh.Size = size;
+
+            this.udExHigh.Size = new Size(88, 20);
             this.udExHigh.TabIndex = 54;
             this.myTip.SetToolTip((Control)this.udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
             num = new Decimal(new int[4] { 50, 0, 0, 0 });
             this.udExHigh.Value = num;
             this.TabPage4.Controls.Add((Control)this.GroupBox12);
             this.TabPage4.Controls.Add((Control)this.GroupBox11);
-            point = new Point(4, 23);
-            this.TabPage4.Location = point;
+
+            this.TabPage4.Location = new Point(4, 23);
             this.TabPage4.Name = "TabPage4";
-            size = new Size(630, 325);
-            this.TabPage4.Size = size;
+
+            this.TabPage4.Size = new Size(630, 325);
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "Forum Export Settings";
             this.TabPage4.UseVisualStyleBackColor = true;
@@ -1575,212 +1575,212 @@ namespace Hero_Designer
             this.GroupBox12.Controls.Add((Control)this.Label25);
             this.GroupBox12.Controls.Add((Control)this.Label24);
             this.GroupBox12.Controls.Add((Control)this.Label33);
-            point = new Point(180, 8);
-            this.GroupBox12.Location = point;
+
+            this.GroupBox12.Location = new Point(180, 8);
             this.GroupBox12.Name = "GroupBox12";
-            size = new Size(392, 308);
-            this.GroupBox12.Size = size;
+
+            this.GroupBox12.Size = new Size(392, 308);
             this.GroupBox12.TabIndex = 1;
             this.GroupBox12.TabStop = false;
             this.GroupBox12.Text = "Formatting Codes:";
-            point = new Point(16, 280);
-            this.fcReset.Location = point;
+
+            this.fcReset.Location = new Point(16, 280);
             this.fcReset.Name = "fcReset";
-            size = new Size(124, 24);
-            this.fcReset.Size = size;
+
+            this.fcReset.Size = new Size(124, 24);
             this.fcReset.TabIndex = 18;
             this.fcReset.Text = "Reset To Defaults";
-            point = new Point(8, 200);
-            this.fcSet.Location = point;
+
+            this.fcSet.Location = new Point(8, 200);
             this.fcSet.Name = "fcSet";
-            size = new Size(136, 20);
-            this.fcSet.Size = size;
+
+            this.fcSet.Size = new Size(136, 20);
             this.fcSet.TabIndex = 4;
             this.fcSet.Text = "Set New Name";
-            point = new Point(8, 228);
-            this.fcNotes.Location = point;
+
+            this.fcNotes.Location = new Point(8, 228);
             this.fcNotes.Multiline = true;
             this.fcNotes.Name = "fcNotes";
-            size = new Size(136, 48);
-            this.fcNotes.Size = size;
+
+            this.fcNotes.Size = new Size(136, 48);
             this.fcNotes.TabIndex = 5;
-            point = new Point(8, 148);
-            this.fcDelete.Location = point;
+
+            this.fcDelete.Location = new Point(8, 148);
             this.fcDelete.Name = "fcDelete";
-            size = new Size(64, 20);
-            this.fcDelete.Size = size;
+
+            this.fcDelete.Size = new Size(64, 20);
             this.fcDelete.TabIndex = 1;
             this.fcDelete.Text = "Delete";
-            point = new Point(80, 148);
-            this.fcAdd.Location = point;
+
+            this.fcAdd.Location = new Point(80, 148);
             this.fcAdd.Name = "fcAdd";
-            size = new Size(64, 20);
-            this.fcAdd.Size = size;
+
+            this.fcAdd.Size = new Size(64, 20);
             this.fcAdd.TabIndex = 2;
             this.fcAdd.Text = "Add";
-            point = new Point(8, 176);
-            this.fcName.Location = point;
+
+            this.fcName.Location = new Point(8, 176);
             this.fcName.Name = "fcName";
-            size = new Size(136, 20);
-            this.fcName.Size = size;
+
+            this.fcName.Size = new Size(136, 20);
             this.fcName.TabIndex = 3;
-            point = new Point(304, 196);
-            this.fcWSTab.Location = point;
+
+            this.fcWSTab.Location = new Point(304, 196);
             this.fcWSTab.Name = "fcWSTab";
-            size = new Size(80, 20);
-            this.fcWSTab.Size = size;
+
+            this.fcWSTab.Size = new Size(80, 20);
             this.fcWSTab.TabIndex = 17;
             this.fcWSTab.Text = "Tab";
-            point = new Point(220, 196);
-            this.fcWSSpace.Location = point;
+
+            this.fcWSSpace.Location = new Point(220, 196);
             this.fcWSSpace.Name = "fcWSSpace";
-            size = new Size(80, 20);
-            this.fcWSSpace.Size = size;
+
+            this.fcWSSpace.Size = new Size(80, 20);
             this.fcWSSpace.TabIndex = 16;
             this.fcWSSpace.Text = "Space";
-            point = new Point(324, 160);
-            this.fcUnderlineOff.Location = point;
+
+            this.fcUnderlineOff.Location = new Point(324, 160);
             this.fcUnderlineOff.Name = "fcUnderlineOff";
-            size = new Size(60, 20);
-            this.fcUnderlineOff.Size = size;
+
+            this.fcUnderlineOff.Size = new Size(60, 20);
             this.fcUnderlineOff.TabIndex = 15;
-            point = new Point(220, 160);
-            this.fcUnderlineOn.Location = point;
+
+            this.fcUnderlineOn.Location = new Point(220, 160);
             this.fcUnderlineOn.Name = "fcUnderlineOn";
-            size = new Size(100, 20);
-            this.fcUnderlineOn.Size = size;
+
+            this.fcUnderlineOn.Size = new Size(100, 20);
             this.fcUnderlineOn.TabIndex = 14;
-            point = new Point(148, 160);
-            this.Label32.Location = point;
+
+            this.Label32.Location = new Point(148, 160);
             this.Label32.Name = "Label32";
-            size = new Size(68, 20);
-            this.Label32.Size = size;
+
+            this.Label32.Size = new Size(68, 20);
             this.Label32.TabIndex = 30;
             this.Label32.Text = "Underline:";
             this.Label32.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(324, 136);
-            this.fcItalicOff.Location = point;
+
+            this.fcItalicOff.Location = new Point(324, 136);
             this.fcItalicOff.Name = "fcItalicOff";
-            size = new Size(60, 20);
-            this.fcItalicOff.Size = size;
+
+            this.fcItalicOff.Size = new Size(60, 20);
             this.fcItalicOff.TabIndex = 13;
-            point = new Point(220, 136);
-            this.fcItalicOn.Location = point;
+
+            this.fcItalicOn.Location = new Point(220, 136);
             this.fcItalicOn.Name = "fcItalicOn";
-            size = new Size(100, 20);
-            this.fcItalicOn.Size = size;
+
+            this.fcItalicOn.Size = new Size(100, 20);
             this.fcItalicOn.TabIndex = 12;
-            point = new Point(148, 136);
-            this.Label31.Location = point;
+
+            this.Label31.Location = new Point(148, 136);
             this.Label31.Name = "Label31";
-            size = new Size(68, 20);
-            this.Label31.Size = size;
+
+            this.Label31.Size = new Size(68, 20);
             this.Label31.TabIndex = 27;
             this.Label31.Text = "Italic:";
             this.Label31.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(324, 112);
-            this.fcBoldOff.Location = point;
+
+            this.fcBoldOff.Location = new Point(324, 112);
             this.fcBoldOff.Name = "fcBoldOff";
-            size = new Size(60, 20);
-            this.fcBoldOff.Size = size;
+
+            this.fcBoldOff.Size = new Size(60, 20);
             this.fcBoldOff.TabIndex = 11;
-            point = new Point(220, 112);
-            this.fcBoldOn.Location = point;
+
+            this.fcBoldOn.Location = new Point(220, 112);
             this.fcBoldOn.Name = "fcBoldOn";
-            size = new Size(100, 20);
-            this.fcBoldOn.Size = size;
+
+            this.fcBoldOn.Size = new Size(100, 20);
             this.fcBoldOn.TabIndex = 10;
-            point = new Point(148, 112);
-            this.Label30.Location = point;
+
+            this.Label30.Location = new Point(148, 112);
             this.Label30.Name = "Label30";
-            size = new Size(68, 20);
-            this.Label30.Size = size;
+
+            this.Label30.Size = new Size(68, 20);
             this.Label30.TabIndex = 24;
             this.Label30.Text = "Bold:";
             this.Label30.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(324, 88);
-            this.fcTextOff.Location = point;
+
+            this.fcTextOff.Location = new Point(324, 88);
             this.fcTextOff.Name = "fcTextOff";
-            size = new Size(60, 20);
-            this.fcTextOff.Size = size;
+
+            this.fcTextOff.Size = new Size(60, 20);
             this.fcTextOff.TabIndex = 9;
-            point = new Point(220, 88);
-            this.fcTextOn.Location = point;
+
+            this.fcTextOn.Location = new Point(220, 88);
             this.fcTextOn.Name = "fcTextOn";
-            size = new Size(100, 20);
-            this.fcTextOn.Size = size;
+
+            this.fcTextOn.Size = new Size(100, 20);
             this.fcTextOn.TabIndex = 8;
-            point = new Point(148, 88);
-            this.Label29.Location = point;
+
+            this.Label29.Location = new Point(148, 88);
             this.Label29.Name = "Label29";
-            size = new Size(68, 20);
-            this.Label29.Size = size;
+
+            this.Label29.Size = new Size(68, 20);
             this.Label29.TabIndex = 21;
             this.Label29.Text = "Code Block:";
             this.Label29.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(324, 44);
-            this.Label28.Location = point;
+
+            this.Label28.Location = new Point(324, 44);
             this.Label28.Name = "Label28";
-            size = new Size(60, 16);
-            this.Label28.Size = size;
+
+            this.Label28.Size = new Size(60, 16);
             this.Label28.TabIndex = 20;
             this.Label28.Text = "Off";
             this.Label28.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(220, 44);
-            this.Label27.Location = point;
+
+            this.Label27.Location = new Point(220, 44);
             this.Label27.Name = "Label27";
-            size = new Size(100, 16);
-            this.Label27.Size = size;
+
+            this.Label27.Size = new Size(100, 16);
             this.Label27.TabIndex = 19;
             this.Label27.Text = "On";
             this.Label27.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(324, 64);
-            this.fcColorOff.Location = point;
+
+            this.fcColorOff.Location = new Point(324, 64);
             this.fcColorOff.Name = "fcColorOff";
-            size = new Size(60, 20);
-            this.fcColorOff.Size = size;
+
+            this.fcColorOff.Size = new Size(60, 20);
             this.fcColorOff.TabIndex = 7;
-            point = new Point(220, 64);
-            this.fcColorOn.Location = point;
+
+            this.fcColorOn.Location = new Point(220, 64);
             this.fcColorOn.Name = "fcColorOn";
-            size = new Size(100, 20);
-            this.fcColorOn.Size = size;
+
+            this.fcColorOn.Size = new Size(100, 20);
             this.fcColorOn.TabIndex = 6;
-            point = new Point(148, 64);
-            this.Label26.Location = point;
+
+            this.Label26.Location = new Point(148, 64);
             this.Label26.Name = "Label26";
-            size = new Size(68, 20);
-            this.Label26.Size = size;
+
+            this.Label26.Size = new Size(68, 20);
             this.Label26.TabIndex = 16;
             this.Label26.Text = "Color:";
             this.Label26.TextAlign = ContentAlignment.MiddleRight;
             this.fcList.ItemHeight = 14;
-            point = new Point(8, 40);
-            this.fcList.Location = point;
+
+            this.fcList.Location = new Point(8, 40);
             this.fcList.Name = "fcList";
-            size = new Size(136, 102);
-            this.fcList.Size = size;
+
+            this.fcList.Size = new Size(136, 102);
             this.fcList.TabIndex = 0;
-            point = new Point(148, 224);
-            this.Label25.Location = point;
+
+            this.Label25.Location = new Point(148, 224);
             this.Label25.Name = "Label25";
-            size = new Size(236, 76);
-            this.Label25.Size = size;
+
+            this.Label25.Size = new Size(236, 76);
             this.Label25.TabIndex = 14;
             this.Label25.Text = "When defining a formatting code which takes a value, such as a color tag, use %VAL% as a placeholder for the actual value, which will replace it when a build is exported.";
             this.Label25.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(8, 16);
-            this.Label24.Location = point;
+
+            this.Label24.Location = new Point(8, 16);
             this.Label24.Name = "Label24";
-            size = new Size(344, 20);
-            this.Label24.Size = size;
+
+            this.Label24.Size = new Size(344, 20);
             this.Label24.TabIndex = 13;
             this.Label24.Text = "You can set the formatting codes available for Forum Export here.";
-            point = new Point(140, 196);
-            this.Label33.Location = point;
+
+            this.Label33.Location = new Point(140, 196);
             this.Label33.Name = "Label33";
-            size = new Size(76, 20);
-            this.Label33.Size = size;
+
+            this.Label33.Size = new Size(76, 20);
             this.Label33.TabIndex = 33;
             this.Label33.Text = "White Space:";
             this.Label33.TextAlign = ContentAlignment.MiddleRight;
@@ -1789,48 +1789,48 @@ namespace Hero_Designer
             this.GroupBox11.Controls.Add((Control)this.csDelete);
             this.GroupBox11.Controls.Add((Control)this.csAdd);
             this.GroupBox11.Controls.Add((Control)this.csList);
-            point = new Point(12, 8);
-            this.GroupBox11.Location = point;
+
+            this.GroupBox11.Location = new Point(12, 8);
             this.GroupBox11.Name = "GroupBox11";
-            size = new Size(160, 308);
-            this.GroupBox11.Size = size;
+
+            this.GroupBox11.Size = new Size(160, 308);
             this.GroupBox11.TabIndex = 0;
             this.GroupBox11.TabStop = false;
             this.GroupBox11.Text = "Color Schemes:";
-            point = new Point(8, 280);
-            this.csReset.Location = point;
+
+            this.csReset.Location = new Point(8, 280);
             this.csReset.Name = "csReset";
-            size = new Size(144, 24);
-            this.csReset.Size = size;
+
+            this.csReset.Size = new Size(144, 24);
             this.csReset.TabIndex = 4;
             this.csReset.Text = "Reset To Defaults";
-            point = new Point(8, 242);
-            this.csBtnEdit.Location = point;
+
+            this.csBtnEdit.Location = new Point(8, 242);
             this.csBtnEdit.Name = "csBtnEdit";
-            size = new Size(144, 32);
-            this.csBtnEdit.Size = size;
+
+            this.csBtnEdit.Size = new Size(144, 32);
             this.csBtnEdit.TabIndex = 3;
             this.csBtnEdit.Text = "Edit...";
-            point = new Point(8, 216);
-            this.csDelete.Location = point;
+
+            this.csDelete.Location = new Point(8, 216);
             this.csDelete.Name = "csDelete";
-            size = new Size(64, 20);
-            this.csDelete.Size = size;
+
+            this.csDelete.Size = new Size(64, 20);
             this.csDelete.TabIndex = 1;
             this.csDelete.Text = "Delete";
-            point = new Point(88, 216);
-            this.csAdd.Location = point;
+
+            this.csAdd.Location = new Point(88, 216);
             this.csAdd.Name = "csAdd";
-            size = new Size(64, 20);
-            this.csAdd.Size = size;
+
+            this.csAdd.Size = new Size(64, 20);
             this.csAdd.TabIndex = 2;
             this.csAdd.Text = "Add";
             this.csList.ItemHeight = 14;
-            point = new Point(8, 20);
-            this.csList.Location = point;
+
+            this.csList.Location = new Point(8, 20);
             this.csList.Name = "csList";
-            size = new Size(144, 186);
-            this.csList.Size = size;
+
+            this.csList.Size = new Size(144, 186);
             this.csList.TabIndex = 0;
             this.TabPage5.Controls.Add((Control)this.btnSaveFolderReset);
             this.TabPage5.Controls.Add((Control)this.lblSaveFolder);
@@ -1839,70 +1839,69 @@ namespace Hero_Designer
             this.TabPage5.Controls.Add((Control)this.Label1);
             this.TabPage5.Controls.Add((Control)this.GroupBox16);
             this.TabPage5.Controls.Add((Control)this.GroupBox1);
-            point = new Point(4, 23);
-            this.TabPage5.Location = point;
+
+            this.TabPage5.Location = new Point(4, 23);
             this.TabPage5.Name = "TabPage5";
-            size = new Size(630, 325);
-            this.TabPage5.Size = size;
+
+            this.TabPage5.Size = new Size(630, 325);
             this.TabPage5.TabIndex = 4;
             this.TabPage5.Text = "Updates & Paths";
             this.TabPage5.UseVisualStyleBackColor = true;
-            point = new Point(459, 298);
-            this.btnSaveFolderReset.Location = point;
+
+            this.btnSaveFolderReset.Location = new Point(459, 298);
             this.btnSaveFolderReset.Name = "btnSaveFolderReset";
-            size = new Size(105, 22);
-            this.btnSaveFolderReset.Size = size;
+
+            this.btnSaveFolderReset.Size = new Size(105, 22);
             this.btnSaveFolderReset.TabIndex = 64;
             this.btnSaveFolderReset.Text = "Reset to Default";
             this.btnSaveFolderReset.UseVisualStyleBackColor = true;
             this.lblSaveFolder.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(17, 270);
-            this.lblSaveFolder.Location = point;
+
+            this.lblSaveFolder.Location = new Point(17, 270);
             this.lblSaveFolder.Name = "lblSaveFolder";
-            size = new Size(436, 22);
-            this.lblSaveFolder.Size = size;
+
+            this.lblSaveFolder.Size = new Size(436, 22);
             this.lblSaveFolder.TabIndex = 63;
             this.lblSaveFolder.TextAlign = ContentAlignment.MiddleLeft;
             this.lblSaveFolder.UseMnemonic = false;
-            point = new Point(459, 270);
-            this.btnSaveFolder.Location = point;
+
+            this.btnSaveFolder.Location = new Point(459, 270);
             this.btnSaveFolder.Name = "btnSaveFolder";
-            size = new Size(105, 22);
-            this.btnSaveFolder.Size = size;
+
+            this.btnSaveFolder.Size = new Size(105, 22);
             this.btnSaveFolder.TabIndex = 62;
             this.btnSaveFolder.Text = "Browse...";
             this.btnSaveFolder.UseVisualStyleBackColor = true;
-            point = new Point(17, 295);
-            this.chkLoadLastFile.Location = point;
+
+            this.chkLoadLastFile.Location = new Point(17, 295);
             this.chkLoadLastFile.Name = "chkLoadLastFile";
-            size = new Size(156, 16);
-            this.chkLoadLastFile.Size = size;
+
+            this.chkLoadLastFile.Size = new Size(156, 16);
             this.chkLoadLastFile.TabIndex = 61;
             this.chkLoadLastFile.Text = "Load last file at startup";
-            point = new Point(5, 246);
-            this.Label1.Location = point;
+
+            this.Label1.Location = new Point(5, 246);
             this.Label1.Name = "Label1";
-            size = new Size(123, 24);
-            this.Label1.Size = size;
+
+            this.Label1.Size = new Size(123, 24);
             this.Label1.TabIndex = 8;
             this.Label1.Text = "Default Save Folder:";
             this.Label1.TextAlign = ContentAlignment.MiddleLeft;
             this.GroupBox16.Controls.Add((Control)this.Label19);
-            point = new Point(417, 3);
-            this.GroupBox16.Location = point;
+
+            this.GroupBox16.Location = new Point(417, 3);
             this.GroupBox16.Name = "GroupBox16";
-            size = new Size(153, 240);
-            this.GroupBox16.Size = size;
+
+            this.GroupBox16.Size = new Size(153, 240);
             this.GroupBox16.TabIndex = 6;
             this.GroupBox16.TabStop = false;
             this.GroupBox16.Text = "Panic Button:";
             this.GroupBox16.Visible = false;
-            point = new Point(6, 157);
-            point = new Point(5, 21);
-            this.Label19.Location = point;
+
+            this.Label19.Location = new Point(5, 21);
             this.Label19.Name = "Label19";
-            size = new Size(143, 117);
-            this.Label19.Size = size;
+
+            this.Label19.Size = new Size(143, 117);
             this.Label19.TabIndex = 7;
             this.Label19.Text = "If the database is damaged and not working properly, you can force the application to redownload the most recent version.";
             this.Label19.TextAlign = ContentAlignment.MiddleCenter;
@@ -1911,49 +1910,49 @@ namespace Hero_Designer
             this.GroupBox1.Controls.Add((Control)this.Label37);
             this.GroupBox1.Controls.Add((Control)this.Label34);
             this.GroupBox1.Controls.Add((Control)this.chkUpdates);
-            point = new Point(8, 3);
-            this.GroupBox1.Location = point;
+
+            this.GroupBox1.Location = new Point(8, 3);
             this.GroupBox1.Name = "GroupBox1";
-            size = new Size(403, 240);
-            this.GroupBox1.Size = size;
+
+            this.GroupBox1.Size = new Size(403, 240);
             this.GroupBox1.TabIndex = 7;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Automatic Updates:";
-            point = new Point(6, 168);
-            this.Label2.Location = point;
+
+            this.Label2.Location = new Point(6, 168);
             this.Label2.Name = "Label2";
-            size = new Size(197, 20);
-            this.Label2.Size = size;
+
+            this.Label2.Size = new Size(197, 20);
             this.Label2.TabIndex = 10;
             this.Label2.Text = "Address of update information data:";
             this.Label2.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(9, 191);
-            this.txtUpdatePath.Location = point;
+
+            this.txtUpdatePath.Location = new Point(9, 191);
             this.txtUpdatePath.Name = "txtUpdatePath";
-            size = new Size(391, 20);
-            this.txtUpdatePath.Size = size;
+
+            this.txtUpdatePath.Size = new Size(391, 20);
             this.txtUpdatePath.TabIndex = 9;
-            point = new Point(6, 87);
-            this.Label37.Location = point;
+
+            this.Label37.Location = new Point(6, 87);
             this.Label37.Name = "Label37";
-            size = new Size(384, 43);
-            this.Label37.Size = size;
+
+            this.Label37.Size = new Size(384, 43);
             this.Label37.TabIndex = 7;
             this.Label37.Text = "Please note that the availability of automatic updates may vary due to bandwidth use of the hosting site.";
             this.Label37.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(6, 16);
-            this.Label34.Location = point;
+
+            this.Label34.Location = new Point(6, 16);
             this.Label34.Name = "Label34";
-            size = new Size(384, 41);
-            this.Label34.Size = size;
+
+            this.Label34.Size = new Size(384, 41);
             this.Label34.TabIndex = 5;
             this.Label34.Text = "The hero designer can automatically check for updates and download newer versions when it starts. This feature requires an internet connection.";
             this.Label34.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(9, 60);
-            this.chkUpdates.Location = point;
+
+            this.chkUpdates.Location = new Point(9, 60);
             this.chkUpdates.Name = "chkUpdates";
-            size = new Size(304, 24);
-            this.chkUpdates.Size = size;
+
+            this.chkUpdates.Size = new Size(304, 24);
             this.chkUpdates.TabIndex = 6;
             this.chkUpdates.Text = "Check for updates on startup";
             this.TabPage1.Controls.Add((Control)this.Label15);
@@ -1961,59 +1960,59 @@ namespace Hero_Designer
             this.TabPage1.Controls.Add((Control)this.cmbAction);
             this.TabPage1.Controls.Add((Control)this.GroupBox9);
             this.TabPage1.Controls.Add((Control)this.GroupBox7);
-            point = new Point(4, 23);
-            this.TabPage1.Location = point;
+
+            this.TabPage1.Location = new Point(4, 23);
             this.TabPage1.Name = "TabPage1";
-            size = new Size(630, 325);
-            this.TabPage1.Size = size;
+
+            this.TabPage1.Size = new Size(630, 325);
             this.TabPage1.TabIndex = 6;
             this.TabPage1.Text = "Drag & Drop";
             this.TabPage1.UseVisualStyleBackColor = true;
-            point = new Point(14, 9);
-            this.Label15.Location = point;
+
+            this.Label15.Location = new Point(14, 9);
             this.Label15.Name = "Label15";
-            size = new Size(602, 92);
-            this.Label15.Size = size;
+
+            this.Label15.Size = new Size(602, 92);
             this.Label15.TabIndex = 4;
             this.Label15.Text = componentResourceManager.GetString("Label15.Text");
             this.Label10.AutoSize = true;
             this.Label10.Font = new Font("Arial", 9f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(19, 268);
-            this.Label10.Location = point;
+
+            this.Label10.Location = new Point(19, 268);
             this.Label10.Name = "Label10";
-            size = new Size(285, 15);
-            this.Label10.Size = size;
+
+            this.Label10.Size = new Size(285, 15);
             this.Label10.TabIndex = 3;
             this.Label10.Text = "Action to take whenever the above scenario occurs:";
             this.cmbAction.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbAction.FormattingEnabled = true;
-            point = new Point(18, 293);
-            this.cmbAction.Location = point;
+
+            this.cmbAction.Location = new Point(18, 293);
             this.cmbAction.Name = "cmbAction";
-            size = new Size(356, 22);
-            this.cmbAction.Size = size;
+
+            this.cmbAction.Size = new Size(356, 22);
             this.cmbAction.TabIndex = 2;
             this.GroupBox9.Controls.Add((Control)this.lblExample);
-            point = new Point(403, 104);
-            this.GroupBox9.Location = point;
+
+            this.GroupBox9.Location = new Point(403, 104);
             this.GroupBox9.Name = "GroupBox9";
-            size = new Size(214, 161);
-            this.GroupBox9.Size = size;
+
+            this.GroupBox9.Size = new Size(214, 161);
             this.GroupBox9.TabIndex = 1;
             this.GroupBox9.TabStop = false;
             this.GroupBox9.Text = "Description / Example(s)";
-            point = new Point(13, 17);
-            this.lblExample.Location = point;
+
+            this.lblExample.Location = new Point(13, 17);
             this.lblExample.Name = "lblExample";
-            size = new Size(188, 130);
-            this.lblExample.Size = size;
+
+            this.lblExample.Size = new Size(188, 130);
             this.lblExample.TabIndex = 0;
             this.GroupBox7.Controls.Add((Control)this.listScenarios);
-            point = new Point(8, 102);
-            this.GroupBox7.Location = point;
+
+            this.GroupBox7.Location = new Point(8, 102);
             this.GroupBox7.Name = "GroupBox7";
-            size = new Size(380, 163);
-            this.GroupBox7.Size = size;
+
+            this.GroupBox7.Size = new Size(380, 163);
             this.GroupBox7.TabIndex = 0;
             this.GroupBox7.TabStop = false;
             this.GroupBox7.Text = "Scenario";
@@ -2037,17 +2036,17 @@ namespace Hero_Designer
         (object) "Slot being level-swapped is too low for the destination power",
         (object) "Slot being level-swapped is too low for the source power"
             });
-            point = new Point(13, 19);
-            this.listScenarios.Location = point;
+
+            this.listScenarios.Location = new Point(13, 19);
             this.listScenarios.Name = "listScenarios";
-            size = new Size(353, 116);
-            this.listScenarios.Size = size;
+
+            this.listScenarios.Size = new Size(353, 116);
             this.listScenarios.TabIndex = 0;
-            point = new Point(246, 354);
-            this.chkColourPrint.Location = point;
+
+            this.chkColourPrint.Location = new Point(246, 354);
             this.chkColourPrint.Name = "chkColourPrint";
-            size = new Size(156, 16);
-            this.chkColourPrint.Size = size;
+
+            this.chkColourPrint.Size = new Size(156, 16);
             this.chkColourPrint.TabIndex = 2;
             this.chkColourPrint.Text = "Print in color";
             this.chkColourPrint.Visible = false;
@@ -2055,32 +2054,32 @@ namespace Hero_Designer
             this.myTip.InitialDelay = 500;
             this.myTip.ReshowDelay = 100;
             this.cPicker.FullOpen = true;
-            point = new Point(536, 296);
-            this.TeamSize.Location = point;
+
+            this.TeamSize.Location = new Point(536, 296);
             num = new Decimal(new int[4] { 8, 0, 0, 0 });
             this.TeamSize.Maximum = num;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.TeamSize.Minimum = num;
             this.TeamSize.Name = "TeamSize";
-            size = new Size(88, 20);
-            this.TeamSize.Size = size;
+
+            this.TeamSize.Size = new Size(88, 20);
             this.TeamSize.TabIndex = 70;
             this.myTip.SetToolTip((Control)this.TeamSize, "Set this to the number of players on your team.");
             num = new Decimal(new int[4] { 8, 0, 0, 0 });
             this.TeamSize.Value = num;
-            point = new Point(473, 297);
-            this.Label16.Location = point;
+
+            this.Label16.Location = new Point(473, 297);
             this.Label16.Name = "Label16";
-            size = new Size(57, 18);
-            this.Label16.Size = size;
+
+            this.Label16.Size = new Size(57, 18);
             this.Label16.TabIndex = 66;
             this.Label16.Text = "Team Size";
             this.AcceptButton = (IButtonControl)this.btnOK;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = SystemColors.Control;
             this.CancelButton = (IButtonControl)this.btnCancel;
-            size = new Size(640, 392);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(640, 392);
             this.Controls.Add((Control)this.chkColourPrint);
             this.Controls.Add((Control)this.TabControl1);
             this.Controls.Add((Control)this.btnCancel);

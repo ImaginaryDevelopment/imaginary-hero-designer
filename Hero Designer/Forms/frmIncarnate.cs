@@ -250,17 +250,17 @@ namespace Hero_Designer
             this.Panel1.BorderStyle = BorderStyle.Fixed3D;
             this.Panel1.Controls.Add((Control)this.VScrollBar1);
             this.Panel1.Controls.Add((Control)this.PopInfo);
-            Point point = new Point(12, 309);
-            this.Panel1.Location = point;
+
+            this.Panel1.Location = new Point(12, 309);
             this.Panel1.Name = "Panel1";
-            Size size = new Size(440, 161);
-            this.Panel1.Size = size;
+
+            this.Panel1.Size = new Size(440, 161);
             this.Panel1.TabIndex = 35;
-            point = new Point(419, -2);
-            this.VScrollBar1.Location = point;
+
+            this.VScrollBar1.Location = new Point(419, -2);
             this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 159);
-            this.VScrollBar1.Size = size;
+
+            this.VScrollBar1.Size = new Size(17, 159);
             this.VScrollBar1.TabIndex = 10;
             this.PopInfo.BXHeight = 1024;
             this.PopInfo.ColumnPosition = 0.5f;
@@ -268,23 +268,23 @@ namespace Hero_Designer
             this.PopInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.PopInfo.ForeColor = Color.FromArgb(0, 0, 32);
             this.PopInfo.InternalPadding = 3;
-            point = new Point(0, 0);
-            this.PopInfo.Location = point;
+
+            this.PopInfo.Location = new Point(0, 0);
             this.PopInfo.Name = "PopInfo";
             this.PopInfo.ScrollY = 0.0f;
             this.PopInfo.SectionPadding = 8;
-            size = new Size(416, 200);
-            this.PopInfo.Size = size;
+
+            this.PopInfo.Size = new Size(416, 200);
             this.PopInfo.TabIndex = 9;
             this.lblLock.BackColor = Color.Red;
             this.lblLock.BorderStyle = BorderStyle.FixedSingle;
             this.lblLock.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
             this.lblLock.ForeColor = Color.White;
-            point = new Point(12, 473);
-            this.lblLock.Location = point;
+
+            this.lblLock.Location = new Point(12, 473);
             this.lblLock.Name = "lblLock";
-            size = new Size(56, 20);
-            this.lblLock.Size = size;
+
+            this.lblLock.Size = new Size(56, 20);
             this.lblLock.TabIndex = 69;
             this.lblLock.Text = "[Unlock]";
             this.lblLock.TextAlign = ContentAlignment.MiddleCenter;
@@ -293,11 +293,11 @@ namespace Hero_Designer
             this.Panel2.BorderStyle = BorderStyle.Fixed3D;
             this.Panel2.Controls.Add((Control)this.llRight);
             this.Panel2.Controls.Add((Control)this.llLeft);
-            point = new Point(12, 96);
-            this.Panel2.Location = point;
+
+            this.Panel2.Location = new Point(12, 96);
             this.Panel2.Name = "Panel2";
-            size = new Size(440, 207);
-            this.Panel2.Size = size;
+
+            this.Panel2.Size = new Size(440, 207);
             this.Panel2.TabIndex = 125;
             this.Panel2.TabStop = true;
             this.llRight.AutoSize = true;
@@ -305,8 +305,8 @@ namespace Hero_Designer
             this.llRight.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             this.llRight.HighVis = true;
             this.llRight.HoverColor = Color.WhiteSmoke;
-            point = new Point(218, 0);
-            this.llRight.Location = point;
+
+            this.llRight.Location = new Point(218, 0);
             this.llRight.MaxHeight = 900;
             this.llRight.Name = "llRight";
             this.llRight.PaddingX = 2;
@@ -315,10 +315,10 @@ namespace Hero_Designer
             this.llRight.ScrollBarColor = Color.Red;
             this.llRight.ScrollBarWidth = 11;
             this.llRight.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(198, 414);
-            this.llRight.Size = size;
-            size = new Size(198, 140);
-            this.llRight.SizeNormal = size;
+
+            this.llRight.Size = new Size(198, 414);
+
+            this.llRight.SizeNormal = new Size(198, 140);
             this.llRight.SuspendRedraw = false;
             this.llRight.TabIndex = 109;
             this.llLeft.AutoSize = true;
@@ -326,8 +326,8 @@ namespace Hero_Designer
             this.llLeft.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             this.llLeft.HighVis = true;
             this.llLeft.HoverColor = Color.WhiteSmoke;
-            point = new Point(0, 0);
-            this.llLeft.Location = point;
+
+            this.llLeft.Location = new Point(0, 0);
             this.llLeft.MaxHeight = 900;
             this.llLeft.Name = "llLeft";
             this.llLeft.PaddingX = 2;
@@ -336,159 +336,159 @@ namespace Hero_Designer
             this.llLeft.ScrollBarColor = Color.Red;
             this.llLeft.ScrollBarWidth = 11;
             this.llLeft.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(218, 414);
-            this.llLeft.Size = size;
-            size = new Size(218, 140);
-            this.llLeft.SizeNormal = size;
+
+            this.llLeft.Size = new Size(218, 414);
+
+            this.llLeft.SizeNormal = new Size(218, 140);
             this.llLeft.SuspendRedraw = false;
             this.llLeft.TabIndex = 108;
             this.OmegaButton.Checked = false;
             this.OmegaButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.OmegaButton.KnockoutLocationPoint = point;
-            point = new Point(236, 68);
-            this.OmegaButton.Location = point;
+
+            this.OmegaButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.OmegaButton.Location = new Point(236, 68);
             this.OmegaButton.Name = "OmegaButton";
-            size = new Size(105, 22);
-            this.OmegaButton.Size = size;
+
+            this.OmegaButton.Size = new Size(105, 22);
             this.OmegaButton.TabIndex = 124;
             this.OmegaButton.TextOff = "Omega";
             this.OmegaButton.TextOn = "Omega";
             this.OmegaButton.Toggle = true;
             this.VitaeButton.Checked = false;
             this.VitaeButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.VitaeButton.KnockoutLocationPoint = point;
-            point = new Point(125, 68);
-            this.VitaeButton.Location = point;
+
+            this.VitaeButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.VitaeButton.Location = new Point(125, 68);
             this.VitaeButton.Name = "VitaeButton";
-            size = new Size(105, 22);
-            this.VitaeButton.Size = size;
+
+            this.VitaeButton.Size = new Size(105, 22);
             this.VitaeButton.TabIndex = 123;
             this.VitaeButton.TextOff = "Vitae";
             this.VitaeButton.TextOn = "Vitae";
             this.VitaeButton.Toggle = true;
             this.StanceButton.Checked = false;
             this.StanceButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.StanceButton.KnockoutLocationPoint = point;
-            point = new Point(347, 40);
-            this.StanceButton.Location = point;
+
+            this.StanceButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.StanceButton.Location = new Point(347, 40);
             this.StanceButton.Name = "StanceButton";
-            size = new Size(105, 22);
-            this.StanceButton.Size = size;
+
+            this.StanceButton.Size = new Size(105, 22);
             this.StanceButton.TabIndex = 121;
             this.StanceButton.TextOff = "Stance";
             this.StanceButton.TextOn = "Stance";
             this.StanceButton.Toggle = true;
             this.GenesisButton.Checked = false;
             this.GenesisButton.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.GenesisButton.KnockoutLocationPoint = point;
-            point = new Point(236, 40);
-            this.GenesisButton.Location = point;
+
+            this.GenesisButton.KnockoutLocationPoint = new Point(0, 0);
+
+            this.GenesisButton.Location = new Point(236, 40);
             this.GenesisButton.Name = "GenesisButton";
-            size = new Size(105, 22);
-            this.GenesisButton.Size = size;
+
+            this.GenesisButton.Size = new Size(105, 22);
             this.GenesisButton.TabIndex = 120;
             this.GenesisButton.TextOff = "Genesis";
             this.GenesisButton.TextOn = "Genesis";
             this.GenesisButton.Toggle = true;
             this.hybridBtn.Checked = false;
             this.hybridBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.hybridBtn.KnockoutLocationPoint = point;
-            point = new Point(125, 40);
-            this.hybridBtn.Location = point;
+
+            this.hybridBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.hybridBtn.Location = new Point(125, 40);
             this.hybridBtn.Name = "hybridBtn";
-            size = new Size(105, 22);
-            this.hybridBtn.Size = size;
+
+            this.hybridBtn.Size = new Size(105, 22);
             this.hybridBtn.TabIndex = 119;
             this.hybridBtn.TextOff = "Hybrid";
             this.hybridBtn.TextOn = "Hybrid";
             this.hybridBtn.Toggle = true;
             this.destinyBtn.Checked = false;
             this.destinyBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.destinyBtn.KnockoutLocationPoint = point;
-            point = new Point(14, 40);
-            this.destinyBtn.Location = point;
+
+            this.destinyBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.destinyBtn.Location = new Point(14, 40);
             this.destinyBtn.Name = "destinyBtn";
-            size = new Size(105, 22);
-            this.destinyBtn.Size = size;
+
+            this.destinyBtn.Size = new Size(105, 22);
             this.destinyBtn.TabIndex = 118;
             this.destinyBtn.TextOff = "Destiny";
             this.destinyBtn.TextOn = "Destiny";
             this.destinyBtn.Toggle = true;
             this.loreBtn.Checked = false;
             this.loreBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.loreBtn.KnockoutLocationPoint = point;
-            point = new Point(347, 12);
-            this.loreBtn.Location = point;
+
+            this.loreBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.loreBtn.Location = new Point(347, 12);
             this.loreBtn.Name = "loreBtn";
-            size = new Size(105, 22);
-            this.loreBtn.Size = size;
+
+            this.loreBtn.Size = new Size(105, 22);
             this.loreBtn.TabIndex = 117;
             this.loreBtn.TextOff = "Lore";
             this.loreBtn.TextOn = "Lore";
             this.loreBtn.Toggle = true;
             this.interfaceBtn.Checked = false;
             this.interfaceBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.interfaceBtn.KnockoutLocationPoint = point;
-            point = new Point(236, 12);
-            this.interfaceBtn.Location = point;
+
+            this.interfaceBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.interfaceBtn.Location = new Point(236, 12);
             this.interfaceBtn.Name = "interfaceBtn";
-            size = new Size(105, 22);
-            this.interfaceBtn.Size = size;
+
+            this.interfaceBtn.Size = new Size(105, 22);
             this.interfaceBtn.TabIndex = 116;
             this.interfaceBtn.TextOff = "Interface";
             this.interfaceBtn.TextOn = "Interface";
             this.interfaceBtn.Toggle = true;
             this.judgementBtn.Checked = false;
             this.judgementBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.judgementBtn.KnockoutLocationPoint = point;
-            point = new Point(125, 12);
-            this.judgementBtn.Location = point;
+
+            this.judgementBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.judgementBtn.Location = new Point(125, 12);
             this.judgementBtn.Name = "judgementBtn";
-            size = new Size(105, 22);
-            this.judgementBtn.Size = size;
+
+            this.judgementBtn.Size = new Size(105, 22);
             this.judgementBtn.TabIndex = 115;
             this.judgementBtn.TextOff = "Judgement";
             this.judgementBtn.TextOn = "Judgement";
             this.judgementBtn.Toggle = true;
             this.alphaBtn.Checked = true;
             this.alphaBtn.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.alphaBtn.KnockoutLocationPoint = point;
-            point = new Point(14, 12);
-            this.alphaBtn.Location = point;
+
+            this.alphaBtn.KnockoutLocationPoint = new Point(0, 0);
+
+            this.alphaBtn.Location = new Point(14, 12);
             this.alphaBtn.Name = "alphaBtn";
-            size = new Size(105, 22);
-            this.alphaBtn.Size = size;
+
+            this.alphaBtn.Size = new Size(105, 22);
             this.alphaBtn.TabIndex = 114;
             this.alphaBtn.TextOff = "Alpha";
             this.alphaBtn.TextOn = "Alpha";
             this.alphaBtn.Toggle = true;
             this.ibClose.Checked = false;
             this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClose.KnockoutLocationPoint = point;
-            point = new Point(181, 473);
-            this.ibClose.Location = point;
+
+            this.ibClose.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibClose.Location = new Point(181, 473);
             this.ibClose.Name = "ibClose";
-            size = new Size(105, 22);
-            this.ibClose.Size = size;
+
+            this.ibClose.Size = new Size(105, 22);
             this.ibClose.TabIndex = 7;
             this.ibClose.TextOff = "Done";
             this.ibClose.TextOn = "Alt Text";
             this.ibClose.Toggle = false;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(466, 510);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(466, 510);
             this.Controls.Add((Control)this.Panel2);
             this.Controls.Add((Control)this.OmegaButton);
             this.Controls.Add((Control)this.VitaeButton);

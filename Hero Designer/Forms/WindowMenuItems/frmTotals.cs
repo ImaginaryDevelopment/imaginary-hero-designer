@@ -263,29 +263,29 @@ namespace Hero_Designer
             ((ISupportInitialize)this.tab2).BeginInit();
             this.SuspendLayout();
             this.lblDef.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            Point point = new Point(3, 0);
-            this.lblDef.Location = point;
+
+            this.lblDef.Location = new Point(3, 0);
             this.lblDef.Name = "lblDef";
-            Size size = new Size(89, 16);
-            this.lblDef.Size = size;
+
+            this.lblDef.Size = new Size(89, 16);
             this.lblDef.TabIndex = 1;
             this.lblDef.Text = "Defense:";
             this.lblDef.TextAlign = ContentAlignment.BottomLeft;
             this.lblRes.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 164);
-            this.lblRes.Location = point;
+
+            this.lblRes.Location = new Point(3, 164);
             this.lblRes.Name = "lblRes";
-            size = new Size(125, 16);
-            this.lblRes.Size = size;
+
+            this.lblRes.Size = new Size(125, 16);
             this.lblRes.TabIndex = 3;
             this.lblRes.Text = "Resistance:";
             this.lblRes.TextAlign = ContentAlignment.BottomLeft;
             this.lblRegenRec.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 302);
-            this.lblRegenRec.Location = point;
+
+            this.lblRegenRec.Location = new Point(3, 302);
             this.lblRegenRec.Name = "lblRegenRec";
-            size = new Size(125, 16);
-            this.lblRegenRec.Size = size;
+
+            this.lblRegenRec.Size = new Size(125, 16);
             this.lblRegenRec.TabIndex = 5;
             this.lblRegenRec.Text = "Health & Endurance:";
             this.lblRegenRec.TextAlign = ContentAlignment.BottomLeft;
@@ -302,11 +302,11 @@ namespace Hero_Designer
             this.pnlDRHE.Controls.Add((Control)this.lblRegenRec);
             this.pnlDRHE.Controls.Add((Control)this.graphRegen);
             this.pnlDRHE.Controls.Add((Control)this.Panel1);
-            point = new Point(4, 31);
-            this.pnlDRHE.Location = point;
+
+            this.pnlDRHE.Location = new Point(4, 31);
             this.pnlDRHE.Name = "pnlDRHE";
-            size = new Size(320, 421);
-            this.pnlDRHE.Size = size;
+
+            this.pnlDRHE.Size = new Size(320, 421);
             this.pnlDRHE.TabIndex = 9;
             this.graphMaxEnd.BackColor = Color.Black;
             this.graphMaxEnd.Border = true;
@@ -326,8 +326,8 @@ namespace Hero_Designer
             this.graphMaxEnd.Highlight = true;
             this.graphMaxEnd.ItemHeight = 10;
             this.graphMaxEnd.Lines = true;
-            point = new Point(17, 394);
-            this.graphMaxEnd.Location = point;
+
+            this.graphMaxEnd.Location = new Point(17, 394);
             this.graphMaxEnd.MarkerValue = 0.0f;
             this.graphMaxEnd.Max = 100f;
             this.graphMaxEnd.Name = "graphMaxEnd";
@@ -336,8 +336,8 @@ namespace Hero_Designer
             this.graphMaxEnd.ScaleHeight = 32;
             this.graphMaxEnd.ScaleIndex = 8;
             this.graphMaxEnd.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphMaxEnd.Size = size;
+
+            this.graphMaxEnd.Size = new Size(300, 15);
             this.graphMaxEnd.Style = Enums.GraphStyle.baseOnly;
             this.graphMaxEnd.TabIndex = 7;
             this.graphMaxEnd.TextWidth = 125;
@@ -359,8 +359,8 @@ namespace Hero_Designer
             this.graphHP.Highlight = true;
             this.graphHP.ItemHeight = 10;
             this.graphHP.Lines = true;
-            point = new Point(15, 339);
-            this.graphHP.Location = point;
+
+            this.graphHP.Location = new Point(15, 339);
             this.graphHP.MarkerValue = 0.0f;
             this.graphHP.Max = 100f;
             this.graphHP.Name = "graphHP";
@@ -369,8 +369,8 @@ namespace Hero_Designer
             this.graphHP.ScaleHeight = 32;
             this.graphHP.ScaleIndex = 8;
             this.graphHP.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphHP.Size = size;
+
+            this.graphHP.Size = new Size(300, 15);
             this.graphHP.Style = Enums.GraphStyle.baseOnly;
             this.graphHP.TabIndex = 9;
             this.graphHP.TextWidth = 125;
@@ -392,8 +392,8 @@ namespace Hero_Designer
             this.graphDef.Highlight = true;
             this.graphDef.ItemHeight = 10;
             this.graphDef.Lines = true;
-            point = new Point(15, 17);
-            this.graphDef.Location = point;
+
+            this.graphDef.Location = new Point(15, 17);
             this.graphDef.MarkerValue = 0.0f;
             this.graphDef.Max = 100f;
             this.graphDef.Name = "graphDef";
@@ -402,8 +402,8 @@ namespace Hero_Designer
             this.graphDef.ScaleHeight = 32;
             this.graphDef.ScaleIndex = 8;
             this.graphDef.ShowScale = false;
-            size = new Size(300, 144);
-            this.graphDef.Size = size;
+
+            this.graphDef.Size = new Size(300, 144);
             this.graphDef.Style = Enums.GraphStyle.baseOnly;
             this.graphDef.TabIndex = 0;
             this.graphDef.TextWidth = 125;
@@ -425,8 +425,8 @@ namespace Hero_Designer
             this.graphDrain.Highlight = true;
             this.graphDrain.ItemHeight = 10;
             this.graphDrain.Lines = true;
-            point = new Point(15, 375);
-            this.graphDrain.Location = point;
+
+            this.graphDrain.Location = new Point(15, 375);
             this.graphDrain.MarkerValue = 0.0f;
             this.graphDrain.Max = 100f;
             this.graphDrain.Name = "graphDrain";
@@ -435,8 +435,8 @@ namespace Hero_Designer
             this.graphDrain.ScaleHeight = 32;
             this.graphDrain.ScaleIndex = 8;
             this.graphDrain.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphDrain.Size = size;
+
+            this.graphDrain.Size = new Size(300, 15);
             this.graphDrain.Style = Enums.GraphStyle.baseOnly;
             this.graphDrain.TabIndex = 8;
             this.graphDrain.TextWidth = 125;
@@ -458,8 +458,8 @@ namespace Hero_Designer
             this.graphRes.Highlight = true;
             this.graphRes.ItemHeight = 10;
             this.graphRes.Lines = true;
-            point = new Point(15, 183);
-            this.graphRes.Location = point;
+
+            this.graphRes.Location = new Point(15, 183);
             this.graphRes.MarkerValue = 0.0f;
             this.graphRes.Max = 100f;
             this.graphRes.Name = "graphRes";
@@ -468,8 +468,8 @@ namespace Hero_Designer
             this.graphRes.ScaleHeight = 32;
             this.graphRes.ScaleIndex = 8;
             this.graphRes.ShowScale = false;
-            size = new Size(300, 116);
-            this.graphRes.Size = size;
+
+            this.graphRes.Size = new Size(300, 116);
             this.graphRes.Style = Enums.GraphStyle.Stacked;
             this.graphRes.TabIndex = 2;
             this.graphRes.TextWidth = 125;
@@ -491,8 +491,8 @@ namespace Hero_Designer
             this.graphRec.Highlight = true;
             this.graphRec.ItemHeight = 10;
             this.graphRec.Lines = true;
-            point = new Point(15, 357);
-            this.graphRec.Location = point;
+
+            this.graphRec.Location = new Point(15, 357);
             this.graphRec.MarkerValue = 0.0f;
             this.graphRec.Max = 100f;
             this.graphRec.Name = "graphRec";
@@ -501,8 +501,8 @@ namespace Hero_Designer
             this.graphRec.ScaleHeight = 32;
             this.graphRec.ScaleIndex = 8;
             this.graphRec.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphRec.Size = size;
+
+            this.graphRec.Size = new Size(300, 15);
             this.graphRec.Style = Enums.GraphStyle.baseOnly;
             this.graphRec.TabIndex = 6;
             this.graphRec.TextWidth = 125;
@@ -524,8 +524,8 @@ namespace Hero_Designer
             this.graphRegen.Highlight = true;
             this.graphRegen.ItemHeight = 10;
             this.graphRegen.Lines = true;
-            point = new Point(15, 321);
-            this.graphRegen.Location = point;
+
+            this.graphRegen.Location = new Point(15, 321);
             this.graphRegen.MarkerValue = 0.0f;
             this.graphRegen.Max = 100f;
             this.graphRegen.Name = "graphRegen";
@@ -534,17 +534,17 @@ namespace Hero_Designer
             this.graphRegen.ScaleHeight = 32;
             this.graphRegen.ScaleIndex = 8;
             this.graphRegen.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphRegen.Size = size;
+
+            this.graphRegen.Size = new Size(300, 15);
             this.graphRegen.Style = Enums.GraphStyle.baseOnly;
             this.graphRegen.TabIndex = 4;
             this.graphRegen.TextWidth = 125;
             this.Panel1.BackColor = Color.Black;
-            point = new Point(17, 321);
-            this.Panel1.Location = point;
+
+            this.Panel1.Location = new Point(17, 321);
             this.Panel1.Name = "Panel1";
-            size = new Size(298, 88);
-            this.Panel1.Size = size;
+
+            this.Panel1.Size = new Size(298, 88);
             this.Panel1.TabIndex = 10;
             this.pnlMisc.BackColor = Color.FromArgb(32, 0, 32);
             this.pnlMisc.Controls.Add((Control)this.rbMSec);
@@ -560,53 +560,53 @@ namespace Hero_Designer
             this.pnlMisc.Controls.Add((Control)this.lblMovement);
             this.pnlMisc.Controls.Add((Control)this.graphHaste);
             this.pnlMisc.Controls.Add((Control)this.Panel2);
-            point = new Point(330, 31);
-            this.pnlMisc.Location = point;
+
+            this.pnlMisc.Location = new Point(330, 31);
             this.pnlMisc.Name = "pnlMisc";
-            size = new Size(320, 423);
-            this.pnlMisc.Size = size;
+
+            this.pnlMisc.Size = new Size(320, 423);
             this.pnlMisc.TabIndex = 10;
             this.pnlMisc.Visible = false;
-            point = new Point(225, 81);
-            this.rbMSec.Location = point;
+
+            this.rbMSec.Location = new Point(225, 81);
             this.rbMSec.Name = "rbMSec";
-            size = new Size(84, 24);
-            this.rbMSec.Size = size;
+
+            this.rbMSec.Size = new Size(84, 24);
             this.rbMSec.TabIndex = 18;
             this.rbMSec.Text = "Meters/Sec";
             this.rbMSec.UseVisualStyleBackColor = true;
-            point = new Point(147, 81);
-            this.rbFPS.Location = point;
+
+            this.rbFPS.Location = new Point(147, 81);
             this.rbFPS.Name = "rbFPS";
-            size = new Size(74, 24);
-            this.rbFPS.Size = size;
+
+            this.rbFPS.Size = new Size(74, 24);
             this.rbFPS.TabIndex = 17;
             this.rbFPS.Text = "Feet/Sec";
             this.rbFPS.UseVisualStyleBackColor = true;
-            point = new Point(82, 81);
-            this.rbKPH.Location = point;
+
+            this.rbKPH.Location = new Point(82, 81);
             this.rbKPH.Name = "rbKPH";
-            size = new Size(59, 24);
-            this.rbKPH.Size = size;
+
+            this.rbKPH.Size = new Size(59, 24);
             this.rbKPH.TabIndex = 16;
             this.rbKPH.Text = "KilometersPerHour";
             this.rbKPH.UseVisualStyleBackColor = true;
             this.rbMPH.Checked = true;
-            point = new Point(21, 81);
-            this.rbMPH.Location = point;
+
+            this.rbMPH.Location = new Point(21, 81);
             this.rbMPH.Name = "rbMPH";
-            size = new Size(59, 24);
-            this.rbMPH.Size = size;
+
+            this.rbMPH.Size = new Size(59, 24);
             this.rbMPH.TabIndex = 15;
             this.rbMPH.TabStop = true;
             this.rbMPH.Text = "MilesPerHour";
             this.rbMPH.UseVisualStyleBackColor = true;
             this.lblStealth.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 109);
-            this.lblStealth.Location = point;
+
+            this.lblStealth.Location = new Point(3, 109);
             this.lblStealth.Name = "lblStealth";
-            size = new Size(125, 16);
-            this.lblStealth.Size = size;
+
+            this.lblStealth.Size = new Size(125, 16);
             this.lblStealth.TabIndex = 13;
             this.lblStealth.Text = "Stealth:";
             this.lblStealth.TextAlign = ContentAlignment.BottomLeft;
@@ -628,8 +628,8 @@ namespace Hero_Designer
             this.graphStealth.Highlight = true;
             this.graphStealth.ItemHeight = 10;
             this.graphStealth.Lines = true;
-            point = new Point(15, 128);
-            this.graphStealth.Location = point;
+
+            this.graphStealth.Location = new Point(15, 128);
             this.graphStealth.MarkerValue = 0.0f;
             this.graphStealth.Max = 100f;
             this.graphStealth.Name = "graphStealth";
@@ -638,8 +638,8 @@ namespace Hero_Designer
             this.graphStealth.ScaleHeight = 32;
             this.graphStealth.ScaleIndex = 8;
             this.graphStealth.ShowScale = false;
-            size = new Size(300, 46);
-            this.graphStealth.Size = size;
+
+            this.graphStealth.Size = new Size(300, 46);
             this.graphStealth.Style = Enums.GraphStyle.baseOnly;
             this.graphStealth.TabIndex = 12;
             this.graphStealth.TextWidth = 125;
@@ -661,8 +661,8 @@ namespace Hero_Designer
             this.graphAcc.Highlight = true;
             this.graphAcc.ItemHeight = 10;
             this.graphAcc.Lines = true;
-            point = new Point(15, 234);
-            this.graphAcc.Location = point;
+
+            this.graphAcc.Location = new Point(15, 234);
             this.graphAcc.MarkerValue = 0.0f;
             this.graphAcc.Max = 100f;
             this.graphAcc.Name = "graphAcc";
@@ -671,8 +671,8 @@ namespace Hero_Designer
             this.graphAcc.ScaleHeight = 32;
             this.graphAcc.ScaleIndex = 8;
             this.graphAcc.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphAcc.Size = size;
+
+            this.graphAcc.Size = new Size(300, 15);
             this.graphAcc.Style = Enums.GraphStyle.baseOnly;
             this.graphAcc.TabIndex = 10;
             this.graphAcc.TextWidth = 125;
@@ -694,8 +694,8 @@ namespace Hero_Designer
             this.graphToHit.Highlight = true;
             this.graphToHit.ItemHeight = 10;
             this.graphToHit.Lines = true;
-            point = new Point(15, 215);
-            this.graphToHit.Location = point;
+
+            this.graphToHit.Location = new Point(15, 215);
             this.graphToHit.MarkerValue = 0.0f;
             this.graphToHit.Max = 100f;
             this.graphToHit.Name = "graphToHit";
@@ -704,17 +704,17 @@ namespace Hero_Designer
             this.graphToHit.ScaleHeight = 32;
             this.graphToHit.ScaleIndex = 8;
             this.graphToHit.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphToHit.Size = size;
+
+            this.graphToHit.Size = new Size(300, 15);
             this.graphToHit.Style = Enums.GraphStyle.baseOnly;
             this.graphToHit.TabIndex = 9;
             this.graphToHit.TextWidth = 125;
             this.lblMisc.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 177);
-            this.lblMisc.Location = point;
+
+            this.lblMisc.Location = new Point(3, 177);
             this.lblMisc.Name = "lblMisc";
-            size = new Size(125, 16);
-            this.lblMisc.Size = size;
+
+            this.lblMisc.Size = new Size(125, 16);
             this.lblMisc.TabIndex = 8;
             this.lblMisc.Text = "Misc:";
             this.lblMisc.TextAlign = ContentAlignment.BottomLeft;
@@ -736,8 +736,8 @@ namespace Hero_Designer
             this.graphMovement.Highlight = true;
             this.graphMovement.ItemHeight = 10;
             this.graphMovement.Lines = true;
-            point = new Point(15, 17);
-            this.graphMovement.Location = point;
+
+            this.graphMovement.Location = new Point(15, 17);
             this.graphMovement.MarkerValue = 0.0f;
             this.graphMovement.Max = 100f;
             this.graphMovement.Name = "graphMovement";
@@ -746,17 +746,17 @@ namespace Hero_Designer
             this.graphMovement.ScaleHeight = 32;
             this.graphMovement.ScaleIndex = 8;
             this.graphMovement.ShowScale = false;
-            size = new Size(300, 61);
-            this.graphMovement.Size = size;
+
+            this.graphMovement.Size = new Size(300, 61);
             this.graphMovement.Style = Enums.GraphStyle.Stacked;
             this.graphMovement.TabIndex = 2;
             this.graphMovement.TextWidth = 125;
             this.lblMovement.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 0);
-            this.lblMovement.Location = point;
+
+            this.lblMovement.Location = new Point(3, 0);
             this.lblMovement.Name = "lblMovement";
-            size = new Size(125, 16);
-            this.lblMovement.Size = size;
+
+            this.lblMovement.Size = new Size(125, 16);
             this.lblMovement.TabIndex = 3;
             this.lblMovement.Text = "Movement:";
             this.lblMovement.TextAlign = ContentAlignment.BottomLeft;
@@ -778,8 +778,8 @@ namespace Hero_Designer
             this.graphHaste.Highlight = true;
             this.graphHaste.ItemHeight = 10;
             this.graphHaste.Lines = true;
-            point = new Point(15, 196);
-            this.graphHaste.Location = point;
+
+            this.graphHaste.Location = new Point(15, 196);
             this.graphHaste.MarkerValue = 0.0f;
             this.graphHaste.Max = 100f;
             this.graphHaste.Name = "graphHaste";
@@ -788,8 +788,8 @@ namespace Hero_Designer
             this.graphHaste.ScaleHeight = 32;
             this.graphHaste.ScaleIndex = 8;
             this.graphHaste.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphHaste.Size = size;
+
+            this.graphHaste.Size = new Size(300, 15);
             this.graphHaste.Style = Enums.GraphStyle.baseOnly;
             this.graphHaste.TabIndex = 7;
             this.graphHaste.TextWidth = 125;
@@ -798,11 +798,11 @@ namespace Hero_Designer
             this.Panel2.Controls.Add((Control)this.graphThreat);
             this.Panel2.Controls.Add((Control)this.graphEndRdx);
             this.Panel2.Controls.Add((Control)this.graphDam);
-            point = new Point(15, 196);
-            this.Panel2.Location = point;
+
+            this.Panel2.Location = new Point(15, 196);
             this.Panel2.Name = "Panel2";
-            size = new Size(300, 194);
-            this.Panel2.Size = size;
+
+            this.Panel2.Size = new Size(300, 194);
             this.Panel2.TabIndex = 14;
             this.graphElusivity.BackColor = Color.Black;
             this.graphElusivity.Border = true;
@@ -822,8 +822,8 @@ namespace Hero_Designer
             this.graphElusivity.Highlight = true;
             this.graphElusivity.ItemHeight = 10;
             this.graphElusivity.Lines = true;
-            point = new Point(0, 117);
-            this.graphElusivity.Location = point;
+
+            this.graphElusivity.Location = new Point(0, 117);
             this.graphElusivity.MarkerValue = 0.0f;
             this.graphElusivity.Max = 100f;
             this.graphElusivity.Name = "graphElusivity";
@@ -832,8 +832,8 @@ namespace Hero_Designer
             this.graphElusivity.ScaleHeight = 32;
             this.graphElusivity.ScaleIndex = 8;
             this.graphElusivity.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphElusivity.Size = size;
+
+            this.graphElusivity.Size = new Size(300, 15);
             this.graphElusivity.Style = Enums.GraphStyle.baseOnly;
             this.graphElusivity.TabIndex = 14;
             this.graphElusivity.TextWidth = 125;
@@ -855,8 +855,8 @@ namespace Hero_Designer
             this.graphThreat.Highlight = true;
             this.graphThreat.ItemHeight = 10;
             this.graphThreat.Lines = true;
-            point = new Point(0, 96);
-            this.graphThreat.Location = point;
+
+            this.graphThreat.Location = new Point(0, 96);
             this.graphThreat.MarkerValue = 0.0f;
             this.graphThreat.Max = 100f;
             this.graphThreat.Name = "graphThreat";
@@ -865,8 +865,8 @@ namespace Hero_Designer
             this.graphThreat.ScaleHeight = 32;
             this.graphThreat.ScaleIndex = 8;
             this.graphThreat.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphThreat.Size = size;
+
+            this.graphThreat.Size = new Size(300, 15);
             this.graphThreat.Style = Enums.GraphStyle.baseOnly;
             this.graphThreat.TabIndex = 13;
             this.graphThreat.TextWidth = 125;
@@ -888,8 +888,8 @@ namespace Hero_Designer
             this.graphEndRdx.Highlight = true;
             this.graphEndRdx.ItemHeight = 10;
             this.graphEndRdx.Lines = true;
-            point = new Point(0, 76);
-            this.graphEndRdx.Location = point;
+
+            this.graphEndRdx.Location = new Point(0, 76);
             this.graphEndRdx.MarkerValue = 0.0f;
             this.graphEndRdx.Max = 100f;
             this.graphEndRdx.Name = "graphEndRdx";
@@ -898,8 +898,8 @@ namespace Hero_Designer
             this.graphEndRdx.ScaleHeight = 32;
             this.graphEndRdx.ScaleIndex = 8;
             this.graphEndRdx.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphEndRdx.Size = size;
+
+            this.graphEndRdx.Size = new Size(300, 15);
             this.graphEndRdx.Style = Enums.GraphStyle.baseOnly;
             this.graphEndRdx.TabIndex = 12;
             this.graphEndRdx.TextWidth = 125;
@@ -921,8 +921,8 @@ namespace Hero_Designer
             this.graphDam.Highlight = true;
             this.graphDam.ItemHeight = 10;
             this.graphDam.Lines = true;
-            point = new Point(0, 57);
-            this.graphDam.Location = point;
+
+            this.graphDam.Location = new Point(0, 57);
             this.graphDam.MarkerValue = 0.0f;
             this.graphDam.Max = 100f;
             this.graphDam.Name = "graphDam";
@@ -931,39 +931,39 @@ namespace Hero_Designer
             this.graphDam.ScaleHeight = 32;
             this.graphDam.ScaleIndex = 8;
             this.graphDam.ShowScale = false;
-            size = new Size(300, 15);
-            this.graphDam.Size = size;
+
+            this.graphDam.Size = new Size(300, 15);
             this.graphDam.Style = Enums.GraphStyle.Stacked;
             this.graphDam.TabIndex = 11;
             this.graphDam.TextWidth = 125;
-            point = new Point(112, 3);
-            this.tab1.Location = point;
+
+            this.tab1.Location = new Point(112, 3);
             this.tab1.Name = "tab1";
-            size = new Size(105, 22);
-            this.tab1.Size = size;
+
+            this.tab1.Size = new Size(105, 22);
             this.tab1.TabIndex = 94;
             this.tab1.TabStop = false;
-            point = new Point(4, 3);
-            this.tab0.Location = point;
+
+            this.tab0.Location = new Point(4, 3);
             this.tab0.Name = "tab0";
-            size = new Size(105, 22);
-            this.tab0.Size = size;
+
+            this.tab0.Size = new Size(105, 22);
             this.tab0.TabIndex = 93;
             this.tab0.TabStop = false;
             this.pbTopMost.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            point = new Point(4, 458);
-            this.pbTopMost.Location = point;
+
+            this.pbTopMost.Location = new Point(4, 458);
             this.pbTopMost.Name = "pbTopMost";
-            size = new Size(105, 22);
-            this.pbTopMost.Size = size;
+
+            this.pbTopMost.Size = new Size(105, 22);
             this.pbTopMost.TabIndex = 95;
             this.pbTopMost.TabStop = false;
             this.pbClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            point = new Point(219, 458);
-            this.pbClose.Location = point;
+
+            this.pbClose.Location = new Point(219, 458);
             this.pbClose.Name = "pbClose";
-            size = new Size(105, 22);
-            this.pbClose.Size = size;
+
+            this.pbClose.Size = new Size(105, 22);
             this.pbClose.TabIndex = 96;
             this.pbClose.TabStop = false;
             this.pnlStatus.BackColor = Color.FromArgb(0, 32, 0);
@@ -973,11 +973,11 @@ namespace Hero_Designer
             this.pnlStatus.Controls.Add((Control)this.lblSDeb);
             this.pnlStatus.Controls.Add((Control)this.graphSProt);
             this.pnlStatus.Controls.Add((Control)this.lblSProt);
-            point = new Point(656, 31);
-            this.pnlStatus.Location = point;
+
+            this.pnlStatus.Location = new Point(656, 31);
             this.pnlStatus.Name = "pnlStatus";
-            size = new Size(320, 423);
-            this.pnlStatus.Size = size;
+
+            this.pnlStatus.Size = new Size(320, 423);
             this.pnlStatus.TabIndex = 97;
             this.pnlStatus.Visible = false;
             this.graphSRes.BackColor = Color.Black;
@@ -998,8 +998,8 @@ namespace Hero_Designer
             this.graphSRes.Highlight = true;
             this.graphSRes.ItemHeight = 9;
             this.graphSRes.Lines = true;
-            point = new Point(15, 175);
-            this.graphSRes.Location = point;
+
+            this.graphSRes.Location = new Point(15, 175);
             this.graphSRes.MarkerValue = 0.0f;
             this.graphSRes.Max = 100f;
             this.graphSRes.Name = "graphSRes";
@@ -1008,17 +1008,17 @@ namespace Hero_Designer
             this.graphSRes.ScaleHeight = 32;
             this.graphSRes.ScaleIndex = 8;
             this.graphSRes.ShowScale = false;
-            size = new Size(300, 136);
-            this.graphSRes.Size = size;
+
+            this.graphSRes.Size = new Size(300, 136);
             this.graphSRes.Style = Enums.GraphStyle.baseOnly;
             this.graphSRes.TabIndex = 14;
             this.graphSRes.TextWidth = 125;
             this.lblSRes.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 156);
-            this.lblSRes.Location = point;
+
+            this.lblSRes.Location = new Point(3, 156);
             this.lblSRes.Name = "lblSRes";
-            size = new Size(125, 16);
-            this.lblSRes.Size = size;
+
+            this.lblSRes.Size = new Size(125, 16);
             this.lblSRes.TabIndex = 13;
             this.lblSRes.Text = "Status Resistance:";
             this.lblSRes.TextAlign = ContentAlignment.BottomLeft;
@@ -1040,8 +1040,8 @@ namespace Hero_Designer
             this.graphSDeb.Highlight = true;
             this.graphSDeb.ItemHeight = 9;
             this.graphSDeb.Lines = true;
-            point = new Point(15, 333);
-            this.graphSDeb.Location = point;
+
+            this.graphSDeb.Location = new Point(15, 333);
             this.graphSDeb.MarkerValue = 0.0f;
             this.graphSDeb.Max = 100f;
             this.graphSDeb.Name = "graphSDeb";
@@ -1050,17 +1050,17 @@ namespace Hero_Designer
             this.graphSDeb.ScaleHeight = 32;
             this.graphSDeb.ScaleIndex = 8;
             this.graphSDeb.ShowScale = false;
-            size = new Size(300, 88);
-            this.graphSDeb.Size = size;
+
+            this.graphSDeb.Size = new Size(300, 88);
             this.graphSDeb.Style = Enums.GraphStyle.baseOnly;
             this.graphSDeb.TabIndex = 12;
             this.graphSDeb.TextWidth = 125;
             this.lblSDeb.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 314);
-            this.lblSDeb.Location = point;
+
+            this.lblSDeb.Location = new Point(3, 314);
             this.lblSDeb.Name = "lblSDeb";
-            size = new Size(125, 16);
-            this.lblSDeb.Size = size;
+
+            this.lblSDeb.Size = new Size(125, 16);
             this.lblSDeb.TabIndex = 8;
             this.lblSDeb.Text = "Debuff Resistance:";
             this.lblSDeb.TextAlign = ContentAlignment.BottomLeft;
@@ -1082,8 +1082,8 @@ namespace Hero_Designer
             this.graphSProt.Highlight = true;
             this.graphSProt.ItemHeight = 9;
             this.graphSProt.Lines = true;
-            point = new Point(15, 17);
-            this.graphSProt.Location = point;
+
+            this.graphSProt.Location = new Point(15, 17);
             this.graphSProt.MarkerValue = 0.0f;
             this.graphSProt.Max = 100f;
             this.graphSProt.Name = "graphSProt";
@@ -1092,31 +1092,31 @@ namespace Hero_Designer
             this.graphSProt.ScaleHeight = 32;
             this.graphSProt.ScaleIndex = 8;
             this.graphSProt.ShowScale = false;
-            size = new Size(300, 136);
-            this.graphSProt.Size = size;
+
+            this.graphSProt.Size = new Size(300, 136);
             this.graphSProt.Style = Enums.GraphStyle.baseOnly;
             this.graphSProt.TabIndex = 2;
             this.graphSProt.TextWidth = 125;
             this.lblSProt.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(3, 0);
-            this.lblSProt.Location = point;
+
+            this.lblSProt.Location = new Point(3, 0);
             this.lblSProt.Name = "lblSProt";
-            size = new Size(125, 16);
-            this.lblSProt.Size = size;
+
+            this.lblSProt.Size = new Size(125, 16);
             this.lblSProt.TabIndex = 3;
             this.lblSProt.Text = "Status Protection:";
             this.lblSProt.TextAlign = ContentAlignment.BottomLeft;
-            point = new Point(220, 3);
-            this.tab2.Location = point;
+
+            this.tab2.Location = new Point(220, 3);
             this.tab2.Name = "tab2";
-            size = new Size(105, 22);
-            this.tab2.Size = size;
+
+            this.tab2.Size = new Size(105, 22);
             this.tab2.TabIndex = 98;
             this.tab2.TabStop = false;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.Black;
-            size = new Size(995, 476);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(995, 476);
             this.Controls.Add((Control)this.tab2);
             this.Controls.Add((Control)this.pnlStatus);
             this.Controls.Add((Control)this.pbClose);
@@ -1129,10 +1129,10 @@ namespace Hero_Designer
             this.ForeColor = Color.White;
             this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            size = new Size(1024, 603);
-            this.MaximumSize = size;
-            size = new Size(240, 200);
-            this.MinimumSize = size;
+
+            this.MaximumSize = new Size(1024, 603);
+
+            this.MinimumSize = new Size(240, 200);
             this.Name = nameof(frmTotals);
             this.StartPosition = FormStartPosition.Manual;
             this.Text = "Totals for Self";

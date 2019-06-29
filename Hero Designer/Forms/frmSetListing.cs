@@ -336,8 +336,8 @@ namespace Hero_Designer
       this.NoReload = new CheckBox();
       this.SuspendLayout();
       this.ilSets.ColorDepth = ColorDepth.Depth32Bit;
-      Size size = new Size(16, 16);
-      this.ilSets.ImageSize = size;
+
+      this.ilSets.ImageSize = new Size(16, 16);
       this.ilSets.TransparentColor = Color.Transparent;
       this.lvSets.Columns.AddRange(new ColumnHeader[6]
       {
@@ -352,12 +352,12 @@ namespace Hero_Designer
       this.lvSets.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvSets.HideSelection = false;
       this.lvSets.LargeImageList = this.ilSets;
-      Point point = new Point(16, 16);
-      this.lvSets.Location = point;
+
+      this.lvSets.Location = new Point(16, 16);
       this.lvSets.MultiSelect = false;
       this.lvSets.Name = "lvSets";
-      size = new Size(600, 520);
-      this.lvSets.Size = size;
+
+      this.lvSets.Size = new Size(600, 520);
       this.lvSets.SmallImageList = this.ilSets;
       this.lvSets.TabIndex = 0;
       this.lvSets.UseCompatibleStateImageBehavior = false;
@@ -375,99 +375,99 @@ namespace Hero_Designer
       this.ColumnHeader6.Text = "FX";
       this.btnClone.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnClone.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 132);
-      this.btnClone.Location = point;
+
+      this.btnClone.Location = new Point(624, 132);
       this.btnClone.Name = "btnClone";
-      size = new Size(75, 23);
-      this.btnClone.Size = size;
+
+      this.btnClone.Size = new Size(75, 23);
       this.btnClone.TabIndex = 32;
       this.btnClone.Text = "Clone...";
       this.btnClone.UseVisualStyleBackColor = true;
       this.btnCancel.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnCancel.DialogResult = DialogResult.Cancel;
       this.btnCancel.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(375, 544);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(375, 544);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(193, 32);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(193, 32);
       this.btnCancel.TabIndex = 31;
       this.btnCancel.Text = "Cancel and Discard Changes";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnSave.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnSave.DialogResult = DialogResult.OK;
       this.btnSave.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(588, 544);
-      this.btnSave.Location = point;
+
+      this.btnSave.Location = new Point(588, 544);
       this.btnSave.Name = "btnSave";
-      size = new Size(112, 32);
-      this.btnSave.Size = size;
+
+      this.btnSave.Size = new Size(112, 32);
       this.btnSave.TabIndex = 30;
       this.btnSave.Text = "Save and Close";
       this.btnSave.UseVisualStyleBackColor = true;
       this.btnEdit.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnEdit.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 172);
-      this.btnEdit.Location = point;
+
+      this.btnEdit.Location = new Point(624, 172);
       this.btnEdit.Name = "btnEdit";
-      size = new Size(75, 23);
-      this.btnEdit.Size = size;
+
+      this.btnEdit.Size = new Size(75, 23);
       this.btnEdit.TabIndex = 29;
       this.btnEdit.Text = "Edit...";
       this.btnEdit.UseVisualStyleBackColor = true;
       this.btnDelete.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnDelete.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 212);
-      this.btnDelete.Location = point;
+
+      this.btnDelete.Location = new Point(624, 212);
       this.btnDelete.Name = "btnDelete";
-      size = new Size(75, 23);
-      this.btnDelete.Size = size;
+
+      this.btnDelete.Size = new Size(75, 23);
       this.btnDelete.TabIndex = 28;
       this.btnDelete.Text = "Delete";
       this.btnDelete.UseVisualStyleBackColor = true;
       this.btnAdd.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnAdd.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 92);
-      this.btnAdd.Location = point;
+
+      this.btnAdd.Location = new Point(624, 92);
       this.btnAdd.Name = "btnAdd";
-      size = new Size(75, 23);
-      this.btnAdd.Size = size;
+
+      this.btnAdd.Size = new Size(75, 23);
       this.btnAdd.TabIndex = 27;
       this.btnAdd.Text = "Add...";
       this.btnAdd.UseVisualStyleBackColor = true;
       this.btnDown.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnDown.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 44);
-      this.btnDown.Location = point;
+
+      this.btnDown.Location = new Point(624, 44);
       this.btnDown.Name = "btnDown";
-      size = new Size(75, 23);
-      this.btnDown.Size = size;
+
+      this.btnDown.Size = new Size(75, 23);
       this.btnDown.TabIndex = 26;
       this.btnDown.Text = "Move Down";
       this.btnDown.UseVisualStyleBackColor = true;
       this.btnUp.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnUp.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      point = new Point(624, 16);
-      this.btnUp.Location = point;
+
+      this.btnUp.Location = new Point(624, 16);
       this.btnUp.Name = "btnUp";
-      size = new Size(75, 23);
-      this.btnUp.Size = size;
+
+      this.btnUp.Size = new Size(75, 23);
       this.btnUp.TabIndex = 25;
       this.btnUp.Text = "Move Up";
       this.btnUp.UseVisualStyleBackColor = true;
       this.NoReload.ForeColor = Color.White;
-      point = new Point(20, 552);
-      this.NoReload.Location = point;
+
+      this.NoReload.Location = new Point(20, 552);
       this.NoReload.Name = "NoReload";
-      size = new Size(248, 16);
-      this.NoReload.Size = size;
+
+      this.NoReload.Size = new Size(248, 16);
       this.NoReload.TabIndex = 33;
       this.NoReload.Text = "Disable Image Reload";
-      size = new Size(5, 13);
-      this.AutoScaleBaseSize = size;
+
+      this.AutoScaleBaseSize = new Size(5, 13);
       this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(706, 584);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(706, 584);
       this.Controls.Add((Control) this.NoReload);
       this.Controls.Add((Control) this.btnClone);
       this.Controls.Add((Control) this.btnCancel);

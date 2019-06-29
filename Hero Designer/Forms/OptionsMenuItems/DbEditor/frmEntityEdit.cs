@@ -427,47 +427,47 @@ namespace Hero_Designer
       this.GroupBox1.SuspendLayout();
       this.GroupBox2.SuspendLayout();
       this.SuspendLayout();
-      Point point = new Point(101, 9);
-      this.txtEntName.Location = point;
+
+      this.txtEntName.Location = new Point(101, 9);
       this.txtEntName.Name = "txtEntName";
-      Size size = new Size(172, 20);
-      this.txtEntName.Size = size;
+
+      this.txtEntName.Size = new Size(172, 20);
       this.txtEntName.TabIndex = 0;
-      point = new Point(12, 9);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(12, 9);
       this.Label1.Name = "Label1";
-      size = new Size(83, 20);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(83, 20);
       this.Label1.TabIndex = 1;
       this.Label1.Text = "Name:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(12, 35);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(12, 35);
       this.Label2.Name = "Label2";
-      size = new Size(83, 20);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(83, 20);
       this.Label2.TabIndex = 3;
       this.Label2.Text = "Display Name:";
       this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(101, 35);
-      this.txtDisplayName.Location = point;
+
+      this.txtDisplayName.Location = new Point(101, 35);
       this.txtDisplayName.Name = "txtDisplayName";
-      size = new Size(172, 20);
-      this.txtDisplayName.Size = size;
+
+      this.txtDisplayName.Size = new Size(172, 20);
       this.txtDisplayName.TabIndex = 2;
       this.cbEntType.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbEntType.FormattingEnabled = true;
-      point = new Point(101, 61);
-      this.cbEntType.Location = point;
+
+      this.cbEntType.Location = new Point(101, 61);
       this.cbEntType.Name = "cbEntType";
-      size = new Size(172, 22);
-      this.cbEntType.Size = size;
+
+      this.cbEntType.Size = new Size(172, 22);
       this.cbEntType.TabIndex = 4;
-      point = new Point(12, 61);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(12, 61);
       this.Label3.Name = "Label3";
-      size = new Size(83, 20);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(83, 20);
       this.Label3.TabIndex = 5;
       this.Label3.Text = "Entity Type:";
       this.Label3.TextAlign = ContentAlignment.MiddleRight;
@@ -478,19 +478,19 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.btnPDown);
       this.GroupBox1.Controls.Add((Control) this.lvPSGroup);
       this.GroupBox1.Controls.Add((Control) this.btnPUp);
-      point = new Point(12, 117);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(12, 117);
       this.GroupBox1.Name = "GroupBox1";
-      size = new Size(373, 375);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(373, 375);
       this.GroupBox1.TabIndex = 6;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Power Sets";
-      point = new Point(283, 134);
-      this.btnPDelete.Location = point;
+
+      this.btnPDelete.Location = new Point(283, 134);
       this.btnPDelete.Name = "btnPDelete";
-      size = new Size(84, 23);
-      this.btnPDelete.Size = size;
+
+      this.btnPDelete.Size = new Size(84, 23);
       this.btnPDelete.TabIndex = 11;
       this.btnPDelete.Text = "Remove";
       this.btnPDelete.UseVisualStyleBackColor = true;
@@ -501,22 +501,22 @@ namespace Hero_Designer
       this.lvPower.FullRowSelect = true;
       this.lvPower.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvPower.HideSelection = false;
-      point = new Point(6, 19);
-      this.lvPower.Location = point;
+
+      this.lvPower.Location = new Point(6, 19);
       this.lvPower.MultiSelect = false;
       this.lvPower.Name = "lvPower";
-      size = new Size(271, 138);
-      this.lvPower.Size = size;
+
+      this.lvPower.Size = new Size(271, 138);
       this.lvPower.TabIndex = 18;
       this.lvPower.UseCompatibleStateImageBehavior = false;
       this.lvPower.View = View.Details;
       this.ColumnHeader4.Text = "Current Sets";
       this.ColumnHeader4.Width = 244;
-      point = new Point(283, 105);
-      this.btnPAdd.Location = point;
+
+      this.btnPAdd.Location = new Point(283, 105);
       this.btnPAdd.Name = "btnPAdd";
-      size = new Size(84, 23);
-      this.btnPAdd.Size = size;
+
+      this.btnPAdd.Size = new Size(84, 23);
       this.btnPAdd.TabIndex = 10;
       this.btnPAdd.Text = "Add";
       this.btnPAdd.UseVisualStyleBackColor = true;
@@ -527,22 +527,22 @@ namespace Hero_Designer
       this.lvPSSet.FullRowSelect = true;
       this.lvPSSet.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvPSSet.HideSelection = false;
-      point = new Point(148, 163);
-      this.lvPSSet.Location = point;
+
+      this.lvPSSet.Location = new Point(148, 163);
       this.lvPSSet.MultiSelect = false;
       this.lvPSSet.Name = "lvPSSet";
-      size = new Size(219, 206);
-      this.lvPSSet.Size = size;
+
+      this.lvPSSet.Size = new Size(219, 206);
       this.lvPSSet.TabIndex = 17;
       this.lvPSSet.UseCompatibleStateImageBehavior = false;
       this.lvPSSet.View = View.Details;
       this.ColumnHeader10.Text = "Set";
       this.ColumnHeader10.Width = 188;
-      point = new Point(283, 48);
-      this.btnPDown.Location = point;
+
+      this.btnPDown.Location = new Point(283, 48);
       this.btnPDown.Name = "btnPDown";
-      size = new Size(84, 23);
-      this.btnPDown.Size = size;
+
+      this.btnPDown.Size = new Size(84, 23);
       this.btnPDown.TabIndex = 9;
       this.btnPDown.Text = "Down";
       this.btnPDown.UseVisualStyleBackColor = true;
@@ -553,22 +553,22 @@ namespace Hero_Designer
       this.lvPSGroup.FullRowSelect = true;
       this.lvPSGroup.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvPSGroup.HideSelection = false;
-      point = new Point(6, 163);
-      this.lvPSGroup.Location = point;
+
+      this.lvPSGroup.Location = new Point(6, 163);
       this.lvPSGroup.MultiSelect = false;
       this.lvPSGroup.Name = "lvPSGroup";
-      size = new Size(136, 206);
-      this.lvPSGroup.Size = size;
+
+      this.lvPSGroup.Size = new Size(136, 206);
       this.lvPSGroup.TabIndex = 16;
       this.lvPSGroup.UseCompatibleStateImageBehavior = false;
       this.lvPSGroup.View = View.Details;
       this.ColumnHeader11.Text = "Group";
       this.ColumnHeader11.Width = 110;
-      point = new Point(283, 19);
-      this.btnPUp.Location = point;
+
+      this.btnPUp.Location = new Point(283, 19);
       this.btnPUp.Name = "btnPUp";
-      size = new Size(84, 23);
-      this.btnPUp.Size = size;
+
+      this.btnPUp.Size = new Size(84, 23);
       this.btnPUp.TabIndex = 8;
       this.btnPUp.Text = "Up";
       this.btnPUp.UseVisualStyleBackColor = true;
@@ -580,43 +580,43 @@ namespace Hero_Designer
       this.GroupBox2.Controls.Add((Control) this.lvUGPower);
       this.GroupBox2.Controls.Add((Control) this.lvUGSet);
       this.GroupBox2.Controls.Add((Control) this.lvUGGroup);
-      point = new Point(391, 117);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(391, 117);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(514, 375);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(514, 375);
       this.GroupBox2.TabIndex = 7;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "Upgrade Powers";
-      point = new Point(424, 108);
-      this.btnUGDelete.Location = point;
+
+      this.btnUGDelete.Location = new Point(424, 108);
       this.btnUGDelete.Name = "btnUGDelete";
-      size = new Size(84, 23);
-      this.btnUGDelete.Size = size;
+
+      this.btnUGDelete.Size = new Size(84, 23);
       this.btnUGDelete.TabIndex = 23;
       this.btnUGDelete.Text = "Remove";
       this.btnUGDelete.UseVisualStyleBackColor = true;
-      point = new Point(424, 79);
-      this.btnUGAdd.Location = point;
+
+      this.btnUGAdd.Location = new Point(424, 79);
       this.btnUGAdd.Name = "btnUGAdd";
-      size = new Size(84, 23);
-      this.btnUGAdd.Size = size;
+
+      this.btnUGAdd.Size = new Size(84, 23);
       this.btnUGAdd.TabIndex = 22;
       this.btnUGAdd.Text = "Add";
       this.btnUGAdd.UseVisualStyleBackColor = true;
-      point = new Point(424, 48);
-      this.btnUGDown.Location = point;
+
+      this.btnUGDown.Location = new Point(424, 48);
       this.btnUGDown.Name = "btnUGDown";
-      size = new Size(84, 23);
-      this.btnUGDown.Size = size;
+
+      this.btnUGDown.Size = new Size(84, 23);
       this.btnUGDown.TabIndex = 21;
       this.btnUGDown.Text = "Down";
       this.btnUGDown.UseVisualStyleBackColor = true;
-      point = new Point(424, 19);
-      this.btnUGUp.Location = point;
+
+      this.btnUGUp.Location = new Point(424, 19);
       this.btnUGUp.Name = "btnUGUp";
-      size = new Size(84, 23);
-      this.btnUGUp.Size = size;
+
+      this.btnUGUp.Size = new Size(84, 23);
       this.btnUGUp.TabIndex = 20;
       this.btnUGUp.Text = "Up";
       this.btnUGUp.UseVisualStyleBackColor = true;
@@ -627,12 +627,12 @@ namespace Hero_Designer
       this.lvUpgrade.FullRowSelect = true;
       this.lvUpgrade.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvUpgrade.HideSelection = false;
-      point = new Point(6, 19);
-      this.lvUpgrade.Location = point;
+
+      this.lvUpgrade.Location = new Point(6, 19);
       this.lvUpgrade.MultiSelect = false;
       this.lvUpgrade.Name = "lvUpgrade";
-      size = new Size(412, 112);
-      this.lvUpgrade.Size = size;
+
+      this.lvUpgrade.Size = new Size(412, 112);
       this.lvUpgrade.TabIndex = 19;
       this.lvUpgrade.UseCompatibleStateImageBehavior = false;
       this.lvUpgrade.View = View.Details;
@@ -645,12 +645,12 @@ namespace Hero_Designer
       this.lvUGPower.FullRowSelect = true;
       this.lvUGPower.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvUGPower.HideSelection = false;
-      point = new Point(370, 137);
-      this.lvUGPower.Location = point;
+
+      this.lvUGPower.Location = new Point(370, 137);
       this.lvUGPower.MultiSelect = false;
       this.lvUGPower.Name = "lvUGPower";
-      size = new Size(138, 232);
-      this.lvUGPower.Size = size;
+
+      this.lvUGPower.Size = new Size(138, 232);
       this.lvUGPower.TabIndex = 18;
       this.lvUGPower.UseCompatibleStateImageBehavior = false;
       this.lvUGPower.View = View.Details;
@@ -663,12 +663,12 @@ namespace Hero_Designer
       this.lvUGSet.FullRowSelect = true;
       this.lvUGSet.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvUGSet.HideSelection = false;
-      point = new Point(148, 137);
-      this.lvUGSet.Location = point;
+
+      this.lvUGSet.Location = new Point(148, 137);
       this.lvUGSet.MultiSelect = false;
       this.lvUGSet.Name = "lvUGSet";
-      size = new Size(216, 232);
-      this.lvUGSet.Size = size;
+
+      this.lvUGSet.Size = new Size(216, 232);
       this.lvUGSet.TabIndex = 17;
       this.lvUGSet.UseCompatibleStateImageBehavior = false;
       this.lvUGSet.View = View.Details;
@@ -681,62 +681,62 @@ namespace Hero_Designer
       this.lvUGGroup.FullRowSelect = true;
       this.lvUGGroup.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvUGGroup.HideSelection = false;
-      point = new Point(6, 137);
-      this.lvUGGroup.Location = point;
+
+      this.lvUGGroup.Location = new Point(6, 137);
       this.lvUGGroup.MultiSelect = false;
       this.lvUGGroup.Name = "lvUGGroup";
-      size = new Size(136, 232);
-      this.lvUGGroup.Size = size;
+
+      this.lvUGGroup.Size = new Size(136, 232);
       this.lvUGGroup.TabIndex = 16;
       this.lvUGGroup.UseCompatibleStateImageBehavior = false;
       this.lvUGGroup.View = View.Details;
       this.ColumnHeader2.Text = "Group";
       this.ColumnHeader2.Width = 110;
-      point = new Point(279, 9);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(279, 9);
       this.Label4.Name = "Label4";
-      size = new Size(629, 102);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(629, 102);
       this.Label4.TabIndex = 8;
       this.Label4.Text = componentResourceManager.GetString("Label4.Text");
-      point = new Point(12, 89);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(12, 89);
       this.Label5.Name = "Label5";
-      size = new Size(83, 20);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(83, 20);
       this.Label5.TabIndex = 10;
       this.Label5.Text = "Class:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
       this.cbClass.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbClass.FormattingEnabled = true;
-      point = new Point(101, 89);
-      this.cbClass.Location = point;
+
+      this.cbClass.Location = new Point(101, 89);
       this.cbClass.Name = "cbClass";
-      size = new Size(172, 22);
-      this.cbClass.Size = size;
+
+      this.cbClass.Size = new Size(172, 22);
       this.cbClass.TabIndex = 9;
-      point = new Point(830, 498);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(830, 498);
       this.btnOK.Name = "btnOK";
-      size = new Size(75, 23);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(75, 23);
       this.btnOK.TabIndex = 11;
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(749, 498);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(749, 498);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(75, 23);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(75, 23);
       this.btnCancel.TabIndex = 12;
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.AcceptButton = (IButtonControl) this.btnOK;
       this.AutoScaleMode = AutoScaleMode.None;
       this.CancelButton = (IButtonControl) this.btnCancel;
-      size = new Size(918, 547);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(918, 547);
       this.Controls.Add((Control) this.btnCancel);
       this.Controls.Add((Control) this.btnOK);
       this.Controls.Add((Control) this.Label5);

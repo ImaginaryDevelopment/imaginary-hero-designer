@@ -1,4 +1,4 @@
-﻿namespace Hero_Designer.Forms.WindowMenuItems
+namespace Hero_Designer.Forms.WindowMenuItems
 {
     partial class FrmMiniList2
     {

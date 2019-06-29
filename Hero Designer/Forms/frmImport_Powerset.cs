@@ -224,30 +224,30 @@ namespace Hero_Designer
       this.ColumnHeader3 = new ColumnHeader();
       this.udRevision.BeginInit();
       this.SuspendLayout();
-      Point point = new Point(346, 53);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(346, 53);
       this.Label8.Name = "Label8";
-      Size size = new Size(65, 18);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(65, 18);
       this.Label8.TabIndex = 32;
       this.Label8.Text = "Revision:";
       this.Label8.TextAlign = ContentAlignment.TopRight;
-      point = new Point(208, 53);
-      this.lblCount.Location = point;
+
+      this.lblCount.Location = new Point(208, 53);
       this.lblCount.Name = "lblCount";
-      size = new Size(132, 18);
-      this.lblCount.Size = size;
+
+      this.lblCount.Size = new Size(132, 18);
       this.lblCount.TabIndex = 31;
       this.lblCount.Text = "Sets:";
-      point = new Point(9, 53);
-      this.lblDate.Location = point;
+
+      this.lblDate.Location = new Point(9, 53);
       this.lblDate.Name = "lblDate";
-      size = new Size(175, 18);
-      this.lblDate.Size = size;
+
+      this.lblDate.Size = new Size(175, 18);
       this.lblDate.TabIndex = 30;
       this.lblDate.Text = "Date:";
-      point = new Point(417, 51);
-      this.udRevision.Location = point;
+
+      this.udRevision.Location = new Point(417, 51);
       this.udRevision.Maximum = new Decimal(new int[4]
       {
         (int) ushort.MaxValue,
@@ -256,47 +256,47 @@ namespace Hero_Designer
         0
       });
       this.udRevision.Name = "udRevision";
-      size = new Size(116, 20);
-      this.udRevision.Size = size;
+
+      this.udRevision.Size = new Size(116, 20);
       this.udRevision.TabIndex = 29;
-      point = new Point(12, 9);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(12, 9);
       this.Label6.Name = "Label6";
-      size = new Size(150, 14);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(150, 14);
       this.Label6.TabIndex = 28;
       this.Label6.Text = "Set Definition File:";
       this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 25);
-      this.lblFile.Location = point;
+
+      this.lblFile.Location = new Point(12, 25);
       this.lblFile.Name = "lblFile";
-      size = new Size(521, 23);
-      this.lblFile.Size = size;
+
+      this.lblFile.Size = new Size(521, 23);
       this.lblFile.TabIndex = 27;
       this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 25);
-      this.btnFile.Location = point;
+
+      this.btnFile.Location = new Point(539, 25);
       this.btnFile.Name = "btnFile";
-      size = new Size(165, 23);
-      this.btnFile.Size = size;
+
+      this.btnFile.Size = new Size(165, 23);
       this.btnFile.TabIndex = 26;
       this.btnFile.Text = "Load / Re-Load";
       this.btnFile.UseVisualStyleBackColor = true;
-      point = new Point(618, 516);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(618, 516);
       this.btnClose.Name = "btnClose";
-      size = new Size(86, 23);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(86, 23);
       this.btnClose.TabIndex = 35;
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.dlgBrowse.DefaultExt = "csv";
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-      point = new Point(618, 77);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(618, 77);
       this.btnImport.Name = "btnImport";
-      size = new Size(86, 22);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(86, 22);
       this.btnImport.TabIndex = 34;
       this.btnImport.Text = "Import";
       this.btnImport.UseVisualStyleBackColor = true;
@@ -310,11 +310,11 @@ namespace Hero_Designer
         this.ColumnHeader3
       });
       this.lstImport.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      point = new Point(12, 77);
-      this.lstImport.Location = point;
+
+      this.lstImport.Location = new Point(12, 77);
       this.lstImport.Name = "lstImport";
-      size = new Size(600, 462);
-      this.lstImport.Size = size;
+
+      this.lstImport.Size = new Size(600, 462);
       this.lstImport.TabIndex = 33;
       this.lstImport.UseCompatibleStateImageBehavior = false;
       this.lstImport.View = View.Details;
@@ -325,27 +325,27 @@ namespace Hero_Designer
       this.ColumnHeader4.Text = "New";
       this.ColumnHeader4.Width = 71;
       this.ColumnHeader5.Text = "Modified";
-      point = new Point(12, 545);
-      this.btnCheckAll.Location = point;
+
+      this.btnCheckAll.Location = new Point(12, 545);
       this.btnCheckAll.Name = "btnCheckAll";
-      size = new Size(75, 23);
-      this.btnCheckAll.Size = size;
+
+      this.btnCheckAll.Size = new Size(75, 23);
       this.btnCheckAll.TabIndex = 36;
       this.btnCheckAll.Text = "Check All";
       this.btnCheckAll.UseVisualStyleBackColor = true;
-      point = new Point(93, 545);
-      this.btnUncheckAll.Location = point;
+
+      this.btnUncheckAll.Location = new Point(93, 545);
       this.btnUncheckAll.Name = "btnUncheckAll";
-      size = new Size(75, 23);
-      this.btnUncheckAll.Size = size;
+
+      this.btnUncheckAll.Size = new Size(75, 23);
       this.btnUncheckAll.TabIndex = 37;
       this.btnUncheckAll.Text = "Uncheck All";
       this.btnUncheckAll.UseVisualStyleBackColor = true;
       this.ColumnHeader3.Text = "Change Description";
       this.ColumnHeader3.Width = 106;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(711, 574);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(711, 574);
       this.Controls.Add((Control) this.btnUncheckAll);
       this.Controls.Add((Control) this.btnCheckAll);
       this.Controls.Add((Control) this.btnClose);

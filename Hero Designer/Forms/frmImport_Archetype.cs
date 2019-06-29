@@ -171,30 +171,30 @@ namespace Hero_Designer
       this.ColumnHeader6 = new ColumnHeader();
       this.udATRevision.BeginInit();
       this.SuspendLayout();
-      Point point = new Point(346, 53);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(346, 53);
       this.Label8.Name = "Label8";
-      Size size = new Size(65, 18);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(65, 18);
       this.Label8.TabIndex = 25;
       this.Label8.Text = "Revision:";
       this.Label8.TextAlign = ContentAlignment.TopRight;
-      point = new Point(208, 53);
-      this.lblATCount.Location = point;
+
+      this.lblATCount.Location = new Point(208, 53);
       this.lblATCount.Name = "lblATCount";
-      size = new Size(132, 18);
-      this.lblATCount.Size = size;
+
+      this.lblATCount.Size = new Size(132, 18);
       this.lblATCount.TabIndex = 24;
       this.lblATCount.Text = "Classes:";
-      point = new Point(9, 53);
-      this.lblATDate.Location = point;
+
+      this.lblATDate.Location = new Point(9, 53);
       this.lblATDate.Name = "lblATDate";
-      size = new Size(175, 18);
-      this.lblATDate.Size = size;
+
+      this.lblATDate.Size = new Size(175, 18);
       this.lblATDate.TabIndex = 23;
       this.lblATDate.Text = "Date:";
-      point = new Point(417, 51);
-      this.udATRevision.Location = point;
+
+      this.udATRevision.Location = new Point(417, 51);
       this.udATRevision.Maximum = new Decimal(new int[4]
       {
         (int) ushort.MaxValue,
@@ -203,31 +203,31 @@ namespace Hero_Designer
         0
       });
       this.udATRevision.Name = "udATRevision";
-      size = new Size(116, 20);
-      this.udATRevision.Size = size;
+
+      this.udATRevision.Size = new Size(116, 20);
       this.udATRevision.TabIndex = 22;
-      point = new Point(12, 9);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(12, 9);
       this.Label6.Name = "Label6";
-      size = new Size(150, 14);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(150, 14);
       this.Label6.TabIndex = 21;
       this.Label6.Text = "Class Definition File:";
       this.dlgBrowse.DefaultExt = "csv";
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
       this.lblATFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 25);
-      this.lblATFile.Location = point;
+
+      this.lblATFile.Location = new Point(12, 25);
       this.lblATFile.Name = "lblATFile";
-      size = new Size(521, 23);
-      this.lblATFile.Size = size;
+
+      this.lblATFile.Size = new Size(521, 23);
       this.lblATFile.TabIndex = 20;
       this.lblATFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 25);
-      this.btnATFile.Location = point;
+
+      this.btnATFile.Location = new Point(539, 25);
       this.btnATFile.Name = "btnATFile";
-      size = new Size(165, 23);
-      this.btnATFile.Size = size;
+
+      this.btnATFile.Size = new Size(165, 23);
       this.btnATFile.TabIndex = 19;
       this.btnATFile.Text = "Load / Re-Load";
       this.btnATFile.UseVisualStyleBackColor = true;
@@ -242,11 +242,11 @@ namespace Hero_Designer
         this.ColumnHeader6
       });
       this.lstImport.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      point = new Point(12, 77);
-      this.lstImport.Location = point;
+
+      this.lstImport.Location = new Point(12, 77);
       this.lstImport.Name = "lstImport";
-      size = new Size(600, 309);
-      this.lstImport.Size = size;
+
+      this.lstImport.Size = new Size(600, 309);
       this.lstImport.TabIndex = 26;
       this.lstImport.UseCompatibleStateImageBehavior = false;
       this.lstImport.View = View.Details;
@@ -259,27 +259,27 @@ namespace Hero_Designer
       this.ColumnHeader4.Text = "New";
       this.ColumnHeader4.Width = 71;
       this.ColumnHeader5.Text = "Modified";
-      point = new Point(618, 77);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(618, 77);
       this.btnImport.Name = "btnImport";
-      size = new Size(86, 22);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(86, 22);
       this.btnImport.TabIndex = 27;
       this.btnImport.Text = "Import";
       this.btnImport.UseVisualStyleBackColor = true;
-      point = new Point(618, 363);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(618, 363);
       this.btnClose.Name = "btnClose";
-      size = new Size(86, 23);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(86, 23);
       this.btnClose.TabIndex = 28;
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
       this.ColumnHeader6.Text = "Change Description";
       this.ColumnHeader6.Width = 98;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(711, 400);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(711, 400);
       this.Controls.Add((Control) this.btnClose);
       this.Controls.Add((Control) this.btnImport);
       this.Controls.Add((Control) this.lstImport);

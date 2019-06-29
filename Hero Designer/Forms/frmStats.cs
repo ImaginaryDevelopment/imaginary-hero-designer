@@ -1164,60 +1164,60 @@ namespace Hero_Designer
       this.tbScaleX.BeginInit();
       this.SuspendLayout();
       this.lblKey2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      Point point = new Point(56, 463);
-      this.lblKey2.Location = point;
+
+      this.lblKey2.Location = new Point(56, 463);
       this.lblKey2.Name = "lblKey2";
-      Size size = new Size(78, 16);
-      this.lblKey2.Size = size;
+
+      this.lblKey2.Size = new Size(78, 16);
       this.lblKey2.TabIndex = 3;
       this.lblKey2.Text = "Enhanced";
       this.lblKey2.TextAlign = ContentAlignment.MiddleLeft;
       this.lblKey1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      point = new Point(56, 443);
-      this.lblKey1.Location = point;
+
+      this.lblKey1.Location = new Point(56, 443);
       this.lblKey1.Name = "lblKey1";
-      size = new Size(78, 16);
-      this.lblKey1.Size = size;
+
+      this.lblKey1.Size = new Size(78, 16);
       this.lblKey1.TabIndex = 2;
       this.lblKey1.Text = "Base";
       this.lblKey1.TextAlign = ContentAlignment.MiddleLeft;
       this.lblKeyColor2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
       this.lblKeyColor2.BackColor = Color.Yellow;
       this.lblKeyColor2.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(12, 463);
-      this.lblKeyColor2.Location = point;
+
+      this.lblKeyColor2.Location = new Point(12, 463);
       this.lblKeyColor2.Name = "lblKeyColor2";
-      size = new Size(40, 16);
-      this.lblKeyColor2.Size = size;
+
+      this.lblKeyColor2.Size = new Size(40, 16);
       this.lblKeyColor2.TabIndex = 1;
       this.lblKeyColor1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
       this.lblKeyColor1.BackColor = Color.Blue;
       this.lblKeyColor1.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(12, 443);
-      this.lblKeyColor1.Location = point;
+
+      this.lblKeyColor1.Location = new Point(12, 443);
       this.lblKeyColor1.Name = "lblKeyColor1";
-      size = new Size(40, 16);
-      this.lblKeyColor1.Size = size;
+
+      this.lblKeyColor1.Size = new Size(40, 16);
       this.lblKeyColor1.TabIndex = 0;
       this.tbScaleX.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
       this.tbScaleX.LargeChange = 1;
-      point = new Point(140, 438);
-      this.tbScaleX.Location = point;
+
+      this.tbScaleX.Location = new Point(140, 438);
       this.tbScaleX.Minimum = 1;
       this.tbScaleX.Name = "tbScaleX";
-      size = new Size(237, 45);
-      this.tbScaleX.Size = size;
+
+      this.tbScaleX.Size = new Size(237, 45);
       this.tbScaleX.TabIndex = 6;
       this.tbScaleX.TickFrequency = 10;
       this.tbScaleX.TickStyle = TickStyle.None;
       this.tTip.SetToolTip((Control) this.tbScaleX, "Move the slider to the left to zoom in on lower values.");
       this.tbScaleX.Value = 10;
       this.lblScale.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-      point = new Point(212, 462);
-      this.lblScale.Location = point;
+
+      this.lblScale.Location = new Point(212, 462);
       this.lblScale.Name = "lblScale";
-      size = new Size(108, 20);
-      this.lblScale.Size = size;
+
+      this.lblScale.Size = new Size(108, 20);
       this.lblScale.TabIndex = 7;
       this.lblScale.Text = "Scale: 100%";
       this.lblScale.TextAlign = ContentAlignment.MiddleCenter;
@@ -1226,29 +1226,29 @@ namespace Hero_Designer
       this.tTip.ReshowDelay = 100;
       this.cbSet.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbSet.FormattingEnabled = true;
-      point = new Point(6, 5);
-      this.cbSet.Location = point;
+
+      this.cbSet.Location = new Point(6, 5);
       this.cbSet.MaxDropDownItems = 16;
       this.cbSet.Name = "cbSet";
-      size = new Size(158, 21);
-      this.cbSet.Size = size;
+
+      this.cbSet.Size = new Size(158, 21);
       this.cbSet.TabIndex = 10;
       this.cbValues.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbValues.FormattingEnabled = true;
-      point = new Point(170, 5);
-      this.cbValues.Location = point;
+
+      this.cbValues.Location = new Point(170, 5);
       this.cbValues.MaxDropDownItems = 16;
       this.cbValues.Name = "cbValues";
-      size = new Size(101, 21);
-      this.cbValues.Size = size;
+
+      this.cbValues.Size = new Size(101, 21);
       this.cbValues.TabIndex = 11;
       this.cbStyle.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbStyle.FormattingEnabled = true;
-      point = new Point(277, 5);
-      this.cbStyle.Location = point;
+
+      this.cbStyle.Location = new Point(277, 5);
       this.cbStyle.Name = "cbStyle";
-      size = new Size(154, 21);
-      this.cbStyle.Size = size;
+
+      this.cbStyle.Size = new Size(154, 21);
       this.cbStyle.TabIndex = 12;
       this.Graph.BackColor = Color.FromArgb(0, 0, 32);
       this.Graph.Border = true;
@@ -1267,8 +1267,8 @@ namespace Hero_Designer
       this.Graph.ImeMode = ImeMode.Off;
       this.Graph.ItemHeight = 12;
       this.Graph.Lines = true;
-      point = new Point(4, 28);
-      this.Graph.Location = point;
+
+      this.Graph.Location = new Point(4, 28);
       this.Graph.MarkerValue = 0.0f;
       this.Graph.Max = 75f;
       this.Graph.Name = "Graph";
@@ -1277,19 +1277,19 @@ namespace Hero_Designer
       this.Graph.ScaleHeight = 16;
       this.Graph.ScaleIndex = 7;
       this.Graph.ShowScale = true;
-      size = new Size(484, 405);
-      this.Graph.Size = size;
+
+      this.Graph.Size = new Size(484, 405);
       this.Graph.Style = Enums.GraphStyle.Stacked;
       this.Graph.TabIndex = 0;
       this.Graph.TextWidth = 100;
       this.chkOnTop.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
       this.chkOnTop.Checked = true;
       this.chkOnTop.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(383, 438);
-      this.chkOnTop.Location = point;
+
+      this.chkOnTop.Location = new Point(383, 438);
       this.chkOnTop.Name = "chkOnTop";
-      size = new Size(105, 22);
-      this.chkOnTop.Size = size;
+
+      this.chkOnTop.Size = new Size(105, 22);
       this.chkOnTop.TabIndex = 17;
       this.chkOnTop.TextOff = "Keep On Top";
       this.chkOnTop.TextOn = "Keep On Top";
@@ -1297,20 +1297,20 @@ namespace Hero_Designer
       this.btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
       this.btnClose.Checked = false;
       this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(383, 465);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(383, 465);
       this.btnClose.Margin = new Padding(4, 3, 4, 3);
       this.btnClose.Name = "btnClose";
-      size = new Size(105, 22);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(105, 22);
       this.btnClose.TabIndex = 16;
       this.btnClose.TextOff = "Close";
       this.btnClose.TextOn = "Close";
       this.btnClose.Toggle = false;
       this.AutoScaleMode = AutoScaleMode.None;
       this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(492, 491);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(492, 491);
       this.Controls.Add((Control) this.chkOnTop);
       this.Controls.Add((Control) this.btnClose);
       this.Controls.Add((Control) this.cbStyle);
@@ -1328,8 +1328,8 @@ namespace Hero_Designer
       this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      size = new Size(400, 340);
-      this.MinimumSize = size;
+
+      this.MinimumSize = new Size(400, 340);
       this.Name = nameof (frmStats);
       this.StartPosition = FormStartPosition.Manual;
       this.Text = "Power Stats";

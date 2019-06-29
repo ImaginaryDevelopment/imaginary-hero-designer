@@ -52,14 +52,14 @@ namespace Hero_Designer
       this.SuspendLayout();
       this.Message.Location = new Point(12, 9);
       this.Message.Name = "Message";
-      Size size = new Size(381, 61);
-      this.Message.Size = size;
+
+      this.Message.Size = new Size(381, 61);
       this.Message.TabIndex = 0;
       this.Message.Text = "Busy";
       this.Message.TextAlign = ContentAlignment.MiddleCenter;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(405, 79);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(405, 79);
       this.ControlBox = false;
       this.Controls.Add((Control) this.Message);
       this.Font = new Font("Arial", 9.75f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);

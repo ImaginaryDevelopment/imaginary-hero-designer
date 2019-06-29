@@ -730,336 +730,336 @@ namespace Hero_Designer
             this.txtPPM = new TextBox();
             this.GroupBox3.SuspendLayout();
             this.SuspendLayout();
-            Point point = new Point(804, 497);
-            this.btnPaste.Location = point;
+
+            this.btnPaste.Location = new Point(804, 497);
             this.btnPaste.Name = "btnPaste";
-            Size size = new Size(150, 26);
-            this.btnPaste.Size = size;
+
+            this.btnPaste.Size = new Size(150, 26);
             this.btnPaste.TabIndex = 116;
             this.btnPaste.Text = "Paste Effect Data";
-            point = new Point(804, 465);
-            this.btnCopy.Location = point;
+
+            this.btnCopy.Location = new Point(804, 465);
             this.btnCopy.Name = "btnCopy";
-            size = new Size(150, 26);
-            this.btnCopy.Size = size;
+
+            this.btnCopy.Size = new Size(150, 26);
             this.btnCopy.TabIndex = 115;
             this.btnCopy.Text = "Copy Effect Data";
             this.chkStack.CheckAlign = ContentAlignment.MiddleRight;
-            point = new Point(20, 510);
-            this.chkStack.Location = point;
+
+            this.chkStack.Location = new Point(20, 510);
             this.chkStack.Name = "chkStack";
-            size = new Size(172, 20);
-            this.chkStack.Size = size;
+
+            this.chkStack.Size = new Size(172, 20);
             this.chkStack.TabIndex = 112;
             this.chkStack.Text = "Effect Can Stack";
             this.chkStack.TextAlign = ContentAlignment.MiddleRight;
             this.GroupBox3.Controls.Add((Control)this.clbSuppression);
-            point = new Point(794, 124);
-            this.GroupBox3.Location = point;
+
+            this.GroupBox3.Location = new Point(794, 124);
             this.GroupBox3.Name = "GroupBox3";
-            size = new Size(166, 240);
-            this.GroupBox3.Size = size;
+
+            this.GroupBox3.Size = new Size(166, 240);
             this.GroupBox3.TabIndex = 107;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Suppression";
             this.clbSuppression.FormattingEnabled = true;
-            point = new Point(10, 19);
-            this.clbSuppression.Location = point;
+
+            this.clbSuppression.Location = new Point(10, 19);
             this.clbSuppression.Name = "clbSuppression";
-            size = new Size(150, 214);
-            this.clbSuppression.Size = size;
+
+            this.clbSuppression.Size = new Size(150, 214);
             this.clbSuppression.TabIndex = 0;
-            point = new Point(12, 596);
-            this.Label27.Location = point;
+
+            this.Label27.Location = new Point(12, 596);
             this.Label27.Name = "Label27";
-            size = new Size(76, 20);
-            this.Label27.Size = size;
+
+            this.Label27.Size = new Size(76, 20);
             this.Label27.TabIndex = 102;
             this.Label27.Text = "If Target =";
             this.Label27.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(224, 597);
-            this.rbIfPlayer.Location = point;
+
+            this.rbIfPlayer.Location = new Point(224, 597);
             this.rbIfPlayer.Name = "rbIfPlayer";
-            size = new Size(76, 20);
-            this.rbIfPlayer.Size = size;
+
+            this.rbIfPlayer.Size = new Size(76, 20);
             this.rbIfPlayer.TabIndex = 88;
             this.rbIfPlayer.Text = "Players";
-            point = new Point(147, 597);
-            this.rbIfCritter.Location = point;
+
+            this.rbIfCritter.Location = new Point(147, 597);
             this.rbIfCritter.Name = "rbIfCritter";
-            size = new Size(71, 20);
-            this.rbIfCritter.Size = size;
+
+            this.rbIfCritter.Size = new Size(71, 20);
             this.rbIfCritter.TabIndex = 87;
             this.rbIfCritter.Text = "Critters";
             this.rbIfAny.Checked = true;
-            point = new Point(94, 597);
-            this.rbIfAny.Location = point;
+
+            this.rbIfAny.Location = new Point(94, 597);
             this.rbIfAny.Name = "rbIfAny";
-            size = new Size(57, 20);
-            this.rbIfAny.Size = size;
+
+            this.rbIfAny.Size = new Size(57, 20);
             this.rbIfAny.TabIndex = 86;
             this.rbIfAny.TabStop = true;
             this.rbIfAny.Text = "Any";
             this.chkFXResistable.CheckAlign = ContentAlignment.MiddleRight;
-            point = new Point(20, 561);
-            this.chkFXResistable.Location = point;
+
+            this.chkFXResistable.Location = new Point(20, 561);
             this.chkFXResistable.Name = "chkFXResistable";
-            size = new Size(172, 20);
-            this.chkFXResistable.Size = size;
+
+            this.chkFXResistable.Size = new Size(172, 20);
             this.chkFXResistable.TabIndex = 90;
             this.chkFXResistable.Text = "Effect is Unresistible";
             this.chkFXResistable.TextAlign = ContentAlignment.MiddleRight;
             this.chkFXBuffable.CheckAlign = ContentAlignment.MiddleRight;
-            point = new Point(20, 528);
-            this.chkFXBuffable.Location = point;
+
+            this.chkFXBuffable.Location = new Point(20, 528);
             this.chkFXBuffable.Name = "chkFXBuffable";
-            size = new Size(172, 20);
-            this.chkFXBuffable.Size = size;
+
+            this.chkFXBuffable.Size = new Size(172, 20);
             this.chkFXBuffable.TabIndex = 89;
             this.chkFXBuffable.Text = "Ignore Buffs / Enhancements";
             this.chkFXBuffable.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(12, 273);
-            this.Label26.Location = point;
+
+            this.Label26.Location = new Point(12, 273);
             this.Label26.Name = "Label26";
-            size = new Size(76, 20);
-            this.Label26.Size = size;
+
+            this.Label26.Size = new Size(76, 20);
             this.Label26.TabIndex = 101;
             this.Label26.Text = "Probability:";
             this.Label26.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 273);
-            this.txtFXProb.Location = point;
+
+            this.txtFXProb.Location = new Point(96, 273);
             this.txtFXProb.Name = "txtFXProb";
-            size = new Size(42, 20);
-            this.txtFXProb.Size = size;
+
+            this.txtFXProb.Size = new Size(42, 20);
             this.txtFXProb.TabIndex = 85;
             this.txtFXProb.Text = "1";
-            point = new Point(12, 247);
-            this.Label25.Location = point;
+
+            this.Label25.Location = new Point(12, 247);
             this.Label25.Name = "Label25";
-            size = new Size(76, 20);
-            this.Label25.Size = size;
+
+            this.Label25.Size = new Size(76, 20);
             this.Label25.TabIndex = 100;
             this.Label25.Text = "Delay Time:";
             this.Label25.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 247);
-            this.txtFXDelay.Location = point;
+
+            this.txtFXDelay.Location = new Point(96, 247);
             this.txtFXDelay.Name = "txtFXDelay";
-            size = new Size(42, 20);
-            this.txtFXDelay.Size = size;
+
+            this.txtFXDelay.Size = new Size(42, 20);
             this.txtFXDelay.TabIndex = 84;
             this.txtFXDelay.Text = "0";
-            point = new Point(14, 221);
-            this.Label24.Location = point;
+
+            this.Label24.Location = new Point(14, 221);
             this.Label24.Name = "Label24";
-            size = new Size(76, 20);
-            this.Label24.Size = size;
+
+            this.Label24.Size = new Size(76, 20);
             this.Label24.TabIndex = 99;
             this.Label24.Text = "Ticks:";
             this.Label24.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 221);
-            this.txtFXTicks.Location = point;
+
+            this.txtFXTicks.Location = new Point(96, 221);
             this.txtFXTicks.Name = "txtFXTicks";
-            size = new Size(42, 20);
-            this.txtFXTicks.Size = size;
+
+            this.txtFXTicks.Size = new Size(42, 20);
             this.txtFXTicks.TabIndex = 83;
             this.txtFXTicks.Text = "0";
-            point = new Point(14, 169);
-            this.Label23.Location = point;
+
+            this.Label23.Location = new Point(14, 169);
             this.Label23.Name = "Label23";
-            size = new Size(76, 20);
-            this.Label23.Size = size;
+
+            this.Label23.Size = new Size(76, 20);
             this.Label23.TabIndex = 98;
             this.Label23.Text = "Duration:";
             this.Label23.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 169);
-            this.txtFXDuration.Location = point;
+
+            this.txtFXDuration.Location = new Point(96, 169);
             this.txtFXDuration.Name = "txtFXDuration";
-            size = new Size(42, 20);
-            this.txtFXDuration.Size = size;
+
+            this.txtFXDuration.Size = new Size(42, 20);
             this.txtFXDuration.TabIndex = 82;
             this.txtFXDuration.Text = "0";
-            point = new Point(14, 195);
-            this.Label22.Location = point;
+
+            this.Label22.Location = new Point(14, 195);
             this.Label22.Name = "Label22";
-            size = new Size(76, 20);
-            this.Label22.Size = size;
+
+            this.Label22.Size = new Size(76, 20);
             this.Label22.TabIndex = 97;
             this.Label22.Text = "Magnitude:";
             this.Label22.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 195);
-            this.txtFXMag.Location = point;
+
+            this.txtFXMag.Location = new Point(96, 195);
             this.txtFXMag.Name = "txtFXMag";
-            size = new Size(42, 20);
-            this.txtFXMag.Size = size;
+
+            this.txtFXMag.Size = new Size(42, 20);
             this.txtFXMag.TabIndex = 80;
             this.txtFXMag.Text = "0";
-            point = new Point(202, 118);
-            this.Label28.Location = point;
+
+            this.Label28.Location = new Point(202, 118);
             this.Label28.Name = "Label28";
-            size = new Size(98, 20);
-            this.Label28.Size = size;
+
+            this.Label28.Size = new Size(98, 20);
             this.Label28.TabIndex = 104;
             this.Label28.Text = "DIsplay Priority:";
             this.Label28.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(408, 597);
-            this.Label30.Location = point;
+
+            this.Label30.Location = new Point(408, 597);
             this.Label30.Name = "Label30";
-            size = new Size(76, 20);
-            this.Label30.Size = size;
+
+            this.Label30.Size = new Size(76, 20);
             this.Label30.TabIndex = 105;
             this.Label30.Text = "Special Case:";
             this.Label30.TextAlign = ContentAlignment.MiddleRight;
             this.cbFXClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(306, 116);
-            this.cbFXClass.Location = point;
+
+            this.cbFXClass.Location = new Point(306, 116);
             this.cbFXClass.Name = "cbFXClass";
-            size = new Size(132, 22);
-            this.cbFXClass.Size = size;
+
+            this.cbFXClass.Size = new Size(132, 22);
             this.cbFXClass.TabIndex = 93;
             this.cbFXSpecialCase.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(489, 597);
-            this.cbFXSpecialCase.Location = point;
+
+            this.cbFXSpecialCase.Location = new Point(489, 597);
             this.cbFXSpecialCase.Name = "cbFXSpecialCase";
-            size = new Size(136, 22);
-            this.cbFXSpecialCase.Size = size;
+
+            this.cbFXSpecialCase.Size = new Size(136, 22);
             this.cbFXSpecialCase.TabIndex = 94;
             this.btnOK.DialogResult = DialogResult.OK;
-            point = new Point(881, 578);
-            this.btnOK.Location = point;
+
+            this.btnOK.Location = new Point(881, 578);
             this.btnOK.Name = "btnOK";
-            size = new Size(85, 36);
-            this.btnOK.Size = size;
+
+            this.btnOK.Size = new Size(85, 36);
             this.btnOK.TabIndex = 119;
             this.btnOK.Text = "OK";
             this.btnCancel.DialogResult = DialogResult.Cancel;
-            point = new Point(794, 578);
-            this.btnCancel.Location = point;
+
+            this.btnCancel.Location = new Point(794, 578);
             this.btnCancel.Name = "btnCancel";
-            size = new Size(85, 36);
-            this.btnCancel.Size = size;
+
+            this.btnCancel.Size = new Size(85, 36);
             this.btnCancel.TabIndex = 118;
             this.btnCancel.Text = "Cancel";
             this.lblEffectDescription.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(8, 11);
-            this.lblEffectDescription.Location = point;
+
+            this.lblEffectDescription.Location = new Point(8, 11);
             this.lblEffectDescription.Name = "lblEffectDescription";
-            size = new Size(950, 102);
-            this.lblEffectDescription.Size = size;
+
+            this.lblEffectDescription.Size = new Size(950, 102);
             this.lblEffectDescription.TabIndex = 120;
             this.lblEffectDescription.TextAlign = ContentAlignment.MiddleLeft;
             this.lblEffectDescription.UseMnemonic = false;
-            point = new Point(461, 116);
-            this.chkVariable.Location = point;
+
+            this.chkVariable.Location = new Point(461, 116);
             this.chkVariable.Name = "chkVariable";
-            size = new Size(285, 20);
-            this.chkVariable.Size = size;
+
+            this.chkVariable.Size = new Size(285, 20);
             this.chkVariable.TabIndex = 126;
             this.chkVariable.Text = "Enable Power Scaling (Override)";
             this.cbPercentageOverride.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 116);
-            this.cbPercentageOverride.Location = point;
+
+            this.cbPercentageOverride.Location = new Point(96, 116);
             this.cbPercentageOverride.Name = "cbPercentageOverride";
-            size = new Size(96, 22);
-            this.cbPercentageOverride.Size = size;
+
+            this.cbPercentageOverride.Size = new Size(96, 22);
             this.cbPercentageOverride.TabIndex = (int)sbyte.MaxValue;
-            point = new Point(14, 118);
-            this.Label2.Location = point;
+
+            this.Label2.Location = new Point(14, 118);
             this.Label2.Name = "Label2";
-            size = new Size(76, 20);
-            this.Label2.Size = size;
+
+            this.Label2.Size = new Size(76, 20);
             this.Label2.TabIndex = 128;
             this.Label2.Text = "Percentage:";
             this.Label2.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(14, 143);
-            this.Label1.Location = point;
+
+            this.Label1.Location = new Point(14, 143);
             this.Label1.Name = "Label1";
-            size = new Size(76, 20);
-            this.Label1.Size = size;
+
+            this.Label1.Size = new Size(76, 20);
             this.Label1.TabIndex = 130;
             this.Label1.Text = "Scale:";
             this.Label1.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 143);
-            this.txtFXScale.Location = point;
+
+            this.txtFXScale.Location = new Point(96, 143);
             this.txtFXScale.Name = "txtFXScale";
-            size = new Size(42, 20);
-            this.txtFXScale.Size = size;
+
+            this.txtFXScale.Size = new Size(42, 20);
             this.txtFXScale.TabIndex = 129;
             this.txtFXScale.Text = "0";
-            point = new Point(14, 443);
-            this.Label3.Location = point;
+
+            this.Label3.Location = new Point(14, 443);
             this.Label3.Name = "Label3";
-            size = new Size(76, 20);
-            this.Label3.Size = size;
+
+            this.Label3.Size = new Size(76, 20);
             this.Label3.TabIndex = 132;
             this.Label3.Text = "Affects:";
             this.Label3.TextAlign = ContentAlignment.MiddleRight;
             this.cbAffects.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 443);
-            this.cbAffects.Location = point;
+
+            this.cbAffects.Location = new Point(96, 443);
             this.cbAffects.Name = "cbAffects";
-            size = new Size(122, 22);
-            this.cbAffects.Size = size;
+
+            this.cbAffects.Size = new Size(122, 22);
             this.cbAffects.TabIndex = 131;
-            point = new Point(14, 328);
-            this.Label4.Location = point;
+
+            this.Label4.Location = new Point(14, 328);
             this.Label4.Name = "Label4";
-            size = new Size(76, 20);
-            this.Label4.Size = size;
+
+            this.Label4.Size = new Size(76, 20);
             this.Label4.TabIndex = 134;
             this.Label4.Text = "AttribType:";
             this.Label4.TextAlign = ContentAlignment.MiddleRight;
             this.cbAttribute.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 328);
-            this.cbAttribute.Location = point;
+
+            this.cbAttribute.Location = new Point(96, 328);
             this.cbAttribute.Name = "cbAttribute";
-            size = new Size(122, 22);
-            this.cbAttribute.Size = size;
+
+            this.cbAttribute.Size = new Size(122, 22);
             this.cbAttribute.TabIndex = 133;
-            point = new Point(14, 356);
-            this.Label5.Location = point;
+
+            this.Label5.Location = new Point(14, 356);
             this.Label5.Name = "Label5";
-            size = new Size(76, 20);
-            this.Label5.Size = size;
+
+            this.Label5.Size = new Size(76, 20);
             this.Label5.TabIndex = 136;
             this.Label5.Text = "Aspect:";
             this.Label5.TextAlign = ContentAlignment.MiddleRight;
             this.cbAspect.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 356);
-            this.cbAspect.Location = point;
+
+            this.cbAspect.Location = new Point(96, 356);
             this.cbAspect.Name = "cbAspect";
-            size = new Size(122, 22);
-            this.cbAspect.Size = size;
+
+            this.cbAspect.Size = new Size(122, 22);
             this.cbAspect.TabIndex = 135;
-            point = new Point(14, 384);
-            this.Label6.Location = point;
+
+            this.Label6.Location = new Point(14, 384);
             this.Label6.Name = "Label6";
-            size = new Size(178, 20);
-            this.Label6.Size = size;
+
+            this.Label6.Size = new Size(178, 20);
             this.Label6.TabIndex = 138;
             this.Label6.Text = "Modifier Table:";
             this.Label6.TextAlign = ContentAlignment.MiddleLeft;
             this.cbModifier.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(20, 405);
-            this.cbModifier.Location = point;
+
+            this.cbModifier.Location = new Point(20, 405);
             this.cbModifier.Name = "cbModifier";
-            size = new Size(198, 22);
-            this.cbModifier.Size = size;
+
+            this.cbModifier.Size = new Size(198, 22);
             this.cbModifier.TabIndex = 137;
             this.chkNearGround.CheckAlign = ContentAlignment.MiddleRight;
-            point = new Point(20, 577);
-            this.chkNearGround.Location = point;
+
+            this.chkNearGround.Location = new Point(20, 577);
             this.chkNearGround.Name = "chkNearGround";
-            size = new Size(172, 20);
-            this.chkNearGround.Size = size;
+
+            this.chkNearGround.Size = new Size(172, 20);
             this.chkNearGround.TabIndex = 139;
             this.chkNearGround.Text = "Target must be Near Ground";
             this.chkNearGround.TextAlign = ContentAlignment.MiddleRight;
             this.lblAffectsCaster.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(96, 464);
-            this.lblAffectsCaster.Location = point;
+
+            this.lblAffectsCaster.Location = new Point(96, 464);
             this.lblAffectsCaster.Name = "lblAffectsCaster";
-            size = new Size(122, 32);
-            this.lblAffectsCaster.Size = size;
+
+            this.lblAffectsCaster.Size = new Size(122, 32);
             this.lblAffectsCaster.TabIndex = 140;
             this.lblAffectsCaster.Text = "Power also affects caster";
             this.lblAffectsCaster.TextAlign = ContentAlignment.MiddleCenter;
@@ -1070,12 +1070,12 @@ namespace Hero_Designer
             this.lvEffectType.FullRowSelect = true;
             this.lvEffectType.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             this.lvEffectType.HideSelection = false;
-            point = new Point(224, 143);
-            this.lvEffectType.Location = point;
+
+            this.lvEffectType.Location = new Point(224, 143);
             this.lvEffectType.MultiSelect = false;
             this.lvEffectType.Name = "lvEffectType";
-            size = new Size(197, 447);
-            this.lvEffectType.Size = size;
+
+            this.lvEffectType.Size = new Size(197, 447);
             this.lvEffectType.TabIndex = 141;
             this.lvEffectType.UseCompatibleStateImageBehavior = false;
             this.lvEffectType.View = View.Details;
@@ -1088,22 +1088,22 @@ namespace Hero_Designer
             this.lvSubAttribute.FullRowSelect = true;
             this.lvSubAttribute.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             this.lvSubAttribute.HideSelection = false;
-            point = new Point(427, 143);
-            this.lvSubAttribute.Location = point;
+
+            this.lvSubAttribute.Location = new Point(427, 143);
             this.lvSubAttribute.MultiSelect = false;
             this.lvSubAttribute.Name = "lvSubAttribute";
-            size = new Size(197, 447);
-            this.lvSubAttribute.Size = size;
+
+            this.lvSubAttribute.Size = new Size(197, 447);
             this.lvSubAttribute.TabIndex = 142;
             this.lvSubAttribute.UseCompatibleStateImageBehavior = false;
             this.lvSubAttribute.View = View.Details;
             this.chSub.Text = "Sub-Attribute";
             this.chSub.Width = 173;
-            point = new Point(142, 273);
-            this.lblProb.Location = point;
+
+            this.lblProb.Location = new Point(142, 273);
             this.lblProb.Name = "lblProb";
-            size = new Size(76, 20);
-            this.lblProb.Size = size;
+
+            this.lblProb.Size = new Size(76, 20);
             this.lblProb.TabIndex = 143;
             this.lblProb.Text = "(100%)";
             this.lblProb.TextAlign = ContentAlignment.MiddleLeft;
@@ -1114,94 +1114,94 @@ namespace Hero_Designer
             this.lvSubSub.FullRowSelect = true;
             this.lvSubSub.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             this.lvSubSub.HideSelection = false;
-            point = new Point(630, 143);
-            this.lvSubSub.Location = point;
+
+            this.lvSubSub.Location = new Point(630, 143);
             this.lvSubSub.MultiSelect = false;
             this.lvSubSub.Name = "lvSubSub";
-            size = new Size(158, 447);
-            this.lvSubSub.Size = size;
+
+            this.lvSubSub.Size = new Size(158, 447);
             this.lvSubSub.TabIndex = 144;
             this.lvSubSub.UseCompatibleStateImageBehavior = false;
             this.lvSubSub.View = View.Details;
             this.chSubSub.Text = "Sub-Sub";
             this.chSubSub.Width = 130;
-            point = new Point(144, 247);
-            this.Label7.Location = point;
+
+            this.Label7.Location = new Point(144, 247);
             this.Label7.Name = "Label7";
-            size = new Size(76, 20);
-            this.Label7.Size = size;
+
+            this.Label7.Size = new Size(76, 20);
             this.Label7.TabIndex = 145;
             this.Label7.Text = "s";
             this.Label7.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(142, 169);
-            this.Label8.Location = point;
+
+            this.Label8.Location = new Point(142, 169);
             this.Label8.Name = "Label8";
-            size = new Size(76, 20);
-            this.Label8.Size = size;
+
+            this.Label8.Size = new Size(76, 20);
             this.Label8.TabIndex = 146;
             this.Label8.Text = "s";
             this.Label8.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(804, 529);
-            this.btnCSV.Location = point;
+
+            this.btnCSV.Location = new Point(804, 529);
             this.btnCSV.Name = "btnCSV";
-            size = new Size(150, 26);
-            this.btnCSV.Size = size;
+
+            this.btnCSV.Size = new Size(150, 26);
             this.btnCSV.TabIndex = 147;
             this.btnCSV.Text = "Import from CSV String";
-            point = new Point(794, 367);
-            this.Label9.Location = point;
+
+            this.Label9.Location = new Point(794, 367);
             this.Label9.Name = "Label9";
-            size = new Size(160, 20);
-            this.Label9.Size = size;
+
+            this.Label9.Size = new Size(160, 20);
             this.Label9.TabIndex = 149;
             this.Label9.Text = "GlobalChanceMod Flag:";
             this.cmbEffectId.FormattingEnabled = true;
-            point = new Point(795, 389);
-            this.cmbEffectId.Location = point;
+
+            this.cmbEffectId.Location = new Point(795, 389);
             this.cmbEffectId.Name = "cmbEffectId";
-            size = new Size(159, 22);
-            this.cmbEffectId.Size = size;
+
+            this.cmbEffectId.Size = new Size(159, 22);
             this.cmbEffectId.TabIndex = 150;
             this.IgnoreED.CheckAlign = ContentAlignment.MiddleRight;
-            point = new Point(20, 544);
-            this.IgnoreED.Location = point;
+
+            this.IgnoreED.Location = new Point(20, 544);
             this.IgnoreED.Name = "IgnoreED";
-            size = new Size(172, 20);
-            this.IgnoreED.Size = size;
+
+            this.IgnoreED.Size = new Size(172, 20);
             this.IgnoreED.TabIndex = 151;
             this.IgnoreED.Text = "Ignore ED";
             this.IgnoreED.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(794, 417);
-            this.Label10.Location = point;
+
+            this.Label10.Location = new Point(794, 417);
             this.Label10.Name = "Label10";
-            size = new Size(160, 20);
-            this.Label10.Size = size;
+
+            this.Label10.Size = new Size(160, 20);
             this.Label10.TabIndex = 152;
             this.Label10.Text = "Override:";
-            point = new Point(797, 435);
-            this.txtOverride.Location = point;
+
+            this.txtOverride.Location = new Point(797, 435);
             this.txtOverride.Name = "txtOverride";
-            size = new Size(157, 20);
-            this.txtOverride.Size = size;
+
+            this.txtOverride.Size = new Size(157, 20);
             this.txtOverride.TabIndex = 153;
-            point = new Point(14, 299);
-            this.Label11.Location = point;
+
+            this.Label11.Location = new Point(14, 299);
             this.Label11.Name = "Label11";
-            size = new Size(76, 20);
-            this.Label11.Size = size;
+
+            this.Label11.Size = new Size(76, 20);
             this.Label11.TabIndex = 155;
             this.Label11.Text = "PPM:";
             this.Label11.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(96, 299);
-            this.txtPPM.Location = point;
+
+            this.txtPPM.Location = new Point(96, 299);
             this.txtPPM.Name = "txtPPM";
-            size = new Size(42, 20);
-            this.txtPPM.Size = size;
+
+            this.txtPPM.Size = new Size(42, 20);
             this.txtPPM.TabIndex = 154;
             this.txtPPM.Text = "0";
             this.AutoScaleMode = AutoScaleMode.None;
-            size = new Size(971, 626);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(971, 626);
             this.Controls.Add((Control)this.Label11);
             this.Controls.Add((Control)this.txtPPM);
             this.Controls.Add((Control)this.txtOverride);

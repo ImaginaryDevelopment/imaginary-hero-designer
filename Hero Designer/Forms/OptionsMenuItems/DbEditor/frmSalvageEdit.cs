@@ -314,12 +314,12 @@ namespace Hero_Designer
       });
       this.lvSalvage.FullRowSelect = true;
       this.lvSalvage.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvSalvage.Location = point;
+
+      this.lvSalvage.Location = new Point(12, 12);
       this.lvSalvage.MultiSelect = false;
       this.lvSalvage.Name = "lvSalvage";
-      Size size = new Size(468, 316);
-      this.lvSalvage.Size = size;
+
+      this.lvSalvage.Size = new Size(468, 316);
       this.lvSalvage.TabIndex = 0;
       this.lvSalvage.UseCompatibleStateImageBehavior = false;
       this.lvSalvage.View = View.Details;
@@ -332,128 +332,128 @@ namespace Hero_Designer
       this.ColumnHeader4.Text = "Level";
       this.ColumnHeader4.Width = 75;
       this.btnOK.DialogResult = DialogResult.OK;
-      point = new Point(605, 304);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(605, 304);
       this.btnOK.Name = "btnOK";
-      size = new Size(113, 24);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(113, 24);
       this.btnOK.TabIndex = 1;
       this.btnOK.Text = "Save && Close";
       this.btnOK.UseVisualStyleBackColor = true;
       this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(486, 304);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(486, 304);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(113, 24);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(113, 24);
       this.btnCancel.TabIndex = 2;
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
-      point = new Point(486, 274);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(486, 274);
       this.btnImport.Name = "btnImport";
-      size = new Size(232, 24);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(232, 24);
       this.btnImport.TabIndex = 3;
       this.btnImport.Text = "Clear and Import from Spreadsheet";
       this.btnImport.UseVisualStyleBackColor = true;
-      point = new Point(564, 12);
-      this.txtExternal.Location = point;
+
+      this.txtExternal.Location = new Point(564, 12);
       this.txtExternal.Name = "txtExternal";
-      size = new Size(154, 20);
-      this.txtExternal.Size = size;
+
+      this.txtExternal.Size = new Size(154, 20);
       this.txtExternal.TabIndex = 4;
-      point = new Point(486, 12);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(486, 12);
       this.Label1.Name = "Label1";
-      size = new Size(72, 20);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(72, 20);
       this.Label1.TabIndex = 5;
       this.Label1.Text = "Name:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(486, 38);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(486, 38);
       this.Label2.Name = "Label2";
-      size = new Size(72, 20);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(72, 20);
       this.Label2.TabIndex = 7;
       this.Label2.Text = "Internal:";
       this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(564, 38);
-      this.txtInternal.Location = point;
+
+      this.txtInternal.Location = new Point(564, 38);
       this.txtInternal.Name = "txtInternal";
-      size = new Size(154, 20);
-      this.txtInternal.Size = size;
+
+      this.txtInternal.Size = new Size(154, 20);
       this.txtInternal.TabIndex = 6;
       this.cbRarity.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbRarity.FormattingEnabled = true;
-      point = new Point(564, 64);
-      this.cbRarity.Location = point;
+
+      this.cbRarity.Location = new Point(564, 64);
       this.cbRarity.Name = "cbRarity";
-      size = new Size(154, 22);
-      this.cbRarity.Size = size;
+
+      this.cbRarity.Size = new Size(154, 22);
       this.cbRarity.TabIndex = 8;
-      point = new Point(486, 64);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(486, 64);
       this.Label3.Name = "Label3";
-      size = new Size(72, 22);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(72, 22);
       this.Label3.TabIndex = 9;
       this.Label3.Text = "Rarity:";
       this.Label3.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(486, 92);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(486, 92);
       this.Label4.Name = "Label4";
-      size = new Size(72, 22);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(72, 22);
       this.Label4.TabIndex = 11;
       this.Label4.Text = "Origin:";
       this.Label4.TextAlign = ContentAlignment.MiddleRight;
       this.cbOrigin.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbOrigin.FormattingEnabled = true;
-      point = new Point(564, 92);
-      this.cbOrigin.Location = point;
+
+      this.cbOrigin.Location = new Point(564, 92);
       this.cbOrigin.Name = "cbOrigin";
-      size = new Size(154, 22);
-      this.cbOrigin.Size = size;
+
+      this.cbOrigin.Size = new Size(154, 22);
       this.cbOrigin.TabIndex = 10;
-      point = new Point(486, 120);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(486, 120);
       this.Label5.Name = "Label5";
-      size = new Size(72, 22);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(72, 22);
       this.Label5.TabIndex = 13;
       this.Label5.Text = "Level:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
       this.cbLevel.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbLevel.FormattingEnabled = true;
-      point = new Point(564, 120);
-      this.cbLevel.Location = point;
+
+      this.cbLevel.Location = new Point(564, 120);
       this.cbLevel.Name = "cbLevel";
-      size = new Size(154, 22);
-      this.cbLevel.Size = size;
+
+      this.cbLevel.Size = new Size(154, 22);
       this.cbLevel.TabIndex = 12;
-      point = new Point(486, 214);
-      this.btnDelete.Location = point;
+
+      this.btnDelete.Location = new Point(486, 214);
       this.btnDelete.Name = "btnDelete";
-      size = new Size(113, 24);
-      this.btnDelete.Size = size;
+
+      this.btnDelete.Size = new Size(113, 24);
       this.btnDelete.TabIndex = 14;
       this.btnDelete.Text = "Delete";
       this.btnDelete.UseVisualStyleBackColor = true;
-      point = new Point(486, 184);
-      this.btnAdd.Location = point;
+
+      this.btnAdd.Location = new Point(486, 184);
       this.btnAdd.Name = "btnAdd";
-      size = new Size(113, 24);
-      this.btnAdd.Size = size;
+
+      this.btnAdd.Size = new Size(113, 24);
       this.btnAdd.TabIndex = 15;
       this.btnAdd.Text = "Add";
       this.btnAdd.UseVisualStyleBackColor = true;
       this.AcceptButton = (IButtonControl) this.btnOK;
       this.AutoScaleMode = AutoScaleMode.None;
       this.CancelButton = (IButtonControl) this.btnCancel;
-      size = new Size(730, 340);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(730, 340);
       this.Controls.Add((Control) this.btnAdd);
       this.Controls.Add((Control) this.btnDelete);
       this.Controls.Add((Control) this.Label5);

@@ -134,64 +134,64 @@ namespace Hero_Designer
       this.udRevision = new NumericUpDown();
       this.udRevision.BeginInit();
       this.SuspendLayout();
-      Point point = new Point(545, 77);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(545, 77);
       this.btnClose.Name = "btnClose";
-      Size size = new Size(86, 23);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(86, 23);
       this.btnClose.TabIndex = 27;
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
-      point = new Point(545, 34);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(545, 34);
       this.btnImport.Name = "btnImport";
-      size = new Size(86, 23);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(86, 23);
       this.btnImport.TabIndex = 24;
       this.btnImport.Text = "Import";
       this.btnImport.UseVisualStyleBackColor = true;
-      point = new Point(18, -11);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(18, -11);
       this.Label3.Name = "Label3";
-      size = new Size(150, 14);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(150, 14);
       this.Label3.TabIndex = 26;
       this.Label3.Text = "Index:";
       this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(18, 5);
-      this.lblFile.Location = point;
+
+      this.lblFile.Location = new Point(18, 5);
       this.lblFile.Name = "lblFile";
-      size = new Size(521, 46);
-      this.lblFile.Size = size;
+
+      this.lblFile.Size = new Size(521, 46);
       this.lblFile.TabIndex = 25;
       this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(545, 5);
-      this.btnFile.Location = point;
+
+      this.btnFile.Location = new Point(545, 5);
       this.btnFile.Name = "btnFile";
-      size = new Size(86, 23);
-      this.btnFile.Size = size;
+
+      this.btnFile.Size = new Size(86, 23);
       this.btnFile.TabIndex = 23;
       this.btnFile.Text = "Browse...";
       this.btnFile.UseVisualStyleBackColor = true;
       this.dlgBrowse.DefaultExt = "csv";
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-      point = new Point(352, 81);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(352, 81);
       this.Label8.Name = "Label8";
-      size = new Size(65, 18);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(65, 18);
       this.Label8.TabIndex = 48;
       this.Label8.Text = "Revision:";
       this.Label8.TextAlign = ContentAlignment.TopRight;
-      point = new Point(15, 81);
-      this.lblDate.Location = point;
+
+      this.lblDate.Location = new Point(15, 81);
       this.lblDate.Name = "lblDate";
-      size = new Size(175, 18);
-      this.lblDate.Size = size;
+
+      this.lblDate.Size = new Size(175, 18);
       this.lblDate.TabIndex = 46;
       this.lblDate.Text = "Date:";
-      point = new Point(423, 79);
-      this.udRevision.Location = point;
+
+      this.udRevision.Location = new Point(423, 79);
       this.udRevision.Maximum = new Decimal(new int[4]
       {
         (int) ushort.MaxValue,
@@ -200,12 +200,12 @@ namespace Hero_Designer
         0
       });
       this.udRevision.Name = "udRevision";
-      size = new Size(116, 20);
-      this.udRevision.Size = size;
+
+      this.udRevision.Size = new Size(116, 20);
       this.udRevision.TabIndex = 45;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(637, 109);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(637, 109);
       this.Controls.Add((Control) this.Label8);
       this.Controls.Add((Control) this.lblDate);
       this.Controls.Add((Control) this.udRevision);

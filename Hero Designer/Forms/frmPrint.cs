@@ -198,11 +198,11 @@ namespace Hero_Designer
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             this.SuspendLayout();
-            Point point = new Point(328, 12);
-            this.btnPrinter.Location = point;
+
+            this.btnPrinter.Location = new Point(328, 12);
             this.btnPrinter.Name = "btnPrinter";
-            Size size = new Size(123, 23);
-            this.btnPrinter.Size = size;
+
+            this.btnPrinter.Size = new Size(123, 23);
             this.btnPrinter.TabIndex = 1;
             this.btnPrinter.Text = "Properties...";
             this.btnPrinter.UseVisualStyleBackColor = true;
@@ -210,90 +210,90 @@ namespace Hero_Designer
             this.GroupBox1.Controls.Add((Control)this.rbProfileNone);
             this.GroupBox1.Controls.Add((Control)this.rbProfileLong);
             this.GroupBox1.Controls.Add((Control)this.rbProfileShort);
-            point = new Point(12, 38);
-            this.GroupBox1.Location = point;
+
+            this.GroupBox1.Location = new Point(12, 38);
             this.GroupBox1.Name = "GroupBox1";
-            size = new Size(247, 102);
-            this.GroupBox1.Size = size;
+
+            this.GroupBox1.Size = new Size(247, 102);
             this.GroupBox1.TabIndex = 3;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Profile:";
             this.chkProfileEnh.Checked = true;
             this.chkProfileEnh.CheckState = CheckState.Checked;
-            point = new Point(110, 45);
-            this.chkProfileEnh.Location = point;
+
+            this.chkProfileEnh.Location = new Point(110, 45);
             this.chkProfileEnh.Name = "chkProfileEnh";
-            size = new Size(131, 20);
-            this.chkProfileEnh.Size = size;
+
+            this.chkProfileEnh.Size = new Size(131, 20);
             this.chkProfileEnh.TabIndex = 3;
             this.chkProfileEnh.Text = "Show Enhancements";
             this.chkProfileEnh.UseVisualStyleBackColor = true;
             this.rbProfileNone.Checked = true;
-            point = new Point(6, 19);
-            this.rbProfileNone.Location = point;
+
+            this.rbProfileNone.Location = new Point(6, 19);
             this.rbProfileNone.Name = "rbProfileNone";
-            size = new Size(200, 20);
-            this.rbProfileNone.Size = size;
+
+            this.rbProfileNone.Size = new Size(200, 20);
             this.rbProfileNone.TabIndex = 2;
             this.rbProfileNone.TabStop = true;
             this.rbProfileNone.Text = "Do Not Print";
             this.rbProfileNone.UseVisualStyleBackColor = true;
-            point = new Point(6, 71);
-            this.rbProfileLong.Location = point;
+
+            this.rbProfileLong.Location = new Point(6, 71);
             this.rbProfileLong.Name = "rbProfileLong";
-            size = new Size(200, 20);
-            this.rbProfileLong.Size = size;
+
+            this.rbProfileLong.Size = new Size(200, 20);
             this.rbProfileLong.TabIndex = 1;
             this.rbProfileLong.Text = "Multi-Page (Long Format)";
             this.rbProfileLong.UseVisualStyleBackColor = true;
-            point = new Point(6, 45);
-            this.rbProfileShort.Location = point;
+
+            this.rbProfileShort.Location = new Point(6, 45);
             this.rbProfileShort.Name = "rbProfileShort";
-            size = new Size(98, 20);
-            this.rbProfileShort.Size = size;
+
+            this.rbProfileShort.Size = new Size(98, 20);
             this.rbProfileShort.TabIndex = 0;
             this.rbProfileShort.Text = "Single Page";
             this.rbProfileShort.UseVisualStyleBackColor = true;
             this.GroupBox2.Controls.Add((Control)this.chkPrintHistoryEnh);
             this.GroupBox2.Controls.Add((Control)this.chkPrintHistory);
-            point = new Point(265, 67);
-            this.GroupBox2.Location = point;
+
+            this.GroupBox2.Location = new Point(265, 67);
             this.GroupBox2.Name = "GroupBox2";
-            size = new Size(186, 73);
-            this.GroupBox2.Size = size;
+
+            this.GroupBox2.Size = new Size(186, 73);
             this.GroupBox2.TabIndex = 4;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Level History:";
-            point = new Point(21, 45);
-            this.chkPrintHistoryEnh.Location = point;
+
+            this.chkPrintHistoryEnh.Location = new Point(21, 45);
             this.chkPrintHistoryEnh.Name = "chkPrintHistoryEnh";
-            size = new Size(159, 20);
-            this.chkPrintHistoryEnh.Size = size;
+
+            this.chkPrintHistoryEnh.Size = new Size(159, 20);
             this.chkPrintHistoryEnh.TabIndex = 1;
             this.chkPrintHistoryEnh.Text = "Show Invention Levels";
             this.chkPrintHistoryEnh.UseVisualStyleBackColor = true;
-            point = new Point(6, 19);
-            this.chkPrintHistory.Location = point;
+
+            this.chkPrintHistory.Location = new Point(6, 19);
             this.chkPrintHistory.Name = "chkPrintHistory";
-            size = new Size(164, 20);
-            this.chkPrintHistory.Size = size;
+
+            this.chkPrintHistory.Size = new Size(164, 20);
             this.chkPrintHistory.TabIndex = 0;
             this.chkPrintHistory.Text = "Print History Page";
             this.chkPrintHistory.UseVisualStyleBackColor = true;
-            point = new Point(107, 145);
-            this.btnPrint.Location = point;
+
+            this.btnPrint.Location = new Point(107, 145);
             this.btnPrint.Name = "btnPrint";
-            size = new Size(90, 23);
-            this.btnPrint.Size = size;
+
+            this.btnPrint.Size = new Size(90, 23);
             this.btnPrint.TabIndex = 5;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnCancel.DialogResult = DialogResult.Cancel;
-            point = new Point(203, 145);
-            this.btnCancel.Location = point;
+
+            this.btnCancel.Location = new Point(203, 145);
             this.btnCancel.Name = "btnCancel";
-            size = new Size(90, 23);
-            this.btnCancel.Size = size;
+
+            this.btnCancel.Size = new Size(90, 23);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -301,27 +301,27 @@ namespace Hero_Designer
             this.dlgSetup.AllowOrientation = false;
             this.dlgSetup.EnableMetric = true;
             this.lblPrinter.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(12, 12);
-            this.lblPrinter.Location = point;
+
+            this.lblPrinter.Location = new Point(12, 12);
             this.lblPrinter.Name = "lblPrinter";
-            size = new Size(310, 23);
-            this.lblPrinter.Size = size;
+
+            this.lblPrinter.Size = new Size(310, 23);
             this.lblPrinter.TabIndex = 7;
             this.lblPrinter.Text = "No Printer";
             this.lblPrinter.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(327, 38);
-            this.btnLayout.Location = point;
+
+            this.btnLayout.Location = new Point(327, 38);
             this.btnLayout.Name = "btnLayout";
-            size = new Size(123, 23);
-            this.btnLayout.Size = size;
+
+            this.btnLayout.Size = new Size(123, 23);
             this.btnLayout.TabIndex = 8;
             this.btnLayout.Text = "Layout...";
             this.btnLayout.UseVisualStyleBackColor = true;
             this.AcceptButton = (IButtonControl)this.btnPrint;
             this.AutoScaleMode = AutoScaleMode.None;
             this.CancelButton = (IButtonControl)this.btnCancel;
-            size = new Size(462, 180);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(462, 180);
             this.Controls.Add((Control)this.btnLayout);
             this.Controls.Add((Control)this.lblPrinter);
             this.Controls.Add((Control)this.btnCancel);

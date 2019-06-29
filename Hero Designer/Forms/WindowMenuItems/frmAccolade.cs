@@ -151,17 +151,17 @@ namespace Hero_Designer
             this.Panel1.BorderStyle = BorderStyle.Fixed3D;
             this.Panel1.Controls.Add((Control)this.VScrollBar1);
             this.Panel1.Controls.Add((Control)this.PopInfo);
-            Point point = new Point(12, 174);
-            this.Panel1.Location = point;
+
+            this.Panel1.Location = new Point(12, 174);
             this.Panel1.Name = "Panel1";
-            Size size = new Size(414, 189);
-            this.Panel1.Size = size;
+
+            this.Panel1.Size = new Size(414, 189);
             this.Panel1.TabIndex = 35;
-            point = new Point(393, 0);
-            this.VScrollBar1.Location = point;
+
+            this.VScrollBar1.Location = new Point(393, 0);
             this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 185);
-            this.VScrollBar1.Size = size;
+
+            this.VScrollBar1.Size = new Size(17, 185);
             this.VScrollBar1.TabIndex = 11;
             this.PopInfo.BXHeight = 1024;
             this.PopInfo.ColumnPosition = 0.5f;
@@ -169,36 +169,36 @@ namespace Hero_Designer
             this.PopInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.PopInfo.ForeColor = Color.FromArgb(0, 0, 32);
             this.PopInfo.InternalPadding = 3;
-            point = new Point(0, 0);
-            this.PopInfo.Location = point;
+
+            this.PopInfo.Location = new Point(0, 0);
             this.PopInfo.Name = "PopInfo";
             this.PopInfo.ScrollY = 0.0f;
             this.PopInfo.SectionPadding = 8;
-            size = new Size(391, 200);
-            this.PopInfo.Size = size;
+
+            this.PopInfo.Size = new Size(391, 200);
             this.PopInfo.TabIndex = 9;
             this.lblLock.BackColor = Color.Red;
             this.lblLock.BorderStyle = BorderStyle.FixedSingle;
             this.lblLock.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
             this.lblLock.ForeColor = Color.White;
-            point = new Point(12, 155);
-            this.lblLock.Location = point;
+
+            this.lblLock.Location = new Point(12, 155);
             this.lblLock.Name = "lblLock";
-            size = new Size(56, 16);
-            this.lblLock.Size = size;
+
+            this.lblLock.Size = new Size(56, 16);
             this.lblLock.TabIndex = 69;
             this.lblLock.Text = "[Unlock]";
             this.lblLock.TextAlign = ContentAlignment.MiddleCenter;
             this.lblLock.Visible = false;
             this.ibClose.Checked = false;
             this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClose.KnockoutLocationPoint = point;
-            point = new Point(166, 369);
-            this.ibClose.Location = point;
+
+            this.ibClose.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibClose.Location = new Point(166, 369);
             this.ibClose.Name = "ibClose";
-            size = new Size(105, 22);
-            this.ibClose.Size = size;
+
+            this.ibClose.Size = new Size(105, 22);
             this.ibClose.TabIndex = 7;
             this.ibClose.TextOff = "Done";
             this.ibClose.TextOn = "Alt Text";
@@ -207,11 +207,11 @@ namespace Hero_Designer
             this.Panel2.BorderStyle = BorderStyle.Fixed3D;
             this.Panel2.Controls.Add((Control)this.llRight);
             this.Panel2.Controls.Add((Control)this.llLeft);
-            point = new Point(12, 12);
-            this.Panel2.Location = point;
+
+            this.Panel2.Location = new Point(12, 12);
             this.Panel2.Name = "Panel2";
-            size = new Size(414, 140);
-            this.Panel2.Size = size;
+
+            this.Panel2.Size = new Size(414, 140);
             this.Panel2.TabIndex = 126;
             this.Panel2.TabStop = true;
             this.llRight.AutoSize = true;
@@ -219,8 +219,8 @@ namespace Hero_Designer
             this.llRight.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             this.llRight.HighVis = true;
             this.llRight.HoverColor = Color.WhiteSmoke;
-            point = new Point(196, 3);
-            this.llRight.Location = point;
+
+            this.llRight.Location = new Point(196, 3);
             this.llRight.MaxHeight = 600;
             this.llRight.Name = "llRight";
             this.llRight.PaddingX = 2;
@@ -229,10 +229,10 @@ namespace Hero_Designer
             this.llRight.ScrollBarColor = Color.Red;
             this.llRight.ScrollBarWidth = 11;
             this.llRight.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(190, 414);
-            this.llRight.Size = size;
-            size = new Size(190, 120);
-            this.llRight.SizeNormal = size;
+
+            this.llRight.Size = new Size(190, 414);
+
+            this.llRight.SizeNormal = new Size(190, 120);
             this.llRight.SuspendRedraw = false;
             this.llRight.TabIndex = 111;
             this.llLeft.AutoSize = true;
@@ -240,8 +240,8 @@ namespace Hero_Designer
             this.llLeft.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
             this.llLeft.HighVis = true;
             this.llLeft.HoverColor = Color.WhiteSmoke;
-            point = new Point(3, 3);
-            this.llLeft.Location = point;
+
+            this.llLeft.Location = new Point(3, 3);
             this.llLeft.MaxHeight = 600;
             this.llLeft.Name = "llLeft";
             this.llLeft.PaddingX = 2;
@@ -250,16 +250,16 @@ namespace Hero_Designer
             this.llLeft.ScrollBarColor = Color.Red;
             this.llLeft.ScrollBarWidth = 11;
             this.llLeft.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(187, 414);
-            this.llLeft.Size = size;
-            size = new Size(187, 120);
-            this.llLeft.SizeNormal = size;
+
+            this.llLeft.Size = new Size(187, 414);
+
+            this.llLeft.SizeNormal = new Size(187, 120);
             this.llLeft.SuspendRedraw = false;
             this.llLeft.TabIndex = 110;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(438, 403);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(438, 403);
             this.Controls.Add((Control)this.Panel2);
             this.Controls.Add((Control)this.lblLock);
             this.Controls.Add((Control)this.Panel1);

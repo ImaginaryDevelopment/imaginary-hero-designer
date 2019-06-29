@@ -74,34 +74,34 @@ namespace Hero_Designer
             this.pInfo.ColumnRight = true;
             this.pInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.pInfo.InternalPadding = 3;
-            Point point = new Point(0, 0);
-            this.pInfo.Location = point;
+
+            this.pInfo.Location = new Point(0, 0);
             this.pInfo.Name = "pInfo";
             this.pInfo.ScrollY = 0.0f;
             this.pInfo.SectionPadding = 8;
-            Size size = new Size(230, 227);
-            this.pInfo.Size = size;
+
+            this.pInfo.Size = new Size(230, 227);
             this.pInfo.TabIndex = 0;
-            point = new Point(233, 0);
-            this.VScrollBar1.Location = point;
+
+            this.VScrollBar1.Location = new Point(233, 0);
             this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 284);
-            this.VScrollBar1.Size = size;
+
+            this.VScrollBar1.Size = new Size(17, 284);
             this.VScrollBar1.TabIndex = 1;
 
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.Black;
-            size = new Size(249, 284);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(249, 284);
             this.Controls.Add((Control)this.VScrollBar1);
             this.Controls.Add((Control)this.pInfo);
             this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
             this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            size = new Size(600, 600);
-            this.MaximumSize = size;
-            size = new Size(100, 150);
-            this.MinimumSize = size;
+
+            this.MaximumSize = new Size(600, 600);
+
+            this.MinimumSize = new Size(100, 150);
             this.Name = nameof(frmMiniList);
             this.Text = "Mini List";
             this.TopMost = true;

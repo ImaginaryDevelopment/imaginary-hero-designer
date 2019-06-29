@@ -594,109 +594,109 @@ namespace Hero_Designer
             this.GroupBox1.Controls.Add((Control)this.cbType1);
             this.GroupBox1.Controls.Add((Control)this.cbAT1);
             this.GroupBox1.ForeColor = Color.White;
-            Point point = new Point(4, 4);
-            this.GroupBox1.Location = point;
+
+            this.GroupBox1.Location = new Point(4, 4);
             this.GroupBox1.Name = "GroupBox1";
-            Size size = new Size(144, 116);
-            this.GroupBox1.Size = size;
+
+            this.GroupBox1.Size = new Size(144, 116);
             this.GroupBox1.TabIndex = 2;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Powerset 1:";
             this.lblKeyColor1.BackColor = Color.Blue;
             this.lblKeyColor1.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(8, 20);
-            this.lblKeyColor1.Location = point;
+
+            this.lblKeyColor1.Location = new Point(8, 20);
             this.lblKeyColor1.Name = "lblKeyColor1";
-            size = new Size(132, 16);
-            this.lblKeyColor1.Size = size;
+
+            this.lblKeyColor1.Size = new Size(132, 16);
             this.lblKeyColor1.TabIndex = 3;
             this.cbSet1.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 88);
-            this.cbSet1.Location = point;
+
+            this.cbSet1.Location = new Point(8, 88);
             this.cbSet1.Name = "cbSet1";
-            size = new Size(132, 22);
-            this.cbSet1.Size = size;
+
+            this.cbSet1.Size = new Size(132, 22);
             this.cbSet1.TabIndex = 2;
             this.cbType1.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 64);
-            this.cbType1.Location = point;
+
+            this.cbType1.Location = new Point(8, 64);
             this.cbType1.Name = "cbType1";
-            size = new Size(132, 22);
-            this.cbType1.Size = size;
+
+            this.cbType1.Size = new Size(132, 22);
             this.cbType1.TabIndex = 1;
             this.cbAT1.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 40);
-            this.cbAT1.Location = point;
+
+            this.cbAT1.Location = new Point(8, 40);
             this.cbAT1.Name = "cbAT1";
-            size = new Size(132, 22);
-            this.cbAT1.Size = size;
+
+            this.cbAT1.Size = new Size(132, 22);
             this.cbAT1.TabIndex = 0;
             this.GroupBox2.Controls.Add((Control)this.lblKeyColor2);
             this.GroupBox2.Controls.Add((Control)this.cbSet2);
             this.GroupBox2.Controls.Add((Control)this.cbType2);
             this.GroupBox2.Controls.Add((Control)this.cbAT2);
             this.GroupBox2.ForeColor = Color.White;
-            point = new Point(4, 126);
-            this.GroupBox2.Location = point;
+
+            this.GroupBox2.Location = new Point(4, 126);
             this.GroupBox2.Name = "GroupBox2";
-            size = new Size(144, 116);
-            this.GroupBox2.Size = size;
+
+            this.GroupBox2.Size = new Size(144, 116);
             this.GroupBox2.TabIndex = 3;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Powerset 2:";
             this.lblKeyColor2.BackColor = Color.Yellow;
             this.lblKeyColor2.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(8, 20);
-            this.lblKeyColor2.Location = point;
+
+            this.lblKeyColor2.Location = new Point(8, 20);
             this.lblKeyColor2.Name = "lblKeyColor2";
-            size = new Size(132, 16);
-            this.lblKeyColor2.Size = size;
+
+            this.lblKeyColor2.Size = new Size(132, 16);
             this.lblKeyColor2.TabIndex = 3;
             this.cbSet2.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 88);
-            this.cbSet2.Location = point;
+
+            this.cbSet2.Location = new Point(8, 88);
             this.cbSet2.Name = "cbSet2";
-            size = new Size(132, 22);
-            this.cbSet2.Size = size;
+
+            this.cbSet2.Size = new Size(132, 22);
             this.cbSet2.TabIndex = 2;
             this.cbType2.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 64);
-            this.cbType2.Location = point;
+
+            this.cbType2.Location = new Point(8, 64);
             this.cbType2.Name = "cbType2";
-            size = new Size(132, 22);
-            this.cbType2.Size = size;
+
+            this.cbType2.Size = new Size(132, 22);
             this.cbType2.TabIndex = 1;
             this.cbAT2.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 40);
-            this.cbAT2.Location = point;
+
+            this.cbAT2.Location = new Point(8, 40);
             this.cbAT2.Name = "cbAT2";
-            size = new Size(132, 22);
-            this.cbAT2.Size = size;
+
+            this.cbAT2.Size = new Size(132, 22);
             this.cbAT2.TabIndex = 0;
-            point = new Point(312, 500);
-            this.lblScale.Location = point;
+
+            this.lblScale.Location = new Point(312, 500);
             this.lblScale.Name = "lblScale";
-            size = new Size(108, 20);
-            this.lblScale.Size = size;
+
+            this.lblScale.Size = new Size(108, 20);
             this.lblScale.TabIndex = 9;
             this.lblScale.Text = "Scale: 100%";
             this.lblScale.TextAlign = ContentAlignment.MiddleCenter;
             this.tbScaleX.LargeChange = 1;
-            point = new Point(184, 476);
-            this.tbScaleX.Location = point;
+
+            this.tbScaleX.Location = new Point(184, 476);
             this.tbScaleX.Minimum = 1;
             this.tbScaleX.Name = "tbScaleX";
-            size = new Size(340, 45);
-            this.tbScaleX.Size = size;
+
+            this.tbScaleX.Size = new Size(340, 45);
             this.tbScaleX.TabIndex = 8;
             this.tbScaleX.TickFrequency = 10;
             this.tbScaleX.TickStyle = TickStyle.None;
             this.tbScaleX.Value = 10;
-            point = new Point(8, 508);
-            this.chkMatching.Location = point;
+
+            this.chkMatching.Location = new Point(8, 508);
             this.chkMatching.Name = "chkMatching";
-            size = new Size(116, 20);
-            this.chkMatching.Size = size;
+
+            this.chkMatching.Size = new Size(116, 20);
             this.chkMatching.TabIndex = 11;
             this.chkMatching.Text = "Attempt Matching";
             this.tTip.AutoPopDelay = 10000;
@@ -705,11 +705,11 @@ namespace Hero_Designer
             this.btnTweakMatch.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.btnTweakMatch.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnTweakMatch.ForeColor = Color.Black;
-            point = new Point(130, 508);
-            this.btnTweakMatch.Location = point;
+
+            this.btnTweakMatch.Location = new Point(130, 508);
             this.btnTweakMatch.Name = "btnTweakMatch";
-            size = new Size(60, 20);
-            this.btnTweakMatch.Size = size;
+
+            this.btnTweakMatch.Size = new Size(60, 20);
             this.btnTweakMatch.TabIndex = 12;
             this.btnTweakMatch.Text = "Tweak";
             this.tTip.SetToolTip((Control)this.btnTweakMatch, "Modify the data used to perform power matching");
@@ -717,13 +717,13 @@ namespace Hero_Designer
             this.btnTweakMatch.Visible = false;
             this.chkOnTop.Checked = true;
             this.chkOnTop.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.chkOnTop.KnockoutLocationPoint = point;
-            point = new Point(530, 476);
-            this.chkOnTop.Location = point;
+
+            this.chkOnTop.KnockoutLocationPoint = new Point(0, 0);
+
+            this.chkOnTop.Location = new Point(530, 476);
             this.chkOnTop.Name = "chkOnTop";
-            size = new Size(105, 22);
-            this.chkOnTop.Size = size;
+
+            this.chkOnTop.Size = new Size(105, 22);
             this.chkOnTop.TabIndex = 15;
             this.chkOnTop.TextOff = "Keep On Top";
             this.chkOnTop.TextOn = "Keep On Top";
@@ -731,14 +731,14 @@ namespace Hero_Designer
             this.btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             this.btnClose.Checked = false;
             this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.btnClose.KnockoutLocationPoint = point;
-            point = new Point(530, 504);
-            this.btnClose.Location = point;
+
+            this.btnClose.KnockoutLocationPoint = new Point(0, 0);
+
+            this.btnClose.Location = new Point(530, 504);
             this.btnClose.Margin = new Padding(4, 3, 4, 3);
             this.btnClose.Name = "btnClose";
-            size = new Size(105, 22);
-            this.btnClose.Size = size;
+
+            this.btnClose.Size = new Size(105, 22);
             this.btnClose.TabIndex = 14;
             this.btnClose.TextOff = "Close";
             this.btnClose.TextOn = "Close";
@@ -762,8 +762,8 @@ namespace Hero_Designer
             this.Graph.ImeMode = ImeMode.Off;
             this.Graph.ItemHeight = 26;
             this.Graph.Lines = true;
-            point = new Point(152, 4);
-            this.Graph.Location = point;
+
+            this.Graph.Location = new Point(152, 4);
             this.Graph.MarkerValue = 0.0f;
             this.Graph.Max = 100f;
             this.Graph.Name = "Graph";
@@ -772,33 +772,33 @@ namespace Hero_Designer
             this.Graph.ScaleHeight = 16;
             this.Graph.ScaleIndex = 8;
             this.Graph.ShowScale = true;
-            size = new Size(484, 468);
-            this.Graph.Size = size;
+
+            this.Graph.Size = new Size(484, 468);
             this.Graph.Style = Enums.GraphStyle.Twin;
             this.Graph.TabIndex = 1;
             this.Graph.TextWidth = 120;
             this.GroupBox4.Controls.Add((Control)this.lstDisplay);
             this.GroupBox4.ForeColor = Color.White;
-            point = new Point(8, 248);
-            this.GroupBox4.Location = point;
+
+            this.GroupBox4.Location = new Point(8, 248);
             this.GroupBox4.Name = "GroupBox4";
-            size = new Size(144, 254);
-            this.GroupBox4.Size = size;
+
+            this.GroupBox4.Size = new Size(144, 254);
             this.GroupBox4.TabIndex = 16;
             this.GroupBox4.TabStop = false;
             this.GroupBox4.Text = "Display:";
             this.lstDisplay.FormattingEnabled = true;
             this.lstDisplay.ItemHeight = 14;
-            point = new Point(6, 19);
-            this.lstDisplay.Location = point;
+
+            this.lstDisplay.Location = new Point(6, 19);
             this.lstDisplay.Name = "lstDisplay";
-            size = new Size(130, 228);
-            this.lstDisplay.Size = size;
+
+            this.lstDisplay.Size = new Size(130, 228);
             this.lstDisplay.TabIndex = 0;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(640, 532);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(640, 532);
             this.Controls.Add((Control)this.GroupBox4);
             this.Controls.Add((Control)this.chkOnTop);
             this.Controls.Add((Control)this.btnClose);

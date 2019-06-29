@@ -124,14 +124,14 @@ namespace Hero_Designer
             this.dvFloat.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             this.dvFloat.Location = new Point(0, 0);
             this.dvFloat.Name = "dvFloat";
-            Size size = new Size(300, 348);
-            this.dvFloat.Size = size;
+
+            this.dvFloat.Size = new Size(300, 348);
             this.dvFloat.TabIndex = 0;
             this.dvFloat.VisibleSize = Enums.eVisibleSize.Full;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.FromArgb(64, 64, 64);
-            size = new Size(298, 348);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(298, 348);
             this.Controls.Add((Control)this.dvFloat);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");

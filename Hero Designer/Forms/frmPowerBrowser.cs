@@ -850,8 +850,7 @@ namespace Hero_Designer
             solidBrush4 = solidBrush1;
             break;
         }
-        Point point = new Point(1, 1);
-        extendedBitmap1.Graphics.DrawImageUnscaled((Image) extendedBitmap2.Bitmap, point);
+        extendedBitmap1.Graphics.DrawImageUnscaled((Image) extendedBitmap2.Bitmap, new Point(1, 1));
         extendedBitmap1.Graphics.DrawString(s, font, (Brush) solidBrush4, layoutRectangle, format);
         this.ilPS.Images.Add((Image) new Bitmap((Image) extendedBitmap1.Bitmap));
       }
@@ -1005,12 +1004,12 @@ namespace Hero_Designer
       this.lvPower.FullRowSelect = true;
       this.lvPower.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvPower.HideSelection = false;
-      Point point = new Point(587, 37);
-      this.lvPower.Location = point;
+
+      this.lvPower.Location = new Point(587, 37);
       this.lvPower.MultiSelect = false;
       this.lvPower.Name = "lvPower";
-      Size size = new Size(400, 429);
-      this.lvPower.Size = size;
+
+      this.lvPower.Size = new Size(400, 429);
       this.lvPower.TabIndex = 21;
       this.lvPower.UseCompatibleStateImageBehavior = false;
       this.lvPower.View = View.Details;
@@ -1029,12 +1028,12 @@ namespace Hero_Designer
       this.lvSet.FullRowSelect = true;
       this.lvSet.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvSet.HideSelection = false;
-      point = new Point(251, 37);
-      this.lvSet.Location = point;
+
+      this.lvSet.Location = new Point(251, 37);
       this.lvSet.MultiSelect = false;
       this.lvSet.Name = "lvSet";
-      size = new Size(330, 429);
-      this.lvSet.Size = size;
+
+      this.lvSet.Size = new Size(330, 429);
       this.lvSet.SmallImageList = this.ilPS;
       this.lvSet.TabIndex = 20;
       this.lvSet.UseCompatibleStateImageBehavior = false;
@@ -1045,8 +1044,8 @@ namespace Hero_Designer
       this.ColumnHeader4.Width = 115;
       this.ColumnHeader6.Text = "Type";
       this.ilPS.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(34, 18);
-      this.ilPS.ImageSize = size;
+
+      this.ilPS.ImageSize = new Size(34, 18);
       this.ilPS.TransparentColor = Color.Transparent;
       this.lvGroup.BorderStyle = BorderStyle.FixedSingle;
       this.lvGroup.Columns.AddRange(new ColumnHeader[1]
@@ -1056,12 +1055,12 @@ namespace Hero_Designer
       this.lvGroup.FullRowSelect = true;
       this.lvGroup.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvGroup.HideSelection = false;
-      point = new Point(12, 37);
-      this.lvGroup.Location = point;
+
+      this.lvGroup.Location = new Point(12, 37);
       this.lvGroup.MultiSelect = false;
       this.lvGroup.Name = "lvGroup";
-      size = new Size(233, 429);
-      this.lvGroup.Size = size;
+
+      this.lvGroup.Size = new Size(233, 429);
       this.lvGroup.SmallImageList = this.ilAT;
       this.lvGroup.TabIndex = 19;
       this.lvGroup.UseCompatibleStateImageBehavior = false;
@@ -1069,154 +1068,154 @@ namespace Hero_Designer
       this.ColumnHeader2.Text = "Group";
       this.ColumnHeader2.Width = 207;
       this.ilAT.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilAT.ImageSize = size;
+
+      this.ilAT.ImageSize = new Size(16, 16);
       this.ilAT.TransparentColor = Color.Transparent;
       this.cbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbFilter.FormattingEnabled = true;
-      point = new Point(86, 9);
-      this.cbFilter.Location = point;
+
+      this.cbFilter.Location = new Point(86, 9);
       this.cbFilter.Name = "cbFilter";
-      size = new Size(221, 22);
-      this.cbFilter.Size = size;
+
+      this.cbFilter.Size = new Size(221, 22);
       this.cbFilter.TabIndex = 22;
-      point = new Point(12, 9);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(12, 9);
       this.Label1.Name = "Label1";
-      size = new Size(68, 22);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(68, 22);
       this.Label1.TabIndex = 23;
       this.Label1.Text = "Filter By:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(239, 44);
-      this.btnPowerSort.Location = point;
+
+      this.btnPowerSort.Location = new Point(239, 44);
       this.btnPowerSort.Name = "btnPowerSort";
-      size = new Size(75, 23);
-      this.btnPowerSort.Size = size;
+
+      this.btnPowerSort.Size = new Size(75, 23);
       this.btnPowerSort.TabIndex = 26;
       this.btnPowerSort.Text = "Re-Sort";
       this.btnPowerSort.UseVisualStyleBackColor = true;
       this.ilPower.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilPower.ImageSize = size;
+
+      this.ilPower.ImageSize = new Size(16, 16);
       this.ilPower.TransparentColor = Color.Transparent;
-      point = new Point(3, 15);
-      this.btnPowerUp.Location = point;
+
+      this.btnPowerUp.Location = new Point(3, 15);
       this.btnPowerUp.Name = "btnPowerUp";
-      size = new Size(75, 23);
-      this.btnPowerUp.Size = size;
+
+      this.btnPowerUp.Size = new Size(75, 23);
       this.btnPowerUp.TabIndex = 28;
       this.btnPowerUp.Text = "Up";
       this.btnPowerUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnPowerDown.Location = point;
+
+      this.btnPowerDown.Location = new Point(3, 44);
       this.btnPowerDown.Name = "btnPowerDown";
-      size = new Size(75, 23);
-      this.btnPowerDown.Size = size;
+
+      this.btnPowerDown.Size = new Size(75, 23);
       this.btnPowerDown.TabIndex = 29;
       this.btnPowerDown.Text = "Down";
       this.btnPowerDown.UseVisualStyleBackColor = true;
-      point = new Point(320, 15);
-      this.btnPowerAdd.Location = point;
+
+      this.btnPowerAdd.Location = new Point(320, 15);
       this.btnPowerAdd.Name = "btnPowerAdd";
-      size = new Size(75, 23);
-      this.btnPowerAdd.Size = size;
+
+      this.btnPowerAdd.Size = new Size(75, 23);
       this.btnPowerAdd.TabIndex = 30;
       this.btnPowerAdd.Text = "Add";
       this.btnPowerAdd.UseVisualStyleBackColor = true;
-      point = new Point(239, 15);
-      this.btnPowerDelete.Location = point;
+
+      this.btnPowerDelete.Location = new Point(239, 15);
       this.btnPowerDelete.Name = "btnPowerDelete";
-      size = new Size(75, 23);
-      this.btnPowerDelete.Size = size;
+
+      this.btnPowerDelete.Size = new Size(75, 23);
       this.btnPowerDelete.TabIndex = 31;
       this.btnPowerDelete.Text = "Delete";
       this.btnPowerDelete.UseVisualStyleBackColor = true;
-      point = new Point(320, 44);
-      this.btnPowerClone.Location = point;
+
+      this.btnPowerClone.Location = new Point(320, 44);
       this.btnPowerClone.Name = "btnPowerClone";
-      size = new Size(75, 23);
-      this.btnPowerClone.Size = size;
+
+      this.btnPowerClone.Size = new Size(75, 23);
       this.btnPowerClone.TabIndex = 33;
       this.btnPowerClone.Text = "Clone";
       this.btnPowerClone.UseVisualStyleBackColor = true;
-      point = new Point(320, 73);
-      this.btnPowerEdit.Location = point;
+
+      this.btnPowerEdit.Location = new Point(320, 73);
       this.btnPowerEdit.Name = "btnPowerEdit";
-      size = new Size(75, 23);
-      this.btnPowerEdit.Size = size;
+
+      this.btnPowerEdit.Size = new Size(75, 23);
       this.btnPowerEdit.TabIndex = 32;
       this.btnPowerEdit.Text = "Edit";
       this.btnPowerEdit.UseVisualStyleBackColor = true;
-      point = new Point(169, 44);
-      this.btnSetSort.Location = point;
+
+      this.btnSetSort.Location = new Point(169, 44);
       this.btnSetSort.Name = "btnSetSort";
-      size = new Size(75, 23);
-      this.btnSetSort.Size = size;
+
+      this.btnSetSort.Size = new Size(75, 23);
       this.btnSetSort.TabIndex = 35;
       this.btnSetSort.Text = "Re-Sort";
       this.btnSetSort.UseVisualStyleBackColor = true;
-      point = new Point(250, 44);
-      this.btnSetEdit.Location = point;
+
+      this.btnSetEdit.Location = new Point(250, 44);
       this.btnSetEdit.Name = "btnSetEdit";
-      size = new Size(75, 23);
-      this.btnSetEdit.Size = size;
+
+      this.btnSetEdit.Size = new Size(75, 23);
       this.btnSetEdit.TabIndex = 40;
       this.btnSetEdit.Text = "Edit";
       this.btnSetEdit.UseVisualStyleBackColor = true;
-      point = new Point(169, 15);
-      this.btnSetDelete.Location = point;
+
+      this.btnSetDelete.Location = new Point(169, 15);
       this.btnSetDelete.Name = "btnSetDelete";
-      size = new Size(75, 23);
-      this.btnSetDelete.Size = size;
+
+      this.btnSetDelete.Size = new Size(75, 23);
       this.btnSetDelete.TabIndex = 39;
       this.btnSetDelete.Text = "Delete";
       this.btnSetDelete.UseVisualStyleBackColor = true;
-      point = new Point(250, 15);
-      this.btnSetAdd.Location = point;
+
+      this.btnSetAdd.Location = new Point(250, 15);
       this.btnSetAdd.Name = "btnSetAdd";
-      size = new Size(75, 23);
-      this.btnSetAdd.Size = size;
+
+      this.btnSetAdd.Size = new Size(75, 23);
       this.btnSetAdd.TabIndex = 38;
       this.btnSetAdd.Text = "Add";
       this.btnSetAdd.UseVisualStyleBackColor = true;
-      point = new Point(153, 44);
-      this.btnClassClone.Location = point;
+
+      this.btnClassClone.Location = new Point(153, 44);
       this.btnClassClone.Name = "btnClassClone";
-      size = new Size(75, 23);
-      this.btnClassClone.Size = size;
+
+      this.btnClassClone.Size = new Size(75, 23);
       this.btnClassClone.TabIndex = 46;
       this.btnClassClone.Text = "Clone";
       this.btnClassClone.UseVisualStyleBackColor = true;
-      point = new Point(72, 44);
-      this.btnClassSort.Location = point;
+
+      this.btnClassSort.Location = new Point(72, 44);
       this.btnClassSort.Name = "btnClassSort";
-      size = new Size(75, 23);
-      this.btnClassSort.Size = size;
+
+      this.btnClassSort.Size = new Size(75, 23);
       this.btnClassSort.TabIndex = 42;
       this.btnClassSort.Text = "Re-Sort";
       this.btnClassSort.UseVisualStyleBackColor = true;
-      point = new Point(153, 73);
-      this.btnClassEdit.Location = point;
+
+      this.btnClassEdit.Location = new Point(153, 73);
       this.btnClassEdit.Name = "btnClassEdit";
-      size = new Size(75, 23);
-      this.btnClassEdit.Size = size;
+
+      this.btnClassEdit.Size = new Size(75, 23);
       this.btnClassEdit.TabIndex = 45;
       this.btnClassEdit.Text = "Edit";
       this.btnClassEdit.UseVisualStyleBackColor = true;
-      point = new Point(72, 15);
-      this.btnClassDelete.Location = point;
+
+      this.btnClassDelete.Location = new Point(72, 15);
       this.btnClassDelete.Name = "btnClassDelete";
-      size = new Size(75, 23);
-      this.btnClassDelete.Size = size;
+
+      this.btnClassDelete.Size = new Size(75, 23);
       this.btnClassDelete.TabIndex = 44;
       this.btnClassDelete.Text = "Delete";
       this.btnClassDelete.UseVisualStyleBackColor = true;
-      point = new Point(153, 15);
-      this.btnClassAdd.Location = point;
+
+      this.btnClassAdd.Location = new Point(153, 15);
       this.btnClassAdd.Name = "btnClassAdd";
-      size = new Size(75, 23);
-      this.btnClassAdd.Size = size;
+
+      this.btnClassAdd.Size = new Size(75, 23);
       this.btnClassAdd.TabIndex = 43;
       this.btnClassAdd.Text = "Add";
       this.btnClassAdd.UseVisualStyleBackColor = true;
@@ -1228,25 +1227,25 @@ namespace Hero_Designer
       this.pnlGroup.Controls.Add((Control) this.btnClassSort);
       this.pnlGroup.Controls.Add((Control) this.btnClassAdd);
       this.pnlGroup.Controls.Add((Control) this.btnClassEdit);
-      point = new Point(12, 494);
-      this.pnlGroup.Location = point;
+
+      this.pnlGroup.Location = new Point(12, 494);
       this.pnlGroup.Name = "pnlGroup";
-      size = new Size(233, 105);
-      this.pnlGroup.Size = size;
+
+      this.pnlGroup.Size = new Size(233, 105);
       this.pnlGroup.TabIndex = 47;
-      point = new Point(3, 15);
-      this.btnClassUp.Location = point;
+
+      this.btnClassUp.Location = new Point(3, 15);
       this.btnClassUp.Name = "btnClassUp";
-      size = new Size(64, 23);
-      this.btnClassUp.Size = size;
+
+      this.btnClassUp.Size = new Size(64, 23);
       this.btnClassUp.TabIndex = 47;
       this.btnClassUp.Text = "Up";
       this.btnClassUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnClassDown.Location = point;
+
+      this.btnClassDown.Location = new Point(3, 44);
       this.btnClassDown.Name = "btnClassDown";
-      size = new Size(64, 23);
-      this.btnClassDown.Size = size;
+
+      this.btnClassDown.Size = new Size(64, 23);
       this.btnClassDown.TabIndex = 48;
       this.btnClassDown.Text = "Down";
       this.btnClassDown.UseVisualStyleBackColor = true;
@@ -1257,25 +1256,25 @@ namespace Hero_Designer
       this.pnlSet.Controls.Add((Control) this.btnSetSort);
       this.pnlSet.Controls.Add((Control) this.btnSetAdd);
       this.pnlSet.Controls.Add((Control) this.btnSetEdit);
-      point = new Point(251, 494);
-      this.pnlSet.Location = point;
+
+      this.pnlSet.Location = new Point(251, 494);
       this.pnlSet.Name = "pnlSet";
-      size = new Size(330, 105);
-      this.pnlSet.Size = size;
+
+      this.pnlSet.Size = new Size(330, 105);
       this.pnlSet.TabIndex = 48;
-      point = new Point(3, 15);
-      this.btnPSUp.Location = point;
+
+      this.btnPSUp.Location = new Point(3, 15);
       this.btnPSUp.Name = "btnPSUp";
-      size = new Size(75, 23);
-      this.btnPSUp.Size = size;
+
+      this.btnPSUp.Size = new Size(75, 23);
       this.btnPSUp.TabIndex = 41;
       this.btnPSUp.Text = "Up";
       this.btnPSUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnPSDown.Location = point;
+
+      this.btnPSDown.Location = new Point(3, 44);
       this.btnPSDown.Name = "btnPSDown";
-      size = new Size(75, 23);
-      this.btnPSDown.Size = size;
+
+      this.btnPSDown.Size = new Size(75, 23);
       this.btnPSDown.TabIndex = 42;
       this.btnPSDown.Text = "Down";
       this.btnPSDown.UseVisualStyleBackColor = true;
@@ -1287,52 +1286,52 @@ namespace Hero_Designer
       this.pnlPower.Controls.Add((Control) this.btnPowerEdit);
       this.pnlPower.Controls.Add((Control) this.btnPowerDelete);
       this.pnlPower.Controls.Add((Control) this.btnPowerAdd);
-      point = new Point(587, 494);
-      this.pnlPower.Location = point;
+
+      this.pnlPower.Location = new Point(587, 494);
       this.pnlPower.Name = "pnlPower";
-      size = new Size(400, 105);
-      this.pnlPower.Size = size;
+
+      this.pnlPower.Size = new Size(400, 105);
       this.pnlPower.TabIndex = 49;
-      point = new Point(251, 467);
-      this.lblSet.Location = point;
+
+      this.lblSet.Location = new Point(251, 467);
       this.lblSet.Name = "lblSet";
-      size = new Size(326, 24);
-      this.lblSet.Size = size;
+
+      this.lblSet.Size = new Size(326, 24);
       this.lblSet.TabIndex = 50;
       this.lblSet.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(587, 467);
-      this.lblPower.Location = point;
+
+      this.lblPower.Location = new Point(587, 467);
       this.lblPower.Name = "lblPower";
-      size = new Size(400, 24);
-      this.lblPower.Size = size;
+
+      this.lblPower.Size = new Size(400, 24);
       this.lblPower.TabIndex = 51;
       this.lblPower.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(855, 607);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(855, 607);
       this.btnOK.Name = "btnOK";
-      size = new Size(132, 32);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(132, 32);
       this.btnOK.TabIndex = 52;
       this.btnOK.Text = "Save && Close";
       this.btnOK.UseVisualStyleBackColor = true;
-      point = new Point(717, 607);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(717, 607);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(132, 32);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(132, 32);
       this.btnCancel.TabIndex = 53;
       this.btnCancel.Text = "Cancel && Discard";
       this.btnCancel.UseVisualStyleBackColor = true;
-      point = new Point(313, 13);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(313, 13);
       this.Label2.Name = "Label2";
-      size = new Size(323, 16);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(323, 16);
       this.Label2.TabIndex = 54;
       this.Label2.Text = "To edit Archetype Classes, change filtering to Classes";
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(999, 651);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(999, 651);
       this.Controls.Add((Control) this.Label2);
       this.Controls.Add((Control) this.btnCancel);
       this.Controls.Add((Control) this.btnOK);

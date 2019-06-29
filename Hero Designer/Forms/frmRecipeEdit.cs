@@ -1030,12 +1030,12 @@ namespace Hero_Designer
       });
       this.lvDPA.FullRowSelect = true;
       this.lvDPA.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvDPA.Location = point;
+
+      this.lvDPA.Location = new Point(12, 12);
       this.lvDPA.MultiSelect = false;
       this.lvDPA.Name = "lvDPA";
-      Size size = new Size(599, 273);
-      this.lvDPA.Size = size;
+
+      this.lvDPA.Size = new Size(599, 273);
       this.lvDPA.TabIndex = 0;
       this.lvDPA.UseCompatibleStateImageBehavior = false;
       this.lvDPA.View = View.Details;
@@ -1046,37 +1046,37 @@ namespace Hero_Designer
       this.ColumnHeader3.Text = "Rarity";
       this.ColumnHeader3.Width = 84;
       this.ColumnHeader4.Text = "Entries";
-      point = new Point(356, 491);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(356, 491);
       this.btnImport.Name = "btnImport";
-      size = new Size(102, 24);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(102, 24);
       this.btnImport.TabIndex = 6;
       this.btnImport.Text = "Import w/Clear";
       this.btnImport.UseVisualStyleBackColor = true;
       this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(12, 491);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(12, 491);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(113, 24);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(113, 24);
       this.btnCancel.TabIndex = 5;
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
       this.btnOK.DialogResult = DialogResult.OK;
-      point = new Point(131, 491);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(131, 491);
       this.btnOK.Name = "btnOK";
-      size = new Size(113, 24);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(113, 24);
       this.btnOK.TabIndex = 4;
       this.btnOK.Text = "Save && Close";
       this.btnOK.UseVisualStyleBackColor = true;
-      point = new Point(464, 491);
-      this.btnReGuess.Location = point;
+
+      this.btnReGuess.Location = new Point(464, 491);
       this.btnReGuess.Name = "btnReGuess";
-      size = new Size(147, 24);
-      this.btnReGuess.Size = size;
+
+      this.btnReGuess.Size = new Size(147, 24);
       this.btnReGuess.TabIndex = 7;
       this.btnReGuess.Text = "Re-Guess all recipes";
       this.btnReGuess.UseVisualStyleBackColor = true;
@@ -1106,24 +1106,24 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.udBuy);
       this.GroupBox1.Controls.Add((Control) this.Label5);
       this.GroupBox1.Controls.Add((Control) this.udLevel);
-      point = new Point(12, 321);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(12, 321);
       this.GroupBox1.Name = "GroupBox1";
-      size = new Size(599, 164);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(599, 164);
       this.GroupBox1.TabIndex = 8;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Recipe Entry:";
-      point = new Point(185, 105);
-      this.btnGuessCost.Location = point;
+
+      this.btnGuessCost.Location = new Point(185, 105);
       this.btnGuessCost.Name = "btnGuessCost";
-      size = new Size(58, 20);
-      this.btnGuessCost.Size = size;
+
+      this.btnGuessCost.Size = new Size(58, 20);
       this.btnGuessCost.TabIndex = 36;
       this.btnGuessCost.Text = "Guess";
       this.btnGuessCost.UseVisualStyleBackColor = true;
-      point = new Point(523, 133);
-      this.udSal4.Location = point;
+
+      this.udSal4.Location = new Point(523, 133);
       Decimal num = new Decimal(new int[4]
       {
         1024,
@@ -1133,289 +1133,289 @@ namespace Hero_Designer
       });
       this.udSal4.Maximum = num;
       this.udSal4.Name = "udSal4";
-      size = new Size(59, 20);
-      this.udSal4.Size = size;
+
+      this.udSal4.Size = new Size(59, 20);
       this.udSal4.TabIndex = 350;
       this.udSal4.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udSal4.Value = num;
-      point = new Point(225, 131);
-      this.Label14.Location = point;
+
+      this.Label14.Location = new Point(225, 131);
       this.Label14.Name = "Label14";
-      size = new Size(86, 22);
-      this.Label14.Size = size;
+
+      this.Label14.Size = new Size(86, 22);
       this.Label14.TabIndex = 34;
       this.Label14.Text = "Ingredient 5:";
       this.Label14.TextAlign = ContentAlignment.MiddleRight;
       this.cbSal4.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbSal4.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbSal4.FormattingEnabled = true;
-      point = new Point(317, 131);
-      this.cbSal4.Location = point;
+
+      this.cbSal4.Location = new Point(317, 131);
       this.cbSal4.Name = "cbSal4";
-      size = new Size(202, 22);
-      this.cbSal4.Size = size;
+
+      this.cbSal4.Size = new Size(202, 22);
       this.cbSal4.TabIndex = 33;
-      point = new Point(523, 105);
-      this.udSal3.Location = point;
+
+      this.udSal3.Location = new Point(523, 105);
       num = new Decimal(new int[4]{ 1024, 0, 0, 0 });
       this.udSal3.Maximum = num;
       this.udSal3.Name = "udSal3";
-      size = new Size(59, 20);
-      this.udSal3.Size = size;
+
+      this.udSal3.Size = new Size(59, 20);
       this.udSal3.TabIndex = 320;
       this.udSal3.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udSal3.Value = num;
-      point = new Point(225, 103);
-      this.Label13.Location = point;
+
+      this.Label13.Location = new Point(225, 103);
       this.Label13.Name = "Label13";
-      size = new Size(86, 22);
-      this.Label13.Size = size;
+
+      this.Label13.Size = new Size(86, 22);
       this.Label13.TabIndex = 31;
       this.Label13.Text = "Ingredient 4:";
       this.Label13.TextAlign = ContentAlignment.MiddleRight;
       this.cbSal3.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbSal3.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbSal3.FormattingEnabled = true;
-      point = new Point(317, 103);
-      this.cbSal3.Location = point;
+
+      this.cbSal3.Location = new Point(317, 103);
       this.cbSal3.Name = "cbSal3";
-      size = new Size(202, 22);
-      this.cbSal3.Size = size;
+
+      this.cbSal3.Size = new Size(202, 22);
       this.cbSal3.TabIndex = 30;
-      point = new Point(523, 77);
-      this.udSal2.Location = point;
+
+      this.udSal2.Location = new Point(523, 77);
       num = new Decimal(new int[4]{ 1024, 0, 0, 0 });
       this.udSal2.Maximum = num;
       this.udSal2.Name = "udSal2";
-      size = new Size(59, 20);
-      this.udSal2.Size = size;
+
+      this.udSal2.Size = new Size(59, 20);
       this.udSal2.TabIndex = 290;
       this.udSal2.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udSal2.Value = num;
-      point = new Point(225, 75);
-      this.Label12.Location = point;
+
+      this.Label12.Location = new Point(225, 75);
       this.Label12.Name = "Label12";
-      size = new Size(86, 22);
-      this.Label12.Size = size;
+
+      this.Label12.Size = new Size(86, 22);
       this.Label12.TabIndex = 28;
       this.Label12.Text = "Ingredient 3:";
       this.Label12.TextAlign = ContentAlignment.MiddleRight;
       this.cbSal2.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbSal2.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbSal2.FormattingEnabled = true;
-      point = new Point(317, 75);
-      this.cbSal2.Location = point;
+
+      this.cbSal2.Location = new Point(317, 75);
       this.cbSal2.Name = "cbSal2";
-      size = new Size(202, 22);
-      this.cbSal2.Size = size;
+
+      this.cbSal2.Size = new Size(202, 22);
       this.cbSal2.TabIndex = 27;
-      point = new Point(523, 49);
-      this.udSal1.Location = point;
+
+      this.udSal1.Location = new Point(523, 49);
       num = new Decimal(new int[4]{ 1024, 0, 0, 0 });
       this.udSal1.Maximum = num;
       this.udSal1.Name = "udSal1";
-      size = new Size(59, 20);
-      this.udSal1.Size = size;
+
+      this.udSal1.Size = new Size(59, 20);
       this.udSal1.TabIndex = 260;
       this.udSal1.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udSal1.Value = num;
-      point = new Point(225, 47);
-      this.Label11.Location = point;
+
+      this.Label11.Location = new Point(225, 47);
       this.Label11.Name = "Label11";
-      size = new Size(86, 22);
-      this.Label11.Size = size;
+
+      this.Label11.Size = new Size(86, 22);
       this.Label11.TabIndex = 25;
       this.Label11.Text = "Ingredient 2:";
       this.Label11.TextAlign = ContentAlignment.MiddleRight;
       this.cbSal1.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbSal1.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbSal1.FormattingEnabled = true;
-      point = new Point(317, 47);
-      this.cbSal1.Location = point;
+
+      this.cbSal1.Location = new Point(317, 47);
       this.cbSal1.Name = "cbSal1";
-      size = new Size(202, 22);
-      this.cbSal1.Size = size;
+
+      this.cbSal1.Size = new Size(202, 22);
       this.cbSal1.TabIndex = 24;
-      point = new Point(523, 21);
-      this.udSal0.Location = point;
+
+      this.udSal0.Location = new Point(523, 21);
       num = new Decimal(new int[4]{ 1024, 0, 0, 0 });
       this.udSal0.Maximum = num;
       this.udSal0.Name = "udSal0";
-      size = new Size(59, 20);
-      this.udSal0.Size = size;
+
+      this.udSal0.Size = new Size(59, 20);
       this.udSal0.TabIndex = 230;
       this.udSal0.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udSal0.Value = num;
-      point = new Point(225, 19);
-      this.Label10.Location = point;
+
+      this.Label10.Location = new Point(225, 19);
       this.Label10.Name = "Label10";
-      size = new Size(86, 22);
-      this.Label10.Size = size;
+
+      this.Label10.Size = new Size(86, 22);
       this.Label10.TabIndex = 22;
       this.Label10.Text = "Ingredient 1:";
       this.Label10.TextAlign = ContentAlignment.MiddleRight;
       this.cbSal0.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbSal0.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbSal0.FormattingEnabled = true;
-      point = new Point(317, 19);
-      this.cbSal0.Location = point;
+
+      this.cbSal0.Location = new Point(317, 19);
       this.cbSal0.Name = "cbSal0";
-      size = new Size(202, 22);
-      this.cbSal0.Size = size;
+
+      this.cbSal0.Size = new Size(202, 22);
       this.cbSal0.TabIndex = 21;
-      point = new Point(6, 133);
-      this.Label9.Location = point;
+
+      this.Label9.Location = new Point(6, 133);
       this.Label9.Name = "Label9";
-      size = new Size(86, 20);
-      this.Label9.Size = size;
+
+      this.Label9.Size = new Size(86, 20);
       this.Label9.TabIndex = 20;
       this.Label9.Text = "Craft Cost (M):";
       this.Label9.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(98, 133);
-      this.udCraftM.Location = point;
+
+      this.udCraftM.Location = new Point(98, 133);
       num = new Decimal(new int[4]{ 1000000, 0, 0, 0 });
       this.udCraftM.Maximum = num;
       num = new Decimal(new int[4]{ 1, 0, 0, int.MinValue });
       this.udCraftM.Minimum = num;
       this.udCraftM.Name = "udCraftM";
-      size = new Size(112, 20);
-      this.udCraftM.Size = size;
+
+      this.udCraftM.Size = new Size(112, 20);
       this.udCraftM.TabIndex = 19;
       this.udCraftM.ThousandsSeparator = true;
-      point = new Point(6, 105);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(6, 105);
       this.Label8.Name = "Label8";
-      size = new Size(86, 20);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(86, 20);
       this.Label8.TabIndex = 18;
       this.Label8.Text = "Craft Cost:";
       this.Label8.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(98, 105);
-      this.udCraft.Location = point;
+
+      this.udCraft.Location = new Point(98, 105);
       num = new Decimal(new int[4]{ 1000000, 0, 0, 0 });
       this.udCraft.Maximum = num;
       num = new Decimal(new int[4]{ 1, 0, 0, int.MinValue });
       this.udCraft.Minimum = num;
       this.udCraft.Name = "udCraft";
-      size = new Size(81, 20);
-      this.udCraft.Size = size;
+
+      this.udCraft.Size = new Size(81, 20);
       this.udCraft.TabIndex = 17;
       this.udCraft.ThousandsSeparator = true;
-      point = new Point(6, 77);
-      this.Label7.Location = point;
+
+      this.Label7.Location = new Point(6, 77);
       this.Label7.Name = "Label7";
-      size = new Size(86, 20);
-      this.Label7.Size = size;
+
+      this.Label7.Size = new Size(86, 20);
       this.Label7.TabIndex = 16;
       this.Label7.Text = "Buy Cost (M):";
       this.Label7.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(98, 77);
-      this.udBuyM.Location = point;
+
+      this.udBuyM.Location = new Point(98, 77);
       num = new Decimal(new int[4]{ 1000000, 0, 0, 0 });
       this.udBuyM.Maximum = num;
       num = new Decimal(new int[4]{ 1, 0, 0, int.MinValue });
       this.udBuyM.Minimum = num;
       this.udBuyM.Name = "udBuyM";
-      size = new Size(112, 20);
-      this.udBuyM.Size = size;
+
+      this.udBuyM.Size = new Size(112, 20);
       this.udBuyM.TabIndex = 15;
       this.udBuyM.ThousandsSeparator = true;
-      point = new Point(6, 49);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(6, 49);
       this.Label6.Name = "Label6";
-      size = new Size(86, 20);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(86, 20);
       this.Label6.TabIndex = 14;
       this.Label6.Text = "Buy Cost:";
       this.Label6.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(98, 49);
-      this.udBuy.Location = point;
+
+      this.udBuy.Location = new Point(98, 49);
       num = new Decimal(new int[4]{ 1000000, 0, 0, 0 });
       this.udBuy.Maximum = num;
       num = new Decimal(new int[4]{ 1, 0, 0, int.MinValue });
       this.udBuy.Minimum = num;
       this.udBuy.Name = "udBuy";
-      size = new Size(112, 20);
-      this.udBuy.Size = size;
+
+      this.udBuy.Size = new Size(112, 20);
       this.udBuy.TabIndex = 13;
       this.udBuy.ThousandsSeparator = true;
-      point = new Point(6, 21);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(6, 21);
       this.Label5.Name = "Label5";
-      size = new Size(86, 20);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(86, 20);
       this.Label5.TabIndex = 12;
       this.Label5.Text = "Level:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(98, 21);
-      this.udLevel.Location = point;
+
+      this.udLevel.Location = new Point(98, 21);
       num = new Decimal(new int[4]{ 53, 0, 0, 0 });
       this.udLevel.Maximum = num;
       this.udLevel.Name = "udLevel";
-      size = new Size(70, 20);
-      this.udLevel.Size = size;
+
+      this.udLevel.Size = new Size(70, 20);
       this.udLevel.TabIndex = 0;
       num = new Decimal(new int[4]{ 1, 0, 0, 0 });
       this.udLevel.Value = num;
       this.lstItems.FormattingEnabled = true;
       this.lstItems.ItemHeight = 14;
-      point = new Point(6, 251);
-      this.lstItems.Location = point;
+
+      this.lstItems.Location = new Point(6, 251);
       this.lstItems.Name = "lstItems";
-      size = new Size(202, 172);
-      this.lstItems.Size = size;
+
+      this.lstItems.Size = new Size(202, 172);
       this.lstItems.TabIndex = 0;
-      point = new Point(6, 104);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(6, 104);
       this.Label3.Name = "Label3";
-      size = new Size(86, 22);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(86, 22);
       this.Label3.TabIndex = 11;
       this.Label3.Text = "Rarity:";
       this.Label3.TextAlign = ContentAlignment.BottomLeft;
       this.cbRarity.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbRarity.FormattingEnabled = true;
-      point = new Point(6, 129);
-      this.cbRarity.Location = point;
+
+      this.cbRarity.Location = new Point(6, 129);
       this.cbRarity.Name = "cbRarity";
-      size = new Size(158, 22);
-      this.cbRarity.Size = size;
+
+      this.cbRarity.Size = new Size(158, 22);
       this.cbRarity.TabIndex = 10;
-      point = new Point(6, 16);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(6, 16);
       this.Label1.Name = "Label1";
-      size = new Size(126, 20);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(126, 20);
       this.Label1.TabIndex = 13;
       this.Label1.Text = "Internal Name:";
       this.Label1.TextAlign = ContentAlignment.BottomLeft;
-      point = new Point(6, 39);
-      this.txtRecipeName.Location = point;
+
+      this.txtRecipeName.Location = new Point(6, 39);
       this.txtRecipeName.Name = "txtRecipeName";
-      size = new Size(158, 20);
-      this.txtRecipeName.Size = size;
+
+      this.txtRecipeName.Size = new Size(158, 20);
       this.txtRecipeName.TabIndex = 12;
-      point = new Point(6, 154);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(6, 154);
       this.Label2.Name = "Label2";
-      size = new Size(86, 18);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(86, 18);
       this.Label2.TabIndex = 15;
       this.Label2.Text = "Enhancement:";
       this.Label2.TextAlign = ContentAlignment.BottomLeft;
       this.cbEnh.AutoCompleteMode = AutoCompleteMode.Append;
       this.cbEnh.AutoCompleteSource = AutoCompleteSource.ListItems;
       this.cbEnh.FormattingEnabled = true;
-      point = new Point(6, 172);
-      this.cbEnh.Location = point;
+
+      this.cbEnh.Location = new Point(6, 172);
       this.cbEnh.Name = "cbEnh";
-      size = new Size(202, 22);
-      this.cbEnh.Size = size;
+
+      this.cbEnh.Size = new Size(202, 22);
       this.cbEnh.TabIndex = 14;
       this.GroupBox2.Controls.Add((Control) this.btnI50);
       this.GroupBox2.Controls.Add((Control) this.btnI40);
@@ -1437,168 +1437,168 @@ namespace Hero_Designer
       this.GroupBox2.Controls.Add((Control) this.cbRarity);
       this.GroupBox2.Controls.Add((Control) this.Label1);
       this.GroupBox2.Controls.Add((Control) this.Label3);
-      point = new Point(617, 12);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(617, 12);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(214, 523);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(214, 523);
       this.GroupBox2.TabIndex = 9;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "Recipe:";
-      point = new Point(117, 489);
-      this.btnI50.Location = point;
+
+      this.btnI50.Location = new Point(117, 489);
       this.btnI50.Name = "btnI50";
-      size = new Size(31, 24);
-      this.btnI50.Size = size;
+
+      this.btnI50.Size = new Size(31, 24);
       this.btnI50.TabIndex = 28;
       this.btnI50.Text = "50";
       this.btnI50.UseVisualStyleBackColor = true;
-      point = new Point(80, 489);
-      this.btnI40.Location = point;
+
+      this.btnI40.Location = new Point(80, 489);
       this.btnI40.Name = "btnI40";
-      size = new Size(31, 24);
-      this.btnI40.Size = size;
+
+      this.btnI40.Size = new Size(31, 24);
       this.btnI40.TabIndex = 27;
       this.btnI40.Text = "40";
       this.btnI40.UseVisualStyleBackColor = true;
-      point = new Point(43, 489);
-      this.btnI25.Location = point;
+
+      this.btnI25.Location = new Point(43, 489);
       this.btnI25.Name = "btnI25";
-      size = new Size(31, 24);
-      this.btnI25.Size = size;
+
+      this.btnI25.Size = new Size(31, 24);
       this.btnI25.TabIndex = 26;
       this.btnI25.Text = "25";
       this.btnI25.UseVisualStyleBackColor = true;
-      point = new Point(6, 489);
-      this.btnI20.Location = point;
+
+      this.btnI20.Location = new Point(6, 489);
       this.btnI20.Name = "btnI20";
-      size = new Size(31, 24);
-      this.btnI20.Size = size;
+
+      this.btnI20.Size = new Size(31, 24);
       this.btnI20.TabIndex = 25;
       this.btnI20.Text = "20";
       this.btnI20.UseVisualStyleBackColor = true;
-      point = new Point(154, 489);
-      this.btnIncrement.Location = point;
+
+      this.btnIncrement.Location = new Point(154, 489);
       this.btnIncrement.Name = "btnIncrement";
-      size = new Size(54, 24);
-      this.btnIncrement.Size = size;
+
+      this.btnIncrement.Size = new Size(54, 24);
       this.btnIncrement.TabIndex = 24;
       this.btnIncrement.Text = "+ 1";
       this.btnIncrement.UseVisualStyleBackColor = true;
-      point = new Point(108, 459);
-      this.btnDown.Location = point;
+
+      this.btnDown.Location = new Point(108, 459);
       this.btnDown.Name = "btnDown";
-      size = new Size(100, 24);
-      this.btnDown.Size = size;
+
+      this.btnDown.Size = new Size(100, 24);
       this.btnDown.TabIndex = 23;
       this.btnDown.Text = "Down";
       this.btnDown.UseVisualStyleBackColor = true;
-      point = new Point(108, 429);
-      this.btnUp.Location = point;
+
+      this.btnUp.Location = new Point(108, 429);
       this.btnUp.Name = "btnUp";
-      size = new Size(100, 24);
-      this.btnUp.Size = size;
+
+      this.btnUp.Size = new Size(100, 24);
       this.btnUp.TabIndex = 22;
       this.btnUp.Text = "Up";
       this.btnUp.UseVisualStyleBackColor = true;
-      point = new Point(6, 459);
-      this.btnDel.Location = point;
+
+      this.btnDel.Location = new Point(6, 459);
       this.btnDel.Name = "btnDel";
-      size = new Size(100, 24);
-      this.btnDel.Size = size;
+
+      this.btnDel.Size = new Size(100, 24);
       this.btnDel.TabIndex = 21;
       this.btnDel.Text = "Delete";
       this.btnDel.UseVisualStyleBackColor = true;
-      point = new Point(6, 429);
-      this.btnAdd.Location = point;
+
+      this.btnAdd.Location = new Point(6, 429);
       this.btnAdd.Name = "btnAdd";
-      size = new Size(100, 24);
-      this.btnAdd.Size = size;
+
+      this.btnAdd.Size = new Size(100, 24);
       this.btnAdd.TabIndex = 20;
       this.btnAdd.Text = "Add";
       this.btnAdd.UseVisualStyleBackColor = true;
-      point = new Point(6, 196);
-      this.lblEnh.Location = point;
+
+      this.lblEnh.Location = new Point(6, 196);
       this.lblEnh.Name = "lblEnh";
-      size = new Size(202, 40);
-      this.lblEnh.Size = size;
+
+      this.lblEnh.Size = new Size(202, 40);
       this.lblEnh.TabIndex = 17;
       this.lblEnh.Text = "EnhancementName";
       this.lblEnh.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(6, 85);
-      this.txtExtern.Location = point;
+
+      this.txtExtern.Location = new Point(6, 85);
       this.txtExtern.Name = "txtExtern";
-      size = new Size(158, 20);
-      this.txtExtern.Size = size;
+
+      this.txtExtern.Size = new Size(158, 20);
       this.txtExtern.TabIndex = 18;
-      point = new Point(6, 62);
-      this.Label15.Location = point;
+
+      this.Label15.Location = new Point(6, 62);
       this.Label15.Name = "Label15";
-      size = new Size(86, 20);
-      this.Label15.Size = size;
+
+      this.Label15.Size = new Size(86, 20);
       this.Label15.TabIndex = 19;
       this.Label15.Text = "External Name:";
       this.Label15.TextAlign = ContentAlignment.BottomLeft;
-      point = new Point(6, 226);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(6, 226);
       this.Label4.Name = "Label4";
-      size = new Size(86, 22);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(86, 22);
       this.Label4.TabIndex = 16;
       this.Label4.Text = "Recipe Entries:";
       this.Label4.TextAlign = ContentAlignment.BottomLeft;
-      point = new Point(12, 291);
-      this.btnRAdd.Location = point;
+
+      this.btnRAdd.Location = new Point(12, 291);
       this.btnRAdd.Name = "btnRAdd";
-      size = new Size(100, 24);
-      this.btnRAdd.Size = size;
+
+      this.btnRAdd.Size = new Size(100, 24);
       this.btnRAdd.TabIndex = 21;
       this.btnRAdd.Text = "Add";
       this.btnRAdd.UseVisualStyleBackColor = true;
-      point = new Point(118, 291);
-      this.btnRDel.Location = point;
+
+      this.btnRDel.Location = new Point(118, 291);
       this.btnRDel.Name = "btnRDel";
-      size = new Size(100, 24);
-      this.btnRDel.Size = size;
+
+      this.btnRDel.Size = new Size(100, 24);
       this.btnRDel.TabIndex = 22;
       this.btnRDel.Text = "Delete";
       this.btnRDel.UseVisualStyleBackColor = true;
-      point = new Point(405, 291);
-      this.btnRUp.Location = point;
+
+      this.btnRUp.Location = new Point(405, 291);
       this.btnRUp.Name = "btnRUp";
-      size = new Size(100, 24);
-      this.btnRUp.Size = size;
+
+      this.btnRUp.Size = new Size(100, 24);
       this.btnRUp.TabIndex = 23;
       this.btnRUp.Text = "Up";
       this.btnRUp.UseVisualStyleBackColor = true;
-      point = new Point(511, 291);
-      this.btnRDown.Location = point;
+
+      this.btnRDown.Location = new Point(511, 291);
       this.btnRDown.Name = "btnRDown";
-      size = new Size(100, 24);
-      this.btnRDown.Size = size;
+
+      this.btnRDown.Size = new Size(100, 24);
       this.btnRDown.TabIndex = 24;
       this.btnRDown.Text = "Down";
       this.btnRDown.UseVisualStyleBackColor = true;
-      point = new Point(250, 491);
-      this.btnImportUpdate.Location = point;
+
+      this.btnImportUpdate.Location = new Point(250, 491);
       this.btnImportUpdate.Name = "btnImportUpdate";
-      size = new Size(100, 24);
-      this.btnImportUpdate.Size = size;
+
+      this.btnImportUpdate.Size = new Size(100, 24);
       this.btnImportUpdate.TabIndex = 25;
       this.btnImportUpdate.Text = "Import Update";
       this.btnImportUpdate.UseVisualStyleBackColor = true;
       this.btnRunSeq.Enabled = false;
-      point = new Point(250, 291);
-      this.btnRunSeq.Location = point;
+
+      this.btnRunSeq.Location = new Point(250, 291);
       this.btnRunSeq.Name = "btnRunSeq";
-      size = new Size(100, 24);
-      this.btnRunSeq.Size = size;
+
+      this.btnRunSeq.Size = new Size(100, 24);
       this.btnRunSeq.TabIndex = 26;
       this.btnRunSeq.Text = "Run Sequence";
       this.btnRunSeq.UseVisualStyleBackColor = true;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(843, 537);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(843, 537);
       this.Controls.Add((Control) this.btnRunSeq);
       this.Controls.Add((Control) this.btnImportUpdate);
       this.Controls.Add((Control) this.btnRDown);

@@ -56,34 +56,34 @@ namespace Hero_Designer
             this.btnOK = new Button();
             this.lblMessage = new Label();
             this.SuspendLayout();
-            Point point = new Point(4, 44);
-            this.lbList.Location = point;
+
+            this.lbList.Location = new Point(4, 44);
             this.lbList.Name = "lbList";
-            Size size = new Size(172, 160);
-            this.lbList.Size = size;
+
+            this.lbList.Size = new Size(172, 160);
             this.lbList.TabIndex = 0;
             this.btnOK.DialogResult = DialogResult.OK;
-            point = new Point(8, 212);
-            this.btnOK.Location = point;
+
+            this.btnOK.Location = new Point(8, 212);
             this.btnOK.Name = "btnOK";
-            size = new Size(168, 24);
-            this.btnOK.Size = size;
+
+            this.btnOK.Size = new Size(168, 24);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
-            point = new Point(4, 0);
-            this.lblMessage.Location = point;
+
+            this.lblMessage.Location = new Point(4, 0);
             this.lblMessage.Name = "lblMessage";
-            size = new Size(176, 40);
-            this.lblMessage.Size = size;
+
+            this.lblMessage.Size = new Size(176, 40);
             this.lblMessage.TabIndex = 2;
             this.lblMessage.Text = "Please select an item from the list below and click OK";
             this.lblMessage.TextAlign = ContentAlignment.MiddleCenter;
             this.AcceptButton = (IButtonControl)this.btnOK;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
+
+            this.AutoScaleBaseSize = new Size(5, 13);
             this.CancelButton = (IButtonControl)this.btnOK;
-            size = new Size(182, 244);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(182, 244);
             this.ControlBox = false;
             this.Controls.Add((Control)this.lblMessage);
             this.Controls.Add((Control)this.btnOK);

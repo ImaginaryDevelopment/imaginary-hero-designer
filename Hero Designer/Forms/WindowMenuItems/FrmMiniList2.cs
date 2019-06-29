@@ -1,4 +1,4 @@
-﻿using midsControls;
+using midsControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

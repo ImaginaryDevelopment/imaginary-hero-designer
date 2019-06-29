@@ -153,51 +153,51 @@ namespace Hero_Designer
             this.rtfRead.BackColor = Color.White;
             this.rtfRead.Cursor = Cursors.Arrow;
             this.rtfRead.ForeColor = Color.Black;
-            Point point = new Point(12, 31);
-            this.rtfRead.Location = point;
+
+            this.rtfRead.Location = new Point(12, 31);
             this.rtfRead.Name = "rtfRead";
             this.rtfRead.ReadOnly = true;
             this.rtfRead.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
-            Size size = new Size(616, 409);
-            this.rtfRead.Size = size;
+
+            this.rtfRead.Size = new Size(616, 409);
             this.rtfRead.TabIndex = 0;
             this.rtfRead.Text = "";
             this.pbBackground.BorderStyle = BorderStyle.FixedSingle;
             this.pbBackground.Image = (Image)componentResourceManager.GetObject("pbBackground.Image");
-            point = new Point(0, 0);
-            this.pbBackground.Location = point;
+
+            this.pbBackground.Location = new Point(0, 0);
             this.pbBackground.Name = "pbBackground";
-            size = new Size(642, 41);
-            this.pbBackground.Size = size;
+
+            this.pbBackground.Size = new Size(642, 41);
             this.pbBackground.TabIndex = 101;
             this.pbBackground.TabStop = false;
             this.pbBottom.BorderStyle = BorderStyle.FixedSingle;
             this.pbBottom.Image = (Image)componentResourceManager.GetObject("pbBottom.Image");
-            point = new Point(0, 427);
-            this.pbBottom.Location = point;
+
+            this.pbBottom.Location = new Point(0, 427);
             this.pbBottom.Name = "pbBottom";
-            size = new Size(642, 53);
-            this.pbBottom.Size = size;
+
+            this.pbBottom.Size = new Size(642, 53);
             this.pbBottom.TabIndex = 102;
             this.pbBottom.TabStop = false;
             this.btnClose.BackColor = Color.FromArgb(60, 143, 233);
             this.btnClose.Checked = false;
             this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.btnClose.KnockoutLocationPoint = point;
-            point = new Point(268, 449);
-            this.btnClose.Location = point;
+
+            this.btnClose.KnockoutLocationPoint = new Point(0, 0);
+
+            this.btnClose.Location = new Point(268, 449);
             this.btnClose.Name = "btnClose";
-            size = new Size(105, 22);
-            this.btnClose.Size = size;
+
+            this.btnClose.Size = new Size(105, 22);
             this.btnClose.TabIndex = 100;
             this.btnClose.TextOff = "Close";
             this.btnClose.TextOn = "Alt Text";
             this.btnClose.Toggle = false;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.Black;
-            size = new Size(642, 480);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(642, 480);
             this.Controls.Add((Control)this.btnClose);
             this.Controls.Add((Control)this.rtfRead);
             this.Controls.Add((Control)this.pbBottom);
@@ -205,8 +205,8 @@ namespace Hero_Designer
             this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = FormBorderStyle.None;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            size = new Size(200, 200);
-            this.MinimumSize = size;
+
+            this.MinimumSize = new Size(200, 200);
             this.Name = nameof(frmReadme);
             this.StartPosition = FormStartPosition.CenterParent;
             this.Text = "Readme / Help";

@@ -286,12 +286,12 @@ namespace Hero_Designer
       this.lvEntity.FullRowSelect = true;
       this.lvEntity.HeaderStyle = ColumnHeaderStyle.Nonclickable;
       this.lvEntity.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvEntity.Location = point;
+
+      this.lvEntity.Location = new Point(12, 12);
       this.lvEntity.MultiSelect = false;
       this.lvEntity.Name = "lvEntity";
-      Size size = new Size(398, 431);
-      this.lvEntity.Size = size;
+
+      this.lvEntity.Size = new Size(398, 431);
       this.lvEntity.TabIndex = 0;
       this.lvEntity.UseCompatibleStateImageBehavior = false;
       this.lvEntity.View = View.Details;
@@ -301,73 +301,73 @@ namespace Hero_Designer
       this.ColumnHeader2.Width = 120;
       this.ColumnHeader3.Text = "Type";
       this.ColumnHeader3.Width = 96;
-      point = new Point(416, 12);
-      this.btnUp.Location = point;
+
+      this.btnUp.Location = new Point(416, 12);
       this.btnUp.Name = "btnUp";
-      size = new Size(75, 23);
-      this.btnUp.Size = size;
+
+      this.btnUp.Size = new Size(75, 23);
       this.btnUp.TabIndex = 1;
       this.btnUp.Text = "Up";
       this.btnUp.UseVisualStyleBackColor = true;
-      point = new Point(416, 41);
-      this.btnDown.Location = point;
+
+      this.btnDown.Location = new Point(416, 41);
       this.btnDown.Name = "btnDown";
-      size = new Size(75, 23);
-      this.btnDown.Size = size;
+
+      this.btnDown.Size = new Size(75, 23);
       this.btnDown.TabIndex = 2;
       this.btnDown.Text = "Down";
       this.btnDown.UseVisualStyleBackColor = true;
-      point = new Point(416, 100);
-      this.btnAdd.Location = point;
+
+      this.btnAdd.Location = new Point(416, 100);
       this.btnAdd.Name = "btnAdd";
-      size = new Size(75, 23);
-      this.btnAdd.Size = size;
+
+      this.btnAdd.Size = new Size(75, 23);
       this.btnAdd.TabIndex = 3;
       this.btnAdd.Text = "Add";
       this.btnAdd.UseVisualStyleBackColor = true;
-      point = new Point(416, 158);
-      this.btnDelete.Location = point;
+
+      this.btnDelete.Location = new Point(416, 158);
       this.btnDelete.Name = "btnDelete";
-      size = new Size(75, 23);
-      this.btnDelete.Size = size;
+
+      this.btnDelete.Size = new Size(75, 23);
       this.btnDelete.TabIndex = 4;
       this.btnDelete.Text = "Remove";
       this.btnDelete.UseVisualStyleBackColor = true;
-      point = new Point(416, 187);
-      this.btnedit.Location = point;
+
+      this.btnedit.Location = new Point(416, 187);
       this.btnedit.Name = "btnedit";
-      size = new Size(75, 23);
-      this.btnedit.Size = size;
+
+      this.btnedit.Size = new Size(75, 23);
       this.btnedit.TabIndex = 5;
       this.btnedit.Text = "Edit";
       this.btnedit.UseVisualStyleBackColor = true;
-      point = new Point(416, 391);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(416, 391);
       this.btnOK.Name = "btnOK";
-      size = new Size(75, 23);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(75, 23);
       this.btnOK.TabIndex = 6;
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
-      point = new Point(416, 420);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(416, 420);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(75, 23);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(75, 23);
       this.btnCancel.TabIndex = 7;
       this.btnCancel.Text = "Cancel";
       this.btnCancel.UseVisualStyleBackColor = true;
-      point = new Point(416, 129);
-      this.btnClone.Location = point;
+
+      this.btnClone.Location = new Point(416, 129);
       this.btnClone.Name = "btnClone";
-      size = new Size(75, 23);
-      this.btnClone.Size = size;
+
+      this.btnClone.Size = new Size(75, 23);
       this.btnClone.TabIndex = 8;
       this.btnClone.Text = "Clone";
       this.btnClone.UseVisualStyleBackColor = true;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(501, 454);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(501, 454);
       this.Controls.Add((Control) this.btnClone);
       this.Controls.Add((Control) this.btnCancel);
       this.Controls.Add((Control) this.btnOK);

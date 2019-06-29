@@ -585,64 +585,64 @@ namespace Hero_Designer
       this.gbLink.SuspendLayout();
       this.GroupBox5.SuspendLayout();
       this.SuspendLayout();
-      Point point = new Point(110, 16);
-      this.txtName.Location = point;
+
+      this.txtName.Location = new Point(110, 16);
       this.txtName.Name = "txtName";
-      Size size = new Size(196, 20);
-      this.txtName.Size = size;
+
+      this.txtName.Size = new Size(196, 20);
       this.txtName.TabIndex = 0;
       this.txtName.Text = "TextBox1";
-      point = new Point(6, 16);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(6, 16);
       this.Label1.Name = "Label1";
-      size = new Size(100, 20);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(100, 20);
       this.Label1.TabIndex = 1;
       this.Label1.Text = "Display Name:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
       this.cbAT.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(403, 122);
-      this.cbAT.Location = point;
+
+      this.cbAT.Location = new Point(403, 122);
       this.cbAT.Name = "cbAT";
-      size = new Size(124, 22);
-      this.cbAT.Size = size;
+
+      this.cbAT.Size = new Size(124, 22);
       this.cbAT.TabIndex = 2;
-      point = new Point(336, 122);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(336, 122);
       this.Label2.Name = "Label2";
-      size = new Size(63, 20);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(63, 20);
       this.Label2.TabIndex = 3;
       this.Label2.Text = "Archetype:";
       this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(336, 150);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(336, 150);
       this.Label3.Name = "Label3";
-      size = new Size(63, 20);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(63, 20);
       this.Label3.TabIndex = 5;
       this.Label3.Text = "Set Type:";
       this.Label3.TextAlign = ContentAlignment.MiddleRight;
       this.cbSetType.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(403, 150);
-      this.cbSetType.Location = point;
+
+      this.cbSetType.Location = new Point(403, 150);
       this.cbSetType.Name = "cbSetType";
-      size = new Size(124, 22);
-      this.cbSetType.Size = size;
+
+      this.cbSetType.Size = new Size(124, 22);
       this.cbSetType.TabIndex = 4;
-      point = new Point(6, 52);
-      this.btnIcon.Location = point;
+
+      this.btnIcon.Location = new Point(6, 52);
       this.btnIcon.Name = "btnIcon";
-      size = new Size(179, 20);
-      this.btnIcon.Size = size;
+
+      this.btnIcon.Size = new Size(179, 20);
       this.btnIcon.TabIndex = 6;
       this.btnIcon.Text = "Select Icon";
       this.picIcon.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(85, 22);
-      this.picIcon.Location = point;
+
+      this.picIcon.Location = new Point(85, 22);
       this.picIcon.Name = "picIcon";
-      size = new Size(20, 20);
-      this.picIcon.Size = size;
+
+      this.picIcon.Size = new Size(20, 20);
       this.picIcon.TabIndex = 7;
       this.picIcon.TabStop = false;
       this.lvPowers.Columns.AddRange(new ColumnHeader[3]
@@ -653,12 +653,12 @@ namespace Hero_Designer
       });
       this.lvPowers.FullRowSelect = true;
       this.lvPowers.HideSelection = false;
-      point = new Point(12, 448);
-      this.lvPowers.Location = point;
+
+      this.lvPowers.Location = new Point(12, 448);
       this.lvPowers.MultiSelect = false;
       this.lvPowers.Name = "lvPowers";
-      size = new Size(515, 121);
-      this.lvPowers.Size = size;
+
+      this.lvPowers.Size = new Size(515, 121);
       this.lvPowers.TabIndex = 8;
       this.lvPowers.UseCompatibleStateImageBehavior = false;
       this.lvPowers.View = View.Details;
@@ -668,75 +668,75 @@ namespace Hero_Designer
       this.ColumnHeader1.Width = 124;
       this.ColumnHeader2.Text = "Short Description";
       this.ColumnHeader2.Width = 313;
-      point = new Point(9, 425);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(9, 425);
       this.Label4.Name = "Label4";
-      size = new Size(100, 20);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(100, 20);
       this.Label4.TabIndex = 9;
       this.Label4.Text = "Powers:";
       this.Label4.TextAlign = ContentAlignment.MiddleLeft;
       this.btnClose.DialogResult = DialogResult.OK;
-      point = new Point(452, 575);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(452, 575);
       this.btnClose.Name = "btnClose";
-      size = new Size(75, 36);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(75, 36);
       this.btnClose.TabIndex = 15;
       this.btnClose.Text = "OK";
-      point = new Point(6, 76);
-      this.btnClearIcon.Location = point;
+
+      this.btnClearIcon.Location = new Point(6, 76);
       this.btnClearIcon.Name = "btnClearIcon";
-      size = new Size(179, 20);
-      this.btnClearIcon.Size = size;
+
+      this.btnClearIcon.Size = new Size(179, 20);
       this.btnClearIcon.TabIndex = 16;
       this.btnClearIcon.Text = "Clear Icon";
       this.ImagePicker.Filter = "PNG Images|*.png";
       this.ImagePicker.Title = "Select Image File";
-      point = new Point(10, 131);
-      this.lblNameUnique.Location = point;
+
+      this.lblNameUnique.Location = new Point(10, 131);
       this.lblNameUnique.Name = "lblNameUnique";
-      size = new Size(296, 20);
-      this.lblNameUnique.Size = size;
+
+      this.lblNameUnique.Size = new Size(296, 20);
       this.lblNameUnique.TabIndex = 25;
       this.lblNameUnique.Text = "This name is unique.";
       this.lblNameUnique.TextAlign = ContentAlignment.MiddleCenter;
       this.lblNameFull.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(13, 95);
-      this.lblNameFull.Location = point;
+
+      this.lblNameFull.Location = new Point(13, 95);
       this.lblNameFull.Name = "lblNameFull";
-      size = new Size(293, 32);
-      this.lblNameFull.Size = size;
+
+      this.lblNameFull.Size = new Size(293, 32);
       this.lblNameFull.TabIndex = 24;
       this.lblNameFull.Text = "Group_Name.Powerset_Name";
       this.lblNameFull.TextAlign = ContentAlignment.MiddleLeft;
       this.cbNameGroup.FormattingEnabled = true;
-      point = new Point(110, 44);
-      this.cbNameGroup.Location = point;
+
+      this.cbNameGroup.Location = new Point(110, 44);
       this.cbNameGroup.Name = "cbNameGroup";
-      size = new Size(196, 22);
-      this.cbNameGroup.Size = size;
+
+      this.cbNameGroup.Size = new Size(196, 22);
       this.cbNameGroup.TabIndex = 20;
-      point = new Point(10, 44);
-      this.Label22.Location = point;
+
+      this.Label22.Location = new Point(10, 44);
       this.Label22.Name = "Label22";
-      size = new Size(96, 20);
-      this.Label22.Size = size;
+
+      this.Label22.Size = new Size(96, 20);
       this.Label22.TabIndex = 22;
       this.Label22.Text = "Group:";
       this.Label22.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(110, 72);
-      this.txtNameSet.Location = point;
+
+      this.txtNameSet.Location = new Point(110, 72);
       this.txtNameSet.Name = "txtNameSet";
-      size = new Size(196, 20);
-      this.txtNameSet.Size = size;
+
+      this.txtNameSet.Size = new Size(196, 20);
       this.txtNameSet.TabIndex = 21;
       this.txtNameSet.Text = "PowerName";
-      point = new Point(3, 72);
-      this.Label33.Location = point;
+
+      this.Label33.Location = new Point(3, 72);
       this.Label33.Name = "Label33";
-      size = new Size(103, 20);
-      this.Label33.Size = size;
+
+      this.Label33.Size = new Size(103, 20);
       this.Label33.TabIndex = 23;
       this.Label33.Text = "Powerset Name:";
       this.Label33.TextAlign = ContentAlignment.MiddleRight;
@@ -748,49 +748,49 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.Label33);
       this.GroupBox1.Controls.Add((Control) this.Label1);
       this.GroupBox1.Controls.Add((Control) this.txtName);
-      point = new Point(12, 12);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(12, 12);
       this.GroupBox1.Name = "GroupBox1";
-      size = new Size(318, 160);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(318, 160);
       this.GroupBox1.TabIndex = 26;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Powerset Name";
       this.GroupBox2.Controls.Add((Control) this.btnClearIcon);
       this.GroupBox2.Controls.Add((Control) this.picIcon);
       this.GroupBox2.Controls.Add((Control) this.btnIcon);
-      point = new Point(336, 12);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(336, 12);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(191, 102);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(191, 102);
       this.GroupBox2.TabIndex = 27;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "Icon";
       this.btnCancel.DialogResult = DialogResult.OK;
-      point = new Point(371, 575);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(371, 575);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(75, 36);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(75, 36);
       this.btnCancel.TabIndex = 28;
       this.btnCancel.Text = "Cancel";
       this.GroupBox3.Controls.Add((Control) this.txtDesc);
-      point = new Point(12, 178);
-      this.GroupBox3.Location = point;
+
+      this.GroupBox3.Location = new Point(12, 178);
       this.GroupBox3.Name = "GroupBox3";
-      size = new Size(515, 80);
-      this.GroupBox3.Size = size;
+
+      this.GroupBox3.Size = new Size(515, 80);
       this.GroupBox3.TabIndex = 29;
       this.GroupBox3.TabStop = false;
       this.GroupBox3.Text = "Description";
-      point = new Point(6, 19);
-      this.txtDesc.Location = point;
+
+      this.txtDesc.Location = new Point(6, 19);
       this.txtDesc.Multiline = true;
       this.txtDesc.Name = "txtDesc";
       this.txtDesc.ScrollBars = ScrollBars.Vertical;
-      size = new Size(503, 55);
-      this.txtDesc.Size = size;
+
+      this.txtDesc.Size = new Size(503, 55);
       this.txtDesc.TabIndex = 1;
       this.txtDesc.Text = "TextBox1";
       this.GroupBox4.Controls.Add((Control) this.chkNoTrunk);
@@ -798,51 +798,51 @@ namespace Hero_Designer
       this.GroupBox4.Controls.Add((Control) this.cbTrunkGroup);
       this.GroupBox4.Controls.Add((Control) this.Label5);
       this.GroupBox4.Controls.Add((Control) this.Label31);
-      point = new Point(12, 264);
-      this.GroupBox4.Location = point;
+
+      this.GroupBox4.Location = new Point(12, 264);
       this.GroupBox4.Name = "GroupBox4";
-      size = new Size(515, 75);
-      this.GroupBox4.Size = size;
+
+      this.GroupBox4.Size = new Size(515, 75);
       this.GroupBox4.TabIndex = 30;
       this.GroupBox4.TabStop = false;
       this.GroupBox4.Text = "Trunk Set:";
-      point = new Point(279, 16);
-      this.chkNoTrunk.Location = point;
+
+      this.chkNoTrunk.Location = new Point(279, 16);
       this.chkNoTrunk.Name = "chkNoTrunk";
-      size = new Size(210, 50);
-      this.chkNoTrunk.Size = size;
+
+      this.chkNoTrunk.Size = new Size(210, 50);
       this.chkNoTrunk.TabIndex = 17;
       this.chkNoTrunk.Text = "This power has no Trunk set";
       this.chkNoTrunk.UseVisualStyleBackColor = true;
       this.cbTrunkSet.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbTrunkSet.FormattingEnabled = true;
-      point = new Point(68, 44);
-      this.cbTrunkSet.Location = point;
+
+      this.cbTrunkSet.Location = new Point(68, 44);
       this.cbTrunkSet.Name = "cbTrunkSet";
-      size = new Size(196, 22);
-      this.cbTrunkSet.Size = size;
+
+      this.cbTrunkSet.Size = new Size(196, 22);
       this.cbTrunkSet.TabIndex = 14;
       this.cbTrunkGroup.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbTrunkGroup.FormattingEnabled = true;
-      point = new Point(68, 16);
-      this.cbTrunkGroup.Location = point;
+
+      this.cbTrunkGroup.Location = new Point(68, 16);
       this.cbTrunkGroup.Name = "cbTrunkGroup";
-      size = new Size(196, 22);
-      this.cbTrunkGroup.Size = size;
+
+      this.cbTrunkGroup.Size = new Size(196, 22);
       this.cbTrunkGroup.TabIndex = 13;
-      point = new Point(10, 16);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(10, 16);
       this.Label5.Name = "Label5";
-      size = new Size(54, 20);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(54, 20);
       this.Label5.TabIndex = 15;
       this.Label5.Text = "Group:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(13, 44);
-      this.Label31.Location = point;
+
+      this.Label31.Location = new Point(13, 44);
       this.Label31.Name = "Label31";
-      size = new Size(49, 20);
-      this.Label31.Size = size;
+
+      this.Label31.Size = new Size(49, 20);
       this.Label31.TabIndex = 16;
       this.Label31.Text = "Set:";
       this.Label31.TextAlign = ContentAlignment.MiddleRight;
@@ -851,93 +851,93 @@ namespace Hero_Designer
       this.gbLink.Controls.Add((Control) this.cbLinkGroup);
       this.gbLink.Controls.Add((Control) this.Label6);
       this.gbLink.Controls.Add((Control) this.Label7);
-      point = new Point(12, 345);
-      this.gbLink.Location = point;
+
+      this.gbLink.Location = new Point(12, 345);
       this.gbLink.Name = "gbLink";
-      size = new Size(515, 75);
-      this.gbLink.Size = size;
+
+      this.gbLink.Size = new Size(515, 75);
       this.gbLink.TabIndex = 31;
       this.gbLink.TabStop = false;
       this.gbLink.Text = "Linked Secondary";
-      point = new Point(279, 16);
-      this.chkNoLink.Location = point;
+
+      this.chkNoLink.Location = new Point(279, 16);
       this.chkNoLink.Name = "chkNoLink";
-      size = new Size(210, 50);
-      this.chkNoLink.Size = size;
+
+      this.chkNoLink.Size = new Size(210, 50);
       this.chkNoLink.TabIndex = 17;
       this.chkNoLink.Text = "No link";
       this.chkNoLink.UseVisualStyleBackColor = true;
       this.cbLinkSet.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbLinkSet.FormattingEnabled = true;
-      point = new Point(68, 44);
-      this.cbLinkSet.Location = point;
+
+      this.cbLinkSet.Location = new Point(68, 44);
       this.cbLinkSet.Name = "cbLinkSet";
-      size = new Size(196, 22);
-      this.cbLinkSet.Size = size;
+
+      this.cbLinkSet.Size = new Size(196, 22);
       this.cbLinkSet.TabIndex = 14;
       this.cbLinkGroup.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbLinkGroup.FormattingEnabled = true;
-      point = new Point(68, 16);
-      this.cbLinkGroup.Location = point;
+
+      this.cbLinkGroup.Location = new Point(68, 16);
       this.cbLinkGroup.Name = "cbLinkGroup";
-      size = new Size(196, 22);
-      this.cbLinkGroup.Size = size;
+
+      this.cbLinkGroup.Size = new Size(196, 22);
       this.cbLinkGroup.TabIndex = 13;
-      point = new Point(10, 16);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(10, 16);
       this.Label6.Name = "Label6";
-      size = new Size(54, 20);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(54, 20);
       this.Label6.TabIndex = 15;
       this.Label6.Text = "Group:";
       this.Label6.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(13, 44);
-      this.Label7.Location = point;
+
+      this.Label7.Location = new Point(13, 44);
       this.Label7.Name = "Label7";
-      size = new Size(49, 20);
-      this.Label7.Size = size;
+
+      this.Label7.Size = new Size(49, 20);
       this.Label7.TabIndex = 16;
       this.Label7.Text = "Set:";
       this.Label7.TextAlign = ContentAlignment.MiddleRight;
       this.GroupBox5.Controls.Add((Control) this.lvMutexSets);
       this.GroupBox5.Controls.Add((Control) this.Label8);
       this.GroupBox5.Controls.Add((Control) this.cbMutexGroup);
-      point = new Point(533, 12);
-      this.GroupBox5.Location = point;
+
+      this.GroupBox5.Location = new Point(533, 12);
       this.GroupBox5.Name = "GroupBox5";
-      size = new Size(253, 327);
-      this.GroupBox5.Size = size;
+
+      this.GroupBox5.Size = new Size(253, 327);
       this.GroupBox5.TabIndex = 32;
       this.GroupBox5.TabStop = false;
       this.GroupBox5.Text = "Mutually Exclusive Sets";
       this.lvMutexSets.ItemHeight = 14;
-      point = new Point(9, 72);
-      this.lvMutexSets.Location = point;
+
+      this.lvMutexSets.Location = new Point(9, 72);
       this.lvMutexSets.Name = "lvMutexSets";
       this.lvMutexSets.SelectionMode = SelectionMode.MultiSimple;
-      size = new Size(238, 242);
-      this.lvMutexSets.Size = size;
+
+      this.lvMutexSets.Size = new Size(238, 242);
       this.lvMutexSets.TabIndex = 111;
-      point = new Point(6, 16);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(6, 16);
       this.Label8.Name = "Label8";
-      size = new Size(100, 20);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(100, 20);
       this.Label8.TabIndex = 22;
       this.Label8.Text = "Group (Only one):";
       this.Label8.TextAlign = ContentAlignment.MiddleRight;
       this.cbMutexGroup.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbMutexGroup.FormattingEnabled = true;
-      point = new Point(9, 44);
-      this.cbMutexGroup.Location = point;
+
+      this.cbMutexGroup.Location = new Point(9, 44);
       this.cbMutexGroup.Name = "cbMutexGroup";
-      size = new Size(238, 22);
-      this.cbMutexGroup.Size = size;
+
+      this.cbMutexGroup.Size = new Size(238, 22);
       this.cbMutexGroup.TabIndex = 21;
-      size = new Size(5, 13);
-      this.AutoScaleBaseSize = size;
-      size = new Size(798, 621);
-      this.ClientSize = size;
+
+      this.AutoScaleBaseSize = new Size(5, 13);
+
+      this.ClientSize = new Size(798, 621);
       this.Controls.Add((Control) this.GroupBox5);
       this.Controls.Add((Control) this.gbLink);
       this.Controls.Add((Control) this.GroupBox4);

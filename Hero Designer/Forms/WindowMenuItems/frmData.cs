@@ -78,20 +78,20 @@ namespace Hero_Designer
             this.pInfo.Location = new Point(0, 0);
             this.pInfo.Name = "pInfo";
             this.pInfo.SectionPadding = 8;
-            Size size = new Size(566, 230);
-            this.pInfo.Size = size;
+
+            this.pInfo.Size = new Size(566, 230);
             this.pInfo.TabIndex = 0;
             this.AutoScaleMode = AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = Color.Black;
-            size = new Size(567, 299);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(567, 299);
             this.Controls.Add((Control)this.pInfo);
             this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            size = new Size(250, 250);
-            this.MinimumSize = size;
+
+            this.MinimumSize = new Size(250, 250);
             this.Name = nameof(frmData);
             this.StartPosition = FormStartPosition.Manual;
             this.Text = "Power Data";

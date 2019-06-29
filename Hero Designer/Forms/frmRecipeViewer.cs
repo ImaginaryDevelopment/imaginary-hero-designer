@@ -769,11 +769,11 @@ namespace Hero_Designer
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.SuspendLayout();
-            Point point = new Point(0, 0);
-            this.pbRecipe.Location = point;
+
+            this.pbRecipe.Location = new Point(0, 0);
             this.pbRecipe.Name = "pbRecipe";
-            Size size = new Size(60, 30);
-            this.pbRecipe.Size = size;
+
+            this.pbRecipe.Size = new Size(60, 30);
             this.pbRecipe.TabIndex = 0;
             this.pbRecipe.TabStop = false;
             this.lvPower.CheckBoxes = true;
@@ -783,12 +783,12 @@ namespace Hero_Designer
             });
             this.lvPower.FullRowSelect = true;
             this.lvPower.HideSelection = false;
-            point = new Point(12, 12);
-            this.lvPower.Location = point;
+
+            this.lvPower.Location = new Point(12, 12);
             this.lvPower.MultiSelect = false;
             this.lvPower.Name = "lvPower";
-            size = new Size(176, 191);
-            this.lvPower.Size = size;
+
+            this.lvPower.Size = new Size(176, 191);
             this.lvPower.Sorting = SortOrder.Ascending;
             this.lvPower.TabIndex = 1;
             this.lvPower.UseCompatibleStateImageBehavior = false;
@@ -803,12 +803,12 @@ namespace Hero_Designer
             });
             this.lvDPA.FullRowSelect = true;
             this.lvDPA.HideSelection = false;
-            point = new Point(194, 12);
-            this.lvDPA.Location = point;
+
+            this.lvDPA.Location = new Point(194, 12);
             this.lvDPA.MultiSelect = false;
             this.lvDPA.Name = "lvDPA";
-            size = new Size(428, 191);
-            this.lvDPA.Size = size;
+
+            this.lvDPA.Size = new Size(428, 191);
             this.lvDPA.SmallImageList = this.ilSets;
             this.lvDPA.TabIndex = 8;
             this.lvDPA.UseCompatibleStateImageBehavior = false;
@@ -820,44 +820,44 @@ namespace Hero_Designer
             this.ColumnHeader5.Text = "Power";
             this.ColumnHeader5.Width = 114;
             this.ilSets.ColorDepth = ColorDepth.Depth32Bit;
-            size = new Size(16, 16);
-            this.ilSets.ImageSize = size;
+
+            this.ilSets.ImageSize = new Size(16, 16);
             this.ilSets.TransparentColor = Color.Transparent;
             this.chkSortByLevel.Checked = true;
             this.chkSortByLevel.CheckState = CheckState.Checked;
             this.chkSortByLevel.ForeColor = Color.White;
-            point = new Point(12, 209);
-            this.chkSortByLevel.Location = point;
+
+            this.chkSortByLevel.Location = new Point(12, 209);
             this.chkSortByLevel.Name = "chkSortByLevel";
-            size = new Size(176, 16);
-            this.chkSortByLevel.Size = size;
+
+            this.chkSortByLevel.Size = new Size(176, 16);
             this.chkSortByLevel.TabIndex = 9;
             this.chkSortByLevel.Text = "Sort By Level";
             this.chkSortByLevel.UseVisualStyleBackColor = true;
             this.lblHeader.Font = new Font("Arial", 17.5f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
             this.lblHeader.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            point = new Point(66, 0);
-            this.lblHeader.Location = point;
+
+            this.lblHeader.Location = new Point(66, 0);
             this.lblHeader.Name = "lblHeader";
-            size = new Size(541, 30);
-            this.lblHeader.Size = size;
+
+            this.lblHeader.Size = new Size(541, 30);
             this.lblHeader.TabIndex = 10;
             this.lblHeader.Text = "Select A Power / Recipe";
             this.lblHeader.TextAlign = ContentAlignment.MiddleLeft;
             this.Panel1.Controls.Add((Control)this.VScrollBar1);
             this.Panel1.Controls.Add((Control)this.RecipeInfo);
-            point = new Point(0, 36);
-            this.Panel1.Location = point;
+
+            this.Panel1.Location = new Point(0, 36);
             this.Panel1.Name = "Panel1";
-            size = new Size(610, 177);
-            this.Panel1.Size = size;
+
+            this.Panel1.Size = new Size(610, 177);
             this.Panel1.TabIndex = 11;
-            point = new Point(593, 0);
-            this.VScrollBar1.Location = point;
+
+            this.VScrollBar1.Location = new Point(593, 0);
             this.VScrollBar1.Maximum = 20;
             this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 176);
-            this.VScrollBar1.Size = size;
+
+            this.VScrollBar1.Size = new Size(17, 176);
             this.VScrollBar1.TabIndex = 3;
             this.RecipeInfo.BXHeight = 2048;
             this.RecipeInfo.ColumnPosition = 0.5f;
@@ -865,90 +865,90 @@ namespace Hero_Designer
             this.RecipeInfo.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             this.RecipeInfo.ForeColor = Color.Black;
             this.RecipeInfo.InternalPadding = 3;
-            point = new Point(3, 3);
-            this.RecipeInfo.Location = point;
+
+            this.RecipeInfo.Location = new Point(3, 3);
             this.RecipeInfo.Name = "RecipeInfo";
             this.RecipeInfo.ScrollY = 0.0f;
             this.RecipeInfo.SectionPadding = 8;
-            size = new Size(587, 212);
-            this.RecipeInfo.Size = size;
+
+            this.RecipeInfo.Size = new Size(587, 212);
             this.RecipeInfo.TabIndex = 2;
             this.Panel2.BackColor = Color.Black;
             this.Panel2.Controls.Add((Control)this.Panel1);
             this.Panel2.Controls.Add((Control)this.pbRecipe);
             this.Panel2.Controls.Add((Control)this.lblHeader);
-            point = new Point(12, 226);
-            this.Panel2.Location = point;
+
+            this.Panel2.Location = new Point(12, 226);
             this.Panel2.Name = "Panel2";
-            size = new Size(610, 213);
-            this.Panel2.Size = size;
+
+            this.Panel2.Size = new Size(610, 213);
             this.Panel2.TabIndex = 12;
             this.chkRecipe.ForeColor = Color.White;
-            point = new Point(234, 445);
-            this.chkRecipe.Location = point;
+
+            this.chkRecipe.Location = new Point(234, 445);
             this.chkRecipe.Name = "chkRecipe";
-            size = new Size(166, 22);
-            this.chkRecipe.Size = size;
+
+            this.chkRecipe.Size = new Size(166, 22);
             this.chkRecipe.TabIndex = 15;
             this.chkRecipe.Text = "Include Recipes";
             this.ToolTip1.SetToolTip((Control)this.chkRecipe, "Add a list of recipes to the shopping list");
             this.chkRecipe.UseVisualStyleBackColor = true;
             this.ibMiniList.Checked = false;
             this.ibMiniList.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibMiniList.KnockoutLocationPoint = point;
-            point = new Point(123, 445);
-            this.ibMiniList.Location = point;
+
+            this.ibMiniList.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibMiniList.Location = new Point(123, 445);
             this.ibMiniList.Name = "ibMiniList";
-            size = new Size(105, 22);
-            this.ibMiniList.Size = size;
+
+            this.ibMiniList.Size = new Size(105, 22);
             this.ibMiniList.TabIndex = 14;
             this.ibMiniList.TextOff = "To I-G Helper";
             this.ibMiniList.TextOn = "Alt Text";
             this.ibMiniList.Toggle = false;
             this.ibClipboard.Checked = false;
             this.ibClipboard.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClipboard.KnockoutLocationPoint = point;
-            point = new Point(12, 445);
-            this.ibClipboard.Location = point;
+
+            this.ibClipboard.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibClipboard.Location = new Point(12, 445);
             this.ibClipboard.Name = "ibClipboard";
-            size = new Size(105, 22);
-            this.ibClipboard.Size = size;
+
+            this.ibClipboard.Size = new Size(105, 22);
             this.ibClipboard.TabIndex = 13;
             this.ibClipboard.TextOff = "To Clipboard";
             this.ibClipboard.TextOn = "Alt Text";
             this.ibClipboard.Toggle = false;
             this.ibTopmost.Checked = true;
             this.ibTopmost.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibTopmost.KnockoutLocationPoint = point;
-            point = new Point(406, 445);
-            this.ibTopmost.Location = point;
+
+            this.ibTopmost.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibTopmost.Location = new Point(406, 445);
             this.ibTopmost.Name = "ibTopmost";
-            size = new Size(105, 22);
-            this.ibTopmost.Size = size;
+
+            this.ibTopmost.Size = new Size(105, 22);
             this.ibTopmost.TabIndex = 7;
             this.ibTopmost.TextOff = "Keep On Top";
             this.ibTopmost.TextOn = "Keep On Top";
             this.ibTopmost.Toggle = true;
             this.ibClose.Checked = false;
             this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClose.KnockoutLocationPoint = point;
-            point = new Point(517, 445);
-            this.ibClose.Location = point;
+
+            this.ibClose.KnockoutLocationPoint = new Point(0, 0);
+
+            this.ibClose.Location = new Point(517, 445);
             this.ibClose.Name = "ibClose";
-            size = new Size(105, 22);
-            this.ibClose.Size = size;
+
+            this.ibClose.Size = new Size(105, 22);
             this.ibClose.TabIndex = 6;
             this.ibClose.TextOff = "Close";
             this.ibClose.TextOn = "Alt Text";
             this.ibClose.Toggle = false;
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(634, 479);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(634, 479);
             this.Controls.Add((Control)this.chkRecipe);
             this.Controls.Add((Control)this.ibMiniList);
             this.Controls.Add((Control)this.ibClipboard);

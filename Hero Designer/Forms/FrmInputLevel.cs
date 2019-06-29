@@ -86,8 +86,8 @@ namespace Hero_Designer
       this.btnOK = new Button();
       this.udLevel.BeginInit();
       this.SuspendLayout();
-      Point point = new Point(41, 42);
-      this.udLevel.Location = point;
+
+      this.udLevel.Location = new Point(41, 42);
       Decimal num = new Decimal(new int[4]
       {
         50,
@@ -99,34 +99,34 @@ namespace Hero_Designer
       num = new Decimal(new int[4]{ 10, 0, 0, 0 });
       this.udLevel.Minimum = num;
       this.udLevel.Name = "udLevel";
-      Size size = new Size(120, 20);
-      this.udLevel.Size = size;
+
+      this.udLevel.Size = new Size(120, 20);
       this.udLevel.TabIndex = 0;
       this.udLevel.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 50, 0, 0, 0 });
       this.udLevel.Value = num;
-      point = new Point(3, 9);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(3, 9);
       this.Label1.Name = "Label1";
-      size = new Size(188, 21);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(188, 21);
       this.Label1.TabIndex = 1;
       this.Label1.Text = "Please input the level to respec to:";
       this.Label1.TextAlign = ContentAlignment.BottomLeft;
       this.btnOK.DialogResult = DialogResult.Cancel;
-      point = new Point(64, 77);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(64, 77);
       this.btnOK.Name = "btnOK";
-      size = new Size(75, 23);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(75, 23);
       this.btnOK.TabIndex = 2;
       this.btnOK.Text = "OK";
       this.btnOK.UseVisualStyleBackColor = true;
       this.AcceptButton = (IButtonControl) this.btnOK;
       this.AutoScaleMode = AutoScaleMode.None;
       this.CancelButton = (IButtonControl) this.btnOK;
-      size = new Size(203, 114);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(203, 114);
       this.Controls.Add((Control) this.btnOK);
       this.Controls.Add((Control) this.Label1);
       this.Controls.Add((Control) this.udLevel);

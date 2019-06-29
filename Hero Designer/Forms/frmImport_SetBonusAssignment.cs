@@ -119,35 +119,35 @@ namespace Hero_Designer
       this.btnFile = new Button();
       this.dlgBrowse = new OpenFileDialog();
       this.SuspendLayout();
-      Point point = new Point(539, 81);
-      this.btnClose.Location = point;
+
+      this.btnClose.Location = new Point(539, 81);
       this.btnClose.Name = "btnClose";
-      Size size = new Size(86, 23);
-      this.btnClose.Size = size;
+
+      this.btnClose.Size = new Size(86, 23);
       this.btnClose.TabIndex = 52;
       this.btnClose.Text = "Close";
       this.btnClose.UseVisualStyleBackColor = true;
-      point = new Point(539, 38);
-      this.btnImport.Location = point;
+
+      this.btnImport.Location = new Point(539, 38);
       this.btnImport.Name = "btnImport";
-      size = new Size(86, 23);
-      this.btnImport.Size = size;
+
+      this.btnImport.Size = new Size(86, 23);
       this.btnImport.TabIndex = 50;
       this.btnImport.Text = "Import";
       this.btnImport.UseVisualStyleBackColor = true;
       this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 9);
-      this.lblFile.Location = point;
+
+      this.lblFile.Location = new Point(12, 9);
       this.lblFile.Name = "lblFile";
-      size = new Size(521, 46);
-      this.lblFile.Size = size;
+
+      this.lblFile.Size = new Size(521, 46);
       this.lblFile.TabIndex = 51;
       this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 9);
-      this.btnFile.Location = point;
+
+      this.btnFile.Location = new Point(539, 9);
       this.btnFile.Name = "btnFile";
-      size = new Size(86, 23);
-      this.btnFile.Size = size;
+
+      this.btnFile.Size = new Size(86, 23);
       this.btnFile.TabIndex = 49;
       this.btnFile.Text = "Browse...";
       this.btnFile.UseVisualStyleBackColor = true;
@@ -155,8 +155,8 @@ namespace Hero_Designer
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
       this.AutoScaleDimensions = new SizeF(6f, 13f);
       this.AutoScaleMode = AutoScaleMode.Font;
-      size = new Size(640, 114);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(640, 114);
       this.Controls.Add((Control) this.btnClose);
       this.Controls.Add((Control) this.btnImport);
       this.Controls.Add((Control) this.lblFile);

@@ -396,120 +396,120 @@ namespace Hero_Designer
       this.GroupBox4.SuspendLayout();
       this.GroupBox5.SuspendLayout();
       this.SuspendLayout();
-      Point point = new Point(123, 16);
-      this.txtName.Location = point;
+
+      this.txtName.Location = new Point(123, 16);
       this.txtName.Name = "txtName";
-      Size size = new Size(118, 20);
-      this.txtName.Size = size;
+
+      this.txtName.Size = new Size(118, 20);
       this.txtName.TabIndex = 0;
-      point = new Point(30, 16);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(30, 16);
       this.Label1.Name = "Label1";
-      size = new Size(87, 20);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(87, 20);
       this.Label1.TabIndex = 1;
       this.Label1.Text = "Display Name:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 19);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(6, 19);
       this.Label2.Name = "Label2";
-      size = new Size(121, 20);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(121, 20);
       this.Label2.TabIndex = 5;
       this.Label2.Text = "Hit Points:";
       this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 19);
-      this.txtHP.Location = point;
+
+      this.txtHP.Location = new Point(133, 19);
       this.txtHP.Name = "txtHP";
-      size = new Size(108, 20);
-      this.txtHP.Size = size;
+
+      this.txtHP.Size = new Size(108, 20);
       this.txtHP.TabIndex = 4;
-      point = new Point(6, 123);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(6, 123);
       this.Label3.Name = "Label3";
-      size = new Size(121, 20);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(121, 20);
       this.Label3.TabIndex = 7;
       this.Label3.Text = "Resistance Cap:";
       this.Label3.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 123);
-      this.txtResCap.Location = point;
+
+      this.txtResCap.Location = new Point(133, 123);
       this.txtResCap.Name = "txtResCap";
-      size = new Size(90, 20);
-      this.txtResCap.Size = size;
+
+      this.txtResCap.Size = new Size(90, 20);
       this.txtResCap.TabIndex = 6;
       this.txtResCap.Text = "80";
       this.txtResCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 16);
-      this.clbOrigin.Location = point;
+
+      this.clbOrigin.Location = new Point(6, 16);
       this.clbOrigin.Name = "clbOrigin";
-      size = new Size(235, 244);
-      this.clbOrigin.Size = size;
+
+      this.clbOrigin.Size = new Size(235, 244);
       this.clbOrigin.TabIndex = 8;
-      point = new Point(437, 585);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(437, 585);
       this.btnOK.Name = "btnOK";
-      size = new Size(75, 23);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(75, 23);
       this.btnOK.TabIndex = 10;
       this.btnOK.Text = "OK";
       this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(353, 585);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(353, 585);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(75, 23);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(75, 23);
       this.btnCancel.TabIndex = 11;
       this.btnCancel.Text = "Cancel";
-      point = new Point(6, 45);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(6, 45);
       this.Label6.Name = "Label6";
-      size = new Size(121, 20);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(121, 20);
       this.Label6.TabIndex = 16;
       this.Label6.Text = "Hit Point Cap:";
       this.Label6.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 45);
-      this.txtHPCap.Location = point;
+
+      this.txtHPCap.Location = new Point(133, 45);
       this.txtHPCap.Name = "txtHPCap";
-      size = new Size(108, 20);
-      this.txtHPCap.Size = size;
+
+      this.txtHPCap.Size = new Size(108, 20);
       this.txtHPCap.TabIndex = 15;
       this.cbClassType.DropDownStyle = ComboBoxStyle.DropDownList;
       this.cbClassType.FormattingEnabled = true;
-      point = new Point(123, 68);
-      this.cbClassType.Location = point;
+
+      this.cbClassType.Location = new Point(123, 68);
       this.cbClassType.Name = "cbClassType";
-      size = new Size(118, 21);
-      this.cbClassType.Size = size;
+
+      this.cbClassType.Size = new Size(118, 21);
       this.cbClassType.TabIndex = 17;
-      point = new Point(30, 68);
-      this.Label7.Location = point;
+
+      this.Label7.Location = new Point(30, 68);
       this.Label7.Name = "Label7";
-      size = new Size(87, 21);
-      this.Label7.Size = size;
+
+      this.Label7.Size = new Size(87, 21);
       this.Label7.TabIndex = 18;
       this.Label7.Text = "Class Type:";
       this.Label7.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(30, 42);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(30, 42);
       this.Label5.Name = "Label5";
-      size = new Size(87, 20);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(87, 20);
       this.Label5.TabIndex = 20;
       this.Label5.Text = "Class Name:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(123, 42);
-      this.txtClassName.Location = point;
+
+      this.txtClassName.Location = new Point(123, 42);
       this.txtClassName.Name = "txtClassName";
-      size = new Size(118, 20);
-      this.txtClassName.Size = size;
+
+      this.txtClassName.Size = new Size(118, 20);
       this.txtClassName.TabIndex = 19;
-      point = new Point(121, 95);
-      this.udColumn.Location = point;
+
+      this.udColumn.Location = new Point(121, 95);
       this.udColumn.Name = "udColumn";
-      size = new Size(120, 20);
-      this.udColumn.Size = size;
+
+      this.udColumn.Size = new Size(120, 20);
       this.udColumn.TabIndex = 21;
       this.udColumn.TextAlign = HorizontalAlignment.Center;
       Decimal num = new Decimal(new int[4]
@@ -520,11 +520,11 @@ namespace Hero_Designer
         0
       });
       this.udColumn.Value = num;
-      point = new Point(30, 95);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(30, 95);
       this.Label8.Name = "Label8";
-      size = new Size(87, 20);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(87, 20);
       this.Label8.TabIndex = 22;
       this.Label8.Text = "Modifier Column:";
       this.Label8.TextAlign = ContentAlignment.MiddleRight;
@@ -539,39 +539,39 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.Label5);
       this.GroupBox1.Controls.Add((Control) this.Label7);
       this.GroupBox1.Controls.Add((Control) this.txtClassName);
-      point = new Point(12, 8);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(12, 8);
       this.GroupBox1.Name = "GroupBox1";
-      size = new Size(247, 151);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(247, 151);
       this.GroupBox1.TabIndex = 23;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Basic";
-      point = new Point(121, 122);
-      this.Label18.Location = point;
+
+      this.Label18.Location = new Point(121, 122);
       this.Label18.Name = "Label18";
-      size = new Size(62, 19);
-      this.Label18.Size = size;
+
+      this.Label18.Size = new Size(62, 19);
       this.Label18.TabIndex = 25;
       this.Label18.Text = "Threat:";
       this.Label18.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(189, 121);
-      this.udThreat.Location = point;
+
+      this.udThreat.Location = new Point(189, 121);
       num = new Decimal(new int[4]{ 10, 0, 0, 0 });
       this.udThreat.Maximum = num;
       this.udThreat.Name = "udThreat";
-      size = new Size(52, 20);
-      this.udThreat.Size = size;
+
+      this.udThreat.Size = new Size(52, 20);
       this.udThreat.TabIndex = 24;
       this.udThreat.TextAlign = HorizontalAlignment.Center;
       num = new Decimal(new int[4]{ 2, 0, 0, 0 });
       this.udThreat.Value = num;
       this.chkPlayable.CheckAlign = ContentAlignment.MiddleRight;
-      point = new Point(13, 121);
-      this.chkPlayable.Location = point;
+
+      this.chkPlayable.Location = new Point(13, 121);
       this.chkPlayable.Name = "chkPlayable";
-      size = new Size(85, 24);
-      this.chkPlayable.Size = size;
+
+      this.chkPlayable.Size = new Size(85, 24);
       this.chkPlayable.TabIndex = 23;
       this.chkPlayable.Text = "Playable:";
       this.chkPlayable.TextAlign = ContentAlignment.MiddleRight;
@@ -601,172 +601,172 @@ namespace Hero_Designer
       this.GroupBox2.Controls.Add((Control) this.Label3);
       this.GroupBox2.Controls.Add((Control) this.Label10);
       this.GroupBox2.Controls.Add((Control) this.Label11);
-      point = new Point(265, 8);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(265, 8);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(247, 352);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(247, 352);
       this.GroupBox2.TabIndex = 24;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "HP && Caps";
-      point = new Point(133, 148);
-      this.txtRecCap.Location = point;
+
+      this.txtRecCap.Location = new Point(133, 148);
       this.txtRecCap.Name = "txtRecCap";
-      size = new Size(90, 20);
-      this.txtRecCap.Size = size;
+
+      this.txtRecCap.Size = new Size(90, 20);
       this.txtRecCap.TabIndex = 34;
       this.txtRecCap.Text = "500";
       this.txtRecCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 148);
-      this.Label21.Location = point;
+
+      this.Label21.Location = new Point(6, 148);
       this.Label21.Name = "Label21";
-      size = new Size(121, 20);
-      this.Label21.Size = size;
+
+      this.Label21.Size = new Size(121, 20);
       this.Label21.TabIndex = 35;
       this.Label21.Text = "Recovery Cap:";
       this.Label21.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(221, 148);
-      this.Label22.Location = point;
+
+      this.Label22.Location = new Point(221, 148);
       this.Label22.Name = "Label22";
-      size = new Size(20, 20);
-      this.Label22.Size = size;
+
+      this.Label22.Size = new Size(20, 20);
       this.Label22.TabIndex = 36;
       this.Label22.Text = "%";
       this.Label22.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(133, 174);
-      this.txtRegCap.Location = point;
+
+      this.txtRegCap.Location = new Point(133, 174);
       this.txtRegCap.Name = "txtRegCap";
-      size = new Size(90, 20);
-      this.txtRegCap.Size = size;
+
+      this.txtRegCap.Size = new Size(90, 20);
       this.txtRegCap.TabIndex = 31;
       this.txtRegCap.Text = "2000";
       this.txtRegCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 174);
-      this.Label23.Location = point;
+
+      this.Label23.Location = new Point(6, 174);
       this.Label23.Name = "Label23";
-      size = new Size(121, 20);
-      this.Label23.Size = size;
+
+      this.Label23.Size = new Size(121, 20);
       this.Label23.TabIndex = 32;
       this.Label23.Text = "Regeneration Cap:";
       this.Label23.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(221, 174);
-      this.Label24.Location = point;
+
+      this.Label24.Location = new Point(221, 174);
       this.Label24.Name = "Label24";
-      size = new Size(20, 20);
-      this.Label24.Size = size;
+
+      this.Label24.Size = new Size(20, 20);
       this.Label24.TabIndex = 33;
       this.Label24.Text = "%";
       this.Label24.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(133, 252);
-      this.txtPerceptionCap.Location = point;
+
+      this.txtPerceptionCap.Location = new Point(133, 252);
       this.txtPerceptionCap.Name = "txtPerceptionCap";
-      size = new Size(90, 20);
-      this.txtPerceptionCap.Size = size;
+
+      this.txtPerceptionCap.Size = new Size(90, 20);
       this.txtPerceptionCap.TabIndex = 29;
       this.txtPerceptionCap.Text = "100";
       this.txtPerceptionCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 252);
-      this.Label20.Location = point;
+
+      this.Label20.Location = new Point(6, 252);
       this.Label20.Name = "Label20";
-      size = new Size(121, 20);
-      this.Label20.Size = size;
+
+      this.Label20.Size = new Size(121, 20);
       this.Label20.TabIndex = 30;
       this.Label20.Text = "Perception Cap";
       this.Label20.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 224);
-      this.txtBaseRegen.Location = point;
+
+      this.txtBaseRegen.Location = new Point(133, 224);
       this.txtBaseRegen.Name = "txtBaseRegen";
-      size = new Size(90, 20);
-      this.txtBaseRegen.Size = size;
+
+      this.txtBaseRegen.Size = new Size(90, 20);
       this.txtBaseRegen.TabIndex = 27;
       this.txtBaseRegen.Text = "100";
       this.txtBaseRegen.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 224);
-      this.Label19.Location = point;
+
+      this.Label19.Location = new Point(6, 224);
       this.Label19.Name = "Label19";
-      size = new Size(121, 20);
-      this.Label19.Size = size;
+
+      this.Label19.Size = new Size(121, 20);
       this.Label19.TabIndex = 28;
       this.Label19.Text = "Base Regeneration:";
       this.Label19.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 198);
-      this.txtBaseRec.Location = point;
+
+      this.txtBaseRec.Location = new Point(133, 198);
       this.txtBaseRec.Name = "txtBaseRec";
-      size = new Size(90, 20);
-      this.txtBaseRec.Size = size;
+
+      this.txtBaseRec.Size = new Size(90, 20);
       this.txtBaseRec.TabIndex = 24;
       this.txtBaseRec.Text = "1.67";
       this.txtBaseRec.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 198);
-      this.Label17.Location = point;
+
+      this.Label17.Location = new Point(6, 198);
       this.Label17.Name = "Label17";
-      size = new Size(121, 20);
-      this.Label17.Size = size;
+
+      this.Label17.Size = new Size(121, 20);
       this.Label17.TabIndex = 25;
       this.Label17.Text = "Base Recovery:";
       this.Label17.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(133, 97);
-      this.txtRechargeCap.Location = point;
+
+      this.txtRechargeCap.Location = new Point(133, 97);
       this.txtRechargeCap.Name = "txtRechargeCap";
-      size = new Size(90, 20);
-      this.txtRechargeCap.Size = size;
+
+      this.txtRechargeCap.Size = new Size(90, 20);
       this.txtRechargeCap.TabIndex = 21;
       this.txtRechargeCap.Text = "600";
       this.txtRechargeCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 97);
-      this.Label12.Location = point;
+
+      this.Label12.Location = new Point(6, 97);
       this.Label12.Name = "Label12";
-      size = new Size(121, 20);
-      this.Label12.Size = size;
+
+      this.Label12.Size = new Size(121, 20);
       this.Label12.TabIndex = 22;
       this.Label12.Text = "Recharge Cap:";
       this.Label12.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(221, 97);
-      this.Label13.Location = point;
+
+      this.Label13.Location = new Point(221, 97);
       this.Label13.Name = "Label13";
-      size = new Size(20, 20);
-      this.Label13.Size = size;
+
+      this.Label13.Size = new Size(20, 20);
       this.Label13.TabIndex = 23;
       this.Label13.Text = "%";
       this.Label13.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(133, 71);
-      this.txtDamCap.Location = point;
+
+      this.txtDamCap.Location = new Point(133, 71);
       this.txtDamCap.Name = "txtDamCap";
-      size = new Size(90, 20);
-      this.txtDamCap.Size = size;
+
+      this.txtDamCap.Size = new Size(90, 20);
       this.txtDamCap.TabIndex = 17;
       this.txtDamCap.Text = "400";
       this.txtDamCap.TextAlign = HorizontalAlignment.Right;
-      point = new Point(6, 71);
-      this.Label9.Location = point;
+
+      this.Label9.Location = new Point(6, 71);
       this.Label9.Name = "Label9";
-      size = new Size(121, 20);
-      this.Label9.Size = size;
+
+      this.Label9.Size = new Size(121, 20);
       this.Label9.TabIndex = 18;
       this.Label9.Text = "Damage Cap:";
       this.Label9.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(221, 123);
-      this.Label10.Location = point;
+
+      this.Label10.Location = new Point(221, 123);
       this.Label10.Name = "Label10";
-      size = new Size(20, 20);
-      this.Label10.Size = size;
+
+      this.Label10.Size = new Size(20, 20);
       this.Label10.TabIndex = 19;
       this.Label10.Text = "%";
       this.Label10.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(221, 71);
-      this.Label11.Location = point;
+
+      this.Label11.Location = new Point(221, 71);
       this.Label11.Name = "Label11";
-      size = new Size(20, 20);
-      this.Label11.Size = size;
+
+      this.Label11.Size = new Size(20, 20);
       this.Label11.TabIndex = 20;
       this.Label11.Text = "%";
       this.Label11.TextAlign = ContentAlignment.MiddleCenter;
       this.GroupBox3.Controls.Add((Control) this.clbOrigin);
-      point = new Point(12, 165);
-      this.GroupBox3.Location = point;
+
+      this.GroupBox3.Location = new Point(12, 165);
       this.GroupBox3.Name = "GroupBox3";
-      size = new Size(247, 276);
-      this.GroupBox3.Size = size;
+
+      this.GroupBox3.Size = new Size(247, 276);
       this.GroupBox3.TabIndex = 25;
       this.GroupBox3.TabStop = false;
       this.GroupBox3.Text = "Origins";
@@ -774,93 +774,93 @@ namespace Hero_Designer
       this.GroupBox4.Controls.Add((Control) this.txtDescLong);
       this.GroupBox4.Controls.Add((Control) this.Label4);
       this.GroupBox4.Controls.Add((Control) this.txtDescShort);
-      point = new Point(12, 447);
-      this.GroupBox4.Location = point;
+
+      this.GroupBox4.Location = new Point(12, 447);
       this.GroupBox4.Name = "GroupBox4";
-      size = new Size(500, 132);
-      this.GroupBox4.Size = size;
+
+      this.GroupBox4.Size = new Size(500, 132);
       this.GroupBox4.TabIndex = 26;
       this.GroupBox4.TabStop = false;
       this.GroupBox4.Text = "Descriptions";
-      point = new Point(12, 45);
-      this.Label14.Location = point;
+
+      this.Label14.Location = new Point(12, 45);
       this.Label14.Name = "Label14";
-      size = new Size(58, 20);
-      this.Label14.Size = size;
+
+      this.Label14.Size = new Size(58, 20);
       this.Label14.TabIndex = 5;
       this.Label14.Text = "Long:";
       this.Label14.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(76, 45);
-      this.txtDescLong.Location = point;
+
+      this.txtDescLong.Location = new Point(76, 45);
       this.txtDescLong.Multiline = true;
       this.txtDescLong.Name = "txtDescLong";
       this.txtDescLong.ScrollBars = ScrollBars.Vertical;
-      size = new Size(418, 81);
-      this.txtDescLong.Size = size;
+
+      this.txtDescLong.Size = new Size(418, 81);
       this.txtDescLong.TabIndex = 4;
-      point = new Point(12, 19);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(12, 19);
       this.Label4.Name = "Label4";
-      size = new Size(58, 20);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(58, 20);
       this.Label4.TabIndex = 3;
       this.Label4.Text = "Short:";
       this.Label4.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(76, 19);
-      this.txtDescShort.Location = point;
+
+      this.txtDescShort.Location = new Point(76, 19);
       this.txtDescShort.Name = "txtDescShort";
-      size = new Size(418, 20);
-      this.txtDescShort.Size = size;
+
+      this.txtDescShort.Size = new Size(418, 20);
       this.txtDescShort.TabIndex = 2;
       this.GroupBox5.Controls.Add((Control) this.cbSecGroup);
       this.GroupBox5.Controls.Add((Control) this.Label16);
       this.GroupBox5.Controls.Add((Control) this.cbPriGroup);
       this.GroupBox5.Controls.Add((Control) this.Label15);
-      point = new Point(265, 366);
-      this.GroupBox5.Location = point;
+
+      this.GroupBox5.Location = new Point(265, 366);
       this.GroupBox5.Name = "GroupBox5";
-      size = new Size(247, 75);
-      this.GroupBox5.Size = size;
+
+      this.GroupBox5.Size = new Size(247, 75);
       this.GroupBox5.TabIndex = 27;
       this.GroupBox5.TabStop = false;
       this.GroupBox5.Text = "Power Set Groups";
       this.cbSecGroup.FormattingEnabled = true;
-      point = new Point(121, 46);
-      this.cbSecGroup.Location = point;
+
+      this.cbSecGroup.Location = new Point(121, 46);
       this.cbSecGroup.Name = "cbSecGroup";
-      size = new Size(118, 21);
-      this.cbSecGroup.Size = size;
+
+      this.cbSecGroup.Size = new Size(118, 21);
       this.cbSecGroup.TabIndex = 21;
-      point = new Point(5, 46);
-      this.Label16.Location = point;
+
+      this.Label16.Location = new Point(5, 46);
       this.Label16.Name = "Label16";
-      size = new Size(110, 21);
-      this.Label16.Size = size;
+
+      this.Label16.Size = new Size(110, 21);
       this.Label16.TabIndex = 22;
       this.Label16.Text = "Secondary Group:";
       this.Label16.TextAlign = ContentAlignment.MiddleRight;
       this.cbPriGroup.FormattingEnabled = true;
-      point = new Point(121, 19);
-      this.cbPriGroup.Location = point;
+
+      this.cbPriGroup.Location = new Point(121, 19);
       this.cbPriGroup.Name = "cbPriGroup";
-      size = new Size(118, 21);
-      this.cbPriGroup.Size = size;
+
+      this.cbPriGroup.Size = new Size(118, 21);
       this.cbPriGroup.TabIndex = 19;
-      point = new Point(5, 19);
-      this.Label15.Location = point;
+
+      this.Label15.Location = new Point(5, 19);
       this.Label15.Name = "Label15";
-      size = new Size(110, 21);
-      this.Label15.Size = size;
+
+      this.Label15.Size = new Size(110, 21);
       this.Label15.TabIndex = 20;
       this.Label15.Text = "Primary Group:";
       this.Label15.TextAlign = ContentAlignment.MiddleRight;
       this.AcceptButton = (IButtonControl) this.btnOK;
-      size = new Size(5, 13);
-      this.AutoScaleBaseSize = size;
+
+      this.AutoScaleBaseSize = new Size(5, 13);
       this.BackColor = SystemColors.Control;
       this.CancelButton = (IButtonControl) this.btnCancel;
-      size = new Size(522, 614);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(522, 614);
       this.Controls.Add((Control) this.GroupBox5);
       this.Controls.Add((Control) this.GroupBox4);
       this.Controls.Add((Control) this.GroupBox3);

@@ -344,79 +344,79 @@ namespace Hero_Designer
       this.btnAttribIndex = new Button();
       this.dlgBrowse = new OpenFileDialog();
       this.SuspendLayout();
-      Point point = new Point(539, 197);
-      this.Button1.Location = point;
+
+      this.Button1.Location = new Point(539, 197);
       this.Button1.Name = "Button1";
-      Size size = new Size(86, 23);
-      this.Button1.Size = size;
+
+      this.Button1.Size = new Size(86, 23);
       this.Button1.TabIndex = 34;
       this.Button1.Text = "Close";
       this.Button1.UseVisualStyleBackColor = true;
-      point = new Point(208, 159);
-      this.lblAttribTableCount.Location = point;
+
+      this.lblAttribTableCount.Location = new Point(208, 159);
       this.lblAttribTableCount.Name = "lblAttribTableCount";
-      size = new Size(132, 18);
-      this.lblAttribTableCount.Size = size;
+
+      this.lblAttribTableCount.Size = new Size(132, 18);
       this.lblAttribTableCount.TabIndex = 33;
       this.lblAttribTableCount.Text = "Recipes:";
-      point = new Point(9, 159);
-      this.lblAttribDate.Location = point;
+
+      this.lblAttribDate.Location = new Point(9, 159);
       this.lblAttribDate.Name = "lblAttribDate";
-      size = new Size(175, 18);
-      this.lblAttribDate.Size = size;
+
+      this.lblAttribDate.Size = new Size(175, 18);
       this.lblAttribDate.TabIndex = 32;
       this.lblAttribDate.Text = "Date:";
       this.lblAttribTables.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 99);
-      this.lblAttribTables.Location = point;
+
+      this.lblAttribTables.Location = new Point(12, 99);
       this.lblAttribTables.Name = "lblAttribTables";
-      size = new Size(521, 46);
-      this.lblAttribTables.Size = size;
+
+      this.lblAttribTables.Size = new Size(521, 46);
       this.lblAttribTables.TabIndex = 27;
       this.lblAttribTables.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 154);
-      this.btnAttribLoad.Location = point;
+
+      this.btnAttribLoad.Location = new Point(539, 154);
       this.btnAttribLoad.Name = "btnAttribLoad";
-      size = new Size(86, 23);
-      this.btnAttribLoad.Size = size;
+
+      this.btnAttribLoad.Size = new Size(86, 23);
       this.btnAttribLoad.TabIndex = 25;
       this.btnAttribLoad.Text = "Import";
       this.btnAttribLoad.UseVisualStyleBackColor = true;
-      point = new Point(12, 83);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(12, 83);
       this.Label4.Name = "Label4";
-      size = new Size(150, 14);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(150, 14);
       this.Label4.TabIndex = 29;
       this.Label4.Text = "Ingredients (baserecipes2)";
-      point = new Point(12, 9);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(12, 9);
       this.Label3.Name = "Label3";
-      size = new Size(150, 14);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(150, 14);
       this.Label3.TabIndex = 28;
       this.Label3.Text = "Detail (baserecipes)";
       this.lblAttribIndex.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 25);
-      this.lblAttribIndex.Location = point;
+
+      this.lblAttribIndex.Location = new Point(12, 25);
       this.lblAttribIndex.Name = "lblAttribIndex";
-      size = new Size(521, 46);
-      this.lblAttribIndex.Size = size;
+
+      this.lblAttribIndex.Size = new Size(521, 46);
       this.lblAttribIndex.TabIndex = 26;
       this.lblAttribIndex.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 99);
-      this.btnAttribTable.Location = point;
+
+      this.btnAttribTable.Location = new Point(539, 99);
       this.btnAttribTable.Name = "btnAttribTable";
-      size = new Size(86, 23);
-      this.btnAttribTable.Size = size;
+
+      this.btnAttribTable.Size = new Size(86, 23);
       this.btnAttribTable.TabIndex = 24;
       this.btnAttribTable.Text = "Browse";
       this.btnAttribTable.UseVisualStyleBackColor = true;
-      point = new Point(539, 25);
-      this.btnAttribIndex.Location = point;
+
+      this.btnAttribIndex.Location = new Point(539, 25);
       this.btnAttribIndex.Name = "btnAttribIndex";
-      size = new Size(86, 23);
-      this.btnAttribIndex.Size = size;
+
+      this.btnAttribIndex.Size = new Size(86, 23);
       this.btnAttribIndex.TabIndex = 23;
       this.btnAttribIndex.Text = "Browse...";
       this.btnAttribIndex.UseVisualStyleBackColor = true;
@@ -424,8 +424,8 @@ namespace Hero_Designer
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
       this.AutoScaleDimensions = new SizeF(6f, 13f);
       this.AutoScaleMode = AutoScaleMode.Font;
-      size = new Size(640, 238);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(640, 238);
       this.Controls.Add((Control) this.Button1);
       this.Controls.Add((Control) this.lblAttribTableCount);
       this.Controls.Add((Control) this.lblAttribDate);

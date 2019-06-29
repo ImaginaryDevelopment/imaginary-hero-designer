@@ -156,30 +156,30 @@ namespace Hero_Designer
       this.Button1 = new Button();
       this.udAttribRevision.BeginInit();
       this.SuspendLayout();
-      Point point = new Point(208, 159);
-      this.lblAttribTableCount.Location = point;
+
+      this.lblAttribTableCount.Location = new Point(208, 159);
       this.lblAttribTableCount.Name = "lblAttribTableCount";
-      Size size = new Size(132, 18);
-      this.lblAttribTableCount.Size = size;
+
+      this.lblAttribTableCount.Size = new Size(132, 18);
       this.lblAttribTableCount.TabIndex = 21;
       this.lblAttribTableCount.Text = "Tables:";
-      point = new Point(9, 159);
-      this.lblAttribDate.Location = point;
+
+      this.lblAttribDate.Location = new Point(9, 159);
       this.lblAttribDate.Name = "lblAttribDate";
-      size = new Size(175, 18);
-      this.lblAttribDate.Size = size;
+
+      this.lblAttribDate.Size = new Size(175, 18);
       this.lblAttribDate.TabIndex = 20;
       this.lblAttribDate.Text = "Date:";
-      point = new Point(346, 159);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(346, 159);
       this.Label1.Name = "Label1";
-      size = new Size(65, 18);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(65, 18);
       this.Label1.TabIndex = 19;
       this.Label1.Text = "Revision:";
       this.Label1.TextAlign = ContentAlignment.TopRight;
-      point = new Point(417, 157);
-      this.udAttribRevision.Location = point;
+
+      this.udAttribRevision.Location = new Point(417, 157);
       this.udAttribRevision.Maximum = new Decimal(new int[4]
       {
         (int) ushort.MaxValue,
@@ -188,77 +188,77 @@ namespace Hero_Designer
         0
       });
       this.udAttribRevision.Name = "udAttribRevision";
-      size = new Size(116, 20);
-      this.udAttribRevision.Size = size;
+
+      this.udAttribRevision.Size = new Size(116, 20);
       this.udAttribRevision.TabIndex = 18;
       this.lblAttribTables.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 99);
-      this.lblAttribTables.Location = point;
+
+      this.lblAttribTables.Location = new Point(12, 99);
       this.lblAttribTables.Name = "lblAttribTables";
-      size = new Size(521, 46);
-      this.lblAttribTables.Size = size;
+
+      this.lblAttribTables.Size = new Size(521, 46);
       this.lblAttribTables.TabIndex = 15;
       this.lblAttribTables.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 154);
-      this.btnAttribLoad.Location = point;
+
+      this.btnAttribLoad.Location = new Point(539, 154);
       this.btnAttribLoad.Name = "btnAttribLoad";
-      size = new Size(86, 23);
-      this.btnAttribLoad.Size = size;
+
+      this.btnAttribLoad.Size = new Size(86, 23);
       this.btnAttribLoad.TabIndex = 13;
       this.btnAttribLoad.Text = "Import";
       this.btnAttribLoad.UseVisualStyleBackColor = true;
       this.dlgBrowse.DefaultExt = "csv";
       this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-      point = new Point(12, 83);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(12, 83);
       this.Label4.Name = "Label4";
-      size = new Size(150, 14);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(150, 14);
       this.Label4.TabIndex = 17;
       this.Label4.Text = "Tables:";
-      point = new Point(12, 9);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(12, 9);
       this.Label3.Name = "Label3";
-      size = new Size(150, 14);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(150, 14);
       this.Label3.TabIndex = 16;
       this.Label3.Text = "Index:";
       this.lblAttribIndex.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 25);
-      this.lblAttribIndex.Location = point;
+
+      this.lblAttribIndex.Location = new Point(12, 25);
       this.lblAttribIndex.Name = "lblAttribIndex";
-      size = new Size(521, 46);
-      this.lblAttribIndex.Size = size;
+
+      this.lblAttribIndex.Size = new Size(521, 46);
       this.lblAttribIndex.TabIndex = 14;
       this.lblAttribIndex.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 99);
-      this.btnAttribTable.Location = point;
+
+      this.btnAttribTable.Location = new Point(539, 99);
       this.btnAttribTable.Name = "btnAttribTable";
-      size = new Size(86, 23);
-      this.btnAttribTable.Size = size;
+
+      this.btnAttribTable.Size = new Size(86, 23);
       this.btnAttribTable.TabIndex = 12;
       this.btnAttribTable.Text = "Browse";
       this.btnAttribTable.UseVisualStyleBackColor = true;
-      point = new Point(539, 25);
-      this.btnAttribIndex.Location = point;
+
+      this.btnAttribIndex.Location = new Point(539, 25);
       this.btnAttribIndex.Name = "btnAttribIndex";
-      size = new Size(86, 23);
-      this.btnAttribIndex.Size = size;
+
+      this.btnAttribIndex.Size = new Size(86, 23);
       this.btnAttribIndex.TabIndex = 11;
       this.btnAttribIndex.Text = "Browse...";
       this.btnAttribIndex.UseVisualStyleBackColor = true;
-      point = new Point(539, 197);
-      this.Button1.Location = point;
+
+      this.Button1.Location = new Point(539, 197);
       this.Button1.Name = "Button1";
-      size = new Size(86, 23);
-      this.Button1.Size = size;
+
+      this.Button1.Size = new Size(86, 23);
       this.Button1.TabIndex = 22;
       this.Button1.Text = "Close";
       this.Button1.UseVisualStyleBackColor = true;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
       this.AutoScaleMode = AutoScaleMode.Font;
-      size = new Size(631, 232);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(631, 232);
       this.Controls.Add((Control) this.Button1);
       this.Controls.Add((Control) this.lblAttribTableCount);
       this.Controls.Add((Control) this.lblAttribDate);

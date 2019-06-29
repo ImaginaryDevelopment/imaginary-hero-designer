@@ -258,59 +258,59 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.txtOvr);
       this.GroupBox1.Controls.Add((Control) this.lstTweaks);
       this.GroupBox1.Controls.Add((Control) this.GroupBox2);
-      Point point = new Point(8, 8);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(8, 8);
       this.GroupBox1.Name = "GroupBox1";
-      Size size = new Size(580, 424);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(580, 424);
       this.GroupBox1.TabIndex = 0;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Override Editor";
       this.Button2.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.Button2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.Button2.ForeColor = Color.Black;
-      point = new Point(320, 52);
-      this.Button2.Location = point;
+
+      this.Button2.Location = new Point(320, 52);
       this.Button2.Name = "Button2";
-      size = new Size(56, 24);
-      this.Button2.Size = size;
+
+      this.Button2.Size = new Size(56, 24);
       this.Button2.TabIndex = 9;
       this.Button2.Text = "Update";
       this.Button2.UseVisualStyleBackColor = false;
       this.Button1.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.Button1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.Button1.ForeColor = Color.Black;
-      point = new Point(516, 392);
-      this.Button1.Location = point;
+
+      this.Button1.Location = new Point(516, 392);
       this.Button1.Name = "Button1";
-      size = new Size(56, 24);
-      this.Button1.Size = size;
+
+      this.Button1.Size = new Size(56, 24);
       this.Button1.TabIndex = 8;
       this.Button1.Text = "Close";
       this.Button1.UseVisualStyleBackColor = false;
       this.btnDel.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.btnDel.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.btnDel.ForeColor = Color.Black;
-      point = new Point(236, 52);
-      this.btnDel.Location = point;
+
+      this.btnDel.Location = new Point(236, 52);
       this.btnDel.Name = "btnDel";
-      size = new Size(56, 24);
-      this.btnDel.Size = size;
+
+      this.btnDel.Size = new Size(56, 24);
       this.btnDel.TabIndex = 7;
       this.btnDel.Text = "Delete";
       this.btnDel.UseVisualStyleBackColor = false;
-      point = new Point(232, 24);
-      this.txtOvr.Location = point;
+
+      this.txtOvr.Location = new Point(232, 24);
       this.txtOvr.Name = "txtOvr";
-      size = new Size(336, 20);
-      this.txtOvr.Size = size;
+
+      this.txtOvr.Size = new Size(336, 20);
       this.txtOvr.TabIndex = 6;
       this.txtOvr.Text = "Override Desc";
-      point = new Point(8, 20);
-      this.lstTweaks.Location = point;
+
+      this.lstTweaks.Location = new Point(8, 20);
       this.lstTweaks.Name = "lstTweaks";
-      size = new Size(216, 394);
-      this.lstTweaks.Size = size;
+
+      this.lstTweaks.Size = new Size(216, 394);
       this.lstTweaks.TabIndex = 0;
       this.GroupBox2.Controls.Add((Control) this.cbPower);
       this.GroupBox2.Controls.Add((Control) this.cbSet1);
@@ -319,72 +319,72 @@ namespace Hero_Designer
       this.GroupBox2.Controls.Add((Control) this.txtAddActual);
       this.GroupBox2.Controls.Add((Control) this.txtAddOvr);
       this.GroupBox2.Controls.Add((Control) this.btnAdd);
-      point = new Point(232, 112);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(232, 112);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(336, 204);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(336, 204);
       this.GroupBox2.TabIndex = 3;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "Add:";
       this.cbPower.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(8, 92);
-      this.cbPower.Location = point;
+
+      this.cbPower.Location = new Point(8, 92);
       this.cbPower.Name = "cbPower";
-      size = new Size(132, 21);
-      this.cbPower.Size = size;
+
+      this.cbPower.Size = new Size(132, 21);
       this.cbPower.TabIndex = 6;
       this.cbSet1.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(8, 68);
-      this.cbSet1.Location = point;
+
+      this.cbSet1.Location = new Point(8, 68);
       this.cbSet1.Name = "cbSet1";
-      size = new Size(132, 21);
-      this.cbSet1.Size = size;
+
+      this.cbSet1.Size = new Size(132, 21);
       this.cbSet1.TabIndex = 2;
       this.cbType1.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(8, 44);
-      this.cbType1.Location = point;
+
+      this.cbType1.Location = new Point(8, 44);
       this.cbType1.Name = "cbType1";
-      size = new Size(132, 21);
-      this.cbType1.Size = size;
+
+      this.cbType1.Size = new Size(132, 21);
       this.cbType1.TabIndex = 1;
       this.cbAT1.DropDownStyle = ComboBoxStyle.DropDownList;
-      point = new Point(8, 20);
-      this.cbAT1.Location = point;
+
+      this.cbAT1.Location = new Point(8, 20);
       this.cbAT1.Name = "cbAT1";
-      size = new Size(132, 21);
-      this.cbAT1.Size = size;
+
+      this.cbAT1.Size = new Size(132, 21);
       this.cbAT1.TabIndex = 0;
       this.txtAddActual.Enabled = false;
-      point = new Point(8, 120);
-      this.txtAddActual.Location = point;
+
+      this.txtAddActual.Location = new Point(8, 120);
       this.txtAddActual.Name = "txtAddActual";
-      size = new Size(336, 20);
-      this.txtAddActual.Size = size;
+
+      this.txtAddActual.Size = new Size(336, 20);
       this.txtAddActual.TabIndex = 3;
       this.txtAddActual.Text = "Actual Desc";
-      point = new Point(8, 148);
-      this.txtAddOvr.Location = point;
+
+      this.txtAddOvr.Location = new Point(8, 148);
       this.txtAddOvr.Name = "txtAddOvr";
-      size = new Size(336, 20);
-      this.txtAddOvr.Size = size;
+
+      this.txtAddOvr.Size = new Size(336, 20);
       this.txtAddOvr.TabIndex = 4;
       this.txtAddOvr.Text = "Override Desc";
       this.btnAdd.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.btnAdd.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.btnAdd.ForeColor = Color.Black;
-      point = new Point(8, 172);
-      this.btnAdd.Location = point;
+
+      this.btnAdd.Location = new Point(8, 172);
       this.btnAdd.Name = "btnAdd";
-      size = new Size(56, 24);
-      this.btnAdd.Size = size;
+
+      this.btnAdd.Size = new Size(56, 24);
       this.btnAdd.TabIndex = 5;
       this.btnAdd.Text = "Add";
       this.btnAdd.UseVisualStyleBackColor = false;
       this.AutoScaleMode = AutoScaleMode.None;
       this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(602, 446);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(602, 446);
       this.Controls.Add((Control) this.GroupBox1);
       this.ForeColor = Color.White;
       this.FormBorderStyle = FormBorderStyle.Fixed3D;

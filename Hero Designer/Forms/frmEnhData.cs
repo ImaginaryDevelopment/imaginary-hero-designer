@@ -1000,46 +1000,46 @@ namespace Hero_Designer
             this.gbBasic.Controls.Add((Control)this.Label3);
             this.gbBasic.Controls.Add((Control)this.txtNameFull);
             this.gbBasic.Controls.Add((Control)this.Label2);
-            Point point = new Point(96, 8);
-            this.gbBasic.Location = point;
+
+            this.gbBasic.Location = new Point(96, 8);
             this.gbBasic.Name = "gbBasic";
-            Size size = new Size(248, 169);
-            this.gbBasic.Size = size;
+
+            this.gbBasic.Size = new Size(248, 169);
             this.gbBasic.TabIndex = 11;
             this.gbBasic.TabStop = false;
             this.gbBasic.Text = "Basic:";
-            point = new Point(84, 68);
-            this.txtInternal.Location = point;
+
+            this.txtInternal.Location = new Point(84, 68);
             this.txtInternal.Name = "txtInternal";
-            size = new Size(156, 20);
-            this.txtInternal.Size = size;
+
+            this.txtInternal.Size = new Size(156, 20);
             this.txtInternal.TabIndex = 21;
-            point = new Point(8, 68);
-            this.Label9.Location = point;
+
+            this.Label9.Location = new Point(8, 68);
             this.Label9.Name = "Label9";
-            size = new Size(72, 20);
-            this.Label9.Size = size;
+
+            this.Label9.Size = new Size(72, 20);
             this.Label9.TabIndex = 20;
             this.Label9.Text = "Internal:";
             this.Label9.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(134, 140);
-            this.Label7.Location = point;
+
+            this.Label7.Location = new Point(134, 140);
             this.Label7.Name = "Label7";
-            size = new Size(56, 20);
-            this.Label7.Size = size;
+
+            this.Label7.Size = new Size(56, 20);
             this.Label7.TabIndex = 19;
             this.Label7.Text = "to";
             this.Label7.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(6, 140);
-            this.Label6.Location = point;
+
+            this.Label6.Location = new Point(6, 140);
             this.Label6.Name = "Label6";
-            size = new Size(74, 20);
-            this.Label6.Size = size;
+
+            this.Label6.Size = new Size(74, 20);
             this.Label6.TabIndex = 18;
             this.Label6.Text = "Level range:";
             this.Label6.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 140);
-            this.udMinLevel.Location = point;
+
+            this.udMinLevel.Location = new Point(84, 140);
             Decimal num = new Decimal(new int[4]
             {
         53,
@@ -1051,73 +1051,73 @@ namespace Hero_Designer
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udMinLevel.Minimum = num;
             this.udMinLevel.Name = "udMinLevel";
-            size = new Size(44, 20);
-            this.udMinLevel.Size = size;
+
+            this.udMinLevel.Size = new Size(44, 20);
             this.udMinLevel.TabIndex = 17;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udMinLevel.Value = num;
-            point = new Point(196, 140);
-            this.udMaxLevel.Location = point;
+
+            this.udMaxLevel.Location = new Point(196, 140);
             num = new Decimal(new int[4] { 53, 0, 0, 0 });
             this.udMaxLevel.Maximum = num;
             num = new Decimal(new int[4] { 1, 0, 0, 0 });
             this.udMaxLevel.Minimum = num;
             this.udMaxLevel.Name = "udMaxLevel";
-            size = new Size(44, 20);
-            this.udMaxLevel.Size = size;
+
+            this.udMaxLevel.Size = new Size(44, 20);
             this.udMaxLevel.TabIndex = 16;
             num = new Decimal(new int[4] { 53, 0, 0, 0 });
             this.udMaxLevel.Value = num;
-            point = new Point(84, 94);
-            this.txtDesc.Location = point;
+
+            this.txtDesc.Location = new Point(84, 94);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            size = new Size(156, 40);
-            this.txtDesc.Size = size;
+
+            this.txtDesc.Size = new Size(156, 40);
             this.txtDesc.TabIndex = 15;
-            point = new Point(8, 98);
-            this.Label4.Location = point;
+
+            this.Label4.Location = new Point(8, 98);
             this.Label4.Name = "Label4";
-            size = new Size(72, 20);
-            this.Label4.Size = size;
+
+            this.Label4.Size = new Size(72, 20);
             this.Label4.TabIndex = 14;
             this.Label4.Text = "Description:";
             this.Label4.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 42);
-            this.txtNameShort.Location = point;
+
+            this.txtNameShort.Location = new Point(84, 42);
             this.txtNameShort.Name = "txtNameShort";
-            size = new Size(156, 20);
-            this.txtNameShort.Size = size;
+
+            this.txtNameShort.Size = new Size(156, 20);
             this.txtNameShort.TabIndex = 13;
-            point = new Point(8, 42);
-            this.Label3.Location = point;
+
+            this.Label3.Location = new Point(8, 42);
             this.Label3.Name = "Label3";
-            size = new Size(72, 20);
-            this.Label3.Size = size;
+
+            this.Label3.Size = new Size(72, 20);
             this.Label3.TabIndex = 12;
             this.Label3.Text = "Short Name:";
             this.Label3.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 16);
-            this.txtNameFull.Location = point;
+
+            this.txtNameFull.Location = new Point(84, 16);
             this.txtNameFull.Name = "txtNameFull";
-            size = new Size(156, 20);
-            this.txtNameFull.Size = size;
+
+            this.txtNameFull.Size = new Size(156, 20);
             this.txtNameFull.TabIndex = 11;
-            point = new Point(8, 16);
-            this.Label2.Location = point;
+
+            this.Label2.Location = new Point(8, 16);
             this.Label2.Name = "Label2";
-            size = new Size(72, 20);
-            this.Label2.Size = size;
+
+            this.Label2.Size = new Size(72, 20);
             this.Label2.TabIndex = 10;
             this.Label2.Text = "Full Name:";
             this.Label2.TextAlign = ContentAlignment.MiddleRight;
             this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
             this.btnImage.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 12);
-            this.btnImage.Location = point;
+
+            this.btnImage.Location = new Point(8, 12);
             this.btnImage.Name = "btnImage";
-            size = new Size(80, 68);
-            this.btnImage.Size = size;
+
+            this.btnImage.Size = new Size(80, 68);
             this.btnImage.TabIndex = 9;
             this.btnImage.Text = "ImageName";
             this.btnImage.TextAlign = ContentAlignment.BottomCenter;
@@ -1126,31 +1126,31 @@ namespace Hero_Designer
             this.gbType.Controls.Add((Control)this.typeIO);
             this.gbType.Controls.Add((Control)this.typeRegular);
             this.gbType.Controls.Add((Control)this.typeHO);
-            point = new Point(352, 8);
-            this.gbType.Location = point;
+
+            this.gbType.Location = new Point(352, 8);
             this.gbType.Name = "gbType";
-            size = new Size(140, 169);
-            this.gbType.Size = size;
+
+            this.gbType.Size = new Size(140, 169);
             this.gbType.TabIndex = 2;
             this.gbType.TabStop = false;
             this.gbType.Text = "Enhancement Type:";
             this.cbSubType.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 138);
-            this.cbSubType.Location = point;
+
+            this.cbSubType.Location = new Point(8, 138);
             this.cbSubType.Name = "cbSubType";
-            size = new Size(124, 22);
-            this.cbSubType.Size = size;
+
+            this.cbSubType.Size = new Size(124, 22);
             this.cbSubType.TabIndex = 54;
             this.tTip.SetToolTip((Control)this.cbSubType, "(Currently only apllicable to Stealth IOs");
             this.typeSet.Appearance = Appearance.Button;
             this.typeSet.CheckAlign = ContentAlignment.TopCenter;
             this.typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
             this.typeSet.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(72, 76);
-            this.typeSet.Location = point;
+
+            this.typeSet.Location = new Point(72, 76);
             this.typeSet.Name = "typeSet";
-            size = new Size(60, 56);
-            this.typeSet.Size = size;
+
+            this.typeSet.Size = new Size(60, 56);
             this.typeSet.TabIndex = 53;
             this.typeSet.Text = "IO Set";
             this.typeSet.TextAlign = ContentAlignment.BottomCenter;
@@ -1158,11 +1158,11 @@ namespace Hero_Designer
             this.typeIO.CheckAlign = ContentAlignment.TopCenter;
             this.typeIO.Image = (Image)componentResourceManager.GetObject("typeIO.Image");
             this.typeIO.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(72, 16);
-            this.typeIO.Location = point;
+
+            this.typeIO.Location = new Point(72, 16);
             this.typeIO.Name = "typeIO";
-            size = new Size(60, 56);
-            this.typeIO.Size = size;
+
+            this.typeIO.Size = new Size(60, 56);
             this.typeIO.TabIndex = 52;
             this.typeIO.Text = "Invention";
             this.typeIO.TextAlign = ContentAlignment.BottomCenter;
@@ -1170,11 +1170,11 @@ namespace Hero_Designer
             this.typeRegular.CheckAlign = ContentAlignment.TopCenter;
             this.typeRegular.Image = (Image)componentResourceManager.GetObject("typeRegular.Image");
             this.typeRegular.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 16);
-            this.typeRegular.Location = point;
+
+            this.typeRegular.Location = new Point(8, 16);
             this.typeRegular.Name = "typeRegular";
-            size = new Size(60, 56);
-            this.typeRegular.Size = size;
+
+            this.typeRegular.Size = new Size(60, 56);
             this.typeRegular.TabIndex = 50;
             this.typeRegular.Text = "Regular";
             this.typeRegular.TextAlign = ContentAlignment.BottomCenter;
@@ -1182,52 +1182,52 @@ namespace Hero_Designer
             this.typeHO.CheckAlign = ContentAlignment.TopCenter;
             this.typeHO.Image = (Image)componentResourceManager.GetObject("typeHO.Image");
             this.typeHO.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 76);
-            this.typeHO.Location = point;
+
+            this.typeHO.Location = new Point(8, 76);
             this.typeHO.Name = "typeHO";
-            size = new Size(60, 56);
-            this.typeHO.Size = size;
+
+            this.typeHO.Size = new Size(60, 56);
             this.typeHO.TabIndex = 51;
             this.typeHO.Text = "Special";
             this.typeHO.TextAlign = ContentAlignment.BottomCenter;
             this.cbSet.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 20);
-            this.cbSet.Location = point;
+
+            this.cbSet.Location = new Point(8, 20);
             this.cbSet.Name = "cbSet";
-            size = new Size(168, 22);
-            this.cbSet.Size = size;
+
+            this.cbSet.Size = new Size(168, 22);
             this.cbSet.TabIndex = 13;
             this.gbSet.Controls.Add((Control)this.chkSuperior);
             this.gbSet.Controls.Add((Control)this.pbSet);
             this.gbSet.Controls.Add((Control)this.cbSet);
             this.gbSet.Controls.Add((Control)this.chkUnique);
-            point = new Point(496, 8);
-            this.gbSet.Location = point;
+
+            this.gbSet.Location = new Point(496, 8);
             this.gbSet.Name = "gbSet";
-            size = new Size(184, 119);
-            this.gbSet.Size = size;
+
+            this.gbSet.Size = new Size(184, 119);
             this.gbSet.TabIndex = 14;
             this.gbSet.TabStop = false;
             this.gbSet.Text = "Invention Origin Set:";
-            point = new Point(60, 94);
-            this.chkSuperior.Location = point;
+
+            this.chkSuperior.Location = new Point(60, 94);
             this.chkSuperior.Name = "chkSuperior";
-            size = new Size(84, 16);
-            this.chkSuperior.Size = size;
+
+            this.chkSuperior.Size = new Size(84, 16);
             this.chkSuperior.TabIndex = 21;
             this.chkSuperior.Text = "Superior";
-            point = new Point(12, 52);
-            this.pbSet.Location = point;
+
+            this.pbSet.Location = new Point(12, 52);
             this.pbSet.Name = "pbSet";
-            size = new Size(30, 30);
-            this.pbSet.Size = size;
+
+            this.pbSet.Size = new Size(30, 30);
             this.pbSet.TabIndex = 14;
             this.pbSet.TabStop = false;
-            point = new Point(60, 60);
-            this.chkUnique.Location = point;
+
+            this.chkUnique.Location = new Point(60, 60);
             this.chkUnique.Name = "chkUnique";
-            size = new Size(84, 16);
-            this.chkUnique.Size = size;
+
+            this.chkUnique.Size = new Size(84, 16);
             this.chkUnique.TabIndex = 20;
             this.chkUnique.Text = "Unique";
             this.gbEffects.Controls.Add((Control)this.btnDown);
@@ -1248,114 +1248,114 @@ namespace Hero_Designer
             this.gbEffects.Controls.Add((Control)this.lstAvailable);
             this.gbEffects.Controls.Add((Control)this.cbSched);
             this.gbEffects.Controls.Add((Control)this.lblSched);
-            point = new Point(4, 210);
-            this.gbEffects.Location = point;
+
+            this.gbEffects.Location = new Point(4, 210);
             this.gbEffects.Name = "gbEffects";
-            size = new Size(584, 284);
-            this.gbEffects.Size = size;
+
+            this.gbEffects.Size = new Size(584, 284);
             this.gbEffects.TabIndex = 15;
             this.gbEffects.TabStop = false;
             this.gbEffects.Text = "Effects:";
-            point = new Point(188, 172);
-            this.btnDown.Location = point;
+
+            this.btnDown.Location = new Point(188, 172);
             this.btnDown.Name = "btnDown";
-            size = new Size(48, 20);
-            this.btnDown.Size = size;
+
+            this.btnDown.Size = new Size(48, 20);
             this.btnDown.TabIndex = 32;
             this.btnDown.Text = "Down";
-            point = new Point(188, 148);
-            this.btnUp.Location = point;
+
+            this.btnUp.Location = new Point(188, 148);
             this.btnUp.Name = "btnUp";
-            size = new Size(48, 20);
-            this.btnUp.Size = size;
+
+            this.btnUp.Size = new Size(48, 20);
             this.btnUp.TabIndex = 31;
             this.btnUp.Text = "Up";
             this.rbBoth.Checked = true;
-            point = new Point(428, 228);
-            this.rbBoth.Location = point;
+
+            this.rbBoth.Location = new Point(428, 228);
             this.rbBoth.Name = "rbBoth";
-            size = new Size(148, 16);
-            this.rbBoth.Size = size;
+
+            this.rbBoth.Size = new Size(148, 16);
             this.rbBoth.TabIndex = 30;
             this.rbBoth.TabStop = true;
             this.rbBoth.Text = "Buff/Debuff Effects";
             this.tTip.SetToolTip((Control)this.rbBoth, "Apply to effects regardles of whether the Mag is positive or negative");
-            point = new Point(428, 212);
-            this.rbDebuff.Location = point;
+
+            this.rbDebuff.Location = new Point(428, 212);
             this.rbDebuff.Name = "rbDebuff";
-            size = new Size(148, 16);
-            this.rbDebuff.Size = size;
+
+            this.rbDebuff.Size = new Size(148, 16);
             this.rbDebuff.TabIndex = 29;
             this.rbDebuff.Text = "Debuff Effects";
             this.tTip.SetToolTip((Control)this.rbDebuff, "Apply only to effects with a negative Mag");
-            point = new Point(428, 196);
-            this.rbBuff.Location = point;
+
+            this.rbBuff.Location = new Point(428, 196);
             this.rbBuff.Name = "rbBuff";
-            size = new Size(148, 16);
-            this.rbBuff.Size = size;
+
+            this.rbBuff.Size = new Size(148, 16);
             this.rbBuff.TabIndex = 28;
             this.rbBuff.Text = "Buff Effects";
             this.tTip.SetToolTip((Control)this.rbBuff, "Apply only to effects with a positive Mag");
-            point = new Point(128, 24);
-            this.btnAutoFill.Location = point;
+
+            this.btnAutoFill.Location = new Point(128, 24);
             this.btnAutoFill.Name = "btnAutoFill";
-            size = new Size(108, 32);
-            this.btnAutoFill.Size = size;
+
+            this.btnAutoFill.Size = new Size(108, 32);
             this.btnAutoFill.TabIndex = 27;
             this.btnAutoFill.Text = "AutoFill Names";
-            point = new Point(196, 244);
-            this.Label5.Location = point;
+
+            this.Label5.Location = new Point(196, 244);
             this.Label5.Name = "Label5";
-            size = new Size(28, 20);
-            this.Label5.Size = size;
+
+            this.Label5.Size = new Size(28, 20);
             this.Label5.TabIndex = 26;
             this.Label5.Text = "(0-1)";
             this.Label5.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(156, 244);
-            this.txtProb.Location = point;
+
+            this.txtProb.Location = new Point(156, 244);
             this.txtProb.Name = "txtProb";
-            size = new Size(36, 20);
-            this.txtProb.Size = size;
+
+            this.txtProb.Size = new Size(36, 20);
             this.txtProb.TabIndex = 25;
             this.txtProb.Text = "1";
-            point = new Point(8, 244);
-            this.Label1.Location = point;
+
+            this.Label1.Location = new Point(8, 244);
             this.Label1.Name = "Label1";
-            size = new Size(148, 20);
-            this.Label1.Size = size;
+
+            this.Label1.Size = new Size(148, 20);
             this.Label1.TabIndex = 24;
             this.Label1.Text = "Special Effect Probability:";
             this.Label1.TextAlign = ContentAlignment.MiddleRight;
             this.btnEdit.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(424, 248);
-            this.btnEdit.Location = point;
+
+            this.btnEdit.Location = new Point(424, 248);
             this.btnEdit.Name = "btnEdit";
-            size = new Size(152, 28);
-            this.btnEdit.Size = size;
+
+            this.btnEdit.Size = new Size(152, 28);
             this.btnEdit.TabIndex = 23;
             this.btnEdit.Text = "Edit Selected...";
             this.btnAddFX.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(8, 208);
-            this.btnAddFX.Location = point;
+
+            this.btnAddFX.Location = new Point(8, 208);
             this.btnAddFX.Name = "btnAddFX";
-            size = new Size(228, 28);
-            this.btnAddFX.Size = size;
+
+            this.btnAddFX.Size = new Size(228, 28);
             this.btnAddFX.TabIndex = 22;
             this.btnAddFX.Text = "Add Special Effect... ->";
             this.btnRemove.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(240, 248);
-            this.btnRemove.Location = point;
+
+            this.btnRemove.Location = new Point(240, 248);
             this.btnRemove.Name = "btnRemove";
-            size = new Size(176, 28);
-            this.btnRemove.Size = size;
+
+            this.btnRemove.Size = new Size(176, 28);
             this.btnRemove.TabIndex = 21;
             this.btnRemove.Text = "Remove Selected";
             this.btnAdd.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(128, 100);
-            this.btnAdd.Location = point;
+
+            this.btnAdd.Location = new Point(128, 100);
             this.btnAdd.Name = "btnAdd";
-            size = new Size(108, 28);
-            this.btnAdd.Size = size;
+
+            this.btnAdd.Size = new Size(108, 28);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add ->";
             this.gbMod.Controls.Add((Control)this.rbMod4);
@@ -1364,207 +1364,207 @@ namespace Hero_Designer
             this.gbMod.Controls.Add((Control)this.rbMod3);
             this.gbMod.Controls.Add((Control)this.rbMod2);
             this.gbMod.Controls.Add((Control)this.rbMod1);
-            point = new Point(424, 44);
-            this.gbMod.Location = point;
+
+            this.gbMod.Location = new Point(424, 44);
             this.gbMod.Name = "gbMod";
-            size = new Size(152, 148);
-            this.gbMod.Size = size;
+
+            this.gbMod.Size = new Size(152, 148);
             this.gbMod.TabIndex = 19;
             this.gbMod.TabStop = false;
             this.gbMod.Text = "Effect Modifier:";
-            point = new Point(12, 80);
-            this.rbMod4.Location = point;
+
+            this.rbMod4.Location = new Point(12, 80);
             this.rbMod4.Name = "rbMod4";
-            size = new Size(128, 20);
-            this.rbMod4.Size = size;
+
+            this.rbMod4.Size = new Size(128, 20);
             this.rbMod4.TabIndex = 5;
             this.rbMod4.Text = "0.4375 (4-Effect IO)";
             this.txtModOther.Enabled = false;
-            point = new Point(28, 120);
-            this.txtModOther.Location = point;
+
+            this.txtModOther.Location = new Point(28, 120);
             this.txtModOther.Name = "txtModOther";
-            size = new Size(112, 20);
-            this.txtModOther.Size = size;
+
+            this.txtModOther.Size = new Size(112, 20);
             this.txtModOther.TabIndex = 4;
-            point = new Point(12, 100);
-            this.rbModOther.Location = point;
+
+            this.rbModOther.Location = new Point(12, 100);
             this.rbModOther.Name = "rbModOther";
-            size = new Size(128, 20);
-            this.rbModOther.Size = size;
+
+            this.rbModOther.Size = new Size(128, 20);
             this.rbModOther.TabIndex = 3;
             this.rbModOther.Text = "Other";
-            point = new Point(12, 60);
-            this.rbMod3.Location = point;
+
+            this.rbMod3.Location = new Point(12, 60);
             this.rbMod3.Name = "rbMod3";
-            size = new Size(128, 20);
-            this.rbMod3.Size = size;
+
+            this.rbMod3.Size = new Size(128, 20);
             this.rbMod3.TabIndex = 2;
             this.rbMod3.Text = "0.5 (3-Effect IO)";
-            point = new Point(12, 40);
-            this.rbMod2.Location = point;
+
+            this.rbMod2.Location = new Point(12, 40);
             this.rbMod2.Name = "rbMod2";
-            size = new Size(128, 20);
-            this.rbMod2.Size = size;
+
+            this.rbMod2.Size = new Size(128, 20);
             this.rbMod2.TabIndex = 1;
             this.rbMod2.Text = "0.625 (2-Effect IO)";
             this.rbMod1.Checked = true;
-            point = new Point(12, 20);
-            this.rbMod1.Location = point;
+
+            this.rbMod1.Location = new Point(12, 20);
             this.rbMod1.Name = "rbMod1";
-            size = new Size(128, 20);
-            this.rbMod1.Size = size;
+
+            this.rbMod1.Size = new Size(128, 20);
             this.rbMod1.TabIndex = 0;
             this.rbMod1.TabStop = true;
             this.rbMod1.Text = "1.0 (No modifier)";
             this.lstSelected.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             this.lstSelected.ItemHeight = 14;
-            point = new Point(240, 20);
-            this.lstSelected.Location = point;
+
+            this.lstSelected.Location = new Point(240, 20);
             this.lstSelected.Name = "lstSelected";
-            size = new Size(176, 214);
-            this.lstSelected.Size = size;
+
+            this.lstSelected.Size = new Size(176, 214);
             this.lstSelected.TabIndex = 16;
             this.lstAvailable.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             this.lstAvailable.ItemHeight = 14;
-            point = new Point(8, 20);
-            this.lstAvailable.Location = point;
+
+            this.lstAvailable.Location = new Point(8, 20);
             this.lstAvailable.Name = "lstAvailable";
-            size = new Size(116, 172);
-            this.lstAvailable.Size = size;
+
+            this.lstAvailable.Size = new Size(116, 172);
             this.lstAvailable.TabIndex = 15;
             this.cbSched.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(488, 20);
-            this.cbSched.Location = point;
+
+            this.cbSched.Location = new Point(488, 20);
             this.cbSched.Name = "cbSched";
-            size = new Size(88, 22);
-            this.cbSched.Size = size;
+
+            this.cbSched.Size = new Size(88, 22);
             this.cbSched.TabIndex = 14;
-            point = new Point(424, 20);
-            this.lblSched.Location = point;
+
+            this.lblSched.Location = new Point(424, 20);
             this.lblSched.Name = "lblSched";
-            size = new Size(64, 20);
-            this.lblSched.Size = size;
+
+            this.lblSched.Size = new Size(64, 20);
             this.lblSched.TabIndex = 3;
             this.lblSched.Text = "Schedule:";
             this.lblSched.TextAlign = ContentAlignment.MiddleRight;
             this.btnOK.DialogResult = DialogResult.OK;
-            point = new Point(596, 434);
-            this.btnOK.Location = point;
+
+            this.btnOK.Location = new Point(596, 434);
             this.btnOK.Name = "btnOK";
-            size = new Size(84, 28);
-            this.btnOK.Size = size;
+
+            this.btnOK.Size = new Size(84, 28);
             this.btnOK.TabIndex = 16;
             this.btnOK.Text = "OK";
             this.btnCancel.DialogResult = DialogResult.Cancel;
-            point = new Point(596, 466);
-            this.btnCancel.Location = point;
+
+            this.btnCancel.Location = new Point(596, 466);
             this.btnCancel.Name = "btnCancel";
-            size = new Size(84, 28);
-            this.btnCancel.Size = size;
+
+            this.btnCancel.Size = new Size(84, 28);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Cancel";
             this.gbClass.Controls.Add((Control)this.lblClass);
             this.gbClass.Controls.Add((Control)this.pnlClassList);
             this.gbClass.Controls.Add((Control)this.pnlClass);
-            point = new Point(596, 178);
-            this.gbClass.Location = point;
+
+            this.gbClass.Location = new Point(596, 178);
             this.gbClass.Name = "gbClass";
-            size = new Size(84, 252);
-            this.gbClass.Size = size;
+
+            this.gbClass.Size = new Size(84, 252);
             this.gbClass.TabIndex = 18;
             this.gbClass.TabStop = false;
             this.gbClass.Text = "Class(es):";
-            point = new Point(8, 232);
-            this.lblClass.Location = point;
+
+            this.lblClass.Location = new Point(8, 232);
             this.lblClass.Name = "lblClass";
-            size = new Size(68, 16);
-            this.lblClass.Size = size;
+
+            this.lblClass.Size = new Size(68, 16);
             this.lblClass.TabIndex = 2;
             this.pnlClassList.BackColor = Color.Black;
-            point = new Point(84, 16);
-            this.pnlClassList.Location = point;
+
+            this.pnlClassList.Location = new Point(84, 16);
             this.pnlClassList.Name = "pnlClassList";
-            size = new Size(180, 212);
-            this.pnlClassList.Size = size;
+
+            this.pnlClassList.Size = new Size(180, 212);
             this.pnlClassList.TabIndex = 1;
             this.pnlClass.BackColor = Color.Black;
-            point = new Point(8, 16);
-            this.pnlClass.Location = point;
+
+            this.pnlClass.Location = new Point(8, 16);
             this.pnlClass.Name = "pnlClass";
-            size = new Size(68, 212);
-            this.pnlClass.Size = size;
+
+            this.pnlClass.Size = new Size(68, 212);
             this.pnlClass.TabIndex = 0;
             this.ImagePicker.Filter = "PNG Images|*.png";
             this.ImagePicker.Title = "Select Image File";
-            point = new Point(8, 84);
-            this.btnNoImage.Location = point;
+
+            this.btnNoImage.Location = new Point(8, 84);
             this.btnNoImage.Name = "btnNoImage";
-            size = new Size(80, 20);
-            this.btnNoImage.Size = size;
+
+            this.btnNoImage.Size = new Size(80, 20);
             this.btnNoImage.TabIndex = 19;
             this.btnNoImage.Text = "Clear Image";
             this.tTip.AutoPopDelay = 10000;
             this.tTip.InitialDelay = 250;
             this.tTip.ReshowDelay = 100;
             this.cbMutEx.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(504, 146);
-            this.cbMutEx.Location = point;
+
+            this.cbMutEx.Location = new Point(504, 146);
             this.cbMutEx.Name = "cbMutEx";
-            size = new Size(168, 22);
-            this.cbMutEx.Size = size;
+
+            this.cbMutEx.Size = new Size(168, 22);
             this.cbMutEx.TabIndex = 21;
             this.tTip.SetToolTip((Control)this.cbMutEx, "(Currently only apllicable to Stealth IOs");
             this.cbRecipe.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 183);
-            this.cbRecipe.Location = point;
+
+            this.cbRecipe.Location = new Point(96, 183);
             this.cbRecipe.Name = "cbRecipe";
-            size = new Size(248, 22);
-            this.cbRecipe.Size = size;
+
+            this.cbRecipe.Size = new Size(248, 22);
             this.cbRecipe.TabIndex = 23;
             this.tTip.SetToolTip((Control)this.cbRecipe, "(Currently only apllicable to Stealth IOs");
-            point = new Point(496, 130);
-            this.Label8.Location = point;
+
+            this.Label8.Location = new Point(496, 130);
             this.Label8.Name = "Label8";
-            size = new Size(80, 16);
-            this.Label8.Size = size;
+
+            this.Label8.Size = new Size(80, 16);
             this.Label8.TabIndex = 22;
             this.Label8.Text = "MutEx Group:";
-            point = new Point(10, 183);
-            this.Label10.Location = point;
+
+            this.Label10.Location = new Point(10, 183);
             this.Label10.Name = "Label10";
-            size = new Size(80, 22);
-            this.Label10.Size = size;
+
+            this.Label10.Size = new Size(80, 22);
             this.Label10.TabIndex = 24;
             this.Label10.Text = "Recipe:";
             this.Label10.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(352, 183);
-            this.btnEditPowerData.Location = point;
+
+            this.btnEditPowerData.Location = new Point(352, 183);
             this.btnEditPowerData.Name = "btnEditPowerData";
-            size = new Size(236, 22);
-            this.btnEditPowerData.Size = size;
+
+            this.btnEditPowerData.Size = new Size(236, 22);
             this.btnEditPowerData.TabIndex = 25;
             this.btnEditPowerData.Text = "Edit Power_Mode Data";
             this.btnEditPowerData.UseVisualStyleBackColor = true;
-            point = new Point(8, 146);
-            this.StaticIndex.Location = point;
+
+            this.StaticIndex.Location = new Point(8, 146);
             this.StaticIndex.Name = "StaticIndex";
-            size = new Size(82, 20);
-            this.StaticIndex.Size = size;
+
+            this.StaticIndex.Size = new Size(82, 20);
             this.StaticIndex.TabIndex = 26;
             this.Label11.AutoSize = true;
-            point = new Point(8, 126);
-            this.Label11.Location = point;
+
+            this.Label11.Location = new Point(8, 126);
             this.Label11.Name = "Label11";
-            size = new Size(63, 14);
-            this.Label11.Size = size;
+
+            this.Label11.Size = new Size(63, 14);
             this.Label11.TabIndex = 27;
             this.Label11.Text = "Static Index";
             this.AcceptButton = (IButtonControl)this.btnOK;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
+
+            this.AutoScaleBaseSize = new Size(5, 13);
             this.CancelButton = (IButtonControl)this.btnCancel;
-            size = new Size(686, 501);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(686, 501);
             this.Controls.Add((Control)this.Label11);
             this.Controls.Add((Control)this.StaticIndex);
             this.Controls.Add((Control)this.btnEditPowerData);

@@ -239,218 +239,218 @@ namespace Hero_Designer
       this.Label2 = new Label();
       this.Listlabel1 = new ListLabelV2();
       this.SuspendLayout();
-      Point point = new Point(218, 49);
-      this.rtPreview.Location = point;
+
+      this.rtPreview.Location = new Point(218, 49);
       this.rtPreview.Name = "rtPreview";
-      Size size = new Size(197, 195);
-      this.rtPreview.Size = size;
+
+      this.rtPreview.Size = new Size(197, 195);
       this.rtPreview.TabIndex = 0;
       this.rtPreview.Text = "";
       this.csInv.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csInv.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 109);
-      this.csInv.Location = point;
+
+      this.csInv.Location = new Point(134, 109);
       this.csInv.Name = "csInv";
-      size = new Size(52, 16);
-      this.csInv.Size = size;
+
+      this.csInv.Size = new Size(52, 16);
       this.csInv.TabIndex = 51;
-      point = new Point(12, 109);
-      this.Label3.Location = point;
+
+      this.Label3.Location = new Point(12, 109);
       this.Label3.Name = "Label3";
-      size = new Size(118, 16);
-      this.Label3.Size = size;
+
+      this.Label3.Size = new Size(118, 16);
       this.Label3.TabIndex = 50;
       this.Label3.Text = "Inventions:";
       this.Label3.TextAlign = ContentAlignment.MiddleRight;
       this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(192, 371);
-      this.btnCancel.Location = point;
+
+      this.btnCancel.Location = new Point(192, 371);
       this.btnCancel.Name = "btnCancel";
-      size = new Size(75, 23);
-      this.btnCancel.Size = size;
+
+      this.btnCancel.Size = new Size(75, 23);
       this.btnCancel.TabIndex = 49;
       this.btnCancel.Text = "Cancel";
       this.btnOK.DialogResult = DialogResult.OK;
-      point = new Point(276, 371);
-      this.btnOK.Location = point;
+
+      this.btnOK.Location = new Point(276, 371);
       this.btnOK.Name = "btnOK";
-      size = new Size(75, 23);
-      this.btnOK.Size = size;
+
+      this.btnOK.Size = new Size(75, 23);
       this.btnOK.TabIndex = 48;
       this.btnOK.Text = "OK";
       this.csAlert.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csAlert.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 189);
-      this.csAlert.Location = point;
+
+      this.csAlert.Location = new Point(134, 189);
       this.csAlert.Name = "csAlert";
-      size = new Size(52, 16);
-      this.csAlert.Size = size;
+
+      this.csAlert.Size = new Size(52, 16);
       this.csAlert.TabIndex = 47;
-      point = new Point(12, 189);
-      this.Label9.Location = point;
+
+      this.Label9.Location = new Point(12, 189);
       this.Label9.Name = "Label9";
-      size = new Size(118, 16);
-      this.Label9.Size = size;
+
+      this.Label9.Size = new Size(118, 16);
       this.Label9.TabIndex = 46;
       this.Label9.Text = "Alert:";
       this.Label9.TextAlign = ContentAlignment.MiddleRight;
       this.csEnh.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csEnh.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 169);
-      this.csEnh.Location = point;
+
+      this.csEnh.Location = new Point(134, 169);
       this.csEnh.Name = "csEnh";
-      size = new Size(52, 16);
-      this.csEnh.Size = size;
+
+      this.csEnh.Size = new Size(52, 16);
       this.csEnh.TabIndex = 45;
-      point = new Point(12, 169);
-      this.Label7.Location = point;
+
+      this.Label7.Location = new Point(12, 169);
       this.Label7.Name = "Label7";
-      size = new Size(118, 16);
-      this.Label7.Size = size;
+
+      this.Label7.Size = new Size(118, 16);
       this.Label7.TabIndex = 44;
       this.Label7.Text = "Enhancements:";
       this.Label7.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(17, 16);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(17, 16);
       this.Label5.Name = "Label5";
-      size = new Size(192, 16);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(192, 16);
       this.Label5.TabIndex = 43;
       this.Label5.Text = "Click on a color box to modify it.";
       this.Label5.TextAlign = ContentAlignment.MiddleCenter;
       this.csFade.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csFade.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 149);
-      this.csFade.Location = point;
+
+      this.csFade.Location = new Point(134, 149);
       this.csFade.Name = "csFade";
-      size = new Size(52, 16);
-      this.csFade.Size = size;
+
+      this.csFade.Size = new Size(52, 16);
       this.csFade.TabIndex = 42;
-      point = new Point(12, 149);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(12, 149);
       this.Label4.Name = "Label4";
-      size = new Size(118, 16);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(118, 16);
       this.Label4.TabIndex = 41;
       this.Label4.Text = "Faded:";
       this.Label4.TextAlign = ContentAlignment.MiddleRight;
       this.csInvInv.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csInvInv.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 129);
-      this.csInvInv.Location = point;
+
+      this.csInvInv.Location = new Point(134, 129);
       this.csInvInv.Name = "csInvInv";
-      size = new Size(52, 16);
-      this.csInvInv.Size = size;
+
+      this.csInvInv.Size = new Size(52, 16);
       this.csInvInv.TabIndex = 40;
       this.csText.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csText.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 89);
-      this.csText.Location = point;
+
+      this.csText.Location = new Point(134, 89);
       this.csText.Name = "csText";
-      size = new Size(52, 16);
-      this.csText.Size = size;
+
+      this.csText.Size = new Size(52, 16);
       this.csText.TabIndex = 39;
       this.csVillain.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csVillain.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 69);
-      this.csVillain.Location = point;
+
+      this.csVillain.Location = new Point(134, 69);
       this.csVillain.Name = "csVillain";
-      size = new Size(52, 16);
-      this.csVillain.Size = size;
+
+      this.csVillain.Size = new Size(52, 16);
       this.csVillain.TabIndex = 38;
       this.csHero.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csHero.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 49);
-      this.csHero.Location = point;
+
+      this.csHero.Location = new Point(134, 49);
       this.csHero.Name = "csHero";
-      size = new Size(52, 16);
-      this.csHero.Size = size;
+
+      this.csHero.Size = new Size(52, 16);
       this.csHero.TabIndex = 37;
-      point = new Point(12, 129);
-      this.Label21.Location = point;
+
+      this.Label21.Location = new Point(12, 129);
       this.Label21.Name = "Label21";
-      size = new Size(118, 16);
-      this.Label21.Size = size;
+
+      this.Label21.Size = new Size(118, 16);
       this.Label21.TabIndex = 36;
       this.Label21.Text = "Inventions (On White)";
       this.Label21.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(12, 89);
-      this.Label22.Location = point;
+
+      this.Label22.Location = new Point(12, 89);
       this.Label22.Name = "Label22";
-      size = new Size(118, 16);
-      this.Label22.Size = size;
+
+      this.Label22.Size = new Size(118, 16);
       this.Label22.TabIndex = 35;
       this.Label22.Text = "Text:";
       this.Label22.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(12, 69);
-      this.Label20.Location = point;
+
+      this.Label20.Location = new Point(12, 69);
       this.Label20.Name = "Label20";
-      size = new Size(118, 16);
-      this.Label20.Size = size;
+
+      this.Label20.Size = new Size(118, 16);
       this.Label20.TabIndex = 34;
       this.Label20.Text = "Villain Background:";
       this.Label20.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(12, 49);
-      this.Label19.Location = point;
+
+      this.Label19.Location = new Point(12, 49);
       this.Label19.Name = "Label19";
-      size = new Size(118, 16);
-      this.Label19.Size = size;
+
+      this.Label19.Size = new Size(118, 16);
       this.Label19.TabIndex = 33;
       this.Label19.Text = "Hero Background:";
       this.Label19.TextAlign = ContentAlignment.MiddleRight;
       this.cPicker.FullOpen = true;
-      point = new Point(215, 30);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(215, 30);
       this.Label1.Name = "Label1";
-      size = new Size(88, 16);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(88, 16);
       this.Label1.TabIndex = 52;
       this.Label1.Text = "Preview:";
       this.Label1.TextAlign = ContentAlignment.MiddleLeft;
       this.csSpecial.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csSpecial.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 229);
-      this.csSpecial.Location = point;
+
+      this.csSpecial.Location = new Point(134, 229);
       this.csSpecial.Name = "csSpecial";
-      size = new Size(52, 16);
-      this.csSpecial.Size = size;
+
+      this.csSpecial.Size = new Size(52, 16);
       this.csSpecial.TabIndex = 56;
-      point = new Point(12, 228);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(12, 228);
       this.Label6.Name = "Label6";
-      size = new Size(118, 16);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(118, 16);
       this.Label6.TabIndex = 55;
       this.Label6.Text = "Special Case Value:";
       this.Label6.TextAlign = ContentAlignment.MiddleRight;
       this.csValue.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
       this.csValue.BorderStyle = BorderStyle.FixedSingle;
-      point = new Point(134, 209);
-      this.csValue.Location = point;
+
+      this.csValue.Location = new Point(134, 209);
       this.csValue.Name = "csValue";
-      size = new Size(52, 16);
-      this.csValue.Size = size;
+
+      this.csValue.Size = new Size(52, 16);
       this.csValue.TabIndex = 54;
-      point = new Point(12, 208);
-      this.Label10.Location = point;
+
+      this.Label10.Location = new Point(12, 208);
       this.Label10.Name = "Label10";
-      size = new Size(118, 16);
-      this.Label10.Size = size;
+
+      this.Label10.Size = new Size(118, 16);
       this.Label10.TabIndex = 53;
       this.Label10.Text = "Value Name:";
       this.Label10.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(85, 371);
-      this.btnReset.Location = point;
+
+      this.btnReset.Location = new Point(85, 371);
       this.btnReset.Name = "btnReset";
-      size = new Size(98, 23);
-      this.btnReset.Size = size;
+
+      this.btnReset.Size = new Size(98, 23);
       this.btnReset.TabIndex = 57;
       this.btnReset.Text = "Set to Defaults";
-      point = new Point(20, 265);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(20, 265);
       this.Label2.Name = "Label2";
-      size = new Size(189, 91);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(189, 91);
       this.Label2.TabIndex = 59;
       this.Label2.Text = "Click an item in the list to the right to modify the colors used in power lists";
       this.Label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -459,8 +459,8 @@ namespace Hero_Designer
       this.Listlabel1.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
       this.Listlabel1.HighVis = true;
       this.Listlabel1.HoverColor = Color.WhiteSmoke;
-      point = new Point(218, 265);
-      this.Listlabel1.Location = point;
+
+      this.Listlabel1.Location = new Point(218, 265);
       this.Listlabel1.MaxHeight = 600;
       this.Listlabel1.Name = "Listlabel1";
       this.Listlabel1.PaddingX = 2;
@@ -469,15 +469,15 @@ namespace Hero_Designer
       this.Listlabel1.ScrollBarColor = Color.Red;
       this.Listlabel1.ScrollBarWidth = 11;
       this.Listlabel1.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-      size = new Size(197, 91);
-      this.Listlabel1.Size = size;
-      size = new Size(197, 91);
-      this.Listlabel1.SizeNormal = size;
+
+      this.Listlabel1.Size = new Size(197, 91);
+
+      this.Listlabel1.SizeNormal = new Size(197, 91);
       this.Listlabel1.SuspendRedraw = false;
       this.Listlabel1.TabIndex = 111;
       this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(436, 406);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(436, 406);
       this.Controls.Add((Control) this.Listlabel1);
       this.Controls.Add((Control) this.Label2);
       this.Controls.Add((Control) this.btnReset);

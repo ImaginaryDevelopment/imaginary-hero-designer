@@ -262,8 +262,8 @@ namespace Hero_Designer
             this.udIssue.BeginInit();
             this.GroupBox1.SuspendLayout();
             this.SuspendLayout();
-            Point point = new Point(148, 44);
-            this.udIssue.Location = point;
+
+            this.udIssue.Location = new Point(148, 44);
             Decimal num = new Decimal(new int[4]
             {
         1,
@@ -273,56 +273,56 @@ namespace Hero_Designer
             });
             this.udIssue.Minimum = num;
             this.udIssue.Name = "udIssue";
-            Size size = new Size(84, 20);
-            this.udIssue.Size = size;
+
+            this.udIssue.Size = new Size(84, 20);
             this.udIssue.TabIndex = 0;
             this.udIssue.TextAlign = HorizontalAlignment.Center;
             num = new Decimal(new int[4] { 12, 0, 0, 0 });
             this.udIssue.Value = num;
-            point = new Point(22, 44);
-            this.Label1.Location = point;
+
+            this.Label1.Location = new Point(22, 44);
             this.Label1.Name = "Label1";
-            size = new Size(120, 20);
-            this.Label1.Size = size;
+
+            this.Label1.Size = new Size(120, 20);
             this.Label1.TabIndex = 2;
             this.Label1.Text = "CoX Issue Supported:";
             this.Label1.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(4, 16);
-            this.Label2.Location = point;
+
+            this.Label2.Location = new Point(4, 16);
             this.Label2.Name = "Label2";
-            size = new Size(144, 20);
-            this.Label2.Size = size;
+
+            this.Label2.Size = new Size(144, 20);
             this.Label2.TabIndex = 3;
             this.Label2.Text = "Database Update Date:";
             this.Label2.TextAlign = ContentAlignment.MiddleRight;
             this.lblDate.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(148, 16);
-            this.lblDate.Location = point;
+
+            this.lblDate.Location = new Point(148, 16);
             this.lblDate.Name = "lblDate";
-            size = new Size(84, 20);
-            this.lblDate.Size = size;
+
+            this.lblDate.Size = new Size(84, 20);
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "DD/MM/YYYY";
             this.lblDate.TextAlign = ContentAlignment.MiddleLeft;
             this.btnEditEnh.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEditEnh.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnEditEnh.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 168);
-            this.btnEditEnh.Location = point;
+
+            this.btnEditEnh.Location = new Point(48, 168);
             this.btnEditEnh.Name = "btnEditEnh";
-            size = new Size(160, 24);
-            this.btnEditEnh.Size = size;
+
+            this.btnEditEnh.Size = new Size(160, 24);
             this.btnEditEnh.TabIndex = 5;
             this.btnEditEnh.Text = "Enhancement Editor";
             this.btnEditEnh.UseVisualStyleBackColor = true;
             this.btnEditIOSet.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEditIOSet.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnEditIOSet.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 198);
-            this.btnEditIOSet.Location = point;
+
+            this.btnEditIOSet.Location = new Point(48, 198);
             this.btnEditIOSet.Name = "btnEditIOSet";
-            size = new Size(160, 24);
-            this.btnEditIOSet.Size = size;
+
+            this.btnEditIOSet.Size = new Size(160, 24);
             this.btnEditIOSet.TabIndex = 6;
             this.btnEditIOSet.Text = "Invention Set Editor";
             this.btnEditIOSet.UseVisualStyleBackColor = true;
@@ -343,147 +343,147 @@ namespace Hero_Designer
             this.GroupBox1.Controls.Add((Control)this.lblCountAT);
             this.GroupBox1.Controls.Add((Control)this.Label5);
             this.GroupBox1.ForeColor = Color.White;
-            point = new Point(236, 4);
-            this.GroupBox1.Location = point;
+
+            this.GroupBox1.Location = new Point(236, 4);
             this.GroupBox1.Name = "GroupBox1";
-            size = new Size(164, 218);
-            this.GroupBox1.Size = size;
+
+            this.GroupBox1.Size = new Size(164, 218);
             this.GroupBox1.TabIndex = 9;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Statistics:";
             this.lblCountSalvage.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 184);
-            this.lblCountSalvage.Location = point;
+
+            this.lblCountSalvage.Location = new Point(88, 184);
             this.lblCountSalvage.Name = "lblCountSalvage";
-            size = new Size(68, 20);
-            this.lblCountSalvage.Size = size;
+
+            this.lblCountSalvage.Size = new Size(68, 20);
             this.lblCountSalvage.TabIndex = 20;
             this.lblCountSalvage.Text = "Count";
             this.lblCountSalvage.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 184);
-            this.Label6.Location = point;
+
+            this.Label6.Location = new Point(4, 184);
             this.Label6.Name = "Label6";
-            size = new Size(84, 20);
-            this.Label6.Size = size;
+
+            this.Label6.Size = new Size(84, 20);
             this.Label6.TabIndex = 19;
             this.Label6.Text = "Salvage:";
             this.Label6.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountRecipe.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 160);
-            this.lblCountRecipe.Location = point;
+
+            this.lblCountRecipe.Location = new Point(88, 160);
             this.lblCountRecipe.Name = "lblCountRecipe";
-            size = new Size(68, 20);
-            this.lblCountRecipe.Size = size;
+
+            this.lblCountRecipe.Size = new Size(68, 20);
             this.lblCountRecipe.TabIndex = 18;
             this.lblCountRecipe.Text = "Count";
             this.lblCountRecipe.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 160);
-            this.Label4.Location = point;
+
+            this.Label4.Location = new Point(4, 160);
             this.Label4.Name = "Label4";
-            size = new Size(84, 20);
-            this.Label4.Size = size;
+
+            this.Label4.Size = new Size(84, 20);
             this.Label4.TabIndex = 17;
             this.Label4.Text = "Recipes:";
             this.Label4.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountFX.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 136);
-            this.lblCountFX.Location = point;
+
+            this.lblCountFX.Location = new Point(88, 136);
             this.lblCountFX.Name = "lblCountFX";
-            size = new Size(68, 20);
-            this.lblCountFX.Size = size;
+
+            this.lblCountFX.Size = new Size(68, 20);
             this.lblCountFX.TabIndex = 16;
             this.lblCountFX.Text = "Count";
             this.lblCountFX.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 136);
-            this.Label15.Location = point;
+
+            this.Label15.Location = new Point(4, 136);
             this.Label15.Name = "Label15";
-            size = new Size(84, 20);
-            this.Label15.Size = size;
+
+            this.Label15.Size = new Size(84, 20);
             this.Label15.TabIndex = 15;
             this.Label15.Text = "Power Effects:";
             this.Label15.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountPwr.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 112);
-            this.lblCountPwr.Location = point;
+
+            this.lblCountPwr.Location = new Point(88, 112);
             this.lblCountPwr.Name = "lblCountPwr";
-            size = new Size(68, 20);
-            this.lblCountPwr.Size = size;
+
+            this.lblCountPwr.Size = new Size(68, 20);
             this.lblCountPwr.TabIndex = 14;
             this.lblCountPwr.Text = "Count";
             this.lblCountPwr.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 112);
-            this.Label13.Location = point;
+
+            this.Label13.Location = new Point(4, 112);
             this.Label13.Name = "Label13";
-            size = new Size(84, 20);
-            this.Label13.Size = size;
+
+            this.Label13.Size = new Size(84, 20);
             this.Label13.TabIndex = 13;
             this.Label13.Text = "Powers:";
             this.Label13.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountPS.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 88);
-            this.lblCountPS.Location = point;
+
+            this.lblCountPS.Location = new Point(88, 88);
             this.lblCountPS.Name = "lblCountPS";
-            size = new Size(68, 20);
-            this.lblCountPS.Size = size;
+
+            this.lblCountPS.Size = new Size(68, 20);
             this.lblCountPS.TabIndex = 12;
             this.lblCountPS.Text = "Count";
             this.lblCountPS.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 88);
-            this.Label11.Location = point;
+
+            this.Label11.Location = new Point(4, 88);
             this.Label11.Name = "Label11";
-            size = new Size(84, 20);
-            this.Label11.Size = size;
+
+            this.Label11.Size = new Size(84, 20);
             this.Label11.TabIndex = 11;
             this.Label11.Text = "Powersets:";
             this.Label11.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountIOSet.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 64);
-            this.lblCountIOSet.Location = point;
+
+            this.lblCountIOSet.Location = new Point(88, 64);
             this.lblCountIOSet.Name = "lblCountIOSet";
-            size = new Size(68, 20);
-            this.lblCountIOSet.Size = size;
+
+            this.lblCountIOSet.Size = new Size(68, 20);
             this.lblCountIOSet.TabIndex = 10;
             this.lblCountIOSet.Text = "Count";
             this.lblCountIOSet.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 64);
-            this.Label9.Location = point;
+
+            this.Label9.Location = new Point(4, 64);
             this.Label9.Name = "Label9";
-            size = new Size(84, 20);
-            this.Label9.Size = size;
+
+            this.Label9.Size = new Size(84, 20);
             this.Label9.TabIndex = 9;
             this.Label9.Text = "Invention Sets:";
             this.Label9.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountEnh.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 40);
-            this.lblCountEnh.Location = point;
+
+            this.lblCountEnh.Location = new Point(88, 40);
             this.lblCountEnh.Name = "lblCountEnh";
-            size = new Size(68, 20);
-            this.lblCountEnh.Size = size;
+
+            this.lblCountEnh.Size = new Size(68, 20);
             this.lblCountEnh.TabIndex = 8;
             this.lblCountEnh.Text = "Count";
             this.lblCountEnh.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 40);
-            this.Label7.Location = point;
+
+            this.Label7.Location = new Point(4, 40);
             this.Label7.Name = "Label7";
-            size = new Size(84, 20);
-            this.Label7.Size = size;
+
+            this.Label7.Size = new Size(84, 20);
             this.Label7.TabIndex = 7;
             this.Label7.Text = "Enhancements:";
             this.Label7.TextAlign = ContentAlignment.MiddleRight;
             this.lblCountAT.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(88, 16);
-            this.lblCountAT.Location = point;
+
+            this.lblCountAT.Location = new Point(88, 16);
             this.lblCountAT.Name = "lblCountAT";
-            size = new Size(68, 20);
-            this.lblCountAT.Size = size;
+
+            this.lblCountAT.Size = new Size(68, 20);
             this.lblCountAT.TabIndex = 6;
             this.lblCountAT.Text = "Count";
             this.lblCountAT.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(4, 16);
-            this.Label5.Location = point;
+
+            this.Label5.Location = new Point(4, 16);
             this.Label5.Name = "Label5";
-            size = new Size(84, 20);
-            this.Label5.Size = size;
+
+            this.Label5.Size = new Size(84, 20);
             this.Label5.TabIndex = 5;
             this.Label5.Text = "Classes:";
             this.Label5.TextAlign = ContentAlignment.MiddleRight;
@@ -491,22 +491,22 @@ namespace Hero_Designer
             this.btnClose.DialogResult = DialogResult.Cancel;
             this.btnClose.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnClose.ForeColor = SystemColors.ControlText;
-            point = new Point(236, 288);
-            this.btnClose.Location = point;
+
+            this.btnClose.Location = new Point(236, 288);
             this.btnClose.Name = "btnClose";
-            size = new Size(164, 24);
-            this.btnClose.Size = size;
+
+            this.btnClose.Size = new Size(164, 24);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnDate.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDate.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnDate.ForeColor = SystemColors.ControlText;
-            point = new Point(31, 16);
-            this.btnDate.Location = point;
+
+            this.btnDate.Location = new Point(31, 16);
             this.btnDate.Name = "btnDate";
-            size = new Size(111, 20);
-            this.btnDate.Size = size;
+
+            this.btnDate.Size = new Size(111, 20);
             this.btnDate.TabIndex = 13;
             this.btnDate.Text = "Set Date";
             this.btnDate.UseVisualStyleBackColor = true;
@@ -514,80 +514,80 @@ namespace Hero_Designer
             this.btnSalvage.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnSalvage.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnSalvage.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 228);
-            this.btnSalvage.Location = point;
+
+            this.btnSalvage.Location = new Point(48, 228);
             this.btnSalvage.Name = "btnSalvage";
-            size = new Size(160, 24);
-            this.btnSalvage.Size = size;
+
+            this.btnSalvage.Size = new Size(160, 24);
             this.btnSalvage.TabIndex = 14;
             this.btnSalvage.Text = "Salvage Editor";
             this.btnSalvage.UseVisualStyleBackColor = true;
             this.btnRecipe.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnRecipe.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnRecipe.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 258);
-            this.btnRecipe.Location = point;
+
+            this.btnRecipe.Location = new Point(48, 258);
             this.btnRecipe.Name = "btnRecipe";
-            size = new Size(160, 24);
-            this.btnRecipe.Size = size;
+
+            this.btnRecipe.Size = new Size(160, 24);
             this.btnRecipe.TabIndex = 15;
             this.btnRecipe.Text = "Recipe Editor";
             this.btnRecipe.UseVisualStyleBackColor = true;
             this.btnCSV.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnCSV.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnCSV.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 288);
-            this.btnCSV.Location = point;
+
+            this.btnCSV.Location = new Point(48, 288);
             this.btnCSV.Name = "btnCSV";
-            size = new Size(160, 24);
-            this.btnCSV.Size = size;
+
+            this.btnCSV.Size = new Size(160, 24);
             this.btnCSV.TabIndex = 16;
             this.btnCSV.Text = "CSV Importer";
             this.btnCSV.UseVisualStyleBackColor = true;
             this.btnEditEntity.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEditEntity.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnEditEntity.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 138);
-            this.btnEditEntity.Location = point;
+
+            this.btnEditEntity.Location = new Point(48, 138);
             this.btnEditEntity.Name = "btnEditEntity";
-            size = new Size(160, 24);
-            this.btnEditEntity.Size = size;
+
+            this.btnEditEntity.Size = new Size(160, 24);
             this.btnEditEntity.TabIndex = 17;
             this.btnEditEntity.Text = "Entity Editor";
             this.btnEditEntity.UseVisualStyleBackColor = true;
             this.btnPSBrowse.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnPSBrowse.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnPSBrowse.ForeColor = SystemColors.ControlText;
-            point = new Point(48, 94);
-            this.btnPSBrowse.Location = point;
+
+            this.btnPSBrowse.Location = new Point(48, 94);
             this.btnPSBrowse.Name = "btnPSBrowse";
-            size = new Size(160, 38);
-            this.btnPSBrowse.Size = size;
+
+            this.btnPSBrowse.Size = new Size(160, 38);
             this.btnPSBrowse.TabIndex = 18;
             this.btnPSBrowse.Text = "Main Database Editor";
             this.btnPSBrowse.UseVisualStyleBackColor = true;
-            point = new Point(148, 68);
-            this.txtDBVer.Location = point;
+
+            this.txtDBVer.Location = new Point(148, 68);
             this.txtDBVer.Name = "txtDBVer";
-            size = new Size(84, 20);
-            this.txtDBVer.Size = size;
+
+            this.txtDBVer.Size = new Size(84, 20);
             this.txtDBVer.TabIndex = 21;
-            point = new Point(22, 68);
-            this.Label3.Location = point;
+
+            this.Label3.Location = new Point(22, 68);
             this.Label3.Name = "Label3";
-            size = new Size(120, 20);
-            this.Label3.Size = size;
+
+            this.Label3.Size = new Size(120, 20);
             this.Label3.TabIndex = 22;
             this.Label3.Text = "Database Version:";
             this.Label3.TextAlign = ContentAlignment.MiddleRight;
             this.btnFileReport.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnFileReport.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.btnFileReport.ForeColor = SystemColors.ControlText;
-            point = new Point(236, 258);
-            this.btnFileReport.Location = point;
+
+            this.btnFileReport.Location = new Point(236, 258);
             this.btnFileReport.Name = "btnFileReport";
-            size = new Size(164, 24);
-            this.btnFileReport.Size = size;
+
+            this.btnFileReport.Size = new Size(164, 24);
             this.btnFileReport.TabIndex = 23;
             this.btnFileReport.Text = "File Load Report";
             this.btnFileReport.UseVisualStyleBackColor = true;
@@ -595,20 +595,20 @@ namespace Hero_Designer
             this.exportIndexes.BackColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.exportIndexes.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.exportIndexes.ForeColor = SystemColors.ControlText;
-            point = new Point(236, 228);
-            this.exportIndexes.Location = point;
+
+            this.exportIndexes.Location = new Point(236, 228);
             this.exportIndexes.Name = "exportIndexes";
-            size = new Size(164, 24);
-            this.exportIndexes.Size = size;
+
+            this.exportIndexes.Size = new Size(164, 24);
             this.exportIndexes.TabIndex = 24;
             this.exportIndexes.Text = "Export Power Indexes";
             this.exportIndexes.UseVisualStyleBackColor = true;
             this.exportIndexes.Visible = false;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
+
+            this.AutoScaleBaseSize = new Size(5, 13);
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(416, 327);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(416, 327);
             this.Controls.Add((Control)this.btnFileReport);
             this.Controls.Add((Control)this.Label3);
             this.Controls.Add((Control)this.txtDBVer);

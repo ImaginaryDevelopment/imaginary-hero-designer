@@ -41,21 +41,21 @@ namespace Hero_Designer
       ((ISupportInitialize) this.PictureBox1).BeginInit();
       this.SuspendLayout();
       this.PictureBox1.Image = (Image) componentResourceManager.GetObject("PictureBox1.Image");
-      Point point = new Point(1, 1);
-      this.PictureBox1.Location = point;
+
+      this.PictureBox1.Location = new Point(1, 1);
       this.PictureBox1.Name = "PictureBox1";
-      Size size = new Size(515, 75);
-      this.PictureBox1.Size = size;
+
+      this.PictureBox1.Size = new Size(515, 75);
       this.PictureBox1.TabIndex = 0;
       this.PictureBox1.TabStop = false;
       this.Label1.BorderStyle = BorderStyle.Fixed3D;
       this.Label1.Font = new Font("Arial", 9f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.Label1.ForeColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      point = new Point(18, 33);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(18, 33);
       this.Label1.Name = "Label1";
-      size = new Size(480, 35);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(480, 35);
       this.Label1.TabIndex = 1;
       this.Label1.Text = "Reading data files, please wait.";
       this.Label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -63,8 +63,8 @@ namespace Hero_Designer
       this.tmrOpacity.Interval = 25;
       this.AutoScaleMode = AutoScaleMode.None;
       this.BackColor = Color.Black;
-      size = new Size(517, 77);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(517, 77);
       this.Controls.Add((Control) this.Label1);
       this.Controls.Add((Control) this.PictureBox1);
       this.FormBorderStyle = FormBorderStyle.None;

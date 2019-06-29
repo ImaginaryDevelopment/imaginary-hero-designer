@@ -73,62 +73,62 @@ namespace Hero_Designer
             this.TableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
             this.TableLayoutPanel1.Controls.Add((Control)this.OK_Button, 0, 0);
             this.TableLayoutPanel1.Controls.Add((Control)this.Cancel_Button, 1, 0);
-            Point point = new Point(277, 71);
-            this.TableLayoutPanel1.Location = point;
+
+            this.TableLayoutPanel1.Location = new Point(277, 71);
             this.TableLayoutPanel1.Name = "TableLayoutPanel1";
             this.TableLayoutPanel1.RowCount = 1;
             this.TableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
-            Size size = new Size(146, 29);
-            this.TableLayoutPanel1.Size = size;
+
+            this.TableLayoutPanel1.Size = new Size(146, 29);
             this.TableLayoutPanel1.TabIndex = 2;
             this.OK_Button.Anchor = AnchorStyles.None;
-            point = new Point(3, 3);
-            this.OK_Button.Location = point;
+
+            this.OK_Button.Location = new Point(3, 3);
             this.OK_Button.Name = "OK_Button";
-            size = new Size(67, 23);
-            this.OK_Button.Size = size;
+
+            this.OK_Button.Size = new Size(67, 23);
             this.OK_Button.TabIndex = 3;
             this.OK_Button.Text = "OK";
             this.Cancel_Button.Anchor = AnchorStyles.None;
             this.Cancel_Button.DialogResult = DialogResult.Cancel;
-            point = new Point(76, 3);
-            this.Cancel_Button.Location = point;
+
+            this.Cancel_Button.Location = new Point(76, 3);
             this.Cancel_Button.Name = "Cancel_Button";
-            size = new Size(67, 23);
-            this.Cancel_Button.Size = size;
+
+            this.Cancel_Button.Size = new Size(67, 23);
             this.Cancel_Button.TabIndex = 4;
             this.Cancel_Button.Text = "Cancel";
             this.cmbAction.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbAction.FormattingEnabled = true;
             this.cmbAction.IntegralHeight = false;
             this.cmbAction.ItemHeight = 13;
-            point = new Point(12, 44);
-            this.cmbAction.Location = point;
+
+            this.cmbAction.Location = new Point(12, 44);
             this.cmbAction.Name = "cmbAction";
-            size = new Size(408, 21);
-            this.cmbAction.Size = size;
+
+            this.cmbAction.Size = new Size(408, 21);
             this.cmbAction.TabIndex = 0;
             this.chkRemember.AutoSize = true;
-            point = new Point(12, 78);
-            this.chkRemember.Location = point;
+
+            this.chkRemember.Location = new Point(12, 78);
             this.chkRemember.Name = "chkRemember";
-            size = new Size(131, 17);
-            this.chkRemember.Size = size;
+
+            this.chkRemember.Size = new Size(131, 17);
             this.chkRemember.TabIndex = 1;
             this.chkRemember.Text = "Remember this choice";
             this.chkRemember.UseVisualStyleBackColor = true;
-            point = new Point(16, 4);
-            this.lblDescript.Location = point;
+
+            this.lblDescript.Location = new Point(16, 4);
             this.lblDescript.Name = "lblDescript";
-            size = new Size(403, 40);
-            this.lblDescript.Size = size;
+
+            this.lblDescript.Size = new Size(403, 40);
             this.lblDescript.TabIndex = 3;
             this.AcceptButton = (IButtonControl)this.OK_Button;
             this.AutoScaleDimensions = new SizeF(6f, 13f);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.CancelButton = (IButtonControl)this.Cancel_Button;
-            size = new Size(435, 112);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(435, 112);
             this.Controls.Add((Control)this.lblDescript);
             this.Controls.Add((Control)this.chkRemember);
             this.Controls.Add((Control)this.cmbAction);

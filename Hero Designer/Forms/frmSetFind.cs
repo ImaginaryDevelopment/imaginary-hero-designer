@@ -379,12 +379,12 @@ namespace Hero_Designer
       });
       this.lvBonus.FullRowSelect = true;
       this.lvBonus.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvBonus.Location = point;
+
+      this.lvBonus.Location = new Point(12, 12);
       this.lvBonus.MultiSelect = false;
       this.lvBonus.Name = "lvBonus";
-      Size size = new Size(280, 292);
-      this.lvBonus.Size = size;
+
+      this.lvBonus.Size = new Size(280, 292);
       this.lvBonus.TabIndex = 0;
       this.lvBonus.UseCompatibleStateImageBehavior = false;
       this.lvBonus.View = View.Details;
@@ -396,12 +396,12 @@ namespace Hero_Designer
       });
       this.lvMag.FullRowSelect = true;
       this.lvMag.HideSelection = false;
-      point = new Point(298, 12);
-      this.lvMag.Location = point;
+
+      this.lvMag.Location = new Point(298, 12);
       this.lvMag.MultiSelect = false;
       this.lvMag.Name = "lvMag";
-      size = new Size((int) sbyte.MaxValue, 116);
-      this.lvMag.Size = size;
+
+      this.lvMag.Size = new Size((int) sbyte.MaxValue, 116);
       this.lvMag.TabIndex = 1;
       this.lvMag.UseCompatibleStateImageBehavior = false;
       this.lvMag.View = View.Details;
@@ -416,12 +416,12 @@ namespace Hero_Designer
       });
       this.lvSet.FullRowSelect = true;
       this.lvSet.HideSelection = false;
-      point = new Point(298, 134);
-      this.lvSet.Location = point;
+
+      this.lvSet.Location = new Point(298, 134);
       this.lvSet.MultiSelect = false;
       this.lvSet.Name = "lvSet";
-      size = new Size(484, 170);
-      this.lvSet.Size = size;
+
+      this.lvSet.Size = new Size(484, 170);
       this.lvSet.SmallImageList = this.ilSets;
       this.lvSet.TabIndex = 2;
       this.lvSet.UseCompatibleStateImageBehavior = false;
@@ -435,36 +435,36 @@ namespace Hero_Designer
       this.ColumnHeader6.Text = "Required Enh's.";
       this.ColumnHeader6.Width = 90;
       this.ilSets.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilSets.ImageSize = size;
+
+      this.ilSets.ImageSize = new Size(16, 16);
       this.ilSets.TransparentColor = Color.Transparent;
       this.Panel1.AutoScroll = true;
       this.Panel1.BackColor = Color.Black;
       this.Panel1.Controls.Add((Control) this.SetInfo);
-      point = new Point(431, 12);
-      this.Panel1.Location = point;
+
+      this.Panel1.Location = new Point(431, 12);
       this.Panel1.Name = "Panel1";
-      size = new Size(351, 115);
-      this.Panel1.Size = size;
+
+      this.Panel1.Size = new Size(351, 115);
       this.Panel1.TabIndex = 3;
       this.ibClose.Checked = false;
       this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(677, 310);
-      this.ibClose.Location = point;
+
+      this.ibClose.Location = new Point(677, 310);
       this.ibClose.Name = "ibClose";
-      size = new Size(105, 22);
-      this.ibClose.Size = size;
+
+      this.ibClose.Size = new Size(105, 22);
       this.ibClose.TabIndex = 5;
       this.ibClose.TextOff = "Close";
       this.ibClose.TextOn = "Alt Text";
       this.ibClose.Toggle = false;
       this.ibTopmost.Checked = true;
       this.ibTopmost.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(566, 310);
-      this.ibTopmost.Location = point;
+
+      this.ibTopmost.Location = new Point(566, 310);
       this.ibTopmost.Name = "ibTopmost";
-      size = new Size(105, 22);
-      this.ibTopmost.Size = size;
+
+      this.ibTopmost.Size = new Size(105, 22);
       this.ibTopmost.TabIndex = 4;
       this.ibTopmost.TextOff = "Keep On Top";
       this.ibTopmost.TextOn = "Keep On Top";
@@ -474,17 +474,17 @@ namespace Hero_Designer
       this.SetInfo.ColumnRight = false;
       this.SetInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte) 0);
       this.SetInfo.InternalPadding = 3;
-      point = new Point(0, 0);
-      this.SetInfo.Location = point;
+
+      this.SetInfo.Location = new Point(0, 0);
       this.SetInfo.Name = "SetInfo";
       this.SetInfo.SectionPadding = 8;
-      size = new Size(331, 198);
-      this.SetInfo.Size = size;
+
+      this.SetInfo.Size = new Size(331, 198);
       this.SetInfo.TabIndex = 0;
       this.AutoScaleMode = AutoScaleMode.None;
       this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(792, 340);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(792, 340);
       this.Controls.Add((Control) this.ibClose);
       this.Controls.Add((Control) this.ibTopmost);
       this.Controls.Add((Control) this.Panel1);

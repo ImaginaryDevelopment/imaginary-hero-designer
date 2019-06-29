@@ -470,67 +470,67 @@ namespace Hero_Designer
       this.GroupBox1.Controls.Add((Control) this.mod_Date);
       this.GroupBox1.Controls.Add((Control) this.Label2);
       this.GroupBox1.Controls.Add((Control) this.Label1);
-      Point point = new Point(12, 12);
-      this.GroupBox1.Location = point;
+
+      this.GroupBox1.Location = new Point(12, 12);
       this.GroupBox1.Name = "GroupBox1";
-      Size size = new Size(257, 115);
-      this.GroupBox1.Size = size;
+
+      this.GroupBox1.Size = new Size(257, 115);
       this.GroupBox1.TabIndex = 0;
       this.GroupBox1.TabStop = false;
       this.GroupBox1.Text = "Modifier Tables";
-      point = new Point(124, 60);
-      this.mod_Revision.Location = point;
+
+      this.mod_Revision.Location = new Point(124, 60);
       this.mod_Revision.Name = "mod_Revision";
-      size = new Size(112, 22);
-      this.mod_Revision.Size = size;
+
+      this.mod_Revision.Size = new Size(112, 22);
       this.mod_Revision.TabIndex = 6;
       this.mod_Revision.Text = "000";
       this.mod_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label4.Location = point;
+
+      this.Label4.Location = new Point(6, 60);
       this.Label4.Name = "Label4";
-      size = new Size(112, 22);
-      this.Label4.Size = size;
+
+      this.Label4.Size = new Size(112, 22);
       this.Label4.TabIndex = 5;
       this.Label4.Text = "Revision:";
       this.Label4.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.mod_Import.Location = point;
+
+      this.mod_Import.Location = new Point(6, 85);
       this.mod_Import.Name = "mod_Import";
-      size = new Size(245, 23);
-      this.mod_Import.Size = size;
+
+      this.mod_Import.Size = new Size(245, 23);
       this.mod_Import.TabIndex = 4;
       this.mod_Import.Text = "Import New";
       this.mod_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.mod_Count.Location = point;
+
+      this.mod_Count.Location = new Point(124, 38);
       this.mod_Count.Name = "mod_Count";
-      size = new Size(112, 22);
-      this.mod_Count.Size = size;
+
+      this.mod_Count.Size = new Size(112, 22);
       this.mod_Count.TabIndex = 3;
       this.mod_Count.Text = "000";
       this.mod_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.mod_Date.Location = point;
+
+      this.mod_Date.Location = new Point(124, 16);
       this.mod_Date.Name = "mod_Date";
-      size = new Size(112, 22);
-      this.mod_Date.Size = size;
+
+      this.mod_Date.Size = new Size(112, 22);
       this.mod_Date.TabIndex = 2;
       this.mod_Date.Text = "DD/MMM/YYYY";
       this.mod_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label2.Location = point;
+
+      this.Label2.Location = new Point(6, 38);
       this.Label2.Name = "Label2";
-      size = new Size(112, 22);
-      this.Label2.Size = size;
+
+      this.Label2.Size = new Size(112, 22);
       this.Label2.TabIndex = 1;
       this.Label2.Text = "Table Count:";
       this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label1.Location = point;
+
+      this.Label1.Location = new Point(6, 16);
       this.Label1.Name = "Label1";
-      size = new Size(112, 22);
-      this.Label1.Size = size;
+
+      this.Label1.Size = new Size(112, 22);
       this.Label1.TabIndex = 0;
       this.Label1.Text = "Last Updated:";
       this.Label1.TextAlign = ContentAlignment.MiddleRight;
@@ -541,67 +541,67 @@ namespace Hero_Designer
       this.GroupBox2.Controls.Add((Control) this.at_Date);
       this.GroupBox2.Controls.Add((Control) this.Label5);
       this.GroupBox2.Controls.Add((Control) this.Label6);
-      point = new Point(12, 133);
-      this.GroupBox2.Location = point;
+
+      this.GroupBox2.Location = new Point(12, 133);
       this.GroupBox2.Name = "GroupBox2";
-      size = new Size(257, 115);
-      this.GroupBox2.Size = size;
+
+      this.GroupBox2.Size = new Size(257, 115);
       this.GroupBox2.TabIndex = 1;
       this.GroupBox2.TabStop = false;
       this.GroupBox2.Text = "Archetype Classes";
-      point = new Point(124, 60);
-      this.at_Revision.Location = point;
+
+      this.at_Revision.Location = new Point(124, 60);
       this.at_Revision.Name = "at_Revision";
-      size = new Size(112, 22);
-      this.at_Revision.Size = size;
+
+      this.at_Revision.Size = new Size(112, 22);
       this.at_Revision.TabIndex = 8;
       this.at_Revision.Text = "000";
       this.at_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label15.Location = point;
+
+      this.Label15.Location = new Point(6, 60);
       this.Label15.Name = "Label15";
-      size = new Size(112, 22);
-      this.Label15.Size = size;
+
+      this.Label15.Size = new Size(112, 22);
       this.Label15.TabIndex = 7;
       this.Label15.Text = "Revision:";
       this.Label15.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.at_Import.Location = point;
+
+      this.at_Import.Location = new Point(6, 85);
       this.at_Import.Name = "at_Import";
-      size = new Size(245, 23);
-      this.at_Import.Size = size;
+
+      this.at_Import.Size = new Size(245, 23);
       this.at_Import.TabIndex = 4;
       this.at_Import.Text = "Import";
       this.at_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.at_Count.Location = point;
+
+      this.at_Count.Location = new Point(124, 38);
       this.at_Count.Name = "at_Count";
-      size = new Size(112, 22);
-      this.at_Count.Size = size;
+
+      this.at_Count.Size = new Size(112, 22);
       this.at_Count.TabIndex = 3;
       this.at_Count.Text = "000";
       this.at_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.at_Date.Location = point;
+
+      this.at_Date.Location = new Point(124, 16);
       this.at_Date.Name = "at_Date";
-      size = new Size(112, 22);
-      this.at_Date.Size = size;
+
+      this.at_Date.Size = new Size(112, 22);
       this.at_Date.TabIndex = 2;
       this.at_Date.Text = "DD/MMM/YYYY";
       this.at_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label5.Location = point;
+
+      this.Label5.Location = new Point(6, 38);
       this.Label5.Name = "Label5";
-      size = new Size(112, 22);
-      this.Label5.Size = size;
+
+      this.Label5.Size = new Size(112, 22);
       this.Label5.TabIndex = 1;
       this.Label5.Text = "Record Count:";
       this.Label5.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label6.Location = point;
+
+      this.Label6.Location = new Point(6, 16);
       this.Label6.Name = "Label6";
-      size = new Size(112, 22);
-      this.Label6.Size = size;
+
+      this.Label6.Size = new Size(112, 22);
       this.Label6.TabIndex = 0;
       this.Label6.Text = "Last Updated:";
       this.Label6.TextAlign = ContentAlignment.MiddleRight;
@@ -612,67 +612,67 @@ namespace Hero_Designer
       this.GroupBox3.Controls.Add((Control) this.set_Date);
       this.GroupBox3.Controls.Add((Control) this.Label7);
       this.GroupBox3.Controls.Add((Control) this.Label8);
-      point = new Point(12, 254);
-      this.GroupBox3.Location = point;
+
+      this.GroupBox3.Location = new Point(12, 254);
       this.GroupBox3.Name = "GroupBox3";
-      size = new Size(257, 115);
-      this.GroupBox3.Size = size;
+
+      this.GroupBox3.Size = new Size(257, 115);
       this.GroupBox3.TabIndex = 2;
       this.GroupBox3.TabStop = false;
       this.GroupBox3.Text = "Power Sets";
-      point = new Point(124, 60);
-      this.set_Revision.Location = point;
+
+      this.set_Revision.Location = new Point(124, 60);
       this.set_Revision.Name = "set_Revision";
-      size = new Size(112, 22);
-      this.set_Revision.Size = size;
+
+      this.set_Revision.Size = new Size(112, 22);
       this.set_Revision.TabIndex = 8;
       this.set_Revision.Text = "000";
       this.set_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label17.Location = point;
+
+      this.Label17.Location = new Point(6, 60);
       this.Label17.Name = "Label17";
-      size = new Size(112, 22);
-      this.Label17.Size = size;
+
+      this.Label17.Size = new Size(112, 22);
       this.Label17.TabIndex = 7;
       this.Label17.Text = "Revision:";
       this.Label17.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.set_Import.Location = point;
+
+      this.set_Import.Location = new Point(6, 85);
       this.set_Import.Name = "set_Import";
-      size = new Size(245, 23);
-      this.set_Import.Size = size;
+
+      this.set_Import.Size = new Size(245, 23);
       this.set_Import.TabIndex = 4;
       this.set_Import.Text = "Import";
       this.set_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.set_Count.Location = point;
+
+      this.set_Count.Location = new Point(124, 38);
       this.set_Count.Name = "set_Count";
-      size = new Size(112, 22);
-      this.set_Count.Size = size;
+
+      this.set_Count.Size = new Size(112, 22);
       this.set_Count.TabIndex = 3;
       this.set_Count.Text = "000";
       this.set_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.set_Date.Location = point;
+
+      this.set_Date.Location = new Point(124, 16);
       this.set_Date.Name = "set_Date";
-      size = new Size(112, 22);
-      this.set_Date.Size = size;
+
+      this.set_Date.Size = new Size(112, 22);
       this.set_Date.TabIndex = 2;
       this.set_Date.Text = "DD/MMM/YYYY";
       this.set_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label7.Location = point;
+
+      this.Label7.Location = new Point(6, 38);
       this.Label7.Name = "Label7";
-      size = new Size(112, 22);
-      this.Label7.Size = size;
+
+      this.Label7.Size = new Size(112, 22);
       this.Label7.TabIndex = 1;
       this.Label7.Text = "Record Count:";
       this.Label7.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label8.Location = point;
+
+      this.Label8.Location = new Point(6, 16);
       this.Label8.Name = "Label8";
-      size = new Size(112, 22);
-      this.Label8.Size = size;
+
+      this.Label8.Size = new Size(112, 22);
       this.Label8.TabIndex = 0;
       this.Label8.Text = "Last Updated:";
       this.Label8.TextAlign = ContentAlignment.MiddleRight;
@@ -683,67 +683,67 @@ namespace Hero_Designer
       this.GroupBox4.Controls.Add((Control) this.pow_Date);
       this.GroupBox4.Controls.Add((Control) this.Label9);
       this.GroupBox4.Controls.Add((Control) this.Label10);
-      point = new Point(275, 12);
-      this.GroupBox4.Location = point;
+
+      this.GroupBox4.Location = new Point(275, 12);
       this.GroupBox4.Name = "GroupBox4";
-      size = new Size(257, 115);
-      this.GroupBox4.Size = size;
+
+      this.GroupBox4.Size = new Size(257, 115);
       this.GroupBox4.TabIndex = 3;
       this.GroupBox4.TabStop = false;
       this.GroupBox4.Text = "Powers";
-      point = new Point(124, 60);
-      this.pow_Revision.Location = point;
+
+      this.pow_Revision.Location = new Point(124, 60);
       this.pow_Revision.Name = "pow_Revision";
-      size = new Size(112, 22);
-      this.pow_Revision.Size = size;
+
+      this.pow_Revision.Size = new Size(112, 22);
       this.pow_Revision.TabIndex = 8;
       this.pow_Revision.Text = "000";
       this.pow_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label19.Location = point;
+
+      this.Label19.Location = new Point(6, 60);
       this.Label19.Name = "Label19";
-      size = new Size(112, 22);
-      this.Label19.Size = size;
+
+      this.Label19.Size = new Size(112, 22);
       this.Label19.TabIndex = 7;
       this.Label19.Text = "Revision:";
       this.Label19.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.pow_Import.Location = point;
+
+      this.pow_Import.Location = new Point(6, 85);
       this.pow_Import.Name = "pow_Import";
-      size = new Size(245, 23);
-      this.pow_Import.Size = size;
+
+      this.pow_Import.Size = new Size(245, 23);
       this.pow_Import.TabIndex = 4;
       this.pow_Import.Text = "Import";
       this.pow_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.pow_Count.Location = point;
+
+      this.pow_Count.Location = new Point(124, 38);
       this.pow_Count.Name = "pow_Count";
-      size = new Size(112, 22);
-      this.pow_Count.Size = size;
+
+      this.pow_Count.Size = new Size(112, 22);
       this.pow_Count.TabIndex = 3;
       this.pow_Count.Text = "000";
       this.pow_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.pow_Date.Location = point;
+
+      this.pow_Date.Location = new Point(124, 16);
       this.pow_Date.Name = "pow_Date";
-      size = new Size(112, 22);
-      this.pow_Date.Size = size;
+
+      this.pow_Date.Size = new Size(112, 22);
       this.pow_Date.TabIndex = 2;
       this.pow_Date.Text = "DD/MMM/YYYY";
       this.pow_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label9.Location = point;
+
+      this.Label9.Location = new Point(6, 38);
       this.Label9.Name = "Label9";
-      size = new Size(112, 22);
-      this.Label9.Size = size;
+
+      this.Label9.Size = new Size(112, 22);
       this.Label9.TabIndex = 1;
       this.Label9.Text = "Record Count:";
       this.Label9.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label10.Location = point;
+
+      this.Label10.Location = new Point(6, 16);
       this.Label10.Name = "Label10";
-      size = new Size(112, 22);
-      this.Label10.Size = size;
+
+      this.Label10.Size = new Size(112, 22);
       this.Label10.TabIndex = 0;
       this.Label10.Text = "Last Updated:";
       this.Label10.TextAlign = ContentAlignment.MiddleRight;
@@ -754,67 +754,67 @@ namespace Hero_Designer
       this.GroupBox5.Controls.Add((Control) this.fx_Date);
       this.GroupBox5.Controls.Add((Control) this.Label11);
       this.GroupBox5.Controls.Add((Control) this.Label12);
-      point = new Point(275, 254);
-      this.GroupBox5.Location = point;
+
+      this.GroupBox5.Location = new Point(275, 254);
       this.GroupBox5.Name = "GroupBox5";
-      size = new Size(257, 115);
-      this.GroupBox5.Size = size;
+
+      this.GroupBox5.Size = new Size(257, 115);
       this.GroupBox5.TabIndex = 4;
       this.GroupBox5.TabStop = false;
       this.GroupBox5.Text = "Power Effects";
-      point = new Point(124, 60);
-      this.fx_Revision.Location = point;
+
+      this.fx_Revision.Location = new Point(124, 60);
       this.fx_Revision.Name = "fx_Revision";
-      size = new Size(112, 22);
-      this.fx_Revision.Size = size;
+
+      this.fx_Revision.Size = new Size(112, 22);
       this.fx_Revision.TabIndex = 8;
       this.fx_Revision.Text = "000";
       this.fx_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label21.Location = point;
+
+      this.Label21.Location = new Point(6, 60);
       this.Label21.Name = "Label21";
-      size = new Size(112, 22);
-      this.Label21.Size = size;
+
+      this.Label21.Size = new Size(112, 22);
       this.Label21.TabIndex = 7;
       this.Label21.Text = "Revision:";
       this.Label21.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.fx_Import.Location = point;
+
+      this.fx_Import.Location = new Point(6, 85);
       this.fx_Import.Name = "fx_Import";
-      size = new Size(245, 23);
-      this.fx_Import.Size = size;
+
+      this.fx_Import.Size = new Size(245, 23);
       this.fx_Import.TabIndex = 4;
       this.fx_Import.Text = "Import";
       this.fx_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.fx_Count.Location = point;
+
+      this.fx_Count.Location = new Point(124, 38);
       this.fx_Count.Name = "fx_Count";
-      size = new Size(112, 22);
-      this.fx_Count.Size = size;
+
+      this.fx_Count.Size = new Size(112, 22);
       this.fx_Count.TabIndex = 3;
       this.fx_Count.Text = "000";
       this.fx_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.fx_Date.Location = point;
+
+      this.fx_Date.Location = new Point(124, 16);
       this.fx_Date.Name = "fx_Date";
-      size = new Size(112, 22);
-      this.fx_Date.Size = size;
+
+      this.fx_Date.Size = new Size(112, 22);
       this.fx_Date.TabIndex = 2;
       this.fx_Date.Text = "DD/MMM/YYYY";
       this.fx_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label11.Location = point;
+
+      this.Label11.Location = new Point(6, 38);
       this.Label11.Name = "Label11";
-      size = new Size(112, 22);
-      this.Label11.Size = size;
+
+      this.Label11.Size = new Size(112, 22);
       this.Label11.TabIndex = 1;
       this.Label11.Text = "Record Count:";
       this.Label11.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label12.Location = point;
+
+      this.Label12.Location = new Point(6, 16);
       this.Label12.Name = "Label12";
-      size = new Size(112, 22);
-      this.Label12.Size = size;
+
+      this.Label12.Size = new Size(112, 22);
       this.Label12.TabIndex = 0;
       this.Label12.Text = "Last Updated:";
       this.Label12.TextAlign = ContentAlignment.MiddleRight;
@@ -831,115 +831,115 @@ namespace Hero_Designer
       this.GroupBox6.Controls.Add((Control) this.invent_Date);
       this.GroupBox6.Controls.Add((Control) this.Label13);
       this.GroupBox6.Controls.Add((Control) this.Label14);
-      point = new Point(538, 78);
-      this.GroupBox6.Location = point;
+
+      this.GroupBox6.Location = new Point(538, 78);
       this.GroupBox6.Name = "GroupBox6";
-      size = new Size(257, 291);
-      this.GroupBox6.Size = size;
+
+      this.GroupBox6.Size = new Size(257, 291);
       this.GroupBox6.TabIndex = 5;
       this.GroupBox6.TabStop = false;
       this.GroupBox6.Text = "Invention Sets";
-      point = new Point(6, 93);
-      this.inventSetImport.Location = point;
+
+      this.inventSetImport.Location = new Point(6, 93);
       this.inventSetImport.Name = "inventSetImport";
-      size = new Size(245, 23);
-      this.inventSetImport.Size = size;
+
+      this.inventSetImport.Size = new Size(245, 23);
       this.inventSetImport.TabIndex = 12;
       this.inventSetImport.Text = "Import Sets";
       this.inventSetImport.UseVisualStyleBackColor = true;
-      point = new Point(6, 206);
-      this.btnIOLevels.Location = point;
+
+      this.btnIOLevels.Location = new Point(6, 206);
       this.btnIOLevels.Name = "btnIOLevels";
-      size = new Size(245, 23);
-      this.btnIOLevels.Size = size;
+
+      this.btnIOLevels.Size = new Size(245, 23);
       this.btnIOLevels.TabIndex = 11;
       this.btnIOLevels.Text = "Compute IO Set Level Ranges";
       this.btnIOLevels.UseVisualStyleBackColor = true;
-      point = new Point(6, 148);
-      this.btnImportRecipes.Location = point;
+
+      this.btnImportRecipes.Location = new Point(6, 148);
       this.btnImportRecipes.Name = "btnImportRecipes";
-      size = new Size(245, 23);
-      this.btnImportRecipes.Size = size;
+
+      this.btnImportRecipes.Size = new Size(245, 23);
       this.btnImportRecipes.TabIndex = 10;
       this.btnImportRecipes.Text = "Import Recipes (Full Import)";
       this.btnImportRecipes.UseVisualStyleBackColor = true;
-      point = new Point(9, 263);
-      this.btnSalvageUpdate.Location = point;
+
+      this.btnSalvageUpdate.Location = new Point(9, 263);
       this.btnSalvageUpdate.Name = "btnSalvageUpdate";
-      size = new Size(245, 23);
-      this.btnSalvageUpdate.Size = size;
+
+      this.btnSalvageUpdate.Size = new Size(245, 23);
       this.btnSalvageUpdate.TabIndex = 9;
       this.btnSalvageUpdate.Text = "Update Salvage Requirements";
       this.btnSalvageUpdate.UseVisualStyleBackColor = true;
-      point = new Point(124, 60);
-      this.invent_Revision.Location = point;
+
+      this.invent_Revision.Location = new Point(124, 60);
       this.invent_Revision.Name = "invent_Revision";
-      size = new Size(112, 22);
-      this.invent_Revision.Size = size;
+
+      this.invent_Revision.Size = new Size(112, 22);
       this.invent_Revision.TabIndex = 8;
       this.invent_Revision.Text = "000";
       this.invent_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(9, 234);
-      this.btnEnhEffects.Location = point;
+
+      this.btnEnhEffects.Location = new Point(9, 234);
       this.btnEnhEffects.Name = "btnEnhEffects";
-      size = new Size(245, 23);
-      this.btnEnhEffects.Size = size;
+
+      this.btnEnhEffects.Size = new Size(245, 23);
       this.btnEnhEffects.TabIndex = 8;
       this.btnEnhEffects.Text = "Load Enhancement Effects";
       this.btnEnhEffects.UseVisualStyleBackColor = true;
-      point = new Point(6, 60);
-      this.Label23.Location = point;
+
+      this.Label23.Location = new Point(6, 60);
       this.Label23.Name = "Label23";
-      size = new Size(112, 22);
-      this.Label23.Size = size;
+
+      this.Label23.Size = new Size(112, 22);
       this.Label23.TabIndex = 7;
       this.Label23.Text = "Revision:";
       this.Label23.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 177);
-      this.btnBonusLookup.Location = point;
+
+      this.btnBonusLookup.Location = new Point(6, 177);
       this.btnBonusLookup.Name = "btnBonusLookup";
-      size = new Size(245, 23);
-      this.btnBonusLookup.Size = size;
+
+      this.btnBonusLookup.Size = new Size(245, 23);
       this.btnBonusLookup.TabIndex = 7;
       this.btnBonusLookup.Text = "Import Set Bonus Assignments";
       this.btnBonusLookup.UseVisualStyleBackColor = true;
-      point = new Point(6, 119);
-      this.invent_Import.Location = point;
+
+      this.invent_Import.Location = new Point(6, 119);
       this.invent_Import.Name = "invent_Import";
-      size = new Size(245, 23);
-      this.invent_Import.Size = size;
+
+      this.invent_Import.Size = new Size(245, 23);
       this.invent_Import.TabIndex = 4;
       this.invent_Import.Text = "Import Power-Set Type Assignments";
       this.invent_Import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.invent_RecipeDate.Location = point;
+
+      this.invent_RecipeDate.Location = new Point(124, 38);
       this.invent_RecipeDate.Name = "invent_RecipeDate";
-      size = new Size(112, 22);
-      this.invent_RecipeDate.Size = size;
+
+      this.invent_RecipeDate.Size = new Size(112, 22);
       this.invent_RecipeDate.TabIndex = 3;
       this.invent_RecipeDate.Text = "000";
       this.invent_RecipeDate.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.invent_Date.Location = point;
+
+      this.invent_Date.Location = new Point(124, 16);
       this.invent_Date.Name = "invent_Date";
-      size = new Size(112, 22);
-      this.invent_Date.Size = size;
+
+      this.invent_Date.Size = new Size(112, 22);
       this.invent_Date.TabIndex = 2;
       this.invent_Date.Text = "DD/MMM/YYYY";
       this.invent_Date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label13.Location = point;
+
+      this.Label13.Location = new Point(6, 38);
       this.Label13.Name = "Label13";
-      size = new Size(112, 22);
-      this.Label13.Size = size;
+
+      this.Label13.Size = new Size(112, 22);
       this.Label13.TabIndex = 1;
       this.Label13.Text = "Recipe Date:";
       this.Label13.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label14.Location = point;
+
+      this.Label14.Location = new Point(6, 16);
       this.Label14.Name = "Label14";
-      size = new Size(112, 22);
-      this.Label14.Size = size;
+
+      this.Label14.Size = new Size(112, 22);
       this.Label14.TabIndex = 0;
       this.Label14.Text = "Set-Power Date:";
       this.Label14.TextAlign = ContentAlignment.MiddleRight;
@@ -950,132 +950,132 @@ namespace Hero_Designer
       this.GroupBox7.Controls.Add((Control) this.lev_date);
       this.GroupBox7.Controls.Add((Control) this.Label22);
       this.GroupBox7.Controls.Add((Control) this.Label24);
-      point = new Point(275, 133);
-      this.GroupBox7.Location = point;
+
+      this.GroupBox7.Location = new Point(275, 133);
       this.GroupBox7.Name = "GroupBox7";
-      size = new Size(257, 115);
-      this.GroupBox7.Size = size;
+
+      this.GroupBox7.Size = new Size(257, 115);
       this.GroupBox7.TabIndex = 6;
       this.GroupBox7.TabStop = false;
       this.GroupBox7.Text = "Power Levels";
-      point = new Point(124, 60);
-      this.lev_Revision.Location = point;
+
+      this.lev_Revision.Location = new Point(124, 60);
       this.lev_Revision.Name = "lev_Revision";
-      size = new Size(112, 22);
-      this.lev_Revision.Size = size;
+
+      this.lev_Revision.Size = new Size(112, 22);
       this.lev_Revision.TabIndex = 8;
       this.lev_Revision.Text = "000";
       this.lev_Revision.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 60);
-      this.Label16.Location = point;
+
+      this.Label16.Location = new Point(6, 60);
       this.Label16.Name = "Label16";
-      size = new Size(112, 22);
-      this.Label16.Size = size;
+
+      this.Label16.Size = new Size(112, 22);
       this.Label16.TabIndex = 7;
       this.Label16.Text = "Revision:";
       this.Label16.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 85);
-      this.level_import.Location = point;
+
+      this.level_import.Location = new Point(6, 85);
       this.level_import.Name = "level_import";
-      size = new Size(245, 23);
-      this.level_import.Size = size;
+
+      this.level_import.Size = new Size(245, 23);
       this.level_import.TabIndex = 4;
       this.level_import.Text = "Import";
       this.level_import.UseVisualStyleBackColor = true;
-      point = new Point(124, 38);
-      this.lev_Count.Location = point;
+
+      this.lev_Count.Location = new Point(124, 38);
       this.lev_Count.Name = "lev_Count";
-      size = new Size(112, 22);
-      this.lev_Count.Size = size;
+
+      this.lev_Count.Size = new Size(112, 22);
       this.lev_Count.TabIndex = 3;
       this.lev_Count.Text = "000";
       this.lev_Count.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(124, 16);
-      this.lev_date.Location = point;
+
+      this.lev_date.Location = new Point(124, 16);
       this.lev_date.Name = "lev_date";
-      size = new Size(112, 22);
-      this.lev_date.Size = size;
+
+      this.lev_date.Size = new Size(112, 22);
       this.lev_date.TabIndex = 2;
       this.lev_date.Text = "DD/MMM/YYYY";
       this.lev_date.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(6, 38);
-      this.Label22.Location = point;
+
+      this.Label22.Location = new Point(6, 38);
       this.Label22.Name = "Label22";
-      size = new Size(112, 22);
-      this.Label22.Size = size;
+
+      this.Label22.Size = new Size(112, 22);
       this.Label22.TabIndex = 1;
       this.Label22.Text = "Record Count:";
       this.Label22.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(6, 16);
-      this.Label24.Location = point;
+
+      this.Label24.Location = new Point(6, 16);
       this.Label24.Name = "Label24";
-      size = new Size(112, 22);
-      this.Label24.Size = size;
+
+      this.Label24.Size = new Size(112, 22);
       this.Label24.TabIndex = 0;
       this.Label24.Text = "Last Updated:";
       this.Label24.TextAlign = ContentAlignment.MiddleRight;
       this.GroupBox8.Controls.Add((Control) this.btnEntities);
-      point = new Point(538, 12);
-      this.GroupBox8.Location = point;
+
+      this.GroupBox8.Location = new Point(538, 12);
       this.GroupBox8.Name = "GroupBox8";
-      size = new Size(257, 60);
-      this.GroupBox8.Size = size;
+
+      this.GroupBox8.Size = new Size(257, 60);
       this.GroupBox8.TabIndex = 9;
       this.GroupBox8.TabStop = false;
       this.GroupBox8.Text = "Entities";
-      point = new Point(6, 19);
-      this.btnEntities.Location = point;
+
+      this.btnEntities.Location = new Point(6, 19);
       this.btnEntities.Name = "btnEntities";
-      size = new Size(245, 23);
-      this.btnEntities.Size = size;
+
+      this.btnEntities.Size = new Size(245, 23);
       this.btnEntities.TabIndex = 4;
       this.btnEntities.Text = "Import";
       this.btnEntities.UseVisualStyleBackColor = true;
       this.btnClearSI.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnClearSI.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
       this.btnClearSI.ForeColor = SystemColors.ControlText;
-      point = new Point(18, 374);
-      this.btnClearSI.Location = point;
+
+      this.btnClearSI.Location = new Point(18, 374);
       this.btnClearSI.Name = "btnClearSI";
-      size = new Size(245, 24);
-      this.btnClearSI.Size = size;
+
+      this.btnClearSI.Size = new Size(245, 24);
       this.btnClearSI.TabIndex = 22;
       this.btnClearSI.Text = "Clear StaticIndex Values";
       this.btnClearSI.UseVisualStyleBackColor = true;
       this.btnStaticIndex.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnStaticIndex.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
       this.btnStaticIndex.ForeColor = SystemColors.ControlText;
-      point = new Point(18, 404);
-      this.btnStaticIndex.Location = point;
+
+      this.btnStaticIndex.Location = new Point(18, 404);
       this.btnStaticIndex.Name = "btnStaticIndex";
-      size = new Size(245, 24);
-      this.btnStaticIndex.Size = size;
+
+      this.btnStaticIndex.Size = new Size(245, 24);
       this.btnStaticIndex.TabIndex = 21;
       this.btnStaticIndex.Text = "Assign StaticIndex Values";
       this.btnStaticIndex.UseVisualStyleBackColor = true;
       this.btnDefiance.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
       this.btnDefiance.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
       this.btnDefiance.ForeColor = SystemColors.ControlText;
-      point = new Point(18, 434);
-      this.btnDefiance.Location = point;
+
+      this.btnDefiance.Location = new Point(18, 434);
       this.btnDefiance.Name = "btnDefiance";
-      size = new Size(245, 24);
-      this.btnDefiance.Size = size;
+
+      this.btnDefiance.Size = new Size(245, 24);
       this.btnDefiance.TabIndex = 23;
       this.btnDefiance.Text = "Scan and Tag Blaster Defiance Effects";
       this.btnDefiance.UseVisualStyleBackColor = true;
-      point = new Point(281, 375);
-      this.btnStaticExport.Location = point;
+
+      this.btnStaticExport.Location = new Point(281, 375);
       this.btnStaticExport.Name = "btnStaticExport";
-      size = new Size(245, 23);
-      this.btnStaticExport.Size = size;
+
+      this.btnStaticExport.Size = new Size(245, 23);
       this.btnStaticExport.TabIndex = 24;
       this.btnStaticExport.Text = "Export StaticIndex values";
       this.btnStaticExport.UseVisualStyleBackColor = true;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
       this.AutoScaleMode = AutoScaleMode.Font;
-      size = new Size(815, 562);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(815, 562);
       this.Controls.Add((Control) this.btnStaticExport);
       this.Controls.Add((Control) this.btnDefiance);
       this.Controls.Add((Control) this.btnClearSI);

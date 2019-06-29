@@ -323,12 +323,12 @@ namespace Hero_Designer
             this.lstSets.FullRowSelect = true;
             this.lstSets.HideSelection = false;
             this.lstSets.LargeImageList = this.ilSet;
-            Point point = new Point(12, 168);
-            this.lstSets.Location = point;
+
+            this.lstSets.Location = new Point(12, 168);
             this.lstSets.MultiSelect = false;
             this.lstSets.Name = "lstSets";
-            Size size = new Size(360, 136);
-            this.lstSets.Size = size;
+
+            this.lstSets.Size = new Size(360, 136);
             this.lstSets.SmallImageList = this.ilSet;
             this.lstSets.TabIndex = 0;
             this.lstSets.UseCompatibleStateImageBehavior = false;
@@ -339,68 +339,68 @@ namespace Hero_Designer
             this.ColumnHeader2.Width = 124;
             this.ColumnHeader3.Text = "Slots";
             this.ilSet.ColorDepth = ColorDepth.Depth32Bit;
-            size = new Size(16, 16);
-            this.ilSet.ImageSize = size;
+
+            this.ilSet.ImageSize = new Size(16, 16);
             this.ilSet.TransparentColor = Color.Transparent;
             this.rtxtInfo.BackColor = Color.FromArgb(0, 0, 32);
             this.rtxtInfo.ForeColor = Color.White;
-            point = new Point(12, 308);
-            this.rtxtInfo.Location = point;
+
+            this.rtxtInfo.Location = new Point(12, 308);
             this.rtxtInfo.Name = "rtxtInfo";
             this.rtxtInfo.ReadOnly = true;
             this.rtxtInfo.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(360, 132);
-            this.rtxtInfo.Size = size;
+
+            this.rtxtInfo.Size = new Size(360, 132);
             this.rtxtInfo.TabIndex = 1;
             this.rtxtInfo.Text = "";
             this.rtxtFX.BackColor = Color.FromArgb(0, 0, 32);
             this.rtxtFX.ForeColor = Color.White;
-            point = new Point(384, 20);
-            this.rtxtFX.Location = point;
+
+            this.rtxtFX.Location = new Point(384, 20);
             this.rtxtFX.Name = "rtxtFX";
             this.rtxtFX.ReadOnly = true;
             this.rtxtFX.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(279, 366);
-            this.rtxtFX.Size = size;
+
+            this.rtxtFX.Size = new Size(279, 366);
             this.rtxtFX.TabIndex = 3;
             this.rtxtFX.Text = "";
             this.Label1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.Label1.ForeColor = Color.White;
-            point = new Point(384, 4);
-            this.Label1.Location = point;
+
+            this.Label1.Location = new Point(384, 4);
             this.Label1.Name = "Label1";
-            size = new Size(188, 16);
-            this.Label1.Size = size;
+
+            this.Label1.Size = new Size(188, 16);
             this.Label1.TabIndex = 4;
             this.Label1.Text = "Effect Breakdown:";
             this.rtApplied.BackColor = Color.FromArgb(0, 0, 32);
             this.rtApplied.ForeColor = Color.White;
-            point = new Point(12, 20);
-            this.rtApplied.Location = point;
+
+            this.rtApplied.Location = new Point(12, 20);
             this.rtApplied.Name = "rtApplied";
             this.rtApplied.ReadOnly = true;
             this.rtApplied.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(360, 140);
-            this.rtApplied.Size = size;
+
+            this.rtApplied.Size = new Size(360, 140);
             this.rtApplied.TabIndex = 5;
             this.rtApplied.Text = "";
             this.Label2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.Label2.ForeColor = Color.White;
-            point = new Point(12, 4);
-            this.Label2.Location = point;
+
+            this.Label2.Location = new Point(12, 4);
             this.Label2.Name = "Label2";
-            size = new Size(188, 16);
-            this.Label2.Size = size;
+
+            this.Label2.Size = new Size(188, 16);
             this.Label2.TabIndex = 6;
             this.Label2.Text = "Applied Bonus Effects:";
             this.chkOnTop.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             this.chkOnTop.Checked = true;
             this.chkOnTop.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(558, 392);
-            this.chkOnTop.Location = point;
+
+            this.chkOnTop.Location = new Point(558, 392);
             this.chkOnTop.Name = "chkOnTop";
-            size = new Size(105, 22);
-            this.chkOnTop.Size = size;
+
+            this.chkOnTop.Size = new Size(105, 22);
             this.chkOnTop.TabIndex = 19;
             this.chkOnTop.TextOff = "Keep On Top";
             this.chkOnTop.TextOn = "Keep On Top";
@@ -408,13 +408,13 @@ namespace Hero_Designer
             this.btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             this.btnClose.Checked = false;
             this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(558, 418);
-            this.btnClose.Location = point;
+
+            this.btnClose.Location = new Point(558, 418);
             Padding padding = new Padding(4, 3, 4, 3);
             this.btnClose.Margin = padding;
             this.btnClose.Name = "btnClose";
-            size = new Size(105, 22);
-            this.btnClose.Size = size;
+
+            this.btnClose.Size = new Size(105, 22);
             this.btnClose.TabIndex = 18;
             this.btnClose.TextOff = "Close";
             this.btnClose.TextOn = "Close";
@@ -422,22 +422,22 @@ namespace Hero_Designer
             this.btnSmall.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             this.btnSmall.Checked = false;
             this.btnSmall.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(384, 418);
-            this.btnSmall.Location = point;
+
+            this.btnSmall.Location = new Point(384, 418);
             padding = new Padding(4, 3, 4, 3);
             this.btnSmall.Margin = padding;
             this.btnSmall.Name = "btnSmall";
-            size = new Size(105, 22);
-            this.btnSmall.Size = size;
+
+            this.btnSmall.Size = new Size(105, 22);
             this.btnSmall.TabIndex = 20;
             this.btnSmall.TextOff = "<< Shrink";
             this.btnSmall.TextOn = ">>";
             this.btnSmall.Toggle = false;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
+
+            this.AutoScaleBaseSize = new Size(5, 13);
             this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(675, 448);
-            this.ClientSize = size;
+
+            this.ClientSize = new Size(675, 448);
             this.Controls.Add((Control)this.btnSmall);
             this.Controls.Add((Control)this.chkOnTop);
             this.Controls.Add((Control)this.btnClose);

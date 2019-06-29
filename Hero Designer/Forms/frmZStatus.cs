@@ -55,44 +55,44 @@ namespace Hero_Designer
       this.lblTitle.BorderStyle = BorderStyle.Fixed3D;
       this.lblTitle.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
       this.lblTitle.ForeColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      Point point = new Point(18, 33);
-      this.lblTitle.Location = point;
+
+      this.lblTitle.Location = new Point(18, 33);
       this.lblTitle.Name = "lblTitle";
-      Size size = new Size(480, 37);
-      this.lblTitle.Size = size;
+
+      this.lblTitle.Size = new Size(480, 37);
       this.lblTitle.TabIndex = 0;
       this.lblTitle.TextAlign = ContentAlignment.MiddleCenter;
       this.lblStatus1.BackColor = Color.Black;
       this.lblStatus1.ForeColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      point = new Point(20, 35);
-      this.lblStatus1.Location = point;
+
+      this.lblStatus1.Location = new Point(20, 35);
       this.lblStatus1.Name = "lblStatus1";
-      size = new Size(476, 16);
-      this.lblStatus1.Size = size;
+
+      this.lblStatus1.Size = new Size(476, 16);
       this.lblStatus1.TabIndex = 1;
       this.lblStatus1.TextAlign = ContentAlignment.MiddleCenter;
       this.lblStatus2.BackColor = Color.Black;
       this.lblStatus2.ForeColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      point = new Point(20, 52);
-      this.lblStatus2.Location = point;
+
+      this.lblStatus2.Location = new Point(20, 52);
       this.lblStatus2.Name = "lblStatus2";
-      size = new Size(476, 16);
-      this.lblStatus2.Size = size;
+
+      this.lblStatus2.Size = new Size(476, 16);
       this.lblStatus2.TabIndex = 2;
       this.lblStatus2.TextAlign = ContentAlignment.MiddleCenter;
       this.PictureBox1.Image = (Image) componentResourceManager.GetObject("PictureBox1.Image");
-      point = new Point(1, 1);
-      this.PictureBox1.Location = point;
+
+      this.PictureBox1.Location = new Point(1, 1);
       this.PictureBox1.Name = "PictureBox1";
-      size = new Size(515, 75);
-      this.PictureBox1.Size = size;
+
+      this.PictureBox1.Size = new Size(515, 75);
       this.PictureBox1.TabIndex = 3;
       this.PictureBox1.TabStop = false;
-      size = new Size(5, 13);
-      this.AutoScaleBaseSize = size;
+
+      this.AutoScaleBaseSize = new Size(5, 13);
       this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(517, 77);
-      this.ClientSize = size;
+
+      this.ClientSize = new Size(517, 77);
       this.Controls.Add((Control) this.lblStatus2);
       this.Controls.Add((Control) this.lblStatus1);
       this.Controls.Add((Control) this.lblTitle);
