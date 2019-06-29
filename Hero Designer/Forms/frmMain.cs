@@ -100,7 +100,7 @@ namespace Hero_Designer
 
         internal SaveFileDialog DlgSave => dlgSave;
 
-        internal I9Picker I9Picker
+        I9Picker I9Picker
         {
             get
             {
@@ -108,7 +108,7 @@ namespace Hero_Designer
                     this.i9Picker.Height = 315;
                 return this.i9Picker;
             }
-            private set
+            set
             {
                 this.i9Picker = value;
             }
@@ -155,52 +155,31 @@ namespace Hero_Designer
             //adding events
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
+                this.dvAnchored = new DataView();
+                this.Controls.Add((Control)this.dvAnchored);
+                this.dvAnchored.BackColor = Color.Black;
+                this.dvAnchored.DrawVillain = false;
+                this.dvAnchored.Floating = false;
+                this.dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+
+                this.dvAnchored.Location = new Point(16, 391);
+                this.dvAnchored.Name = "dvAnchored";
+
+                this.dvAnchored.Size = new Size(300, 347);
+                this.dvAnchored.TabIndex = 69;
                 this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
                 var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
                 this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 this.Name = nameof(frmMain);
-                this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
                 this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
                 this.I9Popup.MouseMove += I9Popup_MouseMove;
                 this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
                 this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
 
-                this.i9Picker.Moved += this.I9Picker_Moved;
-                this.I9Picker.HoverSet += this.I9Picker_HoverSet;
-                this.i9Picker.HoverEnhancement += this.I9Picker_HoverEnhancement;
-                this.i9Picker.MouseLeave += this.I9Picker_Hiding;
-                this.i9Picker.EnhancementPicked += this.I9Picker_EnhancementPicked;
-                this.i9Picker.MouseDown += this.I9Picker_MouseDown;
-
-                // accoladeButton events
-                this.accoladeButton.MouseDown += accoladeButton_MouseDown;
-                this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
-
-
-                // cbAT events
-                this.cbAT.DrawItem += cbAT_DrawItem;
-                this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
-                this.cbAT.MouseMove += cbAT_MouseMove;
-                this.cbAT.MouseLeave += cbAT_MouseLeave;
-
-
                 // cbAncillary events
-                this.cbAncillary.DrawItem += cbAncillary_DrawItem;
-                this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
-                this.cbAncillary.MouseMove += cbAncillary_MouseMove;
-                this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
 
 
                 // cbOrigin events
-                this.cbOrigin.DrawItem += cbOrigin_DrawItem;
-                this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
-
-
-                // cbPool0 events
-                this.cbPool0.DrawItem += cbPool0_DrawItem;
-                this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
-                this.cbPool0.MouseMove += cbPool0_MouseMove;
-                this.cbPool0.MouseLeave += cbPool0_MouseLeave;
 
 
                 // cbPool1 events
@@ -229,14 +208,6 @@ namespace Hero_Designer
                 this.cbPrimary.SelectionChangeCommitted += cbPrimary_SelectedIndexChanged;
                 this.cbPrimary.MouseMove += cbPrimary_MouseMove;
                 this.cbPrimary.MouseLeave += cbPrimary_MouseLeave;
-
-
-                // cbSecondary events
-                this.cbSecondary.DrawItem += cbSecondary_DrawItem;
-                this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
-                this.cbSecondary.MouseMove += cbSecondary_MouseMove;
-                this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
-
 
                 // dvAnchored events
                 this.dvAnchored.MouseWheel += frmMain_MouseWheel;
