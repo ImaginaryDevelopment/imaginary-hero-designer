@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    [DesignerGenerated]
     public class frmMiniList : Form
     {
         ctlPopUp _pInfo;
@@ -20,7 +19,7 @@ namespace Hero_Designer
 
         IContainer components;
 
-        protected frmMain myParent;
+        frmMain myParent;
         internal ctlPopUp pInfo
         {
             get => _pInfo;
@@ -65,7 +64,6 @@ namespace Hero_Designer
 
         [DebuggerStepThrough]
         void InitializeComponent()
-
         {
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmMiniList));
             this.pInfo = new ctlPopUp();
@@ -90,13 +88,14 @@ namespace Hero_Designer
             size = new Size(17, 284);
             this.VScrollBar1.Size = size;
             this.VScrollBar1.TabIndex = 1;
+
             this.AutoScaleMode = AutoScaleMode.None;
             this.BackColor = Color.Black;
             size = new Size(249, 284);
             this.ClientSize = size;
             this.Controls.Add((Control)this.VScrollBar1);
             this.Controls.Add((Control)this.pInfo);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
+            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
             this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
             this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             size = new Size(600, 600);
@@ -106,17 +105,17 @@ namespace Hero_Designer
             this.Name = nameof(frmMiniList);
             this.Text = "Mini List";
             this.TopMost = true;
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                  
-                  // pInfo events
-                  this.pInfo.MouseWheel += pInfo_MouseWheel;
-                  this.pInfo.MouseEnter += pInfo_MouseEnter;
-                  
-              }
-              // finished with events
+            //adding events
+            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+            {
+                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+
+                // pInfo events
+                this.pInfo.MouseWheel += pInfo_MouseWheel;
+                this.pInfo.MouseEnter += pInfo_MouseEnter;
+
+            }
+            // finished with events
             this.ResumeLayout(false);
         }
 
@@ -129,13 +128,13 @@ namespace Hero_Designer
         void pInfo_MouseWheel(object sender, MouseEventArgs e)
 
         {
-            int num = Conversions.ToInteger(Operators.AddObject((object)this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, (object)-1, (object)1)));
+            int num = this.VScrollBar1.Value + e.Delta > 0 ? -1 : 1;
             if (num < this.VScrollBar1.Minimum)
                 num = this.VScrollBar1.Minimum;
             if (num > this.VScrollBar1.Maximum - 9)
                 num = this.VScrollBar1.Maximum - 9;
             this.VScrollBar1.Value = num;
-            this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            this.VScrollBar1_Scroll(sender, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
         public void SizeMe()
@@ -144,9 +143,11 @@ namespace Hero_Designer
         }
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
-
         {
-            this.pInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * ((double)this.pInfo.lHeight - (double)this.ClientSize.Height));
+            this.pInfo.ScrollY = (float)(
+                (double)this.VScrollBar1.Value /
+                (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) *
+                ((double)this.pInfo.lHeight - (double)this.ClientSize.Height));
         }
     }
 }

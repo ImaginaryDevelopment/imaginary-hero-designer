@@ -87,6 +87,12 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.Designer.cs">
+      <DependentUpon>FrmMiniList2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="clsOutput.cs" />
     <Compile Include="clsToonX.cs" />
@@ -206,7 +212,7 @@
     <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMiniList.cs">
+    <Compile Include="Forms\WindowMenuItems\frmMiniList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmOptionListDlg.cs">
@@ -380,7 +386,7 @@
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMiniList.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmMiniList.resx">
       <DependentUpon>frmMiniList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmOptionListDlg.resx">
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSetListing.resx">
       <DependentUpon>frmSetListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowMenuItems\FrmMiniList2.resx">
+      <DependentUpon>FrmMiniList2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WindowMenuItems\frmSetViewer.resx">
       <DependentUpon>frmSetViewer.cs</DependentUpon>
