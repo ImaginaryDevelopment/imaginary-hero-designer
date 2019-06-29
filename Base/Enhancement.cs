@@ -287,7 +287,7 @@ public class Enhancement : IEnhancement
       ref Enums.sEffect local = ref this.Effect[index];
       Base.Data_Classes.Effect effect;
       if (!reader.ReadBoolean())
-        effect = (Base.Data_Classes.Effect) null;
+        effect = null;
       else
         effect = new Base.Data_Classes.Effect(reader)
         {

@@ -216,7 +216,7 @@ namespace Hero_Designer
         this.lstImport.Items[0].EnsureVisible();
       this.lstImport.EndUpdate();
       this.HideUnchanged.Text = "Hide Unchanged";
-      int num5 = (int) Interaction.MsgBox((object) ("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)), MsgBoxStyle.OkOnly, (object) null);
+      int num5 = (int) Interaction.MsgBox((object) ("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)), MsgBoxStyle.OkOnly, null);
     }
 
     void frmImportEnhSets_Load(object sender, EventArgs e)

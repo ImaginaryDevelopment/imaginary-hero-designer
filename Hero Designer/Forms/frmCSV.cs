@@ -222,7 +222,7 @@ namespace Hero_Designer
         }
       }
       this.BusyMsg("Re-Indexing && Saving...");
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       this.BusyHide();
     }
@@ -295,12 +295,12 @@ namespace Hero_Designer
         FileSystem.FileOpen(FileNumber, "StaticIndexes.txt", OpenMode.Output, OpenAccess.Default, OpenShare.Default, -1);
         FileSystem.WriteLine(FileNumber, (object) text);
         FileSystem.FileClose(FileNumber);
-        int num = (int) Interaction.MsgBox((object) "Copied to clipboard and saved in StaticIndexes.txt", MsgBoxStyle.OkOnly, (object) null);
+        int num = (int) Interaction.MsgBox((object) "Copied to clipboard and saved in StaticIndexes.txt", MsgBoxStyle.OkOnly, null);
       }
       catch (Exception ex)
       {
         ProjectData.SetProjectError(ex);
-        int num = (int) Interaction.MsgBox((object) "Copied to clipboard only", MsgBoxStyle.OkOnly, (object) null);
+        int num = (int) Interaction.MsgBox((object) "Copied to clipboard only", MsgBoxStyle.OkOnly, null);
         ProjectData.ClearProjectError();
       }
     }

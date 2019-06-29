@@ -45,7 +45,7 @@ namespace Base.Display
     {
       get
       {
-        return !this._isInitialised ? (this.Initialise() ? this._bits : (Bitmap) null) : this._bits;
+        return !this._isInitialised ? (this.Initialise() ? this._bits : null) : this._bits;
       }
     }
 

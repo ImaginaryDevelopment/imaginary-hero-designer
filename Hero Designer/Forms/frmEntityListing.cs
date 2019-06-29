@@ -83,7 +83,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Re-Indexing...");
       DatabaseAPI.LoadMainDatabase();
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.BusyHide();
       this.Hide();
     }

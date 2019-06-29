@@ -205,7 +205,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Discarding Changes...");
       DatabaseAPI.LoadMainDatabase();
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.BusyHide();
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
@@ -297,7 +297,7 @@ namespace Hero_Designer
             Group = num2 - 1;
         }
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.RefreshLists(Group, 0, 0);
         this.BusyHide();
       }
@@ -319,7 +319,7 @@ namespace Hero_Designer
         DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
         DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.List_Groups(selectedIndex + 1);
         this.BusyHide();
       }
@@ -354,7 +354,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Discarding Changes...");
       Array.Sort<Archetype>(DatabaseAPI.Database.Classes);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }
@@ -375,7 +375,7 @@ namespace Hero_Designer
         DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
         DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.List_Groups(selectedIndex - 1);
         this.BusyHide();
       }
@@ -387,7 +387,7 @@ namespace Hero_Designer
       this.BusyMsg("Re-Indexing && Saving...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
       DatabaseAPI.AssignStaticIndexValues();
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       this.BusyHide();
       this.DialogResult = DialogResult.OK;
@@ -503,7 +503,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Power[index1] = (IPower) new Power(DatabaseAPI.Database.Power[index2]);
           DatabaseAPI.Database.Power[index2] = (IPower) new Power(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Powers(SelIDX);
           this.BusyHide();
         }
@@ -542,7 +542,7 @@ namespace Hero_Designer
             {
               string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
               Clipboard.SetDataObject((object) str2, true);
-              int num4 = (int) Interaction.MsgBox((object) str2, MsgBoxStyle.OkOnly, (object) null);
+              int num4 = (int) Interaction.MsgBox((object) str2, MsgBoxStyle.OkOnly, null);
             }
             this.RefreshLists(-1, -1, -1);
           }
@@ -555,7 +555,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }
@@ -581,7 +581,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Power[index1] = (IPower) new Power(DatabaseAPI.Database.Power[index2]);
           DatabaseAPI.Database.Power[index2] = (IPower) new Power(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Powers(SelIDX);
           this.BusyHide();
         }
@@ -609,7 +609,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Powersets[index1] = (IPowerset) new Powerset(DatabaseAPI.Database.Powersets[index2]);
           DatabaseAPI.Database.Powersets[index2] = (IPowerset) new Powerset(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Sets(SelIDX);
           this.BusyHide();
         }
@@ -637,7 +637,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Powersets[index1] = (IPowerset) new Powerset(DatabaseAPI.Database.Powersets[index2]);
           DatabaseAPI.Database.Powersets[index2] = (IPowerset) new Powerset(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Sets(SelIDX);
           this.BusyHide();
         }
@@ -713,7 +713,7 @@ namespace Hero_Designer
               Powerset = index1 - 1;
           }
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.RefreshLists(-1, Powerset, -1);
           this.BusyHide();
         }
@@ -742,7 +742,7 @@ namespace Hero_Designer
           if (DatabaseAPI.Database.Powersets[Powerset].FullName != fullName)
           {
             this.BusyMsg("Re-Indexing...");
-            DatabaseAPI.MatchAllIDs((IMessager) null);
+            DatabaseAPI.MatchAllIDs(null);
             this.RefreshLists(-1, Powerset, -1);
             this.BusyHide();
           }
@@ -755,7 +755,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPowerset>(DatabaseAPI.Database.Powersets);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }

@@ -108,7 +108,7 @@ namespace Hero_Designer
         if (this._importBuffer[index].IsValid)
           this._importBuffer[index].IsNew = true;
       }
-      int num3 = (int) Interaction.MsgBox((object) "All power effects removed!", MsgBoxStyle.OkOnly, (object) null);
+      int num3 = (int) Interaction.MsgBox((object) "All power effects removed!", MsgBoxStyle.OkOnly, null);
     }
 
     void btnFile_Click(object sender, EventArgs e)
@@ -262,7 +262,7 @@ namespace Hero_Designer
         this.lstImport.Items[0].EnsureVisible();
       this.lstImport.EndUpdate();
       this.HideUnchanged.Text = "Hide Unchanged";
-      int num6 = (int) Interaction.MsgBox((object) ("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3) + "\r\nRe-Indexed: " + Conversions.ToString(num4)), MsgBoxStyle.OkOnly, (object) null);
+      int num6 = (int) Interaction.MsgBox((object) ("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3) + "\r\nRe-Indexed: " + Conversions.ToString(num4)), MsgBoxStyle.OkOnly, null);
     }
 
     void frmImportEffects_Load(object sender, EventArgs e)
@@ -642,7 +642,7 @@ namespace Hero_Designer
       DatabaseAPI.Database.PowerEffectVersion.SourceFile = this.dlgBrowse.FileName;
       DatabaseAPI.Database.PowerEffectVersion.RevisionDate = DateTime.Now;
       DatabaseAPI.Database.PowerEffectVersion.Revision = Convert.ToInt32(this.udRevision.Value);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       this.BusyHide();
       int num5 = (int) Interaction.MsgBox((object) ("Import of " + Conversions.ToString(num1) + " records completed!\r\nOf these, " + Conversions.ToString(num3) + " records were found read-only."), MsgBoxStyle.Information, (object) "Done");

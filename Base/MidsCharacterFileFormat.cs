@@ -296,7 +296,7 @@ label_17:
                 }
                 else
                 {
-                  powerEntry1 = new PowerEntry(-1, (IPower) null, false);
+                  powerEntry1 = new PowerEntry(-1, null, false);
                   flag5 = true;
                 }
                 if (sidPower1 > -1 | !string.IsNullOrEmpty(name1))

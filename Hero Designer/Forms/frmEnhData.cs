@@ -175,8 +175,8 @@ namespace Hero_Designer
         void btnAddFX_Click(object sender, EventArgs e)
 
         {
-            IEffect iFX = (IEffect)new Effect((IPower)null);
-            frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
+            IEffect iFX = new Effect();
+            frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() != DialogResult.OK)
                 return;
             IEnhancement enh = this.myEnh;
@@ -755,7 +755,7 @@ namespace Hero_Designer
             }
             else
             {
-                frmPowerEffect frmPowerEffect = new frmPowerEffect(ref this.myEnh.Effect[selectedIndex].FX);
+                frmPowerEffect frmPowerEffect = new frmPowerEffect(this.myEnh.Effect[selectedIndex].FX);
                 if (frmPowerEffect.ShowDialog() == DialogResult.OK)
                 {
                     Enums.sEffect[] effect = this.myEnh.Effect;

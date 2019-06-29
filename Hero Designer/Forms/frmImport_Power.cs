@@ -111,7 +111,7 @@ namespace Hero_Designer
         if (this.ImportBuffer[index].IsValid)
           this.ImportBuffer[index].IsNew = true;
       }
-      int num2 = (int) Interaction.MsgBox((object) "All powers removed!", MsgBoxStyle.OkOnly, (object) null);
+      int num2 = (int) Interaction.MsgBox((object) "All powers removed!", MsgBoxStyle.OkOnly, null);
     }
 
     void btnFile_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace Hero_Designer
       int num3;
       if (index1 != powerArray.Length)
       {
-        int num2 = (int) Interaction.MsgBox((object) ("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."), MsgBoxStyle.OkOnly, (object) null);
+        int num2 = (int) Interaction.MsgBox((object) ("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."), MsgBoxStyle.OkOnly, null);
         num3 = 0;
       }
       else
@@ -601,7 +601,7 @@ namespace Hero_Designer
       DatabaseAPI.Database.PowerVersion.SourceFile = this.dlgBrowse.FileName;
       DatabaseAPI.Database.PowerVersion.RevisionDate = DateTime.Now;
       DatabaseAPI.Database.PowerVersion.Revision = Convert.ToInt32(this.udRevision.Value);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       int num3 = (int) Interaction.MsgBox((object) ("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object) "Done");
       this.DisplayInfo();

@@ -1120,12 +1120,12 @@ namespace Hero_Designer
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
             {
-                int num = (int)Interaction.MsgBox((object)"Import successful.", MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)"Import successful.", MsgBoxStyle.OkOnly, null);
                 this.refresh_PowerData();
             }
             else
             {
-                int num1 = (int)Interaction.MsgBox((object)"Import failed. No changes made.", MsgBoxStyle.OkOnly, (object)null);
+                int num1 = (int)Interaction.MsgBox((object)"Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
             }
         }
 
@@ -1168,8 +1168,8 @@ namespace Hero_Designer
         void btnFXAdd_Click(object sender, EventArgs e)
 
         {
-            IEffect iFX = (IEffect)new Effect((IPower)null);
-            frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
+            IEffect iFX = new Effect();
+            frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() != DialogResult.OK)
                 return;
             IPower power1 = this.myPower;
@@ -1207,7 +1207,7 @@ namespace Hero_Designer
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
             IEffect iFX = (IEffect)this.myPower.Effects[this.lvFX.SelectedIndices[0]].Clone();
-            frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
+            frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() == DialogResult.OK)
             {
                 IPower power1 = this.myPower;
@@ -1227,7 +1227,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = this.lvFX.SelectedIndices[0];
             IEffect iFX = (IEffect)this.myPower.Effects[selectedIndex].Clone();
-            frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
+            frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() == DialogResult.OK)
             {
                 this.myPower.Effects[selectedIndex] = (IEffect)frmPowerEffect.myFX.Clone();
@@ -4456,7 +4456,7 @@ namespace Hero_Designer
                 int num1 = int.Parse(s);
                 if (num1 < 0)
                 {
-                    int num2 = (int)Interaction.MsgBox((object)"The static index cannot be a negative number.", MsgBoxStyle.Exclamation, (object)null);
+                    int num2 = (int)Interaction.MsgBox((object)"The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
                 }
                 else
                 {
@@ -4467,7 +4467,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
             }
         }

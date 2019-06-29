@@ -530,7 +530,7 @@ namespace Hero_Designer
     {
       if (this.lvSet.SelectedItems.Count <= 0)
         return;
-      this.SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(this.lvSet.SelectedItems[0].Tag), (PowerEntry) null));
+      this.SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(this.lvSet.SelectedItems[0].Tag), null));
     }
   }
 }

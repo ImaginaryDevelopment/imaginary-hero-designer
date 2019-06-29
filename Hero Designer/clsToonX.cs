@@ -1521,7 +1521,7 @@ namespace Hero_Designer
             int num6 = num5;
             for (int index2 = 0; index2 <= num6; ++index2)
             {
-                PowerEntry powerEntry = new PowerEntry(-1, (IPower)null, false)
+                PowerEntry powerEntry = new PowerEntry(-1, null, false)
                 {
                     Level = (int)Math.Round(Conversion.Val(strArray5[index1]))
                 };
@@ -1683,7 +1683,7 @@ namespace Hero_Designer
                 pIDX = this.CurrentBuild.Powers[hIDX].NIDPower;
             }
             IPower power = DatabaseAPI.Database.Power[pIDX];
-            int index1 = popupData.Add((PopUp.Section)null);
+            int index1 = popupData.Add(null);
             popupData.Sections[index1].Add(power.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
             if (power.PowerSetID > -1)
                 popupData.Sections[index1].Add("Powerset: " + DatabaseAPI.Database.Powersets[power.PowerSetID].DisplayName, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
@@ -1705,7 +1705,7 @@ namespace Hero_Designer
             {
                 if (DatabaseAPI.Database.Power[pIDX].NIDSubPower.Length > 0)
                 {
-                    index1 = popupData.Add((PopUp.Section)null);
+                    index1 = popupData.Add(null);
                     popupData.Sections[index1] = new PopUp.Section();
                     popupData.Sections[index1].Add("Powers:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     if (pIDX > -1)
@@ -1720,7 +1720,7 @@ namespace Hero_Designer
                 }
                 if (!DatabaseAPI.Database.Power[pIDX].Requires.ClassOk(this.Archetype.Idx))
                 {
-                    index1 = popupData.Add((PopUp.Section)null);
+                    index1 = popupData.Add(null);
                     popupData.Sections[index1].Add("You cannot take this power because you are a " + this.Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                 }
             }
@@ -1733,13 +1733,13 @@ namespace Hero_Designer
                     {
                         if (DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].NIDSubPower.Length > 0)
                         {
-                            index1 = popupData.Add((PopUp.Section)null);
+                            index1 = popupData.Add(null);
                             popupData.Sections[index1] = this.CurrentBuild.Powers[hIDX].PopSubPowerListing("Powers:", PopUp.Colors.Text, PopUp.Colors.Text);
                         }
                     }
                     else if (DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].NIDSubPower.Length > 0)
                     {
-                        index1 = popupData.Add((PopUp.Section)null);
+                        index1 = popupData.Add(null);
                         popupData.Sections[index1] = this.CurrentBuild.Powers[hIDX].PopSubPowerListing("Powers:", PopUp.Colors.Disabled, PopUp.Colors.Effect);
                     }
                 }
@@ -1753,7 +1753,7 @@ namespace Hero_Designer
                     }
                     if (flag2)
                     {
-                        index1 = popupData.Add((PopUp.Section)null);
+                        index1 = popupData.Add(null);
                         popupData.Sections[index1] = this.PopSlottedEnhInfo(hIDX);
                     }
                 }
@@ -1768,7 +1768,7 @@ namespace Hero_Designer
                             if (!flag1)
                             {
                                 flag1 = true;
-                                index1 = popupData.Add((PopUp.Section)null);
+                                index1 = popupData.Add(null);
                                 popupData.Sections[index1].Add("Active Enhancement Sets:", PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                             }
                             I9SetData.sSetInfo[] setInfo = this.CurrentBuild.SetBonus[index2].SetInfo;
@@ -1793,18 +1793,18 @@ namespace Hero_Designer
                 }
                 if (DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].UIDSubPower.Length > 0)
                 {
-                    int index2 = popupData.Add((PopUp.Section)null);
+                    int index2 = popupData.Add(null);
                     string iText = "This virtual power contains additional powers which can be individually selected.\r\n" + "To change which powers are selected, either Control+Shift+Click or Double-Click on this power.\r\n\r\nRemember that the selected powers will only be active if this power's toggle button is switched on.";
                     popupData.Sections[index2].Add(iText, PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
                 }
                 string empty = string.Empty;
                 if (this.PowerState(this.CurrentBuild.Powers[hIDX].NIDPower, ref empty) == ListLabelV2.LLItemState.Invalid && empty != "")
                 {
-                    int index2 = popupData.Add((PopUp.Section)null);
+                    int index2 = popupData.Add(null);
                     popupData.Sections[index2].Add(empty, PopUp.Colors.Alert, 1f, FontStyle.Bold, 0);
                     if (!DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].Requires.ClassOk(this.Archetype.Idx))
                     {
-                        int index3 = popupData.Add((PopUp.Section)null);
+                        int index3 = popupData.Add(null);
                         popupData.Sections[index3].Add("You cannot take this power because you are a " + this.Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                     }
                 }
@@ -1816,7 +1816,7 @@ namespace Hero_Designer
         {
             PopUp.PopupData popupData = new PopUp.PopupData();
             IPowerset powerset = DatabaseAPI.Database.Powersets[nIDPowerset];
-            int index1 = popupData.Add((PopUp.Section)null);
+            int index1 = popupData.Add(null);
             popupData.Sections[index1].Add(powerset.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
             if (powerset.nArchetype > -1)
                 popupData.Sections[index1].Add("Archetype: " + DatabaseAPI.Database.Classes[powerset.nArchetype].DisplayName, PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
@@ -1826,19 +1826,19 @@ namespace Hero_Designer
             popupData.Sections[index1].Add(powerset.Description, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
             if (extraString != "")
             {
-                int index2 = popupData.Add((PopUp.Section)null);
+                int index2 = popupData.Add(null);
                 popupData.Sections[index2].Add(extraString, PopUp.Colors.Invention, 1f, FontStyle.Bold, 1);
             }
             if (powerset.Powers.Length > 0)
             {
                 if (!powerset.Powers[0].Requires.ClassOk(this.Archetype.Idx))
                 {
-                    int index2 = popupData.Add((PopUp.Section)null);
+                    int index2 = popupData.Add(null);
                     popupData.Sections[index2].Add("You cannot take powers from this pool because you are a " + this.Archetype.DisplayName + ".", PopUp.Colors.Alert, 1f, FontStyle.Bold, 1);
                 }
                 else if (this.PowersetMutexClash(this.Powersets[0].Power[0]))
                 {
-                    int index2 = popupData.Add((PopUp.Section)null);
+                    int index2 = popupData.Add(null);
                     popupData.Sections[index2].Add("You cannot take the " + this.Powersets[0].DisplayName + " and " + this.Powersets[1].DisplayName + " sets together.", PopUp.Colors.Alert, 1f, FontStyle.Bold, 0);
                 }
             }
@@ -2493,7 +2493,7 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, (object)null);
+                    int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
                     streamWriter.Close();
                     bool flag2 = false;
                     ProjectData.ClearProjectError();

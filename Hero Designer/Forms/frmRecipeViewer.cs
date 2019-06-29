@@ -231,7 +231,7 @@ namespace Hero_Designer
                             }
                         }
                     }
-                    int index3 = popupData.Add((PopUp.Section)null);
+                    int index3 = popupData.Add(null);
                     if (Mini)
                         iIndent = 0;
                     this.lblHeader.Text = "Shopping List";
@@ -285,7 +285,7 @@ namespace Hero_Designer
                     if (this.chkRecipe.Checked)
                     {
                         this.RecipeInfo.ColumnPosition = 0.75f;
-                        int index1 = popupData.Add((PopUp.Section)null);
+                        int index1 = popupData.Add(null);
                         popupData.Sections[index1].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int num7 = numArray2.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
@@ -327,7 +327,7 @@ namespace Hero_Designer
                         popupData.ColPos = 0.15f;
                         popupData.ColRight = false;
                     }
-                    int index5 = popupData.Add((PopUp.Section)null);
+                    int index5 = popupData.Add(null);
                     string iText1 = !Mini ? Conversions.ToString(num4) + " Salvage Items:" : Conversions.ToString(num4) + " Items:";
                     popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     int num9 = numArray1.Length - 1;
@@ -357,7 +357,7 @@ namespace Hero_Designer
                     popupData.Sections[index5].Content = frmRecipeViewer.sortPopupStrings(Mini, 1, popupData.Sections[index5].Content);
                     if (this.nonRecipeCount != 1)
                     {
-                        int index1 = popupData.Add((PopUp.Section)null);
+                        int index1 = popupData.Add(null);
                         string iText2 = !Mini ? Conversions.ToString(this.nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(this.nonRecipeCount - 1) + " Enhs:";
                         popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int num7 = tl.Length - 1;
@@ -380,7 +380,7 @@ namespace Hero_Designer
                 this.DrawIcon(Conversions.ToInteger(this.lvDPA.SelectedItems[0].Tag));
                 if (rIdx > -1)
                 {
-                    int index1 = popupData.Add((PopUp.Section)null);
+                    int index1 = popupData.Add(null);
                     popupData.Sections[index1] = Character.PopRecipeInfo(rIdx, Conversions.ToInteger(this.lvDPA.SelectedItems[0].SubItems[1].Text) - 1);
                     if (popupData.Sections[index1].Content != null && popupData.Sections[index1].Content.Length > 0)
                     {

@@ -147,10 +147,10 @@ namespace Hero_Designer
             if (powerID > -1)
             {
                 IPower power1 = DatabaseAPI.Database.Power[powerID];
-                int index1 = iPopup.Add((PopUp.Section)null);
+                int index1 = iPopup.Add(null);
                 iPopup.Sections[index1].Add(DatabaseAPI.Database.Power[powerID].DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
                 iPopup.Sections[index1].Add("Unbuffed Power Data", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                int index2 = iPopup.Add((PopUp.Section)null);
+                int index2 = iPopup.Add(null);
                 iPopup.Sections[index2].Add("Attributes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 iPopup.Sections[index2].Add("Power Type:", PopUp.Colors.Text, Enum.GetName(power1.PowerType.GetType(), (object)power1.PowerType), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                 iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Text, this.TwoDP(power1.Accuracy), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
@@ -204,14 +204,14 @@ namespace Hero_Designer
                 }
                 if (power1.Effects.Length > 0)
                 {
-                    int index3 = iPopup.Add((PopUp.Section)null);
+                    int index3 = iPopup.Add(null);
                     iPopup.Sections[index3].Add("Effects:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     IPower power2 = (IPower)new Power(DatabaseAPI.Database.Power[powerID]);
                     char[] chArray = new char[1] { '^' };
                     int num1 = power1.Effects.Length - 1;
                     for (int index4 = 0; index4 <= num1; ++index4)
                     {
-                        int index5 = iPopup.Add((PopUp.Section)null);
+                        int index5 = iPopup.Add(null);
                         power2.Effects[index4].Power = power2;
                         string[] strArray = power2.Effects[index4].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
                         int num2 = strArray.Length - 1;
@@ -227,7 +227,7 @@ namespace Hero_Designer
             }
             else
             {
-                int index = iPopup.Add((PopUp.Section)null);
+                int index = iPopup.Add(null);
                 iPopup.Sections[index].Add("No Power", PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
             }
             this.pInfo.SetPopup(iPopup);

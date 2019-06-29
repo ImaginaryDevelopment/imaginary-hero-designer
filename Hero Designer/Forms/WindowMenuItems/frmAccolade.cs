@@ -118,7 +118,7 @@ namespace Hero_Designer
             this.ibClose.ImageOff = this._myParent.Drawing.bxPower[2].Bitmap;
             this.ibClose.ImageOn = this._myParent.Drawing.bxPower[3].Bitmap;
             PopUp.PopupData iPopup = new PopUp.PopupData();
-            int index = iPopup.Add((PopUp.Section)null);
+            int index = iPopup.Add(null);
             iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
             iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
             this.PopInfo.SetPopup(iPopup);
@@ -409,7 +409,7 @@ namespace Hero_Designer
             }
             else
             {
-                int index1 = iPopup.Add((PopUp.Section)null);
+                int index1 = iPopup.Add(null);
                 string str = string.Empty;
                 switch (power1.PowerType)
                 {
@@ -429,7 +429,7 @@ namespace Hero_Designer
                 }
                 iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
-                int index2 = iPopup.Add((PopUp.Section)null);
+                int index2 = iPopup.Add(null);
                 if ((double)power1.EndCost > 0.0)
                 {
                     if ((double)power1.ActivatePeriod > 0.0)
@@ -463,7 +463,7 @@ namespace Hero_Designer
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
-                        int index4 = iPopup.Add((PopUp.Section)null);
+                        int index4 = iPopup.Add(null);
                         power1.Effects[index3].Power = power1;
                         string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", string.Empty).Replace("]", string.Empty).Split(chArray);
                         int num2 = strArray.Length - 1;

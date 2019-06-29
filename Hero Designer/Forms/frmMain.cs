@@ -572,7 +572,7 @@ namespace Hero_Designer
                     LineAlignment = StringAlignment.Center
                 };
                 RectangleF layoutRectangle = new RectangleF((float)e.Bounds.X + destRect.X + destRect.Width, (float)e.Bounds.Y, (float)e.Bounds.Width - (destRect.X + destRect.Width), (float)e.Bounds.Height);
-                e.Graphics.DrawString(Conversions.ToString(NewLateBinding.LateGet(this.cbAT.Items[e.Index], (System.Type)null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null)), e.Font, (Brush)solidBrush, layoutRectangle, format);
+                e.Graphics.DrawString(Conversions.ToString(NewLateBinding.LateGet(this.cbAT.Items[e.Index], null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null)), e.Font, (Brush)solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
         }
@@ -583,7 +583,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || this.cbAT.SelectedIndex < 0)
                 return;
-            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, (System.Type)null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, "");
+            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, "");
         }
 
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
@@ -929,7 +929,7 @@ namespace Hero_Designer
                 int num = playableClasses.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], (System.Type)null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)playableClasses[index].Idx, false))
+                    if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)playableClasses[index].Idx, false))
                         return true;
                 }
                 flag = false;
@@ -2301,7 +2301,7 @@ namespace Hero_Designer
         void I9Picker_HoverSet(int e)
         {
             this.myDataView.SetSetPicker(e);
-            this.ShowPopup(this.PickerHID, -1, -1, new Point(), this.I9Picker.Bounds, (I9Slot)null, e);
+            this.ShowPopup(this.PickerHID, -1, -1, new Point(), this.I9Picker.Bounds, null, e);
         }
 
         void I9Picker_MouseDown(object sender, MouseEventArgs e)
@@ -2433,7 +2433,7 @@ namespace Hero_Designer
             if (num1 > -1)
                 this.myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1, -1), MainModule.MidsController.Toon.GetEnhancedPower(num1), NoLevel, this.DataViewLocked, num1);
             else
-                this.myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1, powerIdx), (IPower)null, NoLevel, this.DataViewLocked, num1);
+                this.myDataView.SetData(MainModule.MidsController.Toon.GetBasePower(num1, powerIdx), null, NoLevel, this.DataViewLocked, num1);
             if (!Lock || this.dvAnchored.Visible)
                 return;
             this.FloatingDataForm.Activate();
@@ -2457,7 +2457,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || this.cbAT.SelectedIndex < 0)
                 return;
-            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, (System.Type)null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, string.Empty);
+            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, string.Empty);
         }
 
         void lblATLocked_Paint(object sender, PaintEventArgs e)
@@ -2592,7 +2592,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llAncillary.Bounds, (I9Slot)null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llAncillary.Bounds, null, -1);
             }
         }
 
@@ -2615,7 +2615,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool0.Bounds, (I9Slot)null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool0.Bounds, null, -1);
         }
 
         void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2637,7 +2637,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool1.Bounds, (I9Slot)null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool1.Bounds, null, -1);
         }
 
         void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2659,7 +2659,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool2.Bounds, (I9Slot)null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool2.Bounds, null, -1);
         }
 
         void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2681,7 +2681,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool3.Bounds, (I9Slot)null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool3.Bounds, null, -1);
         }
 
         void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2710,7 +2710,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPrimary.Bounds, (I9Slot)null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPrimary.Bounds, null, -1);
             }
         }
 
@@ -2740,7 +2740,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llSecondary.Bounds, (I9Slot)null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llSecondary.Bounds, null, -1);
             }
         }
 
@@ -2797,7 +2797,7 @@ namespace Hero_Designer
                 MainModule.MidsController.Toon = new clsToonX();
             else if (Init)
             {
-                MidsContext.Character.Reset((Archetype)null, 0);
+                MidsContext.Character.Reset(null, 0);
             }
             else
             {
@@ -2855,7 +2855,7 @@ namespace Hero_Designer
                 this.dragFinishSlot = this.drawing.WhichEnh(this.drawing.ScaleUp(iValue1), this.drawing.ScaleUp(iValue2));
                 if (this.dragFinishSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, (object)null);
+                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
                 }
                 else
                     this.SlotLevelSwap(this.dragStartPower, this.dragStartSlot, this.dragFinishPower, this.dragFinishSlot);
@@ -2967,7 +2967,7 @@ namespace Hero_Designer
             {
                 if (this.dragStartSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, (object)null);
+                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
                     this.pnlGFX.AllowDrop = false;
                 }
                 else
@@ -3004,7 +3004,7 @@ namespace Hero_Designer
                 else
                 {
                     Point e1 = new Point(e.X, e.Y);
-                    this.ShowPopup(index, -1, sIDX, e1, new Rectangle(), (I9Slot)null, -1);
+                    this.ShowPopup(index, -1, sIDX, e1, new Rectangle(), null, -1);
                     if (MidsContext.Character.CanPlaceSlot & MainModule.MidsController.Toon.SlotCheck(MidsContext.Character.CurrentBuild.Powers[index]) > -1)
                     {
                         this.drawing.HighlightSlot(index, false);
@@ -3251,7 +3251,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                     {
-                        int num = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, (object)null);
+                        int num = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     }
                     int num1 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3316,12 +3316,12 @@ namespace Hero_Designer
                     }
                     if (pow[1] != index)
                     {
-                        int num2 = (int)Interaction.MsgBox((object)"None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, (object)null);
+                        int num2 = (int)Interaction.MsgBox((object)"None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     }
                 }
             }
-            PowerEntry powerEntry = tp[pow[0]].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[pow[0]].NIDPower]) : new PowerEntry(-1, (IPower)null, false);
+            PowerEntry powerEntry = tp[pow[0]].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[pow[0]].NIDPower]) : new PowerEntry(-1, null, false);
             powerEntry.Slots = (SlotEntry[])tp[pow[0]].Slots.Clone();
             powerEntry.Level = tp[pow[0]].Level;
             this.clearPower(tp, pow[0]);
@@ -3406,7 +3406,7 @@ namespace Hero_Designer
                         --num8;
                         break;
                     case 0:
-                        int num9 = (int)Interaction.MsgBox((object)"Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, (object)null);
+                        int num9 = (int)Interaction.MsgBox((object)"Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     case 1:
                         if (flag1)
@@ -3552,7 +3552,7 @@ namespace Hero_Designer
                     {
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            int num2 = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, (object)null);
+                            int num2 = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
                             return 0;
                         }
                         int num3 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3850,7 +3850,7 @@ namespace Hero_Designer
                 default:
                     return new Rectangle(0, 0, 10, 10);
             }
-            return new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, (System.Type)null, "Width", new object[0], (string[])null, (System.Type[])null, (bool[])null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, (System.Type)null, "Top", new object[0], (string[])null, (System.Type[])null, (bool[])null), NewLateBinding.LateGet(Instance, (System.Type)null, "Height", new object[0], (string[])null, (System.Type[])null, (bool[])null)), (object)label.Top)));
+            return new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, null, "Width", new object[0], (string[])null, (System.Type[])null, (bool[])null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, null, "Top", new object[0], (string[])null, (System.Type[])null, (bool[])null), NewLateBinding.LateGet(Instance, null, "Height", new object[0], (string[])null, (System.Type[])null, (bool[])null)), (object)label.Top)));
         }
 
         int raGetTop()
@@ -4119,7 +4119,7 @@ namespace Hero_Designer
             }
             if (!(flag1 & notifyUser))
                 return;
-            int num6 = (int)Interaction.MsgBox((object)"The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, (object)null);
+            int num6 = (int)Interaction.MsgBox((object)"The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, null);
         }
 
         void RedrawUnderPopup(Rectangle RectRedraw)
@@ -4703,7 +4703,7 @@ namespace Hero_Designer
             int num = this.FlipSlotState.Length - 1;
             for (int index = 0; index <= num; ++index)
                 this.FlipSlotState[index] = -(this.FlipStepDelay * index);
-            this.FlipGP = new PowerEntry(-1, (IPower)null, false);
+            this.FlipGP = new PowerEntry(-1, null, false);
             this.FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
             this.FlipGP.Slots = new SlotEntry[0];
             if (this.tmrGfx == null)
@@ -4802,13 +4802,13 @@ namespace Hero_Designer
             {
                 MidsContext.Config.FreshInstall = false;
                 MidsContext.Config.SaveFolderChecked = true;
-                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been unset!", MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been unset!", MsgBoxStyle.OkOnly, null);
             }
             else
             {
                 MidsContext.Config.FreshInstall = true;
                 MidsContext.Config.SaveFolderChecked = false;
-                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been set!", MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been set!", MsgBoxStyle.OkOnly, null);
             }
             this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
             this.FloatTop(true);
@@ -5483,14 +5483,14 @@ namespace Hero_Designer
             }
             if (this.cbAT.SelectedItem == null)
                 this.cbAT.SelectedItem = (object)MidsContext.Character.Archetype;
-            else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.SelectedItem, (System.Type)null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)MidsContext.Character.Archetype.Idx, false))
+            else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)MidsContext.Character.Archetype.Idx, false))
                 this.cbAT.SelectedItem = (object)MidsContext.Character.Archetype;
             this.ibPvX.Checked = !MidsContext.Config.Inc.PvE;
             if (this.ComboCheckOrigin())
             {
                 this.cbOrigin.BeginUpdate();
                 this.cbOrigin.Items.Clear();
-                this.cbOrigin.Items.AddRange((object[])NewLateBinding.LateGet(this.cbAT.SelectedItem, (System.Type)null, "Origin", new object[0], (string[])null, (System.Type[])null, (bool[])null));
+                this.cbOrigin.Items.AddRange((object[])NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Origin", new object[0], (string[])null, (System.Type[])null, (bool[])null));
                 this.cbOrigin.EndUpdate();
             }
             if (this.cbOrigin.SelectedIndex != MidsContext.Character.Origin)
@@ -5547,7 +5547,7 @@ namespace Hero_Designer
             this.cbPool2.Enabled = !MainModule.MidsController.Toon.PoolLocked[2];
             this.cbPool3.Enabled = !MainModule.MidsController.Toon.PoolLocked[3];
             this.cbAncillary.Enabled = !MainModule.MidsController.Toon.PoolLocked[4];
-            this.lblATLocked.Text = Conversions.ToString(NewLateBinding.LateGet(this.cbAT.SelectedItem, (System.Type)null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null));
+            this.lblATLocked.Text = Conversions.ToString(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null));
             this.lblATLocked.Visible = MainModule.MidsController.Toon.Locked;
             this.lblLocked0.Location = this.cbPool0.Location;
             this.lblLocked0.Size = this.cbPool0.Size;
@@ -5976,7 +5976,7 @@ namespace Hero_Designer
                     IPower powerByName = DatabaseAPI.GetPowerByName(buildFileLinesArray[index3].powerName);
                     if (!powerByName.FullName.Contains("Incarnate"))
                     {
-                        PowerEntry powerEntry = new PowerEntry(-1, (IPower)null, false);
+                        PowerEntry powerEntry = new PowerEntry(-1, null, false);
                         powerEntry.Level = buildFileLinesArray[index3].powerLevel;
                         powerEntry.StatInclude = false;
                         powerEntry.VariableValue = 0;
@@ -6003,7 +6003,7 @@ namespace Hero_Designer
                                         i9Slot.Enh = DatabaseAPI.GetEnhancementByUIDName(iName);
                                         if (i9Slot.Enh == -1)
                                         {
-                                            int num3 = (int)Interaction.MsgBox((object)("Error with: " + str1), MsgBoxStyle.OkOnly, (object)null);
+                                            int num3 = (int)Interaction.MsgBox((object)("Error with: " + str1), MsgBoxStyle.OkOnly, null);
                                             i9Slot.Enh = 0;
                                         }
                                     }
@@ -6086,7 +6086,7 @@ namespace Hero_Designer
             }
             catch
             {
-                int num = (int)Interaction.MsgBox((object)("Invalid Import Data, Blame Sai!\nError: " + str1), MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)("Invalid Import Data, Blame Sai!\nError: " + str1), MsgBoxStyle.OkOnly, null);
             }
         }
 

@@ -164,7 +164,7 @@ namespace Hero_Designer
         if ((double) num3 < 1.0)
         {
           num3 = 1f;
-          int num4 = (int) Interaction.MsgBox((object) "Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, (object) null);
+          int num4 = (int) Interaction.MsgBox((object) "Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, null);
         }
         this.MyAT.Hitpoints = (int) Math.Round((double) num3);
         float num5 = (float) Conversion.Val(this.txtHPCap.Text);

@@ -1065,7 +1065,7 @@ namespace Hero_Designer
       int index = (int) Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(this.lvBonusList.SelectedItems[0].Tag)));
       if (index < 0)
       {
-        int num = (int) Interaction.MsgBox((object) "Tag was < 0!", MsgBoxStyle.OkOnly, (object) null);
+        int num = (int) Interaction.MsgBox((object) "Tag was < 0!", MsgBoxStyle.OkOnly, null);
       }
       else
       {

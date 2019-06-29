@@ -532,7 +532,7 @@ namespace Hero_Designer
             this.bFloating = false;
             this.HistoryIDX = -1;
             this.Compact = false;
-            this.bxFlip = (ExtendedBitmap)null;
+            this.bxFlip = null;
             this.InitializeComponent();
         }
 
@@ -3621,7 +3621,7 @@ namespace Hero_Designer
                 str1 = "No Valid Tip";
             object[] Arguments = new object[1] { (object)str1 };
             bool[] CopyBack = new bool[1] { true };
-            NewLateBinding.LateCall(Sender, (System.Type)null, "SetTip", Arguments, (string[])null, (System.Type[])null, CopyBack, true);
+            NewLateBinding.LateCall(Sender, null, "SetTip", Arguments, (string[])null, (System.Type[])null, CopyBack, true);
             if (!CopyBack[0])
                 return;
             string str2 = (string)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(Arguments[0]), typeof(string));

@@ -440,7 +440,7 @@ namespace Base.Data_Classes
                 popupData1.Sections[index1].Add("Empty Slot", PopUp.Colors.Disabled, 1.25f, FontStyle.Bold, 0);
                 if (iLevel > -1)
                     popupData1.Sections[index1].Add("Slot placed at level: " + (object)(iLevel + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
-                int index2 = popupData1.Add((PopUp.Section)null);
+                int index2 = popupData1.Add(null);
                 popupData1.Sections[index2].Add("Right-Click to place an enhancement.", PopUp.Colors.Disabled, 1f, FontStyle.Bold | FontStyle.Italic, 0);
                 popupData1.Sections[index2].Add("Shift-Click to move this slot.", PopUp.Colors.Disabled, 1f, FontStyle.Bold | FontStyle.Italic, 0);
                 popupData2 = popupData1;

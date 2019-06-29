@@ -310,7 +310,7 @@ namespace Hero_Designer
             }
         }
 
-        public frmPowerEffect(ref IEffect iFX)
+        public frmPowerEffect(IEffect iFX)
         {
             this.Load += new EventHandler(this.frmPowerEffect_Load);
             this.Loading = true;
@@ -342,7 +342,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, (object)null);
+                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
                 return;
             }

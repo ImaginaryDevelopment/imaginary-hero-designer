@@ -458,7 +458,7 @@ namespace Hero_Designer
       DatabaseAPI.Database.PowersetVersion.SourceFile = this.dlgBrowse.FileName;
       DatabaseAPI.Database.PowersetVersion.RevisionDate = DateTime.Now;
       DatabaseAPI.Database.PowersetVersion.Revision = Convert.ToInt32(this.udRevision.Value);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       int num3 = (int) Interaction.MsgBox((object) ("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object) "Done");
       this.DisplayInfo();
