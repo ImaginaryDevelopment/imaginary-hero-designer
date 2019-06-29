@@ -3136,7 +3136,6 @@ namespace Hero_Designer
                             }
                             else if (e.Button == MouseButtons.Right & index2 > -1 && Control.ModifierKeys != System.Windows.Forms.Keys.Shift)
                             {
-                                Point point = new Point();
                                 this.EnhancingSlot = index2;
                                 this.EnhancingPower = index1;
                                 int[] enhancements = MainModule.MidsController.Toon.GetEnhancements(index1);
@@ -3145,7 +3144,9 @@ namespace Hero_Designer
                                     this.I9Picker.SetData(MidsContext.Character.CurrentBuild.Powers[index1].NIDPower, ref MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement, ref this.drawing, enhancements);
                                 else
                                     this.I9Picker.SetData(-1, ref MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement, ref this.drawing, enhancements);
-                                point = new Point((int)Math.Round((double)(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X) - (double)this.I9Picker.Width / 2.0), (int)Math.Round((double)(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y) - (double)this.I9Picker.Height / 2.0));
+
+
+                                var point = new Point((int)Math.Round((double)(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X) - (double)this.I9Picker.Width / 2.0), (int)Math.Round((double)(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y) - (double)this.I9Picker.Height / 2.0));
                                 if (point.Y < this.MenuBar.Height)
                                     point.Y = this.MenuBar.Height;
                                 Size clientSize;
@@ -3903,13 +3904,15 @@ namespace Hero_Designer
                 default:
                     return;
             }
-            Point point = new Point(X, Y);
-            label1.Location = point;
+
+            label1.Location = new Point(X, Y);
+
+            var point = new Point(label1.Location.X, label1.Location.Y);
             point.Y += label1.Height;
             comboBox.Location = point;
             label2.Location = point;
             point.Y += comboBox.Height;
-            NewLateBinding.LateSet(Instance, (System.Type)null, "Location", new object[1]
+            NewLateBinding.LateSet(Instance, null, "Location", new object[1]
             {
         (object) point
             }, (string[])null, (System.Type[])null);
@@ -3934,8 +3937,8 @@ namespace Hero_Designer
                 num = this.ClientSize.Height - this.llAncillary.DesiredHeight - this.cbAncillary.Height - this.lblEpic.Height;
                 Size size = this.llPrimary.SizeNormal;
                 this.llPrimary.SizeNormal = new Size(size.Width, num - 4 - this.llPrimary.Top);
-                size = new Size(this.llSecondary.SizeNormal.Width, num - 4 - this.llPrimary.Top);
-                this.llSecondary.SizeNormal = size;
+
+                this.llSecondary.SizeNormal = new Size(this.llSecondary.SizeNormal.Width, num - 4 - this.llPrimary.Top);
             }
             Rectangle poolRect3 = this.raGetPoolRect(2);
             poolRect3.X = this.llPrimary.Left;

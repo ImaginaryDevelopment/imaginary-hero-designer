@@ -2844,11 +2844,11 @@ namespace Hero_Designer
             this.pnlEnh.SuspendLayout();
             this.SuspendLayout();
             this.pnlTabs.BackColor = Color.FromArgb(64, 64, 64);
-            Point point = new Point(0, 0);
-            this.pnlTabs.Location = point;
+
+            this.pnlTabs.Location = new Point(0, 0);
             this.pnlTabs.Name = "pnlTabs";
-            Size size = new Size(300, 20);
-            this.pnlTabs.Size = size;
+
+            this.pnlTabs.Size = new Size(300, 20);
             this.pnlTabs.TabIndex = 61;
             this.pnlInfo.BackColor = Color.Navy;
             this.pnlInfo.Controls.Add((Control)this.PowerScaler);
@@ -2858,11 +2858,11 @@ namespace Hero_Designer
             this.pnlInfo.Controls.Add((Control)this.info_DataList);
             this.pnlInfo.Controls.Add((Control)this.info_txtLarge);
             this.pnlInfo.Controls.Add((Control)this.info_Title);
-            point = new Point(0, 20);
-            this.pnlInfo.Location = point;
+
+            this.pnlInfo.Location = new Point(0, 20);
             this.pnlInfo.Name = "pnlInfo";
-            size = new Size(300, 328);
-            this.pnlInfo.Size = size;
+
+            this.pnlInfo.Size = new Size(300, 328);
             this.pnlInfo.TabIndex = 62;
             this.PowerScaler.BackColor = Color.Black;
             this.PowerScaler.Border = true;
@@ -2882,8 +2882,8 @@ namespace Hero_Designer
             this.PowerScaler.Highlight = true;
             this.PowerScaler.ItemHeight = 10;
             this.PowerScaler.Lines = true;
-            point = new Point(4, 145);
-            this.PowerScaler.Location = point;
+
+            this.PowerScaler.Location = new Point(4, 145);
             this.PowerScaler.MarkerValue = 0.0f;
             this.PowerScaler.Max = 100f;
             this.PowerScaler.Name = "PowerScaler";
@@ -2892,8 +2892,8 @@ namespace Hero_Designer
             this.PowerScaler.ScaleHeight = 32;
             this.PowerScaler.ScaleIndex = 8;
             this.PowerScaler.ShowScale = false;
-            size = new Size(292, 15);
-            this.PowerScaler.Size = size;
+
+            this.PowerScaler.Size = new Size(292, 15);
             this.PowerScaler.Style = Enums.GraphStyle.baseOnly;
             this.PowerScaler.TabIndex = 71;
             this.PowerScaler.TextWidth = 80;
@@ -2901,22 +2901,22 @@ namespace Hero_Designer
             this.info_txtSmall.BorderStyle = BorderStyle.None;
             this.info_txtSmall.Cursor = Cursors.Arrow;
             this.info_txtSmall.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.info_txtSmall.Location = point;
+
+            this.info_txtSmall.Location = new Point(4, 24);
             this.info_txtSmall.Name = "info_txtSmall";
             this.info_txtSmall.ReadOnly = true;
             this.info_txtSmall.ScrollBars = RichTextBoxScrollBars.None;
-            size = new Size(292, 32);
-            this.info_txtSmall.Size = size;
+
+            this.info_txtSmall.Size = new Size(292, 32);
             this.info_txtSmall.TabIndex = 70;
             this.info_txtSmall.Text = "info_Rich";
             this.lblDmg.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblDmg.ForeColor = Color.White;
-            point = new Point(4, 272);
-            this.lblDmg.Location = point;
+
+            this.lblDmg.Location = new Point(4, 272);
             this.lblDmg.Name = "lblDmg";
-            size = new Size(292, 13);
-            this.lblDmg.Size = size;
+
+            this.lblDmg.Size = new Size(292, 13);
             this.lblDmg.TabIndex = 15;
             this.lblDmg.Text = "Damage:";
             this.lblDmg.TextAlign = ContentAlignment.MiddleCenter;
@@ -2929,8 +2929,8 @@ namespace Hero_Designer
             this.info_Damage.ColorEnhStart = Color.Yellow;
             this.info_Damage.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.info_Damage.GraphType = Enums.eDDGraph.Enhanced;
-            point = new Point(4, 288);
-            this.info_Damage.Location = point;
+
+            this.info_Damage.Location = new Point(4, 288);
             this.info_Damage.Name = "info_Damage";
             this.info_Damage.nBaseVal = 100f;
             this.info_Damage.nEnhVal = 150f;
@@ -2939,8 +2939,8 @@ namespace Hero_Designer
             this.info_Damage.nMaxEnhVal = 207f;
             this.info_Damage.PaddingH = 3;
             this.info_Damage.PaddingV = 6;
-            size = new Size(292, 36);
-            this.info_Damage.Size = size;
+
+            this.info_Damage.Size = new Size(292, 36);
             this.info_Damage.Style = Enums.eDDStyle.TextUnderGraph;
             this.info_Damage.TabIndex = 20;
             this.info_Damage.TextAlign = Enums.eDDAlign.Center;
@@ -2956,36 +2956,36 @@ namespace Hero_Designer
             this.info_DataList.ItemColorAlt = Color.Lime;
             this.info_DataList.ItemColorSpecCase = Color.Red;
             this.info_DataList.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 164);
-            this.info_DataList.Location = point;
+
+            this.info_DataList.Location = new Point(4, 164);
             this.info_DataList.Name = "info_DataList";
             this.info_DataList.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 104);
-            this.info_DataList.Size = size;
+
+            this.info_DataList.Size = new Size(292, 104);
             this.info_DataList.TabIndex = 19;
             this.info_DataList.ValueWidth = 55;
             this.info_txtLarge.BackColor = Color.FromArgb(64, 64, 64);
             this.info_txtLarge.BorderStyle = BorderStyle.None;
             this.info_txtLarge.Cursor = Cursors.Arrow;
             this.info_txtLarge.ForeColor = Color.White;
-            point = new Point(4, 60);
-            this.info_txtLarge.Location = point;
+
+            this.info_txtLarge.Location = new Point(4, 60);
             this.info_txtLarge.Name = "info_txtLarge";
             this.info_txtLarge.ReadOnly = true;
             this.info_txtLarge.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
-            size = new Size(292, 87);
-            this.info_txtLarge.Size = size;
+
+            this.info_txtLarge.Size = new Size(292, 87);
             this.info_txtLarge.TabIndex = 69;
             this.info_txtLarge.Text = "info_Rich";
             this.info_Title.BackColor = Color.FromArgb(64, 64, 64);
             this.info_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.info_Title.ForeColor = Color.White;
             this.info_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.info_Title.Location = point;
+
+            this.info_Title.Location = new Point(24, 4);
             this.info_Title.Name = "info_Title";
-            size = new Size(252, 16);
-            this.info_Title.Size = size;
+
+            this.info_Title.Size = new Size(252, 16);
             this.info_Title.TabIndex = 69;
             this.info_Title.TextAlign = ContentAlignment.TopCenter;
             this.pnlFX.BackColor = Color.Indigo;
@@ -2996,30 +2996,30 @@ namespace Hero_Designer
             this.pnlFX.Controls.Add((Control)this.fx_lblHead1);
             this.pnlFX.Controls.Add((Control)this.fx_List2);
             this.pnlFX.Controls.Add((Control)this.fx_List1);
-            point = new Point(144, 148);
-            this.pnlFX.Location = point;
+
+            this.pnlFX.Location = new Point(144, 148);
             this.pnlFX.Name = "pnlFX";
-            size = new Size(300, 320);
-            this.pnlFX.Size = size;
+
+            this.pnlFX.Size = new Size(300, 320);
             this.pnlFX.TabIndex = 63;
             this.fx_Title.BackColor = Color.FromArgb(64, 64, 64);
             this.fx_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.fx_Title.ForeColor = Color.White;
             this.fx_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.fx_Title.Location = point;
+
+            this.fx_Title.Location = new Point(24, 4);
             this.fx_Title.Name = "fx_Title";
-            size = new Size(252, 16);
-            this.fx_Title.Size = size;
+
+            this.fx_Title.Size = new Size(252, 16);
             this.fx_Title.TabIndex = 70;
             this.fx_Title.TextAlign = ContentAlignment.TopCenter;
             this.fx_LblHead3.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.fx_LblHead3.ForeColor = Color.White;
-            point = new Point(4, 228);
-            this.fx_LblHead3.Location = point;
+
+            this.fx_LblHead3.Location = new Point(4, 228);
             this.fx_LblHead3.Name = "fx_LblHead3";
-            size = new Size(292, 16);
-            this.fx_LblHead3.Size = size;
+
+            this.fx_LblHead3.Size = new Size(292, 16);
             this.fx_LblHead3.TabIndex = 28;
             this.fx_LblHead3.Text = "Misc Effects:";
             this.fx_LblHead3.TextAlign = ContentAlignment.MiddleLeft;
@@ -3034,31 +3034,31 @@ namespace Hero_Designer
             this.fx_List3.ItemColorAlt = Color.Lime;
             this.fx_List3.ItemColorSpecCase = Color.Red;
             this.fx_List3.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 244);
-            this.fx_List3.Location = point;
+
+            this.fx_List3.Location = new Point(4, 244);
             this.fx_List3.Name = "fx_List3";
             this.fx_List3.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 72);
-            this.fx_List3.Size = size;
+
+            this.fx_List3.Size = new Size(292, 72);
             this.fx_List3.TabIndex = 27;
             this.fx_List3.ValueWidth = 55;
             this.fx_lblHead2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.fx_lblHead2.ForeColor = Color.White;
-            point = new Point(4, 136);
-            this.fx_lblHead2.Location = point;
+
+            this.fx_lblHead2.Location = new Point(4, 136);
             this.fx_lblHead2.Name = "fx_lblHead2";
-            size = new Size(292, 16);
-            this.fx_lblHead2.Size = size;
+
+            this.fx_lblHead2.Size = new Size(292, 16);
             this.fx_lblHead2.TabIndex = 26;
             this.fx_lblHead2.Text = "Secondary Effects:";
             this.fx_lblHead2.TextAlign = ContentAlignment.MiddleLeft;
             this.fx_lblHead1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.fx_lblHead1.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.fx_lblHead1.Location = point;
+
+            this.fx_lblHead1.Location = new Point(4, 24);
             this.fx_lblHead1.Name = "fx_lblHead1";
-            size = new Size(292, 16);
-            this.fx_lblHead1.Size = size;
+
+            this.fx_lblHead1.Size = new Size(292, 16);
             this.fx_lblHead1.TabIndex = 25;
             this.fx_lblHead1.Text = "Primary Effects:";
             this.fx_lblHead1.TextAlign = ContentAlignment.MiddleLeft;
@@ -3073,12 +3073,12 @@ namespace Hero_Designer
             this.fx_List2.ItemColorAlt = Color.Lime;
             this.fx_List2.ItemColorSpecCase = Color.Red;
             this.fx_List2.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 152);
-            this.fx_List2.Location = point;
+
+            this.fx_List2.Location = new Point(4, 152);
             this.fx_List2.Name = "fx_List2";
             this.fx_List2.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 72);
-            this.fx_List2.Size = size;
+
+            this.fx_List2.Size = new Size(292, 72);
             this.fx_List2.TabIndex = 24;
             this.fx_List2.ValueWidth = 55;
             this.fx_List1.BackColor = Color.FromArgb(64, 64, 64);
@@ -3092,12 +3092,12 @@ namespace Hero_Designer
             this.fx_List1.ItemColorAlt = Color.Lime;
             this.fx_List1.ItemColorSpecCase = Color.Red;
             this.fx_List1.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 40);
-            this.fx_List1.Location = point;
+
+            this.fx_List1.Location = new Point(4, 40);
             this.fx_List1.Name = "fx_List1";
             this.fx_List1.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 92);
-            this.fx_List1.Size = size;
+
+            this.fx_List1.Size = new Size(292, 92);
             this.fx_List1.TabIndex = 23;
             this.fx_List1.ValueWidth = 60;
             this.pnlTotal.BackColor = Color.Green;
@@ -3111,19 +3111,19 @@ namespace Hero_Designer
             this.pnlTotal.Controls.Add((Control)this.total_Misc);
             this.pnlTotal.Controls.Add((Control)this.total_lblRes);
             this.pnlTotal.Controls.Add((Control)this.total_lblDef);
-            point = new Point(248, 15);
-            this.pnlTotal.Location = point;
+
+            this.pnlTotal.Location = new Point(248, 15);
             this.pnlTotal.Name = "pnlTotal";
-            size = new Size(300, 319);
-            this.pnlTotal.Size = size;
+
+            this.pnlTotal.Size = new Size(300, 319);
             this.pnlTotal.TabIndex = 64;
             this.lblTotal.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblTotal.ForeColor = Color.White;
-            point = new Point(4, 300);
-            this.lblTotal.Location = point;
+
+            this.lblTotal.Location = new Point(4, 300);
             this.lblTotal.Name = "lblTotal";
-            size = new Size(292, 16);
-            this.lblTotal.Size = size;
+
+            this.lblTotal.Size = new Size(292, 16);
             this.lblTotal.TabIndex = 75;
             this.lblTotal.Text = "Click the 'View Totals' button for more.";
             this.lblTotal.TextAlign = ContentAlignment.MiddleCenter;
@@ -3145,8 +3145,8 @@ namespace Hero_Designer
             this.gRes2.Highlight = true;
             this.gRes2.ItemHeight = 13;
             this.gRes2.Lines = true;
-            point = new Point(150, 152);
-            this.gRes2.Location = point;
+
+            this.gRes2.Location = new Point(150, 152);
             this.gRes2.MarkerValue = 0.0f;
             this.gRes2.Max = 100f;
             this.gRes2.Name = "gRes2";
@@ -3155,8 +3155,8 @@ namespace Hero_Designer
             this.gRes2.ScaleHeight = 32;
             this.gRes2.ScaleIndex = 8;
             this.gRes2.ShowScale = false;
-            size = new Size(146, 72);
-            this.gRes2.Size = size;
+
+            this.gRes2.Size = new Size(146, 72);
             this.gRes2.Style = Enums.GraphStyle.Stacked;
             this.gRes2.TabIndex = 74;
             this.gRes2.TextWidth = 100;
@@ -3178,8 +3178,8 @@ namespace Hero_Designer
             this.gRes1.Highlight = true;
             this.gRes1.ItemHeight = 13;
             this.gRes1.Lines = true;
-            point = new Point(4, 152);
-            this.gRes1.Location = point;
+
+            this.gRes1.Location = new Point(4, 152);
             this.gRes1.MarkerValue = 0.0f;
             this.gRes1.Max = 100f;
             this.gRes1.Name = "gRes1";
@@ -3188,8 +3188,8 @@ namespace Hero_Designer
             this.gRes1.ScaleHeight = 32;
             this.gRes1.ScaleIndex = 8;
             this.gRes1.ShowScale = false;
-            size = new Size(146, 72);
-            this.gRes1.Size = size;
+
+            this.gRes1.Size = new Size(146, 72);
             this.gRes1.Style = Enums.GraphStyle.Stacked;
             this.gRes1.TabIndex = 73;
             this.gRes1.TextWidth = 100;
@@ -3211,8 +3211,8 @@ namespace Hero_Designer
             this.gDef2.Highlight = true;
             this.gDef2.ItemHeight = 13;
             this.gDef2.Lines = true;
-            point = new Point(150, 40);
-            this.gDef2.Location = point;
+
+            this.gDef2.Location = new Point(150, 40);
             this.gDef2.MarkerValue = 0.0f;
             this.gDef2.Max = 100f;
             this.gDef2.Name = "gDef2";
@@ -3221,8 +3221,8 @@ namespace Hero_Designer
             this.gDef2.ScaleHeight = 32;
             this.gDef2.ScaleIndex = 8;
             this.gDef2.ShowScale = false;
-            size = new Size(146, 92);
-            this.gDef2.Size = size;
+
+            this.gDef2.Size = new Size(146, 92);
             this.gDef2.Style = Enums.GraphStyle.baseOnly;
             this.gDef2.TabIndex = 72;
             this.gDef2.TextWidth = 100;
@@ -3244,8 +3244,8 @@ namespace Hero_Designer
             this.gDef1.Highlight = true;
             this.gDef1.ItemHeight = 13;
             this.gDef1.Lines = true;
-            point = new Point(4, 40);
-            this.gDef1.Location = point;
+
+            this.gDef1.Location = new Point(4, 40);
             this.gDef1.MarkerValue = 0.0f;
             this.gDef1.Max = 100f;
             this.gDef1.Name = "gDef1";
@@ -3254,8 +3254,8 @@ namespace Hero_Designer
             this.gDef1.ScaleHeight = 32;
             this.gDef1.ScaleIndex = 8;
             this.gDef1.ShowScale = false;
-            size = new Size(146, 92);
-            this.gDef1.Size = size;
+
+            this.gDef1.Size = new Size(146, 92);
             this.gDef1.Style = Enums.GraphStyle.baseOnly;
             this.gDef1.TabIndex = 71;
             this.gDef1.TextWidth = 100;
@@ -3263,20 +3263,20 @@ namespace Hero_Designer
             this.total_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.total_Title.ForeColor = Color.White;
             this.total_Title.InitialText = "Cumulative Totals (For Self)";
-            point = new Point(24, 4);
-            this.total_Title.Location = point;
+
+            this.total_Title.Location = new Point(24, 4);
             this.total_Title.Name = "total_Title";
-            size = new Size(252, 16);
-            this.total_Title.Size = size;
+
+            this.total_Title.Size = new Size(252, 16);
             this.total_Title.TabIndex = 70;
             this.total_Title.TextAlign = ContentAlignment.TopCenter;
             this.total_lblMisc.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.total_lblMisc.ForeColor = Color.White;
-            point = new Point(4, 228);
-            this.total_lblMisc.Location = point;
+
+            this.total_lblMisc.Location = new Point(4, 228);
             this.total_lblMisc.Name = "total_lblMisc";
-            size = new Size(292, 16);
-            this.total_lblMisc.Size = size;
+
+            this.total_lblMisc.Size = new Size(292, 16);
             this.total_lblMisc.TabIndex = 28;
             this.total_lblMisc.Text = "Misc Effects:";
             this.total_lblMisc.TextAlign = ContentAlignment.MiddleLeft;
@@ -3291,32 +3291,32 @@ namespace Hero_Designer
             this.total_Misc.ItemColorAlt = Color.Lime;
             this.total_Misc.ItemColorSpecCase = Color.Red;
             this.total_Misc.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 244);
-            this.total_Misc.Location = point;
+
+            this.total_Misc.Location = new Point(4, 244);
             this.total_Misc.Name = "total_Misc";
             this.total_Misc.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 60);
-            this.total_Misc.Size = size;
+
+            this.total_Misc.Size = new Size(292, 60);
             this.total_Misc.TabIndex = 27;
             this.total_Misc.ValueWidth = 55;
             this.total_lblRes.BackColor = Color.Green;
             this.total_lblRes.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.total_lblRes.ForeColor = Color.White;
-            point = new Point(4, 136);
-            this.total_lblRes.Location = point;
+
+            this.total_lblRes.Location = new Point(4, 136);
             this.total_lblRes.Name = "total_lblRes";
-            size = new Size(292, 16);
-            this.total_lblRes.Size = size;
+
+            this.total_lblRes.Size = new Size(292, 16);
             this.total_lblRes.TabIndex = 26;
             this.total_lblRes.Text = "Resistance:";
             this.total_lblRes.TextAlign = ContentAlignment.MiddleLeft;
             this.total_lblDef.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.total_lblDef.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.total_lblDef.Location = point;
+
+            this.total_lblDef.Location = new Point(4, 24);
             this.total_lblDef.Name = "total_lblDef";
-            size = new Size(292, 16);
-            this.total_lblDef.Size = size;
+
+            this.total_lblDef.Size = new Size(292, 16);
             this.total_lblDef.TabIndex = 25;
             this.total_lblDef.Text = "Defense:";
             this.total_lblDef.TextAlign = ContentAlignment.MiddleLeft;
@@ -3326,36 +3326,36 @@ namespace Hero_Designer
             this.pnlEnh.Controls.Add((Control)this.enhNameDisp);
             this.pnlEnh.Controls.Add((Control)this.enhListing);
             this.pnlEnh.Controls.Add((Control)this.Enh_Title);
-            point = new Point(188, 156);
-            this.pnlEnh.Location = point;
+
+            this.pnlEnh.Location = new Point(188, 156);
             this.pnlEnh.Name = "pnlEnh";
-            size = new Size(300, 320);
-            this.pnlEnh.Size = size;
+
+            this.pnlEnh.Size = new Size(300, 320);
             this.pnlEnh.TabIndex = 65;
             this.pnlEnhInactive.BackColor = Color.Black;
-            point = new Point(4, 279);
-            this.pnlEnhInactive.Location = point;
+
+            this.pnlEnhInactive.Location = new Point(4, 279);
             this.pnlEnhInactive.Name = "pnlEnhInactive";
-            size = new Size(292, 38);
-            this.pnlEnhInactive.Size = size;
+
+            this.pnlEnhInactive.Size = new Size(292, 38);
             this.pnlEnhInactive.TabIndex = 74;
             this.pnlEnhActive.BackColor = Color.Black;
             this.pnlEnhActive.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(4, 239);
-            this.pnlEnhActive.Location = point;
+
+            this.pnlEnhActive.Location = new Point(4, 239);
             this.pnlEnhActive.Name = "pnlEnhActive";
-            size = new Size(292, 38);
-            this.pnlEnhActive.Size = size;
+
+            this.pnlEnhActive.Size = new Size(292, 38);
             this.pnlEnhActive.TabIndex = 73;
             this.enhNameDisp.BackColor = Color.FromArgb(64, 64, 64);
             this.enhNameDisp.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.enhNameDisp.ForeColor = Color.White;
             this.enhNameDisp.InitialText = "Title";
-            point = new Point(4, 24);
-            this.enhNameDisp.Location = point;
+
+            this.enhNameDisp.Location = new Point(4, 24);
             this.enhNameDisp.Name = "enhNameDisp";
-            size = new Size(292, 16);
-            this.enhNameDisp.Size = size;
+
+            this.enhNameDisp.Size = new Size(292, 16);
             this.enhNameDisp.TabIndex = 72;
             this.enhNameDisp.TextAlign = ContentAlignment.TopCenter;
             this.enhListing.BackColor = Color.FromArgb(0, 0, 32);
@@ -3369,23 +3369,23 @@ namespace Hero_Designer
             this.enhListing.ItemColorAlt = Color.Yellow;
             this.enhListing.ItemColorSpecCase = Color.Red;
             this.enhListing.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 44);
-            this.enhListing.Location = point;
+
+            this.enhListing.Location = new Point(4, 44);
             this.enhListing.Name = "enhListing";
             this.enhListing.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 192);
-            this.enhListing.Size = size;
+
+            this.enhListing.Size = new Size(292, 192);
             this.enhListing.TabIndex = 71;
             this.enhListing.ValueWidth = 65;
             this.Enh_Title.BackColor = Color.FromArgb(64, 64, 64);
             this.Enh_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.Enh_Title.ForeColor = Color.White;
             this.Enh_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.Enh_Title.Location = point;
+
+            this.Enh_Title.Location = new Point(24, 4);
             this.Enh_Title.Name = "Enh_Title";
-            size = new Size(252, 16);
-            this.Enh_Title.Size = size;
+
+            this.Enh_Title.Size = new Size(252, 16);
             this.Enh_Title.TabIndex = 70;
             this.Enh_Title.TextAlign = ContentAlignment.TopCenter;
             this.dbTip.AutoPopDelay = 15000;
@@ -3395,11 +3395,11 @@ namespace Hero_Designer
             this.lblFloat.BorderStyle = BorderStyle.FixedSingle;
             this.lblFloat.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)2);
             this.lblFloat.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.lblFloat.Location = point;
+
+            this.lblFloat.Location = new Point(4, 24);
             this.lblFloat.Name = "lblFloat";
-            size = new Size(16, 16);
-            this.lblFloat.Size = size;
+
+            this.lblFloat.Size = new Size(16, 16);
             this.lblFloat.TabIndex = 66;
             this.lblFloat.Text = "F";
             this.lblFloat.TextAlign = ContentAlignment.MiddleCenter;
@@ -3409,11 +3409,11 @@ namespace Hero_Designer
             this.lblShrink.BorderStyle = BorderStyle.FixedSingle;
             this.lblShrink.Font = new Font("Wingdings", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)2);
             this.lblShrink.ForeColor = Color.White;
-            point = new Point(280, 24);
-            this.lblShrink.Location = point;
+
+            this.lblShrink.Location = new Point(280, 24);
             this.lblShrink.Name = "lblShrink";
-            size = new Size(16, 16);
-            this.lblShrink.Size = size;
+
+            this.lblShrink.Size = new Size(16, 16);
             this.lblShrink.TabIndex = 67;
             this.lblShrink.Text = "y";
             this.lblShrink.TextAlign = ContentAlignment.MiddleCenter;
@@ -3423,11 +3423,11 @@ namespace Hero_Designer
             this.lblLock.BorderStyle = BorderStyle.FixedSingle;
             this.lblLock.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             this.lblLock.ForeColor = Color.White;
-            point = new Point(220, 24);
-            this.lblLock.Location = point;
+
+            this.lblLock.Location = new Point(220, 24);
             this.lblLock.Name = "lblLock";
-            size = new Size(56, 16);
-            this.lblLock.Size = size;
+
+            this.lblLock.Size = new Size(56, 16);
             this.lblLock.TabIndex = 68;
             this.lblLock.Text = "[Unlock]";
             this.lblLock.TextAlign = ContentAlignment.MiddleCenter;
@@ -3444,8 +3444,8 @@ namespace Hero_Designer
             this.Controls.Add((Control)this.pnlFX);
             this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             this.Name = nameof(DataView);
-            size = new Size(564, 540);
-            this.Size = size;
+
+            this.Size = new Size(564, 540);
             this.pnlInfo.ResumeLayout(false);
             this.pnlFX.ResumeLayout(false);
             this.pnlTotal.ResumeLayout(false);

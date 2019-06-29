@@ -852,6 +852,9 @@
             this.tsEnhToTO.Name = "tsEnhToTO";
             this.tsEnhToTO.Size = new System.Drawing.Size(142, 22);
             this.tsEnhToTO.Text = "Training";
+            // 
+            // ToolStripMenuItem2
+            // 
             this.ToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[10]
             {
             (System.Windows.Forms.ToolStripItem) this.tsEnhToPlus5,
@@ -866,52 +869,76 @@
             (System.Windows.Forms.ToolStripItem) this.tsEnhToNone
             });
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-
             this.ToolStripMenuItem2.Size = new System.Drawing.Size(245, 22);
             this.ToolStripMenuItem2.Text = "Set all &Relative Levels to...";
+            // 
+            // tsEnhToPlus5
+            // 
             this.tsEnhToPlus5.Name = "tsEnhToPlus5";
-
             this.tsEnhToPlus5.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus5.Text = "+5 Levels";
+            // 
+            // tsEnhToPlus4
+            // 
             this.tsEnhToPlus4.Name = "tsEnhToPlus4";
-
             this.tsEnhToPlus4.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus4.Text = "+4 Levels";
+            // 
+            // tsEnhToPlus3
+            // 
             this.tsEnhToPlus3.Name = "tsEnhToPlus3";
-
             this.tsEnhToPlus3.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus3.Text = "+3 Levels";
+            // 
+            // tsEnhToPlus2
+            // 
             this.tsEnhToPlus2.Name = "tsEnhToPlus2";
-
             this.tsEnhToPlus2.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus2.Text = "+2 Levels";
+            // 
+            // tsEnhToPlus1
+            // 
             this.tsEnhToPlus1.Name = "tsEnhToPlus1";
-
             this.tsEnhToPlus1.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus1.Text = "+1 Level";
+            // 
+            // tsEnhToEven
+            // 
             this.tsEnhToEven.Name = "tsEnhToEven";
-
             this.tsEnhToEven.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToEven.Text = "Even Level";
+            // 
+            // tsEnhToMinus1
+            // 
             this.tsEnhToMinus1.Name = "tsEnhToMinus1";
-
             this.tsEnhToMinus1.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus1.Text = "-1 Level";
+            // 
+            // tsEnhToMinus2
+            // 
             this.tsEnhToMinus2.Name = "tsEnhToMinus2";
-
             this.tsEnhToMinus2.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus2.Text = "-2 Levels";
+            // 
+            // tsEnhToMinus3
+            // 
             this.tsEnhToMinus3.Name = "tsEnhToMinus3";
-
             this.tsEnhToMinus3.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus3.Text = "-3 Levels";
+            // 
+            // tsEnhToNone
+            // 
             this.tsEnhToNone.Name = "tsEnhToNone";
-
             this.tsEnhToNone.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToNone.Text = "None (Enh has no effect)";
+            // 
+            // ToolStripSeparator17
+            // 
             this.ToolStripSeparator17.Name = "ToolStripSeparator17";
-
             this.ToolStripSeparator17.Size = new System.Drawing.Size(242, 6);
+            // 
+            // SlotsToolStripMenuItem
+            // 
             this.SlotsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[6]
             {
             (System.Windows.Forms.ToolStripItem) this.tsFlipAllEnh,
@@ -922,31 +949,45 @@
             (System.Windows.Forms.ToolStripItem) this.AutoArrangeAllSlotsToolStripMenuItem
             });
             this.SlotsToolStripMenuItem.Name = "SlotsToolStripMenuItem";
-
             this.SlotsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.SlotsToolStripMenuItem.Text = "Slo&ts";
+            // 
+            // tsFlipAllEnh
+            // 
             this.tsFlipAllEnh.Name = "tsFlipAllEnh";
-
             this.tsFlipAllEnh.Size = new System.Drawing.Size(199, 22);
             this.tsFlipAllEnh.Text = "Flip All to Alternate";
+            // 
+            // ToolStripSeparator4
+            // 
             this.ToolStripSeparator4.Name = "ToolStripSeparator4";
-
             this.ToolStripSeparator4.Size = new System.Drawing.Size(196, 6);
+            // 
+            // tsClearAllEnh
+            // 
             this.tsClearAllEnh.Name = "tsClearAllEnh";
-
             this.tsClearAllEnh.Size = new System.Drawing.Size(199, 22);
             this.tsClearAllEnh.Text = "Clear All Enhancements";
+            // 
+            // tsRemoveAllSlots
+            // 
             this.tsRemoveAllSlots.Name = "tsRemoveAllSlots";
-
             this.tsRemoveAllSlots.Size = new System.Drawing.Size(199, 22);
             this.tsRemoveAllSlots.Text = "Remove All Slots";
+            // 
+            // ToolStripSeparator1
+            // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-
             this.ToolStripSeparator1.Size = new System.Drawing.Size(196, 6);
+            // 
+            // AutoArrangeAllSlotsToolStripMenuItem
+            // 
             this.AutoArrangeAllSlotsToolStripMenuItem.Name = "AutoArrangeAllSlotsToolStripMenuItem";
-
             this.AutoArrangeAllSlotsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.AutoArrangeAllSlotsToolStripMenuItem.Text = "&Auto-Arrange All Slots";
+            // 
+            // ViewToolStripMenuItem
+            // 
             this.ViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[11]
             {
             (System.Windows.Forms.ToolStripItem) this.tsView4Col,
@@ -963,26 +1004,36 @@
             });
             this.ViewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-
             this.ViewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.ViewToolStripMenuItem.Text = "&View";
+            // 
+            // tsView4Col
+            // 
             this.tsView4Col.Name = "tsView4Col";
-
             this.tsView4Col.Size = new System.Drawing.Size(282, 22);
             this.tsView4Col.Text = "&4 Columns";
+            // 
+            // tsView3Col
+            // 
             this.tsView3Col.Checked = true;
             this.tsView3Col.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsView3Col.Name = "tsView3Col";
-
             this.tsView3Col.Size = new System.Drawing.Size(282, 22);
             this.tsView3Col.Text = "&3 Columns";
+            // 
+            // tsView2Col
+            // 
             this.tsView2Col.Name = "tsView2Col";
-
             this.tsView2Col.Size = new System.Drawing.Size(282, 22);
             this.tsView2Col.Text = "&2 Columns";
+            // 
+            // ToolStripSeparator13
+            // 
             this.ToolStripSeparator13.Name = "ToolStripSeparator13";
-
             this.ToolStripSeparator13.Size = new System.Drawing.Size(279, 6);
+            // 
+            // tsViewIOLevels
+            // 
             this.tsViewIOLevels.Checked = true;
             this.tsViewIOLevels.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsViewIOLevels.Name = "tsViewIOLevels";

@@ -2,9 +2,13 @@ open System
 open System.IO
 open System.Text.RegularExpressions
 
-let target = @"C:\projects\CoHDesigner2\Hero Designer\frmMain.cs"
+let root = __SOURCE_DIRECTORY__
+
+let searchAllDirectories (path,pattern) = Directory.GetFiles(path,pattern,SearchOption.AllDirectories)
+let getAllCsFiles() = searchAllDirectories (root,"*.cs")
 let minI,maxI = 2681,4203
-let writeAllLines x = File.WriteAllLines(target,x)
+let writeLines (fp:string) (text:string[]) = File.WriteAllLines(path=fp,contents=text)
+//let writeAllLines x = File.WriteAllLines(target,x)
 let getGValue (i:int) (m:Match) = m.Groups.[i].Value
 
 let (|RMatch|_|) (r:Regex) line =
@@ -14,15 +18,16 @@ let (|RMatch|_|) (r:Regex) line =
     
 let contains d (x:string) = x.Contains(d)
 let (|Contains|_|) d line = if contains d line then Some line else None
+type Fileish = {FullPath:string;Lines:string[]}
 [<NoComparison>]
 type TransformationType =
-    |Relative of (string[] -> int*string -> string)
+    |Relative of (Fileish -> int*string -> string)
     |Simple of (int*string -> string)
-let transformFile f =
+let transformFile target f =
     let text = File.ReadAllLines target
     let f=
         match f with
-        |Relative f -> f text
+        |Relative f -> f {FullPath=target;Lines=text}
         |Simple f -> f
     text
     |> Array.mapi(fun i line ->
@@ -30,7 +35,7 @@ let transformFile f =
             f (i,line)
         else line
     )
-    |> writeAllLines
+    |> writeLines target
 let rCommented = sprintf @"^(\s+)%s(.*)$" (Regex.Escape(@"//"))|> Regex
 let (|Commentline|_|) =
     function
@@ -68,48 +73,58 @@ let commentRange (minI,maxI) (i,x) =
             |Choice2Of2 l -> failwithf "no regex matched:%s" l
             
     else x
-    
 //transformFile (Simple <| commentRange (3707,4200))
-let transformPointVar _ =
+let transformPointVar fileish =
     let rPointPattern = Regex @"(\s+)(?:Point )?point = (new Point\(.*\);)\s*"
     let rPointdPattern = Regex @"^(.* = )point;\s*$"
     // store last line replacement
     let mutable previousMatch = None
+    let gv2 m =getGValue 2 m
     fun (i,line) ->
         match previousMatch,line with
         | None,RMatch rPointPattern m ->
-            previousMatch <- Some (i,getGValue 2 m)
+            previousMatch <- Some (i,m)
             String.Empty
-        | None,(RMatch rPointdPattern _ as line) ->
-            failwithf "Found pointd but had nothing stored at %i %s" (i+1) (line.Trim())
+        | None,(RMatch rPointdPattern _ as line) -> line
+            
         | None, line -> line
         | Some(prevI,_),_ when i - prevI <> 1 ->
             failwithf "Have previous without match at %i -> %i" (prevI+1) (i+1)
-        | Some(_,pointTxt), RMatch rPointdPattern m ->
+        | Some(_,mSz), RMatch rPointdPattern m ->
             previousMatch <- None
-            sprintf "%s%s" (getGValue 1 m) (pointTxt)
-        | _ -> failwithf "Unaccounted for combination"
-let transformSizeVar _ =
+            sprintf "%s%s" (getGValue 1 m) (gv2 mSz)
+        | Some(_,m), line when fileish.FullPath.Contains("frmMain.cs") ->
+            previousMatch <- None
+            sprintf "%s\r\n%s" m.Value line
+        | _ -> failwithf "Unaccounted for combination at %i in %s" i fileish.FullPath
+let transformSizeVar fileish =
     let rSizePattern = Regex @"(\s+)(?:Size )?size = (new Size\(.*\);)\s*"
     let rSizedPattern = Regex @"^(.* = )size;\s*$"
     // store last line replacement
     let mutable previousMatch = None
+    let gv2 m =getGValue 2 m
     fun (i,line) ->
         match previousMatch,line with
         | None,RMatch rSizePattern m ->
-            previousMatch <- Some (i,getGValue 2 m)
+            previousMatch <- Some (i,m)
             String.Empty
         | None,(RMatch rSizedPattern _ as line) ->
             failwithf "Found sized but had nothing stored at %i %s" (i+1) (line.Trim())
         | None, line -> line
         | Some(prevI,_),_ when i - prevI <> 1 ->
             failwithf "Have previous without match at %i -> %i" (prevI+1) (i+1)
-        | Some(_,sizeTxt), RMatch rSizedPattern m ->
+        | Some(_,mSz), RMatch rSizedPattern m ->
             previousMatch <- None
-            sprintf "%s%s" (getGValue 1 m) (sizeTxt)
-        | _ -> failwithf "Unaccounted for combination"
+            sprintf "%s%s" (getGValue 1 m) (gv2 mSz)
+        | Some(_,m), line when fileish.FullPath.Contains("frmMain.cs") ->
+            previousMatch <- None
+            sprintf "%s\r\n%s" m.Value line
+        | _ -> failwithf "Unaccounted for combination at %i in %s" i fileish.FullPath
 let _ = 
-    fun () ->
-        transformFile (Simple <| commentRange (3707,4200))
-        transformFile (Relative transformSizeVar)
-        transformFile (Relative transformPointVar)
+    getAllCsFiles()
+    |> Seq.iter(
+        fun target ->
+            //transformFile (Simple <| commentRange (3707,4200))
+            transformFile target (Relative transformSizeVar)
+            transformFile target (Relative transformPointVar)
+    )
