@@ -139,3 +139,27 @@ module Tuple2 =
     let optionOfSnd (x,y) = y |> Option.map(fun y -> x,y)
 let getAllCsFiles() = searchAllDirectories (root,"*.cs")
 let isForm text = rMatchm @"^\s*(?:public)? class (?<name>\w+)\s*:\s*Form($|(?:\s.*$))" text
+let isNamedForm name text =
+    rMatchm (sprintf @"^\s*(?:public)? class (%s)\s*:\s*Form($|(?:\s.*$))" name) text
+
+let findParentCsProject path =
+    let rec findParentCs path =
+        match Path.GetDirectoryName path with
+        | null -> None
+        | parent ->
+            Directory.GetFiles(path,"*.csproj")
+            |> Seq.tryHead
+            |> function
+                |None -> findParentCs parent
+                |Some p -> Some p
+    if File.Exists path then
+        Path.GetDirectoryName path
+    else path
+    |> findParentCs
+type PathingRelation = {Source:string;TargetPath:string}
+// for projects, source would be project dir or project path, either should work
+let getRelativePath {Source=target;TargetPath=from} =
+    let p1 = Uri(uriString=target)
+    let p2 = Uri(uriString=from)
+    let diff = p1.MakeRelativeUri(p2)
+    diff.OriginalString

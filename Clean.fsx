@@ -4,7 +4,6 @@ open System.Text.RegularExpressions
 
 open System
 open Reusable
-open Reusable.Helpers
 
 let cleanDecompilerComments () =
     searchAllDirectories (root, "*.cs")
