@@ -14,8 +14,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    [DesignerGenerated]
-    public class frmRecipeViewer : Form
+    public partial class frmRecipeViewer : Form
     {
         CheckBox chkRecipe;
 
@@ -51,7 +50,6 @@ namespace Hero_Designer
         VScrollBar VScrollBar1;
 
         protected ExtendedBitmap bxRecipe;
-        IContainer components;
 
         protected bool Loading;
         protected frmMain myParent;
@@ -231,62 +229,62 @@ namespace Hero_Designer
                             }
                         }
                     }
-                    int index3 = popupData.Add((PopUp.Section)null);
+                    int index3 = popupData.Add(null);
                     if (Mini)
                         iIndent = 0;
                     this.lblHeader.Text = "Shopping List";
                     if (this.lvPower.CheckedIndices.Count == 1)
                     {
                         if (!this.lvPower.Items[0].Checked)
-                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(this.lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                            popupData.Sections[index3].Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[Conversions.ToInteger(this.lvPower.CheckedItems[0].Tag)].NIDPower].DisplayName, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                         else
-                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                            popupData.Sections[index3].Add("All Powers", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                     }
                     else
-                        popupData.Sections[index3].Add(Conversions.ToString(this.lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index3].Add(Conversions.ToString(this.lvPower.CheckedIndices.Count) + " Powers", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                     if (!this.chkRecipe.Checked)
-                        popupData.Sections[index3].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index3].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                     if (Mini)
                     {
                         string str = "Buy:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Buy Cost:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft (Mem'd):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost (Memorized Common):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (this.chkRecipe.Checked)
                     {
                         this.RecipeInfo.ColumnPosition = 0.75f;
-                        int index1 = popupData.Add((PopUp.Section)null);
-                        popupData.Sections[index1].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        int index1 = popupData.Add(null);
+                        popupData.Sections[index1].Add(Conversions.ToString(this.lvDPA.Items.Count - this.nonRecipeCount) + " Recipes:", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                         int num7 = numArray2.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
@@ -312,9 +310,9 @@ namespace Hero_Designer
                                             break;
                                     }
                                     if (Mini)
-                                        popupData.Sections[index1].Add(" " + Conversions.ToString(numArray2[index2][index4]) + " x", color, DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, 0.9f, FontStyle.Bold, iIndent);
+                                        popupData.Sections[index1].Add(" " + Conversions.ToString(numArray2[index2][index4]) + " x", color, DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                                     else
-                                        popupData.Sections[index1].Add(DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, Conversions.ToString(numArray2[index2][index4]), color, 0.9f, FontStyle.Bold, iIndent);
+                                        popupData.Sections[index1].Add(DatabaseAPI.GetEnhancementNameShortWSet(DatabaseAPI.Database.Recipes[index2].EnhIdx) + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index2].Item[index4].Level + 1) + ")", color, Conversions.ToString(numArray2[index2][index4]), color, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                                 }
                             }
                         }
@@ -327,15 +325,15 @@ namespace Hero_Designer
                         popupData.ColPos = 0.15f;
                         popupData.ColRight = false;
                     }
-                    int index5 = popupData.Add((PopUp.Section)null);
+                    int index5 = popupData.Add(null);
                     string iText1 = !Mini ? Conversions.ToString(num4) + " Salvage Items:" : Conversions.ToString(num4) + " Items:";
-                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    popupData.Sections[index5].Add(iText1, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                     int num9 = numArray1.Length - 1;
                     for (int index1 = 0; index1 <= num9; ++index1)
                     {
                         if (numArray1[index1] > 0)
                         {
-                            Color color = Color.White;
+                            Color color = System.Drawing.Color.White;
                             switch (DatabaseAPI.Database.Salvage[index1].Rarity)
                             {
                                 case Recipe.RecipeRarity.Common:
@@ -349,25 +347,25 @@ namespace Hero_Designer
                                     break;
                             }
                             if (Mini)
-                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, FontStyle.Bold, 0);
+                                popupData.Sections[index5].Add(" " + Conversions.ToString(numArray1[index1]) + " x", color, DatabaseAPI.Database.Salvage[index1].ExternalName, color, 0.9f, System.Drawing.FontStyle.Bold, 0);
                             else
-                                popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, FontStyle.Bold, 1);
+                                popupData.Sections[index5].Add(DatabaseAPI.Database.Salvage[index1].ExternalName, color, Conversions.ToString(numArray1[index1]), color, 0.9f, System.Drawing.FontStyle.Bold, 1);
                         }
                     }
                     popupData.Sections[index5].Content = frmRecipeViewer.sortPopupStrings(Mini, 1, popupData.Sections[index5].Content);
                     if (this.nonRecipeCount != 1)
                     {
-                        int index1 = popupData.Add((PopUp.Section)null);
+                        int index1 = popupData.Add(null);
                         string iText2 = !Mini ? Conversions.ToString(this.nonRecipeCount - 1) + " Non-Crafted Enhancements:" : Conversions.ToString(this.nonRecipeCount - 1) + " Enhs:";
-                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                        popupData.Sections[index1].Add(iText2, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                         int num7 = tl.Length - 1;
                         for (int index2 = 0; index2 <= num7; ++index2)
                         {
                             Color common = PopUp.Colors.Common;
                             if (Mini)
-                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, FontStyle.Bold, 0);
+                                popupData.Sections[index1].Add(" " + Conversions.ToString(tl[index2].Count) + " x", common, tl[index2].Text, common, 0.9f, System.Drawing.FontStyle.Bold, 0);
                             else
-                                popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, FontStyle.Bold, 1);
+                                popupData.Sections[index1].Add(tl[index2].Text, common, Conversions.ToString(tl[index2].Count), common, 0.9f, System.Drawing.FontStyle.Bold, 1);
                         }
                         popupData.Sections[index1].Content = frmRecipeViewer.sortPopupStrings(Mini, 1, popupData.Sections[index1].Content);
                     }
@@ -380,7 +378,7 @@ namespace Hero_Designer
                 this.DrawIcon(Conversions.ToInteger(this.lvDPA.SelectedItems[0].Tag));
                 if (rIdx > -1)
                 {
-                    int index1 = popupData.Add((PopUp.Section)null);
+                    int index1 = popupData.Add(null);
                     popupData.Sections[index1] = Character.PopRecipeInfo(rIdx, Conversions.ToInteger(this.lvDPA.SelectedItems[0].SubItems[1].Text) - 1);
                     if (popupData.Sections[index1].Content != null && popupData.Sections[index1].Content.Length > 0)
                     {
@@ -480,27 +478,6 @@ namespace Hero_Designer
                 num = -1;
             }
             return num;
-        }
-
-        [DebuggerNonUserCode]
-        protected override void Dispose(bool disposing)
-        {
-            try
-            {
-                if (!disposing || this.components == null)
-                    return;
-                this.components.Dispose();
-                try
-                {
-                    bxRecipe?.Dispose();
-
-                }
-                catch { }
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
         }
 
         void DrawIcon(int Index)
@@ -740,248 +717,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmRecipeViewer));
-            this.pbRecipe = new PictureBox();
-            this.lvPower = new ListView();
-            this.ColumnHeader1 = new ColumnHeader();
-            this.lvDPA = new ListView();
-            this.ColumnHeader3 = new ColumnHeader();
-            this.ColumnHeader4 = new ColumnHeader();
-            this.ColumnHeader5 = new ColumnHeader();
-            this.ilSets = new ImageList(this.components);
-            this.chkSortByLevel = new CheckBox();
-            this.lblHeader = new Label();
-            this.Panel1 = new Panel();
-            this.VScrollBar1 = new VScrollBar();
-            this.RecipeInfo = new ctlPopUp();
-            this.Panel2 = new Panel();
-            this.chkRecipe = new CheckBox();
-            this.ToolTip1 = new ToolTip(this.components);
-            this.ibMiniList = new ImageButton();
-            this.ibClipboard = new ImageButton();
-            this.ibTopmost = new ImageButton();
-            this.ibClose = new ImageButton();
-            ((ISupportInitialize)this.pbRecipe).BeginInit();
-            this.Panel1.SuspendLayout();
-            this.Panel2.SuspendLayout();
-            this.SuspendLayout();
-            Point point = new Point(0, 0);
-            this.pbRecipe.Location = point;
-            this.pbRecipe.Name = "pbRecipe";
-            Size size = new Size(60, 30);
-            this.pbRecipe.Size = size;
-            this.pbRecipe.TabIndex = 0;
-            this.pbRecipe.TabStop = false;
-            this.lvPower.CheckBoxes = true;
-            this.lvPower.Columns.AddRange(new ColumnHeader[1]
-            {
-        this.ColumnHeader1
-            });
-            this.lvPower.FullRowSelect = true;
-            this.lvPower.HideSelection = false;
-            point = new Point(12, 12);
-            this.lvPower.Location = point;
-            this.lvPower.MultiSelect = false;
-            this.lvPower.Name = "lvPower";
-            size = new Size(176, 191);
-            this.lvPower.Size = size;
-            this.lvPower.Sorting = SortOrder.Ascending;
-            this.lvPower.TabIndex = 1;
-            this.lvPower.UseCompatibleStateImageBehavior = false;
-            this.lvPower.View = View.Details;
-            this.ColumnHeader1.Text = "Power";
-            this.ColumnHeader1.Width = 148;
-            this.lvDPA.Columns.AddRange(new ColumnHeader[3]
-            {
-        this.ColumnHeader3,
-        this.ColumnHeader4,
-        this.ColumnHeader5
-            });
-            this.lvDPA.FullRowSelect = true;
-            this.lvDPA.HideSelection = false;
-            point = new Point(194, 12);
-            this.lvDPA.Location = point;
-            this.lvDPA.MultiSelect = false;
-            this.lvDPA.Name = "lvDPA";
-            size = new Size(428, 191);
-            this.lvDPA.Size = size;
-            this.lvDPA.SmallImageList = this.ilSets;
-            this.lvDPA.TabIndex = 8;
-            this.lvDPA.UseCompatibleStateImageBehavior = false;
-            this.lvDPA.View = View.Details;
-            this.ColumnHeader3.Text = "Enhancement";
-            this.ColumnHeader3.Width = 241;
-            this.ColumnHeader4.Text = "Level";
-            this.ColumnHeader4.Width = 45;
-            this.ColumnHeader5.Text = "Power";
-            this.ColumnHeader5.Width = 114;
-            this.ilSets.ColorDepth = ColorDepth.Depth32Bit;
-            size = new Size(16, 16);
-            this.ilSets.ImageSize = size;
-            this.ilSets.TransparentColor = Color.Transparent;
-            this.chkSortByLevel.Checked = true;
-            this.chkSortByLevel.CheckState = CheckState.Checked;
-            this.chkSortByLevel.ForeColor = Color.White;
-            point = new Point(12, 209);
-            this.chkSortByLevel.Location = point;
-            this.chkSortByLevel.Name = "chkSortByLevel";
-            size = new Size(176, 16);
-            this.chkSortByLevel.Size = size;
-            this.chkSortByLevel.TabIndex = 9;
-            this.chkSortByLevel.Text = "Sort By Level";
-            this.chkSortByLevel.UseVisualStyleBackColor = true;
-            this.lblHeader.Font = new Font("Arial", 17.5f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            this.lblHeader.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            point = new Point(66, 0);
-            this.lblHeader.Location = point;
-            this.lblHeader.Name = "lblHeader";
-            size = new Size(541, 30);
-            this.lblHeader.Size = size;
-            this.lblHeader.TabIndex = 10;
-            this.lblHeader.Text = "Select A Power / Recipe";
-            this.lblHeader.TextAlign = ContentAlignment.MiddleLeft;
-            this.Panel1.Controls.Add((Control)this.VScrollBar1);
-            this.Panel1.Controls.Add((Control)this.RecipeInfo);
-            point = new Point(0, 36);
-            this.Panel1.Location = point;
-            this.Panel1.Name = "Panel1";
-            size = new Size(610, 177);
-            this.Panel1.Size = size;
-            this.Panel1.TabIndex = 11;
-            point = new Point(593, 0);
-            this.VScrollBar1.Location = point;
-            this.VScrollBar1.Maximum = 20;
-            this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 176);
-            this.VScrollBar1.Size = size;
-            this.VScrollBar1.TabIndex = 3;
-            this.RecipeInfo.BXHeight = 2048;
-            this.RecipeInfo.ColumnPosition = 0.5f;
-            this.RecipeInfo.ColumnRight = false;
-            this.RecipeInfo.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.RecipeInfo.ForeColor = Color.Black;
-            this.RecipeInfo.InternalPadding = 3;
-            point = new Point(3, 3);
-            this.RecipeInfo.Location = point;
-            this.RecipeInfo.Name = "RecipeInfo";
-            this.RecipeInfo.ScrollY = 0.0f;
-            this.RecipeInfo.SectionPadding = 8;
-            size = new Size(587, 212);
-            this.RecipeInfo.Size = size;
-            this.RecipeInfo.TabIndex = 2;
-            this.Panel2.BackColor = Color.Black;
-            this.Panel2.Controls.Add((Control)this.Panel1);
-            this.Panel2.Controls.Add((Control)this.pbRecipe);
-            this.Panel2.Controls.Add((Control)this.lblHeader);
-            point = new Point(12, 226);
-            this.Panel2.Location = point;
-            this.Panel2.Name = "Panel2";
-            size = new Size(610, 213);
-            this.Panel2.Size = size;
-            this.Panel2.TabIndex = 12;
-            this.chkRecipe.ForeColor = Color.White;
-            point = new Point(234, 445);
-            this.chkRecipe.Location = point;
-            this.chkRecipe.Name = "chkRecipe";
-            size = new Size(166, 22);
-            this.chkRecipe.Size = size;
-            this.chkRecipe.TabIndex = 15;
-            this.chkRecipe.Text = "Include Recipes";
-            this.ToolTip1.SetToolTip((Control)this.chkRecipe, "Add a list of recipes to the shopping list");
-            this.chkRecipe.UseVisualStyleBackColor = true;
-            this.ibMiniList.Checked = false;
-            this.ibMiniList.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibMiniList.KnockoutLocationPoint = point;
-            point = new Point(123, 445);
-            this.ibMiniList.Location = point;
-            this.ibMiniList.Name = "ibMiniList";
-            size = new Size(105, 22);
-            this.ibMiniList.Size = size;
-            this.ibMiniList.TabIndex = 14;
-            this.ibMiniList.TextOff = "To I-G Helper";
-            this.ibMiniList.TextOn = "Alt Text";
-            this.ibMiniList.Toggle = false;
-            this.ibClipboard.Checked = false;
-            this.ibClipboard.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClipboard.KnockoutLocationPoint = point;
-            point = new Point(12, 445);
-            this.ibClipboard.Location = point;
-            this.ibClipboard.Name = "ibClipboard";
-            size = new Size(105, 22);
-            this.ibClipboard.Size = size;
-            this.ibClipboard.TabIndex = 13;
-            this.ibClipboard.TextOff = "To Clipboard";
-            this.ibClipboard.TextOn = "Alt Text";
-            this.ibClipboard.Toggle = false;
-            this.ibTopmost.Checked = true;
-            this.ibTopmost.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibTopmost.KnockoutLocationPoint = point;
-            point = new Point(406, 445);
-            this.ibTopmost.Location = point;
-            this.ibTopmost.Name = "ibTopmost";
-            size = new Size(105, 22);
-            this.ibTopmost.Size = size;
-            this.ibTopmost.TabIndex = 7;
-            this.ibTopmost.TextOff = "Keep On Top";
-            this.ibTopmost.TextOn = "Keep On Top";
-            this.ibTopmost.Toggle = true;
-            this.ibClose.Checked = false;
-            this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClose.KnockoutLocationPoint = point;
-            point = new Point(517, 445);
-            this.ibClose.Location = point;
-            this.ibClose.Name = "ibClose";
-            size = new Size(105, 22);
-            this.ibClose.Size = size;
-            this.ibClose.TabIndex = 6;
-            this.ibClose.TextOff = "Close";
-            this.ibClose.TextOn = "Alt Text";
-            this.ibClose.Toggle = false;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(634, 479);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.chkRecipe);
-            this.Controls.Add((Control)this.ibMiniList);
-            this.Controls.Add((Control)this.ibClipboard);
-            this.Controls.Add((Control)this.chkSortByLevel);
-            this.Controls.Add((Control)this.lvDPA);
-            this.Controls.Add((Control)this.ibTopmost);
-            this.Controls.Add((Control)this.ibClose);
-            this.Controls.Add((Control)this.lvPower);
-            this.Controls.Add((Control)this.Panel2);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmRecipeViewer);
-            this.StartPosition = FormStartPosition.Manual;
-            this.Text = "Recipe Viewer";
-            this.TopMost = true;
-            ((ISupportInitialize)this.pbRecipe).EndInit();
-            this.Panel1.ResumeLayout(false);
-            this.Panel2.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                this.chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
-                this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-                this.ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
-                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-            }
-            // finished with events
-            this.ResumeLayout(false);
-        }
 
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
 

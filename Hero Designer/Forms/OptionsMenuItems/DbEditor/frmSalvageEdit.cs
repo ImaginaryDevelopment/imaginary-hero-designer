@@ -10,8 +10,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmSalvageEdit : Form
+  public partial class frmSalvageEdit : Form
   {
         Button btnAdd;
 
@@ -44,16 +43,7 @@ namespace Hero_Designer
 
         TextBox txtInternal;
 
-    IContainer components;
-
     public bool Updating;
-
-
-
-
-
-
-
 
     public frmSalvageEdit()
     {
@@ -237,21 +227,6 @@ namespace Hero_Designer
       this.Updating = false;
     }
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
-
     protected void FillList()
     {
       this.lvSalvage.BeginUpdate();
@@ -280,224 +255,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSalvageEdit));
-      this.lvSalvage = new ListView();
-      this.ColumnHeader1 = new ColumnHeader();
-      this.ColumnHeader2 = new ColumnHeader();
-      this.ColumnHeader3 = new ColumnHeader();
-      this.ColumnHeader4 = new ColumnHeader();
-      this.btnOK = new Button();
-      this.btnCancel = new Button();
-      this.btnImport = new Button();
-      this.txtExternal = new TextBox();
-      this.Label1 = new Label();
-      this.Label2 = new Label();
-      this.txtInternal = new TextBox();
-      this.cbRarity = new ComboBox();
-      this.Label3 = new Label();
-      this.Label4 = new Label();
-      this.cbOrigin = new ComboBox();
-      this.Label5 = new Label();
-      this.cbLevel = new ComboBox();
-      this.btnDelete = new Button();
-      this.btnAdd = new Button();
-      this.SuspendLayout();
-      this.lvSalvage.Columns.AddRange(new ColumnHeader[4]
-      {
-        this.ColumnHeader1,
-        this.ColumnHeader2,
-        this.ColumnHeader3,
-        this.ColumnHeader4
-      });
-      this.lvSalvage.FullRowSelect = true;
-      this.lvSalvage.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvSalvage.Location = point;
-      this.lvSalvage.MultiSelect = false;
-      this.lvSalvage.Name = "lvSalvage";
-      Size size = new Size(468, 316);
-      this.lvSalvage.Size = size;
-      this.lvSalvage.TabIndex = 0;
-      this.lvSalvage.UseCompatibleStateImageBehavior = false;
-      this.lvSalvage.View = View.Details;
-      this.ColumnHeader1.Text = "Name";
-      this.ColumnHeader1.Width = 213;
-      this.ColumnHeader2.Text = "Origin";
-      this.ColumnHeader2.Width = 72;
-      this.ColumnHeader3.Text = "Rarity";
-      this.ColumnHeader3.Width = 76;
-      this.ColumnHeader4.Text = "Level";
-      this.ColumnHeader4.Width = 75;
-      this.btnOK.DialogResult = DialogResult.OK;
-      point = new Point(605, 304);
-      this.btnOK.Location = point;
-      this.btnOK.Name = "btnOK";
-      size = new Size(113, 24);
-      this.btnOK.Size = size;
-      this.btnOK.TabIndex = 1;
-      this.btnOK.Text = "Save && Close";
-      this.btnOK.UseVisualStyleBackColor = true;
-      this.btnCancel.DialogResult = DialogResult.Cancel;
-      point = new Point(486, 304);
-      this.btnCancel.Location = point;
-      this.btnCancel.Name = "btnCancel";
-      size = new Size(113, 24);
-      this.btnCancel.Size = size;
-      this.btnCancel.TabIndex = 2;
-      this.btnCancel.Text = "Cancel";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      point = new Point(486, 274);
-      this.btnImport.Location = point;
-      this.btnImport.Name = "btnImport";
-      size = new Size(232, 24);
-      this.btnImport.Size = size;
-      this.btnImport.TabIndex = 3;
-      this.btnImport.Text = "Clear and Import from Spreadsheet";
-      this.btnImport.UseVisualStyleBackColor = true;
-      point = new Point(564, 12);
-      this.txtExternal.Location = point;
-      this.txtExternal.Name = "txtExternal";
-      size = new Size(154, 20);
-      this.txtExternal.Size = size;
-      this.txtExternal.TabIndex = 4;
-      point = new Point(486, 12);
-      this.Label1.Location = point;
-      this.Label1.Name = "Label1";
-      size = new Size(72, 20);
-      this.Label1.Size = size;
-      this.Label1.TabIndex = 5;
-      this.Label1.Text = "Name:";
-      this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(486, 38);
-      this.Label2.Location = point;
-      this.Label2.Name = "Label2";
-      size = new Size(72, 20);
-      this.Label2.Size = size;
-      this.Label2.TabIndex = 7;
-      this.Label2.Text = "Internal:";
-      this.Label2.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(564, 38);
-      this.txtInternal.Location = point;
-      this.txtInternal.Name = "txtInternal";
-      size = new Size(154, 20);
-      this.txtInternal.Size = size;
-      this.txtInternal.TabIndex = 6;
-      this.cbRarity.DropDownStyle = ComboBoxStyle.DropDownList;
-      this.cbRarity.FormattingEnabled = true;
-      point = new Point(564, 64);
-      this.cbRarity.Location = point;
-      this.cbRarity.Name = "cbRarity";
-      size = new Size(154, 22);
-      this.cbRarity.Size = size;
-      this.cbRarity.TabIndex = 8;
-      point = new Point(486, 64);
-      this.Label3.Location = point;
-      this.Label3.Name = "Label3";
-      size = new Size(72, 22);
-      this.Label3.Size = size;
-      this.Label3.TabIndex = 9;
-      this.Label3.Text = "Rarity:";
-      this.Label3.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(486, 92);
-      this.Label4.Location = point;
-      this.Label4.Name = "Label4";
-      size = new Size(72, 22);
-      this.Label4.Size = size;
-      this.Label4.TabIndex = 11;
-      this.Label4.Text = "Origin:";
-      this.Label4.TextAlign = ContentAlignment.MiddleRight;
-      this.cbOrigin.DropDownStyle = ComboBoxStyle.DropDownList;
-      this.cbOrigin.FormattingEnabled = true;
-      point = new Point(564, 92);
-      this.cbOrigin.Location = point;
-      this.cbOrigin.Name = "cbOrigin";
-      size = new Size(154, 22);
-      this.cbOrigin.Size = size;
-      this.cbOrigin.TabIndex = 10;
-      point = new Point(486, 120);
-      this.Label5.Location = point;
-      this.Label5.Name = "Label5";
-      size = new Size(72, 22);
-      this.Label5.Size = size;
-      this.Label5.TabIndex = 13;
-      this.Label5.Text = "Level:";
-      this.Label5.TextAlign = ContentAlignment.MiddleRight;
-      this.cbLevel.DropDownStyle = ComboBoxStyle.DropDownList;
-      this.cbLevel.FormattingEnabled = true;
-      point = new Point(564, 120);
-      this.cbLevel.Location = point;
-      this.cbLevel.Name = "cbLevel";
-      size = new Size(154, 22);
-      this.cbLevel.Size = size;
-      this.cbLevel.TabIndex = 12;
-      point = new Point(486, 214);
-      this.btnDelete.Location = point;
-      this.btnDelete.Name = "btnDelete";
-      size = new Size(113, 24);
-      this.btnDelete.Size = size;
-      this.btnDelete.TabIndex = 14;
-      this.btnDelete.Text = "Delete";
-      this.btnDelete.UseVisualStyleBackColor = true;
-      point = new Point(486, 184);
-      this.btnAdd.Location = point;
-      this.btnAdd.Name = "btnAdd";
-      size = new Size(113, 24);
-      this.btnAdd.Size = size;
-      this.btnAdd.TabIndex = 15;
-      this.btnAdd.Text = "Add";
-      this.btnAdd.UseVisualStyleBackColor = true;
-      this.AcceptButton = (IButtonControl) this.btnOK;
-      this.AutoScaleMode = AutoScaleMode.None;
-      this.CancelButton = (IButtonControl) this.btnCancel;
-      size = new Size(730, 340);
-      this.ClientSize = size;
-      this.Controls.Add((Control) this.btnAdd);
-      this.Controls.Add((Control) this.btnDelete);
-      this.Controls.Add((Control) this.Label5);
-      this.Controls.Add((Control) this.cbLevel);
-      this.Controls.Add((Control) this.Label4);
-      this.Controls.Add((Control) this.cbOrigin);
-      this.Controls.Add((Control) this.Label3);
-      this.Controls.Add((Control) this.cbRarity);
-      this.Controls.Add((Control) this.Label2);
-      this.Controls.Add((Control) this.txtInternal);
-      this.Controls.Add((Control) this.Label1);
-      this.Controls.Add((Control) this.txtExternal);
-      this.Controls.Add((Control) this.btnImport);
-      this.Controls.Add((Control) this.btnCancel);
-      this.Controls.Add((Control) this.btnOK);
-      this.Controls.Add((Control) this.lvSalvage);
-      this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte) 0);
-      this.FormBorderStyle = FormBorderStyle.FixedSingle;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmSalvageEdit);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterParent;
-      this.Text = "Salvage Editor";
-      this.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnAdd.Click += btnAdd_Click;
-                  this.btnCancel.Click += btnCancel_Click;
-                  this.btnDelete.Click += btnDelete_Click;
-                  this.btnImport.Click += btnImport_Click;
-                  this.btnOK.Click += btnOK_Click;
-                  this.cbLevel.SelectedIndexChanged += cbLevel_SelectedIndexChanged;
-                  this.cbOrigin.SelectedIndexChanged += cbOrigin_SelectedIndexChanged;
-                  this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
-                  this.lvSalvage.SelectedIndexChanged += lvSalvage_SelectedIndexChanged;
-                  this.txtExternal.TextChanged += txtExternal_TextChanged;
-                  this.txtInternal.TextChanged += txtInternal_TextChanged;
-              }
-              // finished with events
-      this.PerformLayout();
-    }
 
     void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
 

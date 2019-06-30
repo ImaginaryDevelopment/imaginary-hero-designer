@@ -660,7 +660,7 @@ namespace Hero_Designer.My
           }
           else
             MyProject.MyForms.m_FormBeingCreated = new Hashtable();
-          MyProject.MyForms.m_FormBeingCreated.Add((object) typeof (T), (object) null);
+          MyProject.MyForms.m_FormBeingCreated.Add((object) typeof (T), null);
           T obj2;
           try
           {

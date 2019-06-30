@@ -205,7 +205,7 @@ public static class DatabaseAPI
 
     public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
     {
-        return DatabaseAPI.NidSets(DatabaseAPI.Database.PowersetGroups.ContainsKey(uidGroup) ? DatabaseAPI.Database.PowersetGroups[uidGroup] : (PowersetGroup)null, DatabaseAPI.NidFromUidClass(uidClass), nType);
+        return DatabaseAPI.NidSets(DatabaseAPI.Database.PowersetGroups.ContainsKey(uidGroup) ? DatabaseAPI.Database.PowersetGroups[uidGroup] : null, DatabaseAPI.NidFromUidClass(uidClass), nType);
     }
 
     public static int[] NidPowers(int nIDPowerset, int nIDClass = -1)
@@ -346,7 +346,7 @@ public static class DatabaseAPI
         IPowerset powerset;
         if (strArray.Length < 2)
         {
-            powerset = (IPowerset)null;
+            powerset = null;
         }
         else
         {
@@ -355,12 +355,12 @@ public static class DatabaseAPI
             string key = strArray[0];
             if (!DatabaseAPI.Database.PowersetGroups.ContainsKey(key))
             {
-                powerset = (IPowerset)null;
+                powerset = null;
             }
             else
             {
                 PowersetGroup powersetGroup = DatabaseAPI.Database.PowersetGroups[key];
-                powerset = powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : (IPowerset)null;
+                powerset = powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
             }
         }
         return powerset;
@@ -386,7 +386,7 @@ public static class DatabaseAPI
                 return powerset2;
             }
         }
-        return (IPowerset)null;
+        return null;
     }
     //Pine
     public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
@@ -396,7 +396,7 @@ public static class DatabaseAPI
             if (iSet == powerset.SetType && string.Equals(iName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase))
                 return powerset;
         }
-        return (IPowerset)null;
+        return null;
     }
 
     public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
@@ -406,7 +406,7 @@ public static class DatabaseAPI
             if (iSet == powerset.SetType && string.Equals(iName, powerset.SetName, StringComparison.OrdinalIgnoreCase))
                 return powerset;
         }
-        return (IPowerset)null;
+        return null;
     }
 
     public static IPowerset GetInherentPowerset()
@@ -416,7 +416,7 @@ public static class DatabaseAPI
             if (DatabaseAPI.Database.Powersets[index].SetType == Enums.ePowerSetType.Inherent)
                 return DatabaseAPI.Database.Powersets[index];
         }
-        return (IPowerset)null;
+        return null;
     }
 
     public static Archetype GetArchetypeByName(string iArchetype)
@@ -426,7 +426,7 @@ public static class DatabaseAPI
             if (string.Equals(iArchetype, DatabaseAPI.Database.Classes[index].DisplayName, StringComparison.OrdinalIgnoreCase))
                 return DatabaseAPI.Database.Classes[index];
         }
-        return (Archetype)null;
+        return null;
     }
 
     public static int GetOriginByName(Archetype archetype, string iOrigin)
@@ -457,14 +457,14 @@ public static class DatabaseAPI
         IPower power1;
         if (string.IsNullOrEmpty(name))
         {
-            power1 = (IPower)null;
+            power1 = null;
         }
         else
         {
             IPowerset powersetByName = DatabaseAPI.GetPowersetByName(name);
             if (powersetByName == null)
             {
-                power1 = (IPower)null;
+                power1 = null;
             }
             else
             {
@@ -473,7 +473,7 @@ public static class DatabaseAPI
                     if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
                         return power2;
                 }
-                power1 = (IPower)null;
+                power1 = null;
             }
         }
         return power1;
@@ -660,7 +660,7 @@ public static class DatabaseAPI
             if (string.Equals(recipe.InternalName, iName, StringComparison.OrdinalIgnoreCase))
                 return recipe;
         }
-        return (Recipe)null;
+        return null;
     }
 
     public static string[] UidReferencingPowerFix(string uidPower, string uidNew = "")

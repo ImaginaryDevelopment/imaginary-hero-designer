@@ -49,7 +49,7 @@ namespace Hero_Designer.My.Resources
         {
             get
             {
-                if (object.ReferenceEquals((object)Hero_Designer.My.Resources.Resources.resourceMan, (object)null))
+                if (object.ReferenceEquals((object)Hero_Designer.My.Resources.Resources.resourceMan, null))
                     Hero_Designer.My.Resources.Resources.resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Hero_Designer.My.Resources.Resources).Assembly);
                 return Hero_Designer.My.Resources.Resources.resourceMan;
             }

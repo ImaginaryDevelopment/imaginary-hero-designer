@@ -107,7 +107,7 @@ public class Build
     this._character = owner;
     this.Powers = new List<PowerEntry>()
     {
-      new PowerEntry(0, (IPower) null, true)
+      new PowerEntry(0, null, true)
     };
     this.SetBonus = new List<I9SetData>();
     this.LastPower = 0;
@@ -115,7 +115,7 @@ public class Build
     {
       for (int index = 0; index < iLevels[iLevel].Powers; ++index)
       {
-        this.Powers.Add(new PowerEntry(iLevel, (IPower) null, true));
+        this.Powers.Add(new PowerEntry(iLevel, null, true));
         ++this.LastPower;
       }
     }
@@ -418,7 +418,7 @@ public class Build
   {
     PopUp.PopupData popupData = new PopUp.PopupData();
     HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
-    int index1 = popupData.Add((PopUp.Section) null);
+    int index1 = popupData.Add(null);
     popupData.Sections[index1].Add("Respec to level: " + (object) (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
     foreach (HistoryMap historyMap in historyMapArray)
     {
@@ -427,7 +427,7 @@ public class Build
         PowerEntry power = this.Powers[historyMap.HID];
         if (power.Slots.Length > 0)
         {
-          int index2 = popupData.Add((PopUp.Section) null);
+          int index2 = popupData.Add(null);
           string iText1;
           if (power.Power != null)
             iText1 = "Level " + (object) (historyMap.Level + 1) + ": " + power.Power.DisplayName;
@@ -466,13 +466,13 @@ public class Build
   {
     PopUp.PopupData popupData = new PopUp.PopupData();
     HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
-    int index = popupData.Add((PopUp.Section) null);
+    int index = popupData.Add(null);
     popupData.Sections[index].Add("Respec to level: " + (object) (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
     int num = 0;
     foreach (HistoryMap historyMap in historyMapArray)
     {
       if (num != historyMap.Level)
-        index = popupData.Add((PopUp.Section) null);
+        index = popupData.Add(null);
       num = historyMap.Level;
       if (historyMap.HID >= 0)
       {

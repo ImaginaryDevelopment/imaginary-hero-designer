@@ -131,11 +131,11 @@ namespace Base.Display
 
       public void Init()
       {
-        int index1 = this.Add((PopUp.Section) null);
+        int index1 = this.Add(null);
         this.Sections[index1].Add("Popup Information", PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
         this.Sections[index1].Add("This is just an example string. It should wrap around if it gets too long, and not cause too many issues.", PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
         this.Sections[index1].Add("This is a second string added as an additional content structure within the section.", PopUp.Colors.Disabled, 1f, FontStyle.Bold, 0);
-        int index2 = this.Add((PopUp.Section) null);
+        int index2 = this.Add(null);
         this.Sections[index2].Add("Second Section", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
         this.Sections[index2].Add("Columns follow this item:", PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
         this.Sections[index2].Add("Column 1", PopUp.Colors.Text, "Column 2", PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);

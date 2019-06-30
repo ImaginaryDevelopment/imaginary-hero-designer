@@ -12,8 +12,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmImport_EnhancementEffects : Form
+  public partial class frmImport_EnhancementEffects : Form
   {
         Button btnClose;
 
@@ -24,8 +23,6 @@ namespace Hero_Designer
         Label lblFile;
 
     frmBusy bFrm;
-
-    IContainer components;
 
     string FullFileName;
 
@@ -87,21 +84,6 @@ namespace Hero_Designer
       this.lblFile.Text = FileIO.StripPath(this.FullFileName);
     }
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
-
     void frmImport_EnhancementEffects_Load(object sender, EventArgs e)
 
     {
@@ -110,74 +92,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_EnhancementEffects));
-      this.btnClose = new Button();
-      this.btnImport = new Button();
-      this.lblFile = new Label();
-      this.btnFile = new Button();
-      this.dlgBrowse = new OpenFileDialog();
-      this.SuspendLayout();
-      Point point = new Point(539, 81);
-      this.btnClose.Location = point;
-      this.btnClose.Name = "btnClose";
-      Size size = new Size(86, 23);
-      this.btnClose.Size = size;
-      this.btnClose.TabIndex = 56;
-      this.btnClose.Text = "Close";
-      this.btnClose.UseVisualStyleBackColor = true;
-      point = new Point(539, 38);
-      this.btnImport.Location = point;
-      this.btnImport.Name = "btnImport";
-      size = new Size(86, 23);
-      this.btnImport.Size = size;
-      this.btnImport.TabIndex = 54;
-      this.btnImport.Text = "Import";
-      this.btnImport.UseVisualStyleBackColor = true;
-      this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 9);
-      this.lblFile.Location = point;
-      this.lblFile.Name = "lblFile";
-      size = new Size(521, 46);
-      this.lblFile.Size = size;
-      this.lblFile.TabIndex = 55;
-      this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 9);
-      this.btnFile.Location = point;
-      this.btnFile.Name = "btnFile";
-      size = new Size(86, 23);
-      this.btnFile.Size = size;
-      this.btnFile.TabIndex = 53;
-      this.btnFile.Text = "Browse...";
-      this.btnFile.UseVisualStyleBackColor = true;
-      this.dlgBrowse.DefaultExt = "csv";
-      this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      size = new Size(636, 112);
-      this.ClientSize = size;
-      this.Controls.Add((Control) this.btnClose);
-      this.Controls.Add((Control) this.btnImport);
-      this.Controls.Add((Control) this.lblFile);
-      this.Controls.Add((Control) this.btnFile);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmImport_EnhancementEffects);
-      this.ShowInTaskbar = false;
-      this.Text = "Import Enhancement Effects";
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnClose.Click += btnClose_Click;
-                  this.btnFile.Click += btnFile_Click;
-                  this.btnImport.Click += btnImport_Click;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     bool ParseClasses(string iFileName)
 

@@ -11,8 +11,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmImport_Entities : Form
+  public partial class frmImport_Entities : Form
   {
         Button btnClose;
 
@@ -27,14 +26,7 @@ namespace Hero_Designer
 
     frmBusy bFrm;
 
-    IContainer components;
-
     string FullFileName;
-
-
-
-
-
 
     public frmImport_Entities()
     {
@@ -94,21 +86,6 @@ namespace Hero_Designer
       this.udRevision.Value = new Decimal(DatabaseAPI.Database.IOAssignmentVersion.Revision);
     }
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
-
     void frmImport_Entities_Load(object sender, EventArgs e)
 
     {
@@ -117,111 +94,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_Entities));
-      this.Label8 = new Label();
-      this.lblDate = new Label();
-      this.udRevision = new NumericUpDown();
-      this.btnClose = new Button();
-      this.btnImport = new Button();
-      this.lblFile = new Label();
-      this.btnFile = new Button();
-      this.dlgBrowse = new OpenFileDialog();
-      this.udRevision.BeginInit();
-      this.SuspendLayout();
-      Point point = new Point(346, 85);
-      this.Label8.Location = point;
-      this.Label8.Name = "Label8";
-      Size size = new Size(65, 18);
-      this.Label8.Size = size;
-      this.Label8.TabIndex = 62;
-      this.Label8.Text = "Revision:";
-      this.Label8.TextAlign = ContentAlignment.TopRight;
-      point = new Point(9, 85);
-      this.lblDate.Location = point;
-      this.lblDate.Name = "lblDate";
-      size = new Size(175, 18);
-      this.lblDate.Size = size;
-      this.lblDate.TabIndex = 61;
-      this.lblDate.Text = "Date:";
-      point = new Point(417, 83);
-      this.udRevision.Location = point;
-      this.udRevision.Maximum = new Decimal(new int[4]
-      {
-        (int) ushort.MaxValue,
-        0,
-        0,
-        0
-      });
-      this.udRevision.Name = "udRevision";
-      size = new Size(116, 20);
-      this.udRevision.Size = size;
-      this.udRevision.TabIndex = 60;
-      point = new Point(539, 81);
-      this.btnClose.Location = point;
-      this.btnClose.Name = "btnClose";
-      size = new Size(86, 23);
-      this.btnClose.Size = size;
-      this.btnClose.TabIndex = 59;
-      this.btnClose.Text = "Close";
-      this.btnClose.UseVisualStyleBackColor = true;
-      point = new Point(539, 38);
-      this.btnImport.Location = point;
-      this.btnImport.Name = "btnImport";
-      size = new Size(86, 23);
-      this.btnImport.Size = size;
-      this.btnImport.TabIndex = 57;
-      this.btnImport.Text = "Import";
-      this.btnImport.UseVisualStyleBackColor = true;
-      this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-      point = new Point(12, 9);
-      this.lblFile.Location = point;
-      this.lblFile.Name = "lblFile";
-      size = new Size(521, 46);
-      this.lblFile.Size = size;
-      this.lblFile.TabIndex = 58;
-      this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-      point = new Point(539, 9);
-      this.btnFile.Location = point;
-      this.btnFile.Name = "btnFile";
-      size = new Size(86, 23);
-      this.btnFile.Size = size;
-      this.btnFile.TabIndex = 56;
-      this.btnFile.Text = "Browse...";
-      this.btnFile.UseVisualStyleBackColor = true;
-      this.dlgBrowse.DefaultExt = "csv";
-      this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-      this.AutoScaleDimensions = new SizeF(6f, 13f);
-      this.AutoScaleMode = AutoScaleMode.Font;
-      size = new Size(646, 120);
-      this.ClientSize = size;
-      this.Controls.Add((Control) this.Label8);
-      this.Controls.Add((Control) this.lblDate);
-      this.Controls.Add((Control) this.udRevision);
-      this.Controls.Add((Control) this.btnClose);
-      this.Controls.Add((Control) this.btnImport);
-      this.Controls.Add((Control) this.lblFile);
-      this.Controls.Add((Control) this.btnFile);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmImport_Entities);
-      this.ShowInTaskbar = false;
-      this.Text = "Import Entities";
-      this.udRevision.EndInit();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnClose.Click += btnClose_Click;
-                  this.btnFile.Click += btnFile_Click;
-                  this.btnImport.Click += btnImport_Click;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     bool ParseClasses(string iFileName)
 

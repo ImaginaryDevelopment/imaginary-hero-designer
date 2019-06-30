@@ -15,8 +15,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmSetFind : Form
+  public partial class frmSetFind : Form
   {
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
@@ -37,8 +36,6 @@ namespace Hero_Designer
         ListView lvSet;
         Panel Panel1;
         ctlPopUp SetInfo;
-
-    IContainer components;
 
     protected frmMain myParent;
     protected int[] SetBonusList;
@@ -85,21 +82,6 @@ namespace Hero_Designer
         BonusID >= 0 ? Conversions.ToString(DatabaseAPI.Database.EnhancementSets.GetSetBonusEnhCount(nIDSet, BonusID)) : "Special"
       }, nIDSet));
       this.lvSet.Items[this.lvSet.Items.Count - 1].Tag = (object) nIDSet;
-    }
-
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
     }
 
     public void FillEffectList()
@@ -352,166 +334,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmSetFind));
-      this.lvBonus = new ListView();
-      this.ColumnHeader1 = new ColumnHeader();
-      this.lvMag = new ListView();
-      this.ColumnHeader2 = new ColumnHeader();
-      this.lvSet = new ListView();
-      this.ColumnHeader3 = new ColumnHeader();
-      this.ColumnHeader4 = new ColumnHeader();
-      this.ColumnHeader5 = new ColumnHeader();
-      this.ColumnHeader6 = new ColumnHeader();
-      this.ilSets = new ImageList(this.components);
-      this.Panel1 = new Panel();
-      this.ibClose = new ImageButton();
-      this.ibTopmost = new ImageButton();
-      this.SetInfo = new ctlPopUp();
-      this.Panel1.SuspendLayout();
-      this.SuspendLayout();
-      this.lvBonus.Columns.AddRange(new ColumnHeader[1]
-      {
-        this.ColumnHeader1
-      });
-      this.lvBonus.FullRowSelect = true;
-      this.lvBonus.HideSelection = false;
-      Point point = new Point(12, 12);
-      this.lvBonus.Location = point;
-      this.lvBonus.MultiSelect = false;
-      this.lvBonus.Name = "lvBonus";
-      Size size = new Size(280, 292);
-      this.lvBonus.Size = size;
-      this.lvBonus.TabIndex = 0;
-      this.lvBonus.UseCompatibleStateImageBehavior = false;
-      this.lvBonus.View = View.Details;
-      this.ColumnHeader1.Text = "Bonus Effect";
-      this.ColumnHeader1.Width = 254;
-      this.lvMag.Columns.AddRange(new ColumnHeader[1]
-      {
-        this.ColumnHeader2
-      });
-      this.lvMag.FullRowSelect = true;
-      this.lvMag.HideSelection = false;
-      point = new Point(298, 12);
-      this.lvMag.Location = point;
-      this.lvMag.MultiSelect = false;
-      this.lvMag.Name = "lvMag";
-      size = new Size((int) sbyte.MaxValue, 116);
-      this.lvMag.Size = size;
-      this.lvMag.TabIndex = 1;
-      this.lvMag.UseCompatibleStateImageBehavior = false;
-      this.lvMag.View = View.Details;
-      this.ColumnHeader2.Text = "Effect Strength";
-      this.ColumnHeader2.Width = 99;
-      this.lvSet.Columns.AddRange(new ColumnHeader[4]
-      {
-        this.ColumnHeader3,
-        this.ColumnHeader4,
-        this.ColumnHeader5,
-        this.ColumnHeader6
-      });
-      this.lvSet.FullRowSelect = true;
-      this.lvSet.HideSelection = false;
-      point = new Point(298, 134);
-      this.lvSet.Location = point;
-      this.lvSet.MultiSelect = false;
-      this.lvSet.Name = "lvSet";
-      size = new Size(484, 170);
-      this.lvSet.Size = size;
-      this.lvSet.SmallImageList = this.ilSets;
-      this.lvSet.TabIndex = 2;
-      this.lvSet.UseCompatibleStateImageBehavior = false;
-      this.lvSet.View = View.Details;
-      this.ColumnHeader3.Text = "Set";
-      this.ColumnHeader3.Width = 157;
-      this.ColumnHeader4.Text = "Level";
-      this.ColumnHeader4.Width = 69;
-      this.ColumnHeader5.Text = "Type";
-      this.ColumnHeader5.Width = 140;
-      this.ColumnHeader6.Text = "Required Enh's.";
-      this.ColumnHeader6.Width = 90;
-      this.ilSets.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilSets.ImageSize = size;
-      this.ilSets.TransparentColor = Color.Transparent;
-      this.Panel1.AutoScroll = true;
-      this.Panel1.BackColor = Color.Black;
-      this.Panel1.Controls.Add((Control) this.SetInfo);
-      point = new Point(431, 12);
-      this.Panel1.Location = point;
-      this.Panel1.Name = "Panel1";
-      size = new Size(351, 115);
-      this.Panel1.Size = size;
-      this.Panel1.TabIndex = 3;
-      this.ibClose.Checked = false;
-      this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(677, 310);
-      this.ibClose.Location = point;
-      this.ibClose.Name = "ibClose";
-      size = new Size(105, 22);
-      this.ibClose.Size = size;
-      this.ibClose.TabIndex = 5;
-      this.ibClose.TextOff = "Close";
-      this.ibClose.TextOn = "Alt Text";
-      this.ibClose.Toggle = false;
-      this.ibTopmost.Checked = true;
-      this.ibTopmost.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte) 0);
-      point = new Point(566, 310);
-      this.ibTopmost.Location = point;
-      this.ibTopmost.Name = "ibTopmost";
-      size = new Size(105, 22);
-      this.ibTopmost.Size = size;
-      this.ibTopmost.TabIndex = 4;
-      this.ibTopmost.TextOff = "Keep On Top";
-      this.ibTopmost.TextOn = "Keep On Top";
-      this.ibTopmost.Toggle = true;
-      this.SetInfo.BXHeight = 600;
-      this.SetInfo.ColumnPosition = 0.5f;
-      this.SetInfo.ColumnRight = false;
-      this.SetInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte) 0);
-      this.SetInfo.InternalPadding = 3;
-      point = new Point(0, 0);
-      this.SetInfo.Location = point;
-      this.SetInfo.Name = "SetInfo";
-      this.SetInfo.SectionPadding = 8;
-      size = new Size(331, 198);
-      this.SetInfo.Size = size;
-      this.SetInfo.TabIndex = 0;
-      this.AutoScaleMode = AutoScaleMode.None;
-      this.BackColor = Color.FromArgb(0, 0, 32);
-      size = new Size(792, 340);
-      this.ClientSize = size;
-      this.Controls.Add((Control) this.ibClose);
-      this.Controls.Add((Control) this.ibTopmost);
-      this.Controls.Add((Control) this.Panel1);
-      this.Controls.Add((Control) this.lvSet);
-      this.Controls.Add((Control) this.lvMag);
-      this.Controls.Add((Control) this.lvBonus);
-      this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte) 0);
-      this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.Name = nameof (frmSetFind);
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Set Bonus Finder";
-      this.TopMost = true;
-      this.Panel1.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                  this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-                  this.lvBonus.SelectedIndexChanged += lvBonus_SelectedIndexChanged;
-                  this.lvMag.SelectedIndexChanged += lvMag_SelectedIndexChanged;
-                  this.lvSet.SelectedIndexChanged += lvSet_SelectedIndexChanged;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     void lvBonus_SelectedIndexChanged(object sender, EventArgs e)
 
@@ -530,7 +352,7 @@ namespace Hero_Designer
     {
       if (this.lvSet.SelectedItems.Count <= 0)
         return;
-      this.SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(this.lvSet.SelectedItems[0].Tag), (PowerEntry) null));
+      this.SetInfo.SetPopup(Character.PopSetInfo(Conversions.ToInteger(this.lvSet.SelectedItems[0].Tag), null));
     }
   }
 }

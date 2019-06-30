@@ -17,7 +17,6 @@ namespace Hero_Designer
 {
     public class clsXMLUpdate
     {
-        readonly string _uriUpdatePath = "";
 
         IMessager mFrm;
 
@@ -29,7 +28,6 @@ namespace Hero_Designer
 
         public clsXMLUpdate(string path)
         {
-            this._uriUpdatePath = path;
         }
 
         static void BugReport(string sData)

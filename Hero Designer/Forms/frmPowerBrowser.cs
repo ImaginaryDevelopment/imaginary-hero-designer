@@ -15,8 +15,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmPowerBrowser : Form
+  public partial class frmPowerBrowser : Form
   {
     const int FILTER_ALL_POWERS = 3;
 
@@ -104,22 +103,7 @@ namespace Hero_Designer
 
     frmBusy bFrm;
 
-    IContainer components;
-
     protected bool Updating;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     ListView lvGroup
     {
@@ -205,7 +189,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Discarding Changes...");
       DatabaseAPI.LoadMainDatabase();
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.BusyHide();
       this.DialogResult = DialogResult.Cancel;
       this.Hide();
@@ -297,7 +281,7 @@ namespace Hero_Designer
             Group = num2 - 1;
         }
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.RefreshLists(Group, 0, 0);
         this.BusyHide();
       }
@@ -319,7 +303,7 @@ namespace Hero_Designer
         DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
         DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.List_Groups(selectedIndex + 1);
         this.BusyHide();
       }
@@ -354,7 +338,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Discarding Changes...");
       Array.Sort<Archetype>(DatabaseAPI.Database.Classes);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }
@@ -375,7 +359,7 @@ namespace Hero_Designer
         DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
         DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
         this.BusyMsg("Re-Indexing...");
-        DatabaseAPI.MatchAllIDs((IMessager) null);
+        DatabaseAPI.MatchAllIDs(null);
         this.List_Groups(selectedIndex - 1);
         this.BusyHide();
       }
@@ -387,7 +371,7 @@ namespace Hero_Designer
       this.BusyMsg("Re-Indexing && Saving...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
       DatabaseAPI.AssignStaticIndexValues();
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       DatabaseAPI.SaveMainDatabase();
       this.BusyHide();
       this.DialogResult = DialogResult.OK;
@@ -503,7 +487,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Power[index1] = (IPower) new Power(DatabaseAPI.Database.Power[index2]);
           DatabaseAPI.Database.Power[index2] = (IPower) new Power(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Powers(SelIDX);
           this.BusyHide();
         }
@@ -542,7 +526,7 @@ namespace Hero_Designer
             {
               string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
               Clipboard.SetDataObject((object) str2, true);
-              int num4 = (int) Interaction.MsgBox((object) str2, MsgBoxStyle.OkOnly, (object) null);
+              int num4 = (int) Interaction.MsgBox((object) str2, MsgBoxStyle.OkOnly, null);
             }
             this.RefreshLists(-1, -1, -1);
           }
@@ -555,7 +539,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPower>(DatabaseAPI.Database.Power);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }
@@ -581,7 +565,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Power[index1] = (IPower) new Power(DatabaseAPI.Database.Power[index2]);
           DatabaseAPI.Database.Power[index2] = (IPower) new Power(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Powers(SelIDX);
           this.BusyHide();
         }
@@ -609,7 +593,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Powersets[index1] = (IPowerset) new Powerset(DatabaseAPI.Database.Powersets[index2]);
           DatabaseAPI.Database.Powersets[index2] = (IPowerset) new Powerset(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Sets(SelIDX);
           this.BusyHide();
         }
@@ -637,7 +621,7 @@ namespace Hero_Designer
           DatabaseAPI.Database.Powersets[index1] = (IPowerset) new Powerset(DatabaseAPI.Database.Powersets[index2]);
           DatabaseAPI.Database.Powersets[index2] = (IPowerset) new Powerset(template);
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.List_Sets(SelIDX);
           this.BusyHide();
         }
@@ -713,7 +697,7 @@ namespace Hero_Designer
               Powerset = index1 - 1;
           }
           this.BusyMsg("Re-Indexing...");
-          DatabaseAPI.MatchAllIDs((IMessager) null);
+          DatabaseAPI.MatchAllIDs(null);
           this.RefreshLists(-1, Powerset, -1);
           this.BusyHide();
         }
@@ -742,7 +726,7 @@ namespace Hero_Designer
           if (DatabaseAPI.Database.Powersets[Powerset].FullName != fullName)
           {
             this.BusyMsg("Re-Indexing...");
-            DatabaseAPI.MatchAllIDs((IMessager) null);
+            DatabaseAPI.MatchAllIDs(null);
             this.RefreshLists(-1, Powerset, -1);
             this.BusyHide();
           }
@@ -755,7 +739,7 @@ namespace Hero_Designer
     {
       this.BusyMsg("Re-Indexing...");
       Array.Sort<IPowerset>(DatabaseAPI.Database.Powersets);
-      DatabaseAPI.MatchAllIDs((IMessager) null);
+      DatabaseAPI.MatchAllIDs(null);
       this.UpdateLists(-1, -1, -1);
       this.BusyHide();
     }
@@ -791,7 +775,7 @@ namespace Hero_Designer
         LineAlignment = StringAlignment.Center,
         Alignment = StringAlignment.Center
       };
-      Font font = new Font(this.Font, FontStyle.Bold);
+      Font font = new System.Drawing.Font(this.Font, System.Drawing.FontStyle.Bold);
       RectangleF layoutRectangle = new RectangleF(17f, 0.0f, 16f, 18f);
       int num = iSets.Length - 1;
       for (int index = 0; index <= num; ++index)
@@ -850,8 +834,7 @@ namespace Hero_Designer
             solidBrush4 = solidBrush1;
             break;
         }
-        Point point = new Point(1, 1);
-        extendedBitmap1.Graphics.DrawImageUnscaled((Image) extendedBitmap2.Bitmap, point);
+        extendedBitmap1.Graphics.DrawImageUnscaled((Image) extendedBitmap2.Bitmap, new System.Drawing.Point(1, 1));
         extendedBitmap1.Graphics.DrawString(s, font, (Brush) solidBrush4, layoutRectangle, format);
         this.ilPS.Images.Add((Image) new Bitmap((Image) extendedBitmap1.Bitmap));
       }
@@ -898,21 +881,6 @@ namespace Hero_Designer
       return numArray;
     }
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
-
     public void FillFilter()
     {
       this.cbFilter.BeginUpdate();
@@ -943,451 +911,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmPowerBrowser));
-      this.lvPower = new ListView();
-      this.ColumnHeader3 = new ColumnHeader();
-      this.ColumnHeader5 = new ColumnHeader();
-      this.ColumnHeader7 = new ColumnHeader();
-      this.lvSet = new ListView();
-      this.ColumnHeader1 = new ColumnHeader();
-      this.ColumnHeader4 = new ColumnHeader();
-      this.ColumnHeader6 = new ColumnHeader();
-      this.ilPS = new ImageList(this.components);
-      this.lvGroup = new ListView();
-      this.ColumnHeader2 = new ColumnHeader();
-      this.ilAT = new ImageList(this.components);
-      this.cbFilter = new ComboBox();
-      this.Label1 = new Label();
-      this.btnPowerSort = new Button();
-      this.ilPower = new ImageList(this.components);
-      this.btnPowerUp = new Button();
-      this.btnPowerDown = new Button();
-      this.btnPowerAdd = new Button();
-      this.btnPowerDelete = new Button();
-      this.btnPowerClone = new Button();
-      this.btnPowerEdit = new Button();
-      this.btnSetSort = new Button();
-      this.btnSetEdit = new Button();
-      this.btnSetDelete = new Button();
-      this.btnSetAdd = new Button();
-      this.btnClassClone = new Button();
-      this.btnClassSort = new Button();
-      this.btnClassEdit = new Button();
-      this.btnClassDelete = new Button();
-      this.btnClassAdd = new Button();
-      this.pnlGroup = new Panel();
-      this.btnClassUp = new Button();
-      this.btnClassDown = new Button();
-      this.pnlSet = new Panel();
-      this.btnPSUp = new Button();
-      this.btnPSDown = new Button();
-      this.pnlPower = new Panel();
-      this.lblSet = new Label();
-      this.lblPower = new Label();
-      this.btnOK = new Button();
-      this.btnCancel = new Button();
-      this.Label2 = new Label();
-      this.pnlGroup.SuspendLayout();
-      this.pnlSet.SuspendLayout();
-      this.pnlPower.SuspendLayout();
-      this.SuspendLayout();
-      this.lvPower.BorderStyle = BorderStyle.FixedSingle;
-      this.lvPower.Columns.AddRange(new ColumnHeader[3]
-      {
-        this.ColumnHeader3,
-        this.ColumnHeader5,
-        this.ColumnHeader7
-      });
-      this.lvPower.FullRowSelect = true;
-      this.lvPower.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.lvPower.HideSelection = false;
-      Point point = new Point(587, 37);
-      this.lvPower.Location = point;
-      this.lvPower.MultiSelect = false;
-      this.lvPower.Name = "lvPower";
-      Size size = new Size(400, 429);
-      this.lvPower.Size = size;
-      this.lvPower.TabIndex = 21;
-      this.lvPower.UseCompatibleStateImageBehavior = false;
-      this.lvPower.View = View.Details;
-      this.ColumnHeader3.Text = "Power";
-      this.ColumnHeader3.Width = 206;
-      this.ColumnHeader5.Text = "Name";
-      this.ColumnHeader5.Width = 108;
-      this.ColumnHeader7.Text = "Level";
-      this.lvSet.BorderStyle = BorderStyle.FixedSingle;
-      this.lvSet.Columns.AddRange(new ColumnHeader[3]
-      {
-        this.ColumnHeader1,
-        this.ColumnHeader4,
-        this.ColumnHeader6
-      });
-      this.lvSet.FullRowSelect = true;
-      this.lvSet.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.lvSet.HideSelection = false;
-      point = new Point(251, 37);
-      this.lvSet.Location = point;
-      this.lvSet.MultiSelect = false;
-      this.lvSet.Name = "lvSet";
-      size = new Size(330, 429);
-      this.lvSet.Size = size;
-      this.lvSet.SmallImageList = this.ilPS;
-      this.lvSet.TabIndex = 20;
-      this.lvSet.UseCompatibleStateImageBehavior = false;
-      this.lvSet.View = View.Details;
-      this.ColumnHeader1.Text = "Set";
-      this.ColumnHeader1.Width = 129;
-      this.ColumnHeader4.Text = "Name";
-      this.ColumnHeader4.Width = 115;
-      this.ColumnHeader6.Text = "Type";
-      this.ilPS.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(34, 18);
-      this.ilPS.ImageSize = size;
-      this.ilPS.TransparentColor = Color.Transparent;
-      this.lvGroup.BorderStyle = BorderStyle.FixedSingle;
-      this.lvGroup.Columns.AddRange(new ColumnHeader[1]
-      {
-        this.ColumnHeader2
-      });
-      this.lvGroup.FullRowSelect = true;
-      this.lvGroup.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.lvGroup.HideSelection = false;
-      point = new Point(12, 37);
-      this.lvGroup.Location = point;
-      this.lvGroup.MultiSelect = false;
-      this.lvGroup.Name = "lvGroup";
-      size = new Size(233, 429);
-      this.lvGroup.Size = size;
-      this.lvGroup.SmallImageList = this.ilAT;
-      this.lvGroup.TabIndex = 19;
-      this.lvGroup.UseCompatibleStateImageBehavior = false;
-      this.lvGroup.View = View.Details;
-      this.ColumnHeader2.Text = "Group";
-      this.ColumnHeader2.Width = 207;
-      this.ilAT.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilAT.ImageSize = size;
-      this.ilAT.TransparentColor = Color.Transparent;
-      this.cbFilter.DropDownStyle = ComboBoxStyle.DropDownList;
-      this.cbFilter.FormattingEnabled = true;
-      point = new Point(86, 9);
-      this.cbFilter.Location = point;
-      this.cbFilter.Name = "cbFilter";
-      size = new Size(221, 22);
-      this.cbFilter.Size = size;
-      this.cbFilter.TabIndex = 22;
-      point = new Point(12, 9);
-      this.Label1.Location = point;
-      this.Label1.Name = "Label1";
-      size = new Size(68, 22);
-      this.Label1.Size = size;
-      this.Label1.TabIndex = 23;
-      this.Label1.Text = "Filter By:";
-      this.Label1.TextAlign = ContentAlignment.MiddleRight;
-      point = new Point(239, 44);
-      this.btnPowerSort.Location = point;
-      this.btnPowerSort.Name = "btnPowerSort";
-      size = new Size(75, 23);
-      this.btnPowerSort.Size = size;
-      this.btnPowerSort.TabIndex = 26;
-      this.btnPowerSort.Text = "Re-Sort";
-      this.btnPowerSort.UseVisualStyleBackColor = true;
-      this.ilPower.ColorDepth = ColorDepth.Depth32Bit;
-      size = new Size(16, 16);
-      this.ilPower.ImageSize = size;
-      this.ilPower.TransparentColor = Color.Transparent;
-      point = new Point(3, 15);
-      this.btnPowerUp.Location = point;
-      this.btnPowerUp.Name = "btnPowerUp";
-      size = new Size(75, 23);
-      this.btnPowerUp.Size = size;
-      this.btnPowerUp.TabIndex = 28;
-      this.btnPowerUp.Text = "Up";
-      this.btnPowerUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnPowerDown.Location = point;
-      this.btnPowerDown.Name = "btnPowerDown";
-      size = new Size(75, 23);
-      this.btnPowerDown.Size = size;
-      this.btnPowerDown.TabIndex = 29;
-      this.btnPowerDown.Text = "Down";
-      this.btnPowerDown.UseVisualStyleBackColor = true;
-      point = new Point(320, 15);
-      this.btnPowerAdd.Location = point;
-      this.btnPowerAdd.Name = "btnPowerAdd";
-      size = new Size(75, 23);
-      this.btnPowerAdd.Size = size;
-      this.btnPowerAdd.TabIndex = 30;
-      this.btnPowerAdd.Text = "Add";
-      this.btnPowerAdd.UseVisualStyleBackColor = true;
-      point = new Point(239, 15);
-      this.btnPowerDelete.Location = point;
-      this.btnPowerDelete.Name = "btnPowerDelete";
-      size = new Size(75, 23);
-      this.btnPowerDelete.Size = size;
-      this.btnPowerDelete.TabIndex = 31;
-      this.btnPowerDelete.Text = "Delete";
-      this.btnPowerDelete.UseVisualStyleBackColor = true;
-      point = new Point(320, 44);
-      this.btnPowerClone.Location = point;
-      this.btnPowerClone.Name = "btnPowerClone";
-      size = new Size(75, 23);
-      this.btnPowerClone.Size = size;
-      this.btnPowerClone.TabIndex = 33;
-      this.btnPowerClone.Text = "Clone";
-      this.btnPowerClone.UseVisualStyleBackColor = true;
-      point = new Point(320, 73);
-      this.btnPowerEdit.Location = point;
-      this.btnPowerEdit.Name = "btnPowerEdit";
-      size = new Size(75, 23);
-      this.btnPowerEdit.Size = size;
-      this.btnPowerEdit.TabIndex = 32;
-      this.btnPowerEdit.Text = "Edit";
-      this.btnPowerEdit.UseVisualStyleBackColor = true;
-      point = new Point(169, 44);
-      this.btnSetSort.Location = point;
-      this.btnSetSort.Name = "btnSetSort";
-      size = new Size(75, 23);
-      this.btnSetSort.Size = size;
-      this.btnSetSort.TabIndex = 35;
-      this.btnSetSort.Text = "Re-Sort";
-      this.btnSetSort.UseVisualStyleBackColor = true;
-      point = new Point(250, 44);
-      this.btnSetEdit.Location = point;
-      this.btnSetEdit.Name = "btnSetEdit";
-      size = new Size(75, 23);
-      this.btnSetEdit.Size = size;
-      this.btnSetEdit.TabIndex = 40;
-      this.btnSetEdit.Text = "Edit";
-      this.btnSetEdit.UseVisualStyleBackColor = true;
-      point = new Point(169, 15);
-      this.btnSetDelete.Location = point;
-      this.btnSetDelete.Name = "btnSetDelete";
-      size = new Size(75, 23);
-      this.btnSetDelete.Size = size;
-      this.btnSetDelete.TabIndex = 39;
-      this.btnSetDelete.Text = "Delete";
-      this.btnSetDelete.UseVisualStyleBackColor = true;
-      point = new Point(250, 15);
-      this.btnSetAdd.Location = point;
-      this.btnSetAdd.Name = "btnSetAdd";
-      size = new Size(75, 23);
-      this.btnSetAdd.Size = size;
-      this.btnSetAdd.TabIndex = 38;
-      this.btnSetAdd.Text = "Add";
-      this.btnSetAdd.UseVisualStyleBackColor = true;
-      point = new Point(153, 44);
-      this.btnClassClone.Location = point;
-      this.btnClassClone.Name = "btnClassClone";
-      size = new Size(75, 23);
-      this.btnClassClone.Size = size;
-      this.btnClassClone.TabIndex = 46;
-      this.btnClassClone.Text = "Clone";
-      this.btnClassClone.UseVisualStyleBackColor = true;
-      point = new Point(72, 44);
-      this.btnClassSort.Location = point;
-      this.btnClassSort.Name = "btnClassSort";
-      size = new Size(75, 23);
-      this.btnClassSort.Size = size;
-      this.btnClassSort.TabIndex = 42;
-      this.btnClassSort.Text = "Re-Sort";
-      this.btnClassSort.UseVisualStyleBackColor = true;
-      point = new Point(153, 73);
-      this.btnClassEdit.Location = point;
-      this.btnClassEdit.Name = "btnClassEdit";
-      size = new Size(75, 23);
-      this.btnClassEdit.Size = size;
-      this.btnClassEdit.TabIndex = 45;
-      this.btnClassEdit.Text = "Edit";
-      this.btnClassEdit.UseVisualStyleBackColor = true;
-      point = new Point(72, 15);
-      this.btnClassDelete.Location = point;
-      this.btnClassDelete.Name = "btnClassDelete";
-      size = new Size(75, 23);
-      this.btnClassDelete.Size = size;
-      this.btnClassDelete.TabIndex = 44;
-      this.btnClassDelete.Text = "Delete";
-      this.btnClassDelete.UseVisualStyleBackColor = true;
-      point = new Point(153, 15);
-      this.btnClassAdd.Location = point;
-      this.btnClassAdd.Name = "btnClassAdd";
-      size = new Size(75, 23);
-      this.btnClassAdd.Size = size;
-      this.btnClassAdd.TabIndex = 43;
-      this.btnClassAdd.Text = "Add";
-      this.btnClassAdd.UseVisualStyleBackColor = true;
-      this.pnlGroup.BorderStyle = BorderStyle.FixedSingle;
-      this.pnlGroup.Controls.Add((Control) this.btnClassUp);
-      this.pnlGroup.Controls.Add((Control) this.btnClassDown);
-      this.pnlGroup.Controls.Add((Control) this.btnClassClone);
-      this.pnlGroup.Controls.Add((Control) this.btnClassDelete);
-      this.pnlGroup.Controls.Add((Control) this.btnClassSort);
-      this.pnlGroup.Controls.Add((Control) this.btnClassAdd);
-      this.pnlGroup.Controls.Add((Control) this.btnClassEdit);
-      point = new Point(12, 494);
-      this.pnlGroup.Location = point;
-      this.pnlGroup.Name = "pnlGroup";
-      size = new Size(233, 105);
-      this.pnlGroup.Size = size;
-      this.pnlGroup.TabIndex = 47;
-      point = new Point(3, 15);
-      this.btnClassUp.Location = point;
-      this.btnClassUp.Name = "btnClassUp";
-      size = new Size(64, 23);
-      this.btnClassUp.Size = size;
-      this.btnClassUp.TabIndex = 47;
-      this.btnClassUp.Text = "Up";
-      this.btnClassUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnClassDown.Location = point;
-      this.btnClassDown.Name = "btnClassDown";
-      size = new Size(64, 23);
-      this.btnClassDown.Size = size;
-      this.btnClassDown.TabIndex = 48;
-      this.btnClassDown.Text = "Down";
-      this.btnClassDown.UseVisualStyleBackColor = true;
-      this.pnlSet.BorderStyle = BorderStyle.FixedSingle;
-      this.pnlSet.Controls.Add((Control) this.btnPSUp);
-      this.pnlSet.Controls.Add((Control) this.btnPSDown);
-      this.pnlSet.Controls.Add((Control) this.btnSetDelete);
-      this.pnlSet.Controls.Add((Control) this.btnSetSort);
-      this.pnlSet.Controls.Add((Control) this.btnSetAdd);
-      this.pnlSet.Controls.Add((Control) this.btnSetEdit);
-      point = new Point(251, 494);
-      this.pnlSet.Location = point;
-      this.pnlSet.Name = "pnlSet";
-      size = new Size(330, 105);
-      this.pnlSet.Size = size;
-      this.pnlSet.TabIndex = 48;
-      point = new Point(3, 15);
-      this.btnPSUp.Location = point;
-      this.btnPSUp.Name = "btnPSUp";
-      size = new Size(75, 23);
-      this.btnPSUp.Size = size;
-      this.btnPSUp.TabIndex = 41;
-      this.btnPSUp.Text = "Up";
-      this.btnPSUp.UseVisualStyleBackColor = true;
-      point = new Point(3, 44);
-      this.btnPSDown.Location = point;
-      this.btnPSDown.Name = "btnPSDown";
-      size = new Size(75, 23);
-      this.btnPSDown.Size = size;
-      this.btnPSDown.TabIndex = 42;
-      this.btnPSDown.Text = "Down";
-      this.btnPSDown.UseVisualStyleBackColor = true;
-      this.pnlPower.BorderStyle = BorderStyle.FixedSingle;
-      this.pnlPower.Controls.Add((Control) this.btnPowerClone);
-      this.pnlPower.Controls.Add((Control) this.btnPowerUp);
-      this.pnlPower.Controls.Add((Control) this.btnPowerSort);
-      this.pnlPower.Controls.Add((Control) this.btnPowerDown);
-      this.pnlPower.Controls.Add((Control) this.btnPowerEdit);
-      this.pnlPower.Controls.Add((Control) this.btnPowerDelete);
-      this.pnlPower.Controls.Add((Control) this.btnPowerAdd);
-      point = new Point(587, 494);
-      this.pnlPower.Location = point;
-      this.pnlPower.Name = "pnlPower";
-      size = new Size(400, 105);
-      this.pnlPower.Size = size;
-      this.pnlPower.TabIndex = 49;
-      point = new Point(251, 467);
-      this.lblSet.Location = point;
-      this.lblSet.Name = "lblSet";
-      size = new Size(326, 24);
-      this.lblSet.Size = size;
-      this.lblSet.TabIndex = 50;
-      this.lblSet.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(587, 467);
-      this.lblPower.Location = point;
-      this.lblPower.Name = "lblPower";
-      size = new Size(400, 24);
-      this.lblPower.Size = size;
-      this.lblPower.TabIndex = 51;
-      this.lblPower.TextAlign = ContentAlignment.MiddleCenter;
-      point = new Point(855, 607);
-      this.btnOK.Location = point;
-      this.btnOK.Name = "btnOK";
-      size = new Size(132, 32);
-      this.btnOK.Size = size;
-      this.btnOK.TabIndex = 52;
-      this.btnOK.Text = "Save && Close";
-      this.btnOK.UseVisualStyleBackColor = true;
-      point = new Point(717, 607);
-      this.btnCancel.Location = point;
-      this.btnCancel.Name = "btnCancel";
-      size = new Size(132, 32);
-      this.btnCancel.Size = size;
-      this.btnCancel.TabIndex = 53;
-      this.btnCancel.Text = "Cancel && Discard";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      point = new Point(313, 13);
-      this.Label2.Location = point;
-      this.Label2.Name = "Label2";
-      size = new Size(323, 16);
-      this.Label2.Size = size;
-      this.Label2.TabIndex = 54;
-      this.Label2.Text = "To edit Archetype Classes, change filtering to Classes";
-      this.AutoScaleMode = AutoScaleMode.None;
-      size = new Size(999, 651);
-      this.ClientSize = size;
-      this.Controls.Add((Control) this.Label2);
-      this.Controls.Add((Control) this.btnCancel);
-      this.Controls.Add((Control) this.btnOK);
-      this.Controls.Add((Control) this.lblPower);
-      this.Controls.Add((Control) this.lblSet);
-      this.Controls.Add((Control) this.Label1);
-      this.Controls.Add((Control) this.cbFilter);
-      this.Controls.Add((Control) this.lvPower);
-      this.Controls.Add((Control) this.lvSet);
-      this.Controls.Add((Control) this.lvGroup);
-      this.Controls.Add((Control) this.pnlGroup);
-      this.Controls.Add((Control) this.pnlSet);
-      this.Controls.Add((Control) this.pnlPower);
-      this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmPowerBrowser);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Power Database Browser";
-      this.pnlGroup.ResumeLayout(false);
-      this.pnlSet.ResumeLayout(false);
-      this.pnlPower.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnCancel.Click += btnCancel_Click;
-                  this.btnClassAdd.Click += btnClassAdd_Click;
-                  this.btnClassClone.Click += btnClassClone_Click;
-                  this.btnClassDelete.Click += btnClassDelete_Click;
-                  this.btnClassDown.Click += btnClassDown_Click;
-                  this.btnClassEdit.Click += btnClassEdit_Click;
-                  this.btnClassSort.Click += btnClassSort_Click;
-                  this.btnClassUp.Click += btnClassUp_Click;
-                  this.btnOK.Click += btnOK_Click;
-                  this.btnPSDown.Click += btnPSDown_Click;
-                  this.btnPSUp.Click += btnPSUp_Click;
-                  this.btnPowerAdd.Click += btnPowerAdd_Click;
-                  this.btnPowerClone.Click += btnPowerClone_Click;
-                  this.btnPowerDelete.Click += btnPowerDelete_Click;
-                  this.btnPowerDown.Click += btnPowerDown_Click;
-                  this.btnPowerEdit.Click += btnPowerEdit_Click;
-                  this.btnPowerSort.Click += btnPowerSort_Click;
-                  this.btnPowerUp.Click += btnPowerUp_Click;
-                  this.btnSetAdd.Click += btnSetAdd_Click;
-                  this.btnSetDelete.Click += btnSetDelete_Click;
-                  this.btnSetEdit.Click += btnSetEdit_Click;
-                  this.btnSetSort.Click += btnSetSort_Click;
-                  this.cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     public void List_Groups(int SelIDX)
     {

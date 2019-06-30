@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmAccolade : Form
+    public partial class frmAccolade : Form
     {
         ImageButton ibClose;
 
@@ -35,8 +35,6 @@ namespace Hero_Designer
         ctlPopUp PopInfo;
 
         VScrollBar VScrollBar1;
-
-        IContainer components;
 
         internal frmIncarnate.CustomPanel Panel2;
         internal ListLabelV2 llLeft
@@ -64,21 +62,6 @@ namespace Hero_Designer
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
             this.VScrollBar1_Scroll((object)this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
-        }
-
-        [DebuggerNonUserCode]
-        protected override void Dispose(bool disposing)
-        {
-            try
-            {
-                if (!disposing || this.components == null)
-                    return;
-                this.components.Dispose();
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
         }
 
         void FillLists()
@@ -118,9 +101,9 @@ namespace Hero_Designer
             this.ibClose.ImageOff = this._myParent.Drawing.bxPower[2].Bitmap;
             this.ibClose.ImageOn = this._myParent.Drawing.bxPower[3].Bitmap;
             PopUp.PopupData iPopup = new PopUp.PopupData();
-            int index = iPopup.Add((PopUp.Section)null);
-            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
+            int index = iPopup.Add(null);
+            iPopup.Sections[index].Add("Click powers to enable/disable them.", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+            iPopup.Sections[index].Add("Powers in gray (or your custom 'power disabled' color) cannot be included in your stats.", PopUp.Colors.Text, 0.9f, System.Drawing.FontStyle.Bold, 0);
             this.PopInfo.SetPopup(iPopup);
             this.ChangedScrollFrameContents();
             this.FillLists();
@@ -133,175 +116,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmAccolade));
-            this.Panel1 = new Panel();
-            this.VScrollBar1 = new VScrollBar();
-            this.PopInfo = new ctlPopUp();
-            this.lblLock = new Label();
-            this.ibClose = new ImageButton();
-            this.Panel2 = new frmIncarnate.CustomPanel();
-            this.llRight = new ListLabelV2();
-            this.llLeft = new ListLabelV2();
-            this.Panel1.SuspendLayout();
-            this.Panel2.SuspendLayout();
-            this.SuspendLayout();
-            this.Panel1.BorderStyle = BorderStyle.Fixed3D;
-            this.Panel1.Controls.Add((Control)this.VScrollBar1);
-            this.Panel1.Controls.Add((Control)this.PopInfo);
-            Point point = new Point(12, 174);
-            this.Panel1.Location = point;
-            this.Panel1.Name = "Panel1";
-            Size size = new Size(414, 189);
-            this.Panel1.Size = size;
-            this.Panel1.TabIndex = 35;
-            point = new Point(393, 0);
-            this.VScrollBar1.Location = point;
-            this.VScrollBar1.Name = "VScrollBar1";
-            size = new Size(17, 185);
-            this.VScrollBar1.Size = size;
-            this.VScrollBar1.TabIndex = 11;
-            this.PopInfo.BXHeight = 1024;
-            this.PopInfo.ColumnPosition = 0.5f;
-            this.PopInfo.ColumnRight = false;
-            this.PopInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.PopInfo.ForeColor = Color.FromArgb(0, 0, 32);
-            this.PopInfo.InternalPadding = 3;
-            point = new Point(0, 0);
-            this.PopInfo.Location = point;
-            this.PopInfo.Name = "PopInfo";
-            this.PopInfo.ScrollY = 0.0f;
-            this.PopInfo.SectionPadding = 8;
-            size = new Size(391, 200);
-            this.PopInfo.Size = size;
-            this.PopInfo.TabIndex = 9;
-            this.lblLock.BackColor = Color.Red;
-            this.lblLock.BorderStyle = BorderStyle.FixedSingle;
-            this.lblLock.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            this.lblLock.ForeColor = Color.White;
-            point = new Point(12, 155);
-            this.lblLock.Location = point;
-            this.lblLock.Name = "lblLock";
-            size = new Size(56, 16);
-            this.lblLock.Size = size;
-            this.lblLock.TabIndex = 69;
-            this.lblLock.Text = "[Unlock]";
-            this.lblLock.TextAlign = ContentAlignment.MiddleCenter;
-            this.lblLock.Visible = false;
-            this.ibClose.Checked = false;
-            this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibClose.KnockoutLocationPoint = point;
-            point = new Point(166, 369);
-            this.ibClose.Location = point;
-            this.ibClose.Name = "ibClose";
-            size = new Size(105, 22);
-            this.ibClose.Size = size;
-            this.ibClose.TabIndex = 7;
-            this.ibClose.TextOff = "Done";
-            this.ibClose.TextOn = "Alt Text";
-            this.ibClose.Toggle = false;
-            this.Panel2.AutoScroll = true;
-            this.Panel2.BorderStyle = BorderStyle.Fixed3D;
-            this.Panel2.Controls.Add((Control)this.llRight);
-            this.Panel2.Controls.Add((Control)this.llLeft);
-            point = new Point(12, 12);
-            this.Panel2.Location = point;
-            this.Panel2.Name = "Panel2";
-            size = new Size(414, 140);
-            this.Panel2.Size = size;
-            this.Panel2.TabIndex = 126;
-            this.Panel2.TabStop = true;
-            this.llRight.AutoSize = true;
-            this.llRight.Expandable = false;
-            this.llRight.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
-            this.llRight.HighVis = true;
-            this.llRight.HoverColor = Color.WhiteSmoke;
-            point = new Point(196, 3);
-            this.llRight.Location = point;
-            this.llRight.MaxHeight = 600;
-            this.llRight.Name = "llRight";
-            this.llRight.PaddingX = 2;
-            this.llRight.PaddingY = 2;
-            this.llRight.Scrollable = false;
-            this.llRight.ScrollBarColor = Color.Red;
-            this.llRight.ScrollBarWidth = 11;
-            this.llRight.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(190, 414);
-            this.llRight.Size = size;
-            size = new Size(190, 120);
-            this.llRight.SizeNormal = size;
-            this.llRight.SuspendRedraw = false;
-            this.llRight.TabIndex = 111;
-            this.llLeft.AutoSize = true;
-            this.llLeft.Expandable = false;
-            this.llLeft.Font = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
-            this.llLeft.HighVis = true;
-            this.llLeft.HoverColor = Color.WhiteSmoke;
-            point = new Point(3, 3);
-            this.llLeft.Location = point;
-            this.llLeft.MaxHeight = 600;
-            this.llLeft.Name = "llLeft";
-            this.llLeft.PaddingX = 2;
-            this.llLeft.PaddingY = 2;
-            this.llLeft.Scrollable = false;
-            this.llLeft.ScrollBarColor = Color.Red;
-            this.llLeft.ScrollBarWidth = 11;
-            this.llLeft.ScrollButtonColor = Color.FromArgb(192, 0, 0);
-            size = new Size(187, 414);
-            this.llLeft.Size = size;
-            size = new Size(187, 120);
-            this.llLeft.SizeNormal = size;
-            this.llLeft.SuspendRedraw = false;
-            this.llLeft.TabIndex = 110;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(438, 403);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.Panel2);
-            this.Controls.Add((Control)this.lblLock);
-            this.Controls.Add((Control)this.Panel1);
-            this.Controls.Add((Control)this.ibClose);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmAccolade);
-            this.ShowInTaskbar = false;
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Powers";
-            this.TopMost = true;
-            this.Panel1.ResumeLayout(false);
-            this.Panel2.ResumeLayout(false);
-            this.Panel2.PerformLayout();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-
-                // PopInfo events
-                this.PopInfo.MouseWheel += PopInfo_MouseWheel;
-                this.PopInfo.MouseEnter += PopInfo_MouseEnter;
-
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.lblLock.Click += lblLock_Click;
-
-                // llLeft events
-                this.llLeft.MouseEnter += llLeft_MouseEnter;
-                this.llLeft.ItemHover += llLeft_ItemHover;
-                this.llLeft.ItemClick += llLeft_ItemClick;
-
-
-                // llRight events
-                this.llRight.ItemHover += llRight_ItemHover;
-                this.llRight.ItemClick += llRight_ItemClick;
-                this.llRight.MouseEnter += llRight_MouseEnter;
-
-            }
-            // finished with events
-            this.ResumeLayout(false);
-        }
 
         void lblLock_Click(object sender, EventArgs e)
 
@@ -409,7 +223,7 @@ namespace Hero_Designer
             }
             else
             {
-                int index1 = iPopup.Add((PopUp.Section)null);
+                int index1 = iPopup.Add(null);
                 string str = string.Empty;
                 switch (power1.PowerType)
                 {
@@ -427,52 +241,52 @@ namespace Hero_Designer
                         str = "(Toggle)";
                         break;
                 }
-                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-                iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 0);
-                int index2 = iPopup.Add((PopUp.Section)null);
+                iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
+                iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, System.Drawing.FontStyle.Bold, 0);
+                int index2 = iPopup.Add(null);
                 if ((double)power1.EndCost > 0.0)
                 {
                     if ((double)power1.ActivatePeriod > 0.0)
-                        iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost / power1.ActivatePeriod) + "/s", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                        iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost / power1.ActivatePeriod) + "/s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                     else
-                        iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost), PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                        iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost), PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 }
                 if (power1.EntitiesAutoHit == Enums.eEntity.None | (double)power1.Range > 20.0 & power1.I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt))
-                    iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Title, Utilities.FixDP((float)((double)MidsContext.Config.BaseAcc * (double)power1.Accuracy * 100.0)) + "%", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Title, Utilities.FixDP((float)((double)MidsContext.Config.BaseAcc * (double)power1.Accuracy * 100.0)) + "%", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if ((double)power1.RechargeTime > 0.0)
-                    iPopup.Sections[index2].Add("Recharge:", PopUp.Colors.Title, Utilities.FixDP(power1.RechargeTime) + "s", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Recharge:", PopUp.Colors.Title, Utilities.FixDP(power1.RechargeTime) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 int durationEffectId = power1.GetDurationEffectID();
                 float iNum = 0.0f;
                 if (durationEffectId > -1)
                     iNum = power1.Effects[durationEffectId].Duration;
                 if (power1.PowerType != Enums.ePowerType.Toggle & power1.PowerType != Enums.ePowerType.Auto_ && (double)iNum > 0.0)
-                    iPopup.Sections[index2].Add("Duration:", PopUp.Colors.Title, Utilities.FixDP(iNum) + "s", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Duration:", PopUp.Colors.Title, Utilities.FixDP(iNum) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if ((double)power1.Range > 0.0)
-                    iPopup.Sections[index2].Add("Range:", PopUp.Colors.Title, Utilities.FixDP(power1.Range) + "ft", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Range:", PopUp.Colors.Title, Utilities.FixDP(power1.Range) + "ft", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if (power1.Arc > 0)
-                    iPopup.Sections[index2].Add("Arc:", PopUp.Colors.Title, Conversions.ToString(power1.Arc) + "°", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Arc:", PopUp.Colors.Title, Conversions.ToString(power1.Arc) + "°", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 else if ((double)power1.Radius > 0.0)
-                    iPopup.Sections[index2].Add("Radius:", PopUp.Colors.Title, Conversions.ToString(power1.Radius) + "ft", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Radius:", PopUp.Colors.Title, Conversions.ToString(power1.Radius) + "ft", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if ((double)power1.CastTime > 0.0)
-                    iPopup.Sections[index2].Add("Cast Time:", PopUp.Colors.Title, Utilities.FixDP(power1.CastTime) + "s", PopUp.Colors.Title, 0.9f, FontStyle.Bold, 1);
+                    iPopup.Sections[index2].Add("Cast Time:", PopUp.Colors.Title, Utilities.FixDP(power1.CastTime) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 IPower power2 = power1;
                 if (power2.Effects.Length > 0)
                 {
-                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                     char[] chArray = new char[1] { '^' };
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
-                        int index4 = iPopup.Add((PopUp.Section)null);
+                        int index4 = iPopup.Add(null);
                         power1.Effects[index3].Power = power1;
                         string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", string.Empty).Replace("]", string.Empty).Split(chArray);
                         int num2 = strArray.Length - 1;
                         for (int index5 = 0; index5 <= num2; ++index5)
                         {
                             if (index5 == 0)
-                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
+                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, 1);
                             else
-                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Disabled, 0.9f, FontStyle.Italic, 2);
+                                iPopup.Sections[index4].Add(strArray[index5], PopUp.Colors.Disabled, 0.9f, System.Drawing.FontStyle.Italic, 2);
                         }
                     }
                 }
@@ -507,7 +321,7 @@ namespace Hero_Designer
             iList.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-            iList.Font = new Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
+            iList.Font = new System.Drawing.Font(iList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
         }
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)

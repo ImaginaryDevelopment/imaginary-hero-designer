@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmSetViewer : Form
+    public partial class frmSetViewer : Form
     {
         ImageButton btnClose;
 
@@ -31,16 +31,7 @@ namespace Hero_Designer
         RichTextBox rtxtFX;
         RichTextBox rtxtInfo;
 
-        IContainer components;
-
         protected frmMain myParent;
-
-
-
-
-
-
-
 
         public frmSetViewer(ref frmMain iParent)
         {
@@ -118,13 +109,6 @@ namespace Hero_Designer
             if (this.lstSets.Items.Count > 0)
                 this.lstSets.Items[0].Selected = true;
             this.FillEffectView();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
         }
 
         void FillEffectView()
@@ -293,181 +277,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmSetViewer));
-            this.lstSets = new ListView();
-            this.ColumnHeader1 = new ColumnHeader();
-            this.ColumnHeader2 = new ColumnHeader();
-            this.ColumnHeader3 = new ColumnHeader();
-            this.ilSet = new ImageList(this.components);
-            this.rtxtInfo = new RichTextBox();
-            this.rtxtFX = new RichTextBox();
-            this.Label1 = new Label();
-            this.rtApplied = new RichTextBox();
-            this.Label2 = new Label();
-            this.chkOnTop = new ImageButton();
-            this.btnClose = new ImageButton();
-            this.btnSmall = new ImageButton();
-            this.SuspendLayout();
-            this.lstSets.BackColor = Color.White;
-            this.lstSets.Columns.AddRange(new ColumnHeader[3]
-            {
-        this.ColumnHeader1,
-        this.ColumnHeader2,
-        this.ColumnHeader3
-            });
-            this.lstSets.ForeColor = Color.Black;
-            this.lstSets.FullRowSelect = true;
-            this.lstSets.HideSelection = false;
-            this.lstSets.LargeImageList = this.ilSet;
-            Point point = new Point(12, 168);
-            this.lstSets.Location = point;
-            this.lstSets.MultiSelect = false;
-            this.lstSets.Name = "lstSets";
-            Size size = new Size(360, 136);
-            this.lstSets.Size = size;
-            this.lstSets.SmallImageList = this.ilSet;
-            this.lstSets.TabIndex = 0;
-            this.lstSets.UseCompatibleStateImageBehavior = false;
-            this.lstSets.View = View.Details;
-            this.ColumnHeader1.Text = "Set";
-            this.ColumnHeader1.Width = 148;
-            this.ColumnHeader2.Text = "Power";
-            this.ColumnHeader2.Width = 124;
-            this.ColumnHeader3.Text = "Slots";
-            this.ilSet.ColorDepth = ColorDepth.Depth32Bit;
-            size = new Size(16, 16);
-            this.ilSet.ImageSize = size;
-            this.ilSet.TransparentColor = Color.Transparent;
-            this.rtxtInfo.BackColor = Color.FromArgb(0, 0, 32);
-            this.rtxtInfo.ForeColor = Color.White;
-            point = new Point(12, 308);
-            this.rtxtInfo.Location = point;
-            this.rtxtInfo.Name = "rtxtInfo";
-            this.rtxtInfo.ReadOnly = true;
-            this.rtxtInfo.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(360, 132);
-            this.rtxtInfo.Size = size;
-            this.rtxtInfo.TabIndex = 1;
-            this.rtxtInfo.Text = "";
-            this.rtxtFX.BackColor = Color.FromArgb(0, 0, 32);
-            this.rtxtFX.ForeColor = Color.White;
-            point = new Point(384, 20);
-            this.rtxtFX.Location = point;
-            this.rtxtFX.Name = "rtxtFX";
-            this.rtxtFX.ReadOnly = true;
-            this.rtxtFX.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(279, 366);
-            this.rtxtFX.Size = size;
-            this.rtxtFX.TabIndex = 3;
-            this.rtxtFX.Text = "";
-            this.Label1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.Label1.ForeColor = Color.White;
-            point = new Point(384, 4);
-            this.Label1.Location = point;
-            this.Label1.Name = "Label1";
-            size = new Size(188, 16);
-            this.Label1.Size = size;
-            this.Label1.TabIndex = 4;
-            this.Label1.Text = "Effect Breakdown:";
-            this.rtApplied.BackColor = Color.FromArgb(0, 0, 32);
-            this.rtApplied.ForeColor = Color.White;
-            point = new Point(12, 20);
-            this.rtApplied.Location = point;
-            this.rtApplied.Name = "rtApplied";
-            this.rtApplied.ReadOnly = true;
-            this.rtApplied.ScrollBars = RichTextBoxScrollBars.Vertical;
-            size = new Size(360, 140);
-            this.rtApplied.Size = size;
-            this.rtApplied.TabIndex = 5;
-            this.rtApplied.Text = "";
-            this.Label2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.Label2.ForeColor = Color.White;
-            point = new Point(12, 4);
-            this.Label2.Location = point;
-            this.Label2.Name = "Label2";
-            size = new Size(188, 16);
-            this.Label2.Size = size;
-            this.Label2.TabIndex = 6;
-            this.Label2.Text = "Applied Bonus Effects:";
-            this.chkOnTop.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.chkOnTop.Checked = true;
-            this.chkOnTop.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(558, 392);
-            this.chkOnTop.Location = point;
-            this.chkOnTop.Name = "chkOnTop";
-            size = new Size(105, 22);
-            this.chkOnTop.Size = size;
-            this.chkOnTop.TabIndex = 19;
-            this.chkOnTop.TextOff = "Keep On Top";
-            this.chkOnTop.TextOn = "Keep On Top";
-            this.chkOnTop.Toggle = true;
-            this.btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.btnClose.Checked = false;
-            this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(558, 418);
-            this.btnClose.Location = point;
-            Padding padding = new Padding(4, 3, 4, 3);
-            this.btnClose.Margin = padding;
-            this.btnClose.Name = "btnClose";
-            size = new Size(105, 22);
-            this.btnClose.Size = size;
-            this.btnClose.TabIndex = 18;
-            this.btnClose.TextOff = "Close";
-            this.btnClose.TextOn = "Close";
-            this.btnClose.Toggle = false;
-            this.btnSmall.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.btnSmall.Checked = false;
-            this.btnSmall.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(384, 418);
-            this.btnSmall.Location = point;
-            padding = new Padding(4, 3, 4, 3);
-            this.btnSmall.Margin = padding;
-            this.btnSmall.Name = "btnSmall";
-            size = new Size(105, 22);
-            this.btnSmall.Size = size;
-            this.btnSmall.TabIndex = 20;
-            this.btnSmall.TextOff = "<< Shrink";
-            this.btnSmall.TextOn = ">>";
-            this.btnSmall.Toggle = false;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-            size = new Size(675, 448);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.btnSmall);
-            this.Controls.Add((Control)this.chkOnTop);
-            this.Controls.Add((Control)this.btnClose);
-            this.Controls.Add((Control)this.Label2);
-            this.Controls.Add((Control)this.rtApplied);
-            this.Controls.Add((Control)this.Label1);
-            this.Controls.Add((Control)this.rtxtFX);
-            this.Controls.Add((Control)this.rtxtInfo);
-            this.Controls.Add((Control)this.lstSets);
-            this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.ForeColor = Color.White;
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmSetViewer);
-            this.StartPosition = FormStartPosition.Manual;
-            this.Text = "Currently Active Sets & Bonuses";
-            this.TopMost = true;
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnClose.ButtonClicked += btnClose_Click;
-                this.btnSmall.ButtonClicked += btnSmall_Click;
-                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
-            }
-            // finished with events
-            this.ResumeLayout(false);
-        }
 
         void lstSets_SelectedIndexChanged(object sender, EventArgs e)
 

@@ -8,12 +8,10 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmFloatingStats : Form
+    public partial class frmFloatingStats : Form
     {
         [AccessedThroughProperty("dvFloat")]
         DataView _dvFloat;
-
-        IContainer components;
 
         protected frmMain myOwner;
 
@@ -64,13 +62,6 @@ namespace Hero_Designer
             this.myOwner = iOwner;
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
-        }
-
         void dvFloat_FloatChanged()
 
         {
@@ -109,40 +100,6 @@ namespace Hero_Designer
             this.dvFloat.MoveDisable = true;
             this.dvFloat.SetScreenBounds(this.dvFloat.Bounds);
             this.dvFloat.SetLocation(this.dvFloat.Location, true);
-        }
-
-        [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmFloatingStats));
-            this.dvFloat = new DataView();
-            this.SuspendLayout();
-            this.dvFloat.BackColor = Color.FromArgb(64, 64, 64);
-            this.dvFloat.DrawVillain = false;
-            this.dvFloat.Floating = true;
-            this.dvFloat.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.dvFloat.Location = new Point(0, 0);
-            this.dvFloat.Name = "dvFloat";
-            Size size = new Size(300, 348);
-            this.dvFloat.Size = size;
-            this.dvFloat.TabIndex = 0;
-            this.dvFloat.VisibleSize = Enums.eVisibleSize.Full;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(64, 64, 64);
-            size = new Size(298, 348);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.dvFloat);
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmFloatingStats);
-            this.ShowInTaskbar = false;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Text = "Info";
-            this.TopMost = true;
-            this.ResumeLayout(false);
         }
     }
 }

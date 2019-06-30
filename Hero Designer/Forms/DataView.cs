@@ -206,9 +206,9 @@ namespace Hero_Designer
                 if (!MidsContext.Config.ShowVillainColours)
                     this.VillainColour = false;
                 if (this.VillainColour)
-                    this.pnlInfo.BackColor = Color.Maroon;
+                    this.pnlInfo.BackColor = System.Drawing.Color.Maroon;
                 else
-                    this.pnlInfo.BackColor = Color.Navy;
+                    this.pnlInfo.BackColor = System.Drawing.Color.Navy;
                 this.DoPaint();
             }
         }
@@ -532,7 +532,7 @@ namespace Hero_Designer
             this.bFloating = false;
             this.HistoryIDX = -1;
             this.Compact = false;
-            this.bxFlip = (ExtendedBitmap)null;
+            this.bxFlip = null;
             this.InitializeComponent();
         }
 
@@ -1376,7 +1376,7 @@ namespace Hero_Designer
                     else
                     {
                         destRect = new Rectangle(iDest.X, iDest.Y, 30, 30);
-                        this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, destRect, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
+                        this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, destRect, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                     }
                     if (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh > -1)
                     {
@@ -1406,7 +1406,7 @@ namespace Hero_Designer
                     else
                     {
                         destRect = new Rectangle(rectangle2.X, rectangle2.Y, 30, 30);
-                        this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, destRect, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
+                        this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, destRect, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                     }
                     rectangle2.Inflate(2, 2);
                     this.bxFlip.Graphics.FillEllipse((Brush)solidBrush2, rectangle2);
@@ -1546,8 +1546,8 @@ namespace Hero_Designer
         {
             Graphics graphics = this.pnlTabs.CreateGraphics();
             Pen pen = new Pen(Color.Black);
-            Font font1 = new Font(this.Font, FontStyle.Regular);
-            Font font2 = new Font(this.Font, FontStyle.Bold);
+            Font font1 = new System.Drawing.Font(this.Font, System.Drawing.FontStyle.Regular);
+            Font font2 = new System.Drawing.Font(this.Font, System.Drawing.FontStyle.Bold);
             StringFormat format = new StringFormat(StringFormatFlags.NoWrap);
             SolidBrush solidBrush1 = new SolidBrush(Color.White);
             SolidBrush solidBrush2 = new SolidBrush(this.BackColor);
@@ -2625,8 +2625,8 @@ namespace Hero_Designer
                     I9Gfx.DrawFlippingEnhancement(ref graphics, rectangle1, State, DatabaseAPI.Database.Enhancements[Enh1].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[Enh1].TypeID, Grade1));
                 }
                 else
-                    this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
-                this.pnlEnhActive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, rectangle1, GraphicsUnit.Pixel);
+                    this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
+                this.pnlEnhActive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, rectangle1, System.Drawing.GraphicsUnit.Pixel);
                 ref Rectangle local2 = ref rectangle1;
                 double y2 = (double)rectangle1.Y;
                 size = this.bxFlip.Size;
@@ -2641,10 +2641,10 @@ namespace Hero_Designer
                     I9Gfx.DrawFlippingEnhancement(ref graphics, rectangle1, State, DatabaseAPI.Database.Enhancements[Enh2].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[Enh2].TypeID, Grade2));
                 }
                 else
-                    this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
+                    this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                 rectangle2.Inflate(2, 2);
                 this.bxFlip.Graphics.FillEllipse((Brush)solidBrush2, rectangle2);
-                this.pnlEnhInactive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, rectangle1, GraphicsUnit.Pixel);
+                this.pnlEnhInactive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, rectangle1, System.Drawing.GraphicsUnit.Pixel);
             }
         }
 
@@ -2804,30 +2804,30 @@ namespace Hero_Designer
             this.pnlInfo = new Panel();
             this.PowerScaler = new ctlMultiGraph();
             this.info_txtSmall = new RichTextBox();
-            this.lblDmg = new Label();
+            this.lblDmg = new System.Windows.Forms.Label();
             this.info_Damage = new ctlDamageDisplay();
             this.info_DataList = new ctlPairedList();
             this.info_txtLarge = new RichTextBox();
             this.info_Title = new GFXLabel();
             this.pnlFX = new Panel();
             this.fx_Title = new GFXLabel();
-            this.fx_LblHead3 = new Label();
+            this.fx_LblHead3 = new System.Windows.Forms.Label();
             this.fx_List3 = new ctlPairedList();
-            this.fx_lblHead2 = new Label();
-            this.fx_lblHead1 = new Label();
+            this.fx_lblHead2 = new System.Windows.Forms.Label();
+            this.fx_lblHead1 = new System.Windows.Forms.Label();
             this.fx_List2 = new ctlPairedList();
             this.fx_List1 = new ctlPairedList();
             this.pnlTotal = new Panel();
-            this.lblTotal = new Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.gRes2 = new ctlMultiGraph();
             this.gRes1 = new ctlMultiGraph();
             this.gDef2 = new ctlMultiGraph();
             this.gDef1 = new ctlMultiGraph();
             this.total_Title = new GFXLabel();
-            this.total_lblMisc = new Label();
+            this.total_lblMisc = new System.Windows.Forms.Label();
             this.total_Misc = new ctlPairedList();
-            this.total_lblRes = new Label();
-            this.total_lblDef = new Label();
+            this.total_lblRes = new System.Windows.Forms.Label();
+            this.total_lblDef = new System.Windows.Forms.Label();
             this.pnlEnh = new Panel();
             this.pnlEnhInactive = new Panel();
             this.pnlEnhActive = new Panel();
@@ -2835,22 +2835,22 @@ namespace Hero_Designer
             this.enhListing = new ctlPairedList();
             this.Enh_Title = new GFXLabel();
             this.dbTip = new ToolTip(this.components);
-            this.lblFloat = new Label();
-            this.lblShrink = new Label();
-            this.lblLock = new Label();
+            this.lblFloat = new System.Windows.Forms.Label();
+            this.lblShrink = new System.Windows.Forms.Label();
+            this.lblLock = new System.Windows.Forms.Label();
             this.pnlInfo.SuspendLayout();
             this.pnlFX.SuspendLayout();
             this.pnlTotal.SuspendLayout();
             this.pnlEnh.SuspendLayout();
             this.SuspendLayout();
-            this.pnlTabs.BackColor = Color.FromArgb(64, 64, 64);
-            Point point = new Point(0, 0);
-            this.pnlTabs.Location = point;
+            this.pnlTabs.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+
+            this.pnlTabs.Location = new System.Drawing.Point(0, 0);
             this.pnlTabs.Name = "pnlTabs";
-            Size size = new Size(300, 20);
-            this.pnlTabs.Size = size;
+
+            this.pnlTabs.Size = new System.Drawing.Size(300, 20);
             this.pnlTabs.TabIndex = 61;
-            this.pnlInfo.BackColor = Color.Navy;
+            this.pnlInfo.BackColor = System.Drawing.Color.Navy;
             this.pnlInfo.Controls.Add((Control)this.PowerScaler);
             this.pnlInfo.Controls.Add((Control)this.info_txtSmall);
             this.pnlInfo.Controls.Add((Control)this.lblDmg);
@@ -2858,32 +2858,32 @@ namespace Hero_Designer
             this.pnlInfo.Controls.Add((Control)this.info_DataList);
             this.pnlInfo.Controls.Add((Control)this.info_txtLarge);
             this.pnlInfo.Controls.Add((Control)this.info_Title);
-            point = new Point(0, 20);
-            this.pnlInfo.Location = point;
+
+            this.pnlInfo.Location = new System.Drawing.Point(0, 20);
             this.pnlInfo.Name = "pnlInfo";
-            size = new Size(300, 328);
-            this.pnlInfo.Size = size;
+
+            this.pnlInfo.Size = new System.Drawing.Size(300, 328);
             this.pnlInfo.TabIndex = 62;
-            this.PowerScaler.BackColor = Color.Black;
+            this.PowerScaler.BackColor = System.Drawing.Color.Black;
             this.PowerScaler.Border = true;
             this.PowerScaler.Clickable = true;
-            this.PowerScaler.ColorBase = Color.FromArgb(64, (int)byte.MaxValue, 64);
-            this.PowerScaler.ColorEnh = Color.Yellow;
-            this.PowerScaler.ColorFadeEnd = Color.FromArgb(0, 192, 0);
-            this.PowerScaler.ColorFadeStart = Color.Black;
-            this.PowerScaler.ColorHighlight = Color.Gray;
-            this.PowerScaler.ColorLines = Color.Black;
-            this.PowerScaler.ColorMarkerInner = Color.Red;
-            this.PowerScaler.ColorMarkerOuter = Color.Black;
+            this.PowerScaler.ColorBase = System.Drawing.Color.FromArgb(64, (int)byte.MaxValue, 64);
+            this.PowerScaler.ColorEnh = System.Drawing.Color.Yellow;
+            this.PowerScaler.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 192, 0);
+            this.PowerScaler.ColorFadeStart = System.Drawing.Color.Black;
+            this.PowerScaler.ColorHighlight = System.Drawing.Color.Gray;
+            this.PowerScaler.ColorLines = System.Drawing.Color.Black;
+            this.PowerScaler.ColorMarkerInner = System.Drawing.Color.Red;
+            this.PowerScaler.ColorMarkerOuter = System.Drawing.Color.Black;
             this.PowerScaler.Dual = false;
-            this.PowerScaler.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.PowerScaler.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.PowerScaler.ForcedMax = 0.0f;
-            this.PowerScaler.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.PowerScaler.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.PowerScaler.Highlight = true;
             this.PowerScaler.ItemHeight = 10;
             this.PowerScaler.Lines = true;
-            point = new Point(4, 145);
-            this.PowerScaler.Location = point;
+
+            this.PowerScaler.Location = new System.Drawing.Point(4, 145);
             this.PowerScaler.MarkerValue = 0.0f;
             this.PowerScaler.Max = 100f;
             this.PowerScaler.Name = "PowerScaler";
@@ -2892,45 +2892,45 @@ namespace Hero_Designer
             this.PowerScaler.ScaleHeight = 32;
             this.PowerScaler.ScaleIndex = 8;
             this.PowerScaler.ShowScale = false;
-            size = new Size(292, 15);
-            this.PowerScaler.Size = size;
+
+            this.PowerScaler.Size = new System.Drawing.Size(292, 15);
             this.PowerScaler.Style = Enums.GraphStyle.baseOnly;
             this.PowerScaler.TabIndex = 71;
             this.PowerScaler.TextWidth = 80;
-            this.info_txtSmall.BackColor = Color.FromArgb(64, 64, 64);
+            this.info_txtSmall.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.info_txtSmall.BorderStyle = BorderStyle.None;
             this.info_txtSmall.Cursor = Cursors.Arrow;
-            this.info_txtSmall.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.info_txtSmall.Location = point;
+            this.info_txtSmall.ForeColor = System.Drawing.Color.White;
+
+            this.info_txtSmall.Location = new System.Drawing.Point(4, 24);
             this.info_txtSmall.Name = "info_txtSmall";
             this.info_txtSmall.ReadOnly = true;
             this.info_txtSmall.ScrollBars = RichTextBoxScrollBars.None;
-            size = new Size(292, 32);
-            this.info_txtSmall.Size = size;
+
+            this.info_txtSmall.Size = new System.Drawing.Size(292, 32);
             this.info_txtSmall.TabIndex = 70;
             this.info_txtSmall.Text = "info_Rich";
-            this.lblDmg.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.lblDmg.ForeColor = Color.White;
-            point = new Point(4, 272);
-            this.lblDmg.Location = point;
+            this.lblDmg.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.lblDmg.ForeColor = System.Drawing.Color.White;
+
+            this.lblDmg.Location = new System.Drawing.Point(4, 272);
             this.lblDmg.Name = "lblDmg";
-            size = new Size(292, 13);
-            this.lblDmg.Size = size;
+
+            this.lblDmg.Size = new System.Drawing.Size(292, 13);
             this.lblDmg.TabIndex = 15;
             this.lblDmg.Text = "Damage:";
             this.lblDmg.TextAlign = ContentAlignment.MiddleCenter;
-            this.info_Damage.BackColor = Color.FromArgb(64, 64, 64);
-            this.info_Damage.ColorBackEnd = Color.Red;
-            this.info_Damage.ColorBackStart = Color.Black;
-            this.info_Damage.ColorBaseEnd = Color.Blue;
-            this.info_Damage.ColorBaseStart = Color.Blue;
-            this.info_Damage.ColorEnhEnd = Color.Yellow;
-            this.info_Damage.ColorEnhStart = Color.Yellow;
-            this.info_Damage.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.info_Damage.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.info_Damage.ColorBackEnd = System.Drawing.Color.Red;
+            this.info_Damage.ColorBackStart = System.Drawing.Color.Black;
+            this.info_Damage.ColorBaseEnd = System.Drawing.Color.Blue;
+            this.info_Damage.ColorBaseStart = System.Drawing.Color.Blue;
+            this.info_Damage.ColorEnhEnd = System.Drawing.Color.Yellow;
+            this.info_Damage.ColorEnhStart = System.Drawing.Color.Yellow;
+            this.info_Damage.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.info_Damage.GraphType = Enums.eDDGraph.Enhanced;
-            point = new Point(4, 288);
-            this.info_Damage.Location = point;
+
+            this.info_Damage.Location = new System.Drawing.Point(4, 288);
             this.info_Damage.Name = "info_Damage";
             this.info_Damage.nBaseVal = 100f;
             this.info_Damage.nEnhVal = 150f;
@@ -2939,56 +2939,56 @@ namespace Hero_Designer
             this.info_Damage.nMaxEnhVal = 207f;
             this.info_Damage.PaddingH = 3;
             this.info_Damage.PaddingV = 6;
-            size = new Size(292, 36);
-            this.info_Damage.Size = size;
+
+            this.info_Damage.Size = new System.Drawing.Size(292, 36);
             this.info_Damage.Style = Enums.eDDStyle.TextUnderGraph;
             this.info_Damage.TabIndex = 20;
             this.info_Damage.TextAlign = Enums.eDDAlign.Center;
-            this.info_Damage.TextColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.info_DataList.BackColor = Color.FromArgb(0, 0, 32);
+            this.info_Damage.TextColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.info_DataList.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
             this.info_DataList.Columns = 2;
             this.info_DataList.DoHighlight = true;
-            this.info_DataList.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.info_DataList.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.info_DataList.ForceBold = false;
-            this.info_DataList.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.info_DataList.HighlightTextColor = Color.Black;
-            this.info_DataList.ItemColor = Color.White;
-            this.info_DataList.ItemColorAlt = Color.Lime;
-            this.info_DataList.ItemColorSpecCase = Color.Red;
-            this.info_DataList.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 164);
-            this.info_DataList.Location = point;
+            this.info_DataList.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.info_DataList.HighlightTextColor = System.Drawing.Color.Black;
+            this.info_DataList.ItemColor = System.Drawing.Color.White;
+            this.info_DataList.ItemColorAlt = System.Drawing.Color.Lime;
+            this.info_DataList.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.info_DataList.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.info_DataList.Location = new System.Drawing.Point(4, 164);
             this.info_DataList.Name = "info_DataList";
-            this.info_DataList.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 104);
-            this.info_DataList.Size = size;
+            this.info_DataList.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.info_DataList.Size = new System.Drawing.Size(292, 104);
             this.info_DataList.TabIndex = 19;
             this.info_DataList.ValueWidth = 55;
-            this.info_txtLarge.BackColor = Color.FromArgb(64, 64, 64);
+            this.info_txtLarge.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.info_txtLarge.BorderStyle = BorderStyle.None;
             this.info_txtLarge.Cursor = Cursors.Arrow;
-            this.info_txtLarge.ForeColor = Color.White;
-            point = new Point(4, 60);
-            this.info_txtLarge.Location = point;
+            this.info_txtLarge.ForeColor = System.Drawing.Color.White;
+
+            this.info_txtLarge.Location = new System.Drawing.Point(4, 60);
             this.info_txtLarge.Name = "info_txtLarge";
             this.info_txtLarge.ReadOnly = true;
             this.info_txtLarge.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
-            size = new Size(292, 87);
-            this.info_txtLarge.Size = size;
+
+            this.info_txtLarge.Size = new System.Drawing.Size(292, 87);
             this.info_txtLarge.TabIndex = 69;
             this.info_txtLarge.Text = "info_Rich";
-            this.info_Title.BackColor = Color.FromArgb(64, 64, 64);
-            this.info_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.info_Title.ForeColor = Color.White;
+            this.info_Title.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.info_Title.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.info_Title.ForeColor = System.Drawing.Color.White;
             this.info_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.info_Title.Location = point;
+
+            this.info_Title.Location = new System.Drawing.Point(24, 4);
             this.info_Title.Name = "info_Title";
-            size = new Size(252, 16);
-            this.info_Title.Size = size;
+
+            this.info_Title.Size = new System.Drawing.Size(252, 16);
             this.info_Title.TabIndex = 69;
             this.info_Title.TextAlign = ContentAlignment.TopCenter;
-            this.pnlFX.BackColor = Color.Indigo;
+            this.pnlFX.BackColor = System.Drawing.Color.Indigo;
             this.pnlFX.Controls.Add((Control)this.fx_Title);
             this.pnlFX.Controls.Add((Control)this.fx_LblHead3);
             this.pnlFX.Controls.Add((Control)this.fx_List3);
@@ -2996,111 +2996,111 @@ namespace Hero_Designer
             this.pnlFX.Controls.Add((Control)this.fx_lblHead1);
             this.pnlFX.Controls.Add((Control)this.fx_List2);
             this.pnlFX.Controls.Add((Control)this.fx_List1);
-            point = new Point(144, 148);
-            this.pnlFX.Location = point;
+
+            this.pnlFX.Location = new System.Drawing.Point(144, 148);
             this.pnlFX.Name = "pnlFX";
-            size = new Size(300, 320);
-            this.pnlFX.Size = size;
+
+            this.pnlFX.Size = new System.Drawing.Size(300, 320);
             this.pnlFX.TabIndex = 63;
-            this.fx_Title.BackColor = Color.FromArgb(64, 64, 64);
-            this.fx_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.fx_Title.ForeColor = Color.White;
+            this.fx_Title.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.fx_Title.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.fx_Title.ForeColor = System.Drawing.Color.White;
             this.fx_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.fx_Title.Location = point;
+
+            this.fx_Title.Location = new System.Drawing.Point(24, 4);
             this.fx_Title.Name = "fx_Title";
-            size = new Size(252, 16);
-            this.fx_Title.Size = size;
+
+            this.fx_Title.Size = new System.Drawing.Size(252, 16);
             this.fx_Title.TabIndex = 70;
             this.fx_Title.TextAlign = ContentAlignment.TopCenter;
-            this.fx_LblHead3.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.fx_LblHead3.ForeColor = Color.White;
-            point = new Point(4, 228);
-            this.fx_LblHead3.Location = point;
+            this.fx_LblHead3.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.fx_LblHead3.ForeColor = System.Drawing.Color.White;
+
+            this.fx_LblHead3.Location = new System.Drawing.Point(4, 228);
             this.fx_LblHead3.Name = "fx_LblHead3";
-            size = new Size(292, 16);
-            this.fx_LblHead3.Size = size;
+
+            this.fx_LblHead3.Size = new System.Drawing.Size(292, 16);
             this.fx_LblHead3.TabIndex = 28;
             this.fx_LblHead3.Text = "Misc Effects:";
             this.fx_LblHead3.TextAlign = ContentAlignment.MiddleLeft;
-            this.fx_List3.BackColor = Color.FromArgb(64, 64, 64);
+            this.fx_List3.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.fx_List3.Columns = 2;
             this.fx_List3.DoHighlight = true;
-            this.fx_List3.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.fx_List3.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.fx_List3.ForceBold = false;
-            this.fx_List3.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.fx_List3.HighlightTextColor = Color.Black;
-            this.fx_List3.ItemColor = Color.White;
-            this.fx_List3.ItemColorAlt = Color.Lime;
-            this.fx_List3.ItemColorSpecCase = Color.Red;
-            this.fx_List3.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 244);
-            this.fx_List3.Location = point;
+            this.fx_List3.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.fx_List3.HighlightTextColor = System.Drawing.Color.Black;
+            this.fx_List3.ItemColor = System.Drawing.Color.White;
+            this.fx_List3.ItemColorAlt = System.Drawing.Color.Lime;
+            this.fx_List3.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.fx_List3.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.fx_List3.Location = new System.Drawing.Point(4, 244);
             this.fx_List3.Name = "fx_List3";
-            this.fx_List3.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 72);
-            this.fx_List3.Size = size;
+            this.fx_List3.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.fx_List3.Size = new System.Drawing.Size(292, 72);
             this.fx_List3.TabIndex = 27;
             this.fx_List3.ValueWidth = 55;
-            this.fx_lblHead2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.fx_lblHead2.ForeColor = Color.White;
-            point = new Point(4, 136);
-            this.fx_lblHead2.Location = point;
+            this.fx_lblHead2.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.fx_lblHead2.ForeColor = System.Drawing.Color.White;
+
+            this.fx_lblHead2.Location = new System.Drawing.Point(4, 136);
             this.fx_lblHead2.Name = "fx_lblHead2";
-            size = new Size(292, 16);
-            this.fx_lblHead2.Size = size;
+
+            this.fx_lblHead2.Size = new System.Drawing.Size(292, 16);
             this.fx_lblHead2.TabIndex = 26;
             this.fx_lblHead2.Text = "Secondary Effects:";
             this.fx_lblHead2.TextAlign = ContentAlignment.MiddleLeft;
-            this.fx_lblHead1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.fx_lblHead1.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.fx_lblHead1.Location = point;
+            this.fx_lblHead1.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.fx_lblHead1.ForeColor = System.Drawing.Color.White;
+
+            this.fx_lblHead1.Location = new System.Drawing.Point(4, 24);
             this.fx_lblHead1.Name = "fx_lblHead1";
-            size = new Size(292, 16);
-            this.fx_lblHead1.Size = size;
+
+            this.fx_lblHead1.Size = new System.Drawing.Size(292, 16);
             this.fx_lblHead1.TabIndex = 25;
             this.fx_lblHead1.Text = "Primary Effects:";
             this.fx_lblHead1.TextAlign = ContentAlignment.MiddleLeft;
-            this.fx_List2.BackColor = Color.FromArgb(64, 64, 64);
+            this.fx_List2.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.fx_List2.Columns = 2;
             this.fx_List2.DoHighlight = true;
-            this.fx_List2.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.fx_List2.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.fx_List2.ForceBold = false;
-            this.fx_List2.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.fx_List2.HighlightTextColor = Color.Black;
-            this.fx_List2.ItemColor = Color.White;
-            this.fx_List2.ItemColorAlt = Color.Lime;
-            this.fx_List2.ItemColorSpecCase = Color.Red;
-            this.fx_List2.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 152);
-            this.fx_List2.Location = point;
+            this.fx_List2.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.fx_List2.HighlightTextColor = System.Drawing.Color.Black;
+            this.fx_List2.ItemColor = System.Drawing.Color.White;
+            this.fx_List2.ItemColorAlt = System.Drawing.Color.Lime;
+            this.fx_List2.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.fx_List2.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.fx_List2.Location = new System.Drawing.Point(4, 152);
             this.fx_List2.Name = "fx_List2";
-            this.fx_List2.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 72);
-            this.fx_List2.Size = size;
+            this.fx_List2.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.fx_List2.Size = new System.Drawing.Size(292, 72);
             this.fx_List2.TabIndex = 24;
             this.fx_List2.ValueWidth = 55;
-            this.fx_List1.BackColor = Color.FromArgb(64, 64, 64);
+            this.fx_List1.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.fx_List1.Columns = 2;
             this.fx_List1.DoHighlight = true;
-            this.fx_List1.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.fx_List1.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.fx_List1.ForceBold = false;
-            this.fx_List1.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.fx_List1.HighlightTextColor = Color.Black;
-            this.fx_List1.ItemColor = Color.White;
-            this.fx_List1.ItemColorAlt = Color.Lime;
-            this.fx_List1.ItemColorSpecCase = Color.Red;
-            this.fx_List1.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 40);
-            this.fx_List1.Location = point;
+            this.fx_List1.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.fx_List1.HighlightTextColor = System.Drawing.Color.Black;
+            this.fx_List1.ItemColor = System.Drawing.Color.White;
+            this.fx_List1.ItemColorAlt = System.Drawing.Color.Lime;
+            this.fx_List1.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.fx_List1.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.fx_List1.Location = new System.Drawing.Point(4, 40);
             this.fx_List1.Name = "fx_List1";
-            this.fx_List1.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 92);
-            this.fx_List1.Size = size;
+            this.fx_List1.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.fx_List1.Size = new System.Drawing.Size(292, 92);
             this.fx_List1.TabIndex = 23;
             this.fx_List1.ValueWidth = 60;
-            this.pnlTotal.BackColor = Color.Green;
+            this.pnlTotal.BackColor = System.Drawing.Color.Green;
             this.pnlTotal.Controls.Add((Control)this.lblTotal);
             this.pnlTotal.Controls.Add((Control)this.gRes2);
             this.pnlTotal.Controls.Add((Control)this.gRes1);
@@ -3111,42 +3111,42 @@ namespace Hero_Designer
             this.pnlTotal.Controls.Add((Control)this.total_Misc);
             this.pnlTotal.Controls.Add((Control)this.total_lblRes);
             this.pnlTotal.Controls.Add((Control)this.total_lblDef);
-            point = new Point(248, 15);
-            this.pnlTotal.Location = point;
+
+            this.pnlTotal.Location = new System.Drawing.Point(248, 15);
             this.pnlTotal.Name = "pnlTotal";
-            size = new Size(300, 319);
-            this.pnlTotal.Size = size;
+
+            this.pnlTotal.Size = new System.Drawing.Size(300, 319);
             this.pnlTotal.TabIndex = 64;
-            this.lblTotal.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.lblTotal.ForeColor = Color.White;
-            point = new Point(4, 300);
-            this.lblTotal.Location = point;
+            this.lblTotal.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+
+            this.lblTotal.Location = new System.Drawing.Point(4, 300);
             this.lblTotal.Name = "lblTotal";
-            size = new Size(292, 16);
-            this.lblTotal.Size = size;
+
+            this.lblTotal.Size = new System.Drawing.Size(292, 16);
             this.lblTotal.TabIndex = 75;
             this.lblTotal.Text = "Click the 'View Totals' button for more.";
             this.lblTotal.TextAlign = ContentAlignment.MiddleCenter;
-            this.gRes2.BackColor = Color.Black;
+            this.gRes2.BackColor = System.Drawing.Color.Black;
             this.gRes2.Border = true;
             this.gRes2.Clickable = false;
-            this.gRes2.ColorBase = Color.FromArgb(0, 192, 192);
-            this.gRes2.ColorEnh = Color.FromArgb((int)byte.MaxValue, 128, 128);
-            this.gRes2.ColorFadeEnd = Color.Teal;
-            this.gRes2.ColorFadeStart = Color.Black;
-            this.gRes2.ColorHighlight = Color.Gray;
-            this.gRes2.ColorLines = Color.Black;
-            this.gRes2.ColorMarkerInner = Color.Black;
-            this.gRes2.ColorMarkerOuter = Color.Yellow;
+            this.gRes2.ColorBase = System.Drawing.Color.FromArgb(0, 192, 192);
+            this.gRes2.ColorEnh = System.Drawing.Color.FromArgb((int)byte.MaxValue, 128, 128);
+            this.gRes2.ColorFadeEnd = System.Drawing.Color.Teal;
+            this.gRes2.ColorFadeStart = System.Drawing.Color.Black;
+            this.gRes2.ColorHighlight = System.Drawing.Color.Gray;
+            this.gRes2.ColorLines = System.Drawing.Color.Black;
+            this.gRes2.ColorMarkerInner = System.Drawing.Color.Black;
+            this.gRes2.ColorMarkerOuter = System.Drawing.Color.Yellow;
             this.gRes2.Dual = false;
-            this.gRes2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.gRes2.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.gRes2.ForcedMax = 0.0f;
-            this.gRes2.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.gRes2.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.gRes2.Highlight = true;
             this.gRes2.ItemHeight = 13;
             this.gRes2.Lines = true;
-            point = new Point(150, 152);
-            this.gRes2.Location = point;
+
+            this.gRes2.Location = new System.Drawing.Point(150, 152);
             this.gRes2.MarkerValue = 0.0f;
             this.gRes2.Max = 100f;
             this.gRes2.Name = "gRes2";
@@ -3155,31 +3155,31 @@ namespace Hero_Designer
             this.gRes2.ScaleHeight = 32;
             this.gRes2.ScaleIndex = 8;
             this.gRes2.ShowScale = false;
-            size = new Size(146, 72);
-            this.gRes2.Size = size;
+
+            this.gRes2.Size = new System.Drawing.Size(146, 72);
             this.gRes2.Style = Enums.GraphStyle.Stacked;
             this.gRes2.TabIndex = 74;
             this.gRes2.TextWidth = 100;
-            this.gRes1.BackColor = Color.Black;
+            this.gRes1.BackColor = System.Drawing.Color.Black;
             this.gRes1.Border = true;
             this.gRes1.Clickable = false;
-            this.gRes1.ColorBase = Color.FromArgb(0, 192, 192);
-            this.gRes1.ColorEnh = Color.FromArgb((int)byte.MaxValue, 128, 128);
-            this.gRes1.ColorFadeEnd = Color.Teal;
-            this.gRes1.ColorFadeStart = Color.Black;
-            this.gRes1.ColorHighlight = Color.Gray;
-            this.gRes1.ColorLines = Color.Black;
-            this.gRes1.ColorMarkerInner = Color.Black;
-            this.gRes1.ColorMarkerOuter = Color.Yellow;
+            this.gRes1.ColorBase = System.Drawing.Color.FromArgb(0, 192, 192);
+            this.gRes1.ColorEnh = System.Drawing.Color.FromArgb((int)byte.MaxValue, 128, 128);
+            this.gRes1.ColorFadeEnd = System.Drawing.Color.Teal;
+            this.gRes1.ColorFadeStart = System.Drawing.Color.Black;
+            this.gRes1.ColorHighlight = System.Drawing.Color.Gray;
+            this.gRes1.ColorLines = System.Drawing.Color.Black;
+            this.gRes1.ColorMarkerInner = System.Drawing.Color.Black;
+            this.gRes1.ColorMarkerOuter = System.Drawing.Color.Yellow;
             this.gRes1.Dual = false;
-            this.gRes1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.gRes1.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.gRes1.ForcedMax = 0.0f;
-            this.gRes1.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.gRes1.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.gRes1.Highlight = true;
             this.gRes1.ItemHeight = 13;
             this.gRes1.Lines = true;
-            point = new Point(4, 152);
-            this.gRes1.Location = point;
+
+            this.gRes1.Location = new System.Drawing.Point(4, 152);
             this.gRes1.MarkerValue = 0.0f;
             this.gRes1.Max = 100f;
             this.gRes1.Name = "gRes1";
@@ -3188,31 +3188,31 @@ namespace Hero_Designer
             this.gRes1.ScaleHeight = 32;
             this.gRes1.ScaleIndex = 8;
             this.gRes1.ShowScale = false;
-            size = new Size(146, 72);
-            this.gRes1.Size = size;
+
+            this.gRes1.Size = new System.Drawing.Size(146, 72);
             this.gRes1.Style = Enums.GraphStyle.Stacked;
             this.gRes1.TabIndex = 73;
             this.gRes1.TextWidth = 100;
-            this.gDef2.BackColor = Color.Black;
+            this.gDef2.BackColor = System.Drawing.Color.Black;
             this.gDef2.Border = true;
             this.gDef2.Clickable = false;
-            this.gDef2.ColorBase = Color.FromArgb(192, 0, 192);
-            this.gDef2.ColorEnh = Color.Yellow;
-            this.gDef2.ColorFadeEnd = Color.Purple;
-            this.gDef2.ColorFadeStart = Color.Black;
-            this.gDef2.ColorHighlight = Color.Gray;
-            this.gDef2.ColorLines = Color.Black;
-            this.gDef2.ColorMarkerInner = Color.Black;
-            this.gDef2.ColorMarkerOuter = Color.Yellow;
+            this.gDef2.ColorBase = System.Drawing.Color.FromArgb(192, 0, 192);
+            this.gDef2.ColorEnh = System.Drawing.Color.Yellow;
+            this.gDef2.ColorFadeEnd = System.Drawing.Color.Purple;
+            this.gDef2.ColorFadeStart = System.Drawing.Color.Black;
+            this.gDef2.ColorHighlight = System.Drawing.Color.Gray;
+            this.gDef2.ColorLines = System.Drawing.Color.Black;
+            this.gDef2.ColorMarkerInner = System.Drawing.Color.Black;
+            this.gDef2.ColorMarkerOuter = System.Drawing.Color.Yellow;
             this.gDef2.Dual = false;
-            this.gDef2.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.gDef2.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.gDef2.ForcedMax = 0.0f;
-            this.gDef2.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.gDef2.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.gDef2.Highlight = true;
             this.gDef2.ItemHeight = 13;
             this.gDef2.Lines = true;
-            point = new Point(150, 40);
-            this.gDef2.Location = point;
+
+            this.gDef2.Location = new System.Drawing.Point(150, 40);
             this.gDef2.MarkerValue = 0.0f;
             this.gDef2.Max = 100f;
             this.gDef2.Name = "gDef2";
@@ -3221,31 +3221,31 @@ namespace Hero_Designer
             this.gDef2.ScaleHeight = 32;
             this.gDef2.ScaleIndex = 8;
             this.gDef2.ShowScale = false;
-            size = new Size(146, 92);
-            this.gDef2.Size = size;
+
+            this.gDef2.Size = new System.Drawing.Size(146, 92);
             this.gDef2.Style = Enums.GraphStyle.baseOnly;
             this.gDef2.TabIndex = 72;
             this.gDef2.TextWidth = 100;
-            this.gDef1.BackColor = Color.Black;
+            this.gDef1.BackColor = System.Drawing.Color.Black;
             this.gDef1.Border = true;
             this.gDef1.Clickable = false;
-            this.gDef1.ColorBase = Color.FromArgb(192, 0, 192);
-            this.gDef1.ColorEnh = Color.Yellow;
-            this.gDef1.ColorFadeEnd = Color.Purple;
-            this.gDef1.ColorFadeStart = Color.Black;
-            this.gDef1.ColorHighlight = Color.Gray;
-            this.gDef1.ColorLines = Color.Black;
-            this.gDef1.ColorMarkerInner = Color.Black;
-            this.gDef1.ColorMarkerOuter = Color.Yellow;
+            this.gDef1.ColorBase = System.Drawing.Color.FromArgb(192, 0, 192);
+            this.gDef1.ColorEnh = System.Drawing.Color.Yellow;
+            this.gDef1.ColorFadeEnd = System.Drawing.Color.Purple;
+            this.gDef1.ColorFadeStart = System.Drawing.Color.Black;
+            this.gDef1.ColorHighlight = System.Drawing.Color.Gray;
+            this.gDef1.ColorLines = System.Drawing.Color.Black;
+            this.gDef1.ColorMarkerInner = System.Drawing.Color.Black;
+            this.gDef1.ColorMarkerOuter = System.Drawing.Color.Yellow;
             this.gDef1.Dual = false;
-            this.gDef1.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            this.gDef1.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.gDef1.ForcedMax = 0.0f;
-            this.gDef1.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.gDef1.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.gDef1.Highlight = true;
             this.gDef1.ItemHeight = 13;
             this.gDef1.Lines = true;
-            point = new Point(4, 40);
-            this.gDef1.Location = point;
+
+            this.gDef1.Location = new System.Drawing.Point(4, 40);
             this.gDef1.MarkerValue = 0.0f;
             this.gDef1.Max = 100f;
             this.gDef1.Name = "gDef1";
@@ -3254,186 +3254,186 @@ namespace Hero_Designer
             this.gDef1.ScaleHeight = 32;
             this.gDef1.ScaleIndex = 8;
             this.gDef1.ShowScale = false;
-            size = new Size(146, 92);
-            this.gDef1.Size = size;
+
+            this.gDef1.Size = new System.Drawing.Size(146, 92);
             this.gDef1.Style = Enums.GraphStyle.baseOnly;
             this.gDef1.TabIndex = 71;
             this.gDef1.TextWidth = 100;
-            this.total_Title.BackColor = Color.FromArgb(64, 64, 64);
-            this.total_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.total_Title.ForeColor = Color.White;
+            this.total_Title.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.total_Title.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.total_Title.ForeColor = System.Drawing.Color.White;
             this.total_Title.InitialText = "Cumulative Totals (For Self)";
-            point = new Point(24, 4);
-            this.total_Title.Location = point;
+
+            this.total_Title.Location = new System.Drawing.Point(24, 4);
             this.total_Title.Name = "total_Title";
-            size = new Size(252, 16);
-            this.total_Title.Size = size;
+
+            this.total_Title.Size = new System.Drawing.Size(252, 16);
             this.total_Title.TabIndex = 70;
             this.total_Title.TextAlign = ContentAlignment.TopCenter;
-            this.total_lblMisc.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.total_lblMisc.ForeColor = Color.White;
-            point = new Point(4, 228);
-            this.total_lblMisc.Location = point;
+            this.total_lblMisc.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.total_lblMisc.ForeColor = System.Drawing.Color.White;
+
+            this.total_lblMisc.Location = new System.Drawing.Point(4, 228);
             this.total_lblMisc.Name = "total_lblMisc";
-            size = new Size(292, 16);
-            this.total_lblMisc.Size = size;
+
+            this.total_lblMisc.Size = new System.Drawing.Size(292, 16);
             this.total_lblMisc.TabIndex = 28;
             this.total_lblMisc.Text = "Misc Effects:";
             this.total_lblMisc.TextAlign = ContentAlignment.MiddleLeft;
-            this.total_Misc.BackColor = Color.FromArgb(64, 64, 64);
+            this.total_Misc.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.total_Misc.Columns = 2;
             this.total_Misc.DoHighlight = true;
-            this.total_Misc.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.total_Misc.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.total_Misc.ForceBold = false;
-            this.total_Misc.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.total_Misc.HighlightTextColor = Color.Black;
-            this.total_Misc.ItemColor = Color.White;
-            this.total_Misc.ItemColorAlt = Color.Lime;
-            this.total_Misc.ItemColorSpecCase = Color.Red;
-            this.total_Misc.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 244);
-            this.total_Misc.Location = point;
+            this.total_Misc.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.total_Misc.HighlightTextColor = System.Drawing.Color.Black;
+            this.total_Misc.ItemColor = System.Drawing.Color.White;
+            this.total_Misc.ItemColorAlt = System.Drawing.Color.Lime;
+            this.total_Misc.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.total_Misc.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.total_Misc.Location = new System.Drawing.Point(4, 244);
             this.total_Misc.Name = "total_Misc";
-            this.total_Misc.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 60);
-            this.total_Misc.Size = size;
+            this.total_Misc.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.total_Misc.Size = new System.Drawing.Size(292, 60);
             this.total_Misc.TabIndex = 27;
             this.total_Misc.ValueWidth = 55;
-            this.total_lblRes.BackColor = Color.Green;
-            this.total_lblRes.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.total_lblRes.ForeColor = Color.White;
-            point = new Point(4, 136);
-            this.total_lblRes.Location = point;
+            this.total_lblRes.BackColor = System.Drawing.Color.Green;
+            this.total_lblRes.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.total_lblRes.ForeColor = System.Drawing.Color.White;
+
+            this.total_lblRes.Location = new System.Drawing.Point(4, 136);
             this.total_lblRes.Name = "total_lblRes";
-            size = new Size(292, 16);
-            this.total_lblRes.Size = size;
+
+            this.total_lblRes.Size = new System.Drawing.Size(292, 16);
             this.total_lblRes.TabIndex = 26;
             this.total_lblRes.Text = "Resistance:";
             this.total_lblRes.TextAlign = ContentAlignment.MiddleLeft;
-            this.total_lblDef.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.total_lblDef.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.total_lblDef.Location = point;
+            this.total_lblDef.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.total_lblDef.ForeColor = System.Drawing.Color.White;
+
+            this.total_lblDef.Location = new System.Drawing.Point(4, 24);
             this.total_lblDef.Name = "total_lblDef";
-            size = new Size(292, 16);
-            this.total_lblDef.Size = size;
+
+            this.total_lblDef.Size = new System.Drawing.Size(292, 16);
             this.total_lblDef.TabIndex = 25;
             this.total_lblDef.Text = "Defense:";
             this.total_lblDef.TextAlign = ContentAlignment.MiddleLeft;
-            this.pnlEnh.BackColor = Color.Teal;
+            this.pnlEnh.BackColor = System.Drawing.Color.Teal;
             this.pnlEnh.Controls.Add((Control)this.pnlEnhInactive);
             this.pnlEnh.Controls.Add((Control)this.pnlEnhActive);
             this.pnlEnh.Controls.Add((Control)this.enhNameDisp);
             this.pnlEnh.Controls.Add((Control)this.enhListing);
             this.pnlEnh.Controls.Add((Control)this.Enh_Title);
-            point = new Point(188, 156);
-            this.pnlEnh.Location = point;
+
+            this.pnlEnh.Location = new System.Drawing.Point(188, 156);
             this.pnlEnh.Name = "pnlEnh";
-            size = new Size(300, 320);
-            this.pnlEnh.Size = size;
+
+            this.pnlEnh.Size = new System.Drawing.Size(300, 320);
             this.pnlEnh.TabIndex = 65;
-            this.pnlEnhInactive.BackColor = Color.Black;
-            point = new Point(4, 279);
-            this.pnlEnhInactive.Location = point;
+            this.pnlEnhInactive.BackColor = System.Drawing.Color.Black;
+
+            this.pnlEnhInactive.Location = new System.Drawing.Point(4, 279);
             this.pnlEnhInactive.Name = "pnlEnhInactive";
-            size = new Size(292, 38);
-            this.pnlEnhInactive.Size = size;
+
+            this.pnlEnhInactive.Size = new System.Drawing.Size(292, 38);
             this.pnlEnhInactive.TabIndex = 74;
-            this.pnlEnhActive.BackColor = Color.Black;
-            this.pnlEnhActive.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            point = new Point(4, 239);
-            this.pnlEnhActive.Location = point;
+            this.pnlEnhActive.BackColor = System.Drawing.Color.Black;
+            this.pnlEnhActive.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+
+            this.pnlEnhActive.Location = new System.Drawing.Point(4, 239);
             this.pnlEnhActive.Name = "pnlEnhActive";
-            size = new Size(292, 38);
-            this.pnlEnhActive.Size = size;
+
+            this.pnlEnhActive.Size = new System.Drawing.Size(292, 38);
             this.pnlEnhActive.TabIndex = 73;
-            this.enhNameDisp.BackColor = Color.FromArgb(64, 64, 64);
-            this.enhNameDisp.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.enhNameDisp.ForeColor = Color.White;
+            this.enhNameDisp.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.enhNameDisp.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.enhNameDisp.ForeColor = System.Drawing.Color.White;
             this.enhNameDisp.InitialText = "Title";
-            point = new Point(4, 24);
-            this.enhNameDisp.Location = point;
+
+            this.enhNameDisp.Location = new System.Drawing.Point(4, 24);
             this.enhNameDisp.Name = "enhNameDisp";
-            size = new Size(292, 16);
-            this.enhNameDisp.Size = size;
+
+            this.enhNameDisp.Size = new System.Drawing.Size(292, 16);
             this.enhNameDisp.TabIndex = 72;
             this.enhNameDisp.TextAlign = ContentAlignment.TopCenter;
-            this.enhListing.BackColor = Color.FromArgb(0, 0, 32);
+            this.enhListing.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
             this.enhListing.Columns = 1;
             this.enhListing.DoHighlight = true;
-            this.enhListing.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)178);
+            this.enhListing.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)178);
             this.enhListing.ForceBold = false;
-            this.enhListing.HighlightColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.enhListing.HighlightTextColor = Color.Black;
-            this.enhListing.ItemColor = Color.White;
-            this.enhListing.ItemColorAlt = Color.Yellow;
-            this.enhListing.ItemColorSpecCase = Color.Red;
-            this.enhListing.ItemColorSpecial = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            point = new Point(4, 44);
-            this.enhListing.Location = point;
+            this.enhListing.HighlightColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+            this.enhListing.HighlightTextColor = System.Drawing.Color.Black;
+            this.enhListing.ItemColor = System.Drawing.Color.White;
+            this.enhListing.ItemColorAlt = System.Drawing.Color.Yellow;
+            this.enhListing.ItemColorSpecCase = System.Drawing.Color.Red;
+            this.enhListing.ItemColorSpecial = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+
+            this.enhListing.Location = new System.Drawing.Point(4, 44);
             this.enhListing.Name = "enhListing";
-            this.enhListing.NameColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            size = new Size(292, 192);
-            this.enhListing.Size = size;
+            this.enhListing.NameColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
+
+            this.enhListing.Size = new System.Drawing.Size(292, 192);
             this.enhListing.TabIndex = 71;
             this.enhListing.ValueWidth = 65;
-            this.Enh_Title.BackColor = Color.FromArgb(64, 64, 64);
-            this.Enh_Title.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.Enh_Title.ForeColor = Color.White;
+            this.Enh_Title.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            this.Enh_Title.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.Enh_Title.ForeColor = System.Drawing.Color.White;
             this.Enh_Title.InitialText = "Title";
-            point = new Point(24, 4);
-            this.Enh_Title.Location = point;
+
+            this.Enh_Title.Location = new System.Drawing.Point(24, 4);
             this.Enh_Title.Name = "Enh_Title";
-            size = new Size(252, 16);
-            this.Enh_Title.Size = size;
+
+            this.Enh_Title.Size = new System.Drawing.Size(252, 16);
             this.Enh_Title.TabIndex = 70;
             this.Enh_Title.TextAlign = ContentAlignment.TopCenter;
             this.dbTip.AutoPopDelay = 15000;
             this.dbTip.InitialDelay = 350;
             this.dbTip.ReshowDelay = 100;
-            this.lblFloat.BackColor = Color.FromArgb(64, 64, 64);
+            this.lblFloat.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.lblFloat.BorderStyle = BorderStyle.FixedSingle;
-            this.lblFloat.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)2);
-            this.lblFloat.ForeColor = Color.White;
-            point = new Point(4, 24);
-            this.lblFloat.Location = point;
+            this.lblFloat.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)2);
+            this.lblFloat.ForeColor = System.Drawing.Color.White;
+
+            this.lblFloat.Location = new System.Drawing.Point(4, 24);
             this.lblFloat.Name = "lblFloat";
-            size = new Size(16, 16);
-            this.lblFloat.Size = size;
+
+            this.lblFloat.Size = new System.Drawing.Size(16, 16);
             this.lblFloat.TabIndex = 66;
             this.lblFloat.Text = "F";
             this.lblFloat.TextAlign = ContentAlignment.MiddleCenter;
             this.dbTip.SetToolTip((Control)this.lblFloat, "Make Floating Window");
             this.lblFloat.UseCompatibleTextRendering = true;
-            this.lblShrink.BackColor = Color.FromArgb(64, 64, 64);
+            this.lblShrink.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
             this.lblShrink.BorderStyle = BorderStyle.FixedSingle;
-            this.lblShrink.Font = new Font("Wingdings", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)2);
-            this.lblShrink.ForeColor = Color.White;
-            point = new Point(280, 24);
-            this.lblShrink.Location = point;
+            this.lblShrink.Font = new System.Drawing.Font("Wingdings", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)2);
+            this.lblShrink.ForeColor = System.Drawing.Color.White;
+
+            this.lblShrink.Location = new System.Drawing.Point(280, 24);
             this.lblShrink.Name = "lblShrink";
-            size = new Size(16, 16);
-            this.lblShrink.Size = size;
+
+            this.lblShrink.Size = new System.Drawing.Size(16, 16);
             this.lblShrink.TabIndex = 67;
             this.lblShrink.Text = "y";
             this.lblShrink.TextAlign = ContentAlignment.MiddleCenter;
             this.dbTip.SetToolTip((Control)this.lblShrink, "Shrink / Expland the Info Display");
             this.lblShrink.UseCompatibleTextRendering = true;
-            this.lblLock.BackColor = Color.Red;
+            this.lblLock.BackColor = System.Drawing.Color.Red;
             this.lblLock.BorderStyle = BorderStyle.FixedSingle;
-            this.lblLock.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.lblLock.ForeColor = Color.White;
-            point = new Point(220, 24);
-            this.lblLock.Location = point;
+            this.lblLock.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
+            this.lblLock.ForeColor = System.Drawing.Color.White;
+
+            this.lblLock.Location = new System.Drawing.Point(220, 24);
             this.lblLock.Name = "lblLock";
-            size = new Size(56, 16);
-            this.lblLock.Size = size;
+
+            this.lblLock.Size = new System.Drawing.Size(56, 16);
             this.lblLock.TabIndex = 68;
             this.lblLock.Text = "[Unlock]";
             this.lblLock.TextAlign = ContentAlignment.MiddleCenter;
             this.dbTip.SetToolTip((Control)this.lblLock, "The info display is currently locked to display a specific power, click here to unlock it to display powers as you hover the mouse over them.");
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
             this.Controls.Add((Control)this.lblLock);
             this.Controls.Add((Control)this.lblFloat);
             this.Controls.Add((Control)this.lblShrink);
@@ -3442,10 +3442,10 @@ namespace Hero_Designer
             this.Controls.Add((Control)this.pnlTotal);
             this.Controls.Add((Control)this.pnlEnh);
             this.Controls.Add((Control)this.pnlFX);
-            this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.Name = nameof(DataView);
-            size = new Size(564, 540);
-            this.Size = size;
+
+            this.Size = new System.Drawing.Size(564, 540);
             this.pnlInfo.ResumeLayout(false);
             this.pnlFX.ResumeLayout(false);
             this.pnlTotal.ResumeLayout(false);
@@ -3621,7 +3621,7 @@ namespace Hero_Designer
                 str1 = "No Valid Tip";
             object[] Arguments = new object[1] { (object)str1 };
             bool[] CopyBack = new bool[1] { true };
-            NewLateBinding.LateCall(Sender, (System.Type)null, "SetTip", Arguments, (string[])null, (System.Type[])null, CopyBack, true);
+            NewLateBinding.LateCall(Sender, null, "SetTip", Arguments, (string[])null, (System.Type[])null, CopyBack, true);
             if (!CopyBack[0])
                 return;
             string str2 = (string)Conversions.ChangeType(RuntimeHelpers.GetObjectValue(Arguments[0]), typeof(string));
@@ -3741,9 +3741,9 @@ namespace Hero_Designer
                 this.DisplayFlippedEnhancements();
             Rectangle srcRect = new Rectangle(0, 0, this.pnlEnhActive.Width, this.pnlEnhActive.Height);
             Rectangle destRect = new Rectangle(0, 0, this.pnlEnhActive.Width, this.pnlEnhActive.Height);
-            this.pnlEnhActive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            this.pnlEnhActive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
             srcRect = new Rectangle(0, this.pnlEnhActive.Height, this.pnlEnhInactive.Width, this.pnlEnhInactive.Height);
-            this.pnlEnhInactive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            this.pnlEnhInactive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
         }
 
         void ResetSize()
@@ -3982,20 +3982,20 @@ namespace Hero_Designer
 
         public void SetFontData()
         {
-            this.info_DataList.Font = new Font(this.info_DataList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.fx_List1.Font = new Font(this.fx_List1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.fx_List2.Font = new Font(this.fx_List2.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.fx_List3.Font = new Font(this.fx_List3.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.total_Misc.Font = new Font(this.total_Misc.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.enhListing.Font = new Font(this.enhListing.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Regular);
-            this.pnlEnhActive.Font = new Font(this.enhListing.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold);
+            this.info_DataList.Font = new System.Drawing.Font(this.info_DataList.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.fx_List1.Font = new System.Drawing.Font(this.fx_List1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.fx_List2.Font = new System.Drawing.Font(this.fx_List2.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.fx_List3.Font = new System.Drawing.Font(this.fx_List3.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.total_Misc.Font = new System.Drawing.Font(this.total_Misc.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.enhListing.Font = new System.Drawing.Font(this.enhListing.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Regular);
+            this.pnlEnhActive.Font = new System.Drawing.Font(this.enhListing.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold);
             this.info_DataList.ForceBold = MidsContext.Config.RtFont.PairedBold;
             this.fx_List1.ForceBold = MidsContext.Config.RtFont.PairedBold;
             this.fx_List2.ForceBold = MidsContext.Config.RtFont.PairedBold;
             this.fx_List3.ForceBold = MidsContext.Config.RtFont.PairedBold;
             this.total_Misc.ForceBold = MidsContext.Config.RtFont.PairedBold;
             this.enhListing.ForceBold = MidsContext.Config.RtFont.PairedBold;
-            this.gDef1.Font = new Font(this.gDef1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold);
+            this.gDef1.Font = new System.Drawing.Font(this.gDef1.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold);
             this.gDef2.Font = this.gDef1.Font;
             this.gRes1.Font = this.gDef1.Font;
             this.gRes2.Font = this.gDef1.Font;
@@ -4016,19 +4016,19 @@ namespace Hero_Designer
             this.fx_List1.ItemColorAlt = MidsContext.Config.RtFont.ColorEnhancement;
             this.fx_List2.ItemColorAlt = MidsContext.Config.RtFont.ColorEnhancement;
             this.fx_List3.ItemColorAlt = MidsContext.Config.RtFont.ColorEnhancement;
-            this.enhListing.ItemColorAlt = Color.Yellow;
+            this.enhListing.ItemColorAlt = System.Drawing.Color.Yellow;
             this.total_Misc.ItemColorAlt = MidsContext.Config.RtFont.ColorEnhancement;
             this.info_DataList.ValueColorD = MidsContext.Config.RtFont.ColorInvention;
             this.fx_List1.ValueColorD = MidsContext.Config.RtFont.ColorInvention;
             this.fx_List2.ValueColorD = MidsContext.Config.RtFont.ColorInvention;
             this.fx_List3.ValueColorD = MidsContext.Config.RtFont.ColorInvention;
-            this.enhListing.ValueColorD = Color.Red;
+            this.enhListing.ValueColorD = System.Drawing.Color.Red;
             this.total_Misc.ValueColorD = MidsContext.Config.RtFont.ColorInvention;
             this.info_DataList.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
             this.fx_List1.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
             this.fx_List2.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
             this.fx_List3.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
-            this.enhListing.ItemColorSpecial = Color.FromArgb(0, (int)byte.MaxValue, 0);
+            this.enhListing.ItemColorSpecial = System.Drawing.Color.FromArgb(0, (int)byte.MaxValue, 0);
             this.total_Misc.ItemColorSpecial = MidsContext.Config.RtFont.ColorPlSpecial;
         }
 
@@ -4191,7 +4191,7 @@ namespace Hero_Designer
         void Title_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new Point(-e.X, -e.Y);
+            this.mouse_offset = new System.Drawing.Point(-e.X, -e.Y);
         }
 
         void Title_MouseMove(object sender, MouseEventArgs e)
@@ -4199,15 +4199,15 @@ namespace Hero_Designer
         {
             if (e.Button != MouseButtons.Left || this.MoveDisable)
                 return;
-            Point point1 = new Point(e.X, e.Y);
+            Point point1 = new System.Drawing.Point(e.X, e.Y);
             point1.Offset(this.mouse_offset.X, this.mouse_offset.Y);
-            Point point2 = new Point();
+            Point point2 = new System.Drawing.Point();
             ref Point local = ref point2;
             Point location = this.Location;
             int x = location.X + point1.X;
             location = this.Location;
             int y = location.Y + point1.Y;
-            local = new Point(x, y);
+            local = new System.Drawing.Point(x, y);
             if (point2.X - 10 < this.SnapLocation.X)
                 point2.X = this.SnapLocation.X;
             if (point2.X + this.Width + 10 > this.ScreenBounds.Right & point2.X + this.Width - 20 < this.ScreenBounds.Right)
