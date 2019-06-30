@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  public class frmEnhEdit : Form
+  public partial class frmEnhEdit : Form
   {
         Button btnAdd;
 
@@ -40,14 +40,6 @@ namespace Hero_Designer
     ListView _lvEnh;
 
         CheckBox NoReload;
-
-    IContainer components;
-
-
-
-
-
-
 
 
     ListView lvEnh
@@ -283,13 +275,6 @@ namespace Hero_Designer
       this.lvEnh.EndUpdate();
     }
 
-    protected override void Dispose(bool disposing)
-    {
-      if (disposing && this.components != null)
-        this.components.Dispose();
-      base.Dispose(disposing);
-    }
-
     public void FillImageList()
     {
       Size imageSize1 = this.ilEnh.ImageSize;
@@ -341,211 +326,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      this.components = (IContainer) new Container();
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmEnhEdit));
-      this.lvEnh = new ListView();
-      this.ColumnHeader2 = new ColumnHeader();
-      this.ColumnHeader3 = new ColumnHeader();
-      this.ColumnHeader4 = new ColumnHeader();
-      this.ColumnHeader1 = new ColumnHeader();
-      this.ColumnHeader5 = new ColumnHeader();
-      this.ilEnh = new ImageList(this.components);
-      this.btnUp = new Button();
-      this.btnDown = new Button();
-      this.btnAdd = new Button();
-      this.btnDelete = new Button();
-      this.btnEdit = new Button();
-      this.btnSave = new Button();
-      this.btnCancel = new Button();
-      this.btnClone = new Button();
-      this.NoReload = new CheckBox();
-      this.lblLoading = new Label();
-      this.SuspendLayout();
-      this.lvEnh.BackColor = Color.White;
-      this.lvEnh.Columns.AddRange(new ColumnHeader[5]
-      {
-        this.ColumnHeader2,
-        this.ColumnHeader3,
-        this.ColumnHeader4,
-        this.ColumnHeader1,
-        this.ColumnHeader5
-      });
-      this.lvEnh.ForeColor = Color.Black;
-      this.lvEnh.FullRowSelect = true;
-      this.lvEnh.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-      this.lvEnh.HideSelection = false;
-
-      this.lvEnh.Location = new Point(8, 8);
-      this.lvEnh.MultiSelect = false;
-      this.lvEnh.Name = "lvEnh";
-
-      this.lvEnh.Size = new Size(740, 556);
-      this.lvEnh.SmallImageList = this.ilEnh;
-      this.lvEnh.TabIndex = 0;
-      this.lvEnh.UseCompatibleStateImageBehavior = false;
-      this.lvEnh.View = View.Details;
-      this.ColumnHeader2.Text = "Name";
-      this.ColumnHeader2.Width = 312;
-      this.ColumnHeader3.Text = "Type";
-      this.ColumnHeader3.Width = 72;
-      this.ColumnHeader4.Text = "Effects";
-      this.ColumnHeader4.Width = 48;
-      this.ColumnHeader1.Text = "Classes";
-      this.ColumnHeader1.Width = 135;
-      this.ColumnHeader5.Text = "Set";
-      this.ColumnHeader5.Width = 147;
-      this.ilEnh.ColorDepth = ColorDepth.Depth32Bit;
-
-      this.ilEnh.ImageSize = new Size(16, 16);
-      this.ilEnh.TransparentColor = Color.Transparent;
-      this.btnUp.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnUp.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnUp.Location = new Point(756, 28);
-      this.btnUp.Name = "btnUp";
-
-      this.btnUp.Size = new Size(75, 23);
-      this.btnUp.TabIndex = 1;
-      this.btnUp.Text = "Move Up";
-      this.btnUp.UseVisualStyleBackColor = true;
-      this.btnDown.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnDown.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnDown.Location = new Point(756, 56);
-      this.btnDown.Name = "btnDown";
-
-      this.btnDown.Size = new Size(75, 23);
-      this.btnDown.TabIndex = 2;
-      this.btnDown.Text = "Move Down";
-      this.btnDown.UseVisualStyleBackColor = true;
-      this.btnAdd.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnAdd.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnAdd.Location = new Point(756, 104);
-      this.btnAdd.Name = "btnAdd";
-
-      this.btnAdd.Size = new Size(75, 23);
-      this.btnAdd.TabIndex = 3;
-      this.btnAdd.Text = "Add...";
-      this.btnAdd.UseVisualStyleBackColor = true;
-      this.btnDelete.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnDelete.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnDelete.Location = new Point(756, 224);
-      this.btnDelete.Name = "btnDelete";
-
-      this.btnDelete.Size = new Size(75, 23);
-      this.btnDelete.TabIndex = 4;
-      this.btnDelete.Text = "Delete";
-      this.btnDelete.UseVisualStyleBackColor = true;
-      this.btnEdit.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnEdit.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnEdit.Location = new Point(756, 184);
-      this.btnEdit.Name = "btnEdit";
-
-      this.btnEdit.Size = new Size(75, 23);
-      this.btnEdit.TabIndex = 5;
-      this.btnEdit.Text = "Edit...";
-      this.btnEdit.UseVisualStyleBackColor = true;
-      this.btnSave.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnSave.DialogResult = DialogResult.OK;
-      this.btnSave.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnSave.Location = new Point(720, 580);
-      this.btnSave.Name = "btnSave";
-
-      this.btnSave.Size = new Size(112, 32);
-      this.btnSave.TabIndex = 21;
-      this.btnSave.Text = "Save and Close";
-      this.btnSave.UseVisualStyleBackColor = true;
-      this.btnCancel.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnCancel.DialogResult = DialogResult.Cancel;
-      this.btnCancel.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnCancel.Location = new Point(493, 580);
-      this.btnCancel.Name = "btnCancel";
-
-      this.btnCancel.Size = new Size(207, 32);
-      this.btnCancel.TabIndex = 22;
-      this.btnCancel.Text = "Cancel and Discard Changes";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      this.btnClone.BackColor = Color.FromArgb(192, 192, (int) byte.MaxValue);
-      this.btnClone.Font = new Font("Arial", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-
-      this.btnClone.Location = new Point(756, 144);
-      this.btnClone.Name = "btnClone";
-
-      this.btnClone.Size = new Size(75, 23);
-      this.btnClone.TabIndex = 24;
-      this.btnClone.Text = "Clone...";
-      this.btnClone.UseVisualStyleBackColor = true;
-      this.NoReload.ForeColor = Color.White;
-
-      this.NoReload.Location = new Point(12, 580);
-      this.NoReload.Name = "NoReload";
-
-      this.NoReload.Size = new Size(248, 16);
-      this.NoReload.TabIndex = 25;
-      this.NoReload.Text = "Disable Image Reload";
-      this.lblLoading.BackColor = Color.White;
-      this.lblLoading.Font = new Font("Arial", 14f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.lblLoading.ForeColor = Color.Black;
-
-      this.lblLoading.Location = new Point(256, 264);
-      this.lblLoading.Name = "lblLoading";
-
-      this.lblLoading.Size = new Size(116, 24);
-      this.lblLoading.TabIndex = 26;
-      this.lblLoading.Text = "Loading...";
-      this.lblLoading.TextAlign = ContentAlignment.MiddleCenter;
-      this.AcceptButton = (IButtonControl) this.btnSave;
-
-      this.AutoScaleBaseSize = new Size(5, 13);
-      this.BackColor = Color.FromArgb(0, 0, 32);
-      this.CancelButton = (IButtonControl) this.btnCancel;
-
-      this.ClientSize = new Size(838, 620);
-      this.Controls.Add((Control) this.lblLoading);
-      this.Controls.Add((Control) this.NoReload);
-      this.Controls.Add((Control) this.btnClone);
-      this.Controls.Add((Control) this.btnCancel);
-      this.Controls.Add((Control) this.btnSave);
-      this.Controls.Add((Control) this.btnEdit);
-      this.Controls.Add((Control) this.btnDelete);
-      this.Controls.Add((Control) this.btnAdd);
-      this.Controls.Add((Control) this.btnDown);
-      this.Controls.Add((Control) this.btnUp);
-      this.Controls.Add((Control) this.lvEnh);
-      this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
-      this.ForeColor = SystemColors.ControlText;
-      this.FormBorderStyle = FormBorderStyle.FixedSingle;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmEnhEdit);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Enhancement Editor";
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.NoReload.CheckedChanged += NoReload_CheckedChanged;
-                  this.btnAdd.Click += btnAdd_Click;
-                  this.btnCancel.Click += btnCancel_Click;
-                  this.btnClone.Click += btnClone_Click;
-                  this.btnDelete.Click += btnDelete_Click;
-                  this.btnDown.Click += btnDown_Click;
-                  this.btnEdit.Click += btnEdit_Click;
-                  this.btnSave.Click += btnSave_Click;
-                  this.btnUp.Click += btnUp_Click;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     void lvEnh_DoubleClick(object sender, EventArgs e)
 

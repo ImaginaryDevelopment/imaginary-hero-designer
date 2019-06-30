@@ -8,14 +8,12 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmEnhMiniPick : Form
+    public partial class frmEnhMiniPick : Form
     {
         Button btnOK;
 
         ListBox _lbList;
         Label lblMessage;
-
-        IContainer components;
 
         internal ListBox lbList
         {
@@ -36,78 +34,12 @@ namespace Hero_Designer
             this.Hide();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
-        }
-
         void frmEnhMez_Load(object sender, EventArgs e)
 
         {
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.lbList = new ListBox();
-            this.btnOK = new Button();
-            this.lblMessage = new Label();
-            this.SuspendLayout();
-
-            this.lbList.Location = new Point(4, 44);
-            this.lbList.Name = "lbList";
-
-            this.lbList.Size = new Size(172, 160);
-            this.lbList.TabIndex = 0;
-            this.btnOK.DialogResult = DialogResult.OK;
-
-            this.btnOK.Location = new Point(8, 212);
-            this.btnOK.Name = "btnOK";
-
-            this.btnOK.Size = new Size(168, 24);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
-
-            this.lblMessage.Location = new Point(4, 0);
-            this.lblMessage.Name = "lblMessage";
-
-            this.lblMessage.Size = new Size(176, 40);
-            this.lblMessage.TabIndex = 2;
-            this.lblMessage.Text = "Please select an item from the list below and click OK";
-            this.lblMessage.TextAlign = ContentAlignment.MiddleCenter;
-            this.AcceptButton = (IButtonControl)this.btnOK;
-
-            this.AutoScaleBaseSize = new Size(5, 13);
-            this.CancelButton = (IButtonControl)this.btnOK;
-
-            this.ClientSize = new Size(182, 244);
-            this.ControlBox = false;
-            this.Controls.Add((Control)this.lblMessage);
-            this.Controls.Add((Control)this.btnOK);
-            this.Controls.Add((Control)this.lbList);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmEnhMiniPick);
-            this.ShowInTaskbar = false;
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Details";
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnOK.Click += btnOK_Click;
-                  
-                  // lbList events
-                  this.lbList.DoubleClick += lbList_DoubleClick;
-                  this.lbList.SelectedIndexChanged += lbList_SelectedIndexChanged;
-                  
-              }
-              // finished with events
-            this.ResumeLayout(false);
-        }
 
         void lbList_DoubleClick(object sender, EventArgs e)
 

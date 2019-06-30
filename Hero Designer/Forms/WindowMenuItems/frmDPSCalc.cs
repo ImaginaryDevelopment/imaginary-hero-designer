@@ -13,8 +13,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    [DesignerGenerated]
-    public class frmDPSCalc : Form
+    public partial class frmDPSCalc : Form
     {
         CheckBox chkSortByLevel;
         CheckBox chkDamageBuffs;
@@ -49,9 +48,7 @@ namespace Hero_Designer
         ToolTip ToolTip1;
 
         protected ExtendedBitmap bxRecipe;
-        IContainer components;
 
-        bool Loading;
         frmMain myParent;
         frmDPSCalc.PowerList[] GlobalPowerList;
 
@@ -61,7 +58,6 @@ namespace Hero_Designer
         {
             this.FormClosed += new FormClosedEventHandler(this.frmDPSCalc_FormClosed);
             this.Load += new EventHandler(this.frmDPSCalc_Load);
-            this.Loading = true;
             this.InitializeComponent();
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
@@ -76,21 +72,6 @@ namespace Hero_Designer
 
         {
             this.FillPowerList();
-        }
-
-        [DebuggerNonUserCode]
-        protected override void Dispose(bool disposing)
-        {
-            try
-            {
-                if (!disposing || this.components == null)
-                    return;
-                this.components.Dispose();
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
         }
 
         void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
@@ -183,7 +164,6 @@ namespace Hero_Designer
             this.ibTopmost.IA = this.myParent.Drawing.pImageAttributes;
             this.ibTopmost.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
             this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.Loading = false;
         }
 
         void ibClear_ButtonClicked()
@@ -199,7 +179,7 @@ namespace Hero_Designer
             this.lblDPSNum.Text = " - Null - ";
             this.lblEPSNum.Text = " - Null - ";
             this.ibClear.Checked = false;
-            this.lblHeader.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+            this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
             if (!(this.ibAutoMode.TextOff == "Automagical"))
                 return;
@@ -262,274 +242,6 @@ namespace Hero_Designer
             this.BringToFront();
         }
 
-        void InitializeComponent()
-
-        {
-            this.GlobalPowerList = new frmDPSCalc.PowerList[0];
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmDPSCalc));
-            this.lvPower = new ListView();
-            this.lvPower.ColumnClick += new ColumnClickEventHandler(this.lvPower_ColumnClick);
-            this.chPower = new ColumnHeader();
-            this.chDPA = new ColumnHeader();
-            this.chDamage = new ColumnHeader();
-            this.chRecharge = new ColumnHeader();
-            this.chAnimation = new ColumnHeader();
-            this.chEndurance = new ColumnHeader();
-            this.chDamageBuff = new ColumnHeader();
-            this.chResistanceDebuff = new ColumnHeader();
-            this.chBuildID = new ColumnHeader();
-            this.ilAttackChain = new ImageList(this.components);
-            this.chkSortByLevel = new CheckBox();
-            this.chkDamageBuffs = new CheckBox();
-            this.lblHeader = new Label();
-            this.lblDPS = new Label();
-            this.lblEPS = new Label();
-            this.lblDPSNum = new Label();
-            this.lblEPSNum = new Label();
-            this.Panel1 = new Panel();
-            this.tbDPSOutput = new TextBox();
-            this.Panel2 = new Panel();
-            this.ToolTip1 = new ToolTip(this.components);
-            this.ibAutoMode = new ImageButton();
-            this.ibClear = new ImageButton();
-            this.ibTopmost = new ImageButton();
-            this.ibClose = new ImageButton();
-            this.Panel1.SuspendLayout();
-            this.Panel2.SuspendLayout();
-            this.SuspendLayout();
-            this.lvPower.CheckBoxes = true;
-            this.lvPower.Columns.AddRange(new ColumnHeader[9]
-            {
-        this.chPower,
-        this.chDPA,
-        this.chDamage,
-        this.chRecharge,
-        this.chAnimation,
-        this.chEndurance,
-        this.chDamageBuff,
-        this.chResistanceDebuff,
-        this.chBuildID
-            });
-            this.lvPower.FullRowSelect = true;
-            this.lvPower.HideSelection = false;
-
-            this.lvPower.Location = new Point(12, 12);
-            this.lvPower.MultiSelect = false;
-            this.lvPower.Name = "lvPower";
-
-            this.lvPower.Size = new Size(768, 250);
-            this.lvPower.Sorting = SortOrder.Ascending;
-            this.lvPower.TabIndex = 1;
-            this.lvPower.UseCompatibleStateImageBehavior = false;
-            this.lvPower.View = View.Details;
-            this.chPower.Text = "Power";
-            this.chPower.Width = 150;
-            this.chDPA.Text = "DPA";
-            this.chDPA.Width = 88;
-            this.chDamage.Text = "Damage";
-            this.chDamage.Width = 88;
-            this.chRecharge.Text = "Recharge";
-            this.chRecharge.Width = 88;
-            this.chAnimation.Text = "Animation";
-            this.chAnimation.Width = 88;
-            this.chEndurance.Text = "Endurance";
-            this.chEndurance.Width = 88;
-            this.chDamageBuff.Text = "Dmg Buff";
-            this.chDamageBuff.Width = 88;
-            this.chDamageBuff.Tag = (object)"Damage Buff";
-            this.chResistanceDebuff.Text = "Res Debuff";
-            this.chResistanceDebuff.Width = 88;
-            this.chResistanceDebuff.Tag = (object)"Resistance Debuff";
-            this.chBuildID.Width = 0;
-            this.chBuildID.Tag = (object)"chBuildID";
-            this.ilAttackChain.ColorDepth = ColorDepth.Depth32Bit;
-
-            this.ilAttackChain.ImageSize = new Size(16, 16);
-            this.ilAttackChain.TransparentColor = Color.Transparent;
-            this.chkSortByLevel.Checked = true;
-            this.chkSortByLevel.CheckState = CheckState.Checked;
-            this.chkSortByLevel.ForeColor = Color.White;
-
-            this.chkSortByLevel.Location = new Point(12, 263);
-            this.chkSortByLevel.Name = "chkSortByLevel";
-
-            this.chkSortByLevel.Size = new Size(176, 16);
-            this.chkSortByLevel.TabIndex = 9;
-            this.chkSortByLevel.Text = "Sort By Level";
-            this.chkSortByLevel.UseVisualStyleBackColor = true;
-            this.chkDamageBuffs.Checked = true;
-            this.chkDamageBuffs.CheckState = CheckState.Checked;
-            this.chkDamageBuffs.ForeColor = Color.White;
-
-            this.chkDamageBuffs.Location = new Point(250, 450);
-            this.chkDamageBuffs.Name = "chkDamageBuffs";
-
-            this.chkDamageBuffs.Size = new Size(150, 16);
-            this.chkDamageBuffs.TabIndex = 9;
-            this.chkDamageBuffs.Text = "Add Damage Buffs?";
-            this.chkDamageBuffs.UseVisualStyleBackColor = true;
-            this.lblHeader.Font = new Font("Arial", 17.5f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            this.lblHeader.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-
-            this.lblHeader.Location = new Point(0, 0);
-            this.lblHeader.Name = "lblHeader";
-
-            this.lblHeader.Size = new Size(700, 30);
-            this.lblHeader.TabIndex = 10;
-            this.lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
-            this.lblHeader.TextAlign = ContentAlignment.MiddleLeft;
-            this.Panel1.Controls.Add((Control)this.tbDPSOutput);
-            this.Panel1.Controls.Add((Control)this.lblDPS);
-            this.Panel1.Controls.Add((Control)this.lblEPS);
-            this.Panel1.Controls.Add((Control)this.lblDPSNum);
-            this.Panel1.Controls.Add((Control)this.lblEPSNum);
-            this.Panel1.Controls.Add((Control)this.lblHeader);
-
-            this.Panel1.Location = new Point(0, 36);
-            this.Panel1.Name = "Panel1";
-
-            this.Panel1.Size = new Size(790, 177);
-            this.Panel1.TabIndex = 11;
-
-            this.tbDPSOutput.Location = new Point(0, 36);
-            this.tbDPSOutput.BackColor = Color.Black;
-            this.tbDPSOutput.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.tbDPSOutput.Height = 200;
-            this.tbDPSOutput.Width = 600;
-            this.tbDPSOutput.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-
-            this.lblDPS.Location = new Point(650, 10);
-
-            this.lblDPS.MinimumSize = new Size(200, 30);
-            this.lblDPS.BackColor = Color.Black;
-            this.lblDPS.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.lblDPS.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.lblDPS.Text = "Estimated DPS: ";
-
-            this.lblDPSNum.Location = new Point(660, 40);
-
-            this.lblDPSNum.MinimumSize = new Size(200, 30);
-            this.lblDPSNum.BackColor = Color.Black;
-            this.lblDPSNum.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.lblDPSNum.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.lblDPSNum.Text = "-Null-";
-
-            this.lblEPS.Location = new Point(650, 75);
-
-            this.lblEPS.MinimumSize = new Size(200, 30);
-            this.lblEPS.BackColor = Color.Black;
-            this.lblEPS.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.lblEPS.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.lblEPS.Text = "Estimated EPS: ";
-
-            this.lblEPSNum.Location = new Point(660, 105);
-
-            this.lblEPSNum.MinimumSize = new Size(200, 30);
-            this.lblEPSNum.BackColor = Color.Black;
-            this.lblEPSNum.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.lblEPSNum.Font = new Font("Arial", 14f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.lblEPSNum.Text = "-Null-";
-            this.Panel2.BackColor = Color.Black;
-            this.Panel2.Controls.Add((Control)this.Panel1);
-
-            this.Panel2.Location = new Point(12, 260);
-            this.Panel2.Name = "Panel2";
-
-            this.Panel2.Size = new Size(790, 213);
-            this.Panel2.TabIndex = 12;
-            this.ToolTip1.SetToolTip((Control)this.ibAutoMode, "Click to enable Automagical Mode");
-            this.ibAutoMode.Checked = false;
-            this.ibAutoMode.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.ibAutoMode.KnockoutLocationPoint = new Point(0, 0);
-
-            this.ibAutoMode.Location = new Point(123, 445);
-            this.ibAutoMode.Name = "ibAutoMode";
-
-            this.ibAutoMode.Size = new Size(105, 22);
-            this.ibAutoMode.TabIndex = 14;
-            this.ibAutoMode.TextOff = "Manual";
-            this.ibAutoMode.TextOn = "Alt Text";
-            this.ibAutoMode.Toggle = false;
-            this.ibClear.Checked = false;
-            this.ibClear.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.ibClear.KnockoutLocationPoint = new Point(0, 0);
-
-            this.ibClear.Location = new Point(12, 445);
-            this.ibClear.Name = "ibClear";
-
-            this.ibClear.Size = new Size(105, 22);
-            this.ibClear.TabIndex = 13;
-            this.ibClear.TextOff = "Clear";
-            this.ibClear.TextOn = "Alt Text";
-            this.ibClear.Toggle = false;
-            this.ibTopmost.Checked = true;
-            this.ibTopmost.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.ibTopmost.KnockoutLocationPoint = new Point(0, 0);
-
-            this.ibTopmost.Location = new Point(406, 445);
-            this.ibTopmost.Name = "ibTopmost";
-
-            this.ibTopmost.Size = new Size(105, 22);
-            this.ibTopmost.TabIndex = 7;
-            this.ibTopmost.TextOff = "Keep On Top";
-            this.ibTopmost.TextOn = "Keep On Top";
-            this.ibTopmost.Toggle = true;
-            this.ibClose.Checked = false;
-            this.ibClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.ibClose.KnockoutLocationPoint = new Point(0, 0);
-
-            this.ibClose.Location = new Point(517, 445);
-            this.ibClose.Name = "ibClose";
-
-            this.ibClose.Size = new Size(105, 22);
-            this.ibClose.TabIndex = 6;
-            this.ibClose.TextOff = "Close";
-            this.ibClose.TextOn = "Alt Text";
-            this.ibClose.Toggle = false;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-
-            this.ClientSize = new Size(634, 479);
-            this.Controls.Add((Control)this.ibAutoMode);
-            this.Controls.Add((Control)this.ibClear);
-            this.Controls.Add((Control)this.chkSortByLevel);
-            this.Controls.Add((Control)this.chkDamageBuffs);
-            this.Controls.Add((Control)this.ibTopmost);
-            this.Controls.Add((Control)this.ibClose);
-            this.Controls.Add((Control)this.lvPower);
-            this.Controls.Add((Control)this.Panel2);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmDPSCalc);
-            this.StartPosition = FormStartPosition.Manual;
-            this.Text = "Damage Per Second Calculator (Beta)";
-            this.TopMost = true;
-            this.Panel1.ResumeLayout(false);
-            this.Panel2.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-                this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
-                this.ibClear.ButtonClicked += ibClear_ButtonClicked;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-
-                // lvPower events
-                this.lvPower.MouseEnter += lvPower_MouseEnter;
-                this.lvPower.ItemChecked += lvPower_ItemChecked;
-                this.lvPower.ItemSelectionChanged += lvPower_Clicked;
-
-            }
-            // finished with events
-            this.ResumeLayout(false);
-        }
 
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
 
@@ -881,12 +593,12 @@ namespace Hero_Designer
                 }
                 if (!flag)
                 {
-                    this.lblHeader.ForeColor = Color.Red;
+                    this.lblHeader.ForeColor = System.Drawing.Color.Red;
                     this.lblHeader.Text = "Impossible Chain";
                 }
                 else
                 {
-                    this.lblHeader.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
+                    this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
                     this.lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
                 }
                 this.lblDPSNum.Text = (num1 / num3).ToString();

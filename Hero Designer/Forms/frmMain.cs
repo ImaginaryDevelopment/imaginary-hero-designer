@@ -157,18 +157,18 @@ namespace Hero_Designer
             {
                 this.dvAnchored = new DataView();
                 this.Controls.Add((Control)this.dvAnchored);
-                this.dvAnchored.BackColor = Color.Black;
+                this.dvAnchored.BackColor = System.Drawing.Color.Black;
                 this.dvAnchored.DrawVillain = false;
                 this.dvAnchored.Floating = false;
-                this.dvAnchored.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+                this.dvAnchored.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
 
-                this.dvAnchored.Location = new Point(16, 391);
+                this.dvAnchored.Location = new System.Drawing.Point(16, 391);
                 this.dvAnchored.Name = "dvAnchored";
 
-                this.dvAnchored.Size = new Size(300, 347);
+                this.dvAnchored.Size = new System.Drawing.Size(300, 347);
                 this.dvAnchored.TabIndex = 69;
                 this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
-                var componentResourceManager = new ComponentResourceManager(typeof(frmMain));
+                var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
                 this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 this.Name = nameof(frmMain);
                 this.AutoArrangeAllSlotsToolStripMenuItem.Click += AutoArrangeAllSlotsToolStripMenuItem_Click;
@@ -566,7 +566,7 @@ namespace Hero_Designer
                 int index = frmMain.ArchetypeIndirectToIndex(e.Index);
                 RectangleF destRect = new RectangleF((float)(e.Bounds.X + 1), (float)e.Bounds.Y, 16f, 16f);
                 RectangleF srcRect = new RectangleF((float)(index * 16), 0.0f, 16f, 16f);
-                e.Graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                e.Graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
@@ -624,12 +624,12 @@ namespace Hero_Designer
                     bounds = e.Bounds;
                     double num2 = (double)(bounds.Width - 10);
                     if (width <= num2)
-                        e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                        e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                     else
                         destRect.Width = 0.0f;
                 }
                 else
-                    e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                    e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
@@ -661,7 +661,7 @@ namespace Hero_Designer
             {
                 RectangleF destRect = new RectangleF((float)(e.Bounds.X + 1), (float)e.Bounds.Y, 16f, 16f);
                 RectangleF srcRect = new RectangleF((float)(DatabaseAPI.GetOriginIDByName(Conversions.ToString(this.cbOrigin.Items[e.Index])) * 16), 0.0f, 16f, 16f);
-                e.Graphics.DrawImage((Image)I9Gfx.Origins.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+                e.Graphics.DrawImage((Image)I9Gfx.Origins.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
@@ -1175,7 +1175,7 @@ namespace Hero_Designer
         {
             if (!this.FlipActive)
                 return;
-            Point point1 = new Point();
+            Point point1 = new System.Drawing.Point();
             Build currentBuild = MidsContext.Character.CurrentBuild;
             int flipPowerId = this.FlipPowerID;
             PowerEntry power = currentBuild.Powers[flipPowerId];
@@ -1246,7 +1246,7 @@ namespace Hero_Designer
                         I9Gfx.DrawFlippingEnhancement(ref graphics, rectangle1, num2, DatabaseAPI.Database.Enhancements[index].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[index].TypeID, i9Slot1.Grade));
                     }
                     else
-                        this.drawing.bxBuffer.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, GraphicsUnit.Pixel, recolourIa);
+                        this.drawing.bxBuffer.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                     if (MidsContext.Config.CalcEnhLevel == Enums.eEnhRelative.None | MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].Slots[Index].Level >= MidsContext.Config.ForceLevel | this.drawing.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].StatInclude)
                     {
                         rectangle2.Inflate(1, 1);
@@ -1526,33 +1526,33 @@ namespace Hero_Designer
                 if (this.llPrimary.DesiredHeight < height)
                 {
                     size = this.llPrimary.SizeNormal;
-                    this.llPrimary.SizeNormal = new Size(size.Width, this.llPrimary.DesiredHeight);
+                    this.llPrimary.SizeNormal = new System.Drawing.Size(size.Width, this.llPrimary.DesiredHeight);
                 }
                 else
                 {
                     if (height < 70)
                         height = 70;
-                    size = new Size(this.llPrimary.SizeNormal.Width, height);
+                    size = new System.Drawing.Size(this.llPrimary.SizeNormal.Width, height);
                     this.llPrimary.SizeNormal = size;
                 }
                 if (this.llSecondary.DesiredHeight < height)
                 {
-                    size = new Size(this.llSecondary.SizeNormal.Width, this.llSecondary.DesiredHeight);
+                    size = new System.Drawing.Size(this.llSecondary.SizeNormal.Width, this.llSecondary.DesiredHeight);
                     this.llSecondary.SizeNormal = size;
                 }
                 else
                 {
                     if (height < 70)
                         height = 70;
-                    size = new Size(this.llSecondary.SizeNormal.Width, height);
+                    size = new System.Drawing.Size(this.llSecondary.SizeNormal.Width, height);
                     this.llSecondary.SizeNormal = size;
                 }
             }
             else
             {
-                Size size = new Size(this.llPrimary.SizeNormal.Width, this.llPrimary.DesiredHeight);
+                Size size = new System.Drawing.Size(this.llPrimary.SizeNormal.Width, this.llPrimary.DesiredHeight);
                 this.llPrimary.SizeNormal = size;
-                size = new Size(this.llSecondary.SizeNormal.Width, this.llSecondary.DesiredHeight);
+                size = new System.Drawing.Size(this.llSecondary.SizeNormal.Width, this.llSecondary.DesiredHeight);
                 this.llSecondary.SizeNormal = size;
             }
         }
@@ -1995,7 +1995,7 @@ namespace Hero_Designer
                     int num2 = height3 - height4;
                     height1 = height2 - num2;
                 }
-                size2 = new Size(width1, height1);
+                size2 = new System.Drawing.Size(width1, height1);
                 this.Size = size2;
                 this.tsView2Col.Checked = MidsContext.Config.Columns == 2;
                 this.tsView3Col.Checked = MidsContext.Config.Columns == 3;
@@ -2050,14 +2050,14 @@ namespace Hero_Designer
                 iFrm = null;
                 this.Refresh();
                 this.dvAnchored.SetScreenBounds(this.ClientRectangle);
-                Point iLocation = new Point();
+                Point iLocation = new System.Drawing.Point();
                 ref Point local = ref iLocation;
                 int left = this.llPrimary.Left;
                 int top = this.llPrimary.Top;
                 size1 = this.llPrimary.SizeNormal;
                 int height5 = size1.Height;
                 int y = top + height5 + 5;
-                local = new Point(left, y);
+                local = new System.Drawing.Point(left, y);
                 this.dvAnchored.SetLocation(iLocation, true);
                 this.PriSec_ExpandChanged(true);
             }
@@ -2295,13 +2295,13 @@ namespace Hero_Designer
                 RelativeLevel = this.I9Picker.UI.View.RelLevel
             };
             this.myDataView.SetEnhancementPicker(i9Slot);
-            this.ShowPopup(this.PickerHID, -1, -1, new Point(), this.I9Picker.Bounds, i9Slot, -1);
+            this.ShowPopup(this.PickerHID, -1, -1, new System.Drawing.Point(), this.I9Picker.Bounds, i9Slot, -1);
         }
 
         void I9Picker_HoverSet(int e)
         {
             this.myDataView.SetSetPicker(e);
-            this.ShowPopup(this.PickerHID, -1, -1, new Point(), this.I9Picker.Bounds, null, e);
+            this.ShowPopup(this.PickerHID, -1, -1, new System.Drawing.Point(), this.I9Picker.Bounds, null, e);
         }
 
         void I9Picker_MouseDown(object sender, MouseEventArgs e)
@@ -2468,9 +2468,9 @@ namespace Hero_Designer
             --destRect.Y;
             RectangleF srcRect = new RectangleF((float)(MidsContext.Character.Archetype.Idx * 16), 0.0f, 16f, 16f);
             Graphics graphics = e.Graphics;
-            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
             destRect.X = (float)(this.lblATLocked.Width - 19);
-            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
         }
 
         void lblLocked0_MouseLeave(object sender, EventArgs e)
@@ -2592,7 +2592,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llAncillary.Bounds, null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llAncillary.Bounds, null, -1);
             }
         }
 
@@ -2615,7 +2615,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool0.Bounds, null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llPool0.Bounds, null, -1);
         }
 
         void llPool1_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2637,7 +2637,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool1.Bounds, null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llPool1.Bounds, null, -1);
         }
 
         void llPool2_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2659,7 +2659,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool2.Bounds, null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llPool2.Bounds, null, -1);
         }
 
         void llPool3_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2681,7 +2681,7 @@ namespace Hero_Designer
             this.LastIndex = -1;
             this.LastEnhIndex = -1;
             this.Info_Power(Item.nIDPower, -1, false, false);
-            this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPool3.Bounds, null, -1);
+            this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llPool3.Bounds, null, -1);
         }
 
         void llPrimary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
@@ -2710,7 +2710,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llPrimary.Bounds, null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llPrimary.Bounds, null, -1);
             }
         }
 
@@ -2740,7 +2740,7 @@ namespace Hero_Designer
             else
             {
                 this.Info_Power(Item.nIDPower, -1, false, false);
-                this.ShowPopup(-1, Item.nIDPower, -1, new Point(), this.llSecondary.Bounds, null, -1);
+                this.ShowPopup(-1, Item.nIDPower, -1, new System.Drawing.Point(), this.llSecondary.Bounds, null, -1);
             }
         }
 
@@ -2752,9 +2752,9 @@ namespace Hero_Designer
             --destRect.Y;
             RectangleF srcRect = new RectangleF((float)(MidsContext.Character.Powersets[(int)iId].nID * 16), 0.0f, 16f, 16f);
             Graphics graphics = e.Graphics;
-            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
             destRect.X = (float)(this.lblLocked0.Width - 19);
-            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
+            graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
         }
 
         void MovePopup(Rectangle rBounds)
@@ -2836,7 +2836,7 @@ namespace Hero_Designer
                 this.UpdateDMBuffer();
             if (this.dmBuffer == null)
                 return;
-            e.Graphics.DrawImage((Image)this.dmBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
+            e.Graphics.DrawImage((Image)this.dmBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, System.Drawing.GraphicsUnit.Pixel);
         }
 
         void pnlGFX_DragDrop(object sender, DragEventArgs e)
@@ -3003,7 +3003,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    Point e1 = new Point(e.X, e.Y);
+                    Point e1 = new System.Drawing.Point(e.X, e.Y);
                     this.ShowPopup(index, -1, sIDX, e1, new Rectangle(), null, -1);
                     if (MidsContext.Character.CanPlaceSlot & MainModule.MidsController.Toon.SlotCheck(MidsContext.Character.CurrentBuild.Powers[index]) > -1)
                     {
@@ -3146,7 +3146,7 @@ namespace Hero_Designer
                                     this.I9Picker.SetData(-1, ref MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement, ref this.drawing, enhancements);
 
 
-                                var point = new Point((int)Math.Round((double)(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X) - (double)this.I9Picker.Width / 2.0), (int)Math.Round((double)(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y) - (double)this.I9Picker.Height / 2.0));
+                                var point = new System.Drawing.Point((int)Math.Round((double)(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X) - (double)this.I9Picker.Width / 2.0), (int)Math.Round((double)(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y) - (double)this.I9Picker.Height / 2.0));
                                 if (point.Y < this.MenuBar.Height)
                                     point.Y = this.MenuBar.Height;
                                 Size clientSize;
@@ -3905,9 +3905,9 @@ namespace Hero_Designer
                     return;
             }
 
-            label1.Location = new Point(X, Y);
+            label1.Location = new System.Drawing.Point(X, Y);
 
-            var point = new Point(label1.Location.X, label1.Location.Y);
+            var point = new System.Drawing.Point(label1.Location.X, label1.Location.Y);
             point.Y += label1.Height;
             comboBox.Location = point;
             label2.Location = point;
@@ -3936,9 +3936,9 @@ namespace Hero_Designer
             {
                 num = this.ClientSize.Height - this.llAncillary.DesiredHeight - this.cbAncillary.Height - this.lblEpic.Height;
                 Size size = this.llPrimary.SizeNormal;
-                this.llPrimary.SizeNormal = new Size(size.Width, num - 4 - this.llPrimary.Top);
+                this.llPrimary.SizeNormal = new System.Drawing.Size(size.Width, num - 4 - this.llPrimary.Top);
 
-                this.llSecondary.SizeNormal = new Size(this.llSecondary.SizeNormal.Width, num - 4 - this.llPrimary.Top);
+                this.llSecondary.SizeNormal = new System.Drawing.Size(this.llSecondary.SizeNormal.Width, num - 4 - this.llPrimary.Top);
             }
             Rectangle poolRect3 = this.raGetPoolRect(2);
             poolRect3.X = this.llPrimary.Left;
@@ -4425,7 +4425,7 @@ namespace Hero_Designer
                 }
             }
             this.I9Popup.BringToFront();
-            this.I9Popup.Location = new Point(x, y);
+            this.I9Popup.Location = new System.Drawing.Point(x, y);
         }
 
         void SetTitleBar(bool Hero = true)
@@ -4558,7 +4558,7 @@ namespace Hero_Designer
                     if (hIDX > -1 & sIDX < 0 & pIDX < 0 & eSlot == null & setIDX < 0)
                     {
                         rectangle = this.drawing.PowerBoundsUnScaled(hIDX);
-                        Point e1 = new Point(this.drawing.ScaleUp(e.X), this.drawing.ScaleUp(e.Y));
+                        Point e1 = new System.Drawing.Point(this.drawing.ScaleUp(e.X), this.drawing.ScaleUp(e.Y));
                         if (this.drawing.WithinPowerBar(rectangle, e1))
                         {
                             if (powerEntry.NIDPower > 0)
@@ -5387,19 +5387,19 @@ namespace Hero_Designer
             if (this.myDataView.DrawVillain)
             {
                 flag = this.I9Picker.ForeColor.R != byte.MaxValue;
-                this.BackColor = Color.FromArgb(0, 0, 0);
-                this.lblATLocked.BackColor = Color.FromArgb((int)byte.MaxValue, 128, 128);
-                this.I9Picker.ForeColor = Color.FromArgb((int)byte.MaxValue, 0, 0);
+                this.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                this.lblATLocked.BackColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 128, 128);
+                this.I9Picker.ForeColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 0, 0);
             }
             else
             {
                 flag = this.I9Picker.ForeColor.R != (byte)96;
-                this.BackColor = Color.FromArgb(0, 0, 0);
-                this.lblATLocked.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-                this.I9Picker.ForeColor = Color.FromArgb(96, 48, (int)byte.MaxValue);
+                this.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
+                this.lblATLocked.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
+                this.I9Picker.ForeColor = System.Drawing.Color.FromArgb(96, 48, (int)byte.MaxValue);
             }
             this.I9Picker.BackColor = this.BackColor;
-            this.I9Popup.BackColor = Color.Black;
+            this.I9Popup.BackColor = System.Drawing.Color.Black;
             this.I9Popup.ForeColor = this.I9Picker.ForeColor;
             this.myDataView.BackColor = this.BackColor;
             this.llPrimary.BackColor = this.BackColor;
@@ -5430,7 +5430,7 @@ namespace Hero_Designer
             iList = this.llPool3;
             this.UpdateLLColours(ref iList);
             this.llPool3 = iList;
-            this.llPrimary.Font = new Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
+            this.llPrimary.Font = new System.Drawing.Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llSecondary.Font = this.llPrimary.Font;
             this.llPool0.Font = this.llPrimary.Font;
             this.llPool1.Font = this.llPrimary.Font;
@@ -5578,7 +5578,7 @@ namespace Hero_Designer
             this.llPrimary.PaddingY = 2;
             this.llSecondary.PaddingY = 2;
             this.FixPrimarySecondaryHeight();
-            this.llPrimary.Font = new Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, FontStyle.Bold, GraphicsUnit.Point);
+            this.llPrimary.Font = new System.Drawing.Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.llSecondary.Font = this.llPrimary.Font;
             int num1 = this.llPrimary.Items.Length - 1;
             for (int index = 0; index <= num1; ++index)
@@ -5587,7 +5587,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
                 this.llSecondary.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
             this.heroVillain.Checked = !MidsContext.Character.IsHero();
-            this.dvAnchored.SetLocation(new Point(this.llPrimary.Left, this.llPrimary.Top + this.raGreater(this.llPrimary.SizeNormal.Height, this.llSecondary.SizeNormal.Height) + 5), ForceComplete);
+            this.dvAnchored.SetLocation(new System.Drawing.Point(this.llPrimary.Left, this.llPrimary.Top + this.raGreater(this.llPrimary.SizeNormal.Height, this.llSecondary.SizeNormal.Height) + 5), ForceComplete);
             this.llPrimary.SuspendRedraw = false;
             this.llSecondary.SuspendRedraw = false;
             if (this.myDataView != null && this.drawing.InterfaceMode == Enums.eInterfaceMode.Normal & this.myDataView.TabPageIndex == 2)
@@ -5650,13 +5650,13 @@ namespace Hero_Designer
             local = new Rectangle(0, 0, width, height1);
             Rectangle destRect = new Rectangle(0, 0, this.pbDynMode.Width, this.pbDynMode.Height);
             StringFormat stringFormat = new StringFormat();
-            Font bFont = new Font(this.Font.FontFamily, this.Font.Size, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font bFont = new System.Drawing.Font(this.Font.FontFamily, this.Font.Size, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             stringFormat.Alignment = StringAlignment.Center;
             stringFormat.LineAlignment = StringAlignment.Center;
             if (ePowerState == Enums.ePowerState.Open)
-                this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel);
+                this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, System.Drawing.GraphicsUnit.Pixel);
             else
-                this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, GraphicsUnit.Pixel, this.drawing.pImageAttributes);
+                this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, System.Drawing.GraphicsUnit.Pixel, this.drawing.pImageAttributes);
             float height2 = bFont.GetHeight(this.dmBuffer.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.pbDynMode.Height - (double)height2) / 2.0), (float)this.pbDynMode.Width, height2);
             Graphics graphics = this.dmBuffer.Graphics;
@@ -5688,13 +5688,13 @@ namespace Hero_Designer
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
             if (this.myDataView.DrawVillain)
             {
-                iList.ScrollBarColor = Color.FromArgb((int)byte.MaxValue, 0, 0);
-                iList.ScrollButtonColor = Color.FromArgb(192, 0, 0);
+                iList.ScrollBarColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 0, 0);
+                iList.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
             }
             else
             {
-                iList.ScrollBarColor = Color.FromArgb(64, 64, (int)byte.MaxValue);
-                iList.ScrollButtonColor = Color.FromArgb(32, 32, (int)byte.MaxValue);
+                iList.ScrollBarColor = System.Drawing.Color.FromArgb(64, 64, (int)byte.MaxValue);
+                iList.ScrollButtonColor = System.Drawing.Color.FromArgb(32, 32, (int)byte.MaxValue);
             }
         }
 

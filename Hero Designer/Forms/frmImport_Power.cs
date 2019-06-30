@@ -14,8 +14,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  [DesignerGenerated]
-  public class frmImport_Power : Form
+  public partial class frmImport_Power : Form
   {
         Button btnCheckAll;
 
@@ -46,24 +45,9 @@ namespace Hero_Designer
 
     frmBusy bFrm;
 
-    IContainer components;
-
     string FullFileName;
 
     PowerData[] ImportBuffer;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public frmImport_Power()
     {
@@ -256,21 +240,6 @@ namespace Hero_Designer
       this.lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
     }
 
-    [DebuggerNonUserCode]
-    protected override void Dispose(bool disposing)
-    {
-      try
-      {
-        if (!disposing || this.components == null)
-          return;
-        this.components.Dispose();
-      }
-      finally
-      {
-        base.Dispose(disposing);
-      }
-    }
-
     void FillListView()
 
     {
@@ -315,206 +284,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmImport_Power));
-      this.dlgBrowse = new OpenFileDialog();
-      this.btnUncheckAll = new Button();
-      this.btnCheckAll = new Button();
-      this.btnClose = new Button();
-      this.btnImport = new Button();
-      this.lstImport = new ListView();
-      this.ColumnHeader1 = new ColumnHeader();
-      this.ColumnHeader2 = new ColumnHeader();
-      this.ColumnHeader4 = new ColumnHeader();
-      this.ColumnHeader5 = new ColumnHeader();
-      this.Label8 = new Label();
-      this.lblCount = new Label();
-      this.lblDate = new Label();
-      this.udRevision = new NumericUpDown();
-      this.Label6 = new Label();
-      this.lblFile = new Label();
-      this.btnFile = new Button();
-      this.btnCheckModified = new Button();
-      this.btnEraseAll = new Button();
-      this.ColumnHeader3 = new ColumnHeader();
-      this.udRevision.BeginInit();
-      this.SuspendLayout();
-      this.dlgBrowse.DefaultExt = "csv";
-      this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-
-      this.btnUncheckAll.Location = new Point(93, 545);
-      this.btnUncheckAll.Name = "btnUncheckAll";
-
-      this.btnUncheckAll.Size = new Size(75, 23);
-      this.btnUncheckAll.TabIndex = 49;
-      this.btnUncheckAll.Text = "Uncheck All";
-      this.btnUncheckAll.UseVisualStyleBackColor = true;
-
-      this.btnCheckAll.Location = new Point(12, 545);
-      this.btnCheckAll.Name = "btnCheckAll";
-
-      this.btnCheckAll.Size = new Size(75, 23);
-      this.btnCheckAll.TabIndex = 48;
-      this.btnCheckAll.Text = "Check All";
-      this.btnCheckAll.UseVisualStyleBackColor = true;
-
-      this.btnClose.Location = new Point(618, 516);
-      this.btnClose.Name = "btnClose";
-
-      this.btnClose.Size = new Size(86, 23);
-      this.btnClose.TabIndex = 47;
-      this.btnClose.Text = "Close";
-      this.btnClose.UseVisualStyleBackColor = true;
-
-      this.btnImport.Location = new Point(618, 77);
-      this.btnImport.Name = "btnImport";
-
-      this.btnImport.Size = new Size(86, 22);
-      this.btnImport.TabIndex = 46;
-      this.btnImport.Text = "Import";
-      this.btnImport.UseVisualStyleBackColor = true;
-      this.lstImport.CheckBoxes = true;
-      this.lstImport.Columns.AddRange(new ColumnHeader[5]
-      {
-        this.ColumnHeader1,
-        this.ColumnHeader2,
-        this.ColumnHeader4,
-        this.ColumnHeader5,
-        this.ColumnHeader3
-      });
-      this.lstImport.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-
-      this.lstImport.Location = new Point(12, 77);
-      this.lstImport.Name = "lstImport";
-
-      this.lstImport.Size = new Size(600, 462);
-      this.lstImport.TabIndex = 45;
-      this.lstImport.UseCompatibleStateImageBehavior = false;
-      this.lstImport.View = View.Details;
-      this.ColumnHeader1.Text = "Power";
-      this.ColumnHeader1.Width = 237;
-      this.ColumnHeader2.Text = "Name";
-      this.ColumnHeader2.Width = 117;
-      this.ColumnHeader4.Text = "New";
-      this.ColumnHeader4.Width = 71;
-      this.ColumnHeader5.Text = "Modified";
-
-      this.Label8.Location = new Point(346, 53);
-      this.Label8.Name = "Label8";
-
-      this.Label8.Size = new Size(65, 18);
-      this.Label8.TabIndex = 44;
-      this.Label8.Text = "Revision:";
-      this.Label8.TextAlign = ContentAlignment.TopRight;
-
-      this.lblCount.Location = new Point(208, 53);
-      this.lblCount.Name = "lblCount";
-
-      this.lblCount.Size = new Size(132, 18);
-      this.lblCount.TabIndex = 43;
-      this.lblCount.Text = "Sets:";
-
-      this.lblDate.Location = new Point(9, 53);
-      this.lblDate.Name = "lblDate";
-
-      this.lblDate.Size = new Size(175, 18);
-      this.lblDate.TabIndex = 42;
-      this.lblDate.Text = "Date:";
-
-      this.udRevision.Location = new Point(417, 51);
-      this.udRevision.Maximum = new Decimal(new int[4]
-      {
-        (int) ushort.MaxValue,
-        0,
-        0,
-        0
-      });
-      this.udRevision.Name = "udRevision";
-
-      this.udRevision.Size = new Size(116, 20);
-      this.udRevision.TabIndex = 41;
-
-      this.Label6.Location = new Point(12, 9);
-      this.Label6.Name = "Label6";
-
-      this.Label6.Size = new Size(150, 14);
-      this.Label6.TabIndex = 40;
-      this.Label6.Text = "Power Definition File:";
-      this.lblFile.BorderStyle = BorderStyle.Fixed3D;
-
-      this.lblFile.Location = new Point(12, 25);
-      this.lblFile.Name = "lblFile";
-
-      this.lblFile.Size = new Size(521, 23);
-      this.lblFile.TabIndex = 39;
-      this.lblFile.TextAlign = ContentAlignment.MiddleLeft;
-
-      this.btnFile.Location = new Point(539, 25);
-      this.btnFile.Name = "btnFile";
-
-      this.btnFile.Size = new Size(165, 23);
-      this.btnFile.TabIndex = 38;
-      this.btnFile.Text = "Load / Re-Load";
-      this.btnFile.UseVisualStyleBackColor = true;
-
-      this.btnCheckModified.Location = new Point(192, 545);
-      this.btnCheckModified.Name = "btnCheckModified";
-
-      this.btnCheckModified.Size = new Size(171, 23);
-      this.btnCheckModified.TabIndex = 50;
-      this.btnCheckModified.Text = "Modified Only (Skip New)";
-      this.btnCheckModified.UseVisualStyleBackColor = true;
-
-      this.btnEraseAll.Location = new Point(618, 137);
-      this.btnEraseAll.Name = "btnEraseAll";
-
-      this.btnEraseAll.Size = new Size(86, 69);
-      this.btnEraseAll.TabIndex = 63;
-      this.btnEraseAll.Text = "Erase All Powers";
-      this.btnEraseAll.UseVisualStyleBackColor = true;
-      this.ColumnHeader3.Text = "Change Description";
-      this.AutoScaleMode = AutoScaleMode.None;
-
-      this.ClientSize = new Size(716, 575);
-      this.Controls.Add((Control) this.btnEraseAll);
-      this.Controls.Add((Control) this.btnCheckModified);
-      this.Controls.Add((Control) this.btnUncheckAll);
-      this.Controls.Add((Control) this.btnCheckAll);
-      this.Controls.Add((Control) this.btnClose);
-      this.Controls.Add((Control) this.btnImport);
-      this.Controls.Add((Control) this.lstImport);
-      this.Controls.Add((Control) this.Label8);
-      this.Controls.Add((Control) this.lblCount);
-      this.Controls.Add((Control) this.lblDate);
-      this.Controls.Add((Control) this.udRevision);
-      this.Controls.Add((Control) this.Label6);
-      this.Controls.Add((Control) this.lblFile);
-      this.Controls.Add((Control) this.btnFile);
-      this.FormBorderStyle = FormBorderStyle.FixedDialog;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmImport_Power);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Power Import";
-      this.udRevision.EndInit();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.btnCheckAll.Click += btnCheckAll_Click;
-                  this.btnCheckModified.Click += btnCheckModified_Click;
-                  this.btnClose.Click += btnClose_Click;
-                  this.btnEraseAll.Click += btnEraseAll_Click;
-                  this.btnFile.Click += btnFile_Click;
-                  this.btnImport.Click += btnImport_Click;
-                  this.btnUncheckAll.Click += btnUncheckAll_Click;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     bool ParseClasses(string iFileName)
 

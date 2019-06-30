@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-  public class frmTweakMatching : Form
+  public partial class frmTweakMatching : Form
   {
         Button btnAdd;
 
@@ -36,12 +36,7 @@ namespace Hero_Designer
         TextBox txtAddOvr;
         TextBox txtOvr;
 
-    IContainer components;
-
-    protected bool Loaded;
-
-
-
+    bool Loaded;
 
     public frmTweakMatching()
     {
@@ -167,13 +162,6 @@ namespace Hero_Designer
       this.List_Sets();
     }
 
-    protected override void Dispose(bool disposing)
-    {
-      if (disposing && this.components != null)
-        this.components.Dispose();
-      base.Dispose(disposing);
-    }
-
     void frmTweakMatching_Load(object sender, EventArgs e)
 
     {
@@ -231,190 +219,6 @@ namespace Hero_Designer
     }
 
     [DebuggerStepThrough]
-    void InitializeComponent()
-
-    {
-      ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof (frmTweakMatching));
-      this.GroupBox1 = new GroupBox();
-      this.Button2 = new Button();
-      this.Button1 = new Button();
-      this.btnDel = new Button();
-      this.txtOvr = new TextBox();
-      this.lstTweaks = new ListBox();
-      this.GroupBox2 = new GroupBox();
-      this.cbPower = new ComboBox();
-      this.cbSet1 = new ComboBox();
-      this.cbType1 = new ComboBox();
-      this.cbAT1 = new ComboBox();
-      this.txtAddActual = new TextBox();
-      this.txtAddOvr = new TextBox();
-      this.btnAdd = new Button();
-      this.GroupBox1.SuspendLayout();
-      this.GroupBox2.SuspendLayout();
-      this.SuspendLayout();
-      this.GroupBox1.Controls.Add((Control) this.Button2);
-      this.GroupBox1.Controls.Add((Control) this.Button1);
-      this.GroupBox1.Controls.Add((Control) this.btnDel);
-      this.GroupBox1.Controls.Add((Control) this.txtOvr);
-      this.GroupBox1.Controls.Add((Control) this.lstTweaks);
-      this.GroupBox1.Controls.Add((Control) this.GroupBox2);
-
-      this.GroupBox1.Location = new Point(8, 8);
-      this.GroupBox1.Name = "GroupBox1";
-
-      this.GroupBox1.Size = new Size(580, 424);
-      this.GroupBox1.TabIndex = 0;
-      this.GroupBox1.TabStop = false;
-      this.GroupBox1.Text = "Override Editor";
-      this.Button2.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.Button2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.Button2.ForeColor = Color.Black;
-
-      this.Button2.Location = new Point(320, 52);
-      this.Button2.Name = "Button2";
-
-      this.Button2.Size = new Size(56, 24);
-      this.Button2.TabIndex = 9;
-      this.Button2.Text = "Update";
-      this.Button2.UseVisualStyleBackColor = false;
-      this.Button1.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.Button1.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.Button1.ForeColor = Color.Black;
-
-      this.Button1.Location = new Point(516, 392);
-      this.Button1.Name = "Button1";
-
-      this.Button1.Size = new Size(56, 24);
-      this.Button1.TabIndex = 8;
-      this.Button1.Text = "Close";
-      this.Button1.UseVisualStyleBackColor = false;
-      this.btnDel.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.btnDel.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnDel.ForeColor = Color.Black;
-
-      this.btnDel.Location = new Point(236, 52);
-      this.btnDel.Name = "btnDel";
-
-      this.btnDel.Size = new Size(56, 24);
-      this.btnDel.TabIndex = 7;
-      this.btnDel.Text = "Delete";
-      this.btnDel.UseVisualStyleBackColor = false;
-
-      this.txtOvr.Location = new Point(232, 24);
-      this.txtOvr.Name = "txtOvr";
-
-      this.txtOvr.Size = new Size(336, 20);
-      this.txtOvr.TabIndex = 6;
-      this.txtOvr.Text = "Override Desc";
-
-      this.lstTweaks.Location = new Point(8, 20);
-      this.lstTweaks.Name = "lstTweaks";
-
-      this.lstTweaks.Size = new Size(216, 394);
-      this.lstTweaks.TabIndex = 0;
-      this.GroupBox2.Controls.Add((Control) this.cbPower);
-      this.GroupBox2.Controls.Add((Control) this.cbSet1);
-      this.GroupBox2.Controls.Add((Control) this.cbType1);
-      this.GroupBox2.Controls.Add((Control) this.cbAT1);
-      this.GroupBox2.Controls.Add((Control) this.txtAddActual);
-      this.GroupBox2.Controls.Add((Control) this.txtAddOvr);
-      this.GroupBox2.Controls.Add((Control) this.btnAdd);
-
-      this.GroupBox2.Location = new Point(232, 112);
-      this.GroupBox2.Name = "GroupBox2";
-
-      this.GroupBox2.Size = new Size(336, 204);
-      this.GroupBox2.TabIndex = 3;
-      this.GroupBox2.TabStop = false;
-      this.GroupBox2.Text = "Add:";
-      this.cbPower.DropDownStyle = ComboBoxStyle.DropDownList;
-
-      this.cbPower.Location = new Point(8, 92);
-      this.cbPower.Name = "cbPower";
-
-      this.cbPower.Size = new Size(132, 21);
-      this.cbPower.TabIndex = 6;
-      this.cbSet1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-      this.cbSet1.Location = new Point(8, 68);
-      this.cbSet1.Name = "cbSet1";
-
-      this.cbSet1.Size = new Size(132, 21);
-      this.cbSet1.TabIndex = 2;
-      this.cbType1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-      this.cbType1.Location = new Point(8, 44);
-      this.cbType1.Name = "cbType1";
-
-      this.cbType1.Size = new Size(132, 21);
-      this.cbType1.TabIndex = 1;
-      this.cbAT1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-      this.cbAT1.Location = new Point(8, 20);
-      this.cbAT1.Name = "cbAT1";
-
-      this.cbAT1.Size = new Size(132, 21);
-      this.cbAT1.TabIndex = 0;
-      this.txtAddActual.Enabled = false;
-
-      this.txtAddActual.Location = new Point(8, 120);
-      this.txtAddActual.Name = "txtAddActual";
-
-      this.txtAddActual.Size = new Size(336, 20);
-      this.txtAddActual.TabIndex = 3;
-      this.txtAddActual.Text = "Actual Desc";
-
-      this.txtAddOvr.Location = new Point(8, 148);
-      this.txtAddOvr.Name = "txtAddOvr";
-
-      this.txtAddOvr.Size = new Size(336, 20);
-      this.txtAddOvr.TabIndex = 4;
-      this.txtAddOvr.Text = "Override Desc";
-      this.btnAdd.BackColor = Color.FromArgb(128, 128, (int) byte.MaxValue);
-      this.btnAdd.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
-      this.btnAdd.ForeColor = Color.Black;
-
-      this.btnAdd.Location = new Point(8, 172);
-      this.btnAdd.Name = "btnAdd";
-
-      this.btnAdd.Size = new Size(56, 24);
-      this.btnAdd.TabIndex = 5;
-      this.btnAdd.Text = "Add";
-      this.btnAdd.UseVisualStyleBackColor = false;
-      this.AutoScaleMode = AutoScaleMode.None;
-      this.BackColor = Color.FromArgb(0, 0, 32);
-
-      this.ClientSize = new Size(602, 446);
-      this.Controls.Add((Control) this.GroupBox1);
-      this.ForeColor = Color.White;
-      this.FormBorderStyle = FormBorderStyle.Fixed3D;
-      this.Icon = (Icon) componentResourceManager.GetObject("$this.Icon");
-      this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = nameof (frmTweakMatching);
-      this.ShowInTaskbar = false;
-      this.StartPosition = FormStartPosition.CenterScreen;
-      this.Text = "Tweak Powerset Matching";
-      this.GroupBox1.ResumeLayout(false);
-      this.GroupBox1.PerformLayout();
-      this.GroupBox2.ResumeLayout(false);
-      this.GroupBox2.PerformLayout();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.Button1.Click += Button1_Click;
-                  this.Button2.Click += Button2_Click;
-                  this.btnAdd.Click += btnAdd_Click;
-                  this.btnDel.Click += btnDel_Click;
-                  this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
-                  this.cbPower.SelectedIndexChanged += cbPower_SelectedIndexChanged;
-                  this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
-                  this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
-                  this.lstTweaks.SelectedIndexChanged += lstTweaks_SelectedIndexChanged;
-              }
-              // finished with events
-      this.ResumeLayout(false);
-    }
 
     public void list_AT()
     {

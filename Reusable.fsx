@@ -163,3 +163,4 @@ let getRelativePath {Source=target;TargetPath=from} =
     let p2 = Uri(uriString=from)
     let diff = p1.MakeRelativeUri(p2)
     diff.OriginalString
+    |> replace "/" "\\"

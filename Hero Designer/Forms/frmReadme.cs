@@ -10,28 +10,17 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    [DesignerGenerated]
-    public class frmReadme : Form
+    public partial class frmReadme : Form
     {
         ImageButton _btnClose;
-
         PictureBox pbBackground;
-
         PictureBox pbBottom;
         RichTextBox rtfRead;
-
         int btnY;
-
-        IContainer components;
-
         bool Loading;
-
         Point mouse_offset;
-
         string myFile;
-
         int rtH;
-
         int rtW;
 
         internal ImageButton btnClose
@@ -63,22 +52,12 @@ namespace Hero_Designer
         }
 
         void btnClose_ButtonClicked()
-
         {
             this.Close();
         }
 
         void btnClose_Load(object sender, EventArgs e)
-
         {
-        }
-
-        [DebuggerNonUserCode]
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
         }
 
         void frmReadme_Load(object sender, EventArgs e)
@@ -86,7 +65,7 @@ namespace Hero_Designer
         {
             this.rtW = this.Size.Width - (this.rtfRead.Width + this.rtfRead.Left);
             this.rtH = this.Size.Height - (this.rtfRead.Height + this.rtfRead.Top);
-            this.btnClose.KnockoutLocationPoint = new Point(this.btnClose.Left, this.btnClose.Top - this.pbBottom.Top);
+            this.btnClose.KnockoutLocationPoint = new System.Drawing.Point(this.btnClose.Left, this.btnClose.Top - this.pbBottom.Top);
             this.btnClose.KnockoutPB = this.pbBottom;
             this.btnClose.Refresh();
             this.btnY = this.Size.Height - this.btnClose.Top;
@@ -139,102 +118,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmReadme));
-            this.rtfRead = new RichTextBox();
-            this.pbBackground = new PictureBox();
-            this.pbBottom = new PictureBox();
-            this.btnClose = new ImageButton();
-            ((ISupportInitialize)this.pbBackground).BeginInit();
-            ((ISupportInitialize)this.pbBottom).BeginInit();
-            this.SuspendLayout();
-            this.rtfRead.BackColor = Color.White;
-            this.rtfRead.Cursor = Cursors.Arrow;
-            this.rtfRead.ForeColor = Color.Black;
-
-            this.rtfRead.Location = new Point(12, 31);
-            this.rtfRead.Name = "rtfRead";
-            this.rtfRead.ReadOnly = true;
-            this.rtfRead.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
-
-            this.rtfRead.Size = new Size(616, 409);
-            this.rtfRead.TabIndex = 0;
-            this.rtfRead.Text = "";
-            this.pbBackground.BorderStyle = BorderStyle.FixedSingle;
-            this.pbBackground.Image = (Image)componentResourceManager.GetObject("pbBackground.Image");
-
-            this.pbBackground.Location = new Point(0, 0);
-            this.pbBackground.Name = "pbBackground";
-
-            this.pbBackground.Size = new Size(642, 41);
-            this.pbBackground.TabIndex = 101;
-            this.pbBackground.TabStop = false;
-            this.pbBottom.BorderStyle = BorderStyle.FixedSingle;
-            this.pbBottom.Image = (Image)componentResourceManager.GetObject("pbBottom.Image");
-
-            this.pbBottom.Location = new Point(0, 427);
-            this.pbBottom.Name = "pbBottom";
-
-            this.pbBottom.Size = new Size(642, 53);
-            this.pbBottom.TabIndex = 102;
-            this.pbBottom.TabStop = false;
-            this.btnClose.BackColor = Color.FromArgb(60, 143, 233);
-            this.btnClose.Checked = false;
-            this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.btnClose.KnockoutLocationPoint = new Point(0, 0);
-
-            this.btnClose.Location = new Point(268, 449);
-            this.btnClose.Name = "btnClose";
-
-            this.btnClose.Size = new Size(105, 22);
-            this.btnClose.TabIndex = 100;
-            this.btnClose.TextOff = "Close";
-            this.btnClose.TextOn = "Alt Text";
-            this.btnClose.Toggle = false;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.Black;
-
-            this.ClientSize = new Size(642, 480);
-            this.Controls.Add((Control)this.btnClose);
-            this.Controls.Add((Control)this.rtfRead);
-            this.Controls.Add((Control)this.pbBottom);
-            this.Controls.Add((Control)this.pbBackground);
-            this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-
-            this.MinimumSize = new Size(200, 200);
-            this.Name = nameof(frmReadme);
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Readme / Help";
-            ((ISupportInitialize)this.pbBackground).EndInit();
-            ((ISupportInitialize)this.pbBottom).EndInit();
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  
-                  // btnClose events
-                  this.btnClose.Load += btnClose_Load;
-                  this.btnClose.ButtonClicked += btnClose_ButtonClicked;
-                  
-                  
-                  // pbBackground events
-                  this.pbBackground.MouseMove += pbBackground_MouseMove;
-                  this.pbBackground.MouseDown += pbBackground_MouseDown;
-                  this.pbBackground.Click += pbBackground_Click;
-                  
-                  
-                  // pbBottom events
-                  this.pbBottom.MouseMove += pbBottom_MouseMove;
-                  this.pbBottom.MouseDown += pbBottom_MouseDown;
-                  
-              }
-              // finished with events
-            this.ResumeLayout(false);
-        }
 
         void pbBackground_Click(object sender, EventArgs e)
 
@@ -244,7 +127,7 @@ namespace Hero_Designer
         void pbBackground_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new Point(-e.X, -e.Y);
+            this.mouse_offset = new System.Drawing.Point(-e.X, -e.Y);
         }
 
         void pbBackground_MouseMove(object sender, MouseEventArgs e)
@@ -256,7 +139,7 @@ namespace Hero_Designer
         void pbBottom_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new Point(-e.X, -this.pbBottom.Top + -e.Y);
+            this.mouse_offset = new System.Drawing.Point(-e.X, -this.pbBottom.Top + -e.Y);
         }
 
         void pbBottom_MouseMove(object sender, MouseEventArgs e)

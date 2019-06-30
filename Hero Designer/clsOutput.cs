@@ -368,7 +368,7 @@ namespace Hero_Designer
                         color = MidsContext.Config.Export.ColorSchemes[this.idScheme].HOColor;
                         break;
                     default:
-                        color = Color.Black;
+                        color = System.Drawing.Color.Black;
                         break;
                 }
                 string str2 = Conversion.Hex(color.R);

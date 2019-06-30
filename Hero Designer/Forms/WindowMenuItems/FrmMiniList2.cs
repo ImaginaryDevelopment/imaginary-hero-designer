@@ -16,17 +16,17 @@ namespace Hero_Designer.Forms.WindowMenuItems
         public FrmMiniList2()
         {
             InitializeComponent();
-            this._ctlPopUp = new ctlPopUp
+            this._ctlPopUp = new midsControls.ctlPopUp
             {
                 BXHeight = 2048,
                 ColumnPosition = 0.5f,
                 ColumnRight = true,
-                Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0),
+                Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0),
                 InternalPadding = 3,
                 Name = "pInfo",
                 ScrollY = 0.0f,
                 SectionPadding = 8,
-                Size = new Size(230, 227),
+                Size = new System.Drawing.Size(230, 227),
                 TabIndex = 0,
                 Dock = DockStyle.Left
 

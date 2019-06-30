@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmCompare : Form
+    public partial class frmCompare : Form
     {
         ImageButton btnClose;
 
@@ -49,8 +49,6 @@ namespace Hero_Designer
         TrackBar tbScaleX;
         ToolTip tTip;
 
-        IContainer components;
-
         protected string[] DisplayValueStrings;
         protected float GraphMax;
         protected bool Loaded;
@@ -60,11 +58,6 @@ namespace Hero_Designer
         protected IPower[][] Powers;
         protected string[][] Tips;
         protected float[][] Values;
-
-
-
-
-
 
         public frmCompare(ref frmMain iFrm)
         {
@@ -205,95 +198,95 @@ namespace Hero_Designer
             switch (this.lstDisplay.SelectedIndex)
             {
                 case 0:
-                    this.Graph.ColorFadeEnd = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0);
                     this.values_Accuracy();
                     break;
                 case 1:
-                    this.Graph.ColorFadeEnd = Color.Red;
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
                     this.values_Damage();
                     break;
                 case 2:
-                    this.Graph.ColorFadeEnd = Color.Red;
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
                     this.values_DPA();
                     break;
                 case 3:
-                    this.Graph.ColorFadeEnd = Color.Red;
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
                     this.values_DPS();
                     break;
                 case 4:
-                    this.Graph.ColorFadeEnd = Color.Red;
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
                     this.values_DPE();
                     break;
                 case 5:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(192, 0, 0);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 0);
                     this.Values_Universal(Enums.eEffectType.DamageBuff, false, false);
                     break;
                 case 6:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(192, 0, 192);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 192);
                     this.Values_Universal(Enums.eEffectType.Defense, false, false);
                     break;
                 case 7:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(128, 0, 128);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, 128);
                     this.Values_Universal(Enums.eEffectType.Defense, false, true);
                     break;
                 case 8:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(128, 0, (int)byte.MaxValue);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, (int)byte.MaxValue);
                     this.values_Duration();
                     break;
                 case 9:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(192, 192, (int)byte.MaxValue);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
                     this.values_End();
                     break;
                 case 10:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(192, 192, (int)byte.MaxValue);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
                     this.values_EPS();
                     break;
                 case 11:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
                     this.values_Heal();
                     break;
                 case 12:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
                     this.values_HPS();
                     break;
                 case 13:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
                     this.values_HPE();
                     break;
                 case 14:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
                     this.Values_Universal(Enums.eEffectType.HitPoints, true, false);
                     break;
                 case 15:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(64, 128, 128);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(64, 128, 128);
                     this.values_MaxTargets();
                     break;
                 case 16:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, 128, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, 128, 96);
                     this.values_Range();
                     break;
                 case 17:
-                    this.Graph.ColorFadeEnd = Color.FromArgb((int)byte.MaxValue, 192, 128);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, 192, 128);
                     this.values_Recharge();
                     break;
                 case 18:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(96, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
                     this.Values_Universal(Enums.eEffectType.Regeneration, true, false);
                     break;
                 case 19:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(0, 192, 192);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 192, 192);
                     this.Values_Universal(Enums.eEffectType.Resistance, false, false);
                     break;
                 case 20:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(0, 128, 128);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 128, 128);
                     this.Values_Universal(Enums.eEffectType.Resistance, false, true);
                     break;
                 case 21:
-                    this.Graph.ColorFadeEnd = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 96);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 96);
                     this.Values_Universal(Enums.eEffectType.ToHit, true, false);
                     break;
                 case 22:
-                    this.Graph.ColorFadeEnd = Color.FromArgb(192, 192, 64);
+                    this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, 64);
                     this.Values_Universal(Enums.eEffectType.ToHit, true, true);
                     break;
             }
@@ -325,13 +318,6 @@ namespace Hero_Designer
             this.tbScaleX.Value = this.Graph.ScaleIndex;
             this.SetScaleLabel();
             this.Graph.EndUpdate();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
         }
 
         protected void FillDisplayList()
@@ -559,296 +545,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmCompare));
-            this.GroupBox1 = new GroupBox();
-            this.lblKeyColor1 = new Label();
-            this.cbSet1 = new ComboBox();
-            this.cbType1 = new ComboBox();
-            this.cbAT1 = new ComboBox();
-            this.GroupBox2 = new GroupBox();
-            this.lblKeyColor2 = new Label();
-            this.cbSet2 = new ComboBox();
-            this.cbType2 = new ComboBox();
-            this.cbAT2 = new ComboBox();
-            this.lblScale = new Label();
-            this.tbScaleX = new TrackBar();
-            this.chkMatching = new CheckBox();
-            this.tTip = new ToolTip(this.components);
-            this.btnTweakMatch = new Button();
-            this.chkOnTop = new ImageButton();
-            this.btnClose = new ImageButton();
-            this.Graph = new ctlMultiGraph();
-            this.GroupBox4 = new GroupBox();
-            this.lstDisplay = new ListBox();
-            this.GroupBox1.SuspendLayout();
-            this.GroupBox2.SuspendLayout();
-            this.tbScaleX.BeginInit();
-            this.GroupBox4.SuspendLayout();
-            this.SuspendLayout();
-            this.GroupBox1.Controls.Add((Control)this.lblKeyColor1);
-            this.GroupBox1.Controls.Add((Control)this.cbSet1);
-            this.GroupBox1.Controls.Add((Control)this.cbType1);
-            this.GroupBox1.Controls.Add((Control)this.cbAT1);
-            this.GroupBox1.ForeColor = Color.White;
-
-            this.GroupBox1.Location = new Point(4, 4);
-            this.GroupBox1.Name = "GroupBox1";
-
-            this.GroupBox1.Size = new Size(144, 116);
-            this.GroupBox1.TabIndex = 2;
-            this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Powerset 1:";
-            this.lblKeyColor1.BackColor = Color.Blue;
-            this.lblKeyColor1.BorderStyle = BorderStyle.FixedSingle;
-
-            this.lblKeyColor1.Location = new Point(8, 20);
-            this.lblKeyColor1.Name = "lblKeyColor1";
-
-            this.lblKeyColor1.Size = new Size(132, 16);
-            this.lblKeyColor1.TabIndex = 3;
-            this.cbSet1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbSet1.Location = new Point(8, 88);
-            this.cbSet1.Name = "cbSet1";
-
-            this.cbSet1.Size = new Size(132, 22);
-            this.cbSet1.TabIndex = 2;
-            this.cbType1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbType1.Location = new Point(8, 64);
-            this.cbType1.Name = "cbType1";
-
-            this.cbType1.Size = new Size(132, 22);
-            this.cbType1.TabIndex = 1;
-            this.cbAT1.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbAT1.Location = new Point(8, 40);
-            this.cbAT1.Name = "cbAT1";
-
-            this.cbAT1.Size = new Size(132, 22);
-            this.cbAT1.TabIndex = 0;
-            this.GroupBox2.Controls.Add((Control)this.lblKeyColor2);
-            this.GroupBox2.Controls.Add((Control)this.cbSet2);
-            this.GroupBox2.Controls.Add((Control)this.cbType2);
-            this.GroupBox2.Controls.Add((Control)this.cbAT2);
-            this.GroupBox2.ForeColor = Color.White;
-
-            this.GroupBox2.Location = new Point(4, 126);
-            this.GroupBox2.Name = "GroupBox2";
-
-            this.GroupBox2.Size = new Size(144, 116);
-            this.GroupBox2.TabIndex = 3;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "Powerset 2:";
-            this.lblKeyColor2.BackColor = Color.Yellow;
-            this.lblKeyColor2.BorderStyle = BorderStyle.FixedSingle;
-
-            this.lblKeyColor2.Location = new Point(8, 20);
-            this.lblKeyColor2.Name = "lblKeyColor2";
-
-            this.lblKeyColor2.Size = new Size(132, 16);
-            this.lblKeyColor2.TabIndex = 3;
-            this.cbSet2.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbSet2.Location = new Point(8, 88);
-            this.cbSet2.Name = "cbSet2";
-
-            this.cbSet2.Size = new Size(132, 22);
-            this.cbSet2.TabIndex = 2;
-            this.cbType2.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbType2.Location = new Point(8, 64);
-            this.cbType2.Name = "cbType2";
-
-            this.cbType2.Size = new Size(132, 22);
-            this.cbType2.TabIndex = 1;
-            this.cbAT2.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.cbAT2.Location = new Point(8, 40);
-            this.cbAT2.Name = "cbAT2";
-
-            this.cbAT2.Size = new Size(132, 22);
-            this.cbAT2.TabIndex = 0;
-
-            this.lblScale.Location = new Point(312, 500);
-            this.lblScale.Name = "lblScale";
-
-            this.lblScale.Size = new Size(108, 20);
-            this.lblScale.TabIndex = 9;
-            this.lblScale.Text = "Scale: 100%";
-            this.lblScale.TextAlign = ContentAlignment.MiddleCenter;
-            this.tbScaleX.LargeChange = 1;
-
-            this.tbScaleX.Location = new Point(184, 476);
-            this.tbScaleX.Minimum = 1;
-            this.tbScaleX.Name = "tbScaleX";
-
-            this.tbScaleX.Size = new Size(340, 45);
-            this.tbScaleX.TabIndex = 8;
-            this.tbScaleX.TickFrequency = 10;
-            this.tbScaleX.TickStyle = TickStyle.None;
-            this.tbScaleX.Value = 10;
-
-            this.chkMatching.Location = new Point(8, 508);
-            this.chkMatching.Name = "chkMatching";
-
-            this.chkMatching.Size = new Size(116, 20);
-            this.chkMatching.TabIndex = 11;
-            this.chkMatching.Text = "Attempt Matching";
-            this.tTip.AutoPopDelay = 10000;
-            this.tTip.InitialDelay = 500;
-            this.tTip.ReshowDelay = 100;
-            this.btnTweakMatch.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.btnTweakMatch.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            this.btnTweakMatch.ForeColor = Color.Black;
-
-            this.btnTweakMatch.Location = new Point(130, 508);
-            this.btnTweakMatch.Name = "btnTweakMatch";
-
-            this.btnTweakMatch.Size = new Size(60, 20);
-            this.btnTweakMatch.TabIndex = 12;
-            this.btnTweakMatch.Text = "Tweak";
-            this.tTip.SetToolTip((Control)this.btnTweakMatch, "Modify the data used to perform power matching");
-            this.btnTweakMatch.UseVisualStyleBackColor = true;
-            this.btnTweakMatch.Visible = false;
-            this.chkOnTop.Checked = true;
-            this.chkOnTop.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.chkOnTop.KnockoutLocationPoint = new Point(0, 0);
-
-            this.chkOnTop.Location = new Point(530, 476);
-            this.chkOnTop.Name = "chkOnTop";
-
-            this.chkOnTop.Size = new Size(105, 22);
-            this.chkOnTop.TabIndex = 15;
-            this.chkOnTop.TextOff = "Keep On Top";
-            this.chkOnTop.TextOn = "Keep On Top";
-            this.chkOnTop.Toggle = true;
-            this.btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.btnClose.Checked = false;
-            this.btnClose.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-
-            this.btnClose.KnockoutLocationPoint = new Point(0, 0);
-
-            this.btnClose.Location = new Point(530, 504);
-            this.btnClose.Margin = new Padding(4, 3, 4, 3);
-            this.btnClose.Name = "btnClose";
-
-            this.btnClose.Size = new Size(105, 22);
-            this.btnClose.TabIndex = 14;
-            this.btnClose.TextOff = "Close";
-            this.btnClose.TextOn = "Close";
-            this.btnClose.Toggle = false;
-            this.Graph.BackColor = Color.FromArgb(0, 0, 32);
-            this.Graph.Border = true;
-            this.Graph.Clickable = false;
-            this.Graph.ColorBase = Color.Blue;
-            this.Graph.ColorEnh = Color.Yellow;
-            this.Graph.ColorFadeEnd = Color.Red;
-            this.Graph.ColorFadeStart = Color.Black;
-            this.Graph.ColorHighlight = Color.White;
-            this.Graph.ColorLines = Color.Black;
-            this.Graph.ColorMarkerInner = Color.Black;
-            this.Graph.ColorMarkerOuter = Color.Yellow;
-            this.Graph.Dual = true;
-            this.Graph.Font = new Font("Arial", 7.5f);
-            this.Graph.ForcedMax = 0.0f;
-            this.Graph.ForeColor = Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.Graph.Highlight = true;
-            this.Graph.ImeMode = ImeMode.Off;
-            this.Graph.ItemHeight = 26;
-            this.Graph.Lines = true;
-
-            this.Graph.Location = new Point(152, 4);
-            this.Graph.MarkerValue = 0.0f;
-            this.Graph.Max = 100f;
-            this.Graph.Name = "Graph";
-            this.Graph.PaddingX = 2f;
-            this.Graph.PaddingY = 6f;
-            this.Graph.ScaleHeight = 16;
-            this.Graph.ScaleIndex = 8;
-            this.Graph.ShowScale = true;
-
-            this.Graph.Size = new Size(484, 468);
-            this.Graph.Style = Enums.GraphStyle.Twin;
-            this.Graph.TabIndex = 1;
-            this.Graph.TextWidth = 120;
-            this.GroupBox4.Controls.Add((Control)this.lstDisplay);
-            this.GroupBox4.ForeColor = Color.White;
-
-            this.GroupBox4.Location = new Point(8, 248);
-            this.GroupBox4.Name = "GroupBox4";
-
-            this.GroupBox4.Size = new Size(144, 254);
-            this.GroupBox4.TabIndex = 16;
-            this.GroupBox4.TabStop = false;
-            this.GroupBox4.Text = "Display:";
-            this.lstDisplay.FormattingEnabled = true;
-            this.lstDisplay.ItemHeight = 14;
-
-            this.lstDisplay.Location = new Point(6, 19);
-            this.lstDisplay.Name = "lstDisplay";
-
-            this.lstDisplay.Size = new Size(130, 228);
-            this.lstDisplay.TabIndex = 0;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-
-            this.ClientSize = new Size(640, 532);
-            this.Controls.Add((Control)this.GroupBox4);
-            this.Controls.Add((Control)this.chkOnTop);
-            this.Controls.Add((Control)this.btnClose);
-            this.Controls.Add((Control)this.btnTweakMatch);
-            this.Controls.Add((Control)this.chkMatching);
-            this.Controls.Add((Control)this.lblScale);
-            this.Controls.Add((Control)this.tbScaleX);
-            this.Controls.Add((Control)this.GroupBox2);
-            this.Controls.Add((Control)this.GroupBox1);
-            this.Controls.Add((Control)this.Graph);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.ForeColor = Color.White;
-            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.KeyPreview = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmCompare);
-            this.StartPosition = FormStartPosition.Manual;
-            this.Text = "Powerset Comparison";
-            this.TopMost = true;
-            this.GroupBox1.ResumeLayout(false);
-            this.GroupBox2.ResumeLayout(false);
-            this.tbScaleX.EndInit();
-            this.GroupBox4.ResumeLayout(false);
-            this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Graph.Load += Graph_Load;
-
-                // btnClose events
-                this.btnClose.Load += btnClose_Load;
-                this.btnClose.ButtonClicked += btnClose_ButtonClicked;
-
-                this.btnTweakMatch.Click += btnTweakMatch_Click;
-                this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
-                this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
-                this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
-                this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
-                this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
-                this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
-                this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
-                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
-                this.tbScaleX.Scroll += tbScaleX_Scroll;
-            }
-            // finished with events
-            this.PerformLayout();
-        }
 
         void list_AT()
 

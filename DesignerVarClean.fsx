@@ -72,7 +72,7 @@ let commentRange (minI,maxI) (i,x) =
     else x
 //transformFile (Simple <| commentRange (3707,4200))
 let transformPointVar fileish =
-    let rPointPattern = Regex @"(\s+)(?:Point )?point = (new Point\(.*\);)\s*"
+    let rPointPattern = Regex @"(\s+)(?:Point )?point = (new System.Drawing.Point\(.*\);)\s*"
     let rPointdPattern = Regex @"^(.* = )point;\s*$"
     // store last line replacement
     let mutable previousMatch = None
@@ -97,7 +97,7 @@ let transformPointVar fileish =
 
 let mutable linesProcessed = 0
 let transformSizeVar fileish =
-    let rSizePattern = Regex(@"^(\s+)(?:Size )?size = (new Size\(.*\);)\s*$", RegexOptions.Multiline)
+    let rSizePattern = Regex(@"^(\s+)(?:Size )?size = (new System.Drawing.Size\(.*\);)\s*$", RegexOptions.Multiline)
     let rSizedPattern = Regex @"^(.* = )size;\s*$"
     // store last line replacement
     let mutable previousMatch = None

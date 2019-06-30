@@ -11,13 +11,12 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmMiniList : Form
+    public partial class frmMiniList : Form
     {
         ctlPopUp _pInfo;
 
         VScrollBar VScrollBar1;
 
-        IContainer components;
 
         frmMain myParent;
         internal ctlPopUp pInfo
@@ -31,21 +30,6 @@ namespace Hero_Designer
             this.ResizeEnd += new EventHandler(this.frmMiniList_ResizeEnd);
             this.InitializeComponent();
             this.myParent = iParent;
-        }
-
-        [DebuggerNonUserCode]
-        protected override void Dispose(bool disposing)
-        {
-            try
-            {
-                if (!disposing || this.components == null)
-                    return;
-                this.components.Dispose();
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
         }
 
         void frmMiniList_FormClosed(object sender, FormClosedEventArgs e)
@@ -63,61 +47,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-        {
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmMiniList));
-            this.pInfo = new ctlPopUp();
-            this.VScrollBar1 = new VScrollBar();
-            this.SuspendLayout();
-            this.pInfo.BXHeight = 2048;
-            this.pInfo.ColumnPosition = 0.5f;
-            this.pInfo.ColumnRight = true;
-            this.pInfo.Font = new Font("Arial", 12f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.pInfo.InternalPadding = 3;
-
-            this.pInfo.Location = new Point(0, 0);
-            this.pInfo.Name = "pInfo";
-            this.pInfo.ScrollY = 0.0f;
-            this.pInfo.SectionPadding = 8;
-
-            this.pInfo.Size = new Size(230, 227);
-            this.pInfo.TabIndex = 0;
-
-            this.VScrollBar1.Location = new Point(233, 0);
-            this.VScrollBar1.Name = "VScrollBar1";
-
-            this.VScrollBar1.Size = new Size(17, 284);
-            this.VScrollBar1.TabIndex = 1;
-
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.Black;
-
-            this.ClientSize = new Size(249, 284);
-            this.Controls.Add((Control)this.VScrollBar1);
-            this.Controls.Add((Control)this.pInfo);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, 0);
-            this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-
-            this.MaximumSize = new Size(600, 600);
-
-            this.MinimumSize = new Size(100, 150);
-            this.Name = nameof(frmMiniList);
-            this.Text = "Mini List";
-            this.TopMost = true;
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-
-                // pInfo events
-                this.pInfo.MouseWheel += pInfo_MouseWheel;
-                this.pInfo.MouseEnter += pInfo_MouseEnter;
-
-            }
-            // finished with events
-            this.ResumeLayout(false);
-        }
 
         void pInfo_MouseEnter(object sender, EventArgs e)
 
