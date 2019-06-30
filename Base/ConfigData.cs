@@ -121,9 +121,7 @@ public class ConfigData
     }
 
     ConfigData(string iFilename = "")
-
     {
-
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
         this.Inc.PvE = true;
@@ -168,7 +166,6 @@ public class ConfigData
     }
 
     void Load(string iFilename)
-
     {
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
@@ -380,13 +377,129 @@ public class ConfigData
         Directory.CreateDirectory(this.DefaultSaveFolder);
     }
 
-    void Save(string iFilename, float version)
+    void SaveRaw(Func<object, string> serializer, string iFilename, float version, string name)
     {
+
+        var toSerialize = new
+        {
+            name,
+            version,
+            this.NoToolTips,
+            this.BaseAcc,
+            this.CalcEnhLevel,
+            this.CalcEnhOrigin,
+            this.ExempHigh,
+            this.ExempLow,
+            this.Inc.PvE,
+            this.DamageMath.Calculate,
+            this.DamageMath.ReturnValue,
+            this.DataDamageGraph,
+            this.DataDamageGraphPercentageOnly,
+            this.DataGraphType,
+            this.ExportScheme,
+            this.ExportBonusTotals,
+            this.ExportBonusList,
+            hideOriginEnhancements = this._hideOriginEnhancements,
+            this.ShowVillainColours,
+            this.CheckForUpdates,
+            this.Columns,
+            this.LastSize.Width,
+            this.LastSize.Height,
+            this.DvState,
+            this.StatGraphStyle,
+            this.FreshInstall,
+            this.ForceLevel,
+            I9 = new
+            {
+                this.I9.DefaultIOLevel,
+                this.I9.DisplayIOLevels,
+                this.I9.CalculateEnahncementFX,
+                this.I9.CalculateSetBonusFX,
+                this.I9.ExportIOLevels,
+                this.I9.PrintIOLevels,
+                this.I9.ExportCompress,
+                this.I9.ExportDataChunk,
+                this.I9.ExportStripEnh,
+                this.I9.ExportStripSetNames,
+                this.I9.ExportExtraSep,
+            },
+            this.PrintInColour,
+            printScheme = this._printScheme,
+            RtFont = new
+            {
+                this.RtFont.PairedBase,
+                this.RtFont.PairedBold,
+                this.RtFont.RTFBase,
+                this.RtFont.RTFBold,
+                this.RtFont.ColorBackgroundHero,
+                this.RtFont.ColorBackgroundVillain,
+                this.RtFont.ColorEnhancement,
+                this.RtFont.ColorFaded,
+                this.RtFont.ColorInvention,
+                this.RtFont.ColorInventionInv,
+                this.RtFont.ColorText,
+                this.RtFont.ColorWarning,
+                this.RtFont.ColorPlName,
+                this.RtFont.ColorPlSpecial,
+                this.RtFont.ColorPowerAvailable,
+                this.RtFont.ColorPowerTaken,
+                this.RtFont.ColorPowerTakenDark,
+                this.RtFont.ColorPowerDisabled,
+                this.RtFont.ColorPowerHighlight,
+            },
+            this.ShowSlotLevels,
+            this.LoadLastFileOnStart,
+            this.LastFileName,
+            this.Tips.TipStatus,
+            this.DefaultSaveFolder,
+            this.EnhanceVisibility,
+            this.BuildMode,
+            this.BuildOption,
+            this.UpdatePath,
+            this.ShowEnhRel,
+            this.ShowRelSymbols,
+            this.ShowAlphaPopup,
+            this.PopupRecipes,
+            this.ShoppingListIncludesRecipes,
+            this.PrintProfile,
+            this.PrintHistory,
+            this.LastPrinter,
+            this.PrintProfileEnh,
+            this.DesaturateInherent,
+            this.ReapeatOnMiddleClick,
+            this.ExportHex,
+            this.SpeedFormat,
+            this.SaveFolderChecked,
+            this.UseArcanaTime, // Pine 
+            this.Suppression,
+            this.DragDropScenarioAction,
+            Export = new
+            {
+                this.Export.ColorSchemes,
+                this.Export.FormatCode,
+            }
+        };
+        try
+        {
+            var path = Path.Combine(Path.GetDirectoryName(iFilename), Path.GetFileNameWithoutExtension(iFilename) + ".raw");
+            var text = serializer(toSerialize);
+            File.WriteAllText(path, contents: text);
+        }
+        catch
+        {
+            MessageBox.Show("Failed to save raw config");
+        }
+    }
+    const string name = "Mids' Hero Designer Config V2";
+    void Save(Func<object, string> serializer, string iFilename, float version)
+    {
+        SaveRaw(serializer, iFilename, version, name);
+
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
         {
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                writer.Write("Mids' Hero Designer Config V2");
+                writer.Write(name);
                 writer.Write(version);
                 writer.Write(this.NoToolTips);
                 writer.Write(this.BaseAcc);
@@ -561,11 +674,11 @@ public class ConfigData
         this.SaveFolderChecked = true;
     }
 
-    public void SaveConfig()
+    public void SaveConfig(Func<object, string> serializer)
     {
         try
         {
-            this.Save(Files.SelectConfigFileSave(), 1.32f);
+            this.Save(serializer, Files.SelectConfigFileSave(), 1.32f);
             this.SaveOverrides();
         }
         catch (Exception ex)
