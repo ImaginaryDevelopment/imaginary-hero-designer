@@ -791,8 +791,8 @@ public static class DatabaseAPI
             Database.Version,
             DatabaseAPI.Database.Date,
             DatabaseAPI.Database.Issue,
-            //DatabaseAPI.Database.ArchetypeVersion,
-            //Archetypes = DatabaseAPI.Database.Classes,
+            DatabaseAPI.Database.ArchetypeVersion,
+            Archetypes = DatabaseAPI.Database.Classes,
             DatabaseAPI.Database.PowersetVersion,
             //DatabaseAPI.Database.Powersets,
             Powers = new
