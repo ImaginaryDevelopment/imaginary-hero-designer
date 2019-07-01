@@ -9,40 +9,40 @@ using System.Windows.Forms;
 
 namespace Hero_Designer.My
 {
-  [EditorBrowsable(EditorBrowsableState.Never)]
-  [GeneratedCode("MyTemplate", "8.0.0.0")]
-  internal class MyApplication : WindowsFormsApplicationBase
-  {
-    [DebuggerStepThrough]
-    public MyApplication()
-      : base(AuthenticationMode.Windows)
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [GeneratedCode("MyTemplate", "8.0.0.0")]
+    internal class MyApplication : WindowsFormsApplicationBase
     {
-      this.IsSingleInstance = false;
-      this.EnableVisualStyles = true;
-      this.SaveMySettingsOnExit = false;
-      this.ShutdownStyle = ShutdownMode.AfterMainFormCloses;
-    }
+        [DebuggerStepThrough]
+        public MyApplication()
+          : base(AuthenticationMode.Windows)
+        {
+            this.IsSingleInstance = false;
+            this.EnableVisualStyles = true;
+            this.SaveMySettingsOnExit = false;
+            this.ShutdownStyle = ShutdownMode.AfterMainFormCloses;
+        }
 
-    [STAThread]
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    [DebuggerHidden]
-    [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-    internal static void Main(string[] Args)
-    {
-      try
-      {
-        Application.SetCompatibleTextRenderingDefault(WindowsFormsApplicationBase.UseCompatibleTextRendering);
-      }
-      finally
-      {
-      }
-      MyProject.Application.Run(Args);
-    }
+        [STAThread]
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        [DebuggerHidden]
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        internal static void Main(string[] Args)
+        {
+            try
+            {
+                Application.SetCompatibleTextRenderingDefault(WindowsFormsApplicationBase.UseCompatibleTextRendering);
+            }
+            finally
+            {
+            }
+            MyProject.Application.Run(Args);
+        }
 
-    [DebuggerStepThrough]
-    protected override void OnCreateMainForm()
-    {
-      this.MainForm = (Form) MyProject.Forms.frmMain;
+        [DebuggerStepThrough]
+        protected override void OnCreateMainForm()
+        {
+            this.MainForm = (Form)MyProject.Forms.frmMain;
+        }
     }
-  }
 }

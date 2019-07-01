@@ -952,7 +952,7 @@ public static class DatabaseAPI
 
     static float GetDatabaseVersion(string fp)
     {
-        var fName = System.Diagnostics.Debugger.IsAttached? Files.SearchUp("Data", fp) : fp;
+        var fName = System.Diagnostics.Debugger.IsAttached ? Files.SearchUp("Data", fp) : fp;
         float num1 = -1f;
         float num2;
         if (!File.Exists(fName))
