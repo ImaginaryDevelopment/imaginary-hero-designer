@@ -570,8 +570,8 @@ namespace Hero_Designer
             frmRecipeEdit.AssignNewRecipes();
             DatabaseAPI.AssignRecipeSalvageIDs();
             DatabaseAPI.AssignRecipeIDs();
-            DatabaseAPI.SaveRecipes();
             var serializer = My.MyApplication.GetSerializer();
+            DatabaseAPI.SaveRecipes(serializer);
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.Close();
         }

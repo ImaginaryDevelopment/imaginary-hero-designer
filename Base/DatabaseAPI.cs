@@ -1274,9 +1274,23 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveRecipes()
+    const string RecipeName = "Mids' Hero Designer Recipe Database";
+    static void SaveRecipesRaw(ISerialize serializer, string fn, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.RecipeSource1,
+            DatabaseAPI.Database.RecipeSource2,
+            DatabaseAPI.Database.RecipeRevisionDate,
+            DatabaseAPI.Database.Recipes
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+    public static void SaveRecipes(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("Recipe.mhd");
+        SaveRecipesRaw(serializer, path, RecipeName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -1291,7 +1305,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Recipe Database");
+            writer.Write(RecipeName);
             writer.Write(DatabaseAPI.Database.RecipeSource1);
             writer.Write(DatabaseAPI.Database.RecipeSource2);
             writer.Write(DatabaseAPI.Database.RecipeRevisionDate.ToBinary());

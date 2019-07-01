@@ -118,7 +118,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Recipe CSVs Not Opened");
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Recipe CSVs Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -280,7 +280,7 @@ namespace Hero_Designer
                 DatabaseAPI.AssignRecipeSalvageIDs();
                 DatabaseAPI.GuessRecipes();
                 DatabaseAPI.AssignRecipeIDs();
-                int num9 = (int)Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
+                Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
             }
             catch (Exception ex)
             {
@@ -289,16 +289,16 @@ namespace Hero_Designer
                 iStream1.Close();
                 iStream2.Close();
                 this.BusyHide();
-                int num6 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "CSV Parse Error");
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             this.BusyHide();
             iStream2.Close();
-            int num10 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num5) + "\r\nGood: " + Conversions.ToString(num2) + "\r\nRejected: " + Conversions.ToString(num3)), MsgBoxStyle.Information, "File Parsed");
-            DatabaseAPI.SaveRecipes();
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num5) + "\r\nGood: " + Conversions.ToString(num2) + "\r\nRejected: " + Conversions.ToString(num3)), MsgBoxStyle.Information, "File Parsed");
             var serializer = My.MyApplication.GetSerializer();
+            DatabaseAPI.SaveRecipes(serializer);
             DatabaseAPI.SaveEnhancementDb(serializer);
             return true;
         }
