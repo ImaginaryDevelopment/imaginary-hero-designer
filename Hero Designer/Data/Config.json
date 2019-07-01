@@ -98,7 +98,7 @@
     0,
     0
   ],
-  "DefaultSaveFolder": "D:\\Users\\DBee\\My Documents\\Hero & Villain Builds\\",
+  "DefaultSaveFolder": "",
   "EnhanceVisibility": false,
   "BuildMode": 1,
   "BuildOption": 2,
@@ -115,7 +115,7 @@
   "DesaturateInherent": true,
   "ReapeatOnMiddleClick": true,
   "ExportHex": true,
-  "SpeedFormat": 65793,
+  "SpeedFormat": 16843009,
   "SaveFolderChecked": true,
   "UseArcanaTime": true,
   "Suppression": 0,

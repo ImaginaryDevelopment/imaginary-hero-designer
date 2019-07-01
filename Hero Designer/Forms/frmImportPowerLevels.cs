@@ -161,7 +161,8 @@ namespace Hero_Designer
             DatabaseAPI.Database.PowerLevelVersion.SourceFile = this.dlgBrowse.FileName;
             DatabaseAPI.Database.PowerLevelVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.PowerLevelVersion.Revision = Convert.ToInt32(this.udRevision.Value);
-            DatabaseAPI.SaveMainDatabase();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveMainDatabase(serializer);
             this.DisplayInfo();
             int num6 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, (object)"File Parsed");
             return true;

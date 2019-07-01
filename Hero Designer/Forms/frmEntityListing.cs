@@ -1,5 +1,3 @@
-
-using Base.IO_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -14,26 +12,17 @@ namespace Hero_Designer
     public partial class frmEntityListing : Form
     {
         Button btnAdd;
-
         Button btnCancel;
-
         Button btnClone;
-
         Button btnDelete;
-
         Button btnDown;
-
         Button btnedit;
-
         Button btnOK;
-
         Button btnUp;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
         ColumnHeader ColumnHeader3;
-
         ListView lvEntity;
-
         frmBusy bFrm;
 
         public frmEntityListing()
@@ -43,7 +32,6 @@ namespace Hero_Designer
         }
 
         void btnAdd_Click(object sender, EventArgs e)
-
         {
             SummonedEntity iEntity = new SummonedEntity();
             int num1 = 0;
@@ -74,7 +62,6 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Re-Indexing...");
             DatabaseAPI.LoadMainDatabase();
@@ -84,7 +71,6 @@ namespace Hero_Designer
         }
 
         void btnClone_Click(object sender, EventArgs e)
-
         {
             if (this.lvEntity.SelectedIndices.Count <= 0)
                 return;
@@ -104,7 +90,6 @@ namespace Hero_Designer
         }
 
         void btnDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox((object)("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -135,7 +120,6 @@ namespace Hero_Designer
         }
 
         void btnDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvEntity.SelectedIndices.Count <= 0)
                 return;
@@ -144,8 +128,8 @@ namespace Hero_Designer
             {
                 SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
                 {
-          new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
-          new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex + 1])
+                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
+                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex + 1])
                 };
                 DatabaseAPI.Database.Entities[selectedIndex + 1] = new SummonedEntity(summonedEntityArray[0]);
                 DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
@@ -156,7 +140,6 @@ namespace Hero_Designer
         }
 
         void btnEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvEntity.SelectedIndices.Count <= 0)
                 return;
@@ -170,15 +153,14 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             DatabaseAPI.MatchSummonIDs();
-            DatabaseAPI.SaveMainDatabase();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveMainDatabase(serializer);
             this.Hide();
         }
 
         void btnUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvEntity.SelectedIndices.Count <= 0)
                 return;
@@ -187,8 +169,8 @@ namespace Hero_Designer
             {
                 SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
                 {
-          new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
-          new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex - 1])
+                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
+                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex - 1])
                 };
                 DatabaseAPI.Database.Entities[selectedIndex - 1] = new SummonedEntity(summonedEntityArray[0]);
                 DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
@@ -199,7 +181,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -208,7 +189,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
@@ -234,20 +214,17 @@ namespace Hero_Designer
         }
 
         void frmEntityListing_Load(object sender, EventArgs e)
-
         {
             this.DisplayList();
         }
-
-        [DebuggerStepThrough]
 
         public void ListAddItem(int Index)
         {
             this.lvEntity.Items.Add(new ListViewItem(new string[3]
             {
-        DatabaseAPI.Database.Entities[Index].UID,
-        DatabaseAPI.Database.Entities[Index].DisplayName,
-        Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
+                DatabaseAPI.Database.Entities[Index].UID,
+                DatabaseAPI.Database.Entities[Index].DisplayName,
+                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
             }, Index));
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].Selected = true;
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].EnsureVisible();
@@ -257,9 +234,9 @@ namespace Hero_Designer
         {
             string[] strArray = new string[3]
             {
-        DatabaseAPI.Database.Entities[Index].UID,
-        DatabaseAPI.Database.Entities[Index].DisplayName,
-        Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
+                DatabaseAPI.Database.Entities[Index].UID,
+                DatabaseAPI.Database.Entities[Index].DisplayName,
+                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
             };
             int num = strArray.Length - 1;
             for (int index = 0; index <= num; ++index)

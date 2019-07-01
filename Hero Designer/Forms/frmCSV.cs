@@ -220,7 +220,8 @@ namespace Hero_Designer
             }
             this.BusyMsg("Re-Indexing && Saving...");
             DatabaseAPI.MatchAllIDs(null);
-            DatabaseAPI.SaveMainDatabase();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
         }
 
@@ -251,7 +252,8 @@ namespace Hero_Designer
             this.BusyMsg("Working...");
             frmCSV.SetEnhancementLevels();
             this.BusyMsg("Saving...");
-            DatabaseAPI.SaveEnhancementDb();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveEnhancementDb(serializer);
             this.BusyHide();
         }
 
@@ -324,7 +326,8 @@ namespace Hero_Designer
 
         void Button2_Click(object sender, EventArgs e)
         {
-            DatabaseAPI.AssignStaticIndexValues();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.AssignStaticIndexValues(serializer);
             int num = (int)Interaction.MsgBox((object)"Static Index values assigned.", MsgBoxStyle.Information, (object)"Indexing Complete");
         }
 

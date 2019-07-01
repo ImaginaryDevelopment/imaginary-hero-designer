@@ -1870,7 +1870,8 @@ namespace Hero_Designer
         void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = this.Size;
-            MidsContext.Config.SaveConfig(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented));
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            MidsContext.Config.SaveConfig(serializer);
         }
 
         void frmMain_Closing(object sender, FormClosingEventArgs e)

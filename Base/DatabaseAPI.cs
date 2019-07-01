@@ -781,10 +781,36 @@ public static class DatabaseAPI
         }
         return num;
     }
+    const string MainDbName = "Mids' Hero Designer Database MK II";
 
-    public static void SaveMainDatabase()
+    static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            Database.Version,
+            DatabaseAPI.Database.Date,
+            DatabaseAPI.Database.Issue,
+            DatabaseAPI.Database.ArchetypeVersion,
+            Archetypes = DatabaseAPI.Database.Classes,
+            DatabaseAPI.Database.PowersetVersion,
+            DatabaseAPI.Database.Powersets,
+            Powers = new
+            {
+                DatabaseAPI.Database.PowerVersion,
+                DatabaseAPI.Database.PowerLevelVersion,
+                DatabaseAPI.Database.PowerEffectVersion,
+                DatabaseAPI.Database.IOAssignmentVersion,
+                DatabaseAPI.Database.Power
+            },
+            DatabaseAPI.Database.Entities
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+    public static void SaveMainDatabase(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("I12.mhd");
+        SaveMainDbRaw(serializer, path, MainDbName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -798,7 +824,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Database MK II");
+            writer.Write(MainDbName);
             writer.Write(Database.Version);
             writer.Write(-1);
             writer.Write(DatabaseAPI.Database.Date.ToBinary());
@@ -808,11 +834,13 @@ public static class DatabaseAPI
             writer.Write(DatabaseAPI.Database.Classes.Length - 1);
             for (int index = 0; index < DatabaseAPI.Database.Classes.Length; ++index)
                 DatabaseAPI.Database.Classes[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:POWERSETS");
             DatabaseAPI.Database.PowersetVersion.StoreTo(writer);
             writer.Write(DatabaseAPI.Database.Powersets.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
                 DatabaseAPI.Database.Powersets[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:POWERS");
             DatabaseAPI.Database.PowerVersion.StoreTo(writer);
             DatabaseAPI.Database.PowerLevelVersion.StoreTo(writer);
@@ -821,6 +849,7 @@ public static class DatabaseAPI
             writer.Write(DatabaseAPI.Database.Power.Length - 1);
             for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
                 DatabaseAPI.Database.Power[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:SUMMONS");
             DatabaseAPI.Database.StoreEntities(writer);
             writer.Close();
@@ -1345,15 +1374,29 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveEnhancementDb()
+    const string EnhancementDbName = "Mids' Hero Designer Enhancement Database";
+    static void SaveEnhancementDbRaw(ISerialize serializer, string filename, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.VersionEnhDb,
+            DatabaseAPI.Database.Enhancements,
+            DatabaseAPI.Database.EnhancementSets
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, filename);
+    }
+
+    public static void SaveEnhancementDb(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("EnhDB.mhd");
+        SaveEnhancementDbRaw(serializer, path, EnhancementDbName);
         FileStream fileStream;
         BinaryWriter writer;
         try
         {
             fileStream = new FileStream(path, FileMode.Create);
-            writer = new BinaryWriter((Stream)fileStream);
+            writer = new BinaryWriter(fileStream);
         }
         catch (Exception ex)
         {
@@ -1362,7 +1405,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Enhancement Database");
+            writer.Write(EnhancementDbName);
             writer.Write(DatabaseAPI.Database.VersionEnhDb);
             writer.Write(DatabaseAPI.Database.Enhancements.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
@@ -1981,7 +2024,7 @@ public static class DatabaseAPI
         }
     }
 
-    public static void AssignStaticIndexValues()
+    public static void AssignStaticIndexValues(ISerialize serializer)
     {
         int num1 = -2;
         for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
@@ -2015,7 +2058,7 @@ public static class DatabaseAPI
                 DatabaseAPI.Database.Enhancements[index].StaticIndex = num2;
             }
         }
-        DatabaseAPI.SaveMainDatabase();
-        DatabaseAPI.SaveEnhancementDb();
+        DatabaseAPI.SaveMainDatabase(serializer);
+        DatabaseAPI.SaveEnhancementDb(serializer);
     }
 }

@@ -571,7 +571,8 @@ namespace Hero_Designer
             DatabaseAPI.AssignRecipeSalvageIDs();
             DatabaseAPI.AssignRecipeIDs();
             DatabaseAPI.SaveRecipes();
-            DatabaseAPI.SaveEnhancementDb();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveEnhancementDb(serializer);
             this.Close();
         }
 

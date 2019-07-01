@@ -1,10 +1,24 @@
-
 using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
+public interface ISerialize
+{
+    string Serialize(object o);
+    string Extension { get; }
+}
+public class Serializer : ISerialize
+{
+    readonly Func<object, string> _serializeFunc;
+    public string Extension { get; }
+    public Serializer(Func<object, string> serializeFunc, string extension)
+    {
+        Extension = extension;
+        _serializeFunc = serializeFunc;
+    }
+    public string Serialize(object o) => _serializeFunc(o);
+}
 public class ConfigData
 {
     public float BaseAcc = 0.75f;
@@ -39,28 +53,9 @@ public class ConfigData
     public bool ReapeatOnMiddleClick = true;
     public bool ExportHex = true;
     public readonly short[] DragDropScenarioAction = new short[20]
-    {
-    (short) 3,
-    (short) 0,
-    (short) 5,
-    (short) 0,
-    (short) 3,
-    (short) 5,
-    (short) 0,
-    (short) 0,
-    (short) 5,
-    (short) 0,
-    (short) 2,
-    (short) 3,
-    (short) 0,
-    (short) 2,
-    (short) 2,
-    (short) 0,
-    (short) 0,
-    (short) 0,
-    (short) 0,
-    (short) 0
-    };
+        {
+            3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
+        };
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
     static ConfigData _current;
 
@@ -377,7 +372,7 @@ public class ConfigData
         Directory.CreateDirectory(this.DefaultSaveFolder);
     }
 
-    void SaveRaw(Func<object, string> serializer, string iFilename, float version, string name)
+    void SaveRaw(ISerialize serializer, string iFilename, float version, string name)
     {
 
         var toSerialize = new
@@ -451,7 +446,7 @@ public class ConfigData
             this.LoadLastFileOnStart,
             this.LastFileName,
             this.Tips.TipStatus,
-            this.DefaultSaveFolder,
+            DefaultSaveFolder = this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? String.Empty : this.DefaultSaveFolder,
             this.EnhanceVisibility,
             this.BuildMode,
             this.BuildOption,
@@ -479,19 +474,11 @@ public class ConfigData
                 this.Export.FormatCode,
             }
         };
-        try
-        {
-            var path = Path.Combine(Path.GetDirectoryName(iFilename), Path.GetFileNameWithoutExtension(iFilename) + ".raw");
-            var text = serializer(toSerialize);
-            File.WriteAllText(path, contents: text);
-        }
-        catch
-        {
-            MessageBox.Show("Failed to save raw config");
-        }
+        SaveRawMhd(serializer, toSerialize, iFilename);
     }
+
     const string name = "Mids' Hero Designer Config V2";
-    void Save(Func<object, string> serializer, string iFilename, float version)
+    void Save(ISerialize serializer, string iFilename, float version)
     {
         SaveRaw(serializer, iFilename, version, name);
 
@@ -571,7 +558,8 @@ public class ConfigData
                 ConfigData.WriteRGB(writer, this.RtFont.ColorPowerDisabled);
                 ConfigData.WriteRGB(writer, this.RtFont.ColorPowerHighlight);
                 this.Tips.StoreTo(writer);
-                writer.Write(this.DefaultSaveFolder);
+
+                writer.Write(this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? string.Empty : this.DefaultSaveFolder);
                 writer.Write(this.EnhanceVisibility);
                 writer.Write(false);
                 writer.Write((int)this.BuildMode);
@@ -674,12 +662,14 @@ public class ConfigData
         this.SaveFolderChecked = true;
     }
 
-    public void SaveConfig(Func<object, string> serializer)
+    // poorly named
+    // saves both config.mhd, and compare.mhd
+    public void SaveConfig(ISerialize serializer)
     {
         try
         {
             this.Save(serializer, Files.SelectConfigFileSave(), 1.32f);
-            this.SaveOverrides();
+            this.SaveOverrides(serializer);
         }
         catch (Exception ex)
         {
@@ -688,11 +678,10 @@ public class ConfigData
     }
 
     void LoadOverrides()
-
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
         {
-            using (BinaryReader binaryReader = new BinaryReader((Stream)fileStream))
+            using (BinaryReader binaryReader = new BinaryReader(fileStream))
             {
                 if (binaryReader.ReadString() != "Mids' Hero Designer Comparison Overrides")
                 {
@@ -712,14 +701,41 @@ public class ConfigData
         }
     }
 
-    void SaveOverrides()
-
+    public static void SaveRawMhd(ISerialize serializer, object o, string fn)
     {
-        using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
+        try
         {
-            using (BinaryWriter binaryWriter = new BinaryWriter((Stream)fileStream))
+            var path = Path.Combine(Path.GetDirectoryName(fn), Path.GetFileNameWithoutExtension(fn) + "." + serializer.Extension);
+            var text = serializer.Serialize(o);
+            File.WriteAllText(path, contents: text);
+        }
+        catch
+        {
+            MessageBox.Show("Failed to save raw config");
+        }
+    }
+
+    const string OverrideNames = "Mids' Hero Designer Comparison Overrides";
+    void SaveRawOverrides(ISerialize serializer, string iFilename, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            this.CompOverride
+        };
+        SaveRawMhd(serializer, toSerialize, iFilename);
+    }
+
+    void SaveOverrides(ISerialize serializer)
+    {
+        var fn = Files.SelectDataFileLoad("Compare.mhd");
+        SaveRawOverrides(serializer, fn, OverrideNames);
+
+        using (FileStream fileStream = new FileStream(fn, FileMode.Create))
+        {
+            using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
             {
-                binaryWriter.Write("Mids' Hero Designer Comparison Overrides");
+                binaryWriter.Write(OverrideNames);
                 binaryWriter.Write(this.CompOverride.Length - 1);
                 for (int index = 0; index <= this.CompOverride.Length - 1; ++index)
                 {

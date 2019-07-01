@@ -371,7 +371,8 @@ namespace Hero_Designer
             DatabaseAPI.Database.PowerVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.PowerVersion.Revision = Convert.ToInt32(this.udRevision.Value);
             DatabaseAPI.MatchAllIDs(null);
-            DatabaseAPI.SaveMainDatabase();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveMainDatabase(serializer);
             int num3 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object)"Done");
             this.DisplayInfo();
             return flag;

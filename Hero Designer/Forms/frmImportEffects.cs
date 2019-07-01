@@ -407,7 +407,8 @@ namespace Hero_Designer
             DatabaseAPI.Database.PowerEffectVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.PowerEffectVersion.Revision = Convert.ToInt32(this.udRevision.Value);
             DatabaseAPI.MatchAllIDs(null);
-            DatabaseAPI.SaveMainDatabase();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
             int num5 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " records completed!\r\nOf these, " + Conversions.ToString(num3) + " records were found read-only."), MsgBoxStyle.Information, (object)"Done");
             this.DisplayInfo();

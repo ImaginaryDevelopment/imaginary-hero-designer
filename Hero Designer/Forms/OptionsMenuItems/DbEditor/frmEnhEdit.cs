@@ -232,9 +232,10 @@ namespace Hero_Designer
 
         {
             I9Gfx.LoadEnhancements();
-            DatabaseAPI.AssignStaticIndexValues();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.AssignStaticIndexValues(serializer);
             DatabaseAPI.AssignRecipeIDs();
-            DatabaseAPI.SaveEnhancementDb();
+            DatabaseAPI.SaveEnhancementDb(serializer);
             this.Hide();
         }
 

@@ -373,9 +373,10 @@ namespace Hero_Designer
         {
             this.BusyMsg("Re-Indexing && Saving...");
             Array.Sort<IPower>(DatabaseAPI.Database.Power);
-            DatabaseAPI.AssignStaticIndexValues();
+            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            DatabaseAPI.AssignStaticIndexValues(serializer);
             DatabaseAPI.MatchAllIDs(null);
-            DatabaseAPI.SaveMainDatabase();
+            DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
             this.DialogResult = DialogResult.OK;
             this.Hide();
