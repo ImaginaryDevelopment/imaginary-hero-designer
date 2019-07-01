@@ -1526,7 +1526,7 @@ namespace Base.Data_Classes
             return (object)new Effect((IEffect)this);
         }
 
-        Effect()
+        public Effect()
 
         {
             this.BaseProbability = 1f;
@@ -1562,7 +1562,7 @@ namespace Base.Data_Classes
             this.EffectId = "Ones";
         }
 
-        public Effect(IPower power = null)
+        public Effect(IPower power)
           : this()
         {
             this.Power = power;

@@ -13,8 +13,8 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmStats : Form, HeroDesigner.Schema.Viewing.IControl
-    {
+  public partial class frmStats : Form, HeroDesigner.Schema.Viewing.IControl
+  {
         ImageButton btnClose;
 
         ComboBox cbSet;
@@ -34,9 +34,8 @@ namespace Hero_Designer
         TrackBar tbScaleX;
         ToolTip tTip;
 
-        protected IPower[] BaseArray;
-        protected bool BaseOverride;
-        IContainer components;
+    protected IPower[] BaseArray;
+    protected bool BaseOverride;
 
         protected IPower[] EnhArray;
         protected float GraphMax;
@@ -44,38 +43,21 @@ namespace Hero_Designer
 
         protected frmMain myParent;
 
-        public frmStats(frmMain iParent)
-        {
-            this.FormClosed += new FormClosedEventHandler(this.frmStats_FormClosed);
-            this.Load += new EventHandler(this.frmStats_Load);
-            this.Move += new EventHandler(this.frmStats_Move);
-            this.Resize += new EventHandler(this.frmStats_Resize);
-            this.VisibleChanged += new EventHandler(this.frmStats_VisibleChanged);
-            this.BaseArray = new IPower[0];
-            this.EnhArray = new IPower[0];
-            this.GraphMax = 1f;
-            this.BaseOverride = false;
-            this.Loaded = false;
-            this.InitializeComponent();
-            this.myParent = iParent;
-        }
-
-        void btnClose_Click()
-
-        {
-            this.Close();
-        }
-
-        void cbSet_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-            if (!this.Loaded)
-                return;
-            this.GetPowerArray();
-            this.DisplayGraph();
-        }
-
-        void cbStyle_SelectedIndexChanged(object sender, EventArgs e)
+    public frmStats(ref frmMain iParent)
+    {
+      this.FormClosed += new FormClosedEventHandler(this.frmStats_FormClosed);
+      this.Load += new EventHandler(this.frmStats_Load);
+      this.Move += new EventHandler(this.frmStats_Move);
+      this.Resize += new EventHandler(this.frmStats_Resize);
+      this.VisibleChanged += new EventHandler(this.frmStats_VisibleChanged);
+      this.BaseArray = new IPower[0];
+      this.EnhArray = new IPower[0];
+      this.GraphMax = 1f;
+      this.BaseOverride = false;
+      this.Loaded = false;
+      this.InitializeComponent();
+      this.myParent = iParent;
+    }
 
         {
             if (!this.Loaded)
@@ -221,18 +203,65 @@ namespace Hero_Designer
         void frmStats_FormClosed(object sender, FormClosedEventArgs e)
 
         {
-            this.myParent.FloatStatGraph(false);
+          case 0:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int) byte.MaxValue, (int) byte.MaxValue, 0);
+            this.Graph_Acc();
+            break;
+          case 1:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
+            this.Graph_Damage();
+            break;
+          case 2:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
+            this.Graph_DPA();
+            break;
+          case 3:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
+            this.Graph_DPS();
+            break;
+          case 4:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.Red;
+            this.Graph_DPE();
+            break;
+          case 5:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int) byte.MaxValue);
+            this.Graph_End();
+            break;
+          case 6:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, (int) byte.MaxValue);
+            this.Graph_EPS();
+            break;
+          case 7:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int) byte.MaxValue, 96);
+            this.Graph_Heal();
+            break;
+          case 8:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int) byte.MaxValue, 96);
+            this.Graph_HealPS();
+            break;
+          case 9:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int) byte.MaxValue, 96);
+            this.Graph_HealPE();
+            break;
+          case 10:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, (int) byte.MaxValue);
+            this.Graph_Duration();
+            break;
+          case 11:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(64, 128, 96);
+            this.Graph_Range();
+            break;
+          case 12:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int) byte.MaxValue, 192, 128);
+            this.Graph_Recharge();
+            break;
+          case 13:
+            this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, 192, 96);
+            this.Graph_Regen();
+            break;
         }
 
-        void frmStats_Load(object sender, EventArgs e)
-
-        {
-            this.FillComboBoxes();
-            this.Loaded = true;
-            this.tbScaleX.Minimum = 0;
-            this.tbScaleX.Maximum = this.Graph.ScaleCount - 1;
-            this.UpdateData(false);
-        }
+    void FillComboBoxes()
 
         void frmStats_Move(object sender, EventArgs e)
 
@@ -1495,4 +1524,157 @@ namespace Hero_Designer
             this.DisplayGraph();
         }
     }
+
+    [DebuggerStepThrough]
+
+    void NewSets()
+
+    {
+      this.cbSet.BeginUpdate();
+      ComboBox.ObjectCollection items = this.cbSet.Items;
+      items.Clear();
+      items.Add((object) "All Sets");
+      items.Add((object) "Primary & Secondary");
+      items.Add((object) ("Primary (" + MidsContext.Character.Powersets[0].DisplayName + ")"));
+      items.Add((object) ("Secondary (" + MidsContext.Character.Powersets[1].DisplayName + ")"));
+      items.Add((object) "Ancillary");
+      items.Add((object) "Pools");
+      items.Add((object) "Powers Taken");
+      items.Add((object) "All Toggles");
+      items.Add((object) "All Clicks");
+      this.cbSet.SelectedIndex = 1;
+      this.cbSet.EndUpdate();
+    }
+
+    public void SetGraphMetrics()
+    {
+      if ((double) this.Graph.ItemCount < 13.5)
+      {
+        this.Graph.ItemHeight = 18;
+        this.Graph.PaddingY = 6f;
+      }
+      else if ((double) this.Graph.ItemCount < 18.0)
+      {
+        this.Graph.ItemHeight = 15;
+        this.Graph.PaddingY = 5f;
+      }
+      else if (this.Graph.ItemCount > 32)
+      {
+        this.Graph.PaddingY = 2f;
+        this.Graph.ItemHeight = 10;
+      }
+      else if (this.Graph.ItemCount > 30)
+      {
+        this.Graph.PaddingY = 2f;
+        this.Graph.ItemHeight = 11;
+      }
+      else if (this.Graph.ItemCount > 27)
+      {
+        this.Graph.PaddingY = 2.666667f;
+        this.Graph.ItemHeight = 11;
+      }
+      else
+      {
+        this.Graph.ItemHeight = 12;
+        this.Graph.PaddingY = 4f;
+      }
+    }
+
+    public void SetGraphType()
+    {
+      if (this.cbStyle.SelectedIndex > -1 & this.cbStyle.SelectedIndex < this.cbStyle.Items.Count - 2)
+      {
+        this.Graph.Style = (Enums.GraphStyle) this.cbStyle.SelectedIndex;
+        MidsContext.Config.StatGraphStyle = this.Graph.Style;
+        this.BaseOverride = false;
+      }
+      else if (this.cbStyle.SelectedIndex == this.cbStyle.Items.Count - 2)
+      {
+        this.Graph.Style = Enums.GraphStyle.Twin;
+        this.BaseOverride = true;
+      }
+      else if (this.cbStyle.SelectedIndex == this.cbStyle.Items.Count - 1)
+      {
+        this.Graph.Style = Enums.GraphStyle.Stacked;
+        this.BaseOverride = true;
+      }
+      this.GetPowerArray();
+      if (this.BaseOverride)
+      {
+        this.lblKey1.Text = "Active";
+        this.lblKey2.Text = "Alternate";
+      }
+      else
+      {
+        this.lblKey1.Text = "Base";
+        this.lblKey2.Text = "Enhanced";
+      }
+      MidsContext.Config.StatGraphStyle = this.Graph.Style;
+    }
+
+    public void SetLocation()
+    {
+      Rectangle rectangle = new Rectangle();
+      rectangle.X = MainModule.MidsController.SzFrmStats.X;
+      rectangle.Y = MainModule.MidsController.SzFrmStats.Y;
+      rectangle.Width = MainModule.MidsController.SzFrmStats.Width;
+      rectangle.Height = MainModule.MidsController.SzFrmStats.Height;
+      if (rectangle.Width < 1)
+        rectangle.Width = this.Width;
+      if (rectangle.Height < 1)
+        rectangle.Height = this.Height;
+      if (rectangle.Width < this.MinimumSize.Width)
+        rectangle.Width = this.MinimumSize.Width;
+      if (rectangle.Height < this.MinimumSize.Height)
+        rectangle.Height = this.MinimumSize.Height;
+      if (rectangle.X < 1)
+        rectangle.X = (int) Math.Round((double) (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2.0);
+      if (rectangle.Y < 32)
+        rectangle.Y = (int) Math.Round((double) (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2.0);
+      this.Top = rectangle.Y;
+      this.Left = rectangle.X;
+      this.Height = rectangle.Height;
+      this.Width = rectangle.Width;
+    }
+
+    public void SetScaleLabel()
+    {
+      this.lblScale.Text = "Scale: 0 - " + Conversions.ToString(this.Graph.ScaleValue);
+    }
+
+    void StoreLocation()
+
+    {
+      if (!MainModule.MidsController.IsAppInitialized)
+        return;
+      MainModule.MidsController.SzFrmStats.X = this.Left;
+      MainModule.MidsController.SzFrmStats.Y = this.Top;
+      MainModule.MidsController.SzFrmStats.Width = this.Width;
+      MainModule.MidsController.SzFrmStats.Height = this.Height;
+    }
+
+    void tbScaleX_Scroll(object sender, EventArgs e)
+
+    {
+      this.Graph.ScaleIndex = this.tbScaleX.Value;
+      this.SetScaleLabel();
+    }
+
+    public void UpdateData(bool NewData)
+    {
+      this.BackColor = this.myParent.BackColor;
+      this.btnClose.IA = this.myParent.Drawing.pImageAttributes;
+      this.btnClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
+      this.btnClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
+      this.chkOnTop.IA = this.myParent.Drawing.pImageAttributes;
+      this.chkOnTop.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
+      this.chkOnTop.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
+      this.Graph.BackColor = this.BackColor;
+      if (NewData)
+        this.NewSets();
+      this.SetGraphType();
+      this.GetPowerArray();
+      this.DisplayGraph();
+    }
+  }
 }

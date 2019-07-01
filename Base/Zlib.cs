@@ -82,14 +82,14 @@ public class Zlib
                 reader.Close();
                 fileStream.Close();
                 this._sFrm.Hide();
-                this._sFrm = (ZStatus)null;
+                this._sFrm = null;
                 return 0;
             }
         }
         reader.Close();
         fileStream.Close();
         this._sFrm.Hide();
-        this._sFrm = (ZStatus)null;
+        this._sFrm = null;
         return packHeader.PackContents;
     }
 

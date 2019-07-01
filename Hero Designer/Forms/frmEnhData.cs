@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmEnhData : Form
+    public partial class frmEnhData : Form
     {
         Button btnAdd;
 
@@ -129,30 +129,11 @@ namespace Hero_Designer
         protected ExtendedBitmap bxClass;
         protected ExtendedBitmap bxClassList;
         protected int ClassSize;
-        IContainer components;
 
         protected int EnhAcross;
         protected int EnhPadding;
         protected bool Loading;
         public IEnhancement myEnh;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         public frmEnhData(ref IEnhancement iEnh)
         {
@@ -175,8 +156,8 @@ namespace Hero_Designer
         void btnAddFX_Click(object sender, EventArgs e)
 
         {
-            IEffect iFX = (IEffect)new Effect((IPower)null);
-            frmPowerEffect frmPowerEffect = new frmPowerEffect(ref iFX);
+            IEffect iFX = new Effect();
+            frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() != DialogResult.OK)
                 return;
             IEnhancement enh = this.myEnh;
@@ -608,8 +589,8 @@ namespace Hero_Designer
             {
                 ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + this.myEnh.Image);
                 ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(30, 30);
-                extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(this.myEnh.TypeID)), GraphicsUnit.Pixel);
-                extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, GraphicsUnit.Pixel);
+                extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(this.myEnh.TypeID)), System.Drawing.GraphicsUnit.Pixel);
+                extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, System.Drawing.GraphicsUnit.Pixel);
                 this.btnImage.Image = (Image)new Bitmap((Image)extendedBitmap2.Bitmap);
                 this.btnImage.Text = this.myEnh.Image;
             }
@@ -652,26 +633,19 @@ namespace Hero_Designer
                 {
                     ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].Image);
                     ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(30, 30);
-                    extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
-                    extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, GraphicsUnit.Pixel);
+                    extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), System.Drawing.GraphicsUnit.Pixel);
+                    extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, System.Drawing.GraphicsUnit.Pixel);
                     this.pbSet.Image = (Image)new Bitmap((Image)extendedBitmap2.Bitmap);
                 }
                 else
                 {
                     ExtendedBitmap extendedBitmap = new ExtendedBitmap(30, 30);
-                    extendedBitmap.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
+                    extendedBitmap.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), System.Drawing.GraphicsUnit.Pixel);
                     this.pbSet.Image = (Image)new Bitmap((Image)extendedBitmap.Bitmap);
                 }
             }
             else
                 this.pbSet.Image = (Image)new Bitmap(this.pbSet.Width, this.pbSet.Height);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
         }
 
         public void DrawClasses()
@@ -685,7 +659,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, this.ClassSize, this.ClassSize);
-                this.bxClass.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(this.myEnh.ClassID[index]), GraphicsUnit.Pixel);
+                this.bxClass.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(this.myEnh.ClassID[index]), System.Drawing.GraphicsUnit.Pixel);
                 enhPadding2 += this.ClassSize + this.EnhPadding;
                 ++num1;
                 if (num1 == 2)
@@ -709,7 +683,7 @@ namespace Hero_Designer
             for (int index = 0; index <= num2; ++index)
             {
                 Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, 30, 30);
-                this.bxClassList.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), GraphicsUnit.Pixel);
+                this.bxClassList.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), System.Drawing.GraphicsUnit.Pixel);
                 enhPadding2 += 30 + this.EnhPadding;
                 ++num1;
                 if (num1 == this.EnhAcross)
@@ -755,7 +729,7 @@ namespace Hero_Designer
             }
             else
             {
-                frmPowerEffect frmPowerEffect = new frmPowerEffect(ref this.myEnh.Effect[selectedIndex].FX);
+                frmPowerEffect frmPowerEffect = new frmPowerEffect(this.myEnh.Effect[selectedIndex].FX);
                 if (frmPowerEffect.ShowDialog() == DialogResult.OK)
                 {
                     Enums.sEffect[] effect = this.myEnh.Effect;
@@ -907,775 +881,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmEnhData));
-            this.gbBasic = new GroupBox();
-            this.txtInternal = new TextBox();
-            this.Label9 = new Label();
-            this.Label7 = new Label();
-            this.Label6 = new Label();
-            this.udMinLevel = new NumericUpDown();
-            this.udMaxLevel = new NumericUpDown();
-            this.txtDesc = new TextBox();
-            this.Label4 = new Label();
-            this.txtNameShort = new TextBox();
-            this.Label3 = new Label();
-            this.txtNameFull = new TextBox();
-            this.Label2 = new Label();
-            this.btnImage = new Button();
-            this.gbType = new GroupBox();
-            this.cbSubType = new ComboBox();
-            this.typeSet = new RadioButton();
-            this.typeIO = new RadioButton();
-            this.typeRegular = new RadioButton();
-            this.typeHO = new RadioButton();
-            this.cbSet = new ComboBox();
-            this.gbSet = new GroupBox();
-            this.chkSuperior = new CheckBox();
-            this.pbSet = new PictureBox();
-            this.chkUnique = new CheckBox();
-            this.gbEffects = new GroupBox();
-            this.btnDown = new Button();
-            this.btnUp = new Button();
-            this.rbBoth = new RadioButton();
-            this.rbDebuff = new RadioButton();
-            this.rbBuff = new RadioButton();
-            this.btnAutoFill = new Button();
-            this.Label5 = new Label();
-            this.txtProb = new TextBox();
-            this.Label1 = new Label();
-            this.btnEdit = new Button();
-            this.btnAddFX = new Button();
-            this.btnRemove = new Button();
-            this.btnAdd = new Button();
-            this.gbMod = new GroupBox();
-            this.rbMod4 = new RadioButton();
-            this.txtModOther = new TextBox();
-            this.rbModOther = new RadioButton();
-            this.rbMod3 = new RadioButton();
-            this.rbMod2 = new RadioButton();
-            this.rbMod1 = new RadioButton();
-            this.lstSelected = new ListBox();
-            this.lstAvailable = new ListBox();
-            this.cbSched = new ComboBox();
-            this.lblSched = new Label();
-            this.btnOK = new Button();
-            this.btnCancel = new Button();
-            this.gbClass = new GroupBox();
-            this.lblClass = new Label();
-            this.pnlClassList = new Panel();
-            this.pnlClass = new Panel();
-            this.ImagePicker = new OpenFileDialog();
-            this.btnNoImage = new Button();
-            this.tTip = new ToolTip(this.components);
-            this.cbMutEx = new ComboBox();
-            this.cbRecipe = new ComboBox();
-            this.Label8 = new Label();
-            this.Label10 = new Label();
-            this.btnEditPowerData = new Button();
-            this.StaticIndex = new TextBox();
-            this.Label11 = new Label();
-            this.gbBasic.SuspendLayout();
-            this.udMinLevel.BeginInit();
-            this.udMaxLevel.BeginInit();
-            this.gbType.SuspendLayout();
-            this.gbSet.SuspendLayout();
-            ((ISupportInitialize)this.pbSet).BeginInit();
-            this.gbEffects.SuspendLayout();
-            this.gbMod.SuspendLayout();
-            this.gbClass.SuspendLayout();
-            this.SuspendLayout();
-            this.gbBasic.Controls.Add((Control)this.txtInternal);
-            this.gbBasic.Controls.Add((Control)this.Label9);
-            this.gbBasic.Controls.Add((Control)this.Label7);
-            this.gbBasic.Controls.Add((Control)this.Label6);
-            this.gbBasic.Controls.Add((Control)this.udMinLevel);
-            this.gbBasic.Controls.Add((Control)this.udMaxLevel);
-            this.gbBasic.Controls.Add((Control)this.txtDesc);
-            this.gbBasic.Controls.Add((Control)this.Label4);
-            this.gbBasic.Controls.Add((Control)this.txtNameShort);
-            this.gbBasic.Controls.Add((Control)this.Label3);
-            this.gbBasic.Controls.Add((Control)this.txtNameFull);
-            this.gbBasic.Controls.Add((Control)this.Label2);
-            Point point = new Point(96, 8);
-            this.gbBasic.Location = point;
-            this.gbBasic.Name = "gbBasic";
-            Size size = new Size(248, 169);
-            this.gbBasic.Size = size;
-            this.gbBasic.TabIndex = 11;
-            this.gbBasic.TabStop = false;
-            this.gbBasic.Text = "Basic:";
-            point = new Point(84, 68);
-            this.txtInternal.Location = point;
-            this.txtInternal.Name = "txtInternal";
-            size = new Size(156, 20);
-            this.txtInternal.Size = size;
-            this.txtInternal.TabIndex = 21;
-            point = new Point(8, 68);
-            this.Label9.Location = point;
-            this.Label9.Name = "Label9";
-            size = new Size(72, 20);
-            this.Label9.Size = size;
-            this.Label9.TabIndex = 20;
-            this.Label9.Text = "Internal:";
-            this.Label9.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(134, 140);
-            this.Label7.Location = point;
-            this.Label7.Name = "Label7";
-            size = new Size(56, 20);
-            this.Label7.Size = size;
-            this.Label7.TabIndex = 19;
-            this.Label7.Text = "to";
-            this.Label7.TextAlign = ContentAlignment.MiddleCenter;
-            point = new Point(6, 140);
-            this.Label6.Location = point;
-            this.Label6.Name = "Label6";
-            size = new Size(74, 20);
-            this.Label6.Size = size;
-            this.Label6.TabIndex = 18;
-            this.Label6.Text = "Level range:";
-            this.Label6.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 140);
-            this.udMinLevel.Location = point;
-            Decimal num = new Decimal(new int[4]
-            {
-        53,
-        0,
-        0,
-        0
-            });
-            this.udMinLevel.Maximum = num;
-            num = new Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMinLevel.Minimum = num;
-            this.udMinLevel.Name = "udMinLevel";
-            size = new Size(44, 20);
-            this.udMinLevel.Size = size;
-            this.udMinLevel.TabIndex = 17;
-            num = new Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMinLevel.Value = num;
-            point = new Point(196, 140);
-            this.udMaxLevel.Location = point;
-            num = new Decimal(new int[4] { 53, 0, 0, 0 });
-            this.udMaxLevel.Maximum = num;
-            num = new Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMaxLevel.Minimum = num;
-            this.udMaxLevel.Name = "udMaxLevel";
-            size = new Size(44, 20);
-            this.udMaxLevel.Size = size;
-            this.udMaxLevel.TabIndex = 16;
-            num = new Decimal(new int[4] { 53, 0, 0, 0 });
-            this.udMaxLevel.Value = num;
-            point = new Point(84, 94);
-            this.txtDesc.Location = point;
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            size = new Size(156, 40);
-            this.txtDesc.Size = size;
-            this.txtDesc.TabIndex = 15;
-            point = new Point(8, 98);
-            this.Label4.Location = point;
-            this.Label4.Name = "Label4";
-            size = new Size(72, 20);
-            this.Label4.Size = size;
-            this.Label4.TabIndex = 14;
-            this.Label4.Text = "Description:";
-            this.Label4.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 42);
-            this.txtNameShort.Location = point;
-            this.txtNameShort.Name = "txtNameShort";
-            size = new Size(156, 20);
-            this.txtNameShort.Size = size;
-            this.txtNameShort.TabIndex = 13;
-            point = new Point(8, 42);
-            this.Label3.Location = point;
-            this.Label3.Name = "Label3";
-            size = new Size(72, 20);
-            this.Label3.Size = size;
-            this.Label3.TabIndex = 12;
-            this.Label3.Text = "Short Name:";
-            this.Label3.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(84, 16);
-            this.txtNameFull.Location = point;
-            this.txtNameFull.Name = "txtNameFull";
-            size = new Size(156, 20);
-            this.txtNameFull.Size = size;
-            this.txtNameFull.TabIndex = 11;
-            point = new Point(8, 16);
-            this.Label2.Location = point;
-            this.Label2.Name = "Label2";
-            size = new Size(72, 20);
-            this.Label2.Size = size;
-            this.Label2.TabIndex = 10;
-            this.Label2.Text = "Full Name:";
-            this.Label2.TextAlign = ContentAlignment.MiddleRight;
-            this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
-            this.btnImage.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 12);
-            this.btnImage.Location = point;
-            this.btnImage.Name = "btnImage";
-            size = new Size(80, 68);
-            this.btnImage.Size = size;
-            this.btnImage.TabIndex = 9;
-            this.btnImage.Text = "ImageName";
-            this.btnImage.TextAlign = ContentAlignment.BottomCenter;
-            this.gbType.Controls.Add((Control)this.cbSubType);
-            this.gbType.Controls.Add((Control)this.typeSet);
-            this.gbType.Controls.Add((Control)this.typeIO);
-            this.gbType.Controls.Add((Control)this.typeRegular);
-            this.gbType.Controls.Add((Control)this.typeHO);
-            point = new Point(352, 8);
-            this.gbType.Location = point;
-            this.gbType.Name = "gbType";
-            size = new Size(140, 169);
-            this.gbType.Size = size;
-            this.gbType.TabIndex = 2;
-            this.gbType.TabStop = false;
-            this.gbType.Text = "Enhancement Type:";
-            this.cbSubType.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 138);
-            this.cbSubType.Location = point;
-            this.cbSubType.Name = "cbSubType";
-            size = new Size(124, 22);
-            this.cbSubType.Size = size;
-            this.cbSubType.TabIndex = 54;
-            this.tTip.SetToolTip((Control)this.cbSubType, "(Currently only apllicable to Stealth IOs");
-            this.typeSet.Appearance = Appearance.Button;
-            this.typeSet.CheckAlign = ContentAlignment.TopCenter;
-            this.typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
-            this.typeSet.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(72, 76);
-            this.typeSet.Location = point;
-            this.typeSet.Name = "typeSet";
-            size = new Size(60, 56);
-            this.typeSet.Size = size;
-            this.typeSet.TabIndex = 53;
-            this.typeSet.Text = "IO Set";
-            this.typeSet.TextAlign = ContentAlignment.BottomCenter;
-            this.typeIO.Appearance = Appearance.Button;
-            this.typeIO.CheckAlign = ContentAlignment.TopCenter;
-            this.typeIO.Image = (Image)componentResourceManager.GetObject("typeIO.Image");
-            this.typeIO.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(72, 16);
-            this.typeIO.Location = point;
-            this.typeIO.Name = "typeIO";
-            size = new Size(60, 56);
-            this.typeIO.Size = size;
-            this.typeIO.TabIndex = 52;
-            this.typeIO.Text = "Invention";
-            this.typeIO.TextAlign = ContentAlignment.BottomCenter;
-            this.typeRegular.Appearance = Appearance.Button;
-            this.typeRegular.CheckAlign = ContentAlignment.TopCenter;
-            this.typeRegular.Image = (Image)componentResourceManager.GetObject("typeRegular.Image");
-            this.typeRegular.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 16);
-            this.typeRegular.Location = point;
-            this.typeRegular.Name = "typeRegular";
-            size = new Size(60, 56);
-            this.typeRegular.Size = size;
-            this.typeRegular.TabIndex = 50;
-            this.typeRegular.Text = "Regular";
-            this.typeRegular.TextAlign = ContentAlignment.BottomCenter;
-            this.typeHO.Appearance = Appearance.Button;
-            this.typeHO.CheckAlign = ContentAlignment.TopCenter;
-            this.typeHO.Image = (Image)componentResourceManager.GetObject("typeHO.Image");
-            this.typeHO.ImageAlign = ContentAlignment.TopCenter;
-            point = new Point(8, 76);
-            this.typeHO.Location = point;
-            this.typeHO.Name = "typeHO";
-            size = new Size(60, 56);
-            this.typeHO.Size = size;
-            this.typeHO.TabIndex = 51;
-            this.typeHO.Text = "Special";
-            this.typeHO.TextAlign = ContentAlignment.BottomCenter;
-            this.cbSet.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(8, 20);
-            this.cbSet.Location = point;
-            this.cbSet.Name = "cbSet";
-            size = new Size(168, 22);
-            this.cbSet.Size = size;
-            this.cbSet.TabIndex = 13;
-            this.gbSet.Controls.Add((Control)this.chkSuperior);
-            this.gbSet.Controls.Add((Control)this.pbSet);
-            this.gbSet.Controls.Add((Control)this.cbSet);
-            this.gbSet.Controls.Add((Control)this.chkUnique);
-            point = new Point(496, 8);
-            this.gbSet.Location = point;
-            this.gbSet.Name = "gbSet";
-            size = new Size(184, 119);
-            this.gbSet.Size = size;
-            this.gbSet.TabIndex = 14;
-            this.gbSet.TabStop = false;
-            this.gbSet.Text = "Invention Origin Set:";
-            point = new Point(60, 94);
-            this.chkSuperior.Location = point;
-            this.chkSuperior.Name = "chkSuperior";
-            size = new Size(84, 16);
-            this.chkSuperior.Size = size;
-            this.chkSuperior.TabIndex = 21;
-            this.chkSuperior.Text = "Superior";
-            point = new Point(12, 52);
-            this.pbSet.Location = point;
-            this.pbSet.Name = "pbSet";
-            size = new Size(30, 30);
-            this.pbSet.Size = size;
-            this.pbSet.TabIndex = 14;
-            this.pbSet.TabStop = false;
-            point = new Point(60, 60);
-            this.chkUnique.Location = point;
-            this.chkUnique.Name = "chkUnique";
-            size = new Size(84, 16);
-            this.chkUnique.Size = size;
-            this.chkUnique.TabIndex = 20;
-            this.chkUnique.Text = "Unique";
-            this.gbEffects.Controls.Add((Control)this.btnDown);
-            this.gbEffects.Controls.Add((Control)this.btnUp);
-            this.gbEffects.Controls.Add((Control)this.rbBoth);
-            this.gbEffects.Controls.Add((Control)this.rbDebuff);
-            this.gbEffects.Controls.Add((Control)this.rbBuff);
-            this.gbEffects.Controls.Add((Control)this.btnAutoFill);
-            this.gbEffects.Controls.Add((Control)this.Label5);
-            this.gbEffects.Controls.Add((Control)this.txtProb);
-            this.gbEffects.Controls.Add((Control)this.Label1);
-            this.gbEffects.Controls.Add((Control)this.btnEdit);
-            this.gbEffects.Controls.Add((Control)this.btnAddFX);
-            this.gbEffects.Controls.Add((Control)this.btnRemove);
-            this.gbEffects.Controls.Add((Control)this.btnAdd);
-            this.gbEffects.Controls.Add((Control)this.gbMod);
-            this.gbEffects.Controls.Add((Control)this.lstSelected);
-            this.gbEffects.Controls.Add((Control)this.lstAvailable);
-            this.gbEffects.Controls.Add((Control)this.cbSched);
-            this.gbEffects.Controls.Add((Control)this.lblSched);
-            point = new Point(4, 210);
-            this.gbEffects.Location = point;
-            this.gbEffects.Name = "gbEffects";
-            size = new Size(584, 284);
-            this.gbEffects.Size = size;
-            this.gbEffects.TabIndex = 15;
-            this.gbEffects.TabStop = false;
-            this.gbEffects.Text = "Effects:";
-            point = new Point(188, 172);
-            this.btnDown.Location = point;
-            this.btnDown.Name = "btnDown";
-            size = new Size(48, 20);
-            this.btnDown.Size = size;
-            this.btnDown.TabIndex = 32;
-            this.btnDown.Text = "Down";
-            point = new Point(188, 148);
-            this.btnUp.Location = point;
-            this.btnUp.Name = "btnUp";
-            size = new Size(48, 20);
-            this.btnUp.Size = size;
-            this.btnUp.TabIndex = 31;
-            this.btnUp.Text = "Up";
-            this.rbBoth.Checked = true;
-            point = new Point(428, 228);
-            this.rbBoth.Location = point;
-            this.rbBoth.Name = "rbBoth";
-            size = new Size(148, 16);
-            this.rbBoth.Size = size;
-            this.rbBoth.TabIndex = 30;
-            this.rbBoth.TabStop = true;
-            this.rbBoth.Text = "Buff/Debuff Effects";
-            this.tTip.SetToolTip((Control)this.rbBoth, "Apply to effects regardles of whether the Mag is positive or negative");
-            point = new Point(428, 212);
-            this.rbDebuff.Location = point;
-            this.rbDebuff.Name = "rbDebuff";
-            size = new Size(148, 16);
-            this.rbDebuff.Size = size;
-            this.rbDebuff.TabIndex = 29;
-            this.rbDebuff.Text = "Debuff Effects";
-            this.tTip.SetToolTip((Control)this.rbDebuff, "Apply only to effects with a negative Mag");
-            point = new Point(428, 196);
-            this.rbBuff.Location = point;
-            this.rbBuff.Name = "rbBuff";
-            size = new Size(148, 16);
-            this.rbBuff.Size = size;
-            this.rbBuff.TabIndex = 28;
-            this.rbBuff.Text = "Buff Effects";
-            this.tTip.SetToolTip((Control)this.rbBuff, "Apply only to effects with a positive Mag");
-            point = new Point(128, 24);
-            this.btnAutoFill.Location = point;
-            this.btnAutoFill.Name = "btnAutoFill";
-            size = new Size(108, 32);
-            this.btnAutoFill.Size = size;
-            this.btnAutoFill.TabIndex = 27;
-            this.btnAutoFill.Text = "AutoFill Names";
-            point = new Point(196, 244);
-            this.Label5.Location = point;
-            this.Label5.Name = "Label5";
-            size = new Size(28, 20);
-            this.Label5.Size = size;
-            this.Label5.TabIndex = 26;
-            this.Label5.Text = "(0-1)";
-            this.Label5.TextAlign = ContentAlignment.MiddleLeft;
-            point = new Point(156, 244);
-            this.txtProb.Location = point;
-            this.txtProb.Name = "txtProb";
-            size = new Size(36, 20);
-            this.txtProb.Size = size;
-            this.txtProb.TabIndex = 25;
-            this.txtProb.Text = "1";
-            point = new Point(8, 244);
-            this.Label1.Location = point;
-            this.Label1.Name = "Label1";
-            size = new Size(148, 20);
-            this.Label1.Size = size;
-            this.Label1.TabIndex = 24;
-            this.Label1.Text = "Special Effect Probability:";
-            this.Label1.TextAlign = ContentAlignment.MiddleRight;
-            this.btnEdit.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(424, 248);
-            this.btnEdit.Location = point;
-            this.btnEdit.Name = "btnEdit";
-            size = new Size(152, 28);
-            this.btnEdit.Size = size;
-            this.btnEdit.TabIndex = 23;
-            this.btnEdit.Text = "Edit Selected...";
-            this.btnAddFX.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(8, 208);
-            this.btnAddFX.Location = point;
-            this.btnAddFX.Name = "btnAddFX";
-            size = new Size(228, 28);
-            this.btnAddFX.Size = size;
-            this.btnAddFX.TabIndex = 22;
-            this.btnAddFX.Text = "Add Special Effect... ->";
-            this.btnRemove.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(240, 248);
-            this.btnRemove.Location = point;
-            this.btnRemove.Name = "btnRemove";
-            size = new Size(176, 28);
-            this.btnRemove.Size = size;
-            this.btnRemove.TabIndex = 21;
-            this.btnRemove.Text = "Remove Selected";
-            this.btnAdd.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            point = new Point(128, 100);
-            this.btnAdd.Location = point;
-            this.btnAdd.Name = "btnAdd";
-            size = new Size(108, 28);
-            this.btnAdd.Size = size;
-            this.btnAdd.TabIndex = 20;
-            this.btnAdd.Text = "Add ->";
-            this.gbMod.Controls.Add((Control)this.rbMod4);
-            this.gbMod.Controls.Add((Control)this.txtModOther);
-            this.gbMod.Controls.Add((Control)this.rbModOther);
-            this.gbMod.Controls.Add((Control)this.rbMod3);
-            this.gbMod.Controls.Add((Control)this.rbMod2);
-            this.gbMod.Controls.Add((Control)this.rbMod1);
-            point = new Point(424, 44);
-            this.gbMod.Location = point;
-            this.gbMod.Name = "gbMod";
-            size = new Size(152, 148);
-            this.gbMod.Size = size;
-            this.gbMod.TabIndex = 19;
-            this.gbMod.TabStop = false;
-            this.gbMod.Text = "Effect Modifier:";
-            point = new Point(12, 80);
-            this.rbMod4.Location = point;
-            this.rbMod4.Name = "rbMod4";
-            size = new Size(128, 20);
-            this.rbMod4.Size = size;
-            this.rbMod4.TabIndex = 5;
-            this.rbMod4.Text = "0.4375 (4-Effect IO)";
-            this.txtModOther.Enabled = false;
-            point = new Point(28, 120);
-            this.txtModOther.Location = point;
-            this.txtModOther.Name = "txtModOther";
-            size = new Size(112, 20);
-            this.txtModOther.Size = size;
-            this.txtModOther.TabIndex = 4;
-            point = new Point(12, 100);
-            this.rbModOther.Location = point;
-            this.rbModOther.Name = "rbModOther";
-            size = new Size(128, 20);
-            this.rbModOther.Size = size;
-            this.rbModOther.TabIndex = 3;
-            this.rbModOther.Text = "Other";
-            point = new Point(12, 60);
-            this.rbMod3.Location = point;
-            this.rbMod3.Name = "rbMod3";
-            size = new Size(128, 20);
-            this.rbMod3.Size = size;
-            this.rbMod3.TabIndex = 2;
-            this.rbMod3.Text = "0.5 (3-Effect IO)";
-            point = new Point(12, 40);
-            this.rbMod2.Location = point;
-            this.rbMod2.Name = "rbMod2";
-            size = new Size(128, 20);
-            this.rbMod2.Size = size;
-            this.rbMod2.TabIndex = 1;
-            this.rbMod2.Text = "0.625 (2-Effect IO)";
-            this.rbMod1.Checked = true;
-            point = new Point(12, 20);
-            this.rbMod1.Location = point;
-            this.rbMod1.Name = "rbMod1";
-            size = new Size(128, 20);
-            this.rbMod1.Size = size;
-            this.rbMod1.TabIndex = 0;
-            this.rbMod1.TabStop = true;
-            this.rbMod1.Text = "1.0 (No modifier)";
-            this.lstSelected.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.lstSelected.ItemHeight = 14;
-            point = new Point(240, 20);
-            this.lstSelected.Location = point;
-            this.lstSelected.Name = "lstSelected";
-            size = new Size(176, 214);
-            this.lstSelected.Size = size;
-            this.lstSelected.TabIndex = 16;
-            this.lstAvailable.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.lstAvailable.ItemHeight = 14;
-            point = new Point(8, 20);
-            this.lstAvailable.Location = point;
-            this.lstAvailable.Name = "lstAvailable";
-            size = new Size(116, 172);
-            this.lstAvailable.Size = size;
-            this.lstAvailable.TabIndex = 15;
-            this.cbSched.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(488, 20);
-            this.cbSched.Location = point;
-            this.cbSched.Name = "cbSched";
-            size = new Size(88, 22);
-            this.cbSched.Size = size;
-            this.cbSched.TabIndex = 14;
-            point = new Point(424, 20);
-            this.lblSched.Location = point;
-            this.lblSched.Name = "lblSched";
-            size = new Size(64, 20);
-            this.lblSched.Size = size;
-            this.lblSched.TabIndex = 3;
-            this.lblSched.Text = "Schedule:";
-            this.lblSched.TextAlign = ContentAlignment.MiddleRight;
-            this.btnOK.DialogResult = DialogResult.OK;
-            point = new Point(596, 434);
-            this.btnOK.Location = point;
-            this.btnOK.Name = "btnOK";
-            size = new Size(84, 28);
-            this.btnOK.Size = size;
-            this.btnOK.TabIndex = 16;
-            this.btnOK.Text = "OK";
-            this.btnCancel.DialogResult = DialogResult.Cancel;
-            point = new Point(596, 466);
-            this.btnCancel.Location = point;
-            this.btnCancel.Name = "btnCancel";
-            size = new Size(84, 28);
-            this.btnCancel.Size = size;
-            this.btnCancel.TabIndex = 17;
-            this.btnCancel.Text = "Cancel";
-            this.gbClass.Controls.Add((Control)this.lblClass);
-            this.gbClass.Controls.Add((Control)this.pnlClassList);
-            this.gbClass.Controls.Add((Control)this.pnlClass);
-            point = new Point(596, 178);
-            this.gbClass.Location = point;
-            this.gbClass.Name = "gbClass";
-            size = new Size(84, 252);
-            this.gbClass.Size = size;
-            this.gbClass.TabIndex = 18;
-            this.gbClass.TabStop = false;
-            this.gbClass.Text = "Class(es):";
-            point = new Point(8, 232);
-            this.lblClass.Location = point;
-            this.lblClass.Name = "lblClass";
-            size = new Size(68, 16);
-            this.lblClass.Size = size;
-            this.lblClass.TabIndex = 2;
-            this.pnlClassList.BackColor = Color.Black;
-            point = new Point(84, 16);
-            this.pnlClassList.Location = point;
-            this.pnlClassList.Name = "pnlClassList";
-            size = new Size(180, 212);
-            this.pnlClassList.Size = size;
-            this.pnlClassList.TabIndex = 1;
-            this.pnlClass.BackColor = Color.Black;
-            point = new Point(8, 16);
-            this.pnlClass.Location = point;
-            this.pnlClass.Name = "pnlClass";
-            size = new Size(68, 212);
-            this.pnlClass.Size = size;
-            this.pnlClass.TabIndex = 0;
-            this.ImagePicker.Filter = "PNG Images|*.png";
-            this.ImagePicker.Title = "Select Image File";
-            point = new Point(8, 84);
-            this.btnNoImage.Location = point;
-            this.btnNoImage.Name = "btnNoImage";
-            size = new Size(80, 20);
-            this.btnNoImage.Size = size;
-            this.btnNoImage.TabIndex = 19;
-            this.btnNoImage.Text = "Clear Image";
-            this.tTip.AutoPopDelay = 10000;
-            this.tTip.InitialDelay = 250;
-            this.tTip.ReshowDelay = 100;
-            this.cbMutEx.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(504, 146);
-            this.cbMutEx.Location = point;
-            this.cbMutEx.Name = "cbMutEx";
-            size = new Size(168, 22);
-            this.cbMutEx.Size = size;
-            this.cbMutEx.TabIndex = 21;
-            this.tTip.SetToolTip((Control)this.cbMutEx, "(Currently only apllicable to Stealth IOs");
-            this.cbRecipe.DropDownStyle = ComboBoxStyle.DropDownList;
-            point = new Point(96, 183);
-            this.cbRecipe.Location = point;
-            this.cbRecipe.Name = "cbRecipe";
-            size = new Size(248, 22);
-            this.cbRecipe.Size = size;
-            this.cbRecipe.TabIndex = 23;
-            this.tTip.SetToolTip((Control)this.cbRecipe, "(Currently only apllicable to Stealth IOs");
-            point = new Point(496, 130);
-            this.Label8.Location = point;
-            this.Label8.Name = "Label8";
-            size = new Size(80, 16);
-            this.Label8.Size = size;
-            this.Label8.TabIndex = 22;
-            this.Label8.Text = "MutEx Group:";
-            point = new Point(10, 183);
-            this.Label10.Location = point;
-            this.Label10.Name = "Label10";
-            size = new Size(80, 22);
-            this.Label10.Size = size;
-            this.Label10.TabIndex = 24;
-            this.Label10.Text = "Recipe:";
-            this.Label10.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(352, 183);
-            this.btnEditPowerData.Location = point;
-            this.btnEditPowerData.Name = "btnEditPowerData";
-            size = new Size(236, 22);
-            this.btnEditPowerData.Size = size;
-            this.btnEditPowerData.TabIndex = 25;
-            this.btnEditPowerData.Text = "Edit Power_Mode Data";
-            this.btnEditPowerData.UseVisualStyleBackColor = true;
-            point = new Point(8, 146);
-            this.StaticIndex.Location = point;
-            this.StaticIndex.Name = "StaticIndex";
-            size = new Size(82, 20);
-            this.StaticIndex.Size = size;
-            this.StaticIndex.TabIndex = 26;
-            this.Label11.AutoSize = true;
-            point = new Point(8, 126);
-            this.Label11.Location = point;
-            this.Label11.Name = "Label11";
-            size = new Size(63, 14);
-            this.Label11.Size = size;
-            this.Label11.TabIndex = 27;
-            this.Label11.Text = "Static Index";
-            this.AcceptButton = (IButtonControl)this.btnOK;
-            size = new Size(5, 13);
-            this.AutoScaleBaseSize = size;
-            this.CancelButton = (IButtonControl)this.btnCancel;
-            size = new Size(686, 501);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.Label11);
-            this.Controls.Add((Control)this.StaticIndex);
-            this.Controls.Add((Control)this.btnEditPowerData);
-            this.Controls.Add((Control)this.Label10);
-            this.Controls.Add((Control)this.cbRecipe);
-            this.Controls.Add((Control)this.Label8);
-            this.Controls.Add((Control)this.btnNoImage);
-            this.Controls.Add((Control)this.gbClass);
-            this.Controls.Add((Control)this.btnCancel);
-            this.Controls.Add((Control)this.btnOK);
-            this.Controls.Add((Control)this.gbEffects);
-            this.Controls.Add((Control)this.gbSet);
-            this.Controls.Add((Control)this.gbBasic);
-            this.Controls.Add((Control)this.gbType);
-            this.Controls.Add((Control)this.btnImage);
-            this.Controls.Add((Control)this.cbMutEx);
-            this.Font = new Font("Arial", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmEnhData);
-            this.ShowInTaskbar = false;
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Edit [EnhancementName]";
-            this.gbBasic.ResumeLayout(false);
-            this.gbBasic.PerformLayout();
-            this.udMinLevel.EndInit();
-            this.udMaxLevel.EndInit();
-            this.gbType.ResumeLayout(false);
-            this.gbSet.ResumeLayout(false);
-            ((ISupportInitialize)this.pbSet).EndInit();
-            this.gbEffects.ResumeLayout(false);
-            this.gbEffects.PerformLayout();
-            this.gbMod.ResumeLayout(false);
-            this.gbMod.PerformLayout();
-            this.gbClass.ResumeLayout(false);
-            this.ResumeLayout(false);
-              //adding events
-              if(!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-              {
-                  this.StaticIndex.TextChanged += StaticIndex_TextChanged;
-                  this.btnAdd.Click += btnAdd_Click;
-                  this.btnAddFX.Click += btnAddFX_Click;
-                  this.btnAutoFill.Click += btnAutoFill_Click;
-                  this.btnCancel.Click += btnCancel_Click;
-                  this.btnDown.Click += btnDown_Click;
-                  this.btnEdit.Click += btnEdit_Click;
-                  this.btnEditPowerData.Click += btnEditPowerData_Click;
-                  this.btnImage.Click += btnImage_Click;
-                  this.btnNoImage.Click += btnNoImage_Click;
-                  this.btnOK.Click += btnOK_Click;
-                  this.btnRemove.Click += btnRemove_Click;
-                  this.btnUp.Click += btnUp_Click;
-                  this.cbMutEx.SelectedIndexChanged += cbMutEx_SelectedIndexChanged;
-                  this.cbRecipe.SelectedIndexChanged += cbRecipe_SelectedIndexChanged;
-                  this.cbSched.SelectedIndexChanged += cbSched_SelectedIndexChanged;
-                  this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
-                  this.cbSubType.SelectedIndexChanged += cbSubType_SelectedIndexChanged;
-                  this.chkSuperior.CheckedChanged += chkSuperior_CheckedChanged;
-                  this.chkUnique.CheckedChanged += chkUnique_CheckedChanged;
-                  this.lstAvailable.DoubleClick += lstAvailable_DoubleClick;
-                  this.lstSelected.SelectedIndexChanged += lstSelected_SelectedIndexChanged;
-                  
-                  // pnlClass events
-                  this.pnlClass.MouseMove += pnlClass_MouseMove;
-                  this.pnlClass.Paint += pnlClass_Paint;
-                  this.pnlClass.MouseDown += pnlClass_MouseDown;
-                  
-                  
-                  // pnlClassList events
-                  this.pnlClassList.MouseMove += pnlClassList_MouseMove;
-                  this.pnlClassList.Paint += pnlClassList_Paint;
-                  this.pnlClassList.MouseDown += pnlClassList_MouseDown;
-                  
-                  this.rbBoth.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                  this.rbBuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                  this.rbDebuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                  this.rbMod1.CheckedChanged += rbMod_CheckedChanged;
-                  this.rbMod2.CheckedChanged += rbMod_CheckedChanged;
-                  this.rbMod3.CheckedChanged += rbMod_CheckedChanged;
-                  this.rbMod4.CheckedChanged += rbMod_CheckedChanged;
-                  this.rbModOther.CheckedChanged += rbMod_CheckedChanged;
-                  this.txtDesc.TextChanged += txtDesc_TextChanged;
-                  this.txtInternal.TextChanged += txtInternal_TextChanged;
-                  this.txtModOther.TextChanged += txtModOther_TextChanged;
-                  this.txtNameFull.TextChanged += txtNameFull_TextChanged;
-                  this.txtNameShort.TextChanged += txtNameShort_TextChanged;
-                  
-                  // txtProb events
-                  this.txtProb.Leave += txtProb_Leave;
-                  this.txtProb.TextChanged += txtProb_TextChanged;
-                  
-                  this.typeHO.CheckedChanged += type_CheckedChanged;
-                  this.typeIO.CheckedChanged += type_CheckedChanged;
-                  this.typeRegular.CheckedChanged += type_CheckedChanged;
-                  this.typeSet.CheckedChanged += type_CheckedChanged;
-                  
-                  // udMaxLevel events
-                  this.udMaxLevel.Leave += udMaxLevel_Leave;
-                  this.udMaxLevel.ValueChanged += udMaxLevel_ValueChanged;
-                  
-                  
-                  // udMinLevel events
-                  this.udMinLevel.Leave += udMinLevel_Leave;
-                  this.udMinLevel.ValueChanged += udMinLevel_ValueChanged;
-                  
-              }
-              // finished with events
-            this.PerformLayout();
-        }
 
         public void ListSelectedEffects()
         {
@@ -1992,19 +1197,19 @@ namespace Hero_Designer
             ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(30, 30);
             ExtendedBitmap extendedBitmap2 = !(this.myEnh.Image != "") ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + this.myEnh.Image);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeRegular.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.InventO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.InventO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeIO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SpecialO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SpecialO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeHO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SetO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SetO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeSet.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
         }

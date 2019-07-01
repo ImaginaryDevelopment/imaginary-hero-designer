@@ -237,7 +237,7 @@ namespace Hero_Designer
                 string[] haystack = iPost.Split(chArray);
                 int num1 = 0;
                 string dest = "";
-                MidsContext.Character.Reset((Archetype)null, 0);
+                MidsContext.Character.Reset(null, 0);
                 Character character = MidsContext.Character;
                 string name = character.Name;
                 character.Name = name;

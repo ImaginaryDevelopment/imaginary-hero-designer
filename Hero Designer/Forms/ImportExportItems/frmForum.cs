@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Hero_Designer
 {
-    public class frmForum : Form
+    public partial class frmForum : Form
     {
         CheckBox chkAlwaysDataChunk;
         CheckBox chkBonusList;
@@ -52,8 +52,6 @@ namespace Hero_Designer
         PictureBox pbTitle;
         ToolTip ToolTip1;
 
-        IContainer components;
-
         public clsOutput Exporter;
         Point mouse_offset;
 
@@ -90,10 +88,10 @@ namespace Hero_Designer
             }
             else
             {
-                this.csHeading.BackColor = Color.Navy;
-                this.csLevel.BackColor = Color.DarkSlateBlue;
-                this.csSlots.BackColor = Color.DarkSlateBlue;
-                this.csTitle.BackColor = Color.MediumBlue;
+                this.csHeading.BackColor = System.Drawing.Color.Navy;
+                this.csLevel.BackColor = System.Drawing.Color.DarkSlateBlue;
+                this.csSlots.BackColor = System.Drawing.Color.DarkSlateBlue;
+                this.csTitle.BackColor = System.Drawing.Color.MediumBlue;
             }
         }
 
@@ -111,13 +109,6 @@ namespace Hero_Designer
             this.csList.SelectedIndex = HighlightID;
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && this.components != null)
-                this.components.Dispose();
-            base.Dispose(disposing);
-        }
-
         void frmForum_Load(object sender, EventArgs e)
         {
             this.pbTitle.Left = (int)Math.Round((double)(this.Width - this.pbTitle.Width) / 2.0);
@@ -127,10 +118,10 @@ namespace Hero_Designer
                 ExportConfig.ColorScheme[] colorSchemes = MidsContext.Config.Export.ColorSchemes;
                 int index = 0;
                 colorSchemes[index].SchemeName = "Navy";
-                colorSchemes[index].Title = Color.MediumBlue;
-                colorSchemes[index].Heading = Color.Navy;
-                colorSchemes[index].Level = Color.DarkSlateBlue;
-                colorSchemes[index].Slots = Color.DarkSlateBlue;
+                colorSchemes[index].Title = System.Drawing.Color.MediumBlue;
+                colorSchemes[index].Heading = System.Drawing.Color.Navy;
+                colorSchemes[index].Level = System.Drawing.Color.DarkSlateBlue;
+                colorSchemes[index].Slots = System.Drawing.Color.DarkSlateBlue;
             }
             this.csPopulateList(MidsContext.Config.ExportScheme);
             if (MidsContext.Config.Export.FormatCode.Length < 1)
@@ -163,7 +154,7 @@ namespace Hero_Designer
 
         void frmForum_MouseDown(object sender, MouseEventArgs e)
         {
-            this.mouse_offset = new Point(-e.X, -e.Y);
+            this.mouse_offset = new System.Drawing.Point(-e.X, -e.Y);
         }
 
         void frmForum_MouseMove(object sender, MouseEventArgs e)
@@ -222,407 +213,6 @@ namespace Hero_Designer
         }
 
         [DebuggerStepThrough]
-        void InitializeComponent()
-
-        {
-            this.components = (IContainer)new Container();
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmForum));
-            this.GroupBox1 = new GroupBox();
-            this.Label4 = new Label();
-            this.csSlots = new Label();
-            this.csLevel = new Label();
-            this.csHeading = new Label();
-            this.csTitle = new Label();
-            this.Label21 = new Label();
-            this.Label22 = new Label();
-            this.Label20 = new Label();
-            this.Label19 = new Label();
-            this.csList = new ListBox();
-            this.GroupBox2 = new GroupBox();
-            this.Label1 = new Label();
-            this.lstCodes = new ListBox();
-            this.lblCodeInf = new Label();
-            this.chkDataChunk = new CheckBox();
-            this.ToolTip1 = new ToolTip(this.components);
-            this.chkNoSetName = new CheckBox();
-            this.chkNoIOLevel = new CheckBox();
-            this.chkNoEnh = new CheckBox();
-            this.chkBonusList = new CheckBox();
-            this.chkBreakdown = new CheckBox();
-            this.chkChunkOnly = new CheckBox();
-            this.chkAlwaysDataChunk = new CheckBox();
-            this.GroupBox3 = new GroupBox();
-            this.Label3 = new Label();
-            this.GroupBox4 = new GroupBox();
-            this.Label2 = new Label();
-            this.GroupBox5 = new GroupBox();
-            this.pbTitle = new PictureBox();
-            this.ibCancel = new ImageButton();
-            this.ibExport = new ImageButton();
-            this.lblRecess = new Label();
-            this.GroupBox1.SuspendLayout();
-            this.GroupBox2.SuspendLayout();
-            this.GroupBox3.SuspendLayout();
-            this.GroupBox4.SuspendLayout();
-            this.GroupBox5.SuspendLayout();
-            ((ISupportInitialize)this.pbTitle).BeginInit();
-            this.SuspendLayout();
-            this.GroupBox1.BackColor = Color.Black;
-            this.GroupBox1.Controls.Add((Control)this.Label4);
-            this.GroupBox1.Controls.Add((Control)this.csSlots);
-            this.GroupBox1.Controls.Add((Control)this.csLevel);
-            this.GroupBox1.Controls.Add((Control)this.csHeading);
-            this.GroupBox1.Controls.Add((Control)this.csTitle);
-            this.GroupBox1.Controls.Add((Control)this.Label21);
-            this.GroupBox1.Controls.Add((Control)this.Label22);
-            this.GroupBox1.Controls.Add((Control)this.Label20);
-            this.GroupBox1.Controls.Add((Control)this.Label19);
-            this.GroupBox1.Controls.Add((Control)this.csList);
-            this.GroupBox1.ForeColor = Color.White;
-            Point point = new Point(19, 34);
-            this.GroupBox1.Location = point;
-            this.GroupBox1.Name = "GroupBox1";
-            Size size = new Size(328, 222);
-            this.GroupBox1.Size = size;
-            this.GroupBox1.TabIndex = 0;
-            this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Colour Scheme:";
-            point = new Point(165, 105);
-            this.Label4.Location = point;
-            this.Label4.Name = "Label4";
-            size = new Size(157, 89);
-            this.Label4.Size = size;
-            this.Label4.TabIndex = 19;
-            this.Label4.Text = "Colour schemes marked '(US)' are intended for display on a dark bacground, and are suitable for the USA CoX forums.";
-            this.Label4.TextAlign = ContentAlignment.MiddleCenter;
-            this.csSlots.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.csSlots.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(260, 80);
-            this.csSlots.Location = point;
-            this.csSlots.Name = "csSlots";
-            size = new Size(52, 16);
-            this.csSlots.Size = size;
-            this.csSlots.TabIndex = 18;
-            this.csLevel.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.csLevel.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(260, 60);
-            this.csLevel.Location = point;
-            this.csLevel.Name = "csLevel";
-            size = new Size(52, 16);
-            this.csLevel.Size = size;
-            this.csLevel.TabIndex = 17;
-            this.csHeading.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.csHeading.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(260, 40);
-            this.csHeading.Location = point;
-            this.csHeading.Name = "csHeading";
-            size = new Size(52, 16);
-            this.csHeading.Size = size;
-            this.csHeading.TabIndex = 16;
-            this.csTitle.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
-            this.csTitle.BorderStyle = BorderStyle.FixedSingle;
-            point = new Point(260, 20);
-            this.csTitle.Location = point;
-            this.csTitle.Name = "csTitle";
-            size = new Size(52, 16);
-            this.csTitle.Size = size;
-            this.csTitle.TabIndex = 15;
-            point = new Point(168, 80);
-            this.Label21.Location = point;
-            this.Label21.Name = "Label21";
-            size = new Size(88, 16);
-            this.Label21.Size = size;
-            this.Label21.TabIndex = 14;
-            this.Label21.Text = "Slots:";
-            this.Label21.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(168, 60);
-            this.Label22.Location = point;
-            this.Label22.Name = "Label22";
-            size = new Size(88, 16);
-            this.Label22.Size = size;
-            this.Label22.TabIndex = 13;
-            this.Label22.Text = "Levels:";
-            this.Label22.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(168, 40);
-            this.Label20.Location = point;
-            this.Label20.Name = "Label20";
-            size = new Size(88, 16);
-            this.Label20.Size = size;
-            this.Label20.TabIndex = 12;
-            this.Label20.Text = "Subheadings:";
-            this.Label20.TextAlign = ContentAlignment.MiddleRight;
-            point = new Point(168, 20);
-            this.Label19.Location = point;
-            this.Label19.Name = "Label19";
-            size = new Size(88, 16);
-            this.Label19.Size = size;
-            this.Label19.TabIndex = 11;
-            this.Label19.Text = "Title Text:";
-            this.Label19.TextAlign = ContentAlignment.MiddleRight;
-            this.csList.ItemHeight = 14;
-            point = new Point(8, 20);
-            this.csList.Location = point;
-            this.csList.Name = "csList";
-            size = new Size(151, 186);
-            this.csList.Size = size;
-            this.csList.TabIndex = 10;
-            this.GroupBox2.BackColor = Color.Black;
-            this.GroupBox2.Controls.Add((Control)this.Label1);
-            this.GroupBox2.Controls.Add((Control)this.lstCodes);
-            this.GroupBox2.Controls.Add((Control)this.lblCodeInf);
-            this.GroupBox2.ForeColor = Color.White;
-            point = new Point(353, 34);
-            this.GroupBox2.Location = point;
-            this.GroupBox2.Name = "GroupBox2";
-            size = new Size(268, 222);
-            this.GroupBox2.Size = size;
-            this.GroupBox2.TabIndex = 1;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "Formatting Code Type:";
-            point = new Point(8, 16);
-            this.Label1.Location = point;
-            this.Label1.Name = "Label1";
-            size = new Size(256, 56);
-            this.Label1.Size = size;
-            this.Label1.TabIndex = 5;
-            this.Label1.Text = "Different forums use different tags to change font style. Pick the forum type you need form this list. You can add more forum code sets in the program options window.";
-            this.Label1.TextAlign = ContentAlignment.MiddleCenter;
-            this.lstCodes.ItemHeight = 14;
-            point = new Point(8, 76);
-            this.lstCodes.Location = point;
-            this.lstCodes.Name = "lstCodes";
-            size = new Size(252, 102);
-            this.lstCodes.Size = size;
-            this.lstCodes.TabIndex = 0;
-            this.lblCodeInf.BackColor = Color.Black;
-            this.lblCodeInf.ForeColor = Color.White;
-            point = new Point(6, 187);
-            this.lblCodeInf.Location = point;
-            this.lblCodeInf.Name = "lblCodeInf";
-            size = new Size(256, 32);
-            this.lblCodeInf.Size = size;
-            this.lblCodeInf.TabIndex = 4;
-            this.chkDataChunk.Checked = true;
-            this.chkDataChunk.CheckState = CheckState.Checked;
-            this.chkDataChunk.ForeColor = Color.White;
-            point = new Point(11, 76);
-            this.chkDataChunk.Location = point;
-            this.chkDataChunk.Name = "chkDataChunk";
-            size = new Size(371, 20);
-            this.chkDataChunk.Size = size;
-            this.chkDataChunk.TabIndex = 3;
-            this.chkDataChunk.Text = "Export Data Chunk if creating a DataLink isn't possible";
-            this.ToolTip1.SetToolTip((Control)this.chkDataChunk, "Enable this to include a data chunk which can be copied by other forum users and imported into the Hero Designer");
-            this.chkNoSetName.ForeColor = Color.White;
-            point = new Point(12, 52);
-            this.chkNoSetName.Location = point;
-            this.chkNoSetName.Name = "chkNoSetName";
-            size = new Size(180, 20);
-            this.chkNoSetName.Size = size;
-            this.chkNoSetName.TabIndex = 7;
-            this.chkNoSetName.Text = "Don't Export IO Set Names";
-            this.ToolTip1.SetToolTip((Control)this.chkNoSetName, "Invention enhancements will not show which set they're from.");
-            this.chkNoIOLevel.ForeColor = Color.White;
-            point = new Point(12, 76);
-            this.chkNoIOLevel.Location = point;
-            this.chkNoIOLevel.Name = "chkNoIOLevel";
-            size = new Size(180, 20);
-            this.chkNoIOLevel.Size = size;
-            this.chkNoIOLevel.TabIndex = 8;
-            this.chkNoIOLevel.Text = "Don't Export Invention Levels";
-            this.ToolTip1.SetToolTip((Control)this.chkNoIOLevel, "Hides the level of Invention origin enhancements.");
-            this.chkNoEnh.ForeColor = Color.White;
-            point = new Point(12, 100);
-            this.chkNoEnh.Location = point;
-            this.chkNoEnh.Name = "chkNoEnh";
-            size = new Size(180, 20);
-            this.chkNoEnh.Size = size;
-            this.chkNoEnh.TabIndex = 9;
-            this.chkNoEnh.Text = "Don't Export Enhancements";
-            this.ToolTip1.SetToolTip((Control)this.chkNoEnh, "Exported builds won't show which enhancements are slotted into powers.");
-            this.chkBonusList.ForeColor = Color.White;
-            point = new Point(12, 19);
-            this.chkBonusList.Location = point;
-            this.chkBonusList.Name = "chkBonusList";
-            size = new Size(143, 20);
-            this.chkBonusList.Size = size;
-            this.chkBonusList.TabIndex = 8;
-            this.chkBonusList.Text = "Export Bonus Totals";
-            this.ToolTip1.SetToolTip((Control)this.chkBonusList, "The total effects of your set bonuses will be added to the end of the export");
-            this.chkBreakdown.ForeColor = Color.White;
-            point = new Point(12, 43);
-            this.chkBreakdown.Location = point;
-            this.chkBreakdown.Name = "chkBreakdown";
-            size = new Size(143, 20);
-            this.chkBreakdown.Size = size;
-            this.chkBreakdown.TabIndex = 9;
-            this.chkBreakdown.Text = "Export Set Breakdown";
-            this.ToolTip1.SetToolTip((Control)this.chkBreakdown, "A detailed breakdown of your set bonuses, including which power\r\nthey're coming from, will be appended to the export.");
-            this.chkChunkOnly.ForeColor = Color.White;
-            point = new Point(32, 100);
-            this.chkChunkOnly.Location = point;
-            this.chkChunkOnly.Name = "chkChunkOnly";
-            size = new Size(168, 20);
-            this.chkChunkOnly.Size = size;
-            this.chkChunkOnly.TabIndex = 9;
-            this.chkChunkOnly.Text = "Only export Data Chunk";
-            this.ToolTip1.SetToolTip((Control)this.chkChunkOnly, "Exports the Data Chunk by itself.\r\nDoesn't export any human-readable build information.");
-            this.chkAlwaysDataChunk.ForeColor = Color.White;
-            point = new Point(8, 126);
-            this.chkAlwaysDataChunk.Location = point;
-            this.chkAlwaysDataChunk.Name = "chkAlwaysDataChunk";
-            size = new Size(371, 20);
-            this.chkAlwaysDataChunk.Size = size;
-            this.chkAlwaysDataChunk.TabIndex = 10;
-            this.chkAlwaysDataChunk.Text = "Export Data Chunk as well as a DataLink";
-            this.ToolTip1.SetToolTip((Control)this.chkAlwaysDataChunk, "Enable this to include a data chunk which can be copied by other forum users and imported into the Hero Designer");
-            this.GroupBox3.BackColor = Color.Black;
-            this.GroupBox3.Controls.Add((Control)this.Label3);
-            this.GroupBox3.Controls.Add((Control)this.chkNoIOLevel);
-            this.GroupBox3.Controls.Add((Control)this.chkNoSetName);
-            this.GroupBox3.Controls.Add((Control)this.chkNoEnh);
-            this.GroupBox3.ForeColor = Color.White;
-            point = new Point(413, 262);
-            this.GroupBox3.Location = point;
-            this.GroupBox3.Name = "GroupBox3";
-            size = new Size(208, 124);
-            this.GroupBox3.Size = size;
-            this.GroupBox3.TabIndex = 10;
-            this.GroupBox3.TabStop = false;
-            this.GroupBox3.Text = "Enhancements:";
-            point = new Point(12, 20);
-            this.Label3.Location = point;
-            this.Label3.Name = "Label3";
-            size = new Size(192, 28);
-            this.Label3.Size = size;
-            this.Label3.TabIndex = 10;
-            this.Label3.Text = "These affect the build profile only, the data chunk is unaffected.";
-            this.Label3.TextAlign = ContentAlignment.MiddleCenter;
-            this.GroupBox4.BackColor = Color.Black;
-            this.GroupBox4.Controls.Add((Control)this.chkAlwaysDataChunk);
-            this.GroupBox4.Controls.Add((Control)this.chkChunkOnly);
-            this.GroupBox4.Controls.Add((Control)this.Label2);
-            this.GroupBox4.Controls.Add((Control)this.chkDataChunk);
-            this.GroupBox4.ForeColor = Color.White;
-            point = new Point(19, 262);
-            this.GroupBox4.Location = point;
-            this.GroupBox4.Name = "GroupBox4";
-            size = new Size(388, 152);
-            this.GroupBox4.Size = size;
-            this.GroupBox4.TabIndex = 11;
-            this.GroupBox4.TabStop = false;
-            this.GroupBox4.Text = "Data Chunk:";
-            point = new Point(8, 16);
-            this.Label2.Location = point;
-            this.Label2.Name = "Label2";
-            size = new Size(374, 56);
-            this.Label2.Size = size;
-            this.Label2.TabIndex = 7;
-            this.Label2.Text = "If a build is too complex to be exported in a DataLink, export can fall back to exporting a Data Chunk at the end of a build. Users can import the data chunk to view the build.";
-            this.Label2.TextAlign = ContentAlignment.MiddleCenter;
-            this.GroupBox5.BackColor = Color.Black;
-            this.GroupBox5.Controls.Add((Control)this.chkBreakdown);
-            this.GroupBox5.Controls.Add((Control)this.chkBonusList);
-            this.GroupBox5.ForeColor = Color.White;
-            point = new Point(413, 392);
-            this.GroupBox5.Location = point;
-            this.GroupBox5.Name = "GroupBox5";
-            size = new Size(208, 72);
-            this.GroupBox5.Size = size;
-            this.GroupBox5.TabIndex = 12;
-            this.GroupBox5.TabStop = false;
-            this.GroupBox5.Text = "Set Bonuses:";
-            this.pbTitle.BackColor = Color.Transparent;
-            this.pbTitle.Image = (Image)componentResourceManager.GetObject("pbTitle.Image");
-            point = new Point(180, 6);
-            this.pbTitle.Location = point;
-            this.pbTitle.Name = "pbTitle";
-            size = new Size(263, 24);
-            this.pbTitle.Size = size;
-            this.pbTitle.SizeMode = PictureBoxSizeMode.AutoSize;
-            this.pbTitle.TabIndex = 15;
-            this.pbTitle.TabStop = false;
-            this.ibCancel.Checked = false;
-            this.ibCancel.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibCancel.KnockoutLocationPoint = point;
-            point = new Point(52, 431);
-            this.ibCancel.Location = point;
-            this.ibCancel.Name = "ibCancel";
-            size = new Size(105, 22);
-            this.ibCancel.Size = size;
-            this.ibCancel.TabIndex = 14;
-            this.ibCancel.TextOff = "Cancel";
-            this.ibCancel.TextOn = "Alt Text";
-            this.ibCancel.Toggle = false;
-            this.ibExport.Checked = false;
-            this.ibExport.Font = new Font("Arial", 11f, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            point = new Point(0, 0);
-            this.ibExport.KnockoutLocationPoint = point;
-            point = new Point(246, 431);
-            this.ibExport.Location = point;
-            this.ibExport.Name = "ibExport";
-            size = new Size(105, 22);
-            this.ibExport.Size = size;
-            this.ibExport.TabIndex = 13;
-            this.ibExport.TextOff = "Export Now";
-            this.ibExport.TextOn = "Alt Text";
-            this.ibExport.Toggle = false;
-            this.lblRecess.BackColor = Color.Black;
-            this.lblRecess.BorderStyle = BorderStyle.Fixed3D;
-            point = new Point(12, 31);
-            this.lblRecess.Location = point;
-            this.lblRecess.Name = "lblRecess";
-            size = new Size(616, 439);
-            this.lblRecess.Size = size;
-            this.lblRecess.TabIndex = 16;
-            this.AutoScaleMode = AutoScaleMode.None;
-            this.BackColor = Color.FromArgb(0, 0, 32);
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            size = new Size(640, 480);
-            this.ClientSize = size;
-            this.Controls.Add((Control)this.pbTitle);
-            this.Controls.Add((Control)this.ibCancel);
-            this.Controls.Add((Control)this.ibExport);
-            this.Controls.Add((Control)this.GroupBox5);
-            this.Controls.Add((Control)this.GroupBox4);
-            this.Controls.Add((Control)this.GroupBox3);
-            this.Controls.Add((Control)this.GroupBox2);
-            this.Controls.Add((Control)this.GroupBox1);
-            this.Controls.Add((Control)this.lblRecess);
-            this.Font = new Font("Arial", 11f, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
-            this.ForeColor = Color.White;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = nameof(frmForum);
-            this.ShowInTaskbar = false;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Forum Export";
-            this.GroupBox1.ResumeLayout(false);
-            this.GroupBox2.ResumeLayout(false);
-            this.GroupBox3.ResumeLayout(false);
-            this.GroupBox4.ResumeLayout(false);
-            this.GroupBox5.ResumeLayout(false);
-            ((ISupportInitialize)this.pbTitle).EndInit();
-            this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
-                this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
-                this.ibExport.ButtonClicked += ibExport_ButtonClicked;
-                this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
-
-                // pbTitle events
-                this.pbTitle.MouseMove += pbTitle_MouseMove;
-                this.pbTitle.MouseDown += pbTitle_MouseDown;
-
-            }
-            // finished with events
-            this.PerformLayout();
-        }
 
         void lstCodes_SelectedIndexChanged(object sender, EventArgs e)
 
@@ -633,7 +223,7 @@ namespace Hero_Designer
         void pbTitle_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new Point(-this.pbTitle.Left + -e.X, -this.pbTitle.Top + -e.Y);
+            this.mouse_offset = new System.Drawing.Point(-this.pbTitle.Left + -e.X, -this.pbTitle.Top + -e.Y);
         }
 
         void pbTitle_MouseMove(object sender, MouseEventArgs e)
