@@ -9,7 +9,6 @@ using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;

@@ -2,10 +2,9 @@
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.CompilerServices;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -13,52 +12,31 @@ namespace Hero_Designer
     public partial class frmRecipeEdit : Form
     {
         Button btnAdd;
-
         Button btnCancel;
-
         Button btnDel;
         Button btnDown;
-
         Button btnGuessCost;
-
         Button btnI20;
-
         Button btnI25;
-
         Button btnI40;
-
         Button btnI50;
-
         Button btnImport;
         Button btnImportUpdate;
-
         Button btnIncrement;
-
         Button btnOK;
-
         Button btnRAdd;
-
         Button btnRDel;
         Button btnRDown;
-
         Button btnReGuess;
-
         Button btnRunSeq;
         Button btnRUp;
         Button btnUp;
-
         ComboBox cbEnh;
-
         ComboBox cbRarity;
-
         ComboBox cbSal0;
-
         ComboBox cbSal1;
-
         ComboBox cbSal2;
-
         ComboBox cbSal3;
-
         ComboBox cbSal4;
         ColumnHeader ColumnHeader1;
         ColumnHeader ColumnHeader2;
@@ -82,45 +60,30 @@ namespace Hero_Designer
         Label Label8;
         Label Label9;
         Label lblEnh;
-
         ListBox lstItems;
-
         ListView lvDPA;
-
         TextBox txtExtern;
-
         TextBox txtRecipeName;
-
         [AccessedThroughProperty("udBuy")]
         NumericUpDown _udBuy;
-
         [AccessedThroughProperty("udBuyM")]
         NumericUpDown _udBuyM;
-
         [AccessedThroughProperty("udCraft")]
         NumericUpDown _udCraft;
-
         [AccessedThroughProperty("udCraftM")]
         NumericUpDown _udCraftM;
-
         [AccessedThroughProperty("udLevel")]
         NumericUpDown _udLevel;
-
         [AccessedThroughProperty("udSal0")]
         NumericUpDown _udSal0;
-
         [AccessedThroughProperty("udSal1")]
         NumericUpDown _udSal1;
-
         [AccessedThroughProperty("udSal2")]
         NumericUpDown _udSal2;
-
         [AccessedThroughProperty("udSal3")]
         NumericUpDown _udSal3;
-
         [AccessedThroughProperty("udSal4")]
         NumericUpDown _udSal4;
-
 
         protected bool NoUpdate;
         NumericUpDown udBuy
@@ -417,27 +380,15 @@ namespace Hero_Designer
             this.Close();
         }
 
+        // this delete button is supposed to remove a specific level of recipe, not the whole recipe.
         void btnDel_Click(object sender, EventArgs e)
-
         {
-            if (this.RecipeID() < 0 || this.lstItems.SelectedIndex < 0)
+            var recipeid = this.RecipeID();
+            if (recipeid < 0 || this.lstItems.SelectedIndex < 0 || this.lstItems.Items.Count < 2)
                 return;
-            int selectedIndex = this.lstItems.SelectedIndex;
-            Recipe.RecipeEntry[] recipeEntryArray = new Recipe.RecipeEntry[DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 2 + 1];
-            int index1 = -1;
-            int num1 = DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1;
-            for (int index2 = 0; index2 <= num1; ++index2)
-            {
-                if (index2 != selectedIndex)
-                {
-                    ++index1;
-                    recipeEntryArray[index1] = new Recipe.RecipeEntry(DatabaseAPI.Database.Recipes[this.RecipeID()].Item[index2]);
-                }
-            }
-            DatabaseAPI.Database.Recipes = new Recipe[recipeEntryArray.Length - 1 + 1];
-            int num2 = DatabaseAPI.Database.Recipes[this.RecipeID()].Item.Length - 1;
-            for (int index2 = 0; index2 <= num2; ++index2)
-                DatabaseAPI.Database.Recipes[this.RecipeID()].Item[index2] = new Recipe.RecipeEntry(recipeEntryArray[index2]);
+            var recipe = DatabaseAPI.Database.Recipes[recipeid];
+            var recipeItemId = this.lstItems.SelectedIndex;
+            recipe.Item = recipe.Item.Where((ri, i) => i != recipeItemId).ToArray();
             this.ShowRecipeInfo(this.RecipeID());
         }
 
