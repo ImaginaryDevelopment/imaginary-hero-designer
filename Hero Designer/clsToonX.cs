@@ -1632,7 +1632,8 @@ namespace Hero_Designer
 
         public bool Load(string iFileName, ref Stream mStream)
         {
-            mStream = (Stream)new FileStream(iFileName, FileMode.Open, FileAccess.Read);
+            if (mStream == null || !String.IsNullOrEmpty(iFileName))
+                mStream = (Stream)new FileStream(iFileName, FileMode.Open, FileAccess.Read);
 
             Stream iStream1 = mStream;
             //Stream iStream1 = mStream != null ? mStream : (Stream) new FileStream(iFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
