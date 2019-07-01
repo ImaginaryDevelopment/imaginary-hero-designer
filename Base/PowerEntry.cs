@@ -270,7 +270,7 @@ public class PowerEntry : ICloneable
             powerEntry.Slots[index].Enhancement = this.Slots[index].Enhancement.Clone() as I9Slot;
             powerEntry.Slots[index].FlippedEnhancement = this.Slots[index].FlippedEnhancement.Clone() as I9Slot;
         }
-        return (object)powerEntry;
+        return powerEntry;
     }
 
     public PopUp.Section PopSubPowerListing(

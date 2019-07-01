@@ -309,7 +309,7 @@ namespace Hero_Designer
         void csDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.csList.Items.Count <= 0 || Interaction.MsgBox((object)("Delete " + this.csList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.csList.Items.Count <= 0 || Interaction.MsgBox(("Delete " + this.csList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             MidsContext.Config.Export.RemoveScheme(this.csList.SelectedIndex);
             this.csPopulateList(-1);
@@ -337,7 +337,7 @@ namespace Hero_Designer
             ExportConfig export = MidsContext.Config.Export;
             int num = export.ColorSchemes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.csList.Items.Add((object)export.ColorSchemes[index].SchemeName);
+                this.csList.Items.Add(export.ColorSchemes[index].SchemeName);
             if (this.csList.Items.Count > 0 & HighlightID == -1)
                 this.csList.SelectedIndex = 0;
             if (!(HighlightID < this.csList.Items.Count & HighlightID > -1))
@@ -347,7 +347,7 @@ namespace Hero_Designer
 
         void csReset_Click(object sender, EventArgs e)
         {
-            if (Interaction.MsgBox((object)"This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (Interaction.MsgBox("This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             MidsContext.Config.Export.ResetColorsToDefaults();
             this.csPopulateList(-1);
@@ -395,7 +395,7 @@ namespace Hero_Designer
         void fcDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.fcList.Items.Count <= 0 || Interaction.MsgBox((object)("Delete " + this.fcList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.fcList.Items.Count <= 0 || Interaction.MsgBox(("Delete " + this.fcList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             MidsContext.Config.Export.RemoveCodes(this.fcList.SelectedIndex);
             this.fcPopulateList(-1);
@@ -495,7 +495,7 @@ namespace Hero_Designer
             ExportConfig export = MidsContext.Config.Export;
             int num = export.FormatCode.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.fcList.Items.Add((object)export.FormatCode[index].Name);
+                this.fcList.Items.Add(export.FormatCode[index].Name);
             if (this.fcList.Items.Count > 0 & HighlightID == -1)
                 this.fcList.SelectedIndex = 0;
             if (!(HighlightID < this.fcList.Items.Count & HighlightID > -1))
@@ -506,7 +506,7 @@ namespace Hero_Designer
         void fcReset_Click(object sender, EventArgs e)
 
         {
-            if (Interaction.MsgBox((object)"This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (Interaction.MsgBox("This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             MidsContext.Config.Export.ResetCodesToDefaults();
             this.fcPopulateList(-1);
@@ -687,7 +687,7 @@ namespace Hero_Designer
             int[] values = (int[])Enum.GetValues(MidsContext.Config.Suppression.GetType());
             int num = names.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.clbSuppression.Items.Add((object)names[index], (MidsContext.Config.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
+                this.clbSuppression.Items.Add(names[index], (MidsContext.Config.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
             this.clbSuppression.EndUpdate();
         }
 

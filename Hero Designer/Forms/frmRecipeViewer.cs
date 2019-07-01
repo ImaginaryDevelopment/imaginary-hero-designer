@@ -248,37 +248,37 @@ namespace Hero_Designer
                     {
                         string str = "Buy:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Buy Cost:";
                         if (num2 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num2, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost:";
                         if (num1 > 0)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format((object)num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Invention, Strings.Format(num1, "###,###,##0"), PopUp.Colors.Invention, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (Mini)
                     {
                         string str = "Craft (Mem'd):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(str + " " + Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(str + " " + Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     else
                     {
                         string iText = "Craft Cost (Memorized Common):";
                         if (num3 > 0 & num3 != num1)
-                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format((object)num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
+                            popupData.Sections[index3].Add(iText, PopUp.Colors.Effect, Strings.Format(num3, "###,###,##0"), PopUp.Colors.Effect, 0.9f, System.Drawing.FontStyle.Bold, iIndent);
                     }
                     if (this.chkRecipe.Checked)
                     {
@@ -403,7 +403,7 @@ namespace Hero_Designer
         void chkRecipe_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.lvDPA_SelectedIndexChanged((object)this, new EventArgs());
+            this.lvDPA_SelectedIndexChanged(this, new EventArgs());
             MidsContext.Config.ShoppingListIncludesRecipes = this.chkRecipe.Checked;
         }
 
@@ -417,32 +417,32 @@ namespace Hero_Designer
 
         {
             int num;
-            if (t1.Equals((object)t2))
+            if (t1.Equals(t2))
             {
                 num = 0;
             }
             else
             {
-                if (t1.Equals((object)PopUp.Colors.Common))
+                if (t1.Equals(PopUp.Colors.Common))
                 {
-                    if (t2.Equals((object)PopUp.Colors.Uncommon) | t2.Equals((object)PopUp.Colors.Rare) | t2.Equals((object)PopUp.Colors.UltraRare))
+                    if (t2.Equals(PopUp.Colors.Uncommon) | t2.Equals(PopUp.Colors.Rare) | t2.Equals(PopUp.Colors.UltraRare))
                         return -1;
                 }
-                else if (t1.Equals((object)PopUp.Colors.Uncommon))
+                else if (t1.Equals(PopUp.Colors.Uncommon))
                 {
-                    if (t2.Equals((object)PopUp.Colors.Common))
+                    if (t2.Equals(PopUp.Colors.Common))
                         return 1;
-                    if (t2.Equals((object)PopUp.Colors.Rare) | t2.Equals((object)PopUp.Colors.UltraRare))
+                    if (t2.Equals(PopUp.Colors.Rare) | t2.Equals(PopUp.Colors.UltraRare))
                         return -1;
                 }
-                else if (t1.Equals((object)PopUp.Colors.Rare))
+                else if (t1.Equals(PopUp.Colors.Rare))
                 {
-                    if (t2.Equals((object)PopUp.Colors.Common) | t2.Equals((object)PopUp.Colors.Uncommon))
+                    if (t2.Equals(PopUp.Colors.Common) | t2.Equals(PopUp.Colors.Uncommon))
                         return 1;
-                    if (t2.Equals((object)PopUp.Colors.UltraRare))
+                    if (t2.Equals(PopUp.Colors.UltraRare))
                         return -1;
                 }
-                else if (t1.Equals((object)PopUp.Colors.UltraRare) && t2.Equals((object)PopUp.Colors.Common) | t2.Equals((object)PopUp.Colors.Uncommon) | t2.Equals((object)PopUp.Colors.Rare))
+                else if (t1.Equals(PopUp.Colors.UltraRare) && t2.Equals(PopUp.Colors.Common) | t2.Equals(PopUp.Colors.Uncommon) | t2.Equals(PopUp.Colors.Rare))
                     return 1;
                 num = -1;
             }
@@ -453,27 +453,27 @@ namespace Hero_Designer
 
         {
             int num;
-            if (t1.Equals((object)t2))
+            if (t1.Equals(t2))
             {
                 num = 0;
             }
             else
             {
-                if (t1.Equals((object)PopUp.Colors.Common))
+                if (t1.Equals(PopUp.Colors.Common))
                 {
-                    if (t2.Equals((object)PopUp.Colors.Uncommon) | t2.Equals((object)PopUp.Colors.Rare) | t2.Equals((object)PopUp.Colors.UltraRare))
+                    if (t2.Equals(PopUp.Colors.Uncommon) | t2.Equals(PopUp.Colors.Rare) | t2.Equals(PopUp.Colors.UltraRare))
                         return -1;
                 }
-                else if (t1.Equals((object)PopUp.Colors.Uncommon) | t1.Equals((object)PopUp.Colors.Rare))
+                else if (t1.Equals(PopUp.Colors.Uncommon) | t1.Equals(PopUp.Colors.Rare))
                 {
-                    if (t2.Equals((object)PopUp.Colors.Common))
+                    if (t2.Equals(PopUp.Colors.Common))
                         return 1;
-                    if (t2.Equals((object)PopUp.Colors.Rare))
+                    if (t2.Equals(PopUp.Colors.Rare))
                         return 0;
-                    if (t2.Equals((object)PopUp.Colors.UltraRare))
+                    if (t2.Equals(PopUp.Colors.UltraRare))
                         return -1;
                 }
-                else if (t1.Equals((object)PopUp.Colors.UltraRare) && t2.Equals((object)PopUp.Colors.Common) | t2.Equals((object)PopUp.Colors.Uncommon) | t2.Equals((object)PopUp.Colors.Rare))
+                else if (t1.Equals(PopUp.Colors.UltraRare) && t2.Equals(PopUp.Colors.Common) | t2.Equals(PopUp.Colors.Uncommon) | t2.Equals(PopUp.Colors.Rare))
                     return 1;
                 num = -1;
             }
@@ -548,7 +548,7 @@ namespace Hero_Designer
                                 this.AddToImageList(MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh);
                                 items[2] = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower].DisplayName;
                                 this.lvDPA.Items.Add(new ListViewItem(items, this.ilSets.Images.Count - 1));
-                                this.lvDPA.Items[this.lvDPA.Items.Count - 1].Tag = (object)MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh;
+                                this.lvDPA.Items[this.lvDPA.Items.Count - 1].Tag = MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh;
                             }
                         }
                     }
@@ -566,7 +566,7 @@ namespace Hero_Designer
             this.lvPower.Items.Clear();
             this.lvPower.Sorting = SortOrder.None;
             this.lvPower.Items.Add(" - All Powers - ");
-            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = (object)-1;
+            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = -1;
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int hIDX = 0; hIDX <= num; ++hIDX)
             {
@@ -574,9 +574,9 @@ namespace Hero_Designer
                 {
                     string text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDX].NIDPower].DisplayName;
                     if (this.chkSortByLevel.Checked)
-                        text = Strings.Format((object)(MidsContext.Character.CurrentBuild.Powers[hIDX].Level + 1), "00") + " - " + text;
+                        text = Strings.Format((MidsContext.Character.CurrentBuild.Powers[hIDX].Level + 1), "00") + " - " + text;
                     this.lvPower.Items.Add(text);
-                    this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = (object)hIDX;
+                    this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = hIDX;
                 }
             }
             this.lvPower.Sorting = SortOrder.Ascending;
@@ -680,8 +680,8 @@ namespace Hero_Designer
                 }
                 str1 += "\r\n";
             }
-            Clipboard.SetDataObject((object)str1, true);
-            int num3 = (int)Interaction.MsgBox((object)"Data copied to clipboard!", MsgBoxStyle.Information, (object)"Done");
+            Clipboard.SetDataObject(str1, true);
+            int num3 = (int)Interaction.MsgBox("Data copied to clipboard!", MsgBoxStyle.Information, "Done");
         }
         void ibClipboard_ButtonClicked()
         {
@@ -723,7 +723,7 @@ namespace Hero_Designer
         {
             if (e.Item.Index == 0)
             {
-                if (Operators.ConditionalCompareObjectLess(e.Item.Tag, (object)0, false) && e.Item.Checked)
+                if (Operators.ConditionalCompareObjectLess(e.Item.Tag, 0, false) && e.Item.Checked)
                 {
                     int num = this.lvPower.Items.Count - 1;
                     for (int index = 1; index <= num; ++index)
@@ -781,7 +781,7 @@ namespace Hero_Designer
         void RecipeInfo_MouseWheel(object sender, MouseEventArgs e)
 
         {
-            this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject((object)this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, (object)-1, (object)1)));
+            this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
                 this.VScrollBar1.Value = this.VScrollBar1.Maximum - 9;
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));
@@ -837,7 +837,7 @@ namespace Hero_Designer
                             num1 = frmRecipeViewer.colorRarityCompareB(inStrs[numArray[index2]].tColor, inStrs[index1].tColor);
                             break;
                     }
-                    if (num1 == 0 && string.Compare(Conversions.ToString(Interaction.IIf(Mini, (object)inStrs[index1].TextColumn, (object)inStrs[index1].Text)), Conversions.ToString(Interaction.IIf(Mini, (object)inStrs[numArray[index2]].TextColumn, (object)inStrs[numArray[index2]].Text))) < 0 || num1 > 0)
+                    if (num1 == 0 && string.Compare(Conversions.ToString(Interaction.IIf(Mini, inStrs[index1].TextColumn, inStrs[index1].Text)), Conversions.ToString(Interaction.IIf(Mini, inStrs[numArray[index2]].TextColumn, inStrs[numArray[index2]].Text))) < 0 || num1 > 0)
                     {
                         int num4 = index2;
                         for (int index3 = index1 - 1; index3 >= num4; index3 += -1)

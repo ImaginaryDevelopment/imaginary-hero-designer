@@ -77,7 +77,7 @@ namespace Hero_Designer
             string[] items = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];
             items[0] = enhancement.Name + " (" + enhancement.ShortName + ") - " + Conversions.ToString(enhancement.StaticIndex);
-            items[1] = Enum.GetName(enhancement.TypeID.GetType(), (object)enhancement.TypeID);
+            items[1] = Enum.GetName(enhancement.TypeID.GetType(), enhancement.TypeID);
             items[2] = Conversions.ToString(enhancement.Effect.Length);
             items[3] = "";
             int num1 = enhancement.ClassID.Length - 1;
@@ -156,7 +156,7 @@ namespace Hero_Designer
         void btnDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.lvEnh.SelectedIndices.Count <= 0 || Interaction.MsgBox((object)("Really delete enhancement: " + this.lvEnh.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.lvEnh.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete enhancement: " + this.lvEnh.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             Enhancement[] enhancementArray = new Enhancement[DatabaseAPI.Database.Enhancements.Length - 1 + 1];
             int selectedIndex = this.lvEnh.SelectedIndices[0];
@@ -352,7 +352,7 @@ namespace Hero_Designer
             string[] strArray1 = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];
             strArray1[0] = enhancement.Name + " (" + enhancement.ShortName + ") - " + Conversions.ToString(enhancement.StaticIndex);
-            strArray1[1] = Enum.GetName(enhancement.TypeID.GetType(), (object)enhancement.TypeID);
+            strArray1[1] = Enum.GetName(enhancement.TypeID.GetType(), enhancement.TypeID);
             strArray1[2] = Conversions.ToString(enhancement.Effect.Length);
             strArray1[3] = "";
             int num1 = enhancement.ClassID.Length - 1;

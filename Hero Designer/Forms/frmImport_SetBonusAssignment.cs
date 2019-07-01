@@ -102,7 +102,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Bonus CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Bonus CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -136,7 +136,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 9)
                         {
-                            this.BusyMsg(Strings.Format((object)num3, "###,##0") + " records parsed.");
+                            this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             num5 = 0;
                         }
                         string[] array = CSV.ToArray(iLine);
@@ -224,7 +224,7 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream.Close();
-                int num2 = (int)Interaction.MsgBox((object)exception.Message, MsgBoxStyle.Critical, (object)"Power Class CSV Parse Error");
+                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -233,7 +233,7 @@ namespace Hero_Designer
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.DisplayInfo();
-            int num10 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, (object)"File Parsed");
+            int num10 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
     }

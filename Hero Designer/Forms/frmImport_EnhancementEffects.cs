@@ -96,7 +96,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Power CSV Not Opened");
+                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
                 ProjectData.ClearProjectError();
                 return false;
             }
@@ -123,7 +123,7 @@ namespace Hero_Designer
                     ++num3;
                     if (num3 >= 101)
                     {
-                        this.BusyMsg(Strings.Format((object)num1, "###,##0") + " records parsed.");
+                        this.BusyMsg(Strings.Format(num1, "###,##0") + " records parsed.");
                         Application.DoEvents();
                         num3 = 0;
                     }
@@ -161,8 +161,8 @@ namespace Hero_Designer
             }
             while (str2 != null);
             iStream.Close();
-            Clipboard.SetDataObject((object)str1);
-            int num6 = (int)Interaction.MsgBox((object)("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, (object)"Import Done");
+            Clipboard.SetDataObject(str1);
+            int num6 = (int)Interaction.MsgBox(("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, "Import Done");
             this.Enabled = true;
             this.BusyHide();
             var serializer = My.MyApplication.GetSerializer();

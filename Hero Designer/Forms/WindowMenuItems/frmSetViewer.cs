@@ -102,7 +102,7 @@ namespace Hero_Designer
                     items[2] = Conversions.ToString(setInfo[index3].SlottedCount);
                     ++imageIndex;
                     this.lstSets.Items.Add(new ListViewItem(items, imageIndex));
-                    this.lstSets.Items[this.lstSets.Items.Count - 1].Tag = (object)setInfo[index3].SetIDX;
+                    this.lstSets.Items[this.lstSets.Items.Count - 1].Tag = setInfo[index3].SetIDX;
                 }
             }
             this.lstSets.EndUpdate();

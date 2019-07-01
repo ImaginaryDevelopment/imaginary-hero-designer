@@ -190,7 +190,7 @@ public class I9Slot : ICloneable
                         }
                         stringBuilder.Append("Schedule: ");
                         stringBuilder.Append(sEffect.Schedule.ToString());
-                        stringBuilder.AppendFormat(" ({0}%)", (object)(scheduleMult * 100f).ToString((IFormatProvider)NumberFormatInfo.CurrentInfo));
+                        stringBuilder.AppendFormat(" ({0}%)", (scheduleMult * 100f).ToString((IFormatProvider)NumberFormatInfo.CurrentInfo));
                         str2 = stringBuilder.ToString();
                     }
                     else if (!flag)
@@ -206,7 +206,7 @@ public class I9Slot : ICloneable
                                 stringBuilder.Append(", ");
                             stringBuilder.Append(power.Effects[index2].BuildEffectString(true, "", false, false, false));
                         }
-                        str2 = "Effect: " + (object)stringBuilder;
+                        str2 = "Effect: " + stringBuilder;
                     }
                     str1 = str2;
                 }
@@ -251,10 +251,10 @@ public class I9Slot : ICloneable
                         if (id == Enums.eEnhance.Mez)
                         {
                             Enums.eMez subId = (Enums.eMez)sEffect.Enhance.SubID;
-                            str2 = Enum.GetName(subId.GetType(), (object)subId);
+                            str2 = Enum.GetName(subId.GetType(), subId);
                         }
                         else
-                            str2 = Enum.GetName(id.GetType(), (object)id);
+                            str2 = Enum.GetName(id.GetType(), id);
                         if (sEffect.Enhance.ID == 7 || sEffect.Enhance.ID == 8 || sEffect.Enhance.ID == 17)
                         {
                             str2 = !flag2 ? "Heal" : string.Empty;
@@ -279,7 +279,7 @@ public class I9Slot : ICloneable
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append("\n");
-                            stringBuilder.AppendFormat("{0}  enhancement (Sched. {1}: {2}%)", (object)str2, (object)Enum.GetName(sEffect.Schedule.GetType(), (object)sEffect.Schedule), (object)(scheduleMult * 100f).ToString((IFormatProvider)NumberFormatInfo.CurrentInfo));
+                            stringBuilder.AppendFormat("{0}  enhancement (Sched. {1}: {2}%)", str2, Enum.GetName(sEffect.Schedule.GetType(), sEffect.Schedule), (scheduleMult * 100f).ToString((IFormatProvider)NumberFormatInfo.CurrentInfo));
                         }
                     }
                 }
@@ -310,7 +310,7 @@ public class I9Slot : ICloneable
                                 {
                                     if (stringBuilder.Length > 0)
                                         stringBuilder.Append("\n");
-                                    stringBuilder.AppendFormat("  {0}", (object)empty);
+                                    stringBuilder.AppendFormat("  {0}", empty);
                                     break;
                                 }
                             }
@@ -331,7 +331,7 @@ public class I9Slot : ICloneable
                                         stringBuilder.Append("\n");
                                     power.Effects[index2].Stacking = Enums.eStacking.Yes;
                                     power.Effects[index2].Buffable = true;
-                                    stringBuilder.AppendFormat("  {0}", (object)power.Effects[index2].BuildEffectString(false, "", false, false, false));
+                                    stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString(false, "", false, false, false));
                                 }
                             }
                         }
@@ -351,7 +351,7 @@ public class I9Slot : ICloneable
 
     public object Clone()
     {
-        return (object)new I9Slot()
+        return new I9Slot()
         {
             Enh = this.Enh,
             Grade = this.Grade,

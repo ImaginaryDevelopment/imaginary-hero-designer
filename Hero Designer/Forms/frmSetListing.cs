@@ -75,7 +75,7 @@ namespace Hero_Designer
             string[] items = new string[6];
             EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[Index];
             items[0] = enhancementSet.DisplayName + " (" + enhancementSet.ShortName + ")";
-            items[1] = Enum.GetName(enhancementSet.SetType.GetType(), (object)enhancementSet.SetType);
+            items[1] = Enum.GetName(enhancementSet.SetType.GetType(), enhancementSet.SetType);
             items[2] = Conversions.ToString(enhancementSet.LevelMin + 1);
             items[3] = Conversions.ToString(enhancementSet.LevelMax + 1);
             items[4] = Conversions.ToString(enhancementSet.Enhancements.Length);
@@ -131,7 +131,7 @@ namespace Hero_Designer
         void btnDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0 || Interaction.MsgBox((object)("Really delete set: " + this.lvSets.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.lvSets.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete set: " + this.lvSets.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             int selectedIndex = this.lvSets.SelectedIndices[0];
             DatabaseAPI.Database.EnhancementSets.RemoveAt(selectedIndex);
@@ -331,7 +331,7 @@ namespace Hero_Designer
             string[] strArray = new string[6];
             EnhancementSet enhancementSet = DatabaseAPI.Database.EnhancementSets[Index];
             strArray[0] = enhancementSet.DisplayName + " (" + enhancementSet.ShortName + ")";
-            strArray[1] = Enum.GetName(enhancementSet.SetType.GetType(), (object)enhancementSet.SetType);
+            strArray[1] = Enum.GetName(enhancementSet.SetType.GetType(), enhancementSet.SetType);
             strArray[2] = Conversions.ToString(enhancementSet.LevelMin + 1);
             strArray[3] = Conversions.ToString(enhancementSet.LevelMax + 1);
             strArray[4] = Conversions.ToString(enhancementSet.Enhancements.Length);

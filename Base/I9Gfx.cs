@@ -170,7 +170,7 @@ public static class I9Gfx
             for (int index = 0; index <= DatabaseAPI.Database.EnhancementClasses.Length - 1; ++index)
             {
                 int x = index * 30;
-                using (ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(I9Gfx.ImagePath() + "Classes\\" + (object)DatabaseAPI.Database.EnhancementClasses[index].ID + ".png"))
+                using (ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(I9Gfx.ImagePath() + "Classes\\" + DatabaseAPI.Database.EnhancementClasses[index].ID + ".png"))
                 {
                     I9Gfx.Classes.Graphics.DrawImageUnscaled((Image)extendedBitmap1.Bitmap, x, 0);
                     if (extendedBitmap2.Size.Height > 30 | extendedBitmap2.Size.Width > 30)

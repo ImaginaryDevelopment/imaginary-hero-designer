@@ -149,14 +149,14 @@ namespace Hero_Designer
                 ++num1;
                 if (num1 >= 100)
                 {
-                    this.BusyMsg(Strings.Format((object)index, "###,##0") + " records checked.");
+                    this.BusyMsg(Strings.Format(index, "###,##0") + " records checked.");
                     Application.DoEvents();
                     num1 = 0;
                 }
                 if (this._importBuffer[index].IsValid)
                 {
                     items[0] = this._importBuffer[index].Data.DisplayName;
-                    items[1] = Enum.GetName(this._importBuffer[index].Data.SetType.GetType(), (object)this._importBuffer[index].Data.SetType);
+                    items[1] = Enum.GetName(this._importBuffer[index].Data.SetType.GetType(), this._importBuffer[index].Data.SetType);
                     bool flag = false;
                     if (this._importBuffer[index].IsNew)
                     {
@@ -178,7 +178,7 @@ namespace Hero_Designer
                     ListViewItem listViewItem = new ListViewItem(items)
                     {
                         Checked = flag | this._importBuffer[index].IsNew,
-                        Tag = (object)index
+                        Tag = index
                     };
                     this._currentItems.Add(listViewItem);
                     this.lstImport.Items.Add(listViewItem);
@@ -188,7 +188,7 @@ namespace Hero_Designer
                 this.lstImport.Items[0].EnsureVisible();
             this.lstImport.EndUpdate();
             this.HideUnchanged.Text = "Hide Unchanged";
-            int num5 = (int)Interaction.MsgBox((object)("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)), MsgBoxStyle.OkOnly, null);
+            int num5 = (int)Interaction.MsgBox(("New: " + Conversions.ToString(num2) + "\r\nModified: " + Conversions.ToString(num3)), MsgBoxStyle.OkOnly, null);
         }
 
         void frmImportEnhSets_Load(object sender, EventArgs e)
@@ -227,7 +227,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Power CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
                 ProjectData.ClearProjectError();
                 return false;
             }
@@ -244,7 +244,7 @@ namespace Hero_Designer
                     ++num5;
                     if (num5 >= 100)
                     {
-                        this.BusyMsg(Strings.Format((object)num3, "###,##0") + " records parsed.");
+                        this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                         num5 = 0;
                     }
                     this._importBuffer.Add(new EnhSetData(iString));
@@ -257,7 +257,7 @@ namespace Hero_Designer
             }
             while (iString != null);
             iStream.Close();
-            int num6 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, (object)"File Parsed");
+            int num6 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
 
@@ -290,7 +290,7 @@ namespace Hero_Designer
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
-            int num4 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object)"Done");
+            int num4 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             this.DisplayInfo();
             return flag;
         }

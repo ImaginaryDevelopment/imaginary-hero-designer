@@ -226,7 +226,7 @@ namespace Hero_Designer
             int index = DatabaseAPI.NidFromUidClass(this.lvGroup.SelectedItems[0].SubItems[0].Text);
             if (index < 0)
             {
-                int num1 = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num1 = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -255,9 +255,9 @@ namespace Hero_Designer
             int index1 = DatabaseAPI.NidFromUidClass(this.lvGroup.SelectedItems[0].SubItems[0].Text);
             if (index1 < 0)
             {
-                int num1 = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num1 = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
-            else if (Interaction.MsgBox((object)("Really delete Class: " + DatabaseAPI.Database.Classes[index1].ClassName + " (" + DatabaseAPI.Database.Classes[index1].DisplayName + ")?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") == MsgBoxResult.Yes)
+            else if (Interaction.MsgBox(("Really delete Class: " + DatabaseAPI.Database.Classes[index1].ClassName + " (" + DatabaseAPI.Database.Classes[index1].DisplayName + ")?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
             {
                 Archetype[] archetypeArray = new Archetype[DatabaseAPI.Database.Classes.Length - 1 + 1];
                 int num2 = index1;
@@ -320,7 +320,7 @@ namespace Hero_Designer
             int index = DatabaseAPI.NidFromUidClass(this.lvGroup.SelectedItems[0].SubItems[0].Text);
             if (index < 0)
             {
-                int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -411,7 +411,7 @@ namespace Hero_Designer
             IPower iPower = (IPower)new Power();
             if (DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text) < 0)
             {
-                int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -434,7 +434,7 @@ namespace Hero_Designer
         void btnPowerDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.lvPower.SelectedIndices.Count <= 0 || Interaction.MsgBox((object)("Really delete Power: " + this.lvPower.SelectedItems[0].SubItems[3].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.lvPower.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete Power: " + this.lvPower.SelectedItems[0].SubItems[3].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             IPower[] powerArray = new IPower[DatabaseAPI.Database.Power.Length - 1 + 1];
             int num1 = DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text);
@@ -483,7 +483,7 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPower(this.lvPower.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
@@ -507,7 +507,7 @@ namespace Hero_Designer
             int index1 = DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text);
             if (index1 < 0)
             {
-                int num1 = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num1 = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -529,8 +529,8 @@ namespace Hero_Designer
                         if (strArray.Length > 0)
                         {
                             string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
-                            Clipboard.SetDataObject((object)str2, true);
-                            int num4 = (int)Interaction.MsgBox((object)str2, MsgBoxStyle.OkOnly, null);
+                            Clipboard.SetDataObject(str2, true);
+                            int num4 = (int)Interaction.MsgBox(str2, MsgBoxStyle.OkOnly, null);
                         }
                         this.RefreshLists(-1, -1, -1);
                     }
@@ -561,7 +561,7 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPower(this.lvPower.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
@@ -589,7 +589,7 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPowerset(this.lvSet.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
@@ -617,7 +617,7 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPowerset(this.lvSet.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
@@ -665,14 +665,14 @@ namespace Hero_Designer
             int index1 = DatabaseAPI.NidFromUidPowerset(this.lvSet.SelectedItems[0].SubItems[3].Text);
             if (index1 < 0)
             {
-                int num1 = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num1 = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
                 string str = "";
                 if (DatabaseAPI.Database.Powersets[index1].Powers.Length > 0)
                     str = DatabaseAPI.Database.Powersets[index1].FullName + " still has powers attached to it.\r\nThese powers will be orphaned if you remove the set.\r\n\r\n";
-                if (Interaction.MsgBox((object)(str + "Really delete Powerset: " + DatabaseAPI.Database.Powersets[index1].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") == MsgBoxResult.Yes)
+                if (Interaction.MsgBox((str + "Really delete Powerset: " + DatabaseAPI.Database.Powersets[index1].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
                 {
                     IPowerset[] powersetArray = new IPowerset[DatabaseAPI.Database.Powersets.Length - 1 + 1];
                     int index2 = 0;
@@ -716,7 +716,7 @@ namespace Hero_Designer
             int Powerset = DatabaseAPI.NidFromUidPowerset(this.lvSet.SelectedItems[0].SubItems[3].Text);
             if (Powerset < 0)
             {
-                int num = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -889,14 +889,14 @@ namespace Hero_Designer
         {
             this.cbFilter.BeginUpdate();
             this.cbFilter.Items.Clear();
-            this.cbFilter.Items.Add((object)"Groups");
-            this.cbFilter.Items.Add((object)"Archetype Classes");
-            this.cbFilter.Items.Add((object)"All Sets");
-            this.cbFilter.Items.Add((object)"All Powers");
-            this.cbFilter.Items.Add((object)"Orphan Sets");
-            this.cbFilter.Items.Add((object)"Orphan Powers");
+            this.cbFilter.Items.Add("Groups");
+            this.cbFilter.Items.Add("Archetype Classes");
+            this.cbFilter.Items.Add("All Sets");
+            this.cbFilter.Items.Add("All Powers");
+            this.cbFilter.Items.Add("Orphan Sets");
+            this.cbFilter.Items.Add("Orphan Powers");
             this.cbFilter.EndUpdate();
-            this.cbFilter.SelectedIndex = this.cbFilter.Items.IndexOf((object)"Groups");
+            this.cbFilter.SelectedIndex = this.cbFilter.Items.IndexOf("Groups");
         }
 
         void frmPowerBrowser_Load(object sender, EventArgs e)
@@ -993,7 +993,7 @@ namespace Hero_Designer
                     items[3] = DatabaseAPI.Database.Power[iPowers[index]].FullName;
                     this.lvPower.Items.Add(new ListViewItem(items)
                     {
-                        Tag = (object)iPowers[index]
+                        Tag = iPowers[index]
                     });
                 }
             }
@@ -1223,7 +1223,7 @@ namespace Hero_Designer
         {
             if (this.cbFilter.SelectedIndex != 1)
                 return;
-            this.btnClassEdit_Click((object)this, new EventArgs());
+            this.btnClassEdit_Click(this, new EventArgs());
         }
 
         void lvGroup_SelectedIndexChanged(object sender, EventArgs e)
@@ -1239,7 +1239,7 @@ namespace Hero_Designer
         void lvPower_DoubleClick(object sender, EventArgs e)
 
         {
-            this.btnPowerEdit_Click((object)this, new EventArgs());
+            this.btnPowerEdit_Click(this, new EventArgs());
         }
 
         void lvPower_SelectedIndexChanged(object sender, EventArgs e)
@@ -1253,7 +1253,7 @@ namespace Hero_Designer
         void lvSet_DoubleClick(object sender, EventArgs e)
 
         {
-            this.btnSetEdit_Click((object)this, new EventArgs());
+            this.btnSetEdit_Click(this, new EventArgs());
         }
 
         void lvSet_SelectedIndexChanged(object sender, EventArgs e)

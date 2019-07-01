@@ -42,14 +42,14 @@ public class RTF
 
     {
         StringBuilder stringBuilder = new StringBuilder("{\\colortbl ;");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorEnhancement.R + "\\green" + (object)MidsContext.Config.RtFont.ColorEnhancement.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorEnhancement.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorFaded.R + "\\green" + (object)MidsContext.Config.RtFont.ColorFaded.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorFaded.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorInvention.R + "\\green" + (object)MidsContext.Config.RtFont.ColorInvention.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorInvention.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorInventionInv.R + "\\green" + (object)MidsContext.Config.RtFont.ColorInventionInv.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorInventionInv.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorText.R + "\\green" + (object)MidsContext.Config.RtFont.ColorText.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorText.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorWarning.R + "\\green" + (object)MidsContext.Config.RtFont.ColorWarning.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorWarning.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorBackgroundHero.R + "\\green" + (object)MidsContext.Config.RtFont.ColorBackgroundHero.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorBackgroundHero.B + ";");
-        stringBuilder.Append("\\red" + (object)MidsContext.Config.RtFont.ColorBackgroundVillain.R + "\\green" + (object)MidsContext.Config.RtFont.ColorBackgroundVillain.G + "\\blue" + (object)MidsContext.Config.RtFont.ColorBackgroundVillain.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorEnhancement.R + "\\green" + MidsContext.Config.RtFont.ColorEnhancement.G + "\\blue" + MidsContext.Config.RtFont.ColorEnhancement.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorFaded.R + "\\green" + MidsContext.Config.RtFont.ColorFaded.G + "\\blue" + MidsContext.Config.RtFont.ColorFaded.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorInvention.R + "\\green" + MidsContext.Config.RtFont.ColorInvention.G + "\\blue" + MidsContext.Config.RtFont.ColorInvention.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorInventionInv.R + "\\green" + MidsContext.Config.RtFont.ColorInventionInv.G + "\\blue" + MidsContext.Config.RtFont.ColorInventionInv.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorText.R + "\\green" + MidsContext.Config.RtFont.ColorText.G + "\\blue" + MidsContext.Config.RtFont.ColorText.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorWarning.R + "\\green" + MidsContext.Config.RtFont.ColorWarning.G + "\\blue" + MidsContext.Config.RtFont.ColorWarning.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorBackgroundHero.R + "\\green" + MidsContext.Config.RtFont.ColorBackgroundHero.G + "\\blue" + MidsContext.Config.RtFont.ColorBackgroundHero.B + ";");
+        stringBuilder.Append("\\red" + MidsContext.Config.RtFont.ColorBackgroundVillain.R + "\\green" + MidsContext.Config.RtFont.ColorBackgroundVillain.G + "\\blue" + MidsContext.Config.RtFont.ColorBackgroundVillain.B + ";");
         stringBuilder.Append("}");
         return stringBuilder.ToString();
     }

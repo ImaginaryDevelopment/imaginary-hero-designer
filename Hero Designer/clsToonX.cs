@@ -53,8 +53,8 @@ namespace Hero_Designer
                 float num2 = Enhancement.ApplyED(schedule[index], value[index]) * 100f;
                 float num3 = num2 + afterED[index] * 100f;
                 float num4 = (float)Math.Round((double)num1 - (double)num2, 3);
-                string str2 = Strings.Format((object)(float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str3 = Strings.Format((object)num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str2 = Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str3 = Strings.Format(num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
                 string str4;
                 if ((double)num4 > 0.0)
                 {
@@ -112,7 +112,7 @@ namespace Hero_Designer
                 }
                 else if (!string.IsNullOrEmpty(message))
                 {
-                    int num = (int)Interaction.MsgBox((object)message, MsgBoxStyle.Information, (object)"Info");
+                    int num = (int)Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
                 }
                 this.ResetLevel();
                 this.Lock();
@@ -194,7 +194,7 @@ namespace Hero_Designer
                 }
                 else if (!string.IsNullOrEmpty(message))
                 {
-                    int num = (int)Interaction.MsgBox((object)message, MsgBoxStyle.Information, (object)"Info");
+                    int num = (int)Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
                 }
             }
             this.Validate();
@@ -226,7 +226,7 @@ namespace Hero_Designer
                     }
                     else
                     {
-                        int num3 = (int)Interaction.MsgBox((object)message, MsgBoxStyle.Critical, (object)"FYI");
+                        int num3 = (int)Interaction.MsgBox(message, MsgBoxStyle.Critical, "FYI");
                     }
                 }
                 else
@@ -984,7 +984,7 @@ namespace Hero_Designer
                                         Enums.eEnhance eEnhance = Enums.eEnhance.None;
                                         float num6 = 0.0f;
                                         Enums.eEffectType eEffectType2 = (Enums.eEffectType)index3;
-                                        bool flag6 = Enums.IsEnumValue(Enum.GetName(eEffectType2.GetType(), (object)eEffectType2), (object)eEnhance);
+                                        bool flag6 = Enums.IsEnumValue(Enum.GetName(eEffectType2.GetType(), eEffectType2), eEnhance);
                                         bool flag7 = false;
                                         if (!flag6)
                                         {
@@ -998,7 +998,7 @@ namespace Hero_Designer
                                         }
                                         if (flag6)
                                         {
-                                            Enums.eEnhance iEffect = !flag7 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType2.GetType(), (object)eEffectType2), (object)eEnhance, false) : Enums.eEnhance.Accuracy;
+                                            Enums.eEnhance iEffect = !flag7 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType2.GetType(), eEffectType2), eEnhance, false) : Enums.eEnhance.Accuracy;
                                             float num7 = eEffectType2 != Enums.eEffectType.Mez ? (!(eEffectType2 == Enums.eEffectType.ResEffect & powerMath.Effects[index2].ETModifies == Enums.eEffectType.Defense) ? enhancement.GetEnhancementEffect(iEffect, -1, this._buffedPower[hIDX].Effects[index2].Math_Mag) : enhancement.GetEnhancementEffect(Enums.eEnhance.Defense, -1, this._buffedPower[hIDX].Effects[index2].Math_Mag)) : enhancement.GetEnhancementEffect(iEffect, (int)powerMath.Effects[index2].MezType, this._buffedPower[hIDX].Effects[index2].Math_Mag);
                                             if (eEffectType2 == Enums.eEffectType.Damage & powerMath.Effects[index2].DamageType == Enums.eDamage.Special)
                                                 num7 = 0.0f;
@@ -1051,7 +1051,7 @@ namespace Hero_Designer
                         {
                             Enums.eEnhance eEnhance = Enums.eEnhance.None;
                             Enums.eEffectType eEffectType = (Enums.eEffectType)index2;
-                            bool flag1 = Enums.IsEnumValue(Enum.GetName(eEffectType.GetType(), (object)eEffectType), (object)eEnhance);
+                            bool flag1 = Enums.IsEnumValue(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance);
                             bool flag2 = false;
                             if (!flag1)
                             {
@@ -1065,7 +1065,7 @@ namespace Hero_Designer
                             }
                             if (flag1)
                             {
-                                Enums.eEnhance iEnh = !flag2 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), (object)eEffectType), (object)eEnhance, false) : Enums.eEnhance.Accuracy;
+                                Enums.eEnhance iEnh = !flag2 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance, false) : Enums.eEnhance.Accuracy;
                                 if (eEffectType == Enums.eEffectType.Mez)
                                 {
                                     powerMath.Effects[index1].Math_Mag = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)powerMath.Effects[index1].MezType), powerMath.Effects[index1].Math_Mag);
@@ -1491,7 +1491,7 @@ namespace Hero_Designer
                 num1 = nVer;
                 if ((double)num1 >= 0.899999976158142 && (double)num1 < 1.0)
                     num1 = 0.0f;
-                int num2 = (int)Interaction.MsgBox((object)"The data being loaded was saved by an older version of the application, and may not load correctly. Should be OK though.", MsgBoxStyle.Information, (object)"Just FYI");
+                int num2 = (int)Interaction.MsgBox("The data being loaded was saved by an older version of the application, and may not load correctly. Should be OK though.", MsgBoxStyle.Information, "Just FYI");
             }
             else
                 num1 = 0.0f;
@@ -1661,7 +1661,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Exclamation, (object)"Error!");
+                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                 ProjectData.ClearProjectError();
                 return false;
             }
@@ -1823,7 +1823,7 @@ namespace Hero_Designer
                 popupData.Sections[index1].Add("Archetype: " + DatabaseAPI.Database.Classes[powerset.nArchetype].DisplayName, PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             else
                 popupData.Sections[index1].Add("Archetype: All", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
-            popupData.Sections[index1].Add("Set Type: " + Enum.GetName(powerset.SetType.GetType(), (object)powerset.SetType), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
+            popupData.Sections[index1].Add("Set Type: " + Enum.GetName(powerset.SetType.GetType(), powerset.SetType), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
             popupData.Sections[index1].Add(powerset.Description, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
             if (extraString != "")
             {
@@ -2078,17 +2078,17 @@ namespace Hero_Designer
                     if ((double)numArray1[index] > 0.0)
                     {
                         section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
-                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), (object)index), afterED1);
+                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), index), afterED1);
                     }
                     if ((double)numArray2[index] > 0.0)
                     {
                         section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
-                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), (object)index) + " Debuff", afterED2);
+                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), index) + " Debuff", afterED2);
                     }
                     if ((double)numArray3[index] > 0.0)
                     {
                         section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
-                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), (object)index), afterED3);
+                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), index), afterED3);
                     }
                 }
                 int num7 = numArray4.Length - 1;
@@ -2097,7 +2097,7 @@ namespace Hero_Designer
                     if ((double)numArray4[index] > 0.0)
                     {
                         section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
-                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), (object)index), afterED4);
+                        section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), index), afterED4);
                     }
                 }
                 if (!MidsContext.Config.ShowAlphaPopup)
@@ -2168,7 +2168,7 @@ namespace Hero_Designer
                     while (num2 <= 1);
                     goto label_23;
                 label_22:
-                    message = "This power has been placed in a way that is not possible in-game. One of the " + Conversions.ToString(numArray.Length) + " level 1 powers from your " + Enum.GetName(powersetType.GetType(), (object)powersetType) + " set must be taken at level 1.";
+                    message = "This power has been placed in a way that is not possible in-game. One of the " + Conversions.ToString(numArray.Length) + " level 1 powers from your " + Enum.GetName(powersetType.GetType(), powersetType) + " set must be taken at level 1.";
                     return ListLabelV2.LLItemState.Invalid;
                 label_23:
                     if (!flag2)
@@ -2279,11 +2279,11 @@ namespace Hero_Designer
             {
                 if ((double)nVer < 1.39999997615814 & (double)nVer != 1.29999995231628)
                 {
-                    int num1 = (int)Interaction.MsgBox((object)"The data being loaded was saved by an older version of the application, attempting conversion.", MsgBoxStyle.Information, (object)"Just FYI");
+                    int num1 = (int)Interaction.MsgBox("The data being loaded was saved by an older version of the application, attempting conversion.", MsgBoxStyle.Information, "Just FYI");
                 }
                 else if ((double)nVer > 1.39999997615814)
                 {
-                    int num2 = (int)Interaction.MsgBox((object)("The data being loaded was saved by a newer version of the application (File format v" + Strings.Format((object)nVer, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + ", expected " + Strings.Format((object)1.4f, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + "). It may not load correctly."), MsgBoxStyle.Information, (object)"Just FYI");
+                    int num2 = (int)Interaction.MsgBox(("The data being loaded was saved by a newer version of the application (File format v" + Strings.Format(nVer, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + ", expected " + Strings.Format(1.4f, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + "). It may not load correctly."), MsgBoxStyle.Information, "Just FYI");
                 }
                 string[] strArray2 = clsToonX.IoGrab2(iStream, "|", char.MinValue);
                 this.Name = strArray2[0];
@@ -2369,7 +2369,7 @@ namespace Hero_Designer
             string str1 = MidsCharacterFileFormat.MxDBuildSaveString(true, false);
             if (str1 == "")
             {
-                int num1 = (int)Interaction.MsgBox((object)"Save failed - save function returned empty data.", MsgBoxStyle.Exclamation, (object)"Error");
+                int num1 = (int)Interaction.MsgBox("Save failed - save function returned empty data.", MsgBoxStyle.Exclamation, "Error");
             }
             else
             {
@@ -2386,7 +2386,7 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Exclamation, (object)"Error!");
+                    int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                     ProjectData.ClearProjectError();
                     return;
                 }
@@ -2439,18 +2439,18 @@ namespace Hero_Designer
                 {
                     if (clsUniversalImport.InterpretForumPost(iString))
                     {
-                        int num = (int)Interaction.MsgBox((object)"Forum post interpreted OK!", MsgBoxStyle.Information, (object)"Forum Import");
+                        int num = (int)Interaction.MsgBox("Forum post interpreted OK!", MsgBoxStyle.Information, "Forum Import");
                         flag1 = true;
                     }
                     else
                     {
-                        int num = (int)Interaction.MsgBox((object)"Unable to interpret data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, (object)"Forum Import");
+                        int num = (int)Interaction.MsgBox("Unable to interpret data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
                         flag1 = false;
                     }
                 }
                 else
                 {
-                    int num = (int)Interaction.MsgBox((object)"Unable to recognise data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, (object)"Forum Import");
+                    int num = (int)Interaction.MsgBox("Unable to recognise data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
                     flag1 = false;
                 }
             }
@@ -2464,7 +2464,7 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Exclamation, (object)"Error!");
+                    int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                     bool flag2 = false;
                     ProjectData.ClearProjectError();
                     return flag2;
@@ -2494,7 +2494,7 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
+                    int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
                     streamWriter.Close();
                     bool flag2 = false;
                     ProjectData.ClearProjectError();
@@ -2503,12 +2503,12 @@ namespace Hero_Designer
                 Stream mStream = null;
                 if (this.Load(FileIO.AddSlash(Application.StartupPath) + "import.tmp", ref mStream))
                 {
-                    int num = (int)Interaction.MsgBox((object)"Build data imported!", MsgBoxStyle.Information, (object)"Forum Import");
+                    int num = (int)Interaction.MsgBox("Build data imported!", MsgBoxStyle.Information, "Forum Import");
                     flag1 = true;
                 }
                 else
                 {
-                    int num = (int)Interaction.MsgBox((object)"Build data couldn't be imported.  Please check that you copied the build data from the forum correctly.", MsgBoxStyle.Information, (object)"Forum Import");
+                    int num = (int)Interaction.MsgBox("Build data couldn't be imported.  Please check that you copied the build data from the forum correctly.", MsgBoxStyle.Information, "Forum Import");
                     flag1 = false;
                 }
             }

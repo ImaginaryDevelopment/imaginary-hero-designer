@@ -205,7 +205,7 @@ namespace Hero_Designer
                 string str = FileIO.StripPath(this.ImagePicker.FileName);
                 if (!File.Exists(FileIO.AddSlash(this.ImagePicker.InitialDirectory) + str))
                 {
-                    int num = (int)Interaction.MsgBox((object)("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, (object)"Ah...");
+                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
                 }
                 else
                 {
@@ -291,7 +291,7 @@ namespace Hero_Designer
                     int index1 = this.BonusID();
                     int num = this.mySet.Bonus[index1].Index.Length - 1;
                     for (int index2 = 0; index2 <= num; ++index2)
-                        this.lstBonus.Items.Add((object)DatabaseAPI.Database.Power[this.mySet.Bonus[index1].Index[index2]].PowerName);
+                        this.lstBonus.Items.Add(DatabaseAPI.Database.Power[this.mySet.Bonus[index1].Index[index2]].PowerName);
                     this.txtAlternate.Text = this.mySet.Bonus[index1].AltString;
                 }
                 else if (this.isSpecial())
@@ -299,7 +299,7 @@ namespace Hero_Designer
                     int index1 = this.SpecialID();
                     int num = this.mySet.SpecialBonus[index1].Index.Length - 1;
                     for (int index2 = 0; index2 <= num; ++index2)
-                        this.lstBonus.Items.Add((object)DatabaseAPI.Database.Power[this.mySet.SpecialBonus[index1].Index[index2]].PowerName);
+                        this.lstBonus.Items.Add(DatabaseAPI.Database.Power[this.mySet.SpecialBonus[index1].Index[index2]].PowerName);
                     this.txtAlternate.Text = this.mySet.SpecialBonus[index1].AltString;
                 }
                 this.lstBonus.EndUpdate();
@@ -444,10 +444,10 @@ namespace Hero_Designer
             this.cbSlotCount.Items.Clear();
             int num1 = this.mySet.Enhancements.Length - 2;
             for (int index = 0; index <= num1; ++index)
-                this.cbSlotCount.Items.Add((object)(Conversions.ToString(index + 2) + " Enhancements"));
+                this.cbSlotCount.Items.Add((Conversions.ToString(index + 2) + " Enhancements"));
             int num2 = this.mySet.Enhancements.Length - 1;
             for (int index = 0; index <= num2; ++index)
-                this.cbSlotCount.Items.Add((object)DatabaseAPI.Database.Enhancements[this.mySet.Enhancements[index]].Name);
+                this.cbSlotCount.Items.Add(DatabaseAPI.Database.Enhancements[this.mySet.Enhancements[index]].Name);
             if (this.cbSlotCount.Items.Count > 0)
                 this.cbSlotCount.SelectedIndex = 0;
             this.cbSlotCount.EndUpdate();
@@ -467,7 +467,7 @@ namespace Hero_Designer
                 items[0] = DatabaseAPI.Database.Power[this.SetBonusList[index]].PowerName;
                 this.lvBonusList.Items.Add(new ListViewItem(items)
                 {
-                    Tag = (object)this.SetBonusList[index]
+                    Tag = this.SetBonusList[index]
                 });
             }
             int num2 = this.SetBonusListPVP.Length - 1;
@@ -479,7 +479,7 @@ namespace Hero_Designer
                 items[0] = DatabaseAPI.Database.Power[this.SetBonusListPVP[index]].PowerName + " (PVP Only)";
                 this.lvBonusList.Items.Add(new ListViewItem(items)
                 {
-                    Tag = (object)this.SetBonusListPVP[index]
+                    Tag = this.SetBonusListPVP[index]
                 });
             }
             this.lvBonusList.Sort();
@@ -626,7 +626,7 @@ namespace Hero_Designer
             int index = (int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(this.lvBonusList.SelectedItems[0].Tag)));
             if (index < 0)
             {
-                int num = (int)Interaction.MsgBox((object)"Tag was < 0!", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Tag was < 0!", MsgBoxStyle.OkOnly, null);
             }
             else
             {

@@ -194,11 +194,11 @@ namespace Hero_Designer
             this.lblNameFull.Text = ps.GroupName + "." + ps.SetName;
             if (ps.GroupName == "" | ps.SetName == "")
             {
-                int num1 = (int)Interaction.MsgBox((object)("Powerset name '" + ps.FullName + " is invalid."), MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num1 = (int)Interaction.MsgBox(("Powerset name '" + ps.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else if (!frmEditPowerset.PowersetFullNameIsUnique(Conversions.ToString(ps.nID), -1))
             {
-                int num2 = (int)Interaction.MsgBox((object)("Powerset name '" + ps.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num2 = (int)Interaction.MsgBox(("Powerset name '" + ps.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else
             {
@@ -220,7 +220,7 @@ namespace Hero_Designer
                 string str = FileIO.StripPath(this.ImagePicker.FileName);
                 if (!File.Exists(FileIO.AddSlash(this.ImagePicker.InitialDirectory) + str))
                 {
-                    int num = (int)Interaction.MsgBox((object)("You must select an image from the " + I9Gfx.GetPowersetsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, (object)"Ah...");
+                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetPowersetsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
                 }
                 else
                 {
@@ -363,13 +363,13 @@ namespace Hero_Designer
         void chkNoLink_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.cbLinkSet_SelectedIndexChanged((object)this, new EventArgs());
+            this.cbLinkSet_SelectedIndexChanged(this, new EventArgs());
         }
 
         void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.cbTrunkSet_SelectedIndexChanged((object)this, new EventArgs());
+            this.cbTrunkSet_SelectedIndexChanged(this, new EventArgs());
         }
 
         public void DisplayIcon()
@@ -411,7 +411,7 @@ namespace Hero_Designer
                 return;
             int index = DatabaseAPI.NidFromUidPowerset(this.myPS.UIDLinkSecondary);
             if (index > -1)
-                this.cbLinkGroup.SelectedValue = (object)DatabaseAPI.Database.Powersets[index].GroupName;
+                this.cbLinkGroup.SelectedValue = DatabaseAPI.Database.Powersets[index].GroupName;
         }
 
         void FillLinkSetCombo()
@@ -426,7 +426,7 @@ namespace Hero_Designer
                 int num = indexesByGroupName.Length - 1;
                 for (int index2 = 0; index2 <= num; ++index2)
                 {
-                    this.cbLinkSet.Items.Add((object)DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName);
+                    this.cbLinkSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName);
                     if (index1 > -1 && DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName == DatabaseAPI.Database.Powersets[index1].SetName)
                         index1 = index2;
                 }
@@ -447,7 +447,7 @@ namespace Hero_Designer
                 return;
             int index = DatabaseAPI.NidFromUidPowerset(this.myPS.UIDTrunkSet);
             if (index > -1)
-                this.cbTrunkGroup.SelectedValue = (object)DatabaseAPI.Database.Powersets[index].GroupName;
+                this.cbTrunkGroup.SelectedValue = DatabaseAPI.Database.Powersets[index].GroupName;
         }
 
         void FillTrunkSetCombo()
@@ -462,7 +462,7 @@ namespace Hero_Designer
                 int num = indexesByGroupName.Length - 1;
                 for (int index2 = 0; index2 <= num; ++index2)
                 {
-                    this.cbTrunkSet.Items.Add((object)DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName);
+                    this.cbTrunkSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName);
                     if (index1 > -1 && DatabaseAPI.Database.Powersets[indexesByGroupName[index2]].SetName == DatabaseAPI.Database.Powersets[index1].SetName)
                         index1 = index2;
                 }
@@ -505,10 +505,10 @@ namespace Hero_Designer
             this.DisplayIcon();
             this.cbAT.BeginUpdate();
             this.cbAT.Items.Clear();
-            this.cbAT.Items.Add((object)"All / None");
+            this.cbAT.Items.Add("All / None");
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbAT.Items.Add((object)DatabaseAPI.Database.Classes[index].DisplayName);
+                this.cbAT.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
             this.cbAT.EndUpdate();
             this.cbAT.SelectedIndex = this.myPS.nArchetype + 1;
             this.cbSetType.BeginUpdate();
@@ -536,7 +536,7 @@ namespace Hero_Designer
                 return;
             int index = DatabaseAPI.NidFromUidPowerset(this.myPS.UIDMutexSets[0]);
             if (index > -1)
-                this.cbMutexGroup.SelectedValue = (object)DatabaseAPI.Database.Powersets[index].GroupName;
+                this.cbMutexGroup.SelectedValue = DatabaseAPI.Database.Powersets[index].GroupName;
         }
 
         void ListMutexSets()
@@ -550,7 +550,7 @@ namespace Hero_Designer
                 int num1 = numArray.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
-                    this.lvMutexSets.Items.Add((object)DatabaseAPI.Database.Powersets[numArray[index1]].FullName);
+                    this.lvMutexSets.Items.Add(DatabaseAPI.Database.Powersets[numArray[index1]].FullName);
                     int num2 = this.myPS.nIDMutexSets.Length - 1;
                     for (int index2 = 0; index2 <= num2; ++index2)
                     {

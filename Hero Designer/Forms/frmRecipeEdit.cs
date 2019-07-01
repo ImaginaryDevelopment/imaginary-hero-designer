@@ -379,7 +379,7 @@ namespace Hero_Designer
             {
         DatabaseAPI.Database.Recipes[Index].InternalName,
         DatabaseAPI.Database.Recipes[Index].EnhIdx <= -1 ? "None" : DatabaseAPI.Database.Recipes[Index].Enhancement + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[Index].EnhIdx) + ")",
-        Enum.GetName(DatabaseAPI.Database.Recipes[Index].Rarity.GetType(), (object) DatabaseAPI.Database.Recipes[Index].Rarity),
+        Enum.GetName(DatabaseAPI.Database.Recipes[Index].Rarity.GetType(),  DatabaseAPI.Database.Recipes[Index].Rarity),
         Conversions.ToString(DatabaseAPI.Database.Recipes[Index].Item.Length)
             }));
         }
@@ -477,7 +477,7 @@ namespace Hero_Designer
         void btnImport_Click(object sender, EventArgs e)
 
         {
-            if (Interaction.MsgBox((object)"Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Careful...") != MsgBoxResult.Yes)
+            if (Interaction.MsgBox("Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Careful...") != MsgBoxResult.Yes)
                 return;
             char[] chArray = new char[1] { '\r' };
             string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(chArray);
@@ -548,7 +548,7 @@ namespace Hero_Designer
             DatabaseAPI.GuessRecipes();
             DatabaseAPI.AssignRecipeIDs();
             this.FillList();
-            int num3 = (int)Interaction.MsgBox((object)"Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, (object)"Import");
+            int num3 = (int)Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
         }
 
         void btnIncrement_Click(object sender, EventArgs e)
@@ -788,14 +788,14 @@ namespace Hero_Designer
             this.cbRarity.EndUpdate();
             this.cbEnh.BeginUpdate();
             this.cbEnh.Items.Clear();
-            this.cbEnh.Items.Add((object)"None");
+            this.cbEnh.Items.Add("None");
             int num1 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
                 if (DatabaseAPI.Database.Enhancements[index].UID != "")
-                    this.cbEnh.Items.Add((object)DatabaseAPI.Database.Enhancements[index].UID);
+                    this.cbEnh.Items.Add(DatabaseAPI.Database.Enhancements[index].UID);
                 else
-                    this.cbEnh.Items.Add((object)("X - " + DatabaseAPI.Database.Enhancements[index].Name));
+                    this.cbEnh.Items.Add(("X - " + DatabaseAPI.Database.Enhancements[index].Name));
             }
             this.cbEnh.EndUpdate();
             this.cbSal0.BeginUpdate();
@@ -808,19 +808,19 @@ namespace Hero_Designer
             this.cbSal2.Items.Clear();
             this.cbSal3.Items.Clear();
             this.cbSal4.Items.Clear();
-            this.cbSal0.Items.Add((object)"None");
-            this.cbSal1.Items.Add((object)"None");
-            this.cbSal2.Items.Add((object)"None");
-            this.cbSal3.Items.Add((object)"None");
-            this.cbSal4.Items.Add((object)"None");
+            this.cbSal0.Items.Add("None");
+            this.cbSal1.Items.Add("None");
+            this.cbSal2.Items.Add("None");
+            this.cbSal3.Items.Add("None");
+            this.cbSal4.Items.Add("None");
             int num2 = DatabaseAPI.Database.Salvage.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                this.cbSal0.Items.Add((object)DatabaseAPI.Database.Salvage[index].ExternalName);
-                this.cbSal1.Items.Add((object)DatabaseAPI.Database.Salvage[index].ExternalName);
-                this.cbSal2.Items.Add((object)DatabaseAPI.Database.Salvage[index].ExternalName);
-                this.cbSal3.Items.Add((object)DatabaseAPI.Database.Salvage[index].ExternalName);
-                this.cbSal4.Items.Add((object)DatabaseAPI.Database.Salvage[index].ExternalName);
+                this.cbSal0.Items.Add(DatabaseAPI.Database.Salvage[index].ExternalName);
+                this.cbSal1.Items.Add(DatabaseAPI.Database.Salvage[index].ExternalName);
+                this.cbSal2.Items.Add(DatabaseAPI.Database.Salvage[index].ExternalName);
+                this.cbSal3.Items.Add(DatabaseAPI.Database.Salvage[index].ExternalName);
+                this.cbSal4.Items.Add(DatabaseAPI.Database.Salvage[index].ExternalName);
             }
             this.cbSal0.EndUpdate();
             this.cbSal1.EndUpdate();
@@ -1027,7 +1027,7 @@ namespace Hero_Designer
                 this.lstItems.Items.Clear();
                 int num = DatabaseAPI.Database.Recipes[Index].Item.Length - 1;
                 for (int index = 0; index <= num; ++index)
-                    this.lstItems.Items.Add((object)("Level: " + Conversions.ToString(DatabaseAPI.Database.Recipes[Index].Item[index].Level + 1)));
+                    this.lstItems.Items.Add(("Level: " + Conversions.ToString(DatabaseAPI.Database.Recipes[Index].Item[index].Level + 1)));
                 if (this.lstItems.Items.Count > 0)
                     this.lstItems.SelectedIndex = 0;
                 this.NoUpdate = false;
@@ -1103,7 +1103,7 @@ namespace Hero_Designer
                 return;
             this.lvDPA.Items[index].SubItems[0].Text = DatabaseAPI.Database.Recipes[index].InternalName;
             this.lvDPA.Items[index].SubItems[1].Text = DatabaseAPI.Database.Recipes[index].EnhIdx <= -1 ? "None" : DatabaseAPI.Database.Recipes[index].Enhancement + " (" + Conversions.ToString(DatabaseAPI.Database.Recipes[index].EnhIdx) + ")";
-            this.lvDPA.Items[index].SubItems[2].Text = Enum.GetName(DatabaseAPI.Database.Recipes[index].Rarity.GetType(), (object)DatabaseAPI.Database.Recipes[index].Rarity);
+            this.lvDPA.Items[index].SubItems[2].Text = Enum.GetName(DatabaseAPI.Database.Recipes[index].Rarity.GetType(), DatabaseAPI.Database.Recipes[index].Rarity);
             this.lvDPA.Items[index].SubItems[3].Text = Conversions.ToString(DatabaseAPI.Database.Recipes[index].Item.Length);
         }
     }

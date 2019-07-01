@@ -104,7 +104,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"IO CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -121,7 +121,7 @@ namespace Hero_Designer
                     ++num5;
                     if (num5 >= 11)
                     {
-                        this.BusyMsg("Pass 1 of 2: " + Strings.Format((object)num3, "###,##0") + " records scanned.\r\n" + Strings.Format((object)num1, "###,##0") + " records matched, " + Strings.Format((object)num4, "###,##0") + " records discarded.");
+                        this.BusyMsg("Pass 1 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num1, "###,##0") + " records matched, " + Strings.Format(num4, "###,##0") + " records discarded.");
                         num5 = 0;
                     }
                     string[] array = CSV.ToArray(iLine1);
@@ -161,7 +161,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"IO CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -179,7 +179,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 11)
                         {
-                            this.BusyMsg("Pass 2 of 2: " + Strings.Format((object)num3, "###,##0") + " records scanned.\r\n" + Strings.Format((object)num6, "###,##0") + " records done, " + Strings.Format((object)num7, "###,##0") + " records discarded.");
+                            this.BusyMsg("Pass 2 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num6, "###,##0") + " records done, " + Strings.Format(num7, "###,##0") + " records discarded.");
                             num5 = 0;
                         }
                         string[] array = CSV.ToArray(iLine2);
@@ -222,14 +222,14 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream2.Close();
-                int num2 = (int)Interaction.MsgBox((object)exception.Message, MsgBoxStyle.Critical, (object)"IO CSV Parse Error");
+                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "IO CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             DatabaseAPI.SaveRecipes();
             this.DisplayInfo();
-            int num8 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num6) + "\r\nRejected: " + Conversions.ToString(num7)), MsgBoxStyle.Information, (object)"File Parsed");
+            int num8 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num6) + "\r\nRejected: " + Conversions.ToString(num7)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
     }

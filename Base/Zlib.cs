@@ -76,7 +76,7 @@ public class Zlib
         packHeader.PackContents = reader.ReadInt32();
         for (int index = 0; index <= packHeader.PackContents - 1; ++index)
         {
-            this._sFrm.StatusText1 = "Unpacking file " + (object)index + (object)1 + " of " + (object)packHeader.PackContents;
+            this._sFrm.StatusText1 = "Unpacking file " + index + 1 + " of " + packHeader.PackContents;
             if (!this.UncompressFile(iRoot, reader))
             {
                 reader.Close();
@@ -212,7 +212,7 @@ public class Zlib
                 numArray = array;
                 goto label_8;
             default:
-                MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + (object)num1 + ".", "Compression Error");
+                MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + num1 + ".", "Compression Error");
                 return new byte[0];
         }
         numArray = new byte[0];

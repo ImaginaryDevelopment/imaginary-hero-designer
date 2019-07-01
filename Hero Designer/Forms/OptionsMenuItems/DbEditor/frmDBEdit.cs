@@ -155,25 +155,25 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            this.lblDate.Text = Strings.Format((object)DatabaseAPI.Database.Date, "dd/MM/yyyy");
+            this.lblDate.Text = Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yyyy");
             this.udIssue.Value = new Decimal(DatabaseAPI.Database.Issue);
             this.lblCountAT.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
-            this.lblCountEnh.Text = Strings.Format((object)DatabaseAPI.Database.Enhancements.Length, "#,###,##0");
-            this.lblCountIOSet.Text = Strings.Format((object)DatabaseAPI.Database.EnhancementSets.Count, "#,###,##0");
-            this.lblCountPS.Text = Strings.Format((object)DatabaseAPI.Database.Powersets.Length, "#,###,##0");
-            this.lblCountPwr.Text = Strings.Format((object)DatabaseAPI.Database.Power.Length, "#,###,##0");
+            this.lblCountEnh.Text = Strings.Format(DatabaseAPI.Database.Enhancements.Length, "#,###,##0");
+            this.lblCountIOSet.Text = Strings.Format(DatabaseAPI.Database.EnhancementSets.Count, "#,###,##0");
+            this.lblCountPS.Text = Strings.Format(DatabaseAPI.Database.Powersets.Length, "#,###,##0");
+            this.lblCountPwr.Text = Strings.Format(DatabaseAPI.Database.Power.Length, "#,###,##0");
             this.txtDBVer.Text = Conversions.ToString(DatabaseAPI.Database.Version);
             int num1 = 0;
             int num2 = DatabaseAPI.Database.Power.Length - 1;
             for (int index = 0; index <= num2; ++index)
                 num1 += DatabaseAPI.Database.Power[index].Effects.Length;
-            this.lblCountFX.Text = Strings.Format((object)num1, "#,###,##0");
+            this.lblCountFX.Text = Strings.Format(num1, "#,###,##0");
             int num3 = 0;
             int num4 = DatabaseAPI.Database.Recipes.Length - 1;
             for (int index = 0; index <= num4; ++index)
                 num3 += DatabaseAPI.Database.Recipes[index].Item.Length;
-            this.lblCountRecipe.Text = Strings.Format((object)num3, "#,###,##0");
-            this.lblCountSalvage.Text = Strings.Format((object)DatabaseAPI.Database.Salvage.Length, "#,###,##0");
+            this.lblCountRecipe.Text = Strings.Format(num3, "#,###,##0");
+            this.lblCountSalvage.Text = Strings.Format(DatabaseAPI.Database.Salvage.Length, "#,###,##0");
             this.Initialized = true;
         }
 

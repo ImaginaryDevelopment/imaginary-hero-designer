@@ -308,7 +308,7 @@ namespace Hero_Designer
                 string str = FileIO.StripPath(this.ImagePicker.FileName);
                 if (!File.Exists(FileIO.AddSlash(this.ImagePicker.InitialDirectory) + str))
                 {
-                    int num = (int)Interaction.MsgBox((object)("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, (object)"Ah...");
+                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
                 }
                 else
                 {
@@ -723,7 +723,7 @@ namespace Hero_Designer
                 }
                 if (!flag)
                 {
-                    int num2 = (int)Interaction.MsgBox((object)"This effect has already been added!", MsgBoxStyle.Information, (object)"There can be only one.");
+                    int num2 = (int)Interaction.MsgBox("This effect has already been added!", MsgBoxStyle.Information, "There can be only one.");
                     return;
                 }
                 this.myEnh.Effect[selectedIndex].Enhance.SubID = num1;
@@ -769,7 +769,7 @@ namespace Hero_Designer
             }
             if (!flag)
             {
-                int num1 = (int)Interaction.MsgBox((object)"This effect has already been added!", MsgBoxStyle.Information, (object)"There can be only one.");
+                int num1 = (int)Interaction.MsgBox("This effect has already been added!", MsgBoxStyle.Information, "There can be only one.");
             }
             else
             {
@@ -807,7 +807,7 @@ namespace Hero_Designer
                         flag = true;
                 }
                 if (!flag)
-                    this.lstAvailable.Items.Add((object)names[index1]);
+                    this.lstAvailable.Items.Add(names[index1]);
             }
             this.btnAdd.Enabled = this.lstAvailable.Items.Count > 0;
             this.lstAvailable.EndUpdate();
@@ -826,10 +826,10 @@ namespace Hero_Designer
         {
             this.cbRecipe.BeginUpdate();
             this.cbRecipe.Items.Clear();
-            this.cbRecipe.Items.Add((object)"None");
+            this.cbRecipe.Items.Add("None");
             int num = DatabaseAPI.Database.Recipes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbRecipe.Items.Add((object)DatabaseAPI.Database.Recipes[index].InternalName);
+                this.cbRecipe.Items.Add(DatabaseAPI.Database.Recipes[index].InternalName);
             this.cbRecipe.EndUpdate();
         }
 
@@ -838,10 +838,10 @@ namespace Hero_Designer
             this.cbSched.BeginUpdate();
             this.cbSched.Items.Clear();
             string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##";
-            this.cbSched.Items.Add((object)("A (" + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultSO[0][0] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add((object)("B (" + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultSO[0][1] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add((object)("C (" + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultSO[0][2] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add((object)("D (" + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultSO[0][3] * 100.0), Style) + "%)"));
+            this.cbSched.Items.Add(("A (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][0] * 100.0), Style) + "%)"));
+            this.cbSched.Items.Add(("B (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][1] * 100.0), Style) + "%)"));
+            this.cbSched.Items.Add(("C (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][2] * 100.0), Style) + "%)"));
+            this.cbSched.Items.Add(("D (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][3] * 100.0), Style) + "%)"));
             this.cbSched.EndUpdate();
         }
 
@@ -849,10 +849,10 @@ namespace Hero_Designer
         {
             this.cbSet.BeginUpdate();
             this.cbSet.Items.Clear();
-            this.cbSet.Items.Add((object)"None");
+            this.cbSet.Items.Add("None");
             int num = DatabaseAPI.Database.EnhancementSets.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbSet.Items.Add((object)DatabaseAPI.Database.EnhancementSets[index].Uid);
+                this.cbSet.Items.Add(DatabaseAPI.Database.EnhancementSets[index].Uid);
             this.cbSet.EndUpdate();
         }
 
@@ -899,10 +899,10 @@ namespace Hero_Designer
                     string str = names1[this.myEnh.Effect[index].Enhance.ID];
                     if (this.myEnh.Effect[index].Enhance.SubID > -1)
                         str = str + ":" + names2[this.myEnh.Effect[index].Enhance.SubID];
-                    this.lstSelected.Items.Add((object)str);
+                    this.lstSelected.Items.Add(str);
                 }
                 else
-                    this.lstSelected.Items.Add((object)("Special: " + this.myEnh.Effect[index].FX.BuildEffectString(false, "", false, false, false)));
+                    this.lstSelected.Items.Add(("Special: " + this.myEnh.Effect[index].FX.BuildEffectString(false, "", false, false, false)));
             }
             this.lstSelected.EndUpdate();
         }
@@ -927,7 +927,7 @@ namespace Hero_Designer
             string[] names = Enum.GetNames(eMez.GetType());
             int num1 = names.Length - 1;
             for (int index = 1; index <= num1; ++index)
-                frmEnhMiniPick.lbList.Items.Add((object)names[index]);
+                frmEnhMiniPick.lbList.Items.Add(names[index]);
             if (Index > -1 & Index < frmEnhMiniPick.lbList.Items.Count)
                 frmEnhMiniPick.lbList.SelectedIndex = Index - 1;
             else

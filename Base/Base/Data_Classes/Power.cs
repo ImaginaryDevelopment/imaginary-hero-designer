@@ -1360,8 +1360,8 @@ namespace Base.Data_Classes
                     string iReq = array[3];
                     if (!this.NeverAutoUpdateRequirements)
                         this.Requires = this.ImportRequirementString(iReq);
-                    this.ModesRequired = (Enums.eModeFlags)Enums.StringToFlaggedEnum(array[4], (object)this.ModesRequired, false);
-                    this.ModesDisallowed = (Enums.eModeFlags)Enums.StringToFlaggedEnum(array[5], (object)this.ModesDisallowed, false);
+                    this.ModesRequired = (Enums.eModeFlags)Enums.StringToFlaggedEnum(array[4], this.ModesRequired, false);
+                    this.ModesDisallowed = (Enums.eModeFlags)Enums.StringToFlaggedEnum(array[5], this.ModesDisallowed, false);
                     string str = array[6];
                     try
                     {
@@ -1372,27 +1372,27 @@ namespace Base.Data_Classes
                         this.PowerType = Enums.ePowerType.Auto_;
                     }
                     this.Accuracy = float.Parse(array[7]);
-                    this.AttackTypes = (Enums.eVector)Enums.StringToFlaggedEnum(array[8], (object)this.AttackTypes, false);
+                    this.AttackTypes = (Enums.eVector)Enums.StringToFlaggedEnum(array[8], this.AttackTypes, false);
                     this.GroupMembership = Enums.StringToArray(array[9]);
-                    this.EntitiesAffected = (Enums.eEntity)Enums.StringToFlaggedEnum(array[11], (object)this.EntitiesAffected, false);
-                    this.EntitiesAutoHit = (Enums.eEntity)Enums.StringToFlaggedEnum(array[12], (object)this.EntitiesAutoHit, false);
-                    this.Target = (Enums.eEntity)Enums.StringToFlaggedEnum(array[13], (object)this.Target, false);
+                    this.EntitiesAffected = (Enums.eEntity)Enums.StringToFlaggedEnum(array[11], this.EntitiesAffected, false);
+                    this.EntitiesAutoHit = (Enums.eEntity)Enums.StringToFlaggedEnum(array[12], this.EntitiesAutoHit, false);
+                    this.Target = (Enums.eEntity)Enums.StringToFlaggedEnum(array[13], this.Target, false);
                     this.TargetLoS = !string.Equals(array[14], "NONE", StringComparison.OrdinalIgnoreCase);
                     this.Range = float.Parse(array[17]);
-                    this.TargetSecondary = (Enums.eEntity)Enums.StringToFlaggedEnum(array[18], (object)this.TargetSecondary, true);
+                    this.TargetSecondary = (Enums.eEntity)Enums.StringToFlaggedEnum(array[18], this.TargetSecondary, true);
                     this.RangeSecondary = float.Parse(array[19]);
                     this.EndCost = float.Parse(array[20]);
                     this.InterruptTime = float.Parse(array[22]);
                     this.CastTimeReal = float.Parse(array[23]);
                     this.RechargeTime = float.Parse(array[24]);
                     this.ActivatePeriod = float.Parse(array[25]);
-                    this.EffectArea = (Enums.eEffectArea)Enums.StringToFlaggedEnum(array[26], (object)this.EffectArea, true);
+                    this.EffectArea = (Enums.eEffectArea)Enums.StringToFlaggedEnum(array[26], this.EffectArea, true);
                     this.Radius = float.Parse(array[27]);
                     this.Arc = int.Parse(array[28]);
                     this.MaxTargets = int.Parse(array[29]);
                     this.MaxBoosts = array[30];
-                    this.CastFlags = (Enums.eCastFlags)Enums.StringToFlaggedEnum(array[31], (object)this.CastFlags, false);
-                    this.AIReport = (Enums.eNotify)Enums.StringToFlaggedEnum(array[32], (object)this.AIReport, true);
+                    this.CastFlags = (Enums.eCastFlags)Enums.StringToFlaggedEnum(array[31], this.CastFlags, false);
+                    this.AIReport = (Enums.eNotify)Enums.StringToFlaggedEnum(array[32], this.AIReport, true);
                     this.NumCharges = int.Parse(array[33]);
                     this.UsageTime = int.Parse(array[34]);
                     this.LifeTime = int.Parse(array[35]);
@@ -1710,7 +1710,7 @@ namespace Base.Data_Classes
                         for (int index2 = 0; index2 <= iDamage.Length - 1; ++index2)
                         {
                             effect.DamageType = (Enums.eDamage)index2;
-                            if (effect.CompareTo((object)this.Effects[index1]) == 0)
+                            if (effect.CompareTo(this.Effects[index1]) == 0)
                             {
                                 iDamage[index2] = true;
                                 Array.Resize<int>(ref array, array.Length + 1);
@@ -1732,7 +1732,7 @@ namespace Base.Data_Classes
                         for (int index2 = 0; index2 <= iMez.Length - 1; ++index2)
                         {
                             effect.MezType = (Enums.eMez)index2;
-                            if (effect.CompareTo((object)this.Effects[index1]) == 0)
+                            if (effect.CompareTo(this.Effects[index1]) == 0)
                             {
                                 iMez[index2] = true;
                                 Array.Resize<int>(ref array, array.Length + 1);

@@ -351,7 +351,7 @@ public static class DatabaseAPI
         else
         {
             if (strArray.Length > 2)
-                iName = string.Format("{0}.{1}", (object)strArray[0], (object)strArray[1]);
+                iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
             string key = strArray[0];
             if (!DatabaseAPI.Database.PowersetGroups.ContainsKey(key))
             {
@@ -516,7 +516,7 @@ public static class DatabaseAPI
         if (stringList.Count <= 0)
             strArray = new string[1]
             {
-        "No " + Enum.GetName(iSet.GetType(), (object) iSet)
+        "No " + Enum.GetName(iSet.GetType(),  iSet)
             };
         else
             strArray = stringList.ToArray();
@@ -785,6 +785,16 @@ public static class DatabaseAPI
 
     static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
     {
+        //var power1 = serializer.Serialize(DatabaseAPI.Database.Power[0]);
+        //var ps1 = serializer.Serialize(DatabaseAPI.Database.Powersets[0]);
+        //Console.WriteLine("a power length is " + power1.Length);
+        //Console.WriteLine("a powerset length is " + ps1.Length);
+        var powersetPowers = DatabaseAPI.Database.Powersets.SelectMany(x => x.Powers).Select(p => p.PowerIndex).Distinct().ToList();
+        // only powers that aren't in a powerset
+        var powers = DatabaseAPI.Database.Power.Where(p => powersetPowers.Contains(p.PowerIndex) == false).ToList();
+        //var powersets = serializer.Serialize(DatabaseAPI.Database.Powersets);
+        //var powersTxt = serializer.Serialize(powers);
+        //Console.WriteLine("powers all - length is " + powersets.Length);
         var toSerialize = new
         {
             name,

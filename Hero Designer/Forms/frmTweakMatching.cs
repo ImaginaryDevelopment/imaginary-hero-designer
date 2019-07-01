@@ -59,7 +59,7 @@ namespace Hero_Designer
             }
             if (num1 > -1)
             {
-                int num3 = (int)Interaction.MsgBox((object)"An override for that powerset/power already exists!", MsgBoxStyle.Information, (object)"Can't have duplicates!");
+                int num3 = (int)Interaction.MsgBox("An override for that powerset/power already exists!", MsgBoxStyle.Information, "Can't have duplicates!");
                 this.lstTweaks.SelectedIndex = num1;
             }
             else
@@ -187,7 +187,7 @@ namespace Hero_Designer
             numArray[0] = this.getSetIndex();
             int num = DatabaseAPI.Database.Powersets[numArray[index1]].Powers.Length - 1;
             for (int index2 = 0; index2 <= num; ++index2)
-                this.cbPower.Items.Add((object)DatabaseAPI.Database.Powersets[numArray[index1]].Powers[index2].DisplayName);
+                this.cbPower.Items.Add(DatabaseAPI.Database.Powersets[numArray[index1]].Powers[index2].DisplayName);
             this.cbPower.SelectedIndex = 0;
             this.cbPower.EndUpdate();
         }
@@ -226,7 +226,7 @@ namespace Hero_Designer
             this.cbAT1.Items.Clear();
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbAT1.Items.Add((object)DatabaseAPI.Database.Classes[index].DisplayName);
+                this.cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
             this.cbAT1.SelectedIndex = 0;
             this.cbAT1.EndUpdate();
         }
@@ -254,7 +254,7 @@ namespace Hero_Designer
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(selectedIndex, iSet);
             int num = powersetIndexes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                cbSet1.Items.Add((object)powersetIndexes[index].DisplayName);
+                cbSet1.Items.Add(powersetIndexes[index].DisplayName);
             if (cbSet1.Items.Count > 0)
                 cbSet1.SelectedIndex = 0;
             cbSet1.EndUpdate();
@@ -264,9 +264,9 @@ namespace Hero_Designer
         {
             this.cbType1.BeginUpdate();
             this.cbType1.Items.Clear();
-            this.cbType1.Items.Add((object)"Primary");
-            this.cbType1.Items.Add((object)"Secondary");
-            this.cbType1.Items.Add((object)"Ancillary");
+            this.cbType1.Items.Add("Primary");
+            this.cbType1.Items.Add("Secondary");
+            this.cbType1.Items.Add("Ancillary");
             this.cbType1.SelectedIndex = 0;
             this.cbType1.EndUpdate();
         }
@@ -277,7 +277,7 @@ namespace Hero_Designer
             this.lstTweaks.Items.Clear();
             int num = MidsContext.Config.CompOverride.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstTweaks.Items.Add((object)(MidsContext.Config.CompOverride[index].Powerset + "." + MidsContext.Config.CompOverride[index].Power));
+                this.lstTweaks.Items.Add((MidsContext.Config.CompOverride[index].Powerset + "." + MidsContext.Config.CompOverride[index].Power));
             if (this.lstTweaks.Items.Count > 0)
                 this.lstTweaks.SelectedIndex = 0;
             this.lstTweaks.EndUpdate();

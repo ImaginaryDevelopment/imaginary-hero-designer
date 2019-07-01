@@ -103,7 +103,7 @@ public static class MidsCharacterFileFormat
         else
         {
             // this one seems to still work as intended, we may not need to change it
-            string str3 = "http://www.cohplanner.com/mids/download.php" + ("?uc=" + (object)cData.SzUncompressed + "&c=" + (object)cData.SzCompressed + "&a=" + (object)cData.SzEncoded + "&f=HEX&dc=") + str1;
+            string str3 = "http://www.cohplanner.com/mids/download.php" + ("?uc=" + cData.SzUncompressed + "&c=" + cData.SzCompressed + "&a=" + cData.SzEncoded + "&f=HEX&dc=") + str1;
             str2 = str3.Length <= 2048 ? (!justLink ? (!useBbCode ? "<a href=\"" + str3 + "\">Click this DataLink to open the build!</a>" : "[url=" + str3 + "]Click this DataLink to open the build![/url]") : str3) : "";
         }
         return str2;
@@ -164,7 +164,7 @@ public static class MidsCharacterFileFormat
             else
                 str4 = "|              Do not modify anything below this line!              |" + str3 + "|-------------------------------------------------------------------|" + str3;
             string str6 = ";HEX";
-            str2 = str4 + "|MxDz;" + (object)cData.SzUncompressed + ";" + (object)cData.SzCompressed + ";" + (object)cData.SzEncoded + str6 + ";|" + str3 + str1 + str3 + "|-------------------------------------------------------------------|";
+            str2 = str4 + "|MxDz;" + cData.SzUncompressed + ";" + cData.SzCompressed + ";" + cData.SzEncoded + str6 + ";|" + str3 + str1 + str3 + "|-------------------------------------------------------------------|";
         }
         return str2;
     }
@@ -544,13 +544,13 @@ public static class MidsCharacterFileFormat
             {
                 if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
                 {
-                    writer.Write(Convert.ToSByte((object)slot.RelativeLevel));
-                    writer.Write(Convert.ToSByte((object)slot.Grade));
+                    writer.Write(Convert.ToSByte(slot.RelativeLevel));
+                    writer.Write(Convert.ToSByte(slot.Grade));
                 }
                 else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
                 {
                     writer.Write(Convert.ToSByte(slot.IOLevel));
-                    writer.Write(Convert.ToSByte((object)slot.RelativeLevel));
+                    writer.Write(Convert.ToSByte(slot.RelativeLevel));
                 }
             }
         }

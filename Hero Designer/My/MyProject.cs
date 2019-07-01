@@ -652,7 +652,7 @@ namespace Hero_Designer.My
 
             {
                 T obj1;
-                if ((object)Instance != null && !Instance.IsDisposed)
+                if (Instance != null && !Instance.IsDisposed)
                 {
                     obj1 = Instance;
                 }
@@ -660,12 +660,12 @@ namespace Hero_Designer.My
                 {
                     if (MyProject.MyForms.m_FormBeingCreated != null)
                     {
-                        if (MyProject.MyForms.m_FormBeingCreated.ContainsKey((object)typeof(T)))
+                        if (MyProject.MyForms.m_FormBeingCreated.ContainsKey(typeof(T)))
                             throw new InvalidOperationException(Utils.GetResourceString("WinForms_RecursiveFormCreate"));
                     }
                     else
                         MyProject.MyForms.m_FormBeingCreated = new Hashtable();
-                    MyProject.MyForms.m_FormBeingCreated.Add((object)typeof(T), null);
+                    MyProject.MyForms.m_FormBeingCreated.Add(typeof(T), null);
                     T obj2;
                     try
                     {
@@ -678,7 +678,7 @@ namespace Hero_Designer.My
                     }
                     finally
                     {
-                        MyProject.MyForms.m_FormBeingCreated.Remove((object)typeof(T));
+                        MyProject.MyForms.m_FormBeingCreated.Remove(typeof(T));
                     }
                     obj1 = obj2;
                 }
@@ -726,7 +726,7 @@ namespace Hero_Designer.My
             static T Create__Instance__<T>(T instance) where T : new()
 
             {
-                return (object)instance != null ? instance : new T();
+                return instance != null ? instance : new T();
             }
 
             [DebuggerHidden]

@@ -55,25 +55,25 @@ namespace Hero_Designer
                     if (DatabaseAPI.Database.AttribMods.ImportModifierTablefromCSV(this.lblAttribIndex.Text, this.lblAttribTables.Text, Convert.ToInt32(this.udAttribRevision.Value)))
                     {
                         DatabaseAPI.Database.AttribMods.Store();
-                        int num = (int)Interaction.MsgBox((object)(Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length) + " modifier tables imported and saved."), MsgBoxStyle.Information, (object)"Done.");
+                        int num = (int)Interaction.MsgBox((Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length) + " modifier tables imported and saved."), MsgBoxStyle.Information, "Done.");
                     }
                     else
                     {
-                        int num1 = (int)Interaction.MsgBox((object)"Import failed. attempting reload of binary data file.", MsgBoxStyle.Information, (object)"Error.");
+                        int num1 = (int)Interaction.MsgBox("Import failed. attempting reload of binary data file.", MsgBoxStyle.Information, "Error.");
                         if (DatabaseAPI.Database.AttribMods.Load())
                         {
-                            int num2 = (int)Interaction.MsgBox((object)"Binary reload successful.", MsgBoxStyle.Information, (object)"Done.");
+                            int num2 = (int)Interaction.MsgBox("Binary reload successful.", MsgBoxStyle.Information, "Done.");
                         }
                     }
                 }
                 else
                 {
-                    int num3 = (int)Interaction.MsgBox((object)"Files cannot be found!", MsgBoxStyle.Exclamation, (object)"No Can Do");
+                    int num3 = (int)Interaction.MsgBox("Files cannot be found!", MsgBoxStyle.Exclamation, "No Can Do");
                 }
             }
             else
             {
-                int num4 = (int)Interaction.MsgBox((object)"Files not selected!", MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num4 = (int)Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
             }
             this.DisplayInfo();
         }
@@ -98,7 +98,7 @@ namespace Hero_Designer
         {
             this.lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
             this.lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
-            this.lblAttribDate.Text = "Date: " + Strings.Format((object)DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.lblAttribDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.udAttribRevision.Value = new Decimal(DatabaseAPI.Database.AttribMods.Revision);
             this.lblAttribTableCount.Text = "Tables: " + Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
         }

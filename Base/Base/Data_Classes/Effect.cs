@@ -403,7 +403,7 @@ namespace Base.Data_Classes
                 case Enums.eEffectType.Defense:
                 case Enums.eEffectType.Resistance:
                 case Enums.eEffectType.Elusivity:
-                    string name1 = Enum.GetName(typeof(Enums.eDamageShort), (object)(Enums.eDamageShort)this.DamageType);
+                    string name1 = Enum.GetName(typeof(Enums.eDamageShort), (Enums.eDamageShort)this.DamageType);
                     if (this.EffectType == Enums.eEffectType.Damage)
                     {
                         if (this.Ticks > 0)
@@ -459,14 +459,14 @@ namespace Base.Data_Classes
                     str5 = Utilities.FixDP(this.Mag / 100f * (float)MidsContext.Archetype.Hitpoints) + " (" + str1 + ") " + effectNameShort1 + str3 + str2;
                     break;
                 case Enums.eEffectType.Mez:
-                    string name2 = Enum.GetName(this.MezType.GetType(), (object)this.MezType);
+                    string name2 = Enum.GetName(this.MezType.GetType(), this.MezType);
                     if ((double)this.Duration > 0.0 && (!simple || this.MezType != Enums.eMez.None && this.MezType != Enums.eMez.Knockback && this.MezType != Enums.eMez.Knockup))
                         str2 = Utilities.FixDP(this.Duration) + " second ";
                     string str9 = " (Mag " + str1 + ")";
                     str5 = str2 + name2 + str9 + str3;
                     break;
                 case Enums.eEffectType.MezResist:
-                    string name3 = Enum.GetName(this.MezType.GetType(), (object)this.MezType);
+                    string name3 = Enum.GetName(this.MezType.GetType(), this.MezType);
                     if (!noMag)
                         str1 = " " + str1;
                     str5 = effectNameShort1 + "(" + name3 + ")" + str1 + str3 + str2;
@@ -624,7 +624,7 @@ namespace Base.Data_Classes
                     iValue3 = "after " + Utilities.FixDP(this.DelayedTime) + " seconds";
             }
             if (this.SpecialCase != Enums.eSpecialCase.None & this.SpecialCase != Enums.eSpecialCase.Defiance)
-                str6 = Enum.GetName(this.SpecialCase.GetType(), (object)this.SpecialCase);
+                str6 = Enum.GetName(this.SpecialCase.GetType(), this.SpecialCase);
             if (!simple || (double)this.Scale > 0.0 && this.EffectType == Enums.eEffectType.Mez)
             {
                 string empty2 = string.Empty;
@@ -683,7 +683,7 @@ namespace Base.Data_Classes
                         str10 = str1 + " " + specialCat + " " + str3 + str2;
                         break;
                     }
-                    string str11 = grouped ? "%VALUE%" : Enum.GetName(this.DamageType.GetType(), (object)this.DamageType);
+                    string str11 = grouped ? "%VALUE%" : Enum.GetName(this.DamageType.GetType(), this.DamageType);
                     if (this.EffectType == Enums.eEffectType.Damage)
                     {
                         if (this.Ticks > 0)
@@ -741,7 +741,7 @@ namespace Base.Data_Classes
                     str10 = Utilities.FixDP(this.Mag / 100f * (float)MidsContext.Archetype.Hitpoints) + " HP (" + str1 + ") " + effectName + str3 + str2;
                     break;
                 case Enums.eEffectType.Mez:
-                    string name1 = Enum.GetName(this.MezType.GetType(), (object)this.MezType);
+                    string name1 = Enum.GetName(this.MezType.GetType(), this.MezType);
                     if ((double)this.Duration > 0.0 & (!simple | this.MezType != Enums.eMez.None & this.MezType != Enums.eMez.Knockback & this.MezType != Enums.eMez.Knockup))
                         str2 = Utilities.FixDP(this.Duration) + " second ";
                     if (!noMag)
@@ -749,7 +749,7 @@ namespace Base.Data_Classes
                     str10 = str2 + name1 + str1 + str3;
                     break;
                 case Enums.eEffectType.MezResist:
-                    string name2 = Enum.GetName(this.MezType.GetType(), (object)this.MezType);
+                    string name2 = Enum.GetName(this.MezType.GetType(), this.MezType);
                     if (!noMag)
                         str1 = " " + str1;
                     str10 = effectName + "(" + name2 + ")" + str1 + str3 + str2;
@@ -781,7 +781,7 @@ namespace Base.Data_Classes
                     str10 = str1 + " " + effectName + str3 + str2;
                     break;
                 case Enums.eEffectType.ResEffect:
-                    string name3 = Enum.GetName(this.ETModifies.GetType(), (object)this.ETModifies);
+                    string name3 = Enum.GetName(this.ETModifies.GetType(), this.ETModifies);
                     str10 = str1 + " " + effectName + "(" + name3 + ")" + str3 + str2;
                     break;
                 case Enums.eEffectType.StealthRadius:
@@ -879,8 +879,8 @@ namespace Base.Data_Classes
                     if (this.UniqueID < 1)
                         this.UniqueID = int.Parse(array[34]);
                     this.PowerFullName = array[0];
-                    this.Aspect = (Enums.eAspect)Enums.StringToFlaggedEnum(array[2], (object)this.Aspect, true);
-                    this.AttribType = (Enums.eAttribType)Enums.StringToFlaggedEnum(array[6], (object)this.AttribType, true);
+                    this.Aspect = (Enums.eAspect)Enums.StringToFlaggedEnum(array[2], this.Aspect, true);
+                    this.AttribType = (Enums.eAttribType)Enums.StringToFlaggedEnum(array[6], this.AttribType, true);
                     this.EffectId = array[37];
                     this.Reward = array[29];
                     this.MagnitudeExpression = array[27];
@@ -891,9 +891,9 @@ namespace Base.Data_Classes
                     this.DamageType = Enums.eDamage.None;
                     this.Special = string.Empty;
                     this.Summon = string.Empty;
-                    if (Enums.IsEnumValue(array[3], (object)Enums.eEffectType.None))
+                    if (Enums.IsEnumValue(array[3], Enums.eEffectType.None))
                     {
-                        this.EffectType = (Enums.eEffectType)Enums.StringToFlaggedEnum(array[3], (object)Enums.eEffectType.None, true);
+                        this.EffectType = (Enums.eEffectType)Enums.StringToFlaggedEnum(array[3], Enums.eEffectType.None, true);
                         switch (this.Aspect)
                         {
                             case Enums.eAspect.Res:
@@ -906,9 +906,9 @@ namespace Base.Data_Classes
                                 break;
                         }
                     }
-                    else if (Enums.IsEnumValue(array[3], (object)Enums.eCSVImport_Damage.None))
+                    else if (Enums.IsEnumValue(array[3], Enums.eCSVImport_Damage.None))
                     {
-                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], (object)Enums.eCSVImport_Damage.None, true);
+                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], Enums.eCSVImport_Damage.None, true);
                         switch (this.Aspect)
                         {
                             case Enums.eAspect.Res:
@@ -928,9 +928,9 @@ namespace Base.Data_Classes
                                 break;
                         }
                     }
-                    else if (Enums.IsEnumValue(array[3], (object)Enums.eCSVImport_Damage_Def.None))
+                    else if (Enums.IsEnumValue(array[3], Enums.eCSVImport_Damage_Def.None))
                     {
-                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], (object)Enums.eCSVImport_Damage_Def.None, true);
+                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], Enums.eCSVImport_Damage_Def.None, true);
                         switch (this.Aspect)
                         {
                             case Enums.eAspect.Str:
@@ -942,9 +942,9 @@ namespace Base.Data_Classes
                                 break;
                         }
                     }
-                    else if (Enums.IsEnumValue(array[3], (object)Enums.eCSVImport_Damage_Elusivity.None))
+                    else if (Enums.IsEnumValue(array[3], Enums.eCSVImport_Damage_Elusivity.None))
                     {
-                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], (object)Enums.eCSVImport_Damage_Elusivity.None, true);
+                        this.DamageType = (Enums.eDamage)Enums.StringToFlaggedEnum(array[3], Enums.eCSVImport_Damage_Elusivity.None, true);
                         if (this.Aspect == Enums.eAspect.Str)
                         {
                             this.EffectType = Enums.eEffectType.Elusivity;
@@ -954,9 +954,9 @@ namespace Base.Data_Classes
                             int num = (int)MessageBox.Show("Unable to interpret Elusivity field - not STR based:\n" + array[0], "Interpretation Failed");
                         }
                     }
-                    else if (Enums.IsEnumValue(array[3], (object)this.MezType))
+                    else if (Enums.IsEnumValue(array[3], this.MezType))
                     {
-                        this.MezType = (Enums.eMez)Enums.StringToFlaggedEnum(array[3], (object)this.MezType, true);
+                        this.MezType = (Enums.eMez)Enums.StringToFlaggedEnum(array[3], this.MezType, true);
                         switch (this.Aspect)
                         {
                             case Enums.eAspect.Res:
@@ -1000,9 +1000,9 @@ namespace Base.Data_Classes
                     this.DelayedTime = float.Parse(array[15]);
                     this.Stacking = array[18].ToLower() == "stack" ? Enums.eStacking.Yes : Enums.eStacking.No;
                     this.BaseProbability = float.Parse(array[20]);
-                    this.Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[9].Replace(" ", ","), (object)this.Suppression, false);
+                    this.Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[9].Replace(" ", ","), this.Suppression, false);
                     if (this.Suppression == Enums.eSuppress.None)
-                        this.Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[10].Replace(" ", ","), (object)this.Suppression, false);
+                        this.Suppression = (Enums.eSuppress)Enums.StringToFlaggedEnum(array[10].Replace(" ", ","), this.Suppression, false);
                     this.Buffable = int.Parse(array[7]) > 0;
                     this.Resistible = int.Parse(array[8]) > 0;
                     string lower = array[26].ToLower();
@@ -1533,7 +1533,7 @@ namespace Base.Data_Classes
 
         public object Clone()
         {
-            return (object)new Effect((IEffect)this);
+            return new Effect((IEffect)this);
         }
 
         public Effect()
@@ -1619,9 +1619,9 @@ namespace Base.Data_Classes
             this.IgnoreED = reader.ReadBoolean();
             this.Override = reader.ReadString();
             this.ProcsPerMinute = reader.ReadSingle();
-            if (DatabaseAPI.Database.EffectIds.Contains((object)this.EffectId))
+            if (DatabaseAPI.Database.EffectIds.Contains(this.EffectId))
                 return;
-            DatabaseAPI.Database.EffectIds.Add((object)this.EffectId);
+            DatabaseAPI.Database.EffectIds.Add(this.EffectId);
         }
 
         Effect(IEffect template)

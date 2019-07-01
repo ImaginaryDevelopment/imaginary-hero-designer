@@ -217,7 +217,7 @@ public class Build
                 break;
         }
         bool flag;
-        if (MessageBox.Show(string.Format("Really set all placed Regular enhancements to {0} Origin?\n\nThis will not affect any Invention or Special enhancements.", (object)str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        if (MessageBox.Show(string.Format("Really set all placed Regular enhancements to {0} Origin?\n\nThis will not affect any Invention or Special enhancements.", str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
             foreach (PowerEntry power in this.Powers)
             {
@@ -238,7 +238,7 @@ public class Build
     {
         string text;
         if (!iSetMin & !iSetMax)
-            text = "Really set all placed Invention and Set enhancements to level " + (object)newVal + (object)1 + "?\n\nNote: Enahncements which are not available at the default level will be set to the closest value.";
+            text = "Really set all placed Invention and Set enhancements to level " + newVal + 1 + "?\n\nNote: Enahncements which are not available at the default level will be set to the closest value.";
         else if (iSetMin)
         {
             newVal = 0;
@@ -336,13 +336,13 @@ public class Build
                             if (enhNames)
                                 str1 = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
                             if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.SetO))
-                                str1 = str1 + "-" + (object)power.Slots[0].Enhancement.IOLevel;
+                                str1 = str1 + "-" + power.Slots[0].Enhancement.IOLevel;
                             str1 += "]";
                         }
                         else if (enhNames)
                             str1 = " [Empty]";
                     }
-                    historyMap.Text = "Level " + (object)(index1 + 1) + ": " + str2 + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), (object)DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + str1;
+                    historyMap.Text = "Level " + (index1 + 1) + ": " + str2 + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + str1;
                     historyMapList.Add(historyMap);
                 }
             }
@@ -365,12 +365,12 @@ public class Build
                             if (enhNames)
                                 str = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[index3].Enhancement.Enh);
                             if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.SetO))
-                                str = str + "-" + (object)power.Slots[index3].Enhancement.IOLevel;
+                                str = str + "-" + power.Slots[index3].Enhancement.IOLevel;
                             str += "]";
                         }
                         else if (enhNames)
                             str = " [Empty]";
-                        historyMap.Text = "Level " + (object)(index1 + 1) + ": Added Slot to " + power.Power.DisplayName + str;
+                        historyMap.Text = "Level " + (index1 + 1) + ": Added Slot to " + power.Power.DisplayName + str;
                         historyMapList.Add(historyMap);
                     }
                 }
@@ -419,7 +419,7 @@ public class Build
         PopUp.PopupData popupData = new PopUp.PopupData();
         HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
         int index1 = popupData.Add(null);
-        popupData.Sections[index1].Add("Respec to level: " + (object)(iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
+        popupData.Sections[index1].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         foreach (HistoryMap historyMap in historyMapArray)
         {
             if (historyMap.HID > -1 && DatabaseAPI.Database.Levels[historyMap.Level].Powers > 0 && historyMap.Level <= iLevel)
@@ -430,25 +430,25 @@ public class Build
                     int index2 = popupData.Add(null);
                     string iText1;
                     if (power.Power != null)
-                        iText1 = "Level " + (object)(historyMap.Level + 1) + ": " + power.Power.DisplayName;
+                        iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
                     else
-                        iText1 = "Level " + (object)(historyMap.Level + 1) + ": [Empty]";
+                        iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
                     popupData.Sections[index2].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                     int num = this.SlotsAtLevel(historyMap.HID, iLevel);
                     if (num > 0)
                     {
-                        popupData.Sections[index2].Add("Slots: " + (object)num, PopUp.Colors.Text, 1f, FontStyle.Regular, 1);
+                        popupData.Sections[index2].Add("Slots: " + num, PopUp.Colors.Text, 1f, FontStyle.Regular, 1);
                         if (longFormat)
                         {
                             for (int index3 = 0; index3 <= num - 1; ++index3)
                             {
-                                string str = index3 != 0 ? "(" + (object)(power.Slots[index3].Level + 1) + ") " : "(A) ";
+                                string str = index3 != 0 ? "(" + (power.Slots[index3].Level + 1) + ") " : "(A) ";
                                 string iText2;
                                 if (power.Slots[index3].Enhancement.Enh > -1)
                                 {
                                     iText2 = str + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[index3].Enhancement.Enh);
                                     if (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.SetO)
-                                        iText2 = iText2 + "-" + (object)(power.Slots[index3].Enhancement.IOLevel + 1);
+                                        iText2 = iText2 + "-" + (power.Slots[index3].Enhancement.IOLevel + 1);
                                 }
                                 else
                                     iText2 = str + "[Empty]";
@@ -467,7 +467,7 @@ public class Build
         PopUp.PopupData popupData = new PopUp.PopupData();
         HistoryMap[] historyMapArray = this.BuildHistoryMap(true, true);
         int index = popupData.Add(null);
-        popupData.Sections[index].Add("Respec to level: " + (object)(iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
+        popupData.Sections[index].Add("Respec to level: " + (iLevel + 1), PopUp.Colors.Effect, 1.25f, FontStyle.Bold, 0);
         int num = 0;
         foreach (HistoryMap historyMap in historyMapArray)
         {
@@ -483,9 +483,9 @@ public class Build
                     {
                         string iText1;
                         if (power.Power != null)
-                            iText1 = "Level " + (object)(historyMap.Level + 1) + ": " + power.Power.DisplayName;
+                            iText1 = "Level " + (historyMap.Level + 1) + ": " + power.Power.DisplayName;
                         else
-                            iText1 = "Level " + (object)(historyMap.Level + 1) + ": [Empty]";
+                            iText1 = "Level " + (historyMap.Level + 1) + ": [Empty]";
                         popupData.Sections[index].Add(iText1, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                         if (longFormat)
                         {
@@ -495,7 +495,7 @@ public class Build
                             {
                                 iText2 = empty + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[historyMap.SID].Enhancement.Enh);
                                 if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.SetO)
-                                    iText2 = iText2 + "-" + (object)(power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
+                                    iText2 = iText2 + "-" + (power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
                             }
                             else
                                 iText2 = empty + "[Empty]";
@@ -505,7 +505,7 @@ public class Build
                 }
                 else if (DatabaseAPI.Database.Levels[historyMap.Level].Slots > 0 & historyMap.Level <= iLevel && historyMap.SID > -1)
                 {
-                    string str = historyMap.SID != 0 ? "Level " + (object)(historyMap.Level + 1) + ": Added Slot To " : "Level " + (object)(historyMap.Level + 1) + ": Received Slot - ";
+                    string str = historyMap.SID != 0 ? "Level " + (historyMap.Level + 1) + ": Added Slot To " : "Level " + (historyMap.Level + 1) + ": Received Slot - ";
                     string iText1 = power.Power == null ? str + "[Empty]" : str + power.Power.DisplayName;
                     popupData.Sections[index].Add(iText1, PopUp.Colors.Effect, 1f, FontStyle.Bold, 0);
                     if (longFormat)
@@ -516,7 +516,7 @@ public class Build
                         {
                             iText2 = empty + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[historyMap.SID].Enhancement.Enh);
                             if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.SetO)
-                                iText2 = iText2 + "-" + (object)(power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
+                                iText2 = iText2 + "-" + (power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
                         }
                         else
                             iText2 = empty + "[Empty]";
@@ -565,7 +565,7 @@ public class Build
                 break;
         }
         bool flag;
-        if (MessageBox.Show(string.Format("Really set all placed enhancements to a relative level of {0}?\n\nNote: Normal and Special enhancements cannot go above +3, and Inventions cannot go below +0.", (object)str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        if (MessageBox.Show(string.Format("Really set all placed enhancements to a relative level of {0}?\n\nNote: Normal and Special enhancements cannot go above +3, and Inventions cannot go below +0.", str), "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
         {
             foreach (PowerEntry power in this.Powers)
             {
@@ -926,7 +926,7 @@ public class Build
                 {
                     if (!silent)
                     {
-                        int num = (int)MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), (object)enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
+                        int num = (int)MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
                     }
                     flag1 = false;
                 }

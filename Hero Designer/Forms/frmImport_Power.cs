@@ -86,7 +86,7 @@ namespace Hero_Designer
         void btnEraseAll_Click(object sender, EventArgs e)
 
         {
-            if (Interaction.MsgBox((object)"Really wipte the power array. You shouldn't do this if you want to preserve any special power settings.", MsgBoxStyle.YesNo, (object)"Really?") == MsgBoxResult.No)
+            if (Interaction.MsgBox("Really wipte the power array. You shouldn't do this if you want to preserve any special power settings.", MsgBoxStyle.YesNo, "Really?") == MsgBoxResult.No)
                 return;
             DatabaseAPI.Database.Power = new IPower[0];
             int num1 = this.ImportBuffer.Length - 1;
@@ -95,7 +95,7 @@ namespace Hero_Designer
                 if (this.ImportBuffer[index].IsValid)
                     this.ImportBuffer[index].IsNew = true;
             }
-            int num2 = (int)Interaction.MsgBox((object)"All powers removed!", MsgBoxStyle.OkOnly, null);
+            int num2 = (int)Interaction.MsgBox("All powers removed!", MsgBoxStyle.OkOnly, null);
         }
 
         void btnFile_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace Hero_Designer
                 ++num1;
                 if (num1 >= 9)
                 {
-                    this.BusyMsg("Checking for deleted powers..." + Strings.Format((object)index1, "###,##0") + " of " + Conversions.ToString(DatabaseAPI.Database.Power.Length) + " done.");
+                    this.BusyMsg("Checking for deleted powers..." + Strings.Format(index1, "###,##0") + " of " + Conversions.ToString(DatabaseAPI.Database.Power.Length) + " done.");
                     Application.DoEvents();
                     num1 = 0;
                 }
@@ -186,7 +186,7 @@ namespace Hero_Designer
             int num4 = numArray.Length - 1;
             for (int index = 0; index <= num4; ++index)
                 str = str + DatabaseAPI.Database.Power[numArray[index]].FullName + "\r\n";
-            Clipboard.SetDataObject((object)str);
+            Clipboard.SetDataObject(str);
             return numArray;
         }
 
@@ -217,7 +217,7 @@ namespace Hero_Designer
             int num3;
             if (index1 != powerArray.Length)
             {
-                int num2 = (int)Interaction.MsgBox((object)("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."), MsgBoxStyle.OkOnly, null);
+                int num2 = (int)Interaction.MsgBox(("Power array size mismatch! Count: " + Conversions.ToString(index1) + " Array Length: " + Conversions.ToString(powerArray.Length) + "\r\nNothing deleted."), MsgBoxStyle.OkOnly, null);
                 num3 = 0;
             }
             else
@@ -235,7 +235,7 @@ namespace Hero_Designer
 
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
-            this.lblDate.Text = "Date: " + Strings.Format((object)DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.udRevision.Value = new Decimal(DatabaseAPI.Database.PowerVersion.Revision);
             this.lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
         }
@@ -253,7 +253,7 @@ namespace Hero_Designer
                 ++num1;
                 if (num1 >= 100)
                 {
-                    this.BusyMsg(Strings.Format((object)index, "###,##0") + " records checked.");
+                    this.BusyMsg(Strings.Format(index, "###,##0") + " records checked.");
                     Application.DoEvents();
                     num1 = 0;
                 }
@@ -267,7 +267,7 @@ namespace Hero_Designer
                     this.lstImport.Items.Add(new ListViewItem(items)
                     {
                         Checked = flag,
-                        Tag = (object)index
+                        Tag = index
                     });
                 }
             }
@@ -297,7 +297,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Power CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -317,7 +317,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 9)
                         {
-                            this.BusyMsg(Strings.Format((object)num3, "###,##0") + " records parsed.");
+                            this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             Application.DoEvents();
                             num5 = 0;
                         }
@@ -337,13 +337,13 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream.Close();
-                int num2 = (int)Interaction.MsgBox((object)exception.Message, MsgBoxStyle.Critical, (object)"Power Class CSV Parse Error");
+                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             iStream.Close();
-            int num6 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, (object)"File Parsed");
+            int num6 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
 
@@ -361,10 +361,10 @@ namespace Hero_Designer
                     ++num1;
                 }
             }
-            if (Interaction.MsgBox((object)"Check for deleted powers?", MsgBoxStyle.YesNo, (object)"Additional Check") == MsgBoxResult.Yes)
+            if (Interaction.MsgBox("Check for deleted powers?", MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
             {
                 int[] pList = this.CheckForDeletedPowers();
-                if (pList.Length > 0 && Interaction.MsgBox((object)(Conversions.ToString(pList.Length) + "  deleted powers found. Delete them?"), MsgBoxStyle.YesNo, (object)"Additional Check") == MsgBoxResult.Yes)
+                if (pList.Length > 0 && Interaction.MsgBox((Conversions.ToString(pList.Length) + "  deleted powers found. Delete them?"), MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
                     frmImport_Power.DeletePowers(pList);
             }
             DatabaseAPI.Database.PowerVersion.SourceFile = this.dlgBrowse.FileName;
@@ -373,7 +373,7 @@ namespace Hero_Designer
             DatabaseAPI.MatchAllIDs(null);
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            int num3 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object)"Done");
+            int num3 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             this.DisplayInfo();
             return flag;
         }

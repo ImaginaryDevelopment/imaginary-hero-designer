@@ -1112,11 +1112,11 @@ namespace Hero_Designer
             this.cbEffectArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEffectArea.Items.AddRange(new object[5]
             {
-        (object) "None",
-        (object) "Character",
-        (object) "Sphere",
-        (object) "Cone",
-        (object) "Location"
+         "None",
+         "Character",
+         "Sphere",
+         "Cone",
+         "Location"
             });
 
             this.cbEffectArea.Location = new System.Drawing.Point(384, 37);
@@ -1247,9 +1247,9 @@ namespace Hero_Designer
             this.cbPowerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPowerType.Items.AddRange(new object[3]
             {
-        (object) "Click",
-        (object) "Passive",
-        (object) "Toggle"
+         "Click",
+         "Passive",
+         "Toggle"
             });
 
             this.cbPowerType.Location = new System.Drawing.Point(384, 11);

@@ -67,7 +67,7 @@ namespace Hero_Designer
             MidsContext.Config.PrintProfile = !this.rbProfileShort.Checked ? (!this.rbProfileLong.Checked ? ConfigData.PrintOptionProfile.None : ConfigData.PrintOptionProfile.MultiPage) : ConfigData.PrintOptionProfile.SinglePage;
             if (this.rbProfileNone.Checked & !this.chkPrintHistory.Checked)
             {
-                int num = (int)Interaction.MsgBox((object)"You have not selected anything to print!", MsgBoxStyle.Information, (object)"Eh?");
+                int num = (int)Interaction.MsgBox("You have not selected anything to print!", MsgBoxStyle.Information, "Eh?");
             }
             else
             {
@@ -95,7 +95,7 @@ namespace Hero_Designer
         {
             if (PrinterSettings.InstalledPrinters.Count < 1)
             {
-                int num = (int)Interaction.MsgBox((object)"There are no printers installed!", MsgBoxStyle.Information, (object)"Buh...");
+                int num = (int)Interaction.MsgBox("There are no printers installed!", MsgBoxStyle.Information, "Buh...");
                 this.Close();
             }
             this._printer = new Print();

@@ -111,11 +111,11 @@ namespace Hero_Designer
                 return;
             if (this.clbOrigin.CheckedItems.Count < 1)
             {
-                int num1 = (int)Interaction.MsgBox((object)"An archetype class must have at least one valid origin!", MsgBoxStyle.Information, (object)"Oops.");
+                int num1 = (int)Interaction.MsgBox("An archetype class must have at least one valid origin!", MsgBoxStyle.Information, "Oops.");
             }
             else if (this.cbPriGroup.Text == "" | this.cbSecGroup.Text == "")
             {
-                int num2 = (int)Interaction.MsgBox((object)"You must set a Primary and Secondary Powerset Group!", MsgBoxStyle.Information, (object)"Oops.");
+                int num2 = (int)Interaction.MsgBox("You must set a Primary and Secondary Powerset Group!", MsgBoxStyle.Information, "Oops.");
             }
             else
             {
@@ -123,7 +123,7 @@ namespace Hero_Designer
                 if ((double)num3 < 1.0)
                 {
                     num3 = 1f;
-                    int num4 = (int)Interaction.MsgBox((object)"Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, null);
+                    int num4 = (int)Interaction.MsgBox("Hit Point value of < 1 is invalid. Hit Points set to 1", MsgBoxStyle.Information, null);
                 }
                 this.MyAT.Hitpoints = (int)Math.Round((double)num3);
                 float num5 = (float)Conversion.Val(this.txtHPCap.Text);
@@ -201,7 +201,7 @@ namespace Hero_Designer
                 {
                     if (index != this.MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, this.txtClassName.Text, StringComparison.OrdinalIgnoreCase))
                     {
-                        int num2 = (int)Interaction.MsgBox((object)(this.txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, (object)"Name in Use");
+                        int num2 = (int)Interaction.MsgBox((this.txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, "Name in Use");
                         return false;
                     }
                 }
@@ -241,8 +241,8 @@ namespace Hero_Designer
             this.txtRechargeCap.Text = Conversions.ToString(this.MyAT.RechargeCap * 100f);
             this.txtRecCap.Text = Conversions.ToString(this.MyAT.RecoveryCap * 100f);
             this.txtRegCap.Text = Conversions.ToString(this.MyAT.RegenCap * 100f);
-            this.txtBaseRec.Text = Strings.Format((object)this.MyAT.BaseRecovery, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
-            this.txtBaseRegen.Text = Strings.Format((object)this.MyAT.BaseRegen, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
+            this.txtBaseRec.Text = Strings.Format(this.MyAT.BaseRecovery, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
+            this.txtBaseRegen.Text = Strings.Format(this.MyAT.BaseRegen, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00##");
             this.txtPerceptionCap.Text = Conversions.ToString(this.MyAT.PerceptionCap);
             this.cbPriGroup.BeginUpdate();
             this.cbSecGroup.BeginUpdate();
@@ -250,11 +250,11 @@ namespace Hero_Designer
             this.cbSecGroup.Items.Clear();
             foreach (string key in (IEnumerable<string>)DatabaseAPI.Database.PowersetGroups.Keys)
             {
-                this.cbPriGroup.Items.Add((object)key);
-                this.cbSecGroup.Items.Add((object)key);
+                this.cbPriGroup.Items.Add(key);
+                this.cbSecGroup.Items.Add(key);
             }
-            this.cbPriGroup.SelectedValue = (object)this.MyAT.PrimaryGroup;
-            this.cbSecGroup.SelectedValue = (object)this.MyAT.SecondaryGroup;
+            this.cbPriGroup.SelectedValue = this.MyAT.PrimaryGroup;
+            this.cbSecGroup.SelectedValue = this.MyAT.SecondaryGroup;
             this.cbPriGroup.EndUpdate();
             this.cbSecGroup.EndUpdate();
             this.udColumn.Value = new Decimal(this.MyAT.Column);
@@ -269,7 +269,7 @@ namespace Hero_Designer
                     if (origin.Name.ToLower() == this.MyAT.Origin[index].ToLower())
                         isChecked = true;
                 }
-                this.clbOrigin.Items.Add((object)origin.Name, isChecked);
+                this.clbOrigin.Items.Add(origin.Name, isChecked);
             }
             this.clbOrigin.EndUpdate();
             this.txtDescShort.Text = this.MyAT.DescShort;

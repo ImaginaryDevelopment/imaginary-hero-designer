@@ -613,7 +613,7 @@ public class ConfigData
                     writer.Write(this.Export.FormatCode[index].SizeOn);
                     writer.Write(this.Export.FormatCode[index].UnderlineOff);
                     writer.Write(this.Export.FormatCode[index].UnderlineOn);
-                    writer.Write(Convert.ToInt32((object)this.Export.FormatCode[index].Space));
+                    writer.Write(Convert.ToInt32(this.Export.FormatCode[index].Space));
                 }
             }
         }

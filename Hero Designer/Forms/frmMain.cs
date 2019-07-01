@@ -929,7 +929,7 @@ namespace Hero_Designer
                 int num = playableClasses.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)playableClasses[index].Idx, false))
+                    if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), playableClasses[index].Idx, false))
                         return true;
                 }
                 flag = false;
@@ -1033,7 +1033,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox((object)"Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Question");
+                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
                 this.FloatTop(true);
                 if (msgBoxResult == MsgBoxResult.No)
                     return;
@@ -1041,7 +1041,7 @@ namespace Hero_Designer
             this.FloatTop(false);
             this.FileModified = false;
             bool flag = false;
-            if (Interaction.MsgBox((object)"Copy the build data on the forum to the clipboard. When that's done, click on OK.", MsgBoxStyle.OkCancel | MsgBoxStyle.Information, (object)"Standing By") != MsgBoxResult.Ok)
+            if (Interaction.MsgBox("Copy the build data on the forum to the clipboard. When that's done, click on OK.", MsgBoxStyle.OkCancel | MsgBoxStyle.Information, "Standing By") != MsgBoxResult.Ok)
                 return;
             string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
             this.NewToon(true, false);
@@ -1049,7 +1049,7 @@ namespace Hero_Designer
             {
                 if (str.Length < 1)
                 {
-                    int num = (int)Interaction.MsgBox((object)"No data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, (object)"Forum Import");
+                    int num = (int)Interaction.MsgBox("No data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
                 }
                 else
                 {
@@ -1100,7 +1100,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox((object)"Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Question");
+                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
                 this.FloatTop(true);
                 if (msgBoxResult == MsgBoxResult.No)
                     return;
@@ -1911,7 +1911,7 @@ namespace Hero_Designer
                 }
                 if (MidsContext.Config.FreshInstall)
                 {
-                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox(("Welcome to Pine's Hero Designer " + MidsContext.AppVersion + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Welcome!") == MsgBoxResult.Yes;
+                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox(("Welcome to Pine's Hero Designer " + MidsContext.AppVersion + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Welcome!") == MsgBoxResult.Yes;
                     MidsContext.Config.DefaultSaveFolder = "";
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
@@ -1919,7 +1919,7 @@ namespace Hero_Designer
                 string str1 = Interaction.Command();
                 if (str1.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
-                    Interaction.MsgBox("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", MsgBoxStyle.Information, (object)"Recovery Mode");
+                    Interaction.MsgBox("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", MsgBoxStyle.Information, "Recovery Mode");
                     clsXMLUpdate.GoToCoHPlanner();
                     ProjectData.EndApp();
                 }
@@ -1930,7 +1930,7 @@ namespace Hero_Designer
                 this.SetTitleBar(true);
                 this.NewToon(true, false);
                 this.dvAnchored.Init();
-                this.cbAT.SelectedItem = (object)MidsContext.Character.Archetype;
+                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
                 this.lblATLocked.Location = this.cbAT.Location;
                 this.lblATLocked.Size = this.cbAT.Size;
                 this.lblATLocked.Visible = false;
@@ -2360,7 +2360,7 @@ namespace Hero_Designer
 
         void ibSlotLevels_ButtonClicked()
         {
-            this.tsViewSlotLevels_Click((object)this, new EventArgs());
+            this.tsViewSlotLevels_Click(this, new EventArgs());
         }
 
         void ibTotals_ButtonClicked()
@@ -2841,7 +2841,7 @@ namespace Hero_Designer
 
         void pnlGFX_DragDrop(object sender, DragEventArgs e)
         {
-            if (!sender.Equals((object)this.pnlGFX))
+            if (!sender.Equals(this.pnlGFX))
                 return;
             this.pnlGFX.AllowDrop = false;
             ControlPaint.DrawReversibleFrame(this.dragRect, Color.White, FrameStyle.Thick);
@@ -2855,7 +2855,7 @@ namespace Hero_Designer
                 this.dragFinishSlot = this.drawing.WhichEnh(this.drawing.ScaleUp(iValue1), this.drawing.ScaleUp(iValue2));
                 if (this.dragFinishSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
+                    int num = (int)Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
                 }
                 else
                     this.SlotLevelSwap(this.dragStartPower, this.dragStartSlot, this.dragFinishPower, this.dragFinishSlot);
@@ -2868,7 +2868,7 @@ namespace Hero_Designer
 
         void pnlGFX_DragEnter(object sender, DragEventArgs e)
         {
-            if (sender.Equals((object)this.pnlGFX))
+            if (sender.Equals(this.pnlGFX))
                 e.Effect = DragDropEffects.Move;
             else
                 e.Effect = DragDropEffects.None;
@@ -2878,7 +2878,7 @@ namespace Hero_Designer
         {
             Point position;
             int num1;
-            if (sender.Equals((object)this.pnlGFX))
+            if (sender.Equals(this.pnlGFX))
             {
                 if (!this.dragRect.IsEmpty)
                 {
@@ -2967,7 +2967,7 @@ namespace Hero_Designer
             {
                 if (this.dragStartSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox((object)"You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
+                    int num = (int)Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
                     this.pnlGFX.AllowDrop = false;
                 }
                 else
@@ -2990,7 +2990,7 @@ namespace Hero_Designer
                     this.pnlGFX.Cursor = Cursors.Default;
                     this.drawing.HighlightSlot(-1, false);
                     Application.DoEvents();
-                    int num = (int)this.ibPopup.DoDragDrop((object)dataObject, DragDropEffects.Move);
+                    int num = (int)this.ibPopup.DoDragDrop(dataObject, DragDropEffects.Move);
                 }
             }
             else
@@ -3251,7 +3251,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                     {
-                        int num = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
+                        int num = (int)Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     }
                     int num1 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3316,7 +3316,7 @@ namespace Hero_Designer
                     }
                     if (pow[1] != index)
                     {
-                        int num2 = (int)Interaction.MsgBox((object)"None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
+                        int num2 = (int)Interaction.MsgBox("None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     }
                 }
@@ -3406,7 +3406,7 @@ namespace Hero_Designer
                         --num8;
                         break;
                     case 0:
-                        int num9 = (int)Interaction.MsgBox((object)"Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
+                        int num9 = (int)Interaction.MsgBox("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     case 1:
                         if (flag1)
@@ -3552,7 +3552,7 @@ namespace Hero_Designer
                     {
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            int num2 = (int)Interaction.MsgBox((object)"You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
+                            int num2 = (int)Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
                             return 0;
                         }
                         int num3 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3660,8 +3660,8 @@ namespace Hero_Designer
                             index = pow[0];
                             num2 = pow[1];
                         }
-                        int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, (object)index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, (object)num2, (object)22))));
-                        int integer2 = Conversions.ToInteger(Interaction.IIf(num2 == 23, (object)index, (object)23));
+                        int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
+                        int integer2 = Conversions.ToInteger(Interaction.IIf(num2 == 23, index, 23));
                         while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 | tp[index].SlotCount > 4 & integer2 != 23)
                             tp[index].Slots = (SlotEntry[])Utils.CopyArray((Array)tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
                     }
@@ -3829,28 +3829,28 @@ namespace Hero_Designer
             {
                 case 0:
                     label = this.lblPool1;
-                    Instance = (object)this.llPool0;
+                    Instance = this.llPool0;
                     break;
                 case 1:
                     label = this.lblPool2;
-                    Instance = (object)this.llPool1;
+                    Instance = this.llPool1;
                     break;
                 case 2:
                     label = this.lblPool3;
-                    Instance = (object)this.llPool2;
+                    Instance = this.llPool2;
                     break;
                 case 3:
                     label = this.lblPool4;
-                    Instance = (object)this.llPool3;
+                    Instance = this.llPool3;
                     break;
                 case 4:
                     label = this.lblEpic;
-                    Instance = (object)this.llAncillary;
+                    Instance = this.llAncillary;
                     break;
                 default:
                     return new Rectangle(0, 0, 10, 10);
             }
-            return new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, null, "Width", new object[0], (string[])null, (System.Type[])null, (bool[])null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, null, "Top", new object[0], (string[])null, (System.Type[])null, (bool[])null), NewLateBinding.LateGet(Instance, null, "Height", new object[0], (string[])null, (System.Type[])null, (bool[])null)), (object)label.Top)));
+            return new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, null, "Width", new object[0], (string[])null, (System.Type[])null, (bool[])null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, null, "Top", new object[0], (string[])null, (System.Type[])null, (bool[])null), NewLateBinding.LateGet(Instance, null, "Height", new object[0], (string[])null, (System.Type[])null, (bool[])null)), label.Top)));
         }
 
         int raGetTop()
@@ -3875,31 +3875,31 @@ namespace Hero_Designer
                     label1 = this.lblPool1;
                     comboBox = this.cbPool0;
                     label2 = this.lblLocked0;
-                    Instance = (object)this.llPool0;
+                    Instance = this.llPool0;
                     break;
                 case 1:
                     label1 = this.lblPool2;
                     comboBox = this.cbPool1;
                     label2 = this.lblLocked1;
-                    Instance = (object)this.llPool1;
+                    Instance = this.llPool1;
                     break;
                 case 2:
                     label1 = this.lblPool3;
                     comboBox = this.cbPool2;
                     label2 = this.lblLocked2;
-                    Instance = (object)this.llPool2;
+                    Instance = this.llPool2;
                     break;
                 case 3:
                     label1 = this.lblPool4;
                     comboBox = this.cbPool3;
                     label2 = this.lblLocked3;
-                    Instance = (object)this.llPool3;
+                    Instance = this.llPool3;
                     break;
                 case 4:
                     label1 = this.lblEpic;
                     comboBox = this.cbAncillary;
                     label2 = this.lblLockedAncillary;
-                    Instance = (object)this.llAncillary;
+                    Instance = this.llAncillary;
                     break;
                 default:
                     return;
@@ -3914,7 +3914,7 @@ namespace Hero_Designer
             point.Y += comboBox.Height;
             NewLateBinding.LateSet(Instance, null, "Location", new object[1]
             {
-        (object) point
+         point
             }, (string[])null, (System.Type[])null);
         }
 
@@ -4119,7 +4119,7 @@ namespace Hero_Designer
             }
             if (!(flag1 & notifyUser))
                 return;
-            int num6 = (int)Interaction.MsgBox((object)"The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, null);
+            int num6 = (int)Interaction.MsgBox("The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, null);
         }
 
         void RedrawUnderPopup(Rectangle RectRedraw)
@@ -4450,15 +4450,15 @@ namespace Hero_Designer
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
             {
-                this.Text = str2 + " (Master Mode) v" + Strings.Format((object)MainModule.MidsController.HeroDesignerVersion, "#0.0#######") + " (DB: I" + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format((object)DatabaseAPI.Database.Date, " dd / MMM / yyyy @ hh:mm tt") + ")";
+                this.Text = str2 + " (Master Mode) v" + Strings.Format(MainModule.MidsController.HeroDesignerVersion, "#0.0#######") + " (DB: I" + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format(DatabaseAPI.Database.Date, " dd / MMM / yyyy @ hh:mm tt") + ")";
             }
             else
             {
-                string str3 = Strings.Format((object)MainModule.MidsController.HeroDesignerVersion, "#0.0#######");
+                string str3 = Strings.Format(MainModule.MidsController.HeroDesignerVersion, "#0.0#######");
                 if (str3.Length > 5)
                     str3 = str3.Substring(0, 5);
                 string str4 = str3.Trim("0".ToCharArray());
-                this.Text = str2 + " v" + str4 + " (Database Issue: " + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format((object)DatabaseAPI.Database.Date, "dd/MM/yy") + ")";
+                this.Text = str2 + " v" + str4 + " (Database Issue: " + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")";
             }
         }
 
@@ -4802,13 +4802,13 @@ namespace Hero_Designer
             {
                 MidsContext.Config.FreshInstall = false;
                 MidsContext.Config.SaveFolderChecked = true;
-                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been unset!", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Fresh Install flag has been unset!", MsgBoxStyle.OkOnly, null);
             }
             else
             {
                 MidsContext.Config.FreshInstall = true;
                 MidsContext.Config.SaveFolderChecked = false;
-                int num = (int)Interaction.MsgBox((object)"Fresh Install flag has been set!", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Fresh Install flag has been set!", MsgBoxStyle.OkOnly, null);
             }
             this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
             this.FloatTop(true);
@@ -4841,7 +4841,7 @@ namespace Hero_Designer
         void tsClearAllEnh_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            if (Interaction.MsgBox((object)"Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") == MsgBoxResult.Yes)
+            if (Interaction.MsgBox("Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
             {
                 int num1 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
@@ -5044,8 +5044,8 @@ namespace Hero_Designer
 
         void tsExportDataLink_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject((object)MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
-            int num = (int)Interaction.MsgBox((object)"The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, (object)"Export Done");
+            Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
+            int num = (int)Interaction.MsgBox("The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, "Export Done");
         }
 
         void tsExportLong_Click(object sender, EventArgs e)
@@ -5076,7 +5076,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox((object)"Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Question");
+                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
                 this.FloatTop(true);
                 if (msgBoxResult == MsgBoxResult.No)
                     return;
@@ -5215,7 +5215,7 @@ namespace Hero_Designer
             else
             {
                 this.FloatTop(false);
-                int num = (int)Interaction.MsgBox((object)"No recent patches have been installed.", MsgBoxStyle.Information, (object)"No Notes");
+                int num = (int)Interaction.MsgBox("No recent patches have been installed.", MsgBoxStyle.Information, "No Notes");
                 this.FloatTop(true);
             }
         }
@@ -5233,7 +5233,7 @@ namespace Hero_Designer
         void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            if (Interaction.MsgBox((object)"Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") == MsgBoxResult.Yes)
+            if (Interaction.MsgBox("Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
             {
                 int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 for (int index = 0; index <= num; ++index)
@@ -5277,9 +5277,9 @@ namespace Hero_Designer
             clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                Interaction.MsgBox((object)"No Updates.", MsgBoxStyle.Information, (object)"Update Check");
+                Interaction.MsgBox("No Updates.", MsgBoxStyle.Information, "Update Check");
             }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && Interaction.MsgBox((object)"Exit Now?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Update Downloaded") == MsgBoxResult.Yes && !this.CloseCommand())
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && Interaction.MsgBox("Exit Now?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Update Downloaded") == MsgBoxResult.Yes && !this.CloseCommand())
             {
                 ProjectData.EndApp();
             }
@@ -5482,9 +5482,9 @@ namespace Hero_Designer
                 this.cbAT.EndUpdate();
             }
             if (this.cbAT.SelectedItem == null)
-                this.cbAT.SelectedItem = (object)MidsContext.Character.Archetype;
-            else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), (object)MidsContext.Character.Archetype.Idx, false))
-                this.cbAT.SelectedItem = (object)MidsContext.Character.Archetype;
+                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
+            else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), MidsContext.Character.Archetype.Idx, false))
+                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
             this.ibPvX.Checked = !MidsContext.Config.Inc.PvE;
             if (this.ComboCheckOrigin())
             {
@@ -6003,7 +6003,7 @@ namespace Hero_Designer
                                         i9Slot.Enh = DatabaseAPI.GetEnhancementByUIDName(iName);
                                         if (i9Slot.Enh == -1)
                                         {
-                                            int num3 = (int)Interaction.MsgBox((object)("Error with: " + str1), MsgBoxStyle.OkOnly, null);
+                                            int num3 = (int)Interaction.MsgBox(("Error with: " + str1), MsgBoxStyle.OkOnly, null);
                                             i9Slot.Enh = 0;
                                         }
                                     }
@@ -6086,7 +6086,7 @@ namespace Hero_Designer
             }
             catch
             {
-                int num = (int)Interaction.MsgBox((object)("Invalid Import Data, Blame Sai!\nError: " + str1), MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox(("Invalid Import Data, Blame Sai!\nError: " + str1), MsgBoxStyle.OkOnly, null);
             }
         }
 

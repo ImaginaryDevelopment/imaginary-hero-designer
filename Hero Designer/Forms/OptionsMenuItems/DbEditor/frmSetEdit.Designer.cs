@@ -351,11 +351,11 @@ namespace Hero_Designer
             this.cbSlotCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSlotCount.Items.AddRange(new object[5]
             {
-        (object) "2",
-        (object) "3",
-        (object) "4",
-        (object) "5",
-        (object) "6"
+         "2",
+         "3",
+         "4",
+         "5",
+         "6"
             });
 
             this.cbSlotCount.Location = new System.Drawing.Point(110, 281);

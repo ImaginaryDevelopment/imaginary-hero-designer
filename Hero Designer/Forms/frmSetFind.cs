@@ -81,7 +81,7 @@ namespace Hero_Designer
         DatabaseAPI.Database.SetTypeStringLong[(int) DatabaseAPI.Database.EnhancementSets[nIDSet].SetType],
         BonusID >= 0 ? Conversions.ToString(DatabaseAPI.Database.EnhancementSets.GetSetBonusEnhCount(nIDSet, BonusID)) : "Special"
             }, nIDSet));
-            this.lvSet.Items[this.lvSet.Items.Count - 1].Tag = (object)nIDSet;
+            this.lvSet.Items[this.lvSet.Items.Count - 1].Tag = nIDSet;
         }
 
         public void FillEffectList()
@@ -156,7 +156,7 @@ namespace Hero_Designer
                         string powerString = this.GetPowerString(this.SetBonusList[index]);
                         if (text == powerString)
                         {
-                            string Effect = (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format((object)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format((object)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((object)(float)((double)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
+                            string Effect = (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)((double)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
                             this.AddEffect(ref List, ref nIDList, Effect, this.SetBonusList[index]);
                         }
                     }
@@ -168,7 +168,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num2; ++index)
                     this.lvMag.Items.Add(new ListViewItem(List[index])
                     {
-                        Tag = (object)nIDList[index]
+                        Tag = nIDList[index]
                     });
                 if (this.lvMag.Items.Count > 0)
                     this.lvMag.Items[0].Selected = true;

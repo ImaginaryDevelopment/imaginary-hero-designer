@@ -126,7 +126,7 @@ public static class FileIO
                     while (Directory.Exists(str))
                     {
                         ++num;
-                        str = src + ".old." + (object)num;
+                        str = src + ".old." + num;
                         if (num > 100)
                             return false;
                     }

@@ -63,37 +63,37 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.Powersets[this._index].FullName != this.Data.FullName)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].FullName, (object) this.Data.FullName);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].FullName,  this.Data.FullName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].SetName != this.Data.SetName)
       {
-        message += string.Format("SetName: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].SetName, (object) this.Data.SetName);
+        message += string.Format("SetName: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SetName,  this.Data.SetName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].DisplayName != this.Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].DisplayName, (object) this.Data.DisplayName);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].DisplayName,  this.Data.DisplayName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].Description != this.Data.Description)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].Description, (object) this.Data.Description);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].Description,  this.Data.Description);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].SubName != this.Data.SubName)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].SubName, (object) this.Data.SubName);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SubName,  this.Data.SubName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].ATClass != this.Data.ATClass)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].ATClass, (object) this.Data.ATClass);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].ATClass,  this.Data.ATClass);
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[this._index].SetType != this.Data.SetType)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Powersets[this._index].SetType, (object) this.Data.SetType);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SetType,  this.Data.SetType);
         flag = true;
       }
       else

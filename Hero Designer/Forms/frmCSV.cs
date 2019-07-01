@@ -185,7 +185,7 @@ namespace Hero_Designer
         void btnClearSI_Click(object sender, EventArgs e)
 
         {
-            if (Interaction.MsgBox((object)"Really set all StaticIndex values to -1?\r\nIf not using qualified names for Save/Load, files will be unopenable until Statics are re-indexed. Full Re-Indexing may result in changed index assignments.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") == MsgBoxResult.No)
+            if (Interaction.MsgBox("Really set all StaticIndex values to -1?\r\nIf not using qualified names for Save/Load, files will be unopenable until Statics are re-indexed. Full Re-Indexing may result in changed index assignments.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.No)
                 return;
             int num1 = DatabaseAPI.Database.Power.Length - 1;
             for (int index = 0; index <= num1; ++index)
@@ -193,7 +193,7 @@ namespace Hero_Designer
             int num2 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num2; ++index)
                 DatabaseAPI.Database.Enhancements[index].StaticIndex = -1;
-            int num3 = (int)Interaction.MsgBox((object)"Static Index values cleared.", MsgBoxStyle.Information, (object)"De-Indexing Complete");
+            int num3 = (int)Interaction.MsgBox("Static Index values cleared.", MsgBoxStyle.Information, "De-Indexing Complete");
         }
 
         void btnDefiance_Click(object sender, EventArgs e)
@@ -293,14 +293,14 @@ namespace Hero_Designer
             {
                 int FileNumber = FileSystem.FreeFile();
                 FileSystem.FileOpen(FileNumber, "StaticIndexes.txt", OpenMode.Output, OpenAccess.Default, OpenShare.Default, -1);
-                FileSystem.WriteLine(FileNumber, (object)text);
+                FileSystem.WriteLine(FileNumber, text);
                 FileSystem.FileClose(FileNumber);
-                int num = (int)Interaction.MsgBox((object)"Copied to clipboard and saved in StaticIndexes.txt", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Copied to clipboard and saved in StaticIndexes.txt", MsgBoxStyle.OkOnly, null);
             }
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)"Copied to clipboard only", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Copied to clipboard only", MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
             }
         }
@@ -329,32 +329,32 @@ namespace Hero_Designer
         {
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer);
-            int num = (int)Interaction.MsgBox((object)"Static Index values assigned.", MsgBoxStyle.Information, (object)"Indexing Complete");
+            int num = (int)Interaction.MsgBox("Static Index values assigned.", MsgBoxStyle.Information, "Indexing Complete");
         }
 
         void DisplayInfo()
         {
-            this.mod_Date.Text = Strings.Format((object)DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.mod_Date.Text = Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.mod_Revision.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Revision);
             this.mod_Count.Text = Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
-            this.at_Date.Text = Strings.Format((object)DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.at_Date.Text = Strings.Format(DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.at_Revision.Text = Conversions.ToString(DatabaseAPI.Database.ArchetypeVersion.Revision);
             this.at_Count.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
-            this.set_Date.Text = Strings.Format((object)DatabaseAPI.Database.PowersetVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.set_Date.Text = Strings.Format(DatabaseAPI.Database.PowersetVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.set_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowersetVersion.Revision);
             this.set_Count.Text = Conversions.ToString(DatabaseAPI.Database.Powersets.Length);
-            this.pow_Date.Text = Strings.Format((object)DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.pow_Date.Text = Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.pow_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerVersion.Revision);
             this.pow_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
-            this.lev_date.Text = Strings.Format((object)DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.lev_date.Text = Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.lev_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerLevelVersion.Revision);
             this.lev_Count.Text = Conversions.ToString(DatabaseAPI.Database.Power.Length);
-            this.fx_Date.Text = Strings.Format((object)DatabaseAPI.Database.PowerEffectVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.fx_Date.Text = Strings.Format(DatabaseAPI.Database.PowerEffectVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.fx_Revision.Text = Conversions.ToString(DatabaseAPI.Database.PowerEffectVersion.Revision);
             this.fx_Count.Text = "Many Lots";
-            this.invent_Date.Text = Strings.Format((object)DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.invent_Date.Text = Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.invent_Revision.Text = Conversions.ToString(DatabaseAPI.Database.IOAssignmentVersion.Revision);
-            this.invent_RecipeDate.Text = Strings.Format((object)DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.invent_RecipeDate.Text = Strings.Format(DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
         }
 
         void frmCSV_Load(object sender, EventArgs e)

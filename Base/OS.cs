@@ -37,7 +37,7 @@ public static class OS
     public static string GetQuickOsid()
     {
         OS.WindowsVersion windowsVersion = OS.GetWindowsVersion();
-        return Enum.GetName(windowsVersion.GetType(), (object)windowsVersion);
+        return Enum.GetName(windowsVersion.GetType(), windowsVersion);
     }
 
     public static string GetMyDocumentsPath()
@@ -57,7 +57,7 @@ public static class OS
 
     public static string VistaUacErrorText()
     {
-        string str1 = "In order for installation and updates to function correctly," + (object)'\n' + "you may need to set the application's shortcut to run as an adminstrator." + (object)'\n' + (object)'\n' + "To do this, right-click on the shortcut to Mids' Hero Designer and select Properties->Compatability->Always run as Administrator.";
+        string str1 = "In order for installation and updates to function correctly," + '\n' + "you may need to set the application's shortcut to run as an adminstrator." + '\n' + '\n' + "To do this, right-click on the shortcut to Mids' Hero Designer and select Properties->Compatability->Always run as Administrator.";
         string str2;
         switch (OS.GetWindowsVersion())
         {

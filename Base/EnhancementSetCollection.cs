@@ -20,9 +20,9 @@ public class EnhancementSetCollection : List<EnhancementSet>
         {
             string str2;
             if (DatabaseAPI.Database.EnhancementSets[iSet].LevelMin == DatabaseAPI.Database.EnhancementSets[iSet].LevelMax)
-                str2 = RTF.Color(RTF.ElementID.Invention) + RTF.Bold(RTF.Underline(DatabaseAPI.Database.EnhancementSets[iSet].DisplayName + " (" + (object)DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + (object)1 + "): "));
+                str2 = RTF.Color(RTF.ElementID.Invention) + RTF.Bold(RTF.Underline(DatabaseAPI.Database.EnhancementSets[iSet].DisplayName + " (" + DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + 1 + "): "));
             else
-                str2 = RTF.Color(RTF.ElementID.Invention) + RTF.Bold(RTF.Underline(DatabaseAPI.Database.EnhancementSets[iSet].DisplayName + " (" + (object)(DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + 1) + "-" + (object)(DatabaseAPI.Database.EnhancementSets[iSet].LevelMax + 1) + "): "));
+                str2 = RTF.Color(RTF.ElementID.Invention) + RTF.Bold(RTF.Underline(DatabaseAPI.Database.EnhancementSets[iSet].DisplayName + " (" + (DatabaseAPI.Database.EnhancementSets[iSet].LevelMin + 1) + "-" + (DatabaseAPI.Database.EnhancementSets[iSet].LevelMax + 1) + "): "));
             string str3 = str2 + RTF.Color(RTF.ElementID.Text);
             for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets[iSet].Bonus.Length - 1; ++index)
             {
@@ -32,9 +32,9 @@ public class EnhancementSetCollection : List<EnhancementSet>
                     if (DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP)
                         effectString += "(PvP)";
                     if (enhCount >= DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted & (MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvE | !MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP | DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.Any))
-                        str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + (object)DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Invention) + effectString + RTF.Color(RTF.ElementID.Text);
+                        str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Invention) + effectString + RTF.Color(RTF.ElementID.Text);
                     else
-                        str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + (object)DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
+                        str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
                 }
             }
             for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets[iSet].SpecialBonus.Length - 1; ++index)

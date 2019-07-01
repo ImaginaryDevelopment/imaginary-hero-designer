@@ -91,7 +91,7 @@ namespace Hero_Designer
 
         void btnDelete_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox((object)("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, (object)"Are you sure?") != MsgBoxResult.Yes)
+            if (this.lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             SummonedEntity[] summonedEntityArray = new SummonedEntity[DatabaseAPI.Database.Entities.Length - 1 + 1];
             int selectedIndex = this.lvEntity.SelectedIndices[0];
@@ -224,7 +224,7 @@ namespace Hero_Designer
             {
                 DatabaseAPI.Database.Entities[Index].UID,
                 DatabaseAPI.Database.Entities[Index].DisplayName,
-                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
+                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(),  DatabaseAPI.Database.Entities[Index].EntityType)
             }, Index));
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].Selected = true;
             this.lvEntity.Items[this.lvEntity.Items.Count - 1].EnsureVisible();
@@ -236,7 +236,7 @@ namespace Hero_Designer
             {
                 DatabaseAPI.Database.Entities[Index].UID,
                 DatabaseAPI.Database.Entities[Index].DisplayName,
-                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(), (object) DatabaseAPI.Database.Entities[Index].EntityType)
+                Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(),  DatabaseAPI.Database.Entities[Index].EntityType)
             };
             int num = strArray.Length - 1;
             for (int index = 0; index <= num; ++index)
