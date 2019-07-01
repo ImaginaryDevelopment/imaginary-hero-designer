@@ -173,7 +173,7 @@ namespace Hero_Designer
             int num6 = (int)Interaction.MsgBox((object)("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, (object)"Import Done");
             this.Enabled = true;
             this.BusyHide();
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.DisplayInfo();
             return true;

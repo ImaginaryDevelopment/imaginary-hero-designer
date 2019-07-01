@@ -147,7 +147,7 @@ public class PowerEntry : ICloneable
             }
             else
                 this.SubPowers = new PowerSubEntry[0];
-            if (power.Slottable & power.PowerSet.GroupName != "Incarnate")
+            if (power.Slottable & power.GetPowerSet().GroupName != "Incarnate")
             {
                 this.Slots = new SlotEntry[1];
                 this.Slots[0].Enhancement = new I9Slot();

@@ -30,7 +30,8 @@ public interface IEffect : IComparable, ICloneable
 
     string Special { get; set; }
 
-    IPower Power { get; set; }
+    IPower GetPower();
+    void SetPower(IPower power);
 
     IEnhancement Enhancement { get; set; }
 

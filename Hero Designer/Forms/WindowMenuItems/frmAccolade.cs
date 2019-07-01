@@ -277,7 +277,7 @@ namespace Hero_Designer
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {
                         int index4 = iPopup.Add(null);
-                        power1.Effects[index3].Power = power1;
+                        power1.Effects[index3].SetPower(power1);
                         string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", string.Empty).Replace("]", string.Empty).Split(chArray);
                         int num2 = strArray.Length - 1;
                         for (int index5 = 0; index5 <= num2; ++index5)

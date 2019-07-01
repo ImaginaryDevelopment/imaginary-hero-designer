@@ -119,7 +119,7 @@ public static class DatabaseAPI
                     DatabaseAPI.Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
                 }
                 powersetGroup.Powersets.Add(powerset.FullName, powerset);
-                powerset.Group = powersetGroup;
+                powerset.SetGroup(powersetGroup);
             }
         }
     }
@@ -791,17 +791,17 @@ public static class DatabaseAPI
             Database.Version,
             DatabaseAPI.Database.Date,
             DatabaseAPI.Database.Issue,
-            DatabaseAPI.Database.ArchetypeVersion,
-            Archetypes = DatabaseAPI.Database.Classes,
+            //DatabaseAPI.Database.ArchetypeVersion,
+            //Archetypes = DatabaseAPI.Database.Classes,
             DatabaseAPI.Database.PowersetVersion,
-            DatabaseAPI.Database.Powersets,
+            //DatabaseAPI.Database.Powersets,
             Powers = new
             {
                 DatabaseAPI.Database.PowerVersion,
                 DatabaseAPI.Database.PowerLevelVersion,
                 DatabaseAPI.Database.PowerEffectVersion,
                 DatabaseAPI.Database.IOAssignmentVersion,
-                DatabaseAPI.Database.Power
+                //DatabaseAPI.Database.Power
             },
             DatabaseAPI.Database.Entities
         };
@@ -1696,13 +1696,14 @@ public static class DatabaseAPI
     {
         int iClass = 0;
         int iLevel = MidsContext.MathLevelBase;
-        if (iEffect.Power == null)
+        var effPower = iEffect.GetPower();
+        if (effPower == null)
         {
             if (iEffect.Enhancement == null)
                 return 1f;
         }
         else
-            iClass = string.IsNullOrEmpty(iEffect.Power.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : DatabaseAPI.NidFromUidClass(iEffect.Power.ForcedClass);
+            iClass = string.IsNullOrEmpty(effPower.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : DatabaseAPI.NidFromUidClass(effPower.ForcedClass);
         if (MidsContext.MathLevelExemp > -1 && MidsContext.MathLevelExemp < MidsContext.MathLevelBase)
             iLevel = MidsContext.MathLevelExemp;
         return DatabaseAPI.GetModifier(iClass, iEffect.nModifierTable, iLevel);
@@ -1791,7 +1792,6 @@ public static class DatabaseAPI
     }
 
     static void MatchPowerIDs()
-
     {
         DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
         for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
@@ -1803,22 +1803,23 @@ public static class DatabaseAPI
             power1.PowerSetID = DatabaseAPI.NidFromUidPowerset(power1.FullSetName);
             if (power1.PowerSetID > -1)
             {
-                int length = power1.PowerSet.Powers.Length;
+                var ps = power1.GetPowerSet();
+                int length = ps.Powers.Length;
                 power1.PowerSetIndex = length;
-                int[] power2 = power1.PowerSet.Power;
+                int[] power2 = ps.Power;
                 Array.Resize<int>(ref power2, length + 1);
-                power1.PowerSet.Power = power2;
-                IPower[] powers = power1.PowerSet.Powers;
+                ps.Power = power2;
+                IPower[] powers = ps.Powers;
                 Array.Resize<IPower>(ref powers, length + 1);
-                power1.PowerSet.Powers = powers;
-                power1.PowerSet.Power[length] = index;
-                power1.PowerSet.Powers[length] = power1;
+                ps.Powers = powers;
+                ps.Power[length] = index;
+                ps.Powers[length] = power1;
             }
         }
         foreach (IPower power in DatabaseAPI.Database.Power)
         {
             bool flag = false;
-            if (power.PowerSet.SetType == Enums.ePowerSetType.SetBonus)
+            if (power.GetPowerSet().SetType == Enums.ePowerSetType.SetBonus)
             {
                 flag = power.PowerName.Contains("Slow");
                 if (flag)

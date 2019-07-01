@@ -373,16 +373,17 @@ public static class MidsCharacterFileFormat
                                         powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[index2].PowerSetID;
                                         powerEntry1.IDXPower = DatabaseAPI.Database.Power[index2].PowerSetIndex;
                                     }
+                                    var ps = powerEntry1.Power?.GetPowerSet();
                                     if (index1 < MidsContext.Character.CurrentBuild.Powers.Count)
                                     {
-                                        if (!(!MidsContext.Character.CurrentBuild.Powers[index1].Chosen & (powerEntry1.Power.PowerSet.nArchetype > -1 | powerEntry1.Power.GroupName == "Pool")))
+                                        if (!(!MidsContext.Character.CurrentBuild.Powers[index1].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
                                             flag5 = !MidsContext.Character.CurrentBuild.Powers[index1].Chosen;
                                         else
                                             continue;
                                     }
                                     if (flag5)
                                         MidsContext.Character.CurrentBuild.Powers.Add(powerEntry1);
-                                    else if (powerEntry1.Power.PowerSet.nArchetype > -1 || powerEntry1.Power.GroupName == "Pool")
+                                    else if ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")
                                         MidsContext.Character.CurrentBuild.Powers[index1] = powerEntry1;
                                 }
                             }

@@ -39,6 +39,15 @@ namespace Hero_Designer.My
             MyProject.Application.Run(Args);
         }
 
+        public static ISerialize GetSerializer()
+        {
+            return new Serializer(x =>
+                Newtonsoft.Json.JsonConvert.SerializeObject(x,
+                    Newtonsoft.Json.Formatting.Indented
+                    //,settings: new Newtonsoft.Json.JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }
+                    ), "json");
+        }
+
         [DebuggerStepThrough]
         protected override void OnCreateMainForm()
         {

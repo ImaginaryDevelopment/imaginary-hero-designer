@@ -709,7 +709,7 @@ public class ConfigData
             var text = serializer.Serialize(o);
             File.WriteAllText(path, contents: text);
         }
-        catch
+        catch (Exception ex)
         {
             MessageBox.Show("Failed to save raw config");
         }

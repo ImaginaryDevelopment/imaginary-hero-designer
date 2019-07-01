@@ -373,7 +373,7 @@ namespace Hero_Designer
         {
             this.BusyMsg("Re-Indexing && Saving...");
             Array.Sort<IPower>(DatabaseAPI.Database.Power);
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer);
             DatabaseAPI.MatchAllIDs(null);
             DatabaseAPI.SaveMainDatabase(serializer);
@@ -1066,7 +1066,7 @@ namespace Hero_Designer
                 int num = DatabaseAPI.Database.Power.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (DatabaseAPI.Database.Power[index].GroupName == "" | DatabaseAPI.Database.Power[index].SetName == "" | DatabaseAPI.Database.Power[index].PowerSet == null)
+                    if (DatabaseAPI.Database.Power[index].GroupName == "" | DatabaseAPI.Database.Power[index].SetName == "" | DatabaseAPI.Database.Power[index].GetPowerSet() == null)
                     {
                         iPowers1 = (int[])Utils.CopyArray((Array)iPowers1, (Array)new int[iPowers1.Length + 1]);
                         iPowers1[iPowers1.Length - 1] = index;
@@ -1136,7 +1136,7 @@ namespace Hero_Designer
                 int num = DatabaseAPI.Database.Powersets.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (DatabaseAPI.Database.Powersets[index].Group == null | string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))
+                    if (DatabaseAPI.Database.Powersets[index].GetGroup() == null | string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))
                     {
                         int[] iArray2 = new int[1] { index };
                         numArray3 = this.ConcatArray(numArray3, iArray2);

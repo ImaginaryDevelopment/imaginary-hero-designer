@@ -46,7 +46,9 @@ public interface IPowerset : IComparable
 
     string GroupName { get; set; }
 
-    PowersetGroup Group { get; set; }
+    // not a property, is a reference loop/cycle.
+    PowersetGroup GetGroup();
+    void SetGroup(PowersetGroup group);
 
     bool ClassOk(int nIDClass);
 

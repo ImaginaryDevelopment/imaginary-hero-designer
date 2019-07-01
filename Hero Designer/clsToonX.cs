@@ -2146,7 +2146,7 @@ namespace Hero_Designer
                             powersetType = Enums.PowersetType.Secondary;
                             index1 = 1;
                         }
-                        if (power.PowerSet.SetType == ePowerSetType & power.Level - 1 == 0)
+                        if (power.GetPowerSet().SetType == ePowerSetType & power.Level - 1 == 0)
                         {
                             numArray = DatabaseAPI.NidPowersAtLevelBranch(0, this.Powersets[(int)powersetType].nID);
                             bool flag3 = false;
@@ -2172,7 +2172,7 @@ namespace Hero_Designer
                 label_23:
                     if (!flag2)
                     {
-                        if (power.PowerSet.SetType == Enums.ePowerSetType.Ancillary | power.PowerSet.SetType == Enums.ePowerSetType.Pool)
+                        if (power.GetPowerSet().SetType == Enums.ePowerSetType.Ancillary | power.GetPowerSet().SetType == Enums.ePowerSetType.Pool)
                         {
                             message = "This power has been placed in a way that is not possible in-game.";
                             if (power.PowerSetIndex == 2)

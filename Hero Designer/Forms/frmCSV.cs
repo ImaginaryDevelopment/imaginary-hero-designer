@@ -220,7 +220,7 @@ namespace Hero_Designer
             }
             this.BusyMsg("Re-Indexing && Saving...");
             DatabaseAPI.MatchAllIDs(null);
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
         }
@@ -252,7 +252,7 @@ namespace Hero_Designer
             this.BusyMsg("Working...");
             frmCSV.SetEnhancementLevels();
             this.BusyMsg("Saving...");
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.BusyHide();
         }
@@ -271,7 +271,7 @@ namespace Hero_Designer
             string str1 = "Static Indexes, App version " + Base.Master_Classes.MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
             foreach (Power power in DatabaseAPI.Database.Power)
             {
-                if (power.PowerSet.SetType != Enums.ePowerSetType.Boost)
+                if (power.GetPowerSet().SetType != Enums.ePowerSetType.Boost)
                 {
                     string str2 = Conversions.ToString(power.StaticIndex) + "\t" + power.FullName + "\r\n";
                     str1 += str2;
@@ -326,7 +326,7 @@ namespace Hero_Designer
 
         void Button2_Click(object sender, EventArgs e)
         {
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.AssignStaticIndexValues(serializer);
             int num = (int)Interaction.MsgBox((object)"Static Index values assigned.", MsgBoxStyle.Information, (object)"Indexing Complete");
         }

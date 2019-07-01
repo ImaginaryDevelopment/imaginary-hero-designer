@@ -11,6 +11,7 @@ namespace Base.Data_Classes
     public class Effect : IEffect, IComparable, ICloneable
     {
         static readonly Regex UidClassRegex = new Regex("arch source(.owner)?> (Class_[^ ]*)", RegexOptions.IgnoreCase);
+        IPower _power;
 
 
         public string MagnitudeExpression { get; set; }
@@ -24,11 +25,11 @@ namespace Base.Data_Classes
             get
             {
                 float num1 = this.BaseProbability;
-                if ((double)this.ProcsPerMinute > 0.0 && (double)num1 < 0.01 && this.Power != null)
+                if ((double)this.ProcsPerMinute > 0.0 && (double)num1 < 0.01 && this._power != null)
                 {
-                    float num2 = (float)((double)this.Power.AoEModifier * 0.75 + 0.25);
+                    float num2 = (float)((double)this._power.AoEModifier * 0.75 + 0.25);
                     float procsPerMinute = this.ProcsPerMinute;
-                    num1 = Math.Min(Math.Max((this.Power.PowerType != Enums.ePowerType.Click ? procsPerMinute * this.Power.ActivatePeriod : procsPerMinute * (this.Power.RechargeTime + this.Power.CastTimeReal)) / (60f * num2), (float)(0.0500000007450581 + 0.0149999996647239 * (double)this.ProcsPerMinute)), 0.9f);
+                    num1 = Math.Min(Math.Max((this._power.PowerType != Enums.ePowerType.Click ? procsPerMinute * this._power.ActivatePeriod : procsPerMinute * (this._power.RechargeTime + this._power.CastTimeReal)) / (60f * num2), (float)(0.0500000007450581 + 0.0149999996647239 * (double)this.ProcsPerMinute)), 0.9f);
                 }
                 if (MidsContext.Character != null && !string.IsNullOrEmpty(this.EffectId) && MidsContext.Character.ModifyEffects.ContainsKey(this.EffectId))
                     num1 += MidsContext.Character.ModifyEffects[this.EffectId];
@@ -161,16 +162,22 @@ namespace Base.Data_Classes
                 }
                 else
                 {
-                    if (this.Power != null)
+                    if (this._power != null)
                     {
-                        if (this.Power.PowerSet == null)
+                        var ps = this._power.GetPowerSet();
+                        if (ps == null)
                             return false;
-                        if (this.Power.PowerSet.nArchetype > -1)
+                        if (ps.nArchetype > -1)
                         {
-                            if (!DatabaseAPI.Database.Classes[this.Power.PowerSet.nArchetype].Playable)
+                            if (!DatabaseAPI.Database.Classes[ps.nArchetype].Playable)
                                 return false;
                         }
-                        else if (this.Power.PowerSet == null || (this.Power.PowerSet.SetType == Enums.ePowerSetType.None || this.Power.PowerSet.SetType == Enums.ePowerSetType.Accolade || (this.Power.PowerSet.SetType == Enums.ePowerSetType.Pet || this.Power.PowerSet.SetType == Enums.ePowerSetType.SetBonus) || this.Power.PowerSet.SetType == Enums.ePowerSetType.Temp))
+                        else if (ps == null
+                                || ps.SetType == Enums.ePowerSetType.None
+                                || ps.SetType == Enums.ePowerSetType.Accolade
+                                || ps.SetType == Enums.ePowerSetType.Pet
+                                || ps.SetType == Enums.ePowerSetType.SetBonus
+                                || ps.SetType == Enums.ePowerSetType.Temp)
                             return false;
                     }
                     if (this.EffectType == Enums.eEffectType.EntCreate & this.ToWho == Enums.eToWho.Target & this.Stacking == Enums.eStacking.Yes)
@@ -179,11 +186,11 @@ namespace Base.Data_Classes
                     }
                     else
                     {
-                        if (this.Power != null)
+                        if (this._power != null)
                         {
-                            for (int index = 0; index <= this.Power.Effects.Length - 1; ++index)
+                            for (int index = 0; index <= this._power.Effects.Length - 1; ++index)
                             {
-                                if (this.Power.Effects[index].EffectType == Enums.eEffectType.EntCreate & this.Power.Effects[index].ToWho == Enums.eToWho.Target & this.Power.Effects[index].Stacking == Enums.eStacking.Yes)
+                                if (this._power.Effects[index].EffectType == Enums.eEffectType.EntCreate & this._power.Effects[index].ToWho == Enums.eToWho.Target & this._power.Effects[index].Stacking == Enums.eStacking.Yes)
                                     return false;
                             }
                         }
@@ -215,7 +222,8 @@ namespace Base.Data_Classes
 
         public string Special { get; set; }
 
-        public IPower Power { get; set; }
+        public IPower GetPower() => _power;
+        public void SetPower(IPower power) => this._power = power;
 
         public IEnhancement Enhancement { get; set; }
 
@@ -352,7 +360,7 @@ namespace Base.Data_Classes
             string str3 = string.Empty;
             string str4 = string.Empty;
             string effectNameShort1 = Enums.GetEffectNameShort(this.EffectType);
-            if (this.Power != null && this.Power.VariableEnabled && this.VariableModified)
+            if (this._power != null && this._power.VariableEnabled && this.VariableModified)
                 str4 = " (V)";
             if (!simple)
             {
@@ -552,7 +560,7 @@ namespace Base.Data_Classes
             string iValue5 = string.Empty;
             string str8 = string.Empty;
             string iValue6 = string.Empty;
-            if (this.Power != null && this.Power.VariableEnabled && this.VariableModified)
+            if (this._power != null && this._power.VariableEnabled && this.VariableModified)
                 str7 = " (Variable)";
             if (this.isEnahncementEffect)
                 str8 = "(From Enh) ";
@@ -998,9 +1006,10 @@ namespace Base.Data_Classes
                     this.Buffable = int.Parse(array[7]) > 0;
                     this.Resistible = int.Parse(array[8]) > 0;
                     string lower = array[26].ToLower();
-                    if (this.Power != null)
+                    if (this._power != null)
                     {
-                        if (this.Power.PowerSet != null && this.Power.PowerSet.nArchetype > -1)
+                        var ps = this._power.GetPowerSet();
+                        if (ps != null && ps.nArchetype > -1)
                         {
                             if (lower.Contains("kDD".ToLower()))
                             {
@@ -1008,7 +1017,7 @@ namespace Base.Data_Classes
                             }
                             else
                             {
-                                switch (DatabaseAPI.Database.Classes[this.Power.PowerSet.nArchetype].PrimaryGroup.ToLower())
+                                switch (DatabaseAPI.Database.Classes[ps.nArchetype].PrimaryGroup.ToLower())
                                 {
                                     case "scrapper_melee":
                                         if (this.EffectType == Enums.eEffectType.Damage && !string.IsNullOrEmpty(lower) && (double)this.Probability <= 0.1)
@@ -1244,18 +1253,19 @@ namespace Base.Data_Classes
                             this.ToWho = Enums.eToWho.Self;
                             goto default;
                         case "target":
-                            this.ToWho = this.Power == null ? Enums.eToWho.Target : ((this.Power.EntitiesAutoHit & Enums.eEntity.Caster) != Enums.eEntity.Caster || !(lower != "entref target> entref source> eq !") ? Enums.eToWho.Target : Enums.eToWho.All);
+                            this.ToWho = this._power == null ? Enums.eToWho.Target : ((this._power.EntitiesAutoHit & Enums.eEntity.Caster) != Enums.eEntity.Caster || !(lower != "entref target> entref source> eq !") ? Enums.eToWho.Target : Enums.eToWho.All);
                             goto default;
                         case null:
-                            if (this.Power != null && this.Power.PowerSet != null)
+                            var ps = this._power?.GetPowerSet();
+                            if (this._power != null && ps != null)
                             {
-                                if (string.Equals(this.Power.PowerSet.ATClass, "CLASS_BLASTER", StringComparison.OrdinalIgnoreCase))
+                                if (string.Equals(ps.ATClass, "CLASS_BLASTER", StringComparison.OrdinalIgnoreCase))
                                 {
                                     this.nModifierTable = DatabaseAPI.NidFromUidAttribMod(this.ModifierTable);
                                     if (this.EffectType == Enums.eEffectType.DamageBuff & (double)this.Scale < 1.0 && (double)this.Scale > 0.0 && this.ToWho == Enums.eToWho.Self && this.SpecialCase == Enums.eSpecialCase.None)
                                         this.SpecialCase = Enums.eSpecialCase.Defiance;
                                 }
-                                else if (this.Power.PowerSet.SetType == Enums.ePowerSetType.Inherent && this.EffectType == Enums.eEffectType.DamageBuff && (this.AttribType == Enums.eAttribType.Expression & (double)Math.Abs(this.Scale - 0.0f) < 0.01 && this.Power.Requires.ClassName.Length > 0) && string.Equals(this.Power.Requires.ClassName[0], "CLASS_BRUTE", StringComparison.OrdinalIgnoreCase))
+                                else if (ps.SetType == Enums.ePowerSetType.Inherent && this.EffectType == Enums.eEffectType.DamageBuff && (this.AttribType == Enums.eAttribType.Expression & (double)Math.Abs(this.Scale - 0.0f) < 0.01 && this._power.Requires.ClassName.Length > 0) && string.Equals(this._power.Requires.ClassName[0], "CLASS_BRUTE", StringComparison.OrdinalIgnoreCase))
                                 {
                                     this.Stacking = Enums.eStacking.Yes;
                                     this.AttribType = Enums.eAttribType.Magnitude;
@@ -1482,7 +1492,7 @@ namespace Base.Data_Classes
             float num1;
             if (this.MagnitudeExpression.IndexOf(".8 rechargetime power.base> 1 30 minmax * 1.8 + 2 * @StdResult * 10 / areafactor power.base> /", StringComparison.OrdinalIgnoreCase) > -1)
             {
-                float num2 = (float)(((double)Math.Max(Math.Min(this.Power.RechargeTime, 30f), 0.0f) * 0.800000011920929 + 1.79999995231628) / 5.0) / this.Power.AoEModifier * this.Scale;
+                float num2 = (float)(((double)Math.Max(Math.Min(this._power.RechargeTime, 30f), 0.0f) * 0.800000011920929 + 1.79999995231628) / 5.0) / this._power.AoEModifier * this.Scale;
                 if (this.MagnitudeExpression.Length > ".8 rechargetime power.base> 1 30 minmax * 1.8 + 2 * @StdResult * 10 / areafactor power.base> /".Length + 2)
                     num2 *= float.Parse(this.MagnitudeExpression.Substring(".8 rechargetime power.base> 1 30 minmax * 1.8 + 2 * @StdResult * 10 / areafactor power.base> /".Length + 1).Substring(0, 2));
                 num1 = num2;
@@ -1565,7 +1575,7 @@ namespace Base.Data_Classes
         public Effect(IPower power)
           : this()
         {
-            this.Power = power;
+            this._power = power;
         }
 
         public Effect(BinaryReader reader)
@@ -1619,7 +1629,7 @@ namespace Base.Data_Classes
           : this()
         {
             this.PowerFullName = template.PowerFullName;
-            this.Power = template.Power;
+            this._power = template.GetPower();
             this.Enhancement = template.Enhancement;
             this.UniqueID = template.UniqueID;
             this.EffectClass = template.EffectClass;

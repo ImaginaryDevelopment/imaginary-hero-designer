@@ -347,7 +347,8 @@ namespace Hero_Designer
                 return;
             this.myFX.ToWho = (Enums.eToWho)this.cbAffects.SelectedIndex;
             this.lblAffectsCaster.Text = "";
-            if (this.myFX.Power != null && (this.myFX.Power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            var power = this.myFX.GetPower();
+            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
             this.UpdateFXText();
         }
@@ -481,7 +482,8 @@ namespace Hero_Designer
                 this.cbAffects.SelectedIndex = 1;
             else
                 this.cbAffects.SelectedIndex = (int)fx.ToWho;
-            if (fx.Power != null && (fx.Power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            var power = fx.GetPower();
+            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
             this.rbIfAny.Checked = fx.PvMode == Enums.ePvX.Any;
             this.rbIfCritter.Checked = fx.PvMode == Enums.ePvX.PvE;
@@ -576,8 +578,8 @@ namespace Hero_Designer
         {
             this.FillComboBoxes();
             this.DisplayEffectData();
-            if (this.myFX.Power != null)
-                this.Text = "Edit Effect " + Conversions.ToString(this.myFX.nID) + " for: " + this.myFX.Power.FullName;
+            if (this.myFX.GetPower() is IPower power)
+                this.Text = "Edit Effect " + Conversions.ToString(this.myFX.nID) + " for: " + power.FullName;
             else if (this.myFX.Enhancement != null)
                 this.Text = "Edit Effect for: " + this.myFX.Enhancement.UID;
             else
@@ -612,11 +614,11 @@ namespace Hero_Designer
                 using (BinaryReader reader = new BinaryReader(memoryStream))
                 {
                     string powerFullName = this.myFX.PowerFullName;
-                    IPower power = this.myFX.Power;
+                    IPower power = this.myFX.GetPower();
                     IEnhancement enhancement = this.myFX.Enhancement;
-                    this.myFX = (IEffect)new Effect(reader);
+                    this.myFX = new Effect(reader);
                     this.myFX.PowerFullName = powerFullName;
-                    this.myFX.Power = power;
+                    this.myFX.SetPower(power);
                     this.myFX.Enhancement = enhancement;
                     this.DisplayEffectData();
                 }

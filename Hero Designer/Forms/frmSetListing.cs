@@ -205,7 +205,7 @@ namespace Hero_Designer
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.Hide();
         }

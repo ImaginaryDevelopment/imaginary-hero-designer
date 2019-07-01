@@ -7,6 +7,7 @@ public class Powerset : IPowerset, IComparable
     string _fullName;
 
     string _groupName;
+    PowersetGroup _powersetGroup;
 
 
     public bool IsModified { get; set; }
@@ -58,7 +59,9 @@ public class Powerset : IPowerset, IComparable
 
     public int[] nIDMutexSets { get; set; }
 
-    public PowersetGroup Group { get; set; }
+    public PowersetGroup GetGroup() => _powersetGroup;
+
+    public void SetGroup(PowersetGroup pg) => _powersetGroup = pg;
 
     public string GroupName
     {
@@ -116,7 +119,7 @@ public class Powerset : IPowerset, IComparable
         this.Description = template.Description;
         this.SubName = template.SubName;
         this.ATClass = template.ATClass;
-        this.Group = template.Group;
+        this._powersetGroup = template.GetGroup();
         this.GroupName = template.GroupName;
         this.UIDTrunkSet = template.UIDTrunkSet;
         this.nIDTrunkSet = template.nIDTrunkSet;

@@ -287,7 +287,7 @@ namespace Hero_Designer
             }
             this.Enabled = true;
             this.BusyMsg("Saving...");
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
             int num4 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, (object)"Done");

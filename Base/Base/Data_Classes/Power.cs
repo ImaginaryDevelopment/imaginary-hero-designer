@@ -9,17 +9,13 @@ namespace Base.Data_Classes
 {
     public class Power : IPower, IComparable
     {
-        public IPowerset PowerSet
-        {
-            get
-            {
-                return !(this.PowerSetID < 0 | this.PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[this.PowerSetID] : null;
-            }
-            set
-            {
-                this.PowerSetID = value.nID;
-            }
-        }
+        public IPowerset GetPowerSet() => !(this.PowerSetID < 0 | this.PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[this.PowerSetID] : null;
+        //    }
+        //    set
+        //    {
+        //        this.PowerSetID = value.nID;
+        //    }
+        //}
 
         public string FullSetName
         {
@@ -64,7 +60,13 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this.Enhancements.Length > 0 && (this.PowerSet.SetType == Enums.ePowerSetType.Primary || this.PowerSet.SetType == Enums.ePowerSetType.Secondary || (this.PowerSet.SetType == Enums.ePowerSetType.Ancillary || this.PowerSet.SetType == Enums.ePowerSetType.Inherent) || this.PowerSet.SetType == Enums.ePowerSetType.Pool);
+                var ps = this.GetPowerSet();
+                return this.Enhancements.Length > 0 &&
+                    (ps.SetType == Enums.ePowerSetType.Primary
+                        || ps.SetType == Enums.ePowerSetType.Secondary
+                        || ps.SetType == Enums.ePowerSetType.Ancillary
+                        || ps.SetType == Enums.ePowerSetType.Inherent
+                        || ps.SetType == Enums.ePowerSetType.Pool);
             }
         }
 
@@ -408,7 +410,7 @@ namespace Base.Data_Classes
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
                 this.Effects[index] = (IEffect)template.Effects[index].Clone();
-                this.Effects[index].Power = (IPower)this;
+                this.Effects[index].SetPower(this);
             }
             this.ClickBuff = template.ClickBuff;
             this.AlwaysToggle = template.AlwaysToggle;
@@ -554,11 +556,15 @@ namespace Base.Data_Classes
             this.BoostUsePlayerLevel = reader.ReadBoolean();
             this.Effects = new IEffect[reader.ReadInt32() + 1];
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
-                this.Effects[index] = (IEffect)new Effect(reader)
+            {
+                var eff = (IEffect)new Effect(reader)
                 {
-                    Power = (IPower)this,
                     nID = index
                 };
+                eff.SetPower(this);
+
+                this.Effects[index] = eff;
+            }
             this.HiddenPower = reader.ReadBoolean();
         }
 

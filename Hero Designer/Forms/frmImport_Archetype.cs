@@ -188,7 +188,7 @@ namespace Hero_Designer
             DatabaseAPI.Database.ArchetypeVersion.SourceFile = this.dlgBrowse.FileName;
             DatabaseAPI.Database.ArchetypeVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.ArchetypeVersion.Revision = Convert.ToInt32(this.udATRevision.Value);
-            var serializer = new Serializer(x => Newtonsoft.Json.JsonConvert.SerializeObject(x, Newtonsoft.Json.Formatting.Indented), "json");
+            var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             int num3 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " classes completed!"), MsgBoxStyle.Information, (object)"Done");
             this.DisplayInfo();

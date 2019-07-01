@@ -5,7 +5,7 @@ using System.IO;
 
 public interface IPower : IComparable
 {
-    IPowerset PowerSet { get; set; }
+    IPowerset GetPowerSet();
 
     string FullSetName { get; }
 
