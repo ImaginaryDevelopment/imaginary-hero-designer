@@ -1323,6 +1323,7 @@ public static class DatabaseAPI
         }
     }
 
+
     public static void LoadSalvage()
     {
         string path = Files.SelectDataFileLoad("Salvage.mhd");
@@ -1363,9 +1364,21 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveSalvage()
+    static void SaveSalvageRaw(ISerialize serializer, string fn, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.Salvage
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+
+    const string SalvageName = "Mids' Hero Designer Salvage Database";
+    public static void SaveSalvage(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("Salvage.mhd");
+        SaveSalvageRaw(serializer, path, SalvageName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -1380,7 +1393,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Salvage Database");
+            writer.Write(SalvageName);
             writer.Write(DatabaseAPI.Database.Salvage.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Salvage.Length - 1; ++index)
                 DatabaseAPI.Database.Salvage[index].StoreTo(writer);

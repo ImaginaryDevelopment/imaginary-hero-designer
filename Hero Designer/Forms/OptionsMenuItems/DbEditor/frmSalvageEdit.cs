@@ -158,9 +158,8 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
-            DatabaseAPI.SaveSalvage();
+            DatabaseAPI.SaveSalvage(My.MyApplication.GetSerializer());
             this.Close();
         }
 
