@@ -27,7 +27,6 @@ namespace Hero_Designer
         string FullFileName;
 
 
-
         public frmImport_EnhancementEffects()
         {
             this.Load += new EventHandler(this.frmImport_EnhancementEffects_Load);
@@ -36,13 +35,11 @@ namespace Hero_Designer
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this.FullFileName;
             if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -52,7 +49,6 @@ namespace Hero_Designer
         }
 
         void btnImport_Click(object sender, EventArgs e)
-
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
@@ -60,7 +56,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -69,7 +64,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
@@ -90,8 +84,6 @@ namespace Hero_Designer
             this.FullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
             this.DisplayInfo();
         }
-
-        [DebuggerStepThrough]
 
         bool ParseClasses(string iFileName)
 
@@ -118,8 +110,8 @@ namespace Hero_Designer
             for (int index = 0; index <= num5; ++index)
             {
                 IEffect[] effectArray = new IEffect[0];
-                if (DatabaseAPI.Database.Enhancements[index].Power != null)
-                    DatabaseAPI.Database.Enhancements[index].Power.Effects = effectArray;
+                if (DatabaseAPI.Database.Enhancements[index].GetPower() is IPower power)
+                    power.Effects = effectArray;
             }
             string str1 = "";
             string str2;
@@ -147,16 +139,16 @@ namespace Hero_Designer
                         if (flag)
                         {
                             ++num4;
-                            IPower power1 = DatabaseAPI.Database.Enhancements[index].Power;
+                            IPower power1 = DatabaseAPI.Database.Enhancements[index].GetPower();
                             power1.FullName = uidEnh;
                             string[] strArray = power1.FullName.Split('.');
                             power1.GroupName = strArray[0];
                             power1.SetName = strArray[1];
                             power1.PowerName = strArray[2];
-                            IPower power2 = power1;
-                            IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power2.Effects, (Array)new IEffect[power1.Effects.Length + 1]);
-                            power2.Effects = effectArray;
-                            power1.Effects[power1.Effects.Length - 1] = (IEffect)new Effect(DatabaseAPI.Database.Enhancements[index].Power);
+                            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power1.Effects, new IEffect[power1.Effects.Length + 1]);
+                            power1.Effects = effectArray;
+                            // this creates a reference cycle - power has an effect, that effect refers to the power
+                            power1.Effects[power1.Effects.Length - 1] = new Effect(power1);
                             power1.Effects[power1.Effects.Length - 1].ImportFromCSV(str2);
                         }
                         else

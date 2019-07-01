@@ -32,21 +32,25 @@ public class Enhancement : IEnhancement
     public int nIDSet { get; set; }
 
     public string UIDSet { get; set; }
-
-    public IPower Power
+    public IPower GetPower()
     {
-        get
-        {
-            IPower power;
-            if ((power = this._power) == null)
-                power = this._power = DatabaseAPI.GetPowerByName("Boosts." + this.UID + "." + this.UID);
-            return power;
-        }
-        set
-        {
-            this._power = value;
-        }
+        if (this._power == null)
+            this._power = DatabaseAPI.GetPowerByName("Boosts." + this.UID + "." + this.UID);
+        return this._power;
     }
+
+    void IEnhancement.SetPower(IPower power) => this._power = power;
+
+    //public IPower Power
+    //{
+    //    get
+    //    {
+    //    }
+    //    set
+    //    {
+    //        this._power = value;
+    //    }
+    //}
 
     public Enums.sEffect[] Effect { get; set; }
 
@@ -196,10 +200,12 @@ public class Enhancement : IEnhancement
         this.Unique = false;
         this.MutExID = Enums.eEnhMutex.None;
         this.UIDSet = string.Empty;
-        this.Power = (IPower)new Base.Data_Classes.Power();
-        this.Power.PowerType = Enums.ePowerType.Boost;
-        this.Power.DisplayName = this.Name;
-        this.Power.FullName = this.UID;
+        this._power = (IPower)new Base.Data_Classes.Power()
+        {
+            PowerType = Enums.ePowerType.Boost,
+            DisplayName = this.Name,
+            FullName = this.UID
+        };
         this.BuffMode = Enums.eBuffDebuff.Any;
         this.ClassID = new int[0];
         this.Effect = new Enums.sEffect[0];
@@ -228,7 +234,7 @@ public class Enhancement : IEnhancement
         this.Unique = iEnh.Unique;
         this.MutExID = iEnh.MutExID;
         this.BuffMode = iEnh.BuffMode;
-        this.Power = (IPower)new Base.Data_Classes.Power(iEnh.Power);
+        this._power = new Base.Data_Classes.Power(iEnh.GetPower());
         this.ClassID = new int[iEnh.ClassID.Length];
         for (int index = 0; index <= this.ClassID.Length - 1; ++index)
             this.ClassID[index] = iEnh.ClassID[index];

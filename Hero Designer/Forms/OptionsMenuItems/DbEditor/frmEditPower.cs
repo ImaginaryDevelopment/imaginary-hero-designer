@@ -1092,7 +1092,7 @@ namespace Hero_Designer
             }
         }
 
-        public frmEditPower(ref IPower iPower)
+        public frmEditPower(IPower iPower)
         {
             this.Load += new EventHandler(this.frmEditPower_Load);
             this.enhPadding = 6;
@@ -1100,7 +1100,7 @@ namespace Hero_Designer
             this.Updating = true;
             this.ReqChanging = false;
             this.InitializeComponent();
-            this.myPower = (IPower)new Power(iPower);
+            this.myPower = new Power(iPower);
             this.backup_Requires = new Requirement(this.myPower.Requires);
         }
 

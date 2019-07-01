@@ -394,11 +394,11 @@ namespace Hero_Designer
             else if (this.cbFilter.SelectedIndex == 1 && this.lvGroup.SelectedItems.Count > 0 & this.lvSet.SelectedItems.Count > 0)
                 iPower.FullName = DatabaseAPI.Database.Classes[this.lvGroup.SelectedIndices[0]].PrimaryGroup + this.lvSet.SelectedItems[0].SubItems[0].Text + ".New_Power";
             iPower.DisplayName = "New Power";
-            frmEditPower frmEditPower = new frmEditPower(ref iPower);
+            frmEditPower frmEditPower = new frmEditPower(iPower);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            IPower[] powerArray = (IPower[])Utils.CopyArray((Array)database.Power, (Array)new IPower[DatabaseAPI.Database.Power.Length + 1]);
+            IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
             database.Power = powerArray;
             DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = (IPower)new Power(frmEditPower.myPower);
             DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
@@ -418,11 +418,11 @@ namespace Hero_Designer
                 iPower.DisplayName = "New Power";
                 iPower.FullName += "_Clone";
                 iPower.DisplayName += " (Clone)";
-                frmEditPower frmEditPower = new frmEditPower(ref iPower);
+                frmEditPower frmEditPower = new frmEditPower(iPower);
                 if (frmEditPower.ShowDialog() == DialogResult.OK)
                 {
                     IDatabase database = DatabaseAPI.Database;
-                    IPower[] powerArray = (IPower[])Utils.CopyArray((Array)database.Power, (Array)new IPower[DatabaseAPI.Database.Power.Length + 1]);
+                    IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
                     database.Power = powerArray;
                     DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = (IPower)new Power(frmEditPower.myPower);
                     DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
@@ -440,7 +440,7 @@ namespace Hero_Designer
             int num1 = DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text);
             if (num1 < 0)
             {
-                int num2 = (int)Interaction.MsgBox((object)"Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, (object)"Wha?");
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -511,7 +511,7 @@ namespace Hero_Designer
             }
             else
             {
-                frmEditPower frmEditPower = new frmEditPower(ref DatabaseAPI.Database.Power[index1]);
+                frmEditPower frmEditPower = new frmEditPower(DatabaseAPI.Database.Power[index1]);
                 if (frmEditPower.ShowDialog() == DialogResult.OK)
                 {
                     DatabaseAPI.Database.Power[index1] = (IPower)new Power(frmEditPower.myPower);

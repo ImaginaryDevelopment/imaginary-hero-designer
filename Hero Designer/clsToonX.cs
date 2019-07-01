@@ -522,7 +522,7 @@ namespace Hero_Designer
                         {
                             var enhIndex = this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh;
                             var enh = DatabaseAPI.Database.Enhancements[enhIndex];
-                            IPower power1 = enh?.Power;
+                            IPower power1 = enh?.GetPower();
                             if (power1 == null)
                                 return false;
                             int num3 = power1.Effects.Length - 1;
@@ -539,7 +539,7 @@ namespace Hero_Designer
                                     iPower.Effects[iPower.Effects.Length - 1].Absorbed_Effect = true;
                                     iPower.Effects[iPower.Effects.Length - 1].Ticks = power1.Effects[index2].Ticks;
                                     iPower.Effects[iPower.Effects.Length - 1].Buffable = false;
-                                    if (DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].Power.Effects[index2].EffectType == Enums.eEffectType.GrantPower)
+                                    if (DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].GetPower().Effects[index2].EffectType == Enums.eEffectType.GrantPower)
                                         iPower.HasGrantPowerEffect = true;
                                 }
                             }

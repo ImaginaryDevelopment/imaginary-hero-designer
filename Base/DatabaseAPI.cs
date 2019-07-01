@@ -1,4 +1,3 @@
-
 using Base.Data_Classes;
 using Base.IO_Classes;
 using Base.Master_Classes;
@@ -6,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 public static class DatabaseAPI
@@ -794,6 +794,7 @@ public static class DatabaseAPI
             DatabaseAPI.Database.ArchetypeVersion,
             Archetypes = DatabaseAPI.Database.Classes,
             DatabaseAPI.Database.PowersetVersion,
+            // out of memory exception
             //DatabaseAPI.Database.Powersets,
             Powers = new
             {
@@ -801,7 +802,10 @@ public static class DatabaseAPI
                 DatabaseAPI.Database.PowerLevelVersion,
                 DatabaseAPI.Database.PowerEffectVersion,
                 DatabaseAPI.Database.IOAssignmentVersion,
+                // out of memory exception
                 //DatabaseAPI.Database.Power
+                // just powers not in power sets
+                Powers = powers
             },
             DatabaseAPI.Database.Entities
         };

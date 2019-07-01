@@ -199,11 +199,12 @@ public class I9Slot : ICloneable
                     }
                     else
                     {
-                        for (int index2 = 0; index2 <= enhancement.Power.Effects.Length - 1; ++index2)
+                        var power = enhancement.GetPower();
+                        for (int index2 = 0; index2 <= power.Effects.Length - 1; ++index2)
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append(", ");
-                            stringBuilder.Append(enhancement.Power.Effects[index2].BuildEffectString(true, "", false, false, false));
+                            stringBuilder.Append(power.Effects[index2].BuildEffectString(true, "", false, false, false));
                         }
                         str2 = "Effect: " + (object)stringBuilder;
                     }
@@ -288,7 +289,7 @@ public class I9Slot : ICloneable
                 }
                 else
                 {
-                    IPower power = (IPower)new Power(enhancement.Power);
+                    IPower power = new Power(enhancement.GetPower());
                     power.ApplyGrantPowerEffects();
                     int[] returnMask = new int[0];
                     for (int index1 = 0; index1 <= power.Effects.Length - 1; ++index1)

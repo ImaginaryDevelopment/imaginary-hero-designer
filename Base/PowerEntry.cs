@@ -175,12 +175,15 @@ public class PowerEntry : ICloneable
     {
         for (int index1 = 0; index1 <= this.SlotCount - 1; ++index1)
         {
-            if (this.Slots[index1].Enhancement.Enh >= 0 && DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Effect.Length > 0 && DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Power != null)
+            if (this.Slots[index1].Enhancement.Enh < 0) continue;
+            var enh = DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh];
+            var power = enh.GetPower();
+            if (DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
             {
-                for (int index2 = 0; index2 < DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Power.Effects.Length; ++index2)
+                for (int index2 = 0; index2 < power.Effects.Length; ++index2)
                 {
                     int num;
-                    switch (DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Power.Effects[index2].EffectType)
+                    switch (power.Effects[index2].EffectType)
                     {
                         case Enums.eEffectType.None:
                         case Enums.eEffectType.Damage:
@@ -190,12 +193,12 @@ public class PowerEntry : ICloneable
                             num = 1;
                             break;
                         case Enums.eEffectType.Mez:
-                            if ((double)DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Power.Effects[index2].Mag > 0.0)
+                            if ((double)power.Effects[index2].Mag > 0.0)
                                 goto case Enums.eEffectType.None;
                             else
                                 goto default;
                         default:
-                            num = DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Power.Effects[index2].ToWho == Enums.eToWho.Target ? 1 : 0;
+                            num = power.Effects[index2].ToWho == Enums.eToWho.Target ? 1 : 0;
                             break;
                     }
                     if (num == 0)

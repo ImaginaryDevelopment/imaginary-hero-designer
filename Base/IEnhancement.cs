@@ -37,7 +37,9 @@ public interface IEnhancement
 
     string UIDSet { get; set; }
 
-    IPower Power { get; set; }
+    //IPower Power { get; set; }
+    IPower GetPower();
+    void SetPower(IPower power);
 
     Enums.sEffect[] Effect { get; set; }
 

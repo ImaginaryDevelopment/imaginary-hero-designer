@@ -283,16 +283,17 @@ namespace Hero_Designer
 
         {
             IEnhancement enh = this.myEnh;
-            IPower power = enh.Power;
-            enh.Power = power;
-            frmEditPower frmEditPower = new frmEditPower(ref power);
+            IPower power = enh.GetPower();
+            frmEditPower frmEditPower = new frmEditPower(power);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
                 return;
-            this.myEnh.Power = (IPower)new Power(frmEditPower.myPower);
-            this.myEnh.Power.IsModified = true;
-            int num = this.myEnh.Power.Effects.Length - 1;
+            power = new Power(frmEditPower.myPower);
+            // could really use structural equality here, but since we don't have it... we'll mark it as modified just because :/
+            power.IsModified = true;
+            int num = power.Effects.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.myEnh.Power.Effects[index].PowerFullName = this.myEnh.Power.FullName;
+                power.Effects[index].PowerFullName = power.FullName;
+            this.myEnh.SetPower(power);
         }
 
         void btnImage_Click(object sender, EventArgs e)

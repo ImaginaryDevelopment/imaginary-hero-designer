@@ -281,8 +281,9 @@ namespace Hero_Designer
             foreach (Enhancement enhancement in DatabaseAPI.Database.Enhancements)
             {
                 string str2;
-                if (enhancement.Power != null)
-                    str2 = Conversions.ToString(enhancement.StaticIndex) + "\t" + enhancement.Power.FullName + "\r\n";
+                var power = enhancement.GetPower();
+                if (power != null)
+                    str2 = Conversions.ToString(enhancement.StaticIndex) + "\t" + power.FullName + "\r\n";
                 else
                     str2 = "THIS ONE IS NULL  " + Conversions.ToString(enhancement.StaticIndex) + "\t" + enhancement.Name + "\r\n";
                 text += str2;
