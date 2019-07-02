@@ -558,8 +558,8 @@ namespace Hero_Designer
             {
                 if (DatabaseAPI.Database.Classes[index].Playable)
                 {
-                    this.cbAT1.Items.Add((object)DatabaseAPI.Database.Classes[index].DisplayName);
-                    this.cbAT2.Items.Add((object)DatabaseAPI.Database.Classes[index].DisplayName);
+                    this.cbAT1.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
+                    this.cbAT2.Items.Add(DatabaseAPI.Database.Classes[index].DisplayName);
                 }
             }
             this.cbAT1.SelectedIndex = MidsContext.Character.Archetype.Idx;
@@ -603,7 +603,7 @@ namespace Hero_Designer
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(selectedIndex, iSet);
             int num = powersetIndexes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                comboBox1.Items.Add((object)powersetIndexes[index].DisplayName);
+                comboBox1.Items.Add(powersetIndexes[index].DisplayName);
             if (comboBox1.Items.Count > 0)
                 comboBox1.SelectedIndex = 0;
             comboBox1.EndUpdate();
@@ -615,12 +615,12 @@ namespace Hero_Designer
             this.cbType1.Items.Clear();
             this.cbType2.BeginUpdate();
             this.cbType2.Items.Clear();
-            this.cbType1.Items.Add((object)"Primary");
-            this.cbType1.Items.Add((object)"Secondary");
-            this.cbType1.Items.Add((object)"Ancillary");
-            this.cbType2.Items.Add((object)"Primary");
-            this.cbType2.Items.Add((object)"Secondary");
-            this.cbType2.Items.Add((object)"Ancillary");
+            this.cbType1.Items.Add("Primary");
+            this.cbType1.Items.Add("Secondary");
+            this.cbType1.Items.Add("Ancillary");
+            this.cbType2.Items.Add("Primary");
+            this.cbType2.Items.Add("Secondary");
+            this.cbType2.Items.Add("Ancillary");
             this.cbType1.SelectedIndex = 0;
             this.cbType2.SelectedIndex = 0;
             this.cbType1.EndUpdate();
@@ -1119,11 +1119,11 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format((object)this.Values[index1][index2], "##0.##") + "% base Accuracy";
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(this.Values[index1][index2], "##0.##") + "% base Accuracy";
                         string[][] tips2 = this.Tips;
                         int index7 = index1;
                         int index8 = index2;
-                        tips2[index7][index8] = tips2[index7][index8] + "\r\n  (Real Numbers style: " + Strings.Format((object)this.Powers[index1][index2].Accuracy, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x)";
+                        tips2[index7][index8] = tips2[index7][index8] + "\r\n  (Real Numbers style: " + Strings.Format(this.Powers[index1][index2].Accuracy, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x)";
                         if ((double)num1 < (double)this.Values[index1][index2])
                             num1 = this.Values[index1][index2];
                     }
@@ -1248,7 +1248,7 @@ namespace Hero_Designer
                         string[][] tips2 = this.Tips;
                         int index7 = index1;
                         int index8 = index2;
-                        tips2[index7][index8] = tips2[index7][index8] + " - DPE: " + Strings.Format((object)this.Values[index1][index2], "##0.##");
+                        tips2[index7][index8] = tips2[index7][index8] + " - DPE: " + Strings.Format(this.Values[index1][index2], "##0.##");
                     }
                 }
                 ++index1;
@@ -1356,7 +1356,7 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format((object)this.Powers[index1][index2].EndCost, "##0.##");
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(this.Powers[index1][index2].EndCost, "##0.##");
                         if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
                         {
                             string[][] tips2 = this.Tips;
@@ -1404,7 +1404,7 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format((object)this.Values[index1][index2], "##0.##");
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(this.Values[index1][index2], "##0.##");
                         string[][] tips2 = this.Tips;
                         int index7 = index1;
                         int index8 = index2;
@@ -1485,7 +1485,7 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format((object)this.Values[index1][index2], "##0.##") + " HP per unit of end.";
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(this.Values[index1][index2], "##0.##") + " HP per unit of end.";
                         if ((double)num1 < (double)this.Values[index1][index2])
                             num1 = this.Values[index1][index2];
                     }
@@ -1525,7 +1525,7 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format((object)this.Values[index1][index2], "##0.##") + " HP/s";
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  Heal: " + Strings.Format(this.Values[index1][index2], "##0.##") + " HP/s";
                         if ((double)num1 < (double)this.Values[index1][index2])
                             num1 = this.Values[index1][index2];
                     }
@@ -1671,7 +1671,7 @@ namespace Hero_Designer
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
                         int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format((object)this.Values[index1][index2], "##0.##") + "s";
+                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + Strings.Format(this.Values[index1][index2], "##0.##") + "s";
                         if ((double)num1 < (double)this.Values[index1][index2])
                             num1 = this.Values[index1][index2];
                     }

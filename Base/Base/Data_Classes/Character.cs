@@ -439,7 +439,7 @@ namespace Base.Data_Classes
             {
                 popupData1.Sections[index1].Add("Empty Slot", PopUp.Colors.Disabled, 1.25f, FontStyle.Bold, 0);
                 if (iLevel > -1)
-                    popupData1.Sections[index1].Add("Slot placed at level: " + (object)(iLevel + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                    popupData1.Sections[index1].Add("Slot placed at level: " + (iLevel + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                 int index2 = popupData1.Add(null);
                 popupData1.Sections[index2].Add("Right-Click to place an enhancement.", PopUp.Colors.Disabled, 1f, FontStyle.Bold | FontStyle.Italic, 0);
                 popupData1.Sections[index2].Add("Shift-Click to move this slot.", PopUp.Colors.Disabled, 1f, FontStyle.Bold | FontStyle.Italic, 0);
@@ -485,17 +485,17 @@ namespace Base.Data_Classes
                         popupData1.Sections[index1].Add(iSlot.GetEnhancementString(), Color.FromArgb(0, (int)byte.MaxValue, 0), 1f, FontStyle.Bold, 0);
                         break;
                     case Enums.eType.InventO:
-                        popupData1.Sections[index1].Add("Invention Level: " + (object)(iSlot.IOLevel + 1) + iSlot.GetRelativeString(false) + " - " + iSlot.GetEnhancementString(), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
+                        popupData1.Sections[index1].Add("Invention Level: " + (iSlot.IOLevel + 1) + iSlot.GetRelativeString(false) + " - " + iSlot.GetEnhancementString(), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
                         break;
                     case Enums.eType.SpecialO:
                         popupData1.Sections[index1].Add(iSlot.GetEnhancementString(), Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0), 1f, FontStyle.Bold, 0);
                         break;
                     case Enums.eType.SetO:
-                        popupData1.Sections[index1].Add("Invention Level: " + (object)(iSlot.IOLevel + 1) + iSlot.GetRelativeString(false), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
+                        popupData1.Sections[index1].Add("Invention Level: " + (iSlot.IOLevel + 1) + iSlot.GetRelativeString(false), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
                         break;
                 }
                 if (iLevel > -1)
-                    popupData1.Sections[index1].Add("Slot placed at level: " + (object)(iLevel + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                    popupData1.Sections[index1].Add("Slot placed at level: " + (iLevel + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                 if (enhancement.Unique)
                 {
                     index1 = popupData1.Add(null);
@@ -542,7 +542,7 @@ namespace Base.Data_Classes
                     {
                         int index3 = popupData1.Add(null);
                         popupData1.Sections[index3].Add("Set Type: " + DatabaseAPI.Database.SetTypeStringLong[(int)DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType], PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
-                        popupData1.Sections[index3].Add("Set Level Range: " + (object)(DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].LevelMin + 1) + " to " + (object)(DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].LevelMax + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
+                        popupData1.Sections[index3].Add("Set Level Range: " + (DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].LevelMin + 1) + " to " + (DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].LevelMax + 1), PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                         popupData1.Add(PopSetEnhList(enhancement.nIDSet, powerEntry));
                         popupData1.Add(PopSetBonusListing(enhancement.nIDSet, powerEntry));
                     }
@@ -758,11 +758,11 @@ namespace Base.Data_Classes
                         str = " - " + DatabaseAPI.Database.Enhancements[recipe.EnhIdx].LongName;
                     section1.Add("Recipe" + str, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                     if (recipeEntry.BuyCost > 0)
-                        section1.Add("Buy Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", (object)recipeEntry.BuyCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
+                        section1.Add("Buy Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", recipeEntry.BuyCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
                     if (recipeEntry.CraftCost > 0)
-                        section1.Add("Craft Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", (object)recipeEntry.CraftCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
+                        section1.Add("Craft Cost:", PopUp.Colors.Invention, string.Format("{0:###,###,##0}", recipeEntry.CraftCost), PopUp.Colors.Invention, 0.9f, FontStyle.Bold, 1);
                     if (recipeEntry.CraftCostM > 0)
-                        section1.Add("Craft Cost (Memorized):", PopUp.Colors.Effect, string.Format("{0:###,###,##0}", (object)recipeEntry.CraftCostM), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
+                        section1.Add("Craft Cost (Memorized):", PopUp.Colors.Effect, string.Format("{0:###,###,##0}", recipeEntry.CraftCostM), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
                     for (int index2 = 0; index2 <= recipeEntry.Salvage.Length - 1 && (index2 == 0 || recipeEntry.SalvageIdx[index2] != recipeEntry.SalvageIdx[0]); ++index2)
                     {
                         if (recipeEntry.SalvageIdx[index2] >= 0)
@@ -827,7 +827,7 @@ namespace Base.Data_Classes
                 int index1 = popupData1.Add(null);
                 popupData1.Sections[index1].Add(enhancementSet.DisplayName, iColor, 1.25f, FontStyle.Bold, 0);
                 popupData1.Sections[index1].Add("Set Type: " + DatabaseAPI.Database.SetTypeStringLong[(int)enhancementSet.SetType], PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
-                string str = enhancementSet.LevelMin != enhancementSet.LevelMax ? (enhancementSet.LevelMin + 1).ToString() + " to " + (object)(enhancementSet.LevelMax + 1) : (enhancementSet.LevelMin + 1).ToString((IFormatProvider)CultureInfo.InvariantCulture);
+                string str = enhancementSet.LevelMin != enhancementSet.LevelMax ? (enhancementSet.LevelMin + 1).ToString() + " to " + (enhancementSet.LevelMax + 1) : (enhancementSet.LevelMin + 1).ToString((IFormatProvider)CultureInfo.InvariantCulture);
                 popupData1.Sections[index1].Add("Level Range: " + str, PopUp.Colors.Text, 1f, FontStyle.Bold, 0);
                 popupData1.Add(PopSetEnhList(sIdx, powerEntry));
                 popupData1.Add(PopSetBonusListing(sIdx, powerEntry));
@@ -865,7 +865,7 @@ namespace Base.Data_Classes
                 }
                 var section1 = new PopUp.Section();
                 if (power != null)
-                    section1.Add("Set: " + enhancementSet.DisplayName + " (" + (object)num + "/" + (object)enhancementSet.Enhancements.Length + ")", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
+                    section1.Add("Set: " + enhancementSet.DisplayName + " (" + num + "/" + enhancementSet.Enhancements.Length + ")", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                 for (int index = 0; index <= enhancementSet.Enhancements.Length - 1; ++index)
                 {
                     string iText = enhancementSet.DisplayName + ": " + DatabaseAPI.Database.Enhancements[enhancementSet.Enhancements[index]].Name;

@@ -102,12 +102,12 @@ namespace Hero_Designer
             this.chEndurance.Width = 88;
             this.chDamageBuff.Text = "Dmg Buff";
             this.chDamageBuff.Width = 88;
-            this.chDamageBuff.Tag = (object)"Damage Buff";
+            this.chDamageBuff.Tag = "Damage Buff";
             this.chResistanceDebuff.Text = "Res Debuff";
             this.chResistanceDebuff.Width = 88;
-            this.chResistanceDebuff.Tag = (object)"Resistance Debuff";
+            this.chResistanceDebuff.Tag = "Resistance Debuff";
             this.chBuildID.Width = 0;
-            this.chBuildID.Tag = (object)"chBuildID";
+            this.chBuildID.Tag = "chBuildID";
             this.ilAttackChain.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
 
             this.ilAttackChain.ImageSize = new System.Drawing.Size(16, 16);

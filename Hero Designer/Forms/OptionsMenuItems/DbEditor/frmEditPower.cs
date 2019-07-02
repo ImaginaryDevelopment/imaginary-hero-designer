@@ -1092,7 +1092,7 @@ namespace Hero_Designer
             }
         }
 
-        public frmEditPower(ref IPower iPower)
+        public frmEditPower(IPower iPower)
         {
             this.Load += new EventHandler(this.frmEditPower_Load);
             this.enhPadding = 6;
@@ -1100,7 +1100,7 @@ namespace Hero_Designer
             this.Updating = true;
             this.ReqChanging = false;
             this.InitializeComponent();
-            this.myPower = (IPower)new Power(iPower);
+            this.myPower = new Power(iPower);
             this.backup_Requires = new Requirement(this.myPower.Requires);
         }
 
@@ -1119,12 +1119,12 @@ namespace Hero_Designer
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
             {
-                int num = (int)Interaction.MsgBox((object)"Import successful.", MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox("Import successful.", MsgBoxStyle.OkOnly, null);
                 this.refresh_PowerData();
             }
             else
             {
-                int num1 = (int)Interaction.MsgBox((object)"Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
+                int num1 = (int)Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
             }
         }
 
@@ -1136,7 +1136,7 @@ namespace Hero_Designer
             BinaryWriter writer = new BinaryWriter((Stream)memoryStream);
             this.myPower.StoreTo(ref writer);
             writer.Close();
-            Clipboard.SetDataObject((object)new DataObject(format.Name, (object)memoryStream.GetBuffer()));
+            Clipboard.SetDataObject(new DataObject(format.Name, memoryStream.GetBuffer()));
             memoryStream.Close();
         }
 
@@ -1148,7 +1148,7 @@ namespace Hero_Designer
             string setName = this.myPower.SetName;
             if (!Clipboard.ContainsData(format.Name))
             {
-                int num = (int)Interaction.MsgBox((object)"No power data on the clipboard!", MsgBoxStyle.Information, (object)"Unable to Paste");
+                int num = (int)Interaction.MsgBox("No power data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
             }
             else
             {
@@ -1291,11 +1291,11 @@ namespace Hero_Designer
                 return;
             if (string.Equals(this.clbMutex.Items[index].ToString(), b, StringComparison.OrdinalIgnoreCase))
             {
-                int num = (int)Interaction.MsgBox((object)("'" + b + "' is not unique!"), MsgBoxStyle.Information, (object)"Unable to add");
+                int num = (int)Interaction.MsgBox(("'" + b + "' is not unique!"), MsgBoxStyle.Information, "Unable to add");
             }
             else
             {
-                this.clbMutex.Items.Add((object)b, true);
+                this.clbMutex.Items.Add(b, true);
                 this.clbMutex.SelectedIndex = this.clbMutex.Items.Count - 1;
             }
         }
@@ -1307,11 +1307,11 @@ namespace Hero_Designer
             this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
             if (power.GroupName == "" | power.SetName == "" | power.PowerName == "")
             {
-                int num1 = (int)Interaction.MsgBox((object)("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num1 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else if (!frmEditPower.PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
             {
-                int num2 = (int)Interaction.MsgBox((object)("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num2 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else
             {
@@ -1408,7 +1408,7 @@ namespace Hero_Designer
                     this.myPower.Requires.PowerID[this.lvPrListing.SelectedIndices[0]][1] = "";
                 }
                 else
-                    this.rbPrRemove_Click((object)this, new EventArgs());
+                    this.rbPrRemove_Click(this, new EventArgs());
             }
             else
                 this.myPower.Requires.PowerID[this.lvPrListing.SelectedIndices[0]][1] = "";
@@ -2049,7 +2049,7 @@ namespace Hero_Designer
             else if (this.rbFlagCastThrough.Checked)
             {
                 flag = false;
-                this.clbFlags.Items.Add((object)"Mez", this.myPower.CastThroughHold);
+                this.clbFlags.Items.Add("Mez", this.myPower.CastThroughHold);
             }
             if (flag)
             {
@@ -2059,7 +2059,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num2; ++index)
                 {
                     bool isChecked = (values[index] & num1) != 0;
-                    this.clbFlags.Items.Add((object)names[index], isChecked);
+                    this.clbFlags.Items.Add(names[index], isChecked);
                 }
             }
             this.clbFlags.EndUpdate();
@@ -2106,14 +2106,14 @@ namespace Hero_Designer
             int[] indexesByGroupName = DatabaseAPI.GetPowersetIndexesByGroupName(this.myPower.GroupName);
             int num1 = indexesByGroupName.Length - 1;
             for (int index = 0; index <= num1; ++index)
-                this.cbNameSet.Items.Add((object)DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
+                this.cbNameSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
             this.cbNameSet.EndUpdate();
             this.cbForcedClass.BeginUpdate();
             this.cbForcedClass.Items.Clear();
-            this.cbForcedClass.Items.Add((object)"None");
+            this.cbForcedClass.Items.Add("None");
             int num2 = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num2; ++index)
-                this.cbForcedClass.Items.Add((object)DatabaseAPI.Database.Classes[index].ClassName);
+                this.cbForcedClass.Items.Add(DatabaseAPI.Database.Classes[index].ClassName);
             this.cbForcedClass.EndUpdate();
             this.Updating = updating;
         }
@@ -2138,14 +2138,14 @@ namespace Hero_Designer
             IPower power = this.myPower;
             string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###";
             this.txtLevel.Text = Conversions.ToString(power.Level);
-            this.txtAcc.Text = Strings.Format((object)power.Accuracy, Style);
-            this.txtInterrupt.Text = Strings.Format((object)power.InterruptTime, Style);
-            this.txtCastTime.Text = Strings.Format((object)power.CastTimeReal, Style);
-            this.txtRechargeTime.Text = Strings.Format((object)power.RechargeTime, Style);
-            this.txtActivate.Text = Strings.Format((object)power.ActivatePeriod, Style);
-            this.txtEndCost.Text = Strings.Format((object)power.EndCost, Style);
-            this.txtRange.Text = Strings.Format((object)power.Range, Style);
-            this.txtRangeSec.Text = Strings.Format((object)power.RangeSecondary, Style);
+            this.txtAcc.Text = Strings.Format(power.Accuracy, Style);
+            this.txtInterrupt.Text = Strings.Format(power.InterruptTime, Style);
+            this.txtCastTime.Text = Strings.Format(power.CastTimeReal, Style);
+            this.txtRechargeTime.Text = Strings.Format(power.RechargeTime, Style);
+            this.txtActivate.Text = Strings.Format(power.ActivatePeriod, Style);
+            this.txtEndCost.Text = Strings.Format(power.EndCost, Style);
+            this.txtRange.Text = Strings.Format(power.Range, Style);
+            this.txtRangeSec.Text = Strings.Format(power.RangeSecondary, Style);
             this.txtRadius.Text = Conversions.ToString(power.Radius);
             this.txtArc.Text = Conversions.ToString(power.Arc);
             this.txtMaxTargets.Text = Conversions.ToString(power.MaxTargets);
@@ -2247,7 +2247,7 @@ namespace Hero_Designer
                         break;
                     }
                 }
-                this.clbMutex.Items.Add((object)strArray[index1], isChecked);
+                this.clbMutex.Items.Add(strArray[index1], isChecked);
             }
             this.clbMutex.EndUpdate();
         }
@@ -2272,7 +2272,7 @@ namespace Hero_Designer
                     }
                     this.lvPrListing.Items.Add(new ListViewItem(items)
                     {
-                        Tag = (object)index
+                        Tag = index
                     });
                 }
             }
@@ -2290,7 +2290,7 @@ namespace Hero_Designer
                     }
                     this.lvPrListing.Items.Add(new ListViewItem(items)
                     {
-                        Tag = (object)index
+                        Tag = index
                     });
                 }
             }
@@ -2316,7 +2316,7 @@ namespace Hero_Designer
                     if (string.Equals(DatabaseAPI.Database.Classes[index1].ClassName, this.myPower.Requires.ClassName[index2], StringComparison.OrdinalIgnoreCase))
                         isChecked = true;
                 }
-                this.clbClassReq.Items.Add((object)DatabaseAPI.Database.Classes[index1].ClassName, isChecked);
+                this.clbClassReq.Items.Add(DatabaseAPI.Database.Classes[index1].ClassName, isChecked);
             }
             this.clbClassReq.EndUpdate();
             this.clbClassExclude.BeginUpdate();
@@ -2331,7 +2331,7 @@ namespace Hero_Designer
                     if (string.Equals(DatabaseAPI.Database.Classes[index1].ClassName, this.myPower.Requires.ClassNameNot[index2], StringComparison.OrdinalIgnoreCase))
                         isChecked = true;
                 }
-                this.clbClassExclude.Items.Add((object)DatabaseAPI.Database.Classes[index1].ClassName, isChecked);
+                this.clbClassExclude.Items.Add(DatabaseAPI.Database.Classes[index1].ClassName, isChecked);
             }
             this.clbClassExclude.EndUpdate();
         }
@@ -2439,7 +2439,7 @@ namespace Hero_Designer
                 int num1 = int.Parse(s);
                 if (num1 < 0)
                 {
-                    int num2 = (int)Interaction.MsgBox((object)"The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
+                    int num2 = (int)Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
                 }
                 else
                 {
@@ -2450,7 +2450,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
             }
         }
@@ -2794,7 +2794,7 @@ namespace Hero_Designer
         void rbPrAdd_Click(object sender, EventArgs e)
 
         {
-            if (Interaction.MsgBox((object)"If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, (object)"Query") == MsgBoxResult.No)
+            if (Interaction.MsgBox("If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, "Query") == MsgBoxResult.No)
             {
                 this.myPower.Requires.PowerIDNot = (string[][])Utils.CopyArray((Array)this.myPower.Requires.PowerIDNot, (Array)new string[this.myPower.Requires.PowerIDNot.Length + 1][]);
                 this.myPower.Requires.PowerIDNot[this.myPower.Requires.PowerIDNot.Length - 1] = new string[2];
@@ -2975,7 +2975,7 @@ namespace Hero_Designer
             this.lvFX.Items.Clear();
             int num = power.Effects.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.lvFX.Items.Add((object)power.Effects[index].BuildEffectString(false, "", false, false, true).Replace("\r\n", " - "));
+                this.lvFX.Items.Add(power.Effects[index].BuildEffectString(false, "", false, false, true).Replace("\r\n", " - "));
             this.lvFX.EndUpdate();
             if (this.lvFX.Items.Count > Index)
                 this.lvFX.SelectedIndex = Index;
@@ -3043,7 +3043,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num; ++index)
                 {
                     this.lvPrSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
-                    this.lvPrSet.Items[this.lvPrSet.Items.Count - 1].Tag = (object)DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
+                    this.lvPrSet.Items[this.lvPrSet.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
                 }
                 this.lvPrSet.EndUpdate();
             }
@@ -3137,10 +3137,10 @@ namespace Hero_Designer
             this.chkBuffCycle.Enabled = power.PowerType == Enums.ePowerType.Click;
             this.chkAlwaysToggle.Enabled = power.PowerType == Enums.ePowerType.Toggle;
             if ((double)power.ActivatePeriod > 0.0 & power.PowerType == Enums.ePowerType.Toggle)
-                this.lblEndCost.Text = "(" + Strings.Format((object)(float)((double)power.EndCost / (double)power.ActivatePeriod), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)";
+                this.lblEndCost.Text = "(" + Strings.Format((float)((double)power.EndCost / (double)power.ActivatePeriod), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)";
             else
                 this.lblEndCost.Text = "";
-            this.lblAcc.Text = "(" + Strings.Format((object)(float)((double)power.Accuracy * (double)MidsContext.Config.BaseAcc * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%)";
+            this.lblAcc.Text = "(" + Strings.Format((float)((double)power.Accuracy * (double)MidsContext.Config.BaseAcc * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%)";
         }
 
         void SetFullName()
@@ -3180,7 +3180,7 @@ namespace Hero_Designer
                         if (!DatabaseAPI.Database.Powersets[index1].Powers[index2].HiddenPower)
                         {
                             this.lvSPPower.Items.Add(DatabaseAPI.Database.Powersets[index1].Powers[index2].PowerName);
-                            this.lvSPPower.Items[this.lvSPPower.Items.Count - 1].Tag = (object)DatabaseAPI.Database.Powersets[index1].Powers[index2].FullName;
+                            this.lvSPPower.Items[this.lvSPPower.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[index1].Powers[index2].FullName;
                         }
                     }
                 }
@@ -3204,7 +3204,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num; ++index)
                 {
                     this.lvSPSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
-                    this.lvSPSet.Items[this.lvSPSet.Items.Count - 1].Tag = (object)DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
+                    this.lvSPSet.Items[this.lvSPSet.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
                 }
                 this.lvSPSet.EndUpdate();
             }

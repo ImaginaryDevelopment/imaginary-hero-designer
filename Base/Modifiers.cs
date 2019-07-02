@@ -103,7 +103,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message + (object)'\n' + (object)'\n' + "Modifier tables couldn't be loaded.");
+            MessageBox.Show(ex.Message + '\n' + '\n' + "Modifier tables couldn't be loaded.");
             return false;
         }
         try
@@ -138,7 +138,7 @@ public class Modifiers
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Modifier table file isn't how it should be (" + ex.Message + ")" + (object)'\n' + "No modifiers loaded.");
+            MessageBox.Show("Modifier table file isn't how it should be (" + ex.Message + ")" + '\n' + "No modifiers loaded.");
             this.Modifier = new Modifiers.ModifierTable[0];
             reader.Close();
             fileStream.Close();
@@ -146,9 +146,25 @@ public class Modifiers
         }
     }
 
-    public void Store()
+    void StoreRaw(ISerialize serializer, string path, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            this.Revision,
+            this.RevisionDate,
+            this.SourceIndex,
+            this.SourceTables,
+            this.Modifier
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, path);
+    }
+
+    const string StoreName = "Mids' Hero Designer Attribute Modifier Tables";
+    public void Store(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("AttribMod.mhd");
+        StoreRaw(serializer, path, StoreName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -163,7 +179,7 @@ public class Modifiers
         }
         try
         {
-            writer.Write("Mids' Hero Designer Attribute Modifier Tables");
+            writer.Write(StoreName);
             writer.Write(this.Revision);
             writer.Write(this.RevisionDate.ToBinary());
             writer.Write(this.SourceIndex);

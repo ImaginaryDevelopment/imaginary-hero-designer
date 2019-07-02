@@ -42,7 +42,7 @@ namespace Hero_Designer
                         sData = sData.Substring(0, 96);
                 }
                 Process.Start(targetUrl);
-                //Process.Start("http://www.honourableunited.org.uk/mhdreport.php" + "?" + "ver=" + Strings.Format((object) 1.962f, "##0.#####") + "&db=" + Strings.Format((object) DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format((object) DatabaseAPI.Database.Date, "dd/MM/yy") + ")&OS=" + OS.GetQuickOsid() + "&data=" + sData);
+                //Process.Start("http://www.honourableunited.org.uk/mhdreport.php" + "?" + "ver=" + Strings.Format( 1.962f, "##0.#####") + "&db=" + Strings.Format( DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format( DatabaseAPI.Database.Date, "dd/MM/yy") + ")&OS=" + OS.GetQuickOsid() + "&data=" + sData);
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace Hero_Designer
                     if (sData.Length > 96)
                         sData = sData.Substring(0, 96);
                 }
-                string str = "?" + "body=" + Strings.Format(Base.Master_Classes.MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format((object)DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format((object)DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
+                string str = "?" + "body=" + Strings.Format(Base.Master_Classes.MidsContext.AppVersion, "##0.#####") + "&db=" + Strings.Format(DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")" + "&at=" + at + "&p=" + pri + "&s=" + sec + "&OS=" + OS.GetQuickOsid();
                 if (sData != "")
                     str = str + "&data=" + sData;
                 Process.Start(targetUrl);
@@ -114,7 +114,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                Interaction.MsgBox((object)("There was an error starting the default web browser: " + ex.Message), MsgBoxStyle.Exclamation, (object)"Aiee!");
+                Interaction.MsgBox(("There was an error starting the default web browser: " + ex.Message), MsgBoxStyle.Exclamation, "Aiee!");
                 ProjectData.ClearProjectError();
             }
         }

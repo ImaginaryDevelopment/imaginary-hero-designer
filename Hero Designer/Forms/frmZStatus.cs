@@ -29,7 +29,7 @@ namespace Hero_Designer
         public void SetText1(string text)
         {
             if (this.lblStatus1.InvokeRequired)
-                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), (object)text);
+                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), text);
             else
                 this.lblStatus1.Text = text;
         }
@@ -37,7 +37,7 @@ namespace Hero_Designer
         public void SetText2(string text)
         {
             if (this.lblStatus2.InvokeRequired)
-                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), (object)text);
+                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), text);
             else
                 this.lblStatus2.Text = text;
         }

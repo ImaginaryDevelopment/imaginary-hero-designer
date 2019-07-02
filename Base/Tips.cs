@@ -9,7 +9,7 @@ public class Tips
     readonly int[] _tipStatus;
     public int[] TipStatus => _tipStatus.Select(x => x).ToArray();
 
-  public Tips()
+    public Tips()
     {
         this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
         for (int index = 0; index <= this._tipStatus.Length - 1; ++index)

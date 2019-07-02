@@ -318,7 +318,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.OkOnly, null);
+                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
                 return;
             }
@@ -347,7 +347,8 @@ namespace Hero_Designer
                 return;
             this.myFX.ToWho = (Enums.eToWho)this.cbAffects.SelectedIndex;
             this.lblAffectsCaster.Text = "";
-            if (this.myFX.Power != null && (this.myFX.Power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            var power = this.myFX.GetPower();
+            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
             this.UpdateFXText();
         }
@@ -464,15 +465,15 @@ namespace Hero_Designer
             string Style = "####0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0##";
             IEffect fx = this.myFX;
             this.cbPercentageOverride.SelectedIndex = (int)fx.DisplayPercentageOverride;
-            this.txtFXScale.Text = Strings.Format((object)fx.Scale, Style);
-            this.txtFXDuration.Text = Strings.Format((object)fx.nDuration, Style);
-            this.txtFXMag.Text = Strings.Format((object)fx.nMagnitude, Style);
+            this.txtFXScale.Text = Strings.Format(fx.Scale, Style);
+            this.txtFXDuration.Text = Strings.Format(fx.nDuration, Style);
+            this.txtFXMag.Text = Strings.Format(fx.nMagnitude, Style);
             this.cmbEffectId.Text = fx.EffectId;
-            this.txtFXTicks.Text = Strings.Format((object)fx.Ticks, "####0");
+            this.txtFXTicks.Text = Strings.Format(fx.Ticks, "####0");
             this.txtOverride.Text = fx.Override;
-            this.txtFXDelay.Text = Strings.Format((object)fx.DelayedTime, Style);
-            this.txtFXProb.Text = Strings.Format((object)fx.BaseProbability, Style);
-            this.lblProb.Text = "(" + Strings.Format((object)(float)((double)fx.BaseProbability * 100.0), "####0") + "%)";
+            this.txtFXDelay.Text = Strings.Format(fx.DelayedTime, Style);
+            this.txtFXProb.Text = Strings.Format(fx.BaseProbability, Style);
+            this.lblProb.Text = "(" + Strings.Format((float)((double)fx.BaseProbability * 100.0), "####0") + "%)";
             this.cbAttribute.SelectedIndex = (int)fx.AttribType;
             this.cbAspect.SelectedIndex = (int)fx.Aspect;
             this.cbModifier.SelectedIndex = DatabaseAPI.NidFromUidAttribMod(fx.ModifierTable);
@@ -481,7 +482,8 @@ namespace Hero_Designer
                 this.cbAffects.SelectedIndex = 1;
             else
                 this.cbAffects.SelectedIndex = (int)fx.ToWho;
-            if (fx.Power != null && (fx.Power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            var power = fx.GetPower();
+            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
             this.rbIfAny.Checked = fx.PvMode == Enums.ePvX.Any;
             this.rbIfCritter.Checked = fx.PvMode == Enums.ePvX.PvE;
@@ -500,7 +502,7 @@ namespace Hero_Designer
             int[] values = (int[])Enum.GetValues(fx.Suppression.GetType());
             int num1 = names1.Length - 1;
             for (int index = 0; index <= num1; ++index)
-                this.clbSuppression.Items.Add((object)names1[index], (fx.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
+                this.clbSuppression.Items.Add(names1[index], (fx.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
             this.clbSuppression.EndUpdate();
             this.lvEffectType.BeginUpdate();
             this.lvEffectType.Items.Clear();
@@ -541,17 +543,17 @@ namespace Hero_Designer
             this.cbAffects.Items.Clear();
             this.cbFXClass.Items.AddRange((object[])Enum.GetNames(this.myFX.EffectClass.GetType()));
             this.cbFXSpecialCase.Items.AddRange((object[])Enum.GetNames(this.myFX.SpecialCase.GetType()));
-            this.cbPercentageOverride.Items.Add((object)"Auto");
-            this.cbPercentageOverride.Items.Add((object)"Yes");
-            this.cbPercentageOverride.Items.Add((object)"No");
+            this.cbPercentageOverride.Items.Add("Auto");
+            this.cbPercentageOverride.Items.Add("Yes");
+            this.cbPercentageOverride.Items.Add("No");
             this.cbAttribute.Items.AddRange((object[])Enum.GetNames(this.myFX.AttribType.GetType()));
             this.cbAspect.Items.AddRange((object[])Enum.GetNames(this.myFX.Aspect.GetType()));
             int num1 = DatabaseAPI.Database.AttribMods.Modifier.Length - 1;
             for (int index = 0; index <= num1; ++index)
-                this.cbModifier.Items.Add((object)DatabaseAPI.Database.AttribMods.Modifier[index].ID);
-            this.cbAffects.Items.Add((object)"None");
-            this.cbAffects.Items.Add((object)"Target");
-            this.cbAffects.Items.Add((object)"Self");
+                this.cbModifier.Items.Add(DatabaseAPI.Database.AttribMods.Modifier[index].ID);
+            this.cbAffects.Items.Add("None");
+            this.cbAffects.Items.Add("Target");
+            this.cbAffects.Items.Add("Self");
             this.cbFXClass.EndUpdate();
             this.cbFXSpecialCase.EndUpdate();
             this.cbPercentageOverride.EndUpdate();
@@ -567,7 +569,7 @@ namespace Hero_Designer
                 return;
             int num3 = strArray.Length - 1;
             for (int index = 0; index <= num3; ++index)
-                this.cmbEffectId.Items.Add((object)strArray[index]);
+                this.cmbEffectId.Items.Add(strArray[index]);
             this.lvSubAttribute.Enabled = true;
         }
 
@@ -576,8 +578,8 @@ namespace Hero_Designer
         {
             this.FillComboBoxes();
             this.DisplayEffectData();
-            if (this.myFX.Power != null)
-                this.Text = "Edit Effect " + Conversions.ToString(this.myFX.nID) + " for: " + this.myFX.Power.FullName;
+            if (this.myFX.GetPower() is IPower power)
+                this.Text = "Edit Effect " + Conversions.ToString(this.myFX.nID) + " for: " + power.FullName;
             else if (this.myFX.Enhancement != null)
                 this.Text = "Edit Effect for: " + this.myFX.Enhancement.UID;
             else
@@ -594,7 +596,7 @@ namespace Hero_Designer
             BinaryWriter writer = new BinaryWriter((Stream)memoryStream);
             this.myFX.StoreTo(ref writer);
             writer.Close();
-            Clipboard.SetDataObject((object)new DataObject(format.Name, (object)memoryStream.GetBuffer()));
+            Clipboard.SetDataObject(new DataObject(format.Name, memoryStream.GetBuffer()));
             memoryStream.Close();
         }
 
@@ -604,7 +606,7 @@ namespace Hero_Designer
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
             if (!Clipboard.ContainsData(format.Name))
             {
-                int num = (int)Interaction.MsgBox((object)"No effect data on the clipboard!", MsgBoxStyle.Information, (object)"Unable to Paste");
+                int num = (int)Interaction.MsgBox("No effect data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
             }
             else
             {
@@ -612,11 +614,11 @@ namespace Hero_Designer
                 using (BinaryReader reader = new BinaryReader(memoryStream))
                 {
                     string powerFullName = this.myFX.PowerFullName;
-                    IPower power = this.myFX.Power;
+                    IPower power = this.myFX.GetPower();
                     IEnhancement enhancement = this.myFX.Enhancement;
-                    this.myFX = (IEffect)new Effect(reader);
+                    this.myFX = new Effect(reader);
                     this.myFX.PowerFullName = powerFullName;
-                    this.myFX.Power = power;
+                    this.myFX.SetPower(power);
                     this.myFX.Enhancement = enhancement;
                     this.DisplayEffectData();
                 }
@@ -723,7 +725,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.txtFXDuration.Text = Strings.Format((object)this.myFX.nDuration, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0##");
+            this.txtFXDuration.Text = Strings.Format(this.myFX.nDuration, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0##");
             this.UpdateFXText();
         }
 
@@ -784,7 +786,7 @@ namespace Hero_Designer
                 if ((double)num > 1.0)
                     num /= 100f;
                 fx.BaseProbability = num;
-                this.lblProb.Text = "(" + Strings.Format((object)(float)((double)fx.BaseProbability * 100.0), "###0") + "%)";
+                this.lblProb.Text = "(" + Strings.Format((float)((double)fx.BaseProbability * 100.0), "###0") + "%)";
             }
             this.UpdateFXText();
         }
@@ -794,7 +796,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.txtFXScale.Text = Strings.Format((object)this.myFX.Scale, "####0.0##");
+            this.txtFXScale.Text = Strings.Format(this.myFX.Scale, "####0.0##");
             this.UpdateFXText();
         }
 

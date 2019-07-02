@@ -56,12 +56,12 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    int num1 = (int)Interaction.MsgBox((object)"Files cannot be found!", MsgBoxStyle.Exclamation, (object)"No Can Do");
+                    int num1 = (int)Interaction.MsgBox("Files cannot be found!", MsgBoxStyle.Exclamation, "No Can Do");
                 }
             }
             else
             {
-                int num2 = (int)Interaction.MsgBox((object)"Files not selected!", MsgBoxStyle.Exclamation, (object)"No Can Do");
+                int num2 = (int)Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
             }
         }
 
@@ -118,7 +118,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Recipe CSVs Not Opened");
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Recipe CSVs Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -140,7 +140,7 @@ namespace Hero_Designer
                         ++num4;
                         if (num4 >= 18)
                         {
-                            this.BusyMsg(Strings.Format((object)num1, "###,##0") + " Recipes Created.");
+                            this.BusyMsg(Strings.Format(num1, "###,##0") + " Recipes Created.");
                             num4 = 0;
                         }
                         string[] array = CSV.ToArray(iLine1);
@@ -219,7 +219,7 @@ namespace Hero_Designer
                         ++num4;
                         if (num4 >= 18)
                         {
-                            this.BusyMsg(Strings.Format((object)num5, "###,##0") + " Recipes Created.");
+                            this.BusyMsg(Strings.Format(num5, "###,##0") + " Recipes Created.");
                             num4 = 0;
                         }
                         string[] array = CSV.ToArray(iLine2);
@@ -280,7 +280,7 @@ namespace Hero_Designer
                 DatabaseAPI.AssignRecipeSalvageIDs();
                 DatabaseAPI.GuessRecipes();
                 DatabaseAPI.AssignRecipeIDs();
-                int num9 = (int)Interaction.MsgBox((object)"Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, (object)"Import");
+                Interaction.MsgBox("Done. Recipe-Enhancement links have been guessed.", MsgBoxStyle.Information, "Import");
             }
             catch (Exception ex)
             {
@@ -289,16 +289,17 @@ namespace Hero_Designer
                 iStream1.Close();
                 iStream2.Close();
                 this.BusyHide();
-                int num6 = (int)Interaction.MsgBox((object)exception.Message, MsgBoxStyle.Critical, (object)"CSV Parse Error");
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             this.BusyHide();
             iStream2.Close();
-            int num10 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num5) + "\r\nGood: " + Conversions.ToString(num2) + "\r\nRejected: " + Conversions.ToString(num3)), MsgBoxStyle.Information, (object)"File Parsed");
-            DatabaseAPI.SaveRecipes();
-            DatabaseAPI.SaveEnhancementDb();
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num5) + "\r\nGood: " + Conversions.ToString(num2) + "\r\nRejected: " + Conversions.ToString(num3)), MsgBoxStyle.Information, "File Parsed");
+            var serializer = My.MyApplication.GetSerializer();
+            DatabaseAPI.SaveRecipes(serializer);
+            DatabaseAPI.SaveEnhancementDb(serializer);
             return true;
         }
     }

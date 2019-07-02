@@ -34,7 +34,9 @@ public static class Files
             // if the filename is already in a folder with the correct foldername, we need to go up twice instead of once.
             var targetRoot = fnDir.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).EndsWith(foldername) ?
                     Path.GetDirectoryName(fnDir) : fnDir;
-            var attempt = Path.Combine(Path.Combine(Path.GetDirectoryName(targetRoot), foldername), Path.GetFileName(filename));
+            var parent = Path.GetDirectoryName(targetRoot);
+            if (parent == null) return null;
+            var attempt = Path.Combine(Path.Combine(parent, foldername), Path.GetFileName(filename));
             if (File.Exists(attempt))
                 return attempt;
             //if (Path.IsPathRooted(attempt)) return filename;

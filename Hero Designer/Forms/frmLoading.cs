@@ -25,7 +25,7 @@ namespace Hero_Designer
         {
             if (this.Label1.InvokeRequired)
             {
-                this.Invoke((Delegate)new frmLoading.SetTextCallback(this.SetMessage), (object)text);
+                this.Invoke((Delegate)new frmLoading.SetTextCallback(this.SetMessage), text);
             }
             else
             {

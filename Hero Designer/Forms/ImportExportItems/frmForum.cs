@@ -1,4 +1,3 @@
-
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using midsControls;
@@ -101,7 +100,7 @@ namespace Hero_Designer
             ExportConfig export = MidsContext.Config.Export;
             int num = export.ColorSchemes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.csList.Items.Add((object)export.ColorSchemes[index].SchemeName);
+                this.csList.Items.Add(export.ColorSchemes[index].SchemeName);
             if (this.csList.Items.Count > 0 & HighlightID == -1)
                 this.csList.SelectedIndex = 0;
             if (!(HighlightID < this.csList.Items.Count & HighlightID > -1))
@@ -135,7 +134,7 @@ namespace Hero_Designer
             }
             int num = MidsContext.Config.Export.FormatCode.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.lstCodes.Items.Add((object)MidsContext.Config.Export.FormatCode[index].Name);
+                this.lstCodes.Items.Add(MidsContext.Config.Export.FormatCode[index].Name);
             if (MidsContext.Config.ExportTarget > -1 & MidsContext.Config.ExportTarget < this.lstCodes.Items.Count)
                 this.lstCodes.SelectedIndex = MidsContext.Config.ExportTarget;
             else
@@ -207,8 +206,8 @@ namespace Hero_Designer
                 str1 += "\r\n\r\n";
             if (iDataLink == "" | this.chkAlwaysDataChunk.Checked | this.chkChunkOnly.Checked && this.chkDataChunk.Checked | this.chkAlwaysDataChunk.Checked | this.chkChunkOnly.Checked)
                 str1 = str1 + str2 + MidsCharacterFileFormat.MxDBuildSaveString(false, true) + sizeOff;
-            Clipboard.SetDataObject((object)str1, true);
-            int num = (int)Interaction.MsgBox((object)"The build data has been placed on the clipboard and is ready to paste into a forum post. If your forum allows you to disable emoticons/smileys in your post, you should do so.", MsgBoxStyle.Information, (object)"Export Done");
+            Clipboard.SetDataObject(str1, true);
+            int num = (int)Interaction.MsgBox("The build data has been placed on the clipboard and is ready to paste into a forum post. If your forum allows you to disable emoticons/smileys in your post, you should do so.", MsgBoxStyle.Information, "Export Done");
             this.Hide();
         }
 

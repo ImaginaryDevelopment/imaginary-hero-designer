@@ -1,4 +1,3 @@
-
 using Base.Data_Classes;
 using Base.IO_Classes;
 using Base.Master_Classes;
@@ -6,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 public static class DatabaseAPI
@@ -119,7 +119,7 @@ public static class DatabaseAPI
                     DatabaseAPI.Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
                 }
                 powersetGroup.Powersets.Add(powerset.FullName, powerset);
-                powerset.Group = powersetGroup;
+                powerset.SetGroup(powersetGroup);
             }
         }
     }
@@ -351,7 +351,7 @@ public static class DatabaseAPI
         else
         {
             if (strArray.Length > 2)
-                iName = string.Format("{0}.{1}", (object)strArray[0], (object)strArray[1]);
+                iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
             string key = strArray[0];
             if (!DatabaseAPI.Database.PowersetGroups.ContainsKey(key))
             {
@@ -516,7 +516,7 @@ public static class DatabaseAPI
         if (stringList.Count <= 0)
             strArray = new string[1]
             {
-        "No " + Enum.GetName(iSet.GetType(), (object) iSet)
+        "No " + Enum.GetName(iSet.GetType(),  iSet)
             };
         else
             strArray = stringList.ToArray();
@@ -781,10 +781,43 @@ public static class DatabaseAPI
         }
         return num;
     }
+    const string MainDbName = "Mids' Hero Designer Database MK II";
 
-    public static void SaveMainDatabase()
+    static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
+    {
+        var powersetPowers = DatabaseAPI.Database.Powersets.SelectMany(x => x.Powers).Select(p => p.PowerIndex).Distinct().ToList();
+        // only powers that aren't in a powerset
+        var powers = DatabaseAPI.Database.Power.Where(p => powersetPowers.Contains(p.PowerIndex) == false).ToList();
+        var toSerialize = new
+        {
+            name,
+            Database.Version,
+            DatabaseAPI.Database.Date,
+            DatabaseAPI.Database.Issue,
+            DatabaseAPI.Database.ArchetypeVersion,
+            Archetypes = DatabaseAPI.Database.Classes,
+            DatabaseAPI.Database.PowersetVersion,
+            // out of memory exception
+            DatabaseAPI.Database.Powersets,
+            Powers = new
+            {
+                DatabaseAPI.Database.PowerVersion,
+                DatabaseAPI.Database.PowerLevelVersion,
+                DatabaseAPI.Database.PowerEffectVersion,
+                DatabaseAPI.Database.IOAssignmentVersion,
+                // out of memory exception
+                //DatabaseAPI.Database.Power
+                // just powers not in power sets
+                Powers = powers
+            },
+            DatabaseAPI.Database.Entities
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+    public static void SaveMainDatabase(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("I12.mhd");
+        SaveMainDbRaw(serializer, path, MainDbName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -798,7 +831,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Database MK II");
+            writer.Write(MainDbName);
             writer.Write(Database.Version);
             writer.Write(-1);
             writer.Write(DatabaseAPI.Database.Date.ToBinary());
@@ -808,11 +841,13 @@ public static class DatabaseAPI
             writer.Write(DatabaseAPI.Database.Classes.Length - 1);
             for (int index = 0; index < DatabaseAPI.Database.Classes.Length; ++index)
                 DatabaseAPI.Database.Classes[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:POWERSETS");
             DatabaseAPI.Database.PowersetVersion.StoreTo(writer);
             writer.Write(DatabaseAPI.Database.Powersets.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
                 DatabaseAPI.Database.Powersets[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:POWERS");
             DatabaseAPI.Database.PowerVersion.StoreTo(writer);
             DatabaseAPI.Database.PowerLevelVersion.StoreTo(writer);
@@ -821,6 +856,7 @@ public static class DatabaseAPI
             writer.Write(DatabaseAPI.Database.Power.Length - 1);
             for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
                 DatabaseAPI.Database.Power[index].StoreTo(ref writer);
+
             writer.Write("BEGIN:SUMMONS");
             DatabaseAPI.Database.StoreEntities(writer);
             writer.Close();
@@ -952,7 +988,7 @@ public static class DatabaseAPI
 
     static float GetDatabaseVersion(string fp)
     {
-        var fName = System.Diagnostics.Debugger.IsAttached? Files.SearchUp("Data", fp) : fp;
+        var fName = System.Diagnostics.Debugger.IsAttached ? Files.SearchUp("Data", fp) : fp;
         float num1 = -1f;
         float num2;
         if (!File.Exists(fName))
@@ -1238,9 +1274,23 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveRecipes()
+    const string RecipeName = "Mids' Hero Designer Recipe Database";
+    static void SaveRecipesRaw(ISerialize serializer, string fn, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.RecipeSource1,
+            DatabaseAPI.Database.RecipeSource2,
+            DatabaseAPI.Database.RecipeRevisionDate,
+            DatabaseAPI.Database.Recipes
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+    public static void SaveRecipes(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("Recipe.mhd");
+        SaveRecipesRaw(serializer, path, RecipeName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -1255,7 +1305,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Recipe Database");
+            writer.Write(RecipeName);
             writer.Write(DatabaseAPI.Database.RecipeSource1);
             writer.Write(DatabaseAPI.Database.RecipeSource2);
             writer.Write(DatabaseAPI.Database.RecipeRevisionDate.ToBinary());
@@ -1272,6 +1322,7 @@ public static class DatabaseAPI
             fileStream.Close();
         }
     }
+
 
     public static void LoadSalvage()
     {
@@ -1313,9 +1364,21 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveSalvage()
+    static void SaveSalvageRaw(ISerialize serializer, string fn, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.Salvage
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+    }
+
+    const string SalvageName = "Mids' Hero Designer Salvage Database";
+    public static void SaveSalvage(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("Salvage.mhd");
+        SaveSalvageRaw(serializer, path, SalvageName);
         FileStream fileStream;
         BinaryWriter writer;
         try
@@ -1330,7 +1393,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Salvage Database");
+            writer.Write(SalvageName);
             writer.Write(DatabaseAPI.Database.Salvage.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Salvage.Length - 1; ++index)
                 DatabaseAPI.Database.Salvage[index].StoreTo(writer);
@@ -1345,15 +1408,29 @@ public static class DatabaseAPI
         }
     }
 
-    public static void SaveEnhancementDb()
+    const string EnhancementDbName = "Mids' Hero Designer Enhancement Database";
+    static void SaveEnhancementDbRaw(ISerialize serializer, string filename, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            DatabaseAPI.Database.VersionEnhDb,
+            DatabaseAPI.Database.Enhancements,
+            DatabaseAPI.Database.EnhancementSets
+        };
+        ConfigData.SaveRawMhd(serializer, toSerialize, filename);
+    }
+
+    public static void SaveEnhancementDb(ISerialize serializer)
     {
         string path = Files.SelectDataFileSave("EnhDB.mhd");
+        SaveEnhancementDbRaw(serializer, path, EnhancementDbName);
         FileStream fileStream;
         BinaryWriter writer;
         try
         {
             fileStream = new FileStream(path, FileMode.Create);
-            writer = new BinaryWriter((Stream)fileStream);
+            writer = new BinaryWriter(fileStream);
         }
         catch (Exception ex)
         {
@@ -1362,7 +1439,7 @@ public static class DatabaseAPI
         }
         try
         {
-            writer.Write("Mids' Hero Designer Enhancement Database");
+            writer.Write(EnhancementDbName);
             writer.Write(DatabaseAPI.Database.VersionEnhDb);
             writer.Write(DatabaseAPI.Database.Enhancements.Length - 1);
             for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
@@ -1653,13 +1730,14 @@ public static class DatabaseAPI
     {
         int iClass = 0;
         int iLevel = MidsContext.MathLevelBase;
-        if (iEffect.Power == null)
+        var effPower = iEffect.GetPower();
+        if (effPower == null)
         {
             if (iEffect.Enhancement == null)
                 return 1f;
         }
         else
-            iClass = string.IsNullOrEmpty(iEffect.Power.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : DatabaseAPI.NidFromUidClass(iEffect.Power.ForcedClass);
+            iClass = string.IsNullOrEmpty(effPower.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : DatabaseAPI.NidFromUidClass(effPower.ForcedClass);
         if (MidsContext.MathLevelExemp > -1 && MidsContext.MathLevelExemp < MidsContext.MathLevelBase)
             iLevel = MidsContext.MathLevelExemp;
         return DatabaseAPI.GetModifier(iClass, iEffect.nModifierTable, iLevel);
@@ -1748,7 +1826,6 @@ public static class DatabaseAPI
     }
 
     static void MatchPowerIDs()
-
     {
         DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
         for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
@@ -1760,22 +1837,23 @@ public static class DatabaseAPI
             power1.PowerSetID = DatabaseAPI.NidFromUidPowerset(power1.FullSetName);
             if (power1.PowerSetID > -1)
             {
-                int length = power1.PowerSet.Powers.Length;
+                var ps = power1.GetPowerSet();
+                int length = ps.Powers.Length;
                 power1.PowerSetIndex = length;
-                int[] power2 = power1.PowerSet.Power;
+                int[] power2 = ps.Power;
                 Array.Resize<int>(ref power2, length + 1);
-                power1.PowerSet.Power = power2;
-                IPower[] powers = power1.PowerSet.Powers;
+                ps.Power = power2;
+                IPower[] powers = ps.Powers;
                 Array.Resize<IPower>(ref powers, length + 1);
-                power1.PowerSet.Powers = powers;
-                power1.PowerSet.Power[length] = index;
-                power1.PowerSet.Powers[length] = power1;
+                ps.Powers = powers;
+                ps.Power[length] = index;
+                ps.Powers[length] = power1;
             }
         }
         foreach (IPower power in DatabaseAPI.Database.Power)
         {
             bool flag = false;
-            if (power.PowerSet.SetType == Enums.ePowerSetType.SetBonus)
+            if (power.GetPowerSet().SetType == Enums.ePowerSetType.SetBonus)
             {
                 flag = power.PowerName.Contains("Slow");
                 if (flag)
@@ -1981,7 +2059,7 @@ public static class DatabaseAPI
         }
     }
 
-    public static void AssignStaticIndexValues()
+    public static void AssignStaticIndexValues(ISerialize serializer)
     {
         int num1 = -2;
         for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
@@ -2015,7 +2093,7 @@ public static class DatabaseAPI
                 DatabaseAPI.Database.Enhancements[index].StaticIndex = num2;
             }
         }
-        DatabaseAPI.SaveMainDatabase();
-        DatabaseAPI.SaveEnhancementDb();
+        DatabaseAPI.SaveMainDatabase(serializer);
+        DatabaseAPI.SaveEnhancementDb(serializer);
     }
 }

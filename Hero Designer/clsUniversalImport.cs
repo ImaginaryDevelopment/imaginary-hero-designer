@@ -387,7 +387,7 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 MidsContext.Config.BuildMode = buildMode;
-                int num = (int)Interaction.MsgBox((object)("Unable to import from forum post:\r\n" + exception.Message + "\r\n\r\nCheck the build was copied correctly."), MsgBoxStyle.Information, (object)"Forum Import Filter");
+                int num = (int)Interaction.MsgBox(("Unable to import from forum post:\r\n" + exception.Message + "\r\n\r\nCheck the build was copied correctly."), MsgBoxStyle.Information, "Forum Import Filter");
                 flag1 = false;
                 ProjectData.ClearProjectError();
             }

@@ -89,7 +89,7 @@ namespace Hero_Designer
         {
             this.VScrollBar1.Value = 0;
             this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
-            this.VScrollBar1_Scroll((object)this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
+            this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
         void destinyBtn_ButtonClicked()
@@ -421,7 +421,7 @@ namespace Hero_Designer
                         if ((power2.Effects[index3].EffectType != Enums.eEffectType.GrantPower | power2.Effects[index3].Absorbed_Effect) & power2.Effects[index3].EffectType != Enums.eEffectType.RevokePower & power2.Effects[index3].EffectType != Enums.eEffectType.SetMode)
                         {
                             int index4 = iPopup.Add(null);
-                            power1.Effects[index3].Power = power1;
+                            power1.Effects[index3].SetPower(power1);
                             string[] strArray = power1.Effects[index3].BuildEffectString(false, "", false, false, false).Replace("[", "\r\n").Replace("\r\n", "^").Replace("  ", "").Replace("]", "").Split(chArray);
                             int num2 = strArray.Length - 1;
                             for (int index5 = 0; index5 <= num2; ++index5)
@@ -458,7 +458,7 @@ namespace Hero_Designer
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
 
         {
-            this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject((object)this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, (object)-1, (object)1)));
+            this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
                 this.VScrollBar1.Value = this.VScrollBar1.Maximum - 9;
             this.VScrollBar1_Scroll(RuntimeHelpers.GetObjectValue(sender), new ScrollEventArgs(ScrollEventType.EndScroll, 0));

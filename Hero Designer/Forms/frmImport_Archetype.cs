@@ -74,7 +74,7 @@ namespace Hero_Designer
         public void DisplayInfo()
         {
             this.lblATFile.Text = FileIO.StripPath(this.FullFileName);
-            this.lblATDate.Text = "Date: " + Strings.Format((object)DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            this.lblATDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.ArchetypeVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.udATRevision.Value = new Decimal(DatabaseAPI.Database.ArchetypeVersion.Revision);
             this.lblATCount.Text = "Classes: " + Conversions.ToString(DatabaseAPI.Database.Classes.Length);
         }
@@ -99,7 +99,7 @@ namespace Hero_Designer
                     this.lstImport.Items.Add(new ListViewItem(items)
                     {
                         Checked = flag,
-                        Tag = (object)index
+                        Tag = index
                     });
                 }
             }
@@ -129,7 +129,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox((object)ex.Message, MsgBoxStyle.Critical, (object)"Archetype Class CSV Not Opened");
+                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Archetype Class CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -161,13 +161,13 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream.Close();
-                int num2 = (int)Interaction.MsgBox((object)exception.Message, MsgBoxStyle.Critical, (object)"Archetype Class CSV Parse Error");
+                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Archetype Class CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             iStream.Close();
-            int num5 = (int)Interaction.MsgBox((object)("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nBad: " + Conversions.ToString(num4)), MsgBoxStyle.Information, (object)"File Parsed");
+            int num5 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nBad: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
 
@@ -188,8 +188,9 @@ namespace Hero_Designer
             DatabaseAPI.Database.ArchetypeVersion.SourceFile = this.dlgBrowse.FileName;
             DatabaseAPI.Database.ArchetypeVersion.RevisionDate = DateTime.Now;
             DatabaseAPI.Database.ArchetypeVersion.Revision = Convert.ToInt32(this.udATRevision.Value);
-            DatabaseAPI.SaveMainDatabase();
-            int num3 = (int)Interaction.MsgBox((object)("Import of " + Conversions.ToString(num1) + " classes completed!"), MsgBoxStyle.Information, (object)"Done");
+            var serializer = My.MyApplication.GetSerializer();
+            DatabaseAPI.SaveMainDatabase(serializer);
+            int num3 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " classes completed!"), MsgBoxStyle.Information, "Done");
             this.DisplayInfo();
             return flag;
         }

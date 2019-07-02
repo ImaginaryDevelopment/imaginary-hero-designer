@@ -562,14 +562,14 @@ namespace Hero_Designer
             this.cbEnhLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEnhLevel.Items.AddRange(new object[8]
             {
-        (object) "None (Enh. has no effect)",
-        (object) "-3 Levels",
-        (object) "-2 Levels",
-        (object) "-1 Level",
-        (object) "Even Level",
-        (object) "+1 Level",
-        (object) "+2 Levels",
-        (object) "+3 Levels"
+         "None (Enh. has no effect)",
+         "-3 Levels",
+         "-2 Levels",
+         "-1 Level",
+         "Even Level",
+         "+1 Level",
+         "+2 Levels",
+         "+3 Levels"
             });
 
             this.cbEnhLevel.Location = new System.Drawing.Point(9, 224);
@@ -577,7 +577,7 @@ namespace Hero_Designer
 
             this.cbEnhLevel.Size = new System.Drawing.Size(167, 22);
             this.cbEnhLevel.TabIndex = 53;
-            this.cbEnhLevel.Tag = (object)"";
+            this.cbEnhLevel.Tag = "";
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.cbEnhLevel, "This is the relative level of the enhancements in relation to your own. ");
 
             this.Label4.Location = new System.Drawing.Point(6, 18);
@@ -1387,21 +1387,21 @@ namespace Hero_Designer
             this.listScenarios.ItemHeight = 14;
             this.listScenarios.Items.AddRange(new object[15]
             {
-        (object) "Power is moved or swapped too low",
-        (object) "Power is moved too high (some powers will no longer fit)",
-        (object) "Power is moved or swapped higher than slots' levels",
-        (object) "Power is moved or swapped too high to have # slots",
-        (object) "Power being replaced is swapped too low",
-        (object) "Power being replaced is swapped higher than slots' levels",
-        (object) "Power being replaced is swapped too high to have # slots",
-        (object) "Power being shifted down cannot shift to the necessary level",
-        (object) "Power being shifted up has slots from lower levels",
-        (object) "Power being shifted up has impossible # of slots",
-        (object) "There is a gap in a group of powers that are being shifted",
-        (object) "A power placed at its minimum level is being shifted up",
-        (object) "The power in the destination slot is prevented from being shifted up",
-        (object) "Slot being level-swapped is too low for the destination power",
-        (object) "Slot being level-swapped is too low for the source power"
+         "Power is moved or swapped too low",
+         "Power is moved too high (some powers will no longer fit)",
+         "Power is moved or swapped higher than slots' levels",
+         "Power is moved or swapped too high to have # slots",
+         "Power being replaced is swapped too low",
+         "Power being replaced is swapped higher than slots' levels",
+         "Power being replaced is swapped too high to have # slots",
+         "Power being shifted down cannot shift to the necessary level",
+         "Power being shifted up has slots from lower levels",
+         "Power being shifted up has impossible # of slots",
+         "There is a gap in a group of powers that are being shifted",
+         "A power placed at its minimum level is being shifted up",
+         "The power in the destination slot is prevented from being shifted up",
+         "Slot being level-swapped is too low for the destination power",
+         "Slot being level-swapped is too low for the source power"
             });
 
             this.listScenarios.Location = new System.Drawing.Point(13, 19);

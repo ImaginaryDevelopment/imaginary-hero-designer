@@ -559,32 +559,32 @@ namespace Hero_Designer
                 float num2 = Enhancement.ApplyED(schedule[index], value[index]) * 100f;
                 float num3 = num2 + afterED[index] * 100f;
                 float num4 = (float)Math.Round((double)num1 - (double)num2, 3);
-                string str1 = Strings.Format((object)num1, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str2 = Strings.Format((object)num4, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str3 = Strings.Format((object)num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str4 = "Total Effect: " + Strings.Format((object)(float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\nWith ED Applied: " + str3 + "\r\n\r\n";
+                string str1 = Strings.Format(num1, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str2 = Strings.Format(num4, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str3 = Strings.Format(num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str4 = "Total Effect: " + Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\nWith ED Applied: " + str3 + "\r\n\r\n";
                 string iValue;
                 string iTip;
                 if ((double)num4 > 0.0)
                 {
-                    iValue = str3 + "  (Pre-ED: " + Strings.Format((object)(float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%)";
+                    iValue = str3 + "  (Pre-ED: " + Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%)";
                     if ((double)afterED[index] > 0.0)
                         str4 = str4 + "Amount from pre-ED sources: " + str1 + "\r\n";
-                    iTip = str4 + "ED reduction: " + str2 + " (" + Strings.Format((object)(float)((double)num4 / (double)num1 * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "% of total)\r\n";
+                    iTip = str4 + "ED reduction: " + str2 + " (" + Strings.Format((float)((double)num4 / (double)num1 * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "% of total)\r\n";
                     if (iSpecialCase)
-                        iTip = iTip + "The highest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][2] * 100.0), "##0") + "%\r\n";
+                        iTip = iTip + "The highest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][2] * 100.0), "##0") + "%\r\n";
                     else if (flag2)
-                        iTip = iTip + "The middle level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][1] * 100.0), "##0") + "%\r\n";
+                        iTip = iTip + "The middle level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][1] * 100.0), "##0") + "%\r\n";
                     else if (flag1)
-                        iTip = iTip + "The lowest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((object)(float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][0] * 100.0), "##0") + "%\r\n";
+                        iTip = iTip + "The lowest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][0] * 100.0), "##0") + "%\r\n";
                     if ((double)afterED[index] > 0.0)
-                        iTip = iTip + "Amount from post-ED sources: " + Strings.Format((object)(float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
+                        iTip = iTip + "Amount from post-ED sources: " + Strings.Format((float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
                 }
                 else
                 {
                     iValue = str3;
                     if ((double)afterED[index] > 0.0)
-                        str4 = str4 + "Amount from post-ED sources: " + Strings.Format((object)(float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
+                        str4 = str4 + "Amount from post-ED sources: " + Strings.Format((float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
                     iTip = str4 + "This effect has not been affected by ED.\r\n";
                 }
                 itemPair = new ctlPairedList.ItemPair(iName, iValue, flag2 & !iSpecialCase, flag1 & !flag2, iSpecialCase, iTip);
@@ -923,19 +923,19 @@ namespace Hero_Designer
                     {
                         if ((double)numArray1[index] > 0.0)
                         {
-                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), (object)index), afterED1));
+                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), index), afterED1));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
                         if ((double)numArray2[index] > 0.0)
                         {
-                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), (object)index) + " Debuff", afterED2));
+                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), index) + " Debuff", afterED2));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
                         if ((double)numArray3[index] > 0.0)
                         {
-                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), (object)index), afterED3));
+                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), index), afterED3));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
@@ -945,7 +945,7 @@ namespace Hero_Designer
                     {
                         if ((double)numArray4[index] > 0.0)
                         {
-                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), (object)index), afterED4));
+                            this.enhListing.AddItem(DataView.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), index), afterED4));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
@@ -1014,12 +1014,12 @@ namespace Hero_Designer
                 }
                 if ((double)accuracy1 != (double)accuracy2 & (double)num2 != (double)accuracy2)
                 {
-                    string Tip2 = "Accuracy multiplier without other buffs (Real Numbers style): " + Strings.Format((object)(float)((double)this.pBase.Accuracy + ((double)this.pEnh.Accuracy - (double)MidsContext.Config.BaseAcc)), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00000") + "x" + str;
+                    string Tip2 = "Accuracy multiplier without other buffs (Real Numbers style): " + Strings.Format((float)((double)this.pBase.Accuracy + ((double)this.pEnh.Accuracy - (double)MidsContext.Config.BaseAcc)), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00000") + "x" + str;
                     this.info_DataList.AddItem(DataView.FastItem(this.ShortStr("Accuracy", "Acc"), (float)((double)MidsContext.Config.BaseAcc * (double)this.pBase.Accuracy * 100.0), this.pEnh.Accuracy * 100f, Suffix2, Tip2));
                 }
                 else
                 {
-                    string Tip2 = "Accuracy multiplier without other buffs (Real Numbers style): " + Strings.Format((object)this.pBase.AccuracyMult, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x" + str;
+                    string Tip2 = "Accuracy multiplier without other buffs (Real Numbers style): " + Strings.Format(this.pBase.AccuracyMult, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "x" + str;
                     this.info_DataList.AddItem(DataView.FastItem(this.ShortStr("Accuracy", "Acc"), (float)((double)MidsContext.Config.BaseAcc * (double)this.pBase.Accuracy * 100.0), (float)((double)MidsContext.Config.BaseAcc * (double)this.pBase.Accuracy * 100.0), Suffix2, Tip2));
                 }
             }
@@ -1056,7 +1056,7 @@ namespace Hero_Designer
             int num3 = 2;
             if (num3 > 1 && durationEffectId > -1 && this.pBase.Effects[durationEffectId].EffectType == Enums.eEffectType.Mez & this.pBase.Effects[durationEffectId].MezType != Enums.eMez.Taunt)
             {
-                this.info_DataList.AddItem(new ctlPairedList.ItemPair("Effect:", Enum.GetName(Enums.eMez.None.GetType(), (object)this.pBase.Effects[durationEffectId].MezType), false, (double)this.pBase.Effects[durationEffectId].Probability < 1.0, this.pBase.Effects[durationEffectId].SpecialCase != Enums.eSpecialCase.None, durationEffectId));
+                this.info_DataList.AddItem(new ctlPairedList.ItemPair("Effect:", Enum.GetName(Enums.eMez.None.GetType(), this.pBase.Effects[durationEffectId].MezType), false, (double)this.pBase.Effects[durationEffectId].Probability < 1.0, this.pBase.Effects[durationEffectId].SpecialCase != Enums.eSpecialCase.None, durationEffectId));
                 bool iAlternate = (double)this.pBase.Effects[durationEffectId].Mag != (double)this.pEnh.Effects[durationEffectId].Mag;
                 this.info_DataList.AddItem(new ctlPairedList.ItemPair("Mag:", Conversions.ToString(this.pEnh.Effects[durationEffectId].Mag), iAlternate, (double)this.pBase.Effects[durationEffectId].Probability < 1.0, false, -1));
                 num3 -= 2;
@@ -1446,13 +1446,13 @@ namespace Hero_Designer
             int num1 = names.Length - 1;
             for (int dType = 1; dType <= num1; ++dType)
             {
-                string iTip = Strings.Format((object)displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType] + " defense";
+                string iTip = Strings.Format(displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType] + " defense";
                 if (dType != 9 & dType != 7)
                 {
                     if (numArray1[dType] == 0)
-                        this.gDef1.AddItem(names[dType] + ":|" + Strings.Format((object)displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.Defense(dType), 0.0f, iTip);
+                        this.gDef1.AddItem(names[dType] + ":|" + Strings.Format(displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.Defense(dType), 0.0f, iTip);
                     else
-                        this.gDef2.AddItem(names[dType] + ":|" + Strings.Format((object)displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.Defense(dType), 0.0f, iTip);
+                        this.gDef2.AddItem(names[dType] + ":|" + Strings.Format(displayStats.Defense(dType), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.Defense(dType), 0.0f, iTip);
                 }
             }
             float num2 = this.gDef1.GetMaxValue();
@@ -1463,7 +1463,7 @@ namespace Hero_Designer
             this.gDef2.Max = num2;
             this.gDef1.Draw();
             this.gDef2.Draw();
-            string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((object)(float)((double)MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
+            string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((float)((double)MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
             string empty = string.Empty;
             this.gRes1.Clear();
             this.gRes2.Clear();
@@ -1490,13 +1490,13 @@ namespace Hero_Designer
                 {
                     string iTip;
                     if ((double)MidsContext.Character.TotalsCapped.Res[dType1] < (double)MidsContext.Character.Totals.Res[dType1])
-                        iTip = Strings.Format((object)displayStats.DamageResistance(dType1, true), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType1] + " resistance capped at " + Strings.Format((object)displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "%";
+                        iTip = Strings.Format(displayStats.DamageResistance(dType1, true), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType1] + " resistance capped at " + Strings.Format(displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "%";
                     else
-                        iTip = Strings.Format((object)displayStats.DamageResistance(dType1, true), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType1] + " resistance. (" + str + ")";
+                        iTip = Strings.Format(displayStats.DamageResistance(dType1, true), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "% " + names[dType1] + " resistance. (" + str + ")";
                     if (numArray2[dType1] == 0)
-                        this.gRes1.AddItem(names[dType1] + ":|" + Strings.Format((object)displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.DamageResistance(dType1, false), displayStats.DamageResistance(dType1, true), iTip);
+                        this.gRes1.AddItem(names[dType1] + ":|" + Strings.Format(displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.DamageResistance(dType1, false), displayStats.DamageResistance(dType1, true), iTip);
                     else
-                        this.gRes2.AddItem(names[dType1] + ":|" + Strings.Format((object)displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.DamageResistance(dType1, false), displayStats.DamageResistance(dType1, true), iTip);
+                        this.gRes2.AddItem(names[dType1] + ":|" + Strings.Format(displayStats.DamageResistance(dType1, false), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", displayStats.DamageResistance(dType1, false), displayStats.DamageResistance(dType1, true), iTip);
                 }
                 ++dType1;
             }
@@ -1520,12 +1520,12 @@ namespace Hero_Designer
             else if ((double)displayStats.EnduranceRecoveryNet < 0.0)
                 iTip1 = "With current end drain, you will lose end at a rate of: " + Utilities.FixDP(displayStats.EnduranceRecoveryLossNet) + "/s.\r\nFrom 100% you would run out of end in: " + Utilities.FixDP(displayStats.EnduranceTimeToZero) + "s.";
             string iTip3 = "Time to go from 0-100% health: " + Utilities.FixDP(displayStats.HealthRegenTimeToFull) + "s.\r\nHealth regenerated per second: " + Utilities.FixDP(displayStats.HealthRegenHealthPerSec) + "%\r\nHitPoints regenerated per second at level 50: " + Utilities.FixDP(displayStats.HealthRegenHPPerSec) + " HP";
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("Recovery:", Strings.Format((object)displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format((object)displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)", false, false, false, iTip2));
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("Regen:", Strings.Format((object)displayStats.HealthRegenPercent(false), "###0") + "%", false, false, false, iTip3));
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("EndDrain:", Strings.Format((object)displayStats.EnduranceUsage, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s", false, false, false, iTip1));
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+ToHit:", Strings.Format((object)displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "This effect is increasing the accuracy of all your powers."));
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+EndRdx:", Strings.Format((object)displayStats.BuffEndRdx, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "The end cost of all your powers is being reduced by this effect.\r\nThis is applied like an end-reduction enhancement."));
-            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+Recharge:", Strings.Format((object)(float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "The recharge time of your powers is being altered by this effect.\r\nThe higher the value, the faster the recharge."));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("Recovery:", Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)", false, false, false, iTip2));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("Regen:", Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%", false, false, false, iTip3));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("EndDrain:", Strings.Format(displayStats.EnduranceUsage, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s", false, false, false, iTip1));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+ToHit:", Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "This effect is increasing the accuracy of all your powers."));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+EndRdx:", Strings.Format(displayStats.BuffEndRdx, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "The end cost of all your powers is being reduced by this effect.\r\nThis is applied like an end-reduction enhancement."));
+            this.total_Misc.AddItem(new ctlPairedList.ItemPair("+Recharge:", Strings.Format((float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%", false, false, false, "The recharge time of your powers is being altered by this effect.\r\nThe higher the value, the faster the recharge."));
             this.total_Misc.Draw();
         }
 
@@ -1836,7 +1836,7 @@ namespace Hero_Designer
                     float num3 = this.pBase.Effects[idEffect].MagPercent;
                     if ((this.pBase.Effects[idEffect].Suppression & MidsContext.Config.Suppression) != Enums.eSuppress.None)
                         num3 = 0.0f;
-                    ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("Elusivity:", Strings.Format((object)num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "%", false, (double)this.pBase.Effects[idEffect].Probability < 1.0, false, iTip);
+                    ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("Elusivity:", Strings.Format(num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "%", false, (double)this.pBase.Effects[idEffect].Probability < 1.0, false, iTip);
                     iList.AddItem(iItem);
                     int num4 = num1 + 1;
                     if (flag)
@@ -2141,7 +2141,7 @@ namespace Hero_Designer
                     if (this.pBase.Effects[iTagID].EffectType == Enums.eEffectType.Mez & (double)this.pBase.Effects[iTagID].Probability > 0.0 & this.pBase.Effects[iTagID].CanInclude() && this.pEnh.Effects[iTagID].PvXInclude())
                     {
                         bool iAlternate1 = false;
-                        string str = !((double)this.pEnh.Effects[iTagID].Duration < 2.0 | this.pBase.PowerType == Enums.ePowerType.Auto_) ? " - " + Strings.Format((object)this.pEnh.Effects[iTagID].Duration, "#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "s" : string.Empty;
+                        string str = !((double)this.pEnh.Effects[iTagID].Duration < 2.0 | this.pBase.PowerType == Enums.ePowerType.Auto_) ? " - " + Strings.Format(this.pEnh.Effects[iTagID].Duration, "#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "s" : string.Empty;
                         if ((double)this.pBase.Effects[iTagID].Mag > 0.0)
                         {
                             bool iAlternate2 = (double)this.pBase.Effects[iTagID].Duration != (double)this.pEnh.Effects[iTagID].Duration | !Enums.MezDurationEnhancable(this.pBase.Effects[iTagID].MezType) & (double)this.pEnh.Effects[iTagID].Mag != (double)this.pBase.Effects[iTagID].Mag;
@@ -2685,7 +2685,7 @@ namespace Hero_Designer
                 if ((double)this.pBase.Effects[Index[ID]].DelayedTime > 5.0)
                     flag = true;
                 string[] names = Enum.GetNames(eEffectTypeShort.GetType());
-                Title = this.pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Enhancement ? (this.pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Mez ? names[(int)this.pBase.Effects[Index[ID]].EffectType] : Enums.GetMezName((Enums.eMezShort)this.pBase.Effects[Index[ID]].MezType)) : (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.EnduranceDiscount ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.RechargeTime ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Defense ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Resistance ? DataView.CapString(Enum.GetName(this.pBase.Effects[Index[ID]].ETModifies.GetType(), (object)this.pBase.Effects[Index[ID]].ETModifies), 7) : "Enh(Res)") : "Enh(Def)") : "Enh(" + Enum.GetName(Enums.eMezShort.None.GetType(), (object)this.pBase.Effects[Index[ID]].MezType) + ")") : "+Effects") : "+Rechg") : "+EndRdx");
+                Title = this.pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Enhancement ? (this.pBase.Effects[Index[ID]].EffectType != Enums.eEffectType.Mez ? names[(int)this.pBase.Effects[Index[ID]].EffectType] : Enums.GetMezName((Enums.eMezShort)this.pBase.Effects[Index[ID]].MezType)) : (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.EnduranceDiscount ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.RechargeTime ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Mez ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Defense ? (this.pBase.Effects[Index[ID]].ETModifies != Enums.eEffectType.Resistance ? DataView.CapString(Enum.GetName(this.pBase.Effects[Index[ID]].ETModifies.GetType(), this.pBase.Effects[Index[ID]].ETModifies), 7) : "Enh(Res)") : "Enh(Def)") : "Enh(" + Enum.GetName(Enums.eMezShort.None.GetType(), this.pBase.Effects[Index[ID]].MezType) + ")") : "+Effects") : "+Rechg") : "+EndRdx");
                 if (this.pBase.Effects[Index[ID]].EffectType == Enums.eEffectType.HitPoints)
                 {
                     shortFx.Assign(this.pBase.GetEffectMagSum(Enums.eEffectType.HitPoints, false, onlySelf, onlyTarget, false));
@@ -3619,7 +3619,7 @@ namespace Hero_Designer
             }
             else
                 str1 = "No Valid Tip";
-            object[] Arguments = new object[1] { (object)str1 };
+            object[] Arguments = new object[1] { str1 };
             bool[] CopyBack = new bool[1] { true };
             NewLateBinding.LateCall(Sender, null, "SetTip", Arguments, (string[])null, (System.Type[])null, CopyBack, true);
             if (!CopyBack[0])
@@ -3706,7 +3706,7 @@ namespace Hero_Designer
                     tabChanged(Index);
             }
             this.TabPage = Index;
-            this.pnlTabs_Paint((object)this, new PaintEventArgs(this.pnlTabs.CreateGraphics(), clipRect));
+            this.pnlTabs_Paint(this, new PaintEventArgs(this.pnlTabs.CreateGraphics(), clipRect));
         }
 
         void pnlTabs_Paint(object sender, PaintEventArgs e)
@@ -3907,7 +3907,7 @@ namespace Hero_Designer
                         if (DatabaseAPI.Database.Enhancements[iEnh.Enh].Unique)
                             iStr1 = iStr1 + RTF.Color(RTF.ElementID.Warning) + " (Unique) " + RTF.Color(RTF.ElementID.Text);
                         if ((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance < 1.0 & (double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance > 0.0)
-                            str2 = str2 + RTF.Color(RTF.ElementID.Enhancement) + Strings.Format((object)(float)((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance * 100.0), "##0") + "% chance of ";
+                            str2 = str2 + RTF.Color(RTF.ElementID.Enhancement) + Strings.Format((float)((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance * 100.0), "##0") + "% chance of ";
                     }
                     else
                         iStr1 = iStr1 + RTF.Color(RTF.ElementID.Enhancement) + "Hamidon/Synthetic Hamidon Origin Enhancement";
@@ -3953,7 +3953,7 @@ namespace Hero_Designer
                     if (DatabaseAPI.Database.Enhancements[iEnh.Enh].Unique)
                         iStr1 = iStr1 + RTF.Color(RTF.ElementID.Warning) + " (Unique) " + RTF.Color(RTF.ElementID.Text);
                     if ((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance > 1.0 & (double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance > 0.0)
-                        str1 = str1 + RTF.Color(RTF.ElementID.Enhancement) + Strings.Format((object)(float)((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance * 100.0), "##0") + "% chance of ";
+                        str1 = str1 + RTF.Color(RTF.ElementID.Enhancement) + Strings.Format((float)((double)DatabaseAPI.Database.Enhancements[iEnh.Enh].EffectChance * 100.0), "##0") + "% chance of ";
                 }
                 else
                     iStr1 += "Hamidon/Synthetic Hamidon Origin Enhancement";

@@ -115,7 +115,7 @@ namespace Hero_Designer
             this.lvPower.Items.Clear();
             this.lvPower.Sorting = SortOrder.None;
             this.lvPower.Items.Add(" - All Powers - ");
-            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = (object)-1;
+            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = -1;
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int powerLocation = 0; powerLocation <= num; ++powerLocation)
             {
@@ -130,11 +130,11 @@ namespace Hero_Designer
                         {
                             string text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[powerLocation].NIDPower].DisplayName;
                             if (this.chkSortByLevel.Checked)
-                                text = Strings.Format((object)(MidsContext.Character.CurrentBuild.Powers[powerLocation].Level + 1), "00") + " - " + text;
+                                text = Strings.Format((MidsContext.Character.CurrentBuild.Powers[powerLocation].Level + 1), "00") + " - " + text;
                             string[] damageData = this.GetDamageData(powerLocation);
                             this.lvPower.Items.Add(text).SubItems.AddRange(damageData);
                             this.GlobalDamageBuff += float.Parse(damageData[5]) * (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Duration / float.Parse(damageData[2]));
-                            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = (object)powerLocation;
+                            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = powerLocation;
                             flag = true;
                         }
                     }
@@ -248,7 +248,7 @@ namespace Hero_Designer
         {
             if (e.Item.Index == 0)
             {
-                if (Operators.ConditionalCompareObjectLess(e.Item.Tag, (object)0, false) && e.Item.Checked)
+                if (Operators.ConditionalCompareObjectLess(e.Item.Tag, 0, false) && e.Item.Checked)
                 {
                     int num = this.lvPower.Items.Count - 1;
                     for (int index = 1; index <= num; ++index)

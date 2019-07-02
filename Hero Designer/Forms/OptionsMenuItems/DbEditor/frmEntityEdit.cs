@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -137,7 +136,7 @@ namespace Hero_Designer
             {
                 if (DatabaseAPI.Database.Entities[index].UID.ToLower() == this.myEntity.UID.ToLower() & index != this.myEntity.nID)
                 {
-                    int num2 = (int)Interaction.MsgBox((object)(this.myEntity.UID + " is not unique. Please enter a unique name."), MsgBoxStyle.Information, (object)"Invalid Name");
+                    int num2 = (int)Interaction.MsgBox((this.myEntity.UID + " is not unique. Please enter a unique name."), MsgBoxStyle.Information, "Invalid Name");
                     return;
                 }
             }
@@ -346,7 +345,7 @@ namespace Hero_Designer
             this.cbClass.Items.Clear();
             int num = DatabaseAPI.Database.Classes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbClass.Items.Add((object)DatabaseAPI.Database.Classes[index].ClassName);
+                this.cbClass.Items.Add(DatabaseAPI.Database.Classes[index].ClassName);
             this.cbClass.EndUpdate();
             this.UG_GroupList();
             this.PS_GroupList();
@@ -509,7 +508,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num; ++index)
                 {
                     this.lvPSSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
-                    this.lvPSSet.Items[this.lvPSSet.Items.Count - 1].Tag = (object)DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
+                    this.lvPSSet.Items[this.lvPSSet.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
                 }
                 this.lvPSSet.EndUpdate();
             }
@@ -654,7 +653,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num; ++index)
                 {
                     this.lvUGSet.Items.Add(DatabaseAPI.Database.Powersets[indexesByGroupName[index]].SetName);
-                    this.lvUGSet.Items[this.lvUGSet.Items.Count - 1].Tag = (object)DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
+                    this.lvUGSet.Items[this.lvUGSet.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[indexesByGroupName[index]].FullName;
                 }
                 this.lvUGSet.EndUpdate();
             }
