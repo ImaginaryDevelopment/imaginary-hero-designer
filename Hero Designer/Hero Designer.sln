@@ -4,12 +4,14 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hero Designer", "Hero Designer.csproj", "{27BD82DA-4B3E-4D6B-BAEA-BE59A28A96EB}"
 	ProjectSection(ProjectDependencies) = postProject
-		{718D75BE-301C-4DDF-8312-266BBDFBAF67} = {718D75BE-301C-4DDF-8312-266BBDFBAF67}
+		{8B762616-CA1E-428A-A62D-E17DD738712D} = {8B762616-CA1E-428A-A62D-E17DD738712D}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "..\Base\Base.csproj", "{78125AD1-C9F8-4FE9-9BDB-5033D5FA76CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "midsControls", "..\midsControls\midsControls.csproj", "{718D75BE-301C-4DDF-8312-266BBDFBAF67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "midsControls", "..\midsControls\midsControls.csproj", "{8B762616-CA1E-428A-A62D-E17DD738712D}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "HeroDesigner.Schema", "..\HeroDesigner.Schema\HeroDesigner.Schema.fsproj", "{9D0C9BF6-338D-4F39-8F73-633CD63C053A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +27,14 @@ Global
 		{78125AD1-C9F8-4FE9-9BDB-5033D5FA76CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78125AD1-C9F8-4FE9-9BDB-5033D5FA76CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78125AD1-C9F8-4FE9-9BDB-5033D5FA76CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{718D75BE-301C-4DDF-8312-266BBDFBAF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B762616-CA1E-428A-A62D-E17DD738712D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B762616-CA1E-428A-A62D-E17DD738712D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B762616-CA1E-428A-A62D-E17DD738712D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B762616-CA1E-428A-A62D-E17DD738712D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D0C9BF6-338D-4F39-8F73-633CD63C053A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D0C9BF6-338D-4F39-8F73-633CD63C053A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D0C9BF6-338D-4F39-8F73-633CD63C053A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D0C9BF6-338D-4F39-8F73-633CD63C053A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
