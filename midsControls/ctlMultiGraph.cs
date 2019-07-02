@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Base.Display;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 
@@ -359,7 +360,7 @@ namespace midsControls
         // Token: 0x17000036 RID: 54
         // (get) Token: 0x060000A7 RID: 167 RVA: 0x000078F0 File Offset: 0x00005AF0
         // (set) Token: 0x060000A8 RID: 168 RVA: 0x00007908 File Offset: 0x00005B08
-        public Enums.GraphStyle Style
+        public GraphStyle Style
         {
             get
             {
@@ -635,7 +636,7 @@ namespace midsControls
                                         this.bxBuffer.Graphics.DrawString(text.Substring(num5 + 1), this.Font, brush2, layoutRectangle, stringFormat);
                                     }
                                 }
-                                if (this.pStyle != Enums.GraphStyle.enhOnly & this.pStyle != Enums.GraphStyle.baseOnly)
+                                if (this.pStyle != GraphStyle.enhOnly & this.pStyle != GraphStyle.baseOnly)
                                 {
                                     if (this.Items[i].valueBase > this.Items[i].valueEnh)
                                     {
@@ -648,11 +649,11 @@ namespace midsControls
                                         this.DrawBase(i, rectangle, num3);
                                     }
                                 }
-                                else if (this.pStyle == Enums.GraphStyle.baseOnly)
+                                else if (this.pStyle == GraphStyle.baseOnly)
                                 {
                                     this.DrawBase(i, rectangle, num3);
                                 }
-                                else if (this.pStyle == Enums.GraphStyle.enhOnly)
+                                else if (this.pStyle == GraphStyle.enhOnly)
                                 {
                                     this.DrawEnh(i, rectangle, num3);
                                 }
@@ -1169,7 +1170,7 @@ namespace midsControls
         protected Color pLineColor;
 
         // Token: 0x04000047 RID: 71
-        protected Enums.GraphStyle pStyle;
+        protected GraphStyle pStyle;
 
         // Token: 0x04000048 RID: 72
         protected bool pDrawLines;

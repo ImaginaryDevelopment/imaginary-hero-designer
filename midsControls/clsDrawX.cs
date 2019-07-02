@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Windows.Forms;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 
@@ -21,7 +22,7 @@ namespace midsControls
         {
             get
             {
-                return MidsContext.Character != null && MidsContext.Character.Archetype != null && MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic;
+                return MidsContext.Character != null && MidsContext.Character.Archetype != null && MidsContext.Character.Archetype.ClassType == eClassType.HeroEpic;
             }
         }
 
@@ -221,14 +222,14 @@ namespace midsControls
             Rectangle rectangle = default(Rectangle);
             Font font = new Font(this.DefaultFont.FontFamily, this.FontScale(this.DefaultFont.SizeInPoints), this.DefaultFont.Style, GraphicsUnit.Point);
             int num = MidsContext.Character.SlotCheck(iSlot);
-            bool flag = this.InterfaceMode == Enums.eInterfaceMode.PowerToggle;
+            bool flag = this.InterfaceMode == eInterfaceMode.PowerToggle;
             bool flag2 = false;
-            Enums.ePowerState ePowerState = iSlot.State;
+            ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
             bool flag3 = iSlot.Power != null;
             if (flag3)
             {
-                flag3 = ((((iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) & iSlot.Slots.Length < 6) && SingleDraw) & iSlot.Power.Slottable & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle);
+                flag3 = ((((iSlot.State != ePowerState.Empty && canPlaceSlot) & iSlot.Slots.Length < 6) && SingleDraw) & iSlot.Power.Slottable & this.InterfaceMode != eInterfaceMode.PowerToggle);
             }
             Point result = this.PowerPosition(iSlot, -1);
             Point point = default(Point);
@@ -244,18 +245,18 @@ namespace midsControls
                 {
                     if (iSlot.Power != null)
                     {
-                        if (((SingleDraw & num > -1) && canPlaceSlot) & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle & iSlot.PowerSet != null & iSlot.Slots.Length < 6 & iSlot.Power.Slottable)
+                        if (((SingleDraw & num > -1) && canPlaceSlot) & this.InterfaceMode != eInterfaceMode.PowerToggle & iSlot.PowerSet != null & iSlot.Slots.Length < 6 & iSlot.Power.Slottable)
                         {
-                            ePowerState = Enums.ePowerState.Open;
+                            ePowerState = ePowerState.Open;
                         }
-                        else if (iSlot.Chosen & !canPlaceSlot & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle & this.Highlight == MidsContext.Character.CurrentBuild.Powers.IndexOf(iSlot))
+                        else if (iSlot.Chosen & !canPlaceSlot & this.InterfaceMode != eInterfaceMode.PowerToggle & this.Highlight == MidsContext.Character.CurrentBuild.Powers.IndexOf(iSlot))
                         {
-                            ePowerState = Enums.ePowerState.Open;
+                            ePowerState = ePowerState.Open;
                         }
                     }
                     else if (MidsContext.Character.CurrentBuild.Powers.IndexOf(iSlot) == clsDrawX.IndexFromLevel())
                     {
-                        ePowerState = Enums.ePowerState.Open;
+                        ePowerState = ePowerState.Open;
                     }
                 }
                 rectangleF.Height = (float)this.szSlot.Height;
@@ -267,13 +268,13 @@ namespace midsControls
                 ImageAttributes imageAttr;
                 if (flag)
                 {
-                    if (ePowerState == Enums.ePowerState.Open)
+                    if (ePowerState == ePowerState.Open)
                     {
-                        ePowerState = Enums.ePowerState.Empty;
+                        ePowerState = ePowerState.Empty;
                     }
-                    if (iSlot.StatInclude & ePowerState == Enums.ePowerState.Used)
+                    if (iSlot.StatInclude & ePowerState == ePowerState.Used)
                     {
-                        ePowerState = Enums.ePowerState.Open;
+                        ePowerState = ePowerState.Open;
                         grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
                         imageAttr = this.GreySlot(grey, true);
                     }
@@ -295,11 +296,11 @@ namespace midsControls
                     imageAttr = this.GreySlot(grey, false);
                 }
                 Rectangle iValue = new Rectangle(result.X, result.Y, this.bxPower[(int)ePowerState].Size.Width, this.bxPower[(int)ePowerState].Size.Height);
-                if (ePowerState == Enums.ePowerState.Used || flag)
+                if (ePowerState == ePowerState.Used || flag)
                 {
                     if (MidsContext.Config.DesaturateInherent & !iSlot.Chosen)
                     {
-                        imageAttr = this.Desaturate(grey, ePowerState == Enums.ePowerState.Open);
+                        imageAttr = this.Desaturate(grey, ePowerState == ePowerState.Open);
                     }
                     Graphics graphics2 = this.bxBuffer.Graphics;
                     Image bitmap = this.bxPower[(int)ePowerState].Bitmap;
@@ -358,7 +359,7 @@ namespace midsControls
                         Image bitmap3 = I9Gfx.EnhTypes.Bitmap;
                         Rectangle clipRect2 = new Rectangle((int)Math.Round((double)rectangleF.X), point.Y, 30, 30);
                         graphics4.DrawImage(bitmap3, this.ScaleDown(clipRect2), 0, 0, 30, 30, GraphicsUnit.Pixel, this.pImageAttributes);
-                        if (MidsContext.Config.CalcEnhLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
+                        if (MidsContext.Config.CalcEnhLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
                         {
                             solidBrush = new SolidBrush(Color.FromArgb(160, 0, 0, 0));
                             this.bxBuffer.Graphics.FillEllipse(solidBrush, this.ScaleDown(rectangleF));
@@ -371,7 +372,7 @@ namespace midsControls
                         Graphics graphics5 = this.bxBuffer.Graphics;
                         Rectangle clipRect2 = new Rectangle((int)Math.Round((double)rectangleF.X), point.Y, 30, 30);
                         I9Gfx.DrawEnhancementAt(ref graphics5, this.ScaleDown(clipRect2), enhancement.ImageIdx, I9Gfx.ToGfxGrade(enhancement.TypeID, iSlot.Slots[i].Enhancement.Grade));
-                        if (iSlot.Slots[i].Enhancement.RelativeLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
+                        if (iSlot.Slots[i].Enhancement.RelativeLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
                         {
                             solidBrush = new SolidBrush(Color.FromArgb(160, 0, 0, 0));
                             RectangleF iValue2 = rectangleF;
@@ -382,8 +383,8 @@ namespace midsControls
                         {
                             if (iSlot.Slots[i].Enhancement.Enh > -1)
                             {
-                                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.SetO
-                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.InventO))
+                                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == eType.SetO
+                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == eType.InventO))
                                 {
                                     RectangleF iValue2 = rectangleF;
                                     iValue2.Y -= 3f;
@@ -397,8 +398,8 @@ namespace midsControls
                                     graphics5 = this.bxBuffer.Graphics;
                                     clsDrawX.DrawOutlineText(iStr, bounds, cyan, outline, bFont, outlineSpace, ref graphics5, false, false);
                                 }
-                                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.Normal
-                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
+                                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == eType.Normal
+                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == eType.SpecialO))
                                 {
                                     RectangleF iValue2 = rectangleF;
                                     iValue2.Y -= 3f;
@@ -408,11 +409,11 @@ namespace midsControls
                                     {
                                         color = Color.Red;
                                     }
-                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel < Enums.eEnhRelative.Even)
+                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel < eEnhRelative.Even)
                                     {
                                         color = Color.Yellow;
                                     }
-                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel > Enums.eEnhRelative.Even)
+                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel > eEnhRelative.Even)
                                     {
                                         color = Color.FromArgb(0, 255, 255);
                                     }
@@ -451,7 +452,7 @@ namespace midsControls
                         clsDrawX.DrawOutlineText(iStr2, bounds3, text4, outline3, bFont3, outlineSpace3, ref graphics5, false, false);
                     }
                 }
-                if (num > -1 && (ePowerState != Enums.ePowerState.Empty && flag3))
+                if (num > -1 && (ePowerState != ePowerState.Empty && flag3))
                 {
                     Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * i, point.Y, this.szSlot.Width, this.szSlot.Height);
                     RectangleF iValue2 = clipRect2;
@@ -476,8 +477,8 @@ namespace midsControls
                 rectangleF.Y = (float)(result.Y + 4);
                 rectangleF.Width = (float)this.szPower.Width;
                 rectangleF.Height = unchecked(this.DefaultFont.GetHeight() * 2f);
-                Enums.ePowerState ePowerState2 = iSlot.State;
-                if (ePowerState2 == Enums.ePowerState.Empty & ePowerState == Enums.ePowerState.Open)
+                ePowerState ePowerState2 = iSlot.State;
+                if (ePowerState2 == ePowerState.Empty & ePowerState == ePowerState.Open)
                 {
                     ePowerState2 = ePowerState;
                 }
@@ -487,26 +488,26 @@ namespace midsControls
                         solidBrush = new SolidBrush(Color.Transparent);
                         text = "";
                         break;
-                    case Enums.ePowerState.Empty:
+                    case ePowerState.Empty:
                         solidBrush = new SolidBrush(Color.WhiteSmoke);
                         text = "(" + Conversions.ToString(iSlot.Level + 1) + ")";
                         break;
-                    case Enums.ePowerState.Used:
+                    case ePowerState.Used:
                         switch (iSlot.PowerSet.SetType)
                         {
-                            case Enums.ePowerSetType.Primary:
+                            case ePowerSetType.Primary:
                                 text2 = "(Pri)";
                                 break;
-                            case Enums.ePowerSetType.Secondary:
+                            case ePowerSetType.Secondary:
                                 text2 = "(Sec)";
                                 break;
-                            case Enums.ePowerSetType.Ancillary:
+                            case ePowerSetType.Ancillary:
                                 text2 = "(Ancil)";
                                 break;
-                            case Enums.ePowerSetType.Inherent:
+                            case ePowerSetType.Inherent:
                                 text2 = "";
                                 break;
-                            case Enums.ePowerSetType.Pool:
+                            case ePowerSetType.Pool:
                                 text2 = "(Pool)";
                                 break;
                         }
@@ -528,16 +529,16 @@ namespace midsControls
                             });
                         }
                         break;
-                    case Enums.ePowerState.Open:
+                    case ePowerState.Open:
                         solidBrush = new SolidBrush(Color.Yellow);
                         text = "(" + Conversions.ToString(iSlot.Level + 1) + ")";
                         break;
                 }
-                if (ePowerState == Enums.ePowerState.Empty & iSlot.State == Enums.ePowerState.Used)
+                if (ePowerState == ePowerState.Empty & iSlot.State == ePowerState.Used)
                 {
                     solidBrush = new SolidBrush(Color.WhiteSmoke);
                 }
-                if (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle && solidBrush.Color == Color.Black && !iSlot.CanIncludeForStats())
+                if (this.InterfaceMode == eInterfaceMode.PowerToggle && solidBrush.Color == Color.Black && !iSlot.CanIncludeForStats())
                 {
                     solidBrush = new SolidBrush(Color.FromArgb(128, 0, 0, 0));
                 }
@@ -617,7 +618,7 @@ namespace midsControls
                 int num;
                 if (nidpowerset > -1)
                 {
-                    if (DatabaseAPI.Database.Powersets[nidpowerset].SetType == Enums.ePowerSetType.Inherent)
+                    if (DatabaseAPI.Database.Powersets[nidpowerset].SetType == ePowerSetType.Inherent)
                     {
                         num = DatabaseAPI.Database.Powersets[nidpowerset].Powers[idxpower].LocationIndex;
                     }
@@ -628,7 +629,7 @@ namespace midsControls
                         {
                             if (MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset > -1)
                             {
-                                if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != Enums.ePowerSetType.Inherent)
+                                if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != ePowerSetType.Inherent)
                                 {
                                     num++;
                                 }
@@ -647,7 +648,7 @@ namespace midsControls
                     {
                         if (MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset > -1)
                         {
-                            if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != Enums.ePowerSetType.Inherent)
+                            if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != ePowerSetType.Inherent)
                             {
                                 num++;
                             }
@@ -1451,7 +1452,7 @@ namespace midsControls
             switch (this.vcCols)
             {
                 case 2:
-                    if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic)
+                    if (MidsContext.Character.Archetype.ClassType == eClassType.HeroEpic)
                     {
                         return new int[][]
                         {
@@ -1631,7 +1632,7 @@ namespace midsControls
                     }
                     };
                 case 4:
-                    if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic)
+                    if (MidsContext.Character.Archetype.ClassType == eClassType.HeroEpic)
                     {
                         return new int[][]
                         {
@@ -1761,7 +1762,7 @@ namespace midsControls
                     };
             }
             int[][] result;
-            if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic)
+            if (MidsContext.Character.Archetype.ClassType == eClassType.HeroEpic)
             {
                 result = new int[][]
                 {
@@ -2218,7 +2219,7 @@ namespace midsControls
         private Control cTarget;
 
         // Token: 0x0400001C RID: 28
-        public Enums.eInterfaceMode InterfaceMode;
+        public eInterfaceMode InterfaceMode;
 
         // Token: 0x0400001D RID: 29
         public int Highlight;

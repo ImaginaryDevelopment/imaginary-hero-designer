@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Base.Display;
+using HeroDesigner.Schema;
 
 namespace midsControls
 {
@@ -182,7 +183,7 @@ namespace midsControls
         // Token: 0x17000018 RID: 24
         // (get) Token: 0x0600005B RID: 91 RVA: 0x00006710 File Offset: 0x00004910
         // (set) Token: 0x0600005C RID: 92 RVA: 0x00006728 File Offset: 0x00004928
-        public Enums.eDDAlign TextAlign
+        public eDDAlign TextAlign
         {
             get
             {
@@ -198,7 +199,7 @@ namespace midsControls
         // Token: 0x17000019 RID: 25
         // (get) Token: 0x0600005D RID: 93 RVA: 0x0000673C File Offset: 0x0000493C
         // (set) Token: 0x0600005E RID: 94 RVA: 0x00006754 File Offset: 0x00004954
-        public Enums.eDDStyle Style
+        public eDDStyle Style
         {
             get
             {
@@ -214,7 +215,7 @@ namespace midsControls
         // Token: 0x1700001A RID: 26
         // (get) Token: 0x0600005F RID: 95 RVA: 0x00006768 File Offset: 0x00004968
         // (set) Token: 0x06000060 RID: 96 RVA: 0x00006780 File Offset: 0x00004980
-        public Enums.eDDGraph GraphType
+        public eDDGraph GraphType
         {
             get
             {
@@ -329,9 +330,9 @@ namespace midsControls
             base.BackColorChanged += this.ctlDamageDisplay_BackColorChanged;
             base.Load += this.ctlDamageDisplay_Load;
             base.Paint += this.ctlDamageDisplayt_Paint;
-            this.pStyle = (Enums.eDDStyle)3;
+            this.pStyle = (eDDStyle)3;
             this.pText = 0;
-            this.pGraph = (Enums.eDDGraph)2;
+            this.pGraph = (eDDGraph)2;
             this.pFadeBackStart = Color.Lime;
             this.pFadeBackEnd = Color.Yellow;
             this.pFadeBaseStart = Color.Blue;
@@ -341,7 +342,7 @@ namespace midsControls
             this.pTextColor = Color.Black;
             this.pvPadding = 6;
             this.phPadding = 3;
-            this.pAlign = (Enums.eDDAlign)1;
+            this.pAlign = (eDDAlign)1;
             this.nBase = 100f;
             this.nEnhanced = 196f;
             this.nMaxEnhanced = 207f;
@@ -426,7 +427,7 @@ namespace midsControls
             Rectangle rect = new Rectangle(0, 0, base.Width, base.Height);
             checked
             {
-                if (this.pStyle == (Enums.eDDStyle)3)
+                if (this.pStyle == (eDDStyle)3)
                 {
                     rect.Height = (int)Math.Round((double)(unchecked((float)rect.Height - height)));
                 }
@@ -473,7 +474,7 @@ namespace midsControls
                         brush = new LinearGradientBrush(rect3, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
                         this.bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)3)
+                    else if (this.pGraph == (eDDGraph)3)
                     {
                         int num = (int)Math.Round((double)(unchecked(this.nBase / this.nHighestEnhanced * (float)rectangle2.Width)));
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round((double)(unchecked(this.nBase / this.nHighestBase * (float)rectangle2.Width))), rectangle2.Height);
@@ -493,7 +494,7 @@ namespace midsControls
                         brush = new LinearGradientBrush(rectangle2, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
                         this.bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)2)
+                    else if (this.pGraph == (eDDGraph)2)
                     {
                         int num2 = (int)Math.Round((double)rectangle2.Height / 2.0);
                         int num = (int)Math.Round((double)(unchecked(this.nBase / this.nHighestEnhanced * (float)rectangle2.Width)));
@@ -518,7 +519,7 @@ namespace midsControls
                         brush = new LinearGradientBrush(rectangle2, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
                         this.bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)1)
+                    else if (this.pGraph == (eDDGraph)1)
                     {
                         int num = (int)Math.Round((double)(unchecked(this.nEnhanced / this.nHighestEnhanced * (float)rectangle2.Width)));
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, rectangle2.Height);
@@ -530,11 +531,11 @@ namespace midsControls
                         brush = new LinearGradientBrush(rectangle3, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
                         this.bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    if (this.pStyle == (Enums.eDDStyle)2)
+                    if (this.pStyle == (eDDStyle)2)
                     {
                         this.DrawText(rectangle2);
                     }
-                    else if (this.pStyle == (Enums.eDDStyle)3)
+                    else if (this.pStyle == (eDDStyle)3)
                     {
                         Rectangle rectangle3 = new Rectangle(rectangle2.X, rectangle2.Y + rectangle2.Height, rectangle2.Width, rectangle.Height - (rectangle2.Y + rectangle2.Height));
                         this.DrawText(rectangle3);
@@ -551,7 +552,7 @@ namespace midsControls
             float height = this.Font.GetHeight(this.myGFX);
             this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             layoutRectangle.X = (float)(checked(Bounds.X + this.phPadding));
-            if (this.pStyle == (Enums.eDDStyle)3)
+            if (this.pStyle == (eDDStyle)3)
             {
                 layoutRectangle.Y = (float)Bounds.Y + ((float)Bounds.Height - height) / 2f + 2f;
             }
@@ -564,17 +565,17 @@ namespace midsControls
             Brush brush = new SolidBrush(this.pTextColor);
             switch (this.pAlign)
             {
-                case Enums.eDDAlign.Left:
+                case eDDAlign.Left:
                     stringFormat.Alignment = StringAlignment.Near;
                     break;
-                case Enums.eDDAlign.Center:
+                case eDDAlign.Center:
                     stringFormat.Alignment = StringAlignment.Center;
                     break;
-                case Enums.eDDAlign.Right:
+                case eDDAlign.Right:
                     stringFormat.Alignment = StringAlignment.Far;
                     break;
             }
-            Enums.eDDText eDDText = this.pText;
+            eDDText eDDText = this.pText;
             if (eDDText == 0)
             {
             }
@@ -638,13 +639,13 @@ namespace midsControls
         protected Graphics myGFX;
 
         // Token: 0x04000029 RID: 41
-        protected Enums.eDDStyle pStyle;
+        protected eDDStyle pStyle;
 
         // Token: 0x0400002A RID: 42
-        protected Enums.eDDText pText;
+        protected eDDText pText;
 
         // Token: 0x0400002B RID: 43
-        protected Enums.eDDGraph pGraph;
+        protected eDDGraph pGraph;
 
         // Token: 0x0400002C RID: 44
         protected Color pFadeBackStart;
@@ -674,7 +675,7 @@ namespace midsControls
         protected int phPadding;
 
         // Token: 0x04000035 RID: 53
-        protected Enums.eDDAlign pAlign;
+        protected eDDAlign pAlign;
 
         // Token: 0x04000036 RID: 54
         protected float nBase;

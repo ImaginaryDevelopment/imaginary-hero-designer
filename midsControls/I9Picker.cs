@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 
@@ -159,12 +160,12 @@ namespace midsControls
             this._mySlotted = new int[0];
             this._levelCapped = false;
             this._userLevel = -1;
-            this._lastTab = Enums.eType.Normal;
+            this._lastTab = eType.Normal;
             this._lastSet = 0;
             this.LastLevel = -1;
-            this._lastGrade = Enums.eEnhGrade.SingleO;
-            this._lastRelativeLevel = Enums.eEnhRelative.Even;
-            this._lastSpecial = Enums.eSubtype.Hamidon;
+            this._lastGrade = eEnhGrade.SingleO;
+            this._lastRelativeLevel = eEnhRelative.Even;
+            this._lastSpecial = eSubtype.Hamidon;
             this.UI = new I9Picker.cTracking();
             this._nPad = 8;
             this._nSize = 30;
@@ -304,7 +305,7 @@ namespace midsControls
             brush = new SolidBrush(this.ForeColor);
             font = new Font("Arial", 19f, FontStyle.Bold, GraphicsUnit.Pixel);
             string s;
-            if (this.UI.View.TabID == Enums.eType.InventO | this.UI.View.TabID == Enums.eType.SetO)
+            if (this.UI.View.TabID == eType.InventO | this.UI.View.TabID == eType.SetO)
             {
                 s = Conversions.ToString(this.UI.View.IOLevel);
             }
@@ -316,7 +317,7 @@ namespace midsControls
         }
 
         // Token: 0x0600015E RID: 350 RVA: 0x0000BE38 File Offset: 0x0000A038
-        private static string GetRelativeString(Enums.eEnhRelative iRel)
+        private static string GetRelativeString(eEnhRelative iRel)
         {
             string result;
             switch (iRel)
@@ -324,31 +325,31 @@ namespace midsControls
                 case 0:
                     result = "X";
                     break;
-                case Enums.eEnhRelative.MinusThree:
+                case eEnhRelative.MinusThree:
                     result = "-3";
                     break;
-                case Enums.eEnhRelative.MinusTwo:
+                case eEnhRelative.MinusTwo:
                     result = "-2";
                     break;
-                case Enums.eEnhRelative.MinusOne:
+                case eEnhRelative.MinusOne:
                     result = "-1";
                     break;
-                case Enums.eEnhRelative.Even:
+                case eEnhRelative.Even:
                     result = "+/-";
                     break;
-                case Enums.eEnhRelative.PlusOne:
+                case eEnhRelative.PlusOne:
                     result = "+1";
                     break;
-                case Enums.eEnhRelative.PlusTwo:
+                case eEnhRelative.PlusTwo:
                     result = "+2";
                     break;
-                case Enums.eEnhRelative.PlusThree:
+                case eEnhRelative.PlusThree:
                     result = "+3";
                     break;
-                case Enums.eEnhRelative.PlusFour:
+                case eEnhRelative.PlusFour:
                     result = "+4";
                     break;
-                case Enums.eEnhRelative.PlusFive:
+                case eEnhRelative.PlusFive:
                     result = "+5";
                     break;
                 default:
@@ -415,25 +416,25 @@ namespace midsControls
         private void DrawTypeImages()
         {
             Rectangle srcRect = new Rectangle(0, 0, this._nSize, this._nSize);
-            Enums.eType eType = 0;
+            eType eType = 0;
             Rectangle rectBounds = this.GetRectBounds(0, 0);
             checked
             {
                 srcRect.X = (int)eType * this._nSize;
                 this._myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect.X, srcRect.Y, 30, 30, GraphicsUnit.Pixel, this._hDraw.pImageAttributes);
-                eType = Enums.eType.Normal;
+                eType = eType.Normal;
                 rectBounds = this.GetRectBounds(1, 0);
                 srcRect.X = (int)eType * this._nSize;
                 this._myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
-                eType = Enums.eType.InventO;
+                eType = eType.InventO;
                 rectBounds = this.GetRectBounds(2, 0);
                 srcRect.X = (int)eType * this._nSize;
                 this._myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
-                eType = Enums.eType.SpecialO;
+                eType = eType.SpecialO;
                 rectBounds = this.GetRectBounds(3, 0);
                 srcRect.X = (int)eType * this._nSize;
                 this._myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
-                eType = Enums.eType.SetO;
+                eType = eType.SetO;
                 rectBounds = this.GetRectBounds(4, 0);
                 srcRect.X = (int)eType * this._nSize;
                 this._myBx.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, rectBounds, srcRect, GraphicsUnit.Pixel);
@@ -447,13 +448,13 @@ namespace midsControls
             {
                 switch (this.UI.View.TabID)
                 {
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         {
                             int num = 1;
                             for (int i = this.UI.NOGrades.Length - 1; i >= 1; i += -1)
                             {
                                 Rectangle srcRect = new Rectangle(this.UI.NOGrades[i] * this._nSize, 0, this._nSize, this._nSize);
-                                this._myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, this.GetRectBounds(4, num), I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade((Enums.eType)1, (Enums.eEnhGrade)i)), GraphicsUnit.Pixel);
+                                this._myBx.Graphics.DrawImage(I9Gfx.Borders.Bitmap, this.GetRectBounds(4, num), I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade((eType)1, (eEnhGrade)i)), GraphicsUnit.Pixel);
                                 this._myBx.Graphics.DrawImage(I9Gfx.EnhGrades.Bitmap, this.GetRectBounds(4, num), srcRect, GraphicsUnit.Pixel);
                                 num++;
                             }
@@ -464,13 +465,13 @@ namespace midsControls
                                 Origin.Grade grade;
                                 switch (this.UI.View.GradeID)
                                 {
-                                    case Enums.eEnhGrade.TrainingO:
+                                    case eEnhGrade.TrainingO:
                                         grade = 0;
                                         break;
-                                    case Enums.eEnhGrade.DualO:
+                                    case eEnhGrade.DualO:
                                         grade = Origin.Grade.DualO;
                                         break;
-                                    case Enums.eEnhGrade.SingleO:
+                                    case eEnhGrade.SingleO:
                                         grade = Origin.Grade.SingleO;
                                         break;
                                     default:
@@ -482,7 +483,7 @@ namespace midsControls
                             }
                             break;
                         }
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         {
                             int num4 = 0;
                             int num5 = this.UI.IO.Length - 1;
@@ -493,7 +494,7 @@ namespace midsControls
                             }
                             break;
                         }
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         {
                             int num6 = 1;
                             int num7 = this.UI.SpecialTypes.Length - 1;
@@ -511,7 +512,7 @@ namespace midsControls
                             }
                             break;
                         }
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         {
                             int num10 = 0;
                             int num11 = this.UI.SetTypes.Length - 1;
@@ -634,7 +635,7 @@ namespace midsControls
             checked
             {
                 bool result;
-                if (this.UI.View.TabID != Enums.eType.SetO)
+                if (this.UI.View.TabID != eType.SetO)
                 {
                     result = false;
                 }
@@ -684,7 +685,7 @@ namespace midsControls
         {
             checked
             {
-                if (this.UI.View.TabID == Enums.eType.SetO)
+                if (this.UI.View.TabID == eType.SetO)
                 {
                     if (this.UI.View.SetTypeID > -1)
                     {
@@ -722,21 +723,21 @@ namespace midsControls
         {
             this.DrawHighlight(this._hoverCell.X, this._hoverCell.Y);
             this.DrawSelected((int)this.UI.View.TabID, 0);
-            if (this.UI.View.TabID == Enums.eType.SetO)
+            if (this.UI.View.TabID == eType.SetO)
             {
                 if (this.UI.View.SetTypeID > -1)
                 {
                     this.DrawSelected(4, checked(this.UI.View.SetTypeID + 1));
                 }
             }
-            else if (this.UI.View.TabID == Enums.eType.Normal)
+            else if (this.UI.View.TabID == eType.Normal)
             {
                 if ((int)this.UI.View.GradeID > -1)
                 {
                     this.DrawSelected(4, I9Picker.Reverse((int)this.UI.View.GradeID));
                 }
             }
-            else if (this.UI.View.TabID == Enums.eType.SpecialO && (int)this.UI.View.SpecialID > -1)
+            else if (this.UI.View.TabID == eType.SpecialO && (int)this.UI.View.SpecialID > -1)
             {
                 this.DrawSelected(4, (int)this.UI.View.SpecialID);
             }
@@ -783,13 +784,13 @@ namespace midsControls
                             Rectangle rectangle = default(Rectangle);
                             switch (this.UI.View.TabID)
                             {
-                                case Enums.eType.Normal:
+                                case eType.Normal:
                                     rectangle = this.GetRectBounds(4, I9Picker.Reverse((int)this.UI.View.GradeID));
                                     break;
-                                case Enums.eType.SpecialO:
+                                case eType.SpecialO:
                                     rectangle = this.GetRectBounds(4, (int)this.UI.View.SpecialID);
                                     break;
-                                case Enums.eType.SetO:
+                                case eType.SetO:
                                     rectangle = this.GetRectBounds(4, this.UI.View.SetTypeID + 1);
                                     break;
                             }
@@ -981,40 +982,40 @@ namespace midsControls
                 {
                     if (cellXY.Y == 0)
                     {
-                        this.UI.View.TabID = (Enums.eType)cellXY.X;
+                        this.UI.View.TabID = (eType)cellXY.X;
                         if (cellXY.X == 4 & this.UI.SetTypes.Length > 0)
                         {
                             this.UI.View.SetTypeID = 0;
                             if ((int)this.UI.View.RelLevel < 4)
                             {
-                                this.UI.View.RelLevel = Enums.eEnhRelative.Even;
+                                this.UI.View.RelLevel = eEnhRelative.Even;
                             }
                         }
                         else if (cellXY.X == 2)
                         {
                             if ((int)this.UI.Initial.TabID == 1)
                             {
-                                this.UI.Initial.TabID = Enums.eType.InventO;
+                                this.UI.Initial.TabID = eType.InventO;
                             }
                             if ((int)this.UI.View.RelLevel < 4)
                             {
-                                this.UI.View.RelLevel = Enums.eEnhRelative.Even;
+                                this.UI.View.RelLevel = eEnhRelative.Even;
                             }
                         }
                         else if (cellXY.X == 1)
                         {
                             if ((int)this.UI.View.RelLevel > 7)
                             {
-                                this.UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
+                                this.UI.View.RelLevel = eEnhRelative.PlusThree;
                             }
                             if ((int)this.UI.Initial.TabID == 2)
                             {
-                                this.UI.Initial.TabID = Enums.eType.Normal;
+                                this.UI.Initial.TabID = eType.Normal;
                             }
                         }
                         else if (cellXY.X == 3 && (int)this.UI.View.RelLevel > 7)
                         {
-                            this.UI.View.RelLevel = Enums.eEnhRelative.PlusThree;
+                            this.UI.View.RelLevel = eEnhRelative.PlusThree;
                         }
                         if (cellXY.X == 0)
                         {
@@ -1027,26 +1028,26 @@ namespace midsControls
                         {
                             switch (this.UI.View.TabID)
                             {
-                                case Enums.eType.Normal:
+                                case eType.Normal:
                                     if (cellXY.Y < this.UI.NOGrades.Length)
                                     {
                                         cellXY.Y = I9Picker.Reverse(cellXY.Y);
-                                        this.UI.View.GradeID = (Enums.eEnhGrade)cellXY.Y;
-                                        if (this.UI.Initial.TabID == Enums.eType.Normal)
+                                        this.UI.View.GradeID = (eEnhGrade)cellXY.Y;
+                                        if (this.UI.Initial.TabID == eType.Normal)
                                         {
                                             this.UI.Initial.GradeID = this.UI.View.GradeID;
                                         }
                                         this.DoHover(this._hoverCell, true);
                                     }
                                     break;
-                                case Enums.eType.SpecialO:
+                                case eType.SpecialO:
                                     if (cellXY.Y < this.UI.SpecialTypes.Length)
                                     {
-                                        this.SetSpecialEnhSet((Enums.eSubtype)cellXY.Y);
+                                        this.SetSpecialEnhSet((eSubtype)cellXY.Y);
                                         this.DoHover(this._hoverCell, true);
                                     }
                                     break;
-                                case Enums.eType.SetO:
+                                case eType.SetO:
                                     if (cellXY.Y - 1 < this.UI.SetTypes.Length)
                                     {
                                         this.UI.View.SetTypeID = cellXY.Y - 1;
@@ -1098,28 +1099,28 @@ namespace midsControls
         // Token: 0x0600017B RID: 379 RVA: 0x0000DC54 File Offset: 0x0000BE54
         private bool CellSetSelect(int cellIDX)
         {
-            return this.UI.View.SetTypeID >= 0 && (this.UI.View.TabID == Enums.eType.SetO & this.UI.View.SetID == -1 & cellIDX > -1 & cellIDX < this.UI.Sets[this.UI.View.SetTypeID].Length);
+            return this.UI.View.SetTypeID >= 0 && (this.UI.View.TabID == eType.SetO & this.UI.View.SetID == -1 & cellIDX > -1 & cellIDX < this.UI.Sets[this.UI.View.SetTypeID].Length);
         }
 
         // Token: 0x0600017C RID: 380 RVA: 0x0000DCCC File Offset: 0x0000BECC
         private bool CellEnhSelect(int cellIDX)
         {
             bool result;
-            if (cellIDX > -1 & (this.UI.View.TabID != Enums.eType.SetO | this.UI.View.SetID > -1))
+            if (cellIDX > -1 & (this.UI.View.TabID != eType.SetO | this.UI.View.SetID > -1))
             {
                 int[] array = new int[0];
                 switch (this.UI.View.TabID)
                 {
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         array = this.UI.NO;
                         break;
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         array = this.UI.IO;
                         break;
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         array = this.UI.SpecialO;
                         break;
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         if (this.UI.View.SetTypeID < 0)
                         {
                             return false;
@@ -1157,22 +1158,22 @@ namespace midsControls
                     case 0:
                         i9Slot = new I9Slot();
                         break;
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         i9Slot.Enh = this.UI.NO[index];
                         i9Slot.Grade = this.UI.View.GradeID;
                         i9Slot.RelativeLevel = this.UI.View.RelLevel;
                         break;
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         i9Slot.Enh = this.UI.IO[index];
                         i9Slot.IOLevel = this.UI.View.IOLevel - 1;
                         i9Slot.RelativeLevel = this.UI.View.RelLevel;
                         break;
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         i9Slot.Enh = this.UI.SpecialO[index];
                         i9Slot.RelativeLevel = this.UI.View.RelLevel;
                         this._lastSpecial = this.UI.View.SpecialID;
                         break;
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         if (this.IsPlaced(index))
                         {
                             return;
@@ -1316,7 +1317,7 @@ namespace midsControls
                     {
                         switch (this.UI.View.TabID)
                         {
-                            case Enums.eType.Normal:
+                            case eType.Normal:
                                 if (cell.Y < this.UI.NOGrades.Length)
                                 {
                                     string message = "";
@@ -1348,7 +1349,7 @@ namespace midsControls
                                     flag = true;
                                 }
                                 break;
-                            case Enums.eType.SpecialO:
+                            case eType.SpecialO:
                                 if (cell.Y < this.UI.SpecialTypes.Length)
                                 {
                                     string message2 = "";
@@ -1371,7 +1372,7 @@ namespace midsControls
                                     flag = true;
                                 }
                                 break;
-                            case Enums.eType.SetO:
+                            case eType.SetO:
                                 if (cell.Y - 1 < this.UI.SetTypes.Length)
                                 {
                                     this.SetInfoStrings(setTypeStringLong[this.UI.SetTypes[cell.Y - 1]], "Click here to view the set listing.");
@@ -1415,19 +1416,19 @@ namespace midsControls
                                 num2 = -1;
                                 this.SetInfoStrings("", "");
                                 break;
-                            case Enums.eType.Normal:
+                            case eType.Normal:
                                 num2 = this.UI.NO[cellIndex];
                                 this.SetInfoStrings(DatabaseAPI.Database.Enhancements[num2].Name, DatabaseAPI.Database.Enhancements[num2].Desc);
                                 break;
-                            case Enums.eType.InventO:
+                            case eType.InventO:
                                 num2 = this.UI.IO[cellIndex];
                                 this.SetInfoStrings(DatabaseAPI.Database.Enhancements[num2].Name, DatabaseAPI.Database.Enhancements[num2].Desc);
                                 break;
-                            case Enums.eType.SpecialO:
+                            case eType.SpecialO:
                                 num2 = this.UI.SpecialO[cellIndex];
                                 this.SetInfoStrings(DatabaseAPI.Database.Enhancements[num2].Name, DatabaseAPI.Database.Enhancements[num2].Desc);
                                 break;
-                            case Enums.eType.SetO:
+                            case eType.SetO:
                                 {
                                     num2 = DatabaseAPI.Database.EnhancementSets[this.UI.Sets[this.UI.View.SetTypeID][this.UI.View.SetID]].Enhancements[cellIndex];
                                     string text = DatabaseAPI.Database.Enhancements[num2].Name;
@@ -1498,7 +1499,7 @@ namespace midsControls
         }
 
         // Token: 0x06000187 RID: 391 RVA: 0x0000EC8C File Offset: 0x0000CE8C
-        private static int[] GetSets(Enums.eSetType iSetType)
+        private static int[] GetSets(eSetType iSetType)
         {
             List<int> list = new List<int>();
             int num = 0;
@@ -1536,7 +1537,7 @@ namespace midsControls
         }
 
         // Token: 0x06000189 RID: 393 RVA: 0x0000ED80 File Offset: 0x0000CF80
-        private static int[] GetValidEnhancements(int iPowerIDX, Enums.eType iType, Enums.eSubtype iSubType = 0)
+        private static int[] GetValidEnhancements(int iPowerIDX, eType iType, eSubtype iSubType = 0)
         {
             int[] array = new int[0];
             int[] result;
@@ -1564,18 +1565,18 @@ namespace midsControls
             this._hoverTitle = "";
             this._nPowerIDX = iPower;
             this.UI = new I9Picker.cTracking();
-            Enums.eSubtype eSubtype = 0;
+            eSubtype eSubtype = 0;
             this.UI.SpecialTypes = (int[])Enum.GetValues(eSubtype.GetType());
-            Enums.eEnhGrade eEnhGrade = 0;
+            eEnhGrade eEnhGrade = 0;
             this.UI.NOGrades = (int[])Enum.GetValues(eEnhGrade.GetType());
-            this.UI.NO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.Normal, 0);
-            this.UI.IO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.InventO, 0);
+            this.UI.NO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.Normal, 0);
+            this.UI.IO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.InventO, 0);
             this.UI.Initial.GradeID = this._lastGrade;
             this.UI.Initial.RelLevel = this._lastRelativeLevel;
             this.UI.Initial.SpecialID = this._lastSpecial;
             if (this.UI.Initial.SpecialID == 0)
             {
-                this.UI.Initial.SpecialID = Enums.eSubtype.Hamidon;
+                this.UI.Initial.SpecialID = eSubtype.Hamidon;
             }
             if (this.UI.Initial.GradeID == 0)
             {
@@ -1589,17 +1590,17 @@ namespace midsControls
             {
                 if (DatabaseAPI.Database.Enhancements[this._mySlot.Enh].SubTypeID != 0)
                 {
-                    this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.SpecialO, DatabaseAPI.Database.Enhancements[this._mySlot.Enh].SubTypeID);
+                    this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.SpecialO, DatabaseAPI.Database.Enhancements[this._mySlot.Enh].SubTypeID);
                     this.UI.Initial.SpecialID = DatabaseAPI.Database.Enhancements[this._mySlot.Enh].SubTypeID;
                 }
                 else
                 {
-                    this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.SpecialO, this.UI.Initial.SpecialID);
+                    this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.SpecialO, this.UI.Initial.SpecialID);
                 }
             }
             else
             {
-                this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.SpecialO, this.UI.Initial.SpecialID);
+                this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.SpecialO, this.UI.Initial.SpecialID);
             }
             this.UI.SetTypes = I9Picker.GetValidSetTypes(this._nPowerIDX);
             checked
@@ -1609,7 +1610,7 @@ namespace midsControls
                 int num2 = this.UI.SetTypes.Length - 1;
                 for (int i = num; i <= num2; i++)
                 {
-                    this.UI.Sets[i] = I9Picker.GetSets((Enums.eSetType)this.UI.SetTypes[i]);
+                    this.UI.Sets[i] = I9Picker.GetSets((eSetType)this.UI.SetTypes[i]);
                 }
                 if (this._mySlot.Grade != 0)
                 {
@@ -1629,25 +1630,25 @@ namespace midsControls
                     var power = DatabaseAPI.Database.Enhancements[this._mySlot.Enh].GetPower();
                     if (power != null && !power.BoostBoostable)
                     {
-                        this._mySlot.RelativeLevel = Enums.eEnhRelative.Even;
+                        this._mySlot.RelativeLevel = eEnhRelative.Even;
                     }
                     if (this._nPowerIDX < 0)
                     {
                         switch (DatabaseAPI.Database.Enhancements[this._mySlot.Enh].TypeID)
                         {
-                            case Enums.eType.Normal:
+                            case eType.Normal:
                                 this.UI.NO = new int[1];
                                 this.UI.NO[0] = this._mySlot.Enh;
                                 break;
-                            case Enums.eType.InventO:
+                            case eType.InventO:
                                 this.UI.IO = new int[1];
                                 this.UI.IO[0] = this._mySlot.Enh;
                                 break;
-                            case Enums.eType.SpecialO:
+                            case eType.SpecialO:
                                 this.UI.SpecialO = new int[1];
                                 this.UI.SpecialO[0] = this._mySlot.Enh;
                                 break;
-                            case Enums.eType.SetO:
+                            case eType.SetO:
                                 {
                                     this.UI.SetTypes = new int[1];
                                     this.UI.SetTypes[0] = (int)DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[this._mySlot.Enh].nIDSet].SetType;
@@ -1662,7 +1663,7 @@ namespace midsControls
                         }
                     }
                     this.UI.Initial.TabID = DatabaseAPI.Database.Enhancements[this._mySlot.Enh].TypeID;
-                    if (this.UI.Initial.TabID == Enums.eType.SetO)
+                    if (this.UI.Initial.TabID == eType.SetO)
                     {
                         this.UI.Initial.SetID = this.SetIDGlobalToLocal(DatabaseAPI.Database.Enhancements[this._mySlot.Enh].nIDSet);
                         this.UI.Initial.SetTypeID = this.SetTypeToID(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[this._mySlot.Enh].nIDSet].SetType);
@@ -1700,7 +1701,7 @@ namespace midsControls
                     }
                     else
                     {
-                        this.UI.View.TabID = Enums.eType.Normal;
+                        this.UI.View.TabID = eType.Normal;
                     }
                     if ((int)this.UI.View.TabID == 4 & this.UI.SetTypes.Length > this._lastSet)
                     {
@@ -1724,12 +1725,12 @@ namespace midsControls
         }
 
         // Token: 0x0600018B RID: 395 RVA: 0x0000F770 File Offset: 0x0000D970
-        private void SetSpecialEnhSet(Enums.eSubtype iSubType)
+        private void SetSpecialEnhSet(eSubtype iSubType)
         {
             this.UI.View.SpecialID = iSubType;
             if (this._nPowerIDX > 0)
             {
-                this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, Enums.eType.SpecialO, this.UI.View.SpecialID);
+                this.UI.SpecialO = I9Picker.GetValidEnhancements(this._nPowerIDX, eType.SpecialO, this.UI.View.SpecialID);
             }
             else if (this.UI.Initial.SpecialID == this.UI.View.SpecialID & (int)this.UI.Initial.TabID == 3)
             {
@@ -1743,7 +1744,7 @@ namespace midsControls
         }
 
         // Token: 0x0600018C RID: 396 RVA: 0x0000F848 File Offset: 0x0000DA48
-        private int SetTypeToID(Enums.eSetType iSetType)
+        private int SetTypeToID(eSetType iSetType)
         {
             int num = 0;
             checked
@@ -1751,7 +1752,7 @@ namespace midsControls
                 int num2 = this.UI.SetTypes.Length - 1;
                 for (int i = num; i <= num2; i++)
                 {
-                    if (iSetType == (Enums.eSetType)this.UI.SetTypes[i])
+                    if (iSetType == (eSetType)this.UI.SetTypes[i])
                     {
                         return i;
                     }
@@ -1761,21 +1762,21 @@ namespace midsControls
         }
 
         // Token: 0x0600018D RID: 397 RVA: 0x0000F8A4 File Offset: 0x0000DAA4
-        private int GetPickerIndex(int index, Enums.eType iType)
+        private int GetPickerIndex(int index, eType iType)
         {
             int[] array = new int[0];
             switch (iType)
             {
-                case Enums.eType.Normal:
+                case eType.Normal:
                     array = this.UI.NO;
                     break;
-                case Enums.eType.InventO:
+                case eType.InventO:
                     array = this.UI.IO;
                     break;
-                case Enums.eType.SpecialO:
+                case eType.SpecialO:
                     array = this.UI.SpecialO;
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     array = this.UI.SetO;
                     break;
             }
@@ -1954,19 +1955,19 @@ namespace midsControls
                 else if (keyCode == Keys.Home)
                 {
                     this.UI.View.IOLevel = 0;
-                    this.UI.View.RelLevel = Enums.eEnhRelative.MinusThree;
+                    this.UI.View.RelLevel = eEnhRelative.MinusThree;
                     this.TimerReset();
                 }
                 else if (keyCode == Keys.End)
                 {
                     this.UI.View.IOLevel = 100;
-                    this.UI.View.RelLevel = Enums.eEnhRelative.PlusFive;
+                    this.UI.View.RelLevel = eEnhRelative.PlusFive;
                     this.TimerReset();
                 }
                 else if (keyCode == Keys.Space)
                 {
                     this.UI.View.IOLevel = MidsContext.Config.I9.DefaultIOLevel + 1;
-                    this.UI.View.RelLevel = Enums.eEnhRelative.Even;
+                    this.UI.View.RelLevel = eEnhRelative.Even;
                     this.TimerReset();
                 }
                 else if (keyCode == Keys.Add)
@@ -2012,7 +2013,7 @@ namespace midsControls
         // Token: 0x06000193 RID: 403 RVA: 0x000102E0 File Offset: 0x0000E4E0
         private void RelAdjust(int direction)
         {
-            Enums.eEnhRelative eEnhRelative = this.UI.View.RelLevel;
+            eEnhRelative eEnhRelative = this.UI.View.RelLevel;
             checked
             {
                 if (direction < 0)
@@ -2028,11 +2029,11 @@ namespace midsControls
                 }
                 if ((int)eEnhRelative > 7 & ((int)this.UI.View.TabID == 1 | (int)this.UI.View.TabID == 3))
                 {
-                    eEnhRelative = Enums.eEnhRelative.PlusThree;
+                    eEnhRelative = eEnhRelative.PlusThree;
                 }
                 else if ((int)eEnhRelative < 4 & ((int)this.UI.View.TabID == 2 | (int)this.UI.View.TabID == 4))
                 {
-                    eEnhRelative = Enums.eEnhRelative.Even;
+                    eEnhRelative = eEnhRelative.Even;
                 }
                 this.UI.View.RelLevel = eEnhRelative;
             }
@@ -2087,7 +2088,7 @@ namespace midsControls
         private int _userLevel;
 
         // Token: 0x040000A5 RID: 165
-        private Enums.eType _lastTab;
+        private eType _lastTab;
 
         // Token: 0x040000A6 RID: 166
         private int _lastSet;
@@ -2096,13 +2097,13 @@ namespace midsControls
         public int LastLevel;
 
         // Token: 0x040000A8 RID: 168
-        private Enums.eEnhGrade _lastGrade;
+        private eEnhGrade _lastGrade;
 
         // Token: 0x040000A9 RID: 169
-        private Enums.eEnhRelative _lastRelativeLevel;
+        private eEnhRelative _lastRelativeLevel;
 
         // Token: 0x040000AA RID: 170
-        private Enums.eSubtype _lastSpecial;
+        private eSubtype _lastSpecial;
 
         // Token: 0x040000AB RID: 171
         private double _timerLastKeypress;
@@ -2193,7 +2194,7 @@ namespace midsControls
                     this.GradeID = 0;
                     this.SpecialID = 0;
                     this.IOLevel = 0;
-                    this.RelLevel = Enums.eEnhRelative.Even;
+                    this.RelLevel = eEnhRelative.Even;
                 }
 
                 // Token: 0x06000196 RID: 406 RVA: 0x000104B8 File Offset: 0x0000E6B8
@@ -2206,7 +2207,7 @@ namespace midsControls
                     this.GradeID = 0;
                     this.SpecialID = 0;
                     this.IOLevel = 0;
-                    this.RelLevel = Enums.eEnhRelative.Even;
+                    this.RelLevel = eEnhRelative.Even;
                     this.TabID = iCL.TabID;
                     this.PickerID = iCL.PickerID;
                     this.SetTypeID = iCL.SetTypeID;
@@ -2218,7 +2219,7 @@ namespace midsControls
                 }
 
                 // Token: 0x040000C2 RID: 194
-                public Enums.eType TabID;
+                public eType TabID;
 
                 // Token: 0x040000C3 RID: 195
                 public int PickerID;
@@ -2230,16 +2231,16 @@ namespace midsControls
                 public int SetID;
 
                 // Token: 0x040000C6 RID: 198
-                public Enums.eEnhGrade GradeID;
+                public eEnhGrade GradeID;
 
                 // Token: 0x040000C7 RID: 199
-                public Enums.eSubtype SpecialID;
+                public eSubtype SpecialID;
 
                 // Token: 0x040000C8 RID: 200
                 public int IOLevel;
 
                 // Token: 0x040000C9 RID: 201
-                public Enums.eEnhRelative RelLevel;
+                public eEnhRelative RelLevel;
             }
         }
 

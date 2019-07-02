@@ -102,6 +102,10 @@
       <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HeroDesigner.Schema\HeroDesigner.Schema.fsproj">
+      <Project>{fc8a7956-8c31-49d7-9025-173b4001e21a}</Project>
+      <Name>HeroDesigner.Schema</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
