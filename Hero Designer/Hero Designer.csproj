@@ -233,10 +233,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="midsControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\midsControls.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -630,6 +626,10 @@
     <ProjectReference Include="..\HeroDesigner.Schema\HeroDesigner.Schema.fsproj">
       <Project>{fc8a7956-8c31-49d7-9025-173b4001e21a}</Project>
       <Name>HeroDesigner.Schema</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\midsControls\midsControls.csproj">
+      <Project>{8b762616-ca1e-428a-a62d-e17dd738712d}</Project>
+      <Name>midsControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
