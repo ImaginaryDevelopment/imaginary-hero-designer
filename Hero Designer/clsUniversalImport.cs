@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -149,7 +150,7 @@ namespace Hero_Designer
             }
             else
             {
-                IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Ancillary);
+                IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(nAT, ePowerSetType.Ancillary);
                 clsUniversalImport.SetPair setPair2 = clsUniversalImport.ScanSetArray(iName, powersetIndexes1);
                 if (setPair2.Powerset > -1)
                 {
@@ -157,7 +158,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Pool);
+                    IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(nAT, ePowerSetType.Pool);
                     setPair2 = clsUniversalImport.ScanSetArray(iName, powersetIndexes2);
                     setPair1 = setPair2.Powerset <= -1 ? new clsUniversalImport.SetPair(-1, -1) : setPair2;
                 }
@@ -168,7 +169,7 @@ namespace Hero_Designer
         static int FindPowerSetAdvanced(
 
           string sSetType,
-          Enums.ePowerSetType nSetType,
+          ePowerSetType nSetType,
           int nAT,
           string[] haystack)
         {
@@ -224,8 +225,8 @@ namespace Hero_Designer
 
         public static bool InterpretForumPost(string iPost)
         {
-            Enums.dmModes buildMode = MidsContext.Config.BuildMode;
-            MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
+            dmModes buildMode = MidsContext.Config.BuildMode;
+            MidsContext.Config.BuildMode = dmModes.Dynamic;
             bool flag1;
             try
             {
@@ -266,7 +267,7 @@ namespace Hero_Designer
                     index3 = DatabaseAPI.GetPowersetByName(dest, MidsContext.Character.Archetype.DisplayName).nID;
                 if (index3 < 0)
                 {
-                    index3 = clsUniversalImport.FindPowerSetAdvanced("Primary", Enums.ePowerSetType.Primary, MidsContext.Character.Archetype.Idx, haystack);
+                    index3 = clsUniversalImport.FindPowerSetAdvanced("Primary", ePowerSetType.Primary, MidsContext.Character.Archetype.Idx, haystack);
                     if (index3 < 0)
                         throw new Exception("Primary Powerset value not found.");
                 }
@@ -276,7 +277,7 @@ namespace Hero_Designer
                     index4 = DatabaseAPI.GetPowersetByName(dest, MidsContext.Character.Archetype.DisplayName).nID;
                 if (index4 < 0)
                 {
-                    index4 = clsUniversalImport.FindPowerSetAdvanced("Secondary", Enums.ePowerSetType.Secondary, MidsContext.Character.Archetype.Idx, haystack);
+                    index4 = clsUniversalImport.FindPowerSetAdvanced("Secondary", ePowerSetType.Secondary, MidsContext.Character.Archetype.Idx, haystack);
                     if (index4 < 0)
                         throw new Exception("Secondary Powerset value not found.");
                 }
@@ -319,7 +320,7 @@ namespace Hero_Designer
                     sPowerLineArray[index1].HistoryID = -1;
                     bool flag2 = false;
                     clsUniversalImport.SetPair power = clsUniversalImport.FindPower(sPowerLineArray[index1].Power, MidsContext.Character.Archetype.Idx);
-                    if (power.Powerset > -1 && DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Inherent)
+                    if (power.Powerset > -1 && DatabaseAPI.Database.Powersets[power.Powerset].SetType == ePowerSetType.Inherent)
                         flag2 = true;
                     if (power.Powerset < 0)
                         flag2 = true;
@@ -329,7 +330,7 @@ namespace Hero_Designer
                     {
                         MainModule.MidsController.Toon.RequestedLevel = sPowerLineArray[index1].Level - 1;
                         MainModule.MidsController.Toon.BuildPower(power.Powerset, power.Power, false);
-                        if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Pool)
+                        if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == ePowerSetType.Pool)
                         {
                             int num2 = MainModule.MidsController.Toon.PoolLocked.Length - 2;
                             for (int index2 = 0; index2 <= num2 && !(MainModule.MidsController.Toon.PoolLocked[index2] & MidsContext.Character.Powersets[3 + index2].nID == power.Powerset); ++index2)
@@ -342,7 +343,7 @@ namespace Hero_Designer
                                 }
                             }
                         }
-                        else if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Ancillary && !MainModule.MidsController.Toon.PoolLocked[MainModule.MidsController.Toon.PoolLocked.Length - 1])
+                        else if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == ePowerSetType.Ancillary && !MainModule.MidsController.Toon.PoolLocked[MainModule.MidsController.Toon.PoolLocked.Length - 1])
                         {
                             MidsContext.Character.Powersets[7].nID = power.Powerset;
                             MainModule.MidsController.Toon.PoolLocked[MainModule.MidsController.Toon.PoolLocked.Length - 1] = true;
@@ -369,7 +370,7 @@ namespace Hero_Designer
                                 slots[index5].Enhancement = new I9Slot();
                                 slots[index5].FlippedEnhancement = new I9Slot();
                                 slots[index5].Enhancement.Enh = clsUniversalImport.MatchEnhancement(sPowerLineArray[index1].Slots[index2].Enh);
-                                slots[index5].Enhancement.Grade = Enums.eEnhGrade.SingleO;
+                                slots[index5].Enhancement.Grade = eEnhGrade.SingleO;
                                 slots[index5].Enhancement.IOLevel = sPowerLineArray[index1].Slots[index2].Enh.IndexOf("-I:") <= -1 ? (sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") <= -1 ? MidsContext.Config.I9.DefaultIOLevel : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0)) : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0);
                                 slots[index5].Level = index2 != 0 ? sPowerLineArray[index1].Slots[index2].Level - 1 : MidsContext.Character.CurrentBuild.Powers[sPowerLineArray[index1].HistoryID].Level;
                                 if (slots[index5].Level < 0)
@@ -402,7 +403,7 @@ namespace Hero_Designer
             {
                 int startIndex = 0;
                 int length = iEnh.IndexOf("-");
-                enhancementByName = DatabaseAPI.GetEnhancementByName(iEnh.Substring(startIndex, length), Enums.eType.InventO);
+                enhancementByName = DatabaseAPI.GetEnhancementByName(iEnh.Substring(startIndex, length), eType.InventO);
             }
             else if (iEnh.IndexOf("-") > -1 & iEnh.IndexOf("-S") < 0)
             {

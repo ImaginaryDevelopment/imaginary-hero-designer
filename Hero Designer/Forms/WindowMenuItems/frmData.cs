@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Display;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -107,14 +108,14 @@ namespace Hero_Designer
                     iPopup.Sections[index2].Add("Activate Interval:", PopUp.Colors.Text, Conversions.ToString(power1.ActivatePeriod) + "s", PopUp.Colors.Text, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if (power1.Arc > 0)
                     iPopup.Sections[index2].Add("Arc Radius:", PopUp.Colors.Text, Conversions.ToString(power1.Arc) + "°", PopUp.Colors.Text, 0.9f, System.Drawing.FontStyle.Bold, 1);
-                if (power1.AttackTypes != Enums.eVector.None)
+                if (power1.AttackTypes != eVector.None)
                 {
                     int[] values = (int[])Enum.GetValues(power1.AttackTypes.GetType());
                     bool flag = true;
                     int num = values.Length - 1;
                     for (int index3 = 1; index3 <= num; ++index3)
                     {
-                        if ((power1.AttackTypes & (Enums.eVector)values[index3]) > Enums.eVector.None)
+                        if ((power1.AttackTypes & (eVector)values[index3]) > eVector.None)
                         {
                             string iText;
                             if (flag)

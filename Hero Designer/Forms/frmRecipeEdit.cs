@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Linq;
 using System.Windows.Forms;
+using HeroDesigner.Schema;
 
 namespace Hero_Designer
 {
@@ -578,7 +579,7 @@ namespace Hero_Designer
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = enhIdx + 1; index <= num; ++index)
             {
-                if (DatabaseAPI.Database.Enhancements[index].TypeID == Enums.eType.SetO)
+                if (DatabaseAPI.Database.Enhancements[index].TypeID == eType.SetO)
                 {
                     IDatabase database = DatabaseAPI.Database;
                     Recipe[] recipeArray = (Recipe[])Utils.CopyArray((Array)database.Recipes, (Array)new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);

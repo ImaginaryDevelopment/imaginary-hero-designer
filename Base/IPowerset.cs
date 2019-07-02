@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 
@@ -14,7 +15,7 @@ public interface IPowerset : IComparable
 
     string DisplayName { get; set; }
 
-    Enums.ePowerSetType SetType { get; set; }
+    ePowerSetType SetType { get; set; }
 
     int[] Power { get; set; }
 

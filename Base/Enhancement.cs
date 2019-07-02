@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 
@@ -19,9 +20,9 @@ public class Enhancement : IEnhancement
 
     public string Desc { get; set; }
 
-    public Enums.eType TypeID { get; set; }
+    public eType TypeID { get; set; }
 
-    public Enums.eSubtype SubTypeID { get; set; }
+    public eSubtype SubTypeID { get; set; }
 
     public int[] ClassID { get; set; }
 
@@ -62,9 +63,9 @@ public class Enhancement : IEnhancement
 
     public bool Unique { get; set; }
 
-    public Enums.eEnhMutex MutExID { get; set; }
+    public eEnhMutex MutExID { get; set; }
 
-    public Enums.eBuffDebuff BuffMode { get; set; }
+    public eBuffDebuff BuffMode { get; set; }
 
     public string RecipeName { get; set; }
 
@@ -80,7 +81,7 @@ public class Enhancement : IEnhancement
         {
             for (int index = 0; index <= this.Effect.Length - 1; ++index)
             {
-                if (this.Effect[index].Mode == Enums.eEffMode.FX)
+                if (this.Effect[index].Mode == eEffMode.FX)
                     return this.Effect[index].FX.Probability;
             }
             return 0.0f;
@@ -93,7 +94,7 @@ public class Enhancement : IEnhancement
         {
             for (int index = 0; index <= this.Effect.Length - 1; ++index)
             {
-                if (this.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (this.Effect[index].Mode == eEffMode.Enhancement)
                     return true;
             }
             return false;
@@ -106,7 +107,7 @@ public class Enhancement : IEnhancement
         {
             for (int index = 0; index <= this.Effect.Length - 1; ++index)
             {
-                if (this.Effect[index].Mode == Enums.eEffMode.FX)
+                if (this.Effect[index].Mode == eEffMode.FX)
                     return true;
             }
             return false;
@@ -120,14 +121,14 @@ public class Enhancement : IEnhancement
             string str;
             switch (this.TypeID)
             {
-                case Enums.eType.Normal:
-                case Enums.eType.SpecialO:
+                case eType.Normal:
+                case eType.SpecialO:
                     str = this.Name;
                     break;
-                case Enums.eType.InventO:
+                case eType.InventO:
                     str = "Invention: " + this.Name;
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     str = DatabaseAPI.Database.EnhancementSets[this.nIDSet].DisplayName + ": " + this.Name;
                     break;
                 default:
@@ -138,27 +139,27 @@ public class Enhancement : IEnhancement
         }
     }
 
-    public Enums.eSchedule Schedule
+    public eSchedule Schedule
     {
         get
         {
-            Enums.eSchedule eSchedule;
+            eSchedule eSchedule;
             if (this.Effect.Length == 1)
                 eSchedule = this.Effect[0].Schedule;
             else if (this.Effect.Length == 0)
             {
-                eSchedule = Enums.eSchedule.None;
+                eSchedule = eSchedule.None;
             }
             else
             {
-                Enums.eSchedule schedule = this.Effect[0].Schedule;
+                eSchedule schedule = this.Effect[0].Schedule;
                 bool flag = false;
                 for (int index = 0; index <= this.Effect.Length - 1; ++index)
                 {
                     if (this.Effect[index].Schedule != schedule)
                         flag = true;
                 }
-                eSchedule = !flag ? schedule : Enums.eSchedule.Multiple;
+                eSchedule = !flag ? schedule : eSchedule.Multiple;
             }
             return eSchedule;
         }
@@ -190,23 +191,23 @@ public class Enhancement : IEnhancement
         this.Name = "New Enhancement";
         this.ShortName = "NewEnh";
         this.Desc = string.Empty;
-        this.TypeID = Enums.eType.Normal;
-        this.SubTypeID = Enums.eSubtype.None;
+        this.TypeID = eType.Normal;
+        this.SubTypeID = eSubtype.None;
         this.Image = string.Empty;
         this.nIDSet = -1;
         this.EffectChance = 1f;
         this.LevelMin = 0;
         this.LevelMax = 52;
         this.Unique = false;
-        this.MutExID = Enums.eEnhMutex.None;
+        this.MutExID = eEnhMutex.None;
         this.UIDSet = string.Empty;
         this._power = (IPower)new Base.Data_Classes.Power()
         {
-            PowerType = Enums.ePowerType.Boost,
+            PowerType = ePowerType.Boost,
             DisplayName = this.Name,
             FullName = this.UID
         };
-        this.BuffMode = Enums.eBuffDebuff.Any;
+        this.BuffMode = eBuffDebuff.Any;
         this.ClassID = new int[0];
         this.Effect = new Enums.sEffect[0];
         this.RecipeName = string.Empty;
@@ -265,8 +266,8 @@ public class Enhancement : IEnhancement
         this.Name = reader.ReadString();
         this.ShortName = reader.ReadString();
         this.Desc = reader.ReadString();
-        this.TypeID = (Enums.eType)reader.ReadInt32();
-        this.SubTypeID = (Enums.eSubtype)reader.ReadInt32();
+        this.TypeID = (eType)reader.ReadInt32();
+        this.SubTypeID = (eSubtype)reader.ReadInt32();
         this.ClassID = new int[reader.ReadInt32() + 1];
         for (int index = 0; index < this.ClassID.Length; ++index)
             this.ClassID[index] = reader.ReadInt32();
@@ -277,18 +278,18 @@ public class Enhancement : IEnhancement
         this.LevelMin = reader.ReadInt32();
         this.LevelMax = reader.ReadInt32();
         this.Unique = reader.ReadBoolean();
-        this.MutExID = (Enums.eEnhMutex)reader.ReadInt32();
-        this.BuffMode = (Enums.eBuffDebuff)reader.ReadInt32();
-        if (this.MutExID < Enums.eEnhMutex.None)
-            this.MutExID = Enums.eEnhMutex.None;
+        this.MutExID = (eEnhMutex)reader.ReadInt32();
+        this.BuffMode = (eBuffDebuff)reader.ReadInt32();
+        if (this.MutExID < eEnhMutex.None)
+            this.MutExID = eEnhMutex.None;
         this.Effect = new Enums.sEffect[reader.ReadInt32() + 1];
         for (int index = 0; index <= this.Effect.Length - 1; ++index)
         {
-            this.Effect[index].Mode = (Enums.eEffMode)reader.ReadInt32();
-            this.Effect[index].BuffMode = (Enums.eBuffDebuff)reader.ReadInt32();
+            this.Effect[index].Mode = (eEffMode)reader.ReadInt32();
+            this.Effect[index].BuffMode = (eBuffDebuff)reader.ReadInt32();
             this.Effect[index].Enhance.ID = reader.ReadInt32();
             this.Effect[index].Enhance.SubID = reader.ReadInt32();
-            this.Effect[index].Schedule = (Enums.eSchedule)reader.ReadInt32();
+            this.Effect[index].Schedule = (eSchedule)reader.ReadInt32();
             this.Effect[index].Multiplier = reader.ReadSingle();
             ref Enums.sEffect local = ref this.Effect[index];
             Base.Data_Classes.Effect effect;
@@ -350,26 +351,26 @@ public class Enhancement : IEnhancement
         writer.Write(this.Superior);
     }
 
-    public static Enums.eSchedule GetSchedule(Enums.eEnhance iEnh, int tSub = -1)
+    public static eSchedule GetSchedule(eEnhance iEnh, int tSub = -1)
     {
-        Enums.eSchedule eSchedule;
+        eSchedule eSchedule;
         switch (iEnh)
         {
-            case Enums.eEnhance.Defense:
-                eSchedule = Enums.eSchedule.B;
+            case eEnhance.Defense:
+                eSchedule = eSchedule.B;
                 break;
-            case Enums.eEnhance.Interrupt:
-                return Enums.eSchedule.C;
-            case Enums.eEnhance.Mez:
-                return tSub <= -1 || !(tSub == 4 | tSub == 5) ? Enums.eSchedule.A : Enums.eSchedule.D;
-            case Enums.eEnhance.Range:
-                return Enums.eSchedule.B;
-            case Enums.eEnhance.Resistance:
-                return Enums.eSchedule.B;
-            case Enums.eEnhance.ToHit:
-                return Enums.eSchedule.B;
+            case eEnhance.Interrupt:
+                return eSchedule.C;
+            case eEnhance.Mez:
+                return tSub <= -1 || !(tSub == 4 | tSub == 5) ? eSchedule.A : eSchedule.D;
+            case eEnhance.Range:
+                return eSchedule.B;
+            case eEnhance.Resistance:
+                return eSchedule.B;
+            case eEnhance.ToHit:
+                return eSchedule.B;
             default:
-                eSchedule = Enums.eSchedule.A;
+                eSchedule = eSchedule.A;
                 break;
         }
         return eSchedule;
@@ -378,7 +379,7 @@ public class Enhancement : IEnhancement
     public int CheckAndFixIOLevel(int level)
     {
         int num;
-        if (this.TypeID != Enums.eType.InventO && this.TypeID != Enums.eType.SetO)
+        if (this.TypeID != eType.InventO && this.TypeID != eType.SetO)
         {
             num = level - 1;
         }
@@ -388,11 +389,11 @@ public class Enhancement : IEnhancement
             int iMin = 9;
             switch (this.TypeID)
             {
-                case Enums.eType.InventO:
+                case eType.InventO:
                     iMax = this.LevelMax;
                     iMin = this.LevelMin;
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     if (this.nIDSet > -1)
                     {
                         iMax = DatabaseAPI.Database.EnhancementSets[this.nIDSet].LevelMax;
@@ -405,7 +406,7 @@ public class Enhancement : IEnhancement
                 level = iMax;
             if (level < iMin)
                 level = iMin;
-            if (this.TypeID == Enums.eType.InventO)
+            if (this.TypeID == eType.InventO)
             {
                 if (iMax > 49)
                     iMax = 49;
@@ -421,15 +422,15 @@ public class Enhancement : IEnhancement
         return ((int)this.SubTypeID).ToString() + " Origin";
     }
 
-    public static float ApplyED(Enums.eSchedule iSched, float iVal)
+    public static float ApplyED(eSchedule iSched, float iVal)
     {
         float num;
         switch (iSched)
         {
-            case Enums.eSchedule.None:
+            case eSchedule.None:
                 num = 0.0f;
                 break;
-            case Enums.eSchedule.Multiple:
+            case eSchedule.Multiple:
                 num = 0.0f;
                 break;
             default:

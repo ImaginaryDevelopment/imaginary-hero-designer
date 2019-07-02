@@ -1,3 +1,4 @@
+using HeroDesigner.Schema;
 using System;
 using System.Drawing;
 using System.IO;
@@ -23,8 +24,8 @@ public class ConfigData
 {
     public float BaseAcc = 0.75f;
     public string UpdatePath = null;
-    public Enums.eEnhGrade CalcEnhOrigin = Enums.eEnhGrade.SingleO;
-    public Enums.eEnhRelative CalcEnhLevel = Enums.eEnhRelative.Even;
+    public eEnhGrade CalcEnhOrigin = eEnhGrade.SingleO;
+    public eEnhRelative CalcEnhLevel = eEnhRelative.Even;
     public int ExempHigh = 50;
     public int TeamSize = 1;
     public int ExempLow = 50;
@@ -32,12 +33,12 @@ public class ConfigData
     public int ExportScheme = 1;
     public int ExportTarget = 1;
     public bool DataDamageGraph = true;
-    public Enums.eDDGraph DataGraphType = Enums.eDDGraph.Both;
+    public eDDGraph DataGraphType = eDDGraph.Both;
     public bool ShowVillainColours = true;
     public bool FreshInstall = true;
     public int Columns = 3;
     public Size LastSize = new Size(1072, 760);
-    public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
+    public GraphStyle StatGraphStyle = GraphStyle.Stacked;
     public Enums.CompOverride[] CompOverride = new Enums.CompOverride[0];
     public ConfigData.PrintOptionProfile PrintProfile = ConfigData.PrintOptionProfile.SinglePage;
     public bool PrintProfileEnh = true;
@@ -46,8 +47,8 @@ public class ConfigData
     public string LastFileName = string.Empty;
     public string DefaultSaveFolder = string.Empty;
     public bool DesaturateInherent = true;
-    public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
-    public Enums.dmItem BuildOption = Enums.dmItem.Slot;
+    public dmModes BuildMode = dmModes.Dynamic;
+    public dmItem BuildOption = dmItem.Slot;
     public bool ShowPopup = true;
     public bool ShowAlphaPopup = true;
     public bool ReapeatOnMiddleClick = true;
@@ -56,7 +57,7 @@ public class ConfigData
         {
             3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
         };
-    public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
+    public eSpeedMeasure SpeedFormat = eSpeedMeasure.MilesPerHour;
     static ConfigData _current;
 
     public bool ExportBonusTotals;
@@ -66,8 +67,8 @@ public class ConfigData
     bool _hideOriginEnhancements;
 
     public bool CheckForUpdates;
-    public Enums.eVisibleSize DvState;
-    public Enums.eSuppress Suppression;
+    public eVisibleSize DvState;
+    public eSuppress Suppression;
     public bool UseArcanaTime;
     public ConfigData.SDamageMath DamageMath;
     public ConfigData.IncludeExclude Inc;
@@ -189,8 +190,8 @@ public class ConfigData
                 double num5 = (double)reader.ReadSingle();
                 double num6 = (double)reader.ReadSingle();
                 double num7 = (double)reader.ReadSingle();
-                this.CalcEnhLevel = (Enums.eEnhRelative)reader.ReadInt32();
-                this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
+                this.CalcEnhLevel = (eEnhRelative)reader.ReadInt32();
+                this.CalcEnhOrigin = (eEnhGrade)reader.ReadInt32();
                 this.ExempHigh = reader.ReadInt32();
                 this.ExempLow = reader.ReadInt32();
                 this.Inc.PvE = reader.ReadBoolean();
@@ -207,7 +208,7 @@ public class ConfigData
                 this.DamageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
                 this.DataDamageGraph = reader.ReadBoolean();
                 this.DataDamageGraphPercentageOnly = reader.ReadBoolean();
-                this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
+                this.DataGraphType = (eDDGraph)reader.ReadInt32();
                 this.ExportScheme = reader.ReadInt32();
                 this.ExportTarget = reader.ReadInt32();
                 if ((double)num1 >= 1.24000000953674)
@@ -221,8 +222,8 @@ public class ConfigData
                 this.Columns = reader.ReadInt32();
                 this.LastSize.Width = reader.ReadInt32();
                 this.LastSize.Height = reader.ReadInt32();
-                this.DvState = (Enums.eVisibleSize)reader.ReadInt32();
-                this.StatGraphStyle = (Enums.GraphStyle)reader.ReadInt32();
+                this.DvState = (eVisibleSize)reader.ReadInt32();
+                this.StatGraphStyle = (GraphStyle)reader.ReadInt32();
                 if ((double)num1 >= 1.0)
                     this.FreshInstall = reader.ReadBoolean();
                 if ((double)num1 >= 1.10000002384186)
@@ -282,8 +283,8 @@ public class ConfigData
                 {
                     this.EnhanceVisibility = reader.ReadBoolean();
                     reader.ReadBoolean();
-                    this.BuildMode = (Enums.dmModes)reader.ReadInt32();
-                    this.BuildOption = (Enums.dmItem)reader.ReadInt32();
+                    this.BuildMode = (dmModes)reader.ReadInt32();
+                    this.BuildOption = (dmItem)reader.ReadInt32();
                     this.UpdatePath = reader.ReadString();
                     if (string.IsNullOrEmpty(this.UpdatePath))
                         this.UpdatePath = "";
@@ -307,7 +308,7 @@ public class ConfigData
                 if ((double)num1 >= 1.25999999046326)
                     this.ExportHex = reader.ReadBoolean();
                 if ((double)num1 >= 1.26999998092651)
-                    this.SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
+                    this.SpeedFormat = (eSpeedMeasure)reader.ReadInt32();
                 if ((double)num1 >= 1.27999997138977)
                     this.SaveFolderChecked = reader.ReadBoolean();
                 if ((double)num1 >= 1.28999996185303)
@@ -316,7 +317,7 @@ public class ConfigData
                  * if ((double)num1 >= 1.29999995231628)
                 {  // numbers seem really off which is screwing up the rest of the read
                     tempNum = reader.ReadInt16();
-                    this.Suppression = (Enums.eSuppress)tempNum;
+                    this.Suppression = (eSuppress)tempNum;
                 }
                 if ((double)num1 >= 1.30999994277954)
                 {

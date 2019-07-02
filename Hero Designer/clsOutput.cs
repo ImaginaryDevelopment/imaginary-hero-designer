@@ -1,5 +1,6 @@
 
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -176,10 +177,10 @@ namespace Hero_Designer
                                 {
                                     switch (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].TypeID)
                                     {
-                                        case Enums.eType.Normal:
+                                        case eType.Normal:
                                             iText = this.LongExport ? iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.Slots) : iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.Slots);
                                             break;
-                                        case Enums.eType.InventO:
+                                        case eType.InventO:
                                             iText = this.LongExport ? iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.IO) + this.formatColor(" IO", ExportConfig.Element.IO) : iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.IO) + this.formatColor("-I", ExportConfig.Element.IO);
                                             if (exportIoLevels)
                                             {
@@ -187,17 +188,17 @@ namespace Hero_Designer
                                                 break;
                                             }
                                             break;
-                                        case Enums.eType.SpecialO:
+                                        case eType.SpecialO:
                                             if (!this.LongExport)
                                             {
-                                                string str4 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hamidon ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "X:" : "TN:") : "HY:") : "HO:";
+                                                string str4 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != eSubtype.Hamidon ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != eSubtype.Titan ? "X:" : "TN:") : "HY:") : "HO:";
                                                 iText += this.formatColor(str4 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.HO);
                                                 break;
                                             }
-                                            string str6 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID == Enums.eSubtype.Hamidon ? "HamiO:" : (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != Enums.eSubtype.Titan ? "Special:" : "Titan:") : "Hydra:");
+                                            string str6 = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID == eSubtype.Hamidon ? "HamiO:" : (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != eSubtype.Hydra ? (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].SubTypeID != eSubtype.Titan ? "Special:" : "Titan:") : "Hydra:");
                                             iText += this.formatColor(str6 + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.HO);
                                             break;
-                                        case Enums.eType.SetO:
+                                        case eType.SetO:
                                             if (flag1)
                                                 iText = this.LongExport ? iText + this.formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].DisplayName + " - ", ExportConfig.Element.SetO) : iText + this.formatColor(DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].nIDSet].ShortName + "-", ExportConfig.Element.SetO);
                                             iText = !this.LongExport ? iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].ShortName, ExportConfig.Element.SetO) : iText + this.formatColor(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh].Name, ExportConfig.Element.SetO);

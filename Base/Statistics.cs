@@ -1,5 +1,6 @@
 
 using Base.Data_Classes;
+using HeroDesigner.Schema;
 
 public class Statistics
 {
@@ -193,21 +194,21 @@ public class Statistics
         return this._character.Totals.Def[dType] * 100f;
     }
 
-    public float Speed(float iSpeed, Enums.eSpeedMeasure unit)
+    public float Speed(float iSpeed, eSpeedMeasure unit)
     {
         float num;
         switch (unit)
         {
-            case Enums.eSpeedMeasure.FeetPerSecond:
+            case eSpeedMeasure.FeetPerSecond:
                 num = iSpeed;
                 break;
-            case Enums.eSpeedMeasure.MetersPerSecond:
+            case eSpeedMeasure.MetersPerSecond:
                 num = iSpeed * 0.3048f;
                 break;
-            case Enums.eSpeedMeasure.MilesPerHour:
+            case eSpeedMeasure.MilesPerHour:
                 num = iSpeed * 0.6818182f;
                 break;
-            case Enums.eSpeedMeasure.KilometersPerHour:
+            case eSpeedMeasure.KilometersPerHour:
                 num = iSpeed * 1.09728f;
                 break;
             default:
@@ -217,21 +218,21 @@ public class Statistics
         return num;
     }
 
-    public float Distance(float iDist, Enums.eSpeedMeasure unit)
+    public float Distance(float iDist, eSpeedMeasure unit)
     {
         float num;
         switch (unit)
         {
-            case Enums.eSpeedMeasure.FeetPerSecond:
+            case eSpeedMeasure.FeetPerSecond:
                 num = iDist;
                 break;
-            case Enums.eSpeedMeasure.MetersPerSecond:
+            case eSpeedMeasure.MetersPerSecond:
                 num = iDist * 0.3048f;
                 break;
-            case Enums.eSpeedMeasure.MilesPerHour:
+            case eSpeedMeasure.MilesPerHour:
                 num = iDist;
                 break;
-            case Enums.eSpeedMeasure.KilometersPerHour:
+            case eSpeedMeasure.KilometersPerHour:
                 num = iDist * 0.3048f;
                 break;
             default:
@@ -241,7 +242,7 @@ public class Statistics
         return num;
     }
 
-    public float MovementRunSpeed(Enums.eSpeedMeasure sType, bool uncapped)
+    public float MovementRunSpeed(eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.RunSpd;
         if (!uncapped && (double)this._character.Totals.RunSpd > (double)this._character.Totals.MaxRunSpd)
@@ -249,7 +250,7 @@ public class Statistics
         return this.Speed(iSpeed, sType);
     }
 
-    public float MovementFlySpeed(Enums.eSpeedMeasure sType, bool uncapped)
+    public float MovementFlySpeed(eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.FlySpd;
         if (!uncapped && (double)this._character.Totals.FlySpd > (double)this._character.Totals.MaxFlySpd)
@@ -257,7 +258,7 @@ public class Statistics
         return this.Speed(iSpeed, sType);
     }
 
-    public float MovementJumpSpeed(Enums.eSpeedMeasure sType, bool uncapped)
+    public float MovementJumpSpeed(eSpeedMeasure sType, bool uncapped)
     {
         float iSpeed = this._character.Totals.JumpSpd;
         if (!uncapped && (double)this._character.Totals.JumpSpd > (double)this._character.Totals.MaxJumpSpd)
@@ -265,9 +266,9 @@ public class Statistics
         return this.Speed(iSpeed, sType);
     }
 
-    public float MovementJumpHeight(Enums.eSpeedMeasure sType)
+    public float MovementJumpHeight(eSpeedMeasure sType)
     {
-        return sType == Enums.eSpeedMeasure.KilometersPerHour | sType == Enums.eSpeedMeasure.MetersPerSecond ? this._character.TotalsCapped.JumpHeight * 0.3048f : this._character.TotalsCapped.JumpHeight;
+        return sType == eSpeedMeasure.KilometersPerHour | sType == eSpeedMeasure.MetersPerSecond ? this._character.TotalsCapped.JumpHeight * 0.3048f : this._character.TotalsCapped.JumpHeight;
     }
 
     public float BuffHaste(bool uncapped)

@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -223,7 +224,7 @@ namespace Hero_Designer
                                 num1 += recipeEntry.CraftCost;
                                 if (recipeEntry.CraftCostM > 0)
                                     num3 += recipeEntry.CraftCostM;
-                                else if (DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.Items[index1].Tag)].TypeID == Enums.eType.SetO)
+                                else if (DatabaseAPI.Database.Enhancements[Conversions.ToInteger(this.lvDPA.Items[index1].Tag)].TypeID == eType.SetO)
                                     num3 += recipeEntry.CraftCost;
                                 num2 += recipeEntry.BuyCost;
                             }
@@ -524,7 +525,7 @@ namespace Hero_Designer
                         {
                             if (MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh > -1)
                             {
-                                if (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].TypeID == Enums.eType.SetO)
+                                if (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].TypeID == eType.SetO)
                                 {
                                     items[0] = DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].nIDSet].DisplayName + ": ";
                                     string[] strArray1 = items;
@@ -534,7 +535,7 @@ namespace Hero_Designer
                                     (strArray2 = strArray1)[(int)(index3 = (IntPtr)num4)] = strArray2[(int)index3] + DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].Name;
                                     items[1] = Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.IOLevel + 1);
                                 }
-                                else if (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].TypeID == Enums.eType.InventO)
+                                else if (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].TypeID == eType.InventO)
                                 {
                                     items[0] = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.Enh].Name + " (Common)";
                                     items[1] = Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[hIDX].Slots[index2].Enhancement.IOLevel + 1);

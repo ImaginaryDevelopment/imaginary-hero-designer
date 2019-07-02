@@ -1,5 +1,6 @@
 
 using Base.Data_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -188,7 +189,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.MyAT.ClassType = (Enums.eClassType)this.cbClassType.SelectedIndex;
+            this.MyAT.ClassType = (eClassType)this.cbClassType.SelectedIndex;
         }
 
         bool CheckClassName()
@@ -226,7 +227,7 @@ namespace Hero_Designer
             this.cbClassType.BeginUpdate();
             this.cbClassType.Items.Clear();
             this.cbClassType.Items.AddRange((object[])Enum.GetNames(this.MyAT.ClassType.GetType()));
-            if (this.MyAT.ClassType > ~Enums.eClassType.None & this.MyAT.ClassType < (Enums.eClassType)this.cbClassType.Items.Count)
+            if (this.MyAT.ClassType > ~eClassType.None & this.MyAT.ClassType < (eClassType)this.cbClassType.Items.Count)
                 this.cbClassType.SelectedIndex = (int)this.MyAT.ClassType;
             else
                 this.cbClassType.SelectedIndex = 0;

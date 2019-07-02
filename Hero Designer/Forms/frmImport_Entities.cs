@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -163,7 +164,7 @@ namespace Hero_Designer
                                     entity1.DisplayName = array[2];
                                     entity1.ClassName = "Class_Minion_Pets";
                                     entity1.nClassID = DatabaseAPI.NidFromUidClass(entity1.ClassName);
-                                    entity1.EntityType = Enums.eSummonEntity.Pet;
+                                    entity1.EntityType = eSummonEntity.Pet;
                                     entity1.PowersetFullName = new string[1];
                                     entity1.nPowerset = new int[1];
                                     entity1.PowersetFullName[0] = array[0];

@@ -1,6 +1,7 @@
 
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -126,7 +127,7 @@ namespace Hero_Designer
                         flag = true;
                     for (int index = 0; index < MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects.Length && !flag; ++index)
                     {
-                        if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Damage || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Resistance && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].MagPercent < 0.0 || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.DamageBuff && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Mag > 0.0 && !MidsContext.Character.CurrentBuild.Powers[powerLocation].StatInclude || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.EntCreate)
+                        if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == eEffectType.Damage || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == eEffectType.Resistance && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].MagPercent < 0.0 || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == eEffectType.DamageBuff && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Mag > 0.0 && !MidsContext.Character.CurrentBuild.Powers[powerLocation].StatInclude || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == eEffectType.EntCreate)
                         {
                             string text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[powerLocation].NIDPower].DisplayName;
                             if (this.chkSortByLevel.Checked)
@@ -381,8 +382,8 @@ namespace Hero_Designer
             float rechargeTime = enhancedPower.RechargeTime;
             float num1 = (float)(Math.Ceiling((double)enhancedPower.CastTimeReal / 0.131999999284744) + 1.0) * 0.132f;
             float endCost = enhancedPower.EndCost;
-            Enums.ShortFX effectMag1 = enhancedPower.GetEffectMag(Enums.eEffectType.DamageBuff, Enums.eToWho.Self, false);
-            Enums.ShortFX effectMag2 = enhancedPower.GetEffectMag(Enums.eEffectType.Resistance, Enums.eToWho.Target, false);
+            var effectMag1 = enhancedPower.GetEffectMag(eEffectType.DamageBuff, eToWho.Self, false);
+            var effectMag2 = enhancedPower.GetEffectMag(eEffectType.Resistance, eToWho.Target, false);
             effectMag1.Multiply();
             effectMag2.Multiply();
             float num2 = damageValue / num1;

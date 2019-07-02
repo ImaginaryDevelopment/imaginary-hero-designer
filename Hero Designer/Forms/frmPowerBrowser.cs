@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.IO_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -792,42 +793,42 @@ namespace Hero_Designer
                 SolidBrush solidBrush4;
                 switch (DatabaseAPI.Database.Powersets[iSets[index]].SetType)
                 {
-                    case Enums.ePowerSetType.Primary:
+                    case ePowerSetType.Primary:
                         extendedBitmap1.Graphics.Clear(Color.Blue);
                         s = "1";
                         solidBrush4 = solidBrush2;
                         break;
-                    case Enums.ePowerSetType.Secondary:
+                    case ePowerSetType.Secondary:
                         extendedBitmap1.Graphics.Clear(Color.Red);
                         s = "2";
                         solidBrush4 = solidBrush1;
                         break;
-                    case Enums.ePowerSetType.Ancillary:
+                    case ePowerSetType.Ancillary:
                         extendedBitmap1.Graphics.Clear(Color.Green);
                         s = "A";
                         solidBrush4 = solidBrush2;
                         break;
-                    case Enums.ePowerSetType.Inherent:
+                    case ePowerSetType.Inherent:
                         extendedBitmap1.Graphics.Clear(Color.Silver);
                         s = "I";
                         solidBrush4 = solidBrush1;
                         break;
-                    case Enums.ePowerSetType.Pool:
+                    case ePowerSetType.Pool:
                         extendedBitmap1.Graphics.Clear(Color.Cyan);
                         s = "P";
                         solidBrush4 = solidBrush1;
                         break;
-                    case Enums.ePowerSetType.Accolade:
+                    case ePowerSetType.Accolade:
                         extendedBitmap1.Graphics.Clear(Color.Goldenrod);
                         s = "+";
                         solidBrush4 = solidBrush1;
                         break;
-                    case Enums.ePowerSetType.Temp:
+                    case ePowerSetType.Temp:
                         extendedBitmap1.Graphics.Clear(Color.WhiteSmoke);
                         s = "T";
                         solidBrush4 = solidBrush1;
                         break;
-                    case Enums.ePowerSetType.Pet:
+                    case ePowerSetType.Pet:
                         extendedBitmap1.Graphics.Clear(Color.Brown);
                         s = "x";
                         solidBrush4 = solidBrush2;
@@ -1118,14 +1119,14 @@ namespace Hero_Designer
             this.lvSet.Items.Clear();
             if (this.cbFilter.SelectedIndex == 0 & this.lvGroup.SelectedItems.Count > 0)
             {
-                int[] iSets = DatabaseAPI.NidSets(this.lvGroup.SelectedItems[0].SubItems[0].Text, "", Enums.ePowerSetType.None);
+                int[] iSets = DatabaseAPI.NidSets(this.lvGroup.SelectedItems[0].SubItems[0].Text, "", ePowerSetType.None);
                 this.BuildPowersetImageList(iSets);
                 this.List_Sets_AddBlock(iSets);
                 this.lvSet.Enabled = true;
             }
             else if (this.cbFilter.SelectedIndex == 1 & this.lvGroup.SelectedItems.Count > 0)
             {
-                int[] iSets = this.ConcatArray(this.ConcatArray(this.ConcatArray(this.ConcatArray(DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, Enums.ePowerSetType.Primary), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, Enums.ePowerSetType.Secondary)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, Enums.ePowerSetType.Ancillary)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, Enums.ePowerSetType.Inherent)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, Enums.ePowerSetType.Pool));
+                int[] iSets = this.ConcatArray(this.ConcatArray(this.ConcatArray(this.ConcatArray(DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, ePowerSetType.Primary), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, ePowerSetType.Secondary)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, ePowerSetType.Ancillary)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, ePowerSetType.Inherent)), DatabaseAPI.NidSets("", this.lvGroup.SelectedItems[0].SubItems[0].Text, ePowerSetType.Pool));
                 this.BuildPowersetImageList(iSets);
                 this.List_Sets_AddBlock(iSets);
                 this.lvSet.Enabled = true;
@@ -1149,7 +1150,7 @@ namespace Hero_Designer
             else if (this.cbFilter.SelectedIndex == 2)
             {
                 this.BusyMsg("Building List...");
-                int[] iSets = DatabaseAPI.NidSets("", "", Enums.ePowerSetType.None);
+                int[] iSets = DatabaseAPI.NidSets("", "", ePowerSetType.None);
                 this.BuildPowersetImageList(iSets);
                 this.List_Sets_AddBlock(iSets);
                 this.lvSet.Enabled = true;
@@ -1189,22 +1190,22 @@ namespace Hero_Designer
                     items[1] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].DisplayName;
                     switch (DatabaseAPI.Database.Powersets[iSets[imageIndex]].SetType)
                     {
-                        case Enums.ePowerSetType.Primary:
+                        case ePowerSetType.Primary:
                             items[2] = "Pri";
                             break;
-                        case Enums.ePowerSetType.Secondary:
+                        case ePowerSetType.Secondary:
                             items[2] = "Sec";
                             break;
-                        case Enums.ePowerSetType.Ancillary:
+                        case ePowerSetType.Ancillary:
                             items[2] = "Epic";
                             break;
-                        case Enums.ePowerSetType.Inherent:
+                        case ePowerSetType.Inherent:
                             items[2] = "Inh";
                             break;
-                        case Enums.ePowerSetType.Pool:
+                        case ePowerSetType.Pool:
                             items[2] = "Pool";
                             break;
-                        case Enums.ePowerSetType.Accolade:
+                        case ePowerSetType.Accolade:
                             items[2] = "Acc";
                             break;
                         default:

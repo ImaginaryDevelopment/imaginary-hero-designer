@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 
@@ -35,7 +36,7 @@ public class Powerset : IPowerset, IComparable
 
     public int[] Power { get; set; }
 
-    public Enums.ePowerSetType SetType { get; set; }
+    public ePowerSetType SetType { get; set; }
 
     public string DisplayName { get; set; }
 
@@ -90,7 +91,7 @@ public class Powerset : IPowerset, IComparable
         this.nID = -1;
         this.nArchetype = -1;
         this.DisplayName = "New Powerset";
-        this.SetType = Enums.ePowerSetType.None;
+        this.SetType = ePowerSetType.None;
         this.ImageName = string.Empty;
         this.FullName = string.Empty;
         this.SetName = string.Empty;
@@ -142,7 +143,7 @@ public class Powerset : IPowerset, IComparable
         this.Powers = new IPower[0];
         this.DisplayName = reader.ReadString();
         this.nArchetype = reader.ReadInt32();
-        this.SetType = (Enums.ePowerSetType)reader.ReadInt32();
+        this.SetType = (ePowerSetType)reader.ReadInt32();
         this.ImageName = reader.ReadString();
         this.FullName = reader.ReadString();
         if (string.IsNullOrEmpty(this.FullName))
@@ -217,47 +218,47 @@ public class Powerset : IPowerset, IComparable
                     if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, this.GroupName, StringComparison.OrdinalIgnoreCase))
                     {
                         this.ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        this.SetType = Enums.ePowerSetType.Primary;
+                        this.SetType = ePowerSetType.Primary;
                         break;
                     }
                     if (string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, this.GroupName, StringComparison.OrdinalIgnoreCase))
                     {
                         this.ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        this.SetType = Enums.ePowerSetType.Secondary;
+                        this.SetType = ePowerSetType.Secondary;
                         break;
                     }
                 }
             }
-            if (this.SetType == Enums.ePowerSetType.None)
+            if (this.SetType == ePowerSetType.None)
             {
                 switch (this.GroupName.ToUpper())
                 {
                     case "EPIC":
-                        this.SetType = Enums.ePowerSetType.Ancillary;
+                        this.SetType = ePowerSetType.Ancillary;
                         return true;
                     case "POOL":
-                        this.SetType = Enums.ePowerSetType.Pool;
+                        this.SetType = ePowerSetType.Pool;
                         return true;
                     case "MASTERMIND_PETS":
                     case "PETS":
                     case "VILLAIN_PETS":
                     case "KHELDIAN_PETS":
-                        this.SetType = Enums.ePowerSetType.Pet;
+                        this.SetType = ePowerSetType.Pet;
                         return true;
                     case "SET_BONUS":
-                        this.SetType = Enums.ePowerSetType.SetBonus;
+                        this.SetType = ePowerSetType.SetBonus;
                         return true;
                     case "TEMPORARY_POWERS":
-                        this.SetType = string.Equals(this.FullName, "TEMPORARY_POWERS.ACCOLADES", StringComparison.OrdinalIgnoreCase) ? Enums.ePowerSetType.Accolade : Enums.ePowerSetType.Temp;
+                        this.SetType = string.Equals(this.FullName, "TEMPORARY_POWERS.ACCOLADES", StringComparison.OrdinalIgnoreCase) ? ePowerSetType.Accolade : ePowerSetType.Temp;
                         return true;
                     case "INHERENT":
-                        this.SetType = Enums.ePowerSetType.Inherent;
+                        this.SetType = ePowerSetType.Inherent;
                         return true;
                     case "INCARNATE":
-                        this.SetType = Enums.ePowerSetType.Incarnate;
+                        this.SetType = ePowerSetType.Incarnate;
                         return true;
                     case "BOOSTS":
-                        this.SetType = Enums.ePowerSetType.Boost;
+                        this.SetType = ePowerSetType.Boost;
                         return true;
                     default:
                         flag = false;

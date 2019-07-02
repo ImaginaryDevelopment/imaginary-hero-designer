@@ -1,5 +1,6 @@
 
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 using System.Text;
@@ -257,7 +258,7 @@ public static class MidsCharacterFileFormat
                         if ((double)fVersion > 1.0)
                         {
                             int num3 = reader.ReadInt32();
-                            MidsContext.Character.Alignment = (Enums.Alignment)num3;
+                            MidsContext.Character.Alignment = (Alignment)num3;
                         }
                         MidsContext.Character.Name = reader.ReadString();
                         int num4 = reader.ReadInt32();
@@ -542,12 +543,12 @@ public static class MidsCharacterFileFormat
             writer.Write(DatabaseAPI.Database.Enhancements[slot.Enh].StaticIndex);
             if (DatabaseAPI.Database.Enhancements[slot.Enh].StaticIndex >= 0)
             {
-                if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
+                if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.SpecialO)
                 {
                     writer.Write(Convert.ToSByte(slot.RelativeLevel));
                     writer.Write(Convert.ToSByte(slot.Grade));
                 }
-                else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
+                else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.InventO | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.SetO)
                 {
                     writer.Write(Convert.ToSByte(slot.IOLevel));
                     writer.Write(Convert.ToSByte(slot.RelativeLevel));
@@ -575,18 +576,18 @@ public static class MidsCharacterFileFormat
         if (num <= -1)
             return;
         slot.Enh = num;
-        if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
+        if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.Normal || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.SpecialO)
         {
-            slot.RelativeLevel = (Enums.eEnhRelative)reader.ReadSByte();
-            slot.Grade = (Enums.eEnhGrade)reader.ReadSByte();
+            slot.RelativeLevel = (eEnhRelative)reader.ReadSByte();
+            slot.Grade = (eEnhGrade)reader.ReadSByte();
         }
-        else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
+        else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == eType.SetO)
         {
             slot.IOLevel = (int)reader.ReadSByte();
             if (slot.IOLevel > 49)
                 slot.IOLevel = 49;
             if ((double)fVersion > 1.0)
-                slot.RelativeLevel = (Enums.eEnhRelative)reader.ReadSByte();
+                slot.RelativeLevel = (eEnhRelative)reader.ReadSByte();
         }
     }
 

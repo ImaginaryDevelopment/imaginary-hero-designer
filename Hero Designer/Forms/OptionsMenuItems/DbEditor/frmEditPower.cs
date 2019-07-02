@@ -15,6 +15,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using System.Linq;
+using HeroDesigner.Schema;
 
 namespace Hero_Designer
 {
@@ -1521,7 +1522,7 @@ namespace Hero_Designer
         {
             if (this.Updating)
                 return;
-            this.myPower.EffectArea = (Enums.eEffectArea)this.cbEffectArea.SelectedIndex;
+            this.myPower.EffectArea = (eEffectArea)this.cbEffectArea.SelectedIndex;
         }
 
         void cbForcedClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -1590,7 +1591,7 @@ namespace Hero_Designer
         {
             if (this.Updating)
                 return;
-            this.myPower.AIReport = (Enums.eNotify)this.cbNotify.SelectedIndex;
+            this.myPower.AIReport = (eNotify)this.cbNotify.SelectedIndex;
         }
 
         void cbPowerType_SelectedIndexChanged(object sender, EventArgs e)
@@ -1598,7 +1599,7 @@ namespace Hero_Designer
         {
             if (this.Updating)
                 return;
-            this.myPower.PowerType = (Enums.ePowerType)this.cbPowerType.SelectedIndex;
+            this.myPower.PowerType = (ePowerType)this.cbPowerType.SelectedIndex;
         }
 
         public void CheckScaleValues()
@@ -1825,21 +1826,21 @@ namespace Hero_Designer
                 else if (e.CurrentValue == CheckState.Checked & e.NewValue == CheckState.Unchecked)
                     num1 -= numArray[e.Index];
                 if (this.rbFlagAutoHit.Checked)
-                    this.myPower.EntitiesAutoHit = (Enums.eEntity)num1;
+                    this.myPower.EntitiesAutoHit = (eEntity)num1;
                 else if (this.rbFlagAffected.Checked)
-                    this.myPower.EntitiesAffected = (Enums.eEntity)num1;
+                    this.myPower.EntitiesAffected = (eEntity)num1;
                 else if (this.rbFlagTargets.Checked)
-                    this.myPower.Target = (Enums.eEntity)num1;
+                    this.myPower.Target = (eEntity)num1;
                 else if (this.rbFlagTargetsSec.Checked)
-                    this.myPower.TargetSecondary = (Enums.eEntity)num1;
+                    this.myPower.TargetSecondary = (eEntity)num1;
                 else if (this.rbFlagCast.Checked)
-                    this.myPower.CastFlags = (Enums.eCastFlags)num1;
+                    this.myPower.CastFlags = (eCastFlags)num1;
                 else if (this.rbFlagVector.Checked)
-                    this.myPower.AttackTypes = (Enums.eVector)num1;
+                    this.myPower.AttackTypes = (eVector)num1;
                 else if (this.rbFlagRequired.Checked)
-                    this.myPower.ModesRequired = (Enums.eModeFlags)num1;
+                    this.myPower.ModesRequired = (eModeFlags)num1;
                 else if (this.rbFlagDisallow.Checked)
-                    this.myPower.ModesDisallowed = (Enums.eModeFlags)num1;
+                    this.myPower.ModesDisallowed = (eModeFlags)num1;
             }
         }
 
@@ -1876,19 +1877,19 @@ namespace Hero_Designer
                 string s;
                 switch (this.myPower.SetTypes[index])
                 {
-                    case Enums.eSetType.MeleeST:
+                    case eSetType.MeleeST:
                         s = "M\r\nST";
                         break;
-                    case Enums.eSetType.RangedST:
+                    case eSetType.RangedST:
                         s = "R\r\nST";
                         break;
-                    case Enums.eSetType.RangedAoE:
+                    case eSetType.RangedAoE:
                         s = "R\r\nAoE";
                         break;
-                    case Enums.eSetType.MeleeAoE:
+                    case eSetType.MeleeAoE:
                         s = "M\r\nAoE";
                         break;
-                    case Enums.eSetType.Snipe:
+                    case eSetType.Snipe:
                         s = "S";
                         break;
                     default:
@@ -1922,7 +1923,7 @@ namespace Hero_Designer
         void DrawSetList()
 
         {
-            Enums.eSetType eSetType = Enums.eSetType.Untyped;
+            eSetType eSetType = eSetType.Untyped;
             this.bxSetList = new ExtendedBitmap(this.pbInvSetList.Width, this.pbInvSetList.Height);
             int enhPadding1 = this.enhPadding;
             int enhPadding2 = this.enhPadding;
@@ -1941,24 +1942,24 @@ namespace Hero_Designer
                 Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, 30, 30);
                 this.bxSetList.Graphics.DrawImage((Image)I9Gfx.SetTypes.Bitmap, destRect, I9Gfx.GetImageRect(index), System.Drawing.GraphicsUnit.Pixel);
                 string s;
-                switch ((Enums.eSetType)index)
+                switch ((eSetType)index)
                 {
-                    case Enums.eSetType.MeleeST:
+                    case eSetType.MeleeST:
                         s = "M\r\nST";
                         break;
-                    case Enums.eSetType.RangedST:
+                    case eSetType.RangedST:
                         s = "R\r\nST";
                         break;
-                    case Enums.eSetType.RangedAoE:
+                    case eSetType.RangedAoE:
                         s = "R\r\nAoE";
                         break;
-                    case Enums.eSetType.MeleeAoE:
+                    case eSetType.MeleeAoE:
                         s = "M\r\nAoE";
                         break;
-                    case Enums.eSetType.Snipe:
+                    case eSetType.Snipe:
                         s = "S";
                         break;
-                    case Enums.eSetType.UniversalDamage:
+                    case eSetType.UniversalDamage:
                         s = "Dmg";
                         break;
                     default:
@@ -2069,7 +2070,7 @@ namespace Hero_Designer
         void FillCombo_Attribs()
 
         {
-            Enums.ePowerType ePowerType = Enums.ePowerType.Click;
+            ePowerType ePowerType = ePowerType.Click;
             bool updating = this.Updating;
             this.Updating = true;
             this.cbEffectArea.BeginUpdate();
@@ -2121,7 +2122,7 @@ namespace Hero_Designer
         void FillComboBoxes()
 
         {
-            Enums.eEnhance eEnhance = Enums.eEnhance.X_RechargeTime;
+            eEnhance eEnhance = eEnhance.X_RechargeTime;
             this.lvDisablePass1.BeginUpdate();
             this.lvDisablePass1.Items.Clear();
             this.lvDisablePass1.Items.AddRange((object[])Enum.GetNames(eEnhance.GetType()));
@@ -2200,13 +2201,13 @@ namespace Hero_Designer
             int num1 = this.myPower.IgnoreEnh.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if (this.myPower.IgnoreEnh[index] <= (Enums.eEnhance)(this.lvDisablePass1.Items.Count - 1))
+                if (this.myPower.IgnoreEnh[index] <= (eEnhance)(this.lvDisablePass1.Items.Count - 1))
                     this.lvDisablePass1.SetSelected((int)this.myPower.IgnoreEnh[index], true);
             }
             int num2 = this.myPower.Ignore_Buff.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (this.myPower.Ignore_Buff[index] <= (Enums.eEnhance)(this.lvDisablePass4.Items.Count - 1))
+                if (this.myPower.Ignore_Buff[index] <= (eEnhance)(this.lvDisablePass4.Items.Count - 1))
                     this.lvDisablePass4.SetSelected((int)this.myPower.Ignore_Buff[index], true);
             }
         }
@@ -2461,10 +2462,10 @@ namespace Hero_Designer
             if (this.Updating)
                 return;
             IPower power = this.myPower;
-            this.myPower.IgnoreEnh = new Enums.eEnhance[this.lvDisablePass1.SelectedIndices.Count - 1 + 1];
+            this.myPower.IgnoreEnh = new eEnhance[this.lvDisablePass1.SelectedIndices.Count - 1 + 1];
             int num = this.lvDisablePass1.SelectedIndices.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.myPower.IgnoreEnh[index] = (Enums.eEnhance)this.lvDisablePass1.SelectedIndices[index];
+                this.myPower.IgnoreEnh[index] = (eEnhance)this.lvDisablePass1.SelectedIndices[index];
         }
 
         void lvDisablePass4_SelectedIndexChanged(object sender, EventArgs e)
@@ -2473,10 +2474,10 @@ namespace Hero_Designer
             if (this.Updating)
                 return;
             IPower power = this.myPower;
-            this.myPower.Ignore_Buff = new Enums.eEnhance[this.lvDisablePass4.SelectedIndices.Count - 1 + 1];
+            this.myPower.Ignore_Buff = new eEnhance[this.lvDisablePass4.SelectedIndices.Count - 1 + 1];
             int num = this.lvDisablePass4.SelectedIndices.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.myPower.Ignore_Buff[index] = (Enums.eEnhance)this.lvDisablePass4.SelectedIndices[index];
+                this.myPower.Ignore_Buff[index] = (eEnhance)this.lvDisablePass4.SelectedIndices[index];
         }
 
         void lvFX_DoubleClick(object sender, EventArgs e)
@@ -2680,7 +2681,7 @@ namespace Hero_Designer
         void pbInvSetList_MouseDown(object sender, MouseEventArgs e)
 
         {
-            Enums.eSetType eSetType = Enums.eSetType.Untyped;
+            eSetType eSetType = eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
             string[] names = Enum.GetNames(eSetType.GetType());
             if (!(invSetListIndex < names.Length & invSetListIndex > -1))
@@ -2689,16 +2690,16 @@ namespace Hero_Designer
             int num = this.myPower.SetTypes.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (this.myPower.SetTypes[index] == (Enums.eSetType)invSetListIndex)
+                if (this.myPower.SetTypes[index] == (eSetType)invSetListIndex)
                     flag = true;
             }
             if (!(flag | this.myPower.SetTypes.Length > 10))
             {
                 IPower power = this.myPower;
-                Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray((Array)power.SetTypes, (Array)new Enums.eSetType[this.myPower.SetTypes.Length + 1]);
+                eSetType[] eSetTypeArray = (eSetType[])Utils.CopyArray((Array)power.SetTypes, (Array)new eSetType[this.myPower.SetTypes.Length + 1]);
                 power.SetTypes = eSetTypeArray;
-                this.myPower.SetTypes[this.myPower.SetTypes.Length - 1] = (Enums.eSetType)invSetListIndex;
-                Array.Sort<Enums.eSetType>(this.myPower.SetTypes);
+                this.myPower.SetTypes[this.myPower.SetTypes.Length - 1] = (eSetType)invSetListIndex;
+                Array.Sort<eSetType>(this.myPower.SetTypes);
                 this.DrawAcceptedSets();
             }
         }
@@ -2706,7 +2707,7 @@ namespace Hero_Designer
         void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
 
         {
-            Enums.eSetType eSetType = Enums.eSetType.Untyped;
+            eSetType eSetType = eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
             string[] names = Enum.GetNames(eSetType.GetType());
             if (invSetListIndex < names.Length & invSetListIndex > -1)
@@ -2734,24 +2735,24 @@ namespace Hero_Designer
             for (int index = 0; index <= num1; ++index)
                 numArray[index] = (int)this.myPower.SetTypes[index];
             int index1 = 0;
-            this.myPower.SetTypes = new Enums.eSetType[this.myPower.SetTypes.Length - 2 + 1];
+            this.myPower.SetTypes = new eSetType[this.myPower.SetTypes.Length - 2 + 1];
             int num2 = numArray.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
             {
                 if (index2 != invSetIndex)
                 {
-                    this.myPower.SetTypes[index1] = (Enums.eSetType)numArray[index2];
+                    this.myPower.SetTypes[index1] = (eSetType)numArray[index2];
                     ++index1;
                 }
             }
-            Array.Sort<Enums.eSetType>(this.myPower.SetTypes);
+            Array.Sort<eSetType>(this.myPower.SetTypes);
             this.DrawAcceptedSets();
         }
 
         void pbInvSetUsed_MouseMove(object sender, MouseEventArgs e)
 
         {
-            Enums.eSetType eSetType = Enums.eSetType.Untyped;
+            eSetType eSetType = eSetType.Untyped;
             int invSetIndex = this.GetInvSetIndex(new System.Drawing.Point(e.X, e.Y));
             string[] names = Enum.GetNames(eSetType.GetType());
             if (invSetIndex < this.myPower.SetTypes.Length & invSetIndex > -1)
@@ -3134,9 +3135,9 @@ namespace Hero_Designer
 
         {
             IPower power = this.myPower;
-            this.chkBuffCycle.Enabled = power.PowerType == Enums.ePowerType.Click;
-            this.chkAlwaysToggle.Enabled = power.PowerType == Enums.ePowerType.Toggle;
-            if ((double)power.ActivatePeriod > 0.0 & power.PowerType == Enums.ePowerType.Toggle)
+            this.chkBuffCycle.Enabled = power.PowerType == ePowerType.Click;
+            this.chkAlwaysToggle.Enabled = power.PowerType == ePowerType.Toggle;
+            if ((double)power.ActivatePeriod > 0.0 & power.PowerType == ePowerType.Toggle)
                 this.lblEndCost.Text = "(" + Strings.Format((float)((double)power.EndCost / (double)power.ActivatePeriod), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)";
             else
                 this.lblEndCost.Text = "";

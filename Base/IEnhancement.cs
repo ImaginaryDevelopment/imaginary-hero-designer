@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System.IO;
 
 public interface IEnhancement
@@ -7,7 +8,7 @@ public interface IEnhancement
 
     bool HasPowerEffect { get; }
 
-    Enums.eSchedule Schedule { get; }
+    eSchedule Schedule { get; }
 
     float Probability { get; }
 
@@ -23,9 +24,9 @@ public interface IEnhancement
 
     string Desc { get; set; }
 
-    Enums.eType TypeID { get; set; }
+    eType TypeID { get; set; }
 
-    Enums.eSubtype SubTypeID { get; set; }
+    eSubtype SubTypeID { get; set; }
 
     int[] ClassID { get; set; }
 
@@ -51,9 +52,9 @@ public interface IEnhancement
 
     bool Unique { get; set; }
 
-    Enums.eEnhMutex MutExID { get; set; }
+    eEnhMutex MutExID { get; set; }
 
-    Enums.eBuffDebuff BuffMode { get; set; }
+    eBuffDebuff BuffMode { get; set; }
 
     string RecipeName { get; set; }
 

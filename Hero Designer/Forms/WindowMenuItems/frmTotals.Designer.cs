@@ -159,7 +159,7 @@ namespace Hero_Designer
             this.graphMaxEnd.ShowScale = false;
 
             this.graphMaxEnd.Size = new System.Drawing.Size(300, 15);
-            this.graphMaxEnd.Style = Enums.GraphStyle.baseOnly;
+            this.graphMaxEnd.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphMaxEnd.TabIndex = 7;
             this.graphMaxEnd.TextWidth = 125;
             this.graphHP.BackColor = System.Drawing.Color.Black;
@@ -192,7 +192,7 @@ namespace Hero_Designer
             this.graphHP.ShowScale = false;
 
             this.graphHP.Size = new System.Drawing.Size(300, 15);
-            this.graphHP.Style = Enums.GraphStyle.baseOnly;
+            this.graphHP.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphHP.TabIndex = 9;
             this.graphHP.TextWidth = 125;
             this.graphDef.BackColor = System.Drawing.Color.Black;
@@ -225,7 +225,7 @@ namespace Hero_Designer
             this.graphDef.ShowScale = false;
 
             this.graphDef.Size = new System.Drawing.Size(300, 144);
-            this.graphDef.Style = Enums.GraphStyle.baseOnly;
+            this.graphDef.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphDef.TabIndex = 0;
             this.graphDef.TextWidth = 125;
             this.graphDrain.BackColor = System.Drawing.Color.Black;
@@ -258,7 +258,7 @@ namespace Hero_Designer
             this.graphDrain.ShowScale = false;
 
             this.graphDrain.Size = new System.Drawing.Size(300, 15);
-            this.graphDrain.Style = Enums.GraphStyle.baseOnly;
+            this.graphDrain.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphDrain.TabIndex = 8;
             this.graphDrain.TextWidth = 125;
             this.graphRes.BackColor = System.Drawing.Color.Black;
@@ -291,7 +291,7 @@ namespace Hero_Designer
             this.graphRes.ShowScale = false;
 
             this.graphRes.Size = new System.Drawing.Size(300, 116);
-            this.graphRes.Style = Enums.GraphStyle.Stacked;
+            this.graphRes.Style = HeroDesigner.Schema.GraphStyle.Stacked;
             this.graphRes.TabIndex = 2;
             this.graphRes.TextWidth = 125;
             this.graphRec.BackColor = System.Drawing.Color.Black;
@@ -324,7 +324,7 @@ namespace Hero_Designer
             this.graphRec.ShowScale = false;
 
             this.graphRec.Size = new System.Drawing.Size(300, 15);
-            this.graphRec.Style = Enums.GraphStyle.baseOnly;
+            this.graphRec.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphRec.TabIndex = 6;
             this.graphRec.TextWidth = 125;
             this.graphRegen.BackColor = System.Drawing.Color.Black;
@@ -357,7 +357,7 @@ namespace Hero_Designer
             this.graphRegen.ShowScale = false;
 
             this.graphRegen.Size = new System.Drawing.Size(300, 15);
-            this.graphRegen.Style = Enums.GraphStyle.baseOnly;
+            this.graphRegen.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphRegen.TabIndex = 4;
             this.graphRegen.TextWidth = 125;
             this.Panel1.BackColor = System.Drawing.Color.Black;
@@ -461,7 +461,7 @@ namespace Hero_Designer
             this.graphStealth.ShowScale = false;
 
             this.graphStealth.Size = new System.Drawing.Size(300, 46);
-            this.graphStealth.Style = Enums.GraphStyle.baseOnly;
+            this.graphStealth.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphStealth.TabIndex = 12;
             this.graphStealth.TextWidth = 125;
             this.graphAcc.BackColor = System.Drawing.Color.Black;
@@ -494,7 +494,7 @@ namespace Hero_Designer
             this.graphAcc.ShowScale = false;
 
             this.graphAcc.Size = new System.Drawing.Size(300, 15);
-            this.graphAcc.Style = Enums.GraphStyle.baseOnly;
+            this.graphAcc.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphAcc.TabIndex = 10;
             this.graphAcc.TextWidth = 125;
             this.graphToHit.BackColor = System.Drawing.Color.Black;
@@ -527,7 +527,7 @@ namespace Hero_Designer
             this.graphToHit.ShowScale = false;
 
             this.graphToHit.Size = new System.Drawing.Size(300, 15);
-            this.graphToHit.Style = Enums.GraphStyle.baseOnly;
+            this.graphToHit.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphToHit.TabIndex = 9;
             this.graphToHit.TextWidth = 125;
             this.lblMisc.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -569,7 +569,7 @@ namespace Hero_Designer
             this.graphMovement.ShowScale = false;
 
             this.graphMovement.Size = new System.Drawing.Size(300, 61);
-            this.graphMovement.Style = Enums.GraphStyle.Stacked;
+            this.graphMovement.Style = HeroDesigner.Schema.GraphStyle.Stacked;
             this.graphMovement.TabIndex = 2;
             this.graphMovement.TextWidth = 125;
             this.lblMovement.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -611,7 +611,7 @@ namespace Hero_Designer
             this.graphHaste.ShowScale = false;
 
             this.graphHaste.Size = new System.Drawing.Size(300, 15);
-            this.graphHaste.Style = Enums.GraphStyle.baseOnly;
+            this.graphHaste.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphHaste.TabIndex = 7;
             this.graphHaste.TextWidth = 125;
             this.Panel2.BackColor = System.Drawing.Color.Black;
@@ -655,7 +655,7 @@ namespace Hero_Designer
             this.graphElusivity.ShowScale = false;
 
             this.graphElusivity.Size = new System.Drawing.Size(300, 15);
-            this.graphElusivity.Style = Enums.GraphStyle.baseOnly;
+            this.graphElusivity.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphElusivity.TabIndex = 14;
             this.graphElusivity.TextWidth = 125;
             this.graphThreat.BackColor = System.Drawing.Color.Black;
@@ -688,7 +688,7 @@ namespace Hero_Designer
             this.graphThreat.ShowScale = false;
 
             this.graphThreat.Size = new System.Drawing.Size(300, 15);
-            this.graphThreat.Style = Enums.GraphStyle.baseOnly;
+            this.graphThreat.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphThreat.TabIndex = 13;
             this.graphThreat.TextWidth = 125;
             this.graphEndRdx.BackColor = System.Drawing.Color.Black;
@@ -721,7 +721,7 @@ namespace Hero_Designer
             this.graphEndRdx.ShowScale = false;
 
             this.graphEndRdx.Size = new System.Drawing.Size(300, 15);
-            this.graphEndRdx.Style = Enums.GraphStyle.baseOnly;
+            this.graphEndRdx.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphEndRdx.TabIndex = 12;
             this.graphEndRdx.TextWidth = 125;
             this.graphDam.BackColor = System.Drawing.Color.Black;
@@ -754,7 +754,7 @@ namespace Hero_Designer
             this.graphDam.ShowScale = false;
 
             this.graphDam.Size = new System.Drawing.Size(300, 15);
-            this.graphDam.Style = Enums.GraphStyle.Stacked;
+            this.graphDam.Style = HeroDesigner.Schema.GraphStyle.Stacked;
             this.graphDam.TabIndex = 11;
             this.graphDam.TextWidth = 125;
 
@@ -831,7 +831,7 @@ namespace Hero_Designer
             this.graphSRes.ShowScale = false;
 
             this.graphSRes.Size = new System.Drawing.Size(300, 136);
-            this.graphSRes.Style = Enums.GraphStyle.baseOnly;
+            this.graphSRes.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphSRes.TabIndex = 14;
             this.graphSRes.TextWidth = 125;
             this.lblSRes.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -873,7 +873,7 @@ namespace Hero_Designer
             this.graphSDeb.ShowScale = false;
 
             this.graphSDeb.Size = new System.Drawing.Size(300, 88);
-            this.graphSDeb.Style = Enums.GraphStyle.baseOnly;
+            this.graphSDeb.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphSDeb.TabIndex = 12;
             this.graphSDeb.TextWidth = 125;
             this.lblSDeb.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -915,7 +915,7 @@ namespace Hero_Designer
             this.graphSProt.ShowScale = false;
 
             this.graphSProt.Size = new System.Drawing.Size(300, 136);
-            this.graphSProt.Style = Enums.GraphStyle.baseOnly;
+            this.graphSProt.Style = HeroDesigner.Schema.GraphStyle.baseOnly;
             this.graphSProt.TabIndex = 2;
             this.graphSProt.TextWidth = 125;
             this.lblSProt.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);

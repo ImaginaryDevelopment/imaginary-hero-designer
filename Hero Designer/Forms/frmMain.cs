@@ -4,6 +4,7 @@ using Base.Display;
 using Base.IO_Classes;
 using Base.Master_Classes;
 using Hero_Designer.My;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -166,7 +167,7 @@ namespace Hero_Designer
 
                 this.dvAnchored.Size = new System.Drawing.Size(300, 347);
                 this.dvAnchored.TabIndex = 69;
-                this.dvAnchored.VisibleSize = Enums.eVisibleSize.Full;
+                this.dvAnchored.VisibleSize = eVisibleSize.Full;
                 var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
                 this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
                 this.Name = nameof(frmMain);
@@ -533,7 +534,7 @@ namespace Hero_Designer
         void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbAncillary = this.cbAncillary;
-            frmMain.cbDrawItem(ref cbAncillary, Enums.ePowerSetType.Ancillary, e);
+            frmMain.cbDrawItem(ref cbAncillary, ePowerSetType.Ancillary, e);
             this.cbAncillary = cbAncillary;
         }
 
@@ -597,7 +598,7 @@ namespace Hero_Designer
 
         static void cbDrawItem(
           ref ComboBox Target,
-          Enums.ePowerSetType SetType,
+          ePowerSetType SetType,
           DrawItemEventArgs e)
         {
             if (!MainModule.MidsController.IsAppInitialized)
@@ -685,7 +686,7 @@ namespace Hero_Designer
         void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool0 = this.cbPool0;
-            frmMain.cbDrawItem(ref cbPool0, Enums.ePowerSetType.Pool, e);
+            frmMain.cbDrawItem(ref cbPool0, ePowerSetType.Pool, e);
             this.cbPool0 = cbPool0;
         }
 
@@ -710,7 +711,7 @@ namespace Hero_Designer
         void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool1 = this.cbPool1;
-            frmMain.cbDrawItem(ref cbPool1, Enums.ePowerSetType.Pool, e);
+            frmMain.cbDrawItem(ref cbPool1, ePowerSetType.Pool, e);
             this.cbPool1 = cbPool1;
         }
 
@@ -733,7 +734,7 @@ namespace Hero_Designer
         void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool2 = this.cbPool2;
-            frmMain.cbDrawItem(ref cbPool2, Enums.ePowerSetType.Pool, e);
+            frmMain.cbDrawItem(ref cbPool2, ePowerSetType.Pool, e);
             this.cbPool2 = cbPool2;
         }
 
@@ -756,7 +757,7 @@ namespace Hero_Designer
         void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPool3 = this.cbPool3;
-            frmMain.cbDrawItem(ref cbPool3, Enums.ePowerSetType.Pool, e);
+            frmMain.cbDrawItem(ref cbPool3, ePowerSetType.Pool, e);
             this.cbPool3 = cbPool3;
         }
 
@@ -779,7 +780,7 @@ namespace Hero_Designer
         void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbPrimary = this.cbPrimary;
-            frmMain.cbDrawItem(ref cbPrimary, Enums.ePowerSetType.Primary, e);
+            frmMain.cbDrawItem(ref cbPrimary, ePowerSetType.Primary, e);
             this.cbPrimary = cbPrimary;
         }
 
@@ -790,7 +791,7 @@ namespace Hero_Designer
             if (MidsContext.Character == null || MidsContext.Character.Archetype == null || this.cbPrimary.SelectedIndex < 0)
                 return;
             string ExtraString = "This is your primary powerset. This powerset can be changed after a build has been started, and any placed powers will be swapped out for those in the new set.";
-            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary)[this.cbPrimary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbPrimary.Bounds, ExtraString);
+            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Primary)[this.cbPrimary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbPrimary.Bounds, ExtraString);
         }
 
         void cbPrimary_SelectedIndexChanged(object sender, EventArgs e)
@@ -804,7 +805,7 @@ namespace Hero_Designer
         void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
         {
             ComboBox cbSecondary = this.cbSecondary;
-            frmMain.cbDrawItem(ref cbSecondary, Enums.ePowerSetType.Secondary, e);
+            frmMain.cbDrawItem(ref cbSecondary, ePowerSetType.Secondary, e);
             this.cbSecondary = cbSecondary;
         }
 
@@ -815,7 +816,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon == null || MidsContext.Character.Archetype.Idx < 0 || this.cbSecondary.SelectedIndex < 0)
                 return;
             string ExtraString = MidsContext.Character.Powersets[0].nIDLinkSecondary <= -1 ? "This is your secondary powerset. This powerset can be changed after a build has been started, and any placed powers will be swapped out for those in the new set." : "This is your secondary powerset. This powerset is linked to your primary set and cannot be changed independantly. However, it can be changed by selecting a different primary powerset.";
-            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
+            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
         }
 
         void cbSecondary_SelectedIndexChanged(object sender, EventArgs e)
@@ -828,10 +829,10 @@ namespace Hero_Designer
 
         void ChangeSets()
         {
-            IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Primary);
-            IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary);
-            IPowerset[] powersetIndexes3 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Pool);
-            IPowerset[] powersetIndexes4 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Ancillary);
+            IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Primary);
+            IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Secondary);
+            IPowerset[] powersetIndexes3 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Pool);
+            IPowerset[] powersetIndexes4 = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Ancillary);
             if (MainModule.MidsController.Toon != null)
             {
                 IPowerset powerset1 = MidsContext.Character.Powersets[0];
@@ -959,7 +960,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
+        static bool ComboCheckPool(ref ComboBox iCB, ePowerSetType iSetType)
         {
             bool flag1 = false;
             bool flag2 = false;
@@ -998,8 +999,8 @@ namespace Hero_Designer
 
         static bool ComboCheckPS(
           ref ComboBox iCB,
-          Enums.PowersetType iSetID,
-          Enums.ePowerSetType iSetType)
+          PowersetType iSetID,
+          ePowerSetType iSetType)
         {
             bool flag1 = false;
             bool flag2 = false;
@@ -1157,7 +1158,7 @@ namespace Hero_Designer
                 str1 = " (Placing " + Conversions.ToString(MidsContext.Character.Level + 1) + ")";
             this.SetTitleBar(MainModule.MidsController.Toon.IsHero());
             string str3 = MidsContext.Character.Name + ": ";
-            if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp & str1 != "")
+            if (MidsContext.Config.BuildMode == dmModes.LevelUp & str1 != "")
                 str3 = str3 + "Level " + Conversions.ToString(level) + str1 + " ";
             string str4 = str3 + MidsContext.Character.Archetype.Origin[MidsContext.Character.Origin] + " " + MidsContext.Character.Archetype.DisplayName;
             if (MainModule.MidsController.Toon.Locked)
@@ -1246,7 +1247,7 @@ namespace Hero_Designer
                     }
                     else
                         this.drawing.bxBuffer.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
-                    if (MidsContext.Config.CalcEnhLevel == Enums.eEnhRelative.None | MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].Slots[Index].Level >= MidsContext.Config.ForceLevel | this.drawing.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].StatInclude)
+                    if (MidsContext.Config.CalcEnhLevel == eEnhRelative.None | MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].Slots[Index].Level >= MidsContext.Config.ForceLevel | this.drawing.InterfaceMode == eInterfaceMode.PowerToggle & !MidsContext.Character.CurrentBuild.Powers[this.FlipPowerID].StatInclude)
                     {
                         rectangle2.Inflate(1, 1);
                         this.drawing.bxBuffer.Graphics.FillEllipse((Brush)solidBrush, rectangle2);
@@ -1389,12 +1390,12 @@ namespace Hero_Designer
             }
             else if (MidsContext.Character.Name != string.Empty)
             {
-                if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.VillainEpic)
+                if (MidsContext.Character.Archetype.ClassType == eClassType.VillainEpic)
                     this.dlgSave.FileName = MidsContext.Character.Name + " - Arachnos " + MidsContext.Character.Powersets[0].DisplayName.Replace(" Training", string.Empty).Replace("Arachnos ", string.Empty);
                 else
                     this.dlgSave.FileName = MidsContext.Character.Name + " - " + MidsContext.Character.Archetype.DisplayName + " (" + MidsContext.Character.Powersets[0].DisplayName + ")";
             }
-            else if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.VillainEpic)
+            else if (MidsContext.Character.Archetype.ClassType == eClassType.VillainEpic)
             {
                 this.dlgSave.FileName = "Arachnos " + MidsContext.Character.Powersets[0].DisplayName.Replace(" Training", string.Empty).Replace("Arachnos ", string.Empty);
             }
@@ -2144,7 +2145,7 @@ namespace Hero_Designer
             }
             float num4 = num1;
             MainModule.MidsController.Toon.GenerateBuffedPowerArray();
-            float num5 = num1 * (1f + MidsContext.Character.TotalsCapped.BuffDam + Enhancement.ApplyED(Enums.eSchedule.A, 2.277f));
+            float num5 = num1 * (1f + MidsContext.Character.TotalsCapped.BuffDam + Enhancement.ApplyED(eSchedule.A, 2.277f));
             if (MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPS | MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPA)
                 num5 *= 1.5f;
             this.myDataView.info_Damage.nHighBase = num4;
@@ -2153,7 +2154,7 @@ namespace Hero_Designer
 
         int GetFirstValidSetEnh(int SlotIndex, int hID)
         {
-            if (this.LastEnhPlaced != null && this.LastEnhPlaced.Enh >= 0 && DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].TypeID == Enums.eType.SetO)
+            if (this.LastEnhPlaced != null && this.LastEnhPlaced.Enh >= 0 && DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].TypeID == eType.SetO)
             {
                 int nIdSet = DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].nIDSet;
                 if (nIdSet < 0)
@@ -2183,7 +2184,7 @@ namespace Hero_Designer
                     return new I9Slot();
                 if (this.LastEnhPlaced.Enh <= -1)
                     return new I9Slot();
-                if (DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].TypeID != Enums.eType.SetO)
+                if (DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].TypeID != eType.SetO)
                 {
                     if (DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[powerIndex].NIDPower].IsEnhancementValid(this.LastEnhPlaced.Enh))
                         return this.LastEnhPlaced;
@@ -2202,7 +2203,7 @@ namespace Hero_Designer
 
         void heroVillain_ButtonClicked()
         {
-            MidsContext.Character.Alignment = !this.heroVillain.Checked ? Enums.Alignment.Hero : Enums.Alignment.Villain;
+            MidsContext.Character.Alignment = !this.heroVillain.Checked ? Alignment.Hero : Alignment.Villain;
             if (this.fAccolade != null)
             {
                 if (!this.fAccolade.IsDisposed)
@@ -2327,7 +2328,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            MidsContext.Config.BuildMode = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? Enums.dmModes.Dynamic : Enums.dmModes.LevelUp;
+            MidsContext.Config.BuildMode = MidsContext.Config.BuildMode != dmModes.Dynamic ? dmModes.Dynamic : dmModes.LevelUp;
             MidsContext.Character.ResetLevel();
             this.PowerModified();
             this.UpdateDMBuffer();
@@ -2487,7 +2488,7 @@ namespace Hero_Designer
 
         void lblLocked0_Paint(object sender, PaintEventArgs e)
         {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool0);
+            this.MiniPaint(ref e, PowersetType.Pool0);
         }
 
         void lblLocked1_MouseMove(object sender, MouseEventArgs e)
@@ -2500,7 +2501,7 @@ namespace Hero_Designer
 
         void lblLocked1_Paint(object sender, PaintEventArgs e)
         {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool1);
+            this.MiniPaint(ref e, PowersetType.Pool1);
         }
 
         void lblLocked2_MouseMove(object sender, MouseEventArgs e)
@@ -2513,7 +2514,7 @@ namespace Hero_Designer
 
         void lblLocked2_Paint(object sender, PaintEventArgs e)
         {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool2);
+            this.MiniPaint(ref e, PowersetType.Pool2);
         }
 
         void lblLocked3_MouseMove(object sender, MouseEventArgs e)
@@ -2526,7 +2527,7 @@ namespace Hero_Designer
 
         void lblLocked3_Paint(object sender, PaintEventArgs e)
         {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool3);
+            this.MiniPaint(ref e, PowersetType.Pool3);
         }
 
         void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
@@ -2539,7 +2540,7 @@ namespace Hero_Designer
 
         void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
         {
-            this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
+            this.MiniPaint(ref e, PowersetType.Ancillary);
         }
 
         void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
@@ -2552,7 +2553,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon == null || MidsContext.Character.Archetype.Idx < 0 || this.cbSecondary.SelectedIndex < 0)
                 return;
             string ExtraString = MidsContext.Character.Powersets[0].nIDLinkSecondary <= -1 ? "This is your secondary powerset. This powerset can be changed after a build has been started, and any placed powers will be swapped out for those in the new set." : "This is your secondary powerset. This powerset is linked to your primary set and cannot be changed independantly. However, it can be changed by selecting a different primary powerset.";
-            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
+            this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
         }
 
         void llAll_EmptyHover()
@@ -2599,7 +2600,7 @@ namespace Hero_Designer
         {
             if (Button == MouseButtons.Left)
             {
-                this.PowerPicked(Enums.PowersetType.Pool0, Item.nIDPower);
+                this.PowerPicked(PowersetType.Pool0, Item.nIDPower);
             }
             else
             {
@@ -2621,7 +2622,7 @@ namespace Hero_Designer
         {
             if (Button == MouseButtons.Left)
             {
-                this.PowerPicked(Enums.PowersetType.Pool1, Item.nIDPower);
+                this.PowerPicked(PowersetType.Pool1, Item.nIDPower);
             }
             else
             {
@@ -2643,7 +2644,7 @@ namespace Hero_Designer
         {
             if (Button == MouseButtons.Left)
             {
-                this.PowerPicked(Enums.PowersetType.Pool2, Item.nIDPower);
+                this.PowerPicked(PowersetType.Pool2, Item.nIDPower);
             }
             else
             {
@@ -2665,7 +2666,7 @@ namespace Hero_Designer
         {
             if (Button == MouseButtons.Left)
             {
-                this.PowerPicked(Enums.PowersetType.Pool3, Item.nIDPower);
+                this.PowerPicked(PowersetType.Pool3, Item.nIDPower);
             }
             else
             {
@@ -2743,7 +2744,7 @@ namespace Hero_Designer
             }
         }
 
-        void MiniPaint(ref PaintEventArgs e, Enums.PowersetType iId)
+        void MiniPaint(ref PaintEventArgs e, PowersetType iId)
         {
             if (MainModule.MidsController.Toon == null || MidsContext.Character.Powersets[(int)iId] == null)
                 return;
@@ -2822,9 +2823,9 @@ namespace Hero_Designer
 
         void pbDynMode_Click(object sender, EventArgs e)
         {
-            if (MainModule.MidsController.Toon == null || MidsContext.Config.BuildMode != Enums.dmModes.Dynamic)
+            if (MainModule.MidsController.Toon == null || MidsContext.Config.BuildMode != dmModes.Dynamic)
                 return;
-            MidsContext.Config.BuildOption = MidsContext.Config.BuildOption == Enums.dmItem.Power ? Enums.dmItem.Slot : Enums.dmItem.Power;
+            MidsContext.Config.BuildOption = MidsContext.Config.BuildOption == dmItem.Power ? dmItem.Slot : dmItem.Power;
             this.UpdateDMBuffer();
             this.pbDynMode.Refresh();
         }
@@ -3007,7 +3008,7 @@ namespace Hero_Designer
                     if (MidsContext.Character.CanPlaceSlot & MainModule.MidsController.Toon.SlotCheck(MidsContext.Character.CurrentBuild.Powers[index]) > -1)
                     {
                         this.drawing.HighlightSlot(index, false);
-                        if (index > -1 & this.drawing.InterfaceMode != Enums.eInterfaceMode.PowerToggle)
+                        if (index > -1 & this.drawing.InterfaceMode != eInterfaceMode.PowerToggle)
                             this.pnlGFX.Cursor = Cursors.Hand;
                         else
                             this.pnlGFX.Cursor = Cursors.Default;
@@ -3046,7 +3047,7 @@ namespace Hero_Designer
                     bool flag = MidsContext.Character.CurrentBuild.Powers[index1].NIDPower < 0;
                     if (!(e.Button == MouseButtons.Left & Control.ModifierKeys == (System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control)) || !this.EditAccoladesOrTemps(index1))
                     {
-                        if (this.drawing.InterfaceMode == Enums.eInterfaceMode.PowerToggle & e.Button == MouseButtons.Left)
+                        if (this.drawing.InterfaceMode == eInterfaceMode.PowerToggle & e.Button == MouseButtons.Left)
                         {
                             if (!flag && MidsContext.Character.CurrentBuild.Powers[index1].CanIncludeForStats())
                             {
@@ -3056,8 +3057,8 @@ namespace Hero_Designer
                                 }
                                 else
                                 {
-                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(index1, false, false);
-                                    if (eMutex == Enums.eMutex.NoConflict | eMutex == Enums.eMutex.NoGroup)
+                                    eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(index1, false, false);
+                                    if (eMutex == eMutex.NoConflict | eMutex == eMutex.NoGroup)
                                         MidsContext.Character.CurrentBuild.Powers[index1].StatInclude = true;
                                 }
                             }
@@ -3074,8 +3075,8 @@ namespace Hero_Designer
                                 }
                                 else
                                 {
-                                    Enums.eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(index1, false, false);
-                                    if (eMutex == Enums.eMutex.NoConflict | eMutex == Enums.eMutex.NoGroup)
+                                    eMutex eMutex = MainModule.MidsController.Toon.CurrentBuild.MutexV2(index1, false, false);
+                                    if (eMutex == eMutex.NoConflict | eMutex == eMutex.NoGroup)
                                         MidsContext.Character.CurrentBuild.Powers[index1].StatInclude = true;
                                 }
                                 MidsContext.Character.Validate();
@@ -3091,7 +3092,7 @@ namespace Hero_Designer
                         }
                         else if (e.Button == MouseButtons.Left & Control.ModifierKeys == System.Windows.Forms.Keys.Shift & index2 > -1)
                         {
-                            if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp)
+                            if (MidsContext.Config.BuildMode == dmModes.LevelUp)
                             {
                                 MainModule.MidsController.Toon.RequestedLevel = MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level;
                                 MidsContext.Character.ResetLevel();
@@ -3104,7 +3105,7 @@ namespace Hero_Designer
                         {
                             if (e.Button == MouseButtons.Left & !this.EnhPickerActive)
                             {
-                                if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic & flag)
+                                if (MidsContext.Config.BuildMode == dmModes.Dynamic & flag)
                                 {
                                     if (flag & MidsContext.Character.CurrentBuild.Powers[index1].Level > -1)
                                     {
@@ -3196,13 +3197,13 @@ namespace Hero_Designer
             MainModule.MidsController.Toon.Complete = false;
             this.fixStatIncludes();
             this.FileModified = true;
-            if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
+            if (MidsContext.Config.BuildMode == dmModes.Dynamic)
             {
                 index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(MainModule.MidsController.Toon.RequestedLevel);
                 if (index < 0)
                     index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(0);
             }
-            else if (DatabaseAPI.Database.Levels[MidsContext.Character.Level].LevelType() == Enums.dmItem.Power)
+            else if (DatabaseAPI.Database.Levels[MidsContext.Character.Level].LevelType() == dmItem.Power)
             {
                 index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(0);
                 this.drawing.HighlightSlot(-1, false);
@@ -3459,7 +3460,7 @@ namespace Hero_Designer
             }
         }
 
-        void PowerPicked(Enums.PowersetType SetID, int nIDPower)
+        void PowerPicked(PowersetType SetID, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
             this.PowerModified();
@@ -4252,15 +4253,15 @@ namespace Hero_Designer
         {
             if (index == 2)
             {
-                this.drawing.InterfaceMode = Enums.eInterfaceMode.PowerToggle;
+                this.drawing.InterfaceMode = eInterfaceMode.PowerToggle;
                 this.DoRedraw();
                 MidsContext.Config.Tips.Show(Tips.TipType.TotalsTab);
             }
             else
             {
-                if (this.drawing.InterfaceMode == Enums.eInterfaceMode.Normal)
+                if (this.drawing.InterfaceMode == eInterfaceMode.Normal)
                     return;
-                this.drawing.InterfaceMode = Enums.eInterfaceMode.Normal;
+                this.drawing.InterfaceMode = eInterfaceMode.Normal;
                 this.DoRedraw();
             }
         }
@@ -4278,14 +4279,14 @@ namespace Hero_Designer
             {
                 switch (this.dvAnchored.VisibleSize)
                 {
-                    case Enums.eVisibleSize.Full:
+                    case eVisibleSize.Full:
                         iVal2 = this.raGreater(this.dvAnchored.SnapLocation.Bottom, this.llAncillary.Top + this.llAncillary.ActualLineHeight * this.llAncillary.Items.Length) + 4 + num;
                         break;
-                    case Enums.eVisibleSize.Small:
+                    case eVisibleSize.Small:
                         return;
-                    case Enums.eVisibleSize.VerySmall:
+                    case eVisibleSize.VerySmall:
                         return;
-                    case Enums.eVisibleSize.Compact:
+                    case eVisibleSize.Compact:
                         switch (this.drawing.EpicColumns)
                         {
                             case false:
@@ -4879,7 +4880,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
+            MidsContext.Config.BuildMode = dmModes.Dynamic;
             MidsContext.Character.ResetLevel();
             this.PowerModified();
         }
@@ -4888,8 +4889,8 @@ namespace Hero_Designer
         {
             if (MidsContext.Character == null)
                 return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.DualO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.DualO;
+            if (MidsContext.Character.CurrentBuild.SetEnhGrades(eEnhGrade.DualO))
+                this.I9Picker.UI.Initial.GradeID = eEnhGrade.DualO;
             this.info_Totals();
             this.DoRedraw();
         }
@@ -4898,7 +4899,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.Even;
+            eEnhRelative newVal = eEnhRelative.Even;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4909,7 +4910,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusOne;
+            eEnhRelative newVal = eEnhRelative.MinusOne;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4920,7 +4921,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusTwo;
+            eEnhRelative newVal = eEnhRelative.MinusTwo;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4931,7 +4932,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusThree;
+            eEnhRelative newVal = eEnhRelative.MinusThree;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4942,7 +4943,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.None;
+            eEnhRelative newVal = eEnhRelative.None;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4953,7 +4954,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusOne;
+            eEnhRelative newVal = eEnhRelative.PlusOne;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4964,7 +4965,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusTwo;
+            eEnhRelative newVal = eEnhRelative.PlusTwo;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4975,7 +4976,7 @@ namespace Hero_Designer
         {
             if (MidsContext.Character == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusThree;
+            eEnhRelative newVal = eEnhRelative.PlusThree;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4986,7 +4987,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFour;
+            eEnhRelative newVal = eEnhRelative.PlusFour;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -4997,7 +4998,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFive;
+            eEnhRelative newVal = eEnhRelative.PlusFive;
             if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
                 this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
@@ -5008,8 +5009,8 @@ namespace Hero_Designer
         {
             if (MidsContext.Character == null)
                 return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.SingleO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.SingleO;
+            if (MidsContext.Character.CurrentBuild.SetEnhGrades(eEnhGrade.SingleO))
+                this.I9Picker.UI.Initial.GradeID = eEnhGrade.SingleO;
             this.info_Totals();
             this.DoRedraw();
         }
@@ -5018,8 +5019,8 @@ namespace Hero_Designer
         {
             if (MidsContext.Character == null)
                 return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.TrainingO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.TrainingO;
+            if (MidsContext.Character.CurrentBuild.SetEnhGrades(eEnhGrade.TrainingO))
+                this.I9Picker.UI.Initial.GradeID = eEnhGrade.TrainingO;
             this.info_Totals();
             this.DoRedraw();
         }
@@ -5189,7 +5190,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            MidsContext.Config.BuildMode = Enums.dmModes.LevelUp;
+            MidsContext.Config.BuildMode = dmModes.LevelUp;
             MidsContext.Character.ResetLevel();
             this.PowerModified();
         }
@@ -5501,35 +5502,35 @@ namespace Hero_Designer
                 I9Gfx.SetOrigin(Conversions.ToString(this.cbOrigin.SelectedItem));
             }
             ComboBox iCB = this.cbPrimary;
-            frmMain.ComboCheckPS(ref iCB, Enums.PowersetType.Primary, Enums.ePowerSetType.Primary);
+            frmMain.ComboCheckPS(ref iCB, PowersetType.Primary, ePowerSetType.Primary);
             this.cbPrimary = iCB;
             iCB = this.cbSecondary;
-            frmMain.ComboCheckPS(ref iCB, Enums.PowersetType.Secondary, Enums.ePowerSetType.Secondary);
+            frmMain.ComboCheckPS(ref iCB, PowersetType.Secondary, ePowerSetType.Secondary);
             this.cbSecondary = iCB;
             if (MidsContext.Character.Powersets[0].nIDLinkSecondary > -1)
                 this.cbSecondary.Enabled = false;
             else
                 this.cbSecondary.Enabled = true;
             iCB = this.cbPool0;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(ref iCB, ePowerSetType.Pool);
             this.cbPool0 = iCB;
             iCB = this.cbPool1;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(ref iCB, ePowerSetType.Pool);
             this.cbPool1 = iCB;
             iCB = this.cbPool2;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(ref iCB, ePowerSetType.Pool);
             this.cbPool2 = iCB;
             iCB = this.cbPool3;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(ref iCB, ePowerSetType.Pool);
             this.cbPool3 = iCB;
             iCB = this.cbAncillary;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Ancillary);
+            frmMain.ComboCheckPool(ref iCB, ePowerSetType.Ancillary);
             this.cbAncillary = iCB;
             this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3].nID);
             this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4].nID);
             this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5].nID);
             this.cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6].nID);
-            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Ancillary);
+            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, ePowerSetType.Ancillary);
             if (MidsContext.Character.Powersets[7] != null)
                 this.cbAncillary.SelectedIndex = DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[7], powersetIndexes);
             else
@@ -5589,9 +5590,9 @@ namespace Hero_Designer
             this.dvAnchored.SetLocation(new System.Drawing.Point(this.llPrimary.Left, this.llPrimary.Top + this.raGreater(this.llPrimary.SizeNormal.Height, this.llSecondary.SizeNormal.Height) + 5), ForceComplete);
             this.llPrimary.SuspendRedraw = false;
             this.llSecondary.SuspendRedraw = false;
-            if (this.myDataView != null && this.drawing.InterfaceMode == Enums.eInterfaceMode.Normal & this.myDataView.TabPageIndex == 2)
+            if (this.myDataView != null && this.drawing.InterfaceMode == eInterfaceMode.Normal & this.myDataView.TabPageIndex == 2)
                 this.dvAnchored_TabChanged(this.myDataView.TabPageIndex);
-            if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp)
+            if (MidsContext.Config.BuildMode == dmModes.LevelUp)
             {
                 this.UpdateDMBuffer();
                 this.pbDynMode.Refresh();
@@ -5606,38 +5607,38 @@ namespace Hero_Designer
                 return;
             if (this.dmBuffer == null)
                 this.dmBuffer = new ExtendedBitmap(this.pbDynMode.Width, this.pbDynMode.Height);
-            Enums.ePowerState ePowerState;
+            ePowerState ePowerState;
             string iStr;
-            if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
+            if (MidsContext.Config.BuildMode == dmModes.Dynamic)
             {
-                if (MidsContext.Config.BuildOption == Enums.dmItem.Slot)
+                if (MidsContext.Config.BuildOption == dmItem.Slot)
                 {
-                    ePowerState = Enums.ePowerState.Open;
+                    ePowerState = ePowerState.Open;
                     iStr = "Power / Slot";
                 }
                 else
                 {
-                    ePowerState = Enums.ePowerState.Used;
+                    ePowerState = ePowerState.Used;
                     iStr = "Power Only";
                 }
             }
-            else if (DatabaseAPI.Database.Levels[MidsContext.Character.Level].LevelType() == Enums.dmItem.Power)
+            else if (DatabaseAPI.Database.Levels[MidsContext.Character.Level].LevelType() == dmItem.Power)
             {
-                ePowerState = Enums.ePowerState.Used;
+                ePowerState = ePowerState.Used;
                 iStr = "Power";
             }
             else
             {
                 int slotsRemaining = MainModule.MidsController.Toon.SlotsRemaining;
-                ePowerState = Enums.ePowerState.Open;
+                ePowerState = ePowerState.Open;
                 iStr = Conversions.ToString(slotsRemaining) + " Slot";
                 if (slotsRemaining > 1)
                     iStr += "s";
             }
             if (MainModule.MidsController.Toon.Complete)
             {
-                if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp)
-                    ePowerState = Enums.ePowerState.Used;
+                if (MidsContext.Config.BuildMode == dmModes.LevelUp)
+                    ePowerState = ePowerState.Used;
                 iStr = "Complete";
             }
             Rectangle rectangle = new Rectangle();
@@ -5652,7 +5653,7 @@ namespace Hero_Designer
             Font bFont = new System.Drawing.Font(this.Font.FontFamily, this.Font.Size, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             stringFormat.Alignment = StringAlignment.Center;
             stringFormat.LineAlignment = StringAlignment.Center;
-            if (ePowerState == Enums.ePowerState.Open)
+            if (ePowerState == ePowerState.Open)
                 this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, System.Drawing.GraphicsUnit.Pixel);
             else
                 this.dmBuffer.Graphics.DrawImage((Image)this.drawing.bxPower[(int)ePowerState].Bitmap, destRect, 0, 0, rectangle.Width, rectangle.Height, System.Drawing.GraphicsUnit.Pixel, this.drawing.pImageAttributes);
@@ -5664,7 +5665,7 @@ namespace Hero_Designer
 
         void UpdateDynamicModeInfo()
         {
-            if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
+            if (MidsContext.Config.BuildMode == dmModes.Dynamic)
             {
                 this.tsDynamic.Checked = true;
                 this.tsLevelUp.Checked = false;
@@ -5674,7 +5675,7 @@ namespace Hero_Designer
                 this.tsDynamic.Checked = false;
                 this.tsLevelUp.Checked = true;
             }
-            this.ibMode.TextOff = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? (!MainModule.MidsController.Toon.Complete ? "Level-Up: " + Conversions.ToString(MidsContext.Character.Level + 1) : "Level-Up") : "Dynamic";
+            this.ibMode.TextOff = MidsContext.Config.BuildMode != dmModes.Dynamic ? (!MainModule.MidsController.Toon.Complete ? "Level-Up: " + Conversions.ToString(MidsContext.Character.Level + 1) : "Level-Up") : "Dynamic";
         }
 
         void UpdateLLColours(ref ListLabelV2 iList)
@@ -6006,15 +6007,15 @@ namespace Hero_Designer
                                             i9Slot.Enh = 0;
                                         }
                                     }
-                                    if (DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == Enums.eType.Normal || DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == Enums.eType.SpecialO)
+                                    if (DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == eType.Normal || DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == eType.SpecialO)
                                     {
-                                        i9Slot.RelativeLevel = (Enums.eEnhRelative)(buildFileLinesArray[index3].enhancementRelativeLevel + 4);
-                                        i9Slot.Grade = Enums.eEnhGrade.TrainingO;
+                                        i9Slot.RelativeLevel = (eEnhRelative)(buildFileLinesArray[index3].enhancementRelativeLevel + 4);
+                                        i9Slot.Grade = eEnhGrade.TrainingO;
                                     }
-                                    if (DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == Enums.eType.SetO)
+                                    if (DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[i9Slot.Enh].TypeID == eType.SetO)
                                     {
                                         i9Slot.IOLevel = buildFileLinesArray[index3].enhancementLevel;
-                                        i9Slot.RelativeLevel = (Enums.eEnhRelative)(buildFileLinesArray[index3].enhancementRelativeLevel + 4);
+                                        i9Slot.RelativeLevel = (eEnhRelative)(buildFileLinesArray[index3].enhancementRelativeLevel + 4);
                                     }
                                     powerEntry.Slots[index2].Enhancement = i9Slot;
                                 }

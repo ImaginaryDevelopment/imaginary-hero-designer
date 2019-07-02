@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 
 public class I9SetData
@@ -35,7 +36,7 @@ public class I9SetData
 
     public void Add(ref I9Slot iEnh)
     {
-        if (iEnh.Enh < 0 || DatabaseAPI.Database.Enhancements[iEnh.Enh].TypeID != Enums.eType.SetO)
+        if (iEnh.Enh < 0 || DatabaseAPI.Database.Enhancements[iEnh.Enh].TypeID != eType.SetO)
             return;
         int nIdSet = DatabaseAPI.Database.Enhancements[iEnh.Enh].nIDSet;
         int index = this.Lookup(nIdSet);
@@ -76,7 +77,7 @@ public class I9SetData
         return num;
     }
 
-    public void BuildEffects(Enums.ePvX pvMode)
+    public void BuildEffects(ePvX pvMode)
     {
         for (int index1 = 0; index1 <= this.SetInfo.Length - 1; ++index1)
         {
@@ -84,7 +85,7 @@ public class I9SetData
             {
                 for (int index2 = 0; index2 <= DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus.Length - 1; ++index2)
                 {
-                    if (DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].Slotted <= this.SetInfo[index1].SlottedCount & (DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].PvMode == pvMode | DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].PvMode == Enums.ePvX.Any))
+                    if (DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].Slotted <= this.SetInfo[index1].SlottedCount & (DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].PvMode == pvMode | DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].PvMode == ePvX.Any))
                     {
                         for (int index3 = 0; index3 <= DatabaseAPI.Database.EnhancementSets[this.SetInfo[index1].SetIDX].Bonus[index2].Index.Length - 1; ++index3)
                         {

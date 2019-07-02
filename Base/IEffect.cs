@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 
@@ -37,17 +38,17 @@ public interface IEffect : IComparable, ICloneable
 
     int nID { get; set; }
 
-    Enums.eEffectClass EffectClass { get; set; }
+    eEffectClass EffectClass { get; set; }
 
-    Enums.eEffectType EffectType { get; set; }
+    eEffectType EffectType { get; set; }
 
-    Enums.eOverrideBoolean DisplayPercentageOverride { get; set; }
+    eOverrideBoolean DisplayPercentageOverride { get; set; }
 
-    Enums.eDamage DamageType { get; set; }
+    eDamage DamageType { get; set; }
 
-    Enums.eMez MezType { get; set; }
+    eMez MezType { get; set; }
 
-    Enums.eEffectType ETModifies { get; set; }
+    eEffectType ETModifies { get; set; }
 
     string Summon { get; set; }
 
@@ -57,15 +58,15 @@ public interface IEffect : IComparable, ICloneable
 
     float DelayedTime { get; set; }
 
-    Enums.eStacking Stacking { get; set; }
+    eStacking Stacking { get; set; }
 
-    Enums.eSuppress Suppression { get; set; }
+    eSuppress Suppression { get; set; }
 
     bool Buffable { get; set; }
 
     bool Resistible { get; set; }
 
-    Enums.eSpecialCase SpecialCase { get; set; }
+    eSpecialCase SpecialCase { get; set; }
 
     string UIDClassName { get; set; }
 
@@ -75,9 +76,9 @@ public interface IEffect : IComparable, ICloneable
 
     bool isEnahncementEffect { get; set; }
 
-    Enums.ePvX PvMode { get; set; }
+    ePvX PvMode { get; set; }
 
-    Enums.eToWho ToWho { get; set; }
+    eToWho ToWho { get; set; }
 
     float Scale { get; set; }
 
@@ -85,9 +86,9 @@ public interface IEffect : IComparable, ICloneable
 
     float nDuration { get; set; }
 
-    Enums.eAttribType AttribType { get; set; }
+    eAttribType AttribType { get; set; }
 
-    Enums.eAspect Aspect { get; set; }
+    eAspect Aspect { get; set; }
 
     string ModifierTable { get; set; }
 
@@ -105,7 +106,7 @@ public interface IEffect : IComparable, ICloneable
 
     bool Absorbed_Effect { get; set; }
 
-    Enums.ePowerType Absorbed_PowerType { get; set; }
+    ePowerType Absorbed_PowerType { get; set; }
 
     int Absorbed_Power_nID { get; set; }
 
@@ -117,7 +118,7 @@ public interface IEffect : IComparable, ICloneable
 
     int Absorbed_EffectID { get; set; }
 
-    Enums.eBuffMode buffMode { get; set; }
+    eBuffMode buffMode { get; set; }
 
     string Override { get; set; }
 

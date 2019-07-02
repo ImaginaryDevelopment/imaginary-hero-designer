@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -136,7 +137,7 @@ namespace Hero_Designer
                         {
                             DatabaseAPI.Database.Power[index1].Level = (int)Math.Round(Conversion.Val(array[2]) + 1.0);
                             int index2 = DatabaseAPI.NidFromUidPowerset(DatabaseAPI.Database.Power[index1].FullSetName);
-                            if (index2 > -1 && DatabaseAPI.Database.Powersets[index2].SetType == Enums.ePowerSetType.Pool && DatabaseAPI.Database.Power[index1].Level == 1)
+                            if (index2 > -1 && DatabaseAPI.Database.Powersets[index2].SetType == ePowerSetType.Pool && DatabaseAPI.Database.Power[index1].Level == 1)
                                 DatabaseAPI.Database.Power[index1].Level = 4;
                             ++num1;
                         }

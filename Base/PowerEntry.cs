@@ -1,5 +1,6 @@
 
 using Base.Display;
+using HeroDesigner.Schema;
 using System;
 using System.Drawing;
 
@@ -17,11 +18,11 @@ public class PowerEntry : ICloneable
 
     public bool Chosen { get; private set; }
 
-    public Enums.ePowerState State
+    public ePowerState State
     {
         get
         {
-            return this.Power == null ? (this.Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
+            return this.Power == null ? (this.Chosen ? ePowerState.Empty : ePowerState.Disabled) : ePowerState.Used;
         }
     }
 
@@ -156,7 +157,7 @@ public class PowerEntry : ICloneable
             }
             else
                 this.Slots = new SlotEntry[0];
-            if (power.AlwaysToggle | power.PowerType == Enums.ePowerType.Auto_)
+            if (power.AlwaysToggle | power.PowerType == ePowerType.Auto_)
                 this.StatInclude = true;
         }
         else
@@ -185,20 +186,20 @@ public class PowerEntry : ICloneable
                     int num;
                     switch (power.Effects[index2].EffectType)
                     {
-                        case Enums.eEffectType.None:
-                        case Enums.eEffectType.Damage:
-                        case Enums.eEffectType.DamageBuff:
-                        case Enums.eEffectType.Enhancement:
-                        case Enums.eEffectType.Heal:
+                        case eEffectType.None:
+                        case eEffectType.Damage:
+                        case eEffectType.DamageBuff:
+                        case eEffectType.Enhancement:
+                        case eEffectType.Heal:
                             num = 1;
                             break;
-                        case Enums.eEffectType.Mez:
+                        case eEffectType.Mez:
                             if ((double)power.Effects[index2].Mag > 0.0)
-                                goto case Enums.eEffectType.None;
+                                goto case eEffectType.None;
                             else
                                 goto default;
                         default:
-                            num = power.Effects[index2].ToWho == Enums.eToWho.Target ? 1 : 0;
+                            num = power.Effects[index2].ToWho == eToWho.Target ? 1 : 0;
                             break;
                     }
                     if (num == 0)
@@ -211,7 +212,7 @@ public class PowerEntry : ICloneable
 
     public bool CanIncludeForStats()
     {
-        return this.NIDPowerset > -1 & this.IDXPower > -1 && (this.HasProc() || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Toggle || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Click && DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].ClickBuff || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Auto_);
+        return this.NIDPowerset > -1 & this.IDXPower > -1 && (this.HasProc() || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == ePowerType.Toggle || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == ePowerType.Click && DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].ClickBuff || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == ePowerType.Auto_);
     }
 
     public void CheckVariableBounds()

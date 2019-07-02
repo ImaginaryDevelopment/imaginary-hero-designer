@@ -1,6 +1,7 @@
 
 using Base.IO_Classes;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -273,7 +274,7 @@ namespace Hero_Designer
 
         {
             int[] values = (int[])Enum.GetValues(MidsContext.Config.Suppression.GetType());
-            MidsContext.Config.Suppression = Enums.eSuppress.None;
+            MidsContext.Config.Suppression = eSuppress.None;
             int num = this.clbSuppression.CheckedIndices.Count - 1;
             for (int index = 0; index <= num; ++index)
                 MidsContext.Config.Suppression += values[this.clbSuppression.CheckedIndices[index]];
@@ -687,24 +688,24 @@ namespace Hero_Designer
             int[] values = (int[])Enum.GetValues(MidsContext.Config.Suppression.GetType());
             int num = names.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.clbSuppression.Items.Add(names[index], (MidsContext.Config.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
+                this.clbSuppression.Items.Add(names[index], (MidsContext.Config.Suppression & (eSuppress)values[index]) != eSuppress.None);
             this.clbSuppression.EndUpdate();
         }
 
         void SetControls()
         {
             ConfigData config = MidsContext.Config;
-            this.optSO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.SingleO;
-            this.optDO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.DualO;
-            this.optTO.Checked = config.CalcEnhOrigin == Enums.eEnhGrade.TrainingO;
+            this.optSO.Checked = config.CalcEnhOrigin == eEnhGrade.SingleO;
+            this.optDO.Checked = config.CalcEnhOrigin == eEnhGrade.DualO;
+            this.optTO.Checked = config.CalcEnhOrigin == eEnhGrade.TrainingO;
             this.cbEnhLevel.SelectedIndex = (int)config.CalcEnhLevel;
             this.udExHigh.Value = new Decimal(config.ExempHigh);
             this.udExLow.Value = new Decimal(config.ExempLow);
             this.udForceLevel.Value = new Decimal(config.ForceLevel);
             this.chkHighVis.Checked = config.EnhanceVisibility;
-            this.rbGraphTwoLine.Checked = config.DataGraphType == Enums.eDDGraph.Both;
-            this.rbGraphStacked.Checked = config.DataGraphType == Enums.eDDGraph.Stacked;
-            this.rbGraphSimple.Checked = config.DataGraphType == Enums.eDDGraph.Simple;
+            this.rbGraphTwoLine.Checked = config.DataGraphType == eDDGraph.Both;
+            this.rbGraphStacked.Checked = config.DataGraphType == eDDGraph.Stacked;
+            this.rbGraphSimple.Checked = config.DataGraphType == eDDGraph.Simple;
             this.rbPvE.Checked = config.Inc.PvE;
             this.rbPvP.Checked = !config.Inc.PvE;
             this.rbChanceAverage.Checked = config.DamageMath.Calculate == ConfigData.EDamageMath.Average;
@@ -870,23 +871,23 @@ namespace Hero_Designer
         {
             ConfigData config = MidsContext.Config;
             if (this.optSO.Checked)
-                config.CalcEnhOrigin = Enums.eEnhGrade.SingleO;
+                config.CalcEnhOrigin = eEnhGrade.SingleO;
             else if (this.optDO.Checked)
-                config.CalcEnhOrigin = Enums.eEnhGrade.DualO;
+                config.CalcEnhOrigin = eEnhGrade.DualO;
             else if (this.optTO.Checked)
-                config.CalcEnhOrigin = Enums.eEnhGrade.TrainingO;
-            config.CalcEnhLevel = (Enums.eEnhRelative)this.cbEnhLevel.SelectedIndex;
+                config.CalcEnhOrigin = eEnhGrade.TrainingO;
+            config.CalcEnhLevel = (eEnhRelative)this.cbEnhLevel.SelectedIndex;
             config.ExempHigh = Convert.ToInt32(this.udExHigh.Value);
             config.ExempLow = Convert.ToInt32(this.udExLow.Value);
             if (config.ExempHigh < config.ExempLow)
                 config.ExempHigh = config.ExempLow;
             config.ForceLevel = Convert.ToInt32(this.udForceLevel.Value);
             if (this.rbGraphTwoLine.Checked)
-                config.DataGraphType = Enums.eDDGraph.Both;
+                config.DataGraphType = eDDGraph.Both;
             else if (this.rbGraphStacked.Checked)
-                config.DataGraphType = Enums.eDDGraph.Stacked;
+                config.DataGraphType = eDDGraph.Stacked;
             else if (this.rbGraphSimple.Checked)
-                config.DataGraphType = Enums.eDDGraph.Simple;
+                config.DataGraphType = eDDGraph.Simple;
             config.Inc.PvE = this.rbPvE.Checked;
             if (this.rbChanceAverage.Checked)
                 config.DamageMath.Calculate = ConfigData.EDamageMath.Average;

@@ -1,5 +1,6 @@
 
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -361,7 +362,7 @@ namespace Base.Document_Classes
                                 IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Enh];
                                 switch (enhancement.TypeID)
                                 {
-                                    case Enums.eType.Normal:
+                                    case eType.Normal:
                                         string relativeString1 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
                                         string str2;
                                         if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
@@ -370,7 +371,7 @@ namespace Base.Document_Classes
                                             str2 = !(relativeString1 == "X") ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
                                         str1 = str2 + " ";
                                         break;
-                                    case Enums.eType.SpecialO:
+                                    case eType.SpecialO:
                                         string relativeString2 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
                                         string str3;
                                         if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
@@ -383,10 +384,10 @@ namespace Base.Document_Classes
                                 s3 = str1 + enhancement.LongName;
                                 switch (enhancement.TypeID)
                                 {
-                                    case Enums.eType.InventO:
+                                    case eType.InventO:
                                         s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
                                         continue;
-                                    case Enums.eType.SetO:
+                                    case eType.SetO:
                                         s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
                                         continue;
                                     default:
@@ -502,10 +503,10 @@ namespace Base.Document_Classes
                                     IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh];
                                     switch (enhancement.TypeID)
                                     {
-                                        case Enums.eType.Normal:
+                                        case eType.Normal:
                                             str1 += enhancement.ShortName;
                                             break;
-                                        case Enums.eType.InventO:
+                                        case eType.InventO:
                                             str1 = str1 + enhancement.ShortName + "-I";
                                             if (printIoLevels)
                                             {
@@ -513,17 +514,17 @@ namespace Base.Document_Classes
                                                 break;
                                             }
                                             break;
-                                        case Enums.eType.SpecialO:
+                                        case eType.SpecialO:
                                             string str2;
                                             switch (enhancement.SubTypeID)
                                             {
-                                                case Enums.eSubtype.Hamidon:
+                                                case eSubtype.Hamidon:
                                                     str2 = "HO:";
                                                     break;
-                                                case Enums.eSubtype.Hydra:
+                                                case eSubtype.Hydra:
                                                     str2 = "HY:";
                                                     break;
-                                                case Enums.eSubtype.Titan:
+                                                case eSubtype.Titan:
                                                     str2 = "TN:";
                                                     break;
                                                 default:
@@ -532,7 +533,7 @@ namespace Base.Document_Classes
                                             }
                                             str1 = str1 + str2 + enhancement.ShortName;
                                             break;
-                                        case Enums.eType.SetO:
+                                        case eType.SetO:
                                             str1 = str1 + DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].ShortName + "-" + enhancement.ShortName;
                                             if (printIoLevels)
                                             {

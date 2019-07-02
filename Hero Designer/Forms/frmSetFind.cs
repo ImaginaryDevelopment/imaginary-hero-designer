@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -93,7 +94,7 @@ namespace Hero_Designer
             int num1 = this.SetBonusList.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if ((DatabaseAPI.Database.Power[this.SetBonusList[index]].EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+                if ((DatabaseAPI.Database.Power[this.SetBonusList[index]].EntitiesAutoHit & eEntity.Caster) > eEntity.None)
                     this.AddEffect(ref List, ref nIDList, this.GetPowerString(this.SetBonusList[index]), -1);
             }
             int num2 = List.Length - 1;
@@ -156,7 +157,7 @@ namespace Hero_Designer
                         string powerString = this.GetPowerString(this.SetBonusList[index]);
                         if (text == powerString)
                         {
-                            string Effect = (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)((double)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
+                            string Effect = (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)((double)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
                             this.AddEffect(ref List, ref nIDList, Effect, this.SetBonusList[index]);
                         }
                     }

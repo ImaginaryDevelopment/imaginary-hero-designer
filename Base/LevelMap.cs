@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -25,8 +26,8 @@ public class LevelMap
         }
     }
 
-    public Enums.dmItem LevelType()
+    public dmItem LevelType()
     {
-        return this.Powers <= 0 ? (this.Slots <= 0 ? Enums.dmItem.None : Enums.dmItem.Slot) : Enums.dmItem.Power;
+        return this.Powers <= 0 ? (this.Slots <= 0 ? dmItem.None : dmItem.Slot) : dmItem.Power;
     }
 }

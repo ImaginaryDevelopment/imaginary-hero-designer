@@ -1,6 +1,7 @@
 using Base.Data_Classes;
 using Base.IO_Classes;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -165,13 +166,13 @@ public static class DatabaseAPI
         return -1;
     }
 
-    public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType)
+    public static int[] NidSets(PowersetGroup group, int nIDClass, ePowerSetType nType)
     {
         List<int> intList = new List<int>();
-        bool flag1 = nType != Enums.ePowerSetType.None;
+        bool flag1 = nType != ePowerSetType.None;
         bool flag2 = nIDClass > -1;
         int[] array;
-        if ((nType == Enums.ePowerSetType.Inherent || nType == Enums.ePowerSetType.Pool) && nIDClass > -1 && !DatabaseAPI.Database.Classes[nIDClass].Playable)
+        if ((nType == ePowerSetType.Inherent || nType == ePowerSetType.Pool) && nIDClass > -1 && !DatabaseAPI.Database.Classes[nIDClass].Playable)
         {
             array = intList.ToArray();
         }
@@ -190,9 +191,9 @@ public static class DatabaseAPI
                 bool flag3 = !flag1 || powerset.SetType == nType;
                 if (flag2 & flag3)
                 {
-                    if ((powerset.SetType == Enums.ePowerSetType.Primary || powerset.SetType == Enums.ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
+                    if ((powerset.SetType == ePowerSetType.Primary || powerset.SetType == ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
                         flag3 = false;
-                    if (powerset.Powers.Length > 0 && flag3 && (powerset.SetType != Enums.ePowerSetType.Inherent && powerset.SetType != Enums.ePowerSetType.Accolade) && powerset.SetType != Enums.ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
+                    if (powerset.Powers.Length > 0 && flag3 && (powerset.SetType != ePowerSetType.Inherent && powerset.SetType != ePowerSetType.Accolade) && powerset.SetType != ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
                         flag3 = false;
                 }
                 if (flag3)
@@ -203,7 +204,7 @@ public static class DatabaseAPI
         return array;
     }
 
-    public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
+    public static int[] NidSets(string uidGroup, string uidClass, ePowerSetType nType)
     {
         return DatabaseAPI.NidSets(DatabaseAPI.Database.PowersetGroups.ContainsKey(uidGroup) ? DatabaseAPI.Database.PowersetGroups[uidGroup] : null, DatabaseAPI.NidFromUidClass(uidClass), nType);
     }
@@ -374,7 +375,7 @@ public static class DatabaseAPI
             if ((idx == powerset1.nArchetype || powerset1.nArchetype == -1) && string.Equals(iName, powerset1.DisplayName, StringComparison.OrdinalIgnoreCase))
             {
                 IPowerset powerset2;
-                if (powerset1.SetType == Enums.ePowerSetType.Ancillary)
+                if (powerset1.SetType == ePowerSetType.Ancillary)
                 {
                     if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
                         powerset2 = powerset1;
@@ -389,7 +390,7 @@ public static class DatabaseAPI
         return null;
     }
     //Pine
-    public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
+    public static IPowerset GetPowersetByName(string iName, ePowerSetType iSet)
     {
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
         {
@@ -399,7 +400,7 @@ public static class DatabaseAPI
         return null;
     }
 
-    public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
+    public static IPowerset GetPowersetByID(string iName, ePowerSetType iSet)
     {
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
         {
@@ -413,7 +414,7 @@ public static class DatabaseAPI
     {
         for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Powersets[index].SetType == Enums.ePowerSetType.Inherent)
+            if (DatabaseAPI.Database.Powersets[index].SetType == ePowerSetType.Inherent)
                 return DatabaseAPI.Database.Powersets[index];
         }
         return null;
@@ -479,21 +480,21 @@ public static class DatabaseAPI
         return power1;
     }
 
-    public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
+    public static string[] GetPowersetNames(int iAT, ePowerSetType iSet)
     {
         List<string> stringList = new List<string>();
-        if (iSet != Enums.ePowerSetType.Pool && iSet != Enums.ePowerSetType.Inherent)
+        if (iSet != ePowerSetType.Pool && iSet != ePowerSetType.Inherent)
         {
             int[] numArray = new int[0];
             switch (iSet)
             {
-                case Enums.ePowerSetType.Primary:
+                case ePowerSetType.Primary:
                     numArray = DatabaseAPI.Database.Classes[iAT].Primary;
                     break;
-                case Enums.ePowerSetType.Secondary:
+                case ePowerSetType.Secondary:
                     numArray = DatabaseAPI.Database.Classes[iAT].Secondary;
                     break;
-                case Enums.ePowerSetType.Ancillary:
+                case ePowerSetType.Ancillary:
                     numArray = DatabaseAPI.Database.Classes[iAT].Ancillary;
                     break;
             }
@@ -536,21 +537,21 @@ public static class DatabaseAPI
         return !string.IsNullOrEmpty(name) && DatabaseAPI.Database.PowersetGroups.ContainsKey(name) ? DatabaseAPI.GetPowersetIndexesByGroup(DatabaseAPI.Database.PowersetGroups[name]) : new int[1];
     }
 
-    public static IPowerset[] GetPowersetIndexes(Archetype at, Enums.ePowerSetType iSet)
+    public static IPowerset[] GetPowersetIndexes(Archetype at, ePowerSetType iSet)
     {
         return DatabaseAPI.GetPowersetIndexes(at.Idx, iSet);
     }
 
-    public static IPowerset[] GetPowersetIndexes(int iAT, Enums.ePowerSetType iSet)
+    public static IPowerset[] GetPowersetIndexes(int iAT, ePowerSetType iSet)
     {
         List<IPowerset> powersetList = new List<IPowerset>();
-        if (iSet != Enums.ePowerSetType.Pool & iSet != Enums.ePowerSetType.Inherent)
+        if (iSet != ePowerSetType.Pool & iSet != ePowerSetType.Inherent)
         {
             for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
             {
                 if (DatabaseAPI.Database.Powersets[index].nArchetype == iAT & DatabaseAPI.Database.Powersets[index].SetType == iSet)
                     powersetList.Add(DatabaseAPI.Database.Powersets[index]);
-                else if (iSet == Enums.ePowerSetType.Ancillary & DatabaseAPI.Database.Powersets[index].SetType == iSet && DatabaseAPI.Database.Powersets[index].ClassOk(iAT))
+                else if (iSet == ePowerSetType.Ancillary & DatabaseAPI.Database.Powersets[index].SetType == iSet && DatabaseAPI.Database.Powersets[index].ClassOk(iAT))
                     powersetList.Add(DatabaseAPI.Database.Powersets[index]);
             }
         }
@@ -596,7 +597,7 @@ public static class DatabaseAPI
         return -1;
     }
 
-    public static int GetEnhancementByName(string iName, Enums.eType iType)
+    public static int GetEnhancementByName(string iName, eType iType)
     {
         for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
         {
@@ -626,10 +627,10 @@ public static class DatabaseAPI
     {
         for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
         {
-            if (DatabaseAPI.Database.Enhancements[index].TypeID == (Enums.eType)iType && string.Equals(DatabaseAPI.Database.Enhancements[index].ShortName, enhName, StringComparison.OrdinalIgnoreCase))
+            if (DatabaseAPI.Database.Enhancements[index].TypeID == (eType)iType && string.Equals(DatabaseAPI.Database.Enhancements[index].ShortName, enhName, StringComparison.OrdinalIgnoreCase))
             {
                 int num;
-                if (DatabaseAPI.Database.Enhancements[index].TypeID != Enums.eType.SetO)
+                if (DatabaseAPI.Database.Enhancements[index].TypeID != eType.SetO)
                     num = index;
                 else if (DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].DisplayName.Equals(setName, StringComparison.OrdinalIgnoreCase))
                     num = index;
@@ -1124,14 +1125,14 @@ public static class DatabaseAPI
         {
             switch (DatabaseAPI.Database.Enhancements[iEnh].TypeID)
             {
-                case Enums.eType.Normal:
-                case Enums.eType.SpecialO:
+                case eType.Normal:
+                case eType.SpecialO:
                     str = DatabaseAPI.Database.Enhancements[iEnh].ShortName;
                     break;
-                case Enums.eType.InventO:
+                case eType.InventO:
                     str = "Invention: " + DatabaseAPI.Database.Enhancements[iEnh].ShortName;
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     str = DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[iEnh].nIDSet].DisplayName + ": " + DatabaseAPI.Database.Enhancements[iEnh].ShortName;
                     break;
                 default:
@@ -1159,7 +1160,7 @@ public static class DatabaseAPI
     {
         foreach (IEnhancement enhancement in DatabaseAPI.Database.Enhancements)
         {
-            if (enhancement.TypeID == Enums.eType.InventO || enhancement.TypeID == Enums.eType.SetO)
+            if (enhancement.TypeID == eType.InventO || enhancement.TypeID == eType.SetO)
             {
                 int recipeIdxByName = DatabaseAPI.GetRecipeIdxByName(enhancement.UID);
                 if (recipeIdxByName > -1)
@@ -1534,7 +1535,7 @@ public static class DatabaseAPI
                     throw new EndOfStreamException("Unable to load Enhancement Class data, version header not found!");
                 if (!FileIO.IOSeek(streamReader, "Index"))
                     throw new EndOfStreamException("Unable to load Enhancement Class data, section header not found!");
-                Enums.sEnhClass[] enhancementClasses = DatabaseAPI.Database.EnhancementClasses;
+                var enhancementClasses = DatabaseAPI.Database.EnhancementClasses;
                 string[] strArray;
                 do
                 {
@@ -1853,30 +1854,30 @@ public static class DatabaseAPI
         foreach (IPower power in DatabaseAPI.Database.Power)
         {
             bool flag = false;
-            if (power.GetPowerSet().SetType == Enums.ePowerSetType.SetBonus)
+            if (power.GetPowerSet().SetType == ePowerSetType.SetBonus)
             {
                 flag = power.PowerName.Contains("Slow");
                 if (flag)
                 {
-                    power.BuffMode = Enums.eBuffMode.Debuff;
+                    power.BuffMode = eBuffMode.Debuff;
                     for (int index = 0; index < power.Effects.Length; ++index)
-                        power.Effects[index].buffMode = Enums.eBuffMode.Debuff;
+                        power.Effects[index].buffMode = eBuffMode.Debuff;
                 }
             }
             foreach (IEffect effect in power.Effects)
             {
                 if (flag)
-                    effect.buffMode = Enums.eBuffMode.Debuff;
+                    effect.buffMode = eBuffMode.Debuff;
                 switch (effect.EffectType)
                 {
-                    case Enums.eEffectType.GrantPower:
+                    case eEffectType.GrantPower:
                         effect.nSummon = DatabaseAPI.NidFromUidPower(effect.Summon);
                         power.HasGrantPowerEffect = true;
                         break;
-                    case Enums.eEffectType.EntCreate:
+                    case eEffectType.EntCreate:
                         effect.nSummon = DatabaseAPI.NidFromUidEntity(effect.Summon);
                         break;
-                    case Enums.eEffectType.PowerRedirect:
+                    case eEffectType.PowerRedirect:
                         effect.nSummon = DatabaseAPI.NidFromUidPower(effect.Override);
                         power.HasPowerOverrideEffect = true;
                         break;
@@ -1992,7 +1993,7 @@ public static class DatabaseAPI
         for (int index1 = 0; index1 <= DatabaseAPI.Database.Enhancements.Length - 1; ++index1)
         {
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[index1];
-            if (enhancement.TypeID == Enums.eType.SetO && !string.IsNullOrEmpty(enhancement.UIDSet))
+            if (enhancement.TypeID == eType.SetO && !string.IsNullOrEmpty(enhancement.UIDSet))
             {
                 int index2 = DatabaseAPI.NidFromUidioSet(enhancement.UIDSet);
                 if (index2 > -1)

@@ -1,5 +1,6 @@
 
 using Base.Data_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -345,10 +346,10 @@ namespace Hero_Designer
         {
             if (this.Loading || this.cbAffects.SelectedIndex < 0)
                 return;
-            this.myFX.ToWho = (Enums.eToWho)this.cbAffects.SelectedIndex;
+            this.myFX.ToWho = (eToWho)this.cbAffects.SelectedIndex;
             this.lblAffectsCaster.Text = "";
             var power = this.myFX.GetPower();
-            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            if (power != null && (power.EntitiesAutoHit & eEntity.Caster) > eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
             this.UpdateFXText();
         }
@@ -358,7 +359,7 @@ namespace Hero_Designer
         {
             if (this.Loading || this.cbAspect.SelectedIndex < 0)
                 return;
-            this.myFX.Aspect = (Enums.eAspect)this.cbAspect.SelectedIndex;
+            this.myFX.Aspect = (eAspect)this.cbAspect.SelectedIndex;
             this.UpdateFXText();
         }
 
@@ -367,7 +368,7 @@ namespace Hero_Designer
         {
             if (this.Loading || this.cbAttribute.SelectedIndex < 0)
                 return;
-            this.myFX.AttribType = (Enums.eAttribType)this.cbAttribute.SelectedIndex;
+            this.myFX.AttribType = (eAttribType)this.cbAttribute.SelectedIndex;
             this.UpdateFXText();
         }
 
@@ -376,7 +377,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.myFX.EffectClass = (Enums.eEffectClass)this.cbFXClass.SelectedIndex;
+            this.myFX.EffectClass = (eEffectClass)this.cbFXClass.SelectedIndex;
             this.UpdateFXText();
         }
 
@@ -385,7 +386,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.myFX.SpecialCase = (Enums.eSpecialCase)this.cbFXSpecialCase.SelectedIndex;
+            this.myFX.SpecialCase = (eSpecialCase)this.cbFXSpecialCase.SelectedIndex;
             this.UpdateFXText();
         }
 
@@ -404,7 +405,7 @@ namespace Hero_Designer
         {
             if (this.Loading || this.cbPercentageOverride.SelectedIndex < 0)
                 return;
-            this.myFX.DisplayPercentageOverride = (Enums.eOverrideBoolean)this.cbPercentageOverride.SelectedIndex;
+            this.myFX.DisplayPercentageOverride = (eOverrideBoolean)this.cbPercentageOverride.SelectedIndex;
             this.UpdateFXText();
         }
 
@@ -422,7 +423,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.myFX.Stacking = !this.chkStack.Checked ? Enums.eStacking.No : Enums.eStacking.Yes;
+            this.myFX.Stacking = !this.chkStack.Checked ? eStacking.No : eStacking.Yes;
             this.UpdateFXText();
         }
 
@@ -478,17 +479,17 @@ namespace Hero_Designer
             this.cbAspect.SelectedIndex = (int)fx.Aspect;
             this.cbModifier.SelectedIndex = DatabaseAPI.NidFromUidAttribMod(fx.ModifierTable);
             this.lblAffectsCaster.Text = "";
-            if (fx.ToWho == Enums.eToWho.All)
+            if (fx.ToWho == eToWho.All)
                 this.cbAffects.SelectedIndex = 1;
             else
                 this.cbAffects.SelectedIndex = (int)fx.ToWho;
             var power = fx.GetPower();
-            if (power != null && (power.EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+            if (power != null && (power.EntitiesAutoHit & eEntity.Caster) > eEntity.None)
                 this.lblAffectsCaster.Text = "Power also affects Self";
-            this.rbIfAny.Checked = fx.PvMode == Enums.ePvX.Any;
-            this.rbIfCritter.Checked = fx.PvMode == Enums.ePvX.PvE;
-            this.rbIfPlayer.Checked = fx.PvMode == Enums.ePvX.PvP;
-            this.chkStack.Checked = fx.Stacking == Enums.eStacking.Yes;
+            this.rbIfAny.Checked = fx.PvMode == ePvX.Any;
+            this.rbIfCritter.Checked = fx.PvMode == ePvX.PvE;
+            this.rbIfPlayer.Checked = fx.PvMode == ePvX.PvP;
+            this.chkStack.Checked = fx.Stacking == eStacking.Yes;
             this.chkFXBuffable.Checked = !fx.Buffable;
             this.chkFXResistable.Checked = !fx.Resistible;
             this.chkNearGround.Checked = fx.NearGround;
@@ -502,7 +503,7 @@ namespace Hero_Designer
             int[] values = (int[])Enum.GetValues(fx.Suppression.GetType());
             int num1 = names1.Length - 1;
             for (int index = 0; index <= num1; ++index)
-                this.clbSuppression.Items.Add(names1[index], (fx.Suppression & (Enums.eSuppress)values[index]) != Enums.eSuppress.None);
+                this.clbSuppression.Items.Add(names1[index], (fx.Suppression & (eSuppress)values[index]) != eSuppress.None);
             this.clbSuppression.EndUpdate();
             this.lvEffectType.BeginUpdate();
             this.lvEffectType.Items.Clear();
@@ -512,7 +513,7 @@ namespace Hero_Designer
             for (int index2 = 0; index2 <= num2; ++index2)
             {
                 this.lvEffectType.Items.Add(names2[index2]);
-                if ((Enums.eEffectType)index2 == fx.EffectType)
+                if ((eEffectType)index2 == fx.EffectType)
                     index1 = index2;
             }
             if (index1 > -1)
@@ -641,7 +642,7 @@ namespace Hero_Designer
         {
             if (this.Loading || this.lvEffectType.SelectedIndices.Count < 1)
                 return;
-            this.myFX.EffectType = (Enums.eEffectType)this.lvEffectType.SelectedIndices[0];
+            this.myFX.EffectType = (eEffectType)this.lvEffectType.SelectedIndices[0];
             this.UpdateEffectSubAttribList();
             this.UpdateFXText();
         }
@@ -652,17 +653,17 @@ namespace Hero_Designer
             if (this.Loading || this.lvSubAttribute.SelectedIndices.Count < 1)
                 return;
             IEffect fx = this.myFX;
-            if (fx.EffectType == Enums.eEffectType.Damage | fx.EffectType == Enums.eEffectType.DamageBuff | fx.EffectType == Enums.eEffectType.Defense | fx.EffectType == Enums.eEffectType.Resistance)
-                fx.DamageType = (Enums.eDamage)this.lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.Mez | fx.EffectType == Enums.eEffectType.MezResist)
-                fx.MezType = (Enums.eMez)this.lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.ResEffect)
-                fx.ETModifies = (Enums.eEffectType)this.lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.EntCreate)
+            if (fx.EffectType == eEffectType.Damage | fx.EffectType == eEffectType.DamageBuff | fx.EffectType == eEffectType.Defense | fx.EffectType == eEffectType.Resistance)
+                fx.DamageType = (eDamage)this.lvSubAttribute.SelectedIndices[0];
+            else if (fx.EffectType == eEffectType.Mez | fx.EffectType == eEffectType.MezResist)
+                fx.MezType = (eMez)this.lvSubAttribute.SelectedIndices[0];
+            else if (fx.EffectType == eEffectType.ResEffect)
+                fx.ETModifies = (eEffectType)this.lvSubAttribute.SelectedIndices[0];
+            else if (fx.EffectType == eEffectType.EntCreate)
                 fx.Summon = this.lvSubAttribute.SelectedItems[0].Text;
-            else if (fx.EffectType == Enums.eEffectType.Enhancement)
-                fx.ETModifies = (Enums.eEffectType)this.lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.GlobalChanceMod)
+            else if (fx.EffectType == eEffectType.Enhancement)
+                fx.ETModifies = (eEffectType)this.lvSubAttribute.SelectedIndices[0];
+            else if (fx.EffectType == eEffectType.GlobalChanceMod)
                 fx.Reward = this.lvSubAttribute.SelectedItems[0].Text;
             this.UpdateFXText();
             this.UpdateSubSubList();
@@ -674,8 +675,8 @@ namespace Hero_Designer
             if (this.Loading || this.lvSubSub.SelectedIndices.Count < 1)
                 return;
             IEffect fx = this.myFX;
-            if (fx.EffectType == Enums.eEffectType.Enhancement & fx.ETModifies == Enums.eEffectType.Mez)
-                fx.MezType = (Enums.eMez)this.lvSubSub.SelectedIndices[0];
+            if (fx.EffectType == eEffectType.Enhancement & fx.ETModifies == eEffectType.Mez)
+                fx.MezType = (eMez)this.lvSubSub.SelectedIndices[0];
             this.UpdateFXText();
         }
 
@@ -684,7 +685,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.myFX.PvMode = !this.rbIfCritter.Checked ? (!this.rbIfPlayer.Checked ? Enums.ePvX.Any : Enums.ePvX.PvP) : Enums.ePvX.PvE;
+            this.myFX.PvMode = !this.rbIfCritter.Checked ? (!this.rbIfPlayer.Checked ? ePvX.Any : ePvX.PvP) : ePvX.PvE;
             this.UpdateFXText();
         }
 
@@ -692,10 +693,10 @@ namespace Hero_Designer
 
         {
             int[] values = (int[])Enum.GetValues(this.myFX.Suppression.GetType());
-            this.myFX.Suppression = Enums.eSuppress.None;
+            this.myFX.Suppression = eSuppress.None;
             int num = this.clbSuppression.CheckedIndices.Count - 1;
             for (int index = 0; index <= num; ++index)
-                //this.myFX.Suppression += (Enums.eSuppress) values[this.clbSuppression.CheckedIndices[index]];
+                //this.myFX.Suppression += (eSuppress) values[this.clbSuppression.CheckedIndices[index]];
                 myFX.Suppression += values[clbSuppression.CheckedIndices[index]];
         }
 
@@ -870,25 +871,25 @@ namespace Hero_Designer
             this.lvSubAttribute.Items.Clear();
             string[] strArray = new string[0];
             IEffect fx = this.myFX;
-            if (fx.EffectType == Enums.eEffectType.Damage | fx.EffectType == Enums.eEffectType.DamageBuff | fx.EffectType == Enums.eEffectType.Defense | fx.EffectType == Enums.eEffectType.Resistance | fx.EffectType == Enums.eEffectType.Elusivity)
+            if (fx.EffectType == eEffectType.Damage | fx.EffectType == eEffectType.DamageBuff | fx.EffectType == eEffectType.Defense | fx.EffectType == eEffectType.Resistance | fx.EffectType == eEffectType.Elusivity)
             {
                 strArray = Enum.GetNames(fx.DamageType.GetType());
                 index1 = (int)fx.DamageType;
                 this.lvSubAttribute.Columns[0].Text = "Damage Type / Vector";
             }
-            else if (fx.EffectType == Enums.eEffectType.Mez | fx.EffectType == Enums.eEffectType.MezResist)
+            else if (fx.EffectType == eEffectType.Mez | fx.EffectType == eEffectType.MezResist)
             {
                 strArray = Enum.GetNames(fx.MezType.GetType());
                 index1 = (int)fx.MezType;
                 this.lvSubAttribute.Columns[0].Text = "Mez Type";
             }
-            else if (fx.EffectType == Enums.eEffectType.ResEffect)
+            else if (fx.EffectType == eEffectType.ResEffect)
             {
                 strArray = Enum.GetNames(fx.EffectType.GetType());
                 index1 = (int)fx.ETModifies;
                 this.lvSubAttribute.Columns[0].Text = "Effect Type";
             }
-            else if (fx.EffectType == Enums.eEffectType.EntCreate)
+            else if (fx.EffectType == eEffectType.EntCreate)
             {
                 strArray = new string[DatabaseAPI.Database.Entities.Length - 1 + 1];
                 string lower = fx.Summon.ToLower();
@@ -901,7 +902,7 @@ namespace Hero_Designer
                 }
                 this.lvSubAttribute.Columns[0].Text = "Entity Name";
             }
-            else if (fx.EffectType == Enums.eEffectType.GrantPower)
+            else if (fx.EffectType == eEffectType.GrantPower)
             {
                 strArray = new string[DatabaseAPI.Database.Power.Length - 1 + 1];
                 string lower = fx.Summon.ToLower();
@@ -914,13 +915,13 @@ namespace Hero_Designer
                 }
                 this.lvSubAttribute.Columns[0].Text = "Power Name";
             }
-            else if (fx.EffectType == Enums.eEffectType.Enhancement)
+            else if (fx.EffectType == eEffectType.Enhancement)
             {
                 strArray = Enum.GetNames(fx.EffectType.GetType());
                 index1 = (int)fx.ETModifies;
                 this.lvSubAttribute.Columns[0].Text = "Effect Type";
             }
-            else if (fx.EffectType == Enums.eEffectType.GlobalChanceMod)
+            else if (fx.EffectType == eEffectType.GlobalChanceMod)
             {
                 strArray = new string[DatabaseAPI.Database.EffectIds.Count - 1 + 1];
                 string lower = fx.Reward.ToLower();
@@ -969,7 +970,7 @@ namespace Hero_Designer
             this.lvSubSub.Items.Clear();
             string[] strArray = new string[0];
             IEffect fx = this.myFX;
-            if ((fx.EffectType == Enums.eEffectType.Enhancement | fx.EffectType == Enums.eEffectType.ResEffect) & fx.ETModifies == Enums.eEffectType.Mez)
+            if ((fx.EffectType == eEffectType.Enhancement | fx.EffectType == eEffectType.ResEffect) & fx.ETModifies == eEffectType.Mez)
             {
                 this.lvSubSub.Columns[0].Text = "Mez Type";
                 strArray = Enum.GetNames(fx.MezType.GetType());

@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -109,13 +110,13 @@ namespace Hero_Designer
             {
                 switch (MidsContext.Config.SpeedFormat)
                 {
-                    case Enums.eSpeedMeasure.FeetPerSecond:
+                    case eSpeedMeasure.FeetPerSecond:
                         this.rbFPS.Checked = true;
                         break;
-                    case Enums.eSpeedMeasure.MetersPerSecond:
+                    case eSpeedMeasure.MetersPerSecond:
                         this.rbMSec.Checked = true;
                         break;
-                    case Enums.eSpeedMeasure.KilometersPerHour:
+                    case eSpeedMeasure.KilometersPerHour:
                         this.rbKPH.Checked = true;
                         break;
                     default:
@@ -241,13 +242,13 @@ namespace Hero_Designer
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
             if (this.rbMPH.Checked)
-                MidsContext.Config.SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
+                MidsContext.Config.SpeedFormat = eSpeedMeasure.MilesPerHour;
             else if (this.rbKPH.Checked)
-                MidsContext.Config.SpeedFormat = Enums.eSpeedMeasure.KilometersPerHour;
+                MidsContext.Config.SpeedFormat = eSpeedMeasure.KilometersPerHour;
             else if (this.rbFPS.Checked)
-                MidsContext.Config.SpeedFormat = Enums.eSpeedMeasure.FeetPerSecond;
+                MidsContext.Config.SpeedFormat = eSpeedMeasure.FeetPerSecond;
             else if (this.rbMSec.Checked)
-                MidsContext.Config.SpeedFormat = Enums.eSpeedMeasure.MetersPerSecond;
+                MidsContext.Config.SpeedFormat = eSpeedMeasure.MetersPerSecond;
             this.UpdateData();
         }
 
@@ -463,7 +464,7 @@ namespace Hero_Designer
 
         public void UpdateData()
         {
-            string[] names1 = Enum.GetNames(Enums.eDamage.None.GetType());
+            string[] names1 = Enum.GetNames(eDamage.None.GetType());
             this.pbClose.Refresh();
             this.pbTopMost.Refresh();
             this.tab0.Refresh();
@@ -547,24 +548,24 @@ namespace Hero_Designer
             this.graphHP.MarkerValue = 100f;
             this.graphHP.Draw();
             this.graphMovement.Clear();
-            Enums.eSpeedMeasure speedFormat = MidsContext.Config.SpeedFormat;
+            eSpeedMeasure speedFormat = MidsContext.Config.SpeedFormat;
             string str3 = " MilesPerHour";
             string str4 = " m";
             switch (speedFormat)
             {
-                case Enums.eSpeedMeasure.FeetPerSecond:
+                case eSpeedMeasure.FeetPerSecond:
                     str3 = " Ft/Sec";
                     str4 = " ft";
                     break;
-                case Enums.eSpeedMeasure.MetersPerSecond:
+                case eSpeedMeasure.MetersPerSecond:
                     str3 = " M/Sec";
                     str4 = " m";
                     break;
-                case Enums.eSpeedMeasure.MilesPerHour:
+                case eSpeedMeasure.MilesPerHour:
                     str3 = " MilesPerHour";
                     str4 = " ft";
                     break;
-                case Enums.eSpeedMeasure.KilometersPerHour:
+                case eSpeedMeasure.KilometersPerHour:
                     str3 = " KilometersPerHour";
                     str4 = " m";
                     break;
@@ -574,7 +575,7 @@ namespace Hero_Designer
             string iTip7 = "Base Jump Speed: " + Strings.Format(displayStats.Speed(21f, speedFormat), "##0.#") + str3 + ".";
             string str6 = "Base Jump Height: " + Strings.Format(displayStats.Distance(4f, speedFormat), "##0.#");
             string iTip8 = "Base Run Speed: " + Strings.Format(displayStats.Speed(21f, speedFormat), "##0.#") + str3 + ".";
-            string iTip9 = !(speedFormat == Enums.eSpeedMeasure.FeetPerSecond | speedFormat == Enums.eSpeedMeasure.MilesPerHour) ? str6 + " m." : str6 + " ft.";
+            string iTip9 = !(speedFormat == eSpeedMeasure.FeetPerSecond | speedFormat == eSpeedMeasure.MilesPerHour) ? str6 + " m." : str6 + " ft.";
             if (this.A_GT_B(displayStats.MovementFlySpeed(speedFormat, true), displayStats.MovementFlySpeed(speedFormat, false)))
                 iTip6 = iTip6 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.FlySpd, speedFormat), "##0.#") + str3 + ".";
             else if ((double)displayStats.MovementFlySpeed(speedFormat, false) == 0.0)
@@ -583,11 +584,11 @@ namespace Hero_Designer
                 iTip7 = iTip7 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.JumpSpd, speedFormat), "##0.#") + str3 + ".";
             if (this.A_GT_B(displayStats.MovementRunSpeed(speedFormat, true), displayStats.MovementRunSpeed(speedFormat, false)))
                 iTip8 = iTip8 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.RunSpd, speedFormat), "##0.#") + str3 + ".";
-            this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip8);
-            this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip7);
-            this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + str4, displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), iTip9);
-            this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip6);
-            this.graphMovement.ForcedMax = displayStats.Speed(200f, Enums.eSpeedMeasure.FeetPerSecond);
+            this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementRunSpeed(eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(eSpeedMeasure.FeetPerSecond, true), iTip8);
+            this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementJumpSpeed(eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(eSpeedMeasure.FeetPerSecond, true), iTip7);
+            this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + str4, displayStats.MovementJumpHeight(eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(eSpeedMeasure.FeetPerSecond), iTip9);
+            this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementFlySpeed(eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(eSpeedMeasure.FeetPerSecond, true), iTip6);
+            this.graphMovement.ForcedMax = displayStats.Speed(200f, eSpeedMeasure.FeetPerSecond);
             this.graphMovement.Draw();
             this.graphToHit.Clear();
             this.graphToHit.AddItem("ToHit:|" + this.PM(displayStats.BuffToHit, "##0.#", "%"), displayStats.BuffToHit, 0.0f, "This effect increases the accuracy of all your powers.\r\nToHit values are added together before being multiplied by Accuracy");
@@ -642,19 +643,19 @@ namespace Hero_Designer
             string str10 = "\r\nStatus resistance reduces the time you are affected by a status effect such as" + "\r\na Hold. Note that 100% resistance would make a 10s effect last 5s, and not 0s.";
             this.graphSProt.Clear();
             this.graphSRes.Clear();
-            Enums.eMez[] eMezArray = new Enums.eMez[11]
+            eMez[] eMezArray = new eMez[11]
             {
-        Enums.eMez.Held,
-        Enums.eMez.Stunned,
-        Enums.eMez.Sleep,
-        Enums.eMez.Immobilized,
-        Enums.eMez.Knockback,
-        Enums.eMez.Repel,
-        Enums.eMez.Confused,
-        Enums.eMez.Terrorized,
-        Enums.eMez.Taunt,
-        Enums.eMez.Placate,
-        Enums.eMez.Teleport
+        eMez.Held,
+        eMez.Stunned,
+        eMez.Sleep,
+        eMez.Immobilized,
+        eMez.Knockback,
+        eMez.Repel,
+        eMez.Confused,
+        eMez.Terrorized,
+        eMez.Taunt,
+        eMez.Placate,
+        eMez.Teleport
             };
             string[] names2 = Enum.GetNames(eMezArray[0].GetType());
             string[] names3 = Enum.GetNames(eMezArray[0].GetType());
@@ -678,13 +679,13 @@ namespace Hero_Designer
                 this.graphSProt.AddItem(names2[(int)eMezArray[index]] + ":|" + Strings.Format((float)-(double)totals.Mez[(int)eMezArray[index]], "##0.##"), -totals.Mez[(int)eMezArray[index]], 0.0f, iTip11);
                 float num5 = (float)(100.0 / (1.0 + (double)totals.MezRes[(int)eMezArray[index]] / 100.0));
                 string str11;
-                if (eMezArray[index] != Enums.eMez.Knockback & eMezArray[index] != Enums.eMez.Knockup & eMezArray[index] != Enums.eMez.Repel & eMezArray[index] != Enums.eMez.Teleport)
+                if (eMezArray[index] != eMez.Knockback & eMezArray[index] != eMez.Knockup & eMezArray[index] != eMez.Repel & eMezArray[index] != eMez.Teleport)
                 {
                     if ((double)totals.MezRes[(int)eMezArray[index]] > (double)num3)
                         num3 = (int)Math.Round((double)totals.MezRes[(int)eMezArray[index]]);
                     str11 = "\r\n" + names3[(int)eMezArray[index]] + " effects will last " + Strings.Format(num5, "##0.##") + "% of their full duration.\r\n" + str10;
                 }
-                else if (eMezArray[index] == Enums.eMez.Teleport)
+                else if (eMezArray[index] == eMez.Teleport)
                     str11 = "\r\n" + names3[(int)eMezArray[index]] + " effects will be resisted.\r\n" + str10;
                 else
                     str11 = "\r\n" + names3[(int)eMezArray[index]] + " effects will have " + Strings.Format(num5, "##0.##") + "% of their full effect.\r\n" + str10;
@@ -700,15 +701,15 @@ namespace Hero_Designer
             this.graphSRes.Max = (float)num3;
             this.graphSRes.Draw();
             this.graphSDeb.Clear();
-            Enums.eEffectType[] eEffectTypeArray = new Enums.eEffectType[7]
+            var eEffectTypeArray = new eEffectType[7]
             {
-        Enums.eEffectType.Defense,
-        Enums.eEffectType.Endurance,
-        Enums.eEffectType.Recovery,
-        Enums.eEffectType.PerceptionRadius,
-        Enums.eEffectType.ToHit,
-        Enums.eEffectType.RechargeTime,
-        Enums.eEffectType.SpeedRunning
+                eEffectType.Defense,
+                eEffectType.Endurance,
+                eEffectType.Recovery,
+                eEffectType.PerceptionRadius,
+                eEffectType.ToHit,
+                eEffectType.RechargeTime,
+                eEffectType.SpeedRunning
             };
             int num6 = eEffectTypeArray.Length - 1;
             for (int index = 0; index <= num6; ++index)

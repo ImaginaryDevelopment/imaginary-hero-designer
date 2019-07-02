@@ -1,3 +1,4 @@
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -320,7 +321,7 @@ namespace Hero_Designer
         {
             if (this.loading)
                 return;
-            this.myEntity.EntityType = (Enums.eSummonEntity)this.cbEntType.SelectedIndex;
+            this.myEntity.EntityType = (eSummonEntity)this.cbEntType.SelectedIndex;
         }
 
         protected void DisplayInfo()

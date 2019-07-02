@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Display;
+using HeroDesigner.Schema;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -101,24 +102,24 @@ public static class I9Gfx
         }
     }
 
-    public static Origin.Grade ToGfxGrade(Enums.eType iType)
+    public static Origin.Grade ToGfxGrade(eType iType)
     {
         Origin.Grade grade;
         switch (iType)
         {
-            case Enums.eType.None:
+            case eType.None:
                 grade = Origin.Grade.None;
                 break;
-            case Enums.eType.Normal:
+            case eType.Normal:
                 grade = Origin.Grade.TrainingO;
                 break;
-            case Enums.eType.InventO:
+            case eType.InventO:
                 grade = Origin.Grade.IO;
                 break;
-            case Enums.eType.SpecialO:
+            case eType.SpecialO:
                 grade = Origin.Grade.HO;
                 break;
-            case Enums.eType.SetO:
+            case eType.SetO:
                 grade = Origin.Grade.SetO;
                 break;
             default:
@@ -128,30 +129,30 @@ public static class I9Gfx
         return grade;
     }
 
-    public static Origin.Grade ToGfxGrade(Enums.eType iType, Enums.eEnhGrade iGrade)
+    public static Origin.Grade ToGfxGrade(eType iType, eEnhGrade iGrade)
     {
         switch (iType)
         {
-            case Enums.eType.None:
+            case eType.None:
                 return Origin.Grade.None;
-            case Enums.eType.Normal:
+            case eType.Normal:
                 switch (iGrade)
                 {
-                    case Enums.eEnhGrade.None:
+                    case eEnhGrade.None:
                         return Origin.Grade.None;
-                    case Enums.eEnhGrade.TrainingO:
+                    case eEnhGrade.TrainingO:
                         return Origin.Grade.TrainingO;
-                    case Enums.eEnhGrade.DualO:
+                    case eEnhGrade.DualO:
                         return Origin.Grade.DualO;
-                    case Enums.eEnhGrade.SingleO:
+                    case eEnhGrade.SingleO:
                         return Origin.Grade.SingleO;
                 }
                 break;
-            case Enums.eType.InventO:
+            case eType.InventO:
                 return Origin.Grade.IO;
-            case Enums.eType.SpecialO:
+            case eType.SpecialO:
                 return Origin.Grade.HO;
-            case Enums.eType.SetO:
+            case eType.SetO:
                 return Origin.Grade.SetO;
         }
         return Origin.Grade.None;
@@ -253,8 +254,8 @@ public static class I9Gfx
 
     public static void LoadSetTypes()
     {
-        Array values = Enum.GetValues(typeof(Enums.eSetType));
-        string[] names = Enum.GetNames(typeof(Enums.eSetType));
+        Array values = Enum.GetValues(typeof(eSetType));
+        string[] names = Enum.GetNames(typeof(eSetType));
         int length = values.Length;
         I9Gfx.SetTypes = new ExtendedBitmap(length * 30, 30);
         for (int index = 0; index <= length - 1; ++index)
@@ -276,8 +277,8 @@ public static class I9Gfx
 
     public static void LoadEnhTypes()
     {
-        Array values1 = Enum.GetValues(typeof(Enums.eType));
-        string[] names1 = Enum.GetNames(typeof(Enums.eType));
+        Array values1 = Enum.GetValues(typeof(eType));
+        string[] names1 = Enum.GetNames(typeof(eType));
         names1[3] = "HamiO";
         I9Gfx.EnhTypes = new ExtendedBitmap(values1.Length * 30, 30);
         for (int index = 0; index < values1.Length; ++index)
@@ -295,8 +296,8 @@ public static class I9Gfx
                     I9Gfx.EnhTypes.Graphics.DrawImage((Image)extendedBitmap.Bitmap, x, 0);
             }
         }
-        Array values2 = Enum.GetValues(typeof(Enums.eEnhGrade));
-        string[] names2 = Enum.GetNames(typeof(Enums.eEnhGrade));
+        Array values2 = Enum.GetValues(typeof(eEnhGrade));
+        string[] names2 = Enum.GetNames(typeof(eEnhGrade));
         I9Gfx.EnhGrades = new ExtendedBitmap(values2.Length * 30, 30);
         for (int index = 0; index < values2.Length; ++index)
         {
@@ -313,8 +314,8 @@ public static class I9Gfx
                     I9Gfx.EnhGrades.Graphics.DrawImage((Image)extendedBitmap.Bitmap, x, 0);
             }
         }
-        Array values3 = Enum.GetValues(typeof(Enums.eSubtype));
-        string[] names3 = Enum.GetNames(typeof(Enums.eSubtype));
+        Array values3 = Enum.GetValues(typeof(eSubtype));
+        string[] names3 = Enum.GetNames(typeof(eSubtype));
         I9Gfx.EnhSpecials = new ExtendedBitmap(values3.Length * 30, 30);
         for (int index = 0; index < values3.Length; ++index)
         {

@@ -1,5 +1,6 @@
 
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -197,22 +198,22 @@ namespace Hero_Designer
             return DatabaseAPI.GetPowersetIndexes(this.getAT(), this.getSetType())[this.cbSet1.SelectedIndex].nID;
         }
 
-        public Enums.ePowerSetType getSetType()
+        public ePowerSetType getSetType()
         {
-            Enums.ePowerSetType ePowerSetType;
+            ePowerSetType ePowerSetType;
             switch (this.cbType1.SelectedIndex)
             {
                 case 0:
-                    ePowerSetType = Enums.ePowerSetType.Primary;
+                    ePowerSetType = ePowerSetType.Primary;
                     break;
                 case 1:
-                    ePowerSetType = Enums.ePowerSetType.Secondary;
+                    ePowerSetType = ePowerSetType.Secondary;
                     break;
                 case 2:
-                    ePowerSetType = Enums.ePowerSetType.Ancillary;
+                    ePowerSetType = ePowerSetType.Ancillary;
                     break;
                 default:
-                    ePowerSetType = Enums.ePowerSetType.Primary;
+                    ePowerSetType = ePowerSetType.Primary;
                     break;
             }
             return ePowerSetType;
@@ -233,20 +234,20 @@ namespace Hero_Designer
 
         public void List_Sets()
         {
-            Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
+            ePowerSetType iSet = ePowerSetType.None;
             ComboBox cbSet1 = this.cbSet1;
             ComboBox cbType1 = this.cbType1;
             int selectedIndex = this.cbAT1.SelectedIndex;
             switch (cbType1.SelectedIndex)
             {
                 case 0:
-                    iSet = Enums.ePowerSetType.Primary;
+                    iSet = ePowerSetType.Primary;
                     break;
                 case 1:
-                    iSet = Enums.ePowerSetType.Secondary;
+                    iSet = ePowerSetType.Secondary;
                     break;
                 case 2:
-                    iSet = Enums.ePowerSetType.Ancillary;
+                    iSet = ePowerSetType.Ancillary;
                     break;
             }
             cbSet1.BeginUpdate();

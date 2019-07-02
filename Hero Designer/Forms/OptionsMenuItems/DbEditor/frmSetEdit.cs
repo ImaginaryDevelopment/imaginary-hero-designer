@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -268,7 +269,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.mySet.SetType = (Enums.eSetType)this.cbSetType.SelectedIndex;
+            this.mySet.SetType = (eSetType)this.cbSetType.SelectedIndex;
         }
 
         void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
@@ -332,7 +333,7 @@ namespace Hero_Designer
                 }
                 if (this.mySet.Bonus[index1].Index.Length > 0)
                     str1 = str1 + RTF.Crlf() + "   " + RTF.Italic(this.mySet.GetEffectString(index1, false, false));
-                if (this.mySet.Bonus[index1].PvMode == Enums.ePvX.PvP)
+                if (this.mySet.Bonus[index1].PvMode == ePvX.PvP)
                     str1 += "(PvP)";
                 if (this.mySet.Bonus[index1].Index.Length > 0)
                     str1 += RTF.Crlf();
@@ -488,7 +489,7 @@ namespace Hero_Designer
 
         public void FillComboBoxes()
         {
-            string[] names = Enum.GetNames(Enums.eSetType.Untyped.GetType());
+            string[] names = Enum.GetNames(eSetType.Untyped.GetType());
             this.cbSetType.BeginUpdate();
             this.cbSetType.Items.Clear();
             this.cbSetType.Items.AddRange((object[])names);

@@ -242,7 +242,7 @@ namespace Hero_Designer
             this.Graph.ShowScale = true;
 
             this.Graph.Size = new System.Drawing.Size(484, 468);
-            this.Graph.Style = Enums.GraphStyle.Twin;
+            this.Graph.Style = HeroDesigner.Schema.GraphStyle.Twin;
             this.Graph.TabIndex = 1;
             this.Graph.TextWidth = 120;
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.lstDisplay);
@@ -317,7 +317,7 @@ namespace Hero_Designer
             // finished with events
             this.PerformLayout();
         }
-    #endregion
+        #endregion
     }
 
 

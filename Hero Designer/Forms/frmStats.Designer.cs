@@ -162,7 +162,7 @@ namespace Hero_Designer
             this.Graph.ShowScale = true;
 
             this.Graph.Size = new System.Drawing.Size(484, 405);
-            this.Graph.Style = Enums.GraphStyle.Stacked;
+            this.Graph.Style = HeroDesigner.Schema.GraphStyle.Stacked;
             this.Graph.TabIndex = 0;
             this.Graph.TextWidth = 100;
             this.chkOnTop.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;

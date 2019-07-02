@@ -1,5 +1,6 @@
 
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System.Collections.Generic;
 
 public class EnhancementSetCollection : List<EnhancementSet>
@@ -29,9 +30,9 @@ public class EnhancementSetCollection : List<EnhancementSet>
                 string effectString = DatabaseAPI.Database.EnhancementSets[iSet].GetEffectString(index, false, false);
                 if (!string.IsNullOrEmpty(effectString))
                 {
-                    if (DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP)
+                    if (DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == ePvX.PvP)
                         effectString += "(PvP)";
-                    if (enhCount >= DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted & (MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvE | !MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP | DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.Any))
+                    if (enhCount >= DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted & (MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == ePvX.PvE | !MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == ePvX.PvP | DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == ePvX.Any))
                         str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Invention) + effectString + RTF.Color(RTF.ElementID.Text);
                     else
                         str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);

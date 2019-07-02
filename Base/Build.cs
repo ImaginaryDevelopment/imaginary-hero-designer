@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -182,37 +183,37 @@ public class Build
             {
                 if (slot.Enhancement.Enh > -1)
                 {
-                    if (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal && slot.Enhancement.Grade <= Enums.eEnhGrade.None | slot.Enhancement.Grade > Enums.eEnhGrade.SingleO)
-                        slot.Enhancement.Grade = Enums.eEnhGrade.SingleO;
-                    if (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SpecialO && slot.Enhancement.RelativeLevel < Enums.eEnhRelative.None | slot.Enhancement.RelativeLevel > Enums.eEnhRelative.PlusFive)
+                    if (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == eType.Normal && slot.Enhancement.Grade <= eEnhGrade.None | slot.Enhancement.Grade > eEnhGrade.SingleO)
+                        slot.Enhancement.Grade = eEnhGrade.SingleO;
+                    if (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == eType.SpecialO && slot.Enhancement.RelativeLevel < eEnhRelative.None | slot.Enhancement.RelativeLevel > eEnhRelative.PlusFive)
                         slot.Enhancement.RelativeLevel = MidsContext.Config.CalcEnhLevel;
                 }
                 if (slot.FlippedEnhancement.Enh > -1)
                 {
-                    if (DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == Enums.eType.Normal && slot.FlippedEnhancement.Grade <= Enums.eEnhGrade.None | slot.FlippedEnhancement.Grade > Enums.eEnhGrade.SingleO)
-                        slot.FlippedEnhancement.Grade = Enums.eEnhGrade.SingleO;
-                    if (DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == Enums.eType.SpecialO && slot.FlippedEnhancement.RelativeLevel < Enums.eEnhRelative.None | slot.FlippedEnhancement.RelativeLevel > Enums.eEnhRelative.PlusFive)
+                    if (DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == eType.Normal && slot.FlippedEnhancement.Grade <= eEnhGrade.None | slot.FlippedEnhancement.Grade > eEnhGrade.SingleO)
+                        slot.FlippedEnhancement.Grade = eEnhGrade.SingleO;
+                    if (DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == eType.Normal | DatabaseAPI.Database.Enhancements[slot.FlippedEnhancement.Enh].TypeID == eType.SpecialO && slot.FlippedEnhancement.RelativeLevel < eEnhRelative.None | slot.FlippedEnhancement.RelativeLevel > eEnhRelative.PlusFive)
                         slot.FlippedEnhancement.RelativeLevel = MidsContext.Config.CalcEnhLevel;
                 }
             }
         }
     }
 
-    public bool SetEnhGrades(Enums.eEnhGrade newVal)
+    public bool SetEnhGrades(eEnhGrade newVal)
     {
         string str = string.Empty;
         switch (newVal)
         {
-            case Enums.eEnhGrade.None:
+            case eEnhGrade.None:
                 str = "This value should never be passed to the function!";
                 break;
-            case Enums.eEnhGrade.TrainingO:
+            case eEnhGrade.TrainingO:
                 str = "Training";
                 break;
-            case Enums.eEnhGrade.DualO:
+            case eEnhGrade.DualO:
                 str = "Dual";
                 break;
-            case Enums.eEnhGrade.SingleO:
+            case eEnhGrade.SingleO:
                 str = "Single";
                 break;
         }
@@ -223,7 +224,7 @@ public class Build
             {
                 foreach (SlotEntry slot in power.Slots)
                 {
-                    if (slot.Enhancement.Enh > -1 && DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal)
+                    if (slot.Enhancement.Enh > -1 && DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == eType.Normal)
                         slot.Enhancement.Grade = newVal;
                 }
             }
@@ -260,7 +261,7 @@ public class Build
                     {
                         switch (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID)
                         {
-                            case Enums.eType.InventO:
+                            case eType.InventO:
                                 int levelMin1 = DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].LevelMin;
                                 int levelMax = DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].LevelMax;
                                 if (newVal >= levelMin1 & newVal <= levelMax)
@@ -279,7 +280,7 @@ public class Build
                                     break;
                                 }
                                 break;
-                            case Enums.eType.SetO:
+                            case eType.SetO:
                                 int levelMin2 = DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].nIDSet].LevelMin;
                                 int num = DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].nIDSet].LevelMax;
                                 if (num > 49)
@@ -335,7 +336,7 @@ public class Build
                         {
                             if (enhNames)
                                 str1 = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
-                            if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.SetO))
+                            if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == eType.SetO))
                                 str1 = str1 + "-" + power.Slots[0].Enhancement.IOLevel;
                             str1 += "]";
                         }
@@ -364,7 +365,7 @@ public class Build
                         {
                             if (enhNames)
                                 str = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[index3].Enhancement.Enh);
-                            if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.SetO))
+                            if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == eType.SetO))
                                 str = str + "-" + power.Slots[index3].Enhancement.IOLevel;
                             str += "]";
                         }
@@ -447,7 +448,7 @@ public class Build
                                 if (power.Slots[index3].Enhancement.Enh > -1)
                                 {
                                     iText2 = str + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[index3].Enhancement.Enh);
-                                    if (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == Enums.eType.SetO)
+                                    if (DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[index3].Enhancement.Enh].TypeID == eType.SetO)
                                         iText2 = iText2 + "-" + (power.Slots[index3].Enhancement.IOLevel + 1);
                                 }
                                 else
@@ -494,7 +495,7 @@ public class Build
                             if (power.Slots[historyMap.SID].Enhancement.Enh > -1)
                             {
                                 iText2 = empty + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[historyMap.SID].Enhancement.Enh);
-                                if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.SetO)
+                                if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == eType.SetO)
                                     iText2 = iText2 + "-" + (power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
                             }
                             else
@@ -515,7 +516,7 @@ public class Build
                         if (power.Slots[historyMap.SID].Enhancement.Enh > -1)
                         {
                             iText2 = empty + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[historyMap.SID].Enhancement.Enh);
-                            if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == Enums.eType.SetO)
+                            if (DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[historyMap.SID].Enhancement.Enh].TypeID == eType.SetO)
                                 iText2 = iText2 + "-" + (power.Slots[historyMap.SID].Enhancement.IOLevel + 1);
                         }
                         else
@@ -528,39 +529,39 @@ public class Build
         return popupData;
     }
 
-    public bool SetEnhRelativelevels(Enums.eEnhRelative newVal)
+    public bool SetEnhRelativelevels(eEnhRelative newVal)
     {
         string str = string.Empty;
         switch (newVal)
         {
-            case Enums.eEnhRelative.None:
+            case eEnhRelative.None:
                 str = "None (Enhancements will have no effect)";
                 break;
-            case Enums.eEnhRelative.MinusThree:
+            case eEnhRelative.MinusThree:
                 str = "-3";
                 break;
-            case Enums.eEnhRelative.MinusTwo:
+            case eEnhRelative.MinusTwo:
                 str = "-2";
                 break;
-            case Enums.eEnhRelative.MinusOne:
+            case eEnhRelative.MinusOne:
                 str = "-1";
                 break;
-            case Enums.eEnhRelative.Even:
+            case eEnhRelative.Even:
                 str = "Even (+/- 0)";
                 break;
-            case Enums.eEnhRelative.PlusOne:
+            case eEnhRelative.PlusOne:
                 str = "+1";
                 break;
-            case Enums.eEnhRelative.PlusTwo:
+            case eEnhRelative.PlusTwo:
                 str = "+2";
                 break;
-            case Enums.eEnhRelative.PlusThree:
+            case eEnhRelative.PlusThree:
                 str = "+3";
                 break;
-            case Enums.eEnhRelative.PlusFour:
+            case eEnhRelative.PlusFour:
                 str = "+4";
                 break;
-            case Enums.eEnhRelative.PlusFive:
+            case eEnhRelative.PlusFive:
                 str = "+5";
                 break;
         }
@@ -574,15 +575,15 @@ public class Build
                     if (slot.Enhancement.Enh > -1)
                     {
                         IEnhancement enhancement = DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh];
-                        if (newVal > Enums.eEnhRelative.PlusThree)
+                        if (newVal > eEnhRelative.PlusThree)
                         {
-                            int num = enhancement.TypeID == Enums.eType.Normal ? 0 : (enhancement.TypeID != Enums.eType.SpecialO ? 1 : 0);
-                            slot.Enhancement.RelativeLevel = num != 0 ? newVal : Enums.eEnhRelative.PlusThree;
+                            int num = enhancement.TypeID == eType.Normal ? 0 : (enhancement.TypeID != eType.SpecialO ? 1 : 0);
+                            slot.Enhancement.RelativeLevel = num != 0 ? newVal : eEnhRelative.PlusThree;
                         }
-                        else if (newVal < Enums.eEnhRelative.Even)
+                        else if (newVal < eEnhRelative.Even)
                         {
-                            int num = enhancement.TypeID == Enums.eType.Normal ? 0 : (enhancement.TypeID != Enums.eType.SpecialO ? 1 : 0);
-                            slot.Enhancement.RelativeLevel = num != 0 ? Enums.eEnhRelative.Even : newVal;
+                            int num = enhancement.TypeID == eType.Normal ? 0 : (enhancement.TypeID != eType.SpecialO ? 1 : 0);
+                            slot.Enhancement.RelativeLevel = num != 0 ? eEnhRelative.Even : newVal;
                         }
                         else
                             slot.Enhancement.RelativeLevel = newVal;
@@ -684,7 +685,7 @@ public class Build
         int maxLevel = this.GetMaxLevel();
         foreach (PowerEntry power in this.Powers)
         {
-            if (power.Power != null && power.PowerSet != null && !power.Chosen && (power.PowerSet.SetType == Enums.ePowerSetType.Inherent || power.PowerSet.SetType == Enums.ePowerSetType.Primary || power.PowerSet.SetType == Enums.ePowerSetType.Secondary))
+            if (power.Power != null && power.PowerSet != null && !power.Chosen && (power.PowerSet.SetType == ePowerSetType.Inherent || power.PowerSet.SetType == ePowerSetType.Primary || power.PowerSet.SetType == ePowerSetType.Secondary))
             {
                 if (power.Power.Level > maxLevel + 1 || !this.MeetsRequirement(power.Power, maxLevel, -1) || !power.Power.IncludeFlag)
                 {
@@ -832,7 +833,7 @@ public class Build
         powersetList.AddRange((IEnumerable<IPowerset>)this._character.Powersets);
         foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
         {
-            if (powerset.SetType == Enums.ePowerSetType.Inherent && !powersetList.Contains(powerset))
+            if (powerset.SetType == ePowerSetType.Inherent && !powersetList.Contains(powerset))
                 powersetList.Add(powerset);
         }
         foreach (IPowerset powerset in powersetList)
@@ -871,10 +872,10 @@ public class Build
             bool flag3 = false;
             bool flag4 = false;
             bool flag5 = false;
-            if (enhancement.TypeID == Enums.eType.SetO && enhancement.nIDSet > -1 && hIdx > -1 && this.Powers[hIdx].Power != null)
+            if (enhancement.TypeID == eType.SetO && enhancement.nIDSet > -1 && hIdx > -1 && this.Powers[hIdx].Power != null)
             {
                 flag5 = true;
-                Enums.eSetType setType = DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType;
+                eSetType setType = DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType;
                 for (int index = 0; index <= this.Powers[hIdx].Power.SetTypes.Length - 1; ++index)
                 {
                     if (this.Powers[hIdx].Power.SetTypes[index] == setType)
@@ -901,7 +902,7 @@ public class Build
                                 flag2 = true;
                                 break;
                             }
-                            if (enhancement.MutExID != Enums.eEnhMutex.None && DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].MutExID == enhancement.MutExID)
+                            if (enhancement.MutExID != eEnhMutex.None && DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].MutExID == enhancement.MutExID)
                             {
                                 flag3 = true;
                                 break;
@@ -959,7 +960,7 @@ public class Build
                 for (int index2 = 0; index2 < this.Powers[index1].SlotCount; ++index2)
                     i9SetData.Add(ref this.Powers[index1].Slots[index2].Enhancement);
             }
-            i9SetData.BuildEffects(MidsContext.Config.Inc.PvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
+            i9SetData.BuildEffects(MidsContext.Config.Inc.PvE ? ePvX.PvE : ePvX.PvP);
             if (!i9SetData.Empty)
                 this.SetBonus.Add(i9SetData);
         }
@@ -1011,7 +1012,7 @@ public class Build
         IEffect[] array = new IEffect[0];
         for (int index1 = 0; index1 < bonusVirtualPower.Effects.Length; ++index1)
         {
-            if (bonusVirtualPower.Effects[index1].EffectType != Enums.eEffectType.None || !string.IsNullOrEmpty(bonusVirtualPower.Effects[index1].Special))
+            if (bonusVirtualPower.Effects[index1].EffectType != eEffectType.None || !string.IsNullOrEmpty(bonusVirtualPower.Effects[index1].Special))
             {
                 int index2 = Build.GcsbCheck(array, bonusVirtualPower.Effects[index1]);
                 if (index2 < 0)
@@ -1036,9 +1037,9 @@ public class Build
             if (fxList[index].EffectType == testFX.EffectType && ((double)fxList[index].Mag > 0.0 & (double)testFX.Mag > 0.0 || (double)fxList[index].Mag < 0.0 & (double)testFX.Mag < 0.0 || (double)Math.Abs(fxList[index].Mag - ((double)testFX.Mag > 0.0 ? 1f : 0.0f)) < 0.001))
             {
                 int num;
-                if ((testFX.EffectType == Enums.eEffectType.Mez || testFX.EffectType == Enums.eEffectType.MezResist) && fxList[index].MezType == testFX.MezType || (testFX.EffectType == Enums.eEffectType.Damage && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.Defense && testFX.DamageType == fxList[index].DamageType) || (testFX.EffectType == Enums.eEffectType.Resistance && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.DamageBuff && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == Enums.eEffectType.Enhancement && testFX.ETModifies == fxList[index].ETModifies && (testFX.DamageType == fxList[index].DamageType && testFX.MezType == fxList[index].MezType)) || testFX.EffectType == Enums.eEffectType.ResEffect && testFX.ETModifies == fxList[index].ETModifies || testFX.EffectType == Enums.eEffectType.None && testFX.Special == fxList[index].Special && testFX.Special.IndexOf("DEBT", StringComparison.OrdinalIgnoreCase) > -1)
+                if ((testFX.EffectType == eEffectType.Mez || testFX.EffectType == eEffectType.MezResist) && fxList[index].MezType == testFX.MezType || (testFX.EffectType == eEffectType.Damage && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == eEffectType.Defense && testFX.DamageType == fxList[index].DamageType) || (testFX.EffectType == eEffectType.Resistance && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == eEffectType.DamageBuff && testFX.DamageType == fxList[index].DamageType || testFX.EffectType == eEffectType.Enhancement && testFX.ETModifies == fxList[index].ETModifies && (testFX.DamageType == fxList[index].DamageType && testFX.MezType == fxList[index].MezType)) || testFX.EffectType == eEffectType.ResEffect && testFX.ETModifies == fxList[index].ETModifies || testFX.EffectType == eEffectType.None && testFX.Special == fxList[index].Special && testFX.Special.IndexOf("DEBT", StringComparison.OrdinalIgnoreCase) > -1)
                     num = index;
-                else if (testFX.EffectType != Enums.eEffectType.Mez & testFX.EffectType != Enums.eEffectType.MezResist & testFX.EffectType != Enums.eEffectType.Damage & testFX.EffectType != Enums.eEffectType.Defense & testFX.EffectType != Enums.eEffectType.Resistance & testFX.EffectType != Enums.eEffectType.DamageBuff & testFX.EffectType != Enums.eEffectType.Enhancement & testFX.EffectType != Enums.eEffectType.ResEffect & testFX.EffectType == fxList[index].EffectType)
+                else if (testFX.EffectType != eEffectType.Mez & testFX.EffectType != eEffectType.MezResist & testFX.EffectType != eEffectType.Damage & testFX.EffectType != eEffectType.Defense & testFX.EffectType != eEffectType.Resistance & testFX.EffectType != eEffectType.DamageBuff & testFX.EffectType != eEffectType.Enhancement & testFX.EffectType != eEffectType.ResEffect & testFX.EffectType == fxList[index].EffectType)
                     num = index;
                 else
                     continue;
@@ -1048,19 +1049,19 @@ public class Build
         return -1;
     }
 
-    public Enums.eMutex MutexV2(int hIdx, bool silent = false, bool doDetoggle = false)
+    public eMutex MutexV2(int hIdx, bool silent = false, bool doDetoggle = false)
     {
-        Enums.eMutex eMutex;
+        eMutex eMutex;
         if (hIdx < 0 || hIdx > this.Powers.Count || this.Powers[hIdx].Power == null)
         {
-            eMutex = Enums.eMutex.NoGroup;
+            eMutex = eMutex.NoGroup;
         }
         else
         {
             IPower power1 = this.Powers[hIdx].Power;
             if (power1.MutexIgnore)
             {
-                eMutex = Enums.eMutex.NoGroup;
+                eMutex = eMutex.NoGroup;
             }
             else
             {
@@ -1083,7 +1084,7 @@ public class Build
                         IPower power3 = power2.Power;
                         if (power2.StatInclude && !power3.MutexIgnore)
                         {
-                            if (flag2 || (power3.PowerType != Enums.ePowerType.Click || power3.PowerName == "Light_Form") && power3.HasMutexID(index1))
+                            if (flag2 || (power3.PowerType != ePowerType.Click || power3.PowerName == "Light_Form") && power3.HasMutexID(index1))
                             {
                                 powerEntryList.Add(power2);
                                 if (power3.MutexAuto)
@@ -1116,7 +1117,7 @@ public class Build
                 {
                     foreach (PowerEntry powerEntry in powerEntryList)
                         powerEntry.StatInclude = false;
-                    eMutex = Enums.eMutex.NoConflict;
+                    eMutex = eMutex.NoConflict;
                 }
                 else
                 {
@@ -1135,7 +1136,7 @@ public class Build
                         string str2 = str1 + empty;
                         int num = (int)MessageBox.Show(!doDetoggle || !power1.MutexAuto || !this.Powers[hIdx].StatInclude ? str2 + "\n\nYou should turn off the powers listed before turning this one on." : str2 + "\n\nThe listed powers have been turned off.", "Power Conflict");
                     }
-                    eMutex = powerEntryList.Count > 0 ? (!power1.MutexAuto ? (!flag1 ? Enums.eMutex.MutexFound : Enums.eMutex.DetoggleSlave) : Enums.eMutex.DetoggleMaster) : Enums.eMutex.NoConflict;
+                    eMutex = powerEntryList.Count > 0 ? (!power1.MutexAuto ? (!flag1 ? eMutex.MutexFound : eMutex.DetoggleSlave) : eMutex.DetoggleMaster) : eMutex.NoConflict;
                 }
             }
         }

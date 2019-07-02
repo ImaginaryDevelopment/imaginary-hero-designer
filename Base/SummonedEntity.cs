@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System.IO;
 
 public class SummonedEntity
@@ -11,7 +12,7 @@ public class SummonedEntity
     public string[] UpgradePowerFullName = new string[0];
     public int[] nUpgradePower = new int[0];
     public string ClassName = string.Empty;
-    public Enums.eSummonEntity EntityType;
+    public eSummonEntity EntityType;
     public int nClassID;
 
     public SummonedEntity()
@@ -22,7 +23,7 @@ public class SummonedEntity
     {
         this.UID = reader.ReadString();
         this.DisplayName = reader.ReadString();
-        this.EntityType = (Enums.eSummonEntity)reader.ReadInt32();
+        this.EntityType = (eSummonEntity)reader.ReadInt32();
         this.ClassName = reader.ReadString();
         this.PowersetFullName = new string[reader.ReadInt32()];
         this.nPowerset = new int[this.PowersetFullName.Length];

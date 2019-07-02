@@ -42,7 +42,7 @@ namespace Hero_Designer
 
             this.dvFloat.Size = new System.Drawing.Size(300, 348);
             this.dvFloat.TabIndex = 0;
-            this.dvFloat.VisibleSize = Enums.eVisibleSize.Full;
+            this.dvFloat.VisibleSize = HeroDesigner.Schema.eVisibleSize.Full;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
 

@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -35,7 +36,7 @@ namespace Hero_Designer
             this.InitializeComponent();
         }
 
-        protected void AddSetType(int nIDPower, Enums.eSetType nSetType)
+        protected void AddSetType(int nIDPower, eSetType nSetType)
         {
             if (!(nIDPower > -1 & nIDPower < DatabaseAPI.Database.Power.Length))
                 return;
@@ -46,10 +47,10 @@ namespace Hero_Designer
                     return;
             }
             IPower[] power = DatabaseAPI.Database.Power;
-            Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray((Array)power[nIDPower].SetTypes, (Array)new Enums.eSetType[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length + 1]);
+            eSetType[] eSetTypeArray = (eSetType[])Utils.CopyArray((Array)power[nIDPower].SetTypes, (Array)new eSetType[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length + 1]);
             power[nIDPower].SetTypes = eSetTypeArray;
             DatabaseAPI.Database.Power[nIDPower].SetTypes[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length - 1] = nSetType;
-            Array.Sort<Enums.eSetType>(DatabaseAPI.Database.Power[nIDPower].SetTypes);
+            Array.Sort<eSetType>(DatabaseAPI.Database.Power[nIDPower].SetTypes);
         }
 
         void btnClose_Click(object sender, EventArgs e)
@@ -117,7 +118,7 @@ namespace Hero_Designer
 
         {
             int num1 = 0;
-            Enums.eSetType eSetType = Enums.eSetType.Untyped;
+            eSetType eSetType = eSetType.Untyped;
             StreamReader iStream;
             try
             {
@@ -138,7 +139,7 @@ namespace Hero_Designer
             int index1 = -1;
             int num6 = DatabaseAPI.Database.Power.Length - 1;
             for (int index2 = 0; index2 <= num6; ++index2)
-                DatabaseAPI.Database.Power[index2].SetTypes = new Enums.eSetType[0];
+                DatabaseAPI.Database.Power[index2].SetTypes = new eSetType[0];
             try
             {
                 string iLine;

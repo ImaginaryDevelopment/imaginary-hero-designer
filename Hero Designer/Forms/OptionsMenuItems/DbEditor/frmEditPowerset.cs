@@ -1,5 +1,6 @@
 
 using Base.Display;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -319,8 +320,8 @@ namespace Hero_Designer
             if (this.Loading)
                 return;
             if (this.cbSetType.SelectedIndex > -1)
-                this.myPS.SetType = (Enums.ePowerSetType)this.cbSetType.SelectedIndex;
-            if (this.myPS.SetType == Enums.ePowerSetType.Primary)
+                this.myPS.SetType = (ePowerSetType)this.cbSetType.SelectedIndex;
+            if (this.myPS.SetType == ePowerSetType.Primary)
             {
                 this.gbLink.Enabled = true;
             }
@@ -474,7 +475,7 @@ namespace Hero_Designer
         void frmEditPowerset_Load(object sender, EventArgs e)
 
         {
-            Enums.ePowerSetType ePowerSetType = Enums.ePowerSetType.None;
+            ePowerSetType ePowerSetType = ePowerSetType.None;
             this.ListPowers();
             this.txtName.Text = this.myPS.DisplayName;
             this.cbNameGroup.BeginUpdate();
@@ -491,7 +492,7 @@ namespace Hero_Designer
             this.FillLinkGroupCombo();
             this.FillLinkSetCombo();
             this.chkNoLink.Checked = this.myPS.UIDLinkSecondary == "";
-            if (this.myPS.SetType == Enums.ePowerSetType.Primary)
+            if (this.myPS.SetType == ePowerSetType.Primary)
             {
                 this.gbLink.Enabled = true;
             }
@@ -546,7 +547,7 @@ namespace Hero_Designer
             this.lvMutexSets.Items.Clear();
             if (this.cbMutexGroup.SelectedIndex > -1)
             {
-                int[] numArray = DatabaseAPI.NidSets(this.cbMutexGroup.SelectedText, Conversions.ToString(-1), Enums.ePowerSetType.None);
+                int[] numArray = DatabaseAPI.NidSets(this.cbMutexGroup.SelectedText, Conversions.ToString(-1), ePowerSetType.None);
                 int num1 = numArray.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
@@ -588,7 +589,7 @@ namespace Hero_Designer
             IPowerset ps = this.myPS;
             ps.UIDMutexSets = new string[this.lvMutexSets.SelectedIndices.Count - 1 + 1];
             ps.nIDMutexSets = new int[this.lvMutexSets.SelectedIndices.Count - 1 + 1];
-            int[] numArray = DatabaseAPI.NidSets(this.cbMutexGroup.SelectedText, Conversions.ToString(-1), Enums.ePowerSetType.None);
+            int[] numArray = DatabaseAPI.NidSets(this.cbMutexGroup.SelectedText, Conversions.ToString(-1), ePowerSetType.None);
             int num = this.lvMutexSets.SelectedIndices.Count - 1;
             for (int index = 0; index <= num; ++index)
             {

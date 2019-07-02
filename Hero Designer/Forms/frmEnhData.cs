@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Display;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -165,11 +166,11 @@ namespace Hero_Designer
             enh.Effect = sEffectArray;
             Enums.sEffect[] effect = this.myEnh.Effect;
             int index = this.myEnh.Effect.Length - 1;
-            effect[index].Mode = Enums.eEffMode.FX;
+            effect[index].Mode = eEffMode.FX;
             effect[index].Enhance.ID = -1;
             effect[index].Enhance.SubID = -1;
             effect[index].Multiplier = 1f;
-            effect[index].Schedule = Enums.eSchedule.A;
+            effect[index].Schedule = eSchedule.A;
             effect[index].FX = (IEffect)frmPowerEffect.myFX.Clone();
             effect[index].FX.isEnahncementEffect = true;
             this.ListSelectedEffects();
@@ -179,10 +180,10 @@ namespace Hero_Designer
         void btnAutoFill_Click(object sender, EventArgs e)
 
         {
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
-            Enums.eEnhanceShort eEnhanceShort = Enums.eEnhanceShort.None;
-            Enums.eMez eMez = Enums.eMez.None;
-            Enums.eMezShort eMezShort = Enums.eMezShort.None;
+            eEnhance eEnhance = eEnhance.None;
+            eEnhanceShort eEnhanceShort = eEnhanceShort.None;
+            eMez eMez = eMez.None;
+            eMezShort eMezShort = eMezShort.None;
             string[] names1 = Enum.GetNames(eEnhance.GetType());
             string[] names2 = Enum.GetNames(eEnhanceShort.GetType());
             string[] names3 = Enum.GetNames(eMez.GetType());
@@ -195,17 +196,17 @@ namespace Hero_Designer
             names2[18] = "ResDam";
             names3[2] = "Hold";
             names4[2] = "Hold";
-            if (this.myEnh.TypeID == Enums.eType.SetO & this.myEnh.nIDSet > -1 & this.myEnh.nIDSet < DatabaseAPI.Database.EnhancementSets.Count - 1)
+            if (this.myEnh.TypeID == eType.SetO & this.myEnh.nIDSet > -1 & this.myEnh.nIDSet < DatabaseAPI.Database.EnhancementSets.Count - 1)
                 this.myEnh.UID = DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].DisplayName.Replace(" ", "_") + "_";
             int num1 = 0;
             int num2 = this.myEnh.Effect.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (this.myEnh.Effect[index].Mode == eEffMode.Enhancement)
                 {
                     ++num1;
-                    Enums.eEnhance id = (Enums.eEnhance)this.myEnh.Effect[index].Enhance.ID;
-                    if (id != Enums.eEnhance.Mez)
+                    eEnhance id = (eEnhance)this.myEnh.Effect[index].Enhance.ID;
+                    if (id != eEnhance.Mez)
                     {
                         if (this.myEnh.Name != "")
                             this.myEnh.Name += "/";
@@ -241,7 +242,7 @@ namespace Hero_Designer
             int num4 = this.myEnh.Effect.Length - 1;
             for (int index = 0; index <= num4; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (this.myEnh.Effect[index].Mode == eEffMode.Enhancement)
                     this.myEnh.Effect[index].Multiplier = num3;
             }
             this.DisplayAll();
@@ -262,7 +263,7 @@ namespace Hero_Designer
             int selectedIndex = this.lstSelected.SelectedIndices[0];
             if (selectedIndex < this.lstSelected.Items.Count - 1)
             {
-                Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
+                var sEffectArray = new Enums.sEffect[2];
                 sEffectArray[0].Assign(this.myEnh.Effect[selectedIndex]);
                 sEffectArray[1].Assign(this.myEnh.Effect[selectedIndex + 1]);
                 this.myEnh.Effect[selectedIndex + 1].Assign(sEffectArray[0]);
@@ -387,7 +388,7 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            this.myEnh.MutExID = (Enums.eEnhMutex)this.cbMutEx.SelectedIndex;
+            this.myEnh.MutExID = (eEnhMutex)this.cbMutEx.SelectedIndex;
         }
 
         void cbRecipe_SelectedIndexChanged(object sender, EventArgs e)
@@ -411,8 +412,8 @@ namespace Hero_Designer
             if (this.lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
-                this.myEnh.Effect[selectedIndex].Schedule = (Enums.eSchedule)this.cbSched.SelectedIndex;
+            if (this.myEnh.Effect[selectedIndex].Mode == eEffMode.Enhancement)
+                this.myEnh.Effect[selectedIndex].Schedule = (eSchedule)this.cbSched.SelectedIndex;
         }
 
         void cbSet_SelectedIndexChanged(object sender, EventArgs e)
@@ -429,7 +430,7 @@ namespace Hero_Designer
         void cbSubType_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            this.myEnh.SubTypeID = (Enums.eSubtype)this.cbSubType.SelectedIndex;
+            this.myEnh.SubTypeID = (eSubtype)this.cbSubType.SelectedIndex;
         }
 
         void chkSuperior_CheckedChanged(object sender, EventArgs e)
@@ -473,28 +474,28 @@ namespace Hero_Designer
             this.chkSuperior.Checked = this.myEnh.Superior;
             switch (this.myEnh.TypeID)
             {
-                case Enums.eType.Normal:
+                case eType.Normal:
                     this.typeRegular.Checked = true;
                     this.cbSubType.SelectedIndex = -1;
                     this.cbSubType.Enabled = false;
                     this.cbRecipe.SelectedIndex = 0;
                     this.cbRecipe.Enabled = false;
                     break;
-                case Enums.eType.InventO:
+                case eType.InventO:
                     this.typeIO.Checked = true;
                     this.cbSubType.SelectedIndex = -1;
                     this.cbSubType.Enabled = false;
                     this.cbRecipe.SelectedIndex = this.myEnh.RecipeIDX + 1;
                     this.cbRecipe.Enabled = true;
                     break;
-                case Enums.eType.SpecialO:
+                case eType.SpecialO:
                     this.typeHO.Checked = true;
                     this.cbSubType.SelectedIndex = (int)this.myEnh.SubTypeID;
                     this.cbSubType.Enabled = true;
                     this.cbRecipe.Enabled = false;
                     this.cbRecipe.SelectedIndex = 0;
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     this.cbSubType.SelectedIndex = -1;
                     this.cbSubType.Enabled = false;
                     this.typeSet.Checked = true;
@@ -530,7 +531,7 @@ namespace Hero_Designer
             {
                 this.btnRemove.Enabled = true;
                 int selectedIndex = this.lstSelected.SelectedIndex;
-                if (this.myEnh.Effect[selectedIndex].Mode != Enums.eEffMode.Enhancement)
+                if (this.myEnh.Effect[selectedIndex].Mode != eEffMode.Enhancement)
                 {
                     this.btnEdit.Enabled = true;
                     this.gbMod.Enabled = false;
@@ -569,10 +570,10 @@ namespace Hero_Designer
                     }
                     switch (this.myEnh.Effect[selectedIndex].BuffMode)
                     {
-                        case Enums.eBuffDebuff.BuffOnly:
+                        case eBuffDebuff.BuffOnly:
                             this.rbBuff.Checked = true;
                             break;
-                        case Enums.eBuffDebuff.DeBuffOnly:
+                        case eBuffDebuff.DeBuffOnly:
                             this.rbDebuff.Checked = true;
                             break;
                         default:
@@ -599,16 +600,16 @@ namespace Hero_Designer
             {
                 switch (this.myEnh.TypeID)
                 {
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         this.btnImage.Image = this.typeRegular.Image;
                         break;
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         this.btnImage.Image = this.typeIO.Image;
                         break;
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         this.btnImage.Image = this.typeHO.Image;
                         break;
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         this.btnImage.Image = this.typeSet.Image;
                         break;
                 }
@@ -618,7 +619,7 @@ namespace Hero_Designer
 
         public void DisplaySet()
         {
-            this.gbSet.Enabled = this.myEnh.TypeID == Enums.eType.SetO;
+            this.gbSet.Enabled = this.myEnh.TypeID == eType.SetO;
             this.cbSet.SelectedIndex = this.myEnh.nIDSet + 1;
             this.DisplaySetImage();
         }
@@ -704,7 +705,7 @@ namespace Hero_Designer
             if (this.lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            if (this.myEnh.Effect[selectedIndex].Mode == eEffMode.Enhancement)
             {
                 if (this.myEnh.Effect[selectedIndex].Enhance.ID == 12)
                 {
@@ -715,9 +716,9 @@ namespace Hero_Designer
                     int num2 = this.myEnh.Effect.Length - 1;
                     for (int index1 = 0; index1 <= num2; ++index1)
                     {
-                        Enums.sEffect[] effect = this.myEnh.Effect;
+                        var effect = this.myEnh.Effect;
                         int index2 = index1;
-                        if (effect[index2].Mode == Enums.eEffMode.Enhancement & effect[index2].Enhance.SubID == num1)
+                        if (effect[index2].Mode == eEffMode.Enhancement & effect[index2].Enhance.SubID == num1)
                             flag = false;
                     }
                 }
@@ -733,13 +734,13 @@ namespace Hero_Designer
                 frmPowerEffect frmPowerEffect = new frmPowerEffect(this.myEnh.Effect[selectedIndex].FX);
                 if (frmPowerEffect.ShowDialog() == DialogResult.OK)
                 {
-                    Enums.sEffect[] effect = this.myEnh.Effect;
+                    var effect = this.myEnh.Effect;
                     int index = selectedIndex;
-                    effect[index].Mode = Enums.eEffMode.FX;
+                    effect[index].Mode = eEffMode.FX;
                     effect[index].Enhance.ID = -1;
                     effect[index].Enhance.SubID = -1;
                     effect[index].Multiplier = 1f;
-                    effect[index].Schedule = Enums.eSchedule.A;
+                    effect[index].Schedule = eSchedule.A;
                     effect[index].FX = (IEffect)frmPowerEffect.myFX.Clone();
                 }
             }
@@ -751,11 +752,11 @@ namespace Hero_Designer
         {
             if (this.lstAvailable.SelectedIndex <= -1)
                 return;
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
+            eEnhance eEnhance = eEnhance.None;
             bool flag = true;
             int tSub = -1;
-            Enums.eEnhance integer = (Enums.eEnhance)Conversions.ToInteger(Enum.Parse(eEnhance.GetType(), Conversions.ToString(this.lstAvailable.Items[this.lstAvailable.SelectedIndex])));
-            if (integer == Enums.eEnhance.Mez)
+            eEnhance integer = (eEnhance)Conversions.ToInteger(Enum.Parse(eEnhance.GetType(), Conversions.ToString(this.lstAvailable.Items[this.lstAvailable.SelectedIndex])));
+            if (integer == eEnhance.Mez)
             {
                 tSub = this.MezPicker(1);
                 int num = this.myEnh.Effect.Length - 1;
@@ -763,7 +764,7 @@ namespace Hero_Designer
                 {
                     Enums.sEffect[] effect = this.myEnh.Effect;
                     int index2 = index1;
-                    if (effect[index2].Mode == Enums.eEffMode.Enhancement & effect[index2].Enhance.SubID == tSub)
+                    if (effect[index2].Mode == eEffMode.Enhancement & effect[index2].Enhance.SubID == tSub)
                         flag = false;
                 }
             }
@@ -778,7 +779,7 @@ namespace Hero_Designer
                 enh.Effect = sEffectArray;
                 Enums.sEffect[] effect = this.myEnh.Effect;
                 int index = this.myEnh.Effect.Length - 1;
-                effect[index].Mode = Enums.eEffMode.Enhancement;
+                effect[index].Mode = eEffMode.Enhancement;
                 effect[index].Enhance.ID = (int)integer;
                 effect[index].Enhance.SubID = tSub;
                 effect[index].Multiplier = 1f;
@@ -791,19 +792,19 @@ namespace Hero_Designer
 
         public void FillEffectList()
         {
-            Enums.eEnhance eEnhance1 = Enums.eEnhance.None;
+            eEnhance eEnhance1 = eEnhance.None;
             this.lstAvailable.BeginUpdate();
             this.lstAvailable.Items.Clear();
             string[] names = Enum.GetNames(eEnhance1.GetType());
             int num1 = names.Length - 1;
             for (int index1 = 1; index1 <= num1; ++index1)
             {
-                Enums.eEnhance eEnhance2 = (Enums.eEnhance)index1;
+                eEnhance eEnhance2 = (eEnhance)index1;
                 bool flag = false;
                 int num2 = this.myEnh.Effect.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (this.myEnh.Effect[index2].Mode == Enums.eEffMode.Enhancement && this.myEnh.Effect[index2].Enhance.ID == index1 & eEnhance2 != Enums.eEnhance.Mez)
+                    if (this.myEnh.Effect[index2].Mode == eEffMode.Enhancement && this.myEnh.Effect[index2].Enhance.ID == index1 & eEnhance2 != eEnhance.Mez)
                         flag = true;
                 }
                 if (!flag)
@@ -815,7 +816,7 @@ namespace Hero_Designer
 
         public void FillMutExList()
         {
-            string[] names = Enum.GetNames(Enums.eEnhMutex.None.GetType());
+            string[] names = Enum.GetNames(eEnhMutex.None.GetType());
             this.cbMutEx.BeginUpdate();
             this.cbMutEx.Items.Clear();
             this.cbMutEx.Items.AddRange((object[])names);
@@ -858,7 +859,7 @@ namespace Hero_Designer
 
         public void FillSubTypeList()
         {
-            string[] names = Enum.GetNames(Enums.eSubtype.None.GetType());
+            string[] names = Enum.GetNames(eSubtype.None.GetType());
             this.cbSubType.BeginUpdate();
             this.cbSubType.Items.Clear();
             this.cbSubType.Items.AddRange((object[])names);
@@ -885,8 +886,8 @@ namespace Hero_Designer
 
         public void ListSelectedEffects()
         {
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
-            Enums.eMez eMez = Enums.eMez.None;
+            eEnhance eEnhance = eEnhance.None;
+            eMez eMez = eMez.None;
             string[] names1 = Enum.GetNames(eEnhance.GetType());
             string[] names2 = Enum.GetNames(eMez.GetType());
             this.lstSelected.BeginUpdate();
@@ -894,7 +895,7 @@ namespace Hero_Designer
             int num = this.myEnh.Effect.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (this.myEnh.Effect[index].Mode == eEffMode.Enhancement)
                 {
                     string str = names1[this.myEnh.Effect[index].Enhance.ID];
                     if (this.myEnh.Effect[index].Enhance.SubID > -1)
@@ -922,7 +923,7 @@ namespace Hero_Designer
 
         public int MezPicker(int Index = 1)
         {
-            Enums.eMez eMez = Enums.eMez.None;
+            eMez eMez = eMez.None;
             frmEnhMiniPick frmEnhMiniPick = new frmEnhMiniPick();
             string[] names = Enum.GetNames(eMez.GetType());
             int num1 = names.Length - 1;
@@ -1137,14 +1138,14 @@ namespace Hero_Designer
             if (this.Loading || this.lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            if (this.myEnh.Effect[selectedIndex].Mode == eEffMode.Enhancement)
             {
                 if (this.rbBuff.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.BuffOnly;
+                    this.myEnh.Effect[selectedIndex].BuffMode = eBuffDebuff.BuffOnly;
                 else if (this.rbDebuff.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.DeBuffOnly;
+                    this.myEnh.Effect[selectedIndex].BuffMode = eBuffDebuff.DeBuffOnly;
                 else if (this.rbBoth.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.Any;
+                    this.myEnh.Effect[selectedIndex].BuffMode = eBuffDebuff.Any;
             }
         }
 
@@ -1154,7 +1155,7 @@ namespace Hero_Designer
             if (this.lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            if (this.myEnh.Effect[selectedIndex].Mode == eEffMode.Enhancement)
             {
                 this.txtModOther.Enabled = false;
                 if (this.rbModOther.Checked)
@@ -1198,19 +1199,19 @@ namespace Hero_Designer
             ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(30, 30);
             ExtendedBitmap extendedBitmap2 = !(this.myEnh.Image != "") ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + this.myEnh.Image);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), System.Drawing.GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(eType.Normal)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeRegular.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.InventO)), System.Drawing.GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(eType.InventO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeIO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SpecialO)), System.Drawing.GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(eType.SpecialO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeHO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SetO)), System.Drawing.GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(eType.SetO)), System.Drawing.GraphicsUnit.Pixel);
             extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
             this.typeSet.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
         }
@@ -1243,7 +1244,7 @@ namespace Hero_Designer
             if (this.lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement && this.rbModOther.Checked)
+            if (this.myEnh.Effect[selectedIndex].Mode == eEffMode.Enhancement && this.rbModOther.Checked)
                 this.myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(this.txtModOther.Text);
         }
 
@@ -1292,7 +1293,7 @@ namespace Hero_Designer
                 return;
             if (this.typeRegular.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.Normal;
+                this.myEnh.TypeID = eType.Normal;
                 this.chkUnique.Checked = false;
                 this.cbSubType.Enabled = false;
                 this.cbSubType.SelectedIndex = -1;
@@ -1301,7 +1302,7 @@ namespace Hero_Designer
             }
             else if (this.typeIO.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.InventO;
+                this.myEnh.TypeID = eType.InventO;
                 this.chkUnique.Checked = false;
                 this.cbSubType.Enabled = false;
                 this.cbSubType.SelectedIndex = -1;
@@ -1310,7 +1311,7 @@ namespace Hero_Designer
             }
             else if (this.typeHO.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.SpecialO;
+                this.myEnh.TypeID = eType.SpecialO;
                 this.chkUnique.Checked = false;
                 this.cbSubType.Enabled = true;
                 this.cbSubType.SelectedIndex = 0;
@@ -1319,7 +1320,7 @@ namespace Hero_Designer
             }
             else if (this.typeSet.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.SetO;
+                this.myEnh.TypeID = eType.SetO;
                 this.cbSet.Select();
                 this.cbSubType.Enabled = false;
                 this.cbSubType.SelectedIndex = -1;
@@ -1369,13 +1370,13 @@ namespace Hero_Designer
             string str2;
             switch (this.myEnh.TypeID)
             {
-                case Enums.eType.InventO:
+                case eType.InventO:
                     str2 = str1 + "Invention: ";
                     break;
-                case Enums.eType.SpecialO:
+                case eType.SpecialO:
                     str2 = str1 + "HO: ";
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     str2 = this.myEnh.nIDSet > -1 ? str1 + DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].DisplayName + ": " : str1 + "Set Invention: ";
                     break;
                 default:

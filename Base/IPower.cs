@@ -1,5 +1,6 @@
 
 using Base.Data_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 
@@ -51,31 +52,31 @@ public interface IPower : IComparable
 
     Requirement Requires { get; set; }
 
-    Enums.eModeFlags ModesRequired { get; set; }
+    eModeFlags ModesRequired { get; set; }
 
-    Enums.eModeFlags ModesDisallowed { get; set; }
+    eModeFlags ModesDisallowed { get; set; }
 
-    Enums.ePowerType PowerType { get; set; }
+    ePowerType PowerType { get; set; }
 
     float Accuracy { get; set; }
 
     float AccuracyMult { get; set; }
 
-    Enums.eVector AttackTypes { get; set; }
+    eVector AttackTypes { get; set; }
 
     string[] GroupMembership { get; set; }
 
-    Enums.eEntity EntitiesAffected { get; set; }
+    eEntity EntitiesAffected { get; set; }
 
-    Enums.eEntity EntitiesAutoHit { get; set; }
+    eEntity EntitiesAutoHit { get; set; }
 
-    Enums.eEntity Target { get; set; }
+    eEntity Target { get; set; }
 
     bool TargetLoS { get; set; }
 
     float Range { get; set; }
 
-    Enums.eEntity TargetSecondary { get; set; }
+    eEntity TargetSecondary { get; set; }
 
     float RangeSecondary { get; set; }
 
@@ -87,7 +88,7 @@ public interface IPower : IComparable
 
     float ActivatePeriod { get; set; }
 
-    Enums.eEffectArea EffectArea { get; set; }
+    eEffectArea EffectArea { get; set; }
 
     float Radius { get; set; }
 
@@ -99,9 +100,9 @@ public interface IPower : IComparable
 
     string MaxBoosts { get; set; }
 
-    Enums.eCastFlags CastFlags { get; set; }
+    eCastFlags CastFlags { get; set; }
 
-    Enums.eNotify AIReport { get; set; }
+    eNotify AIReport { get; set; }
 
     int NumCharges { get; set; }
 
@@ -131,7 +132,7 @@ public interface IPower : IComparable
 
     bool HiddenPower { get; set; }
 
-    Enums.eSetType[] SetTypes { get; set; }
+    eSetType[] SetTypes { get; set; }
 
     bool ClickBuff { get; set; }
 
@@ -155,9 +156,9 @@ public interface IPower : IComparable
 
     bool SubIsAltColour { get; set; }
 
-    Enums.eEnhance[] IgnoreEnh { get; set; }
+    eEnhance[] IgnoreEnh { get; set; }
 
-    Enums.eEnhance[] Ignore_Buff { get; set; }
+    eEnhance[] Ignore_Buff { get; set; }
 
     bool SkipMax { get; set; }
 
@@ -189,7 +190,7 @@ public interface IPower : IComparable
 
     IEffect[] Effects { get; set; }
 
-    Enums.eBuffMode BuffMode { get; set; }
+    eBuffMode BuffMode { get; set; }
 
     bool HasGrantPowerEffect { get; set; }
 
@@ -215,33 +216,33 @@ public interface IPower : IComparable
 
     bool HasResEffects();
 
-    Enums.ShortFX GetEnhancementMagSum(Enums.eEffectType iEffect, int subType = 0);
+    Enums.ShortFX GetEnhancementMagSum(eEffectType iEffect, int subType = 0);
 
     Enums.ShortFX GetEffectMagSum(
-      Enums.eEffectType iEffect,
+      eEffectType iEffect,
       bool includeDelayed = false,
       bool onlySelf = false,
       bool onlyTarget = false,
       bool maxMode = false);
 
     Enums.ShortFX GetDamageMagSum(
-      Enums.eEffectType iEffect,
-      Enums.eDamage iSub,
+      eEffectType iEffect,
+      eDamage iSub,
       bool includeDelayed = false);
 
-    Enums.ShortFX GetEffectMag(Enums.eEffectType iEffect, Enums.eToWho iTarget = Enums.eToWho.Unspecified, bool allowDelay = false);
+    Enums.ShortFX GetEffectMag(eEffectType iEffect, eToWho iTarget = eToWho.Unspecified, bool allowDelay = false);
 
-    bool AffectsTarget(Enums.eEffectType iEffect);
+    bool AffectsTarget(eEffectType iEffect);
 
-    bool AffectsSelf(Enums.eEffectType iEffect);
+    bool AffectsSelf(eEffectType iEffect);
 
-    bool I9FXPresentP(Enums.eEffectType iEffect, Enums.eMez iMez = Enums.eMez.None);
+    bool I9FXPresentP(eEffectType iEffect, eMez iMez = eMez.None);
 
     bool UpdateFromCSV(string iCSV);
 
-    bool IgnoreEnhancement(Enums.eEnhance iEffect);
+    bool IgnoreEnhancement(eEnhance iEffect);
 
-    bool IgnoreBuff(Enums.eEnhance iEffect);
+    bool IgnoreBuff(eEnhance iEffect);
 
     void SetMathMag();
 
@@ -265,7 +266,7 @@ public interface IPower : IComparable
 
     void ApplyGrantPowerEffects();
 
-    int[] GetValidEnhancements(Enums.eType iType, Enums.eSubtype iSubType = Enums.eSubtype.None);
+    int[] GetValidEnhancements(eType iType, eSubtype iSubType = eSubtype.None);
 
     bool IsEnhancementValid(int iEnh);
 

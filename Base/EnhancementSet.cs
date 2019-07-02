@@ -1,4 +1,5 @@
 
+using HeroDesigner.Schema;
 using System;
 using System.IO;
 using System.Text;
@@ -12,7 +13,7 @@ public class EnhancementSet
     public EnhancementSet.BonusItem[] Bonus = new EnhancementSet.BonusItem[5];
     public EnhancementSet.BonusItem[] SpecialBonus = new EnhancementSet.BonusItem[6];
     public string Uid = string.Empty;
-    public Enums.eSetType SetType;
+    public eSetType SetType;
     public int[] Enhancements;
     public int ImageIdx;
     public int LevelMin;
@@ -87,7 +88,7 @@ public class EnhancementSet
         this.DisplayName = string.Empty;
         this.ShortName = string.Empty;
         this.Desc = string.Empty;
-        this.SetType = Enums.eSetType.Untyped;
+        this.SetType = eSetType.Untyped;
         this.Enhancements = new int[0];
         this.Image = string.Empty;
         this.InitBonus();
@@ -120,7 +121,7 @@ public class EnhancementSet
         this.ShortName = reader.ReadString();
         this.Uid = reader.ReadString();
         this.Desc = reader.ReadString();
-        this.SetType = (Enums.eSetType)reader.ReadInt32();
+        this.SetType = (eSetType)reader.ReadInt32();
         this.Image = reader.ReadString();
         this.LevelMin = reader.ReadInt32();
         this.LevelMax = reader.ReadInt32();
@@ -133,7 +134,7 @@ public class EnhancementSet
         {
             this.Bonus[index1].Special = reader.ReadInt32();
             this.Bonus[index1].AltString = reader.ReadString();
-            this.Bonus[index1].PvMode = (Enums.ePvX)reader.ReadInt32();
+            this.Bonus[index1].PvMode = (ePvX)reader.ReadInt32();
             this.Bonus[index1].Slotted = reader.ReadInt32();
             this.Bonus[index1].Name = new string[reader.ReadInt32() + 1];
             this.Bonus[index1].Index = new int[this.Bonus[index1].Name.Length];
@@ -220,7 +221,7 @@ public class EnhancementSet
             for (int index = 0; index < DatabaseAPI.Database.SetTypeStringLong.Length; ++index)
             {
                 if (str == DatabaseAPI.Database.SetTypeStringLong[index])
-                    this.SetType = (Enums.eSetType)index;
+                    this.SetType = (eSetType)index;
             }
             flag = true;
         }
@@ -250,7 +251,7 @@ public class EnhancementSet
         public string[] Name;
         public int[] Index;
         public string AltString;
-        public Enums.ePvX PvMode;
+        public ePvX PvMode;
         public int Slotted;
 
         public void Assign(EnhancementSet.BonusItem iBi)

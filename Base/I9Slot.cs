@@ -1,4 +1,5 @@
 using Base.Data_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Globalization;
 using System.Text;
@@ -8,19 +9,19 @@ public class I9Slot : ICloneable
     const float SuperiorMult = 1.25f;
 
     public int Enh;
-    public Enums.eEnhRelative RelativeLevel;
-    public Enums.eEnhGrade Grade;
+    public eEnhRelative RelativeLevel;
+    public eEnhGrade Grade;
     public int IOLevel;
 
     public I9Slot()
     {
         this.Enh = -1;
-        this.RelativeLevel = Enums.eEnhRelative.Even;
-        this.Grade = Enums.eEnhGrade.None;
+        this.RelativeLevel = eEnhRelative.Even;
+        this.Grade = eEnhGrade.None;
         this.IOLevel = 1;
     }
 
-    public float GetEnhancementEffect(Enums.eEnhance iEffect, int subEnh, float mag)
+    public float GetEnhancementEffect(eEnhance iEffect, int subEnh, float mag)
     {
         float num1;
         if (this.Enh < 0)
@@ -33,7 +34,7 @@ public class I9Slot : ICloneable
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[this.Enh];
             foreach (Enums.sEffect sEffect in enhancement.Effect)
             {
-                if (sEffect.Mode == Enums.eEffMode.Enhancement && (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly || (double)mag <= 0.0) && ((sEffect.BuffMode != Enums.eBuffDebuff.BuffOnly || (double)mag >= 0.0) && (sEffect.Schedule != Enums.eSchedule.None && (Enums.eEnhance)sEffect.Enhance.ID == iEffect)) && (subEnh < 0 || subEnh == sEffect.Enhance.SubID))
+                if (sEffect.Mode == eEffMode.Enhancement && (sEffect.BuffMode != eBuffDebuff.DeBuffOnly || (double)mag <= 0.0) && ((sEffect.BuffMode != eBuffDebuff.BuffOnly || (double)mag >= 0.0) && (sEffect.Schedule != eSchedule.None && (eEnhance)sEffect.Enhance.ID == iEffect)) && (subEnh < 0 || subEnh == sEffect.Enhance.SubID))
                 {
                     float scheduleMult = this.GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
                     if ((double)Math.Abs(sEffect.Multiplier) > 0.01)
@@ -46,23 +47,23 @@ public class I9Slot : ICloneable
         return num1;
     }
 
-    float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
+    float GetScheduleMult(eType iType, eSchedule iSched)
 
     {
-        if (this.Grade < Enums.eEnhGrade.None)
-            this.Grade = Enums.eEnhGrade.None;
-        if (this.RelativeLevel < Enums.eEnhRelative.None)
-            this.RelativeLevel = Enums.eEnhRelative.None;
-        if (this.Grade > Enums.eEnhGrade.SingleO)
-            this.Grade = Enums.eEnhGrade.SingleO;
-        if (this.RelativeLevel > Enums.eEnhRelative.PlusFive)
-            this.RelativeLevel = Enums.eEnhRelative.PlusFive;
+        if (this.Grade < eEnhGrade.None)
+            this.Grade = eEnhGrade.None;
+        if (this.RelativeLevel < eEnhRelative.None)
+            this.RelativeLevel = eEnhRelative.None;
+        if (this.Grade > eEnhGrade.SingleO)
+            this.Grade = eEnhGrade.SingleO;
+        if (this.RelativeLevel > eEnhRelative.PlusFive)
+            this.RelativeLevel = eEnhRelative.PlusFive;
         float num1 = 0.0f;
         if (this.IOLevel <= 0)
             this.IOLevel = 0;
         if (this.IOLevel > DatabaseAPI.Database.MultIO.Length - 1)
             this.IOLevel = DatabaseAPI.Database.MultIO.Length - 1;
-        if (iSched == Enums.eSchedule.None || iSched == Enums.eSchedule.Multiple)
+        if (iSched == eSchedule.None || iSched == eSchedule.Multiple)
         {
             num1 = 0.0f;
         }
@@ -70,30 +71,30 @@ public class I9Slot : ICloneable
         {
             switch (iType)
             {
-                case Enums.eType.Normal:
+                case eType.Normal:
                     switch (this.Grade)
                     {
-                        case Enums.eEnhGrade.None:
+                        case eEnhGrade.None:
                             num1 = 0.0f;
                             break;
-                        case Enums.eEnhGrade.TrainingO:
+                        case eEnhGrade.TrainingO:
                             num1 = DatabaseAPI.Database.MultTO[0][(int)iSched];
                             break;
-                        case Enums.eEnhGrade.DualO:
+                        case eEnhGrade.DualO:
                             num1 = DatabaseAPI.Database.MultDO[0][(int)iSched];
                             break;
-                        case Enums.eEnhGrade.SingleO:
+                        case eEnhGrade.SingleO:
                             num1 = DatabaseAPI.Database.MultSO[0][(int)iSched];
                             break;
                     }
                     break;
-                case Enums.eType.InventO:
+                case eType.InventO:
                     num1 = DatabaseAPI.Database.MultIO[this.IOLevel][(int)iSched];
                     break;
-                case Enums.eType.SpecialO:
+                case eType.SpecialO:
                     num1 = DatabaseAPI.Database.MultSO[0][(int)iSched];
                     break;
-                case Enums.eType.SetO:
+                case eType.SetO:
                     num1 = DatabaseAPI.Database.MultIO[this.IOLevel][(int)iSched];
                     break;
             }
@@ -108,7 +109,7 @@ public class I9Slot : ICloneable
 
     {
         float num1;
-        if (this.RelativeLevel == Enums.eEnhRelative.None)
+        if (this.RelativeLevel == eEnhRelative.None)
         {
             num1 = 0.0f;
         }
@@ -138,7 +139,7 @@ public class I9Slot : ICloneable
             {
                 StringBuilder stringBuilder = new StringBuilder();
                 bool flag = false;
-                Enums.sEffect[] effect = enhancement.Effect;
+                var effect = enhancement.Effect;
                 int index1 = 0;
                 if (index1 >= effect.Length)
                 {
@@ -146,11 +147,11 @@ public class I9Slot : ICloneable
                 }
                 else
                 {
-                    Enums.sEffect sEffect = effect[index1];
-                    if (sEffect.Mode == Enums.eEffMode.FX)
+                    var sEffect = effect[index1];
+                    if (sEffect.Mode == eEffMode.FX)
                         flag = true;
                     string str2;
-                    if (sEffect.Mode == Enums.eEffMode.Enhancement && sEffect.Schedule != Enums.eSchedule.None)
+                    if (sEffect.Mode == eEffMode.Enhancement && sEffect.Schedule != eSchedule.None)
                     {
                         float scheduleMult = this.GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
                         if ((double)sEffect.Multiplier > 0.0)
@@ -159,7 +160,7 @@ public class I9Slot : ICloneable
                             stringBuilder.Append(", ");
                         switch (enhancement.TypeID)
                         {
-                            case Enums.eType.Normal:
+                            case eType.Normal:
                                 string relativeString1 = Enums.GetRelativeString(this.RelativeLevel, false);
                                 if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
                                 {
@@ -173,7 +174,7 @@ public class I9Slot : ICloneable
                                 }
                                 stringBuilder.Append(DatabaseAPI.Database.EnhGradeStringLong[(int)this.Grade] + " - ");
                                 break;
-                            case Enums.eType.SpecialO:
+                            case eType.SpecialO:
                                 string relativeString2 = Enums.GetRelativeString(this.RelativeLevel, false);
                                 if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
                                 {
@@ -237,20 +238,20 @@ public class I9Slot : ICloneable
             }
             else
             {
-                foreach (Enums.sEffect sEffect in enhancement.Effect)
+                foreach (var sEffect in enhancement.Effect)
                 {
-                    if (sEffect.Mode == Enums.eEffMode.FX)
+                    if (sEffect.Mode == eEffMode.FX)
                         flag1 = true;
-                    if (sEffect.Mode == Enums.eEffMode.Enhancement && sEffect.Schedule != Enums.eSchedule.None)
+                    if (sEffect.Mode == eEffMode.Enhancement && sEffect.Schedule != eSchedule.None)
                     {
                         float scheduleMult = this.GetScheduleMult(enhancement.TypeID, sEffect.Schedule);
                         if ((double)sEffect.Multiplier > 0.0)
                             scheduleMult *= sEffect.Multiplier;
-                        Enums.eEnhance id = (Enums.eEnhance)sEffect.Enhance.ID;
+                        eEnhance id = (eEnhance)sEffect.Enhance.ID;
                         string str2;
-                        if (id == Enums.eEnhance.Mez)
+                        if (id == eEnhance.Mez)
                         {
-                            Enums.eMez subId = (Enums.eMez)sEffect.Enhance.SubID;
+                            eMez subId = (eMez)sEffect.Enhance.SubID;
                             str2 = Enum.GetName(subId.GetType(), subId);
                         }
                         else
@@ -270,7 +271,7 @@ public class I9Slot : ICloneable
                             str2 = !flag4 ? "EndMod" : string.Empty;
                             flag4 = true;
                         }
-                        else if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
+                        else if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
                         {
                             str2 = !flag5 ? "Slow Movement" : string.Empty;
                             flag5 = true;
@@ -294,7 +295,7 @@ public class I9Slot : ICloneable
                     int[] returnMask = new int[0];
                     for (int index1 = 0; index1 <= power.Effects.Length - 1; ++index1)
                     {
-                        if (power.Effects[index1].EffectType == Enums.eEffectType.GrantPower)
+                        if (power.Effects[index1].EffectType == eEffectType.GrantPower)
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append("\n");
@@ -302,7 +303,7 @@ public class I9Slot : ICloneable
                             string empty = string.Empty;
                             for (int idEffect = 0; idEffect <= power.Effects.Length - 1; ++idEffect)
                             {
-                                power.Effects[idEffect].Stacking = Enums.eStacking.Yes;
+                                power.Effects[idEffect].Stacking = eStacking.Yes;
                                 power.Effects[idEffect].Buffable = true;
                                 if (power.Effects[idEffect].Absorbed_EffectID == index1)
                                     power.GetEffectStringGrouped(idEffect, ref empty, ref returnMask, false, false, false);
@@ -329,13 +330,13 @@ public class I9Slot : ICloneable
                                 {
                                     if (stringBuilder.Length > 0)
                                         stringBuilder.Append("\n");
-                                    power.Effects[index2].Stacking = Enums.eStacking.Yes;
+                                    power.Effects[index2].Stacking = eStacking.Yes;
                                     power.Effects[index2].Buffable = true;
                                     stringBuilder.AppendFormat("  {0}", power.Effects[index2].BuildEffectString(false, "", false, false, false));
                                 }
                             }
                         }
-                        else if (!power.Effects[index1].Absorbed_Effect && power.Effects[index1].EffectType != Enums.eEffectType.Enhancement)
+                        else if (!power.Effects[index1].Absorbed_Effect && power.Effects[index1].EffectType != eEffectType.Enhancement)
                         {
                             if (stringBuilder.Length > 0)
                                 stringBuilder.Append("\n");
@@ -366,23 +367,23 @@ public class I9Slot : ICloneable
         {
             switch (this.RelativeLevel)
             {
-                case Enums.eEnhRelative.MinusThree:
+                case eEnhRelative.MinusThree:
                     return "---";
-                case Enums.eEnhRelative.MinusTwo:
+                case eEnhRelative.MinusTwo:
                     return "--";
-                case Enums.eEnhRelative.MinusOne:
+                case eEnhRelative.MinusOne:
                     return "-";
-                case Enums.eEnhRelative.Even:
+                case eEnhRelative.Even:
                     return string.Empty;
-                case Enums.eEnhRelative.PlusOne:
+                case eEnhRelative.PlusOne:
                     return "+";
-                case Enums.eEnhRelative.PlusTwo:
+                case eEnhRelative.PlusTwo:
                     return "++";
-                case Enums.eEnhRelative.PlusThree:
+                case eEnhRelative.PlusThree:
                     return "+++";
-                case Enums.eEnhRelative.PlusFour:
+                case eEnhRelative.PlusFour:
                     return "+4";
-                case Enums.eEnhRelative.PlusFive:
+                case eEnhRelative.PlusFive:
                     return "+5";
             }
         }
@@ -390,23 +391,23 @@ public class I9Slot : ICloneable
         {
             switch (this.RelativeLevel)
             {
-                case Enums.eEnhRelative.MinusThree:
+                case eEnhRelative.MinusThree:
                     return "-3";
-                case Enums.eEnhRelative.MinusTwo:
+                case eEnhRelative.MinusTwo:
                     return "-2";
-                case Enums.eEnhRelative.MinusOne:
+                case eEnhRelative.MinusOne:
                     return "-1";
-                case Enums.eEnhRelative.Even:
+                case eEnhRelative.Even:
                     return string.Empty;
-                case Enums.eEnhRelative.PlusOne:
+                case eEnhRelative.PlusOne:
                     return "+1";
-                case Enums.eEnhRelative.PlusTwo:
+                case eEnhRelative.PlusTwo:
                     return "+2";
-                case Enums.eEnhRelative.PlusThree:
+                case eEnhRelative.PlusThree:
                     return "+3";
-                case Enums.eEnhRelative.PlusFour:
+                case eEnhRelative.PlusFour:
                     return "+4";
-                case Enums.eEnhRelative.PlusFive:
+                case eEnhRelative.PlusFive:
                     return "+5";
             }
         }

@@ -1,6 +1,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -73,7 +74,7 @@ namespace Hero_Designer
             int num = this._myPowers.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
-                ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(this._myPowers[index]) ? (!(this._myPowers[index].PowerType != Enums.ePowerType.Click | this._myPowers[index].ClickBuff) ? (!this._myPowers[index].SubIsAltColour ? ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Invalid) : ListLabelV2.LLItemState.Enabled) : ListLabelV2.LLItemState.Selected;
+                ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(this._myPowers[index]) ? (!(this._myPowers[index].PowerType != ePowerType.Click | this._myPowers[index].ClickBuff) ? (!this._myPowers[index].SubIsAltColour ? ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Invalid) : ListLabelV2.LLItemState.Enabled) : ListLabelV2.LLItemState.Selected;
                 ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(this._myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left) : new ListLabelV2.ListLabelItemV2(this._myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left);
                 if ((double)index >= (double)this._myPowers.Count / 2.0)
                     this.llRight.AddItem(iItem);
@@ -226,17 +227,17 @@ namespace Hero_Designer
                 string str = string.Empty;
                 switch (power1.PowerType)
                 {
-                    case Enums.ePowerType.Click:
+                    case ePowerType.Click:
                         if (power1.ClickBuff)
                         {
                             str = "(Click)";
                             break;
                         }
                         break;
-                    case Enums.ePowerType.Auto_:
+                    case ePowerType.Auto_:
                         str = "(Auto)";
                         break;
-                    case Enums.ePowerType.Toggle:
+                    case ePowerType.Toggle:
                         str = "(Toggle)";
                         break;
                 }
@@ -250,7 +251,7 @@ namespace Hero_Designer
                     else
                         iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost), PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 }
-                if (power1.EntitiesAutoHit == Enums.eEntity.None | (double)power1.Range > 20.0 & power1.I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt))
+                if (power1.EntitiesAutoHit == eEntity.None | (double)power1.Range > 20.0 & power1.I9FXPresentP(eEffectType.Mez, eMez.Taunt))
                     iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Title, Utilities.FixDP((float)((double)MidsContext.Config.BaseAcc * (double)power1.Accuracy * 100.0)) + "%", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if ((double)power1.RechargeTime > 0.0)
                     iPopup.Sections[index2].Add("Recharge:", PopUp.Colors.Title, Utilities.FixDP(power1.RechargeTime) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
@@ -258,7 +259,7 @@ namespace Hero_Designer
                 float iNum = 0.0f;
                 if (durationEffectId > -1)
                     iNum = power1.Effects[durationEffectId].Duration;
-                if (power1.PowerType != Enums.ePowerType.Toggle & power1.PowerType != Enums.ePowerType.Auto_ && (double)iNum > 0.0)
+                if (power1.PowerType != ePowerType.Toggle & power1.PowerType != ePowerType.Auto_ && (double)iNum > 0.0)
                     iPopup.Sections[index2].Add("Duration:", PopUp.Colors.Title, Utilities.FixDP(iNum) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if ((double)power1.Range > 0.0)
                     iPopup.Sections[index2].Add("Range:", PopUp.Colors.Title, Utilities.FixDP(power1.Range) + "ft", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);

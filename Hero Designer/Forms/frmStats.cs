@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -204,8 +205,8 @@ namespace Hero_Designer
             items2.Add("Enhanced Only");
             items2.Add("Active & Alternate");
             items2.Add("Stacked Active + Alt");
-            if (MidsContext.Config.StatGraphStyle > (Enums.GraphStyle)(this.cbStyle.Items.Count - 1))
-                MidsContext.Config.StatGraphStyle = Enums.GraphStyle.Stacked;
+            if (MidsContext.Config.StatGraphStyle > (GraphStyle)(this.cbStyle.Items.Count - 1))
+                MidsContext.Config.StatGraphStyle = GraphStyle.Stacked;
             this.cbStyle.SelectedIndex = (int)MidsContext.Config.StatGraphStyle;
             this.cbStyle.EndUpdate();
         }
@@ -284,32 +285,32 @@ namespace Hero_Designer
                 switch (this.cbSet.SelectedIndex)
                 {
                     case 0:
-                        this.GetSetArray(Enums.PowersetType.Primary, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Secondary, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Ancillary, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool0, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool1, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool2, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool3, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Primary, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Secondary, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Ancillary, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool0, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool1, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool2, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool3, ePowerType.Auto_);
                         break;
                     case 1:
-                        this.GetSetArray(Enums.PowersetType.Primary, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Secondary, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Primary, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Secondary, ePowerType.Auto_);
                         break;
                     case 2:
-                        this.GetSetArray(Enums.PowersetType.Primary, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Primary, ePowerType.Auto_);
                         break;
                     case 3:
-                        this.GetSetArray(Enums.PowersetType.Secondary, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Secondary, ePowerType.Auto_);
                         break;
                     case 4:
-                        this.GetSetArray(Enums.PowersetType.Ancillary, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Ancillary, ePowerType.Auto_);
                         break;
                     case 5:
-                        this.GetSetArray(Enums.PowersetType.Pool0, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool1, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool2, Enums.ePowerType.Auto_);
-                        this.GetSetArray(Enums.PowersetType.Pool3, Enums.ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool0, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool1, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool2, ePowerType.Auto_);
+                        this.GetSetArray(PowersetType.Pool3, ePowerType.Auto_);
                         break;
                     case 6:
                         if (!this.BaseOverride)
@@ -350,28 +351,28 @@ namespace Hero_Designer
                         MainModule.MidsController.Toon.FlipAllSlots();
                         break;
                     case 7:
-                        this.GetSetArray(Enums.PowersetType.Primary, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Secondary, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Ancillary, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Pool0, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Pool1, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Pool2, Enums.ePowerType.Toggle);
-                        this.GetSetArray(Enums.PowersetType.Pool3, Enums.ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Primary, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Secondary, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Ancillary, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Pool0, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Pool1, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Pool2, ePowerType.Toggle);
+                        this.GetSetArray(PowersetType.Pool3, ePowerType.Toggle);
                         break;
                     case 8:
-                        this.GetSetArray(Enums.PowersetType.Primary, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Secondary, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Ancillary, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Pool0, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Pool1, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Pool2, Enums.ePowerType.Click);
-                        this.GetSetArray(Enums.PowersetType.Pool3, Enums.ePowerType.Click);
+                        this.GetSetArray(PowersetType.Primary, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Secondary, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Ancillary, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Pool0, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Pool1, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Pool2, ePowerType.Click);
+                        this.GetSetArray(PowersetType.Pool3, ePowerType.Click);
                         break;
                 }
             }
         }
 
-        public void GetSetArray(Enums.PowersetType SetType, Enums.ePowerType iType)
+        public void GetSetArray(PowersetType SetType, ePowerType iType)
         {
             if (MidsContext.Character.Powersets[(int)SetType] == null)
                 return;
@@ -380,7 +381,7 @@ namespace Hero_Designer
                 int num1 = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num1; ++iPower)
                 {
-                    if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
+                    if (iType == ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
                         this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
                         int index = this.BaseArray.Length - 1;
@@ -396,7 +397,7 @@ namespace Hero_Designer
                 int num2 = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num2; ++iPower)
                 {
-                    if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
+                    if (iType == ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
                         this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
                         int index = this.EnhArray.Length - 1;
@@ -415,7 +416,7 @@ namespace Hero_Designer
                 int num = MidsContext.Character.Powersets[(int)SetType].Powers.Length - 1;
                 for (int iPower = 0; iPower <= num; ++iPower)
                 {
-                    if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
+                    if (iType == ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
                         this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
                         this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
@@ -449,7 +450,7 @@ namespace Hero_Designer
             int num2 = this.BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (this.BaseArray[index].EntitiesAutoHit == Enums.eEntity.None | (double)this.BaseArray[index].Range > 20.0 & this.BaseArray[index].I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt))
+                if (this.BaseArray[index].EntitiesAutoHit == eEntity.None | (double)this.BaseArray[index].Range > 20.0 & this.BaseArray[index].I9FXPresentP(eEffectType.Mez, eMez.Taunt))
                 {
                     float accuracy = this.BaseArray[index].Accuracy;
                     if ((double)accuracy != 0.0)
@@ -480,7 +481,7 @@ namespace Hero_Designer
                             nBase = nEnh;
                             nEnh = num4;
                         }
-                        string iTip = this.Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") + "%" : displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
+                        string iTip = this.Graph.Style != GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") + "%" : displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
                         if ((double)nBase != (double)nEnh)
                             iTip = iTip + " (" + Strings.Format(nBase, "##0.#") + "%)";
                         if (this.BaseOverride)
@@ -519,7 +520,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         iTip = iTip + "\r\n" + this.BaseArray[index].FXGetDamageString();
                     }
@@ -532,7 +533,7 @@ namespace Hero_Designer
                     }
                     if ((double)nBase != (double)nEnh)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
-                    if (this.BaseArray[index].PowerType == Enums.ePowerType.Toggle)
+                    if (this.BaseArray[index].PowerType == ePowerType.Toggle)
                         iTip = iTip + "\r\n(Applied every " + Conversions.ToString(this.BaseArray[index].ActivatePeriod) + "s)";
                     if (this.BaseOverride)
                     {
@@ -570,7 +571,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         str = str + "\r\n" + this.BaseArray[index].FXGetDamageString();
                     }
@@ -619,7 +620,7 @@ namespace Hero_Designer
                         num1 = nEnh;
                     if ((double)num1 < (double)nBase)
                         num1 = nBase;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         str = str + "\r\n" + this.BaseArray[index].FXGetDamageString();
                     }
@@ -637,7 +638,7 @@ namespace Hero_Designer
                         nEnh = num3;
                     }
                     string iTip;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         iTip = str + "\r\nDamage per unit of End: " + Strings.Format(nBase, "##0.##");
                     }
@@ -683,7 +684,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         str = str + "\r\n" + this.BaseArray[index].FXGetDamageString();
                     }
@@ -721,9 +722,9 @@ namespace Hero_Designer
                 {
                     float nBase = this.BaseArray[index].Effects[durationEffectId].Duration;
                     float nEnh = this.EnhArray[index].Effects[durationEffectId].Duration;
-                    if ((double)nBase != 0.0 & this.BaseArray[index].PowerType == Enums.ePowerType.Click)
+                    if ((double)nBase != 0.0 & this.BaseArray[index].PowerType == ePowerType.Click)
                     {
-                        string str1 = this.EnhArray[index].Effects[durationEffectId].EffectType != Enums.eEffectType.Mez ? Enums.GetEffectName(this.EnhArray[index].Effects[durationEffectId].EffectType) : Enums.GetMezName((Enums.eMezShort)this.EnhArray[index].Effects[durationEffectId].MezType);
+                        string str1 = this.EnhArray[index].Effects[durationEffectId].EffectType != eEffectType.Mez ? Enums.GetEffectName(this.EnhArray[index].Effects[durationEffectId].EffectType) : Enums.GetMezName((eMezShort)this.EnhArray[index].Effects[durationEffectId].MezType);
                         if ((double)this.EnhArray[index].Effects[durationEffectId].Mag < 0.0)
                             str1 = "-" + str1;
                         string displayName = this.BaseArray[index].DisplayName;
@@ -738,7 +739,7 @@ namespace Hero_Designer
                             nEnh = num3;
                         }
                         string str2;
-                        if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                        if (this.Graph.Style == GraphStyle.baseOnly)
                             str2 = displayName + " (" + str1 + "): " + Strings.Format(nBase, "##0.#");
                         else
                             str2 = displayName + " (" + str1 + "): " + Strings.Format(nEnh, "##0.#");
@@ -779,10 +780,10 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    string iTip = this.Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##");
+                    string iTip = this.Graph.Style != GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##");
                     if ((double)nBase != (double)nEnh)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
-                    if (this.BaseArray[index].PowerType == Enums.ePowerType.Toggle)
+                    if (this.BaseArray[index].PowerType == ePowerType.Toggle)
                         iTip += "\r\n(Per Second)";
                     if (this.BaseOverride)
                     {
@@ -806,7 +807,7 @@ namespace Hero_Designer
                 if ((double)nBase != 0.0)
                 {
                     float nEnh = this.EnhArray[index].EndCost;
-                    if (this.BaseArray[index].PowerType == Enums.ePowerType.Click)
+                    if (this.BaseArray[index].PowerType == ePowerType.Click)
                     {
                         if ((double)this.EnhArray[index].RechargeTime + (double)this.EnhArray[index].CastTime + (double)this.EnhArray[index].InterruptTime > 0.0)
                         {
@@ -814,7 +815,7 @@ namespace Hero_Designer
                             nEnh = this.EnhArray[index].EndCost / (this.EnhArray[index].RechargeTime + this.EnhArray[index].CastTime + this.EnhArray[index].InterruptTime);
                         }
                     }
-                    else if (this.BaseArray[index].PowerType == Enums.ePowerType.Toggle)
+                    else if (this.BaseArray[index].PowerType == ePowerType.Toggle)
                     {
                         nBase = this.BaseArray[index].EndCost / this.BaseArray[index].ActivatePeriod;
                         nEnh = this.EnhArray[index].EndCost / this.EnhArray[index].ActivatePeriod;
@@ -830,7 +831,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    string iTip = (this.Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "/s";
+                    string iTip = (this.Graph.Style != GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "/s";
                     if ((double)nBase != (double)nEnh)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                     if (this.BaseOverride)
@@ -851,10 +852,10 @@ namespace Hero_Designer
             int num2 = this.BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = this.BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = this.BaseArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
                 if ((double)nBase != 0.0)
                 {
-                    float nEnh = this.EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                    float nEnh = this.EnhArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
                     string displayName = this.BaseArray[index].DisplayName;
                     if ((double)num1 < (double)nEnh)
                         num1 = nEnh;
@@ -869,7 +870,7 @@ namespace Hero_Designer
                     float num4 = (float)((double)nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     float num5 = (float)((double)nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     string iTip;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                         iTip = displayName + ": " + Strings.Format(num4, "##0.#") + "%";
                     else
                         iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.#") + "% (" + Strings.Format(nEnh, "##0.#") + " HP)";
@@ -894,10 +895,10 @@ namespace Hero_Designer
             int num2 = this.BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = this.BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = this.BaseArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
                 if ((double)nBase != 0.0)
                 {
-                    float nEnh = this.EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                    float nEnh = this.EnhArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
                     if ((double)this.EnhArray[index].EndCost > 0.0)
                     {
                         nBase /= this.BaseArray[index].EndCost;
@@ -917,7 +918,7 @@ namespace Hero_Designer
                     float num4 = (float)((double)nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     float num5 = (float)((double)nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     string iTip;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                         iTip = displayName + ": " + Strings.Format(nBase, "##0.##") + "%";
                     else
                         iTip = displayName + "\r\n  Enhanced Heal per unit of End: " + Strings.Format(num5, "##0.##") + "% (" + Strings.Format(nEnh, "##0.##") + " HP)";
@@ -942,11 +943,11 @@ namespace Hero_Designer
             int num2 = this.BaseArray.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                float nBase = this.BaseArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
+                float nBase = this.BaseArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
                 if ((double)nBase != 0.0)
                 {
-                    float nEnh = this.EnhArray[index].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false).Sum;
-                    if (this.BaseArray[index].PowerType == Enums.ePowerType.Click)
+                    float nEnh = this.EnhArray[index].GetEffectMagSum(eEffectType.Heal, false, false, false, false).Sum;
+                    if (this.BaseArray[index].PowerType == ePowerType.Click)
                     {
                         if ((double)this.EnhArray[index].RechargeTime + (double)this.EnhArray[index].CastTime + (double)this.EnhArray[index].InterruptTime > 0.0)
                         {
@@ -954,7 +955,7 @@ namespace Hero_Designer
                             nEnh /= this.EnhArray[index].RechargeTime + this.EnhArray[index].CastTime + this.EnhArray[index].InterruptTime;
                         }
                     }
-                    else if (this.BaseArray[index].PowerType == Enums.ePowerType.Toggle)
+                    else if (this.BaseArray[index].PowerType == ePowerType.Toggle)
                     {
                         nBase /= this.BaseArray[index].ActivatePeriod;
                         nEnh /= this.EnhArray[index].ActivatePeriod;
@@ -973,7 +974,7 @@ namespace Hero_Designer
                     float num4 = (float)((double)nBase / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     float num5 = (float)((double)nEnh / (double)MidsContext.Archetype.Hitpoints * 100.0);
                     string iTip;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                         iTip = displayName + ": " + Strings.Format(num4, "##0.##") + "%";
                     else
                         iTip = displayName + "\r\n  Enhanced: " + Strings.Format(num5, "##0.##") + "%/s (" + Strings.Format(nEnh, "##0.##") + " HP)";
@@ -1023,7 +1024,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    string str = this.Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") : displayName + ": " + Strings.Format(nBase, "##0.#");
+                    string str = this.Graph.Style != GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.#") : displayName + ": " + Strings.Format(nBase, "##0.#");
                     if ((double)nBase != (double)nEnh)
                         str = str + " (" + Strings.Format(nBase, "##0.#") + ")";
                     string iTip = str + "ft";
@@ -1060,7 +1061,7 @@ namespace Hero_Designer
                         nBase = nEnh;
                         nEnh = num3;
                     }
-                    string iTip = (this.Graph.Style != Enums.GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "s";
+                    string iTip = (this.Graph.Style != GraphStyle.baseOnly ? displayName + ": " + Strings.Format(nEnh, "##0.##") : displayName + ": " + Strings.Format(nBase, "##0.##")) + "s";
                     if ((double)nBase != (double)nEnh)
                         iTip = iTip + " (" + Strings.Format(nBase, "##0.##") + ")";
                     if (this.BaseOverride)
@@ -1082,10 +1083,10 @@ namespace Hero_Designer
             int num3 = this.BaseArray.Length - 1;
             for (int index = 0; index <= num3; ++index)
             {
-                float nBase = this.BaseArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration, false, false, false, false).Sum;
+                float nBase = this.BaseArray[index].GetEffectMagSum(eEffectType.Regeneration, false, false, false, false).Sum;
                 if ((double)nBase != 0.0)
                 {
-                    float nEnh = this.EnhArray[index].GetEffectMagSum(Enums.eEffectType.Regeneration, false, false, false, false).Sum;
+                    float nEnh = this.EnhArray[index].GetEffectMagSum(eEffectType.Regeneration, false, false, false, false).Sum;
                     float num4 = (float)((double)num2 / 12.0 * (0.05 + 0.05 * (((double)nBase - 100.0) / 100.0)));
                     float num5 = (float)((double)num4 / (double)num2 * 100.0);
                     float num6 = (float)((double)num2 / 12.0 * (0.05 + 0.05 * (((double)nEnh - 100.0) / 100.0)));
@@ -1108,7 +1109,7 @@ namespace Hero_Designer
                         num7 = num10;
                     }
                     string iTip;
-                    if (this.Graph.Style == Enums.GraphStyle.baseOnly)
+                    if (this.Graph.Style == GraphStyle.baseOnly)
                     {
                         string str = displayName + ": " + Strings.Format(nBase, "##0.#") + "%";
                         iTip = " Health regenerated per second: " + Strings.Format(num5, "##0.##") + "%\r\n HitPoints regenerated per second at level 50: " + Strings.Format(num4, "##0.##") + " HP";
@@ -1188,18 +1189,18 @@ namespace Hero_Designer
         {
             if (this.cbStyle.SelectedIndex > -1 & this.cbStyle.SelectedIndex < this.cbStyle.Items.Count - 2)
             {
-                this.Graph.Style = (Enums.GraphStyle)this.cbStyle.SelectedIndex;
+                this.Graph.Style = (GraphStyle)this.cbStyle.SelectedIndex;
                 MidsContext.Config.StatGraphStyle = this.Graph.Style;
                 this.BaseOverride = false;
             }
             else if (this.cbStyle.SelectedIndex == this.cbStyle.Items.Count - 2)
             {
-                this.Graph.Style = Enums.GraphStyle.Twin;
+                this.Graph.Style = GraphStyle.Twin;
                 this.BaseOverride = true;
             }
             else if (this.cbStyle.SelectedIndex == this.cbStyle.Items.Count - 1)
             {
-                this.Graph.Style = Enums.GraphStyle.Stacked;
+                this.Graph.Style = GraphStyle.Stacked;
                 this.BaseOverride = true;
             }
             this.GetPowerArray();

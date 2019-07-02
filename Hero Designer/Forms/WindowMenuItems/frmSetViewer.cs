@@ -1,6 +1,7 @@
 
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
 using System;
@@ -136,7 +137,7 @@ namespace Hero_Designer
                         int num3 = enhancementSet.Bonus.Length - 1;
                         for (int index4 = 0; index4 <= num3; ++index4)
                         {
-                            if (setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted & (enhancementSet.Bonus[index4].PvMode == Enums.ePvX.Any | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvP & !MidsContext.Config.Inc.PvE))
+                            if (setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted & (enhancementSet.Bonus[index4].PvMode == ePvX.Any | enhancementSet.Bonus[index4].PvMode == ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index4].PvMode == ePvX.PvP & !MidsContext.Config.Inc.PvE))
                             {
                                 if (str4 != "")
                                     str4 += RTF.Crlf();

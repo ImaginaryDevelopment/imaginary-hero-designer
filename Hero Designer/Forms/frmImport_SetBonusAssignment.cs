@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using HeroDesigner.Schema;
 
 namespace Hero_Designer
 {
@@ -145,10 +146,10 @@ namespace Hero_Designer
                         {
                             int integer = Conversions.ToInteger(array[1]);
                             string[] strArray1 = array[3].Split(" ".ToCharArray());
-                            Enums.ePvX ePvX = Enums.ePvX.Any;
+                            var epvx = ePvX.Any;
                             if (array[2].Contains("isPVPMap?"))
                             {
-                                ePvX = Enums.ePvX.PvP;
+                                epvx = ePvX.PvP;
                                 array[2] = array[2].Replace("isPVPMap?", "").Replace("  ", " ");
                             }
                             string[] strArray2 = array[2].Split(" ".ToCharArray());
@@ -168,7 +169,7 @@ namespace Hero_Designer
                                     bonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
                                 }
                                 bonus[index2].Special = -1;
-                                bonus[index2].PvMode = ePvX;
+                                bonus[index2].PvMode = epvx;
                                 bonus[index2].Slotted = integer;
                             }
                             else
@@ -206,7 +207,7 @@ namespace Hero_Designer
                                         specialBonus[index2].Index[index3] = DatabaseAPI.NidFromUidPower(strArray1[index3]);
                                     }
                                     specialBonus[index2].Special = num2;
-                                    specialBonus[index2].PvMode = ePvX;
+                                    specialBonus[index2].PvMode = epvx;
                                     specialBonus[index2].Slotted = integer;
                                 }
                             }

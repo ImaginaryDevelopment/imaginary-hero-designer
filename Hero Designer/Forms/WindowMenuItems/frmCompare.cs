@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
@@ -219,15 +220,15 @@ namespace Hero_Designer
                     break;
                 case 5:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 0);
-                    this.Values_Universal(Enums.eEffectType.DamageBuff, false, false);
+                    this.Values_Universal(eEffectType.DamageBuff, false, false);
                     break;
                 case 6:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 0, 192);
-                    this.Values_Universal(Enums.eEffectType.Defense, false, false);
+                    this.Values_Universal(eEffectType.Defense, false, false);
                     break;
                 case 7:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, 128);
-                    this.Values_Universal(Enums.eEffectType.Defense, false, true);
+                    this.Values_Universal(eEffectType.Defense, false, true);
                     break;
                 case 8:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(128, 0, (int)byte.MaxValue);
@@ -255,7 +256,7 @@ namespace Hero_Designer
                     break;
                 case 14:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.HitPoints, true, false);
+                    this.Values_Universal(eEffectType.HitPoints, true, false);
                     break;
                 case 15:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(64, 128, 128);
@@ -271,23 +272,23 @@ namespace Hero_Designer
                     break;
                 case 18:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(96, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.Regeneration, true, false);
+                    this.Values_Universal(eEffectType.Regeneration, true, false);
                     break;
                 case 19:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 192, 192);
-                    this.Values_Universal(Enums.eEffectType.Resistance, false, false);
+                    this.Values_Universal(eEffectType.Resistance, false, false);
                     break;
                 case 20:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(0, 128, 128);
-                    this.Values_Universal(Enums.eEffectType.Resistance, false, true);
+                    this.Values_Universal(eEffectType.Resistance, false, true);
                     break;
                 case 21:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 96);
-                    this.Values_Universal(Enums.eEffectType.ToHit, true, false);
+                    this.Values_Universal(eEffectType.ToHit, true, false);
                     break;
                 case 22:
                     this.Graph.ColorFadeEnd = System.Drawing.Color.FromArgb(192, 192, 64);
-                    this.Values_Universal(Enums.eEffectType.ToHit, true, true);
+                    this.Values_Universal(eEffectType.ToHit, true, true);
                     break;
             }
             int index1 = 0;
@@ -461,7 +462,7 @@ namespace Hero_Designer
             return DatabaseAPI.GetPowersetIndexes(this.getAT(Index), this.getSetType(Index))[comboBox.SelectedIndex].nID;
         }
 
-        public Enums.ePowerSetType getSetType(int Index)
+        public ePowerSetType getSetType(int Index)
         {
             ComboBox comboBox;
             switch (Index)
@@ -473,25 +474,19 @@ namespace Hero_Designer
                     comboBox = this.cbType2;
                     break;
                 default:
-                    return Enums.ePowerSetType.Primary;
+                    return ePowerSetType.Primary;
             }
-            Enums.ePowerSetType ePowerSetType;
             switch (comboBox.SelectedIndex)
             {
                 case 0:
-                    ePowerSetType = Enums.ePowerSetType.Primary;
-                    break;
+                    return ePowerSetType.Primary;
                 case 1:
-                    ePowerSetType = Enums.ePowerSetType.Secondary;
-                    break;
+                    return ePowerSetType.Secondary;
                 case 2:
-                    ePowerSetType = Enums.ePowerSetType.Ancillary;
-                    break;
+                    return ePowerSetType.Ancillary;
                 default:
-                    ePowerSetType = Enums.ePowerSetType.Primary;
-                    break;
+                    return ePowerSetType.Primary;
             }
-            return ePowerSetType;
         }
 
         public string GetUniversalTipString(Enums.ShortFX iSFX, ref IPower iPower)
@@ -506,7 +501,7 @@ namespace Hero_Designer
                 int num1 = iSFX.Index.Length - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
                 {
-                    if (iSFX.Index[index1] != -1 && power.Effects[iSFX.Index[index1]].EffectType != Enums.eEffectType.None)
+                    if (iSFX.Index[index1] != -1 && power.Effects[iSFX.Index[index1]].EffectType != eEffectType.None)
                     {
                         string returnString = "";
                         int[] returnMask = new int[0];
@@ -518,14 +513,14 @@ namespace Hero_Designer
                             str3 += returnString.Replace("\r\n", "\r\n  ");
                             int num2 = returnMask.Length - 1;
                             for (int index2 = 0; index2 <= num2; ++index2)
-                                power.Effects[returnMask[index2]].EffectType = Enums.eEffectType.None;
+                                power.Effects[returnMask[index2]].EffectType = eEffectType.None;
                         }
                     }
                 }
                 int num3 = iSFX.Index.Length - 1;
                 for (int index = 0; index <= num3; ++index)
                 {
-                    if (power.Effects[iSFX.Index[index]].EffectType != Enums.eEffectType.None)
+                    if (power.Effects[iSFX.Index[index]].EffectType != eEffectType.None)
                     {
                         if (str3 != "")
                             str3 += "\r\n  ";
@@ -570,7 +565,7 @@ namespace Hero_Designer
 
         public void List_Sets(int Index)
         {
-            Enums.ePowerSetType iSet = Enums.ePowerSetType.None;
+            ePowerSetType iSet = ePowerSetType.None;
             ComboBox comboBox1;
             ComboBox comboBox2;
             int selectedIndex;
@@ -589,13 +584,13 @@ namespace Hero_Designer
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    iSet = Enums.ePowerSetType.Primary;
+                    iSet = ePowerSetType.Primary;
                     break;
                 case 1:
-                    iSet = Enums.ePowerSetType.Secondary;
+                    iSet = ePowerSetType.Secondary;
                     break;
                 case 2:
-                    iSet = Enums.ePowerSetType.Ancillary;
+                    iSet = ePowerSetType.Ancillary;
                     break;
             }
             comboBox1.BeginUpdate();
@@ -1010,7 +1005,7 @@ namespace Hero_Designer
             int num = MidsContext.Config.CompOverride.Length - 1;
             for (int index1 = 0; index1 <= num; ++index1)
             {
-                Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
+                var compOverride = MidsContext.Config.CompOverride;
                 int index2 = index1;
                 this.mapOverrideDo(compOverride[index2].Powerset, compOverride[index2].Power, compOverride[index2].Override);
             }
@@ -1105,7 +1100,7 @@ namespace Hero_Designer
                         if (this.Powers[index1][index2].Effects[index3].RequiresToHitCheck)
                             flag = true;
                     }
-                    this.Values[index1][index2] = !(this.Powers[index1][index2].EntitiesAutoHit == Enums.eEntity.None | flag) ? 0.0f : (float)((double)this.Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
+                    this.Values[index1][index2] = !(this.Powers[index1][index2].EntitiesAutoHit == eEntity.None | flag) ? 0.0f : (float)((double)this.Powers[index1][index2].Accuracy * (double)MidsContext.Config.BaseAcc * 100.0);
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
                         this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
@@ -1162,7 +1157,7 @@ namespace Hero_Designer
                         tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].FXGetDamageString();
                         if ((double)num1 < (double)this.Values[index1][index2])
                             num1 = this.Values[index1][index2];
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        if (this.Powers[index1][index2].PowerType == ePowerType.Toggle)
                         {
                             string[][] tips2 = this.Tips;
                             int index3 = index1;
@@ -1229,7 +1224,7 @@ namespace Hero_Designer
                     this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click && (double)this.Powers[index1][index2].EndCost > 0.0)
+                        if (this.Powers[index1][index2].PowerType == ePowerType.Click && (double)this.Powers[index1][index2].EndCost > 0.0)
                             this.Values[index1][index2] /= this.Powers[index1][index2].EndCost;
                         this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
                         if (this.Matching)
@@ -1357,7 +1352,7 @@ namespace Hero_Designer
                         int index5 = index1;
                         int index6 = index2;
                         tips1[index5][index6] = tips1[index5][index6] + "\r\n  End: " + Strings.Format(this.Powers[index1][index2].EndCost, "##0.##");
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        if (this.Powers[index1][index2].PowerType == ePowerType.Toggle)
                         {
                             string[][] tips2 = this.Tips;
                             int index3 = index1;
@@ -1386,12 +1381,12 @@ namespace Hero_Designer
                     this.Values[index1][index2] = this.Powers[index1][index2].EndCost;
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click)
+                        if (this.Powers[index1][index2].PowerType == ePowerType.Click)
                         {
                             if ((double)this.Powers[index1][index2].RechargeTime + (double)this.Powers[index1][index2].CastTime + (double)this.Powers[index1][index2].InterruptTime > 0.0)
                                 this.Values[index1][index2] = this.Powers[index1][index2].EndCost / (this.Powers[index1][index2].RechargeTime + this.Powers[index1][index2].CastTime + this.Powers[index1][index2].InterruptTime);
                         }
-                        else if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Toggle)
+                        else if (this.Powers[index1][index2].PowerType == ePowerType.Toggle)
                             this.Values[index1][index2] = this.Powers[index1][index2].EndCost / this.Powers[index1][index2].ActivatePeriod;
                         this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
                         if (this.Matching)
@@ -1430,7 +1425,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    var effectMagSum = this.Powers[index1][index2].GetEffectMagSum(eEffectType.Heal, false, false, false, false);
                     this.Values[index1][index2] = effectMagSum.Sum;
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
@@ -1468,7 +1463,7 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(eEffectType.Heal, false, false, false, false);
                     this.Values[index1][index2] = effectMagSum.Sum;
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
@@ -1508,11 +1503,11 @@ namespace Hero_Designer
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
                     MidsContext.Archetype = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID];
-                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(Enums.eEffectType.Heal, false, false, false, false);
+                    Enums.ShortFX effectMagSum = this.Powers[index1][index2].GetEffectMagSum(eEffectType.Heal, false, false, false, false);
                     this.Values[index1][index2] = effectMagSum.Sum;
                     if ((double)this.Values[index1][index2] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click && (double)this.Powers[index1][index2].RechargeTime + (double)this.Powers[index1][index2].CastTime + (double)this.Powers[index1][index2].InterruptTime > 0.0)
+                        if (this.Powers[index1][index2].PowerType == ePowerType.Click && (double)this.Powers[index1][index2].RechargeTime + (double)this.Powers[index1][index2].CastTime + (double)this.Powers[index1][index2].InterruptTime > 0.0)
                             this.Values[index1][index2] /= this.Powers[index1][index2].RechargeTime + this.Powers[index1][index2].CastTime + this.Powers[index1][index2].InterruptTime;
                         this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
                         if (this.Matching)
@@ -1593,11 +1588,11 @@ namespace Hero_Designer
                     string str = "";
                     switch (this.Powers[index1][index2].EffectArea)
                     {
-                        case Enums.eEffectArea.Character:
+                        case eEffectArea.Character:
                             str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range.";
                             this.Values[index1][index2] = this.Powers[index1][index2].Range;
                             break;
-                        case Enums.eEffectArea.Sphere:
+                        case eEffectArea.Sphere:
                             this.Values[index1][index2] = this.Powers[index1][index2].Radius;
                             if ((double)this.Powers[index1][index2].Range > 0.0)
                             {
@@ -1606,15 +1601,15 @@ namespace Hero_Designer
                             }
                             str = str + Conversions.ToString(this.Powers[index1][index2].Radius) + "ft radius.";
                             break;
-                        case Enums.eEffectArea.Cone:
+                        case eEffectArea.Cone:
                             this.Values[index1][index2] = this.Powers[index1][index2].Range;
                             str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(this.Powers[index1][index2].Arc) + " degree cone.";
                             break;
-                        case Enums.eEffectArea.Location:
+                        case eEffectArea.Location:
                             this.Values[index1][index2] = this.Powers[index1][index2].Range;
                             str = Conversions.ToString(this.Powers[index1][index2].Range) + "ft range, " + Conversions.ToString(this.Powers[index1][index2].Radius) + "ft radius.";
                             break;
-                        case Enums.eEffectArea.Volume:
+                        case eEffectArea.Volume:
                             this.Values[index1][index2] = this.Powers[index1][index2].Radius;
                             if ((double)this.Powers[index1][index2].Range > 0.0)
                             {
@@ -1682,7 +1677,7 @@ namespace Hero_Designer
             this.GraphMax = num1 * 1.025f;
         }
 
-        public void Values_Universal(Enums.eEffectType iEffectType, bool Sum, bool Debuff)
+        public void Values_Universal(eEffectType iEffectType, bool Sum, bool Debuff)
         {
             Archetype archetype = MidsContext.Archetype;
             float num1 = 1f;

@@ -1,6 +1,7 @@
 
 using Base.Data_Classes;
 using Base.IO_Classes;
+using HeroDesigner.Schema;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
@@ -212,8 +213,8 @@ namespace Hero_Designer
                         for (int index3 = 0; index3 <= num3; ++index3)
                         {
                             IEffect effect = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects[index3];
-                            if (effect.EffectType == Enums.eEffectType.DamageBuff && (double)effect.Mag < 0.4 & (double)effect.Mag > 0.0 & effect.ToWho == Enums.eToWho.Self & effect.SpecialCase == Enums.eSpecialCase.None)
-                                effect.SpecialCase = Enums.eSpecialCase.Defiance;
+                            if (effect.EffectType == eEffectType.DamageBuff && (double)effect.Mag < 0.4 & (double)effect.Mag > 0.0 & effect.ToWho == eToWho.Self & effect.SpecialCase == eSpecialCase.None)
+                                effect.SpecialCase = eSpecialCase.Defiance;
                         }
                     }
                 }
@@ -271,7 +272,7 @@ namespace Hero_Designer
             string str1 = "Static Indexes, App version " + Base.Master_Classes.MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
             foreach (Power power in DatabaseAPI.Database.Power)
             {
-                if (power.GetPowerSet().SetType != Enums.ePowerSetType.Boost)
+                if (power.GetPowerSet().SetType != ePowerSetType.Boost)
                 {
                     string str2 = Conversions.ToString(power.StaticIndex) + "\t" + power.FullName + "\r\n";
                     str1 += str2;
@@ -418,7 +419,7 @@ namespace Hero_Designer
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (DatabaseAPI.Database.Enhancements[index].TypeID == Enums.eType.SetO && DatabaseAPI.Database.Enhancements[index].RecipeIDX > -1 && DatabaseAPI.Database.Recipes.Length > DatabaseAPI.Database.Enhancements[index].RecipeIDX && DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length > 0)
+                if (DatabaseAPI.Database.Enhancements[index].TypeID == eType.SetO && DatabaseAPI.Database.Enhancements[index].RecipeIDX > -1 && DatabaseAPI.Database.Recipes.Length > DatabaseAPI.Database.Enhancements[index].RecipeIDX && DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length > 0)
                 {
                     DatabaseAPI.Database.Enhancements[index].LevelMin = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[0].Level;
                     DatabaseAPI.Database.Enhancements[index].LevelMax = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length - 1].Level;

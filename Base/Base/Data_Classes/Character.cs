@@ -1,6 +1,7 @@
 
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,7 +27,7 @@ namespace Base.Data_Classes
                 else
                 {
                     int num2;
-                    if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
+                    if (MidsContext.Config.BuildMode == dmModes.Dynamic)
                     {
                         num2 = this.CurrentBuild.GetMaxLevel();
                     }
@@ -67,11 +68,11 @@ namespace Base.Data_Classes
             set
             {
                 this._archetype = value;
-                this.Alignment = this._archetype.Hero ? Enums.Alignment.Hero : Enums.Alignment.Villain;
+                this.Alignment = this._archetype.Hero ? Alignment.Hero : Alignment.Villain;
             }
         }
 
-        public Enums.Alignment Alignment { get; set; }
+        public Alignment Alignment { get; set; }
 
         public int Origin { get; set; }
 
@@ -169,12 +170,12 @@ namespace Base.Data_Classes
         {
             get
             {
-                if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
+                if (MidsContext.Config.BuildMode == dmModes.Dynamic)
                 {
-                    if (this.CurrentBuild.TotalSlotsAvailable - this.CurrentBuild.SlotsPlaced > 0 & MidsContext.Config.BuildOption != Enums.dmItem.Power)
+                    if (this.CurrentBuild.TotalSlotsAvailable - this.CurrentBuild.SlotsPlaced > 0 & MidsContext.Config.BuildOption != dmItem.Power)
                         return true;
                 }
-                else if (this.Level > -1 & this.Level < DatabaseAPI.Database.Levels.Length && DatabaseAPI.Database.Levels[this.Level].LevelType() == Enums.dmItem.Slot && this.SlotsRemaining > 0)
+                else if (this.Level > -1 & this.Level < DatabaseAPI.Database.Levels.Length && DatabaseAPI.Database.Levels[this.Level].LevelType() == dmItem.Slot && this.SlotsRemaining > 0)
                     return true;
                 return false;
             }
@@ -206,11 +207,11 @@ namespace Base.Data_Classes
             }
         }
 
-        public bool IsHero() => this.Alignment == Enums.Alignment.Hero || this.Alignment == Enums.Alignment.Vigilante;
+        public bool IsHero() => this.Alignment == Alignment.Hero || this.Alignment == Alignment.Vigilante;
 
-        public bool IsVillain => this.Alignment == Enums.Alignment.Rogue || this.Alignment == Enums.Alignment.Villain;
+        public bool IsVillain => this.Alignment == Alignment.Rogue || this.Alignment == Alignment.Villain;
 
-        public bool IsPraetorian => this.Alignment == Enums.Alignment.Loyalist || this.Alignment == Enums.Alignment.Resistance;
+        public bool IsPraetorian => this.Alignment == Alignment.Loyalist || this.Alignment == Alignment.Resistance;
         public bool IsBlaster => this.Archetype.DisplayName.ToLower() == "blaster";
 
         public bool IsController => this.Archetype.DisplayName.ToLower() == "controller";
@@ -221,7 +222,7 @@ namespace Base.Data_Classes
 
         public bool IsTanker => this.Archetype.DisplayName.ToLower() == "tank";
 
-        public bool IsKheldian => this.Archetype.ClassType == Enums.eClassType.HeroEpic;
+        public bool IsKheldian => this.Archetype.ClassType == eClassType.HeroEpic;
 
         public bool IsBrute => this.Archetype.DisplayName.ToLower() == "brute";
 
@@ -233,7 +234,7 @@ namespace Base.Data_Classes
 
         public bool IsStalker => this.Archetype.DisplayName.ToLower() == "stalker";
 
-        public bool IsArachnos => this.Archetype.ClassType == Enums.eClassType.VillainEpic;
+        public bool IsArachnos => this.Archetype.ClassType == eClassType.VillainEpic;
 
         public bool PoolTaken(int poolID) => this.Powersets[poolID] != null && poolID >= 3 && poolID <= 7 && this.PoolLocked[poolID - 3];
 
@@ -262,19 +263,19 @@ namespace Base.Data_Classes
                 if (this.Powersets[0] != null && this.Powersets[0].nArchetype == this.Archetype.Idx)
                     flag2 = true;
                 if (!flag2)
-                    this.Powersets[0] = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Primary)[0];
+                    this.Powersets[0] = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Primary)[0];
                 bool flag3 = false;
                 if (this.Powersets[1] != null && this.Powersets[1].nArchetype == this.Archetype.Idx)
                     flag3 = true;
                 if (!flag3)
-                    this.Powersets[1] = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Secondary)[0];
+                    this.Powersets[1] = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Secondary)[0];
             }
             else
             {
-                this.Powersets[0] = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Primary)[0];
-                this.Powersets[1] = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Secondary)[0];
+                this.Powersets[0] = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Primary)[0];
+                this.Powersets[1] = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Secondary)[0];
             }
-            IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
+            IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Pool);
             int index = 0;
             this.Powersets[3] = powersetIndexes1[index];
             if (powersetIndexes1.Length - 1 > index)
@@ -286,7 +287,7 @@ namespace Base.Data_Classes
             if (powersetIndexes1.Length - 1 > index)
                 ++index;
             this.Powersets[6] = powersetIndexes1[index];
-            IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
+            IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Ancillary);
             this.Powersets[7] = powersetIndexes2.Length <= 0 ? null : powersetIndexes2[0];
             this.ModifyEffects = new Dictionary<string, float>();
             this.PoolLocked = new bool[5];
@@ -349,19 +350,19 @@ namespace Base.Data_Classes
         protected bool PowersetMutexClash(int nIDPower)
         {
             int powerSetId = DatabaseAPI.Database.Power[nIDPower].PowerSetID;
-            Enums.PowersetType powersetType;
+            PowersetType powersetType;
             switch (DatabaseAPI.Database.Powersets[powerSetId].SetType)
             {
-                case Enums.ePowerSetType.Primary:
-                    powersetType = Enums.PowersetType.Secondary;
+                case ePowerSetType.Primary:
+                    powersetType = PowersetType.Secondary;
                     break;
-                case Enums.ePowerSetType.Secondary:
-                    powersetType = Enums.PowersetType.Primary;
+                case ePowerSetType.Secondary:
+                    powersetType = PowersetType.Primary;
                     break;
                 default:
                     return false;
             }
-            if (powersetType != Enums.PowersetType.None)
+            if (powersetType != PowersetType.None)
             {
                 for (int index = 0; index <= DatabaseAPI.Database.Powersets[powerSetId].nIDMutexSets.Length - 1; ++index)
                 {
@@ -379,7 +380,7 @@ namespace Base.Data_Classes
 
         void CheckAncillaryPowerSet()
         {
-            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Ancillary);
+            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Ancillary);
             if (powersetIndexes.Length == 0)
                 this.Powersets[7] = null;
             else if (this.Powersets[7] == null)
@@ -401,7 +402,7 @@ namespace Base.Data_Classes
 
         IEnumerable<int> PoolGetAvailable(int iPool)
         {
-            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, Enums.ePowerSetType.Pool);
+            IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(this.Archetype, ePowerSetType.Pool);
             List<int> intList = new List<int>();
             for (int index1 = 0; index1 < powersetIndexes.Length; ++index1)
             {
@@ -450,16 +451,16 @@ namespace Base.Data_Classes
                 IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iSlot.Enh];
                 switch (enhancement.TypeID)
                 {
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         popupData1.Sections[index1].Add(enhancement.Name, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         popupData1.Sections[index1].Add("Invention: " + enhancement.Name, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         popupData1.Sections[index1].Add(enhancement.Name, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         Color iColor = PopUp.Colors.Title;
                         if (enhancement.RecipeIDX > -1)
                         {
@@ -481,16 +482,16 @@ namespace Base.Data_Classes
                 }
                 switch (enhancement.TypeID)
                 {
-                    case Enums.eType.Normal:
+                    case eType.Normal:
                         popupData1.Sections[index1].Add(iSlot.GetEnhancementString(), Color.FromArgb(0, (int)byte.MaxValue, 0), 1f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.InventO:
+                    case eType.InventO:
                         popupData1.Sections[index1].Add("Invention Level: " + (iSlot.IOLevel + 1) + iSlot.GetRelativeString(false) + " - " + iSlot.GetEnhancementString(), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.SpecialO:
+                    case eType.SpecialO:
                         popupData1.Sections[index1].Add(iSlot.GetEnhancementString(), Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0), 1f, FontStyle.Bold, 0);
                         break;
-                    case Enums.eType.SetO:
+                    case eType.SetO:
                         popupData1.Sections[index1].Add("Invention Level: " + (iSlot.IOLevel + 1) + iSlot.GetRelativeString(false), PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
                         break;
                 }
@@ -503,8 +504,8 @@ namespace Base.Data_Classes
                 }
                 switch (enhancement.TypeID)
                 {
-                    case Enums.eType.Normal:
-                    case Enums.eType.InventO:
+                    case eType.Normal:
+                    case eType.InventO:
                         if (!string.IsNullOrEmpty(enhancement.Desc))
                         {
                             popupData1.Sections[index1].Add(enhancement.Desc, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
@@ -518,8 +519,8 @@ namespace Base.Data_Classes
                             popupData1.Sections[index2].Add(strArray2[0], Color.FromArgb(0, (int)byte.MaxValue, 0), strArray2[1], Color.FromArgb(0, (int)byte.MaxValue, 0), 0.9f, FontStyle.Bold, 0);
                         }
                         break;
-                    case Enums.eType.SpecialO:
-                    case Enums.eType.SetO:
+                    case eType.SpecialO:
+                    case eType.SetO:
                         if (!string.IsNullOrEmpty(enhancement.Desc))
                             popupData1.Sections[index1].Add(enhancement.Desc, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                         int index4 = popupData1.Add(null);
@@ -538,7 +539,7 @@ namespace Base.Data_Classes
                 }
                 if (!MidsContext.Config.PopupRecipes)
                 {
-                    if (enhancement.TypeID == Enums.eType.SetO)
+                    if (enhancement.TypeID == eType.SetO)
                     {
                         int index3 = popupData1.Add(null);
                         popupData1.Sections[index3].Add("Set Type: " + DatabaseAPI.Database.SetTypeStringLong[(int)DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType], PopUp.Colors.Invention, 1f, FontStyle.Bold, 0);
@@ -547,7 +548,7 @@ namespace Base.Data_Classes
                         popupData1.Add(PopSetBonusListing(enhancement.nIDSet, powerEntry));
                     }
                 }
-                else if (enhancement.TypeID == Enums.eType.SetO || enhancement.TypeID == Enums.eType.InventO)
+                else if (enhancement.TypeID == eType.SetO || enhancement.TypeID == eType.InventO)
                     popupData1.Add(PopRecipeInfo(enhancement.RecipeIDX, iSlot.IOLevel));
                 popupData2 = popupData1;
             }
@@ -601,7 +602,7 @@ namespace Base.Data_Classes
                 if (DatabaseAPI.Database.Power[power.NIDPower].AllowFrontLoading)
                     iLevel = 0;
                 int num2 = this.GetFirstAvailableSlotLevel(iLevel);
-                if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp && num2 > this.CurrentBuild.GetMaxLevel() + 1)
+                if (MidsContext.Config.BuildMode == dmModes.LevelUp && num2 > this.CurrentBuild.GetMaxLevel() + 1)
                     num2 = -1;
                 num1 = num2;
             }
@@ -673,9 +674,9 @@ namespace Base.Data_Classes
                     string effectString = enhancementSet.GetEffectString(index, false, true);
                     if (!string.IsNullOrEmpty(effectString))
                     {
-                        if (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP)
+                        if (enhancementSet.Bonus[index].PvMode == ePvX.PvP)
                             effectString += "(PvP)";
-                        if (num >= enhancementSet.Bonus[index].Slotted & (enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.PvP & !MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index].PvMode == Enums.ePvX.Any))
+                        if (num >= enhancementSet.Bonus[index].Slotted & (enhancementSet.Bonus[index].PvMode == ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index].PvMode == ePvX.PvP & !MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index].PvMode == ePvX.Any))
                             section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 0);
                         else if (power == null)
                             section1.Add("(" + enhancementSet.Bonus[index].Slotted + ") " + effectString, PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 0);
@@ -906,10 +907,10 @@ namespace Base.Data_Classes
                 }
             }
             // HACK: this assumes at least 8 powersets exist, but the database is fully editable.
-            this.PoolLocked[0] = this.PowersetUsed(this.Powersets[3]) & this.PoolUnique(Enums.PowersetType.Pool0);
-            this.PoolLocked[1] = this.PowersetUsed(this.Powersets[4]) & this.PoolUnique(Enums.PowersetType.Pool1);
-            this.PoolLocked[2] = this.PowersetUsed(this.Powersets[5]) & this.PoolUnique(Enums.PowersetType.Pool2);
-            this.PoolLocked[3] = this.PowersetUsed(this.Powersets[6]) & this.PoolUnique(Enums.PowersetType.Pool3);
+            this.PoolLocked[0] = this.PowersetUsed(this.Powersets[3]) & this.PoolUnique(PowersetType.Pool0);
+            this.PoolLocked[1] = this.PowersetUsed(this.Powersets[4]) & this.PoolUnique(PowersetType.Pool1);
+            this.PoolLocked[2] = this.PowersetUsed(this.Powersets[5]) & this.PoolUnique(PowersetType.Pool2);
+            this.PoolLocked[3] = this.PowersetUsed(this.Powersets[6]) & this.PoolUnique(PowersetType.Pool3);
             this.PoolLocked[4] = this.PowersetUsed(this.Powersets[7]);
         }
 
@@ -923,10 +924,10 @@ namespace Base.Data_Classes
             return this.CurrentBuild.LastPower + 1;
         }
 
-        bool PoolUnique(Enums.PowersetType pool)
+        bool PoolUnique(PowersetType pool)
         {
             bool flag = true;
-            for (int index = 3; (Enums.PowersetType)index < pool; ++index)
+            for (int index = 3; (PowersetType)index < pool; ++index)
             {
                 if (this.Powersets[index].nID == this.Powersets[(int)pool].nID)
                     flag = false;
@@ -1121,11 +1122,11 @@ namespace Base.Data_Classes
 
             public void Init(bool fullReset = true)
             {
-                this.Def = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-                this.Res = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-                this.Mez = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-                this.MezRes = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-                this.DebuffRes = new float[Enum.GetValues(Enums.eEffectType.None.GetType()).Length];
+                this.Def = new float[Enum.GetValues(eDamage.None.GetType()).Length];
+                this.Res = new float[Enum.GetValues(eDamage.None.GetType()).Length];
+                this.Mez = new float[Enum.GetValues(eMez.None.GetType()).Length];
+                this.MezRes = new float[Enum.GetValues(eMez.None.GetType()).Length];
+                this.DebuffRes = new float[Enum.GetValues(eEffectType.None.GetType()).Length];
                 if (!fullReset) return;
                 this.Elusivity = 0.0f;
                 this.HPRegen = 0.0f;
