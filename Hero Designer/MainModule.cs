@@ -25,13 +25,7 @@ namespace Hero_Designer
             public static Rectangle SzFrmStats = new Rectangle();
             public static Rectangle SzFrmTotals = new Rectangle();
 
-            public static bool IsAppInitialized
-            {
-                get
-                {
-                    return MainModule.MidsController._appInitialized;
-                }
-            }
+            public static bool IsAppInitialized => MainModule.MidsController._appInitialized;
 
             public static clsToonX Toon
             {
@@ -41,7 +35,7 @@ namespace Hero_Designer
                 }
                 set
                 {
-                    MidsContext.Character = (Character)value;
+                    MidsContext.Character = value;
                 }
             }
 
@@ -65,7 +59,7 @@ namespace Hero_Designer
                 {
                     Interaction.MsgBox(
                         "Failed to load Levelling data file! The program is unable to proceed.\r\n" +
-                        "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, (object)"Error");
+                        "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, "Error");
                     ProjectData.EndApp();
                 }
                 if (!DatabaseAPI.LoadMainDatabase())

@@ -1,6 +1,4 @@
-
 using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -8,191 +6,29 @@ using System.Windows.Forms;
 
 public class Zlib
 {
-    const float Version = 1f;
-
-    const string PackHeaderToken = "MHDPackZ";
-
-    const int ErrorNone = 0;
-
-    const int ErrorStream = -2;
-
-    const int ErrorData = -3;
-
-    const int ErrorOutOfMem = -4;
-
-    const int ErrorBuffer = -5;
-
-    ZStatus _sFrm;
-
-
+    // void** compress2(int32_t a1, int32_t* a2, int32_t a3, int32_t a4, void** a5) {
     [DllImport("lib\\ZLIB1.DLL", EntryPoint = "compress2", CharSet = CharSet.Ansi, SetLastError = false)]
     static extern int Compress(
-
       ref byte destBytes,
       ref int destLength,
       ref byte srcBytes,
       int srcLength,
       int compressionLevel);
 
+    // void** uncompress(int32_t a1, int32_t* a2, int32_t a3, int32_t a4)
     [DllImport("lib\\ZLIB1.DLL", EntryPoint = "uncompress", CharSet = CharSet.Ansi, SetLastError = false)]
     static extern int Uncompress(
-
       ref byte destBytes,
       ref int destLength,
       ref byte srceBytes,
       int srcLength);
 
-
-    public int UnPack(string iRoot, string iFileName, ref DateTime iDate, ref string iComments)
-    {
-        this._sFrm = new ZStatus()
-        {
-            StatusText1 = "Unpacking..."
-        };
-        this._sFrm.Show();
-        this._sFrm.Refresh();
-        FileStream fileStream;
-        BinaryReader reader;
-        try
-        {
-            fileStream = new FileStream(iFileName, FileMode.Open);
-            reader = new BinaryReader((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while unpacking: " + ex.Message, "Buh?");
-            return 0;
-        }
-        Zlib.PackHeader packHeader = new Zlib.PackHeader();
-        if (reader.ReadString() != "MHDPackZ")
-            Debugger.Break();
-        packHeader.PackVersion = reader.ReadSingle();
-        packHeader.PackComments = reader.ReadString();
-        iComments = packHeader.PackComments;
-        packHeader.DateD = reader.ReadInt32();
-        packHeader.DateM = reader.ReadInt32();
-        packHeader.DateY = reader.ReadInt32();
-        iDate = new DateTime(packHeader.DateY, packHeader.DateM, packHeader.DateD);
-        packHeader.PackContents = reader.ReadInt32();
-        for (int index = 0; index <= packHeader.PackContents - 1; ++index)
-        {
-            this._sFrm.StatusText1 = "Unpacking file " + (object)index + (object)1 + " of " + (object)packHeader.PackContents;
-            if (!this.UncompressFile(iRoot, reader))
-            {
-                reader.Close();
-                fileStream.Close();
-                this._sFrm.Hide();
-                this._sFrm = (ZStatus)null;
-                return 0;
-            }
-        }
-        reader.Close();
-        fileStream.Close();
-        this._sFrm.Hide();
-        this._sFrm = (ZStatus)null;
-        return packHeader.PackContents;
-    }
-
-    static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
-
-    {
-        int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
-        Zlib.FileHeader fileHeader = new Zlib.FileHeader();
-        fileHeader.FileName = iDest;
-        fileHeader.DecompressedSize = int32;
-        fileHeader.CompressedSize = 0;
-        FileStream fileStream;
-        BinaryReader binaryReader;
-        try
-        {
-            fileStream = new FileStream(iFileName, FileMode.Open);
-            binaryReader = new BinaryReader((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while compressing: " + ex.Message, "Buh?");
-            return false;
-        }
-        bool flag;
-        try
-        {
-            byte[] iBytes = binaryReader.ReadBytes(int32);
-            byte[] buffer = Zlib.CompressChunk(ref iBytes);
-            fileHeader.CompressedSize = buffer.Length;
-            if (fileHeader.CompressedSize < 1)
-                throw new Exception("Compressed data was 0 bytes long!");
-            writer.Write(fileHeader.FileName);
-            writer.Write(fileHeader.DecompressedSize);
-            writer.Write(fileHeader.CompressedSize);
-            writer.Write(buffer);
-            binaryReader.Close();
-            fileStream.Close();
-            flag = true;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred during compression: " + ex.Message, "Buh?");
-            binaryReader.Close();
-            fileStream.Close();
-            flag = false;
-        }
-        return flag;
-    }
-
-    bool UncompressFile(string iRoot, BinaryReader reader)
-
-    {
-        Zlib.FileHeader fileHeader = new Zlib.FileHeader();
-        string str = reader.ReadString();
-        fileHeader.FileName = FileIO.StripSlash(iRoot) + str;
-        fileHeader.DecompressedSize = reader.ReadInt32();
-        fileHeader.CompressedSize = reader.ReadInt32();
-        this._sFrm.StatusText2 = str;
-        if (!Directory.Exists(fileHeader.FileName.Substring(0, fileHeader.FileName.LastIndexOf("\\", StringComparison.Ordinal))))
-            Directory.CreateDirectory(fileHeader.FileName.Substring(0, fileHeader.FileName.LastIndexOf("\\", StringComparison.Ordinal)));
-        if (File.Exists(fileHeader.FileName))
-            File.Delete(fileHeader.FileName);
-        FileStream fileStream;
-        BinaryWriter binaryWriter;
-        try
-        {
-            fileStream = new FileStream(fileHeader.FileName, FileMode.Create);
-            binaryWriter = new BinaryWriter((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while opening files for writing for decompression: " + ex.Message, "Buh?");
-            return false;
-        }
-        bool flag;
-        try
-        {
-            byte[] iBytes = reader.ReadBytes(fileHeader.CompressedSize);
-            byte[] buffer = Zlib.UncompressChunk(ref iBytes, fileHeader.DecompressedSize);
-            if (buffer.Length != fileHeader.DecompressedSize)
-                throw new Exception("Uncompressed data was not the expected size!");
-            binaryWriter.Write(buffer);
-            binaryWriter.Close();
-            fileStream.Close();
-            flag = true;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred during decompression: " + ex.Message, "Buh?");
-            reader.Close();
-            fileStream.Close();
-            flag = false;
-        }
-        return flag;
-    }
-
     public static byte[] CompressChunk(ref byte[] iBytes)
     {
         int length = iBytes.Length;
-        int destLength = (int)((double)length + (double)length * 0.001 + 12.0);
+        int destLength = (int)(length + (length * 0.001) + 12.0);
         byte[] array = new byte[destLength];
         int num1 = Zlib.Compress(ref array[0], ref destLength, ref iBytes[0], length, 9);
-        byte[] numArray;
         switch (num1)
         {
             case -5:
@@ -209,15 +45,12 @@ public class Zlib
                 break;
             case 0:
                 Array.Resize<byte>(ref array, destLength);
-                numArray = array;
-                goto label_8;
+                return array;
             default:
-                MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + (object)num1 + ".", "Compression Error");
-                return new byte[0];
+                MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + num1 + ".", "Compression Error");
+                return Array.Empty<byte>();
         }
-        numArray = new byte[0];
-    label_8:
-        return numArray;
+        return Array.Empty<byte>();
     }
 
     public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
@@ -225,17 +58,14 @@ public class Zlib
         int length = iBytes.Length;
         int destLength = outSize;
         byte[] array = new byte[destLength];
-        byte[] numArray;
 
         if (Zlib.Uncompress(ref array[0], ref destLength, ref iBytes[0], length) == 0)
         {
-            Array.Resize<byte>(ref array, destLength);
-            numArray = array;
+            Array.Resize(ref array, destLength);
+            return array;
         }
         else
-            numArray = new byte[0];
-
-        return numArray;
+            return Array.Empty<byte>();
     }
 
     public static byte[] UUEncodeBytes(byte[] iBytes)
@@ -243,16 +73,16 @@ public class Zlib
         if (iBytes.Length % 3 != 0)
             Array.Resize<byte>(ref iBytes, iBytes.Length + (3 - iBytes.Length % 3));
         MemoryStream memoryStream = new MemoryStream();
-        BinaryWriter binaryWriter = new BinaryWriter((Stream)memoryStream);
+        BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
         for (int index = 0; index <= iBytes.Length - 1; index += 3)
         {
             byte iByte1 = iBytes[index];
             byte iByte2 = iBytes[index + 1];
             byte iByte3 = iBytes[index + 2];
-            int num1 = (int)iByte1 / 4 + 32;
-            int num2 = (int)iByte1 % 4 * 16 + ((int)iByte2 / 16 + 32);
-            int num3 = (int)iByte2 % 16 * 4 + ((int)iByte3 / 64 + 32);
-            int num4 = (int)iByte3 % 64 + 32;
+            int num1 = iByte1 / 4 + 32;
+            int num2 = iByte1 % 4 * 16 + (iByte2 / 16 + 32);
+            int num3 = iByte2 % 16 * 4 + (iByte3 / 64 + 32);
+            int num4 = iByte3 % 64 + 32;
             if (num1 == 32)
                 num1 = 96;
             if (num2 == 32)
@@ -277,24 +107,24 @@ public class Zlib
         try
         {
             MemoryStream memoryStream = new MemoryStream();
-            BinaryWriter binaryWriter = new BinaryWriter((Stream)memoryStream);
+            BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
             for (int index = 0; index <= iBytes.Length - 1; index += 4)
             {
                 byte num1 = iBytes[index];
                 byte num2 = iBytes[index + 1];
                 byte num3 = iBytes[index + 2];
                 byte num4 = iBytes[index + 3];
-                if (num1 == (byte)96)
-                    num1 = (byte)32;
-                if (num2 == (byte)96)
-                    num2 = (byte)32;
-                if (num3 == (byte)96)
-                    num3 = (byte)32;
-                if (num4 == (byte)96)
-                    num4 = (byte)32;
-                int num5 = ((int)num1 - 32) * 4 + ((int)num2 - 32) / 16;
-                int num6 = (int)num2 % 16 * 16 + ((int)num3 - 32) / 4;
-                int num7 = (int)num3 % 4 * 64 + (int)num4 - 32;
+                if (num1 == 96)
+                    num1 = 32;
+                if (num2 == 96)
+                    num2 = 32;
+                if (num3 == 96)
+                    num3 = 32;
+                if (num4 == 96)
+                    num4 = 32;
+                int num5 = (num1 - 32) * 4 + (num2 - 32) / 16;
+                int num6 = num2 % 16 * 16 + (num3 - 32) / 4;
+                int num7 = num3 % 4 * 64 + num4 - 32;
                 binaryWriter.Write(Convert.ToByte(num5));
                 binaryWriter.Write(Convert.ToByte(num6));
                 binaryWriter.Write(Convert.ToByte(num7));
@@ -315,10 +145,10 @@ public class Zlib
     public static byte[] HexDecodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
-        BinaryWriter binaryWriter = new BinaryWriter((Stream)memoryStream);
+        BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
         for (int index = 0; index <= iBytes.Length - 1; index += 2)
         {
-            byte num = Convert.ToByte(((char)iBytes[index]).ToString((IFormatProvider)CultureInfo.InvariantCulture) + ((char)iBytes[index + 1]).ToString((IFormatProvider)CultureInfo.InvariantCulture), 16);
+            byte num = Convert.ToByte(((char)iBytes[index]).ToString(CultureInfo.InvariantCulture) + ((char)iBytes[index + 1]).ToString(CultureInfo.InvariantCulture), 16);
             binaryWriter.Write(num);
         }
         binaryWriter.Close();
@@ -394,8 +224,8 @@ public class Zlib
             for (int index1 = 0; index1 <= strArray.Length - 1; ++index1)
             {
                 strArray[index1] = strArray[index1].Replace(" ", string.Empty);
-                strArray[index1] = strArray[index1].Replace('\n'.ToString((IFormatProvider)CultureInfo.InvariantCulture), string.Empty);
-                strArray[index1] = strArray[index1].Replace('\r'.ToString((IFormatProvider)CultureInfo.InvariantCulture), string.Empty);
+                strArray[index1] = strArray[index1].Replace('\n'.ToString(CultureInfo.InvariantCulture), string.Empty);
+                strArray[index1] = strArray[index1].Replace('\r'.ToString(CultureInfo.InvariantCulture), string.Empty);
                 strArray[index1] = strArray[index1].Replace("\t", string.Empty);
                 strArray[index1] = strArray[index1].Replace("\n", string.Empty);
                 int startIndex = 0;
@@ -429,8 +259,8 @@ public class Zlib
         else
         {
             iString = iString.Replace(" ", string.Empty);
-            iString = iString.Replace('\n'.ToString((IFormatProvider)CultureInfo.InvariantCulture), string.Empty);
-            iString = iString.Replace('\r'.ToString((IFormatProvider)CultureInfo.InvariantCulture), string.Empty);
+            iString = iString.Replace('\n'.ToString(CultureInfo.InvariantCulture), string.Empty);
+            iString = iString.Replace('\r'.ToString(CultureInfo.InvariantCulture), string.Empty);
             iString = iString.Replace("\t", string.Empty);
             iString = iString.Replace("\n", string.Empty);
             str = iString;
@@ -438,53 +268,11 @@ public class Zlib
         return str;
     }
 
-    public static bool CheckTag(string iFileName)
-    {
-        FileStream fileStream;
-        BinaryReader binaryReader;
-        try
-        {
-            fileStream = new FileStream(iFileName, FileMode.Open);
-            binaryReader = new BinaryReader((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error has occurred while checking to see if the downloaded file has been applied. Error: " + ex.Message, "Whoa!");
-            return false;
-        }
-        bool flag = binaryReader.ReadString() == "MHDPackZ";
-        if ((double)binaryReader.ReadSingle() < 0.0)
-            flag = false;
-        binaryReader.Close();
-        fileStream.Close();
-        return flag;
-    }
-
     enum ECompressionLevel
-
     {
         DefaultCompress = -1,
         None = 0,
         Fast = 1,
         Best = 9,
-    }
-
-    struct PackHeader
-
-    {
-        public float PackVersion;
-        public int PackContents;
-        public string PackComments;
-        public int DateD;
-        public int DateM;
-        public int DateY;
-    }
-
-    struct FileHeader
-
-    {
-        public string FileName;
-        public int DecompressedSize;
-        public int CompressedSize;
     }
 }

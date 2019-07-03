@@ -1,10 +1,24 @@
-
 using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
+public interface ISerialize
+{
+    string Serialize(object o);
+    string Extension { get; }
+}
+public class Serializer : ISerialize
+{
+    readonly Func<object, string> _serializeFunc;
+    public string Extension { get; }
+    public Serializer(Func<object, string> serializeFunc, string extension)
+    {
+        Extension = extension;
+        _serializeFunc = serializeFunc;
+    }
+    public string Serialize(object o) => _serializeFunc(o);
+}
 public class ConfigData
 {
     public float BaseAcc = 0.75f;
@@ -39,28 +53,9 @@ public class ConfigData
     public bool ReapeatOnMiddleClick = true;
     public bool ExportHex = true;
     public readonly short[] DragDropScenarioAction = new short[20]
-    {
-    (short) 3,
-    (short) 0,
-    (short) 5,
-    (short) 0,
-    (short) 3,
-    (short) 5,
-    (short) 0,
-    (short) 0,
-    (short) 5,
-    (short) 0,
-    (short) 2,
-    (short) 3,
-    (short) 0,
-    (short) 2,
-    (short) 2,
-    (short) 0,
-    (short) 0,
-    (short) 0,
-    (short) 0,
-    (short) 0
-    };
+        {
+            3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
+        };
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
     static ConfigData _current;
 
@@ -121,9 +116,7 @@ public class ConfigData
     }
 
     ConfigData(string iFilename = "")
-
     {
-
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
         this.Inc.PvE = true;
@@ -168,7 +161,6 @@ public class ConfigData
     }
 
     void Load(string iFilename)
-
     {
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
@@ -380,13 +372,121 @@ public class ConfigData
         Directory.CreateDirectory(this.DefaultSaveFolder);
     }
 
-    void Save(string iFilename, float version)
+    void SaveRaw(ISerialize serializer, string iFilename, float version, string name)
     {
+
+        var toSerialize = new
+        {
+            name,
+            version,
+            this.NoToolTips,
+            this.BaseAcc,
+            this.CalcEnhLevel,
+            this.CalcEnhOrigin,
+            this.ExempHigh,
+            this.ExempLow,
+            this.Inc.PvE,
+            this.DamageMath.Calculate,
+            this.DamageMath.ReturnValue,
+            this.DataDamageGraph,
+            this.DataDamageGraphPercentageOnly,
+            this.DataGraphType,
+            this.ExportScheme,
+            this.ExportBonusTotals,
+            this.ExportBonusList,
+            hideOriginEnhancements = this._hideOriginEnhancements,
+            this.ShowVillainColours,
+            this.CheckForUpdates,
+            this.Columns,
+            this.LastSize.Width,
+            this.LastSize.Height,
+            this.DvState,
+            this.StatGraphStyle,
+            this.FreshInstall,
+            this.ForceLevel,
+            I9 = new
+            {
+                this.I9.DefaultIOLevel,
+                this.I9.DisplayIOLevels,
+                this.I9.CalculateEnahncementFX,
+                this.I9.CalculateSetBonusFX,
+                this.I9.ExportIOLevels,
+                this.I9.PrintIOLevels,
+                this.I9.ExportCompress,
+                this.I9.ExportDataChunk,
+                this.I9.ExportStripEnh,
+                this.I9.ExportStripSetNames,
+                this.I9.ExportExtraSep,
+            },
+            this.PrintInColour,
+            printScheme = this._printScheme,
+            RtFont = new
+            {
+                this.RtFont.PairedBase,
+                this.RtFont.PairedBold,
+                this.RtFont.RTFBase,
+                this.RtFont.RTFBold,
+                this.RtFont.ColorBackgroundHero,
+                this.RtFont.ColorBackgroundVillain,
+                this.RtFont.ColorEnhancement,
+                this.RtFont.ColorFaded,
+                this.RtFont.ColorInvention,
+                this.RtFont.ColorInventionInv,
+                this.RtFont.ColorText,
+                this.RtFont.ColorWarning,
+                this.RtFont.ColorPlName,
+                this.RtFont.ColorPlSpecial,
+                this.RtFont.ColorPowerAvailable,
+                this.RtFont.ColorPowerTaken,
+                this.RtFont.ColorPowerTakenDark,
+                this.RtFont.ColorPowerDisabled,
+                this.RtFont.ColorPowerHighlight,
+            },
+            this.ShowSlotLevels,
+            this.LoadLastFileOnStart,
+            this.LastFileName,
+            this.Tips.TipStatus,
+            DefaultSaveFolder = this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? String.Empty : this.DefaultSaveFolder,
+            this.EnhanceVisibility,
+            this.BuildMode,
+            this.BuildOption,
+            this.UpdatePath,
+            this.ShowEnhRel,
+            this.ShowRelSymbols,
+            this.ShowAlphaPopup,
+            this.PopupRecipes,
+            this.ShoppingListIncludesRecipes,
+            this.PrintProfile,
+            this.PrintHistory,
+            this.LastPrinter,
+            this.PrintProfileEnh,
+            this.DesaturateInherent,
+            this.ReapeatOnMiddleClick,
+            this.ExportHex,
+            this.SpeedFormat,
+            this.SaveFolderChecked,
+            this.UseArcanaTime, // Pine 
+            this.Suppression,
+            this.DragDropScenarioAction,
+            Export = new
+            {
+                this.Export.ColorSchemes,
+                this.Export.FormatCode,
+            }
+        };
+        SaveRawMhd(serializer, toSerialize, iFilename);
+    }
+
+    const string name = "Mids' Hero Designer Config V2";
+    void Save(ISerialize serializer, string iFilename, float version)
+    {
+        SaveRaw(serializer, iFilename, version, name);
+
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
         {
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                writer.Write("Mids' Hero Designer Config V2");
+                writer.Write(name);
                 writer.Write(version);
                 writer.Write(this.NoToolTips);
                 writer.Write(this.BaseAcc);
@@ -458,7 +558,8 @@ public class ConfigData
                 ConfigData.WriteRGB(writer, this.RtFont.ColorPowerDisabled);
                 ConfigData.WriteRGB(writer, this.RtFont.ColorPowerHighlight);
                 this.Tips.StoreTo(writer);
-                writer.Write(this.DefaultSaveFolder);
+
+                writer.Write(this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? string.Empty : this.DefaultSaveFolder);
                 writer.Write(this.EnhanceVisibility);
                 writer.Write(false);
                 writer.Write((int)this.BuildMode);
@@ -512,7 +613,7 @@ public class ConfigData
                     writer.Write(this.Export.FormatCode[index].SizeOn);
                     writer.Write(this.Export.FormatCode[index].UnderlineOff);
                     writer.Write(this.Export.FormatCode[index].UnderlineOn);
-                    writer.Write(Convert.ToInt32((object)this.Export.FormatCode[index].Space));
+                    writer.Write(Convert.ToInt32(this.Export.FormatCode[index].Space));
                 }
             }
         }
@@ -561,12 +662,14 @@ public class ConfigData
         this.SaveFolderChecked = true;
     }
 
-    public void SaveConfig()
+    // poorly named
+    // saves both config.mhd, and compare.mhd
+    public void SaveConfig(ISerialize serializer)
     {
         try
         {
-            this.Save(Files.SelectConfigFileSave(), 1.32f);
-            this.SaveOverrides();
+            this.Save(serializer, Files.SelectConfigFileSave(), 1.32f);
+            this.SaveOverrides(serializer);
         }
         catch (Exception ex)
         {
@@ -575,11 +678,10 @@ public class ConfigData
     }
 
     void LoadOverrides()
-
     {
         using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Open, FileAccess.Read))
         {
-            using (BinaryReader binaryReader = new BinaryReader((Stream)fileStream))
+            using (BinaryReader binaryReader = new BinaryReader(fileStream))
             {
                 if (binaryReader.ReadString() != "Mids' Hero Designer Comparison Overrides")
                 {
@@ -599,14 +701,41 @@ public class ConfigData
         }
     }
 
-    void SaveOverrides()
-
+    public static void SaveRawMhd(ISerialize serializer, object o, string fn)
     {
-        using (FileStream fileStream = new FileStream(Files.SelectDataFileLoad("Compare.mhd"), FileMode.Create))
+        try
         {
-            using (BinaryWriter binaryWriter = new BinaryWriter((Stream)fileStream))
+            var path = Path.Combine(Path.GetDirectoryName(fn), Path.GetFileNameWithoutExtension(fn) + "." + serializer.Extension);
+            var text = serializer.Serialize(o);
+            File.WriteAllText(path, contents: text);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Failed to save raw config");
+        }
+    }
+
+    const string OverrideNames = "Mids' Hero Designer Comparison Overrides";
+    void SaveRawOverrides(ISerialize serializer, string iFilename, string name)
+    {
+        var toSerialize = new
+        {
+            name,
+            this.CompOverride
+        };
+        SaveRawMhd(serializer, toSerialize, iFilename);
+    }
+
+    void SaveOverrides(ISerialize serializer)
+    {
+        var fn = Files.SelectDataFileLoad("Compare.mhd");
+        SaveRawOverrides(serializer, fn, OverrideNames);
+
+        using (FileStream fileStream = new FileStream(fn, FileMode.Create))
+        {
+            using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
             {
-                binaryWriter.Write("Mids' Hero Designer Comparison Overrides");
+                binaryWriter.Write(OverrideNames);
                 binaryWriter.Write(this.CompOverride.Length - 1);
                 for (int index = 0; index <= this.CompOverride.Length - 1; ++index)
                 {

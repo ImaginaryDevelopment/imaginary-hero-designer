@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: C:\Users\Xbass\Desktop\Hero Designer.exe-->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,8 +7,9 @@
     <ProjectGuid>{27BD82DA-4B3E-4D6B-BAEA-BE59A28A96EB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>Hero Designer</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Hero_Designer</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -39,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -65,8 +68,7 @@
     <StartupObject>Hero_Designer.My.MyApplication</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>phd_iE7_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -76,6 +78,165 @@
     <AssemblyOriginatorKeyFile>Hero Designer_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
+      <DependentUpon>frmTotals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmSetViewer.Designer.cs">
+      <DependentUpon>frmSetViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmMiniList.Designer.cs">
+      <DependentUpon>frmMiniList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmDPSCalc.Designer.cs">
+      <DependentUpon>frmDPSCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmData.Designer.cs">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmCompare.Designer.cs">
+      <DependentUpon>frmCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\frmAccolade.Designer.cs">
+      <DependentUpon>frmAccolade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmSetEdit.Designer.cs">
+      <DependentUpon>frmSetEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmSalvageEdit.Designer.cs">
+      <DependentUpon>frmSalvageEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEntityEdit.Designer.cs">
+      <DependentUpon>frmEntityEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEnhEdit.Designer.cs">
+      <DependentUpon>frmEnhEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditPowerset.Designer.cs">
+      <DependentUpon>frmEditPowerset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditPower.Designer.cs">
+      <DependentUpon>frmEditPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditArchetype.Designer.cs">
+      <DependentUpon>frmEditArchetype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmDBEdit.Designer.cs">
+      <DependentUpon>frmDBEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsMenuItems\frmCalcOpt.Designer.cs">
+      <DependentUpon>frmCalcOpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImportExportItems\frmForum.Designer.cs">
+      <DependentUpon>frmForum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImportExportItems\frmExportColor.Designer.cs">
+      <DependentUpon>frmExportColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmZStatus.Designer.cs">
+      <DependentUpon>frmZStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTweakMatching.Designer.cs">
+      <DependentUpon>frmTweakMatching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStats.Designer.cs">
+      <DependentUpon>frmStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSetListing.Designer.cs">
+      <DependentUpon>frmSetListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSetFind.Designer.cs">
+      <DependentUpon>frmSetFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRecipeViewer.Designer.cs">
+      <DependentUpon>frmRecipeViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRecipeEdit.Designer.cs">
+      <DependentUpon>frmRecipeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReadme.Designer.cs">
+      <DependentUpon>frmReadme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPowerEffect.Designer.cs">
+      <DependentUpon>frmPowerEffect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPowerBrowser.Designer.cs">
+      <DependentUpon>frmPowerBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOptionListDlg.Designer.cs">
+      <DependentUpon>frmOptionListDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmInputLevel.Designer.cs">
+      <DependentUpon>FrmInputLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIncarnate.Designer.cs">
+      <DependentUpon>frmIncarnate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_SetBonusAssignment.Designer.cs">
+      <DependentUpon>frmImport_SetBonusAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_SetAssignments.Designer.cs">
+      <DependentUpon>frmImport_SetAssignments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_SalvageReq.Designer.cs">
+      <DependentUpon>frmImport_SalvageReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_Recipe.Designer.cs">
+      <DependentUpon>frmImport_Recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_Powerset.Designer.cs">
+      <DependentUpon>frmImport_Powerset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_Power.Designer.cs">
+      <DependentUpon>frmImport_Power.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_mod.Designer.cs">
+      <DependentUpon>frmImport_mod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_Entities.Designer.cs">
+      <DependentUpon>frmImport_Entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_EnhancementEffects.Designer.cs">
+      <DependentUpon>frmImport_EnhancementEffects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImport_Archetype.Designer.cs">
+      <DependentUpon>frmImport_Archetype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportPowerLevels.Designer.cs">
+      <DependentUpon>frmImportPowerLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportEnhSets.Designer.cs">
+      <DependentUpon>frmImportEnhSets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmImportEffects.Designer.cs">
+      <DependentUpon>frmImportEffects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFloatingStats.Designer.cs">
+      <DependentUpon>frmFloatingStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEntityListing.Designer.cs">
+      <DependentUpon>frmEntityListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEnhMiniPick.Designer.cs">
+      <DependentUpon>frmEnhMiniPick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEnhData.Designer.cs">
+      <DependentUpon>frmEnhData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCSV.Designer.cs">
+      <DependentUpon>frmCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmColourSettings.Designer.cs">
+      <DependentUpon>frmColourSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBusy.Designer.cs">
+      <DependentUpon>frmBusy.cs</DependentUpon>
+    </Compile>
     <Content Include="Images\**\*.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -122,9 +283,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="midsControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\midsControls.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -134,177 +294,183 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.Designer.cs">
+      <DependentUpon>FrmMiniList2.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="clsOutput.cs" />
     <Compile Include="clsToonX.cs" />
     <Compile Include="clsUniversalImport.cs" />
     <Compile Include="clsXMLUpdate.cs" />
-    <Compile Include="DataView.cs">
+    <Compile Include="Forms\DataView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmAccolade.cs">
+    <Compile Include="Forms\WindowMenuItems\frmAccolade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBusy.cs">
+    <Compile Include="Forms\frmBusy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCalcOpt.cs">
+    <Compile Include="Forms\OptionsMenuItems\frmCalcOpt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmColourSettings.cs">
+    <Compile Include="Forms\frmColourSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompare.cs">
+    <Compile Include="Forms\WindowMenuItems\frmCompare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCSV.cs">
+    <Compile Include="Forms\frmCSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmData.cs">
+    <Compile Include="Forms\WindowMenuItems\frmData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDBEdit.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmDBEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDPSCalc.cs">
+    <Compile Include="Forms\WindowMenuItems\frmDPSCalc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditArchetype.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditArchetype.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditPower.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditPower.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditPowerset.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEditPowerset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnhData.cs">
+    <Compile Include="Forms\frmEnhData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnhEdit.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEnhEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnhMiniPick.cs">
+    <Compile Include="Forms\frmEnhMiniPick.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEntityEdit.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmEntityEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEntityListing.cs">
+    <Compile Include="Forms\frmEntityListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmExportColor.cs">
+    <Compile Include="Forms\ImportExportItems\frmExportColor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFloatingStats.cs">
+    <Compile Include="Forms\frmFloatingStats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmForum.cs">
+    <Compile Include="Forms\ImportExportItems\frmForum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportEffects.cs">
+    <Compile Include="Forms\frmImportEffects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportEnhSets.cs">
+    <Compile Include="Forms\frmImportEnhSets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportPowerLevels.cs">
+    <Compile Include="Forms\frmImportPowerLevels.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Archetype.cs">
+    <Compile Include="Forms\frmImport_Archetype.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_EnhancementEffects.cs">
+    <Compile Include="Forms\frmImport_EnhancementEffects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Entities.cs">
+    <Compile Include="Forms\frmImport_Entities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_mod.cs">
+    <Compile Include="Forms\frmImport_mod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Power.cs">
+    <Compile Include="Forms\frmImport_Power.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Powerset.cs">
+    <Compile Include="Forms\frmImport_Powerset.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_Recipe.cs">
+    <Compile Include="Forms\frmImport_Recipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_SalvageReq.cs">
+    <Compile Include="Forms\frmImport_SalvageReq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_SetAssignments.cs">
+    <Compile Include="Forms\frmImport_SetAssignments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImport_SetBonusAssignment.cs">
+    <Compile Include="Forms\frmImport_SetBonusAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmIncarnate.cs">
+    <Compile Include="Forms\frmIncarnate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInputLevel.cs">
+    <Compile Include="Forms\FrmInputLevel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoading.cs">
+    <Compile Include="Forms\frmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMiniList.cs">
+    <Compile Include="Forms\WindowMenuItems\frmMiniList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOptionListDlg.cs">
+    <Compile Include="Forms\frmOptionListDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPowerBrowser.cs">
+    <Compile Include="Forms\frmPowerBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPowerEffect.cs">
+    <Compile Include="Forms\frmPowerEffect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrint.cs">
+    <Compile Include="Forms\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReadme.cs">
+    <Compile Include="Forms\frmReadme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecipeEdit.cs">
+    <Compile Include="Forms\frmRecipeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecipeViewer.cs">
+    <Compile Include="Forms\frmRecipeViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSalvageEdit.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmSalvageEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetEdit.cs">
+    <Compile Include="Forms\OptionsMenuItems\DbEditor\frmSetEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetFind.cs">
+    <Compile Include="Forms\frmSetFind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetListing.cs">
+    <Compile Include="Forms\frmSetListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSetViewer.cs">
+    <Compile Include="Forms\WindowMenuItems\frmSetViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStats.cs">
+    <Compile Include="Forms\frmStats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTotals.cs">
+    <Compile Include="Forms\WindowMenuItems\frmTotals.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTweakMatching.cs">
+    <Compile Include="Forms\frmTweakMatching.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmZStatus.cs">
+    <Compile Include="Forms\frmZStatus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainModule.cs" />
@@ -316,169 +482,172 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DataView.resx">
+    <EmbeddedResource Include="Forms\DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAccolade.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmAccolade.resx">
       <DependentUpon>frmAccolade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBusy.resx">
+    <EmbeddedResource Include="Forms\frmBusy.resx">
       <DependentUpon>frmBusy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCalcOpt.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\frmCalcOpt.resx">
       <DependentUpon>frmCalcOpt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmColourSettings.resx">
+    <EmbeddedResource Include="Forms\frmColourSettings.resx">
       <DependentUpon>frmColourSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompare.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmCompare.resx">
       <DependentUpon>frmCompare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCSV.resx">
+    <EmbeddedResource Include="Forms\frmCSV.resx">
       <DependentUpon>frmCSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmData.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmData.resx">
       <DependentUpon>frmData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDBEdit.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmDBEdit.resx">
       <DependentUpon>frmDBEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDPSCalc.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmDPSCalc.resx">
       <DependentUpon>frmDPSCalc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditArchetype.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmEditArchetype.resx">
       <DependentUpon>frmEditArchetype.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditPower.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmEditPower.resx">
       <DependentUpon>frmEditPower.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditPowerset.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmEditPowerset.resx">
       <DependentUpon>frmEditPowerset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnhData.resx">
+    <EmbeddedResource Include="Forms\frmEnhData.resx">
       <DependentUpon>frmEnhData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnhEdit.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmEnhEdit.resx">
       <DependentUpon>frmEnhEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnhMiniPick.resx">
+    <EmbeddedResource Include="Forms\frmEnhMiniPick.resx">
       <DependentUpon>frmEnhMiniPick.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEntityEdit.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmEntityEdit.resx">
       <DependentUpon>frmEntityEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEntityListing.resx">
+    <EmbeddedResource Include="Forms\frmEntityListing.resx">
       <DependentUpon>frmEntityListing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmExportColor.resx">
+    <EmbeddedResource Include="Forms\ImportExportItems\frmExportColor.resx">
       <DependentUpon>frmExportColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFloatingStats.resx">
+    <EmbeddedResource Include="Forms\frmFloatingStats.resx">
       <DependentUpon>frmFloatingStats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmForum.resx">
+    <EmbeddedResource Include="Forms\ImportExportItems\frmForum.resx">
       <DependentUpon>frmForum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_Archetype.resx">
+    <EmbeddedResource Include="Forms\frmImport_Archetype.resx">
       <DependentUpon>frmImport_Archetype.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_EnhancementEffects.resx">
+    <EmbeddedResource Include="Forms\frmImport_EnhancementEffects.resx">
       <DependentUpon>frmImport_EnhancementEffects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_Entities.resx">
+    <EmbeddedResource Include="Forms\frmImport_Entities.resx">
       <DependentUpon>frmImport_Entities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_mod.resx">
+    <EmbeddedResource Include="Forms\frmImport_mod.resx">
       <DependentUpon>frmImport_mod.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_Power.resx">
+    <EmbeddedResource Include="Forms\frmImport_Power.resx">
       <DependentUpon>frmImport_Power.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_Powerset.resx">
+    <EmbeddedResource Include="Forms\frmImport_Powerset.resx">
       <DependentUpon>frmImport_Powerset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_Recipe.resx">
+    <EmbeddedResource Include="Forms\frmImport_Recipe.resx">
       <DependentUpon>frmImport_Recipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_SalvageReq.resx">
+    <EmbeddedResource Include="Forms\frmImport_SalvageReq.resx">
       <DependentUpon>frmImport_SalvageReq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_SetAssignments.resx">
+    <EmbeddedResource Include="Forms\frmImport_SetAssignments.resx">
       <DependentUpon>frmImport_SetAssignments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImport_SetBonusAssignment.resx">
+    <EmbeddedResource Include="Forms\frmImport_SetBonusAssignment.resx">
       <DependentUpon>frmImport_SetBonusAssignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportEffects.resx">
+    <EmbeddedResource Include="Forms\frmImportEffects.resx">
       <DependentUpon>frmImportEffects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportEnhSets.resx">
+    <EmbeddedResource Include="Forms\frmImportEnhSets.resx">
       <DependentUpon>frmImportEnhSets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportPowerLevels.resx">
+    <EmbeddedResource Include="Forms\frmImportPowerLevels.resx">
       <DependentUpon>frmImportPowerLevels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmIncarnate.resx">
+    <EmbeddedResource Include="Forms\frmIncarnate.resx">
       <DependentUpon>frmIncarnate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInputLevel.resx">
+    <EmbeddedResource Include="Forms\FrmInputLevel.resx">
       <DependentUpon>FrmInputLevel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoading.resx">
+    <EmbeddedResource Include="Forms\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMiniList.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmMiniList.resx">
       <DependentUpon>frmMiniList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOptionListDlg.resx">
+    <EmbeddedResource Include="Forms\frmOptionListDlg.resx">
       <DependentUpon>frmOptionListDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPowerBrowser.resx">
+    <EmbeddedResource Include="Forms\frmPowerBrowser.resx">
       <DependentUpon>frmPowerBrowser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPowerEffect.resx">
+    <EmbeddedResource Include="Forms\frmPowerEffect.resx">
       <DependentUpon>frmPowerEffect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint.resx">
+    <EmbeddedResource Include="Forms\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReadme.resx">
+    <EmbeddedResource Include="Forms\frmReadme.resx">
       <DependentUpon>frmReadme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecipeEdit.resx">
+    <EmbeddedResource Include="Forms\frmRecipeEdit.resx">
       <DependentUpon>frmRecipeEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecipeViewer.resx">
+    <EmbeddedResource Include="Forms\frmRecipeViewer.resx">
       <DependentUpon>frmRecipeViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSalvageEdit.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmSalvageEdit.resx">
       <DependentUpon>frmSalvageEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetEdit.resx">
+    <EmbeddedResource Include="Forms\OptionsMenuItems\DbEditor\frmSetEdit.resx">
       <DependentUpon>frmSetEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetFind.resx">
+    <EmbeddedResource Include="Forms\frmSetFind.resx">
       <DependentUpon>frmSetFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetListing.resx">
+    <EmbeddedResource Include="Forms\frmSetListing.resx">
       <DependentUpon>frmSetListing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSetViewer.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\FrmMiniList2.resx">
+      <DependentUpon>FrmMiniList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmSetViewer.resx">
       <DependentUpon>frmSetViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStats.resx">
+    <EmbeddedResource Include="Forms\frmStats.resx">
       <DependentUpon>frmStats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTotals.resx">
+    <EmbeddedResource Include="Forms\WindowMenuItems\frmTotals.resx">
       <DependentUpon>frmTotals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTweakMatching.resx">
+    <EmbeddedResource Include="Forms\frmTweakMatching.resx">
       <DependentUpon>frmTweakMatching.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmZStatus.resx">
+    <EmbeddedResource Include="Forms\frmZStatus.resx">
       <DependentUpon>frmZStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx" />
@@ -504,10 +673,15 @@
       <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\midsControls\midsControls.csproj">
+      <Project>{8b762616-ca1e-428a-a62d-e17dd738712d}</Project>
+      <Name>midsControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Hero Designer_TemporaryKey.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

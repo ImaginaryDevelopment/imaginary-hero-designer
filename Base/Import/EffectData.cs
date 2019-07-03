@@ -107,152 +107,152 @@ namespace Import
         bool flag2 = false;
         if (iEffect.EffectType != this.Data.EffectType)
         {
-          message += string.Format("EffectType: {0} => {1}", (object) iEffect.EffectType, (object) this.Data.EffectType);
+          message += string.Format("EffectType: {0} => {1}",  iEffect.EffectType,  this.Data.EffectType);
           flag2 = true;
         }
         if (iEffect.DisplayPercentage != this.Data.DisplayPercentage)
         {
-          message += string.Format("DisplayPercentage: {0} => {1}", (object) iEffect.DisplayPercentage, (object) this.Data.DisplayPercentage);
+          message += string.Format("DisplayPercentage: {0} => {1}",  iEffect.DisplayPercentage,  this.Data.DisplayPercentage);
           flag2 = true;
         }
         if (iEffect.DamageType != this.Data.DamageType)
         {
-          message += string.Format("DamageType: {0} => {1}", (object) iEffect.DamageType, (object) this.Data.DamageType);
+          message += string.Format("DamageType: {0} => {1}",  iEffect.DamageType,  this.Data.DamageType);
           flag2 = true;
         }
         if (iEffect.MezType != this.Data.MezType)
         {
-          message += string.Format("MezType: {0} => {1}", (object) iEffect.MezType, (object) this.Data.MezType);
+          message += string.Format("MezType: {0} => {1}",  iEffect.MezType,  this.Data.MezType);
           flag2 = true;
         }
         if (iEffect.ETModifies != this.Data.ETModifies)
         {
-          message += string.Format("ETModifies: {0} => {1}", (object) iEffect.ETModifies, (object) this.Data.ETModifies);
+          message += string.Format("ETModifies: {0} => {1}",  iEffect.ETModifies,  this.Data.ETModifies);
           flag2 = true;
         }
         if (iEffect.Summon != this.Data.Summon)
         {
-          message += string.Format("Summon: {0} => {1}", (object) iEffect.Summon, (object) this.Data.Summon);
+          message += string.Format("Summon: {0} => {1}",  iEffect.Summon,  this.Data.Summon);
           flag2 = true;
         }
         if (iEffect.Ticks != this.Data.Ticks)
         {
-          message += string.Format("Ticks: {0} => {1}", (object) iEffect.Ticks, (object) this.Data.Ticks);
+          message += string.Format("Ticks: {0} => {1}",  iEffect.Ticks,  this.Data.Ticks);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.DelayedTime - this.Data.DelayedTime) > 0.001)
         {
-          message += string.Format("DelayedTime: {0} => {1}", (object) iEffect.DelayedTime, (object) this.Data.DelayedTime);
+          message += string.Format("DelayedTime: {0} => {1}",  iEffect.DelayedTime,  this.Data.DelayedTime);
           flag2 = true;
         }
         if (iEffect.Stacking != this.Data.Stacking)
         {
-          message += string.Format("Stacking: {0} => {1}", (object) iEffect.Stacking, (object) this.Data.Stacking);
+          message += string.Format("Stacking: {0} => {1}",  iEffect.Stacking,  this.Data.Stacking);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.BaseProbability - this.Data.BaseProbability) > 0.001)
         {
-          message += string.Format("BaseProbability: {0} => {1}", (object) iEffect.BaseProbability, (object) this.Data.BaseProbability);
+          message += string.Format("BaseProbability: {0} => {1}",  iEffect.BaseProbability,  this.Data.BaseProbability);
           flag2 = true;
         }
         if (iEffect.CancelOnMiss != this.Data.CancelOnMiss)
         {
-          message += string.Format("CancelOnMiss: {0} => {1}", (object) iEffect.CancelOnMiss, (object) this.Data.CancelOnMiss);
+          message += string.Format("CancelOnMiss: {0} => {1}",  iEffect.CancelOnMiss,  this.Data.CancelOnMiss);
           flag2 = true;
         }
         if (iEffect.Suppression != this.Data.Suppression)
         {
-          message += string.Format("Suppression: {0} => {1}", (object) iEffect.Suppression, (object) this.Data.Suppression);
+          message += string.Format("Suppression: {0} => {1}",  iEffect.Suppression,  this.Data.Suppression);
           flag2 = true;
         }
         if (iEffect.Buffable != this.Data.Buffable)
         {
-          message += string.Format("Buffable: {0} => {1}", (object) iEffect.Buffable, (object) this.Data.Buffable);
+          message += string.Format("Buffable: {0} => {1}",  iEffect.Buffable,  this.Data.Buffable);
           flag2 = true;
         }
         if (iEffect.Resistible != this.Data.Resistible)
         {
-          message += string.Format("Resistible: {0} => {1}", (object) iEffect.Resistible, (object) this.Data.Resistible);
+          message += string.Format("Resistible: {0} => {1}",  iEffect.Resistible,  this.Data.Resistible);
           flag2 = true;
         }
         if (iEffect.SpecialCase != this.Data.SpecialCase)
         {
-          message += string.Format("SpecialCase: {0} => {1}", (object) iEffect.SpecialCase, (object) this.Data.SpecialCase);
+          message += string.Format("SpecialCase: {0} => {1}",  iEffect.SpecialCase,  this.Data.SpecialCase);
           flag2 = true;
         }
         if (iEffect.PvMode != this.Data.PvMode)
         {
-          message += string.Format("PvMode: {0} => {1}", (object) iEffect.PvMode, (object) this.Data.PvMode);
+          message += string.Format("PvMode: {0} => {1}",  iEffect.PvMode,  this.Data.PvMode);
           flag2 = true;
         }
         if (iEffect.ToWho != this.Data.ToWho)
         {
-          message += string.Format("ToWho: {0} => {1}", (object) iEffect.ToWho, (object) this.Data.ToWho);
+          message += string.Format("ToWho: {0} => {1}",  iEffect.ToWho,  this.Data.ToWho);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.Scale - this.Data.Scale) > 0.001)
         {
-          message += string.Format("Scale: {0} => {1}", (object) iEffect.Scale, (object) this.Data.Scale);
+          message += string.Format("Scale: {0} => {1}",  iEffect.Scale,  this.Data.Scale);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.nMagnitude - this.Data.nMagnitude) > 0.001)
         {
-          message += string.Format("nMagnitude: {0} => {1}", (object) iEffect.nMagnitude, (object) this.Data.nMagnitude);
+          message += string.Format("nMagnitude: {0} => {1}",  iEffect.nMagnitude,  this.Data.nMagnitude);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.nDuration - this.Data.nDuration) > 0.001)
         {
-          message += string.Format("nDuration: {0} => {1}", (object) iEffect.nDuration, (object) this.Data.nDuration);
+          message += string.Format("nDuration: {0} => {1}",  iEffect.nDuration,  this.Data.nDuration);
           flag2 = true;
         }
         if (iEffect.AttribType != this.Data.AttribType)
         {
-          message += string.Format("AttribType: {0} => {1}", (object) iEffect.AttribType, (object) this.Data.AttribType);
+          message += string.Format("AttribType: {0} => {1}",  iEffect.AttribType,  this.Data.AttribType);
           flag2 = true;
         }
         if (iEffect.Aspect != this.Data.Aspect)
         {
-          message += string.Format("Aspect: {0} => {1}", (object) iEffect.Aspect, (object) this.Data.Aspect);
+          message += string.Format("Aspect: {0} => {1}",  iEffect.Aspect,  this.Data.Aspect);
           flag2 = true;
         }
         if (iEffect.ModifierTable != this.Data.ModifierTable)
         {
-          message += string.Format("ModifierTable: {0} => {1}", (object) iEffect.ModifierTable, (object) this.Data.ModifierTable);
+          message += string.Format("ModifierTable: {0} => {1}",  iEffect.ModifierTable,  this.Data.ModifierTable);
           flag2 = true;
         }
         if (iEffect.NearGround != this.Data.NearGround)
         {
-          message += string.Format("NearGround: {0} => {1}", (object) iEffect.NearGround, (object) this.Data.NearGround);
+          message += string.Format("NearGround: {0} => {1}",  iEffect.NearGround,  this.Data.NearGround);
           flag2 = true;
         }
         if (iEffect.Reward != this.Data.Reward)
         {
-          message += string.Format("Reward: {0} => {1}", (object) iEffect.Reward, (object) this.Data.Reward);
+          message += string.Format("Reward: {0} => {1}",  iEffect.Reward,  this.Data.Reward);
           flag2 = true;
         }
         if (iEffect.EffectId != this.Data.EffectId)
         {
-          message += string.Format("EffectId: {0} => {1}", (object) iEffect.EffectId, (object) this.Data.EffectId);
+          message += string.Format("EffectId: {0} => {1}",  iEffect.EffectId,  this.Data.EffectId);
           flag2 = true;
         }
         if (iEffect.IgnoreED != this.Data.IgnoreED)
         {
-          message += string.Format("IgnoreED: {0} => {1}", (object) iEffect.IgnoreED, (object) this.Data.IgnoreED);
+          message += string.Format("IgnoreED: {0} => {1}",  iEffect.IgnoreED,  this.Data.IgnoreED);
           flag2 = true;
         }
         if (iEffect.Override != this.Data.Override)
         {
-          message += string.Format("Override: {0} => {1}", (object) iEffect.Override, (object) this.Data.Override);
+          message += string.Format("Override: {0} => {1}",  iEffect.Override,  this.Data.Override);
           flag2 = true;
         }
         if (iEffect.MagnitudeExpression != this.Data.MagnitudeExpression)
         {
-          message += string.Format("MagnitudeExpression: {0} => {1}", (object) iEffect.MagnitudeExpression, (object) this.Data.MagnitudeExpression);
+          message += string.Format("MagnitudeExpression: {0} => {1}",  iEffect.MagnitudeExpression,  this.Data.MagnitudeExpression);
           flag2 = true;
         }
         if ((double) Math.Abs(iEffect.ProcsPerMinute - this.Data.ProcsPerMinute) > 1.40129846432482E-45)
         {
-          message += string.Format("PPM: {0} => {1}", (object) iEffect.ProcsPerMinute, (object) this.Data.ProcsPerMinute);
+          message += string.Format("PPM: {0} => {1}",  iEffect.ProcsPerMinute,  this.Data.ProcsPerMinute);
           flag1 = true;
         }
         else
