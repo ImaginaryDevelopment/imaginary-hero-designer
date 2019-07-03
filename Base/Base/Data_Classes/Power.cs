@@ -2034,8 +2034,8 @@ namespace Base.Data_Classes
                 int stacking = 1;
                 if (this.VariableEnabled && effect.VariableModified && (hIdx > -1 && MidsContext.Character != null) && MidsContext.Character.CurrentBuild.Powers[hIdx].VariableValue > stacking)
                     stacking = MidsContext.Character.CurrentBuild.Powers[hIdx].VariableValue;
-                int[] nPowerset = DatabaseAPI.Database.Entities[nSummon1].nPowerset;
-                if (nPowerset.Length != 0)
+                var nPowerset = DatabaseAPI.Database.Entities[nSummon1].GetNPowerset();
+                if (nPowerset.Count != 0)
                 {
                     if (this.AbsorbSummonAttributes && nPowerset[0] > -1 && nPowerset[0] < DatabaseAPI.Database.Powersets.Length)
                     {
@@ -2066,19 +2066,19 @@ namespace Base.Data_Classes
                     }
                     if (this.AbsorbSummonEffects)
                     {
-                        foreach (int index2 in nPowerset)
+                        foreach (int setIndex in nPowerset)
                         {
-                            if (index2 >= 0 && index2 < DatabaseAPI.Database.Powersets.Length)
+                            if (setIndex >= 0 && setIndex < DatabaseAPI.Database.Powersets.Length)
                             {
-                                foreach (IPower power1 in DatabaseAPI.Database.Powersets[index2].Powers)
+                                foreach (IPower power1 in DatabaseAPI.Database.Powersets[setIndex].Powers)
                                 {
-                                    foreach (int absorbEffect in this.AbsorbEffects(power1, effect.Duration, effect.DelayedTime, DatabaseAPI.Database.Classes[DatabaseAPI.Database.Entities[nSummon1].nClassID], stacking, false, -1, -1))
+                                    foreach (int absorbEffect in this.AbsorbEffects(power1, effect.Duration, effect.DelayedTime, DatabaseAPI.Database.Classes[DatabaseAPI.Database.Entities[nSummon1].GetNClassId()], stacking, false, -1, -1))
                                     {
                                         int nSummon2 = power1.Effects[absorbEffect].nSummon;
-                                        if (DatabaseAPI.Database.Entities[nSummon2].nPowerset[0] >= 0)
+                                        if (DatabaseAPI.Database.Entities[nSummon2].GetNPowerset()[0] >= 0)
                                         {
-                                            foreach (IPower power2 in DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Entities[nSummon2].nPowerset[0]].Powers)
-                                                this.AbsorbEffects(power2, effect.Duration, effect.DelayedTime, DatabaseAPI.Database.Classes[DatabaseAPI.Database.Entities[nSummon1].nClassID], stacking, false, -1, -1);
+                                            foreach (IPower power2 in DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Entities[nSummon2].GetNPowerset()[0]].Powers)
+                                                this.AbsorbEffects(power2, effect.Duration, effect.DelayedTime, DatabaseAPI.Database.Classes[DatabaseAPI.Database.Entities[nSummon1].GetNClassId()], stacking, false, -1, -1);
                                         }
                                     }
                                 }

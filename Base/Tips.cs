@@ -62,7 +62,7 @@ public class Tips
         }
         this._tipStatus[(int)tip] = 1;
         stringBuilder.AppendLine("\nThis message will not appear again.");
-        int num = (int)MessageBox.Show(stringBuilder.ToString(), "Instructions");
+        MessageBox.Show(stringBuilder.ToString(), "Instructions");
     }
 
     public enum TipType

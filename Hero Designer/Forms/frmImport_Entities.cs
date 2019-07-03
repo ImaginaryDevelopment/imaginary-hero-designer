@@ -14,16 +14,13 @@ namespace Hero_Designer
     public partial class frmImport_Entities : Form
     {
         Button btnClose;
-
         Button btnFile;
-
         Button btnImport;
         OpenFileDialog dlgBrowse;
         Label Label8;
         Label lblDate;
         Label lblFile;
         NumericUpDown udRevision;
-
         frmBusy bFrm;
 
         string FullFileName;
@@ -36,13 +33,11 @@ namespace Hero_Designer
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this.FullFileName;
             if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -52,7 +47,6 @@ namespace Hero_Designer
         }
 
         void btnImport_Click(object sender, EventArgs e)
-
         {
             this.ParseClasses(this.FullFileName);
             this.BusyHide();
@@ -60,7 +54,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -69,12 +62,11 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
                 this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                this.bFrm.Show(this);
             }
             this.bFrm.SetMessage(sMessage);
         }
@@ -87,16 +79,12 @@ namespace Hero_Designer
         }
 
         void frmImport_Entities_Load(object sender, EventArgs e)
-
         {
             this.FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
             this.DisplayInfo();
         }
 
-        [DebuggerStepThrough]
-
         bool ParseClasses(string iFileName)
-
         {
             int num1 = 0;
             StreamReader iStream;
@@ -107,10 +95,9 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
-                bool flag = false;
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             int num3 = 0;
             int num4 = 0;
@@ -148,28 +135,7 @@ namespace Hero_Designer
                                 }
                                 if (index > -2)
                                 {
-                                    if (index < 0)
-                                    {
-                                        IDatabase database = DatabaseAPI.Database;
-                                        SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray((Array)database.Entities, (Array)new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
-                                        database.Entities = summonedEntityArray;
-                                        DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity();
-                                        SummonedEntity entity = DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1];
-                                        entity.UID = uidEntity;
-                                        entity.nID = DatabaseAPI.Database.Entities.Length - 1;
-                                        index = entity.nID;
-                                    }
-                                    SummonedEntity entity1 = DatabaseAPI.Database.Entities[index];
-                                    entity1.DisplayName = array[2];
-                                    entity1.ClassName = "Class_Minion_Pets";
-                                    entity1.nClassID = DatabaseAPI.NidFromUidClass(entity1.ClassName);
-                                    entity1.EntityType = Enums.eSummonEntity.Pet;
-                                    entity1.PowersetFullName = new string[1];
-                                    entity1.nPowerset = new int[1];
-                                    entity1.PowersetFullName[0] = array[0];
-                                    entity1.nPowerset[0] = DatabaseAPI.NidFromUidPowerset(entity1.PowersetFullName[0]);
-                                    entity1.UpgradePowerFullName = new string[0];
-                                    entity1.nUpgradePower = new int[0];
+                                    SummonedEntity.Parse(index, array[0], array[2], uidEntity);
                                     ++num1;
                                 }
                                 else
@@ -186,16 +152,15 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream.Close();
-                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Entity CSV Parse Error");
-                bool flag = false;
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Entity CSV Parse Error");
                 ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             iStream.Close();
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             this.DisplayInfo();
-            int num6 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
     }

@@ -33,31 +33,15 @@ namespace Hero_Designer
 
         void btnAdd_Click(object sender, EventArgs e)
         {
-            SummonedEntity iEntity = new SummonedEntity();
-            int num1 = 0;
-            bool flag;
-            do
-            {
-                iEntity.UID = "NewEntity_" + Conversions.ToString(num1);
-                flag = true;
-                int num2 = DatabaseAPI.Database.Entities.Length - 1;
-                for (int index = 0; index <= num2; ++index)
-                {
-                    if (DatabaseAPI.Database.Entities[index].UID.ToLower() == iEntity.UID.ToLower())
-                        flag = false;
-                }
-                ++num1;
-            }
-            while (!flag);
+            var iEntity = SummonedEntity.AddEntity();
             frmEntityEdit frmEntityEdit = new frmEntityEdit(iEntity);
-            int num3 = (int)frmEntityEdit.ShowDialog();
+            frmEntityEdit.ShowDialog();
             if (frmEntityEdit.DialogResult != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray((Array)database.Entities, (Array)new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
+            SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
             database.Entities = summonedEntityArray;
-            DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity);
-            DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1].nID = DatabaseAPI.Database.Entities.Length - 1;
+            DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity, DatabaseAPI.Database.Entities.Length - 1);
             this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
         }
 
@@ -74,15 +58,11 @@ namespace Hero_Designer
         {
             if (this.lvEntity.SelectedIndices.Count <= 0)
                 return;
-            frmEntityEdit frmEntityEdit = new frmEntityEdit(new SummonedEntity(DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]])
-            {
-                nID = DatabaseAPI.Database.Entities.Length
-            });
-            int num = (int)frmEntityEdit.ShowDialog();
-            if (frmEntityEdit.DialogResult == DialogResult.OK)
+            frmEntityEdit frmEntityEdit = new frmEntityEdit(new SummonedEntity(DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]], DatabaseAPI.Database.Entities.Length));
+            if (frmEntityEdit.ShowDialog() == DialogResult.OK)
             {
                 IDatabase database = DatabaseAPI.Database;
-                SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray((Array)database.Entities, (Array)new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
+                SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
                 database.Entities = summonedEntityArray;
                 DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity);
                 this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);

@@ -129,40 +129,34 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             int num1 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if (DatabaseAPI.Database.Entities[index].UID.ToLower() == this.myEntity.UID.ToLower() & index != this.myEntity.nID)
+                if (DatabaseAPI.Database.Entities[index].UID.ToLower() == this.myEntity.UID.ToLower() & index != this.myEntity.GetNId())
                 {
-                    int num2 = (int)Interaction.MsgBox((this.myEntity.UID + " is not unique. Please enter a unique name."), MsgBoxStyle.Information, "Invalid Name");
+                    Interaction.MsgBox(this.myEntity.UID + " is not unique. Please enter a unique name.", MsgBoxStyle.Information, "Invalid Name");
                     return;
                 }
             }
-            int num3 = DatabaseAPI.NidFromUidClass(this.myEntity.ClassName);
-            if (num3 > -1)
-                this.myEntity.nClassID = num3;
+            this.myEntity.UpdateNClassID(DatabaseAPI.NidFromUidClass);
             this.DialogResult = DialogResult.OK;
             this.Hide();
         }
 
         void btnPAdd_Click(object sender, EventArgs e)
-
         {
-            this.myEntity.PowersetFullName = (string[])Utils.CopyArray((Array)this.myEntity.PowersetFullName, (Array)new string[this.myEntity.PowersetFullName.Length + 1]);
-            this.myEntity.PowersetFullName[this.myEntity.PowersetFullName.Length - 1] = "Empty";
+            this.myEntity.PAdd();
             this.PS_FillList();
             this.lvPower.Items[this.lvPower.Items.Count - 1].Selected = true;
             this.lvPower.Items[this.lvPower.Items.Count - 1].EnsureVisible();
         }
 
         void btnPDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedItems.Count < 1)
                 return;
-            string[] strArray = new string[this.myEntity.PowersetFullName.Length - 1 + 1];
+            string[] strArray = new string[this.myEntity.PowersetFullName.Length];
             int selectedIndex = this.lvPower.SelectedIndices[0];
             int num1 = strArray.Length - 1;
             for (int index = 0; index <= num1; ++index)
@@ -171,33 +165,20 @@ namespace Hero_Designer
                 strArray[index] = this.myEntity.PowersetFullName[index];
                 strArray[index] = this.myEntity.PowersetFullName[index];
             }
-            this.myEntity.PowersetFullName = new string[this.myEntity.PowersetFullName.Length - 2 + 1];
-            int index1 = 0;
-            int num2 = strArray.Length - 1;
-            for (int index2 = 0; index2 <= num2; ++index2)
-            {
-                if (index2 != selectedIndex)
-                {
-                    this.myEntity.PowersetFullName[index1] = strArray[index2];
-                    ++index1;
-                }
-            }
+            this.myEntity.PDelete(selectedIndex);
             this.PS_FillList();
         }
 
         void btnPDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedItems.Count < 1 || this.lvPower.SelectedIndices[0] > this.lvPower.Items.Count - 2)
                 return;
             int selectedIndex = this.lvPower.SelectedIndices[0];
             int index = selectedIndex + 1;
-            string[] strArray1 = new string[2];
-            strArray1 = new string[1];
-            string[] strArray2 = new string[2]
+            var strArray2 = new string[2]
             {
-        this.myEntity.PowersetFullName[selectedIndex],
-        this.myEntity.PowersetFullName[index]
+                this.myEntity.PowersetFullName[selectedIndex],
+                this.myEntity.PowersetFullName[index]
             };
             this.myEntity.PowersetFullName[selectedIndex] = strArray2[1];
             this.myEntity.PowersetFullName[index] = strArray2[0];
@@ -207,18 +188,15 @@ namespace Hero_Designer
         }
 
         void btnPUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedItems.Count < 1 || this.lvPower.SelectedIndices[0] < 1)
                 return;
             int selectedIndex = this.lvPower.SelectedIndices[0];
             int index = selectedIndex - 1;
-            string[] strArray1 = new string[2];
-            strArray1 = new string[1];
             string[] strArray2 = new string[2]
             {
-        this.myEntity.PowersetFullName[selectedIndex],
-        this.myEntity.PowersetFullName[index]
+                this.myEntity.PowersetFullName[selectedIndex],
+                this.myEntity.PowersetFullName[index]
             };
             this.myEntity.PowersetFullName[selectedIndex] = strArray2[1];
             this.myEntity.PowersetFullName[index] = strArray2[0];
@@ -228,10 +206,8 @@ namespace Hero_Designer
         }
 
         void btnUGAdd_Click(object sender, EventArgs e)
-
         {
-            this.myEntity.UpgradePowerFullName = (string[])Utils.CopyArray((Array)this.myEntity.UpgradePowerFullName, (Array)new string[this.myEntity.UpgradePowerFullName.Length + 1]);
-            this.myEntity.UpgradePowerFullName[this.myEntity.UpgradePowerFullName.Length - 1] = "Empty";
+            this.myEntity.UGAdd();
             this.UG_FillList();
             this.lvUpgrade.Items[this.lvUpgrade.Items.Count - 1].Selected = true;
             this.lvUpgrade.Items[this.lvUpgrade.Items.Count - 1].EnsureVisible();
@@ -251,33 +227,20 @@ namespace Hero_Designer
                 strArray[index] = this.myEntity.UpgradePowerFullName[index];
                 strArray[index] = this.myEntity.UpgradePowerFullName[index];
             }
-            this.myEntity.UpgradePowerFullName = new string[this.myEntity.UpgradePowerFullName.Length - 2 + 1];
-            int index1 = 0;
-            int num2 = strArray.Length - 1;
-            for (int index2 = 0; index2 <= num2; ++index2)
-            {
-                if (index2 != selectedIndex)
-                {
-                    this.myEntity.UpgradePowerFullName[index1] = strArray[index2];
-                    ++index1;
-                }
-            }
+            this.myEntity.UGDelete(selectedIndex);
             this.UG_FillList();
         }
 
         void btnUGDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvUpgrade.SelectedItems.Count < 1 || this.lvUpgrade.SelectedIndices[0] > this.lvUpgrade.Items.Count - 2)
                 return;
             int selectedIndex = this.lvUpgrade.SelectedIndices[0];
             int index = selectedIndex + 1;
-            string[] strArray1 = new string[2];
-            strArray1 = new string[1];
             string[] strArray2 = new string[2]
             {
-        this.myEntity.UpgradePowerFullName[selectedIndex],
-        this.myEntity.UpgradePowerFullName[index]
+                this.myEntity.UpgradePowerFullName[selectedIndex],
+                this.myEntity.UpgradePowerFullName[index]
             };
             this.myEntity.UpgradePowerFullName[selectedIndex] = strArray2[1];
             this.myEntity.UpgradePowerFullName[index] = strArray2[0];
@@ -330,11 +293,10 @@ namespace Hero_Designer
             this.txtDisplayName.Text = this.myEntity.DisplayName;
             this.txtEntName.Text = this.myEntity.UID;
             this.cbEntType.SelectedIndex = (int)this.myEntity.EntityType;
-            this.cbClass.SelectedIndex = this.myEntity.nClassID;
+            this.cbClass.SelectedIndex = this.myEntity.GetNClassId();
         }
 
         void frmEntityEdit_Load(object sender, EventArgs e)
-
         {
             this.Text = "Editing Entity: " + this.myEntity.UID;
             this.cbEntType.BeginUpdate();

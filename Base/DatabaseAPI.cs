@@ -2044,20 +2044,7 @@ public static class DatabaseAPI
     }
 
     public static void MatchSummonIDs()
-    {
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Entities.Length - 1; ++index1)
-        {
-            SummonedEntity entity = DatabaseAPI.Database.Entities[index1];
-            entity.nID = index1;
-            entity.nClassID = DatabaseAPI.NidFromUidClass(entity.ClassName);
-            entity.nPowerset = new int[entity.PowersetFullName.Length];
-            for (int index2 = 0; index2 <= entity.PowersetFullName.Length - 1; ++index2)
-                entity.nPowerset[index2] = DatabaseAPI.NidFromUidPowerset(entity.PowersetFullName[index2]);
-            entity.nUpgradePower = new int[entity.UpgradePowerFullName.Length];
-            for (int index2 = 0; index2 <= entity.UpgradePowerFullName.Length - 1; ++index2)
-                entity.nUpgradePower[index2] = DatabaseAPI.NidFromUidPower(entity.UpgradePowerFullName[index2]);
-        }
-    }
+        => SummonedEntity.MatchSummonIDs(DatabaseAPI.NidFromUidClass, DatabaseAPI.NidFromUidPowerset, DatabaseAPI.NidFromUidPower);
 
     public static void AssignStaticIndexValues(ISerialize serializer)
     {

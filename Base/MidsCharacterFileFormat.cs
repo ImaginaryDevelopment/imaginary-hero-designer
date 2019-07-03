@@ -16,6 +16,16 @@ public static class MidsCharacterFileFormat
     };
     public const string MagicCompressed = "MxDz";
     public const string MagicUncompressed = "MxDu";
+    const float SaveVersion = 1.01f;
+
+    const int DataLinkMaxLength = 2048;
+
+    const bool UseQualifiedNames = false;
+
+    const bool UseOldSubpowerFields = true;
+
+    //const bool UseHexEncoding = true;
+
 
     static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
 
@@ -32,10 +42,10 @@ public static class MidsCharacterFileFormat
             MessageBox.Show("Save Failed!\n" + ex.Message);
             return false;
         }
-        writer.Write(MidsCharacterFileFormat.MagicNumber, 0, MidsCharacterFileFormat.MagicNumber.Length);
-        writer.Write(1.01f);
-        writer.Write(false);
-        writer.Write(true);
+        writer.Write(MagicNumber, 0, MagicNumber.Length);
+        writer.Write(SaveVersion);
+        writer.Write(UseQualifiedNames);
+        writer.Write(UseOldSubpowerFields);
         writer.Write(MidsContext.Character.Archetype.ClassName);
         writer.Write(MidsContext.Character.Archetype.Origin[MidsContext.Character.Origin]);
         writer.Write((int)MidsContext.Character.Alignment);
@@ -45,36 +55,36 @@ public static class MidsCharacterFileFormat
             writer.Write(MidsContext.Character.Powersets[index] != null ? MidsContext.Character.Powersets[index].FullName : string.Empty);
         writer.Write(MidsContext.Character.CurrentBuild.LastPower + 1);
         writer.Write(MidsContext.Character.CurrentBuild.Powers.Count - 1);
-        for (int index1 = 0; index1 < MidsContext.Character.CurrentBuild.Powers.Count; ++index1)
+        foreach (var power in MidsContext.Character.CurrentBuild.Powers)
         {
-            if (MidsContext.Character.CurrentBuild.Powers[index1].NIDPower < 0)
+            if (power.NIDPower < 0)
             {
                 writer.Write(-1);
             }
             else
             {
-                writer.Write(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].NIDPower].StaticIndex);
-                writer.Write(Convert.ToSByte(MidsContext.Character.CurrentBuild.Powers[index1].Level));
-                writer.Write(Convert.ToBoolean(MidsContext.Character.CurrentBuild.Powers[index1].StatInclude));
-                writer.Write(MidsContext.Character.CurrentBuild.Powers[index1].VariableValue);
-                writer.Write(Convert.ToSByte(MidsContext.Character.CurrentBuild.Powers[index1].SubPowers.Length - 1));
-                for (int index2 = 0; index2 < MidsContext.Character.CurrentBuild.Powers[index1].SubPowers.Length; ++index2)
+                writer.Write(DatabaseAPI.Database.Power[power.NIDPower].StaticIndex);
+                writer.Write(Convert.ToSByte(power.Level));
+                writer.Write(Convert.ToBoolean(power.StatInclude));
+                writer.Write(power.VariableValue);
+                writer.Write(Convert.ToSByte(power.SubPowers.Length - 1));
+                for (int index2 = 0; index2 < power.SubPowers.Length; ++index2)
                 {
-                    if (MidsContext.Character.CurrentBuild.Powers[index1].SubPowers[index2].nIDPower > -1)
-                        writer.Write(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[index1].SubPowers[index2].nIDPower].StaticIndex);
+                    if (power.SubPowers[index2].nIDPower > -1)
+                        writer.Write(DatabaseAPI.Database.Power[power.SubPowers[index2].nIDPower].StaticIndex);
                     else
                         writer.Write(-1);
-                    writer.Write(MidsContext.Character.CurrentBuild.Powers[index1].SubPowers[index2].StatInclude);
+                    writer.Write(power.SubPowers[index2].StatInclude);
                 }
             }
-            writer.Write(Convert.ToSByte(MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1));
-            for (int index2 = 0; index2 <= MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1; ++index2)
+            writer.Write(Convert.ToSByte(power.Slots.Length - 1));
+            for (int index2 = 0; index2 <= power.Slots.Length - 1; ++index2)
             {
-                writer.Write(Convert.ToSByte(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level));
-                MidsCharacterFileFormat.WriteSlotData(ref writer, ref MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement);
+                writer.Write(Convert.ToSByte(power.Slots[index2].Level));
+                WriteSlotData(ref writer, ref power.Slots[index2].Enhancement);
                 writer.Write(includeAltEnh);
                 if (includeAltEnh)
-                    MidsCharacterFileFormat.WriteSlotData(ref writer, ref MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].FlippedEnhancement);
+                    WriteSlotData(ref writer, ref power.Slots[index2].FlippedEnhancement);
             }
         }
         buffer = memoryStream.ToArray();
@@ -83,8 +93,8 @@ public static class MidsCharacterFileFormat
 
     public static string MxDBuildSaveHyperlink(bool useBbCode, bool justLink = false)
     {
-        var cData = new MidsCharacterFileFormat.CompressionData();
-        string str1 = MidsCharacterFileFormat.MxDBuildSaveStringShared(ref cData, false, false);
+        var cData = new CompressionData();
+        string str1 = MxDBuildSaveStringShared(ref cData, false, false);
         if (string.IsNullOrEmpty(str1))
         {
             return string.Empty;
@@ -93,24 +103,24 @@ public static class MidsCharacterFileFormat
         {
             // this one seems to still work as intended, we may not need to change it
             string str3 = "http://www.cohplanner.com/mids/download.php" + ("?uc=" + cData.SzUncompressed + "&c=" + cData.SzCompressed + "&a=" + cData.SzEncoded + "&f=HEX&dc=") + str1;
-            return str3.Length <= 2048 ? (!justLink ? (!useBbCode ? "<a href=\"" + str3 + "\">Click this DataLink to open the build!</a>" : "[url=" + str3 + "]Click this DataLink to open the build![/url]") : str3) : "";
+            return str3.Length <= DataLinkMaxLength ? (!justLink ? (!useBbCode ? "<a href=\"" + str3 + "\">Click this DataLink to open the build!</a>" : "[url=" + str3 + "]Click this DataLink to open the build![/url]") : str3) : "";
         }
     }
 
     static string MxDBuildSaveStringShared(
-      ref MidsCharacterFileFormat.CompressionData cData,
+      ref CompressionData cData,
       bool includeAltEnh,
       bool @break)
     {
         byte[] numArray = new byte[0];
         string str;
-        if (!MidsCharacterFileFormat.MxDBuildSaveBuffer(ref numArray, includeAltEnh))
+        if (!MxDBuildSaveBuffer(ref numArray, includeAltEnh))
         {
             str = string.Empty;
         }
         else
         {
-            ASCIIEncoding asciiEncoding = new ASCIIEncoding();
+            var asciiEncoding = new ASCIIEncoding();
             cData.SzUncompressed = numArray.Length;
             byte[] iBytes = Zlib.CompressChunk(ref numArray);
             cData.SzCompressed = iBytes.Length;
@@ -123,12 +133,11 @@ public static class MidsCharacterFileFormat
 
     public static string MxDBuildSaveString(bool inncludeAltEnh, bool forumMode)
     {
-        MidsCharacterFileFormat.CompressionData cData = new MidsCharacterFileFormat.CompressionData();
-        string str1 = MidsCharacterFileFormat.MxDBuildSaveStringShared(ref cData, inncludeAltEnh, true);
-        string str2;
+        CompressionData cData = new CompressionData();
+        string str1 = MxDBuildSaveStringShared(ref cData, inncludeAltEnh, true);
         if (string.IsNullOrEmpty(str1))
         {
-            str2 = string.Empty;
+            return string.Empty;
         }
         else
         {
@@ -151,135 +160,132 @@ public static class MidsCharacterFileFormat
             else
                 str4 = "|              Do not modify anything below this line!              |" + str3 + "|-------------------------------------------------------------------|" + str3;
             string str6 = ";HEX";
-            str2 = str4 + "|MxDz;" + cData.SzUncompressed + ";" + cData.SzCompressed + ";" + cData.SzEncoded + str6 + ";|" + str3 + str1 + str3 + "|-------------------------------------------------------------------|";
+            return str4 + "|" + MagicCompressed + ";" + cData.SzUncompressed + ";" + cData.SzCompressed + ";" + cData.SzEncoded + str6 + ";|" + str3 + str1 + str3 + "|-------------------------------------------------------------------|";
         }
-        return str2;
     }
 
     static bool MxDReadSaveData(ref byte[] buffer, bool silent)
-
     {
-        bool flag1;
         if (buffer.Length < 1)
         {
-            int num = (int)MessageBox.Show("Unable to read data - Empty Buffer.", "ReadSaveData Failed");
-            flag1 = false;
+            MessageBox.Show("Unable to read data - Empty Buffer.", "ReadSaveData Failed");
+            return false;
         }
         else
         {
             MemoryStream memoryStream;
-            BinaryReader reader;
+            BinaryReader r;
             try
             {
-                memoryStream = new MemoryStream(buffer, false);
-                reader = new BinaryReader((Stream)memoryStream);
-                reader.BaseStream.Seek(0L, SeekOrigin.Begin);
+                memoryStream = new MemoryStream(buffer, writable: false);
+                r = new BinaryReader(memoryStream);
+                r.BaseStream.Seek(0L, SeekOrigin.Begin);
             }
             catch (Exception ex)
             {
-                int num = (int)MessageBox.Show("Unable to read data - " + ex.Message, "ReadSaveData Failed");
+                MessageBox.Show("Unable to read data - " + ex.Message, "ReadSaveData Failed");
                 return false;
             }
-            bool flag2;
             try
             {
-                int num1 = 0;
-                bool flag3;
+                int streamIndex = 0;
+                bool magicFound;
+                // try to find magic number, reading 4 bytes at a time, offset by 1 on each failure
                 do
                 {
-                    reader.BaseStream.Seek((long)num1, SeekOrigin.Begin);
-                    byte[] numArray = reader.ReadBytes(4);
+                    r.BaseStream.Seek(streamIndex, SeekOrigin.Begin);
+
+                    var numArray = r.ReadBytes(4);
                     if (numArray.Length >= 4)
                     {
-                        flag3 = true;
-                        for (int index = 0; index < MidsCharacterFileFormat.MagicNumber.Length; ++index)
+                        magicFound = true;
+                        for (int index = 0; index < MagicNumber.Length; ++index)
                         {
-                            if ((int)MidsCharacterFileFormat.MagicNumber[index] != (int)numArray[index])
-                                flag3 = false;
+                            if (MagicNumber[index] != numArray[index])
+                                magicFound = false;
                         }
-                        if (!flag3)
-                            ++num1;
+                        if (!magicFound)
+                            ++streamIndex;
                     }
                     else
-                        goto label_14;
+                    {
+                        if (!silent)
+                        {
+                            MessageBox.Show("Unable to read data - Magic Number not found.", "ReadSaveData Failed");
+                        }
+                        r.Close();
+                        memoryStream.Close();
+                        return false;
+                    }
                 }
-                while (!flag3);
-                goto label_17;
-            label_14:
-                if (!silent)
+                while (!magicFound);
+
+                float fVersion = r.ReadSingle();
+                if (fVersion > 2.0)
                 {
-                    int num2 = (int)MessageBox.Show("Unable to read data - Magic Number not found.", "ReadSaveData Failed");
-                }
-                reader.Close();
-                memoryStream.Close();
-                return false;
-            label_17:
-                float fVersion = reader.ReadSingle();
-                if ((double)fVersion > 2.0)
-                {
-                    int num3 = (int)MessageBox.Show("File was saved by a newer version of the application. Please obtain the most recent release in order to open this file.", "Unable to Load");
-                    reader.Close();
+                    MessageBox.Show("File was saved by a newer version of the application. Please obtain the most recent release in order to open this file.", "Unable to Load");
+                    r.Close();
                     memoryStream.Close();
-                    flag2 = false;
+                    return false;
                 }
                 else
                 {
-                    bool qualifiedNames = reader.ReadBoolean();
-                    bool flag4 = reader.ReadBoolean();
-                    int nIDClass = DatabaseAPI.NidFromUidClass(reader.ReadString());
+                    bool qualifiedNames = r.ReadBoolean();
+                    bool hasSubPower = r.ReadBoolean();
+                    int nIDClass = DatabaseAPI.NidFromUidClass(r.ReadString());
                     if (nIDClass < 0)
                     {
                         if (!silent)
                         {
-                            int num3 = (int)MessageBox.Show("Unable to read data - Invalid Class UID.", "ReadSaveData Failed");
+                            MessageBox.Show("Unable to read data - Invalid Class UID.", "ReadSaveData Failed");
                         }
-                        reader.Close();
+                        r.Close();
                         memoryStream.Close();
-                        flag2 = false;
+                        return false;
                     }
                     else
                     {
-                        int iOrigin = DatabaseAPI.NidFromUidOrigin(reader.ReadString(), nIDClass);
+                        int iOrigin = DatabaseAPI.NidFromUidOrigin(r.ReadString(), nIDClass);
                         MidsContext.Character.Reset(DatabaseAPI.Database.Classes[nIDClass], iOrigin);
-                        if ((double)fVersion > 1.0)
+                        if (fVersion > 1.0)
                         {
-                            int num3 = reader.ReadInt32();
-                            MidsContext.Character.Alignment = (Enums.Alignment)num3;
+                            int align = r.ReadInt32();
+                            MidsContext.Character.Alignment = (Enums.Alignment)align;
                         }
-                        MidsContext.Character.Name = reader.ReadString();
-                        int num4 = reader.ReadInt32();
+                        MidsContext.Character.Name = r.ReadString();
+                        int num4 = r.ReadInt32();
                         if (MidsContext.Character.Powersets.Length - 1 != num4)
                             MidsContext.Character.Powersets = new IPowerset[num4 + 1];
                         for (int index = 0; index < MidsContext.Character.Powersets.Length; ++index)
                         {
-                            string iName = reader.ReadString();
+                            string iName = r.ReadString();
                             MidsContext.Character.Powersets[index] = !string.IsNullOrEmpty(iName) ? DatabaseAPI.GetPowersetByName(iName) : null;
                         }
-                        MidsContext.Character.CurrentBuild.LastPower = reader.ReadInt32() - 1;
-                        int num5 = reader.ReadInt32();
+                        MidsContext.Character.CurrentBuild.LastPower = r.ReadInt32() - 1;
+                        int powerCount = r.ReadInt32();
                         try
                         {
-                            for (int index1 = 0; index1 <= num5; ++index1)
+                            for (int powerIndex = 0; powerIndex <= powerCount; ++powerIndex)
                             {
-                                int index2 = -1;
+                                int nId = -1;
                                 string name1 = string.Empty;
                                 int sidPower1 = -1;
                                 if (qualifiedNames)
                                 {
-                                    name1 = reader.ReadString();
+                                    name1 = r.ReadString();
                                     if (!string.IsNullOrEmpty(name1))
-                                        index2 = DatabaseAPI.NidFromUidPower(name1);
+                                        nId = DatabaseAPI.NidFromUidPower(name1);
                                 }
                                 else
                                 {
-                                    sidPower1 = reader.ReadInt32();
-                                    index2 = DatabaseAPI.NidFromStaticIndexPower(sidPower1);
+                                    sidPower1 = r.ReadInt32();
+                                    nId = DatabaseAPI.NidFromStaticIndexPower(sidPower1);
                                 }
                                 bool flag5 = false;
                                 PowerEntry powerEntry1;
-                                if (index1 < MidsContext.Character.CurrentBuild.Powers.Count)
+                                if (powerIndex < MidsContext.Character.CurrentBuild.Powers.Count)
                                 {
-                                    powerEntry1 = MidsContext.Character.CurrentBuild.Powers[index1];
+                                    powerEntry1 = MidsContext.Character.CurrentBuild.Powers[powerIndex];
                                 }
                                 else
                                 {
@@ -288,35 +294,36 @@ public static class MidsCharacterFileFormat
                                 }
                                 if (sidPower1 > -1 | !string.IsNullOrEmpty(name1))
                                 {
-                                    powerEntry1.Level = (int)reader.ReadSByte();
-                                    powerEntry1.StatInclude = reader.ReadBoolean();
-                                    powerEntry1.VariableValue = reader.ReadInt32();
-                                    if (flag4)
+                                    powerEntry1.Level = r.ReadSByte();
+                                    powerEntry1.StatInclude = r.ReadBoolean();
+                                    powerEntry1.VariableValue = r.ReadInt32();
+                                    if (hasSubPower)
                                     {
-                                        powerEntry1.SubPowers = new PowerSubEntry[(int)reader.ReadSByte() + 1];
-                                        for (int index3 = 0; index3 < powerEntry1.SubPowers.Length; ++index3)
+                                        powerEntry1.SubPowers = new PowerSubEntry[r.ReadSByte() + 1];
+                                        for (int subPowerIndex = 0; subPowerIndex < powerEntry1.SubPowers.Length; ++subPowerIndex)
                                         {
-                                            powerEntry1.SubPowers[index3] = new PowerSubEntry();
+                                            var powerSub = new PowerSubEntry();
+                                            powerEntry1.SubPowers[subPowerIndex] = powerSub;
                                             if (qualifiedNames)
                                             {
-                                                string name2 = reader.ReadString();
+                                                string name2 = r.ReadString();
                                                 if (!string.IsNullOrEmpty(name2))
-                                                    powerEntry1.SubPowers[index3].nIDPower = DatabaseAPI.NidFromUidPower(name2);
+                                                    powerSub.nIDPower = DatabaseAPI.NidFromUidPower(name2);
                                             }
                                             else
                                             {
-                                                int sidPower2 = reader.ReadInt32();
-                                                powerEntry1.SubPowers[index3].nIDPower = DatabaseAPI.NidFromStaticIndexPower(sidPower2);
+                                                int sidPower2 = r.ReadInt32();
+                                                powerSub.nIDPower = DatabaseAPI.NidFromStaticIndexPower(sidPower2);
                                             }
-                                            if (powerEntry1.SubPowers[index3].nIDPower > -1)
+                                            if (powerSub.nIDPower > -1)
                                             {
-                                                powerEntry1.SubPowers[index3].Powerset = DatabaseAPI.Database.Power[powerEntry1.SubPowers[index3].nIDPower].PowerSetID;
-                                                powerEntry1.SubPowers[index3].Power = DatabaseAPI.Database.Power[powerEntry1.SubPowers[index3].nIDPower].PowerSetIndex;
+                                                powerSub.Powerset = DatabaseAPI.Database.Power[powerSub.nIDPower].PowerSetID;
+                                                powerSub.Power = DatabaseAPI.Database.Power[powerSub.nIDPower].PowerSetIndex;
                                             }
-                                            powerEntry1.SubPowers[index3].StatInclude = reader.ReadBoolean();
-                                            if (powerEntry1.SubPowers[index3].nIDPower > -1 & powerEntry1.SubPowers[index3].StatInclude)
+                                            powerSub.StatInclude = r.ReadBoolean();
+                                            if (powerSub.nIDPower > -1 & powerSub.StatInclude)
                                             {
-                                                PowerEntry powerEntry2 = new PowerEntry(DatabaseAPI.Database.Power[powerEntry1.SubPowers[index3].nIDPower])
+                                                PowerEntry powerEntry2 = new PowerEntry(DatabaseAPI.Database.Power[powerSub.nIDPower])
                                                 {
                                                     StatInclude = true
                                                 };
@@ -325,28 +332,28 @@ public static class MidsCharacterFileFormat
                                         }
                                     }
                                 }
-                                if (index2 < 0 && index1 < DatabaseAPI.Database.Levels_MainPowers.Length)
-                                    powerEntry1.Level = DatabaseAPI.Database.Levels_MainPowers[index1];
-                                powerEntry1.Slots = new SlotEntry[(int)reader.ReadSByte() + 1];
-                                for (int index3 = 0; index3 < powerEntry1.Slots.Length; ++index3)
+                                if (nId < 0 && powerIndex < DatabaseAPI.Database.Levels_MainPowers.Length)
+                                    powerEntry1.Level = DatabaseAPI.Database.Levels_MainPowers[powerIndex];
+                                powerEntry1.Slots = new SlotEntry[r.ReadSByte() + 1];
+                                for (var index3 = 0; index3 < powerEntry1.Slots.Length; ++index3)
                                 {
                                     powerEntry1.Slots[index3] = new SlotEntry()
                                     {
-                                        Level = (int)reader.ReadSByte(),
+                                        Level = r.ReadSByte(),
                                         Enhancement = new I9Slot(),
                                         FlippedEnhancement = new I9Slot()
                                     };
-                                    MidsCharacterFileFormat.ReadSlotData(ref reader, ref powerEntry1.Slots[index3].Enhancement, qualifiedNames, fVersion);
-                                    if (reader.ReadBoolean())
-                                        MidsCharacterFileFormat.ReadSlotData(ref reader, ref powerEntry1.Slots[index3].FlippedEnhancement, qualifiedNames, fVersion);
+                                    ReadSlotData(r, ref powerEntry1.Slots[index3].Enhancement, qualifiedNames, fVersion);
+                                    if (r.ReadBoolean())
+                                        ReadSlotData(r, ref powerEntry1.Slots[index3].FlippedEnhancement, qualifiedNames, fVersion);
                                 }
                                 if (powerEntry1.SubPowers.Length > 0)
-                                    index2 = -1;
-                                if (index2 > -1)
+                                    nId = -1;
+                                if (nId > -1)
                                 {
-                                    powerEntry1.NIDPower = index2;
-                                    powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[index2].PowerSetID;
-                                    powerEntry1.IDXPower = DatabaseAPI.Database.Power[index2].PowerSetIndex;
+                                    powerEntry1.NIDPower = nId;
+                                    powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[nId].PowerSetID;
+                                    powerEntry1.IDXPower = DatabaseAPI.Database.Power[nId].PowerSetIndex;
                                     if (powerEntry1.Level == 0 && powerEntry1.Power.FullSetName == "Pool.Fitness")
                                     {
                                         if (powerEntry1.NIDPower == 2553)
@@ -357,21 +364,21 @@ public static class MidsCharacterFileFormat
                                             powerEntry1.NIDPower = 1522;
                                         if (powerEntry1.NIDPower == 2556)
                                             powerEntry1.NIDPower = 1524;
-                                        powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[index2].PowerSetID;
-                                        powerEntry1.IDXPower = DatabaseAPI.Database.Power[index2].PowerSetIndex;
+                                        powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[nId].PowerSetID;
+                                        powerEntry1.IDXPower = DatabaseAPI.Database.Power[nId].PowerSetIndex;
                                     }
                                     var ps = powerEntry1.Power?.GetPowerSet();
-                                    if (index1 < MidsContext.Character.CurrentBuild.Powers.Count)
+                                    if (powerIndex < MidsContext.Character.CurrentBuild.Powers.Count)
                                     {
-                                        if (!(!MidsContext.Character.CurrentBuild.Powers[index1].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
-                                            flag5 = !MidsContext.Character.CurrentBuild.Powers[index1].Chosen;
+                                        if (!(!MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
+                                            flag5 = !MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen;
                                         else
                                             continue;
                                     }
                                     if (flag5)
                                         MidsContext.Character.CurrentBuild.Powers.Add(powerEntry1);
                                     else if ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")
-                                        MidsContext.Character.CurrentBuild.Powers[index1] = powerEntry1;
+                                        MidsContext.Character.CurrentBuild.Powers[powerIndex] = powerEntry1;
                                 }
                             }
                         }
@@ -379,14 +386,14 @@ public static class MidsCharacterFileFormat
                         {
                             if (!silent)
                             {
-                                int num3 = (int)MessageBox.Show("Error reading some power data, will attempt to build character with known data - " + ex.Message, "ReadSaveData Failed");
+                                MessageBox.Show("Error reading some power data, will attempt to build character with known data - " + ex.Message, "ReadSaveData Failed");
                             }
                             return false;
                         }
                         MidsContext.Archetype = MidsContext.Character.Archetype;
                         MidsContext.Character.Validate();
                         MidsContext.Character.Lock();
-                        flag2 = true;
+                        return true;
                     }
                 }
             }
@@ -394,13 +401,11 @@ public static class MidsCharacterFileFormat
             {
                 if (!silent)
                 {
-                    int num = (int)MessageBox.Show("Unable to read data - " + ex.Message, "ReadSaveData Failed");
+                    MessageBox.Show("Unable to read data - " + ex.Message, "ReadSaveData Failed");
                 }
-                flag2 = false;
+                return false;
             }
-            flag1 = flag2;
         }
-        return flag1;
     }
 
     public static MidsCharacterFileFormat.eLoadReturnCode MxDExtractAndLoad(
@@ -441,9 +446,9 @@ public static class MidsCharacterFileFormat
             {
                 for (int index = 0; index < strArray2.Length; ++index)
                 {
-                    int startIndex = strArray2[index].IndexOf("MxDu", StringComparison.Ordinal);
+                    int startIndex = strArray2[index].IndexOf(MagicUncompressed, StringComparison.Ordinal);
                     if (startIndex < 0)
-                        startIndex = strArray2[index].IndexOf("MxDz", StringComparison.Ordinal);
+                        startIndex = strArray2[index].IndexOf(MagicCompressed, StringComparison.Ordinal);
                     if (startIndex < 0)
                         startIndex = strArray2[index].IndexOf("MHDz", StringComparison.OrdinalIgnoreCase);
                     if (startIndex > -1)
@@ -474,10 +479,10 @@ public static class MidsCharacterFileFormat
                     int int32_1 = Convert.ToInt32(strArray1[1]);
                     int int32_2 = Convert.ToInt32(strArray1[2]);
                     int int32_3 = Convert.ToInt32(strArray1[3]);
-                    bool flag = false;
+                    bool isHex = false;
                     if (strArray1.Length > 4)
-                        flag = string.Equals(strArray1[4], "HEX", StringComparison.OrdinalIgnoreCase);
-                    byte[] iBytes = new ASCIIEncoding().GetBytes(flag ? Zlib.UnbreakHex(iString) : Zlib.UnbreakString(iString, true));
+                        isHex = string.Equals(strArray1[4], "HEX", StringComparison.OrdinalIgnoreCase);
+                    byte[] iBytes = new ASCIIEncoding().GetBytes(isHex ? Zlib.UnbreakHex(iString) : Zlib.UnbreakString(iString, true));
                     streamReader.Close();
                     if (iBytes.Length < int32_3)
                     {
@@ -488,14 +493,14 @@ public static class MidsCharacterFileFormat
                     {
                         if (iBytes.Length > int32_3)
                             Array.Resize<byte>(ref iBytes, int32_3);
-                        iBytes = flag ? Zlib.HexDecodeBytes(iBytes) : Zlib.UUDecodeBytes(iBytes);
+                        iBytes = isHex ? Zlib.HexDecodeBytes(iBytes) : Zlib.UUDecodeBytes(iBytes);
                         if (iBytes.Length == 0)
                         {
                             eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.Failure;
                         }
                         else
                         {
-                            if (a == "MxDz")
+                            if (a == MagicCompressed)
                             {
                                 Array.Resize<byte>(ref iBytes, int32_2);
                                 byte[] tempByteArray = iBytes; // Pine
@@ -509,7 +514,7 @@ public static class MidsCharacterFileFormat
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Unable to read data - " + ex.Message, "ExtractAndLoad Failed");
+            MessageBox.Show("Unable to read data - " + ex.Message, "ExtractAndLoad Failed");
             streamReader?.Close();
             eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.Failure;
         }
@@ -545,7 +550,7 @@ public static class MidsCharacterFileFormat
 
     static void ReadSlotData(
 
-      ref BinaryReader reader,
+      BinaryReader reader,
       ref I9Slot slot,
       bool qualifiedNames,
       float fVersion)
