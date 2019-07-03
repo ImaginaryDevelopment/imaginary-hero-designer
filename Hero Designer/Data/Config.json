@@ -1,7 +1,6 @@
 {
   "name": "Mids' Hero Designer Config V2",
   "version": 1.32,
-  "NoToolTips": false,
   "BaseAcc": 0.75,
   "CalcEnhLevel": 4,
   "CalcEnhOrigin": 3,
@@ -9,43 +8,27 @@
   "ExempLow": 50,
   "PvE": true,
   "Calculate": 1,
-  "ReturnValue": 0,
   "DataDamageGraph": true,
-  "DataDamageGraphPercentageOnly": false,
   "DataGraphType": 2,
   "ExportScheme": 1,
-  "ExportBonusTotals": false,
-  "ExportBonusList": false,
-  "hideOriginEnhancements": false,
   "ShowVillainColours": true,
-  "CheckForUpdates": false,
   "Columns": 3,
   "Width": 1095,
   "Height": 819,
-  "DvState": 0,
   "StatGraphStyle": 1,
-  "FreshInstall": false,
   "ForceLevel": 50,
   "I9": {
     "DefaultIOLevel": 49,
     "DisplayIOLevels": true,
     "CalculateEnahncementFX": true,
     "CalculateSetBonusFX": true,
-    "ExportIOLevels": false,
     "PrintIOLevels": true,
     "ExportCompress": true,
-    "ExportDataChunk": true,
-    "ExportStripEnh": false,
-    "ExportStripSetNames": false,
-    "ExportExtraSep": false
+    "ExportDataChunk": true
   },
-  "PrintInColour": false,
-  "printScheme": 0,
   "RtFont": {
     "PairedBase": 9.0,
-    "PairedBold": false,
     "RTFBase": 20,
-    "RTFBold": false,
     "ColorBackgroundHero": "0, 0, 32",
     "ColorBackgroundVillain": "32, 0, 0",
     "ColorEnhancement": "0, 255, 0",
@@ -99,12 +82,9 @@
     0
   ],
   "DefaultSaveFolder": "",
-  "EnhanceVisibility": false,
   "BuildMode": 1,
   "BuildOption": 2,
   "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
-  "ShowEnhRel": false,
-  "ShowRelSymbols": false,
   "ShowAlphaPopup": true,
   "PopupRecipes": true,
   "ShoppingListIncludesRecipes": true,
@@ -118,7 +98,6 @@
   "SpeedFormat": 16843009,
   "SaveFolderChecked": true,
   "UseArcanaTime": true,
-  "Suppression": 0,
   "DragDropScenarioAction": [
     3,
     0,
@@ -282,8 +261,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "HTML Export",
@@ -297,8 +275,7 @@
         "ItalicOn": "<i>",
         "ItalicOff": "</i>",
         "UnderlineOn": "<u>",
-        "UnderlineOff": "</u>",
-        "Space": 0
+        "UnderlineOff": "</u>"
       },
       {
         "Name": "LiveJournal HTML",
@@ -312,8 +289,7 @@
         "ItalicOn": "<i>",
         "ItalicOff": "</i>",
         "UnderlineOn": "<u>",
-        "UnderlineOff": "</u>",
-        "Space": 0
+        "UnderlineOff": "</u>"
       },
       {
         "Name": "Titan Forums (SMF)",
@@ -327,8 +303,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "phpBB / Zetaboards",
@@ -342,8 +317,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "Universal Codes",
@@ -357,8 +331,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "AkBBS/Runboard",
@@ -372,8 +345,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "EZBoard",
@@ -387,8 +359,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       },
       {
         "Name": "UNB Forum Export",
@@ -402,8 +373,7 @@
         "ItalicOn": "[i]",
         "ItalicOff": "[/i]",
         "UnderlineOn": "[u]",
-        "UnderlineOff": "[/u]",
-        "Space": 0
+        "UnderlineOff": "[/u]"
       }
     ]
   }
