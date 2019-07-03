@@ -1,8 +1,8 @@
 
 public class HistoryMap
 {
-  public int Level = -1;
-  public int HID = -1;
-  public int SID = -1;
-  public string Text = string.Empty;
+    public int Level = -1;
+    public int HID = -1;
+    public int SID = -1;
+    public string Text = string.Empty;
 }

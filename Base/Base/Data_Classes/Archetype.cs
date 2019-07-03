@@ -237,11 +237,11 @@ namespace Base.Data_Classes
     public PopUp.PopupData PopInfo()
     {
       PopUp.PopupData popupData = new PopUp.PopupData();
-      int index1 = popupData.Add((PopUp.Section) null);
+      int index1 = popupData.Add(null);
       popupData.Sections[index1].Add(this.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
       popupData.Sections[index1].Add(this.DescShort, PopUp.Colors.Effect, 1f, FontStyle.Bold, 0);
       popupData.Sections[index1].Add(this.DescLong, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
-      int index2 = popupData.Add((PopUp.Section) null);
+      int index2 = popupData.Add(null);
       popupData.Sections[index2].Add("You can't change archetype once a build has been started.\nIf you want to pick a different archetype, you need to clear the current build and start a new one.", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 0);
       return popupData;
     }

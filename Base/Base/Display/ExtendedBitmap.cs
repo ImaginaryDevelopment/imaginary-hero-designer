@@ -36,7 +36,7 @@ namespace Base.Display
           graphics = this._surface;
         }
         else
-          graphics = (Graphics) null;
+          graphics = null;
         return graphics;
       }
     }
@@ -45,7 +45,7 @@ namespace Base.Display
     {
       get
       {
-        return !this._isInitialised ? (this.Initialise() ? this._bits : (Bitmap) null) : this._bits;
+        return !this._isInitialised ? (this.Initialise() ? this._bits : null) : this._bits;
       }
     }
 
@@ -114,7 +114,7 @@ namespace Base.Display
     public void Dispose()
     {
       this.Dispose(true);
-      GC.SuppressFinalize((object) this);
+      GC.SuppressFinalize( this);
     }
 
     protected virtual void Dispose(bool disposing)
@@ -137,7 +137,7 @@ namespace Base.Display
       object obj;
       if (!this._isInitialised)
       {
-        obj = (object) new ExtendedBitmap();
+        obj =  new ExtendedBitmap();
       }
       else
       {
@@ -149,7 +149,7 @@ namespace Base.Display
         extendedBitmap.Clip = this.Clip;
         extendedBitmap._isInitialised = this._isInitialised;
         extendedBitmap._isNew = this._isNew;
-        obj = (object) extendedBitmap;
+        obj =  extendedBitmap;
       }
       return obj;
     }
