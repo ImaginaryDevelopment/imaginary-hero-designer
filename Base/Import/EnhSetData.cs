@@ -60,27 +60,27 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.EnhancementSets[this.Index].Uid != this.Data.Uid)
       {
-        message += string.Format("Uid: {0} => {1}", (object) DatabaseAPI.Database.EnhancementSets[this.Index].Uid, (object) this.Data.Uid);
+        message += string.Format("Uid: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].Uid,  this.Data.Uid);
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[this.Index].DisplayName != this.Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}", (object) DatabaseAPI.Database.EnhancementSets[this.Index].DisplayName, (object) this.Data.DisplayName);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].DisplayName,  this.Data.DisplayName);
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[this.Index].LevelMin != this.Data.LevelMin)
       {
-        message += string.Format("LevelMin: {0} => {1}", (object) DatabaseAPI.Database.EnhancementSets[this.Index].LevelMin, (object) this.Data.LevelMin);
+        message += string.Format("LevelMin: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].LevelMin,  this.Data.LevelMin);
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[this.Index].LevelMax != this.Data.LevelMax)
       {
-        message += string.Format("LevelMax: {0} => {1}", (object) DatabaseAPI.Database.EnhancementSets[this.Index].LevelMax, (object) this.Data.LevelMax);
+        message += string.Format("LevelMax: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].LevelMax,  this.Data.LevelMax);
         flag = true;
       }
       else if (DatabaseAPI.Database.EnhancementSets[this.Index].ShortName != this.Data.ShortName)
       {
-        message += string.Format("ShortName: {0} => {1}", (object) DatabaseAPI.Database.EnhancementSets[this.Index].ShortName, (object) this.Data.ShortName);
+        message += string.Format("ShortName: {0} => {1}",  DatabaseAPI.Database.EnhancementSets[this.Index].ShortName,  this.Data.ShortName);
         flag = true;
       }
       else

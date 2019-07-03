@@ -73,57 +73,57 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.Classes[this._index].DisplayName != this.Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].DisplayName, (object) this.Data.DisplayName);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DisplayName,  this.Data.DisplayName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].Hero != this.Data.Hero)
       {
-        message += string.Format("isHero: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].Hero, (object) this.Data.Hero);
+        message += string.Format("isHero: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Hero,  this.Data.Hero);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].Epic != this.Data.Epic)
       {
-        message += string.Format("isEpic: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].Epic, (object) this.Data.Epic);
+        message += string.Format("isEpic: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Epic,  this.Data.Epic);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].DescLong != this.Data.DescLong)
       {
-        message += string.Format("Description: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].DescLong, (object) this.Data.DescLong);
+        message += string.Format("Description: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DescLong,  this.Data.DescLong);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].DescShort != this.Data.DescShort)
       {
-        message += string.Format("Fullname: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].DescShort, (object) this.Data.DescShort);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DescShort,  this.Data.DescShort);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].Origin.Length != this.Data.Origin.Length)
       {
-        message += string.Format("Origins: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].Origin.Length, (object) this.Data.Origin.Length);
+        message += string.Format("Origins: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Origin.Length,  this.Data.Origin.Length);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].ClassName != this.Data.ClassName)
       {
-        message += string.Format("ClassID: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].ClassName, (object) this.Data.ClassName);
+        message += string.Format("ClassID: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].ClassName,  this.Data.ClassName);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].Column != this.Data.Column)
       {
-        message += string.Format("ColumnIndex: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].Column, (object) this.Data.Column);
+        message += string.Format("ColumnIndex: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Column,  this.Data.Column);
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].PrimaryGroup.ToLower() != this.Data.PrimaryGroup.ToLower())
       {
-        message += string.Format("Primary: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].PrimaryGroup.ToLower(), (object) this.Data.PrimaryGroup.ToLower());
+        message += string.Format("Primary: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].PrimaryGroup.ToLower(),  this.Data.PrimaryGroup.ToLower());
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].SecondaryGroup.ToLower() != this.Data.SecondaryGroup.ToLower())
       {
-        message += string.Format("Secondary: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].SecondaryGroup.ToLower(), (object) this.Data.SecondaryGroup.ToLower());
+        message += string.Format("Secondary: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].SecondaryGroup.ToLower(),  this.Data.SecondaryGroup.ToLower());
         flag = true;
       }
       else if (DatabaseAPI.Database.Classes[this._index].Playable != this.Data.Playable)
       {
-        message += string.Format("Playable: {0} => {1}", (object) DatabaseAPI.Database.Classes[this._index].Playable, (object) this.Data.Playable);
+        message += string.Format("Playable: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Playable,  this.Data.Playable);
         flag = true;
       }
       else
