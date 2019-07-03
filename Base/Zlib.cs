@@ -8,183 +8,25 @@ using System.Windows.Forms;
 
 public class Zlib
 {
-    const float Version = 1f;
-
-    const string PackHeaderToken = "MHDPackZ";
-
-    const int ErrorNone = 0;
-
-    const int ErrorStream = -2;
-
-    const int ErrorData = -3;
-
-    const int ErrorOutOfMem = -4;
-
-    const int ErrorBuffer = -5;
-
-    ZStatus _sFrm;
 
 
+
+    // void** compress2(int32_t a1, int32_t* a2, int32_t a3, int32_t a4, void** a5) {
     [DllImport("lib\\ZLIB1.DLL", EntryPoint = "compress2", CharSet = CharSet.Ansi, SetLastError = false)]
     static extern int Compress(
-
       ref byte destBytes,
       ref int destLength,
       ref byte srcBytes,
       int srcLength,
       int compressionLevel);
 
+    // void** uncompress(int32_t a1, int32_t* a2, int32_t a3, int32_t a4)
     [DllImport("lib\\ZLIB1.DLL", EntryPoint = "uncompress", CharSet = CharSet.Ansi, SetLastError = false)]
     static extern int Uncompress(
-
       ref byte destBytes,
       ref int destLength,
       ref byte srceBytes,
       int srcLength);
-
-
-    public int UnPack(string iRoot, string iFileName, ref DateTime iDate, ref string iComments)
-    {
-        this._sFrm = new ZStatus()
-        {
-            StatusText1 = "Unpacking..."
-        };
-        this._sFrm.Show();
-        this._sFrm.Refresh();
-        FileStream fileStream;
-        BinaryReader reader;
-        try
-        {
-            fileStream = new FileStream(iFileName, FileMode.Open);
-            reader = new BinaryReader((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while unpacking: " + ex.Message, "Buh?");
-            return 0;
-        }
-        Zlib.PackHeader packHeader = new Zlib.PackHeader();
-        if (reader.ReadString() != "MHDPackZ")
-            Debugger.Break();
-        packHeader.PackVersion = reader.ReadSingle();
-        packHeader.PackComments = reader.ReadString();
-        iComments = packHeader.PackComments;
-        packHeader.DateD = reader.ReadInt32();
-        packHeader.DateM = reader.ReadInt32();
-        packHeader.DateY = reader.ReadInt32();
-        iDate = new DateTime(packHeader.DateY, packHeader.DateM, packHeader.DateD);
-        packHeader.PackContents = reader.ReadInt32();
-        for (int index = 0; index <= packHeader.PackContents - 1; ++index)
-        {
-            this._sFrm.StatusText1 = "Unpacking file " + index + 1 + " of " + packHeader.PackContents;
-            if (!this.UncompressFile(iRoot, reader))
-            {
-                reader.Close();
-                fileStream.Close();
-                this._sFrm.Hide();
-                this._sFrm = null;
-                return 0;
-            }
-        }
-        reader.Close();
-        fileStream.Close();
-        this._sFrm.Hide();
-        this._sFrm = null;
-        return packHeader.PackContents;
-    }
-
-    static bool CompressFile(string iFileName, string iDest, BinaryWriter writer)
-
-    {
-        int int32 = Convert.ToInt32(new FileInfo(iFileName).Length);
-        Zlib.FileHeader fileHeader = new Zlib.FileHeader();
-        fileHeader.FileName = iDest;
-        fileHeader.DecompressedSize = int32;
-        fileHeader.CompressedSize = 0;
-        FileStream fileStream;
-        BinaryReader binaryReader;
-        try
-        {
-            fileStream = new FileStream(iFileName, FileMode.Open);
-            binaryReader = new BinaryReader((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while compressing: " + ex.Message, "Buh?");
-            return false;
-        }
-        bool flag;
-        try
-        {
-            byte[] iBytes = binaryReader.ReadBytes(int32);
-            byte[] buffer = Zlib.CompressChunk(ref iBytes);
-            fileHeader.CompressedSize = buffer.Length;
-            if (fileHeader.CompressedSize < 1)
-                throw new Exception("Compressed data was 0 bytes long!");
-            writer.Write(fileHeader.FileName);
-            writer.Write(fileHeader.DecompressedSize);
-            writer.Write(fileHeader.CompressedSize);
-            writer.Write(buffer);
-            binaryReader.Close();
-            fileStream.Close();
-            flag = true;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred during compression: " + ex.Message, "Buh?");
-            binaryReader.Close();
-            fileStream.Close();
-            flag = false;
-        }
-        return flag;
-    }
-
-    bool UncompressFile(string iRoot, BinaryReader reader)
-
-    {
-        Zlib.FileHeader fileHeader = new Zlib.FileHeader();
-        string str = reader.ReadString();
-        fileHeader.FileName = FileIO.StripSlash(iRoot) + str;
-        fileHeader.DecompressedSize = reader.ReadInt32();
-        fileHeader.CompressedSize = reader.ReadInt32();
-        this._sFrm.StatusText2 = str;
-        if (!Directory.Exists(fileHeader.FileName.Substring(0, fileHeader.FileName.LastIndexOf("\\", StringComparison.Ordinal))))
-            Directory.CreateDirectory(fileHeader.FileName.Substring(0, fileHeader.FileName.LastIndexOf("\\", StringComparison.Ordinal)));
-        if (File.Exists(fileHeader.FileName))
-            File.Delete(fileHeader.FileName);
-        FileStream fileStream;
-        BinaryWriter binaryWriter;
-        try
-        {
-            fileStream = new FileStream(fileHeader.FileName, FileMode.Create);
-            binaryWriter = new BinaryWriter((Stream)fileStream);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred while opening files for writing for decompression: " + ex.Message, "Buh?");
-            return false;
-        }
-        bool flag;
-        try
-        {
-            byte[] iBytes = reader.ReadBytes(fileHeader.CompressedSize);
-            byte[] buffer = Zlib.UncompressChunk(ref iBytes, fileHeader.DecompressedSize);
-            if (buffer.Length != fileHeader.DecompressedSize)
-                throw new Exception("Uncompressed data was not the expected size!");
-            binaryWriter.Write(buffer);
-            binaryWriter.Close();
-            fileStream.Close();
-            flag = true;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("An error occurred during decompression: " + ex.Message, "Buh?");
-            reader.Close();
-            fileStream.Close();
-            flag = false;
-        }
-        return flag;
-    }
 
     public static byte[] CompressChunk(ref byte[] iBytes)
     {

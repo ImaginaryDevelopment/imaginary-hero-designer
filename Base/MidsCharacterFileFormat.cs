@@ -9,23 +9,13 @@ public static class MidsCharacterFileFormat
 {
     public static readonly byte[] MagicNumber = new byte[4]
     {
-    Convert.ToByte('M'),
-    Convert.ToByte('x'),
-    Convert.ToByte('D'),
-    Convert.ToByte(12)
+        Convert.ToByte('M'),
+        Convert.ToByte('x'),
+        Convert.ToByte('D'),
+        Convert.ToByte(12)
     };
     public const string MagicCompressed = "MxDz";
     public const string MagicUncompressed = "MxDu";
-    const float SaveVersion = 1.01f;
-
-    const int DataLinkMaxLength = 2048;
-
-    const bool UseQualifiedNames = false;
-
-    const bool UseOldSubpowerFields = true;
-
-    const bool UseHexEncoding = true;
-
 
     static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
 
@@ -35,11 +25,11 @@ public static class MidsCharacterFileFormat
         try
         {
             memoryStream = new MemoryStream();
-            writer = new BinaryWriter((Stream)memoryStream);
+            writer = new BinaryWriter(memoryStream);
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("Save Failed!\n" + ex.Message);
+            MessageBox.Show("Save Failed!\n" + ex.Message);
             return false;
         }
         writer.Write(MidsCharacterFileFormat.MagicNumber, 0, MidsCharacterFileFormat.MagicNumber.Length);
@@ -93,31 +83,28 @@ public static class MidsCharacterFileFormat
 
     public static string MxDBuildSaveHyperlink(bool useBbCode, bool justLink = false)
     {
-        MidsCharacterFileFormat.CompressionData cData = new MidsCharacterFileFormat.CompressionData();
+        var cData = new MidsCharacterFileFormat.CompressionData();
         string str1 = MidsCharacterFileFormat.MxDBuildSaveStringShared(ref cData, false, false);
-        string str2;
         if (string.IsNullOrEmpty(str1))
         {
-            str2 = string.Empty;
+            return string.Empty;
         }
         else
         {
             // this one seems to still work as intended, we may not need to change it
             string str3 = "http://www.cohplanner.com/mids/download.php" + ("?uc=" + cData.SzUncompressed + "&c=" + cData.SzCompressed + "&a=" + cData.SzEncoded + "&f=HEX&dc=") + str1;
-            str2 = str3.Length <= 2048 ? (!justLink ? (!useBbCode ? "<a href=\"" + str3 + "\">Click this DataLink to open the build!</a>" : "[url=" + str3 + "]Click this DataLink to open the build![/url]") : str3) : "";
+            return str3.Length <= 2048 ? (!justLink ? (!useBbCode ? "<a href=\"" + str3 + "\">Click this DataLink to open the build!</a>" : "[url=" + str3 + "]Click this DataLink to open the build![/url]") : str3) : "";
         }
-        return str2;
     }
 
     static string MxDBuildSaveStringShared(
-
       ref MidsCharacterFileFormat.CompressionData cData,
-      bool inncludeAltEnh,
+      bool includeAltEnh,
       bool @break)
     {
         byte[] numArray = new byte[0];
         string str;
-        if (!MidsCharacterFileFormat.MxDBuildSaveBuffer(ref numArray, inncludeAltEnh))
+        if (!MidsCharacterFileFormat.MxDBuildSaveBuffer(ref numArray, includeAltEnh))
         {
             str = string.Empty;
         }
