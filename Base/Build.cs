@@ -858,7 +858,7 @@ public class Build
     }
 
     public bool EnhancementTest(int iSlotID, int hIdx, int iEnh, bool silent = false)
-    {
+    { /*
         bool flag1;
         if (iEnh < 0 | iSlotID < 0)
         {
@@ -950,6 +950,108 @@ public class Build
                     if (!silent)
                     {
                         int num = (int)MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
+                    }
+                    flag1 = false;
+                }
+                else if (flag4)
+                {
+                    if (!silent)
+                    {
+                        int num = (int)MessageBox.Show(enhancement.LongName + " is already slotted in this power. You can only slot one of each enhancement from the set in a given power.", "Can't Slot Enhancement");
+                    }
+                    flag1 = false;
+                }
+                else
+                    flag1 = true;
+            }
+        }
+        return flag1; */
+        bool flag1;
+        if (iEnh < 0 | iSlotID < 0)
+        {
+            flag1 = false;
+        }
+        else
+        {
+            IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iEnh];
+            bool flag2 = false;
+            bool flag3 = false;
+            bool flag4 = false;
+            bool flag5 = false;
+            if (enhancement.TypeID == Enums.eType.SetO && enhancement.nIDSet > -1 && hIdx > -1 && this.Powers[hIdx].Power != null)
+            {
+                flag5 = true;
+                Enums.eSetType setType = DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].SetType;
+                for (int index = 0; index <= this.Powers[hIdx].Power.SetTypes.Length - 1; ++index)
+                {
+                    if (this.Powers[hIdx].Power.SetTypes[index] == setType)
+                    {
+                        flag5 = false;
+                        break;
+                    }
+                }
+            }
+            if (flag5)
+            {
+                flag1 = false;
+            }
+            else
+            {
+                for (int index1 = 0; index1 <= this.Powers.Count - 1; ++index1)
+                {
+                    for (int index2 = 0; index2 <= this.Powers[index1].Slots.Length - 1; ++index2)
+                    {
+                        if ((index2 != iSlotID || index1 != hIdx) && this.Powers[index1].Slots[index2].Enhancement.Enh > -1)
+                        {
+                            if (enhancement.Unique && this.Powers[index1].Slots[index2].Enhancement.Enh == iEnh)
+                            {
+                                flag2 = true;
+                                break;
+                            }
+                            if (enhancement.MutExID != Enums.eEnhMutex.None && DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].MutExID == enhancement.MutExID)
+                            {//6/29/19 Pine: Added checker for ATO Mutex
+                                if (enhancement.MutExID == Enums.eEnhMutex.ArchetypeA |
+                                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeB |
+                                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeC |
+                                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeD |
+                                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeE |
+                                    enhancement.MutExID == Enums.eEnhMutex.ArchetypeF)
+                                {
+                                    string compareStringSlottedEnh = DatabaseAPI.Database.Enhancements[this.Powers[index1].Slots[index2].Enhancement.Enh].LongName;
+                                    if (compareStringSlottedEnh.Contains("Superior"))
+                                        compareStringSlottedEnh = compareStringSlottedEnh.Remove(0, 9);
+                                    string compareStringSlottingEnh = enhancement.LongName;
+                                    if (compareStringSlottingEnh.Contains("Superior"))
+                                        compareStringSlottingEnh = compareStringSlottingEnh.Remove(0, 9);
+                                    if (compareStringSlottedEnh != compareStringSlottingEnh)
+                                        break;
+                                }
+
+
+                                flag3 = true;
+                                break;
+                            }
+                            if (enhancement.nIDSet > -1 && index1 == hIdx && this.Powers[index1].Slots[index2].Enhancement.Enh == iEnh)
+                            {
+                                flag4 = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (flag2)
+                {
+                    if (!silent)
+                    {
+                        int num = (int)MessageBox.Show(enhancement.LongName + " is a unique enhancement. You can only slot one of these across your entire build.", "Can't Slot Enhancement");
+                    }
+                    flag1 = false;
+                }
+                else if (flag3)
+                {
+                    if (!silent)
+                    {
+                        int num = (int)MessageBox.Show(enhancement.LongName + " is mutually exclusive with enhancements in the " + Enum.GetName(enhancement.MutExID.GetType(), (object)enhancement.MutExID) + " group. You can only slot one member of this group across your entire build.", "Can't Slot Enhancement");
                     }
                     flag1 = false;
                 }
