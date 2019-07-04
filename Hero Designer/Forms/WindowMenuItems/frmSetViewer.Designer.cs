@@ -29,8 +29,6 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSetViewer));
             this.lstSets = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -181,21 +179,16 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmSetViewer);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Currently Active Sets & Bonuses";
             this.TopMost = true;
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnClose.ButtonClicked += btnClose_Click;
-                this.btnSmall.ButtonClicked += btnSmall_Click;
-                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
-            }
+            this.btnClose.ButtonClicked += btnClose_Click;
+            this.btnSmall.ButtonClicked += btnSmall_Click;
+            this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+            this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
             // finished with events
             this.ResumeLayout(false);
         }

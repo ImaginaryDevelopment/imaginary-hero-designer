@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityEdit));
             this.txtEntName = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
@@ -75,6 +74,7 @@ namespace Hero_Designer
 
             this.txtEntName.Size = new System.Drawing.Size(172, 20);
             this.txtEntName.TabIndex = 0;
+            this.txtEntName.TextChanged += txtEntName_TextChanged;
 
             this.Label1.Location = new System.Drawing.Point(12, 9);
             this.Label1.Name = "Label1";
@@ -97,6 +97,7 @@ namespace Hero_Designer
 
             this.txtDisplayName.Size = new System.Drawing.Size(172, 20);
             this.txtDisplayName.TabIndex = 2;
+            this.txtDisplayName.TextChanged += txtDisplayName_TextChanged;
             this.cbEntType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEntType.FormattingEnabled = true;
 
@@ -105,6 +106,7 @@ namespace Hero_Designer
 
             this.cbEntType.Size = new System.Drawing.Size(172, 22);
             this.cbEntType.TabIndex = 4;
+            this.cbEntType.SelectedIndexChanged += cbEntType_SelectedIndexChanged;
 
             this.Label3.Location = new System.Drawing.Point(12, 61);
             this.Label3.Name = "Label3";
@@ -136,6 +138,7 @@ namespace Hero_Designer
             this.btnPDelete.TabIndex = 11;
             this.btnPDelete.Text = "Remove";
             this.btnPDelete.UseVisualStyleBackColor = true;
+            this.btnPDelete.Click += btnPDelete_Click;
             this.lvPower.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader4
@@ -152,6 +155,7 @@ namespace Hero_Designer
             this.lvPower.TabIndex = 18;
             this.lvPower.UseCompatibleStateImageBehavior = false;
             this.lvPower.View = System.Windows.Forms.View.Details;
+            this.lvPower.SelectedIndexChanged += lvPower_SelectedIndexChanged;
             this.ColumnHeader4.Text = "Current Sets";
             this.ColumnHeader4.Width = 244;
 
@@ -162,6 +166,7 @@ namespace Hero_Designer
             this.btnPAdd.TabIndex = 10;
             this.btnPAdd.Text = "Add";
             this.btnPAdd.UseVisualStyleBackColor = true;
+            this.btnPAdd.Click += btnPAdd_Click;
             this.lvPSSet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader10
@@ -178,6 +183,8 @@ namespace Hero_Designer
             this.lvPSSet.TabIndex = 17;
             this.lvPSSet.UseCompatibleStateImageBehavior = false;
             this.lvPSSet.View = System.Windows.Forms.View.Details;
+            this.lvPSSet.SelectedIndexChanged += this.lvPSSet_SelectedIndexChanged;
+            this.lvPSSet.Click += this.lvPSSet_Click;
             this.ColumnHeader10.Text = "Set";
             this.ColumnHeader10.Width = 188;
 
@@ -188,6 +195,7 @@ namespace Hero_Designer
             this.btnPDown.TabIndex = 9;
             this.btnPDown.Text = "Down";
             this.btnPDown.UseVisualStyleBackColor = true;
+            this.btnPDown.Click += btnPDown_Click;
             this.lvPSGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader11
@@ -204,6 +212,7 @@ namespace Hero_Designer
             this.lvPSGroup.TabIndex = 16;
             this.lvPSGroup.UseCompatibleStateImageBehavior = false;
             this.lvPSGroup.View = System.Windows.Forms.View.Details;
+            this.lvPSGroup.SelectedIndexChanged += lvPSGroup_SelectedIndexChanged;
             this.ColumnHeader11.Text = "Group";
             this.ColumnHeader11.Width = 110;
 
@@ -214,6 +223,7 @@ namespace Hero_Designer
             this.btnPUp.TabIndex = 8;
             this.btnPUp.Text = "Up";
             this.btnPUp.UseVisualStyleBackColor = true;
+            this.btnPUp.Click += btnPUp_Click;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnUGDelete);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnUGAdd);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnUGDown);
@@ -238,6 +248,7 @@ namespace Hero_Designer
             this.btnUGDelete.TabIndex = 23;
             this.btnUGDelete.Text = "Remove";
             this.btnUGDelete.UseVisualStyleBackColor = true;
+            this.btnUGDelete.Click += btnUGDelete_Click;
 
             this.btnUGAdd.Location = new System.Drawing.Point(424, 79);
             this.btnUGAdd.Name = "btnUGAdd";
@@ -246,6 +257,7 @@ namespace Hero_Designer
             this.btnUGAdd.TabIndex = 22;
             this.btnUGAdd.Text = "Add";
             this.btnUGAdd.UseVisualStyleBackColor = true;
+            this.btnUGAdd.Click += btnUGAdd_Click;
 
             this.btnUGDown.Location = new System.Drawing.Point(424, 48);
             this.btnUGDown.Name = "btnUGDown";
@@ -254,6 +266,7 @@ namespace Hero_Designer
             this.btnUGDown.TabIndex = 21;
             this.btnUGDown.Text = "Down";
             this.btnUGDown.UseVisualStyleBackColor = true;
+            this.btnUGDown.Click += btnUGDown_Click;
 
             this.btnUGUp.Location = new System.Drawing.Point(424, 19);
             this.btnUGUp.Name = "btnUGUp";
@@ -262,6 +275,7 @@ namespace Hero_Designer
             this.btnUGUp.TabIndex = 20;
             this.btnUGUp.Text = "Up";
             this.btnUGUp.UseVisualStyleBackColor = true;
+            this.btnUGUp.Click += btnUGUp_Click;
             this.lvUpgrade.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader5
@@ -278,11 +292,12 @@ namespace Hero_Designer
             this.lvUpgrade.TabIndex = 19;
             this.lvUpgrade.UseCompatibleStateImageBehavior = false;
             this.lvUpgrade.View = System.Windows.Forms.View.Details;
+            this.lvUpgrade.SelectedIndexChanged += lvUpgrade_SelectedIndexChanged;
             this.ColumnHeader5.Text = "Upgrades";
             this.ColumnHeader5.Width = 382;
             this.lvUGPower.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
-        this.ColumnHeader3
+                this.ColumnHeader3
             });
             this.lvUGPower.FullRowSelect = true;
             this.lvUGPower.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -296,6 +311,8 @@ namespace Hero_Designer
             this.lvUGPower.TabIndex = 18;
             this.lvUGPower.UseCompatibleStateImageBehavior = false;
             this.lvUGPower.View = System.Windows.Forms.View.Details;
+            this.lvUGPower.SelectedIndexChanged += this.lvUGPower_SelectedIndexChanged;
+            this.lvUGPower.Click += this.lvUGPower_Click;
             this.ColumnHeader3.Text = "Power";
             this.ColumnHeader3.Width = 110;
             this.lvUGSet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -314,11 +331,12 @@ namespace Hero_Designer
             this.lvUGSet.TabIndex = 17;
             this.lvUGSet.UseCompatibleStateImageBehavior = false;
             this.lvUGSet.View = System.Windows.Forms.View.Details;
+            this.lvUGSet.SelectedIndexChanged += lvUGSet_SelectedIndexChanged;
             this.ColumnHeader1.Text = "Set";
             this.ColumnHeader1.Width = 188;
             this.lvUGGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
-        this.ColumnHeader2
+                this.ColumnHeader2
             });
             this.lvUGGroup.FullRowSelect = true;
             this.lvUGGroup.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -332,6 +350,7 @@ namespace Hero_Designer
             this.lvUGGroup.TabIndex = 16;
             this.lvUGGroup.UseCompatibleStateImageBehavior = false;
             this.lvUGGroup.View = System.Windows.Forms.View.Details;
+            this.lvUGGroup.SelectedIndexChanged += lvUGGroup_SelectedIndexChanged;
             this.ColumnHeader2.Text = "Group";
             this.ColumnHeader2.Width = 110;
 
@@ -340,7 +359,6 @@ namespace Hero_Designer
 
             this.Label4.Size = new System.Drawing.Size(629, 102);
             this.Label4.TabIndex = 8;
-            this.Label4.Text = componentResourceManager.GetString("Label4.Text");
 
             this.Label5.Location = new System.Drawing.Point(12, 89);
             this.Label5.Name = "Label5";
@@ -357,6 +375,7 @@ namespace Hero_Designer
 
             this.cbClass.Size = new System.Drawing.Size(172, 22);
             this.cbClass.TabIndex = 9;
+            this.cbClass.SelectedIndexChanged += cbClass_SelectedIndexChanged;
 
             this.btnOK.Location = new System.Drawing.Point(830, 498);
             this.btnOK.Name = "btnOK";
@@ -365,6 +384,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += btnOK_Click;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(749, 498);
@@ -394,42 +414,52 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.txtEntName);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEntityEdit);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editing Entity: Entity_Name";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnOK.Click += btnOK_Click;
-                this.btnPAdd.Click += btnPAdd_Click;
-                this.btnPDelete.Click += btnPDelete_Click;
-                this.btnPDown.Click += btnPDown_Click;
-                this.btnPUp.Click += btnPUp_Click;
-                this.btnUGAdd.Click += btnUGAdd_Click;
-                this.btnUGDelete.Click += btnUGDelete_Click;
-                this.btnUGDown.Click += btnUGDown_Click;
-                this.btnUGUp.Click += btnUGUp_Click;
-                this.cbClass.SelectedIndexChanged += cbClass_SelectedIndexChanged;
-                this.cbEntType.SelectedIndexChanged += cbEntType_SelectedIndexChanged;
-                this.lvPSGroup.SelectedIndexChanged += lvPSGroup_SelectedIndexChanged;
-                this.lvPower.SelectedIndexChanged += lvPower_SelectedIndexChanged;
-                this.lvUGGroup.SelectedIndexChanged += lvUGGroup_SelectedIndexChanged;
-                this.lvUGSet.SelectedIndexChanged += lvUGSet_SelectedIndexChanged;
-                this.lvUpgrade.SelectedIndexChanged += lvUpgrade_SelectedIndexChanged;
-                this.txtDisplayName.TextChanged += txtDisplayName_TextChanged;
-                this.txtEntName.TextChanged += txtEntName_TextChanged;
-            }
-            // finished with events
             this.PerformLayout();
         }
         #endregion
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnPAdd;
+        System.Windows.Forms.Button btnPDelete;
+        System.Windows.Forms.Button btnPDown;
+        System.Windows.Forms.Button btnPUp;
+        System.Windows.Forms.Button btnUGAdd;
+        System.Windows.Forms.Button btnUGDelete;
+        System.Windows.Forms.Button btnUGDown;
+        System.Windows.Forms.Button btnUGUp;
+        System.Windows.Forms.ComboBox cbClass;
+        System.Windows.Forms.ComboBox cbEntType;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader10;
+        System.Windows.Forms.ColumnHeader ColumnHeader11;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.ListView lvPower;
+        System.Windows.Forms.ListView lvPSGroup;
+        System.Windows.Forms.ListView lvPSSet;
+        System.Windows.Forms.ListView lvUGGroup;
+        System.Windows.Forms.ListView lvUGPower;
+        System.Windows.Forms.ListView lvUGSet;
+        System.Windows.Forms.ListView lvUpgrade;
+        System.Windows.Forms.TextBox txtDisplayName;
+        System.Windows.Forms.TextBox txtEntName;
     }
 
 

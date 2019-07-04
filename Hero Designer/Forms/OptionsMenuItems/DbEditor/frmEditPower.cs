@@ -7,8 +7,6 @@ using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -20,1077 +18,16 @@ namespace Hero_Designer
 {
     public partial class frmEditPower : Form
     {
-        Button btnCancel;
-
-        Button btnCSVImport;
-
-        Button btnFullCopy;
-
-        Button btnFullPaste;
-
-        Button btnFXAdd;
-
-        Button btnFXDown;
-
-        Button btnFXDuplicate;
-
-        Button btnFXEdit;
-
-        Button btnFXRemove;
-
-        Button btnFXUp;
-
-        Button btnMutexAdd;
-
-        Button btnOK;
-
-        Button btnPrDown;
-
-        Button btnPrReset;
-
-        Button btnPrSetNone;
-
-        Button btnPrUp;
-        Button btnSetDamage;
-
-        Button btnSPAdd;
-
-        Button btnSPRemove;
-
-        ComboBox cbEffectArea;
-
-        ComboBox cbForcedClass;
-
-        [AccessedThroughProperty("cbNameGroup")]
-        ComboBox _cbNameGroup;
-
-        [AccessedThroughProperty("cbNameSet")]
-        ComboBox _cbNameSet;
-
-        ComboBox cbNotify;
-
-        ComboBox cbPowerType;
-
-        CheckBox chkAltSub;
-
-        CheckBox chkAlwaysToggle;
-
-        CheckBox chkBoostBoostable;
-
-        CheckBox chkBoostUsePlayerLevel;
-
-        CheckBox chkBuffCycle;
-
-        CheckBox chkGraphFix;
-
-        CheckBox chkHidden;
-
-        CheckBox chkIgnoreStrength;
-
-        CheckBox chkLos;
-
-        CheckBox chkMutexAuto;
-
-        CheckBox chkMutexSkip;
-
-        CheckBox chkNoAUReq;
-
-        CheckBox chkNoAutoUpdate;
-
-        CheckBox chkPRFrontLoad;
-
-        CheckBox chkScale;
-
-        CheckBox chkSortOverride;
-
-        CheckBox chkSubInclude;
-
-        CheckBox chkSummonDisplayEntity;
-
-        CheckBox chkSummonStealAttributes;
-
-        CheckBox chkSummonStealEffects;
-        CheckedListBox clbClassExclude;
-        CheckedListBox clbClassReq;
-
-        CheckedListBox clbFlags;
-        CheckedListBox clbMutex;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader10;
-        ColumnHeader ColumnHeader11;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader6;
-        ColumnHeader ColumnHeader7;
-        ColumnHeader ColumnHeader8;
-        ColumnHeader ColumnHeader9;
-        GroupBox GroupBox1;
-        GroupBox GroupBox10;
-        GroupBox GroupBox11;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-        GroupBox GroupBox6;
-        GroupBox GroupBox7;
-        GroupBox GroupBox8;
-        GroupBox GroupBox9;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label12;
-        Label Label13;
-        Label Label14;
-        Label Label15;
-        Label Label16;
-        Label Label17;
-        Label Label18;
-        Label Label2;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label23;
-        Label Label24;
-        Label Label26;
-        Label Label27;
-        Label Label28;
-        Label Label29;
-        Label Label3;
-        Label Label30;
-        Label Label31;
-        Label Label32;
-        Label Label33;
-        Label Label34;
-        Label Label35;
-        Label Label36;
-        Label Label37;
-        Label Label38;
-        Label Label39;
-        Label Label4;
-        Label Label40;
-        Label Label41;
-        Label Label42;
-        Label Label43;
-        Label Label44;
-        Label Label45;
-        Label Label46;
-        Label Label47;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lblAcc;
-        Label lblEndCost;
-        Label lblEnhName;
-        Label lblInvSet;
-        Label lblNameFull;
-        Label lblNameUnique;
-
-        Label lblStaticIndex;
-
-        ListBox lvDisablePass1;
-
-        ListBox lvDisablePass4;
-
-        [AccessedThroughProperty("lvFX")]
-        ListBox _lvFX;
-
-        ListView lvPrGroup;
-
-        ListView lvPrListing;
-
-        ListView lvPrPower;
-
-        ListView lvPrSet;
-
-        ListView lvSPGroup;
-
-        ListView lvSPPower;
-        ListView lvSPSelected;
-
-        ListView lvSPSet;
-
-        [AccessedThroughProperty("pbEnhancementList")]
-        PictureBox _pbEnhancementList;
-
-        [AccessedThroughProperty("pbEnhancements")]
-        PictureBox _pbEnhancements;
-
-        [AccessedThroughProperty("pbInvSetList")]
-        PictureBox _pbInvSetList;
-
-        [AccessedThroughProperty("pbInvSetUsed")]
-        PictureBox _pbInvSetUsed;
-        Panel pnlFX;
-
-        RadioButton rbFlagAffected;
-
-        RadioButton rbFlagAutoHit;
-
-        RadioButton rbFlagCast;
-
-        RadioButton rbFlagCastThrough;
-
-        RadioButton rbFlagDisallow;
-
-        RadioButton rbFlagRequired;
-
-        RadioButton rbFlagTargets;
-
-        RadioButton rbFlagTargetsSec;
-
-        RadioButton rbFlagVector;
-
-        Button rbPrAdd;
-
-        RadioButton rbPrPowerA;
-
-        RadioButton rbPrPowerB;
-
-        Button rbPrRemove;
-        TabControl tcPower;
-        TabPage tpBasic;
-        TabPage tpEffects;
-        TabPage tpEnh;
-        TabPage tpMutex;
-        TabPage tpPreReq;
-        TabPage tpSets;
-        TabPage tpSpecialEnh;
-        TabPage tpSubPower;
-        TabPage tpText;
-
-        [AccessedThroughProperty("txtAcc")]
-        TextBox _txtAcc;
-
-        [AccessedThroughProperty("txtActivate")]
-        TextBox _txtActivate;
-
-        [AccessedThroughProperty("txtArc")]
-        TextBox _txtArc;
-
-        [AccessedThroughProperty("txtCastTime")]
-        TextBox _txtCastTime;
-
-        TextBox txtDescLong;
-
-        TextBox txtDescShort;
-
-        [AccessedThroughProperty("txtEndCost")]
-        TextBox _txtEndCost;
-
-        [AccessedThroughProperty("txtInterrupt")]
-        TextBox _txtInterrupt;
-
-        [AccessedThroughProperty("txtLevel")]
-        TextBox _txtLevel;
-
-        [AccessedThroughProperty("txtLifeTimeGame")]
-        TextBox _txtLifeTimeGame;
-
-        [AccessedThroughProperty("txtLifeTimeReal")]
-        TextBox _txtLifeTimeReal;
-
-        [AccessedThroughProperty("txtMaxTargets")]
-        TextBox _txtMaxTargets;
-
-        TextBox txtNameDisplay;
-
-        [AccessedThroughProperty("txtNamePower")]
-        TextBox _txtNamePower;
-
-        [AccessedThroughProperty("txtNumCharges")]
-        TextBox _txtNumCharges;
-
-        [AccessedThroughProperty("txtRadius")]
-        TextBox _txtRadius;
-
-        [AccessedThroughProperty("txtRange")]
-        TextBox _txtRange;
-
-        [AccessedThroughProperty("txtRangeSec")]
-        TextBox _txtRangeSec;
-
-        [AccessedThroughProperty("txtRechargeTime")]
-        TextBox _txtRechargeTime;
-
-        TextBox txtScaleName;
-
-        [AccessedThroughProperty("txtUseageTime")]
-        TextBox _txtUseageTime;
-
-        [AccessedThroughProperty("txtVisualLocation")]
-        TextBox _txtVisualLocation;
-
-        [AccessedThroughProperty("udScaleMax")]
-        NumericUpDown _udScaleMax;
-
-        [AccessedThroughProperty("udScaleMin")]
-        NumericUpDown _udScaleMin;
-
-        protected Requirement backup_Requires;
+        Requirement backup_Requires;
         ExtendedBitmap bxEnhPicked;
-
         ExtendedBitmap bxEnhPicker;
-
-        protected ExtendedBitmap bxSet;
-        protected ExtendedBitmap bxSetList;
-
-        protected int enhAcross;
-        protected int enhPadding;
+        ExtendedBitmap bxSet;
+        ExtendedBitmap bxSetList;
+        int enhAcross;
+        int enhPadding;
         public IPower myPower;
-        protected bool ReqChanging;
-        protected bool Updating;
-        ComboBox cbNameGroup
-        {
-            get
-            {
-                return this._cbNameGroup;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.cbNameGroup_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.cbNameGroup_SelectedIndexChanged);
-                EventHandler eventHandler3 = new EventHandler(this.cbNameGroup_Leave);
-                if (this._cbNameGroup != null)
-                {
-                    this._cbNameGroup.TextChanged -= eventHandler1;
-                    this._cbNameGroup.SelectedIndexChanged -= eventHandler2;
-                    this._cbNameGroup.Leave -= eventHandler3;
-                }
-                this._cbNameGroup = value;
-                if (this._cbNameGroup == null)
-                    return;
-                this._cbNameGroup.TextChanged += eventHandler1;
-                this._cbNameGroup.SelectedIndexChanged += eventHandler2;
-                this._cbNameGroup.Leave += eventHandler3;
-            }
-        }
-
-        ComboBox cbNameSet
-        {
-            get
-            {
-                return this._cbNameSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.cbNameSet_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.cbNameSet_SelectedIndexChanged);
-                EventHandler eventHandler3 = new EventHandler(this.cbNameSet_Leave);
-                if (this._cbNameSet != null)
-                {
-                    this._cbNameSet.TextChanged -= eventHandler1;
-                    this._cbNameSet.SelectedIndexChanged -= eventHandler2;
-                    this._cbNameSet.Leave -= eventHandler3;
-                }
-                this._cbNameSet = value;
-                if (this._cbNameSet == null)
-                    return;
-                this._cbNameSet.TextChanged += eventHandler1;
-                this._cbNameSet.SelectedIndexChanged += eventHandler2;
-                this._cbNameSet.Leave += eventHandler3;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ListBox lvFX
-        {
-            get
-            {
-                return this._lvFX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.lvFX_KeyPress);
-                EventHandler eventHandler = new EventHandler(this.lvFX_DoubleClick);
-                if (this._lvFX != null)
-                {
-                    this._lvFX.KeyPress -= pressEventHandler;
-                    this._lvFX.DoubleClick -= eventHandler;
-                }
-                this._lvFX = value;
-                if (this._lvFX == null)
-                    return;
-                this._lvFX.KeyPress += pressEventHandler;
-                this._lvFX.DoubleClick += eventHandler;
-            }
-        }
-        PictureBox pbEnhancementList
-        {
-            get
-            {
-                return this._pbEnhancementList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbEnhancementList_MouseDown);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbEnhancementList_Hover);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pbEnhancementList_Paint);
-                if (this._pbEnhancementList != null)
-                {
-                    this._pbEnhancementList.MouseDown -= mouseEventHandler1;
-                    this._pbEnhancementList.MouseMove -= mouseEventHandler2;
-                    this._pbEnhancementList.Paint -= paintEventHandler;
-                }
-                this._pbEnhancementList = value;
-                if (this._pbEnhancementList == null)
-                    return;
-                this._pbEnhancementList.MouseDown += mouseEventHandler1;
-                this._pbEnhancementList.MouseMove += mouseEventHandler2;
-                this._pbEnhancementList.Paint += paintEventHandler;
-            }
-        }
-
-        PictureBox pbEnhancements
-        {
-            get
-            {
-                return this._pbEnhancements;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbEnhancements_MouseDown);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbEnhancements_Hover);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pbEnhancements_Paint);
-                if (this._pbEnhancements != null)
-                {
-                    this._pbEnhancements.MouseDown -= mouseEventHandler1;
-                    this._pbEnhancements.MouseMove -= mouseEventHandler2;
-                    this._pbEnhancements.Paint -= paintEventHandler;
-                }
-                this._pbEnhancements = value;
-                if (this._pbEnhancements == null)
-                    return;
-                this._pbEnhancements.MouseDown += mouseEventHandler1;
-                this._pbEnhancements.MouseMove += mouseEventHandler2;
-                this._pbEnhancements.Paint += paintEventHandler;
-            }
-        }
-
-        PictureBox pbInvSetList
-        {
-            get
-            {
-                return this._pbInvSetList;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbInvSetList_MouseMove);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbInvSetList_MouseDown);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pbInvSetList_Paint);
-                if (this._pbInvSetList != null)
-                {
-                    this._pbInvSetList.MouseMove -= mouseEventHandler1;
-                    this._pbInvSetList.MouseDown -= mouseEventHandler2;
-                    this._pbInvSetList.Paint -= paintEventHandler;
-                }
-                this._pbInvSetList = value;
-                if (this._pbInvSetList == null)
-                    return;
-                this._pbInvSetList.MouseMove += mouseEventHandler1;
-                this._pbInvSetList.MouseDown += mouseEventHandler2;
-                this._pbInvSetList.Paint += paintEventHandler;
-            }
-        }
-
-        PictureBox pbInvSetUsed
-        {
-            get
-            {
-                return this._pbInvSetUsed;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler1 = new MouseEventHandler(this.pbInvSetUsed_MouseDown);
-                MouseEventHandler mouseEventHandler2 = new MouseEventHandler(this.pbInvSetUsed_MouseMove);
-                PaintEventHandler paintEventHandler = new PaintEventHandler(this.pbInvSetUsed_Paint);
-                if (this._pbInvSetUsed != null)
-                {
-                    this._pbInvSetUsed.MouseDown -= mouseEventHandler1;
-                    this._pbInvSetUsed.MouseMove -= mouseEventHandler2;
-                    this._pbInvSetUsed.Paint -= paintEventHandler;
-                }
-                this._pbInvSetUsed = value;
-                if (this._pbInvSetUsed == null)
-                    return;
-                this._pbInvSetUsed.MouseDown += mouseEventHandler1;
-                this._pbInvSetUsed.MouseMove += mouseEventHandler2;
-                this._pbInvSetUsed.Paint += paintEventHandler;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-        TextBox txtAcc
-        {
-            get
-            {
-                return this._txtAcc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtAcc_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtAcc_TextChanged);
-                if (this._txtAcc != null)
-                {
-                    this._txtAcc.Leave -= eventHandler1;
-                    this._txtAcc.TextChanged -= eventHandler2;
-                }
-                this._txtAcc = value;
-                if (this._txtAcc == null)
-                    return;
-                this._txtAcc.Leave += eventHandler1;
-                this._txtAcc.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtActivate
-        {
-            get
-            {
-                return this._txtActivate;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtActivate_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtActivate_TextChanged);
-                if (this._txtActivate != null)
-                {
-                    this._txtActivate.Leave -= eventHandler1;
-                    this._txtActivate.TextChanged -= eventHandler2;
-                }
-                this._txtActivate = value;
-                if (this._txtActivate == null)
-                    return;
-                this._txtActivate.Leave += eventHandler1;
-                this._txtActivate.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtArc
-        {
-            get
-            {
-                return this._txtArc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtArc_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtArc_TextChanged);
-                if (this._txtArc != null)
-                {
-                    this._txtArc.Leave -= eventHandler1;
-                    this._txtArc.TextChanged -= eventHandler2;
-                }
-                this._txtArc = value;
-                if (this._txtArc == null)
-                    return;
-                this._txtArc.Leave += eventHandler1;
-                this._txtArc.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtCastTime
-        {
-            get
-            {
-                return this._txtCastTime;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtCastTime_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtCastTime_TextChanged);
-                if (this._txtCastTime != null)
-                {
-                    this._txtCastTime.Leave -= eventHandler1;
-                    this._txtCastTime.TextChanged -= eventHandler2;
-                }
-                this._txtCastTime = value;
-                if (this._txtCastTime == null)
-                    return;
-                this._txtCastTime.Leave += eventHandler1;
-                this._txtCastTime.TextChanged += eventHandler2;
-            }
-        }
-        TextBox txtEndCost
-        {
-            get
-            {
-                return this._txtEndCost;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtEndCost_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtEndCost_TextChanged);
-                if (this._txtEndCost != null)
-                {
-                    this._txtEndCost.Leave -= eventHandler1;
-                    this._txtEndCost.TextChanged -= eventHandler2;
-                }
-                this._txtEndCost = value;
-                if (this._txtEndCost == null)
-                    return;
-                this._txtEndCost.Leave += eventHandler1;
-                this._txtEndCost.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtInterrupt
-        {
-            get
-            {
-                return this._txtInterrupt;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtInterrupt_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtInterrupt_TextChanged);
-                if (this._txtInterrupt != null)
-                {
-                    this._txtInterrupt.Leave -= eventHandler1;
-                    this._txtInterrupt.TextChanged -= eventHandler2;
-                }
-                this._txtInterrupt = value;
-                if (this._txtInterrupt == null)
-                    return;
-                this._txtInterrupt.Leave += eventHandler1;
-                this._txtInterrupt.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtLevel
-        {
-            get
-            {
-                return this._txtLevel;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtLevel_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtLevel_TextChanged);
-                if (this._txtLevel != null)
-                {
-                    this._txtLevel.Leave -= eventHandler1;
-                    this._txtLevel.TextChanged -= eventHandler2;
-                }
-                this._txtLevel = value;
-                if (this._txtLevel == null)
-                    return;
-                this._txtLevel.Leave += eventHandler1;
-                this._txtLevel.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtLifeTimeGame
-        {
-            get
-            {
-                return this._txtLifeTimeGame;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtLifeTimeGame_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtLifeTimeGame_Leave);
-                if (this._txtLifeTimeGame != null)
-                {
-                    this._txtLifeTimeGame.TextChanged -= eventHandler1;
-                    this._txtLifeTimeGame.Leave -= eventHandler2;
-                }
-                this._txtLifeTimeGame = value;
-                if (this._txtLifeTimeGame == null)
-                    return;
-                this._txtLifeTimeGame.TextChanged += eventHandler1;
-                this._txtLifeTimeGame.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtLifeTimeReal
-        {
-            get
-            {
-                return this._txtLifeTimeReal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtLifeTimeReal_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtLifeTimeReal_Leave);
-                if (this._txtLifeTimeReal != null)
-                {
-                    this._txtLifeTimeReal.TextChanged -= eventHandler1;
-                    this._txtLifeTimeReal.Leave -= eventHandler2;
-                }
-                this._txtLifeTimeReal = value;
-                if (this._txtLifeTimeReal == null)
-                    return;
-                this._txtLifeTimeReal.TextChanged += eventHandler1;
-                this._txtLifeTimeReal.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtMaxTargets
-        {
-            get
-            {
-                return this._txtMaxTargets;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtMaxTargets_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtMaxTargets_TextChanged);
-                if (this._txtMaxTargets != null)
-                {
-                    this._txtMaxTargets.Leave -= eventHandler1;
-                    this._txtMaxTargets.TextChanged -= eventHandler2;
-                }
-                this._txtMaxTargets = value;
-                if (this._txtMaxTargets == null)
-                    return;
-                this._txtMaxTargets.Leave += eventHandler1;
-                this._txtMaxTargets.TextChanged += eventHandler2;
-            }
-        }
-        TextBox txtNamePower
-        {
-            get
-            {
-                return this._txtNamePower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtNamePower_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtNamePower_Leave);
-                if (this._txtNamePower != null)
-                {
-                    this._txtNamePower.TextChanged -= eventHandler1;
-                    this._txtNamePower.Leave -= eventHandler2;
-                }
-                this._txtNamePower = value;
-                if (this._txtNamePower == null)
-                    return;
-                this._txtNamePower.TextChanged += eventHandler1;
-                this._txtNamePower.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtNumCharges
-        {
-            get
-            {
-                return this._txtNumCharges;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtNumCharges_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtNumCharges_Leave);
-                if (this._txtNumCharges != null)
-                {
-                    this._txtNumCharges.TextChanged -= eventHandler1;
-                    this._txtNumCharges.Leave -= eventHandler2;
-                }
-                this._txtNumCharges = value;
-                if (this._txtNumCharges == null)
-                    return;
-                this._txtNumCharges.TextChanged += eventHandler1;
-                this._txtNumCharges.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtRadius
-        {
-            get
-            {
-                return this._txtRadius;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtRadius_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtRadius_TextChanged);
-                if (this._txtRadius != null)
-                {
-                    this._txtRadius.Leave -= eventHandler1;
-                    this._txtRadius.TextChanged -= eventHandler2;
-                }
-                this._txtRadius = value;
-                if (this._txtRadius == null)
-                    return;
-                this._txtRadius.Leave += eventHandler1;
-                this._txtRadius.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtRange
-        {
-            get
-            {
-                return this._txtRange;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtRange_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtRange_TextChanged);
-                if (this._txtRange != null)
-                {
-                    this._txtRange.Leave -= eventHandler1;
-                    this._txtRange.TextChanged -= eventHandler2;
-                }
-                this._txtRange = value;
-                if (this._txtRange == null)
-                    return;
-                this._txtRange.Leave += eventHandler1;
-                this._txtRange.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtRangeSec
-        {
-            get
-            {
-                return this._txtRangeSec;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtRangeSec_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtRangeSec_Leave);
-                if (this._txtRangeSec != null)
-                {
-                    this._txtRangeSec.TextChanged -= eventHandler1;
-                    this._txtRangeSec.Leave -= eventHandler2;
-                }
-                this._txtRangeSec = value;
-                if (this._txtRangeSec == null)
-                    return;
-                this._txtRangeSec.TextChanged += eventHandler1;
-                this._txtRangeSec.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtRechargeTime
-        {
-            get
-            {
-                return this._txtRechargeTime;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtRechargeTime_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtRechargeTime_TextChanged);
-                if (this._txtRechargeTime != null)
-                {
-                    this._txtRechargeTime.Leave -= eventHandler1;
-                    this._txtRechargeTime.TextChanged -= eventHandler2;
-                }
-                this._txtRechargeTime = value;
-                if (this._txtRechargeTime == null)
-                    return;
-                this._txtRechargeTime.Leave += eventHandler1;
-                this._txtRechargeTime.TextChanged += eventHandler2;
-            }
-        }
-        TextBox txtUseageTime
-        {
-            get
-            {
-                return this._txtUseageTime;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtUseageTime_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtUseageTime_Leave);
-                if (this._txtUseageTime != null)
-                {
-                    this._txtUseageTime.TextChanged -= eventHandler1;
-                    this._txtUseageTime.Leave -= eventHandler2;
-                }
-                this._txtUseageTime = value;
-                if (this._txtUseageTime == null)
-                    return;
-                this._txtUseageTime.TextChanged += eventHandler1;
-                this._txtUseageTime.Leave += eventHandler2;
-            }
-        }
-
-        TextBox txtVisualLocation
-        {
-            get
-            {
-                return this._txtVisualLocation;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtVisualLocation_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtVisualLocation_TextChanged);
-                if (this._txtVisualLocation != null)
-                {
-                    this._txtVisualLocation.Leave -= eventHandler1;
-                    this._txtVisualLocation.TextChanged -= eventHandler2;
-                }
-                this._txtVisualLocation = value;
-                if (this._txtVisualLocation == null)
-                    return;
-                this._txtVisualLocation.Leave += eventHandler1;
-                this._txtVisualLocation.TextChanged += eventHandler2;
-            }
-        }
-
-        NumericUpDown udScaleMax
-        {
-            get
-            {
-                return this._udScaleMax;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.udScaleMax_ValueChanged);
-                EventHandler eventHandler2 = new EventHandler(this.udScaleMax_Leave);
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.udScaleMax_KeyPress);
-                if (this._udScaleMax != null)
-                {
-                    this._udScaleMax.ValueChanged -= eventHandler1;
-                    this._udScaleMax.Leave -= eventHandler2;
-                    this._udScaleMax.KeyPress -= pressEventHandler;
-                }
-                this._udScaleMax = value;
-                if (this._udScaleMax == null)
-                    return;
-                this._udScaleMax.ValueChanged += eventHandler1;
-                this._udScaleMax.Leave += eventHandler2;
-                this._udScaleMax.KeyPress += pressEventHandler;
-            }
-        }
-
-        NumericUpDown udScaleMin
-        {
-            get
-            {
-                return this._udScaleMin;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.udScaleMin_ValueChanged);
-                EventHandler eventHandler2 = new EventHandler(this.udScaleMin_Leave);
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.udScaleMin_KeyPress);
-                if (this._udScaleMin != null)
-                {
-                    this._udScaleMin.ValueChanged -= eventHandler1;
-                    this._udScaleMin.Leave -= eventHandler2;
-                    this._udScaleMin.KeyPress -= pressEventHandler;
-                }
-                this._udScaleMin = value;
-                if (this._udScaleMin == null)
-                    return;
-                this._udScaleMin.ValueChanged += eventHandler1;
-                this._udScaleMin.Leave += eventHandler2;
-                this._udScaleMin.KeyPress += pressEventHandler;
-            }
-        }
+        bool ReqChanging;
+        bool Updating;
 
         public frmEditPower(IPower iPower)
         {
@@ -1100,40 +37,40 @@ namespace Hero_Designer
             this.Updating = true;
             this.ReqChanging = false;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditPower));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEditPower);
             this.myPower = new Power(iPower);
             this.backup_Requires = new Requirement(this.myPower.Requires);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
         void btnCSVImport_Click(object sender, EventArgs e)
-
         {
             string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
             if (!(str != ""))
                 return;
             if (new PowerData(str.Replace("\t", ",")).IsValid)
             {
-                int num = (int)Interaction.MsgBox("Import successful.", MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox("Import successful.", MsgBoxStyle.OkOnly, null);
                 this.refresh_PowerData();
             }
             else
             {
-                int num1 = (int)Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
             }
         }
 
         void btnFullCopy_Click(object sender, EventArgs e)
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
             MemoryStream memoryStream = new MemoryStream();
-            BinaryWriter writer = new BinaryWriter((Stream)memoryStream);
+            BinaryWriter writer = new BinaryWriter(memoryStream);
             this.myPower.StoreTo(ref writer);
             writer.Close();
             Clipboard.SetDataObject(new DataObject(format.Name, memoryStream.GetBuffer()));
@@ -1141,20 +78,19 @@ namespace Hero_Designer
         }
 
         void btnFullPaste_Click(object sender, EventArgs e)
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
             string groupName = this.myPower.GroupName;
             string setName = this.myPower.SetName;
             if (!Clipboard.ContainsData(format.Name))
             {
-                int num = (int)Interaction.MsgBox("No power data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
+                Interaction.MsgBox("No power data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
             }
             else
             {
                 MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name));
-                BinaryReader reader = new BinaryReader((Stream)memoryStream);
-                this.myPower = (IPower)new Power(reader);
+                BinaryReader reader = new BinaryReader(memoryStream);
+                this.myPower = new Power(reader);
                 this.myPower.GroupName = groupName;
                 this.myPower.SetName = setName;
                 this.SetFullName();
@@ -1165,7 +101,6 @@ namespace Hero_Designer
         }
 
         void btnFXAdd_Click(object sender, EventArgs e)
-
         {
             IEffect iFX = new Effect();
             frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
@@ -1173,7 +108,7 @@ namespace Hero_Designer
                 return;
             IPower power1 = this.myPower;
             IPower power2 = power1;
-            IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power2.Effects, (Array)new IEffect[power1.Effects.Length + 1]);
+            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
             power2.Effects = effectArray;
             power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
             this.RefreshFXData(0);
@@ -1181,7 +116,6 @@ namespace Hero_Designer
         }
 
         void btnFXDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1190,8 +124,8 @@ namespace Hero_Designer
             {
                 IEffect[] effectArray = new IEffect[2]
                 {
-          (IEffect) this.myPower.Effects[selectedIndex].Clone(),
-          (IEffect) this.myPower.Effects[selectedIndex + 1].Clone()
+                      (IEffect) this.myPower.Effects[selectedIndex].Clone(),
+                      (IEffect) this.myPower.Effects[selectedIndex + 1].Clone()
                 };
                 this.myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
                 this.myPower.Effects[selectedIndex + 1] = (IEffect)effectArray[0].Clone();
@@ -1201,7 +135,6 @@ namespace Hero_Designer
         }
 
         void btnFXDuplicate_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1220,7 +153,6 @@ namespace Hero_Designer
         }
 
         void btnFXEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1236,7 +168,6 @@ namespace Hero_Designer
         }
 
         void btnFXRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndex < 0)
                 return;
@@ -1264,7 +195,6 @@ namespace Hero_Designer
         }
 
         void btnFXUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1282,7 +212,6 @@ namespace Hero_Designer
         }
 
         void btnMutexAdd_Click(object sender, EventArgs e)
-
         {
             string b = Interaction.InputBox("Please enter a new group name. It must be different to all the others", "Add Mutex Group", "New_Group", -1, -1).Replace(" ", "_");
             int count = this.clbMutex.Items.Count;
@@ -1291,7 +220,7 @@ namespace Hero_Designer
                 return;
             if (string.Equals(this.clbMutex.Items[index].ToString(), b, StringComparison.OrdinalIgnoreCase))
             {
-                int num = (int)Interaction.MsgBox(("'" + b + "' is not unique!"), MsgBoxStyle.Information, "Unable to add");
+                Interaction.MsgBox(("'" + b + "' is not unique!"), MsgBoxStyle.Information, "Unable to add");
             }
             else
             {
@@ -1301,17 +230,16 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             IPower power = this.myPower;
             this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
             if (power.GroupName == "" | power.SetName == "" | power.PowerName == "")
             {
-                int num1 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
+                Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
-            else if (!frmEditPower.PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
+            else if (!PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
             {
-                int num2 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
+                Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else
             {
@@ -1331,8 +259,8 @@ namespace Hero_Designer
                 }
                 this.myPower.GroupMembership = new string[this.clbMutex.CheckedItems.Count - 1 + 1];
                 this.myPower.NGroupMembership = new int[this.clbMutex.CheckedItems.Count - 1 + 1];
-                int num3 = this.clbMutex.CheckedItems.Count - 1;
-                for (int index = 0; index <= num3; ++index)
+                int checkedMutexCount = this.clbMutex.CheckedItems.Count - 1;
+                for (int index = 0; index <= checkedMutexCount; ++index)
                 {
                     this.myPower.GroupMembership[index] = Conversions.ToString(this.clbMutex.CheckedItems[index]);
                     this.myPower.NGroupMembership[index] = this.clbMutex.CheckedIndices[index];
@@ -1343,7 +271,6 @@ namespace Hero_Designer
         }
 
         void btnPrDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1389,14 +316,12 @@ namespace Hero_Designer
         }
 
         void btnPrReset_Click(object sender, EventArgs e)
-
         {
             this.myPower.Requires = new Requirement(this.backup_Requires);
             this.FillTab_Req();
         }
 
         void btnPrSetNone_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1416,7 +341,6 @@ namespace Hero_Designer
         }
 
         void btnPrUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1461,7 +385,6 @@ namespace Hero_Designer
         }
 
         void btnSPAdd_Click(object sender, EventArgs e)
-
         {
             if (this.lvSPPower.SelectedItems.Count < 1)
                 return;
@@ -1482,15 +405,14 @@ namespace Hero_Designer
         }
 
         void btnSPRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvSPSelected.SelectedItems.Count < 1)
                 return;
             string text = this.lvSPSelected.SelectedItems[0].Text;
             string[] strArray = new string[this.myPower.UIDSubPower.Length - 2 + 1];
             int index1 = 0;
-            int num1 = this.myPower.UIDSubPower.Length - 1;
-            for (int index2 = 0; index2 <= num1; ++index2)
+            int subPowerCount = this.myPower.UIDSubPower.Length - 1;
+            for (int index2 = 0; index2 <= subPowerCount; ++index2)
             {
                 if (!string.Equals(this.myPower.UIDSubPower[index2], text, StringComparison.OrdinalIgnoreCase))
                 {
@@ -1499,7 +421,7 @@ namespace Hero_Designer
                 }
             }
             this.myPower.UIDSubPower = new string[strArray.Length - 1 + 1];
-            Array.Copy((Array)strArray, (Array)this.myPower.UIDSubPower, strArray.Length);
+            Array.Copy(strArray, myPower.UIDSubPower, strArray.Length);
             this.SPFillList();
             int num2 = index1 - 1;
             if (num2 > this.lvSPSelected.Items.Count - 1)
@@ -1517,7 +439,6 @@ namespace Hero_Designer
         }
 
         void cbEffectArea_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1525,7 +446,6 @@ namespace Hero_Designer
         }
 
         void cbForcedClass_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1534,7 +454,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1542,7 +461,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1551,7 +469,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1560,7 +477,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1568,7 +484,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1577,7 +492,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1586,7 +500,6 @@ namespace Hero_Designer
         }
 
         void cbNotify_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1594,7 +507,6 @@ namespace Hero_Designer
         }
 
         void cbPowerType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1616,7 +528,6 @@ namespace Hero_Designer
         }
 
         void chkAltSub_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1624,7 +535,6 @@ namespace Hero_Designer
         }
 
         void chkAlwaysToggle_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1632,7 +542,6 @@ namespace Hero_Designer
         }
 
         void chkBoostBoostable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1640,7 +549,6 @@ namespace Hero_Designer
         }
 
         void chkBoostUsePlayerLevel_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1648,7 +556,6 @@ namespace Hero_Designer
         }
 
         void chkBuffCycle_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1656,7 +563,6 @@ namespace Hero_Designer
         }
 
         void chkGraphFix_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1664,7 +570,6 @@ namespace Hero_Designer
         }
 
         void chkHidden_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1672,7 +577,6 @@ namespace Hero_Designer
         }
 
         void chkIgnoreStrength_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1680,7 +584,6 @@ namespace Hero_Designer
         }
 
         void chkLos_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1688,7 +591,6 @@ namespace Hero_Designer
         }
 
         void chkMutexAuto_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1696,7 +598,6 @@ namespace Hero_Designer
         }
 
         void chkMutexSkip_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1704,7 +605,6 @@ namespace Hero_Designer
         }
 
         void chkNoAUReq_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1712,7 +612,6 @@ namespace Hero_Designer
         }
 
         void chkNoAutoUpdate_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1720,7 +619,6 @@ namespace Hero_Designer
         }
 
         void chkPRFrontLoad_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1728,7 +626,6 @@ namespace Hero_Designer
         }
 
         void chkScale_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1744,7 +641,6 @@ namespace Hero_Designer
         }
 
         void chkSortOverride_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1752,7 +648,6 @@ namespace Hero_Designer
         }
 
         void chkSubInclude_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1760,7 +655,6 @@ namespace Hero_Designer
         }
 
         void chkSummonDisplayEntity_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1768,7 +662,6 @@ namespace Hero_Designer
         }
 
         void chkSummonStealAttributes_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1776,7 +669,6 @@ namespace Hero_Designer
         }
 
         void chkSummonStealEffects_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1784,7 +676,6 @@ namespace Hero_Designer
         }
 
         void clbFlags_ItemCheck(object sender, ItemCheckEventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1844,7 +735,6 @@ namespace Hero_Designer
         }
 
         void DisplayNameData()
-
         {
             IPower power = this.myPower;
             this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
@@ -1895,32 +785,31 @@ namespace Hero_Designer
                         s = "";
                         break;
                 }
-                RectangleF layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
+                RectangleF layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
-                layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush2, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
+                layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush2, layoutRectangle, format);
                 enhPadding2 += 30 + this.enhPadding;
             }
-            this.pbInvSetUsed.CreateGraphics().DrawImageUnscaled((Image)this.bxSet.Bitmap, 0, 0);
+            this.pbInvSetUsed.CreateGraphics().DrawImageUnscaled(bxSet.Bitmap, 0, 0);
         }
 
         void DrawSetList()
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             this.bxSetList = new ExtendedBitmap(this.pbInvSetList.Width, this.pbInvSetList.Height);
@@ -1965,25 +854,25 @@ namespace Hero_Designer
                         s = "";
                         break;
                 }
-                RectangleF layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
+                RectangleF layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
-                layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush2, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
+                layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush2, layoutRectangle, format);
                 enhPadding2 += 30 + this.enhPadding;
                 ++num1;
                 if (num1 == this.enhAcross)
@@ -1993,11 +882,10 @@ namespace Hero_Designer
                     enhPadding1 += 30 + this.enhPadding;
                 }
             }
-            this.pbInvSetList.CreateGraphics().DrawImageUnscaled((Image)this.bxSetList.Bitmap, 0, 0);
+            this.pbInvSetList.CreateGraphics().DrawImageUnscaled(bxSetList.Bitmap, 0, 0);
         }
 
         void FillAdvAtrList()
-
         {
             int num1 = 0;
             System.Type type = this.myPower.EntitiesAutoHit.GetType();
@@ -2067,7 +955,6 @@ namespace Hero_Designer
         }
 
         void FillCombo_Attribs()
-
         {
             Enums.ePowerType ePowerType = Enums.ePowerType.Click;
             bool updating = this.Updating;
@@ -2092,13 +979,12 @@ namespace Hero_Designer
         }
 
         void FillCombo_Basic()
-
         {
             bool updating = this.Updating;
             this.Updating = true;
             this.cbNameGroup.BeginUpdate();
             this.cbNameGroup.Items.Clear();
-            foreach (object key in (IEnumerable<string>)DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
                 this.cbNameGroup.Items.Add(key);
             this.cbNameGroup.EndUpdate();
             this.cbNameSet.BeginUpdate();
@@ -2119,21 +1005,19 @@ namespace Hero_Designer
         }
 
         void FillComboBoxes()
-
         {
             Enums.eEnhance eEnhance = Enums.eEnhance.X_RechargeTime;
             this.lvDisablePass1.BeginUpdate();
             this.lvDisablePass1.Items.Clear();
-            this.lvDisablePass1.Items.AddRange((object[])Enum.GetNames(eEnhance.GetType()));
+            this.lvDisablePass1.Items.AddRange(Enum.GetNames(eEnhance.GetType()));
             this.lvDisablePass1.EndUpdate();
             this.lvDisablePass4.BeginUpdate();
             this.lvDisablePass4.Items.Clear();
-            this.lvDisablePass4.Items.AddRange((object[])Enum.GetNames(eEnhance.GetType()));
+            this.lvDisablePass4.Items.AddRange(Enum.GetNames(eEnhance.GetType()));
             this.lvDisablePass4.EndUpdate();
         }
 
         void FillTab_Attribs()
-
         {
             IPower power = this.myPower;
             string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###";
@@ -2163,7 +1047,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Basic()
-
         {
             IPower power = this.myPower;
             this.txtNameDisplay.Text = power.DisplayName;
@@ -2173,8 +1056,8 @@ namespace Hero_Designer
             this.DisplayNameData();
             this.txtDescLong.Text = power.DescLong;
             this.txtDescShort.Text = power.DescShort;
-            this.udScaleMin.Value = new Decimal(power.VariableMin);
-            this.udScaleMax.Value = new Decimal(power.VariableMax);
+            this.udScaleMin.Value = new decimal(power.VariableMin);
+            this.udScaleMax.Value = new decimal(power.VariableMax);
             this.txtScaleName.Text = power.VariableName;
             this.chkScale.Checked = power.VariableEnabled;
             this.chkBuffCycle.Checked = power.ClickBuff;
@@ -2195,7 +1078,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Disabling()
-
         {
             int num1 = this.myPower.IgnoreEnh.Length - 1;
             for (int index = 0; index <= num1; ++index)
@@ -2212,13 +1094,11 @@ namespace Hero_Designer
         }
 
         void FillTab_Effects()
-
         {
             this.RefreshFXData(0);
         }
 
         void FillTab_Enhancements()
-
         {
             this.RedrawEnhList();
             this.chkPRFrontLoad.Checked = this.myPower.AllowFrontLoading;
@@ -2227,7 +1107,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Mutex()
-
         {
             this.chkMutexAuto.Checked = this.myPower.MutexAuto;
             this.chkMutexSkip.Checked = this.myPower.MutexIgnore;
@@ -2253,7 +1132,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Req()
-
         {
             this.ReqChanging = true;
             this.lvPrListing.BeginUpdate();
@@ -2302,7 +1180,6 @@ namespace Hero_Designer
         }
 
         void Filltab_ReqClasses()
-
         {
             this.clbClassReq.BeginUpdate();
             this.clbClassReq.Items.Clear();
@@ -2337,13 +1214,11 @@ namespace Hero_Designer
         }
 
         void FillTab_Sets()
-
         {
             this.DrawAcceptedSets();
         }
 
         void FillTab_SubPowers()
-
         {
             bool reqChanging = this.ReqChanging;
             this.ReqChanging = true;
@@ -2359,7 +1234,6 @@ namespace Hero_Designer
         }
 
         void frmEditPower_Load(object sender, EventArgs e)
-
         {
             this.RedrawEnhPicker();
             this.FillComboBoxes();
@@ -2371,7 +1245,6 @@ namespace Hero_Designer
         }
 
         static int GetClassByID(int iID)
-
         {
             int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
             for (int index = 0; index <= num; ++index)
@@ -2383,7 +1256,6 @@ namespace Hero_Designer
         }
 
         int GetInvSetIndex(Point e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2407,7 +1279,6 @@ namespace Hero_Designer
         }
 
         int GetInvSetListIndex(Point e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2428,10 +1299,7 @@ namespace Hero_Designer
             return num1 + num2 * this.enhAcross;
         }
 
-        [DebuggerStepThrough]
-
         void lblStaticIndex_Click(object sender, EventArgs e)
-
         {
             string s = Interaction.InputBox("Insert new static index for this power.", "", Conversions.ToString(this.myPower.StaticIndex), -1, -1);
             try
@@ -2439,7 +1307,7 @@ namespace Hero_Designer
                 int num1 = int.Parse(s);
                 if (num1 < 0)
                 {
-                    int num2 = (int)Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
+                    Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
                 }
                 else
                 {
@@ -2450,13 +1318,12 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
             }
         }
 
         void lvDisablePass1_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2468,7 +1335,6 @@ namespace Hero_Designer
         }
 
         void lvDisablePass4_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2480,18 +1346,11 @@ namespace Hero_Designer
         }
 
         void lvFX_DoubleClick(object sender, EventArgs e)
-
         {
             this.btnFXEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        void lvFX_KeyPress(object sender, KeyPressEventArgs e)
-
-        {
-        }
-
         void lvPrGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvPrGroup.SelectedItems.Count <= 0)
                 return;
@@ -2501,13 +1360,11 @@ namespace Hero_Designer
         }
 
         void lvPrListing_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.Req_Listing_IndexChanged();
         }
 
         void lvPrPower_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging)
                 return;
@@ -2515,7 +1372,6 @@ namespace Hero_Designer
         }
 
         void lvPrSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvPrSet.SelectedItems.Count <= 0)
                 return;
@@ -2523,7 +1379,6 @@ namespace Hero_Designer
         }
 
         void lvSPGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvSPGroup.SelectedItems.Count <= 0)
                 return;
@@ -2532,13 +1387,7 @@ namespace Hero_Designer
                 this.lvSPSet.Items[0].Selected = true;
         }
 
-        void lvSPPower_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-        }
-
         void lvSPSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvSPSet.SelectedItems.Count <= 0)
                 return;
@@ -2546,7 +1395,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_Hover(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2572,7 +1420,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_MouseDown(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2612,7 +1459,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxEnhPicker == null)
                 return;
@@ -2620,7 +1466,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_Hover(object sender, MouseEventArgs e)
-
         {
             int num = -1;
             int length = this.myPower.Enhancements.Length;
@@ -2637,7 +1482,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_MouseDown(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int length = this.myPower.Enhancements.Length;
@@ -2670,7 +1514,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxEnhPicked == null)
                 return;
@@ -2678,7 +1521,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_MouseDown(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2704,7 +1546,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2716,15 +1557,13 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxSetList == null)
                 return;
-            e.Graphics.DrawImageUnscaled((Image)this.bxSetList.Bitmap, 0, 0);
+            e.Graphics.DrawImageUnscaled(bxSetList.Bitmap, 0, 0);
         }
 
         void pbInvSetUsed_MouseDown(object sender, MouseEventArgs e)
-
         {
             int invSetIndex = this.GetInvSetIndex(new System.Drawing.Point(e.X, e.Y));
             if (!(invSetIndex < this.myPower.SetTypes.Length & invSetIndex > -1))
@@ -2749,7 +1588,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetUsed_MouseMove(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetIndex = this.GetInvSetIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2761,7 +1599,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetUsed_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxSet == null)
                 return;
@@ -2769,7 +1606,6 @@ namespace Hero_Designer
         }
 
         static bool PowerFullNameIsUnique(string iFullName, int skipId = -1)
-
         {
             if (!string.IsNullOrEmpty(iFullName))
             {
@@ -2784,7 +1620,6 @@ namespace Hero_Designer
         }
 
         void rbFlagX_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2792,7 +1627,6 @@ namespace Hero_Designer
         }
 
         void rbPrAdd_Click(object sender, EventArgs e)
-
         {
             if (Interaction.MsgBox("If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, "Query") == MsgBoxResult.No)
             {
@@ -2817,7 +1651,6 @@ namespace Hero_Designer
         }
 
         void rbPrPowerX_CheckedChanged(object sender, EventArgs e)
-
         {
             if (sender.GetType() == this.rbPrPowerB.GetType() && ((Control)sender).Text == "Power B")
                 return;
@@ -2829,7 +1662,6 @@ namespace Hero_Designer
         }
 
         void rbPrRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -2891,7 +1723,6 @@ namespace Hero_Designer
         }
 
         void RedrawEnhList()
-
         {
             this.bxEnhPicked = new ExtendedBitmap(this.pbEnhancements.Width, this.pbEnhancements.Height);
             int enhPadding1 = this.enhPadding;
@@ -2915,7 +1746,6 @@ namespace Hero_Designer
         }
 
         void RedrawEnhPicker()
-
         {
             this.pbEnhancementList.Width = (this.enhPadding + 30) * this.enhAcross + this.enhPadding;
             this.pbEnhancementList.Height = (this.enhPadding + 30) * 6 + this.enhPadding;
@@ -2949,7 +1779,6 @@ namespace Hero_Designer
         }
 
         void refresh_PowerData()
-
         {
             this.Text = "Edit Power (" + this.myPower.FullName + ")";
             this.lblStaticIndex.Text = Conversions.ToString(this.myPower.StaticIndex);
@@ -2968,7 +1797,6 @@ namespace Hero_Designer
         }
 
         void RefreshFXData(int Index = 0)
-
         {
             IPower power = this.myPower;
             this.lvFX.BeginUpdate();
@@ -2984,7 +1812,6 @@ namespace Hero_Designer
         }
 
         void Req_GroupList()
-
         {
             this.lvPrGroup.BeginUpdate();
             this.lvPrGroup.Items.Clear();
@@ -2994,7 +1821,6 @@ namespace Hero_Designer
         }
 
         void Req_Listing_IndexChanged()
-
         {
             if (this.lvPrListing.SelectedIndices.Count < 1)
                 return;
@@ -3003,7 +1829,6 @@ namespace Hero_Designer
         }
 
         void Req_PowerList()
-
         {
             this.lvPrPower.BeginUpdate();
             this.lvPrPower.Items.Clear();
@@ -3028,7 +1853,6 @@ namespace Hero_Designer
         }
 
         void Req_SetList()
-
         {
             this.lvPrSet.BeginUpdate();
             this.lvPrSet.Items.Clear();
@@ -3050,7 +1874,6 @@ namespace Hero_Designer
         }
 
         void Req_UpdateItem()
-
         {
             if (this.lvPrListing.SelectedIndices.Count < 1 | this.lvPrGroup.SelectedIndices.Count < 1 | this.lvPrSet.SelectedIndices.Count < 1 | this.lvPrPower.SelectedIndices.Count < 1)
                 return;
@@ -3082,7 +1905,6 @@ namespace Hero_Designer
         }
 
         void ReqDisplayPower(string iPower)
-
         {
             this.ReqChanging = true;
             string[] strArray = iPower.Split(".".ToCharArray());
@@ -3131,7 +1953,6 @@ namespace Hero_Designer
         }
 
         void SetDynamics()
-
         {
             IPower power = this.myPower;
             this.chkBuffCycle.Enabled = power.PowerType == Enums.ePowerType.Click;
@@ -3144,14 +1965,12 @@ namespace Hero_Designer
         }
 
         void SetFullName()
-
         {
             IPower power = this.myPower;
             power.FullName = power.GroupName + "." + power.SetName + "." + power.PowerName;
         }
 
         void SP_GroupList()
-
         {
             this.lvSPGroup.BeginUpdate();
             this.lvSPGroup.Items.Clear();
@@ -3161,7 +1980,6 @@ namespace Hero_Designer
         }
 
         void SP_PowerList()
-
         {
             this.lvSPPower.BeginUpdate();
             this.lvSPPower.Items.Clear();
@@ -3189,7 +2007,6 @@ namespace Hero_Designer
         }
 
         void SP_SetList()
-
         {
             this.lvSPSet.BeginUpdate();
             this.lvSPSet.Items.Clear();
@@ -3211,7 +2028,6 @@ namespace Hero_Designer
         }
 
         void SPFillList()
-
         {
             this.lvSPSelected.BeginUpdate();
             this.lvSPSelected.Items.Clear();
@@ -3222,7 +2038,6 @@ namespace Hero_Designer
         }
 
         void Store_Req_Classes()
-
         {
             this.myPower.Requires.ClassName = new string[this.clbClassReq.CheckedIndices.Count - 1 + 1];
             int num1 = this.clbClassReq.CheckedIndices.Count - 1;
@@ -3235,7 +2050,6 @@ namespace Hero_Designer
         }
 
         void txtAcc_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3243,7 +2057,6 @@ namespace Hero_Designer
         }
 
         void txtAcc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3254,7 +2067,6 @@ namespace Hero_Designer
         }
 
         void txtActivate_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3262,7 +2074,6 @@ namespace Hero_Designer
         }
 
         void txtActivate_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3273,7 +2084,6 @@ namespace Hero_Designer
         }
 
         void txtArc_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3281,7 +2091,6 @@ namespace Hero_Designer
         }
 
         void txtArc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3292,7 +2101,6 @@ namespace Hero_Designer
         }
 
         void txtCastTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3300,7 +2108,6 @@ namespace Hero_Designer
         }
 
         void txtCastTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3311,7 +2118,6 @@ namespace Hero_Designer
         }
 
         void txtDescLong_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3319,7 +2125,6 @@ namespace Hero_Designer
         }
 
         void txtDescShort_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3327,7 +2132,6 @@ namespace Hero_Designer
         }
 
         void txtEndCost_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3335,7 +2139,6 @@ namespace Hero_Designer
         }
 
         void txtEndCost_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3346,7 +2149,6 @@ namespace Hero_Designer
         }
 
         void txtInterrupt_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3354,7 +2156,6 @@ namespace Hero_Designer
         }
 
         void txtInterrupt_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3365,7 +2166,6 @@ namespace Hero_Designer
         }
 
         void txtLevel_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3373,7 +2173,6 @@ namespace Hero_Designer
         }
 
         void txtLevel_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3384,7 +2183,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeGame_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3392,7 +2190,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeGame_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3403,7 +2200,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeReal_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3411,7 +2207,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeReal_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3422,7 +2217,6 @@ namespace Hero_Designer
         }
 
         void txtMaxTargets_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3430,7 +2224,6 @@ namespace Hero_Designer
         }
 
         void txtMaxTargets_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3441,7 +2234,6 @@ namespace Hero_Designer
         }
 
         void txtNamePower_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3449,7 +2241,6 @@ namespace Hero_Designer
         }
 
         void txtNamePower_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3458,7 +2249,6 @@ namespace Hero_Designer
         }
 
         void txtNumCharges_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3466,7 +2256,6 @@ namespace Hero_Designer
         }
 
         void txtNumCharges_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3477,7 +2266,6 @@ namespace Hero_Designer
         }
 
         void txtPowerName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3485,7 +2273,6 @@ namespace Hero_Designer
         }
 
         void txtRadius_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3493,7 +2280,6 @@ namespace Hero_Designer
         }
 
         void txtRadius_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3504,7 +2290,6 @@ namespace Hero_Designer
         }
 
         void txtRange_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3512,7 +2297,6 @@ namespace Hero_Designer
         }
 
         void txtRange_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3523,7 +2307,6 @@ namespace Hero_Designer
         }
 
         void txtRangeSec_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3531,7 +2314,6 @@ namespace Hero_Designer
         }
 
         void txtRangeSec_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3542,7 +2324,6 @@ namespace Hero_Designer
         }
 
         void txtRechargeTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3550,7 +2331,6 @@ namespace Hero_Designer
         }
 
         void txtRechargeTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3561,7 +2341,6 @@ namespace Hero_Designer
         }
 
         void txtScaleName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3569,7 +2348,6 @@ namespace Hero_Designer
         }
 
         void txtUseageTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3577,7 +2355,6 @@ namespace Hero_Designer
         }
 
         void txtUseageTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3588,7 +2365,6 @@ namespace Hero_Designer
         }
 
         void txtVisualLocation_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3596,7 +2372,6 @@ namespace Hero_Designer
         }
 
         void txtVisualLocation_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3607,40 +2382,34 @@ namespace Hero_Designer
         }
 
         void udScaleMax_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             this.CheckScaleValues();
         }
 
         void udScaleMax_Leave(object sender, EventArgs e)
-
         {
             this.myPower.VariableMax = (int)Math.Round(Conversion.Val(this.udScaleMax.Text));
             this.CheckScaleValues();
         }
 
         void udScaleMax_ValueChanged(object sender, EventArgs e)
-
         {
             this.myPower.VariableMax = Convert.ToInt32(this.udScaleMax.Value);
             this.CheckScaleValues();
         }
 
         void udScaleMin_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             this.CheckScaleValues();
         }
 
         void udScaleMin_Leave(object sender, EventArgs e)
-
         {
             this.myPower.VariableMin = (int)Math.Round(Conversion.Val(this.udScaleMin.Text));
             this.CheckScaleValues();
         }
 
         void udScaleMin_ValueChanged(object sender, EventArgs e)
-
         {
             this.myPower.VariableMin = Convert.ToInt32(this.udScaleMin.Value);
             this.CheckScaleValues();

@@ -58,7 +58,20 @@ namespace Hero_Designer.My
         [DebuggerStepThrough]
         protected override void OnCreateMainForm()
         {
-            this.MainForm = (Form)MyProject.Forms.frmMain;
+            try
+            {
+                this.MainForm = (Form)MyProject.Forms.frmMain;
+            }
+            catch(Exception ex)
+            {
+                var exTarget = ex;
+                while(exTarget.InnerException != null)
+                {
+                    exTarget = ex.InnerException;
+                }
+                MessageBox.Show(exTarget.Message, exTarget.GetType().Name);
+                throw;
+            }
         }
     }
 }

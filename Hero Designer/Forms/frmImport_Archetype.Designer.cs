@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Archetype));
             this.Label8 = new System.Windows.Forms.Label();
             this.lblATCount = new System.Windows.Forms.Label();
             this.lblATDate = new System.Windows.Forms.Label();
@@ -110,6 +109,7 @@ namespace Hero_Designer
             this.btnATFile.TabIndex = 19;
             this.btnATFile.Text = "Load / Re-Load";
             this.btnATFile.UseVisualStyleBackColor = true;
+            this.btnATFile.Click += btnATFile_Click;
             this.lstImport.CheckBoxes = true;
             this.lstImport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[6]
             {
@@ -146,6 +146,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 27;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += btnImport_Click;
 
             this.btnClose.Location = new System.Drawing.Point(618, 363);
             this.btnClose.Name = "btnClose";
@@ -154,6 +155,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 28;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += btnClose_Click;
             this.ColumnHeader6.Text = "Change Description";
             this.ColumnHeader6.Width = 98;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -171,24 +173,32 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.btnATFile);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmImport_Archetype);
             this.ShowInTaskbar = false;
             this.Text = "Archetype Class Import";
             this.udATRevision.EndInit();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnATFile.Click += btnATFile_Click;
-                this.btnClose.Click += btnClose_Click;
-                this.btnImport.Click += btnImport_Click;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
 
         #endregion
+
+        System.Windows.Forms.Button btnATFile;
+        System.Windows.Forms.Button btnClose;
+        System.Windows.Forms.Button btnImport;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.ColumnHeader ColumnHeader6;
+        System.Windows.Forms.OpenFileDialog dlgBrowse;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label lblATCount;
+        System.Windows.Forms.Label lblATDate;
+        System.Windows.Forms.Label lblATFile;
+        System.Windows.Forms.ListView lstImport;
+        System.Windows.Forms.NumericUpDown udATRevision;
     }
 }

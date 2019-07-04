@@ -14,179 +14,6 @@ namespace Hero_Designer
 {
     public partial class frmCalcOpt : Form
     {
-        Button btnBaseReset;
-
-        Button btnCancel;
-
-        Button btnFontColour;
-
-        Button btnIOReset;
-
-        Button btnOK;
-
-        Button btnSaveFolder;
-
-        Button btnSaveFolderReset;
-
-        ComboBox cbEnhLevel;
-        CheckBox chkColorInherent;
-        CheckBox chkColourPrint;
-        CheckBox chkHighVis;
-        CheckBox chkIOEffects;
-        CheckBox chkIOLevel;
-        CheckBox chkIOPrintLevels;
-        CheckBox chkLoadLastFile;
-        CheckBox chkMiddle;
-        CheckBox chkNoTips;
-        CheckBox chkRelSignOnly;
-        CheckBox chkSetBonus;
-        CheckBox chkShowAlphaPopup;
-        CheckBox chkStatBold;
-        CheckBox chkTextBold;
-        CheckBox chkUpdates;
-        CheckBox chkUseArcanaTime;
-        CheckBox chkVillainColour;
-
-        CheckedListBox clbSuppression;
-
-        ComboBox cmbAction;
-        ColorDialog cPicker;
-
-        Button csAdd;
-
-        Button csBtnEdit;
-
-        Button csDelete;
-
-        ListBox csList;
-
-        Button csReset;
-        FolderBrowserDialog fbdSave;
-
-        Button fcAdd;
-
-        TextBox fcBoldOff;
-
-        TextBox fcBoldOn;
-
-        TextBox fcColorOff;
-
-        TextBox fcColorOn;
-
-        Button fcDelete;
-
-        TextBox fcItalicOff;
-
-        TextBox fcItalicOn;
-
-        ListBox fcList;
-        TextBox fcName;
-
-        TextBox fcNotes;
-
-        Button fcReset;
-
-        Button fcSet;
-
-        TextBox fcTextOff;
-
-        TextBox fcTextOn;
-
-        TextBox fcUnderlineOff;
-
-        TextBox fcUnderlineOn;
-
-        RadioButton fcWSSpace;
-
-        RadioButton fcWSTab;
-        GroupBox GroupBox1;
-        GroupBox GroupBox10;
-        GroupBox GroupBox11;
-        GroupBox GroupBox12;
-        GroupBox GroupBox13;
-        GroupBox GroupBox14;
-        GroupBox GroupBox15;
-        GroupBox GroupBox16;
-        GroupBox GroupBox17;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-        GroupBox GroupBox6;
-        GroupBox GroupBox7;
-        GroupBox GroupBox8;
-        GroupBox GroupBox9;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label12;
-        Label Label13;
-        Label Label14;
-        Label Label15;
-        Label Label16;
-        Label Label19;
-        Label Label2;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label24;
-        Label Label25;
-        Label Label26;
-        Label Label27;
-        Label Label28;
-        Label Label29;
-        Label Label3;
-        Label Label30;
-        Label Label31;
-        Label Label32;
-        Label Label33;
-        Label Label34;
-        Label Label36;
-        Label Label37;
-        Label Label38;
-        Label Label4;
-        Label Label40;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lblExample;
-        Label lblSaveFolder;
-
-        ListBox listScenarios;
-        ToolTip myTip;
-
-        RadioButton optDO;
-        Label optEnh;
-
-        RadioButton optSO;
-
-        RadioButton optTO;
-        RadioButton rbChanceAverage;
-        RadioButton rbChanceIgnore;
-        RadioButton rbChanceMax;
-        RadioButton rbGraphSimple;
-        RadioButton rbGraphStacked;
-        RadioButton rbGraphTwoLine;
-        RadioButton rbPvE;
-        RadioButton rbPvP;
-        TabControl TabControl1;
-        TabPage TabPage1;
-        TabPage TabPage2;
-        TabPage TabPage3;
-        TabPage TabPage4;
-        TabPage TabPage5;
-        TabPage TabPage6;
-        NumericUpDown TeamSize;
-        TextBox txtUpdatePath;
-        NumericUpDown udBaseToHit;
-        NumericUpDown udExHigh;
-        NumericUpDown udExLow;
-        NumericUpDown udForceLevel;
-        NumericUpDown udIOLevel;
-        NumericUpDown udRTFSize;
-        NumericUpDown udStatSize;
 
         short[] defActs;
 
@@ -205,17 +32,25 @@ namespace Hero_Designer
             this.scenActs = new string[20][];
             this.defActs = new short[20];
             this.InitializeComponent();
+            this.Name = nameof(frmCalcOpt);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCalcOpt));
+            this.optTO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optTO.Image");
+            this.optDO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optDO.Image");
+            this.optSO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optSO.Image");
+            this.Label9.Text = componentResourceManager.GetString("Label9.Text");
+            this.Label5.Text = componentResourceManager.GetString("Label5.Text");
+            this.myTip.SetToolTip((System.Windows.Forms.Control)this.udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
+            this.Label15.Text = componentResourceManager.GetString("Label15.Text");
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
         }
 
         void btnBaseReset_Click(object sender, EventArgs e)
-
         {
             this.udBaseToHit.Value = new Decimal(75);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
@@ -228,7 +63,6 @@ namespace Hero_Designer
         }
 
         void btnIOReset_Click(object sender, EventArgs e)
-
         {
             if (MidsContext.Character == null)
                 return;
@@ -238,7 +72,6 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.OK;
             this.StoreControls();
@@ -247,7 +80,6 @@ namespace Hero_Designer
         }
 
         void btnSaveFolder_Click(object sender, EventArgs e)
-
         {
             this.fbdSave.SelectedPath = this.lblSaveFolder.Text;
             if (this.fbdSave.ShowDialog() != DialogResult.OK)
@@ -256,7 +88,6 @@ namespace Hero_Designer
         }
 
         void btnSaveFolderReset_Click(object sender, EventArgs e)
-
         {
             MidsContext.Config.CreateDefaultSaveFolder();
             MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
@@ -264,13 +95,11 @@ namespace Hero_Designer
         }
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
-
         {
             this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
         }
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             int[] values = (int[])Enum.GetValues(MidsContext.Config.Suppression.GetType());
             MidsContext.Config.Suppression = Enums.eSuppress.None;
@@ -280,20 +109,17 @@ namespace Hero_Designer
         }
 
         void cmbAction_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.defActs[this.listScenarios.SelectedIndex] = (short)this.cmbAction.SelectedIndex;
         }
 
         void csAdd_Click(object sender, EventArgs e)
-
         {
             MidsContext.Config.Export.AddScheme();
             this.csPopulateList(MidsContext.Config.Export.ColorSchemes.Length - 1);
         }
 
         void csBtnEdit_Click(object sender, EventArgs e)
-
         {
             if (this.csList.Items.Count <= 0)
                 return;
@@ -307,7 +133,6 @@ namespace Hero_Designer
         }
 
         void csDelete_Click(object sender, EventArgs e)
-
         {
             if (this.csList.Items.Count <= 0 || Interaction.MsgBox(("Delete " + this.csList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -316,7 +141,6 @@ namespace Hero_Designer
         }
 
         void csList_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             if (Conversions.ToString(e.KeyChar) == "[")
             {
@@ -331,7 +155,6 @@ namespace Hero_Designer
         }
 
         void csPopulateList(int HighlightID = -1)
-
         {
             this.csList.Items.Clear();
             ExportConfig export = MidsContext.Config.Export;
@@ -354,14 +177,12 @@ namespace Hero_Designer
         }
 
         void fcAdd_Click(object sender, EventArgs e)
-
         {
             MidsContext.Config.Export.AddCodes();
             this.fcPopulateList(MidsContext.Config.Export.FormatCode.Length - 1);
         }
 
         void fcBoldOff_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -369,7 +190,6 @@ namespace Hero_Designer
         }
 
         void fcBoldOn_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -377,7 +197,6 @@ namespace Hero_Designer
         }
 
         void fcColorOff_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -385,7 +204,6 @@ namespace Hero_Designer
         }
 
         void fcColorOn_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -393,7 +211,6 @@ namespace Hero_Designer
         }
 
         void fcDelete_Click(object sender, EventArgs e)
-
         {
             if (this.fcList.Items.Count <= 0 || Interaction.MsgBox(("Delete " + this.fcList.SelectedItem.ToString() + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -402,7 +219,6 @@ namespace Hero_Designer
         }
 
         void fcDisplay()
-
         {
             this.fcNoUpdate = true;
             if (this.fcList.SelectedIndex > -1)
@@ -444,7 +260,6 @@ namespace Hero_Designer
         }
 
         void fcItalicOff_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -452,7 +267,6 @@ namespace Hero_Designer
         }
 
         void fcItalicOn_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -460,7 +274,6 @@ namespace Hero_Designer
         }
 
         void fcList_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             if (Conversions.ToString(e.KeyChar) == "[")
             {
@@ -475,13 +288,11 @@ namespace Hero_Designer
         }
 
         void fcList_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.fcDisplay();
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -489,7 +300,6 @@ namespace Hero_Designer
         }
 
         void fcPopulateList(int HighlightID = -1)
-
         {
             this.fcList.Items.Clear();
             ExportConfig export = MidsContext.Config.Export;
@@ -504,7 +314,6 @@ namespace Hero_Designer
         }
 
         void fcReset_Click(object sender, EventArgs e)
-
         {
             if (Interaction.MsgBox("This will remove all of the formatting code sets and replace them with the default set. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -513,7 +322,6 @@ namespace Hero_Designer
         }
 
         void fcSet_Click(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0)
                 return;
@@ -522,7 +330,6 @@ namespace Hero_Designer
         }
 
         void fcTextOff_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -530,7 +337,6 @@ namespace Hero_Designer
         }
 
         void fcTextOn_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -538,7 +344,6 @@ namespace Hero_Designer
         }
 
         void fcUnderlineOff_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -546,7 +351,6 @@ namespace Hero_Designer
         }
 
         void fcUnderlineOn_TextChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -554,7 +358,6 @@ namespace Hero_Designer
         }
 
         void fcWSSpace_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
                 return;
@@ -630,7 +433,6 @@ namespace Hero_Designer
         }
 
         void frmCalcOpt_Closing(object sender, CancelEventArgs e)
-
         {
             if (this.DialogResult != DialogResult.Abort)
                 return;
@@ -638,17 +440,13 @@ namespace Hero_Designer
         }
 
         void frmCalcOpt_Load(object sender, EventArgs e)
-
         {
             this.setupScenarios();
             this.SetControls();
             this.csPopulateList(-1);
             this.fcPopulateList(-1);
             this.PopulateSuppression();
-            this.SetTips();
         }
-
-        [DebuggerStepThrough]
 
         void listScenarios_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -742,12 +540,7 @@ namespace Hero_Designer
             while (index <= 19);
         }
 
-        public void SetTips()
-        {
-        }
-
         void setupScenarios()
-
         {
             int index1 = 0;
             this.scenarioExample[index1] = "Swap a travel power with a power taken at level 2.";
@@ -862,11 +655,9 @@ namespace Hero_Designer
             this.scenActs[index15][0] = "Show dialog";
             this.scenActs[index15][1] = "Cancel";
             this.scenActs[index15][2] = "Allow swap anyway (mark as invalid)";
-            int num = index15 + 1;
         }
 
         void StoreControls()
-
         {
             ConfigData config = MidsContext.Config;
             if (this.optSO.Checked)
