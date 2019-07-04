@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_mod));
             this.lblAttribTableCount = new System.Windows.Forms.Label();
             this.lblAttribDate = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
@@ -97,6 +96,7 @@ namespace Hero_Designer
             this.btnAttribLoad.TabIndex = 13;
             this.btnAttribLoad.Text = "Import";
             this.btnAttribLoad.UseVisualStyleBackColor = true;
+            this.btnAttribLoad.Click += btnAttribLoad_Click;
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
 
@@ -129,6 +129,7 @@ namespace Hero_Designer
             this.btnAttribTable.TabIndex = 12;
             this.btnAttribTable.Text = "Browse";
             this.btnAttribTable.UseVisualStyleBackColor = true;
+            this.btnAttribTable.Click += btnAttribTable_Click;
 
             this.btnAttribIndex.Location = new System.Drawing.Point(539, 25);
             this.btnAttribIndex.Name = "btnAttribIndex";
@@ -137,6 +138,7 @@ namespace Hero_Designer
             this.btnAttribIndex.TabIndex = 11;
             this.btnAttribIndex.Text = "Browse...";
             this.btnAttribIndex.UseVisualStyleBackColor = true;
+            this.btnAttribIndex.Click += btnAttribIndex_Click;
 
             this.Button1.Location = new System.Drawing.Point(539, 197);
             this.Button1.Name = "Button1";
@@ -145,6 +147,7 @@ namespace Hero_Designer
             this.Button1.TabIndex = 22;
             this.Button1.Text = "Close";
             this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += Button1_Click;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
@@ -162,26 +165,28 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.btnAttribTable);
             this.Controls.Add((System.Windows.Forms.Control)this.btnAttribIndex);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmImport_mod);
             this.ShowInTaskbar = false;
             this.Text = "Modifier Table Import";
             this.udAttribRevision.EndInit();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Button1.Click += Button1_Click;
-                this.btnAttribIndex.Click += btnAttribIndex_Click;
-                this.btnAttribLoad.Click += btnAttribLoad_Click;
-                this.btnAttribTable.Click += btnAttribTable_Click;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
 
-
         #endregion
+
+        System.Windows.Forms.Button btnAttribIndex;
+        System.Windows.Forms.Button btnAttribLoad;
+        System.Windows.Forms.Button btnAttribTable;
+        System.Windows.Forms.Button Button1;
+        System.Windows.Forms.OpenFileDialog dlgBrowse;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label lblAttribDate;
+        System.Windows.Forms.Label lblAttribIndex;
+        System.Windows.Forms.Label lblAttribTableCount;
+        System.Windows.Forms.Label lblAttribTables;
+        System.Windows.Forms.NumericUpDown udAttribRevision;
     }
 }

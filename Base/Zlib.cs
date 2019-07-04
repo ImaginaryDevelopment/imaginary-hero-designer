@@ -1,8 +1,11 @@
 using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Linq;
+using System.Text;
 
 public class Zlib
 {
@@ -53,8 +56,28 @@ public class Zlib
         return Array.Empty<byte>();
     }
 
+    static bool is64BitProcess = (IntPtr.Size == 8);
+    const string ExternalCompressionName = "HeroDesigner.ZLib.exe";
     public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
     {
+        Console.WriteLine(Environment.CurrentDirectory);
+        // zlib doesn't seem to work in 64bit, try this, and fallback to trying zlib if failed
+        if (is64BitProcess && File.Exists(ExternalCompressionName))
+        {
+            var hex = HeroDesigner.ZLib.Helpers.byteArrayToHexString(iBytes);
+            var proc = Process.Start(new ProcessStartInfo(ExternalCompressionName, "uncompress " + iBytes.Length + " " + outSize + " \"" + hex + "\"")
+            {
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+            });
+            var output = proc.StandardOutput.ReadToEnd();
+            if (proc.ExitCode == 0)
+            {
+                var text = new string(output.SkipWhile(x => x != '-').SkipWhile(x => x == '-').TakeWhile(x => x != '-').ToArray()).Trim();
+                var bytes = HeroDesigner.ZLib.Helpers.hexStringToByteArray(text);
+                return bytes;
+            }
+        }
         int length = iBytes.Length;
         int destLength = outSize;
         byte[] array = new byte[destLength];
@@ -67,40 +90,6 @@ public class Zlib
         else
             return Array.Empty<byte>();
     }
-
-    public static byte[] UUEncodeBytes(byte[] iBytes)
-    {
-        if (iBytes.Length % 3 != 0)
-            Array.Resize<byte>(ref iBytes, iBytes.Length + (3 - iBytes.Length % 3));
-        MemoryStream memoryStream = new MemoryStream();
-        BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
-        for (int index = 0; index <= iBytes.Length - 1; index += 3)
-        {
-            byte iByte1 = iBytes[index];
-            byte iByte2 = iBytes[index + 1];
-            byte iByte3 = iBytes[index + 2];
-            int num1 = iByte1 / 4 + 32;
-            int num2 = iByte1 % 4 * 16 + (iByte2 / 16 + 32);
-            int num3 = iByte2 % 16 * 4 + (iByte3 / 64 + 32);
-            int num4 = iByte3 % 64 + 32;
-            if (num1 == 32)
-                num1 = 96;
-            if (num2 == 32)
-                num2 = 96;
-            if (num3 == 32)
-                num3 = 96;
-            if (num4 == 32)
-                num4 = 96;
-            binaryWriter.Write(Convert.ToByte(num1));
-            binaryWriter.Write(Convert.ToByte(num2));
-            binaryWriter.Write(Convert.ToByte(num3));
-            binaryWriter.Write(Convert.ToByte(num4));
-        }
-        binaryWriter.Close();
-        memoryStream.Close();
-        return memoryStream.ToArray();
-    }
-
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {
         byte[] numArray1;

@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmBusy));
             this.Message = new System.Windows.Forms.Label();
             this.SuspendLayout();
             this.Message.Location = new System.Drawing.Point(12, 9);
@@ -44,13 +43,11 @@ namespace Hero_Designer
 
             this.ClientSize = new System.Drawing.Size(405, 79);
             this.ControlBox = false;
-            this.Controls.Add((System.Windows.Forms.Control)this.Message);
+            this.Controls.Add(this.Message);
             this.Font = new System.Drawing.Font("Arial", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmBusy);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

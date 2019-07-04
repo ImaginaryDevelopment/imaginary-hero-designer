@@ -1687,7 +1687,7 @@ namespace Hero_Designer
                 if (this.fSets == null)
                 {
                     frmMain iParent = this;
-                    this.fSets = new frmSetViewer(ref iParent);
+                    this.fSets = new frmSetViewer(iParent);
                 }
                 this.fSets.SetLocation();
                 this.fSets.Show();
@@ -2077,7 +2077,7 @@ namespace Hero_Designer
 
         void frmMain_MouseWheel(object sender, MouseEventArgs e)
         {
-            this.dvAnchored.info_txtLarge.Focus();
+            this.dvAnchored.Info_txtLarge.Focus();
         }
 
         void frmMain_Resize(object sender, EventArgs e)
@@ -2147,8 +2147,8 @@ namespace Hero_Designer
             float num5 = num1 * (1f + MidsContext.Character.TotalsCapped.BuffDam + Enhancement.ApplyED(Enums.eSchedule.A, 2.277f));
             if (MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPS | MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPA)
                 num5 *= 1.5f;
-            this.myDataView.info_Damage.nHighBase = num4;
-            this.myDataView.info_Damage.nHighEnh = num5;
+            this.myDataView.Info_Damage.nHighBase = num4;
+            this.myDataView.Info_Damage.nHighEnh = num5;
         }
 
         int GetFirstValidSetEnh(int SlotIndex, int hID)
@@ -5031,12 +5031,12 @@ namespace Hero_Designer
             frmForum frmForum1 = new frmForum();
             frmForum1.BackColor = this.BackColor;
             frmForum frmForum2 = frmForum1;
-            frmForum2.ibCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.ibCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.ibExport.IA = this.drawing.pImageAttributes;
-            frmForum2.ibExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
             int num = (int)frmForum2.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
         }
@@ -5054,12 +5054,12 @@ namespace Hero_Designer
             frmForum frmForum1 = new frmForum();
             frmForum1.BackColor = this.BackColor;
             frmForum frmForum2 = frmForum1;
-            frmForum2.ibCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.ibCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.ibExport.IA = this.drawing.pImageAttributes;
-            frmForum2.ibExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
             int num = (int)frmForum2.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
             MidsContext.Config.LongExport = false;
@@ -5737,32 +5737,34 @@ namespace Hero_Designer
                 frmAccolade fTemp = this.fTemp;
                 if (fTemp.Visible)
                 {
-                    fTemp.llLeft.SuspendRedraw = true;
-                    fTemp.llRight.SuspendRedraw = true;
-                    fTemp.llLeft.Font = this.llPrimary.Font;
-                    fTemp.llRight.Font = this.llPrimary.Font;
-                    fTemp.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    fTemp.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    fTemp.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    fTemp.llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fTemp.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    fTemp.llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    fTemp.llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    fTemp.llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    fTemp.llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    fTemp.llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fTemp.llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    fTemp.llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    int num1 = fTemp.llLeft.Items.Length - 1;
+                    var llLeft = fTemp.LLLeft;
+                    llLeft.SuspendRedraw = true;
+                    var llRight = fTemp.LLRight;
+                    llRight.SuspendRedraw = true;
+                    llLeft.Font = this.llPrimary.Font;
+                    llRight.Font = this.llPrimary.Font;
+                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                    llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                    int num1 = llLeft.Items.Length - 1;
                     for (int index = 0; index <= num1; ++index)
-                        fTemp.llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    int num2 = fTemp.llRight.Items.Length - 1;
+                        llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                    int num2 = llRight.Items.Length - 1;
                     for (int index = 0; index <= num2; ++index)
-                        fTemp.llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    fTemp.llLeft.SuspendRedraw = false;
-                    fTemp.llRight.SuspendRedraw = false;
-                    fTemp.llLeft.Refresh();
-                    fTemp.llRight.Refresh();
+                        llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                    llLeft.SuspendRedraw = false;
+                    llRight.SuspendRedraw = false;
+                    llLeft.Refresh();
+                    llRight.Refresh();
                 }
             }
             if (this.fAccolade == null)
@@ -5770,32 +5772,32 @@ namespace Hero_Designer
             frmAccolade fAccolade = this.fAccolade;
             if (fAccolade.Visible)
             {
-                fAccolade.llLeft.SuspendRedraw = true;
-                fAccolade.llRight.SuspendRedraw = true;
-                fAccolade.llLeft.Font = this.llPrimary.Font;
-                fAccolade.llRight.Font = this.llPrimary.Font;
-                fAccolade.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                fAccolade.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                fAccolade.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                fAccolade.llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                fAccolade.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                fAccolade.llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                fAccolade.llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                fAccolade.llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                fAccolade.llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                fAccolade.llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                fAccolade.llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                fAccolade.llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                int num1 = fAccolade.llLeft.Items.Length - 1;
-                for (int index = 0; index <= num1; ++index)
-                    fAccolade.llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                int num2 = fAccolade.llRight.Items.Length - 1;
-                for (int index = 0; index <= num2; ++index)
-                    fAccolade.llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                fAccolade.llLeft.SuspendRedraw = false;
-                fAccolade.llRight.SuspendRedraw = false;
-                fAccolade.llLeft.Refresh();
-                fAccolade.llRight.Refresh();
+                var llLeft = fAccolade.LLLeft;
+                var llRight = fAccolade.LLRight;
+                llLeft.SuspendRedraw = true;
+                llRight.SuspendRedraw = true;
+                llLeft.Font = this.llPrimary.Font;
+                llRight.Font = this.llPrimary.Font;
+                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                for (int index = 0; index <= llLeft.Items.Length - 1; ++index)
+                    llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                for (int index = 0; index <= llRight.Items.Length - 1; ++index)
+                    llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                llLeft.SuspendRedraw = false;
+                llRight.SuspendRedraw = false;
+                llLeft.Refresh();
+                llRight.Refresh();
             }
         }
 

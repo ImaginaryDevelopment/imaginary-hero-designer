@@ -29,7 +29,6 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSetEdit));
             this.btnNoImage = new System.Windows.Forms.Button();
             this.gbBasic = new System.Windows.Forms.GroupBox();
             this.txtInternal = new System.Windows.Forms.TextBox();
@@ -82,6 +81,7 @@ namespace Hero_Designer
             this.btnNoImage.Size = new System.Drawing.Size(80, 20);
             this.btnNoImage.TabIndex = 2;
             this.btnNoImage.Text = "Clear Image";
+                this.btnNoImage.Click += btnNoImage_Click;
             this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.txtInternal);
             this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.Label5);
             this.gbBasic.Controls.Add((System.Windows.Forms.Control)this.cbSetType);
@@ -110,6 +110,7 @@ namespace Hero_Designer
 
             this.txtInternal.Size = new System.Drawing.Size(156, 20);
             this.txtInternal.TabIndex = 21;
+                this.txtInternal.TextChanged += txtInternal_TextChanged;
 
             this.Label5.Location = new System.Drawing.Point(8, 66);
             this.Label5.Name = "Label5";
@@ -125,6 +126,7 @@ namespace Hero_Designer
 
             this.cbSetType.Size = new System.Drawing.Size(156, 22);
             this.cbSetType.TabIndex = 3;
+                this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
 
             this.Label1.Location = new System.Drawing.Point(8, 174);
             this.Label1.Name = "Label1";
@@ -186,6 +188,7 @@ namespace Hero_Designer
 
             this.txtDesc.Size = new System.Drawing.Size(140, 68);
             this.txtDesc.TabIndex = 2;
+                this.txtDesc.TextChanged += txtDesc_TextChanged;
 
             this.Label4.Location = new System.Drawing.Point(8, 102);
             this.Label4.Name = "Label4";
@@ -200,6 +203,7 @@ namespace Hero_Designer
 
             this.txtNameShort.Size = new System.Drawing.Size(156, 20);
             this.txtNameShort.TabIndex = 1;
+            this.txtNameShort.TextChanged += txtNameShort_TextChanged;
 
             this.Label3.Location = new System.Drawing.Point(8, 40);
             this.Label3.Name = "Label3";
@@ -214,6 +218,7 @@ namespace Hero_Designer
 
             this.txtNameFull.Size = new System.Drawing.Size(156, 20);
             this.txtNameFull.TabIndex = 0;
+                this.txtNameFull.TextChanged += txtNameFull_TextChanged;
 
             this.Label2.Location = new System.Drawing.Point(8, 16);
             this.Label2.Name = "Label2";
@@ -222,7 +227,6 @@ namespace Hero_Designer
             this.Label2.TabIndex = 10;
             this.Label2.Text = "Full Name:";
             this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImage.Image = (System.Drawing.Image)componentResourceManager.GetObject("btnImage.Image");
             this.btnImage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.btnImage.Location = new System.Drawing.Point(8, 12);
@@ -232,6 +236,7 @@ namespace Hero_Designer
             this.btnImage.TabIndex = 1;
             this.btnImage.Text = "ImageName";
             this.btnImage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+                this.btnImage.Click += btnImage_Click;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.lvEnh);
 
             this.GroupBox2.Location = new System.Drawing.Point(6, 216);
@@ -273,6 +278,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(84, 28);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
+                this.btnCancel.Click += btnCancel_Click;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             this.btnOK.Location = new System.Drawing.Point(252, 446);
@@ -281,6 +287,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(84, 28);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
+                this.btnOK.Click += btnOK_Click;
             this.ImagePicker.Filter = "PNG Images|*.png";
             this.ImagePicker.Title = "Select Image File";
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.btnPaste);
@@ -306,12 +313,14 @@ namespace Hero_Designer
             this.btnPaste.TabIndex = 19;
             this.btnPaste.Text = "Fill by Paste";
             this.btnPaste.Visible = false;
+                this.btnPaste.Click += btnPaste_Click;
 
             this.txtAlternate.Location = new System.Drawing.Point(8, 406);
             this.txtAlternate.Name = "txtAlternate";
 
             this.txtAlternate.Size = new System.Drawing.Size(270, 20);
             this.txtAlternate.TabIndex = 18;
+                this.txtAlternate.TextChanged += txtAlternate_TextChanged;
             this.lvBonusList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[2]
             {
         this.ColumnHeader3,
@@ -340,6 +349,7 @@ namespace Hero_Designer
 
             this.lstBonus.Size = new System.Drawing.Size(271, 88);
             this.lstBonus.TabIndex = 16;
+                this.lstBonus.DoubleClick += lstBonus_DoubleClick;
 
             this.Label16.Location = new System.Drawing.Point(8, 281);
             this.Label16.Name = "Label16";
@@ -363,6 +373,7 @@ namespace Hero_Designer
 
             this.cbSlotCount.Size = new System.Drawing.Size(170, 22);
             this.cbSlotCount.TabIndex = 3;
+            this.cbSlotCount.SelectedIndexChanged += cbSlotX_SelectedIndexChanged;
             this.rtbBonus.BackColor = System.Drawing.Color.White;
             this.rtbBonus.ForeColor = System.Drawing.Color.Black;
 
@@ -424,10 +435,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.btnImage);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmSetEdit);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Invention Set Editor";
@@ -438,26 +447,48 @@ namespace Hero_Designer
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox3.PerformLayout();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnImage.Click += btnImage_Click;
-                this.btnNoImage.Click += btnNoImage_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnPaste.Click += btnPaste_Click;
-                this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
-                this.cbSlotCount.SelectedIndexChanged += cbSlotX_SelectedIndexChanged;
-                this.lstBonus.DoubleClick += lstBonus_DoubleClick;
-                this.txtAlternate.TextChanged += txtAlternate_TextChanged;
-                this.txtDesc.TextChanged += txtDesc_TextChanged;
-                this.txtInternal.TextChanged += txtInternal_TextChanged;
-                this.txtNameFull.TextChanged += txtNameFull_TextChanged;
-                this.txtNameShort.TextChanged += txtNameShort_TextChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnImage;
+        System.Windows.Forms.Button btnNoImage;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnPaste;
+        System.Windows.Forms.ComboBox cbSetType;
+        System.Windows.Forms.ComboBox cbSlotCount;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.GroupBox gbBasic;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox3;
+        System.Windows.Forms.ImageList ilEnh;
+        System.Windows.Forms.OpenFileDialog ImagePicker;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label16;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label27;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.ListBox lstBonus;
+        System.Windows.Forms.ListView _lvBonusList;
+        System.Windows.Forms.ListView lvEnh;
+        System.Windows.Forms.RadioButton rbIfAny;
+        System.Windows.Forms.RadioButton rbIfCritter;
+        System.Windows.Forms.RadioButton rbIfPlayer;
+        System.Windows.Forms.RichTextBox rtbBonus;
+        System.Windows.Forms.TextBox txtAlternate;
+        System.Windows.Forms.TextBox txtDesc;
+        System.Windows.Forms.TextBox txtInternal;
+        System.Windows.Forms.TextBox txtNameFull;
+        System.Windows.Forms.TextBox txtNameShort;
+        System.Windows.Forms.NumericUpDown _udMaxLevel;
+        System.Windows.Forms.NumericUpDown _udMinLevel;
     }
 }

@@ -24,110 +24,47 @@ namespace Hero_Designer
         protected const int szLargeText = 100;
         protected const int szLineHeight = 16;
         protected const int szPadding = 4;
-        [AccessedThroughProperty("CtlDamageDisplay1")]
-        ctlDamageDisplay _CtlDamageDisplay1;
-
-        [AccessedThroughProperty("dbTip")]
-        ToolTip _dbTip;
-
+        ToolTip dbTip;
         GFXLabel Enh_Title;
-
         ctlPairedList enhListing;
-
-        [AccessedThroughProperty("enhNameDisp")]
-        GFXLabel _enhNameDisp;
-
-        [AccessedThroughProperty("fx_lblHead1")]
-        Label _fx_lblHead1;
-
-        [AccessedThroughProperty("fx_lblHead2")]
-        Label _fx_lblHead2;
-
-        [AccessedThroughProperty("fx_LblHead3")]
-        Label _fx_LblHead3;
-
+        GFXLabel enhNameDisp;
+        Label fx_lblHead1;
+        Label fx_lblHead2;
+        Label fx_LblHead3;
         ctlPairedList fx_List1;
-
         ctlPairedList fx_List2;
-
         ctlPairedList fx_List3;
-
         GFXLabel fx_Title;
-
-        [AccessedThroughProperty("gDef1")]
-        ctlMultiGraph _gDef1;
-
-        [AccessedThroughProperty("gDef2")]
-        ctlMultiGraph _gDef2;
-
-        [AccessedThroughProperty("gRes1")]
-        ctlMultiGraph _gRes1;
-
-        [AccessedThroughProperty("gRes2")]
-        ctlMultiGraph _gRes2;
-
-        [AccessedThroughProperty("info_Damage")]
-        ctlDamageDisplay _info_Damage;
-
+        ctlMultiGraph gDef1;
+        ctlMultiGraph gDef2;
+        ctlMultiGraph gRes1;
+        ctlMultiGraph gRes2;
+        ctlDamageDisplay info_Damage;
         ctlPairedList info_DataList;
-
         GFXLabel info_Title;
-
-        [AccessedThroughProperty("info_txtLarge")]
-        RichTextBox _info_txtLarge;
-
-        [AccessedThroughProperty("info_txtSmall")]
-        RichTextBox _info_txtSmall;
-
-        [AccessedThroughProperty("lblDmg")]
-        Label _lblDmg;
-
+        RichTextBox info_txtLarge;
+        RichTextBox info_txtSmall;
+        Label lblDmg;
         Label lblFloat;
-
         Label lblLock;
-
         Label lblShrink;
-
-        [AccessedThroughProperty("lblTotal")]
-        Label _lblTotal;
-
-        [AccessedThroughProperty("pnlEnh")]
-        Panel _pnlEnh;
-
+        Label lblTotal;
+        Panel pnlEnh;
         Panel pnlEnhActive;
-
         Panel pnlEnhInactive;
-
-        [AccessedThroughProperty("pnlFX")]
-        Panel _pnlFX;
-
-        [AccessedThroughProperty("pnlInfo")]
-        Panel _pnlInfo;
-
+        Panel pnlFX;
+        Panel pnlInfo;
         Panel pnlTabs;
-
-        [AccessedThroughProperty("pnlTotal")]
-        Panel _pnlTotal;
-
+        Panel pnlTotal;
         ctlMultiGraph PowerScaler;
-
-        [AccessedThroughProperty("total_lblDef")]
-        Label _total_lblDef;
-
-        [AccessedThroughProperty("total_lblMisc")]
-        Label _total_lblMisc;
-
-        [AccessedThroughProperty("total_lblRes")]
-        Label _total_lblRes;
-
+        Label total_lblDef;
+        Label total_lblMisc;
+        Label total_lblRes;
         ctlPairedList total_Misc;
-
         GFXLabel total_Title;
 
         bool bFloating;
-
         ExtendedBitmap bxFlip;
-
         bool Compact;
 
         IContainer components;
@@ -153,46 +90,19 @@ namespace Hero_Designer
         public int TabPage;
         bool VillainColour;
 
+        public event FloatChangeEventHandler FloatChange;
 
-        public event DataView.FloatChangeEventHandler FloatChange;
+        public event MovedEventHandler Moved;
 
-        public event DataView.MovedEventHandler Moved;
+        public event SizeChangeEventHandler SizeChange;
 
-        public event DataView.SizeChangeEventHandler SizeChange;
+        public event SlotFlipEventHandler SlotFlip;
 
-        public event DataView.SlotFlipEventHandler SlotFlip;
+        public event SlotUpdateEventHandler SlotUpdate;
 
-        public event DataView.SlotUpdateEventHandler SlotUpdate;
+        public event TabChangedEventHandler TabChanged;
 
-        public event DataView.TabChangedEventHandler TabChanged;
-
-        public event DataView.Unlock_ClickEventHandler Unlock_Click;
-
-        ctlDamageDisplay CtlDamageDisplay1
-        {
-            get
-            {
-                return this._CtlDamageDisplay1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._CtlDamageDisplay1 = value;
-            }
-        }
-
-        ToolTip dbTip
-        {
-            get
-            {
-                return this._dbTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._dbTip = value;
-            }
-        }
+        public event Unlock_ClickEventHandler Unlock_Click;
 
         public bool DrawVillain
         {
@@ -210,18 +120,6 @@ namespace Hero_Designer
                 else
                     this.pnlInfo.BackColor = System.Drawing.Color.Navy;
                 this.DoPaint();
-            }
-        }
-        GFXLabel enhNameDisp
-        {
-            get
-            {
-                return this._enhNameDisp;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._enhNameDisp = value;
             }
         }
 
@@ -247,131 +145,28 @@ namespace Hero_Designer
             }
         }
 
-        Label fx_lblHead1
+        internal ctlDamageDisplay Info_Damage
         {
             get
             {
-                return this._fx_lblHead1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_lblHead1 = value;
-            }
-        }
-
-        Label fx_lblHead2
-        {
-            get
-            {
-                return this._fx_lblHead2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_lblHead2 = value;
-            }
-        }
-
-        Label fx_LblHead3
-        {
-            get
-            {
-                return this._fx_LblHead3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_LblHead3 = value;
-            }
-        }
-        ctlMultiGraph gDef1
-        {
-            get
-            {
-                return this._gDef1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gDef1 = value;
-            }
-        }
-
-        ctlMultiGraph gDef2
-        {
-            get
-            {
-                return this._gDef2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gDef2 = value;
-            }
-        }
-
-        ctlMultiGraph gRes1
-        {
-            get
-            {
-                return this._gRes1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gRes1 = value;
-            }
-        }
-
-        ctlMultiGraph gRes2
-        {
-            get
-            {
-                return this._gRes2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gRes2 = value;
-            }
-        }
-
-        internal ctlDamageDisplay info_Damage
-        {
-            get
-            {
-                return this._info_Damage;
+                return this.info_Damage;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             private set
             {
-                this._info_Damage = value;
+                this.info_Damage = value;
             }
         }
-        internal RichTextBox info_txtLarge
+        internal RichTextBox Info_txtLarge
         {
             get
             {
-                return this._info_txtLarge;
+                return this.info_txtLarge;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                this._info_txtLarge = value;
-            }
-        }
-
-        RichTextBox info_txtSmall
-        {
-            get
-            {
-                return this._info_txtSmall;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._info_txtSmall = value;
+                this.info_txtLarge = value;
             }
         }
 
@@ -383,80 +178,6 @@ namespace Hero_Designer
             }
         }
 
-        Label lblDmg
-        {
-            get
-            {
-                return this._lblDmg;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblDmg = value;
-            }
-        }
-        Label lblTotal
-        {
-            get
-            {
-                return this._lblTotal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblTotal = value;
-            }
-        }
-
-        Panel pnlEnh
-        {
-            get
-            {
-                return this._pnlEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlEnh = value;
-            }
-        }
-        Panel pnlFX
-        {
-            get
-            {
-                return this._pnlFX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlFX = value;
-            }
-        }
-
-        Panel pnlInfo
-        {
-            get
-            {
-                return this._pnlInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlInfo = value;
-            }
-        }
-        Panel pnlTotal
-        {
-            get
-            {
-                return this._pnlTotal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlTotal = value;
-            }
-        }
         public int TabPageIndex
         {
             get
@@ -465,67 +186,26 @@ namespace Hero_Designer
             }
         }
 
-        Label total_lblDef
-        {
-            get
-            {
-                return this._total_lblDef;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblDef = value;
-            }
-        }
-
-        Label total_lblMisc
-        {
-            get
-            {
-                return this._total_lblMisc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblMisc = value;
-            }
-        }
-
-        Label total_lblRes
-        {
-            get
-            {
-                return this._total_lblRes;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblRes = value;
-            }
-        }
         public Enums.eVisibleSize VisibleSize
         {
             get
             {
                 return !this.Compact ? Enums.eVisibleSize.Full : Enums.eVisibleSize.Compact;
             }
-            set
-            {
-            }
+            // why is this ignored?
+            set {  }
         }
 
         public DataView()
         {
-            this.BackColorChanged += new EventHandler(this.DataView_BackColorChanged);
-            this.Load += new EventHandler(this.DataView_Load);
             this.MoveDisable = false;
             this.TabPage = 0;
             this.Pages = new string[4]
             {
-        "Info",
-        "Effects",
-        "Totals",
-        "Enhance"
+                "Info",
+                "Effects",
+                "Totals",
+                "Enhance"
             };
             this.pLastScaleVal = -1;
             this.Lock = false;
@@ -534,6 +214,9 @@ namespace Hero_Designer
             this.Compact = false;
             this.bxFlip = null;
             this.InitializeComponent();
+            this.BackColorChanged += new EventHandler(this.DataView_BackColorChanged);
+            this.Load += new EventHandler(this.DataView_Load);
+            this.Name = nameof(DataView);
         }
 
         static ctlPairedList.ItemPair BuildEDItem(
@@ -544,11 +227,11 @@ namespace Hero_Designer
           string Name,
           float[] afterED)
         {
-            bool flag1 = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][0];
-            bool flag2 = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][1];
-            bool iSpecialCase = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][2];
+            bool flag1 = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][0];
+            bool flag2 = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][1];
+            bool iSpecialCase = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][2];
             ctlPairedList.ItemPair itemPair;
-            if ((double)value[index] <= 0.0)
+            if (value[index] <= 0.0)
             {
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, string.Empty);
             }
@@ -558,33 +241,33 @@ namespace Hero_Designer
                 float num1 = value[index] * 100f;
                 float num2 = Enhancement.ApplyED(schedule[index], value[index]) * 100f;
                 float num3 = num2 + afterED[index] * 100f;
-                float num4 = (float)Math.Round((double)num1 - (double)num2, 3);
+                float num4 = (float)Math.Round(num1 - (double)num2, 3);
                 string str1 = Strings.Format(num1, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
                 string str2 = Strings.Format(num4, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
                 string str3 = Strings.Format(num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str4 = "Total Effect: " + Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\nWith ED Applied: " + str3 + "\r\n\r\n";
+                string str4 = "Total Effect: " + Strings.Format((float)(num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\nWith ED Applied: " + str3 + "\r\n\r\n";
                 string iValue;
                 string iTip;
-                if ((double)num4 > 0.0)
+                if (num4 > 0.0)
                 {
-                    iValue = str3 + "  (Pre-ED: " + Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%)";
-                    if ((double)afterED[index] > 0.0)
+                    iValue = str3 + "  (Pre-ED: " + Strings.Format((float)(num1 + afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%)";
+                    if (afterED[index] > 0.0)
                         str4 = str4 + "Amount from pre-ED sources: " + str1 + "\r\n";
                     iTip = str4 + "ED reduction: " + str2 + " (" + Strings.Format((float)((double)num4 / (double)num1 * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "% of total)\r\n";
                     if (iSpecialCase)
-                        iTip = iTip + "The highest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][2] * 100.0), "##0") + "%\r\n";
+                        iTip = iTip + "The highest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)(DatabaseAPI.Database.MultED[(int)schedule[index]][2] * 100.0), "##0") + "%\r\n";
                     else if (flag2)
-                        iTip = iTip + "The middle level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][1] * 100.0), "##0") + "%\r\n";
+                        iTip = iTip + "The middle level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)(DatabaseAPI.Database.MultED[(int)schedule[index]][1] * 100.0), "##0") + "%\r\n";
                     else if (flag1)
-                        iTip = iTip + "The lowest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)((double)DatabaseAPI.Database.MultED[(int)schedule[index]][0] * 100.0), "##0") + "%\r\n";
-                    if ((double)afterED[index] > 0.0)
-                        iTip = iTip + "Amount from post-ED sources: " + Strings.Format((float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
+                        iTip = iTip + "The lowest level of ED reduction is being applied.\r\nThreshold: " + Strings.Format((float)(DatabaseAPI.Database.MultED[(int)schedule[index]][0] * 100.0), "##0") + "%\r\n";
+                    if (afterED[index] > 0.0)
+                        iTip = iTip + "Amount from post-ED sources: " + Strings.Format((float)(afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
                 }
                 else
                 {
                     iValue = str3;
-                    if ((double)afterED[index] > 0.0)
-                        str4 = str4 + "Amount from post-ED sources: " + Strings.Format((float)((double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
+                    if (afterED[index] > 0.0)
+                        str4 = str4 + "Amount from post-ED sources: " + Strings.Format((float)(afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%\r\n";
                     iTip = str4 + "This effect has not been affected by ED.\r\n";
                 }
                 itemPair = new ctlPairedList.ItemPair(iName, iValue, flag2 & !iSpecialCase, flag1 & !flag2, iSpecialCase, iTip);
@@ -650,9 +333,7 @@ namespace Hero_Designer
             this.Compact = true;
             if (!(this.Size != size))
                 return;
-            DataView.SizeChangeEventHandler sizeChange = this.SizeChange;
-            if (sizeChange != null)
-                sizeChange(this.Size, this.Compact);
+            this.SizeChange?.Invoke(this.Size, this.Compact);
         }
 
         void DataView_BackColorChanged(object sender, EventArgs e)
@@ -687,7 +368,6 @@ namespace Hero_Designer
         }
 
         void Display_EDFigures()
-
         {
             this.Enh_Title.Text = this.pBase.DisplayName;
             this.enhListing.Clear(false);
@@ -921,19 +601,19 @@ namespace Hero_Designer
                     int num6 = numArray1.Length - 1;
                     for (int index = 0; index <= num6; ++index)
                     {
-                        if ((double)numArray1[index] > 0.0)
+                        if (numArray1[index] > 0.0)
                         {
                             this.enhListing.AddItem(DataView.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), index), afterED1));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
-                        if ((double)numArray2[index] > 0.0)
+                        if (numArray2[index] > 0.0)
                         {
                             this.enhListing.AddItem(DataView.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), index) + " Debuff", afterED2));
                             if (this.enhListing.IsSpecialColor())
                                 this.enhListing.SetUnique();
                         }
-                        if ((double)numArray3[index] > 0.0)
+                        if (numArray3[index] > 0.0)
                         {
                             this.enhListing.AddItem(DataView.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), index), afterED3));
                             if (this.enhListing.IsSpecialColor())
@@ -943,7 +623,7 @@ namespace Hero_Designer
                     int num7 = numArray4.Length - 1;
                     for (int index = 0; index <= num7; ++index)
                     {
-                        if ((double)numArray4[index] > 0.0)
+                        if (numArray4[index] > 0.0)
                         {
                             this.enhListing.AddItem(DataView.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), index), afterED4));
                             if (this.enhListing.IsSpecialColor())
@@ -957,7 +637,6 @@ namespace Hero_Designer
         }
 
         void display_Info(bool NoLevel = false, int iEnhLvl = -1)
-
         {
             if (!NoLevel & this.pBase.Level > 0)
                 this.info_Title.Text = "[" + Conversions.ToString(this.pBase.Level) + "] " + this.pBase.DisplayName;
@@ -1164,7 +843,6 @@ namespace Hero_Designer
         }
 
         void DisplayData(bool noLevel = false, int iEnhLevel = -1)
-
         {
             if (MidsContext.Config.DataDamageGraph)
             {
@@ -1206,7 +884,6 @@ namespace Hero_Designer
         }
 
         void DisplayEffects(bool noLevel = false, int iEnhLvl = -1)
-
         {
             if (!noLevel & this.pBase.Level > 0)
                 this.fx_Title.Text = "[" + Conversions.ToString(this.pBase.Level) + "] " + this.pBase.DisplayName;
@@ -1219,15 +896,15 @@ namespace Hero_Designer
             }
             ctlPairedList[] ctlPairedListArray = new ctlPairedList[3]
             {
-        this.fx_List1,
-        this.fx_List2,
-        this.fx_List3
+                this.fx_List1,
+                this.fx_List2,
+                this.fx_List3
             };
             Label[] labelArray = new Label[3]
             {
-        this.fx_lblHead1,
-        this.fx_lblHead2,
-        this.fx_LblHead3
+                this.fx_lblHead1,
+                this.fx_lblHead2,
+                this.fx_LblHead3
             };
             this.fx_List1.Clear(false);
             this.fx_List2.Clear(false);
@@ -1295,9 +972,8 @@ namespace Hero_Designer
         }
 
         void DisplayFlippedEnhancements()
-
         {
-            Pen pen = this.enhListing.BackColor.B <= (byte)10 ? new Pen(Color.FromArgb((int)byte.MaxValue, 0, 0)) : new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue));
+            Pen pen = this.enhListing.BackColor.B <= 10 ? new Pen(Color.FromArgb((int)byte.MaxValue, 0, 0)) : new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue));
             if (this.bxFlip == null)
                 this.bxFlip = new ExtendedBitmap(this.pnlEnhActive.Width, this.pnlEnhInactive.Height * 2);
             this.bxFlip.Graphics.Clear(this.enhListing.BackColor);
@@ -1356,7 +1032,7 @@ namespace Hero_Designer
                         {
                             if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.InventO))
                             {
-                                Bounds = (RectangleF)iDest;
+                                Bounds = iDest;
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Graphics graphics2 = this.bxFlip.Graphics;
@@ -1364,7 +1040,7 @@ namespace Hero_Designer
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
-                                Bounds = (RectangleF)iDest;
+                                Bounds = iDest;
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, (int)byte.MaxValue, (int)byte.MaxValue)) : Color.Yellow) : Color.Red;
@@ -1426,22 +1102,10 @@ namespace Hero_Designer
             this.gDef2.Clear();
             int[] numArray1 = new int[16]
             {
-        0,
-        0,
-        0,
-        1,
-        1,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0
+                0, 0, 0, 1,
+                1, 0, 0, 1,
+                0, 0, 1, 1,
+                1, 0, 0, 0
             };
             int num1 = names.Length - 1;
             for (int dType = 1; dType <= num1; ++dType)
@@ -1457,31 +1121,21 @@ namespace Hero_Designer
             }
             float num2 = this.gDef1.GetMaxValue();
             float maxValue1 = this.gDef2.GetMaxValue();
-            if ((double)maxValue1 > (double)num2)
+            if (maxValue1 > (double)num2)
                 num2 = maxValue1;
             this.gDef1.Max = num2;
             this.gDef2.Max = num2;
             this.gDef1.Draw();
             this.gDef2.Draw();
             string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((float)((double)MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
-            string empty = string.Empty;
             this.gRes1.Clear();
             this.gRes2.Clear();
             int[] numArray2 = new int[13]
             {
-        0,
-        0,
-        0,
-        1,
-        1,
-        0,
-        0,
-        1,
-        1,
-        0,
-        1,
-        1,
-        1
+                0, 0, 0, 1,
+                1, 0, 0, 1,
+                1, 0, 1, 1,
+                1
             };
             int dType1 = 1;
             do
@@ -1503,7 +1157,7 @@ namespace Hero_Designer
             while (dType1 <= 9);
             float num3 = this.gRes1.GetMaxValue();
             float maxValue2 = this.gRes2.GetMaxValue();
-            if ((double)maxValue2 > (double)num3)
+            if (maxValue2 > (double)num3)
                 num3 = maxValue2;
             this.gRes1.Max = num3;
             this.gRes2.Max = num3;
@@ -1542,7 +1196,6 @@ namespace Hero_Designer
         }
 
         void DoPaint()
-
         {
             Graphics graphics = this.pnlTabs.CreateGraphics();
             Pen pen = new Pen(Color.Black);
@@ -1614,7 +1267,6 @@ namespace Hero_Designer
         }
 
         int effects_BuffDebuff(Label iLabel, ctlPairedList iList)
-
         {
             Enums.ShortFX effectMagSum1 = this.pBase.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
             Enums.ShortFX effectMagSum2 = this.pEnh.GetEffectMagSum(Enums.eEffectType.ToHit, false, false, false, false);
@@ -1820,7 +1472,6 @@ namespace Hero_Designer
         }
 
         int effects_Elusivity(Label iLabel, ctlPairedList iList)
-
         {
             bool flag = iList.ItemCount == 0;
             int num1 = 0;
@@ -1850,7 +1501,6 @@ namespace Hero_Designer
         }
 
         int effects_GrantPower(Label iLabel, ctlPairedList iList)
-
         {
             bool flag = iList.ItemCount == 0;
             int num1 = 0;
@@ -1886,7 +1536,6 @@ namespace Hero_Designer
         }
 
         int effects_Heal(Label iLabel, ctlPairedList iList)
-
         {
             Enums.ShortFX BaseSFX1 = new Enums.ShortFX();
             Enums.ShortFX EnhSFX1 = new Enums.ShortFX();
@@ -1988,7 +1637,6 @@ namespace Hero_Designer
         }
 
         int effects_ModifyEffect(Label iLabel, ctlPairedList iList)
-
         {
             bool flag = iList.ItemCount == 0;
             int num1 = 0;
@@ -2012,7 +1660,6 @@ namespace Hero_Designer
         }
 
         int effects_Movement(Label iLabel, ctlPairedList iList)
-
         {
             Enums.ShortFX shortFx1 = new Enums.ShortFX();
             Enums.ShortFX shortFx2 = new Enums.ShortFX();
@@ -2110,7 +1757,6 @@ namespace Hero_Designer
         }
 
         int effects_Status(Label iLabel, ctlPairedList iList)
-
         {
             Enums.eMezShort eMezShort = Enums.eMezShort.None;
             Enums.ShortFX shortFx1 = new Enums.ShortFX();
@@ -2201,7 +1847,6 @@ namespace Hero_Designer
         }
 
         int effects_Summon(Label iLabel, ctlPairedList iList)
-
         {
             int num1 = 0;
             bool flag = iList.ItemCount == 0;
@@ -2233,7 +1878,6 @@ namespace Hero_Designer
         }
 
         void EffectsDef()
-
         {
             Enums.ShortFX effectMagSum = this.pEnh.GetEffectMagSum(Enums.eEffectType.Defense, true, false, false, false);
             if (effectMagSum.Value == null)
@@ -2329,7 +1973,6 @@ namespace Hero_Designer
         }
 
         int EffectsDrh()
-
         {
             int index = 0;
             if (this.pBase.HasDefEffects())
@@ -2346,7 +1989,6 @@ namespace Hero_Designer
         }
 
         void EffectsRes(int index)
-
         {
             Enums.eDamage eDamage = Enums.eDamage.None;
             float[] res1 = this.pBase.GetRes(MidsContext.Config.Inc.PvE);
@@ -2418,7 +2060,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           float s1,
           float s2,
@@ -2428,7 +2069,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           Enums.ShortFX s1,
           Enums.ShortFX s2,
@@ -2439,7 +2079,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           float s1,
           float s2,
@@ -2450,7 +2089,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           Enums.ShortFX s1,
           Enums.ShortFX s2,
@@ -2463,16 +2101,16 @@ namespace Hero_Designer
         {
             string iValue = Utilities.FixDP(s2.Sum) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if ((double)s1.Sum == 0.0 & !AlwaysShow)
+            if (s1.Sum == 0.0 & !AlwaysShow)
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
-            else if ((double)s1.Sum == 0.0)
+            else if (s1.Sum == 0.0)
             {
                 itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false, false, false, -1);
             }
             else
             {
                 bool iAlternate;
-                if ((double)s1.Sum != (double)s2.Sum)
+                if (s1.Sum != (double)s2.Sum)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1.Sum) + ")";
@@ -2486,7 +2124,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           float s1,
           float s2,
@@ -2499,16 +2136,16 @@ namespace Hero_Designer
         {
             string iValue = Utilities.FixDP(s2) + Suffix;
             ctlPairedList.ItemPair itemPair;
-            if ((double)s1 == 0.0 & !AlwaysShow)
+            if (s1 == 0.0 & !AlwaysShow)
                 itemPair = new ctlPairedList.ItemPair(string.Empty, string.Empty, false, false, false, -1);
-            else if ((double)s1 == 0.0)
+            else if (s1 == 0.0)
             {
                 itemPair = new ctlPairedList.ItemPair(Title + ":", string.Empty, false, false, false, -1);
             }
             else
             {
                 bool iAlternate;
-                if ((double)s1 != (double)s2)
+                if (s1 != (double)s2)
                 {
                     if (!SkipBase)
                         iValue = iValue + " (" + Utilities.FixDP(s1) + ")";
@@ -2522,7 +2159,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           float s1,
           float s2,
@@ -2558,7 +2194,6 @@ namespace Hero_Designer
         }
 
         static ctlPairedList.ItemPair FastItem(
-
           string Title,
           float s1,
           float s2,
@@ -2649,7 +2284,6 @@ namespace Hero_Designer
         }
 
         static string GetEnhancementStringLongRTF(I9Slot iEnh)
-
         {
             string iStr = iEnh.GetEnhancementStringLong();
             if (iStr != string.Empty)
@@ -2658,7 +2292,6 @@ namespace Hero_Designer
         }
 
         static string GetEnhancementStringRTF(I9Slot iEnh)
-
         {
             string str = iEnh.GetEnhancementString();
             if (str != string.Empty)
@@ -2667,7 +2300,6 @@ namespace Hero_Designer
         }
 
         ctlPairedList.ItemPair GetRankedEffect(int[] Index, int ID)
-
         {
             string Title = string.Empty;
             Enums.ShortFX shortFx = new Enums.ShortFX();
@@ -2795,9 +2427,7 @@ namespace Hero_Designer
         {
         }
 
-        [DebuggerStepThrough]
         void InitializeComponent()
-
         {
             this.components = (IContainer)new Container();
             this.pnlTabs = new Panel();
@@ -3443,7 +3073,6 @@ namespace Hero_Designer
             this.Controls.Add((Control)this.pnlEnh);
             this.Controls.Add((Control)this.pnlFX);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
-            this.Name = nameof(DataView);
 
             this.Size = new System.Drawing.Size(564, 540);
             this.pnlInfo.ResumeLayout(false);
@@ -3451,60 +3080,57 @@ namespace Hero_Designer
             this.pnlTotal.ResumeLayout(false);
             this.pnlEnh.ResumeLayout(false);
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
 
-                // Enh_Title events
-                this.Enh_Title.MouseMove += Title_MouseMove;
-                this.Enh_Title.MouseDown += Title_MouseDown;
+            // Enh_Title events
+            this.Enh_Title.MouseMove += Title_MouseMove;
+            this.Enh_Title.MouseDown += Title_MouseDown;
 
-                this.PowerScaler.BarClick += PowerScaler_BarClick;
-                this.enhListing.ItemHover += PairedList_Hover;
-                this.fx_List1.ItemHover += PairedList_Hover;
-                this.fx_List2.ItemHover += PairedList_Hover;
-                this.fx_List3.ItemHover += PairedList_Hover;
+            this.PowerScaler.BarClick += PowerScaler_BarClick;
+            this.enhListing.ItemHover += PairedList_Hover;
+            this.fx_List1.ItemHover += PairedList_Hover;
+            this.fx_List2.ItemHover += PairedList_Hover;
+            this.fx_List3.ItemHover += PairedList_Hover;
 
-                // fx_Title events
-                this.fx_Title.MouseMove += Title_MouseMove;
-                this.fx_Title.MouseDown += Title_MouseDown;
+            // fx_Title events
+            this.fx_Title.MouseMove += Title_MouseMove;
+            this.fx_Title.MouseDown += Title_MouseDown;
 
-                this.info_DataList.ItemHover += PairedList_Hover;
+            this.info_DataList.ItemHover += PairedList_Hover;
 
-                // info_Title events
-                this.info_Title.MouseMove += Title_MouseMove;
-                this.info_Title.MouseDown += Title_MouseDown;
+            // info_Title events
+            this.info_Title.MouseMove += Title_MouseMove;
+            this.info_Title.MouseDown += Title_MouseDown;
 
-                this.lblFloat.Click += lblFloat_Click;
-                this.lblLock.Click += lblLock_Click;
+            this.lblFloat.Click += lblFloat_Click;
+            this.lblLock.Click += lblLock_Click;
 
-                // lblShrink events
-                this.lblShrink.DoubleClick += lblShrink_DoubleClick;
-                this.lblShrink.Click += lblShrink_Click;
+            // lblShrink events
+            this.lblShrink.DoubleClick += lblShrink_DoubleClick;
+            this.lblShrink.Click += lblShrink_Click;
 
 
-                // pnlEnhActive events
-                this.pnlEnhActive.Paint += pnlEnhActive_Paint;
-                this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
-                this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
+            // pnlEnhActive events
+            this.pnlEnhActive.Paint += pnlEnhActive_Paint;
+            this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
+            this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
 
 
-                // pnlEnhInactive events
-                this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
-                this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
-                this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
+            // pnlEnhInactive events
+            this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
+            this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
+            this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
 
 
-                // pnlTabs events
-                this.pnlTabs.MouseDown += pnlTabs_MouseDown;
-                this.pnlTabs.Paint += pnlTabs_Paint;
+            // pnlTabs events
+            this.pnlTabs.MouseDown += pnlTabs_MouseDown;
+            this.pnlTabs.Paint += pnlTabs_Paint;
 
-                this.total_Misc.ItemHover += PairedList_Hover;
+            this.total_Misc.ItemHover += PairedList_Hover;
 
-                // total_Title events
-                this.total_Title.MouseMove += Title_MouseMove;
-                this.total_Title.MouseDown += Title_MouseDown;
+            // total_Title events
+            this.total_Title.MouseMove += Title_MouseMove;
+            this.total_Title.MouseDown += Title_MouseDown;
 
-            }
             // finished with events
             this.ResumeLayout(false);
         }
@@ -3551,13 +3177,11 @@ namespace Hero_Designer
         }
 
         void lblShrink_DoubleClick(object sender, EventArgs e)
-
         {
             this.lblShrink_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         int miniGetEnhIndex(int iX, int iY)
-
         {
             int num1 = this.bxFlip.Size.Width - 188;
             if (this.pBase != null)
@@ -3577,7 +3201,6 @@ namespace Hero_Designer
         }
 
         void PairedList_Hover(object Sender, int Index, Enums.ShortFX Tag)
-
         {
             string empty1 = string.Empty;
             string str1;
@@ -3628,7 +3251,6 @@ namespace Hero_Designer
         }
 
         void pnlEnhActive_MouseClick(object sender, MouseEventArgs e)
-
         {
             if (this.pBase == null || e.Button != MouseButtons.Left)
                 return;
@@ -3642,7 +3264,6 @@ namespace Hero_Designer
         }
 
         void pnlEnhActive_MouseMove(object sender, MouseEventArgs e)
-
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
             int enhIndex = this.miniGetEnhIndex(e.X, e.Y);
@@ -3652,13 +3273,11 @@ namespace Hero_Designer
         }
 
         void pnlEnhActive_Paint(object sender, PaintEventArgs e)
-
         {
             this.RedrawFlip();
         }
 
         void pnlEnhInactive_MouseClick(object sender, MouseEventArgs e)
-
         {
             if (this.pBase == null || e.Button != MouseButtons.Left)
                 return;
@@ -3672,7 +3291,6 @@ namespace Hero_Designer
         }
 
         void pnlEnhInactive_MouseMove(object sender, MouseEventArgs e)
-
         {
             int inToonHistory = MidsContext.Character.CurrentBuild.FindInToonHistory(this.pBase.PowerIndex);
             int enhIndex = this.miniGetEnhIndex(e.X, e.Y);
@@ -3682,13 +3300,11 @@ namespace Hero_Designer
         }
 
         void pnlEnhInactive_Paint(object sender, PaintEventArgs e)
-
         {
             this.RedrawFlip();
         }
 
         void pnlTabs_MouseDown(object sender, MouseEventArgs e)
-
         {
             Rectangle clipRect = new Rectangle(0, 0, 70, this.pnlTabs.Height);
             int Index = 0;
@@ -3710,13 +3326,11 @@ namespace Hero_Designer
         }
 
         void pnlTabs_Paint(object sender, PaintEventArgs e)
-
         {
             this.DoPaint();
         }
 
         void PowerScaler_BarClick(float Value)
-
         {
             int num = (int)Math.Round((double)Value);
             if (num < this.pBase.VariableMin)
@@ -3735,7 +3349,6 @@ namespace Hero_Designer
         }
 
         void RedrawFlip()
-
         {
             if (this.bxFlip == null)
                 this.DisplayFlippedEnhancements();
@@ -3747,7 +3360,6 @@ namespace Hero_Designer
         }
 
         void ResetSize()
-
         {
             Size size = this.Size;
             this.info_txtSmall.Height = 32;
@@ -3785,7 +3397,6 @@ namespace Hero_Designer
         }
 
         void SetBackColor()
-
         {
             this.info_Title.BackColor = this.BackColor;
             this.info_txtLarge.BackColor = this.BackColor;
@@ -3814,7 +3425,6 @@ namespace Hero_Designer
         }
 
         void SetDamageTip()
-
         {
             string iTip = string.Empty;
             int num1 = -1;
@@ -4047,7 +3657,6 @@ namespace Hero_Designer
         }
 
         void SetPowerScaler()
-
         {
             if (this.pBase == null)
                 this.PowerScaler.Visible = false;
@@ -4067,10 +3676,7 @@ namespace Hero_Designer
                 this.PowerScaler.Visible = false;
         }
 
-        public void SetScreenBounds(Rectangle iBounds)
-        {
-            this.ScreenBounds = iBounds;
-        }
+        public void SetScreenBounds(Rectangle iBounds) => this.ScreenBounds = iBounds;
 
         public void SetSetPicker(int iSet)
         {
@@ -4093,7 +3699,6 @@ namespace Hero_Designer
         }
 
         bool sFXCheck(Enums.ShortFX isFX)
-
         {
             if (isFX.Index != null)
             {
@@ -4108,13 +3713,11 @@ namespace Hero_Designer
         }
 
         string ShortStr(string full, string brief)
-
         {
             return (double)this.info_DataList.Font.Size <= (double)(68f / (float)full.Length) ? full : brief;
         }
 
         void SizeRefresh()
-
         {
             if (this.Compact)
                 this.CompactSize();
@@ -4123,7 +3726,6 @@ namespace Hero_Designer
         }
 
         bool SplitFX_AddToList(
-
           ref Enums.ShortFX BaseSFX,
           ref Enums.ShortFX EnhSFX,
           ref ctlPairedList iList,
@@ -4189,13 +3791,11 @@ namespace Hero_Designer
         }
 
         void Title_MouseDown(object sender, MouseEventArgs e)
-
         {
             this.mouse_offset = new System.Drawing.Point(-e.X, -e.Y);
         }
 
         void Title_MouseMove(object sender, MouseEventArgs e)
-
         {
             if (e.Button != MouseButtons.Left || this.MoveDisable)
                 return;

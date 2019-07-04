@@ -13,48 +13,8 @@ namespace Hero_Designer
 {
     public partial class frmColourSettings : Form
     {
-        Button btnCancel;
-
-        Button btnOK;
-
-        Button btnReset;
-        ColorDialog cPicker;
-
-        Label csAlert;
-
-        Label csEnh;
-
-        Label csFade;
-
-        Label csHero;
-
-        Label csInv;
-
-        Label csInvInv;
-
-        Label csSpecial;
-
-        Label csText;
-
-        Label csValue;
-
-        Label csVillain;
-        Label Label1;
-        Label Label10;
-        Label Label19;
-        Label Label2;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label9;
 
         ListLabelV2 Listlabel1;
-        RichTextBox rtPreview;
 
         protected ConfigData.FontSettings myFS;
 
@@ -62,6 +22,9 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmColourSettings_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmColourSettings);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmColourSettings));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myFS.Assign(MidsContext.Config.RtFont);
         }
 

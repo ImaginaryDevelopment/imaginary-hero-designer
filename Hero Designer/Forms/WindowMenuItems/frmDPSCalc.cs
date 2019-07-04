@@ -59,23 +59,19 @@ namespace Hero_Designer
             this.FormClosed += new FormClosedEventHandler(this.frmDPSCalc_FormClosed);
             this.Load += new EventHandler(this.frmDPSCalc_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmDPSCalc);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmDPSCalc));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
 
-        void chkRecipe_CheckedChanged(object sender, EventArgs e)
-
-        {
-        }
-
         void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
-
         {
             this.FillPowerList();
         }
 
         void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
-
         {
             if (this.chkSortByLevel.Checked)
             {
@@ -89,7 +85,7 @@ namespace Hero_Designer
             float damage = AttackChain[0].Damage;
             float endurance = AttackChain[0].Endurance;
             float animation = AttackChain[0].Animation;
-            for (int index = 1; (double)AttackChain[index].DPA != 0.0; ++index)
+            for (int index = 1; AttackChain[index].DPA != 0.0; ++index)
             {
                 str1 = str1 + " --> " + AttackChain[index].PowerName;
                 damage += AttackChain[index].Damage;
@@ -108,7 +104,6 @@ namespace Hero_Designer
         }
 
         void FillPowerList()
-
         {
             this.GlobalDamageBuff = 0.0f;
             this.lvPower.BeginUpdate();
@@ -167,7 +162,6 @@ namespace Hero_Designer
         }
 
         void ibClear_ButtonClicked()
-
         {
             this.ibClear.Checked = true;
             for (int index = 1; index < this.lvPower.Items.Count; ++index)
@@ -187,13 +181,11 @@ namespace Hero_Designer
         }
 
         void ibClose_ButtonClicked()
-
         {
             this.Close();
         }
 
         void ibAutoMode_ButtonClicked()
-
         {
             if (this.ibAutoMode.TextOff == "Automagical")
             {
@@ -234,7 +226,6 @@ namespace Hero_Designer
         }
 
         void ibTopmost_ButtonClicked()
-
         {
             this.TopMost = this.ibTopmost.Checked;
             if (!this.TopMost)
@@ -242,9 +233,7 @@ namespace Hero_Designer
             this.BringToFront();
         }
 
-
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
-
         {
             if (e.Item.Index == 0)
             {
@@ -261,7 +250,6 @@ namespace Hero_Designer
         }
 
         void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
-
         {
             if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
             {
@@ -297,13 +285,11 @@ namespace Hero_Designer
         }
 
         void lvPower_MouseEnter(object sender, EventArgs e)
-
         {
             this.lvPower.Focus();
         }
 
         static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
-
         {
             int num = tl.Length - 1;
             for (int index = 0; index <= num; ++index)
@@ -345,7 +331,6 @@ namespace Hero_Designer
         }
 
         void StoreLocation()
-
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
@@ -374,7 +359,6 @@ namespace Hero_Designer
         }
 
         string[] GetDamageData(int powerLocation)
-
         {
             IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
             float damageValue = enhancedPower.FXGetDamageValue();
@@ -387,7 +371,7 @@ namespace Hero_Designer
             effectMag2.Multiply();
             float num2 = damageValue / num1;
             string[] strArray;
-            if ((double)damageValue != 0.0)
+            if (damageValue != 0.0)
                 strArray = new string[8]
                 {
           num2.ToString(),
@@ -402,26 +386,24 @@ namespace Hero_Designer
             else
                 strArray = new string[8]
                 {
-          "-",
-          "-",
-          rechargeTime.ToString(),
-          num1.ToString(),
-          endCost.ToString(),
-          effectMag1.Sum.ToString(),
-          effectMag2.Sum.ToString(),
-          powerLocation.ToString()
+                      "-",
+                      "-",
+                      rechargeTime.ToString(),
+                      num1.ToString(),
+                      endCost.ToString(),
+                      effectMag1.Sum.ToString(),
+                      effectMag2.Sum.ToString(),
+                      powerLocation.ToString()
                 };
             return strArray;
         }
 
         void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
-
         {
             this.lvPower.Sort();
         }
 
         frmDPSCalc.PowerList[] IncrementRecharge(
-
           frmDPSCalc.PowerList[] List,
           float Time)
         {
@@ -434,7 +416,6 @@ namespace Hero_Designer
         }
 
         void CalculateDPS()
-
         {
             if (this.ibAutoMode.TextOff == "Automagical")
             {
@@ -480,7 +461,7 @@ namespace Hero_Designer
                 }
                 if (array.Length > 1)
                 {
-                    Array.Sort<frmDPSCalc.PowerList>(array, (Comparison<frmDPSCalc.PowerList>)((x, y) => x.HidenDPA.CompareTo(y.HidenDPA)));
+                    Array.Sort(array, (x, y) => x.HidenDPA.CompareTo(y.HidenDPA));
                     float num1 = array[length - 1].Recharge + 5f;
                     int num2 = length - 1;
                     while ((double)num1 > 0.0 && num2 > 0)
@@ -563,7 +544,7 @@ namespace Hero_Designer
                     }
                     float animation = this.GlobalPowerList[index].Animation;
                 }
-                frmDPSCalc.PowerList[] powerListArray = new frmDPSCalc.PowerList[this.GlobalPowerList.Length * 2];
+                var powerListArray = new PowerList[this.GlobalPowerList.Length * 2];
                 int num4 = 0;
                 for (int index = 0; index < powerListArray.Length; ++index)
                 {
@@ -607,7 +588,6 @@ namespace Hero_Designer
         }
 
         struct CountingList
-
         {
             public string Text;
             public int Count;

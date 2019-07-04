@@ -13,24 +13,26 @@ namespace Hero_Designer
 {
     public partial class frmImport_Entities : Form
     {
-        Button btnClose;
-        Button btnFile;
-        Button btnImport;
-        OpenFileDialog dlgBrowse;
-        Label Label8;
-        Label lblDate;
-        Label lblFile;
-        NumericUpDown udRevision;
         frmBusy bFrm;
 
         string FullFileName;
 
         public frmImport_Entities()
         {
-            this.Load += new EventHandler(this.frmImport_Entities_Load);
+            this.Load += this.frmImport_Entities_Load;
             this.FullFileName = "";
             this.InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_Entities));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_Entities);
         }
+
+        void frmImport_Entities_Load(object sender, EventArgs e)
+        {
+            this.FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
+            this.DisplayInfo();
+        }
+
 
         void btnClose_Click(object sender, EventArgs e)
         {
@@ -76,12 +78,6 @@ namespace Hero_Designer
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
             this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.IOAssignmentVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
             this.udRevision.Value = new Decimal(DatabaseAPI.Database.IOAssignmentVersion.Revision);
-        }
-
-        void frmImport_Entities_Load(object sender, EventArgs e)
-        {
-            this.FullFileName = DatabaseAPI.Database.PowersetVersion.SourceFile;
-            this.DisplayInfo();
         }
 
         bool ParseClasses(string iFileName)

@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditPowerset));
             this.txtName = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.cbAT = new System.Windows.Forms.ComboBox();
@@ -89,6 +88,7 @@ namespace Hero_Designer
             this.txtName.Size = new System.Drawing.Size(196, 20);
             this.txtName.TabIndex = 0;
             this.txtName.Text = "TextBox1";
+            this.txtName.TextChanged += txtName_TextChanged;
 
             this.Label1.Location = new System.Drawing.Point(6, 16);
             this.Label1.Name = "Label1";
@@ -104,6 +104,7 @@ namespace Hero_Designer
 
             this.cbAT.Size = new System.Drawing.Size(124, 22);
             this.cbAT.TabIndex = 2;
+            this.cbAT.SelectedIndexChanged += cbAT_SelectedIndexChanged;
 
             this.Label2.Location = new System.Drawing.Point(336, 122);
             this.Label2.Name = "Label2";
@@ -127,6 +128,7 @@ namespace Hero_Designer
 
             this.cbSetType.Size = new System.Drawing.Size(124, 22);
             this.cbSetType.TabIndex = 4;
+            this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
 
             this.btnIcon.Location = new System.Drawing.Point(6, 52);
             this.btnIcon.Name = "btnIcon";
@@ -134,6 +136,7 @@ namespace Hero_Designer
             this.btnIcon.Size = new System.Drawing.Size(179, 20);
             this.btnIcon.TabIndex = 6;
             this.btnIcon.Text = "Select Icon";
+            this.btnIcon.Click += btnIcon_Click;
             this.picIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             this.picIcon.Location = new System.Drawing.Point(85, 22);
@@ -181,6 +184,7 @@ namespace Hero_Designer
             this.btnClose.Size = new System.Drawing.Size(75, 36);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "OK";
+            this.btnClose.Click += btnClose_Click;
 
             this.btnClearIcon.Location = new System.Drawing.Point(6, 76);
             this.btnClearIcon.Name = "btnClearIcon";
@@ -188,6 +192,7 @@ namespace Hero_Designer
             this.btnClearIcon.Size = new System.Drawing.Size(179, 20);
             this.btnClearIcon.TabIndex = 16;
             this.btnClearIcon.Text = "Clear Icon";
+            this.btnClearIcon.Click += btnClearIcon_Click;
             this.ImagePicker.Filter = "PNG Images|*.png";
             this.ImagePicker.Title = "Select Image File";
 
@@ -214,6 +219,9 @@ namespace Hero_Designer
 
             this.cbNameGroup.Size = new System.Drawing.Size(196, 22);
             this.cbNameGroup.TabIndex = 20;
+            this.cbNameGroup.TextChanged += this.cbNameGroup_TextChanged;
+            this.cbNameGroup.SelectedIndexChanged += this.cbNameGroup_SelectedIndexChanged;
+            this.cbNameGroup.Leave += this.cbNameGroup_Leave;
 
             this.Label22.Location = new System.Drawing.Point(10, 44);
             this.Label22.Name = "Label22";
@@ -229,6 +237,9 @@ namespace Hero_Designer
             this.txtNameSet.Size = new System.Drawing.Size(196, 20);
             this.txtNameSet.TabIndex = 21;
             this.txtNameSet.Text = "PowerName";
+            this.txtNameSet.TextChanged += this.txtNameSet_TextChanged;
+            this.txtNameSet.Leave += this.txtNameSet_Leave;
+
 
             this.Label33.Location = new System.Drawing.Point(3, 72);
             this.Label33.Name = "Label33";
@@ -272,6 +283,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 36);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += btnCancel_Click;
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.txtDesc);
 
             this.GroupBox3.Location = new System.Drawing.Point(12, 178);
@@ -290,6 +302,7 @@ namespace Hero_Designer
             this.txtDesc.Size = new System.Drawing.Size(503, 55);
             this.txtDesc.TabIndex = 1;
             this.txtDesc.Text = "TextBox1";
+            this.txtDesc.TextChanged += txtDesc_TextChanged;
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkNoTrunk);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.cbTrunkSet);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.cbTrunkGroup);
@@ -311,6 +324,7 @@ namespace Hero_Designer
             this.chkNoTrunk.TabIndex = 17;
             this.chkNoTrunk.Text = "This power has no Trunk set";
             this.chkNoTrunk.UseVisualStyleBackColor = true;
+            this.chkNoTrunk.CheckedChanged += chkNoTrunk_CheckedChanged;
             this.cbTrunkSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrunkSet.FormattingEnabled = true;
 
@@ -319,6 +333,7 @@ namespace Hero_Designer
 
             this.cbTrunkSet.Size = new System.Drawing.Size(196, 22);
             this.cbTrunkSet.TabIndex = 14;
+            this.cbTrunkSet.SelectedIndexChanged += cbTrunkSet_SelectedIndexChanged;
             this.cbTrunkGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrunkGroup.FormattingEnabled = true;
 
@@ -327,6 +342,7 @@ namespace Hero_Designer
 
             this.cbTrunkGroup.Size = new System.Drawing.Size(196, 22);
             this.cbTrunkGroup.TabIndex = 13;
+            this.cbTrunkGroup.SelectedIndexChanged += cbTrunkGroup_SelectedIndexChanged;
 
             this.Label5.Location = new System.Drawing.Point(10, 16);
             this.Label5.Name = "Label5";
@@ -364,6 +380,7 @@ namespace Hero_Designer
             this.chkNoLink.TabIndex = 17;
             this.chkNoLink.Text = "No link";
             this.chkNoLink.UseVisualStyleBackColor = true;
+            this.chkNoLink.CheckedChanged += chkNoLink_CheckedChanged;
             this.cbLinkSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLinkSet.FormattingEnabled = true;
 
@@ -372,6 +389,7 @@ namespace Hero_Designer
 
             this.cbLinkSet.Size = new System.Drawing.Size(196, 22);
             this.cbLinkSet.TabIndex = 14;
+            this.cbLinkSet.SelectedIndexChanged += cbLinkSet_SelectedIndexChanged;
             this.cbLinkGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLinkGroup.FormattingEnabled = true;
 
@@ -380,6 +398,7 @@ namespace Hero_Designer
 
             this.cbLinkGroup.Size = new System.Drawing.Size(196, 22);
             this.cbLinkGroup.TabIndex = 13;
+            this.cbLinkGroup.SelectedIndexChanged += cbLinkGroup_SelectedIndexChanged;
 
             this.Label6.Location = new System.Drawing.Point(10, 16);
             this.Label6.Name = "Label6";
@@ -415,6 +434,7 @@ namespace Hero_Designer
 
             this.lvMutexSets.Size = new System.Drawing.Size(238, 242);
             this.lvMutexSets.TabIndex = 111;
+            this.lvMutexSets.SelectedIndexChanged += lvMutexSets_SelectedIndexChanged;
 
             this.Label8.Location = new System.Drawing.Point(6, 16);
             this.Label8.Name = "Label8";
@@ -431,6 +451,7 @@ namespace Hero_Designer
 
             this.cbMutexGroup.Size = new System.Drawing.Size(238, 22);
             this.cbMutexGroup.TabIndex = 21;
+            this.cbMutexGroup.SelectionChangeCommitted += cbMutexGroup_SelectionChangeCommitted;
 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 
@@ -451,10 +472,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.cbAT);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEditPowerset);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Powerset (Group_Name.Set_Name)";
@@ -467,29 +486,51 @@ namespace Hero_Designer
             this.GroupBox4.ResumeLayout(false);
             this.gbLink.ResumeLayout(false);
             this.GroupBox5.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnClearIcon.Click += btnClearIcon_Click;
-                this.btnClose.Click += btnClose_Click;
-                this.btnIcon.Click += btnIcon_Click;
-                this.cbAT.SelectedIndexChanged += cbAT_SelectedIndexChanged;
-                this.cbLinkGroup.SelectedIndexChanged += cbLinkGroup_SelectedIndexChanged;
-                this.cbLinkSet.SelectedIndexChanged += cbLinkSet_SelectedIndexChanged;
-                this.cbMutexGroup.SelectionChangeCommitted += cbMutexGroup_SelectionChangeCommitted;
-                this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
-                this.cbTrunkGroup.SelectedIndexChanged += cbTrunkGroup_SelectedIndexChanged;
-                this.cbTrunkSet.SelectedIndexChanged += cbTrunkSet_SelectedIndexChanged;
-                this.chkNoLink.CheckedChanged += chkNoLink_CheckedChanged;
-                this.chkNoTrunk.CheckedChanged += chkNoTrunk_CheckedChanged;
-                this.lvMutexSets.SelectedIndexChanged += lvMutexSets_SelectedIndexChanged;
-                this.txtDesc.TextChanged += txtDesc_TextChanged;
-                this.txtName.TextChanged += txtName_TextChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnClearIcon;
+        System.Windows.Forms.Button btnClose;
+        System.Windows.Forms.Button btnIcon;
+        System.Windows.Forms.ComboBox cbAT;
+        System.Windows.Forms.ComboBox cbLinkGroup;
+        System.Windows.Forms.ComboBox cbLinkSet;
+        System.Windows.Forms.ComboBox cbMutexGroup;
+        System.Windows.Forms.ComboBox cbNameGroup;
+        System.Windows.Forms.ComboBox cbSetType;
+        System.Windows.Forms.ComboBox cbTrunkGroup;
+        System.Windows.Forms.ComboBox cbTrunkSet;
+        System.Windows.Forms.CheckBox chkNoLink;
+        System.Windows.Forms.CheckBox chkNoTrunk;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.GroupBox gbLink;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox3;
+        System.Windows.Forms.GroupBox GroupBox4;
+        System.Windows.Forms.GroupBox GroupBox5;
+        System.Windows.Forms.OpenFileDialog ImagePicker;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label31;
+        System.Windows.Forms.Label Label33;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label lblNameFull;
+        System.Windows.Forms.Label lblNameUnique;
+        System.Windows.Forms.ListBox lvMutexSets;
+        System.Windows.Forms.ListView lvPowers;
+        System.Windows.Forms.PictureBox picIcon;
+        System.Windows.Forms.TextBox txtDesc;
+        System.Windows.Forms.TextBox txtName;
+        System.Windows.Forms.TextBox txtNameSet;
     }
 }

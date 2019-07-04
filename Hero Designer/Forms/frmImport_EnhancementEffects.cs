@@ -14,24 +14,17 @@ namespace Hero_Designer
 {
     public partial class frmImport_EnhancementEffects : Form
     {
-        Button btnClose;
-
-        Button btnFile;
-
-        Button btnImport;
-        OpenFileDialog dlgBrowse;
-        Label lblFile;
-
         frmBusy bFrm;
-
         string FullFileName;
-
 
         public frmImport_EnhancementEffects()
         {
             this.Load += new EventHandler(this.frmImport_EnhancementEffects_Load);
             this.FullFileName = "";
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_EnhancementEffects));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_EnhancementEffects);
         }
 
         void btnClose_Click(object sender, EventArgs e)
@@ -68,7 +61,7 @@ namespace Hero_Designer
             if (this.bFrm == null)
             {
                 this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                this.bFrm.Show(this);
             }
             this.bFrm.SetMessage(sMessage);
         }
@@ -79,14 +72,12 @@ namespace Hero_Designer
         }
 
         void frmImport_EnhancementEffects_Load(object sender, EventArgs e)
-
         {
             this.FullFileName = DatabaseAPI.Database.PowerEffectVersion.SourceFile;
             this.DisplayInfo();
         }
 
         bool ParseClasses(string iFileName)
-
         {
             StreamReader iStream;
             try
@@ -162,7 +153,7 @@ namespace Hero_Designer
             while (str2 != null);
             iStream.Close();
             Clipboard.SetDataObject(str1);
-            int num6 = (int)Interaction.MsgBox(("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, "Import Done");
+            Interaction.MsgBox(("Import Completed!\r\nTotal Records: " + Conversions.ToString(num1) + "\r\nGood: " + Conversions.ToString(num4) + "\r\nRejected: " + Conversions.ToString(num2) + "\r\nRejected List has been placed on the clipboard. Database will be saved when you click OK"), MsgBoxStyle.Information, "Import Done");
             this.Enabled = true;
             this.BusyHide();
             var serializer = My.MyApplication.GetSerializer();
