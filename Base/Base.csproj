@@ -7,7 +7,7 @@
     <ProjectGuid>{78125AD1-C9F8-4FE9-9BDB-5033D5FA76CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Base</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET20</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -39,6 +39,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Backfills.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="ZStatus.Designer.cs">
       <DependentUpon>ZStatus.cs</DependentUpon>
@@ -111,12 +112,6 @@
     <EmbeddedResource Include="ZStatus.resx">
       <DependentUpon>ZStatus.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HeroDesigner.ZLib\HeroDesigner.ZLib.fsproj">
-      <Project>{518ece50-17a7-4c9f-ba19-0ea7320d0895}</Project>
-      <Name>HeroDesigner.ZLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

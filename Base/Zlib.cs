@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 public class Zlib
 {
@@ -51,9 +52,9 @@ public class Zlib
                 return array;
             default:
                 MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + num1 + ".", "Compression Error");
-                return Array.Empty<byte>();
+                return Arrays.Empty<byte>();
         }
-        return Array.Empty<byte>();
+        return Arrays.Empty<byte>();
     }
 
     static bool is64BitProcess = (IntPtr.Size == 8);
@@ -61,6 +62,7 @@ public class Zlib
     public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
     {
         Console.WriteLine(Environment.CurrentDirectory);
+#if FSHARP
         // zlib doesn't seem to work in 64bit, try this, and fallback to trying zlib if failed
         if (is64BitProcess && File.Exists(ExternalCompressionName))
         {
@@ -78,6 +80,7 @@ public class Zlib
                 return bytes;
             }
         }
+#endif
         int length = iBytes.Length;
         int destLength = outSize;
         byte[] array = new byte[destLength];
@@ -88,7 +91,7 @@ public class Zlib
             return array;
         }
         else
-            return Array.Empty<byte>();
+            return Arrays.Empty<byte>();
     }
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {

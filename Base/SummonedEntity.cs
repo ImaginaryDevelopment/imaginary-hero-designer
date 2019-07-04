@@ -8,20 +8,20 @@ public class SummonedEntity
 {
     int _nID = -1;
     int _nClassID;
-    int[] _nPowerset = Array.Empty<int>();
-    int[] _nUpgradePower = Array.Empty<int>();
+    int[] _nPowerset = Arrays.Empty<int>();
+    int[] _nUpgradePower = Arrays.Empty<int>();
 
     public string UID { get; set; } = string.Empty;
     public string DisplayName { get; set; } = string.Empty;
-    public string[] PowersetFullName { get; private set; } = Array.Empty<string>();
-    public string[] UpgradePowerFullName { get; private set; } = Array.Empty<string>();
+    public string[] PowersetFullName { get; private set; } = Arrays.Empty<string>();
+    public string[] UpgradePowerFullName { get; private set; } = Arrays.Empty<string>();
     public string ClassName { get; set; } = string.Empty;
     public Enums.eSummonEntity EntityType { get; set; }
 
     // semi-props
     // would be properties, but shouldn't be serialized, and aren't outwardly mutable
-    public IReadOnlyList<int> GetNPowerset() => _nPowerset;
-    public IReadOnlyList<int> GetNUpgradePower() => _nUpgradePower;
+    public IReadOnlyList<int> GetNPowerset() => _nPowerset.ToReadOnly();
+    public IReadOnlyList<int> GetNUpgradePower() => _nUpgradePower.ToReadOnly();
     public int GetNId() => _nID;
     public int GetNClassId() => _nClassID;
 
@@ -149,8 +149,8 @@ public class SummonedEntity
         entity1._nPowerset = new int[1];
         entity1.PowersetFullName[0] = powersetFullName;
         entity1._nPowerset[0] = DatabaseAPI.NidFromUidPowerset(entity1.PowersetFullName[0]);
-        entity1.UpgradePowerFullName = Array.Empty<string>();
-        entity1._nUpgradePower = Array.Empty<int>();
+        entity1.UpgradePowerFullName = Arrays.Empty<string>();
+        entity1._nUpgradePower = Arrays.Empty<int>();
     }
 
     public void UGAdd()
