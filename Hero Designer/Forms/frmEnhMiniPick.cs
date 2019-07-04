@@ -10,21 +10,27 @@ namespace Hero_Designer
 {
     public partial class frmEnhMiniPick : Form
     {
-        Button btnOK;
-
-        ListBox _lbList;
-        Label lblMessage;
-
-        internal ListBox lbList
-        {
-            get => _lbList;
-            private set => _lbList = value;
-        }
 
         public frmEnhMiniPick()
         {
-            this.Load += new EventHandler(this.frmEnhMez_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmEnhMiniPick);
+        }
+
+        public static int MezPicker(int startIndex)
+        {
+            Enums.eMez eMez = Enums.eMez.None;
+            frmEnhMiniPick frmEnhMiniPick = new frmEnhMiniPick();
+            string[] names = Enum.GetNames(eMez.GetType());
+            int num1 = names.Length - 1;
+            for (int index = 1; index <= num1; ++index)
+                frmEnhMiniPick.lbList.Items.Add(names[index]);
+            if (startIndex > -1 & startIndex < frmEnhMiniPick.lbList.Items.Count)
+                frmEnhMiniPick.lbList.SelectedIndex = startIndex - 1;
+            else
+                frmEnhMiniPick.lbList.SelectedIndex = 0;
+            frmEnhMiniPick.ShowDialog();
+            return frmEnhMiniPick.lbList.SelectedIndex + 1;
         }
 
         void btnOK_Click(object sender, EventArgs e)
@@ -34,22 +40,10 @@ namespace Hero_Designer
             this.Hide();
         }
 
-        void frmEnhMez_Load(object sender, EventArgs e)
-
-        {
-        }
-
-        [DebuggerStepThrough]
-
         void lbList_DoubleClick(object sender, EventArgs e)
 
         {
             this.btnOK_Click(RuntimeHelpers.GetObjectValue(sender), e);
-        }
-
-        void lbList_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
         }
     }
 }

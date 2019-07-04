@@ -31,7 +31,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmDBEdit));
             this.udIssue = new System.Windows.Forms.NumericUpDown();
             this.Label1 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
@@ -71,21 +70,13 @@ namespace Hero_Designer
             this.SuspendLayout();
 
             this.udIssue.Location = new System.Drawing.Point(148, 44);
-            System.Decimal num = new System.Decimal(new int[4]
-            {
-        1,
-        0,
-        0,
-        0
-            });
-            this.udIssue.Minimum = num;
+            this.udIssue.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udIssue.Name = "udIssue";
 
             this.udIssue.Size = new System.Drawing.Size(84, 20);
             this.udIssue.TabIndex = 0;
             this.udIssue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 12, 0, 0, 0 });
-            this.udIssue.Value = num;
+            this.udIssue.Value = new System.Decimal(new int[4] { 12, 0, 0, 0 });
 
             this.Label1.Location = new System.Drawing.Point(22, 44);
             this.Label1.Name = "Label1";
@@ -122,6 +113,7 @@ namespace Hero_Designer
             this.btnEditEnh.TabIndex = 5;
             this.btnEditEnh.Text = "Enhancement Editor";
             this.btnEditEnh.UseVisualStyleBackColor = true;
+            this.btnEditEnh.Click += btnEditEnh_Click;
             this.btnEditIOSet.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEditIOSet.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnEditIOSet.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -133,6 +125,7 @@ namespace Hero_Designer
             this.btnEditIOSet.TabIndex = 6;
             this.btnEditIOSet.Text = "Invention Set Editor";
             this.btnEditIOSet.UseVisualStyleBackColor = true;
+            this.btnEditIOSet.Click += btnEditIOSet_Click;
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblCountSalvage);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.Label6);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblCountRecipe);
@@ -306,6 +299,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += btnClose_Click;
             this.btnDate.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDate.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnDate.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -318,6 +312,7 @@ namespace Hero_Designer
             this.btnDate.Text = "Set Date";
             this.btnDate.UseVisualStyleBackColor = true;
             this.btnDate.Visible = false;
+            this.btnDate.Click += btnDate_Click;
             this.btnSalvage.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnSalvage.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnSalvage.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -329,6 +324,7 @@ namespace Hero_Designer
             this.btnSalvage.TabIndex = 14;
             this.btnSalvage.Text = "Salvage Editor";
             this.btnSalvage.UseVisualStyleBackColor = true;
+            this.btnSalvage.Click += btnSalvage_Click;
             this.btnRecipe.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnRecipe.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnRecipe.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -340,6 +336,7 @@ namespace Hero_Designer
             this.btnRecipe.TabIndex = 15;
             this.btnRecipe.Text = "Recipe Editor";
             this.btnRecipe.UseVisualStyleBackColor = true;
+            this.btnRecipe.Click += btnRecipe_Click;
             this.btnCSV.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnCSV.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnCSV.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -351,6 +348,7 @@ namespace Hero_Designer
             this.btnCSV.TabIndex = 16;
             this.btnCSV.Text = "CSV Importer";
             this.btnCSV.UseVisualStyleBackColor = true;
+            this.btnCSV.Click += btnCSV_Click;
             this.btnEditEntity.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEditEntity.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnEditEntity.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -362,6 +360,7 @@ namespace Hero_Designer
             this.btnEditEntity.TabIndex = 17;
             this.btnEditEntity.Text = "Entity Editor";
             this.btnEditEntity.UseVisualStyleBackColor = true;
+            this.btnEditEntity.Click += btnEditEntity_Click;
             this.btnPSBrowse.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnPSBrowse.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnPSBrowse.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -373,12 +372,14 @@ namespace Hero_Designer
             this.btnPSBrowse.TabIndex = 18;
             this.btnPSBrowse.Text = "Main Database Editor";
             this.btnPSBrowse.UseVisualStyleBackColor = true;
+            this.btnPSBrowse.Click += btnPSBrowse_Click;
 
             this.txtDBVer.Location = new System.Drawing.Point(148, 68);
             this.txtDBVer.Name = "txtDBVer";
 
             this.txtDBVer.Size = new System.Drawing.Size(84, 20);
             this.txtDBVer.TabIndex = 21;
+            this.txtDBVer.TextChanged += txtDBVer_TextChanged;
 
             this.Label3.Location = new System.Drawing.Point(22, 68);
             this.Label3.Name = "Label3";
@@ -399,6 +400,7 @@ namespace Hero_Designer
             this.btnFileReport.Text = "File Load Report";
             this.btnFileReport.UseVisualStyleBackColor = true;
             this.btnFileReport.Visible = false;
+            this.btnFileReport.Click += btnFileReport_Click;
             this.exportIndexes.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.exportIndexes.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.exportIndexes.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -436,35 +438,18 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmDBEdit);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Database Editor";
             this.udIssue.EndInit();
             this.GroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCSV.Click += btnCSV_Click;
-                this.btnClose.Click += btnClose_Click;
-                this.btnDate.Click += btnDate_Click;
-                this.btnEditEnh.Click += btnEditEnh_Click;
-                this.btnEditEntity.Click += btnEditEntity_Click;
-                this.btnEditIOSet.Click += btnEditIOSet_Click;
-                this.btnFileReport.Click += btnFileReport_Click;
-                this.btnPSBrowse.Click += btnPSBrowse_Click;
-                this.btnRecipe.Click += btnRecipe_Click;
-                this.btnSalvage.Click += btnSalvage_Click;
-                this.txtDBVer.TextChanged += txtDBVer_TextChanged;
-            }
-            // finished with events
             this.PerformLayout();
         }
+        System.Windows.Forms.NumericUpDown udIssue;
         #endregion
     }
 }

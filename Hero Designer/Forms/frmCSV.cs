@@ -14,176 +14,36 @@ namespace Hero_Designer
 {
     public partial class frmCSV : Form
     {
-        Label at_Count;
-        Label at_Date;
-
-        Button at_Import;
-        Label at_Revision;
-
-        Button btnBonusLookup;
-
-        Button btnClearSI;
-
-        Button btnDefiance;
-
-        Button btnEnhEffects;
-
-        Button btnEntities;
-
-        Button btnImportRecipes;
-
-        Button btnIOLevels;
-
-        Button btnSalvageUpdate;
-
-        [AccessedThroughProperty("btnStaticExport")]
-        Button _btnStaticExport;
-
-        Button btnStaticIndex;
-        Label fx_Count;
-        Label fx_Date;
-
-        Button fx_Import;
-        Label fx_Revision;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-        GroupBox GroupBox6;
-        GroupBox GroupBox7;
-        GroupBox GroupBox8;
-        Label invent_Date;
-
-        Button invent_Import;
-        Label invent_RecipeDate;
-        Label invent_Revision;
-
-        Button inventSetImport;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label12;
-        Label Label13;
-        Label Label14;
-        Label Label15;
-        Label Label16;
-        Label Label17;
-        Label Label19;
-        Label Label2;
-        Label Label21;
-        Label Label22;
-        Label Label23;
-        Label Label24;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lev_Count;
-        Label lev_date;
-        Label lev_Revision;
-
-        Button level_import;
-        Label mod_Count;
-        Label mod_Date;
-
-        Button mod_Import;
-        Label mod_Revision;
-        Label pow_Count;
-        Label pow_Date;
-
-        Button pow_Import;
-        Label pow_Revision;
-        Label set_Count;
-        Label set_Date;
-
-        Button set_Import;
-        Label set_Revision;
 
         frmBusy bFrm;
-
-        Button btnStaticExport
-        {
-            get
-            {
-                return this._btnStaticExport;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(frmCSV.btnStaticExport_Click);
-                if (this._btnStaticExport != null)
-                    this._btnStaticExport.Click -= eventHandler;
-                this._btnStaticExport = value;
-                if (this._btnStaticExport == null)
-                    return;
-                this._btnStaticExport.Click += eventHandler;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         public frmCSV()
         {
             this.Load += new EventHandler(this.frmCSV_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmCSV);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCSV));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+        }
+
+        void frmCSV_Load(object sender, EventArgs e)
+        {
+            this.DisplayInfo();
         }
 
         void at_Import_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_Archetype().ShowDialog();
+            new frmImport_Archetype().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnBonusLookup_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_SetBonusAssignment().ShowDialog();
+            new frmImport_SetBonusAssignment().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnClearSI_Click(object sender, EventArgs e)
-
         {
             if (Interaction.MsgBox("Really set all StaticIndex values to -1?\r\nIf not using qualified names for Save/Load, files will be unopenable until Statics are re-indexed. Full Re-Indexing may result in changed index assignments.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.No)
                 return;
@@ -193,11 +53,10 @@ namespace Hero_Designer
             int num2 = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num2; ++index)
                 DatabaseAPI.Database.Enhancements[index].StaticIndex = -1;
-            int num3 = (int)Interaction.MsgBox("Static Index values cleared.", MsgBoxStyle.Information, "De-Indexing Complete");
+            Interaction.MsgBox("Static Index values cleared.", MsgBoxStyle.Information, "De-Indexing Complete");
         }
 
         void btnDefiance_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Working...");
             int num1 = DatabaseAPI.Database.Powersets.Length - 1;
@@ -226,31 +85,27 @@ namespace Hero_Designer
         }
 
         void btnEnhEffects_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_EnhancementEffects().ShowDialog();
+            new frmImport_EnhancementEffects().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnEntities_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_Entities().ShowDialog();
+            new frmImport_Entities().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnImportRecipes_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_Recipe().ShowDialog();
+            new frmImport_Recipe().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnIOLevels_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Working...");
-            frmCSV.SetEnhancementLevels();
+            SetEnhancementLevels();
             this.BusyMsg("Saving...");
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
@@ -258,15 +113,12 @@ namespace Hero_Designer
         }
 
         void btnSalvageUpdate_Click(object sender, EventArgs e)
-
         {
-            int num = (int)new frmImport_SalvageReq().ShowDialog();
+            new frmImport_SalvageReq().ShowDialog();
             this.DisplayInfo();
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         static void btnStaticExport_Click(object sender, EventArgs e)
-
         {
             string str1 = "Static Indexes, App version " + Base.Master_Classes.MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
             foreach (Power power in DatabaseAPI.Database.Power)
@@ -306,7 +158,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -315,7 +166,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
@@ -357,18 +207,11 @@ namespace Hero_Designer
             this.invent_RecipeDate.Text = Strings.Format(DatabaseAPI.Database.RecipeRevisionDate, "dd/MMM/yy HH:mm:ss");
         }
 
-        void frmCSV_Load(object sender, EventArgs e)
-        {
-            this.DisplayInfo();
-        }
-
         void fx_Import_Click(object sender, EventArgs e)
         {
             int num = (int)new frmImportEffects().ShowDialog();
             this.DisplayInfo();
         }
-
-        [DebuggerStepThrough]
 
         void invent_Import_Click(object sender, EventArgs e)
 

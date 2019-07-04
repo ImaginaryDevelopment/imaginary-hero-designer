@@ -16,84 +16,11 @@ namespace Hero_Designer
 {
     public partial class frmSetEdit : Form
     {
-        Button btnCancel;
-
-        Button btnImage;
-
-        Button btnNoImage;
-
-        Button btnOK;
-
-        Button btnPaste;
-
-        ComboBox cbSetType;
-
-        ComboBox cbSlotCount;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        GroupBox gbBasic;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        ImageList ilEnh;
-        OpenFileDialog ImagePicker;
-        Label Label1;
-        Label Label16;
-        Label Label2;
-        Label Label27;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-
-        ListBox lstBonus;
-
-        [AccessedThroughProperty("lvBonusList")]
-        ListView _lvBonusList;
-        ListView lvEnh;
-        RadioButton rbIfAny;
-        RadioButton rbIfCritter;
-        RadioButton rbIfPlayer;
-        RichTextBox rtbBonus;
-
-        TextBox txtAlternate;
-
-        TextBox txtDesc;
-
-        TextBox txtInternal;
-
-        TextBox txtNameFull;
-
-        TextBox txtNameShort;
-
-        [AccessedThroughProperty("udMaxLevel")]
-        NumericUpDown _udMaxLevel;
-
-        [AccessedThroughProperty("udMinLevel")]
-        NumericUpDown _udMinLevel;
 
         protected bool Loading;
         public EnhancementSet mySet;
         protected int[] SetBonusList;
         protected int[] SetBonusListPVP;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         ListView lvBonusList
         {
@@ -104,24 +31,17 @@ namespace Hero_Designer
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                EventHandler eventHandler1 = new EventHandler(this.lvBonusList_SelectedIndexChanged);
                 EventHandler eventHandler2 = new EventHandler(this.lvBonusList_DoubleClick);
                 if (this._lvBonusList != null)
                 {
-                    this._lvBonusList.SelectedIndexChanged -= eventHandler1;
                     this._lvBonusList.DoubleClick -= eventHandler2;
                 }
                 this._lvBonusList = value;
                 if (this._lvBonusList == null)
                     return;
-                this._lvBonusList.SelectedIndexChanged += eventHandler1;
                 this._lvBonusList.DoubleClick += eventHandler2;
             }
         }
-
-
-
-
 
         NumericUpDown udMaxLevel
         {
@@ -178,6 +98,10 @@ namespace Hero_Designer
             this.SetBonusListPVP = new int[0];
             this.Loading = true;
             this.InitializeComponent();
+            this.Name = nameof(frmSetEdit);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmSetEdit));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
             this.mySet = new EnhancementSet(iSet);
         }
 
@@ -187,14 +111,12 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
         void btnImage_Click(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -216,14 +138,12 @@ namespace Hero_Designer
         }
 
         void btnNoImage_Click(object sender, EventArgs e)
-
         {
             this.mySet.Image = "";
             this.DisplayIcon();
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.mySet.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
             this.mySet.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
@@ -232,7 +152,6 @@ namespace Hero_Designer
         }
 
         void btnPaste_Click(object sender, EventArgs e)
-
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
             char[] chArray = new char[1] { '^' };
@@ -264,7 +183,6 @@ namespace Hero_Designer
         }
 
         void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -272,7 +190,6 @@ namespace Hero_Designer
         }
 
         void cbSlotX_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -365,7 +282,6 @@ namespace Hero_Designer
         }
 
         void DisplayIcon()
-
         {
             if (this.mySet.Image != "")
             {
@@ -529,7 +445,6 @@ namespace Hero_Designer
         }
 
         void frmSetEdit_Load(object sender, EventArgs e)
-
         {
             if (MidsContext.Config.MasterMode)
                 this.btnPaste.Visible = true;
@@ -545,8 +460,6 @@ namespace Hero_Designer
             this.DisplayBonus();
         }
 
-        [DebuggerStepThrough]
-
         public bool isBonus()
         {
             return this.cbSlotCount.SelectedIndex > -1 & this.cbSlotCount.SelectedIndex < this.mySet.Enhancements.Length - 1;
@@ -558,7 +471,6 @@ namespace Hero_Designer
         }
 
         void lstBonus_DoubleClick(object sender, EventArgs e)
-
         {
             if (this.lstBonus.SelectedIndex < 0)
                 return;
@@ -619,7 +531,6 @@ namespace Hero_Designer
         }
 
         void lvBonusList_DoubleClick(object sender, EventArgs e)
-
         {
             if (this.lvBonusList.SelectedIndices.Count < 1)
                 return;
@@ -650,11 +561,6 @@ namespace Hero_Designer
             }
         }
 
-        void lvBonusList_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-        }
-
         public void SetMaxLevel(int iValue)
         {
             if (Decimal.Compare(new Decimal(iValue), this.udMaxLevel.Minimum) < 0)
@@ -679,7 +585,6 @@ namespace Hero_Designer
         }
 
         void txtAlternate_TextChanged(object sender, EventArgs e)
-
         {
             if (this.isBonus())
                 this.mySet.Bonus[this.BonusID()].AltString = this.txtAlternate.Text;
@@ -689,7 +594,6 @@ namespace Hero_Designer
         }
 
         void txtDesc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -705,7 +609,6 @@ namespace Hero_Designer
         }
 
         void txtNameFull_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -713,7 +616,6 @@ namespace Hero_Designer
         }
 
         void txtNameShort_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -721,14 +623,12 @@ namespace Hero_Designer
         }
 
         void udMaxLevel_Leave(object sender, EventArgs e)
-
         {
             this.SetMaxLevel((int)Math.Round(Conversion.Val(this.udMaxLevel.Text)));
             this.mySet.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
         }
 
         void udMaxLevel_ValueChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -737,14 +637,12 @@ namespace Hero_Designer
         }
 
         void udMinLevel_Leave(object sender, EventArgs e)
-
         {
             this.SetMinLevel((int)Math.Round(Conversion.Val(this.udMinLevel.Text)));
             this.mySet.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
         }
 
         void udMinLevel_ValueChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;

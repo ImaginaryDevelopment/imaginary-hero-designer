@@ -13,66 +13,16 @@ namespace Hero_Designer
 {
     public partial class frmEnhEdit : Form
     {
-        Button btnAdd;
-
-        Button btnCancel;
-
-        Button btnClone;
-
-        Button btnDelete;
-
-        Button btnDown;
-
-        Button btnEdit;
-
-        Button btnSave;
-
-        Button btnUp;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ImageList ilEnh;
-        Label lblLoading;
-
-        [AccessedThroughProperty("lvEnh")]
-        ListView _lvEnh;
-
-        CheckBox NoReload;
-
-
-        ListView lvEnh
-        {
-            get
-            {
-                return this._lvEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvEnh_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvEnh_DoubleClick);
-                if (this._lvEnh != null)
-                {
-                    this._lvEnh.SelectedIndexChanged -= eventHandler1;
-                    this._lvEnh.DoubleClick -= eventHandler2;
-                }
-                this._lvEnh = value;
-                if (this._lvEnh == null)
-                    return;
-                this._lvEnh.SelectedIndexChanged += eventHandler1;
-                this._lvEnh.DoubleClick += eventHandler2;
-            }
-        }
         public frmEnhEdit()
         {
             this.Load += new EventHandler(this.frmEnhEdit_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmEnhEdit);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEnhEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void AddListItem(int Index)
-
         {
             string[] items = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];
@@ -110,7 +60,6 @@ namespace Hero_Designer
         }
 
         void btnAdd_Click(object sender, EventArgs e)
-
         {
             IEnhancement iEnh = (IEnhancement)new Enhancement();
             frmEnhData frmEnhData = new frmEnhData(ref iEnh);
@@ -128,13 +77,11 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.Hide();
         }
 
         void btnClone_Click(object sender, EventArgs e)
-
         {
             if (this.lvEnh.SelectedIndices.Count <= 0)
                 return;
@@ -143,7 +90,7 @@ namespace Hero_Designer
             if (frmEnhData.DialogResult == DialogResult.OK)
             {
                 IDatabase database = DatabaseAPI.Database;
-                IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray((Array)database.Enhancements, (Array)new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
+                IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
                 database.Enhancements = enhancementArray;
                 DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = (IEnhancement)new Enhancement(frmEnhData.myEnh);
                 DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;
@@ -154,7 +101,6 @@ namespace Hero_Designer
         }
 
         void btnDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvEnh.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete enhancement: " + this.lvEnh.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -191,7 +137,6 @@ namespace Hero_Designer
         }
 
         void btnDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvEnh.SelectedIndices.Count <= 0)
                 return;
@@ -212,7 +157,6 @@ namespace Hero_Designer
         }
 
         void btnEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvEnh.SelectedIndices.Count <= 0)
                 return;
@@ -229,7 +173,6 @@ namespace Hero_Designer
         }
 
         void btnSave_Click(object sender, EventArgs e)
-
         {
             I9Gfx.LoadEnhancements();
             var serializer = My.MyApplication.GetSerializer();
@@ -240,7 +183,6 @@ namespace Hero_Designer
         }
 
         void btnUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvEnh.SelectedIndices.Count <= 0)
                 return;
@@ -249,8 +191,8 @@ namespace Hero_Designer
             {
                 IEnhancement[] enhancementArray = new IEnhancement[2]
                 {
-          (IEnhancement) new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex]),
-          (IEnhancement) new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex - 1])
+                   new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex]),
+                   new Enhancement(DatabaseAPI.Database.Enhancements[selectedIndex - 1])
                 };
                 DatabaseAPI.Database.Enhancements[selectedIndex - 1] = (IEnhancement)new Enhancement(enhancementArray[0]);
                 DatabaseAPI.Database.Enhancements[selectedIndex] = (IEnhancement)new Enhancement(enhancementArray[1]);
@@ -261,7 +203,6 @@ namespace Hero_Designer
         }
 
         void DisplayList()
-
         {
             this.ImageUpdate();
             this.lvEnh.BeginUpdate();
@@ -310,7 +251,6 @@ namespace Hero_Designer
         }
 
         void frmEnhEdit_Load(object sender, EventArgs e)
-
         {
             this.Show();
             this.Refresh();
@@ -327,27 +267,21 @@ namespace Hero_Designer
             this.FillImageList();
         }
 
-        [DebuggerStepThrough]
-
         void lvEnh_DoubleClick(object sender, EventArgs e)
-
         {
             this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         void lvEnh_SelectedIndexChanged(object sender, EventArgs e)
-
         {
         }
 
         void NoReload_CheckedChanged(object sender, EventArgs e)
-
         {
             this.ImageUpdate();
         }
 
         void UpdateListItem(int Index)
-
         {
             string[] strArray1 = new string[5];
             IEnhancement enhancement = DatabaseAPI.Database.Enhancements[Index];

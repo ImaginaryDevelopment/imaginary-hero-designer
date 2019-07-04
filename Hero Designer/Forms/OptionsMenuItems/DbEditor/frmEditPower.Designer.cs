@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditPower));
             this.tcPower = new System.Windows.Forms.TabControl();
             this.tpText = new System.Windows.Forms.TabPage();
             this.chkNoAUReq = new System.Windows.Forms.CheckBox();
@@ -285,6 +284,7 @@ namespace Hero_Designer
             this.chkNoAUReq.TabIndex = 46;
             this.chkNoAUReq.Text = "Do not automatically update this power's requirements";
             this.chkNoAUReq.UseVisualStyleBackColor = true;
+            this.chkNoAUReq.CheckedChanged += chkNoAUReq_CheckedChanged;
 
             this.chkNoAutoUpdate.Location = new System.Drawing.Point(13, 306);
             this.chkNoAutoUpdate.Name = "chkNoAutoUpdate";
@@ -293,6 +293,7 @@ namespace Hero_Designer
             this.chkNoAutoUpdate.TabIndex = 23;
             this.chkNoAutoUpdate.Text = "Do not automatically update this power during bulk-imports";
             this.chkNoAutoUpdate.UseVisualStyleBackColor = true;
+            this.chkNoAutoUpdate.CheckedChanged += chkNoAutoUpdate_CheckedChanged;
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkSortOverride);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkSubInclude);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkAlwaysToggle);
@@ -317,6 +318,7 @@ namespace Hero_Designer
             this.chkSortOverride.TabIndex = 42;
             this.chkSortOverride.Text = "Priority Sort Order";
             this.chkSortOverride.UseVisualStyleBackColor = true;
+            this.chkSortOverride.CheckedChanged += chkSortOverride_CheckedChanged;
 
             this.chkSubInclude.Location = new System.Drawing.Point(6, 152);
             this.chkSubInclude.Name = "chkSubInclude";
@@ -325,6 +327,7 @@ namespace Hero_Designer
             this.chkSubInclude.TabIndex = 4;
             this.chkSubInclude.Text = "Sub-Power Include Flag";
             this.chkSubInclude.UseVisualStyleBackColor = true;
+            this.chkSubInclude.CheckedChanged += chkSubInclude_CheckedChanged;
 
             this.chkAlwaysToggle.Location = new System.Drawing.Point(6, 42);
             this.chkAlwaysToggle.Name = "chkAlwaysToggle";
@@ -332,6 +335,7 @@ namespace Hero_Designer
             this.chkAlwaysToggle.Size = new System.Drawing.Size(168, 20);
             this.chkAlwaysToggle.TabIndex = 1;
             this.chkAlwaysToggle.Text = "Toggle Defaults to ON";
+            this.chkAlwaysToggle.CheckedChanged += chkAlwaysToggle_CheckedChanged;
 
             this.chkBuffCycle.Location = new System.Drawing.Point(6, 16);
             this.chkBuffCycle.Name = "chkBuffCycle";
@@ -339,6 +343,7 @@ namespace Hero_Designer
             this.chkBuffCycle.Size = new System.Drawing.Size(168, 20);
             this.chkBuffCycle.TabIndex = 0;
             this.chkBuffCycle.Text = "Power is a Click-Buff";
+            this.chkBuffCycle.CheckedChanged += chkBuffCycle_CheckedChanged;
 
             this.chkGraphFix.Location = new System.Drawing.Point(6, 68);
             this.chkGraphFix.Name = "chkGraphFix";
@@ -347,6 +352,7 @@ namespace Hero_Designer
             this.chkGraphFix.TabIndex = 2;
             this.chkGraphFix.Text = "Ignore when setting graph scale";
             this.chkGraphFix.UseVisualStyleBackColor = true;
+            this.chkGraphFix.CheckedChanged += chkGraphFix_CheckedChanged;
 
             this.chkAltSub.Location = new System.Drawing.Point(6, 124);
             this.chkAltSub.Name = "chkAltSub";
@@ -355,6 +361,7 @@ namespace Hero_Designer
             this.chkAltSub.TabIndex = 3;
             this.chkAltSub.Text = "Sub-Power Colour Flag (ToDo)";
             this.chkAltSub.UseVisualStyleBackColor = true;
+            this.chkAltSub.CheckedChanged += chkAltSub_CheckedChanged;
 
             this.Label21.Location = new System.Drawing.Point(21, 178);
             this.Label21.Name = "Label21";
@@ -370,6 +377,8 @@ namespace Hero_Designer
             this.txtVisualLocation.Size = new System.Drawing.Size(76, 20);
             this.txtVisualLocation.TabIndex = 5;
             this.txtVisualLocation.Text = "0";
+            this.txtVisualLocation.Leave += this.txtVisualLocation_Leave;
+            this.txtVisualLocation.TextChanged += this.txtVisualLocation_TextChanged;
             this.GroupBox7.Controls.Add((System.Windows.Forms.Control)this.cbForcedClass);
             this.GroupBox7.Controls.Add((System.Windows.Forms.Control)this.Label29);
 
@@ -388,6 +397,7 @@ namespace Hero_Designer
 
             this.cbForcedClass.Size = new System.Drawing.Size(175, 22);
             this.cbForcedClass.TabIndex = 0;
+            this.cbForcedClass.SelectedIndexChanged += cbForcedClass_SelectedIndexChanged;
 
             this.Label29.Location = new System.Drawing.Point(7, 30);
             this.Label29.Name = "Label29";
@@ -415,6 +425,7 @@ namespace Hero_Designer
             this.chkSummonDisplayEntity.TabIndex = 2;
             this.chkSummonDisplayEntity.Text = "Display entity even if absorbed";
             this.chkSummonDisplayEntity.UseVisualStyleBackColor = true;
+            this.chkSummonDisplayEntity.CheckedChanged += chkSummonDisplayEntity_CheckedChanged;
 
             this.chkSummonStealAttributes.Location = new System.Drawing.Point(6, 42);
             this.chkSummonStealAttributes.Name = "chkSummonStealAttributes";
@@ -423,6 +434,7 @@ namespace Hero_Designer
             this.chkSummonStealAttributes.TabIndex = 1;
             this.chkSummonStealAttributes.Text = "Power absorbs summoned entity's attributes\r\n";
             this.chkSummonStealAttributes.UseVisualStyleBackColor = true;
+            this.chkSummonStealAttributes.CheckedChanged += chkSummonStealAttributes_CheckedChanged;
 
             this.chkSummonStealEffects.Location = new System.Drawing.Point(6, 16);
             this.chkSummonStealEffects.Name = "chkSummonStealEffects";
@@ -431,6 +443,7 @@ namespace Hero_Designer
             this.chkSummonStealEffects.TabIndex = 0;
             this.chkSummonStealEffects.Text = "Power absorbs summoned entity's effects";
             this.chkSummonStealEffects.UseVisualStyleBackColor = true;
+            this.chkSummonStealEffects.CheckedChanged += chkSummonStealEffects_CheckedChanged;
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.txtDescLong);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.txtDescShort);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.Label2);
@@ -452,6 +465,7 @@ namespace Hero_Designer
             this.txtDescLong.Size = new System.Drawing.Size(425, 57);
             this.txtDescLong.TabIndex = 1;
             this.txtDescLong.Text = "Power Desc Long";
+            this.txtDescLong.TextChanged += txtDescLong_TextChanged;
 
             this.txtDescShort.Location = new System.Drawing.Point(58, 16);
             this.txtDescShort.Name = "txtDescShort";
@@ -459,6 +473,7 @@ namespace Hero_Designer
             this.txtDescShort.Size = new System.Drawing.Size(425, 20);
             this.txtDescShort.TabIndex = 0;
             this.txtDescShort.Text = "Power Desc Short";
+            this.txtDescShort.TextChanged += txtDescShort_TextChanged;
 
             this.Label2.Location = new System.Drawing.Point(6, 16);
             this.Label2.Name = "Label2";
@@ -504,6 +519,9 @@ namespace Hero_Designer
 
             this.udScaleMax.Size = new System.Drawing.Size(63, 20);
             this.udScaleMax.TabIndex = 3;
+            this.udScaleMax.ValueChanged += this.udScaleMax_ValueChanged;
+            this.udScaleMax.Leave += this.udScaleMax_Leave;
+            this.udScaleMax.KeyPress += this.udScaleMax_KeyPress;
 
             this.Label27.Location = new System.Drawing.Point(5, 72);
             this.Label27.Name = "Label27";
@@ -519,6 +537,10 @@ namespace Hero_Designer
             this.udScaleMin.Size = new System.Drawing.Size(63, 20);
             this.udScaleMin.TabIndex = 2;
 
+            this.udScaleMin.ValueChanged += this.udScaleMin_ValueChanged;
+            this.udScaleMin.Leave += this.udScaleMin_Leave;
+            this.udScaleMin.KeyPress += this.udScaleMin_KeyPress;
+
             this.Label26.Location = new System.Drawing.Point(5, 46);
             this.Label26.Name = "Label26";
 
@@ -533,6 +555,7 @@ namespace Hero_Designer
             this.txtScaleName.Size = new System.Drawing.Size(190, 20);
             this.txtScaleName.TabIndex = 1;
             this.txtScaleName.Text = "Foes Hit";
+            this.txtScaleName.TextChanged += txtScaleName_TextChanged;
 
             this.chkScale.Location = new System.Drawing.Point(6, 19);
             this.chkScale.Name = "chkScale";
@@ -541,6 +564,7 @@ namespace Hero_Designer
             this.chkScale.TabIndex = 0;
             this.chkScale.Text = "Enable scaling for this power";
             this.chkScale.UseVisualStyleBackColor = true;
+            this.chkScale.CheckedChanged += chkScale_CheckedChanged;
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblStaticIndex);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.chkHidden);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblNameUnique);
@@ -570,6 +594,7 @@ namespace Hero_Designer
             this.lblStaticIndex.TabIndex = 25;
             this.lblStaticIndex.Text = "000";
             this.lblStaticIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStaticIndex.Click += lblStaticIndex_Click;
 
             this.chkHidden.Location = new System.Drawing.Point(5, 69);
             this.chkHidden.Name = "chkHidden";
@@ -578,6 +603,7 @@ namespace Hero_Designer
             this.chkHidden.TabIndex = 24;
             this.chkHidden.Text = "Hide";
             this.chkHidden.UseVisualStyleBackColor = true;
+            this.chkHidden.CheckedChanged += chkHidden_CheckedChanged;
 
             this.lblNameUnique.Location = new System.Drawing.Point(6, 163);
             this.lblNameUnique.Name = "lblNameUnique";
@@ -610,6 +636,9 @@ namespace Hero_Designer
 
             this.cbNameSet.Size = new System.Drawing.Size(196, 22);
             this.cbNameSet.TabIndex = 2;
+            this.cbNameSet.TextChanged += this.cbNameSet_TextChanged;
+            this.cbNameSet.SelectedIndexChanged += this.cbNameSet_SelectedIndexChanged;
+            this.cbNameSet.Leave += this.cbNameSet_Leave;
 
             this.txtNameDisplay.Location = new System.Drawing.Point(106, 16);
             this.txtNameDisplay.Name = "txtNameDisplay";
@@ -617,13 +646,15 @@ namespace Hero_Designer
             this.txtNameDisplay.Size = new System.Drawing.Size(196, 20);
             this.txtNameDisplay.TabIndex = 0;
             this.txtNameDisplay.Text = "PowerName";
+            this.txtNameDisplay.TextChanged += txtPowerName_TextChanged;
             this.cbNameGroup.FormattingEnabled = true;
-
             this.cbNameGroup.Location = new System.Drawing.Point(106, 42);
             this.cbNameGroup.Name = "cbNameGroup";
-
             this.cbNameGroup.Size = new System.Drawing.Size(196, 22);
             this.cbNameGroup.TabIndex = 1;
+            this.cbNameGroup.TextChanged += this.cbNameGroup_TextChanged;
+            this.cbNameGroup.SelectedIndexChanged += this.cbNameGroup_SelectedIndexChanged;
+            this.cbNameGroup.Leave += this.cbNameGroup_Leave;
 
             this.Label22.Location = new System.Drawing.Point(53, 42);
             this.Label22.Name = "Label22";
@@ -647,6 +678,8 @@ namespace Hero_Designer
             this.txtNamePower.Size = new System.Drawing.Size(196, 20);
             this.txtNamePower.TabIndex = 3;
             this.txtNamePower.Text = "PowerName";
+            this.txtNamePower.TextChanged += this.txtNamePower_TextChanged;
+            this.txtNamePower.Leave += this.txtNamePower_Leave;
 
             this.Label33.Location = new System.Drawing.Point(14, 98);
             this.Label33.Name = "Label33";
@@ -742,6 +775,8 @@ namespace Hero_Designer
             this.txtLifeTimeReal.TabIndex = 116;
             this.txtLifeTimeReal.Text = "1";
             this.txtLifeTimeReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtLifeTimeReal.TextChanged += this.txtLifeTimeReal_TextChanged;
+            this.txtLifeTimeReal.Leave += this.txtLifeTimeReal_Leave;
 
             this.Label44.Location = new System.Drawing.Point(447, 193);
             this.Label44.Name = "Label44";
@@ -767,6 +802,9 @@ namespace Hero_Designer
             this.txtLifeTimeGame.Text = "1";
             this.txtLifeTimeGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 
+            this.txtLifeTimeGame.TextChanged += this.txtLifeTimeGame_TextChanged;
+            this.txtLifeTimeGame.Leave += this.txtLifeTimeGame_Leave;
+
             this.Label42.Location = new System.Drawing.Point(447, 167);
             this.Label42.Name = "Label42";
 
@@ -790,6 +828,8 @@ namespace Hero_Designer
             this.txtUseageTime.TabIndex = 110;
             this.txtUseageTime.Text = "1";
             this.txtUseageTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtUseageTime.TextChanged += this.txtUseageTime_TextChanged;
+            this.txtUseageTime.Leave += this.txtUseageTime_Leave;
 
             this.Label41.Location = new System.Drawing.Point(256, 141);
             this.Label41.Name = "Label41";
@@ -806,6 +846,8 @@ namespace Hero_Designer
             this.txtNumCharges.TabIndex = 107;
             this.txtNumCharges.Text = "1";
             this.txtNumCharges.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtNumCharges.TextChanged += this.txtNumCharges_TextChanged;
+            this.txtNumCharges.Leave += this.txtNumCharges_Leave;
             this.chkIgnoreStrength.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkIgnoreStrength.Checked = true;
             this.chkIgnoreStrength.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -817,6 +859,7 @@ namespace Hero_Designer
             this.chkIgnoreStrength.TabIndex = 16;
             this.chkIgnoreStrength.Text = "Ignore Strength";
             this.chkIgnoreStrength.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkIgnoreStrength.CheckedChanged += chkIgnoreStrength_CheckedChanged;
 
             this.Label12.Location = new System.Drawing.Point(180, 219);
             this.Label12.Name = "Label12";
@@ -841,6 +884,8 @@ namespace Hero_Designer
             this.txtRangeSec.TabIndex = 8;
             this.txtRangeSec.Text = "1.0";
             this.txtRangeSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRangeSec.TextChanged += this.txtRangeSec_TextChanged;
+            this.txtRangeSec.Leave += this.txtRangeSec_Leave;
 
             this.Label18.Location = new System.Drawing.Point(256, 63);
             this.Label18.Name = "Label18";
@@ -876,6 +921,7 @@ namespace Hero_Designer
             this.rbFlagCastThrough.TabStop = true;
             this.rbFlagCastThrough.Text = "Cast Through...";
             this.rbFlagCastThrough.UseVisualStyleBackColor = true;
+            this.rbFlagCastThrough.CheckedChanged += rbFlagX_CheckedChanged;
 
             this.rbFlagDisallow.Location = new System.Drawing.Point(152, 88);
             this.rbFlagDisallow.Name = "rbFlagDisallow";
@@ -885,6 +931,7 @@ namespace Hero_Designer
             this.rbFlagDisallow.TabStop = true;
             this.rbFlagDisallow.Text = "Modes Disallowed";
             this.rbFlagDisallow.UseVisualStyleBackColor = true;
+            this.rbFlagDisallow.CheckedChanged += rbFlagX_CheckedChanged;
             this.rbFlagRequired.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagRequired.Location = new System.Drawing.Point(6, 88);
@@ -896,6 +943,7 @@ namespace Hero_Designer
             this.rbFlagRequired.Text = "Modes Required";
             this.rbFlagRequired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagRequired.UseVisualStyleBackColor = true;
+            this.rbFlagRequired.CheckedChanged += rbFlagX_CheckedChanged;
 
             this.rbFlagVector.Location = new System.Drawing.Point(152, 65);
             this.rbFlagVector.Name = "rbFlagVector";
@@ -905,6 +953,7 @@ namespace Hero_Designer
             this.rbFlagVector.TabStop = true;
             this.rbFlagVector.Text = "Vector / Damage Types";
             this.rbFlagVector.UseVisualStyleBackColor = true;
+            this.rbFlagVector.CheckedChanged += rbFlagX_CheckedChanged;
             this.rbFlagCast.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagCast.Location = new System.Drawing.Point(6, 65);
@@ -916,6 +965,7 @@ namespace Hero_Designer
             this.rbFlagCast.Text = "Cast Flags";
             this.rbFlagCast.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagCast.UseVisualStyleBackColor = true;
+            this.rbFlagCast.CheckedChanged += rbFlagX_CheckedChanged;
             this.clbFlags.FormattingEnabled = true;
 
             this.clbFlags.Location = new System.Drawing.Point(6, 130);
@@ -923,6 +973,7 @@ namespace Hero_Designer
 
             this.clbFlags.Size = new System.Drawing.Size(288, 184);
             this.clbFlags.TabIndex = 10;
+            this.clbFlags.ItemCheck += clbFlags_ItemCheck;
 
             this.rbFlagTargetsSec.Location = new System.Drawing.Point(152, 42);
             this.rbFlagTargetsSec.Name = "rbFlagTargetsSec";
@@ -932,6 +983,7 @@ namespace Hero_Designer
             this.rbFlagTargetsSec.TabStop = true;
             this.rbFlagTargetsSec.Text = "Secondary Targets";
             this.rbFlagTargetsSec.UseVisualStyleBackColor = true;
+            this.rbFlagTargetsSec.CheckedChanged += rbFlagX_CheckedChanged;
             this.rbFlagTargets.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagTargets.Location = new System.Drawing.Point(6, 42);
@@ -943,6 +995,7 @@ namespace Hero_Designer
             this.rbFlagTargets.Text = "Targets";
             this.rbFlagTargets.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagTargets.UseVisualStyleBackColor = true;
+            this.rbFlagTargets.CheckedChanged += rbFlagX_CheckedChanged;
 
             this.rbFlagAffected.Location = new System.Drawing.Point(152, 19);
             this.rbFlagAffected.Name = "rbFlagAffected";
@@ -952,6 +1005,7 @@ namespace Hero_Designer
             this.rbFlagAffected.TabStop = true;
             this.rbFlagAffected.Text = "Entities Affected";
             this.rbFlagAffected.UseVisualStyleBackColor = true;
+            this.rbFlagAffected.CheckedChanged += rbFlagX_CheckedChanged;
             this.rbFlagAutoHit.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagAutoHit.Location = new System.Drawing.Point(6, 19);
@@ -963,6 +1017,7 @@ namespace Hero_Designer
             this.rbFlagAutoHit.Text = "Entities AutoHit";
             this.rbFlagAutoHit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagAutoHit.UseVisualStyleBackColor = true;
+            this.rbFlagAutoHit.CheckedChanged += rbFlagX_CheckedChanged;
             this.cbNotify.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbNotify.Location = new System.Drawing.Point(384, 63);
@@ -970,6 +1025,7 @@ namespace Hero_Designer
 
             this.cbNotify.Size = new System.Drawing.Size(95, 22);
             this.cbNotify.TabIndex = 14;
+            this.cbNotify.SelectedIndexChanged += cbNotify_SelectedIndexChanged;
             this.chkLos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkLos.Checked = true;
             this.chkLos.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -981,6 +1037,7 @@ namespace Hero_Designer
             this.chkLos.TabIndex = 15;
             this.chkLos.Text = "Requires Line of Sight";
             this.chkLos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkLos.CheckedChanged += chkLos_CheckedChanged;
 
             this.txtMaxTargets.Location = new System.Drawing.Point(117, 295);
             this.txtMaxTargets.Name = "txtMaxTargets";
@@ -989,6 +1046,8 @@ namespace Hero_Designer
             this.txtMaxTargets.TabIndex = 11;
             this.txtMaxTargets.Text = "1";
             this.txtMaxTargets.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMaxTargets.Leave += this.txtMaxTargets_Leave;
+            this.txtMaxTargets.TextChanged += this.txtMaxTargets_TextChanged;
 
             this.lblEndCost.Location = new System.Drawing.Point(180, 167);
             this.lblEndCost.Name = "lblEndCost";
@@ -1085,6 +1144,8 @@ namespace Hero_Designer
             this.txtArc.TabIndex = 10;
             this.txtArc.Text = "1";
             this.txtArc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtArc.Leave += this.txtArc_Leave;
+            this.txtArc.TextChanged += this.txtArc_TextChanged;
 
             this.Label15.Location = new System.Drawing.Point(35, 245);
             this.Label15.Name = "Label15";
@@ -1101,6 +1162,8 @@ namespace Hero_Designer
             this.txtRadius.TabIndex = 9;
             this.txtRadius.Text = "1";
             this.txtRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRadius.Leave += this.txtRadius_Leave;
+            this.txtRadius.TextChanged += this.txtRadius_TextChanged;
 
             this.txtLevel.Location = new System.Drawing.Point(117, 11);
             this.txtLevel.Name = "txtLevel";
@@ -1109,6 +1172,8 @@ namespace Hero_Designer
             this.txtLevel.TabIndex = 0;
             this.txtLevel.Text = "1";
             this.txtLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtLevel.Leave += this.txtLevel_Leave;
+            this.txtLevel.TextChanged += this.txtLevel_TextChanged;
             this.cbEffectArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEffectArea.Items.AddRange(new object[5]
             {
@@ -1124,6 +1189,7 @@ namespace Hero_Designer
 
             this.cbEffectArea.Size = new System.Drawing.Size(95, 22);
             this.cbEffectArea.TabIndex = 13;
+            this.cbEffectArea.SelectedIndexChanged += cbEffectArea_SelectedIndexChanged;
 
             this.Label14.Location = new System.Drawing.Point(256, 37);
             this.Label14.Name = "Label14";
@@ -1148,6 +1214,9 @@ namespace Hero_Designer
             this.txtEndCost.TabIndex = 6;
             this.txtEndCost.Text = "1.0";
             this.txtEndCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEndCost.Leave += this.txtEndCost_Leave;
+            this.txtEndCost.TextChanged += this.txtEndCost_TextChanged;
+
 
             this.Label10.Location = new System.Drawing.Point(9, 141);
             this.Label10.Name = "Label10";
@@ -1164,6 +1233,8 @@ namespace Hero_Designer
             this.txtActivate.TabIndex = 5;
             this.txtActivate.Text = "1.0";
             this.txtActivate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtActivate.Leave += this.txtActivate_Leave;
+            this.txtActivate.TextChanged += this.txtActivate_TextChanged;
 
             this.Label11.Location = new System.Drawing.Point(9, 115);
             this.Label11.Name = "Label11";
@@ -1180,6 +1251,8 @@ namespace Hero_Designer
             this.txtRechargeTime.TabIndex = 4;
             this.txtRechargeTime.Text = "1.0";
             this.txtRechargeTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRechargeTime.Leave += this.txtRechargeTime_Leave;
+            this.txtRechargeTime.TextChanged += this.txtRechargeTime_TextChanged;
 
             this.Label8.Location = new System.Drawing.Point(9, 89);
             this.Label8.Name = "Label8";
@@ -1191,11 +1264,12 @@ namespace Hero_Designer
 
             this.txtCastTime.Location = new System.Drawing.Point(117, 89);
             this.txtCastTime.Name = "txtCastTime";
-
             this.txtCastTime.Size = new System.Drawing.Size(57, 20);
             this.txtCastTime.TabIndex = 3;
             this.txtCastTime.Text = "1.0";
             this.txtCastTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCastTime.Leave += this.txtCastTime_Leave;
+            this.txtCastTime.TextChanged += this.txtCastTime_TextChanged;
 
             this.Label9.Location = new System.Drawing.Point(9, 63);
             this.Label9.Name = "Label9";
@@ -1212,6 +1286,8 @@ namespace Hero_Designer
             this.txtInterrupt.TabIndex = 2;
             this.txtInterrupt.Text = "1.0";
             this.txtInterrupt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInterrupt.Leave += this.txtInterrupt_Leave;
+            this.txtInterrupt.TextChanged += this.txtInterrupt_TextChanged;
 
             this.Label7.Location = new System.Drawing.Point(9, 193);
             this.Label7.Name = "Label7";
@@ -1228,6 +1304,8 @@ namespace Hero_Designer
             this.txtRange.TabIndex = 7;
             this.txtRange.Text = "1.0";
             this.txtRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRange.Leave += this.txtRange_Leave;
+            this.txtRange.TextChanged += this.txtRange_TextChanged;
 
             this.Label6.Location = new System.Drawing.Point(9, 37);
             this.Label6.Name = "Label6";
@@ -1244,6 +1322,8 @@ namespace Hero_Designer
             this.txtAcc.TabIndex = 1;
             this.txtAcc.Text = "1.0";
             this.txtAcc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAcc.Leave += this.txtAcc_Leave;
+            this.txtAcc.TextChanged += this.txtAcc_TextChanged;
             this.cbPowerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPowerType.Items.AddRange(new object[3]
             {
@@ -1257,6 +1337,7 @@ namespace Hero_Designer
 
             this.cbPowerType.Size = new System.Drawing.Size(95, 22);
             this.cbPowerType.TabIndex = 12;
+            this.cbPowerType.SelectedIndexChanged += cbPowerType_SelectedIndexChanged;
 
             this.Label5.Location = new System.Drawing.Point(256, 11);
             this.Label5.Name = "Label5";
@@ -1291,6 +1372,7 @@ namespace Hero_Designer
 
             this.lvFX.Size = new System.Drawing.Size(744, 270);
             this.lvFX.TabIndex = 71;
+            this.lvFX.DoubleClick += this.lvFX_DoubleClick;
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnSetDamage);
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnFXEdit);
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnFXDown);
@@ -1318,6 +1400,7 @@ namespace Hero_Designer
             this.btnFXEdit.Size = new System.Drawing.Size(64, 24);
             this.btnFXEdit.TabIndex = 77;
             this.btnFXEdit.Text = "Edit...";
+            this.btnFXEdit.Click += btnFXEdit_Click;
 
             this.btnFXDown.Location = new System.Drawing.Point(756, 40);
             this.btnFXDown.Name = "btnFXDown";
@@ -1325,6 +1408,7 @@ namespace Hero_Designer
             this.btnFXDown.Size = new System.Drawing.Size(64, 24);
             this.btnFXDown.TabIndex = 11;
             this.btnFXDown.Text = "Down";
+            this.btnFXDown.Click += btnFXDown_Click;
 
             this.btnFXUp.Location = new System.Drawing.Point(756, 8);
             this.btnFXUp.Name = "btnFXUp";
@@ -1332,6 +1416,7 @@ namespace Hero_Designer
             this.btnFXUp.Size = new System.Drawing.Size(64, 24);
             this.btnFXUp.TabIndex = 12;
             this.btnFXUp.Text = "Up";
+            this.btnFXUp.Click += btnFXUp_Click;
 
             this.btnFXRemove.Location = new System.Drawing.Point(236, 288);
             this.btnFXRemove.Name = "btnFXRemove";
@@ -1339,6 +1424,7 @@ namespace Hero_Designer
             this.btnFXRemove.Size = new System.Drawing.Size(64, 24);
             this.btnFXRemove.TabIndex = 10;
             this.btnFXRemove.Text = "Remove";
+            this.btnFXRemove.Click += btnFXRemove_Click;
 
             this.btnFXDuplicate.Location = new System.Drawing.Point(84, 288);
             this.btnFXDuplicate.Name = "btnFXDuplicate";
@@ -1346,6 +1432,7 @@ namespace Hero_Designer
             this.btnFXDuplicate.Size = new System.Drawing.Size(64, 24);
             this.btnFXDuplicate.TabIndex = 69;
             this.btnFXDuplicate.Text = "Duplicate";
+            this.btnFXDuplicate.Click += btnFXDuplicate_Click;
 
             this.btnFXAdd.Location = new System.Drawing.Point(8, 288);
             this.btnFXAdd.Name = "btnFXAdd";
@@ -1353,6 +1440,7 @@ namespace Hero_Designer
             this.btnFXAdd.Size = new System.Drawing.Size(64, 24);
             this.btnFXAdd.TabIndex = 9;
             this.btnFXAdd.Text = "Add";
+            this.btnFXAdd.Click += btnFXAdd_Click;
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.chkBoostUsePlayerLevel);
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.chkBoostBoostable);
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.Label23);
@@ -1375,6 +1463,7 @@ namespace Hero_Designer
             this.chkBoostUsePlayerLevel.Size = new System.Drawing.Size(324, 20);
             this.chkBoostUsePlayerLevel.TabIndex = 91;
             this.chkBoostUsePlayerLevel.Text = "Attuned Enhancement";
+            this.chkBoostUsePlayerLevel.CheckedChanged += chkBoostUsePlayerLevel_CheckedChanged;
 
             this.chkBoostBoostable.Location = new System.Drawing.Point(357, 110);
             this.chkBoostBoostable.Name = "chkBoostBoostable";
@@ -1382,6 +1471,7 @@ namespace Hero_Designer
             this.chkBoostBoostable.Size = new System.Drawing.Size(324, 20);
             this.chkBoostBoostable.TabIndex = 90;
             this.chkBoostBoostable.Text = "Allow Enhancement Boosters (Enhancement only)";
+            this.chkBoostBoostable.CheckedChanged += chkBoostBoostable_CheckedChanged;
 
             this.Label23.Location = new System.Drawing.Point(24, 12);
             this.Label23.Name = "Label23";
@@ -1398,6 +1488,9 @@ namespace Hero_Designer
             this.pbEnhancements.Size = new System.Drawing.Size(416, 40);
             this.pbEnhancements.TabIndex = 43;
             this.pbEnhancements.TabStop = false;
+            this.pbEnhancements.MouseDown += this.pbEnhancements_MouseDown;
+            this.pbEnhancements.MouseMove += this.pbEnhancements_Hover;
+            this.pbEnhancements.Paint += this.pbEnhancements_Paint;
 
             this.chkPRFrontLoad.Location = new System.Drawing.Point(357, 84);
             this.chkPRFrontLoad.Name = "chkPRFrontLoad";
@@ -1405,14 +1498,16 @@ namespace Hero_Designer
             this.chkPRFrontLoad.Size = new System.Drawing.Size(324, 20);
             this.chkPRFrontLoad.TabIndex = 88;
             this.chkPRFrontLoad.Text = "Allow front-loading of enhancement slots (for Kheld forms)";
+            this.chkPRFrontLoad.CheckedChanged += chkPRFrontLoad_CheckedChanged;
             this.pbEnhancementList.BackColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 192, 128);
-
             this.pbEnhancementList.Location = new System.Drawing.Point(24, 84);
             this.pbEnhancementList.Name = "pbEnhancementList";
-
             this.pbEnhancementList.Size = new System.Drawing.Size(316, 220);
             this.pbEnhancementList.TabIndex = 44;
             this.pbEnhancementList.TabStop = false;
+            this.pbEnhancementList.MouseDown += this.pbEnhancementList_MouseDown;
+            this.pbEnhancementList.MouseMove += this.pbEnhancementList_Hover;
+            this.pbEnhancementList.Paint += this.pbEnhancementList_Paint;
             this.lblEnhName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
             this.lblEnhName.Location = new System.Drawing.Point(21, 68);
@@ -1455,6 +1550,9 @@ namespace Hero_Designer
             this.pbInvSetList.Size = new System.Drawing.Size(316, 220);
             this.pbInvSetList.TabIndex = 91;
             this.pbInvSetList.TabStop = false;
+            this.pbInvSetList.MouseMove += this.pbInvSetList_MouseMove;
+            this.pbInvSetList.MouseDown += this.pbInvSetList_MouseDown;
+            this.pbInvSetList.Paint += this.pbInvSetList_Paint;
             this.pbInvSetUsed.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
 
             this.pbInvSetUsed.Location = new System.Drawing.Point(24, 28);
@@ -1463,6 +1561,10 @@ namespace Hero_Designer
             this.pbInvSetUsed.Size = new System.Drawing.Size(316, 40);
             this.pbInvSetUsed.TabIndex = 90;
             this.pbInvSetUsed.TabStop = false;
+            this.pbInvSetUsed.MouseDown += this.pbInvSetUsed_MouseDown;
+            this.pbInvSetUsed.MouseMove += this.pbInvSetUsed_MouseMove;
+            this.pbInvSetUsed.Paint += this.pbInvSetUsed_Paint;
+
             this.tpPreReq.Controls.Add((System.Windows.Forms.Control)this.GroupBox11);
             this.tpPreReq.Controls.Add((System.Windows.Forms.Control)this.GroupBox10);
             this.tpPreReq.Controls.Add((System.Windows.Forms.Control)this.GroupBox8);
@@ -1503,6 +1605,7 @@ namespace Hero_Designer
             this.btnPrReset.TabIndex = 15;
             this.btnPrReset.Text = "Reset";
             this.btnPrReset.UseVisualStyleBackColor = true;
+            this.btnPrReset.Click += btnPrReset_Click;
 
             this.btnPrSetNone.Location = new System.Drawing.Point(432, 153);
             this.btnPrSetNone.Name = "btnPrSetNone";
@@ -1511,6 +1614,7 @@ namespace Hero_Designer
             this.btnPrSetNone.TabIndex = 14;
             this.btnPrSetNone.Text = "Set Power A to None";
             this.btnPrSetNone.UseVisualStyleBackColor = true;
+            this.btnPrSetNone.Click += btnPrSetNone_Click;
 
             this.btnPrDown.Location = new System.Drawing.Point(513, 204);
             this.btnPrDown.Name = "btnPrDown";
@@ -1519,6 +1623,7 @@ namespace Hero_Designer
             this.btnPrDown.TabIndex = 13;
             this.btnPrDown.Text = "Down";
             this.btnPrDown.UseVisualStyleBackColor = true;
+            this.btnPrDown.Click += btnPrDown_Click;
 
             this.btnPrUp.Location = new System.Drawing.Point(432, 204);
             this.btnPrUp.Name = "btnPrUp";
@@ -1527,6 +1632,7 @@ namespace Hero_Designer
             this.btnPrUp.TabIndex = 12;
             this.btnPrUp.Text = "Up";
             this.btnPrUp.UseVisualStyleBackColor = true;
+            this.btnPrUp.Click += btnPrUp_Click;
 
             this.rbPrRemove.Location = new System.Drawing.Point(432, 262);
             this.rbPrRemove.Name = "rbPrRemove";
@@ -1535,6 +1641,7 @@ namespace Hero_Designer
             this.rbPrRemove.TabIndex = 11;
             this.rbPrRemove.Text = "Remove Selected";
             this.rbPrRemove.UseVisualStyleBackColor = true;
+            this.rbPrRemove.Click += rbPrRemove_Click;
 
             this.rbPrAdd.Location = new System.Drawing.Point(432, 233);
             this.rbPrAdd.Name = "rbPrAdd";
@@ -1543,6 +1650,7 @@ namespace Hero_Designer
             this.rbPrAdd.TabIndex = 10;
             this.rbPrAdd.Text = "Add New";
             this.rbPrAdd.UseVisualStyleBackColor = true;
+            this.rbPrAdd.Click += rbPrAdd_Click;
             this.rbPrPowerB.Appearance = System.Windows.Forms.Appearance.Button;
 
             this.rbPrPowerB.Location = new System.Drawing.Point(513, 124);
@@ -1553,6 +1661,7 @@ namespace Hero_Designer
             this.rbPrPowerB.Text = "Power B";
             this.rbPrPowerB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPrPowerB.UseVisualStyleBackColor = true;
+            this.rbPrPowerB.CheckedChanged += rbPrPowerX_CheckedChanged;
             this.rbPrPowerA.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbPrPowerA.Checked = true;
 
@@ -1565,6 +1674,7 @@ namespace Hero_Designer
             this.rbPrPowerA.Text = "Power A";
             this.rbPrPowerA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPrPowerA.UseVisualStyleBackColor = true;
+            this.rbPrPowerA.CheckedChanged += rbPrPowerX_CheckedChanged;
             this.lvPrPower.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader9
@@ -1581,6 +1691,7 @@ namespace Hero_Designer
             this.lvPrPower.TabIndex = 3;
             this.lvPrPower.UseCompatibleStateImageBehavior = false;
             this.lvPrPower.View = System.Windows.Forms.View.Details;
+            this.lvPrPower.SelectedIndexChanged += lvPrPower_SelectedIndexChanged;
             this.ColumnHeader9.Text = "Power";
             this.ColumnHeader9.Width = 110;
             this.lvPrSet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1599,6 +1710,7 @@ namespace Hero_Designer
             this.lvPrSet.TabIndex = 2;
             this.lvPrSet.UseCompatibleStateImageBehavior = false;
             this.lvPrSet.View = System.Windows.Forms.View.Details;
+            this.lvPrSet.SelectedIndexChanged += lvPrSet_SelectedIndexChanged;
             this.ColumnHeader10.Text = "Set";
             this.ColumnHeader10.Width = 110;
             this.lvPrGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1617,6 +1729,7 @@ namespace Hero_Designer
             this.lvPrGroup.TabIndex = 1;
             this.lvPrGroup.UseCompatibleStateImageBehavior = false;
             this.lvPrGroup.View = System.Windows.Forms.View.Details;
+            this.lvPrGroup.SelectedIndexChanged += lvPrGroup_SelectedIndexChanged;
             this.ColumnHeader11.Text = "Group";
             this.ColumnHeader11.Width = 110;
             this.lvPrListing.Columns.AddRange(new System.Windows.Forms.ColumnHeader[3]
@@ -1637,6 +1750,7 @@ namespace Hero_Designer
             this.lvPrListing.TabIndex = 0;
             this.lvPrListing.UseCompatibleStateImageBehavior = false;
             this.lvPrListing.View = System.Windows.Forms.View.Details;
+            this.lvPrListing.SelectedIndexChanged += lvPrListing_SelectedIndexChanged;
             this.ColumnHeader6.Text = "Power A";
             this.ColumnHeader6.Width = 265;
             this.ColumnHeader7.Text = "";
@@ -1711,6 +1825,7 @@ namespace Hero_Designer
 
             this.lvDisablePass4.Size = new System.Drawing.Size(212, 284);
             this.lvDisablePass4.TabIndex = 111;
+            this.lvDisablePass4.SelectedIndexChanged += lvDisablePass4_SelectedIndexChanged;
             this.lvDisablePass1.ItemHeight = 14;
 
             this.lvDisablePass1.Location = new System.Drawing.Point(6, 44);
@@ -1719,6 +1834,7 @@ namespace Hero_Designer
 
             this.lvDisablePass1.Size = new System.Drawing.Size(212, 284);
             this.lvDisablePass1.TabIndex = 110;
+            this.lvDisablePass1.SelectedIndexChanged += lvDisablePass1_SelectedIndexChanged;
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.GroupBox2);
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.chkMutexAuto);
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.chkMutexSkip);
@@ -1748,6 +1864,7 @@ namespace Hero_Designer
             this.btnMutexAdd.TabIndex = 1;
             this.btnMutexAdd.Text = "Add New Group...";
             this.btnMutexAdd.UseVisualStyleBackColor = true;
+            this.btnMutexAdd.Click += btnMutexAdd_Click;
             this.clbMutex.FormattingEnabled = true;
 
             this.clbMutex.Location = new System.Drawing.Point(6, 19);
@@ -1763,6 +1880,7 @@ namespace Hero_Designer
             this.chkMutexAuto.TabIndex = 4;
             this.chkMutexAuto.Text = "Auto-Detoggle other powers";
             this.chkMutexAuto.UseVisualStyleBackColor = true;
+            this.chkMutexAuto.CheckedChanged += chkMutexAuto_CheckedChanged;
 
             this.chkMutexSkip.Location = new System.Drawing.Point(340, 33);
             this.chkMutexSkip.Name = "chkMutexSkip";
@@ -1771,6 +1889,7 @@ namespace Hero_Designer
             this.chkMutexSkip.TabIndex = 3;
             this.chkMutexSkip.Text = "Skip Mutal Exclusivity for this power";
             this.chkMutexSkip.UseVisualStyleBackColor = true;
+            this.chkMutexSkip.CheckedChanged += chkMutexSkip_CheckedChanged;
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.btnSPAdd);
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.btnSPRemove);
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.lvSPSelected);
@@ -1789,15 +1908,17 @@ namespace Hero_Designer
             this.btnSPAdd.TabIndex = 13;
             this.btnSPAdd.Text = ">>";
             this.btnSPAdd.UseVisualStyleBackColor = true;
+            this.btnSPAdd.Click += btnSPAdd_Click;
             this.btnSPRemove.Location = new System.Drawing.Point(437, 170);
             this.btnSPRemove.Name = "btnSPRemove";
             this.btnSPRemove.Size = new System.Drawing.Size(48, 23);
             this.btnSPRemove.TabIndex = 12;
             this.btnSPRemove.Text = "<<";
             this.btnSPRemove.UseVisualStyleBackColor = true;
+            this.btnSPRemove.Click += btnSPRemove_Click;
             this.lvSPSelected.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
-        this.ColumnHeader4
+                this.ColumnHeader4
             });
             this.lvSPSelected.FullRowSelect = true;
             this.lvSPSelected.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -1841,6 +1962,7 @@ namespace Hero_Designer
             this.lvSPSet.TabIndex = 5;
             this.lvSPSet.UseCompatibleStateImageBehavior = false;
             this.lvSPSet.View = System.Windows.Forms.View.Details;
+            this.lvSPSet.SelectedIndexChanged += lvSPSet_SelectedIndexChanged;
             this.ColumnHeader2.Text = "Set";
             this.ColumnHeader2.Width = 110;
             this.lvSPGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1857,6 +1979,7 @@ namespace Hero_Designer
             this.lvSPGroup.TabIndex = 4;
             this.lvSPGroup.UseCompatibleStateImageBehavior = false;
             this.lvSPGroup.View = System.Windows.Forms.View.Details;
+            this.lvSPGroup.SelectedIndexChanged += lvSPGroup_SelectedIndexChanged;
             this.ColumnHeader3.Text = "Group";
             this.ColumnHeader3.Width = 110;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -1865,30 +1988,35 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(104, 36);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += btnOK_Click;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(632, 380);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 36);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += btnCancel_Click;
             this.btnFullPaste.Location = new System.Drawing.Point(434, 380);
             this.btnFullPaste.Name = "btnFullPaste";
             this.btnFullPaste.Size = new System.Drawing.Size(104, 36);
             this.btnFullPaste.TabIndex = 5;
             this.btnFullPaste.Text = "Paste";
             this.btnFullPaste.UseVisualStyleBackColor = true;
+            this.btnFullPaste.Click += btnFullPaste_Click;
             this.btnFullCopy.Location = new System.Drawing.Point(324, 380);
             this.btnFullCopy.Name = "btnFullCopy";
             this.btnFullCopy.Size = new System.Drawing.Size(104, 36);
             this.btnFullCopy.TabIndex = 6;
             this.btnFullCopy.Text = "Copy";
             this.btnFullCopy.UseVisualStyleBackColor = true;
+            this.btnFullCopy.Click += btnFullCopy_Click;
             this.btnCSVImport.Location = new System.Drawing.Point(8, 380);
             this.btnCSVImport.Name = "btnCSVImport";
             this.btnCSVImport.Size = new System.Drawing.Size(151, 36);
             this.btnCSVImport.TabIndex = 7;
             this.btnCSVImport.Text = "Import CSV String";
             this.btnCSVImport.UseVisualStyleBackColor = true;
+            this.btnCSVImport.Click += btnCSVImport_Click;
             this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = (System.Windows.Forms.IButtonControl)this.btnCancel;
@@ -1901,10 +2029,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.tcPower);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEditPower);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Power (Group_Name.Set_Name.Power_Name)";
@@ -1941,83 +2067,193 @@ namespace Hero_Designer
             this.tpMutex.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
             this.tpSubPower.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCSVImport.Click += btnCSVImport_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnFXAdd.Click += btnFXAdd_Click;
-                this.btnFXDown.Click += btnFXDown_Click;
-                this.btnFXDuplicate.Click += btnFXDuplicate_Click;
-                this.btnFXEdit.Click += btnFXEdit_Click;
-                this.btnFXRemove.Click += btnFXRemove_Click;
-                this.btnFXUp.Click += btnFXUp_Click;
-                this.btnFullCopy.Click += btnFullCopy_Click;
-                this.btnFullPaste.Click += btnFullPaste_Click;
-                this.btnMutexAdd.Click += btnMutexAdd_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnPrDown.Click += btnPrDown_Click;
-                this.btnPrReset.Click += btnPrReset_Click;
-                this.btnPrSetNone.Click += btnPrSetNone_Click;
-                this.btnPrUp.Click += btnPrUp_Click;
-                this.btnSPAdd.Click += btnSPAdd_Click;
-                this.btnSPRemove.Click += btnSPRemove_Click;
-                this.cbEffectArea.SelectedIndexChanged += cbEffectArea_SelectedIndexChanged;
-                this.cbForcedClass.SelectedIndexChanged += cbForcedClass_SelectedIndexChanged;
-                this.cbNotify.SelectedIndexChanged += cbNotify_SelectedIndexChanged;
-                this.cbPowerType.SelectedIndexChanged += cbPowerType_SelectedIndexChanged;
-                this.chkAltSub.CheckedChanged += chkAltSub_CheckedChanged;
-                this.chkAlwaysToggle.CheckedChanged += chkAlwaysToggle_CheckedChanged;
-                this.chkBoostBoostable.CheckedChanged += chkBoostBoostable_CheckedChanged;
-                this.chkBoostUsePlayerLevel.CheckedChanged += chkBoostUsePlayerLevel_CheckedChanged;
-                this.chkBuffCycle.CheckedChanged += chkBuffCycle_CheckedChanged;
-                this.chkGraphFix.CheckedChanged += chkGraphFix_CheckedChanged;
-                this.chkHidden.CheckedChanged += chkHidden_CheckedChanged;
-                this.chkIgnoreStrength.CheckedChanged += chkIgnoreStrength_CheckedChanged;
-                this.chkLos.CheckedChanged += chkLos_CheckedChanged;
-                this.chkMutexAuto.CheckedChanged += chkMutexAuto_CheckedChanged;
-                this.chkMutexSkip.CheckedChanged += chkMutexSkip_CheckedChanged;
-                this.chkNoAUReq.CheckedChanged += chkNoAUReq_CheckedChanged;
-                this.chkNoAutoUpdate.CheckedChanged += chkNoAutoUpdate_CheckedChanged;
-                this.chkPRFrontLoad.CheckedChanged += chkPRFrontLoad_CheckedChanged;
-                this.chkScale.CheckedChanged += chkScale_CheckedChanged;
-                this.chkSortOverride.CheckedChanged += chkSortOverride_CheckedChanged;
-                this.chkSubInclude.CheckedChanged += chkSubInclude_CheckedChanged;
-                this.chkSummonDisplayEntity.CheckedChanged += chkSummonDisplayEntity_CheckedChanged;
-                this.chkSummonStealAttributes.CheckedChanged += chkSummonStealAttributes_CheckedChanged;
-                this.chkSummonStealEffects.CheckedChanged += chkSummonStealEffects_CheckedChanged;
-                this.clbFlags.ItemCheck += clbFlags_ItemCheck;
-                this.lblStaticIndex.Click += lblStaticIndex_Click;
-                this.lvDisablePass1.SelectedIndexChanged += lvDisablePass1_SelectedIndexChanged;
-                this.lvDisablePass4.SelectedIndexChanged += lvDisablePass4_SelectedIndexChanged;
-                this.lvPrGroup.SelectedIndexChanged += lvPrGroup_SelectedIndexChanged;
-                this.lvPrListing.SelectedIndexChanged += lvPrListing_SelectedIndexChanged;
-                this.lvPrPower.SelectedIndexChanged += lvPrPower_SelectedIndexChanged;
-                this.lvPrSet.SelectedIndexChanged += lvPrSet_SelectedIndexChanged;
-                this.lvSPGroup.SelectedIndexChanged += lvSPGroup_SelectedIndexChanged;
-                this.lvSPPower.SelectedIndexChanged += lvSPPower_SelectedIndexChanged;
-                this.lvSPSet.SelectedIndexChanged += lvSPSet_SelectedIndexChanged;
-                this.rbFlagAffected.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagAutoHit.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagCast.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagCastThrough.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagDisallow.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagRequired.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagTargets.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagTargetsSec.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbFlagVector.CheckedChanged += rbFlagX_CheckedChanged;
-                this.rbPrAdd.Click += rbPrAdd_Click;
-                this.rbPrPowerA.CheckedChanged += rbPrPowerX_CheckedChanged;
-                this.rbPrPowerB.CheckedChanged += rbPrPowerX_CheckedChanged;
-                this.rbPrRemove.Click += rbPrRemove_Click;
-                this.txtDescLong.TextChanged += txtDescLong_TextChanged;
-                this.txtDescShort.TextChanged += txtDescShort_TextChanged;
-                this.txtNameDisplay.TextChanged += txtPowerName_TextChanged;
-                this.txtScaleName.TextChanged += txtScaleName_TextChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
-    #endregion
+        #endregion
+        System.Windows.Forms.TextBox txtVisualLocation;
+        System.Windows.Forms.ComboBox cbNameGroup;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnCSVImport;
+        System.Windows.Forms.Button btnFullCopy;
+        System.Windows.Forms.Button btnFullPaste;
+        System.Windows.Forms.Button btnFXAdd;
+        System.Windows.Forms.Button btnFXDown;
+        System.Windows.Forms.Button btnFXDuplicate;
+        System.Windows.Forms.Button btnFXEdit;
+        System.Windows.Forms.Button btnFXRemove;
+        System.Windows.Forms.Button btnFXUp;
+        System.Windows.Forms.Button btnMutexAdd;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnPrDown;
+        System.Windows.Forms.Button btnPrReset;
+        System.Windows.Forms.Button btnPrSetNone;
+        System.Windows.Forms.Button btnPrUp;
+        System.Windows.Forms.Button btnSetDamage;
+        System.Windows.Forms.Button btnSPAdd;
+        System.Windows.Forms.Button btnSPRemove;
+        System.Windows.Forms.ComboBox cbEffectArea;
+        System.Windows.Forms.ComboBox cbForcedClass;
+        System.Windows.Forms.ComboBox cbNameSet;
+        System.Windows.Forms.ComboBox cbNotify;
+        System.Windows.Forms.ComboBox cbPowerType;
+        System.Windows.Forms.CheckBox chkAltSub;
+        System.Windows.Forms.CheckBox chkAlwaysToggle;
+        System.Windows.Forms.CheckBox chkBoostBoostable;
+        System.Windows.Forms.CheckBox chkBoostUsePlayerLevel;
+        System.Windows.Forms.CheckBox chkBuffCycle;
+        System.Windows.Forms.CheckBox chkGraphFix;
+        System.Windows.Forms.CheckBox chkHidden;
+        System.Windows.Forms.CheckBox chkIgnoreStrength;
+        System.Windows.Forms.CheckBox chkLos;
+        System.Windows.Forms.CheckBox chkMutexAuto;
+        System.Windows.Forms.CheckBox chkMutexSkip;
+        System.Windows.Forms.CheckBox chkNoAUReq;
+        System.Windows.Forms.CheckBox chkNoAutoUpdate;
+        System.Windows.Forms.CheckBox chkPRFrontLoad;
+        System.Windows.Forms.CheckBox chkScale;
+        System.Windows.Forms.CheckBox chkSortOverride;
+        System.Windows.Forms.CheckBox chkSubInclude;
+        System.Windows.Forms.CheckBox chkSummonDisplayEntity;
+        System.Windows.Forms.CheckBox chkSummonStealAttributes;
+        System.Windows.Forms.CheckBox chkSummonStealEffects;
+        System.Windows.Forms.CheckedListBox clbClassExclude;
+        System.Windows.Forms.CheckedListBox clbClassReq;
+        System.Windows.Forms.CheckedListBox clbFlags;
+        System.Windows.Forms.CheckedListBox clbMutex;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader10;
+        System.Windows.Forms.ColumnHeader ColumnHeader11;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader6;
+        System.Windows.Forms.ColumnHeader ColumnHeader7;
+        System.Windows.Forms.ColumnHeader ColumnHeader8;
+        System.Windows.Forms.ColumnHeader ColumnHeader9;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox10;
+        System.Windows.Forms.GroupBox GroupBox11;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox3;
+        System.Windows.Forms.GroupBox GroupBox4;
+        System.Windows.Forms.GroupBox GroupBox5;
+        System.Windows.Forms.GroupBox GroupBox6;
+        System.Windows.Forms.GroupBox GroupBox7;
+        System.Windows.Forms.GroupBox GroupBox8;
+        System.Windows.Forms.GroupBox GroupBox9;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label10;
+        System.Windows.Forms.Label Label11;
+        System.Windows.Forms.Label Label12;
+        System.Windows.Forms.Label Label13;
+        System.Windows.Forms.Label Label14;
+        System.Windows.Forms.Label Label15;
+        System.Windows.Forms.Label Label16;
+        System.Windows.Forms.Label Label17;
+        System.Windows.Forms.Label Label18;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label20;
+        System.Windows.Forms.Label Label21;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label23;
+        System.Windows.Forms.Label Label24;
+        System.Windows.Forms.Label Label26;
+        System.Windows.Forms.Label Label27;
+        System.Windows.Forms.Label Label28;
+        System.Windows.Forms.Label Label29;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label30;
+        System.Windows.Forms.Label Label31;
+        System.Windows.Forms.Label Label32;
+        System.Windows.Forms.Label Label33;
+        System.Windows.Forms.Label Label34;
+        System.Windows.Forms.Label Label35;
+        System.Windows.Forms.Label Label36;
+        System.Windows.Forms.Label Label37;
+        System.Windows.Forms.Label Label38;
+        System.Windows.Forms.Label Label39;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label40;
+        System.Windows.Forms.Label Label41;
+        System.Windows.Forms.Label Label42;
+        System.Windows.Forms.Label Label43;
+        System.Windows.Forms.Label Label44;
+        System.Windows.Forms.Label Label45;
+        System.Windows.Forms.Label Label46;
+        System.Windows.Forms.Label Label47;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.Label lblAcc;
+        System.Windows.Forms.Label lblEndCost;
+        System.Windows.Forms.Label lblEnhName;
+        System.Windows.Forms.Label lblInvSet;
+        System.Windows.Forms.Label lblNameFull;
+        System.Windows.Forms.Label lblNameUnique;
+        System.Windows.Forms.Label lblStaticIndex;
+        System.Windows.Forms.ListBox lvDisablePass1;
+        System.Windows.Forms.ListBox lvDisablePass4;
+        System.Windows.Forms.ListBox lvFX;
+        System.Windows.Forms.ListView lvPrGroup;
+        System.Windows.Forms.ListView lvPrListing;
+        System.Windows.Forms.ListView lvPrPower;
+        System.Windows.Forms.ListView lvPrSet;
+        System.Windows.Forms.ListView lvSPGroup;
+        System.Windows.Forms.ListView lvSPPower;
+        System.Windows.Forms.ListView lvSPSelected;
+        System.Windows.Forms.ListView lvSPSet;
+        System.Windows.Forms.PictureBox pbEnhancementList;
+        System.Windows.Forms.PictureBox pbEnhancements;
+        System.Windows.Forms.PictureBox pbInvSetList;
+        System.Windows.Forms.PictureBox pbInvSetUsed;
+        System.Windows.Forms.Panel pnlFX;
+        System.Windows.Forms.RadioButton rbFlagAffected;
+        System.Windows.Forms.RadioButton rbFlagAutoHit;
+        System.Windows.Forms.RadioButton rbFlagCast;
+        System.Windows.Forms.RadioButton rbFlagCastThrough;
+        System.Windows.Forms.RadioButton rbFlagDisallow;
+        System.Windows.Forms.RadioButton rbFlagRequired;
+        System.Windows.Forms.RadioButton rbFlagTargets;
+        System.Windows.Forms.RadioButton rbFlagTargetsSec;
+        System.Windows.Forms.RadioButton rbFlagVector;
+        System.Windows.Forms.Button rbPrAdd;
+        System.Windows.Forms.RadioButton rbPrPowerA;
+        System.Windows.Forms.RadioButton rbPrPowerB;
+        System.Windows.Forms.Button rbPrRemove;
+        System.Windows.Forms.TabControl tcPower;
+        System.Windows.Forms.TabPage tpBasic;
+        System.Windows.Forms.TabPage tpEffects;
+        System.Windows.Forms.TabPage tpEnh;
+        System.Windows.Forms.TabPage tpMutex;
+        System.Windows.Forms.TabPage tpPreReq;
+        System.Windows.Forms.TabPage tpSets;
+        System.Windows.Forms.TabPage tpSpecialEnh;
+        System.Windows.Forms.TabPage tpSubPower;
+        System.Windows.Forms.TabPage tpText;
+        System.Windows.Forms.TextBox txtAcc;
+        System.Windows.Forms.TextBox txtActivate;
+        System.Windows.Forms.TextBox txtArc;
+        System.Windows.Forms.TextBox txtCastTime;
+        System.Windows.Forms.TextBox txtDescLong;
+        System.Windows.Forms.TextBox txtDescShort;
+        System.Windows.Forms.TextBox txtEndCost;
+        System.Windows.Forms.TextBox txtInterrupt;
+        System.Windows.Forms.TextBox txtLevel;
+        System.Windows.Forms.TextBox txtLifeTimeGame;
+        System.Windows.Forms.TextBox txtLifeTimeReal;
+        System.Windows.Forms.TextBox txtMaxTargets;
+        System.Windows.Forms.TextBox txtNameDisplay;
+        System.Windows.Forms.TextBox txtNamePower;
+        System.Windows.Forms.TextBox txtNumCharges;
+        System.Windows.Forms.TextBox txtRadius;
+        System.Windows.Forms.TextBox txtRange;
+        System.Windows.Forms.TextBox txtRangeSec;
+        System.Windows.Forms.TextBox txtRechargeTime;
+        System.Windows.Forms.TextBox txtScaleName;
+        System.Windows.Forms.TextBox txtUseageTime;
+        System.Windows.Forms.NumericUpDown udScaleMax;
+        System.Windows.Forms.NumericUpDown udScaleMin;
     }
 }

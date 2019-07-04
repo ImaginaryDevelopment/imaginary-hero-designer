@@ -9,27 +9,14 @@ namespace Hero_Designer
 {
     public partial class frmImport_mod : Form
     {
-        Button btnAttribIndex;
-
-        Button btnAttribLoad;
-
-        Button btnAttribTable;
-
-        Button Button1;
-        OpenFileDialog dlgBrowse;
-        Label Label1;
-        Label Label3;
-        Label Label4;
-        Label lblAttribDate;
-        Label lblAttribIndex;
-        Label lblAttribTableCount;
-        Label lblAttribTables;
-        NumericUpDown udAttribRevision;
 
         public frmImport_mod()
         {
             this.Load += new EventHandler(this.frmImport_mod_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmImport_mod);
+            var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_mod));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnAttribIndex_Click(object sender, EventArgs e)

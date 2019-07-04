@@ -10,28 +10,9 @@ using Base.Display;
 
 namespace midsControls
 {
-    // Token: 0x0200000B RID: 11
     public class ctlDamageDisplay : UserControl
     {
-        // Token: 0x1700000E RID: 14
-        // (get) Token: 0x06000047 RID: 71 RVA: 0x00006510 File Offset: 0x00004710
-        // (set) Token: 0x06000048 RID: 72 RVA: 0x00006528 File Offset: 0x00004728
-        internal virtual ToolTip myTip
-        {
-            get
-            {
-                return this._myTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._myTip = value;
-            }
-        }
 
-        // Token: 0x1700000F RID: 15
-        // (get) Token: 0x06000049 RID: 73 RVA: 0x00006534 File Offset: 0x00004734
-        // (set) Token: 0x0600004A RID: 74 RVA: 0x0000654C File Offset: 0x0000474C
         public int PaddingV
         {
             get
@@ -48,9 +29,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000010 RID: 16
-        // (get) Token: 0x0600004B RID: 75 RVA: 0x00006588 File Offset: 0x00004788
-        // (set) Token: 0x0600004C RID: 76 RVA: 0x000065A0 File Offset: 0x000047A0
         public int PaddingH
         {
             get
@@ -67,9 +45,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000011 RID: 17
-        // (get) Token: 0x0600004D RID: 77 RVA: 0x000065DC File Offset: 0x000047DC
-        // (set) Token: 0x0600004E RID: 78 RVA: 0x000065F4 File Offset: 0x000047F4
         public Color ColorBackStart
         {
             get
@@ -83,9 +58,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000012 RID: 18
-        // (get) Token: 0x0600004F RID: 79 RVA: 0x00006608 File Offset: 0x00004808
-        // (set) Token: 0x06000050 RID: 80 RVA: 0x00006620 File Offset: 0x00004820
         public Color ColorBackEnd
         {
             get
@@ -629,7 +601,7 @@ namespace midsControls
 
         // Token: 0x04000026 RID: 38
         [AccessedThroughProperty("myTip")]
-        private ToolTip _myTip;
+        private ToolTip myTip;
 
         // Token: 0x04000027 RID: 39
         protected ExtendedBitmap bxBuffer;

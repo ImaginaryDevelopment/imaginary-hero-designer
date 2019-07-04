@@ -12,57 +12,20 @@ namespace Hero_Designer
 {
     public partial class frmForum : Form
     {
-        CheckBox chkAlwaysDataChunk;
-        CheckBox chkBonusList;
-        CheckBox chkBreakdown;
-        CheckBox chkChunkOnly;
-        CheckBox chkDataChunk;
-        CheckBox chkNoEnh;
-        CheckBox chkNoIOLevel;
-        CheckBox chkNoSetName;
-        Label csHeading;
-        Label csLevel;
-
-        ListBox csList;
-        Label csSlots;
-        Label csTitle;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-
-        ImageButton _ibCancel;
-
-        ImageButton _ibExport;
-        Label Label1;
-        Label Label19;
-        Label Label2;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label3;
-        Label Label4;
-        Label lblCodeInf;
-        Label lblRecess;
-
-        ListBox lstCodes;
-
-        PictureBox pbTitle;
-        ToolTip ToolTip1;
 
         public clsOutput Exporter;
         Point mouse_offset;
 
-        internal ImageButton ibCancel
+        internal ImageButton IBCancel
         {
-            get => _ibCancel;
-            private set => _ibCancel = value;
+            get => ibCancel;
+            private set => ibCancel = value;
         }
-        internal ImageButton ibExport
+
+        internal ImageButton IBExport
         {
-            get => _ibExport;
-            private set => _ibExport = value;
+            get => ibExport;
+            private set => ibExport = value;
         }
 
         public frmForum()
@@ -72,6 +35,10 @@ namespace Hero_Designer
             this.MouseMove += new MouseEventHandler(this.frmForum_MouseMove);
             this.Paint += new PaintEventHandler(this.frmForum_Paint);
             this.InitializeComponent();
+            this.Name = nameof(frmForum);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmForum));
+            this.pbTitle.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbTitle.Image");
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void csList_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,7 +133,6 @@ namespace Hero_Designer
         }
 
         void frmForum_Paint(object sender, PaintEventArgs e)
-
         {
             Pen pen = new Pen(Color.Black, 1f);
             Rectangle rect = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
@@ -174,13 +140,11 @@ namespace Hero_Designer
         }
 
         void ibCancel_ButtonClicked()
-
         {
             this.Hide();
         }
 
         void ibExport_ButtonClicked()
-
         {
             MidsContext.Config.ExportScheme = this.csList.SelectedIndex;
             MidsContext.Config.ExportTarget = this.lstCodes.SelectedIndex;
@@ -211,22 +175,17 @@ namespace Hero_Designer
             this.Hide();
         }
 
-        [DebuggerStepThrough]
-
         void lstCodes_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.lblCodeInf.Text = MidsContext.Config.Export.FormatCode[this.lstCodes.SelectedIndex].Notes;
         }
 
         void pbTitle_MouseDown(object sender, MouseEventArgs e)
-
         {
             this.mouse_offset = new System.Drawing.Point(-this.pbTitle.Left + -e.X, -this.pbTitle.Top + -e.Y);
         }
 
         void pbTitle_MouseMove(object sender, MouseEventArgs e)
-
         {
             this.frmForum_MouseMove(RuntimeHelpers.GetObjectValue(sender), e);
         }

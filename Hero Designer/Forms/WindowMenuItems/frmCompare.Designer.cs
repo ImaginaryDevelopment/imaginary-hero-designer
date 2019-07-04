@@ -31,7 +31,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCompare));
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.lblKeyColor1 = new System.Windows.Forms.Label();
             this.cbSet1 = new System.Windows.Forms.ComboBox();
@@ -85,6 +84,7 @@ namespace Hero_Designer
 
             this.cbSet1.Size = new System.Drawing.Size(132, 22);
             this.cbSet1.TabIndex = 2;
+            this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
             this.cbType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbType1.Location = new System.Drawing.Point(8, 64);
@@ -92,6 +92,7 @@ namespace Hero_Designer
 
             this.cbType1.Size = new System.Drawing.Size(132, 22);
             this.cbType1.TabIndex = 1;
+            this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
             this.cbAT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbAT1.Location = new System.Drawing.Point(8, 40);
@@ -99,6 +100,7 @@ namespace Hero_Designer
 
             this.cbAT1.Size = new System.Drawing.Size(132, 22);
             this.cbAT1.TabIndex = 0;
+            this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.lblKeyColor2);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.cbSet2);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.cbType2);
@@ -127,6 +129,7 @@ namespace Hero_Designer
 
             this.cbSet2.Size = new System.Drawing.Size(132, 22);
             this.cbSet2.TabIndex = 2;
+            this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
             this.cbType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbType2.Location = new System.Drawing.Point(8, 64);
@@ -134,6 +137,7 @@ namespace Hero_Designer
 
             this.cbType2.Size = new System.Drawing.Size(132, 22);
             this.cbType2.TabIndex = 1;
+            this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
             this.cbAT2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbAT2.Location = new System.Drawing.Point(8, 40);
@@ -141,6 +145,7 @@ namespace Hero_Designer
 
             this.cbAT2.Size = new System.Drawing.Size(132, 22);
             this.cbAT2.TabIndex = 0;
+            this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
 
             this.lblScale.Location = new System.Drawing.Point(312, 500);
             this.lblScale.Name = "lblScale";
@@ -160,6 +165,7 @@ namespace Hero_Designer
             this.tbScaleX.TickFrequency = 10;
             this.tbScaleX.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbScaleX.Value = 10;
+            this.tbScaleX.Scroll += tbScaleX_Scroll;
 
             this.chkMatching.Location = new System.Drawing.Point(8, 508);
             this.chkMatching.Name = "chkMatching";
@@ -167,6 +173,7 @@ namespace Hero_Designer
             this.chkMatching.Size = new System.Drawing.Size(116, 20);
             this.chkMatching.TabIndex = 11;
             this.chkMatching.Text = "Attempt Matching";
+            this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
             this.tTip.AutoPopDelay = 10000;
             this.tTip.InitialDelay = 500;
             this.tTip.ReshowDelay = 100;
@@ -183,6 +190,7 @@ namespace Hero_Designer
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.btnTweakMatch, "Modify the data used to perform power matching");
             this.btnTweakMatch.UseVisualStyleBackColor = true;
             this.btnTweakMatch.Visible = false;
+            this.btnTweakMatch.Click += btnTweakMatch_Click;
             this.chkOnTop.Checked = true;
             this.chkOnTop.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 
@@ -196,6 +204,7 @@ namespace Hero_Designer
             this.chkOnTop.TextOff = "Keep On Top";
             this.chkOnTop.TextOn = "Keep On Top";
             this.chkOnTop.Toggle = true;
+            this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.Checked = false;
             this.btnClose.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
@@ -211,6 +220,7 @@ namespace Hero_Designer
             this.btnClose.TextOff = "Close";
             this.btnClose.TextOn = "Close";
             this.btnClose.Toggle = false;
+            this.btnClose.ButtonClicked += btnClose_ButtonClicked;
             this.Graph.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
             this.Graph.Border = true;
             this.Graph.Clickable = false;
@@ -245,6 +255,7 @@ namespace Hero_Designer
             this.Graph.Style = Enums.GraphStyle.Twin;
             this.Graph.TabIndex = 1;
             this.Graph.TextWidth = 120;
+            this.Graph.Load += Graph_Load;
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.lstDisplay);
             this.GroupBox4.ForeColor = System.Drawing.Color.White;
 
@@ -263,6 +274,7 @@ namespace Hero_Designer
 
             this.lstDisplay.Size = new System.Drawing.Size(130, 228);
             this.lstDisplay.TabIndex = 0;
+            this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
 
@@ -280,11 +292,9 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmCompare);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Powerset Comparison";
             this.TopMost = true;
@@ -293,28 +303,6 @@ namespace Hero_Designer
             this.tbScaleX.EndInit();
             this.GroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Graph.Load += Graph_Load;
-
-                // btnClose events
-                this.btnClose.Load += btnClose_Load;
-                this.btnClose.ButtonClicked += btnClose_ButtonClicked;
-
-                this.btnTweakMatch.Click += btnTweakMatch_Click;
-                this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
-                this.cbAT2.SelectedIndexChanged += cbAT2_SelectedIndexChanged;
-                this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
-                this.cbSet2.SelectedIndexChanged += cbSet2_SelectedIndexChanged;
-                this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
-                this.cbType2.SelectedIndexChanged += cbType2_SelectedIndexChanged;
-                this.chkMatching.CheckedChanged += chkMatching_CheckedChanged;
-                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                this.lstDisplay.SelectedIndexChanged += lstDisplay_SelectedIndexChanged;
-                this.tbScaleX.Scroll += tbScaleX_Scroll;
-            }
-            // finished with events
             this.PerformLayout();
         }
     #endregion

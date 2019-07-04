@@ -3,8 +3,6 @@ using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -56,31 +54,29 @@ namespace Hero_Designer
 
         TextBox txtDBVer;
 
-        [AccessedThroughProperty("udIssue")]
-        NumericUpDown _udIssue;
 
         bool Initialized;
-        NumericUpDown udIssue
+        NumericUpDown UdIssue
         {
             get
             {
-                return this._udIssue;
+                return this.udIssue;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
                 KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.udIssue_KeyPress);
                 EventHandler eventHandler = new EventHandler(this.udIssue_ValueChanged);
-                if (this._udIssue != null)
+                if (this.udIssue != null)
                 {
-                    this._udIssue.KeyPress -= pressEventHandler;
-                    this._udIssue.ValueChanged -= eventHandler;
+                    this.udIssue.KeyPress -= pressEventHandler;
+                    this.udIssue.ValueChanged -= eventHandler;
                 }
-                this._udIssue = value;
-                if (this._udIssue == null)
+                this.udIssue = value;
+                if (this.udIssue == null)
                     return;
-                this._udIssue.KeyPress += pressEventHandler;
-                this._udIssue.ValueChanged += eventHandler;
+                this.udIssue.KeyPress += pressEventHandler;
+                this.udIssue.ValueChanged += eventHandler;
             }
         }
 
@@ -89,36 +85,34 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmDBEdit_Load);
             this.Initialized = false;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmDBEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmDBEdit);
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Hide();
         }
 
         void btnCSV_Click(object sender, EventArgs e)
-
         {
             new frmCSV().ShowDialog();
         }
 
         void btnDate_Click(object sender, EventArgs e)
-
         {
             DatabaseAPI.Database.Date = DateTime.Now;
             this.DisplayInfo();
         }
 
         void btnEditEnh_Click(object sender, EventArgs e)
-
         {
             new frmEnhEdit().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnEditEntity_Click(object sender, EventArgs e)
-
         {
             new frmEntityListing().ShowDialog();
         }
@@ -156,7 +150,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon == null)
                 return;
             this.lblDate.Text = Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yyyy");
-            this.udIssue.Value = new Decimal(DatabaseAPI.Database.Issue);
+            this.UdIssue.Value = new Decimal(DatabaseAPI.Database.Issue);
             this.lblCountAT.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
             this.lblCountEnh.Text = Strings.Format(DatabaseAPI.Database.Enhancements.Length, "#,###,##0");
             this.lblCountIOSet.Text = Strings.Format(DatabaseAPI.Database.EnhancementSets.Count, "#,###,##0");
@@ -178,20 +172,16 @@ namespace Hero_Designer
         }
 
         void frmDBEdit_Load(object sender, EventArgs e)
-
         {
             this.btnDate.Visible = MidsContext.Config.MasterMode;
             this.btnCSV.Visible = MidsContext.Config.MasterMode;
             this.txtDBVer.Enabled = MidsContext.Config.MasterMode;
-            this.udIssue.Enabled = MidsContext.Config.MasterMode;
+            this.UdIssue.Enabled = MidsContext.Config.MasterMode;
             this.btnFileReport.Visible = MidsContext.Config.MasterMode;
             this.DisplayInfo();
         }
 
-        [DebuggerStepThrough]
-
         void txtDBVer_TextChanged(object sender, EventArgs e)
-
         {
             float num = (float)Conversion.Val(this.txtDBVer.Text);
             if ((double)num < 1.0)
@@ -200,19 +190,17 @@ namespace Hero_Designer
         }
 
         void udIssue_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
-            DatabaseAPI.Database.Issue = Convert.ToInt32(this.udIssue.Value);
+            DatabaseAPI.Database.Issue = Convert.ToInt32(this.UdIssue.Value);
         }
 
         void udIssue_ValueChanged(object sender, EventArgs e)
-
         {
             if (!MainModule.MidsController.IsAppInitialized | !this.Initialized)
                 return;
-            DatabaseAPI.Database.Issue = Convert.ToInt32(this.udIssue.Value);
+            DatabaseAPI.Database.Issue = Convert.ToInt32(this.UdIssue.Value);
         }
     }
 }

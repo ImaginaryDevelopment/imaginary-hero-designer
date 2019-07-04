@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEnhEdit));
             this.lvEnh = new System.Windows.Forms.ListView();
             this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader3 = new System.Windows.Forms.ColumnHeader();
@@ -72,6 +71,8 @@ namespace Hero_Designer
             this.lvEnh.TabIndex = 0;
             this.lvEnh.UseCompatibleStateImageBehavior = false;
             this.lvEnh.View = System.Windows.Forms.View.Details;
+            this.lvEnh.SelectedIndexChanged += this.lvEnh_SelectedIndexChanged;
+            this.lvEnh.DoubleClick += this.lvEnh_DoubleClick;
             this.ColumnHeader2.Text = "Name";
             this.ColumnHeader2.Width = 312;
             this.ColumnHeader3.Text = "Type";
@@ -96,6 +97,7 @@ namespace Hero_Designer
             this.btnUp.TabIndex = 1;
             this.btnUp.Text = "Move Up";
             this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += btnUp_Click;
             this.btnDown.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDown.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -106,6 +108,7 @@ namespace Hero_Designer
             this.btnDown.TabIndex = 2;
             this.btnDown.Text = "Move Down";
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += btnDown_Click;
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnAdd.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -116,6 +119,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add...";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += btnAdd_Click;
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDelete.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -126,6 +130,7 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += btnDelete_Click;
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -136,6 +141,7 @@ namespace Hero_Designer
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit...";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += btnEdit_Click;
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -147,6 +153,7 @@ namespace Hero_Designer
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save and Close";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += btnSave_Click;
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -158,6 +165,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "Cancel and Discard Changes";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += btnCancel_Click;
             this.btnClone.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnClone.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -168,6 +176,7 @@ namespace Hero_Designer
             this.btnClone.TabIndex = 24;
             this.btnClone.Text = "Clone...";
             this.btnClone.UseVisualStyleBackColor = true;
+            this.btnClone.Click += btnClone_Click;
             this.NoReload.ForeColor = System.Drawing.Color.White;
 
             this.NoReload.Location = new System.Drawing.Point(12, 580);
@@ -176,6 +185,7 @@ namespace Hero_Designer
             this.NoReload.Size = new System.Drawing.Size(248, 16);
             this.NoReload.TabIndex = 25;
             this.NoReload.Text = "Disable Image Reload";
+            this.NoReload.CheckedChanged += NoReload_CheckedChanged;
             this.lblLoading.BackColor = System.Drawing.Color.White;
             this.lblLoading.Font = new System.Drawing.Font("Arial", 14f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.lblLoading.ForeColor = System.Drawing.Color.Black;
@@ -208,29 +218,30 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEnhEdit);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enhancement Editor";
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.NoReload.CheckedChanged += NoReload_CheckedChanged;
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnClone.Click += btnClone_Click;
-                this.btnDelete.Click += btnDelete_Click;
-                this.btnDown.Click += btnDown_Click;
-                this.btnEdit.Click += btnEdit_Click;
-                this.btnSave.Click += btnSave_Click;
-                this.btnUp.Click += btnUp_Click;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+        System.Windows.Forms.Button btnAdd;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnClone;
+        System.Windows.Forms.Button btnDelete;
+        System.Windows.Forms.Button btnDown;
+        System.Windows.Forms.Button btnEdit;
+        System.Windows.Forms.Button btnSave;
+        System.Windows.Forms.Button btnUp;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.ImageList ilEnh;
+        System.Windows.Forms.Label lblLoading;
+        System.Windows.Forms.ListView lvEnh;
+        System.Windows.Forms.CheckBox NoReload;
     }
 }

@@ -16,32 +16,6 @@ namespace Hero_Designer
 {
     public partial class frmImport_Power : Form
     {
-        Button btnCheckAll;
-
-        Button btnCheckModified;
-
-        Button btnClose;
-
-        Button btnEraseAll;
-
-        Button btnFile;
-
-        Button btnImport;
-
-        Button btnUncheckAll;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        OpenFileDialog dlgBrowse;
-        Label Label6;
-        Label Label8;
-        Label lblCount;
-        Label lblDate;
-        Label lblFile;
-        ListView lstImport;
-        NumericUpDown udRevision;
 
         frmBusy bFrm;
 

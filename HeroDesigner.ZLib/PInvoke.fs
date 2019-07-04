@@ -1,5 +1,6 @@
 ﻿module PInvoke
 open System.Runtime.InteropServices
+open Microsoft.FSharp.Core
 
 // void** compress2(int32_t a1, int32_t* a2, int32_t a3, int32_t a4, void** a5) {
 [<DllImport("lib\\ZLIB1.DLL", EntryPoint = "compress2", CharSet = CharSet.Ansi, SetLastError = false)>]
@@ -25,8 +26,8 @@ let compress srcBytes =
     match Compress(&array.[0], &destLength, &srcBytes.[0], length, 9) with
     | 0 ->
         System.Array.Resize<byte>(&array, destLength)
-        Ok array
-    | x -> Error x
+        Result.Ok array
+    | x -> Result.Error x
 
 //public static byte[] UncompressChunk(ref byte[] iBytes, int outSize)
 let decompress (srcBytes,desiredOutSize) =

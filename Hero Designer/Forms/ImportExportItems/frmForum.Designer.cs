@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmForum));
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.Label4 = new System.Windows.Forms.Label();
             this.csSlots = new System.Windows.Forms.Label();
@@ -170,6 +169,7 @@ namespace Hero_Designer
 
             this.csList.Size = new System.Drawing.Size(151, 186);
             this.csList.TabIndex = 10;
+            this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
             this.GroupBox2.BackColor = System.Drawing.Color.Black;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.Label1);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.lstCodes);
@@ -198,6 +198,7 @@ namespace Hero_Designer
 
             this.lstCodes.Size = new System.Drawing.Size(252, 102);
             this.lstCodes.TabIndex = 0;
+            this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
             this.lblCodeInf.BackColor = System.Drawing.Color.Black;
             this.lblCodeInf.ForeColor = System.Drawing.Color.White;
 
@@ -337,41 +338,43 @@ namespace Hero_Designer
             this.GroupBox5.TabStop = false;
             this.GroupBox5.Text = "Set Bonuses:";
             this.pbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.pbTitle.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbTitle.Image");
 
             this.pbTitle.Location = new System.Drawing.Point(180, 6);
             this.pbTitle.Name = "pbTitle";
-
             this.pbTitle.Size = new System.Drawing.Size(263, 24);
             this.pbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbTitle.TabIndex = 15;
             this.pbTitle.TabStop = false;
+            this.pbTitle.MouseMove += pbTitle_MouseMove;
+            this.pbTitle.MouseDown += pbTitle_MouseDown;
+            // 
+            // ibCancel
+            // 
             this.ibCancel.Checked = false;
             this.ibCancel.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibCancel.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibCancel.Location = new System.Drawing.Point(52, 431);
             this.ibCancel.Name = "ibCancel";
-
             this.ibCancel.Size = new System.Drawing.Size(105, 22);
             this.ibCancel.TabIndex = 14;
             this.ibCancel.TextOff = "Cancel";
             this.ibCancel.TextOn = "Alt Text";
             this.ibCancel.Toggle = false;
+            this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
+            // 
+            // ibExport
+            // 
             this.ibExport.Checked = false;
             this.ibExport.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibExport.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibExport.Location = new System.Drawing.Point(246, 431);
             this.ibExport.Name = "ibExport";
-
             this.ibExport.Size = new System.Drawing.Size(105, 22);
             this.ibExport.TabIndex = 13;
             this.ibExport.TextOff = "Export Now";
             this.ibExport.TextOn = "Alt Text";
             this.ibExport.Toggle = false;
+            this.ibExport.ButtonClicked += ibExport_ButtonClicked;
             this.lblRecess.BackColor = System.Drawing.Color.Black;
             this.lblRecess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
@@ -397,10 +400,8 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmForum);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forum Export";
@@ -411,22 +412,42 @@ namespace Hero_Designer
             this.GroupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)this.pbTitle).EndInit();
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
-                this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
-                this.ibExport.ButtonClicked += ibExport_ButtonClicked;
-                this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
-
-                // pbTitle events
-                this.pbTitle.MouseMove += pbTitle_MouseMove;
-                this.pbTitle.MouseDown += pbTitle_MouseDown;
-
-            }
-            // finished with events
             this.PerformLayout();
         }
+
+        System.Windows.Forms.CheckBox chkAlwaysDataChunk;
+        System.Windows.Forms.CheckBox chkBonusList;
+        System.Windows.Forms.CheckBox chkBreakdown;
+        System.Windows.Forms.CheckBox chkChunkOnly;
+        System.Windows.Forms.CheckBox chkDataChunk;
+        System.Windows.Forms.CheckBox chkNoEnh;
+        System.Windows.Forms.CheckBox chkNoIOLevel;
+        System.Windows.Forms.CheckBox chkNoSetName;
+        System.Windows.Forms.Label csHeading;
+        System.Windows.Forms.Label csLevel;
+        System.Windows.Forms.ListBox csList;
+        System.Windows.Forms.Label csSlots;
+        System.Windows.Forms.Label csTitle;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox3;
+        System.Windows.Forms.GroupBox GroupBox4;
+        System.Windows.Forms.GroupBox GroupBox5;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label19;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label20;
+        System.Windows.Forms.Label Label21;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label lblCodeInf;
+        System.Windows.Forms.Label lblRecess;
+        System.Windows.Forms.ListBox lstCodes;
+        System.Windows.Forms.PictureBox pbTitle;
+        System.Windows.Forms.ToolTip ToolTip1;
+        midsControls.ImageButton ibCancel;
+        midsControls.ImageButton ibExport;
         #endregion
     }
 }

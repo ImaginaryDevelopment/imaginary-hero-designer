@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMiniList));
             this.pInfo = new midsControls.ctlPopUp();
             this.VScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
@@ -62,24 +61,19 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.pInfo);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, 0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
 
             this.MaximumSize = new System.Drawing.Size(600, 600);
 
             this.MinimumSize = new System.Drawing.Size(100, 150);
-            this.Name = nameof(frmMiniList);
             this.Text = "Mini List";
             this.TopMost = true;
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
 
-                // pInfo events
-                this.pInfo.MouseWheel += pInfo_MouseWheel;
-                this.pInfo.MouseEnter += pInfo_MouseEnter;
+            // pInfo events
+            this.pInfo.MouseWheel += pInfo_MouseWheel;
+            this.pInfo.MouseEnter += pInfo_MouseEnter;
 
-            }
             // finished with events
             this.ResumeLayout(false);
         }

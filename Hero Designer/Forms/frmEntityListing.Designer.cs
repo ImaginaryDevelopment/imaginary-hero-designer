@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityListing));
             this.lvEntity = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -39,7 +38,7 @@ namespace Hero_Designer
             this.btnDown = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnedit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClone = new System.Windows.Forms.Button();
@@ -62,6 +61,7 @@ namespace Hero_Designer
             this.lvEntity.TabIndex = 0;
             this.lvEntity.UseCompatibleStateImageBehavior = false;
             this.lvEntity.View = System.Windows.Forms.View.Details;
+            this.lvEntity.DoubleClick += lvEntity_DoubleClick;
             this.ColumnHeader1.Text = "Entity";
             this.ColumnHeader1.Width = 153;
             this.ColumnHeader2.Text = "Name";
@@ -76,6 +76,7 @@ namespace Hero_Designer
             this.btnUp.TabIndex = 1;
             this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += btnUp_Click;
 
             this.btnDown.Location = new System.Drawing.Point(416, 41);
             this.btnDown.Name = "btnDown";
@@ -84,6 +85,7 @@ namespace Hero_Designer
             this.btnDown.TabIndex = 2;
             this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += btnDown_Click;
 
             this.btnAdd.Location = new System.Drawing.Point(416, 100);
             this.btnAdd.Name = "btnAdd";
@@ -92,6 +94,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += btnAdd_Click;
 
             this.btnDelete.Location = new System.Drawing.Point(416, 158);
             this.btnDelete.Name = "btnDelete";
@@ -100,14 +103,16 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += btnDelete_Click;
 
-            this.btnedit.Location = new System.Drawing.Point(416, 187);
-            this.btnedit.Name = "btnedit";
+            this.btnEdit.Location = new System.Drawing.Point(416, 187);
+            this.btnEdit.Name = "btnEdit";
 
-            this.btnedit.Size = new System.Drawing.Size(75, 23);
-            this.btnedit.TabIndex = 5;
-            this.btnedit.Text = "Edit";
-            this.btnedit.UseVisualStyleBackColor = true;
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += btnEdit_Click;
 
             this.btnOK.Location = new System.Drawing.Point(416, 391);
             this.btnOK.Name = "btnOK";
@@ -116,6 +121,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += btnOK_Click;
 
             this.btnCancel.Location = new System.Drawing.Point(416, 420);
             this.btnCancel.Name = "btnCancel";
@@ -124,6 +130,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += btnCancel_Click;
 
             this.btnClone.Location = new System.Drawing.Point(416, 129);
             this.btnClone.Name = "btnClone";
@@ -132,13 +139,14 @@ namespace Hero_Designer
             this.btnClone.TabIndex = 8;
             this.btnClone.Text = "Clone";
             this.btnClone.UseVisualStyleBackColor = true;
+            this.btnClone.Click += btnClone_Click;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 
             this.ClientSize = new System.Drawing.Size(501, 454);
             this.Controls.Add((System.Windows.Forms.Control)this.btnClone);
             this.Controls.Add((System.Windows.Forms.Control)this.btnCancel);
             this.Controls.Add((System.Windows.Forms.Control)this.btnOK);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnedit);
+            this.Controls.Add((System.Windows.Forms.Control)this.btnEdit);
             this.Controls.Add((System.Windows.Forms.Control)this.btnDelete);
             this.Controls.Add((System.Windows.Forms.Control)this.btnAdd);
             this.Controls.Add((System.Windows.Forms.Control)this.btnDown);
@@ -146,27 +154,11 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lvEntity);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEntityListing);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entity Editor";
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnClone.Click += btnClone_Click;
-                this.btnDelete.Click += btnDelete_Click;
-                this.btnDown.Click += btnDown_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnUp.Click += btnUp_Click;
-                this.btnedit.Click += btnEdit_Click;
-                this.lvEntity.DoubleClick += lvEntity_DoubleClick;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
 
