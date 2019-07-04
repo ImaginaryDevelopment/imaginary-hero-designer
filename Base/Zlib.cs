@@ -62,6 +62,7 @@ public class Zlib
     {
         Console.WriteLine(Environment.CurrentDirectory);
         // zlib doesn't seem to work in 64bit, try this, and fallback to trying zlib if failed
+#if FSHARP
         if (is64BitProcess && File.Exists(ExternalCompressionName))
         {
             var hex = HeroDesigner.ZLib.Helpers.byteArrayToHexString(iBytes);
@@ -78,6 +79,7 @@ public class Zlib
                 return bytes;
             }
         }
+#endif
         int length = iBytes.Length;
         int destLength = outSize;
         byte[] array = new byte[destLength];

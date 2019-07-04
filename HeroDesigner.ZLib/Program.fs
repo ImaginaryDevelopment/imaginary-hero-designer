@@ -1,4 +1,5 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿module HeroDesigner.ZLib.Program
+// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 let (|ParseInt|_|) x=
     match System.Int32.TryParse(s=x) with
