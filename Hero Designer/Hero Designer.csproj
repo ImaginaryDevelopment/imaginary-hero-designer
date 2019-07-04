@@ -28,8 +28,8 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>7</ApplicationRevision>
-    <ApplicationVersion>2.22.0.7</ApplicationVersion>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>2.22.0.8</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -43,7 +43,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,7 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -666,10 +666,6 @@
     <ProjectReference Include="..\Base\Base.csproj">
       <Project>{78125ad1-c9f8-4fe9-9bdb-5033d5fa76cc}</Project>
       <Name>Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HeroDesigner.ZLib\HeroDesigner.ZLib.fsproj">
-      <Project>{518ece50-17a7-4c9f-ba19-0ea7320d0895}</Project>
-      <Name>HeroDesigner.ZLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\midsControls\midsControls.csproj">
       <Project>{8b762616-ca1e-428a-a62d-e17dd738712d}</Project>
