@@ -9,39 +9,6 @@ namespace Hero_Designer
 {
     public partial class frmExportColor : Form
     {
-        Button btnCancel;
-
-        Button btnOK;
-        ColorDialog cPicker;
-
-        Label csHeading;
-
-        Label csHO;
-
-        Label csIO;
-
-        Label csLevel;
-
-        Label csPower;
-
-        Label csSet;
-
-        Label csSlots;
-
-        Label csTitle;
-        Label Label1;
-        Label Label19;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label7;
-        Label Label9;
-        ToolTip myTip;
-
-        TextBox txtName;
 
         public ExportConfig.ColorScheme myScheme;
 
@@ -49,24 +16,24 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmExportColor_Load);
             this.InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmExportColor));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmExportColor);
             this.myScheme.Assign(iScheme);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.OK;
             this.Hide();
         }
 
         void csHeading_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Heading;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -75,7 +42,6 @@ namespace Hero_Designer
         }
 
         void csHO_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.HOColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -84,7 +50,6 @@ namespace Hero_Designer
         }
 
         void csIO_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.IOColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -93,7 +58,6 @@ namespace Hero_Designer
         }
 
         void csLevel_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Level;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -102,7 +66,6 @@ namespace Hero_Designer
         }
 
         void csPower_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Power;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -111,7 +74,6 @@ namespace Hero_Designer
         }
 
         void csSet_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.SetColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -120,7 +82,6 @@ namespace Hero_Designer
         }
 
         void csSlots_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Slots;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -129,7 +90,6 @@ namespace Hero_Designer
         }
 
         void csTitle_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Title;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -138,16 +98,12 @@ namespace Hero_Designer
         }
 
         void frmExportColor_Load(object sender, EventArgs e)
-
         {
             this.txtName.Text = this.myScheme.SchemeName;
             this.updateColours();
         }
 
-        [DebuggerStepThrough]
-
         void txtName_TextChanged(object sender, EventArgs e)
-
         {
             this.myScheme.SchemeName = this.txtName.Text;
         }

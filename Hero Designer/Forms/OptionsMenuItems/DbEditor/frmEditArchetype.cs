@@ -1,4 +1,3 @@
-
 using Base.Data_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -87,6 +86,9 @@ namespace Hero_Designer
             this.OriginalName = "";
             this.ONDuplicate = false;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditArchetype));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEditArchetype);
             this.MyAT = new Archetype(iAT);
             this.OriginalName = this.MyAT.ClassName;
             int num = DatabaseAPI.Database.Classes.Length - 1;
@@ -98,14 +100,12 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             if (!this.CheckClassName())
                 return;
@@ -184,7 +184,6 @@ namespace Hero_Designer
         }
 
         void cbClassType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -192,7 +191,6 @@ namespace Hero_Designer
         }
 
         bool CheckClassName()
-
         {
             if (!this.ONDuplicate)
             {
@@ -210,7 +208,6 @@ namespace Hero_Designer
         }
 
         void chkPlayable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -218,7 +215,6 @@ namespace Hero_Designer
         }
 
         void DisplayData()
-
         {
             this.Text = "Edit Class (" + this.MyAT.ClassName + " - " + this.MyAT.DisplayName + ")";
             this.txtName.Text = this.MyAT.DisplayName;
@@ -277,16 +273,12 @@ namespace Hero_Designer
         }
 
         void frmEditArchetype_Load(object sender, EventArgs e)
-
         {
             this.DisplayData();
             this.Loading = false;
         }
 
-        [DebuggerStepThrough]
-
         void txtClassName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -294,7 +286,6 @@ namespace Hero_Designer
         }
 
         void txtDescLong_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -302,7 +293,6 @@ namespace Hero_Designer
         }
 
         void txtDescShort_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -310,7 +300,6 @@ namespace Hero_Designer
         }
 
         void txtName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;

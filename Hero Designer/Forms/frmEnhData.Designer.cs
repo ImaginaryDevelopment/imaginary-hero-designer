@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEnhData));
             this.gbBasic = new System.Windows.Forms.GroupBox();
             this.txtInternal = new System.Windows.Forms.TextBox();
             this.Label9 = new System.Windows.Forms.Label();
@@ -159,34 +158,22 @@ namespace Hero_Designer
             this.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udMinLevel.Location = new System.Drawing.Point(84, 140);
-            System.Decimal num = new System.Decimal(new int[4]
-            {
-        53,
-        0,
-        0,
-        0
-            });
-            this.udMinLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMinLevel.Minimum = num;
+            this.udMinLevel.Maximum = new System.Decimal(new int[4] { 53, 0, 0, 0 });
+            this.udMinLevel.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udMinLevel.Name = "udMinLevel";
 
             this.udMinLevel.Size = new System.Drawing.Size(44, 20);
             this.udMinLevel.TabIndex = 17;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMinLevel.Value = num;
+            this.udMinLevel.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
 
             this.udMaxLevel.Location = new System.Drawing.Point(196, 140);
-            num = new System.Decimal(new int[4] { 53, 0, 0, 0 });
-            this.udMaxLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udMaxLevel.Minimum = num;
+            this.udMaxLevel.Maximum = new System.Decimal(new int[4] { 53, 0, 0, 0 });
+            this.udMaxLevel.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udMaxLevel.Name = "udMaxLevel";
 
             this.udMaxLevel.Size = new System.Drawing.Size(44, 20);
             this.udMaxLevel.TabIndex = 16;
-            num = new System.Decimal(new int[4] { 53, 0, 0, 0 });
-            this.udMaxLevel.Value = num;
+            this.udMaxLevel.Value = new System.Decimal(new int[4] { 53, 0, 0, 0 });
 
             this.txtDesc.Location = new System.Drawing.Point(84, 94);
             this.txtDesc.Multiline = true;
@@ -230,7 +217,6 @@ namespace Hero_Designer
             this.Label2.TabIndex = 10;
             this.Label2.Text = "Full Name:";
             this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImage.Image = (System.Drawing.Image)componentResourceManager.GetObject("btnImage.Image");
             this.btnImage.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.btnImage.Location = new System.Drawing.Point(8, 12);
@@ -263,7 +249,6 @@ namespace Hero_Designer
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.cbSubType, "(Currently only apllicable to Stealth IOs");
             this.typeSet.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeSet.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.typeSet.Image = (System.Drawing.Image)componentResourceManager.GetObject("typeSet.Image");
             this.typeSet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.typeSet.Location = new System.Drawing.Point(72, 76);
@@ -275,7 +260,6 @@ namespace Hero_Designer
             this.typeSet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.typeIO.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeIO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.typeIO.Image = (System.Drawing.Image)componentResourceManager.GetObject("typeIO.Image");
             this.typeIO.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.typeIO.Location = new System.Drawing.Point(72, 16);
@@ -287,7 +271,6 @@ namespace Hero_Designer
             this.typeIO.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.typeRegular.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeRegular.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.typeRegular.Image = (System.Drawing.Image)componentResourceManager.GetObject("typeRegular.Image");
             this.typeRegular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.typeRegular.Location = new System.Drawing.Point(8, 16);
@@ -299,7 +282,6 @@ namespace Hero_Designer
             this.typeRegular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.typeHO.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeHO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.typeHO.Image = (System.Drawing.Image)componentResourceManager.GetObject("typeHO.Image");
             this.typeHO.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 
             this.typeHO.Location = new System.Drawing.Point(8, 76);
@@ -702,10 +684,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.cbMutEx);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEnhData);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit [EnhancementName]";
@@ -723,79 +703,143 @@ namespace Hero_Designer
             this.gbClass.ResumeLayout(false);
             this.ResumeLayout(false);
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.StaticIndex.TextChanged += StaticIndex_TextChanged;
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnAddFX.Click += btnAddFX_Click;
-                this.btnAutoFill.Click += btnAutoFill_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnDown.Click += btnDown_Click;
-                this.btnEdit.Click += btnEdit_Click;
-                this.btnEditPowerData.Click += btnEditPowerData_Click;
-                this.btnImage.Click += btnImage_Click;
-                this.btnNoImage.Click += btnNoImage_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnRemove.Click += btnRemove_Click;
-                this.btnUp.Click += btnUp_Click;
-                this.cbMutEx.SelectedIndexChanged += cbMutEx_SelectedIndexChanged;
-                this.cbRecipe.SelectedIndexChanged += cbRecipe_SelectedIndexChanged;
-                this.cbSched.SelectedIndexChanged += cbSched_SelectedIndexChanged;
-                this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
-                this.cbSubType.SelectedIndexChanged += cbSubType_SelectedIndexChanged;
-                this.chkSuperior.CheckedChanged += chkSuperior_CheckedChanged;
-                this.chkUnique.CheckedChanged += chkUnique_CheckedChanged;
-                this.lstAvailable.DoubleClick += lstAvailable_DoubleClick;
-                this.lstSelected.SelectedIndexChanged += lstSelected_SelectedIndexChanged;
+            this.StaticIndex.TextChanged += StaticIndex_TextChanged;
+            this.btnAdd.Click += btnAdd_Click;
+            this.btnAddFX.Click += btnAddFX_Click;
+            this.btnAutoFill.Click += btnAutoFill_Click;
+            this.btnCancel.Click += btnCancel_Click;
+            this.btnDown.Click += btnDown_Click;
+            this.btnEdit.Click += btnEdit_Click;
+            this.btnEditPowerData.Click += btnEditPowerData_Click;
+            this.btnImage.Click += btnImage_Click;
+            this.btnNoImage.Click += btnNoImage_Click;
+            this.btnOK.Click += btnOK_Click;
+            this.btnRemove.Click += btnRemove_Click;
+            this.btnUp.Click += btnUp_Click;
+            this.cbMutEx.SelectedIndexChanged += cbMutEx_SelectedIndexChanged;
+            this.cbRecipe.SelectedIndexChanged += cbRecipe_SelectedIndexChanged;
+            this.cbSched.SelectedIndexChanged += cbSched_SelectedIndexChanged;
+            this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
+            this.cbSubType.SelectedIndexChanged += cbSubType_SelectedIndexChanged;
+            this.chkSuperior.CheckedChanged += chkSuperior_CheckedChanged;
+            this.chkUnique.CheckedChanged += chkUnique_CheckedChanged;
+            this.lstAvailable.DoubleClick += lstAvailable_DoubleClick;
+            this.lstSelected.SelectedIndexChanged += lstSelected_SelectedIndexChanged;
 
-                // pnlClass events
-                this.pnlClass.MouseMove += pnlClass_MouseMove;
-                this.pnlClass.Paint += pnlClass_Paint;
-                this.pnlClass.MouseDown += pnlClass_MouseDown;
+            // pnlClass events
+            this.pnlClass.MouseMove += pnlClass_MouseMove;
+            this.pnlClass.Paint += pnlClass_Paint;
+            this.pnlClass.MouseDown += pnlClass_MouseDown;
 
 
-                // pnlClassList events
-                this.pnlClassList.MouseMove += pnlClassList_MouseMove;
-                this.pnlClassList.Paint += pnlClassList_Paint;
-                this.pnlClassList.MouseDown += pnlClassList_MouseDown;
+            // pnlClassList events
+            this.pnlClassList.MouseMove += pnlClassList_MouseMove;
+            this.pnlClassList.Paint += pnlClassList_Paint;
+            this.pnlClassList.MouseDown += pnlClassList_MouseDown;
 
-                this.rbBoth.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                this.rbBuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                this.rbDebuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-                this.rbMod1.CheckedChanged += rbMod_CheckedChanged;
-                this.rbMod2.CheckedChanged += rbMod_CheckedChanged;
-                this.rbMod3.CheckedChanged += rbMod_CheckedChanged;
-                this.rbMod4.CheckedChanged += rbMod_CheckedChanged;
-                this.rbModOther.CheckedChanged += rbMod_CheckedChanged;
-                this.txtDesc.TextChanged += txtDesc_TextChanged;
-                this.txtInternal.TextChanged += txtInternal_TextChanged;
-                this.txtModOther.TextChanged += txtModOther_TextChanged;
-                this.txtNameFull.TextChanged += txtNameFull_TextChanged;
-                this.txtNameShort.TextChanged += txtNameShort_TextChanged;
+            this.rbBoth.CheckedChanged += rbBuffDebuff_CheckedChanged;
+            this.rbBuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
+            this.rbDebuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
+            this.rbMod1.CheckedChanged += rbMod_CheckedChanged;
+            this.rbMod2.CheckedChanged += rbMod_CheckedChanged;
+            this.rbMod3.CheckedChanged += rbMod_CheckedChanged;
+            this.rbMod4.CheckedChanged += rbMod_CheckedChanged;
+            this.rbModOther.CheckedChanged += rbMod_CheckedChanged;
+            this.txtDesc.TextChanged += txtDesc_TextChanged;
+            this.txtInternal.TextChanged += txtInternal_TextChanged;
+            this.txtModOther.TextChanged += txtModOther_TextChanged;
+            this.txtNameFull.TextChanged += txtNameFull_TextChanged;
+            this.txtNameShort.TextChanged += txtNameShort_TextChanged;
 
-                // txtProb events
-                this.txtProb.Leave += txtProb_Leave;
-                this.txtProb.TextChanged += txtProb_TextChanged;
+            // txtProb events
+            this.txtProb.Leave += txtProb_Leave;
+            this.txtProb.TextChanged += txtProb_TextChanged;
 
-                this.typeHO.CheckedChanged += type_CheckedChanged;
-                this.typeIO.CheckedChanged += type_CheckedChanged;
-                this.typeRegular.CheckedChanged += type_CheckedChanged;
-                this.typeSet.CheckedChanged += type_CheckedChanged;
+            this.typeHO.CheckedChanged += type_CheckedChanged;
+            this.typeIO.CheckedChanged += type_CheckedChanged;
+            this.typeRegular.CheckedChanged += type_CheckedChanged;
+            this.typeSet.CheckedChanged += type_CheckedChanged;
 
-                // udMaxLevel events
-                this.udMaxLevel.Leave += udMaxLevel_Leave;
-                this.udMaxLevel.ValueChanged += udMaxLevel_ValueChanged;
+            // udMaxLevel events
+            this.udMaxLevel.Leave += udMaxLevel_Leave;
+            this.udMaxLevel.ValueChanged += udMaxLevel_ValueChanged;
 
 
-                // udMinLevel events
-                this.udMinLevel.Leave += udMinLevel_Leave;
-                this.udMinLevel.ValueChanged += udMinLevel_ValueChanged;
+            // udMinLevel events
+            this.udMinLevel.Leave += udMinLevel_Leave;
+            this.udMinLevel.ValueChanged += udMinLevel_ValueChanged;
 
-            }
             // finished with events
             this.PerformLayout();
         }
 
         #endregion
+
+        System.Windows.Forms.Button btnAdd;
+        System.Windows.Forms.Button btnAddFX;
+        System.Windows.Forms.Button btnAutoFill;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnDown;
+        System.Windows.Forms.Button btnEdit;
+        System.Windows.Forms.Button btnEditPowerData;
+        System.Windows.Forms.Button btnImage;
+        System.Windows.Forms.Button btnNoImage;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnRemove;
+        System.Windows.Forms.Button btnUp;
+        System.Windows.Forms.ComboBox cbMutEx;
+        System.Windows.Forms.ComboBox cbRecipe;
+        System.Windows.Forms.ComboBox cbSched;
+        System.Windows.Forms.ComboBox cbSet;
+        System.Windows.Forms.ComboBox cbSubType;
+        System.Windows.Forms.CheckBox chkSuperior;
+        System.Windows.Forms.CheckBox chkUnique;
+        System.Windows.Forms.GroupBox gbBasic;
+        System.Windows.Forms.GroupBox gbClass;
+        System.Windows.Forms.GroupBox gbEffects;
+        System.Windows.Forms.GroupBox gbMod;
+        System.Windows.Forms.GroupBox gbSet;
+        System.Windows.Forms.GroupBox gbType;
+        System.Windows.Forms.OpenFileDialog ImagePicker;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label10;
+        System.Windows.Forms.Label Label11;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.Label lblClass;
+        System.Windows.Forms.Label lblSched;
+        System.Windows.Forms.ListBox lstAvailable;
+        System.Windows.Forms.ListBox lstSelected;
+        System.Windows.Forms.PictureBox pbSet;
+        System.Windows.Forms.Panel pnlClass;
+        System.Windows.Forms.Panel pnlClassList;
+        System.Windows.Forms.RadioButton rbBoth;
+        System.Windows.Forms.RadioButton rbBuff;
+        System.Windows.Forms.RadioButton rbDebuff;
+        System.Windows.Forms.RadioButton rbMod1;
+        System.Windows.Forms.RadioButton rbMod2;
+        System.Windows.Forms.RadioButton rbMod3;
+        System.Windows.Forms.RadioButton rbMod4;
+        System.Windows.Forms.RadioButton rbModOther;
+        System.Windows.Forms.TextBox StaticIndex;
+        System.Windows.Forms.ToolTip tTip;
+        System.Windows.Forms.TextBox txtDesc;
+        System.Windows.Forms.TextBox txtInternal;
+        System.Windows.Forms.TextBox txtModOther;
+        System.Windows.Forms.TextBox txtNameFull;
+        System.Windows.Forms.TextBox txtNameShort;
+        System.Windows.Forms.TextBox txtProb;
+        System.Windows.Forms.RadioButton typeHO;
+        System.Windows.Forms.RadioButton typeIO;
+        System.Windows.Forms.RadioButton typeRegular;
+        System.Windows.Forms.RadioButton typeSet;
+        System.Windows.Forms.NumericUpDown udMaxLevel;
+        System.Windows.Forms.NumericUpDown udMinLevel;
     }
 }

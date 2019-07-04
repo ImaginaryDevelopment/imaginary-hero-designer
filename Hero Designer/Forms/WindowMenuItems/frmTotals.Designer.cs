@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmTotals));
             this.lblDef = new System.Windows.Forms.Label();
             this.lblRes = new System.Windows.Forms.Label();
             this.lblRegenRec = new System.Windows.Forms.Label();
@@ -949,12 +948,10 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
 
             this.MaximumSize = new System.Drawing.Size(1024, 603);
 
             this.MinimumSize = new System.Drawing.Size(240, 200);
-            this.Name = nameof(frmTotals);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Totals for Self";
             this.TopMost = true;
@@ -968,42 +965,62 @@ namespace Hero_Designer
             this.pnlStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)this.tab2).EndInit();
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
 
-                // pbClose events
-                this.pbClose.Paint += PbClosePaint;
-                this.pbClose.Click += PbCloseClick;
+            // pbClose events
+            this.pbClose.Paint += PbClosePaint;
+            this.pbClose.Click += PbCloseClick;
 
 
-                // pbTopMost events
-                this.pbTopMost.Paint += PbTopMostPaint;
-                this.pbTopMost.Click += PbTopMostClick;
+            // pbTopMost events
+            this.pbTopMost.Paint += PbTopMostPaint;
+            this.pbTopMost.Click += PbTopMostClick;
 
-                this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
-                this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
-                this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
-                this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
+            this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
+            this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
+            this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
+            this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
 
-                // tab0 events
-                this.tab0.Paint += Tab0Paint;
-                this.tab0.Click += Tab0Click;
-
-
-                // tab1 events
-                this.tab1.Paint += Tab1Paint;
-                this.tab1.Click += Tab1Click;
+            // tab0 events
+            this.tab0.Paint += Tab0Paint;
+            this.tab0.Click += Tab0Click;
 
 
-                // tab2 events
-                this.tab2.Paint += Tab2Paint;
-                this.tab2.Click += Tab2Click;
+            // tab1 events
+            this.tab1.Paint += Tab1Paint;
+            this.tab1.Click += Tab1Click;
 
-            }
+
+            // tab2 events
+            this.tab2.Paint += Tab2Paint;
+            this.tab2.Click += Tab2Click;
+
             // finished with events
             this.ResumeLayout(false);
         }
         #endregion
 
+        System.Windows.Forms.Label lblDef;
+        System.Windows.Forms.Label lblMisc;
+        System.Windows.Forms.Label lblMovement;
+        System.Windows.Forms.Label lblRegenRec;
+        System.Windows.Forms.Label lblRes;
+        System.Windows.Forms.Label lblSDeb;
+        System.Windows.Forms.Label lblSProt;
+        System.Windows.Forms.Label lblSRes;
+        System.Windows.Forms.Label lblStealth;
+        System.Windows.Forms.Panel Panel1;
+        System.Windows.Forms.Panel Panel2;
+        System.Windows.Forms.PictureBox pbClose;
+        System.Windows.Forms.PictureBox pbTopMost;
+        System.Windows.Forms.Panel pnlDRHE;
+        System.Windows.Forms.Panel pnlMisc;
+        System.Windows.Forms.Panel pnlStatus;
+        System.Windows.Forms.RadioButton rbFPS;
+        System.Windows.Forms.RadioButton rbKPH;
+        System.Windows.Forms.RadioButton rbMPH;
+        System.Windows.Forms.RadioButton rbMSec;
+        System.Windows.Forms.PictureBox tab0;
+        System.Windows.Forms.PictureBox tab1;
+        System.Windows.Forms.PictureBox tab2;
     }
 }

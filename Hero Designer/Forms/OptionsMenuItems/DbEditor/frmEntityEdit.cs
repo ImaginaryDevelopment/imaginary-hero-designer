@@ -12,119 +12,21 @@ namespace Hero_Designer
 {
     public partial class frmEntityEdit : Form
     {
-        Button btnCancel;
-
-        Button btnOK;
-
-        Button btnPAdd;
-
-        Button btnPDelete;
-
-        Button btnPDown;
-
-        Button btnPUp;
-
-        Button btnUGAdd;
-
-        Button btnUGDelete;
-
-        Button btnUGDown;
-
-        Button btnUGUp;
-
-        ComboBox cbClass;
-
-        ComboBox cbEntType;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader10;
-        ColumnHeader ColumnHeader11;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        Label Label1;
-        Label Label2;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-
-        ListView lvPower;
-
-        ListView lvPSGroup;
-
-        [AccessedThroughProperty("lvPSSet")]
-        ListView _lvPSSet;
-
-        ListView lvUGGroup;
-
-        [AccessedThroughProperty("lvUGPower")]
-        ListView _lvUGPower;
-
-        ListView lvUGSet;
-
-        ListView lvUpgrade;
-
-        TextBox txtDisplayName;
-
-        TextBox txtEntName;
 
         protected bool loading;
         public SummonedEntity myEntity;
         protected bool Updating;
-        ListView lvPSSet
-        {
-            get
-            {
-                return this._lvPSSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvPSSet_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvPSSet_Click);
-                if (this._lvPSSet != null)
-                {
-                    this._lvPSSet.SelectedIndexChanged -= eventHandler1;
-                    this._lvPSSet.Click -= eventHandler2;
-                }
-                this._lvPSSet = value;
-                if (this._lvPSSet == null)
-                    return;
-                this._lvPSSet.SelectedIndexChanged += eventHandler1;
-                this._lvPSSet.Click += eventHandler2;
-            }
-        }
-        ListView lvUGPower
-        {
-            get
-            {
-                return this._lvUGPower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvUGPower_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvUGPower_Click);
-                if (this._lvUGPower != null)
-                {
-                    this._lvUGPower.SelectedIndexChanged -= eventHandler1;
-                    this._lvUGPower.Click -= eventHandler2;
-                }
-                this._lvUGPower = value;
-                if (this._lvUGPower == null)
-                    return;
-                this._lvUGPower.SelectedIndexChanged += eventHandler1;
-                this._lvUGPower.Click += eventHandler2;
-            }
-        }
+
         public frmEntityEdit(SummonedEntity iEntity)
         {
             this.Load += new EventHandler(this.frmEntityEdit_Load);
             this.Updating = false;
             this.loading = true;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Label4.Text = componentResourceManager.GetString("Label4.Text");
+            this.Name = nameof(frmEntityEdit);
             this.myEntity = new SummonedEntity(iEntity);
         }
 
@@ -250,18 +152,15 @@ namespace Hero_Designer
         }
 
         void btnUGUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvUpgrade.SelectedItems.Count < 1 || this.lvUpgrade.SelectedIndices[0] < 1)
                 return;
             int selectedIndex = this.lvUpgrade.SelectedIndices[0];
             int index = selectedIndex - 1;
-            string[] strArray1 = new string[2];
-            strArray1 = new string[1];
             string[] strArray2 = new string[2]
             {
-        this.myEntity.UpgradePowerFullName[selectedIndex],
-        this.myEntity.UpgradePowerFullName[index]
+                this.myEntity.UpgradePowerFullName[selectedIndex],
+                this.myEntity.UpgradePowerFullName[index]
             };
             this.myEntity.UpgradePowerFullName[selectedIndex] = strArray2[1];
             this.myEntity.UpgradePowerFullName[index] = strArray2[0];
@@ -271,7 +170,6 @@ namespace Hero_Designer
         }
 
         void cbClass_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.loading)
                 return;
@@ -279,7 +177,6 @@ namespace Hero_Designer
         }
 
         void cbEntType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.loading)
                 return;
@@ -315,10 +212,7 @@ namespace Hero_Designer
             this.loading = false;
         }
 
-        [DebuggerStepThrough]
-
         void lvPower_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedIndices.Count < 1)
                 return;
@@ -326,7 +220,6 @@ namespace Hero_Designer
         }
 
         void lvPSGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating || this.lvPSGroup.SelectedItems.Count <= 0)
                 return;
@@ -336,7 +229,6 @@ namespace Hero_Designer
         }
 
         void lvPSSet_Click(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -344,7 +236,6 @@ namespace Hero_Designer
         }
 
         void lvPSSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -352,7 +243,6 @@ namespace Hero_Designer
         }
 
         void lvUGGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating || this.lvUGGroup.SelectedItems.Count <= 0)
                 return;
@@ -362,7 +252,6 @@ namespace Hero_Designer
         }
 
         void lvUGPower_Click(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -370,7 +259,6 @@ namespace Hero_Designer
         }
 
         void lvUGPower_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -378,7 +266,6 @@ namespace Hero_Designer
         }
 
         void lvUGSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating || this.lvUGSet.SelectedItems.Count <= 0)
                 return;
@@ -386,7 +273,6 @@ namespace Hero_Designer
         }
 
         void lvUpgrade_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvUpgrade.SelectedIndices.Count < 1)
                 return;
@@ -394,7 +280,6 @@ namespace Hero_Designer
         }
 
         void PS_DisplaySet(string iPower)
-
         {
             this.Updating = true;
             string[] strArray = iPower.Split(".".ToCharArray());
@@ -429,7 +314,6 @@ namespace Hero_Designer
         }
 
         void PS_FillList()
-
         {
             this.Updating = true;
             this.lvPower.BeginUpdate();
@@ -445,7 +329,6 @@ namespace Hero_Designer
         }
 
         void PS_GroupList()
-
         {
             this.lvPSGroup.BeginUpdate();
             this.lvPSGroup.Items.Clear();
@@ -455,7 +338,6 @@ namespace Hero_Designer
         }
 
         void PS_SetList()
-
         {
             this.lvPSSet.BeginUpdate();
             this.lvPSSet.Items.Clear();
@@ -477,7 +359,6 @@ namespace Hero_Designer
         }
 
         void PS_UpdateItem()
-
         {
             if (this.lvPower.SelectedIndices.Count < 1 | this.lvPSGroup.SelectedIndices.Count < 1 | this.lvPSSet.SelectedIndices.Count < 1)
                 return;
@@ -487,7 +368,6 @@ namespace Hero_Designer
         }
 
         void txtDisplayName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.loading)
                 return;
@@ -495,7 +375,6 @@ namespace Hero_Designer
         }
 
         void txtEntName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.loading)
                 return;
@@ -503,7 +382,6 @@ namespace Hero_Designer
         }
 
         void UG_DisplayPower(string iPower)
-
         {
             this.Updating = true;
             string[] strArray = iPower.Split(".".ToCharArray());
@@ -552,7 +430,6 @@ namespace Hero_Designer
         }
 
         void UG_FillList()
-
         {
             this.Updating = true;
             this.lvUpgrade.BeginUpdate();
@@ -568,7 +445,6 @@ namespace Hero_Designer
         }
 
         void UG_GroupList()
-
         {
             this.lvUGGroup.BeginUpdate();
             this.lvUGGroup.Items.Clear();
@@ -578,7 +454,6 @@ namespace Hero_Designer
         }
 
         void UG_PowerList()
-
         {
             this.lvUGPower.BeginUpdate();
             this.lvUGPower.Items.Clear();
@@ -600,7 +475,6 @@ namespace Hero_Designer
         }
 
         void UG_SetList()
-
         {
             this.lvUGSet.BeginUpdate();
             this.lvUGSet.Items.Clear();
@@ -622,7 +496,6 @@ namespace Hero_Designer
         }
 
         void UG_UpdateItem()
-
         {
             if (this.lvUpgrade.SelectedIndices.Count < 1 | this.lvUGGroup.SelectedIndices.Count < 1 | this.lvUGSet.SelectedIndices.Count < 1 | this.lvUGPower.SelectedIndices.Count < 1)
                 return;

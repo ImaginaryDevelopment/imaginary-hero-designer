@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Hero_Designer</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Projects\imaginary-hero-designer\publish\</PublishUrl>
+    <PublishUrl>C:\projects\CoHDesigner2\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,14 +25,14 @@
     <MapFileExtensions>true</MapFileExtensions>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>2.22.0.5</ApplicationVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>2.22.0.6</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -40,7 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,6 +76,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Hero Designer_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
@@ -296,12 +299,6 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WindowMenuItems\FrmMiniList2.Designer.cs">
-      <DependentUpon>FrmMiniList2.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="clsOutput.cs" />
@@ -631,9 +628,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSetListing.resx">
       <DependentUpon>frmSetListing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WindowMenuItems\FrmMiniList2.resx">
-      <DependentUpon>FrmMiniList2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WindowMenuItems\frmSetViewer.resx">
       <DependentUpon>frmSetViewer.cs</DependentUpon>

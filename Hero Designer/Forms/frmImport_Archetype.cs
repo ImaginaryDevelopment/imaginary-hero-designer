@@ -14,25 +14,6 @@ namespace Hero_Designer
 {
     public partial class frmImport_Archetype : Form
     {
-        Button btnATFile;
-
-        Button btnClose;
-
-        Button btnImport;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
-        OpenFileDialog dlgBrowse;
-        Label Label6;
-        Label Label8;
-        Label lblATCount;
-        Label lblATDate;
-        Label lblATFile;
-        ListView lstImport;
-        NumericUpDown udATRevision;
 
         string FullFileName;
 
@@ -44,6 +25,9 @@ namespace Hero_Designer
             this.FullFileName = "";
             this.ImportBuffer = new ArchetypeData[0];
             this.InitializeComponent();
+            this.Name = nameof(frmImport_Archetype);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Archetype));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnATFile_Click(object sender, EventArgs e)

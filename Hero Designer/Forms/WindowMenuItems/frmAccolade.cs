@@ -19,10 +19,8 @@ namespace Hero_Designer
         ImageButton ibClose;
 
         Label lblLock;
-
-        ListLabelV2 _llLeft;
-
-        ListLabelV2 _llRight;
+        ListLabelV2 llLeft;
+        ListLabelV2 llRight;
 
         bool _locked;
 
@@ -36,35 +34,37 @@ namespace Hero_Designer
         VScrollBar VScrollBar1;
 
         internal frmIncarnate.CustomPanel Panel2;
-        internal ListLabelV2 llLeft
+        internal ListLabelV2 LLLeft
         {
-            get => _llLeft;
-            private set => _llLeft = value;
+            get => llLeft;
+            private set => llLeft = value;
         }
-        internal ListLabelV2 llRight
+        internal ListLabelV2 LLRight
         {
-            get => _llRight;
-            private set => _llRight = value;
+            get => llRight;
+            private set => llRight = value;
         }
+
         public frmAccolade(frmMain iParent, List<IPower> iPowers)
         {
             this.Load += new EventHandler(this.frmAccolade_Load);
             this._locked = false;
             this.InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmAccolade));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmAccolade);
             this._myParent = iParent;
             this._myPowers = iPowers;
         }
 
         void ChangedScrollFrameContents()
-
         {
             this.VScrollBar1.Value = 0;
-            this.VScrollBar1.Maximum = (int)Math.Round((double)this.PopInfo.lHeight * ((double)this.VScrollBar1.LargeChange / (double)this.Panel1.Height));
+            this.VScrollBar1.Maximum = (int)Math.Round(PopInfo.lHeight * (VScrollBar1.LargeChange / (double)this.Panel1.Height));
             this.VScrollBar1_Scroll(this.VScrollBar1, new ScrollEventArgs(ScrollEventType.EndScroll, 0));
         }
 
         void FillLists()
-
         {
             this.llLeft.SuspendRedraw = true;
             this.llRight.SuspendRedraw = true;
@@ -75,7 +75,7 @@ namespace Hero_Designer
             {
                 ListLabelV2.LLItemState iState = !MidsContext.Character.CurrentBuild.PowerUsed(this._myPowers[index]) ? (!(this._myPowers[index].PowerType != Enums.ePowerType.Click | this._myPowers[index].ClickBuff) ? (!this._myPowers[index].SubIsAltColour ? ListLabelV2.LLItemState.Disabled : ListLabelV2.LLItemState.Invalid) : ListLabelV2.LLItemState.Enabled) : ListLabelV2.LLItemState.Selected;
                 ListLabelV2.ListLabelItemV2 iItem = !MidsContext.Config.RtFont.PairedBold ? new ListLabelV2.ListLabelItemV2(this._myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign.Left) : new ListLabelV2.ListLabelItemV2(this._myPowers[index].DisplayName, iState, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left);
-                if ((double)index >= (double)this._myPowers.Count / 2.0)
+                if (index >= _myPowers.Count / 2.0)
                     this.llRight.AddItem(iItem);
                 else
                     this.llLeft.AddItem(iItem);
@@ -109,22 +109,17 @@ namespace Hero_Designer
         }
 
         void ibClose_ButtonClicked()
-
         {
             this.Close();
         }
 
-        [DebuggerStepThrough]
-
         void lblLock_Click(object sender, EventArgs e)
-
         {
             this._locked = false;
             this.lblLock.Visible = false;
         }
 
         void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
-
         {
             if (Button == MouseButtons.Right)
             {
@@ -153,13 +148,11 @@ namespace Hero_Designer
         }
 
         void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
-
         {
             this.MiniPowerInfo(Item.Index);
         }
 
         void llLeft_MouseEnter(object sender, EventArgs e)
-
         {
             if (!this.ContainsFocus)
                 return;
@@ -167,7 +160,6 @@ namespace Hero_Designer
         }
 
         void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
-
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             if (Button == MouseButtons.Right)
@@ -197,23 +189,20 @@ namespace Hero_Designer
         }
 
         void llRight_ItemHover(ListLabelV2.ListLabelItemV2 Item)
-
         {
             this.MiniPowerInfo(Item.Index + this.llLeft.Items.Length);
         }
 
         void llRight_MouseEnter(object sender, EventArgs e)
-
         {
             this.llLeft_MouseEnter(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         void MiniPowerInfo(int pIDX)
-
         {
             if (this._locked)
                 return;
-            IPower power1 = (IPower)new Power(this._myPowers[pIDX]);
+            IPower power1 = new Power(this._myPowers[pIDX]);
             PopUp.PopupData iPopup = new PopUp.PopupData();
             if (pIDX < 0)
             {
@@ -243,30 +232,30 @@ namespace Hero_Designer
                 iPopup.Sections[index1].Add(power1.DisplayName, PopUp.Colors.Title, 1f, System.Drawing.FontStyle.Bold, 0);
                 iPopup.Sections[index1].Add(str + " " + power1.DescShort, PopUp.Colors.Text, 0.9f, System.Drawing.FontStyle.Bold, 0);
                 int index2 = iPopup.Add(null);
-                if ((double)power1.EndCost > 0.0)
+                if (power1.EndCost > 0.0)
                 {
-                    if ((double)power1.ActivatePeriod > 0.0)
+                    if (power1.ActivatePeriod > 0.0)
                         iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost / power1.ActivatePeriod) + "/s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                     else
                         iPopup.Sections[index2].Add("End Cost:", PopUp.Colors.Title, Utilities.FixDP(power1.EndCost), PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 }
-                if (power1.EntitiesAutoHit == Enums.eEntity.None | (double)power1.Range > 20.0 & power1.I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt))
-                    iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Title, Utilities.FixDP((float)((double)MidsContext.Config.BaseAcc * (double)power1.Accuracy * 100.0)) + "%", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
-                if ((double)power1.RechargeTime > 0.0)
+                if (power1.EntitiesAutoHit == Enums.eEntity.None | power1.Range > 20.0 & power1.I9FXPresentP(Enums.eEffectType.Mez, Enums.eMez.Taunt))
+                    iPopup.Sections[index2].Add("Accuracy:", PopUp.Colors.Title, Utilities.FixDP((float)(MidsContext.Config.BaseAcc * (double)power1.Accuracy * 100.0)) + "%", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
+                if (power1.RechargeTime > 0.0)
                     iPopup.Sections[index2].Add("Recharge:", PopUp.Colors.Title, Utilities.FixDP(power1.RechargeTime) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 int durationEffectId = power1.GetDurationEffectID();
                 float iNum = 0.0f;
                 if (durationEffectId > -1)
                     iNum = power1.Effects[durationEffectId].Duration;
-                if (power1.PowerType != Enums.ePowerType.Toggle & power1.PowerType != Enums.ePowerType.Auto_ && (double)iNum > 0.0)
+                if (power1.PowerType != Enums.ePowerType.Toggle & power1.PowerType != Enums.ePowerType.Auto_ && iNum > 0.0)
                     iPopup.Sections[index2].Add("Duration:", PopUp.Colors.Title, Utilities.FixDP(iNum) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
-                if ((double)power1.Range > 0.0)
+                if (power1.Range > 0.0)
                     iPopup.Sections[index2].Add("Range:", PopUp.Colors.Title, Utilities.FixDP(power1.Range) + "ft", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 if (power1.Arc > 0)
                     iPopup.Sections[index2].Add("Arc:", PopUp.Colors.Title, Conversions.ToString(power1.Arc) + "°", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
-                else if ((double)power1.Radius > 0.0)
+                else if (power1.Radius > 0.0)
                     iPopup.Sections[index2].Add("Radius:", PopUp.Colors.Title, Conversions.ToString(power1.Radius) + "ft", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
-                if ((double)power1.CastTime > 0.0)
+                if (power1.CastTime > 0.0)
                     iPopup.Sections[index2].Add("Cast Time:", PopUp.Colors.Title, Utilities.FixDP(power1.CastTime) + "s", PopUp.Colors.Title, 0.9f, System.Drawing.FontStyle.Bold, 1);
                 IPower power2 = power1;
                 if (power2.Effects.Length > 0)
@@ -295,7 +284,6 @@ namespace Hero_Designer
         }
 
         void PopInfo_MouseEnter(object sender, EventArgs e)
-
         {
             if (!this.ContainsFocus)
                 return;
@@ -303,7 +291,6 @@ namespace Hero_Designer
         }
 
         void PopInfo_MouseWheel(object sender, MouseEventArgs e)
-
         {
             this.VScrollBar1.Value = Conversions.ToInteger(Operators.AddObject(this.VScrollBar1.Value, Interaction.IIf(e.Delta > 0, -1, 1)));
             if (this.VScrollBar1.Value > this.VScrollBar1.Maximum - 9)
@@ -312,7 +299,6 @@ namespace Hero_Designer
         }
 
         static void UpdateLlColours(ref ListLabelV2 iList)
-
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
@@ -324,9 +310,8 @@ namespace Hero_Designer
         }
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
-
         {
-            this.PopInfo.ScrollY = (float)((double)this.VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * ((double)this.PopInfo.lHeight - (double)this.Panel1.Height));
+            this.PopInfo.ScrollY = (float)(VScrollBar1.Value / (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) * (PopInfo.lHeight - (double)this.Panel1.Height));
         }
     }
 }

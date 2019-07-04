@@ -29,7 +29,6 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSalvageEdit));
             this.lvSalvage = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -53,10 +52,10 @@ namespace Hero_Designer
             this.SuspendLayout();
             this.lvSalvage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[4]
             {
-        this.ColumnHeader1,
-        this.ColumnHeader2,
-        this.ColumnHeader3,
-        this.ColumnHeader4
+                this.ColumnHeader1,
+                this.ColumnHeader2,
+                this.ColumnHeader3,
+                this.ColumnHeader4
             });
             this.lvSalvage.FullRowSelect = true;
             this.lvSalvage.HideSelection = false;
@@ -69,6 +68,7 @@ namespace Hero_Designer
             this.lvSalvage.TabIndex = 0;
             this.lvSalvage.UseCompatibleStateImageBehavior = false;
             this.lvSalvage.View = System.Windows.Forms.View.Details;
+            this.lvSalvage.SelectedIndexChanged += lvSalvage_SelectedIndexChanged;
             this.ColumnHeader1.Text = "Name";
             this.ColumnHeader1.Width = 213;
             this.ColumnHeader2.Text = "Origin";
@@ -86,6 +86,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Save && Close";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += btnOK_Click;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(486, 304);
@@ -95,6 +96,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += btnCancel_Click;
 
             this.btnImport.Location = new System.Drawing.Point(486, 274);
             this.btnImport.Name = "btnImport";
@@ -103,12 +105,15 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 3;
             this.btnImport.Text = "Clear and Import from Spreadsheet";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += btnImport_Click;
 
             this.txtExternal.Location = new System.Drawing.Point(564, 12);
             this.txtExternal.Name = "txtExternal";
 
             this.txtExternal.Size = new System.Drawing.Size(154, 20);
             this.txtExternal.TabIndex = 4;
+            this.txtExternal.TextChanged += txtExternal_TextChanged;
+            this.txtInternal.TextChanged += txtInternal_TextChanged;
 
             this.Label1.Location = new System.Drawing.Point(486, 12);
             this.Label1.Name = "Label1";
@@ -139,6 +144,7 @@ namespace Hero_Designer
 
             this.cbRarity.Size = new System.Drawing.Size(154, 22);
             this.cbRarity.TabIndex = 8;
+            this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
 
             this.Label3.Location = new System.Drawing.Point(486, 64);
             this.Label3.Name = "Label3";
@@ -163,6 +169,7 @@ namespace Hero_Designer
 
             this.cbOrigin.Size = new System.Drawing.Size(154, 22);
             this.cbOrigin.TabIndex = 10;
+            this.cbOrigin.SelectedIndexChanged += cbOrigin_SelectedIndexChanged;
 
             this.Label5.Location = new System.Drawing.Point(486, 120);
             this.Label5.Name = "Label5";
@@ -179,6 +186,7 @@ namespace Hero_Designer
 
             this.cbLevel.Size = new System.Drawing.Size(154, 22);
             this.cbLevel.TabIndex = 12;
+            this.cbLevel.SelectedIndexChanged += cbLevel_SelectedIndexChanged;
 
             this.btnDelete.Location = new System.Drawing.Point(486, 214);
             this.btnDelete.Name = "btnDelete";
@@ -187,6 +195,7 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += btnDelete_Click;
 
             this.btnAdd.Location = new System.Drawing.Point(486, 184);
             this.btnAdd.Name = "btnAdd";
@@ -195,6 +204,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += btnAdd_Click;
             this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = (System.Windows.Forms.IButtonControl)this.btnCancel;
@@ -218,32 +228,34 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lvSalvage);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmSalvageEdit);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Salvage Editor";
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnDelete.Click += btnDelete_Click;
-                this.btnImport.Click += btnImport_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.cbLevel.SelectedIndexChanged += cbLevel_SelectedIndexChanged;
-                this.cbOrigin.SelectedIndexChanged += cbOrigin_SelectedIndexChanged;
-                this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
-                this.lvSalvage.SelectedIndexChanged += lvSalvage_SelectedIndexChanged;
-                this.txtExternal.TextChanged += txtExternal_TextChanged;
-                this.txtInternal.TextChanged += txtInternal_TextChanged;
-            }
-            // finished with events
             this.PerformLayout();
         }
         #endregion
+        System.Windows.Forms.Button btnAdd;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnDelete;
+        System.Windows.Forms.Button btnImport;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.ComboBox cbLevel;
+        System.Windows.Forms.ComboBox cbOrigin;
+        System.Windows.Forms.ComboBox cbRarity;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.ListView lvSalvage;
+        System.Windows.Forms.TextBox txtExternal;
+        System.Windows.Forms.TextBox txtInternal;
     }
 }
