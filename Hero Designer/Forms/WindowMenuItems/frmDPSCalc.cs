@@ -59,6 +59,9 @@ namespace Hero_Designer
             this.FormClosed += new FormClosedEventHandler(this.frmDPSCalc_FormClosed);
             this.Load += new EventHandler(this.frmDPSCalc_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmDPSCalc);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmDPSCalc));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }

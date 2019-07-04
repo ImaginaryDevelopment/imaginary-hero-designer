@@ -16,115 +16,6 @@ namespace Hero_Designer
 {
     public partial class frmEnhData : Form
     {
-        Button btnAdd;
-
-        Button btnAddFX;
-
-        Button btnAutoFill;
-
-        Button btnCancel;
-
-        Button btnDown;
-
-        Button btnEdit;
-
-        Button btnEditPowerData;
-
-        Button btnImage;
-
-        Button btnNoImage;
-
-        Button btnOK;
-
-        Button btnRemove;
-
-        Button btnUp;
-
-        ComboBox cbMutEx;
-
-        ComboBox cbRecipe;
-
-        ComboBox cbSched;
-
-        ComboBox cbSet;
-
-        ComboBox cbSubType;
-
-        CheckBox chkSuperior;
-
-        CheckBox chkUnique;
-        GroupBox gbBasic;
-        GroupBox gbClass;
-        GroupBox gbEffects;
-        GroupBox gbMod;
-        GroupBox gbSet;
-        GroupBox gbType;
-        OpenFileDialog ImagePicker;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label2;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lblClass;
-        Label lblSched;
-
-        ListBox lstAvailable;
-
-        ListBox lstSelected;
-        PictureBox pbSet;
-
-        Panel pnlClass;
-
-        Panel pnlClassList;
-
-        RadioButton rbBoth;
-
-        RadioButton rbBuff;
-
-        RadioButton rbDebuff;
-
-        RadioButton rbMod1;
-
-        RadioButton rbMod2;
-
-        RadioButton rbMod3;
-
-        RadioButton rbMod4;
-
-        RadioButton rbModOther;
-
-        TextBox StaticIndex;
-        ToolTip tTip;
-
-        TextBox txtDesc;
-
-        TextBox txtInternal;
-
-        TextBox txtModOther;
-
-        TextBox txtNameFull;
-
-        TextBox txtNameShort;
-
-        TextBox txtProb;
-
-        RadioButton typeHO;
-
-        RadioButton typeIO;
-
-        RadioButton typeRegular;
-
-        RadioButton typeSet;
-
-        NumericUpDown udMaxLevel;
-
-        NumericUpDown udMinLevel;
 
         protected ExtendedBitmap bxClass;
         protected ExtendedBitmap bxClassList;
@@ -143,6 +34,14 @@ namespace Hero_Designer
             this.EnhAcross = 5;
             this.Loading = true;
             this.InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmEnhData));
+            this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
+            this.typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
+            this.typeIO.Image = (Image)componentResourceManager.GetObject("typeIO.Image");
+            this.typeRegular.Image = (Image)componentResourceManager.GetObject("typeRegular.Image");
+            this.typeHO.Image = (Image)componentResourceManager.GetObject("typeHO.Image");
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEnhData);
             this.myEnh = (IEnhancement)new Enhancement(iEnh);
             this.ClassSize = 22;
         }
@@ -920,21 +819,8 @@ namespace Hero_Designer
             this.tTip.SetToolTip((Control)this.lstSelected, Conversions.ToString(this.lstSelected.SelectedItem));
         }
 
-        public int MezPicker(int Index = 1)
-        {
-            Enums.eMez eMez = Enums.eMez.None;
-            frmEnhMiniPick frmEnhMiniPick = new frmEnhMiniPick();
-            string[] names = Enum.GetNames(eMez.GetType());
-            int num1 = names.Length - 1;
-            for (int index = 1; index <= num1; ++index)
-                frmEnhMiniPick.lbList.Items.Add(names[index]);
-            if (Index > -1 & Index < frmEnhMiniPick.lbList.Items.Count)
-                frmEnhMiniPick.lbList.SelectedIndex = Index - 1;
-            else
-                frmEnhMiniPick.lbList.SelectedIndex = 0;
-            int num2 = (int)frmEnhMiniPick.ShowDialog();
-            return frmEnhMiniPick.lbList.SelectedIndex + 1;
-        }
+        public int MezPicker(int index = 1)
+        => frmEnhMiniPick.MezPicker(index);
 
         void PickerExpand()
 

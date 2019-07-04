@@ -100,7 +100,10 @@ namespace Hero_Designer
         "ToHit Debuff"
             };
             this.InitializeComponent();
+            this.Name = nameof(frmCompare);
             this.myParent = iFrm;
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCompare));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_ButtonClicked()

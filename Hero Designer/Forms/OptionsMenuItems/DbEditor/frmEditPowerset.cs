@@ -15,127 +15,19 @@ namespace Hero_Designer
 {
     public partial class frmEditPowerset : Form
     {
-        Button btnCancel;
-
-        Button btnClearIcon;
-
-        Button btnClose;
-
-        Button btnIcon;
-
-        ComboBox cbAT;
-
-        ComboBox cbLinkGroup;
-
-        ComboBox cbLinkSet;
-
-        ComboBox cbMutexGroup;
-
-        [AccessedThroughProperty("cbNameGroup")]
-        ComboBox _cbNameGroup;
-
-        ComboBox cbSetType;
-
-        ComboBox cbTrunkGroup;
-
-        ComboBox cbTrunkSet;
-
-        CheckBox chkNoLink;
-
-        CheckBox chkNoTrunk;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        GroupBox gbLink;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-        OpenFileDialog ImagePicker;
-        Label Label1;
-        Label Label2;
-        Label Label22;
-        Label Label3;
-        Label Label31;
-        Label Label33;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label lblNameFull;
-        Label lblNameUnique;
-
-        ListBox lvMutexSets;
-        ListView lvPowers;
-        PictureBox picIcon;
-
-        TextBox txtDesc;
-
-        TextBox txtName;
-
-        [AccessedThroughProperty("txtNameSet")]
-        TextBox _txtNameSet;
 
         protected bool Loading;
         public IPowerset myPS;
-        ComboBox cbNameGroup
-        {
-            get
-            {
-                return this._cbNameGroup;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.cbNameGroup_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.cbNameGroup_SelectedIndexChanged);
-                EventHandler eventHandler3 = new EventHandler(this.cbNameGroup_Leave);
-                if (this._cbNameGroup != null)
-                {
-                    this._cbNameGroup.TextChanged -= eventHandler1;
-                    this._cbNameGroup.SelectedIndexChanged -= eventHandler2;
-                    this._cbNameGroup.Leave -= eventHandler3;
-                }
-                this._cbNameGroup = value;
-                if (this._cbNameGroup == null)
-                    return;
-                this._cbNameGroup.TextChanged += eventHandler1;
-                this._cbNameGroup.SelectedIndexChanged += eventHandler2;
-                this._cbNameGroup.Leave += eventHandler3;
-            }
-        }
 
-        TextBox txtNameSet
-        {
-            get
-            {
-                return this._txtNameSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtNameSet_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtNameSet_Leave);
-                if (this._txtNameSet != null)
-                {
-                    this._txtNameSet.TextChanged -= eventHandler1;
-                    this._txtNameSet.Leave -= eventHandler2;
-                }
-                this._txtNameSet = value;
-                if (this._txtNameSet == null)
-                    return;
-                this._txtNameSet.TextChanged += eventHandler1;
-                this._txtNameSet.Leave += eventHandler2;
-            }
-        }
 
         public frmEditPowerset(ref IPowerset iSet)
         {
             this.Load += new EventHandler(this.frmEditPowerset_Load);
             this.Loading = true;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditPowerset));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEditPowerset);
             this.myPS = (IPowerset)new Powerset(iSet);
         }
 

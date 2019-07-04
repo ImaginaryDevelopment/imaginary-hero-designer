@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCalcOpt));
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.TabControl1 = new System.Windows.Forms.TabControl();
@@ -362,34 +361,22 @@ namespace Hero_Designer
             this.udStatSize.DecimalPlaces = 2;
 
             this.udStatSize.Location = new System.Drawing.Point(87, 48);
-            System.Decimal num = new System.Decimal(new int[4]
-            {
-        14,
-        0,
-        0,
-        0
-            });
-            this.udStatSize.Maximum = num;
-            num = new System.Decimal(new int[4] { 6, 0, 0, 0 });
-            this.udStatSize.Minimum = num;
+            this.udStatSize.Maximum = new System.Decimal(new int[4] { 14, 0, 0, 0 });
+            this.udStatSize.Minimum = new System.Decimal(new int[4] { 6, 0, 0, 0 });
             this.udStatSize.Name = "udStatSize";
 
             this.udStatSize.Size = new System.Drawing.Size(52, 20);
             this.udStatSize.TabIndex = 1;
-            num = new System.Decimal(new int[4] { 825, 0, 0, 131072 });
-            this.udStatSize.Value = num;
+            this.udStatSize.Value = new System.Decimal(new int[4] { 825, 0, 0, 131072 });
 
             this.udRTFSize.Location = new System.Drawing.Point(87, 22);
-            num = new System.Decimal(new int[4] { 14, 0, 0, 0 });
-            this.udRTFSize.Maximum = num;
-            num = new System.Decimal(new int[4] { 6, 0, 0, 0 });
-            this.udRTFSize.Minimum = num;
+            this.udRTFSize.Maximum = new System.Decimal(new int[4] { 14, 0, 0, 0 });
+            this.udRTFSize.Minimum = new System.Decimal(new int[4] { 6, 0, 0, 0 });
             this.udRTFSize.Name = "udRTFSize";
 
             this.udRTFSize.Size = new System.Drawing.Size(52, 20);
             this.udRTFSize.TabIndex = 0;
-            num = new System.Decimal(new int[4] { 8, 0, 0, 0 });
-            this.udRTFSize.Value = num;
+            this.udRTFSize.Value = new System.Decimal(new int[4] { 8, 0, 0, 0 });
 
             this.chkIOPrintLevels.Location = new System.Drawing.Point(207, 285);
             this.chkIOPrintLevels.Name = "chkIOPrintLevels";
@@ -471,17 +458,14 @@ namespace Hero_Designer
             this.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udIOLevel.Location = new System.Drawing.Point(108, 20);
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udIOLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 10, 0, 0, 0 });
-            this.udIOLevel.Minimum = num;
+            this.udIOLevel.Maximum = new System.Decimal(new int[4] { 50, 0, 0, 0 });
+            this.udIOLevel.Minimum = new System.Decimal(new int[4] { 10, 0, 0, 0 });
             this.udIOLevel.Name = "udIOLevel";
 
             this.udIOLevel.Size = new System.Drawing.Size(72, 20);
             this.udIOLevel.TabIndex = 57;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.udIOLevel, "Inventions will be placed at this level by default. You can override the default by typing a level number in the picker.");
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udIOLevel.Value = num;
+            this.udIOLevel.Value = new System.Decimal(new int[4] { 50, 0, 0, 0 });
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.chkRelSignOnly);
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.Label3);
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.optTO);
@@ -516,7 +500,6 @@ namespace Hero_Designer
             this.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.optTO.Appearance = System.Windows.Forms.Appearance.Button;
             this.optTO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.optTO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optTO.Image");
 
             this.optTO.Location = new System.Drawing.Point(24, 74);
             this.optTO.Name = "optTO";
@@ -527,7 +510,6 @@ namespace Hero_Designer
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.optTO, "Training enhancements are the weakest kind.");
             this.optDO.Appearance = System.Windows.Forms.Appearance.Button;
             this.optDO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.optDO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optDO.Image");
 
             this.optDO.Location = new System.Drawing.Point(72, 74);
             this.optDO.Name = "optDO";
@@ -539,7 +521,6 @@ namespace Hero_Designer
             this.optSO.Appearance = System.Windows.Forms.Appearance.Button;
             this.optSO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.optSO.Checked = true;
-            this.optSO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optSO.Image");
 
             this.optSO.Location = new System.Drawing.Point(120, 74);
             this.optSO.Name = "optSO";
@@ -710,7 +691,6 @@ namespace Hero_Designer
 
             this.Label9.Size = new System.Drawing.Size(499, 56);
             this.Label9.TabIndex = 4;
-            this.Label9.Text = componentResourceManager.GetString("Label9.Text");
             this.GroupBox6.Controls.Add((System.Windows.Forms.Control)this.Label7);
             this.GroupBox6.Controls.Add((System.Windows.Forms.Control)this.rbPvP);
             this.GroupBox6.Controls.Add((System.Windows.Forms.Control)this.rbPvE);
@@ -778,16 +758,13 @@ namespace Hero_Designer
             this.GroupBox13.Text = "Forced Level:";
 
             this.udForceLevel.Location = new System.Drawing.Point(8, 124);
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udForceLevel.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udForceLevel.Minimum = num;
+            this.udForceLevel.Maximum = new System.Decimal(new int[4] { 50, 0, 0, 0 });
+            this.udForceLevel.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udForceLevel.Name = "udForceLevel";
 
             this.udForceLevel.Size = new System.Drawing.Size(80, 20);
             this.udForceLevel.TabIndex = 55;
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udForceLevel.Value = num;
+            this.udForceLevel.Value = new System.Decimal(new int[4] { 50, 0, 0, 0 });
 
             this.Label38.Location = new System.Drawing.Point(4, 16);
             this.Label38.Name = "Label38";
@@ -824,15 +801,13 @@ namespace Hero_Designer
             this.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udBaseToHit.Location = new System.Drawing.Point(263, 39);
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udBaseToHit.Minimum = num;
+            this.udBaseToHit.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udBaseToHit.Name = "udBaseToHit";
 
             this.udBaseToHit.Size = new System.Drawing.Size(88, 20);
             this.udBaseToHit.TabIndex = 57;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.udBaseToHit, "Chance of hitting a foe. Accuracy = (Base ToHit + Buffs) * Enhancements");
-            num = new System.Decimal(new int[4] { 75, 0, 0, 0 });
-            this.udBaseToHit.Value = num;
+            this.udBaseToHit.Value = new System.Decimal(new int[4] { 75, 0, 0, 0 });
 
             this.Label13.Location = new System.Drawing.Point(8, 16);
             this.Label13.Name = "Label13";
@@ -864,17 +839,14 @@ namespace Hero_Designer
             this.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udExLow.Location = new System.Drawing.Point(172, 148);
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udExLow.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udExLow.Minimum = num;
+            this.udExLow.Maximum = new System.Decimal(new int[4] { 50, 0, 0, 0 });
+            this.udExLow.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udExLow.Name = "udExLow";
 
             this.udExLow.Size = new System.Drawing.Size(88, 20);
             this.udExLow.TabIndex = 57;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.udExLow, "Set the target exemplar level. Your enhancements will be calculated as though you are exemplared to this level, and their effect will be reduced accordingly");
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udExLow.Value = num;
+            this.udExLow.Value = new System.Decimal(new int[4] { 50, 0, 0, 0 });
 
             this.Label11.Location = new System.Drawing.Point(8, 124);
             this.Label11.Name = "Label11";
@@ -889,20 +861,15 @@ namespace Hero_Designer
 
             this.Label5.Size = new System.Drawing.Size(264, 96);
             this.Label5.TabIndex = 55;
-            this.Label5.Text = componentResourceManager.GetString("Label5.Text");
 
             this.udExHigh.Location = new System.Drawing.Point(172, 124);
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udExHigh.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udExHigh.Minimum = num;
+            this.udExHigh.Maximum = new System.Decimal(new int[4] { 50, 0, 0, 0 });
+            this.udExHigh.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.udExHigh.Name = "udExHigh";
 
             this.udExHigh.Size = new System.Drawing.Size(88, 20);
             this.udExHigh.TabIndex = 54;
-            this.myTip.SetToolTip((System.Windows.Forms.Control)this.udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
-            num = new System.Decimal(new int[4] { 50, 0, 0, 0 });
-            this.udExHigh.Value = num;
+            this.udExHigh.Value = new System.Decimal(new int[4] { 50, 0, 0, 0 });
             this.TabPage4.Controls.Add((System.Windows.Forms.Control)this.GroupBox12);
             this.TabPage4.Controls.Add((System.Windows.Forms.Control)this.GroupBox11);
 
@@ -1341,7 +1308,6 @@ namespace Hero_Designer
 
             this.Label15.Size = new System.Drawing.Size(602, 92);
             this.Label15.TabIndex = 4;
-            this.Label15.Text = componentResourceManager.GetString("Label15.Text");
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Arial", 9f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -1423,17 +1389,14 @@ namespace Hero_Designer
             this.cPicker.FullOpen = true;
 
             this.TeamSize.Location = new System.Drawing.Point(536, 296);
-            num = new System.Decimal(new int[4] { 8, 0, 0, 0 });
-            this.TeamSize.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.TeamSize.Minimum = num;
+            this.TeamSize.Maximum = new System.Decimal(new int[4] { 8, 0, 0, 0 });
+            this.TeamSize.Minimum = new System.Decimal(new int[4] { 1, 0, 0, 0 });
             this.TeamSize.Name = "TeamSize";
 
             this.TeamSize.Size = new System.Drawing.Size(88, 20);
             this.TeamSize.TabIndex = 70;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.TeamSize, "Set this to the number of players on your team.");
-            num = new System.Decimal(new int[4] { 8, 0, 0, 0 });
-            this.TeamSize.Value = num;
+            this.TeamSize.Value = new System.Decimal(new int[4] { 8, 0, 0, 0 });
 
             this.Label16.Location = new System.Drawing.Point(473, 297);
             this.Label16.Name = "Label16";
@@ -1454,10 +1417,8 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmCalcOpt);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
@@ -1497,53 +1458,186 @@ namespace Hero_Designer
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
             this.TeamSize.EndInit();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnBaseReset.Click += btnBaseReset_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnFontColour.Click += this.btnFontColour_Click;
-                this.btnIOReset.Click += btnIOReset_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnSaveFolder.Click += btnSaveFolder_Click;
-                this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
-                this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
-                this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
-                this.csAdd.Click += csAdd_Click;
-                this.csBtnEdit.Click += csBtnEdit_Click;
-                this.csDelete.Click += csDelete_Click;
-                this.csList.KeyPress += csList_KeyPress;
-                this.csReset.Click += csReset_Click;
-                this.fcAdd.Click += fcAdd_Click;
-                this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
-                this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
-                this.fcColorOff.TextChanged += fcColorOff_TextChanged;
-                this.fcColorOn.TextChanged += fcColorOn_TextChanged;
-                this.fcDelete.Click += fcDelete_Click;
-                this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
-                this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
+            this.btnBaseReset.Click += btnBaseReset_Click;
+            this.btnCancel.Click += btnCancel_Click;
+            this.btnFontColour.Click += this.btnFontColour_Click;
+            this.btnIOReset.Click += btnIOReset_Click;
+            this.btnOK.Click += btnOK_Click;
+            this.btnSaveFolder.Click += btnSaveFolder_Click;
+            this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
+            this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
+            this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
+            this.csAdd.Click += csAdd_Click;
+            this.csBtnEdit.Click += csBtnEdit_Click;
+            this.csDelete.Click += csDelete_Click;
+            this.csList.KeyPress += csList_KeyPress;
+            this.csReset.Click += csReset_Click;
+            this.fcAdd.Click += fcAdd_Click;
+            this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
+            this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
+            this.fcColorOff.TextChanged += fcColorOff_TextChanged;
+            this.fcColorOn.TextChanged += fcColorOn_TextChanged;
+            this.fcDelete.Click += fcDelete_Click;
+            this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
+            this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
 
-                // fcList events
-                this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
-                this.fcList.KeyPress += fcList_KeyPress;
+            // fcList events
+            this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
+            this.fcList.KeyPress += fcList_KeyPress;
 
-                this.fcNotes.TextChanged += fcNotes_TextChanged;
-                this.fcReset.Click += fcReset_Click;
-                this.fcSet.Click += fcSet_Click;
-                this.fcTextOff.TextChanged += fcTextOff_TextChanged;
-                this.fcTextOn.TextChanged += fcTextOn_TextChanged;
-                this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
-                this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
-                this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
-                this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
-                this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
-                this.optDO.CheckedChanged += optDO_CheckedChanged;
-                this.optSO.CheckedChanged += optSO_CheckedChanged;
-                this.optTO.CheckedChanged += optTO_CheckedChanged;
-            }
-            // finished with events
+            this.fcNotes.TextChanged += fcNotes_TextChanged;
+            this.fcReset.Click += fcReset_Click;
+            this.fcSet.Click += fcSet_Click;
+            this.fcTextOff.TextChanged += fcTextOff_TextChanged;
+            this.fcTextOn.TextChanged += fcTextOn_TextChanged;
+            this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
+            this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
+            this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
+            this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
+            this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
+            this.optDO.CheckedChanged += optDO_CheckedChanged;
+            this.optSO.CheckedChanged += optSO_CheckedChanged;
+            this.optTO.CheckedChanged += optTO_CheckedChanged;
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnBaseReset;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnFontColour;
+        System.Windows.Forms.Button btnIOReset;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnSaveFolder;
+        System.Windows.Forms.Button btnSaveFolderReset;
+        System.Windows.Forms.ComboBox cbEnhLevel;
+        System.Windows.Forms.CheckBox chkColorInherent;
+        System.Windows.Forms.CheckBox chkColourPrint;
+        System.Windows.Forms.CheckBox chkHighVis;
+        System.Windows.Forms.CheckBox chkIOEffects;
+        System.Windows.Forms.CheckBox chkIOLevel;
+        System.Windows.Forms.CheckBox chkIOPrintLevels;
+        System.Windows.Forms.CheckBox chkLoadLastFile;
+        System.Windows.Forms.CheckBox chkMiddle;
+        System.Windows.Forms.CheckBox chkNoTips;
+        System.Windows.Forms.CheckBox chkRelSignOnly;
+        System.Windows.Forms.CheckBox chkSetBonus;
+        System.Windows.Forms.CheckBox chkShowAlphaPopup;
+        System.Windows.Forms.CheckBox chkStatBold;
+        System.Windows.Forms.CheckBox chkTextBold;
+        System.Windows.Forms.CheckBox chkUpdates;
+        System.Windows.Forms.CheckBox chkUseArcanaTime;
+        System.Windows.Forms.CheckBox chkVillainColour;
+        System.Windows.Forms.CheckedListBox clbSuppression;
+        System.Windows.Forms.ComboBox cmbAction;
+        System.Windows.Forms.ColorDialog cPicker;
+        System.Windows.Forms.Button csAdd;
+        System.Windows.Forms.Button csBtnEdit;
+        System.Windows.Forms.Button csDelete;
+        System.Windows.Forms.ListBox csList;
+        System.Windows.Forms.Button csReset;
+        System.Windows.Forms.FolderBrowserDialog fbdSave;
+        System.Windows.Forms.Button fcAdd;
+        System.Windows.Forms.TextBox fcBoldOff;
+        System.Windows.Forms.TextBox fcBoldOn;
+        System.Windows.Forms.TextBox fcColorOff;
+        System.Windows.Forms.TextBox fcColorOn;
+        System.Windows.Forms.Button fcDelete;
+        System.Windows.Forms.TextBox fcItalicOff;
+        System.Windows.Forms.TextBox fcItalicOn;
+        System.Windows.Forms.ListBox fcList;
+        System.Windows.Forms.TextBox fcName;
+        System.Windows.Forms.TextBox fcNotes;
+        System.Windows.Forms.Button fcReset;
+        System.Windows.Forms.Button fcSet;
+        System.Windows.Forms.TextBox fcTextOff;
+        System.Windows.Forms.TextBox fcTextOn;
+        System.Windows.Forms.TextBox fcUnderlineOff;
+        System.Windows.Forms.TextBox fcUnderlineOn;
+        System.Windows.Forms.RadioButton fcWSSpace;
+        System.Windows.Forms.RadioButton fcWSTab;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox10;
+        System.Windows.Forms.GroupBox GroupBox11;
+        System.Windows.Forms.GroupBox GroupBox12;
+        System.Windows.Forms.GroupBox GroupBox13;
+        System.Windows.Forms.GroupBox GroupBox14;
+        System.Windows.Forms.GroupBox GroupBox15;
+        System.Windows.Forms.GroupBox GroupBox16;
+        System.Windows.Forms.GroupBox GroupBox17;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox3;
+        System.Windows.Forms.GroupBox GroupBox4;
+        System.Windows.Forms.GroupBox GroupBox5;
+        System.Windows.Forms.GroupBox GroupBox6;
+        System.Windows.Forms.GroupBox GroupBox7;
+        System.Windows.Forms.GroupBox GroupBox8;
+        System.Windows.Forms.GroupBox GroupBox9;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label10;
+        System.Windows.Forms.Label Label11;
+        System.Windows.Forms.Label Label12;
+        System.Windows.Forms.Label Label13;
+        System.Windows.Forms.Label Label14;
+        System.Windows.Forms.Label Label15;
+        System.Windows.Forms.Label Label16;
+        System.Windows.Forms.Label Label19;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label20;
+        System.Windows.Forms.Label Label21;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label24;
+        System.Windows.Forms.Label Label25;
+        System.Windows.Forms.Label Label26;
+        System.Windows.Forms.Label Label27;
+        System.Windows.Forms.Label Label28;
+        System.Windows.Forms.Label Label29;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label30;
+        System.Windows.Forms.Label Label31;
+        System.Windows.Forms.Label Label32;
+        System.Windows.Forms.Label Label33;
+        System.Windows.Forms.Label Label34;
+        System.Windows.Forms.Label Label36;
+        System.Windows.Forms.Label Label37;
+        System.Windows.Forms.Label Label38;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label40;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.Label lblExample;
+        System.Windows.Forms.Label lblSaveFolder;
+        System.Windows.Forms.ListBox listScenarios;
+        System.Windows.Forms.ToolTip myTip;
+        System.Windows.Forms.RadioButton optDO;
+        System.Windows.Forms.Label optEnh;
+        System.Windows.Forms.RadioButton optSO;
+        System.Windows.Forms.RadioButton optTO;
+        System.Windows.Forms.RadioButton rbChanceAverage;
+        System.Windows.Forms.RadioButton rbChanceIgnore;
+        System.Windows.Forms.RadioButton rbChanceMax;
+        System.Windows.Forms.RadioButton rbGraphSimple;
+        System.Windows.Forms.RadioButton rbGraphStacked;
+        System.Windows.Forms.RadioButton rbGraphTwoLine;
+        System.Windows.Forms.RadioButton rbPvE;
+        System.Windows.Forms.RadioButton rbPvP;
+        System.Windows.Forms.TabControl TabControl1;
+        System.Windows.Forms.TabPage TabPage1;
+        System.Windows.Forms.TabPage TabPage2;
+        System.Windows.Forms.TabPage TabPage3;
+        System.Windows.Forms.TabPage TabPage4;
+        System.Windows.Forms.TabPage TabPage5;
+        System.Windows.Forms.TabPage TabPage6;
+        System.Windows.Forms.NumericUpDown TeamSize;
+        System.Windows.Forms.TextBox txtUpdatePath;
+        System.Windows.Forms.NumericUpDown udBaseToHit;
+        System.Windows.Forms.NumericUpDown udExHigh;
+        System.Windows.Forms.NumericUpDown udExLow;
+        System.Windows.Forms.NumericUpDown udForceLevel;
+        System.Windows.Forms.NumericUpDown udIOLevel;
+        System.Windows.Forms.NumericUpDown udRTFSize;
+        System.Windows.Forms.NumericUpDown udStatSize;
     }
 }

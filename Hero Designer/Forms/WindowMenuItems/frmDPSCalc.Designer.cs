@@ -31,8 +31,6 @@ namespace Hero_Designer
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
             this.GlobalPowerList = new frmDPSCalc.PowerList[0];
-            this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmDPSCalc));
             this.lvPower = new System.Windows.Forms.ListView();
             this.lvPower.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvPower_ColumnClick);
             this.chPower = new System.Windows.Forms.ColumnHeader();
@@ -270,28 +268,22 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.Panel2);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmDPSCalc);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Damage Per Second Calculator (Beta)";
             this.TopMost = true;
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-                this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
-                this.ibClear.ButtonClicked += ibClear_ButtonClicked;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+            this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+            this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
+            this.ibClear.ButtonClicked += ibClear_ButtonClicked;
+            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+            this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
 
-                // lvPower events
-                this.lvPower.MouseEnter += lvPower_MouseEnter;
-                this.lvPower.ItemChecked += lvPower_ItemChecked;
-                this.lvPower.ItemSelectionChanged += lvPower_Clicked;
+            // lvPower events
+            this.lvPower.MouseEnter += lvPower_MouseEnter;
+            this.lvPower.ItemChecked += lvPower_ItemChecked;
+            this.lvPower.ItemSelectionChanged += lvPower_Clicked;
 
-            }
             // finished with events
             this.ResumeLayout(false);
         }

@@ -9,39 +9,6 @@ namespace Hero_Designer
 {
     public partial class frmExportColor : Form
     {
-        Button btnCancel;
-
-        Button btnOK;
-        ColorDialog cPicker;
-
-        Label csHeading;
-
-        Label csHO;
-
-        Label csIO;
-
-        Label csLevel;
-
-        Label csPower;
-
-        Label csSet;
-
-        Label csSlots;
-
-        Label csTitle;
-        Label Label1;
-        Label Label19;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label7;
-        Label Label9;
-        ToolTip myTip;
-
-        TextBox txtName;
 
         public ExportConfig.ColorScheme myScheme;
 
@@ -49,6 +16,9 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmExportColor_Load);
             this.InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmExportColor));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmExportColor);
             this.myScheme.Assign(iScheme);
         }
 

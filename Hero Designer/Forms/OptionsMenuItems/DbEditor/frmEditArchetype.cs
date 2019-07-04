@@ -86,6 +86,9 @@ namespace Hero_Designer
             this.OriginalName = "";
             this.ONDuplicate = false;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditArchetype));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEditArchetype);
             this.MyAT = new Archetype(iAT);
             this.OriginalName = this.MyAT.ClassName;
             int num = DatabaseAPI.Database.Classes.Length - 1;

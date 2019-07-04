@@ -36,43 +36,11 @@ namespace Hero_Designer
         ctlMultiGraph graphThreat;
         ctlMultiGraph graphToHit;
 
-        bool _keepOnTop;
-        Label lblDef;
-        Label lblMisc;
-        Label lblMovement;
-        Label lblRegenRec;
-        Label lblRes;
-        Label lblSDeb;
-        Label lblSProt;
-        Label lblSRes;
-        Label lblStealth;
 
+        bool _keepOnTop;
         bool _loaded;
 
         readonly frmMain _myParent;
-        Panel Panel1;
-        Panel Panel2;
-
-        PictureBox pbClose;
-
-        PictureBox pbTopMost;
-        Panel pnlDRHE;
-        Panel pnlMisc;
-        Panel pnlStatus;
-
-        RadioButton rbFPS;
-
-        RadioButton rbKPH;
-
-        RadioButton rbMPH;
-
-        RadioButton rbMSec;
-
-        PictureBox tab0;
-
-        PictureBox tab1;
-
-        PictureBox tab2;
 
         int _tabPage;
 
@@ -87,6 +55,9 @@ namespace Hero_Designer
             this._loaded = false;
             this._keepOnTop = true;
             this.InitializeComponent();
+            this.Name = nameof(frmTotals);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmTotals));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this._myParent = iParent;
         }
 

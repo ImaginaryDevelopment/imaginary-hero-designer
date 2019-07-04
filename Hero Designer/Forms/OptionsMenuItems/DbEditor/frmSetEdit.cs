@@ -16,63 +16,6 @@ namespace Hero_Designer
 {
     public partial class frmSetEdit : Form
     {
-        Button btnCancel;
-
-        Button btnImage;
-
-        Button btnNoImage;
-
-        Button btnOK;
-
-        Button btnPaste;
-
-        ComboBox cbSetType;
-
-        ComboBox cbSlotCount;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        GroupBox gbBasic;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        ImageList ilEnh;
-        OpenFileDialog ImagePicker;
-        Label Label1;
-        Label Label16;
-        Label Label2;
-        Label Label27;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-
-        ListBox lstBonus;
-
-        [AccessedThroughProperty("lvBonusList")]
-        ListView _lvBonusList;
-        ListView lvEnh;
-        RadioButton rbIfAny;
-        RadioButton rbIfCritter;
-        RadioButton rbIfPlayer;
-        RichTextBox rtbBonus;
-
-        TextBox txtAlternate;
-
-        TextBox txtDesc;
-
-        TextBox txtInternal;
-
-        TextBox txtNameFull;
-
-        TextBox txtNameShort;
-
-        [AccessedThroughProperty("udMaxLevel")]
-        NumericUpDown _udMaxLevel;
-
-        [AccessedThroughProperty("udMinLevel")]
-        NumericUpDown _udMinLevel;
 
         protected bool Loading;
         public EnhancementSet mySet;
@@ -88,17 +31,14 @@ namespace Hero_Designer
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                EventHandler eventHandler1 = new EventHandler(this.lvBonusList_SelectedIndexChanged);
                 EventHandler eventHandler2 = new EventHandler(this.lvBonusList_DoubleClick);
                 if (this._lvBonusList != null)
                 {
-                    this._lvBonusList.SelectedIndexChanged -= eventHandler1;
                     this._lvBonusList.DoubleClick -= eventHandler2;
                 }
                 this._lvBonusList = value;
                 if (this._lvBonusList == null)
                     return;
-                this._lvBonusList.SelectedIndexChanged += eventHandler1;
                 this._lvBonusList.DoubleClick += eventHandler2;
             }
         }
@@ -158,6 +98,10 @@ namespace Hero_Designer
             this.SetBonusListPVP = new int[0];
             this.Loading = true;
             this.InitializeComponent();
+            this.Name = nameof(frmSetEdit);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmSetEdit));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
             this.mySet = new EnhancementSet(iSet);
         }
 

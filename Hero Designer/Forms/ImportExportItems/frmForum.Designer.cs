@@ -341,35 +341,34 @@ namespace Hero_Designer
 
             this.pbTitle.Location = new System.Drawing.Point(180, 6);
             this.pbTitle.Name = "pbTitle";
-
             this.pbTitle.Size = new System.Drawing.Size(263, 24);
             this.pbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbTitle.TabIndex = 15;
             this.pbTitle.TabStop = false;
             this.pbTitle.MouseMove += pbTitle_MouseMove;
             this.pbTitle.MouseDown += pbTitle_MouseDown;
+            // 
+            // ibCancel
+            // 
             this.ibCancel.Checked = false;
             this.ibCancel.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibCancel.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibCancel.Location = new System.Drawing.Point(52, 431);
             this.ibCancel.Name = "ibCancel";
-
             this.ibCancel.Size = new System.Drawing.Size(105, 22);
             this.ibCancel.TabIndex = 14;
             this.ibCancel.TextOff = "Cancel";
             this.ibCancel.TextOn = "Alt Text";
             this.ibCancel.Toggle = false;
             this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
+            // 
+            // ibExport
+            // 
             this.ibExport.Checked = false;
             this.ibExport.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
-
             this.ibExport.KnockoutLocationPoint = new System.Drawing.Point(0, 0);
-
             this.ibExport.Location = new System.Drawing.Point(246, 431);
             this.ibExport.Name = "ibExport";
-
             this.ibExport.Size = new System.Drawing.Size(105, 22);
             this.ibExport.TabIndex = 13;
             this.ibExport.TextOff = "Export Now";
@@ -426,7 +425,6 @@ namespace Hero_Designer
         System.Windows.Forms.CheckBox chkNoSetName;
         System.Windows.Forms.Label csHeading;
         System.Windows.Forms.Label csLevel;
-
         System.Windows.Forms.ListBox csList;
         System.Windows.Forms.Label csSlots;
         System.Windows.Forms.Label csTitle;
@@ -435,10 +433,6 @@ namespace Hero_Designer
         System.Windows.Forms.GroupBox GroupBox3;
         System.Windows.Forms.GroupBox GroupBox4;
         System.Windows.Forms.GroupBox GroupBox5;
-
-        midsControls.ImageButton ibCancel;
-
-        midsControls.ImageButton ibExport;
         System.Windows.Forms.Label Label1;
         System.Windows.Forms.Label Label19;
         System.Windows.Forms.Label Label2;
@@ -449,11 +443,11 @@ namespace Hero_Designer
         System.Windows.Forms.Label Label4;
         System.Windows.Forms.Label lblCodeInf;
         System.Windows.Forms.Label lblRecess;
-
         System.Windows.Forms.ListBox lstCodes;
-
         System.Windows.Forms.PictureBox pbTitle;
         System.Windows.Forms.ToolTip ToolTip1;
+        midsControls.ImageButton ibCancel;
+        midsControls.ImageButton ibExport;
         #endregion
     }
 }

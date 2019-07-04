@@ -14,179 +14,6 @@ namespace Hero_Designer
 {
     public partial class frmCalcOpt : Form
     {
-        Button btnBaseReset;
-
-        Button btnCancel;
-
-        Button btnFontColour;
-
-        Button btnIOReset;
-
-        Button btnOK;
-
-        Button btnSaveFolder;
-
-        Button btnSaveFolderReset;
-
-        ComboBox cbEnhLevel;
-        CheckBox chkColorInherent;
-        CheckBox chkColourPrint;
-        CheckBox chkHighVis;
-        CheckBox chkIOEffects;
-        CheckBox chkIOLevel;
-        CheckBox chkIOPrintLevels;
-        CheckBox chkLoadLastFile;
-        CheckBox chkMiddle;
-        CheckBox chkNoTips;
-        CheckBox chkRelSignOnly;
-        CheckBox chkSetBonus;
-        CheckBox chkShowAlphaPopup;
-        CheckBox chkStatBold;
-        CheckBox chkTextBold;
-        CheckBox chkUpdates;
-        CheckBox chkUseArcanaTime;
-        CheckBox chkVillainColour;
-
-        CheckedListBox clbSuppression;
-
-        ComboBox cmbAction;
-        ColorDialog cPicker;
-
-        Button csAdd;
-
-        Button csBtnEdit;
-
-        Button csDelete;
-
-        ListBox csList;
-
-        Button csReset;
-        FolderBrowserDialog fbdSave;
-
-        Button fcAdd;
-
-        TextBox fcBoldOff;
-
-        TextBox fcBoldOn;
-
-        TextBox fcColorOff;
-
-        TextBox fcColorOn;
-
-        Button fcDelete;
-
-        TextBox fcItalicOff;
-
-        TextBox fcItalicOn;
-
-        ListBox fcList;
-        TextBox fcName;
-
-        TextBox fcNotes;
-
-        Button fcReset;
-
-        Button fcSet;
-
-        TextBox fcTextOff;
-
-        TextBox fcTextOn;
-
-        TextBox fcUnderlineOff;
-
-        TextBox fcUnderlineOn;
-
-        RadioButton fcWSSpace;
-
-        RadioButton fcWSTab;
-        GroupBox GroupBox1;
-        GroupBox GroupBox10;
-        GroupBox GroupBox11;
-        GroupBox GroupBox12;
-        GroupBox GroupBox13;
-        GroupBox GroupBox14;
-        GroupBox GroupBox15;
-        GroupBox GroupBox16;
-        GroupBox GroupBox17;
-        GroupBox GroupBox2;
-        GroupBox GroupBox3;
-        GroupBox GroupBox4;
-        GroupBox GroupBox5;
-        GroupBox GroupBox6;
-        GroupBox GroupBox7;
-        GroupBox GroupBox8;
-        GroupBox GroupBox9;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label12;
-        Label Label13;
-        Label Label14;
-        Label Label15;
-        Label Label16;
-        Label Label19;
-        Label Label2;
-        Label Label20;
-        Label Label21;
-        Label Label22;
-        Label Label24;
-        Label Label25;
-        Label Label26;
-        Label Label27;
-        Label Label28;
-        Label Label29;
-        Label Label3;
-        Label Label30;
-        Label Label31;
-        Label Label32;
-        Label Label33;
-        Label Label34;
-        Label Label36;
-        Label Label37;
-        Label Label38;
-        Label Label4;
-        Label Label40;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lblExample;
-        Label lblSaveFolder;
-
-        ListBox listScenarios;
-        ToolTip myTip;
-
-        RadioButton optDO;
-        Label optEnh;
-
-        RadioButton optSO;
-
-        RadioButton optTO;
-        RadioButton rbChanceAverage;
-        RadioButton rbChanceIgnore;
-        RadioButton rbChanceMax;
-        RadioButton rbGraphSimple;
-        RadioButton rbGraphStacked;
-        RadioButton rbGraphTwoLine;
-        RadioButton rbPvE;
-        RadioButton rbPvP;
-        TabControl TabControl1;
-        TabPage TabPage1;
-        TabPage TabPage2;
-        TabPage TabPage3;
-        TabPage TabPage4;
-        TabPage TabPage5;
-        TabPage TabPage6;
-        NumericUpDown TeamSize;
-        TextBox txtUpdatePath;
-        NumericUpDown udBaseToHit;
-        NumericUpDown udExHigh;
-        NumericUpDown udExLow;
-        NumericUpDown udForceLevel;
-        NumericUpDown udIOLevel;
-        NumericUpDown udRTFSize;
-        NumericUpDown udStatSize;
 
         short[] defActs;
 
@@ -205,6 +32,16 @@ namespace Hero_Designer
             this.scenActs = new string[20][];
             this.defActs = new short[20];
             this.InitializeComponent();
+            this.Name = nameof(frmCalcOpt);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCalcOpt));
+            this.optTO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optTO.Image");
+            this.optDO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optDO.Image");
+            this.optSO.Image = (System.Drawing.Image)componentResourceManager.GetObject("optSO.Image");
+            this.Label9.Text = componentResourceManager.GetString("Label9.Text");
+            this.Label5.Text = componentResourceManager.GetString("Label5.Text");
+            this.myTip.SetToolTip((System.Windows.Forms.Control)this.udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
+            this.Label15.Text = componentResourceManager.GetString("Label15.Text");
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
         }
 

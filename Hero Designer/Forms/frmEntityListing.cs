@@ -16,7 +16,7 @@ namespace Hero_Designer
         Button btnClone;
         Button btnDelete;
         Button btnDown;
-        Button btnedit;
+        Button btnEdit;
         Button btnOK;
         Button btnUp;
         ColumnHeader ColumnHeader1;
@@ -29,6 +29,9 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmEntityListing_Load);
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityListing));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmEntityListing);
         }
 
         void btnAdd_Click(object sender, EventArgs e)

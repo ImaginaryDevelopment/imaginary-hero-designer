@@ -29,7 +29,6 @@ namespace Hero_Designer
         private void InitializeComponent()
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmData));
             this.pInfo = new midsControls.ctlPopUp();
             this.SuspendLayout();
             this.pInfo.BXHeight = 2048;
@@ -51,10 +50,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.pInfo);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
 
             this.MinimumSize = new System.Drawing.Size(250, 250);
-            this.Name = nameof(frmData);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Power Data";
             this.TopMost = true;

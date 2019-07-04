@@ -13,62 +13,13 @@ namespace Hero_Designer
 {
     public partial class frmEnhEdit : Form
     {
-        Button btnAdd;
-
-        Button btnCancel;
-
-        Button btnClone;
-
-        Button btnDelete;
-
-        Button btnDown;
-
-        Button btnEdit;
-
-        Button btnSave;
-
-        Button btnUp;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ImageList ilEnh;
-        Label lblLoading;
-
-        [AccessedThroughProperty("lvEnh")]
-        ListView _lvEnh;
-
-        CheckBox NoReload;
-
-
-        ListView lvEnh
-        {
-            get
-            {
-                return this._lvEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvEnh_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvEnh_DoubleClick);
-                if (this._lvEnh != null)
-                {
-                    this._lvEnh.SelectedIndexChanged -= eventHandler1;
-                    this._lvEnh.DoubleClick -= eventHandler2;
-                }
-                this._lvEnh = value;
-                if (this._lvEnh == null)
-                    return;
-                this._lvEnh.SelectedIndexChanged += eventHandler1;
-                this._lvEnh.DoubleClick += eventHandler2;
-            }
-        }
         public frmEnhEdit()
         {
             this.Load += new EventHandler(this.frmEnhEdit_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmEnhEdit);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEnhEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void AddListItem(int Index)

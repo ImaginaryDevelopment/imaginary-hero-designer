@@ -69,24 +69,23 @@ namespace Hero_Designer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEnhMiniPick);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Details";
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnOK.Click += btnOK_Click;
+            this.btnOK.Click += btnOK_Click;
 
-                // lbList events
-                this.lbList.DoubleClick += lbList_DoubleClick;
-                this.lbList.SelectedIndexChanged += lbList_SelectedIndexChanged;
+            // lbList events
+            this.lbList.DoubleClick += lbList_DoubleClick;
 
-            }
             // finished with events
             this.ResumeLayout(false);
         }
 
         #endregion
+
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Label lblMessage;
+        System.Windows.Forms.ListBox lbList;
     }
 }

@@ -12,36 +12,6 @@ namespace Hero_Designer
 {
     public partial class frmSalvageEdit : Form
     {
-        Button btnAdd;
-
-        Button btnCancel;
-
-        Button btnDelete;
-
-        Button btnImport;
-
-        Button btnOK;
-
-        ComboBox cbLevel;
-
-        ComboBox cbOrigin;
-
-        ComboBox cbRarity;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        Label Label1;
-        Label Label2;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-
-        ListView lvSalvage;
-
-        TextBox txtExternal;
-
-        TextBox txtInternal;
 
         public bool Updating;
 
@@ -50,6 +20,9 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmSalvageEdit_Load);
             this.Updating = true;
             this.InitializeComponent();
+            this.Name = nameof(frmSalvageEdit);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSalvageEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         protected void AddListItem(int Index)

@@ -39,6 +39,9 @@ namespace Hero_Designer
             this.FormClosed += new FormClosedEventHandler(this.frmSetViewer_FormClosed);
             this.Load += new EventHandler(this.frmSetViewer_Load);
             this.InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmSetViewer));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmSetViewer);
             this.myParent = iParent;
         }
 

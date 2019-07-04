@@ -10,71 +10,31 @@ namespace Hero_Designer
 {
     public partial class frmFloatingStats : Form
     {
-        [AccessedThroughProperty("dvFloat")]
-        DataView _dvFloat;
+        DataView dvFloat;
 
-        protected frmMain myOwner;
-
-        internal DataView dvFloat
-        {
-            get
-            {
-                return this._dvFloat;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            private set
-            {
-                EventHandler eventHandler = new EventHandler(this.dvFloat_Load);
-                DataView.SizeChangeEventHandler changeEventHandler1 = new DataView.SizeChangeEventHandler(this.dvFloat_SizeChange);
-                DataView.FloatChangeEventHandler changeEventHandler2 = new DataView.FloatChangeEventHandler(this.dvFloat_FloatChanged);
-                DataView.Unlock_ClickEventHandler clickEventHandler = new DataView.Unlock_ClickEventHandler(this.dvFloat_Unlock);
-                DataView.TabChangedEventHandler changedEventHandler = new DataView.TabChangedEventHandler(this.dvFloat_TabChanged);
-                DataView.SlotUpdateEventHandler updateEventHandler = new DataView.SlotUpdateEventHandler(this.dvFloat_SlotUpdate);
-                DataView.SlotFlipEventHandler flipEventHandler = new DataView.SlotFlipEventHandler(this.dvFloat_SlotFlip);
-                if (this._dvFloat != null)
-                {
-                    this._dvFloat.Load -= eventHandler;
-                    this._dvFloat.SizeChange -= changeEventHandler1;
-                    this._dvFloat.FloatChange -= changeEventHandler2;
-                    this._dvFloat.Unlock_Click -= clickEventHandler;
-                    this._dvFloat.TabChanged -= changedEventHandler;
-                    this._dvFloat.SlotUpdate -= updateEventHandler;
-                    this._dvFloat.SlotFlip -= flipEventHandler;
-                }
-                this._dvFloat = value;
-                if (this._dvFloat == null)
-                    return;
-                this._dvFloat.Load += eventHandler;
-                this._dvFloat.SizeChange += changeEventHandler1;
-                this._dvFloat.FloatChange += changeEventHandler2;
-                this._dvFloat.Unlock_Click += clickEventHandler;
-                this._dvFloat.TabChanged += changedEventHandler;
-                this._dvFloat.SlotUpdate += updateEventHandler;
-                this._dvFloat.SlotFlip += flipEventHandler;
-            }
-        }
+        frmMain myOwner;
 
         public frmFloatingStats(ref frmMain iOwner)
         {
+            this.InitializeComponent();
             this.Load += new EventHandler(this.frmFloatingStats_Load);
             this.Closed += new EventHandler(this.frmFloatingStats_Closed);
-            this.InitializeComponent();
+            this.Name = nameof(frmFloatingStats);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmFloatingStats));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myOwner = iOwner;
         }
 
         void dvFloat_FloatChanged()
-
         {
             this.Close();
         }
 
         void dvFloat_Load(object sender, EventArgs e)
-
         {
         }
 
         void dvFloat_SizeChange(Size newSize, bool Compact)
-
         {
             this.ClientSize = newSize;
         }
@@ -88,14 +48,12 @@ namespace Hero_Designer
         void dvFloat_Unlock() => this.myOwner.UnlockFloatingStats();
 
         void frmFloatingStats_Closed(object sender, EventArgs e)
-
         {
             this.myOwner.ShowAnchoredDataView();
             this.Hide();
         }
 
         void frmFloatingStats_Load(object sender, EventArgs e)
-
         {
             this.dvFloat.MoveDisable = true;
             this.dvFloat.SetScreenBounds(this.dvFloat.Bounds);

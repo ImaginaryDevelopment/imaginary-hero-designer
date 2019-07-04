@@ -29,6 +29,9 @@ namespace Hero_Designer
             this.FormClosed += new FormClosedEventHandler(this.frmMiniList_FormClosed);
             this.ResizeEnd += new EventHandler(this.frmMiniList_ResizeEnd);
             this.InitializeComponent();
+            this.Name = nameof(frmMiniList);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmMiniList));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
         }
 

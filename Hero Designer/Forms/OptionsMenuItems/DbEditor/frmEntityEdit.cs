@@ -12,119 +12,21 @@ namespace Hero_Designer
 {
     public partial class frmEntityEdit : Form
     {
-        Button btnCancel;
-
-        Button btnOK;
-
-        Button btnPAdd;
-
-        Button btnPDelete;
-
-        Button btnPDown;
-
-        Button btnPUp;
-
-        Button btnUGAdd;
-
-        Button btnUGDelete;
-
-        Button btnUGDown;
-
-        Button btnUGUp;
-
-        ComboBox cbClass;
-
-        ComboBox cbEntType;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader10;
-        ColumnHeader ColumnHeader11;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        Label Label1;
-        Label Label2;
-        Label Label3;
-        Label Label4;
-        Label Label5;
-
-        ListView lvPower;
-
-        ListView lvPSGroup;
-
-        [AccessedThroughProperty("lvPSSet")]
-        ListView _lvPSSet;
-
-        ListView lvUGGroup;
-
-        [AccessedThroughProperty("lvUGPower")]
-        ListView _lvUGPower;
-
-        ListView lvUGSet;
-
-        ListView lvUpgrade;
-
-        TextBox txtDisplayName;
-
-        TextBox txtEntName;
 
         protected bool loading;
         public SummonedEntity myEntity;
         protected bool Updating;
-        ListView lvPSSet
-        {
-            get
-            {
-                return this._lvPSSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvPSSet_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvPSSet_Click);
-                if (this._lvPSSet != null)
-                {
-                    this._lvPSSet.SelectedIndexChanged -= eventHandler1;
-                    this._lvPSSet.Click -= eventHandler2;
-                }
-                this._lvPSSet = value;
-                if (this._lvPSSet == null)
-                    return;
-                this._lvPSSet.SelectedIndexChanged += eventHandler1;
-                this._lvPSSet.Click += eventHandler2;
-            }
-        }
-        ListView lvUGPower
-        {
-            get
-            {
-                return this._lvUGPower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvUGPower_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvUGPower_Click);
-                if (this._lvUGPower != null)
-                {
-                    this._lvUGPower.SelectedIndexChanged -= eventHandler1;
-                    this._lvUGPower.Click -= eventHandler2;
-                }
-                this._lvUGPower = value;
-                if (this._lvUGPower == null)
-                    return;
-                this._lvUGPower.SelectedIndexChanged += eventHandler1;
-                this._lvUGPower.Click += eventHandler2;
-            }
-        }
+
         public frmEntityEdit(SummonedEntity iEntity)
         {
             this.Load += new EventHandler(this.frmEntityEdit_Load);
             this.Updating = false;
             this.loading = true;
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityEdit));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Label4.Text = componentResourceManager.GetString("Label4.Text");
+            this.Name = nameof(frmEntityEdit);
             this.myEntity = new SummonedEntity(iEntity);
         }
 

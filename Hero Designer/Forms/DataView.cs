@@ -24,110 +24,47 @@ namespace Hero_Designer
         protected const int szLargeText = 100;
         protected const int szLineHeight = 16;
         protected const int szPadding = 4;
-        [AccessedThroughProperty("CtlDamageDisplay1")]
-        ctlDamageDisplay _CtlDamageDisplay1;
-
-        [AccessedThroughProperty("dbTip")]
-        ToolTip _dbTip;
-
+        ToolTip dbTip;
         GFXLabel Enh_Title;
-
         ctlPairedList enhListing;
-
-        [AccessedThroughProperty("enhNameDisp")]
-        GFXLabel _enhNameDisp;
-
-        [AccessedThroughProperty("fx_lblHead1")]
-        Label _fx_lblHead1;
-
-        [AccessedThroughProperty("fx_lblHead2")]
-        Label _fx_lblHead2;
-
-        [AccessedThroughProperty("fx_LblHead3")]
-        Label _fx_LblHead3;
-
+        GFXLabel enhNameDisp;
+        Label fx_lblHead1;
+        Label fx_lblHead2;
+        Label fx_LblHead3;
         ctlPairedList fx_List1;
-
         ctlPairedList fx_List2;
-
         ctlPairedList fx_List3;
-
         GFXLabel fx_Title;
-
-        [AccessedThroughProperty("gDef1")]
-        ctlMultiGraph _gDef1;
-
-        [AccessedThroughProperty("gDef2")]
-        ctlMultiGraph _gDef2;
-
-        [AccessedThroughProperty("gRes1")]
-        ctlMultiGraph _gRes1;
-
-        [AccessedThroughProperty("gRes2")]
-        ctlMultiGraph _gRes2;
-
-        [AccessedThroughProperty("info_Damage")]
-        ctlDamageDisplay _info_Damage;
-
+        ctlMultiGraph gDef1;
+        ctlMultiGraph gDef2;
+        ctlMultiGraph gRes1;
+        ctlMultiGraph gRes2;
+        ctlDamageDisplay info_Damage;
         ctlPairedList info_DataList;
-
         GFXLabel info_Title;
-
-        [AccessedThroughProperty("info_txtLarge")]
-        RichTextBox _info_txtLarge;
-
-        [AccessedThroughProperty("info_txtSmall")]
-        RichTextBox _info_txtSmall;
-
-        [AccessedThroughProperty("lblDmg")]
-        Label _lblDmg;
-
+        RichTextBox info_txtLarge;
+        RichTextBox info_txtSmall;
+        Label lblDmg;
         Label lblFloat;
-
         Label lblLock;
-
         Label lblShrink;
-
-        [AccessedThroughProperty("lblTotal")]
-        Label _lblTotal;
-
-        [AccessedThroughProperty("pnlEnh")]
-        Panel _pnlEnh;
-
+        Label lblTotal;
+        Panel pnlEnh;
         Panel pnlEnhActive;
-
         Panel pnlEnhInactive;
-
-        [AccessedThroughProperty("pnlFX")]
-        Panel _pnlFX;
-
-        [AccessedThroughProperty("pnlInfo")]
-        Panel _pnlInfo;
-
+        Panel pnlFX;
+        Panel pnlInfo;
         Panel pnlTabs;
-
-        [AccessedThroughProperty("pnlTotal")]
-        Panel _pnlTotal;
-
+        Panel pnlTotal;
         ctlMultiGraph PowerScaler;
-
-        [AccessedThroughProperty("total_lblDef")]
-        Label _total_lblDef;
-
-        [AccessedThroughProperty("total_lblMisc")]
-        Label _total_lblMisc;
-
-        [AccessedThroughProperty("total_lblRes")]
-        Label _total_lblRes;
-
+        Label total_lblDef;
+        Label total_lblMisc;
+        Label total_lblRes;
         ctlPairedList total_Misc;
-
         GFXLabel total_Title;
 
         bool bFloating;
-
         ExtendedBitmap bxFlip;
-
         bool Compact;
 
         IContainer components;
@@ -153,7 +90,6 @@ namespace Hero_Designer
         public int TabPage;
         bool VillainColour;
 
-
         public event FloatChangeEventHandler FloatChange;
 
         public event MovedEventHandler Moved;
@@ -167,32 +103,6 @@ namespace Hero_Designer
         public event TabChangedEventHandler TabChanged;
 
         public event Unlock_ClickEventHandler Unlock_Click;
-
-        ctlDamageDisplay CtlDamageDisplay1
-        {
-            get
-            {
-                return this._CtlDamageDisplay1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._CtlDamageDisplay1 = value;
-            }
-        }
-
-        ToolTip dbTip
-        {
-            get
-            {
-                return this._dbTip;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._dbTip = value;
-            }
-        }
 
         public bool DrawVillain
         {
@@ -210,19 +120,6 @@ namespace Hero_Designer
                 else
                     this.pnlInfo.BackColor = System.Drawing.Color.Navy;
                 this.DoPaint();
-            }
-        }
-
-        GFXLabel enhNameDisp
-        {
-            get
-            {
-                return this._enhNameDisp;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._enhNameDisp = value;
             }
         }
 
@@ -248,131 +145,28 @@ namespace Hero_Designer
             }
         }
 
-        Label fx_lblHead1
+        internal ctlDamageDisplay Info_Damage
         {
             get
             {
-                return this._fx_lblHead1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_lblHead1 = value;
-            }
-        }
-
-        Label fx_lblHead2
-        {
-            get
-            {
-                return this._fx_lblHead2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_lblHead2 = value;
-            }
-        }
-
-        Label fx_LblHead3
-        {
-            get
-            {
-                return this._fx_LblHead3;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._fx_LblHead3 = value;
-            }
-        }
-        ctlMultiGraph gDef1
-        {
-            get
-            {
-                return this._gDef1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gDef1 = value;
-            }
-        }
-
-        ctlMultiGraph gDef2
-        {
-            get
-            {
-                return this._gDef2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gDef2 = value;
-            }
-        }
-
-        ctlMultiGraph gRes1
-        {
-            get
-            {
-                return this._gRes1;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gRes1 = value;
-            }
-        }
-
-        ctlMultiGraph gRes2
-        {
-            get
-            {
-                return this._gRes2;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._gRes2 = value;
-            }
-        }
-
-        internal ctlDamageDisplay info_Damage
-        {
-            get
-            {
-                return this._info_Damage;
+                return this.info_Damage;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             private set
             {
-                this._info_Damage = value;
+                this.info_Damage = value;
             }
         }
-        internal RichTextBox info_txtLarge
+        internal RichTextBox Info_txtLarge
         {
             get
             {
-                return this._info_txtLarge;
+                return this.info_txtLarge;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                this._info_txtLarge = value;
-            }
-        }
-
-        RichTextBox info_txtSmall
-        {
-            get
-            {
-                return this._info_txtSmall;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._info_txtSmall = value;
+                this.info_txtLarge = value;
             }
         }
 
@@ -384,124 +178,11 @@ namespace Hero_Designer
             }
         }
 
-        Label lblDmg
-        {
-            get
-            {
-                return this._lblDmg;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblDmg = value;
-            }
-        }
-        Label lblTotal
-        {
-            get
-            {
-                return this._lblTotal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._lblTotal = value;
-            }
-        }
-
-        Panel pnlEnh
-        {
-            get
-            {
-                return this._pnlEnh;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlEnh = value;
-            }
-        }
-        Panel pnlFX
-        {
-            get
-            {
-                return this._pnlFX;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlFX = value;
-            }
-        }
-
-        Panel pnlInfo
-        {
-            get
-            {
-                return this._pnlInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlInfo = value;
-            }
-        }
-        Panel pnlTotal
-        {
-            get
-            {
-                return this._pnlTotal;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._pnlTotal = value;
-            }
-        }
         public int TabPageIndex
         {
             get
             {
                 return this.TabPage;
-            }
-        }
-
-        Label total_lblDef
-        {
-            get
-            {
-                return this._total_lblDef;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblDef = value;
-            }
-        }
-
-        Label total_lblMisc
-        {
-            get
-            {
-                return this._total_lblMisc;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblMisc = value;
-            }
-        }
-
-        Label total_lblRes
-        {
-            get
-            {
-                return this._total_lblRes;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                this._total_lblRes = value;
             }
         }
 
@@ -511,15 +192,12 @@ namespace Hero_Designer
             {
                 return !this.Compact ? Enums.eVisibleSize.Full : Enums.eVisibleSize.Compact;
             }
-            set
-            {
-            }
+            // why is this ignored?
+            set {  }
         }
 
         public DataView()
         {
-            this.BackColorChanged += new EventHandler(this.DataView_BackColorChanged);
-            this.Load += new EventHandler(this.DataView_Load);
             this.MoveDisable = false;
             this.TabPage = 0;
             this.Pages = new string[4]
@@ -536,6 +214,9 @@ namespace Hero_Designer
             this.Compact = false;
             this.bxFlip = null;
             this.InitializeComponent();
+            this.BackColorChanged += new EventHandler(this.DataView_BackColorChanged);
+            this.Load += new EventHandler(this.DataView_Load);
+            this.Name = nameof(DataView);
         }
 
         static ctlPairedList.ItemPair BuildEDItem(
@@ -652,9 +333,7 @@ namespace Hero_Designer
             this.Compact = true;
             if (!(this.Size != size))
                 return;
-            DataView.SizeChangeEventHandler sizeChange = this.SizeChange;
-            if (sizeChange != null)
-                sizeChange(this.Size, this.Compact);
+            this.SizeChange?.Invoke(this.Size, this.Compact);
         }
 
         void DataView_BackColorChanged(object sender, EventArgs e)
@@ -1294,7 +973,7 @@ namespace Hero_Designer
 
         void DisplayFlippedEnhancements()
         {
-            Pen pen = this.enhListing.BackColor.B <= (byte)10 ? new Pen(Color.FromArgb((int)byte.MaxValue, 0, 0)) : new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue));
+            Pen pen = this.enhListing.BackColor.B <= 10 ? new Pen(Color.FromArgb((int)byte.MaxValue, 0, 0)) : new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue));
             if (this.bxFlip == null)
                 this.bxFlip = new ExtendedBitmap(this.pnlEnhActive.Width, this.pnlEnhInactive.Height * 2);
             this.bxFlip.Graphics.Clear(this.enhListing.BackColor);
@@ -1449,7 +1128,6 @@ namespace Hero_Designer
             this.gDef1.Draw();
             this.gDef2.Draw();
             string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((float)((double)MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
-            string empty = string.Empty;
             this.gRes1.Clear();
             this.gRes2.Clear();
             int[] numArray2 = new int[13]
@@ -3395,7 +3073,6 @@ namespace Hero_Designer
             this.Controls.Add((Control)this.pnlEnh);
             this.Controls.Add((Control)this.pnlFX);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
-            this.Name = nameof(DataView);
 
             this.Size = new System.Drawing.Size(564, 540);
             this.pnlInfo.ResumeLayout(false);
@@ -3403,60 +3080,57 @@ namespace Hero_Designer
             this.pnlTotal.ResumeLayout(false);
             this.pnlEnh.ResumeLayout(false);
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
 
-                // Enh_Title events
-                this.Enh_Title.MouseMove += Title_MouseMove;
-                this.Enh_Title.MouseDown += Title_MouseDown;
+            // Enh_Title events
+            this.Enh_Title.MouseMove += Title_MouseMove;
+            this.Enh_Title.MouseDown += Title_MouseDown;
 
-                this.PowerScaler.BarClick += PowerScaler_BarClick;
-                this.enhListing.ItemHover += PairedList_Hover;
-                this.fx_List1.ItemHover += PairedList_Hover;
-                this.fx_List2.ItemHover += PairedList_Hover;
-                this.fx_List3.ItemHover += PairedList_Hover;
+            this.PowerScaler.BarClick += PowerScaler_BarClick;
+            this.enhListing.ItemHover += PairedList_Hover;
+            this.fx_List1.ItemHover += PairedList_Hover;
+            this.fx_List2.ItemHover += PairedList_Hover;
+            this.fx_List3.ItemHover += PairedList_Hover;
 
-                // fx_Title events
-                this.fx_Title.MouseMove += Title_MouseMove;
-                this.fx_Title.MouseDown += Title_MouseDown;
+            // fx_Title events
+            this.fx_Title.MouseMove += Title_MouseMove;
+            this.fx_Title.MouseDown += Title_MouseDown;
 
-                this.info_DataList.ItemHover += PairedList_Hover;
+            this.info_DataList.ItemHover += PairedList_Hover;
 
-                // info_Title events
-                this.info_Title.MouseMove += Title_MouseMove;
-                this.info_Title.MouseDown += Title_MouseDown;
+            // info_Title events
+            this.info_Title.MouseMove += Title_MouseMove;
+            this.info_Title.MouseDown += Title_MouseDown;
 
-                this.lblFloat.Click += lblFloat_Click;
-                this.lblLock.Click += lblLock_Click;
+            this.lblFloat.Click += lblFloat_Click;
+            this.lblLock.Click += lblLock_Click;
 
-                // lblShrink events
-                this.lblShrink.DoubleClick += lblShrink_DoubleClick;
-                this.lblShrink.Click += lblShrink_Click;
+            // lblShrink events
+            this.lblShrink.DoubleClick += lblShrink_DoubleClick;
+            this.lblShrink.Click += lblShrink_Click;
 
 
-                // pnlEnhActive events
-                this.pnlEnhActive.Paint += pnlEnhActive_Paint;
-                this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
-                this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
+            // pnlEnhActive events
+            this.pnlEnhActive.Paint += pnlEnhActive_Paint;
+            this.pnlEnhActive.MouseMove += pnlEnhActive_MouseMove;
+            this.pnlEnhActive.MouseClick += pnlEnhActive_MouseClick;
 
 
-                // pnlEnhInactive events
-                this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
-                this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
-                this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
+            // pnlEnhInactive events
+            this.pnlEnhInactive.Paint += pnlEnhInactive_Paint;
+            this.pnlEnhInactive.MouseMove += pnlEnhInactive_MouseMove;
+            this.pnlEnhInactive.MouseClick += pnlEnhInactive_MouseClick;
 
 
-                // pnlTabs events
-                this.pnlTabs.MouseDown += pnlTabs_MouseDown;
-                this.pnlTabs.Paint += pnlTabs_Paint;
+            // pnlTabs events
+            this.pnlTabs.MouseDown += pnlTabs_MouseDown;
+            this.pnlTabs.Paint += pnlTabs_Paint;
 
-                this.total_Misc.ItemHover += PairedList_Hover;
+            this.total_Misc.ItemHover += PairedList_Hover;
 
-                // total_Title events
-                this.total_Title.MouseMove += Title_MouseMove;
-                this.total_Title.MouseDown += Title_MouseDown;
+            // total_Title events
+            this.total_Title.MouseMove += Title_MouseMove;
+            this.total_Title.MouseDown += Title_MouseDown;
 
-            }
             // finished with events
             this.ResumeLayout(false);
         }

@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmColourSettings));
             this.rtPreview = new System.Windows.Forms.RichTextBox();
             this.csInv = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
@@ -330,36 +329,60 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.rtPreview);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmColourSettings);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Colors";
             this.ResumeLayout(false);
             //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Listlabel1.ItemClick += Listlabel1_ItemClick;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnReset.Click += btnReset_Click;
-                this.csAlert.Click += csAlert_Click;
-                this.csEnh.Click += csEnh_Click;
-                this.csFade.Click += csFade_Click;
-                this.csHero.Click += csHero_Click;
-                this.csInv.Click += csInv_Click;
-                this.csInvInv.Click += csInvInv_Click;
-                this.csSpecial.Click += csSpecial_Click;
-                this.csText.Click += csText_Click;
-                this.csValue.Click += csValue_Click;
-                this.csVillain.Click += csVillain_Click;
-            }
+            this.Listlabel1.ItemClick += Listlabel1_ItemClick;
+            this.btnCancel.Click += btnCancel_Click;
+            this.btnOK.Click += btnOK_Click;
+            this.btnReset.Click += btnReset_Click;
+            this.csAlert.Click += csAlert_Click;
+            this.csEnh.Click += csEnh_Click;
+            this.csFade.Click += csFade_Click;
+            this.csHero.Click += csHero_Click;
+            this.csInv.Click += csInv_Click;
+            this.csInvInv.Click += csInvInv_Click;
+            this.csSpecial.Click += csSpecial_Click;
+            this.csText.Click += csText_Click;
+            this.csValue.Click += csValue_Click;
+            this.csVillain.Click += csVillain_Click;
             // finished with events
             this.PerformLayout();
         }
 
         #endregion
+
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnReset;
+        System.Windows.Forms.ColorDialog cPicker;
+        System.Windows.Forms.Label csAlert;
+        System.Windows.Forms.Label csEnh;
+        System.Windows.Forms.Label csFade;
+        System.Windows.Forms.Label csHero;
+        System.Windows.Forms.Label csInv;
+        System.Windows.Forms.Label csInvInv;
+        System.Windows.Forms.Label csSpecial;
+        System.Windows.Forms.Label csText;
+        System.Windows.Forms.Label csValue;
+        System.Windows.Forms.Label csVillain;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label10;
+        System.Windows.Forms.Label Label19;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label20;
+        System.Windows.Forms.Label Label21;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.RichTextBox rtPreview;
     }
 }

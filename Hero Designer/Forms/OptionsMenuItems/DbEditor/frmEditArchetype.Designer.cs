@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEditArchetype));
             this.txtName = new System.Windows.Forms.TextBox();
             this.Label1 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
@@ -97,6 +96,7 @@ namespace Hero_Designer
 
             this.txtName.Size = new System.Drawing.Size(118, 20);
             this.txtName.TabIndex = 0;
+            this.txtName.TextChanged += txtName_TextChanged;
 
             this.Label1.Location = new System.Drawing.Point(30, 16);
             this.Label1.Name = "Label1";
@@ -148,6 +148,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 10;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += btnOK_Click;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(353, 585);
@@ -156,6 +157,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += btnCancel_Click;
 
             this.Label6.Location = new System.Drawing.Point(6, 45);
             this.Label6.Name = "Label6";
@@ -178,6 +180,7 @@ namespace Hero_Designer
 
             this.cbClassType.Size = new System.Drawing.Size(118, 21);
             this.cbClassType.TabIndex = 17;
+            this.cbClassType.SelectedIndexChanged += cbClassType_SelectedIndexChanged;
 
             this.Label7.Location = new System.Drawing.Point(30, 68);
             this.Label7.Name = "Label7";
@@ -200,6 +203,7 @@ namespace Hero_Designer
 
             this.txtClassName.Size = new System.Drawing.Size(118, 20);
             this.txtClassName.TabIndex = 19;
+            this.txtClassName.TextChanged += txtClassName_TextChanged;
 
             this.udColumn.Location = new System.Drawing.Point(121, 95);
             this.udColumn.Name = "udColumn";
@@ -207,14 +211,7 @@ namespace Hero_Designer
             this.udColumn.Size = new System.Drawing.Size(120, 20);
             this.udColumn.TabIndex = 21;
             this.udColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            System.Decimal num = new System.Decimal(new int[4]
-            {
-        2,
-        0,
-        0,
-        0
-            });
-            this.udColumn.Value = num;
+            this.udColumn.Value = new System.Decimal(new int[4] { 2, 0, 0, 0 });
 
             this.Label8.Location = new System.Drawing.Point(30, 95);
             this.Label8.Name = "Label8";
@@ -252,15 +249,13 @@ namespace Hero_Designer
             this.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udThreat.Location = new System.Drawing.Point(189, 121);
-            num = new System.Decimal(new int[4] { 10, 0, 0, 0 });
-            this.udThreat.Maximum = num;
+            this.udThreat.Maximum = new System.Decimal(new int[4] { 10, 0, 0, 0 });
             this.udThreat.Name = "udThreat";
 
             this.udThreat.Size = new System.Drawing.Size(52, 20);
             this.udThreat.TabIndex = 24;
             this.udThreat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 2, 0, 0, 0 });
-            this.udThreat.Value = num;
+            this.udThreat.Value = new System.Decimal(new int[4] { 2, 0, 0, 0 });
             this.chkPlayable.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.chkPlayable.Location = new System.Drawing.Point(13, 121);
@@ -271,6 +266,7 @@ namespace Hero_Designer
             this.chkPlayable.Text = "Playable:";
             this.chkPlayable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkPlayable.UseVisualStyleBackColor = true;
+            this.chkPlayable.CheckedChanged += chkPlayable_CheckedChanged;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.txtRecCap);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.Label21);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.Label22);
@@ -493,6 +489,7 @@ namespace Hero_Designer
 
             this.txtDescLong.Size = new System.Drawing.Size(418, 81);
             this.txtDescLong.TabIndex = 4;
+            this.txtDescLong.TextChanged += txtDescLong_TextChanged;
 
             this.Label4.Location = new System.Drawing.Point(12, 19);
             this.Label4.Name = "Label4";
@@ -507,6 +504,7 @@ namespace Hero_Designer
 
             this.txtDescShort.Size = new System.Drawing.Size(418, 20);
             this.txtDescShort.TabIndex = 2;
+            this.txtDescShort.TextChanged += txtDescShort_TextChanged;
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.cbSecGroup);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.Label16);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.cbPriGroup);
@@ -564,10 +562,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.btnCancel);
             this.Controls.Add((System.Windows.Forms.Control)this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmEditArchetype);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Class (Class_Blaster - Blaster)";
@@ -581,19 +577,6 @@ namespace Hero_Designer
             this.GroupBox4.ResumeLayout(false);
             this.GroupBox4.PerformLayout();
             this.GroupBox5.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.cbClassType.SelectedIndexChanged += cbClassType_SelectedIndexChanged;
-                this.chkPlayable.CheckedChanged += chkPlayable_CheckedChanged;
-                this.txtClassName.TextChanged += txtClassName_TextChanged;
-                this.txtDescLong.TextChanged += txtDescLong_TextChanged;
-                this.txtDescShort.TextChanged += txtDescShort_TextChanged;
-                this.txtName.TextChanged += txtName_TextChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

@@ -19,10 +19,8 @@ namespace Hero_Designer
         ImageButton ibClose;
 
         Label lblLock;
-
-        ListLabelV2 _llLeft;
-
-        ListLabelV2 _llRight;
+        ListLabelV2 llLeft;
+        ListLabelV2 llRight;
 
         bool _locked;
 
@@ -36,21 +34,25 @@ namespace Hero_Designer
         VScrollBar VScrollBar1;
 
         internal frmIncarnate.CustomPanel Panel2;
-        internal ListLabelV2 llLeft
+        internal ListLabelV2 LLLeft
         {
-            get => _llLeft;
-            private set => _llLeft = value;
+            get => llLeft;
+            private set => llLeft = value;
         }
-        internal ListLabelV2 llRight
+        internal ListLabelV2 LLRight
         {
-            get => _llRight;
-            private set => _llRight = value;
+            get => llRight;
+            private set => llRight = value;
         }
+
         public frmAccolade(frmMain iParent, List<IPower> iPowers)
         {
             this.Load += new EventHandler(this.frmAccolade_Load);
             this._locked = false;
             this.InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmAccolade));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmAccolade);
             this._myParent = iParent;
             this._myPowers = iPowers;
         }

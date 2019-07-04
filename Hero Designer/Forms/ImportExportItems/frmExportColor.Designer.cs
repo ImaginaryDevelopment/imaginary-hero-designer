@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmExportColor));
             this.myTip = new System.Windows.Forms.ToolTip(this.components);
             this.csSlots = new System.Windows.Forms.Label();
             this.csLevel = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@ namespace Hero_Designer
 
             this.csSlots.Size = new System.Drawing.Size(52, 16);
             this.csSlots.TabIndex = 17;
+            this.csSlots.Click += csSlots_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csSlots, "Click here to select the colour for this attribute.");
             this.csLevel.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -75,6 +75,7 @@ namespace Hero_Designer
 
             this.csLevel.Size = new System.Drawing.Size(52, 16);
             this.csLevel.TabIndex = 16;
+            this.csLevel.Click += csLevel_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csLevel, "Click here to select the colour for this attribute.");
             this.csHeading.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csHeading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -84,6 +85,7 @@ namespace Hero_Designer
 
             this.csHeading.Size = new System.Drawing.Size(52, 16);
             this.csHeading.TabIndex = 15;
+            this.csHeading.Click += csHeading_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csHeading, "Click here to select the colour for this attribute.");
             this.csTitle.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -93,6 +95,7 @@ namespace Hero_Designer
 
             this.csTitle.Size = new System.Drawing.Size(52, 16);
             this.csTitle.TabIndex = 14;
+            this.csTitle.Click += csTitle_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csTitle, "Click here to select the colour for this attribute.");
             this.csIO.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csIO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -102,6 +105,7 @@ namespace Hero_Designer
 
             this.csIO.Size = new System.Drawing.Size(52, 16);
             this.csIO.TabIndex = 23;
+            this.csIO.Click += csIO_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csIO, "Click here to select the colour for this attribute.");
             this.csSet.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -111,6 +115,7 @@ namespace Hero_Designer
 
             this.csSet.Size = new System.Drawing.Size(52, 16);
             this.csSet.TabIndex = 26;
+            this.csSet.Click += csSet_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csSet, "Click here to select the colour for this attribute.");
             this.csHO.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csHO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -120,6 +125,7 @@ namespace Hero_Designer
 
             this.csHO.Size = new System.Drawing.Size(52, 16);
             this.csHO.TabIndex = 28;
+            this.csHO.Click += csHO_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csHO, "Click here to select the colour for this attribute.");
             this.csPower.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csPower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -129,6 +135,7 @@ namespace Hero_Designer
 
             this.csPower.Size = new System.Drawing.Size(52, 16);
             this.csPower.TabIndex = 32;
+            this.csPower.Click += csPower_Click;
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csPower, "Click here to select the colour for this attribute.");
             this.cPicker.FullOpen = true;
 
@@ -170,6 +177,7 @@ namespace Hero_Designer
             this.txtName.Size = new System.Drawing.Size(124, 20);
             this.txtName.TabIndex = 18;
             this.txtName.Text = "Scheme Name";
+            this.txtName.TextChanged += txtName_TextChanged;
 
             this.Label1.Location = new System.Drawing.Point(8, 8);
             this.Label1.Name = "Label1";
@@ -218,6 +226,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 29;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += btnOK_Click;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(44, 256);
@@ -226,6 +235,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += btnCancel_Click;
 
             this.Label3.Location = new System.Drawing.Point(36, 144);
             this.Label3.Name = "Label3";
@@ -261,32 +271,37 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.Label20);
             this.Controls.Add((System.Windows.Forms.Control)this.Label19);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmExportColor);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Colour Scheme Editor";
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.csHO.Click += csHO_Click;
-                this.csHeading.Click += csHeading_Click;
-                this.csIO.Click += csIO_Click;
-                this.csLevel.Click += csLevel_Click;
-                this.csPower.Click += csPower_Click;
-                this.csSet.Click += csSet_Click;
-                this.csSlots.Click += csSlots_Click;
-                this.csTitle.Click += csTitle_Click;
-                this.txtName.TextChanged += txtName_TextChanged;
-            }
-            // finished with events
             this.PerformLayout();
         }
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.ColorDialog cPicker;
+        System.Windows.Forms.Label csHeading;
+        System.Windows.Forms.Label csHO;
+        System.Windows.Forms.Label csIO;
+        System.Windows.Forms.Label csLevel;
+        System.Windows.Forms.Label csPower;
+        System.Windows.Forms.Label csSet;
+        System.Windows.Forms.Label csSlots;
+        System.Windows.Forms.Label csTitle;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label19;
+        System.Windows.Forms.Label Label20;
+        System.Windows.Forms.Label Label21;
+        System.Windows.Forms.Label Label22;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.ToolTip myTip;
+        System.Windows.Forms.TextBox txtName;
         #endregion
     }
 }

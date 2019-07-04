@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmFloatingStats));
             this.dvFloat = new DataView();
             this.SuspendLayout();
             this.dvFloat.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
@@ -43,16 +42,21 @@ namespace Hero_Designer
             this.dvFloat.Size = new System.Drawing.Size(300, 348);
             this.dvFloat.TabIndex = 0;
             this.dvFloat.VisibleSize = Enums.eVisibleSize.Full;
+            this.dvFloat.Load += this.dvFloat_Load;
+            this.dvFloat.SizeChange += this.dvFloat_SizeChange;
+            this.dvFloat.FloatChange += this.dvFloat_FloatChanged;
+            this.dvFloat.Unlock_Click += this.dvFloat_Unlock;
+            this.dvFloat.TabChanged += this.dvFloat_TabChanged;
+            this.dvFloat.SlotUpdate += this.dvFloat_SlotUpdate;
+            this.dvFloat.SlotFlip += this.dvFloat_SlotFlip;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
 
             this.ClientSize = new System.Drawing.Size(298, 348);
             this.Controls.Add((System.Windows.Forms.Control)this.dvFloat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmFloatingStats);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Info";
