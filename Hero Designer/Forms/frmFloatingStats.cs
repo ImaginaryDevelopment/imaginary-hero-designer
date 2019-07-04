@@ -10,7 +10,7 @@ namespace Hero_Designer
 {
     public partial class frmFloatingStats : Form
     {
-        DataView dvFloat;
+        public DataView dvFloat;
 
         frmMain myOwner;
 
