@@ -396,78 +396,6 @@ namespace Hero_Designer
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ListBox lvFX
         {
             get
@@ -477,17 +405,14 @@ namespace Hero_Designer
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                KeyPressEventHandler pressEventHandler = new KeyPressEventHandler(this.lvFX_KeyPress);
                 EventHandler eventHandler = new EventHandler(this.lvFX_DoubleClick);
                 if (this._lvFX != null)
                 {
-                    this._lvFX.KeyPress -= pressEventHandler;
                     this._lvFX.DoubleClick -= eventHandler;
                 }
                 this._lvFX = value;
                 if (this._lvFX == null)
                     return;
-                this._lvFX.KeyPress += pressEventHandler;
                 this._lvFX.DoubleClick += eventHandler;
             }
         }
@@ -598,16 +523,6 @@ namespace Hero_Designer
                 this._pbInvSetUsed.Paint += paintEventHandler;
             }
         }
-
-
-
-
-
-
-
-
-
-
 
         TextBox txtAcc
         {
@@ -1124,16 +1039,15 @@ namespace Hero_Designer
             }
             else
             {
-                int num1 = (int)Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox("Import failed. No changes made.", MsgBoxStyle.OkOnly, null);
             }
         }
 
         void btnFullCopy_Click(object sender, EventArgs e)
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
             MemoryStream memoryStream = new MemoryStream();
-            BinaryWriter writer = new BinaryWriter((Stream)memoryStream);
+            BinaryWriter writer = new BinaryWriter(memoryStream);
             this.myPower.StoreTo(ref writer);
             writer.Close();
             Clipboard.SetDataObject(new DataObject(format.Name, memoryStream.GetBuffer()));
@@ -1141,20 +1055,19 @@ namespace Hero_Designer
         }
 
         void btnFullPaste_Click(object sender, EventArgs e)
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdPowerBIN");
             string groupName = this.myPower.GroupName;
             string setName = this.myPower.SetName;
             if (!Clipboard.ContainsData(format.Name))
             {
-                int num = (int)Interaction.MsgBox("No power data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
+                Interaction.MsgBox("No power data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
             }
             else
             {
                 MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name));
-                BinaryReader reader = new BinaryReader((Stream)memoryStream);
-                this.myPower = (IPower)new Power(reader);
+                BinaryReader reader = new BinaryReader(memoryStream);
+                this.myPower = new Power(reader);
                 this.myPower.GroupName = groupName;
                 this.myPower.SetName = setName;
                 this.SetFullName();
@@ -1165,7 +1078,6 @@ namespace Hero_Designer
         }
 
         void btnFXAdd_Click(object sender, EventArgs e)
-
         {
             IEffect iFX = new Effect();
             frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
@@ -1173,7 +1085,7 @@ namespace Hero_Designer
                 return;
             IPower power1 = this.myPower;
             IPower power2 = power1;
-            IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power2.Effects, (Array)new IEffect[power1.Effects.Length + 1]);
+            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
             power2.Effects = effectArray;
             power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
             this.RefreshFXData(0);
@@ -1181,7 +1093,6 @@ namespace Hero_Designer
         }
 
         void btnFXDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1190,8 +1101,8 @@ namespace Hero_Designer
             {
                 IEffect[] effectArray = new IEffect[2]
                 {
-          (IEffect) this.myPower.Effects[selectedIndex].Clone(),
-          (IEffect) this.myPower.Effects[selectedIndex + 1].Clone()
+                      (IEffect) this.myPower.Effects[selectedIndex].Clone(),
+                      (IEffect) this.myPower.Effects[selectedIndex + 1].Clone()
                 };
                 this.myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
                 this.myPower.Effects[selectedIndex + 1] = (IEffect)effectArray[0].Clone();
@@ -1201,7 +1112,6 @@ namespace Hero_Designer
         }
 
         void btnFXDuplicate_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1220,7 +1130,6 @@ namespace Hero_Designer
         }
 
         void btnFXEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1236,7 +1145,6 @@ namespace Hero_Designer
         }
 
         void btnFXRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndex < 0)
                 return;
@@ -1264,7 +1172,6 @@ namespace Hero_Designer
         }
 
         void btnFXUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvFX.SelectedIndices.Count <= 0)
                 return;
@@ -1282,7 +1189,6 @@ namespace Hero_Designer
         }
 
         void btnMutexAdd_Click(object sender, EventArgs e)
-
         {
             string b = Interaction.InputBox("Please enter a new group name. It must be different to all the others", "Add Mutex Group", "New_Group", -1, -1).Replace(" ", "_");
             int count = this.clbMutex.Items.Count;
@@ -1301,17 +1207,16 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             IPower power = this.myPower;
             this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
             if (power.GroupName == "" | power.SetName == "" | power.PowerName == "")
             {
-                int num1 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
+                Interaction.MsgBox(("Power name '" + power.FullName + " is invalid."), MsgBoxStyle.Exclamation, "No Can Do");
             }
-            else if (!frmEditPower.PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
+            else if (!PowerFullNameIsUnique(Conversions.ToString(power.PowerIndex), -1))
             {
-                int num2 = (int)Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
+                Interaction.MsgBox(("Power name '" + power.FullName + " already exists, please enter a unique name."), MsgBoxStyle.Exclamation, "No Can Do");
             }
             else
             {
@@ -1343,7 +1248,6 @@ namespace Hero_Designer
         }
 
         void btnPrDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1389,14 +1293,12 @@ namespace Hero_Designer
         }
 
         void btnPrReset_Click(object sender, EventArgs e)
-
         {
             this.myPower.Requires = new Requirement(this.backup_Requires);
             this.FillTab_Req();
         }
 
         void btnPrSetNone_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1416,7 +1318,6 @@ namespace Hero_Designer
         }
 
         void btnPrUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -1461,7 +1362,6 @@ namespace Hero_Designer
         }
 
         void btnSPAdd_Click(object sender, EventArgs e)
-
         {
             if (this.lvSPPower.SelectedItems.Count < 1)
                 return;
@@ -1482,7 +1382,6 @@ namespace Hero_Designer
         }
 
         void btnSPRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvSPSelected.SelectedItems.Count < 1)
                 return;
@@ -1517,7 +1416,6 @@ namespace Hero_Designer
         }
 
         void cbEffectArea_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1525,7 +1423,6 @@ namespace Hero_Designer
         }
 
         void cbForcedClass_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1534,7 +1431,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1542,7 +1438,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1551,7 +1446,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1560,7 +1454,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1568,7 +1461,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1577,7 +1469,6 @@ namespace Hero_Designer
         }
 
         void cbNameSet_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1586,7 +1477,6 @@ namespace Hero_Designer
         }
 
         void cbNotify_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1594,7 +1484,6 @@ namespace Hero_Designer
         }
 
         void cbPowerType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1616,7 +1505,6 @@ namespace Hero_Designer
         }
 
         void chkAltSub_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1624,7 +1512,6 @@ namespace Hero_Designer
         }
 
         void chkAlwaysToggle_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1632,7 +1519,6 @@ namespace Hero_Designer
         }
 
         void chkBoostBoostable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1640,7 +1526,6 @@ namespace Hero_Designer
         }
 
         void chkBoostUsePlayerLevel_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1648,7 +1533,6 @@ namespace Hero_Designer
         }
 
         void chkBuffCycle_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1656,7 +1540,6 @@ namespace Hero_Designer
         }
 
         void chkGraphFix_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1664,7 +1547,6 @@ namespace Hero_Designer
         }
 
         void chkHidden_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1672,7 +1554,6 @@ namespace Hero_Designer
         }
 
         void chkIgnoreStrength_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1680,7 +1561,6 @@ namespace Hero_Designer
         }
 
         void chkLos_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1688,7 +1568,6 @@ namespace Hero_Designer
         }
 
         void chkMutexAuto_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1696,7 +1575,6 @@ namespace Hero_Designer
         }
 
         void chkMutexSkip_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1704,7 +1582,6 @@ namespace Hero_Designer
         }
 
         void chkNoAUReq_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1712,7 +1589,6 @@ namespace Hero_Designer
         }
 
         void chkNoAutoUpdate_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1720,7 +1596,6 @@ namespace Hero_Designer
         }
 
         void chkPRFrontLoad_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1728,7 +1603,6 @@ namespace Hero_Designer
         }
 
         void chkScale_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1744,7 +1618,6 @@ namespace Hero_Designer
         }
 
         void chkSortOverride_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1752,7 +1625,6 @@ namespace Hero_Designer
         }
 
         void chkSubInclude_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1760,7 +1632,6 @@ namespace Hero_Designer
         }
 
         void chkSummonDisplayEntity_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1768,7 +1639,6 @@ namespace Hero_Designer
         }
 
         void chkSummonStealAttributes_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1776,7 +1646,6 @@ namespace Hero_Designer
         }
 
         void chkSummonStealEffects_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1784,7 +1653,6 @@ namespace Hero_Designer
         }
 
         void clbFlags_ItemCheck(object sender, ItemCheckEventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -1844,7 +1712,6 @@ namespace Hero_Designer
         }
 
         void DisplayNameData()
-
         {
             IPower power = this.myPower;
             this.lblNameFull.Text = power.GroupName + "." + power.SetName + "." + power.PowerName;
@@ -1895,32 +1762,31 @@ namespace Hero_Designer
                         s = "";
                         break;
                 }
-                RectangleF layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
+                RectangleF layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
-                layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
-                this.bxSet.Graphics.DrawString(s, font, (Brush)solidBrush2, layoutRectangle, format);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
+                layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
+                this.bxSet.Graphics.DrawString(s, font, solidBrush2, layoutRectangle, format);
                 enhPadding2 += 30 + this.enhPadding;
             }
-            this.pbInvSetUsed.CreateGraphics().DrawImageUnscaled((Image)this.bxSet.Bitmap, 0, 0);
+            this.pbInvSetUsed.CreateGraphics().DrawImageUnscaled(bxSet.Bitmap, 0, 0);
         }
 
         void DrawSetList()
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             this.bxSetList = new ExtendedBitmap(this.pbInvSetList.Width, this.pbInvSetList.Height);
@@ -1965,25 +1831,25 @@ namespace Hero_Designer
                         s = "";
                         break;
                 }
-                RectangleF layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
+                RectangleF layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 ++layoutRectangle.Y;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
                 --layoutRectangle.X;
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush1, layoutRectangle, format);
-                layoutRectangle = new RectangleF((float)destRect.X, (float)destRect.Y, (float)destRect.Width, (float)destRect.Height);
-                this.bxSetList.Graphics.DrawString(s, font, (Brush)solidBrush2, layoutRectangle, format);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush1, layoutRectangle, format);
+                layoutRectangle = new RectangleF(destRect.X, destRect.Y, destRect.Width, destRect.Height);
+                this.bxSetList.Graphics.DrawString(s, font, solidBrush2, layoutRectangle, format);
                 enhPadding2 += 30 + this.enhPadding;
                 ++num1;
                 if (num1 == this.enhAcross)
@@ -1993,11 +1859,10 @@ namespace Hero_Designer
                     enhPadding1 += 30 + this.enhPadding;
                 }
             }
-            this.pbInvSetList.CreateGraphics().DrawImageUnscaled((Image)this.bxSetList.Bitmap, 0, 0);
+            this.pbInvSetList.CreateGraphics().DrawImageUnscaled(bxSetList.Bitmap, 0, 0);
         }
 
         void FillAdvAtrList()
-
         {
             int num1 = 0;
             System.Type type = this.myPower.EntitiesAutoHit.GetType();
@@ -2067,7 +1932,6 @@ namespace Hero_Designer
         }
 
         void FillCombo_Attribs()
-
         {
             Enums.ePowerType ePowerType = Enums.ePowerType.Click;
             bool updating = this.Updating;
@@ -2092,13 +1956,12 @@ namespace Hero_Designer
         }
 
         void FillCombo_Basic()
-
         {
             bool updating = this.Updating;
             this.Updating = true;
             this.cbNameGroup.BeginUpdate();
             this.cbNameGroup.Items.Clear();
-            foreach (object key in (IEnumerable<string>)DatabaseAPI.Database.PowersetGroups.Keys)
+            foreach (object key in DatabaseAPI.Database.PowersetGroups.Keys)
                 this.cbNameGroup.Items.Add(key);
             this.cbNameGroup.EndUpdate();
             this.cbNameSet.BeginUpdate();
@@ -2119,21 +1982,19 @@ namespace Hero_Designer
         }
 
         void FillComboBoxes()
-
         {
             Enums.eEnhance eEnhance = Enums.eEnhance.X_RechargeTime;
             this.lvDisablePass1.BeginUpdate();
             this.lvDisablePass1.Items.Clear();
-            this.lvDisablePass1.Items.AddRange((object[])Enum.GetNames(eEnhance.GetType()));
+            this.lvDisablePass1.Items.AddRange(Enum.GetNames(eEnhance.GetType()));
             this.lvDisablePass1.EndUpdate();
             this.lvDisablePass4.BeginUpdate();
             this.lvDisablePass4.Items.Clear();
-            this.lvDisablePass4.Items.AddRange((object[])Enum.GetNames(eEnhance.GetType()));
+            this.lvDisablePass4.Items.AddRange(Enum.GetNames(eEnhance.GetType()));
             this.lvDisablePass4.EndUpdate();
         }
 
         void FillTab_Attribs()
-
         {
             IPower power = this.myPower;
             string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###";
@@ -2163,7 +2024,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Basic()
-
         {
             IPower power = this.myPower;
             this.txtNameDisplay.Text = power.DisplayName;
@@ -2173,8 +2033,8 @@ namespace Hero_Designer
             this.DisplayNameData();
             this.txtDescLong.Text = power.DescLong;
             this.txtDescShort.Text = power.DescShort;
-            this.udScaleMin.Value = new Decimal(power.VariableMin);
-            this.udScaleMax.Value = new Decimal(power.VariableMax);
+            this.udScaleMin.Value = new decimal(power.VariableMin);
+            this.udScaleMax.Value = new decimal(power.VariableMax);
             this.txtScaleName.Text = power.VariableName;
             this.chkScale.Checked = power.VariableEnabled;
             this.chkBuffCycle.Checked = power.ClickBuff;
@@ -2195,7 +2055,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Disabling()
-
         {
             int num1 = this.myPower.IgnoreEnh.Length - 1;
             for (int index = 0; index <= num1; ++index)
@@ -2212,13 +2071,11 @@ namespace Hero_Designer
         }
 
         void FillTab_Effects()
-
         {
             this.RefreshFXData(0);
         }
 
         void FillTab_Enhancements()
-
         {
             this.RedrawEnhList();
             this.chkPRFrontLoad.Checked = this.myPower.AllowFrontLoading;
@@ -2227,7 +2084,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Mutex()
-
         {
             this.chkMutexAuto.Checked = this.myPower.MutexAuto;
             this.chkMutexSkip.Checked = this.myPower.MutexIgnore;
@@ -2253,7 +2109,6 @@ namespace Hero_Designer
         }
 
         void FillTab_Req()
-
         {
             this.ReqChanging = true;
             this.lvPrListing.BeginUpdate();
@@ -2302,7 +2157,6 @@ namespace Hero_Designer
         }
 
         void Filltab_ReqClasses()
-
         {
             this.clbClassReq.BeginUpdate();
             this.clbClassReq.Items.Clear();
@@ -2337,13 +2191,11 @@ namespace Hero_Designer
         }
 
         void FillTab_Sets()
-
         {
             this.DrawAcceptedSets();
         }
 
         void FillTab_SubPowers()
-
         {
             bool reqChanging = this.ReqChanging;
             this.ReqChanging = true;
@@ -2359,7 +2211,6 @@ namespace Hero_Designer
         }
 
         void frmEditPower_Load(object sender, EventArgs e)
-
         {
             this.RedrawEnhPicker();
             this.FillComboBoxes();
@@ -2371,7 +2222,6 @@ namespace Hero_Designer
         }
 
         static int GetClassByID(int iID)
-
         {
             int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
             for (int index = 0; index <= num; ++index)
@@ -2383,7 +2233,6 @@ namespace Hero_Designer
         }
 
         int GetInvSetIndex(Point e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2407,7 +2256,6 @@ namespace Hero_Designer
         }
 
         int GetInvSetListIndex(Point e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2428,10 +2276,7 @@ namespace Hero_Designer
             return num1 + num2 * this.enhAcross;
         }
 
-        [DebuggerStepThrough]
-
         void lblStaticIndex_Click(object sender, EventArgs e)
-
         {
             string s = Interaction.InputBox("Insert new static index for this power.", "", Conversions.ToString(this.myPower.StaticIndex), -1, -1);
             try
@@ -2439,7 +2284,7 @@ namespace Hero_Designer
                 int num1 = int.Parse(s);
                 if (num1 < 0)
                 {
-                    int num2 = (int)Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
+                    Interaction.MsgBox("The static index cannot be a negative number.", MsgBoxStyle.Exclamation, null);
                 }
                 else
                 {
@@ -2450,13 +2295,12 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.OkOnly, null);
                 ProjectData.ClearProjectError();
             }
         }
 
         void lvDisablePass1_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2468,7 +2312,6 @@ namespace Hero_Designer
         }
 
         void lvDisablePass4_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2480,18 +2323,11 @@ namespace Hero_Designer
         }
 
         void lvFX_DoubleClick(object sender, EventArgs e)
-
         {
             this.btnFXEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
-        void lvFX_KeyPress(object sender, KeyPressEventArgs e)
-
-        {
-        }
-
         void lvPrGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvPrGroup.SelectedItems.Count <= 0)
                 return;
@@ -2501,13 +2337,11 @@ namespace Hero_Designer
         }
 
         void lvPrListing_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.Req_Listing_IndexChanged();
         }
 
         void lvPrPower_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging)
                 return;
@@ -2515,7 +2349,6 @@ namespace Hero_Designer
         }
 
         void lvPrSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvPrSet.SelectedItems.Count <= 0)
                 return;
@@ -2523,7 +2356,6 @@ namespace Hero_Designer
         }
 
         void lvSPGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvSPGroup.SelectedItems.Count <= 0)
                 return;
@@ -2532,13 +2364,7 @@ namespace Hero_Designer
                 this.lvSPSet.Items[0].Selected = true;
         }
 
-        void lvSPPower_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-        }
-
         void lvSPSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.ReqChanging || this.lvSPSet.SelectedItems.Count <= 0)
                 return;
@@ -2546,7 +2372,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_Hover(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2572,7 +2397,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_MouseDown(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int num2 = -1;
@@ -2612,7 +2436,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancementList_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxEnhPicker == null)
                 return;
@@ -2620,7 +2443,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_Hover(object sender, MouseEventArgs e)
-
         {
             int num = -1;
             int length = this.myPower.Enhancements.Length;
@@ -2637,7 +2459,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_MouseDown(object sender, MouseEventArgs e)
-
         {
             int num1 = -1;
             int length = this.myPower.Enhancements.Length;
@@ -2670,7 +2491,6 @@ namespace Hero_Designer
         }
 
         void pbEnhancements_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxEnhPicked == null)
                 return;
@@ -2678,7 +2498,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_MouseDown(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2704,7 +2523,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetListIndex = this.GetInvSetListIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2716,15 +2534,13 @@ namespace Hero_Designer
         }
 
         void pbInvSetList_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxSetList == null)
                 return;
-            e.Graphics.DrawImageUnscaled((Image)this.bxSetList.Bitmap, 0, 0);
+            e.Graphics.DrawImageUnscaled(bxSetList.Bitmap, 0, 0);
         }
 
         void pbInvSetUsed_MouseDown(object sender, MouseEventArgs e)
-
         {
             int invSetIndex = this.GetInvSetIndex(new System.Drawing.Point(e.X, e.Y));
             if (!(invSetIndex < this.myPower.SetTypes.Length & invSetIndex > -1))
@@ -2749,7 +2565,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetUsed_MouseMove(object sender, MouseEventArgs e)
-
         {
             Enums.eSetType eSetType = Enums.eSetType.Untyped;
             int invSetIndex = this.GetInvSetIndex(new System.Drawing.Point(e.X, e.Y));
@@ -2761,7 +2576,6 @@ namespace Hero_Designer
         }
 
         void pbInvSetUsed_Paint(object sender, PaintEventArgs e)
-
         {
             if (this.bxSet == null)
                 return;
@@ -2769,7 +2583,6 @@ namespace Hero_Designer
         }
 
         static bool PowerFullNameIsUnique(string iFullName, int skipId = -1)
-
         {
             if (!string.IsNullOrEmpty(iFullName))
             {
@@ -2784,7 +2597,6 @@ namespace Hero_Designer
         }
 
         void rbFlagX_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -2792,7 +2604,6 @@ namespace Hero_Designer
         }
 
         void rbPrAdd_Click(object sender, EventArgs e)
-
         {
             if (Interaction.MsgBox("If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, "Query") == MsgBoxResult.No)
             {
@@ -2817,7 +2628,6 @@ namespace Hero_Designer
         }
 
         void rbPrPowerX_CheckedChanged(object sender, EventArgs e)
-
         {
             if (sender.GetType() == this.rbPrPowerB.GetType() && ((Control)sender).Text == "Power B")
                 return;
@@ -2829,7 +2639,6 @@ namespace Hero_Designer
         }
 
         void rbPrRemove_Click(object sender, EventArgs e)
-
         {
             if (this.lvPrListing.SelectedItems.Count < 1)
                 return;
@@ -2891,7 +2700,6 @@ namespace Hero_Designer
         }
 
         void RedrawEnhList()
-
         {
             this.bxEnhPicked = new ExtendedBitmap(this.pbEnhancements.Width, this.pbEnhancements.Height);
             int enhPadding1 = this.enhPadding;
@@ -2915,7 +2723,6 @@ namespace Hero_Designer
         }
 
         void RedrawEnhPicker()
-
         {
             this.pbEnhancementList.Width = (this.enhPadding + 30) * this.enhAcross + this.enhPadding;
             this.pbEnhancementList.Height = (this.enhPadding + 30) * 6 + this.enhPadding;
@@ -2949,7 +2756,6 @@ namespace Hero_Designer
         }
 
         void refresh_PowerData()
-
         {
             this.Text = "Edit Power (" + this.myPower.FullName + ")";
             this.lblStaticIndex.Text = Conversions.ToString(this.myPower.StaticIndex);
@@ -2968,7 +2774,6 @@ namespace Hero_Designer
         }
 
         void RefreshFXData(int Index = 0)
-
         {
             IPower power = this.myPower;
             this.lvFX.BeginUpdate();
@@ -2984,7 +2789,6 @@ namespace Hero_Designer
         }
 
         void Req_GroupList()
-
         {
             this.lvPrGroup.BeginUpdate();
             this.lvPrGroup.Items.Clear();
@@ -2994,7 +2798,6 @@ namespace Hero_Designer
         }
 
         void Req_Listing_IndexChanged()
-
         {
             if (this.lvPrListing.SelectedIndices.Count < 1)
                 return;
@@ -3003,7 +2806,6 @@ namespace Hero_Designer
         }
 
         void Req_PowerList()
-
         {
             this.lvPrPower.BeginUpdate();
             this.lvPrPower.Items.Clear();
@@ -3028,7 +2830,6 @@ namespace Hero_Designer
         }
 
         void Req_SetList()
-
         {
             this.lvPrSet.BeginUpdate();
             this.lvPrSet.Items.Clear();
@@ -3050,7 +2851,6 @@ namespace Hero_Designer
         }
 
         void Req_UpdateItem()
-
         {
             if (this.lvPrListing.SelectedIndices.Count < 1 | this.lvPrGroup.SelectedIndices.Count < 1 | this.lvPrSet.SelectedIndices.Count < 1 | this.lvPrPower.SelectedIndices.Count < 1)
                 return;
@@ -3082,7 +2882,6 @@ namespace Hero_Designer
         }
 
         void ReqDisplayPower(string iPower)
-
         {
             this.ReqChanging = true;
             string[] strArray = iPower.Split(".".ToCharArray());
@@ -3131,7 +2930,6 @@ namespace Hero_Designer
         }
 
         void SetDynamics()
-
         {
             IPower power = this.myPower;
             this.chkBuffCycle.Enabled = power.PowerType == Enums.ePowerType.Click;
@@ -3144,14 +2942,12 @@ namespace Hero_Designer
         }
 
         void SetFullName()
-
         {
             IPower power = this.myPower;
             power.FullName = power.GroupName + "." + power.SetName + "." + power.PowerName;
         }
 
         void SP_GroupList()
-
         {
             this.lvSPGroup.BeginUpdate();
             this.lvSPGroup.Items.Clear();
@@ -3161,7 +2957,6 @@ namespace Hero_Designer
         }
 
         void SP_PowerList()
-
         {
             this.lvSPPower.BeginUpdate();
             this.lvSPPower.Items.Clear();
@@ -3189,7 +2984,6 @@ namespace Hero_Designer
         }
 
         void SP_SetList()
-
         {
             this.lvSPSet.BeginUpdate();
             this.lvSPSet.Items.Clear();
@@ -3211,7 +3005,6 @@ namespace Hero_Designer
         }
 
         void SPFillList()
-
         {
             this.lvSPSelected.BeginUpdate();
             this.lvSPSelected.Items.Clear();
@@ -3222,7 +3015,6 @@ namespace Hero_Designer
         }
 
         void Store_Req_Classes()
-
         {
             this.myPower.Requires.ClassName = new string[this.clbClassReq.CheckedIndices.Count - 1 + 1];
             int num1 = this.clbClassReq.CheckedIndices.Count - 1;
@@ -3235,7 +3027,6 @@ namespace Hero_Designer
         }
 
         void txtAcc_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3243,7 +3034,6 @@ namespace Hero_Designer
         }
 
         void txtAcc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3254,7 +3044,6 @@ namespace Hero_Designer
         }
 
         void txtActivate_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3262,7 +3051,6 @@ namespace Hero_Designer
         }
 
         void txtActivate_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3273,7 +3061,6 @@ namespace Hero_Designer
         }
 
         void txtArc_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3281,7 +3068,6 @@ namespace Hero_Designer
         }
 
         void txtArc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3292,7 +3078,6 @@ namespace Hero_Designer
         }
 
         void txtCastTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3300,7 +3085,6 @@ namespace Hero_Designer
         }
 
         void txtCastTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3311,7 +3095,6 @@ namespace Hero_Designer
         }
 
         void txtDescLong_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3319,7 +3102,6 @@ namespace Hero_Designer
         }
 
         void txtDescShort_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3327,7 +3109,6 @@ namespace Hero_Designer
         }
 
         void txtEndCost_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3335,7 +3116,6 @@ namespace Hero_Designer
         }
 
         void txtEndCost_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3346,7 +3126,6 @@ namespace Hero_Designer
         }
 
         void txtInterrupt_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3354,7 +3133,6 @@ namespace Hero_Designer
         }
 
         void txtInterrupt_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3365,7 +3143,6 @@ namespace Hero_Designer
         }
 
         void txtLevel_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3373,7 +3150,6 @@ namespace Hero_Designer
         }
 
         void txtLevel_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3384,7 +3160,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeGame_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3392,7 +3167,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeGame_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3403,7 +3177,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeReal_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3411,7 +3184,6 @@ namespace Hero_Designer
         }
 
         void txtLifeTimeReal_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3422,7 +3194,6 @@ namespace Hero_Designer
         }
 
         void txtMaxTargets_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3430,7 +3201,6 @@ namespace Hero_Designer
         }
 
         void txtMaxTargets_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3441,7 +3211,6 @@ namespace Hero_Designer
         }
 
         void txtNamePower_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3449,7 +3218,6 @@ namespace Hero_Designer
         }
 
         void txtNamePower_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3458,7 +3226,6 @@ namespace Hero_Designer
         }
 
         void txtNumCharges_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3466,7 +3233,6 @@ namespace Hero_Designer
         }
 
         void txtNumCharges_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3477,7 +3243,6 @@ namespace Hero_Designer
         }
 
         void txtPowerName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3485,7 +3250,6 @@ namespace Hero_Designer
         }
 
         void txtRadius_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3493,7 +3257,6 @@ namespace Hero_Designer
         }
 
         void txtRadius_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3504,7 +3267,6 @@ namespace Hero_Designer
         }
 
         void txtRange_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3512,7 +3274,6 @@ namespace Hero_Designer
         }
 
         void txtRange_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3523,7 +3284,6 @@ namespace Hero_Designer
         }
 
         void txtRangeSec_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3531,7 +3291,6 @@ namespace Hero_Designer
         }
 
         void txtRangeSec_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3542,7 +3301,6 @@ namespace Hero_Designer
         }
 
         void txtRechargeTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3550,7 +3308,6 @@ namespace Hero_Designer
         }
 
         void txtRechargeTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3561,7 +3318,6 @@ namespace Hero_Designer
         }
 
         void txtScaleName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3569,7 +3325,6 @@ namespace Hero_Designer
         }
 
         void txtUseageTime_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3577,7 +3332,6 @@ namespace Hero_Designer
         }
 
         void txtUseageTime_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3588,7 +3342,6 @@ namespace Hero_Designer
         }
 
         void txtVisualLocation_Leave(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3596,7 +3349,6 @@ namespace Hero_Designer
         }
 
         void txtVisualLocation_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Updating)
                 return;
@@ -3607,40 +3359,34 @@ namespace Hero_Designer
         }
 
         void udScaleMax_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             this.CheckScaleValues();
         }
 
         void udScaleMax_Leave(object sender, EventArgs e)
-
         {
             this.myPower.VariableMax = (int)Math.Round(Conversion.Val(this.udScaleMax.Text));
             this.CheckScaleValues();
         }
 
         void udScaleMax_ValueChanged(object sender, EventArgs e)
-
         {
             this.myPower.VariableMax = Convert.ToInt32(this.udScaleMax.Value);
             this.CheckScaleValues();
         }
 
         void udScaleMin_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             this.CheckScaleValues();
         }
 
         void udScaleMin_Leave(object sender, EventArgs e)
-
         {
             this.myPower.VariableMin = (int)Math.Round(Conversion.Val(this.udScaleMin.Text));
             this.CheckScaleValues();
         }
 
         void udScaleMin_ValueChanged(object sender, EventArgs e)
-
         {
             this.myPower.VariableMin = Convert.ToInt32(this.udScaleMin.Value);
             this.CheckScaleValues();

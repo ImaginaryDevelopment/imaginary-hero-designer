@@ -107,28 +107,6 @@ namespace Hero_Designer
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         TextBox txtNameSet
         {
             get
@@ -165,30 +143,27 @@ namespace Hero_Designer
         {
             this.lvPowers.Items.Add(new ListViewItem(new string[3]
             {
-        Conversions.ToString(DatabaseAPI.Database.Power[this.myPS.Power[Index]].Level),
-        DatabaseAPI.Database.Power[this.myPS.Power[Index]].DisplayName,
-        DatabaseAPI.Database.Power[this.myPS.Power[Index]].DescShort
+                Conversions.ToString(DatabaseAPI.Database.Power[this.myPS.Power[Index]].Level),
+                DatabaseAPI.Database.Power[this.myPS.Power[Index]].DisplayName,
+                DatabaseAPI.Database.Power[this.myPS.Power[Index]].DescShort
             }));
             this.lvPowers.Items[Index].Selected = true;
             this.lvPowers.Items[Index].EnsureVisible();
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
         void btnClearIcon_Click(object sender, EventArgs e)
-
         {
             this.myPS.ImageName = "";
             this.DisplayIcon();
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             IPowerset ps = this.myPS;
             this.lblNameFull.Text = ps.GroupName + "." + ps.SetName;
@@ -209,7 +184,6 @@ namespace Hero_Designer
         }
 
         void btnIcon_Click(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -231,7 +205,6 @@ namespace Hero_Designer
         }
 
         string BuildFullName()
-
         {
             string str = this.cbNameGroup.Text + "." + this.txtNameSet.Text;
             this.lblNameFull.Text = str;
@@ -241,7 +214,6 @@ namespace Hero_Designer
         }
 
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -255,7 +227,6 @@ namespace Hero_Designer
         }
 
         void cbLinkGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -263,7 +234,6 @@ namespace Hero_Designer
         }
 
         void cbLinkSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -282,7 +252,6 @@ namespace Hero_Designer
         }
 
         void cbMutexGroup_SelectionChangeCommitted(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -290,7 +259,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -298,7 +266,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -306,7 +273,6 @@ namespace Hero_Designer
         }
 
         void cbNameGroup_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -314,7 +280,6 @@ namespace Hero_Designer
         }
 
         void cbSetType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -334,7 +299,6 @@ namespace Hero_Designer
         }
 
         void cbTrunkGroup_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -342,7 +306,6 @@ namespace Hero_Designer
         }
 
         void cbTrunkSet_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -361,13 +324,11 @@ namespace Hero_Designer
         }
 
         void chkNoLink_CheckedChanged(object sender, EventArgs e)
-
         {
             this.cbLinkSet_SelectedIndexChanged(this, new EventArgs());
         }
 
         void chkNoTrunk_CheckedChanged(object sender, EventArgs e)
-
         {
             this.cbTrunkSet_SelectedIndexChanged(this, new EventArgs());
         }
@@ -387,7 +348,6 @@ namespace Hero_Designer
         }
 
         void DisplayNameData()
-
         {
             IPowerset ps = this.myPS;
             this.lblNameFull.Text = this.BuildFullName();
@@ -400,7 +360,6 @@ namespace Hero_Designer
         }
 
         void FillLinkGroupCombo()
-
         {
             this.cbLinkGroup.BeginUpdate();
             this.cbLinkGroup.Items.Clear();
@@ -415,7 +374,6 @@ namespace Hero_Designer
         }
 
         void FillLinkSetCombo()
-
         {
             this.cbLinkSet.BeginUpdate();
             this.cbLinkSet.Items.Clear();
@@ -436,7 +394,6 @@ namespace Hero_Designer
         }
 
         void FillTrunkGroupCombo()
-
         {
             this.cbTrunkGroup.BeginUpdate();
             this.cbTrunkGroup.Items.Clear();
@@ -451,7 +408,6 @@ namespace Hero_Designer
         }
 
         void FillTrunkSetCombo()
-
         {
             this.cbTrunkSet.BeginUpdate();
             this.cbTrunkSet.Items.Clear();
@@ -472,7 +428,6 @@ namespace Hero_Designer
         }
 
         void frmEditPowerset_Load(object sender, EventArgs e)
-
         {
             Enums.ePowerSetType ePowerSetType = Enums.ePowerSetType.None;
             this.ListPowers();
@@ -522,10 +477,7 @@ namespace Hero_Designer
             this.DisplayNameData();
         }
 
-        [DebuggerStepThrough]
-
         void ListMutexGroups()
-
         {
             this.cbMutexGroup.BeginUpdate();
             this.cbMutexGroup.Items.Clear();
@@ -540,7 +492,6 @@ namespace Hero_Designer
         }
 
         void ListMutexSets()
-
         {
             this.lvMutexSets.BeginUpdate();
             this.lvMutexSets.Items.Clear();
@@ -581,7 +532,6 @@ namespace Hero_Designer
         }
 
         void lvMutexSets_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbMutexGroup.SelectedIndex < 0)
                 return;
@@ -598,7 +548,6 @@ namespace Hero_Designer
         }
 
         static bool PowersetFullNameIsUnique(string iFullName, int skipId = -1)
-
         {
             if (!string.IsNullOrEmpty(iFullName))
             {
@@ -613,7 +562,6 @@ namespace Hero_Designer
         }
 
         void txtDesc_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -621,7 +569,6 @@ namespace Hero_Designer
         }
 
         void txtName_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -629,7 +576,6 @@ namespace Hero_Designer
         }
 
         void txtNameSet_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -637,7 +583,6 @@ namespace Hero_Designer
         }
 
         void txtNameSet_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;

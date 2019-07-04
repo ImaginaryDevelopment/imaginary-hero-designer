@@ -13,15 +13,12 @@ namespace Hero_Designer
     {
         Label Message;
 
-
         public frmBusy()
         {
-            this.Load += new EventHandler(this.frmBusy_Load);
             this.InitializeComponent();
-        }
-
-        void frmBusy_Load(object sender, EventArgs e)
-        {
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmBusy));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmBusy);
         }
 
         [DebuggerStepThrough]

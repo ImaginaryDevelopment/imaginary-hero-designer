@@ -53,20 +53,17 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.OK;
             this.Hide();
         }
 
         void csHeading_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Heading;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -75,7 +72,6 @@ namespace Hero_Designer
         }
 
         void csHO_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.HOColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -84,7 +80,6 @@ namespace Hero_Designer
         }
 
         void csIO_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.IOColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -93,7 +88,6 @@ namespace Hero_Designer
         }
 
         void csLevel_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Level;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -102,7 +96,6 @@ namespace Hero_Designer
         }
 
         void csPower_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Power;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -111,7 +104,6 @@ namespace Hero_Designer
         }
 
         void csSet_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.SetColor;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -120,7 +112,6 @@ namespace Hero_Designer
         }
 
         void csSlots_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Slots;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -129,7 +120,6 @@ namespace Hero_Designer
         }
 
         void csTitle_Click(object sender, EventArgs e)
-
         {
             this.cPicker.Color = this.myScheme.Title;
             if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -138,16 +128,12 @@ namespace Hero_Designer
         }
 
         void frmExportColor_Load(object sender, EventArgs e)
-
         {
             this.txtName.Text = this.myScheme.SchemeName;
             this.updateColours();
         }
 
-        [DebuggerStepThrough]
-
         void txtName_TextChanged(object sender, EventArgs e)
-
         {
             this.myScheme.SchemeName = this.txtName.Text;
         }

@@ -33,7 +33,7 @@ namespace Hero_Designer
 
         protected frmMain myParent;
 
-        public frmSetViewer(ref frmMain iParent)
+        public frmSetViewer(frmMain iParent)
         {
             this.Move += new EventHandler(this.frmSetViewer_Move);
             this.FormClosed += new FormClosedEventHandler(this.frmSetViewer_FormClosed);
@@ -43,13 +43,11 @@ namespace Hero_Designer
         }
 
         void btnClose_Click()
-
         {
             this.Close();
         }
 
         void btnSmall_Click()
-
         {
             if (this.Width > 600)
             {
@@ -77,7 +75,6 @@ namespace Hero_Designer
         }
 
         void chkOnTop_CheckedChanged()
-
         {
             this.TopMost = this.chkOnTop.Checked;
         }
@@ -112,11 +109,10 @@ namespace Hero_Designer
         }
 
         void FillEffectView()
-
         {
             string str1 = "";
             int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
-            bool flag1 = false;
+            bool hasOvercap = false;
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -140,7 +136,7 @@ namespace Hero_Designer
                             {
                                 if (str4 != "")
                                     str4 += RTF.Crlf();
-                                bool flag2 = false;
+                                bool localOverCap = false;
                                 string str5 = "  " + enhancementSet.GetEffectString(index4, false, true);
                                 int num4 = enhancementSet.Bonus[index4].Index.Length - 1;
                                 for (int index5 = 0; index5 <= num4; ++index5)
@@ -149,13 +145,13 @@ namespace Hero_Designer
                                     {
                                         ++numArray[enhancementSet.Bonus[index4].Index[index5]];
                                         if (numArray[enhancementSet.Bonus[index4].Index[index5]] > 5)
-                                            flag2 = true;
+                                            localOverCap = true;
                                     }
                                 }
-                                if (flag2)
+                                if (localOverCap)
                                     str5 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str5 + " >Cap" + RTF.Color(RTF.ElementID.Text));
-                                if (flag2)
-                                    flag1 = true;
+                                if (localOverCap)
+                                    hasOvercap = true;
                                 str4 += str5;
                             }
                         }
@@ -168,7 +164,7 @@ namespace Hero_Designer
                                 if (str4 != "")
                                     str4 += RTF.Crlf();
                                 string str5 = str4 + RTF.Color(RTF.ElementID.Enhancement);
-                                bool flag2 = false;
+                                bool localOverCap = false;
                                 string str6 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true);
                                 int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index.Length - 1;
                                 for (int index6 = 0; index6 <= num4; ++index6)
@@ -177,13 +173,13 @@ namespace Hero_Designer
                                     {
                                         ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]];
                                         if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]] > 5)
-                                            flag2 = true;
+                                            localOverCap = true;
                                     }
                                 }
-                                if (flag2)
+                                if (localOverCap)
                                     str6 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str6 + " >Cap" + RTF.Color(RTF.ElementID.Text));
-                                if (flag2)
-                                    flag1 = true;
+                                if (localOverCap)
+                                    hasOvercap = true;
                                 str4 = str5 + str6;
                             }
                         }
@@ -192,7 +188,7 @@ namespace Hero_Designer
                 }
             }
             string str7;
-            if (flag1)
+            if (hasOvercap)
                 str7 = RTF.Color(RTF.ElementID.Invention) + RTF.Underline(RTF.Bold("Information:")) + RTF.Crlf() + RTF.Color(RTF.ElementID.Text) + "One or more set bonuses have exceeded the 5 bonus cap, and will not affect your stats. Scroll down this list to find bonuses marked as '" + RTF.Italic(RTF.Color(RTF.ElementID.Warning) + ">Cap") + RTF.Color(RTF.ElementID.Text) + "'" + RTF.Crlf() + RTF.Crlf();
             else
                 str7 = "";
@@ -221,7 +217,6 @@ namespace Hero_Designer
         }
 
         void FillImageList()
-
         {
             Size imageSize1 = this.ilSet.ImageSize;
             int width1 = imageSize1.Width;
@@ -229,8 +224,8 @@ namespace Hero_Designer
             int height1 = imageSize1.Height;
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(width1, height1);
             this.ilSet.Images.Clear();
-            int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
-            for (int index1 = 0; index1 <= num1; ++index1)
+            int setBonusCount = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
+            for (int index1 = 0; index1 <= setBonusCount; ++index1)
             {
                 int num2 = MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
@@ -243,7 +238,7 @@ namespace Hero_Designer
                             extendedBitmap.Graphics.Clear(Color.White);
                             Graphics graphics = extendedBitmap.Graphics;
                             I9Gfx.DrawEnhancementSet(ref graphics, enhancementSet.ImageIdx);
-                            this.ilSet.Images.Add((Image)extendedBitmap.Bitmap);
+                            this.ilSet.Images.Add(extendedBitmap.Bitmap);
                         }
                         else
                         {
@@ -253,7 +248,7 @@ namespace Hero_Designer
                             imageSize2 = this.ilSet.ImageSize;
                             int height2 = imageSize2.Height;
                             Bitmap bitmap = new Bitmap(width2, height2);
-                            images.Add((Image)bitmap);
+                            images.Add(bitmap);
                         }
                     }
                 }
@@ -266,20 +261,15 @@ namespace Hero_Designer
         }
 
         void frmSetViewer_Load(object sender, EventArgs e)
-
         {
         }
 
         void frmSetViewer_Move(object sender, EventArgs e)
-
         {
             this.StoreLocation();
         }
 
-        [DebuggerStepThrough]
-
         void lstSets_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lstSets.SelectedItems.Count < 1)
                 return;
@@ -306,7 +296,6 @@ namespace Hero_Designer
         }
 
         void StoreLocation()
-
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;

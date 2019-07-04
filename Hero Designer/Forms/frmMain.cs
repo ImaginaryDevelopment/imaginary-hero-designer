@@ -5031,12 +5031,12 @@ namespace Hero_Designer
             frmForum frmForum1 = new frmForum();
             frmForum1.BackColor = this.BackColor;
             frmForum frmForum2 = frmForum1;
-            frmForum2.ibCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.ibCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.ibExport.IA = this.drawing.pImageAttributes;
-            frmForum2.ibExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
             int num = (int)frmForum2.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
         }
@@ -5054,12 +5054,12 @@ namespace Hero_Designer
             frmForum frmForum1 = new frmForum();
             frmForum1.BackColor = this.BackColor;
             frmForum frmForum2 = frmForum1;
-            frmForum2.ibCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.ibCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.ibExport.IA = this.drawing.pImageAttributes;
-            frmForum2.ibExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.ibExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
             int num = (int)frmForum2.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
             MidsContext.Config.LongExport = false;

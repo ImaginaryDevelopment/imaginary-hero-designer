@@ -65,7 +65,6 @@ namespace Hero_Designer
         }
 
         void btnAdd_Click(object sender, EventArgs e)
-
         {
             IDatabase database = DatabaseAPI.Database;
             Salvage[] salvageArray = (Salvage[])Utils.CopyArray((Array)database.Salvage, (Array)new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
@@ -77,14 +76,12 @@ namespace Hero_Designer
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             DatabaseAPI.LoadSalvage();
             this.Close();
         }
 
         void btnDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;
@@ -114,7 +111,6 @@ namespace Hero_Designer
         }
 
         void btnImport_Click(object sender, EventArgs e)
-
         {
             char[] chArray = new char[1] { '\r' };
             string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(chArray);
@@ -127,7 +123,7 @@ namespace Hero_Designer
                 if (strArray2.Length > 7)
                 {
                     IDatabase database = DatabaseAPI.Database;
-                    Salvage[] salvageArray = (Salvage[])Utils.CopyArray((Array)database.Salvage, (Array)new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
+                    Salvage[] salvageArray = (Salvage[])Utils.CopyArray(database.Salvage, new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
                     database.Salvage = salvageArray;
                     DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1] = new Salvage();
                     Salvage salvage = DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1];
@@ -164,7 +160,6 @@ namespace Hero_Designer
         }
 
         void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;
@@ -188,7 +183,6 @@ namespace Hero_Designer
         }
 
         void cbOrigin_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;
@@ -198,7 +192,6 @@ namespace Hero_Designer
         }
 
         void cbRarity_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;
@@ -237,7 +230,6 @@ namespace Hero_Designer
         }
 
         void frmSalvageEdit_Load(object sender, EventArgs e)
-
         {
             Salvage.SalvageOrigin salvageOrigin = Salvage.SalvageOrigin.Tech;
             Recipe.RecipeRarity recipeRarity = Recipe.RecipeRarity.Common;
@@ -256,7 +248,6 @@ namespace Hero_Designer
         [DebuggerStepThrough]
 
         void lvSalvage_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedIndices.Count <= 0)
                 return;
@@ -264,7 +255,6 @@ namespace Hero_Designer
         }
 
         void txtExternal_TextChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;
@@ -274,7 +264,6 @@ namespace Hero_Designer
         }
 
         void txtInternal_TextChanged(object sender, EventArgs e)
-
         {
             if (this.lvSalvage.SelectedItems.Count < 1 || this.Updating)
                 return;

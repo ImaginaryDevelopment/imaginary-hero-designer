@@ -92,33 +92,28 @@ namespace Hero_Designer
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Hide();
         }
 
         void btnCSV_Click(object sender, EventArgs e)
-
         {
             new frmCSV().ShowDialog();
         }
 
         void btnDate_Click(object sender, EventArgs e)
-
         {
             DatabaseAPI.Database.Date = DateTime.Now;
             this.DisplayInfo();
         }
 
         void btnEditEnh_Click(object sender, EventArgs e)
-
         {
             new frmEnhEdit().ShowDialog();
             this.DisplayInfo();
         }
 
         void btnEditEntity_Click(object sender, EventArgs e)
-
         {
             new frmEntityListing().ShowDialog();
         }
@@ -178,7 +173,6 @@ namespace Hero_Designer
         }
 
         void frmDBEdit_Load(object sender, EventArgs e)
-
         {
             this.btnDate.Visible = MidsContext.Config.MasterMode;
             this.btnCSV.Visible = MidsContext.Config.MasterMode;
@@ -188,10 +182,7 @@ namespace Hero_Designer
             this.DisplayInfo();
         }
 
-        [DebuggerStepThrough]
-
         void txtDBVer_TextChanged(object sender, EventArgs e)
-
         {
             float num = (float)Conversion.Val(this.txtDBVer.Text);
             if ((double)num < 1.0)
@@ -200,7 +191,6 @@ namespace Hero_Designer
         }
 
         void udIssue_KeyPress(object sender, KeyPressEventArgs e)
-
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
@@ -208,7 +198,6 @@ namespace Hero_Designer
         }
 
         void udIssue_ValueChanged(object sender, EventArgs e)
-
         {
             if (!MainModule.MidsController.IsAppInitialized | !this.Initialized)
                 return;

@@ -29,7 +29,6 @@ namespace Hero_Designer
         }
 
         void frmData_FormClosed(object sender, FormClosedEventArgs e)
-
         {
             this.StoreLocation();
             this._onClosing();
@@ -41,12 +40,9 @@ namespace Hero_Designer
         }
 
         void frmData_ResizeEnd(object sender, EventArgs e)
-
         {
             this.pInfo.Size = this.ClientSize;
         }
-
-        [DebuggerStepThrough]
 
         public void SetLocation()
         {
@@ -74,7 +70,6 @@ namespace Hero_Designer
         }
 
         void StoreLocation()
-
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
@@ -85,7 +80,6 @@ namespace Hero_Designer
         }
 
         string TwoDP(float iValue)
-
         {
             return Strings.Format(iValue, "###,##0.00");
         }
