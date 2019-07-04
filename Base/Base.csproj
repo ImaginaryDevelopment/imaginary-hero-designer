@@ -18,7 +18,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -111,6 +111,12 @@
     <EmbeddedResource Include="ZStatus.resx">
       <DependentUpon>ZStatus.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeroDesigner.ZLib\HeroDesigner.ZLib.fsproj">
+      <Project>{518ece50-17a7-4c9f-ba19-0ea7320d0895}</Project>
+      <Name>HeroDesigner.ZLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
