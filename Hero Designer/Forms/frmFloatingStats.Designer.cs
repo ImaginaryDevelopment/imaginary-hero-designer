@@ -42,13 +42,13 @@ namespace Hero_Designer
             this.dvFloat.Size = new System.Drawing.Size(300, 348);
             this.dvFloat.TabIndex = 0;
             this.dvFloat.VisibleSize = Enums.eVisibleSize.Full;
-            this.dvFloat.Load += this.dvFloat_Load;
+            this.dvFloat.Load += new System.EventHandler(this.dvFloat_Load);
             this.dvFloat.SizeChange += this.dvFloat_SizeChange;
             this.dvFloat.FloatChange += this.dvFloat_FloatChanged;
-            this.dvFloat.Unlock_Click += this.dvFloat_Unlock;
+            this.dvFloat.Unlock_Click += new DataView.Unlock_ClickEventHandler(this.dvFloat_Unlock);
             this.dvFloat.TabChanged += this.dvFloat_TabChanged;
-            this.dvFloat.SlotUpdate += this.dvFloat_SlotUpdate;
-            this.dvFloat.SlotFlip += this.dvFloat_SlotFlip;
+            this.dvFloat.SlotUpdate += new DataView.SlotUpdateEventHandler(this.dvFloat_SlotUpdate);
+            this.dvFloat.SlotFlip += new DataView.SlotFlipEventHandler(this.dvFloat_SlotFlip);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
 

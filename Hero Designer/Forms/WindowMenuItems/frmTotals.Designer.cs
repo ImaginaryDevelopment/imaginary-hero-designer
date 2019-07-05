@@ -395,6 +395,7 @@ namespace Hero_Designer
             this.rbMSec.TabIndex = 18;
             this.rbMSec.Text = "Meters/Sec";
             this.rbMSec.UseVisualStyleBackColor = true;
+            this.rbMSec.CheckedChanged += new System.EventHandler(RbSpeedCheckedChanged);
 
             this.rbFPS.Location = new System.Drawing.Point(147, 81);
             this.rbFPS.Name = "rbFPS";
@@ -403,6 +404,8 @@ namespace Hero_Designer
             this.rbFPS.TabIndex = 17;
             this.rbFPS.Text = "Feet/Sec";
             this.rbFPS.UseVisualStyleBackColor = true;
+            this.rbFPS.CheckedChanged += new System.EventHandler(RbSpeedCheckedChanged);
+
 
             this.rbKPH.Location = new System.Drawing.Point(82, 81);
             this.rbKPH.Name = "rbKPH";
@@ -411,6 +414,7 @@ namespace Hero_Designer
             this.rbKPH.TabIndex = 16;
             this.rbKPH.Text = "KilometersPerHour";
             this.rbKPH.UseVisualStyleBackColor = true;
+            this.rbKPH.CheckedChanged += new System.EventHandler(RbSpeedCheckedChanged);
             this.rbMPH.Checked = true;
 
             this.rbMPH.Location = new System.Drawing.Point(21, 81);
@@ -421,6 +425,7 @@ namespace Hero_Designer
             this.rbMPH.TabStop = true;
             this.rbMPH.Text = "MilesPerHour";
             this.rbMPH.UseVisualStyleBackColor = true;
+            this.rbMPH.CheckedChanged += new System.EventHandler(RbSpeedCheckedChanged);
             this.lblStealth.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
             this.lblStealth.Location = new System.Drawing.Point(3, 109);
@@ -763,6 +768,8 @@ namespace Hero_Designer
             this.tab1.Size = new System.Drawing.Size(105, 22);
             this.tab1.TabIndex = 94;
             this.tab1.TabStop = false;
+            this.tab1.Paint += new System.Windows.Forms.PaintEventHandler(Tab1Paint);
+            this.tab1.Click += new System.EventHandler(Tab1Click);
 
             this.tab0.Location = new System.Drawing.Point(4, 3);
             this.tab0.Name = "tab0";
@@ -770,6 +777,8 @@ namespace Hero_Designer
             this.tab0.Size = new System.Drawing.Size(105, 22);
             this.tab0.TabIndex = 93;
             this.tab0.TabStop = false;
+            this.tab0.Paint += new System.Windows.Forms.PaintEventHandler(Tab0Paint);
+            this.tab0.Click += new System.EventHandler(Tab0Click);
             this.pbTopMost.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
 
             this.pbTopMost.Location = new System.Drawing.Point(4, 458);
@@ -778,6 +787,8 @@ namespace Hero_Designer
             this.pbTopMost.Size = new System.Drawing.Size(105, 22);
             this.pbTopMost.TabIndex = 95;
             this.pbTopMost.TabStop = false;
+            this.pbTopMost.Paint += new System.Windows.Forms.PaintEventHandler(PbTopMostPaint);
+            this.pbTopMost.Click += new System.EventHandler(PbTopMostClick);
             this.pbClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
 
             this.pbClose.Location = new System.Drawing.Point(219, 458);
@@ -786,6 +797,8 @@ namespace Hero_Designer
             this.pbClose.Size = new System.Drawing.Size(105, 22);
             this.pbClose.TabIndex = 96;
             this.pbClose.TabStop = false;
+            this.pbClose.Paint += new System.Windows.Forms.PaintEventHandler(PbClosePaint);
+            this.pbClose.Click += new System.EventHandler(PbCloseClick);
             this.pnlStatus.BackColor = System.Drawing.Color.FromArgb(0, 32, 0);
             this.pnlStatus.Controls.Add((System.Windows.Forms.Control)this.graphSRes);
             this.pnlStatus.Controls.Add((System.Windows.Forms.Control)this.lblSRes);
@@ -933,6 +946,8 @@ namespace Hero_Designer
             this.tab2.Size = new System.Drawing.Size(105, 22);
             this.tab2.TabIndex = 98;
             this.tab2.TabStop = false;
+            this.tab2.Paint += new System.Windows.Forms.PaintEventHandler(Tab2Paint);
+            this.tab2.Click += new System.EventHandler(Tab2Click);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
 
@@ -964,37 +979,7 @@ namespace Hero_Designer
             ((System.ComponentModel.ISupportInitialize)this.pbClose).EndInit();
             this.pnlStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)this.tab2).EndInit();
-            //adding events
 
-            // pbClose events
-            this.pbClose.Paint += PbClosePaint;
-            this.pbClose.Click += PbCloseClick;
-
-
-            // pbTopMost events
-            this.pbTopMost.Paint += PbTopMostPaint;
-            this.pbTopMost.Click += PbTopMostClick;
-
-            this.rbFPS.CheckedChanged += RbSpeedCheckedChanged;
-            this.rbKPH.CheckedChanged += RbSpeedCheckedChanged;
-            this.rbMPH.CheckedChanged += RbSpeedCheckedChanged;
-            this.rbMSec.CheckedChanged += RbSpeedCheckedChanged;
-
-            // tab0 events
-            this.tab0.Paint += Tab0Paint;
-            this.tab0.Click += Tab0Click;
-
-
-            // tab1 events
-            this.tab1.Paint += Tab1Paint;
-            this.tab1.Click += Tab1Click;
-
-
-            // tab2 events
-            this.tab2.Paint += Tab2Paint;
-            this.tab2.Click += Tab2Click;
-
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

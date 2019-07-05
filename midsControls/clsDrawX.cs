@@ -208,7 +208,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000025 RID: 37 RVA: 0x0000297C File Offset: 0x00000B7C
         public Point DrawPowerSlot(ref PowerEntry iSlot, bool SingleDraw = false)
         {
             Pen pen = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
@@ -231,7 +230,7 @@ namespace midsControls
                 flag3 = ((((iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) & iSlot.Slots.Length < 6) && SingleDraw) & iSlot.Power.Slottable & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle);
             }
             Point result = this.PowerPosition(iSlot, -1);
-            Point point = default(Point);
+            Point point = default;
             checked
             {
                 point.X = (int)Math.Round(unchecked((double)result.X + (double)(checked(this.szPower.Width - this.szSlot.Width * 6)) / 2.0));
@@ -258,8 +257,8 @@ namespace midsControls
                         ePowerState = Enums.ePowerState.Open;
                     }
                 }
-                rectangleF.Height = (float)this.szSlot.Height;
-                rectangleF.Width = (float)this.szSlot.Width;
+                rectangleF.Height = szSlot.Height;
+                rectangleF.Width = szSlot.Width;
                 stringFormat.Alignment = StringAlignment.Center;
                 stringFormat.LineAlignment = StringAlignment.Center;
                 this.bxBuffer.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -325,8 +324,8 @@ namespace midsControls
                 {
                     rectangle.Height = 15;
                     rectangle.Width = rectangle.Height;
-                    rectangle.Y = (int)Math.Round(unchecked((double)iValue.Top + (double)(checked(iValue.Height - rectangle.Height)) / 2.0));
-                    rectangle.X = (int)Math.Round(unchecked((double)iValue.Right - ((double)rectangle.Width + (double)(checked(iValue.Height - rectangle.Height)) / 2.0)));
+                    rectangle.Y = (int)Math.Round(unchecked(iValue.Top + checked(iValue.Height - rectangle.Height) / 2.0));
+                    rectangle.X = (int)Math.Round(unchecked(iValue.Right - (rectangle.Width + checked(iValue.Height - rectangle.Height) / 2.0)));
                     rectangle = this.ScaleDown(rectangle);
                     PathGradientBrush brush2;
                     if (iSlot.StatInclude)
@@ -348,6 +347,8 @@ namespace midsControls
                 int num3 = iSlot.Slots.Length - 1;
                 int i;
                 SolidBrush solidBrush;
+                //if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
+                var inDesigner = System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv");
                 for (i = num2; i <= num3; i++)
                 {
                     rectangleF.X = (float)(point.X + this.szSlot.Width * i);
@@ -367,6 +368,7 @@ namespace midsControls
                     }
                     else
                     {
+                        if (inDesigner) continue;
                         IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh];
                         Graphics graphics5 = this.bxBuffer.Graphics;
                         Rectangle clipRect2 = new Rectangle((int)Math.Round((double)rectangleF.X), point.Y, 30, 30);
@@ -561,11 +563,10 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000026 RID: 38 RVA: 0x00003B38 File Offset: 0x00001D38
-        private PathGradientBrush MakePathBrush(Rectangle iRect, PointF iCenter, Color iColor1, Color icolor2)
+        PathGradientBrush MakePathBrush(Rectangle iRect, PointF iCenter, Color iColor1, Color icolor2)
         {
-            float num = (float)((double)iRect.Left + (double)iRect.Width * 0.5);
-            float num2 = (float)((double)iRect.Top + (double)iRect.Height * 0.5);
+            float num = (float)(iRect.Left + iRect.Width * 0.5);
+            float num2 = (float)(iRect.Top + iRect.Height * 0.5);
             GraphicsPath graphicsPath = new GraphicsPath();
             graphicsPath.AddEllipse(iRect);
             PathGradientBrush pathGradientBrush;
@@ -579,17 +580,18 @@ namespace midsControls
                 {
                     array[i] = icolor2;
                 }
-                pathGradientBrush = new PathGradientBrush(graphicsPath);
-                pathGradientBrush.CenterColor = iColor1;
-                pathGradientBrush.SurroundColors = array;
+                pathGradientBrush = new PathGradientBrush(graphicsPath)
+                {
+                    CenterColor = iColor1,
+                    SurroundColors = array
+                };
                 pathGradientBrush2 = pathGradientBrush;
             }
-            PointF centerPoint = new PointF((float)((double)num + ((double)iCenter.X + (double)iCenter.X * ((double)iRect.Width * 0.5))), (float)((double)num2 + ((double)iCenter.Y + (double)iCenter.Y * ((double)iRect.Height * 0.5))));
+            PointF centerPoint = new PointF((float)(num + (iCenter.X + iCenter.X * (iRect.Width * 0.5))), (float)(num2 + (iCenter.Y + iCenter.Y * (iRect.Height * 0.5))));
             pathGradientBrush2.CenterPoint = centerPoint;
             return pathGradientBrush;
         }
 
-        // Token: 0x06000027 RID: 39 RVA: 0x00003C74 File Offset: 0x00001E74
         public void FullRedraw()
         {
             this.ColourSwitch();
@@ -607,7 +609,6 @@ namespace midsControls
             this.OutputRefresh(Clip, Clip, GraphicsUnit.Pixel);
         }
 
-        // Token: 0x06000029 RID: 41 RVA: 0x00003CE4 File Offset: 0x00001EE4
         private int GetVisualIDX(int PowerIndex)
         {
             int nidpowerset = MidsContext.Character.CurrentBuild.Powers[PowerIndex].NIDPowerset;
@@ -662,19 +663,14 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600002A RID: 42 RVA: 0x00003E8C File Offset: 0x0000208C
         public static void DrawOutlineText(string iStr, RectangleF Bounds, Color Text, Color Outline, Font bFont, float OutlineSpace, ref Graphics Target, bool SmallMode = false, bool LeftAlign = false)
         {
-            StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap);
-            stringFormat.LineAlignment = StringAlignment.Near;
-            if (LeftAlign)
+            StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
-                stringFormat.Alignment = StringAlignment.Near;
-            }
-            else
-            {
-                stringFormat.Alignment = StringAlignment.Center;
-            }
+                LineAlignment = StringAlignment.Near,
+                Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center
+            };
+
             SolidBrush brush = new SolidBrush(Outline);
             RectangleF layoutRectangle = Bounds;
             RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(Target));
@@ -715,7 +711,6 @@ namespace midsControls
             Target.DrawString(iStr, bFont, brush, layoutRectangle, stringFormat);
         }
 
-        // Token: 0x0600002B RID: 43 RVA: 0x00004068 File Offset: 0x00002268
         public int WhichSlot(int iX, int iY)
         {
             int num = 0;
@@ -742,7 +737,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600002C RID: 44 RVA: 0x00004174 File Offset: 0x00002374
         public int WhichEnh(int iX, int iY)
         {
             int result = -1;
@@ -751,7 +745,7 @@ namespace midsControls
             checked
             {
                 int num3 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                Point point = default(Point);
+                Point point = default;
                 for (int i = num2; i <= num3; i++)
                 {
                     if (MidsContext.Character.CurrentBuild.Powers[i].Power == null | MidsContext.Character.CurrentBuild.Powers[i].Chosen)
@@ -788,7 +782,7 @@ namespace midsControls
                     if (flag)
                     {
                         int num4 = MidsContext.Character.CurrentBuild.Powers[num].Slots.Length;
-                        iX = (int)Math.Round(unchecked((double)iX - ((double)point.X + (double)(checked(this.szPower.Width - this.szSlot.Width * 6)) / 2.0)));
+                        iX = (int)Math.Round(unchecked(iX - (point.X + checked(this.szPower.Width - this.szSlot.Width * 6) / 2.0)));
                         int num5 = 0;
                         int num6 = num4 - 1;
                         for (int i = num5; i <= num6; i++)
@@ -807,7 +801,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600002D RID: 45 RVA: 0x000043F8 File Offset: 0x000025F8
         public bool HighlightSlot(int Index, bool Force = false)
         {
             checked
@@ -875,7 +868,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600002E RID: 46 RVA: 0x0000466C File Offset: 0x0000286C
         private void Blank()
         {
             if (this.bxBuffer != null)
@@ -884,7 +876,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600002F RID: 47 RVA: 0x000046A0 File Offset: 0x000028A0
         public void SetScaling(Size iSize)
         {
             bool scaleEnabled = this.ScaleEnabled;
@@ -895,14 +886,9 @@ namespace midsControls
                 if (drawingArea.Width > iSize.Width | drawingArea.Height > iSize.Height)
                 {
                     this.ScaleEnabled = true;
-                    if ((double)drawingArea.Width / (double)iSize.Width > (double)drawingArea.Height / (double)iSize.Height)
-                    {
-                        this.ScaleValue = (float)((double)drawingArea.Width / (double)iSize.Width);
-                    }
-                    else
-                    {
-                        this.ScaleValue = (float)((double)drawingArea.Height / (double)iSize.Height);
-                    }
+                    this.ScaleValue = (double)drawingArea.Width / iSize.Width > drawingArea.Height / (double)iSize.Height
+                        ? (float)(drawingArea.Width / (double)iSize.Width)
+                        : (float)(drawingArea.Height / (double)iSize.Height);
                     this.ResetTarget();
                     this.bxBuffer.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
                     this.bxBuffer.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -931,8 +917,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000030 RID: 48 RVA: 0x00004884 File Offset: 0x00002A84
-        private void ResetTarget()
+        void ResetTarget()
         {
             if ((double)this.ScaleValue > 1.125)
             {
@@ -960,13 +945,12 @@ namespace midsControls
             }
             else
             {
-                iValue = checked((int)Math.Round((double)((float)iValue / this.ScaleValue)));
+                iValue = checked((int)Math.Round(iValue / this.ScaleValue));
                 result = iValue;
             }
             return result;
         }
 
-        // Token: 0x06000032 RID: 50 RVA: 0x0000495C File Offset: 0x00002B5C
         public int ScaleUp(int iValue)
         {
             int result;
@@ -976,14 +960,13 @@ namespace midsControls
             }
             else
             {
-                iValue = checked((int)Math.Round((double)(unchecked((float)iValue * this.ScaleValue))));
+                iValue = checked((int)Math.Round(unchecked(iValue * this.ScaleValue)));
                 result = iValue;
             }
             return result;
         }
 
-        // Token: 0x06000033 RID: 51 RVA: 0x00004990 File Offset: 0x00002B90
-        private float ScaleDown(float iValue)
+        float ScaleDown(float iValue)
         {
             float result;
             if (!this.ScaleEnabled)
@@ -998,7 +981,6 @@ namespace midsControls
             return result;
         }
 
-        // Token: 0x06000034 RID: 52 RVA: 0x000049BC File Offset: 0x00002BBC
         public Rectangle ScaleDown(Rectangle iValue)
         {
             checked
@@ -1010,18 +992,17 @@ namespace midsControls
                 }
                 else
                 {
-                    iValue.X = (int)Math.Round((double)((float)iValue.X / this.ScaleValue));
-                    iValue.Y = (int)Math.Round((double)((float)iValue.Y / this.ScaleValue));
-                    iValue.Width = (int)Math.Round((double)((float)iValue.Width / this.ScaleValue));
-                    iValue.Height = (int)Math.Round((double)((float)iValue.Height / this.ScaleValue));
+                    iValue.X = (int)Math.Round(iValue.X / this.ScaleValue);
+                    iValue.Y = (int)Math.Round(iValue.Y / this.ScaleValue);
+                    iValue.Width = (int)Math.Round(iValue.Width / this.ScaleValue);
+                    iValue.Height = (int)Math.Round(iValue.Height / this.ScaleValue);
                     result = iValue;
                 }
                 return result;
             }
         }
 
-        // Token: 0x06000035 RID: 53 RVA: 0x00004A58 File Offset: 0x00002C58
-        private RectangleF ScaleDown(RectangleF iValue)
+        RectangleF ScaleDown(RectangleF iValue)
         {
             checked
             {
@@ -1032,52 +1013,48 @@ namespace midsControls
                 }
                 else
                 {
-                    iValue.X = (float)((int)Math.Round((double)(iValue.X / this.ScaleValue)));
-                    iValue.Y = (float)((int)Math.Round((double)(iValue.Y / this.ScaleValue)));
-                    iValue.Width = (float)((int)Math.Round((double)(iValue.Width / this.ScaleValue)));
-                    iValue.Height = (float)((int)Math.Round((double)(iValue.Height / this.ScaleValue)));
+                    iValue.X = (int)Math.Round(iValue.X / this.ScaleValue);
+                    iValue.Y = (int)Math.Round(iValue.Y / this.ScaleValue);
+                    iValue.Width = (int)Math.Round(iValue.Width / this.ScaleValue);
+                    iValue.Height = (int)Math.Round(iValue.Height / this.ScaleValue);
                     result = iValue;
                 }
                 return result;
             }
         }
 
-        // Token: 0x06000036 RID: 54 RVA: 0x00004AF3 File Offset: 0x00002CF3
-        private void Output(ref ExtendedBitmap Buffer, Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
+        void Output(ref ExtendedBitmap Buffer, Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
         {
             this.gTarget.DrawImage(Buffer.Bitmap, DestRect, SrcRect, iUnit);
         }
 
-        // Token: 0x06000037 RID: 55 RVA: 0x00004B0D File Offset: 0x00002D0D
-        private void OutputRefresh(Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
+        void OutputRefresh(Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
         {
             this.gTarget.DrawImage(this.bxBuffer.Bitmap, DestRect, SrcRect, iUnit);
         }
 
-        // Token: 0x06000038 RID: 56 RVA: 0x00004B2A File Offset: 0x00002D2A
-        private void OutputUnscaled(ref ExtendedBitmap Buffer, Point Location)
+        void OutputUnscaled(ref ExtendedBitmap Buffer, Point Location)
         {
             this.gTarget.DrawImageUnscaled(Buffer.Bitmap, Location);
         }
 
-        // Token: 0x06000039 RID: 57 RVA: 0x00004B44 File Offset: 0x00002D44
         public void ColourSwitch()
         {
-            bool flag = true;
+            bool useHeroColors = true;
             if (this.pColorMatrix == null)
             {
                 this.pColorMatrix = new ColorMatrix();
             }
             if (MidsContext.Character != null)
             {
-                flag = MidsContext.Character.IsHero();
+                useHeroColors = MidsContext.Character.IsHero();
             }
             if (!MidsContext.Config.ShowVillainColours)
             {
-                flag = true;
+                useHeroColors = true;
             }
-            this.VillainColor = !flag;
-            if (flag)
+            this.VillainColor = !useHeroColors;
+            if (useHeroColors)
             {
                 float[][] array = new float[5][];
                 float[][] array2 = array;
@@ -1100,14 +1077,7 @@ namespace midsControls
                 array3 = new float[5];
                 array3[3] = 1f;
                 array6[num4] = array3;
-                array[4] = new float[]
-                {
-                    0f,
-                    0f,
-                    0f,
-                    0f,
-                    1f
-                };
+                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
                 this.pColorMatrix = new ColorMatrix(array);
             }
             else
@@ -1134,14 +1104,7 @@ namespace midsControls
                 array3 = new float[5];
                 array3[3] = 1f;
                 array10[num8] = array3;
-                array[4] = new float[]
-                {
-                    0f,
-                    0f,
-                    0f,
-                    0f,
-                    1f
-                };
+                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
                 this.pColorMatrix = new ColorMatrix(array);
             }
             if (this.pImageAttributes == null)
@@ -1151,7 +1114,6 @@ namespace midsControls
             this.pImageAttributes.SetColorMatrix(this.pColorMatrix);
         }
 
-        // Token: 0x0600003A RID: 58 RVA: 0x00004CD0 File Offset: 0x00002ED0
         public static ImageAttributes GetRecolourIa(bool hero)
         {
             ColorMatrix colorMatrix;
@@ -1178,14 +1140,7 @@ namespace midsControls
                 array3 = new float[5];
                 array3[3] = 1f;
                 array6[num4] = array3;
-                array[4] = new float[]
-                {
-                    0f,
-                    0f,
-                    0f,
-                    0f,
-                    1f
-                };
+                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
                 colorMatrix = new ColorMatrix(array);
             }
             else
@@ -1212,14 +1167,7 @@ namespace midsControls
                 array3 = new float[5];
                 array3[3] = 1f;
                 array10[num8] = array3;
-                array[4] = new float[]
-                {
-                    0f,
-                    0f,
-                    0f,
-                    0f,
-                    1f
-                };
+                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
                 colorMatrix = new ColorMatrix(array);
             }
             ImageAttributes imageAttributes = new ImageAttributes();
@@ -1301,8 +1249,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600003C RID: 60 RVA: 0x00004FA4 File Offset: 0x000031A4
-        private ImageAttributes Desaturate(bool Grey, bool BypassIA = false)
+        ImageAttributes Desaturate(bool Grey, bool BypassIA = false)
         {
             float[][] array = new float[5][];
             array[0] = new float[]
@@ -1401,7 +1348,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600003D RID: 61 RVA: 0x00005158 File Offset: 0x00003358
         public Rectangle PowerBoundsUnScaled(int hIdx)
         {
             Rectangle rectangle = new Rectangle(0, 0, 1, 1);
@@ -1432,21 +1378,18 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600003E RID: 62 RVA: 0x00005254 File Offset: 0x00003454
         public bool WithinPowerBar(Rectangle pBounds, Point e)
         {
             pBounds.Height = this.szPower.Height;
             return (e.X >= pBounds.Left & e.X < pBounds.Right) && (e.Y >= pBounds.Top & e.Y < pBounds.Bottom);
         }
 
-        // Token: 0x0600003F RID: 63 RVA: 0x000052C8 File Offset: 0x000034C8
-        private Point PowerPosition(int powerEntryIdx)
+        Point PowerPosition(int powerEntryIdx)
         {
             return this.PowerPosition(MidsContext.Character.CurrentBuild.Powers[powerEntryIdx], -1);
         }
 
-        // Token: 0x06000040 RID: 64 RVA: 0x00005544 File Offset: 0x00003744
-        private int[][] GetInherentGrid()
+        int[][] GetInherentGrid()
         {
             switch (this.vcCols)
             {
@@ -1455,309 +1398,71 @@ namespace midsControls
                     {
                         return new int[][]
                         {
-                        new int[]
-                        {
-                            3,
-                            17
-                        },
-                        new int[]
-                        {
-                            0,
-                            18
-                        },
-                        new int[]
-                        {
-                            1,
-                            19
-                        },
-                        new int[]
-                        {
-                            2,
-                            20
-                        },
-                        new int[]
-                        {
-                            4,
-                            10
-                        },
-                        new int[]
-                        {
-                            5,
-                            11
-                        },
-                        new int[]
-                        {
-                            6,
-                            12
-                        },
-                        new int[]
-                        {
-                            7,
-                            13
-                        },
-                        new int[]
-                        {
-                            8,
-                            14
-                        },
-                        new int[]
-                        {
-                            9,
-                            15
-                        },
-                        new int[]
-                        {
-                            18,
-                            21
-                        },
-                        new int[]
-                        {
-                            22,
-                            23
-                        },
-                        new int[]
-                        {
-                            24,
-                            25
-                        },
-                        new int[]
-                        {
-                            16,
-                            17
-                        },
-                        new int[]
-                        {
-                            26,
-                            27
-                        },
-                        new int[]
-                        {
-                            28,
-                            29
-                        },
-                        new int[]
-                        {
-                            30,
-                            31
-                        },
-                        new int[]
-                        {
-                            32,
-                            33
-                        },
-                        new int[]
-                        {
-                            34,
-                            35
-                        }
+                            new [] { 3, 17 },
+                            new [] { 0, 18 },
+                            new [] { 1, 19 },
+                            new [] { 2, 20 },
+                            new [] { 4, 10 },
+                            new [] { 5, 11 },
+                            new [] { 6, 12 },
+                            new [] { 7, 13 },
+                            new [] { 8, 14 },
+                            new [] { 9, 15 },
+                            new [] { 18, 21 },
+                            new [] { 22, 23 },
+                            new [] { 24, 25 },
+                            new [] { 16, 17 },
+                            new [] { 26, 27 },
+                            new [] { 28, 29 },
+                            new [] { 30, 31 },
+                            new [] { 32, 33 },
+                            new [] { 34, 35 }
                         };
                     }
                     return new int[][]
                     {
-                    new int[]
-                    {
-                        3,
-                        17
-                    },
-                    new int[]
-                    {
-                        0,
-                        18
-                    },
-                    new int[]
-                    {
-                        1,
-                        19
-                    },
-                    new int[]
-                    {
-                        2,
-                        20
-                    },
-                    new int[]
-                    {
-                        16,
-                        21
-                    },
-                    new int[]
-                    {
-                        6,
-                        22
-                    },
-                    new int[]
-                    {
-                        7,
-                        23
-                    },
-                    new int[]
-                    {
-                        8,
-                        24
-                    },
-                    new int[]
-                    {
-                        9,
-                        25
-                    },
-                    new int[]
-                    {
-                        10,
-                        11
-                    },
-                    new int[]
-                    {
-                        26,
-                        27
-                    },
-                    new int[]
-                    {
-                        28,
-                        29
-                    },
-                    new int[]
-                    {
-                        30,
-                        31
-                    },
-                    new int[]
-                    {
-                        32,
-                        33
-                    },
-                    new int[]
-                    {
-                        34,
-                        35
-                    }
+                        new [] { 3, 17 },
+                        new [] { 0, 18 },
+                        new [] { 1, 19 },
+                        new [] { 2, 20 },
+                        new [] { 16, 21 },
+                        new [] { 6, 22 },
+                        new [] { 7, 23 },
+                        new [] { 8, 24 },
+                        new [] { 9, 25 },
+                        new [] { 10, 11 },
+                        new [] { 26, 27 },
+                        new [] { 28, 29 },
+                        new [] { 30, 31 },
+                        new [] { 32, 33 },
+                        new [] { 34, 35 }
                     };
                 case 4:
                     if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic)
                     {
                         return new int[][]
                         {
-                        new int[]
-                        {
-                            3,
-                            17,
-                            4,
-                            10
-                        },
-                        new int[]
-                        {
-                            0,
-                            18,
-                            5,
-                            11
-                        },
-                        new int[]
-                        {
-                            1,
-                            19,
-                            6,
-                            12
-                        },
-                        new int[]
-                        {
-                            2,
-                            20,
-                            7,
-                            13
-                        },
-                        new int[]
-                        {
-                            16,
-                            21,
-                            8,
-                            14
-                        },
-                        new int[]
-                        {
-                            22,
-                            23,
-                            9,
-                            15
-                        },
-                        new int[]
-                        {
-                            24,
-                            25,
-                            26,
-                            17
-                        },
-                        new int[]
-                        {
-                            28,
-                            29,
-                            30,
-                            31
-                        },
-                        new int[]
-                        {
-                            32,
-                            33,
-                            34,
-                            35
-                        }
+                            new [] { 3, 17, 4, 10 },
+                            new [] { 0, 18, 5, 11 },
+                            new [] { 1, 19, 6, 12 },
+                            new [] { 2, 20, 7, 13 },
+                            new [] { 16, 21, 8, 14 },
+                            new [] { 22, 23, 9, 15 },
+                            new [] { 24, 25, 26, 17 },
+                            new [] { 28, 29, 30, 31 },
+                            new [] { 32, 33, 34, 35 }
                         };
                     }
                     return new int[][]
                     {
-                    new int[]
-                    {
-                        3,
-                        17,
-                        21,
-                        16
-                    },
-                    new int[]
-                    {
-                        0,
-                        18,
-                        22,
-                        6
-                    },
-                    new int[]
-                    {
-                        1,
-                        19,
-                        23,
-                        7
-                    },
-                    new int[]
-                    {
-                        2,
-                        20,
-                        24,
-                        8
-                    },
-                    new int[]
-                    {
-                        26,
-                        27,
-                        25,
-                        9
-                    },
-                    new int[]
-                    {
-                        28,
-                        29,
-                        30,
-                        10
-                    },
-                    new int[]
-                    {
-                        31,
-                        32,
-                        33,
-                        11
-                    },
-                    new int[]
-                    {
-                        34,
-                        35,
-                        4,
-                        5
-                    }
+                        new [] { 3, 17, 21, 16 },
+                        new [] { 0, 18, 22, 6 },
+                        new [] { 1, 19, 23, 7 },
+                        new [] { 2, 20, 24, 8 },
+                        new [] { 26, 27, 25, 9 },
+                        new [] { 28, 29, 30, 10 },
+                        new [] { 31, 32, 33, 11 },
+                        new [] { 34, 35, 4, 5 }
                     };
             }
             int[][] result;
@@ -1765,144 +1470,34 @@ namespace midsControls
             {
                 result = new int[][]
                 {
-                    new int[]
-                    {
-                        3,
-                        17,
-                        4
-                    },
-                    new int[]
-                    {
-                        0,
-                        18,
-                        5
-                    },
-                    new int[]
-                    {
-                        1,
-                        19,
-                        10
-                    },
-                    new int[]
-                    {
-                        2,
-                        20,
-                        11
-                    },
-                    new int[]
-                    {
-                        21,
-                        6,
-                        12
-                    },
-                    new int[]
-                    {
-                        22,
-                        7,
-                        13
-                    },
-                    new int[]
-                    {
-                        23,
-                        8,
-                        14
-                    },
-                    new int[]
-                    {
-                        24,
-                        9,
-                        15
-                    },
-                    new int[]
-                    {
-                        25,
-                        16,
-                        26
-                    },
-                    new int[]
-                    {
-                        27,
-                        28,
-                        29
-                    },
-                    new int[]
-                    {
-                        30,
-                        31,
-                        32
-                    },
-                    new int[]
-                    {
-                        33,
-                        34,
-                        35
-                    }
+                    new int[] { 3, 17, 4 },
+                    new int[] { 0, 18, 5 },
+                    new int[] { 1, 19, 10 },
+                    new int[] { 2, 20, 11 },
+                    new int[] { 21, 6, 12 },
+                    new int[] { 22, 7, 13 },
+                    new int[] { 23, 8, 14 },
+                    new int[] { 24, 9, 15 },
+                    new int[] { 25, 16, 26 },
+                    new int[] { 27, 28, 29 },
+                    new int[] { 30, 31, 32 },
+                    new int[] { 33, 34, 35 }
                 };
             }
             else
             {
                 result = new int[][]
                 {
-                    new int[]
-                    {
-                        3,
-                        17,
-                        21
-                    },
-                    new int[]
-                    {
-                        0,
-                        18,
-                        22
-                    },
-                    new int[]
-                    {
-                        1,
-                        19,
-                        23
-                    },
-                    new int[]
-                    {
-                        2,
-                        20,
-                        24
-                    },
-                    new int[]
-                    {
-                        6,
-                        16,
-                        25
-                    },
-                    new int[]
-                    {
-                        7,
-                        26,
-                        27
-                    },
-                    new int[]
-                    {
-                        8,
-                        28,
-                        29
-                    },
-                    new int[]
-                    {
-                        9,
-                        30,
-                        31
-                    },
-                    new int[]
-                    {
-                        10,
-                        32,
-                        33
-                    },
-                    new int[]
-                    {
-                        11,
-                        34,
-                        35
-                    }
+                    new int[] { 3, 17, 21 },
+                    new int[] { 0, 18, 22 },
+                    new int[] { 1, 19, 23 },
+                    new int[] { 2, 20, 24 },
+                    new int[] { 6, 16, 25 },
+                    new int[] { 7, 26, 27 },
+                    new int[] { 8, 28, 29 },
+                    new int[] { 9, 30, 31 },
+                    new int[] { 10, 32, 33 },
+                    new int[] { 11, 34, 35 }
                 };
             }
             return result;
@@ -2032,7 +1627,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000042 RID: 66 RVA: 0x00006054 File Offset: 0x00004254
         private Point CRtoXY(int iCol, int iRow)
         {
             Point result = new Point(0, 0);
@@ -2052,7 +1646,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000043 RID: 67 RVA: 0x000060E8 File Offset: 0x000042E8
         public Size GetDrawingArea()
         {
             Size result = (Size)this.PowerPosition(23);
@@ -2081,8 +1674,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000044 RID: 68 RVA: 0x0000625C File Offset: 0x0000445C
-        private Size GetMaxDrawingArea()
+        Size GetMaxDrawingArea()
         {
             int cols = this.vcCols;
             this.MiniSetCol(4);
@@ -2107,8 +1699,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000045 RID: 69 RVA: 0x00006350 File Offset: 0x00004550
-        private void MiniSetCol(int cols)
+        void MiniSetCol(int cols)
         {
             if (cols != this.vcCols)
             {
@@ -2120,7 +1711,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000046 RID: 70 RVA: 0x000063A8 File Offset: 0x000045A8
         public Size GetRequiredDrawingArea()
         {
             int num = -1;
@@ -2160,88 +1750,58 @@ namespace midsControls
             }
         }
 
-        // Token: 0x04000009 RID: 9
         private const string GfxPath = "images\\";
 
-        // Token: 0x0400000A RID: 10
         private const string GfxPowerFn = "pSlot";
 
-        // Token: 0x0400000B RID: 11
         private const string GfxFileExt = ".png";
 
-        // Token: 0x0400000C RID: 12
         private const string NewSlotName = "Addslot.png";
 
-        // Token: 0x0400000D RID: 13
         private const int PaddingX = 7;
 
-        // Token: 0x0400000E RID: 14
         private const int PaddingY = 17;
 
-        // Token: 0x0400000F RID: 15
         public const int OffsetY = 18;
 
-        // Token: 0x04000010 RID: 16
         private const int OffsetInherent = 4;
 
-        // Token: 0x04000011 RID: 17
         private const int vcPowers = 24;
 
-        // Token: 0x04000012 RID: 18
         private Size szBuffer;
-
-        // Token: 0x04000013 RID: 19
         public Size szPower;
 
-        // Token: 0x04000014 RID: 20
         public Size szSlot;
 
-        // Token: 0x04000015 RID: 21
         private Font DefaultFont;
 
-        // Token: 0x04000016 RID: 22
         private Color BackColor;
 
-        // Token: 0x04000017 RID: 23
         public ExtendedBitmap bxBuffer;
 
-        // Token: 0x04000018 RID: 24
         public ExtendedBitmap[] bxPower;
 
-        // Token: 0x04000019 RID: 25
-        private ExtendedBitmap bxNewSlot;
+        ExtendedBitmap bxNewSlot;
 
-        // Token: 0x0400001A RID: 26
-        private Graphics gTarget;
+        Graphics gTarget;
 
-        // Token: 0x0400001B RID: 27
-        private Control cTarget;
+        Control cTarget;
 
-        // Token: 0x0400001C RID: 28
         public Enums.eInterfaceMode InterfaceMode;
 
-        // Token: 0x0400001D RID: 29
         public int Highlight;
 
-        // Token: 0x0400001E RID: 30
-        private ColorMatrix pColorMatrix;
+        ColorMatrix pColorMatrix;
 
-        // Token: 0x0400001F RID: 31
         public ImageAttributes pImageAttributes;
 
-        // Token: 0x04000020 RID: 32
-        private bool VillainColor;
+        bool VillainColor;
 
-        // Token: 0x04000021 RID: 33
-        private float ScaleValue;
+        float ScaleValue;
 
-        // Token: 0x04000022 RID: 34
-        private bool ScaleEnabled;
+        bool ScaleEnabled;
 
-        // Token: 0x04000023 RID: 35
-        private int vcCols;
-
-        // Token: 0x04000024 RID: 36
-        private int vcRowsPowers;
+        int vcCols;
+        int vcRowsPowers;
     }
 }

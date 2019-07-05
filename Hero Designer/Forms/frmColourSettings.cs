@@ -22,6 +22,7 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmColourSettings_Load);
             this.InitializeComponent();
+            this.Listlabel1.ItemClick += this.Listlabel1_ItemClick;
             this.Name = nameof(frmColourSettings);
             var componentResourceManager = new ComponentResourceManager(typeof(frmColourSettings));
             this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");

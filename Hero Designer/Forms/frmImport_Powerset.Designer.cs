@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Powerset));
             this.Label8 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -109,6 +108,7 @@ namespace Hero_Designer
             this.btnFile.TabIndex = 26;
             this.btnFile.Text = "Load / Re-Load";
             this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(btnFile_Click);
 
             this.btnClose.Location = new System.Drawing.Point(618, 516);
             this.btnClose.Name = "btnClose";
@@ -117,6 +117,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 35;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
 
@@ -127,6 +128,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 34;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.lstImport.CheckBoxes = true;
             this.lstImport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[5]
             {
@@ -160,6 +162,7 @@ namespace Hero_Designer
             this.btnCheckAll.TabIndex = 36;
             this.btnCheckAll.Text = "Check All";
             this.btnCheckAll.UseVisualStyleBackColor = true;
+            this.btnCheckAll.Click += new System.EventHandler(btnCheckAll_Click);
 
             this.btnUncheckAll.Location = new System.Drawing.Point(93, 545);
             this.btnUncheckAll.Name = "btnUncheckAll";
@@ -168,6 +171,7 @@ namespace Hero_Designer
             this.btnUncheckAll.TabIndex = 37;
             this.btnUncheckAll.Text = "Uncheck All";
             this.btnUncheckAll.UseVisualStyleBackColor = true;
+            this.btnUncheckAll.Click += new System.EventHandler(btnUncheckAll_Click);
             this.ColumnHeader3.Text = "Change Description";
             this.ColumnHeader3.Width = 106;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -187,25 +191,32 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.btnFile);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmImport_Powerset);
             this.ShowInTaskbar = false;
             this.Text = "Powerset Import";
             this.udRevision.EndInit();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCheckAll.Click += btnCheckAll_Click;
-                this.btnClose.Click += btnClose_Click;
-                this.btnFile.Click += btnFile_Click;
-                this.btnImport.Click += btnImport_Click;
-                this.btnUncheckAll.Click += btnUncheckAll_Click;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnCheckAll;
+        System.Windows.Forms.Button btnClose;
+        System.Windows.Forms.Button btnFile;
+        System.Windows.Forms.Button btnImport;
+        System.Windows.Forms.Button btnUncheckAll;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.OpenFileDialog dlgBrowse;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label lblCount;
+        System.Windows.Forms.Label lblDate;
+        System.Windows.Forms.Label lblFile;
+        System.Windows.Forms.ListView lstImport;
+        System.Windows.Forms.NumericUpDown udRevision;
     }
 }

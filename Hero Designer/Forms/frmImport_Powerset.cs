@@ -13,28 +13,6 @@ namespace Hero_Designer
 {
     public partial class frmImport_Powerset : Form
     {
-        Button btnCheckAll;
-
-        Button btnClose;
-
-        Button btnFile;
-
-        Button btnImport;
-
-        Button btnUncheckAll;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        OpenFileDialog dlgBrowse;
-        Label Label6;
-        Label Label8;
-        Label lblCount;
-        Label lblDate;
-        Label lblFile;
-        ListView lstImport;
-        NumericUpDown udRevision;
 
         frmBusy bFrm;
 
@@ -48,6 +26,9 @@ namespace Hero_Designer
             this.FullFileName = "";
             this.ImportBuffer = new PowersetData[0];
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Powerset));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_Powerset);
         }
 
         void btnCheckAll_Click(object sender, EventArgs e)
@@ -203,7 +184,7 @@ namespace Hero_Designer
                             this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             num5 = 0;
                         }
-                        this.ImportBuffer = (PowersetData[])Utils.CopyArray((Array)this.ImportBuffer, (Array)new PowersetData[this.ImportBuffer.Length + 1]);
+                        this.ImportBuffer = (PowersetData[])Utils.CopyArray(this.ImportBuffer, (Array)new PowersetData[this.ImportBuffer.Length + 1]);
                         this.ImportBuffer[this.ImportBuffer.Length - 1] = new PowersetData(iString);
                         ++num3;
                         if (this.ImportBuffer[this.ImportBuffer.Length - 1].IsValid)

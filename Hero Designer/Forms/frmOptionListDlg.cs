@@ -24,6 +24,7 @@ namespace Hero_Designer
         public frmOptionListDlg()
         {
             this.InitializeComponent();
+            this.Name = nameof(frmOptionListDlg);
         }
 
         void Cancel_Button_Click(object sender, EventArgs e)

@@ -32,9 +32,9 @@ namespace Hero_Designer
 
         Label lblLock;
 
-        ListLabelV2 _llLeft;
+        ListLabelV2 llLeft;
 
-        ListLabelV2 _llRight;
+        ListLabelV2 llRight;
 
         ImageButton loreBtn;
 
@@ -51,20 +51,23 @@ namespace Hero_Designer
 
         ImageButton[] buttonArray;
 
-        protected bool Locked;
-        protected frmMain myParent;
+        bool Locked;
+        frmMain myParent;
         public IPower[] myPowers;
         internal frmIncarnate.CustomPanel Panel2;
-        internal ListLabelV2 llLeft
+
+        internal ListLabelV2 LLLeft
         {
-            get => _llLeft;
-            private set => _llLeft = value;
+            get => llLeft;
+            private set => llLeft = value;
         }
-        internal ListLabelV2 llRight
+
+        internal ListLabelV2 LLRight
         {
-            get => _llRight;
-            private set => _llRight = value;
+            get => llRight;
+            private set => llRight = value;
         }
+
         public frmIncarnate(ref frmMain iParent)
         {
             this.Load += new EventHandler(this.frmIncarnate_Load);
@@ -72,6 +75,39 @@ namespace Hero_Designer
             this.Locked = false;
             this.buttonArray = new ImageButton[10];
             this.InitializeComponent();
+            this.GenesisButton.ButtonClicked += GenesisButton_ButtonClicked;
+            this.OmegaButton.ButtonClicked += OmegaButton_ButtonClicked;
+
+            // PopInfo events
+            this.PopInfo.MouseWheel += PopInfo_MouseWheel;
+            this.PopInfo.MouseEnter += PopInfo_MouseEnter;
+
+            this.StanceButton.ButtonClicked += StanceButton_ButtonClicked;
+            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+            this.VitaeButton.ButtonClicked += VitaeButton_ButtonClicked;
+            this.alphaBtn.ButtonClicked += alphaBtn_ButtonClicked;
+            this.destinyBtn.ButtonClicked += destinyBtn_ButtonClicked;
+            this.hybridBtn.ButtonClicked += hybridBtn_ButtonClicked;
+            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+            this.interfaceBtn.ButtonClicked += interfaceBtn_ButtonClicked;
+            this.judgementBtn.ButtonClicked += judgementBtn_ButtonClicked;
+            this.lblLock.Click += lblLock_Click;
+
+            // llLeft events
+            this.llLeft.ItemClick += llLeft_ItemClick;
+            this.llLeft.MouseEnter += llLeft_MouseEnter;
+            this.llLeft.ItemHover += llLeft_ItemHover;
+
+
+            // llRight events
+            this.llRight.MouseEnter += llRight_MouseEnter;
+            this.llRight.ItemHover += llRight_ItemHover;
+            this.llRight.ItemClick += llRight_ItemClick;
+
+            this.loreBtn.ButtonClicked += loreBtn_ButtonClicked;
+            this.Name = nameof(frmIncarnate);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmIncarnate));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
             this.myPowers = DatabaseAPI.GetPowersetByName("Alpha", Enums.ePowerSetType.Incarnate).Powers;
         }

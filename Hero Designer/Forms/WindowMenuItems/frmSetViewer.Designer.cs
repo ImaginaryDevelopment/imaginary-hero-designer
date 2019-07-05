@@ -64,6 +64,7 @@ namespace Hero_Designer
             this.lstSets.TabIndex = 0;
             this.lstSets.UseCompatibleStateImageBehavior = false;
             this.lstSets.View = System.Windows.Forms.View.Details;
+            this.lstSets.SelectedIndexChanged += new System.EventHandler(lstSets_SelectedIndexChanged);
             this.ColumnHeader1.Text = "Set";
             this.ColumnHeader1.Width = 148;
             this.ColumnHeader2.Text = "Power";
@@ -136,6 +137,8 @@ namespace Hero_Designer
             this.chkOnTop.TextOff = "Keep On Top";
             this.chkOnTop.TextOn = "Keep On Top";
             this.chkOnTop.Toggle = true;
+            this.chkOnTop.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(chkOnTop_CheckedChanged);
+
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.Checked = false;
             this.btnClose.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
@@ -149,6 +152,7 @@ namespace Hero_Designer
             this.btnClose.TextOff = "Close";
             this.btnClose.TextOn = "Close";
             this.btnClose.Toggle = false;
+            this.btnClose.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(btnClose_Click);
             this.btnSmall.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             this.btnSmall.Checked = false;
             this.btnSmall.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
@@ -162,6 +166,7 @@ namespace Hero_Designer
             this.btnSmall.TextOff = "<< Shrink";
             this.btnSmall.TextOn = ">>";
             this.btnSmall.Toggle = false;
+            this.btnSmall.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(btnSmall_Click);
 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
@@ -184,12 +189,7 @@ namespace Hero_Designer
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Currently Active Sets & Bonuses";
             this.TopMost = true;
-            //adding events
-            this.btnClose.ButtonClicked += btnClose_Click;
-            this.btnSmall.ButtonClicked += btnSmall_Click;
-            this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-            this.lstSets.SelectedIndexChanged += lstSets_SelectedIndexChanged;
-            // finished with events
+
             this.ResumeLayout(false);
         }
         #endregion

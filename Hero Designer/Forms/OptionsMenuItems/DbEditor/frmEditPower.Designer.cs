@@ -284,7 +284,7 @@ namespace Hero_Designer
             this.chkNoAUReq.TabIndex = 46;
             this.chkNoAUReq.Text = "Do not automatically update this power's requirements";
             this.chkNoAUReq.UseVisualStyleBackColor = true;
-            this.chkNoAUReq.CheckedChanged += chkNoAUReq_CheckedChanged;
+            this.chkNoAUReq.CheckedChanged += new System.EventHandler(chkNoAUReq_CheckedChanged);
 
             this.chkNoAutoUpdate.Location = new System.Drawing.Point(13, 306);
             this.chkNoAutoUpdate.Name = "chkNoAutoUpdate";
@@ -293,7 +293,7 @@ namespace Hero_Designer
             this.chkNoAutoUpdate.TabIndex = 23;
             this.chkNoAutoUpdate.Text = "Do not automatically update this power during bulk-imports";
             this.chkNoAutoUpdate.UseVisualStyleBackColor = true;
-            this.chkNoAutoUpdate.CheckedChanged += chkNoAutoUpdate_CheckedChanged;
+            this.chkNoAutoUpdate.CheckedChanged += new System.EventHandler(chkNoAutoUpdate_CheckedChanged);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkSortOverride);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkSubInclude);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkAlwaysToggle);
@@ -318,7 +318,7 @@ namespace Hero_Designer
             this.chkSortOverride.TabIndex = 42;
             this.chkSortOverride.Text = "Priority Sort Order";
             this.chkSortOverride.UseVisualStyleBackColor = true;
-            this.chkSortOverride.CheckedChanged += chkSortOverride_CheckedChanged;
+            this.chkSortOverride.CheckedChanged += new System.EventHandler(chkSortOverride_CheckedChanged);
 
             this.chkSubInclude.Location = new System.Drawing.Point(6, 152);
             this.chkSubInclude.Name = "chkSubInclude";
@@ -327,7 +327,7 @@ namespace Hero_Designer
             this.chkSubInclude.TabIndex = 4;
             this.chkSubInclude.Text = "Sub-Power Include Flag";
             this.chkSubInclude.UseVisualStyleBackColor = true;
-            this.chkSubInclude.CheckedChanged += chkSubInclude_CheckedChanged;
+            this.chkSubInclude.CheckedChanged += new System.EventHandler(chkSubInclude_CheckedChanged);
 
             this.chkAlwaysToggle.Location = new System.Drawing.Point(6, 42);
             this.chkAlwaysToggle.Name = "chkAlwaysToggle";
@@ -335,7 +335,7 @@ namespace Hero_Designer
             this.chkAlwaysToggle.Size = new System.Drawing.Size(168, 20);
             this.chkAlwaysToggle.TabIndex = 1;
             this.chkAlwaysToggle.Text = "Toggle Defaults to ON";
-            this.chkAlwaysToggle.CheckedChanged += chkAlwaysToggle_CheckedChanged;
+            this.chkAlwaysToggle.CheckedChanged += new System.EventHandler(chkAlwaysToggle_CheckedChanged);
 
             this.chkBuffCycle.Location = new System.Drawing.Point(6, 16);
             this.chkBuffCycle.Name = "chkBuffCycle";
@@ -343,7 +343,7 @@ namespace Hero_Designer
             this.chkBuffCycle.Size = new System.Drawing.Size(168, 20);
             this.chkBuffCycle.TabIndex = 0;
             this.chkBuffCycle.Text = "Power is a Click-Buff";
-            this.chkBuffCycle.CheckedChanged += chkBuffCycle_CheckedChanged;
+            this.chkBuffCycle.CheckedChanged += new System.EventHandler(chkBuffCycle_CheckedChanged);
 
             this.chkGraphFix.Location = new System.Drawing.Point(6, 68);
             this.chkGraphFix.Name = "chkGraphFix";
@@ -352,7 +352,7 @@ namespace Hero_Designer
             this.chkGraphFix.TabIndex = 2;
             this.chkGraphFix.Text = "Ignore when setting graph scale";
             this.chkGraphFix.UseVisualStyleBackColor = true;
-            this.chkGraphFix.CheckedChanged += chkGraphFix_CheckedChanged;
+            this.chkGraphFix.CheckedChanged += new System.EventHandler(chkGraphFix_CheckedChanged);
 
             this.chkAltSub.Location = new System.Drawing.Point(6, 124);
             this.chkAltSub.Name = "chkAltSub";
@@ -361,7 +361,7 @@ namespace Hero_Designer
             this.chkAltSub.TabIndex = 3;
             this.chkAltSub.Text = "Sub-Power Colour Flag (ToDo)";
             this.chkAltSub.UseVisualStyleBackColor = true;
-            this.chkAltSub.CheckedChanged += chkAltSub_CheckedChanged;
+            this.chkAltSub.CheckedChanged += new System.EventHandler(chkAltSub_CheckedChanged);
 
             this.Label21.Location = new System.Drawing.Point(21, 178);
             this.Label21.Name = "Label21";
@@ -397,7 +397,7 @@ namespace Hero_Designer
 
             this.cbForcedClass.Size = new System.Drawing.Size(175, 22);
             this.cbForcedClass.TabIndex = 0;
-            this.cbForcedClass.SelectedIndexChanged += cbForcedClass_SelectedIndexChanged;
+            this.cbForcedClass.SelectedIndexChanged += new System.EventHandler(cbForcedClass_SelectedIndexChanged);
 
             this.Label29.Location = new System.Drawing.Point(7, 30);
             this.Label29.Name = "Label29";
@@ -425,7 +425,7 @@ namespace Hero_Designer
             this.chkSummonDisplayEntity.TabIndex = 2;
             this.chkSummonDisplayEntity.Text = "Display entity even if absorbed";
             this.chkSummonDisplayEntity.UseVisualStyleBackColor = true;
-            this.chkSummonDisplayEntity.CheckedChanged += chkSummonDisplayEntity_CheckedChanged;
+            this.chkSummonDisplayEntity.CheckedChanged += new System.EventHandler(chkSummonDisplayEntity_CheckedChanged);
 
             this.chkSummonStealAttributes.Location = new System.Drawing.Point(6, 42);
             this.chkSummonStealAttributes.Name = "chkSummonStealAttributes";
@@ -434,7 +434,7 @@ namespace Hero_Designer
             this.chkSummonStealAttributes.TabIndex = 1;
             this.chkSummonStealAttributes.Text = "Power absorbs summoned entity's attributes\r\n";
             this.chkSummonStealAttributes.UseVisualStyleBackColor = true;
-            this.chkSummonStealAttributes.CheckedChanged += chkSummonStealAttributes_CheckedChanged;
+            this.chkSummonStealAttributes.CheckedChanged += new System.EventHandler(chkSummonStealAttributes_CheckedChanged);
 
             this.chkSummonStealEffects.Location = new System.Drawing.Point(6, 16);
             this.chkSummonStealEffects.Name = "chkSummonStealEffects";
@@ -443,7 +443,7 @@ namespace Hero_Designer
             this.chkSummonStealEffects.TabIndex = 0;
             this.chkSummonStealEffects.Text = "Power absorbs summoned entity's effects";
             this.chkSummonStealEffects.UseVisualStyleBackColor = true;
-            this.chkSummonStealEffects.CheckedChanged += chkSummonStealEffects_CheckedChanged;
+            this.chkSummonStealEffects.CheckedChanged += new System.EventHandler(chkSummonStealEffects_CheckedChanged);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.txtDescLong);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.txtDescShort);
             this.GroupBox5.Controls.Add((System.Windows.Forms.Control)this.Label2);
@@ -465,7 +465,7 @@ namespace Hero_Designer
             this.txtDescLong.Size = new System.Drawing.Size(425, 57);
             this.txtDescLong.TabIndex = 1;
             this.txtDescLong.Text = "Power Desc Long";
-            this.txtDescLong.TextChanged += txtDescLong_TextChanged;
+            this.txtDescLong.TextChanged += new System.EventHandler(txtDescLong_TextChanged);
 
             this.txtDescShort.Location = new System.Drawing.Point(58, 16);
             this.txtDescShort.Name = "txtDescShort";
@@ -473,7 +473,7 @@ namespace Hero_Designer
             this.txtDescShort.Size = new System.Drawing.Size(425, 20);
             this.txtDescShort.TabIndex = 0;
             this.txtDescShort.Text = "Power Desc Short";
-            this.txtDescShort.TextChanged += txtDescShort_TextChanged;
+            this.txtDescShort.TextChanged += new System.EventHandler(txtDescShort_TextChanged);
 
             this.Label2.Location = new System.Drawing.Point(6, 16);
             this.Label2.Name = "Label2";
@@ -520,8 +520,8 @@ namespace Hero_Designer
             this.udScaleMax.Size = new System.Drawing.Size(63, 20);
             this.udScaleMax.TabIndex = 3;
             this.udScaleMax.ValueChanged += this.udScaleMax_ValueChanged;
-            this.udScaleMax.Leave += this.udScaleMax_Leave;
-            this.udScaleMax.KeyPress += this.udScaleMax_KeyPress;
+            this.udScaleMax.Leave += new System.EventHandler(this.udScaleMax_Leave);
+            this.udScaleMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.udScaleMax_KeyPress);
 
             this.Label27.Location = new System.Drawing.Point(5, 72);
             this.Label27.Name = "Label27";
@@ -555,7 +555,7 @@ namespace Hero_Designer
             this.txtScaleName.Size = new System.Drawing.Size(190, 20);
             this.txtScaleName.TabIndex = 1;
             this.txtScaleName.Text = "Foes Hit";
-            this.txtScaleName.TextChanged += txtScaleName_TextChanged;
+            this.txtScaleName.TextChanged += new System.EventHandler(txtScaleName_TextChanged);
 
             this.chkScale.Location = new System.Drawing.Point(6, 19);
             this.chkScale.Name = "chkScale";
@@ -564,7 +564,7 @@ namespace Hero_Designer
             this.chkScale.TabIndex = 0;
             this.chkScale.Text = "Enable scaling for this power";
             this.chkScale.UseVisualStyleBackColor = true;
-            this.chkScale.CheckedChanged += chkScale_CheckedChanged;
+            this.chkScale.CheckedChanged += new System.EventHandler(chkScale_CheckedChanged);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblStaticIndex);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.chkHidden);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.lblNameUnique);
@@ -594,7 +594,7 @@ namespace Hero_Designer
             this.lblStaticIndex.TabIndex = 25;
             this.lblStaticIndex.Text = "000";
             this.lblStaticIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblStaticIndex.Click += lblStaticIndex_Click;
+            this.lblStaticIndex.Click += new System.EventHandler(lblStaticIndex_Click);
 
             this.chkHidden.Location = new System.Drawing.Point(5, 69);
             this.chkHidden.Name = "chkHidden";
@@ -603,7 +603,7 @@ namespace Hero_Designer
             this.chkHidden.TabIndex = 24;
             this.chkHidden.Text = "Hide";
             this.chkHidden.UseVisualStyleBackColor = true;
-            this.chkHidden.CheckedChanged += chkHidden_CheckedChanged;
+            this.chkHidden.CheckedChanged += new System.EventHandler(chkHidden_CheckedChanged);
 
             this.lblNameUnique.Location = new System.Drawing.Point(6, 163);
             this.lblNameUnique.Name = "lblNameUnique";
@@ -646,7 +646,7 @@ namespace Hero_Designer
             this.txtNameDisplay.Size = new System.Drawing.Size(196, 20);
             this.txtNameDisplay.TabIndex = 0;
             this.txtNameDisplay.Text = "PowerName";
-            this.txtNameDisplay.TextChanged += txtPowerName_TextChanged;
+            this.txtNameDisplay.TextChanged += new System.EventHandler(txtPowerName_TextChanged);
             this.cbNameGroup.FormattingEnabled = true;
             this.cbNameGroup.Location = new System.Drawing.Point(106, 42);
             this.cbNameGroup.Name = "cbNameGroup";
@@ -776,7 +776,7 @@ namespace Hero_Designer
             this.txtLifeTimeReal.Text = "1";
             this.txtLifeTimeReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLifeTimeReal.TextChanged += this.txtLifeTimeReal_TextChanged;
-            this.txtLifeTimeReal.Leave += this.txtLifeTimeReal_Leave;
+            this.txtLifeTimeReal.Leave += new System.EventHandler(this.txtLifeTimeReal_Leave);
 
             this.Label44.Location = new System.Drawing.Point(447, 193);
             this.Label44.Name = "Label44";
@@ -803,7 +803,7 @@ namespace Hero_Designer
             this.txtLifeTimeGame.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 
             this.txtLifeTimeGame.TextChanged += this.txtLifeTimeGame_TextChanged;
-            this.txtLifeTimeGame.Leave += this.txtLifeTimeGame_Leave;
+            this.txtLifeTimeGame.Leave += new System.EventHandler(this.txtLifeTimeGame_Leave);
 
             this.Label42.Location = new System.Drawing.Point(447, 167);
             this.Label42.Name = "Label42";
@@ -829,7 +829,7 @@ namespace Hero_Designer
             this.txtUseageTime.Text = "1";
             this.txtUseageTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtUseageTime.TextChanged += this.txtUseageTime_TextChanged;
-            this.txtUseageTime.Leave += this.txtUseageTime_Leave;
+            this.txtUseageTime.Leave += new System.EventHandler(this.txtUseageTime_Leave);
 
             this.Label41.Location = new System.Drawing.Point(256, 141);
             this.Label41.Name = "Label41";
@@ -859,7 +859,7 @@ namespace Hero_Designer
             this.chkIgnoreStrength.TabIndex = 16;
             this.chkIgnoreStrength.Text = "Ignore Strength";
             this.chkIgnoreStrength.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkIgnoreStrength.CheckedChanged += chkIgnoreStrength_CheckedChanged;
+            this.chkIgnoreStrength.CheckedChanged += new System.EventHandler(chkIgnoreStrength_CheckedChanged);
 
             this.Label12.Location = new System.Drawing.Point(180, 219);
             this.Label12.Name = "Label12";
@@ -921,7 +921,7 @@ namespace Hero_Designer
             this.rbFlagCastThrough.TabStop = true;
             this.rbFlagCastThrough.Text = "Cast Through...";
             this.rbFlagCastThrough.UseVisualStyleBackColor = true;
-            this.rbFlagCastThrough.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagCastThrough.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
 
             this.rbFlagDisallow.Location = new System.Drawing.Point(152, 88);
             this.rbFlagDisallow.Name = "rbFlagDisallow";
@@ -931,7 +931,7 @@ namespace Hero_Designer
             this.rbFlagDisallow.TabStop = true;
             this.rbFlagDisallow.Text = "Modes Disallowed";
             this.rbFlagDisallow.UseVisualStyleBackColor = true;
-            this.rbFlagDisallow.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagDisallow.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.rbFlagRequired.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagRequired.Location = new System.Drawing.Point(6, 88);
@@ -943,7 +943,7 @@ namespace Hero_Designer
             this.rbFlagRequired.Text = "Modes Required";
             this.rbFlagRequired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagRequired.UseVisualStyleBackColor = true;
-            this.rbFlagRequired.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagRequired.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
 
             this.rbFlagVector.Location = new System.Drawing.Point(152, 65);
             this.rbFlagVector.Name = "rbFlagVector";
@@ -953,7 +953,7 @@ namespace Hero_Designer
             this.rbFlagVector.TabStop = true;
             this.rbFlagVector.Text = "Vector / Damage Types";
             this.rbFlagVector.UseVisualStyleBackColor = true;
-            this.rbFlagVector.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagVector.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.rbFlagCast.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagCast.Location = new System.Drawing.Point(6, 65);
@@ -965,7 +965,7 @@ namespace Hero_Designer
             this.rbFlagCast.Text = "Cast Flags";
             this.rbFlagCast.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagCast.UseVisualStyleBackColor = true;
-            this.rbFlagCast.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagCast.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.clbFlags.FormattingEnabled = true;
 
             this.clbFlags.Location = new System.Drawing.Point(6, 130);
@@ -973,7 +973,7 @@ namespace Hero_Designer
 
             this.clbFlags.Size = new System.Drawing.Size(288, 184);
             this.clbFlags.TabIndex = 10;
-            this.clbFlags.ItemCheck += clbFlags_ItemCheck;
+            this.clbFlags.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(clbFlags_ItemCheck);
 
             this.rbFlagTargetsSec.Location = new System.Drawing.Point(152, 42);
             this.rbFlagTargetsSec.Name = "rbFlagTargetsSec";
@@ -983,7 +983,7 @@ namespace Hero_Designer
             this.rbFlagTargetsSec.TabStop = true;
             this.rbFlagTargetsSec.Text = "Secondary Targets";
             this.rbFlagTargetsSec.UseVisualStyleBackColor = true;
-            this.rbFlagTargetsSec.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagTargetsSec.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.rbFlagTargets.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagTargets.Location = new System.Drawing.Point(6, 42);
@@ -995,7 +995,7 @@ namespace Hero_Designer
             this.rbFlagTargets.Text = "Targets";
             this.rbFlagTargets.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagTargets.UseVisualStyleBackColor = true;
-            this.rbFlagTargets.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagTargets.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
 
             this.rbFlagAffected.Location = new System.Drawing.Point(152, 19);
             this.rbFlagAffected.Name = "rbFlagAffected";
@@ -1005,7 +1005,7 @@ namespace Hero_Designer
             this.rbFlagAffected.TabStop = true;
             this.rbFlagAffected.Text = "Entities Affected";
             this.rbFlagAffected.UseVisualStyleBackColor = true;
-            this.rbFlagAffected.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagAffected.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.rbFlagAutoHit.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.rbFlagAutoHit.Location = new System.Drawing.Point(6, 19);
@@ -1017,7 +1017,7 @@ namespace Hero_Designer
             this.rbFlagAutoHit.Text = "Entities AutoHit";
             this.rbFlagAutoHit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbFlagAutoHit.UseVisualStyleBackColor = true;
-            this.rbFlagAutoHit.CheckedChanged += rbFlagX_CheckedChanged;
+            this.rbFlagAutoHit.CheckedChanged += new System.EventHandler(rbFlagX_CheckedChanged);
             this.cbNotify.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbNotify.Location = new System.Drawing.Point(384, 63);
@@ -1025,7 +1025,7 @@ namespace Hero_Designer
 
             this.cbNotify.Size = new System.Drawing.Size(95, 22);
             this.cbNotify.TabIndex = 14;
-            this.cbNotify.SelectedIndexChanged += cbNotify_SelectedIndexChanged;
+            this.cbNotify.SelectedIndexChanged += new System.EventHandler(cbNotify_SelectedIndexChanged);
             this.chkLos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkLos.Checked = true;
             this.chkLos.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -1037,7 +1037,7 @@ namespace Hero_Designer
             this.chkLos.TabIndex = 15;
             this.chkLos.Text = "Requires Line of Sight";
             this.chkLos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkLos.CheckedChanged += chkLos_CheckedChanged;
+            this.chkLos.CheckedChanged += new System.EventHandler(chkLos_CheckedChanged);
 
             this.txtMaxTargets.Location = new System.Drawing.Point(117, 295);
             this.txtMaxTargets.Name = "txtMaxTargets";
@@ -1046,7 +1046,7 @@ namespace Hero_Designer
             this.txtMaxTargets.TabIndex = 11;
             this.txtMaxTargets.Text = "1";
             this.txtMaxTargets.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtMaxTargets.Leave += this.txtMaxTargets_Leave;
+            this.txtMaxTargets.Leave += new System.EventHandler(this.txtMaxTargets_Leave);
             this.txtMaxTargets.TextChanged += this.txtMaxTargets_TextChanged;
 
             this.lblEndCost.Location = new System.Drawing.Point(180, 167);
@@ -1144,7 +1144,7 @@ namespace Hero_Designer
             this.txtArc.TabIndex = 10;
             this.txtArc.Text = "1";
             this.txtArc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtArc.Leave += this.txtArc_Leave;
+            this.txtArc.Leave += new System.EventHandler(this.txtArc_Leave);
             this.txtArc.TextChanged += this.txtArc_TextChanged;
 
             this.Label15.Location = new System.Drawing.Point(35, 245);
@@ -1162,7 +1162,7 @@ namespace Hero_Designer
             this.txtRadius.TabIndex = 9;
             this.txtRadius.Text = "1";
             this.txtRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtRadius.Leave += this.txtRadius_Leave;
+            this.txtRadius.Leave += new System.EventHandler(this.txtRadius_Leave);
             this.txtRadius.TextChanged += this.txtRadius_TextChanged;
 
             this.txtLevel.Location = new System.Drawing.Point(117, 11);
@@ -1172,7 +1172,7 @@ namespace Hero_Designer
             this.txtLevel.TabIndex = 0;
             this.txtLevel.Text = "1";
             this.txtLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtLevel.Leave += this.txtLevel_Leave;
+            this.txtLevel.Leave += new System.EventHandler(this.txtLevel_Leave);
             this.txtLevel.TextChanged += this.txtLevel_TextChanged;
             this.cbEffectArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEffectArea.Items.AddRange(new object[5]
@@ -1189,7 +1189,7 @@ namespace Hero_Designer
 
             this.cbEffectArea.Size = new System.Drawing.Size(95, 22);
             this.cbEffectArea.TabIndex = 13;
-            this.cbEffectArea.SelectedIndexChanged += cbEffectArea_SelectedIndexChanged;
+            this.cbEffectArea.SelectedIndexChanged += new System.EventHandler(cbEffectArea_SelectedIndexChanged);
 
             this.Label14.Location = new System.Drawing.Point(256, 37);
             this.Label14.Name = "Label14";
@@ -1233,7 +1233,7 @@ namespace Hero_Designer
             this.txtActivate.TabIndex = 5;
             this.txtActivate.Text = "1.0";
             this.txtActivate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtActivate.Leave += this.txtActivate_Leave;
+            this.txtActivate.Leave += new System.EventHandler(this.txtActivate_Leave);
             this.txtActivate.TextChanged += this.txtActivate_TextChanged;
 
             this.Label11.Location = new System.Drawing.Point(9, 115);
@@ -1251,7 +1251,7 @@ namespace Hero_Designer
             this.txtRechargeTime.TabIndex = 4;
             this.txtRechargeTime.Text = "1.0";
             this.txtRechargeTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtRechargeTime.Leave += this.txtRechargeTime_Leave;
+            this.txtRechargeTime.Leave += new System.EventHandler(this.txtRechargeTime_Leave);
             this.txtRechargeTime.TextChanged += this.txtRechargeTime_TextChanged;
 
             this.Label8.Location = new System.Drawing.Point(9, 89);
@@ -1268,7 +1268,7 @@ namespace Hero_Designer
             this.txtCastTime.TabIndex = 3;
             this.txtCastTime.Text = "1.0";
             this.txtCastTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCastTime.Leave += this.txtCastTime_Leave;
+            this.txtCastTime.Leave += new System.EventHandler(this.txtCastTime_Leave);
             this.txtCastTime.TextChanged += this.txtCastTime_TextChanged;
 
             this.Label9.Location = new System.Drawing.Point(9, 63);
@@ -1322,7 +1322,7 @@ namespace Hero_Designer
             this.txtAcc.TabIndex = 1;
             this.txtAcc.Text = "1.0";
             this.txtAcc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtAcc.Leave += this.txtAcc_Leave;
+            this.txtAcc.Leave += new System.EventHandler(this.txtAcc_Leave);
             this.txtAcc.TextChanged += this.txtAcc_TextChanged;
             this.cbPowerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPowerType.Items.AddRange(new object[3]
@@ -1337,7 +1337,7 @@ namespace Hero_Designer
 
             this.cbPowerType.Size = new System.Drawing.Size(95, 22);
             this.cbPowerType.TabIndex = 12;
-            this.cbPowerType.SelectedIndexChanged += cbPowerType_SelectedIndexChanged;
+            this.cbPowerType.SelectedIndexChanged += new System.EventHandler(cbPowerType_SelectedIndexChanged);
 
             this.Label5.Location = new System.Drawing.Point(256, 11);
             this.Label5.Name = "Label5";
@@ -1372,7 +1372,7 @@ namespace Hero_Designer
 
             this.lvFX.Size = new System.Drawing.Size(744, 270);
             this.lvFX.TabIndex = 71;
-            this.lvFX.DoubleClick += this.lvFX_DoubleClick;
+            this.lvFX.DoubleClick += new System.EventHandler(this.lvFX_DoubleClick);
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnSetDamage);
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnFXEdit);
             this.pnlFX.Controls.Add((System.Windows.Forms.Control)this.btnFXDown);
@@ -1400,7 +1400,7 @@ namespace Hero_Designer
             this.btnFXEdit.Size = new System.Drawing.Size(64, 24);
             this.btnFXEdit.TabIndex = 77;
             this.btnFXEdit.Text = "Edit...";
-            this.btnFXEdit.Click += btnFXEdit_Click;
+            this.btnFXEdit.Click += new System.EventHandler(btnFXEdit_Click);
 
             this.btnFXDown.Location = new System.Drawing.Point(756, 40);
             this.btnFXDown.Name = "btnFXDown";
@@ -1408,7 +1408,7 @@ namespace Hero_Designer
             this.btnFXDown.Size = new System.Drawing.Size(64, 24);
             this.btnFXDown.TabIndex = 11;
             this.btnFXDown.Text = "Down";
-            this.btnFXDown.Click += btnFXDown_Click;
+            this.btnFXDown.Click += new System.EventHandler(btnFXDown_Click);
 
             this.btnFXUp.Location = new System.Drawing.Point(756, 8);
             this.btnFXUp.Name = "btnFXUp";
@@ -1416,7 +1416,7 @@ namespace Hero_Designer
             this.btnFXUp.Size = new System.Drawing.Size(64, 24);
             this.btnFXUp.TabIndex = 12;
             this.btnFXUp.Text = "Up";
-            this.btnFXUp.Click += btnFXUp_Click;
+            this.btnFXUp.Click += new System.EventHandler(btnFXUp_Click);
 
             this.btnFXRemove.Location = new System.Drawing.Point(236, 288);
             this.btnFXRemove.Name = "btnFXRemove";
@@ -1424,7 +1424,7 @@ namespace Hero_Designer
             this.btnFXRemove.Size = new System.Drawing.Size(64, 24);
             this.btnFXRemove.TabIndex = 10;
             this.btnFXRemove.Text = "Remove";
-            this.btnFXRemove.Click += btnFXRemove_Click;
+            this.btnFXRemove.Click += new System.EventHandler(btnFXRemove_Click);
 
             this.btnFXDuplicate.Location = new System.Drawing.Point(84, 288);
             this.btnFXDuplicate.Name = "btnFXDuplicate";
@@ -1432,7 +1432,7 @@ namespace Hero_Designer
             this.btnFXDuplicate.Size = new System.Drawing.Size(64, 24);
             this.btnFXDuplicate.TabIndex = 69;
             this.btnFXDuplicate.Text = "Duplicate";
-            this.btnFXDuplicate.Click += btnFXDuplicate_Click;
+            this.btnFXDuplicate.Click += new System.EventHandler(btnFXDuplicate_Click);
 
             this.btnFXAdd.Location = new System.Drawing.Point(8, 288);
             this.btnFXAdd.Name = "btnFXAdd";
@@ -1440,7 +1440,7 @@ namespace Hero_Designer
             this.btnFXAdd.Size = new System.Drawing.Size(64, 24);
             this.btnFXAdd.TabIndex = 9;
             this.btnFXAdd.Text = "Add";
-            this.btnFXAdd.Click += btnFXAdd_Click;
+            this.btnFXAdd.Click += new System.EventHandler(btnFXAdd_Click);
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.chkBoostUsePlayerLevel);
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.chkBoostBoostable);
             this.tpEnh.Controls.Add((System.Windows.Forms.Control)this.Label23);
@@ -1463,7 +1463,7 @@ namespace Hero_Designer
             this.chkBoostUsePlayerLevel.Size = new System.Drawing.Size(324, 20);
             this.chkBoostUsePlayerLevel.TabIndex = 91;
             this.chkBoostUsePlayerLevel.Text = "Attuned Enhancement";
-            this.chkBoostUsePlayerLevel.CheckedChanged += chkBoostUsePlayerLevel_CheckedChanged;
+            this.chkBoostUsePlayerLevel.CheckedChanged += new System.EventHandler(chkBoostUsePlayerLevel_CheckedChanged);
 
             this.chkBoostBoostable.Location = new System.Drawing.Point(357, 110);
             this.chkBoostBoostable.Name = "chkBoostBoostable";
@@ -1471,7 +1471,7 @@ namespace Hero_Designer
             this.chkBoostBoostable.Size = new System.Drawing.Size(324, 20);
             this.chkBoostBoostable.TabIndex = 90;
             this.chkBoostBoostable.Text = "Allow Enhancement Boosters (Enhancement only)";
-            this.chkBoostBoostable.CheckedChanged += chkBoostBoostable_CheckedChanged;
+            this.chkBoostBoostable.CheckedChanged += new System.EventHandler(chkBoostBoostable_CheckedChanged);
 
             this.Label23.Location = new System.Drawing.Point(24, 12);
             this.Label23.Name = "Label23";
@@ -1498,7 +1498,7 @@ namespace Hero_Designer
             this.chkPRFrontLoad.Size = new System.Drawing.Size(324, 20);
             this.chkPRFrontLoad.TabIndex = 88;
             this.chkPRFrontLoad.Text = "Allow front-loading of enhancement slots (for Kheld forms)";
-            this.chkPRFrontLoad.CheckedChanged += chkPRFrontLoad_CheckedChanged;
+            this.chkPRFrontLoad.CheckedChanged += new System.EventHandler(chkPRFrontLoad_CheckedChanged);
             this.pbEnhancementList.BackColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 192, 128);
             this.pbEnhancementList.Location = new System.Drawing.Point(24, 84);
             this.pbEnhancementList.Name = "pbEnhancementList";
@@ -1605,7 +1605,7 @@ namespace Hero_Designer
             this.btnPrReset.TabIndex = 15;
             this.btnPrReset.Text = "Reset";
             this.btnPrReset.UseVisualStyleBackColor = true;
-            this.btnPrReset.Click += btnPrReset_Click;
+            this.btnPrReset.Click += new System.EventHandler(btnPrReset_Click);
 
             this.btnPrSetNone.Location = new System.Drawing.Point(432, 153);
             this.btnPrSetNone.Name = "btnPrSetNone";
@@ -1614,7 +1614,7 @@ namespace Hero_Designer
             this.btnPrSetNone.TabIndex = 14;
             this.btnPrSetNone.Text = "Set Power A to None";
             this.btnPrSetNone.UseVisualStyleBackColor = true;
-            this.btnPrSetNone.Click += btnPrSetNone_Click;
+            this.btnPrSetNone.Click += new System.EventHandler(btnPrSetNone_Click);
 
             this.btnPrDown.Location = new System.Drawing.Point(513, 204);
             this.btnPrDown.Name = "btnPrDown";
@@ -1623,7 +1623,7 @@ namespace Hero_Designer
             this.btnPrDown.TabIndex = 13;
             this.btnPrDown.Text = "Down";
             this.btnPrDown.UseVisualStyleBackColor = true;
-            this.btnPrDown.Click += btnPrDown_Click;
+            this.btnPrDown.Click += new System.EventHandler(btnPrDown_Click);
 
             this.btnPrUp.Location = new System.Drawing.Point(432, 204);
             this.btnPrUp.Name = "btnPrUp";
@@ -1632,7 +1632,7 @@ namespace Hero_Designer
             this.btnPrUp.TabIndex = 12;
             this.btnPrUp.Text = "Up";
             this.btnPrUp.UseVisualStyleBackColor = true;
-            this.btnPrUp.Click += btnPrUp_Click;
+            this.btnPrUp.Click += new System.EventHandler(btnPrUp_Click);
 
             this.rbPrRemove.Location = new System.Drawing.Point(432, 262);
             this.rbPrRemove.Name = "rbPrRemove";
@@ -1641,7 +1641,7 @@ namespace Hero_Designer
             this.rbPrRemove.TabIndex = 11;
             this.rbPrRemove.Text = "Remove Selected";
             this.rbPrRemove.UseVisualStyleBackColor = true;
-            this.rbPrRemove.Click += rbPrRemove_Click;
+            this.rbPrRemove.Click += new System.EventHandler(rbPrRemove_Click);
 
             this.rbPrAdd.Location = new System.Drawing.Point(432, 233);
             this.rbPrAdd.Name = "rbPrAdd";
@@ -1650,7 +1650,7 @@ namespace Hero_Designer
             this.rbPrAdd.TabIndex = 10;
             this.rbPrAdd.Text = "Add New";
             this.rbPrAdd.UseVisualStyleBackColor = true;
-            this.rbPrAdd.Click += rbPrAdd_Click;
+            this.rbPrAdd.Click += new System.EventHandler(rbPrAdd_Click);
             this.rbPrPowerB.Appearance = System.Windows.Forms.Appearance.Button;
 
             this.rbPrPowerB.Location = new System.Drawing.Point(513, 124);
@@ -1661,7 +1661,7 @@ namespace Hero_Designer
             this.rbPrPowerB.Text = "Power B";
             this.rbPrPowerB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPrPowerB.UseVisualStyleBackColor = true;
-            this.rbPrPowerB.CheckedChanged += rbPrPowerX_CheckedChanged;
+            this.rbPrPowerB.CheckedChanged += new System.EventHandler(rbPrPowerX_CheckedChanged);
             this.rbPrPowerA.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbPrPowerA.Checked = true;
 
@@ -1674,7 +1674,7 @@ namespace Hero_Designer
             this.rbPrPowerA.Text = "Power A";
             this.rbPrPowerA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbPrPowerA.UseVisualStyleBackColor = true;
-            this.rbPrPowerA.CheckedChanged += rbPrPowerX_CheckedChanged;
+            this.rbPrPowerA.CheckedChanged += new System.EventHandler(rbPrPowerX_CheckedChanged);
             this.lvPrPower.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
         this.ColumnHeader9
@@ -1691,7 +1691,7 @@ namespace Hero_Designer
             this.lvPrPower.TabIndex = 3;
             this.lvPrPower.UseCompatibleStateImageBehavior = false;
             this.lvPrPower.View = System.Windows.Forms.View.Details;
-            this.lvPrPower.SelectedIndexChanged += lvPrPower_SelectedIndexChanged;
+            this.lvPrPower.SelectedIndexChanged += new System.EventHandler(lvPrPower_SelectedIndexChanged);
             this.ColumnHeader9.Text = "Power";
             this.ColumnHeader9.Width = 110;
             this.lvPrSet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1710,7 +1710,7 @@ namespace Hero_Designer
             this.lvPrSet.TabIndex = 2;
             this.lvPrSet.UseCompatibleStateImageBehavior = false;
             this.lvPrSet.View = System.Windows.Forms.View.Details;
-            this.lvPrSet.SelectedIndexChanged += lvPrSet_SelectedIndexChanged;
+            this.lvPrSet.SelectedIndexChanged += new System.EventHandler(lvPrSet_SelectedIndexChanged);
             this.ColumnHeader10.Text = "Set";
             this.ColumnHeader10.Width = 110;
             this.lvPrGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1729,7 +1729,7 @@ namespace Hero_Designer
             this.lvPrGroup.TabIndex = 1;
             this.lvPrGroup.UseCompatibleStateImageBehavior = false;
             this.lvPrGroup.View = System.Windows.Forms.View.Details;
-            this.lvPrGroup.SelectedIndexChanged += lvPrGroup_SelectedIndexChanged;
+            this.lvPrGroup.SelectedIndexChanged += new System.EventHandler(lvPrGroup_SelectedIndexChanged);
             this.ColumnHeader11.Text = "Group";
             this.ColumnHeader11.Width = 110;
             this.lvPrListing.Columns.AddRange(new System.Windows.Forms.ColumnHeader[3]
@@ -1750,7 +1750,7 @@ namespace Hero_Designer
             this.lvPrListing.TabIndex = 0;
             this.lvPrListing.UseCompatibleStateImageBehavior = false;
             this.lvPrListing.View = System.Windows.Forms.View.Details;
-            this.lvPrListing.SelectedIndexChanged += lvPrListing_SelectedIndexChanged;
+            this.lvPrListing.SelectedIndexChanged += new System.EventHandler(lvPrListing_SelectedIndexChanged);
             this.ColumnHeader6.Text = "Power A";
             this.ColumnHeader6.Width = 265;
             this.ColumnHeader7.Text = "";
@@ -1825,7 +1825,7 @@ namespace Hero_Designer
 
             this.lvDisablePass4.Size = new System.Drawing.Size(212, 284);
             this.lvDisablePass4.TabIndex = 111;
-            this.lvDisablePass4.SelectedIndexChanged += lvDisablePass4_SelectedIndexChanged;
+            this.lvDisablePass4.SelectedIndexChanged += new System.EventHandler(lvDisablePass4_SelectedIndexChanged);
             this.lvDisablePass1.ItemHeight = 14;
 
             this.lvDisablePass1.Location = new System.Drawing.Point(6, 44);
@@ -1834,7 +1834,7 @@ namespace Hero_Designer
 
             this.lvDisablePass1.Size = new System.Drawing.Size(212, 284);
             this.lvDisablePass1.TabIndex = 110;
-            this.lvDisablePass1.SelectedIndexChanged += lvDisablePass1_SelectedIndexChanged;
+            this.lvDisablePass1.SelectedIndexChanged += new System.EventHandler(lvDisablePass1_SelectedIndexChanged);
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.GroupBox2);
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.chkMutexAuto);
             this.tpMutex.Controls.Add((System.Windows.Forms.Control)this.chkMutexSkip);
@@ -1864,7 +1864,7 @@ namespace Hero_Designer
             this.btnMutexAdd.TabIndex = 1;
             this.btnMutexAdd.Text = "Add New Group...";
             this.btnMutexAdd.UseVisualStyleBackColor = true;
-            this.btnMutexAdd.Click += btnMutexAdd_Click;
+            this.btnMutexAdd.Click += new System.EventHandler(btnMutexAdd_Click);
             this.clbMutex.FormattingEnabled = true;
 
             this.clbMutex.Location = new System.Drawing.Point(6, 19);
@@ -1880,7 +1880,7 @@ namespace Hero_Designer
             this.chkMutexAuto.TabIndex = 4;
             this.chkMutexAuto.Text = "Auto-Detoggle other powers";
             this.chkMutexAuto.UseVisualStyleBackColor = true;
-            this.chkMutexAuto.CheckedChanged += chkMutexAuto_CheckedChanged;
+            this.chkMutexAuto.CheckedChanged += new System.EventHandler(chkMutexAuto_CheckedChanged);
 
             this.chkMutexSkip.Location = new System.Drawing.Point(340, 33);
             this.chkMutexSkip.Name = "chkMutexSkip";
@@ -1889,7 +1889,7 @@ namespace Hero_Designer
             this.chkMutexSkip.TabIndex = 3;
             this.chkMutexSkip.Text = "Skip Mutal Exclusivity for this power";
             this.chkMutexSkip.UseVisualStyleBackColor = true;
-            this.chkMutexSkip.CheckedChanged += chkMutexSkip_CheckedChanged;
+            this.chkMutexSkip.CheckedChanged += new System.EventHandler(chkMutexSkip_CheckedChanged);
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.btnSPAdd);
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.btnSPRemove);
             this.tpSubPower.Controls.Add((System.Windows.Forms.Control)this.lvSPSelected);
@@ -1908,14 +1908,14 @@ namespace Hero_Designer
             this.btnSPAdd.TabIndex = 13;
             this.btnSPAdd.Text = ">>";
             this.btnSPAdd.UseVisualStyleBackColor = true;
-            this.btnSPAdd.Click += btnSPAdd_Click;
+            this.btnSPAdd.Click += new System.EventHandler(btnSPAdd_Click);
             this.btnSPRemove.Location = new System.Drawing.Point(437, 170);
             this.btnSPRemove.Name = "btnSPRemove";
             this.btnSPRemove.Size = new System.Drawing.Size(48, 23);
             this.btnSPRemove.TabIndex = 12;
             this.btnSPRemove.Text = "<<";
             this.btnSPRemove.UseVisualStyleBackColor = true;
-            this.btnSPRemove.Click += btnSPRemove_Click;
+            this.btnSPRemove.Click += new System.EventHandler(btnSPRemove_Click);
             this.lvSPSelected.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
             {
                 this.ColumnHeader4
@@ -1962,7 +1962,7 @@ namespace Hero_Designer
             this.lvSPSet.TabIndex = 5;
             this.lvSPSet.UseCompatibleStateImageBehavior = false;
             this.lvSPSet.View = System.Windows.Forms.View.Details;
-            this.lvSPSet.SelectedIndexChanged += lvSPSet_SelectedIndexChanged;
+            this.lvSPSet.SelectedIndexChanged += new System.EventHandler(lvSPSet_SelectedIndexChanged);
             this.ColumnHeader2.Text = "Set";
             this.ColumnHeader2.Width = 110;
             this.lvSPGroup.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -1979,7 +1979,7 @@ namespace Hero_Designer
             this.lvSPGroup.TabIndex = 4;
             this.lvSPGroup.UseCompatibleStateImageBehavior = false;
             this.lvSPGroup.View = System.Windows.Forms.View.Details;
-            this.lvSPGroup.SelectedIndexChanged += lvSPGroup_SelectedIndexChanged;
+            this.lvSPGroup.SelectedIndexChanged += new System.EventHandler(lvSPGroup_SelectedIndexChanged);
             this.ColumnHeader3.Text = "Group";
             this.ColumnHeader3.Width = 110;
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -1988,35 +1988,35 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(104, 36);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
-            this.btnOK.Click += btnOK_Click;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(632, 380);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 36);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.btnFullPaste.Location = new System.Drawing.Point(434, 380);
             this.btnFullPaste.Name = "btnFullPaste";
             this.btnFullPaste.Size = new System.Drawing.Size(104, 36);
             this.btnFullPaste.TabIndex = 5;
             this.btnFullPaste.Text = "Paste";
             this.btnFullPaste.UseVisualStyleBackColor = true;
-            this.btnFullPaste.Click += btnFullPaste_Click;
+            this.btnFullPaste.Click += new System.EventHandler(btnFullPaste_Click);
             this.btnFullCopy.Location = new System.Drawing.Point(324, 380);
             this.btnFullCopy.Name = "btnFullCopy";
             this.btnFullCopy.Size = new System.Drawing.Size(104, 36);
             this.btnFullCopy.TabIndex = 6;
             this.btnFullCopy.Text = "Copy";
             this.btnFullCopy.UseVisualStyleBackColor = true;
-            this.btnFullCopy.Click += btnFullCopy_Click;
+            this.btnFullCopy.Click += new System.EventHandler(btnFullCopy_Click);
             this.btnCSVImport.Location = new System.Drawing.Point(8, 380);
             this.btnCSVImport.Name = "btnCSVImport";
             this.btnCSVImport.Size = new System.Drawing.Size(151, 36);
             this.btnCSVImport.TabIndex = 7;
             this.btnCSVImport.Text = "Import CSV String";
             this.btnCSVImport.UseVisualStyleBackColor = true;
-            this.btnCSVImport.Click += btnCSVImport_Click;
+            this.btnCSVImport.Click += new System.EventHandler(btnCSVImport_Click);
             this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = (System.Windows.Forms.IButtonControl)this.btnCancel;

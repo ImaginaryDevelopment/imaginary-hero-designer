@@ -97,7 +97,7 @@ namespace Hero_Designer
             this.btnUp.TabIndex = 1;
             this.btnUp.Text = "Move Up";
             this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += btnUp_Click;
+            this.btnUp.Click += new System.EventHandler(btnUp_Click);
             this.btnDown.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDown.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -108,7 +108,7 @@ namespace Hero_Designer
             this.btnDown.TabIndex = 2;
             this.btnDown.Text = "Move Down";
             this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += btnDown_Click;
+            this.btnDown.Click += new System.EventHandler(btnDown_Click);
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnAdd.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -119,7 +119,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add...";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += btnAdd_Click;
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDelete.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -130,7 +130,7 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Click += new System.EventHandler(btnDelete_Click);
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnEdit.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -141,7 +141,7 @@ namespace Hero_Designer
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit...";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += btnEdit_Click;
+            this.btnEdit.Click += new System.EventHandler(btnEdit_Click);
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -153,7 +153,7 @@ namespace Hero_Designer
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save and Close";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += btnSave_Click;
+            this.btnSave.Click += new System.EventHandler(btnSave_Click);
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
@@ -165,7 +165,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "Cancel and Discard Changes";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.btnClone.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnClone.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
 
@@ -176,7 +176,7 @@ namespace Hero_Designer
             this.btnClone.TabIndex = 24;
             this.btnClone.Text = "Clone...";
             this.btnClone.UseVisualStyleBackColor = true;
-            this.btnClone.Click += btnClone_Click;
+            this.btnClone.Click += new System.EventHandler(btnClone_Click);
             this.NoReload.ForeColor = System.Drawing.Color.White;
 
             this.NoReload.Location = new System.Drawing.Point(12, 580);
@@ -185,7 +185,7 @@ namespace Hero_Designer
             this.NoReload.Size = new System.Drawing.Size(248, 16);
             this.NoReload.TabIndex = 25;
             this.NoReload.Text = "Disable Image Reload";
-            this.NoReload.CheckedChanged += NoReload_CheckedChanged;
+            this.NoReload.CheckedChanged += new System.EventHandler( NoReload_CheckedChanged);
             this.lblLoading.BackColor = System.Drawing.Color.White;
             this.lblLoading.Font = new System.Drawing.Font("Arial", 14f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.lblLoading.ForeColor = System.Drawing.Color.Black;

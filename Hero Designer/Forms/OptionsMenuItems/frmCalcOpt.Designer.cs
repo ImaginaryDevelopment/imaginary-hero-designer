@@ -208,6 +208,8 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(75, 28);
             this.btnOK.TabIndex = 59;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
+
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(408, 360);
@@ -216,6 +218,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 28);
             this.btnCancel.TabIndex = 60;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage3);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage2);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage6);
@@ -334,6 +337,7 @@ namespace Hero_Designer
             this.btnFontColour.TabIndex = 61;
             this.btnFontColour.Text = "Set Colors...";
             this.btnFontColour.UseVisualStyleBackColor = true;
+            this.btnFontColour.Click += new System.EventHandler(this.btnFontColour_Click);
 
             this.Label22.Location = new System.Drawing.Point(7, 48);
             this.Label22.Name = "Label22";
@@ -448,6 +452,7 @@ namespace Hero_Designer
             this.btnIOReset.Size = new System.Drawing.Size(172, 44);
             this.btnIOReset.TabIndex = 59;
             this.btnIOReset.Text = "Set All IO and SetO levels to default";
+            this.btnIOReset.Click += new System.EventHandler(btnIOReset_Click);
 
             this.Label40.Location = new System.Drawing.Point(8, 20);
             this.Label40.Name = "Label40";
@@ -507,6 +512,7 @@ namespace Hero_Designer
             this.optTO.Size = new System.Drawing.Size(44, 44);
             this.optTO.TabIndex = 48;
             this.optTO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.optTO.CheckedChanged += new System.EventHandler(optTO_CheckedChanged);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.optTO, "Training enhancements are the weakest kind.");
             this.optDO.Appearance = System.Windows.Forms.Appearance.Button;
             this.optDO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -517,6 +523,7 @@ namespace Hero_Designer
             this.optDO.Size = new System.Drawing.Size(44, 44);
             this.optDO.TabIndex = 49;
             this.optDO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.optDO.CheckedChanged += new System.EventHandler(optDO_CheckedChanged);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.optDO, "Dual Origin enhancements can be bought from level 12 onwards.");
             this.optSO.Appearance = System.Windows.Forms.Appearance.Button;
             this.optSO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -529,6 +536,7 @@ namespace Hero_Designer
             this.optSO.TabIndex = 50;
             this.optSO.TabStop = true;
             this.optSO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.optSO.CheckedChanged += new System.EventHandler(optSO_CheckedChanged);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.optSO, "Single Origin enhancements are the most powerful kind, and can be bought from level 22.");
             this.optEnh.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.optEnh.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -601,6 +609,8 @@ namespace Hero_Designer
 
             this.clbSuppression.Size = new System.Drawing.Size(92, 169);
             this.clbSuppression.TabIndex = 9;
+            this.clbSuppression.SelectedIndexChanged += new System.EventHandler(clbSuppression_SelectedIndexChanged);
+
 
             this.Label8.Location = new System.Drawing.Point(6, 17);
             this.Label8.Name = "Label8";
@@ -791,6 +801,7 @@ namespace Hero_Designer
             this.btnBaseReset.Size = new System.Drawing.Size(120, 20);
             this.btnBaseReset.TabIndex = 61;
             this.btnBaseReset.Text = "Reset Values";
+            this.btnBaseReset.Click += new System.EventHandler(btnBaseReset_Click);
 
             this.Label14.Location = new System.Drawing.Point(147, 39);
             this.Label14.Name = "Label14";
@@ -924,6 +935,7 @@ namespace Hero_Designer
             this.fcReset.Size = new System.Drawing.Size(124, 24);
             this.fcReset.TabIndex = 18;
             this.fcReset.Text = "Reset To Defaults";
+            this.fcReset.Click += new System.EventHandler(fcReset_Click);
 
             this.fcSet.Location = new System.Drawing.Point(8, 200);
             this.fcSet.Name = "fcSet";
@@ -931,6 +943,7 @@ namespace Hero_Designer
             this.fcSet.Size = new System.Drawing.Size(136, 20);
             this.fcSet.TabIndex = 4;
             this.fcSet.Text = "Set New Name";
+            this.fcSet.Click += new System.EventHandler(fcSet_Click);
 
             this.fcNotes.Location = new System.Drawing.Point(8, 228);
             this.fcNotes.Multiline = true;
@@ -938,6 +951,7 @@ namespace Hero_Designer
 
             this.fcNotes.Size = new System.Drawing.Size(136, 48);
             this.fcNotes.TabIndex = 5;
+            this.fcNotes.TextChanged += new System.EventHandler(fcNotes_TextChanged);
 
             this.fcDelete.Location = new System.Drawing.Point(8, 148);
             this.fcDelete.Name = "fcDelete";
@@ -945,6 +959,7 @@ namespace Hero_Designer
             this.fcDelete.Size = new System.Drawing.Size(64, 20);
             this.fcDelete.TabIndex = 1;
             this.fcDelete.Text = "Delete";
+            this.fcDelete.Click += new System.EventHandler(fcDelete_Click);
 
             this.fcAdd.Location = new System.Drawing.Point(80, 148);
             this.fcAdd.Name = "fcAdd";
@@ -952,6 +967,7 @@ namespace Hero_Designer
             this.fcAdd.Size = new System.Drawing.Size(64, 20);
             this.fcAdd.TabIndex = 2;
             this.fcAdd.Text = "Add";
+            this.fcAdd.Click += new System.EventHandler(fcAdd_Click);
 
             this.fcName.Location = new System.Drawing.Point(8, 176);
             this.fcName.Name = "fcName";
@@ -965,6 +981,7 @@ namespace Hero_Designer
             this.fcWSTab.Size = new System.Drawing.Size(80, 20);
             this.fcWSTab.TabIndex = 17;
             this.fcWSTab.Text = "Tab";
+            this.fcWSTab.CheckedChanged += new System.EventHandler(fcWSSpace_CheckedChanged);
 
             this.fcWSSpace.Location = new System.Drawing.Point(220, 196);
             this.fcWSSpace.Name = "fcWSSpace";
@@ -972,18 +989,21 @@ namespace Hero_Designer
             this.fcWSSpace.Size = new System.Drawing.Size(80, 20);
             this.fcWSSpace.TabIndex = 16;
             this.fcWSSpace.Text = "Space";
+            this.fcWSSpace.CheckedChanged += new System.EventHandler(fcWSSpace_CheckedChanged);
 
             this.fcUnderlineOff.Location = new System.Drawing.Point(324, 160);
             this.fcUnderlineOff.Name = "fcUnderlineOff";
 
             this.fcUnderlineOff.Size = new System.Drawing.Size(60, 20);
             this.fcUnderlineOff.TabIndex = 15;
+            this.fcUnderlineOff.TextChanged += new System.EventHandler(fcUnderlineOff_TextChanged);
 
             this.fcUnderlineOn.Location = new System.Drawing.Point(220, 160);
             this.fcUnderlineOn.Name = "fcUnderlineOn";
 
             this.fcUnderlineOn.Size = new System.Drawing.Size(100, 20);
             this.fcUnderlineOn.TabIndex = 14;
+            this.fcUnderlineOn.TextChanged += new System.EventHandler(fcUnderlineOn_TextChanged);
 
             this.Label32.Location = new System.Drawing.Point(148, 160);
             this.Label32.Name = "Label32";
@@ -998,12 +1018,14 @@ namespace Hero_Designer
 
             this.fcItalicOff.Size = new System.Drawing.Size(60, 20);
             this.fcItalicOff.TabIndex = 13;
+            this.fcItalicOff.TextChanged += new System.EventHandler(fcItalicOff_TextChanged);
 
             this.fcItalicOn.Location = new System.Drawing.Point(220, 136);
             this.fcItalicOn.Name = "fcItalicOn";
 
             this.fcItalicOn.Size = new System.Drawing.Size(100, 20);
             this.fcItalicOn.TabIndex = 12;
+            this.fcItalicOn.TextChanged += new System.EventHandler(fcItalicOn_TextChanged);
 
             this.Label31.Location = new System.Drawing.Point(148, 136);
             this.Label31.Name = "Label31";
@@ -1018,12 +1040,14 @@ namespace Hero_Designer
 
             this.fcBoldOff.Size = new System.Drawing.Size(60, 20);
             this.fcBoldOff.TabIndex = 11;
+            this.fcBoldOff.TextChanged += new System.EventHandler(fcBoldOff_TextChanged);
 
             this.fcBoldOn.Location = new System.Drawing.Point(220, 112);
             this.fcBoldOn.Name = "fcBoldOn";
 
             this.fcBoldOn.Size = new System.Drawing.Size(100, 20);
             this.fcBoldOn.TabIndex = 10;
+            this.fcBoldOn.TextChanged += new System.EventHandler(fcBoldOn_TextChanged);
 
             this.Label30.Location = new System.Drawing.Point(148, 112);
             this.Label30.Name = "Label30";
@@ -1038,12 +1062,14 @@ namespace Hero_Designer
 
             this.fcTextOff.Size = new System.Drawing.Size(60, 20);
             this.fcTextOff.TabIndex = 9;
+            this.fcTextOff.TextChanged += new System.EventHandler(fcTextOff_TextChanged);
 
             this.fcTextOn.Location = new System.Drawing.Point(220, 88);
             this.fcTextOn.Name = "fcTextOn";
 
             this.fcTextOn.Size = new System.Drawing.Size(100, 20);
             this.fcTextOn.TabIndex = 8;
+            this.fcTextOn.TextChanged += new System.EventHandler(fcTextOn_TextChanged);
 
             this.Label29.Location = new System.Drawing.Point(148, 88);
             this.Label29.Name = "Label29";
@@ -1074,12 +1100,14 @@ namespace Hero_Designer
 
             this.fcColorOff.Size = new System.Drawing.Size(60, 20);
             this.fcColorOff.TabIndex = 7;
+            this.fcColorOff.TextChanged += new System.EventHandler(fcColorOff_TextChanged);
 
             this.fcColorOn.Location = new System.Drawing.Point(220, 64);
             this.fcColorOn.Name = "fcColorOn";
 
             this.fcColorOn.Size = new System.Drawing.Size(100, 20);
             this.fcColorOn.TabIndex = 6;
+            this.fcColorOn.TextChanged += new System.EventHandler(fcColorOn_TextChanged);
 
             this.Label26.Location = new System.Drawing.Point(148, 64);
             this.Label26.Name = "Label26";
@@ -1095,6 +1123,8 @@ namespace Hero_Designer
 
             this.fcList.Size = new System.Drawing.Size(136, 102);
             this.fcList.TabIndex = 0;
+            this.fcList.SelectedIndexChanged += new System.EventHandler(fcList_SelectedIndexChanged);
+            this.fcList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(fcList_KeyPress);
 
             this.Label25.Location = new System.Drawing.Point(148, 224);
             this.Label25.Name = "Label25";
@@ -1138,6 +1168,7 @@ namespace Hero_Designer
             this.csReset.Size = new System.Drawing.Size(144, 24);
             this.csReset.TabIndex = 4;
             this.csReset.Text = "Reset To Defaults";
+            this.csReset.Click += new System.EventHandler(csReset_Click);
 
             this.csBtnEdit.Location = new System.Drawing.Point(8, 242);
             this.csBtnEdit.Name = "csBtnEdit";
@@ -1145,6 +1176,7 @@ namespace Hero_Designer
             this.csBtnEdit.Size = new System.Drawing.Size(144, 32);
             this.csBtnEdit.TabIndex = 3;
             this.csBtnEdit.Text = "Edit...";
+            this.csBtnEdit.Click += new System.EventHandler(csBtnEdit_Click);
 
             this.csDelete.Location = new System.Drawing.Point(8, 216);
             this.csDelete.Name = "csDelete";
@@ -1152,13 +1184,14 @@ namespace Hero_Designer
             this.csDelete.Size = new System.Drawing.Size(64, 20);
             this.csDelete.TabIndex = 1;
             this.csDelete.Text = "Delete";
-
+            this.csDelete.Click += new System.EventHandler(csDelete_Click);
             this.csAdd.Location = new System.Drawing.Point(88, 216);
             this.csAdd.Name = "csAdd";
 
             this.csAdd.Size = new System.Drawing.Size(64, 20);
             this.csAdd.TabIndex = 2;
             this.csAdd.Text = "Add";
+            this.csAdd.Click += new System.EventHandler(csAdd_Click);
             this.csList.ItemHeight = 14;
 
             this.csList.Location = new System.Drawing.Point(8, 20);
@@ -1166,6 +1199,7 @@ namespace Hero_Designer
 
             this.csList.Size = new System.Drawing.Size(144, 186);
             this.csList.TabIndex = 0;
+            this.csList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(csList_KeyPress);
             this.TabPage5.Controls.Add((System.Windows.Forms.Control)this.btnSaveFolderReset);
             this.TabPage5.Controls.Add((System.Windows.Forms.Control)this.lblSaveFolder);
             this.TabPage5.Controls.Add((System.Windows.Forms.Control)this.btnSaveFolder);
@@ -1189,6 +1223,7 @@ namespace Hero_Designer
             this.btnSaveFolderReset.TabIndex = 64;
             this.btnSaveFolderReset.Text = "Reset to Default";
             this.btnSaveFolderReset.UseVisualStyleBackColor = true;
+            this.btnSaveFolderReset.Click += new System.EventHandler(btnSaveFolderReset_Click);
             this.lblSaveFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             this.lblSaveFolder.Location = new System.Drawing.Point(17, 270);
@@ -1206,7 +1241,7 @@ namespace Hero_Designer
             this.btnSaveFolder.TabIndex = 62;
             this.btnSaveFolder.Text = "Browse...";
             this.btnSaveFolder.UseVisualStyleBackColor = true;
-
+            this.btnSaveFolder.Click += new System.EventHandler(btnSaveFolder_Click);
             this.chkLoadLastFile.Location = new System.Drawing.Point(17, 295);
             this.chkLoadLastFile.Name = "chkLoadLastFile";
 
@@ -1325,6 +1360,7 @@ namespace Hero_Designer
 
             this.cmbAction.Size = new System.Drawing.Size(356, 22);
             this.cmbAction.TabIndex = 2;
+            this.cmbAction.SelectedIndexChanged += new System.EventHandler(cmbAction_SelectedIndexChanged);
             this.GroupBox9.Controls.Add((System.Windows.Forms.Control)this.lblExample);
 
             this.GroupBox9.Location = new System.Drawing.Point(403, 104);
@@ -1375,6 +1411,7 @@ namespace Hero_Designer
 
             this.listScenarios.Size = new System.Drawing.Size(353, 116);
             this.listScenarios.TabIndex = 0;
+            this.listScenarios.SelectedIndexChanged += new System.EventHandler(listScenarios_SelectedIndexChanged);
 
             this.chkColourPrint.Location = new System.Drawing.Point(246, 354);
             this.chkColourPrint.Name = "chkColourPrint";
@@ -1458,46 +1495,6 @@ namespace Hero_Designer
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
             this.TeamSize.EndInit();
-            this.btnBaseReset.Click += btnBaseReset_Click;
-            this.btnCancel.Click += btnCancel_Click;
-            this.btnFontColour.Click += this.btnFontColour_Click;
-            this.btnIOReset.Click += btnIOReset_Click;
-            this.btnOK.Click += btnOK_Click;
-            this.btnSaveFolder.Click += btnSaveFolder_Click;
-            this.btnSaveFolderReset.Click += btnSaveFolderReset_Click;
-            this.clbSuppression.SelectedIndexChanged += clbSuppression_SelectedIndexChanged;
-            this.cmbAction.SelectedIndexChanged += cmbAction_SelectedIndexChanged;
-            this.csAdd.Click += csAdd_Click;
-            this.csBtnEdit.Click += csBtnEdit_Click;
-            this.csDelete.Click += csDelete_Click;
-            this.csList.KeyPress += csList_KeyPress;
-            this.csReset.Click += csReset_Click;
-            this.fcAdd.Click += fcAdd_Click;
-            this.fcBoldOff.TextChanged += fcBoldOff_TextChanged;
-            this.fcBoldOn.TextChanged += fcBoldOn_TextChanged;
-            this.fcColorOff.TextChanged += fcColorOff_TextChanged;
-            this.fcColorOn.TextChanged += fcColorOn_TextChanged;
-            this.fcDelete.Click += fcDelete_Click;
-            this.fcItalicOff.TextChanged += fcItalicOff_TextChanged;
-            this.fcItalicOn.TextChanged += fcItalicOn_TextChanged;
-
-            // fcList events
-            this.fcList.SelectedIndexChanged += fcList_SelectedIndexChanged;
-            this.fcList.KeyPress += fcList_KeyPress;
-
-            this.fcNotes.TextChanged += fcNotes_TextChanged;
-            this.fcReset.Click += fcReset_Click;
-            this.fcSet.Click += fcSet_Click;
-            this.fcTextOff.TextChanged += fcTextOff_TextChanged;
-            this.fcTextOn.TextChanged += fcTextOn_TextChanged;
-            this.fcUnderlineOff.TextChanged += fcUnderlineOff_TextChanged;
-            this.fcUnderlineOn.TextChanged += fcUnderlineOn_TextChanged;
-            this.fcWSSpace.CheckedChanged += fcWSSpace_CheckedChanged;
-            this.fcWSTab.CheckedChanged += fcWSSpace_CheckedChanged;
-            this.listScenarios.SelectedIndexChanged += listScenarios_SelectedIndexChanged;
-            this.optDO.CheckedChanged += optDO_CheckedChanged;
-            this.optSO.CheckedChanged += optSO_CheckedChanged;
-            this.optTO.CheckedChanged += optTO_CheckedChanged;
             this.ResumeLayout(false);
         }
         #endregion

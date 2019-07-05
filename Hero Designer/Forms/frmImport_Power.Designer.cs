@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Power));
             this.dlgBrowse = new System.Windows.Forms.OpenFileDialog();
             this.btnUncheckAll = new System.Windows.Forms.Button();
             this.btnCheckAll = new System.Windows.Forms.Button();
@@ -63,7 +62,7 @@ namespace Hero_Designer
             this.btnUncheckAll.TabIndex = 49;
             this.btnUncheckAll.Text = "Uncheck All";
             this.btnUncheckAll.UseVisualStyleBackColor = true;
-            this.btnUncheckAll.Click += btnUncheckAll_Click;
+            this.btnUncheckAll.Click += new System.EventHandler(btnUncheckAll_Click);
 
             this.btnCheckAll.Location = new System.Drawing.Point(12, 545);
             this.btnCheckAll.Name = "btnCheckAll";
@@ -72,7 +71,7 @@ namespace Hero_Designer
             this.btnCheckAll.TabIndex = 48;
             this.btnCheckAll.Text = "Check All";
             this.btnCheckAll.UseVisualStyleBackColor = true;
-            this.btnCheckAll.Click += btnCheckAll_Click;
+            this.btnCheckAll.Click += new System.EventHandler(btnCheckAll_Click);
 
             this.btnClose.Location = new System.Drawing.Point(618, 516);
             this.btnClose.Name = "btnClose";
@@ -81,7 +80,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 47;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += btnClose_Click;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
 
             this.btnImport.Location = new System.Drawing.Point(618, 77);
             this.btnImport.Name = "btnImport";
@@ -90,7 +89,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 46;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += btnImport_Click;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.lstImport.CheckBoxes = true;
             this.lstImport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[5]
             {
@@ -174,7 +173,7 @@ namespace Hero_Designer
             this.btnFile.TabIndex = 38;
             this.btnFile.Text = "Load / Re-Load";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += btnFile_Click;
+            this.btnFile.Click += new System.EventHandler(btnFile_Click);
 
             this.btnCheckModified.Location = new System.Drawing.Point(192, 545);
             this.btnCheckModified.Name = "btnCheckModified";
@@ -183,7 +182,7 @@ namespace Hero_Designer
             this.btnCheckModified.TabIndex = 50;
             this.btnCheckModified.Text = "Modified Only (Skip New)";
             this.btnCheckModified.UseVisualStyleBackColor = true;
-            this.btnCheckModified.Click += btnCheckModified_Click;
+            this.btnCheckModified.Click += new System.EventHandler(btnCheckModified_Click);
 
             this.btnEraseAll.Location = new System.Drawing.Point(618, 137);
             this.btnEraseAll.Name = "btnEraseAll";
@@ -192,7 +191,7 @@ namespace Hero_Designer
             this.btnEraseAll.TabIndex = 63;
             this.btnEraseAll.Text = "Erase All Powers";
             this.btnEraseAll.UseVisualStyleBackColor = true;
-            this.btnEraseAll.Click += btnEraseAll_Click;
+            this.btnEraseAll.Click += new System.EventHandler(btnEraseAll_Click);
             this.ColumnHeader3.Text = "Change Description";
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 
@@ -212,10 +211,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
             this.Controls.Add((System.Windows.Forms.Control)this.btnFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmImport_Power);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Power Import";

@@ -12,10 +12,6 @@ namespace Hero_Designer
 {
     public partial class FrmInputLevel : Form
     {
-        Button btnOK;
-        Label Label1;
-
-        NumericUpDown udLevel;
 
         bool LongFormat;
 
@@ -25,15 +21,16 @@ namespace Hero_Designer
 
         public FrmInputLevel(ref frmMain iParent, bool iLF, bool iMode2)
         {
-            this.Load += new EventHandler(this.FrmInputLevel_Load);
             this.InitializeComponent();
+            this.Name = nameof(FrmInputLevel);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(FrmInputLevel));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myparent = iParent;
             this.LongFormat = iLF;
             this.Mode2 = iMode2;
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             int num;
             if (Conversion.Val(this.udLevel.Text) != Convert.ToDouble(this.udLevel.Value))
@@ -56,8 +53,6 @@ namespace Hero_Designer
         void FrmInputLevel_Load(object sender, EventArgs e)
         {
         }
-
-        [DebuggerStepThrough]
 
         void udLevel_Leave(object sender, EventArgs e)
         {

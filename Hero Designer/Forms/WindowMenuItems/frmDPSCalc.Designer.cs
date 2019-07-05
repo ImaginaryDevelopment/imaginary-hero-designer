@@ -86,6 +86,9 @@ namespace Hero_Designer
             this.lvPower.TabIndex = 1;
             this.lvPower.UseCompatibleStateImageBehavior = false;
             this.lvPower.View = System.Windows.Forms.View.Details;
+            this.lvPower.MouseEnter += new System.EventHandler(lvPower_MouseEnter);
+            this.lvPower.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(lvPower_ItemChecked);
+            this.lvPower.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(lvPower_Clicked);
             this.chPower.Text = "Power";
             this.chPower.Width = 150;
             this.chDPA.Text = "DPA";
@@ -215,6 +218,7 @@ namespace Hero_Designer
             this.ibAutoMode.TextOff = "Manual";
             this.ibAutoMode.TextOn = "Alt Text";
             this.ibAutoMode.Toggle = false;
+            this.ibAutoMode.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibAutoMode_ButtonClicked);
             this.ibClear.Checked = false;
             this.ibClear.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 
@@ -228,6 +232,7 @@ namespace Hero_Designer
             this.ibClear.TextOff = "Clear";
             this.ibClear.TextOn = "Alt Text";
             this.ibClear.Toggle = false;
+            this.ibClear.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibClear_ButtonClicked);
             this.ibTopmost.Checked = true;
             this.ibTopmost.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 
@@ -241,6 +246,7 @@ namespace Hero_Designer
             this.ibTopmost.TextOff = "Keep On Top";
             this.ibTopmost.TextOn = "Keep On Top";
             this.ibTopmost.Toggle = true;
+            this.ibTopmost.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibTopmost_ButtonClicked);
             this.ibClose.Checked = false;
             this.ibClose.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 
@@ -254,6 +260,7 @@ namespace Hero_Designer
             this.ibClose.TextOff = "Close";
             this.ibClose.TextOn = "Alt Text";
             this.ibClose.Toggle = false;
+            this.ibClose.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibClose_ButtonClicked);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
 
@@ -273,18 +280,8 @@ namespace Hero_Designer
             this.TopMost = true;
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
-            this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-            this.ibAutoMode.ButtonClicked += ibAutoMode_ButtonClicked;
-            this.ibClear.ButtonClicked += ibClear_ButtonClicked;
-            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-            this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
+            this.chkSortByLevel.CheckedChanged += new System.EventHandler(chkSortByLevel_CheckedChanged);
 
-            // lvPower events
-            this.lvPower.MouseEnter += lvPower_MouseEnter;
-            this.lvPower.ItemChecked += lvPower_ItemChecked;
-            this.lvPower.ItemSelectionChanged += lvPower_Clicked;
-
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

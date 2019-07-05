@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmTweakMatching));
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.Button2 = new System.Windows.Forms.Button();
             this.Button1 = new System.Windows.Forms.Button();
@@ -73,6 +72,7 @@ namespace Hero_Designer
             this.Button2.TabIndex = 9;
             this.Button2.Text = "Update";
             this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(Button2_Click);
             this.Button1.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.Button1.ForeColor = System.Drawing.Color.Black;
@@ -84,6 +84,7 @@ namespace Hero_Designer
             this.Button1.TabIndex = 8;
             this.Button1.Text = "Close";
             this.Button1.UseVisualStyleBackColor = false;
+            this.Button1.Click += new System.EventHandler(Button1_Click);
             this.btnDel.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnDel.ForeColor = System.Drawing.Color.Black;
@@ -95,6 +96,7 @@ namespace Hero_Designer
             this.btnDel.TabIndex = 7;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(btnDel_Click);
 
             this.txtOvr.Location = new System.Drawing.Point(232, 24);
             this.txtOvr.Name = "txtOvr";
@@ -108,6 +110,7 @@ namespace Hero_Designer
 
             this.lstTweaks.Size = new System.Drawing.Size(216, 394);
             this.lstTweaks.TabIndex = 0;
+            this.lstTweaks.SelectedIndexChanged += new System.EventHandler(lstTweaks_SelectedIndexChanged);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.cbPower);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.cbSet1);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.cbType1);
@@ -130,6 +133,7 @@ namespace Hero_Designer
 
             this.cbPower.Size = new System.Drawing.Size(132, 21);
             this.cbPower.TabIndex = 6;
+            this.cbPower.SelectedIndexChanged += new System.EventHandler(cbPower_SelectedIndexChanged);
             this.cbSet1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbSet1.Location = new System.Drawing.Point(8, 68);
@@ -137,6 +141,7 @@ namespace Hero_Designer
 
             this.cbSet1.Size = new System.Drawing.Size(132, 21);
             this.cbSet1.TabIndex = 2;
+            this.cbSet1.SelectedIndexChanged += new System.EventHandler(cbSet1_SelectedIndexChanged);
             this.cbType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbType1.Location = new System.Drawing.Point(8, 44);
@@ -144,6 +149,7 @@ namespace Hero_Designer
 
             this.cbType1.Size = new System.Drawing.Size(132, 21);
             this.cbType1.TabIndex = 1;
+            this.cbType1.SelectedIndexChanged += new System.EventHandler(cbType1_SelectedIndexChanged);
             this.cbAT1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbAT1.Location = new System.Drawing.Point(8, 20);
@@ -151,6 +157,7 @@ namespace Hero_Designer
 
             this.cbAT1.Size = new System.Drawing.Size(132, 21);
             this.cbAT1.TabIndex = 0;
+            this.cbAT1.SelectedIndexChanged += new System.EventHandler(cbAT1_SelectedIndexChanged);
             this.txtAddActual.Enabled = false;
 
             this.txtAddActual.Location = new System.Drawing.Point(8, 120);
@@ -177,6 +184,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
 
@@ -184,10 +192,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.GroupBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmTweakMatching);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tweak Powerset Matching";
@@ -195,22 +201,23 @@ namespace Hero_Designer
             this.GroupBox1.PerformLayout();
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Button1.Click += Button1_Click;
-                this.Button2.Click += Button2_Click;
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnDel.Click += btnDel_Click;
-                this.cbAT1.SelectedIndexChanged += cbAT1_SelectedIndexChanged;
-                this.cbPower.SelectedIndexChanged += cbPower_SelectedIndexChanged;
-                this.cbSet1.SelectedIndexChanged += cbSet1_SelectedIndexChanged;
-                this.cbType1.SelectedIndexChanged += cbType1_SelectedIndexChanged;
-                this.lstTweaks.SelectedIndexChanged += lstTweaks_SelectedIndexChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnAdd;
+        System.Windows.Forms.Button btnDel;
+        System.Windows.Forms.Button Button1;
+        System.Windows.Forms.Button Button2;
+        System.Windows.Forms.ComboBox cbAT1;
+        System.Windows.Forms.ComboBox cbPower;
+        System.Windows.Forms.ComboBox cbSet1;
+        System.Windows.Forms.ComboBox cbType1;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.ListBox lstTweaks;
+        System.Windows.Forms.TextBox txtAddActual;
+        System.Windows.Forms.TextBox txtAddOvr;
+        System.Windows.Forms.TextBox txtOvr;
     }
 }

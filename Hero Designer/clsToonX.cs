@@ -531,7 +531,7 @@ namespace Hero_Designer
                                 if (power1.Effects[index2].EffectType != Enums.eEffectType.Enhancement)
                                 {
                                     IPower power2 = iPower;
-                                    IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power2.Effects, (Array)new IEffect[iPower.Effects.Length + 1]);
+                                    IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, (Array)new IEffect[iPower.Effects.Length + 1]);
                                     power2.Effects = effectArray;
                                     iPower.Effects[iPower.Effects.Length - 1] = (IEffect)power1.Effects[index2].Clone();
                                     iPower.Effects[iPower.Effects.Length - 1].isEnahncementEffect = true;
@@ -576,7 +576,7 @@ namespace Hero_Designer
                             num1 += DatabaseAPI.Database.Power[Ret.NIDSubPower[index]].Effects.Length;
                     }
                     IPower power = Ret;
-                    IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power.Effects, (Array)new IEffect[Ret.Effects.Length + num1 - 1 + 1]);
+                    IEffect[] effectArray = (IEffect[])Utils.CopyArray(power.Effects, (Array)new IEffect[Ret.Effects.Length + num1 - 1 + 1]);
                     power.Effects = effectArray;
                     int num3 = this.CurrentBuild.Powers[hIDX].SubPowers.Length - 1;
                     for (int index1 = 0; index1 <= num3; ++index1)
@@ -2077,17 +2077,17 @@ namespace Hero_Designer
                 {
                     if ((double)numArray1[index] > 0.0)
                     {
-                        section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
+                        section.Content = (PopUp.StringValue[])Utils.CopyArray(section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
                         section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray1, schedule1, Enum.GetName(eEnhance.GetType(), index), afterED1);
                     }
                     if ((double)numArray2[index] > 0.0)
                     {
-                        section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
+                        section.Content = (PopUp.StringValue[])Utils.CopyArray(section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
                         section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray2, schedule2, Enum.GetName(eEnhance.GetType(), index) + " Debuff", afterED2);
                     }
                     if ((double)numArray3[index] > 0.0)
                     {
-                        section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
+                        section.Content = (PopUp.StringValue[])Utils.CopyArray(section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
                         section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray3, schedule3, Enum.GetName(eEnhance.GetType(), index), afterED3);
                     }
                 }
@@ -2096,7 +2096,7 @@ namespace Hero_Designer
                 {
                     if ((double)numArray4[index] > 0.0)
                     {
-                        section.Content = (PopUp.StringValue[])Utils.CopyArray((Array)section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
+                        section.Content = (PopUp.StringValue[])Utils.CopyArray(section.Content, (Array)new PopUp.StringValue[section.Content.Length + 1]);
                         section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, numArray4, schedule4, Enum.GetName(eMez.GetType(), index), afterED4);
                     }
                 }
@@ -2241,7 +2241,7 @@ namespace Hero_Designer
                     int num2 = (int)Math.Round(Conversion.Val(strArray[3]));
                     MemoryStream memoryStream = new MemoryStream();
                     BinaryWriter binaryWriter = new BinaryWriter((Stream)memoryStream);
-                    byte[] iBytes = (byte[])Utils.CopyArray((Array)Zlib.UUDecodeBytes((byte[])Utils.CopyArray((Array)asciiEncoding.GetBytes(Zlib.UnbreakString(iStream.ReadToEnd(), false)), (Array)new byte[num2 - 1 + 1])), (Array)new byte[num1 - 1 + 1]);
+                    byte[] iBytes = (byte[])Utils.CopyArray(Zlib.UUDecodeBytes((byte[])Utils.CopyArray(asciiEncoding.GetBytes(Zlib.UnbreakString(iStream.ReadToEnd(), false)), (Array)new byte[num2 - 1 + 1])), (Array)new byte[num1 - 1 + 1]);
                     iBytes = Zlib.UncompressChunk(ref iBytes, outSize);
                     binaryWriter.Write(iBytes);
                     memoryStream.Seek(0L, SeekOrigin.Begin);

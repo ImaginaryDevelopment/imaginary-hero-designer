@@ -13,20 +13,6 @@ namespace Hero_Designer
 {
     public partial class frmImport_Recipe : Form
     {
-        Button btnAttribIndex;
-
-        Button btnAttribLoad;
-
-        Button btnAttribTable;
-
-        Button Button1;
-        OpenFileDialog dlgBrowse;
-        Label Label3;
-        Label Label4;
-        Label lblAttribDate;
-        Label lblAttribIndex;
-        Label lblAttribTableCount;
-        Label lblAttribTables;
 
         frmBusy bFrm;
 
@@ -34,6 +20,9 @@ namespace Hero_Designer
         {
             this.Load += new EventHandler(this.frmImport_Recipe_Load);
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Recipe));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_Recipe);
         }
 
         void btnAttribIndex_Click(object sender, EventArgs e)
@@ -160,7 +149,7 @@ namespace Hero_Designer
                             if (recipe1 == null)
                             {
                                 IDatabase database = DatabaseAPI.Database;
-                                Recipe[] recipeArray = (Recipe[])Utils.CopyArray((Array)database.Recipes, (Array)new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);
+                                Recipe[] recipeArray = (Recipe[])Utils.CopyArray(database.Recipes, (Array)new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);
                                 database.Recipes = recipeArray;
                                 DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1] = new Recipe();
                                 recipe1 = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1];
@@ -180,7 +169,7 @@ namespace Hero_Designer
                             if (index1 < 0)
                             {
                                 index1 = recipe3.Item.Length;
-                                recipe3.Item = (Recipe.RecipeEntry[])Utils.CopyArray((Array)recipe3.Item, (Array)new Recipe.RecipeEntry[index1 + 1]);
+                                recipe3.Item = (Recipe.RecipeEntry[])Utils.CopyArray(recipe3.Item, (Array)new Recipe.RecipeEntry[index1 + 1]);
                                 recipe3.Item[index1] = new Recipe.RecipeEntry();
                             }
                             recipe3.Item[index1].Level = num6 - 1;

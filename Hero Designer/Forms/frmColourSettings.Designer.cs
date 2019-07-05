@@ -75,6 +75,7 @@ namespace Hero_Designer
 
             this.csInv.Size = new System.Drawing.Size(52, 16);
             this.csInv.TabIndex = 51;
+            this.csInv.Click += new System.EventHandler(csInv_Click);
 
             this.Label3.Location = new System.Drawing.Point(12, 109);
             this.Label3.Name = "Label3";
@@ -91,6 +92,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 49;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             this.btnOK.Location = new System.Drawing.Point(276, 371);
@@ -99,6 +101,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 48;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.csAlert.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csAlert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
@@ -107,6 +110,7 @@ namespace Hero_Designer
 
             this.csAlert.Size = new System.Drawing.Size(52, 16);
             this.csAlert.TabIndex = 47;
+            this.csAlert.Click += new System.EventHandler(csAlert_Click);
 
             this.Label9.Location = new System.Drawing.Point(12, 189);
             this.Label9.Name = "Label9";
@@ -123,6 +127,7 @@ namespace Hero_Designer
 
             this.csEnh.Size = new System.Drawing.Size(52, 16);
             this.csEnh.TabIndex = 45;
+            this.csEnh.Click += new System.EventHandler(csEnh_Click);
 
             this.Label7.Location = new System.Drawing.Point(12, 169);
             this.Label7.Name = "Label7";
@@ -147,6 +152,7 @@ namespace Hero_Designer
 
             this.csFade.Size = new System.Drawing.Size(52, 16);
             this.csFade.TabIndex = 42;
+            this.csFade.Click += new System.EventHandler(csFade_Click);
 
             this.Label4.Location = new System.Drawing.Point(12, 149);
             this.Label4.Name = "Label4";
@@ -163,6 +169,7 @@ namespace Hero_Designer
 
             this.csInvInv.Size = new System.Drawing.Size(52, 16);
             this.csInvInv.TabIndex = 40;
+            this.csInvInv.Click += new System.EventHandler(csInvInv_Click);
             this.csText.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
@@ -171,6 +178,7 @@ namespace Hero_Designer
 
             this.csText.Size = new System.Drawing.Size(52, 16);
             this.csText.TabIndex = 39;
+            this.csText.Click += new System.EventHandler(csText_Click);
             this.csVillain.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csVillain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
@@ -179,6 +187,7 @@ namespace Hero_Designer
 
             this.csVillain.Size = new System.Drawing.Size(52, 16);
             this.csVillain.TabIndex = 38;
+            this.csVillain.Click += new System.EventHandler(csVillain_Click);
             this.csHero.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csHero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
@@ -187,6 +196,7 @@ namespace Hero_Designer
 
             this.csHero.Size = new System.Drawing.Size(52, 16);
             this.csHero.TabIndex = 37;
+            this.csHero.Click += new System.EventHandler(csHero_Click);
 
             this.Label21.Location = new System.Drawing.Point(12, 129);
             this.Label21.Name = "Label21";
@@ -236,6 +246,7 @@ namespace Hero_Designer
 
             this.csSpecial.Size = new System.Drawing.Size(52, 16);
             this.csSpecial.TabIndex = 56;
+            this.csSpecial.Click += new System.EventHandler(csSpecial_Click);
 
             this.Label6.Location = new System.Drawing.Point(12, 228);
             this.Label6.Name = "Label6";
@@ -252,6 +263,7 @@ namespace Hero_Designer
 
             this.csValue.Size = new System.Drawing.Size(52, 16);
             this.csValue.TabIndex = 54;
+            this.csValue.Click += new System.EventHandler(csValue_Click);
 
             this.Label10.Location = new System.Drawing.Point(12, 208);
             this.Label10.Name = "Label10";
@@ -267,6 +279,7 @@ namespace Hero_Designer
             this.btnReset.Size = new System.Drawing.Size(98, 23);
             this.btnReset.TabIndex = 57;
             this.btnReset.Text = "Set to Defaults";
+            this.btnReset.Click += new System.EventHandler(btnReset_Click);
 
             this.Label2.Location = new System.Drawing.Point(20, 265);
             this.Label2.Name = "Label2";
@@ -296,6 +309,7 @@ namespace Hero_Designer
             this.Listlabel1.SizeNormal = new System.Drawing.Size(197, 91);
             this.Listlabel1.SuspendRedraw = false;
             this.Listlabel1.TabIndex = 111;
+            this.Listlabel1.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(Listlabel1_ItemClick);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 
             this.ClientSize = new System.Drawing.Size(436, 406);
@@ -335,22 +349,6 @@ namespace Hero_Designer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Colors";
             this.ResumeLayout(false);
-            //adding events
-            this.Listlabel1.ItemClick += Listlabel1_ItemClick;
-            this.btnCancel.Click += btnCancel_Click;
-            this.btnOK.Click += btnOK_Click;
-            this.btnReset.Click += btnReset_Click;
-            this.csAlert.Click += csAlert_Click;
-            this.csEnh.Click += csEnh_Click;
-            this.csFade.Click += csFade_Click;
-            this.csHero.Click += csHero_Click;
-            this.csInv.Click += csInv_Click;
-            this.csInvInv.Click += csInvInv_Click;
-            this.csSpecial.Click += csSpecial_Click;
-            this.csText.Click += csText_Click;
-            this.csValue.Click += csValue_Click;
-            this.csVillain.Click += csVillain_Click;
-            // finished with events
             this.PerformLayout();
         }
 

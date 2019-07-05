@@ -11,21 +11,24 @@ namespace Hero_Designer
     public partial class frmLoading : Form, IMessager
     {
         Label Label1;
-
         PictureBox PictureBox1;
-
         Timer tmrOpacity;
 
         public frmLoading()
         {
             this.InitializeComponent();
+            this.Text = nameof(frmLoading);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmLoading));
+            this.PictureBox1.Image = (System.Drawing.Image)componentResourceManager.GetObject("PictureBox1.Image");
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmLoading);
         }
 
         public void SetMessage(string text)
         {
             if (this.Label1.InvokeRequired)
             {
-                this.Invoke((Delegate)new frmLoading.SetTextCallback(this.SetMessage), text);
+                this.Invoke(new SetTextCallback(this.SetMessage), text);
             }
             else
             {
@@ -38,7 +41,6 @@ namespace Hero_Designer
         }
 
         void tmrOpacity_Tick(object sender, EventArgs e)
-
         {
             if (this.Opacity < 1.0)
                 this.Opacity += 0.05;

@@ -68,7 +68,7 @@ namespace Hero_Designer
             this.lvSalvage.TabIndex = 0;
             this.lvSalvage.UseCompatibleStateImageBehavior = false;
             this.lvSalvage.View = System.Windows.Forms.View.Details;
-            this.lvSalvage.SelectedIndexChanged += lvSalvage_SelectedIndexChanged;
+            this.lvSalvage.SelectedIndexChanged += new System.EventHandler(lvSalvage_SelectedIndexChanged);
             this.ColumnHeader1.Text = "Name";
             this.ColumnHeader1.Width = 213;
             this.ColumnHeader2.Text = "Origin";
@@ -86,7 +86,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Save && Close";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += btnOK_Click;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(486, 304);
@@ -96,7 +96,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
 
             this.btnImport.Location = new System.Drawing.Point(486, 274);
             this.btnImport.Name = "btnImport";
@@ -105,15 +105,15 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 3;
             this.btnImport.Text = "Clear and Import from Spreadsheet";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += btnImport_Click;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
 
             this.txtExternal.Location = new System.Drawing.Point(564, 12);
             this.txtExternal.Name = "txtExternal";
 
             this.txtExternal.Size = new System.Drawing.Size(154, 20);
             this.txtExternal.TabIndex = 4;
-            this.txtExternal.TextChanged += txtExternal_TextChanged;
-            this.txtInternal.TextChanged += txtInternal_TextChanged;
+            this.txtExternal.TextChanged += new System.EventHandler(txtExternal_TextChanged);
+            this.txtInternal.TextChanged += new System.EventHandler(txtInternal_TextChanged);
 
             this.Label1.Location = new System.Drawing.Point(486, 12);
             this.Label1.Name = "Label1";
@@ -144,7 +144,7 @@ namespace Hero_Designer
 
             this.cbRarity.Size = new System.Drawing.Size(154, 22);
             this.cbRarity.TabIndex = 8;
-            this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
+            this.cbRarity.SelectedIndexChanged += new System.EventHandler(cbRarity_SelectedIndexChanged);
 
             this.Label3.Location = new System.Drawing.Point(486, 64);
             this.Label3.Name = "Label3";
@@ -169,7 +169,7 @@ namespace Hero_Designer
 
             this.cbOrigin.Size = new System.Drawing.Size(154, 22);
             this.cbOrigin.TabIndex = 10;
-            this.cbOrigin.SelectedIndexChanged += cbOrigin_SelectedIndexChanged;
+            this.cbOrigin.SelectedIndexChanged += new System.EventHandler(cbOrigin_SelectedIndexChanged);
 
             this.Label5.Location = new System.Drawing.Point(486, 120);
             this.Label5.Name = "Label5";
@@ -186,7 +186,7 @@ namespace Hero_Designer
 
             this.cbLevel.Size = new System.Drawing.Size(154, 22);
             this.cbLevel.TabIndex = 12;
-            this.cbLevel.SelectedIndexChanged += cbLevel_SelectedIndexChanged;
+            this.cbLevel.SelectedIndexChanged += new System.EventHandler(cbLevel_SelectedIndexChanged);
 
             this.btnDelete.Location = new System.Drawing.Point(486, 214);
             this.btnDelete.Name = "btnDelete";
@@ -195,7 +195,7 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Click += new System.EventHandler(btnDelete_Click);
 
             this.btnAdd.Location = new System.Drawing.Point(486, 184);
             this.btnAdd.Name = "btnAdd";
@@ -204,7 +204,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += btnAdd_Click;
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
             this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = (System.Windows.Forms.IButtonControl)this.btnCancel;

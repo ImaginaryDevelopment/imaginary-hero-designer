@@ -56,7 +56,7 @@ namespace Hero_Designer
                     }
                     if (num2 > -1 & startIndex > -1)
                     {
-                        sPowerLine.Slots = (clsUniversalImport.sSlot[])Utils.CopyArray((Array)sPowerLine.Slots, (Array)new clsUniversalImport.sSlot[sPowerLine.Slots.Length + 1]);
+                        sPowerLine.Slots = (clsUniversalImport.sSlot[])Utils.CopyArray(sPowerLine.Slots, (Array)new clsUniversalImport.sSlot[sPowerLine.Slots.Length + 1]);
                         sPowerLine.Slots[sPowerLine.Slots.Length - 1].Enh = iStr.Substring(0, num2).Trim();
                         sPowerLine.Slots[sPowerLine.Slots.Length - 1].Level = (int)Math.Round(Conversion.Val(iStr.Substring(startIndex).Trim()));
                         if (iStr.Substring(startIndex).Trim().StartsWith("A"))
@@ -294,7 +294,7 @@ namespace Hero_Designer
                     iPL.Assign(clsUniversalImport.BreakLine(haystack[index1], MidsContext.Character.Archetype.Idx));
                     if (iPL.Level > 0 & iPL.Power != "")
                     {
-                        sPowerLineArray = (clsUniversalImport.sPowerLine[])Utils.CopyArray((Array)sPowerLineArray, (Array)new clsUniversalImport.sPowerLine[sPowerLineArray.Length + 1]);
+                        sPowerLineArray = (clsUniversalImport.sPowerLine[])Utils.CopyArray(sPowerLineArray, (Array)new clsUniversalImport.sPowerLine[sPowerLineArray.Length + 1]);
                         sPowerLineArray[sPowerLineArray.Length - 1].Assign(iPL);
                     }
                 }
@@ -611,7 +611,7 @@ namespace Hero_Designer
                     start = clsUniversalImport.SeekSep(haystack[index1], num2, false);
                     if (num2 > -1)
                     {
-                        strArray = (string[])Utils.CopyArray((Array)strArray, (Array)new string[strArray.Length + 1]);
+                        strArray = (string[])Utils.CopyArray(strArray, (Array)new string[strArray.Length + 1]);
                         strArray[strArray.Length - 1] = start <= -1 ? haystack[index1].Substring(num2).Trim() : haystack[index1].Substring(num2, start - num2).Trim();
                     }
                 }

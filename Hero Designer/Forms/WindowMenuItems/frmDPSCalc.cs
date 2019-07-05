@@ -300,7 +300,7 @@ namespace Hero_Designer
                     return;
                 }
             }
-            tl = (frmDPSCalc.CountingList[])Utils.CopyArray((Array)tl, (Array)new frmDPSCalc.CountingList[tl.Length + 1]);
+            tl = (frmDPSCalc.CountingList[])Utils.CopyArray(tl, (Array)new frmDPSCalc.CountingList[tl.Length + 1]);
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }

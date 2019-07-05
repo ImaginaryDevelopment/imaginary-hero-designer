@@ -13,25 +13,18 @@ namespace Hero_Designer
 {
     public partial class frmImport_SalvageReq : Form
     {
-        Button btnClose;
-
-        Button btnFile;
-
-        Button btnImport;
-        OpenFileDialog dlgBrowse;
-        Label lblFile;
-
         frmBusy bFrm;
 
         string FullFileName;
-
-
 
         public frmImport_SalvageReq()
         {
             this.Load += new EventHandler(this.frmImport_SalvageReq_Load);
             this.FullFileName = "";
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SalvageReq));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_SalvageReq);
         }
 
         void btnClose_Click(object sender, EventArgs e)

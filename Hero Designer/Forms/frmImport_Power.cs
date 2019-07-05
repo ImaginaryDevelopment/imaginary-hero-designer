@@ -29,10 +29,12 @@ namespace Hero_Designer
             this.FullFileName = "";
             this.ImportBuffer = new PowerData[0];
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Power));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmImport_Power);
         }
 
         void btnCheckAll_Click(object sender, EventArgs e)
-
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -42,7 +44,6 @@ namespace Hero_Designer
         }
 
         void btnCheckModified_Click(object sender, EventArgs e)
-
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -52,13 +53,11 @@ namespace Hero_Designer
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
         void btnEraseAll_Click(object sender, EventArgs e)
-
         {
             if (Interaction.MsgBox("Really wipte the power array. You shouldn't do this if you want to preserve any special power settings.", MsgBoxStyle.YesNo, "Really?") == MsgBoxResult.No)
                 return;
@@ -73,7 +72,6 @@ namespace Hero_Designer
         }
 
         void btnFile_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this.FullFileName;
             if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -89,13 +87,11 @@ namespace Hero_Designer
         }
 
         void btnImport_Click(object sender, EventArgs e)
-
         {
             this.ProcessImport();
         }
 
         void btnUncheckAll_Click(object sender, EventArgs e)
-
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -105,7 +101,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -114,7 +109,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
@@ -125,7 +119,6 @@ namespace Hero_Designer
         }
 
         int[] CheckForDeletedPowers()
-
         {
             int[] numArray = new int[0];
             int num1 = 0;
@@ -151,7 +144,7 @@ namespace Hero_Designer
                 }
                 if (!flag)
                 {
-                    numArray = (int[])Utils.CopyArray((Array)numArray, (Array)new int[numArray.Length + 1]);
+                    numArray = (int[])Utils.CopyArray(numArray, (Array)new int[numArray.Length + 1]);
                     numArray[numArray.Length - 1] = index1;
                 }
             }
@@ -165,7 +158,6 @@ namespace Hero_Designer
         }
 
         static int DeletePowers(int[] pList)
-
         {
             int index1 = 0;
             IPower[] powerArray = new IPower[DatabaseAPI.Database.Power.Length - pList.Length - 1 + 1];
@@ -197,25 +189,23 @@ namespace Hero_Designer
             else
             {
                 DatabaseAPI.Database.Power = new IPower[powerArray.Length - 1 + 1];
-                int num2 = DatabaseAPI.Database.Power.Length - 1;
-                for (int index2 = 0; index2 <= num2; ++index2)
-                    DatabaseAPI.Database.Power[index2] = (IPower)new Power(powerArray[index2]);
+                int powerCount = DatabaseAPI.Database.Power.Length - 1;
+                for (int index2 = 0; index2 <= powerCount; ++index2)
+                    DatabaseAPI.Database.Power[index2] = new Power(powerArray[index2]);
                 num3 = index1;
             }
             return num3;
         }
 
         void DisplayInfo()
-
         {
             this.lblFile.Text = FileIO.StripPath(this.FullFileName);
             this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.udRevision.Value = new Decimal(DatabaseAPI.Database.PowerVersion.Revision);
+            this.udRevision.Value = new decimal(DatabaseAPI.Database.PowerVersion.Revision);
             this.lblCount.Text = "Records: " + Conversions.ToString(DatabaseAPI.Database.Power.Length);
         }
 
         void FillListView()
-
         {
             string[] items = new string[5];
             this.lstImport.BeginUpdate();
@@ -251,16 +241,12 @@ namespace Hero_Designer
         }
 
         void frmImport_Power_Load(object sender, EventArgs e)
-
         {
             this.FullFileName = DatabaseAPI.Database.PowerVersion.SourceFile;
             this.DisplayInfo();
         }
 
-        [DebuggerStepThrough]
-
         bool ParseClasses(string iFileName)
-
         {
             int num1 = 0;
             StreamReader iStream;
@@ -271,7 +257,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
@@ -295,7 +281,7 @@ namespace Hero_Designer
                             Application.DoEvents();
                             num5 = 0;
                         }
-                        this.ImportBuffer = (PowerData[])Utils.CopyArray((Array)this.ImportBuffer, (Array)new PowerData[this.ImportBuffer.Length + 1]);
+                        this.ImportBuffer = (PowerData[])Utils.CopyArray(ImportBuffer, new PowerData[this.ImportBuffer.Length + 1]);
                         this.ImportBuffer[this.ImportBuffer.Length - 1] = new PowerData(iString);
                         ++num3;
                         if (this.ImportBuffer[this.ImportBuffer.Length - 1].IsValid)
@@ -311,18 +297,17 @@ namespace Hero_Designer
                 ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream.Close();
-                int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
+                Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
                 bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             iStream.Close();
-            int num6 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }
 
         bool ProcessImport()
-
         {
             bool flag = false;
             int num1 = 0;
@@ -339,7 +324,7 @@ namespace Hero_Designer
             {
                 int[] pList = this.CheckForDeletedPowers();
                 if (pList.Length > 0 && Interaction.MsgBox((Conversions.ToString(pList.Length) + "  deleted powers found. Delete them?"), MsgBoxStyle.YesNo, "Additional Check") == MsgBoxResult.Yes)
-                    frmImport_Power.DeletePowers(pList);
+                    DeletePowers(pList);
             }
             DatabaseAPI.Database.PowerVersion.SourceFile = this.dlgBrowse.FileName;
             DatabaseAPI.Database.PowerVersion.RevisionDate = DateTime.Now;
@@ -347,7 +332,7 @@ namespace Hero_Designer
             DatabaseAPI.MatchAllIDs(null);
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            int num3 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
+            Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             this.DisplayInfo();
             return flag;
         }

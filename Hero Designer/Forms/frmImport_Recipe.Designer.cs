@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_Recipe));
             this.Button1 = new System.Windows.Forms.Button();
             this.lblAttribTableCount = new System.Windows.Forms.Label();
             this.lblAttribDate = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@ namespace Hero_Designer
             this.Button1.TabIndex = 34;
             this.Button1.Text = "Close";
             this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(Button1_Click);
 
             this.lblAttribTableCount.Location = new System.Drawing.Point(208, 159);
             this.lblAttribTableCount.Name = "lblAttribTableCount";
@@ -81,6 +81,7 @@ namespace Hero_Designer
             this.btnAttribLoad.TabIndex = 25;
             this.btnAttribLoad.Text = "Import";
             this.btnAttribLoad.UseVisualStyleBackColor = true;
+            this.btnAttribLoad.Click += new System.EventHandler(btnAttribLoad_Click);
 
             this.Label4.Location = new System.Drawing.Point(12, 83);
             this.Label4.Name = "Label4";
@@ -111,6 +112,7 @@ namespace Hero_Designer
             this.btnAttribTable.TabIndex = 24;
             this.btnAttribTable.Text = "Browse";
             this.btnAttribTable.UseVisualStyleBackColor = true;
+            this.btnAttribTable.Click += new System.EventHandler(btnAttribTable_Click);
 
             this.btnAttribIndex.Location = new System.Drawing.Point(539, 25);
             this.btnAttribIndex.Name = "btnAttribIndex";
@@ -119,6 +121,7 @@ namespace Hero_Designer
             this.btnAttribIndex.TabIndex = 23;
             this.btnAttribIndex.Text = "Browse...";
             this.btnAttribIndex.UseVisualStyleBackColor = true;
+            this.btnAttribIndex.Click += new System.EventHandler(btnAttribIndex_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
@@ -135,20 +138,21 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lblAttribIndex);
             this.Controls.Add((System.Windows.Forms.Control)this.btnAttribTable);
             this.Controls.Add((System.Windows.Forms.Control)this.btnAttribIndex);
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_Recipe);
             this.Text = "Import Recipes";
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.Button1.Click += Button1_Click;
-                this.btnAttribIndex.Click += btnAttribIndex_Click;
-                this.btnAttribLoad.Click += btnAttribLoad_Click;
-                this.btnAttribTable.Click += btnAttribTable_Click;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnAttribIndex;
+        System.Windows.Forms.Button btnAttribLoad;
+        System.Windows.Forms.Button btnAttribTable;
+        System.Windows.Forms.Button Button1;
+        System.Windows.Forms.OpenFileDialog dlgBrowse;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label lblAttribDate;
+        System.Windows.Forms.Label lblAttribIndex;
+        System.Windows.Forms.Label lblAttribTableCount;
+        System.Windows.Forms.Label lblAttribTables;
     }
 }

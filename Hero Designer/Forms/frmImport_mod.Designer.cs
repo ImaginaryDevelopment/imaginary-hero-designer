@@ -96,7 +96,7 @@ namespace Hero_Designer
             this.btnAttribLoad.TabIndex = 13;
             this.btnAttribLoad.Text = "Import";
             this.btnAttribLoad.UseVisualStyleBackColor = true;
-            this.btnAttribLoad.Click += btnAttribLoad_Click;
+            this.btnAttribLoad.Click += new System.EventHandler(btnAttribLoad_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
 
@@ -129,7 +129,7 @@ namespace Hero_Designer
             this.btnAttribTable.TabIndex = 12;
             this.btnAttribTable.Text = "Browse";
             this.btnAttribTable.UseVisualStyleBackColor = true;
-            this.btnAttribTable.Click += btnAttribTable_Click;
+            this.btnAttribTable.Click += new System.EventHandler(btnAttribTable_Click);
 
             this.btnAttribIndex.Location = new System.Drawing.Point(539, 25);
             this.btnAttribIndex.Name = "btnAttribIndex";
@@ -138,7 +138,7 @@ namespace Hero_Designer
             this.btnAttribIndex.TabIndex = 11;
             this.btnAttribIndex.Text = "Browse...";
             this.btnAttribIndex.UseVisualStyleBackColor = true;
-            this.btnAttribIndex.Click += btnAttribIndex_Click;
+            this.btnAttribIndex.Click += new System.EventHandler(btnAttribIndex_Click);
 
             this.Button1.Location = new System.Drawing.Point(539, 197);
             this.Button1.Name = "Button1";
@@ -147,7 +147,7 @@ namespace Hero_Designer
             this.Button1.TabIndex = 22;
             this.Button1.Text = "Close";
             this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += Button1_Click;
+            this.Button1.Click += new System.EventHandler(Button1_Click);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 

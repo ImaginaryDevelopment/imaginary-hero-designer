@@ -30,6 +30,9 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmImport_SetBonusAssignment_Load);
             this.FullFileName = "";
             this.InitializeComponent();
+            this.Name = nameof(frmImport_SetBonusAssignment);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SetBonusAssignment));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_Click(object sender, EventArgs e)
@@ -154,7 +157,7 @@ namespace Hero_Designer
                             string[] strArray2 = array[2].Split(" ".ToCharArray());
                             if (array[2] == "")
                             {
-                                DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray((Array)DatabaseAPI.Database.EnhancementSets[index1].Bonus, (Array)new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
+                                DatabaseAPI.Database.EnhancementSets[index1].Bonus = (EnhancementSet.BonusItem[])Utils.CopyArray(DatabaseAPI.Database.EnhancementSets[index1].Bonus, (Array)new EnhancementSet.BonusItem[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length + 1]);
                                 DatabaseAPI.Database.EnhancementSets[index1].Bonus[DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1] = new EnhancementSet.BonusItem();
                                 EnhancementSet.BonusItem[] bonus = DatabaseAPI.Database.EnhancementSets[index1].Bonus;
                                 int index2 = DatabaseAPI.Database.EnhancementSets[index1].Bonus.Length - 1;
