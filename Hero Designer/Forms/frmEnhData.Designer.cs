@@ -132,6 +132,7 @@ namespace Hero_Designer
 
             this.txtInternal.Size = new System.Drawing.Size(156, 20);
             this.txtInternal.TabIndex = 21;
+            this.txtInternal.TextChanged += new System.EventHandler(txtInternal_TextChanged);
 
             this.Label9.Location = new System.Drawing.Point(8, 68);
             this.Label9.Name = "Label9";
@@ -165,6 +166,8 @@ namespace Hero_Designer
             this.udMinLevel.Size = new System.Drawing.Size(44, 20);
             this.udMinLevel.TabIndex = 17;
             this.udMinLevel.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udMinLevel.Leave += new System.EventHandler(udMinLevel_Leave);
+            this.udMinLevel.ValueChanged += new System.EventHandler(udMinLevel_ValueChanged);
 
             this.udMaxLevel.Location = new System.Drawing.Point(196, 140);
             this.udMaxLevel.Maximum = new System.Decimal(new int[4] { 53, 0, 0, 0 });
@@ -174,6 +177,8 @@ namespace Hero_Designer
             this.udMaxLevel.Size = new System.Drawing.Size(44, 20);
             this.udMaxLevel.TabIndex = 16;
             this.udMaxLevel.Value = new System.Decimal(new int[4] { 53, 0, 0, 0 });
+            this.udMaxLevel.Leave += new System.EventHandler(udMaxLevel_Leave);
+            this.udMaxLevel.ValueChanged += new System.EventHandler(udMaxLevel_ValueChanged);
 
             this.txtDesc.Location = new System.Drawing.Point(84, 94);
             this.txtDesc.Multiline = true;
@@ -181,6 +186,7 @@ namespace Hero_Designer
 
             this.txtDesc.Size = new System.Drawing.Size(156, 40);
             this.txtDesc.TabIndex = 15;
+            this.txtDesc.TextChanged += new System.EventHandler(txtDesc_TextChanged);
 
             this.Label4.Location = new System.Drawing.Point(8, 98);
             this.Label4.Name = "Label4";
@@ -195,6 +201,7 @@ namespace Hero_Designer
 
             this.txtNameShort.Size = new System.Drawing.Size(156, 20);
             this.txtNameShort.TabIndex = 13;
+            this.txtNameShort.TextChanged += new System.EventHandler(txtNameShort_TextChanged);
 
             this.Label3.Location = new System.Drawing.Point(8, 42);
             this.Label3.Name = "Label3";
@@ -209,6 +216,7 @@ namespace Hero_Designer
 
             this.txtNameFull.Size = new System.Drawing.Size(156, 20);
             this.txtNameFull.TabIndex = 11;
+            this.txtNameFull.TextChanged += new System.EventHandler(txtNameFull_TextChanged);
 
             this.Label2.Location = new System.Drawing.Point(8, 16);
             this.Label2.Name = "Label2";
@@ -226,6 +234,7 @@ namespace Hero_Designer
             this.btnImage.TabIndex = 9;
             this.btnImage.Text = "ImageName";
             this.btnImage.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImage.Click += new System.EventHandler(btnImage_Click);
             this.gbType.Controls.Add((System.Windows.Forms.Control)this.cbSubType);
             this.gbType.Controls.Add((System.Windows.Forms.Control)this.typeSet);
             this.gbType.Controls.Add((System.Windows.Forms.Control)this.typeIO);
@@ -246,6 +255,7 @@ namespace Hero_Designer
 
             this.cbSubType.Size = new System.Drawing.Size(124, 22);
             this.cbSubType.TabIndex = 54;
+            this.cbSubType.SelectedIndexChanged += new System.EventHandler(cbSubType_SelectedIndexChanged);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.cbSubType, "(Currently only apllicable to Stealth IOs");
             this.typeSet.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeSet.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -258,6 +268,7 @@ namespace Hero_Designer
             this.typeSet.TabIndex = 53;
             this.typeSet.Text = "IO Set";
             this.typeSet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.typeSet.CheckedChanged += new System.EventHandler(type_CheckedChanged);
             this.typeIO.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeIO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.typeIO.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -269,6 +280,7 @@ namespace Hero_Designer
             this.typeIO.TabIndex = 52;
             this.typeIO.Text = "Invention";
             this.typeIO.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.typeIO.CheckedChanged += new System.EventHandler(type_CheckedChanged);
             this.typeRegular.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeRegular.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.typeRegular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -280,6 +292,7 @@ namespace Hero_Designer
             this.typeRegular.TabIndex = 50;
             this.typeRegular.Text = "Regular";
             this.typeRegular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.typeRegular.CheckedChanged += new System.EventHandler(type_CheckedChanged);
             this.typeHO.Appearance = System.Windows.Forms.Appearance.Button;
             this.typeHO.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.typeHO.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -291,13 +304,15 @@ namespace Hero_Designer
             this.typeHO.TabIndex = 51;
             this.typeHO.Text = "Special";
             this.typeHO.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cbSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
+            this.typeHO.CheckedChanged += new System.EventHandler(type_CheckedChanged);
             this.cbSet.Location = new System.Drawing.Point(8, 20);
             this.cbSet.Name = "cbSet";
 
             this.cbSet.Size = new System.Drawing.Size(168, 22);
             this.cbSet.TabIndex = 13;
+            this.cbSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSet.SelectedIndexChanged += new System.EventHandler(cbSet_SelectedIndexChanged);
+
             this.gbSet.Controls.Add((System.Windows.Forms.Control)this.chkSuperior);
             this.gbSet.Controls.Add((System.Windows.Forms.Control)this.pbSet);
             this.gbSet.Controls.Add((System.Windows.Forms.Control)this.cbSet);
@@ -317,6 +332,8 @@ namespace Hero_Designer
             this.chkSuperior.Size = new System.Drawing.Size(84, 16);
             this.chkSuperior.TabIndex = 21;
             this.chkSuperior.Text = "Superior";
+            this.chkSuperior.CheckedChanged += new System.EventHandler(chkSuperior_CheckedChanged);
+
 
             this.pbSet.Location = new System.Drawing.Point(12, 52);
             this.pbSet.Name = "pbSet";
@@ -331,6 +348,7 @@ namespace Hero_Designer
             this.chkUnique.Size = new System.Drawing.Size(84, 16);
             this.chkUnique.TabIndex = 20;
             this.chkUnique.Text = "Unique";
+            this.chkUnique.CheckedChanged += new System.EventHandler(chkUnique_CheckedChanged);
             this.gbEffects.Controls.Add((System.Windows.Forms.Control)this.btnDown);
             this.gbEffects.Controls.Add((System.Windows.Forms.Control)this.btnUp);
             this.gbEffects.Controls.Add((System.Windows.Forms.Control)this.rbBoth);
@@ -364,13 +382,14 @@ namespace Hero_Designer
             this.btnDown.Size = new System.Drawing.Size(48, 20);
             this.btnDown.TabIndex = 32;
             this.btnDown.Text = "Down";
-
+            this.btnDown.Click += new System.EventHandler(btnDown_Click);
             this.btnUp.Location = new System.Drawing.Point(188, 148);
             this.btnUp.Name = "btnUp";
 
             this.btnUp.Size = new System.Drawing.Size(48, 20);
             this.btnUp.TabIndex = 31;
             this.btnUp.Text = "Up";
+            this.btnUp.Click += new System.EventHandler(btnUp_Click);
             this.rbBoth.Checked = true;
 
             this.rbBoth.Location = new System.Drawing.Point(428, 228);
@@ -380,6 +399,8 @@ namespace Hero_Designer
             this.rbBoth.TabIndex = 30;
             this.rbBoth.TabStop = true;
             this.rbBoth.Text = "Buff/Debuff Effects";
+            this.rbBoth.CheckedChanged += new System.EventHandler(rbBuffDebuff_CheckedChanged);
+
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.rbBoth, "Apply to effects regardles of whether the Mag is positive or negative");
 
             this.rbDebuff.Location = new System.Drawing.Point(428, 212);
@@ -388,6 +409,7 @@ namespace Hero_Designer
             this.rbDebuff.Size = new System.Drawing.Size(148, 16);
             this.rbDebuff.TabIndex = 29;
             this.rbDebuff.Text = "Debuff Effects";
+            this.rbDebuff.CheckedChanged += new System.EventHandler(rbBuffDebuff_CheckedChanged);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.rbDebuff, "Apply only to effects with a negative Mag");
 
             this.rbBuff.Location = new System.Drawing.Point(428, 196);
@@ -396,6 +418,7 @@ namespace Hero_Designer
             this.rbBuff.Size = new System.Drawing.Size(148, 16);
             this.rbBuff.TabIndex = 28;
             this.rbBuff.Text = "Buff Effects";
+            this.rbBuff.CheckedChanged += new System.EventHandler(rbBuffDebuff_CheckedChanged);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.rbBuff, "Apply only to effects with a positive Mag");
 
             this.btnAutoFill.Location = new System.Drawing.Point(128, 24);
@@ -404,7 +427,7 @@ namespace Hero_Designer
             this.btnAutoFill.Size = new System.Drawing.Size(108, 32);
             this.btnAutoFill.TabIndex = 27;
             this.btnAutoFill.Text = "AutoFill Names";
-
+            this.btnAutoFill.Click += new System.EventHandler(btnAutoFill_Click);
             this.Label5.Location = new System.Drawing.Point(196, 244);
             this.Label5.Name = "Label5";
 
@@ -419,6 +442,8 @@ namespace Hero_Designer
             this.txtProb.Size = new System.Drawing.Size(36, 20);
             this.txtProb.TabIndex = 25;
             this.txtProb.Text = "1";
+            this.txtProb.Leave += new System.EventHandler(txtProb_Leave);
+            this.txtProb.TextChanged += new System.EventHandler(txtProb_TextChanged);
 
             this.Label1.Location = new System.Drawing.Point(8, 244);
             this.Label1.Name = "Label1";
@@ -435,6 +460,7 @@ namespace Hero_Designer
             this.btnEdit.Size = new System.Drawing.Size(152, 28);
             this.btnEdit.TabIndex = 23;
             this.btnEdit.Text = "Edit Selected...";
+            this.btnEdit.Click += new System.EventHandler(btnEdit_Click);
             this.btnAddFX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
 
             this.btnAddFX.Location = new System.Drawing.Point(8, 208);
@@ -443,6 +469,7 @@ namespace Hero_Designer
             this.btnAddFX.Size = new System.Drawing.Size(228, 28);
             this.btnAddFX.TabIndex = 22;
             this.btnAddFX.Text = "Add Special Effect... ->";
+            this.btnAddFX.Click += new System.EventHandler(btnAddFX_Click);
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
 
             this.btnRemove.Location = new System.Drawing.Point(240, 248);
@@ -451,6 +478,7 @@ namespace Hero_Designer
             this.btnRemove.Size = new System.Drawing.Size(176, 28);
             this.btnRemove.TabIndex = 21;
             this.btnRemove.Text = "Remove Selected";
+            this.btnRemove.Click += new System.EventHandler(btnRemove_Click);
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
 
             this.btnAdd.Location = new System.Drawing.Point(128, 100);
@@ -459,6 +487,7 @@ namespace Hero_Designer
             this.btnAdd.Size = new System.Drawing.Size(108, 28);
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add ->";
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
             this.gbMod.Controls.Add((System.Windows.Forms.Control)this.rbMod4);
             this.gbMod.Controls.Add((System.Windows.Forms.Control)this.txtModOther);
             this.gbMod.Controls.Add((System.Windows.Forms.Control)this.rbModOther);
@@ -480,6 +509,7 @@ namespace Hero_Designer
             this.rbMod4.Size = new System.Drawing.Size(128, 20);
             this.rbMod4.TabIndex = 5;
             this.rbMod4.Text = "0.4375 (4-Effect IO)";
+            this.rbMod4.CheckedChanged += new System.EventHandler(rbMod_CheckedChanged);
             this.txtModOther.Enabled = false;
 
             this.txtModOther.Location = new System.Drawing.Point(28, 120);
@@ -487,6 +517,7 @@ namespace Hero_Designer
 
             this.txtModOther.Size = new System.Drawing.Size(112, 20);
             this.txtModOther.TabIndex = 4;
+            this.txtModOther.TextChanged += new System.EventHandler(txtModOther_TextChanged);
 
             this.rbModOther.Location = new System.Drawing.Point(12, 100);
             this.rbModOther.Name = "rbModOther";
@@ -494,6 +525,8 @@ namespace Hero_Designer
             this.rbModOther.Size = new System.Drawing.Size(128, 20);
             this.rbModOther.TabIndex = 3;
             this.rbModOther.Text = "Other";
+            this.rbModOther.CheckedChanged += new System.EventHandler(rbMod_CheckedChanged);
+
 
             this.rbMod3.Location = new System.Drawing.Point(12, 60);
             this.rbMod3.Name = "rbMod3";
@@ -501,13 +534,14 @@ namespace Hero_Designer
             this.rbMod3.Size = new System.Drawing.Size(128, 20);
             this.rbMod3.TabIndex = 2;
             this.rbMod3.Text = "0.5 (3-Effect IO)";
-
+            this.rbMod3.CheckedChanged += new System.EventHandler(rbMod_CheckedChanged);
             this.rbMod2.Location = new System.Drawing.Point(12, 40);
             this.rbMod2.Name = "rbMod2";
 
             this.rbMod2.Size = new System.Drawing.Size(128, 20);
             this.rbMod2.TabIndex = 1;
             this.rbMod2.Text = "0.625 (2-Effect IO)";
+            this.rbMod2.CheckedChanged += new System.EventHandler(rbMod_CheckedChanged);
             this.rbMod1.Checked = true;
 
             this.rbMod1.Location = new System.Drawing.Point(12, 20);
@@ -517,6 +551,7 @@ namespace Hero_Designer
             this.rbMod1.TabIndex = 0;
             this.rbMod1.TabStop = true;
             this.rbMod1.Text = "1.0 (No modifier)";
+            this.rbMod1.CheckedChanged += new System.EventHandler(rbMod_CheckedChanged);
             this.lstSelected.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.lstSelected.ItemHeight = 14;
 
@@ -525,6 +560,7 @@ namespace Hero_Designer
 
             this.lstSelected.Size = new System.Drawing.Size(176, 214);
             this.lstSelected.TabIndex = 16;
+            this.lstSelected.SelectedIndexChanged += new System.EventHandler(lstSelected_SelectedIndexChanged);
             this.lstAvailable.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.lstAvailable.ItemHeight = 14;
 
@@ -533,6 +569,7 @@ namespace Hero_Designer
 
             this.lstAvailable.Size = new System.Drawing.Size(116, 172);
             this.lstAvailable.TabIndex = 15;
+            this.lstAvailable.DoubleClick += new System.EventHandler(lstAvailable_DoubleClick);
             this.cbSched.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
             this.cbSched.Location = new System.Drawing.Point(488, 20);
@@ -540,6 +577,7 @@ namespace Hero_Designer
 
             this.cbSched.Size = new System.Drawing.Size(88, 22);
             this.cbSched.TabIndex = 14;
+            this.cbSched.SelectedIndexChanged += new System.EventHandler(cbSched_SelectedIndexChanged);
 
             this.lblSched.Location = new System.Drawing.Point(424, 20);
             this.lblSched.Name = "lblSched";
@@ -556,6 +594,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(84, 28);
             this.btnOK.TabIndex = 16;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(596, 466);
@@ -564,6 +603,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(84, 28);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.gbClass.Controls.Add((System.Windows.Forms.Control)this.lblClass);
             this.gbClass.Controls.Add((System.Windows.Forms.Control)this.pnlClassList);
             this.gbClass.Controls.Add((System.Windows.Forms.Control)this.pnlClass);
@@ -604,6 +644,7 @@ namespace Hero_Designer
             this.btnNoImage.Size = new System.Drawing.Size(80, 20);
             this.btnNoImage.TabIndex = 19;
             this.btnNoImage.Text = "Clear Image";
+            this.btnNoImage.Click += new System.EventHandler(btnNoImage_Click);
             this.tTip.AutoPopDelay = 10000;
             this.tTip.InitialDelay = 250;
             this.tTip.ReshowDelay = 100;
@@ -614,6 +655,7 @@ namespace Hero_Designer
 
             this.cbMutEx.Size = new System.Drawing.Size(168, 22);
             this.cbMutEx.TabIndex = 21;
+            this.cbMutEx.SelectedIndexChanged += new System.EventHandler(cbMutEx_SelectedIndexChanged);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.cbMutEx, "(Currently only apllicable to Stealth IOs");
             this.cbRecipe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
@@ -622,6 +664,7 @@ namespace Hero_Designer
 
             this.cbRecipe.Size = new System.Drawing.Size(248, 22);
             this.cbRecipe.TabIndex = 23;
+            this.cbRecipe.SelectedIndexChanged += new System.EventHandler(cbRecipe_SelectedIndexChanged);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.cbRecipe, "(Currently only apllicable to Stealth IOs");
 
             this.Label8.Location = new System.Drawing.Point(496, 130);
@@ -646,12 +689,14 @@ namespace Hero_Designer
             this.btnEditPowerData.TabIndex = 25;
             this.btnEditPowerData.Text = "Edit Power_Mode Data";
             this.btnEditPowerData.UseVisualStyleBackColor = true;
+            this.btnEditPowerData.Click += new System.EventHandler(btnEditPowerData_Click);
 
             this.StaticIndex.Location = new System.Drawing.Point(8, 146);
             this.StaticIndex.Name = "StaticIndex";
 
             this.StaticIndex.Size = new System.Drawing.Size(82, 20);
             this.StaticIndex.TabIndex = 26;
+            this.StaticIndex.TextChanged += new System.EventHandler(StaticIndex_TextChanged);
             this.Label11.AutoSize = true;
 
             this.Label11.Location = new System.Drawing.Point(8, 126);
@@ -702,74 +747,6 @@ namespace Hero_Designer
             this.gbMod.PerformLayout();
             this.gbClass.ResumeLayout(false);
             this.ResumeLayout(false);
-            //adding events
-            this.StaticIndex.TextChanged += StaticIndex_TextChanged;
-            this.btnAdd.Click += btnAdd_Click;
-            this.btnAddFX.Click += btnAddFX_Click;
-            this.btnAutoFill.Click += btnAutoFill_Click;
-            this.btnCancel.Click += btnCancel_Click;
-            this.btnDown.Click += btnDown_Click;
-            this.btnEdit.Click += btnEdit_Click;
-            this.btnEditPowerData.Click += btnEditPowerData_Click;
-            this.btnImage.Click += btnImage_Click;
-            this.btnNoImage.Click += btnNoImage_Click;
-            this.btnOK.Click += btnOK_Click;
-            this.btnRemove.Click += btnRemove_Click;
-            this.btnUp.Click += btnUp_Click;
-            this.cbMutEx.SelectedIndexChanged += cbMutEx_SelectedIndexChanged;
-            this.cbRecipe.SelectedIndexChanged += cbRecipe_SelectedIndexChanged;
-            this.cbSched.SelectedIndexChanged += cbSched_SelectedIndexChanged;
-            this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
-            this.cbSubType.SelectedIndexChanged += cbSubType_SelectedIndexChanged;
-            this.chkSuperior.CheckedChanged += chkSuperior_CheckedChanged;
-            this.chkUnique.CheckedChanged += chkUnique_CheckedChanged;
-            this.lstAvailable.DoubleClick += lstAvailable_DoubleClick;
-            this.lstSelected.SelectedIndexChanged += lstSelected_SelectedIndexChanged;
-
-            // pnlClass events
-            this.pnlClass.MouseMove += pnlClass_MouseMove;
-            this.pnlClass.Paint += pnlClass_Paint;
-            this.pnlClass.MouseDown += pnlClass_MouseDown;
-
-
-            // pnlClassList events
-            this.pnlClassList.MouseMove += pnlClassList_MouseMove;
-            this.pnlClassList.Paint += pnlClassList_Paint;
-            this.pnlClassList.MouseDown += pnlClassList_MouseDown;
-
-            this.rbBoth.CheckedChanged += rbBuffDebuff_CheckedChanged;
-            this.rbBuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-            this.rbDebuff.CheckedChanged += rbBuffDebuff_CheckedChanged;
-            this.rbMod1.CheckedChanged += rbMod_CheckedChanged;
-            this.rbMod2.CheckedChanged += rbMod_CheckedChanged;
-            this.rbMod3.CheckedChanged += rbMod_CheckedChanged;
-            this.rbMod4.CheckedChanged += rbMod_CheckedChanged;
-            this.rbModOther.CheckedChanged += rbMod_CheckedChanged;
-            this.txtDesc.TextChanged += txtDesc_TextChanged;
-            this.txtInternal.TextChanged += txtInternal_TextChanged;
-            this.txtModOther.TextChanged += txtModOther_TextChanged;
-            this.txtNameFull.TextChanged += txtNameFull_TextChanged;
-            this.txtNameShort.TextChanged += txtNameShort_TextChanged;
-
-            // txtProb events
-            this.txtProb.Leave += txtProb_Leave;
-            this.txtProb.TextChanged += txtProb_TextChanged;
-
-            this.typeHO.CheckedChanged += type_CheckedChanged;
-            this.typeIO.CheckedChanged += type_CheckedChanged;
-            this.typeRegular.CheckedChanged += type_CheckedChanged;
-            this.typeSet.CheckedChanged += type_CheckedChanged;
-
-            // udMaxLevel events
-            this.udMaxLevel.Leave += udMaxLevel_Leave;
-            this.udMaxLevel.ValueChanged += udMaxLevel_ValueChanged;
-
-
-            // udMinLevel events
-            this.udMinLevel.Leave += udMinLevel_Leave;
-            this.udMinLevel.ValueChanged += udMinLevel_ValueChanged;
-
-            // finished with events
             this.PerformLayout();
         }
 

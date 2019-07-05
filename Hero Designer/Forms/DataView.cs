@@ -134,12 +134,12 @@ namespace Hero_Designer
                 this.bFloating = value;
                 if (this.bFloating)
                 {
-                    this.dbTip.SetToolTip((Control)this.lblFloat, "Dock Info Display");
+                    this.dbTip.SetToolTip(lblFloat, "Dock Info Display");
                     this.lblFloat.Text = "D";
                 }
                 else
                 {
-                    this.dbTip.SetToolTip((Control)this.lblFloat, "Make Floating Window");
+                    this.dbTip.SetToolTip(lblFloat, "Make Floating Window");
                     this.lblFloat.Text = "F";
                 }
             }

@@ -220,10 +220,10 @@ namespace Hero_Designer
             this.cbAT.Size = new System.Drawing.Size(144, 22);
             this.cbAT.TabIndex = 3;
             this.cbAT.ValueMember = "Idx";
-            this.cbAT.DrawItem += cbAT_DrawItem;
-            this.cbAT.SelectionChangeCommitted += cbAT_SelectedIndexChanged;
-            this.cbAT.MouseMove += cbAT_MouseMove;
-            this.cbAT.MouseLeave += cbAT_MouseLeave;
+            this.cbAT.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbAT_DrawItem);
+            this.cbAT.SelectionChangeCommitted += new System.EventHandler(cbAT_SelectedIndexChanged);
+            this.cbAT.MouseMove += new System.Windows.Forms.MouseEventHandler(cbAT_MouseMove);
+            this.cbAT.MouseLeave += new System.EventHandler(cbAT_MouseLeave);
             // 
             // cbOrigin
             // 
@@ -236,8 +236,8 @@ namespace Hero_Designer
             this.cbOrigin.Name = "cbOrigin";
             this.cbOrigin.Size = new System.Drawing.Size(144, 22);
             this.cbOrigin.TabIndex = 5;
-            this.cbOrigin.DrawItem += cbOrigin_DrawItem;
-            this.cbOrigin.SelectionChangeCommitted += cbOrigin_SelectedIndexChanged;
+            this.cbOrigin.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbOrigin_DrawItem);
+            this.cbOrigin.SelectionChangeCommitted += new System.EventHandler(cbOrigin_SelectedIndexChanged);
             // 
             // cbPrimary
             // 
@@ -284,10 +284,10 @@ namespace Hero_Designer
             this.cbSecondary.Name = "cbSecondary";
             this.cbSecondary.Size = new System.Drawing.Size(144, 22);
             this.cbSecondary.TabIndex = 11;
-            this.cbSecondary.DrawItem += cbSecondary_DrawItem;
-            this.cbSecondary.SelectionChangeCommitted += cbSecondary_SelectedIndexChanged;
-            this.cbSecondary.MouseMove += cbSecondary_MouseMove;
-            this.cbSecondary.MouseLeave += cbSecondary_MouseLeave;
+            this.cbSecondary.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbSecondary_DrawItem);
+            this.cbSecondary.SelectionChangeCommitted += new System.EventHandler(cbSecondary_SelectedIndexChanged);
+            this.cbSecondary.MouseMove += new System.Windows.Forms.MouseEventHandler(cbSecondary_MouseMove);
+            this.cbSecondary.MouseLeave += new System.EventHandler(cbSecondary_MouseLeave);
             // 
             // cbPool0
             // 
@@ -301,10 +301,10 @@ namespace Hero_Designer
             this.cbPool0.Name = "cbPool0";
             this.cbPool0.Size = new System.Drawing.Size(136, 22);
             this.cbPool0.TabIndex = 15;
-            this.cbPool0.DrawItem += cbPool0_DrawItem;
-            this.cbPool0.SelectionChangeCommitted += cbPool0_SelectedIndexChanged;
-            this.cbPool0.MouseMove += cbPool0_MouseMove;
-            this.cbPool0.MouseLeave += cbPool0_MouseLeave;
+            this.cbPool0.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPool0_DrawItem);
+            this.cbPool0.SelectionChangeCommitted += new System.EventHandler(cbPool0_SelectedIndexChanged);
+            this.cbPool0.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPool0_MouseMove);
+            this.cbPool0.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // lblPool1
             // 
@@ -356,10 +356,10 @@ namespace Hero_Designer
             // 
             // cbPool1
             // 
-            this.cbPool1.DrawItem += cbPool1_DrawItem;
-            this.cbPool1.SelectionChangeCommitted += cbPool1_SelectedIndexChanged;
-            this.cbPool1.MouseMove += cbPool1_MouseMove;
-            this.cbPool1.MouseLeave += cbPool0_MouseLeave;
+            this.cbPool1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPool1_DrawItem);
+            this.cbPool1.SelectionChangeCommitted += new System.EventHandler(cbPool1_SelectedIndexChanged);
+            this.cbPool1.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPool1_MouseMove);
+            this.cbPool1.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // lblPool3
             // 
@@ -407,10 +407,10 @@ namespace Hero_Designer
             this.cbAncillary.Name = "cbAncillary";
             this.cbAncillary.Size = new System.Drawing.Size(136, 22);
             this.cbAncillary.TabIndex = 27;
-            this.cbAncillary.DrawItem += cbAncillary_DrawItem;
-            this.cbAncillary.SelectionChangeCommitted += cbAncillery_SelectedIndexChanged;
-            this.cbAncillary.MouseMove += cbAncillary_MouseMove;
-            this.cbAncillary.MouseLeave += cbPool0_MouseLeave;
+            this.cbAncillary.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbAncillary_DrawItem);
+            this.cbAncillary.SelectionChangeCommitted += new System.EventHandler(cbAncillery_SelectedIndexChanged);
+            this.cbAncillary.MouseMove += new System.Windows.Forms.MouseEventHandler(cbAncillary_MouseMove);
+            this.cbAncillary.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // lblEpic
             // 
@@ -1306,7 +1306,7 @@ namespace Hero_Designer
             this.AccoladesWindowToolStripMenuItem.Name = "AccoladesWindowToolStripMenuItem";
             this.AccoladesWindowToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.AccoladesWindowToolStripMenuItem.Text = "&Accolades Window";
-            this.AccoladesWindowToolStripMenuItem.Click += AccoladesWindowToolStripMenuItem_Click;
+            this.AccoladesWindowToolStripMenuItem.Click += new System.EventHandler(AccoladesWindowToolStripMenuItem_Click);
             // 
             // IncarnateWindowToolStripMenuItem
             // 
@@ -1572,8 +1572,8 @@ namespace Hero_Designer
             this.accoladeButton.TextOff = "Accolades (Off)";
             this.accoladeButton.TextOn = "Accolades (On)";
             this.accoladeButton.Toggle = true;
-            this.accoladeButton.MouseDown += accoladeButton_MouseDown;
-            this.accoladeButton.ButtonClicked += accoladeButton_ButtonClicked;
+            this.accoladeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(accoladeButton_MouseDown);
+            this.accoladeButton.ButtonClicked += new  midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
             // 
             // incarnateButton
             // 
@@ -1601,12 +1601,12 @@ namespace Hero_Designer
             this.i9Picker.Size = new System.Drawing.Size(198, 235);
             this.i9Picker.TabIndex = 83;
             this.i9Picker.Visible = false;
-            this.i9Picker.Moved += this.I9Picker_Moved;
-            this.i9Picker.HoverSet += this.I9Picker_HoverSet;
-            this.i9Picker.HoverEnhancement += this.I9Picker_HoverEnhancement;
-            this.i9Picker.MouseLeave += this.I9Picker_Hiding;
-            this.i9Picker.EnhancementPicked += this.I9Picker_EnhancementPicked;
-            this.i9Picker.MouseDown += this.I9Picker_MouseDown;
+            this.i9Picker.Moved += new  midsControls.I9Picker.MovedEventHandler(this.I9Picker_Moved);
+            this.i9Picker.HoverSet += new midsControls.I9Picker.HoverSetEventHandler(this.I9Picker_HoverSet);
+            this.i9Picker.HoverEnhancement += new midsControls.I9Picker.HoverEnhancementEventHandler(this.I9Picker_HoverEnhancement);
+            this.i9Picker.MouseLeave += new System.EventHandler(this.I9Picker_Hiding);
+            this.i9Picker.EnhancementPicked += new midsControls.I9Picker.EnhancementPickedEventHandler(this.I9Picker_EnhancementPicked);
+            this.i9Picker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.I9Picker_MouseDown);
             // 
             // I9Popup
             // 

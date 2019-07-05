@@ -34,6 +34,12 @@ namespace Hero_Designer
             this.EnhAcross = 5;
             this.Loading = true;
             this.InitializeComponent();
+            this.pnlClass.MouseMove += pnlClass_MouseMove;
+            this.pnlClass.Paint += pnlClass_Paint;
+            this.pnlClass.MouseDown += pnlClass_MouseDown;
+            this.pnlClassList.MouseMove += pnlClassList_MouseMove;
+            this.pnlClassList.Paint += pnlClassList_Paint;
+            this.pnlClassList.MouseDown += pnlClassList_MouseDown;
             var componentResourceManager = new ComponentResourceManager(typeof(frmEnhData));
             this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
             this.typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
@@ -60,7 +66,7 @@ namespace Hero_Designer
             if (frmPowerEffect.ShowDialog() != DialogResult.OK)
                 return;
             IEnhancement enh = this.myEnh;
-            Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray((Array)enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
+            Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
             enh.Effect = sEffectArray;
             Enums.sEffect[] effect = this.myEnh.Effect;
             int index = this.myEnh.Effect.Length - 1;
@@ -673,7 +679,7 @@ namespace Hero_Designer
             else
             {
                 IEnhancement enh = this.myEnh;
-                Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray((Array)enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
+                Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
                 enh.Effect = sEffectArray;
                 Enums.sEffect[] effect = this.myEnh.Effect;
                 int index = this.myEnh.Effect.Length - 1;
@@ -973,7 +979,7 @@ namespace Hero_Designer
                     if (!flag)
                     {
                         IEnhancement enh = this.myEnh;
-                        int[] numArray = (int[])Utils.CopyArray((Array)enh.ClassID, (Array)new int[this.myEnh.ClassID.Length + 1]);
+                        int[] numArray = (int[])Utils.CopyArray(enh.ClassID, (Array)new int[this.myEnh.ClassID.Length + 1]);
                         enh.ClassID = numArray;
                         this.myEnh.ClassID[this.myEnh.ClassID.Length - 1] = num5;
                         Array.Sort<int>(this.myEnh.ClassID);

@@ -146,6 +146,7 @@ namespace Hero_Designer
             this.mod_Import.TabIndex = 4;
             this.mod_Import.Text = "Import New";
             this.mod_Import.UseVisualStyleBackColor = true;
+            this.mod_Import.Click += new System.EventHandler(mod_Import_Click);
 
             this.mod_Count.Location = new System.Drawing.Point(124, 38);
             this.mod_Count.Name = "mod_Count";
@@ -217,6 +218,7 @@ namespace Hero_Designer
             this.at_Import.TabIndex = 4;
             this.at_Import.Text = "Import";
             this.at_Import.UseVisualStyleBackColor = true;
+            this.at_Import.Click += new System.EventHandler(at_Import_Click);
 
             this.at_Count.Location = new System.Drawing.Point(124, 38);
             this.at_Count.Name = "at_Count";
@@ -288,6 +290,7 @@ namespace Hero_Designer
             this.set_Import.TabIndex = 4;
             this.set_Import.Text = "Import";
             this.set_Import.UseVisualStyleBackColor = true;
+            this.set_Import.Click += new System.EventHandler(set_Import_Click);
 
             this.set_Count.Location = new System.Drawing.Point(124, 38);
             this.set_Count.Name = "set_Count";
@@ -359,6 +362,7 @@ namespace Hero_Designer
             this.pow_Import.TabIndex = 4;
             this.pow_Import.Text = "Import";
             this.pow_Import.UseVisualStyleBackColor = true;
+            this.pow_Import.Click += new System.EventHandler(pow_Import_Click);
 
             this.pow_Count.Location = new System.Drawing.Point(124, 38);
             this.pow_Count.Name = "pow_Count";
@@ -430,6 +434,7 @@ namespace Hero_Designer
             this.fx_Import.TabIndex = 4;
             this.fx_Import.Text = "Import";
             this.fx_Import.UseVisualStyleBackColor = true;
+            this.fx_Import.Click += new System.EventHandler(fx_Import_Click);
 
             this.fx_Count.Location = new System.Drawing.Point(124, 38);
             this.fx_Count.Name = "fx_Count";
@@ -491,6 +496,7 @@ namespace Hero_Designer
             this.inventSetImport.TabIndex = 12;
             this.inventSetImport.Text = "Import Sets";
             this.inventSetImport.UseVisualStyleBackColor = true;
+            this.inventSetImport.Click += new System.EventHandler(inventSetImport_Click);
 
             this.btnIOLevels.Location = new System.Drawing.Point(6, 206);
             this.btnIOLevels.Name = "btnIOLevels";
@@ -499,6 +505,7 @@ namespace Hero_Designer
             this.btnIOLevels.TabIndex = 11;
             this.btnIOLevels.Text = "Compute IO Set Level Ranges";
             this.btnIOLevels.UseVisualStyleBackColor = true;
+            this.btnIOLevels.Click += new System.EventHandler(btnIOLevels_Click);
 
             this.btnImportRecipes.Location = new System.Drawing.Point(6, 148);
             this.btnImportRecipes.Name = "btnImportRecipes";
@@ -507,6 +514,7 @@ namespace Hero_Designer
             this.btnImportRecipes.TabIndex = 10;
             this.btnImportRecipes.Text = "Import Recipes (Full Import)";
             this.btnImportRecipes.UseVisualStyleBackColor = true;
+            this.btnImportRecipes.Click += new System.EventHandler(btnImportRecipes_Click);
 
             this.btnSalvageUpdate.Location = new System.Drawing.Point(9, 263);
             this.btnSalvageUpdate.Name = "btnSalvageUpdate";
@@ -515,6 +523,7 @@ namespace Hero_Designer
             this.btnSalvageUpdate.TabIndex = 9;
             this.btnSalvageUpdate.Text = "Update Salvage Requirements";
             this.btnSalvageUpdate.UseVisualStyleBackColor = true;
+            this.btnSalvageUpdate.Click += new System.EventHandler(btnSalvageUpdate_Click);
 
             this.invent_Revision.Location = new System.Drawing.Point(124, 60);
             this.invent_Revision.Name = "invent_Revision";
@@ -531,6 +540,7 @@ namespace Hero_Designer
             this.btnEnhEffects.TabIndex = 8;
             this.btnEnhEffects.Text = "Load Enhancement Effects";
             this.btnEnhEffects.UseVisualStyleBackColor = true;
+            this.btnEnhEffects.Click += new System.EventHandler(btnEnhEffects_Click);
 
             this.Label23.Location = new System.Drawing.Point(6, 60);
             this.Label23.Name = "Label23";
@@ -547,6 +557,7 @@ namespace Hero_Designer
             this.btnBonusLookup.TabIndex = 7;
             this.btnBonusLookup.Text = "Import Set Bonus Assignments";
             this.btnBonusLookup.UseVisualStyleBackColor = true;
+            this.btnBonusLookup.Click += new System.EventHandler(btnBonusLookup_Click);
 
             this.invent_Import.Location = new System.Drawing.Point(6, 119);
             this.invent_Import.Name = "invent_Import";
@@ -555,6 +566,7 @@ namespace Hero_Designer
             this.invent_Import.TabIndex = 4;
             this.invent_Import.Text = "Import Power-Set Type Assignments";
             this.invent_Import.UseVisualStyleBackColor = true;
+            this.invent_Import.Click += new System.EventHandler(invent_Import_Click);
 
             this.invent_RecipeDate.Location = new System.Drawing.Point(124, 38);
             this.invent_RecipeDate.Name = "invent_RecipeDate";
@@ -626,6 +638,8 @@ namespace Hero_Designer
             this.level_import.TabIndex = 4;
             this.level_import.Text = "Import";
             this.level_import.UseVisualStyleBackColor = true;
+            this.level_import.Click += new System.EventHandler(level_import_Click);
+            this.level_import.Click += new System.EventHandler(level_import_Click);
 
             this.lev_Count.Location = new System.Drawing.Point(124, 38);
             this.lev_Count.Name = "lev_Count";
@@ -642,7 +656,6 @@ namespace Hero_Designer
             this.lev_date.TabIndex = 2;
             this.lev_date.Text = "DD/MMM/YYYY";
             this.lev_date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             this.Label22.Location = new System.Drawing.Point(6, 38);
             this.Label22.Name = "Label22";
 
@@ -675,6 +688,7 @@ namespace Hero_Designer
             this.btnEntities.TabIndex = 4;
             this.btnEntities.Text = "Import";
             this.btnEntities.UseVisualStyleBackColor = true;
+            this.btnEntities.Click += new System.EventHandler(btnEntities_Click);
             this.btnClearSI.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnClearSI.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnClearSI.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -686,6 +700,7 @@ namespace Hero_Designer
             this.btnClearSI.TabIndex = 22;
             this.btnClearSI.Text = "Clear StaticIndex Values";
             this.btnClearSI.UseVisualStyleBackColor = true;
+            this.btnClearSI.Click += new System.EventHandler(btnClearSI_Click);
             this.btnStaticIndex.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnStaticIndex.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnStaticIndex.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -697,6 +712,7 @@ namespace Hero_Designer
             this.btnStaticIndex.TabIndex = 21;
             this.btnStaticIndex.Text = "Assign StaticIndex Values";
             this.btnStaticIndex.UseVisualStyleBackColor = true;
+            this.btnStaticIndex.Click += new System.EventHandler(Button2_Click);
             this.btnDefiance.BackColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
             this.btnDefiance.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.btnDefiance.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -708,6 +724,7 @@ namespace Hero_Designer
             this.btnDefiance.TabIndex = 23;
             this.btnDefiance.Text = "Scan and Tag Blaster Defiance Effects";
             this.btnDefiance.UseVisualStyleBackColor = true;
+            this.btnDefiance.Click += new System.EventHandler(btnDefiance_Click);
 
             this.btnStaticExport.Location = new System.Drawing.Point(281, 375);
             this.btnStaticExport.Name = "btnStaticExport";
@@ -747,25 +764,6 @@ namespace Hero_Designer
             this.GroupBox6.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
             this.GroupBox8.ResumeLayout(false);
-            //adding events
-            this.at_Import.Click += at_Import_Click;
-            this.btnBonusLookup.Click += btnBonusLookup_Click;
-            this.btnClearSI.Click += btnClearSI_Click;
-            this.btnDefiance.Click += btnDefiance_Click;
-            this.btnEnhEffects.Click += btnEnhEffects_Click;
-            this.btnEntities.Click += btnEntities_Click;
-            this.btnIOLevels.Click += btnIOLevels_Click;
-            this.btnImportRecipes.Click += btnImportRecipes_Click;
-            this.btnSalvageUpdate.Click += btnSalvageUpdate_Click;
-            this.btnStaticIndex.Click += Button2_Click;
-            this.fx_Import.Click += fx_Import_Click;
-            this.inventSetImport.Click += inventSetImport_Click;
-            this.invent_Import.Click += invent_Import_Click;
-            this.level_import.Click += level_import_Click;
-            this.mod_Import.Click += mod_Import_Click;
-            this.pow_Import.Click += pow_Import_Click;
-            this.set_Import.Click += set_Import_Click;
-            // finished with events
             this.ResumeLayout(false);
         }
 

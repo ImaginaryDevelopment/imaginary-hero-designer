@@ -40,6 +40,7 @@ namespace Hero_Designer
 
             this.lbList.Size = new System.Drawing.Size(172, 160);
             this.lbList.TabIndex = 0;
+            this.lbList.DoubleClick += new System.EventHandler(lbList_DoubleClick);
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             this.btnOK.Location = new System.Drawing.Point(8, 212);
@@ -48,6 +49,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(168, 24);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
 
             this.lblMessage.Location = new System.Drawing.Point(4, 0);
             this.lblMessage.Name = "lblMessage";
@@ -72,13 +74,8 @@ namespace Hero_Designer
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Details";
-            //adding events
-            this.btnOK.Click += btnOK_Click;
 
-            // lbList events
-            this.lbList.DoubleClick += lbList_DoubleClick;
 
-            // finished with events
             this.ResumeLayout(false);
         }
 

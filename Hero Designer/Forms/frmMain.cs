@@ -2019,7 +2019,7 @@ namespace Hero_Designer
                 {
                     int num2 = (int)new frmReadme(str2)
                     {
-                        btnClose = {
+                        BtnClose = {
                               IA = this.drawing.pImageAttributes,
                               ImageOff = this.drawing.bxPower[2].Bitmap,
                               ImageOn = this.drawing.bxPower[3].Bitmap
@@ -3662,7 +3662,7 @@ namespace Hero_Designer
                         int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
                         int integer2 = Conversions.ToInteger(Interaction.IIf(num2 == 23, index, 23));
                         while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 | tp[index].SlotCount > 4 & integer2 != 23)
-                            tp[index].Slots = (SlotEntry[])Utils.CopyArray((Array)tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
+                            tp[index].Slots = (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
                     }
                     else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)3)
                     {
@@ -4195,7 +4195,7 @@ namespace Hero_Designer
             int num = tp.SlotCount - 2;
             for (int index = slotIDX; index <= num; ++index)
                 tp.Slots[index] = tp.Slots[index + 1];
-            tp.Slots = (SlotEntry[])Utils.CopyArray((Array)tp.Slots, (Array)new SlotEntry[tp.SlotCount - 2 + 1]);
+            tp.Slots = (SlotEntry[])Utils.CopyArray(tp.Slots, (Array)new SlotEntry[tp.SlotCount - 2 + 1]);
         }
 
         void SetAncilPoolHeight()
@@ -4338,10 +4338,10 @@ namespace Hero_Designer
         {
             if (this.fMini == null)
                 this.fMini = new frmMiniList(this);
-            this.fMini.pInfo.BXHeight = bxHeight;
+            this.fMini.PInfo.BXHeight = bxHeight;
             this.fMini.SizeMe();
             this.fMini.Text = iTitle;
-            this.fMini.pInfo.SetPopup(iData);
+            this.fMini.PInfo.SetPopup(iData);
             this.fMini.Show();
             this.fMini.BringToFront();
         }
@@ -5118,7 +5118,7 @@ namespace Hero_Designer
         {
             frmReadme frmReadme = new frmReadme(OS.GetApplicationPath() + "readme.rtf")
             {
-                btnClose = {
+                BtnClose = {
           IA = this.drawing.pImageAttributes,
           ImageOff = this.drawing.bxPower[2].Bitmap,
           ImageOn = this.drawing.bxPower[3].Bitmap
@@ -5201,7 +5201,7 @@ namespace Hero_Designer
             {
                 frmReadme frmReadme = new frmReadme(str)
                 {
-                    btnClose = {
+                    BtnClose = {
             IA = this.drawing.pImageAttributes,
             ImageOff = this.drawing.bxPower[2].Bitmap,
             ImageOn = this.drawing.bxPower[3].Bitmap
@@ -5238,7 +5238,7 @@ namespace Hero_Designer
                 for (int index = 0; index <= num; ++index)
                 {
                     if (MidsContext.Character.CurrentBuild.Powers[index].SlotCount > 1)
-                        MidsContext.Character.CurrentBuild.Powers[index].Slots = (SlotEntry[])Utils.CopyArray((Array)MidsContext.Character.CurrentBuild.Powers[index].Slots, (Array)new SlotEntry[1]);
+                        MidsContext.Character.CurrentBuild.Powers[index].Slots = (SlotEntry[])Utils.CopyArray(MidsContext.Character.CurrentBuild.Powers[index].Slots, (Array)new SlotEntry[1]);
                 }
                 this.DoRedraw();
                 MidsContext.Character.ResetLevel();
@@ -5704,32 +5704,32 @@ namespace Hero_Designer
                 frmIncarnate fIncarnate = this.fIncarnate;
                 if (fIncarnate.Visible)
                 {
-                    fIncarnate.llLeft.SuspendRedraw = true;
-                    fIncarnate.llRight.SuspendRedraw = true;
-                    fIncarnate.llLeft.Font = this.llPrimary.Font;
-                    fIncarnate.llRight.Font = this.llPrimary.Font;
-                    fIncarnate.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    fIncarnate.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    fIncarnate.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    fIncarnate.llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fIncarnate.llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    fIncarnate.llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    fIncarnate.llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    fIncarnate.llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    fIncarnate.llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    fIncarnate.llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    fIncarnate.llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    fIncarnate.llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    int num1 = fIncarnate.llLeft.Items.Length - 1;
+                    fIncarnate.LLLeft.SuspendRedraw = true;
+                    fIncarnate.LLRight.SuspendRedraw = true;
+                    fIncarnate.LLLeft.Font = this.llPrimary.Font;
+                    fIncarnate.LLRight.Font = this.llPrimary.Font;
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                    fIncarnate.LLLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    fIncarnate.LLLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+                    fIncarnate.LLRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+                    fIncarnate.LLRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+                    int num1 = fIncarnate.LLLeft.Items.Length - 1;
                     for (int index = 0; index <= num1; ++index)
-                        fIncarnate.llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    int num2 = fIncarnate.llRight.Items.Length - 1;
+                        fIncarnate.LLLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                    int num2 = fIncarnate.LLRight.Items.Length - 1;
                     for (int index = 0; index <= num2; ++index)
-                        fIncarnate.llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    fIncarnate.llLeft.SuspendRedraw = false;
-                    fIncarnate.llRight.SuspendRedraw = false;
-                    fIncarnate.llLeft.Refresh();
-                    fIncarnate.llRight.Refresh();
+                        fIncarnate.LLRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+                    fIncarnate.LLLeft.SuspendRedraw = false;
+                    fIncarnate.LLRight.SuspendRedraw = false;
+                    fIncarnate.LLLeft.Refresh();
+                    fIncarnate.LLRight.Refresh();
                 }
             }
             if (this.fTemp != null)

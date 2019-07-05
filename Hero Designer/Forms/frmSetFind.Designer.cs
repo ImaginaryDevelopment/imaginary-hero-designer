@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSetFind));
             this.lvBonus = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.lvMag = new System.Windows.Forms.ListView();
@@ -62,6 +61,7 @@ namespace Hero_Designer
             this.lvBonus.TabIndex = 0;
             this.lvBonus.UseCompatibleStateImageBehavior = false;
             this.lvBonus.View = System.Windows.Forms.View.Details;
+            this.lvBonus.SelectedIndexChanged += new System.EventHandler(lvBonus_SelectedIndexChanged);
             this.ColumnHeader1.Text = "Bonus Effect";
             this.ColumnHeader1.Width = 254;
             this.lvMag.Columns.AddRange(new System.Windows.Forms.ColumnHeader[1]
@@ -79,6 +79,7 @@ namespace Hero_Designer
             this.lvMag.TabIndex = 1;
             this.lvMag.UseCompatibleStateImageBehavior = false;
             this.lvMag.View = System.Windows.Forms.View.Details;
+            this.lvMag.SelectedIndexChanged += new System.EventHandler(lvMag_SelectedIndexChanged);
             this.ColumnHeader2.Text = "Effect Strength";
             this.ColumnHeader2.Width = 99;
             this.lvSet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[4]
@@ -100,6 +101,7 @@ namespace Hero_Designer
             this.lvSet.TabIndex = 2;
             this.lvSet.UseCompatibleStateImageBehavior = false;
             this.lvSet.View = System.Windows.Forms.View.Details;
+            this.lvSet.SelectedIndexChanged += new System.EventHandler(lvSet_SelectedIndexChanged);
             this.ColumnHeader3.Text = "Set";
             this.ColumnHeader3.Width = 157;
             this.ColumnHeader4.Text = "Level";
@@ -167,25 +169,25 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lvBonus);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
-            this.Name = nameof(frmSetFind);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set Bonus Finder";
             this.TopMost = true;
             this.Panel1.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-                this.lvBonus.SelectedIndexChanged += lvBonus_SelectedIndexChanged;
-                this.lvMag.SelectedIndexChanged += lvMag_SelectedIndexChanged;
-                this.lvSet.SelectedIndexChanged += lvSet_SelectedIndexChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.ColumnHeader ColumnHeader6;
+        System.Windows.Forms.ImageList ilSets;
+        System.Windows.Forms.ListView lvBonus;
+        System.Windows.Forms.ListView lvMag;
+        System.Windows.Forms.ListView lvSet;
+        System.Windows.Forms.Panel Panel1;
     }
 }

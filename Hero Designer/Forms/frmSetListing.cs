@@ -13,61 +13,14 @@ namespace Hero_Designer
 {
     public partial class frmSetListing : Form
     {
-        Button btnAdd;
 
-        Button btnCancel;
-
-        Button btnClone;
-
-        Button btnDelete;
-
-        Button btnDown;
-
-        Button btnEdit;
-
-        Button btnSave;
-
-        Button btnUp;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
-        ImageList ilSets;
-
-        [AccessedThroughProperty("lvSets")]
-        ListView _lvSets;
-
-        CheckBox NoReload;
-
-        ListView lvSets
-        {
-            get
-            {
-                return this._lvSets;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvSets_DoubleClick);
-                EventHandler eventHandler2 = new EventHandler(this.lvSets_SelectedIndexChanged);
-                if (this._lvSets != null)
-                {
-                    this._lvSets.DoubleClick -= eventHandler1;
-                    this._lvSets.SelectedIndexChanged -= eventHandler2;
-                }
-                this._lvSets = value;
-                if (this._lvSets == null)
-                    return;
-                this._lvSets.DoubleClick += eventHandler1;
-                this._lvSets.SelectedIndexChanged += eventHandler2;
-            }
-        }
         public frmSetListing()
         {
             this.Load += new EventHandler(this.frmSetListing_Load);
             this.InitializeComponent();
+            this.Name = nameof(frmSetListing);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmSetListing));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         public void AddListItem(int Index)

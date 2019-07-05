@@ -1,9 +1,6 @@
-
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -19,6 +16,10 @@ namespace Hero_Designer
         {
             this.VisibleChanged += new EventHandler(this.frmZStatus_VisibleChanged);
             this.InitializeComponent();
+            this.Name = nameof(frmZStatus);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmZStatus));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.PictureBox1.Image = (Image)componentResourceManager.GetObject("PictureBox1.Image");
         }
 
         void frmZStatus_VisibleChanged(object sender, EventArgs e)

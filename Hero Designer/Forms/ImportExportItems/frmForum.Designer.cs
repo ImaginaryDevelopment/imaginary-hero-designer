@@ -169,7 +169,7 @@ namespace Hero_Designer
 
             this.csList.Size = new System.Drawing.Size(151, 186);
             this.csList.TabIndex = 10;
-            this.csList.SelectedIndexChanged += csList_SelectedIndexChanged;
+            this.csList.SelectedIndexChanged += new System.EventHandler(csList_SelectedIndexChanged);
             this.GroupBox2.BackColor = System.Drawing.Color.Black;
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.Label1);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.lstCodes);
@@ -198,7 +198,7 @@ namespace Hero_Designer
 
             this.lstCodes.Size = new System.Drawing.Size(252, 102);
             this.lstCodes.TabIndex = 0;
-            this.lstCodes.SelectedIndexChanged += lstCodes_SelectedIndexChanged;
+            this.lstCodes.SelectedIndexChanged += new System.EventHandler(lstCodes_SelectedIndexChanged);
             this.lblCodeInf.BackColor = System.Drawing.Color.Black;
             this.lblCodeInf.ForeColor = System.Drawing.Color.White;
 
@@ -345,8 +345,8 @@ namespace Hero_Designer
             this.pbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbTitle.TabIndex = 15;
             this.pbTitle.TabStop = false;
-            this.pbTitle.MouseMove += pbTitle_MouseMove;
-            this.pbTitle.MouseDown += pbTitle_MouseDown;
+            this.pbTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(pbTitle_MouseMove);
+            this.pbTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(pbTitle_MouseDown);
             // 
             // ibCancel
             // 
@@ -360,7 +360,7 @@ namespace Hero_Designer
             this.ibCancel.TextOff = "Cancel";
             this.ibCancel.TextOn = "Alt Text";
             this.ibCancel.Toggle = false;
-            this.ibCancel.ButtonClicked += ibCancel_ButtonClicked;
+            this.ibCancel.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibCancel_ButtonClicked);
             // 
             // ibExport
             // 
@@ -374,7 +374,7 @@ namespace Hero_Designer
             this.ibExport.TextOff = "Export Now";
             this.ibExport.TextOn = "Alt Text";
             this.ibExport.Toggle = false;
-            this.ibExport.ButtonClicked += ibExport_ButtonClicked;
+            this.ibExport.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibExport_ButtonClicked);
             this.lblRecess.BackColor = System.Drawing.Color.Black;
             this.lblRecess.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 

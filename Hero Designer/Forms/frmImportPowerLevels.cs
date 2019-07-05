@@ -13,17 +13,6 @@ namespace Hero_Designer
 {
     public partial class frmImportPowerLevels : Form
     {
-        Button btnClose;
-
-        Button btnFile;
-
-        Button btnImport;
-        OpenFileDialog dlgBrowse;
-        Label Label3;
-        Label Label8;
-        Label lblDate;
-        Label lblFile;
-        NumericUpDown udRevision;
 
         frmBusy bFrm;
 
@@ -34,6 +23,9 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmImportPowerLevels_Load);
             this.FullFileName = "";
             this.InitializeComponent();
+            this.Name = nameof(frmImportPowerLevels);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImportPowerLevels));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_Click(object sender, EventArgs e)

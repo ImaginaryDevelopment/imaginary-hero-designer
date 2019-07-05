@@ -129,7 +129,7 @@ namespace Hero_Designer
                     iString = FileIO.ReadLineUnlimited(iStream, char.MinValue);
                     if (iString != null && !iString.StartsWith("#"))
                     {
-                        this.ImportBuffer = (ArchetypeData[])Utils.CopyArray((Array)this.ImportBuffer, (Array)new ArchetypeData[this.ImportBuffer.Length + 1]);
+                        this.ImportBuffer = (ArchetypeData[])Utils.CopyArray(this.ImportBuffer, (Array)new ArchetypeData[this.ImportBuffer.Length + 1]);
                         this.ImportBuffer[this.ImportBuffer.Length - 1] = new ArchetypeData(iString);
                         ++num3;
                         if (this.ImportBuffer[this.ImportBuffer.Length - 1].IsValid)

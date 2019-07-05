@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipeEdit));
             this.lvDPA = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -125,6 +124,7 @@ namespace Hero_Designer
             this.lvDPA.TabIndex = 0;
             this.lvDPA.UseCompatibleStateImageBehavior = false;
             this.lvDPA.View = System.Windows.Forms.View.Details;
+            this.lvDPA.SelectedIndexChanged += new System.EventHandler(lvDPA_SelectedIndexChanged);
             this.ColumnHeader1.Text = "Recipe";
             this.ColumnHeader1.Width = 226;
             this.ColumnHeader2.Text = "Enhancement";
@@ -140,6 +140,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 6;
             this.btnImport.Text = "Import w/Clear";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(12, 491);
@@ -149,6 +150,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 
             this.btnOK.Location = new System.Drawing.Point(131, 491);
@@ -158,6 +160,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "Save && Close";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
 
             this.btnReGuess.Location = new System.Drawing.Point(464, 491);
             this.btnReGuess.Name = "btnReGuess";
@@ -166,6 +169,7 @@ namespace Hero_Designer
             this.btnReGuess.TabIndex = 7;
             this.btnReGuess.Text = "Re-Guess all recipes";
             this.btnReGuess.UseVisualStyleBackColor = true;
+            this.btnReGuess.Click += new System.EventHandler(Button1_Click);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.btnGuessCost);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.udSal4);
             this.GroupBox1.Controls.Add((System.Windows.Forms.Control)this.Label14);
@@ -208,23 +212,24 @@ namespace Hero_Designer
             this.btnGuessCost.TabIndex = 36;
             this.btnGuessCost.Text = "Guess";
             this.btnGuessCost.UseVisualStyleBackColor = true;
+            this.btnGuessCost.Click += new System.EventHandler(btnGuessCost_Click);
 
             this.udSal4.Location = new System.Drawing.Point(523, 133);
-            System.Decimal num = new System.Decimal(new int[4]
+            this.udSal4.Maximum = new System.Decimal(new int[4]
             {
         1024,
         0,
         0,
         0
             });
-            this.udSal4.Maximum = num;
             this.udSal4.Name = "udSal4";
 
             this.udSal4.Size = new System.Drawing.Size(59, 20);
             this.udSal4.TabIndex = 350;
             this.udSal4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udSal4.Value = num;
+            this.udSal4.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udSal4.ValueChanged += new System.EventHandler(this.udSalX_ValueChanged);
+            this.udSal4.Leave += new System.EventHandler(this.udSalX_Leave);
 
             this.Label14.Location = new System.Drawing.Point(225, 131);
             this.Label14.Name = "Label14";
@@ -242,17 +247,18 @@ namespace Hero_Designer
 
             this.cbSal4.Size = new System.Drawing.Size(202, 22);
             this.cbSal4.TabIndex = 33;
+            this.cbSal4.SelectedIndexChanged += new System.EventHandler(cbSalX_SelectedIndexChanged);
 
             this.udSal3.Location = new System.Drawing.Point(523, 105);
-            num = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
-            this.udSal3.Maximum = num;
+            this.udSal3.Maximum = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
             this.udSal3.Name = "udSal3";
 
             this.udSal3.Size = new System.Drawing.Size(59, 20);
             this.udSal3.TabIndex = 320;
             this.udSal3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udSal3.Value = num;
+            this.udSal3.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udSal3.ValueChanged += new System.EventHandler(this.udSalX_ValueChanged);
+            this.udSal3.Leave += new System.EventHandler(this.udSalX_Leave);
 
             this.Label13.Location = new System.Drawing.Point(225, 103);
             this.Label13.Name = "Label13";
@@ -270,17 +276,18 @@ namespace Hero_Designer
 
             this.cbSal3.Size = new System.Drawing.Size(202, 22);
             this.cbSal3.TabIndex = 30;
+            this.cbSal3.SelectedIndexChanged += new System.EventHandler(cbSalX_SelectedIndexChanged);
 
             this.udSal2.Location = new System.Drawing.Point(523, 77);
-            num = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
-            this.udSal2.Maximum = num;
+            this.udSal2.Maximum = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
             this.udSal2.Name = "udSal2";
 
             this.udSal2.Size = new System.Drawing.Size(59, 20);
             this.udSal2.TabIndex = 290;
             this.udSal2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udSal2.Value = num;
+            this.udSal2.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udSal2.ValueChanged += new System.EventHandler(this.udSalX_ValueChanged);
+            this.udSal2.Leave += new System.EventHandler(this.udSalX_Leave);
 
             this.Label12.Location = new System.Drawing.Point(225, 75);
             this.Label12.Name = "Label12";
@@ -298,17 +305,18 @@ namespace Hero_Designer
 
             this.cbSal2.Size = new System.Drawing.Size(202, 22);
             this.cbSal2.TabIndex = 27;
+            this.cbSal2.SelectedIndexChanged += new System.EventHandler(cbSalX_SelectedIndexChanged);
 
             this.udSal1.Location = new System.Drawing.Point(523, 49);
-            num = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
-            this.udSal1.Maximum = num;
+            this.udSal1.Maximum = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
             this.udSal1.Name = "udSal1";
 
             this.udSal1.Size = new System.Drawing.Size(59, 20);
             this.udSal1.TabIndex = 260;
             this.udSal1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udSal1.Value = num;
+            this.udSal1.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udSal1.ValueChanged += new System.EventHandler(this.udSalX_ValueChanged);
+            this.udSal1.Leave += new System.EventHandler(this.udSalX_Leave);
 
             this.Label11.Location = new System.Drawing.Point(225, 47);
             this.Label11.Name = "Label11";
@@ -326,17 +334,18 @@ namespace Hero_Designer
 
             this.cbSal1.Size = new System.Drawing.Size(202, 22);
             this.cbSal1.TabIndex = 24;
+            this.cbSal1.SelectedIndexChanged += new System.EventHandler(cbSalX_SelectedIndexChanged);
 
             this.udSal0.Location = new System.Drawing.Point(523, 21);
-            num = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
-            this.udSal0.Maximum = num;
+            this.udSal0.Maximum = new System.Decimal(new int[4] { 1024, 0, 0, 0 });
             this.udSal0.Name = "udSal0";
 
             this.udSal0.Size = new System.Drawing.Size(59, 20);
             this.udSal0.TabIndex = 230;
             this.udSal0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udSal0.Value = num;
+            this.udSal0.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udSal0.ValueChanged += new System.EventHandler(this.udSalX_ValueChanged);
+            this.udSal0.Leave += new System.EventHandler(this.udSalX_Leave);
 
             this.Label10.Location = new System.Drawing.Point(225, 19);
             this.Label10.Name = "Label10";
@@ -354,6 +363,7 @@ namespace Hero_Designer
 
             this.cbSal0.Size = new System.Drawing.Size(202, 22);
             this.cbSal0.TabIndex = 21;
+            this.cbSal0.SelectedIndexChanged += new System.EventHandler(cbSalX_SelectedIndexChanged);
 
             this.Label9.Location = new System.Drawing.Point(6, 133);
             this.Label9.Name = "Label9";
@@ -364,15 +374,15 @@ namespace Hero_Designer
             this.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udCraftM.Location = new System.Drawing.Point(98, 133);
-            num = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
-            this.udCraftM.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
-            this.udCraftM.Minimum = num;
+            this.udCraftM.Maximum = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
+            this.udCraftM.Minimum = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
             this.udCraftM.Name = "udCraftM";
 
             this.udCraftM.Size = new System.Drawing.Size(112, 20);
             this.udCraftM.TabIndex = 19;
             this.udCraftM.ThousandsSeparator = true;
+            this.udCraftM.ValueChanged += new System.EventHandler(this.udCostX_ValueChanged);
+            this.udCraftM.Leave += new System.EventHandler(this.udCostX_Leave);
 
             this.Label8.Location = new System.Drawing.Point(6, 105);
             this.Label8.Name = "Label8";
@@ -383,15 +393,15 @@ namespace Hero_Designer
             this.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udCraft.Location = new System.Drawing.Point(98, 105);
-            num = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
-            this.udCraft.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
-            this.udCraft.Minimum = num;
+            this.udCraft.Maximum = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
+            this.udCraft.Minimum = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
             this.udCraft.Name = "udCraft";
 
             this.udCraft.Size = new System.Drawing.Size(81, 20);
             this.udCraft.TabIndex = 17;
             this.udCraft.ThousandsSeparator = true;
+            this.udCraft.ValueChanged += new System.EventHandler(this.udCostX_ValueChanged);
+            this.udCraft.Leave += new System.EventHandler(this.udCostX_Leave);
 
             this.Label7.Location = new System.Drawing.Point(6, 77);
             this.Label7.Name = "Label7";
@@ -402,15 +412,15 @@ namespace Hero_Designer
             this.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udBuyM.Location = new System.Drawing.Point(98, 77);
-            num = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
-            this.udBuyM.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
-            this.udBuyM.Minimum = num;
+            this.udBuyM.Maximum = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
+            this.udBuyM.Minimum = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
             this.udBuyM.Name = "udBuyM";
 
             this.udBuyM.Size = new System.Drawing.Size(112, 20);
             this.udBuyM.TabIndex = 15;
             this.udBuyM.ThousandsSeparator = true;
+            this.udBuyM.ValueChanged += new System.EventHandler(this.udCostX_ValueChanged);
+            this.udBuyM.Leave += new System.EventHandler(this.udCostX_Leave);
 
             this.Label6.Location = new System.Drawing.Point(6, 49);
             this.Label6.Name = "Label6";
@@ -421,15 +431,15 @@ namespace Hero_Designer
             this.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udBuy.Location = new System.Drawing.Point(98, 49);
-            num = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
-            this.udBuy.Maximum = num;
-            num = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
-            this.udBuy.Minimum = num;
+            this.udBuy.Maximum = new System.Decimal(new int[4] { 1000000, 0, 0, 0 });
+            this.udBuy.Minimum = new System.Decimal(new int[4] { 1, 0, 0, int.MinValue });
             this.udBuy.Name = "udBuy";
 
             this.udBuy.Size = new System.Drawing.Size(112, 20);
             this.udBuy.TabIndex = 13;
             this.udBuy.ThousandsSeparator = true;
+            this.udBuy.ValueChanged += new System.EventHandler(this.udCostX_ValueChanged);
+            this.udBuy.Leave += new System.EventHandler(this.udCostX_Leave);
 
             this.Label5.Location = new System.Drawing.Point(6, 21);
             this.Label5.Name = "Label5";
@@ -440,14 +450,14 @@ namespace Hero_Designer
             this.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 
             this.udLevel.Location = new System.Drawing.Point(98, 21);
-            num = new System.Decimal(new int[4] { 53, 0, 0, 0 });
-            this.udLevel.Maximum = num;
+            this.udLevel.Maximum = new System.Decimal(new int[4] { 53, 0, 0, 0 });
             this.udLevel.Name = "udLevel";
 
             this.udLevel.Size = new System.Drawing.Size(70, 20);
             this.udLevel.TabIndex = 0;
-            num = new System.Decimal(new int[4] { 1, 0, 0, 0 });
-            this.udLevel.Value = num;
+            this.udLevel.Value = new System.Decimal(new int[4] { 1, 0, 0, 0 });
+            this.udLevel.ValueChanged += new System.EventHandler(this.udCostX_ValueChanged);
+            this.udLevel.Leave += new System.EventHandler(this.udCostX_Leave);
             this.lstItems.FormattingEnabled = true;
             this.lstItems.ItemHeight = 14;
 
@@ -456,6 +466,7 @@ namespace Hero_Designer
 
             this.lstItems.Size = new System.Drawing.Size(202, 172);
             this.lstItems.TabIndex = 0;
+            this.lstItems.SelectedIndexChanged += new System.EventHandler(lstItems_SelectedIndexChanged);
 
             this.Label3.Location = new System.Drawing.Point(6, 104);
             this.Label3.Name = "Label3";
@@ -472,6 +483,7 @@ namespace Hero_Designer
 
             this.cbRarity.Size = new System.Drawing.Size(158, 22);
             this.cbRarity.TabIndex = 10;
+            this.cbRarity.SelectedIndexChanged += new System.EventHandler(cbRarity_SelectedIndexChanged);
 
             this.Label1.Location = new System.Drawing.Point(6, 16);
             this.Label1.Name = "Label1";
@@ -486,6 +498,7 @@ namespace Hero_Designer
 
             this.txtRecipeName.Size = new System.Drawing.Size(158, 20);
             this.txtRecipeName.TabIndex = 12;
+            this.txtRecipeName.TextChanged += new System.EventHandler(txtRecipeName_TextChanged);
 
             this.Label2.Location = new System.Drawing.Point(6, 154);
             this.Label2.Name = "Label2";
@@ -503,6 +516,7 @@ namespace Hero_Designer
 
             this.cbEnh.Size = new System.Drawing.Size(202, 22);
             this.cbEnh.TabIndex = 14;
+            this.cbEnh.SelectedIndexChanged += new System.EventHandler(cbEnh_SelectedIndexChanged);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnI50);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnI40);
             this.GroupBox2.Controls.Add((System.Windows.Forms.Control)this.btnI25);
@@ -539,6 +553,7 @@ namespace Hero_Designer
             this.btnI50.TabIndex = 28;
             this.btnI50.Text = "50";
             this.btnI50.UseVisualStyleBackColor = true;
+            this.btnI50.Click += new System.EventHandler(btnI50_Click);
 
             this.btnI40.Location = new System.Drawing.Point(80, 489);
             this.btnI40.Name = "btnI40";
@@ -547,6 +562,7 @@ namespace Hero_Designer
             this.btnI40.TabIndex = 27;
             this.btnI40.Text = "40";
             this.btnI40.UseVisualStyleBackColor = true;
+            this.btnI40.Click += new System.EventHandler(btnI40_Click);
 
             this.btnI25.Location = new System.Drawing.Point(43, 489);
             this.btnI25.Name = "btnI25";
@@ -555,6 +571,7 @@ namespace Hero_Designer
             this.btnI25.TabIndex = 26;
             this.btnI25.Text = "25";
             this.btnI25.UseVisualStyleBackColor = true;
+            this.btnI25.Click += new System.EventHandler(btnI25_Click);
 
             this.btnI20.Location = new System.Drawing.Point(6, 489);
             this.btnI20.Name = "btnI20";
@@ -563,6 +580,7 @@ namespace Hero_Designer
             this.btnI20.TabIndex = 25;
             this.btnI20.Text = "20";
             this.btnI20.UseVisualStyleBackColor = true;
+            this.btnI20.Click += new System.EventHandler(btnI20_Click);
 
             this.btnIncrement.Location = new System.Drawing.Point(154, 489);
             this.btnIncrement.Name = "btnIncrement";
@@ -571,6 +589,7 @@ namespace Hero_Designer
             this.btnIncrement.TabIndex = 24;
             this.btnIncrement.Text = "+ 1";
             this.btnIncrement.UseVisualStyleBackColor = true;
+            this.btnIncrement.Click += new System.EventHandler(btnIncrement_Click);
 
             this.btnDown.Location = new System.Drawing.Point(108, 459);
             this.btnDown.Name = "btnDown";
@@ -595,6 +614,7 @@ namespace Hero_Designer
             this.btnDel.TabIndex = 21;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(btnDel_Click);
 
             this.btnAdd.Location = new System.Drawing.Point(6, 429);
             this.btnAdd.Name = "btnAdd";
@@ -603,6 +623,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
 
             this.lblEnh.Location = new System.Drawing.Point(6, 196);
             this.lblEnh.Name = "lblEnh";
@@ -617,6 +638,7 @@ namespace Hero_Designer
 
             this.txtExtern.Size = new System.Drawing.Size(158, 20);
             this.txtExtern.TabIndex = 18;
+            this.txtExtern.TextChanged += new System.EventHandler(txtExtern_TextChanged);
 
             this.Label15.Location = new System.Drawing.Point(6, 62);
             this.Label15.Name = "Label15";
@@ -641,6 +663,7 @@ namespace Hero_Designer
             this.btnRAdd.TabIndex = 21;
             this.btnRAdd.Text = "Add";
             this.btnRAdd.UseVisualStyleBackColor = true;
+            this.btnRAdd.Click += new System.EventHandler(btnRAdd_Click);
 
             this.btnRDel.Location = new System.Drawing.Point(118, 291);
             this.btnRDel.Name = "btnRDel";
@@ -649,6 +672,7 @@ namespace Hero_Designer
             this.btnRDel.TabIndex = 22;
             this.btnRDel.Text = "Delete";
             this.btnRDel.UseVisualStyleBackColor = true;
+            this.btnRDel.Click += new System.EventHandler(btnRDel_Click);
 
             this.btnRUp.Location = new System.Drawing.Point(405, 291);
             this.btnRUp.Name = "btnRUp";
@@ -682,6 +706,7 @@ namespace Hero_Designer
             this.btnRunSeq.TabIndex = 26;
             this.btnRunSeq.Text = "Run Sequence";
             this.btnRunSeq.UseVisualStyleBackColor = true;
+            this.btnRunSeq.Click += new System.EventHandler(btnRunSeq_Click);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 
             this.ClientSize = new System.Drawing.Size(843, 537);
@@ -700,10 +725,8 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.lvDPA);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmRecipeEdit);
             this.ShowInTaskbar = false;
             this.Text = "Recipe Editor";
             this.GroupBox1.ResumeLayout(false);
@@ -719,39 +742,72 @@ namespace Hero_Designer
             this.udLevel.EndInit();
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnAdd.Click += btnAdd_Click;
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnDel.Click += btnDel_Click;
-                this.btnGuessCost.Click += btnGuessCost_Click;
-                this.btnI20.Click += btnI20_Click;
-                this.btnI25.Click += btnI25_Click;
-                this.btnI40.Click += btnI40_Click;
-                this.btnI50.Click += btnI50_Click;
-                this.btnImport.Click += btnImport_Click;
-                this.btnIncrement.Click += btnIncrement_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnRAdd.Click += btnRAdd_Click;
-                this.btnRDel.Click += btnRDel_Click;
-                this.btnReGuess.Click += Button1_Click;
-                this.btnRunSeq.Click += btnRunSeq_Click;
-                this.cbEnh.SelectedIndexChanged += cbEnh_SelectedIndexChanged;
-                this.cbRarity.SelectedIndexChanged += cbRarity_SelectedIndexChanged;
-                this.cbSal0.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
-                this.cbSal1.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
-                this.cbSal2.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
-                this.cbSal3.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
-                this.cbSal4.SelectedIndexChanged += cbSalX_SelectedIndexChanged;
-                this.lstItems.SelectedIndexChanged += lstItems_SelectedIndexChanged;
-                this.lvDPA.SelectedIndexChanged += lvDPA_SelectedIndexChanged;
-                this.txtExtern.TextChanged += txtExtern_TextChanged;
-                this.txtRecipeName.TextChanged += txtRecipeName_TextChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnAdd;
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnDel;
+        System.Windows.Forms.Button btnDown;
+        System.Windows.Forms.Button btnGuessCost;
+        System.Windows.Forms.Button btnI20;
+        System.Windows.Forms.Button btnI25;
+        System.Windows.Forms.Button btnI40;
+        System.Windows.Forms.Button btnI50;
+        System.Windows.Forms.Button btnImport;
+        System.Windows.Forms.Button btnImportUpdate;
+        System.Windows.Forms.Button btnIncrement;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnRAdd;
+        System.Windows.Forms.Button btnRDel;
+        System.Windows.Forms.Button btnRDown;
+        System.Windows.Forms.Button btnReGuess;
+        System.Windows.Forms.Button btnRunSeq;
+        System.Windows.Forms.Button btnRUp;
+        System.Windows.Forms.Button btnUp;
+        System.Windows.Forms.ComboBox cbEnh;
+        System.Windows.Forms.ComboBox cbRarity;
+        System.Windows.Forms.ComboBox cbSal0;
+        System.Windows.Forms.ComboBox cbSal1;
+        System.Windows.Forms.ComboBox cbSal2;
+        System.Windows.Forms.ComboBox cbSal3;
+        System.Windows.Forms.ComboBox cbSal4;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.GroupBox GroupBox1;
+        System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label10;
+        System.Windows.Forms.Label Label11;
+        System.Windows.Forms.Label Label12;
+        System.Windows.Forms.Label Label13;
+        System.Windows.Forms.Label Label14;
+        System.Windows.Forms.Label Label15;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label Label3;
+        System.Windows.Forms.Label Label4;
+        System.Windows.Forms.Label Label5;
+        System.Windows.Forms.Label Label6;
+        System.Windows.Forms.Label Label7;
+        System.Windows.Forms.Label Label8;
+        System.Windows.Forms.Label Label9;
+        System.Windows.Forms.Label lblEnh;
+        System.Windows.Forms.ListBox lstItems;
+        System.Windows.Forms.ListView lvDPA;
+        System.Windows.Forms.TextBox txtExtern;
+        System.Windows.Forms.TextBox txtRecipeName;
+        System.Windows.Forms.NumericUpDown udBuy;
+        System.Windows.Forms.NumericUpDown udBuyM;
+        System.Windows.Forms.NumericUpDown udCraft;
+        System.Windows.Forms.NumericUpDown udCraftM;
+        System.Windows.Forms.NumericUpDown udLevel;
+        System.Windows.Forms.NumericUpDown udSal0;
+        System.Windows.Forms.NumericUpDown udSal1;
+        System.Windows.Forms.NumericUpDown udSal2;
+        System.Windows.Forms.NumericUpDown udSal3;
+        System.Windows.Forms.NumericUpDown udSal4;
     }
 }

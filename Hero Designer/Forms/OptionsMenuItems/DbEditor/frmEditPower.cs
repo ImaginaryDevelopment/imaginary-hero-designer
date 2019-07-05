@@ -144,7 +144,7 @@ namespace Hero_Designer
             {
                 IPower power1 = this.myPower;
                 IPower power2 = power1;
-                IEffect[] effectArray = (IEffect[])Utils.CopyArray((Array)power2.Effects, (Array)new IEffect[power1.Effects.Length + 1]);
+                IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, (Array)new IEffect[power1.Effects.Length + 1]);
                 power2.Effects = effectArray;
                 power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
                 this.RefreshFXData(0);
@@ -396,7 +396,7 @@ namespace Hero_Designer
                     return;
             }
             IPower power = this.myPower;
-            string[] strArray = (string[])Utils.CopyArray((Array)power.UIDSubPower, (Array)new string[this.myPower.UIDSubPower.Length + 1]);
+            string[] strArray = (string[])Utils.CopyArray(power.UIDSubPower, (Array)new string[this.myPower.UIDSubPower.Length + 1]);
             power.UIDSubPower = strArray;
             this.myPower.UIDSubPower[this.myPower.UIDSubPower.Length - 1] = b;
             this.SPFillList();
@@ -1450,7 +1450,7 @@ namespace Hero_Designer
             if (!flag)
             {
                 IPower power = this.myPower;
-                int[] numArray = (int[])Utils.CopyArray((Array)power.Enhancements, (Array)new int[this.myPower.Enhancements.Length + 1]);
+                int[] numArray = (int[])Utils.CopyArray(power.Enhancements, (Array)new int[this.myPower.Enhancements.Length + 1]);
                 power.Enhancements = numArray;
                 this.myPower.Enhancements[this.myPower.Enhancements.Length - 1] = DatabaseAPI.Database.EnhancementClasses[index1].ID;
                 Array.Sort<int>(this.myPower.Enhancements);
@@ -1537,7 +1537,7 @@ namespace Hero_Designer
             if (!(flag | this.myPower.SetTypes.Length > 10))
             {
                 IPower power = this.myPower;
-                Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray((Array)power.SetTypes, (Array)new Enums.eSetType[this.myPower.SetTypes.Length + 1]);
+                Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray(power.SetTypes, (Array)new Enums.eSetType[this.myPower.SetTypes.Length + 1]);
                 power.SetTypes = eSetTypeArray;
                 this.myPower.SetTypes[this.myPower.SetTypes.Length - 1] = (Enums.eSetType)invSetListIndex;
                 Array.Sort<Enums.eSetType>(this.myPower.SetTypes);
@@ -1630,7 +1630,7 @@ namespace Hero_Designer
         {
             if (Interaction.MsgBox("If this power is required to be present, click 'Yes'.\r\nIf this power must NOT be present, click 'No'.", MsgBoxStyle.YesNo, "Query") == MsgBoxResult.No)
             {
-                this.myPower.Requires.PowerIDNot = (string[][])Utils.CopyArray((Array)this.myPower.Requires.PowerIDNot, (Array)new string[this.myPower.Requires.PowerIDNot.Length + 1][]);
+                this.myPower.Requires.PowerIDNot = (string[][])Utils.CopyArray(this.myPower.Requires.PowerIDNot, (Array)new string[this.myPower.Requires.PowerIDNot.Length + 1][]);
                 this.myPower.Requires.PowerIDNot[this.myPower.Requires.PowerIDNot.Length - 1] = new string[2];
                 this.myPower.Requires.PowerIDNot[this.myPower.Requires.PowerIDNot.Length - 1][0] = "Empty";
                 this.myPower.Requires.PowerIDNot[this.myPower.Requires.PowerIDNot.Length - 1][1] = "";
@@ -1640,7 +1640,7 @@ namespace Hero_Designer
             }
             else
             {
-                this.myPower.Requires.PowerID = (string[][])Utils.CopyArray((Array)this.myPower.Requires.PowerID, (Array)new string[this.myPower.Requires.PowerID.Length + 1][]);
+                this.myPower.Requires.PowerID = (string[][])Utils.CopyArray(this.myPower.Requires.PowerID, (Array)new string[this.myPower.Requires.PowerID.Length + 1][]);
                 this.myPower.Requires.PowerID[this.myPower.Requires.PowerID.Length - 1] = new string[2];
                 this.myPower.Requires.PowerID[this.myPower.Requires.PowerID.Length - 1][0] = "Empty";
                 this.myPower.Requires.PowerID[this.myPower.Requires.PowerID.Length - 1][1] = "";
