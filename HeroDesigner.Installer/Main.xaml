@@ -5,13 +5,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         mc:Ignorable="d"
+        Height="150"
         x:Name="w"
         >
-    <StackPanel Orientation="Horizontal">
-        <TextBlock Text="{Binding CounterValue}" />
-        <Button Command="{Binding Decrement}" Content="-" />
-        <Button Command="{Binding Increment}" Content="+" />
-        <TextBlock Text="{Binding StepSize}" />
-        <Slider Value="{Binding StepSize}" TickFrequency="1" Minimum="1" Maximum="10" />
-    </StackPanel>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Mids Reborn" />
+        <!--<TextBlock Text="{Binding CounterValue}" Margin="5" />
+        <Button Command="{Binding Decrement}" Content="-" VerticalAlignment="Center" Margin="5" />
+        <Button Command="{Binding Increment}" Content="+" Margin="5" />
+        <TextBlock Text="{Binding StepSize}" Margin="5" />
+        <Slider Value="{Binding StepSize}" TickFrequency="1" Minimum="1" Maximum="10" MinWidth="100" Margin="5" />-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" >
+            <Button Command="{Binding SelectFolder}" Content="Select Install Location" Margin="5" />
+            <TextBlock TextAlignment="Center" Text="{Binding SelectedFolder, TargetNullValue='None', StringFormat='Installing to {0}'}" Margin="5" />
+        </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button Content="Cancel" Command="{Binding Cancel}" />
+                <Button Content="Install" Command="{Binding Install}" />
+            <ProgressBar Value="{Binding Progress}" />
+        </StackPanel>
+    </Grid>
 </Window>
