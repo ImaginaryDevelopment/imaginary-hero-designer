@@ -9,12 +9,16 @@
         x:Name="w"
         >
     <Grid Margin="5">
+        <Grid.Background>
+            <ImageBrush ImageSource="Gradient.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Mids Reborn" />
+        <TextBlock Text="Mids Reborn" Background="White" HorizontalAlignment="Center" FontSize="20" />
         <!--<TextBlock Text="{Binding CounterValue}" Margin="5" />
         <Button Command="{Binding Decrement}" Content="-" VerticalAlignment="Center" Margin="5" />
         <Button Command="{Binding Increment}" Content="+" Margin="5" />
@@ -24,7 +28,8 @@
             <Button Command="{Binding SelectFolder}" Content="Select Install Location" Margin="5" />
             <TextBlock TextAlignment="Center" Text="{Binding SelectedFolder, TargetNullValue='None', StringFormat='Installing to {0}'}" Margin="5" />
         </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom">
+        <TextBlock Grid.Row="2" Text="{Binding Error}" />
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Button Content="Cancel" Command="{Binding Cancel}" />
                 <Button Content="Install" Command="{Binding Install}" />
             <ProgressBar Value="{Binding Progress}" />

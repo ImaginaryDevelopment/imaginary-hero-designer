@@ -68,17 +68,27 @@ module View =
         "Cancel" |> Binding.cmd (fun _ -> Cancel)
         "Install" |> Binding.cmd(fun _ -> Install)
         "Progress" |> Binding.oneWay (fun m -> float m.Completion)
+        "Error" |> Binding.oneWay (fun m -> m.Error)
       ]
+    let getResourceByName name f =
+        let ass = typeof<Msg>.Assembly
+        let rns = ass.GetManifestResourceNames()
+        use grs = ass.GetManifestResourceStream(name=name)
+        f grs
     let getWindow() : System.Windows.Window =
         let ass = typeof<Msg>.Assembly
         let rns = ass.GetManifestResourceNames()
-        let target = rns.[0]
+        let target = rns |> Seq.find(fun r -> r.EndsWith("Main.xaml"))
         let text =
             use grs = ass.GetManifestResourceStream(target)
             use sr = new StreamReader(grs)
             sr.ReadToEnd()
         let xr = System.Windows.Markup.XamlReader.Parse text :?> Window
         xr
+    //let getGradient() =
+    //    getResourceByName "HeroDesigner.Installer.Gradient.png" (fun grs ->
+    //        BitMap
+    //    )
 
 open Elmish
 [<EntryPoint;STAThread>]

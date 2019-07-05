@@ -51,7 +51,7 @@
     <None Include="App.config" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Main.xaml" />
-    <EmbeddedResource Include="Gradient.png" />
+    <Resource Include="Gradient.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Elmish">
