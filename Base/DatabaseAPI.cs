@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Base;
 
 public static class DatabaseAPI
 {
@@ -59,52 +60,38 @@ public static class DatabaseAPI
 
     public static int NidFromUidClass(string uidClass)
     {
-        int num;
         if (string.IsNullOrEmpty(uidClass))
-            num = -1;
+            return -1;
         else if (Classes.ContainsKey(uidClass))
         {
-            num = Classes[uidClass];
+            return Classes[uidClass];
         }
         else
         {
-            for (int index = 0; index <= Database.Classes.Length - 1; ++index)
-            {
-                if (string.Equals(uidClass, Database.Classes[index].ClassName, StringComparison.OrdinalIgnoreCase))
-                {
-                    Classes.Add(uidClass, index);
-                    return index;
-                }
-            }
-            num = -1;
+            var index = Database.Classes.TryFindIndex(cls => string.Equals(uidClass, cls.ClassName, StringComparison.OrdinalIgnoreCase));
+            if (index >= 0)
+                Classes.Add(uidClass, index);
+            return index;
         }
-        return num;
     }
 
     public static string UidFromNidClass(int nIDClass) => nIDClass < 0 || nIDClass > Database.Classes.Length ? string.Empty : Database.Classes[nIDClass].ClassName;
 
     public static int NidFromUidOrigin(string uidOrigin, int nIDClass)
     {
-        int num;
         if (nIDClass < 0)
         {
-            num = -1;
+            return -1;
         }
         else
         {
-            for (int index = 0; index < Database.Classes[nIDClass].Origin.Length; ++index)
-            {
-                if (string.Equals(Database.Classes[nIDClass].Origin[index], uidOrigin, StringComparison.OrdinalIgnoreCase))
-                    return index;
-            }
-            num = -1;
+            return Database.Classes[nIDClass].Origin.TryFindIndex(o => string.Equals(o, uidOrigin, StringComparison.OrdinalIgnoreCase));
         }
-        return num;
     }
 
     static void FillGroupArray()
     {
-        Database.PowersetGroups = (IDictionary<string, PowersetGroup>)new Dictionary<string, PowersetGroup>();
+        Database.PowersetGroups = new Dictionary<string, PowersetGroup>();
         foreach (IPowerset powerset in Database.Powersets)
         {
             if (!string.IsNullOrEmpty(powerset.GroupName))
@@ -125,21 +112,14 @@ public static class DatabaseAPI
 
     public static int NidFromStaticIndexPower(int sidPower)
     {
-        int num;
         if (sidPower < 0)
         {
-            num = -1;
+            return -1;
         }
         else
         {
-            for (int index = 0; index <= Database.Power.Length - 1; ++index)
-            {
-                if (Database.Power[index].StaticIndex == sidPower)
-                    return index;
-            }
-            num = -1;
+            return Database.Power.TryFindIndex(p => p.StaticIndex == sidPower);
         }
-        return num;
     }
 
     public static int NidFromUidPower(string name)
@@ -194,145 +174,78 @@ public static class DatabaseAPI
     }
 
     public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
-    {
-        return NidSets(Database.PowersetGroups.ContainsKey(uidGroup) ? Database.PowersetGroups[uidGroup] : null, NidFromUidClass(uidClass), nType);
-    }
+        => NidSets(Database.PowersetGroups.ContainsKey(uidGroup) ? Database.PowersetGroups[uidGroup] : null, NidFromUidClass(uidClass), nType);
 
     public static int[] NidPowers(int nIDPowerset, int nIDClass = -1)
     {
-        int[] array = new int[0];
         if (nIDPowerset < 0 | nIDPowerset > Database.Powersets.Length - 1)
         {
-            array = new int[Database.Power.Length];
+            var array = new int[Database.Power.Length];
             for (int index = 0; index < Database.Power.Length; ++index)
                 array[index] = index;
+            return array;
         }
         else
         {
-            for (int index = 0; index < Database.Powersets[nIDPowerset].Power.Length; ++index)
-            {
-                if (Database.Powersets[nIDPowerset].Powers[index].Requires.ClassOk(nIDClass))
-                {
-                    Array.Resize<int>(ref array, array.Length + 1);
-                    array[array.Length - 1] = Database.Powersets[nIDPowerset].Power[index];
-                }
-            }
+            var powerset = Database.Powersets[nIDPowerset];
+            return powerset.Powers.FindIndexes(pow => pow.Requires.ClassOk(nIDClass)).Select(idx => powerset.Power[idx]).ToArray();
         }
-        return array;
     }
 
     public static int[] NidPowers(string uidPowerset, string uidClass = "") => NidPowers(NidFromUidPowerset(uidPowerset), NidFromUidClass(uidClass));
 
     public static string[] UidPowers(string uidPowerset, string uidClass = "")
     {
-        string[] array = new string[0];
         if (string.IsNullOrEmpty(uidPowerset))
         {
-            array = new string[Database.Power.Length];
+            var array = new string[Database.Power.Length];
             for (int index = 0; index < Database.Power.Length; ++index)
                 array[index] = Database.Power[index].FullName;
+            return array;
         }
         else
         {
-            for (int index = 0; index <= Database.Power.Length - 1; ++index)
-            {
-                if (string.Equals(Database.Power[index].FullSetName, uidPowerset, StringComparison.OrdinalIgnoreCase) && Database.Power[index].Requires.ClassOk(uidClass))
-                {
-                    Array.Resize<string>(ref array, array.Length + 1);
-                    array[array.Length - 1] = Database.Power[index].FullName;
-                }
-            }
+            return Database.Power.Where(pow => string.Equals(pow.FullSetName, uidPowerset, StringComparison.OrdinalIgnoreCase) && pow.Requires.ClassOk(uidClass)).Select(pow => pow.FullName).ToArray();
         }
-        return array;
     }
 
     static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
-    {
-        int[] array = new int[0];
-        int[] numArray;
-        if (nIDPowerset < 0)
-        {
-            numArray = array;
-        }
-        else
-        {
-            for (int index = 0; index <= Database.Powersets[nIDPowerset].Powers.Length - 1; ++index)
-            {
-                if (Database.Powersets[nIDPowerset].Powers[index].Level - 1 == iLevel)
-                {
-                    Array.Resize<int>(ref array, array.Length + 1);
-                    array[array.Length - 1] = Database.Powersets[nIDPowerset].Powers[index].PowerIndex;
-                }
-            }
-            numArray = array;
-        }
-        return numArray;
-    }
+        => nIDPowerset < 0 ?
+            Array.Empty<int>() :
+            Database.Powersets[nIDPowerset].Powers.Where(pow => pow.Level - 1 == iLevel).Select(pow => pow.PowerIndex).ToArray();
 
     public static int[] NidPowersAtLevelBranch(int iLevel, int nIDPowerset)
     {
-        int[] numArray1 = new int[0];
-        int[] numArray2;
         if (nIDPowerset < 0)
         {
-            numArray2 = numArray1;
+            return Array.Empty<int>();
         }
         else
         {
-            int[] numArray3;
             if (Database.Powersets[nIDPowerset].nIDTrunkSet > -1)
             {
-                int[] numArray4 = NidPowersAtLevel(iLevel, Database.Powersets[nIDPowerset].nIDTrunkSet);
-                int[] numArray5 = NidPowersAtLevel(iLevel, nIDPowerset);
-                numArray3 = new int[numArray4.Length + numArray5.Length];
-                Array.Copy((Array)numArray4, (Array)numArray3, numArray4.Length);
-                for (int index = 0; index <= numArray5.Length - 1; ++index)
-                    numArray3[numArray4.Length + index] = numArray5[index];
+                int[] powerset1 = NidPowersAtLevel(iLevel, nIDPowerset);
+                int[] powerset2 = NidPowersAtLevel(iLevel, Database.Powersets[nIDPowerset].nIDTrunkSet);
+                return powerset2.Concat(powerset1).ToArray();
             }
             else
-                numArray3 = NidPowersAtLevel(iLevel, nIDPowerset);
-            numArray2 = numArray3;
+                return NidPowersAtLevel(iLevel, nIDPowerset);
         }
-        return numArray2;
     }
 
     public static string[] UidMutexAll()
     {
-        string[] array = new string[0];
-        for (int index1 = 0; index1 <= Database.Power.Length - 1; ++index1)
-        {
-            if (Database.Power[index1].GroupMembership.Length > 0)
-            {
-                for (int index2 = 0; index2 <= Database.Power[index1].GroupMembership.Length - 1; ++index2)
-                {
-                    bool flag = false;
-                    for (int index3 = 0; index3 <= array.Length - 1; ++index3)
-                    {
-                        if (string.Equals(Database.Power[index1].GroupMembership[index2], array[index3], StringComparison.OrdinalIgnoreCase))
-                        {
-                            flag = true;
-                            break;
-                        }
-                    }
-                    if (!flag)
-                    {
-                        Array.Resize<string>(ref array, array.Length + 1);
-                        array[array.Length - 1] = Database.Power[index1].GroupMembership[index2];
-                    }
-                }
-            }
-        }
-        Array.Sort<string>(array);
-        return array;
+        var items = Database.Power.SelectMany(pow => pow.GroupMembership).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        items.Sort();
+        return items.ToArray();
     }
 
     public static IPowerset GetPowersetByName(string iName)
     {
         string[] strArray = iName.Split('.');
-        IPowerset powerset;
         if (strArray.Length < 2)
         {
-            powerset = null;
+            return null;
         }
         else
         {
@@ -341,15 +254,14 @@ public static class DatabaseAPI
             string key = strArray[0];
             if (!Database.PowersetGroups.ContainsKey(key))
             {
-                powerset = null;
+                return null;
             }
             else
             {
                 PowersetGroup powersetGroup = Database.PowersetGroups[key];
-                powerset = powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
+                return powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
             }
         }
-        return powerset;
     }
 
     public static IPowerset GetPowersetByName(string iName, string iArchetype)
@@ -498,15 +410,13 @@ public static class DatabaseAPI
             }
         }
         stringList.Sort();
-        string[] strArray;
         if (stringList.Count <= 0)
-            strArray = new string[1]
+            return new string[1]
             {
-        "No " + Enum.GetName(iSet.GetType(),  iSet)
+                "No " + Enum.GetName(iSet.GetType(),  iSet)
             };
         else
-            strArray = stringList.ToArray();
-        return strArray;
+            return stringList.ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
@@ -523,9 +433,7 @@ public static class DatabaseAPI
     }
 
     public static IPowerset[] GetPowersetIndexes(Archetype at, Enums.ePowerSetType iSet)
-    {
-        return GetPowersetIndexes(at.Idx, iSet);
-    }
+        => GetPowersetIndexes(at.Idx, iSet);
 
     public static IPowerset[] GetPowersetIndexes(int iAT, Enums.ePowerSetType iSet)
     {

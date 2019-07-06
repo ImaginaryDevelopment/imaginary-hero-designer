@@ -150,7 +150,7 @@ namespace Hero_Designer
                 this.DoneDblClick = false;
             }
             this.InitializeComponent();
-                this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
+            this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
             //adding events
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
@@ -176,7 +176,8 @@ namespace Hero_Designer
                 this.dvAnchored.Moved += new Hero_Designer.DataView.MovedEventHandler(dvAnchored_Move);
                 this.dvAnchored.TabChanged += new Hero_Designer.DataView.TabChangedEventHandler(dvAnchored_TabChanged);
                 var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-                this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+                var icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+                this.Icon = icon;
                 this.Name = nameof(frmMain);
             }
         }
@@ -252,9 +253,7 @@ namespace Hero_Designer
                     int hasMaxSize = this.MaximumSize.Width > 0 ? 1 : 0;
                     int hasValidLastSize = this.MaximumSize.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
                     int hasValidBoth = hasMaxSize & hasValidLastSize;
-                    int width2 = Screen.PrimaryScreen.WorkingArea.Width;
-                    int width3 = this.MaximumSize.Width;
-                    int needsWidthReduction = width2 > width3 ? 1 : 0;
+                    int needsWidthReduction = Screen.PrimaryScreen.WorkingArea.Width > this.MaximumSize.Width ? 1 : 0;
                     if ((hasValidBoth & needsWidthReduction) != 0)
                     {
                         width1 = this.MaximumSize.Width;
@@ -359,10 +358,7 @@ namespace Hero_Designer
         }
 
         internal void ChildRequestedRedraw()
-        {
-            if (this.drawing != null)
-                this.DoRedraw();
-        }
+                => this.DoRedraw();
 
         void accoladeButton_ButtonClicked() => this.PowerModified();
 
@@ -393,8 +389,7 @@ namespace Hero_Designer
         static int ArchetypeIndirectToIndex(int iIndirect)
         {
             int num1 = -1;
-            int num2 = DatabaseAPI.Database.Classes.Length - 1;
-            for (int index = 0; index <= num2; ++index)
+            for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
             {
                 if (DatabaseAPI.Database.Classes[index].Playable)
                 {
@@ -422,10 +417,9 @@ namespace Hero_Designer
                 if (Powerset.nIDTrunkSet > -1)
                 {
                     IPowerset powerset = DatabaseAPI.Database.Powersets[Powerset.nIDTrunkSet];
-                    ListLabelV2.ListLabelItemV2 iItem1 = new ListLabelV2.ListLabelItemV2(powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nIDTrunkSet, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
+                    var iItem1 = new ListLabelV2.ListLabelItemV2(powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nIDTrunkSet, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
                     llPower.AddItem(iItem1);
-                    int num = powerset.Powers.Length - 1;
-                    for (int iIDXPower = 0; iIDXPower <= num; ++iIDXPower)
+                    for (int iIDXPower = 0; iIDXPower <= powerset.Powers.Length - 1; ++iIDXPower)
                     {
                         if (powerset.Powers[iIDXPower].Level > 0)
                         {
@@ -444,9 +438,7 @@ namespace Hero_Designer
                     var iItem = new ListLabelV2.ListLabelItemV2(Powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nID, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
                     llPower.AddItem(iItem);
                 }
-                int num1 = 0;
-                int num2 = Powerset.Powers.Length - 1;
-                for (int iIDXPower = 0; iIDXPower <= num2; ++iIDXPower)
+                for (int iIDXPower = 0; iIDXPower <= Powerset.Powers.Length - 1; ++iIDXPower)
                 {
                     if (Powerset.Powers[iIDXPower].Level > 0)
                     {
@@ -465,7 +457,6 @@ namespace Hero_Designer
                         if (iItem.ItemState == ListLabelV2.LLItemState.Invalid)
                             iItem.Italic = true;
                         llPower.AddItem(iItem);
-                        ++num1;
                     }
                 }
                 llPower.SuspendRedraw = false;
@@ -531,7 +522,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || this.cbAT.SelectedIndex < 0)
                 return;
-            this.ShowPopup(-1, CbtAT.Value.SelectedItem.Idx, cbAT.Bounds, "");
+            this.ShowPopup(-1, this.CbtAT.Value.SelectedItem.Idx, this.cbAT.Bounds, "");
         }
 
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
@@ -560,15 +551,11 @@ namespace Hero_Designer
                 int nId = powersetIndexes[e.Index].nID;
                 RectangleF destRect = new RectangleF();
                 ref RectangleF local1 = ref destRect;
-                double num1 = e.Bounds.X + 1;
-                double y1 = e.Bounds.Y;
-                local1 = new RectangleF((float)num1, (float)y1, 16f, 16f);
+                local1 = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
                 RectangleF srcRect = new RectangleF((float)(nId * 16), 0.0f, 16f, 16f);
                 if ((e.State & DrawItemState.ComboBoxEdit) > DrawItemState.None)
                 {
-                    double width = e.Graphics.MeasureString(target[e.Index], e.Font).Width;
-                    double num2 = (double)(e.Bounds.Width - 10);
-                    if (width <= num2)
+                    if (e.Graphics.MeasureString(target[e.Index], e.Font).Width <= e.Bounds.Width - 10)
                         e.Graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                     else
                         destRect.Width = 0.0f;
@@ -579,14 +566,8 @@ namespace Hero_Designer
                 {
                     LineAlignment = StringAlignment.Center
                 };
-                RectangleF layoutRectangle = new RectangleF();
-                ref RectangleF local2 = ref layoutRectangle;
-                var num3 = e.Bounds.X + destRect.X + destRect.Width;
-                double y2 = e.Bounds.Y;
-                double width1 = e.Bounds.Width;
-                double height = e.Bounds.Height;
-                local2 = new RectangleF((float)num3, (float)y2, (float)width1, (float)height);
-                e.Graphics.DrawString(target[e.Index], e.Font, solidBrush, layoutRectangle, format);
+                var layout = new RectangleF(e.Bounds.X + destRect.X + destRect.Width, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
+                e.Graphics.DrawString(target[e.Index], e.Font, solidBrush, layout, format);
             }
             e.DrawFocusRectangle();
         }
@@ -1153,6 +1134,7 @@ namespace Hero_Designer
 
         void DoRedraw()
         {
+            if (drawing == null) return;
             this.NoResizeEvent = true;
             int width = this.pnlGFXFlow.Width;
             double scale = 1.0;
