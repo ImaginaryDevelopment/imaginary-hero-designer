@@ -1904,14 +1904,17 @@ namespace Hero_Designer
                 if (MidsContext.Config.CheckForUpdates)
                 {
                     clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    IMessager iLoadFrm = (IMessager)iFrm;
+                    IMessager iLoadFrm = iFrm;
                     int num = (int)clsXmlUpdate.UpdateCheck(true, ref iLoadFrm);
                     iFrm = (frmLoading)iLoadFrm;
                 }
                 if (MidsContext.Config.FreshInstall)
                 {
-                    MidsContext.Config.CheckForUpdates = Interaction.MsgBox(("Welcome to Pine's Hero Designer " + MidsContext.AppVersion + "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Welcome!") == MsgBoxResult.Yes;
-                    MidsContext.Config.DefaultSaveFolder = "";
+                    MidsContext.Config.CheckForUpdates = false;
+                    //Interaction.MsgBox(("Welcome to Mid's Reborn Hero Designer "
+                    //+ MidsContext.AppVersion 
+                    //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Welcome!") == MsgBoxResult.Yes;
+                    MidsContext.Config.DefaultSaveFolder = String.Empty;
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
                 }
@@ -1955,15 +1958,15 @@ namespace Hero_Designer
                 Size size1;
                 if (Screen.PrimaryScreen.WorkingArea.Width > MidsContext.Config.LastSize.Width & MidsContext.Config.LastSize.Width >= this.MinimumSize.Width)
                 {
-                    int num2 = this.MaximumSize.Width > 0 ? 1 : 0;
+                    int hasMaxSize = this.MaximumSize.Width > 0 ? 1 : 0;
                     size1 = this.MaximumSize;
-                    int num3 = size1.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
-                    int num4 = num2 & num3;
+                    int hasValidLastSize = size1.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
+                    int hasValidBoth = hasMaxSize & hasValidLastSize;
                     int width2 = Screen.PrimaryScreen.WorkingArea.Width;
                     size1 = this.MaximumSize;
                     int width3 = size1.Width;
-                    int num5 = width2 > width3 ? 1 : 0;
-                    if ((num4 & num5) != 0)
+                    int needsWidthReduction = width2 > width3 ? 1 : 0;
+                    if ((hasValidBoth & needsWidthReduction) != 0)
                     {
                         size1 = this.MaximumSize;
                         width1 = size1.Width;
@@ -2014,7 +2017,7 @@ namespace Hero_Designer
                 this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
                 this.ibPopup.Checked = MidsContext.Config.ShowPopup;
                 this.ibRecipe.Checked = MidsContext.Config.PopupRecipes;
-                string str2 = Path.Combine(Files.FPathAppData, "patch.rtf");
+                string str2 = Path.Combine(Files.FPathAppData, Files.PatchRtf);
                 if (File.Exists(str2))
                 {
                     int num2 = (int)new frmReadme(str2)
@@ -2028,7 +2031,7 @@ namespace Hero_Designer
                     var patchNotesTgt = Path.Combine(Files.FPathAppData, "patchnotes.rtf");
                     if (File.Exists(patchNotesTgt))
                         File.Delete(patchNotesTgt);
-                    File.Move(Path.Combine(Files.FPathAppData, "patch.rtf"), patchNotesTgt);
+                    File.Move(Path.Combine(Files.FPathAppData, Files.PatchRtf), patchNotesTgt);
                 }
                 if (str1 != string.Empty)
                 {
@@ -2049,14 +2052,14 @@ namespace Hero_Designer
                 iFrm = null;
                 this.Refresh();
                 this.dvAnchored.SetScreenBounds(this.ClientRectangle);
-                Point iLocation = new System.Drawing.Point();
+                Point iLocation = new Point();
                 ref Point local = ref iLocation;
                 int left = this.llPrimary.Left;
                 int top = this.llPrimary.Top;
                 size1 = this.llPrimary.SizeNormal;
                 int height5 = size1.Height;
                 int y = top + height5 + 5;
-                local = new System.Drawing.Point(left, y);
+                local = new Point(left, y);
                 this.dvAnchored.SetLocation(iLocation, true);
                 this.PriSec_ExpandChanged(true);
             }
@@ -2075,10 +2078,7 @@ namespace Hero_Designer
             this.LastState = this.WindowState;
         }
 
-        void frmMain_MouseWheel(object sender, MouseEventArgs e)
-        {
-            this.dvAnchored.Info_txtLarge.Focus();
-        }
+        void frmMain_MouseWheel(object sender, MouseEventArgs e) => this.dvAnchored.Info_txtLarge.Focus();
 
         void frmMain_Resize(object sender, EventArgs e)
         {
@@ -2127,7 +2127,7 @@ namespace Hero_Designer
                 if (!power.SkipMax)
                 {
                     float damageValue = power.FXGetDamageValue();
-                    if ((double)damageValue > (double)num1)
+                    if (damageValue > (double)num1)
                         num1 = damageValue;
                 }
             }
@@ -2138,7 +2138,7 @@ namespace Hero_Designer
                 if (!power.SkipMax)
                 {
                     float damageValue = power.FXGetDamageValue();
-                    if ((double)damageValue > (double)num1)
+                    if (damageValue > (double)num1)
                         num1 = damageValue;
                 }
             }
@@ -2170,10 +2170,7 @@ namespace Hero_Designer
             return -1;
         }
 
-        bool GetPlayableClasses(Archetype a)
-        {
-            return a.Playable;
-        }
+        bool GetPlayableClasses(Archetype a) => a.Playable;
 
         I9Slot GetRepeatEnhancement(int powerIndex, int iSlotIndex)
         {
@@ -2318,10 +2315,7 @@ namespace Hero_Designer
             this.RedrawUnderPopup(OldBounds);
         }
 
-        void I9Popup_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.HidePopup();
-        }
+        void I9Popup_MouseMove(object sender, MouseEventArgs e) => this.HidePopup();
 
         void ibMode_ButtonClicked()
         {
@@ -2334,10 +2328,7 @@ namespace Hero_Designer
             this.pbDynMode.Refresh();
         }
 
-        void ibPopup_ButtonClicked()
-        {
-            MidsContext.Config.ShowPopup = this.ibPopup.Checked;
-        }
+        void ibPopup_ButtonClicked() => MidsContext.Config.ShowPopup = this.ibPopup.Checked;
 
         void ibPvX_ButtonClicked()
         {
@@ -2345,10 +2336,7 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        void ibRecipe_ButtonClicked()
-        {
-            MidsContext.Config.PopupRecipes = this.ibRecipe.Checked;
-        }
+        void ibRecipe_ButtonClicked() => MidsContext.Config.PopupRecipes = this.ibRecipe.Checked;
 
         void ibSets_ButtonClicked()
         {
@@ -2357,15 +2345,9 @@ namespace Hero_Designer
             this.FloatSets(true);
         }
 
-        void ibSlotLevels_ButtonClicked()
-        {
-            this.tsViewSlotLevels_Click(this, new EventArgs());
-        }
+        void ibSlotLevels_ButtonClicked() => this.tsViewSlotLevels_Click(this, new EventArgs());
 
-        void ibTotals_ButtonClicked()
-        {
-            this.FloatTotals(true);
-        }
+        void ibTotals_ButtonClicked() => this.FloatTotals(true);
 
         void incarnateButton_MouseDown(object sender, MouseEventArgs e)
         {
@@ -2384,15 +2366,9 @@ namespace Hero_Designer
             this.fIncarnate.Show(this);
         }
 
-        void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
-        }
+        void IncarnateWindowToolStripMenuItem_Click(object sender, EventArgs e) => this.incarnateButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
 
-        void Info_Enhancement(I9Slot iEnh, int iLevel = -1)
-        {
-            this.myDataView.SetEnhancement(iEnh, iLevel);
-        }
+        void Info_Enhancement(I9Slot iEnh, int iLevel = -1) => this.myDataView.SetEnhancement(iEnh, iLevel);
 
         internal void UnlockFloatingStats()
         {
@@ -2400,8 +2376,8 @@ namespace Hero_Designer
             if (this.dvLastPower <= -1)
                 return;
             this.Info_Power(this.dvLastPower, this.dvLastEnh, this.dvLastNoLev, this.DataViewLocked);
-
         }
+
         void Info_Power(int powerIdx, int iEnhLvl = -1, bool NoLevel = false, bool Lock = false)
         {
             if (!Lock & this.DataViewLocked)
@@ -2447,10 +2423,7 @@ namespace Hero_Designer
             this.FloatUpdate(false);
         }
 
-        void lblATLocked_MouseLeave(object sender, EventArgs e)
-        {
-            this.HidePopup();
-        }
+        void lblATLocked_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
         void lblATLocked_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2463,19 +2436,16 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            RectangleF destRect = new RectangleF(1f, (float)(this.lblATLocked.Height - 16) / 2f, 16f, 16f);
+            RectangleF destRect = new RectangleF(1f, (this.lblATLocked.Height - 16) / 2f, 16f, 16f);
             --destRect.Y;
-            RectangleF srcRect = new RectangleF((float)(MidsContext.Character.Archetype.Idx * 16), 0.0f, 16f, 16f);
+            RectangleF srcRect = new RectangleF((MidsContext.Character.Archetype.Idx * 16), 0.0f, 16f, 16f);
             Graphics graphics = e.Graphics;
-            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
-            destRect.X = (float)(this.lblATLocked.Width - 19);
-            graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+            graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+            destRect.X = this.lblATLocked.Width - 19;
+            graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
         }
 
-        void lblLocked0_MouseLeave(object sender, EventArgs e)
-        {
-            this.HidePopup();
-        }
+        void lblLocked0_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
         void lblLocked0_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2485,10 +2455,7 @@ namespace Hero_Designer
             this.ShowPopup(MidsContext.Character.Powersets[3].nID, MidsContext.Character.Archetype.Idx, this.cbPool0.Bounds, ExtraString);
         }
 
-        void lblLocked0_Paint(object sender, PaintEventArgs e)
-        {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool0);
-        }
+        void lblLocked0_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Pool0);
 
         void lblLocked1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2498,10 +2465,7 @@ namespace Hero_Designer
             this.ShowPopup(MidsContext.Character.Powersets[4].nID, MidsContext.Character.Archetype.Idx, this.cbPool1.Bounds, ExtraString);
         }
 
-        void lblLocked1_Paint(object sender, PaintEventArgs e)
-        {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool1);
-        }
+        void lblLocked1_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Pool1);
 
         void lblLocked2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2511,10 +2475,7 @@ namespace Hero_Designer
             this.ShowPopup(MidsContext.Character.Powersets[5].nID, MidsContext.Character.Archetype.Idx, this.cbPool2.Bounds, ExtraString);
         }
 
-        void lblLocked2_Paint(object sender, PaintEventArgs e)
-        {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool2);
-        }
+        void lblLocked2_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Pool2);
 
         void lblLocked3_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2524,10 +2485,7 @@ namespace Hero_Designer
             this.ShowPopup(MidsContext.Character.Powersets[6].nID, MidsContext.Character.Archetype.Idx, this.cbPool3.Bounds, ExtraString);
         }
 
-        void lblLocked3_Paint(object sender, PaintEventArgs e)
-        {
-            this.MiniPaint(ref e, Enums.PowersetType.Pool3);
-        }
+        void lblLocked3_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Pool3);
 
         void lblLockedAncillary_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2537,15 +2495,9 @@ namespace Hero_Designer
             this.ShowPopup(MidsContext.Character.Powersets[7].nID, MidsContext.Character.Archetype.Idx, this.cbAncillary.Bounds, ExtraString);
         }
 
-        void lblLockedAncillary_Paint(object sender, PaintEventArgs e)
-        {
-            this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
-        }
+        void lblLockedAncillary_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
 
-        void lblLockedSecondary_MouseLeave(object sender, EventArgs e)
-        {
-            this.HidePopup();
-        }
+        void lblLockedSecondary_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
         void lblLockedSecondary_MouseMove(object sender, MouseEventArgs e)
         {
@@ -2555,15 +2507,9 @@ namespace Hero_Designer
             this.ShowPopup(DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Secondary)[this.cbSecondary.SelectedIndex].nID, MidsContext.Character.Archetype.Idx, this.cbSecondary.Bounds, ExtraString);
         }
 
-        void llAll_EmptyHover()
-        {
-            this.HidePopup();
-        }
+        void llAll_EmptyHover() => this.HidePopup();
 
-        void llALL_MouseLeave(object sender, EventArgs e)
-        {
-            this.HidePopup();
-        }
+        void llALL_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
         void llAncillary_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
         {
@@ -2854,7 +2800,7 @@ namespace Hero_Designer
                 this.dragFinishSlot = this.drawing.WhichEnh(this.drawing.ScaleUp(iValue1), this.drawing.ScaleUp(iValue2));
                 if (this.dragFinishSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
+                    Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
                 }
                 else
                     this.SlotLevelSwap(this.dragStartPower, this.dragStartSlot, this.dragFinishPower, this.dragFinishSlot);
@@ -2949,10 +2895,7 @@ namespace Hero_Designer
             this.dragStartSlot = this.drawing.WhichEnh(this.drawing.ScaleUp(e.X), this.drawing.ScaleUp(e.Y));
         }
 
-        void pnlGFX_MouseEnter(object sender, EventArgs e)
-        {
-            this.pnlGFXFlow.Focus();
-        }
+        void pnlGFX_MouseEnter(object sender, EventArgs e) => this.pnlGFXFlow.Focus();
 
         void pnlGFX_MouseLeave(object sender, EventArgs e)
         {
@@ -3185,10 +3128,7 @@ namespace Hero_Designer
             }
         }
 
-        void pnlGFXFlow_MouseEnter(object sender, EventArgs e)
-        {
-            this.pnlGFXFlow.Focus();
-        }
+        void pnlGFXFlow_MouseEnter(object sender, EventArgs e) => this.pnlGFXFlow.Focus();
 
         internal void PowerModified()
         {
@@ -3262,8 +3202,6 @@ namespace Hero_Designer
                             return this.PowerMove(tp, pow[0], num1);
                     }
                 }
-                else if (this.ddsa[0] != (short)3)
-                    ;
             }
             bool flag1 = pow[0] < pow[1];
             bool[] flagArray = new bool[tp.Length - 1 + 1];
@@ -3315,7 +3253,7 @@ namespace Hero_Designer
                     }
                     if (pow[1] != index)
                     {
-                        int num2 = (int)Interaction.MsgBox("None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
+                        Interaction.MsgBox("None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     }
                 }
@@ -3346,16 +3284,16 @@ namespace Hero_Designer
             {
                 if (tp[index].NIDPower != -1 && flag1 && !flagArray[index])
                 {
-                    if (this.ddsa[7] == (short)0)
+                    if (this.ddsa[7] == 0)
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
                         this.ddsa[7] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                         if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[7] = this.ddsa[7];
                     }
-                    if (this.ddsa[7] == (short)1)
+                    if (this.ddsa[7] == 1)
                         return 0;
-                    if (this.ddsa[7] == (short)3)
+                    if (this.ddsa[7] == 3)
                     {
                         if (!flag2)
                         {
@@ -3367,16 +3305,16 @@ namespace Hero_Designer
                 }
                 if (!flag2 & tp[index].NIDPower < 0)
                 {
-                    if (this.ddsa[10] == (short)0)
+                    if (this.ddsa[10] == 0)
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
                         this.ddsa[10] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                         if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[10] = this.ddsa[10];
                     }
-                    if (this.ddsa[10] == (short)1)
+                    if (this.ddsa[10] == 1)
                         return 0;
-                    if (this.ddsa[10] == (short)2)
+                    if (this.ddsa[10] == 2)
                     {
                         if (tp[pow[1]].NIDPower < 0)
                         {
@@ -3405,7 +3343,7 @@ namespace Hero_Designer
                         --num8;
                         break;
                     case 0:
-                        int num9 = (int)Interaction.MsgBox("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
+                        Interaction.MsgBox("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
                         return 0;
                     case 1:
                         if (flag1)
@@ -3441,7 +3379,7 @@ namespace Hero_Designer
 
         void PowerMoveByUser(params int[] pow)
         {
-            if (pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1])
+            if (pow[0] < 0 || pow[0] > 23 || pow[1] < 0 || pow[1] > 23 || pow[0] == pow[1])
                 return;
             int index = 0;
             do
@@ -3477,7 +3415,7 @@ namespace Hero_Designer
         int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
         {
             int num1;
-            if (pow[0] < 0 | pow[0] > 23 | pow[1] < 0 | pow[1] > 23 | pow[0] == pow[1])
+            if (pow[0] < 0 || pow[0] > 23 || pow[1] < 0 || pow[1] > 23 || pow[0] == pow[1])
             {
                 num1 = 0;
             }
@@ -3491,16 +3429,16 @@ namespace Hero_Designer
                         switch (mode)
                         {
                             case 0:
-                                if (this.ddsa[4] == (short)0)
+                                if (this.ddsa[4] == 0)
                                 {
                                     MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
                                     this.ddsa[4] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                                     if (MyProject.Forms.frmOptionListDlg.remember == true)
                                         MidsContext.Config.DragDropScenarioAction[4] = this.ddsa[4];
                                 }
-                                if (this.ddsa[4] == (short)1)
+                                if (this.ddsa[4] == 1)
                                     return 0;
-                                if (this.ddsa[4] == (short)2)
+                                if (this.ddsa[4] == 2)
                                 {
                                     tp[pow[1]].NIDPower = -1;
                                     tp[pow[1]].NIDPowerset = -1;
@@ -3510,12 +3448,12 @@ namespace Hero_Designer
                                     tp[pow[1]].Slots = new SlotEntry[0];
                                     goto label_18;
                                 }
-                                else if (this.ddsa[4] != (short)3)
+                                else if (this.ddsa[4] != 3)
                                     goto label_18;
                                 else
                                     goto label_18;
                             case 2:
-                                num2 = this.ddsa[7] != (short)2 ? 1 : 0;
+                                num2 = this.ddsa[7] != 2 ? 1 : 0;
                                 break;
                             default:
                                 num2 = 1;
@@ -3528,14 +3466,14 @@ namespace Hero_Designer
                 }
                 else if (mode == 0)
                 {
-                    if (this.ddsa[0] == (short)0)
+                    if (this.ddsa[0] == 0)
                     {
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
                             this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                            if (this.ddsa[0] == (short)2)
-                                this.ddsa[0] = (short)3;
+                            if (this.ddsa[0] == 2)
+                                this.ddsa[0] = 3;
                         }
                         else
                         {
@@ -3545,13 +3483,13 @@ namespace Hero_Designer
                         if (MyProject.Forms.frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                     }
-                    if (this.ddsa[0] == (short)1)
+                    if (this.ddsa[0] == 1)
                         return 0;
-                    if (this.ddsa[0] == (short)2)
+                    if (this.ddsa[0] == 2)
                     {
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            int num2 = (int)Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
+                            Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
                             return 0;
                         }
                         int num3 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3565,50 +3503,48 @@ namespace Hero_Designer
                         int num4 = index;
                         return this.PowerSwap(mode, ref tp, pow[0], num4);
                     }
-                    if (this.ddsa[0] != (short)3)
-                        ;
                 }
-                if (mode == 1 | mode == 2 && tp[pow[1]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[1]].NIDPower].Level - 1 == tp[pow[1]].Level)
+                if (mode == 1 || mode == 2 && tp[pow[1]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[1]].NIDPower].Level - 1 == tp[pow[1]].Level)
                 {
                     if (mode == 1)
                     {
-                        if (this.ddsa[12] == (short)0)
+                        if (this.ddsa[12] == 0)
                         {
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
                             this.ddsa[12] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                             if (MyProject.Forms.frmOptionListDlg.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
                         }
-                        if (this.ddsa[12] == (short)1)
+                        if (this.ddsa[12] == 1)
                             return 0;
-                        if (this.ddsa[12] == (short)2)
+                        if (this.ddsa[12] == 2)
                         {
-                            this.ddsa[11] = (short)2;
+                            this.ddsa[11] = 2;
                             return 2;
                         }
-                        if (this.ddsa[12] != (short)3 && this.ddsa[12] == (short)4)
+                        if (this.ddsa[12] != 3 && this.ddsa[12] == 4)
                             return 3;
                     }
                     else if (mode == 2)
                     {
-                        if (this.ddsa[11] == (short)0)
+                        if (this.ddsa[11] == 0)
                         {
                             MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
                             this.ddsa[11] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
                             if (MyProject.Forms.frmOptionListDlg.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
                         }
-                        if (this.ddsa[11] == (short)1)
+                        if (this.ddsa[11] == 1)
                             return 0;
-                        if (this.ddsa[11] != (short)2 && this.ddsa[11] == (short)3)
+                        if (this.ddsa[11] != 2 && this.ddsa[11] == 3)
                             return 1;
                     }
                 }
                 int num5 = tp[22].SlotCount + tp[23].SlotCount;
                 int num6 = -1;
-                if (pow[0] == 22 & pow[1] < 22 & num5 <= 8 & tp[pow[1]].SlotCount + tp[23].SlotCount > 8 | pow[0] == 23 & pow[1] < 22 & tp[pow[0]].SlotCount <= 4 & tp[pow[1]].SlotCount > 4 | pow[0] == 23 & pow[1] < 22 & num5 <= 8 & tp[22].SlotCount + tp[pow[1]].SlotCount > 8 | pow[0] == 23 & pow[1] == 22 & tp[pow[1]].SlotCount > 4)
+                if (pow[0] == 22 && pow[1] < 22 && num5 <= 8 && tp[pow[1]].SlotCount + tp[23].SlotCount > 8 || pow[0] == 23 && pow[1] < 22 && tp[pow[0]].SlotCount <= 4 && tp[pow[1]].SlotCount > 4 || pow[0] == 23 && pow[1] < 22 && num5 <= 8 && tp[22].SlotCount + tp[pow[1]].SlotCount > 8 || pow[0] == 23 && pow[1] == 22 && tp[pow[1]].SlotCount > 4)
                 {
-                    if (mode < 2 & this.ddsa[6] == (short)0)
+                    if (mode < 2 & this.ddsa[6] == 0)
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[6] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
@@ -3617,9 +3553,9 @@ namespace Hero_Designer
                     }
                     num6 = 6;
                 }
-                else if (pow[0] < 22 & pow[1] == 22 & num5 <= 8 & tp[pow[0]].SlotCount + tp[23].SlotCount > 8 | pow[0] < 22 & pow[1] == 23 & tp[pow[1]].SlotCount <= 4 & tp[pow[0]].SlotCount > 4 | pow[0] < 22 & pow[1] == 23 & num5 <= 8 & tp[22].SlotCount + tp[pow[0]].SlotCount > 8 | pow[0] == 22 & pow[1] == 23 & tp[pow[0]].SlotCount > 4)
+                else if (pow[0] < 22 & pow[1] == 22 & num5 <= 8 & tp[pow[0]].SlotCount + tp[23].SlotCount > 8 || pow[0] < 22 & pow[1] == 23 & tp[pow[1]].SlotCount <= 4 & tp[pow[0]].SlotCount > 4 || pow[0] < 22 & pow[1] == 23 & num5 <= 8 & tp[22].SlotCount + tp[pow[0]].SlotCount > 8 || pow[0] == 22 & pow[1] == 23 & tp[pow[0]].SlotCount > 4)
                 {
-                    if (mode < 2 & this.ddsa[3] == (short)0)
+                    if (mode < 2 & this.ddsa[3] == 0)
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[3] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
@@ -3630,7 +3566,7 @@ namespace Hero_Designer
                 }
                 if (num6 != -1 && mode == 2)
                 {
-                    if (this.ddsa[9] == (short)0)
+                    if (this.ddsa[9] == 0)
                     {
                         MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                         this.ddsa[9] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
@@ -3728,14 +3664,14 @@ namespace Hero_Designer
                                             if (MyProject.Forms.frmOptionListDlg.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
                                         }
-                                        if (!(mode < 2 & index3 == 0 & this.ddsa[2] == (short)1 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)1 | mode == 2 & this.ddsa[8] == (short)1))
+                                        if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
                                         {
-                                            if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)2 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)2 | mode == 2 & this.ddsa[8] == (short)2)
+                                            if (mode < 2 & index3 == 0 & this.ddsa[2] == 2 || mode == 0 & index3 == 1 & this.ddsa[5] == 2 || mode == 2 & this.ddsa[8] == 2)
                                             {
                                                 this.RemoveSlotFromTempList(tp[pow[index3]], slotIDX);
                                                 --slotIDX;
                                             }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)4 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)4 | mode == 2 & this.ddsa[8] == (short)4)
+                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 4 || mode == 0 & index3 == 1 & this.ddsa[5] == 4 || mode == 2 & this.ddsa[8] == 4)
                                             {
                                                 if (tp[pow[1 - index3]].SlotCount > slotIDX)
                                                 {
@@ -3749,7 +3685,7 @@ namespace Hero_Designer
                                                     --slotIDX;
                                                 }
                                             }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)5 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)5 | mode == 2 & this.ddsa[8] == (short)5)
+                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 5 || mode == 0 & index3 == 1 & this.ddsa[5] == 5 || mode == 2 & this.ddsa[8] == 5)
                                             {
                                                 if (tp[pow[1 - index3]].SlotCount > slotIDX)
                                                 {
@@ -3758,11 +3694,11 @@ namespace Hero_Designer
                                                     tp[pow[index3]].Slots[slotIDX].Level = level2;
                                                 }
                                             }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)6 | mode == 0 & index3 == 1 & this.ddsa[5] == (short)6 | mode == 2 & this.ddsa[8] == (short)6)
+                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 6 || mode == 0 & index3 == 1 & this.ddsa[5] == 6 || mode == 2 & this.ddsa[8] == 6)
                                                 this.RearrangeAllSlotsInBuild(tp, true);
                                         }
                                         else
-                                            goto label_132;
+                                            return 0;
                                     }
                                     ++slotIDX;
                                 }
@@ -3773,10 +3709,6 @@ namespace Hero_Designer
                         ++index3;
                     }
                     while (index3 <= 1);
-                    goto label_133;
-                label_132:
-                    return 0;
-                label_133:
                     num1 = -1;
                 }
             }

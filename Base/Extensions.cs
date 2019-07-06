@@ -17,5 +17,8 @@ namespace Base
         }
         public static T[] RemoveIndex<T>(this T[] source, int index)
             => source.Where((_, i) => i != index).ToArray();
+        public static T[] RemoveLast<T>(this T[] items)
+            => items.Take(items.Length - 1).ToArray();
+        public static string ToStringOrNull(this object o) => o == null ? null : o.ToString();
     }
 }
