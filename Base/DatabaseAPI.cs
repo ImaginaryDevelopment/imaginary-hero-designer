@@ -816,7 +816,7 @@ public static class DatabaseAPI
     }
     public static void SaveMainDatabase(ISerialize serializer)
     {
-        string path = Files.SelectDataFileSave("I12.mhd");
+        string path = Files.SelectDataFileSave(Files.MxdbFileDB);
         SaveMainDbRaw(serializer, path, MainDbName);
         FileStream fileStream;
         BinaryWriter writer;
