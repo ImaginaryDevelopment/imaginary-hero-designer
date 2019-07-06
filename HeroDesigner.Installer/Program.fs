@@ -1,6 +1,6 @@
 ﻿open System
-open System.IO
 open System.Windows
+open System.IO
 
 // Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
@@ -37,6 +37,7 @@ module Updates =
                 {m with Error=null; SelectedFolder= dlg.SelectedPath}
             else {m with Error = sprintf "Error reading target directory '%s'" dlg.SelectedPath}
         else m
+    let quit() = Application.Current.MainWindow.Close()
     let update msg m =
         match msg with
         | Increment -> { m with Count = m.Count + m.StepSize }
@@ -44,11 +45,23 @@ module Updates =
         | SetStepSize x -> { m with StepSize = x }
         | SelectFolder -> selectFolder m
         | Cancel ->
-            Application.Current.MainWindow.Close()
             m
         | Install ->
-            ()
-            m
+            let inputPath = Path.Combine(Environment.CurrentDirectory, HeroPackaging.packageFilename)
+            if not <| File.Exists inputPath then
+                {m with Error = sprintf "Unable to locate installer files at %s" inputPath}
+            else
+                Compression.decompress inputPath m.SelectedFolder
+                let exePath = Path.Combine(m.SelectedFolder, "Hero Designer.exe")
+                if File.Exists exePath then
+                    MessageBox.Show("Installation completed") |> ignore
+                    // add shortcut(s)
+                    // launch app
+                    System.Diagnostics.Process.Start(exePath)
+                    quit()
+                    m
+                else
+                    {m with Error= sprintf "Install finished, but application was not found at '%s'" exePath}
         | Progress ->
             if m.Completion < 100 then
                 {m with Completion = m.Completion + 1}
@@ -59,10 +72,6 @@ module View =
 
     let bindings model dispatch =
       [
-        //"CounterValue" |> Binding.oneWay (fun m -> m.Count)
-        //"Increment" |> Binding.cmd (fun m -> Increment)
-        //"Decrement" |> Binding.cmd (fun m -> Decrement)
-        //"StepSize" |> Binding.twoWay ((fun m -> float m.StepSize),fun newVal m -> int newVal |> SetStepSize)
         "SelectedFolder" |> Binding.oneWay (fun m -> m.SelectedFolder)
         "SelectFolder" |> Binding.cmd(fun _ -> SelectFolder)
         "Cancel" |> Binding.cmd (fun _ -> Cancel)
@@ -85,15 +94,13 @@ module View =
             sr.ReadToEnd()
         let xr = System.Windows.Markup.XamlReader.Parse text :?> Window
         xr
-    //let getGradient() =
-    //    getResourceByName "HeroDesigner.Installer.Gradient.png" (fun grs ->
-    //        BitMap
-    //    )
 
 open Elmish
 [<EntryPoint;STAThread>]
 let main argv =
     printfn "%A" argv
+    HeroPackaging.autoCreate()
+    |> ignore<string option>
     let result =
         Program.mkSimple Elm.init Updates.update View.bindings
         //|> Program.runWindow (Main())
