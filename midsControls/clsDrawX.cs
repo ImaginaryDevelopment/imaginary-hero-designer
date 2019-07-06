@@ -65,8 +65,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x0600001F RID: 31 RVA: 0x000023BC File Offset: 0x000005BC
-        public void ReInit(ref Control iTarget)
+        public void ReInit(Control iTarget)
         {
             this.gTarget = iTarget.CreateGraphics();
             this.cTarget = iTarget;
@@ -74,8 +73,7 @@ namespace midsControls
             this.BackColor = iTarget.BackColor;
         }
 
-        // Token: 0x06000020 RID: 32 RVA: 0x0000241C File Offset: 0x0000061C
-        public clsDrawX(ref Control iTarget)
+        public clsDrawX(Control iTarget)
         {
             this.InterfaceMode = 0;
             this.VillainColor = false;
@@ -84,11 +82,10 @@ namespace midsControls
             this.vcCols = 3;
             this.vcRowsPowers = 8;
             this.bxPower = new ExtendedBitmap[4];
-            int num = 0;
             checked
             {
                 int num2 = this.bxPower.Length - 1;
-                for (int i = num; i <= num2; i++)
+                for (int i = 0; i <= num2; i++)
                 {
                     this.bxPower[i] = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + "images\\pSlot" + Strings.Trim(Conversions.ToString(i)) + ".png");
                 }
@@ -117,7 +114,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000021 RID: 33 RVA: 0x00002660 File Offset: 0x00000860
         private void DrawSplit()
         {
             Pen pen;
@@ -136,8 +132,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000022 RID: 34 RVA: 0x00002704 File Offset: 0x00000904
-        private void DrawPowers()
+        void DrawPowers()
         {
             int num = 0;
             checked

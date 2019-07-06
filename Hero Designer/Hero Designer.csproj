@@ -70,6 +70,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Compile Include="Forms\MainUILogic.cs" />
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
       <DependentUpon>frmTotals.cs</DependentUpon>
     </Compile>
