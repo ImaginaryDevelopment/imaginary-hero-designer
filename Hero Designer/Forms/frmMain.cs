@@ -1,12 +1,4 @@
 
-using Base.Data_Classes;
-using Base.Display;
-using Base.IO_Classes;
-using Base.Master_Classes;
-using Hero_Designer.My;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
-using midsControls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,10 +6,17 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Base;
+using Base.Data_Classes;
+using Base.Display;
+using Base.IO_Classes;
+using Base.Master_Classes;
+using midsControls;
 
 namespace Hero_Designer
 {
@@ -25,6 +24,7 @@ namespace Hero_Designer
     {
         #region "fields"
 
+        bool remember;
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
         readonly short[] ddsa;
@@ -99,19 +99,18 @@ namespace Hero_Designer
 
         internal SaveFileDialog DlgSave => dlgSave;
 
-        I9Picker I9Picker
-        {
-            get
-            {
-                if (this.i9Picker.Height <= 235)
-                    this.i9Picker.Height = 315;
-                return this.i9Picker;
-            }
-            set
-            {
-                this.i9Picker = value;
-            }
-        }
+        ComboBoxT<string> GetCbOrigin() => new ComboBoxT<string>(this.cbOrigin);
+
+        // store the instance for reuse, as these things are called per draw/redraw
+        Lazy<ComboBoxT<Archetype>> CbtAT => new Lazy<ComboBoxT<Archetype>>(() => new ComboBoxT<Archetype>(this.cbAT));
+        Lazy<ComboBoxT<string>> CbtPrimary => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbPrimary));
+        Lazy<ComboBoxT<string>> CbtSecondary => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbSecondary));
+        Lazy<ComboBoxT<string>> CbtAncillary => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbAncillary));
+
+        Lazy<ComboBoxT<string>> CbtPool0 => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbPool0));
+        Lazy<ComboBoxT<string>> CbtPool1 => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbPool1));
+        Lazy<ComboBoxT<string>> CbtPool2 => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbPool2));
+        Lazy<ComboBoxT<string>> CbtPool3 => new Lazy<ComboBoxT<string>>(() => new ComboBoxT<string>(this.cbPool3));
 
         internal clsDrawX Drawing => this.drawing;
 
@@ -155,7 +154,7 @@ namespace Hero_Designer
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
                 this.dvAnchored = new DataView();
-                this.Controls.Add((Control)this.dvAnchored);
+                this.Controls.Add(this.dvAnchored);
                 this.dvAnchored.BackColor = System.Drawing.Color.Black;
                 this.dvAnchored.DrawVillain = false;
                 this.dvAnchored.Floating = false;
@@ -174,12 +173,6 @@ namespace Hero_Designer
                 this.I9Popup.MouseMove += I9Popup_MouseMove;
                 this.IncarnateWindowToolStripMenuItem.Click += IncarnateWindowToolStripMenuItem_Click;
                 this.TemporaryPowersWindowToolStripMenuItem.Click += TemporaryPowersWindowToolStripMenuItem_Click;
-
-                // cbAncillary events
-
-
-                // cbOrigin events
-
 
                 // cbPool1 events
                 this.cbPool1.DrawItem += cbPool1_DrawItem;
@@ -405,7 +398,204 @@ namespace Hero_Designer
                 this.tsViewTotals.Click += tsViewTotals_Click;
                 this.txtName.TextChanged += txtName_TextChanged;
             }
-            // finished with events
+        }
+
+        void frmMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MidsContext.Config.I9.DefaultIOLevel == 27)
+                    MidsContext.Config.I9.DefaultIOLevel = 49;
+                int height1 = 0;
+                int width1 = 0;
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
+                frmLoading iFrm = new frmLoading();
+                iFrm.Show();
+                this.myDataView = this.dvAnchored;
+                this.pnlGFX.BackColor = this.BackColor;
+                this.NoUpdate = true;
+                if (MidsContext.Config.CheckForUpdates)
+                {
+                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
+                    IMessager iLoadFrm = iFrm;
+                    int num = (int)clsXmlUpdate.UpdateCheck(true, ref iLoadFrm);
+                    iFrm = (frmLoading)iLoadFrm;
+                }
+                if (MidsContext.Config.FreshInstall)
+                {
+                    MidsContext.Config.CheckForUpdates = false;
+                    //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
+                    //+ MidsContext.AppVersion 
+                    //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MessageBoxButtons.YesNo | MessageBoxIcon.Question, "Welcome!") == DialogResult.Yes;
+                    MidsContext.Config.DefaultSaveFolder = String.Empty;
+                    MidsContext.Config.CreateDefaultSaveFolder();
+                    MidsContext.Config.FreshInstall = false;
+                }
+                string args = String.Join(" ", Environment.GetCommandLineArgs().Skip(1));
+                if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
+                {
+                    MessageBox.Show("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clsXMLUpdate.GoToCoHPlanner();
+                    Application.Exit();
+                    return;
+                }
+                if (args.IndexOf("MASTERMODE=YES", StringComparison.OrdinalIgnoreCase) > -1)
+                    MidsContext.Config.MasterMode = true;
+                MainModule.MidsController.LoadData(ref iFrm);
+                this.dvAnchored.VisibleSize = MidsContext.Config.DvState;
+                this.SetTitleBar(true);
+                this.NewToon(true, false);
+                this.dvAnchored.Init();
+                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
+                this.lblATLocked.Location = this.cbAT.Location;
+                this.lblATLocked.Size = this.cbAT.Size;
+                this.lblATLocked.Visible = false;
+                this.lblLocked0.Location = this.cbPool0.Location;
+                this.lblLocked0.Size = this.cbPool0.Size;
+                this.lblLocked0.Visible = false;
+                this.lblLocked1.Location = this.cbPool1.Location;
+                this.lblLocked1.Size = this.cbPool1.Size;
+                this.lblLocked1.Visible = false;
+                this.lblLocked2.Location = this.cbPool2.Location;
+                this.lblLocked2.Size = this.cbPool2.Size;
+                this.lblLocked2.Visible = false;
+                this.lblLocked3.Location = this.cbPool3.Location;
+                this.lblLocked3.Size = this.cbPool3.Size;
+                this.lblLocked3.Visible = false;
+                this.lblLockedAncillary.Location = this.cbAncillary.Location;
+                this.lblLockedAncillary.Size = this.cbAncillary.Size;
+                this.lblLockedAncillary.Visible = false;
+                if (this.pnlGFXFlow.Top + this.drawing.GetRequiredDrawingArea().Height < this.dvAnchored.Top + this.dvAnchored.Height + 48)
+                {
+                    int num1 = this.dvAnchored.Top + this.dvAnchored.Height + 48;
+                }
+                Size size1;
+                if (Screen.PrimaryScreen.WorkingArea.Width > MidsContext.Config.LastSize.Width & MidsContext.Config.LastSize.Width >= this.MinimumSize.Width)
+                {
+                    int hasMaxSize = this.MaximumSize.Width > 0 ? 1 : 0;
+                    size1 = this.MaximumSize;
+                    int hasValidLastSize = size1.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
+                    int hasValidBoth = hasMaxSize & hasValidLastSize;
+                    int width2 = Screen.PrimaryScreen.WorkingArea.Width;
+                    size1 = this.MaximumSize;
+                    int width3 = size1.Width;
+                    int needsWidthReduction = width2 > width3 ? 1 : 0;
+                    if ((hasValidBoth & needsWidthReduction) != 0)
+                    {
+                        size1 = this.MaximumSize;
+                        width1 = size1.Width;
+                    }
+                    else
+                        width1 = MidsContext.Config.LastSize.Width;
+                }
+                else if (Screen.PrimaryScreen.WorkingArea.Width <= MidsContext.Config.LastSize.Width)
+                {
+                    int width2 = Screen.PrimaryScreen.WorkingArea.Width;
+                    size1 = this.Size;
+                    int width3 = size1.Width;
+                    size1 = this.ClientSize;
+                    int width4 = size1.Width;
+                    int num2 = width3 - width4;
+                    width1 = width2 - num2;
+                }
+                Size size2 = this.MinimumSize;
+                if (Screen.PrimaryScreen.WorkingArea.Height > MidsContext.Config.LastSize.Height && MidsContext.Config.LastSize.Height >= size2.Height)
+                    height1 = MidsContext.Config.LastSize.Height;
+                else if (Screen.PrimaryScreen.WorkingArea.Height <= MidsContext.Config.LastSize.Height)
+                {
+                    size2 = this.Size;
+                    int height2 = Screen.PrimaryScreen.WorkingArea.Height;
+                    int height3 = size2.Height;
+                    size1 = this.ClientSize;
+                    int height4 = size1.Height;
+                    int num2 = height3 - height4;
+                    height1 = height2 - num2;
+                }
+                size2 = new System.Drawing.Size(width1, height1);
+                this.Size = size2;
+                this.tsView2Col.Checked = MidsContext.Config.Columns == 2;
+                this.tsView3Col.Checked = MidsContext.Config.Columns == 3;
+                this.tsView4Col.Checked = MidsContext.Config.Columns == 4;
+                this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
+                this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
+                this.tsIODefault.Text = "Default (" + (MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
+                this.SetDamageMenuCheckMarks();
+                this.ReArrange(true);
+                this.GetBestDamageValues();
+                this.dvAnchored.SetFontData();
+                this.dlgSave.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
+                this.dlgOpen.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
+                this.NoUpdate = false;
+                this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
+                this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
+                this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
+                this.ibPopup.Checked = MidsContext.Config.ShowPopup;
+                this.ibRecipe.Checked = MidsContext.Config.PopupRecipes;
+                string str2 = Path.Combine(Files.FPathAppData, Files.PatchRtf);
+                if (File.Exists(str2))
+                {
+                    int num2 = (int)new frmReadme(str2)
+                    {
+                        BtnClose = {
+                              IA = this.drawing.pImageAttributes,
+                              ImageOff = this.drawing.bxPower[2].Bitmap,
+                              ImageOn = this.drawing.bxPower[3].Bitmap
+                        }
+                    }.ShowDialog();
+                    var patchNotesTgt = Path.Combine(Files.FPathAppData, "patchnotes.rtf");
+                    if (File.Exists(patchNotesTgt))
+                        File.Delete(patchNotesTgt);
+                    File.Move(Path.Combine(Files.FPathAppData, Files.PatchRtf), patchNotesTgt);
+                }
+                if (args != string.Empty)
+                {
+                    string str3 = args.Replace("\"", string.Empty);
+                    if (File.Exists(str3.Trim()) && !this.DoOpen(str3.Trim()))
+                        this.PowerModified();
+                }
+                else if (MidsContext.Config.LoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
+                    this.PowerModified();
+                if (MidsContext.Config.MasterMode)
+                {
+                    this.tsAdvFreshInstall.Visible = true;
+                    this.tsAdvResetTips.Visible = true;
+                }
+                this.Show();
+                iFrm.Hide();
+                iFrm.Close();
+                iFrm = null;
+                this.Refresh();
+                this.dvAnchored.SetScreenBounds(this.ClientRectangle);
+                Point iLocation = new Point();
+                ref Point local = ref iLocation;
+                int left = this.llPrimary.Left;
+                int top = this.llPrimary.Top;
+                size1 = this.llPrimary.SizeNormal;
+                int height5 = size1.Height;
+                int y = top + height5 + 5;
+                local = new Point(left, y);
+                this.dvAnchored.SetLocation(iLocation, true);
+                this.PriSec_ExpandChanged(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occurred when loading the main form. Error: " + ex.Message, "OMIGODHAX");
+                throw;
+            }
+        }
+
+        I9Picker I9Picker
+        {
+            get
+            {
+                if (this.i9Picker.Height <= 235)
+                    this.i9Picker.Height = 315;
+                return this.i9Picker;
+            }
+            set
+            {
+                this.i9Picker = value;
+            }
         }
 
         internal void ChildRequestedRedraw()
@@ -490,7 +680,7 @@ namespace Hero_Designer
                             llPower.AddItem(iItem2);
                         }
                     }
-                    ListLabelV2.ListLabelItemV2 iItem = new ListLabelV2.ListLabelItemV2(Powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nID, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
+                    var iItem = new ListLabelV2.ListLabelItemV2(Powerset.DisplayName, ListLabelV2.LLItemState.Heading, Powerset.nID, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center);
                     llPower.AddItem(iItem);
                 }
                 int num1 = 0;
@@ -502,7 +692,7 @@ namespace Hero_Designer
                         message = "";
                         var targetPs = MainModule.MidsController.Toon.PowerState(Powerset.Powers[iIDXPower].PowerIndex, ref message);
                         var power = Powerset.Powers[iIDXPower];
-                        ListLabelV2.ListLabelItemV2 iItem = new ListLabelV2.ListLabelItemV2(
+                        var iItem = new ListLabelV2.ListLabelItemV2(
                             Powerset.Powers[iIDXPower].DisplayName,
                             targetPs,
                             Powerset.nID,
@@ -523,7 +713,7 @@ namespace Hero_Designer
 
         void AutoArrangeAllSlotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PowerEntry[] powerEntryArray = frmMain.DeepCopyPowerList();
+            PowerEntry[] powerEntryArray = DeepCopyPowerList();
             this.RearrangeAllSlotsInBuild(powerEntryArray, true);
             this.ShallowCopyPowerList(powerEntryArray);
             this.PowerModified();
@@ -531,11 +721,7 @@ namespace Hero_Designer
         }
 
         void cbAncillary_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbAncillary = this.cbAncillary;
-            frmMain.cbDrawItem(ref cbAncillary, Enums.ePowerSetType.Ancillary, e);
-            this.cbAncillary = cbAncillary;
-        }
+            => cbDrawItem(CbtAncillary.Value, Enums.ePowerSetType.Ancillary, e);
 
         void cbAncillary_MouseMove(object sender, MouseEventArgs e)
         {
@@ -562,19 +748,21 @@ namespace Hero_Designer
             SolidBrush solidBrush = new SolidBrush(SystemColors.ControlText);
             if (e.Index > -1)
             {
+                var cbAT = new ComboBoxT<Archetype>(this.cbAT);
                 int index = frmMain.ArchetypeIndirectToIndex(e.Index);
-                RectangleF destRect = new RectangleF((float)(e.Bounds.X + 1), (float)e.Bounds.Y, 16f, 16f);
-                RectangleF srcRect = new RectangleF((float)(index * 16), 0.0f, 16f, 16f);
-                e.Graphics.DrawImage((Image)I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+                RectangleF destRect = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
+                RectangleF srcRect = new RectangleF(index * 16, 0.0f, 16f, 16f);
+                e.Graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
                 };
-                RectangleF layoutRectangle = new RectangleF((float)e.Bounds.X + destRect.X + destRect.Width, (float)e.Bounds.Y, (float)e.Bounds.Width - (destRect.X + destRect.Width), (float)e.Bounds.Height);
-                e.Graphics.DrawString(Conversions.ToString(NewLateBinding.LateGet(this.cbAT.Items[e.Index], null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null)), e.Font, (Brush)solidBrush, layoutRectangle, format);
+                RectangleF layoutRectangle = new RectangleF(e.Bounds.X + destRect.X + destRect.Width, e.Bounds.Y, e.Bounds.Width - (destRect.X + destRect.Width), e.Bounds.Height);
+                e.Graphics.DrawString(cbAT[e.Index].DisplayName, e.Font, solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
         }
+
 
         void cbAT_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
@@ -582,7 +770,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || this.cbAT.SelectedIndex < 0)
                 return;
-            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, "");
+            this.ShowPopup(-1, CbtAT.Value.SelectedItem.Idx, cbAT.Bounds, "");
         }
 
         void cbAT_SelectedIndexChanged(object sender, EventArgs e)
@@ -596,7 +784,7 @@ namespace Hero_Designer
         }
 
         static void cbDrawItem(
-          ref ComboBox Target,
+          ComboBoxT<string> target,
           Enums.ePowerSetType SetType,
           DrawItemEventArgs e)
         {
@@ -612,23 +800,23 @@ namespace Hero_Designer
                 RectangleF destRect = new RectangleF();
                 ref RectangleF local1 = ref destRect;
                 Rectangle bounds = e.Bounds;
-                double num1 = (double)(bounds.X + 1);
+                double num1 = bounds.X + 1;
                 bounds = e.Bounds;
-                double y1 = (double)bounds.Y;
+                double y1 = bounds.Y;
                 local1 = new RectangleF((float)num1, (float)y1, 16f, 16f);
                 RectangleF srcRect = new RectangleF((float)(nId * 16), 0.0f, 16f, 16f);
                 if ((e.State & DrawItemState.ComboBoxEdit) > DrawItemState.None)
                 {
-                    double width = (double)e.Graphics.MeasureString(Conversions.ToString(Target.Items[e.Index]), e.Font).Width;
+                    double width = e.Graphics.MeasureString(target[e.Index], e.Font).Width;
                     bounds = e.Bounds;
                     double num2 = (double)(bounds.Width - 10);
                     if (width <= num2)
-                        e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+                        e.Graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                     else
                         destRect.Width = 0.0f;
                 }
                 else
-                    e.Graphics.DrawImage((Image)I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+                    e.Graphics.DrawImage(I9Gfx.Powersets.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
@@ -636,15 +824,15 @@ namespace Hero_Designer
                 RectangleF layoutRectangle = new RectangleF();
                 ref RectangleF local2 = ref layoutRectangle;
                 bounds = e.Bounds;
-                double num3 = (double)bounds.X + (double)destRect.X + (double)destRect.Width;
+                double num3 = bounds.X + destRect.X + destRect.Width;
                 bounds = e.Bounds;
-                double y2 = (double)bounds.Y;
+                double y2 = bounds.Y;
                 bounds = e.Bounds;
-                double width1 = (double)bounds.Width;
+                double width1 = bounds.Width;
                 bounds = e.Bounds;
-                double height = (double)bounds.Height;
+                double height = bounds.Height;
                 local2 = new RectangleF((float)num3, (float)y2, (float)width1, (float)height);
-                e.Graphics.DrawString(Conversions.ToString(Target.Items[e.Index]), e.Font, (Brush)solidBrush, layoutRectangle, format);
+                e.Graphics.DrawString(target[e.Index], e.Font, solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
         }
@@ -658,15 +846,16 @@ namespace Hero_Designer
             SolidBrush solidBrush = new SolidBrush(SystemColors.ControlText);
             if (e.Index > -1)
             {
+                var cmbOrigin = GetCbOrigin();
                 RectangleF destRect = new RectangleF((float)(e.Bounds.X + 1), (float)e.Bounds.Y, 16f, 16f);
-                RectangleF srcRect = new RectangleF((float)(DatabaseAPI.GetOriginIDByName(Conversions.ToString(this.cbOrigin.Items[e.Index])) * 16), 0.0f, 16f, 16f);
+                RectangleF srcRect = new RectangleF((float)(DatabaseAPI.GetOriginIDByName(cmbOrigin[e.Index]) * 16), 0.0f, 16f, 16f);
                 e.Graphics.DrawImage((Image)I9Gfx.Origins.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
                 };
                 RectangleF layoutRectangle = new RectangleF((float)e.Bounds.X + destRect.X + destRect.Width, (float)e.Bounds.Y, (float)e.Bounds.Width - (destRect.X + destRect.Width), (float)e.Bounds.Height);
-                e.Graphics.DrawString(Conversions.ToString(this.cbOrigin.Items[e.Index]), e.Font, (Brush)solidBrush, layoutRectangle, format);
+                e.Graphics.DrawString(cmbOrigin[e.Index], e.Font, (Brush)solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
         }
@@ -676,18 +865,14 @@ namespace Hero_Designer
             if (this.NoUpdate)
                 return;
             MidsContext.Character.Origin = this.cbOrigin.SelectedIndex;
-            I9Gfx.SetOrigin(Conversions.ToString(this.cbOrigin.SelectedItem));
+            I9Gfx.SetOrigin(this.cbOrigin.SelectedItem.ToStringOrNull());
             if (this.drawing != null)
                 this.DoRedraw();
             this.DisplayName();
         }
 
         void cbPool0_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbPool0 = this.cbPool0;
-            frmMain.cbDrawItem(ref cbPool0, Enums.ePowerSetType.Pool, e);
-            this.cbPool0 = cbPool0;
-        }
+            => cbDrawItem(this.CbtPool0.Value, Enums.ePowerSetType.Pool, e);
 
         void cbPool0_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
@@ -708,11 +893,7 @@ namespace Hero_Designer
         }
 
         void cbPool1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbPool1 = this.cbPool1;
-            frmMain.cbDrawItem(ref cbPool1, Enums.ePowerSetType.Pool, e);
-            this.cbPool1 = cbPool1;
-        }
+            => cbDrawItem(this.CbtPool1.Value, Enums.ePowerSetType.Pool, e);
 
         void cbPool1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -731,11 +912,7 @@ namespace Hero_Designer
         }
 
         void cbPool2_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbPool2 = this.cbPool2;
-            frmMain.cbDrawItem(ref cbPool2, Enums.ePowerSetType.Pool, e);
-            this.cbPool2 = cbPool2;
-        }
+            => cbDrawItem(this.CbtPool2.Value, Enums.ePowerSetType.Pool, e);
 
         void cbPool2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -754,11 +931,7 @@ namespace Hero_Designer
         }
 
         void cbPool3_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbPool3 = this.cbPool3;
-            frmMain.cbDrawItem(ref cbPool3, Enums.ePowerSetType.Pool, e);
-            this.cbPool3 = cbPool3;
-        }
+            => cbDrawItem(this.CbtPool3.Value, Enums.ePowerSetType.Pool, e);
 
         void cbPool3_MouseMove(object sender, MouseEventArgs e)
         {
@@ -777,11 +950,7 @@ namespace Hero_Designer
         }
 
         void cbPrimary_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbPrimary = this.cbPrimary;
-            frmMain.cbDrawItem(ref cbPrimary, Enums.ePowerSetType.Primary, e);
-            this.cbPrimary = cbPrimary;
-        }
+            => cbDrawItem(CbtPrimary.Value, Enums.ePowerSetType.Primary, e);
 
         void cbPrimary_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
@@ -802,11 +971,7 @@ namespace Hero_Designer
         }
 
         void cbSecondary_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox cbSecondary = this.cbSecondary;
-            frmMain.cbDrawItem(ref cbSecondary, Enums.ePowerSetType.Secondary, e);
-            this.cbSecondary = cbSecondary;
-        }
+            => cbDrawItem(CbtSecondary.Value, Enums.ePowerSetType.Secondary, e);
 
         void cbSecondary_MouseLeave(object sender, EventArgs e) => this.HidePopup();
 
@@ -895,14 +1060,14 @@ namespace Hero_Designer
                 if (MainModule.MidsController.Toon.Locked & this.FileModified)
                 {
                     this.FloatTop(false);
-                    MsgBoxResult msgBoxResult = Interaction.MsgBox("Do you wish to save your hero/villain data before quitting?", MsgBoxStyle.YesNoCancel | MsgBoxStyle.Question, "Question");
+                    DialogResult msgBoxResult = MessageBox.Show("Do you wish to save your hero/villain data before quitting?", "Question", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     this.FloatTop(true);
                     int num;
                     switch (msgBoxResult)
                     {
-                        case MsgBoxResult.Cancel:
+                        case DialogResult.Cancel:
                             return true;
-                        case MsgBoxResult.Yes:
+                        case DialogResult.Yes:
                             num = this.doSave() ? 1 : 0;
                             break;
                         default:
@@ -916,41 +1081,42 @@ namespace Hero_Designer
             }
         }
 
-        bool ComboCheckAT(ref Archetype[] playableClasses)
+        bool ComboCheckAT(Archetype[] playableClasses)
         {
-            bool flag;
-            if (this.cbAT.Items.Count != playableClasses.Length)
+            var cbtAT = this.CbtAT.Value;
+            if (cbtAT.Count != playableClasses.Length)
             {
-                flag = true;
+                return true;
             }
             else
             {
                 int num = playableClasses.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), playableClasses[index].Idx, false))
+                    //if (cbtAT[index].Idx != Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.Items[index], null, "Idx", new object[0], null, (System.Type[])null, null), playableClasses[index].Idx, false))
+                    if (cbtAT[index].Idx != playableClasses[index].Idx)
                         return true;
                 }
-                flag = false;
+                return false;
             }
-            return flag;
         }
 
         bool ComboCheckOrigin()
         {
             bool flag;
-            if (this.cbOrigin.Items.Count != MidsContext.Character.Archetype.Origin.Length)
+            var cbtOrigin = this.GetCbOrigin();
+            if (cbtOrigin.Count != MidsContext.Character.Archetype.Origin.Length)
             {
                 flag = true;
             }
             else
             {
-                if (this.cbOrigin.Items.Count <= 1)
+                if (cbtOrigin.Count <= 1)
                 {
                     int num = MidsContext.Character.Archetype.Origin.Length - 1;
                     for (int index = 0; index <= num; ++index)
                     {
-                        if (Conversions.ToString(this.cbOrigin.Items[index]) != MidsContext.Character.Archetype.Origin[index])
+                        if (cbtOrigin[index] != MidsContext.Character.Archetype.Origin[index])
                             return true;
                     }
                 }
@@ -959,7 +1125,7 @@ namespace Hero_Designer
             return flag;
         }
 
-        static bool ComboCheckPool(ref ComboBox iCB, Enums.ePowerSetType iSetType)
+        static bool ComboCheckPool(ComboBoxT<string> iCB, Enums.ePowerSetType iSetType)
         {
             bool flag1 = false;
             bool flag2 = false;
@@ -973,31 +1139,29 @@ namespace Hero_Designer
                 int num = iCB.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (Conversions.ToString(iCB.Items[index]) != powersetNames[index])
+                    if (iCB[index] != powersetNames[index])
                     {
                         flag2 = true;
                         break;
                     }
                 }
             }
-            bool flag3;
             if (!flag2)
             {
-                flag3 = false;
+                return false;
             }
             else
             {
                 iCB.BeginUpdate();
-                iCB.Items.Clear();
-                iCB.Items.AddRange((object[])powersetNames);
+                iCB.Clear();
+                iCB.AddRange(powersetNames);
                 iCB.EndUpdate();
-                flag3 = flag1;
+                return flag1;
             }
-            return flag3;
         }
 
         static bool ComboCheckPS(
-          ref ComboBox iCB,
+          ComboBoxT<string> iCB,
           Enums.PowersetType iSetID,
           Enums.ePowerSetType iSetType)
         {
@@ -1009,7 +1173,7 @@ namespace Hero_Designer
             int num = iCB.Items.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (Conversions.ToString(iCB.Items[index]) != powersetNames[index])
+                if (iCB[index] != powersetNames[index])
                 {
                     flag2 = true;
                     break;
@@ -1018,8 +1182,8 @@ namespace Hero_Designer
             if (flag2)
             {
                 iCB.BeginUpdate();
-                iCB.Items.Clear();
-                iCB.Items.AddRange((object[])powersetNames);
+                iCB.Clear();
+                iCB.AddRange(powersetNames);
                 iCB.EndUpdate();
             }
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, iSetType);
@@ -1032,15 +1196,15 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
+                var msgBoxResult = MessageBox.Show("Current hero/villain data will be discarded, are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 this.FloatTop(true);
-                if (msgBoxResult == MsgBoxResult.No)
+                if (msgBoxResult == DialogResult.No)
                     return;
             }
             this.FloatTop(false);
             this.FileModified = false;
             bool flag = false;
-            if (Interaction.MsgBox("Copy the build data on the forum to the clipboard. When that's done, click on OK.", MsgBoxStyle.OkCancel | MsgBoxStyle.Information, "Standing By") != MsgBoxResult.Ok)
+            if (MessageBox.Show("Copy the build data on the forum to the clipboard. When that's done, click on OK.", "Standing By", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) != DialogResult.OK)
                 return;
             string str = Clipboard.GetDataObject().GetData("System.String", true).ToString();
             this.NewToon(true, false);
@@ -1048,13 +1212,13 @@ namespace Hero_Designer
             {
                 if (str.Length < 1)
                 {
-                    int num = (int)Interaction.MsgBox("No data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
+                    int num = (int)MessageBox.Show("No data. Please check that you copied the build data from the forum correctly and that it's a valid format.", "Forum Import", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    if (str.Contains("MxDz") | str.Contains("MxDu"))
+                    if (str.Contains("MxDz") || str.Contains("MxDu"))
                     {
-                        Stream mStream = (Stream)new MemoryStream(new ASCIIEncoding().GetBytes(str));
+                        Stream mStream = new MemoryStream(new ASCIIEncoding().GetBytes(str));
                         flag = MainModule.MidsController.Toon.Load("", ref mStream);
                     }
                     else if (str.Contains("Character Profile:") || str.Contains("build.txt"))
@@ -1088,9 +1252,7 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                ProjectData.SetProjectError(ex);
                 this.FloatTop(true);
-                ProjectData.ClearProjectError();
             }
         }
 
@@ -1099,9 +1261,9 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
+                DialogResult msgBoxResult = MessageBox.Show("Current hero/villain data will be discarded, are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 this.FloatTop(true);
-                if (msgBoxResult == MsgBoxResult.No)
+                if (msgBoxResult == DialogResult.No)
                     return;
             }
             this.DataViewLocked = false;
@@ -1154,16 +1316,16 @@ namespace Hero_Designer
             string str2 = "";
             int level = MidsContext.Character.Level;
             if (!(MidsContext.Character.CurrentBuild.TotalSlotsAvailable - MidsContext.Character.CurrentBuild.SlotsPlaced < 1 & MidsContext.Character.CurrentBuild.LastPower + 1 - MidsContext.Character.CurrentBuild.PowersPlaced < 1) && MidsContext.Character.Level > 0)
-                str1 = " (Placing " + Conversions.ToString(MidsContext.Character.Level + 1) + ")";
+                str1 = " (Placing " + (MidsContext.Character.Level + 1) + ")";
             this.SetTitleBar(MainModule.MidsController.Toon.IsHero());
             string str3 = MidsContext.Character.Name + ": ";
             if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp & str1 != "")
-                str3 = str3 + "Level " + Conversions.ToString(level) + str1 + " ";
+                str3 = str3 + "Level " + level + str1 + " ";
             string str4 = str3 + MidsContext.Character.Archetype.Origin[MidsContext.Character.Origin] + " " + MidsContext.Character.Archetype.DisplayName;
             if (MainModule.MidsController.Toon.Locked)
                 str4 = str4 + " (" + MidsContext.Character.Powersets[0].DisplayName + " / " + MidsContext.Character.Powersets[1].DisplayName + ")" + str2;
             if (MidsContext.Config.ExempLow < MidsContext.Config.ExempHigh)
-                str4 = str4 + " - Exemped from " + Conversions.ToString(MidsContext.Config.ExempHigh) + " to " + Conversions.ToString(MidsContext.Config.ExempLow);
+                str4 = str4 + " - Exemped from " + MidsContext.Config.ExempHigh + " to " + MidsContext.Config.ExempLow;
             this.lblHero.Text = str4;
             if (!(this.txtName.Text != MidsContext.Character.Name))
                 return;
@@ -1869,7 +2031,7 @@ namespace Hero_Designer
         void frmMain_Closed(object sender, EventArgs e)
         {
             MidsContext.Config.LastSize = this.Size;
-            MidsContext.Config.SaveConfig(MyApplication.GetSerializer());
+            MidsContext.Config.SaveConfig(My.MyApplication.GetSerializer());
         }
 
         void frmMain_Closing(object sender, FormClosingEventArgs e)
@@ -1886,190 +2048,6 @@ namespace Hero_Designer
             this.SetTitleBar(MainModule.MidsController.Toon.IsHero());
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        void frmMain_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MidsContext.Config.I9.DefaultIOLevel == 27)
-                    MidsContext.Config.I9.DefaultIOLevel = 49;
-                int height1 = 0;
-                int width1 = 0;
-                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
-                frmLoading iFrm = new frmLoading();
-                iFrm.Show();
-                this.myDataView = this.dvAnchored;
-                this.pnlGFX.BackColor = this.BackColor;
-                this.NoUpdate = true;
-                if (MidsContext.Config.CheckForUpdates)
-                {
-                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    IMessager iLoadFrm = iFrm;
-                    int num = (int)clsXmlUpdate.UpdateCheck(true, ref iLoadFrm);
-                    iFrm = (frmLoading)iLoadFrm;
-                }
-                if (MidsContext.Config.FreshInstall)
-                {
-                    MidsContext.Config.CheckForUpdates = false;
-                    //Interaction.MsgBox(("Welcome to Mid's Reborn Hero Designer "
-                    //+ MidsContext.AppVersion 
-                    //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Welcome!") == MsgBoxResult.Yes;
-                    MidsContext.Config.DefaultSaveFolder = String.Empty;
-                    MidsContext.Config.CreateDefaultSaveFolder();
-                    MidsContext.Config.FreshInstall = false;
-                }
-                string str1 = Interaction.Command();
-                if (str1.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
-                {
-                    Interaction.MsgBox("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", MsgBoxStyle.Information, "Recovery Mode");
-                    clsXMLUpdate.GoToCoHPlanner();
-                    ProjectData.EndApp();
-                }
-                if (str1.IndexOf("MASTERMODE=YES", StringComparison.OrdinalIgnoreCase) > -1)
-                    MidsContext.Config.MasterMode = true;
-                MainModule.MidsController.LoadData(ref iFrm);
-                this.dvAnchored.VisibleSize = MidsContext.Config.DvState;
-                this.SetTitleBar(true);
-                this.NewToon(true, false);
-                this.dvAnchored.Init();
-                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
-                this.lblATLocked.Location = this.cbAT.Location;
-                this.lblATLocked.Size = this.cbAT.Size;
-                this.lblATLocked.Visible = false;
-                this.lblLocked0.Location = this.cbPool0.Location;
-                this.lblLocked0.Size = this.cbPool0.Size;
-                this.lblLocked0.Visible = false;
-                this.lblLocked1.Location = this.cbPool1.Location;
-                this.lblLocked1.Size = this.cbPool1.Size;
-                this.lblLocked1.Visible = false;
-                this.lblLocked2.Location = this.cbPool2.Location;
-                this.lblLocked2.Size = this.cbPool2.Size;
-                this.lblLocked2.Visible = false;
-                this.lblLocked3.Location = this.cbPool3.Location;
-                this.lblLocked3.Size = this.cbPool3.Size;
-                this.lblLocked3.Visible = false;
-                this.lblLockedAncillary.Location = this.cbAncillary.Location;
-                this.lblLockedAncillary.Size = this.cbAncillary.Size;
-                this.lblLockedAncillary.Visible = false;
-                if (this.pnlGFXFlow.Top + this.drawing.GetRequiredDrawingArea().Height < this.dvAnchored.Top + this.dvAnchored.Height + 48)
-                {
-                    int num1 = this.dvAnchored.Top + this.dvAnchored.Height + 48;
-                }
-                Size size1;
-                if (Screen.PrimaryScreen.WorkingArea.Width > MidsContext.Config.LastSize.Width & MidsContext.Config.LastSize.Width >= this.MinimumSize.Width)
-                {
-                    int hasMaxSize = this.MaximumSize.Width > 0 ? 1 : 0;
-                    size1 = this.MaximumSize;
-                    int hasValidLastSize = size1.Width - MidsContext.Config.LastSize.Width < 32 ? 1 : 0;
-                    int hasValidBoth = hasMaxSize & hasValidLastSize;
-                    int width2 = Screen.PrimaryScreen.WorkingArea.Width;
-                    size1 = this.MaximumSize;
-                    int width3 = size1.Width;
-                    int needsWidthReduction = width2 > width3 ? 1 : 0;
-                    if ((hasValidBoth & needsWidthReduction) != 0)
-                    {
-                        size1 = this.MaximumSize;
-                        width1 = size1.Width;
-                    }
-                    else
-                        width1 = MidsContext.Config.LastSize.Width;
-                }
-                else if (Screen.PrimaryScreen.WorkingArea.Width <= MidsContext.Config.LastSize.Width)
-                {
-                    int width2 = Screen.PrimaryScreen.WorkingArea.Width;
-                    size1 = this.Size;
-                    int width3 = size1.Width;
-                    size1 = this.ClientSize;
-                    int width4 = size1.Width;
-                    int num2 = width3 - width4;
-                    width1 = width2 - num2;
-                }
-                Size size2 = this.MinimumSize;
-                if (Screen.PrimaryScreen.WorkingArea.Height > MidsContext.Config.LastSize.Height & MidsContext.Config.LastSize.Height >= size2.Height)
-                    height1 = MidsContext.Config.LastSize.Height;
-                else if (Screen.PrimaryScreen.WorkingArea.Height <= MidsContext.Config.LastSize.Height)
-                {
-                    size2 = this.Size;
-                    int height2 = Screen.PrimaryScreen.WorkingArea.Height;
-                    int height3 = size2.Height;
-                    size1 = this.ClientSize;
-                    int height4 = size1.Height;
-                    int num2 = height3 - height4;
-                    height1 = height2 - num2;
-                }
-                size2 = new System.Drawing.Size(width1, height1);
-                this.Size = size2;
-                this.tsView2Col.Checked = MidsContext.Config.Columns == 2;
-                this.tsView3Col.Checked = MidsContext.Config.Columns == 3;
-                this.tsView4Col.Checked = MidsContext.Config.Columns == 4;
-                this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
-                this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
-                this.tsIODefault.Text = "Default (" + Conversions.ToString(MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
-                this.SetDamageMenuCheckMarks();
-                this.ReArrange(true);
-                this.GetBestDamageValues();
-                this.dvAnchored.SetFontData();
-                this.dlgSave.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
-                this.dlgOpen.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
-                this.NoUpdate = false;
-                this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
-                this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
-                this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
-                this.ibPopup.Checked = MidsContext.Config.ShowPopup;
-                this.ibRecipe.Checked = MidsContext.Config.PopupRecipes;
-                string str2 = Path.Combine(Files.FPathAppData, Files.PatchRtf);
-                if (File.Exists(str2))
-                {
-                    int num2 = (int)new frmReadme(str2)
-                    {
-                        BtnClose = {
-                              IA = this.drawing.pImageAttributes,
-                              ImageOff = this.drawing.bxPower[2].Bitmap,
-                              ImageOn = this.drawing.bxPower[3].Bitmap
-                        }
-                    }.ShowDialog();
-                    var patchNotesTgt = Path.Combine(Files.FPathAppData, "patchnotes.rtf");
-                    if (File.Exists(patchNotesTgt))
-                        File.Delete(patchNotesTgt);
-                    File.Move(Path.Combine(Files.FPathAppData, Files.PatchRtf), patchNotesTgt);
-                }
-                if (str1 != string.Empty)
-                {
-                    string str3 = str1.Replace("\"", string.Empty);
-                    if (File.Exists(str3.Trim()) && !this.DoOpen(str3.Trim()))
-                        this.PowerModified();
-                }
-                else if (MidsContext.Config.LoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
-                    this.PowerModified();
-                if (MidsContext.Config.MasterMode)
-                {
-                    this.tsAdvFreshInstall.Visible = true;
-                    this.tsAdvResetTips.Visible = true;
-                }
-                this.Show();
-                iFrm.Hide();
-                iFrm.Close();
-                iFrm = null;
-                this.Refresh();
-                this.dvAnchored.SetScreenBounds(this.ClientRectangle);
-                Point iLocation = new Point();
-                ref Point local = ref iLocation;
-                int left = this.llPrimary.Left;
-                int top = this.llPrimary.Top;
-                size1 = this.llPrimary.SizeNormal;
-                int height5 = size1.Height;
-                int y = top + height5 + 5;
-                local = new Point(left, y);
-                this.dvAnchored.SetLocation(iLocation, true);
-                this.PriSec_ExpandChanged(true);
-            }
-            catch (Exception ex)
-            {
-                ProjectData.SetProjectError(ex);
-                MessageBox.Show("An error has occurred when loading the main form. Error: " + ex.Message, "OMIGODHAX");
-                throw;
-            }
-        }
 
         void frmMain_Maximize(object sender, EventArgs e)
         {
@@ -2429,7 +2407,7 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null || this.cbAT.SelectedIndex < 0)
                 return;
-            this.ShowPopup(-1, Conversions.ToInteger(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null)), this.cbAT.Bounds, string.Empty);
+            this.ShowPopup(-1, this.CbtAT.Value.SelectedItem.Idx, this.cbAT.Bounds, string.Empty);
         }
 
         void lblATLocked_Paint(object sender, PaintEventArgs e)
@@ -2492,7 +2470,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon == null || MidsContext.Character.Powersets[7] == null)
                 return;
             string ExtraString = "This is a pool powerset. This powerset can be changed by removing all of the powers selected from it.";
-            this.ShowPopup(MidsContext.Character.Powersets[7].nID, MidsContext.Character.Archetype.Idx, this.cbAncillary.Bounds, ExtraString);
+            this.ShowPopup(MidsContext.Character.Powersets[7].nID, MidsContext.Character.Archetype.Idx, this.CbtAncillary.Value.Bounds, ExtraString);
         }
 
         void lblLockedAncillary_Paint(object sender, PaintEventArgs e) => this.MiniPaint(ref e, Enums.PowersetType.Ancillary);
@@ -2800,7 +2778,7 @@ namespace Hero_Designer
                 this.dragFinishSlot = this.drawing.WhichEnh(this.drawing.ScaleUp(iValue1), this.drawing.ScaleUp(iValue2));
                 if (this.dragFinishSlot == 0)
                 {
-                    Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
+                    MessageBox.Show(this, "You cannot change the level of any power's automatic slot.", null, MessageBoxButtons.OK);
                 }
                 else
                     this.SlotLevelSwap(this.dragStartPower, this.dragStartSlot, this.dragFinishPower, this.dragFinishSlot);
@@ -2909,7 +2887,7 @@ namespace Hero_Designer
             {
                 if (this.dragStartSlot == 0)
                 {
-                    int num = (int)Interaction.MsgBox("You cannot change the level of any power's automatic slot.", MsgBoxStyle.OkOnly, null);
+                    MessageBox.Show(this, "You cannot change the level of any power's automatic slot.", null, MessageBoxButtons.OK);
                     this.pnlGFX.AllowDrop = false;
                 }
                 else
@@ -3150,8 +3128,8 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Complete)
                 this.drawing.HighlightSlot(-1, false);
             int[] slotCounts = MainModule.MidsController.Toon.GetSlotCounts();
-            this.ibAccolade.TextOff = slotCounts[0] <= 0 ? "No slots left" : Conversions.ToString(slotCounts[0]) + " slots to go";
-            this.ibAccolade.TextOn = slotCounts[1] <= 0 ? "No slots placed" : Conversions.ToString(slotCounts[1]) + " slots placed";
+            this.ibAccolade.TextOff = slotCounts[0] <= 0 ? "No slots left" : slotCounts[0] + " slots to go";
+            this.ibAccolade.TextOn = slotCounts[1] <= 0 ? "No slots placed" : slotCounts[1] + " slots placed";
             if (index > -1 & index <= MidsContext.Character.CurrentBuild.Powers.Count)
                 MidsContext.Character.RequestedLevel = MidsContext.Character.CurrentBuild.Powers[index].Level;
             MidsContext.Character.Validate();
@@ -3169,28 +3147,24 @@ namespace Hero_Designer
             {
                 if (this.ddsa[0] == (short)0)
                 {
-                    if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
+                    var canOverride = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level;
+                    var (result, remember) = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
+                    this.ddsa[0] = (short)result;
+                    if (canOverride)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
-                        this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (this.ddsa[0] == (short)2)
-                            this.ddsa[0] = (short)3;
+                        if (this.ddsa[0] == 2)
+                            this.ddsa[0] = 3;
                     }
-                    else
-                    {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                        this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    }
-                    if (MyProject.Forms.frmOptionListDlg.remember == true)
+                    if (remember == true)
                         MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                 }
-                if (this.ddsa[0] == (short)1)
+                if (this.ddsa[0] == 1)
                     return 0;
-                if (this.ddsa[0] == (short)2)
+                if (this.ddsa[0] == 2)
                 {
                     if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                     {
-                        int num = (int)Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
+                        MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                     int num1 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3232,14 +3206,14 @@ namespace Hero_Designer
             {
                 if (this.ddsa[1] == (short)0)
                 {
-                    MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
-                    this.ddsa[1] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.remember == true)
+                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
+                    this.ddsa[1] = (short)result;
+                    if (remember == true)
                         MidsContext.Config.DragDropScenarioAction[1] = this.ddsa[1];
                 }
-                if (this.ddsa[1] == (short)1)
+                if (this.ddsa[1] == 1)
                     return 0;
-                if (this.ddsa[1] == (short)2)
+                if (this.ddsa[1] == 2)
                 {
                     int num1 = pow[0] + 1;
                     int index;
@@ -3253,7 +3227,7 @@ namespace Hero_Designer
                     }
                     if (pow[1] != index)
                     {
-                        Interaction.MsgBox("None of the powers can be shifted, so the power was not moved.", MsgBoxStyle.OkOnly, null);
+                        MessageBox.Show("None of the powers can be shifted, so the power was not moved.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                 }
@@ -3286,9 +3260,10 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[7] == 0)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
-                        this.ddsa[7] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        var frmOptionListDlg = new frmOptionListDlg();
+                        frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
+                        this.ddsa[7] = (short)frmOptionListDlg.DialogResult;
+                        if (frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[7] = this.ddsa[7];
                     }
                     if (this.ddsa[7] == 1)
@@ -3307,9 +3282,10 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[10] == 0)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
-                        this.ddsa[10] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        var frmOptionListDlg = new frmOptionListDlg();
+                        frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
+                        this.ddsa[10] = (short)frmOptionListDlg.DialogResult;
+                        if (frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[10] = this.ddsa[10];
                     }
                     if (this.ddsa[10] == 1)
@@ -3343,7 +3319,7 @@ namespace Hero_Designer
                         --num8;
                         break;
                     case 0:
-                        Interaction.MsgBox("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", MsgBoxStyle.OkOnly, null);
+                        MessageBox.Show("Move canceled by user. If you didn't click Cancel, check that none of your Shift options are set to Cancel by default.", null, MessageBoxButtons.OK);
                         return 0;
                     case 1:
                         if (flag1)
@@ -3431,9 +3407,10 @@ namespace Hero_Designer
                             case 0:
                                 if (this.ddsa[4] == 0)
                                 {
-                                    MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
-                                    this.ddsa[4] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                    if (MyProject.Forms.frmOptionListDlg.remember == true)
+                                    var frmOptionListDlg = new frmOptionListDlg();
+                                    frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
+                                    this.ddsa[4] = (short)frmOptionListDlg.DialogResult;
+                                    if (frmOptionListDlg.remember == true)
                                         MidsContext.Config.DragDropScenarioAction[4] = this.ddsa[4];
                                 }
                                 if (this.ddsa[4] == 1)
@@ -3468,19 +3445,20 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[0] == 0)
                     {
+                        var frmOptionListDlg = new frmOptionListDlg();
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
+                            frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
+                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
                             if (this.ddsa[0] == 2)
                                 this.ddsa[0] = 3;
                         }
                         else
                         {
-                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
+                            frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
+                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
                         }
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        if (frmOptionListDlg.remember == true)
                             MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                     }
                     if (this.ddsa[0] == 1)
@@ -3489,7 +3467,7 @@ namespace Hero_Designer
                     {
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            Interaction.MsgBox("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", MsgBoxStyle.OkOnly, null);
+                            MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                             return 0;
                         }
                         int num3 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
@@ -3510,9 +3488,9 @@ namespace Hero_Designer
                     {
                         if (this.ddsa[12] == 0)
                         {
-                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
-                            this.ddsa[12] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                            if (MyProject.Forms.frmOptionListDlg.remember == true)
+                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
+                            this.ddsa[12] = (short)result;
+                            if (remember == true)
                                 MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
                         }
                         if (this.ddsa[12] == 1)
@@ -3529,9 +3507,9 @@ namespace Hero_Designer
                     {
                         if (this.ddsa[11] == 0)
                         {
-                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
-                            this.ddsa[11] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                            if (MyProject.Forms.frmOptionListDlg.remember == true)
+                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
+                            this.ddsa[11] = (short)result;
+                            if (remember == true)
                                 MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
                         }
                         if (this.ddsa[11] == 1)
@@ -3546,9 +3524,9 @@ namespace Hero_Designer
                 {
                     if (mode < 2 & this.ddsa[6] == 0)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[6] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[6] = (short)result;
+                        if (remember == true)
                             MidsContext.Config.DragDropScenarioAction[6] = this.ddsa[6];
                     }
                     num6 = 6;
@@ -3557,9 +3535,9 @@ namespace Hero_Designer
                 {
                     if (mode < 2 & this.ddsa[3] == 0)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[3] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[3] = (short)result;
+                        if (remember == true)
                             MidsContext.Config.DragDropScenarioAction[3] = this.ddsa[3];
                     }
                     num6 = 3;
@@ -3568,9 +3546,9 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[9] == 0)
                     {
-                        MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[9] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                        if (MyProject.Forms.frmOptionListDlg.remember == true)
+                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[9] = (short)result;
+                        if (remember == true)
                             MidsContext.Config.DragDropScenarioAction[9] = this.ddsa[9];
                     }
                     num6 = 9;
@@ -3581,7 +3559,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)2 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)2)
+                    if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 2 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 2)
                     {
                         int index;
                         int num2;
@@ -3595,10 +3573,11 @@ namespace Hero_Designer
                             index = pow[0];
                             num2 = pow[1];
                         }
-                        int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
-                        int integer2 = Conversions.ToInteger(Interaction.IIf(num2 == 23, index, 23));
-                        while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 | tp[index].SlotCount > 4 & integer2 != 23)
-                            tp[index].Slots = (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
+                        //int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
+                        int integer1 = num2 == 22 ? index : index == 22 ? num2 : 22;
+                        int integer2 = num2 == 23 ? index : 23;
+                        while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 || tp[index].SlotCount > 4 && integer2 != 23)
+                            tp[index].Slots = tp[index].Slots.RemoveLast(); // (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
                     }
                     else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)3)
                     {
@@ -3645,23 +3624,23 @@ namespace Hero_Designer
                                     {
                                         if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)0)
                                         {
-                                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[2] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
+                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[2] = (short)result;
+                                            if (remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[2] = this.ddsa[2];
                                         }
                                         else if (mode == 0 & index3 == 1 & this.ddsa[5] == (short)0)
                                         {
-                                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[5] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
+                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[5] = (short)result;
+                                            if (remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[5] = this.ddsa[5];
                                         }
                                         else if (mode == 2 & this.ddsa[8] == (short)0)
                                         {
-                                            MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[8] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                                            if (MyProject.Forms.frmOptionListDlg.remember == true)
+                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[8] = (short)result;
+                                            if (remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
                                         }
                                         if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
@@ -3755,82 +3734,77 @@ namespace Hero_Designer
         Rectangle raGetPoolRect(int Index)
         {
             Label label;
-            object Instance;
+            ListLabelV2 ll;
             switch (Index)
             {
                 case 0:
                     label = this.lblPool1;
-                    Instance = this.llPool0;
+                    ll = this.llPool0;
                     break;
                 case 1:
                     label = this.lblPool2;
-                    Instance = this.llPool1;
+                    ll = this.llPool1;
                     break;
                 case 2:
                     label = this.lblPool3;
-                    Instance = this.llPool2;
+                    ll = this.llPool2;
                     break;
                 case 3:
                     label = this.lblPool4;
-                    Instance = this.llPool3;
+                    ll = this.llPool3;
                     break;
                 case 4:
                     label = this.lblEpic;
-                    Instance = this.llAncillary;
+                    ll = this.llAncillary;
                     break;
                 default:
                     return new Rectangle(0, 0, 10, 10);
             }
-            return new Rectangle(label.Left, label.Top, Conversions.ToInteger(NewLateBinding.LateGet(Instance, null, "Width", new object[0], (string[])null, (System.Type[])null, (bool[])null)), Conversions.ToInteger(Operators.SubtractObject(Operators.AddObject(NewLateBinding.LateGet(Instance, null, "Top", new object[0], (string[])null, (System.Type[])null, (bool[])null), NewLateBinding.LateGet(Instance, null, "Height", new object[0], (string[])null, (System.Type[])null, (bool[])null)), label.Top)));
+            var height = ll.Top - label.Top + ll.Height;
+            return new Rectangle(label.Left, label.Top, ll.Width, height);
         }
 
-        int raGetTop()
-        {
-            return MainModule.MidsController.Toon != null ? 4 + this.llPrimary.Top + this.raGreater(this.llPrimary.Height, this.llSecondary.Height) : this.llPrimary.Top + this.llPrimary.Height;
-        }
+        int raGetTop() => MainModule.MidsController.Toon != null ? 4 + this.llPrimary.Top + this.raGreater(this.llPrimary.Height, this.llSecondary.Height) : this.llPrimary.Top + this.llPrimary.Height;
 
-        int raGreater(int iVal1, int iVal2)
-        {
-            return iVal1 <= iVal2 ? iVal2 : iVal1;
-        }
+        int raGreater(int iVal1, int iVal2) => iVal1 <= iVal2 ? iVal2 : iVal1;
 
         void raMovePool(int Index, int X, int Y)
         {
             Label label1;
             ComboBox comboBox;
             Label label2;
-            object Instance;
+            ListLabelV2 ll;
             switch (Index)
             {
                 case 0:
                     label1 = this.lblPool1;
                     comboBox = this.cbPool0;
                     label2 = this.lblLocked0;
-                    Instance = this.llPool0;
+                    ll = this.llPool0;
                     break;
                 case 1:
                     label1 = this.lblPool2;
                     comboBox = this.cbPool1;
                     label2 = this.lblLocked1;
-                    Instance = this.llPool1;
+                    ll = this.llPool1;
                     break;
                 case 2:
                     label1 = this.lblPool3;
                     comboBox = this.cbPool2;
                     label2 = this.lblLocked2;
-                    Instance = this.llPool2;
+                    ll = this.llPool2;
                     break;
                 case 3:
                     label1 = this.lblPool4;
                     comboBox = this.cbPool3;
                     label2 = this.lblLocked3;
-                    Instance = this.llPool3;
+                    ll = this.llPool3;
                     break;
                 case 4:
                     label1 = this.lblEpic;
                     comboBox = this.cbAncillary;
                     label2 = this.lblLockedAncillary;
-                    Instance = this.llAncillary;
+                    ll = this.llAncillary;
                     break;
                 default:
                     return;
@@ -3843,10 +3817,7 @@ namespace Hero_Designer
             comboBox.Location = point;
             label2.Location = point;
             point.Y += comboBox.Height;
-            NewLateBinding.LateSet(Instance, null, "Location", new object[1]
-            {
-         point
-            }, (string[])null, (System.Type[])null);
+            ll.Location = point;
         }
 
         bool raToFloat()
@@ -4050,7 +4021,7 @@ namespace Hero_Designer
             }
             if (!(flag1 & notifyUser))
                 return;
-            int num6 = (int)Interaction.MsgBox("The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", MsgBoxStyle.OkOnly, null);
+            MessageBox.Show("The current arrangement of powers and their slots is impossible in-game. Invalid slots have been darkened and marked as level 51.", null, MessageBoxButtons.OK);
         }
 
         void RedrawUnderPopup(Rectangle RectRedraw)
@@ -4123,12 +4094,7 @@ namespace Hero_Designer
         }
 
         void RemoveSlotFromTempList(PowerEntry tp, int slotIDX)
-        {
-            int num = tp.SlotCount - 2;
-            for (int index = slotIDX; index <= num; ++index)
-                tp.Slots[index] = tp.Slots[index + 1];
-            tp.Slots = (SlotEntry[])Utils.CopyArray(tp.Slots, (Array)new SlotEntry[tp.SlotCount - 2 + 1]);
-        }
+            => tp.Slots = tp.Slots.RemoveIndex(slotIDX);
 
         void SetAncilPoolHeight()
         {
@@ -4381,15 +4347,15 @@ namespace Hero_Designer
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
             {
-                this.Text = str2 + " (Master Mode) v" + Strings.Format(MainModule.MidsController.HeroDesignerVersion, "#0.0#######") + " (DB: I" + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format(DatabaseAPI.Database.Date, " dd / MMM / yyyy @ hh:mm tt") + ")";
+                this.Text = str2 + " (Master Mode) v" + MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######") + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
             }
             else
             {
-                string str3 = Strings.Format(MainModule.MidsController.HeroDesignerVersion, "#0.0#######");
+                string str3 = MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######");
                 if (str3.Length > 5)
                     str3 = str3.Substring(0, 5);
                 string str4 = str3.Trim("0".ToCharArray());
-                this.Text = str2 + " v" + str4 + " (Database Issue: " + Conversions.ToString(DatabaseAPI.Database.Issue) + " - Updated: " + Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yy") + ")";
+                this.Text = str2 + " v" + str4 + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
             }
         }
 
@@ -4568,9 +4534,9 @@ namespace Hero_Designer
             {
                 if (this.ddsa[13] == (short)0)
                 {
-                    MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[13] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.remember == true)
+                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
+                    this.ddsa[13] = (short)result;
+                    if (remember == true)
                         MidsContext.Config.DragDropScenarioAction[13] = this.ddsa[13];
                 }
                 if (this.ddsa[13] == (short)1)
@@ -4580,9 +4546,9 @@ namespace Hero_Designer
             {
                 if (this.ddsa[14] == (short)0)
                 {
-                    MyProject.Forms.frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[14] = (short)MyProject.Forms.frmOptionListDlg.DialogResult;
-                    if (MyProject.Forms.frmOptionListDlg.remember == true)
+                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
+                    this.ddsa[14] = (short)result;
+                    if (remember == true)
                         MidsContext.Config.DragDropScenarioAction[14] = this.ddsa[14];
                 }
                 if (this.ddsa[14] == (short)1)
@@ -4733,13 +4699,13 @@ namespace Hero_Designer
             {
                 MidsContext.Config.FreshInstall = false;
                 MidsContext.Config.SaveFolderChecked = true;
-                int num = (int)Interaction.MsgBox("Fresh Install flag has been unset!", MsgBoxStyle.OkOnly, null);
+                int num = (int)MessageBox.Show("Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
             }
             else
             {
                 MidsContext.Config.FreshInstall = true;
                 MidsContext.Config.SaveFolderChecked = false;
-                int num = (int)Interaction.MsgBox("Fresh Install flag has been set!", MsgBoxStyle.OkOnly, null);
+                int num = (int)MessageBox.Show("Fresh Install flag has been set!", null, MessageBoxButtons.OK);
             }
             this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
             this.FloatTop(true);
@@ -4761,18 +4727,14 @@ namespace Hero_Designer
                 pri = MidsContext.Character.Powersets[0].DisplayName;
                 sec = MidsContext.Character.Powersets[1].DisplayName;
             }
-            catch (Exception ex)
-            {
-                ProjectData.SetProjectError(ex);
-                ProjectData.ClearProjectError();
-            }
+            catch (Exception ex) { }
             clsXMLUpdate.BugReport(at, pri, sec, string.Empty);
         }
 
         void tsClearAllEnh_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            if (Interaction.MsgBox("Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
+            if (MessageBox.Show("Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int num1 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 for (int index1 = 0; index1 <= num1; ++index1)
@@ -4798,7 +4760,7 @@ namespace Hero_Designer
                 this.UpdateOtherFormsFonts();
             }
             frmCalcOpt.Dispose();
-            this.tsIODefault.Text = "Default (" + Conversions.ToString(MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
+            this.tsIODefault.Text = "Default (" + (MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
             this.FloatTop(true);
         }
 
@@ -4960,23 +4922,22 @@ namespace Hero_Designer
         {
             this.FloatTop(false);
             MidsContext.Config.LongExport = false;
-            frmForum frmForum1 = new frmForum();
+            var frmForum1 = new frmForum();
             frmForum1.BackColor = this.BackColor;
-            frmForum frmForum2 = frmForum1;
-            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
-            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
-            int num = (int)frmForum2.ShowDialog((IWin32Window)this);
+            frmForum1.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum1.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum1.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum1.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum1.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum1.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum1.ShowDialog(this);
             this.FloatTop(true);
         }
 
         void tsExportDataLink_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
-            int num = (int)Interaction.MsgBox("The data link has been placed on the clipboard and is ready to paste.", MsgBoxStyle.Information, "Export Done");
+            MessageBox.Show("The data link has been placed on the clipboard and is ready to paste.", "Export Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void tsExportLong_Click(object sender, EventArgs e)
@@ -4992,7 +4953,7 @@ namespace Hero_Designer
             frmForum2.IBExport.IA = this.drawing.pImageAttributes;
             frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
             frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
-            int num = (int)frmForum2.ShowDialog((IWin32Window)this);
+            frmForum2.ShowDialog(this);
             this.FloatTop(true);
             MidsContext.Config.LongExport = false;
         }
@@ -5007,9 +4968,9 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon.Locked & this.FileModified)
             {
                 this.FloatTop(false);
-                MsgBoxResult msgBoxResult = Interaction.MsgBox("Current hero/villain data will be discarded, are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Question");
+                DialogResult msgBoxResult = MessageBox.Show("Current hero/villain data will be discarded, are you sure?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 this.FloatTop(true);
-                if (msgBoxResult == MsgBoxResult.No)
+                if (msgBoxResult == DialogResult.No)
                     return;
             }
             this.FloatTop(false);
@@ -5019,24 +4980,16 @@ namespace Hero_Designer
         }
 
         void tsFilePrint_Click(object sender, EventArgs e)
-        {
-            int num = (int)new frmPrint().ShowDialog((IWin32Window)this);
-        }
+            => new frmPrint().ShowDialog(this);
 
         void tsFileQuit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+            => this.Close();
 
         void tsFileSave_Click(object sender, EventArgs e)
-        {
-            this.doSave();
-        }
+            => this.doSave();
 
         void tsFileSaveAs_Click(object sender, EventArgs e)
-        {
-            this.doSaveAs();
-        }
+            => this.doSaveAs();
 
         void tsFlipAllEnh_Click(object sender, EventArgs e)
         {
@@ -5051,20 +5004,20 @@ namespace Hero_Designer
             frmReadme frmReadme = new frmReadme(OS.GetApplicationPath() + "readme.rtf")
             {
                 BtnClose = {
-          IA = this.drawing.pImageAttributes,
-          ImageOff = this.drawing.bxPower[2].Bitmap,
-          ImageOn = this.drawing.bxPower[3].Bitmap
-        }
+                      IA = this.drawing.pImageAttributes,
+                      ImageOff = this.drawing.bxPower[2].Bitmap,
+                      ImageOn = this.drawing.bxPower[3].Bitmap
+                }
             };
             this.FloatTop(false);
-            int num = (int)frmReadme.ShowDialog((IWin32Window)this);
+            frmReadme.ShowDialog((IWin32Window)this);
             this.FloatTop(true);
         }
 
         void tsHelperLong_Click(object sender, EventArgs e)
         {
             frmMain iParent = this;
-            int num = (int)new FrmInputLevel(ref iParent, true, false).ShowDialog((IWin32Window)this);
+            new FrmInputLevel(ref iParent, true, false).ShowDialog((IWin32Window)this);
         }
 
         void tsHelperLong2_Click(object sender, EventArgs e)
@@ -5134,19 +5087,19 @@ namespace Hero_Designer
                 frmReadme frmReadme = new frmReadme(str)
                 {
                     BtnClose = {
-            IA = this.drawing.pImageAttributes,
-            ImageOff = this.drawing.bxPower[2].Bitmap,
-            ImageOn = this.drawing.bxPower[3].Bitmap
-          }
+                        IA = this.drawing.pImageAttributes,
+                        ImageOff = this.drawing.bxPower[2].Bitmap,
+                        ImageOn = this.drawing.bxPower[3].Bitmap
+                    }
                 };
                 this.FloatTop(false);
-                int num = (int)frmReadme.ShowDialog((IWin32Window)this);
+                frmReadme.ShowDialog((IWin32Window)this);
                 this.FloatTop(true);
             }
             else
             {
                 this.FloatTop(false);
-                int num = (int)Interaction.MsgBox("No recent patches have been installed.", MsgBoxStyle.Information, "No Notes");
+                MessageBox.Show("No recent patches have been installed.", "No Notes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.FloatTop(true);
             }
         }
@@ -5164,13 +5117,13 @@ namespace Hero_Designer
         void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            if (Interaction.MsgBox("Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
+            if (MessageBox.Show("Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
                     if (MidsContext.Character.CurrentBuild.Powers[index].SlotCount > 1)
-                        MidsContext.Character.CurrentBuild.Powers[index].Slots = (SlotEntry[])Utils.CopyArray(MidsContext.Character.CurrentBuild.Powers[index].Slots, (Array)new SlotEntry[1]);
+                        MidsContext.Character.CurrentBuild.Powers[index].Slots = MidsContext.Character.CurrentBuild.Powers[index].Slots.Take(1).ToArray();
                 }
                 this.DoRedraw();
                 MidsContext.Character.ResetLevel();
@@ -5208,11 +5161,11 @@ namespace Hero_Designer
             clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                Interaction.MsgBox("No Updates.", MsgBoxStyle.Information, "Update Check");
+                MessageBox.Show("No Updates.", "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && Interaction.MsgBox("Exit Now?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Update Downloaded") == MsgBoxResult.Yes && !this.CloseCommand())
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
             {
-                ProjectData.EndApp();
+                Application.Exit();
             }
             this.RefreshInfo();
         }
@@ -5404,59 +5357,48 @@ namespace Hero_Designer
         void UpdateControls(bool ForceComplete = false)
         {
             this.NoUpdate = true;
-            Archetype[] all = Array.FindAll<Archetype>(DatabaseAPI.Database.Classes, new Predicate<Archetype>(this.GetPlayableClasses));
-            if (this.ComboCheckAT(ref all))
+            Archetype[] all = Array.FindAll(DatabaseAPI.Database.Classes, new Predicate<Archetype>(this.GetPlayableClasses));
+            var cbAT = new ComboBoxT<Archetype>(this.cbAT);
+            if (this.ComboCheckAT(all))
             {
-                this.cbAT.BeginUpdate();
-                this.cbAT.Items.Clear();
-                this.cbAT.Items.AddRange((object[])all);
-                this.cbAT.EndUpdate();
+                cbAT.BeginUpdate();
+                cbAT.Clear();
+                cbAT.AddRange(all);
+                cbAT.EndUpdate();
             }
-            if (this.cbAT.SelectedItem == null)
-                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
-            else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Idx", new object[0], (string[])null, (System.Type[])null, (bool[])null), MidsContext.Character.Archetype.Idx, false))
-                this.cbAT.SelectedItem = MidsContext.Character.Archetype;
+            if (cbAT.SelectedItem == null)
+                cbAT.SelectedItem = MidsContext.Character.Archetype;
+            //else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(cbAT.SelectedItem, null, "Idx", new object[0], null, (System.Type[])null, null), MidsContext.Character.Archetype.Idx, false))
+            else if (cbAT.SelectedItem.Idx != MidsContext.Character.Archetype.Idx)
+                cbAT.SelectedItem = MidsContext.Character.Archetype;
             this.ibPvX.Checked = !MidsContext.Config.Inc.PvE;
+            var cbOrigin = new ComboBoxT<string>(this.cbOrigin);
             if (this.ComboCheckOrigin())
             {
-                this.cbOrigin.BeginUpdate();
-                this.cbOrigin.Items.Clear();
-                this.cbOrigin.Items.AddRange((object[])NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "Origin", new object[0], (string[])null, (System.Type[])null, (bool[])null));
-                this.cbOrigin.EndUpdate();
+                cbOrigin.BeginUpdate();
+                cbOrigin.Clear();
+                cbOrigin.AddRange(cbAT.SelectedItem.Origin);
+                cbOrigin.EndUpdate();
             }
-            if (this.cbOrigin.SelectedIndex != MidsContext.Character.Origin)
+            if (cbOrigin.SelectedIndex != MidsContext.Character.Origin)
             {
-                if (MidsContext.Character.Origin < this.cbOrigin.Items.Count)
-                    this.cbOrigin.SelectedIndex = MidsContext.Character.Origin;
+                if (MidsContext.Character.Origin < cbOrigin.Items.Count)
+                    cbOrigin.SelectedIndex = MidsContext.Character.Origin;
                 else
-                    this.cbOrigin.SelectedIndex = 0;
-                I9Gfx.SetOrigin(Conversions.ToString(this.cbOrigin.SelectedItem));
+                    cbOrigin.SelectedIndex = 0;
+                I9Gfx.SetOrigin(cbOrigin.SelectedItem);
             }
-            ComboBox iCB = this.cbPrimary;
-            frmMain.ComboCheckPS(ref iCB, Enums.PowersetType.Primary, Enums.ePowerSetType.Primary);
-            this.cbPrimary = iCB;
-            iCB = this.cbSecondary;
-            frmMain.ComboCheckPS(ref iCB, Enums.PowersetType.Secondary, Enums.ePowerSetType.Secondary);
-            this.cbSecondary = iCB;
+            frmMain.ComboCheckPS(CbtPrimary.Value, Enums.PowersetType.Primary, Enums.ePowerSetType.Primary);
+            frmMain.ComboCheckPS(CbtSecondary.Value, Enums.PowersetType.Secondary, Enums.ePowerSetType.Secondary);
             if (MidsContext.Character.Powersets[0].nIDLinkSecondary > -1)
                 this.cbSecondary.Enabled = false;
             else
                 this.cbSecondary.Enabled = true;
-            iCB = this.cbPool0;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
-            this.cbPool0 = iCB;
-            iCB = this.cbPool1;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
-            this.cbPool1 = iCB;
-            iCB = this.cbPool2;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
-            this.cbPool2 = iCB;
-            iCB = this.cbPool3;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Pool);
-            this.cbPool3 = iCB;
-            iCB = this.cbAncillary;
-            frmMain.ComboCheckPool(ref iCB, Enums.ePowerSetType.Ancillary);
-            this.cbAncillary = iCB;
+            frmMain.ComboCheckPool(CbtPool0.Value, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(CbtPool1.Value, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(CbtPool2.Value, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(CbtPool3.Value, Enums.ePowerSetType.Pool);
+            frmMain.ComboCheckPool(CbtAncillary.Value, Enums.ePowerSetType.Ancillary);
             this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3].nID);
             this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4].nID);
             this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5].nID);
@@ -5472,13 +5414,13 @@ namespace Hero_Designer
                 this.cbAncillary.Enabled = true;
             this.UpdatePowerLists();
             this.DisplayName();
-            this.cbAT.Enabled = !MainModule.MidsController.Toon.Locked;
+            cbAT.Enabled = !MainModule.MidsController.Toon.Locked;
             this.cbPool0.Enabled = !MainModule.MidsController.Toon.PoolLocked[0];
             this.cbPool1.Enabled = !MainModule.MidsController.Toon.PoolLocked[1];
             this.cbPool2.Enabled = !MainModule.MidsController.Toon.PoolLocked[2];
             this.cbPool3.Enabled = !MainModule.MidsController.Toon.PoolLocked[3];
             this.cbAncillary.Enabled = !MainModule.MidsController.Toon.PoolLocked[4];
-            this.lblATLocked.Text = Conversions.ToString(NewLateBinding.LateGet(this.cbAT.SelectedItem, null, "DisplayName", new object[0], (string[])null, (System.Type[])null, (bool[])null));
+            this.lblATLocked.Text = cbAT.SelectedItem.DisplayName;
             this.lblATLocked.Visible = MainModule.MidsController.Toon.Locked;
             this.lblLocked0.Location = this.cbPool0.Location;
             this.lblLocked0.Size = this.cbPool0.Size;
@@ -5562,7 +5504,7 @@ namespace Hero_Designer
             {
                 int slotsRemaining = MainModule.MidsController.Toon.SlotsRemaining;
                 ePowerState = Enums.ePowerState.Open;
-                iStr = Conversions.ToString(slotsRemaining) + " Slot";
+                iStr = slotsRemaining + " Slot";
                 if (slotsRemaining > 1)
                     iStr += "s";
             }
@@ -5606,7 +5548,7 @@ namespace Hero_Designer
                 this.tsDynamic.Checked = false;
                 this.tsLevelUp.Checked = true;
             }
-            this.ibMode.TextOff = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? (!MainModule.MidsController.Toon.Complete ? "Level-Up: " + Conversions.ToString(MidsContext.Character.Level + 1) : "Level-Up") : "Dynamic";
+            this.ibMode.TextOff = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? (!MainModule.MidsController.Toon.Complete ? "Level-Up: " + (MidsContext.Character.Level + 1) : "Level-Up") : "Dynamic";
         }
 
         void UpdateLLColours(ref ListLabelV2 iList)
@@ -5936,7 +5878,7 @@ namespace Hero_Designer
                                         i9Slot.Enh = DatabaseAPI.GetEnhancementByUIDName(iName);
                                         if (i9Slot.Enh == -1)
                                         {
-                                            int num3 = (int)Interaction.MsgBox(("Error with: " + str1), MsgBoxStyle.OkOnly, null);
+                                            int num3 = (int)MessageBox.Show(("Error with: " + str1), null, MessageBoxButtons.OK);
                                             i9Slot.Enh = 0;
                                         }
                                     }
@@ -6019,7 +5961,7 @@ namespace Hero_Designer
             }
             catch
             {
-                int num = (int)Interaction.MsgBox(("Invalid Import Data, Blame Sai!\nError: " + str1), MsgBoxStyle.OkOnly, null);
+                int num = (int)MessageBox.Show(("Invalid Import Data, Blame Sai!\nError: " + str1), null, MessageBoxButtons.OK);
             }
         }
 
