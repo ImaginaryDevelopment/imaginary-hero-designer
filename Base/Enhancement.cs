@@ -297,7 +297,7 @@ public class Enhancement : IEnhancement
             else
                 effect = new Base.Data_Classes.Effect(reader)
                 {
-                    isEnahncementEffect = true
+                    isEnhancementEffect = true
                 };
             local.FX = (IEffect)effect;
         }

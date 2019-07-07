@@ -668,7 +668,7 @@ namespace Base.Data_Classes
                     float num2 = effect.Mag;
                     if (MidsContext.Config.DamageMath.Calculate == ConfigData.EDamageMath.Average)
                         num2 *= effect.Probability;
-                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnhancementEffect)
                         num2 = (float)((double)num2 * (double)this.ActivatePeriod / 10.0);
                     if (effect.Ticks > 1)
                     {
@@ -725,7 +725,7 @@ namespace Base.Data_Classes
                     float num1 = effect.Mag;
                     if (MidsContext.Config.DamageMath.Calculate == ConfigData.EDamageMath.Average)
                         num1 *= effect.Probability;
-                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnhancementEffect)
                         num1 = (float)((double)num1 * (double)this.ActivatePeriod / 10.0);
                     switch (MidsContext.Config.DamageMath.ReturnValue)
                     {
@@ -822,7 +822,7 @@ namespace Base.Data_Classes
                         numArray1[index1] += 10;
                     if (this.Effects[index1].ToWho == Enums.eToWho.Target & (double)this.Effects[index1].Mag > 0.0 & this.Effects[index1].Absorbed_Effect)
                         numArray1[index1] += 10;
-                    if (this.Effects[index1].isEnahncementEffect)
+                    if (this.Effects[index1].isEnhancementEffect)
                         numArray1[index1] += -30;
                     if (this.Effects[index1].VariableModified)
                         numArray1[index1] += 30;
@@ -1017,7 +1017,7 @@ namespace Base.Data_Classes
                         flag5 = true;
                     if (this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance & flag3)
                         flag5 = true;
-                    if ((double)Math.Abs(this.Effects[index].Probability - num2) < 0.01 & (double)this.Effects[index].Duration > (double)num3 & !this.Effects[index].isEnahncementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
+                    if ((double)Math.Abs(this.Effects[index].Probability - num2) < 0.01 & (double)this.Effects[index].Duration > (double)num3 & !this.Effects[index].isEnhancementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
                     {
                         if (eEffectType == Enums.eEffectType.Mez & this.Effects[index].EffectType == Enums.eEffectType.Mez)
                         {
@@ -1185,7 +1185,7 @@ namespace Base.Data_Classes
                 if (this.Effects[iIndex].CanInclude() && this.Effects[iIndex].EffectType == iEffect & this.Effects[iIndex].EffectClass != Enums.eEffectClass.Ignored && this.Effects[iIndex].PvXInclude() && ((double)this.Effects[iIndex].DelayedTime <= 5.0 | includeDelayed) & this.Effects[iIndex].DamageType == iSub)
                 {
                     float mag = this.Effects[iIndex].Mag;
-                    if (this.PowerType == Enums.ePowerType.Toggle & this.Effects[iIndex].isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle & this.Effects[iIndex].isEnhancementEffect)
                         mag /= 10f;
                     shortFx.Add(iIndex, mag);
                 }
@@ -1931,7 +1931,7 @@ namespace Base.Data_Classes
                             this.Effects[index2].ToWho = this.Effects[array1[index1]].ToWho;
                         if (this.Effects[index2].ToWho == Enums.eToWho.All && (this.EntitiesAffected & Enums.eEntity.Caster) != Enums.eEntity.Caster)
                             this.Effects[index2].ToWho = Enums.eToWho.Target;
-                        this.Effects[index2].isEnahncementEffect = this.Effects[array1[index1]].isEnahncementEffect;
+                        this.Effects[index2].isEnhancementEffect = this.Effects[array1[index1]].isEnhancementEffect;
                         if ((double)this.Effects[array1[index1]].Probability < 1.0)
                             this.Effects[index2].Probability = this.Effects[array1[index1]].Probability * this.Effects[index2].Probability;
                     }

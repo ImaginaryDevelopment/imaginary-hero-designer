@@ -76,7 +76,7 @@ namespace Hero_Designer
             effect[index].Multiplier = 1f;
             effect[index].Schedule = Enums.eSchedule.A;
             effect[index].FX = (IEffect)frmPowerEffect.myFX.Clone();
-            effect[index].FX.isEnahncementEffect = true;
+            effect[index].FX.isEnhancementEffect = true;
             this.ListSelectedEffects();
             this.lstSelected.SelectedIndex = this.lstSelected.Items.Count - 1;
         }
