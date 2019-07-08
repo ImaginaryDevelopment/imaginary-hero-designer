@@ -1,7 +1,9 @@
 ﻿module Compression
 
-open System.IO
 open System.IO.Packaging
+
+type Stream = System.IO.Stream
+
 let copyInto (outstream : Stream,stream : Stream) =
     let bufferLen : int = 4096
     let buffer : byte array =
@@ -35,23 +37,27 @@ let copyInto (outstream : Stream,stream : Stream) =
 
 open ICSharpCode.SharpZipLib.Core
 open ICSharpCode.SharpZipLib.Zip
+open Helpers.Files
 
 // https://github.com/icsharpcode/SharpZipLib/wiki/Zip-Samples#unpack-a-zip-with-full-control-over-the-operation
 let decompress archivefn outfolder =
     let mutable zf:ZipFile= null
     try
-        let fs = File.OpenRead archivefn
+        let fs = openRead archivefn
         zf <- new ZipFile(fs)
         zf
         |> Seq.cast<ZipEntry>
         |> Seq.iter(fun zipEntry ->
             let buffer = Array.zeroCreate 4096
             let zipStream = zf.GetInputStream zipEntry
-            let fullZipToPath = Path.Combine(outfolder, zipEntry.Name)
-            let dirname = Path.GetDirectoryName fullZipToPath
-            if dirname.Length > 0 then Directory.CreateDirectory dirname |> ignore<DirectoryInfo>
-            use sw = File.Create fullZipToPath
-            StreamUtils.Copy(zipStream,sw,buffer)
+
+            let fullZipToPath = combineFp outfolder (FilePath zipEntry.Name)
+            match fullZipToPath.raw |> getDirectoryName  with
+            | None -> failwithf "Failed to read parent directory name of %s" fullZipToPath.raw
+            | Some ((DirPath dirname) as dp) ->
+                if dirname.Length > 0 then createDirectory dp |> ignore
+                use sw = createFile fullZipToPath
+                StreamUtils.Copy(zipStream,sw,buffer)
             ()
         )
     finally
@@ -61,31 +67,42 @@ let decompress archivefn outfolder =
     ()
 // https://github.com/icsharpcode/SharpZipLib/wiki/Zip-Samples#create-a-zip-with-full-control-over-contents
 // why doesn't the offset change based on depth?
-let compressFolder (path, zs:ZipOutputStream, folderoffset) =
-    let rec compressfolder path =
-        Directory.GetFiles path
-        |> Seq.iter(fun fn ->
-            let fi = FileInfo(fn)
-            let entryname = fn.Substring folderoffset |> ZipEntry.CleanName
-            let newentry = ZipEntry entryname
-            newentry.DateTime <- fi.LastWriteTime
-            newentry.Size <- fi.Length
-            zs.PutNextEntry newentry
-            let buffer = Array.zeroCreate 4096
-            use sr = File.OpenRead fn
-            StreamUtils.Copy(sr,zs,buffer)
-            zs.CloseEntry()
-        )
-        Directory.GetDirectories path
-        |> Seq.iter  compressfolder
-    compressfolder path
+//[<Struct>]
+//type CompressionResult =
+//    |UncompressedSize of int64
+let compressFolder (zs:ZipOutputStream, folderoffset) =
+    let rec compressfolder path : int64 =
+        let totalFSz =
+            getFiles path
+            |> Seq.sumBy(fun fn ->
+                let fi = getFileInfo fn
+                let sz = fi.Length
+                let entryname = fn.raw.Substring folderoffset |> ZipEntry.CleanName
+                let newentry = ZipEntry entryname
+                newentry.DateTime <- fi.LastWriteTime
+                newentry.Size <- fi.Length
+                zs.PutNextEntry newentry
+                let buffer = Array.zeroCreate 4096
+                use sr = openRead fn
+                StreamUtils.Copy(sr,zs,buffer)
+                zs.CloseEntry()
+                sz
+            )
+        getDirectories path
+        |> Seq.sumBy compressfolder
+        |> (+) totalFSz
+    fun dir ->
+        let unc =compressfolder dir
+        {Metafile.UncompressedSize=unc}
 
 
-let compress (outpath,foldername:string) =
-    let fsOut = File.Create outpath
+let compress (targetZipPath,src) =
+    let foldername = match src with DirPath dp -> dp
+    let fsOut = createFile targetZipPath
     use zs = new ZipOutputStream(fsOut)
     zs.SetLevel 4
     let folderoffset = foldername.Length + if foldername.EndsWith "\\" then 0 else 1
-    compressFolder(foldername,zs, folderoffset)
+    let sz = compressFolder (zs, folderoffset) (DirPath foldername)
     zs.IsStreamOwner <- true
     zs.Close()
+    sz

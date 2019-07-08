@@ -1,6 +1,7 @@
 ﻿open System
 open System.Windows
 open System.IO
+open Helpers.Files
 
 // Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
@@ -10,14 +11,16 @@ type Model =
     SelectedFolder: string
     Error: string
     Completion: int
+    InstallerSize: string
     }
 
 module Elm =
-    let init () =
+    let init installerSize () =
       { Count = 0
         StepSize = 1
         Completion = 0
         Error = null
+        InstallerSize = installerSize
         SelectedFolder = null}
 
 type Msg =
@@ -45,19 +48,20 @@ module Updates =
         | SetStepSize x -> { m with StepSize = x }
         | SelectFolder -> selectFolder m
         | Cancel ->
+            Application.Current.Shutdown(0)
             m
         | Install ->
             let inputPath = Path.Combine(Environment.CurrentDirectory, HeroPackaging.packageFilename)
             if not <| File.Exists inputPath then
                 {m with Error = sprintf "Unable to locate installer files at %s" inputPath}
             else
-                Compression.decompress inputPath m.SelectedFolder
+                Compression.decompress (FilePath inputPath) (DirPath m.SelectedFolder)
                 let exePath = Path.Combine(m.SelectedFolder, "Hero Designer.exe")
                 if File.Exists exePath then
                     MessageBox.Show("Installation completed") |> ignore
                     // add shortcut(s)
                     // launch app
-                    System.Diagnostics.Process.Start(exePath)
+                    System.Diagnostics.Process.Start(exePath) |> ignore<System.Diagnostics.Process>
                     quit()
                     m
                 else
@@ -78,6 +82,7 @@ module View =
         "Install" |> Binding.cmd(fun _ -> Install)
         "Progress" |> Binding.oneWay (fun m -> float m.Completion)
         "Error" |> Binding.oneWay (fun m -> m.Error)
+        "InstallerSize" |> Binding.oneWay (fun m -> m.InstallerSize)
       ]
     let getResourceByName name f =
         let ass = typeof<Msg>.Assembly
@@ -99,12 +104,27 @@ open Elmish
 [<EntryPoint;STAThread>]
 let main argv =
     printfn "%A" argv
-    HeroPackaging.autoCreate()
-    |> ignore<string option>
-    let result =
-        Program.mkSimple Elm.init Updates.update View.bindings
-        //|> Program.runWindow (Main())
-        |> Elmish.WPF.Program.runWindow (View.getWindow())
-    printfn "Exit Code will be %i" result
-    //Console.ReadLine() |> ignore
-    result
+    match HeroPackaging.autoCreate() with
+    | HeroPackaging.AutoCreateResult.Created m
+    | HeroPackaging.AutoCreateResult.NotCreated m ->
+        Ok m
+    
+    | HeroPackaging.CouldNotCreateOrFind e -> Error e
+    |> function
+        |Ok m ->
+            let init =
+                HeroPackaging.formatSize m.Meta.UncompressedSize
+                |> Elm.init
+            let result =
+                Program.mkSimple init Updates.update View.bindings
+                //|> Program.runWindow (Main())
+                |> Elmish.WPF.Program.runWindow (View.getWindow())
+            printfn "Exit Code will be %i" result
+            //Console.ReadLine() |> ignore
+            result
+        |Error e ->
+            MessageBox.Show(e,"Instaler failed to initialize", MessageBoxButton.OK, MessageBoxImage.Error)
+            |> ignore
+            1
+
+        
