@@ -276,10 +276,7 @@ namespace Hero_Designer
         }
 
         static string CapString(string iString, int capLength)
-
-        {
-            return iString.Length >= capLength ? iString.Substring(0, capLength) : iString;
-        }
+            => iString.Length >= capLength ? iString.Substring(0, capLength) : iString;
 
         public void Clear()
         {
@@ -337,10 +334,7 @@ namespace Hero_Designer
         }
 
         void DataView_BackColorChanged(object sender, EventArgs e)
-
-        {
-            this.SetBackColor();
-        }
+            => this.SetBackColor();
 
         void DataView_Load(object sender, EventArgs e)
         {
@@ -386,20 +380,20 @@ namespace Hero_Designer
                 {
                     Enums.eEnhance eEnhance = Enums.eEnhance.None;
                     Enums.eMez eMez = Enums.eMez.None;
-                    float[] numArray1 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] numArray2 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] numArray3 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    Enums.eSchedule[] schedule1 = new Enums.eSchedule[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    Enums.eSchedule[] schedule2 = new Enums.eSchedule[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    Enums.eSchedule[] schedule3 = new Enums.eSchedule[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] afterED1 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] afterED2 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] afterED3 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] numArray4 = new float[Enum.GetValues(eMez.GetType()).Length - 1 + 1];
-                    Enums.eSchedule[] schedule4 = new Enums.eSchedule[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    float[] afterED4 = new float[Enum.GetValues(eEnhance.GetType()).Length - 1 + 1];
-                    int num1 = numArray1.Length - 1;
-                    for (int index = 0; index <= num1; ++index)
+                    var eEnhs = Enum.GetValues(eEnhance.GetType()).Length;
+                    float[] numArray1 = new float[eEnhs];
+                    float[] numArray2 = new float[eEnhs];
+                    float[] numArray3 = new float[eEnhs];
+                    Enums.eSchedule[] schedule1 = new Enums.eSchedule[eEnhs];
+                    Enums.eSchedule[] schedule2 = new Enums.eSchedule[eEnhs];
+                    Enums.eSchedule[] schedule3 = new Enums.eSchedule[eEnhs];
+                    float[] afterED1 = new float[eEnhs];
+                    float[] afterED2 = new float[eEnhs];
+                    float[] afterED3 = new float[eEnhs];
+                    float[] numArray4 = new float[Enum.GetValues(eMez.GetType()).Length];
+                    Enums.eSchedule[] schedule4 = new Enums.eSchedule[eEnhs];
+                    float[] afterED4 = new float[eEnhs];
+                    for (int index = 0; index <= numArray1.Length - 1; ++index)
                     {
                         numArray1[index] = 0.0f;
                         numArray2[index] = 0.0f;
@@ -798,7 +792,7 @@ namespace Hero_Designer
                                 rankedEffect.Name = this.ShortStr(Enums.GetMezName((Enums.eMezShort)this.pBase.Effects[rankedEffects[ID]].MezType), Enums.GetMezNameShort((Enums.eMezShort)this.pBase.Effects[rankedEffects[ID]].MezType));
                         }
                         this.info_DataList.AddItem(rankedEffect);
-                        if (this.pBase.Effects[rankedEffects[ID]].isEnahncementEffect)
+                        if (this.pBase.Effects[rankedEffects[ID]].isEnhancementEffect)
                             this.info_DataList.SetUnique();
                         --num3;
                     }
@@ -1340,7 +1334,7 @@ namespace Hero_Designer
                             iList.AddItem(new ctlPairedList.ItemPair("Defiance:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, false, false, this.pEnh.Effects[shortFxArray[index1].Index[0]].BuildEffectString(false, "Damage Buff (Defiance)", false, false, false)));
                         else
                             iList.AddItem(new ctlPairedList.ItemPair("DmgBuff:", Utilities.FixDP(shortFxArray[index1].Value[0]) + "%", false, this.pEnh.Effects[shortFxArray[index1].Index[0]].SpecialCase == Enums.eSpecialCase.Combo, false, Power.SplitFXGroupTip(ref shortFxArray[index1], ref this.pEnh, false)));
-                        if (this.pEnh.Effects[shortFxArray[index1].Index[0]].isEnahncementEffect)
+                        if (this.pEnh.Effects[shortFxArray[index1].Index[0]].isEnhancementEffect)
                             iList.SetUnique();
                     }
                 }
@@ -1404,7 +1398,7 @@ namespace Hero_Designer
                                 if (str4.IndexOf("Jump", StringComparison.OrdinalIgnoreCase) <= -1)
                                 {
                                     iList.AddItem(new ctlPairedList.ItemPair("+" + str4 + ":", Conversions.ToString(effectMagSum10.Value[index]) + "%" + str5, false, false, false, this.pEnh.Effects[effectMagSum10.Index[index]].BuildEffectString(false, "", false, false, false)));
-                                    if (this.pEnh.Effects[effectMagSum10.Index[index]].isEnahncementEffect)
+                                    if (this.pEnh.Effects[effectMagSum10.Index[index]].isEnhancementEffect)
                                         iList.SetUnique();
                                 }
                             }
@@ -1424,7 +1418,7 @@ namespace Hero_Designer
                                     if (this.pEnh.Effects[effectMagSum10.Index[iIndex]].ToWho == Enums.eToWho.Self)
                                         str4 = " (Self)";
                                     iList.AddItem(new ctlPairedList.ItemPair("+RechRdx:", Conversions.ToString(effectMagSum10.Value[iIndex]) + "%" + str4, false, false, false, this.pEnh.Effects[effectMagSum10.Index[iIndex]].BuildEffectString(false, "", false, false, false)));
-                                    if (this.pEnh.Effects[effectMagSum10.Index[iIndex]].isEnahncementEffect)
+                                    if (this.pEnh.Effects[effectMagSum10.Index[iIndex]].isEnhancementEffect)
                                         iList.SetUnique();
                                     effectMagSum10.Remove(iIndex);
                                 }
@@ -1525,7 +1519,7 @@ namespace Hero_Designer
                         iValue = "(suppressed)";
                     ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("GrantPwr:", iValue, false, (double)this.pBase.Effects[index].Probability < 1.0, false, iTip);
                     iList.AddItem(iItem);
-                    if (this.pBase.Effects[index].isEnahncementEffect)
+                    if (this.pBase.Effects[index].isEnhancementEffect)
                         iList.SetUnique();
                     ++num1;
                 }
@@ -1796,7 +1790,7 @@ namespace Hero_Designer
                                 iValue = "0";
                             ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(DataView.CapString(names[(int)this.pBase.Effects[iTagID].MezType], 7) + ":", iValue, iAlternate2, (double)this.pBase.Effects[iTagID].Probability < 1.0 | this.pBase.Effects[iTagID].SpecialCase == Enums.eSpecialCase.Combo, this.pBase.Effects[iTagID].SpecialCase != Enums.eSpecialCase.None, iTagID);
                             iList.AddItem(iItem);
-                            if (this.pBase.Effects[iTagID].isEnahncementEffect)
+                            if (this.pBase.Effects[iTagID].isEnhancementEffect)
                                 iList.SetUnique();
                         }
                         else if (this.pBase.Effects[iTagID].MezType == Enums.eMez.ToggleDrop & (double)this.pBase.Effects[iTagID].Probability > 0.0)
@@ -1806,7 +1800,7 @@ namespace Hero_Designer
                                 iValue = "0%";
                             ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(DataView.CapString(names[(int)this.pBase.Effects[iTagID].MezType], 7) + ":", iValue, iAlternate1, (double)this.pBase.Effects[iTagID].Probability < 1.0 | this.pBase.Effects[iTagID].SpecialCase == Enums.eSpecialCase.Combo, this.pBase.Effects[iTagID].SpecialCase != Enums.eSpecialCase.None, iTagID);
                             iList.AddItem(iItem);
-                            if (this.pBase.Effects[iTagID].isEnahncementEffect)
+                            if (this.pBase.Effects[iTagID].isEnhancementEffect)
                                 iList.SetUnique();
                         }
                         else
@@ -1817,7 +1811,7 @@ namespace Hero_Designer
                                 iValue = "0";
                             ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(DataView.CapString(names[(int)this.pBase.Effects[iTagID].MezType], 7) + ":", iValue, iAlternate2, (double)this.pBase.Effects[iTagID].Probability < 1.0, this.pBase.Effects[iTagID].SpecialCase != Enums.eSpecialCase.None, iTagID);
                             iList.AddItem(iItem);
-                            if (this.pBase.Effects[iTagID].isEnahncementEffect)
+                            if (this.pBase.Effects[iTagID].isEnhancementEffect)
                                 iList.SetUnique();
                         }
                         ++num1;
@@ -1837,7 +1831,7 @@ namespace Hero_Designer
                             iValue = "0%";
                         ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair(DataView.CapString("-" + names[(int)this.pBase.Effects[iTagID].MezType], 7) + ":", iValue, false, false, false, iTagID);
                         iList.AddItem(iItem);
-                        if (this.pBase.Effects[iTagID].isEnahncementEffect)
+                        if (this.pBase.Effects[iTagID].isEnhancementEffect)
                             iList.SetUnique();
                         ++num1;
                     }
@@ -1867,7 +1861,7 @@ namespace Hero_Designer
                         iValue = "(suppressed)";
                     ctlPairedList.ItemPair iItem = new ctlPairedList.ItemPair("Summon:", iValue, false, (double)this.pBase.Effects[index].Probability < 1.0, false, iTip);
                     iList.AddItem(iItem);
-                    if (this.pBase.Effects[index].isEnahncementEffect)
+                    if (this.pBase.Effects[index].isEnhancementEffect)
                         iList.SetUnique();
                     ++num1;
                 }
@@ -3441,7 +3435,7 @@ namespace Hero_Designer
                         if (iTip != string.Empty)
                             iTip += "\r\n";
                         string str = this.pEnh.Effects[index].BuildEffectString(false, "", false, false, false);
-                        if (this.pEnh.Effects[index].isEnahncementEffect & this.pEnh.PowerType == Enums.ePowerType.Toggle)
+                        if (this.pEnh.Effects[index].isEnhancementEffect & this.pEnh.PowerType == Enums.ePowerType.Toggle)
                         {
                             ++num1;
                             str += " (Special only every 10s)";
@@ -3705,7 +3699,7 @@ namespace Hero_Designer
                 int num = isFX.Index.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (this.pBase.Effects.Length > isFX.Index[index] & isFX.Index[index] > -1 && this.pBase.Effects[isFX.Index[index]].isEnahncementEffect)
+                    if (this.pBase.Effects.Length > isFX.Index[index] & isFX.Index[index] > -1 && this.pBase.Effects[isFX.Index[index]].isEnhancementEffect)
                         return true;
                 }
             }
@@ -3781,7 +3775,7 @@ namespace Hero_Designer
                             s2 = 0.0f;
                         }
                         iList.AddItem(DataView.FastItem(Title, s1, s2, Suffix, false, false, (double)this.pEnh.Effects[shortFxArray1[index].Index[0]].Probability < 1.0, this.pEnh.Effects[shortFxArray1[index].Index[0]].SpecialCase != Enums.eSpecialCase.None, Power.SplitFXGroupTip(ref shortFxArray1[index], ref this.pEnh, false)));
-                        if (this.pEnh.Effects[shortFxArray1[index].Index[0]].isEnahncementEffect)
+                        if (this.pEnh.Effects[shortFxArray1[index].Index[0]].isEnhancementEffect)
                             iList.SetUnique();
                     }
                 }

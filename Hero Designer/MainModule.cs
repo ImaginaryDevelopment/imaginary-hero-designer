@@ -91,9 +91,9 @@ namespace Hero_Designer
                 I9Gfx.LoadOriginImages();
                 I9Gfx.LoadArchetypeImages();
                 I9Gfx.LoadPowersetImages();
-                MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad("BBCode.mhd"));
+                MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad(Files.MxdbFileBbCodeUpdate));
                 iFrm.Opacity = 1.0;
-                DatabaseAPI.MatchAllIDs((IMessager)iFrm);
+                DatabaseAPI.MatchAllIDs(iFrm);
                 if (iFrm != null)
                     iFrm.SetMessage("Matching Set Bonus IDs...");
                 DatabaseAPI.AssignSetBonusIndexes();

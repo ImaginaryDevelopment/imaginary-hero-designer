@@ -7,9 +7,11 @@ using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -18,22 +20,17 @@ namespace Hero_Designer
     public class clsToonX : Character
     {
         IPower[] _buffedPower = new IPower[0];
-
         IPower[] _mathPower = new IPower[0];
-
         Enums.BuffsX _selfBuffs;
-
         Enums.BuffsX _selfEnhance;
 
 
         void ApplyPvpDr()
-
         {
             if (!MidsContext.Config.Inc.PvE) ;
         }
 
         static PopUp.StringValue BuildEDItem(
-
           int index,
           float[] value,
           Enums.eSchedule[] schedule,
@@ -41,30 +38,28 @@ namespace Hero_Designer
           float[] afterED)
         {
             PopUp.StringValue stringValue1 = new PopUp.StringValue();
-            bool flag1 = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][0];
-            bool flag2 = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][1];
-            bool flag3 = (double)value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][2];
+            bool flag1 = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][0];
+            bool flag2 = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][1];
+            bool flag3 = value[index] > (double)DatabaseAPI.Database.MultED[(int)schedule[index]][2];
             PopUp.StringValue stringValue2;
-            if ((double)value[index] > 0.0)
+            if (value[index] > 0.0)
             {
                 Color color = new Color();
                 string str1 = edName + ":";
                 float num1 = value[index] * 100f;
                 float num2 = Enhancement.ApplyED(schedule[index], value[index]) * 100f;
-                float num3 = num2 + afterED[index] * 100f;
-                float num4 = (float)Math.Round((double)num1 - (double)num2, 3);
-                string str2 = Strings.Format((float)((double)num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
-                string str3 = Strings.Format(num3, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str2 = Strings.Format((float)(num1 + (double)afterED[index] * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
+                string str3 = Strings.Format(num2 + afterED[index] * 100f, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") + "%";
                 string str4;
-                if ((double)num4 > 0.0)
+                if ((float)Math.Round(num1 - (double)num2, 3) > 0.0)
                 {
                     str4 = str3 + "  (Pre-ED: " + str2 + ")";
                     if (flag3)
-                        color = Color.FromArgb((int)byte.MaxValue, 0, 0);
+                        color = Color.FromArgb(byte.MaxValue, 0, 0);
                     else if (flag2)
-                        color = Color.FromArgb((int)byte.MaxValue, (int)byte.MaxValue, 0);
+                        color = Color.FromArgb(byte.MaxValue, (int)byte.MaxValue, 0);
                     else if (flag1)
-                        color = Color.FromArgb(0, (int)byte.MaxValue, 0);
+                        color = Color.FromArgb(0, byte.MaxValue, 0);
                 }
                 else
                 {
@@ -95,7 +90,7 @@ namespace Hero_Designer
 
         public void BuildPower(int iSet, int powerID, bool noPoolShuffle = false)
         {
-            if (iSet < 0 | powerID < 0)
+            if (iSet < 0 || powerID < 0)
                 return;
             int inToonHistory = this.CurrentBuild.FindInToonHistory(powerID);
             this.ResetLevel();
@@ -112,7 +107,7 @@ namespace Hero_Designer
                 }
                 else if (!string.IsNullOrEmpty(message))
                 {
-                    int num = (int)Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
+                    Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
                 }
                 this.ResetLevel();
                 this.Lock();
@@ -194,7 +189,7 @@ namespace Hero_Designer
                 }
                 else if (!string.IsNullOrEmpty(message))
                 {
-                    int num = (int)Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
+                    Interaction.MsgBox(message, MsgBoxStyle.Information, "Info");
                 }
             }
             this.Validate();
@@ -226,7 +221,7 @@ namespace Hero_Designer
                     }
                     else
                     {
-                        int num3 = (int)Interaction.MsgBox(message, MsgBoxStyle.Critical, "FYI");
+                        Interaction.MsgBox(message, MsgBoxStyle.Critical, "FYI");
                     }
                 }
                 else
@@ -243,10 +238,7 @@ namespace Hero_Designer
         }
 
         static float CalculatePvpDr(float val, float a, float b)
-
-        {
-            return val * (float)(1.0 - Math.Abs(Math.Atan((double)a * (double)val)) * (2.0 / Math.PI) * (double)b);
-        }
+            => val * (float)(1.0 - Math.Abs(Math.Atan((double)a * (double)val)) * (2.0 / Math.PI) * (double)b);
 
         public static string FixSpelling(string iString)
         {
@@ -273,13 +265,11 @@ namespace Hero_Designer
         }
 
         static void GBD_Stage(ref IPower tPwr, ref Enums.BuffsX nBuffs, bool enhancementPass)
-
         {
             if (tPwr == null || tPwr.PowerType == Enums.ePowerType.GlobalBoost)
                 return;
             Enums.ShortFX shortFx = new Enums.ShortFX();
-            int num1 = nBuffs.Effect.Length - 1;
-            for (int index1 = 0; index1 <= num1; ++index1)
+            for (int index1 = 0; index1 <= nBuffs.Effect.Length - 1; ++index1)
             {
                 Enums.eEffectType iEffect = (Enums.eEffectType)index1;
                 if (iEffect != Enums.eEffectType.Damage)
@@ -306,76 +296,75 @@ namespace Hero_Designer
                                 break;
                         }
                     }
-                    int num2 = shortFx.Value.Length - 1;
-                    for (int index2 = 0; index2 <= num2; ++index2)
+                    for (int shortFxIdx = 0; shortFxIdx <= shortFx.Value.Length - 1; ++shortFxIdx)
                     {
-                        if (tPwr.Effects[shortFx.Index[index2]].Absorbed_PowerType != Enums.ePowerType.GlobalBoost)
+                        if (tPwr.Effects[shortFx.Index[shortFxIdx]].Absorbed_PowerType != Enums.ePowerType.GlobalBoost)
                         {
-                            IEffect effect = tPwr.Effects[shortFx.Index[index2]];
+                            IEffect effect = tPwr.Effects[shortFx.Index[shortFxIdx]];
                             if (effect.ToWho == Enums.eToWho.Self | effect.ToWho != Enums.eToWho.Target)
                             {
                                 if (!enhancementPass)
                                 {
                                     if (effect.EffectType == Enums.eEffectType.Mez)
-                                        nBuffs.StatusProtection[(int)effect.MezType] += shortFx.Value[index2];
+                                        nBuffs.StatusProtection[(int)effect.MezType] += shortFx.Value[shortFxIdx];
                                     else if (effect.EffectType == Enums.eEffectType.MezResist)
-                                        nBuffs.StatusResistance[(int)effect.MezType] += shortFx.Value[index2];
+                                        nBuffs.StatusResistance[(int)effect.MezType] += shortFx.Value[shortFxIdx];
                                     else if (effect.EffectType == Enums.eEffectType.ResEffect)
-                                        nBuffs.DebuffResistance[(int)effect.ETModifies] += shortFx.Value[index2];
+                                        nBuffs.DebuffResistance[(int)effect.ETModifies] += shortFx.Value[shortFxIdx];
                                 }
-                                if ((tPwr.Effects[shortFx.Index[index2]].EffectType == Enums.eEffectType.DamageBuff | tPwr.Effects[shortFx.Index[index2]].EffectType == Enums.eEffectType.Enhancement) & enhancementPass)
+                                if ((tPwr.Effects[shortFx.Index[shortFxIdx]].EffectType == Enums.eEffectType.DamageBuff | tPwr.Effects[shortFx.Index[shortFxIdx]].EffectType == Enums.eEffectType.Enhancement) & enhancementPass)
                                 {
                                     if (effect.ETModifies == Enums.eEffectType.Mez)
-                                        nBuffs.Mez[(int)effect.MezType] += shortFx.Value[index2];
+                                        nBuffs.Mez[(int)effect.MezType] += shortFx.Value[shortFxIdx];
                                     else if (effect.ETModifies == Enums.eEffectType.Defense)
-                                        nBuffs.Defense[(int)effect.DamageType] += shortFx.Value[index2];
+                                        nBuffs.Defense[(int)effect.DamageType] += shortFx.Value[shortFxIdx];
                                     else if (effect.ETModifies == Enums.eEffectType.Resistance)
-                                        nBuffs.Resistance[(int)effect.DamageType] += shortFx.Value[index2];
+                                        nBuffs.Resistance[(int)effect.DamageType] += shortFx.Value[shortFxIdx];
                                     else if (iEffect == Enums.eEffectType.DamageBuff)
                                     {
-                                        if (!(effect.isEnahncementEffect & effect.EffectClass == Enums.eEffectClass.Tertiary | effect.SpecialCase == Enums.eSpecialCase.Defiance))
-                                            nBuffs.Damage[(int)effect.DamageType] += shortFx.Value[index2];
+                                        if (!(effect.isEnhancementEffect & effect.EffectClass == Enums.eEffectClass.Tertiary | effect.SpecialCase == Enums.eSpecialCase.Defiance))
+                                            nBuffs.Damage[(int)effect.DamageType] += shortFx.Value[shortFxIdx];
                                     }
                                     else if (!(effect.ETModifies == Enums.eEffectType.Accuracy & enhancementPass))
                                     {
                                         if (effect.ETModifies == Enums.eEffectType.SpeedRunning | effect.ETModifies == Enums.eEffectType.SpeedFlying | effect.ETModifies == Enums.eEffectType.SpeedJumping | effect.ETModifies == Enums.eEffectType.JumpHeight)
                                         {
                                             if (effect.buffMode != Enums.eBuffMode.Debuff)
-                                                nBuffs.Effect[(int)effect.ETModifies] += shortFx.Value[index2];
+                                                nBuffs.Effect[(int)effect.ETModifies] += shortFx.Value[shortFxIdx];
                                             else
-                                                nBuffs.EffectAux[(int)effect.ETModifies] += shortFx.Value[index2];
+                                                nBuffs.EffectAux[(int)effect.ETModifies] += shortFx.Value[shortFxIdx];
                                         }
                                         else
-                                            nBuffs.Effect[index1] += shortFx.Value[index2];
+                                            nBuffs.Effect[index1] += shortFx.Value[shortFxIdx];
                                     }
                                 }
                                 else if (effect.EffectType == Enums.eEffectType.Endurance & effect.Aspect == Enums.eAspect.Max)
-                                    nBuffs.MaxEnd += shortFx.Value[index2];
+                                    nBuffs.MaxEnd += shortFx.Value[shortFxIdx];
                                 else if (effect.ETModifies == Enums.eEffectType.Mez & !enhancementPass)
-                                    nBuffs.Mez[(int)effect.MezType] += shortFx.Value[index2];
+                                    nBuffs.Mez[(int)effect.MezType] += shortFx.Value[shortFxIdx];
                                 else if (effect.ETModifies == Enums.eEffectType.MezResist & !enhancementPass)
-                                    nBuffs.MezRes[(int)effect.MezType] += shortFx.Value[index2];
+                                    nBuffs.MezRes[(int)effect.MezType] += shortFx.Value[shortFxIdx];
                                 else if (iEffect == Enums.eEffectType.Defense & !enhancementPass)
-                                    nBuffs.Defense[(int)effect.DamageType] += shortFx.Value[index2];
+                                    nBuffs.Defense[(int)effect.DamageType] += shortFx.Value[shortFxIdx];
                                 else if (iEffect == Enums.eEffectType.Resistance & !enhancementPass)
-                                    nBuffs.Resistance[(int)effect.DamageType] += shortFx.Value[index2];
+                                    nBuffs.Resistance[(int)effect.DamageType] += shortFx.Value[shortFxIdx];
                                 else if (!(effect.ETModifies == Enums.eEffectType.Accuracy & enhancementPass))
                                 {
                                     if (effect.ETModifies == Enums.eEffectType.Accuracy & !enhancementPass)
-                                        nBuffs.Effect[1] += shortFx.Value[index2];
+                                        nBuffs.Effect[1] += shortFx.Value[shortFxIdx];
                                     else if (effect.ETModifies == Enums.eEffectType.SpeedRunning & effect.Aspect == Enums.eAspect.Max)
-                                        nBuffs.Effect[49] += shortFx.Value[index2];
+                                        nBuffs.Effect[49] += shortFx.Value[shortFxIdx];
                                     else if (effect.ETModifies == Enums.eEffectType.SpeedFlying & effect.Aspect == Enums.eAspect.Max)
-                                        nBuffs.Effect[51] += shortFx.Value[index2];
+                                        nBuffs.Effect[51] += shortFx.Value[shortFxIdx];
                                     else if (effect.ETModifies == Enums.eEffectType.SpeedJumping & effect.Aspect == Enums.eAspect.Max)
-                                        nBuffs.Effect[50] += shortFx.Value[index2];
+                                        nBuffs.Effect[50] += shortFx.Value[shortFxIdx];
                                     else if (iEffect == Enums.eEffectType.ToHit & !enhancementPass)
                                     {
-                                        if (!(effect.isEnahncementEffect & effect.EffectClass == Enums.eEffectClass.Tertiary))
-                                            nBuffs.Effect[index1] += shortFx.Value[index2];
+                                        if (!(effect.isEnhancementEffect & effect.EffectClass == Enums.eEffectClass.Tertiary))
+                                            nBuffs.Effect[index1] += shortFx.Value[shortFxIdx];
                                     }
                                     else if (!enhancementPass)
-                                        nBuffs.Effect[index1] += shortFx.Value[index2];
+                                        nBuffs.Effect[index1] += shortFx.Value[shortFxIdx];
                                 }
                             }
                         }
@@ -385,7 +374,6 @@ namespace Hero_Designer
         }
 
         void GBD_Totals()
-
         {
             this.Totals.Init();
             this.TotalsCapped.Init();
@@ -494,357 +482,294 @@ namespace Hero_Designer
         }
 
         bool GBPA_AddEnhFX(ref IPower iPower, int iIndex)
-
         {
-            bool flag1;
-            if (!MidsContext.Config.I9.CalculateEnahncementFX | iIndex < 0 | iPower == null)
+            if (!MidsContext.Config.I9.CalculateEnahncementFX || iIndex < 0 || iPower == null)
+                return false;
+            for (int index1 = 0; index1 <= this.CurrentBuild.Powers[iIndex].SlotCount - 1; ++index1)
             {
-                flag1 = false;
-            }
-            else
-            {
-                int num1 = this.CurrentBuild.Powers[iIndex].SlotCount - 1;
-                for (int index1 = 0; index1 <= num1; ++index1)
+                if (this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh > -1)
                 {
-                    if (this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh > -1)
+                    bool hasPower = DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].Effect.Any(e => e.Mode == Enums.eEffMode.FX);
+                    if (hasPower)
                     {
-                        bool flag2 = false;
-                        int num2 = DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].Effect.Length - 1;
-                        for (int index2 = 0; index2 <= num2; ++index2)
+                        var enhIndex = this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh;
+                        var enh = DatabaseAPI.Database.Enhancements[enhIndex];
+                        IPower power1 = enh?.GetPower();
+                        if (power1 == null)
+                            return false;
+                        for (int index2 = 0; index2 <= power1.Effects.Length - 1; ++index2)
                         {
-                            if (DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].Effect[index2].Mode == Enums.eEffMode.FX)
+                            var effect = power1.Effects[index2];
+                            if (power1.Effects[index2].EffectType != Enums.eEffectType.Enhancement)
                             {
-                                flag2 = true;
-                                break;
-                            }
-                        }
-                        if (flag2)
-                        {
-                            var enhIndex = this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh;
-                            var enh = DatabaseAPI.Database.Enhancements[enhIndex];
-                            IPower power1 = enh?.GetPower();
-                            if (power1 == null)
-                                return false;
-                            int num3 = power1.Effects.Length - 1;
-                            for (int index2 = 0; index2 <= num3; ++index2)
-                            {
-                                if (power1.Effects[index2].EffectType != Enums.eEffectType.Enhancement)
-                                {
-                                    IPower power2 = iPower;
-                                    IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, (Array)new IEffect[iPower.Effects.Length + 1]);
-                                    power2.Effects = effectArray;
-                                    iPower.Effects[iPower.Effects.Length - 1] = (IEffect)power1.Effects[index2].Clone();
-                                    iPower.Effects[iPower.Effects.Length - 1].isEnahncementEffect = true;
-                                    iPower.Effects[iPower.Effects.Length - 1].ToWho = power1.Effects[index2].ToWho;
-                                    iPower.Effects[iPower.Effects.Length - 1].Absorbed_Effect = true;
-                                    iPower.Effects[iPower.Effects.Length - 1].Ticks = power1.Effects[index2].Ticks;
-                                    iPower.Effects[iPower.Effects.Length - 1].Buffable = false;
-                                    if (DatabaseAPI.Database.Enhancements[this.CurrentBuild.Powers[iIndex].Slots[index1].Enhancement.Enh].GetPower().Effects[index2].EffectType == Enums.eEffectType.GrantPower)
-                                        iPower.HasGrantPowerEffect = true;
-                                }
+                                var toAdd = (IEffect)effect.Clone();
+                                toAdd.isEnhancementEffect = true;
+                                toAdd.ToWho = effect.ToWho;
+                                toAdd.Absorbed_Effect = true;
+                                toAdd.Ticks = effect.Ticks;
+                                toAdd.Buffable = false;
+                                iPower.Effects = iPower.Effects.Append(toAdd).ToArray();
+                                if (enh.GetPower().Effects[index2].EffectType == Enums.eEffectType.GrantPower)
+                                    iPower.HasGrantPowerEffect = true;
                             }
                         }
                     }
                 }
-                flag1 = true;
             }
-            return flag1;
+            return true;
         }
 
-        bool GBPA_AddSubPowerEffects(ref IPower Ret, int hIDX)
-
+        bool GBPA_AddSubPowerEffects(ref IPower ret, int hIDX)
         {
-            bool flag;
-            if (Ret.NIDSubPower.Length <= 0)
+            if (ret.NIDSubPower.Length <= 0)
+                return false;
+            int length = ret.Effects.Length;
+            if (hIDX < 0)
+                return false;
+            int effectCount = 0;
+            for (int index = 0; index <= this.CurrentBuild.Powers[hIDX].SubPowers.Length - 1; ++index)
             {
-                flag = false;
+                if (this.CurrentBuild.Powers[hIDX].SubPowers[index].nIDPower > -1 & this.CurrentBuild.Powers[hIDX].SubPowers[index].StatInclude)
+                    effectCount += DatabaseAPI.Database.Power[ret.NIDSubPower[index]].Effects.Length;
             }
-            else
+            IPower power = ret;
+            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power.Effects, (Array)new IEffect[ret.Effects.Length + effectCount - 1 + 1]);
+            power.Effects = effectArray;
+            foreach (var sp in this.CurrentBuild.Powers[hIDX].SubPowers.Where(sp => sp.nIDPower > -1 && sp.StatInclude))
             {
-                int num1 = 0;
-                int length = Ret.Effects.Length;
-                if (hIDX < 0)
+                for (int index2 = 0; index2 <= DatabaseAPI.Database.Power[sp.nIDPower].Effects.Length - 1; ++index2)
                 {
-                    flag = false;
-                }
-                else
-                {
-                    int num2 = this.CurrentBuild.Powers[hIDX].SubPowers.Length - 1;
-                    for (int index = 0; index <= num2; ++index)
-                    {
-                        if (this.CurrentBuild.Powers[hIDX].SubPowers[index].nIDPower > -1 & this.CurrentBuild.Powers[hIDX].SubPowers[index].StatInclude)
-                            num1 += DatabaseAPI.Database.Power[Ret.NIDSubPower[index]].Effects.Length;
-                    }
-                    IPower power = Ret;
-                    IEffect[] effectArray = (IEffect[])Utils.CopyArray(power.Effects, (Array)new IEffect[Ret.Effects.Length + num1 - 1 + 1]);
-                    power.Effects = effectArray;
-                    int num3 = this.CurrentBuild.Powers[hIDX].SubPowers.Length - 1;
-                    for (int index1 = 0; index1 <= num3; ++index1)
-                    {
-                        if (this.CurrentBuild.Powers[hIDX].SubPowers[index1].nIDPower > -1 & this.CurrentBuild.Powers[hIDX].SubPowers[index1].StatInclude)
-                        {
-                            int num4 = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].SubPowers[index1].nIDPower].Effects.Length - 1;
-                            for (int index2 = 0; index2 <= num4; ++index2)
-                            {
-                                Ret.Effects[length] = (IEffect)DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].SubPowers[index1].nIDPower].Effects[index2].Clone();
-                                Ret.Effects[length].Absorbed_EffectID = index2;
-                                Ret.Effects[length].Absorbed_Effect = true;
-                                Ret.Effects[length].Absorbed_Power_nID = this.CurrentBuild.Powers[hIDX].SubPowers[index1].nIDPower;
-                                Ret.Effects[length].Absorbed_PowerType = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].SubPowers[index1].nIDPower].PowerType;
-                                ++length;
-                            }
-                        }
-                    }
-                    flag = true;
+                    ret.Effects[length] = (IEffect)DatabaseAPI.Database.Power[sp.nIDPower].Effects[index2].Clone();
+                    ret.Effects[length].Absorbed_EffectID = index2;
+                    ret.Effects[length].Absorbed_Effect = true;
+                    ret.Effects[length].Absorbed_Power_nID = sp.nIDPower;
+                    ret.Effects[length].Absorbed_PowerType = DatabaseAPI.Database.Power[sp.nIDPower].PowerType;
+                    ++length;
                 }
             }
-            return flag;
+            return true;
         }
 
         void GBPA_ApplyArchetypeCaps(ref IPower powerMath)
-
         {
-            if ((double)powerMath.RechargeTime > (double)this.Archetype.RechargeCap)
+            if (powerMath.RechargeTime > (double)this.Archetype.RechargeCap)
                 powerMath.RechargeTime = this.Archetype.RechargeCap;
-            int num = powerMath.Effects.Length - 1;
-            for (int index = 0; index <= num; ++index)
+            for (int index = 0; index <= powerMath.Effects.Length - 1; ++index)
             {
-                if (powerMath.Effects[index].EffectType == Enums.eEffectType.Damage && (double)powerMath.Effects[index].Math_Mag > (double)this.Archetype.DamageCap)
+                if (powerMath.Effects[index].EffectType == Enums.eEffectType.Damage && powerMath.Effects[index].Math_Mag > (double)this.Archetype.DamageCap)
                     powerMath.Effects[index].Math_Mag = this.Archetype.DamageCap;
             }
         }
+        static void HandleDefaultIncarnateEnh(ref IPower powerMath, IEffect effect1, IEffect[] buffedPowerEffects)
+        {
+            for (int index2 = 0; index2 <= powerMath.Effects.Length - 1; ++index2)
+            {
+                if (powerMath.Effects[index2].Buffable)
+                {
+                    float num3 = 0.0f;
+                    float num4 = 0.0f;
+                    if ((powerMath.Effects[index2].EffectType == Enums.eEffectType.Resistance | powerMath.Effects[index2].EffectType == Enums.eEffectType.Damage) & effect1.EffectType == Enums.eEffectType.DamageBuff)
+                    {
+                        if (powerMath.Effects[index2].DamageType == effect1.DamageType)
+                            powerMath.Effects[index2].Math_Mag += effect1.Mag;
+                    }
+                    else if (powerMath.Effects[index2].EffectType == effect1.ETModifies)
+                    {
+                        switch (effect1.ETModifies)
+                        {
+                            case Enums.eEffectType.Damage:
+                                if (powerMath.Effects[index2].DamageType == effect1.DamageType)
+                                    powerMath.Effects[index2].Math_Mag += effect1.Mag;
+                                num4 = 0.0f;
+                                break;
+                            case Enums.eEffectType.Defense:
+                                if (powerMath.Effects[index2].DamageType == effect1.DamageType)
+                                    powerMath.Effects[index2].Math_Mag += effect1.Mag;
+                                num4 = 0.0f;
+                                break;
+                            case Enums.eEffectType.Mez:
+                                if (effect1.MezType == powerMath.Effects[index2].MezType)
+                                {
+                                    int num5 = Enum.GetValues(powerMath.Effects[index2].MezType.GetType()).Length - 1;
+                                    for (int index3 = 0; index3 <= num5; ++index3)
+                                    {
+                                        if (powerMath.Effects[index2].AttribType == Enums.eAttribType.Duration)
+                                        {
+                                            if (powerMath.Effects[index2].MezType == (Enums.eMez)index3)
+                                                powerMath.Effects[index2].Math_Duration += effect1.Mag;
+                                            num3 = 0.0f;
+                                            num4 = 0.0f;
+                                        }
+                                        else if (powerMath.Effects[index2].MezType == (Enums.eMez)index3)
+                                        {
+                                            powerMath.Effects[index2].Math_Mag += effect1.Mag;
+                                            num4 = 0.0f;
+                                        }
+                                    }
+                                    break;
+                                }
+                                break;
+                            default:
+                                IEffect effect2 = powerMath.Effects[index2];
+                                if (effect2.EffectType == Enums.eEffectType.Enhancement & (effect2.ETModifies == Enums.eEffectType.SpeedRunning | effect2.ETModifies == Enums.eEffectType.SpeedJumping | effect2.ETModifies == Enums.eEffectType.JumpHeight | effect2.ETModifies == Enums.eEffectType.SpeedFlying))
+                                {
+                                    if (buffedPowerEffects[index2].Mag > 0.0)
+                                        num4 = effect1.Mag;
+                                    if (buffedPowerEffects[index2].Mag < 0.0)
+                                    {
+                                        num4 = effect1.Mag;
+                                        break;
+                                    }
+                                    break;
+                                }
+                                if (effect2.EffectType == Enums.eEffectType.SpeedRunning | effect2.EffectType == Enums.eEffectType.SpeedJumping | effect2.EffectType == Enums.eEffectType.JumpHeight | effect2.EffectType == Enums.eEffectType.SpeedFlying)
+                                {
+                                    if (buffedPowerEffects[index2].Mag > 0.0)
+                                        num4 = effect1.Mag;
+                                    if (buffedPowerEffects[index2].Mag < 0.0)
+                                    {
+                                        num4 = effect1.Mag;
+                                        break;
+                                    }
+                                    break;
+                                }
+                                num4 = effect1.Mag;
+                                break;
+                        }
+                        powerMath.Effects[index2].Math_Mag += num4;
+                        powerMath.Effects[index2].Math_Duration += num3;
+                    }
+                }
+            }
+        }
 
-        bool GBPA_ApplyIncarnateEnhancements(
+        static void HandleGrantPowerIncarnate(ref IPower powerMath,IEffect effect1, IPower[] buffedPowers, int effIdx,Archetype at, int hIDX)
+        {
 
+            int length1 = powerMath.Effects.Length;
+            powerMath.AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx, -1);
+            for (int index2 = length1; index2 <= powerMath.Effects.Length - 1; ++index2)
+            {
+                powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
+                powerMath.Effects[index2].Absorbed_Effect = true;
+                powerMath.Effects[index2].isEnhancementEffect = effect1.isEnhancementEffect;
+                powerMath.Effects[index2].BaseProbability *= effect1.BaseProbability;
+                powerMath.Effects[index2].Ticks = effect1.Ticks;
+            }
+            if (hIDX > -1)
+            {
+                int length2 = buffedPowers[hIDX].Effects.Length;
+                buffedPowers[hIDX].AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx, -1);
+                for (int index2 = length2; index2 <= buffedPowers[hIDX].Effects.Length - 1; ++index2)
+                {
+                    buffedPowers[hIDX].Effects[index2].ToWho = effect1.ToWho;
+                    buffedPowers[hIDX].Effects[index2].Absorbed_Effect = true;
+                    buffedPowers[hIDX].Effects[index2].isEnhancementEffect = effect1.isEnhancementEffect;
+                    buffedPowers[hIDX].Effects[index2].BaseProbability *= effect1.BaseProbability;
+                    buffedPowers[hIDX].Effects[index2].Ticks = effect1.Ticks;
+                }
+            }
+        }
+
+        void GBPA_ApplyIncarnateEnhancements(
           ref IPower powerMath,
           int hIDX,
           IPower power,
           bool ignoreED,
           ref Enums.eEffectType effectType)
         {
-            bool flag1 = false;
-            bool flag2;
             if (powerMath == null)
-                flag2 = false;
-            else if (power == null)
-                flag2 = true;
-            else if (power.Effects.Length == 0)
-                flag2 = true;
-            else if (!powerMath.Slottable)
+                return;
+            if (power == null)
+                return;
+            if (power.Effects.Length == 0)
+                return;
+            if (!powerMath.Slottable)
+                return;
+
+            for (int effIdx = 0; effIdx <= power.Effects.Length - 1; ++effIdx)
             {
-                flag2 = true;
-            }
-            else
-            {
-                int num1 = power.Effects.Length - 1;
-                for (int index1 = 0; index1 <= num1; ++index1)
+                IEffect effect1 = power.Effects[effIdx];
+                var disqualified = effect1.EffectClass == Enums.eEffectClass.Ignored
+                    || (effectType == Enums.eEffectType.Enhancement && (effect1.EffectType != Enums.eEffectType.Enhancement && effect1.EffectType != Enums.eEffectType.DamageBuff))
+                    || (effectType == Enums.eEffectType.GrantPower && (effect1.EffectType == Enums.eEffectType.Enhancement || effect1.EffectType == Enums.eEffectType.DamageBuff))
+                    || effect1.IgnoreED != ignoreED
+                    || (power.PowerType != Enums.ePowerType.GlobalBoost && (!effect1.Absorbed_Effect || effect1.Absorbed_PowerType != Enums.ePowerType.GlobalBoost))
+                    || (effect1.EffectType == Enums.eEffectType.GrantPower && effect1.Absorbed_Effect);
+                if (!disqualified)
                 {
-                    IEffect effect1 = power.Effects[index1];
-                    if (!(effect1.EffectClass == Enums.eEffectClass.Ignored | effectType == Enums.eEffectType.Enhancement & (effect1.EffectType != Enums.eEffectType.Enhancement & effect1.EffectType != Enums.eEffectType.DamageBuff) | effectType == Enums.eEffectType.GrantPower & (effect1.EffectType == Enums.eEffectType.Enhancement | effect1.EffectType == Enums.eEffectType.DamageBuff) | effect1.IgnoreED != ignoreED | power.PowerType != Enums.ePowerType.GlobalBoost & (!effect1.Absorbed_Effect | effect1.Absorbed_PowerType != Enums.ePowerType.GlobalBoost) | effect1.EffectType == Enums.eEffectType.GrantPower & effect1.Absorbed_Effect))
+                    IPower power1 = power;
+                    if (effect1.Absorbed_Effect & effect1.Absorbed_Power_nID > -1)
+                        power1 = DatabaseAPI.Database.Power[effect1.Absorbed_Power_nID];
+                    bool isAllowed = powerMath.BoostsAllowed.Any(pmb => power1.BoostsAllowed.Any(pba => pba == pmb));
+                    if (isAllowed)
                     {
-                        IPower power1 = power;
-                        if (effect1.Absorbed_Effect & effect1.Absorbed_Power_nID > -1)
-                            power1 = DatabaseAPI.Database.Power[effect1.Absorbed_Power_nID];
-                        bool flag3 = false;
-                        foreach (string str1 in powerMath.BoostsAllowed)
+                        if (effectType == Enums.eEffectType.Enhancement && (effect1.EffectType == Enums.eEffectType.DamageBuff || effect1.EffectType == Enums.eEffectType.Enhancement))
                         {
-                            foreach (string str2 in power1.BoostsAllowed)
+                            bool incAcc = powerMath.IgnoreEnhancement(Enums.eEnhance.Accuracy);
+                            bool incRech = powerMath.IgnoreEnhancement(Enums.eEnhance.RechargeTime);
+                            bool incEndDisc = powerMath.IgnoreEnhancement(Enums.eEnhance.EnduranceDiscount);
+                            switch (effect1.ETModifies)
                             {
-                                if (str1 == str2)
-                                {
-                                    flag3 = true;
+                                case Enums.eEffectType.Accuracy:
+                                    if (incAcc)
+                                        powerMath.Accuracy += effect1.Mag;
+                                    continue;
+                                case Enums.eEffectType.EnduranceDiscount:
+                                    if (incEndDisc)
+                                        powerMath.EndCost += effect1.Mag;
+                                    continue;
+                                case Enums.eEffectType.InterruptTime:
+                                    powerMath.InterruptTime += effect1.Mag;
+                                    continue;
+                                case Enums.eEffectType.Range:
+                                    powerMath.Range += effect1.Mag;
+                                    continue;
+                                case Enums.eEffectType.RechargeTime:
+                                    if (incRech)
+                                        powerMath.RechargeTime += effect1.Mag;
+                                    continue;
+                                default:
+                                    HandleDefaultIncarnateEnh(ref powerMath, effect1, this._buffedPower[hIDX].Effects);
                                     break;
-                                }
                             }
-                            if (flag3)
-                                break;
                         }
-                        if (flag3)
+                        else if (effect1.EffectType == Enums.eEffectType.GrantPower)
                         {
-                            if (effectType == Enums.eEffectType.Enhancement & (effect1.EffectType == Enums.eEffectType.DamageBuff | effect1.EffectType == Enums.eEffectType.Enhancement))
+                            HandleGrantPowerIncarnate(ref powerMath, effect1, this._buffedPower, effIdx, this.Archetype, hIDX);
+                        }
+                        else
+                        {
+                            powerMath.AbsorbEffects(power, effect1.Duration, 0.0f, this.Archetype, 1, true, effIdx, effIdx);
+                            for (int index2 = powerMath.Effects.Length; index2 <= powerMath.Effects.Length - 1; ++index2)
                             {
-                                bool flag4 = powerMath.IgnoreEnhancement(Enums.eEnhance.Accuracy);
-                                bool flag5 = powerMath.IgnoreEnhancement(Enums.eEnhance.RechargeTime);
-                                bool flag6 = powerMath.IgnoreEnhancement(Enums.eEnhance.EnduranceDiscount);
-                                switch (effect1.ETModifies)
-                                {
-                                    case Enums.eEffectType.Accuracy:
-                                        if (flag4)
-                                        {
-                                            powerMath.Accuracy += effect1.Mag;
-                                            continue;
-                                        }
-                                        continue;
-                                    case Enums.eEffectType.EnduranceDiscount:
-                                        if (flag6)
-                                        {
-                                            powerMath.EndCost += effect1.Mag;
-                                            continue;
-                                        }
-                                        continue;
-                                    case Enums.eEffectType.InterruptTime:
-                                        powerMath.InterruptTime += effect1.Mag;
-                                        continue;
-                                    case Enums.eEffectType.Range:
-                                        powerMath.Range += effect1.Mag;
-                                        continue;
-                                    case Enums.eEffectType.RechargeTime:
-                                        if (flag5)
-                                        {
-                                            powerMath.RechargeTime += effect1.Mag;
-                                            continue;
-                                        }
-                                        continue;
-                                    default:
-                                        int num2 = powerMath.Effects.Length - 1;
-                                        for (int index2 = 0; index2 <= num2; ++index2)
-                                        {
-                                            if (powerMath.Effects[index2].Buffable)
-                                            {
-                                                float num3 = 0.0f;
-                                                float num4 = 0.0f;
-                                                if ((powerMath.Effects[index2].EffectType == Enums.eEffectType.Resistance | powerMath.Effects[index2].EffectType == Enums.eEffectType.Damage) & effect1.EffectType == Enums.eEffectType.DamageBuff)
-                                                {
-                                                    if (powerMath.Effects[index2].DamageType == effect1.DamageType)
-                                                        powerMath.Effects[index2].Math_Mag += effect1.Mag;
-                                                }
-                                                else if (powerMath.Effects[index2].EffectType == effect1.ETModifies)
-                                                {
-                                                    switch (effect1.ETModifies)
-                                                    {
-                                                        case Enums.eEffectType.Damage:
-                                                            if (powerMath.Effects[index2].DamageType == effect1.DamageType)
-                                                                powerMath.Effects[index2].Math_Mag += effect1.Mag;
-                                                            num4 = 0.0f;
-                                                            break;
-                                                        case Enums.eEffectType.Defense:
-                                                            if (powerMath.Effects[index2].DamageType == effect1.DamageType)
-                                                                powerMath.Effects[index2].Math_Mag += effect1.Mag;
-                                                            num4 = 0.0f;
-                                                            break;
-                                                        case Enums.eEffectType.Mez:
-                                                            if (effect1.MezType == powerMath.Effects[index2].MezType)
-                                                            {
-                                                                int num5 = Enum.GetValues(powerMath.Effects[index2].MezType.GetType()).Length - 1;
-                                                                for (int index3 = 0; index3 <= num5; ++index3)
-                                                                {
-                                                                    if (powerMath.Effects[index2].AttribType == Enums.eAttribType.Duration)
-                                                                    {
-                                                                        if (powerMath.Effects[index2].MezType == (Enums.eMez)index3)
-                                                                            powerMath.Effects[index2].Math_Duration += effect1.Mag;
-                                                                        num3 = 0.0f;
-                                                                        num4 = 0.0f;
-                                                                    }
-                                                                    else if (powerMath.Effects[index2].MezType == (Enums.eMez)index3)
-                                                                    {
-                                                                        powerMath.Effects[index2].Math_Mag += effect1.Mag;
-                                                                        num4 = 0.0f;
-                                                                    }
-                                                                }
-                                                                break;
-                                                            }
-                                                            break;
-                                                        default:
-                                                            IEffect effect2 = powerMath.Effects[index2];
-                                                            if (effect2.EffectType == Enums.eEffectType.Enhancement & (effect2.ETModifies == Enums.eEffectType.SpeedRunning | effect2.ETModifies == Enums.eEffectType.SpeedJumping | effect2.ETModifies == Enums.eEffectType.JumpHeight | effect2.ETModifies == Enums.eEffectType.SpeedFlying))
-                                                            {
-                                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag > 0.0)
-                                                                    num4 = effect1.Mag;
-                                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag < 0.0)
-                                                                {
-                                                                    num4 = effect1.Mag;
-                                                                    break;
-                                                                }
-                                                                break;
-                                                            }
-                                                            if (effect2.EffectType == Enums.eEffectType.SpeedRunning | effect2.EffectType == Enums.eEffectType.SpeedJumping | effect2.EffectType == Enums.eEffectType.JumpHeight | effect2.EffectType == Enums.eEffectType.SpeedFlying)
-                                                            {
-                                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag > 0.0)
-                                                                    num4 = effect1.Mag;
-                                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag < 0.0)
-                                                                {
-                                                                    num4 = effect1.Mag;
-                                                                    break;
-                                                                }
-                                                                break;
-                                                            }
-                                                            num4 = effect1.Mag;
-                                                            break;
-                                                    }
-                                                    powerMath.Effects[index2].Math_Mag += num4;
-                                                    powerMath.Effects[index2].Math_Duration += num3;
-                                                }
-                                            }
-                                        }
-                                        break;
-                                }
+                                powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
+                                powerMath.Effects[index2].Absorbed_Effect = true;
+                                powerMath.Effects[index2].isEnhancementEffect = effect1.isEnhancementEffect;
+                                powerMath.Effects[index2].BaseProbability *= effect1.BaseProbability;
+                                powerMath.Effects[index2].Ticks = effect1.Ticks;
                             }
-                            else if (effect1.EffectType == Enums.eEffectType.GrantPower)
+                            if (hIDX > -1)
                             {
-                                int length1 = powerMath.Effects.Length;
-                                powerMath.AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, this.Archetype, 1, true, index1, -1);
-                                int num2 = powerMath.Effects.Length - 1;
-                                for (int index2 = length1; index2 <= num2; ++index2)
+                                int length2 = this._buffedPower[hIDX].Effects.Length;
+                                this._buffedPower[hIDX].AbsorbEffects(power, effect1.Duration, 0.0f, this.Archetype, 1, true, effIdx, effIdx);
+                                int num3 = this._buffedPower[hIDX].Effects.Length - 1;
+                                for (int index2 = length2; index2 <= num3; ++index2)
                                 {
-                                    powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
-                                    powerMath.Effects[index2].Absorbed_Effect = true;
-                                    powerMath.Effects[index2].isEnahncementEffect = effect1.isEnahncementEffect;
-                                    powerMath.Effects[index2].BaseProbability *= effect1.BaseProbability;
-                                    powerMath.Effects[index2].Ticks = effect1.Ticks;
-                                }
-                                if (hIDX > -1)
-                                {
-                                    int length2 = this._buffedPower[hIDX].Effects.Length;
-                                    this._buffedPower[hIDX].AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, this.Archetype, 1, true, index1, -1);
-                                    int num3 = this._buffedPower[hIDX].Effects.Length - 1;
-                                    for (int index2 = length2; index2 <= num3; ++index2)
-                                    {
-                                        this._buffedPower[hIDX].Effects[index2].ToWho = effect1.ToWho;
-                                        this._buffedPower[hIDX].Effects[index2].Absorbed_Effect = true;
-                                        this._buffedPower[hIDX].Effects[index2].isEnahncementEffect = effect1.isEnahncementEffect;
-                                        this._buffedPower[hIDX].Effects[index2].BaseProbability *= effect1.BaseProbability;
-                                        this._buffedPower[hIDX].Effects[index2].Ticks = effect1.Ticks;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                int length1 = powerMath.Effects.Length;
-                                powerMath.AbsorbEffects(power, effect1.Duration, 0.0f, this.Archetype, 1, true, index1, index1);
-                                int num2 = powerMath.Effects.Length - 1;
-                                for (int index2 = length1; index2 <= num2; ++index2)
-                                {
-                                    powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
-                                    powerMath.Effects[index2].Absorbed_Effect = true;
-                                    powerMath.Effects[index2].isEnahncementEffect = effect1.isEnahncementEffect;
-                                    powerMath.Effects[index2].BaseProbability *= effect1.BaseProbability;
-                                    powerMath.Effects[index2].Ticks = effect1.Ticks;
-                                }
-                                if (hIDX > -1)
-                                {
-                                    int length2 = this._buffedPower[hIDX].Effects.Length;
-                                    this._buffedPower[hIDX].AbsorbEffects(power, effect1.Duration, 0.0f, this.Archetype, 1, true, index1, index1);
-                                    int num3 = this._buffedPower[hIDX].Effects.Length - 1;
-                                    for (int index2 = length2; index2 <= num3; ++index2)
-                                    {
-                                        this._buffedPower[hIDX].Effects[index2].ToWho = effect1.ToWho;
-                                        this._buffedPower[hIDX].Effects[index2].Absorbed_Effect = true;
-                                        this._buffedPower[hIDX].Effects[index2].isEnahncementEffect = effect1.isEnahncementEffect;
-                                        this._buffedPower[hIDX].Effects[index2].BaseProbability *= effect1.BaseProbability;
-                                        this._buffedPower[hIDX].Effects[index2].Ticks = effect1.Ticks;
-                                    }
+                                    this._buffedPower[hIDX].Effects[index2].ToWho = effect1.ToWho;
+                                    this._buffedPower[hIDX].Effects[index2].Absorbed_Effect = true;
+                                    this._buffedPower[hIDX].Effects[index2].isEnhancementEffect = effect1.isEnhancementEffect;
+                                    this._buffedPower[hIDX].Effects[index2].BaseProbability *= effect1.BaseProbability;
+                                    this._buffedPower[hIDX].Effects[index2].Ticks = effect1.Ticks;
                                 }
                             }
                         }
                     }
                 }
-                flag2 = flag1;
             }
-            return flag2;
         }
 
         IPower GBPA_ApplyPowerOverride(ref IPower ret)
-
         {
             if (ret.HasPowerOverrideEffect)
             {
@@ -864,7 +789,6 @@ namespace Hero_Designer
         }
 
         bool GBPA_MultiplyVariable(ref IPower iPower, int hIDX)
-
         {
             bool flag;
             if (iPower == null)
@@ -889,7 +813,6 @@ namespace Hero_Designer
         }
 
         bool GBPA_Pass0_InitializePowerArray()
-
         {
             this._buffedPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
             this._mathPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
@@ -929,7 +852,6 @@ namespace Hero_Designer
         }
 
         bool GBPA_Pass1_EnhancePreED(ref IPower powerMath, int hIDX)
-
         {
             Enums.eEffectType eEffectType1 = Enums.eEffectType.None;
             bool flag1 = false;
@@ -1031,48 +953,45 @@ namespace Hero_Designer
         }
 
         static bool GBPA_Pass2_ApplyED(ref IPower powerMath)
-
         {
-            int num1 = Enum.GetValues(Enums.eEffectType.None.GetType()).Length - 1;
             powerMath.Accuracy = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Accuracy, -1), powerMath.Accuracy);
             powerMath.EndCost = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.EnduranceDiscount, -1), powerMath.EndCost);
             powerMath.InterruptTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Interrupt, -1), powerMath.InterruptTime);
             powerMath.Range = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Range, -1), powerMath.Range);
             powerMath.RechargeTime = Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.RechargeTime, -1), powerMath.RechargeTime);
-            int num2 = powerMath.Effects.Length - 1;
-            for (int index1 = 0; index1 <= num2; ++index1)
+            foreach (var eff in powerMath.Effects)
             {
-                if (!powerMath.Effects[index1].isEnahncementEffect)
+                if (!eff.isEnhancementEffect)
                 {
-                    int num3 = num1;
+                    int num3 = Enum.GetValues(Enums.eEffectType.None.GetType()).Length - 1;
                     for (int index2 = 0; index2 <= num3; ++index2)
                     {
-                        if (powerMath.Effects[index1].EffectType == (Enums.eEffectType)index2)
+                        if (eff.EffectType == (Enums.eEffectType)index2)
                         {
                             Enums.eEnhance eEnhance = Enums.eEnhance.None;
                             Enums.eEffectType eEffectType = (Enums.eEffectType)index2;
-                            bool flag1 = Enums.IsEnumValue(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance);
-                            bool flag2 = false;
-                            if (!flag1)
+                            bool isOk = Enums.IsEnumValue(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance);
+                            bool isSpecial = false;
+                            if (!isOk)
                             {
-                                if (powerMath.Effects[index1].EffectType == Enums.eEffectType.Enhancement & powerMath.Effects[index1].ETModifies == Enums.eEffectType.Accuracy)
+                                if (eff.EffectType == Enums.eEffectType.Enhancement & eff.ETModifies == Enums.eEffectType.Accuracy)
                                 {
-                                    flag1 = true;
-                                    flag2 = true;
+                                    isOk = true;
+                                    isSpecial = true;
                                 }
-                                else if (powerMath.Effects[index1].EffectType == Enums.eEffectType.ResEffect & powerMath.Effects[index1].ETModifies == Enums.eEffectType.Defense)
-                                    flag1 = true;
+                                else if (eff.EffectType == Enums.eEffectType.ResEffect & eff.ETModifies == Enums.eEffectType.Defense)
+                                    isOk = true;
                             }
-                            if (flag1)
+                            if (isOk)
                             {
-                                Enums.eEnhance iEnh = !flag2 ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance, false) : Enums.eEnhance.Accuracy;
+                                Enums.eEnhance iEnh = !isSpecial ? (Enums.eEnhance)Enums.StringToFlaggedEnum(Enum.GetName(eEffectType.GetType(), eEffectType), eEnhance, false) : Enums.eEnhance.Accuracy;
                                 if (eEffectType == Enums.eEffectType.Mez)
                                 {
-                                    powerMath.Effects[index1].Math_Mag = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)powerMath.Effects[index1].MezType), powerMath.Effects[index1].Math_Mag);
-                                    powerMath.Effects[index1].Math_Duration = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)powerMath.Effects[index1].MezType), powerMath.Effects[index1].Math_Duration);
+                                    eff.Math_Mag = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)eff.MezType), eff.Math_Mag);
+                                    eff.Math_Duration = Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, (int)eff.MezType), eff.Math_Duration);
                                 }
                                 else
-                                    powerMath.Effects[index1].Math_Mag = !(eEffectType == Enums.eEffectType.ResEffect & powerMath.Effects[index1].ETModifies == Enums.eEffectType.Defense) ? Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, -1), powerMath.Effects[index1].Math_Mag) : Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Defense, -1), powerMath.Effects[index1].Math_Mag);
+                                    eff.Math_Mag = !(eEffectType == Enums.eEffectType.ResEffect & eff.ETModifies == Enums.eEffectType.Defense) ? Enhancement.ApplyED(Enhancement.GetSchedule(iEnh, -1), eff.Math_Mag) : Enhancement.ApplyED(Enhancement.GetSchedule(Enums.eEnhance.Defense, -1), eff.Math_Mag);
                             }
                         }
                     }
@@ -1084,9 +1003,9 @@ namespace Hero_Designer
         bool GBPA_Pass3_EnhancePostED(ref IPower powerMath, int hIDX)
 
         {
-            bool flag1 = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.Accuracy);
-            bool flag2 = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.RechargeTime);
-            bool flag3 = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.EnduranceDiscount);
+            bool okAcc = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.Accuracy);
+            bool okRecharge = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.RechargeTime);
+            bool okEnd = DatabaseAPI.Database.Power[this.CurrentBuild.Powers[hIDX].NIDPower].IgnoreEnhancement(Enums.eEnhance.EnduranceDiscount);
             int num1 = this._selfEnhance.Effect.Length - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -1094,14 +1013,14 @@ namespace Hero_Designer
                 switch (eEffectType)
                 {
                     case Enums.eEffectType.Accuracy:
-                        if (flag1)
+                        if (okAcc)
                         {
                             powerMath.Accuracy += this._selfEnhance.Effect[index1];
                             break;
                         }
                         break;
                     case Enums.eEffectType.EnduranceDiscount:
-                        if (flag3)
+                        if (okEnd)
                         {
                             powerMath.EndCost += this._selfEnhance.Effect[index1];
                             break;
@@ -1114,7 +1033,7 @@ namespace Hero_Designer
                         powerMath.Range += this._selfEnhance.Effect[index1];
                         break;
                     case Enums.eEffectType.RechargeTime:
-                        if (flag2)
+                        if (okRecharge)
                         {
                             powerMath.RechargeTime += this._selfEnhance.Effect[index1];
                             break;
@@ -1191,9 +1110,9 @@ namespace Hero_Designer
                                             }
                                             if (effect.EffectType == Enums.eEffectType.SpeedRunning | effect.EffectType == Enums.eEffectType.SpeedJumping | effect.EffectType == Enums.eEffectType.JumpHeight | effect.EffectType == Enums.eEffectType.SpeedFlying)
                                             {
-                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag > 0.0)
+                                                if (this._buffedPower[hIDX].Effects[index2].Mag > 0.0)
                                                     num4 = this._selfEnhance.Effect[(int)effect.EffectType];
-                                                if ((double)this._buffedPower[hIDX].Effects[index2].Mag < 0.0)
+                                                if (this._buffedPower[hIDX].Effects[index2].Mag < 0.0)
                                                 {
                                                     num4 = this._selfEnhance.EffectAux[(int)effect.EffectType];
                                                     break;
@@ -1211,8 +1130,7 @@ namespace Hero_Designer
                         break;
                 }
             }
-            int num9 = this.CurrentBuild.Powers.Count - 1;
-            for (int index = 0; index <= num9; ++index)
+            for (int index = 0; index <= this.CurrentBuild.Powers.Count - 1; ++index)
             {
                 if (this.CurrentBuild.Powers[index].StatInclude & this.CurrentBuild.Powers[index].NIDPower > -1)
                 {
@@ -1224,14 +1142,12 @@ namespace Hero_Designer
         }
 
         static bool GBPA_Pass4_Add(ref IPower powerMath)
-
         {
             ++powerMath.EndCost;
             ++powerMath.InterruptTime;
             ++powerMath.Range;
             ++powerMath.RechargeTime;
-            int num = powerMath.Effects.Length - 1;
-            for (int index = 0; index <= num; ++index)
+            for (int index = 0; index <= powerMath.Effects.Length - 1; ++index)
             {
                 ++powerMath.Effects[index].Math_Mag;
                 ++powerMath.Effects[index].Math_Duration;
@@ -1240,12 +1156,10 @@ namespace Hero_Designer
         }
 
         static bool GBPA_Pass5_MultiplyPreBuff(ref IPower powerMath, ref IPower powerBuffed)
-
         {
-            bool flag;
             if (powerBuffed == null)
             {
-                flag = false;
+                return false;
             }
             else
             {
@@ -1259,72 +1173,56 @@ namespace Hero_Designer
                     powerBuffed.Effects[index].Math_Mag = powerBuffed.Effects[index].Mag * powerMath.Effects[index].Math_Mag;
                     powerBuffed.Effects[index].Math_Duration = powerBuffed.Effects[index].Duration * powerMath.Effects[index].Math_Duration;
                 }
-                flag = true;
+                return true;
             }
-            return flag;
         }
 
         bool GBPA_Pass6_MultiplyPostBuff(ref IPower powerMath, ref IPower powerBuffed)
-
         {
-            bool flag;
             if (powerMath == null)
-                flag = false;
+                return false;
             else if (powerBuffed == null)
-            {
-                flag = false;
-            }
+                return false;
             else
             {
-                float num1 = this._selfBuffs.Effect[40];
-                float num2 = this._selfBuffs.Effect[1];
-                if (!powerMath.IgnoreBuff(Enums.eEnhance.ToHit))
-                    num1 = 0.0f;
-                if (!powerMath.IgnoreBuff(Enums.eEnhance.Accuracy))
-                    num2 = 0.0f;
-                powerBuffed.Accuracy = (float)((double)powerBuffed.Accuracy * (1.0 + (double)powerMath.Accuracy + (double)num2) * ((double)MidsContext.Config.BaseAcc + (double)num1));
-                powerBuffed.AccuracyMult = powerBuffed.Accuracy * (1f + powerMath.Accuracy + num2);
-                flag = true;
+                float nToHit = !powerMath.IgnoreBuff(Enums.eEnhance.ToHit) ? 0.0f : this._selfBuffs.Effect[40];
+                float nAcc = !powerMath.IgnoreBuff(Enums.eEnhance.Accuracy) ? 0.0f : this._selfBuffs.Effect[1];
+                powerBuffed.Accuracy = (float)(powerBuffed.Accuracy * (1.0 + powerMath.Accuracy + nAcc) * (MidsContext.Config.BaseAcc + (double)nToHit));
+                powerBuffed.AccuracyMult = powerBuffed.Accuracy * (1f + powerMath.Accuracy + nAcc);
+                return true;
             }
-            return flag;
         }
 
         IPower GBPA_SubPass0_AssemblePowerEntry(int nIDPower, int hIDX)
-
         {
-            IPower power1;
             if (nIDPower < 0)
-            {
-                power1 = null;
-            }
+                return null;
             else
             {
-                IPower power2 = (IPower)new Power(DatabaseAPI.Database.Power[nIDPower]);
+                IPower power2 = new Power(DatabaseAPI.Database.Power[nIDPower]);
                 this.GBPA_ApplyPowerOverride(ref power2);
                 this.GBPA_AddEnhFX(ref power2, hIDX);
                 power2.AbsorbPetEffects(hIDX);
                 power2.ApplyGrantPowerEffects();
                 this.GBPA_AddSubPowerEffects(ref power2, hIDX);
-                power1 = power2;
+                return power2;
             }
-            return power1;
         }
 
         void GenerateBuffData(ref Enums.BuffsX nBuffs, bool enhancementPass)
-
         {
             int num = this.CurrentBuild.Powers.Count - 1;
-            for (int index = 0; index <= num; ++index)
+            for (int i = 0; i <= num; ++i)
             {
-                if (this.CurrentBuild.Powers[index].StatInclude & this.CurrentBuild.Powers[index].NIDPower > -1 && DatabaseAPI.Database.Power[this.CurrentBuild.Powers[index].NIDPower].PowerType != Enums.ePowerType.GlobalBoost)
+                if (this.CurrentBuild.Powers[i].StatInclude & this.CurrentBuild.Powers[i].NIDPower > -1 && DatabaseAPI.Database.Power[this.CurrentBuild.Powers[i].NIDPower].PowerType != Enums.ePowerType.GlobalBoost)
                 {
                     if (enhancementPass)
                     {
-                        if (this._buffedPower[index] != null)
-                            clsToonX.GBD_Stage(ref this._buffedPower[index], ref nBuffs, enhancementPass);
+                        if (this._buffedPower[i] != null)
+                            clsToonX.GBD_Stage(ref this._buffedPower[i], ref nBuffs, enhancementPass);
                     }
-                    else if (this._buffedPower[index] != null)
-                        clsToonX.GBD_Stage(ref this._buffedPower[index], ref nBuffs, enhancementPass);
+                    else if (this._buffedPower[i] != null)
+                        clsToonX.GBD_Stage(ref this._buffedPower[i], ref nBuffs, enhancementPass);
                 }
             }
             IPower bonusVirtualPower = this.CurrentBuild.SetBonusVirtualPower;
@@ -1334,7 +1232,7 @@ namespace Hero_Designer
             int index1 = DatabaseAPI.NidFromUidPower("Temporary_Powers.Temporary_Powers.PVP_Resist_Bonus");
             if (index1 > -1)
             {
-                IPower tPwr = (IPower)new Power(DatabaseAPI.Database.Power[index1]);
+                IPower tPwr = new Power(DatabaseAPI.Database.Power[index1]);
                 clsToonX.GBD_Stage(ref tPwr, ref nBuffs, enhancementPass);
             }
         }
@@ -1350,8 +1248,7 @@ namespace Hero_Designer
             this.GBPA_Pass0_InitializePowerArray();
             this.GenerateModifyEffectsArray();
             this.GenerateBuffData(ref this._selfEnhance, true);
-            int num1 = this._mathPower.Length - 1;
-            for (int hIDX = 0; hIDX <= num1; ++hIDX)
+            for (int hIDX = 0; hIDX <= this._mathPower.Length - 1; ++hIDX)
             {
                 if (this._mathPower[hIDX] != null)
                 {
@@ -1364,8 +1261,7 @@ namespace Hero_Designer
                 }
             }
             this.GenerateBuffData(ref this._selfBuffs, false);
-            int num2 = this._mathPower.Length - 1;
-            for (int index = 0; index <= num2; ++index)
+            for (int index = 0; index <= this._mathPower.Length - 1; ++index)
             {
                 if (this._mathPower[index] != null)
                     this.GBPA_Pass6_MultiplyPostBuff(ref this._mathPower[index], ref this._buffedPower[index]);
@@ -1374,10 +1270,8 @@ namespace Hero_Designer
         }
 
         void GenerateModifyEffectsArray()
-
         {
-            int num = this.CurrentBuild.Powers.Count - 1;
-            for (int index = 0; index <= num; ++index)
+            for (int index = 0; index <= this.CurrentBuild.Powers.Count - 1; ++index)
             {
                 if (this.CurrentBuild.Powers[index].StatInclude & this.CurrentBuild.Powers[index].NIDPower > -1 && this._buffedPower[index] != null)
                 {
@@ -1426,8 +1320,7 @@ namespace Hero_Designer
             else if (nIDPower <= -1 || nIDPower > DatabaseAPI.Database.Power.Length - 1)
                 return null;
             IPower powerMath = this.GBPA_SubPass0_AssemblePowerEntry(nIDPower, iPower);
-            int num = this.CurrentBuild.Powers.Count - 1;
-            for (int index = 0; index <= num; ++index)
+            for (int index = 0; index <= this.CurrentBuild.Powers.Count - 1; ++index)
             {
                 if (iPower != index & this.CurrentBuild.Powers[index].StatInclude & this.CurrentBuild.Powers[index].NIDPower > -1 & index < this._mathPower.Length)
                 {
@@ -1439,164 +1332,176 @@ namespace Hero_Designer
         }
 
         static int GetClassByName(string iName)
-
         {
-            int num = DatabaseAPI.Database.EnhancementClasses.Length - 1;
-            for (int index = 0; index <= num; ++index)
+            foreach (var enhCls in DatabaseAPI.Database.EnhancementClasses)
             {
-                int id;
-                if (string.Equals(DatabaseAPI.Database.EnhancementClasses[index].ShortName, iName, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(enhCls.ShortName, iName, StringComparison.OrdinalIgnoreCase))
                 {
-                    id = DatabaseAPI.Database.EnhancementClasses[index].ID;
+                    return enhCls.ID;
                 }
                 else
                 {
-                    if (!string.Equals(DatabaseAPI.Database.EnhancementClasses[index].Name, iName, StringComparison.OrdinalIgnoreCase))
+                    if (!string.Equals(enhCls.Name, iName, StringComparison.OrdinalIgnoreCase))
                         continue;
-                    id = DatabaseAPI.Database.EnhancementClasses[index].ID;
+                    return enhCls.ID;
                 }
-                return id;
             }
             return -1;
         }
 
         public IPower GetEnhancedPower(int iPower)
-        {
-            return !(iPower < 0 | this._buffedPower.Length - 1 < iPower) ? this._buffedPower[iPower] : null;
-        }
+            => !(iPower < 0 | this._buffedPower.Length - 1 < iPower) ? this._buffedPower[iPower] : null;
 
         public int[] GetEnhancements(int iPowerSlot)
         {
-            int[] numArray = new int[0];
-            if (!(iPowerSlot < 0 | iPowerSlot >= this.CurrentBuild.Powers.Count))
+            if (!(iPowerSlot < 0 || iPowerSlot >= this.CurrentBuild.Powers.Count) && this.CurrentBuild.Powers[iPowerSlot].SlotCount > 0)
             {
-                numArray = new int[this.CurrentBuild.Powers[iPowerSlot].SlotCount - 1 + 1];
-                int num = this.CurrentBuild.Powers[iPowerSlot].SlotCount - 1;
-                for (int index = 0; index <= num; ++index)
-                    numArray[index] = this.CurrentBuild.Powers[iPowerSlot].Slots[index].Enhancement.Enh;
+                return this.CurrentBuild.Powers[iPowerSlot].Slots.Select(slot => slot.Enhancement.Enh).ToArray();
             }
-            return numArray;
+            return Array.Empty<int>();
         }
 
         bool ImportInternalDataUC(StreamReader iStream, float nVer)
-
         {
+            float olderFile;
+            if (nVer < 1.0)
+            {
+                olderFile = nVer;
+                if (olderFile >= 0.899999976158142 && (double)olderFile < 1.0)
+                    olderFile = 0.0f;
+                Interaction.MsgBox("The data being loaded was saved by an older version of the application, and may not load correctly. Should be OK though.", MsgBoxStyle.Information, "Just FYI");
+            }
+            else
+                olderFile = 0.0f;
+
+            // create method before any other variables are declared, inside other method to reduce class clutter
+            // also to lower cognitive load, this method depends on local properties, not the huge amount of variables present in the containing/calling method
+            // only 1 variable closed over: olderFile
+            ReadOnlyCollection<int> readPowerEntries(string[] data)
+            {
+                int count = (int)Math.Round(Conversion.Val(data[0]));
+                int offset = 1;
+                var indexLookup = new int[count + 1];
+                for (int index2 = 0; index2 <= count; ++index2)
+                {
+                    PowerEntry tPower = new PowerEntry(-1, null, false)
+                    {
+                        Level = (int)Math.Round(Conversion.Val(data[offset]))
+                    };
+                    offset += 1;
+                    tPower.NIDPowerset = (double)olderFile != 0.100000001490116 ? (Conversion.Val(data[offset]) >= 0.0 ? this.Powersets[(int)Math.Round(Conversion.Val(data[offset]))].nID : -1) : (int)Math.Round(Conversion.Val(data[offset]));
+                    offset += 1;
+                    tPower.IDXPower = (int)Math.Round(Conversion.Val(data[offset]));
+                    tPower.NIDPower = !(tPower.NIDPowerset > -1 & tPower.IDXPower > -1) ? -1 : DatabaseAPI.Database.Powersets[tPower.NIDPowerset].Power[tPower.IDXPower];
+                    if (olderFile == 0.0 || olderFile >= 1.0)
+                    {
+                        offset += +1;
+                        tPower.StatInclude = Conversion.Val(data[offset]) != 0.0;
+                        offset = offset + 1 + 1;
+                    }
+                    offset += 1;
+                    indexLookup[index2] = tPower.NIDPower;
+                    if (tPower.PowerSet.SetType != Enums.ePowerSetType.Inherent && !(tPower.NIDPowerset == this.Powersets[1].nID & tPower.IDXPower == 0))
+                    {
+                        this.RequestedLevel = tPower.Level;
+                        this.BuildPower(tPower.NIDPowerset, tPower.NIDPower, true);
+                    }
+                }
+                return new ReadOnlyCollection<int>(indexLookup.ToList());
+            }
+
+            void readSlotEntries(string[] data, ReadOnlyCollection<int> idxLookup)
+            {
+                int offset = 1; // previously line 4665
+                for (int index2 = 0; index2 <= (int)Math.Round(Conversion.Val(data[0])); ++index2)
+                {
+                    SlotEntry slotEntry = new SlotEntry()
+                    {
+                        Level = (int)Math.Round(Conversion.Val(data[offset]))
+                    };
+                    offset += 2;
+                    int tPowerID = (int)Math.Round(Conversion.Val(data[offset]));
+                    offset += 1;
+                    int tSlotIdx = (int)Math.Round(Conversion.Val(data[offset]));
+                    offset += 1;
+                    if (olderFile > 0.0 && olderFile < 1.0)
+                        offset += 2;
+                    if (olderFile > 0.0 && olderFile < 1.10000002384186)
+                    {
+                        slotEntry.Enhancement = new I9Slot
+                        {
+                            Enh = DatabaseAPI.GetFirstValidEnhancement(clsToonX.GetClassByName(data[offset])),
+                            Grade = MidsContext.Config.CalcEnhOrigin,
+                            RelativeLevel = MidsContext.Config.CalcEnhLevel,
+                            IOLevel = MidsContext.Config.I9.DefaultIOLevel
+                        };
+                        slotEntry.FlippedEnhancement = new I9Slot();
+                    }
+                    else
+                        slotEntry.LoadFromString(data[offset], ":");
+                    offset += 1;
+                    if (tPowerID > -1 && idxLookup[tPowerID] > -1)
+                    {
+                        int nSlotID = 0;
+                        int inToonHistory = this.CurrentBuild.FindInToonHistory(idxLookup[tPowerID]); // AKA nPowerID
+                        if (tSlotIdx > 0)
+                            nSlotID = this.BuildSlot(inToonHistory, -1);
+                        else if (tSlotIdx == 0)
+                            nSlotID = tSlotIdx;
+                        if (inToonHistory > -1 & inToonHistory < this.CurrentBuild.Powers.Count && this.CurrentBuild.Powers[inToonHistory].Slots.Length > nSlotID & nSlotID > -1)
+                        {
+                            var slot = this.CurrentBuild.Powers[inToonHistory].Slots[nSlotID];
+                            slot.Enhancement.Enh = slotEntry.Enhancement.Enh;
+                            slot.Enhancement.Grade = slotEntry.Enhancement.Grade;
+                            slot.Enhancement.IOLevel = slotEntry.Enhancement.IOLevel;
+                            slot.Enhancement.RelativeLevel = slotEntry.Enhancement.RelativeLevel;
+                            // is this a bug from the original source? why wouldn't it be slot.Level = slotEntry.Level?
+                            // commented out setter that does nothing
+                            //slot.Level = slot.Level;
+                            slot.FlippedEnhancement.Enh = slotEntry.FlippedEnhancement.Enh;
+                            slot.FlippedEnhancement.Grade = slotEntry.FlippedEnhancement.Grade;
+                            slot.FlippedEnhancement.IOLevel = slotEntry.FlippedEnhancement.IOLevel;
+                            slot.FlippedEnhancement.RelativeLevel = slotEntry.FlippedEnhancement.RelativeLevel;
+                        }
+                    }
+                }
+            }
+            // why are these two being saved then set back later, is something mutating them?
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
             Enums.dmItem buildOption = MidsContext.Config.BuildOption;
             MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
             MidsContext.Config.BuildOption = Enums.dmItem.Slot;
-            float num1;
-            if ((double)nVer < 1.0)
-            {
-                num1 = nVer;
-                if ((double)num1 >= 0.899999976158142 && (double)num1 < 1.0)
-                    num1 = 0.0f;
-                int num2 = (int)Interaction.MsgBox("The data being loaded was saved by an older version of the application, and may not load correctly. Should be OK though.", MsgBoxStyle.Information, "Just FYI");
-            }
-            else
-                num1 = 0.0f;
-            string[] strArray1 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            this.Name = strArray1[0];
-            this.Archetype = DatabaseAPI.GetArchetypeByName(strArray1[2]);
-            this.Origin = DatabaseAPI.GetOriginByName(this.Archetype, strArray1[1]);
-            string[] strArray2 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            int num3 = this.Powersets.Length - 1;
-            for (int index = 0; index <= num3; ++index)
-            {
-                this.Powersets[index] = DatabaseAPI.GetPowersetByName(strArray2[index], this.Archetype.DisplayName);
-                if (strArray2[index].IndexOf("Inherent", StringComparison.Ordinal) > -1)
-                    this.Powersets[index] = DatabaseAPI.GetInherentPowerset();
-            }
-            string[] strArray3 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            int num4 = this.PoolLocked.Length - 1;
-            for (int index = 0; index <= num4; ++index)
-                this.PoolLocked[index] = Conversion.Val(strArray3[index + 1]) != 0.0;
-            string[] strArray4 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            strArray4 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            string[] strArray5 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            int num5 = (int)Math.Round(Conversion.Val(strArray5[0]));
-            this.NewBuild();
-            int index1 = 1;
-            int[] numArray = new int[num5 + 1];
-            int num6 = num5;
-            for (int index2 = 0; index2 <= num6; ++index2)
-            {
-                PowerEntry powerEntry = new PowerEntry(-1, null, false)
+            string[] ret = clsToonX.IoGrab2(iStream, ";", char.MinValue);
+            this.Name = ret[0];
+            this.Archetype = DatabaseAPI.GetArchetypeByName(ret[2]);
+            this.Origin = DatabaseAPI.GetOriginByName(this.Archetype, ret[1]);
+
+            { // stage: powersets
+                var setData = clsToonX.IoGrab2(iStream, ";", char.MinValue);
+                for (int index = 0; index <= this.Powersets.Length - 1; ++index)
                 {
-                    Level = (int)Math.Round(Conversion.Val(strArray5[index1]))
-                };
-                int index3 = index1 + 1;
-                powerEntry.NIDPowerset = (double)num1 != 0.100000001490116 ? (Conversion.Val(strArray5[index3]) >= 0.0 ? this.Powersets[(int)Math.Round(Conversion.Val(strArray5[index3]))].nID : -1) : (int)Math.Round(Conversion.Val(strArray5[index3]));
-                int index4 = index3 + 1;
-                powerEntry.IDXPower = (int)Math.Round(Conversion.Val(strArray5[index4]));
-                powerEntry.NIDPower = !(powerEntry.NIDPowerset > -1 & powerEntry.IDXPower > -1) ? -1 : DatabaseAPI.Database.Powersets[powerEntry.NIDPowerset].Power[powerEntry.IDXPower];
-                if ((double)num1 == 0.0 | (double)num1 >= 1.0)
-                {
-                    int index5 = index4 + 1;
-                    powerEntry.StatInclude = Conversion.Val(strArray5[index5]) != 0.0;
-                    index4 = index5 + 1 + 1;
-                }
-                index1 = index4 + 1;
-                numArray[index2] = powerEntry.NIDPower;
-                if (powerEntry.PowerSet.SetType != Enums.ePowerSetType.Inherent && !(powerEntry.NIDPowerset == this.Powersets[1].nID & powerEntry.IDXPower == 0))
-                {
-                    this.RequestedLevel = powerEntry.Level;
-                    this.BuildPower(powerEntry.NIDPowerset, powerEntry.NIDPower, true);
+                    this.Powersets[index] = DatabaseAPI.GetPowersetByName(setData[index], this.Archetype.DisplayName);
+                    if (setData[index].IndexOf("Inherent", StringComparison.Ordinal) > -1)
+                        this.Powersets[index] = DatabaseAPI.GetInherentPowerset();
                 }
             }
-            string[] strArray6 = clsToonX.IoGrab2(iStream, ";", char.MinValue);
-            int num7 = (int)Math.Round(Conversion.Val(strArray6[0]));
-            int index6 = 1;
-            int num8 = num7;
-            for (int index2 = 0; index2 <= num8; ++index2)
-            {
-                SlotEntry slotEntry = new SlotEntry()
-                {
-                    Level = (int)Math.Round(Conversion.Val(strArray6[index6]))
-                };
-                int index3 = index6 + 1 + 1;
-                int index4 = (int)Math.Round(Conversion.Val(strArray6[index3]));
-                int index5 = index3 + 1;
-                int num2 = (int)Math.Round(Conversion.Val(strArray6[index5]));
-                int index7 = index5 + 1;
-                if ((double)num1 > 0.0 & (double)num1 < 1.0)
-                    index7 = index7 + 1 + 1;
-                if ((double)num1 > 0.0 & (double)num1 < 1.10000002384186)
-                {
-                    slotEntry.Enhancement = new I9Slot();
-                    slotEntry.Enhancement.Enh = DatabaseAPI.GetFirstValidEnhancement(clsToonX.GetClassByName(strArray6[index7]));
-                    slotEntry.Enhancement.Grade = MidsContext.Config.CalcEnhOrigin;
-                    slotEntry.Enhancement.RelativeLevel = MidsContext.Config.CalcEnhLevel;
-                    slotEntry.Enhancement.IOLevel = MidsContext.Config.I9.DefaultIOLevel;
-                    slotEntry.FlippedEnhancement = new I9Slot();
-                }
-                else
-                    slotEntry.LoadFromString(strArray6[index7], ":");
-                index6 = index7 + 1;
-                if (index4 > -1 && numArray[index4] > -1)
-                {
-                    int num9 = 0;
-                    int inToonHistory = this.CurrentBuild.FindInToonHistory(numArray[index4]);
-                    if (num2 > 0)
-                        num9 = this.BuildSlot(inToonHistory, -1);
-                    else if (num2 == 0)
-                        num9 = num2;
-                    if (inToonHistory > -1 & inToonHistory < this.CurrentBuild.Powers.Count && this.CurrentBuild.Powers[inToonHistory].Slots.Length > num9 & num9 > -1)
-                    {
-                        SlotEntry[] slots = this.CurrentBuild.Powers[inToonHistory].Slots;
-                        int index8 = num9;
-                        slots[index8].Enhancement.Enh = slotEntry.Enhancement.Enh;
-                        slots[index8].Enhancement.Grade = slotEntry.Enhancement.Grade;
-                        slots[index8].Enhancement.IOLevel = slotEntry.Enhancement.IOLevel;
-                        slots[index8].Enhancement.RelativeLevel = slotEntry.Enhancement.RelativeLevel;
-                        slots[index8].Level = slots[index8].Level;
-                        slots[index8].FlippedEnhancement.Enh = slotEntry.FlippedEnhancement.Enh;
-                        slots[index8].FlippedEnhancement.Grade = slotEntry.FlippedEnhancement.Grade;
-                        slots[index8].FlippedEnhancement.IOLevel = slotEntry.FlippedEnhancement.IOLevel;
-                        slots[index8].FlippedEnhancement.RelativeLevel = slotEntry.FlippedEnhancement.RelativeLevel;
-                    }
-                }
+
+            { // stage: poolLocks
+                var poolData = clsToonX.IoGrab2(iStream, ";", char.MinValue);
+                for (int index = 0; index <= this.PoolLocked.Length - 1; ++index)
+                    this.PoolLocked[index] = Conversion.Val(poolData[index + 1]) != 0.0;
             }
+
+            // fast forward stream
+            clsToonX.IoGrab2(iStream, ";", char.MinValue);
+            // fast forward stream
+            clsToonX.IoGrab2(iStream, ";", char.MinValue);
+            this.NewBuild(); // NewHistory()
+            // stage: read powerEntries
+            var lookup = readPowerEntries(clsToonX.IoGrab2(iStream, ";", char.MinValue));
+            // stage: read slots
+            readSlotEntries(clsToonX.IoGrab2(iStream, ";", char.MinValue), lookup);
+            // stage: wrap up
             if (this.Archetype == null)
                 this.Archetype = DatabaseAPI.Database.Classes[0];
             if (this.Origin > this.Archetype.Origin.Length - 1)
@@ -1661,7 +1566,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 ProjectData.SetProjectError(ex);
-                int num = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
+                Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                 ProjectData.ClearProjectError();
                 return false;
             }
@@ -2271,17 +2176,17 @@ namespace Hero_Designer
             strArray1[1] = strArray1[1].Replace(",", ".");
             float nVer = (float)Conversion.Val(strArray1[1]);
             bool flag;
-            if ((double)nVer < 1.29999995231628)
+            if (nVer < 1.29999995231628)
             {
                 flag = this.ImportInternalDataUC(iStream, nVer);
             }
             else
             {
-                if ((double)nVer < 1.39999997615814 & (double)nVer != 1.29999995231628)
+                if (nVer < 1.39999997615814 & nVer != 1.29999995231628)
                 {
-                    int num1 = (int)Interaction.MsgBox("The data being loaded was saved by an older version of the application, attempting conversion.", MsgBoxStyle.Information, "Just FYI");
+                    Interaction.MsgBox("The data being loaded was saved by an older version of the application, attempting conversion.", MsgBoxStyle.Information, "Just FYI");
                 }
-                else if ((double)nVer > 1.39999997615814)
+                else if (nVer > 1.39999997615814)
                 {
                     int num2 = (int)Interaction.MsgBox(("The data being loaded was saved by a newer version of the application (File format v" + Strings.Format(nVer, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + ", expected " + Strings.Format(1.4f, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0###") + "). It may not load correctly."), MsgBoxStyle.Information, "Just FYI");
                 }
@@ -2301,7 +2206,7 @@ namespace Hero_Designer
                 this.NewBuild();
                 int index1 = 0;
                 int num4 = this.CurrentBuild.Powers.Count - 1;
-                if ((double)nVer < 1.39999997615814)
+                if (nVer < 1.39999997615814)
                     num4 = this.CurrentBuild.Powers.Count - 2;
                 int num5 = num4;
                 for (int index2 = 0; index2 <= num5; ++index2)
@@ -2330,7 +2235,7 @@ namespace Hero_Designer
                         }
                         power.VariableValue = (int)Math.Round(Conversion.Val(strArray4[index7]));
                         index1 = index7 + 1;
-                        if ((double)nVer >= 1.39999997615814)
+                        if (nVer >= 1.39999997615814)
                         {
                             power.SubPowers = new PowerSubEntry[(int)Math.Round(Conversion.Val(strArray4[index1])) + 1];
                             ++index1;
