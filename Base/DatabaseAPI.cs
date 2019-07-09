@@ -11,24 +11,18 @@ using Base;
 
 public static class DatabaseAPI
 {
-    static readonly IDictionary<string, int> AttribMod = (IDictionary<string, int>)new Dictionary<string, int>();
+    static readonly IDictionary<string, int> AttribMod = new Dictionary<string, int>();
 
-    static readonly IDictionary<string, int> Classes = (IDictionary<string, int>)new Dictionary<string, int>();
+    static readonly IDictionary<string, int> Classes = new Dictionary<string, int>();
 
     public const int HeroAccolades = 3257;
     public const int VillainAccolades = 3258;
     public const int TempPowers = 3259;
 
     public static IDatabase Database
-    {
-        get
-        {
-            return Base.Data_Classes.Database.Instance;
-        }
-    }
+        => Base.Data_Classes.Database.Instance;
 
     static void ClearLookups()
-
     {
         AttribMod.Clear();
         Classes.Clear();
@@ -36,43 +30,31 @@ public static class DatabaseAPI
 
     public static int NidFromUidAttribMod(string uID)
     {
-        int num;
         if (string.IsNullOrEmpty(uID))
-            num = -1;
-        else if (AttribMod.ContainsKey(uID))
+            return -1;
+        if (AttribMod.ContainsKey(uID))
+            return AttribMod[uID];
+        for (int index = 0; index <= Database.AttribMods.Modifier.Length - 1; ++index)
         {
-            num = AttribMod[uID];
-        }
-        else
-        {
-            for (int index = 0; index <= Database.AttribMods.Modifier.Length - 1; ++index)
+            if (string.Equals(uID, Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
             {
-                if (string.Equals(uID, Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
-                {
-                    AttribMod.Add(uID, index);
-                    return index;
-                }
+                AttribMod.Add(uID, index);
+                return index;
             }
-            num = -1;
         }
-        return num;
+        return -1;
     }
 
     public static int NidFromUidClass(string uidClass)
     {
         if (string.IsNullOrEmpty(uidClass))
             return -1;
-        else if (Classes.ContainsKey(uidClass))
-        {
+        if (Classes.ContainsKey(uidClass))
             return Classes[uidClass];
-        }
-        else
-        {
-            var index = Database.Classes.TryFindIndex(cls => string.Equals(uidClass, cls.ClassName, StringComparison.OrdinalIgnoreCase));
-            if (index >= 0)
-                Classes.Add(uidClass, index);
-            return index;
-        }
+        var index = Database.Classes.TryFindIndex(cls => string.Equals(uidClass, cls.ClassName, StringComparison.OrdinalIgnoreCase));
+        if (index >= 0)
+            Classes.Add(uidClass, index);
+        return index;
     }
 
     public static string UidFromNidClass(int nIDClass) => nIDClass < 0 || nIDClass > Database.Classes.Length ? string.Empty : Database.Classes[nIDClass].ClassName;
@@ -80,13 +62,8 @@ public static class DatabaseAPI
     public static int NidFromUidOrigin(string uidOrigin, int nIDClass)
     {
         if (nIDClass < 0)
-        {
             return -1;
-        }
-        else
-        {
-            return Database.Classes[nIDClass].Origin.TryFindIndex(o => string.Equals(o, uidOrigin, StringComparison.OrdinalIgnoreCase));
-        }
+        return Database.Classes[nIDClass].Origin.TryFindIndex(o => string.Equals(o, uidOrigin, StringComparison.OrdinalIgnoreCase));
     }
 
     static void FillGroupArray()
@@ -113,64 +90,48 @@ public static class DatabaseAPI
     public static int NidFromStaticIndexPower(int sidPower)
     {
         if (sidPower < 0)
-        {
             return -1;
-        }
-        else
-        {
-            return Database.Power.TryFindIndex(p => p.StaticIndex == sidPower);
-        }
+        return Database.Power.TryFindIndex(p => p.StaticIndex == sidPower);
     }
 
     public static int NidFromUidPower(string name)
         => GetPowerByName(name)?.PowerIndex ?? -1;
 
     public static int NidFromUidEntity(string uidEntity)
-    {
-        for (int index = 0; index <= Database.Entities.Length - 1; ++index)
-        {
-            if (string.Equals(Database.Entities[index].UID, uidEntity, StringComparison.OrdinalIgnoreCase))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Entities.TryFindIndex(se => string.Equals(se.UID, uidEntity, StringComparison.OrdinalIgnoreCase));
 
-    public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType)
+    public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType) // clsI12Lookup.vb
     {
-        List<int> intList = new List<int>();
-        bool flag1 = nType != Enums.ePowerSetType.None;
-        bool flag2 = nIDClass > -1;
-        int[] array;
         if ((nType == Enums.ePowerSetType.Inherent || nType == Enums.ePowerSetType.Pool) && nIDClass > -1 && !Database.Classes[nIDClass].Playable)
+            return Array.Empty<int>();
+
+
+        IPowerset[] powersetArray = Database.Powersets;
+        if (group != null)
         {
-            array = intList.ToArray();
+            List<IPowerset> powersetList = new List<IPowerset>();
+            foreach (var powerset in group.Powersets)
+                powersetList.Add(powerset.Value);
+            powersetArray = powersetList.ToArray();
         }
-        else
+
+        List<int> intList = new List<int>();
+        bool checkType = nType != Enums.ePowerSetType.None;
+        bool checkClass = nIDClass > -1;
+        foreach (IPowerset powerset in powersetArray)
         {
-            IPowerset[] powersetArray = Database.Powersets;
-            if (group != null)
+            bool isOk = !checkType || powerset.SetType == nType;
+            if (checkClass & isOk)
             {
-                List<IPowerset> powersetList = new List<IPowerset>();
-                foreach (KeyValuePair<string, IPowerset> powerset in group.Powersets)
-                    powersetList.Add(powerset.Value);
-                powersetArray = powersetList.ToArray();
+                if ((powerset.SetType == Enums.ePowerSetType.Primary || powerset.SetType == Enums.ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
+                    isOk = false;
+                if (powerset.Powers.Length > 0 && isOk && (powerset.SetType != Enums.ePowerSetType.Inherent && powerset.SetType != Enums.ePowerSetType.Accolade) && powerset.SetType != Enums.ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
+                    isOk = false;
             }
-            foreach (IPowerset powerset in powersetArray)
-            {
-                bool flag3 = !flag1 || powerset.SetType == nType;
-                if (flag2 & flag3)
-                {
-                    if ((powerset.SetType == Enums.ePowerSetType.Primary || powerset.SetType == Enums.ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
-                        flag3 = false;
-                    if (powerset.Powers.Length > 0 && flag3 && (powerset.SetType != Enums.ePowerSetType.Inherent && powerset.SetType != Enums.ePowerSetType.Accolade) && powerset.SetType != Enums.ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
-                        flag3 = false;
-                }
-                if (flag3)
-                    intList.Add(powerset.nID);
-            }
-            array = intList.ToArray();
+            if (isOk)
+                intList.Add(powerset.nID);
         }
-        return array;
+        return intList.ToArray();
     }
 
     public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
@@ -178,35 +139,29 @@ public static class DatabaseAPI
 
     public static int[] NidPowers(int nIDPowerset, int nIDClass = -1)
     {
-        if (nIDPowerset < 0 | nIDPowerset > Database.Powersets.Length - 1)
+        if (nIDPowerset < 0 || nIDPowerset > Database.Powersets.Length - 1)
         {
+            //return Enumerable.Range(0, Database.Powersets.Length).ToArray();
             var array = new int[Database.Power.Length];
             for (int index = 0; index < Database.Power.Length; ++index)
                 array[index] = index;
             return array;
         }
-        else
-        {
-            var powerset = Database.Powersets[nIDPowerset];
-            return powerset.Powers.FindIndexes(pow => pow.Requires.ClassOk(nIDClass)).Select(idx => powerset.Power[idx]).ToArray();
-        }
+
+        var powerset = Database.Powersets[nIDPowerset];
+        return powerset.Powers.FindIndexes(pow => pow.Requires.ClassOk(nIDClass)).Select(idx => powerset.Power[idx]).ToArray();
     }
 
     public static int[] NidPowers(string uidPowerset, string uidClass = "") => NidPowers(NidFromUidPowerset(uidPowerset), NidFromUidClass(uidClass));
 
     public static string[] UidPowers(string uidPowerset, string uidClass = "")
     {
-        if (string.IsNullOrEmpty(uidPowerset))
-        {
-            var array = new string[Database.Power.Length];
-            for (int index = 0; index < Database.Power.Length; ++index)
-                array[index] = Database.Power[index].FullName;
-            return array;
-        }
-        else
-        {
+        if (!string.IsNullOrEmpty(uidPowerset))
             return Database.Power.Where(pow => string.Equals(pow.FullSetName, uidPowerset, StringComparison.OrdinalIgnoreCase) && pow.Requires.ClassOk(uidClass)).Select(pow => pow.FullName).ToArray();
-        }
+        var array = new string[Database.Power.Length];
+        for (int index = 0; index < Database.Power.Length; ++index)
+            array[index] = Database.Power[index].FullName;
+        return array;
     }
 
     static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
@@ -217,20 +172,13 @@ public static class DatabaseAPI
     public static int[] NidPowersAtLevelBranch(int iLevel, int nIDPowerset)
     {
         if (nIDPowerset < 0)
-        {
             return Array.Empty<int>();
-        }
-        else
-        {
-            if (Database.Powersets[nIDPowerset].nIDTrunkSet > -1)
-            {
-                int[] powerset1 = NidPowersAtLevel(iLevel, nIDPowerset);
-                int[] powerset2 = NidPowersAtLevel(iLevel, Database.Powersets[nIDPowerset].nIDTrunkSet);
-                return powerset2.Concat(powerset1).ToArray();
-            }
-            else
-                return NidPowersAtLevel(iLevel, nIDPowerset);
-        }
+        if (Database.Powersets[nIDPowerset].nIDTrunkSet < 0)
+            return NidPowersAtLevel(iLevel, nIDPowerset);
+
+        int[] powerset1 = NidPowersAtLevel(iLevel, nIDPowerset);
+        int[] powerset2 = NidPowersAtLevel(iLevel, Database.Powersets[nIDPowerset].nIDTrunkSet);
+        return powerset2.Concat(powerset1).ToArray();
     }
 
     public static string[] UidMutexAll()
@@ -244,24 +192,15 @@ public static class DatabaseAPI
     {
         string[] strArray = iName.Split('.');
         if (strArray.Length < 2)
-        {
             return null;
-        }
-        else
-        {
-            if (strArray.Length > 2)
-                iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
-            string key = strArray[0];
-            if (!Database.PowersetGroups.ContainsKey(key))
-            {
-                return null;
-            }
-            else
-            {
-                PowersetGroup powersetGroup = Database.PowersetGroups[key];
-                return powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
-            }
-        }
+
+        if (strArray.Length > 2)
+            iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
+        string key = strArray[0];
+        if (!Database.PowersetGroups.ContainsKey(key))
+            return null;
+        PowersetGroup powersetGroup = Database.PowersetGroups[key];
+        return powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
     }
 
     public static IPowerset GetPowersetByName(string iName, string iArchetype)
@@ -271,17 +210,10 @@ public static class DatabaseAPI
         {
             if ((idx == powerset1.nArchetype || powerset1.nArchetype == -1) && string.Equals(iName, powerset1.DisplayName, StringComparison.OrdinalIgnoreCase))
             {
-                IPowerset powerset2;
-                if (powerset1.SetType == Enums.ePowerSetType.Ancillary)
-                {
-                    if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
-                        powerset2 = powerset1;
-                    else
-                        continue;
-                }
-                else
-                    powerset2 = powerset1;
-                return powerset2;
+                if (powerset1.SetType != Enums.ePowerSetType.Ancillary)
+                    return powerset1;
+                if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
+                    return powerset1;
             }
         }
         return null;
@@ -298,34 +230,13 @@ public static class DatabaseAPI
     }
 
     public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
-    {
-        foreach (IPowerset powerset in Database.Powersets)
-        {
-            if (iSet == powerset.SetType && string.Equals(iName, powerset.SetName, StringComparison.OrdinalIgnoreCase))
-                return powerset;
-        }
-        return null;
-    }
+        => Database.Powersets.FirstOrDefault(ps => iSet == ps.SetType && string.Equals(iName, ps.SetName, StringComparison.OrdinalIgnoreCase));
 
     public static IPowerset GetInherentPowerset()
-    {
-        for (int index = 0; index <= Database.Powersets.Length - 1; ++index)
-        {
-            if (Database.Powersets[index].SetType == Enums.ePowerSetType.Inherent)
-                return Database.Powersets[index];
-        }
-        return null;
-    }
+        => Database.Powersets.FirstOrDefault(ps => ps.SetType == Enums.ePowerSetType.Inherent);
 
     public static Archetype GetArchetypeByName(string iArchetype)
-    {
-        for (int index = 0; index <= Database.Classes.Length - 1; ++index)
-        {
-            if (string.Equals(iArchetype, Database.Classes[index].DisplayName, StringComparison.OrdinalIgnoreCase))
-                return Database.Classes[index];
-        }
-        return null;
-    }
+        => Database.Classes.FirstOrDefault(cls => string.Equals(iArchetype, cls.DisplayName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetOriginByName(Archetype archetype, string iOrigin)
     {
@@ -344,7 +255,7 @@ public static class DatabaseAPI
             int num = -1;
             if (Database.Power[index].PowerSetID > -1)
                 num = Database.Powersets[Database.Power[index].PowerSetID].nArchetype;
-            if (iArchetype == num | num == -1 && string.Equals(iName, Database.Power[index].DisplayName))
+            if ((iArchetype == num || num == -1) && string.Equals(iName, Database.Power[index].DisplayName))
                 return index;
         }
         return -1;
@@ -352,29 +263,18 @@ public static class DatabaseAPI
 
     public static IPower GetPowerByName(string name)
     {
-        IPower power1;
         if (string.IsNullOrEmpty(name))
+            return null;
+        IPowerset powersetByName = GetPowersetByName(name);
+        if (powersetByName == null)
+            return null;
+
+        foreach (IPower power2 in powersetByName.Powers)
         {
-            power1 = null;
+            if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
+                return power2;
         }
-        else
-        {
-            IPowerset powersetByName = GetPowersetByName(name);
-            if (powersetByName == null)
-            {
-                power1 = null;
-            }
-            else
-            {
-                foreach (IPower power2 in powersetByName.Powers)
-                {
-                    if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
-                        return power2;
-                }
-                power1 = null;
-            }
-        }
-        return power1;
+        return null;
     }
 
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
@@ -382,7 +282,7 @@ public static class DatabaseAPI
         List<string> stringList = new List<string>();
         if (iSet != Enums.ePowerSetType.Pool && iSet != Enums.ePowerSetType.Inherent)
         {
-            int[] numArray = new int[0];
+            int[] numArray = Array.Empty<int>();
             switch (iSet)
             {
                 case Enums.ePowerSetType.Primary:
@@ -396,10 +296,7 @@ public static class DatabaseAPI
                     break;
             }
             foreach (int index in numArray)
-            {
-                IPowerset powerset = Database.Powersets[index];
-                stringList.Add(powerset.DisplayName);
-            }
+                stringList.Add(Database.Powersets[index].DisplayName);
         }
         else
         {
@@ -410,27 +307,21 @@ public static class DatabaseAPI
             }
         }
         stringList.Sort();
-        if (stringList.Count <= 0)
-            return new string[1]
-            {
-                "No " + Enum.GetName(iSet.GetType(),  iSet)
-            };
-        else
+        if (stringList.Count > 0)
             return stringList.ToArray();
+        return new[] { "No " + Enum.GetName(iSet.GetType(), iSet) };
     }
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
         List<int> intList = new List<int>();
-        foreach (KeyValuePair<string, IPowerset> powerset in (IEnumerable<KeyValuePair<string, IPowerset>>)group.Powersets)
+        foreach (KeyValuePair<string, IPowerset> powerset in group.Powersets)
             intList.Add(powerset.Value.nID);
         return intList.ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroupName(string name)
-    {
-        return !string.IsNullOrEmpty(name) && Database.PowersetGroups.ContainsKey(name) ? GetPowersetIndexesByGroup(Database.PowersetGroups[name]) : new int[1];
-    }
+        => !string.IsNullOrEmpty(name) && Database.PowersetGroups.ContainsKey(name) ? GetPowersetIndexesByGroup(Database.PowersetGroups[name]) : new int[1];
 
     public static IPowerset[] GetPowersetIndexes(Archetype at, Enums.ePowerSetType iSet)
         => GetPowersetIndexes(at.Idx, iSet);
@@ -440,12 +331,12 @@ public static class DatabaseAPI
         List<IPowerset> powersetList = new List<IPowerset>();
         if (iSet != Enums.ePowerSetType.Pool & iSet != Enums.ePowerSetType.Inherent)
         {
-            for (int index = 0; index <= Database.Powersets.Length - 1; ++index)
+            foreach (var ps in Database.Powersets)
             {
-                if (Database.Powersets[index].nArchetype == iAT & Database.Powersets[index].SetType == iSet)
-                    powersetList.Add(Database.Powersets[index]);
-                else if (iSet == Enums.ePowerSetType.Ancillary & Database.Powersets[index].SetType == iSet && Database.Powersets[index].ClassOk(iAT))
-                    powersetList.Add(Database.Powersets[index]);
+                if (ps.nArchetype == iAT & ps.SetType == iSet)
+                    powersetList.Add(ps);
+                else if (iSet == Enums.ePowerSetType.Ancillary & ps.SetType == iSet && ps.ClassOk(iAT))
+                    powersetList.Add(ps);
             }
         }
         else
@@ -471,37 +362,33 @@ public static class DatabaseAPI
     }
 
     public static int GetEnhancementByUIDName(string iName)
-    {
-        for (int index = 0; index <= Database.Enhancements.Length - 1; ++index)
-        {
-            if (Database.Enhancements[index].UID.Contains(iName))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => enh.UID.Contains(iName));
 
     public static int GetEnhancementByName(string iName)
-    {
-        for (int index = 0; index <= Database.Enhancements.Length - 1; ++index)
-        {
-            if (string.Equals(Database.Enhancements[index].ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(Database.Enhancements[index].Name, iName, StringComparison.OrdinalIgnoreCase))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => string.Equals(enh.ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(enh.Name, iName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetEnhancementByName(string iName, Enums.eType iType)
-    {
-        for (int index = 0; index <= Database.Enhancements.Length - 1; ++index)
-        {
-            if (Database.Enhancements[index].TypeID == iType && (string.Equals(Database.Enhancements[index].ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(Database.Enhancements[index].Name, iName, StringComparison.OrdinalIgnoreCase)))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => enh.TypeID == iType && string.Equals(enh.ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(enh.Name, iName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetEnhancementByName(string iName, string iSet)
     {
+        //var index = Database.EnhancementSets
+        //    .Where(es => string.Equals(es.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
+        //    .SelectMany(es =>
+        //        es.Enhancements
+        //        .Where(enh =>
+        //            string.Equals(Database.Enhancements[es.Enhancements[enh]].ShortName, iName, StringComparison.OrdinalIgnoreCase)
+        //        ).Select(x => (int?)x))
+        //        .FirstOrDefault();
+        //return index ?? -1;
+        //return
+        //        (from es in Database.EnhancementSets
+        //        where string.Equals(es.ShortName, iSet, StringComparison.OrdinalIgnoreCase)
+        //        from enhSubId in es.Enhancements
+        //        let shortname = Database.Enhancements[es.Enhancements[enhSubId]].ShortName
+        //        where string.Equals(shortname, iName, StringComparison.OrdinalIgnoreCase)
+        //        select (int?)es.Enhancements[enhSubId] ).FirstOrDefault()
+        //        ?? -1;
         foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)Database.EnhancementSets)
         {
             if (string.Equals(enhancementSet.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
