@@ -3992,7 +3992,7 @@ namespace Hero_Designer
             }
             else
                 this.tsFileSave.Text = "&Save";
-            string str2 = str1 + "Pine's Hero Designer";
+            string str2 = str1 + MidsContext.Title;
             if (!Hero)
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
