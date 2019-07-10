@@ -151,7 +151,7 @@ public class Build
                     power.SubPowers = new PowerSubEntry[power.Power.NIDSubPower.Length];
                 for (int index = 0; index <= power.Power.NIDSubPower.Length - 1; ++index)
                 {
-                    if (power.SubPowers[index].nIDPower != power.Power.NIDSubPower[index])
+                    if (power.SubPowers[index]?.nIDPower != power.Power.NIDSubPower[index])
                     {
                         power.SubPowers[index] = new PowerSubEntry()
                         {
