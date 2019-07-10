@@ -960,7 +960,7 @@ namespace midsControls
         void OutputUnscaled(ref ExtendedBitmap Buffer, Point Location)
             => this.gTarget.DrawImageUnscaled(Buffer.Bitmap, Location);
 
-        readonly static float[][] heroMatrix = new[]
+        public readonly static float[][] heroMatrix = new[]
         {
                 new[] { 1f, 0f, 0f, 0f, 0f },
                 new[] { 0f, 1f, 0f, 0f, 0f },

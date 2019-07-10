@@ -426,10 +426,10 @@ public static class I9Gfx
             iDest.Width = 30;
         if (iDest.Height > 30)
             iDest.Height = 30;
-        if (iImageIndex < 0 | iImageIndex >= I9Gfx.Enhancements.Length)
+        if (iImageIndex < 0 || iImageIndex >= I9Gfx.Enhancements.Length)
             return;
-        iTarget.DrawImage((Image)I9Gfx.Borders.Bitmap, iDest, I9Gfx.GetOverlayRect(iGrade), GraphicsUnit.Pixel);
-        iTarget.DrawImage((Image)I9Gfx.Enhancements[iImageIndex], iDest, new Rectangle(0, 0, 30, 30), GraphicsUnit.Pixel);
+        iTarget.DrawImage(Borders.Bitmap, iDest, I9Gfx.GetOverlayRect(iGrade), GraphicsUnit.Pixel);
+        iTarget.DrawImage(I9Gfx.Enhancements[iImageIndex], iDest, new Rectangle(0, 0, 30, 30), GraphicsUnit.Pixel);
     }
 
     public static void DrawEnhancementSet(ref Graphics iTarget, int iImageIndex)
