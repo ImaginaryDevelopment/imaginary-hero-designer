@@ -639,10 +639,8 @@ namespace Hero_Designer
 
         static void HandleGrantPowerIncarnate(ref IPower powerMath, IEffect effect1, IPower[] buffedPowers, int effIdx, Archetype at, int hIDX)
         {
-
-            int length1 = powerMath.Effects.Length;
             powerMath.AbsorbEffects(DatabaseAPI.Database.Power[effect1.nSummon], effect1.Duration, 0.0f, at, 1, true, effIdx, -1);
-            for (int index2 = length1; index2 <= powerMath.Effects.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= powerMath.Effects.Length - 1; ++index2)
             {
                 powerMath.Effects[index2].ToWho = Enums.eToWho.Target;
                 powerMath.Effects[index2].Absorbed_Effect = true;
