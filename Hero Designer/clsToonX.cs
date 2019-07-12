@@ -2165,16 +2165,18 @@ namespace Hero_Designer
                             int num7 = power.SubPowers.Length - 1;
                             for (int index8 = 0; index8 <= num7; ++index8)
                             {
-                                power.SubPowers[index8] = new PowerSubEntry();
-                                power.SubPowers[index8].Power = (int)Math.Round(Conversion.Val(strArray4[index1]));
-                                int index9 = index1 + 1;
-                                power.SubPowers[index8].Powerset = (int)Math.Round(Conversion.Val(strArray4[index9]));
-                                int index10 = index9 + 1;
-                                power.SubPowers[index8].StatInclude = Math.Abs(Conversion.Val(strArray4[index10])) > 0.01;
-                                index1 = index10 + 1;
+                                power.SubPowers[index8] = new PowerSubEntry
+                                {
+                                    Power = (int)Math.Round(Conversion.Val(strArray4[index1]))
+                                };
+                                index1++;
+                                power.SubPowers[index8].Powerset = (int)Math.Round(Conversion.Val(strArray4[index1]));
+                                index1++;
+                                power.SubPowers[index8].StatInclude = Math.Abs(Conversion.Val(strArray4[index1])) > 0.01;
+                                index1++;
                                 power.SubPowers[index8].nIDPower = !(power.SubPowers[index8].Powerset > -1 & power.SubPowers[index8].Power > -1) ? -1 : DatabaseAPI.Database.Powersets[power.SubPowers[index8].Powerset].Power[power.SubPowers[index8].Power];
                             }
-                            power.SubPowers = new PowerSubEntry[0];
+                            power.SubPowers = Array.Empty<PowerSubEntry>();
                         }
                     }
                     else
@@ -2214,7 +2216,7 @@ namespace Hero_Designer
                 catch (Exception ex)
                 {
                     ProjectData.SetProjectError(ex);
-                    int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
+                    Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                     ProjectData.ClearProjectError();
                     return;
                 }
@@ -2229,9 +2231,9 @@ namespace Hero_Designer
             if (Index < 0 | Index >= this.CurrentBuild.Powers.Count)
                 return;
             IPower power1 = DatabaseAPI.Database.Power[nIDPower];
-            PowerEntry power2 = this.CurrentBuild.Powers[Index];
             if (power1 != null)
             {
+                PowerEntry power2 = this.CurrentBuild.Powers[Index];
                 power2.NIDPowerset = power1.PowerSetID;
                 power2.IDXPower = power1.PowerSetIndex;
                 power2.NIDPower = power1.PowerIndex;
@@ -2241,10 +2243,12 @@ namespace Hero_Designer
                     int num = power2.SubPowers.Length - 1;
                     for (int index = 0; index <= num; ++index)
                     {
-                        power2.SubPowers[index] = new PowerSubEntry();
-                        power2.SubPowers[index].nIDPower = power1.NIDSubPower[index];
-                        power2.SubPowers[index].Powerset = DatabaseAPI.Database.Power[power2.SubPowers[index].nIDPower].PowerSetID;
-                        power2.SubPowers[index].Power = DatabaseAPI.Database.Power[power2.SubPowers[index].nIDPower].PowerSetIndex;
+                        power2.SubPowers[index] = new PowerSubEntry
+                        {
+                            nIDPower = power1.NIDSubPower[index],
+                            Powerset = DatabaseAPI.Database.Power[power2.SubPowers[index].nIDPower].PowerSetID,
+                            Power = DatabaseAPI.Database.Power[power2.SubPowers[index].nIDPower].PowerSetIndex
+                        };
                     }
                 }
                 if (power1.Slottable & power2.Slots.Length == 0)
@@ -2266,18 +2270,18 @@ namespace Hero_Designer
                 {
                     if (clsUniversalImport.InterpretForumPost(iString))
                     {
-                        int num = (int)Interaction.MsgBox("Forum post interpreted OK!", MsgBoxStyle.Information, "Forum Import");
+                        Interaction.MsgBox("Forum post interpreted OK!", MsgBoxStyle.Information, "Forum Import");
                         flag1 = true;
                     }
                     else
                     {
-                        int num = (int)Interaction.MsgBox("Unable to interpret data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
+                        Interaction.MsgBox("Unable to interpret data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
                         flag1 = false;
                     }
                 }
                 else
                 {
-                    int num = (int)Interaction.MsgBox("Unable to recognise data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
+                    Interaction.MsgBox("Unable to recognise data. Please check that you copied the build data from the forum correctly and that it's a valid format.", MsgBoxStyle.Information, "Forum Import");
                     flag1 = false;
                 }
             }
@@ -2303,18 +2307,19 @@ namespace Hero_Designer
                         iString = iString.Replace("+\r\n+", "");
                         iString = iString.Replace("+ \r\n+", "");
                     }
-                    iString = iString.Replace("[Email]", "");
-                    iString = iString.Replace("[/Email]", "");
-                    iString = iString.Replace("[email]", "");
-                    iString = iString.Replace("[/email]", "");
-                    iString = iString.Replace("[EMAIL]", "");
-                    iString = iString.Replace("[/EMAIL]", "");
-                    iString = iString.Replace("[URL]", "");
-                    iString = iString.Replace("[/URL]", "");
-                    iString = iString.Replace("[url]", "");
-                    iString = iString.Replace("[/url]", "");
-                    iString = iString.Replace("[Url]", "");
-                    iString = iString.Replace("[/Url]", "");
+                    iString = iString
+                                .Replace("[Email]", "")
+                                .Replace("[/Email]", "")
+                                .Replace("[email]", "")
+                                .Replace("[/email]", "")
+                                .Replace("[EMAIL]", "")
+                                .Replace("[/EMAIL]", "")
+                                .Replace("[URL]", "")
+                                .Replace("[/URL]", "")
+                                .Replace("[url]", "")
+                                .Replace("[/url]", "")
+                                .Replace("[Url]", "")
+                                .Replace("[/Url]", "");
                     streamWriter.Write(iString);
                     streamWriter.Close();
                 }
@@ -2343,19 +2348,11 @@ namespace Hero_Designer
         }
 
         bool TestPower(int nIDPower)
-
         {
-            bool flag;
             if (this.CurrentBuild.FindInToonHistory(nIDPower) > -1)
-            {
-                flag = false;
-            }
-            else
-            {
-                string message = "";
-                flag = this.PowerState(nIDPower, ref message) == ListLabelV2.LLItemState.Enabled;
-            }
-            return flag;
+                return false;
+            string message = "";
+            return this.PowerState(nIDPower, ref message) == ListLabelV2.LLItemState.Enabled;
         }
     }
 }
