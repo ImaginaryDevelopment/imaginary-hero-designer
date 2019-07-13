@@ -10,11 +10,12 @@ using System.Runtime.CompilerServices;
 
 namespace Hero_Designer
 {
+    [StandardModule]
     public sealed class MainModule
     {
         public class MidsController
         {
-            public static float HeroDesignerVersion = 2.23f;
+            public static float HeroDesignerVersion = 2.55f;
             static bool _appInitialized = false;
 
             public static Rectangle SzFrmCompare = new Rectangle();
@@ -38,6 +39,7 @@ namespace Hero_Designer
                 }
             }
 
+            [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
             public static void LoadData(ref frmLoading iFrm)
             {
                 DatabaseAPI.LoadDatabaseVersion();
@@ -56,7 +58,7 @@ namespace Hero_Designer
                 if (!DatabaseAPI.LoadLevelsDatabase())
                 {
                     Interaction.MsgBox(
-                        "Failed to load Levelling data file! The program is unable to proceed.\r\n" +
+                        "Failed to load Leveling data file! The program is unable to proceed.\r\n" +
                         "We suggest you redownload the application from https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases", MsgBoxStyle.Critical, "Error");
                     ProjectData.EndApp();
                 }
@@ -89,9 +91,9 @@ namespace Hero_Designer
                 I9Gfx.LoadOriginImages();
                 I9Gfx.LoadArchetypeImages();
                 I9Gfx.LoadPowersetImages();
-                MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad(Files.MxdbFileBbCodeUpdate));
+                MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad("BBCode.mhd"));
                 iFrm.Opacity = 1.0;
-                DatabaseAPI.MatchAllIDs(iFrm);
+                DatabaseAPI.MatchAllIDs((IMessager)iFrm);
                 if (iFrm != null)
                     iFrm.SetMessage("Matching Set Bonus IDs...");
                 DatabaseAPI.AssignSetBonusIndexes();

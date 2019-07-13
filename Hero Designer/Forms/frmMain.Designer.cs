@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmMain
@@ -74,6 +76,8 @@ namespace Hero_Designer
             this.tsExport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExportLong = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExportDataLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsExportDiscord = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
@@ -205,7 +209,6 @@ namespace Hero_Designer
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(142, 20);
             this.txtName.TabIndex = 1;
-            this.txtName.TextChanged += new System.EventHandler(txtName_TextChanged);
             // 
             // cbAT
             // 
@@ -251,10 +254,6 @@ namespace Hero_Designer
             this.cbPrimary.Name = "cbPrimary";
             this.cbPrimary.Size = new System.Drawing.Size(144, 22);
             this.cbPrimary.TabIndex = 7;
-            this.cbPrimary.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPrimary_DrawItem);
-            this.cbPrimary.SelectionChangeCommitted += new System.EventHandler(cbPrimary_SelectedIndexChanged);
-            this.cbPrimary.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPrimary_MouseMove);
-            this.cbPrimary.MouseLeave += new System.EventHandler(cbPrimary_MouseLeave);
             // 
             // lblPrimary
             // 
@@ -334,10 +333,6 @@ namespace Hero_Designer
             this.cbPool1.Name = "cbPool1";
             this.cbPool1.Size = new System.Drawing.Size(136, 22);
             this.cbPool1.TabIndex = 18;
-            this.cbPool1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPool1_DrawItem);
-            this.cbPool1.SelectionChangeCommitted += new System.EventHandler(cbPool1_SelectedIndexChanged);
-            this.cbPool1.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPool1_MouseMove);
-            this.cbPool1.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // lblPool2
             // 
@@ -362,10 +357,6 @@ namespace Hero_Designer
             this.cbPool2.Name = "cbPool2";
             this.cbPool2.Size = new System.Drawing.Size(136, 22);
             this.cbPool2.TabIndex = 21;
-            this.cbPool2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPool2_DrawItem);
-            this.cbPool2.SelectionChangeCommitted += new System.EventHandler(cbPool2_SelectedIndexChanged);
-            this.cbPool2.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPool2_MouseMove);
-            this.cbPool2.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // cbPool1
             // 
@@ -397,10 +388,6 @@ namespace Hero_Designer
             this.cbPool3.Name = "cbPool3";
             this.cbPool3.Size = new System.Drawing.Size(136, 22);
             this.cbPool3.TabIndex = 24;
-            this.cbPool3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cbPool3_DrawItem);
-            this.cbPool3.SelectionChangeCommitted += new System.EventHandler(cbPool3_SelectedIndexChanged);
-            this.cbPool3.MouseMove += new System.Windows.Forms.MouseEventHandler(cbPool3_MouseMove);
-            this.cbPool3.MouseLeave += new System.EventHandler(cbPool0_MouseLeave);
             // 
             // lblPool4
             // 
@@ -452,9 +439,6 @@ namespace Hero_Designer
             this.lblATLocked.TabIndex = 53;
             this.lblATLocked.Text = "Archetype Locked";
             this.lblATLocked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblATLocked.MouseMove += new System.Windows.Forms.MouseEventHandler(lblATLocked_MouseMove);
-            this.lblATLocked.Paint += new System.Windows.Forms.PaintEventHandler(lblATLocked_Paint);
-            this.lblATLocked.MouseLeave += new System.EventHandler(lblATLocked_MouseLeave);
             // 
             // dlgOpen
             // 
@@ -484,9 +468,6 @@ namespace Hero_Designer
             this.lblLocked0.TabIndex = 72;
             this.lblLocked0.Text = "Pool Locked";
             this.lblLocked0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLocked0.Paint += new System.Windows.Forms.PaintEventHandler(lblLocked0_Paint);
-            this.lblLocked0.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLocked0_MouseMove);
-            this.lblLocked0.MouseLeave += new System.EventHandler(lblLocked0_MouseLeave);
             // 
             // lblLocked1
             // 
@@ -500,9 +481,6 @@ namespace Hero_Designer
             this.lblLocked1.TabIndex = 73;
             this.lblLocked1.Text = "Pool Locked";
             this.lblLocked1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLocked1.Paint += new System.Windows.Forms.PaintEventHandler(lblLocked1_Paint);
-            this.lblLocked1.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLocked1_MouseMove);
-            this.lblLocked1.MouseLeave += new System.EventHandler(lblLocked0_MouseLeave);
             // 
             // lblLocked2
             // 
@@ -516,9 +494,6 @@ namespace Hero_Designer
             this.lblLocked2.TabIndex = 74;
             this.lblLocked2.Text = "Pool Locked";
             this.lblLocked2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLocked2.Paint += new System.Windows.Forms.PaintEventHandler(lblLocked2_Paint);
-            this.lblLocked2.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLocked2_MouseMove);
-            this.lblLocked2.MouseLeave += new System.EventHandler(lblLocked0_MouseLeave);
             // 
             // lblLocked3
             // 
@@ -532,9 +507,6 @@ namespace Hero_Designer
             this.lblLocked3.TabIndex = 75;
             this.lblLocked3.Text = "Pool Locked";
             this.lblLocked3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLocked3.Paint += new System.Windows.Forms.PaintEventHandler(lblLocked3_Paint);
-            this.lblLocked3.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLocked3_MouseMove);
-            this.lblLocked3.MouseLeave += new System.EventHandler(lblLocked0_MouseLeave);
             // 
             // lblLockedAncillary
             // 
@@ -548,9 +520,6 @@ namespace Hero_Designer
             this.lblLockedAncillary.TabIndex = 76;
             this.lblLockedAncillary.Text = "Pool Locked";
             this.lblLockedAncillary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLockedAncillary.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLockedAncillary_MouseMove);
-            this.lblLockedAncillary.Paint += new System.Windows.Forms.PaintEventHandler(lblLockedAncillary_Paint);
-            this.lblLockedAncillary.MouseLeave += new System.EventHandler(lblLocked0_MouseLeave);
             // 
             // lblLockedSecondary
             // 
@@ -564,8 +533,6 @@ namespace Hero_Designer
             this.lblLockedSecondary.TabIndex = 109;
             this.lblLockedSecondary.Text = "Sec. Locked";
             this.lblLockedSecondary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLockedSecondary.MouseMove += new System.Windows.Forms.MouseEventHandler(lblLockedSecondary_MouseMove);
-            this.lblLockedSecondary.MouseLeave += new System.EventHandler(lblLockedSecondary_MouseLeave);
             // 
             // MenuBar
             // 
@@ -611,7 +578,6 @@ namespace Hero_Designer
             this.tsFileNew.ShortcutKeys = System.Windows.Forms.Keys.N | System.Windows.Forms.Keys.Control;
             this.tsFileNew.Size = new System.Drawing.Size(179, 22);
             this.tsFileNew.Text = "&New / Clear";
-            this.tsFileNew.Click += new System.EventHandler(tsFileNew_Click);
             // 
             // ToolStripSeparator7
             // 
@@ -624,7 +590,6 @@ namespace Hero_Designer
             this.tsFileOpen.ShortcutKeys = System.Windows.Forms.Keys.O | System.Windows.Forms.Keys.Control;
             this.tsFileOpen.Size = new System.Drawing.Size(179, 22);
             this.tsFileOpen.Text = "&Open...";
-            this.tsFileOpen.Click += new System.EventHandler(tsFileOpen_Click);
             // 
             // tsFileSave
             // 
@@ -632,14 +597,12 @@ namespace Hero_Designer
             this.tsFileSave.ShortcutKeys = System.Windows.Forms.Keys.S | System.Windows.Forms.Keys.Control;
             this.tsFileSave.Size = new System.Drawing.Size(179, 22);
             this.tsFileSave.Text = "&Save";
-            this.tsFileSave.Click += new System.EventHandler(tsFileSave_Click);
             // 
             // tsFileSaveAs
             // 
             this.tsFileSaveAs.Name = "tsFileSaveAs";
             this.tsFileSaveAs.Size = new System.Drawing.Size(179, 22);
             this.tsFileSaveAs.Text = "Save &As...";
-            this.tsFileSaveAs.Click += new System.EventHandler(tsFileSaveAs_Click);
             // 
             // ToolStripSeparator8
             // 
@@ -652,7 +615,6 @@ namespace Hero_Designer
             this.tsFilePrint.ShortcutKeys = System.Windows.Forms.Keys.P | System.Windows.Forms.Keys.Control;
             this.tsFilePrint.Size = new System.Drawing.Size(179, 22);
             this.tsFilePrint.Text = "&Print...";
-            this.tsFilePrint.Click += new System.EventHandler(tsFilePrint_Click);
             // 
             // ToolStripSeparator9
             // 
@@ -665,17 +627,18 @@ namespace Hero_Designer
             this.tsFileQuit.ShortcutKeys = System.Windows.Forms.Keys.Q | System.Windows.Forms.Keys.Control;
             this.tsFileQuit.Size = new System.Drawing.Size(179, 22);
             this.tsFileQuit.Text = "&Quit";
-            this.tsFileQuit.Click += new System.EventHandler(tsFileQuit_Click);
             // 
             // ImportExportToolStripMenuItem
             // 
-            this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[5]
+            this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[7]
             {
             (System.Windows.Forms.ToolStripItem) this.tsImport,
             (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator12,
             (System.Windows.Forms.ToolStripItem) this.tsExport,
             (System.Windows.Forms.ToolStripItem) this.tsExportLong,
-            (System.Windows.Forms.ToolStripItem) this.tsExportDataLink
+            (System.Windows.Forms.ToolStripItem) this.tsExportDataLink,
+            (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator25,
+            (System.Windows.Forms.ToolStripItem) this.tsExportDiscord
             });
             this.ImportExportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ImportExportToolStripMenuItem.Name = "ImportExportToolStripMenuItem";
@@ -688,7 +651,6 @@ namespace Hero_Designer
             this.tsImport.ShortcutKeys = System.Windows.Forms.Keys.I | System.Windows.Forms.Keys.Control;
             this.tsImport.Size = new System.Drawing.Size(240, 22);
             this.tsImport.Text = "&Import from Forum Post";
-            this.tsImport.Click += new System.EventHandler(tsImport_Click);
             // 
             // ToolStripSeparator12
             // 
@@ -700,21 +662,29 @@ namespace Hero_Designer
             this.tsExport.Name = "tsExport";
             this.tsExport.Size = new System.Drawing.Size(240, 22);
             this.tsExport.Text = "&Short Forum Export...";
-            this.tsExport.Click += new System.EventHandler(tsExport_Click);
             // 
             // tsExportLong
             // 
             this.tsExportLong.Name = "tsExportLong";
             this.tsExportLong.Size = new System.Drawing.Size(240, 22);
             this.tsExportLong.Text = "&Long Forum Export...";
-            this.tsExportLong.Click += new System.EventHandler(tsExportLong_Click);
             // 
             // tsExportDataLink
             // 
             this.tsExportDataLink.Name = "tsExportDataLink";
             this.tsExportDataLink.Size = new System.Drawing.Size(240, 22);
             this.tsExportDataLink.Text = "Export Data Link";
-            this.tsExportDataLink.Click += new System.EventHandler(tsExportDataLink_Click);
+            //
+            // ToolStripSeparator25
+            // 
+            this.ToolStripSeparator25.Name = "ToolStripSeparator25";
+            this.ToolStripSeparator25.Size = new System.Drawing.Size(237, 6);
+            // 
+            // tsExportDataLink
+            // 
+            this.tsExportDiscord.Name = "tsExportDiscord";
+            this.tsExportDiscord.Size = new System.Drawing.Size(240, 22);
+            this.tsExportDiscord.Text = "Export to Discord";
             // 
             // OptionsToolStripMenuItem
             // 
@@ -740,7 +710,6 @@ namespace Hero_Designer
             this.tsConfig.Name = "tsConfig";
             this.tsConfig.Size = new System.Drawing.Size(199, 22);
             this.tsConfig.Text = "&Configuration...";
-            this.tsConfig.Click += new System.EventHandler(tsConfig_Click);
             // 
             // ToolStripSeparator14
             // 
@@ -752,7 +721,6 @@ namespace Hero_Designer
             this.tsUpdateCheck.Name = "tsUpdateCheck";
             this.tsUpdateCheck.Size = new System.Drawing.Size(199, 22);
             this.tsUpdateCheck.Text = "Check for &Updates Now";
-            this.tsUpdateCheck.Click += new System.EventHandler(tsUpdateCheck_Click);
             // 
             // ToolStripSeparator22
             // 
@@ -765,7 +733,6 @@ namespace Hero_Designer
             this.tsLevelUp.Size = new System.Drawing.Size(199, 22);
             this.tsLevelUp.Text = "&Level-Up Mode";
             this.tsLevelUp.ToolTipText = "Alternate between placing powers and slots, just like levelling up in-game.";
-            this.tsLevelUp.Click += new System.EventHandler(tsLevelUp_Click);
             // 
             // tsDynamic
             // 
@@ -773,7 +740,6 @@ namespace Hero_Designer
             this.tsDynamic.Size = new System.Drawing.Size(199, 22);
             this.tsDynamic.Text = "&Dynamic Mode";
             this.tsDynamic.ToolTipText = "Place powers and slots in any order.";
-            this.tsDynamic.Click += new System.EventHandler(tsDynamic_Click);
             // 
             // ToolStripSeparator5
             // 
@@ -798,7 +764,6 @@ namespace Hero_Designer
             this.tsAdvDBEdit.Name = "tsAdvDBEdit";
             this.tsAdvDBEdit.Size = new System.Drawing.Size(165, 22);
             this.tsAdvDBEdit.Text = "&Database Editor...";
-            this.tsAdvDBEdit.Click += new System.EventHandler(tsAdvDBEdit_Click);
             // 
             // ToolStripSeparator15
             // 
@@ -811,14 +776,12 @@ namespace Hero_Designer
             this.tsAdvFreshInstall.Size = new System.Drawing.Size(165, 22);
             this.tsAdvFreshInstall.Text = "FreshInstall Flag";
             this.tsAdvFreshInstall.Visible = false;
-            this.tsAdvFreshInstall.Click += new System.EventHandler(tsAdvFreshInstall_Click);
             // 
             // tsAdvResetTips
             // 
             this.tsAdvResetTips.Name = "tsAdvResetTips";
             this.tsAdvResetTips.Size = new System.Drawing.Size(165, 22);
             this.tsAdvResetTips.Text = "Reset Tips";
-            this.tsAdvResetTips.Click += new System.EventHandler(tsAdvResetTips_Click);
             // 
             // CharacterToolStripMenuItem
             // 
@@ -854,7 +817,6 @@ namespace Hero_Designer
             this.tsIODefault.Name = "tsIODefault";
             this.tsIODefault.Size = new System.Drawing.Size(135, 22);
             this.tsIODefault.Text = "Default (35)";
-            this.tsIODefault.Click += new System.EventHandler(tsIODefault_Click);
             // 
             // ToolStripSeparator11
             // 
@@ -866,14 +828,12 @@ namespace Hero_Designer
             this.tsIOMin.Name = "tsIOMin";
             this.tsIOMin.Size = new System.Drawing.Size(135, 22);
             this.tsIOMin.Text = "Minimum";
-            this.tsIOMin.Click += new System.EventHandler(tsIOMin_Click);
             // 
             // tsIOMax
             // 
             this.tsIOMax.Name = "tsIOMax";
             this.tsIOMax.Size = new System.Drawing.Size(135, 22);
             this.tsIOMax.Text = "Maximum";
-            this.tsIOMax.Click += new System.EventHandler(tsIOMax_Click);
             // 
             // ToolStripSeparator16
             // 
@@ -897,21 +857,18 @@ namespace Hero_Designer
             this.tsEnhToSO.Name = "tsEnhToSO";
             this.tsEnhToSO.Size = new System.Drawing.Size(142, 22);
             this.tsEnhToSO.Text = "Single Origin";
-            this.tsEnhToSO.Click += new System.EventHandler(tsEnhToSO_Click);
             // 
             // tsEnhToDO
             // 
             this.tsEnhToDO.Name = "tsEnhToDO";
             this.tsEnhToDO.Size = new System.Drawing.Size(142, 22);
             this.tsEnhToDO.Text = "Dual Origin";
-            this.tsEnhToDO.Click += new System.EventHandler(tsEnhToDO_Click);
             // 
             // tsEnhToTO
             // 
             this.tsEnhToTO.Name = "tsEnhToTO";
             this.tsEnhToTO.Size = new System.Drawing.Size(142, 22);
             this.tsEnhToTO.Text = "Training";
-            this.tsEnhToTO.Click += new System.EventHandler(tsEnhToTO_Click);
             // 
             // ToolStripMenuItem2
             // 
@@ -937,70 +894,60 @@ namespace Hero_Designer
             this.tsEnhToPlus5.Name = "tsEnhToPlus5";
             this.tsEnhToPlus5.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus5.Text = "+5 Levels";
-            this.tsEnhToPlus5.Click += new System.EventHandler(tsEnhToPlus5_Click);
             // 
             // tsEnhToPlus4
             // 
             this.tsEnhToPlus4.Name = "tsEnhToPlus4";
             this.tsEnhToPlus4.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus4.Text = "+4 Levels";
-            this.tsEnhToPlus4.Click += new System.EventHandler(tsEnhToPlus4_Click);
             // 
             // tsEnhToPlus3
             // 
             this.tsEnhToPlus3.Name = "tsEnhToPlus3";
             this.tsEnhToPlus3.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus3.Text = "+3 Levels";
-            this.tsEnhToPlus3.Click += new System.EventHandler(tsEnhToPlus3_Click);
             // 
             // tsEnhToPlus2
             // 
             this.tsEnhToPlus2.Name = "tsEnhToPlus2";
             this.tsEnhToPlus2.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus2.Text = "+2 Levels";
-            this.tsEnhToPlus2.Click += new System.EventHandler(tsEnhToPlus2_Click);
             // 
             // tsEnhToPlus1
             // 
             this.tsEnhToPlus1.Name = "tsEnhToPlus1";
             this.tsEnhToPlus1.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToPlus1.Text = "+1 Level";
-            this.tsEnhToPlus1.Click += new System.EventHandler(tsEnhToPlus1_Click);
             // 
             // tsEnhToEven
             // 
             this.tsEnhToEven.Name = "tsEnhToEven";
             this.tsEnhToEven.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToEven.Text = "Even Level";
-            this.tsEnhToEven.Click += new System.EventHandler(tsEnhToEven_Click);
             // 
             // tsEnhToMinus1
             // 
             this.tsEnhToMinus1.Name = "tsEnhToMinus1";
             this.tsEnhToMinus1.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus1.Text = "-1 Level";
-            this.tsEnhToMinus1.Click += new System.EventHandler(tsEnhToMinus1_Click);
             // 
             // tsEnhToMinus2
             // 
             this.tsEnhToMinus2.Name = "tsEnhToMinus2";
             this.tsEnhToMinus2.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus2.Text = "-2 Levels";
-            this.tsEnhToMinus2.Click += new System.EventHandler(tsEnhToMinus2_Click);
             // 
             // tsEnhToMinus3
             // 
             this.tsEnhToMinus3.Name = "tsEnhToMinus3";
             this.tsEnhToMinus3.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToMinus3.Text = "-3 Levels";
-            this.tsEnhToMinus3.Click += new System.EventHandler(tsEnhToMinus3_Click);
             // 
             // tsEnhToNone
             // 
             this.tsEnhToNone.Name = "tsEnhToNone";
             this.tsEnhToNone.Size = new System.Drawing.Size(205, 22);
             this.tsEnhToNone.Text = "None (Enh has no effect)";
-            this.tsEnhToNone.Click += new System.EventHandler(tsEnhToNone_Click);
             // 
             // ToolStripSeparator17
             // 
@@ -1027,7 +974,6 @@ namespace Hero_Designer
             this.tsFlipAllEnh.Name = "tsFlipAllEnh";
             this.tsFlipAllEnh.Size = new System.Drawing.Size(199, 22);
             this.tsFlipAllEnh.Text = "Flip All to Alternate";
-            this.tsFlipAllEnh.Click += new System.EventHandler(tsFlipAllEnh_Click);
             // 
             // ToolStripSeparator4
             // 
@@ -1039,14 +985,12 @@ namespace Hero_Designer
             this.tsClearAllEnh.Name = "tsClearAllEnh";
             this.tsClearAllEnh.Size = new System.Drawing.Size(199, 22);
             this.tsClearAllEnh.Text = "Clear All Enhancements";
-            this.tsClearAllEnh.Click += new System.EventHandler(tsClearAllEnh_Click);
             // 
             // tsRemoveAllSlots
             // 
             this.tsRemoveAllSlots.Name = "tsRemoveAllSlots";
             this.tsRemoveAllSlots.Size = new System.Drawing.Size(199, 22);
             this.tsRemoveAllSlots.Text = "Remove All Slots";
-            this.tsRemoveAllSlots.Click += new System.EventHandler(tsRemoveAllSlots_Click);
             // 
             // ToolStripSeparator1
             // 
@@ -1058,7 +1002,6 @@ namespace Hero_Designer
             this.AutoArrangeAllSlotsToolStripMenuItem.Name = "AutoArrangeAllSlotsToolStripMenuItem";
             this.AutoArrangeAllSlotsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.AutoArrangeAllSlotsToolStripMenuItem.Text = "&Auto-Arrange All Slots";
-            this.AutoArrangeAllSlotsToolStripMenuItem.Click += new System.EventHandler(AutoArrangeAllSlotsToolStripMenuItem_Click);
             // 
             // ViewToolStripMenuItem
             // 
@@ -1086,7 +1029,6 @@ namespace Hero_Designer
             this.tsView4Col.Name = "tsView4Col";
             this.tsView4Col.Size = new System.Drawing.Size(282, 22);
             this.tsView4Col.Text = "&4 Columns";
-            this.tsView4Col.Click += new System.EventHandler(tsView4Col_Click);
             // 
             // tsView3Col
             // 
@@ -1095,14 +1037,12 @@ namespace Hero_Designer
             this.tsView3Col.Name = "tsView3Col";
             this.tsView3Col.Size = new System.Drawing.Size(282, 22);
             this.tsView3Col.Text = "&3 Columns";
-            this.tsView3Col.Click += new System.EventHandler(tsView3Col_Click);
             // 
             // tsView2Col
             // 
             this.tsView2Col.Name = "tsView2Col";
             this.tsView2Col.Size = new System.Drawing.Size(282, 22);
             this.tsView2Col.Text = "&2 Columns";
-            this.tsView2Col.Click += new System.EventHandler(tsView2Col_Click);
             // 
             // ToolStripSeparator13
             // 
@@ -1116,21 +1056,18 @@ namespace Hero_Designer
             this.tsViewIOLevels.Name = "tsViewIOLevels";
             this.tsViewIOLevels.Size = new System.Drawing.Size(282, 22);
             this.tsViewIOLevels.Text = "Show &IO Levels";
-            this.tsViewIOLevels.Click += new System.EventHandler(tsViewIOLevels_Click);
             // 
             // tsViewRelative
             // 
             this.tsViewRelative.Name = "tsViewRelative";
             this.tsViewRelative.Size = new System.Drawing.Size(282, 22);
             this.tsViewRelative.Text = "Show &Enhancement Relative Levels";
-            this.tsViewRelative.Click += new System.EventHandler(tsViewRelative_Click);
             // 
             // tsViewSlotLevels
             // 
             this.tsViewSlotLevels.Name = "tsViewSlotLevels";
             this.tsViewSlotLevels.Size = new System.Drawing.Size(282, 22);
             this.tsViewSlotLevels.Text = "Show &Slot Placement Levels";
-            this.tsViewSlotLevels.Click += new System.EventHandler(tsViewSlotLevels_Click);
             // 
             // ToolStripSeparator2
             // 
@@ -1144,21 +1081,18 @@ namespace Hero_Designer
             this.tsViewActualDamage_New.Name = "tsViewActualDamage_New";
             this.tsViewActualDamage_New.Size = new System.Drawing.Size(282, 22);
             this.tsViewActualDamage_New.Text = "Show Damage Per Activation (Level 50)";
-            this.tsViewActualDamage_New.Click += new System.EventHandler(tsViewActualDamage_New_Click);
             // 
             // tsViewDPS_New
             // 
             this.tsViewDPS_New.Name = "tsViewDPS_New";
             this.tsViewDPS_New.Size = new System.Drawing.Size(282, 22);
             this.tsViewDPS_New.Text = "Show Damage Per Second (Level 50)";
-            this.tsViewDPS_New.Click += new System.EventHandler(tsViewDPS_New_Click);
             // 
             // tlsDPA
             // 
             this.tlsDPA.Name = "tlsDPA";
             this.tlsDPA.Size = new System.Drawing.Size(282, 22);
             this.tlsDPA.Text = "Show Damage Per Animation (Level 50)";
-            this.tlsDPA.Click += new System.EventHandler(tlsDPA_Click);
             // 
             // HelpToolStripMenuItem1
             // 
@@ -1187,14 +1121,12 @@ namespace Hero_Designer
             this.tsHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.tsHelp.Size = new System.Drawing.Size(258, 22);
             this.tsHelp.Text = "&Read Me - Instructions";
-            this.tsHelp.Click += new System.EventHandler(tsHelp_Click);
             // 
             // tsPatchNotes
             // 
             this.tsPatchNotes.Name = "tsPatchNotes";
             this.tsPatchNotes.Size = new System.Drawing.Size(258, 22);
             this.tsPatchNotes.Text = "Read &Latest Patch Notes...";
-            this.tsPatchNotes.Click += new System.EventHandler(tsPatchNotes_Click);
             // 
             // ToolStripSeparator10
             // 
@@ -1207,14 +1139,12 @@ namespace Hero_Designer
             this.tsBug.Size = new System.Drawing.Size(258, 22);
             this.tsBug.Text = "Feedback Form / &Bug Report";
             this.tsBug.Visible = false;
-            this.tsBug.Click += new System.EventHandler(tsBug_Click);
             // 
             // tsTitanForum
             // 
             this.tsTitanForum.Name = "tsTitanForum";
             this.tsTitanForum.Size = new System.Drawing.Size(258, 22);
             this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
-            this.tsTitanForum.Click += new System.EventHandler(tsTitanForum_Click);
             // 
             // ToolStripSeparator23
             // 
@@ -1226,7 +1156,6 @@ namespace Hero_Designer
             this.tsDonate.Name = "tsDonate";
             this.tsDonate.Size = new System.Drawing.Size(258, 22);
             this.tsDonate.Text = "Make a Donation (PayPal)";
-            this.tsDonate.Click += new System.EventHandler(tsDonate_Click);
             // 
             // ToolStripSeparator24
             // 
@@ -1238,14 +1167,12 @@ namespace Hero_Designer
             this.tsTitanPlanner.Name = "tsTitanPlanner";
             this.tsTitanPlanner.Size = new System.Drawing.Size(258, 22);
             this.tsTitanPlanner.Text = "CoH &Planner Website";
-            this.tsTitanPlanner.Click += new System.EventHandler(tsTitanPlanner_Click);
             // 
             // tsTitanSite
             // 
             this.tsTitanSite.Name = "tsTitanSite";
             this.tsTitanSite.Size = new System.Drawing.Size(258, 22);
             this.tsTitanSite.Text = "&Titan Network Website";
-            this.tsTitanSite.Click += new System.EventHandler(tsTitanSite_Click);
             // 
             // WindowToolStripMenuItem
             // 
@@ -1279,7 +1206,6 @@ namespace Hero_Designer
             this.tsViewSets.ShortcutKeys = System.Windows.Forms.Keys.B | System.Windows.Forms.Keys.Control;
             this.tsViewSets.Size = new System.Drawing.Size(232, 22);
             this.tsViewSets.Text = "&Sets && Bonuses";
-            this.tsViewSets.Click += new System.EventHandler(tsViewSets_Click);
             // 
             // tsViewGraphs
             // 
@@ -1287,7 +1213,6 @@ namespace Hero_Designer
             this.tsViewGraphs.ShortcutKeys = System.Windows.Forms.Keys.G | System.Windows.Forms.Keys.Control;
             this.tsViewGraphs.Size = new System.Drawing.Size(232, 22);
             this.tsViewGraphs.Text = "Power &Graphs";
-            this.tsViewGraphs.Click += new System.EventHandler(tsViewGraphs_Click);
             // 
             // tsViewSetCompare
             // 
@@ -1295,7 +1220,6 @@ namespace Hero_Designer
             this.tsViewSetCompare.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
             this.tsViewSetCompare.Size = new System.Drawing.Size(232, 22);
             this.tsViewSetCompare.Text = "Powerset &Comparison";
-            this.tsViewSetCompare.Click += new System.EventHandler(tsViewSetCompare_Click);
             // 
             // tsViewData
             // 
@@ -1303,7 +1227,6 @@ namespace Hero_Designer
             this.tsViewData.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Control;
             this.tsViewData.Size = new System.Drawing.Size(232, 22);
             this.tsViewData.Text = "&Data View";
-            this.tsViewData.Click += new System.EventHandler(tsViewData_Click);
             // 
             // tsViewTotals
             // 
@@ -1311,7 +1234,6 @@ namespace Hero_Designer
             this.tsViewTotals.ShortcutKeys = System.Windows.Forms.Keys.T | System.Windows.Forms.Keys.Control;
             this.tsViewTotals.Size = new System.Drawing.Size(232, 22);
             this.tsViewTotals.Text = "Advanced &Totals";
-            this.tsViewTotals.Click += new System.EventHandler(tsViewTotals_Click);
             // 
             // ToolStripSeparator18
             // 
@@ -1324,7 +1246,6 @@ namespace Hero_Designer
             this.tsRecipeViewer.ShortcutKeys = System.Windows.Forms.Keys.R | System.Windows.Forms.Keys.Control;
             this.tsRecipeViewer.Size = new System.Drawing.Size(232, 22);
             this.tsRecipeViewer.Text = "&Recipe Viewer";
-            this.tsRecipeViewer.Click += new System.EventHandler(tsRecipeViewer_Click);
             // 
             // tsDPSCalc
             // 
@@ -1332,7 +1253,6 @@ namespace Hero_Designer
             this.tsDPSCalc.ShortcutKeys = System.Windows.Forms.Keys.Z | System.Windows.Forms.Keys.Control;
             this.tsDPSCalc.Size = new System.Drawing.Size(232, 22);
             this.tsDPSCalc.Text = "DPS Calculator (Beta)";
-            this.tsDPSCalc.Click += new System.EventHandler(tsDPSCalc_Click);
             // 
             // ToolStripSeparator19
             // 
@@ -1344,7 +1264,6 @@ namespace Hero_Designer
             this.tsSetFind.Name = "tsSetFind";
             this.tsSetFind.Size = new System.Drawing.Size(232, 22);
             this.tsSetFind.Text = "Set &Bonus Finder";
-            this.tsSetFind.Click += new System.EventHandler(tsSetFind_Click);
             // 
             // ToolStripSeparator21
             // 
@@ -1370,14 +1289,12 @@ namespace Hero_Designer
             this.tsHelperShort.Name = "tsHelperShort";
             this.tsHelperShort.Size = new System.Drawing.Size(143, 22);
             this.tsHelperShort.Text = "Profile &Short";
-            this.tsHelperShort.Click += new System.EventHandler(tsHelperShort_Click);
             // 
             // tsHelperLong
             // 
             this.tsHelperLong.Name = "tsHelperLong";
             this.tsHelperLong.Size = new System.Drawing.Size(143, 22);
             this.tsHelperLong.Text = "Profile &Long";
-            this.tsHelperLong.Click += new System.EventHandler(tsHelperLong_Click);
             // 
             // ToolStripSeparator20
             // 
@@ -1389,14 +1306,12 @@ namespace Hero_Designer
             this.tsHelperShort2.Name = "tsHelperShort2";
             this.tsHelperShort2.Size = new System.Drawing.Size(143, 22);
             this.tsHelperShort2.Text = "History S&hort";
-            this.tsHelperShort2.Click += new System.EventHandler(tsHelperShort2_Click);
             // 
             // tsHelperLong2
             // 
             this.tsHelperLong2.Name = "tsHelperLong2";
             this.tsHelperLong2.Size = new System.Drawing.Size(143, 22);
             this.tsHelperLong2.Text = "History L&ong";
-            this.tsHelperLong2.Click += new System.EventHandler(tsHelperLong2_Click);
             // 
             // ToolStripMenuItem4
             // 
@@ -1415,14 +1330,12 @@ namespace Hero_Designer
             this.IncarnateWindowToolStripMenuItem.Name = "IncarnateWindowToolStripMenuItem";
             this.IncarnateWindowToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.IncarnateWindowToolStripMenuItem.Text = "&Incarnate Window";
-            this.IncarnateWindowToolStripMenuItem.Click += new System.EventHandler(IncarnateWindowToolStripMenuItem_Click);
             // 
             // TemporaryPowersWindowToolStripMenuItem
             // 
             this.TemporaryPowersWindowToolStripMenuItem.Name = "TemporaryPowersWindowToolStripMenuItem";
             this.TemporaryPowersWindowToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.TemporaryPowersWindowToolStripMenuItem.Text = "T&emporary Powers Window";
-            this.TemporaryPowersWindowToolStripMenuItem.Click += new System.EventHandler(TemporaryPowersWindowToolStripMenuItem_Click);
             // 
             // pbDynMode
             // 
@@ -1431,8 +1344,6 @@ namespace Hero_Designer
             this.pbDynMode.Size = new System.Drawing.Size(105, 22);
             this.pbDynMode.TabIndex = 92;
             this.pbDynMode.TabStop = false;
-            this.pbDynMode.Paint += new System.Windows.Forms.PaintEventHandler(pbDynMode_Paint);
-            this.pbDynMode.Click += new System.EventHandler(pbDynMode_Click);
             // 
             // pnlGFX
             // 
@@ -1442,15 +1353,6 @@ namespace Hero_Designer
             this.pnlGFX.Size = new System.Drawing.Size(584, 709);
             this.pnlGFX.TabIndex = 103;
             this.pnlGFX.TabStop = false;
-            this.pnlGFX.MouseEnter += new System.EventHandler(pnlGFX_MouseEnter);
-            this.pnlGFX.MouseLeave += new System.EventHandler(pnlGFX_MouseLeave);
-            this.pnlGFX.MouseMove += new System.Windows.Forms.MouseEventHandler(pnlGFX_MouseMove);
-            this.pnlGFX.MouseUp += new System.Windows.Forms.MouseEventHandler(pnlGFX_MouseUp);
-            this.pnlGFX.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(pnlGFX_MouseDoubleClick);
-            this.pnlGFX.MouseDown += new System.Windows.Forms.MouseEventHandler(pnlGFX_MouseDown);
-            this.pnlGFX.DragOver += new System.Windows.Forms.DragEventHandler(pnlGFX_DragOver);
-            this.pnlGFX.DragEnter += new System.Windows.Forms.DragEventHandler(pnlGFX_DragEnter);
-            this.pnlGFX.DragDrop += new System.Windows.Forms.DragEventHandler(pnlGFX_DragDrop);
             // 
             // pnlGFXFlow
             // 
@@ -1460,7 +1362,6 @@ namespace Hero_Designer
             this.pnlGFXFlow.Name = "pnlGFXFlow";
             this.pnlGFXFlow.Size = new System.Drawing.Size(584, 629);
             this.pnlGFXFlow.TabIndex = 112;
-            this.pnlGFXFlow.MouseEnter += new System.EventHandler(pnlGFXFlow_MouseEnter);
             // 
             // llAncillary
             // 
@@ -1481,8 +1382,6 @@ namespace Hero_Designer
             this.llAncillary.SizeNormal = new System.Drawing.Size(138, 69);
             this.llAncillary.SuspendRedraw = false;
             this.llAncillary.TabIndex = 110;
-            this.llAncillary.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llAncillary_ItemHover);
-            this.llAncillary.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llAncillary_ItemClick);
             // 
             // lblName
             // 
@@ -1534,10 +1433,6 @@ namespace Hero_Designer
             this.llPool0.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool0.SuspendRedraw = false;
             this.llPool0.TabIndex = 34;
-            this.llPool0.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llPool0_ItemHover);
-            this.llPool0.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llPool0_ItemClick);
-            this.llPool0.MouseLeave += new System.EventHandler(llALL_MouseLeave);
-            this.llPool0.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
             // 
             // llPool1
             // 
@@ -1559,10 +1454,6 @@ namespace Hero_Designer
             this.llPool1.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool1.SuspendRedraw = false;
             this.llPool1.TabIndex = 35;
-            this.llPool1.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llPool1_ItemHover);
-            this.llPool1.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llPool1_ItemClick);
-            this.llPool1.MouseLeave += new System.EventHandler(llALL_MouseLeave);
-            this.llPool1.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
             // 
             // llSecondary
             // 
@@ -1583,10 +1474,6 @@ namespace Hero_Designer
             this.llSecondary.SizeNormal = new System.Drawing.Size(144, 160);
             this.llSecondary.SuspendRedraw = false;
             this.llSecondary.TabIndex = 108;
-            this.llSecondary.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llSecondary_ItemHover);
-            this.llSecondary.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llSecondary_ItemClick);
-            this.llSecondary.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
-            this.llSecondary.ExpandChanged += new midsControls.ListLabelV2.ExpandChangedEventHandler(PriSec_ExpandChanged);
             // 
             // llPrimary
             // 
@@ -1607,10 +1494,6 @@ namespace Hero_Designer
             this.llPrimary.SizeNormal = new System.Drawing.Size(144, 160);
             this.llPrimary.SuspendRedraw = false;
             this.llPrimary.TabIndex = 107;
-            this.llPrimary.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llPrimary_ItemHover);
-            this.llPrimary.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llPrimary_ItemClick);
-            this.llPrimary.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
-            this.llPrimary.ExpandChanged += new midsControls.ListLabelV2.ExpandChangedEventHandler(PriSec_ExpandChanged);
             // 
             // llPool3
             // 
@@ -1632,10 +1515,6 @@ namespace Hero_Designer
             this.llPool3.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool3.SuspendRedraw = false;
             this.llPool3.TabIndex = 37;
-            this.llPool3.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llPool3_ItemHover);
-            this.llPool3.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llPool3_ItemClick);
-            this.llPool3.MouseLeave += new System.EventHandler(llALL_MouseLeave);
-            this.llPool3.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
             // 
             // llPool2
             // 
@@ -1657,10 +1536,6 @@ namespace Hero_Designer
             this.llPool2.SizeNormal = new System.Drawing.Size(136, 69);
             this.llPool2.SuspendRedraw = false;
             this.llPool2.TabIndex = 36;
-            this.llPool2.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llPool2_ItemHover);
-            this.llPool2.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llPool2_ItemClick);
-            this.llPool2.MouseLeave += new System.EventHandler(llALL_MouseLeave);
-            this.llPool2.EmptyHover += new midsControls.ListLabelV2.EmptyHoverEventHandler(llAll_EmptyHover);
             // 
             // lblHero
             // 
@@ -1686,7 +1561,6 @@ namespace Hero_Designer
             this.heroVillain.TextOff = "Hero";
             this.heroVillain.TextOn = "Villain";
             this.heroVillain.Toggle = true;
-            this.heroVillain.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(heroVillain_ButtonClicked);
             // 
             // tempPowersButton
             // 
@@ -1701,8 +1575,6 @@ namespace Hero_Designer
             this.tempPowersButton.TextOff = "Temp Pwrs (Off)";
             this.tempPowersButton.TextOn = "Temp Pwrs (On)";
             this.tempPowersButton.Toggle = true;
-            this.tempPowersButton.MouseDown += new System.Windows.Forms.MouseEventHandler(tempPowersButton_MouseDown);
-            this.tempPowersButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(tempPowersButton_ButtonClicked);
             // 
             // accoladeButton
             // 
@@ -1718,7 +1590,7 @@ namespace Hero_Designer
             this.accoladeButton.TextOn = "Accolades (On)";
             this.accoladeButton.Toggle = true;
             this.accoladeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(accoladeButton_MouseDown);
-            this.accoladeButton.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
+            this.accoladeButton.ButtonClicked += new  midsControls.ImageButton.ButtonClickedEventHandler(accoladeButton_ButtonClicked);
             // 
             // incarnateButton
             // 
@@ -1733,7 +1605,6 @@ namespace Hero_Designer
             this.incarnateButton.TextOff = "Incarnate";
             this.incarnateButton.TextOn = "Incarnate";
             this.incarnateButton.Toggle = false;
-            this.incarnateButton.MouseDown += new System.Windows.Forms.MouseEventHandler(incarnateButton_MouseDown);
             // 
             // i9Picker
             // 
@@ -1747,7 +1618,7 @@ namespace Hero_Designer
             this.i9Picker.Size = new System.Drawing.Size(198, 235);
             this.i9Picker.TabIndex = 83;
             this.i9Picker.Visible = false;
-            this.i9Picker.Moved += new midsControls.I9Picker.MovedEventHandler(this.I9Picker_Moved);
+            this.i9Picker.Moved += new  midsControls.I9Picker.MovedEventHandler(this.I9Picker_Moved);
             this.i9Picker.HoverSet += new midsControls.I9Picker.HoverSetEventHandler(this.I9Picker_HoverSet);
             this.i9Picker.HoverEnhancement += new midsControls.I9Picker.HoverEnhancementEventHandler(this.I9Picker_HoverEnhancement);
             this.i9Picker.MouseLeave += new System.EventHandler(this.I9Picker_Hiding);
@@ -1770,7 +1641,6 @@ namespace Hero_Designer
             this.I9Popup.Size = new System.Drawing.Size(400, 214);
             this.I9Popup.TabIndex = 102;
             this.I9Popup.Visible = false;
-            this.I9Popup.MouseMove += new System.Windows.Forms.MouseEventHandler(I9Popup_MouseMove);
             // 
             // ibVetPools
             // 
@@ -1800,7 +1670,6 @@ namespace Hero_Designer
             this.ibPvX.TextOff = "Mode: PvE";
             this.ibPvX.TextOn = "Mode: PvP";
             this.ibPvX.Toggle = true;
-            this.ibPvX.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibPvX_ButtonClicked);
             // 
             // ibTotals
             // 
@@ -1814,7 +1683,6 @@ namespace Hero_Designer
             this.ibTotals.TextOff = "View Totals";
             this.ibTotals.TextOn = "Alt Text";
             this.ibTotals.Toggle = false;
-            this.ibTotals.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibTotals_ButtonClicked);
             // 
             // ibSlotLevels
             // 
@@ -1828,7 +1696,6 @@ namespace Hero_Designer
             this.ibSlotLevels.TextOff = "Slot Levels: Off";
             this.ibSlotLevels.TextOn = "Slot Levels: On";
             this.ibSlotLevels.Toggle = true;
-            this.ibSlotLevels.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibSlotLevels_ButtonClicked);
             // 
             // ibMode
             // 
@@ -1842,7 +1709,6 @@ namespace Hero_Designer
             this.ibMode.TextOff = "Mode Switch";
             this.ibMode.TextOn = "Alt Text";
             this.ibMode.Toggle = false;
-            this.ibMode.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibMode_ButtonClicked);
             // 
             // ibSets
             // 
@@ -1856,7 +1722,6 @@ namespace Hero_Designer
             this.ibSets.TextOff = "View Active Sets";
             this.ibSets.TextOn = "Alt Text";
             this.ibSets.Toggle = false;
-            this.ibSets.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibSets_ButtonClicked);
             // 
             // ibAccolade
             // 
@@ -1884,7 +1749,6 @@ namespace Hero_Designer
             this.ibRecipe.TextOff = "Recipes: Off";
             this.ibRecipe.TextOn = "Recipes: On";
             this.ibRecipe.Toggle = true;
-            this.ibRecipe.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibRecipe_ButtonClicked);
             // 
             // ibPopup
             // 
@@ -1899,7 +1763,6 @@ namespace Hero_Designer
             this.ibPopup.TextOff = "Pop-Up: Off";
             this.ibPopup.TextOn = "Pop-Up: On";
             this.ibPopup.Toggle = true;
-            this.ibPopup.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibPopup_ButtonClicked);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1056, 752);
@@ -1999,6 +1862,8 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsEnhToTO;
         System.Windows.Forms.ToolStripMenuItem tsExport;
         System.Windows.Forms.ToolStripMenuItem tsExportDataLink;
+        private ToolStripSeparator ToolStripSeparator25;
+        private ToolStripMenuItem tsExportDiscord;
         System.Windows.Forms.ToolStripMenuItem tsExportLong;
         System.Windows.Forms.ToolStripMenuItem tsFileNew;
         System.Windows.Forms.ToolStripMenuItem tsFileOpen;

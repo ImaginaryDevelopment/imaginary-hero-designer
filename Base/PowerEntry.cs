@@ -2,36 +2,103 @@
 using Base.Display;
 using System;
 using System.Drawing;
-using System.Linq;
 
 public class PowerEntry : ICloneable
 {
-    // public fields are bad, mkay? O_o
-    public int Level { get; set; }
-    public int NIDPowerset { get; set; }
-    public int IDXPower { get; set; }
-    public int NIDPower { get; set; }
-    public bool Tag { get; set; }
-    public bool StatInclude { get; set; }
-    public int VariableValue { get; set; }
-    public SlotEntry[] Slots { get; set; }
-    public PowerSubEntry[] SubPowers { get; set; }
+    public int Level;
+    public int NIDPowerset;
+    public int IDXPower;
+    public int NIDPower;
+    public bool Tag;
+    public bool StatInclude;
+    public int VariableValue;
+    public SlotEntry[] Slots;
+    public PowerSubEntry[] SubPowers;
 
     public bool Chosen { get; private set; }
 
-    public Enums.ePowerState State => this.Power == null ? (this.Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
+    public Enums.ePowerState State
+    {
+        get
+        {
+            return this.Power == null ? (this.Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
+        }
+    }
 
-    public IPower Power => this.NIDPower >= 0 && this.NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[this.NIDPower] : null;
+    public IPower Power
+    {
+        get
+        {
+            return this.NIDPower >= 0 && this.NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[this.NIDPower] : null;
+        }
+    }
 
-    public IPowerset PowerSet => this.Power != null ? DatabaseAPI.Database.Powersets[this.Power.PowerSetID] : null;
+    public IPowerset PowerSet
+    {
+        get
+        {
+            return this.Power != null ? DatabaseAPI.Database.Powersets[this.Power.PowerSetID] : null;
+        }
+    }
 
-    public bool AllowFrontLoading => this.Power != null && this.Power.AllowFrontLoading;
+    public bool AllowFrontLoading
+    {
+        get
+        {
+            return this.Power != null && this.Power.AllowFrontLoading;
+        }
+    }
 
-    public string Name => this.Power != null ? this.Power.DisplayName : "";
+    public string Name
+    {
+        get
+        {
+            return this.Power != null ? this.Power.DisplayName : "";
+        }
+    }
 
-    public bool Virtual => !this.Chosen && this.SubPowers.Length > 0;
+    public bool Virtual
+    {
+        get
+        {
+            return !this.Chosen && this.SubPowers.Length > 0;
+        }
+    }
 
-    public int SlotCount => this.Slots == null ? 0 : this.Slots.Length;
+    public int SlotCount
+    {
+        get
+        {
+            return this.Slots == null ? 0 : this.Slots.Length;
+        }
+    }
+
+    public void Assign(PowerEntry iPe)
+    {
+        this.Level = iPe.Level;
+        this.NIDPowerset = iPe.NIDPowerset;
+        this.IDXPower = iPe.IDXPower;
+        this.NIDPower = iPe.NIDPower;
+        this.Tag = iPe.Tag;
+        this.StatInclude = iPe.StatInclude;
+        this.VariableValue = iPe.VariableValue;
+        if (iPe.Slots != null)
+        {
+            this.Slots = new SlotEntry[iPe.Slots.Length];
+            for (int index = 0; index <= this.Slots.Length - 1; ++index)
+                this.Slots[index].Assign(iPe.Slots[index]);
+        }
+        else
+            this.Slots = new SlotEntry[0];
+        if (iPe.SubPowers != null)
+        {
+            this.SubPowers = new PowerSubEntry[iPe.SubPowers.Length];
+            for (int index = 0; index <= this.SubPowers.Length - 1; ++index)
+                this.SubPowers[index].Assign(iPe.SubPowers[index]);
+        }
+        else
+            this.SubPowers = new PowerSubEntry[0];
+    }
 
     public PowerEntry(IPower power)
     {
@@ -102,41 +169,6 @@ public class PowerEntry : ICloneable
         }
         this.Tag = false;
         this.VariableValue = 0;
-    }
-
-    public void ClearInvisibleSlots()
-    {
-        if (this.SlotCount > 0 && (this.Power == null && !this.Chosen || this.Power != null && !this.Power.Slottable))
-            this.Slots = Array.Empty<SlotEntry>();
-        else if (this.SlotCount > 6)
-            this.Slots = this.Slots.Take(6).ToArray();
-    }
-
-    public void Assign(PowerEntry iPe)
-    {
-        this.Level = iPe.Level;
-        this.NIDPowerset = iPe.NIDPowerset;
-        this.IDXPower = iPe.IDXPower;
-        this.NIDPower = iPe.NIDPower;
-        this.Tag = iPe.Tag;
-        this.StatInclude = iPe.StatInclude;
-        this.VariableValue = iPe.VariableValue;
-        if (iPe.Slots != null)
-        {
-            this.Slots = new SlotEntry[iPe.Slots.Length];
-            for (int index = 0; index <= this.Slots.Length - 1; ++index)
-                this.Slots[index].Assign(iPe.Slots[index]);
-        }
-        else
-            this.Slots = new SlotEntry[0];
-        if (iPe.SubPowers != null)
-        {
-            this.SubPowers = new PowerSubEntry[iPe.SubPowers.Length];
-            for (int index = 0; index <= this.SubPowers.Length - 1; ++index)
-                this.SubPowers[index].Assign(iPe.SubPowers[index]);
-        }
-        else
-            this.SubPowers = new PowerSubEntry[0];
     }
 
     public bool HasProc()
@@ -308,23 +340,26 @@ public class PowerEntry : ICloneable
     public bool CanRemoveSlot(int slotIdx, out string message)
     {
         message = string.Empty;
+        bool flag1 = true;
+        bool flag2;
         if (slotIdx < 0 || slotIdx > this.Slots.Length - 1)
         {
-            return false;
+            flag2 = false;
         }
         else
         {
             if (slotIdx == 0 & this.NIDPowerset > -1)
             {
+                flag1 = false;
                 message = "This slot was added automatically and can't be removed without also removing the power.";
-                return false;
             }
             else if (slotIdx == 0 && this.Slots.Length > 1)
             {
+                flag1 = false;
                 message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
-                return false;
             }
-            return true;
+            flag2 = flag1;
         }
+        return flag2;
     }
 }

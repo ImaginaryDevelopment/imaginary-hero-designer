@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 public interface ISerialize
 {
@@ -44,6 +43,7 @@ public class ConfigData
     public string LastPrinter = string.Empty;
     public bool LoadLastFileOnStart = true;
     public string LastFileName = string.Empty;
+    public string DSaveFile;
     public string DefaultSaveFolder = string.Empty;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
@@ -115,8 +115,9 @@ public class ConfigData
         }
     }
 
-    ConfigData(string iFilename = "")
+    ConfigData(string dSaveFile, string iFilename = "")
     {
+        DSaveFile = dSaveFile;
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
         this.Inc.PvE = true;
@@ -173,9 +174,7 @@ public class ConfigData
                     case "Mids' Hero Designer Config":
                         num1 = 0.9f;
                         break;
-                    // here's something F# doesn't do easily
                     case "Mids' Hero Designer Config V2":
-                    case string x when x == header:
                         num1 = reader.ReadSingle();
                         break;
                     default:
@@ -479,16 +478,16 @@ public class ConfigData
         SaveRawMhd(serializer, toSerialize, iFilename);
     }
 
-    const string header = "Mids' Hero Designer Config V2";
+    const string name = "Mids' Hero Designer Config V2";
     void Save(ISerialize serializer, string iFilename, float version)
     {
-        SaveRaw(serializer, iFilename, version, header);
+        SaveRaw(serializer, iFilename, version, name);
 
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
         {
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                writer.Write(header);
+                writer.Write(name);
                 writer.Write(version);
                 writer.Write(this.NoToolTips);
                 writer.Write(this.BaseAcc);

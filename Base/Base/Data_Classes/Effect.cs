@@ -280,7 +280,7 @@ namespace Base.Data_Classes
 
         public bool VariableModifiedOverride { get; set; }
 
-        public bool isEnhancementEffect { get; set; }
+        public bool isEnahncementEffect { get; set; }
 
         public Enums.ePvX PvMode { get; set; }
 
@@ -562,7 +562,7 @@ namespace Base.Data_Classes
             string iValue6 = string.Empty;
             if (this._power != null && this._power.VariableEnabled && this.VariableModified)
                 str7 = " (Variable)";
-            if (this.isEnhancementEffect)
+            if (this.isEnahncementEffect)
                 str8 = "(From Enh) ";
             string effectName = Enums.GetEffectName(this.EffectType);
             if (!simple)
@@ -1648,7 +1648,7 @@ namespace Base.Data_Classes
             this.Resistible = template.Resistible;
             this.SpecialCase = template.SpecialCase;
             this.VariableModifiedOverride = template.VariableModifiedOverride;
-            this.isEnhancementEffect = template.isEnhancementEffect;
+            this.isEnahncementEffect = template.isEnahncementEffect;
             this.PvMode = template.PvMode;
             this.ToWho = template.ToWho;
             this.Scale = template.Scale;

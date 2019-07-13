@@ -152,7 +152,7 @@ public static class MidsCharacterFileFormat
                     str1 = str1.Replace("\n", "<br />");
                     str3 = "<br />";
                 }
-                string str5 = "| Copy & Paste this data into Mids' Hero Designer to view the build |" + str3;
+                string str5 = "| Copy & Paste this data into Mids' Reborn to view the build |" + str3;
                 if (flag1)
                     str5 = str5.Replace(" ", "&nbsp;");
                 str4 = str5 + "|-------------------------------------------------------------------|" + str3;

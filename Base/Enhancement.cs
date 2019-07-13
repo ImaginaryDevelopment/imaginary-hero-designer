@@ -169,12 +169,12 @@ public class Enhancement : IEnhancement
         ++iMin;
         ++iMax;
         ++iLevel;
-        float nStep = Convert.ToSingle(iStep);
-        float nLevel = Convert.ToSingle(iLevel);
-        float midway = nStep / 2f;
-        float extra = iLevel % nStep;
-        if (extra > 0.0)
-            iLevel = extra >= (double)midway ? (int)((Math.Floor(nLevel / (double)nStep) * nStep) + nStep) : (int)(Math.Floor(nLevel / (double)nStep) * nStep);
+        float single1 = Convert.ToSingle(iStep);
+        float single2 = Convert.ToSingle(iLevel);
+        float num1 = single1 / 2f;
+        float num2 = (float)iLevel % single1;
+        if ((double)num2 > 0.0)
+            iLevel = (double)num2 >= (double)num1 ? (int)(Math.Floor((double)single2 / (double)single1) * (double)single1 + (double)single1) : (int)(Math.Floor((double)single2 / (double)single1) * (double)single1);
         if (iLevel > iMax)
             iLevel = iMax;
         if (iLevel < iMin)
@@ -185,6 +185,8 @@ public class Enhancement : IEnhancement
     public Enhancement()
     {
         this.UID = string.Empty;
+        this.IsModified = false;
+        this.IsNew = false;
         this.Name = "New Enhancement";
         this.ShortName = "NewEnh";
         this.Desc = string.Empty;
@@ -193,17 +195,20 @@ public class Enhancement : IEnhancement
         this.Image = string.Empty;
         this.nIDSet = -1;
         this.EffectChance = 1f;
+        this.LevelMin = 0;
         this.LevelMax = 52;
+        this.Unique = false;
+        this.MutExID = Enums.eEnhMutex.None;
         this.UIDSet = string.Empty;
-        this._power = new Base.Data_Classes.Power()
+        this._power = (IPower)new Base.Data_Classes.Power()
         {
             PowerType = Enums.ePowerType.Boost,
             DisplayName = this.Name,
             FullName = this.UID
         };
         this.BuffMode = Enums.eBuffDebuff.Any;
-        this.ClassID = Array.Empty<int>();
-        this.Effect = Array.Empty<Enums.sEffect>();
+        this.ClassID = new int[0];
+        this.Effect = new Enums.sEffect[0];
         this.RecipeName = string.Empty;
         this.RecipeIDX = -1;
         this.UID = string.Empty;
@@ -211,6 +216,8 @@ public class Enhancement : IEnhancement
 
     public Enhancement(IEnhancement iEnh)
     {
+        this.IsModified = false;
+        this.IsNew = false;
         this.StaticIndex = iEnh.StaticIndex;
         this.Name = iEnh.Name;
         this.ShortName = iEnh.ShortName;
@@ -290,9 +297,9 @@ public class Enhancement : IEnhancement
             else
                 effect = new Base.Data_Classes.Effect(reader)
                 {
-                    isEnhancementEffect = true
+                    isEnahncementEffect = true
                 };
-            local.FX = effect;
+            local.FX = (IEffect)effect;
         }
         this.UID = reader.ReadString();
         this.RecipeName = reader.ReadString();
@@ -370,63 +377,81 @@ public class Enhancement : IEnhancement
 
     public int CheckAndFixIOLevel(int level)
     {
+        int num;
         if (this.TypeID != Enums.eType.InventO && this.TypeID != Enums.eType.SetO)
-            return level - 1;
-
-        int iMax = 52;
-        int iMin = 9;
-        switch (this.TypeID)
         {
-            case Enums.eType.InventO:
-                iMax = this.LevelMax;
-                iMin = this.LevelMin;
-                break;
-            case Enums.eType.SetO:
-                if (this.nIDSet > -1)
-                {
-                    iMax = DatabaseAPI.Database.EnhancementSets[this.nIDSet].LevelMax;
-                    iMin = DatabaseAPI.Database.EnhancementSets[this.nIDSet].LevelMin;
+            num = level - 1;
+        }
+        else
+        {
+            int iMax = 52;
+            int iMin = 9;
+            switch (this.TypeID)
+            {
+                case Enums.eType.InventO:
+                    iMax = this.LevelMax;
+                    iMin = this.LevelMin;
                     break;
-                }
-                break;
+                case Enums.eType.SetO:
+                    if (this.nIDSet > -1)
+                    {
+                        iMax = DatabaseAPI.Database.EnhancementSets[this.nIDSet].LevelMax;
+                        iMin = DatabaseAPI.Database.EnhancementSets[this.nIDSet].LevelMin;
+                        break;
+                    }
+                    break;
+            }
+            if (level > iMax)
+                level = iMax;
+            if (level < iMin)
+                level = iMin;
+            if (this.TypeID == Enums.eType.InventO)
+            {
+                if (iMax > 49)
+                    iMax = 49;
+                level = Enhancement.GranularLevelZb(level, iMin, iMax, 5);
+            }
+            num = level;
         }
-        if (level > iMax)
-            level = iMax;
-        if (level < iMin)
-            level = iMin;
-        if (this.TypeID == Enums.eType.InventO)
-        {
-            if (iMax > 49)
-                iMax = 49;
-            level = Enhancement.GranularLevelZb(level, iMin, iMax, 5);
-        }
-        return level;
+        return num;
     }
 
     public string GetSpecialName()
-        => ((int)this.SubTypeID).ToString() + " Origin";
+    {
+        return ((int)this.SubTypeID).ToString() + " Origin";
+    }
 
     public static float ApplyED(Enums.eSchedule iSched, float iVal)
     {
+        float num;
         switch (iSched)
         {
             case Enums.eSchedule.None:
-                return 0.0f;
+                num = 0.0f;
+                break;
             case Enums.eSchedule.Multiple:
-                return 0.0f;
+                num = 0.0f;
+                break;
             default:
-                float[] ed = new float[3];
+                float[] numArray1 = new float[3];
                 for (int index = 0; index <= 2; ++index)
-                    ed[index] = DatabaseAPI.Database.MultED[(int)iSched][index];
-                if ((double)iVal <= (double)ed[0])
-                    return iVal;
-                float[] edm = new float[3]
+                    numArray1[index] = DatabaseAPI.Database.MultED[(int)iSched][index];
+                if ((double)iVal <= (double)numArray1[0])
                 {
-                    ed[0],
-                    ed[0] + (float) (( ed[1] - (double) ed[0]) * 0.899999976158142),
-                    (float) ( ed[0] + ( ed[1] - (double) ed[0]) * 0.899999976158142 + ( ed[2] - (double) ed[1]) * 0.699999988079071)
-                };
-                return iVal > (double)ed[1] ? (iVal > (double)ed[2] ? edm[2] + (float)((iVal - (double)ed[2]) * 0.150000005960464) : edm[1] + (float)((iVal - (double)ed[1]) * 0.699999988079071)) : edm[0] + (float)((iVal - (double)ed[0]) * 0.899999976158142);
+                    num = iVal;
+                }
+                else
+                {
+                    float[] numArray2 = new float[3]
+                    {
+            numArray1[0],
+            numArray1[0] + (float) (((double) numArray1[1] - (double) numArray1[0]) * 0.899999976158142),
+            (float) ((double) numArray1[0] + ((double) numArray1[1] - (double) numArray1[0]) * 0.899999976158142 + ((double) numArray1[2] - (double) numArray1[1]) * 0.699999988079071)
+                    };
+                    num = (double)iVal > (double)numArray1[1] ? ((double)iVal > (double)numArray1[2] ? numArray2[2] + (float)(((double)iVal - (double)numArray1[2]) * 0.150000005960464) : numArray2[1] + (float)(((double)iVal - (double)numArray1[1]) * 0.699999988079071)) : numArray2[0] + (float)(((double)iVal - (double)numArray1[0]) * 0.899999976158142);
+                }
+                break;
         }
+        return num;
     }
 }

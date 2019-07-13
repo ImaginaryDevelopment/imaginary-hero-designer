@@ -73,7 +73,7 @@ public interface IEffect : IComparable, ICloneable
 
     bool VariableModifiedOverride { get; set; }
 
-    bool isEnhancementEffect { get; set; }
+    bool isEnahncementEffect { get; set; }
 
     Enums.ePvX PvMode { get; set; }
 

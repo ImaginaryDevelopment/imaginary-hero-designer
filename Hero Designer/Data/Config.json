@@ -14,7 +14,7 @@
   "ShowVillainColours": true,
   "Columns": 3,
   "Width": 1095,
-  "Height": 834,
+  "Height": 819,
   "StatGraphStyle": 1,
   "ForceLevel": 50,
   "I9": {
@@ -47,7 +47,7 @@
   },
   "ShowSlotLevels": true,
   "LoadLastFileOnStart": true,
-  "LastFileName": "D:\\Users\\DBee\\My Documents\\Hero & Villain Builds\\Brute - Spines - Fiery Aura.mxd",
+  "LastFileName": "",
   "TipStatus": [
     1,
     1,
@@ -82,6 +82,7 @@
     0
   ],
   "DefaultSaveFolder": "",
+  "BuildMode": 1,
   "BuildOption": 2,
   "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
   "ShowAlphaPopup": true,
