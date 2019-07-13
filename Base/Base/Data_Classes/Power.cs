@@ -10,65 +10,15 @@ namespace Base.Data_Classes
     public class Power : IPower, IComparable
     {
         public IPowerset GetPowerSet() => !(this.PowerSetID < 0 | this.PowerSetID > DatabaseAPI.Database.Powersets.Length) ? DatabaseAPI.Database.Powersets[this.PowerSetID] : null;
-        //    }
-        //    set
-        //    {
-        //        this.PowerSetID = value.nID;
-        //    }
-        //}
-
-        public string FullSetName
-        {
-            get
-            {
-                string[] strArray = this.FullName.Split('.');
-                return strArray.Length <= 1 ? string.Empty : strArray[0] + "." + strArray[1];
-            }
-        }
-
-        public float CastTime
-        {
-            get
-            {
-                return !MidsContext.Config.UseArcanaTime ? this.CastTimeReal : (float)(Math.Ceiling((double)(this.CastTimeReal / 0.132f)) + 1.0) * 0.132f;
-            }
-            set
-            {
-                this.CastTimeReal = value;
-            }
-        }
 
         public float CastTimeReal { get; set; }
 
         public float ToggleCost
-        {
-            get
-            {
-                return !(this.PowerType == Enums.ePowerType.Toggle & (double)this.ActivatePeriod > 0.0) ? this.EndCost : this.EndCost / this.ActivatePeriod;
-            }
-        }
+                => !(this.PowerType == Enums.ePowerType.Toggle & this.ActivatePeriod > 0.0) ? this.EndCost : this.EndCost / this.ActivatePeriod;
 
         public bool IsEpic
-        {
-            get
-            {
-                return this.Requires.NPowerID.Length > 0 && this.Requires.NPowerID[0][0] != -1;
-            }
-        }
+                => this.Requires.NPowerID.Length > 0 && this.Requires.NPowerID[0][0] != -1;
 
-        public bool Slottable
-        {
-            get
-            {
-                var ps = this.GetPowerSet();
-                return this.Enhancements.Length > 0 &&
-                    (ps.SetType == Enums.ePowerSetType.Primary
-                        || ps.SetType == Enums.ePowerSetType.Secondary
-                        || ps.SetType == Enums.ePowerSetType.Ancillary
-                        || ps.SetType == Enums.ePowerSetType.Inherent
-                        || ps.SetType == Enums.ePowerSetType.Pool);
-            }
-        }
 
         public int LocationIndex { get; private set; }
 
@@ -142,14 +92,6 @@ namespace Base.Data_Classes
 
         public float Radius { get; set; }
 
-        public float AoEModifier
-        {
-            get
-            {
-                return this.EffectArea != Enums.eEffectArea.Cone ? (this.EffectArea != Enums.eEffectArea.Sphere ? 1f : (float)(1.0 + (double)this.Radius * 0.150000005960464)) : (float)(1.0 + (double)this.Radius * 0.150000005960464 - (double)this.Radius * 0.000366669992217794 * (double)(360 - this.Arc));
-            }
-        }
-
         public int Arc { get; set; }
 
         public int MaxTargets { get; set; }
@@ -218,18 +160,6 @@ namespace Base.Data_Classes
 
         public bool SkipMax { get; set; }
 
-        public int DisplayLocation
-        {
-            get
-            {
-                return this.LocationIndex;
-            }
-            set
-            {
-                this.LocationIndex = value;
-            }
-        }
-
         public bool MutexAuto { get; set; }
 
         public bool MutexIgnore { get; set; }
@@ -261,16 +191,6 @@ namespace Base.Data_Classes
         public bool BoostBoostable { get; set; }
 
         public bool BoostUsePlayerLevel { get; set; }
-
-        public bool HasMutexID(int index)
-        {
-            for (int index1 = 0; index1 <= this.NGroupMembership.Length - 1; ++index1)
-            {
-                if (this.NGroupMembership[index1] == index)
-                    return true;
-            }
-            return false;
-        }
 
         public Power()
         {
@@ -568,6 +488,68 @@ namespace Base.Data_Classes
             this.HiddenPower = reader.ReadBoolean();
         }
 
+        public string FullSetName
+        {
+            get
+            {
+                string[] strArray = this.FullName.Split('.');
+                return strArray.Length <= 1 ? string.Empty : strArray[0] + "." + strArray[1];
+            }
+        }
+
+        public float CastTime
+        {
+            get
+            {
+                return !MidsContext.Config.UseArcanaTime ? this.CastTimeReal : (float)(Math.Ceiling((double)(this.CastTimeReal / 0.132f)) + 1.0) * 0.132f;
+            }
+            set
+            {
+                this.CastTimeReal = value;
+            }
+        }
+        public bool Slottable
+        {
+            get
+            {
+                var ps = this.GetPowerSet();
+                return this.Enhancements.Length > 0 &&
+                    (ps.SetType == Enums.ePowerSetType.Primary
+                        || ps.SetType == Enums.ePowerSetType.Secondary
+                        || ps.SetType == Enums.ePowerSetType.Ancillary
+                        || ps.SetType == Enums.ePowerSetType.Inherent
+                        || ps.SetType == Enums.ePowerSetType.Pool);
+            }
+        }
+        public float AoEModifier
+        {
+            get
+            {
+                return this.EffectArea != Enums.eEffectArea.Cone ? (this.EffectArea != Enums.eEffectArea.Sphere ? 1f : (float)(1.0 + (double)this.Radius * 0.150000005960464)) : (float)(1.0 + (double)this.Radius * 0.150000005960464 - (double)this.Radius * 0.000366669992217794 * (double)(360 - this.Arc));
+            }
+        }
+
+        public int DisplayLocation
+        {
+            get
+            {
+                return this.LocationIndex;
+            }
+            set
+            {
+                this.LocationIndex = value;
+            }
+        }
+
+        public bool HasMutexID(int index)
+        {
+            for (int index1 = 0; index1 <= this.NGroupMembership.Length - 1; ++index1)
+            {
+                if (this.NGroupMembership[index1] == index)
+                    return true;
+            }
+            return false;
+        }
         public void StoreTo(ref BinaryWriter writer)
         {
             writer.Write(this.StaticIndex);
@@ -668,7 +650,7 @@ namespace Base.Data_Classes
                     float num2 = effect.Mag;
                     if (MidsContext.Config.DamageMath.Calculate == ConfigData.EDamageMath.Average)
                         num2 *= effect.Probability;
-                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnhancementEffect)
                         num2 = (float)((double)num2 * (double)this.ActivatePeriod / 10.0);
                     if (effect.Ticks > 1)
                     {
@@ -725,7 +707,7 @@ namespace Base.Data_Classes
                     float num1 = effect.Mag;
                     if (MidsContext.Config.DamageMath.Calculate == ConfigData.EDamageMath.Average)
                         num1 *= effect.Probability;
-                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle && effect.isEnhancementEffect)
                         num1 = (float)((double)num1 * (double)this.ActivatePeriod / 10.0);
                     switch (MidsContext.Config.DamageMath.ReturnValue)
                     {
@@ -822,7 +804,7 @@ namespace Base.Data_Classes
                         numArray1[index1] += 10;
                     if (this.Effects[index1].ToWho == Enums.eToWho.Target & (double)this.Effects[index1].Mag > 0.0 & this.Effects[index1].Absorbed_Effect)
                         numArray1[index1] += 10;
-                    if (this.Effects[index1].isEnahncementEffect)
+                    if (this.Effects[index1].isEnhancementEffect)
                         numArray1[index1] += -30;
                     if (this.Effects[index1].VariableModified)
                         numArray1[index1] += 30;
@@ -1017,7 +999,7 @@ namespace Base.Data_Classes
                         flag5 = true;
                     if (this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance & flag3)
                         flag5 = true;
-                    if ((double)Math.Abs(this.Effects[index].Probability - num2) < 0.01 & (double)this.Effects[index].Duration > (double)num3 & !this.Effects[index].isEnahncementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
+                    if ((double)Math.Abs(this.Effects[index].Probability - num2) < 0.01 & (double)this.Effects[index].Duration > (double)num3 & !this.Effects[index].isEnhancementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
                     {
                         if (eEffectType == Enums.eEffectType.Mez & this.Effects[index].EffectType == Enums.eEffectType.Mez)
                         {
@@ -1185,7 +1167,7 @@ namespace Base.Data_Classes
                 if (this.Effects[iIndex].CanInclude() && this.Effects[iIndex].EffectType == iEffect & this.Effects[iIndex].EffectClass != Enums.eEffectClass.Ignored && this.Effects[iIndex].PvXInclude() && ((double)this.Effects[iIndex].DelayedTime <= 5.0 | includeDelayed) & this.Effects[iIndex].DamageType == iSub)
                 {
                     float mag = this.Effects[iIndex].Mag;
-                    if (this.PowerType == Enums.ePowerType.Toggle & this.Effects[iIndex].isEnahncementEffect)
+                    if (this.PowerType == Enums.ePowerType.Toggle & this.Effects[iIndex].isEnhancementEffect)
                         mag /= 10f;
                     shortFx.Add(iIndex, mag);
                 }
@@ -1931,7 +1913,7 @@ namespace Base.Data_Classes
                             this.Effects[index2].ToWho = this.Effects[array1[index1]].ToWho;
                         if (this.Effects[index2].ToWho == Enums.eToWho.All && (this.EntitiesAffected & Enums.eEntity.Caster) != Enums.eEntity.Caster)
                             this.Effects[index2].ToWho = Enums.eToWho.Target;
-                        this.Effects[index2].isEnahncementEffect = this.Effects[array1[index1]].isEnahncementEffect;
+                        this.Effects[index2].isEnhancementEffect = this.Effects[array1[index1]].isEnhancementEffect;
                         if ((double)this.Effects[array1[index1]].Probability < 1.0)
                             this.Effects[index2].Probability = this.Effects[array1[index1]].Probability * this.Effects[index2].Probability;
                     }
@@ -2088,5 +2070,7 @@ namespace Base.Data_Classes
                 }
             }
         }
+        public override string ToString()
+            => this.DisplayName;
     }
 }

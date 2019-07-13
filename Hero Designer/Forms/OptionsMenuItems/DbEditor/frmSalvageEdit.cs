@@ -40,7 +40,7 @@ namespace Hero_Designer
         void btnAdd_Click(object sender, EventArgs e)
         {
             IDatabase database = DatabaseAPI.Database;
-            Salvage[] salvageArray = (Salvage[])Utils.CopyArray((Array)database.Salvage, (Array)new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
+            Salvage[] salvageArray = (Salvage[])Utils.CopyArray(database.Salvage, (Array)new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
             database.Salvage = salvageArray;
             DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1] = new Salvage();
             this.AddListItem(DatabaseAPI.Database.Salvage.Length - 1);

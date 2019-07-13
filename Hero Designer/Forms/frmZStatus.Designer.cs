@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmZStatus));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblStatus1 = new System.Windows.Forms.Label();
             this.lblStatus2 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@ namespace Hero_Designer
             this.lblStatus2.Size = new System.Drawing.Size(476, 16);
             this.lblStatus2.TabIndex = 2;
             this.lblStatus2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PictureBox1.Image = (System.Drawing.Image)componentResourceManager.GetObject("PictureBox1.Image");
 
             this.PictureBox1.Location = new System.Drawing.Point(1, 1);
             this.PictureBox1.Name = "PictureBox1";
@@ -86,8 +84,6 @@ namespace Hero_Designer
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmZStatus);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Status";
             this.TopMost = true;

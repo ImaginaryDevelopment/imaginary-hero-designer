@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipeViewer));
             this.pbRecipe = new System.Windows.Forms.PictureBox();
             this.lvPower = new System.Windows.Forms.ListView();
             this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -159,6 +158,7 @@ namespace Hero_Designer
 
             this.RecipeInfo.Size = new System.Drawing.Size(587, 212);
             this.RecipeInfo.TabIndex = 2;
+
             this.Panel2.BackColor = System.Drawing.Color.Black;
             this.Panel2.Controls.Add((System.Windows.Forms.Control)this.Panel1);
             this.Panel2.Controls.Add((System.Windows.Forms.Control)this.pbRecipe);
@@ -246,28 +246,30 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.Panel2);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmRecipeViewer);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Recipe Viewer";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)this.pbRecipe).EndInit();
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                this.chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
-                this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
-                this.ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
-                this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.CheckBox chkRecipe;
+        System.Windows.Forms.CheckBox chkSortByLevel;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.ImageList ilSets;
+        System.Windows.Forms.Label lblHeader;
+        System.Windows.Forms.ListView lvPower;
+        System.Windows.Forms.ListView lvDPA;
+        System.Windows.Forms.Panel Panel1;
+        System.Windows.Forms.Panel Panel2;
+        System.Windows.Forms.PictureBox pbRecipe;
+        System.Windows.Forms.ToolTip ToolTip1;
+        System.Windows.Forms.VScrollBar VScrollBar1;
     }
 }

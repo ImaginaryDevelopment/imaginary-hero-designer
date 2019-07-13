@@ -24,6 +24,7 @@ namespace Hero_Designer
         public frmOptionListDlg()
         {
             this.InitializeComponent();
+            this.Name = nameof(frmOptionListDlg);
         }
 
         void Cancel_Button_Click(object sender, EventArgs e)
@@ -41,23 +42,25 @@ namespace Hero_Designer
             this.Close();
         }
 
-        public void ShowWithOptions(
+        public static (DialogResult, bool? remember) ShowWithOptions(
           bool AllowRemember,
           int DefaultOption,
           string descript,
           params string[] OptionList)
         {
-            this.chkRemember.Enabled = AllowRemember;
-            this.chkRemember.Visible = AllowRemember;
-            this.chkRemember.Checked = false;
-            this.lblDescript.Text = descript;
-            this.cmbAction.Items.Clear();
-            this.cmbAction.Items.AddRange((object[])OptionList);
-            if (DefaultOption < this.cmbAction.Items.Count - 1)
-                this.cmbAction.SelectedIndex = DefaultOption;
+            var frm = new frmOptionListDlg();
+            frm.chkRemember.Enabled = AllowRemember;
+            frm.chkRemember.Visible = AllowRemember;
+            frm.chkRemember.Checked = false;
+            frm.lblDescript.Text = descript;
+            frm.cmbAction.Items.Clear();
+            frm.cmbAction.Items.AddRange(OptionList);
+            if (DefaultOption < frm.cmbAction.Items.Count - 1)
+                frm.cmbAction.SelectedIndex = DefaultOption;
             else
-                this.cmbAction.SelectedIndex = 0;
-            int num = (int)this.ShowDialog();
+                frm.cmbAction.SelectedIndex = 0;
+            var result = frm.ShowDialog();
+            return (result, frm.remember);
         }
     }
 }

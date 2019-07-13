@@ -65,7 +65,7 @@ namespace Hero_Designer
 
             this.csSlots.Size = new System.Drawing.Size(52, 16);
             this.csSlots.TabIndex = 17;
-            this.csSlots.Click += csSlots_Click;
+            this.csSlots.Click += new System.EventHandler(csSlots_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csSlots, "Click here to select the colour for this attribute.");
             this.csLevel.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -75,7 +75,7 @@ namespace Hero_Designer
 
             this.csLevel.Size = new System.Drawing.Size(52, 16);
             this.csLevel.TabIndex = 16;
-            this.csLevel.Click += csLevel_Click;
+            this.csLevel.Click += new System.EventHandler(csLevel_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csLevel, "Click here to select the colour for this attribute.");
             this.csHeading.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csHeading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -85,7 +85,7 @@ namespace Hero_Designer
 
             this.csHeading.Size = new System.Drawing.Size(52, 16);
             this.csHeading.TabIndex = 15;
-            this.csHeading.Click += csHeading_Click;
+            this.csHeading.Click += new System.EventHandler(csHeading_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csHeading, "Click here to select the colour for this attribute.");
             this.csTitle.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -95,7 +95,7 @@ namespace Hero_Designer
 
             this.csTitle.Size = new System.Drawing.Size(52, 16);
             this.csTitle.TabIndex = 14;
-            this.csTitle.Click += csTitle_Click;
+            this.csTitle.Click += new System.EventHandler(csTitle_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csTitle, "Click here to select the colour for this attribute.");
             this.csIO.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csIO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -105,7 +105,7 @@ namespace Hero_Designer
 
             this.csIO.Size = new System.Drawing.Size(52, 16);
             this.csIO.TabIndex = 23;
-            this.csIO.Click += csIO_Click;
+            this.csIO.Click += new System.EventHandler(csIO_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csIO, "Click here to select the colour for this attribute.");
             this.csSet.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -115,7 +115,7 @@ namespace Hero_Designer
 
             this.csSet.Size = new System.Drawing.Size(52, 16);
             this.csSet.TabIndex = 26;
-            this.csSet.Click += csSet_Click;
+            this.csSet.Click += new System.EventHandler(csSet_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csSet, "Click here to select the colour for this attribute.");
             this.csHO.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csHO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -125,7 +125,7 @@ namespace Hero_Designer
 
             this.csHO.Size = new System.Drawing.Size(52, 16);
             this.csHO.TabIndex = 28;
-            this.csHO.Click += csHO_Click;
+            this.csHO.Click += new System.EventHandler(csHO_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csHO, "Click here to select the colour for this attribute.");
             this.csPower.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
             this.csPower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -135,7 +135,7 @@ namespace Hero_Designer
 
             this.csPower.Size = new System.Drawing.Size(52, 16);
             this.csPower.TabIndex = 32;
-            this.csPower.Click += csPower_Click;
+            this.csPower.Click += new System.EventHandler(csPower_Click);
             this.myTip.SetToolTip((System.Windows.Forms.Control)this.csPower, "Click here to select the colour for this attribute.");
             this.cPicker.FullOpen = true;
 
@@ -177,7 +177,7 @@ namespace Hero_Designer
             this.txtName.Size = new System.Drawing.Size(124, 20);
             this.txtName.TabIndex = 18;
             this.txtName.Text = "Scheme Name";
-            this.txtName.TextChanged += txtName_TextChanged;
+            this.txtName.TextChanged += new System.EventHandler(txtName_TextChanged);
 
             this.Label1.Location = new System.Drawing.Point(8, 8);
             this.Label1.Name = "Label1";
@@ -226,7 +226,7 @@ namespace Hero_Designer
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 29;
             this.btnOK.Text = "OK";
-            this.btnOK.Click += btnOK_Click;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 
             this.btnCancel.Location = new System.Drawing.Point(44, 256);
@@ -235,7 +235,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
 
             this.Label3.Location = new System.Drawing.Point(36, 144);
             this.Label3.Name = "Label3";

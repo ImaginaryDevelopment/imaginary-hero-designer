@@ -18,6 +18,7 @@ public static class Files
     public const string MxdbFileBbCodeUpdate = "BBCode.mhd";
     public const string MxdbFileOverrides = "Compare.mhd";
     public const string MxdbFileModifiers = "AttribMod.mhd";
+    public const string PatchRtf = "patch.rtf";
     const string MxdbFileConfig = "Config.mhd";
 
     public const string RoamingFolder = "Data\\";

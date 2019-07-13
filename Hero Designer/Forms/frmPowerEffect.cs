@@ -1,314 +1,42 @@
-
-using Base.Data_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+
+using Base.Data_Classes;
 
 namespace Hero_Designer
 {
     public partial class frmPowerEffect : Form
     {
-        Button btnCancel;
-
-        Button btnCopy;
-
-        Button btnCSV;
-
-        Button btnOK;
-
-        Button btnPaste;
-
-        ComboBox cbAffects;
-
-        ComboBox cbAspect;
-
-        ComboBox cbAttribute;
-
-        ComboBox cbFXClass;
-
-        ComboBox cbFXSpecialCase;
-
-        ComboBox cbModifier;
-
-        ComboBox cbPercentageOverride;
-
-        CheckBox chkFXBuffable;
-
-        CheckBox chkFXResistable;
-        CheckBox chkNearGround;
-
-        CheckBox chkStack;
-
-        CheckBox chkVariable;
-        ColumnHeader chSub;
-        ColumnHeader chSubSub;
-
-        CheckedListBox clbSuppression;
-
-        ComboBox cmbEffectId;
-        ColumnHeader ColumnHeader1;
-        GroupBox GroupBox3;
-
-        CheckBox IgnoreED;
-        Label Label1;
-        Label Label10;
-        Label Label11;
-        Label Label2;
-        Label Label22;
-        Label Label23;
-        Label Label24;
-        Label Label25;
-        Label Label26;
-        Label Label27;
-        Label Label28;
-        Label Label3;
-        Label Label30;
-        Label Label4;
-        Label Label5;
-        Label Label6;
-        Label Label7;
-        Label Label8;
-        Label Label9;
-        Label lblAffectsCaster;
-        Label lblEffectDescription;
-        Label lblProb;
-
-        ListView lvEffectType;
-
-        ListView lvSubAttribute;
-
-        ListView lvSubSub;
-
-        RadioButton rbIfAny;
-
-        RadioButton rbIfCritter;
-
-        RadioButton rbIfPlayer;
-
-        [AccessedThroughProperty("txtFXDelay")]
-        TextBox _txtFXDelay;
-
-        [AccessedThroughProperty("txtFXDuration")]
-        TextBox _txtFXDuration;
-
-        [AccessedThroughProperty("txtFXMag")]
-        TextBox _txtFXMag;
-
-        [AccessedThroughProperty("txtFXProb")]
-        TextBox _txtFXProb;
-
-        [AccessedThroughProperty("txtFXScale")]
-        TextBox _txtFXScale;
-
-        [AccessedThroughProperty("txtFXTicks")]
-        TextBox _txtFXTicks;
-
-        TextBox txtOverride;
-
-        [AccessedThroughProperty("txtPPM")]
-        TextBox _txtPPM;
-
         bool Loading;
 
         public IEffect myFX;
 
-        TextBox txtFXDelay
-        {
-            get
-            {
-                return this._txtFXDelay;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXDelay_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXDelay_TextChanged);
-                if (this._txtFXDelay != null)
-                {
-                    this._txtFXDelay.Leave -= eventHandler1;
-                    this._txtFXDelay.TextChanged -= eventHandler2;
-                }
-                this._txtFXDelay = value;
-                if (this._txtFXDelay == null)
-                    return;
-                this._txtFXDelay.Leave += eventHandler1;
-                this._txtFXDelay.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtFXDuration
-        {
-            get
-            {
-                return this._txtFXDuration;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXDuration_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXDuration_TextChanged);
-                if (this._txtFXDuration != null)
-                {
-                    this._txtFXDuration.Leave -= eventHandler1;
-                    this._txtFXDuration.TextChanged -= eventHandler2;
-                }
-                this._txtFXDuration = value;
-                if (this._txtFXDuration == null)
-                    return;
-                this._txtFXDuration.Leave += eventHandler1;
-                this._txtFXDuration.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtFXMag
-        {
-            get
-            {
-                return this._txtFXMag;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXMag_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXMag_TextChanged);
-                if (this._txtFXMag != null)
-                {
-                    this._txtFXMag.Leave -= eventHandler1;
-                    this._txtFXMag.TextChanged -= eventHandler2;
-                }
-                this._txtFXMag = value;
-                if (this._txtFXMag == null)
-                    return;
-                this._txtFXMag.Leave += eventHandler1;
-                this._txtFXMag.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtFXProb
-        {
-            get
-            {
-                return this._txtFXProb;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXProb_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXProb_TextChanged);
-                if (this._txtFXProb != null)
-                {
-                    this._txtFXProb.Leave -= eventHandler1;
-                    this._txtFXProb.TextChanged -= eventHandler2;
-                }
-                this._txtFXProb = value;
-                if (this._txtFXProb == null)
-                    return;
-                this._txtFXProb.Leave += eventHandler1;
-                this._txtFXProb.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtFXScale
-        {
-            get
-            {
-                return this._txtFXScale;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXScale_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXScale_TextChanged);
-                if (this._txtFXScale != null)
-                {
-                    this._txtFXScale.Leave -= eventHandler1;
-                    this._txtFXScale.TextChanged -= eventHandler2;
-                }
-                this._txtFXScale = value;
-                if (this._txtFXScale == null)
-                    return;
-                this._txtFXScale.Leave += eventHandler1;
-                this._txtFXScale.TextChanged += eventHandler2;
-            }
-        }
-
-        TextBox txtFXTicks
-        {
-            get
-            {
-                return this._txtFXTicks;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtFXTicks_Leave);
-                EventHandler eventHandler2 = new EventHandler(this.txtFXTicks_TextChanged);
-                if (this._txtFXTicks != null)
-                {
-                    this._txtFXTicks.Leave -= eventHandler1;
-                    this._txtFXTicks.TextChanged -= eventHandler2;
-                }
-                this._txtFXTicks = value;
-                if (this._txtFXTicks == null)
-                    return;
-                this._txtFXTicks.Leave += eventHandler1;
-                this._txtFXTicks.TextChanged += eventHandler2;
-            }
-        }
-        TextBox txtPPM
-        {
-            get
-            {
-                return this._txtPPM;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.txtPPM_TextChanged);
-                EventHandler eventHandler2 = new EventHandler(this.txtPPM_Leave);
-                if (this._txtPPM != null)
-                {
-                    this._txtPPM.TextChanged -= eventHandler1;
-                    this._txtPPM.Leave -= eventHandler2;
-                }
-                this._txtPPM = value;
-                if (this._txtPPM == null)
-                    return;
-                this._txtPPM.TextChanged += eventHandler1;
-                this._txtPPM.Leave += eventHandler2;
-            }
-        }
-
         public frmPowerEffect(IEffect iFX)
         {
-            this.Load += new EventHandler(this.frmPowerEffect_Load);
             this.Loading = true;
             this.InitializeComponent();
+            this.Load += new EventHandler(this.frmPowerEffect_Load);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmPowerEffect));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myFX = (IEffect)iFX.Clone();
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.DialogResult = DialogResult.Cancel;
             this.Hide();
         }
 
         void btnCopy_Click(object sender, EventArgs e)
-
         {
             this.FullCopy();
         }
 
         void btnCSV_Click(object sender, EventArgs e)
-
         {
             IEffect effect = (IEffect)this.myFX.Clone();
             try
@@ -327,7 +55,6 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.StoreSuppression();
             this.DialogResult = DialogResult.OK;
@@ -335,13 +62,11 @@ namespace Hero_Designer
         }
 
         void btnPaste_Click(object sender, EventArgs e)
-
         {
             this.FullPaste();
         }
 
         void cbAffects_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbAffects.SelectedIndex < 0)
                 return;
@@ -354,7 +79,6 @@ namespace Hero_Designer
         }
 
         void cbAspect_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbAspect.SelectedIndex < 0)
                 return;
@@ -363,7 +87,6 @@ namespace Hero_Designer
         }
 
         void cbAttribute_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbAttribute.SelectedIndex < 0)
                 return;
@@ -372,7 +95,6 @@ namespace Hero_Designer
         }
 
         void cbFXClass_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -381,7 +103,6 @@ namespace Hero_Designer
         }
 
         void cbFXSpecialCase_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -390,7 +111,6 @@ namespace Hero_Designer
         }
 
         void cbModifier_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbModifier.SelectedIndex < 0)
                 return;
@@ -400,7 +120,6 @@ namespace Hero_Designer
         }
 
         void cbPercentageOverride_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.cbPercentageOverride.SelectedIndex < 0)
                 return;
@@ -409,7 +128,6 @@ namespace Hero_Designer
         }
 
         void chkFXBuffable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -418,7 +136,6 @@ namespace Hero_Designer
         }
 
         void chkFxNoStack_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -427,7 +144,6 @@ namespace Hero_Designer
         }
 
         void chkFXResistable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -436,7 +152,6 @@ namespace Hero_Designer
         }
 
         void chkVariable_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -445,14 +160,12 @@ namespace Hero_Designer
         }
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             this.StoreSuppression();
             this.UpdateFXText();
         }
 
         void cmbEffectId_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -525,7 +238,6 @@ namespace Hero_Designer
         }
 
         void FillComboBoxes()
-
         {
             this.cbFXClass.BeginUpdate();
             this.cbFXSpecialCase.BeginUpdate();
@@ -574,7 +286,6 @@ namespace Hero_Designer
         }
 
         void frmPowerEffect_Load(object sender, EventArgs e)
-
         {
             this.FillComboBoxes();
             this.DisplayEffectData();
@@ -589,7 +300,6 @@ namespace Hero_Designer
         }
 
         void FullCopy()
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
             MemoryStream memoryStream = new MemoryStream();
@@ -601,12 +311,11 @@ namespace Hero_Designer
         }
 
         void FullPaste()
-
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
             if (!Clipboard.ContainsData(format.Name))
             {
-                int num = (int)Interaction.MsgBox("No effect data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
+                Interaction.MsgBox("No effect data on the clipboard!", MsgBoxStyle.Information, "Unable to Paste");
             }
             else
             {
@@ -626,7 +335,6 @@ namespace Hero_Designer
         }
 
         void IgnoreED_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -634,10 +342,7 @@ namespace Hero_Designer
             this.UpdateFXText();
         }
 
-        [DebuggerStepThrough]
-
         void lvEffectType_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.lvEffectType.SelectedIndices.Count < 1)
                 return;
@@ -647,7 +352,6 @@ namespace Hero_Designer
         }
 
         void lvSubAttribute_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.lvSubAttribute.SelectedIndices.Count < 1)
                 return;
@@ -669,7 +373,6 @@ namespace Hero_Designer
         }
 
         void lvSubSub_SelectedIndexChanged(object sender, EventArgs e)
-
         {
             if (this.Loading || this.lvSubSub.SelectedIndices.Count < 1)
                 return;
@@ -680,7 +383,6 @@ namespace Hero_Designer
         }
 
         void rbIfACP_CheckedChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -689,7 +391,6 @@ namespace Hero_Designer
         }
 
         void StoreSuppression()
-
         {
             int[] values = (int[])Enum.GetValues(this.myFX.Suppression.GetType());
             this.myFX.Suppression = Enums.eSuppress.None;
@@ -700,7 +401,6 @@ namespace Hero_Designer
         }
 
         void txtFXDelay_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -709,7 +409,6 @@ namespace Hero_Designer
         }
 
         void txtFXDelay_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -721,7 +420,6 @@ namespace Hero_Designer
         }
 
         void txtFXDuration_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -730,7 +428,6 @@ namespace Hero_Designer
         }
 
         void txtFXDuration_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -742,7 +439,6 @@ namespace Hero_Designer
         }
 
         void txtFXMag_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -751,7 +447,6 @@ namespace Hero_Designer
         }
 
         void txtFXMag_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -766,7 +461,6 @@ namespace Hero_Designer
         }
 
         void txtFXProb_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -775,7 +469,6 @@ namespace Hero_Designer
         }
 
         void txtFXProb_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -792,7 +485,6 @@ namespace Hero_Designer
         }
 
         void txtFXScale_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -801,7 +493,6 @@ namespace Hero_Designer
         }
 
         void txtFXScale_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -816,7 +507,6 @@ namespace Hero_Designer
         }
 
         void txtFXTicks_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -825,7 +515,6 @@ namespace Hero_Designer
         }
 
         void txtFXTicks_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -837,7 +526,6 @@ namespace Hero_Designer
         }
 
         void txtOverride_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -846,7 +534,6 @@ namespace Hero_Designer
         }
 
         void txtPPM_Leave(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -854,7 +541,6 @@ namespace Hero_Designer
         }
 
         void txtPPM_TextChanged(object sender, EventArgs e)
-
         {
             if (this.Loading)
                 return;
@@ -955,7 +641,6 @@ namespace Hero_Designer
         }
 
         void UpdateFXText()
-
         {
             if (this.Loading)
                 return;

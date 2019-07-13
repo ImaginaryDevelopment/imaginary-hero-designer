@@ -88,7 +88,7 @@ namespace Hero_Designer
             this.txtName.Size = new System.Drawing.Size(196, 20);
             this.txtName.TabIndex = 0;
             this.txtName.Text = "TextBox1";
-            this.txtName.TextChanged += txtName_TextChanged;
+            this.txtName.TextChanged += new System.EventHandler(txtName_TextChanged);
 
             this.Label1.Location = new System.Drawing.Point(6, 16);
             this.Label1.Name = "Label1";
@@ -104,7 +104,7 @@ namespace Hero_Designer
 
             this.cbAT.Size = new System.Drawing.Size(124, 22);
             this.cbAT.TabIndex = 2;
-            this.cbAT.SelectedIndexChanged += cbAT_SelectedIndexChanged;
+            this.cbAT.SelectedIndexChanged += new System.EventHandler(cbAT_SelectedIndexChanged);
 
             this.Label2.Location = new System.Drawing.Point(336, 122);
             this.Label2.Name = "Label2";
@@ -128,7 +128,7 @@ namespace Hero_Designer
 
             this.cbSetType.Size = new System.Drawing.Size(124, 22);
             this.cbSetType.TabIndex = 4;
-            this.cbSetType.SelectedIndexChanged += cbSetType_SelectedIndexChanged;
+            this.cbSetType.SelectedIndexChanged += new System.EventHandler(cbSetType_SelectedIndexChanged);
 
             this.btnIcon.Location = new System.Drawing.Point(6, 52);
             this.btnIcon.Name = "btnIcon";
@@ -136,7 +136,7 @@ namespace Hero_Designer
             this.btnIcon.Size = new System.Drawing.Size(179, 20);
             this.btnIcon.TabIndex = 6;
             this.btnIcon.Text = "Select Icon";
-            this.btnIcon.Click += btnIcon_Click;
+            this.btnIcon.Click += new System.EventHandler(btnIcon_Click);
             this.picIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             this.picIcon.Location = new System.Drawing.Point(85, 22);
@@ -184,7 +184,7 @@ namespace Hero_Designer
             this.btnClose.Size = new System.Drawing.Size(75, 36);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "OK";
-            this.btnClose.Click += btnClose_Click;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
 
             this.btnClearIcon.Location = new System.Drawing.Point(6, 76);
             this.btnClearIcon.Name = "btnClearIcon";
@@ -192,7 +192,7 @@ namespace Hero_Designer
             this.btnClearIcon.Size = new System.Drawing.Size(179, 20);
             this.btnClearIcon.TabIndex = 16;
             this.btnClearIcon.Text = "Clear Icon";
-            this.btnClearIcon.Click += btnClearIcon_Click;
+            this.btnClearIcon.Click += new System.EventHandler(btnClearIcon_Click);
             this.ImagePicker.Filter = "PNG Images|*.png";
             this.ImagePicker.Title = "Select Image File";
 
@@ -283,7 +283,7 @@ namespace Hero_Designer
             this.btnCancel.Size = new System.Drawing.Size(75, 36);
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
             this.GroupBox3.Controls.Add((System.Windows.Forms.Control)this.txtDesc);
 
             this.GroupBox3.Location = new System.Drawing.Point(12, 178);
@@ -302,7 +302,7 @@ namespace Hero_Designer
             this.txtDesc.Size = new System.Drawing.Size(503, 55);
             this.txtDesc.TabIndex = 1;
             this.txtDesc.Text = "TextBox1";
-            this.txtDesc.TextChanged += txtDesc_TextChanged;
+            this.txtDesc.TextChanged += new System.EventHandler(txtDesc_TextChanged);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.chkNoTrunk);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.cbTrunkSet);
             this.GroupBox4.Controls.Add((System.Windows.Forms.Control)this.cbTrunkGroup);
@@ -324,7 +324,7 @@ namespace Hero_Designer
             this.chkNoTrunk.TabIndex = 17;
             this.chkNoTrunk.Text = "This power has no Trunk set";
             this.chkNoTrunk.UseVisualStyleBackColor = true;
-            this.chkNoTrunk.CheckedChanged += chkNoTrunk_CheckedChanged;
+            this.chkNoTrunk.CheckedChanged += new System.EventHandler(chkNoTrunk_CheckedChanged);
             this.cbTrunkSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrunkSet.FormattingEnabled = true;
 
@@ -333,7 +333,7 @@ namespace Hero_Designer
 
             this.cbTrunkSet.Size = new System.Drawing.Size(196, 22);
             this.cbTrunkSet.TabIndex = 14;
-            this.cbTrunkSet.SelectedIndexChanged += cbTrunkSet_SelectedIndexChanged;
+            this.cbTrunkSet.SelectedIndexChanged += new System.EventHandler(cbTrunkSet_SelectedIndexChanged);
             this.cbTrunkGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrunkGroup.FormattingEnabled = true;
 
@@ -342,7 +342,7 @@ namespace Hero_Designer
 
             this.cbTrunkGroup.Size = new System.Drawing.Size(196, 22);
             this.cbTrunkGroup.TabIndex = 13;
-            this.cbTrunkGroup.SelectedIndexChanged += cbTrunkGroup_SelectedIndexChanged;
+            this.cbTrunkGroup.SelectedIndexChanged += new System.EventHandler(cbTrunkGroup_SelectedIndexChanged);
 
             this.Label5.Location = new System.Drawing.Point(10, 16);
             this.Label5.Name = "Label5";
@@ -380,7 +380,7 @@ namespace Hero_Designer
             this.chkNoLink.TabIndex = 17;
             this.chkNoLink.Text = "No link";
             this.chkNoLink.UseVisualStyleBackColor = true;
-            this.chkNoLink.CheckedChanged += chkNoLink_CheckedChanged;
+            this.chkNoLink.CheckedChanged += new System.EventHandler(chkNoLink_CheckedChanged);
             this.cbLinkSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLinkSet.FormattingEnabled = true;
 
@@ -389,7 +389,7 @@ namespace Hero_Designer
 
             this.cbLinkSet.Size = new System.Drawing.Size(196, 22);
             this.cbLinkSet.TabIndex = 14;
-            this.cbLinkSet.SelectedIndexChanged += cbLinkSet_SelectedIndexChanged;
+            this.cbLinkSet.SelectedIndexChanged += new System.EventHandler(cbLinkSet_SelectedIndexChanged);
             this.cbLinkGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLinkGroup.FormattingEnabled = true;
 
@@ -398,7 +398,7 @@ namespace Hero_Designer
 
             this.cbLinkGroup.Size = new System.Drawing.Size(196, 22);
             this.cbLinkGroup.TabIndex = 13;
-            this.cbLinkGroup.SelectedIndexChanged += cbLinkGroup_SelectedIndexChanged;
+            this.cbLinkGroup.SelectedIndexChanged += new System.EventHandler(cbLinkGroup_SelectedIndexChanged);
 
             this.Label6.Location = new System.Drawing.Point(10, 16);
             this.Label6.Name = "Label6";
@@ -434,7 +434,7 @@ namespace Hero_Designer
 
             this.lvMutexSets.Size = new System.Drawing.Size(238, 242);
             this.lvMutexSets.TabIndex = 111;
-            this.lvMutexSets.SelectedIndexChanged += lvMutexSets_SelectedIndexChanged;
+            this.lvMutexSets.SelectedIndexChanged += new System.EventHandler(lvMutexSets_SelectedIndexChanged);
 
             this.Label8.Location = new System.Drawing.Point(6, 16);
             this.Label8.Name = "Label8";
@@ -451,7 +451,7 @@ namespace Hero_Designer
 
             this.cbMutexGroup.Size = new System.Drawing.Size(238, 22);
             this.cbMutexGroup.TabIndex = 21;
-            this.cbMutexGroup.SelectionChangeCommitted += cbMutexGroup_SelectionChangeCommitted;
+            this.cbMutexGroup.SelectionChangeCommitted += new System.EventHandler(cbMutexGroup_SelectionChangeCommitted);
 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 

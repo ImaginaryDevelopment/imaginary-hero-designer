@@ -14,7 +14,7 @@ namespace Hero_Designer
 
         frmMain myOwner;
 
-        public frmFloatingStats(ref frmMain iOwner)
+        public frmFloatingStats(frmMain iOwner)
         {
             this.InitializeComponent();
             this.Load += new EventHandler(this.frmFloatingStats_Load);

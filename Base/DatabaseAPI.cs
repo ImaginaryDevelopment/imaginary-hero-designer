@@ -7,116 +7,76 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Base;
 
 public static class DatabaseAPI
 {
-    static readonly IDictionary<string, int> AttribMod = (IDictionary<string, int>)new Dictionary<string, int>();
+    static readonly IDictionary<string, int> AttribMod = new Dictionary<string, int>();
 
-    static readonly IDictionary<string, int> Classes = (IDictionary<string, int>)new Dictionary<string, int>();
+    static readonly IDictionary<string, int> Classes = new Dictionary<string, int>();
 
     public const int HeroAccolades = 3257;
     public const int VillainAccolades = 3258;
     public const int TempPowers = 3259;
 
     public static IDatabase Database
-    {
-        get
-        {
-            return (IDatabase)Base.Data_Classes.Database.Instance;
-        }
-    }
+        => Base.Data_Classes.Database.Instance;
 
     static void ClearLookups()
-
     {
-        DatabaseAPI.AttribMod.Clear();
-        DatabaseAPI.Classes.Clear();
+        AttribMod.Clear();
+        Classes.Clear();
     }
 
     public static int NidFromUidAttribMod(string uID)
     {
-        int num;
         if (string.IsNullOrEmpty(uID))
-            num = -1;
-        else if (DatabaseAPI.AttribMod.ContainsKey(uID))
+            return -1;
+        if (AttribMod.ContainsKey(uID))
+            return AttribMod[uID];
+        for (int index = 0; index <= Database.AttribMods.Modifier.Length - 1; ++index)
         {
-            num = DatabaseAPI.AttribMod[uID];
-        }
-        else
-        {
-            for (int index = 0; index <= DatabaseAPI.Database.AttribMods.Modifier.Length - 1; ++index)
+            if (string.Equals(uID, Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
             {
-                if (string.Equals(uID, DatabaseAPI.Database.AttribMods.Modifier[index].ID, StringComparison.OrdinalIgnoreCase))
-                {
-                    DatabaseAPI.AttribMod.Add(uID, index);
-                    return index;
-                }
+                AttribMod.Add(uID, index);
+                return index;
             }
-            num = -1;
         }
-        return num;
+        return -1;
     }
 
     public static int NidFromUidClass(string uidClass)
     {
-        int num;
         if (string.IsNullOrEmpty(uidClass))
-            num = -1;
-        else if (DatabaseAPI.Classes.ContainsKey(uidClass))
-        {
-            num = DatabaseAPI.Classes[uidClass];
-        }
-        else
-        {
-            for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
-            {
-                if (string.Equals(uidClass, DatabaseAPI.Database.Classes[index].ClassName, StringComparison.OrdinalIgnoreCase))
-                {
-                    DatabaseAPI.Classes.Add(uidClass, index);
-                    return index;
-                }
-            }
-            num = -1;
-        }
-        return num;
+            return -1;
+        if (Classes.ContainsKey(uidClass))
+            return Classes[uidClass];
+        var index = Database.Classes.TryFindIndex(cls => string.Equals(uidClass, cls.ClassName, StringComparison.OrdinalIgnoreCase));
+        if (index >= 0)
+            Classes.Add(uidClass, index);
+        return index;
     }
 
-    public static string UidFromNidClass(int nIDClass)
-    {
-        return nIDClass < 0 || nIDClass > DatabaseAPI.Database.Classes.Length ? string.Empty : DatabaseAPI.Database.Classes[nIDClass].ClassName;
-    }
+    public static string UidFromNidClass(int nIDClass) => nIDClass < 0 || nIDClass > Database.Classes.Length ? string.Empty : Database.Classes[nIDClass].ClassName;
 
     public static int NidFromUidOrigin(string uidOrigin, int nIDClass)
     {
-        int num;
         if (nIDClass < 0)
-        {
-            num = -1;
-        }
-        else
-        {
-            for (int index = 0; index < DatabaseAPI.Database.Classes[nIDClass].Origin.Length; ++index)
-            {
-                if (string.Equals(DatabaseAPI.Database.Classes[nIDClass].Origin[index], uidOrigin, StringComparison.OrdinalIgnoreCase))
-                    return index;
-            }
-            num = -1;
-        }
-        return num;
+            return -1;
+        return Database.Classes[nIDClass].Origin.TryFindIndex(o => string.Equals(o, uidOrigin, StringComparison.OrdinalIgnoreCase));
     }
 
     static void FillGroupArray()
-
     {
-        DatabaseAPI.Database.PowersetGroups = (IDictionary<string, PowersetGroup>)new Dictionary<string, PowersetGroup>();
-        foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
+        Database.PowersetGroups = new Dictionary<string, PowersetGroup>();
+        foreach (IPowerset powerset in Database.Powersets)
         {
             if (!string.IsNullOrEmpty(powerset.GroupName))
             {
-                if (!DatabaseAPI.Database.PowersetGroups.TryGetValue(powerset.GroupName, out PowersetGroup powersetGroup))
+                if (!Database.PowersetGroups.TryGetValue(powerset.GroupName, out PowersetGroup powersetGroup))
                 {
                     powersetGroup = new PowersetGroup(powerset.GroupName);
-                    DatabaseAPI.Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
+                    Database.PowersetGroups.Add(powerset.GroupName, powersetGroup);
                 }
                 powersetGroup.Powersets.Add(powerset.FullName, powerset);
                 powerset.SetGroup(powersetGroup);
@@ -125,265 +85,135 @@ public static class DatabaseAPI
     }
 
     public static int NidFromUidPowerset(string uidPowerset)
-    {
-        IPowerset powersetByName = DatabaseAPI.GetPowersetByName(uidPowerset);
-        return powersetByName == null ? -1 : powersetByName.nID;
-    }
+         => GetPowersetByName(uidPowerset)?.nID ?? -1;
 
     public static int NidFromStaticIndexPower(int sidPower)
     {
-        int num;
         if (sidPower < 0)
-        {
-            num = -1;
-        }
-        else
-        {
-            for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
-            {
-                if (DatabaseAPI.Database.Power[index].StaticIndex == sidPower)
-                    return index;
-            }
-            num = -1;
-        }
-        return num;
+            return -1;
+        return Database.Power.TryFindIndex(p => p.StaticIndex == sidPower);
     }
 
     public static int NidFromUidPower(string name)
-    {
-        IPower powerByName = DatabaseAPI.GetPowerByName(name);
-        return powerByName == null ? -1 : powerByName.PowerIndex;
-    }
+        => GetPowerByName(name)?.PowerIndex ?? -1;
 
     public static int NidFromUidEntity(string uidEntity)
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Entities.Length - 1; ++index)
-        {
-            if (string.Equals(DatabaseAPI.Database.Entities[index].UID, uidEntity, StringComparison.OrdinalIgnoreCase))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Entities.TryFindIndex(se => string.Equals(se.UID, uidEntity, StringComparison.OrdinalIgnoreCase));
 
-    public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType)
+    public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType) // clsI12Lookup.vb
     {
+        if ((nType == Enums.ePowerSetType.Inherent || nType == Enums.ePowerSetType.Pool) && nIDClass > -1 && !Database.Classes[nIDClass].Playable)
+            return Array.Empty<int>();
+
+
+        IPowerset[] powersetArray = Database.Powersets;
+        if (group != null)
+        {
+            List<IPowerset> powersetList = new List<IPowerset>();
+            foreach (var powerset in group.Powersets)
+                powersetList.Add(powerset.Value);
+            powersetArray = powersetList.ToArray();
+        }
+
         List<int> intList = new List<int>();
-        bool flag1 = nType != Enums.ePowerSetType.None;
-        bool flag2 = nIDClass > -1;
-        int[] array;
-        if ((nType == Enums.ePowerSetType.Inherent || nType == Enums.ePowerSetType.Pool) && nIDClass > -1 && !DatabaseAPI.Database.Classes[nIDClass].Playable)
+        bool checkType = nType != Enums.ePowerSetType.None;
+        bool checkClass = nIDClass > -1;
+        foreach (IPowerset powerset in powersetArray)
         {
-            array = intList.ToArray();
-        }
-        else
-        {
-            IPowerset[] powersetArray = DatabaseAPI.Database.Powersets;
-            if (group != null)
+            bool isOk = !checkType || powerset.SetType == nType;
+            if (checkClass & isOk)
             {
-                List<IPowerset> powersetList = new List<IPowerset>();
-                foreach (KeyValuePair<string, IPowerset> powerset in (IEnumerable<KeyValuePair<string, IPowerset>>)group.Powersets)
-                    powersetList.Add(powerset.Value);
-                powersetArray = powersetList.ToArray();
+                if ((powerset.SetType == Enums.ePowerSetType.Primary || powerset.SetType == Enums.ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
+                    isOk = false;
+                if (powerset.Powers.Length > 0 && isOk && (powerset.SetType != Enums.ePowerSetType.Inherent && powerset.SetType != Enums.ePowerSetType.Accolade) && powerset.SetType != Enums.ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
+                    isOk = false;
             }
-            foreach (IPowerset powerset in powersetArray)
-            {
-                bool flag3 = !flag1 || powerset.SetType == nType;
-                if (flag2 & flag3)
-                {
-                    if ((powerset.SetType == Enums.ePowerSetType.Primary || powerset.SetType == Enums.ePowerSetType.Secondary) && powerset.nArchetype != nIDClass & powerset.nArchetype > -1)
-                        flag3 = false;
-                    if (powerset.Powers.Length > 0 && flag3 && (powerset.SetType != Enums.ePowerSetType.Inherent && powerset.SetType != Enums.ePowerSetType.Accolade) && powerset.SetType != Enums.ePowerSetType.Temp && !powerset.Powers[0].Requires.ClassOk(nIDClass))
-                        flag3 = false;
-                }
-                if (flag3)
-                    intList.Add(powerset.nID);
-            }
-            array = intList.ToArray();
+            if (isOk)
+                intList.Add(powerset.nID);
         }
-        return array;
+        return intList.ToArray();
     }
 
     public static int[] NidSets(string uidGroup, string uidClass, Enums.ePowerSetType nType)
-    {
-        return DatabaseAPI.NidSets(DatabaseAPI.Database.PowersetGroups.ContainsKey(uidGroup) ? DatabaseAPI.Database.PowersetGroups[uidGroup] : null, DatabaseAPI.NidFromUidClass(uidClass), nType);
-    }
+        => NidSets(Database.PowersetGroups.ContainsKey(uidGroup) ? Database.PowersetGroups[uidGroup] : null, NidFromUidClass(uidClass), nType);
 
     public static int[] NidPowers(int nIDPowerset, int nIDClass = -1)
     {
-        int[] array = new int[0];
-        if (nIDPowerset < 0 | nIDPowerset > DatabaseAPI.Database.Powersets.Length - 1)
+        if (nIDPowerset < 0 || nIDPowerset > Database.Powersets.Length - 1)
         {
-            array = new int[DatabaseAPI.Database.Power.Length];
-            for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
+            //return Enumerable.Range(0, Database.Powersets.Length).ToArray();
+            var array = new int[Database.Power.Length];
+            for (int index = 0; index < Database.Power.Length; ++index)
                 array[index] = index;
+            return array;
         }
-        else
-        {
-            for (int index = 0; index < DatabaseAPI.Database.Powersets[nIDPowerset].Power.Length; ++index)
-            {
-                if (DatabaseAPI.Database.Powersets[nIDPowerset].Powers[index].Requires.ClassOk(nIDClass))
-                {
-                    Array.Resize<int>(ref array, array.Length + 1);
-                    array[array.Length - 1] = DatabaseAPI.Database.Powersets[nIDPowerset].Power[index];
-                }
-            }
-        }
-        return array;
+
+        var powerset = Database.Powersets[nIDPowerset];
+        return powerset.Powers.FindIndexes(pow => pow.Requires.ClassOk(nIDClass)).Select(idx => powerset.Power[idx]).ToArray();
     }
 
-    public static int[] NidPowers(string uidPowerset, string uidClass = "")
-    {
-        return DatabaseAPI.NidPowers(DatabaseAPI.NidFromUidPowerset(uidPowerset), DatabaseAPI.NidFromUidClass(uidClass));
-    }
+    public static int[] NidPowers(string uidPowerset, string uidClass = "") => NidPowers(NidFromUidPowerset(uidPowerset), NidFromUidClass(uidClass));
 
     public static string[] UidPowers(string uidPowerset, string uidClass = "")
     {
-        string[] array = new string[0];
-        if (string.IsNullOrEmpty(uidPowerset))
-        {
-            array = new string[DatabaseAPI.Database.Power.Length];
-            for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
-                array[index] = DatabaseAPI.Database.Power[index].FullName;
-        }
-        else
-        {
-            for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
-            {
-                if (string.Equals(DatabaseAPI.Database.Power[index].FullSetName, uidPowerset, StringComparison.OrdinalIgnoreCase) && DatabaseAPI.Database.Power[index].Requires.ClassOk(uidClass))
-                {
-                    Array.Resize<string>(ref array, array.Length + 1);
-                    array[array.Length - 1] = DatabaseAPI.Database.Power[index].FullName;
-                }
-            }
-        }
+        if (!string.IsNullOrEmpty(uidPowerset))
+            return Database.Power.Where(pow => string.Equals(pow.FullSetName, uidPowerset, StringComparison.OrdinalIgnoreCase) && pow.Requires.ClassOk(uidClass)).Select(pow => pow.FullName).ToArray();
+        var array = new string[Database.Power.Length];
+        for (int index = 0; index < Database.Power.Length; ++index)
+            array[index] = Database.Power[index].FullName;
         return array;
     }
 
     static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
-
-    {
-        int[] array = new int[0];
-        int[] numArray;
-        if (nIDPowerset < 0)
-        {
-            numArray = array;
-        }
-        else
-        {
-            for (int index = 0; index <= DatabaseAPI.Database.Powersets[nIDPowerset].Powers.Length - 1; ++index)
-            {
-                if (DatabaseAPI.Database.Powersets[nIDPowerset].Powers[index].Level - 1 == iLevel)
-                {
-                    Array.Resize<int>(ref array, array.Length + 1);
-                    array[array.Length - 1] = DatabaseAPI.Database.Powersets[nIDPowerset].Powers[index].PowerIndex;
-                }
-            }
-            numArray = array;
-        }
-        return numArray;
-    }
+        => nIDPowerset < 0 ?
+            Array.Empty<int>() :
+            Database.Powersets[nIDPowerset].Powers.Where(pow => pow.Level - 1 == iLevel).Select(pow => pow.PowerIndex).ToArray();
 
     public static int[] NidPowersAtLevelBranch(int iLevel, int nIDPowerset)
     {
-        int[] numArray1 = new int[0];
-        int[] numArray2;
         if (nIDPowerset < 0)
-        {
-            numArray2 = numArray1;
-        }
-        else
-        {
-            int[] numArray3;
-            if (DatabaseAPI.Database.Powersets[nIDPowerset].nIDTrunkSet > -1)
-            {
-                int[] numArray4 = DatabaseAPI.NidPowersAtLevel(iLevel, DatabaseAPI.Database.Powersets[nIDPowerset].nIDTrunkSet);
-                int[] numArray5 = DatabaseAPI.NidPowersAtLevel(iLevel, nIDPowerset);
-                numArray3 = new int[numArray4.Length + numArray5.Length];
-                Array.Copy((Array)numArray4, (Array)numArray3, numArray4.Length);
-                for (int index = 0; index <= numArray5.Length - 1; ++index)
-                    numArray3[numArray4.Length + index] = numArray5[index];
-            }
-            else
-                numArray3 = DatabaseAPI.NidPowersAtLevel(iLevel, nIDPowerset);
-            numArray2 = numArray3;
-        }
-        return numArray2;
+            return Array.Empty<int>();
+        if (Database.Powersets[nIDPowerset].nIDTrunkSet < 0)
+            return NidPowersAtLevel(iLevel, nIDPowerset);
+
+        int[] powerset1 = NidPowersAtLevel(iLevel, nIDPowerset);
+        int[] powerset2 = NidPowersAtLevel(iLevel, Database.Powersets[nIDPowerset].nIDTrunkSet);
+        return powerset2.Concat(powerset1).ToArray();
     }
 
     public static string[] UidMutexAll()
     {
-        string[] array = new string[0];
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Power.Length - 1; ++index1)
-        {
-            if (DatabaseAPI.Database.Power[index1].GroupMembership.Length > 0)
-            {
-                for (int index2 = 0; index2 <= DatabaseAPI.Database.Power[index1].GroupMembership.Length - 1; ++index2)
-                {
-                    bool flag = false;
-                    for (int index3 = 0; index3 <= array.Length - 1; ++index3)
-                    {
-                        if (string.Equals(DatabaseAPI.Database.Power[index1].GroupMembership[index2], array[index3], StringComparison.OrdinalIgnoreCase))
-                        {
-                            flag = true;
-                            break;
-                        }
-                    }
-                    if (!flag)
-                    {
-                        Array.Resize<string>(ref array, array.Length + 1);
-                        array[array.Length - 1] = DatabaseAPI.Database.Power[index1].GroupMembership[index2];
-                    }
-                }
-            }
-        }
-        Array.Sort<string>(array);
-        return array;
+        var items = Database.Power.SelectMany(pow => pow.GroupMembership).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
+        items.Sort();
+        return items.ToArray();
     }
 
     public static IPowerset GetPowersetByName(string iName)
     {
         string[] strArray = iName.Split('.');
-        IPowerset powerset;
         if (strArray.Length < 2)
-        {
-            powerset = null;
-        }
-        else
-        {
-            if (strArray.Length > 2)
-                iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
-            string key = strArray[0];
-            if (!DatabaseAPI.Database.PowersetGroups.ContainsKey(key))
-            {
-                powerset = null;
-            }
-            else
-            {
-                PowersetGroup powersetGroup = DatabaseAPI.Database.PowersetGroups[key];
-                powerset = powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
-            }
-        }
-        return powerset;
+            return null;
+
+        if (strArray.Length > 2)
+            iName = string.Format("{0}.{1}", strArray[0], strArray[1]);
+        string key = strArray[0];
+        if (!Database.PowersetGroups.ContainsKey(key))
+            return null;
+        PowersetGroup powersetGroup = Database.PowersetGroups[key];
+        return powersetGroup.Powersets.ContainsKey(iName) ? powersetGroup.Powersets[iName] : null;
     }
 
     public static IPowerset GetPowersetByName(string iName, string iArchetype)
     {
-        int idx = DatabaseAPI.GetArchetypeByName(iArchetype).Idx;
-        foreach (IPowerset powerset1 in DatabaseAPI.Database.Powersets)
+        int idx = GetArchetypeByName(iArchetype).Idx;
+        foreach (IPowerset powerset1 in Database.Powersets)
         {
             if ((idx == powerset1.nArchetype || powerset1.nArchetype == -1) && string.Equals(iName, powerset1.DisplayName, StringComparison.OrdinalIgnoreCase))
             {
-                IPowerset powerset2;
-                if (powerset1.SetType == Enums.ePowerSetType.Ancillary)
-                {
-                    if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
-                        powerset2 = powerset1;
-                    else
-                        continue;
-                }
-                else
-                    powerset2 = powerset1;
-                return powerset2;
+                if (powerset1.SetType != Enums.ePowerSetType.Ancillary)
+                    return powerset1;
+                if (powerset1.Power.Length > 0 && powerset1.Powers[0].Requires.ClassOk(idx))
+                    return powerset1;
             }
         }
         return null;
@@ -391,7 +221,7 @@ public static class DatabaseAPI
     //Pine
     public static IPowerset GetPowersetByName(string iName, Enums.ePowerSetType iSet)
     {
-        foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
+        foreach (IPowerset powerset in Database.Powersets)
         {
             if (iSet == powerset.SetType && string.Equals(iName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase))
                 return powerset;
@@ -400,34 +230,13 @@ public static class DatabaseAPI
     }
 
     public static IPowerset GetPowersetByID(string iName, Enums.ePowerSetType iSet)
-    {
-        foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
-        {
-            if (iSet == powerset.SetType && string.Equals(iName, powerset.SetName, StringComparison.OrdinalIgnoreCase))
-                return powerset;
-        }
-        return null;
-    }
+        => Database.Powersets.FirstOrDefault(ps => iSet == ps.SetType && string.Equals(iName, ps.SetName, StringComparison.OrdinalIgnoreCase));
 
     public static IPowerset GetInherentPowerset()
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
-        {
-            if (DatabaseAPI.Database.Powersets[index].SetType == Enums.ePowerSetType.Inherent)
-                return DatabaseAPI.Database.Powersets[index];
-        }
-        return null;
-    }
+        => Database.Powersets.FirstOrDefault(ps => ps.SetType == Enums.ePowerSetType.Inherent);
 
     public static Archetype GetArchetypeByName(string iArchetype)
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
-        {
-            if (string.Equals(iArchetype, DatabaseAPI.Database.Classes[index].DisplayName, StringComparison.OrdinalIgnoreCase))
-                return DatabaseAPI.Database.Classes[index];
-        }
-        return null;
-    }
+        => Database.Classes.FirstOrDefault(cls => string.Equals(iArchetype, cls.DisplayName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetOriginByName(Archetype archetype, string iOrigin)
     {
@@ -441,12 +250,12 @@ public static class DatabaseAPI
 
     public static int GetPowerByName(string iName, int iArchetype)
     {
-        for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
+        for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
             int num = -1;
-            if (DatabaseAPI.Database.Power[index].PowerSetID > -1)
-                num = DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Power[index].PowerSetID].nArchetype;
-            if (iArchetype == num | num == -1 && string.Equals(iName, DatabaseAPI.Database.Power[index].DisplayName))
+            if (Database.Power[index].PowerSetID > -1)
+                num = Database.Powersets[Database.Power[index].PowerSetID].nArchetype;
+            if ((iArchetype == num || num == -1) && string.Equals(iName, Database.Power[index].DisplayName))
                 return index;
         }
         return -1;
@@ -454,29 +263,18 @@ public static class DatabaseAPI
 
     public static IPower GetPowerByName(string name)
     {
-        IPower power1;
         if (string.IsNullOrEmpty(name))
+            return null;
+        IPowerset powersetByName = GetPowersetByName(name);
+        if (powersetByName == null)
+            return null;
+
+        foreach (IPower power2 in powersetByName.Powers)
         {
-            power1 = null;
+            if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
+                return power2;
         }
-        else
-        {
-            IPowerset powersetByName = DatabaseAPI.GetPowersetByName(name);
-            if (powersetByName == null)
-            {
-                power1 = null;
-            }
-            else
-            {
-                foreach (IPower power2 in powersetByName.Powers)
-                {
-                    if (string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase))
-                        return power2;
-                }
-                power1 = null;
-            }
-        }
-        return power1;
+        return null;
     }
 
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
@@ -484,82 +282,69 @@ public static class DatabaseAPI
         List<string> stringList = new List<string>();
         if (iSet != Enums.ePowerSetType.Pool && iSet != Enums.ePowerSetType.Inherent)
         {
-            int[] numArray = new int[0];
+            int[] numArray = Array.Empty<int>();
             switch (iSet)
             {
                 case Enums.ePowerSetType.Primary:
-                    numArray = DatabaseAPI.Database.Classes[iAT].Primary;
+                    numArray = Database.Classes[iAT].Primary;
                     break;
                 case Enums.ePowerSetType.Secondary:
-                    numArray = DatabaseAPI.Database.Classes[iAT].Secondary;
+                    numArray = Database.Classes[iAT].Secondary;
                     break;
                 case Enums.ePowerSetType.Ancillary:
-                    numArray = DatabaseAPI.Database.Classes[iAT].Ancillary;
+                    numArray = Database.Classes[iAT].Ancillary;
                     break;
             }
             foreach (int index in numArray)
-            {
-                IPowerset powerset = DatabaseAPI.Database.Powersets[index];
-                stringList.Add(powerset.DisplayName);
-            }
+                stringList.Add(Database.Powersets[index].DisplayName);
         }
         else
         {
-            foreach (IPowerset powerset in DatabaseAPI.Database.Powersets)
+            foreach (IPowerset powerset in Database.Powersets)
             {
                 if (powerset.SetType == iSet)
                     stringList.Add(powerset.DisplayName);
             }
         }
         stringList.Sort();
-        string[] strArray;
-        if (stringList.Count <= 0)
-            strArray = new string[1]
-            {
-        "No " + Enum.GetName(iSet.GetType(),  iSet)
-            };
-        else
-            strArray = stringList.ToArray();
-        return strArray;
+        if (stringList.Count > 0)
+            return stringList.ToArray();
+        return new[] { "No " + Enum.GetName(iSet.GetType(), iSet) };
     }
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
         List<int> intList = new List<int>();
-        foreach (KeyValuePair<string, IPowerset> powerset in (IEnumerable<KeyValuePair<string, IPowerset>>)group.Powersets)
+        foreach (KeyValuePair<string, IPowerset> powerset in group.Powersets)
             intList.Add(powerset.Value.nID);
         return intList.ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroupName(string name)
-    {
-        return !string.IsNullOrEmpty(name) && DatabaseAPI.Database.PowersetGroups.ContainsKey(name) ? DatabaseAPI.GetPowersetIndexesByGroup(DatabaseAPI.Database.PowersetGroups[name]) : new int[1];
-    }
+        => !string.IsNullOrEmpty(name) && Database.PowersetGroups.ContainsKey(name) ? GetPowersetIndexesByGroup(Database.PowersetGroups[name]) : new int[1];
 
     public static IPowerset[] GetPowersetIndexes(Archetype at, Enums.ePowerSetType iSet)
-    {
-        return DatabaseAPI.GetPowersetIndexes(at.Idx, iSet);
-    }
+        => GetPowersetIndexes(at.Idx, iSet);
 
     public static IPowerset[] GetPowersetIndexes(int iAT, Enums.ePowerSetType iSet)
     {
         List<IPowerset> powersetList = new List<IPowerset>();
         if (iSet != Enums.ePowerSetType.Pool & iSet != Enums.ePowerSetType.Inherent)
         {
-            for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
+            foreach (var ps in Database.Powersets)
             {
-                if (DatabaseAPI.Database.Powersets[index].nArchetype == iAT & DatabaseAPI.Database.Powersets[index].SetType == iSet)
-                    powersetList.Add(DatabaseAPI.Database.Powersets[index]);
-                else if (iSet == Enums.ePowerSetType.Ancillary & DatabaseAPI.Database.Powersets[index].SetType == iSet && DatabaseAPI.Database.Powersets[index].ClassOk(iAT))
-                    powersetList.Add(DatabaseAPI.Database.Powersets[index]);
+                if (ps.nArchetype == iAT & ps.SetType == iSet)
+                    powersetList.Add(ps);
+                else if (iSet == Enums.ePowerSetType.Ancillary & ps.SetType == iSet && ps.ClassOk(iAT))
+                    powersetList.Add(ps);
             }
         }
         else
         {
-            for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
+            for (int index = 0; index <= Database.Powersets.Length - 1; ++index)
             {
-                if (DatabaseAPI.Database.Powersets[index].SetType == iSet)
-                    powersetList.Add(DatabaseAPI.Database.Powersets[index]);
+                if (Database.Powersets[index].SetType == iSet)
+                    powersetList.Add(Database.Powersets[index]);
             }
         }
         powersetList.Sort();
@@ -577,44 +362,40 @@ public static class DatabaseAPI
     }
 
     public static int GetEnhancementByUIDName(string iName)
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
-        {
-            if (DatabaseAPI.Database.Enhancements[index].UID.Contains(iName))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => enh.UID.Contains(iName));
 
     public static int GetEnhancementByName(string iName)
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
-        {
-            if (string.Equals(DatabaseAPI.Database.Enhancements[index].ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(DatabaseAPI.Database.Enhancements[index].Name, iName, StringComparison.OrdinalIgnoreCase))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => string.Equals(enh.ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(enh.Name, iName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetEnhancementByName(string iName, Enums.eType iType)
-    {
-        for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
-        {
-            if (DatabaseAPI.Database.Enhancements[index].TypeID == iType && (string.Equals(DatabaseAPI.Database.Enhancements[index].ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(DatabaseAPI.Database.Enhancements[index].Name, iName, StringComparison.OrdinalIgnoreCase)))
-                return index;
-        }
-        return -1;
-    }
+        => Database.Enhancements.TryFindIndex(enh => enh.TypeID == iType && string.Equals(enh.ShortName, iName, StringComparison.OrdinalIgnoreCase) || string.Equals(enh.Name, iName, StringComparison.OrdinalIgnoreCase));
 
     public static int GetEnhancementByName(string iName, string iSet)
     {
-        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)DatabaseAPI.Database.EnhancementSets)
+        //var index = Database.EnhancementSets
+        //    .Where(es => string.Equals(es.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
+        //    .SelectMany(es =>
+        //        es.Enhancements
+        //        .Where(enh =>
+        //            string.Equals(Database.Enhancements[es.Enhancements[enh]].ShortName, iName, StringComparison.OrdinalIgnoreCase)
+        //        ).Select(x => (int?)x))
+        //        .FirstOrDefault();
+        //return index ?? -1;
+        //return
+        //        (from es in Database.EnhancementSets
+        //        where string.Equals(es.ShortName, iSet, StringComparison.OrdinalIgnoreCase)
+        //        from enhSubId in es.Enhancements
+        //        let shortname = Database.Enhancements[es.Enhancements[enhSubId]].ShortName
+        //        where string.Equals(shortname, iName, StringComparison.OrdinalIgnoreCase)
+        //        select (int?)es.Enhancements[enhSubId] ).FirstOrDefault()
+        //        ?? -1;
+        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)Database.EnhancementSets)
         {
             if (string.Equals(enhancementSet.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
             {
                 foreach (int enhancement in enhancementSet.Enhancements)
                 {
-                    if (string.Equals(DatabaseAPI.Database.Enhancements[enhancementSet.Enhancements[enhancement]].ShortName, iName, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(Database.Enhancements[enhancementSet.Enhancements[enhancement]].ShortName, iName, StringComparison.OrdinalIgnoreCase))
                         return enhancementSet.Enhancements[enhancement];
                 }
             }
@@ -624,30 +405,30 @@ public static class DatabaseAPI
 
     public static int FindEnhancement(string setName, string enhName, int iType, int fallBack)
     {
-        for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
+        for (int index = 0; index < Database.Enhancements.Length; ++index)
         {
-            if (DatabaseAPI.Database.Enhancements[index].TypeID == (Enums.eType)iType && string.Equals(DatabaseAPI.Database.Enhancements[index].ShortName, enhName, StringComparison.OrdinalIgnoreCase))
+            if (Database.Enhancements[index].TypeID == (Enums.eType)iType && string.Equals(Database.Enhancements[index].ShortName, enhName, StringComparison.OrdinalIgnoreCase))
             {
                 int num;
-                if (DatabaseAPI.Database.Enhancements[index].TypeID != Enums.eType.SetO)
+                if (Database.Enhancements[index].TypeID != Enums.eType.SetO)
                     num = index;
-                else if (DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].DisplayName.Equals(setName, StringComparison.OrdinalIgnoreCase))
+                else if (Database.EnhancementSets[Database.Enhancements[index].nIDSet].DisplayName.Equals(setName, StringComparison.OrdinalIgnoreCase))
                     num = index;
                 else
                     continue;
                 return num;
             }
         }
-        if (fallBack > -1 & fallBack < DatabaseAPI.Database.Enhancements.Length)
+        if (fallBack > -1 & fallBack < Database.Enhancements.Length)
             return fallBack;
         return -1;
     }
     //Pine
     public static int GetRecipeIdxByName(string iName)
     {
-        for (int index = 0; index <= DatabaseAPI.Database.Recipes.Length - 1; ++index)
+        for (int index = 0; index <= Database.Recipes.Length - 1; ++index)
         {
-            if (string.Equals(DatabaseAPI.Database.Recipes[index].InternalName, iName, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Database.Recipes[index].InternalName, iName, StringComparison.OrdinalIgnoreCase))
                 return index;
         }
         return -1;
@@ -655,7 +436,7 @@ public static class DatabaseAPI
 
     public static Recipe GetRecipeByName(string iName)
     {
-        foreach (Recipe recipe in DatabaseAPI.Database.Recipes)
+        foreach (Recipe recipe in Database.Recipes)
         {
             if (string.Equals(recipe.InternalName, iName, StringComparison.OrdinalIgnoreCase))
                 return recipe;
@@ -666,20 +447,20 @@ public static class DatabaseAPI
     public static string[] UidReferencingPowerFix(string uidPower, string uidNew = "")
     {
         string[] array = new string[0];
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Power.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Power.Length - 1; ++index1)
         {
-            if (DatabaseAPI.Database.Power[index1].Requires.ReferencesPower(uidPower, uidNew))
+            if (Database.Power[index1].Requires.ReferencesPower(uidPower, uidNew))
             {
                 Array.Resize<string>(ref array, array.Length + 1);
-                array[array.Length - 1] = DatabaseAPI.Database.Power[index1].FullName + " (Requirement)";
+                array[array.Length - 1] = Database.Power[index1].FullName + " (Requirement)";
             }
-            for (int index2 = 0; index2 <= DatabaseAPI.Database.Power[index1].Effects.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= Database.Power[index1].Effects.Length - 1; ++index2)
             {
-                if (DatabaseAPI.Database.Power[index1].Effects[index2].Summon == uidPower)
+                if (Database.Power[index1].Effects[index2].Summon == uidPower)
                 {
-                    DatabaseAPI.Database.Power[index1].Effects[index2].Summon = uidNew;
+                    Database.Power[index1].Effects[index2].Summon = uidNew;
                     Array.Resize<string>(ref array, array.Length + 1);
-                    array[array.Length - 1] = DatabaseAPI.Database.Power[index1].FullName + " (GrantPower)";
+                    array[array.Length - 1] = Database.Power[index1].FullName + " (GrantPower)";
                 }
             }
         }
@@ -695,9 +476,9 @@ public static class DatabaseAPI
         }
         else
         {
-            for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
+            for (int index = 0; index < Database.Enhancements.Length; ++index)
             {
-                if (DatabaseAPI.Database.Enhancements[index].StaticIndex == sidEnh)
+                if (Database.Enhancements[index].StaticIndex == sidEnh)
                     return index;
             }
             num = -1;
@@ -707,9 +488,9 @@ public static class DatabaseAPI
 
     public static int NidFromUidioSet(string uidSet)
     {
-        for (int index = 0; index < DatabaseAPI.Database.EnhancementSets.Count; ++index)
+        for (int index = 0; index < Database.EnhancementSets.Count; ++index)
         {
-            if (string.Equals(DatabaseAPI.Database.EnhancementSets[index].Uid, uidSet, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Database.EnhancementSets[index].Uid, uidSet, StringComparison.OrdinalIgnoreCase))
                 return index;
         }
         return -1;
@@ -720,9 +501,9 @@ public static class DatabaseAPI
         bool flag = subIndex > -1 & uidRecipe.Contains("_");
         subIndex = -1;
         string b = flag ? uidRecipe.Substring(0, uidRecipe.LastIndexOf("_", StringComparison.Ordinal)) : uidRecipe;
-        for (int index1 = 0; index1 < DatabaseAPI.Database.Recipes.Length; ++index1)
+        for (int index1 = 0; index1 < Database.Recipes.Length; ++index1)
         {
-            if (string.Equals(DatabaseAPI.Database.Recipes[index1].InternalName, b, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Database.Recipes[index1].InternalName, b, StringComparison.OrdinalIgnoreCase))
             {
                 int num;
                 if (!flag)
@@ -735,9 +516,9 @@ public static class DatabaseAPI
                     if (!(startIndex < 0 | startIndex > uidRecipe.Length - 1))
                     {
                         b = uidRecipe.Substring(startIndex);
-                        for (int index2 = 0; index2 < DatabaseAPI.Database.Recipes[index1].Item.Length; ++index2)
+                        for (int index2 = 0; index2 < Database.Recipes[index1].Item.Length; ++index2)
                         {
-                            if (DatabaseAPI.Database.Recipes[index1].Item[index2].Level == startIndex)
+                            if (Database.Recipes[index1].Item[index2].Level == startIndex)
                             {
                                 subIndex = index2;
                                 return index1;
@@ -755,9 +536,9 @@ public static class DatabaseAPI
 
     public static int NidFromUidEnh(string uidEnh)
     {
-        for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
+        for (int index = 0; index < Database.Enhancements.Length; ++index)
         {
-            if (string.Equals(DatabaseAPI.Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
                 return index;
         }
         return -1;
@@ -768,13 +549,13 @@ public static class DatabaseAPI
         int num;
         if (!uidEnh.StartsWith("BOOSTS", true, CultureInfo.CurrentCulture))
         {
-            num = DatabaseAPI.NidFromUidEnh(uidEnh);
+            num = NidFromUidEnh(uidEnh);
         }
         else
         {
-            for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
+            for (int index = 0; index < Database.Enhancements.Length; ++index)
             {
-                if (string.Equals("BOOSTS." + DatabaseAPI.Database.Enhancements[index].UID + "." + DatabaseAPI.Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals("BOOSTS." + Database.Enhancements[index].UID + "." + Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
                     return index;
             }
             num = -1;
@@ -785,38 +566,38 @@ public static class DatabaseAPI
 
     static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
     {
-        var powersetPowers = DatabaseAPI.Database.Powersets.SelectMany(x => x.Powers).Select(p => p.PowerIndex).Distinct().ToList();
+        var powersetPowers = Database.Powersets.SelectMany(x => x.Powers).Select(p => p.PowerIndex).Distinct().ToList();
         // only powers that aren't in a powerset
-        var powers = DatabaseAPI.Database.Power.Where(p => powersetPowers.Contains(p.PowerIndex) == false).ToList();
+        var powers = Database.Power.Where(p => powersetPowers.Contains(p.PowerIndex) == false).ToList();
         var toSerialize = new
         {
             name,
             Database.Version,
-            DatabaseAPI.Database.Date,
-            DatabaseAPI.Database.Issue,
-            DatabaseAPI.Database.ArchetypeVersion,
-            Archetypes = DatabaseAPI.Database.Classes,
-            DatabaseAPI.Database.PowersetVersion,
+            Database.Date,
+            Database.Issue,
+            Database.ArchetypeVersion,
+            Archetypes = Database.Classes,
+            Database.PowersetVersion,
             // out of memory exception
-            DatabaseAPI.Database.Powersets,
+            Database.Powersets,
             Powers = new
             {
-                DatabaseAPI.Database.PowerVersion,
-                DatabaseAPI.Database.PowerLevelVersion,
-                DatabaseAPI.Database.PowerEffectVersion,
-                DatabaseAPI.Database.IOAssignmentVersion,
+                Database.PowerVersion,
+                Database.PowerLevelVersion,
+                Database.PowerEffectVersion,
+                Database.IOAssignmentVersion,
                 // out of memory exception
-                //DatabaseAPI.Database.Power
+                //Database.Power
                 // just powers not in power sets
                 Powers = powers
             },
-            DatabaseAPI.Database.Entities
+            Database.Entities
         };
         ConfigData.SaveRawMhd(serializer, toSerialize, fn);
     }
     public static void SaveMainDatabase(ISerialize serializer)
     {
-        string path = Files.SelectDataFileSave("I12.mhd");
+        string path = Files.SelectDataFileSave(Files.MxdbFileDB);
         SaveMainDbRaw(serializer, path, MainDbName);
         FileStream fileStream;
         BinaryWriter writer;
@@ -834,31 +615,31 @@ public static class DatabaseAPI
             writer.Write(MainDbName);
             writer.Write(Database.Version);
             writer.Write(-1);
-            writer.Write(DatabaseAPI.Database.Date.ToBinary());
-            writer.Write(DatabaseAPI.Database.Issue);
+            writer.Write(Database.Date.ToBinary());
+            writer.Write(Database.Issue);
             writer.Write("BEGIN:ARCHETYPES");
-            DatabaseAPI.Database.ArchetypeVersion.StoreTo(writer);
-            writer.Write(DatabaseAPI.Database.Classes.Length - 1);
-            for (int index = 0; index < DatabaseAPI.Database.Classes.Length; ++index)
-                DatabaseAPI.Database.Classes[index].StoreTo(ref writer);
+            Database.ArchetypeVersion.StoreTo(writer);
+            writer.Write(Database.Classes.Length - 1);
+            for (int index = 0; index < Database.Classes.Length; ++index)
+                Database.Classes[index].StoreTo(ref writer);
 
             writer.Write("BEGIN:POWERSETS");
-            DatabaseAPI.Database.PowersetVersion.StoreTo(writer);
-            writer.Write(DatabaseAPI.Database.Powersets.Length - 1);
-            for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
-                DatabaseAPI.Database.Powersets[index].StoreTo(ref writer);
+            Database.PowersetVersion.StoreTo(writer);
+            writer.Write(Database.Powersets.Length - 1);
+            for (int index = 0; index <= Database.Powersets.Length - 1; ++index)
+                Database.Powersets[index].StoreTo(ref writer);
 
             writer.Write("BEGIN:POWERS");
-            DatabaseAPI.Database.PowerVersion.StoreTo(writer);
-            DatabaseAPI.Database.PowerLevelVersion.StoreTo(writer);
-            DatabaseAPI.Database.PowerEffectVersion.StoreTo(writer);
-            DatabaseAPI.Database.IOAssignmentVersion.StoreTo(writer);
-            writer.Write(DatabaseAPI.Database.Power.Length - 1);
-            for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
-                DatabaseAPI.Database.Power[index].StoreTo(ref writer);
+            Database.PowerVersion.StoreTo(writer);
+            Database.PowerLevelVersion.StoreTo(writer);
+            Database.PowerEffectVersion.StoreTo(writer);
+            Database.IOAssignmentVersion.StoreTo(writer);
+            writer.Write(Database.Power.Length - 1);
+            for (int index = 0; index < Database.Power.Length; ++index)
+                Database.Power[index].StoreTo(ref writer);
 
             writer.Write("BEGIN:SUMMONS");
-            DatabaseAPI.Database.StoreEntities(writer);
+            Database.StoreEntities(writer);
             writer.Close();
             fileStream.Close();
         }
@@ -871,8 +652,8 @@ public static class DatabaseAPI
 
     public static bool LoadMainDatabase()
     {
-        DatabaseAPI.ClearLookups();
-        string path = Files.SelectDataFileLoad("I12.mhd");
+        ClearLookups();
+        string path = Files.SelectDataFileLoad(Files.MxdbFileDB);
         FileStream fileStream;
         BinaryReader reader;
         try
@@ -890,17 +671,17 @@ public static class DatabaseAPI
             {
                 MessageBox.Show("Expected MHD header, got something else!", "Eeeeee!");
             }
-            DatabaseAPI.Database.Version = reader.ReadSingle();
+            Database.Version = reader.ReadSingle();
             int year = reader.ReadInt32();
             if (year > 0)
             {
                 int month = reader.ReadInt32();
                 int day = reader.ReadInt32();
-                DatabaseAPI.Database.Date = new DateTime(year, month, day);
+                Database.Date = new DateTime(year, month, day);
             }
             else
-                DatabaseAPI.Database.Date = DateTime.FromBinary(reader.ReadInt64());
-            DatabaseAPI.Database.Issue = reader.ReadInt32();
+                Database.Date = DateTime.FromBinary(reader.ReadInt64());
+            Database.Issue = reader.ReadInt32();
             if (reader.ReadString() != "BEGIN:ARCHETYPES")
             {
                 MessageBox.Show("Expected Archetype Data, got something else!", "Eeeeee!");
@@ -908,10 +689,10 @@ public static class DatabaseAPI
                 fileStream.Close();
                 return false;
             }
-            DatabaseAPI.Database.ArchetypeVersion.Load(reader);
-            DatabaseAPI.Database.Classes = new Archetype[reader.ReadInt32() + 1];
-            for (int index = 0; index < DatabaseAPI.Database.Classes.Length; ++index)
-                DatabaseAPI.Database.Classes[index] = new Archetype(reader)
+            Database.ArchetypeVersion.Load(reader);
+            Database.Classes = new Archetype[reader.ReadInt32() + 1];
+            for (int index = 0; index < Database.Classes.Length; ++index)
+                Database.Classes[index] = new Archetype(reader)
                 {
                     Idx = index
                 };
@@ -922,12 +703,12 @@ public static class DatabaseAPI
                 fileStream.Close();
                 return false;
             }
-            DatabaseAPI.Database.PowersetVersion.Load(reader);
+            Database.PowersetVersion.Load(reader);
             int num3 = 0;
-            DatabaseAPI.Database.Powersets = new IPowerset[reader.ReadInt32() + 1];
-            for (int index = 0; index < DatabaseAPI.Database.Powersets.Length; ++index)
+            Database.Powersets = new IPowerset[reader.ReadInt32() + 1];
+            for (int index = 0; index < Database.Powersets.Length; ++index)
             {
-                DatabaseAPI.Database.Powersets[index] = (IPowerset)new Powerset(reader)
+                Database.Powersets[index] = (IPowerset)new Powerset(reader)
                 {
                     nID = index
                 };
@@ -945,14 +726,14 @@ public static class DatabaseAPI
                 fileStream.Close();
                 return false;
             }
-            DatabaseAPI.Database.PowerVersion.Load(reader);
-            DatabaseAPI.Database.PowerLevelVersion.Load(reader);
-            DatabaseAPI.Database.PowerEffectVersion.Load(reader);
-            DatabaseAPI.Database.IOAssignmentVersion.Load(reader);
-            DatabaseAPI.Database.Power = new IPower[reader.ReadInt32() + 1];
-            for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
+            Database.PowerVersion.Load(reader);
+            Database.PowerLevelVersion.Load(reader);
+            Database.PowerEffectVersion.Load(reader);
+            Database.IOAssignmentVersion.Load(reader);
+            Database.Power = new IPower[reader.ReadInt32() + 1];
+            for (int index = 0; index <= Database.Power.Length - 1; ++index)
             {
-                DatabaseAPI.Database.Power[index] = (IPower)new Power(reader);
+                Database.Power[index] = (IPower)new Power(reader);
                 ++num3;
                 if (num3 > 50)
                 {
@@ -967,7 +748,7 @@ public static class DatabaseAPI
                 fileStream.Close();
                 return false;
             }
-            DatabaseAPI.Database.LoadEntities(reader);
+            Database.LoadEntities(reader);
             reader.Close();
             fileStream.Close();
         }
@@ -983,7 +764,7 @@ public static class DatabaseAPI
     public static void LoadDatabaseVersion()
     {
         var target = Files.SelectDataFileLoad("I12.mhd");
-        DatabaseAPI.Database.Version = DatabaseAPI.GetDatabaseVersion(target);
+        Database.Version = GetDatabaseVersion(target);
     }
 
     static float GetDatabaseVersion(string fp)
@@ -1025,7 +806,7 @@ public static class DatabaseAPI
     public static bool LoadLevelsDatabase()
     {
         string path = Files.SelectDataFileLoad("Levels.mhd");
-        DatabaseAPI.Database.Levels = new LevelMap[0];
+        Database.Levels = new LevelMap[0];
         StreamReader iStream;
         try
         {
@@ -1039,16 +820,16 @@ public static class DatabaseAPI
         string[] strArray = FileIO.IOGrab(iStream);
         while (strArray[0] != "Level")
             strArray = FileIO.IOGrab(iStream);
-        DatabaseAPI.Database.Levels = new LevelMap[50];
+        Database.Levels = new LevelMap[50];
         for (int index = 0; index < 50; ++index)
-            DatabaseAPI.Database.Levels[index] = new LevelMap((IList<string>)FileIO.IOGrab(iStream));
+            Database.Levels[index] = new LevelMap((IList<string>)FileIO.IOGrab(iStream));
         List<int> intList = new List<int>() { 0 };
-        for (int index = 0; index <= DatabaseAPI.Database.Levels.Length - 1; ++index)
+        for (int index = 0; index <= Database.Levels.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Levels[index].Powers > 0)
+            if (Database.Levels[index].Powers > 0)
                 intList.Add(index);
         }
-        DatabaseAPI.Database.Levels_MainPowers = intList.ToArray();
+        Database.Levels_MainPowers = intList.ToArray();
         iStream.Close();
         return true;
     }
@@ -1056,7 +837,7 @@ public static class DatabaseAPI
     public static void LoadOrigins()
     {
         string path = Files.SelectDataFileLoad("Origins.mhd");
-        DatabaseAPI.Database.Origins = new List<Origin>();
+        Database.Origins = new List<Origin>();
         StreamReader streamReader;
         try
         {
@@ -1078,7 +859,7 @@ public static class DatabaseAPI
             {
                 strArray = FileIO.IOGrab(streamReader);
                 if (!(strArray[0] == "End"))
-                    DatabaseAPI.Database.Origins.Add(new Origin(strArray[0], strArray[1], strArray[2]));
+                    Database.Origins.Add(new Origin(strArray[0], strArray[1], strArray[2]));
                 else
                     break;
             }
@@ -1095,9 +876,9 @@ public static class DatabaseAPI
 
     public static int GetOriginIDByName(string iOrigin)
     {
-        for (int index = 0; index <= DatabaseAPI.Database.Origins.Count - 1; ++index)
+        for (int index = 0; index <= Database.Origins.Count - 1; ++index)
         {
-            if (string.Equals(iOrigin, DatabaseAPI.Database.Origins[index].Name, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(iOrigin, Database.Origins[index].Name, StringComparison.OrdinalIgnoreCase))
                 return index;
         }
         return 0;
@@ -1105,9 +886,9 @@ public static class DatabaseAPI
 
     public static int IsSpecialEnh(int enhID)
     {
-        for (int index = 0; index < DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[enhID].nIDSet].Enhancements.Length; ++index)
+        for (int index = 0; index < Database.EnhancementSets[Database.Enhancements[enhID].nIDSet].Enhancements.Length; ++index)
         {
-            if (enhID == DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[enhID].nIDSet].Enhancements[index] && DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[enhID].nIDSet].SpecialBonus[index].Index.Length > 0)
+            if (enhID == Database.EnhancementSets[Database.Enhancements[enhID].nIDSet].Enhancements[index] && Database.EnhancementSets[Database.Enhancements[enhID].nIDSet].SpecialBonus[index].Index.Length > 0)
                 return index;
         }
         return -1;
@@ -1116,23 +897,23 @@ public static class DatabaseAPI
     public static string GetEnhancementNameShortWSet(int iEnh)
     {
         string str;
-        if (iEnh < 0 || iEnh > DatabaseAPI.Database.Enhancements.Length - 1)
+        if (iEnh < 0 || iEnh > Database.Enhancements.Length - 1)
         {
             str = string.Empty;
         }
         else
         {
-            switch (DatabaseAPI.Database.Enhancements[iEnh].TypeID)
+            switch (Database.Enhancements[iEnh].TypeID)
             {
                 case Enums.eType.Normal:
                 case Enums.eType.SpecialO:
-                    str = DatabaseAPI.Database.Enhancements[iEnh].ShortName;
+                    str = Database.Enhancements[iEnh].ShortName;
                     break;
                 case Enums.eType.InventO:
-                    str = "Invention: " + DatabaseAPI.Database.Enhancements[iEnh].ShortName;
+                    str = "Invention: " + Database.Enhancements[iEnh].ShortName;
                     break;
                 case Enums.eType.SetO:
-                    str = DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[iEnh].nIDSet].DisplayName + ": " + DatabaseAPI.Database.Enhancements[iEnh].ShortName;
+                    str = Database.EnhancementSets[Database.Enhancements[iEnh].nIDSet].DisplayName + ": " + Database.Enhancements[iEnh].ShortName;
                     break;
                 default:
                     str = string.Empty;
@@ -1144,11 +925,11 @@ public static class DatabaseAPI
 
     public static int GetFirstValidEnhancement(int iClass)
     {
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Enhancements.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Enhancements.Length - 1; ++index1)
         {
-            for (int index2 = 0; index2 <= DatabaseAPI.Database.Enhancements[index1].ClassID.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= Database.Enhancements[index1].ClassID.Length - 1; ++index2)
             {
-                if (DatabaseAPI.Database.EnhancementClasses[DatabaseAPI.Database.Enhancements[index1].ClassID[index2]].ID == iClass)
+                if (Database.EnhancementClasses[Database.Enhancements[index1].ClassID[index2]].ID == iClass)
                     return index1;
             }
         }
@@ -1157,15 +938,15 @@ public static class DatabaseAPI
 
     public static void GuessRecipes()
     {
-        foreach (IEnhancement enhancement in DatabaseAPI.Database.Enhancements)
+        foreach (IEnhancement enhancement in Database.Enhancements)
         {
             if (enhancement.TypeID == Enums.eType.InventO || enhancement.TypeID == Enums.eType.SetO)
             {
-                int recipeIdxByName = DatabaseAPI.GetRecipeIdxByName(enhancement.UID);
+                int recipeIdxByName = GetRecipeIdxByName(enhancement.UID);
                 if (recipeIdxByName > -1)
                 {
                     enhancement.RecipeIDX = recipeIdxByName;
-                    enhancement.RecipeName = DatabaseAPI.Database.Recipes[recipeIdxByName].InternalName;
+                    enhancement.RecipeName = Database.Recipes[recipeIdxByName].InternalName;
                 }
             }
         }
@@ -1175,7 +956,7 @@ public static class DatabaseAPI
     {
         int[] numArray = new int[7];
         string[] strArray = new string[7];
-        foreach (Recipe recipe in DatabaseAPI.Database.Recipes)
+        foreach (Recipe recipe in Database.Recipes)
         {
             foreach (Recipe.RecipeEntry recipeEntry in recipe.Item)
             {
@@ -1189,9 +970,9 @@ public static class DatabaseAPI
                     {
                         recipeEntry.SalvageIdx[index1] = -1;
                         string a = recipeEntry.Salvage[index1];
-                        for (int index2 = 0; index2 <= DatabaseAPI.Database.Salvage.Length - 1; ++index2)
+                        for (int index2 = 0; index2 <= Database.Salvage.Length - 1; ++index2)
                         {
-                            if (string.Equals(a, DatabaseAPI.Database.Salvage[index2].InternalName, StringComparison.OrdinalIgnoreCase))
+                            if (string.Equals(a, Database.Salvage[index2].InternalName, StringComparison.OrdinalIgnoreCase))
                             {
                                 recipeEntry.SalvageIdx[index1] = index2;
                                 numArray[index1] = index2;
@@ -1207,24 +988,24 @@ public static class DatabaseAPI
 
     public static void AssignRecipeIDs()
     {
-        foreach (Recipe recipe in DatabaseAPI.Database.Recipes)
+        foreach (Recipe recipe in Database.Recipes)
         {
             recipe.Enhancement = string.Empty;
             recipe.EnhIdx = -1;
         }
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Enhancements.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Enhancements.Length - 1; ++index1)
         {
-            if (!string.IsNullOrEmpty(DatabaseAPI.Database.Enhancements[index1].RecipeName))
+            if (!string.IsNullOrEmpty(Database.Enhancements[index1].RecipeName))
             {
-                DatabaseAPI.Database.Enhancements[index1].RecipeIDX = -1;
-                string recipeName = DatabaseAPI.Database.Enhancements[index1].RecipeName;
-                for (int index2 = 0; index2 <= DatabaseAPI.Database.Recipes.Length - 1; ++index2)
+                Database.Enhancements[index1].RecipeIDX = -1;
+                string recipeName = Database.Enhancements[index1].RecipeName;
+                for (int index2 = 0; index2 <= Database.Recipes.Length - 1; ++index2)
                 {
-                    if (recipeName.Equals(DatabaseAPI.Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
+                    if (recipeName.Equals(Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
                     {
-                        DatabaseAPI.Database.Recipes[index2].Enhancement = DatabaseAPI.Database.Enhancements[index1].UID;
-                        DatabaseAPI.Database.Recipes[index2].EnhIdx = index1;
-                        DatabaseAPI.Database.Enhancements[index1].RecipeIDX = index2;
+                        Database.Recipes[index2].Enhancement = Database.Enhancements[index1].UID;
+                        Database.Recipes[index2].EnhIdx = index1;
+                        Database.Enhancements[index1].RecipeIDX = index2;
                         break;
                     }
                 }
@@ -1235,7 +1016,7 @@ public static class DatabaseAPI
     public static void LoadRecipes()
     {
         string path = Files.SelectDataFileLoad("Recipe.mhd");
-        DatabaseAPI.Database.Recipes = new Recipe[0];
+        Database.Recipes = new Recipe[0];
         FileStream fileStream;
         BinaryReader reader;
         try
@@ -1250,14 +1031,14 @@ public static class DatabaseAPI
         }
         if (!(reader.ReadString() != "Mids' Hero Designer Recipe Database"))
         {
-            DatabaseAPI.Database.RecipeSource1 = reader.ReadString();
-            DatabaseAPI.Database.RecipeSource2 = reader.ReadString();
-            DatabaseAPI.Database.RecipeRevisionDate = DateTime.FromBinary(reader.ReadInt64());
+            Database.RecipeSource1 = reader.ReadString();
+            Database.RecipeSource2 = reader.ReadString();
+            Database.RecipeRevisionDate = DateTime.FromBinary(reader.ReadInt64());
             int num = 0;
-            DatabaseAPI.Database.Recipes = new Recipe[reader.ReadInt32() + 1];
-            for (int index = 0; index < DatabaseAPI.Database.Recipes.Length; ++index)
+            Database.Recipes = new Recipe[reader.ReadInt32() + 1];
+            for (int index = 0; index < Database.Recipes.Length; ++index)
             {
-                DatabaseAPI.Database.Recipes[index] = new Recipe(reader);
+                Database.Recipes[index] = new Recipe(reader);
                 ++num;
                 if (num > 100)
                 {
@@ -1280,10 +1061,10 @@ public static class DatabaseAPI
         var toSerialize = new
         {
             name,
-            DatabaseAPI.Database.RecipeSource1,
-            DatabaseAPI.Database.RecipeSource2,
-            DatabaseAPI.Database.RecipeRevisionDate,
-            DatabaseAPI.Database.Recipes
+            Database.RecipeSource1,
+            Database.RecipeSource2,
+            Database.RecipeRevisionDate,
+            Database.Recipes
         };
         ConfigData.SaveRawMhd(serializer, toSerialize, fn);
     }
@@ -1306,12 +1087,12 @@ public static class DatabaseAPI
         try
         {
             writer.Write(RecipeName);
-            writer.Write(DatabaseAPI.Database.RecipeSource1);
-            writer.Write(DatabaseAPI.Database.RecipeSource2);
-            writer.Write(DatabaseAPI.Database.RecipeRevisionDate.ToBinary());
-            writer.Write(DatabaseAPI.Database.Recipes.Length - 1);
-            for (int index = 0; index <= DatabaseAPI.Database.Recipes.Length - 1; ++index)
-                DatabaseAPI.Database.Recipes[index].StoreTo(writer);
+            writer.Write(Database.RecipeSource1);
+            writer.Write(Database.RecipeSource2);
+            writer.Write(Database.RecipeRevisionDate.ToBinary());
+            writer.Write(Database.Recipes.Length - 1);
+            for (int index = 0; index <= Database.Recipes.Length - 1; ++index)
+                Database.Recipes[index].StoreTo(writer);
             writer.Close();
             fileStream.Close();
         }
@@ -1323,11 +1104,10 @@ public static class DatabaseAPI
         }
     }
 
-
     public static void LoadSalvage()
     {
         string path = Files.SelectDataFileLoad("Salvage.mhd");
-        DatabaseAPI.Database.Salvage = new Salvage[0];
+        Database.Salvage = new Salvage[0];
         FileStream fileStream;
         BinaryReader reader;
         try
@@ -1350,15 +1130,15 @@ public static class DatabaseAPI
             }
             else
             {
-                DatabaseAPI.Database.Salvage = new Salvage[reader.ReadInt32() + 1];
-                for (int index = 0; index < DatabaseAPI.Database.Salvage.Length; ++index)
-                    DatabaseAPI.Database.Salvage[index] = new Salvage(reader);
+                Database.Salvage = new Salvage[reader.ReadInt32() + 1];
+                for (int index = 0; index < Database.Salvage.Length; ++index)
+                    Database.Salvage[index] = new Salvage(reader);
             }
         }
         catch (Exception ex)
         {
             MessageBox.Show("Salvage Database file isn't how it should be (" + ex.Message + ")\nNo salvage loaded.");
-            DatabaseAPI.Database.Salvage = new Salvage[0];
+            Database.Salvage = new Salvage[0];
             reader.Close();
             fileStream.Close();
         }
@@ -1369,7 +1149,7 @@ public static class DatabaseAPI
         var toSerialize = new
         {
             name,
-            DatabaseAPI.Database.Salvage
+            Database.Salvage
         };
         ConfigData.SaveRawMhd(serializer, toSerialize, fn);
     }
@@ -1394,9 +1174,9 @@ public static class DatabaseAPI
         try
         {
             writer.Write(SalvageName);
-            writer.Write(DatabaseAPI.Database.Salvage.Length - 1);
-            for (int index = 0; index <= DatabaseAPI.Database.Salvage.Length - 1; ++index)
-                DatabaseAPI.Database.Salvage[index].StoreTo(writer);
+            writer.Write(Database.Salvage.Length - 1);
+            for (int index = 0; index <= Database.Salvage.Length - 1; ++index)
+                Database.Salvage[index].StoreTo(writer);
             writer.Close();
             fileStream.Close();
         }
@@ -1414,16 +1194,16 @@ public static class DatabaseAPI
         var toSerialize = new
         {
             name,
-            DatabaseAPI.Database.VersionEnhDb,
-            DatabaseAPI.Database.Enhancements,
-            DatabaseAPI.Database.EnhancementSets
+            Database.VersionEnhDb,
+            Database.Enhancements,
+            Database.EnhancementSets
         };
         ConfigData.SaveRawMhd(serializer, toSerialize, filename);
     }
 
     public static void SaveEnhancementDb(ISerialize serializer)
     {
-        string path = Files.SelectDataFileSave("EnhDB.mhd");
+        string path = Files.SelectDataFileSave(Files.MxdbFileEnhDB);
         SaveEnhancementDbRaw(serializer, path, EnhancementDbName);
         FileStream fileStream;
         BinaryWriter writer;
@@ -1440,13 +1220,13 @@ public static class DatabaseAPI
         try
         {
             writer.Write(EnhancementDbName);
-            writer.Write(DatabaseAPI.Database.VersionEnhDb);
-            writer.Write(DatabaseAPI.Database.Enhancements.Length - 1);
-            for (int index = 0; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
-                DatabaseAPI.Database.Enhancements[index].StoreTo(writer);
-            writer.Write(DatabaseAPI.Database.EnhancementSets.Count - 1);
-            for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets.Count - 1; ++index)
-                DatabaseAPI.Database.EnhancementSets[index].StoreTo(writer);
+            writer.Write(Database.VersionEnhDb);
+            writer.Write(Database.Enhancements.Length - 1);
+            for (int index = 0; index <= Database.Enhancements.Length - 1; ++index)
+                Database.Enhancements[index].StoreTo(writer);
+            writer.Write(Database.EnhancementSets.Count - 1);
+            for (int index = 0; index <= Database.EnhancementSets.Count - 1; ++index)
+                Database.EnhancementSets[index].StoreTo(writer);
             writer.Close();
             fileStream.Close();
         }
@@ -1461,7 +1241,7 @@ public static class DatabaseAPI
     public static void LoadEnhancementDb()
     {
         string path = Files.SelectDataFileLoad("EnhDB.mhd");
-        DatabaseAPI.Database.Enhancements = new IEnhancement[0];
+        Database.Enhancements = new IEnhancement[0];
         FileStream fileStream;
         BinaryReader reader;
         try
@@ -1485,12 +1265,12 @@ public static class DatabaseAPI
             else
             {
                 reader.ReadSingle();
-                float versionEnhDb = DatabaseAPI.Database.VersionEnhDb;
+                float versionEnhDb = Database.VersionEnhDb;
                 int num1 = 0;
-                DatabaseAPI.Database.Enhancements = new IEnhancement[reader.ReadInt32() + 1];
-                for (int index = 0; index < DatabaseAPI.Database.Enhancements.Length; ++index)
+                Database.Enhancements = new IEnhancement[reader.ReadInt32() + 1];
+                for (int index = 0; index < Database.Enhancements.Length; ++index)
                 {
-                    DatabaseAPI.Database.Enhancements[index] = (IEnhancement)new Enhancement(reader);
+                    Database.Enhancements[index] = (IEnhancement)new Enhancement(reader);
                     ++num1;
                     if (num1 > 5)
                     {
@@ -1498,11 +1278,11 @@ public static class DatabaseAPI
                         Application.DoEvents();
                     }
                 }
-                DatabaseAPI.Database.EnhancementSets = new EnhancementSetCollection();
+                Database.EnhancementSets = new EnhancementSetCollection();
                 int num2 = reader.ReadInt32() + 1;
                 for (int index = 0; index < num2; ++index)
                 {
-                    DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(reader));
+                    Database.EnhancementSets.Add(new EnhancementSet(reader));
                     ++num1;
                     if (num1 > 5)
                     {
@@ -1517,7 +1297,7 @@ public static class DatabaseAPI
         catch (Exception ex)
         {
             MessageBox.Show("Enhancement Database file isn't how it should be (" + ex.Message + ")\nNo Enhancements have been loaded.", "Huh...");
-            DatabaseAPI.Database.Enhancements = new IEnhancement[0];
+            Database.Enhancements = new IEnhancement[0];
             reader.Close();
             fileStream.Close();
         }
@@ -1525,16 +1305,16 @@ public static class DatabaseAPI
 
     public static bool LoadEnhancementClasses()
     {
-        using (StreamReader streamReader = new StreamReader(Files.SelectDataFileLoad("EClasses.mhd")))
+        using (StreamReader streamReader = new StreamReader(Files.SelectDataFileLoad(Files.MxdbFileEClasses)))
         {
-            DatabaseAPI.Database.EnhancementClasses = new Enums.sEnhClass[0];
+            Database.EnhancementClasses = new Enums.sEnhClass[0];
             try
             {
                 if (string.IsNullOrEmpty(FileIO.IOSeekReturn(streamReader, "Version:")))
                     throw new EndOfStreamException("Unable to load Enhancement Class data, version header not found!");
                 if (!FileIO.IOSeek(streamReader, "Index"))
                     throw new EndOfStreamException("Unable to load Enhancement Class data, section header not found!");
-                Enums.sEnhClass[] enhancementClasses = DatabaseAPI.Database.EnhancementClasses;
+                Enums.sEnhClass[] enhancementClasses = Database.EnhancementClasses;
                 string[] strArray;
                 do
                 {
@@ -1552,7 +1332,7 @@ public static class DatabaseAPI
                         break;
                 }
                 while (strArray[0] != "End");
-                DatabaseAPI.Database.EnhancementClasses = enhancementClasses;
+                Database.EnhancementClasses = enhancementClasses;
                 Application.DoEvents();
             }
             catch (Exception ex)
@@ -1568,9 +1348,9 @@ public static class DatabaseAPI
 
     public static void LoadSetTypeStrings()
     {
-        string path = Files.SelectDataFileLoad("SetTypes.mhd");
-        DatabaseAPI.Database.SetTypeStringLong = new string[0];
-        DatabaseAPI.Database.SetTypeStringShort = new string[0];
+        string path = Files.SelectDataFileLoad(Files.MxdbFileSetTypes);
+        Database.SetTypeStringLong = new string[0];
+        Database.SetTypeStringShort = new string[0];
         StreamReader streamReader;
         try
         {
@@ -1587,8 +1367,8 @@ public static class DatabaseAPI
                 throw new EndOfStreamException("Unable to load SetType data, version header not found!");
             if (!FileIO.IOSeek(streamReader, "SetID"))
                 throw new EndOfStreamException("Unable to load SetType data, section header not found!");
-            string[] setTypeStringLong = DatabaseAPI.Database.SetTypeStringLong;
-            string[] setTypeStringShort = DatabaseAPI.Database.SetTypeStringShort;
+            string[] setTypeStringLong = Database.SetTypeStringLong;
+            string[] setTypeStringShort = Database.SetTypeStringShort;
             string[] strArray;
             do
             {
@@ -1604,30 +1384,30 @@ public static class DatabaseAPI
                     break;
             }
             while (strArray[0] != "End");
-            DatabaseAPI.Database.SetTypeStringLong = setTypeStringLong;
-            DatabaseAPI.Database.SetTypeStringShort = setTypeStringShort;
-            DatabaseAPI.Database.EnhGradeStringLong = new string[4];
-            DatabaseAPI.Database.EnhGradeStringShort = new string[4];
-            DatabaseAPI.Database.EnhGradeStringLong[0] = "None";
-            DatabaseAPI.Database.EnhGradeStringLong[1] = "Training Origin";
-            DatabaseAPI.Database.EnhGradeStringLong[2] = "Dual Origin";
-            DatabaseAPI.Database.EnhGradeStringLong[3] = "Single Origin";
-            DatabaseAPI.Database.EnhGradeStringShort[0] = "None";
-            DatabaseAPI.Database.EnhGradeStringShort[1] = "TO";
-            DatabaseAPI.Database.EnhGradeStringShort[2] = "DO";
-            DatabaseAPI.Database.EnhGradeStringShort[3] = "SO";
-            DatabaseAPI.Database.SpecialEnhStringLong = new string[5];
-            DatabaseAPI.Database.SpecialEnhStringShort = new string[5];
-            DatabaseAPI.Database.SpecialEnhStringLong[0] = "None";
-            DatabaseAPI.Database.SpecialEnhStringLong[1] = "Hamidon Origin";
-            DatabaseAPI.Database.SpecialEnhStringLong[2] = "Hydra Origin";
-            DatabaseAPI.Database.SpecialEnhStringLong[3] = "Titan Origin";
-            DatabaseAPI.Database.SpecialEnhStringLong[4] = "Yin's Talisman";
-            DatabaseAPI.Database.SpecialEnhStringShort[0] = "None";
-            DatabaseAPI.Database.SpecialEnhStringShort[1] = "HO";
-            DatabaseAPI.Database.SpecialEnhStringShort[2] = "TnO";
-            DatabaseAPI.Database.SpecialEnhStringShort[3] = "HyO";
-            DatabaseAPI.Database.SpecialEnhStringShort[4] = "YinO";
+            Database.SetTypeStringLong = setTypeStringLong;
+            Database.SetTypeStringShort = setTypeStringShort;
+            Database.EnhGradeStringLong = new string[4];
+            Database.EnhGradeStringShort = new string[4];
+            Database.EnhGradeStringLong[0] = "None";
+            Database.EnhGradeStringLong[1] = "Training Origin";
+            Database.EnhGradeStringLong[2] = "Dual Origin";
+            Database.EnhGradeStringLong[3] = "Single Origin";
+            Database.EnhGradeStringShort[0] = "None";
+            Database.EnhGradeStringShort[1] = "TO";
+            Database.EnhGradeStringShort[2] = "DO";
+            Database.EnhGradeStringShort[3] = "SO";
+            Database.SpecialEnhStringLong = new string[5];
+            Database.SpecialEnhStringShort = new string[5];
+            Database.SpecialEnhStringLong[0] = "None";
+            Database.SpecialEnhStringLong[1] = "Hamidon Origin";
+            Database.SpecialEnhStringLong[2] = "Hydra Origin";
+            Database.SpecialEnhStringLong[3] = "Titan Origin";
+            Database.SpecialEnhStringLong[4] = "Yin's Talisman";
+            Database.SpecialEnhStringShort[0] = "None";
+            Database.SpecialEnhStringShort[1] = "HO";
+            Database.SpecialEnhStringShort[2] = "TnO";
+            Database.SpecialEnhStringShort[3] = "HyO";
+            Database.SpecialEnhStringShort[4] = "YinO";
         }
         catch (Exception ex)
         {
@@ -1640,7 +1420,7 @@ public static class DatabaseAPI
 
     public static bool LoadMaths()
     {
-        string path = Files.SelectDataFileLoad("Maths.mhd");
+        string path = Files.SelectDataFileLoad(Files.MxdbFileMaths);
         StreamReader streamReader;
         try
         {
@@ -1657,46 +1437,46 @@ public static class DatabaseAPI
                 throw new EndOfStreamException("Unable to load Enhancement Maths data, version header not found!");
             if (!FileIO.IOSeek(streamReader, "EDRT"))
                 throw new EndOfStreamException("Unable to load Maths data, section header not found!");
-            DatabaseAPI.Database.MultED = new float[4][];
+            Database.MultED = new float[4][];
             for (int index = 0; index < 4; ++index)
-                DatabaseAPI.Database.MultED[index] = new float[3];
+                Database.MultED[index] = new float[3];
             for (int index1 = 0; index1 <= 2; ++index1)
             {
                 string[] strArray = FileIO.IOGrab(streamReader);
                 for (int index2 = 0; index2 < 4; ++index2)
-                    DatabaseAPI.Database.MultED[index2][index1] = float.Parse(strArray[index2 + 1]);
+                    Database.MultED[index2][index1] = float.Parse(strArray[index2 + 1]);
             }
             if (!FileIO.IOSeek(streamReader, "EGE"))
                 throw new EndOfStreamException("Unable to load Maths data, section header not found!");
-            DatabaseAPI.Database.MultTO = new float[1][];
-            DatabaseAPI.Database.MultDO = new float[1][];
-            DatabaseAPI.Database.MultSO = new float[1][];
-            DatabaseAPI.Database.MultHO = new float[1][];
+            Database.MultTO = new float[1][];
+            Database.MultDO = new float[1][];
+            Database.MultSO = new float[1][];
+            Database.MultHO = new float[1][];
             string[] strArray1 = FileIO.IOGrab(streamReader);
-            DatabaseAPI.Database.MultTO[0] = new float[4];
+            Database.MultTO[0] = new float[4];
             for (int index = 0; index < 4; ++index)
-                DatabaseAPI.Database.MultTO[0][index] = float.Parse(strArray1[index + 1]);
+                Database.MultTO[0][index] = float.Parse(strArray1[index + 1]);
             string[] strArray2 = FileIO.IOGrab(streamReader);
-            DatabaseAPI.Database.MultDO[0] = new float[4];
+            Database.MultDO[0] = new float[4];
             for (int index = 0; index < 4; ++index)
-                DatabaseAPI.Database.MultDO[0][index] = float.Parse(strArray2[index + 1]);
+                Database.MultDO[0][index] = float.Parse(strArray2[index + 1]);
             string[] strArray3 = FileIO.IOGrab(streamReader);
-            DatabaseAPI.Database.MultSO[0] = new float[4];
+            Database.MultSO[0] = new float[4];
             for (int index = 0; index < 4; ++index)
-                DatabaseAPI.Database.MultSO[0][index] = float.Parse(strArray3[index + 1]);
+                Database.MultSO[0][index] = float.Parse(strArray3[index + 1]);
             string[] strArray4 = FileIO.IOGrab(streamReader);
-            DatabaseAPI.Database.MultHO[0] = new float[4];
+            Database.MultHO[0] = new float[4];
             for (int index = 0; index < 4; ++index)
-                DatabaseAPI.Database.MultHO[0][index] = float.Parse(strArray4[index + 1]);
+                Database.MultHO[0][index] = float.Parse(strArray4[index + 1]);
             if (!FileIO.IOSeek(streamReader, "LBIOE"))
                 throw new EndOfStreamException("Unable to load Maths data, section header not found!");
-            DatabaseAPI.Database.MultIO = new float[53][];
+            Database.MultIO = new float[53][];
             for (int index1 = 0; index1 < 53; ++index1)
             {
                 string[] strArray5 = FileIO.IOGrab(streamReader);
-                DatabaseAPI.Database.MultIO[index1] = new float[4];
+                Database.MultIO[index1] = new float[4];
                 for (int index2 = 0; index2 < 4; ++index2)
-                    DatabaseAPI.Database.MultIO[index1][index2] = float.Parse(strArray5[index2 + 1]);
+                    Database.MultIO[index1][index2] = float.Parse(strArray5[index2 + 1]);
             }
         }
         catch (Exception ex)
@@ -1711,17 +1491,17 @@ public static class DatabaseAPI
 
     public static void AssignSetBonusIndexes()
     {
-        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)DatabaseAPI.Database.EnhancementSets)
+        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)Database.EnhancementSets)
         {
             foreach (EnhancementSet.BonusItem bonu in enhancementSet.Bonus)
             {
                 for (int index = 0; index < bonu.Index.Length; ++index)
-                    bonu.Index[index] = DatabaseAPI.NidFromUidPower(bonu.Name[index]);
+                    bonu.Index[index] = NidFromUidPower(bonu.Name[index]);
             }
             foreach (EnhancementSet.BonusItem specialBonu in enhancementSet.SpecialBonus)
             {
                 for (int index = 0; index <= specialBonu.Index.Length - 1; ++index)
-                    specialBonu.Index[index] = DatabaseAPI.NidFromUidPower(specialBonu.Name[index]);
+                    specialBonu.Index[index] = NidFromUidPower(specialBonu.Name[index]);
             }
         }
     }
@@ -1737,10 +1517,10 @@ public static class DatabaseAPI
                 return 1f;
         }
         else
-            iClass = string.IsNullOrEmpty(effPower.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : DatabaseAPI.NidFromUidClass(effPower.ForcedClass);
+            iClass = string.IsNullOrEmpty(effPower.ForcedClass) ? (iEffect.Absorbed_Class_nID <= -1 ? MidsContext.Archetype.Idx : iEffect.Absorbed_Class_nID) : NidFromUidClass(effPower.ForcedClass);
         if (MidsContext.MathLevelExemp > -1 && MidsContext.MathLevelExemp < MidsContext.MathLevelBase)
             iLevel = MidsContext.MathLevelExemp;
-        return DatabaseAPI.GetModifier(iClass, iEffect.nModifierTable, iLevel);
+        return GetModifier(iClass, iEffect.nModifierTable, iLevel);
     }
 
     static float GetModifier(int iClass, int iTable, int iLevel)
@@ -1753,36 +1533,36 @@ public static class DatabaseAPI
             num = 0.0f;
         else if (iLevel < 0)
             num = 0.0f;
-        else if (iClass > DatabaseAPI.Database.Classes.Length - 1)
+        else if (iClass > Database.Classes.Length - 1)
         {
             num = 0.0f;
         }
         else
         {
-            iClass = DatabaseAPI.Database.Classes[iClass].Column;
-            num = iClass >= 0 ? (iTable <= DatabaseAPI.Database.AttribMods.Modifier.Length - 1 ? (iLevel <= DatabaseAPI.Database.AttribMods.Modifier[iTable].Table.Length - 1 ? (iClass <= DatabaseAPI.Database.AttribMods.Modifier[iTable].Table[iLevel].Length - 1 ? DatabaseAPI.Database.AttribMods.Modifier[iTable].Table[iLevel][iClass] : 0.0f) : 0.0f) : 0.0f) : 0.0f;
+            iClass = Database.Classes[iClass].Column;
+            num = iClass >= 0 ? (iTable <= Database.AttribMods.Modifier.Length - 1 ? (iLevel <= Database.AttribMods.Modifier[iTable].Table.Length - 1 ? (iClass <= Database.AttribMods.Modifier[iTable].Table[iLevel].Length - 1 ? Database.AttribMods.Modifier[iTable].Table[iLevel][iClass] : 0.0f) : 0.0f) : 0.0f) : 0.0f;
         }
         return num;
     }
 
     public static void MatchAllIDs(IMessager iFrm = null)
     {
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Group IDs...");
-        DatabaseAPI.FillGroupArray();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Class IDs...");
-        DatabaseAPI.MatchArchetypeIDs();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Powerset IDs...");
-        DatabaseAPI.MatchPowersetIDs();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Power IDs...");
-        DatabaseAPI.MatchPowerIDs();
-        DatabaseAPI.UpdateMessage(iFrm, "Propagating Group IDs...");
-        DatabaseAPI.SetPowersetsFromGroups();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Enhancement IDs...");
-        DatabaseAPI.MatchEnhancementIDs();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Modifier IDs...");
-        DatabaseAPI.MatchModifierIDs();
-        DatabaseAPI.UpdateMessage(iFrm, "Matching Entity IDs...");
-        DatabaseAPI.MatchSummonIDs();
+        UpdateMessage(iFrm, "Matching Group IDs...");
+        FillGroupArray();
+        UpdateMessage(iFrm, "Matching Class IDs...");
+        MatchArchetypeIDs();
+        UpdateMessage(iFrm, "Matching Powerset IDs...");
+        MatchPowersetIDs();
+        UpdateMessage(iFrm, "Matching Power IDs...");
+        MatchPowerIDs();
+        UpdateMessage(iFrm, "Propagating Group IDs...");
+        SetPowersetsFromGroups();
+        UpdateMessage(iFrm, "Matching Enhancement IDs...");
+        MatchEnhancementIDs();
+        UpdateMessage(iFrm, "Matching Modifier IDs...");
+        MatchModifierIDs();
+        UpdateMessage(iFrm, "Matching Entity IDs...");
+        MatchSummonIDs();
     }
 
     static void UpdateMessage(IMessager iFrm, string iMsg)
@@ -1794,31 +1574,31 @@ public static class DatabaseAPI
     static void MatchArchetypeIDs()
 
     {
-        for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
+        for (int index = 0; index <= Database.Classes.Length - 1; ++index)
         {
-            DatabaseAPI.Database.Classes[index].Idx = index;
-            Array.Sort<string>(DatabaseAPI.Database.Classes[index].Origin);
-            DatabaseAPI.Database.Classes[index].Primary = new int[0];
-            DatabaseAPI.Database.Classes[index].Secondary = new int[0];
-            DatabaseAPI.Database.Classes[index].Ancillary = new int[0];
+            Database.Classes[index].Idx = index;
+            Array.Sort<string>(Database.Classes[index].Origin);
+            Database.Classes[index].Primary = new int[0];
+            Database.Classes[index].Secondary = new int[0];
+            Database.Classes[index].Ancillary = new int[0];
         }
     }
 
     static void MatchPowersetIDs()
 
     {
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Powersets.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Powersets.Length - 1; ++index1)
         {
-            IPowerset powerset = DatabaseAPI.Database.Powersets[index1];
+            IPowerset powerset = Database.Powersets[index1];
             powerset.nID = index1;
-            powerset.nArchetype = DatabaseAPI.NidFromUidClass(powerset.ATClass);
-            powerset.nIDTrunkSet = string.IsNullOrEmpty(powerset.UIDTrunkSet) ? -1 : DatabaseAPI.NidFromUidPowerset(powerset.UIDTrunkSet);
-            powerset.nIDLinkSecondary = string.IsNullOrEmpty(powerset.UIDLinkSecondary) ? -1 : DatabaseAPI.NidFromUidPowerset(powerset.UIDLinkSecondary);
+            powerset.nArchetype = NidFromUidClass(powerset.ATClass);
+            powerset.nIDTrunkSet = string.IsNullOrEmpty(powerset.UIDTrunkSet) ? -1 : NidFromUidPowerset(powerset.UIDTrunkSet);
+            powerset.nIDLinkSecondary = string.IsNullOrEmpty(powerset.UIDLinkSecondary) ? -1 : NidFromUidPowerset(powerset.UIDLinkSecondary);
             if (powerset.UIDMutexSets.Length > 0)
             {
                 powerset.nIDMutexSets = new int[powerset.UIDMutexSets.Length];
                 for (int index2 = 0; index2 < powerset.UIDMutexSets.Length; ++index2)
-                    powerset.nIDMutexSets[index2] = DatabaseAPI.NidFromUidPowerset(powerset.UIDMutexSets[index2]);
+                    powerset.nIDMutexSets[index2] = NidFromUidPowerset(powerset.UIDMutexSets[index2]);
             }
             powerset.Power = new int[0];
             powerset.Powers = new IPower[0];
@@ -1827,14 +1607,14 @@ public static class DatabaseAPI
 
     static void MatchPowerIDs()
     {
-        DatabaseAPI.Database.MutexList = DatabaseAPI.UidMutexAll();
-        for (int index = 0; index < DatabaseAPI.Database.Power.Length; ++index)
+        Database.MutexList = UidMutexAll();
+        for (int index = 0; index < Database.Power.Length; ++index)
         {
-            IPower power1 = DatabaseAPI.Database.Power[index];
+            IPower power1 = Database.Power[index];
             if (string.IsNullOrEmpty(power1.FullName))
                 power1.FullName = "Orphan." + power1.DisplayName.Replace(" ", "_");
             power1.PowerIndex = index;
-            power1.PowerSetID = DatabaseAPI.NidFromUidPowerset(power1.FullSetName);
+            power1.PowerSetID = NidFromUidPowerset(power1.FullSetName);
             if (power1.PowerSetID > -1)
             {
                 var ps = power1.GetPowerSet();
@@ -1850,7 +1630,7 @@ public static class DatabaseAPI
                 ps.Powers[length] = power1;
             }
         }
-        foreach (IPower power in DatabaseAPI.Database.Power)
+        foreach (IPower power in Database.Power)
         {
             bool flag = false;
             if (power.GetPowerSet().SetType == Enums.ePowerSetType.SetBonus)
@@ -1870,14 +1650,14 @@ public static class DatabaseAPI
                 switch (effect.EffectType)
                 {
                     case Enums.eEffectType.GrantPower:
-                        effect.nSummon = DatabaseAPI.NidFromUidPower(effect.Summon);
+                        effect.nSummon = NidFromUidPower(effect.Summon);
                         power.HasGrantPowerEffect = true;
                         break;
                     case Enums.eEffectType.EntCreate:
-                        effect.nSummon = DatabaseAPI.NidFromUidEntity(effect.Summon);
+                        effect.nSummon = NidFromUidEntity(effect.Summon);
                         break;
                     case Enums.eEffectType.PowerRedirect:
-                        effect.nSummon = DatabaseAPI.NidFromUidPower(effect.Override);
+                        effect.nSummon = NidFromUidPower(effect.Override);
                         power.HasPowerOverrideEffect = true;
                         break;
                 }
@@ -1885,9 +1665,9 @@ public static class DatabaseAPI
             power.NGroupMembership = new int[power.GroupMembership.Length];
             for (int index1 = 0; index1 < power.GroupMembership.Length; ++index1)
             {
-                for (int index2 = 0; index2 < DatabaseAPI.Database.MutexList.Length; ++index2)
+                for (int index2 = 0; index2 < Database.MutexList.Length; ++index2)
                 {
-                    if (string.Equals(DatabaseAPI.Database.MutexList[index2], power.GroupMembership[index1], StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(Database.MutexList[index2], power.GroupMembership[index1], StringComparison.OrdinalIgnoreCase))
                     {
                         power.NGroupMembership[index1] = index2;
                         break;
@@ -1896,8 +1676,8 @@ public static class DatabaseAPI
             }
             power.NIDSubPower = new int[power.UIDSubPower.Length];
             for (int index = 0; index < power.UIDSubPower.Length; ++index)
-                power.NIDSubPower[index] = DatabaseAPI.NidFromUidPower(power.UIDSubPower[index]);
-            DatabaseAPI.MatchRequirementId(power);
+                power.NIDSubPower[index] = NidFromUidPower(power.UIDSubPower[index]);
+            MatchRequirementId(power);
         }
     }
 
@@ -1908,13 +1688,13 @@ public static class DatabaseAPI
         {
             power.Requires.NClassName = new int[power.Requires.ClassName.Length];
             for (int index = 0; index < power.Requires.ClassName.Length; ++index)
-                power.Requires.NClassName[index] = DatabaseAPI.NidFromUidClass(power.Requires.ClassName[index]);
+                power.Requires.NClassName[index] = NidFromUidClass(power.Requires.ClassName[index]);
         }
         if (power.Requires.ClassNameNot.Length > 0)
         {
             power.Requires.NClassNameNot = new int[power.Requires.ClassNameNot.Length];
             for (int index = 0; index < power.Requires.ClassNameNot.Length; ++index)
-                power.Requires.NClassNameNot[index] = DatabaseAPI.NidFromUidClass(power.Requires.ClassNameNot[index]);
+                power.Requires.NClassNameNot[index] = NidFromUidClass(power.Requires.ClassNameNot[index]);
         }
         if (power.Requires.PowerID.Length > 0)
         {
@@ -1923,7 +1703,7 @@ public static class DatabaseAPI
             {
                 power.Requires.NPowerID[index1] = new int[power.Requires.PowerID[index1].Length];
                 for (int index2 = 0; index2 < power.Requires.PowerID[index1].Length; ++index2)
-                    power.Requires.NPowerID[index1][index2] = !string.IsNullOrEmpty(power.Requires.PowerID[index1][index2]) ? DatabaseAPI.NidFromUidPower(power.Requires.PowerID[index1][index2]) : -1;
+                    power.Requires.NPowerID[index1][index2] = !string.IsNullOrEmpty(power.Requires.PowerID[index1][index2]) ? NidFromUidPower(power.Requires.PowerID[index1][index2]) : -1;
             }
         }
         if (power.Requires.PowerIDNot.Length <= 0)
@@ -1933,22 +1713,21 @@ public static class DatabaseAPI
         {
             power.Requires.NPowerIDNot[index1] = new int[power.Requires.PowerIDNot[index1].Length];
             for (int index2 = 0; index2 < power.Requires.PowerIDNot[index1].Length; ++index2)
-                power.Requires.NPowerIDNot[index1][index2] = !string.IsNullOrEmpty(power.Requires.PowerIDNot[index1][index2]) ? DatabaseAPI.NidFromUidPower(power.Requires.PowerIDNot[index1][index2]) : -1;
+                power.Requires.NPowerIDNot[index1][index2] = !string.IsNullOrEmpty(power.Requires.PowerIDNot[index1][index2]) ? NidFromUidPower(power.Requires.PowerIDNot[index1][index2]) : -1;
         }
     }
 
     static void SetPowersetsFromGroups()
-
     {
-        for (int index1 = 0; index1 < DatabaseAPI.Database.Classes.Length; ++index1)
+        for (int index1 = 0; index1 < Database.Classes.Length; ++index1)
         {
-            Archetype archetype = DatabaseAPI.Database.Classes[index1];
+            Archetype archetype = Database.Classes[index1];
             List<int> intList1 = new List<int>();
             List<int> intList2 = new List<int>();
             List<int> intList3 = new List<int>();
-            for (int index2 = 0; index2 < DatabaseAPI.Database.Powersets.Length; ++index2)
+            for (int index2 = 0; index2 < Database.Powersets.Length; ++index2)
             {
-                IPowerset powerset = DatabaseAPI.Database.Powersets[index2];
+                IPowerset powerset = Database.Powersets[index2];
                 if (powerset.Powers.Length > 0)
                     powerset.Powers[0].SortOverride = true;
                 if (string.Equals(powerset.GroupName, archetype.PrimaryGroup, StringComparison.OrdinalIgnoreCase))
@@ -1974,32 +1753,32 @@ public static class DatabaseAPI
 
     public static void MatchEnhancementIDs()
     {
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Power.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Power.Length - 1; ++index1)
         {
             List<int> intList = new List<int>();
-            for (int index2 = 0; index2 <= DatabaseAPI.Database.Power[index1].BoostsAllowed.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= Database.Power[index1].BoostsAllowed.Length - 1; ++index2)
             {
-                int index3 = DatabaseAPI.EnhancementClassIdFromName(DatabaseAPI.Database.Power[index1].BoostsAllowed[index2]);
+                int index3 = EnhancementClassIdFromName(Database.Power[index1].BoostsAllowed[index2]);
                 if (index3 > -1)
-                    intList.Add(DatabaseAPI.Database.EnhancementClasses[index3].ID);
+                    intList.Add(Database.EnhancementClasses[index3].ID);
             }
-            DatabaseAPI.Database.Power[index1].Enhancements = intList.ToArray();
+            Database.Power[index1].Enhancements = intList.ToArray();
         }
-        for (int index = 0; index <= DatabaseAPI.Database.EnhancementSets.Count - 1; ++index)
-            DatabaseAPI.Database.EnhancementSets[index].Enhancements = new int[0];
+        for (int index = 0; index <= Database.EnhancementSets.Count - 1; ++index)
+            Database.EnhancementSets[index].Enhancements = new int[0];
         bool flag = false;
         string str = string.Empty;
-        for (int index1 = 0; index1 <= DatabaseAPI.Database.Enhancements.Length - 1; ++index1)
+        for (int index1 = 0; index1 <= Database.Enhancements.Length - 1; ++index1)
         {
-            IEnhancement enhancement = DatabaseAPI.Database.Enhancements[index1];
+            IEnhancement enhancement = Database.Enhancements[index1];
             if (enhancement.TypeID == Enums.eType.SetO && !string.IsNullOrEmpty(enhancement.UIDSet))
             {
-                int index2 = DatabaseAPI.NidFromUidioSet(enhancement.UIDSet);
+                int index2 = NidFromUidioSet(enhancement.UIDSet);
                 if (index2 > -1)
                 {
                     enhancement.nIDSet = index2;
-                    Array.Resize<int>(ref DatabaseAPI.Database.EnhancementSets[index2].Enhancements, DatabaseAPI.Database.EnhancementSets[index2].Enhancements.Length + 1);
-                    DatabaseAPI.Database.EnhancementSets[index2].Enhancements[DatabaseAPI.Database.EnhancementSets[index2].Enhancements.Length - 1] = index1;
+                    Array.Resize<int>(ref Database.EnhancementSets[index2].Enhancements, Database.EnhancementSets[index2].Enhancements.Length + 1);
+                    Database.EnhancementSets[index2].Enhancements[Database.EnhancementSets[index2].Enhancements.Length - 1] = index1;
                 }
                 else
                 {
@@ -2014,7 +1793,6 @@ public static class DatabaseAPI
     }
 
     static int EnhancementClassIdFromName(string iName)
-
     {
         int num;
         if (string.IsNullOrEmpty(iName))
@@ -2023,9 +1801,9 @@ public static class DatabaseAPI
         }
         else
         {
-            for (int index = 0; index <= DatabaseAPI.Database.EnhancementClasses.Length - 1; ++index)
+            for (int index = 0; index <= Database.EnhancementClasses.Length - 1; ++index)
             {
-                if (string.Equals(DatabaseAPI.Database.EnhancementClasses[index].ClassID, iName, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(Database.EnhancementClasses[index].ClassID, iName, StringComparison.OrdinalIgnoreCase))
                     return index;
             }
             num = -1;
@@ -2034,53 +1812,52 @@ public static class DatabaseAPI
     }
 
     static void MatchModifierIDs()
-
     {
-        foreach (IPower power in DatabaseAPI.Database.Power)
+        foreach (IPower power in Database.Power)
         {
             foreach (IEffect effect in power.Effects)
-                effect.nModifierTable = DatabaseAPI.NidFromUidAttribMod(effect.ModifierTable);
+                effect.nModifierTable = NidFromUidAttribMod(effect.ModifierTable);
         }
     }
 
     public static void MatchSummonIDs()
-        => SummonedEntity.MatchSummonIDs(DatabaseAPI.NidFromUidClass, DatabaseAPI.NidFromUidPowerset, DatabaseAPI.NidFromUidPower);
+        => SummonedEntity.MatchSummonIDs(NidFromUidClass, NidFromUidPowerset, NidFromUidPower);
 
     public static void AssignStaticIndexValues(ISerialize serializer)
     {
         int num1 = -2;
-        for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
+        for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Power[index].StaticIndex > -1 && DatabaseAPI.Database.Power[index].StaticIndex > num1)
-                num1 = DatabaseAPI.Database.Power[index].StaticIndex;
+            if (Database.Power[index].StaticIndex > -1 && Database.Power[index].StaticIndex > num1)
+                num1 = Database.Power[index].StaticIndex;
         }
         if (num1 < -1)
             num1 = -1;
-        for (int index = 0; index <= DatabaseAPI.Database.Power.Length - 1; ++index)
+        for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Power[index].StaticIndex < 0)
+            if (Database.Power[index].StaticIndex < 0)
             {
                 ++num1;
-                DatabaseAPI.Database.Power[index].StaticIndex = num1;
+                Database.Power[index].StaticIndex = num1;
             }
         }
         int num2 = -2;
-        for (int index = 1; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
+        for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Enhancements[index].StaticIndex > -1 && DatabaseAPI.Database.Enhancements[index].StaticIndex > num2)
-                num2 = DatabaseAPI.Database.Enhancements[index].StaticIndex;
+            if (Database.Enhancements[index].StaticIndex > -1 && Database.Enhancements[index].StaticIndex > num2)
+                num2 = Database.Enhancements[index].StaticIndex;
         }
         if (num2 < -1)
             num2 = -1;
-        for (int index = 1; index <= DatabaseAPI.Database.Enhancements.Length - 1; ++index)
+        for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
         {
-            if (DatabaseAPI.Database.Enhancements[index].StaticIndex < 1)
+            if (Database.Enhancements[index].StaticIndex < 1)
             {
                 ++num2;
-                DatabaseAPI.Database.Enhancements[index].StaticIndex = num2;
+                Database.Enhancements[index].StaticIndex = num2;
             }
         }
-        DatabaseAPI.SaveMainDatabase(serializer);
-        DatabaseAPI.SaveEnhancementDb(serializer);
+        SaveMainDatabase(serializer);
+        SaveEnhancementDb(serializer);
     }
 }

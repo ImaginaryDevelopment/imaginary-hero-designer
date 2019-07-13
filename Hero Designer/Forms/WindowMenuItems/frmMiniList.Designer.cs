@@ -67,14 +67,8 @@ namespace Hero_Designer
             this.MinimumSize = new System.Drawing.Size(100, 150);
             this.Text = "Mini List";
             this.TopMost = true;
-            //adding events
-            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
 
-            // pInfo events
-            this.pInfo.MouseWheel += pInfo_MouseWheel;
-            this.pInfo.MouseEnter += pInfo_MouseEnter;
 
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

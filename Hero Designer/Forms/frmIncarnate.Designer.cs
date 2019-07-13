@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmIncarnate));
             this.Panel1 = new System.Windows.Forms.Panel();
             this.VScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.PopInfo = new midsControls.ctlPopUp();
@@ -310,8 +309,6 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.ibClose);
             this.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmIncarnate);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Powers";
@@ -319,41 +316,6 @@ namespace Hero_Designer
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.GenesisButton.ButtonClicked += GenesisButton_ButtonClicked;
-                this.OmegaButton.ButtonClicked += OmegaButton_ButtonClicked;
-
-                // PopInfo events
-                this.PopInfo.MouseWheel += PopInfo_MouseWheel;
-                this.PopInfo.MouseEnter += PopInfo_MouseEnter;
-
-                this.StanceButton.ButtonClicked += StanceButton_ButtonClicked;
-                this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-                this.VitaeButton.ButtonClicked += VitaeButton_ButtonClicked;
-                this.alphaBtn.ButtonClicked += alphaBtn_ButtonClicked;
-                this.destinyBtn.ButtonClicked += destinyBtn_ButtonClicked;
-                this.hybridBtn.ButtonClicked += hybridBtn_ButtonClicked;
-                this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-                this.interfaceBtn.ButtonClicked += interfaceBtn_ButtonClicked;
-                this.judgementBtn.ButtonClicked += judgementBtn_ButtonClicked;
-                this.lblLock.Click += lblLock_Click;
-
-                // llLeft events
-                this.llLeft.ItemClick += llLeft_ItemClick;
-                this.llLeft.MouseEnter += llLeft_MouseEnter;
-                this.llLeft.ItemHover += llLeft_ItemHover;
-
-
-                // llRight events
-                this.llRight.MouseEnter += llRight_MouseEnter;
-                this.llRight.ItemHover += llRight_ItemHover;
-                this.llRight.ItemClick += llRight_ItemClick;
-
-                this.loreBtn.ButtonClicked += loreBtn_ButtonClicked;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

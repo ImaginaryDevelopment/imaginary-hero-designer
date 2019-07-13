@@ -62,22 +62,22 @@ public class Zlib
     {
         Console.WriteLine(Environment.CurrentDirectory);
         // zlib doesn't seem to work in 64bit, try this, and fallback to trying zlib if failed
-        if (is64BitProcess && File.Exists(ExternalCompressionName))
-        {
-            var hex = HeroDesigner.ZLib.Helpers.byteArrayToHexString(iBytes);
-            var proc = Process.Start(new ProcessStartInfo(ExternalCompressionName, "uncompress " + iBytes.Length + " " + outSize + " \"" + hex + "\"")
-            {
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-            });
-            var output = proc.StandardOutput.ReadToEnd();
-            if (proc.ExitCode == 0)
-            {
-                var text = new string(output.SkipWhile(x => x != '-').SkipWhile(x => x == '-').TakeWhile(x => x != '-').ToArray()).Trim();
-                var bytes = HeroDesigner.ZLib.Helpers.hexStringToByteArray(text);
-                return bytes;
-            }
-        }
+        //if (is64BitProcess && File.Exists(ExternalCompressionName))
+        //{
+        //    var hex = HeroDesigner.ZLib.Helpers.byteArrayToHexString(iBytes);
+        //    var proc = Process.Start(new ProcessStartInfo(ExternalCompressionName, "uncompress " + iBytes.Length + " " + outSize + " \"" + hex + "\"")
+        //    {
+        //        UseShellExecute = false,
+        //        RedirectStandardOutput = true,
+        //    });
+        //    var output = proc.StandardOutput.ReadToEnd();
+        //    if (proc.ExitCode == 0)
+        //    {
+        //        var text = new string(output.SkipWhile(x => x != '-').SkipWhile(x => x == '-').TakeWhile(x => x != '-').ToArray()).Trim();
+        //        var bytes = HeroDesigner.ZLib.Helpers.hexStringToByteArray(text);
+        //        return bytes;
+        //    }
+        //}
         int length = iBytes.Length;
         int destLength = outSize;
         byte[] array = new byte[destLength];

@@ -109,7 +109,7 @@ namespace Hero_Designer
             this.btnATFile.TabIndex = 19;
             this.btnATFile.Text = "Load / Re-Load";
             this.btnATFile.UseVisualStyleBackColor = true;
-            this.btnATFile.Click += btnATFile_Click;
+            this.btnATFile.Click += new System.EventHandler(btnATFile_Click);
             this.lstImport.CheckBoxes = true;
             this.lstImport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[6]
             {
@@ -146,7 +146,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 27;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += btnImport_Click;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
 
             this.btnClose.Location = new System.Drawing.Point(618, 363);
             this.btnClose.Name = "btnClose";
@@ -155,7 +155,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 28;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += btnClose_Click;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
             this.ColumnHeader6.Text = "Change Description";
             this.ColumnHeader6.Width = 98;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

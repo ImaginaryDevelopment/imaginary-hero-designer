@@ -18,41 +18,13 @@ namespace Hero_Designer
     {
         frmBusy _bFrm;
 
-        Button btnCheckAll;
-
-        Button btnClose;
-
-        Button btnEraseAll;
-
-        Button btnFile;
-
-        Button btnImport;
-
-        Button btnUncheckAll;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
-
         readonly List<ListViewItem> _currentItems;
-        OpenFileDialog dlgBrowse;
 
         string _fullFileName;
 
-        Button HideUnchanged;
-
         List<EffectData> _importBuffer;
-        Label Label6;
-        Label Label8;
-        Label lblDate;
-        Label lblFile;
-        ListView lstImport;
 
         bool _showUnchanged;
-        Label txtNoAU;
-        NumericUpDown udRevision;
 
 
         public frmImportEffects()
@@ -61,6 +33,9 @@ namespace Hero_Designer
             this._fullFileName = "";
             this._showUnchanged = true;
             this.InitializeComponent();
+            this.Name = nameof(frmImportEffects);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImportEffects));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this._importBuffer = new List<EffectData>();
             this._currentItems = new List<ListViewItem>();
         }

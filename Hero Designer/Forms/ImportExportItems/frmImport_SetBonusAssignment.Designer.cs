@@ -1,6 +1,6 @@
 namespace Hero_Designer
 {
-    public partial class frmImport_SalvageReq
+    public partial class frmImport_SetBonusAssignment
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SalvageReq));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.lblFile = new System.Windows.Forms.Label();
@@ -42,61 +41,53 @@ namespace Hero_Designer
             this.btnClose.Name = "btnClose";
 
             this.btnClose.Size = new System.Drawing.Size(86, 23);
-            this.btnClose.TabIndex = 56;
+            this.btnClose.TabIndex = 52;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
 
             this.btnImport.Location = new System.Drawing.Point(539, 38);
             this.btnImport.Name = "btnImport";
 
             this.btnImport.Size = new System.Drawing.Size(86, 23);
-            this.btnImport.TabIndex = 54;
+            this.btnImport.TabIndex = 50;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
             this.lblFile.Location = new System.Drawing.Point(12, 9);
             this.lblFile.Name = "lblFile";
 
             this.lblFile.Size = new System.Drawing.Size(521, 46);
-            this.lblFile.TabIndex = 55;
+            this.lblFile.TabIndex = 51;
             this.lblFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
             this.btnFile.Location = new System.Drawing.Point(539, 9);
             this.btnFile.Name = "btnFile";
 
             this.btnFile.Size = new System.Drawing.Size(86, 23);
-            this.btnFile.TabIndex = 53;
+            this.btnFile.TabIndex = 49;
             this.btnFile.Text = "Browse...";
             this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(btnFile_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
-            this.ClientSize = new System.Drawing.Size(635, 117);
+            this.ClientSize = new System.Drawing.Size(640, 114);
             this.Controls.Add((System.Windows.Forms.Control)this.btnClose);
             this.Controls.Add((System.Windows.Forms.Control)this.btnImport);
             this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
             this.Controls.Add((System.Windows.Forms.Control)this.btnFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmImport_SalvageReq);
             this.ShowInTaskbar = false;
-            this.Text = "Salvage Requirement Import";
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnClose.Click += btnClose_Click;
-                this.btnFile.Click += btnFile_Click;
-                this.btnImport.Click += btnImport_Click;
-            }
-            // finished with events
+            this.Text = "Import Set Bonus Assignments";
             this.ResumeLayout(false);
         }
-
         #endregion
     }
 }

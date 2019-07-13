@@ -12,7 +12,7 @@ namespace Hero_Designer
 {
     public partial class frmReadme : Form
     {
-        ImageButton _btnClose;
+        ImageButton btnClose;
         PictureBox pbBackground;
         PictureBox pbBottom;
         RichTextBox rtfRead;
@@ -23,21 +23,21 @@ namespace Hero_Designer
         int rtH;
         int rtW;
 
-        internal ImageButton btnClose
+        internal ImageButton BtnClose
         {
-            get => _btnClose;
-            private set => _btnClose = value;
+            get => btnClose;
+            private set => btnClose = value;
         }
 
         public frmReadme(string iFile)
         {
-            this.MouseDown += new MouseEventHandler(this.frmReadme_MouseDown);
-            this.MouseMove += new MouseEventHandler(this.frmReadme_MouseMove);
-            this.Load += new EventHandler(this.frmReadme_Load);
-            this.Resize += new EventHandler(this.frmReadme_Resize);
             this.Loading = true;
             this.myFile = "";
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmReadme));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.pbBottom.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbBottom.Image");
+            this.pbBackground.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbBackground.Image");
             this.myFile = iFile;
         }
 
@@ -65,10 +65,10 @@ namespace Hero_Designer
         {
             this.rtW = this.Size.Width - (this.rtfRead.Width + this.rtfRead.Left);
             this.rtH = this.Size.Height - (this.rtfRead.Height + this.rtfRead.Top);
-            this.btnClose.KnockoutLocationPoint = new System.Drawing.Point(this.btnClose.Left, this.btnClose.Top - this.pbBottom.Top);
-            this.btnClose.KnockoutPB = this.pbBottom;
-            this.btnClose.Refresh();
-            this.btnY = this.Size.Height - this.btnClose.Top;
+            this.BtnClose.KnockoutLocationPoint = new System.Drawing.Point(this.BtnClose.Left, this.BtnClose.Top - this.pbBottom.Top);
+            this.BtnClose.KnockoutPB = this.pbBottom;
+            this.BtnClose.Refresh();
+            this.btnY = this.Size.Height - this.BtnClose.Top;
             try
             {
                 this.rtfRead.LoadFile(this.myFile);
@@ -107,13 +107,13 @@ namespace Hero_Designer
             size = this.Size;
             int num2 = size.Width - (this.rtW + this.rtfRead.Left);
             rtfRead2.Width = num2;
-            ImageButton btnClose1 = this.btnClose;
+            ImageButton btnClose1 = this.BtnClose;
             size = this.Size;
             int num3 = size.Height - this.btnY;
             btnClose1.Top = num3;
-            ImageButton btnClose2 = this.btnClose;
+            ImageButton btnClose2 = this.BtnClose;
             size = this.Size;
-            int num4 = (int)Math.Round((double)(size.Width - this.btnClose.Width) / 2.0);
+            int num4 = (int)Math.Round((double)(size.Width - this.BtnClose.Width) / 2.0);
             btnClose2.Left = num4;
         }
 

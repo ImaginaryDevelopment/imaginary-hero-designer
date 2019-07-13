@@ -15,32 +15,15 @@ namespace Hero_Designer
 {
     public partial class frmPrint : Form
     {
-        Button btnCancel;
-
-        Button btnLayout;
-
-        Button btnPrint;
-
-        Button btnPrinter;
-
-        CheckBox chkPrintHistory;
-        CheckBox chkPrintHistoryEnh;
-        CheckBox chkProfileEnh;
-        PageSetupDialog dlgSetup;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-        Label lblPrinter;
-
         Print _printer;
-        RadioButton rbProfileLong;
-        RadioButton rbProfileNone;
-
-        RadioButton rbProfileShort;
 
         public frmPrint()
         {
             this.Load += new EventHandler(this.frmPrint_Load);
             this.InitializeComponent();
+            var componentResourceManager = new ComponentResourceManager(typeof(frmPrint));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmPrint);
         }
 
         void btnCancel_Click(object sender, EventArgs e)

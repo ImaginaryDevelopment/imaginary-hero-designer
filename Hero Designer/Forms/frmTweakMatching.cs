@@ -13,28 +13,6 @@ namespace Hero_Designer
 {
     public partial class frmTweakMatching : Form
     {
-        Button btnAdd;
-
-        Button btnDel;
-
-        Button Button1;
-
-        Button Button2;
-
-        ComboBox cbAT1;
-
-        ComboBox cbPower;
-
-        ComboBox cbSet1;
-
-        ComboBox cbType1;
-        GroupBox GroupBox1;
-        GroupBox GroupBox2;
-
-        ListBox lstTweaks;
-        TextBox txtAddActual;
-        TextBox txtAddOvr;
-        TextBox txtOvr;
 
         bool Loaded;
 
@@ -43,6 +21,9 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmTweakMatching_Load);
             this.Loaded = false;
             this.InitializeComponent();
+            this.Name = nameof(frmTweakMatching);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmTweakMatching));
+            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -66,7 +47,7 @@ namespace Hero_Designer
             {
                 if (this.txtAddOvr.Text != this.txtAddActual.Text & this.txtAddOvr.Text != "")
                 {
-                    MidsContext.Config.CompOverride = (Enums.CompOverride[])Utils.CopyArray((Array)MidsContext.Config.CompOverride, (Array)new Enums.CompOverride[MidsContext.Config.CompOverride.Length + 1]);
+                    MidsContext.Config.CompOverride = (Enums.CompOverride[])Utils.CopyArray(MidsContext.Config.CompOverride, (Array)new Enums.CompOverride[MidsContext.Config.CompOverride.Length + 1]);
                     Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
                     int index = MidsContext.Config.CompOverride.Length - 1;
                     compOverride[index].Power = Conversions.ToString(this.cbPower.SelectedItem);

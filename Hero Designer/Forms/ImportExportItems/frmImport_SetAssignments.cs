@@ -33,6 +33,9 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmImport_SetAssignments_Load);
             this.FullFileName = "";
             this.InitializeComponent();
+            this.Name = nameof(frmImport_SetAssignments);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SetAssignments));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         protected void AddSetType(int nIDPower, Enums.eSetType nSetType)
@@ -46,7 +49,7 @@ namespace Hero_Designer
                     return;
             }
             IPower[] power = DatabaseAPI.Database.Power;
-            Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray((Array)power[nIDPower].SetTypes, (Array)new Enums.eSetType[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length + 1]);
+            Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray(power[nIDPower].SetTypes, (Array)new Enums.eSetType[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length + 1]);
             power[nIDPower].SetTypes = eSetTypeArray;
             DatabaseAPI.Database.Power[nIDPower].SetTypes[DatabaseAPI.Database.Power[nIDPower].SetTypes.Length - 1] = nSetType;
             Array.Sort<Enums.eSetType>(DatabaseAPI.Database.Power[nIDPower].SetTypes);

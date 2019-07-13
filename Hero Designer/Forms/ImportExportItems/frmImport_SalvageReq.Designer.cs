@@ -1,6 +1,6 @@
 namespace Hero_Designer
 {
-    public partial class frmImport_EnhancementEffects
+    public partial class frmImport_SalvageReq
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@ namespace Hero_Designer
             this.btnClose.TabIndex = 56;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += btnClose_Click;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
 
             this.btnImport.Location = new System.Drawing.Point(539, 38);
             this.btnImport.Name = "btnImport";
@@ -53,7 +53,7 @@ namespace Hero_Designer
             this.btnImport.TabIndex = 54;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += btnImport_Click;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
             this.lblFile.Location = new System.Drawing.Point(12, 9);
@@ -70,12 +70,13 @@ namespace Hero_Designer
             this.btnFile.TabIndex = 53;
             this.btnFile.Text = "Browse...";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += btnFile_Click;
+            this.btnFile.Click += new System.EventHandler(btnFile_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
-            this.ClientSize = new System.Drawing.Size(636, 112);
+            this.ClientSize = new System.Drawing.Size(635, 117);
             this.Controls.Add((System.Windows.Forms.Control)this.btnClose);
             this.Controls.Add((System.Windows.Forms.Control)this.btnImport);
             this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
@@ -84,7 +85,7 @@ namespace Hero_Designer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.ShowInTaskbar = false;
-            this.Text = "Import Enhancement Effects";
+            this.Text = "Salvage Requirement Import";
             this.ResumeLayout(false);
         }
 
@@ -95,5 +96,6 @@ namespace Hero_Designer
         System.Windows.Forms.Button btnImport;
         System.Windows.Forms.OpenFileDialog dlgBrowse;
         System.Windows.Forms.Label lblFile;
+
     }
 }

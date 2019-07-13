@@ -29,166 +29,21 @@ namespace Hero_Designer
 
         const int FILTER_ORPHAN_SETS = 4;
 
-        Button btnCancel;
-
-        Button btnClassAdd;
-
-        Button btnClassClone;
-
-        Button btnClassDelete;
-
-        Button btnClassDown;
-
-        Button btnClassEdit;
-
-        Button btnClassSort;
-
-        Button btnClassUp;
-
-        Button btnOK;
-
-        Button btnPowerAdd;
-
-        Button btnPowerClone;
-
-        Button btnPowerDelete;
-
-        Button btnPowerDown;
-
-        Button btnPowerEdit;
-
-        Button btnPowerSort;
-
-        Button btnPowerUp;
-
-        Button btnPSDown;
-
-        Button btnPSUp;
-
-        Button btnSetAdd;
-
-        Button btnSetDelete;
-
-        Button btnSetEdit;
-
-        Button btnSetSort;
-
-        ComboBox cbFilter;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
-        ColumnHeader ColumnHeader7;
-        ImageList ilAT;
-        ImageList ilPower;
-        ImageList ilPS;
-        Label Label1;
-        Label Label2;
-        Label lblPower;
-        Label lblSet;
-
-        [AccessedThroughProperty("lvGroup")]
-        ListView _lvGroup;
-
-        [AccessedThroughProperty("lvPower")]
-        ListView _lvPower;
-
-        [AccessedThroughProperty("lvSet")]
-        ListView _lvSet;
-        Panel pnlGroup;
-        Panel pnlPower;
-        Panel pnlSet;
-
         frmBusy bFrm;
 
         protected bool Updating;
-
-        ListView lvGroup
-        {
-            get
-            {
-                return this._lvGroup;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvGroup_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvGroup_DoubleClick);
-                if (this._lvGroup != null)
-                {
-                    this._lvGroup.SelectedIndexChanged -= eventHandler1;
-                    this._lvGroup.DoubleClick -= eventHandler2;
-                }
-                this._lvGroup = value;
-                if (this._lvGroup == null)
-                    return;
-                this._lvGroup.SelectedIndexChanged += eventHandler1;
-                this._lvGroup.DoubleClick += eventHandler2;
-            }
-        }
-
-        ListView lvPower
-        {
-            get
-            {
-                return this._lvPower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvPower_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvPower_DoubleClick);
-                if (this._lvPower != null)
-                {
-                    this._lvPower.SelectedIndexChanged -= eventHandler1;
-                    this._lvPower.DoubleClick -= eventHandler2;
-                }
-                this._lvPower = value;
-                if (this._lvPower == null)
-                    return;
-                this._lvPower.SelectedIndexChanged += eventHandler1;
-                this._lvPower.DoubleClick += eventHandler2;
-            }
-        }
-
-        ListView lvSet
-        {
-            get
-            {
-                return this._lvSet;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvSet_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvSet_DoubleClick);
-                if (this._lvSet != null)
-                {
-                    this._lvSet.SelectedIndexChanged -= eventHandler1;
-                    this._lvSet.DoubleClick -= eventHandler2;
-                }
-                this._lvSet = value;
-                if (this._lvSet == null)
-                    return;
-                this._lvSet.SelectedIndexChanged += eventHandler1;
-                this._lvSet.DoubleClick += eventHandler2;
-            }
-        }
-
-
-
 
         public frmPowerBrowser()
         {
             this.Load += new EventHandler(this.frmPowerBrowser_Load);
             this.Updating = false;
             this.InitializeComponent();
+            this.Name = nameof(frmPowerBrowser);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmPowerBrowser));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnCancel_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Discarding Changes...");
             DatabaseAPI.LoadMainDatabase();
@@ -211,7 +66,7 @@ namespace Hero_Designer
             if (frmEditArchetype.DialogResult != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            Archetype[] archetypeArray = (Archetype[])Utils.CopyArray((Array)database.Classes, (Array)new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
+            Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, (Array)new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
             database.Classes = archetypeArray;
             DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
             DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
@@ -226,7 +81,7 @@ namespace Hero_Designer
             int index = DatabaseAPI.NidFromUidClass(this.lvGroup.SelectedItems[0].SubItems[0].Text);
             if (index < 0)
             {
-                int num1 = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -238,7 +93,7 @@ namespace Hero_Designer
                 if (frmEditArchetype.DialogResult == DialogResult.OK)
                 {
                     IDatabase database = DatabaseAPI.Database;
-                    Archetype[] archetypeArray = (Archetype[])Utils.CopyArray((Array)database.Classes, (Array)new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
+                    Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, (Array)new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
                     database.Classes = archetypeArray;
                     DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
                     DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
@@ -248,7 +103,6 @@ namespace Hero_Designer
         }
 
         void btnClassDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvGroup.SelectedIndices.Count <= 0)
                 return;
@@ -291,7 +145,6 @@ namespace Hero_Designer
         }
 
         void btnClassDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvGroup.SelectedIndices.Count <= 0)
                 return;
@@ -300,8 +153,8 @@ namespace Hero_Designer
             {
                 Archetype[] archetypeArray = new Archetype[2]
                 {
-          new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
-          new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
+                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
+                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
                 };
                 DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
                 DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
@@ -313,14 +166,13 @@ namespace Hero_Designer
         }
 
         void btnClassEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvGroup.SelectedIndices.Count <= 0)
                 return;
             int index = DatabaseAPI.NidFromUidClass(this.lvGroup.SelectedItems[0].SubItems[0].Text);
             if (index < 0)
             {
-                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -337,7 +189,6 @@ namespace Hero_Designer
         }
 
         void btnClassSort_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Discarding Changes...");
             Array.Sort<Archetype>(DatabaseAPI.Database.Classes);
@@ -347,7 +198,6 @@ namespace Hero_Designer
         }
 
         void btnClassUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvGroup.SelectedIndices.Count <= 0)
                 return;
@@ -356,8 +206,8 @@ namespace Hero_Designer
             {
                 Archetype[] archetypeArray = new Archetype[2]
                 {
-          new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
-          new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
+                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
+                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
                 };
                 DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
                 DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
@@ -369,7 +219,6 @@ namespace Hero_Designer
         }
 
         void btnOK_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Re-Indexing && Saving...");
             Array.Sort<IPower>(DatabaseAPI.Database.Power);
@@ -383,7 +232,6 @@ namespace Hero_Designer
         }
 
         void btnPowerAdd_Click(object sender, EventArgs e)
-
         {
             IPower iPower = (IPower)new Power();
             if (this.cbFilter.SelectedIndex == 0)
@@ -406,12 +254,11 @@ namespace Hero_Designer
         }
 
         void btnPowerClone_Click(object sender, EventArgs e)
-
         {
-            IPower iPower = (IPower)new Power();
+            IPower iPower = new Power();
             if (DatabaseAPI.NidFromUidPower(this.lvPower.SelectedItems[0].SubItems[3].Text) < 0)
             {
-                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
             }
             else
             {
@@ -432,7 +279,6 @@ namespace Hero_Designer
         }
 
         void btnPowerDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete Power: " + this.lvPower.SelectedItems[0].SubItems[3].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
@@ -471,7 +317,6 @@ namespace Hero_Designer
         }
 
         void btnPowerDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedIndices.Count <= 0)
                 return;
@@ -499,7 +344,6 @@ namespace Hero_Designer
         }
 
         void btnPowerEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedIndices.Count <= 0)
                 return;
@@ -539,7 +383,6 @@ namespace Hero_Designer
         }
 
         void btnPowerSort_Click(object sender, EventArgs e)
-
         {
             this.BusyMsg("Re-Indexing...");
             Array.Sort<IPower>(DatabaseAPI.Database.Power);
@@ -549,7 +392,6 @@ namespace Hero_Designer
         }
 
         void btnPowerUp_Click(object sender, EventArgs e)
-
         {
             if (this.lvPower.SelectedIndices.Count <= 0)
                 return;
@@ -561,7 +403,7 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPower(this.lvPower.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
@@ -577,7 +419,6 @@ namespace Hero_Designer
         }
 
         void btnPSDown_Click(object sender, EventArgs e)
-
         {
             if (this.lvSet.SelectedIndices.Count <= 0)
                 return;
@@ -589,13 +430,13 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPowerset(this.lvSet.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
-                    IPowerset template = (IPowerset)new Powerset(DatabaseAPI.Database.Powersets[index1]);
-                    DatabaseAPI.Database.Powersets[index1] = (IPowerset)new Powerset(DatabaseAPI.Database.Powersets[index2]);
-                    DatabaseAPI.Database.Powersets[index2] = (IPowerset)new Powerset(template);
+                    IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
+                    DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
+                    DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
                     this.BusyMsg("Re-Indexing...");
                     DatabaseAPI.MatchAllIDs(null);
                     this.List_Sets(SelIDX);
@@ -617,13 +458,13 @@ namespace Hero_Designer
                 int index2 = DatabaseAPI.NidFromUidPowerset(this.lvSet.Items[SelIDX].SubItems[3].Text);
                 if (index1 < 0 | index2 < 0)
                 {
-                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
                 }
                 else
                 {
-                    IPowerset template = (IPowerset)new Powerset(DatabaseAPI.Database.Powersets[index1]);
-                    DatabaseAPI.Database.Powersets[index1] = (IPowerset)new Powerset(DatabaseAPI.Database.Powersets[index2]);
-                    DatabaseAPI.Database.Powersets[index2] = (IPowerset)new Powerset(template);
+                    IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
+                    DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
+                    DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
                     this.BusyMsg("Re-Indexing...");
                     DatabaseAPI.MatchAllIDs(null);
                     this.List_Sets(SelIDX);
@@ -633,7 +474,6 @@ namespace Hero_Designer
         }
 
         void btnSetAdd_Click(object sender, EventArgs e)
-
         {
             IPowerset iSet = (IPowerset)new Powerset();
             if (this.cbFilter.SelectedIndex == 0)
@@ -649,7 +489,7 @@ namespace Hero_Designer
             if (frmEditPowerset.DialogResult != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            IPowerset[] powersetArray = (IPowerset[])Utils.CopyArray((Array)database.Powersets, (Array)new IPowerset[DatabaseAPI.Database.Powersets.Length + 1]);
+            IPowerset[] powersetArray = (IPowerset[])Utils.CopyArray(database.Powersets, (Array)new IPowerset[DatabaseAPI.Database.Powersets.Length + 1]);
             database.Powersets = powersetArray;
             DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] = (IPowerset)new Powerset(frmEditPowerset.myPS);
             DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].IsNew = true;
@@ -658,7 +498,6 @@ namespace Hero_Designer
         }
 
         void btnSetDelete_Click(object sender, EventArgs e)
-
         {
             if (this.lvSet.SelectedIndices.Count <= 0)
                 return;
@@ -709,7 +548,6 @@ namespace Hero_Designer
         }
 
         void btnSetEdit_Click(object sender, EventArgs e)
-
         {
             if (this.lvSet.SelectedIndices.Count <= 0)
                 return;
@@ -1068,7 +906,7 @@ namespace Hero_Designer
                 {
                     if (DatabaseAPI.Database.Power[index].GroupName == "" | DatabaseAPI.Database.Power[index].SetName == "" | DatabaseAPI.Database.Power[index].GetPowerSet() == null)
                     {
-                        iPowers1 = (int[])Utils.CopyArray((Array)iPowers1, (Array)new int[iPowers1.Length + 1]);
+                        iPowers1 = (int[])Utils.CopyArray(iPowers1, (Array)new int[iPowers1.Length + 1]);
                         iPowers1[iPowers1.Length - 1] = index;
                     }
                 }

@@ -56,6 +56,11 @@ namespace Hero_Designer
             this.BaseOverride = false;
             this.Loaded = false;
             this.InitializeComponent();
+            this.btnClose.ButtonClicked += btnClose_Click;
+            this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
+            this.Name = nameof(frmStats);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmStats));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myParent = iParent;
         }
 
@@ -319,8 +324,8 @@ namespace Hero_Designer
                             {
                                 if (MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower > -1 && DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                                 {
-                                    this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
-                                    this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
+                                    this.BaseArray = (IPower[])Utils.CopyArray(this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
+                                    this.EnhArray = (IPower[])Utils.CopyArray(this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
                                     int index = this.BaseArray.Length - 1;
                                     this.BaseArray[index] = (IPower)new Power(DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset].Powers[MainModule.MidsController.Toon.CurrentBuild.Powers[iPower].IDXPower]);
                                     this.EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
@@ -333,7 +338,7 @@ namespace Hero_Designer
                         {
                             if (MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower > -1 && DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                             {
-                                this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
+                                this.BaseArray = (IPower[])Utils.CopyArray(this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
                                 this.BaseArray[this.BaseArray.Length - 1] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
                             }
                         }
@@ -343,7 +348,7 @@ namespace Hero_Designer
                         {
                             if (MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset > -1 & MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower > -1 && DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[iPower].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[iPower].IDXPower].Slottable)
                             {
-                                this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
+                                this.EnhArray = (IPower[])Utils.CopyArray(this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
                                 this.EnhArray[this.EnhArray.Length - 1] = MainModule.MidsController.Toon.GetEnhancedPower(iPower);
                             }
                         }
@@ -382,7 +387,7 @@ namespace Hero_Designer
                 {
                     if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
-                        this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
+                        this.BaseArray = (IPower[])Utils.CopyArray(this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
                         int index = this.BaseArray.Length - 1;
                         this.BaseArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(this.GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));
                         if (this.BaseArray[index] == null)
@@ -398,7 +403,7 @@ namespace Hero_Designer
                 {
                     if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
-                        this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
+                        this.EnhArray = (IPower[])Utils.CopyArray(this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
                         int index = this.EnhArray.Length - 1;
                         this.EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(this.GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));
                         if (this.EnhArray[index] == null)
@@ -417,8 +422,8 @@ namespace Hero_Designer
                 {
                     if (iType == Enums.ePowerType.Auto_ | MidsContext.Character.Powersets[(int)SetType].Powers[iPower].PowerType == iType)
                     {
-                        this.BaseArray = (IPower[])Utils.CopyArray((Array)this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
-                        this.EnhArray = (IPower[])Utils.CopyArray((Array)this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
+                        this.BaseArray = (IPower[])Utils.CopyArray(this.BaseArray, (Array)new IPower[this.BaseArray.Length + 1]);
+                        this.EnhArray = (IPower[])Utils.CopyArray(this.EnhArray, (Array)new IPower[this.EnhArray.Length + 1]);
                         int index = this.BaseArray.Length - 1;
                         this.BaseArray[index] = (IPower)new Power(MidsContext.Character.Powersets[(int)SetType].Powers[iPower]);
                         this.EnhArray[index] = MainModule.MidsController.Toon.GetEnhancedPower(this.GrabPlaced(MidsContext.Character.Powersets[(int)SetType].nID, iPower));

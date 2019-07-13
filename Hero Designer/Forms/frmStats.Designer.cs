@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmStats));
             this.lblKey2 = new System.Windows.Forms.Label();
             this.lblKey1 = new System.Windows.Forms.Label();
             this.lblKeyColor2 = new System.Windows.Forms.Label();
@@ -93,6 +92,7 @@ namespace Hero_Designer
             this.tbScaleX.TabIndex = 6;
             this.tbScaleX.TickFrequency = 10;
             this.tbScaleX.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbScaleX.Scroll += new System.EventHandler(tbScaleX_Scroll);
             this.tTip.SetToolTip((System.Windows.Forms.Control)this.tbScaleX, "Move the slider to the left to zoom in on lower values.");
             this.tbScaleX.Value = 10;
             this.lblScale.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
@@ -116,6 +116,7 @@ namespace Hero_Designer
 
             this.cbSet.Size = new System.Drawing.Size(158, 21);
             this.cbSet.TabIndex = 10;
+            this.cbSet.SelectedIndexChanged += new System.EventHandler(cbSet_SelectedIndexChanged);
             this.cbValues.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbValues.FormattingEnabled = true;
 
@@ -125,6 +126,7 @@ namespace Hero_Designer
 
             this.cbValues.Size = new System.Drawing.Size(101, 21);
             this.cbValues.TabIndex = 11;
+            this.cbValues.SelectedIndexChanged += new System.EventHandler(cbValues_SelectedIndexChanged);
             this.cbStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStyle.FormattingEnabled = true;
 
@@ -133,6 +135,7 @@ namespace Hero_Designer
 
             this.cbStyle.Size = new System.Drawing.Size(154, 21);
             this.cbStyle.TabIndex = 12;
+            this.cbStyle.SelectedIndexChanged += new System.EventHandler(cbStyle_SelectedIndexChanged);
             this.Graph.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
             this.Graph.Border = true;
             this.Graph.ColorBase = System.Drawing.Color.Blue;
@@ -208,28 +211,15 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.Graph);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
             this.MinimumSize = new System.Drawing.Size(400, 340);
-            this.Name = nameof(frmStats);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Power Stats";
             this.TopMost = true;
             this.tbScaleX.EndInit();
             this.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnClose.ButtonClicked += btnClose_Click;
-                this.cbSet.SelectedIndexChanged += cbSet_SelectedIndexChanged;
-                this.cbStyle.SelectedIndexChanged += cbStyle_SelectedIndexChanged;
-                this.cbValues.SelectedIndexChanged += cbValues_SelectedIndexChanged;
-                this.chkOnTop.ButtonClicked += chkOnTop_CheckedChanged;
-                this.tbScaleX.Scroll += tbScaleX_Scroll;
-            }
-            // finished with events
             this.PerformLayout();
         }
         #endregion

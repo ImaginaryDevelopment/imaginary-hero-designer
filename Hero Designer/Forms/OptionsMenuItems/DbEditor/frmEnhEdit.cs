@@ -67,7 +67,7 @@ namespace Hero_Designer
             if (frmEnhData.DialogResult != DialogResult.OK)
                 return;
             IDatabase database = DatabaseAPI.Database;
-            IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray((Array)database.Enhancements, (Array)new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
+            IEnhancement[] enhancementArray = (IEnhancement[])Utils.CopyArray(database.Enhancements, (Array)new IEnhancement[DatabaseAPI.Database.Enhancements.Length + 1]);
             database.Enhancements = enhancementArray;
             DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1] = (IEnhancement)new Enhancement(frmEnhData.myEnh);
             DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.Enhancements.Length - 1].IsNew = true;

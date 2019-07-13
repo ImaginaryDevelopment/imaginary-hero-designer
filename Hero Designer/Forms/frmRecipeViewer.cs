@@ -4,7 +4,6 @@ using Base.Display;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
-using midsControls;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -16,124 +15,17 @@ namespace Hero_Designer
 {
     public partial class frmRecipeViewer : Form
     {
-        CheckBox chkRecipe;
 
-        CheckBox chkSortByLevel;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
+        midsControls.ImageButton ibClipboard;
+        midsControls.ImageButton ibClose;
+        midsControls.ImageButton ibMiniList;
+        midsControls.ImageButton ibTopmost;
+        midsControls.ctlPopUp RecipeInfo;
+        ExtendedBitmap bxRecipe;
 
-        ImageButton ibClipboard;
-
-        ImageButton ibClose;
-
-        ImageButton ibMiniList;
-
-        ImageButton ibTopmost;
-        ImageList ilSets;
-        Label lblHeader;
-
-        [AccessedThroughProperty("lvPower")]
-        ListView _lvPower;
-
-        [AccessedThroughProperty("lvDPA")]
-        ListView _lvDPA;
-        Panel Panel1;
-        Panel Panel2;
-        PictureBox pbRecipe;
-
-        [AccessedThroughProperty("RecipeInfo")]
-        ctlPopUp _RecipeInfo;
-        ToolTip ToolTip1;
-
-        VScrollBar VScrollBar1;
-
-        protected ExtendedBitmap bxRecipe;
-
-        protected bool Loading;
-        protected frmMain myParent;
+        bool Loading;
+        frmMain myParent;
         int nonRecipeCount;
-
-
-
-
-
-
-        ListView lvPower
-        {
-            get
-            {
-                return this._lvPower;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler = new EventHandler(this.lvPower_MouseEnter);
-                ItemCheckedEventHandler checkedEventHandler = new ItemCheckedEventHandler(this.lvPower_ItemChecked);
-                if (this._lvPower != null)
-                {
-                    this._lvPower.MouseEnter -= eventHandler;
-                    this._lvPower.ItemChecked -= checkedEventHandler;
-                }
-                this._lvPower = value;
-                if (this._lvPower == null)
-                    return;
-                this._lvPower.MouseEnter += eventHandler;
-                this._lvPower.ItemChecked += checkedEventHandler;
-            }
-        }
-
-        ListView lvDPA
-        {
-            get
-            {
-                return this._lvDPA;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                EventHandler eventHandler1 = new EventHandler(this.lvDPA_SelectedIndexChanged);
-                EventHandler eventHandler2 = new EventHandler(this.lvDPA_MouseEnter);
-                if (this._lvDPA != null)
-                {
-                    this._lvDPA.SelectedIndexChanged -= eventHandler1;
-                    this._lvDPA.MouseEnter -= eventHandler2;
-                }
-                this._lvDPA = value;
-                if (this._lvDPA == null)
-                    return;
-                this._lvDPA.SelectedIndexChanged += eventHandler1;
-                this._lvDPA.MouseEnter += eventHandler2;
-            }
-        }
-
-
-
-
-        ctlPopUp RecipeInfo
-        {
-            get
-            {
-                return this._RecipeInfo;
-            }
-            [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                MouseEventHandler mouseEventHandler = new MouseEventHandler(this.RecipeInfo_MouseWheel);
-                EventHandler eventHandler = new EventHandler(this.RecipeInfo_MouseEnter);
-                if (this._RecipeInfo != null)
-                {
-                    this._RecipeInfo.MouseWheel -= mouseEventHandler;
-                    this._RecipeInfo.MouseEnter -= eventHandler;
-                }
-                this._RecipeInfo = value;
-                if (this._RecipeInfo == null)
-                    return;
-                this._RecipeInfo.MouseWheel += mouseEventHandler;
-                this._RecipeInfo.MouseEnter += eventHandler;
-            }
-        }
 
         public frmRecipeViewer(frmMain iParent)
         {
@@ -141,6 +33,22 @@ namespace Hero_Designer
             this.Load += new EventHandler(this.frmRecipeViewer_Load);
             this.Loading = true;
             this.InitializeComponent();
+            this.Name = nameof(frmRecipeViewer);
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipeViewer));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.RecipeInfo.MouseWheel += new MouseEventHandler(this.RecipeInfo_MouseWheel);
+            this.RecipeInfo.MouseEnter += new EventHandler(this.RecipeInfo_MouseEnter);
+            this.lvPower.MouseEnter += new EventHandler(this.lvPower_MouseEnter);
+            this.lvPower.ItemChecked += new ItemCheckedEventHandler(this.lvPower_ItemChecked);
+            this.lvDPA.SelectedIndexChanged += new EventHandler(this.lvDPA_SelectedIndexChanged);
+            this.lvDPA.MouseEnter += new EventHandler(this.lvDPA_MouseEnter);
+            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+            this.chkRecipe.CheckedChanged += chkRecipe_CheckedChanged;
+            this.chkSortByLevel.CheckedChanged += chkSortByLevel_CheckedChanged;
+            this.ibClipboard.ButtonClicked += ibClipboard_ButtonClicked;
+            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+            this.ibMiniList.ButtonClicked += ibMiniList_ButtonClicked;
+            this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
             this.myParent = iParent;
             this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
@@ -767,7 +675,7 @@ namespace Hero_Designer
                     return;
                 }
             }
-            tl = (frmRecipeViewer.CountingList[])Utils.CopyArray((Array)tl, (Array)new frmRecipeViewer.CountingList[tl.Length + 1]);
+            tl = (frmRecipeViewer.CountingList[])Utils.CopyArray(tl, (Array)new frmRecipeViewer.CountingList[tl.Length + 1]);
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }

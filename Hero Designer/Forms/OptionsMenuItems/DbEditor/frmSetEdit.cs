@@ -171,8 +171,8 @@ namespace Hero_Designer
                     {
                         EnhancementSet.BonusItem[] bonus = this.mySet.Bonus;
                         int index3 = num3;
-                        bonus[index3].Name = (string[])Utils.CopyArray((Array)bonus[index3].Name, (Array)new string[bonus[index3].Name.Length + 1]);
-                        bonus[index3].Index = (int[])Utils.CopyArray((Array)bonus[index3].Index, (Array)new int[bonus[index3].Index.Length + 1]);
+                        bonus[index3].Name = (string[])Utils.CopyArray(bonus[index3].Name, (Array)new string[bonus[index3].Name.Length + 1]);
+                        bonus[index3].Index = (int[])Utils.CopyArray(bonus[index3].Index, (Array)new int[bonus[index3].Index.Length + 1]);
                         bonus[index3].Index[bonus[index3].Index.Length - 1] = index2;
                         bonus[index3].Name[bonus[index3].Name.Length - 1] = DatabaseAPI.Database.Power[index2].FullName;
                     }
@@ -543,16 +543,16 @@ namespace Hero_Designer
             {
                 if (this.isBonus())
                 {
-                    this.mySet.Bonus[this.BonusID()].Name = (string[])Utils.CopyArray((Array)this.mySet.Bonus[this.BonusID()].Name, (Array)new string[this.mySet.Bonus[this.BonusID()].Name.Length + 1]);
-                    this.mySet.Bonus[this.BonusID()].Index = (int[])Utils.CopyArray((Array)this.mySet.Bonus[this.BonusID()].Index, (Array)new int[this.mySet.Bonus[this.BonusID()].Index.Length + 1]);
+                    this.mySet.Bonus[this.BonusID()].Name = (string[])Utils.CopyArray(this.mySet.Bonus[this.BonusID()].Name, (Array)new string[this.mySet.Bonus[this.BonusID()].Name.Length + 1]);
+                    this.mySet.Bonus[this.BonusID()].Index = (int[])Utils.CopyArray(this.mySet.Bonus[this.BonusID()].Index, (Array)new int[this.mySet.Bonus[this.BonusID()].Index.Length + 1]);
                     this.mySet.Bonus[this.BonusID()].Name[this.mySet.Bonus[this.BonusID()].Name.Length - 1] = DatabaseAPI.Database.Power[index].FullName;
                     this.mySet.Bonus[this.BonusID()].Index[this.mySet.Bonus[this.BonusID()].Index.Length - 1] = index;
                 }
                 else if (this.isSpecial())
                 {
                     this.mySet.SpecialBonus[this.SpecialID()].Special = this.SpecialID();
-                    this.mySet.SpecialBonus[this.SpecialID()].Name = (string[])Utils.CopyArray((Array)this.mySet.SpecialBonus[this.SpecialID()].Name, (Array)new string[this.mySet.SpecialBonus[this.SpecialID()].Name.Length + 1]);
-                    this.mySet.SpecialBonus[this.SpecialID()].Index = (int[])Utils.CopyArray((Array)this.mySet.SpecialBonus[this.SpecialID()].Index, (Array)new int[this.mySet.SpecialBonus[this.SpecialID()].Index.Length + 1]);
+                    this.mySet.SpecialBonus[this.SpecialID()].Name = (string[])Utils.CopyArray(this.mySet.SpecialBonus[this.SpecialID()].Name, (Array)new string[this.mySet.SpecialBonus[this.SpecialID()].Name.Length + 1]);
+                    this.mySet.SpecialBonus[this.SpecialID()].Index = (int[])Utils.CopyArray(this.mySet.SpecialBonus[this.SpecialID()].Index, (Array)new int[this.mySet.SpecialBonus[this.SpecialID()].Index.Length + 1]);
                     this.mySet.SpecialBonus[this.SpecialID()].Name[this.mySet.SpecialBonus[this.SpecialID()].Name.Length - 1] = DatabaseAPI.Database.Power[index].FullName;
                     this.mySet.SpecialBonus[this.SpecialID()].Index[this.mySet.SpecialBonus[this.SpecialID()].Index.Length - 1] = index;
                 }

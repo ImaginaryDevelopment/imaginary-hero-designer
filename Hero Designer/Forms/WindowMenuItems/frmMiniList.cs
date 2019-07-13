@@ -13,15 +13,15 @@ namespace Hero_Designer
 {
     public partial class frmMiniList : Form
     {
-        ctlPopUp _pInfo;
+        ctlPopUp pInfo;
 
         VScrollBar VScrollBar1;
 
         frmMain myParent;
-        internal ctlPopUp pInfo
+        internal ctlPopUp PInfo
         {
-            get => _pInfo;
-            private set => _pInfo = value;
+            get => pInfo;
+            private set => pInfo = value;
         }
 
         public frmMiniList(frmMain iParent)
@@ -29,6 +29,9 @@ namespace Hero_Designer
             this.FormClosed += new FormClosedEventHandler(this.frmMiniList_FormClosed);
             this.ResizeEnd += new EventHandler(this.frmMiniList_ResizeEnd);
             this.InitializeComponent();
+            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
+            this.PInfo.MouseWheel += pInfo_MouseWheel;
+            this.PInfo.MouseEnter += pInfo_MouseEnter;
             this.Name = nameof(frmMiniList);
             var componentResourceManager = new ComponentResourceManager(typeof(frmMiniList));
             this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
@@ -44,7 +47,7 @@ namespace Hero_Designer
         {
             this.VScrollBar1.Height = this.ClientSize.Height;
             this.VScrollBar1.Left = this.ClientSize.Width - this.VScrollBar1.Width;
-            this.pInfo.Width = this.ClientSize.Width - this.VScrollBar1.Width;
+            this.PInfo.Width = this.ClientSize.Width - this.VScrollBar1.Width;
         }
 
         void pInfo_MouseEnter(object sender, EventArgs e)
@@ -65,15 +68,15 @@ namespace Hero_Designer
 
         public void SizeMe()
         {
-            this.pInfo.Width = this.ClientSize.Width;
+            this.PInfo.Width = this.ClientSize.Width;
         }
 
         void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            this.pInfo.ScrollY = (float)(
+            this.PInfo.ScrollY = (float)(
                 VScrollBar1.Value /
                 (double)(this.VScrollBar1.Maximum - this.VScrollBar1.LargeChange) *
-                (pInfo.lHeight - (double)this.ClientSize.Height));
+                (PInfo.lHeight - (double)this.ClientSize.Height));
         }
     }
 }

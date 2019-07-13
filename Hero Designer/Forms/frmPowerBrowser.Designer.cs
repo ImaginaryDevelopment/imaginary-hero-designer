@@ -30,7 +30,6 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmPowerBrowser));
             this.lvPower = new System.Windows.Forms.ListView();
             this.ColumnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.ColumnHeader5 = new System.Windows.Forms.ColumnHeader();
@@ -97,6 +96,8 @@ namespace Hero_Designer
             this.lvPower.TabIndex = 21;
             this.lvPower.UseCompatibleStateImageBehavior = false;
             this.lvPower.View = System.Windows.Forms.View.Details;
+            this.lvPower.SelectedIndexChanged += new System.EventHandler(this.lvPower_SelectedIndexChanged);
+            this.lvPower.DoubleClick += new System.EventHandler(this.lvPower_DoubleClick);
             this.ColumnHeader3.Text = "Power";
             this.ColumnHeader3.Width = 206;
             this.ColumnHeader5.Text = "Name";
@@ -122,6 +123,8 @@ namespace Hero_Designer
             this.lvSet.TabIndex = 20;
             this.lvSet.UseCompatibleStateImageBehavior = false;
             this.lvSet.View = System.Windows.Forms.View.Details;
+            this.lvSet.SelectedIndexChanged += new System.EventHandler(this.lvSet_SelectedIndexChanged);
+            this.lvSet.DoubleClick += new System.EventHandler(this.lvSet_DoubleClick);
             this.ColumnHeader1.Text = "Set";
             this.ColumnHeader1.Width = 129;
             this.ColumnHeader4.Text = "Name";
@@ -149,6 +152,8 @@ namespace Hero_Designer
             this.lvGroup.TabIndex = 19;
             this.lvGroup.UseCompatibleStateImageBehavior = false;
             this.lvGroup.View = System.Windows.Forms.View.Details;
+            this.lvGroup.SelectedIndexChanged += new System.EventHandler(this.lvGroup_SelectedIndexChanged);
+            this.lvGroup.DoubleClick += new System.EventHandler(this.lvGroup_DoubleClick);
             this.ColumnHeader2.Text = "Group";
             this.ColumnHeader2.Width = 207;
             this.ilAT.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
@@ -163,6 +168,7 @@ namespace Hero_Designer
 
             this.cbFilter.Size = new System.Drawing.Size(221, 22);
             this.cbFilter.TabIndex = 22;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(cbFilter_SelectedIndexChanged);
 
             this.Label1.Location = new System.Drawing.Point(12, 9);
             this.Label1.Name = "Label1";
@@ -178,6 +184,7 @@ namespace Hero_Designer
             this.btnPowerSort.Size = new System.Drawing.Size(75, 23);
             this.btnPowerSort.TabIndex = 26;
             this.btnPowerSort.Text = "Re-Sort";
+            this.btnPowerSort.Click += new System.EventHandler(btnPowerSort_Click);
             this.btnPowerSort.UseVisualStyleBackColor = true;
             this.ilPower.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
 
@@ -191,6 +198,7 @@ namespace Hero_Designer
             this.btnPowerUp.TabIndex = 28;
             this.btnPowerUp.Text = "Up";
             this.btnPowerUp.UseVisualStyleBackColor = true;
+            this.btnPowerUp.Click += new System.EventHandler(btnPowerUp_Click);
 
             this.btnPowerDown.Location = new System.Drawing.Point(3, 44);
             this.btnPowerDown.Name = "btnPowerDown";
@@ -199,6 +207,7 @@ namespace Hero_Designer
             this.btnPowerDown.TabIndex = 29;
             this.btnPowerDown.Text = "Down";
             this.btnPowerDown.UseVisualStyleBackColor = true;
+            this.btnPowerDown.Click += new System.EventHandler(btnPowerDown_Click);
 
             this.btnPowerAdd.Location = new System.Drawing.Point(320, 15);
             this.btnPowerAdd.Name = "btnPowerAdd";
@@ -207,6 +216,7 @@ namespace Hero_Designer
             this.btnPowerAdd.TabIndex = 30;
             this.btnPowerAdd.Text = "Add";
             this.btnPowerAdd.UseVisualStyleBackColor = true;
+            this.btnPowerAdd.Click += new System.EventHandler(btnPowerAdd_Click);
 
             this.btnPowerDelete.Location = new System.Drawing.Point(239, 15);
             this.btnPowerDelete.Name = "btnPowerDelete";
@@ -215,6 +225,7 @@ namespace Hero_Designer
             this.btnPowerDelete.TabIndex = 31;
             this.btnPowerDelete.Text = "Delete";
             this.btnPowerDelete.UseVisualStyleBackColor = true;
+            this.btnPowerDelete.Click += new System.EventHandler(btnPowerDelete_Click);
 
             this.btnPowerClone.Location = new System.Drawing.Point(320, 44);
             this.btnPowerClone.Name = "btnPowerClone";
@@ -223,6 +234,7 @@ namespace Hero_Designer
             this.btnPowerClone.TabIndex = 33;
             this.btnPowerClone.Text = "Clone";
             this.btnPowerClone.UseVisualStyleBackColor = true;
+            this.btnPowerClone.Click += new System.EventHandler(btnPowerClone_Click);
 
             this.btnPowerEdit.Location = new System.Drawing.Point(320, 73);
             this.btnPowerEdit.Name = "btnPowerEdit";
@@ -231,6 +243,7 @@ namespace Hero_Designer
             this.btnPowerEdit.TabIndex = 32;
             this.btnPowerEdit.Text = "Edit";
             this.btnPowerEdit.UseVisualStyleBackColor = true;
+            this.btnPowerEdit.Click += new System.EventHandler(btnPowerEdit_Click);
 
             this.btnSetSort.Location = new System.Drawing.Point(169, 44);
             this.btnSetSort.Name = "btnSetSort";
@@ -239,6 +252,7 @@ namespace Hero_Designer
             this.btnSetSort.TabIndex = 35;
             this.btnSetSort.Text = "Re-Sort";
             this.btnSetSort.UseVisualStyleBackColor = true;
+            this.btnSetSort.Click += new System.EventHandler(btnSetSort_Click);
 
             this.btnSetEdit.Location = new System.Drawing.Point(250, 44);
             this.btnSetEdit.Name = "btnSetEdit";
@@ -247,6 +261,7 @@ namespace Hero_Designer
             this.btnSetEdit.TabIndex = 40;
             this.btnSetEdit.Text = "Edit";
             this.btnSetEdit.UseVisualStyleBackColor = true;
+            this.btnSetEdit.Click += new System.EventHandler(btnSetEdit_Click);
 
             this.btnSetDelete.Location = new System.Drawing.Point(169, 15);
             this.btnSetDelete.Name = "btnSetDelete";
@@ -255,6 +270,7 @@ namespace Hero_Designer
             this.btnSetDelete.TabIndex = 39;
             this.btnSetDelete.Text = "Delete";
             this.btnSetDelete.UseVisualStyleBackColor = true;
+            this.btnSetDelete.Click += new System.EventHandler(btnSetDelete_Click);
 
             this.btnSetAdd.Location = new System.Drawing.Point(250, 15);
             this.btnSetAdd.Name = "btnSetAdd";
@@ -263,6 +279,7 @@ namespace Hero_Designer
             this.btnSetAdd.TabIndex = 38;
             this.btnSetAdd.Text = "Add";
             this.btnSetAdd.UseVisualStyleBackColor = true;
+            this.btnSetAdd.Click += new System.EventHandler(btnSetAdd_Click);
 
             this.btnClassClone.Location = new System.Drawing.Point(153, 44);
             this.btnClassClone.Name = "btnClassClone";
@@ -271,6 +288,7 @@ namespace Hero_Designer
             this.btnClassClone.TabIndex = 46;
             this.btnClassClone.Text = "Clone";
             this.btnClassClone.UseVisualStyleBackColor = true;
+            this.btnClassClone.Click += new System.EventHandler(btnClassClone_Click);
 
             this.btnClassSort.Location = new System.Drawing.Point(72, 44);
             this.btnClassSort.Name = "btnClassSort";
@@ -279,6 +297,7 @@ namespace Hero_Designer
             this.btnClassSort.TabIndex = 42;
             this.btnClassSort.Text = "Re-Sort";
             this.btnClassSort.UseVisualStyleBackColor = true;
+            this.btnClassSort.Click += new System.EventHandler(btnClassSort_Click);
 
             this.btnClassEdit.Location = new System.Drawing.Point(153, 73);
             this.btnClassEdit.Name = "btnClassEdit";
@@ -287,6 +306,7 @@ namespace Hero_Designer
             this.btnClassEdit.TabIndex = 45;
             this.btnClassEdit.Text = "Edit";
             this.btnClassEdit.UseVisualStyleBackColor = true;
+            this.btnClassEdit.Click += new System.EventHandler(btnClassEdit_Click);
 
             this.btnClassDelete.Location = new System.Drawing.Point(72, 15);
             this.btnClassDelete.Name = "btnClassDelete";
@@ -295,6 +315,7 @@ namespace Hero_Designer
             this.btnClassDelete.TabIndex = 44;
             this.btnClassDelete.Text = "Delete";
             this.btnClassDelete.UseVisualStyleBackColor = true;
+            this.btnClassDelete.Click += new System.EventHandler(btnClassDelete_Click);
 
             this.btnClassAdd.Location = new System.Drawing.Point(153, 15);
             this.btnClassAdd.Name = "btnClassAdd";
@@ -303,6 +324,7 @@ namespace Hero_Designer
             this.btnClassAdd.TabIndex = 43;
             this.btnClassAdd.Text = "Add";
             this.btnClassAdd.UseVisualStyleBackColor = true;
+            this.btnClassAdd.Click += new System.EventHandler(btnClassAdd_Click);
             this.pnlGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGroup.Controls.Add((System.Windows.Forms.Control)this.btnClassUp);
             this.pnlGroup.Controls.Add((System.Windows.Forms.Control)this.btnClassDown);
@@ -325,6 +347,7 @@ namespace Hero_Designer
             this.btnClassUp.TabIndex = 47;
             this.btnClassUp.Text = "Up";
             this.btnClassUp.UseVisualStyleBackColor = true;
+            this.btnClassUp.Click += new System.EventHandler(btnClassUp_Click);
 
             this.btnClassDown.Location = new System.Drawing.Point(3, 44);
             this.btnClassDown.Name = "btnClassDown";
@@ -333,6 +356,7 @@ namespace Hero_Designer
             this.btnClassDown.TabIndex = 48;
             this.btnClassDown.Text = "Down";
             this.btnClassDown.UseVisualStyleBackColor = true;
+            this.btnClassDown.Click += new System.EventHandler(btnClassDown_Click);
             this.pnlSet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSet.Controls.Add((System.Windows.Forms.Control)this.btnPSUp);
             this.pnlSet.Controls.Add((System.Windows.Forms.Control)this.btnPSDown);
@@ -354,6 +378,7 @@ namespace Hero_Designer
             this.btnPSUp.TabIndex = 41;
             this.btnPSUp.Text = "Up";
             this.btnPSUp.UseVisualStyleBackColor = true;
+            this.btnPSUp.Click += new System.EventHandler(btnPSUp_Click);
 
             this.btnPSDown.Location = new System.Drawing.Point(3, 44);
             this.btnPSDown.Name = "btnPSDown";
@@ -362,6 +387,7 @@ namespace Hero_Designer
             this.btnPSDown.TabIndex = 42;
             this.btnPSDown.Text = "Down";
             this.btnPSDown.UseVisualStyleBackColor = true;
+            this.btnPSDown.Click += new System.EventHandler(btnPSDown_Click);
             this.pnlPower.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPower.Controls.Add((System.Windows.Forms.Control)this.btnPowerClone);
             this.pnlPower.Controls.Add((System.Windows.Forms.Control)this.btnPowerUp);
@@ -398,6 +424,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 52;
             this.btnOK.Text = "Save && Close";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
 
             this.btnCancel.Location = new System.Drawing.Point(717, 607);
             this.btnCancel.Name = "btnCancel";
@@ -406,6 +433,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 53;
             this.btnCancel.Text = "Cancel && Discard";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
 
             this.Label2.Location = new System.Drawing.Point(313, 13);
             this.Label2.Name = "Label2";
@@ -431,46 +459,60 @@ namespace Hero_Designer
             this.Controls.Add((System.Windows.Forms.Control)this.pnlPower);
             this.Font = new System.Drawing.Font("Arial", 8.25f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = nameof(frmPowerBrowser);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Power Database Browser";
             this.pnlGroup.ResumeLayout(false);
             this.pnlSet.ResumeLayout(false);
             this.pnlPower.ResumeLayout(false);
-            //adding events
-            if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
-            {
-                this.btnCancel.Click += btnCancel_Click;
-                this.btnClassAdd.Click += btnClassAdd_Click;
-                this.btnClassClone.Click += btnClassClone_Click;
-                this.btnClassDelete.Click += btnClassDelete_Click;
-                this.btnClassDown.Click += btnClassDown_Click;
-                this.btnClassEdit.Click += btnClassEdit_Click;
-                this.btnClassSort.Click += btnClassSort_Click;
-                this.btnClassUp.Click += btnClassUp_Click;
-                this.btnOK.Click += btnOK_Click;
-                this.btnPSDown.Click += btnPSDown_Click;
-                this.btnPSUp.Click += btnPSUp_Click;
-                this.btnPowerAdd.Click += btnPowerAdd_Click;
-                this.btnPowerClone.Click += btnPowerClone_Click;
-                this.btnPowerDelete.Click += btnPowerDelete_Click;
-                this.btnPowerDown.Click += btnPowerDown_Click;
-                this.btnPowerEdit.Click += btnPowerEdit_Click;
-                this.btnPowerSort.Click += btnPowerSort_Click;
-                this.btnPowerUp.Click += btnPowerUp_Click;
-                this.btnSetAdd.Click += btnSetAdd_Click;
-                this.btnSetDelete.Click += btnSetDelete_Click;
-                this.btnSetEdit.Click += btnSetEdit_Click;
-                this.btnSetSort.Click += btnSetSort_Click;
-                this.cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
-            }
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion
+
+        System.Windows.Forms.Button btnCancel;
+        System.Windows.Forms.Button btnClassAdd;
+        System.Windows.Forms.Button btnClassClone;
+        System.Windows.Forms.Button btnClassDelete;
+        System.Windows.Forms.Button btnClassDown;
+        System.Windows.Forms.Button btnClassEdit;
+        System.Windows.Forms.Button btnClassSort;
+        System.Windows.Forms.Button btnClassUp;
+        System.Windows.Forms.Button btnOK;
+        System.Windows.Forms.Button btnPowerAdd;
+        System.Windows.Forms.Button btnPowerClone;
+        System.Windows.Forms.Button btnPowerDelete;
+        System.Windows.Forms.Button btnPowerDown;
+        System.Windows.Forms.Button btnPowerEdit;
+        System.Windows.Forms.Button btnPowerSort;
+        System.Windows.Forms.Button btnPowerUp;
+        System.Windows.Forms.Button btnPSDown;
+        System.Windows.Forms.Button btnPSUp;
+        System.Windows.Forms.Button btnSetAdd;
+        System.Windows.Forms.Button btnSetDelete;
+        System.Windows.Forms.Button btnSetEdit;
+        System.Windows.Forms.Button btnSetSort;
+        System.Windows.Forms.ComboBox cbFilter;
+        System.Windows.Forms.ColumnHeader ColumnHeader1;
+        System.Windows.Forms.ColumnHeader ColumnHeader2;
+        System.Windows.Forms.ColumnHeader ColumnHeader3;
+        System.Windows.Forms.ColumnHeader ColumnHeader4;
+        System.Windows.Forms.ColumnHeader ColumnHeader5;
+        System.Windows.Forms.ColumnHeader ColumnHeader6;
+        System.Windows.Forms.ColumnHeader ColumnHeader7;
+        System.Windows.Forms.ImageList ilAT;
+        System.Windows.Forms.ImageList ilPower;
+        System.Windows.Forms.ImageList ilPS;
+        System.Windows.Forms.Label Label1;
+        System.Windows.Forms.Label Label2;
+        System.Windows.Forms.Label lblPower;
+        System.Windows.Forms.Label lblSet;
+        System.Windows.Forms.ListView lvGroup;
+        System.Windows.Forms.ListView lvPower;
+        System.Windows.Forms.ListView lvSet;
+        System.Windows.Forms.Panel pnlGroup;
+        System.Windows.Forms.Panel pnlPower;
+        System.Windows.Forms.Panel pnlSet;
     }
 }

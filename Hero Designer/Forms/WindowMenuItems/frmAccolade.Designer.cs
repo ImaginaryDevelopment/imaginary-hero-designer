@@ -56,6 +56,7 @@ namespace Hero_Designer
 
             this.VScrollBar1.Size = new System.Drawing.Size(17, 185);
             this.VScrollBar1.TabIndex = 11;
+            this.VScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(VScrollBar1_Scroll);
             this.PopInfo.BXHeight = 1024;
             this.PopInfo.ColumnPosition = 0.5f;
             this.PopInfo.ColumnRight = false;
@@ -70,6 +71,9 @@ namespace Hero_Designer
 
             this.PopInfo.Size = new System.Drawing.Size(391, 200);
             this.PopInfo.TabIndex = 9;
+            this.PopInfo.MouseWheel += new System.Windows.Forms.MouseEventHandler(PopInfo_MouseWheel);
+            this.PopInfo.MouseEnter += new System.EventHandler(PopInfo_MouseEnter);
+
             this.lblLock.BackColor = System.Drawing.Color.Red;
             this.lblLock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLock.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
@@ -83,6 +87,7 @@ namespace Hero_Designer
             this.lblLock.Text = "[Unlock]";
             this.lblLock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLock.Visible = false;
+            this.lblLock.Click += new System.EventHandler(lblLock_Click);
             this.ibClose.Checked = false;
             this.ibClose.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 
@@ -96,6 +101,7 @@ namespace Hero_Designer
             this.ibClose.TextOff = "Done";
             this.ibClose.TextOn = "Alt Text";
             this.ibClose.Toggle = false;
+            this.ibClose.ButtonClicked += new midsControls.ImageButton.ButtonClickedEventHandler(ibClose_ButtonClicked);
             this.Panel2.AutoScroll = true;
             this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel2.Controls.Add((System.Windows.Forms.Control)this.llRight);
@@ -128,6 +134,9 @@ namespace Hero_Designer
             this.llRight.SizeNormal = new System.Drawing.Size(190, 120);
             this.llRight.SuspendRedraw = false;
             this.llRight.TabIndex = 111;
+            this.llRight.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llRight_ItemHover);
+            this.llRight.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llRight_ItemClick);
+            this.llRight.MouseEnter += new System.EventHandler(llRight_MouseEnter);
             this.llLeft.AutoSize = true;
             this.llLeft.Expandable = false;
             this.llLeft.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -149,6 +158,9 @@ namespace Hero_Designer
             this.llLeft.SizeNormal = new System.Drawing.Size(187, 120);
             this.llLeft.SuspendRedraw = false;
             this.llLeft.TabIndex = 110;
+            this.llLeft.MouseEnter += new System.EventHandler(llLeft_MouseEnter);
+            this.llLeft.ItemHover += new midsControls.ListLabelV2.ItemHoverEventHandler(llLeft_ItemHover);
+            this.llLeft.ItemClick += new midsControls.ListLabelV2.ItemClickEventHandler(llLeft_ItemClick);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(0, 0, 32);
 
@@ -166,26 +178,7 @@ namespace Hero_Designer
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
-            // PopInfo events
-            this.PopInfo.MouseWheel += PopInfo_MouseWheel;
-            this.PopInfo.MouseEnter += PopInfo_MouseEnter;
 
-            this.VScrollBar1.Scroll += VScrollBar1_Scroll;
-            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
-            this.lblLock.Click += lblLock_Click;
-
-            // llLeft events
-            this.llLeft.MouseEnter += llLeft_MouseEnter;
-            this.llLeft.ItemHover += llLeft_ItemHover;
-            this.llLeft.ItemClick += llLeft_ItemClick;
-
-
-            // llRight events
-            this.llRight.ItemHover += llRight_ItemHover;
-            this.llRight.ItemClick += llRight_ItemClick;
-            this.llRight.MouseEnter += llRight_MouseEnter;
-
-            // finished with events
             this.ResumeLayout(false);
         }
         #endregion

@@ -17,37 +17,13 @@ namespace Hero_Designer
     {
         frmBusy _bFrm;
 
-        Button btnCheckAll;
-
-        Button btnClose;
-
-        Button btnFile;
-
-        Button btnImport;
-
-        Button btnUncheckAll;
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
-
         readonly List<ListViewItem> _currentItems;
-        OpenFileDialog dlgBrowse;
 
         string _fullFileName;
 
-        Button HideUnchanged;
-
         List<EnhSetData> _importBuffer;
-        Label Label6;
-        Label Label8;
-        Label lblDate;
-        Label lblFile;
-        ListView lstImport;
 
         bool _showUnchanged;
-        NumericUpDown udRevision;
 
 
         public frmImportEnhSets()
@@ -56,6 +32,9 @@ namespace Hero_Designer
             this._fullFileName = "";
             this._showUnchanged = true;
             this.InitializeComponent();
+            this.Name = nameof(frmImportEnhSets);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmImportEnhSets));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this._importBuffer = new List<EnhSetData>();
             this._currentItems = new List<ListViewItem>();
         }
@@ -71,13 +50,11 @@ namespace Hero_Designer
         }
 
         void btnClose_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this._fullFileName;
             if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
@@ -93,13 +70,11 @@ namespace Hero_Designer
         }
 
         void btnImport_Click(object sender, EventArgs e)
-
         {
             this.ProcessImport();
         }
 
         void btnUncheckAll_Click(object sender, EventArgs e)
-
         {
             this.lstImport.BeginUpdate();
             int num = this.lstImport.Items.Count - 1;
@@ -109,7 +84,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this._bFrm == null)
                 return;
@@ -118,7 +92,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this._bFrm == null)
             {
@@ -129,13 +102,11 @@ namespace Hero_Designer
         }
 
         void DisplayInfo()
-
         {
             this.lblFile.Text = FileIO.StripPath(this._fullFileName);
         }
 
         void FillListView()
-
         {
             string[] items = new string[6];
             this.lstImport.BeginUpdate();
@@ -192,14 +163,12 @@ namespace Hero_Designer
         }
 
         void frmImportEnhSets_Load(object sender, EventArgs e)
-
         {
             this._fullFileName = "boostsets.csv";
             this.DisplayInfo();
         }
 
         void HideUnchanged_Click(object sender, EventArgs e)
-
         {
             this._showUnchanged = !this._showUnchanged;
             this.lstImport.BeginUpdate();
@@ -213,10 +182,7 @@ namespace Hero_Designer
             this.lstImport.EndUpdate();
         }
 
-        [DebuggerStepThrough]
-
         bool ParseClasses(string iFileName)
-
         {
             int num1 = 0;
             StreamReader iStream;
@@ -262,26 +228,22 @@ namespace Hero_Designer
         }
 
         bool ProcessImport()
-
         {
             bool flag = false;
             int num1 = 0;
-            int num2 = 0;
             this.BusyMsg("Applying...");
             this.Enabled = false;
-            int num3 = this.lstImport.Items.Count - 1;
-            for (int index = 0; index <= num3; ++index)
+            int importCount = this.lstImport.Items.Count - 1;
+            for (int index = 0; index <= importCount; ++index)
             {
                 if (this.lstImport.Items[index].Checked)
                 {
                     this._importBuffer[Conversions.ToInteger(this.lstImport.Items[index].Tag)].Apply();
                     ++num1;
-                    ++num2;
-                    if (num2 >= 9)
+                    if (num1 > 0 && num1 % 10 == 0)
                     {
                         this.BusyMsg("Applying: " + Conversions.ToString(index) + " records done.");
                         Application.DoEvents();
-                        num2 = 0;
                     }
                 }
             }
@@ -290,7 +252,7 @@ namespace Hero_Designer
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();
-            int num4 = (int)Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
+            Interaction.MsgBox(("Import of " + Conversions.ToString(num1) + " records completed!"), MsgBoxStyle.Information, "Done");
             this.DisplayInfo();
             return flag;
         }

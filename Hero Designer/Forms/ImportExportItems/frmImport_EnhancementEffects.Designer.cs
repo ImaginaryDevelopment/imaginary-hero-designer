@@ -1,6 +1,6 @@
 namespace Hero_Designer
 {
-    public partial class frmImport_Entities
+    public partial class frmImport_EnhancementEffects
     {
         /// <summary>
         /// Required designer variable.
@@ -30,88 +30,52 @@ namespace Hero_Designer
         {
             this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
 
-            this.Label8 = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.udRevision = new System.Windows.Forms.NumericUpDown();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.lblFile = new System.Windows.Forms.Label();
             this.btnFile = new System.Windows.Forms.Button();
             this.dlgBrowse = new System.Windows.Forms.OpenFileDialog();
-            this.udRevision.BeginInit();
             this.SuspendLayout();
-
-            this.Label8.Location = new System.Drawing.Point(346, 85);
-            this.Label8.Name = "Label8";
-
-            this.Label8.Size = new System.Drawing.Size(65, 18);
-            this.Label8.TabIndex = 62;
-            this.Label8.Text = "Revision:";
-            this.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-
-            this.lblDate.Location = new System.Drawing.Point(9, 85);
-            this.lblDate.Name = "lblDate";
-
-            this.lblDate.Size = new System.Drawing.Size(175, 18);
-            this.lblDate.TabIndex = 61;
-            this.lblDate.Text = "Date:";
-
-            this.udRevision.Location = new System.Drawing.Point(417, 83);
-            this.udRevision.Maximum = new System.Decimal(new int[4]
-            {
-        (int) ushort.MaxValue,
-        0,
-        0,
-        0
-            });
-            this.udRevision.Name = "udRevision";
-
-            this.udRevision.Size = new System.Drawing.Size(116, 20);
-            this.udRevision.TabIndex = 60;
 
             this.btnClose.Location = new System.Drawing.Point(539, 81);
             this.btnClose.Name = "btnClose";
 
             this.btnClose.Size = new System.Drawing.Size(86, 23);
-            this.btnClose.TabIndex = 59;
+            this.btnClose.TabIndex = 56;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += btnClose_Click;
+            this.btnClose.Click += new System.EventHandler(btnClose_Click);
 
             this.btnImport.Location = new System.Drawing.Point(539, 38);
             this.btnImport.Name = "btnImport";
 
             this.btnImport.Size = new System.Drawing.Size(86, 23);
-            this.btnImport.TabIndex = 57;
+            this.btnImport.TabIndex = 54;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += btnImport_Click;
+            this.btnImport.Click += new System.EventHandler(btnImport_Click);
             this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 
             this.lblFile.Location = new System.Drawing.Point(12, 9);
             this.lblFile.Name = "lblFile";
 
             this.lblFile.Size = new System.Drawing.Size(521, 46);
-            this.lblFile.TabIndex = 58;
+            this.lblFile.TabIndex = 55;
             this.lblFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
             this.btnFile.Location = new System.Drawing.Point(539, 9);
             this.btnFile.Name = "btnFile";
 
             this.btnFile.Size = new System.Drawing.Size(86, 23);
-            this.btnFile.TabIndex = 56;
+            this.btnFile.TabIndex = 53;
             this.btnFile.Text = "Browse...";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += btnFile_Click;
+            this.btnFile.Click += new System.EventHandler(btnFile_Click);
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
-            this.ClientSize = new System.Drawing.Size(646, 120);
-            this.Controls.Add((System.Windows.Forms.Control)this.Label8);
-            this.Controls.Add((System.Windows.Forms.Control)this.lblDate);
-            this.Controls.Add((System.Windows.Forms.Control)this.udRevision);
+            this.ClientSize = new System.Drawing.Size(636, 112);
             this.Controls.Add((System.Windows.Forms.Control)this.btnClose);
             this.Controls.Add((System.Windows.Forms.Control)this.btnImport);
             this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
@@ -120,8 +84,7 @@ namespace Hero_Designer
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.ShowInTaskbar = false;
-            this.Text = "Import Entities";
-            this.udRevision.EndInit();
+            this.Text = "Import Enhancement Effects";
             this.ResumeLayout(false);
         }
 
@@ -131,9 +94,6 @@ namespace Hero_Designer
         System.Windows.Forms.Button btnFile;
         System.Windows.Forms.Button btnImport;
         System.Windows.Forms.OpenFileDialog dlgBrowse;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label lblDate;
         System.Windows.Forms.Label lblFile;
-        System.Windows.Forms.NumericUpDown udRevision;
     }
 }

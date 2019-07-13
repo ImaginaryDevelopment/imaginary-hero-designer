@@ -17,42 +17,24 @@ namespace Hero_Designer
 {
     public partial class frmSetFind : Form
     {
-        ColumnHeader ColumnHeader1;
-        ColumnHeader ColumnHeader2;
-        ColumnHeader ColumnHeader3;
-        ColumnHeader ColumnHeader4;
-        ColumnHeader ColumnHeader5;
-        ColumnHeader ColumnHeader6;
+        int[] setBonusList;
 
         ImageButton ibClose;
-
         ImageButton ibTopmost;
-        ImageList ilSets;
-
-        ListView lvBonus;
-
-        ListView lvMag;
-
-        ListView lvSet;
-        Panel Panel1;
         ctlPopUp SetInfo;
-
-        protected frmMain myParent;
-        protected int[] SetBonusList;
-
-
-
-
-
-
-
+        frmMain myParent;
 
         public frmSetFind(frmMain iParent)
         {
             this.FormClosed += new FormClosedEventHandler(this.frmSetFind_FormClosed);
             this.Load += new EventHandler(this.frmSetFind_Load);
-            this.SetBonusList = new int[0];
+            this.setBonusList = new int[0];
             this.InitializeComponent();
+            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmSetFind));
+            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Name = nameof(frmSetFind);
+            this.ibClose.ButtonClicked += ibClose_ButtonClicked;
+            this.ibTopmost.ButtonClicked += ibTopmost_ButtonClicked;
             this.myParent = iParent;
         }
 
@@ -65,8 +47,8 @@ namespace Hero_Designer
                 if (string.Equals(List[index], Effect, StringComparison.OrdinalIgnoreCase))
                     return;
             }
-            List = (string[])Utils.CopyArray((Array)List, (Array)new string[List.Length + 1]);
-            nIDList = (int[])Utils.CopyArray((Array)nIDList, (Array)new int[List.Length + 1]);
+            List = (string[])Utils.CopyArray(List, (Array)new string[List.Length + 1]);
+            nIDList = (int[])Utils.CopyArray(nIDList, (Array)new int[List.Length + 1]);
             List[List.Length - 1] = Effect;
             nIDList[List.Length - 1] = nID;
         }
@@ -90,11 +72,11 @@ namespace Hero_Designer
             int[] nIDList = new int[0];
             this.lvBonus.BeginUpdate();
             this.lvBonus.Items.Clear();
-            int num1 = this.SetBonusList.Length - 1;
+            int num1 = this.setBonusList.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                if ((DatabaseAPI.Database.Power[this.SetBonusList[index]].EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
-                    this.AddEffect(ref List, ref nIDList, this.GetPowerString(this.SetBonusList[index]), -1);
+                if ((DatabaseAPI.Database.Power[this.setBonusList[index]].EntitiesAutoHit & Enums.eEntity.Caster) > Enums.eEntity.None)
+                    this.AddEffect(ref List, ref nIDList, this.GetPowerString(this.setBonusList[index]), -1);
             }
             int num2 = List.Length - 1;
             for (int index = 0; index <= num2; ++index)
@@ -148,16 +130,16 @@ namespace Hero_Designer
                 string[] List = new string[0];
                 int[] nIDList = new int[0];
                 string text = this.lvBonus.SelectedItems[0].Text;
-                int num1 = this.SetBonusList.Length - 1;
+                int num1 = this.setBonusList.Length - 1;
                 for (int index = 0; index <= num1; ++index)
                 {
-                    if (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects.Length > 0)
+                    if (DatabaseAPI.Database.Power[this.setBonusList[index]].Effects.Length > 0)
                     {
-                        string powerString = this.GetPowerString(this.SetBonusList[index]);
+                        string powerString = this.GetPowerString(this.setBonusList[index]);
                         if (text == powerString)
                         {
-                            string Effect = (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)((double)DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
-                            this.AddEffect(ref List, ref nIDList, Effect, this.SetBonusList[index]);
+                            string Effect = (DatabaseAPI.Database.Power[this.setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.HitPoints ? (DatabaseAPI.Database.Power[this.setBonusList[index]].Effects[0].EffectType != Enums.eEffectType.Endurance ? Strings.Format(DatabaseAPI.Database.Power[this.setBonusList[index]].Effects[0].MagPercent, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00") : Strings.Format(DatabaseAPI.Database.Power[this.setBonusList[index]].Effects[0].Mag, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) : Strings.Format((float)((double)DatabaseAPI.Database.Power[this.setBonusList[index]].Effects[0].Mag / (double)MidsContext.Archetype.Hitpoints * 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "00")) + "%";
+                            this.AddEffect(ref List, ref nIDList, Effect, this.setBonusList[index]);
                         }
                     }
                 }
@@ -200,14 +182,14 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    int num = this.SetBonusList.Length - 1;
+                    int num = this.setBonusList.Length - 1;
                     for (int index = 0; index <= num; ++index)
                     {
-                        if (DatabaseAPI.Database.Power[this.SetBonusList[index]].Effects.Length > 0)
+                        if (DatabaseAPI.Database.Power[this.setBonusList[index]].Effects.Length > 0)
                         {
-                            string powerString = this.GetPowerString(this.SetBonusList[index]);
+                            string powerString = this.GetPowerString(this.setBonusList[index]);
                             if (text == powerString)
-                                this.AddEffect(ref List, ref nIDList, DatabaseAPI.Database.Power[this.SetBonusList[index]].PowerName, this.SetBonusList[index]);
+                                this.AddEffect(ref List, ref nIDList, DatabaseAPI.Database.Power[this.setBonusList[index]].PowerName, this.setBonusList[index]);
                         }
                     }
                 }
@@ -258,7 +240,7 @@ namespace Hero_Designer
         void frmSetFind_Load(object sender, EventArgs e)
 
         {
-            this.SetBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus", "");
+            this.setBonusList = DatabaseAPI.NidPowers("Set_Bonus.Set_Bonus", "");
             this.BackColor = this.myParent.BackColor;
             this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
             this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;

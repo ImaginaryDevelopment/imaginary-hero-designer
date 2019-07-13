@@ -181,9 +181,7 @@ namespace Base.Data_Classes
         }
 
         public void ResetLevel()
-        {
-            this.LevelCache = -1;
-        }
+            => this.LevelCache = -1;
 
         public void Lock()
         {
@@ -880,29 +878,29 @@ namespace Base.Data_Classes
 
         public void PoolShuffle()
         {
-            int[] numArray1 = new int[4];
-            int[] numArray2 = new int[4];
-            for (int index = 3; index <= 6; ++index)
+            int[] poolOrder = new int[4];
+            int[] poolIndex = new int[4];
+            for (int i = 3; i <= 6; ++i)
             {
-                numArray2[index - 3] = this.Powersets[index].nID;
-                numArray1[index - 3] = this.GetEarliestPowerIndex(this.Powersets[index].nID);
+                poolIndex[i - 3] = this.Powersets[i].nID;
+                poolOrder[i - 3] = this.GetEarliestPowerIndex(this.Powersets[i].nID);
             }
-            for (int index1 = 0; index1 <= 3; ++index1)
+            for (int i = 0; i <= 3; ++i)
             {
-                int maxValue = (int)byte.MaxValue;
-                int index2 = -1;
-                for (int index3 = 0; index3 <= numArray1.Length - 1; ++index3)
+                int minO = byte.MaxValue;
+                int minI = -1;
+                for (int x = 0; x <= poolOrder.Length - 1; ++x)
                 {
-                    if (maxValue > numArray1[index3])
+                    if (minO > poolOrder[x])
                     {
-                        maxValue = numArray1[index3];
-                        index2 = index3;
+                        minO = poolOrder[x];
+                        minI = x;
                     }
                 }
-                if (index2 > -1)
+                if (minI > -1)
                 {
-                    this.Powersets[index1 + 3] = DatabaseAPI.Database.Powersets[numArray2[index2]];
-                    numArray1[index2] = 512;
+                    this.Powersets[i + 3] = DatabaseAPI.Database.Powersets[poolIndex[minI]];
+                    poolOrder[minI] = 512;
                 }
             }
             // HACK: this assumes at least 8 powersets exist, but the database is fully editable.
@@ -925,21 +923,19 @@ namespace Base.Data_Classes
 
         bool PoolUnique(Enums.PowersetType pool)
         {
-            bool flag = true;
             for (int index = 3; (Enums.PowersetType)index < pool; ++index)
             {
                 if (this.Powersets[index].nID == this.Powersets[(int)pool].nID)
-                    flag = false;
+                    return false;
             }
-            return flag;
+            return true;
         }
 
         bool PowersetUsed(IPowerset powerset)
         {
-            bool flag;
             if (powerset == null)
             {
-                flag = false;
+                return false;
             }
             else
             {
@@ -948,71 +944,69 @@ namespace Base.Data_Classes
                     if (this.CurrentBuild.Powers[index].NIDPowerset == powerset.nID & this.CurrentBuild.Powers[index].IDXPower > -1)
                         return true;
                 }
-                flag = false;
+                return false;
             }
-            return flag;
         }
 
         protected bool CanRemovePower(int index, bool allowSecondary, out string message)
         {
             message = string.Empty;
-            bool flag = true;
             PowerEntry power = this.CurrentBuild.Powers[index];
             if (!power.Chosen)
             {
-                flag = false;
                 message = "You can't remove inherent powers.\nIf the power is a Kheldian form power, you can remove it by removing the shapeshift power which grants it.";
+                return false;
             }
             else if (power.NIDPowerset == this.Powersets[1].nID & power.IDXPower == 0 & !allowSecondary)
             {
                 if (this.CurrentBuild.PowersPlaced > 1)
                 {
-                    flag = false;
                     message = "The first power from your secondary set is non-optional and can't be removed.";
+                    return false;
                 }
+                return true;
             }
             else if (power.NIDPowerset < 0)
             {
-                flag = false;
-                message = string.Empty;
+                return false;
             }
-            return flag;
+            return true;
         }
 
         public void SwitchSets(IPowerset newPowerset, IPowerset oldPowerset)
         {
-            int index1;
-            int num;
-            int index2;
-            int index3;
+            int oldTrunk;
+            int oldBranch;
+            int newTrunk;
+            int newBranch;
             if (oldPowerset.nIDTrunkSet > -1)
             {
-                index1 = oldPowerset.nIDTrunkSet;
-                num = oldPowerset.nID;
+                oldTrunk = oldPowerset.nIDTrunkSet;
+                oldBranch = oldPowerset.nID;
                 if (newPowerset.nIDTrunkSet > -1)
                 {
-                    index2 = newPowerset.nIDTrunkSet;
-                    index3 = newPowerset.nID;
+                    newTrunk = newPowerset.nIDTrunkSet;
+                    newBranch = newPowerset.nID;
                 }
                 else
                 {
-                    index2 = newPowerset.nID;
-                    index3 = -1;
+                    newTrunk = newPowerset.nID;
+                    newBranch = -1;
                 }
             }
             else
             {
-                index1 = oldPowerset.nID;
-                num = -1;
+                oldTrunk = oldPowerset.nID;
+                oldBranch = -1;
                 if (newPowerset.nIDTrunkSet > -1)
                 {
-                    index2 = newPowerset.nIDTrunkSet;
-                    index3 = newPowerset.nID;
+                    newTrunk = newPowerset.nIDTrunkSet;
+                    newBranch = newPowerset.nID;
                 }
                 else
                 {
-                    index2 = newPowerset.nID;
-                    index3 = -1;
+                    newTrunk = newPowerset.nID;
+                    newBranch = -1;
                 }
             }
             for (int index4 = 0; index4 < this.Powersets.Length; ++index4)
@@ -1025,50 +1019,54 @@ namespace Base.Data_Classes
                 if (power.NIDPowerset >= 0)
                 {
                     int idxPower = power.IDXPower;
-                    if (power.NIDPowerset == index1)
+                    if (power.NIDPowerset == oldTrunk)
                     {
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[index1].Power.Length && DatabaseAPI.Database.Powersets[index1].Powers[index4].Level == 0; ++index4)
+                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
                             --idxPower;
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[index2].Power.Length && DatabaseAPI.Database.Powersets[index2].Powers[index4].Level == 0; ++index4)
+                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
                             ++idxPower;
-                        if (index2 < 0)
+                        if (newTrunk < 0)
                             power.Reset();
-                        else if (idxPower > DatabaseAPI.Database.Powersets[index2].Power.Length - 1 || idxPower < 0)
+                        else if (idxPower > DatabaseAPI.Database.Powersets[newTrunk].Power.Length - 1 || idxPower < 0)
                         {
                             power.Reset();
                         }
                         else
                         {
-                            power.NIDPowerset = index2;
-                            power.NIDPower = DatabaseAPI.Database.Powersets[index2].Power[idxPower];
+                            power.NIDPowerset = newTrunk;
+                            power.NIDPower = DatabaseAPI.Database.Powersets[newTrunk].Power[idxPower];
                             power.IDXPower = idxPower;
                         }
                     }
-                    else if (power.NIDPowerset == num)
+                    else if (power.NIDPowerset == oldBranch)
                     {
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[index1].Power.Length && DatabaseAPI.Database.Powersets[index1].Powers[index4].Level == 0; ++index4)
+                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[oldTrunk].Power.Length && DatabaseAPI.Database.Powersets[oldTrunk].Powers[index4].Level == 0; ++index4)
                             --idxPower;
-                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[index2].Power.Length && DatabaseAPI.Database.Powersets[index2].Powers[index4].Level == 0; ++index4)
+                        for (int index4 = 0; index4 < DatabaseAPI.Database.Powersets[newTrunk].Power.Length && DatabaseAPI.Database.Powersets[newTrunk].Powers[index4].Level == 0; ++index4)
                             ++idxPower;
-                        if (index3 < 0 || idxPower > DatabaseAPI.Database.Powersets[index3].Power.Length - 1)
+                        if (newBranch < 0 || idxPower > DatabaseAPI.Database.Powersets[newBranch].Power.Length - 1)
                         {
                             power.Reset();
                         }
                         else
                         {
-                            power.NIDPowerset = index3;
-                            power.NIDPower = DatabaseAPI.Database.Powersets[index3].Power[idxPower];
+                            power.NIDPowerset = newBranch;
+                            power.NIDPower = DatabaseAPI.Database.Powersets[newBranch].Power[idxPower];
                             power.IDXPower = idxPower;
                         }
                     }
                     if (power.Power == null || !power.Power.Slottable)
-                        power.Slots = new SlotEntry[0];
+                        power.Slots = Array.Empty<SlotEntry>();
                     else if (power.Slots.Length == 0)
                     {
-                        power.Slots = new SlotEntry[1];
-                        power.Slots[0].Enhancement = new I9Slot();
-                        power.Slots[0].FlippedEnhancement = new I9Slot();
-                        power.Slots[0].Level = power.Level;
+                        power.Slots = new[]{
+                            new SlotEntry
+                            {
+                                Enhancement = new I9Slot(),
+                                FlippedEnhancement = new I9Slot(),
+                                Level = power.Level
+                            }
+                        };
                     }
                     else if (idxPower > -1)
                     {

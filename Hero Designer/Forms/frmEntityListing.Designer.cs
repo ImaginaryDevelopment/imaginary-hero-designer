@@ -61,7 +61,7 @@ namespace Hero_Designer
             this.lvEntity.TabIndex = 0;
             this.lvEntity.UseCompatibleStateImageBehavior = false;
             this.lvEntity.View = System.Windows.Forms.View.Details;
-            this.lvEntity.DoubleClick += lvEntity_DoubleClick;
+            this.lvEntity.DoubleClick += new System.EventHandler(lvEntity_DoubleClick);
             this.ColumnHeader1.Text = "Entity";
             this.ColumnHeader1.Width = 153;
             this.ColumnHeader2.Text = "Name";
@@ -76,7 +76,7 @@ namespace Hero_Designer
             this.btnUp.TabIndex = 1;
             this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += btnUp_Click;
+            this.btnUp.Click += new System.EventHandler(btnUp_Click);
 
             this.btnDown.Location = new System.Drawing.Point(416, 41);
             this.btnDown.Name = "btnDown";
@@ -85,7 +85,7 @@ namespace Hero_Designer
             this.btnDown.TabIndex = 2;
             this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += btnDown_Click;
+            this.btnDown.Click += new System.EventHandler(btnDown_Click);
 
             this.btnAdd.Location = new System.Drawing.Point(416, 100);
             this.btnAdd.Name = "btnAdd";
@@ -94,7 +94,7 @@ namespace Hero_Designer
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += btnAdd_Click;
+            this.btnAdd.Click += new System.EventHandler(btnAdd_Click);
 
             this.btnDelete.Location = new System.Drawing.Point(416, 158);
             this.btnDelete.Name = "btnDelete";
@@ -103,7 +103,7 @@ namespace Hero_Designer
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Click += new System.EventHandler(btnDelete_Click);
 
             this.btnEdit.Location = new System.Drawing.Point(416, 187);
             this.btnEdit.Name = "btnEdit";
@@ -112,7 +112,7 @@ namespace Hero_Designer
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += btnEdit_Click;
+            this.btnEdit.Click += new System.EventHandler(btnEdit_Click);
 
             this.btnOK.Location = new System.Drawing.Point(416, 391);
             this.btnOK.Name = "btnOK";
@@ -121,7 +121,7 @@ namespace Hero_Designer
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += btnOK_Click;
+            this.btnOK.Click += new System.EventHandler(btnOK_Click);
 
             this.btnCancel.Location = new System.Drawing.Point(416, 420);
             this.btnCancel.Name = "btnCancel";
@@ -130,7 +130,7 @@ namespace Hero_Designer
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += btnCancel_Click;
+            this.btnCancel.Click += new System.EventHandler(btnCancel_Click);
 
             this.btnClone.Location = new System.Drawing.Point(416, 129);
             this.btnClone.Name = "btnClone";
@@ -139,7 +139,7 @@ namespace Hero_Designer
             this.btnClone.TabIndex = 8;
             this.btnClone.Text = "Clone";
             this.btnClone.UseVisualStyleBackColor = true;
-            this.btnClone.Click += btnClone_Click;
+            this.btnClone.Click += new System.EventHandler(btnClone_Click);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 
             this.ClientSize = new System.Drawing.Size(501, 454);
