@@ -170,7 +170,7 @@ namespace Hero_Designer
 
         void csReset_Click(object sender, EventArgs e)
         {
-            if (Interaction.MsgBox("This will remove all of the colour schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
+            if (Interaction.MsgBox("This will remove all of the color schemes and replace them with the defaults. Are you sure?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             MidsContext.Config.Export.ResetColorsToDefaults();
             this.csPopulateList(-1);
