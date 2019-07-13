@@ -154,6 +154,7 @@ namespace Hero_Designer
             }
         }
 
+
         void csPopulateList(int HighlightID = -1)
         {
             this.csList.Items.Clear();
@@ -525,6 +526,18 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.lblSaveFolder.Text = config.DefaultSaveFolder;
             this.txtUpdatePath.Text = config.UpdatePath;
+            this.dNickNameTextBox.Text = config.DNickName;
+            this.dExListListBox.SelectedItem = config.DExList;
+            this.dcWebhookURLTextBox.Text = config.DWebhook;
+            if (dExListListBox.SelectedIndex != 2)
+            {
+                dcWebhookURLTextBox.Enabled = false;
+
+            }
+            else
+            {
+                dcWebhookURLTextBox.Enabled = true;
+            }
             this.chkColorInherent.Checked = config.DesaturateInherent;
             this.chkMiddle.Checked = config.ReapeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
@@ -700,6 +713,9 @@ namespace Hero_Designer
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;
             config.LoadLastFileOnStart = this.chkLoadLastFile.Checked;
+            config.DNickName = dNickNameTextBox.Text;
+            config.DExList = (string) dExListListBox.SelectedItem;
+            config.DWebhook = dcWebhookURLTextBox.Text;
             if (config.DefaultSaveFolder != this.lblSaveFolder.Text)
             {
                 config.DefaultSaveFolder = this.lblSaveFolder.Text;

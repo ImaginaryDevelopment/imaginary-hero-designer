@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Base.Master_Classes;
+
 public interface ISerialize
 {
     string Serialize(object o);
@@ -45,6 +47,9 @@ public class ConfigData
     public string LastFileName = string.Empty;
     public string DSaveFile;
     public string DefaultSaveFolder = string.Empty;
+    public string DNickName = string.Empty;
+    public string DExList = string.Empty;
+    public string DWebhook = string.Empty;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -134,6 +139,9 @@ public class ConfigData
         this.I9.ExportExtraSep = false;
         this.UpdatePath = "";
         this.DefaultSaveFolder = OS.GetDefaultSaveFolder();
+        this.DNickName = "";
+        this.DExList = "";
+        this.DWebhook = "";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
@@ -183,6 +191,9 @@ public class ConfigData
                         //fileStream.Close();
                         return;
                 }
+                this.DNickName = reader.ReadString();
+                this.DExList = reader.ReadString();
+                this.DWebhook = reader.ReadString();
                 this.NoToolTips = reader.ReadBoolean();
                 this.BaseAcc = reader.ReadSingle();
                 double num3 = (double)reader.ReadSingle();
@@ -380,6 +391,9 @@ public class ConfigData
         {
             name,
             version,
+            this.DNickName,
+            this.DExList,
+            this.DWebhook,
             this.NoToolTips,
             this.BaseAcc,
             this.CalcEnhLevel,
@@ -489,6 +503,9 @@ public class ConfigData
             {
                 writer.Write(name);
                 writer.Write(version);
+                writer.Write(this.DNickName);
+                writer.Write(this.DExList);
+                writer.Write(this.DWebhook);
                 writer.Write(this.NoToolTips);
                 writer.Write(this.BaseAcc);
                 writer.Write(0.0f);

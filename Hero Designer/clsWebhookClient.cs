@@ -1,10 +1,14 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Base.Master_Classes;
 using Discord;
 using Discord.Webhook;
+using midsControls;
 using Microsoft.VisualBasic.CompilerServices;
 using System.IO;
 using System.Net;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Hero_Designer
 {
@@ -14,24 +18,24 @@ namespace Hero_Designer
         public string DExt;
 
 
-        /*public enum classImages
-    {
-        Arachnos_Soldier,
-        Arachnos_Widow,
-        Blaster,
-        Brute,
-        Controller,
-        Corruptor,
-        Defender,
-        Dominator,
-        Mastermind,
-        Peacebringer,
-        Scrapper,
-        Sentinel,
-        Stalker,
-        Tanker,
-        Warshade,
-    }*/
+        public static string GetDescription(Enum value)
+        {
+            Type type = value.GetType();
+            string name = Enum.GetName(type, value);
+            if (name != null)
+            {
+                FieldInfo field = type.GetField(name);
+                if (field != null)
+                {
+                    if (Attribute.GetCustomAttribute(field, 
+                        typeof(DescriptionAttribute)) is DescriptionAttribute attr)
+                    {
+                        return attr.Description;
+                    }
+                }
+            }
+            return null;
+        }
    
         private string ShrinkTheDatalink(string strUrl)
         {
@@ -54,23 +58,25 @@ namespace Hero_Designer
 
         public async void MainAsync()
         {
-            
-            var buser = typeof(IGuildUser);
+
+            var usernick = MidsContext.Config.DNickName;
             var datalink = MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true);
             Thread.Sleep(1000);
             var shrunkData = ShrinkTheDatalink(datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             int num = MidsContext.Character.Level + 1;
             if (num > 50) { num = 50; }
-            
+
+
+            //Webhook will not be put in the client, instead it will be resolved from outside source. The one below is for testing.
             //var clsIMG = "https://cdn.discordapp.com/attachments/598239101996498974/598239347719929856/Class_Arachnos_Soldier.png";
             using (var client = new DiscordWebhookClient("https://discordapp.com/api/webhooks/593337209742950439/7je23WmUmQhT4kDrS0gA5MF5aGli8zbYCAuwXPE0-jksLohfgtpQ0etdLdiJSAaRMoon"))
             {
                 var author = new EmbedAuthorBuilder()
                     .WithName("Level " + Conversions.ToString(num) + " " + MidsContext.Character.Archetype.DisplayName);
-                //.WithIconUrl("");
+                    //.WithIconUrl(eImage);
                 var footer = new EmbedFooterBuilder()
-                    .WithText($"Submitted by {buser}")
+                    .WithText($"Submitted by {usernick}")
                     .WithIconUrl("https://discordapp.com/assets/28174a34e77bb5e5310ced9f95cb480b.png");
                 var field1 = new EmbedFieldBuilder()
                     .WithName("Primary Powerset")

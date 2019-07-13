@@ -103,6 +103,16 @@ namespace Hero_Designer
             this.Label11 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.udExHigh = new System.Windows.Forms.NumericUpDown();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dcWebhookURLTextBox = new System.Windows.Forms.TextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.dExListListBox = new System.Windows.Forms.ListBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dNickNameTextBox = new System.Windows.Forms.TextBox();
             this.TabPage4 = new System.Windows.Forms.TabPage();
             this.GroupBox12 = new System.Windows.Forms.GroupBox();
             this.fcReset = new System.Windows.Forms.Button();
@@ -166,16 +176,6 @@ namespace Hero_Designer
             this.myTip = new System.Windows.Forms.ToolTip(this.components);
             this.cPicker = new System.Windows.Forms.ColorDialog();
             this.fbdSave = new System.Windows.Forms.FolderBrowserDialog();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.dNickName = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.dExList = new System.Windows.Forms.ListBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.dcWebhookURL = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.TabControl1.SuspendLayout();
             this.TabPage3.SuspendLayout();
             this.GroupBox17.SuspendLayout();
@@ -199,6 +199,9 @@ namespace Hero_Designer
             this.GroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udExLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.udExHigh)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox18.SuspendLayout();
             this.TabPage4.SuspendLayout();
             this.GroupBox12.SuspendLayout();
             this.GroupBox11.SuspendLayout();
@@ -208,9 +211,6 @@ namespace Hero_Designer
             this.TabPage1.SuspendLayout();
             this.GroupBox9.SuspendLayout();
             this.GroupBox7.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox19.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
@@ -1089,6 +1089,118 @@ namespace Hero_Designer
             0,
             0});
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.richTextBox3);
+            this.tabPage7.Controls.Add(this.groupBox19);
+            this.tabPage7.Controls.Add(this.groupBox18);
+            this.tabPage7.Location = new System.Drawing.Point(4, 23);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(630, 325);
+            this.tabPage7.TabIndex = 7;
+            this.tabPage7.Text = "Discord Export Settings";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox3.Location = new System.Drawing.Point(39, 185);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(201, 96);
+            this.richTextBox3.TabIndex = 2;
+            this.richTextBox3.Text = "More Discord settings may be available\nin the future.";
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.label17);
+            this.groupBox19.Controls.Add(this.dcWebhookURLTextBox);
+            this.groupBox19.Controls.Add(this.richTextBox2);
+            this.groupBox19.Controls.Add(this.dExListListBox);
+            this.groupBox19.Location = new System.Drawing.Point(270, 6);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(354, 266);
+            this.groupBox19.TabIndex = 1;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Export To:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(94, 221);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(157, 14);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Custom Discord Webhook URL:";
+            // 
+            // dcWebhookURLTextBox
+            // 
+            this.dcWebhookURLTextBox.Enabled = false;
+            this.dcWebhookURLTextBox.Location = new System.Drawing.Point(6, 238);
+            this.dcWebhookURLTextBox.Name = "dcWebhookURLTextBox";
+            this.dcWebhookURLTextBox.Size = new System.Drawing.Size(342, 20);
+            this.dcWebhookURLTextBox.TabIndex = 2;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(342, 33);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "Select a Discord to export to below. If custom is selected you will \nneed to set " +
+    "the webhook URL.";
+            // 
+            // dExListListBox
+            // 
+            this.dExListListBox.FormattingEnabled = true;
+            this.dExListListBox.ItemHeight = 14;
+            this.dExListListBox.Items.AddRange(new object[] {
+            "Mids\' Reborn Discord (Default)",
+            "Homecoming Servers Discord",
+            "Custom Discord"});
+            this.dExListListBox.Location = new System.Drawing.Point(6, 58);
+            this.dExListListBox.Name = "dExListListBox";
+            this.dExListListBox.Size = new System.Drawing.Size(342, 144);
+            this.dExListListBox.TabIndex = 0;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.richTextBox1);
+            this.groupBox18.Controls.Add(this.dNickNameTextBox);
+            this.groupBox18.Location = new System.Drawing.Point(8, 6);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(256, 97);
+            this.groupBox18.TabIndex = 0;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Discord Nickname:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Location = new System.Drawing.Point(31, 58);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(219, 33);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord.";
+            // 
+            // dNickNameTextBox
+            // 
+            this.dNickNameTextBox.Location = new System.Drawing.Point(6, 32);
+            this.dNickNameTextBox.Name = "dNickNameTextBox";
+            this.dNickNameTextBox.Size = new System.Drawing.Size(244, 20);
+            this.dNickNameTextBox.TabIndex = 0;
+            // 
             // TabPage4
             // 
             this.TabPage4.Controls.Add(this.GroupBox12);
@@ -1703,117 +1815,6 @@ namespace Hero_Designer
             // 
             this.cPicker.FullOpen = true;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.richTextBox3);
-            this.tabPage7.Controls.Add(this.groupBox19);
-            this.tabPage7.Controls.Add(this.groupBox18);
-            this.tabPage7.Location = new System.Drawing.Point(4, 23);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(630, 325);
-            this.tabPage7.TabIndex = 7;
-            this.tabPage7.Text = "Discord Export Settings";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.richTextBox1);
-            this.groupBox18.Controls.Add(this.dNickName);
-            this.groupBox18.Location = new System.Drawing.Point(8, 6);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(256, 97);
-            this.groupBox18.TabIndex = 0;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Discord Nickname:";
-            // 
-            // dNickName
-            // 
-            this.dNickName.Location = new System.Drawing.Point(6, 32);
-            this.dNickName.Name = "dNickName";
-            this.dNickName.Size = new System.Drawing.Size(244, 20);
-            this.dNickName.TabIndex = 0;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Location = new System.Drawing.Point(31, 58);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(219, 33);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord.";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.label17);
-            this.groupBox19.Controls.Add(this.dcWebhookURL);
-            this.groupBox19.Controls.Add(this.richTextBox2);
-            this.groupBox19.Controls.Add(this.dExList);
-            this.groupBox19.Location = new System.Drawing.Point(270, 6);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(354, 266);
-            this.groupBox19.TabIndex = 1;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Export To:";
-            // 
-            // dExList
-            // 
-            this.dExList.FormattingEnabled = true;
-            this.dExList.ItemHeight = 14;
-            this.dExList.Items.AddRange(new object[] {
-            "Mids\' Reborn Discord (Default)",
-            "Homecoming Servers Discord",
-            "Custom Discord"});
-            this.dExList.Location = new System.Drawing.Point(6, 58);
-            this.dExList.Name = "dExList";
-            this.dExList.Size = new System.Drawing.Size(342, 144);
-            this.dExList.TabIndex = 0;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox2.Size = new System.Drawing.Size(342, 33);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "Select a Discord to export to below. If custom is selected you will \nneed to set " +
-    "the webhook URL.";
-            // 
-            // dcWebhookURL
-            // 
-            this.dcWebhookURL.Location = new System.Drawing.Point(6, 238);
-            this.dcWebhookURL.Name = "dcWebhookURL";
-            this.dcWebhookURL.Size = new System.Drawing.Size(342, 20);
-            this.dcWebhookURL.TabIndex = 2;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(94, 221);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(157, 14);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Custom Discord Webhook URL:";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox3.Location = new System.Drawing.Point(39, 185);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(201, 96);
-            this.richTextBox3.TabIndex = 2;
-            this.richTextBox3.Text = "More Discord settings may be available\nin the future.";
-            // 
             // frmCalcOpt
             // 
             this.AcceptButton = this.btnOK;
@@ -1858,6 +1859,11 @@ namespace Hero_Designer
             this.GroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.udExLow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.udExHigh)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             this.TabPage4.ResumeLayout(false);
             this.GroupBox12.ResumeLayout(false);
             this.GroupBox12.PerformLayout();
@@ -1870,11 +1876,6 @@ namespace Hero_Designer
             this.TabPage1.PerformLayout();
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2021,11 +2022,11 @@ namespace Hero_Designer
         System.Windows.Forms.RichTextBox richTextBox3;
         System.Windows.Forms.GroupBox groupBox19;
         System.Windows.Forms.Label label17;
-        System.Windows.Forms.TextBox dcWebhookURL;
         System.Windows.Forms.RichTextBox richTextBox2;
-        System.Windows.Forms.ListBox dExList;
         System.Windows.Forms.GroupBox groupBox18;
         System.Windows.Forms.RichTextBox richTextBox1;
-        System.Windows.Forms.TextBox dNickName;
+        public System.Windows.Forms.TextBox dcWebhookURLTextBox;
+        public System.Windows.Forms.ListBox dExListListBox;
+        public System.Windows.Forms.TextBox dNickNameTextBox;
     }
 }
