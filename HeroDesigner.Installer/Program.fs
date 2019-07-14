@@ -31,8 +31,22 @@ type Msg =
   | Cancel
   | Install
   | Progress
+  | ZipInstaller
 
 module Updates =
+    let map f =
+        function
+        | Ok x -> f x |> Ok
+        | Error e -> Error e
+    let bind f =
+        function
+        | Ok x -> f x
+        | Error e -> Error e
+
+    let parentIs ending x =
+        let parent = Path.GetDirectoryName x
+        if parent.EndsWith ending then Ok parent
+        else Error <| sprintf "Parent should have been bin, but was %s" parent
     let selectFolder m =
         let dlg = new System.Windows.Forms.FolderBrowserDialog()
         if dlg.ShowDialog() = Forms.DialogResult.OK then
@@ -47,6 +61,26 @@ module Updates =
         | Decrement -> { m with Count = m.Count - m.StepSize }
         | SetStepSize x -> { m with StepSize = x }
         | SelectFolder -> selectFolder m
+        | ZipInstaller ->
+            if not System.Diagnostics.Debugger.IsAttached then
+                { m with Error="Bad state for zip installer"}
+            else
+                let here = Environment.CurrentDirectory
+                Ok here
+                |> bind (parentIs "bin")
+                |> bind (parentIs "HeroDesigner.Installer")
+                |> map Path.GetDirectoryName
+                |> function
+                    |Ok targetDir ->
+                        let dtPart = DateTime.Today
+                        let fn = Path.Combine(targetDir,sprintf "HeroDesignerInstaller.F%i.%02i.%02i.00.zip" dtPart.Year dtPart.Month dtPart.Day)
+                        Compression.compress(FilePath fn,DirPath here) |> ignore
+                        MessageBox.Show(sprintf "Compressed to %s" fn) |> ignore
+                        System.Diagnostics.Process.Start(targetDir) |> ignore
+                        m
+                    |Error e ->
+                        {m with Error=e}
+
         | Cancel ->
             Application.Current.Shutdown(0)
             m
@@ -93,9 +127,11 @@ module View =
         "SelectFolder" |> Binding.cmd(fun _ -> SelectFolder)
         "Cancel" |> Binding.cmd (fun _ -> Cancel)
         "Install" |> Binding.cmd(fun _ -> Install)
+        "ZipInstaller" |> Binding.cmd (fun _ -> ZipInstaller)
         "Progress" |> Binding.oneWay (fun m -> float m.Completion)
         "Error" |> Binding.oneWay (fun m -> m.Error)
         "InstallerSize" |> Binding.oneWay (fun m -> m.InstallerSize)
+        "ShowZip" |> Binding.oneWay(fun _ -> if System.Diagnostics.Debugger.IsAttached then Visibility.Visible else Visibility.Collapsed)
       ]
     let getResourceByName name f =
         let ass = typeof<Msg>.Assembly

@@ -30,10 +30,11 @@
             <Button Command="{Binding SelectFolder}" Content="Select Install Location" Margin="0,0,5,0" />
             <TextBlock TextAlignment="Center" Text="{Binding SelectedFolder, TargetNullValue='None', StringFormat='Installing to {0}'}" Margin="0,0,5,0" />
         </StackPanel>
-        <TextBlock Grid.Row="3" Text="{Binding Error}" />
+        <TextBlock Grid.Row="3" Text="{Binding Error}" Background="White" HorizontalAlignment="Left" />
         <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom">
             <Button Content="Cancel" Command="{Binding Cancel}" />
             <Button Content="Install" Command="{Binding Install}" />
+            <Button Content="Zip" Command="{Binding ZipInstaller}" Visibility="{Binding ShowZip}" />
             <ProgressBar Value="{Binding Progress}" />
         </StackPanel>
     </Grid>
