@@ -1015,7 +1015,7 @@ namespace Hero_Designer
             Rectangle rectangle1;
             for (int i = 0; i <= num1; ++i)
             {
-                point1.X = (int)Math.Round(point2.X + (this.drawing.szPower.Width - this.drawing.szSlot.Width * 6) / 2.0);
+                point1.X = (int)Math.Round(point2.X + (this.drawing.SzPower.Width - this.drawing.szSlot.Width * 6) / 2.0);
                 point1.Y = point2.Y + 18;
                 ++this.FlipSlotState[i];
                 float num2 = 1f;
@@ -1081,7 +1081,7 @@ namespace Hero_Designer
                         this.myDataView.FlipStage(i, Enh1, Enh2, num2, powerEntry.NIDPower, i9Slot1.Grade, i9Slot2.Grade);
                 }
             }
-            rectangle1 = new Rectangle(point1.X - 1, point1.Y - 1, this.drawing.szPower.Width + 1, this.drawing.szSlot.Height + 1);
+            rectangle1 = new Rectangle(point1.X - 1, point1.Y - 1, this.drawing.SzPower.Width + 1, this.drawing.szSlot.Height + 1);
             this.drawing.Refresh(this.drawing.ScaleDown(rectangle1));
             if (this.FlipSlotState[this.FlipSlotState.Length - 1] >= this.FlipSteps)
                 this.EndFlip();
@@ -2491,8 +2491,8 @@ namespace Hero_Designer
                 int x = position.X - this.dragXOffset;
                 position = Cursor.Position;
                 int y = position.Y - this.dragYOffset;
-                int width = this.drawing.ScaleDown(this.drawing.szPower.Width);
-                int height = this.drawing.ScaleDown(this.drawing.szPower.Height);
+                int width = this.drawing.ScaleDown(this.drawing.SzPower.Width);
+                int height = this.drawing.ScaleDown(this.drawing.SzPower.Height);
                 this.dragRect = new Rectangle(x, y, width, height);
             }
             if (!this.oldDragRect.IsEmpty)
@@ -2554,8 +2554,8 @@ namespace Hero_Designer
                     }
                     else
                     {
-                        this.dragXOffset = this.drawing.ScaleDown(this.drawing.szPower.Width / 2);
-                        this.dragYOffset = this.drawing.ScaleDown(this.drawing.szPower.Height / 2);
+                        this.dragXOffset = this.drawing.ScaleDown(this.drawing.SzPower.Width / 2);
+                        this.dragYOffset = this.drawing.ScaleDown(this.drawing.SzPower.Height / 2);
                     }
                     DataObject dataObject = new DataObject();
                     dataObject.SetText("This is some filler power text right here");
@@ -3992,7 +3992,7 @@ namespace Hero_Designer
             }
             else
                 this.tsFileSave.Text = "&Save";
-            string str2 = str1 + "Pine's Hero Designer";
+            string str2 = str1 + MidsContext.Title;
             if (!Hero)
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)

@@ -151,7 +151,7 @@ public class Build
                     power.SubPowers = new PowerSubEntry[power.Power.NIDSubPower.Length];
                 for (int index = 0; index <= power.Power.NIDSubPower.Length - 1; ++index)
                 {
-                    if (power.SubPowers[index].nIDPower != power.Power.NIDSubPower[index])
+                    if (power.SubPowers[index]?.nIDPower != power.Power.NIDSubPower[index])
                     {
                         power.SubPowers[index] = new PowerSubEntry()
                         {
@@ -1043,7 +1043,6 @@ public class Build
     }
 
     IPower GetSetBonusVirtualPower()
-
     {
         IPower power1 = (IPower)new Power();
         IPower power2;
@@ -1053,28 +1052,31 @@ public class Build
         }
         else
         {
-            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length];
+            var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
+            int[] numArray = new int[nidPowers.Length];
             for (int index = 0; index < numArray.Length; ++index)
                 numArray[index] = 0;
             List<IEffect> effectList = new List<IEffect>();
-            for (int index1 = 0; index1 < this.SetBonus.Count; ++index1)
-            {
-                for (int index2 = 0; index2 < this.SetBonus[index1].SetInfo.Length; ++index2)
-                {
-                    for (int index3 = 0; index3 < this.SetBonus[index1].SetInfo[index2].Powers.Length; ++index3)
+            foreach (var setBonus in this.SetBonus)
+                foreach (var setInfo in setBonus.SetInfo)
+                    foreach (var power in setInfo.Powers)
                     {
-                        if (this.SetBonus[index1].SetInfo[index2].Powers[index3] > -1)
+                        if (power > -1)
                         {
-                            ++numArray[this.SetBonus[index1].SetInfo[index2].Powers[index3]];
-                            if (numArray[this.SetBonus[index1].SetInfo[index2].Powers[index3]] < 6)
+                            if (power > numArray.Length - 1)
+                                throw new IndexOutOfRangeException("power to setBonusArray");
+                            ++numArray[power];
+                            if (numArray[power] < 6)
                             {
-                                for (int index4 = 0; index4 < DatabaseAPI.Database.Power[this.SetBonus[index1].SetInfo[index2].Powers[index3]].Effects.Length; ++index4)
-                                    effectList.Add((IEffect)DatabaseAPI.Database.Power[this.SetBonus[index1].SetInfo[index2].Powers[index3]].Effects[index4].Clone());
+                                for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
+                                    effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
+
                             }
                         }
+
+
                     }
-                }
-            }
+
             power1.Effects = effectList.ToArray();
             power2 = power1;
         }

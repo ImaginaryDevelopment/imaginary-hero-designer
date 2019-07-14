@@ -15,6 +15,7 @@ namespace Base
             next[next.Length - 1] = item;
             return next;
         }
+
         public static T[] RemoveIndex<T>(this T[] source, int index)
             => source.Where((_, i) => i != index).ToArray();
         public static T[] RemoveLast<T>(this T[] items)
@@ -38,7 +39,7 @@ namespace Base
         public static IEnumerable<T> ExceptIndex<T>(this IEnumerable<T> items, int badIndex)
         {
             var i = 0;
-            foreach(var item in items)
+            foreach (var item in items)
             {
                 if (i != badIndex)
                     yield return item;

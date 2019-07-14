@@ -10,7 +10,6 @@ using System.Runtime.CompilerServices;
 
 namespace Hero_Designer
 {
-    [StandardModule]
     public sealed class MainModule
     {
         public class MidsController
@@ -39,7 +38,6 @@ namespace Hero_Designer
                 }
             }
 
-            [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
             public static void LoadData(ref frmLoading iFrm)
             {
                 DatabaseAPI.LoadDatabaseVersion();

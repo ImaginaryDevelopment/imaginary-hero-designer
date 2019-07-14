@@ -173,7 +173,9 @@ public class ConfigData
                     case "Mids' Hero Designer Config":
                         num1 = 0.9f;
                         break;
+                    // here's something F# doesn't do easily
                     case "Mids' Hero Designer Config V2":
+                    case string x when x == header:
                         num1 = reader.ReadSingle();
                         break;
                     default:
@@ -477,16 +479,16 @@ public class ConfigData
         SaveRawMhd(serializer, toSerialize, iFilename);
     }
 
-    const string name = "Mids' Hero Designer Config V2";
+    const string header = "Mids' Hero Designer Config V2";
     void Save(ISerialize serializer, string iFilename, float version)
     {
-        SaveRaw(serializer, iFilename, version, name);
+        SaveRaw(serializer, iFilename, version, header);
 
         using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
         {
             using (BinaryWriter writer = new BinaryWriter(fileStream))
             {
-                writer.Write(name);
+                writer.Write(header);
                 writer.Write(version);
                 writer.Write(this.NoToolTips);
                 writer.Write(this.BaseAcc);

@@ -50,7 +50,7 @@ namespace midsControls
 
         // Token: 0x1700000D RID: 13
         // (set) Token: 0x0600001E RID: 30 RVA: 0x00002364 File Offset: 0x00000564
-        private int InitColumns
+        int InitColumns
         {
             set
             {
@@ -64,6 +64,8 @@ namespace midsControls
                 }
             }
         }
+
+        public Size SzPower { get; set; }
 
         public void ReInit(Control iTarget)
         {
@@ -91,7 +93,7 @@ namespace midsControls
                 }
                 this.ColourSwitch();
                 this.InitColumns = MidsContext.Config.Columns;
-                this.szPower = this.bxPower[0].Size;
+                this.SzPower = this.bxPower[0].Size;
                 this.szSlot = new Size(30, 30);
                 this.szBuffer = this.GetMaxDrawingArea();
                 Size size = new Size(this.szBuffer.Width, this.szBuffer.Height);
@@ -114,31 +116,21 @@ namespace midsControls
             }
         }
 
-        private void DrawSplit()
+        void DrawSplit()
         {
-            Pen pen;
-            if (this.VillainColor)
-            {
-                pen = new Pen(Color.Maroon, 2f);
-            }
-            else
-            {
-                pen = new Pen(Color.Blue, 2f);
-            }
+            Pen pen = this.VillainColor ? pen = new Pen(Color.Maroon, 2f) : new Pen(Color.Blue, 2f);
             checked
             {
-                int iValue = 4 + this.vcRowsPowers * (this.szPower.Height + 17) - 4;
-                this.bxBuffer.Graphics.DrawLine(pen, 0, this.ScaleDown(iValue), this.ScaleDown(this.PowerPosition(15).X + this.szPower.Width + 7), this.ScaleDown(iValue));
+                int iValue = 4 + this.vcRowsPowers * (this.SzPower.Height + 17) - 4;
+                this.bxBuffer.Graphics.DrawLine(pen, 0, this.ScaleDown(iValue), this.ScaleDown(this.PowerPosition(15).X + this.SzPower.Width + 7), this.ScaleDown(iValue));
             }
         }
 
         void DrawPowers()
         {
-            int num = 0;
             checked
             {
-                int num2 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int i = num; i <= num2; i++)
+                for (int i = 0; i <= MidsContext.Character.CurrentBuild.Powers.Count - 1; i++)
                 {
                     if (MidsContext.Character.CanPlaceSlot & this.Highlight == i)
                     {
@@ -173,75 +165,52 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000023 RID: 35 RVA: 0x000028D0 File Offset: 0x00000AD0
-        private float FontScale(float iSZ)
-        {
-            float num = this.ScaleDown(iSZ);
-            num = (float)((double)num * 1.1);
-            if (num > iSZ)
-            {
-                num = iSZ;
-            }
-            return num;
-        }
+        float FontScale(float iSZ) => Math.Min(this.ScaleDown(iSZ) * 1.1f, iSZ);
 
-        // Token: 0x06000024 RID: 36 RVA: 0x00002908 File Offset: 0x00000B08
-        private static int IndexFromLevel()
-        {
-            int num = 0;
-            int lastPower = MidsContext.Character.CurrentBuild.LastPower;
-            checked
-            {
-                for (int i = num; i <= lastPower; i++)
-                {
-                    if (MidsContext.Character.CurrentBuild.Powers[i].Level == MidsContext.Character.RequestedLevel)
-                    {
-                        return i;
-                    }
-                }
-                return -1;
-            }
-        }
+        static int IndexFromLevel()
+            => MidsContext.Character.CurrentBuild.Powers.FindIndex(pow => pow?.Level == MidsContext.Character.RequestedLevel);
 
-        public Point DrawPowerSlot(ref PowerEntry iSlot, bool SingleDraw = false)
+        public Point DrawPowerSlot(ref PowerEntry iSlot, bool singleDraw = false)
         {
             Pen pen = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
             string text = string.Empty;
             string text2 = string.Empty;
             RectangleF rectangleF = new RectangleF(0f, 0f, 0f, 0f);
-            StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap | StringFormatFlags.NoClip);
-            stringFormat.Trimming = StringTrimming.None;
+            var stringFormat = new StringFormat(StringFormatFlags.NoWrap | StringFormatFlags.NoClip)
+            {
+                Trimming = StringTrimming.None
+            };
             Pen pen2 = new Pen(Color.Black);
-            Rectangle rectangle = default(Rectangle);
+            Rectangle rectangle = default;
             Font font = new Font(this.DefaultFont.FontFamily, this.FontScale(this.DefaultFont.SizeInPoints), this.DefaultFont.Style, GraphicsUnit.Point);
             int num = MidsContext.Character.SlotCheck(iSlot);
-            bool flag = this.InterfaceMode == Enums.eInterfaceMode.PowerToggle;
-            bool flag2 = false;
+            bool indicating = false;
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
-            bool flag3 = iSlot.Power != null;
-            if (flag3)
-            {
-                flag3 = ((((iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) & iSlot.Slots.Length < 6) && SingleDraw) & iSlot.Power.Slottable & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle);
-            }
+            bool drawNewSlot = iSlot.Power != null && (iSlot.State != Enums.ePowerState.Empty && canPlaceSlot) && iSlot.Slots.Length < 6 && singleDraw && iSlot.Power.Slottable & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle;
             Point result = this.PowerPosition(iSlot, -1);
             Point point = default;
             checked
             {
-                point.X = (int)Math.Round(unchecked((double)result.X + (double)(checked(this.szPower.Width - this.szSlot.Width * 6)) / 2.0));
+                point.X = (int)Math.Round(unchecked(result.X + (double)(checked(this.SzPower.Width - this.szSlot.Width * 6)) / 2.0));
                 point.Y = result.Y + 18;
                 Graphics graphics = this.bxBuffer.Graphics;
                 Brush brush = new SolidBrush(this.BackColor);
-                Rectangle clipRect = new Rectangle(point.X, point.Y, this.szPower.Width, this.szPower.Height);
+                Rectangle clipRect = new Rectangle(point.X, point.Y, this.SzPower.Width, this.SzPower.Height);
                 graphics.FillRectangle(brush, this.ScaleDown(clipRect));
-                if (!flag)
+                var toggling = this.InterfaceMode == Enums.eInterfaceMode.PowerToggle;
+                if (!toggling)
                 {
                     if (iSlot.Power != null)
                     {
-                        if (((SingleDraw & num > -1) && canPlaceSlot) & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle & iSlot.PowerSet != null & iSlot.Slots.Length < 6 & iSlot.Power.Slottable)
-                        {
+                        if (singleDraw
+                                && num > -1
+                                && canPlaceSlot
+                                && this.InterfaceMode != Enums.eInterfaceMode.PowerToggle
+                                && iSlot.PowerSet != null
+                                && iSlot.Slots.Length < 6
+                                && iSlot.Power.Slottable)
                             ePowerState = Enums.ePowerState.Open;
-                        }
                         else if (iSlot.Chosen & !canPlaceSlot & this.InterfaceMode != Enums.eInterfaceMode.PowerToggle & this.Highlight == MidsContext.Character.CurrentBuild.Powers.IndexOf(iSlot))
                         {
                             ePowerState = Enums.ePowerState.Open;
@@ -259,7 +228,7 @@ namespace midsControls
                 this.bxBuffer.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 bool grey;
                 ImageAttributes imageAttr;
-                if (flag)
+                if (toggling)
                 {
                     if (ePowerState == Enums.ePowerState.Open)
                     {
@@ -268,7 +237,7 @@ namespace midsControls
                     if (iSlot.StatInclude & ePowerState == Enums.ePowerState.Used)
                     {
                         ePowerState = Enums.ePowerState.Open;
-                        grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
+                        grey = iSlot.Level >= MidsContext.Config.ForceLevel;
                         imageAttr = this.GreySlot(grey, true);
                     }
                     else if (iSlot.CanIncludeForStats())
@@ -284,12 +253,12 @@ namespace midsControls
                 }
                 else
                 {
-                    flag2 = true;
+                    indicating = true;
                     grey = (iSlot.Level >= MidsContext.Config.ForceLevel);
                     imageAttr = this.GreySlot(grey, false);
                 }
                 Rectangle iValue = new Rectangle(result.X, result.Y, this.bxPower[(int)ePowerState].Size.Width, this.bxPower[(int)ePowerState].Size.Height);
-                if (ePowerState == Enums.ePowerState.Used || flag)
+                if (ePowerState == Enums.ePowerState.Used || toggling)
                 {
                     if (MidsContext.Config.DesaturateInherent & !iSlot.Chosen)
                     {
@@ -315,7 +284,7 @@ namespace midsControls
                     clipRect = this.bxPower[(int)ePowerState].ClipRect;
                     graphics3.DrawImage(bitmap2, destRect2, srcX2, srcY2, width2, clipRect.Height, GraphicsUnit.Pixel);
                 }
-                if ((flag2 || flag) & iSlot.CanIncludeForStats())
+                if ((indicating || toggling) && iSlot.CanIncludeForStats())
                 {
                     rectangle.Height = 15;
                     rectangle.Width = rectangle.Height;
@@ -338,23 +307,19 @@ namespace midsControls
                     this.bxBuffer.Graphics.FillEllipse(brush2, rectangle);
                     this.bxBuffer.Graphics.DrawEllipse(pen2, rectangle);
                 }
-                int num2 = 0;
-                int num3 = iSlot.Slots.Length - 1;
-                int i;
                 SolidBrush solidBrush;
                 //if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
                 var inDesigner = System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv");
-                for (i = num2; i <= num3; i++)
+                for (var i = 0; i <= iSlot.Slots.Length - 1; i++)
                 {
-                    rectangleF.X = (float)(point.X + this.szSlot.Width * i);
-                    rectangleF.Y = (float)point.Y;
-                    if (iSlot.Slots[i].Enhancement.Enh < 0)
+                    var slot = iSlot.Slots[i];
+                    rectangleF.X = point.X + this.szSlot.Width * i;
+                    rectangleF.Y = point.Y;
+                    if (slot.Enhancement.Enh < 0)
                     {
-                        Graphics graphics4 = this.bxBuffer.Graphics;
-                        Image bitmap3 = I9Gfx.EnhTypes.Bitmap;
                         Rectangle clipRect2 = new Rectangle((int)Math.Round((double)rectangleF.X), point.Y, 30, 30);
-                        graphics4.DrawImage(bitmap3, this.ScaleDown(clipRect2), 0, 0, 30, 30, GraphicsUnit.Pixel, this.pImageAttributes);
-                        if (MidsContext.Config.CalcEnhLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
+                        this.bxBuffer.Graphics.DrawImage(I9Gfx.EnhTypes.Bitmap, this.ScaleDown(clipRect2), 0, 0, 30, 30, GraphicsUnit.Pixel, this.pImageAttributes);
+                        if (MidsContext.Config.CalcEnhLevel == 0 | slot.Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & slot.Level < iSlot.Level))
                         {
                             solidBrush = new SolidBrush(Color.FromArgb(160, 0, 0, 0));
                             this.bxBuffer.Graphics.FillEllipse(solidBrush, this.ScaleDown(rectangleF));
@@ -364,11 +329,11 @@ namespace midsControls
                     else
                     {
                         if (inDesigner) continue;
-                        IEnhancement enhancement = DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh];
+                        IEnhancement enhancement = DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh];
                         Graphics graphics5 = this.bxBuffer.Graphics;
                         Rectangle clipRect2 = new Rectangle((int)Math.Round((double)rectangleF.X), point.Y, 30, 30);
-                        I9Gfx.DrawEnhancementAt(ref graphics5, this.ScaleDown(clipRect2), enhancement.ImageIdx, I9Gfx.ToGfxGrade(enhancement.TypeID, iSlot.Slots[i].Enhancement.Grade));
-                        if (iSlot.Slots[i].Enhancement.RelativeLevel == 0 | iSlot.Slots[i].Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & iSlot.Slots[i].Level < iSlot.Level))
+                        I9Gfx.DrawEnhancementAt(ref graphics5, this.ScaleDown(clipRect2), enhancement.ImageIdx, I9Gfx.ToGfxGrade(enhancement.TypeID, slot.Enhancement.Grade));
+                        if (slot.Enhancement.RelativeLevel == 0 | slot.Level >= MidsContext.Config.ForceLevel | (this.InterfaceMode == Enums.eInterfaceMode.PowerToggle & !iSlot.StatInclude) | (!iSlot.AllowFrontLoading & slot.Level < iSlot.Level))
                         {
                             solidBrush = new SolidBrush(Color.FromArgb(160, 0, 0, 0));
                             RectangleF iValue2 = rectangleF;
@@ -377,15 +342,15 @@ namespace midsControls
                         }
                         unchecked
                         {
-                            if (iSlot.Slots[i].Enhancement.Enh > -1)
+                            if (slot.Enhancement.Enh > -1)
                             {
-                                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.SetO
-                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.InventO))
+                                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SetO
+                                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.InventO))
                                 {
                                     RectangleF iValue2 = rectangleF;
                                     iValue2.Y -= 3f;
                                     iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
-                                    string iStr = Conversions.ToString(checked(iSlot.Slots[i].Enhancement.IOLevel + 1));
+                                    string iStr = Conversions.ToString(checked(slot.Enhancement.IOLevel + 1));
                                     RectangleF bounds = this.ScaleDown(iValue2);
                                     Color cyan = Color.Cyan;
                                     Color outline = Color.FromArgb(128, 0, 0, 0);
@@ -394,22 +359,22 @@ namespace midsControls
                                     graphics5 = this.bxBuffer.Graphics;
                                     clsDrawX.DrawOutlineText(iStr, bounds, cyan, outline, bFont, outlineSpace, ref graphics5, false, false);
                                 }
-                                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.Normal
-                                    | DatabaseAPI.Database.Enhancements[iSlot.Slots[i].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
+                                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal
+                                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SpecialO))
                                 {
                                     RectangleF iValue2 = rectangleF;
                                     iValue2.Y -= 3f;
                                     iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
                                     Color color;
-                                    if (iSlot.Slots[i].Enhancement.RelativeLevel == 0)
+                                    if (slot.Enhancement.RelativeLevel == 0)
                                     {
                                         color = Color.Red;
                                     }
-                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel < Enums.eEnhRelative.Even)
+                                    else if (slot.Enhancement.RelativeLevel < Enums.eEnhRelative.Even)
                                     {
                                         color = Color.Yellow;
                                     }
-                                    else if (iSlot.Slots[i].Enhancement.RelativeLevel > Enums.eEnhRelative.Even)
+                                    else if (slot.Enhancement.RelativeLevel > Enums.eEnhRelative.Even)
                                     {
                                         color = Color.FromArgb(0, 255, 255);
                                     }
@@ -417,7 +382,7 @@ namespace midsControls
                                     {
                                         color = Color.White;
                                     }
-                                    string relativeString = Enums.GetRelativeString(iSlot.Slots[i].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols);
+                                    string relativeString = Enums.GetRelativeString(slot.Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols);
                                     RectangleF bounds2 = this.ScaleDown(iValue2);
                                     Color text3 = color;
                                     Color outline2 = Color.FromArgb(128, 0, 0, 0);
@@ -438,19 +403,23 @@ namespace midsControls
                             iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
                             iValue2.Y -= iValue2.Height;
                         }
-                        string iStr2 = Conversions.ToString(iSlot.Slots[i].Level + 1);
-                        RectangleF bounds3 = this.ScaleDown(iValue2);
-                        Color text4 = Color.FromArgb(0, 255, 0);
-                        Color outline3 = Color.FromArgb(192, 0, 0, 0);
-                        Font bFont3 = font;
-                        float outlineSpace3 = 1f;
                         Graphics graphics5 = this.bxBuffer.Graphics;
-                        clsDrawX.DrawOutlineText(iStr2, bounds3, text4, outline3, bFont3, outlineSpace3, ref graphics5, false, false);
+                        clsDrawX.DrawOutlineText(
+                            iStr: Conversions.ToString(slot.Level + 1),
+                            bounds: this.ScaleDown(iValue2),
+                            textColor: Color.FromArgb(0, 255, 0),
+                            outlineColor: Color.FromArgb(192, 0, 0, 0),
+                            bFont: font,
+                            outlineSpace: 1f,
+                            g: ref graphics5);
+
+
                     }
                 }
-                if (num > -1 && (ePowerState != Enums.ePowerState.Empty && flag3))
+                if (num > -1 && (ePowerState != Enums.ePowerState.Empty && drawNewSlot))
                 {
-                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * i, point.Y, this.szSlot.Width, this.szSlot.Height);
+                    // why is this length - 1 instead of length?
+                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * (iSlot.Slots.Length - 1), point.Y, this.szSlot.Width, this.szSlot.Height);
                     RectangleF iValue2 = clipRect2;
                     this.bxBuffer.Graphics.DrawImage(this.bxNewSlot.Bitmap, this.ScaleDown(iValue2));
                     iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
@@ -471,7 +440,7 @@ namespace midsControls
                 stringFormat = new StringFormat();
                 rectangleF.X = (float)(result.X + 10);
                 rectangleF.Y = (float)(result.Y + 4);
-                rectangleF.Width = (float)this.szPower.Width;
+                rectangleF.Width = (float)this.SzPower.Width;
                 rectangleF.Height = unchecked(this.DefaultFont.GetHeight() * 2f);
                 Enums.ePowerState ePowerState2 = iSlot.State;
                 if (ePowerState2 == Enums.ePowerState.Empty & ePowerState == Enums.ePowerState.Open)
@@ -598,135 +567,114 @@ namespace midsControls
             GC.Collect();
         }
 
-        // Token: 0x06000028 RID: 40 RVA: 0x00003CD6 File Offset: 0x00001ED6
         public void Refresh(Rectangle Clip)
-        {
-            this.OutputRefresh(Clip, Clip, GraphicsUnit.Pixel);
-        }
+            => this.OutputRefresh(Clip, Clip, GraphicsUnit.Pixel);
 
-        private int GetVisualIDX(int PowerIndex)
+        int GetVisualIDX(int PowerIndex)
         {
             int nidpowerset = MidsContext.Character.CurrentBuild.Powers[PowerIndex].NIDPowerset;
             int idxpower = MidsContext.Character.CurrentBuild.Powers[PowerIndex].IDXPower;
             checked
             {
-                int num;
                 if (nidpowerset > -1)
                 {
+                    int vIdx;
                     if (DatabaseAPI.Database.Powersets[nidpowerset].SetType == Enums.ePowerSetType.Inherent)
                     {
-                        num = DatabaseAPI.Database.Powersets[nidpowerset].Powers[idxpower].LocationIndex;
+                        vIdx = DatabaseAPI.Database.Powersets[nidpowerset].Powers[idxpower].LocationIndex;
                     }
                     else
                     {
-                        num = -1;
+                        vIdx = -1;
                         for (int i = 0; i <= PowerIndex; i++)
                         {
                             if (MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset > -1)
                             {
                                 if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != Enums.ePowerSetType.Inherent)
                                 {
-                                    num++;
+                                    vIdx++;
                                 }
                             }
                             else
                             {
-                                num++;
+                                vIdx++;
                             }
                         }
                     }
+                    return vIdx;
                 }
                 else
                 {
-                    num = -1;
+                    var vIdx = -1;
                     for (int i = 0; i <= PowerIndex; i++)
                     {
                         if (MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset > -1)
                         {
                             if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[i].NIDPowerset].SetType != Enums.ePowerSetType.Inherent)
                             {
-                                num++;
+                                vIdx++;
                             }
                         }
                         else
                         {
-                            num++;
+                            vIdx++;
                         }
                     }
+                    return vIdx;
                 }
-                return num;
             }
         }
 
-        public static void DrawOutlineText(string iStr, RectangleF Bounds, Color Text, Color Outline, Font bFont, float OutlineSpace, ref Graphics Target, bool SmallMode = false, bool LeftAlign = false)
+        public static void DrawOutlineText(string iStr, RectangleF bounds, Color textColor, Color outlineColor, Font bFont, float outlineSpace, ref Graphics g, bool smallMode = false, bool leftAlign = false)
         {
             StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
                 LineAlignment = StringAlignment.Near,
-                Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center
+                Alignment = leftAlign ? StringAlignment.Near : StringAlignment.Center
             };
 
-            SolidBrush brush = new SolidBrush(Outline);
-            RectangleF layoutRectangle = Bounds;
-            RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(Target));
-            layoutRectangle2.X -= OutlineSpace;
-            if (!SmallMode)
-            {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            }
-            layoutRectangle2.Y -= OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.X += OutlineSpace;
-            if (!SmallMode)
-            {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            }
-            layoutRectangle2.X += OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.Y += OutlineSpace;
-            if (!SmallMode)
-            {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            }
-            layoutRectangle2.Y += OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.X -= OutlineSpace;
-            if (!SmallMode)
-            {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            }
-            layoutRectangle2.X -= OutlineSpace;
-            Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            layoutRectangle2.Y -= OutlineSpace;
-            if (!SmallMode)
-            {
-                Target.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
-            }
-            brush = new SolidBrush(Text);
-            Target.DrawString(iStr, bFont, brush, layoutRectangle, stringFormat);
+            SolidBrush brush = new SolidBrush(outlineColor);
+            RectangleF layoutRectangle = bounds;
+            RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(g));
+            layoutRectangle2.X -= outlineSpace;
+            if (!smallMode)
+                g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y -= outlineSpace;
+            g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X += outlineSpace;
+            if (!smallMode)
+                g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X += outlineSpace;
+            g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y += outlineSpace;
+            if (!smallMode)
+                g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y += outlineSpace;
+            g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X -= outlineSpace;
+            if (!smallMode)
+                g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.X -= outlineSpace;
+            g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            layoutRectangle2.Y -= outlineSpace;
+            if (!smallMode)
+                g.DrawString(iStr, bFont, brush, layoutRectangle2, stringFormat);
+            g.DrawString(iStr, bFont, new SolidBrush(textColor), layoutRectangle, stringFormat);
         }
 
         public int WhichSlot(int iX, int iY)
         {
-            int num = 0;
             checked
             {
-                int num2 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int i = num; i <= num2; i++)
+                for (int i = 0; i <= MidsContext.Character.CurrentBuild.Powers.Count - 1; i++)
                 {
                     Point point;
-                    if (MidsContext.Character.CurrentBuild.Powers[i].Power == null | MidsContext.Character.CurrentBuild.Powers[i].Chosen)
-                    {
+                    if (MidsContext.Character.CurrentBuild.Powers[i].Power == null || MidsContext.Character.CurrentBuild.Powers[i].Chosen)
                         point = this.PowerPosition(this.GetVisualIDX(i));
-                    }
                     else
-                    {
                         point = this.PowerPosition(i);
-                    }
-                    if ((iX >= point.X & iY >= point.Y) && (iX < this.szPower.Width + point.X & iY < point.Y + this.szPower.Height + 17))
-                    {
+                    if (iX >= point.X && iY >= point.Y && iX < this.SzPower.Width + point.X && iY < point.Y + this.SzPower.Height + 17)
                         return i;
-                    }
                 }
                 return -1;
             }
@@ -734,16 +682,13 @@ namespace midsControls
 
         public int WhichEnh(int iX, int iY)
         {
-            int result = -1;
-            int num = -1;
-            int num2 = 0;
+            int oPower = -1;
             checked
             {
-                int num3 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                 Point point = default;
-                for (int i = num2; i <= num3; i++)
+                for (int i = 0; i <= MidsContext.Character.CurrentBuild.Powers.Count - 1; i++)
                 {
-                    if (MidsContext.Character.CurrentBuild.Powers[i].Power == null | MidsContext.Character.CurrentBuild.Powers[i].Chosen)
+                    if (MidsContext.Character.CurrentBuild.Powers[i].Power == null || MidsContext.Character.CurrentBuild.Powers[i].Chosen)
                     {
                         point = this.PowerPosition(this.GetVisualIDX(i));
                     }
@@ -751,48 +696,44 @@ namespace midsControls
                     {
                         point = this.PowerPosition(i);
                     }
-                    if ((iX >= point.X & iY >= point.Y) && (iX < this.szPower.Width + point.X & iY < point.Y + this.szPower.Height + 17))
+                    if ((iX >= point.X && iY >= point.Y) && (iX < this.SzPower.Width + point.X && iY < point.Y + this.SzPower.Height + 17))
                     {
-                        num = i;
+                        oPower = i;
                         break;
                     }
                 }
-                if (num > -1)
+                if (oPower > -1)
                 {
-                    bool flag = false;
+                    bool isValid = false;
                     if (iY >= point.Y + 18)
                     {
-                        if (MidsContext.Character.CurrentBuild.Powers[num].NIDPowerset > -1)
+                        if (MidsContext.Character.CurrentBuild.Powers[oPower].NIDPowerset > -1)
                         {
-                            if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[num].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[num].IDXPower].Slottable)
+                            if (DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[oPower].NIDPowerset].Powers[MidsContext.Character.CurrentBuild.Powers[oPower].IDXPower].Slottable)
                             {
-                                flag = true;
+                                isValid = true;
                             }
                         }
                         else
                         {
-                            flag = true;
+                            isValid = true;
                         }
                     }
-                    if (flag)
+                    if (isValid)
                     {
-                        int num4 = MidsContext.Character.CurrentBuild.Powers[num].Slots.Length;
-                        iX = (int)Math.Round(unchecked(iX - (point.X + checked(this.szPower.Width - this.szSlot.Width * 6) / 2.0)));
-                        int num5 = 0;
-                        int num6 = num4 - 1;
-                        for (int i = num5; i <= num6; i++)
+                        iX = (int)Math.Round(unchecked(iX - (point.X + checked(this.SzPower.Width - this.szSlot.Width * 6) / 2.0)));
+                        for (int i = 0; i <= MidsContext.Character.CurrentBuild.Powers[oPower].Slots.Length - 1; i++)
                         {
                             if (iX <= (i + 1) * this.szSlot.Width)
                             {
-                                result = i;
-                                break;
+                                return i;
                             }
                         }
-                        return result;
+                        return -1;
                     }
-                    result = -1;
+                    return -1;
                 }
-                return result;
+                return -1;
             }
         }
 
@@ -825,7 +766,7 @@ namespace midsControls
                                 Point point = this.DrawPowerSlot(ref value, false);
                                 currentBuild.Powers[highlight] = value;
                                 point2 = point;
-                                iValue = new Rectangle(point2.X, point2.Y, this.szPower.Width, this.szPower.Height + 17);
+                                iValue = new Rectangle(point2.X, point2.Y, this.SzPower.Width, this.SzPower.Height + 17);
                                 rectangle = this.ScaleDown(iValue);
                                 this.DrawSplit();
                                 this.Output(ref this.bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
@@ -836,7 +777,7 @@ namespace midsControls
                             Point point3 = this.DrawPowerSlot(ref value, true);
                             currentBuild.Powers[Index] = value;
                             point2 = point3;
-                            iValue = new Rectangle(point2.X, point2.Y, this.szPower.Width, this.szPower.Height + 17);
+                            iValue = new Rectangle(point2.X, point2.Y, this.SzPower.Width, this.SzPower.Height + 17);
                             rectangle = this.ScaleDown(iValue);
                             this.DrawSplit();
                             this.Output(ref this.bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
@@ -850,7 +791,7 @@ namespace midsControls
                             Point point4 = this.DrawPowerSlot(ref value, false);
                             currentBuild.Powers[highlight] = value;
                             Point point2 = point4;
-                            Rectangle iValue = new Rectangle(point2.X, point2.Y, this.szPower.Width, this.szPower.Height + 17);
+                            Rectangle iValue = new Rectangle(point2.X, point2.Y, this.SzPower.Width, this.SzPower.Height + 17);
                             Rectangle rectangle = this.ScaleDown(iValue);
                             this.DrawSplit();
                             this.Output(ref this.bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
@@ -863,7 +804,7 @@ namespace midsControls
             }
         }
 
-        private void Blank()
+        void Blank()
         {
             if (this.bxBuffer != null)
             {
@@ -914,7 +855,7 @@ namespace midsControls
 
         void ResetTarget()
         {
-            if ((double)this.ScaleValue > 1.125)
+            if (this.ScaleValue > 1.125)
             {
                 this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             }
@@ -930,7 +871,6 @@ namespace midsControls
             this.gTarget.SmoothingMode = SmoothingMode.None;
         }
 
-        // Token: 0x06000031 RID: 49 RVA: 0x00004928 File Offset: 0x00002B28
         public int ScaleDown(int iValue)
         {
             int result;
@@ -1001,344 +941,136 @@ namespace midsControls
         {
             checked
             {
-                RectangleF result;
                 if (!this.ScaleEnabled)
-                {
-                    result = iValue;
-                }
-                else
-                {
-                    iValue.X = (int)Math.Round(iValue.X / this.ScaleValue);
-                    iValue.Y = (int)Math.Round(iValue.Y / this.ScaleValue);
-                    iValue.Width = (int)Math.Round(iValue.Width / this.ScaleValue);
-                    iValue.Height = (int)Math.Round(iValue.Height / this.ScaleValue);
-                    result = iValue;
-                }
-                return result;
+                    return iValue;
+                iValue.X = (int)Math.Round(iValue.X / this.ScaleValue);
+                iValue.Y = (int)Math.Round(iValue.Y / this.ScaleValue);
+                iValue.Width = (int)Math.Round(iValue.Width / this.ScaleValue);
+                iValue.Height = (int)Math.Round(iValue.Height / this.ScaleValue);
+                return iValue;
             }
         }
 
         void Output(ref ExtendedBitmap Buffer, Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
-        {
-            this.gTarget.DrawImage(Buffer.Bitmap, DestRect, SrcRect, iUnit);
-        }
+            => this.gTarget.DrawImage(Buffer.Bitmap, DestRect, SrcRect, iUnit);
 
         void OutputRefresh(Rectangle DestRect, Rectangle SrcRect, GraphicsUnit iUnit)
-        {
-            this.gTarget.DrawImage(this.bxBuffer.Bitmap, DestRect, SrcRect, iUnit);
-        }
+            => this.gTarget.DrawImage(this.bxBuffer.Bitmap, DestRect, SrcRect, iUnit);
 
         void OutputUnscaled(ref ExtendedBitmap Buffer, Point Location)
-        {
-            this.gTarget.DrawImageUnscaled(Buffer.Bitmap, Location);
-        }
+            => this.gTarget.DrawImageUnscaled(Buffer.Bitmap, Location);
 
+        public readonly static float[][] heroMatrix = new[]
+        {
+                new[] { 1f, 0f, 0f, 0f, 0f },
+                new[] { 0f, 1f, 0f, 0f, 0f },
+                new[] { 0f, 0f, 1f, 0f, 0f },
+                new[] { 0f, 0f, 0f, 1f, 0f },
+                new[] { 0f, 0f, 0f, 0f, 1f },
+        };
+        readonly static float[][] villainMatrix = new[]
+        {
+                new[] {0.45f, 0, 0, 0, 0},
+                new[] {0, 0.35f, 0, 0, 0},
+                new[] {0.75f, 0, 0, 0.175f, 0, 0},
+                new[] {0,0,0,1f,0},
+                new[] {0,0,0,0,1f}
+        };
         public void ColourSwitch()
         {
             bool useHeroColors = true;
-            if (this.pColorMatrix == null)
-            {
-                this.pColorMatrix = new ColorMatrix();
-            }
             if (MidsContext.Character != null)
-            {
                 useHeroColors = MidsContext.Character.IsHero();
-            }
             if (!MidsContext.Config.ShowVillainColours)
-            {
                 useHeroColors = true;
-            }
+
             this.VillainColor = !useHeroColors;
-            if (useHeroColors)
-            {
-                float[][] array = new float[5][];
-                float[][] array2 = array;
-                int num = 0;
-                float[] array3 = new float[5];
-                array3[0] = 1f;
-                array2[num] = array3;
-                float[][] array4 = array;
-                int num2 = 1;
-                array3 = new float[5];
-                array3[1] = 1f;
-                array4[num2] = array3;
-                float[][] array5 = array;
-                int num3 = 2;
-                array3 = new float[5];
-                array3[2] = 1f;
-                array5[num3] = array3;
-                float[][] array6 = array;
-                int num4 = 3;
-                array3 = new float[5];
-                array3[3] = 1f;
-                array6[num4] = array3;
-                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
-                this.pColorMatrix = new ColorMatrix(array);
-            }
-            else
-            {
-                float[][] array = new float[5][];
-                float[][] array7 = array;
-                int num5 = 0;
-                float[] array3 = new float[5];
-                array3[0] = 0.45f;
-                array7[num5] = array3;
-                float[][] array8 = array;
-                int num6 = 1;
-                array3 = new float[5];
-                array3[1] = 0.35f;
-                array8[num6] = array3;
-                float[][] array9 = array;
-                int num7 = 2;
-                array3 = new float[5];
-                array3[0] = 0.75f;
-                array3[2] = 0.175f;
-                array9[num7] = array3;
-                float[][] array10 = array;
-                int num8 = 3;
-                array3 = new float[5];
-                array3[3] = 1f;
-                array10[num8] = array3;
-                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
-                this.pColorMatrix = new ColorMatrix(array);
-            }
+            this.pColorMatrix = new ColorMatrix(useHeroColors ? heroMatrix : villainMatrix);
             if (this.pImageAttributes == null)
-            {
                 this.pImageAttributes = new ImageAttributes();
-            }
             this.pImageAttributes.SetColorMatrix(this.pColorMatrix);
         }
 
         public static ImageAttributes GetRecolourIa(bool hero)
         {
-            ColorMatrix colorMatrix;
-            if (hero)
-            {
-                float[][] array = new float[5][];
-                float[][] array2 = array;
-                int num = 0;
-                float[] array3 = new float[5];
-                array3[0] = 1f;
-                array2[num] = array3;
-                float[][] array4 = array;
-                int num2 = 1;
-                array3 = new float[5];
-                array3[1] = 1f;
-                array4[num2] = array3;
-                float[][] array5 = array;
-                int num3 = 2;
-                array3 = new float[5];
-                array3[2] = 1f;
-                array5[num3] = array3;
-                float[][] array6 = array;
-                int num4 = 3;
-                array3 = new float[5];
-                array3[3] = 1f;
-                array6[num4] = array3;
-                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
-                colorMatrix = new ColorMatrix(array);
-            }
-            else
-            {
-                float[][] array = new float[5][];
-                float[][] array7 = array;
-                int num5 = 0;
-                float[] array3 = new float[5];
-                array3[0] = 0.45f;
-                array7[num5] = array3;
-                float[][] array8 = array;
-                int num6 = 1;
-                array3 = new float[5];
-                array3[1] = 0.35f;
-                array8[num6] = array3;
-                float[][] array9 = array;
-                int num7 = 2;
-                array3 = new float[5];
-                array3[0] = 0.75f;
-                array3[2] = 0.175f;
-                array9[num7] = array3;
-                float[][] array10 = array;
-                int num8 = 3;
-                array3 = new float[5];
-                array3[3] = 1f;
-                array10[num8] = array3;
-                array[4] = new float[] { 0f, 0f, 0f, 0f, 1f };
-                colorMatrix = new ColorMatrix(array);
-            }
+            var colorMatrix = new ColorMatrix(hero ? heroMatrix : villainMatrix);
             ImageAttributes imageAttributes = new ImageAttributes();
             imageAttributes.SetColorMatrix(colorMatrix);
             return imageAttributes;
         }
 
-        // Token: 0x0600003B RID: 59 RVA: 0x00004E14 File Offset: 0x00003014
-        private ImageAttributes GreySlot(bool grey, bool bypassIa = false)
+        ImageAttributes GreySlot(bool grey, bool bypassIa = false)
         {
+            if (!grey)
+            {
+                if (bypassIa) return new ImageAttributes();
+                return this.pImageAttributes;
+            }
             checked
             {
-                ImageAttributes result;
-                if (grey)
+
+                ColorMatrix colorMatrix = new ColorMatrix(heroMatrix);
+                int r = 0;
+                do
                 {
-                    float[][] array = new float[5][];
-                    float[][] array2 = array;
-                    int num = 0;
-                    float[] array3 = new float[5];
-                    array3[0] = 1f;
-                    array2[num] = array3;
-                    float[][] array4 = array;
-                    int num2 = 1;
-                    array3 = new float[5];
-                    array3[1] = 1f;
-                    array4[num2] = array3;
-                    float[][] array5 = array;
-                    int num3 = 2;
-                    array3 = new float[5];
-                    array3[2] = 1f;
-                    array5[num3] = array3;
-                    float[][] array6 = array;
-                    int num4 = 3;
-                    array3 = new float[5];
-                    array3[3] = 1f;
-                    array6[num4] = array3;
-                    array[4] = new float[]
-                    {
-                        0f,
-                        0f,
-                        0f,
-                        0f,
-                        1f
-                    };
-                    ColorMatrix colorMatrix = new ColorMatrix(array);
-                    int num5 = 0;
+                    int c = 0;
                     do
                     {
-                        int num6 = 0;
-                        do
+                        if (!bypassIa)
                         {
-                            if (!bypassIa)
-                            {
-                                colorMatrix[num5, num6] = this.pColorMatrix[num5, num6];
-                            }
-                            if (num5 != 4)
-                            {
-                                colorMatrix[num5, num6] = (float)((double)colorMatrix[num5, num6] / 1.5);
-                            }
-                            num6++;
+                            colorMatrix[r, c] = this.pColorMatrix[r, c];
                         }
-                        while (num6 <= 2);
-                        num5++;
+                        if (r != 4)
+                        {
+                            colorMatrix[r, c] = (float)(colorMatrix[r, c] / 1.5);
+                        }
+                        c++;
                     }
-                    while (num5 <= 2);
-                    ImageAttributes imageAttributes = new ImageAttributes();
-                    imageAttributes.SetColorMatrix(colorMatrix);
-                    result = imageAttributes;
+                    while (c <= 2);
+                    r++;
                 }
-                else if (bypassIa)
-                {
-                    result = new ImageAttributes();
-                }
-                else
-                {
-                    result = this.pImageAttributes;
-                }
-                return result;
+                while (r <= 2);
+                ImageAttributes imageAttributes = new ImageAttributes();
+                imageAttributes.SetColorMatrix(colorMatrix);
+                return imageAttributes;
             }
         }
 
         ImageAttributes Desaturate(bool Grey, bool BypassIA = false)
         {
-            float[][] array = new float[5][];
-            array[0] = new float[]
+            ColorMatrix tMM = new ColorMatrix(new[]
             {
-                0.299f,
-                0.299f,
-                0.299f,
-                0f,
-                0f
-            };
-            array[1] = new float[]
-            {
-                0.587f,
-                0.587f,
-                0.587f,
-                0f,
-                0f
-            };
-            array[2] = new float[]
-            {
-                0.114f,
-                0.114f,
-                0.114f,
-                0f,
-                0f
-            };
-            float[][] array2 = array;
-            int num = 3;
-            float[] array3 = new float[5];
-            array3[3] = 1f;
-            array2[num] = array3;
-            array[4] = new float[]
-            {
-                0f,
-                0f,
-                0f,
-                0f,
-                1f
-            };
-            ColorMatrix colorMatrix = new ColorMatrix(array);
-            array = new float[5][];
-            float[][] array4 = array;
-            int num2 = 0;
-            array3 = new float[5];
-            array3[0] = 1f;
-            array4[num2] = array3;
-            float[][] array5 = array;
-            int num3 = 1;
-            array3 = new float[5];
-            array3[1] = 1f;
-            array5[num3] = array3;
-            float[][] array6 = array;
-            int num4 = 2;
-            array3 = new float[5];
-            array3[2] = 1f;
-            array6[num4] = array3;
-            float[][] array7 = array;
-            int num5 = 3;
-            array3 = new float[5];
-            array3[3] = 1f;
-            array7[num5] = array3;
-            array[4] = new float[]
-            {
-                0f,
-                0f,
-                0f,
-                0f,
-                1f
-            };
-            ColorMatrix colorMatrix2 = new ColorMatrix(array);
-            int num6 = 0;
+                new [] { 0.299f, 0.299f, 0.299f, 0f, 0f },
+                new [] { 0.587f, 0.587f, 0.587f, 0f, 0f},
+                new [] { 0.114f, 0.114f, 0.114f, 0f, 0f },
+                new [] { 0, 0, 0, 1f, 0},
+                new [] { 0, 0, 0, 0, 1f},
+            });
+            ColorMatrix tCM = new ColorMatrix(heroMatrix);
+            int r = 0;
             checked
             {
                 do
                 {
-                    int num7 = 0;
+                    int c = 0;
                     do
                     {
                         if (!BypassIA)
                         {
-                            colorMatrix2[num6, num7] = unchecked(this.pColorMatrix[num6, num7] + colorMatrix[num6, num7]) / 2f;
+                            tCM[r, c] = unchecked(this.pColorMatrix[r, c] + tMM[r, c]) / 2f;
                         }
-                        if (Grey & num6 != 4)
+                        if (Grey && r != 4)
                         {
-                            colorMatrix2[num6, num7] = (float)((double)colorMatrix2[num6, num7] / 1.5);
+                            tCM[r, c] = (float)((double)tCM[r, c] / 1.5);
                         }
-                        num7++;
+                        c++;
                     }
-                    while (num7 <= 2);
-                    num6++;
+                    while (c <= 2);
+                    r++;
                 }
-                while (num6 <= 2);
+                while (r <= 2);
                 ImageAttributes imageAttributes = new ImageAttributes();
-                imageAttributes.SetColorMatrix(colorMatrix2);
+                imageAttributes.SetColorMatrix(tCM);
                 return imageAttributes;
             }
         }
@@ -1355,7 +1087,7 @@ namespace midsControls
                 }
                 else
                 {
-                    if (!MidsContext.Character.CurrentBuild.Powers[hIdx].Chosen & MidsContext.Character.CurrentBuild.Powers[hIdx].Power != null)
+                    if (!MidsContext.Character.CurrentBuild.Powers[hIdx].Chosen && MidsContext.Character.CurrentBuild.Powers[hIdx].Power != null)
                     {
                         rectangle.Location = this.PowerPosition(hIdx);
                     }
@@ -1363,7 +1095,7 @@ namespace midsControls
                     {
                         rectangle.Location = this.PowerPosition(this.GetVisualIDX(hIdx));
                     }
-                    rectangle.Width = this.szPower.Width;
+                    rectangle.Width = this.SzPower.Width;
                     int num = rectangle.Y + 18;
                     num += this.szSlot.Height;
                     rectangle.Height = num - rectangle.Y;
@@ -1375,8 +1107,8 @@ namespace midsControls
 
         public bool WithinPowerBar(Rectangle pBounds, Point e)
         {
-            pBounds.Height = this.szPower.Height;
-            return (e.X >= pBounds.Left & e.X < pBounds.Right) && (e.Y >= pBounds.Top & e.Y < pBounds.Bottom);
+            pBounds.Height = this.SzPower.Height;
+            return (e.X >= pBounds.Left && e.X < pBounds.Right) && (e.Y >= pBounds.Top && e.Y < pBounds.Bottom);
         }
 
         Point PowerPosition(int powerEntryIdx)
@@ -1460,10 +1192,9 @@ namespace midsControls
                         new [] { 34, 35, 4, 5 }
                     };
             }
-            int[][] result;
             if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.HeroEpic)
             {
-                result = new int[][]
+                return new int[][]
                 {
                     new int[] { 3, 17, 4 },
                     new int[] { 0, 18, 5 },
@@ -1479,10 +1210,8 @@ namespace midsControls
                     new int[] { 33, 34, 35 }
                 };
             }
-            else
+            return new int[][]
             {
-                result = new int[][]
-                {
                     new int[] { 3, 17, 21 },
                     new int[] { 0, 18, 22 },
                     new int[] { 1, 19, 23 },
@@ -1493,37 +1222,34 @@ namespace midsControls
                     new int[] { 9, 30, 31 },
                     new int[] { 10, 32, 33 },
                     new int[] { 11, 34, 35 }
-                };
-            }
-            return result;
+            };
         }
 
-        // Token: 0x06000041 RID: 65 RVA: 0x00005C84 File Offset: 0x00003E84
         public Point PowerPosition(PowerEntry powerEntry, int displayLocation = -1)
         {
-            int num = MidsContext.Character.CurrentBuild.Powers.IndexOf(powerEntry);
+            int powerIdx = MidsContext.Character.CurrentBuild.Powers.IndexOf(powerEntry);
             checked
             {
-                if (num == -1)
+                if (powerIdx == -1)
                 {
                     int num2 = 0;
                     int num3 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
                     for (int i = num2; i <= num3; i++)
                     {
-                        if (MidsContext.Character.CurrentBuild.Powers[i].Power.PowerIndex == powerEntry.Power.PowerIndex & MidsContext.Character.CurrentBuild.Powers[i].Level == powerEntry.Level)
+                        if (MidsContext.Character.CurrentBuild.Powers[i].Power.PowerIndex == powerEntry.Power.PowerIndex && MidsContext.Character.CurrentBuild.Powers[i].Level == powerEntry.Level)
                         {
-                            num = i;
+                            powerIdx = i;
                             break;
                         }
                     }
                 }
                 int[][] inherentGrid = this.GetInherentGrid();
                 bool flag = false;
-                int num4 = 0;
-                int num5 = 0;
+                int iRow = 0;
+                int iCol = 0;
                 if (!powerEntry.Chosen)
                 {
-                    if (displayLocation == -1 & powerEntry.Power != null)
+                    if (displayLocation == -1 && powerEntry.Power != null)
                     {
                         if (Operators.CompareString(powerEntry.Power.GroupName, "Incarnate", false) == 0)
                         {
@@ -1580,19 +1306,15 @@ namespace midsControls
                     }
                     if (displayLocation > -1)
                     {
-                        num4 = this.vcRowsPowers;
-                        int num6 = 0;
-                        int num7 = inherentGrid.Length - 1;
-                        for (int j = num6; j <= num7; j++)
+                        iRow = this.vcRowsPowers;
+                        for (int i = 0; i <= inherentGrid.Length - 1; i++)
                         {
-                            int num8 = 0;
-                            int num9 = inherentGrid[j].Length - 1;
-                            for (int k = num8; k <= num9; k++)
+                            for (int k = 0; k <= inherentGrid[i].Length - 1; k++)
                             {
-                                if (!flag & displayLocation == inherentGrid[j][k])
+                                if (!flag && displayLocation == inherentGrid[i][k])
                                 {
-                                    num4 += j;
-                                    num5 = k;
+                                    iRow += i;
+                                    iCol = k;
                                     flag = true;
                                     break;
                                 }
@@ -1604,38 +1326,36 @@ namespace midsControls
                         }
                     }
                 }
-                else if (num > -1)
+                else if (powerIdx > -1)
                 {
-                    int num10 = 1;
-                    int num11 = this.vcCols;
-                    for (int l = num10; l <= num11; l++)
+                    for (int i = 1; i <= this.vcCols; i++)
                     {
-                        if (num < this.vcRowsPowers * l)
+                        if (powerIdx < this.vcRowsPowers * i)
                         {
-                            num5 = l - 1;
-                            num4 = num - this.vcRowsPowers * num5;
+                            iCol = i - 1;
+                            iRow = powerIdx - this.vcRowsPowers * iCol;
                             break;
                         }
                     }
                 }
-                return this.CRtoXY(num5, num4);
+                return this.CRtoXY(iCol, iRow);
             }
         }
 
-        private Point CRtoXY(int iCol, int iRow)
+        Point CRtoXY(int iCol, int iRow)
         {
             Point result = new Point(0, 0);
             checked
             {
                 if (iRow >= this.vcRowsPowers)
                 {
-                    result.X = iCol * (this.szPower.Width + 7);
-                    result.Y = 4 + iRow * (this.szPower.Height + 17);
+                    result.X = iCol * (this.SzPower.Width + 7);
+                    result.Y = 4 + iRow * (this.SzPower.Height + 17);
                 }
                 else
                 {
-                    result.X = iCol * (this.szPower.Width + 7);
-                    result.Y = iRow * (this.szPower.Height + 17);
+                    result.X = iCol * (this.SzPower.Width + 7);
+                    result.Y = iRow * (this.SzPower.Height + 17);
                 }
                 return result;
             }
@@ -1646,15 +1366,13 @@ namespace midsControls
             Size result = (Size)this.PowerPosition(23);
             checked
             {
-                result.Width += this.szPower.Width;
-                result.Height = result.Height + this.szPower.Height + 17;
-                int num = 0;
-                int num2 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int i = num; i <= num2; i++)
+                result.Width += this.SzPower.Width;
+                result.Height = result.Height + this.SzPower.Height + 17;
+                for (int i = 0; i <= MidsContext.Character.CurrentBuild.Powers.Count - 1; i++)
                 {
-                    if (MidsContext.Character.CurrentBuild.Powers[i].Power != null & !(MidsContext.Character.CurrentBuild.Powers[i].Chosen & i > MidsContext.Character.CurrentBuild.LastPower))
+                    if (MidsContext.Character.CurrentBuild.Powers[i].Power != null && !(MidsContext.Character.CurrentBuild.Powers[i].Chosen && i > MidsContext.Character.CurrentBuild.LastPower))
                     {
-                        Size size = new Size(result.Width, this.PowerPosition(i).Y + this.szPower.Height + 17);
+                        Size size = new Size(result.Width, this.PowerPosition(i).Y + this.SzPower.Height + 17);
                         if (size.Height > result.Height)
                         {
                             result.Height = size.Height;
@@ -1688,8 +1406,8 @@ namespace midsControls
                     result.Width = size.Width;
                 }
                 this.MiniSetCol(cols);
-                result.Width += this.szPower.Width;
-                result.Height = result.Height + this.szPower.Height + 17;
+                result.Width += this.SzPower.Width;
+                result.Height = result.Height + this.SzPower.Height + 17;
                 return result;
             }
         }
@@ -1708,69 +1426,67 @@ namespace midsControls
 
         public Size GetRequiredDrawingArea()
         {
-            int num = -1;
-            int num2 = -1;
-            int num3 = 0;
+            int maxY = -1;
+            int maxX = -1;
             checked
             {
                 int num4 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int i = num3; i <= num4; i++)
+                for (int i = 0; i <= num4; i++)
                 {
                     if (MidsContext.Character.CurrentBuild.Powers[i].IDXPower > -1 | MidsContext.Character.CurrentBuild.Powers[i].Chosen)
                     {
                         Point point = this.PowerPosition(i);
-                        if (point.X > num2)
+                        if (point.X > maxX)
                         {
-                            num2 = point.X;
+                            maxX = point.X;
                         }
-                        if (point.Y > num)
+                        if (point.Y > maxY)
                         {
-                            num = point.Y;
+                            maxY = point.Y;
                         }
                     }
                 }
                 Size result;
-                if (num2 > -1 & num > -1)
+                if (maxX > -1 & maxY > -1)
                 {
-                    Size size = new Size(num2 + this.szPower.Width, num + this.szPower.Height + 17);
+                    Size size = new Size(maxX + this.SzPower.Width, maxY + this.SzPower.Height + 17);
                     result = size;
                 }
                 else
                 {
                     Point point2 = this.PowerPosition(MidsContext.Character.CurrentBuild.LastPower);
-                    Size size = new Size(point2.X + this.szPower.Width, point2.Y + this.szPower.Height + 17 + 4);
+                    Size size = new Size(point2.X + this.SzPower.Width, point2.Y + this.SzPower.Height + 17 + 4);
                     result = size;
                 }
                 return result;
             }
         }
 
-        private const string GfxPath = "images\\";
+        const string GfxPath = "images\\";
 
-        private const string GfxPowerFn = "pSlot";
+        const string GfxPowerFn = "pSlot";
 
-        private const string GfxFileExt = ".png";
+        const string GfxFileExt = ".png";
 
-        private const string NewSlotName = "Addslot.png";
+        const string NewSlotName = "Addslot.png";
 
-        private const int PaddingX = 7;
+        const int PaddingX = 7;
 
-        private const int PaddingY = 17;
+        const int PaddingY = 17;
 
         public const int OffsetY = 18;
 
-        private const int OffsetInherent = 4;
+        const int OffsetInherent = 4;
 
-        private const int vcPowers = 24;
+        const int vcPowers = 24;
 
-        private Size szBuffer;
-        public Size szPower;
+        Size szBuffer;
 
         public Size szSlot;
 
-        private Font DefaultFont;
+        Font DefaultFont;
 
-        private Color BackColor;
+        Color BackColor;
 
         public ExtendedBitmap bxBuffer;
 
