@@ -55,17 +55,30 @@ module Updates =
             if not <| File.Exists inputPath then
                 {m with Error = sprintf "Unable to locate installer files at %s" inputPath}
             else
-                Compression.decompress (FilePath inputPath) (DirPath m.SelectedFolder)
-                let exePath = Path.Combine(m.SelectedFolder, "Hero Designer.exe")
-                if File.Exists exePath then
-                    MessageBox.Show("Installation completed") |> ignore
-                    // add shortcut(s)
-                    // launch app
-                    System.Diagnostics.Process.Start(exePath) |> ignore<System.Diagnostics.Process>
-                    quit()
-                    m
-                else
-                    {m with Error= sprintf "Install finished, but application was not found at '%s'" exePath}
+                let proceed completed =
+                    let exePath = Path.Combine(m.SelectedFolder, "Hero Designer.exe")
+                    if File.Exists exePath then
+                        if completed then
+                            MessageBox.Show("Installation completed") |> ignore
+                        // add shortcut(s)
+                        // launch app
+                        System.Diagnostics.Process.Start(exePath) |> ignore<System.Diagnostics.Process>
+                        if completed then
+                            quit()
+                        m
+                    else
+                        {m with Error= sprintf "Install finished, but application was not found at '%s'" exePath}
+                let env = Environment.NewLine
+                match Compression.decompress (FilePath inputPath) (DirPath m.SelectedFolder) with
+                | Error(errors,successes) when successes > 0 ->
+                    match MessageBox.Show("There were errors, attempt launch?"::(sprintf "%i files succeeded%s" successes env)::errors |> String.concat env,"Installation problem", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) with
+                    | MessageBoxResult.Yes -> proceed false
+                    | _ -> {m with Error= "Installation Cancelled"}
+                | Error(errors, _) ->
+                    MessageBox.Show("There were errors, no files succeeded to extract"::errors |> String.concat env, "Installation failed", MessageBoxButton.OK, MessageBoxImage.Error) |> ignore
+                    {m with Error= "Installation failed"}
+
+                | Ok _ -> proceed true
         | Progress ->
             if m.Completion < 100 then
                 {m with Completion = m.Completion + 1}

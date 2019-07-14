@@ -33,9 +33,13 @@ module Files =
 
     let readAllText (FilePath path) = File.ReadAllText(path)
 
-    let combineFp (DirPath y) (FilePath fp) =
-        Path.Combine(y,fp)
-        |> FilePath
+    let inline combineFp (DirPath y) (FilePath fp) =
+        try
+            Path.Combine(y,fp)
+            |> FilePath
+        with _ ->
+            eprintfn "Failed to combine y: '%s' with fp: '%s'" y fp
+            reraise()
 
     let combineDp (DirPath rootier, DirPath child) = Path.Combine(rootier,child) |> DirPath
     let combineAny (DirPath parent) child = Path.Combine(parent,child)
