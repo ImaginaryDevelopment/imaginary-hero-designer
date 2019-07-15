@@ -112,7 +112,7 @@ public static class Files
         return string.Empty;
     }
 
-    internal static string SelectConfigFileLoad(bool forceMhd)
+    internal static string GetConfigFilename(bool forceMhd)
     {
         try
         {

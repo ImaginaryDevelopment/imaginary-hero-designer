@@ -37,7 +37,25 @@ public class ConfigData
     public string LastPrinter = string.Empty;
     public bool LoadLastFileOnStart = true;
     public string LastFileName = string.Empty;
-    public string DefaultSaveFolder = string.Empty;
+
+    string _defaultSaveFolderOverride;
+    public string DefaultSaveFolderOverride
+    {
+        get { return _defaultSaveFolderOverride; }
+        set
+        {
+            var osDefault = OS.GetDefaultSaveFolder();
+            if (string.IsNullOrWhiteSpace(value)
+                || Path.GetFullPath(value) == osDefault
+                || value == osDefault
+                || (osDefault != null && Path.GetFullPath(osDefault) == value))
+            {
+                _defaultSaveFolderOverride = null;
+                return;
+            }
+            _defaultSaveFolderOverride = value;
+        }
+    }
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -96,110 +114,27 @@ public class ConfigData
         }
     }
 
-    public bool PrintHistoryIOLevels
+    static void MigrateToSerializer(string mhdFn, ISerialize serializer)
     {
-        get
-        {
-            return this.I9.PrintIOLevels;
-        }
-        set
-        {
-            this.I9.PrintIOLevels = value;
-        }
+        var oldMethod = new ConfigData(deserializing: false, iFilename: mhdFn);
+        oldMethod.IntializeComponent();
+        File.Move(mhdFn, mhdFn + ".old");
+        oldMethod.SaveConfig(serializer);
     }
-
-    public static IDictionary<string, string> GetDifferences(Type t, object oldObj, object newObj)
-    {
-        var members = t.GetMembers(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-        var diffs = new Dictionary<string, string>();
-        foreach (var prop in members.OfType<PropertyInfo>())
-        {
-            var oldV = prop.GetValue(oldObj);
-            var newV = prop.GetValue(newObj);
-            if (!AreEqual(prop.Name, oldV, newV))
-                diffs.Add(prop.Name, $"{oldV},{newV}");
-        }
-        foreach (var field in members.OfType<FieldInfo>())
-        {
-            var oldV = field.GetValue(oldObj);
-            var newV = field.GetValue(newObj);
-            if (!AreEqual(field.Name, oldV, newV))
-                diffs.Add(field.Name, $"{oldV},{newV}");
-        }
-        return diffs;
-    }
-
-    public static bool AreEqual(string name, object oldV, object newV)
-    {
-        if (oldV == newV) return true;
-        if (oldV != null && oldV.Equals(newV)) return true;
-        if (newV != null && newV == null) return false;
-        if (oldV != null && newV == null) return false;
-        if (System.Collections.StructuralComparisons.StructuralEqualityComparer?.Equals(oldV, newV) == true)
-            return true;
-        if (oldV is Color oldC && newV is Color newC)
-        {
-            return oldC.ToArgb() == newC.ToArgb();
-        }
-        if (oldV is ExportConfig oldEc && newV is ExportConfig newEc)
-        {
-            // the read code doesn't load anymore, it is commented out
-            return true;
-
-            //if (oldEc.ColorSchemes.Length != newEc.ColorSchemes.Length) return false;
-            //if (oldEc.FormatCode.Length != newEc.ColorSchemes.Length) return false;
-            //foreach (var (oldCs, newCs) in oldEc.ColorSchemes.Zip(newEc.ColorSchemes, (o, n) => (o, n)))
-            //{
-            //    var eq = AreEqual("ColorSchemes", oldCs, newCs);
-            //    if (!eq) return false;
-
-            //}
-            //foreach (var (oldFc, newFc) in oldEc.FormatCode.Zip(newEc.FormatCode, (o, n) => (o, n)))
-            //{
-            //    var eq = AreEqual("ColorSchemes", oldFc, newFc);
-            //    if (!eq) return false;
-            //}
-            //var schemesEqual = AreEqual(name, oldEc.ColorSchemes, newEc.ColorSchemes);
-            //var codesEqual = AreEqual(name, oldEc.FormatCode, newEc.FormatCode);
-            //return (schemesEqual && codesEqual);
-        }
-        if (oldV is Enums.CompOverride[] oldCo && newV is Enums.CompOverride[] newCo)
-        {
-            var areEqual = oldCo.SequenceEqual(newCo);
-            return areEqual;
-        }
-        if (oldV is short[] oldArr && newV is short[] newArr)
-            return Enumerable.SequenceEqual(oldArr, newArr);
-        if (oldV is FontSettings oldFs && newV is FontSettings newFs)
-        {
-            var values = GetDifferences(typeof(FontSettings), oldFs, newFs);
-            if (values.Keys.Count == 0) return true;
-            return false;
-            //return AreEqual(name, oldFs, newFs);
-        }
-        if (oldV is Tips oVal && newV is Tips nVal)
-        {
-            if (oVal.TipStatus == null && nVal.TipStatus == null) return true;
-            if (oVal.TipStatus == null || nVal.TipStatus == null || oVal.TipStatus.Length != nVal.TipStatus.Length) return false;
-            var tipsEqual = oVal.TipStatus.SequenceEqual(nVal.TipStatus);
-            return tipsEqual;
-        }
-        return false;
-    }
-
-    public static void Initialize(Func<string, ConfigData> deserializer)
+    public static void Initialize(ISerialize serializer)
     {
         // migrate
         // force Mhd if it exists, then rename it
-        //var mhdFn = Files.SelectConfigFileLoad(forceMhd: true);
-        //if(File.Exists(mhdFn))
+        var mhdFn = Files.GetConfigFilename(forceMhd: true);
+        if (File.Exists(mhdFn))
+            MigrateToSerializer(mhdFn, serializer);
 
-        var fn = Files.SelectConfigFileLoad(forceMhd: false);
+        var fn = Files.GetConfigFilename(forceMhd: false);
         if (File.Exists(fn) && fn.EndsWith(".json"))
         {
             try
             {
-                var value = deserializer(File.ReadAllText(fn));
+                var value = serializer.Deserialize<ConfigData>(File.ReadAllText(fn));
                 ConfigData._current = value;
             }
             catch
@@ -210,30 +145,9 @@ public class ConfigData
         }
         else
         {
-            ConfigData._current = new ConfigData(deserializing: false, iFilename: Files.SelectConfigFileLoad(forceMhd: true));
+            ConfigData._current = new ConfigData(deserializing: false, iFilename: Files.GetConfigFilename(forceMhd: true));
         }
         ConfigData._current.IntializeComponent();
-        var newMethod = ConfigData._current;
-        var oldMethod = new ConfigData(deserializing: false, iFilename: Files.SelectConfigFileLoad(forceMhd: true));
-        oldMethod.IntializeComponent();
-        var members = typeof(ConfigData).GetMembers(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-        var diffs = new List<string>();
-        foreach (var prop in members.OfType<PropertyInfo>())
-        {
-            var newV = prop.GetValue(newMethod);
-            var oldV = prop.GetValue(oldMethod);
-            if (!AreEqual(prop.Name, oldV, newV))
-                diffs.Add($"{prop.Name} {oldV},{newV}");
-        }
-        foreach (var field in members.OfType<FieldInfo>())
-        {
-            var newV = field.GetValue(newMethod);
-            var oldV = field.GetValue(oldMethod);
-            if (!AreEqual(field.Name, oldV, newV))
-                diffs.Add($"{field.Name} {oldV},{newV}");
-        }
-        if (diffs.Count > 0)
-            MessageBox.Show(String.Join("\r\n", diffs));
 
         //configData = ConfigData._current = new ConfigData(
 
@@ -257,7 +171,6 @@ public class ConfigData
         this.I9.ExportStripSetNames = false;
         this.I9.ExportExtraSep = false;
         this.UpdatePath = "";
-        this.DefaultSaveFolder = OS.GetDefaultSaveFolder();
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
@@ -411,7 +324,7 @@ public class ConfigData
                 if ((double)num1 >= 1.23000001907349)
                 {
                     this.Tips = new Tips(reader);
-                    this.DefaultSaveFolder = reader.ReadString();
+                    this.DefaultSaveFolderOverride = reader.ReadString();
                 }
                 if ((double)num1 >= 1.24000000953674)
                 {
@@ -498,296 +411,57 @@ public class ConfigData
         }
     }
 
+    public string GetSaveFolder() => this.DefaultSaveFolderOverride ?? OS.GetDefaultSaveFolder();
+
     public void CreateDefaultSaveFolder()
     {
-        if (!Directory.Exists(this.DefaultSaveFolder))
-            this.DefaultSaveFolder = OS.GetDefaultSaveFolder();
-        if (Directory.Exists(this.DefaultSaveFolder))
+        // if there is a save folder override, but it does not exist, wipe it out
+        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && !Directory.Exists(this.DefaultSaveFolderOverride))
+            this.DefaultSaveFolderOverride = null;
+        var saveFolder = this.GetSaveFolder();
+        if (Directory.Exists(saveFolder))
             return;
-        Directory.CreateDirectory(this.DefaultSaveFolder);
+        Directory.CreateDirectory(saveFolder);
     }
 
-    void SaveRaw(ISerialize serializer, string iFilename, float version, string name)
+    void SaveRaw(ISerialize serializer, string iFilename)
     {
-
-        var toSerialize = new
-        {
-            name,
-            version,
-            this.NoToolTips,
-            this.BaseAcc,
-            this.CalcEnhLevel,
-            this.CalcEnhOrigin,
-            this.ExempHigh,
-            this.ExempLow,
-            this.Inc.PvE,
-            this.DamageMath.Calculate,
-            this.DamageMath.ReturnValue,
-            this.DataDamageGraph,
-            this.DataDamageGraphPercentageOnly,
-            this.DataGraphType,
-            this.ExportScheme,
-            this.ExportBonusTotals,
-            this.ExportBonusList,
-            hideOriginEnhancements = this._hideOriginEnhancements,
-            this.ShowVillainColours,
-            this.CheckForUpdates,
-            this.Columns,
-            this.LastSize.Width,
-            this.LastSize.Height,
-            this.DvState,
-            this.StatGraphStyle,
-            this.FreshInstall,
-            this.ForceLevel,
-            I9 = new
-            {
-                this.I9.DefaultIOLevel,
-                this.I9.DisplayIOLevels,
-                this.I9.CalculateEnahncementFX,
-                this.I9.CalculateSetBonusFX,
-                this.I9.ExportIOLevels,
-                this.I9.PrintIOLevels,
-                this.I9.ExportCompress,
-                this.I9.ExportDataChunk,
-                this.I9.ExportStripEnh,
-                this.I9.ExportStripSetNames,
-                this.I9.ExportExtraSep,
-            },
-            this.PrintInColour,
-            printScheme = this._printScheme,
-            RtFont = new
-            {
-                this.RtFont.PairedBase,
-                this.RtFont.PairedBold,
-                this.RtFont.RTFBase,
-                this.RtFont.RTFBold,
-                this.RtFont.ColorBackgroundHero,
-                this.RtFont.ColorBackgroundVillain,
-                this.RtFont.ColorEnhancement,
-                this.RtFont.ColorFaded,
-                this.RtFont.ColorInvention,
-                this.RtFont.ColorInventionInv,
-                this.RtFont.ColorText,
-                this.RtFont.ColorWarning,
-                this.RtFont.ColorPlName,
-                this.RtFont.ColorPlSpecial,
-                this.RtFont.ColorPowerAvailable,
-                this.RtFont.ColorPowerTaken,
-                this.RtFont.ColorPowerTakenDark,
-                this.RtFont.ColorPowerDisabled,
-                this.RtFont.ColorPowerHighlight,
-            },
-            this.ShowSlotLevels,
-            this.LoadLastFileOnStart,
-            this.LastFileName,
-            this.Tips.TipStatus,
-            DefaultSaveFolder = this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? String.Empty : this.DefaultSaveFolder,
-            this.EnhanceVisibility,
-            this.BuildMode,
-            this.BuildOption,
-            this.UpdatePath,
-            this.ShowEnhRel,
-            this.ShowRelSymbols,
-            this.ShowAlphaPopup,
-            this.PopupRecipes,
-            this.ShoppingListIncludesRecipes,
-            this.PrintProfile,
-            this.PrintHistory,
-            this.LastPrinter,
-            this.PrintProfileEnh,
-            this.DesaturateInherent,
-            this.ReapeatOnMiddleClick,
-            this.ExportHex,
-            this.SpeedFormat,
-            this.SaveFolderChecked,
-            this.UseArcanaTime, // Pine 
-            this.Suppression,
-            this.DragDropScenarioAction,
-            Export = new
-            {
-                this.Export.ColorSchemes,
-                this.Export.FormatCode,
-            }
-        };
-        SaveRawMhd(serializer, toSerialize, iFilename);
+        SaveRawMhd(serializer, this, iFilename);
     }
 
     const string header = "Mids' Hero Designer Config V2";
-    void Save(ISerialize serializer, string iFilename, float version)
+    void Save(ISerialize serializer, string iFilename)
     {
-        SaveRaw(serializer, iFilename, version, header);
-
-        using (FileStream fileStream = new FileStream(iFilename, FileMode.Create))
-        {
-            using (BinaryWriter writer = new BinaryWriter(fileStream))
-            {
-                writer.Write(header);
-                writer.Write(version);
-                writer.Write(this.NoToolTips);
-                writer.Write(this.BaseAcc);
-                writer.Write(0.0f);
-                writer.Write(0.0f);
-                writer.Write(0.0f);
-                writer.Write(0.0f);
-                writer.Write(0.0f);
-                writer.Write((int)this.CalcEnhLevel);
-                writer.Write((int)this.CalcEnhOrigin);
-                writer.Write(this.ExempHigh);
-                writer.Write(this.ExempLow);
-                writer.Write(this.Inc.PvE);
-                writer.Write(true);
-                writer.Write((int)this.DamageMath.Calculate);
-                writer.Write(0.0f);
-                writer.Write(0);
-                writer.Write((int)this.DamageMath.ReturnValue);
-                writer.Write(this.DataDamageGraph);
-                writer.Write(this.DataDamageGraphPercentageOnly);
-                writer.Write((int)this.DataGraphType);
-                writer.Write(this.ExportScheme);
-                writer.Write(this.ExportTarget);
-                writer.Write(this.ExportBonusTotals);
-                writer.Write(this.ExportBonusList);
-                writer.Write(this._hideOriginEnhancements);
-                writer.Write(this.ShowVillainColours);
-                writer.Write(this.CheckForUpdates);
-                writer.Write(this.Columns);
-                writer.Write(this.LastSize.Width);
-                writer.Write(this.LastSize.Height);
-                writer.Write((int)this.DvState);
-                writer.Write((int)this.StatGraphStyle);
-                writer.Write(this.FreshInstall);
-                writer.Write(this.ForceLevel);
-                writer.Write(this.I9.DefaultIOLevel);
-                writer.Write(this.I9.DisplayIOLevels);
-                writer.Write(this.I9.CalculateEnahncementFX);
-                writer.Write(this.I9.CalculateSetBonusFX);
-                writer.Write(this.I9.ExportIOLevels);
-                writer.Write(this.I9.PrintIOLevels);
-                writer.Write(this.I9.ExportCompress);
-                writer.Write(this.I9.ExportDataChunk);
-                writer.Write(this.I9.ExportStripEnh);
-                writer.Write(this.I9.ExportStripSetNames);
-                writer.Write(this.I9.ExportExtraSep);
-                writer.Write(this.PrintInColour);
-                writer.Write(this._printScheme);
-                writer.Write(this.RtFont.PairedBase);
-                writer.Write(this.RtFont.PairedBold);
-                writer.Write(this.RtFont.RTFBase);
-                writer.Write(this.RtFont.RTFBold);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorBackgroundHero);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorBackgroundVillain);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorEnhancement);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorFaded);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorInvention);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorInventionInv);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorText);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorWarning);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPlName);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPlSpecial);
-                writer.Write(this.ShowSlotLevels);
-                writer.Write(this.LoadLastFileOnStart);
-                writer.Write(this.LastFileName);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPowerAvailable);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPowerTaken);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPowerTakenDark);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPowerDisabled);
-                ConfigData.WriteRGB(writer, this.RtFont.ColorPowerHighlight);
-                this.Tips.StoreTo(writer);
-
-                writer.Write(this.DefaultSaveFolder == OS.GetDefaultSaveFolder() ? string.Empty : this.DefaultSaveFolder);
-                writer.Write(this.EnhanceVisibility);
-                writer.Write(false);
-                writer.Write((int)this.BuildMode);
-                writer.Write((int)this.BuildOption);
-                writer.Write(this.UpdatePath);
-                writer.Write(this.ShowEnhRel);
-                writer.Write(this.ShowRelSymbols);
-                writer.Write(this.ShowPopup);
-                writer.Write(this.ShowAlphaPopup);
-                writer.Write(this.PopupRecipes);
-                writer.Write(this.ShoppingListIncludesRecipes);
-                writer.Write((int)this.PrintProfile);
-                writer.Write(this.PrintHistory);
-                writer.Write(this.LastPrinter);
-                writer.Write(this.PrintProfileEnh);
-                writer.Write(this.DesaturateInherent);
-                writer.Write(this.ReapeatOnMiddleClick);
-                writer.Write(this.ExportHex);
-                writer.Write((int)this.SpeedFormat);
-                writer.Write(this.SaveFolderChecked);
-                writer.Write(this.UseArcanaTime); // Pine 
-                short tempNum = (short)this.Suppression;
-                writer.Write(tempNum);
-                for (int index = 0; index < 19; ++index)
-                    writer.Write((short)this.DragDropScenarioAction[index]);
-                writer.Write(this.Export.ColorSchemes.Length - 1);
-                for (int index = 0; index <= this.Export.ColorSchemes.Length - 1; ++index)
-                {
-                    writer.Write(this.Export.ColorSchemes[index].SchemeName);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].Heading);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].Level);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].Slots);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].Title);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].IOColor);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].SetColor);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].HOColor);
-                    ConfigData.WriteRGB(writer, this.Export.ColorSchemes[index].Power);
-                }
-                writer.Write(this.Export.FormatCode.Length - 1);
-                for (int index = 0; index <= this.Export.FormatCode.Length - 1; ++index)
-                {
-                    writer.Write(this.Export.FormatCode[index].Name);
-                    writer.Write(this.Export.FormatCode[index].Notes);
-                    writer.Write(this.Export.FormatCode[index].BoldOff);
-                    writer.Write(this.Export.FormatCode[index].BoldOn);
-                    writer.Write(this.Export.FormatCode[index].ColourOff);
-                    writer.Write(this.Export.FormatCode[index].ColourOn);
-                    writer.Write(this.Export.FormatCode[index].ItalicOff);
-                    writer.Write(this.Export.FormatCode[index].ItalicOn);
-                    writer.Write(this.Export.FormatCode[index].SizeOff);
-                    writer.Write(this.Export.FormatCode[index].SizeOn);
-                    writer.Write(this.Export.FormatCode[index].UnderlineOff);
-                    writer.Write(this.Export.FormatCode[index].UnderlineOn);
-                    writer.Write(Convert.ToInt32(this.Export.FormatCode[index].Space));
-                }
-            }
-        }
+        SaveRaw(serializer, iFilename);
     }
 
     static Color ReadRGB(BinaryReader reader)
         => Color.FromArgb((int)reader.ReadByte(), (int)reader.ReadByte(), (int)reader.ReadByte());
 
-    static void WriteRGB(BinaryWriter writer, Color iColor)
-    {
-        writer.Write(iColor.R);
-        writer.Write(iColor.G);
-        writer.Write(iColor.B);
-    }
-
     void RelocateSaveFolder(bool manual)
     {
-        if (OS.GetDefaultSaveFolder() != this.DefaultSaveFolder & (!this.SaveFolderChecked | manual))
+        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && Directory.Exists(this.DefaultSaveFolderOverride) && OS.GetDefaultSaveFolder() != this.DefaultSaveFolderOverride & (!this.SaveFolderChecked | manual))
         {
-            if (this.DefaultSaveFolder.IndexOf(OS.GetMyDocumentsPath(), StringComparison.OrdinalIgnoreCase) > -1)
+            if (this.DefaultSaveFolderOverride.IndexOf(OS.GetMyDocumentsPath(), StringComparison.OrdinalIgnoreCase) > -1)
             {
                 this.SaveFolderChecked = true;
                 return;
             }
-            if (Directory.Exists(this.DefaultSaveFolder))
+            if (Directory.Exists(this.DefaultSaveFolderOverride))
             {
                 if (MessageBox.Show("In order for Mids' Hero/Villain Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     this.LastFileName = string.Empty;
-                    string defaultSaveFolder = this.DefaultSaveFolder;
-                    this.DefaultSaveFolder = OS.GetDefaultSaveFolder();
-                    if (FileIO.CopyFolder(defaultSaveFolder, this.DefaultSaveFolder))
+                    string defaultSaveFolder = this.DefaultSaveFolderOverride;
+                    this.DefaultSaveFolderOverride = null;
+                    if (FileIO.CopyFolder(defaultSaveFolder, GetSaveFolder()))
                     {
                         MessageBox.Show("Save folder was moved!", "All Done", MessageBoxButtons.OK);
                     }
                     else
                     {
                         MessageBox.Show("Save folder couldn't be moved! Using old save folder instead.", "Whoops", MessageBoxButtons.OK);
-                        this.DefaultSaveFolder = defaultSaveFolder;
+                        this.DefaultSaveFolderOverride = defaultSaveFolder;
                     }
                 }
             }
@@ -803,7 +477,7 @@ public class ConfigData
     {
         try
         {
-            this.Save(serializer, Files.SelectConfigFileSave(), 1.32f);
+            this.Save(serializer, Files.SelectConfigFileSave());
             this.SaveOverrides(serializer);
         }
         catch (Exception ex)
