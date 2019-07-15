@@ -1,23 +1,16 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 public interface ISerialize
 {
     string Serialize(object o);
+    T Deserialize<T>(string x);
     string Extension { get; }
-}
-public class Serializer : ISerialize
-{
-    readonly Func<object, string> _serializeFunc;
-    public string Extension { get; }
-    public Serializer(Func<object, string> serializeFunc, string extension)
-    {
-        Extension = extension;
-        _serializeFunc = serializeFunc;
-    }
-    public string Serialize(object o) => _serializeFunc(o);
 }
 public class ConfigData
 {
@@ -84,13 +77,12 @@ public class ConfigData
     public bool ShowRelSymbols;
     public bool EnhanceVisibility;
     public Tips Tips;
-    public bool PopupRecipes;
+    public bool PopupRecipes { get; set; }
     public bool ShoppingListIncludesRecipes;
     public bool ExportChunkOnly;
     public bool LongExport;
     public bool MasterMode;
     public bool ShrinkFrmSets;
-    public readonly RTF RTF;
 
     internal static ConfigData Current
     {
@@ -98,7 +90,8 @@ public class ConfigData
         {
             ConfigData configData;
             if ((configData = ConfigData._current) == null)
-                configData = ConfigData._current = new ConfigData(Files.SelectConfigFileLoad());
+                throw new InvalidOperationException("Config was not initialized before access");
+            //configData = ConfigData._current = ConfigData.Initialize();
             return configData;
         }
     }
@@ -115,7 +108,139 @@ public class ConfigData
         }
     }
 
-    ConfigData(string iFilename = "")
+    public static IDictionary<string, string> GetDifferences(Type t, object oldObj, object newObj)
+    {
+        var members = t.GetMembers(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        var diffs = new Dictionary<string, string>();
+        foreach (var prop in members.OfType<PropertyInfo>())
+        {
+            var oldV = prop.GetValue(oldObj);
+            var newV = prop.GetValue(newObj);
+            if (!AreEqual(prop.Name, oldV, newV))
+                diffs.Add(prop.Name, $"{oldV},{newV}");
+        }
+        foreach (var field in members.OfType<FieldInfo>())
+        {
+            var oldV = field.GetValue(oldObj);
+            var newV = field.GetValue(newObj);
+            if (!AreEqual(field.Name, oldV, newV))
+                diffs.Add(field.Name, $"{oldV},{newV}");
+        }
+        return diffs;
+    }
+
+    public static bool AreEqual(string name, object oldV, object newV)
+    {
+        if (oldV == newV) return true;
+        if (oldV != null && oldV.Equals(newV)) return true;
+        if (newV != null && newV == null) return false;
+        if (oldV != null && newV == null) return false;
+        if (System.Collections.StructuralComparisons.StructuralEqualityComparer?.Equals(oldV, newV) == true)
+            return true;
+        if (oldV is Color oldC && newV is Color newC)
+        {
+            return oldC.ToArgb() == newC.ToArgb();
+        }
+        if (oldV is ExportConfig oldEc && newV is ExportConfig newEc)
+        {
+            // the read code doesn't load anymore, it is commented out
+            return true;
+
+            //if (oldEc.ColorSchemes.Length != newEc.ColorSchemes.Length) return false;
+            //if (oldEc.FormatCode.Length != newEc.ColorSchemes.Length) return false;
+            //foreach (var (oldCs, newCs) in oldEc.ColorSchemes.Zip(newEc.ColorSchemes, (o, n) => (o, n)))
+            //{
+            //    var eq = AreEqual("ColorSchemes", oldCs, newCs);
+            //    if (!eq) return false;
+
+            //}
+            //foreach (var (oldFc, newFc) in oldEc.FormatCode.Zip(newEc.FormatCode, (o, n) => (o, n)))
+            //{
+            //    var eq = AreEqual("ColorSchemes", oldFc, newFc);
+            //    if (!eq) return false;
+            //}
+            //var schemesEqual = AreEqual(name, oldEc.ColorSchemes, newEc.ColorSchemes);
+            //var codesEqual = AreEqual(name, oldEc.FormatCode, newEc.FormatCode);
+            //return (schemesEqual && codesEqual);
+        }
+        if (oldV is Enums.CompOverride[] oldCo && newV is Enums.CompOverride[] newCo)
+        {
+            var areEqual = oldCo.SequenceEqual(newCo);
+            return areEqual;
+        }
+        if (oldV is short[] oldArr && newV is short[] newArr)
+            return Enumerable.SequenceEqual(oldArr, newArr);
+        if (oldV is FontSettings oldFs && newV is FontSettings newFs)
+        {
+            var values = GetDifferences(typeof(FontSettings), oldFs, newFs);
+            if (values.Keys.Count == 0) return true;
+            return false;
+            //return AreEqual(name, oldFs, newFs);
+        }
+        if (oldV is Tips oVal && newV is Tips nVal)
+        {
+            if (oVal.TipStatus == null && nVal.TipStatus == null) return true;
+            if (oVal.TipStatus == null || nVal.TipStatus == null || oVal.TipStatus.Length != nVal.TipStatus.Length) return false;
+            var tipsEqual = oVal.TipStatus.SequenceEqual(nVal.TipStatus);
+            return tipsEqual;
+        }
+        return false;
+    }
+
+    public static void Initialize(Func<string, ConfigData> deserializer)
+    {
+        // migrate
+        // force Mhd if it exists, then rename it
+        //var mhdFn = Files.SelectConfigFileLoad(forceMhd: true);
+        //if(File.Exists(mhdFn))
+
+        var fn = Files.SelectConfigFileLoad(forceMhd: false);
+        if (File.Exists(fn) && fn.EndsWith(".json"))
+        {
+            try
+            {
+                var value = deserializer(File.ReadAllText(fn));
+                ConfigData._current = value;
+            }
+            catch
+            {
+                MessageBox.Show("Failed to load json config, falling back to mhd");
+
+            }
+        }
+        else
+        {
+            ConfigData._current = new ConfigData(deserializing: false, iFilename: Files.SelectConfigFileLoad(forceMhd: true));
+        }
+        ConfigData._current.IntializeComponent();
+        var newMethod = ConfigData._current;
+        var oldMethod = new ConfigData(deserializing: false, iFilename: Files.SelectConfigFileLoad(forceMhd: true));
+        oldMethod.IntializeComponent();
+        var members = typeof(ConfigData).GetMembers(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        var diffs = new List<string>();
+        foreach (var prop in members.OfType<PropertyInfo>())
+        {
+            var newV = prop.GetValue(newMethod);
+            var oldV = prop.GetValue(oldMethod);
+            if (!AreEqual(prop.Name, oldV, newV))
+                diffs.Add($"{prop.Name} {oldV},{newV}");
+        }
+        foreach (var field in members.OfType<FieldInfo>())
+        {
+            var newV = field.GetValue(newMethod);
+            var oldV = field.GetValue(oldMethod);
+            if (!AreEqual(field.Name, oldV, newV))
+                diffs.Add($"{field.Name} {oldV},{newV}");
+        }
+        if (diffs.Count > 0)
+            MessageBox.Show(String.Join("\r\n", diffs));
+
+        //configData = ConfigData._current = new ConfigData(
+
+    }
+    ConfigData() : this(true, "") { }
+
+    ConfigData(bool deserializing, string iFilename)
     {
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
@@ -137,7 +262,7 @@ public class ConfigData
         this.Tips = new Tips();
         this.Export = new ExportConfig();
         this.CompOverride = new Enums.CompOverride[0];
-        this.RTF = new RTF();
+        if (deserializing) return;
         if (!string.IsNullOrEmpty(iFilename))
         {
             try
@@ -149,6 +274,10 @@ public class ConfigData
                 MessageBox.Show(ex.Message);
             }
         }
+        this.IntializeComponent();
+    }
+    void IntializeComponent()
+    {
         this.RelocateSaveFolder(false);
         try
         {
@@ -158,10 +287,15 @@ public class ConfigData
         {
             MessageBox.Show(ex.Message);
         }
+
     }
 
     void Load(string iFilename)
     {
+        if (iFilename.EndsWith("json"))
+        {
+
+        }
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
 
@@ -198,11 +332,10 @@ public class ConfigData
                 this.Inc.PvE = reader.ReadBoolean();
                 reader.ReadBoolean();
                 this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
-                double num8 = (double)reader.ReadSingle();
+                reader.ReadSingle();
                 if ((double)num1 < 1.24000000953674)
                 {
-                    if (!reader.ReadBoolean())
-                        ;
+                    reader.ReadBoolean();
                 }
                 else
                     reader.ReadInt32();

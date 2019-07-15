@@ -20,6 +20,7 @@ public static class Files
     public const string MxdbFileModifiers = "AttribMod.mhd";
     public const string PatchRtf = "patch.rtf";
     const string MxdbFileConfig = "Config.mhd";
+    const string JsonFileConfig = "Config.json";
 
     public const string RoamingFolder = "Data\\";
 
@@ -58,8 +59,16 @@ public static class Files
         }
     }
 
-    static string FNameConfig
+    static string FNameJsonConfig
+    {
+        get
+        {
+            var fp = Path.Combine(Application.StartupPath, Path.Combine("Data", JsonFileConfig));
+            return System.Diagnostics.Debugger.IsAttached ? SearchUp("Data", fp) : fp;
 
+        }
+    }
+    static string FNameConfig
     {
         get
         {
@@ -103,10 +112,11 @@ public static class Files
         return string.Empty;
     }
 
-    internal static string SelectConfigFileLoad()
+    internal static string SelectConfigFileLoad(bool forceMhd)
     {
         try
         {
+            if (!forceMhd && File.Exists(Files.FNameJsonConfig)) return Files.FNameJsonConfig;
             if (File.Exists(Files.FNameConfig) || !File.Exists(OS.GetApplicationPath() + "Data\\Config.mhd"))
                 return Files.FNameConfig;
             return OS.GetApplicationPath() + "Data\\Config.mhd";

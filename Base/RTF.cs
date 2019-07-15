@@ -3,7 +3,7 @@ using Base.Master_Classes;
 using System;
 using System.Text;
 
-public class RTF
+public static class RTF
 {
     const string Header = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}";
 

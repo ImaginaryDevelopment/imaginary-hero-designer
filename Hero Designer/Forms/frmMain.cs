@@ -118,6 +118,7 @@ namespace Hero_Designer
         {
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
+                ConfigData.Initialize(My.MyApplication.GetSerializer().Deserialize<ConfigData>);
                 this.Load += new EventHandler(this.frmMain_Load);
                 this.Closed += new EventHandler(this.frmMain_Closed);
                 this.FormClosing += new FormClosingEventHandler(this.frmMain_Closing);
