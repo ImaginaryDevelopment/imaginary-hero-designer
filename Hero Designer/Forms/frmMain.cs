@@ -118,6 +118,7 @@ namespace Hero_Designer
         {
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
+                ConfigData.Initialize(My.MyApplication.GetSerializer());
                 this.Load += new EventHandler(this.frmMain_Load);
                 this.Closed += new EventHandler(this.frmMain_Closed);
                 this.FormClosing += new FormClosingEventHandler(this.frmMain_Closing);
@@ -209,7 +210,7 @@ namespace Hero_Designer
                     //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
                     //+ MidsContext.AppVersion 
                     //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MessageBoxButtons.YesNo | MessageBoxIcon.Question, "Welcome!") == DialogResult.Yes;
-                    MidsContext.Config.DefaultSaveFolder = string.Empty;
+                    MidsContext.Config.DefaultSaveFolderOverride = null;
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
                 }
@@ -282,8 +283,8 @@ namespace Hero_Designer
                 this.ReArrange(true);
                 this.GetBestDamageValues();
                 this.dvAnchored.SetFontData();
-                this.dlgSave.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
-                this.dlgOpen.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
+                this.dlgSave.InitialDirectory = MidsContext.Config.GetSaveFolder();
+                this.dlgOpen.InitialDirectory = MidsContext.Config.GetSaveFolder();
                 this.NoUpdate = false;
                 this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
                 this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;

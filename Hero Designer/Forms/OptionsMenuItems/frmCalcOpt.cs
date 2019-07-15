@@ -90,8 +90,8 @@ namespace Hero_Designer
         void btnSaveFolderReset_Click(object sender, EventArgs e)
         {
             MidsContext.Config.CreateDefaultSaveFolder();
-            MidsContext.Config.DefaultSaveFolder = OS.GetDefaultSaveFolder();
-            this.lblSaveFolder.Text = MidsContext.Config.DefaultSaveFolder;
+            MidsContext.Config.DefaultSaveFolderOverride = null;
+            this.lblSaveFolder.Text = MidsContext.Config.GetSaveFolder();
         }
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
@@ -518,19 +518,19 @@ namespace Hero_Designer
             this.chkRelSignOnly.Checked = config.ShowRelSymbols;
             this.chkIOPrintLevels.Checked = config.I9.PrintIOLevels;
             this.chkColourPrint.Checked = config.PrintInColour;
-            this.udRTFSize.Value = new Decimal((double)config.RtFont.RTFBase / 2.0);
-            this.udStatSize.Value = new Decimal(config.RtFont.PairedBase);
+            this.udRTFSize.Value = new decimal(config.RtFont.RTFBase / 2.0);
+            this.udStatSize.Value = new decimal(config.RtFont.PairedBase);
             this.chkTextBold.Checked = config.RtFont.RTFBold;
             this.chkStatBold.Checked = config.RtFont.PairedBold;
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
-            this.lblSaveFolder.Text = config.DefaultSaveFolder;
+            this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
             this.chkMiddle.Checked = config.ReapeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
             this.chkShowAlphaPopup.Checked = config.ShowAlphaPopup;
             this.chkUseArcanaTime.Checked = config.UseArcanaTime;
-            this.TeamSize.Value = new Decimal(config.TeamSize);
+            this.TeamSize.Value = new decimal(config.TeamSize);
             int index = 0;
             do
             {
@@ -700,11 +700,11 @@ namespace Hero_Designer
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;
             config.LoadLastFileOnStart = this.chkLoadLastFile.Checked;
-            if (config.DefaultSaveFolder != this.lblSaveFolder.Text)
+            if (!string.IsNullOrWhiteSpace(config.DefaultSaveFolderOverride) && config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
             {
-                config.DefaultSaveFolder = this.lblSaveFolder.Text;
-                this.myParent.DlgOpen.InitialDirectory = config.DefaultSaveFolder;
-                this.myParent.DlgSave.InitialDirectory = config.DefaultSaveFolder;
+                config.DefaultSaveFolderOverride = this.lblSaveFolder.Text;
+                this.myParent.DlgOpen.InitialDirectory = config.DefaultSaveFolderOverride;
+                this.myParent.DlgSave.InitialDirectory = config.DefaultSaveFolderOverride;
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;
