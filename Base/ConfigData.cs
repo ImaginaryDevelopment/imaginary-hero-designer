@@ -35,7 +35,7 @@ public class ConfigData
     public bool DataDamageGraph = true;
     public Enums.eDDGraph DataGraphType = Enums.eDDGraph.Both;
     public bool ShowVillainColours = true;
-    public bool FreshInstall = true;
+    public bool FreshInstall = false;
     public int Columns = 3;
     public Size LastSize = new Size(1072, 760);
     public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
@@ -46,10 +46,10 @@ public class ConfigData
     public bool LoadLastFileOnStart = true;
     public string LastFileName = string.Empty;
     public string DSaveFile;
-    public string DefaultSaveFolder = string.Empty;
-    public string DNickName = string.Empty;
-    public string DExList = string.Empty;
-    public string DWebhook = string.Empty;
+    public string DefaultSaveFolder;
+    public string DNickName;
+    public string DExList;
+    public string DWebhook;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -139,9 +139,9 @@ public class ConfigData
         this.I9.ExportExtraSep = false;
         this.UpdatePath = "";
         this.DefaultSaveFolder = OS.GetDefaultSaveFolder();
-        this.DNickName = "";
-        this.DExList = "";
-        this.DWebhook = "";
+        this.DNickName = String.Empty;
+        this.DExList = String.Empty;
+        this.DWebhook = String.Empty;
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
@@ -658,7 +658,7 @@ public class ConfigData
             }
             if (Directory.Exists(this.DefaultSaveFolder))
             {
-                if (MessageBox.Show("In order for Mids' Hero/Villain Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("In order for Mids' Reborn to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     this.LastFileName = string.Empty;
                     string defaultSaveFolder = this.DefaultSaveFolder;

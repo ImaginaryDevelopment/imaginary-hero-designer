@@ -154,7 +154,6 @@ namespace Hero_Designer
             }
         }
 
-
         void csPopulateList(int HighlightID = -1)
         {
             this.csList.Items.Clear();
@@ -291,6 +290,21 @@ namespace Hero_Designer
         void fcList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.fcDisplay();
+        }
+
+        void dExListListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dExListListBox.SelectedIndex == 2)
+            {
+                dcWebhookURLTextBox.Enabled = true;
+                dcWebhookURLTextBox.Text = MidsContext.Config.DWebhook;
+            }
+            else
+            {
+                dcWebhookURLTextBox.Enabled = false;
+                dcWebhookURLTextBox.Text = String.Empty;
+                MidsContext.Config.DWebhook = String.Empty;
+            }
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)
@@ -529,15 +543,6 @@ namespace Hero_Designer
             this.dNickNameTextBox.Text = config.DNickName;
             this.dExListListBox.SelectedItem = config.DExList;
             this.dcWebhookURLTextBox.Text = config.DWebhook;
-            if (dExListListBox.SelectedIndex != 2)
-            {
-                dcWebhookURLTextBox.Enabled = false;
-
-            }
-            else
-            {
-                dcWebhookURLTextBox.Enabled = true;
-            }
             this.chkColorInherent.Checked = config.DesaturateInherent;
             this.chkMiddle.Checked = config.ReapeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
