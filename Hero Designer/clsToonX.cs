@@ -2190,16 +2190,17 @@ namespace Hero_Designer
             return flag;
         }
 
-        public void Save(string iFileName)
+        public bool Save(string iFileName)
         {
             if (this.Archetype == null)
                 this.Archetype = DatabaseAPI.Database.Classes[0];
             if (this.Origin > this.Archetype.Origin.Length - 1)
                 this.Origin = this.Archetype.Origin.Length - 1;
-            string str1 = MidsCharacterFileFormat.MxDBuildSaveString(true, false);
-            if (str1 == "")
+            string saveText = MidsCharacterFileFormat.MxDBuildSaveString(true, false);
+            if (string.IsNullOrWhiteSpace(saveText))
             {
                 Interaction.MsgBox("Save failed - save function returned empty data.", MsgBoxStyle.Exclamation, "Error");
+                return false;
             }
             else
             {
@@ -2218,11 +2219,12 @@ namespace Hero_Designer
                     ProjectData.SetProjectError(ex);
                     Interaction.MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error!");
                     ProjectData.ClearProjectError();
-                    return;
+                    return false;
                 }
                 streamWriter.Write(str2);
-                streamWriter.Write(str1);
+                streamWriter.Write(saveText);
                 streamWriter.Close();
+                return true;
             }
         }
 

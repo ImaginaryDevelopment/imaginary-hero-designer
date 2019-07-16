@@ -19,34 +19,10 @@ namespace Hero_Designer
     {
 
         public bool RestartNeeded = false;
-        frmZStatus sFrm;
 
         public clsXMLUpdate(string path)
         {
         }
-
-        static void BugReport(string sData)
-        {
-            var targetUrl = "https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues";
-            try
-            {
-                if (sData.Length > 0)
-                {
-                    sData = sData.Replace("\r\n", "-");
-                    if (sData.Length > 96)
-                        sData = sData.Substring(0, 96);
-                }
-                Process.Start(targetUrl);
-                //Process.Start("http://www.honourableunited.org.uk/mhdreport.php" + "?" + "ver=" + Strings.Format( 1.962f, "##0.#####") + "&db=" + Strings.Format( DatabaseAPI.Database.Version, "##0.#####") + " (" + Strings.Format( DatabaseAPI.Database.Date, "dd/MM/yy") + ")&OS=" + OS.GetQuickOsid() + "&data=" + sData);
-            }
-            catch (Exception ex)
-            {
-                ProjectData.SetProjectError(ex);
-                Interaction.MsgBox(targetUrl + "\r\n\r\n" + ex.Message, MsgBoxStyle.Critical, "Error");
-                ProjectData.ClearProjectError();
-            }
-        }
-
         public static void BugReport(string at, string pri, string sec, string sData = "")
         {
             var targetUrl = "https://github.com/ImaginaryDevelopment/imaginary-hero-designer/issues";
@@ -82,19 +58,12 @@ namespace Hero_Designer
 
         public static void GoToForums()
         {
-            clsXMLUpdate.LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,5099.0.html");
+            clsXMLUpdate.LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,6298.0.html");
         }
 
         public static void GoToTitan()
         {
             //clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/");
-        }
-
-        void HideMessage()
-        {
-            if (this.sFrm != null)
-                this.sFrm.Hide();
-            this.sFrm = null;
         }
 
         static void LaunchBrowser(string iURI)
@@ -115,21 +84,6 @@ namespace Hero_Designer
         {
             var eCheckResponse = clsXMLUpdate.eCheckResponse.NoUpdates;
             return eCheckResponse;
-        }
-
-        protected class clsXMLItem
-        {
-            public string DisplayName = "";
-            public string LocalDest = "";
-            public bool Manual = true;
-            public string NodeName = "";
-            public string Notes = "";
-            public clsXMLUpdate.eUpdateType nType = clsXMLUpdate.eUpdateType.None;
-            public bool Restart = false;
-            public int Size = 0;
-            public string SourceURI = "";
-            public float Version = 0.0f;
-            public DateTime VersionDate = new DateTime(1, 1, 1);
         }
 
         public enum eCheckResponse
