@@ -336,6 +336,24 @@ namespace Hero_Designer
                 local = new Point(left, y);
                 this.dvAnchored.SetLocation(iLocation, true);
                 this.PriSec_ExpandChanged(true);
+                if (!this.IsInDesignMode())
+                {
+                    var exePath = typeof(frmMain).Assembly.Location;
+                    if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
+                    {
+                        if (MessageBox.Show("Associate .mhd and .mxd files with this application?", "File Assocation Setup", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            var associationResult = FileAssocation.AddToOpenWithLists(exePath);
+                            if (associationResult == FileAssocation.AddToOpenResult.Unauthorized)
+                            {
+                                if (MessageBox.Show("Unable to associate application with build files, turn off future attempts?", "Assocation Failure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    MidsContext.Config.DoNotUpdateFileAssociation = true;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

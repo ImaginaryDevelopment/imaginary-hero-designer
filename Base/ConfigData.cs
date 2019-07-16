@@ -16,6 +16,7 @@ public class ConfigData
 {
     public float BaseAcc = 0.75f;
     public string UpdatePath = null;
+    public bool DoNotUpdateFileAssociation;
     public Enums.eEnhGrade CalcEnhOrigin = Enums.eEnhGrade.SingleO;
     public Enums.eEnhRelative CalcEnhLevel = Enums.eEnhRelative.Even;
     public int ExempHigh = 50;
