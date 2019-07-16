@@ -13,7 +13,7 @@
   "DataGraphType": 2,
   "ShowVillainColours": true,
   "Columns": 3,
-  "LastSize": "1072, 760",
+  "LastSize": "1072, 835",
   "StatGraphStyle": 1,
   "CompOverride": [
     {
@@ -87,6 +87,9 @@
   "LastPrinter": "\u0001",
   "LoadLastFileOnStart": true,
   "LastFileName": "",
+  "DNickName": "",
+  "DSelServer": "",
+  "DChannel": "",
   "DesaturateInherent": true,
   "BuildMode": 1,
   "BuildOption": 2,
@@ -415,7 +418,7 @@
   "Tips": {
     "TipStatus": [
       0,
-      0,
+      1,
       0,
       0,
       0,
