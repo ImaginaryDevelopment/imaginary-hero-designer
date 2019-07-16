@@ -157,7 +157,7 @@ public class Modifiers
             this.SourceTables,
             this.Modifier
         };
-        ConfigData.SaveRawMhd(serializer, toSerialize, path);
+        ConfigData.SaveRawMhd(serializer, toSerialize, path, null);
     }
 
     const string StoreName = "Mids' Hero Designer Attribute Modifier Tables";
