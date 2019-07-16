@@ -136,7 +136,7 @@ namespace Base.Document_Classes
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Near
             };
-            HistoryMap[] historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, MidsContext.Config.PrintHistoryIOLevels);
+            HistoryMap[] historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, MidsContext.Config.I9.PrintIOLevels);
             int num1 = 0;
             string s = ((int)MidsContext.Character.Alignment).ToString() + " CurrentBuild";
             RectangleF layoutRectangle = new RectangleF(bounds.Left + 15, top, bounds.Width, 12.5f);
