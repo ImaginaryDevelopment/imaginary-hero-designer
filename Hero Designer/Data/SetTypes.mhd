@@ -1,6 +1,6 @@
 Set Type Names		
-Version:	3	
-Date:	5/10/2013	
+Version:	3.5	
+Date:	6/20/2019	
 		
 Notes:		
 Export from Excel as Tab-Delimited Text as 'SetTypes.mhd'		
@@ -54,4 +54,5 @@ SetID	Short	Full
 42	Stalker	Stalker Archetype Sets
 43	Tanker	Tanker Archetype Sets
 44	UniversalDamage	Universal Damage
+45	Sentinel	Sentinel Archetype Sets
 End		

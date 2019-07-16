@@ -1,103 +1,102 @@
 {
-  "name": "Mids' Hero Designer Config V2",
-  "version": 1.32,
   "BaseAcc": 0.75,
-  "CalcEnhLevel": 4,
+  "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
   "CalcEnhOrigin": 3,
+  "CalcEnhLevel": 4,
   "ExempHigh": 50,
+  "TeamSize": 1,
   "ExempLow": 50,
-  "PvE": true,
-  "Calculate": 1,
+  "ForceLevel": 50,
+  "ExportScheme": 1,
+  "ExportTarget": 1,
   "DataDamageGraph": true,
   "DataGraphType": 2,
-  "ExportScheme": 1,
   "ShowVillainColours": true,
   "Columns": 3,
-  "Width": 1095,
-  "Height": 819,
+  "LastSize": "1072, 835",
   "StatGraphStyle": 1,
-  "ForceLevel": 50,
-  "I9": {
-    "DefaultIOLevel": 49,
-    "DisplayIOLevels": true,
-    "CalculateEnahncementFX": true,
-    "CalculateSetBonusFX": true,
-    "PrintIOLevels": true,
-    "ExportCompress": true,
-    "ExportDataChunk": true
-  },
-  "RtFont": {
-    "PairedBase": 9.0,
-    "RTFBase": 20,
-    "ColorBackgroundHero": "0, 0, 32",
-    "ColorBackgroundVillain": "32, 0, 0",
-    "ColorEnhancement": "0, 255, 0",
-    "ColorFaded": "192, 192, 192",
-    "ColorInvention": "0, 255, 255",
-    "ColorInventionInv": "0, 0, 128",
-    "ColorText": "255, 255, 255",
-    "ColorWarning": "255, 0, 0",
-    "ColorPlName": "192, 192, 255",
-    "ColorPlSpecial": "128, 128, 255",
-    "ColorPowerAvailable": "255, 255, 0",
-    "ColorPowerTaken": "0, 255, 0",
-    "ColorPowerTakenDark": "0, 192, 0",
-    "ColorPowerDisabled": "128, 128, 192",
-    "ColorPowerHighlight": "64, 64, 96"
-  },
-  "ShowSlotLevels": true,
+  "CompOverride": [
+    {
+      "Powerset": "Electrical Blast",
+      "Power": "Tesla Cage",
+      "Override": "Ranged, Foe Hold, Foe Disorient"
+    },
+    {
+      "Powerset": "Electrical Blast",
+      "Power": "Short Circuit",
+      "Override": "PBAoE, Cone Moderate DoT(Energy), Foe -End, -Recovery "
+    },
+    {
+      "Powerset": "Assault Rifle",
+      "Power": "Burst",
+      "Override": "Ranged, minor DMG(Lethal), Foe -DEF "
+    },
+    {
+      "Powerset": "Assault Rifle",
+      "Power": "Slug",
+      "Override": "Ranged, moderate DMG(Lethal), Foe Knockback "
+    },
+    {
+      "Powerset": "Electrical Blast",
+      "Power": "Charged Bolts",
+      "Override": "Ranged, minor DMG(Energy), Foe -End "
+    },
+    {
+      "Powerset": "Electrical Blast",
+      "Power": "Lightning Bolt",
+      "Override": "Ranged, moderate DMG(Energy), Foe -End "
+    },
+    {
+      "Powerset": "Archery",
+      "Power": "Rain of Arrows",
+      "Override": "Ranged (Location AoE), Extreme DoT(Lethal) Self -Recovery "
+    },
+    {
+      "Powerset": "Assault Rifle",
+      "Power": "Full Auto",
+      "Override": "Ranged (Cone), extreme DMG(Lethal), +Special Self -Recovery "
+    },
+    {
+      "Powerset": "Sonic Attack",
+      "Power": "Shockwave",
+      "Override": "Ranged Minor DMG(Smashing/Energy), Foe Knockback "
+    },
+    {
+      "Powerset": "Sonic Attack",
+      "Power": "Shout",
+      "Override": "close high DMG(Smashing/Energy), Foe -Res(All) "
+    },
+    {
+      "Powerset": "Illusion Control",
+      "Power": "Blind",
+      "Override": "Ranged , Moderate DMG(Psionic), Foe Hold"
+    },
+    {
+      "Powerset": "Illusion Control",
+      "Power": "Phantom Army",
+      "Override": "Decoys: Ranged Minor DMG(Energy/Special) "
+    },
+    {
+      "Powerset": "Illusion Control",
+      "Power": "Spectral Terror",
+      "Override": "Terror: Ranged Fear "
+    }
+  ],
+  "PrintProfile": 16843009,
+  "PrintProfileEnh": true,
+  "LastPrinter": "\u0001",
   "LoadLastFileOnStart": true,
   "LastFileName": "",
-  "TipStatus": [
-    1,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "DefaultSaveFolder": "",
+  "DNickName": "",
+  "DSelServer": "",
+  "DChannel": "",
+  "DesaturateInherent": true,
   "BuildMode": 1,
   "BuildOption": 2,
-  "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
+  "ShowPopup": true,
   "ShowAlphaPopup": true,
-  "PopupRecipes": true,
-  "ShoppingListIncludesRecipes": true,
-  "PrintProfile": 16843009,
-  "PrintHistory": true,
-  "LastPrinter": "\u0001",
-  "PrintProfileEnh": true,
-  "DesaturateInherent": true,
   "ReapeatOnMiddleClick": true,
   "ExportHex": true,
-  "SpeedFormat": 16843009,
-  "SaveFolderChecked": true,
-  "UseArcanaTime": true,
   "DragDropScenarioAction": [
     3,
     0,
@@ -120,18 +119,26 @@
     0,
     0
   ],
+  "SpeedFormat": 16843009,
+  "UseArcanaTime": true,
+  "DamageMath": {
+    "Calculate": 1
+  },
+  "Inc": {
+    "PvE": true
+  },
   "Export": {
     "ColorSchemes": [
       {
         "SchemeName": "Navy",
-        "Title": "0, 0, 205",
-        "Heading": "0, 0, 128",
-        "Level": "72, 61, 139",
-        "Slots": "72, 61, 139",
-        "Power": "0, 0, 0",
-        "IOColor": "0, 0, 205",
-        "SetColor": "0, 0, 205",
-        "HOColor": "72, 61, 139"
+        "Title": "MediumBlue",
+        "Heading": "Navy",
+        "Level": "DarkSlateBlue",
+        "Slots": "DarkSlateBlue",
+        "Power": "Black",
+        "IOColor": "MediumBlue",
+        "SetColor": "MediumBlue",
+        "HOColor": "DarkSlateBlue"
       },
       {
         "SchemeName": "Light Blue (US)",
@@ -146,14 +153,14 @@
       },
       {
         "SchemeName": "Purple",
-        "Title": "128, 0, 128",
-        "Heading": "148, 0, 211",
-        "Level": "186, 85, 211",
-        "Slots": "148, 0, 211",
-        "Power": "0, 0, 0",
-        "IOColor": "128, 0, 128",
-        "SetColor": "128, 0, 128",
-        "HOColor": "148, 0, 211"
+        "Title": "Purple",
+        "Heading": "DarkViolet",
+        "Level": "MediumOrchid",
+        "Slots": "DarkViolet",
+        "Power": "Black",
+        "IOColor": "Purple",
+        "SetColor": "Purple",
+        "HOColor": "DarkViolet"
       },
       {
         "SchemeName": "Purple (US)",
@@ -168,33 +175,33 @@
       },
       {
         "SchemeName": "Orange",
-        "Title": "255, 140, 0",
-        "Heading": "255, 165, 0",
-        "Level": "255, 69, 0",
-        "Slots": "184, 134, 11",
-        "Power": "0, 0, 0",
-        "IOColor": "255, 140, 0",
-        "SetColor": "255, 140, 0",
-        "HOColor": "184, 134, 11"
+        "Title": "DarkOrange",
+        "Heading": "Orange",
+        "Level": "OrangeRed",
+        "Slots": "DarkGoldenrod",
+        "Power": "Black",
+        "IOColor": "DarkOrange",
+        "SetColor": "DarkOrange",
+        "HOColor": "DarkGoldenrod"
       },
       {
         "SchemeName": "Olive Drab",
-        "Title": "85, 107, 47",
-        "Heading": "0, 128, 0",
-        "Level": "107, 142, 35",
-        "Slots": "107, 142, 35",
-        "Power": "0, 0, 0",
-        "IOColor": "85, 107, 47",
-        "SetColor": "85, 107, 47",
-        "HOColor": "107, 142, 35"
+        "Title": "DarkOliveGreen",
+        "Heading": "Green",
+        "Level": "OliveDrab",
+        "Slots": "OliveDrab",
+        "Power": "Black",
+        "IOColor": "DarkOliveGreen",
+        "SetColor": "DarkOliveGreen",
+        "HOColor": "OliveDrab"
       },
       {
         "SchemeName": "Reds",
-        "Title": "128, 0, 0",
+        "Title": "Maroon",
         "Heading": "168, 0, 0",
         "Level": "132, 63, 60",
         "Slots": "111, 0, 0",
-        "Power": "0, 0, 0",
+        "Power": "Black",
         "IOColor": "155, 0, 0",
         "SetColor": "130, 0, 0",
         "HOColor": "147, 22, 0"
@@ -202,7 +209,7 @@
       {
         "SchemeName": "Reds (US)",
         "Title": "255, 106, 106",
-        "Heading": "255, 0, 0",
+        "Heading": "Red",
         "Level": "255, 108, 108",
         "Slots": "255, 128, 128",
         "Power": "255, 183, 183",
@@ -212,11 +219,11 @@
       },
       {
         "SchemeName": "Fruit Salad (US)",
-        "Title": "255, 165, 0",
-        "Heading": "30, 144, 255",
-        "Level": "50, 205, 50",
-        "Slots": "255, 215, 0",
-        "Power": "30, 144, 255",
+        "Title": "Orange",
+        "Heading": "DodgerBlue",
+        "Level": "LimeGreen",
+        "Slots": "Gold",
+        "Power": "DodgerBlue",
         "IOColor": "255, 192, 0",
         "SetColor": "255, 230, 0",
         "HOColor": "255, 195, 75"
@@ -376,5 +383,73 @@
         "UnderlineOff": "[/u]"
       }
     ]
-  }
+  },
+  "I9": {
+    "DefaultIOLevel": 49,
+    "DisplayIOLevels": true,
+    "CalculateEnahncementFX": true,
+    "CalculateSetBonusFX": true,
+    "PrintIOLevels": true,
+    "ExportDataChunk": true,
+    "ExportCompress": true
+  },
+  "RtFont": {
+    "RTFBase": 20,
+    "ColorBackgroundHero": "0, 0, 32",
+    "ColorBackgroundVillain": "32, 0, 0",
+    "ColorText": "White",
+    "ColorInvention": "Cyan",
+    "ColorInventionInv": "Navy",
+    "ColorFaded": "Silver",
+    "ColorEnhancement": "Lime",
+    "ColorWarning": "Red",
+    "ColorPlName": "192, 192, 255",
+    "ColorPlSpecial": "128, 128, 255",
+    "ColorPowerAvailable": "Yellow",
+    "ColorPowerTaken": "Lime",
+    "ColorPowerTakenDark": "0, 192, 0",
+    "ColorPowerHighlight": "64, 64, 96",
+    "ColorPowerDisabled": "128, 128, 192",
+    "PairedBase": 9.0
+  },
+  "PrintHistory": true,
+  "SaveFolderChecked": true,
+  "ShowSlotLevels": true,
+  "Tips": {
+    "TipStatus": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "ShoppingListIncludesRecipes": true,
+  "PopupRecipes": true
 }
