@@ -1,4 +1,3 @@
-
 using Base.Master_Classes;
 using System;
 using System.IO;
@@ -28,7 +27,6 @@ public static class MidsCharacterFileFormat
 
 
     static bool MxDBuildSaveBuffer(ref byte[] buffer, bool includeAltEnh)
-
     {
         MemoryStream memoryStream;
         BinaryWriter writer;
@@ -112,7 +110,7 @@ public static class MidsCharacterFileFormat
       bool includeAltEnh,
       bool @break)
     {
-        byte[] numArray = new byte[0];
+        byte[] numArray = Array.Empty<byte>();
         string str;
         if (!MxDBuildSaveBuffer(ref numArray, includeAltEnh))
         {
