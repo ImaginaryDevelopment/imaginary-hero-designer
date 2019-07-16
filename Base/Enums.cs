@@ -406,6 +406,7 @@ public static class Enums
         Stalker,
         Tanker,
         UniversalDamage,
+        Sentinel
     }
 
     public enum eEnhMutex

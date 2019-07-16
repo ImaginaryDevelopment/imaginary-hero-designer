@@ -178,8 +178,8 @@ namespace Hero_Designer
         void Button2_Click(object sender, EventArgs e)
         {
             var serializer = My.MyApplication.GetSerializer();
-            DatabaseAPI.AssignStaticIndexValues(serializer);
-            int num = (int)Interaction.MsgBox("Static Index values assigned.", MsgBoxStyle.Information, "Indexing Complete");
+            DatabaseAPI.AssignStaticIndexValues(serializer, true);
+            Interaction.MsgBox("Static Index values assigned.", MsgBoxStyle.Information, "Indexing Complete");
         }
 
         void DisplayInfo()

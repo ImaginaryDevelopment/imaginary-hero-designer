@@ -9,6 +9,7 @@ namespace Base.Master_Classes
         public const float AppVersion = 2.132f;
         public const string AppName = "Mids' Reborn";
         public const string Title = "Mids' Reborn : Hero Designer";
+        public const string AssemblyName = "Hero Designer.exe";
         public static Archetype Archetype;
         public static Character Character;
 

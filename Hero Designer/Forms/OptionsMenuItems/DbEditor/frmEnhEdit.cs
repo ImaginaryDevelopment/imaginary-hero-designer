@@ -176,7 +176,7 @@ namespace Hero_Designer
         {
             I9Gfx.LoadEnhancements();
             var serializer = My.MyApplication.GetSerializer();
-            DatabaseAPI.AssignStaticIndexValues(serializer);
+            DatabaseAPI.AssignStaticIndexValues(serializer, false);
             DatabaseAPI.AssignRecipeIDs();
             DatabaseAPI.SaveEnhancementDb(serializer);
             this.Hide();

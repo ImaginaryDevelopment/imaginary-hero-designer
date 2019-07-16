@@ -118,6 +118,7 @@ namespace Hero_Designer
         {
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
             {
+                ConfigData.Initialize(My.MyApplication.GetSerializer());
                 this.Load += new EventHandler(this.frmMain_Load);
                 this.Closed += new EventHandler(this.frmMain_Closed);
                 this.FormClosing += new FormClosingEventHandler(this.frmMain_Closing);
@@ -209,7 +210,7 @@ namespace Hero_Designer
                     //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
                     //+ MidsContext.AppVersion 
                     //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MessageBoxButtons.YesNo | MessageBoxIcon.Question, "Welcome!") == DialogResult.Yes;
-                    MidsContext.Config.DefaultSaveFolder = string.Empty;
+                    MidsContext.Config.DefaultSaveFolderOverride = null;
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
                 }
@@ -282,8 +283,8 @@ namespace Hero_Designer
                 this.ReArrange(true);
                 this.GetBestDamageValues();
                 this.dvAnchored.SetFontData();
-                this.dlgSave.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
-                this.dlgOpen.InitialDirectory = MidsContext.Config.DefaultSaveFolder;
+                this.dlgSave.InitialDirectory = MidsContext.Config.GetSaveFolder();
+                this.dlgOpen.InitialDirectory = MidsContext.Config.GetSaveFolder();
                 this.NoUpdate = false;
                 this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
                 this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
@@ -335,6 +336,24 @@ namespace Hero_Designer
                 local = new Point(left, y);
                 this.dvAnchored.SetLocation(iLocation, true);
                 this.PriSec_ExpandChanged(true);
+                if (!this.IsInDesignMode())
+                {
+                    var exePath = typeof(frmMain).Assembly.Location;
+                    if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
+                    {
+                        if (MessageBox.Show("Associate .mhd and .mxd files with this application?", "File Assocation Setup", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            var associationResult = FileAssocation.AddToOpenWithLists(exePath);
+                            if (associationResult == FileAssocation.AddToOpenResult.Unauthorized)
+                            {
+                                if (MessageBox.Show("Unable to associate application with build files, turn off future attempts?", "Assocation Failure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    MidsContext.Config.DoNotUpdateFileAssociation = true;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -1194,9 +1213,12 @@ namespace Hero_Designer
             }
             else
             {
-                MainModule.MidsController.Toon.Save(this.LastFileName);
-                this.FileModified = false;
-                return true;
+                if (MainModule.MidsController.Toon.Save(this.LastFileName))
+                {
+                    this.FileModified = false;
+                    return true;
+                }
+                return false;
             }
         }
 
@@ -1210,7 +1232,7 @@ namespace Hero_Designer
                     this.dlgSave.FileName = this.dlgSave.FileName.Substring(0, this.dlgSave.FileName.Length - 3) + this.dlgSave.DefaultExt;
                 this.dlgSave.InitialDirectory = this.LastFileName.Substring(0, this.LastFileName.LastIndexOf("\\", StringComparison.Ordinal));
             }
-            else if (MidsContext.Character.Name != string.Empty)
+            else if (!string.IsNullOrWhiteSpace(MidsContext.Character.Name))
             {
                 if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.VillainEpic)
                     this.dlgSave.FileName = MidsContext.Character.Name + " - Arachnos " + MidsContext.Character.Powersets[0].DisplayName.Replace(" Training", string.Empty).Replace("Arachnos ", string.Empty);
@@ -1227,23 +1249,24 @@ namespace Hero_Designer
                 SaveFileDialog dlgSave = this.dlgSave;
                 dlgSave.FileName = dlgSave.FileName + " - " + MidsContext.Character.Powersets[0].DisplayName + " - " + MidsContext.Character.Powersets[1].DisplayName;
             }
-            bool flag;
             if (this.dlgSave.ShowDialog() == DialogResult.OK)
             {
-                MainModule.MidsController.Toon.Save(this.dlgSave.FileName);
-                this.FileModified = false;
-                this.LastFileName = this.dlgSave.FileName;
-                MidsContext.Config.LastFileName = this.dlgSave.FileName;
-                this.SetTitleBar(true);
-                this.FloatTop(true);
-                flag = true;
+                if (MainModule.MidsController.Toon.Save(this.dlgSave.FileName))
+                {
+                    this.FileModified = false;
+                    this.LastFileName = this.dlgSave.FileName;
+                    MidsContext.Config.LastFileName = this.dlgSave.FileName;
+                    this.SetTitleBar(true);
+                    this.FloatTop(true);
+                    return true;
+                }
+                return false;
             }
             else
             {
                 this.FloatTop(true);
-                flag = false;
+                return false;
             }
-            return flag;
         }
 
         void dvAnchored_Float()
@@ -1298,22 +1321,18 @@ namespace Hero_Designer
         bool EditAccoladesOrTemps(int hIDPower)
         {
             if (hIDPower <= -1 || MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length <= 0)
-            {
                 return false;
-            }
-            else
-            {
-                List<IPower> iPowers = new List<IPower>();
-                int num1 = MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length - 1;
-                for (int index = 0; index <= num1; ++index)
-                    iPowers.Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers[index].nIDPower]);
-                frmAccolade frmAccolade = new frmAccolade(this, iPowers);
-                frmAccolade.Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower].DisplayName;
-                frmAccolade.ShowDialog(this);
-                this.EnhancementModified();
-                this.LastClickPlacedSlot = false;
-                return true;
-            }
+
+            List<IPower> iPowers = new List<IPower>();
+            int num1 = MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers.Length - 1;
+            for (int index = 0; index <= num1; ++index)
+                iPowers.Add(DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].SubPowers[index].nIDPower]);
+            frmAccolade frmAccolade = new frmAccolade(this, iPowers);
+            frmAccolade.Text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower].DisplayName;
+            frmAccolade.ShowDialog(this);
+            this.EnhancementModified();
+            this.LastClickPlacedSlot = false;
+            return true;
         }
 
         void EndFlip()
@@ -1331,10 +1350,7 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        int[] fakeInitialize(params int[] nums)
-        {
-            return nums;
-        }
+        int[] fakeInitialize(params int[] nums) => nums;
 
         void FixPrimarySecondaryHeight()
         {
@@ -1392,9 +1408,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatCompareGraph(bool Show)
+        internal void FloatCompareGraph(bool show)
         {
-            if (Show)
+            if (show)
             {
                 if (this.fGraphCompare == null)
                 {
@@ -1460,9 +1476,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatDPSCalc(bool Show)
+        internal void FloatDPSCalc(bool showow)
         {
-            if (Show)
+            if (showow)
             {
                 if (this.fDPSCalc == null)
                     this.fDPSCalc = new frmDPSCalc(this);
@@ -1480,9 +1496,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatSetFinder(bool Show)
+        internal void FloatSetFinder(bool show)
         {
-            if (Show)
+            if (show)
             {
                 if (this.fSetFinder == null)
                     this.fSetFinder = new frmSetFind(this);
@@ -1499,9 +1515,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatSets(bool Show)
+        internal void FloatSets(bool show)
         {
-            if (Show)
+            if (show)
             {
                 if (this.fSets == null)
                 {
@@ -1523,9 +1539,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatStatGraph(bool Show)
+        internal void FloatStatGraph(bool show)
         {
-            if (Show)
+            if (show)
             {
                 if (this.fGraphStats == null)
                 {
@@ -1546,9 +1562,9 @@ namespace Hero_Designer
             }
         }
 
-        void FloatTop(bool OnTop)
+        void FloatTop(bool onTop)
         {
-            if (!OnTop)
+            if (!onTop)
             {
                 if (this.fSets != null)
                 {
@@ -1640,9 +1656,9 @@ namespace Hero_Designer
             }
         }
 
-        internal void FloatTotals(bool Show)
+        internal void FloatTotals(bool show)
         {
-            if (Show)
+            if (show)
             {
                 if (this.fTotals == null)
                 {
@@ -1666,12 +1682,12 @@ namespace Hero_Designer
             }
         }
 
-        void FloatUpdate(bool NewData = false)
+        void FloatUpdate(bool newData = false)
         {
             if (this.fSets != null)
                 this.fSets.UpdateData();
             if (this.fGraphStats != null)
-                this.fGraphStats.UpdateData(NewData);
+                this.fGraphStats.UpdateData(newData);
             if (this.fTotals != null)
                 this.fTotals.UpdateData();
             if (this.fGraphCompare != null)
@@ -1754,51 +1770,48 @@ namespace Hero_Designer
         {
             if (MainModule.MidsController.Toon == null)
                 return;
-            float num1 = 0.0f;
-            int num2 = MidsContext.Character.Powersets[0].Powers.Length - 1;
-            for (int index = 0; index <= num2; ++index)
+            float highBase = 0.0f;
+            for (int index = 0; index <= MidsContext.Character.Powersets[0].Powers.Length - 1; ++index)
             {
                 IPower power = MidsContext.Character.Powersets[0].Powers[index];
                 if (!power.SkipMax)
                 {
                     float damageValue = power.FXGetDamageValue();
-                    if (damageValue > (double)num1)
-                        num1 = damageValue;
+                    if (damageValue > (double)highBase)
+                        highBase = damageValue;
                 }
             }
-            int num3 = MidsContext.Character.Powersets[1].Powers.Length - 1;
-            for (int index = 0; index <= num3; ++index)
+            for (int index = 0; index <= MidsContext.Character.Powersets[1].Powers.Length - 1; ++index)
             {
                 IPower power = MidsContext.Character.Powersets[1].Powers[index];
                 if (!power.SkipMax)
                 {
                     float damageValue = power.FXGetDamageValue();
-                    if (damageValue > (double)num1)
-                        num1 = damageValue;
+                    if (damageValue > (double)highBase)
+                        highBase = damageValue;
                 }
             }
-            float num4 = num1;
             MainModule.MidsController.Toon.GenerateBuffedPowerArray();
-            float num5 = num1 * (1f + MidsContext.Character.TotalsCapped.BuffDam + Enhancement.ApplyED(Enums.eSchedule.A, 2.277f));
+            float highEnh = highBase * (1f + MidsContext.Character.TotalsCapped.BuffDam + Enhancement.ApplyED(Enums.eSchedule.A, 2.277f));
             if (MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPS | MidsContext.Config.DamageMath.ReturnValue == ConfigData.EDamageReturn.DPA)
-                num5 *= 1.5f;
-            this.myDataView.Info_Damage.nHighBase = num4;
-            this.myDataView.Info_Damage.nHighEnh = num5;
+                highEnh *= 1.5f;
+            this.myDataView.Info_Damage.nHighBase = highBase;
+            this.myDataView.Info_Damage.nHighEnh = highEnh;
         }
 
-        int GetFirstValidSetEnh(int SlotIndex, int hID)
+        int GetFirstValidSetEnh(int slotIndex, int hID)
         {
             if (this.LastEnhPlaced != null && this.LastEnhPlaced.Enh >= 0 && DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].TypeID == Enums.eType.SetO)
             {
                 int nIdSet = DatabaseAPI.Database.Enhancements[this.LastEnhPlaced.Enh].nIDSet;
                 if (nIdSet < 0)
                     return -1;
-                if (MidsContext.Character.CurrentBuild.EnhancementTest(SlotIndex, hID, this.LastEnhPlaced.Enh, true))
+                if (MidsContext.Character.CurrentBuild.EnhancementTest(slotIndex, hID, this.LastEnhPlaced.Enh, true))
                     return this.LastEnhPlaced.Enh;
                 int num = DatabaseAPI.Database.EnhancementSets[nIdSet].Enhancements.Length - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (MidsContext.Character.CurrentBuild.EnhancementTest(SlotIndex, hID, DatabaseAPI.Database.EnhancementSets[nIdSet].Enhancements[index], true))
+                    if (MidsContext.Character.CurrentBuild.EnhancementTest(slotIndex, hID, DatabaseAPI.Database.EnhancementSets[nIdSet].Enhancements[index], true))
                         return DatabaseAPI.Database.EnhancementSets[nIdSet].Enhancements[index];
                 }
             }
@@ -1840,8 +1853,7 @@ namespace Hero_Designer
                 if (!this.fAccolade.IsDisposed)
                     this.fAccolade.Dispose();
                 IPower power = MidsContext.Character.IsHero() ? DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3258)] : DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3257)];
-                int num = power.NIDSubPower.Length - 1;
-                for (int index = 0; index <= num; ++index)
+                for (int index = 0; index <= power.NIDSubPower.Length - 1; ++index)
                 {
                     if (MidsContext.Character.CurrentBuild.PowerUsed(DatabaseAPI.Database.Power[power.NIDSubPower[index]]))
                         MidsContext.Character.CurrentBuild.RemovePower(DatabaseAPI.Database.Power[power.NIDSubPower[index]]);
@@ -1878,23 +1890,24 @@ namespace Hero_Designer
             bool flag1 = false;
             if (MidsContext.Character.CurrentBuild.EnhancementTest(this.EnhancingSlot, this.EnhancingPower, e.Enh, false) | e.Enh < 0)
             {
-                if (e.Enh != MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].Slots[this.EnhancingSlot].Enhancement.Enh)
+                var power = MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower];
+                if (e.Enh != power.Slots[this.EnhancingSlot].Enhancement.Enh)
                     flag1 = true;
-                bool flag2 = MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].HasProc();
-                MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].Slots[this.EnhancingSlot].Enhancement = (I9Slot)e.Clone();
+                bool hasProc = power.HasProc();
+                power.Slots[this.EnhancingSlot].Enhancement = (I9Slot)e.Clone();
                 if (e.Enh > -1)
                     this.LastEnhPlaced = (I9Slot)e.Clone();
                 if (flag1)
                 {
                     if (e.Enh > -1)
                     {
-                        if (!flag2 & (MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].HasProc() & ((double)DatabaseAPI.Database.Enhancements[e.Enh].Probability == 0.0 | (double)DatabaseAPI.Database.Enhancements[e.Enh].Probability == 1.0)))
-                            MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].StatInclude = true;
-                        else if (!MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].CanIncludeForStats())
-                            MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].StatInclude = false;
+                        if (!hasProc && power.HasProc() && (DatabaseAPI.Database.Enhancements[e.Enh].Probability == 0.0 || DatabaseAPI.Database.Enhancements[e.Enh].Probability == 1.0))
+                            power.StatInclude = true;
+                        else if (!power.CanIncludeForStats())
+                            power.StatInclude = false;
                     }
-                    else if (!MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].CanIncludeForStats())
-                        MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].StatInclude = false;
+                    else if (!power.CanIncludeForStats())
+                        power.StatInclude = false;
                 }
                 this.I9Picker.Visible = false;
                 this.PowerModified();

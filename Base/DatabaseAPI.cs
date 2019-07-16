@@ -564,6 +564,14 @@ public static class DatabaseAPI
     }
     const string MainDbName = "Mids' Hero Designer Database MK II";
 
+    public class FHash
+    {
+        public string Archetype { get; set; }
+        public string Fullname { get; set; }
+        public int Hash { get; set; }
+        public int Length { get; set; }
+    }
+
     static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
     {
         var powersetPowers = Database.Powersets.SelectMany(x => x.Powers).Select(p => p.PowerIndex).Distinct().ToList();
@@ -579,7 +587,7 @@ public static class DatabaseAPI
             Archetypes = Database.Classes,
             Database.PowersetVersion,
             // out of memory exception
-            Database.Powersets,
+            //Database.Powersets,
             Powers = new
             {
                 Database.PowerVersion,
@@ -593,7 +601,44 @@ public static class DatabaseAPI
             },
             Database.Entities
         };
-        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn, null);
+        var archPowersets = Database.Powersets; // .Where(ps => ps.nArchetype >= 0);
+        var dbPath = Path.Combine(Path.GetDirectoryName(fn), "db");
+        var playerPath = Path.Combine(dbPath, "Player");
+        var otherPath = Path.Combine(dbPath, "Other");
+        var toWrite = new List<FHash>();
+        foreach (var path in new[] { dbPath, playerPath, otherPath }.Where(p => !Directory.Exists(p)))
+            Directory.CreateDirectory(path);
+        var metadataPath = Path.Combine(Path.GetDirectoryName(fn), "db_metadata" + Path.GetExtension(fn));
+        var (hasPrevious, prev) = ConfigData.LoadRawMhd<FHash[]>(serializer, metadataPath);
+        foreach (var ps in archPowersets)
+        {
+            var at = Database.Classes.FirstOrDefault(cl => ps.nArchetype != -1 && cl.Idx == ps.nArchetype);
+            var at2 = Database.Classes.Length > ps.nArchetype && ps.nArchetype != -1 ? Database.Classes[ps.nArchetype] : null;
+            if (ps.FullName?.Length == 0 || ps.FullName?.Length > 100)
+                continue;
+
+            if (ps.FullName?.Contains(";") == true || string.IsNullOrWhiteSpace(ps.FullName))
+            {
+                Console.Error.WriteLine("hmmm:" + ps.DisplayName);
+            }
+            var psFn = Path.Combine(ps.nArchetype >= 0 ? playerPath : otherPath, ps.ATClass + "_" + ps.FullName + Path.GetExtension(fn));
+            if (psFn.Length > 240)
+            {
+                continue;
+            }
+            var psPrevious = hasPrevious ? prev.FirstOrDefault(psm => psm.Fullname == ps.FullName && psm.Archetype == ps.ATClass) : null;
+            var lastSaveResult = hasPrevious && psPrevious != null ? new ConfigData.RawSaveResult() { Hash = psPrevious.Hash, Length = psPrevious.Length } : null;
+            var saveresult = ConfigData.SaveRawMhd(serializer, ps, psFn, lastSaveResult);
+            toWrite.Add(new FHash()
+            {
+                Fullname = ps.FullName,
+                Archetype = ps.ATClass,
+                Hash = saveresult.Hash,
+                Length = saveresult.Length
+            });
+        }
+        ConfigData.SaveRawMhd(serializer, toWrite, metadataPath, null);
     }
     public static void SaveMainDatabase(ISerialize serializer)
     {
@@ -1066,7 +1111,7 @@ public static class DatabaseAPI
             Database.RecipeRevisionDate,
             Database.Recipes
         };
-        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn, null);
     }
     public static void SaveRecipes(ISerialize serializer)
     {
@@ -1151,7 +1196,7 @@ public static class DatabaseAPI
             name,
             Database.Salvage
         };
-        ConfigData.SaveRawMhd(serializer, toSerialize, fn);
+        ConfigData.SaveRawMhd(serializer, toSerialize, fn, null);
     }
 
     const string SalvageName = "Mids' Hero Designer Salvage Database";
@@ -1198,7 +1243,7 @@ public static class DatabaseAPI
             Database.Enhancements,
             Database.EnhancementSets
         };
-        ConfigData.SaveRawMhd(serializer, toSerialize, filename);
+        ConfigData.SaveRawMhd(serializer, toSerialize, filename, null);
     }
 
     public static void SaveEnhancementDb(ISerialize serializer)
@@ -1823,7 +1868,7 @@ public static class DatabaseAPI
     public static void MatchSummonIDs()
         => SummonedEntity.MatchSummonIDs(NidFromUidClass, NidFromUidPowerset, NidFromUidPower);
 
-    public static void AssignStaticIndexValues(ISerialize serializer)
+    public static void AssignStaticIndexValues(ISerialize serializer, bool save)
     {
         int num1 = -2;
         for (int index = 0; index <= Database.Power.Length - 1; ++index)
@@ -1857,7 +1902,10 @@ public static class DatabaseAPI
                 Database.Enhancements[index].StaticIndex = num2;
             }
         }
-        SaveMainDatabase(serializer);
-        SaveEnhancementDb(serializer);
+        if (save)
+        {
+            SaveMainDatabase(serializer);
+            SaveEnhancementDb(serializer);
+        }
     }
 }
