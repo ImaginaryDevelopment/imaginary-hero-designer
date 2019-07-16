@@ -427,7 +427,7 @@ public class ConfigData
 
     void SaveRaw(ISerialize serializer, string iFilename)
     {
-        SaveRawMhd(serializer, this, iFilename);
+        SaveRawMhd(serializer, this, iFilename, null);
     }
 
     const string header = "Mids' Hero Designer Config V2";
@@ -511,17 +511,42 @@ public class ConfigData
         }
     }
 
-    public static void SaveRawMhd(ISerialize serializer, object o, string fn)
+    public class RawSaveResult
+    {
+        public int Length { get; set; }
+        public int Hash { get; set; }
+    }
+    public static (bool, T) LoadRawMhd<T>(ISerialize serializer, string fn)
+    {
+        if (!File.Exists(fn))
+            return (false, default);
+        return (true, serializer.Deserialize<T>(File.ReadAllText(fn)));
+    }
+    public static RawSaveResult SaveRawMhd(ISerialize serializer, object o, string fn, RawSaveResult lastSaveInfo)
     {
         try
         {
             var path = Path.Combine(Path.GetDirectoryName(fn), Path.GetFileNameWithoutExtension(fn) + "." + serializer.Extension);
             var text = serializer.Serialize(o);
+            // don't save if the file will be the same
+            if (lastSaveInfo != null && text != null
+                && lastSaveInfo.Length > 0 && text.Length > 0
+                && lastSaveInfo.Hash != 0 && lastSaveInfo.Hash == text.GetHashCode()
+                && File.Exists(fn))
+                return lastSaveInfo;
+            if (lastSaveInfo != null)
+                Console.WriteLine("Writing out updated file: " + fn);
             File.WriteAllText(path, contents: text);
+            return new RawSaveResult()
+            {
+                Length = text?.Length ?? 0,
+                Hash = text?.GetHashCode() ?? 0
+            };
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Failed to save raw config");
+            MessageBox.Show("Failed to save raw config: " + ex.Message, ex.GetType().Name);
+            return null;
         }
     }
 
@@ -533,7 +558,7 @@ public class ConfigData
             name,
             this.CompOverride
         };
-        SaveRawMhd(serializer, toSerialize, iFilename);
+        SaveRawMhd(serializer, toSerialize, iFilename, null);
     }
 
     void SaveOverrides(ISerialize serializer)
