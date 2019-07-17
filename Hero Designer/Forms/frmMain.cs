@@ -5062,10 +5062,10 @@ namespace Hero_Designer
             frmMain.ComboCheckPool(CbtPool2.Value, Enums.ePowerSetType.Pool);
             frmMain.ComboCheckPool(CbtPool3.Value, Enums.ePowerSetType.Pool);
             frmMain.ComboCheckPool(CbtAncillary.Value, Enums.ePowerSetType.Ancillary);
-            this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3].nID);
-            this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4].nID);
-            this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5].nID);
-            this.cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6].nID);
+            this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3]?.nID ?? -1);
+            this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4]?.nID ?? -1);
+            this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5]?.nID ?? -1);
+            this.cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6]?.nID ?? -1);
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Ancillary);
             if (MidsContext.Character.Powersets[7] != null)
                 this.cbAncillary.SelectedIndex = DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[7], powersetIndexes);
@@ -5488,23 +5488,25 @@ namespace Hero_Designer
                         }
                     }
                 }
-                if (stringList.Count > MidsContext.Character.Powersets.Length + 1)
-                    MidsContext.Character.Powersets = new IPowerset[stringList.Count];
-                IPowerset powersetByName1 = DatabaseAPI.GetPowersetByName(stringList[0]);
-                if (powersetByName1 == null)
-                    str1 = stringList[0];
-                MidsContext.Character.Powersets[0] = powersetByName1;
-                IPowerset powersetByName2 = DatabaseAPI.GetPowersetByName(stringList[1]);
-                if (powersetByName2 == null)
-                    str1 = stringList[1];
-                MidsContext.Character.Powersets[1] = powersetByName2;
-                for (int index = 2; index < stringList.Count; ++index)
-                {
-                    IPowerset powersetByName3 = DatabaseAPI.GetPowersetByName(stringList[index]);
-                    if (powersetByName3 == null)
-                        str1 = stringList[index];
-                    MidsContext.Character.Powersets[index + 1] = powersetByName3;
-                }
+                MidsContext.Character.LoadPowersetsByName2(stringList, ref str1);
+
+                //if (stringList.Count > MidsContext.Character.Powersets.Length + 1)
+                //    MidsContext.Character.Powersets = new IPowerset[stringList.Count];
+                //IPowerset powersetByName1 = DatabaseAPI.GetPowersetByName(stringList[0]);
+                //if (powersetByName1 == null)
+                //    str1 = stringList[0];
+                //MidsContext.Character.Powersets[0] = powersetByName1;
+                //IPowerset powersetByName2 = DatabaseAPI.GetPowersetByName(stringList[1]);
+                //if (powersetByName2 == null)
+                //    str1 = stringList[1];
+                //MidsContext.Character.Powersets[1] = powersetByName2;
+                //for (int index = 2; index < stringList.Count; ++index)
+                //{
+                //    IPowerset powersetByName3 = DatabaseAPI.GetPowersetByName(stringList[index]);
+                //    if (powersetByName3 == null)
+                //        str1 = stringList[index];
+                //    MidsContext.Character.Powersets[index + 1] = powersetByName3;
+                //}
                 MidsContext.Character.CurrentBuild.LastPower = 24;
                 int index3 = 0;
                 List<PowerEntry> listPowerEntry = new List<PowerEntry>();
@@ -5624,7 +5626,7 @@ namespace Hero_Designer
             }
             catch
             {
-                int num = (int)MessageBox.Show(("Invalid Import Data, Blame Sai!\nError: " + str1), null, MessageBoxButtons.OK);
+                MessageBox.Show(("Invalid Import Data, Blame Sai!\nError: " + str1), null, MessageBoxButtons.OK);
             }
         }
 
