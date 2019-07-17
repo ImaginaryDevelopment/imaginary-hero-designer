@@ -10,6 +10,7 @@ namespace Base.Master_Classes
         public const string AppName = "Mids' Reborn";
         public const string Title = "Mids' Reborn : Hero Designer";
         public const string AssemblyName = "Hero Designer.exe";
+        public const string DownloadUrl = "https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases";
         public static Archetype Archetype;
         public static Character Character;
 

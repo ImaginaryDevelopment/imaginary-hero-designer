@@ -1,5 +1,7 @@
 
+using Base;
 using Base.IO_Classes;
+using Base.Master_Classes;
 using Hero_Designer.My;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -7,6 +9,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,7 +23,7 @@ namespace Hero_Designer
 
         public bool RestartNeeded = false;
 
-        public clsXMLUpdate(string path)
+        public clsXMLUpdate()
         {
         }
         public static void BugReport(string at, string pri, string sec, string sData = "")
@@ -61,11 +64,6 @@ namespace Hero_Designer
             clsXMLUpdate.LaunchBrowser("https://forums.homecomingservers.com/index.php/topic,6298.0.html");
         }
 
-        public static void GoToTitan()
-        {
-            //clsXMLUpdate.LaunchBrowser("http://www.cohtitan.com/");
-        }
-
         static void LaunchBrowser(string iURI)
         {
             try
@@ -79,11 +77,60 @@ namespace Hero_Designer
                 ProjectData.ClearProjectError();
             }
         }
+        const string readmeUrl = "https://raw.githubusercontent.com/ImaginaryDevelopment/imaginary-hero-designer/master/README.md";
 
-        public clsXMLUpdate.eCheckResponse UpdateCheck(bool silent, ref IMessager iLoadFrm)
+        public (eCheckResponse, string) UpdateCheck()
         {
-            var eCheckResponse = clsXMLUpdate.eCheckResponse.NoUpdates;
-            return eCheckResponse;
+            string response = null;
+            try
+            {
+                using (var client = new HttpClient())
+                    response = client.GetStringAsync(readmeUrl).Result;
+
+            }
+            catch (Exception ex)
+            {
+                var msg = $"Failed to download update information ({ex.Message}) from update :" + readmeUrl;
+                return (eCheckResponse.FailedWithMessage, msg);
+            }
+
+            if (string.IsNullOrWhiteSpace(response))
+            {
+                var msg = "Failed to reach update url: " + readmeUrl;
+                return (eCheckResponse.FailedWithMessage, msg);
+            }
+            string remoteversion;
+            try
+            {
+                remoteversion = response.After("Latest Version").Trim().GetLine(0).Trim().Before("-").Trim();
+            }
+            catch (Exception ex)
+            {
+                var msg = $"Failed parse text ({ex.Message}) from update url:" + readmeUrl;
+                return (eCheckResponse.FailedWithMessage, msg);
+            }
+            Version availVer;
+            try
+            {
+                availVer = new Version(remoteversion);
+            }
+            catch (Exception ex)
+            {
+                var msg = $"Failed parse version ('{remoteversion}',{ex.Message}) from update url:" + readmeUrl;
+                return (eCheckResponse.FailedWithMessage, msg);
+            }
+            try
+            {
+                var runningVer = typeof(frmMain).Assembly.GetName().Version;
+                // I don't trust that != isn't reference comparison for the version type
+                if (runningVer.CompareTo(availVer) < 0) return (eCheckResponse.Updates, $"Version {remoteversion}, installed is {runningVer.ToString()}");
+                return (eCheckResponse.NoUpdates, null);
+            }
+            catch (Exception ex)
+            {
+                var msg = $"Failed compare versions ('{remoteversion}',{ex.Message}) from update url: {readmeUrl}";
+                return (eCheckResponse.FailedWithMessage, msg);
+            }
         }
 
         public enum eCheckResponse
