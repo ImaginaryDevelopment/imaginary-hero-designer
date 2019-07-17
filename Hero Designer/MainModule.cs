@@ -14,7 +14,6 @@ namespace Hero_Designer
     {
         public class MidsController
         {
-            public static float HeroDesignerVersion = 2.23f;
             static bool _appInitialized = false;
 
             public static Rectangle SzFrmCompare = new Rectangle();

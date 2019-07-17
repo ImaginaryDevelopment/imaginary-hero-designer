@@ -19,6 +19,7 @@ namespace Hero_Designer
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
+                Base.Master_Classes.MidsContext.AssertVersioning();
                 Application.Run(new frmMain());
             }
             catch (Exception ex)

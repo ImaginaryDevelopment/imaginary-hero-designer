@@ -4021,15 +4021,11 @@ namespace Hero_Designer
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
             {
-                this.Text = str2 + " (Master Mode) v" + MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######") + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
+                this.Text = str2 + " (Master Mode) v" + MidsContext.AppAssemblyVersion + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
             }
             else
             {
-                string str3 = MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######");
-                if (str3.Length > 5)
-                    str3 = str3.Substring(0, 5);
-                string str4 = str3.Trim("0".ToCharArray());
-                this.Text = str2 + " v" + str4 + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
+                this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
             }
         }
 
