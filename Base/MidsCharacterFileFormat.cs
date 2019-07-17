@@ -1,5 +1,6 @@
 using Base.Master_Classes;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -251,14 +252,17 @@ public static class MidsCharacterFileFormat
                             MidsContext.Character.Alignment = (Enums.Alignment)align;
                         }
                         MidsContext.Character.Name = r.ReadString();
-                        int num4 = r.ReadInt32();
-                        if (MidsContext.Character.Powersets.Length - 1 != num4)
-                            MidsContext.Character.Powersets = new IPowerset[num4 + 1];
-                        for (int index = 0; index < MidsContext.Character.Powersets.Length; ++index)
+                        int powerSetCount = r.ReadInt32();
+                        var expectedArrayLength = new IPowerset[powerSetCount + 1].Length;
+                        var names = new List<string>();
+                        for (int index = 0; index < powerSetCount + 1; ++index)
                         {
                             string iName = r.ReadString();
-                            MidsContext.Character.Powersets[index] = !string.IsNullOrEmpty(iName) ? DatabaseAPI.GetPowersetByName(iName) : null;
+                            names.Add(iName);
                         }
+                        var errors = MidsContext.Character.LoadPowersetsByName(names);
+                        foreach (var (i, n) in errors)
+                            MessageBox.Show($"Failed to load powerset by name:{n} at {i}", "Powerset load failure");
                         MidsContext.Character.CurrentBuild.LastPower = r.ReadInt32() - 1;
                         int powerCount = r.ReadInt32();
                         try

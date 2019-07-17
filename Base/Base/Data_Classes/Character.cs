@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 
 namespace Base.Data_Classes
 {
@@ -75,7 +76,7 @@ namespace Base.Data_Classes
 
         public int Origin { get; set; }
 
-        public IPowerset[] Powersets { get; set; }
+        public IPowerset[] Powersets { get; private set; }
 
         public bool[] PoolLocked { get; set; }
 
@@ -247,6 +248,40 @@ namespace Base.Data_Classes
             this.Reset(null, 0);
         }
 
+        // there are 2 versions of this method distributed, going to try to combine the logic bit by bit to see if there are substantial differences
+        // returns the last thing it tried to read from, for inclusion in the error message
+        public void LoadPowersetsByName2(IList<string> names, ref string blameName)
+        {
+            var powersets = names.Select(n => string.IsNullOrEmpty(n) ? null : DatabaseAPI.GetPowersetByName(n)).ToArray();
+            var toBlame = powersets.Select((ps, i) => new { Index = i, Ps = ps }).FirstOrDefault(x => x.Ps == null);
+            if (toBlame != null)
+                blameName = names[toBlame.Index];
+
+            if (names.Count > this.Powersets.Length + 1)
+                this.Powersets = new IPowerset[names.Count];
+            IPowerset powersetByName1 = DatabaseAPI.GetPowersetByName(names[0]);
+            if (powersetByName1 == null)
+                blameName = names[0];
+            this.Powersets[0] = powersetByName1;
+            IPowerset powersetByName2 = DatabaseAPI.GetPowersetByName(names[1]);
+            if (powersetByName2 == null)
+                blameName = names[1];
+            this.Powersets[1] = powersetByName2;
+
+            for (int index = 2; index < names.Count; ++index)
+            {
+                IPowerset powersetByName3 = DatabaseAPI.GetPowersetByName(names[index]);
+                if (powersetByName3 == null)
+                    blameName = names[index];
+                this.Powersets[index + 1] = powersetByName3;
+            }
+        }
+        public IEnumerable<(int, string)> LoadPowersetsByName(IList<string> names)
+        {
+            this.Powersets = names.Select(n => string.IsNullOrEmpty(n) ? null : DatabaseAPI.GetPowersetByName(n)).ToArray();
+            return this.Powersets.Select((ps, i) => new { I = i, Ps = ps?.FullName, N = names[i] }).Where(x => !string.IsNullOrWhiteSpace(x.N) && x.Ps == null).Select(x => (x.I, x.N));
+        }
+
         public void Reset(Archetype iArchetype = null, int iOrigin = 0)
         {
             this.Name = string.Empty;
@@ -403,16 +438,16 @@ namespace Base.Data_Classes
             List<int> intList = new List<int>();
             for (int index1 = 0; index1 < powersetIndexes.Length; ++index1)
             {
-                bool flag = false;
+                bool available = false;
                 for (int index2 = 3; index2 <= 6; ++index2)
                 {
-                    if (index2 == iPool | !(powersetIndexes[index1].nID == this.Powersets[index2].nID & this.PoolLocked[index2 - 3]))
-                        flag = true;
+                    if (index2 == iPool || !(this.PoolLocked[index2 - 3] && powersetIndexes[index1].nID == this.Powersets[index2].nID))
+                        available = true;
                 }
-                if (flag)
+                if (available)
                     intList.Add(powersetIndexes[index1].nID);
             }
-            return (IEnumerable<int>)intList;
+            return intList;
         }
 
         public int PoolToComboID(int iPool, int index)
@@ -878,12 +913,14 @@ namespace Base.Data_Classes
 
         public void PoolShuffle()
         {
+            //var poolPowers = this.Powersets.Skip(2).Take(4).ToList();
             int[] poolOrder = new int[4];
             int[] poolIndex = new int[4];
             for (int i = 3; i <= 6; ++i)
             {
-                poolIndex[i - 3] = this.Powersets[i].nID;
-                poolOrder[i - 3] = this.GetEarliestPowerIndex(this.Powersets[i].nID);
+                var ps = this.Powersets[i];
+                poolIndex[i - 3] = ps?.nID ?? -1;
+                poolOrder[i - 3] = ps != null ? this.GetEarliestPowerIndex(this.Powersets[i].nID) : -1;
             }
             for (int i = 0; i <= 3; ++i)
             {
@@ -897,7 +934,7 @@ namespace Base.Data_Classes
                         minI = x;
                     }
                 }
-                if (minI > -1)
+                if (minI > -1 && poolIndex[minI] > -1)
                 {
                     this.Powersets[i + 3] = DatabaseAPI.Database.Powersets[poolIndex[minI]];
                     poolOrder[minI] = 512;
@@ -923,9 +960,11 @@ namespace Base.Data_Classes
 
         bool PoolUnique(Enums.PowersetType pool)
         {
+            var ps = this.Powersets[(int)pool];
+            if (ps == null) return false;
             for (int index = 3; (Enums.PowersetType)index < pool; ++index)
             {
-                if (this.Powersets[index].nID == this.Powersets[(int)pool].nID)
+                if (this.Powersets[index] != null && this.Powersets[index].nID == this.Powersets[(int)pool].nID)
                     return false;
             }
             return true;
