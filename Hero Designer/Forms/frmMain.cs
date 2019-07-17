@@ -197,14 +197,14 @@ namespace Hero_Designer
                 this.myDataView = this.dvAnchored;
                 this.pnlGFX.BackColor = this.BackColor;
                 this.NoUpdate = true;
-                if (MidsContext.Config.CheckForUpdates)
+                clsXMLUpdate.eCheckResponse? chkResult = null;
+                string chkResultFailMsg = null;
+                if (!this.IsInDesignMode() && MidsContext.Config.CheckForUpdates)
                 {
-                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    IMessager iLoadFrm = iFrm;
-                    clsXmlUpdate.UpdateCheck(true, ref iLoadFrm);
-                    iFrm = (frmLoading)iLoadFrm;
+                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); // "https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
+                    (chkResult, chkResultFailMsg) = clsXmlUpdate.UpdateCheck();
                 }
-                if (MidsContext.Config.FreshInstall)
+                if (!this.IsInDesignMode() && MidsContext.Config.FreshInstall)
                 {
                     MidsContext.Config.CheckForUpdates = false;
                     //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
@@ -307,7 +307,7 @@ namespace Hero_Designer
                         File.Delete(patchNotesTgt);
                     File.Move(Path.Combine(Files.FPathAppData, Files.PatchRtf), patchNotesTgt);
                 }
-                if (args != string.Empty)
+                if (!string.IsNullOrEmpty(args))
                 {
                     string str3 = args.Replace("\"", string.Empty);
                     if (File.Exists(str3.Trim()) && !this.DoOpen(str3.Trim()))
@@ -338,6 +338,17 @@ namespace Hero_Designer
                 this.PriSec_ExpandChanged(true);
                 if (!this.IsInDesignMode())
                 {
+                    if (chkResult == clsXMLUpdate.eCheckResponse.FailedWithMessage && !string.IsNullOrEmpty(chkResultFailMsg))
+                    {
+                        if (MessageBox.Show(chkResultFailMsg + "\r\nCheck again at next startup?", "Update check failed", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
+                        {
+                            MidsContext.Config.CheckForUpdates = false;
+                        }
+                    }
+                    else if (chkResult == clsXMLUpdate.eCheckResponse.Updates)
+                    {
+                        MessageBox.Show("Update available");
+                    }
                     var exePath = typeof(frmMain).Assembly.Location;
                     if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
                     {
@@ -4010,15 +4021,11 @@ namespace Hero_Designer
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
             {
-                this.Text = str2 + " (Master Mode) v" + MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######") + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
+                this.Text = str2 + " (Master Mode) v" + MidsContext.AppAssemblyVersion + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
             }
             else
             {
-                string str3 = MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######");
-                if (str3.Length > 5)
-                    str3 = str3.Substring(0, 5);
-                string str4 = str3.Trim("0".ToCharArray());
-                this.Text = str2 + " v" + str4 + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
+                this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
             }
         }
 
@@ -4797,56 +4804,54 @@ namespace Hero_Designer
         }
 
         void tsSetFind_Click(object sender, EventArgs e)
-        {
-            this.FloatSetFinder(true);
-        }
+            => this.FloatSetFinder(true);
 
-        void tsTitanForum_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToForums();
-        }
+        void tsForumLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToForums();
 
-        void tsTitanPlanner_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToCoHPlanner();
-        }
-
-        void tsTitanSite_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToTitan();
-        }
+        void tsPlannerLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToCoHPlanner();
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
-            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
-            IMessager iLoadFrm = null;
-            clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
+            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
+            var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
                 MessageBox.Show("No Updates.", "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates)
             {
-                Application.Exit();
+                if (clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
+                {
+                    Application.Exit();
+                    return;
+                }
+            }
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
+            {
+                if (!string.IsNullOrWhiteSpace(msg))
+                {
+                    frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
+                }
+                else
+                {
+                    frmLoading.ShowLinkDialog("Error", "Unknown error checking for updates, check failed, click here to open site in browser", MidsContext.DownloadUrl);
+                    return;
+                }
             }
             this.RefreshInfo();
         }
 
         void tsView2Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(2);
-        }
+            => this.setColumns(2);
 
         void tsView3Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(3);
-        }
+            => this.setColumns(3);
 
         void tsView4Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(4);
-        }
+            => this.setColumns(4);
 
         void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
@@ -4856,9 +4861,7 @@ namespace Hero_Designer
         }
 
         void tsViewData_Click(object sender, EventArgs e)
-        {
-            this.FloatData(true);
-        }
+            => this.FloatData(true);
 
         void tsViewDPS_New_Click(object sender, EventArgs e)
         {
@@ -4868,9 +4871,7 @@ namespace Hero_Designer
         }
 
         void tsViewGraphs_Click(object sender, EventArgs e)
-        {
-            this.FloatStatGraph(true);
-        }
+            => this.FloatStatGraph(true);
 
         void tsViewIOLevels_Click(object sender, EventArgs e)
         {
@@ -4887,9 +4888,7 @@ namespace Hero_Designer
         }
 
         void tsViewSetCompare_Click(object sender, EventArgs e)
-        {
-            this.FloatCompareGraph(true);
-        }
+            => this.FloatCompareGraph(true);
 
         void tsViewSets_Click(object sender, EventArgs e)
         {
@@ -4907,9 +4906,7 @@ namespace Hero_Designer
         }
 
         void tsViewTotals_Click(object sender, EventArgs e)
-        {
-            this.FloatTotals(true);
-        }
+            => this.FloatTotals(true);
 
         void txtName_TextChanged(object sender, EventArgs e)
         {
