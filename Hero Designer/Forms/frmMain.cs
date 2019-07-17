@@ -4610,6 +4610,11 @@ namespace Hero_Designer
             MessageBox.Show("The data link has been placed on the clipboard and is ready to paste.", "Export Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        void tsExportDiscord_Click(object sender, EventArgs e)
+        {
+            new Clshook().MainAsync();
+        }
+
         void tsExportLong_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);

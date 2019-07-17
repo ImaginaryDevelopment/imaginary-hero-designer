@@ -292,6 +292,43 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        }
+
+        void dcAdd_Click(object sender, EventArgs e)
+        {
+            var dcAddServer = dcServerName.Text;
+            dcExList.Items.Add(dcAddServer);
+        }
+
+        void dcRemove_Click(object sender, EventArgs e)
+        {
+            var dcSelectedItem = dcExList.SelectedItem;
+            if (MidsContext.Config.DSelServer == dcSelectedItem.ToString())
+            {
+                _ = MidsContext.Config.DSelServer == String.Empty;
+            }
+            dcExList.Items.Remove(dcSelectedItem);
+        }
+
+        void dcNickName_TextChanged(object sender, EventArgs e)
+        {
+            if (dcNickName.Text != string.Empty)
+            {
+                MidsContext.Config.DNickName = dcNickName.Text;
+            }
+        }
+
+        void dcChannel_TextChanged(object sender, EventArgs e)
+        {
+            if (dcChannel.Text != string.Empty)
+            {
+                MidsContext.Config.DChannel = dcChannel.Text;
+            }
+        }
+
         void fcNotes_TextChanged(object sender, EventArgs e)
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
@@ -523,6 +560,9 @@ namespace Hero_Designer
             this.chkTextBold.Checked = config.RtFont.RTFBold;
             this.chkStatBold.Checked = config.RtFont.PairedBold;
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
+            this.dcNickName.Text = config.DNickName;
+            this.dcChannel.Text = config.DChannel;
+            this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
