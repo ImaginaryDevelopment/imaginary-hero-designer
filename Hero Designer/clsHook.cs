@@ -9,7 +9,8 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using Nancy.Json;
+
+using Newtonsoft.Json;
 
 namespace Hero_Designer
 {
@@ -82,7 +83,7 @@ namespace Hero_Designer
             httpWebRequest.Method = "POST";
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                string json = new JavaScriptSerializer().Serialize(new
+                string json = JsonConvert.SerializeObject(new
                 {
                     guild = discordserver,
                     channel = discordchannel,
