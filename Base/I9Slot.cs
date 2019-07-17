@@ -22,10 +22,9 @@ public class I9Slot : ICloneable
 
     public float GetEnhancementEffect(Enums.eEnhance iEffect, int subEnh, float mag)
     {
-        float num1;
         if (this.Enh < 0)
         {
-            num1 = 0.0f;
+            return 0.0f;
         }
         else
         {
@@ -41,9 +40,8 @@ public class I9Slot : ICloneable
                     num2 += scheduleMult;
                 }
             }
-            num1 = num2;
+            return num2;
         }
-        return num1;
     }
 
     float GetScheduleMult(Enums.eType iType, Enums.eSchedule iSched)
