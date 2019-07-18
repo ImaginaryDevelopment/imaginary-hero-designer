@@ -4626,14 +4626,31 @@ namespace Hero_Designer
 
         public void tsExportDiscord_Click(object sender, EventArgs e)
         {
+            void ShowConfigError(string field)
+                => MessageBox.Show($"{field} must be filled out in configuration before discord exports will function", "Discord is not configured");
+
+            if (string.IsNullOrWhiteSpace(MidsContext.Config.DSelServer))
+            {
+                ShowConfigError("Server");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(MidsContext.Config.DChannel))
+            {
+                ShowConfigError("Channel");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(MidsContext.Config.DNickName))
+            {
+                ShowConfigError("NickName");
+                return;
+            }
             try
             {
                 Clshook.DiscordExport();
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                throw;
+                MessageBox.Show(exception.Message);
             }
         }
 
