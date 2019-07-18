@@ -292,30 +292,28 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
-        }
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
 
         void dcAdd_Click(object sender, EventArgs e)
         {
-            var dcAddServer = dcServerName.Text;
-            dcExList.Items.Add(dcAddServer);
+            if (!string.IsNullOrWhiteSpace(dcServerName.Text))
+            {
+                dcExList.Items.Add(dcServerName.Text);
+            }
         }
 
         void dcRemove_Click(object sender, EventArgs e)
         {
-            var dcSelectedItem = dcExList.SelectedItem;
-            if (MidsContext.Config.DSelServer == dcSelectedItem.ToString())
+            if (MidsContext.Config.DSelServer == dcExList.SelectedItem.ToString() && !string.IsNullOrEmpty(dcExList.SelectedItem.ToString()))
             {
-                _ = MidsContext.Config.DSelServer == String.Empty;
+                MidsContext.Config.DSelServer = "";
             }
-            dcExList.Items.Remove(dcSelectedItem);
+            dcExList.Items.Remove(dcExList.SelectedItem);
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
         {
-            if (dcNickName.Text != string.Empty)
+            if (!string.IsNullOrWhiteSpace(dcNickName.Text))
             {
                 MidsContext.Config.DNickName = dcNickName.Text;
             }
@@ -323,7 +321,7 @@ namespace Hero_Designer
 
         void dcChannel_TextChanged(object sender, EventArgs e)
         {
-            if (dcChannel.Text != string.Empty)
+            if (!string.IsNullOrWhiteSpace(dcChannel.Text))
             {
                 MidsContext.Config.DChannel = dcChannel.Text;
             }

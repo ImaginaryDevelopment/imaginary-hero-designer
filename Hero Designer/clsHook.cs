@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Threading;
-using Base.Master_Classes;
-using midsControls;
-using Microsoft.VisualBasic.CompilerServices;
 using System.IO;
 using System.Net;
-using System.ComponentModel;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-
+using Base;
+using Base.Master_Classes;
+using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 
 namespace Hero_Designer
 {
-    public class Clshook
+    public static class Clshook
     {
-        public string DFileName;
-        public string DExt;
+        public static string DFileName;
+        public static string DExt;
 
         /* Not used yet but maybe in next release
         public static string GetDescription(Enum value)
@@ -39,83 +35,89 @@ namespace Hero_Designer
             return null;
         }*/
    
-        private string ShrinkTheDatalink(string strUrl)
+        private static string ShrinkTheDatalink(string strUrl)
         {
-            var URL = "http://tinyurl.com/api-create.php?url=" + strUrl.ToLower();
+            var url = "http://tinyurl.com/api-create.php?url=" + strUrl.ToLower();
 
-            var objWebRequest = (HttpWebRequest) WebRequest.Create(URL);
+            var objWebRequest = (HttpWebRequest) WebRequest.Create(url);
             objWebRequest.Method = "GET";
+            using (var objWebResponse = (HttpWebResponse) objWebRequest.GetResponse())
+            {
+                var srReader = new StreamReader(objWebResponse.GetResponseStream());
 
-            var objWebResponse = (HttpWebResponse) objWebRequest.GetResponse();
-            var srReader = new StreamReader(objWebResponse.GetResponseStream());
+                var strHtml = srReader.ReadToEnd();
 
-            var strHtml = srReader.ReadToEnd();
+                srReader.Close();
+                objWebResponse.Close();
+                objWebRequest.Abort();
 
-            srReader.Close();
-            objWebResponse.Close();
-            objWebRequest.Abort();
-
-            return (strHtml);
+                return (strHtml);
+            }
         }
 
-        public async void MainAsync()
+        internal static void DiscordExport()
         {
             //Set vars and shrink the link
             var num = MidsContext.Character.Level + 1;
-            if (num > 50) { num = 50; }
-            var discordserver = MidsContext.Config.DSelServer.Replace(" (Default)", "");
-            var discorduser = MidsContext.Config.DNickName;
-            var discordchannel = MidsContext.Config.DChannel;
-            var mrblevel = Conversions.ToString(num);
-            var mrbarchetype = MidsContext.Character.Archetype.DisplayName;
-            var mrbprimarypower = MidsContext.Character.Powersets[0].DisplayName;
-            var mrbsecondarypower = MidsContext.Character.Powersets[1].DisplayName;
-            var mrbdatalink = MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true);
-            Thread.Sleep(1000);
-            var shrunkData = ShrinkTheDatalink(mrbdatalink);
+            if (num > 50) num = 50;
+
+            var discord = (
+                Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
+                User: MidsContext.Config.DNickName, Channel: MidsContext.Config.DChannel);
+            var mrb = (
+                Level: Conversions.ToString(num), 
+                Archetype: MidsContext.Character.Archetype.DisplayName, 
+                PriPowerSet: MidsContext.Character.Powersets[0].DisplayName, 
+                SecPowerSet: MidsContext.Character.Powersets[1].DisplayName, 
+                ToonName: MidsContext.Character.Name,
+                Datalink: MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true));
+                var shrunkData = ShrinkTheDatalink(mrb.Datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
-
-
-
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://hooks.midsreborn.com:3000/api?token=UmQhT4kDrS0gA5MF5aGli8zbYCUmQhT4kDrS0gA5MF5aGli8zbYC");
+            byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
+            string wString = Encoding.UTF8.GetString(data);
+            var httpWebRequest = (HttpWebRequest) WebRequest.Create(wString);
             httpWebRequest.ContentType = "application/json";
-
             httpWebRequest.Method = "POST";
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                string json = JsonConvert.SerializeObject(new
+                var json = JsonConvert.SerializeObject(new
                 {
-                    guild = discordserver,
-                    channel = discordchannel,
-                    nickname = discorduser,
-                    level = mrblevel,
-                    archetype = mrbarchetype,
-                    primpowerset = mrbprimarypower,
-                    secpowerset = mrbsecondarypower, 
+                    guild = discord.Server,
+                    channel = discord.Channel,
+                    nickname = discord.User,
+                    level = mrb.Level,
+                    name = mrb.ToonName,
+                    archetype = mrb.Archetype,
+                    primpowerset = mrb.PriPowerSet,
+                    secpowerset = mrb.SecPowerSet,
                     embedlink = embedurl
                 });
-
                 streamWriter.Write(json);
             }
 
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
-                if (result == "Nickname not found in discord")
+                switch (result)
                 {
-                    string message = "Submission Failed! Check the Discord settings under configuration.";
-                    string title = "Discord Export";
-                    MessageBox.Show(message, title);
-                }
-                else if (result == "Nickname found")
-                {
-                    string message = "Submission Successful!! Your build should now be posted.";
-                    string title = "Discord Export";
-                    MessageBox.Show(message, title);
+                    case "Nickname not found in discord":
+                    {
+                        const string message = "Submission Failed! Check the Discord settings under configuration.";
+                        const string title = "Discord Export";
+                        MessageBox.Show(message, title);
+                        break;
+                    }
+
+                    case "Nickname found":
+                    {
+                        const string message = "Submission Successful!! Your build should now be posted.";
+                        const string title = "Discord Export";
+                        MessageBox.Show(message, title);
+                        break;
+                    }
                 }
             }
-            Thread.Sleep(1000);
         }
     }
 }

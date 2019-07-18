@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
@@ -4610,9 +4611,17 @@ namespace Hero_Designer
             MessageBox.Show("The data link has been placed on the clipboard and is ready to paste.", "Export Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        void tsExportDiscord_Click(object sender, EventArgs e)
+        public void tsExportDiscord_Click(object sender, EventArgs e)
         {
-            new Clshook().MainAsync();
+            try
+            {
+                Clshook.DiscordExport();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
         }
 
         void tsExportLong_Click(object sender, EventArgs e)
