@@ -36,9 +36,13 @@ type AutoCreateResult =
     |CouldNotCreateOrFind of error:string
 
 let autoCreate() =
+#if DEBUG
     let path = DirPath "../../../Hero Designer/bin/Debug/"
+#else
+    let path = DirPath "../../../Hero Designer/bin/Release/"
+#endif
     let fp = getFullDirPath path
-    let zipTargetPath = combineFp(DirPath System.Environment.CurrentDirectory)(FilePath packageFilename)
+    let zipTargetPath = combineFp (DirPath System.Environment.CurrentDirectory) (FilePath packageFilename)
     let created =
         if fileExists <| combineFp path (FilePath "Hero Designer.exe") then
             printfn "Creating zip from %s" fp.raw

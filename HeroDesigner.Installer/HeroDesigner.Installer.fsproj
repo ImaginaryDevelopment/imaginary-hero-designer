@@ -51,6 +51,7 @@
     <Compile Include="Helpers.fs" />
     <Compile Include="Metafile.fs" />
     <Compile Include="Compression.fs" />
+    <Compile Include="Registry.fs" />
     <Compile Include="HeroPackaging.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />

@@ -39,9 +39,11 @@ open ICSharpCode.SharpZipLib.Core
 open ICSharpCode.SharpZipLib.Zip
 open Helpers.Files
 
+
 // https://github.com/icsharpcode/SharpZipLib/wiki/Zip-Samples#unpack-a-zip-with-full-control-over-the-operation
-let decompress archivefn outfolder =
+let decompress deleteExisting archivefn outfolder =
     let mutable zf:ZipFile= null
+    let buffer = Array.zeroCreate 4096
     let errors = ResizeArray()
     let success = ref 0
     try
@@ -51,7 +53,6 @@ let decompress archivefn outfolder =
         |> Seq.cast<ZipEntry>
         |> Seq.iter(fun zipEntry ->
             try // allow some entries to fail but continue trying. =/
-                let buffer = Array.zeroCreate 4096
                 let zipStream = zf.GetInputStream zipEntry
 
                 let fullZipToPath = combineFp outfolder (FilePath zipEntry.Name)
@@ -59,8 +60,9 @@ let decompress archivefn outfolder =
                 | None -> failwithf "Failed to read parent directory name of %s" fullZipToPath.raw
                 | Some ((DirPath dirname) as dp) ->
                     if dirname.Length > 0 then createDirectory dp |> ignore
-                    use sw = createFile fullZipToPath
-                    StreamUtils.Copy(zipStream,sw,buffer)
+                    // will overwrite existing files
+                    use fileOutStream = createFile fullZipToPath
+                    StreamUtils.Copy(zipStream,fileOutStream,buffer)
                 incr success
             with ex ->
                 errors.Add <| sprintf "Failed to decompress %s into %s. %s" zipEntry.Name outfolder.raw ex.Message
