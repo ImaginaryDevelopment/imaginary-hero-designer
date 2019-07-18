@@ -221,10 +221,12 @@ public class ConfigData
                 float num1;
                 switch (reader.ReadString())
                 {
+                    // legacy string, refers to something specific in files, do not change
                     case "Mids' Hero Designer Config":
                         num1 = 0.9f;
                         break;
-                    // here's something F# doesn't do easily
+                    // legacy string, refers to something specific in files, do not change
+                    // here's something F# doesn't do easily(fallthrough where one branch has a when variable declared)
                     case "Mids' Hero Designer Config V2":
                     case string x when x == header:
                         num1 = reader.ReadSingle();
