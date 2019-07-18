@@ -37,7 +37,7 @@ namespace Hero_Designer
    
         private static string ShrinkTheDatalink(string strUrl)
         {
-            var url = "http://tinyurl.com/api-create.php?url=" + strUrl.ToLower();
+            var url = "http://tinyurl.com/api-create.php?url=" + strUrl;
 
             var objWebRequest = (HttpWebRequest) WebRequest.Create(url);
             objWebRequest.Method = "GET";
