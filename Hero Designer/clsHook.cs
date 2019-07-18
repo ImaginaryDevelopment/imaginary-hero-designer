@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using Base;
+using Base.Data_Classes;
 using Base.Master_Classes;
+using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 
@@ -58,6 +61,7 @@ namespace Hero_Designer
         internal static void DiscordExport()
         {
             //Set vars and shrink the link
+            Statistics displayStats = MidsContext.Character.DisplayStats;
             var num = MidsContext.Character.Level + 1;
             if (num > 50) num = 50;
 
@@ -68,7 +72,11 @@ namespace Hero_Designer
                 Level: Conversions.ToString(num), 
                 Archetype: MidsContext.Character.Archetype.DisplayName, 
                 PriPowerSet: MidsContext.Character.Powersets[0].DisplayName, 
-                SecPowerSet: MidsContext.Character.Powersets[1].DisplayName, 
+                SecPowerSet: MidsContext.Character.Powersets[1].DisplayName,
+                GlobRecharge: Strings.Format((float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
+                EndRecovery: Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)",
+                HPRegen: Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
+                TotalDamageBuff: displayStats.BuffDamage(false) - 100f, "##0.#", "%",
                 ToonName: MidsContext.Character.Name,
                 Datalink: MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true));
                 var shrunkData = ShrinkTheDatalink(mrb.Datalink);
@@ -90,6 +98,10 @@ namespace Hero_Designer
                     archetype = mrb.Archetype,
                     primpowerset = mrb.PriPowerSet,
                     secpowerset = mrb.SecPowerSet,
+                    recharge = mrb.GlobRecharge,
+                    dmgbuff = mrb.TotalDamageBuff,
+                    regen = mrb.HPRegen,
+                    recov = mrb.EndRecovery,
                     embedlink = embedurl
                 });
                 streamWriter.Write(json);
