@@ -143,7 +143,7 @@ namespace Hero_Designer
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
                 this.llLeft.Refresh();
-                this._myParent.PowerModified();
+                this._myParent.PowerModified(markModified: false);
             }
         }
 
@@ -184,7 +184,7 @@ namespace Hero_Designer
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
                 this.llRight.Refresh();
-                this._myParent.PowerModified();
+                this._myParent.PowerModified(markModified: false);
             }
         }
 

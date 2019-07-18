@@ -51,7 +51,7 @@ namespace Hero_Designer
         frmData fData;
         frmCompare fGraphCompare;
         frmStats fGraphStats;
-        bool FileModified;
+        bool FileModified { get; set; }
         frmIncarnate fIncarnate;
         bool FlipActive;
         PowerEntry FlipGP;
@@ -145,13 +145,22 @@ namespace Hero_Designer
                 this.FlipInterval = 10;
                 this.FlipStepDelay = 3;
                 this.FlipPowerID = -1;
-                this.FlipSlotState = new int[0];
+                this.FlipSlotState = Array.Empty<int>();
                 this.dragStartPower = -1;
                 this.dragStartSlot = -1;
                 this.ddsa = new short[20];
                 this.DoneDblClick = false;
             }
             this.InitializeComponent();
+
+            //disable menus that are no longer hooked up, but probably should be hooked back up
+            this.tsHelp.Visible = false;
+            this.tsHelp.Enabled = false;
+            this.tsPatchNotes.Visible = false;
+            this.tsPatchNotes.Enabled = false;
+            this.tsDonate.Visible = false;
+            this.tsDonate.Enabled = false;
+
             this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
             //adding events
             if (!System.Diagnostics.Debugger.IsAttached || !this.IsInDesignMode() || !System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant().Contains("devenv"))
@@ -308,14 +317,19 @@ namespace Hero_Designer
                         File.Delete(patchNotesTgt);
                     File.Move(Path.Combine(Files.FPathAppData, Files.PatchRtf), patchNotesTgt);
                 }
+                var loadedFromArgs = false;
                 if (!string.IsNullOrEmpty(args))
                 {
                     string str3 = args.Replace("\"", string.Empty);
                     if (File.Exists(str3.Trim()) && !this.DoOpen(str3.Trim()))
-                        this.PowerModified();
+                    {
+                        loadedFromArgs = true;
+                        this.PowerModified(markModified: false);
+
+                    }
                 }
-                else if (MidsContext.Config.LoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
-                    this.PowerModified();
+                if (!loadedFromArgs && MidsContext.Config.LoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
+                    this.PowerModified(markModified: true);
                 if (MidsContext.Config.MasterMode)
                 {
                     this.tsAdvFreshInstall.Visible = true;
@@ -391,7 +405,8 @@ namespace Hero_Designer
         internal void ChildRequestedRedraw()
                 => this.DoRedraw();
 
-        void accoladeButton_ButtonClicked() => this.PowerModified();
+        // this just opens a window right? why set modified?
+        void accoladeButton_ButtonClicked() => this.PowerModified(markModified: false);
 
         void accoladeButton_MouseDown(object sender, MouseEventArgs e)
         {
@@ -499,7 +514,8 @@ namespace Hero_Designer
             PowerEntry[] powerEntryArray = DeepCopyPowerList();
             this.RearrangeAllSlotsInBuild(powerEntryArray, true);
             this.ShallowCopyPowerList(powerEntryArray);
-            this.PowerModified();
+            // unless they set more than just slotting order, don't force the save flag
+            this.PowerModified(markModified: false);
             this.DoRedraw();
         }
 
@@ -771,7 +787,7 @@ namespace Hero_Designer
                 );
             this.DataViewLocked = false;
             this.ActiveControl = this.llPrimary;
-            this.PowerModified();
+            this.PowerModified(markModified: true);
             this.FloatUpdate(true);
             this.GetBestDamageValues();
         }
@@ -933,7 +949,7 @@ namespace Hero_Designer
                         this.drawing.Highlight = -1;
                         this.NewDraw(false);
                         this.myDataView.Clear();
-                        this.PowerModified();
+                        this.PowerModified(markModified: true);
                         this.UpdateControls(true);
                         this.SetFormHeight(false);
                     }
@@ -941,7 +957,7 @@ namespace Hero_Designer
                     {
                         this.NewToon(true, false);
                         this.myDataView.Clear();
-                        this.PowerModified();
+                        this.PowerModified(markModified: true);
                     }
                     this.GetBestDamageValues();
                     if (this.drawing != null)
@@ -970,7 +986,8 @@ namespace Hero_Designer
             this.NewToon(false, false);
             MidsContext.Config.LastFileName = "";
             this.LastFileName = "";
-            this.PowerModified();
+            this.PowerModified(markModified: false);
+            this.FileModified = false;
             this.SetTitleBar(true);
             this.myDataView.Clear();
         }
@@ -1120,47 +1137,40 @@ namespace Hero_Designer
 
         bool DoOpen(string fName)
         {
-            bool flag;
             if (!File.Exists(fName))
+                return false;
+            this.DataViewLocked = false;
+            this.NewToon(true, true);
+            Stream mStream = null;
+            if (fName.Contains(".txt"))
+                this.GameImport(fName);
+            else if (!MainModule.MidsController.Toon.Load(fName, ref mStream))
             {
-                flag = false;
+                this.NewToon(true, false);
+                this.LastFileName = "";
+                MidsContext.Config.LastFileName = "";
             }
             else
             {
-                this.DataViewLocked = false;
-                this.NewToon(true, true);
-                Stream mStream = null;
-                if (fName.Contains(".txt"))
-                    this.GameImport(fName);
-                else if (!MainModule.MidsController.Toon.Load(fName, ref mStream))
-                {
-                    this.NewToon(true, false);
-                    this.LastFileName = "";
-                    MidsContext.Config.LastFileName = "";
-                }
-                else
-                {
-                    this.LastFileName = fName;
-                    if (!fName.EndsWith("mids_build.mxd"))
-                        MidsContext.Config.LastFileName = fName;
-                }
-                this.FileModified = false;
-                this.drawing.Highlight = -1;
-                this.NewDraw(false);
-                this.UpdateControls(false);
-                this.SetFormHeight(false);
-                this.myDataView.Clear();
-                MidsContext.Character.ResetLevel();
-                this.PowerModified();
-                this.UpdateControls(true);
-                this.SetTitleBar(true);
-                Application.DoEvents();
-                this.GetBestDamageValues();
-                this.UpdateColours(false);
-                this.FloatUpdate(true);
-                flag = true;
+                this.LastFileName = fName;
+                if (!fName.EndsWith("mids_build.mxd"))
+                    MidsContext.Config.LastFileName = fName;
             }
-            return flag;
+            this.FileModified = false;
+            this.drawing.Highlight = -1;
+            this.NewDraw(false);
+            this.UpdateControls(false);
+            this.SetFormHeight(false);
+            this.myDataView.Clear();
+            MidsContext.Character.ResetLevel();
+            this.PowerModified(markModified: false);
+            this.UpdateControls(true);
+            this.SetTitleBar(true);
+            Application.DoEvents();
+            this.GetBestDamageValues();
+            this.UpdateColours(false);
+            this.FloatUpdate(true);
+            return true;
         }
 
         void DoRedraw()
@@ -1899,17 +1909,17 @@ namespace Hero_Designer
             e.RelativeLevel = this.I9Picker.UI.View.RelLevel;
             if (this.EnhancingSlot <= -1)
                 return;
-            bool flag1 = false;
+            bool enhChanged = false;
             if (MidsContext.Character.CurrentBuild.EnhancementTest(this.EnhancingSlot, this.EnhancingPower, e.Enh, false) | e.Enh < 0)
             {
                 var power = MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower];
                 if (e.Enh != power.Slots[this.EnhancingSlot].Enhancement.Enh)
-                    flag1 = true;
+                    enhChanged = true;
                 bool hasProc = power.HasProc();
                 power.Slots[this.EnhancingSlot].Enhancement = (I9Slot)e.Clone();
                 if (e.Enh > -1)
                     this.LastEnhPlaced = (I9Slot)e.Clone();
-                if (flag1)
+                if (enhChanged)
                 {
                     if (e.Enh > -1)
                     {
@@ -1922,7 +1932,7 @@ namespace Hero_Designer
                         power.StatInclude = false;
                 }
                 this.I9Picker.Visible = false;
-                this.PowerModified();
+                this.PowerModified(markModified: true);
                 if (this.EnhancingPower > -1)
                     this.RefreshTabs(MidsContext.Character.CurrentBuild.Powers[this.EnhancingPower].NIDPower, e, -1);
             }
@@ -1983,7 +1993,8 @@ namespace Hero_Designer
                 return;
             MidsContext.Config.BuildMode = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? Enums.dmModes.Dynamic : Enums.dmModes.LevelUp;
             MidsContext.Character.ResetLevel();
-            this.PowerModified();
+            // changing from dynamic view to level up or reverse is not a file modification
+            this.PowerModified(markModified: false);
             this.UpdateDMBuffer();
             this.pbDynMode.Refresh();
         }
@@ -2531,10 +2542,11 @@ namespace Hero_Designer
 
         void pnlGFX_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (!(!this.LastClickPlacedSlot & this.dragStartSlot >= 0))
+            if (!(!this.LastClickPlacedSlot && this.dragStartSlot >= 0))
                 return;
             MainModule.MidsController.Toon.BuildSlot(this.dragStartPower, this.dragStartSlot);
-            this.PowerModified();
+            // no idea what pnlGFX_MouseDoubleClick represents, marking modified as it would have before the added arg
+            this.PowerModified(markModified: true);
             this.FileModified = true;
             this.DoneDblClick = true;
             this.LastClickPlacedSlot = false;
@@ -2685,7 +2697,7 @@ namespace Hero_Designer
                         else if (e.Button == MouseButtons.Left & Control.ModifierKeys == System.Windows.Forms.Keys.Alt)
                         {
                             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPowerset, MidsContext.Character.CurrentBuild.Powers[hIDPower].NIDPower, false);
-                            this.PowerModified();
+                            this.PowerModified(markModified: true);
                             this.LastClickPlacedSlot = false;
                         }
                         else if (e.Button == MouseButtons.Left & Control.ModifierKeys == System.Windows.Forms.Keys.Shift & slotID > -1)
@@ -2696,7 +2708,7 @@ namespace Hero_Designer
                                 MidsContext.Character.ResetLevel();
                             }
                             MainModule.MidsController.Toon.BuildSlot(hIDPower, slotID);
-                            this.PowerModified();
+                            this.PowerModified(markModified: true);
                             this.LastClickPlacedSlot = false;
                         }
                         else
@@ -2717,7 +2729,8 @@ namespace Hero_Designer
                                 {
                                     if (MainModule.MidsController.Toon.BuildSlot(hIDPower, -1) > -1)
                                     {
-                                        this.PowerModified();
+                                        // adding a slot by itself doesn't really change the build substantially without an enh going into it
+                                        this.PowerModified(markModified: false);
                                         this.LastClickPlacedSlot = true;
                                         MidsContext.Config.Tips.Show(Tips.TipType.FirstEnh);
                                         return;
@@ -2783,12 +2796,14 @@ namespace Hero_Designer
 
         void pnlGFXFlow_MouseEnter(object sender, EventArgs e) => this.pnlGFXFlow.Focus();
 
-        internal void PowerModified()
+        // if we are loading a file, the file isn't modified when this method is called
+        internal void PowerModified(bool markModified)
         {
             int index = -1;
             MainModule.MidsController.Toon.Complete = false;
             this.fixStatIncludes();
-            this.FileModified = true;
+            if (markModified)
+                this.FileModified = true;
             if (MidsContext.Config.BuildMode == Enums.dmModes.Dynamic)
             {
                 index = MainModule.MidsController.Toon.GetFirstAvailablePowerIndex(MainModule.MidsController.Toon.RequestedLevel);
@@ -3043,7 +3058,7 @@ namespace Hero_Designer
             if (this.PowerMove(powerEntryArray, pow) != 0)
             {
                 this.ShallowCopyPowerList(powerEntryArray);
-                this.PowerModified();
+                this.PowerModified(markModified: true);
                 this.DoRedraw();
             }
         }
@@ -3051,14 +3066,14 @@ namespace Hero_Designer
         void PowerPicked(Enums.PowersetType SetID, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
-            this.PowerModified();
+            this.PowerModified(markModified: true);
             MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
         }
 
         void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
-            this.PowerModified();
+            this.PowerModified(markModified: true);
             MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
             this.DoRedraw();
         }
@@ -3382,7 +3397,7 @@ namespace Hero_Designer
             if (this.PowerSwap(0, ref tp, pow) != -1)
                 return;
             this.ShallowCopyPowerList(tp);
-            this.PowerModified();
+            this.PowerModified(markModified: true);
             this.DoRedraw();
         }
 
@@ -4228,7 +4243,7 @@ namespace Hero_Designer
             int level = MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level;
             MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level = MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level;
             MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level = level;
-            this.PowerModified();
+            this.PowerModified(markModified: true);
             this.DoRedraw();
         }
 
@@ -4273,7 +4288,7 @@ namespace Hero_Designer
                 this.FlipSlotState[index] = -(this.FlipStepDelay * index);
             this.FlipGP = new PowerEntry(-1, null, false);
             this.FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
-            this.FlipGP.Slots = new SlotEntry[0];
+            this.FlipGP.Slots = Array.Empty<SlotEntry>();
             if (this.tmrGfx == null)
                 this.tmrGfx = new System.Windows.Forms.Timer(this.Container);
             this.tmrGfx.Interval = this.FlipInterval;
@@ -4289,9 +4304,7 @@ namespace Hero_Designer
         }
 
         void tempPowersButton_ButtonClicked()
-        {
-            this.PowerModified();
-        }
+            => this.PowerModified(markModified: false);
 
         void tempPowersButton_MouseDown(object sender, MouseEventArgs e)
         {
@@ -4446,7 +4459,7 @@ namespace Hero_Designer
                 return;
             MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
             MidsContext.Character.ResetLevel();
-            this.PowerModified();
+            this.PowerModified(markModified: false);
         }
 
         void tsEnhToDO_Click(object sender, EventArgs e)
@@ -4760,7 +4773,7 @@ namespace Hero_Designer
                 return;
             MidsContext.Config.BuildMode = Enums.dmModes.LevelUp;
             MidsContext.Character.ResetLevel();
-            this.PowerModified();
+            this.PowerModified(markModified: true);
         }
 
         void tsPatchNotes_Click(object sender, EventArgs e)
@@ -4811,7 +4824,8 @@ namespace Hero_Designer
                 }
                 this.DoRedraw();
                 MidsContext.Character.ResetLevel();
-                this.PowerModified();
+                // if all slots are removed, changes are they don't want to be prompted to save, unless something else is changed/added
+                this.PowerModified(markModified: false);
                 this.RefreshInfo();
             }
             this.FloatTop(true);

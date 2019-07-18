@@ -213,7 +213,6 @@ namespace Hero_Designer
         {
             Enums.dmModes buildMode = MidsContext.Config.BuildMode;
             MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
-            bool flag1;
             try
             {
                 iPost = clsUniversalImport.PowerNameFix(iPost);
@@ -285,8 +284,7 @@ namespace Hero_Designer
                         sPowerLineArray[sPowerLineArray.Length - 1].Assign(iPL);
                     }
                 }
-                int num4 = sPowerLineArray.Length - 1;
-                for (int index1 = 0; index1 <= num4; ++index1)
+                for (int index1 = 0; index1 <= sPowerLineArray.Length - 1; ++index1)
                 {
                     if (sPowerLineArray[index1].Level > num1)
                         num1 = sPowerLineArray[index1].Level;
