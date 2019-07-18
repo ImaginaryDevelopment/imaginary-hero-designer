@@ -18,7 +18,7 @@ namespace Hero_Designer
         public static string DFileName;
         public static string DExt;
 
-        /* Not used yet but maybe in next release
+        /* Not used yet but maybe in next release - planned to add images enum soon
         public static string GetDescription(Enum value)
         {
             Type type = value.GetType();
