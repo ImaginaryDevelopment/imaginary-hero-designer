@@ -57,6 +57,7 @@ public static class OS
 
     public static string VistaUacErrorText()
     {
+        //TODO: this isn't being used, but if we find a reason to use it, the app name needs to be updated
         string str1 = "In order for installation and updates to function correctly," + '\n' + "you may need to set the application's shortcut to run as an adminstrator." + '\n' + '\n' + "To do this, right-click on the shortcut to Mids' Hero Designer and select Properties->Compatability->Always run as Administrator.";
         string str2;
         switch (OS.GetWindowsVersion())

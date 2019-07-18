@@ -265,7 +265,6 @@ namespace Hero_Designer
         }
 
         void llLeft_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
-
         {
             if (Button == MouseButtons.Right)
             {
@@ -273,47 +272,44 @@ namespace Hero_Designer
                 this.miniPowerInfo(Item.Index);
                 this.lblLock.Visible = true;
                 this.Locked = true;
+                return;
             }
-            else
+
+            if (Item.ItemState == ListLabelV2.LLItemState.Disabled)
+                return;
+            bool flag = !MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[Item.Index]);
+            int num1 = this.llLeft.Items.Length - 1;
+            for (int index = 0; index <= num1; ++index)
             {
-                if (Item.ItemState == ListLabelV2.LLItemState.Disabled)
-                    return;
-                bool flag = !MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[Item.Index]);
-                int num1 = this.llLeft.Items.Length - 1;
-                for (int index = 0; index <= num1; ++index)
-                {
-                    if (this.llLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                        this.llLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
-                    if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index]))
-                        MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index]);
-                }
-                int num2 = this.llRight.Items.Length - 1;
-                for (int index = 0; index <= num2; ++index)
-                {
-                    if (this.llRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
-                        this.llRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
-                    if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index + this.llLeft.Items.Length]))
-                        MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index + this.llLeft.Items.Length]);
-                }
-                if (flag)
-                {
-                    MidsContext.Character.CurrentBuild.AddPower(this.myPowers[Item.Index], 49).StatInclude = true;
-                    Item.ItemState = ListLabelV2.LLItemState.Selected;
-                }
-                this.llLeft.Refresh();
-                this.llRight.Refresh();
-                this.myParent.PowerModified();
+                if (this.llLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                    this.llLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index]))
+                    MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index]);
             }
+            int num2 = this.llRight.Items.Length - 1;
+            for (int index = 0; index <= num2; ++index)
+            {
+                if (this.llRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
+                    this.llRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
+                if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index + this.llLeft.Items.Length]))
+                    MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index + this.llLeft.Items.Length]);
+            }
+            if (flag)
+            {
+                MidsContext.Character.CurrentBuild.AddPower(this.myPowers[Item.Index], 49).StatInclude = true;
+                Item.ItemState = ListLabelV2.LLItemState.Selected;
+            }
+            this.llLeft.Refresh();
+            this.llRight.Refresh();
+            this.myParent.PowerModified(markModified: true);
         }
 
         void llLeft_ItemHover(ListLabelV2.ListLabelItemV2 Item)
-
         {
             this.miniPowerInfo(Item.Index);
         }
 
         void llLeft_MouseEnter(object sender, EventArgs e)
-
         {
             if (!this.ContainsFocus)
                 return;
@@ -321,7 +317,6 @@ namespace Hero_Designer
         }
 
         void llRight_ItemClick(ListLabelV2.ListLabelItemV2 Item, MouseButtons Button)
-
         {
             int pIDX = Item.Index + this.llLeft.Items.Length;
             if (Button == MouseButtons.Right)
@@ -335,31 +330,36 @@ namespace Hero_Designer
             {
                 if (Item.ItemState == ListLabelV2.LLItemState.Disabled)
                     return;
-                bool flag = !MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[pIDX]);
-                int num1 = this.llLeft.Items.Length - 1;
-                for (int index = 0; index <= num1; ++index)
+                bool unused = !MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[pIDX]);
+                bool hasChanges = false;
+                for (int index = 0; index <= this.llLeft.Items.Length - 1; ++index)
                 {
                     if (this.llLeft.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
                         this.llLeft.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
                     if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index]))
+                    {
                         MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index]);
+                        hasChanges = true;
+                    }
                 }
-                int num2 = this.llRight.Items.Length - 1;
-                for (int index = 0; index <= num2; ++index)
+                for (int index = 0; index <= this.llRight.Items.Length - 1; ++index)
                 {
                     if (this.llRight.Items[index].ItemState == ListLabelV2.LLItemState.Selected)
                         this.llRight.Items[index].ItemState = ListLabelV2.LLItemState.Enabled;
                     if (MidsContext.Character.CurrentBuild.PowerUsed(this.myPowers[index + this.llLeft.Items.Length]))
+                    {
                         MidsContext.Character.CurrentBuild.RemovePower(this.myPowers[index + this.llLeft.Items.Length]);
+                        hasChanges = true;
+                    }
                 }
-                if (flag)
+                if (unused)
                 {
                     MidsContext.Character.CurrentBuild.AddPower(this.myPowers[pIDX], 49).StatInclude = true;
                     Item.ItemState = ListLabelV2.LLItemState.Selected;
                 }
                 this.llLeft.Refresh();
                 this.llRight.Refresh();
-                this.myParent.PowerModified();
+                this.myParent.PowerModified(markModified: unused || hasChanges);
             }
         }
 

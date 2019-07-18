@@ -1,3 +1,5 @@
+using System;
+
 namespace Hero_Designer
 {
     public partial class frmCalcOpt
@@ -167,6 +169,21 @@ namespace Hero_Designer
             this.fbdSave = new System.Windows.Forms.FolderBrowserDialog();
             this.TeamSize = new System.Windows.Forms.NumericUpDown();
             this.Label16 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.GroupBox20 = new System.Windows.Forms.GroupBox();
+            this.dcChannel = new System.Windows.Forms.TextBox();
+            this.Label17 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.GroupBox19 = new System.Windows.Forms.GroupBox();
+            this.Label18 = new System.Windows.Forms.Label();
+            this.dcServerName = new System.Windows.Forms.TextBox();
+            this.dcRemove = new System.Windows.Forms.Button();
+            this.dcAdd = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.dcExList = new System.Windows.Forms.ListBox();
+            this.GroupBox18 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.dcNickName = new System.Windows.Forms.TextBox();
             this.TabControl1.SuspendLayout();
             this.TabPage3.SuspendLayout();
             this.GroupBox17.SuspendLayout();
@@ -198,6 +215,10 @@ namespace Hero_Designer
             this.TabPage1.SuspendLayout();
             this.GroupBox9.SuspendLayout();
             this.GroupBox7.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.GroupBox20.SuspendLayout();
+            this.GroupBox19.SuspendLayout();
+            this.GroupBox18.SuspendLayout();
             this.TeamSize.BeginInit();
             this.SuspendLayout();
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -222,6 +243,7 @@ namespace Hero_Designer
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage3);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage2);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage6);
+            this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.tabPage7);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage4);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage5);
             this.TabControl1.Controls.Add((System.Windows.Forms.Control)this.TabPage1);
@@ -1441,6 +1463,140 @@ namespace Hero_Designer
             this.Label16.Size = new System.Drawing.Size(57, 18);
             this.Label16.TabIndex = 66;
             this.Label16.Text = "Team Size";
+
+            this.tabPage7.Controls.Add((System.Windows.Forms.Control)this.GroupBox20);
+            this.tabPage7.Controls.Add((System.Windows.Forms.Control)this.richTextBox3);
+            this.tabPage7.Controls.Add((System.Windows.Forms.Control)this.GroupBox19);
+            this.tabPage7.Controls.Add((System.Windows.Forms.Control)this.GroupBox18);
+            this.tabPage7.Location = new System.Drawing.Point(4, 23);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(630, 325);
+            this.tabPage7.TabIndex = 7;
+            this.tabPage7.Text = "Discord Export Settings";
+            this.tabPage7.UseVisualStyleBackColor = true;
+
+            this.GroupBox20.Controls.Add((System.Windows.Forms.Control)this.dcChannel);
+            this.GroupBox20.Controls.Add((System.Windows.Forms.Control)this.Label17);
+            this.GroupBox20.Location = new System.Drawing.Point(8, 109);
+            this.GroupBox20.Name = "GroupBox20";
+            this.GroupBox20.Size = new System.Drawing.Size(256, 100);
+            this.GroupBox20.TabIndex = 3;
+            this.GroupBox20.TabStop = false;
+            this.GroupBox20.Text = "Discord Channel";
+
+            this.dcChannel.Location = new System.Drawing.Point(6, 54);
+            this.dcChannel.Name = "dcChannel";
+            this.dcChannel.Size = new System.Drawing.Size(250, 20);
+            this.dcChannel.TabIndex = 2;
+            this.dcChannel.TextChanged += new EventHandler(dcChannel_TextChanged);
+
+            this.Label17.AutoSize = true;
+            this.Label17.Location = new System.Drawing.Point(55, 37);
+            this.Label17.Name = "Label17";
+            this.Label17.Size = new System.Drawing.Size(136, 14);
+            this.Label17.TabIndex = 3;
+            this.Label17.Text = "Channel name to Export to:";
+ 
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox3.Location = new System.Drawing.Point(232, 254);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(201, 39);
+            this.richTextBox3.TabIndex = 2;
+            this.richTextBox3.Text = "More Discord settings may be available\nin the future.";
+
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.Label18);
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.dcServerName);
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.dcRemove);
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.dcAdd);
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.richTextBox2);
+            this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.dcExList);
+            this.GroupBox19.Location = new System.Drawing.Point(270, 6);
+            this.GroupBox19.Name = "GroupBox19";
+            this.GroupBox19.Size = new System.Drawing.Size(354, 203);
+            this.GroupBox19.TabIndex = 1;
+            this.GroupBox19.TabStop = false;
+            this.GroupBox19.Text = "Discord Server:";
+
+            this.Label18.AutoSize = true;
+            this.Label18.Location = new System.Drawing.Point(206, 58);
+            this.Label18.Name = "Label18";
+            this.Label18.Size = new System.Drawing.Size(111, 14);
+            this.Label18.TabIndex = 5;
+            this.Label18.Text = "Discord server name:";
+
+            this.dcServerName.Location = new System.Drawing.Point(172, 77);
+            this.dcServerName.Name = "dcServerName";
+            this.dcServerName.Size = new System.Drawing.Size(176, 20);
+            this.dcServerName.TabIndex = 4;
+
+            this.dcRemove.Location = new System.Drawing.Point(169, 165);
+            this.dcRemove.Name = "dcRemove";
+            this.dcRemove.Size = new System.Drawing.Size(75, 23);
+            this.dcRemove.TabIndex = 3;
+            this.dcRemove.Text = "Remove";
+            this.dcRemove.UseVisualStyleBackColor = true;
+            this.dcRemove.Click += new System.EventHandler(this.dcRemove_Click);
+ 
+            this.dcAdd.Location = new System.Drawing.Point(169, 131);
+            this.dcAdd.Name = "dcAdd";
+            this.dcAdd.Size = new System.Drawing.Size(75, 23);
+            this.dcAdd.TabIndex = 2;
+            this.dcAdd.Text = "Add";
+            this.dcAdd.UseVisualStyleBackColor = true;
+            this.dcAdd.Click += new System.EventHandler(this.dcAdd_Click);
+
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(342, 33);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "Select a Discord server to export to below. You can add your own\nDiscord server n" +
+    "ame to the list below.";
+
+            this.dcExList.FormattingEnabled = true;
+            this.dcExList.ItemHeight = 14;
+            this.dcExList.Items.AddRange(new object[] {
+            "Mids Reborn (Default)",
+            "CoH: Homecoming"});
+            this.dcExList.Location = new System.Drawing.Point(6, 58);
+            this.dcExList.Name = "dcExList";
+            this.dcExList.Size = new System.Drawing.Size(157, 130);
+            this.dcExList.TabIndex = 0;
+            this.dcExList.SelectedIndexChanged += new System.EventHandler(this.dcExList_SelectedIndexChanged);
+ 
+            this.GroupBox18.Controls.Add((System.Windows.Forms.Control)this.richTextBox1);
+            this.GroupBox18.Controls.Add((System.Windows.Forms.Control)this.dcNickName);
+            this.GroupBox18.Location = new System.Drawing.Point(8, 6);
+            this.GroupBox18.Name = "GroupBox18";
+            this.GroupBox18.Size = new System.Drawing.Size(256, 97);
+            this.GroupBox18.TabIndex = 0;
+            this.GroupBox18.TabStop = false;
+            this.GroupBox18.Text = "Discord Nickname:";
+
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Location = new System.Drawing.Point(31, 58);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(219, 33);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord. *It will be checked*";
+
+            this.dcNickName.Location = new System.Drawing.Point(6, 32);
+            this.dcNickName.Name = "dcNickName";
+            this.dcNickName.Size = new System.Drawing.Size(244, 20);
+            this.dcNickName.TabIndex = 0;
+            this.dcNickName.TextChanged += new EventHandler(this.dcNickName_TextChanged);
+
             this.AcceptButton = (System.Windows.Forms.IButtonControl)this.btnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -1494,6 +1650,13 @@ namespace Hero_Designer
             this.TabPage1.PerformLayout();
             this.GroupBox9.ResumeLayout(false);
             this.GroupBox7.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.GroupBox20.ResumeLayout(false);
+            this.GroupBox20.PerformLayout();
+            this.GroupBox19.ResumeLayout(false);
+            this.GroupBox19.PerformLayout();
+            this.GroupBox18.ResumeLayout(false);
+            this.GroupBox18.PerformLayout();
             this.TeamSize.EndInit();
             this.ResumeLayout(false);
         }
@@ -1544,6 +1707,8 @@ namespace Hero_Designer
         System.Windows.Forms.ListBox fcList;
         System.Windows.Forms.TextBox fcName;
         System.Windows.Forms.TextBox fcNotes;
+        System.Windows.Forms.Button dcAdd;
+        System.Windows.Forms.Button dcRemove;
         System.Windows.Forms.Button fcReset;
         System.Windows.Forms.Button fcSet;
         System.Windows.Forms.TextBox fcTextOff;
@@ -1561,7 +1726,10 @@ namespace Hero_Designer
         System.Windows.Forms.GroupBox GroupBox15;
         System.Windows.Forms.GroupBox GroupBox16;
         System.Windows.Forms.GroupBox GroupBox17;
+        System.Windows.Forms.GroupBox GroupBox18;
+        System.Windows.Forms.GroupBox GroupBox19;
         System.Windows.Forms.GroupBox GroupBox2;
+        System.Windows.Forms.GroupBox GroupBox20;
         System.Windows.Forms.GroupBox GroupBox3;
         System.Windows.Forms.GroupBox GroupBox4;
         System.Windows.Forms.GroupBox GroupBox5;
@@ -1577,6 +1745,8 @@ namespace Hero_Designer
         System.Windows.Forms.Label Label14;
         System.Windows.Forms.Label Label15;
         System.Windows.Forms.Label Label16;
+        System.Windows.Forms.Label Label17;
+        System.Windows.Forms.Label Label18;
         System.Windows.Forms.Label Label19;
         System.Windows.Forms.Label Label2;
         System.Windows.Forms.Label Label20;
@@ -1606,6 +1776,7 @@ namespace Hero_Designer
         System.Windows.Forms.Label Label9;
         System.Windows.Forms.Label lblExample;
         System.Windows.Forms.Label lblSaveFolder;
+        System.Windows.Forms.ListBox dcExList;
         System.Windows.Forms.ListBox listScenarios;
         System.Windows.Forms.ToolTip myTip;
         System.Windows.Forms.RadioButton optDO;
@@ -1620,6 +1791,9 @@ namespace Hero_Designer
         System.Windows.Forms.RadioButton rbGraphTwoLine;
         System.Windows.Forms.RadioButton rbPvE;
         System.Windows.Forms.RadioButton rbPvP;
+        System.Windows.Forms.RichTextBox richTextBox1;
+        System.Windows.Forms.RichTextBox richTextBox2;
+        System.Windows.Forms.RichTextBox richTextBox3;
         System.Windows.Forms.TabControl TabControl1;
         System.Windows.Forms.TabPage TabPage1;
         System.Windows.Forms.TabPage TabPage2;
@@ -1627,7 +1801,11 @@ namespace Hero_Designer
         System.Windows.Forms.TabPage TabPage4;
         System.Windows.Forms.TabPage TabPage5;
         System.Windows.Forms.TabPage TabPage6;
+        System.Windows.Forms.TabPage tabPage7;
         System.Windows.Forms.NumericUpDown TeamSize;
+        System.Windows.Forms.TextBox dcChannel;
+        System.Windows.Forms.TextBox dcNickName;
+        System.Windows.Forms.TextBox dcServerName;
         System.Windows.Forms.TextBox txtUpdatePath;
         System.Windows.Forms.NumericUpDown udBaseToHit;
         System.Windows.Forms.NumericUpDown udExHigh;

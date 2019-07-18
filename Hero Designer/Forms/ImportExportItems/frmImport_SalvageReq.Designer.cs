@@ -28,65 +28,76 @@ namespace Hero_Designer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SalvageReq));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.lblFile = new System.Windows.Forms.Label();
             this.btnFile = new System.Windows.Forms.Button();
             this.dlgBrowse = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
-
+            // 
+            // btnClose
+            // 
             this.btnClose.Location = new System.Drawing.Point(539, 81);
             this.btnClose.Name = "btnClose";
-
             this.btnClose.Size = new System.Drawing.Size(86, 23);
             this.btnClose.TabIndex = 56;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(btnClose_Click);
-
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnImport
+            // 
             this.btnImport.Location = new System.Drawing.Point(539, 38);
             this.btnImport.Name = "btnImport";
-
             this.btnImport.Size = new System.Drawing.Size(86, 23);
             this.btnImport.TabIndex = 54;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(btnImport_Click);
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // lblFile
+            // 
             this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
             this.lblFile.Location = new System.Drawing.Point(12, 9);
             this.lblFile.Name = "lblFile";
-
             this.lblFile.Size = new System.Drawing.Size(521, 46);
             this.lblFile.TabIndex = 55;
             this.lblFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // btnFile
+            // 
             this.btnFile.Location = new System.Drawing.Point(539, 9);
             this.btnFile.Name = "btnFile";
-
             this.btnFile.Size = new System.Drawing.Size(86, 23);
             this.btnFile.TabIndex = 53;
             this.btnFile.Text = "Browse...";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += new System.EventHandler(btnFile_Click);
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // dlgBrowse
+            // 
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
+            // 
+            // frmImport_SalvageReq
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(635, 117);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnClose);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnImport);
-            this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnFile);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.lblFile);
+            this.Controls.Add(this.btnFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Name = "frmImport_SalvageReq";
             this.ShowInTaskbar = false;
             this.Text = "Salvage Requirement Import";
             this.ResumeLayout(false);
+
         }
 
         #endregion
