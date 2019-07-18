@@ -235,9 +235,10 @@ public class ConfigData
                         //fileStream.Close();
                         return;
                 }
+                /* Commenting out for now - will remove later
                 this.DNickName = reader.ReadString();
                 this.DSelServer = reader.ReadString();
-                this.DChannel = reader.ReadString();
+                this.DChannel = reader.ReadString();*/
                 this.NoToolTips = reader.ReadBoolean();
                 this.BaseAcc = reader.ReadSingle();
                 double num3 = (double)reader.ReadSingle();
