@@ -57,6 +57,9 @@ public class ConfigData
             _defaultSaveFolderOverride = value;
         }
     }
+    public string DNickName;
+    public string DSelServer;
+    public string DChannel;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -232,6 +235,10 @@ public class ConfigData
                         //fileStream.Close();
                         return;
                 }
+                /* Commenting out for now - will remove later
+                this.DNickName = reader.ReadString();
+                this.DSelServer = reader.ReadString();
+                this.DChannel = reader.ReadString();*/
                 this.NoToolTips = reader.ReadBoolean();
                 this.BaseAcc = reader.ReadSingle();
                 double num3 = (double)reader.ReadSingle();
