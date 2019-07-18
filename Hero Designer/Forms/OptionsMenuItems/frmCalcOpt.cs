@@ -292,6 +292,41 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+
+        void dcAdd_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(dcServerName.Text))
+            {
+                dcExList.Items.Add(dcServerName.Text);
+            }
+        }
+
+        void dcRemove_Click(object sender, EventArgs e)
+        {
+            if (MidsContext.Config.DSelServer == dcExList.SelectedItem.ToString() && !string.IsNullOrEmpty(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DSelServer = "";
+            }
+            dcExList.Items.Remove(dcExList.SelectedItem);
+        }
+
+        void dcNickName_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(dcNickName.Text))
+            {
+                MidsContext.Config.DNickName = dcNickName.Text;
+            }
+        }
+
+        void dcChannel_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(dcChannel.Text))
+            {
+                MidsContext.Config.DChannel = dcChannel.Text;
+            }
+        }
+
         void fcNotes_TextChanged(object sender, EventArgs e)
         {
             if (this.fcList.SelectedIndex < 0 | this.fcNoUpdate)
@@ -523,6 +558,9 @@ namespace Hero_Designer
             this.chkTextBold.Checked = config.RtFont.RTFBold;
             this.chkStatBold.Checked = config.RtFont.PairedBold;
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
+            this.dcNickName.Text = config.DNickName;
+            this.dcChannel.Text = config.DChannel;
+            this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;

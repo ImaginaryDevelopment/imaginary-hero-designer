@@ -74,6 +74,8 @@ namespace Hero_Designer
             this.tsExport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExportLong = new System.Windows.Forms.ToolStripMenuItem();
             this.tsExportDataLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparator25 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsExportDiscord = new System.Windows.Forms.ToolStripMenuItem();
             this.OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
@@ -669,13 +671,15 @@ namespace Hero_Designer
             // 
             // ImportExportToolStripMenuItem
             // 
-            this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[5]
+            this.ImportExportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[7]
             {
             (System.Windows.Forms.ToolStripItem) this.tsImport,
             (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator12,
             (System.Windows.Forms.ToolStripItem) this.tsExport,
             (System.Windows.Forms.ToolStripItem) this.tsExportLong,
-            (System.Windows.Forms.ToolStripItem) this.tsExportDataLink
+            (System.Windows.Forms.ToolStripItem) this.tsExportDataLink,
+            (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator25,
+            (System.Windows.Forms.ToolStripItem) this.tsExportDiscord
             });
             this.ImportExportToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ImportExportToolStripMenuItem.Name = "ImportExportToolStripMenuItem";
@@ -715,6 +719,18 @@ namespace Hero_Designer
             this.tsExportDataLink.Size = new System.Drawing.Size(240, 22);
             this.tsExportDataLink.Text = "Export Data Link";
             this.tsExportDataLink.Click += new System.EventHandler(tsExportDataLink_Click);
+            //
+            // ToolStripSeparator25
+            // 
+            this.ToolStripSeparator25.Name = "ToolStripSeparator25";
+            this.ToolStripSeparator25.Size = new System.Drawing.Size(237, 6);
+            // 
+            // tsExportDataLink
+            // 
+            this.tsExportDiscord.Name = "tsExportDiscord";
+            this.tsExportDiscord.Size = new System.Drawing.Size(240, 22);
+            this.tsExportDiscord.Text = "Export to Discord";
+            this.tsExportDiscord.Click += new System.EventHandler(tsExportDiscord_Click);
             // 
             // OptionsToolStripMenuItem
             // 
@@ -1999,6 +2015,8 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsEnhToTO;
         System.Windows.Forms.ToolStripMenuItem tsExport;
         System.Windows.Forms.ToolStripMenuItem tsExportDataLink;
+        System.Windows.Forms.ToolStripSeparator ToolStripSeparator25;
+        System.Windows.Forms.ToolStripMenuItem tsExportDiscord;
         System.Windows.Forms.ToolStripMenuItem tsExportLong;
         System.Windows.Forms.ToolStripMenuItem tsFileNew;
         System.Windows.Forms.ToolStripMenuItem tsFileOpen;

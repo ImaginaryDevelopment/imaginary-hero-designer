@@ -28,6 +28,7 @@ namespace Hero_Designer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportEnhSets));
             this.btnCheckAll = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dlgBrowse = new System.Windows.Forms.OpenFileDialog();
@@ -103,6 +104,7 @@ namespace Hero_Designer
             this.ColumnHeader5,
             this.ColumnHeader6});
             this.lstImport.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lstImport.HideSelection = false;
             this.lstImport.Location = new System.Drawing.Point(12, 77);
             this.lstImport.Name = "lstImport";
             this.lstImport.Size = new System.Drawing.Size(886, 462);
@@ -218,6 +220,7 @@ namespace Hero_Designer
             this.Controls.Add(this.btnFile);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmImportEnhSets";

@@ -28,8 +28,7 @@ namespace Hero_Designer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = (System.ComponentModel.IContainer)new System.ComponentModel.Container();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SetAssignments));
             this.Label8 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.udRevision = new System.Windows.Forms.NumericUpDown();
@@ -38,91 +37,104 @@ namespace Hero_Designer
             this.lblFile = new System.Windows.Forms.Label();
             this.btnFile = new System.Windows.Forms.Button();
             this.dlgBrowse = new System.Windows.Forms.OpenFileDialog();
-            this.udRevision.BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udRevision)).BeginInit();
             this.SuspendLayout();
-
+            // 
+            // Label8
+            // 
             this.Label8.Location = new System.Drawing.Point(346, 85);
             this.Label8.Name = "Label8";
-
             this.Label8.Size = new System.Drawing.Size(65, 18);
             this.Label8.TabIndex = 55;
             this.Label8.Text = "Revision:";
             this.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-
+            // 
+            // lblDate
+            // 
             this.lblDate.Location = new System.Drawing.Point(9, 85);
             this.lblDate.Name = "lblDate";
-
             this.lblDate.Size = new System.Drawing.Size(175, 18);
             this.lblDate.TabIndex = 54;
             this.lblDate.Text = "Date:";
-
+            // 
+            // udRevision
+            // 
             this.udRevision.Location = new System.Drawing.Point(417, 83);
-            this.udRevision.Maximum = new System.Decimal(new int[4]
-            {
-        (int) ushort.MaxValue,
-        0,
-        0,
-        0
-            });
+            this.udRevision.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
             this.udRevision.Name = "udRevision";
-
             this.udRevision.Size = new System.Drawing.Size(116, 20);
             this.udRevision.TabIndex = 53;
-
+            // 
+            // btnClose
+            // 
             this.btnClose.Location = new System.Drawing.Point(539, 81);
             this.btnClose.Name = "btnClose";
-
             this.btnClose.Size = new System.Drawing.Size(86, 23);
             this.btnClose.TabIndex = 52;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnImport
+            // 
             this.btnImport.Location = new System.Drawing.Point(539, 38);
             this.btnImport.Name = "btnImport";
-            this.btnClose.Click += new System.EventHandler(btnClose_Click);
-
             this.btnImport.Size = new System.Drawing.Size(86, 23);
             this.btnImport.TabIndex = 50;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(btnImport_Click);
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // lblFile
+            // 
             this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
             this.lblFile.Location = new System.Drawing.Point(12, 9);
             this.lblFile.Name = "lblFile";
-
             this.lblFile.Size = new System.Drawing.Size(521, 46);
             this.lblFile.TabIndex = 51;
             this.lblFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // btnFile
+            // 
             this.btnFile.Location = new System.Drawing.Point(539, 9);
             this.btnFile.Name = "btnFile";
-
             this.btnFile.Size = new System.Drawing.Size(86, 23);
             this.btnFile.TabIndex = 49;
             this.btnFile.Text = "Browse...";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += new System.EventHandler(btnFile_Click);
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // dlgBrowse
+            // 
             this.dlgBrowse.DefaultExt = "csv";
             this.dlgBrowse.Filter = "CSV Spreadsheets (*.csv)|*.csv";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
+            // 
+            // frmImport_SetAssignments
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(637, 115);
-            this.Controls.Add((System.Windows.Forms.Control)this.Label8);
-            this.Controls.Add((System.Windows.Forms.Control)this.lblDate);
-            this.Controls.Add((System.Windows.Forms.Control)this.udRevision);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnClose);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnImport);
-            this.Controls.Add((System.Windows.Forms.Control)this.lblFile);
-            this.Controls.Add((System.Windows.Forms.Control)this.btnFile);
+            this.Controls.Add(this.Label8);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.udRevision);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.lblFile);
+            this.Controls.Add(this.btnFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Name = "frmImport_SetAssignments";
             this.ShowInTaskbar = false;
             this.Text = "Invention Set Assignment Import";
-            this.udRevision.EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udRevision)).EndInit();
             this.ResumeLayout(false);
+
         }
         #endregion
     }
