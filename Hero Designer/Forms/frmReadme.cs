@@ -75,9 +75,7 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                ProjectData.SetProjectError(ex);
                 this.rtfRead.Text = "Unable to find " + this.myFile + "!";
-                ProjectData.ClearProjectError();
             }
             this.Loading = false;
         }

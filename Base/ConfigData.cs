@@ -57,6 +57,9 @@ public class ConfigData
             _defaultSaveFolderOverride = value;
         }
     }
+    public string DNickName;
+    public string DSelServer;
+    public string DChannel;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -218,10 +221,12 @@ public class ConfigData
                 float num1;
                 switch (reader.ReadString())
                 {
+                    // legacy string, refers to something specific in files, do not change
                     case "Mids' Hero Designer Config":
                         num1 = 0.9f;
                         break;
-                    // here's something F# doesn't do easily
+                    // legacy string, refers to something specific in files, do not change
+                    // here's something F# doesn't do easily(fallthrough where one branch has a when variable declared)
                     case "Mids' Hero Designer Config V2":
                     case string x when x == header:
                         num1 = reader.ReadSingle();
@@ -232,6 +237,10 @@ public class ConfigData
                         //fileStream.Close();
                         return;
                 }
+                /* Commenting out for now - will remove later
+                this.DNickName = reader.ReadString();
+                this.DSelServer = reader.ReadString();
+                this.DChannel = reader.ReadString();*/
                 this.NoToolTips = reader.ReadBoolean();
                 this.BaseAcc = reader.ReadSingle();
                 double num3 = (double)reader.ReadSingle();

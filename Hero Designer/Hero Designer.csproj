@@ -66,10 +66,12 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>phd_iE7_icon.ico</ApplicationIcon>
+    <ApplicationIcon>reborn.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
+    <Compile Include="clsHook.cs" />
     <Compile Include="FileAssocation.cs" />
     <Compile Include="Forms\MainUILogic.cs" />
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
@@ -234,6 +236,7 @@
     <Content Include="Images\**\*.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="reborn.ico" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
@@ -605,7 +608,6 @@
     <Content Include="lib\zlib1.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="phd_iE7_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
