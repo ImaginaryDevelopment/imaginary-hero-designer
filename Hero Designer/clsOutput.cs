@@ -56,7 +56,11 @@ namespace Hero_Designer
             string str1 = "";
             ExportConfig.FormatCodes[] formatCode = MidsContext.Config.Export.FormatCode;
             int idFormat = this.idFormat;
-            this.Plain = formatCode[idFormat].BoldOn + formatCode[idFormat].ColourOn + formatCode[idFormat].ItalicOn + formatCode[idFormat].SizeOn + formatCode[idFormat].UnderlineOn == "";
+            this.Plain = formatCode[idFormat].BoldOn
+                    + formatCode[idFormat].ColourOn
+                    + formatCode[idFormat].ItalicOn
+                    + formatCode[idFormat].SizeOn
+                    + formatCode[idFormat].UnderlineOn == "";
             string str2 = MidsContext.Character.Alignment.ToString();
             string str3 = str1 + this.formatColor(this.formatBold(str2 + " Plan by Mids' Reborn : Hero Designer " + MidsContext.AppAssemblyVersion), ExportConfig.Element.Heading) + this.LineBreak() + this.formatColor(this.formatBold(@"https://github.com/ImaginaryDevelopment/imaginary-hero-designer"), ExportConfig.Element.Heading) + this.LineBreak();
             if (iDataLink != "" & !this.Plain)

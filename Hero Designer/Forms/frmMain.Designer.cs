@@ -141,7 +141,6 @@ namespace Hero_Designer
             this.tsDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.tsTitanPlanner = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsTitanSite = new System.Windows.Forms.ToolStripMenuItem();
             this.WindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsViewSets = new System.Windows.Forms.ToolStripMenuItem();
             this.tsViewGraphs = new System.Windows.Forms.ToolStripMenuItem();
@@ -1179,7 +1178,7 @@ namespace Hero_Designer
             // HelpToolStripMenuItem1
             // 
             this.HelpToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.HelpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[10]
+            this.HelpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[9]
             {
             (System.Windows.Forms.ToolStripItem) this.tsHelp,
             (System.Windows.Forms.ToolStripItem) this.tsPatchNotes,
@@ -1189,8 +1188,7 @@ namespace Hero_Designer
             (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator23,
             (System.Windows.Forms.ToolStripItem) this.tsDonate,
             (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator24,
-            (System.Windows.Forms.ToolStripItem) this.tsTitanPlanner,
-            (System.Windows.Forms.ToolStripItem) this.tsTitanSite
+            (System.Windows.Forms.ToolStripItem) this.tsTitanPlanner
             });
             this.HelpToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1";
@@ -1230,7 +1228,7 @@ namespace Hero_Designer
             this.tsTitanForum.Name = "tsTitanForum";
             this.tsTitanForum.Size = new System.Drawing.Size(258, 22);
             this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
-            this.tsTitanForum.Click += new System.EventHandler(tsTitanForum_Click);
+            this.tsTitanForum.Click += new System.EventHandler(tsForumLink);
             // 
             // ToolStripSeparator23
             // 
@@ -1254,14 +1252,7 @@ namespace Hero_Designer
             this.tsTitanPlanner.Name = "tsTitanPlanner";
             this.tsTitanPlanner.Size = new System.Drawing.Size(258, 22);
             this.tsTitanPlanner.Text = "CoH &Planner Website";
-            this.tsTitanPlanner.Click += new System.EventHandler(tsTitanPlanner_Click);
-            // 
-            // tsTitanSite
-            // 
-            this.tsTitanSite.Name = "tsTitanSite";
-            this.tsTitanSite.Size = new System.Drawing.Size(258, 22);
-            this.tsTitanSite.Text = "&Titan Network Website";
-            this.tsTitanSite.Click += new System.EventHandler(tsTitanSite_Click);
+            this.tsTitanPlanner.Click += new System.EventHandler(tsPlannerLink);
             // 
             // WindowToolStripMenuItem
             // 
@@ -2042,7 +2033,6 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsSetFind;
         System.Windows.Forms.ToolStripMenuItem tsTitanForum;
         System.Windows.Forms.ToolStripMenuItem tsTitanPlanner;
-        System.Windows.Forms.ToolStripMenuItem tsTitanSite;
         System.Windows.Forms.ToolStripMenuItem tsUpdateCheck;
         System.Windows.Forms.ToolStripMenuItem tsView2Col;
         System.Windows.Forms.ToolStripMenuItem tsView3Col;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,5 +55,45 @@ namespace Base
             // filter on predicate
             .Where(x => predicate(x.value))
             .Select(x => x.index);
+        // works just fine when x is null, extension methods aren't instance methods.
+        public static bool IsValueString(this string x) => !string.IsNullOrWhiteSpace(x);
+
+        public static string After(this string x, string delimiter)
+        {
+            if (x == null) throw new ArgumentNullException(nameof(x));
+            if (string.IsNullOrEmpty(delimiter)) throw new ArgumentException("must not be null or empty", nameof(delimiter));
+            if (x.Length < delimiter.Length) throw new InvalidOperationException($"{nameof(delimiter)} was longer than input");
+            var ind = x.IndexOf(delimiter);
+            if (ind < 0) throw new ArgumentOutOfRangeException(nameof(x), $"{nameof(delimiter)} was not found in string");
+
+            return x.Substring(ind + delimiter.Length);
+        }
+        public static string Before(this string x, string delimiter)
+        {
+            if (delimiter == null) throw new ArgumentNullException(nameof(delimiter));
+            if (string.IsNullOrEmpty(delimiter)) throw new InvalidOperationException(nameof(delimiter) + "must not be empty");
+            if (x == null) throw new ArgumentNullException(nameof(x));
+            var i = x.IndexOf(delimiter);
+            if (i < 0) throw new InvalidOperationException($"{nameof(x)} did not contain '{delimiter}'");
+            return x.Substring(0, i);
+        }
+        // model after F#, both indexes are inclusive, unlike substring which is (index, count), this is (index, index)
+        // in F# this would be x.[start..stop]
+        public static string GetRange(this string x, int start, int stop) => x.Substring(start, stop - start + 1);
+
+        public static string GetLine(this string x, int lineIndex)
+        {
+            if (x == null) throw new ArgumentNullException(nameof(x));
+            if (lineIndex < 0) throw new ArgumentOutOfRangeException($"{nameof(lineIndex)} must be 0 or greater");
+            var strIndex = x.IndexOfAny(new[] { '\r', '\n' });
+            if (lineIndex == 0 && strIndex < 0) return x;
+            if (lineIndex == 0 && strIndex == 0) return string.Empty;
+            if (lineIndex == 0 && 0 < strIndex) return x.GetRange(0, strIndex - 1);
+            if (0 < lineIndex && strIndex < 0) throw new InvalidOperationException("Reached end of string before finding desired index");
+            var rem = x.Substring(strIndex + 1);
+            if (0 < rem.Length && x[strIndex] == '\r' && rem[0] == '\n')
+                return rem.Substring(1).GetLine(lineIndex - 1);
+            return rem.GetLine(lineIndex - 1);
+        }
     }
 }

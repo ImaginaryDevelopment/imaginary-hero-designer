@@ -223,7 +223,7 @@ namespace Hero_Designer
             this.BusyMsg("Re-Indexing && Saving...");
             Array.Sort<IPower>(DatabaseAPI.Database.Power);
             var serializer = My.MyApplication.GetSerializer();
-            DatabaseAPI.AssignStaticIndexValues(serializer);
+            DatabaseAPI.AssignStaticIndexValues(serializer, false);
             DatabaseAPI.MatchAllIDs(null);
             DatabaseAPI.SaveMainDatabase(serializer);
             this.BusyHide();

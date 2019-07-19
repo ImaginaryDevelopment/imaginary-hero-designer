@@ -207,14 +207,14 @@ namespace Hero_Designer
                 this.myDataView = this.dvAnchored;
                 this.pnlGFX.BackColor = this.BackColor;
                 this.NoUpdate = true;
-                if (MidsContext.Config.CheckForUpdates)
+                clsXMLUpdate.eCheckResponse? chkResult = null;
+                string chkResultFailMsg = null;
+                if (!this.IsInDesignMode() && MidsContext.Config.CheckForUpdates)
                 {
-                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    IMessager iLoadFrm = iFrm;
-                    clsXmlUpdate.UpdateCheck(true, ref iLoadFrm);
-                    iFrm = (frmLoading)iLoadFrm;
+                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); // "https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
+                    (chkResult, chkResultFailMsg) = clsXmlUpdate.UpdateCheck();
                 }
-                if (MidsContext.Config.FreshInstall)
+                if (!this.IsInDesignMode() && MidsContext.Config.FreshInstall)
                 {
                     MidsContext.Config.CheckForUpdates = false;
                     //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
@@ -351,6 +351,35 @@ namespace Hero_Designer
                 local = new Point(left, y);
                 this.dvAnchored.SetLocation(iLocation, true);
                 this.PriSec_ExpandChanged(true);
+                if (!this.IsInDesignMode())
+                {
+                    if (chkResult == clsXMLUpdate.eCheckResponse.FailedWithMessage && !string.IsNullOrEmpty(chkResultFailMsg))
+                    {
+                        if (MessageBox.Show(chkResultFailMsg + "\r\nCheck again at next startup?", "Update check failed", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
+                        {
+                            MidsContext.Config.CheckForUpdates = false;
+                        }
+                    }
+                    else if (chkResult == clsXMLUpdate.eCheckResponse.Updates)
+                    {
+                        MessageBox.Show("Update available");
+                    }
+                    var exePath = typeof(frmMain).Assembly.Location;
+                    if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
+                    {
+                        if (MessageBox.Show("Associate .mhd and .mxd files with this application?", "File Assocation Setup", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            var associationResult = FileAssocation.AddToOpenWithLists(exePath);
+                            if (associationResult == FileAssocation.AddToOpenResult.Unauthorized)
+                            {
+                                if (MessageBox.Show("Unable to associate application with build files, turn off future attempts?", "Assocation Failure", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    MidsContext.Config.DoNotUpdateFileAssociation = true;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -4008,15 +4037,11 @@ namespace Hero_Designer
                 str2 = str2.Replace(nameof(Hero), "Villain");
             if (MidsContext.Config.MasterMode)
             {
-                this.Text = str2 + " (Master Mode) v" + MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######") + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
+                this.Text = str2 + " (Master Mode) v" + MidsContext.AppAssemblyVersion + " (DB: I" + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString(" dd / MMM / yyyy @ hh:mm tt") + ")";
             }
             else
             {
-                string str3 = MainModule.MidsController.HeroDesignerVersion.ToString("#0.0#######");
-                if (str3.Length > 5)
-                    str3 = str3.Substring(0, 5);
-                string str4 = str3.Trim("0".ToCharArray());
-                this.Text = str2 + " v" + str4 + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
+                this.Text = str2 + " v" + MidsContext.AppAssemblyVersion + " (Database Issue: " + DatabaseAPI.Database.Issue + " - Updated: " + DatabaseAPI.Database.Date.ToString("dd/MM/yy") + ")";
             }
         }
 
@@ -4824,56 +4849,54 @@ namespace Hero_Designer
         }
 
         void tsSetFind_Click(object sender, EventArgs e)
-        {
-            this.FloatSetFinder(true);
-        }
+            => this.FloatSetFinder(true);
 
-        void tsTitanForum_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToForums();
-        }
+        void tsForumLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToForums();
 
-        void tsTitanPlanner_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToCoHPlanner();
-        }
-
-        void tsTitanSite_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.GoToTitan();
-        }
+        void tsPlannerLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToCoHPlanner();
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
-            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate("http://repo.cohtitan.com/mids_updates/");
-            IMessager iLoadFrm = null;
-            clsXMLUpdate.eCheckResponse eCheckResponse = clsXmlUpdate.UpdateCheck(false, ref iLoadFrm);
+            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
+            var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
                 MessageBox.Show("No Updates.", "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates && clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates)
             {
-                Application.Exit();
+                if (clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
+                {
+                    Application.Exit();
+                    return;
+                }
+            }
+            if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
+            {
+                if (!string.IsNullOrWhiteSpace(msg))
+                {
+                    frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
+                }
+                else
+                {
+                    frmLoading.ShowLinkDialog("Error", "Unknown error checking for updates, check failed, click here to open site in browser", MidsContext.DownloadUrl);
+                    return;
+                }
             }
             this.RefreshInfo();
         }
 
         void tsView2Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(2);
-        }
+            => this.setColumns(2);
 
         void tsView3Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(3);
-        }
+            => this.setColumns(3);
 
         void tsView4Col_Click(object sender, EventArgs e)
-        {
-            this.setColumns(4);
-        }
+            => this.setColumns(4);
 
         void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
@@ -4883,9 +4906,7 @@ namespace Hero_Designer
         }
 
         void tsViewData_Click(object sender, EventArgs e)
-        {
-            this.FloatData(true);
-        }
+            => this.FloatData(true);
 
         void tsViewDPS_New_Click(object sender, EventArgs e)
         {
@@ -4895,9 +4916,7 @@ namespace Hero_Designer
         }
 
         void tsViewGraphs_Click(object sender, EventArgs e)
-        {
-            this.FloatStatGraph(true);
-        }
+            => this.FloatStatGraph(true);
 
         void tsViewIOLevels_Click(object sender, EventArgs e)
         {
@@ -4914,9 +4933,7 @@ namespace Hero_Designer
         }
 
         void tsViewSetCompare_Click(object sender, EventArgs e)
-        {
-            this.FloatCompareGraph(true);
-        }
+            => this.FloatCompareGraph(true);
 
         void tsViewSets_Click(object sender, EventArgs e)
         {
@@ -4934,9 +4951,7 @@ namespace Hero_Designer
         }
 
         void tsViewTotals_Click(object sender, EventArgs e)
-        {
-            this.FloatTotals(true);
-        }
+            => this.FloatTotals(true);
 
         void txtName_TextChanged(object sender, EventArgs e)
         {
@@ -5089,10 +5104,10 @@ namespace Hero_Designer
             frmMain.ComboCheckPool(CbtPool2.Value, Enums.ePowerSetType.Pool);
             frmMain.ComboCheckPool(CbtPool3.Value, Enums.ePowerSetType.Pool);
             frmMain.ComboCheckPool(CbtAncillary.Value, Enums.ePowerSetType.Ancillary);
-            this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3].nID);
-            this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4].nID);
-            this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5].nID);
-            this.cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6].nID);
+            this.cbPool0.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(0, MidsContext.Character.Powersets[3]?.nID ?? -1);
+            this.cbPool1.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(1, MidsContext.Character.Powersets[4]?.nID ?? -1);
+            this.cbPool2.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(2, MidsContext.Character.Powersets[5]?.nID ?? -1);
+            this.cbPool3.SelectedIndex = MainModule.MidsController.Toon.PoolToComboID(3, MidsContext.Character.Powersets[6]?.nID ?? -1);
             IPowerset[] powersetIndexes = DatabaseAPI.GetPowersetIndexes(MidsContext.Character.Archetype, Enums.ePowerSetType.Ancillary);
             if (MidsContext.Character.Powersets[7] != null)
                 this.cbAncillary.SelectedIndex = DatabaseAPI.ToDisplayIndex(MidsContext.Character.Powersets[7], powersetIndexes);
@@ -5515,23 +5530,25 @@ namespace Hero_Designer
                         }
                     }
                 }
-                if (stringList.Count > MidsContext.Character.Powersets.Length + 1)
-                    MidsContext.Character.Powersets = new IPowerset[stringList.Count];
-                IPowerset powersetByName1 = DatabaseAPI.GetPowersetByName(stringList[0]);
-                if (powersetByName1 == null)
-                    str1 = stringList[0];
-                MidsContext.Character.Powersets[0] = powersetByName1;
-                IPowerset powersetByName2 = DatabaseAPI.GetPowersetByName(stringList[1]);
-                if (powersetByName2 == null)
-                    str1 = stringList[1];
-                MidsContext.Character.Powersets[1] = powersetByName2;
-                for (int index = 2; index < stringList.Count; ++index)
-                {
-                    IPowerset powersetByName3 = DatabaseAPI.GetPowersetByName(stringList[index]);
-                    if (powersetByName3 == null)
-                        str1 = stringList[index];
-                    MidsContext.Character.Powersets[index + 1] = powersetByName3;
-                }
+                MidsContext.Character.LoadPowersetsByName2(stringList, ref str1);
+
+                //if (stringList.Count > MidsContext.Character.Powersets.Length + 1)
+                //    MidsContext.Character.Powersets = new IPowerset[stringList.Count];
+                //IPowerset powersetByName1 = DatabaseAPI.GetPowersetByName(stringList[0]);
+                //if (powersetByName1 == null)
+                //    str1 = stringList[0];
+                //MidsContext.Character.Powersets[0] = powersetByName1;
+                //IPowerset powersetByName2 = DatabaseAPI.GetPowersetByName(stringList[1]);
+                //if (powersetByName2 == null)
+                //    str1 = stringList[1];
+                //MidsContext.Character.Powersets[1] = powersetByName2;
+                //for (int index = 2; index < stringList.Count; ++index)
+                //{
+                //    IPowerset powersetByName3 = DatabaseAPI.GetPowersetByName(stringList[index]);
+                //    if (powersetByName3 == null)
+                //        str1 = stringList[index];
+                //    MidsContext.Character.Powersets[index + 1] = powersetByName3;
+                //}
                 MidsContext.Character.CurrentBuild.LastPower = 24;
                 int index3 = 0;
                 List<PowerEntry> listPowerEntry = new List<PowerEntry>();
@@ -5651,7 +5668,7 @@ namespace Hero_Designer
             }
             catch
             {
-                int num = (int)MessageBox.Show(("Invalid Import Data, Blame Sai!\nError: " + str1), null, MessageBoxButtons.OK);
+                MessageBox.Show(("Invalid Import Data, Blame Sai!\nError: " + str1), null, MessageBoxButtons.OK);
             }
         }
 
