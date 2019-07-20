@@ -67,7 +67,8 @@ namespace Hero_Designer
 
             var discord = (
                 Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
-                User: MidsContext.Config.DNickName, Channel: MidsContext.Config.DChannel);
+                User: MidsContext.Config.DNickName,
+                Channel: MidsContext.Config.DChannel);
             var mrb = (
                 Level: Conversions.ToString(num), 
                 Archetype: MidsContext.Character.Archetype.DisplayName, 

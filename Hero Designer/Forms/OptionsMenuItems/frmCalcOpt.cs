@@ -292,7 +292,19 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dcExList.SelectedItem.ToString() == "Mids Reborn (Default)")
+            {
+                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+                dcChannel.Text = @"builds";
+                dcChannel.ReadOnly = true;
+            }
+            else
+            {
+                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+            }
+        }
 
         void dcAdd_Click(object sender, EventArgs e)
         {
