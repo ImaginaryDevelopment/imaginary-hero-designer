@@ -132,15 +132,15 @@ namespace Hero_Designer
             this.tsViewDPS_New = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsDPA = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsPatchNotes = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            //this.tsHelp = new System.Windows.Forms.ToolStripMenuItem();
+            //this.tsPatchNotes = new System.Windows.Forms.ToolStripMenuItem();
+            //this.ToolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBug = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsTitanForum = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsForum = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsDonate = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsTitanPlanner = new System.Windows.Forms.ToolStripMenuItem();
+            //this.tsDonate = new System.Windows.Forms.ToolStripMenuItem();
+            //this.ToolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsMidsReborn = new System.Windows.Forms.ToolStripMenuItem();
             this.WindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsViewSets = new System.Windows.Forms.ToolStripMenuItem();
             this.tsViewGraphs = new System.Windows.Forms.ToolStripMenuItem();
@@ -1178,23 +1178,23 @@ namespace Hero_Designer
             // HelpToolStripMenuItem1
             // 
             this.HelpToolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.HelpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[9]
+            this.HelpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[4]
             {
-            (System.Windows.Forms.ToolStripItem) this.tsHelp,
-            (System.Windows.Forms.ToolStripItem) this.tsPatchNotes,
-            (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator10,
+            //(System.Windows.Forms.ToolStripItem) this.tsHelp,
+            //(System.Windows.Forms.ToolStripItem) this.tsPatchNotes,
+            //(System.Windows.Forms.ToolStripItem) this.ToolStripSeparator10,
             (System.Windows.Forms.ToolStripItem) this.tsBug,
-            (System.Windows.Forms.ToolStripItem) this.tsTitanForum,
+            (System.Windows.Forms.ToolStripItem) this.tsForum,
             (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator23,
-            (System.Windows.Forms.ToolStripItem) this.tsDonate,
-            (System.Windows.Forms.ToolStripItem) this.ToolStripSeparator24,
-            (System.Windows.Forms.ToolStripItem) this.tsTitanPlanner
+            //(System.Windows.Forms.ToolStripItem) this.tsDonate,
+            //(System.Windows.Forms.ToolStripItem) this.ToolStripSeparator24,
+            (System.Windows.Forms.ToolStripItem) this.tsMidsReborn
             });
             this.HelpToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1";
             this.HelpToolStripMenuItem1.Size = new System.Drawing.Size(102, 20);
             this.HelpToolStripMenuItem1.Text = "&Help && Support";
-            // 
+            /* 
             // tsHelp
             // 
             this.tsHelp.Name = "tsHelp";
@@ -1213,28 +1213,28 @@ namespace Hero_Designer
             // ToolStripSeparator10
             // 
             this.ToolStripSeparator10.Name = "ToolStripSeparator10";
-            this.ToolStripSeparator10.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
+            this.ToolStripSeparator10.Size = new System.Drawing.Size((int)byte.MaxValue, 6);*/
             // 
             // tsBug
             // 
             this.tsBug.Name = "tsBug";
             this.tsBug.Size = new System.Drawing.Size(258, 22);
-            this.tsBug.Text = "Feedback Form / &Bug Report";
+            this.tsBug.Text = "&Bug Report";
             this.tsBug.Visible = false;
             this.tsBug.Click += new System.EventHandler(tsBug_Click);
             // 
-            // tsTitanForum
+            // tsForum
             // 
-            this.tsTitanForum.Name = "tsTitanForum";
-            this.tsTitanForum.Size = new System.Drawing.Size(258, 22);
-            this.tsTitanForum.Text = "Go to Support / Discussion &Forums";
-            this.tsTitanForum.Click += new System.EventHandler(tsForumLink);
+            this.tsForum.Name = "tsForum";
+            this.tsForum.Size = new System.Drawing.Size(258, 22);
+            this.tsForum.Text = "Go to Support / Discussion &Forums";
+            this.tsForum.Click += new System.EventHandler(tsForumLink);
             // 
             // ToolStripSeparator23
             // 
             this.ToolStripSeparator23.Name = "ToolStripSeparator23";
             this.ToolStripSeparator23.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
-            // 
+            /* 
             // tsDonate
             // 
             this.tsDonate.Name = "tsDonate";
@@ -1245,14 +1245,14 @@ namespace Hero_Designer
             // ToolStripSeparator24
             // 
             this.ToolStripSeparator24.Name = "ToolStripSeparator24";
-            this.ToolStripSeparator24.Size = new System.Drawing.Size((int)byte.MaxValue, 6);
+            this.ToolStripSeparator24.Size = new System.Drawing.Size((int)byte.MaxValue, 6);*/
             // 
-            // tsTitanPlanner
+            // tsMidsReborn
             // 
-            this.tsTitanPlanner.Name = "tsTitanPlanner";
-            this.tsTitanPlanner.Size = new System.Drawing.Size(258, 22);
-            this.tsTitanPlanner.Text = "CoH &Planner Website";
-            this.tsTitanPlanner.Click += new System.EventHandler(tsPlannerLink);
+            this.tsMidsReborn.Name = "tsMidsReborn";
+            this.tsMidsReborn.Size = new System.Drawing.Size(258, 22);
+            this.tsMidsReborn.Text = "Mids &Reborn Website";
+            this.tsMidsReborn.Click += new System.EventHandler(tsMidsRebornLink);
             // 
             // WindowToolStripMenuItem
             // 
@@ -1989,7 +1989,7 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsBug;
         System.Windows.Forms.ToolStripMenuItem tsClearAllEnh;
         System.Windows.Forms.ToolStripMenuItem tsConfig;
-        System.Windows.Forms.ToolStripMenuItem tsDonate;
+        //System.Windows.Forms.ToolStripMenuItem tsDonate;
         System.Windows.Forms.ToolStripMenuItem tsDynamic;
         System.Windows.Forms.ToolStripMenuItem tsEnhToDO;
         System.Windows.Forms.ToolStripMenuItem tsEnhToEven;
@@ -2016,7 +2016,7 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsFileSave;
         System.Windows.Forms.ToolStripMenuItem tsFileSaveAs;
         System.Windows.Forms.ToolStripMenuItem tsFlipAllEnh;
-        System.Windows.Forms.ToolStripMenuItem tsHelp;
+        //System.Windows.Forms.ToolStripMenuItem tsHelp;
         System.Windows.Forms.ToolStripMenuItem tsHelperLong;
         System.Windows.Forms.ToolStripMenuItem tsHelperLong2;
         System.Windows.Forms.ToolStripMenuItem tsHelperShort;
@@ -2026,13 +2026,13 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem tsIOMax;
         System.Windows.Forms.ToolStripMenuItem tsIOMin;
         System.Windows.Forms.ToolStripMenuItem tsLevelUp;
-        System.Windows.Forms.ToolStripMenuItem tsPatchNotes;
+        //System.Windows.Forms.ToolStripMenuItem tsPatchNotes;
         System.Windows.Forms.ToolStripMenuItem tsRecipeViewer;
         System.Windows.Forms.ToolStripMenuItem tsDPSCalc;
         System.Windows.Forms.ToolStripMenuItem tsRemoveAllSlots;
         System.Windows.Forms.ToolStripMenuItem tsSetFind;
-        System.Windows.Forms.ToolStripMenuItem tsTitanForum;
-        System.Windows.Forms.ToolStripMenuItem tsTitanPlanner;
+        System.Windows.Forms.ToolStripMenuItem tsForum;
+        System.Windows.Forms.ToolStripMenuItem tsMidsReborn;
         System.Windows.Forms.ToolStripMenuItem tsUpdateCheck;
         System.Windows.Forms.ToolStripMenuItem tsView2Col;
         System.Windows.Forms.ToolStripMenuItem tsView3Col;
@@ -2120,7 +2120,7 @@ namespace Hero_Designer
         System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem2;
         System.Windows.Forms.ToolStripSeparator ToolStripMenuItem4;
         System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
-        System.Windows.Forms.ToolStripSeparator ToolStripSeparator10;
+        //System.Windows.Forms.ToolStripSeparator ToolStripSeparator10;
         System.Windows.Forms.ToolStripSeparator ToolStripSeparator11;
         System.Windows.Forms.ToolStripSeparator ToolStripSeparator12;
         System.Windows.Forms.ToolStripSeparator ToolStripSeparator13;

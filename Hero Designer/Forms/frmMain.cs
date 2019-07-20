@@ -154,12 +154,12 @@ namespace Hero_Designer
             this.InitializeComponent();
 
             //disable menus that are no longer hooked up, but probably should be hooked back up
-            this.tsHelp.Visible = false;
+            /*this.tsHelp.Visible = false;
             this.tsHelp.Enabled = false;
             this.tsPatchNotes.Visible = false;
             this.tsPatchNotes.Enabled = false;
             this.tsDonate.Visible = false;
-            this.tsDonate.Enabled = false;
+            this.tsDonate.Enabled = false;*/
 
             this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
             //adding events
@@ -228,7 +228,7 @@ namespace Hero_Designer
                 if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
                     MessageBox.Show("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clsXMLUpdate.GoToCoHPlanner();
+                    clsXMLUpdate.GoToMidsReborn();
                     Application.Exit();
                     return;
                 }
@@ -4854,8 +4854,8 @@ namespace Hero_Designer
         void tsForumLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToForums();
 
-        void tsPlannerLink(object sender, EventArgs e)
-            => clsXMLUpdate.GoToCoHPlanner();
+        void tsMidsRebornLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToMidsReborn();
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)

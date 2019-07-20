@@ -56,7 +56,7 @@ namespace Hero_Designer
         {
         }
 
-        public static void GoToCoHPlanner() =>
+        public static void GoToMidsReborn() =>
                 clsXMLUpdate.LaunchBrowser("https://github.com/ImaginaryDevelopment/imaginary-hero-designer/");
 
         public static void GoToForums()
