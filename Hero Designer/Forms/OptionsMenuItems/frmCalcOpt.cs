@@ -305,7 +305,6 @@ namespace Hero_Designer
             if (!string.IsNullOrWhiteSpace(dcServerName.Text))
             {
                 dcExList.Items.Add(dcServerName.Text);
-                MidsContext.Config.DServers = dcExList.Items.Cast<string>().ToList();
             }
         }
 
@@ -315,7 +314,6 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DSelServer = "";
                 dcExList.Items.Remove(dcExList.SelectedItem);
-                MidsContext.Config.DServers = dcExList.Items.Cast<string>().ToList();
             }
         }
 
