@@ -2830,11 +2830,21 @@ namespace Hero_Designer
             this.pbDynMode.Refresh();
         }
 
+        bool? CheckInitDdsaValue(int index, int? defaultOpt, string descript, params string[] options)
+        {
+            if (this.ddsa[index] != 0) return null;
+            var (result, remember) = frmOptionListDlg.ShowWithOptions(AllowRemember: true, DefaultOption: defaultOpt ?? 1, descript, options);
+            this.ddsa[index] = (short)result;
+            if (remember == true)
+                MidsContext.Config.DragDropScenarioAction[index] = this.ddsa[index];
+            return remember;
+        }
+
         int PowerMove(PowerEntry[] tp, params int[] pow)
         {
             if (tp[pow[0]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 > tp[pow[1]].Level)
             {
-                if (this.ddsa[0] == (short)0)
+                if (this.ddsa[0] == 0)
                 {
                     var canOverride = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level;
                     var (result, remember) = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
@@ -2856,13 +2866,13 @@ namespace Hero_Designer
                         MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                         return 0;
                     }
-                    int num1 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
+                    int lvl = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
                     int index = 0;
-                    while (tp[index].Level != num1)
+                    while (tp[index].Level != lvl)
                     {
                         ++index;
                         if (index > 23)
-                            return this.PowerMove(tp, pow[0], num1);
+                            return this.PowerMove(tp, pow[0], lvl);
                     }
                 }
             }
@@ -2893,13 +2903,8 @@ namespace Hero_Designer
             }
             if (flag1 & !flagArray[pow[1]])
             {
-                if (this.ddsa[1] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
-                    this.ddsa[1] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[1] = this.ddsa[1];
-                }
+
+                CheckInitDdsaValue(1, null, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
                 if (this.ddsa[1] == 1)
                     return 0;
                 if (this.ddsa[1] == 2)
@@ -2947,14 +2952,7 @@ namespace Hero_Designer
             {
                 if (tp[index].NIDPower != -1 && flag1 && !flagArray[index])
                 {
-                    if (this.ddsa[7] == 0)
-                    {
-                        var frmOptionListDlg = new frmOptionListDlg();
-                        frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
-                        this.ddsa[7] = (short)frmOptionListDlg.DialogResult;
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[7] = this.ddsa[7];
-                    }
+                    CheckInitDdsaValue(7, null, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
                     if (this.ddsa[7] == 1)
                         return 0;
                     if (this.ddsa[7] == 3)
@@ -2969,14 +2967,7 @@ namespace Hero_Designer
                 }
                 if (!flag2 & tp[index].NIDPower < 0)
                 {
-                    if (this.ddsa[10] == 0)
-                    {
-                        var frmOptionListDlg = new frmOptionListDlg();
-                        frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
-                        this.ddsa[10] = (short)frmOptionListDlg.DialogResult;
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[10] = this.ddsa[10];
-                    }
+                    CheckInitDdsaValue(10, null, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
                     if (this.ddsa[10] == 1)
                         return 0;
                     if (this.ddsa[10] == 2)
@@ -3094,16 +3085,8 @@ namespace Hero_Designer
                         switch (mode)
                         {
                             case 0:
-                                if (this.ddsa[4] == 0)
-                                {
-                                    var frmOptionListDlg = new frmOptionListDlg();
-                                    frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
-                                    this.ddsa[4] = (short)frmOptionListDlg.DialogResult;
-                                    if (frmOptionListDlg.remember == true)
-                                        MidsContext.Config.DragDropScenarioAction[4] = this.ddsa[4];
-                                }
-                                if (this.ddsa[4] == 1)
-                                    return 0;
+                                CheckInitDdsaValue(4, null, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
+                                if (this.ddsa[4] == 1) return 0;
                                 if (this.ddsa[4] == 2)
                                 {
                                     tp[pow[1]].NIDPower = -1;
@@ -3134,21 +3117,18 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[0] == 0)
                     {
-                        var frmOptionListDlg = new frmOptionListDlg();
                         if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
                         {
-                            frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
+                            var remember = CheckInitDdsaValue(0, null, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
                             if (this.ddsa[0] == 2)
+                            {
                                 this.ddsa[0] = 3;
+                                if (remember == true)
+                                    MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
+                            }
                         }
                         else
-                        {
-                            frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
-                        }
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
+                            CheckInitDdsaValue(0, 0, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
                     }
                     if (this.ddsa[0] == 1)
                         return 0;
@@ -3175,13 +3155,7 @@ namespace Hero_Designer
                 {
                     if (mode == 1)
                     {
-                        if (this.ddsa[12] == 0)
-                        {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
-                            this.ddsa[12] = (short)result;
-                            if (remember == true)
-                                MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
-                        }
+                        CheckInitDdsaValue(12, null, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
                         if (this.ddsa[12] == 1)
                             return 0;
                         if (this.ddsa[12] == 2)
@@ -3194,13 +3168,7 @@ namespace Hero_Designer
                     }
                     else if (mode == 2)
                     {
-                        if (this.ddsa[11] == 0)
-                        {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
-                            this.ddsa[11] = (short)result;
-                            if (remember == true)
-                                MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
-                        }
+                        CheckInitDdsaValue(11, null, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
                         if (this.ddsa[11] == 1)
                             return 0;
                         if (this.ddsa[11] != 2 && this.ddsa[11] == 3)
@@ -3211,38 +3179,22 @@ namespace Hero_Designer
                 int num6 = -1;
                 if (pow[0] == 22 && pow[1] < 22 && num5 <= 8 && tp[pow[1]].SlotCount + tp[23].SlotCount > 8 || pow[0] == 23 && pow[1] < 22 && tp[pow[0]].SlotCount <= 4 && tp[pow[1]].SlotCount > 4 || pow[0] == 23 && pow[1] < 22 && num5 <= 8 && tp[22].SlotCount + tp[pow[1]].SlotCount > 8 || pow[0] == 23 && pow[1] == 22 && tp[pow[1]].SlotCount > 4)
                 {
-                    if (mode < 2 & this.ddsa[6] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[6] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[6] = this.ddsa[6];
-                    }
+                    if (mode < 2)
+                        CheckInitDdsaValue(6, null, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                     num6 = 6;
                 }
                 else if (pow[0] < 22 & pow[1] == 22 & num5 <= 8 & tp[pow[0]].SlotCount + tp[23].SlotCount > 8 || pow[0] < 22 & pow[1] == 23 & tp[pow[1]].SlotCount <= 4 & tp[pow[0]].SlotCount > 4 || pow[0] < 22 & pow[1] == 23 & num5 <= 8 & tp[22].SlotCount + tp[pow[0]].SlotCount > 8 || pow[0] == 22 & pow[1] == 23 & tp[pow[0]].SlotCount > 4)
                 {
-                    if (mode < 2 & this.ddsa[3] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[3] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[3] = this.ddsa[3];
-                    }
+                    if (mode < 2)
+                        CheckInitDdsaValue(3, null, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                     num6 = 3;
                 }
                 if (num6 != -1 && mode == 2)
                 {
-                    if (this.ddsa[9] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[9] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[9] = this.ddsa[9];
-                    }
+                    CheckInitDdsaValue(9, null, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                     num6 = 9;
                 }
-                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)1 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)1)
+                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 1 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 1)
                 {
                     num1 = 0;
                 }
@@ -3311,26 +3263,17 @@ namespace Hero_Designer
                                 {
                                     if (tp[pow[index3]].Slots[slotIDX].Level < tp[pow[index3]].Level)
                                     {
-                                        if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)0)
+                                        if (mode < 2 & index3 == 0 & this.ddsa[2] == 0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[2] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[2] = this.ddsa[2];
+                                            CheckInitDdsaValue(2, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                         }
-                                        else if (mode == 0 & index3 == 1 & this.ddsa[5] == (short)0)
+                                        else if (mode == 0 & index3 == 1 & this.ddsa[5] == 0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[5] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[5] = this.ddsa[5];
+                                            CheckInitDdsaValue(5, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                         }
-                                        else if (mode == 2 & this.ddsa[8] == (short)0)
+                                        else if (mode == 2 & this.ddsa[8] == 0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[8] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
+                                            CheckInitDdsaValue(8, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                         }
                                         if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
                                         {
@@ -4217,25 +4160,13 @@ namespace Hero_Designer
             while (index <= 19);
             if (MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level < MidsContext.Character.CurrentBuild.Powers[destPower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[destPower].NIDPower].AllowFrontLoading)
             {
-                if (this.ddsa[13] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[13] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[13] = this.ddsa[13];
-                }
-                if (this.ddsa[13] == (short)1)
+                CheckInitDdsaValue(13, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
+                if (this.ddsa[13] == 1)
                     return;
             }
             if (MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level < MidsContext.Character.CurrentBuild.Powers[sourcePower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[sourcePower].NIDPower].AllowFrontLoading)
             {
-                if (this.ddsa[14] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[14] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[14] = this.ddsa[14];
-                }
+                CheckInitDdsaValue(14, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
                 if (this.ddsa[14] == (short)1)
                     return;
             }
