@@ -4622,11 +4622,17 @@ namespace Hero_Designer
             Clipboard.SetDataObject(MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true), true);
             MessageBox.Show("The data link has been placed on the clipboard and is ready to paste.", "Export Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        bool exportDiscordInProgress;
 
-        public void tsExportDiscord_Click(object sender, EventArgs e)
+        public async void tsExportDiscord_Click(object sender, EventArgs e)
         {
             void ShowConfigError(string field)
                 => MessageBox.Show($"{field} must be filled out in configuration before discord exports will function", "Discord is not configured");
+            if (exportDiscordInProgress)
+            {
+                MessageBox.Show("Another discord export is in progress, might be stuck");
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(MidsContext.Config.DSelServer))
             {
@@ -4635,6 +4641,8 @@ namespace Hero_Designer
             }
             if (string.IsNullOrWhiteSpace(MidsContext.Config.DChannel))
             {
+                // tired of typing this
+                if (System.Diagnostics.Debugger.IsAttached) MidsContext.Config.DChannel = "feature-testing";
                 ShowConfigError("Channel");
                 return;
             }
@@ -4643,13 +4651,18 @@ namespace Hero_Designer
                 ShowConfigError("NickName");
                 return;
             }
+            exportDiscordInProgress = true;
             try
             {
-                Clshook.DiscordExport();
+                await Clshook.DiscordExport();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+            finally
+            {
+                exportDiscordInProgress = false;
             }
         }
 
