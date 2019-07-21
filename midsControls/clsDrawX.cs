@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -418,8 +418,7 @@ namespace midsControls
                 }
                 if (num > -1 && (ePowerState != Enums.ePowerState.Empty && drawNewSlot))
                 {
-                    // why is this length - 1 instead of length?
-                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * (iSlot.Slots.Length - 1), point.Y, this.szSlot.Width, this.szSlot.Height);
+                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * (iSlot.Slots.Length), point.Y, this.szSlot.Width, this.szSlot.Height);
                     RectangleF iValue2 = clipRect2;
                     this.bxBuffer.Graphics.DrawImage(this.bxNewSlot.Bitmap, this.ScaleDown(iValue2));
                     iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
