@@ -1,4 +1,5 @@
 
+using Base;
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
@@ -679,7 +680,7 @@ public class Build
                 if (!this.Powers[powerIdx].Chosen)
                 {
                     this.Powers[powerIdx].Level = -1;
-                    this.Powers[powerIdx].Slots = Array.Empty<SlotEntry>();
+                    this.Powers[powerIdx].Slots = Array<SlotEntry>.Empty();
                 }
             }
             else
@@ -1057,7 +1058,7 @@ public class Build
     public IEffect[] GetCumulativeSetBonuses()
     {
         IPower bonusVirtualPower = this.SetBonusVirtualPower;
-        IEffect[] array = Array.Empty<IEffect>();
+        IEffect[] array = Array<IEffect>.Empty();
         for (int effIdx = 0; effIdx < bonusVirtualPower.Effects.Length; ++effIdx)
         {
             if (bonusVirtualPower.Effects[effIdx].EffectType != Enums.eEffectType.None || !string.IsNullOrEmpty(bonusVirtualPower.Effects[effIdx].Special))

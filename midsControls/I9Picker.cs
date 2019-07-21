@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base;
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
@@ -72,7 +73,7 @@ namespace midsControls
             this._hoverCell = new Point(-1, -1);
             this._hoverTitle = "";
             this._hoverText = "";
-            this._mySlotted = Array.Empty<int>();
+            this._mySlotted = Array<int>.Empty();
             this._userLevel = -1;
             this._lastTab = Enums.eType.Normal;
             this.LastLevel = -1;
@@ -922,7 +923,7 @@ namespace midsControls
             if (cellIDX <= -1 || this.UI.View.TabID == Enums.eType.SetO && this.UI.View.SetID <= -1)
                 return false;
 
-            int[] array = Array.Empty<int>();
+            int[] array = Array<int>.Empty();
             switch (this.UI.View.TabID)
             {
                 case Enums.eType.Normal:
@@ -1285,7 +1286,7 @@ namespace midsControls
         static int[] GetValidSetTypes(int iPowerIDX)
         {
             if (iPowerIDX < 0)
-                return Array.Empty<int>();
+                return Array<int>.Empty();
             var array = new int[checked(DatabaseAPI.Database.Power[iPowerIDX].SetTypes.Length - 1 + 1)];
             Array.Copy(DatabaseAPI.Database.Power[iPowerIDX].SetTypes, array, DatabaseAPI.Database.Power[iPowerIDX].SetTypes.Length);
             Array.Sort<int>(array);
@@ -1295,7 +1296,7 @@ namespace midsControls
         static int[] GetValidEnhancements(int iPowerIDX, Enums.eType iType, Enums.eSubtype iSubType = 0)
         {
             if (iPowerIDX < 0)
-                return Array.Empty<int>();
+                return Array<int>.Empty();
             return DatabaseAPI.Database.Power[iPowerIDX].GetValidEnhancements(iType, iSubType);
         }
 
@@ -1461,7 +1462,7 @@ namespace midsControls
                 this.UI.SpecialO[0] = this._mySlot.Enh;
             }
             else
-                this.UI.SpecialO = Array.Empty<int>();
+                this.UI.SpecialO = Array<int>.Empty();
         }
 
         int SetTypeToID(Enums.eSetType iSetType)
@@ -1481,7 +1482,7 @@ namespace midsControls
 
         int GetPickerIndex(int index, Enums.eType iType)
         {
-            int[] array = Array.Empty<int>();
+            int[] array = Array<int>.Empty();
             switch (iType)
             {
                 case Enums.eType.Normal:
@@ -1736,14 +1737,14 @@ namespace midsControls
         {
             public cTracking()
             {
-                this.NO = Array.Empty<int>();
-                this.IO = Array.Empty<int>();
-                this.SpecialO = Array.Empty<int>();
-                this.NOGrades = Array.Empty<int>();
-                this.SpecialTypes = Array.Empty<int>();
-                this.SetTypes = Array.Empty<int>();
-                this.Sets = Array.Empty<int[]>();
-                this.SetO = Array.Empty<int>();
+                this.NO = Array<int>.Empty();
+                this.IO = Array<int>.Empty();
+                this.SpecialO = Array<int>.Empty();
+                this.NOGrades = Array<int>.Empty();
+                this.SpecialTypes = Array<int>.Empty();
+                this.SetTypes = Array<int>.Empty();
+                this.Sets = Array<int[]>.Empty();
+                this.SetO = Array<int>.Empty();
                 this.Initial = new I9Picker.cTracking.cLocation();
                 this.View = new I9Picker.cTracking.cLocation();
             }

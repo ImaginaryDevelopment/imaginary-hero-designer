@@ -303,7 +303,7 @@ namespace Hero_Designer
         {
             DataFormats.Format format = DataFormats.GetFormat("mhdEffectBIN");
             MemoryStream memoryStream = new MemoryStream();
-            BinaryWriter writer = new BinaryWriter((Stream)memoryStream);
+            BinaryWriter writer = new BinaryWriter(memoryStream);
             this.myFX.StoreTo(ref writer);
             writer.Close();
             Clipboard.SetDataObject(new DataObject(format.Name, memoryStream.GetBuffer()));
@@ -414,7 +414,7 @@ namespace Hero_Designer
                 return;
             IEffect fx = this.myFX;
             float num = (float)Conversion.Val(this.txtFXDelay.Text);
-            if ((double)num >= 0.0 & (double)num <= 2147483904.0)
+            if (num >= 0.0 & num <= 2147483904.0)
                 fx.DelayedTime = num;
             this.UpdateFXText();
         }
@@ -433,7 +433,7 @@ namespace Hero_Designer
                 return;
             IEffect fx = this.myFX;
             float num = (float)Conversion.Val(this.txtFXDuration.Text);
-            if ((double)num >= 0.0 & (double)num <= 2147483904.0)
+            if (num >= 0.0 & num <= 2147483904.0)
                 fx.nDuration = num;
             this.UpdateFXText();
         }
@@ -455,7 +455,7 @@ namespace Hero_Designer
             if (InputStr.EndsWith("%"))
                 InputStr = InputStr.Substring(0, InputStr.Length - 1);
             float num = (float)Conversion.Val(InputStr);
-            if ((double)num >= -2147483904.0 & (double)num <= 2147483904.0)
+            if (num >= -2147483904.0 & num <= 2147483904.0)
                 fx.nMagnitude = num;
             this.UpdateFXText();
         }
@@ -474,12 +474,12 @@ namespace Hero_Designer
                 return;
             IEffect fx = this.myFX;
             float num = (float)Conversion.Val(this.txtFXProb.Text);
-            if ((double)num >= 0.0 & (double)num <= 2147483904.0)
+            if (num >= 0.0 & num <= 2147483904.0)
             {
                 if ((double)num > 1.0)
                     num /= 100f;
                 fx.BaseProbability = num;
-                this.lblProb.Text = "(" + Strings.Format((float)((double)fx.BaseProbability * 100.0), "###0") + "%)";
+                this.lblProb.Text = "(" + Strings.Format((float)(fx.BaseProbability * 100.0), "###0") + "%)";
             }
             this.UpdateFXText();
         }
@@ -497,12 +497,12 @@ namespace Hero_Designer
             if (this.Loading)
                 return;
             IEffect fx = this.myFX;
-            string InputStr = this.txtFXScale.Text;
-            if (InputStr.EndsWith("%"))
-                InputStr = InputStr.Substring(0, InputStr.Length - 1);
-            float num = (float)Conversion.Val(InputStr);
-            if ((double)num >= -2147483904.0 & (double)num <= 2147483904.0)
-                fx.Scale = num;
+            string fxScaleRaw = this.txtFXScale.Text;
+            if (fxScaleRaw.EndsWith("%"))
+                fxScaleRaw = fxScaleRaw.Substring(0, fxScaleRaw.Length - 1);
+            float fxScale = (float)Conversion.Val(fxScaleRaw);
+            if (fxScale >= -2147483904.0 & fxScale <= 2147483904.0)
+                fx.Scale = fxScale;
             this.UpdateFXText();
         }
 
@@ -519,9 +519,9 @@ namespace Hero_Designer
             if (this.Loading)
                 return;
             IEffect fx = this.myFX;
-            float num = (float)Conversion.Val(this.txtFXTicks.Text);
-            if ((double)num >= 0.0 & (double)num <= 2147483904.0)
-                fx.Ticks = (int)Math.Round((double)num);
+            float fxTicks = (float)Conversion.Val(this.txtFXTicks.Text);
+            if (fxTicks >= 0.0 & fxTicks <= 2147483904.0)
+                fx.Ticks = (int)Math.Round(fxTicks);
             this.UpdateFXText();
         }
 
@@ -544,9 +544,9 @@ namespace Hero_Designer
         {
             if (this.Loading)
                 return;
-            float num = (float)Conversion.Val(this.txtPPM.Text);
-            if ((double)num >= 0.0 & (double)num < 2147483904.0)
-                this.myFX.ProcsPerMinute = num;
+            float ppm = (float)Conversion.Val(this.txtPPM.Text);
+            if (ppm >= 0.0 & ppm < 2147483904.0)
+                this.myFX.ProcsPerMinute = ppm;
         }
 
         public void UpdateEffectSubAttribList()

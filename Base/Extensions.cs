@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,16 +9,77 @@ using System.Threading.Tasks;
 
 namespace Base
 {
-    public static class Extensions
+    public static class Array<T>
     {
-        public static T[] Append<T>(this T[] source, T item)
+#if NET40
+        public static T[] Empty() => new T[0];
+#else
+        public static T[] Empty() => Array<T>.Empty();
+
+#endif
+    }
+#if NET40
+    public interface IReadOnlyCollection<T>:IList<T>{ // super hacky 
+    }
+    public interface IReadOnlyList<T>:IReadOnlyCollection<T>{ // super hacky
+    }
+    public class ReadOnlyCollection<T> : IReadOnlyList<T>
+    {
+        readonly IList<T> items;
+
+        public ReadOnlyCollection(IList<T> items) => this.items = items;
+
+        public T this[int index] { get => items[index]; set => throw new InvalidOperationException(); }
+
+        public int Count => items.Count;
+
+        public bool IsReadOnly => true;
+
+        public void Add(T item) => throw new InvalidOperationException();
+
+        public void Clear() => throw new InvalidOperationException();
+
+        public bool Contains(T item) => items.Contains(item);
+
+        public void CopyTo(T[] array, int arrayIndex)
         {
-            var next = new T[source.Length + 1];
-            Array.Copy(source, next, source.Length);
-            next[next.Length - 1] = item;
-            return next;
+            for (int i = 0; i < items.Count; i++)
+            {
+                array[arrayIndex + i] = items[i];
+            }
         }
 
+        public IEnumerator<T> GetEnumerator() => items.GetEnumerator();
+
+        public int IndexOf(T item) => items.IndexOf(item);
+
+        public void Insert(int index, T item) => throw new InvalidOperationException();
+
+        public bool Remove(T item) => throw new InvalidOperationException();
+
+        public void RemoveAt(int index) => throw new NotImplementedException();
+
+        IEnumerator IEnumerable.GetEnumerator() => items.GetEnumerator();
+
+    }
+#endif
+
+    public static class Extensions
+    {
+        public static IReadOnlyList<T> AsReadOnly<T>(this T[] items)
+#if NET40
+            => new ReadOnlyCollection<T>(items);
+#else
+            => items;
+#endif
+#if NET40
+        public static IEnumerable<T> Append<T>(this T[] items, T item) => items.Concat(new[] { item });
+        public static IEnumerable<T> Append<T>(this IList<T> items, T item) => items.Concat(new[] { item });
+#endif
+
+        public static Color ReadRGB(this BinaryReader reader)
+            => Color.FromArgb(reader.ReadByte(), reader.ReadByte(), reader.ReadByte());
+ 
         public static T[] RemoveIndex<T>(this T[] source, int index)
             => source.Where((_, i) => i != index).ToArray();
         public static T[] RemoveLast<T>(this T[] items)

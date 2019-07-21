@@ -621,24 +621,22 @@ namespace Base.Data_Classes
 
         public int SlotCheck(PowerEntry power)
         {
-            int num1;
             if (power.Power == null || !this.CanPlaceSlot || power.SlotCount > 5)
-                num1 = -1;
+                return -1;
             else if (!DatabaseAPI.Database.Power[power.NIDPower].Slottable)
             {
-                num1 = -1;
+                return -1;
             }
             else
             {
                 int iLevel = power.Level;
                 if (DatabaseAPI.Database.Power[power.NIDPower].AllowFrontLoading)
                     iLevel = 0;
-                int num2 = this.GetFirstAvailableSlotLevel(iLevel);
-                if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp && num2 > this.CurrentBuild.GetMaxLevel() + 1)
-                    num2 = -1;
-                num1 = num2;
+                int firstAvailable = this.GetFirstAvailableSlotLevel(iLevel);
+                if (MidsContext.Config.BuildMode == Enums.dmModes.LevelUp && firstAvailable > this.CurrentBuild.GetMaxLevel() + 1)
+                    firstAvailable = -1;
+                return firstAvailable;
             }
-            return num1;
         }
 
         public int[] GetSlotCounts()
@@ -1095,7 +1093,7 @@ namespace Base.Data_Classes
                         }
                     }
                     if (power.Power == null || !power.Power.Slottable)
-                        power.Slots = Array.Empty<SlotEntry>();
+                        power.Slots = Array<SlotEntry>.Empty();
                     else if (power.Slots.Length == 0)
                     {
                         power.Slots = new[]{

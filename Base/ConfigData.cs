@@ -1,21 +1,28 @@
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
+using Base;
+
 public interface ISerialize
 {
     string Serialize(object o);
     T Deserialize<T>(string x);
     string Extension { get; }
 }
+
 public class ConfigData
 {
+    public ConfigData.SDamageMath DamageMath;
+    public ConfigData.IncludeExclude Inc;
+    public ConfigData.Si9 I9;
+    public ConfigData.FontSettings RtFont;
+
     public float BaseAcc = 0.75f;
     public string UpdatePath = null;
     public bool DoNotUpdateFileAssociation;
@@ -60,9 +67,9 @@ public class ConfigData
         }
     }
     public string DNickName;
-    public string DSelServer;
+    public List<string> DServers { get; set; } = new List<string>();
+    public string DSelServer { get; set; }
     public string DChannel;
-    public List<string> DServers;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -75,38 +82,33 @@ public class ConfigData
             3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
         };
     public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
-    static ConfigData _current;
+    static ConfigData _current { get; set; }
 
-    public bool ExportBonusTotals;
-    public bool ExportBonusList;
-    public bool NoToolTips;
-    public bool DataDamageGraphPercentageOnly;
-    bool _hideOriginEnhancements;
+    public bool ExportBonusTotals { get; set; }
+    public bool ExportBonusList { get; set; }
+    public bool NoToolTips { get; set; }
+    public bool DataDamageGraphPercentageOnly { get; set; }
 
-    public bool CheckForUpdates;
-    public Enums.eVisibleSize DvState;
-    public Enums.eSuppress Suppression;
-    public bool UseArcanaTime;
-    public ConfigData.SDamageMath DamageMath;
-    public ConfigData.IncludeExclude Inc;
+    public bool CheckForUpdates { get; set; }
+    public Enums.eVisibleSize DvState { get; set; }
+    public Enums.eSuppress Suppression { get; set; }
+    public bool UseArcanaTime { get; set; }
     public readonly ExportConfig Export;
-    public ConfigData.Si9 I9;
-    public ConfigData.FontSettings RtFont;
-    public bool PrintInColour;
-    int _printScheme;
-    public bool PrintHistory;
-    public bool SaveFolderChecked;
-    public bool ShowSlotLevels;
-    public bool ShowEnhRel;
-    public bool ShowRelSymbols;
-    public bool EnhanceVisibility;
-    public Tips Tips;
+    public bool PrintInColour { get; set; }
+
+    public bool PrintHistory { get; set; }
+    public bool SaveFolderChecked { get; set; }
+    public bool ShowSlotLevels { get; set; }
+    public bool ShowEnhRel { get; set; }
+    public bool ShowRelSymbols { get; set; }
+    public bool EnhanceVisibility { get; set; }
+    public Tips Tips { get; set; }
     public bool PopupRecipes { get; set; }
-    public bool ShoppingListIncludesRecipes;
-    public bool ExportChunkOnly;
-    public bool LongExport;
-    public bool MasterMode;
-    public bool ShrinkFrmSets;
+    public bool ShoppingListIncludesRecipes { get; set; }
+    public bool ExportChunkOnly { get; set; }
+    public bool LongExport { get; set; }
+    public bool MasterMode { get; set; }
+    public bool ShrinkFrmSets { get; set; }
 
     internal static ConfigData Current
     {
@@ -127,6 +129,7 @@ public class ConfigData
         File.Move(mhdFn, mhdFn + ".old");
         oldMethod.SaveConfig(serializer);
     }
+
     public static void Initialize(ISerialize serializer)
     {
         // migrate
@@ -146,7 +149,6 @@ public class ConfigData
             catch
             {
                 MessageBox.Show("Failed to load json config, falling back to mhd");
-
             }
         }
         else
@@ -154,9 +156,6 @@ public class ConfigData
             ConfigData._current = new ConfigData(deserializing: false, iFilename: Files.GetConfigFilename(forceMhd: true));
         }
         ConfigData._current.IntializeComponent();
-
-        //configData = ConfigData._current = new ConfigData(
-
     }
     ConfigData() : this(true, "") { }
 
@@ -186,7 +185,7 @@ public class ConfigData
         {
             try
             {
-                this.Load(iFilename);
+                this.LegacyForMigration(iFilename);
             }
             catch (Exception ex)
             {
@@ -195,6 +194,7 @@ public class ConfigData
         }
         this.IntializeComponent();
     }
+
     void IntializeComponent()
     {
         this.RelocateSaveFolder(false);
@@ -209,29 +209,25 @@ public class ConfigData
 
     }
 
-    void Load(string iFilename)
+    void LegacyForMigration(string iFilename)
     {
-        if (iFilename.EndsWith("json"))
-        {
-
-        }
         //using (FileStream fileStream = new FileStream(iFilename, FileMode.Open, FileAccess.Read))
         {
 
             using (BinaryReader reader = new BinaryReader(File.Open(iFilename, FileMode.Open, FileAccess.Read)))
             {
-                float num1;
+                float version;
                 switch (reader.ReadString())
                 {
                     // legacy string, refers to something specific in files, do not change
                     case "Mids' Hero Designer Config":
-                        num1 = 0.9f;
+                        version = 0.9f;
                         break;
                     // legacy string, refers to something specific in files, do not change
                     // here's something F# doesn't do easily(fallthrough where one branch has a when variable declared)
                     case "Mids' Hero Designer Config V2":
                     case string x when x == header:
-                        num1 = reader.ReadSingle();
+                        version = reader.ReadSingle();
                         break;
                     default:
                         MessageBox.Show("Config file was missing a header! Using defaults.");
@@ -245,11 +241,11 @@ public class ConfigData
                 this.DChannel = reader.ReadString();*/
                 this.NoToolTips = reader.ReadBoolean();
                 this.BaseAcc = reader.ReadSingle();
-                double num3 = (double)reader.ReadSingle();
-                double num4 = (double)reader.ReadSingle();
-                double num5 = (double)reader.ReadSingle();
-                double num6 = (double)reader.ReadSingle();
-                double num7 = (double)reader.ReadSingle();
+                double num3 = reader.ReadSingle();
+                double num4 = reader.ReadSingle();
+                double num5 = reader.ReadSingle();
+                double num6 = reader.ReadSingle();
+                double num7 = reader.ReadSingle();
                 this.CalcEnhLevel = (Enums.eEnhRelative)reader.ReadInt32();
                 this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
                 this.ExempHigh = reader.ReadInt32();
@@ -258,7 +254,7 @@ public class ConfigData
                 reader.ReadBoolean();
                 this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
                 reader.ReadSingle();
-                if ((double)num1 < 1.24000000953674)
+                if (version < 1.24000000953674)
                 {
                     reader.ReadBoolean();
                 }
@@ -270,12 +266,13 @@ public class ConfigData
                 this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
                 this.ExportScheme = reader.ReadInt32();
                 this.ExportTarget = reader.ReadInt32();
-                if ((double)num1 >= 1.24000000953674)
+                if (version >= 1.24000000953674)
                 {
                     this.ExportBonusTotals = reader.ReadBoolean();
                     this.ExportBonusList = reader.ReadBoolean();
                 }
-                this._hideOriginEnhancements = reader.ReadBoolean();
+                //this._hideOriginEnhancements =
+                reader.ReadBoolean();
                 this.ShowVillainColours = reader.ReadBoolean();
                 this.CheckForUpdates = reader.ReadBoolean();
                 this.Columns = reader.ReadInt32();
@@ -283,11 +280,11 @@ public class ConfigData
                 this.LastSize.Height = reader.ReadInt32();
                 this.DvState = (Enums.eVisibleSize)reader.ReadInt32();
                 this.StatGraphStyle = (Enums.GraphStyle)reader.ReadInt32();
-                if ((double)num1 >= 1.0)
+                if (version >= 1.0)
                     this.FreshInstall = reader.ReadBoolean();
-                if ((double)num1 >= 1.10000002384186)
+                if (version >= 1.10000002384186)
                     this.ForceLevel = reader.ReadInt32();
-                if ((double)num1 >= 1.20000004768372)
+                if (version >= 1.20000004768372)
                 {
                     this.I9.DefaultIOLevel = reader.ReadInt32();
                     if (this.I9.DefaultIOLevel > 49)
@@ -303,42 +300,43 @@ public class ConfigData
                     this.I9.ExportStripSetNames = reader.ReadBoolean();
                     this.I9.ExportExtraSep = reader.ReadBoolean();
                     this.PrintInColour = reader.ReadBoolean();
-                    this._printScheme = reader.ReadInt32();
+                    //this._printScheme = 
+                    reader.ReadInt32();
                 }
-                if ((double)num1 >= 1.21000003814697)
+                if (version >= 1.21000003814697)
                 {
                     this.RtFont.PairedBase = reader.ReadSingle();
                     this.RtFont.PairedBold = reader.ReadBoolean();
                     this.RtFont.RTFBase = reader.ReadInt32();
                     this.RtFont.RTFBold = reader.ReadBoolean();
-                    this.RtFont.ColorBackgroundHero = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorBackgroundVillain = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorEnhancement = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorFaded = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorInvention = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorInventionInv = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorText = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorWarning = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPlName = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPlSpecial = ConfigData.ReadRGB(reader);
+                    this.RtFont.ColorBackgroundHero = reader.ReadRGB();
+                    this.RtFont.ColorBackgroundVillain = reader.ReadRGB();
+                    this.RtFont.ColorEnhancement = reader.ReadRGB();
+                    this.RtFont.ColorFaded = reader.ReadRGB();
+                    this.RtFont.ColorInvention = reader.ReadRGB();
+                    this.RtFont.ColorInventionInv = reader.ReadRGB();
+                    this.RtFont.ColorText = reader.ReadRGB();
+                    this.RtFont.ColorWarning = reader.ReadRGB();
+                    this.RtFont.ColorPlName = reader.ReadRGB();
+                    this.RtFont.ColorPlSpecial = reader.ReadRGB();
                 }
-                if ((double)num1 >= 1.22000002861023)
+                if ((double)version >= 1.22000002861023)
                 {
                     this.ShowSlotLevels = reader.ReadBoolean();
                     this.LoadLastFileOnStart = reader.ReadBoolean();
                     this.LastFileName = reader.ReadString();
-                    this.RtFont.ColorPowerAvailable = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPowerTaken = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPowerTakenDark = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPowerDisabled = ConfigData.ReadRGB(reader);
-                    this.RtFont.ColorPowerHighlight = ConfigData.ReadRGB(reader);
+                    this.RtFont.ColorPowerAvailable = reader.ReadRGB();
+                    this.RtFont.ColorPowerTaken = reader.ReadRGB();
+                    this.RtFont.ColorPowerTakenDark = reader.ReadRGB();
+                    this.RtFont.ColorPowerDisabled = reader.ReadRGB();
+                    this.RtFont.ColorPowerHighlight = reader.ReadRGB();
                 }
-                if ((double)num1 >= 1.23000001907349)
+                if ((double)version >= 1.23000001907349)
                 {
                     this.Tips = new Tips(reader);
                     this.DefaultSaveFolderOverride = reader.ReadString();
                 }
-                if ((double)num1 >= 1.24000000953674)
+                if ((double)version >= 1.24000000953674)
                 {
                     this.EnhanceVisibility = reader.ReadBoolean();
                     reader.ReadBoolean();
@@ -348,12 +346,12 @@ public class ConfigData
                     if (string.IsNullOrEmpty(this.UpdatePath))
                         this.UpdatePath = "";
                 }
-                if ((double)num1 >= 1.25)
+                if ((double)version >= 1.25)
                 {
                     this.ShowEnhRel = reader.ReadBoolean();
                     this.ShowRelSymbols = reader.ReadBoolean();
                     this.ShowPopup = reader.ReadBoolean();
-                    if ((double)num1 >= 1.32000005245209)
+                    if ((double)version >= 1.32000005245209)
                         this.ShowAlphaPopup = reader.ReadBoolean();
                     this.PopupRecipes = reader.ReadBoolean();
                     this.ShoppingListIncludesRecipes = reader.ReadBoolean();
@@ -364,21 +362,21 @@ public class ConfigData
                     this.DesaturateInherent = reader.ReadBoolean();
                     this.ReapeatOnMiddleClick = reader.ReadBoolean();
                 }
-                if ((double)num1 >= 1.25999999046326)
+                if ((double)version >= 1.25999999046326)
                     this.ExportHex = reader.ReadBoolean();
-                if ((double)num1 >= 1.26999998092651)
+                if ((double)version >= 1.26999998092651)
                     this.SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
-                if ((double)num1 >= 1.27999997138977)
+                if ((double)version >= 1.27999997138977)
                     this.SaveFolderChecked = reader.ReadBoolean();
-                if ((double)num1 >= 1.28999996185303)
+                if ((double)version >= 1.28999996185303)
                     this.UseArcanaTime = reader.ReadBoolean(); //this is correct
                 /*Commented out to expidite release.... Will not load forum Export settings  or supression settings
-                 * if ((double)num1 >= 1.29999995231628)
+                 * if ((double)version >= 1.29999995231628)
                 {  // numbers seem really off which is screwing up the rest of the read
                     tempNum = reader.ReadInt16();
                     this.Suppression = (Enums.eSuppress)tempNum;
                 }
-                if ((double)num1 >= 1.30999994277954)
+                if ((double)version >= 1.30999994277954)
                 {
                     for (int index = 0; index < 19; ++index) { 
                         this.DragDropScenarioAction[index] = reader.ReadInt16();
@@ -393,7 +391,7 @@ public class ConfigData
                     this.Export.ColorSchemes[index].Level = ConfigData.ReadRGB(reader);
                     this.Export.ColorSchemes[index].Slots = ConfigData.ReadRGB(reader);
                     this.Export.ColorSchemes[index].Title = ConfigData.ReadRGB(reader);
-                    if ((double)num1 >= 1.20000004768372)
+                    if ((double)version >= 1.20000004768372)
                     {
                         this.Export.ColorSchemes[index].IOColor = ConfigData.ReadRGB(reader);
                         this.Export.ColorSchemes[index].SetColor = ConfigData.ReadRGB(reader);
@@ -437,18 +435,11 @@ public class ConfigData
     }
 
     void SaveRaw(ISerialize serializer, string iFilename)
-    {
-        SaveRawMhd(serializer, this, iFilename, null);
-    }
+        => SaveRawMhd(serializer, this, iFilename, null);
 
     const string header = "Mids' Hero Designer Config V2";
     void Save(ISerialize serializer, string iFilename)
-    {
-        SaveRaw(serializer, iFilename);
-    }
-
-    static Color ReadRGB(BinaryReader reader)
-        => Color.FromArgb((int)reader.ReadByte(), (int)reader.ReadByte(), (int)reader.ReadByte());
+        => SaveRaw(serializer, iFilename);
 
     void RelocateSaveFolder(bool manual)
     {
@@ -461,7 +452,7 @@ public class ConfigData
             }
             if (Directory.Exists(this.DefaultSaveFolderOverride))
             {
-                if (MessageBox.Show("In order for Mids' Reborn : Hero Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("In order for Mids' Hero/Villain Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     this.LastFileName = string.Empty;
                     string defaultSaveFolder = this.DefaultSaveFolderOverride;
@@ -489,7 +480,7 @@ public class ConfigData
     {
         try
         {
-            this.Save(serializer, Files.SelectConfigFileSave());
+            this.Save(serializer, Files.GetConfigFilename(false));
             this.SaveOverrides(serializer);
         }
         catch (Exception ex)

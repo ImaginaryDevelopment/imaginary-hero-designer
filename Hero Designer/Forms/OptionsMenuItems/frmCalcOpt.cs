@@ -1,10 +1,15 @@
+
+using Base;
 using Base.IO_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -93,7 +98,7 @@ namespace Hero_Designer
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
         {
-            this.txtUpdatePath.Text = "http://midsreborn.com/mids_updates/";
+            this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
         }
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,7 +150,7 @@ namespace Hero_Designer
             }
             else
             {
-                if (Conversions.ToString(e.KeyChar) != "]")
+                if (!(Conversions.ToString(e.KeyChar) == "]"))
                     return;
                 this.ForumColorDown();
             }
@@ -289,14 +294,15 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e) =>
-            MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
 
         void dcAdd_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(dcServerName.Text))
             {
                 dcExList.Items.Add(dcServerName.Text);
+                if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
+                    MidsContext.Config.DServers.Add(dcServerName.Text);
             }
         }
 
@@ -305,8 +311,8 @@ namespace Hero_Designer
             if (MidsContext.Config.DSelServer == dcExList.SelectedItem.ToString() && !string.IsNullOrEmpty(dcExList.SelectedItem.ToString()))
             {
                 MidsContext.Config.DSelServer = "";
-                dcExList.Items.Remove(dcExList.SelectedItem);
             }
+            dcExList.Items.Remove(dcExList.SelectedItem);
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
@@ -558,9 +564,10 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
+            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
+                this.dcExList.Items.Add(item);
+            if(!string.IsNullOrWhiteSpace(config.DSelServer))
             this.dcExList.SelectedItem = config.DSelServer;
-            this.dcExList.DataSource = config.DServers;
-            this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
@@ -746,7 +753,6 @@ namespace Hero_Designer
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;
-            config.DServers = dcExList.Items.Cast<string>().ToList();
             config.DesaturateInherent = this.chkColorInherent.Checked;
             config.ReapeatOnMiddleClick = this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;

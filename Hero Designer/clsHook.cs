@@ -18,7 +18,7 @@ namespace Hero_Designer
         public static string DFileName;
         public static string DExt;
 
-        /* Not used yet but maybe in next release - planned to add images enum soon
+        /* Not used yet but maybe in next release
         public static string GetDescription(Enum value)
         {
             Type type = value.GetType();
@@ -38,7 +38,7 @@ namespace Hero_Designer
             return null;
         }*/
    
-        public static string ShrinkTheDatalink(string strUrl)
+        private static string ShrinkTheDatalink(string strUrl)
         {
             var url = "http://tinyurl.com/api-create.php?url=" + strUrl;
 
@@ -67,9 +67,7 @@ namespace Hero_Designer
 
             var discord = (
                 Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
-                User: MidsContext.Config.DNickName,
-                Channel: MidsContext.Config.DChannel);
-                
+                User: MidsContext.Config.DNickName, Channel: MidsContext.Config.DChannel);
             var mrb = (
                 Level: Conversions.ToString(num), 
                 Archetype: MidsContext.Character.Archetype.DisplayName, 

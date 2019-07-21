@@ -8,20 +8,20 @@ public class SummonedEntity
 {
     int _nID = -1;
     int _nClassID;
-    int[] _nPowerset = Array.Empty<int>();
-    int[] _nUpgradePower = Array.Empty<int>();
+    int[] _nPowerset = Array<int>.Empty();
+    int[] _nUpgradePower = Array<int>.Empty();
 
     public string UID { get; set; } = string.Empty;
     public string DisplayName { get; set; } = string.Empty;
-    public string[] PowersetFullName { get; private set; } = Array.Empty<string>();
-    public string[] UpgradePowerFullName { get; private set; } = Array.Empty<string>();
+    public string[] PowersetFullName { get; private set; } = Array<string>.Empty();
+    public string[] UpgradePowerFullName { get; private set; } = Array<string>.Empty();
     public string ClassName { get; set; } = string.Empty;
     public Enums.eSummonEntity EntityType { get; set; }
 
     // semi-props
     // would be properties, but shouldn't be serialized, and aren't outwardly mutable
-    public IReadOnlyList<int> GetNPowerset() => _nPowerset;
-    public IReadOnlyList<int> GetNUpgradePower() => _nUpgradePower;
+    public IReadOnlyList<int> GetNPowerset() => _nPowerset.AsReadOnly();
+    public IReadOnlyList<int> GetNUpgradePower() => _nUpgradePower.AsReadOnly();
     public int GetNId() => _nID;
     public int GetNClassId() => _nClassID;
 
@@ -108,7 +108,7 @@ public class SummonedEntity
     }
 
     public void PAdd()
-        => this.PowersetFullName = this.PowersetFullName.Append("Empty");
+        => this.PowersetFullName = this.PowersetFullName.Append("Empty").ToArray();
 
     public void PDelete(int selectedIndex)
         => this.PowersetFullName = this.PowersetFullName.RemoveIndex(selectedIndex);
@@ -136,7 +136,7 @@ public class SummonedEntity
                 new SummonedEntity(nID: database.Entities.Length)
                 {
                     UID = uidEntity
-                });
+                }).ToArray();
             index = database.Entities.Length - 1;
         }
 
@@ -149,12 +149,12 @@ public class SummonedEntity
         entity1._nPowerset = new int[1];
         entity1.PowersetFullName[0] = powersetFullName;
         entity1._nPowerset[0] = DatabaseAPI.NidFromUidPowerset(entity1.PowersetFullName[0]);
-        entity1.UpgradePowerFullName = Array.Empty<string>();
-        entity1._nUpgradePower = Array.Empty<int>();
+        entity1.UpgradePowerFullName = Array<string>.Empty();
+        entity1._nUpgradePower = Array<int>.Empty();
     }
 
     public void UGAdd()
-        => this.UpgradePowerFullName = this.UpgradePowerFullName.Append("Empty");
+        => this.UpgradePowerFullName = this.UpgradePowerFullName.Append("Empty").ToArray();
 
     public void UGDelete(int selectedIndex) =>
         this.UpgradePowerFullName = this.UpgradePowerFullName.RemoveIndex(selectedIndex);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,7 +12,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace midsControls
 {
-    // Token: 0x0200000A RID: 10
     public class clsDrawX
     {
         // Token: 0x1700000A RID: 10
@@ -35,8 +34,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700000C RID: 12
-        // (set) Token: 0x0600001D RID: 29 RVA: 0x00002334 File Offset: 0x00000534
         public int Columns
         {
             set
@@ -48,8 +45,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700000D RID: 13
-        // (set) Token: 0x0600001E RID: 30 RVA: 0x00002364 File Offset: 0x00000564
         int InitColumns
         {
             set
@@ -89,7 +84,7 @@ namespace midsControls
                 int num2 = this.bxPower.Length - 1;
                 for (int i = 0; i <= num2; i++)
                 {
-                    this.bxPower[i] = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + "images\\pSlot" + Strings.Trim(Conversions.ToString(i)) + ".png");
+                    this.bxPower[i] = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + GfxPath + GfxPowerFn + Strings.Trim(Conversions.ToString(i)) + GfxFileExt);
                 }
                 this.ColourSwitch();
                 this.InitColumns = MidsContext.Config.Columns;
@@ -100,7 +95,7 @@ namespace midsControls
                 this.bxBuffer = new ExtendedBitmap(size);
                 this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                 this.szBuffer = this.GetRequiredDrawingArea();
-                this.bxNewSlot = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + "images\\Addslot.png");
+                this.bxNewSlot = new ExtendedBitmap(FileIO.AddSlash(Application.StartupPath) + GfxPath + "Addslot.png");
                 this.gTarget = iTarget.CreateGraphics();
                 this.cTarget = iTarget;
                 this.gTarget.CompositingMode = CompositingMode.SourceCopy;
@@ -118,7 +113,7 @@ namespace midsControls
 
         void DrawSplit()
         {
-            Pen pen = this.VillainColor ? pen = new Pen(Color.Maroon, 2f) : new Pen(Color.Blue, 2f);
+            Pen pen = this.VillainColor ? new Pen(Color.Maroon, 2f) : new Pen(Color.Blue, 2f);
             checked
             {
                 int iValue = 4 + this.vcRowsPowers * (this.SzPower.Height + 17) - 4;
@@ -170,6 +165,58 @@ namespace midsControls
         static int IndexFromLevel()
             => MidsContext.Character.CurrentBuild.Powers.FindIndex(pow => pow?.Level == MidsContext.Character.RequestedLevel);
 
+        void DrawEnhancement(SlotEntry slot, Font font, Graphics g, ref RectangleF rect)
+        {
+            unchecked
+            {
+                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SetO
+                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.InventO))
+                {
+                    RectangleF iValue2 = rect;
+                    iValue2.Y -= 3f;
+                    iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
+                    string iStr = Conversions.ToString(checked(slot.Enhancement.IOLevel + 1));
+                    RectangleF bounds = this.ScaleDown(iValue2);
+                    Color cyan = Color.Cyan;
+                    Color outline = Color.FromArgb(128, 0, 0, 0);
+                    float outlineSpace = 1f;
+                    g = this.bxBuffer.Graphics;
+                    clsDrawX.DrawOutlineText(iStr, bounds, cyan, outline, font, outlineSpace, g, false, false);
+                }
+                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal
+                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SpecialO))
+                {
+                    RectangleF iValue2 = rect;
+                    iValue2.Y -= 3f;
+                    iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
+                    Color color;
+                    if (slot.Enhancement.RelativeLevel == 0)
+                    {
+                        color = Color.Red;
+                    }
+                    else if (slot.Enhancement.RelativeLevel < Enums.eEnhRelative.Even)
+                    {
+                        color = Color.Yellow;
+                    }
+                    else if (slot.Enhancement.RelativeLevel > Enums.eEnhRelative.Even)
+                    {
+                        color = Color.FromArgb(0, 255, 255);
+                    }
+                    else
+                    {
+                        color = Color.White;
+                    }
+                    string relativeString = Enums.GetRelativeString(slot.Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols);
+                    RectangleF bounds2 = this.ScaleDown(iValue2);
+                    Color text3 = color;
+                    Color outline2 = Color.FromArgb(128, 0, 0, 0);
+                    Font bFont2 = font;
+                    float outlineSpace2 = 1f;
+                    clsDrawX.DrawOutlineText(relativeString, bounds2, text3, outline2, bFont2, outlineSpace2, g, false, false);
+                }
+            }
+        }
+
         public Point DrawPowerSlot(ref PowerEntry iSlot, bool singleDraw = false)
         {
             Pen pen = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
@@ -183,7 +230,7 @@ namespace midsControls
             Pen pen2 = new Pen(Color.Black);
             Rectangle rectangle = default;
             Font font = new Font(this.DefaultFont.FontFamily, this.FontScale(this.DefaultFont.SizeInPoints), this.DefaultFont.Style, GraphicsUnit.Point);
-            int num = MidsContext.Character.SlotCheck(iSlot);
+            int slotChk = MidsContext.Character.SlotCheck(iSlot);
             bool indicating = false;
             Enums.ePowerState ePowerState = iSlot.State;
             bool canPlaceSlot = MidsContext.Character.CanPlaceSlot;
@@ -192,7 +239,7 @@ namespace midsControls
             Point point = default;
             checked
             {
-                point.X = (int)Math.Round(unchecked(result.X + (double)(checked(this.SzPower.Width - this.szSlot.Width * 6)) / 2.0));
+                point.X = (int)Math.Round(unchecked(result.X + (checked(this.SzPower.Width - (this.szSlot.Width * 6)) / 2.0)));
                 point.Y = result.Y + 18;
                 Graphics graphics = this.bxBuffer.Graphics;
                 Brush brush = new SolidBrush(this.BackColor);
@@ -204,7 +251,7 @@ namespace midsControls
                     if (iSlot.Power != null)
                     {
                         if (singleDraw
-                                && num > -1
+                                && slotChk > -1
                                 && canPlaceSlot
                                 && this.InterfaceMode != Enums.eInterfaceMode.PowerToggle
                                 && iSlot.PowerSet != null
@@ -340,59 +387,8 @@ namespace midsControls
                             iValue2.Inflate(1f, 1f);
                             this.bxBuffer.Graphics.FillEllipse(solidBrush, this.ScaleDown(iValue2));
                         }
-                        unchecked
-                        {
-                            if (slot.Enhancement.Enh > -1)
-                            {
-                                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SetO
-                                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.InventO))
-                                {
-                                    RectangleF iValue2 = rectangleF;
-                                    iValue2.Y -= 3f;
-                                    iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
-                                    string iStr = Conversions.ToString(checked(slot.Enhancement.IOLevel + 1));
-                                    RectangleF bounds = this.ScaleDown(iValue2);
-                                    Color cyan = Color.Cyan;
-                                    Color outline = Color.FromArgb(128, 0, 0, 0);
-                                    Font bFont = font;
-                                    float outlineSpace = 1f;
-                                    graphics5 = this.bxBuffer.Graphics;
-                                    clsDrawX.DrawOutlineText(iStr, bounds, cyan, outline, bFont, outlineSpace, ref graphics5, false, false);
-                                }
-                                else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.Normal
-                                    | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SpecialO))
-                                {
-                                    RectangleF iValue2 = rectangleF;
-                                    iValue2.Y -= 3f;
-                                    iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
-                                    Color color;
-                                    if (slot.Enhancement.RelativeLevel == 0)
-                                    {
-                                        color = Color.Red;
-                                    }
-                                    else if (slot.Enhancement.RelativeLevel < Enums.eEnhRelative.Even)
-                                    {
-                                        color = Color.Yellow;
-                                    }
-                                    else if (slot.Enhancement.RelativeLevel > Enums.eEnhRelative.Even)
-                                    {
-                                        color = Color.FromArgb(0, 255, 255);
-                                    }
-                                    else
-                                    {
-                                        color = Color.White;
-                                    }
-                                    string relativeString = Enums.GetRelativeString(slot.Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols);
-                                    RectangleF bounds2 = this.ScaleDown(iValue2);
-                                    Color text3 = color;
-                                    Color outline2 = Color.FromArgb(128, 0, 0, 0);
-                                    Font bFont2 = font;
-                                    float outlineSpace2 = 1f;
-                                    graphics5 = this.bxBuffer.Graphics;
-                                    clsDrawX.DrawOutlineText(relativeString, bounds2, text3, outline2, bFont2, outlineSpace2, ref graphics5, false, false);
-                                }
-                            }
-                        }
+                        if (slot.Enhancement.Enh > -1)
+                            DrawEnhancement(slot, font, graphics, ref rectangleF);
                     }
                     if (MidsContext.Config.ShowSlotLevels)
                     {
@@ -411,36 +407,29 @@ namespace midsControls
                             outlineColor: Color.FromArgb(192, 0, 0, 0),
                             bFont: font,
                             outlineSpace: 1f,
-                            g: ref graphics5);
+                            g: graphics5);
 
 
                     }
                 }
-                if (num > -1 && (ePowerState != Enums.ePowerState.Empty && drawNewSlot))
+                if (slotChk > -1 && (ePowerState != Enums.ePowerState.Empty && drawNewSlot))
                 {
-                    // why is this length - 1 instead of length?
-                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * (iSlot.Slots.Length - 1), point.Y, this.szSlot.Width, this.szSlot.Height);
+                    Rectangle clipRect2 = new Rectangle(point.X + this.szSlot.Width * (iSlot.Slots.Length), point.Y, this.szSlot.Width, this.szSlot.Height);
                     RectangleF iValue2 = clipRect2;
                     this.bxBuffer.Graphics.DrawImage(this.bxNewSlot.Bitmap, this.ScaleDown(iValue2));
                     iValue2.Height = this.DefaultFont.GetHeight(this.bxBuffer.Graphics);
                     unchecked
                     {
-                        iValue2.Y += ((float)this.szSlot.Height - iValue2.Height) / 2f;
+                        iValue2.Y += (szSlot.Height - iValue2.Height) / 2f;
                     }
-                    string iStr3 = Conversions.ToString(num + 1);
-                    RectangleF bounds4 = this.ScaleDown(iValue2);
-                    Color text5 = Color.FromArgb(0, 255, 255);
-                    Color outline4 = Color.FromArgb(192, 0, 0, 0);
-                    Font bFont4 = font;
-                    float outlineSpace4 = 1f;
-                    Graphics graphics5 = this.bxBuffer.Graphics;
-                    clsDrawX.DrawOutlineText(iStr3, bounds4, text5, outline4, bFont4, outlineSpace4, ref graphics5, false, false);
+                    clsDrawX.DrawOutlineText(Conversions.ToString(slotChk + 1), this.ScaleDown(iValue2),
+                        Color.FromArgb(0, 255, 255), Color.FromArgb(192, 0, 0, 0), font, 1f, this.bxBuffer.Graphics, false, false);
                 }
                 solidBrush = new SolidBrush(Color.Black);
                 stringFormat = new StringFormat();
-                rectangleF.X = (float)(result.X + 10);
-                rectangleF.Y = (float)(result.Y + 4);
-                rectangleF.Width = (float)this.SzPower.Width;
+                rectangleF.X = result.X + 10;
+                rectangleF.Y = result.Y + 4;
+                rectangleF.Width = SzPower.Width;
                 rectangleF.Height = unchecked(this.DefaultFont.GetHeight() * 2f);
                 Enums.ePowerState ePowerState2 = iSlot.State;
                 if (ePowerState2 == Enums.ePowerState.Empty & ePowerState == Enums.ePowerState.Open)
@@ -517,7 +506,7 @@ namespace midsControls
                     Font bFont5 = font;
                     float outlineSpace5 = 1f;
                     Graphics graphics5 = this.bxBuffer.Graphics;
-                    clsDrawX.DrawOutlineText(iStr4, bounds5, whiteSmoke, outline5, bFont5, outlineSpace5, ref graphics5, false, true);
+                    clsDrawX.DrawOutlineText(iStr4, bounds5, whiteSmoke, outline5, bFont5, outlineSpace5, graphics5, false, true);
                 }
                 else
                 {
@@ -625,7 +614,7 @@ namespace midsControls
             }
         }
 
-        public static void DrawOutlineText(string iStr, RectangleF bounds, Color textColor, Color outlineColor, Font bFont, float outlineSpace, ref Graphics g, bool smallMode = false, bool leftAlign = false)
+        public static void DrawOutlineText(string iStr, RectangleF bounds, Color textColor, Color outlineColor, Font bFont, float outlineSpace, Graphics g, bool smallMode = false, bool leftAlign = false)
         {
             StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
@@ -737,7 +726,7 @@ namespace midsControls
             }
         }
 
-        public bool HighlightSlot(int Index, bool Force = false)
+        public bool HighlightSlot(int idx, bool Force = false)
         {
             checked
             {
@@ -748,9 +737,9 @@ namespace midsControls
                 }
                 else
                 {
-                    if (this.Highlight != Index || Force)
+                    if (this.Highlight != idx || Force)
                     {
-                        if (Index != -1)
+                        if (idx != -1)
                         {
                             Build currentBuild;
                             PowerEntry value;
@@ -771,11 +760,11 @@ namespace midsControls
                                 this.DrawSplit();
                                 this.Output(ref this.bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
                             }
-                            this.Highlight = Index;
+                            this.Highlight = idx;
                             currentBuild = MidsContext.Character.CurrentBuild;
-                            value = currentBuild.Powers[Index];
+                            value = currentBuild.Powers[idx];
                             Point point3 = this.DrawPowerSlot(ref value, true);
-                            currentBuild.Powers[Index] = value;
+                            currentBuild.Powers[idx] = value;
                             point2 = point3;
                             iValue = new Rectangle(point2.X, point2.Y, this.SzPower.Width, this.SzPower.Height + 17);
                             rectangle = this.ScaleDown(iValue);
@@ -795,7 +784,7 @@ namespace midsControls
                             Rectangle rectangle = this.ScaleDown(iValue);
                             this.DrawSplit();
                             this.Output(ref this.bxBuffer, rectangle, rectangle, GraphicsUnit.Pixel);
-                            this.Highlight = Index;
+                            this.Highlight = idx;
                         }
                     }
                     result = false;

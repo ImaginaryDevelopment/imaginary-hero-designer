@@ -1,4 +1,5 @@
 
+using Base;
 using System;
 using System.IO;
 
@@ -202,8 +203,8 @@ public class Enhancement : IEnhancement
             FullName = this.UID
         };
         this.BuffMode = Enums.eBuffDebuff.Any;
-        this.ClassID = Array.Empty<int>();
-        this.Effect = Array.Empty<Enums.sEffect>();
+        this.ClassID = Array<int>.Empty();
+        this.Effect = Array<Enums.sEffect>.Empty();
         this.RecipeName = string.Empty;
         this.RecipeIDX = -1;
         this.UID = string.Empty;

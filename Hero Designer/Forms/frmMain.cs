@@ -25,7 +25,6 @@ namespace Hero_Designer
     {
         #region "fields"
 
-        bool remember;
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
         readonly short[] ddsa;
@@ -145,7 +144,7 @@ namespace Hero_Designer
                 this.FlipInterval = 10;
                 this.FlipStepDelay = 3;
                 this.FlipPowerID = -1;
-                this.FlipSlotState = Array.Empty<int>();
+                this.FlipSlotState = Array<int>.Empty();
                 this.dragStartPower = -1;
                 this.dragStartSlot = -1;
                 this.ddsa = new short[20];
@@ -154,12 +153,12 @@ namespace Hero_Designer
             this.InitializeComponent();
 
             //disable menus that are no longer hooked up, but probably should be hooked back up
-            /*this.tsHelp.Visible = false;
+            this.tsHelp.Visible = false;
             this.tsHelp.Enabled = false;
             this.tsPatchNotes.Visible = false;
             this.tsPatchNotes.Enabled = false;
             this.tsDonate.Visible = false;
-            this.tsDonate.Enabled = false;*/
+            this.tsDonate.Enabled = false;
 
             this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
             //adding events
@@ -228,7 +227,7 @@ namespace Hero_Designer
                 if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
                     MessageBox.Show("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clsXMLUpdate.GoToMidsReborn();
+                    clsXMLUpdate.GoToCoHPlanner();
                     Application.Exit();
                     return;
                 }
@@ -794,8 +793,8 @@ namespace Hero_Designer
 
         void clearPower(PowerEntry[] tp, int pwrIdx)
         {
-            tp[pwrIdx].Slots = Array.Empty<SlotEntry>();
-            tp[pwrIdx].SubPowers = Array.Empty<PowerSubEntry>();
+            tp[pwrIdx].Slots = Array<SlotEntry>.Empty();
+            tp[pwrIdx].SubPowers = Array<PowerSubEntry>.Empty();
             tp[pwrIdx].IDXPower = -1;
             tp[pwrIdx].NIDPower = -1;
             tp[pwrIdx].NIDPowerset = -1;
@@ -4288,7 +4287,7 @@ namespace Hero_Designer
                 this.FlipSlotState[index] = -(this.FlipStepDelay * index);
             this.FlipGP = new PowerEntry(-1, null, false);
             this.FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
-            this.FlipGP.Slots = Array.Empty<SlotEntry>();
+            this.FlipGP.Slots = Array<SlotEntry>.Empty();
             if (this.tmrGfx == null)
                 this.tmrGfx = new System.Windows.Forms.Timer(this.Container);
             this.tmrGfx.Interval = this.FlipInterval;
@@ -4854,8 +4853,8 @@ namespace Hero_Designer
         void tsForumLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToForums();
 
-        void tsMidsRebornLink(object sender, EventArgs e)
-            => clsXMLUpdate.GoToMidsReborn();
+        void tsPlannerLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToCoHPlanner();
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)
@@ -5238,7 +5237,7 @@ namespace Hero_Designer
             float height2 = bFont.GetHeight(this.dmBuffer.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.pbDynMode.Height - (double)height2) / 2.0), (float)this.pbDynMode.Width, height2);
             Graphics graphics = this.dmBuffer.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
         }
 
         void UpdateDynamicModeInfo()
@@ -5315,69 +5314,13 @@ namespace Hero_Designer
             {
                 frmAccolade fTemp = this.fTemp;
                 if (fTemp.Visible)
-                {
-                    var llLeft = fTemp.LLLeft;
-                    llLeft.SuspendRedraw = true;
-                    var llRight = fTemp.LLRight;
-                    llRight.SuspendRedraw = true;
-                    llLeft.Font = this.llPrimary.Font;
-                    llRight.Font = this.llPrimary.Font;
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    int num1 = llLeft.Items.Length - 1;
-                    for (int index = 0; index <= num1; ++index)
-                        llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    int num2 = llRight.Items.Length - 1;
-                    for (int index = 0; index <= num2; ++index)
-                        llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    llLeft.SuspendRedraw = false;
-                    llRight.SuspendRedraw = false;
-                    llLeft.Refresh();
-                    llRight.Refresh();
-                }
+                    fTemp.UpdateFonts(this.llPrimary.Font);
             }
             if (this.fAccolade == null)
                 return;
             frmAccolade fAccolade = this.fAccolade;
             if (fAccolade.Visible)
-            {
-                var llLeft = fAccolade.LLLeft;
-                var llRight = fAccolade.LLRight;
-                llLeft.SuspendRedraw = true;
-                llRight.SuspendRedraw = true;
-                llLeft.Font = this.llPrimary.Font;
-                llRight.Font = this.llPrimary.Font;
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                for (int index = 0; index <= llLeft.Items.Length - 1; ++index)
-                    llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                for (int index = 0; index <= llRight.Items.Length - 1; ++index)
-                    llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                llLeft.SuspendRedraw = false;
-                llRight.SuspendRedraw = false;
-                llLeft.Refresh();
-                llRight.Refresh();
-            }
+                fAccolade.UpdateFonts(this.llPrimary.Font);
         }
 
         void UpdatePowerList(ListLabelV2 llPower)
