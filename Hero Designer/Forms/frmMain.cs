@@ -4350,145 +4350,65 @@ namespace Hero_Designer
             this.PowerModified(markModified: false);
         }
 
-        void tsEnhToDO_Click(object sender, EventArgs e)
+        void OnRelativeClick(Enums.eEnhRelative newVal)
         {
-            if (MidsContext.Character == null)
+            if (MainModule.MidsController.Toon == null)
                 return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.DualO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.DualO;
+            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
+                this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
             this.DoRedraw();
         }
 
         void tsEnhToEven_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.Even;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.Even);
 
         void tsEnhToMinus1_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusOne;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusOne);
 
         void tsEnhToMinus2_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusTwo;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusTwo);
 
         void tsEnhToMinus3_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusThree;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusThree);
 
         void tsEnhToNone_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.None;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.None);
 
         void tsEnhToPlus1_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusOne;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusOne);
 
         void tsEnhToPlus2_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusTwo;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusTwo);
 
         void tsEnhToPlus3_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusThree;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusThree);
 
         void tsEnhToPlus4_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFour;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusFour);
 
         void tsEnhToPlus5_Click(object sender, EventArgs e)
+            => OnRelativeClick(Enums.eEnhRelative.PlusFive);
+
+        void OnGradePick(Enums.eEnhGrade grade)
         {
-            if (MainModule.MidsController.Toon == null)
+            if (MidsContext.Character == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFive;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
+            if (MidsContext.Character.CurrentBuild.SetEnhGrades(grade))
+                this.I9Picker.UI.Initial.GradeID = grade;
             this.info_Totals();
             this.DoRedraw();
         }
+
+        void tsEnhToDO_Click(object sender, EventArgs e)
+            => OnGradePick(Enums.eEnhGrade.DualO);
+
 
         void tsEnhToSO_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.SingleO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.SingleO;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnGradePick(Enums.eEnhGrade.SingleO);
 
         void tsEnhToTO_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.TrainingO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.TrainingO;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnGradePick(Enums.eEnhGrade.TrainingO);
 
         void tsExport_Click(object sender, EventArgs e)
         {
@@ -4855,25 +4775,13 @@ namespace Hero_Designer
             var font = new Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             var toColor = new Control[]
             {
-                this.llPrimary,
-                this.llSecondary,
-                this.llPool0,
-                this.llPool1,
-                this.llPool2,
-                this.llPool3,
+                this.llPrimary, this.llSecondary,
+                this.llPool0, this.llPool1, this.llPool2, this.llPool3,
                 this.llAncillary,
-                this.lblName,
-                this.lblAT,
-                this.lblOrigin,
-                this.lblHero,
+                this.lblName, this.lblAT, this.lblOrigin, this.lblHero,
                 this.pnlGFX,
-                this.lblLocked0,
-                this.lblLocked1,
-                this.lblLocked2,
-                this.lblLocked3,
-                this.lblLockedAncillary,
-                this.lblLockedSecondary,
-                this.lblATLocked
+                this.lblLocked0, this.lblLocked1, this.lblLocked2, this.lblLocked3,
+                this.lblLockedAncillary, this.lblLockedSecondary, this.lblATLocked
             };
             foreach (var colorItem in toColor)
             {
