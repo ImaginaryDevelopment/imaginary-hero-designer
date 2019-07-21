@@ -1334,7 +1334,7 @@ namespace Hero_Designer
             // create method before any other variables are declared, inside other method to reduce class clutter
             // also to lower cognitive load, this method depends on local properties, not the huge amount of variables present in the containing/calling method
             // only 1 variable closed over: olderFile
-            IReadOnlyCollection<int> readPowerEntries(string[] data)
+            IReadOnlyList<int> readPowerEntries(string[] data)
             {
                 int count = (int)Math.Round(Conversion.Val(data[0]));
                 int offset = 1;
@@ -1372,7 +1372,7 @@ namespace Hero_Designer
 
             }
 
-            void readSlotEntries(string[] data, IReadOnlyCollection<int> idxLookup)
+            void readSlotEntries(string[] data, IReadOnlyList<int> idxLookup)
             {
                 int offset = 1; // previously line 4665
                 for (int index2 = 0; index2 <= (int)Math.Round(Conversion.Val(data[0])); ++index2)
