@@ -1143,11 +1143,12 @@ namespace Hero_Designer
             // 
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox3.Location = new System.Drawing.Point(232, 254);
+            this.richTextBox3.Location = new System.Drawing.Point(87, 248);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(201, 39);
+            this.richTextBox3.Size = new System.Drawing.Size(462, 39);
             this.richTextBox3.TabIndex = 2;
-            this.richTextBox3.Text = "More Discord settings may be available\nin the future.";
+            this.richTextBox3.Text = "In order for the Discord export feature to work on your server you must first inv" +
+    "ite RebornBot.\n";
             // 
             // GroupBox19
             // 

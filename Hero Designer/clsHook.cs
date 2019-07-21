@@ -38,7 +38,7 @@ namespace Hero_Designer
             return null;
         }*/
    
-        private static string ShrinkTheDatalink(string strUrl)
+        public static string ShrinkTheDatalink(string strUrl)
         {
             var url = "http://tinyurl.com/api-create.php?url=" + strUrl;
 
@@ -69,6 +69,7 @@ namespace Hero_Designer
                 Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
                 User: MidsContext.Config.DNickName,
                 Channel: MidsContext.Config.DChannel);
+                
             var mrb = (
                 Level: Conversions.ToString(num), 
                 Archetype: MidsContext.Character.Archetype.DisplayName, 

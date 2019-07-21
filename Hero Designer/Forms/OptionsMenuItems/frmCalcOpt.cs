@@ -1,3 +1,4 @@
+using Base.IO_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -92,7 +93,7 @@ namespace Hero_Designer
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
         {
-            this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
+            this.txtUpdatePath.Text = "http://midsreborn.com/mids_updates/";
         }
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,7 +145,7 @@ namespace Hero_Designer
             }
             else
             {
-                if (!(Conversions.ToString(e.KeyChar) == "]"))
+                if (Conversions.ToString(e.KeyChar) != "]")
                     return;
                 this.ForumColorDown();
             }
@@ -559,6 +560,7 @@ namespace Hero_Designer
             this.dcChannel.Text = config.DChannel;
             this.dcExList.SelectedItem = config.DSelServer;
             this.dcExList.DataSource = config.DServers;
+            this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
