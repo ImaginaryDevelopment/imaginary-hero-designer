@@ -25,9 +25,6 @@ namespace Hero_Designer
         // could take multiple open with options
         static RegistryKey GetFileOpenWithListKey(string extension)
             => Registry.CurrentUser.OpenSubKey(GetOpenListSubKeyPath(extension));
-        static RegistryKey CreateFileOpenWithList(string extension) => Registry.CurrentUser.CreateSubKey(GetOpenListSubKeyPath(extension));
-        static RegistryKey CreateOrOpenRegOpenWithList(string extension)
-            => GetFileOpenWithListKey(extension) ?? CreateFileOpenWithList(extension);
 
         //static RegistryKey FindOpenWithEntry(string extension, string path)
         //    => GetFileOpenWithList(extension).GetSubKeyNames();
@@ -161,7 +158,14 @@ namespace Hero_Designer
             shell.Close();
 
             currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
-            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ??
+#if NET40
+                currentUser.CreateSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree))
+#else
+                currentUser.CreateSubKey("UserChoice", true))
+#endif
+
+
             {
                 uc.SetValue("Progid", keyName, RegistryValueKind.String);
             }

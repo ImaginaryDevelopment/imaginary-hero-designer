@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Base;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace Hero_Designer
         public ListBoxT(ListBox lb) => this._lb = lb;
 
     }
+
     public class ComboBoxT<T>
     {
         readonly ComboBox _cb;
@@ -26,7 +28,13 @@ namespace Hero_Designer
         public T SelectedItem { get => (T)_cb.SelectedItem; set => _cb.SelectedItem = value; }
         public Rectangle Bounds => this._cb.Bounds;
         public int Count => this._cb.Items.Count;
-        public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList()); }
+        public IReadOnlyCollection<T> Items { get =>
+#if NET40
+                new Base.ReadOnlyCollection<T>(
+#else
+                new ReadOnlyCollection<T>(
+#endif
+                    _cb.Items.Cast<T>().ToList()); }
         public void BeginUpdate() => _cb.BeginUpdate();
         public void Clear() => _cb.Items.Clear();
         public void AddRange(IEnumerable<T> items)
@@ -48,6 +56,27 @@ namespace Hero_Designer
 
     public static class Extensions
     {
+        public static void EventHandlerWithCatch(this IComponent _, Action f, string titlingOpt = null, string captionOpt = null) => ExecuteWithCatchMessage(f, titlingOpt, captionOpt);
+        // execute immediately with a catch
+        public static void ExecuteWithCatchMessage(this Action f, string titlingOpt = null, string captionOpt = null)
+        {
+            try
+            {
+                f();
+            }
+            catch (Exception ex)
+            {
+                while (ex.InnerException != null && ex.InnerException.Message != null)
+                    ex = ex.InnerException;
+                MessageBox.Show(string.IsNullOrWhiteSpace(titlingOpt) ? ex.Message : (titlingOpt + ":" + ex.Message), captionOpt ?? ex.GetType().Name);
+            }
+        }
+
+        // this could be chained indefinitely so... be careful with it
+        // defer the execution until later
+        public static Action WithCatchMessage(this Action f, string titling, string captionOpt = null)
+            => () => ExecuteWithCatchMessage(f, titling, captionOpt);
+
         // does not handle the possibility this is a child control, and a parent is in design mode
         public static bool IsInDesignMode(this Control c) => LicenseManager.UsageMode == LicenseUsageMode.Designtime || c?.Site?.DesignMode == true;
 

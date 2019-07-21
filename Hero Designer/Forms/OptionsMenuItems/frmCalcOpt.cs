@@ -1,4 +1,5 @@
 
+using Base;
 using Base.IO_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
@@ -7,6 +8,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -299,6 +301,8 @@ namespace Hero_Designer
             if (!string.IsNullOrWhiteSpace(dcServerName.Text))
             {
                 dcExList.Items.Add(dcServerName.Text);
+                if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
+                    MidsContext.Config.DServers.Add(dcServerName.Text);
             }
         }
 
@@ -560,6 +564,9 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
+            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
+                this.dcExList.Items.Add(item);
+            if(!string.IsNullOrWhiteSpace(config.DSelServer))
             this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;

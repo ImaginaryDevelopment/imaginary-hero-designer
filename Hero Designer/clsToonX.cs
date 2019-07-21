@@ -1,4 +1,5 @@
 
+using Base;
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
@@ -376,7 +377,7 @@ namespace Hero_Designer
         {
             this.Totals.Init();
             this.TotalsCapped.Init();
-            bool flag = false;
+            bool canFly = false;
             int num1 = this.CurrentBuild.Powers.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -388,7 +389,7 @@ namespace Hero_Designer
                     for (int index2 = 0; index2 <= num2; ++index2)
                     {
                         if (this._buffedPower[index1].Effects[index2].EffectType == Enums.eEffectType.Fly & _buffedPower[index1].Effects[index2].Mag > 0.0)
-                            flag = true;
+                            canFly = true;
                     }
                 }
             }
@@ -415,27 +416,29 @@ namespace Hero_Designer
             this.Totals.BuffEndRdx = this._selfEnhance.Effect[8];
             this.Totals.BuffHaste = this._selfEnhance.Effect[25];
             this.Totals.BuffToHit = this._selfBuffs.Effect[40];
-            this.Totals.Perception = (float)(500.0 * (1.0 + this._selfBuffs.Effect[23]));
+            this.Totals.Perception = (float)(Statistics.BasePerception * (1.0 + this._selfBuffs.Effect[23]));
             this.Totals.StealthPvE = this._selfBuffs.Effect[36];
             this.Totals.StealthPvP = this._selfBuffs.Effect[37];
             this.Totals.ThreatLevel = this._selfBuffs.Effect[39];
             this.Totals.HPRegen = this._selfBuffs.Effect[27];
             this.Totals.EndRec = this._selfBuffs.Effect[26];
-            this.Totals.FlySpd = (float)(31.5 + Math.Max(this._selfBuffs.Effect[11], -0.9f) * 31.5);
-            this.Totals.MaxFlySpd = (float)(86.0 + this._selfBuffs.Effect[51] * 21.0);
+
+            this.Totals.FlySpd = Statistics.BaseFlySpeed + Math.Max(this._selfBuffs.Effect[11], -0.9f) * Statistics.MaxFlySpeed;
+            // this number(21.0) looks wrong, like it should match the multiplier above (31.5), changing it
+            this.Totals.MaxFlySpd = Statistics.MaxFlySpeed + this._selfBuffs.Effect[51] * Statistics.BaseFlySpeed;
             if (Totals.MaxFlySpd > 128.990005493164)
                 this.Totals.MaxFlySpd = 128.99f;
-            this.Totals.RunSpd = (float)(21.0 + Math.Max(this._selfBuffs.Effect[32], -0.9f) * 21.0);
-            this.Totals.MaxRunSpd = (float)(135.669998168945 + this._selfBuffs.Effect[49] * 21.0);
+            this.Totals.RunSpd = Statistics.BaseRunSpeed + Math.Max(this._selfBuffs.Effect[32], -0.9f) * Statistics.BaseRunSpeed;
+            this.Totals.MaxRunSpd = (float)(Statistics.MaxRunSpeed + this._selfBuffs.Effect[49] * Statistics.BaseRunSpeed);
             if (Totals.MaxRunSpd > 135.669998168945)
                 this.Totals.MaxRunSpd = 135.67f;
-            this.Totals.JumpSpd = (float)(21.0 + (double)Math.Max(this._selfBuffs.Effect[17], -0.9f) * 21.0);
-            this.Totals.MaxJumpSpd = (float)(114.400001525879 + this._selfBuffs.Effect[50] * 21.0);
+            this.Totals.JumpSpd = (float)(Statistics.BaseJumpSpeed + (double)Math.Max(this._selfBuffs.Effect[17], -0.9f) * Statistics.BaseJumpSpeed);
+            this.Totals.MaxJumpSpd = (float)(114.400001525879 + this._selfBuffs.Effect[50] * Statistics.BaseJumpSpeed);
             if (Totals.MaxJumpSpd > 114.400001525879)
-                this.Totals.MaxJumpSpd = 114.4f;
+                this.Totals.MaxJumpSpd = Statistics.MaxJumpSpeed;
             this.Totals.JumpHeight = (float)(4.0 + (double)Math.Max(this._selfBuffs.Effect[16], -0.9f) * 4.0);
             this.Totals.HPMax = this._selfBuffs.Effect[14] + Archetype.Hitpoints;
-            if (!flag)
+            if (!canFly)
                 this.Totals.FlySpd = 0.0f;
             float maxDmgBuff = -1000f;
             float minDmgBuff = -1000f;
@@ -451,7 +454,7 @@ namespace Hero_Designer
                     avgDmgBuff += this._selfEnhance.Damage[index];
                 }
             }
-            avgDmgBuff = avgDmgBuff / _selfEnhance.Damage.Length;
+            avgDmgBuff /= _selfEnhance.Damage.Length;
             if (maxDmgBuff - (double)avgDmgBuff < avgDmgBuff - (double)minDmgBuff)
                 this.Totals.BuffDam = maxDmgBuff;
             else if (maxDmgBuff - (double)avgDmgBuff > avgDmgBuff - (double)minDmgBuff & minDmgBuff > 0.0)
@@ -1202,8 +1205,8 @@ namespace Hero_Designer
             this._selfBuffs.Reset();
             this._selfEnhance.Reset();
             this.ModifyEffects = new Dictionary<string, float>();
-            this._buffedPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
-            this._mathPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
+            this._buffedPower = new IPower[this.CurrentBuild.Powers.Count];
+            this._mathPower = new IPower[this.CurrentBuild.Powers.Count];
             this.GBPA_Pass0_InitializePowerArray();
             this.GenerateModifyEffectsArray();
             this.GenerateBuffData(ref this._selfEnhance, true);
@@ -1312,7 +1315,7 @@ namespace Hero_Designer
             {
                 return this.CurrentBuild.Powers[iPowerSlot].Slots.Select(slot => slot.Enhancement.Enh).ToArray();
             }
-            return Array.Empty<int>();
+            return Array<int>.Empty();
         }
 
         bool ImportInternalDataUC(StreamReader iStream, float nVer)
@@ -1331,7 +1334,7 @@ namespace Hero_Designer
             // create method before any other variables are declared, inside other method to reduce class clutter
             // also to lower cognitive load, this method depends on local properties, not the huge amount of variables present in the containing/calling method
             // only 1 variable closed over: olderFile
-            ReadOnlyCollection<int> readPowerEntries(string[] data)
+            IReadOnlyList<int> readPowerEntries(string[] data)
             {
                 int count = (int)Math.Round(Conversion.Val(data[0]));
                 int offset = 1;
@@ -1361,10 +1364,15 @@ namespace Hero_Designer
                         this.BuildPower(tPower.NIDPowerset, tPower.NIDPower, true);
                     }
                 }
-                return new ReadOnlyCollection<int>(indexLookup.ToList());
+                return  new
+#if NET40
+                Base.
+#endif
+                ReadOnlyCollection<int>(indexLookup.ToList());
+
             }
 
-            void readSlotEntries(string[] data, ReadOnlyCollection<int> idxLookup)
+            void readSlotEntries(string[] data, IReadOnlyList<int> idxLookup)
             {
                 int offset = 1; // previously line 4665
                 for (int index2 = 0; index2 <= (int)Math.Round(Conversion.Val(data[0])); ++index2)
@@ -2176,7 +2184,7 @@ namespace Hero_Designer
                                 index1++;
                                 power.SubPowers[index8].nIDPower = !(power.SubPowers[index8].Powerset > -1 & power.SubPowers[index8].Power > -1) ? -1 : DatabaseAPI.Database.Powersets[power.SubPowers[index8].Powerset].Power[power.SubPowers[index8].Power];
                             }
-                            power.SubPowers = Array.Empty<PowerSubEntry>();
+                            power.SubPowers = Array<PowerSubEntry>.Empty();
                         }
                     }
                     else

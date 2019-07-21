@@ -1,12 +1,12 @@
 
+using Base;
 using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -26,36 +26,27 @@ namespace Hero_Designer
         }
 
         void btnAttribIndex_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this.lblAttribIndex.Text;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) != DialogResult.OK)
+            if (this.dlgBrowse.ShowDialog(this) != DialogResult.OK)
                 return;
             this.lblAttribIndex.Text = this.dlgBrowse.FileName;
         }
 
         void btnAttribLoad_Click(object sender, EventArgs e)
-
         {
             if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
             {
                 if (File.Exists(this.lblAttribIndex.Text) & File.Exists(this.lblAttribTables.Text))
-                {
                     this.ImportRecipeCSV(this.lblAttribIndex.Text, this.lblAttribTables.Text);
-                }
                 else
-                {
-                    int num1 = (int)Interaction.MsgBox("Files cannot be found!", MsgBoxStyle.Exclamation, "No Can Do");
-                }
+                    Interaction.MsgBox("Files cannot be found!", MsgBoxStyle.Exclamation, "No Can Do");
             }
             else
-            {
-                int num2 = (int)Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
-            }
+                Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
         }
 
         void btnAttribTable_Click(object sender, EventArgs e)
-
         {
             this.dlgBrowse.FileName = this.lblAttribTables.Text;
             if (this.dlgBrowse.ShowDialog((IWin32Window)this) != DialogResult.OK)
@@ -64,7 +55,6 @@ namespace Hero_Designer
         }
 
         void BusyHide()
-
         {
             if (this.bFrm == null)
                 return;
@@ -73,7 +63,6 @@ namespace Hero_Designer
         }
 
         void BusyMsg(string sMessage)
-
         {
             if (this.bFrm == null)
             {
@@ -84,18 +73,15 @@ namespace Hero_Designer
         }
 
         void Button1_Click(object sender, EventArgs e)
-
         {
             this.Close();
         }
 
         void frmImport_Recipe_Load(object sender, EventArgs e)
-
         {
         }
 
         bool ImportRecipeCSV(string iFName1, string iFName2)
-
         {
             StreamReader iStream1;
             StreamReader iStream2;
@@ -106,11 +92,8 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                ProjectData.SetProjectError(ex);
                 Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Recipe CSVs Not Opened");
-                bool flag = false;
-                ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             int num1 = 0;
             int num2 = 0;
@@ -148,48 +131,43 @@ namespace Hero_Designer
                             Recipe recipe1 = DatabaseAPI.GetRecipeByName(iName);
                             if (recipe1 == null)
                             {
-                                IDatabase database = DatabaseAPI.Database;
-                                Recipe[] recipeArray = (Recipe[])Utils.CopyArray(database.Recipes, (Array)new Recipe[DatabaseAPI.Database.Recipes.Length + 1]);
-                                database.Recipes = recipeArray;
-                                DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1] = new Recipe();
-                                recipe1 = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Recipes.Length - 1];
-                                Recipe recipe2 = recipe1;
-                                recipe2.InternalName = iName;
-                                recipe2.ExternalName = !(array[1] != "") ? iName : array[1];
-                                recipe2.Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(array[9]) - 1.0);
+                                recipe1 = new Recipe
+                                {
+                                    InternalName = iName,
+                                    ExternalName = !(array[1] != "") ? iName : array[1],
+                                    Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(array[9]) - 1.0)
+                                };
+                                DatabaseAPI.Database.Recipes = DatabaseAPI.Database.Recipes.Append(recipe1).ToArray();
                             }
                             int index1 = -1;
-                            Recipe recipe3 = recipe1;
-                            int num7 = recipe3.Item.Length - 1;
+                            int num7 = recipe1.Item.Length - 1;
                             for (int index2 = 0; index2 <= num7; ++index2)
                             {
-                                if (recipe3.Item[index2].Level == num6 - 1)
+                                if (recipe1.Item[index2].Level == num6 - 1)
                                     index1 = index2;
                             }
                             if (index1 < 0)
                             {
-                                index1 = recipe3.Item.Length;
-                                recipe3.Item = (Recipe.RecipeEntry[])Utils.CopyArray(recipe3.Item, (Array)new Recipe.RecipeEntry[index1 + 1]);
-                                recipe3.Item[index1] = new Recipe.RecipeEntry();
+                                recipe1.Item = recipe1.Item.Append(new Recipe.RecipeEntry()).ToArray();
                             }
-                            recipe3.Item[index1].Level = num6 - 1;
+                            recipe1.Item[index1].Level = num6 - 1;
                             if (flag)
                             {
-                                recipe3.Item[index1].BuyCostM = (int)Math.Round(Conversion.Val(array[15]));
-                                recipe3.Item[index1].CraftCostM = (int)Math.Round(Conversion.Val(array[11]));
+                                recipe1.Item[index1].BuyCostM = (int)Math.Round(Conversion.Val(array[15]));
+                                recipe1.Item[index1].CraftCostM = (int)Math.Round(Conversion.Val(array[11]));
                             }
                             else
                             {
-                                recipe3.Item[index1].BuyCost = (int)Math.Round(Conversion.Val(array[15]));
-                                recipe3.Item[index1].CraftCost = (int)Math.Round(Conversion.Val(array[11]));
+                                recipe1.Item[index1].BuyCost = (int)Math.Round(Conversion.Val(array[15]));
+                                recipe1.Item[index1].CraftCost = (int)Math.Round(Conversion.Val(array[11]));
                             }
                             if (array[7].Length > 0)
                             {
                                 int index2 = DatabaseAPI.NidFromUidEnhExtended(array[7]);
                                 if (index2 > -1)
                                 {
-                                    recipe3.Enhancement = DatabaseAPI.Database.Enhancements[index2].UID;
-                                    DatabaseAPI.Database.Enhancements[index2].RecipeName = recipe3.InternalName;
+                                    recipe1.Enhancement = DatabaseAPI.Database.Enhancements[index2].UID;
+                                    DatabaseAPI.Database.Enhancements[index2].RecipeName = recipe1.InternalName;
                                 }
                             }
                             ++num1;
@@ -273,19 +251,16 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                ProjectData.SetProjectError(ex);
                 Exception exception = ex;
                 iStream1.Close();
                 iStream2.Close();
                 this.BusyHide();
                 Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "CSV Parse Error");
-                bool flag = false;
-                ProjectData.ClearProjectError();
-                return flag;
+                return false;
             }
             this.BusyHide();
             iStream2.Close();
-            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num5) + "\r\nGood: " + Conversions.ToString(num2) + "\r\nRejected: " + Conversions.ToString(num3)), MsgBoxStyle.Information, "File Parsed");
+            Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + num5.ToString() + "\r\nGood: " + num2.ToString() + "\r\nRejected: " + num3.ToString()), MsgBoxStyle.Information, "File Parsed");
             var serializer = My.MyApplication.GetSerializer();
             DatabaseAPI.SaveRecipes(serializer);
             DatabaseAPI.SaveEnhancementDb(serializer);

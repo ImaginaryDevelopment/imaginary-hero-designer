@@ -150,7 +150,7 @@ namespace Hero_Designer
             if (MainModule.MidsController.Toon == null)
                 return;
             this.lblDate.Text = Strings.Format(DatabaseAPI.Database.Date, "dd/MM/yyyy");
-            this.UdIssue.Value = new Decimal(DatabaseAPI.Database.Issue);
+            this.UdIssue.Value = new decimal(DatabaseAPI.Database.Issue);
             this.lblCountAT.Text = Conversions.ToString(DatabaseAPI.Database.Classes.Length);
             this.lblCountEnh.Text = Strings.Format(DatabaseAPI.Database.Enhancements.Length, "#,###,##0");
             this.lblCountIOSet.Text = Strings.Format(DatabaseAPI.Database.EnhancementSets.Count, "#,###,##0");

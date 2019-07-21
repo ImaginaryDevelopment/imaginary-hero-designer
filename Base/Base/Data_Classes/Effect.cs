@@ -479,7 +479,7 @@ namespace Base.Data_Classes
                     }
                     if (this.DisplayPercentage)
                     {
-                        str5 = str1 + " (" + Utilities.FixDP(this.Mag * (MidsContext.Archetype.BaseRecovery * 1.666667f)) + " /s) " + effectNameShort1 + str3 + str2;
+                        str5 = str1 + " (" + Utilities.FixDP(this.Mag * (MidsContext.Archetype.BaseRecovery * Statistics.BaseMagic)) + " /s) " + effectNameShort1 + str3 + str2;
                         break;
                     }
                     str5 = str1 + " " + effectNameShort1 + str3 + str2;
@@ -492,7 +492,7 @@ namespace Base.Data_Classes
                     }
                     if (this.DisplayPercentage)
                     {
-                        str5 = str1 + " (" + Utilities.FixDP((float)((double)MidsContext.Archetype.Hitpoints / 100.0 * ((double)this.Mag * (double)MidsContext.Archetype.BaseRegen * 1.66666662693024))) + " HP/s) " + effectNameShort1 + str3 + str2;
+                        str5 = str1 + " (" + Utilities.FixDP((float)(MidsContext.Archetype.Hitpoints / 100.0 * (Mag * (double)MidsContext.Archetype.BaseRegen * 1.66666662693024))) + " HP/s) " + effectNameShort1 + str3 + str2;
                         break;
                     }
                     str5 = str1 + " " + effectNameShort1 + str3 + str2;
@@ -508,7 +508,7 @@ namespace Base.Data_Classes
                 case Enums.eEffectType.EntCreate:
                     int index = DatabaseAPI.NidFromUidEntity(this.Summon);
                     string str10 = index <= -1 ? " " + this.Summon : " " + DatabaseAPI.Database.Entities[index].DisplayName;
-                    str5 = (double)this.Duration <= 9999.0 ? effectNameShort1 + str10 + str3 + str2 : effectNameShort1 + str10 + str3;
+                    str5 = Duration <= 9999.0 ? effectNameShort1 + str10 + str3 + str2 : effectNameShort1 + str10 + str3;
                     break;
                 case Enums.eEffectType.GlobalChanceMod:
                     str5 = str1 + " " + effectNameShort1 + " " + this.Reward + str3 + str2;
@@ -555,7 +555,7 @@ namespace Base.Data_Classes
             string iValue3 = string.Empty;
             string iValue4 = string.Empty;
             string str6 = string.Empty;
-            string empty1 = string.Empty;
+            string strCondition = string.Empty;
             string str7 = string.Empty;
             string iValue5 = string.Empty;
             string str8 = string.Empty;
@@ -574,16 +574,16 @@ namespace Base.Data_Classes
                 if (this.RequiresToHitCheck)
                     iValue5 = " requires ToHit check";
             }
-            if ((double)this.ProcsPerMinute > 0.0 && (double)this.Probability < 0.01)
+            if (ProcsPerMinute > 0.0 && Probability < 0.01)
                 iValue1 = ((double)this.ProcsPerMinute).ToString() + "PPM";
             else if (useBaseProbability)
             {
-                if ((double)this.BaseProbability < 1.0)
+                if (this.BaseProbability < 1.0)
                     iValue1 = (double)this.BaseProbability < 0.975000023841858 ? (this.BaseProbability * 100f).ToString("#0") + "% chance" : (this.BaseProbability * 100f).ToString("#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0") + "% chance";
             }
-            else if ((double)this.Probability < 1.0)
+            else if (this.Probability < 1.0)
             {
-                iValue1 = (double)this.Probability < 0.975000023841858 ? (this.Probability * 100f).ToString("#0") + "% chance" : (this.Probability * 100f).ToString("#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0") + "% chance";
+                iValue1 = this.Probability < 0.975000023841858 ? (this.Probability * 100f).ToString("#0") + "% chance" : (this.Probability * 100f).ToString("#0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "0") + "% chance";
                 if (this.CancelOnMiss)
                     iValue1 += ", CancelOnMiss";
             }
@@ -597,7 +597,7 @@ namespace Base.Data_Classes
             {
                 case Enums.ePvX.PvE:
                     iValue2 = noComma ? "by Critters" : "to Critters";
-                    if (this.EffectType == Enums.eEffectType.Heal & this.Aspect == Enums.eAspect.Abs & (double)this.Mag > 0.0 & this.PvMode == Enums.ePvX.PvE)
+                    if (this.EffectType == Enums.eEffectType.Heal & this.Aspect == Enums.eAspect.Abs & this.Mag > 0.0 & this.PvMode == Enums.ePvX.PvE)
                         iValue2 = "in PvE";
                     if (this.ToWho == Enums.eToWho.Self)
                     {
@@ -627,38 +627,37 @@ namespace Base.Data_Classes
                 str6 = Enum.GetName(this.SpecialCase.GetType(), this.SpecialCase);
             if (!simple || (double)this.Scale > 0.0 && this.EffectType == Enums.eEffectType.Mez)
             {
-                string empty2 = string.Empty;
-                string str9 = " for ";
+                string strMez = " for ";
                 switch (this.EffectType)
                 {
                     case Enums.eEffectType.Damage:
-                        str9 = " over ";
+                        strMez = " over ";
                         break;
                     case Enums.eEffectType.SilentKill:
-                        str9 = " in ";
+                        strMez = " in ";
                         break;
                 }
-                str2 = !((double)this.Duration > 0.0 & (this.EffectType != Enums.eEffectType.Damage | this.Ticks > 0)) ? (!((double)this.Absorbed_Duration > 0.0 & (this.EffectType != Enums.eEffectType.Damage | this.Ticks > 0)) ? empty2 + " " : empty2 + str9 + Utilities.FixDP(this.Absorbed_Duration) + " seconds") : empty2 + str9 + Utilities.FixDP(this.Duration) + " seconds";
-                if ((double)this.Absorbed_Interval > 0.0 & (double)this.Absorbed_Interval < 900.0)
+                str2 = !(Duration > 0.0 & (this.EffectType != Enums.eEffectType.Damage | this.Ticks > 0)) ? (!(Absorbed_Duration > 0.0 & (this.EffectType != Enums.eEffectType.Damage | this.Ticks > 0)) ? string.Empty + " " : string.Empty + strMez + Utilities.FixDP(this.Absorbed_Duration) + " seconds") : string.Empty + strMez + Utilities.FixDP(this.Duration) + " seconds";
+                if (Absorbed_Interval > 0.0 && Absorbed_Interval < 900.0)
                     str2 = str2 + " every " + Utilities.FixDP(this.Absorbed_Interval) + " seconds";
             }
             if (!noMag & this.EffectType != Enums.eEffectType.SilentKill)
                 str1 = !this.DisplayPercentage ? Utilities.FixDP(this.Mag) : Utilities.FixDP(this.Mag * 100f) + "%";
             if (!simple)
             {
-                empty1 = string.Empty;
+                strCondition = string.Empty;
                 if ((this.Suppression & Enums.eSuppress.ActivateAttackClick) == Enums.eSuppress.ActivateAttackClick)
-                    empty1 += "\n  Suppressed when Attacking.";
+                    strCondition += "\n  Suppressed when Attacking.";
                 if ((this.Suppression & Enums.eSuppress.Attacked) == Enums.eSuppress.Attacked)
-                    empty1 += "\n  Suppressed when Attacked.";
+                    strCondition += "\n  Suppressed when Attacked.";
                 if ((this.Suppression & Enums.eSuppress.HitByFoe) == Enums.eSuppress.HitByFoe)
-                    empty1 += "\n  Suppressed when Hit.";
+                    strCondition += "\n  Suppressed when Hit.";
                 if ((this.Suppression & Enums.eSuppress.MissionObjectClick) == Enums.eSuppress.MissionObjectClick)
-                    empty1 += "\n  Suppressed when MissionObjectClick.";
+                    strCondition += "\n  Suppressed when MissionObjectClick.";
                 if ((this.Suppression & Enums.eSuppress.Held) == Enums.eSuppress.Held || (this.Suppression & Enums.eSuppress.Immobilized) == Enums.eSuppress.Immobilized || ((this.Suppression & Enums.eSuppress.Sleep) == Enums.eSuppress.Sleep || (this.Suppression & Enums.eSuppress.Stunned) == Enums.eSuppress.Stunned) || (this.Suppression & Enums.eSuppress.Terrorized) == Enums.eSuppress.Terrorized)
-                    empty1 += "\n  Suppressed when Mezzed.";
+                    strCondition += "\n  Suppressed when Mezzed.";
                 if ((this.Suppression & Enums.eSuppress.Knocked) == Enums.eSuppress.Knocked)
-                    empty1 += "\n  Suppressed when Knocked.";
+                    strCondition += "\n  Suppressed when Knocked.";
             }
             else if ((this.Suppression & Enums.eSuppress.ActivateAttackClick) == Enums.eSuppress.ActivateAttackClick || (this.Suppression & Enums.eSuppress.Attacked) == Enums.eSuppress.Attacked || (this.Suppression & Enums.eSuppress.HitByFoe) == Enums.eSuppress.HitByFoe)
                 iValue6 = "Combat Suppression";
@@ -814,7 +813,7 @@ namespace Base.Data_Classes
                     iStr5 = Effect.BuildCs("if " + str6, iStr5, false);
                 iStr1 = " (" + Effect.BuildCs(iValue5, iStr5, false) + ")";
             }
-            return str8 + str10 + iStr1 + str5 + str7 + str4 + empty1;
+            return str8 + str10 + iStr1 + str5 + str7 + str4 + strCondition;
         }
 
         public void StoreTo(ref BinaryWriter writer)
