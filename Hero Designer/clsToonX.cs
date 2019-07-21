@@ -1,4 +1,5 @@
 
+using Base;
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
@@ -1314,7 +1315,7 @@ namespace Hero_Designer
             {
                 return this.CurrentBuild.Powers[iPowerSlot].Slots.Select(slot => slot.Enhancement.Enh).ToArray();
             }
-            return Array.Empty<int>();
+            return Array<int>.Empty();
         }
 
         bool ImportInternalDataUC(StreamReader iStream, float nVer)
@@ -1333,7 +1334,7 @@ namespace Hero_Designer
             // create method before any other variables are declared, inside other method to reduce class clutter
             // also to lower cognitive load, this method depends on local properties, not the huge amount of variables present in the containing/calling method
             // only 1 variable closed over: olderFile
-            ReadOnlyCollection<int> readPowerEntries(string[] data)
+            IReadOnlyCollection<int> readPowerEntries(string[] data)
             {
                 int count = (int)Math.Round(Conversion.Val(data[0]));
                 int offset = 1;
@@ -1363,10 +1364,15 @@ namespace Hero_Designer
                         this.BuildPower(tPower.NIDPowerset, tPower.NIDPower, true);
                     }
                 }
-                return new ReadOnlyCollection<int>(indexLookup.ToList());
+                return  new
+#if NET40
+                Base.
+#endif
+                ReadOnlyCollection<int>(indexLookup.ToList());
+
             }
 
-            void readSlotEntries(string[] data, ReadOnlyCollection<int> idxLookup)
+            void readSlotEntries(string[] data, IReadOnlyCollection<int> idxLookup)
             {
                 int offset = 1; // previously line 4665
                 for (int index2 = 0; index2 <= (int)Math.Round(Conversion.Val(data[0])); ++index2)
@@ -2178,7 +2184,7 @@ namespace Hero_Designer
                                 index1++;
                                 power.SubPowers[index8].nIDPower = !(power.SubPowers[index8].Powerset > -1 & power.SubPowers[index8].Power > -1) ? -1 : DatabaseAPI.Database.Powersets[power.SubPowers[index8].Powerset].Power[power.SubPowers[index8].Power];
                             }
-                            power.SubPowers = Array.Empty<PowerSubEntry>();
+                            power.SubPowers = Array<PowerSubEntry>.Empty();
                         }
                     }
                     else

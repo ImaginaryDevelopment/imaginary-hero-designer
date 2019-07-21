@@ -1,4 +1,5 @@
 
+using Base;
 using Base.Data_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
@@ -18,7 +19,7 @@ namespace Hero_Designer
             string[] strArray1 = clsUniversalImport.SmartBreak(iLine, nAT);
             sPowerLine.Level = (int)Math.Round(Conversion.Val(strArray1[0]));
             sPowerLine.Power = strArray1[1];
-            sPowerLine.Slots = Array.Empty<sSlot>();
+            sPowerLine.Slots = Array<sSlot>.Empty();
             string[] strArray2 = strArray1[2].Replace(" ", "|").Replace(")", "|").Split('|');
             int num1 = strArray2.Length - 1;
             for (int index = 0; index <= num1; ++index)

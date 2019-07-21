@@ -103,7 +103,7 @@ public static class DatabaseAPI
     public static int[] NidSets(PowersetGroup group, int nIDClass, Enums.ePowerSetType nType) // clsI12Lookup.vb
     {
         if ((nType == Enums.ePowerSetType.Inherent || nType == Enums.ePowerSetType.Pool) && nIDClass > -1 && !Database.Classes[nIDClass].Playable)
-            return Array.Empty<int>();
+            return Array<int>.Empty();
 
 
         IPowerset[] powersetArray = Database.Powersets;
@@ -166,13 +166,13 @@ public static class DatabaseAPI
 
     static int[] NidPowersAtLevel(int iLevel, int nIDPowerset)
         => nIDPowerset < 0 ?
-            Array.Empty<int>() :
+            Array<int>.Empty() :
             Database.Powersets[nIDPowerset].Powers.Where(pow => pow.Level - 1 == iLevel).Select(pow => pow.PowerIndex).ToArray();
 
     public static int[] NidPowersAtLevelBranch(int iLevel, int nIDPowerset)
     {
         if (nIDPowerset < 0)
-            return Array.Empty<int>();
+            return Array<int>.Empty();
         if (Database.Powersets[nIDPowerset].nIDTrunkSet < 0)
             return NidPowersAtLevel(iLevel, nIDPowerset);
 
@@ -282,7 +282,7 @@ public static class DatabaseAPI
         List<string> stringList = new List<string>();
         if (iSet != Enums.ePowerSetType.Pool && iSet != Enums.ePowerSetType.Inherent)
         {
-            int[] numArray = Array.Empty<int>();
+            int[] numArray = Array<int>.Empty();
             switch (iSet)
             {
                 case Enums.ePowerSetType.Primary:

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Base;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -27,7 +28,13 @@ namespace Hero_Designer
         public T SelectedItem { get => (T)_cb.SelectedItem; set => _cb.SelectedItem = value; }
         public Rectangle Bounds => this._cb.Bounds;
         public int Count => this._cb.Items.Count;
-        public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList()); }
+        public IReadOnlyCollection<T> Items { get =>
+#if NET40
+                new Base.ReadOnlyCollection<T>(
+#else
+                new ReadOnlyCollection<T>(
+#endif
+                    _cb.Items.Cast<T>().ToList()); }
         public void BeginUpdate() => _cb.BeginUpdate();
         public void Clear() => _cb.Items.Clear();
         public void AddRange(IEnumerable<T> items)

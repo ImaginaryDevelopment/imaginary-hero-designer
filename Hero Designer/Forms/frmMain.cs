@@ -144,7 +144,7 @@ namespace Hero_Designer
                 this.FlipInterval = 10;
                 this.FlipStepDelay = 3;
                 this.FlipPowerID = -1;
-                this.FlipSlotState = Array.Empty<int>();
+                this.FlipSlotState = Array<int>.Empty();
                 this.dragStartPower = -1;
                 this.dragStartSlot = -1;
                 this.ddsa = new short[20];
@@ -793,8 +793,8 @@ namespace Hero_Designer
 
         void clearPower(PowerEntry[] tp, int pwrIdx)
         {
-            tp[pwrIdx].Slots = Array.Empty<SlotEntry>();
-            tp[pwrIdx].SubPowers = Array.Empty<PowerSubEntry>();
+            tp[pwrIdx].Slots = Array<SlotEntry>.Empty();
+            tp[pwrIdx].SubPowers = Array<PowerSubEntry>.Empty();
             tp[pwrIdx].IDXPower = -1;
             tp[pwrIdx].NIDPower = -1;
             tp[pwrIdx].NIDPowerset = -1;
@@ -4287,7 +4287,7 @@ namespace Hero_Designer
                 this.FlipSlotState[index] = -(this.FlipStepDelay * index);
             this.FlipGP = new PowerEntry(-1, null, false);
             this.FlipGP.Assign(MidsContext.Character.CurrentBuild.Powers[iPowerIndex]);
-            this.FlipGP.Slots = Array.Empty<SlotEntry>();
+            this.FlipGP.Slots = Array<SlotEntry>.Empty();
             if (this.tmrGfx == null)
                 this.tmrGfx = new System.Windows.Forms.Timer(this.Container);
             this.tmrGfx.Interval = this.FlipInterval;

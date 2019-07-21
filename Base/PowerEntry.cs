@@ -1,4 +1,5 @@
 
+using Base;
 using Base.Display;
 using System;
 using System.Drawing;
@@ -107,7 +108,7 @@ public class PowerEntry : ICloneable
     public void ClearInvisibleSlots()
     {
         if (this.SlotCount > 0 && (this.Power == null && !this.Chosen || this.Power != null && !this.Power.Slottable))
-            this.Slots = Array.Empty<SlotEntry>();
+            this.Slots = Array<SlotEntry>.Empty();
         else if (this.SlotCount > 6)
             this.Slots = this.Slots.Take(6).ToArray();
     }

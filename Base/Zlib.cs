@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Linq;
 using System.Text;
+using Base;
 
 public class Zlib
 {
@@ -51,9 +52,9 @@ public class Zlib
                 return array;
             default:
                 MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + num1 + ".", "Compression Error");
-                return Array.Empty<byte>();
+                return Array<byte>.Empty();
         }
-        return Array.Empty<byte>();
+        return Array<byte>.Empty();
     }
 
     static bool is64BitProcess = (IntPtr.Size == 8);
@@ -88,7 +89,7 @@ public class Zlib
             return array;
         }
         else
-            return Array.Empty<byte>();
+            return Array<byte>.Empty();
     }
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {

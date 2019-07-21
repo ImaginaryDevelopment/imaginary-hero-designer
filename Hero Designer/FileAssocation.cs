@@ -158,7 +158,14 @@ namespace Hero_Designer
             shell.Close();
 
             currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
-            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ??
+#if NET40
+                currentUser.CreateSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree))
+#else
+                currentUser.CreateSubKey("UserChoice", true))
+#endif
+
+
             {
                 uc.SetValue("Progid", keyName, RegistryValueKind.String);
             }

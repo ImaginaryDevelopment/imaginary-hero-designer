@@ -1093,7 +1093,7 @@ namespace Base.Data_Classes
                         }
                     }
                     if (power.Power == null || !power.Power.Slottable)
-                        power.Slots = Array.Empty<SlotEntry>();
+                        power.Slots = Array<SlotEntry>.Empty();
                     else if (power.Slots.Length == 0)
                     {
                         power.Slots = new[]{

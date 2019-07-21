@@ -1,3 +1,4 @@
+using Base;
 using Base.Master_Classes;
 using System;
 using System.Collections.Generic;
@@ -111,7 +112,7 @@ public static class MidsCharacterFileFormat
       bool includeAltEnh,
       bool @break)
     {
-        byte[] numArray = Array.Empty<byte>();
+        byte[] numArray = Array<byte>.Empty();
         string str;
         if (!MxDBuildSaveBuffer(ref numArray, includeAltEnh))
         {

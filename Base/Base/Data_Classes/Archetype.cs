@@ -93,10 +93,10 @@ namespace Base.Data_Classes
             this.PrimaryGroup = string.Empty;
             this.ClassName = string.Empty;
             this.PerceptionCap = 1153f;
-            this.Ancillary = Array.Empty<int>();
-            this.Secondary = Array.Empty<int>();
-            this.Primary = Array.Empty<int>();
-            this.Origin = Array.Empty<string>();
+            this.Ancillary = Array<int>.Empty();
+            this.Secondary = Array<int>.Empty();
+            this.Primary = Array<int>.Empty();
+            this.Origin = Array<string>.Empty();
             this.RecoveryCap = 5f;
             this.RegenCap = 20f;
             this.DamageCap = 4f;
