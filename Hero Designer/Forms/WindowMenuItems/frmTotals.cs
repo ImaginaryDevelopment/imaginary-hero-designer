@@ -506,15 +506,15 @@ namespace Hero_Designer
                     lengthDisp = " ft";
                     break;
                 case Enums.eSpeedMeasure.MetersPerSecond:
-                    rateDisp = " M/Sec";
+                    rateDisp = " m/s";
                     lengthDisp = " m";
                     break;
                 case Enums.eSpeedMeasure.MilesPerHour:
-                    rateDisp = " MPH";
+                    rateDisp = " mph";
                     lengthDisp = " ft";
                     break;
                 case Enums.eSpeedMeasure.KilometersPerHour:
-                    rateDisp = " KPH";
+                    rateDisp = " km/h";
                     lengthDisp = " m";
                     break;
             }
@@ -540,14 +540,14 @@ namespace Hero_Designer
             void AddGrphMovement(string title, Func<Enums.eSpeedMeasure,bool,float> dispStatsF,string tip) =>
                 this.graphMovement.AddItem(title + Strings.Format(dispStatsF(speedFormat, false), "##0.#") + rateDisp, dispStatsF(Enums.eSpeedMeasure.FeetPerSecond, false), dispStatsF(Enums.eSpeedMeasure.FeetPerSecond, true), tip);
 
-            //this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip8);
-            //this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), jumpTip);
-            //this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + lengthDisp, displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), jmpHtTip);
-            //this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, true), fltTip);
-
             AddGrphMovement("Run:|", displayStats.MovementRunSpeed, iTip8);
             AddGrphMovement("Jump:|", displayStats.MovementJumpSpeed, jumpTip);
-            AddGrphMovement("Jump Height:|", (x,_) => displayStats.MovementJumpHeight(x), jmpHtTip);
+            //this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip8);
+            //this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), jumpTip);
+            this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + lengthDisp, displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), jmpHtTip);
+            //this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, true), fltTip);
+
+            //AddGrphMovement("Jump Height:|", (x,_) => displayStats.MovementJumpHeight(x), jmpHtTip);
             AddGrphMovement("Fly:|", displayStats.MovementFlySpeed, fltTip);
 
             this.graphMovement.ForcedMax = displayStats.Speed(200f, Enums.eSpeedMeasure.FeetPerSecond);
