@@ -215,7 +215,9 @@ namespace Hero_Designer
                 if (!this.IsInDesignMode() && MidsContext.Config.CheckForUpdates)
                 {
                     clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); // "https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    (chkResult, chkResultFailMsg) = clsXmlUpdate.UpdateCheck();
+                    var x =clsXmlUpdate.UpdateCheck();
+                    chkResult = x.response;
+                    chkResultFailMsg = x.msg;
                 }
                 if (!this.IsInDesignMode() && MidsContext.Config.FreshInstall)
                 {
@@ -2845,14 +2847,15 @@ namespace Hero_Designer
                 if (this.ddsa[0] == (short)0)
                 {
                     var canOverride = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level;
-                    var (result, remember) = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                    this.ddsa[0] = (short)result;
+
+                    var x = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
+                    this.ddsa[0] = (short)x.result;
                     if (canOverride)
                     {
                         if (this.ddsa[0] == 2)
                             this.ddsa[0] = 3;
                     }
-                    if (remember == true)
+                    if (x.remember == true)
                         MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
                 }
                 if (this.ddsa[0] == 1)
@@ -2903,9 +2906,9 @@ namespace Hero_Designer
             {
                 if (this.ddsa[1] == (short)0)
                 {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
-                    this.ddsa[1] = (short)result;
-                    if (remember == true)
+                    var x = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
+                    this.ddsa[1] = (short)x.result;
+                    if (x.remember == true)
                         MidsContext.Config.DragDropScenarioAction[1] = this.ddsa[1];
                 }
                 if (this.ddsa[1] == 1)
@@ -3185,9 +3188,9 @@ namespace Hero_Designer
                     {
                         if (this.ddsa[12] == 0)
                         {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
-                            this.ddsa[12] = (short)result;
-                            if (remember == true)
+                            var x = frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
+                            this.ddsa[12] = (short)x.result;
+                            if (x.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
                         }
                         if (this.ddsa[12] == 1)
@@ -3204,9 +3207,9 @@ namespace Hero_Designer
                     {
                         if (this.ddsa[11] == 0)
                         {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
-                            this.ddsa[11] = (short)result;
-                            if (remember == true)
+                            var x = frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
+                            this.ddsa[11] = (short)x.result;
+                            if (x.remember == true)
                                 MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
                         }
                         if (this.ddsa[11] == 1)
@@ -3221,9 +3224,9 @@ namespace Hero_Designer
                 {
                     if (mode < 2 & this.ddsa[6] == 0)
                     {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[6] = (short)result;
-                        if (remember == true)
+                        var x = frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[6] = (short)x.result;
+                        if (x.remember == true)
                             MidsContext.Config.DragDropScenarioAction[6] = this.ddsa[6];
                     }
                     num6 = 6;
@@ -3232,9 +3235,9 @@ namespace Hero_Designer
                 {
                     if (mode < 2 & this.ddsa[3] == 0)
                     {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[3] = (short)result;
-                        if (remember == true)
+                        var x = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[3] = (short)x.result;
+                        if (x.remember == true)
                             MidsContext.Config.DragDropScenarioAction[3] = this.ddsa[3];
                     }
                     num6 = 3;
@@ -3243,9 +3246,9 @@ namespace Hero_Designer
                 {
                     if (this.ddsa[9] == 0)
                     {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[9] = (short)result;
-                        if (remember == true)
+                        var x = frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                        this.ddsa[9] = (short)x.result;
+                        if (x.remember == true)
                             MidsContext.Config.DragDropScenarioAction[9] = this.ddsa[9];
                     }
                     num6 = 9;
@@ -3321,23 +3324,23 @@ namespace Hero_Designer
                                     {
                                         if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[2] = (short)result;
-                                            if (remember == true)
+                                            var x = frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[2] = (short)x.result;
+                                            if (x.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[2] = this.ddsa[2];
                                         }
                                         else if (mode == 0 & index3 == 1 & this.ddsa[5] == (short)0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[5] = (short)result;
-                                            if (remember == true)
+                                            var x = frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[5] = (short)x.result;
+                                            if (x.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[5] = this.ddsa[5];
                                         }
                                         else if (mode == 2 & this.ddsa[8] == (short)0)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[8] = (short)result;
-                                            if (remember == true)
+                                            var x = frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                            this.ddsa[8] = (short)x.result;
+                                            if (x.remember == true)
                                                 MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
                                         }
                                         if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
@@ -4227,9 +4230,9 @@ namespace Hero_Designer
             {
                 if (this.ddsa[13] == (short)0)
                 {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[13] = (short)result;
-                    if (remember == true)
+                    var x = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
+                    this.ddsa[13] = (short)x.result;
+                    if (x.remember == true)
                         MidsContext.Config.DragDropScenarioAction[13] = this.ddsa[13];
                 }
                 if (this.ddsa[13] == (short)1)
@@ -4239,9 +4242,9 @@ namespace Hero_Designer
             {
                 if (this.ddsa[14] == (short)0)
                 {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[14] = (short)result;
-                    if (remember == true)
+                    var x = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
+                    this.ddsa[14] = (short)x.result;
+                    if (x.remember == true)
                         MidsContext.Config.DragDropScenarioAction[14] = this.ddsa[14];
                 }
                 if (this.ddsa[14] == (short)1)
@@ -4868,7 +4871,8 @@ namespace Hero_Designer
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
             clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
-            var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
+            var x = clsXmlUpdate.UpdateCheck();
+            var eCheckResponse = x.response;
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
                 MessageBox.Show("No Updates.", "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -4883,9 +4887,9 @@ namespace Hero_Designer
             }
             if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                if (!msg.IsNullOrWhiteSpace())
+                if (!x.msg.IsNullOrWhiteSpace())
                 {
-                    frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
+                    frmLoading.ShowLinkDialog("Check failed", $"{x.msg}, click here to open site in browser", MidsContext.DownloadUrl);
                 }
                 else
                 {

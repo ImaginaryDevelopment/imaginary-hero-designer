@@ -610,7 +610,15 @@ public static class DatabaseAPI
         foreach (var path in new[] { dbPath, playerPath, otherPath }.Where(p => !Directory.Exists(p)))
             Directory.CreateDirectory(path);
         var metadataPath = Path.Combine(Path.GetDirectoryName(fn), "db_metadata" + Path.GetExtension(fn));
-        var (hasPrevious, prev) = ConfigData.LoadRawMhd<FHash[]>(serializer, metadataPath);
+
+        bool hasPrevious = false;
+        FHash[] prev = null;
+        var loaded = ConfigData.LoadRawMhd<FHash[]>(serializer, metadataPath);
+        if(loaded.success)
+        {
+            hasPrevious = true;
+            prev = loaded.value;
+        }
         foreach (var ps in archPowersets)
         {
             var at = Database.Classes.FirstOrDefault(cl => ps.nArchetype != -1 && cl.Idx == ps.nArchetype);

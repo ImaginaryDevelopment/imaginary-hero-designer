@@ -82,7 +82,12 @@ namespace Hero_Designer
         }
         const string readmeUrl = "https://raw.githubusercontent.com/ImaginaryDevelopment/imaginary-hero-designer/master/README.md";
 
-        public (eCheckResponse, string) UpdateCheck()
+        public struct UpdateCheckResponse
+        {
+            public eCheckResponse response;
+            public string msg;
+        }
+        public UpdateCheckResponse UpdateCheck()
         {
             string response = null;
             try
@@ -101,13 +106,13 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 var msg = $"Failed to download update information ({ex.Message}) from update :" + readmeUrl;
-                return (eCheckResponse.FailedWithMessage, msg);
+                return new UpdateCheckResponse { response = eCheckResponse.FailedWithMessage, msg = msg };
             }
 
             if (response.IsNullOrWhiteSpace())
             {
                 var msg = "Failed to reach update url: " + readmeUrl;
-                return (eCheckResponse.FailedWithMessage, msg);
+                return new UpdateCheckResponse { response = eCheckResponse.FailedWithMessage, msg = msg };
             }
             string remoteversion;
             try
@@ -117,7 +122,7 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 var msg = $"Failed parse text ({ex.Message}) from update url:" + readmeUrl;
-                return (eCheckResponse.FailedWithMessage, msg);
+                return new UpdateCheckResponse { response = eCheckResponse.FailedWithMessage, msg = msg };
             }
             Version availVer;
             try
@@ -127,19 +132,19 @@ namespace Hero_Designer
             catch (Exception ex)
             {
                 var msg = $"Failed parse version ('{remoteversion}',{ex.Message}) from update url:" + readmeUrl;
-                return (eCheckResponse.FailedWithMessage, msg);
+                return new UpdateCheckResponse { response = eCheckResponse.FailedWithMessage, msg = msg };
             }
             try
             {
                 var runningVer = typeof(frmMain).Assembly.GetName().Version;
                 // I don't trust that != isn't reference comparison for the version type
-                if (runningVer.CompareTo(availVer) < 0) return (eCheckResponse.Updates, $"Version {remoteversion}, installed is {runningVer.ToString()}");
-                return (eCheckResponse.NoUpdates, null);
+                if (runningVer.CompareTo(availVer) < 0) return new UpdateCheckResponse { response = eCheckResponse.Updates, msg = $"Version {remoteversion}, installed is {runningVer.ToString()}" };
+                return new UpdateCheckResponse { response = eCheckResponse.NoUpdates, msg = null};
             }
             catch (Exception ex)
             {
                 var msg = $"Failed compare versions ('{remoteversion}',{ex.Message}) from update url: {readmeUrl}";
-                return (eCheckResponse.FailedWithMessage, msg);
+                return new UpdateCheckResponse { response = eCheckResponse.FailedWithMessage, msg = msg };
             }
         }
 

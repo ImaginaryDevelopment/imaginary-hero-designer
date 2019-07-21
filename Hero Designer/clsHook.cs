@@ -65,22 +65,22 @@ namespace Hero_Designer
             var num = MidsContext.Character.Level + 1;
             if (num > 50) num = 50;
 
-            var discord = (
-                Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
-                User: MidsContext.Config.DNickName, Channel: MidsContext.Config.DChannel);
-            var mrb = (
-                Level: Conversions.ToString(num), 
-                Archetype: MidsContext.Character.Archetype.DisplayName, 
-                PriPowerSet: MidsContext.Character.Powersets[0].DisplayName, 
-                SecPowerSet: MidsContext.Character.Powersets[1].DisplayName,
-                GlobRecharge: Strings.Format((float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
-                EndRecovery: Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)",
-                //HPRegen: Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
-                //TotalDamageBuff: Strings.Format(displayStats.BuffDamage(false) - 100f, "##0.#") + "%",
-                TotalEndUse: Strings.Format(displayStats.EnduranceUsage, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s",
-                //TotalToHit: Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
-                ToonName: MidsContext.Character.Name,
-                Datalink: MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true));
+            var discordServer = MidsContext.Config.DSelServer.Replace(" (Default)", "");
+            var mrb = new
+            {
+                Level = Conversions.ToString(num),
+                Archetype = MidsContext.Character.Archetype.DisplayName,
+                PriPowerSet = MidsContext.Character.Powersets[0].DisplayName,
+                SecPowerSet = MidsContext.Character.Powersets[1].DisplayName,
+                GlobRecharge = Strings.Format((float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
+                EndRecovery = Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)",
+                //HPRegen= Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
+                //TotalDamageBuff= Strings.Format(displayStats.BuffDamage(false) - 100f, "##0.#") + "%",
+                TotalEndUse = Strings.Format(displayStats.EnduranceUsage, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s",
+                //TotalToHit= Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
+                ToonName = MidsContext.Character.Name,
+                Datalink = MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true)
+            };
                 var shrunkData = ShrinkTheDatalink(mrb.Datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
@@ -92,9 +92,9 @@ namespace Hero_Designer
             {
                 var json = JsonConvert.SerializeObject(new
                 {
-                    guild = discord.Server,
-                    channel = discord.Channel,
-                    nickname = discord.User,
+                    guild = discordServer,
+                    channel = MidsContext.Config.DChannel,
+                    nickname = MidsContext.Config.DNickName,
                     level = mrb.Level,
                     name = mrb.ToonName,
                     archetype = mrb.Archetype,

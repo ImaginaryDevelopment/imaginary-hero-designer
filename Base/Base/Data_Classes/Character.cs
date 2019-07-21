@@ -276,10 +276,15 @@ namespace Base.Data_Classes
                 this.Powersets[index + 1] = powersetByName3;
             }
         }
-        public IEnumerable<(int, string)> LoadPowersetsByName(IList<string> names)
+        public struct PowerSetByNameResult
+        {
+            public int index;
+            public string name;
+        }
+        public IEnumerable<PowerSetByNameResult> LoadPowersetsByName(IList<string> names)
         {
             this.Powersets = names.Select(n => string.IsNullOrEmpty(n) ? null : DatabaseAPI.GetPowersetByName(n)).ToArray();
-            return this.Powersets.Select((ps, i) => new { I = i, Ps = ps?.FullName, N = names[i] }).Where(x => !x.N.IsNullOrWhiteSpace() && x.Ps == null).Select(x => (x.I, x.N));
+            return this.Powersets.Select((ps, i) => new { I = i, Ps = ps?.FullName, N = names[i] }).Where(x => !x.N.IsNullOrWhiteSpace() && x.Ps == null).Select(x => new PowerSetByNameResult { index = x.I, name = x.N }) ;
         }
 
         public void Reset(Archetype iArchetype = null, int iOrigin = 0)

@@ -264,8 +264,8 @@ public static class MidsCharacterFileFormat
                             names.Add(iName);
                         }
                         var errors = MidsContext.Character.LoadPowersetsByName(names);
-                        foreach (var (i, n) in errors)
-                            MessageBox.Show($"Failed to load powerset by name:{n} at {i}", "Powerset load failure");
+                        foreach (var x in errors)
+                            MessageBox.Show($"Failed to load powerset by name:{x.name} at {x.index}", "Powerset load failure");
                         MidsContext.Character.CurrentBuild.LastPower = r.ReadInt32() - 1;
                         int powerCount = r.ReadInt32();
                         try

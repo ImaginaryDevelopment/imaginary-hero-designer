@@ -41,8 +41,13 @@ namespace Hero_Designer
             this.DialogResult = (DialogResult)(this.cmbAction.SelectedIndex + 2);
             this.Close();
         }
+        public struct ShowWithOptionsResult
+        {
+            public DialogResult result;
+            public bool? remember;
+        }
 
-        public static (DialogResult, bool? remember) ShowWithOptions(
+        public static ShowWithOptionsResult ShowWithOptions(
           bool AllowRemember,
           int DefaultOption,
           string descript,
@@ -60,7 +65,7 @@ namespace Hero_Designer
             else
                 frm.cmbAction.SelectedIndex = 0;
             var result = frm.ShowDialog();
-            return (result, frm.remember);
+            return new ShowWithOptionsResult { result = result, remember = frm.remember };
         }
     }
 }

@@ -521,11 +521,16 @@ public class ConfigData
         public int Length { get; set; }
         public int Hash { get; set; }
     }
-    public static (bool, T) LoadRawMhd<T>(ISerialize serializer, string fn)
+    public struct LoadRawResult<T>
+    {
+        public bool success;
+        public T value;
+    }
+    public static LoadRawResult<T> LoadRawMhd<T>(ISerialize serializer, string fn)
     {
         if (!File.Exists(fn))
-            return (false, default);
-        return (true, serializer.Deserialize<T>(File.ReadAllText(fn)));
+            return new LoadRawResult<T> { success = false, value = default };
+        return new LoadRawResult<T> { success = true, value = serializer.Deserialize<T>(File.ReadAllText(fn)) };
     }
     public static RawSaveResult SaveRawMhd(ISerialize serializer, object o, string fn, RawSaveResult lastSaveInfo)
     {
