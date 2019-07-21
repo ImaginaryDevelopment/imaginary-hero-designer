@@ -1,9 +1,11 @@
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 public interface ISerialize
@@ -60,6 +62,7 @@ public class ConfigData
     public string DNickName;
     public string DSelServer;
     public string DChannel;
+    public List<string> DServers;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;
@@ -91,7 +94,6 @@ public class ConfigData
     public ConfigData.FontSettings RtFont;
     public bool PrintInColour;
     int _printScheme;
-
     public bool PrintHistory;
     public bool SaveFolderChecked;
     public bool ShowSlotLevels;
@@ -459,7 +461,7 @@ public class ConfigData
             }
             if (Directory.Exists(this.DefaultSaveFolderOverride))
             {
-                if (MessageBox.Show("In order for Mids' Hero/Villain Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("In order for Mids' Reborn : Hero Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     this.LastFileName = string.Empty;
                     string defaultSaveFolder = this.DefaultSaveFolderOverride;

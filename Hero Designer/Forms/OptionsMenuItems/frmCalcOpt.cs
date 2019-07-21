@@ -4,11 +4,16 @@ using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Hero_Designer
 {
@@ -292,25 +297,15 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (dcExList.SelectedItem.ToString() == "Mids Reborn (Default)")
-            {
-                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
-                dcChannel.Text = @"builds";
-                dcChannel.ReadOnly = true;
-            }
-            else
-            {
-                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
-            }
-        }
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e) =>
+            MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
 
         void dcAdd_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(dcServerName.Text))
             {
                 dcExList.Items.Add(dcServerName.Text);
+                MidsContext.Config.DServers = dcExList.Items.Cast<string>().ToList();
             }
         }
 
@@ -319,8 +314,9 @@ namespace Hero_Designer
             if (MidsContext.Config.DSelServer == dcExList.SelectedItem.ToString() && !string.IsNullOrEmpty(dcExList.SelectedItem.ToString()))
             {
                 MidsContext.Config.DSelServer = "";
+                dcExList.Items.Remove(dcExList.SelectedItem);
+                MidsContext.Config.DServers = dcExList.Items.Cast<string>().ToList();
             }
-            dcExList.Items.Remove(dcExList.SelectedItem);
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
@@ -573,6 +569,7 @@ namespace Hero_Designer
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
             this.dcExList.SelectedItem = config.DSelServer;
+            this.dcExList.DataSource = config.DServers;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
@@ -758,6 +755,7 @@ namespace Hero_Designer
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;
+            config.DServers = dcExList.Items.Cast<string>().ToList();
             config.DesaturateInherent = this.chkColorInherent.Checked;
             config.ReapeatOnMiddleClick = this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;
