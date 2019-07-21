@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,9 @@ namespace Base
 {
     public static class Extensions
     {
+        public static Color ReadRGB(this BinaryReader reader)
+            => Color.FromArgb(reader.ReadByte(), reader.ReadByte(), reader.ReadByte());
+ 
         //public static T[] Append<T>(this T[] source, T item)
         //{
         //    var next = new T[source.Length + 1];

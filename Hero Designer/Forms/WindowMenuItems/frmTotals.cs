@@ -152,7 +152,7 @@ namespace Hero_Designer
             float height2 = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.tab0.Height - (double)height2) / 2.0), (float)this.tab0.Width, height2);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
             e.Graphics.DrawImage((Image)extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -186,7 +186,7 @@ namespace Hero_Designer
             float height = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.tab0.Height - (double)height) / 2.0), (float)this.tab0.Width, height);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
             e.Graphics.DrawImage((Image)extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -406,7 +406,7 @@ namespace Hero_Designer
             float height = bFont.GetHeight(e.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.tab0.Height - (double)height) / 2.0), (float)this.tab0.Width, height);
             Graphics graphics = extendedBitmap.Graphics;
-            clsDrawX.DrawOutlineText(iString, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
+            clsDrawX.DrawOutlineText(iString, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
             e.Graphics.DrawImage((Image)extendedBitmap.Bitmap, 0, 0);
         }
 

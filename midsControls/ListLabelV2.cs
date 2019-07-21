@@ -57,7 +57,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x060001D4 RID: 468 RVA: 0x000113CC File Offset: 0x0000F5CC
         public void UpdateTextColors(ListLabelV2.LLItemState State, Color color)
         {
             if (!(State < LLItemState.Enabled | State > LLItemState.Heading))
@@ -72,13 +71,9 @@ namespace midsControls
             get
             {
                 if (this.Item.Index < 0 | this.Item.Index > checked(this.Items.Length - 1))
-                {
                     return new ListLabelItemV2();
-                }
                 else
-                {
                     return this.Items[this.Item.Index];
-                }
             }
             set
             {
@@ -90,9 +85,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000065 RID: 101
-        // (get) Token: 0x060001D7 RID: 471 RVA: 0x000114C4 File Offset: 0x0000F6C4
-        // (set) Token: 0x060001D8 RID: 472 RVA: 0x000114DC File Offset: 0x0000F6DC
         public override Color BackColor
         {
             get
@@ -119,15 +111,9 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000067 RID: 103
-        // (get) Token: 0x060001DB RID: 475 RVA: 0x0001151C File Offset: 0x0000F71C
-        // (set) Token: 0x060001DC RID: 476 RVA: 0x00011534 File Offset: 0x0000F734
         public int PaddingX
         {
-            get
-            {
-                return this.xPadding;
-            }
+            get => this.xPadding;
             set
             {
                 if (value >= 0 & checked(value * 2 < base.Width - 5))
@@ -138,15 +124,9 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000068 RID: 104
-        // (get) Token: 0x060001DD RID: 477 RVA: 0x00011570 File Offset: 0x0000F770
-        // (set) Token: 0x060001DE RID: 478 RVA: 0x00011588 File Offset: 0x0000F788
         public int PaddingY
         {
-            get
-            {
-                return this.yPadding;
-            }
+            get => this.yPadding;
             set
             {
                 if (value >= 0 & (double)value < (double)base.Height / 3.0)
@@ -158,15 +138,9 @@ namespace midsControls
             }
         }
 
-        // Token: 0x17000069 RID: 105
-        // (get) Token: 0x060001DF RID: 479 RVA: 0x000115D4 File Offset: 0x0000F7D4
-        // (set) Token: 0x060001E0 RID: 480 RVA: 0x000115EC File Offset: 0x0000F7EC
         public bool HighVis
         {
-            get
-            {
-                return this.TextOutline;
-            }
+            get => this.TextOutline;
             set
             {
                 this.TextOutline = value;
@@ -174,25 +148,11 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700006A RID: 106
-        // (get) Token: 0x060001E1 RID: 481 RVA: 0x00011600 File Offset: 0x0000F800
-        public int HoverID
-        {
-            get
-            {
-                return this.HoverIndex;
-            }
-        }
+        public int HoverID => this.HoverIndex;
 
-        // Token: 0x1700006B RID: 107
-        // (get) Token: 0x060001E2 RID: 482 RVA: 0x00011618 File Offset: 0x0000F818
-        // (set) Token: 0x060001E3 RID: 483 RVA: 0x00011630 File Offset: 0x0000F830
         public bool SuspendRedraw
         {
-            get
-            {
-                return this.DisableRedraw;
-            }
+            get => this.DisableRedraw;
             set
             {
                 this.DisableRedraw = value;
@@ -211,9 +171,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700006C RID: 108
-        // (get) Token: 0x060001E4 RID: 484 RVA: 0x00011680 File Offset: 0x0000F880
-        // (set) Token: 0x060001E5 RID: 485 RVA: 0x00011698 File Offset: 0x0000F898
         public bool Scrollable
         {
             get
@@ -227,15 +184,9 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700006D RID: 109
-        // (get) Token: 0x060001E6 RID: 486 RVA: 0x000116AC File Offset: 0x0000F8AC
-        // (set) Token: 0x060001E7 RID: 487 RVA: 0x000116C4 File Offset: 0x0000F8C4
         public bool Expandable
         {
-            get
-            {
-                return this.canExpand;
-            }
+            get => this.canExpand;
             set
             {
                 this.canExpand = value;
@@ -243,15 +194,9 @@ namespace midsControls
             }
         }
 
-        // Token: 0x1700006E RID: 110
-        // (get) Token: 0x060001E8 RID: 488 RVA: 0x000116D8 File Offset: 0x0000F8D8
-        // (set) Token: 0x060001E9 RID: 489 RVA: 0x000116F0 File Offset: 0x0000F8F0
         public Size SizeNormal
         {
-            get
-            {
-                return this.szNormal;
-            }
+            get => this.szNormal;
             set
             {
                 this.szNormal = value;
@@ -383,7 +328,7 @@ namespace midsControls
 
         // Token: 0x060001F6 RID: 502 RVA: 0x000118C8 File Offset: 0x0000FAC8
         [DebuggerStepThrough]
-        private void InitializeComponent()
+        void InitializeComponent()
         {
             base.SuspendLayout();
             base.AutoScaleMode = AutoScaleMode.Inherit;
@@ -395,14 +340,14 @@ namespace midsControls
         }
 
         // Token: 0x060001F7 RID: 503 RVA: 0x0001191B File Offset: 0x0000FB1B
-        private void ListLabelV2_FontChanged(object sender, EventArgs e)
+        void ListLabelV2_FontChanged(object sender, EventArgs e)
         {
             this.Recalculate(false);
             this.Draw();
         }
 
         // Token: 0x060001F8 RID: 504 RVA: 0x0001192D File Offset: 0x0000FB2D
-        private void ListLabelV2_Load(object sender, EventArgs e)
+        void ListLabelV2_Load(object sender, EventArgs e)
         {
             this.szNormal = base.Size;
             this.DisableRedraw = true;
@@ -413,7 +358,7 @@ namespace midsControls
         }
 
         // Token: 0x060001F9 RID: 505 RVA: 0x00011960 File Offset: 0x0000FB60
-        private void FillDefaultItems()
+        void FillDefaultItems()
         {
             this.ClearItems();
             this.AddItem(new ListLabelV2.ListLabelItemV2("Header Item", ListLabelV2.LLItemState.Heading, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center));
@@ -463,16 +408,14 @@ namespace midsControls
             this.HoverIndex = -1;
         }
 
-        // Token: 0x060001FC RID: 508 RVA: 0x00011C88 File Offset: 0x0000FE88
-        private void SetLineHeight()
+        void SetLineHeight()
         {
             Font font = new Font(this.Font, this.Font.Style);
             this.LineHeight = checked((int)Math.Round((double)(unchecked(font.GetHeight() + (float)(checked(this.yPadding * 2))))));
             this.VisibleLineCount = this.GetVisibleLineCount();
         }
 
-        // Token: 0x060001FD RID: 509 RVA: 0x00011CD8 File Offset: 0x0000FED8
-        private void Recalculate(bool Expanded = false)
+        void Recalculate(bool Expanded = false)
         {
             checked
             {
@@ -515,8 +458,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x060001FE RID: 510 RVA: 0x00011E68 File Offset: 0x00010068
-        private void RecalcLines(Rectangle bRect)
+        void RecalcLines(Rectangle bRect)
         {
             this.TextArea = bRect;
             this.SetLineHeight();
@@ -533,8 +475,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x060001FF RID: 511 RVA: 0x00011EC0 File Offset: 0x000100C0
-        private void WrapString(int Index)
+        void WrapString(int Index)
         {
             checked
             {
@@ -594,8 +535,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000200 RID: 512 RVA: 0x00012138 File Offset: 0x00010338
-        private void InitBuffer()
+        void InitBuffer()
         {
             if (!this.DisableRedraw)
             {
@@ -622,8 +562,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000201 RID: 513 RVA: 0x00012264 File Offset: 0x00010464
-        private int GetRealTotalHeight()
+        int GetRealTotalHeight()
         {
             int num = 0;
             int num2 = 0;
@@ -638,8 +577,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000202 RID: 514 RVA: 0x000122B0 File Offset: 0x000104B0
-        private void Draw()
+        void Draw()
         {
             checked
             {
@@ -674,7 +612,6 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000203 RID: 515 RVA: 0x000123AC File Offset: 0x000105AC
         protected void DrawItem(int Index)
         {
             checked
@@ -778,8 +715,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000204 RID: 516 RVA: 0x00012890 File Offset: 0x00010A90
-        private int GetVisibleLineCount()
+        int GetVisibleLineCount()
         {
             int result;
             if (!this.canScroll)
@@ -798,8 +734,7 @@ namespace midsControls
             return result;
         }
 
-        // Token: 0x06000205 RID: 517 RVA: 0x000128F0 File Offset: 0x00010AF0
-        private int GetTotalLineCount()
+        int GetTotalLineCount()
         {
             int num = 0;
             int num2 = 0;
@@ -814,48 +749,42 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000206 RID: 518 RVA: 0x0001293C File Offset: 0x00010B3C
-        private int GetScrollSteps()
+        int GetScrollSteps()
         {
             checked
             {
-                int result;
                 if (!this.canScroll)
                 {
                     this.ScrollSteps = 0;
-                    result = 0;
+                    return 0;
                 }
-                else
+
+                int num = 0;
+                int wrapCount = 0;
+                int num3 = 0;
+                int num4 = this.Items.Length - 1;
+                for (int i = num3; i <= num4; i++)
                 {
-                    int num = 0;
-                    int num2 = 0;
-                    int num3 = 0;
-                    int num4 = this.Items.Length - 1;
-                    for (int i = num3; i <= num4; i++)
+                    num += this.Items[i].LineCount;
+                    if (num > this.VisibleLineCount)
                     {
-                        num += this.Items[i].LineCount;
-                        if (num > this.VisibleLineCount)
-                        {
-                            num2++;
-                        }
+                        wrapCount++;
                     }
-                    if (num2 > 0)
-                    {
-                        num2++;
-                    }
-                    this.ScrollSteps = num2;
-                    if (this.ScrollSteps <= 1)
-                    {
-                        this.ScrollSteps = 0;
-                    }
-                    result = this.ScrollSteps;
                 }
-                return result;
+                if (wrapCount > 0)
+                {
+                    wrapCount++;
+                }
+                this.ScrollSteps = wrapCount;
+                if (this.ScrollSteps <= 1)
+                {
+                    this.ScrollSteps = 0;
+                }
+                return this.ScrollSteps;
             }
         }
 
-        // Token: 0x06000207 RID: 519 RVA: 0x000129FC File Offset: 0x00010BFC
-        private void DrawScrollBar()
+        void DrawScrollBar()
         {
             if (!(this.ScrollWidth < 1 | !this.canScroll | this.ScrollSteps < 1))
             {
@@ -899,8 +828,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000208 RID: 520 RVA: 0x00012E84 File Offset: 0x00011084
-        private void DrawExpandButton()
+        void DrawExpandButton()
         {
             if (!(!this.canExpand | (!this.Expanded & this.ScrollSteps < 1)))
             {
@@ -938,8 +866,7 @@ namespace midsControls
             }
         }
 
-        // Token: 0x06000209 RID: 521 RVA: 0x000131CC File Offset: 0x000113CC
-        private int GetItemAtY(int Y)
+        int GetItemAtY(int Y)
         {
             int num = 0;
             checked
@@ -968,7 +895,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020A RID: 522 RVA: 0x00013248 File Offset: 0x00011448
-        private ListLabelV2.eMouseTarget GetMouseTarget(int X, int Y)
+        ListLabelV2.eMouseTarget GetMouseTarget(int X, int Y)
         {
             checked
             {
@@ -1016,7 +943,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020B RID: 523 RVA: 0x000133FC File Offset: 0x000115FC
-        private void ListLabelV2_MouseDown(object sender, MouseEventArgs e)
+        void ListLabelV2_MouseDown(object sender, MouseEventArgs e)
         {
             checked
             {
@@ -1131,7 +1058,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020C RID: 524 RVA: 0x000137F0 File Offset: 0x000119F0
-        private void Expand(bool State)
+        void Expand(bool State)
         {
             if (State)
             {
@@ -1152,7 +1079,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020D RID: 525 RVA: 0x00013878 File Offset: 0x00011A78
-        private void RecomputeExpand()
+        void RecomputeExpand()
         {
             if (this.Expanded)
             {
@@ -1172,7 +1099,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020E RID: 526 RVA: 0x000138F0 File Offset: 0x00011AF0
-        private void ListLabelV2_MouseLeave(object sender, EventArgs e)
+        void ListLabelV2_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.LastMouseMovetarget = ListLabelV2.eMouseTarget.None;
@@ -1182,7 +1109,7 @@ namespace midsControls
         }
 
         // Token: 0x0600020F RID: 527 RVA: 0x00013938 File Offset: 0x00011B38
-        private void ListLabelV2_MouseMove(object sender, MouseEventArgs e)
+        void ListLabelV2_MouseMove(object sender, MouseEventArgs e)
         {
             Cursor cursor = System.Windows.Forms.Cursors.Default;
             ListLabelV2.eMouseTarget mouseTarget = this.GetMouseTarget(e.X, e.Y);
@@ -1315,7 +1242,7 @@ namespace midsControls
         }
 
         // Token: 0x06000210 RID: 528 RVA: 0x00013D54 File Offset: 0x00011F54
-        private void ListLabelV2_MouseUp(object sender, MouseEventArgs e)
+        void ListLabelV2_MouseUp(object sender, MouseEventArgs e)
         {
             this.DragMode = false;
             if (this.Cursor == System.Windows.Forms.Cursors.SizeNS)
@@ -1325,7 +1252,7 @@ namespace midsControls
         }
 
         // Token: 0x06000211 RID: 529 RVA: 0x00013D90 File Offset: 0x00011F90
-        private void ListLabelV2_Paint(object sender, PaintEventArgs e)
+        void ListLabelV2_Paint(object sender, PaintEventArgs e)
         {
             if (this.bxBuffer == null)
             {
@@ -1338,7 +1265,7 @@ namespace midsControls
         }
 
         // Token: 0x06000212 RID: 530 RVA: 0x00013DEE File Offset: 0x00011FEE
-        private void ListLabelV2_Resize(object sender, EventArgs e)
+        void ListLabelV2_Resize(object sender, EventArgs e)
         {
             this.ScrollOffset = 0;
             this.Recalculate(false);
@@ -1413,10 +1340,10 @@ namespace midsControls
         }
 
         // Token: 0x040000D7 RID: 215
-        private IContainer components;
+        IContainer components;
 
         // Token: 0x040000D8 RID: 216
-        private ExtendedBitmap bxBuffer;
+        ExtendedBitmap bxBuffer;
 
         // Token: 0x040000D9 RID: 217
         public ListLabelV2.ListLabelItemV2[] Items;
@@ -1494,10 +1421,10 @@ namespace midsControls
         protected bool DragMode;
 
         // Token: 0x040000F2 RID: 242
-        private ListLabelV2.eMouseTarget LastMouseMovetarget;
+        ListLabelV2.eMouseTarget LastMouseMovetarget;
 
         // Token: 0x040000F3 RID: 243
-        private int VisibleLineCount;
+        int VisibleLineCount;
 
         // Token: 0x0200001F RID: 31
         public enum LLItemState
@@ -1544,7 +1471,7 @@ namespace midsControls
         }
 
         // Token: 0x02000022 RID: 34
-        private enum eMouseTarget
+        enum eMouseTarget
         {
             // Token: 0x0400010A RID: 266
             None,

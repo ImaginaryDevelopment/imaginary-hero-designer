@@ -17,6 +17,7 @@ namespace Hero_Designer
         public ListBoxT(ListBox lb) => this._lb = lb;
 
     }
+
     public class ComboBoxT<T>
     {
         readonly ComboBox _cb;
@@ -67,9 +68,7 @@ namespace Hero_Designer
         // this could be chained indefinitely so... be careful with it
         // defer the execution until later
         public static Action WithCatchMessage(this Action f, string titling, string captionOpt = null)
-        {
-            return () => ExecuteWithCatchMessage(f, titling, captionOpt);
-        }
+            => () => ExecuteWithCatchMessage(f, titling, captionOpt);
 
         // does not handle the possibility this is a child control, and a parent is in design mode
         public static bool IsInDesignMode(this Control c) => LicenseManager.UsageMode == LicenseUsageMode.Designtime || c?.Site?.DesignMode == true;

@@ -1204,8 +1204,8 @@ namespace Hero_Designer
             this._selfBuffs.Reset();
             this._selfEnhance.Reset();
             this.ModifyEffects = new Dictionary<string, float>();
-            this._buffedPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
-            this._mathPower = new IPower[this.CurrentBuild.Powers.Count - 1 + 1];
+            this._buffedPower = new IPower[this.CurrentBuild.Powers.Count];
+            this._mathPower = new IPower[this.CurrentBuild.Powers.Count];
             this.GBPA_Pass0_InitializePowerArray();
             this.GenerateModifyEffectsArray();
             this.GenerateBuffData(ref this._selfEnhance, true);
