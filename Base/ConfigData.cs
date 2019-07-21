@@ -58,7 +58,8 @@ public class ConfigData
         }
     }
     public string DNickName;
-    public string DSelServer;
+    public List<string> DServers { get; set; } = new List<string>();
+    public string DSelServer { get; set; }
     public string DChannel;
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
@@ -487,7 +488,7 @@ public class ConfigData
     {
         try
         {
-            this.Save(serializer, Files.SelectConfigFileSave());
+            this.Save(serializer, Files.GetConfigFilename(false));
             this.SaveOverrides(serializer);
         }
         catch (Exception ex)
