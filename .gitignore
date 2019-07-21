@@ -228,3 +228,5 @@ Mids-Hero-Designer-master/
 HeroDesigner\.Installer\.Installed/
 
 safe/\.fake/
+
+\.ionide/symbolCache\.db
