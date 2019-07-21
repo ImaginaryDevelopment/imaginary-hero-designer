@@ -497,45 +497,59 @@ namespace Hero_Designer
             this.graphHP.Draw();
             this.graphMovement.Clear();
             Enums.eSpeedMeasure speedFormat = MidsContext.Config.SpeedFormat;
-            string str3 = " MilesPerHour";
-            string str4 = " m";
+            string rateDisp = " MPH";
+            string lengthDisp = " m";
             switch (speedFormat)
             {
                 case Enums.eSpeedMeasure.FeetPerSecond:
-                    str3 = " Ft/Sec";
-                    str4 = " ft";
+                    rateDisp = " Ft/Sec";
+                    lengthDisp = " ft";
                     break;
                 case Enums.eSpeedMeasure.MetersPerSecond:
-                    str3 = " M/Sec";
-                    str4 = " m";
+                    rateDisp = " M/Sec";
+                    lengthDisp = " m";
                     break;
                 case Enums.eSpeedMeasure.MilesPerHour:
-                    str3 = " MilesPerHour";
-                    str4 = " ft";
+                    rateDisp = " MPH";
+                    lengthDisp = " ft";
                     break;
                 case Enums.eSpeedMeasure.KilometersPerHour:
-                    str3 = " KilometersPerHour";
-                    str4 = " m";
+                    rateDisp = " KPH";
+                    lengthDisp = " m";
                     break;
             }
-            string str5 = "This has been capped at the maximum in-game speed.\r\nUncapped speed: ";
-            string iTip6 = "Base Flight Speed: " + Strings.Format(displayStats.Speed(31.5f, speedFormat), "##0.#") + str3 + ".";
-            string iTip7 = "Base Jump Speed: " + Strings.Format(displayStats.Speed(21f, speedFormat), "##0.#") + str3 + ".";
-            string str6 = "Base Jump Height: " + Strings.Format(displayStats.Distance(4f, speedFormat), "##0.#");
-            string iTip8 = "Base Run Speed: " + Strings.Format(displayStats.Speed(21f, speedFormat), "##0.#") + str3 + ".";
-            string iTip9 = !(speedFormat == Enums.eSpeedMeasure.FeetPerSecond | speedFormat == Enums.eSpeedMeasure.MilesPerHour) ? str6 + " m." : str6 + " ft.";
+            string formatSpeed(float iSpeed) => Strings.Format(displayStats.Speed(iSpeed, speedFormat), "##0.#") + rateDisp + ".";
+            string formatDistance(float iSpeed) => Strings.Format(displayStats.Distance(iSpeed, speedFormat), "##0.#");
+
+            string strCap = "This has been capped at the maximum in-game speed.\r\nUncapped speed: ";
+            string fltTip = "Base Flight Speed: " + formatSpeed(31.5f);
+            string jmpTip2 = "Base Jump Height: " + formatDistance(4f);
+            string iTip8 = "Base Run Speed: " + formatSpeed(21f);
+
             if (this.A_GT_B(displayStats.MovementFlySpeed(speedFormat, true), displayStats.MovementFlySpeed(speedFormat, false)))
-                iTip6 = iTip6 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.FlySpd, speedFormat), "##0.#") + str3 + ".";
-            else if ((double)displayStats.MovementFlySpeed(speedFormat, false) == 0.0)
-                iTip6 += "\r\nYou have no active flight powers.";
+                fltTip = fltTip + "\r\n" + strCap + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.FlySpd, speedFormat), "##0.#") + rateDisp + ".";
+            else if (displayStats.MovementFlySpeed(speedFormat, false) == 0.0)
+                fltTip += "\r\nYou have no active flight powers.";
+            string jumpTip = "Base Jump Speed: " + formatSpeed(21f);
             if (this.A_GT_B(displayStats.MovementJumpSpeed(speedFormat, true), displayStats.MovementJumpSpeed(speedFormat, false)))
-                iTip7 = iTip7 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.JumpSpd, speedFormat), "##0.#") + str3 + ".";
+                jumpTip = jumpTip + "\r\n" + strCap + formatSpeed(MidsContext.Character.Totals.JumpSpd);
             if (this.A_GT_B(displayStats.MovementRunSpeed(speedFormat, true), displayStats.MovementRunSpeed(speedFormat, false)))
-                iTip8 = iTip8 + "\r\n" + str5 + Strings.Format(displayStats.Speed(MidsContext.Character.Totals.RunSpd, speedFormat), "##0.#") + str3 + ".";
-            this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip8);
-            this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip7);
-            this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + str4, displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), iTip9);
-            this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + str3, displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip6);
+                iTip8 = iTip8 + "\r\n" + strCap + formatSpeed(MidsContext.Character.Totals.RunSpd);
+            string jmpHtTip = !(speedFormat == Enums.eSpeedMeasure.FeetPerSecond | speedFormat == Enums.eSpeedMeasure.MilesPerHour) ? jmpTip2 + " m." : jmpTip2 + " ft.";
+
+            void AddGrphMovement(string title, Func<Enums.eSpeedMeasure,bool,float> dispStatsF,string tip) =>
+                this.graphMovement.AddItem(title + Strings.Format(dispStatsF(speedFormat, false), "##0.#") + rateDisp, dispStatsF(Enums.eSpeedMeasure.FeetPerSecond, false), dispStatsF(Enums.eSpeedMeasure.FeetPerSecond, true), tip);
+
+            //this.graphMovement.AddItem("Run:|" + Strings.Format(displayStats.MovementRunSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementRunSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), iTip8);
+            //this.graphMovement.AddItem("Jump:|" + Strings.Format(displayStats.MovementJumpSpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementJumpSpeed(Enums.eSpeedMeasure.FeetPerSecond, true), jumpTip);
+            //this.graphMovement.AddItem("Jump Height:|" + Strings.Format(displayStats.MovementJumpHeight(speedFormat), "##0.#") + lengthDisp, displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), displayStats.MovementJumpHeight(Enums.eSpeedMeasure.FeetPerSecond), jmpHtTip);
+            //this.graphMovement.AddItem("Fly:|" + Strings.Format(displayStats.MovementFlySpeed(speedFormat, false), "##0.#") + rateDisp, displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, false), displayStats.MovementFlySpeed(Enums.eSpeedMeasure.FeetPerSecond, true), fltTip);
+
+            AddGrphMovement("Run:|", displayStats.MovementRunSpeed, iTip8);
+            AddGrphMovement("Jump:|", displayStats.MovementJumpSpeed, jumpTip);
+            AddGrphMovement("Jump Height:|", (x,_) => displayStats.MovementJumpHeight(x), jmpHtTip);
+            AddGrphMovement("Fly:|", displayStats.MovementFlySpeed, fltTip);
+
             this.graphMovement.ForcedMax = displayStats.Speed(200f, Enums.eSpeedMeasure.FeetPerSecond);
             this.graphMovement.Draw();
             this.graphToHit.Clear();
@@ -560,8 +574,8 @@ namespace Hero_Designer
                 str8 = "\r\n\r\nRecharge Speed Capped from " + Conversions.ToString(displayStats.BuffHaste(true)) + "% to " + Conversions.ToString(displayStats.BuffHaste(false)) + "%";
             this.graphHaste.AddItem("Haste:|" + this.PM(displayStats.BuffHaste(false) - 100f, "##0.##", "%"), displayStats.BuffHaste(false), displayStats.BuffHaste(true), "This effect alters the recharge speed of all your powers.\r\nThe higher the value, the faster the recharge.\r\nAs some powers can slow your recharge, this bar starts with your base recharge (100%) included." + str8);
             this.graphHaste.MarkerValue = 100f;
-            float num2 = displayStats.BuffHaste(true);
-            this.graphHaste.Max = (double)num2 <= 380.0 ? ((double)num2 <= 280.0 ? 300f : 400f) : 500f;
+            float haste = displayStats.BuffHaste(true);
+            this.graphHaste.Max = haste <= 380.0 ? (haste <= 280.0 ? 300f : 400f) : 500f;
             this.graphHaste.Draw();
             this.graphEndRdx.Clear();
             this.graphEndRdx.AddItem("EndRdx:|" + this.PM(displayStats.BuffEndRdx, "##0.#", "%"), displayStats.BuffEndRdx, displayStats.BuffEndRdx, "This effect is applied to powers in addition to endurance reduction enhancements.");
@@ -573,7 +587,7 @@ namespace Hero_Designer
             this.graphStealth.AddItem("Perception:|" + Strings.Format(displayStats.Perception(false), "###0") + " ft", displayStats.Perception(false), 0.0f, "This, minus a player's stealth radius, is the distance you can see it.");
             this.graphStealth.Max = this.graphStealth.GetMaxValue() * 1.01f;
             this.graphStealth.Draw();
-            string iTip10 = "This affects how critters prioritise you as a threat.\r\nLower values make you a less tempting target.\r\nThe " + MidsContext.Character.Archetype.DisplayName + " base Threat Level of " + Strings.Format((float)((double)MidsContext.Character.Archetype.BaseThreat * 100.0), "##0") + "% is included in this figure.";
+            string iTip10 = "This affects how critters prioritise you as a threat.\r\nLower values make you a less tempting target.\r\nThe " + MidsContext.Character.Archetype.DisplayName + " base Threat Level of " + Strings.Format((float)(MidsContext.Character.Archetype.BaseThreat * 100.0), "##0") + "% is included in this figure.";
             float nBase = displayStats.ThreatLevel + 200f;
             this.graphThreat.Clear();
             this.graphThreat.AddItem("Threat Level:|" + Strings.Format(displayStats.ThreatLevel, "##0") + "%", nBase, 0.0f, iTip10);
