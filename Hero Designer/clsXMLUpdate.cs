@@ -9,7 +9,10 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+#if NET20
+#else
 using System.Net.Http;
+#endif
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -84,8 +87,15 @@ namespace Hero_Designer
             string response = null;
             try
             {
+#if NET20
+                using(var client = new WebClient())
+                {
+                    response = client.DownloadString(readmeUrl);
+                }
+#else
                 using (var client = new HttpClient())
                     response = client.GetStringAsync(readmeUrl).Result;
+#endif
 
             }
             catch (Exception ex)
@@ -94,7 +104,7 @@ namespace Hero_Designer
                 return (eCheckResponse.FailedWithMessage, msg);
             }
 
-            if (string.IsNullOrWhiteSpace(response))
+            if (response.IsNullOrWhiteSpace())
             {
                 var msg = "Failed to reach update url: " + readmeUrl;
                 return (eCheckResponse.FailedWithMessage, msg);

@@ -61,7 +61,7 @@ namespace Hero_Designer
 
         public static void ShowLinkDialog(string title, string text, string url)
         {
-            if (string.IsNullOrWhiteSpace(url)) throw new ArgumentException("url value not found", nameof(url));
+            if (url.IsNullOrWhiteSpace()) throw new ArgumentException("url value not found", nameof(url));
             if (!url.StartsWith("http")) throw new ArgumentException("url must be http, for security purposes");
             // hosts file could still cause this to be a problem, but if they have access there, security is gone anyhow
             if (!char.IsLetter(url.After("://")[0])) throw new ArgumentException("url must be named, for security purposes");

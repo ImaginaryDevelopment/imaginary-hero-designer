@@ -298,7 +298,7 @@ namespace Hero_Designer
 
         void dcAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(dcServerName.Text))
+            if (!dcServerName.Text.IsNullOrWhiteSpace())
             {
                 dcExList.Items.Add(dcServerName.Text);
                 if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
@@ -317,7 +317,7 @@ namespace Hero_Designer
 
         void dcNickName_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(dcNickName.Text))
+            if (!dcNickName.Text.IsNullOrWhiteSpace())
             {
                 MidsContext.Config.DNickName = dcNickName.Text;
             }
@@ -325,7 +325,7 @@ namespace Hero_Designer
 
         void dcChannel_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(dcChannel.Text))
+            if (!dcChannel.Text.IsNullOrWhiteSpace())
             {
                 MidsContext.Config.DChannel = dcChannel.Text;
             }
@@ -564,9 +564,9 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
-            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
+            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !item.IsNullOrWhiteSpace() && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
                 this.dcExList.Items.Add(item);
-            if(!string.IsNullOrWhiteSpace(config.DSelServer))
+            if(!config.DSelServer.IsNullOrWhiteSpace())
             this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
@@ -745,7 +745,7 @@ namespace Hero_Designer
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;
             config.LoadLastFileOnStart = this.chkLoadLastFile.Checked;
-            if (!string.IsNullOrWhiteSpace(config.DefaultSaveFolderOverride) && config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
+            if (!config.DefaultSaveFolderOverride.IsNullOrWhiteSpace() && config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
             {
                 config.DefaultSaveFolderOverride = this.lblSaveFolder.Text;
                 this.myParent.DlgOpen.InitialDirectory = config.DefaultSaveFolderOverride;

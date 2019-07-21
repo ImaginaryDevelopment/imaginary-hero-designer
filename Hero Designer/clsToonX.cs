@@ -2205,7 +2205,7 @@ namespace Hero_Designer
             if (this.Origin > this.Archetype.Origin.Length - 1)
                 this.Origin = this.Archetype.Origin.Length - 1;
             string saveText = MidsCharacterFileFormat.MxDBuildSaveString(true, false);
-            if (string.IsNullOrWhiteSpace(saveText))
+            if (saveText.IsNullOrWhiteSpace())
             {
                 Interaction.MsgBox("Save failed - save function returned empty data.", MsgBoxStyle.Exclamation, "Error");
                 return false;

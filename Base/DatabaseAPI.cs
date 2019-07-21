@@ -618,7 +618,7 @@ public static class DatabaseAPI
             if (ps.FullName?.Length == 0 || ps.FullName?.Length > 100)
                 continue;
 
-            if (ps.FullName?.Contains(";") == true || string.IsNullOrWhiteSpace(ps.FullName))
+            if (ps.FullName?.Contains(";") == true || ps.FullName.IsNullOrWhiteSpace())
             {
                 Console.Error.WriteLine("hmmm:" + ps.DisplayName);
             }

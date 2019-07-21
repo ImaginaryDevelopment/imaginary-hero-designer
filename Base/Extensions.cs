@@ -5,7 +5,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+#if NET20
+#else
 using System.Threading.Tasks;
+#endif
 
 namespace Base
 {
@@ -118,8 +121,17 @@ namespace Base
             // filter on predicate
             .Where(x => predicate(x.value))
             .Select(x => x.index);
+#if NET20
+        public static bool IsNullOrWhiteSpace(this string x) =>
+                string.IsNullOrEmpty(x) || x.Trim().Length == 0;
+#endif
         // works just fine when x is null, extension methods aren't instance methods.
-        public static bool IsValueString(this string x) => !string.IsNullOrWhiteSpace(x);
+        public static bool IsValueString(this string x) =>
+            #if NET20
+                !x.IsNullOrWhiteSpace();
+            #else
+                !string.IsNullOrWhiteSpace(x);
+            #endif
 
         public static string After(this string x, string delimiter)
         {

@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+#if NET20
+#else
 using System.Linq;
+#endif
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -55,7 +58,7 @@ public class ConfigData
         set
         {
             var osDefault = OS.GetDefaultSaveFolder();
-            if (string.IsNullOrWhiteSpace(value)
+            if (value.IsNullOrWhiteSpace()
                 || Path.GetFullPath(value) == osDefault
                 || value == osDefault
                 || (osDefault != null && Path.GetFullPath(osDefault) == value))
@@ -426,7 +429,7 @@ public class ConfigData
     public void CreateDefaultSaveFolder()
     {
         // if there is a save folder override, but it does not exist, wipe it out
-        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && !Directory.Exists(this.DefaultSaveFolderOverride))
+        if (!this.DefaultSaveFolderOverride.IsNullOrWhiteSpace() && !Directory.Exists(this.DefaultSaveFolderOverride))
             this.DefaultSaveFolderOverride = null;
         var saveFolder = this.GetSaveFolder();
         if (Directory.Exists(saveFolder))
@@ -443,7 +446,7 @@ public class ConfigData
 
     void RelocateSaveFolder(bool manual)
     {
-        if (!string.IsNullOrWhiteSpace(this.DefaultSaveFolderOverride) && Directory.Exists(this.DefaultSaveFolderOverride) && OS.GetDefaultSaveFolder() != this.DefaultSaveFolderOverride & (!this.SaveFolderChecked | manual))
+        if (!this.DefaultSaveFolderOverride.IsNullOrWhiteSpace() && Directory.Exists(this.DefaultSaveFolderOverride) && OS.GetDefaultSaveFolder() != this.DefaultSaveFolderOverride & (!this.SaveFolderChecked | manual))
         {
             if (this.DefaultSaveFolderOverride.IndexOf(OS.GetMyDocumentsPath(), StringComparison.OrdinalIgnoreCase) > -1)
             {

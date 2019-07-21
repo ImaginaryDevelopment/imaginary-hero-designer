@@ -7,7 +7,11 @@ using System.Drawing.Text;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+#if NET20
+#else
 using System.Linq.Expressions;
+#endif
+
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
@@ -23,7 +27,7 @@ namespace Hero_Designer
 {
     public partial class frmMain : Form
     {
-        #region "fields"
+#region "fields"
 
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
@@ -91,7 +95,7 @@ namespace Hero_Designer
         int xCursorOffset;
         int yCursorOffset;
 
-        #endregion
+#endregion
 
         public int GetPrimaryBottom() => cbPrimary.Top + cbPrimary.Height;
 
@@ -223,7 +227,11 @@ namespace Hero_Designer
                     MidsContext.Config.CreateDefaultSaveFolder();
                     MidsContext.Config.FreshInstall = false;
                 }
-                string args = string.Join(" ", Environment.GetCommandLineArgs().Skip(1));
+                string args = string.Join(" ", Environment.GetCommandLineArgs().Skip(1)
+#if NET20
+                    .ToArray()
+#endif
+                    );
                 if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
                     MessageBox.Show("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1253,7 +1261,7 @@ namespace Hero_Designer
                     this.dlgSave.FileName = this.dlgSave.FileName.Substring(0, this.dlgSave.FileName.Length - 3) + this.dlgSave.DefaultExt;
                 this.dlgSave.InitialDirectory = this.LastFileName.Substring(0, this.LastFileName.LastIndexOf("\\", StringComparison.Ordinal));
             }
-            else if (!string.IsNullOrWhiteSpace(MidsContext.Character.Name))
+            else if (!MidsContext.Character.Name.IsNullOrWhiteSpace())
             {
                 if (MidsContext.Character.Archetype.ClassType == Enums.eClassType.VillainEpic)
                     this.dlgSave.FileName = MidsContext.Character.Name + " - Arachnos " + MidsContext.Character.Powersets[0].DisplayName.Replace(" Training", string.Empty).Replace("Arachnos ", string.Empty);
@@ -4628,17 +4636,17 @@ namespace Hero_Designer
             void ShowConfigError(string field)
                 => MessageBox.Show($"{field} must be filled out in configuration before discord exports will function", "Discord is not configured");
 
-            if (string.IsNullOrWhiteSpace(MidsContext.Config.DSelServer))
+            if (MidsContext.Config.DSelServer.IsNullOrWhiteSpace())
             {
                 ShowConfigError("Server");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(MidsContext.Config.DChannel))
+            if (MidsContext.Config.DChannel.IsNullOrWhiteSpace())
             {
                 ShowConfigError("Channel");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(MidsContext.Config.DNickName))
+            if (MidsContext.Config.DNickName.IsNullOrWhiteSpace())
             {
                 ShowConfigError("NickName");
                 return;
@@ -4875,7 +4883,7 @@ namespace Hero_Designer
             }
             if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                if (!string.IsNullOrWhiteSpace(msg))
+                if (!msg.IsNullOrWhiteSpace())
                 {
                     frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
                 }

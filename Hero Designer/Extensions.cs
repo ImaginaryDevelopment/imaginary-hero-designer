@@ -68,7 +68,7 @@ namespace Hero_Designer
             {
                 while (ex.InnerException != null && ex.InnerException.Message != null)
                     ex = ex.InnerException;
-                MessageBox.Show(string.IsNullOrWhiteSpace(titlingOpt) ? ex.Message : (titlingOpt + ":" + ex.Message), captionOpt ?? ex.GetType().Name);
+                MessageBox.Show(titlingOpt.IsNullOrWhiteSpace() ? ex.Message : (titlingOpt + ":" + ex.Message), captionOpt ?? ex.GetType().Name);
             }
         }
 

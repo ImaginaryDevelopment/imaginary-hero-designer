@@ -1,4 +1,38 @@
 {
+  "DamageMath": {
+    "Calculate": 1
+  },
+  "Inc": {
+    "PvE": true
+  },
+  "I9": {
+    "DefaultIOLevel": 49,
+    "DisplayIOLevels": true,
+    "CalculateEnahncementFX": true,
+    "CalculateSetBonusFX": true,
+    "PrintIOLevels": true,
+    "ExportDataChunk": true,
+    "ExportCompress": true
+  },
+  "RtFont": {
+    "RTFBase": 20,
+    "ColorBackgroundHero": "0, 0, 32",
+    "ColorBackgroundVillain": "32, 0, 0",
+    "ColorText": "White",
+    "ColorInvention": "Cyan",
+    "ColorInventionInv": "Navy",
+    "ColorFaded": "Silver",
+    "ColorEnhancement": "Lime",
+    "ColorWarning": "Red",
+    "ColorPlName": "192, 192, 255",
+    "ColorPlSpecial": "128, 128, 255",
+    "ColorPowerAvailable": "Yellow",
+    "ColorPowerTaken": "Lime",
+    "ColorPowerTakenDark": "0, 192, 0",
+    "ColorPowerHighlight": "64, 64, 96",
+    "ColorPowerDisabled": "128, 128, 192",
+    "PairedBase": 9.0
+  },
   "BaseAcc": 0.75,
   "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
   "CalcEnhOrigin": 3,
@@ -88,7 +122,6 @@
   "LoadLastFileOnStart": true,
   "LastFileName": "",
   "DNickName": "",
-  "DSelServer": "",
   "DChannel": "",
   "DesaturateInherent": true,
   "BuildMode": 1,
@@ -120,13 +153,6 @@
     0
   ],
   "SpeedFormat": 16843009,
-  "UseArcanaTime": true,
-  "DamageMath": {
-    "Calculate": 1
-  },
-  "Inc": {
-    "PvE": true
-  },
   "Export": {
     "ColorSchemes": [
       {
@@ -384,41 +410,16 @@
       }
     ]
   },
-  "I9": {
-    "DefaultIOLevel": 49,
-    "DisplayIOLevels": true,
-    "CalculateEnahncementFX": true,
-    "CalculateSetBonusFX": true,
-    "PrintIOLevels": true,
-    "ExportDataChunk": true,
-    "ExportCompress": true
-  },
-  "RtFont": {
-    "RTFBase": 20,
-    "ColorBackgroundHero": "0, 0, 32",
-    "ColorBackgroundVillain": "32, 0, 0",
-    "ColorText": "White",
-    "ColorInvention": "Cyan",
-    "ColorInventionInv": "Navy",
-    "ColorFaded": "Silver",
-    "ColorEnhancement": "Lime",
-    "ColorWarning": "Red",
-    "ColorPlName": "192, 192, 255",
-    "ColorPlSpecial": "128, 128, 255",
-    "ColorPowerAvailable": "Yellow",
-    "ColorPowerTaken": "Lime",
-    "ColorPowerTakenDark": "0, 192, 0",
-    "ColorPowerHighlight": "64, 64, 96",
-    "ColorPowerDisabled": "128, 128, 192",
-    "PairedBase": 9.0
-  },
+  "DServers": [],
+  "DSelServer": "",
+  "UseArcanaTime": true,
   "PrintHistory": true,
   "SaveFolderChecked": true,
   "ShowSlotLevels": true,
   "Tips": {
     "TipStatus": [
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -450,6 +451,6 @@
       0
     ]
   },
-  "ShoppingListIncludesRecipes": true,
-  "PopupRecipes": true
+  "PopupRecipes": true,
+  "ShoppingListIncludesRecipes": true
 }

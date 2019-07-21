@@ -265,7 +265,7 @@ namespace Base.Data_Classes
                 this.ClassType = Enums.eClassType.Hero;
             else if (str.IndexOf("VILLAIN", StringComparison.OrdinalIgnoreCase) > -1)
                 this.ClassType = Enums.eClassType.Villain;
-            this.Playable = !string.IsNullOrWhiteSpace(str);
+            this.Playable = !str.IsNullOrWhiteSpace();
             this.DescShort = array[6];
             this.PrimaryGroup = array[8];
             this.SecondaryGroup = array[9];
