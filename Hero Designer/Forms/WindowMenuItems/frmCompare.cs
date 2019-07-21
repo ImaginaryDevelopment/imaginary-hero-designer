@@ -17,25 +17,15 @@ namespace Hero_Designer
     public partial class frmCompare : Form
     {
         ImageButton btnClose;
-
         Button btnTweakMatch;
-
         ComboBox cbAT1;
-
         ComboBox cbAT2;
-
         ComboBox cbSet1;
-
         ComboBox cbSet2;
-
         ComboBox cbType1;
-
         ComboBox cbType2;
-
         CheckBox chkMatching;
-
         ImageButton chkOnTop;
-
         ctlMultiGraph Graph;
         GroupBox GroupBox1;
         GroupBox GroupBox2;
@@ -43,21 +33,19 @@ namespace Hero_Designer
         Label lblKeyColor1;
         Label lblKeyColor2;
         Label lblScale;
-
         ListBox lstDisplay;
-
         TrackBar tbScaleX;
         ToolTip tTip;
 
-        protected string[] DisplayValueStrings;
-        protected float GraphMax;
-        protected bool Loaded;
-        protected Enums.CompMap Map;
-        protected bool Matching;
-        protected frmMain myParent;
-        protected IPower[][] Powers;
-        protected string[][] Tips;
-        protected float[][] Values;
+        string[] DisplayValueStrings;
+        float GraphMax;
+        bool Loaded;
+        Enums.CompMap Map;
+        bool Matching;
+        frmMain myParent;
+        IPower[][] Powers;
+        string[][] Tips;
+        float[][] Values;
 
         public frmCompare(ref frmMain iFrm)
         {
@@ -75,29 +63,29 @@ namespace Hero_Designer
             this.Loaded = false;
             this.DisplayValueStrings = new string[23]
             {
-        "Base Accuracy",
-        "Damage",
-        "Damage / Anim",
-        "Damage / Sec",
-        "Damage / End",
-        "Damage Buff",
-        "Defense",
-        "Defense Debuff",
-        "Duration",
-        "End Use",
-        "End Use / Sec",
-        "Healing",
-        "Healing / Sec",
-        "Healing / End",
-        "+HP",
-        "Max Targets",
-        "Range",
-        "Recharge Time",
-        "Regeneration",
-        "Resistance",
-        "Resistance Debuff",
-        "ToHit Buff",
-        "ToHit Debuff"
+                "Base Accuracy",
+                "Damage",
+                "Damage / Anim",
+                "Damage / Sec",
+                "Damage / End",
+                "Damage Buff",
+                "Defense",
+                "Defense Debuff",
+                "Duration",
+                "End Use",
+                "End Use / Sec",
+                "Healing",
+                "Healing / Sec",
+                "Healing / End",
+                "+HP",
+                "Max Targets",
+                "Range",
+                "Recharge Time",
+                "Regeneration",
+                "Resistance",
+                "Resistance Debuff",
+                "ToHit Buff",
+                "ToHit Debuff"
             };
             this.InitializeComponent();
             this.Name = nameof(frmCompare);
@@ -107,13 +95,11 @@ namespace Hero_Designer
         }
 
         void btnClose_ButtonClicked()
-        {
-            this.Close();
-        }
+            => this.Close();
 
         void btnTweakMatch_Click(object sender, EventArgs e)
         {
-            int num = (int)new frmTweakMatching().ShowDialog((IWin32Window)this);
+            new frmTweakMatching().ShowDialog(this);
             this.DisplayGraph();
         }
 
@@ -283,24 +269,24 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                string[] strArray = new string[2] { "", "" };
-                float[] numArray = new float[2];
+                string[] powerDisplays = new string[2] { "", "" };
+                float[] values = new float[2];
                 string iTip = "";
-                int index2 = 0;
+                int mapIdx = 0;
                 do
                 {
-                    if (this.Map.Map[index1, index2] > -1)
+                    if (this.Map.Map[index1, mapIdx] > -1)
                     {
-                        strArray[index2] = this.Powers[index2][this.Map.Map[index1, index2]].DisplayName;
-                        numArray[index2] = this.Values[index2][this.Map.Map[index1, index2]];
-                        if (iTip != "" & this.Tips[index2][this.Map.Map[index1, index2]] != "")
+                        powerDisplays[mapIdx] = this.Powers[mapIdx][this.Map.Map[index1, mapIdx]].DisplayName;
+                        values[mapIdx] = this.Values[mapIdx][this.Map.Map[index1, mapIdx]];
+                        if (iTip != "" & this.Tips[mapIdx][this.Map.Map[index1, mapIdx]] != "")
                             iTip += "\r\n----------\r\n";
-                        iTip += this.Tips[index2][this.Map.Map[index1, index2]];
+                        iTip += this.Tips[mapIdx][this.Map.Map[index1, mapIdx]];
                     }
-                    ++index2;
+                    ++mapIdx;
                 }
-                while (index2 <= 1);
-                this.Graph.AddItemPair(strArray[0], strArray[1], numArray[0], numArray[1], iTip);
+                while (mapIdx <= 1);
+                this.Graph.AddItemPair(powerDisplays[0], powerDisplays[1], values[0], values[1], iTip);
                 ++index1;
             }
             while (index1 <= 20);
@@ -310,7 +296,7 @@ namespace Hero_Designer
             this.Graph.EndUpdate();
         }
 
-        protected void FillDisplayList()
+        void FillDisplayList()
         {
             ListBox lstDisplay = this.lstDisplay;
             lstDisplay.BeginUpdate();
@@ -320,17 +306,15 @@ namespace Hero_Designer
             lstDisplay.EndUpdate();
         }
 
-        void frmCompare_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.myParent.FloatCompareGraph(false);
-        }
+        void frmCompare_FormClosed(object sender, FormClosedEventArgs e) => this.EventHandlerWithCatch(() =>
+            this.myParent.FloatCompareGraph(false));
 
-        void frmCompare_KeyDown(object sender, KeyEventArgs e)
+        void frmCompare_KeyDown(object sender, KeyEventArgs e) => this.EventHandlerWithCatch(() =>
         {
             if (!(e.Control & e.Shift & e.KeyCode == System.Windows.Forms.Keys.T))
                 return;
             this.btnTweakMatch.Visible = true;
-        }
+        });
 
         void frmCompare_Load(object sender, EventArgs e)
         {
@@ -350,48 +334,34 @@ namespace Hero_Designer
             this.chkMatching.Checked = this.Matching;
             this.Loaded = true;
             this.DisplayGraph();
-            this.tTip.SetToolTip((Control)this.chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
+            this.tTip.SetToolTip(chkMatching, "Re-order powers so that similar powers are compared directly, regardless of their position in the set.\r\nFor example, moving snipe powers to directly compare.\r\n(This isn't known for its stunning accuracy, and gets confused by vastly different sets)");
         }
 
-        void frmCompare_Move(object sender, EventArgs e)
+        void frmCompare_Move(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
         {
             this.StoreLocation();
-        }
+        });
 
-        void frmCompare_Resize(object sender, EventArgs e)
-        {
-            this.StoreLocation();
-        }
+        void frmCompare_Resize(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
+            this.StoreLocation());
 
-        void frmCompare_VisibleChanged(object sender, EventArgs e)
-        {
-            this.Graph.BackColor = this.BackColor;
-        }
+        void frmCompare_VisibleChanged(object sender, EventArgs e) => this.EventHandlerWithCatch(() =>
+            this.Graph.BackColor = this.BackColor);
 
-        public int getAT(int Index)
+        int getAT(int idx)
         {
-            int num;
-            switch (Index)
+            switch (idx)
             {
-                case 0:
-                    num = this.cbAT1.SelectedIndex;
-                    break;
-                case 1:
-                    num = this.cbAT2.SelectedIndex;
-                    break;
-                default:
-                    num = 0;
-                    break;
+                case 0: return this.cbAT1.SelectedIndex;
+                case 1: return this.cbAT2.SelectedIndex;
+                default: return 0;
             }
-            return num;
         }
 
         public int getMax(int iVal1, int ival2)
-        {
-            return iVal1 <= ival2 ? ival2 : iVal1;
-        }
+            => iVal1 <= ival2 ? ival2 : iVal1;
 
-        public int GetNextFreeSlot()
+        int GetNextFreeSlot()
         {
             int index = 0;
             while (this.Map.Map[index, 1] != -1)
@@ -431,7 +401,7 @@ namespace Hero_Designer
             while (Index <= 1);
         }
 
-        public int getSetIndex(int Index)
+        int getSetIndex(int Index)
         {
             ComboBox comboBox;
             switch (Index)
@@ -448,7 +418,7 @@ namespace Hero_Designer
             return DatabaseAPI.GetPowersetIndexes(this.getAT(Index), this.getSetType(Index))[comboBox.SelectedIndex].nID;
         }
 
-        public Enums.ePowerSetType getSetType(int Index)
+        Enums.ePowerSetType getSetType(int Index)
         {
             ComboBox comboBox;
             switch (Index)
@@ -481,7 +451,7 @@ namespace Hero_Designer
             return ePowerSetType;
         }
 
-        public string GetUniversalTipString(Enums.ShortFX iSFX, ref IPower iPower)
+        string GetUniversalTipString(Enums.ShortFX iSFX, ref IPower iPower)
         {
             string str1 = "";
             string str2;
@@ -526,9 +496,7 @@ namespace Hero_Designer
             return str2;
         }
 
-        void Graph_Load(object sender, EventArgs e)
-        {
-        }
+        void Graph_Load(object sender, EventArgs e) { }
 
         void list_AT()
         {
@@ -618,7 +586,7 @@ namespace Hero_Designer
             this.DisplayGraph();
         }
 
-        public void map_Advanced()
+        void map_Advanced()
         {
             bool[] Placed = new bool[this.Powers[1].Length - 1 + 1];
             int num1 = Placed.Length - 1;
@@ -651,114 +619,24 @@ namespace Hero_Designer
             }
             this.mapOverride();
             this.mapDescString(new string[1] { "summon" }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "smash"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "energy"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "fire"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "ranged"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "melee"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+def",
-        "aoe"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "smash"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "energy"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "fire"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "ranged"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "melee"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+def",
-        "aoe"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+res",
-        "smash"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+res",
-        "energy"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "toggle",
-        "+res",
-        "fire"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+res",
-        "smash"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+res",
-        "energy"
-            }, ref Placed);
-            this.mapDescString(new string[3]
-            {
-        "auto",
-        "+res",
-        "fire"
-            }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "smash" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "energy" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "fire" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "ranged" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "melee" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+def", "aoe" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "smash" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "energy" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "fire" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "ranged" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "melee" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+def", "aoe" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+res", "smash" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+res", "energy" }, ref Placed);
+            this.mapDescString(new string[3] { "toggle", "+res", "fire" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+res", "smash" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+res", "energy" }, ref Placed);
+            this.mapDescString(new string[3] { "auto", "+res", "fire" }, ref Placed);
             this.mapDescString(new string[2] { "toggle", "+def" }, ref Placed);
             this.mapDescString(new string[2] { "toggle", "+res" }, ref Placed);
             this.mapDescString(new string[2] { "auto", "+def" }, ref Placed);
@@ -950,36 +828,32 @@ namespace Hero_Designer
             }
         }
 
-        public int mapDescString(string[] iStrings, ref bool[] Placed)
+        public int mapDescString(string[] iStrings, ref bool[] placed)
         {
             int num1 = 0;
-            int num2 = this.Powers[1].Length - 1;
-            for (int index1 = 0; index1 <= num2; ++index1)
+            for (int powerIdx = 0; powerIdx <= this.Powers[1].Length - 1; ++powerIdx)
             {
                 bool flag1 = true;
-                int num3 = iStrings.Length - 1;
-                for (int index2 = 0; index2 <= num3; ++index2)
+                for (int index2 = 0; index2 <= iStrings.Length - 1; ++index2)
                 {
-                    if (this.Powers[1][index1].DescShort.IndexOf(iStrings[index2], StringComparison.OrdinalIgnoreCase) < 0)
+                    if (this.Powers[1][powerIdx].DescShort.IndexOf(iStrings[index2], StringComparison.OrdinalIgnoreCase) < 0)
                         flag1 = false;
                 }
-                if (flag1 & !Placed[index1])
+                if (flag1 & !placed[powerIdx])
                 {
-                    int num4 = this.Powers[0].Length - 1;
-                    for (int index2 = 0; index2 <= num4; ++index2)
+                    for (int index2 = 0; index2 <= this.Powers[0].Length - 1; ++index2)
                     {
                         bool flag2 = this.Map.Map[index2, 1] < 0;
-                        int num5 = iStrings.Length - 1;
-                        for (int index3 = 0; index3 <= num5; ++index3)
+                        for (int index3 = 0; index3 <= iStrings.Length - 1; ++index3)
                         {
                             if (this.Powers[0][index2].DescShort.IndexOf(iStrings[index3], StringComparison.OrdinalIgnoreCase) < 0)
                                 flag2 = false;
                         }
                         if (flag2)
                         {
-                            this.Map.Map[index2, 1] = index1;
-                            Placed[index1] = true;
-                            return index1;
+                            this.Map.Map[index2, 1] = powerIdx;
+                            placed[powerIdx] = true;
+                            return powerIdx;
                         }
                     }
                 }
@@ -987,18 +861,16 @@ namespace Hero_Designer
             return num1;
         }
 
-        public void mapOverride()
+        void mapOverride()
         {
-            int num = MidsContext.Config.CompOverride.Length - 1;
-            for (int index1 = 0; index1 <= num; ++index1)
+            for (int index1 = 0; index1 <= MidsContext.Config.CompOverride.Length - 1; ++index1)
             {
                 Enums.CompOverride[] compOverride = MidsContext.Config.CompOverride;
-                int index2 = index1;
-                this.mapOverrideDo(compOverride[index2].Powerset, compOverride[index2].Power, compOverride[index2].Override);
+                this.mapOverrideDo(compOverride[index1].Powerset, compOverride[index1].Power, compOverride[index1].Override);
             }
         }
 
-        public void mapOverrideDo(string iSet, string iPower, string iNewStr)
+        void mapOverrideDo(string iSet, string iPower, string iNewStr)
         {
             int index1 = 0;
             do
@@ -1023,9 +895,11 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmCompare.X;
-            rectangle.Y = MainModule.MidsController.SzFrmCompare.Y;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmCompare.X,
+                Y = MainModule.MidsController.SzFrmCompare.Y
+            };
             if (rectangle.X < 1)
                 rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2.0);
             if (rectangle.Y < 32)
@@ -1067,7 +941,7 @@ namespace Hero_Designer
             this.DisplayGraph();
         }
 
-        public void values_Accuracy()
+        void values_Accuracy()
         {
             float num1 = 1f;
             int index1 = 0;
@@ -1112,7 +986,7 @@ namespace Hero_Designer
             this.GraphMax = num1 * 1.025f;
         }
 
-        public void values_Damage()
+        void values_Damage()
         {
             float num1 = 1f;
             ConfigData.EDamageReturn returnValue = MidsContext.Config.DamageMath.ReturnValue;
@@ -1156,7 +1030,7 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        public void values_DPA()
+        void values_DPA()
         {
             float num1 = 1f;
             ConfigData.EDamageReturn returnValue = MidsContext.Config.DamageMath.ReturnValue;
@@ -1164,8 +1038,7 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
-                for (int index2 = 0; index2 <= num2; ++index2)
+                for (int index2 = 0; index2 <= this.Powers[index1].Length - 1; ++index2)
                 {
                     this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
                     if (this.Values[index1][index2] != 0.0)
@@ -1174,9 +1047,7 @@ namespace Hero_Designer
                         if (this.Matching)
                         {
                             string[][] tips = this.Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
+                            tips[index1][index2] = tips[index1][index2] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
                         }
                         string[][] tips1 = this.Tips;
                         int index5 = index1;
@@ -1193,45 +1064,33 @@ namespace Hero_Designer
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }
 
-        public void values_DPE()
+        void values_DPE()
         {
             float num1 = 1f;
             ConfigData.EDamageReturn returnValue = MidsContext.Config.DamageMath.ReturnValue;
             MidsContext.Config.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
-            int index1 = 0;
+            int powIdx = 0;
             do
             {
-                int num2 = this.Powers[index1].Length - 1;
-                for (int index2 = 0; index2 <= num2; ++index2)
+                for (int subPowIdx = 0; subPowIdx <= this.Powers[powIdx].Length - 1; ++subPowIdx)
                 {
-                    this.Values[index1][index2] = this.Powers[index1][index2].FXGetDamageValue();
-                    if (this.Values[index1][index2] != 0.0)
+                    this.Values[powIdx][subPowIdx] = this.Powers[powIdx][subPowIdx].FXGetDamageValue();
+                    if (this.Values[powIdx][subPowIdx] != 0.0)
                     {
-                        if (this.Powers[index1][index2].PowerType == Enums.ePowerType.Click && Powers[index1][index2].EndCost > 0.0)
-                            this.Values[index1][index2] /= this.Powers[index1][index2].EndCost;
-                        this.Tips[index1][index2] = DatabaseAPI.Database.Classes[this.Powers[index1][index2].ForcedClassID].DisplayName + ":" + this.Powers[index1][index2].DisplayName;
+                        if (this.Powers[powIdx][subPowIdx].PowerType == Enums.ePowerType.Click && Powers[powIdx][subPowIdx].EndCost > 0.0)
+                            this.Values[powIdx][subPowIdx] /= this.Powers[powIdx][subPowIdx].EndCost;
+                        this.Tips[powIdx][subPowIdx] = DatabaseAPI.Database.Classes[this.Powers[powIdx][subPowIdx].ForcedClassID].DisplayName + ":" + this.Powers[powIdx][subPowIdx].DisplayName;
                         if (this.Matching)
-                        {
-                            string[][] tips = this.Tips;
-                            int index3 = index1;
-                            int index4 = index2;
-                            tips[index3][index4] = tips[index3][index4] + " [Level " + Conversions.ToString(this.Powers[index1][index2].Level) + "]";
-                        }
-                        string[][] tips1 = this.Tips;
-                        int index5 = index1;
-                        int index6 = index2;
-                        tips1[index5][index6] = tips1[index5][index6] + "\r\n  " + this.Powers[index1][index2].FXGetDamageString();
-                        if (num1 < (double)this.Values[index1][index2])
-                            num1 = this.Values[index1][index2];
-                        string[][] tips2 = this.Tips;
-                        int index7 = index1;
-                        int index8 = index2;
-                        tips2[index7][index8] = tips2[index7][index8] + " - DPE: " + Strings.Format(this.Values[index1][index2], "##0.##");
+                            this.Tips[powIdx][subPowIdx] = Tips[powIdx][subPowIdx] + " [Level " + Conversions.ToString(this.Powers[powIdx][subPowIdx].Level) + "]";
+                        this.Tips[powIdx][subPowIdx] = this.Tips[powIdx][subPowIdx] + "\r\n  " + this.Powers[powIdx][subPowIdx].FXGetDamageString();
+                        if (num1 < (double)this.Values[powIdx][subPowIdx])
+                            num1 = this.Values[powIdx][subPowIdx];
+                        this.Tips[powIdx][subPowIdx] = this.Tips[powIdx][subPowIdx] + " - DPE: " + Strings.Format(this.Values[powIdx][subPowIdx], "##0.##");
                     }
                 }
-                ++index1;
+                ++powIdx;
             }
-            while (index1 <= 1);
+            while (powIdx <= 1);
             this.GraphMax = num1 * 1.025f;
             MidsContext.Config.DamageMath.ReturnValue = returnValue;
         }

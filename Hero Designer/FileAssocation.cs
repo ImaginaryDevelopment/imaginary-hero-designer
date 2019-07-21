@@ -25,9 +25,6 @@ namespace Hero_Designer
         // could take multiple open with options
         static RegistryKey GetFileOpenWithListKey(string extension)
             => Registry.CurrentUser.OpenSubKey(GetOpenListSubKeyPath(extension));
-        static RegistryKey CreateFileOpenWithList(string extension) => Registry.CurrentUser.CreateSubKey(GetOpenListSubKeyPath(extension));
-        static RegistryKey CreateOrOpenRegOpenWithList(string extension)
-            => GetFileOpenWithListKey(extension) ?? CreateFileOpenWithList(extension);
 
         //static RegistryKey FindOpenWithEntry(string extension, string path)
         //    => GetFileOpenWithList(extension).GetSubKeyNames();
