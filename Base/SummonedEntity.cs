@@ -108,7 +108,7 @@ public class SummonedEntity
     }
 
     public void PAdd()
-        => this.PowersetFullName = this.PowersetFullName.Append("Empty");
+        => this.PowersetFullName = this.PowersetFullName.Append("Empty").ToArray();
 
     public void PDelete(int selectedIndex)
         => this.PowersetFullName = this.PowersetFullName.RemoveIndex(selectedIndex);
@@ -136,7 +136,7 @@ public class SummonedEntity
                 new SummonedEntity(nID: database.Entities.Length)
                 {
                     UID = uidEntity
-                });
+                }).ToArray();
             index = database.Entities.Length - 1;
         }
 
@@ -154,7 +154,7 @@ public class SummonedEntity
     }
 
     public void UGAdd()
-        => this.UpgradePowerFullName = this.UpgradePowerFullName.Append("Empty");
+        => this.UpgradePowerFullName = this.UpgradePowerFullName.Append("Empty").ToArray();
 
     public void UGDelete(int selectedIndex) =>
         this.UpgradePowerFullName = this.UpgradePowerFullName.RemoveIndex(selectedIndex);
