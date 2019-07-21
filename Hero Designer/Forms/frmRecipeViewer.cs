@@ -612,7 +612,7 @@ namespace Hero_Designer
         void ibMiniList_ButtonClicked()
 
         {
-            this.myParent.SetMiniList(this.BuildList(true), "Shopping List", 2048);
+            this.myParent.SetMiniList(this.BuildList(true), "Shopping List");
         }
 
         void ibTopmost_ButtonClicked()
