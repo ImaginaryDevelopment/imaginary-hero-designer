@@ -86,6 +86,7 @@ namespace Hero_Designer
                 var shrunkData = ShrinkTheDatalink(mrb.Datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
+            //byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjUwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
             string wString = Encoding.UTF8.GetString(data);
             var httpWebRequest = (HttpWebRequest) WebRequest.Create(wString);
             httpWebRequest.ContentType = "application/json";
@@ -121,16 +122,40 @@ namespace Hero_Designer
                 {
                     case "Nickname not found in discord":
                     {
-                        const string message = "Submission Failed! Check the Discord settings under configuration.";
-                        const string title = "Discord Export";
+                        string message = $"Submission Failed: Your discord nickname was not found in the {discord.Server} discord server.";
+                        string title = "Discord Export";
                         MessageBox.Show(message, title);
                         break;
                     }
 
-                    case "Nickname found":
+                    case "Export Successful":
                     {
-                        const string message = "Submission Successful!! Your build should now be posted.";
-                        const string title = "Discord Export";
+                        string message = $"Submission Successful!! Your build should now be posted in {discord.Channel} on the {discord.Server} server.";
+                        string title = "Discord Export";
+                        MessageBox.Show(message, title);
+                        break;
+                    }
+
+                    case "Export Failed":
+                    {
+                        string message = $"Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
+                        string title = "Discord Export";
+                        MessageBox.Show(message, title);
+                        break;
+                    }
+
+                    case "Failed to add export to queue":
+                    {
+                        string message = $"Submission Failed: Possible server error, please contact the RebornTeam.";
+                        string title = "Discord Export";
+                        MessageBox.Show(message, title);
+                        break;
+                    }
+
+                    case "RebornBot is not in the discord server":
+                    {
+                        string message = $"Submission Failed: RebornBot was not found in the {discord.Server}.";
+                        string title = "Discord Export";
                         MessageBox.Show(message, title);
                         break;
                     }
