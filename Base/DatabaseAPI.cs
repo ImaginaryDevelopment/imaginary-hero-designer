@@ -1122,7 +1122,7 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Create);
-            writer = new BinaryWriter((Stream)fileStream);
+            writer = new BinaryWriter(fileStream);
         }
         catch (Exception ex)
         {
@@ -1158,7 +1158,7 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            reader = new BinaryReader((Stream)fileStream);
+            reader = new BinaryReader(fileStream);
         }
         catch (Exception ex)
         {

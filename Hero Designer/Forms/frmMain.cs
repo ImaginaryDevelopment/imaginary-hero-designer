@@ -25,7 +25,6 @@ namespace Hero_Designer
     {
         #region "fields"
 
-        bool remember;
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
         readonly short[] ddsa;
@@ -2831,13 +2830,23 @@ namespace Hero_Designer
             this.pbDynMode.Refresh();
         }
 
-        int PowerMove(PowerEntry[] tp, params int[] pow)
+        bool? CheckInitDdsaValue(int index, int? defaultOpt, string descript, params string[] options)
         {
-            if (tp[pow[0]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 > tp[pow[1]].Level)
+            if (this.ddsa[index] != 0) return null;
+            var (result, remember) = frmOptionListDlg.ShowWithOptions(AllowRemember: true, DefaultOption: defaultOpt ?? 1, descript, options);
+            this.ddsa[index] = (short)result;
+            if (remember == true)
+                MidsContext.Config.DragDropScenarioAction[index] = this.ddsa[index];
+            return remember;
+        }
+
+        int PowerMove(PowerEntry[] tp, int start, int finish)
+        {
+            if (tp[start].NIDPower != -1 && DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 > tp[finish].Level)
             {
-                if (this.ddsa[0] == (short)0)
+                if (this.ddsa[0] == 0)
                 {
-                    var canOverride = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level;
+                    var canOverride = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level;
                     var (result, remember) = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
                     this.ddsa[0] = (short)result;
                     if (canOverride)
@@ -2852,29 +2861,29 @@ namespace Hero_Designer
                     return 0;
                 if (this.ddsa[0] == 2)
                 {
-                    if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
+                    if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
                         MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to move it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
                         return 0;
                     }
-                    int num1 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
+                    int lvl = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1;
                     int index = 0;
-                    while (tp[index].Level != num1)
+                    while (tp[index].Level != lvl)
                     {
                         ++index;
                         if (index > 23)
-                            return this.PowerMove(tp, pow[0], num1);
+                            return this.PowerMove(tp, start, lvl);
                     }
                 }
             }
-            bool flag1 = pow[0] < pow[1];
+            bool flag1 = start < finish;
             bool[] flagArray = new bool[tp.Length - 1 + 1];
             if (flag1)
             {
-                flagArray[pow[0]] = true;
-                int level = tp[pow[0]].Level;
-                int num = pow[1];
-                for (int index = pow[0] + 1; index <= num; ++index)
+                flagArray[start] = true;
+                int level = tp[start].Level;
+                int num = finish;
+                for (int index = start + 1; index <= num; ++index)
                 {
                     if (tp[index].NIDPower < 0)
                     {
@@ -2892,54 +2901,49 @@ namespace Hero_Designer
                         flagArray[index] = false;
                 }
             }
-            if (flag1 & !flagArray[pow[1]])
+            if (flag1 & !flagArray[finish])
             {
-                if (this.ddsa[1] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
-                    this.ddsa[1] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[1] = this.ddsa[1];
-                }
+
+                CheckInitDdsaValue(1, null, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
                 if (this.ddsa[1] == 1)
                     return 0;
                 if (this.ddsa[1] == 2)
                 {
-                    int num1 = pow[0] + 1;
+                    int num1 = start + 1;
                     int index;
-                    for (index = pow[1]; index >= num1; index += -1)
+                    for (index = finish; index >= num1; index += -1)
                     {
                         if (flagArray[index])
                         {
-                            pow[1] = index;
+                            finish = index;
                             break;
                         }
                     }
-                    if (pow[1] != index)
+                    if (finish != index)
                     {
                         MessageBox.Show("None of the powers can be shifted, so the power was not moved.", null, MessageBoxButtons.OK);
                         return 0;
                     }
                 }
             }
-            PowerEntry powerEntry = tp[pow[0]].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[pow[0]].NIDPower]) : new PowerEntry(-1, null, false);
-            powerEntry.Slots = (SlotEntry[])tp[pow[0]].Slots.Clone();
-            powerEntry.Level = tp[pow[0]].Level;
-            this.clearPower(tp, pow[0]);
+            PowerEntry powerEntry = tp[start].NIDPower != -1 ? new PowerEntry(DatabaseAPI.Database.Power[tp[start].NIDPower]) : new PowerEntry(-1, null, false);
+            powerEntry.Slots = (SlotEntry[])tp[start].Slots.Clone();
+            powerEntry.Level = tp[start].Level;
+            this.clearPower(tp, start);
             bool flag2 = false;
             int num3;
             int num4;
             int num5;
             if (flag1)
             {
-                num3 = pow[1];
-                num4 = pow[0] + 1;
+                num3 = finish;
+                num4 = start + 1;
                 num5 = -1;
             }
             else
             {
-                num3 = pow[0] + 1;
-                num4 = pow[1];
+                num3 = start + 1;
+                num4 = finish;
                 num5 = 1;
             }
             int num6 = num4;
@@ -2948,21 +2952,14 @@ namespace Hero_Designer
             {
                 if (tp[index].NIDPower != -1 && flag1 && !flagArray[index])
                 {
-                    if (this.ddsa[7] == 0)
-                    {
-                        var frmOptionListDlg = new frmOptionListDlg();
-                        frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
-                        this.ddsa[7] = (short)frmOptionListDlg.DialogResult;
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[7] = this.ddsa[7];
-                    }
+                    CheckInitDdsaValue(7, null, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
                     if (this.ddsa[7] == 1)
                         return 0;
                     if (this.ddsa[7] == 3)
                     {
                         if (!flag2)
                         {
-                            pow[0] = index;
+                            start = index;
                             break;
                         }
                         break;
@@ -2970,32 +2967,25 @@ namespace Hero_Designer
                 }
                 if (!flag2 & tp[index].NIDPower < 0)
                 {
-                    if (this.ddsa[10] == 0)
-                    {
-                        var frmOptionListDlg = new frmOptionListDlg();
-                        frmOptionListDlg.ShowWithOptions(true, 1, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
-                        this.ddsa[10] = (short)frmOptionListDlg.DialogResult;
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[10] = this.ddsa[10];
-                    }
+                    CheckInitDdsaValue(10, null, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
                     if (this.ddsa[10] == 1)
                         return 0;
                     if (this.ddsa[10] == 2)
                     {
-                        if (tp[pow[1]].NIDPower < 0)
+                        if (tp[finish].NIDPower < 0)
                         {
-                            powerEntry.Level = tp[pow[0]].Level;
-                            tp[pow[0]] = powerEntry;
-                            return this.PowerSwap(1, ref tp, pow[0], pow[1]) == 0 ? 0 : -1;
+                            powerEntry.Level = tp[start].Level;
+                            tp[start] = powerEntry;
+                            return this.PowerSwap(1, ref tp, start, finish) == 0 ? 0 : -1;
                         }
-                        pow[0] = index;
+                        start = index;
                     }
                     flag2 = true;
                 }
             }
-            int index1 = pow[0];
+            int index1 = start;
             int num8 = !flag1 ? index1 - 1 : index1 + 1;
-            while (num8 != pow[1])
+            while (num8 != finish)
             {
                 switch (this.PowerSwap(2, ref tp, index1, num8))
                 {
@@ -3026,26 +3016,21 @@ namespace Hero_Designer
             }
             powerEntry.Level = tp[index1].Level;
             tp[index1] = powerEntry;
-            int num10;
             switch (this.PowerSwap(1, ref tp, index1, num8))
             {
                 case 0:
-                    num10 = 0;
-                    break;
+                    return 0;
                 case 3:
                     this.PowerSwapByUser(this.dragStartPower, this.dragFinishPower);
-                    num10 = 0;
-                    break;
+                    return 0;
                 default:
-                    num10 = -1;
-                    break;
+                    return -1;
             }
-            return num10;
         }
 
-        void PowerMoveByUser(params int[] pow)
+        void PowerMoveByUser(int dragStart, int dragFinish)
         {
-            if (pow[0] < 0 || pow[0] > 23 || pow[1] < 0 || pow[1] > 23 || pow[0] == pow[1])
+            if (dragStart < 0 || dragStart > 23 || dragFinish < 0 || dragFinish > 23 || dragStart == dragFinish)
                 return;
             int index = 0;
             do
@@ -3055,7 +3040,7 @@ namespace Hero_Designer
             }
             while (index <= 19);
             PowerEntry[] powerEntryArray = frmMain.DeepCopyPowerList();
-            if (this.PowerMove(powerEntryArray, pow) != 0)
+            if (this.PowerMove(powerEntryArray, dragStart, dragFinish) != 0)
             {
                 this.ShallowCopyPowerList(powerEntryArray);
                 this.PowerModified(markModified: true);
@@ -3078,313 +3063,256 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        int PowerSwap(int mode, ref PowerEntry[] tp, params int[] pow)
+        int PowerSwap(int mode, ref PowerEntry[] tp, int start, int finish)
         {
             int num1;
-            if (pow[0] < 0 || pow[0] > 23 || pow[1] < 0 || pow[1] > 23 || pow[0] == pow[1])
+            if (start < 0 || start > 23 || finish < 0 || finish > 23 || start == finish)
+                return 0;
+
+            if (tp[start].NIDPower == -1 || DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 <= tp[finish].Level)
+            {
+                if (tp[finish].NIDPower != -1 && DatabaseAPI.Database.Power[tp[finish].NIDPower].Level - 1 > tp[start].Level)
+                {
+                    switch (mode)
+                    {
+                        case 0:
+                            CheckInitDdsaValue(4, null, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
+                            if (this.ddsa[4] == 1) return 0;
+                            if (this.ddsa[4] == 2)
+                            {
+                                tp[finish].NIDPower = -1;
+                                tp[finish].NIDPowerset = -1;
+                                tp[finish].IDXPower = -1;
+                                tp[finish].StatInclude = false;
+                                tp[finish].VariableValue = 0;
+                                tp[finish].Slots = new SlotEntry[0];
+                            }
+                            break;
+                        case 2:
+                            if (this.ddsa[7] == 2)
+                                return 1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            else if (mode == 0)
+            {
+                if (this.ddsa[0] == 0)
+                {
+                    if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
+                    {
+                        var remember = CheckInitDdsaValue(0, null, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
+                        if (this.ddsa[0] == 2)
+                        {
+                            this.ddsa[0] = 3;
+                            if (remember == true)
+                                MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
+                        }
+                    }
+                    else
+                        CheckInitDdsaValue(0, 0, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
+                }
+                if (this.ddsa[0] == 1)
+                    return 0;
+
+                if (this.ddsa[0] == 2)
+                {
+                    if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
+                    {
+                        MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
+                        return 0;
+                    }
+                    int lvl = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1;
+                    int index = 0;
+                    while (tp[index].Level != lvl)
+                    {
+                        ++index;
+                        if (index > 23)
+                            return this.PowerSwap(mode, ref tp, start, lvl);
+                    }
+                    int num4 = index;
+                    return this.PowerSwap(mode, ref tp, start, num4);
+                }
+            }
+            if (mode == 1 || mode == 2 && tp[finish].NIDPower != -1 && DatabaseAPI.Database.Power[tp[finish].NIDPower].Level - 1 == tp[finish].Level)
+            {
+                if (mode == 1)
+                {
+                    CheckInitDdsaValue(12, null, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
+                    if (this.ddsa[12] == 1)
+                        return 0;
+                    if (this.ddsa[12] == 2)
+                    {
+                        this.ddsa[11] = 2;
+                        return 2;
+                    }
+                    if (this.ddsa[12] != 3 && this.ddsa[12] == 4)
+                        return 3;
+                }
+                else if (mode == 2)
+                {
+                    CheckInitDdsaValue(11, null, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
+                    if (this.ddsa[11] == 1)
+                        return 0;
+                    if (this.ddsa[11] != 2 && this.ddsa[11] == 3)
+                        return 1;
+                }
+            }
+            int num5 = tp[22].SlotCount + tp[23].SlotCount;
+            int num6 = -1;
+            if (start == 22 && finish < 22 && num5 <= 8 && tp[finish].SlotCount + tp[23].SlotCount > 8 || start == 23 && finish < 22 && tp[start].SlotCount <= 4 && tp[finish].SlotCount > 4 || start == 23 && finish < 22 && num5 <= 8 && tp[22].SlotCount + tp[finish].SlotCount > 8 || start == 23 && finish == 22 && tp[finish].SlotCount > 4)
+            {
+                if (mode < 2)
+                    CheckInitDdsaValue(6, null, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                num6 = 6;
+            }
+            else if (start < 22 & finish == 22 & num5 <= 8 & tp[start].SlotCount + tp[23].SlotCount > 8 || start < 22 & finish == 23 & tp[finish].SlotCount <= 4 & tp[start].SlotCount > 4 || start < 22 & finish == 23 & num5 <= 8 & tp[22].SlotCount + tp[start].SlotCount > 8 || start == 22 & finish == 23 & tp[start].SlotCount > 4)
+            {
+                if (mode < 2)
+                    CheckInitDdsaValue(3, null, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                num6 = 3;
+            }
+            if (num6 != -1 && mode == 2)
+            {
+                CheckInitDdsaValue(9, null, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
+                num6 = 9;
+            }
+            if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 1 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 1)
             {
                 num1 = 0;
             }
             else
             {
-                if (tp[pow[0]].NIDPower == -1 || DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 <= tp[pow[1]].Level)
+                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 2 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 2)
                 {
-                    if (tp[pow[1]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[1]].NIDPower].Level - 1 > tp[pow[0]].Level)
+                    int index;
+                    int num2;
+                    if (start > finish)
                     {
-                        int num2;
-                        switch (mode)
+                        index = finish;
+                        num2 = start;
+                    }
+                    else
+                    {
+                        index = start;
+                        num2 = finish;
+                    }
+                    //int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
+                    int integer1 = num2 == 22 ? index : index == 22 ? num2 : 22;
+                    int integer2 = num2 == 23 ? index : 23;
+                    while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 || tp[index].SlotCount > 4 && integer2 != 23)
+                        tp[index].Slots = tp[index].Slots.RemoveLast(); // (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
+                }
+                else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)3)
+                {
+                    int index1 = start <= finish ? start : finish;
+                    if (start == 23 | finish == 23)
+                    {
+                        for (int index2 = tp[index1].SlotCount - 1; index2 >= 1; index2 += -1)
                         {
-                            case 0:
-                                if (this.ddsa[4] == 0)
-                                {
-                                    var frmOptionListDlg = new frmOptionListDlg();
-                                    frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
-                                    this.ddsa[4] = (short)frmOptionListDlg.DialogResult;
-                                    if (frmOptionListDlg.remember == true)
-                                        MidsContext.Config.DragDropScenarioAction[4] = this.ddsa[4];
-                                }
-                                if (this.ddsa[4] == 1)
-                                    return 0;
-                                if (this.ddsa[4] == 2)
-                                {
-                                    tp[pow[1]].NIDPower = -1;
-                                    tp[pow[1]].NIDPowerset = -1;
-                                    tp[pow[1]].IDXPower = -1;
-                                    tp[pow[1]].StatInclude = false;
-                                    tp[pow[1]].VariableValue = 0;
-                                    tp[pow[1]].Slots = new SlotEntry[0];
-                                    goto label_18;
-                                }
-                                else if (this.ddsa[4] != 3)
-                                    goto label_18;
-                                else
-                                    goto label_18;
-                            case 2:
-                                num2 = this.ddsa[7] != 2 ? 1 : 0;
-                                break;
-                            default:
-                                num2 = 1;
-                                break;
+                            if (index2 + tp[22].SlotCount > 7 | index2 > 3)
+                                tp[index1].Slots[index2].Level = 50;
                         }
-                        if (num2 == 0)
-                            return 1;
-                        label_18:;
+                    }
+                    else
+                    {
+                        for (int index2 = tp[index1].SlotCount - 1; index2 >= 1; index2 += -1)
+                        {
+                            if (index2 + tp[22].SlotCount > 7)
+                                tp[index1].Slots[index2].Level = 50;
+                        }
                     }
                 }
-                else if (mode == 0)
+                PowerEntry powerEntry = tp[start];
+                tp[start] = tp[finish];
+                tp[finish] = powerEntry;
+                int level1 = tp[start].Level;
+                tp[start].Level = tp[finish].Level;
+                tp[finish].Level = level1;
+                // swapping start and finish values
+                int tmpSwap = start;
+                start = finish;
+                finish = tmpSwap;
+                int index3 = 0;
+                do
                 {
-                    if (this.ddsa[0] == 0)
+                    if (tp[index3 == 0 ? start : finish].SlotCount > 0)
                     {
-                        var frmOptionListDlg = new frmOptionListDlg();
-                        if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
+                        tp[index3 == 0 ? start : finish].Slots[0].Level = tp[index3 == 0 ? start : finish].Level;
+                        int num2 = tp[index3 == 0 ? start : finish].SlotCount - 1;
+                        int slotIDX = 1;
+                        while (true)
                         {
-                            frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
-                            if (this.ddsa[0] == 2)
-                                this.ddsa[0] = 3;
-                        }
-                        else
-                        {
-                            frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                            this.ddsa[0] = (short)frmOptionListDlg.DialogResult;
-                        }
-                        if (frmOptionListDlg.remember == true)
-                            MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
-                    }
-                    if (this.ddsa[0] == 1)
-                        return 0;
-                    if (this.ddsa[0] == 2)
-                    {
-                        if (DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1 == tp[pow[0]].Level)
-                        {
-                            MessageBox.Show("You have chosen to always swap a power with its minimum level when attempting to swap it too low, but the power you are trying to swap is already at its minimum level. Visit the Drag & Drop tab of the configuration window to change this setting.", null, MessageBoxButtons.OK);
-                            return 0;
-                        }
-                        int num3 = DatabaseAPI.Database.Power[tp[pow[0]].NIDPower].Level - 1;
-                        int index = 0;
-                        while (tp[index].Level != num3)
-                        {
-                            ++index;
-                            if (index > 23)
-                                return this.PowerSwap(mode, ref tp, pow[0], num3);
-                        }
-                        int num4 = index;
-                        return this.PowerSwap(mode, ref tp, pow[0], num4);
-                    }
-                }
-                if (mode == 1 || mode == 2 && tp[pow[1]].NIDPower != -1 && DatabaseAPI.Database.Power[tp[pow[1]].NIDPower].Level - 1 == tp[pow[1]].Level)
-                {
-                    if (mode == 1)
-                    {
-                        if (this.ddsa[12] == 0)
-                        {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
-                            this.ddsa[12] = (short)result;
-                            if (remember == true)
-                                MidsContext.Config.DragDropScenarioAction[12] = this.ddsa[12];
-                        }
-                        if (this.ddsa[12] == 1)
-                            return 0;
-                        if (this.ddsa[12] == 2)
-                        {
-                            this.ddsa[11] = 2;
-                            return 2;
-                        }
-                        if (this.ddsa[12] != 3 && this.ddsa[12] == 4)
-                            return 3;
-                    }
-                    else if (mode == 2)
-                    {
-                        if (this.ddsa[11] == 0)
-                        {
-                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
-                            this.ddsa[11] = (short)result;
-                            if (remember == true)
-                                MidsContext.Config.DragDropScenarioAction[11] = this.ddsa[11];
-                        }
-                        if (this.ddsa[11] == 1)
-                            return 0;
-                        if (this.ddsa[11] != 2 && this.ddsa[11] == 3)
-                            return 1;
-                    }
-                }
-                int num5 = tp[22].SlotCount + tp[23].SlotCount;
-                int num6 = -1;
-                if (pow[0] == 22 && pow[1] < 22 && num5 <= 8 && tp[pow[1]].SlotCount + tp[23].SlotCount > 8 || pow[0] == 23 && pow[1] < 22 && tp[pow[0]].SlotCount <= 4 && tp[pow[1]].SlotCount > 4 || pow[0] == 23 && pow[1] < 22 && num5 <= 8 && tp[22].SlotCount + tp[pow[1]].SlotCount > 8 || pow[0] == 23 && pow[1] == 22 && tp[pow[1]].SlotCount > 4)
-                {
-                    if (mode < 2 & this.ddsa[6] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being replaced is swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[6] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[6] = this.ddsa[6];
-                    }
-                    num6 = 6;
-                }
-                else if (pow[0] < 22 & pow[1] == 22 & num5 <= 8 & tp[pow[0]].SlotCount + tp[23].SlotCount > 8 || pow[0] < 22 & pow[1] == 23 & tp[pow[1]].SlotCount <= 4 & tp[pow[0]].SlotCount > 4 || pow[0] < 22 & pow[1] == 23 & num5 <= 8 & tp[22].SlotCount + tp[pow[0]].SlotCount > 8 || pow[0] == 22 & pow[1] == 23 & tp[pow[0]].SlotCount > 4)
-                {
-                    if (mode < 2 & this.ddsa[3] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too high to have # slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[3] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[3] = this.ddsa[3];
-                    }
-                    num6 = 3;
-                }
-                if (num6 != -1 && mode == 2)
-                {
-                    if (this.ddsa[9] == 0)
-                    {
-                        var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 1, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
-                        this.ddsa[9] = (short)result;
-                        if (remember == true)
-                            MidsContext.Config.DragDropScenarioAction[9] = this.ddsa[9];
-                    }
-                    num6 = 9;
-                }
-                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)1 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)1)
-                {
-                    num1 = 0;
-                }
-                else
-                {
-                    if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 2 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 2)
-                    {
-                        int index;
-                        int num2;
-                        if (pow[0] > pow[1])
-                        {
-                            index = pow[1];
-                            num2 = pow[0];
-                        }
-                        else
-                        {
-                            index = pow[0];
-                            num2 = pow[1];
-                        }
-                        //int integer1 = Conversions.ToInteger(Interaction.IIf(num2 == 22, index, RuntimeHelpers.GetObjectValue(Interaction.IIf(index == 22, num2, 22))));
-                        int integer1 = num2 == 22 ? index : index == 22 ? num2 : 22;
-                        int integer2 = num2 == 23 ? index : 23;
-                        while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 || tp[index].SlotCount > 4 && integer2 != 23)
-                            tp[index].Slots = tp[index].Slots.RemoveLast(); // (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
-                    }
-                    else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)3)
-                    {
-                        int index1 = pow[0] <= pow[1] ? pow[0] : pow[1];
-                        if (pow[0] == 23 | pow[1] == 23)
-                        {
-                            for (int index2 = tp[index1].SlotCount - 1; index2 >= 1; index2 += -1)
+                            if (slotIDX <= num2 && slotIDX <= tp[index3 == 0 ? start : finish].SlotCount - 1)
                             {
-                                if (index2 + tp[22].SlotCount > 7 | index2 > 3)
-                                    tp[index1].Slots[index2].Level = 50;
-                            }
-                        }
-                        else
-                        {
-                            for (int index2 = tp[index1].SlotCount - 1; index2 >= 1; index2 += -1)
-                            {
-                                if (index2 + tp[22].SlotCount > 7)
-                                    tp[index1].Slots[index2].Level = 50;
-                            }
-                        }
-                    }
-                    PowerEntry powerEntry = tp[pow[0]];
-                    tp[pow[0]] = tp[pow[1]];
-                    tp[pow[1]] = powerEntry;
-                    int level1 = tp[pow[0]].Level;
-                    tp[pow[0]].Level = tp[pow[1]].Level;
-                    tp[pow[1]].Level = level1;
-                    int num3 = pow[0];
-                    pow[0] = pow[1];
-                    pow[1] = num3;
-                    int index3 = 0;
-                    do
-                    {
-                        if (tp[pow[index3]].SlotCount > 0)
-                        {
-                            tp[pow[index3]].Slots[0].Level = tp[pow[index3]].Level;
-                            int num2 = tp[pow[index3]].SlotCount - 1;
-                            int slotIDX = 1;
-                            while (true)
-                            {
-                                if (slotIDX <= num2 && slotIDX <= tp[pow[index3]].SlotCount - 1)
+                                if (tp[index3 == 0 ? start : finish].Slots[slotIDX].Level < tp[index3 == 0 ? start : finish].Level)
                                 {
-                                    if (tp[pow[index3]].Slots[slotIDX].Level < tp[pow[index3]].Level)
+                                    if (mode < 2 & index3 == 0 & this.ddsa[2] == 0)
                                     {
-                                        if (mode < 2 & index3 == 0 & this.ddsa[2] == (short)0)
+                                        CheckInitDdsaValue(2, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                    }
+                                    else if (mode == 0 & index3 == 1 & this.ddsa[5] == 0)
+                                    {
+                                        CheckInitDdsaValue(5, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                    }
+                                    else if (mode == 2 & this.ddsa[8] == 0)
+                                    {
+                                        CheckInitDdsaValue(8, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
+                                    }
+                                    if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
+                                    {
+                                        var value = 1 - index3 == 0 ? start : finish;
+                                        if (mode < 2 & index3 == 0 & this.ddsa[2] == 2 || mode == 0 & index3 == 1 & this.ddsa[5] == 2 || mode == 2 & this.ddsa[8] == 2)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[2] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[2] = this.ddsa[2];
+                                            this.RemoveSlotFromTempList(tp[index3 == 0 ? start : finish], slotIDX);
+                                            --slotIDX;
                                         }
-                                        else if (mode == 0 & index3 == 1 & this.ddsa[5] == (short)0)
+                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 4 || mode == 0 & index3 == 1 & this.ddsa[5] == 4 || mode == 2 & this.ddsa[8] == 4)
                                         {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[5] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[5] = this.ddsa[5];
-                                        }
-                                        else if (mode == 2 & this.ddsa[8] == (short)0)
-                                        {
-                                            var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
-                                            this.ddsa[8] = (short)result;
-                                            if (remember == true)
-                                                MidsContext.Config.DragDropScenarioAction[8] = this.ddsa[8];
-                                        }
-                                        if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
-                                        {
-                                            if (mode < 2 & index3 == 0 & this.ddsa[2] == 2 || mode == 0 & index3 == 1 & this.ddsa[5] == 2 || mode == 2 & this.ddsa[8] == 2)
+                                            if (tp[value].SlotCount > slotIDX)
                                             {
-                                                this.RemoveSlotFromTempList(tp[pow[index3]], slotIDX);
+                                                int level2 = tp[value].Slots[slotIDX].Level;
+                                                tp[value].Slots[slotIDX].Level = tp[index3 == 0 ? start : finish].Slots[slotIDX].Level;
+                                                tp[index3 == 0 ? start : finish].Slots[slotIDX].Level = level2;
+                                            }
+                                            else
+                                            {
+                                                this.RemoveSlotFromTempList(tp[index3 == 0 ? start : finish], slotIDX);
                                                 --slotIDX;
                                             }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 4 || mode == 0 & index3 == 1 & this.ddsa[5] == 4 || mode == 2 & this.ddsa[8] == 4)
-                                            {
-                                                if (tp[pow[1 - index3]].SlotCount > slotIDX)
-                                                {
-                                                    int level2 = tp[pow[1 - index3]].Slots[slotIDX].Level;
-                                                    tp[pow[1 - index3]].Slots[slotIDX].Level = tp[pow[index3]].Slots[slotIDX].Level;
-                                                    tp[pow[index3]].Slots[slotIDX].Level = level2;
-                                                }
-                                                else
-                                                {
-                                                    this.RemoveSlotFromTempList(tp[pow[index3]], slotIDX);
-                                                    --slotIDX;
-                                                }
-                                            }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 5 || mode == 0 & index3 == 1 & this.ddsa[5] == 5 || mode == 2 & this.ddsa[8] == 5)
-                                            {
-                                                if (tp[pow[1 - index3]].SlotCount > slotIDX)
-                                                {
-                                                    int level2 = tp[pow[1 - index3]].Slots[slotIDX].Level;
-                                                    tp[pow[1 - index3]].Slots[slotIDX].Level = tp[pow[index3]].Slots[slotIDX].Level;
-                                                    tp[pow[index3]].Slots[slotIDX].Level = level2;
-                                                }
-                                            }
-                                            else if (mode < 2 & index3 == 0 & this.ddsa[2] == 6 || mode == 0 & index3 == 1 & this.ddsa[5] == 6 || mode == 2 & this.ddsa[8] == 6)
-                                                this.RearrangeAllSlotsInBuild(tp, true);
                                         }
-                                        else
-                                            return 0;
+                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 5 || mode == 0 & index3 == 1 & this.ddsa[5] == 5 || mode == 2 & this.ddsa[8] == 5)
+                                        {
+                                            if (tp[value].SlotCount > slotIDX)
+                                            {
+                                                int level2 = tp[value].Slots[slotIDX].Level;
+                                                tp[value].Slots[slotIDX].Level = tp[index3 == 0 ? start : finish].Slots[slotIDX].Level;
+                                                tp[index3 == 0 ? start : finish].Slots[slotIDX].Level = level2;
+                                            }
+                                        }
+                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 6 || mode == 0 & index3 == 1 & this.ddsa[5] == 6 || mode == 2 & this.ddsa[8] == 6)
+                                            this.RearrangeAllSlotsInBuild(tp, true);
                                     }
-                                    ++slotIDX;
+                                    else
+                                        return 0;
                                 }
-                                else
-                                    break;
+                                ++slotIDX;
                             }
+                            else
+                                break;
                         }
-                        ++index3;
                     }
-                    while (index3 <= 1);
-                    num1 = -1;
+                    ++index3;
                 }
+                while (index3 <= 1);
+                num1 = -1;
             }
             return num1;
         }
 
-        void PowerSwapByUser(params int[] pow)
+        void PowerSwapByUser(int start, int finish)
         {
             int index = 0;
             do
@@ -3394,7 +3322,7 @@ namespace Hero_Designer
             }
             while (index <= 19);
             PowerEntry[] tp = frmMain.DeepCopyPowerList();
-            if (this.PowerSwap(0, ref tp, pow) != -1)
+            if (this.PowerSwap(0, ref tp, start, finish) != -1)
                 return;
             this.ShallowCopyPowerList(tp);
             this.PowerModified(markModified: true);
@@ -4218,25 +4146,13 @@ namespace Hero_Designer
             while (index <= 19);
             if (MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level < MidsContext.Character.CurrentBuild.Powers[destPower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[destPower].NIDPower].AllowFrontLoading)
             {
-                if (this.ddsa[13] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[13] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[13] = this.ddsa[13];
-                }
-                if (this.ddsa[13] == (short)1)
+                CheckInitDdsaValue(13, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
+                if (this.ddsa[13] == 1)
                     return;
             }
             if (MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level < MidsContext.Character.CurrentBuild.Powers[sourcePower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[sourcePower].NIDPower].AllowFrontLoading)
             {
-                if (this.ddsa[14] == (short)0)
-                {
-                    var (result, remember) = frmOptionListDlg.ShowWithOptions(true, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                    this.ddsa[14] = (short)result;
-                    if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[14] = this.ddsa[14];
-                }
+                CheckInitDdsaValue(14, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
                 if (this.ddsa[14] == (short)1)
                     return;
             }
@@ -4247,28 +4163,21 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        internal void smlRespecLong(int iLevel, bool Mode2)
+        internal void smlRespecLong(int iLevel, bool mode2)
         {
-            if (Mode2)
-                this.SetMiniList(MidsContext.Character.CurrentBuild.GetRespecHelper2(true, iLevel), "Respec Helper", 5096);
-            else
-                this.SetMiniList(MidsContext.Character.CurrentBuild.GetRespecHelper(true, iLevel), "Respec Helper", 4072);
+            this.SetMiniList(MidsContext.Character.CurrentBuild.GetRespecHelper2(true, iLevel), "Respec Helper", mode2 ? 5096 : 4072);
             this.fMini.Width = 350;
             this.fMini.SizeMe();
         }
 
-        internal void smlRespecShort(int iLevel, bool Mode2)
+        internal void smlRespecShort(int iLevel, bool mode2)
         {
-            if (Mode2)
-            {
-                this.SetMiniList(MidsContext.Character.CurrentBuild.GetRespecHelper2(false, iLevel), "Respec Helper", 4072);
-                this.fMini.Width = 300;
-            }
+            var helper = MidsContext.Character.CurrentBuild.GetRespecHelper2(false, iLevel);
+            if (mode2)
+                this.SetMiniList(helper, "Respec Helper", 4072);
             else
-            {
-                this.SetMiniList(MidsContext.Character.CurrentBuild.GetRespecHelper(false, iLevel), "Respec Helper", 2048);
-                this.fMini.Width = 250;
-            }
+                this.SetMiniList(helper, "Respec Helper");
+            this.fMini.Width = mode2 ? 300 : 250;
             this.fMini.SizeMe();
         }
 
@@ -4282,7 +4191,7 @@ namespace Hero_Designer
             MainModule.MidsController.Toon.FlipSlots(iPowerIndex);
             this.RefreshInfo();
             this.FlipPowerID = iPowerIndex;
-            this.FlipSlotState = new int[MidsContext.Character.CurrentBuild.Powers[iPowerIndex].Slots.Length - 1 + 1];
+            this.FlipSlotState = new int[MidsContext.Character.CurrentBuild.Powers[iPowerIndex].Slots.Length];
             int num = this.FlipSlotState.Length - 1;
             for (int index = 0; index <= num; ++index)
                 this.FlipSlotState[index] = -(this.FlipStepDelay * index);
@@ -4299,7 +4208,7 @@ namespace Hero_Designer
 
         void TemporaryPowersWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.tempPowersButton_MouseDown(RuntimeHelpers.GetObjectValue(sender), new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
+            this.tempPowersButton_MouseDown(sender, new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0));
             this.tempPowersButton.Checked = true;
         }
 
@@ -4311,12 +4220,7 @@ namespace Hero_Designer
             if (e.Clicks != 2)
                 return;
             this.tempPowersButton.Checked = false;
-            bool flag = false;
-            if (this.fTemp == null)
-                flag = true;
-            else if (this.fTemp.IsDisposed)
-                flag = true;
-            if (flag)
+            if (this.fTemp == null || this.fTemp.IsDisposed)
             {
                 IPower power = DatabaseAPI.Database.Power[DatabaseAPI.NidFromStaticIndexPower(3259)];
                 List<IPower> iPowers = new List<IPower>();
@@ -4338,41 +4242,33 @@ namespace Hero_Designer
 
         void tmrGfx_Tick(object sender, EventArgs e)
         {
-            if (!this.FlipActive)
-                return;
-            this.doFlipStep();
+            if (this.FlipActive)
+                this.doFlipStep();
         }
 
         bool ToggleClicked(int hID, int iX, int iY)
         {
             Rectangle rectangle1 = new Rectangle();
-            bool flag;
             if (hID < 0)
-                flag = false;
-            else if (MidsContext.Character.CurrentBuild.Powers[hID].IDXPower < 0)
+                return false;
+            if (MidsContext.Character.CurrentBuild.Powers[hID].IDXPower < 0)
+                return false;
+            Rectangle rectangle2 = new Rectangle()
             {
-                flag = false;
-            }
-            else
-            {
-                Rectangle rectangle2 = new Rectangle()
-                {
-                    Location = this.drawing.PowerPosition(MidsContext.Character.CurrentBuild.Powers[hID], -1),
-                    Size = this.drawing.bxPower[0].Size
-                };
-                rectangle1.Height = 15;
-                rectangle1.Width = rectangle1.Height;
-                rectangle1.Y = (int)Math.Round((double)rectangle2.Top + (double)(rectangle2.Height - rectangle1.Height) / 2.0);
-                rectangle1.X = (int)Math.Round((double)rectangle2.Right - ((double)rectangle1.Width + (double)(rectangle2.Height - rectangle1.Height) / 2.0));
-                flag = iX > rectangle1.X & iX < rectangle1.Right & iY > rectangle1.Top & iY < rectangle1.Bottom;
-            }
-            return flag;
+                Location = this.drawing.PowerPosition(MidsContext.Character.CurrentBuild.Powers[hID], -1),
+                Size = this.drawing.bxPower[0].Size
+            };
+            rectangle1.Height = 15;
+            rectangle1.Width = rectangle1.Height;
+            rectangle1.Y = (int)Math.Round(rectangle2.Top + ((rectangle2.Height - rectangle1.Height) / 2.0));
+            rectangle1.X = (int)Math.Round(rectangle2.Right - (rectangle1.Width + (rectangle2.Height - rectangle1.Height) / 2.0));
+            return iX > rectangle1.X & iX < rectangle1.Right & iY > rectangle1.Top & iY < rectangle1.Bottom;
         }
 
         void tsAdvDBEdit_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            int num = (int)new frmDBEdit().ShowDialog((IWin32Window)this);
+            new frmDBEdit().ShowDialog(this);
             this.FloatTop(true);
         }
 
@@ -4383,22 +4279,19 @@ namespace Hero_Designer
             {
                 MidsContext.Config.FreshInstall = false;
                 MidsContext.Config.SaveFolderChecked = true;
-                int num = (int)MessageBox.Show("Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
+                MessageBox.Show("Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
             }
             else
             {
                 MidsContext.Config.FreshInstall = true;
                 MidsContext.Config.SaveFolderChecked = false;
-                int num = (int)MessageBox.Show("Fresh Install flag has been set!", null, MessageBoxButtons.OK);
+                MessageBox.Show("Fresh Install flag has been set!", null, MessageBoxButtons.OK);
             }
             this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
             this.FloatTop(true);
         }
 
-        void tsAdvResetTips_Click(object sender, EventArgs e)
-        {
-            MidsContext.Config.Tips = new Tips();
-        }
+        void tsAdvResetTips_Click(object sender, EventArgs e) => MidsContext.Config.Tips = new Tips();
 
         void tsBug_Click(object sender, EventArgs e)
         {
@@ -4420,11 +4313,9 @@ namespace Hero_Designer
             this.FloatTop(false);
             if (MessageBox.Show("Really clear all slotted enhancements?\r\nThis will not clear the alternate slotting, only the currently active slots.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int num1 = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int index1 = 0; index1 <= num1; ++index1)
+                for (int index1 = 0; index1 <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++index1)
                 {
-                    int num2 = MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1;
-                    for (int index2 = 0; index2 <= num2; ++index2)
+                    for (int index2 = 0; index2 <= MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1; ++index2)
                         MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh = -1;
                 }
                 this.DoRedraw();
@@ -4438,7 +4329,7 @@ namespace Hero_Designer
             this.FloatTop(false);
             frmMain iParent = this;
             frmCalcOpt frmCalcOpt = new frmCalcOpt(ref iParent);
-            if (frmCalcOpt.ShowDialog((IWin32Window)this) == DialogResult.OK)
+            if (frmCalcOpt.ShowDialog(this) == DialogResult.OK)
             {
                 this.UpdateControls(false);
                 this.UpdateOtherFormsFonts();
@@ -4448,10 +4339,7 @@ namespace Hero_Designer
             this.FloatTop(true);
         }
 
-        void tsDonate_Click(object sender, EventArgs e)
-        {
-            clsXMLUpdate.Donate();
-        }
+        void tsDonate_Click(object sender, EventArgs e) => clsXMLUpdate.Donate();
 
         void tsDynamic_Click(object sender, EventArgs e)
         {
@@ -4462,152 +4350,74 @@ namespace Hero_Designer
             this.PowerModified(markModified: false);
         }
 
-        void tsEnhToDO_Click(object sender, EventArgs e)
+        void OnRelativeClick(Enums.eEnhRelative newVal)
         {
-            if (MidsContext.Character == null)
+            if (MainModule.MidsController.Toon == null)
                 return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.DualO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.DualO;
+            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
+                this.I9Picker.UI.Initial.RelLevel = newVal;
             this.info_Totals();
             this.DoRedraw();
         }
 
         void tsEnhToEven_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.Even;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.Even);
 
         void tsEnhToMinus1_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusOne;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusOne);
 
         void tsEnhToMinus2_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusTwo;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusTwo);
 
         void tsEnhToMinus3_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.MinusThree;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.MinusThree);
 
         void tsEnhToNone_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.None;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.None);
 
         void tsEnhToPlus1_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusOne;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusOne);
 
         void tsEnhToPlus2_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusTwo;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusTwo);
 
         void tsEnhToPlus3_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusThree;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusThree);
 
         void tsEnhToPlus4_Click(object sender, EventArgs e)
-        {
-            if (MainModule.MidsController.Toon == null)
-                return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFour;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnRelativeClick(Enums.eEnhRelative.PlusFour);
 
         void tsEnhToPlus5_Click(object sender, EventArgs e)
+            => OnRelativeClick(Enums.eEnhRelative.PlusFive);
+
+        void OnGradePick(Enums.eEnhGrade grade)
         {
-            if (MainModule.MidsController.Toon == null)
+            if (MidsContext.Character == null)
                 return;
-            Enums.eEnhRelative newVal = Enums.eEnhRelative.PlusFive;
-            if (MidsContext.Character.CurrentBuild.SetEnhRelativelevels(newVal))
-                this.I9Picker.UI.Initial.RelLevel = newVal;
+            if (MidsContext.Character.CurrentBuild.SetEnhGrades(grade))
+                this.I9Picker.UI.Initial.GradeID = grade;
             this.info_Totals();
             this.DoRedraw();
         }
+
+        void tsEnhToDO_Click(object sender, EventArgs e)
+            => OnGradePick(Enums.eEnhGrade.DualO);
+
 
         void tsEnhToSO_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.SingleO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.SingleO;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnGradePick(Enums.eEnhGrade.SingleO);
 
         void tsEnhToTO_Click(object sender, EventArgs e)
-        {
-            if (MidsContext.Character == null)
-                return;
-            if (MidsContext.Character.CurrentBuild.SetEnhGrades(Enums.eEnhGrade.TrainingO))
-                this.I9Picker.UI.Initial.GradeID = Enums.eEnhGrade.TrainingO;
-            this.info_Totals();
-            this.DoRedraw();
-        }
+            => OnGradePick(Enums.eEnhGrade.TrainingO);
 
         void tsExport_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             MidsContext.Config.LongExport = false;
-            var frmForum1 = new frmForum();
-            frmForum1.BackColor = this.BackColor;
+            var frmForum1 = new frmForum
+            {
+                BackColor = this.BackColor
+            };
             frmForum1.IBCancel.IA = this.drawing.pImageAttributes;
             frmForum1.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
             frmForum1.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
@@ -4624,10 +4434,17 @@ namespace Hero_Designer
             MessageBox.Show("The data link has been placed on the clipboard and is ready to paste.", "Export Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void tsExportDiscord_Click(object sender, EventArgs e)
+        bool exportDiscordInProgress;
+
+        public async void tsExportDiscord_Click(object sender, EventArgs e)
         {
             void ShowConfigError(string field)
                 => MessageBox.Show($"{field} must be filled out in configuration before discord exports will function", "Discord is not configured");
+            if (exportDiscordInProgress)
+            {
+                MessageBox.Show("Another discord export is in progress, might be stuck");
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(MidsContext.Config.DSelServer))
             {
@@ -4636,6 +4453,8 @@ namespace Hero_Designer
             }
             if (string.IsNullOrWhiteSpace(MidsContext.Config.DChannel))
             {
+                // tired of typing this
+                if (System.Diagnostics.Debugger.IsAttached) MidsContext.Config.DChannel = "feature-testing";
                 ShowConfigError("Channel");
                 return;
             }
@@ -4644,13 +4463,18 @@ namespace Hero_Designer
                 ShowConfigError("NickName");
                 return;
             }
+            exportDiscordInProgress = true;
             try
             {
-                Clshook.DiscordExport();
+                await Clshook.DiscordExport();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+            finally
+            {
+                exportDiscordInProgress = false;
             }
         }
 
@@ -4658,24 +4482,22 @@ namespace Hero_Designer
         {
             this.FloatTop(false);
             MidsContext.Config.LongExport = true;
-            frmForum frmForum1 = new frmForum();
-            frmForum1.BackColor = this.BackColor;
-            frmForum frmForum2 = frmForum1;
-            frmForum2.IBCancel.IA = this.drawing.pImageAttributes;
-            frmForum2.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.IBExport.IA = this.drawing.pImageAttributes;
-            frmForum2.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
-            frmForum2.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
-            frmForum2.ShowDialog(this);
+            frmForum frmForum1 = new frmForum
+            {
+                BackColor = this.BackColor
+            };
+            frmForum1.IBCancel.IA = this.drawing.pImageAttributes;
+            frmForum1.IBCancel.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum1.IBCancel.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum1.IBExport.IA = this.drawing.pImageAttributes;
+            frmForum1.IBExport.ImageOff = this.drawing.bxPower[2].Bitmap;
+            frmForum1.IBExport.ImageOn = this.drawing.bxPower[3].Bitmap;
+            frmForum1.ShowDialog(this);
             this.FloatTop(true);
             MidsContext.Config.LongExport = false;
         }
 
-        void tsFileNew_Click(object sender, EventArgs e)
-        {
-            this.command_New();
-        }
+        void tsFileNew_Click(object sender, EventArgs e) => this.command_New();
 
         void tsFileOpen_Click(object sender, EventArgs e)
         {
@@ -4724,45 +4546,24 @@ namespace Hero_Designer
                 }
             };
             this.FloatTop(false);
-            frmReadme.ShowDialog((IWin32Window)this);
+            frmReadme.ShowDialog(this);
             this.FloatTop(true);
         }
 
-        void tsHelperLong_Click(object sender, EventArgs e)
-        {
-            frmMain iParent = this;
-            new FrmInputLevel(ref iParent, true, false).ShowDialog((IWin32Window)this);
-        }
+        void tsHelperLong_Click(object sender, EventArgs e) => new FrmInputLevel(this, true, false).ShowDialog(this);
 
-        void tsHelperLong2_Click(object sender, EventArgs e)
-        {
-            frmMain iParent = this;
-            int num = (int)new FrmInputLevel(ref iParent, true, true).ShowDialog((IWin32Window)this);
-        }
+        void tsHelperLong2_Click(object sender, EventArgs e) => new FrmInputLevel(this, true, true).ShowDialog(this);
 
-        void tsHelperShort_Click(object sender, EventArgs e)
-        {
-            frmMain iParent = this;
-            int num = (int)new FrmInputLevel(ref iParent, false, false).ShowDialog((IWin32Window)this);
-        }
+        void tsHelperShort_Click(object sender, EventArgs e) => new FrmInputLevel(this, false, false).ShowDialog(this);
 
-        void tsHelperShort2_Click(object sender, EventArgs e)
-        {
-            frmMain iParent = this;
-            int num = (int)new FrmInputLevel(ref iParent, false, true).ShowDialog((IWin32Window)this);
-        }
+        void tsHelperShort2_Click(object sender, EventArgs e) => new FrmInputLevel(this, false, true).ShowDialog(this);
 
-        void tsImport_Click(object sender, EventArgs e)
-        {
-            this.command_ForumImport();
-        }
+        void tsImport_Click(object sender, EventArgs e) => this.command_ForumImport();
 
         void tsIODefault_Click(object sender, EventArgs e)
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, false))
                 this.I9Picker.LastLevel = MidsContext.Config.I9.DefaultIOLevel + 1;
-            if (this.drawing == null)
-                return;
             this.DoRedraw();
         }
 
@@ -4770,8 +4571,6 @@ namespace Hero_Designer
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, false, true))
                 this.I9Picker.LastLevel = 50;
-            if (this.drawing == null)
-                return;
             this.DoRedraw();
         }
 
@@ -4779,8 +4578,6 @@ namespace Hero_Designer
         {
             if (MidsContext.Character.CurrentBuild.SetIOLevels(MidsContext.Config.I9.DefaultIOLevel, true, false))
                 this.I9Picker.LastLevel = 10;
-            if (this.drawing == null)
-                return;
             this.DoRedraw();
         }
 
@@ -4818,23 +4615,16 @@ namespace Hero_Designer
             }
         }
 
-        void tsRecipeViewer_Click(object sender, EventArgs e)
-        {
-            this.FloatRecipe(true);
-        }
+        void tsRecipeViewer_Click(object sender, EventArgs e) => this.FloatRecipe(true);
 
-        void tsDPSCalc_Click(object sender, EventArgs e)
-        {
-            this.FloatDPSCalc(true);
-        }
+        void tsDPSCalc_Click(object sender, EventArgs e) => this.FloatDPSCalc(true);
 
         void tsRemoveAllSlots_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
             if (MessageBox.Show("Really remove all slots?\r\nThis will not remove the slots granted automatically with powers, but will remove all the slots you placed manually.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
-                for (int index = 0; index <= num; ++index)
+                for (int index = 0; index <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++index)
                 {
                     if (MidsContext.Character.CurrentBuild.Powers[index].SlotCount > 1)
                         MidsContext.Character.CurrentBuild.Powers[index].Slots = MidsContext.Character.CurrentBuild.Powers[index].Slots.Take(1).ToArray();
@@ -4857,7 +4647,6 @@ namespace Hero_Designer
         void tsPlannerLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToCoHPlanner();
 
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
             clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
@@ -4877,9 +4666,7 @@ namespace Hero_Designer
             if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
                 if (!string.IsNullOrWhiteSpace(msg))
-                {
                     frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
-                }
                 else
                 {
                     frmLoading.ShowLinkDialog("Error", "Unknown error checking for updates, check failed, click here to open site in browser", MidsContext.DownloadUrl);
@@ -4889,14 +4676,11 @@ namespace Hero_Designer
             this.RefreshInfo();
         }
 
-        void tsView2Col_Click(object sender, EventArgs e)
-            => this.setColumns(2);
+        void tsView2Col_Click(object sender, EventArgs e) => this.setColumns(2);
 
-        void tsView3Col_Click(object sender, EventArgs e)
-            => this.setColumns(3);
+        void tsView3Col_Click(object sender, EventArgs e) => this.setColumns(3);
 
-        void tsView4Col_Click(object sender, EventArgs e)
-            => this.setColumns(4);
+        void tsView4Col_Click(object sender, EventArgs e) => this.setColumns(4);
 
         void tsViewActualDamage_New_Click(object sender, EventArgs e)
         {
@@ -4905,8 +4689,7 @@ namespace Hero_Designer
             this.DisplayFormatChanged();
         }
 
-        void tsViewData_Click(object sender, EventArgs e)
-            => this.FloatData(true);
+        void tsViewData_Click(object sender, EventArgs e) => this.FloatData(true);
 
         void tsViewDPS_New_Click(object sender, EventArgs e)
         {
@@ -4915,8 +4698,7 @@ namespace Hero_Designer
             this.DisplayFormatChanged();
         }
 
-        void tsViewGraphs_Click(object sender, EventArgs e)
-            => this.FloatStatGraph(true);
+        void tsViewGraphs_Click(object sender, EventArgs e) => this.FloatStatGraph(true);
 
         void tsViewIOLevels_Click(object sender, EventArgs e)
         {
@@ -4950,8 +4732,7 @@ namespace Hero_Designer
             this.DoRedraw();
         }
 
-        void tsViewTotals_Click(object sender, EventArgs e)
-            => this.FloatTotals(true);
+        void tsViewTotals_Click(object sender, EventArgs e) => this.FloatTotals(true);
 
         void txtName_TextChanged(object sender, EventArgs e)
         {
@@ -4976,81 +4757,63 @@ namespace Hero_Designer
             if (this.myDataView.DrawVillain)
             {
                 flag = this.I9Picker.ForeColor.R != byte.MaxValue;
-                this.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                this.lblATLocked.BackColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 128, 128);
-                this.I9Picker.ForeColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 0, 0);
+                this.BackColor = Color.FromArgb(0, 0, 0);
+                this.lblATLocked.BackColor = Color.FromArgb((int)byte.MaxValue, 128, 128);
+                this.I9Picker.ForeColor = Color.FromArgb((int)byte.MaxValue, 0, 0);
             }
             else
             {
                 flag = this.I9Picker.ForeColor.R != (byte)96;
-                this.BackColor = System.Drawing.Color.FromArgb(0, 0, 0);
-                this.lblATLocked.BackColor = System.Drawing.Color.FromArgb(128, 128, (int)byte.MaxValue);
-                this.I9Picker.ForeColor = System.Drawing.Color.FromArgb(96, 48, (int)byte.MaxValue);
+                this.BackColor = Color.FromArgb(0, 0, 0);
+                this.lblATLocked.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
+                this.I9Picker.ForeColor = Color.FromArgb(96, 48, (int)byte.MaxValue);
             }
             this.I9Picker.BackColor = this.BackColor;
             this.I9Popup.BackColor = System.Drawing.Color.Black;
             this.I9Popup.ForeColor = this.I9Picker.ForeColor;
             this.myDataView.BackColor = this.BackColor;
-            this.llPrimary.BackColor = this.BackColor;
-            this.llSecondary.BackColor = this.BackColor;
-            this.llPool0.BackColor = this.BackColor;
-            this.llPool1.BackColor = this.BackColor;
-            this.llPool2.BackColor = this.BackColor;
-            this.llPool3.BackColor = this.BackColor;
-            this.llAncillary.BackColor = this.BackColor;
-            ListLabelV2 llPrimary = this.llPrimary;
-            this.UpdateLLColours(ref llPrimary);
-            this.llPrimary = llPrimary;
-            ListLabelV2 llSecondary = this.llSecondary;
-            this.UpdateLLColours(ref llSecondary);
-            this.llSecondary = llSecondary;
-            ListLabelV2 llAncillary = this.llAncillary;
-            this.UpdateLLColours(ref llAncillary);
-            this.llAncillary = llAncillary;
-            ListLabelV2 llPool0 = this.llPool0;
-            this.UpdateLLColours(ref llPool0);
-            this.llPool0 = llPool0;
-            ListLabelV2 llPool1 = this.llPool1;
-            this.UpdateLLColours(ref llPool1);
-            this.llPool1 = llPool1;
-            ListLabelV2 iList = this.llPool2;
-            this.UpdateLLColours(ref iList);
-            this.llPool2 = iList;
-            iList = this.llPool3;
-            this.UpdateLLColours(ref iList);
-            this.llPool3 = iList;
-            this.llPrimary.Font = new System.Drawing.Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.llSecondary.Font = this.llPrimary.Font;
-            this.llPool0.Font = this.llPrimary.Font;
-            this.llPool1.Font = this.llPrimary.Font;
-            this.llPool2.Font = this.llPrimary.Font;
-            this.llPool3.Font = this.llPrimary.Font;
-            this.llAncillary.Font = this.llPrimary.Font;
-            this.lblName.BackColor = this.BackColor;
-            this.lblAT.BackColor = this.BackColor;
-            this.lblOrigin.BackColor = this.BackColor;
-            this.lblHero.BackColor = this.BackColor;
-            this.pnlGFX.BackColor = this.BackColor;
-            this.lblLocked0.BackColor = this.lblATLocked.BackColor;
-            this.lblLocked1.BackColor = this.lblATLocked.BackColor;
-            this.lblLocked2.BackColor = this.lblATLocked.BackColor;
-            this.lblLocked3.BackColor = this.lblATLocked.BackColor;
-            this.lblLockedAncillary.BackColor = this.lblATLocked.BackColor;
-            this.lblLockedSecondary.BackColor = this.lblATLocked.BackColor;
-            this.lblATLocked.BackColor = this.lblATLocked.BackColor;
-            this.ibSets.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibPvX.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.incarnateButton.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.tempPowersButton.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.accoladeButton.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.heroVillain.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibVetPools.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibTotals.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibMode.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibSlotLevels.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibPopup.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibRecipe.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
-            this.ibAccolade.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
+            var font = new Font(this.llPrimary.Font.FontFamily, MidsContext.Config.RtFont.PairedBase, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            var toColor = new Control[]
+            {
+                this.llPrimary, this.llSecondary,
+                this.llPool0, this.llPool1, this.llPool2, this.llPool3,
+                this.llAncillary,
+                this.lblName, this.lblAT, this.lblOrigin, this.lblHero,
+                this.pnlGFX,
+                this.lblLocked0, this.lblLocked1, this.lblLocked2, this.lblLocked3,
+                this.lblLockedAncillary, this.lblLockedSecondary, this.lblATLocked
+            };
+            foreach (var colorItem in toColor)
+            {
+                colorItem.BackColor = this.BackColor;
+                if (colorItem is ListLabelV2 ll)
+                {
+                    this.UpdateLLColours(ll);
+                    ll.Font = font;
+                }
+
+            }
+
+            var ibs = new ImageButton[]
+            {
+                this.ibSets,
+                this.ibPvX,
+                this.incarnateButton,
+                this.tempPowersButton,
+                this.accoladeButton,
+                this.heroVillain,
+                this.ibVetPools,
+                this.ibTotals,
+                this.ibMode,
+                this.ibSlotLevels,
+                this.ibPopup,
+                this.ibRecipe,
+                this.ibAccolade,
+            };
+            foreach (var ib in ibs)
+                ib.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
+
+
             if (!flag)
                 return;
             if (!skipDraw)
@@ -5238,7 +5001,7 @@ namespace Hero_Designer
             float height2 = bFont.GetHeight(this.dmBuffer.Graphics) + 2f;
             RectangleF Bounds = new RectangleF(0.0f, (float)(((double)this.pbDynMode.Height - (double)height2) / 2.0), (float)this.pbDynMode.Width, height2);
             Graphics graphics = this.dmBuffer.Graphics;
-            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, ref graphics, false, false);
+            clsDrawX.DrawOutlineText(iStr, Bounds, Color.WhiteSmoke, Color.FromArgb(192, 0, 0, 0), bFont, 1f, graphics, false, false);
         }
 
         void UpdateDynamicModeInfo()
@@ -5256,23 +5019,23 @@ namespace Hero_Designer
             this.ibMode.TextOff = MidsContext.Config.BuildMode != Enums.dmModes.Dynamic ? (!MainModule.MidsController.Toon.Complete ? "Level-Up: " + (MidsContext.Character.Level + 1) : "Level-Up") : "Dynamic";
         }
 
-        void UpdateLLColours(ref ListLabelV2 iList)
+        void UpdateLLColours(ListLabelV2 iList)
         {
             iList.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
             iList.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
             iList.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-            iList.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+            iList.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb(byte.MaxValue, 0, 0));
             iList.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
             if (this.myDataView.DrawVillain)
             {
-                iList.ScrollBarColor = System.Drawing.Color.FromArgb((int)byte.MaxValue, 0, 0);
+                iList.ScrollBarColor = System.Drawing.Color.FromArgb(byte.MaxValue, 0, 0);
                 iList.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
             }
             else
             {
-                iList.ScrollBarColor = System.Drawing.Color.FromArgb(64, 64, (int)byte.MaxValue);
-                iList.ScrollButtonColor = System.Drawing.Color.FromArgb(32, 32, (int)byte.MaxValue);
+                iList.ScrollBarColor = System.Drawing.Color.FromArgb(64, 64, byte.MaxValue);
+                iList.ScrollButtonColor = System.Drawing.Color.FromArgb(32, 32, byte.MaxValue);
             }
         }
 
@@ -5315,69 +5078,13 @@ namespace Hero_Designer
             {
                 frmAccolade fTemp = this.fTemp;
                 if (fTemp.Visible)
-                {
-                    var llLeft = fTemp.LLLeft;
-                    llLeft.SuspendRedraw = true;
-                    var llRight = fTemp.LLRight;
-                    llRight.SuspendRedraw = true;
-                    llLeft.Font = this.llPrimary.Font;
-                    llRight.Font = this.llPrimary.Font;
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                    llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                    llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                    int num1 = llLeft.Items.Length - 1;
-                    for (int index = 0; index <= num1; ++index)
-                        llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    int num2 = llRight.Items.Length - 1;
-                    for (int index = 0; index <= num2; ++index)
-                        llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                    llLeft.SuspendRedraw = false;
-                    llRight.SuspendRedraw = false;
-                    llLeft.Refresh();
-                    llRight.Refresh();
-                }
+                    fTemp.UpdateFonts(this.llPrimary.Font);
             }
             if (this.fAccolade == null)
                 return;
             frmAccolade fAccolade = this.fAccolade;
             if (fAccolade.Visible)
-            {
-                var llLeft = fAccolade.LLLeft;
-                var llRight = fAccolade.LLRight;
-                llLeft.SuspendRedraw = true;
-                llRight.SuspendRedraw = true;
-                llLeft.Font = this.llPrimary.Font;
-                llRight.Font = this.llPrimary.Font;
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
-                llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
-                llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
-                for (int index = 0; index <= llLeft.Items.Length - 1; ++index)
-                    llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                for (int index = 0; index <= llRight.Items.Length - 1; ++index)
-                    llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
-                llLeft.SuspendRedraw = false;
-                llRight.SuspendRedraw = false;
-                llLeft.Refresh();
-                llRight.Refresh();
-            }
+                fAccolade.UpdateFonts(this.llPrimary.Font);
         }
 
         void UpdatePowerList(ListLabelV2 llPower)

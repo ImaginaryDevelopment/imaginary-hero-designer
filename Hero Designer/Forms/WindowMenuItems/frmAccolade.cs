@@ -34,16 +34,6 @@ namespace Hero_Designer
         VScrollBar VScrollBar1;
 
         internal frmIncarnate.CustomPanel Panel2;
-        internal ListLabelV2 LLLeft
-        {
-            get => llLeft;
-            private set => llLeft = value;
-        }
-        internal ListLabelV2 LLRight
-        {
-            get => llRight;
-            private set => llRight = value;
-        }
 
         public frmAccolade(frmMain iParent, List<IPower> iPowers)
         {
@@ -55,6 +45,37 @@ namespace Hero_Designer
             this.Name = nameof(frmAccolade);
             this._myParent = iParent;
             this._myPowers = iPowers;
+        }
+
+        public void UpdateFonts(Font font)
+        {
+            var llLeft = this.llLeft;
+            var llRight = this.llRight;
+            llLeft.SuspendRedraw = true;
+            llRight.SuspendRedraw = true;
+            llLeft.Font = font;
+            llRight.Font = font;
+            llLeft.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+            llLeft.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+            llLeft.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+            llLeft.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+            llLeft.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+            llLeft.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+            llRight.UpdateTextColors(ListLabelV2.LLItemState.Enabled, MidsContext.Config.RtFont.ColorPowerAvailable);
+            llRight.UpdateTextColors(ListLabelV2.LLItemState.Disabled, MidsContext.Config.RtFont.ColorPowerDisabled);
+            llRight.UpdateTextColors(ListLabelV2.LLItemState.Selected, MidsContext.Config.RtFont.ColorPowerTaken);
+            llRight.UpdateTextColors(ListLabelV2.LLItemState.SelectedDisabled, MidsContext.Config.RtFont.ColorPowerTakenDark);
+            llRight.UpdateTextColors(ListLabelV2.LLItemState.Invalid, Color.FromArgb((int)byte.MaxValue, 0, 0));
+            llRight.HoverColor = MidsContext.Config.RtFont.ColorPowerHighlight;
+            for (int index = 0; index <= llLeft.Items.Length - 1; ++index)
+                llLeft.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+            for (int index = 0; index <= llRight.Items.Length - 1; ++index)
+                llRight.Items[index].Bold = MidsContext.Config.RtFont.PairedBold;
+            llLeft.SuspendRedraw = false;
+            llRight.SuspendRedraw = false;
+            llLeft.Refresh();
+            llRight.Refresh();
+
         }
 
         void ChangedScrollFrameContents()

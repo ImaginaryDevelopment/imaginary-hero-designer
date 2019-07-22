@@ -1030,7 +1030,7 @@ namespace Hero_Designer
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Graphics graphics2 = this.bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, ref graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, graphics2, false, false);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
@@ -1039,7 +1039,7 @@ namespace Hero_Designer
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, (int)byte.MaxValue, (int)byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = this.bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, ref graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, graphics2, false, false);
                             }
                         }
                     }
@@ -1060,7 +1060,7 @@ namespace Hero_Designer
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Graphics graphics2 = this.bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, ref graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Conversions.ToString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.IOLevel + 1), Bounds, Color.Cyan, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, graphics2, false, false);
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
@@ -1069,7 +1069,7 @@ namespace Hero_Designer
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, (int)byte.MaxValue, (int)byte.MaxValue)) : Color.Yellow) : Color.Red;
                                 Graphics graphics2 = this.bxFlip.Graphics;
-                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, ref graphics2, false, false);
+                                clsDrawX.DrawOutlineText(Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel, MidsContext.Config.ShowRelSymbols), Bounds, Text, Color.FromArgb(128, 0, 0, 0), this.pnlEnhActive.Font, 1f, graphics2, false, false);
                             }
                         }
                     }

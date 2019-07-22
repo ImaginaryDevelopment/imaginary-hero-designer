@@ -72,8 +72,10 @@ public static class Files
     {
         get
         {
-            var fp = Path.Combine(Application.StartupPath, Path.Combine("Data", MxdbFileConfig));
-            return System.Diagnostics.Debugger.IsAttached ? SearchUp("Data", fp) : fp;
+            //var fp = Path.Combine(Application.StartupPath, Path.Combine("Data", MxdbFileConfig));
+            //var fnamep = System.Diagnostics.Debugger.IsAttached ? SearchUp("Data", fp) : fp;
+            return SelectDataFileLoad(MxdbFileConfig);
+            //return fnamep;
         }
     }
 
