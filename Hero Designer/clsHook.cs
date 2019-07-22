@@ -86,7 +86,6 @@ namespace Hero_Designer
                 var shrunkData = ShrinkTheDatalink(mrb.Datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
-            //byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjUwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
             string wString = Encoding.UTF8.GetString(data);
             var httpWebRequest = (HttpWebRequest) WebRequest.Create(wString);
             httpWebRequest.ContentType = "application/json";

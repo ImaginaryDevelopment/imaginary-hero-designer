@@ -1,12 +1,7 @@
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 public interface ISerialize
 {
