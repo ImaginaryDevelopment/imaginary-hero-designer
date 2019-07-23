@@ -3,12 +3,12 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
-[assembly: AssemblyCompany("None")]
+[assembly: AssemblyCompany("RebornTeam")]
 [assembly: AssemblyCopyright("")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyFileVersion(Base.Master_Classes.MidsContext.AppAssemblyVersion)]
-[assembly: AssemblyProduct(Base.Master_Classes.MidsContext.AppName)]
-[assembly: AssemblyTitle(Base.Master_Classes.MidsContext.Title)]
+[assembly: AssemblyDescription("Mids' Hero/Villain Designer reimagined and Reborn!")]
+[assembly: AssemblyFileVersion("6.0.0.2")]
+[assembly: AssemblyProduct("Mids' Reborn : Hero Designer")]
+[assembly: AssemblyTitle("Mids' Reborn : Hero Designer")]
 [assembly: AssemblyTrademark("")]
 [assembly: Guid("F912C320-5AE9-4415-9A0D-30A547BED406")]
-[assembly: AssemblyVersion(Base.Master_Classes.MidsContext.AppAssemblyVersion)]
+[assembly: AssemblyVersion("6.0.0.2")]
