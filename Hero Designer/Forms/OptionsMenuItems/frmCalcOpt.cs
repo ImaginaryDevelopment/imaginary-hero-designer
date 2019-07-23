@@ -563,10 +563,10 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
-            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
+            foreach (var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
                 this.dcExList.Items.Add(item);
-            if(!string.IsNullOrWhiteSpace(config.DSelServer))
-            this.dcExList.SelectedItem = config.DSelServer;
+            if (!string.IsNullOrWhiteSpace(config.DSelServer))
+                this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
@@ -744,7 +744,7 @@ namespace Hero_Designer
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;
             config.LoadLastFileOnStart = this.chkLoadLastFile.Checked;
-            if (!string.IsNullOrWhiteSpace(config.DefaultSaveFolderOverride) && config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
+            if (config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
             {
                 config.DefaultSaveFolderOverride = this.lblSaveFolder.Text;
                 this.myParent.DlgOpen.InitialDirectory = config.DefaultSaveFolderOverride;

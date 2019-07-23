@@ -4653,7 +4653,7 @@ namespace Hero_Designer
             var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {
-                MessageBox.Show("No Updates.", "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No Updates: " + msg, "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates)
             {

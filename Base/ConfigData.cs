@@ -41,8 +41,8 @@ public class ConfigData
     public int Columns = 3;
     public Size LastSize = new Size(1072, 760);
     public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
-    public Enums.CompOverride[] CompOverride = new Enums.CompOverride[0];
-    public ConfigData.PrintOptionProfile PrintProfile = ConfigData.PrintOptionProfile.SinglePage;
+    public Enums.CompOverride[] CompOverride = Array.Empty<Enums.CompOverride>();
+    public PrintOptionProfile PrintProfile = PrintOptionProfile.SinglePage;
     public bool PrintProfileEnh = true;
     public string LastPrinter = string.Empty;
     public bool LoadLastFileOnStart = true;
@@ -126,7 +126,10 @@ public class ConfigData
     {
         var oldMethod = new ConfigData(deserializing: false, iFilename: mhdFn);
         oldMethod.IntializeComponent();
-        File.Move(mhdFn, mhdFn + ".old");
+        var file = mhdFn + ".old";
+        if (File.Exists(file))
+            file += "2";
+        File.Move(mhdFn, file);
         oldMethod.SaveConfig(serializer);
     }
 
@@ -157,6 +160,7 @@ public class ConfigData
         }
         ConfigData._current.IntializeComponent();
     }
+
     ConfigData() : this(true, "") { }
 
     ConfigData(bool deserializing, string iFilename)
@@ -179,7 +183,7 @@ public class ConfigData
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
-        this.CompOverride = new Enums.CompOverride[0];
+        this.CompOverride = Array.Empty<Enums.CompOverride>();
         if (deserializing) return;
         if (!string.IsNullOrEmpty(iFilename))
         {
