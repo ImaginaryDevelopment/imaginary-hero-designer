@@ -19,17 +19,13 @@ public interface ISerialize
 public class ConfigData
 {
     string _defaultSaveFolderOverride;
-    SDamageMath _damageMath = new SDamageMath();
-    IncludeExclude _inc = new IncludeExclude();
-    Si9 _i9 = new Si9();
-    FontSettings _rtFont = new FontSettings();
     Size _lastSize = new Size(1072, 760);
 
     // these properties require settings for deserialization
-    public SDamageMath DamageMath { get => _damageMath; private set => _damageMath = value; }
-    public IncludeExclude Inc { get => _inc; private set => _inc = value; }
-    public Si9 I9 { get => _i9; private set => _i9 = value; }
-    public FontSettings RtFont { get => _rtFont; private set => _rtFont = value; }
+    public SDamageMath DamageMath { get; set; }
+    public IncludeExclude Inc { get; set; }
+    public Si9 I9 { get; set; }
+    public FontSettings RtFont { get; set; }
     public Size LastSize { get => _lastSize; set => _lastSize = value; }
 
     public float BaseAcc { get; set; } = 0.75f;
@@ -174,20 +170,20 @@ public class ConfigData
 
     ConfigData(bool deserializing, string iFilename)
     {
-        this._damageMath.Calculate = ConfigData.EDamageMath.Average;
-        this._damageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
-        this._inc.PvE = true;
-        this._i9.DefaultIOLevel = 49;
-        this._i9.DisplayIOLevels = true;
-        this._i9.CalculateEnahncementFX = true;
-        this._i9.CalculateSetBonusFX = true;
-        this._i9.PrintIOLevels = true;
-        this._i9.ExportIOLevels = false;
-        this._i9.ExportCompress = true;
-        this._i9.ExportDataChunk = true;
-        this._i9.ExportStripEnh = false;
-        this._i9.ExportStripSetNames = false;
-        this._i9.ExportExtraSep = false;
+        this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
+        this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
+        this.Inc.PvE = true;
+        this.I9.DefaultIOLevel = 49;
+        this.I9.DisplayIOLevels = true;
+        this.I9.CalculateEnahncementFX = true;
+        this.I9.CalculateSetBonusFX = true;
+        this.I9.PrintIOLevels = true;
+        this.I9.ExportIOLevels = false;
+        this.I9.ExportCompress = true;
+        this.I9.ExportDataChunk = true;
+        this.I9.ExportStripEnh = false;
+        this.I9.ExportStripSetNames = false;
+        this.I9.ExportExtraSep = false;
         this.UpdatePath = "";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
@@ -263,9 +259,9 @@ public class ConfigData
                 this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
                 this.ExempHigh = reader.ReadInt32();
                 this.ExempLow = reader.ReadInt32();
-                this._inc.PvE = reader.ReadBoolean();
+                this.Inc.PvE = reader.ReadBoolean();
                 reader.ReadBoolean();
-                this._damageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
+                this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
                 reader.ReadSingle();
                 if (version < 1.24000000953674)
                 {
@@ -273,7 +269,7 @@ public class ConfigData
                 }
                 else
                     reader.ReadInt32();
-                this._damageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
+                this.DamageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
                 this.DataDamageGraph = reader.ReadBoolean();
                 this.DataDamageGraphPercentageOnly = reader.ReadBoolean();
                 this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
@@ -299,50 +295,50 @@ public class ConfigData
                     this.ForceLevel = reader.ReadInt32();
                 if (version >= 1.20000004768372)
                 {
-                    this._i9.DefaultIOLevel = reader.ReadInt32();
-                    if (this._i9.DefaultIOLevel > 49)
-                        this._i9.DefaultIOLevel = 49;
-                    this._i9.DisplayIOLevels = reader.ReadBoolean();
-                    this._i9.CalculateEnahncementFX = reader.ReadBoolean();
-                    this._i9.CalculateSetBonusFX = reader.ReadBoolean();
-                    this._i9.ExportIOLevels = reader.ReadBoolean();
-                    this._i9.PrintIOLevels = reader.ReadBoolean();
-                    this._i9.ExportCompress = reader.ReadBoolean();
-                    this._i9.ExportDataChunk = reader.ReadBoolean();
-                    this._i9.ExportStripEnh = reader.ReadBoolean();
-                    this._i9.ExportStripSetNames = reader.ReadBoolean();
-                    this._i9.ExportExtraSep = reader.ReadBoolean();
+                    this.I9.DefaultIOLevel = reader.ReadInt32();
+                    if (this.I9.DefaultIOLevel > 49)
+                        this.I9.DefaultIOLevel = 49;
+                    this.I9.DisplayIOLevels = reader.ReadBoolean();
+                    this.I9.CalculateEnahncementFX = reader.ReadBoolean();
+                    this.I9.CalculateSetBonusFX = reader.ReadBoolean();
+                    this.I9.ExportIOLevels = reader.ReadBoolean();
+                    this.I9.PrintIOLevels = reader.ReadBoolean();
+                    this.I9.ExportCompress = reader.ReadBoolean();
+                    this.I9.ExportDataChunk = reader.ReadBoolean();
+                    this.I9.ExportStripEnh = reader.ReadBoolean();
+                    this.I9.ExportStripSetNames = reader.ReadBoolean();
+                    this.I9.ExportExtraSep = reader.ReadBoolean();
                     this.PrintInColour = reader.ReadBoolean();
                     //this._printScheme = 
                     reader.ReadInt32();
                 }
                 if (version >= 1.21000003814697)
                 {
-                    this._rtFont.PairedBase = reader.ReadSingle();
-                    this._rtFont.PairedBold = reader.ReadBoolean();
-                    this._rtFont.RTFBase = reader.ReadInt32();
-                    this._rtFont.RTFBold = reader.ReadBoolean();
-                    this._rtFont.ColorBackgroundHero = reader.ReadRGB();
-                    this._rtFont.ColorBackgroundVillain = reader.ReadRGB();
-                    this._rtFont.ColorEnhancement = reader.ReadRGB();
-                    this._rtFont.ColorFaded = reader.ReadRGB();
-                    this._rtFont.ColorInvention = reader.ReadRGB();
-                    this._rtFont.ColorInventionInv = reader.ReadRGB();
-                    this._rtFont.ColorText = reader.ReadRGB();
-                    this._rtFont.ColorWarning = reader.ReadRGB();
-                    this._rtFont.ColorPlName = reader.ReadRGB();
-                    this._rtFont.ColorPlSpecial = reader.ReadRGB();
+                    this.RtFont.PairedBase = reader.ReadSingle();
+                    this.RtFont.PairedBold = reader.ReadBoolean();
+                    this.RtFont.RTFBase = reader.ReadInt32();
+                    this.RtFont.RTFBold = reader.ReadBoolean();
+                    this.RtFont.ColorBackgroundHero = reader.ReadRGB();
+                    this.RtFont.ColorBackgroundVillain = reader.ReadRGB();
+                    this.RtFont.ColorEnhancement = reader.ReadRGB();
+                    this.RtFont.ColorFaded = reader.ReadRGB();
+                    this.RtFont.ColorInvention = reader.ReadRGB();
+                    this.RtFont.ColorInventionInv = reader.ReadRGB();
+                    this.RtFont.ColorText = reader.ReadRGB();
+                    this.RtFont.ColorWarning = reader.ReadRGB();
+                    this.RtFont.ColorPlName = reader.ReadRGB();
+                    this.RtFont.ColorPlSpecial = reader.ReadRGB();
                 }
                 if (version >= 1.22000002861023)
                 {
                     this.ShowSlotLevels = reader.ReadBoolean();
                     this.LoadLastFileOnStart = reader.ReadBoolean();
                     this.LastFileName = reader.ReadString();
-                    this._rtFont.ColorPowerAvailable = reader.ReadRGB();
-                    this._rtFont.ColorPowerTaken = reader.ReadRGB();
-                    this._rtFont.ColorPowerTakenDark = reader.ReadRGB();
-                    this._rtFont.ColorPowerDisabled = reader.ReadRGB();
-                    this._rtFont.ColorPowerHighlight = reader.ReadRGB();
+                    this.RtFont.ColorPowerAvailable = reader.ReadRGB();
+                    this.RtFont.ColorPowerTaken = reader.ReadRGB();
+                    this.RtFont.ColorPowerTakenDark = reader.ReadRGB();
+                    this.RtFont.ColorPowerDisabled = reader.ReadRGB();
+                    this.RtFont.ColorPowerHighlight = reader.ReadRGB();
                 }
                 if (version >= 1.23000001907349)
                 {
