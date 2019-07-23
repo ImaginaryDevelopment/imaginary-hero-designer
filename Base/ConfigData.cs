@@ -21,11 +21,11 @@ public class ConfigData
     string _defaultSaveFolderOverride;
     Size _lastSize = new Size(1072, 760);
 
-    // these properties require settings for deserialization
-    public SDamageMath DamageMath { get; set; }
-    public IncludeExclude Inc { get; set; }
-    public Si9 I9 { get; set; }
-    public FontSettings RtFont { get; set; }
+    // these properties require setters for deserialization
+    public SDamageMath DamageMath { get; private set; } = new SDamageMath();
+    public IncludeExclude Inc { get; private set; } = new IncludeExclude();
+    public Si9 I9 { get; private set; } = new Si9();
+    public FontSettings RtFont { get; private set; } = new FontSettings();
     public Size LastSize { get => _lastSize; set => _lastSize = value; }
 
     public float BaseAcc { get; set; } = 0.75f;

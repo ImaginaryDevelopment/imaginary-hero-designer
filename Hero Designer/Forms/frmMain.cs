@@ -27,7 +27,8 @@ namespace Hero_Designer
 
         Rectangle ActivePopupBounds;
         bool DataViewLocked;
-        readonly short[] ddsa;
+        // dragdrop scenario action
+        readonly short[] dragdropScenarioAction;
         ExtendedBitmap dmBuffer;
         bool DoneDblClick;
         int dragFinishPower;
@@ -147,7 +148,7 @@ namespace Hero_Designer
                 this.FlipSlotState = Array.Empty<int>();
                 this.dragStartPower = -1;
                 this.dragStartSlot = -1;
-                this.ddsa = new short[20];
+                this.dragdropScenarioAction = new short[20];
                 this.DoneDblClick = false;
             }
             this.InitializeComponent();
@@ -2832,11 +2833,11 @@ namespace Hero_Designer
 
         bool? CheckInitDdsaValue(int index, int? defaultOpt, string descript, params string[] options)
         {
-            if (this.ddsa[index] != 0) return null;
+            if (this.dragdropScenarioAction[index] != 0) return null;
             var (result, remember) = frmOptionListDlg.ShowWithOptions(AllowRemember: true, DefaultOption: defaultOpt ?? 1, descript, options);
-            this.ddsa[index] = (short)result;
+            this.dragdropScenarioAction[index] = (short)result;
             if (remember == true)
-                MidsContext.Config.DragDropScenarioAction[index] = this.ddsa[index];
+                MidsContext.Config.DragDropScenarioAction[index] = this.dragdropScenarioAction[index];
             return remember;
         }
 
@@ -2844,22 +2845,22 @@ namespace Hero_Designer
         {
             if (tp[start].NIDPower != -1 && DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 > tp[finish].Level)
             {
-                if (this.ddsa[0] == 0)
+                if (this.dragdropScenarioAction[0] == 0)
                 {
                     var canOverride = DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level;
                     var (result, remember) = canOverride ? frmOptionListDlg.ShowWithOptions(true, 0, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)") : frmOptionListDlg.ShowWithOptions(true, 1, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
-                    this.ddsa[0] = (short)result;
+                    this.dragdropScenarioAction[0] = (short)result;
                     if (canOverride)
                     {
-                        if (this.ddsa[0] == 2)
-                            this.ddsa[0] = 3;
+                        if (this.dragdropScenarioAction[0] == 2)
+                            this.dragdropScenarioAction[0] = 3;
                     }
                     if (remember == true)
-                        MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
+                        MidsContext.Config.DragDropScenarioAction[0] = this.dragdropScenarioAction[0];
                 }
-                if (this.ddsa[0] == 1)
+                if (this.dragdropScenarioAction[0] == 1)
                     return 0;
-                if (this.ddsa[0] == 2)
+                if (this.dragdropScenarioAction[0] == 2)
                 {
                     if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
@@ -2905,9 +2906,9 @@ namespace Hero_Designer
             {
 
                 CheckInitDdsaValue(1, null, "Power is moved too high (some powers will no longer fit)", "Move to the last power slot that can be shifted");
-                if (this.ddsa[1] == 1)
+                if (this.dragdropScenarioAction[1] == 1)
                     return 0;
-                if (this.ddsa[1] == 2)
+                if (this.dragdropScenarioAction[1] == 2)
                 {
                     int num1 = start + 1;
                     int index;
@@ -2953,9 +2954,9 @@ namespace Hero_Designer
                 if (tp[index].NIDPower != -1 && flag1 && !flagArray[index])
                 {
                     CheckInitDdsaValue(7, null, "Power being shifted down cannot shift to the necessary level", "Shift other powers around it", "Overwrite it; leave previous power slot empty", "Allow anyway (mark as invalid)");
-                    if (this.ddsa[7] == 1)
+                    if (this.dragdropScenarioAction[7] == 1)
                         return 0;
-                    if (this.ddsa[7] == 3)
+                    if (this.dragdropScenarioAction[7] == 3)
                     {
                         if (!flag2)
                         {
@@ -2968,9 +2969,9 @@ namespace Hero_Designer
                 if (!flag2 & tp[index].NIDPower < 0)
                 {
                     CheckInitDdsaValue(10, null, "There is a gap in a group of powers that are being shifted", "Fill empty slot; don't move powers unnecessarily", "Shift empty slot as if it were a power");
-                    if (this.ddsa[10] == 1)
+                    if (this.dragdropScenarioAction[10] == 1)
                         return 0;
-                    if (this.ddsa[10] == 2)
+                    if (this.dragdropScenarioAction[10] == 2)
                     {
                         if (tp[finish].NIDPower < 0)
                         {
@@ -3035,7 +3036,7 @@ namespace Hero_Designer
             int index = 0;
             do
             {
-                this.ddsa[index] = MidsContext.Config.DragDropScenarioAction[index];
+                this.dragdropScenarioAction[index] = MidsContext.Config.DragDropScenarioAction[index];
                 ++index;
             }
             while (index <= 19);
@@ -3077,8 +3078,8 @@ namespace Hero_Designer
                     {
                         case 0:
                             CheckInitDdsaValue(4, null, "Power being replaced is swapped too low", "Overwrite rather than swap", "Allow power to be swapped anyway (mark as invalid)");
-                            if (this.ddsa[4] == 1) return 0;
-                            if (this.ddsa[4] == 2)
+                            if (this.dragdropScenarioAction[4] == 1) return 0;
+                            if (this.dragdropScenarioAction[4] == 2)
                             {
                                 tp[finish].NIDPower = -1;
                                 tp[finish].NIDPowerset = -1;
@@ -3089,7 +3090,7 @@ namespace Hero_Designer
                             }
                             break;
                         case 2:
-                            if (this.ddsa[7] == 2)
+                            if (this.dragdropScenarioAction[7] == 2)
                                 return 1;
                             break;
                         default:
@@ -3099,25 +3100,25 @@ namespace Hero_Designer
             }
             else if (mode == 0)
             {
-                if (this.ddsa[0] == 0)
+                if (this.dragdropScenarioAction[0] == 0)
                 {
                     if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
                         var remember = CheckInitDdsaValue(0, null, "Power is moved or swapped too low", "Allow power to be moved anyway (mark as invalid)");
-                        if (this.ddsa[0] == 2)
+                        if (this.dragdropScenarioAction[0] == 2)
                         {
-                            this.ddsa[0] = 3;
+                            this.dragdropScenarioAction[0] = 3;
                             if (remember == true)
-                                MidsContext.Config.DragDropScenarioAction[0] = this.ddsa[0];
+                                MidsContext.Config.DragDropScenarioAction[0] = this.dragdropScenarioAction[0];
                         }
                     }
                     else
                         CheckInitDdsaValue(0, 0, "Power is moved or swapped too low", "Move/swap power to its lowest possible level", "Allow power to be moved anyway (mark as invalid)");
                 }
-                if (this.ddsa[0] == 1)
+                if (this.dragdropScenarioAction[0] == 1)
                     return 0;
 
-                if (this.ddsa[0] == 2)
+                if (this.dragdropScenarioAction[0] == 2)
                 {
                     if (DatabaseAPI.Database.Power[tp[start].NIDPower].Level - 1 == tp[start].Level)
                     {
@@ -3141,22 +3142,22 @@ namespace Hero_Designer
                 if (mode == 1)
                 {
                     CheckInitDdsaValue(12, null, "The power in the destination slot is prevented from being shifted up", "Unlock and shift all level-locked powers", "Shift destination power to the first valid and empty slot", "Swap instead of move");
-                    if (this.ddsa[12] == 1)
+                    if (this.dragdropScenarioAction[12] == 1)
                         return 0;
-                    if (this.ddsa[12] == 2)
+                    if (this.dragdropScenarioAction[12] == 2)
                     {
-                        this.ddsa[11] = 2;
+                        this.dragdropScenarioAction[11] = 2;
                         return 2;
                     }
-                    if (this.ddsa[12] != 3 && this.ddsa[12] == 4)
+                    if (this.dragdropScenarioAction[12] != 3 && this.dragdropScenarioAction[12] == 4)
                         return 3;
                 }
                 else if (mode == 2)
                 {
                     CheckInitDdsaValue(11, null, "A power placed at its minimum level is being shifted up", "Shift it along with the other powers", "Shift other powers around it");
-                    if (this.ddsa[11] == 1)
+                    if (this.dragdropScenarioAction[11] == 1)
                         return 0;
-                    if (this.ddsa[11] != 2 && this.ddsa[11] == 3)
+                    if (this.dragdropScenarioAction[11] != 2 && this.dragdropScenarioAction[11] == 3)
                         return 1;
                 }
             }
@@ -3179,13 +3180,13 @@ namespace Hero_Designer
                 CheckInitDdsaValue(9, null, "Power being shifted up has impossible # of slots", "Remove impossible slots", "Allow anyway (Mark slots as invalid)");
                 num6 = 9;
             }
-            if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 1 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 1)
+            if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[6] == 1 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[3] == 1 ? 1 : 0)) != 0 || num6 == 9 && this.dragdropScenarioAction[9] == 1)
             {
                 num1 = 0;
             }
             else
             {
-                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == 2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == 2 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == 2)
+                if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[6] == 2 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[3] == 2 ? 1 : 0)) != 0 || num6 == 9 && this.dragdropScenarioAction[9] == 2)
                 {
                     int index;
                     int num2;
@@ -3205,7 +3206,7 @@ namespace Hero_Designer
                     while (tp[integer1].SlotCount + tp[integer2].SlotCount > 8 || tp[index].SlotCount > 4 && integer2 != 23)
                         tp[index].Slots = tp[index].Slots.RemoveLast(); // (SlotEntry[])Utils.CopyArray(tp[index].Slots, (Array)new SlotEntry[tp[index].SlotCount - 2 + 1]);
                 }
-                else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.ddsa[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.ddsa[9] == (short)3)
+                else if (((num6 != 6 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[6] == (short)3 ? 1 : 0)) != 0 || ((num6 != 3 ? 0 : (mode < 2 ? 1 : 0)) & (this.dragdropScenarioAction[3] == (short)3 ? 1 : 0)) != 0 || num6 == 9 && this.dragdropScenarioAction[9] == (short)3)
                 {
                     int index1 = start <= finish ? start : finish;
                     if (start == 23 | finish == 23)
@@ -3249,27 +3250,27 @@ namespace Hero_Designer
                             {
                                 if (tp[index3 == 0 ? start : finish].Slots[slotIDX].Level < tp[index3 == 0 ? start : finish].Level)
                                 {
-                                    if (mode < 2 & index3 == 0 & this.ddsa[2] == 0)
+                                    if (mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 0)
                                     {
                                         CheckInitDdsaValue(2, 3, "Power is moved or swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                     }
-                                    else if (mode == 0 & index3 == 1 & this.ddsa[5] == 0)
+                                    else if (mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 0)
                                     {
                                         CheckInitDdsaValue(5, 3, "Power being replaced is swapped higher than slots' levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                     }
-                                    else if (mode == 2 & this.ddsa[8] == 0)
+                                    else if (mode == 2 & this.dragdropScenarioAction[8] == 0)
                                     {
                                         CheckInitDdsaValue(8, 3, "Power being shifted up has slots from lower levels", "Remove slots", "Mark invalid slots", "Swap slot levels if valid; remove invalid ones", "Swap slot levels if valid; mark invalid ones", "Rearrange all slots in build");
                                     }
-                                    if (!(mode < 2 & index3 == 0 & this.ddsa[2] == 1 || mode == 0 & index3 == 1 & this.ddsa[5] == 1 || mode == 2 & this.ddsa[8] == 1))
+                                    if (!(mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 1 || mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 1 || mode == 2 & this.dragdropScenarioAction[8] == 1))
                                     {
                                         var value = 1 - index3 == 0 ? start : finish;
-                                        if (mode < 2 & index3 == 0 & this.ddsa[2] == 2 || mode == 0 & index3 == 1 & this.ddsa[5] == 2 || mode == 2 & this.ddsa[8] == 2)
+                                        if (mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 2 || mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 2 || mode == 2 & this.dragdropScenarioAction[8] == 2)
                                         {
                                             this.RemoveSlotFromTempList(tp[index3 == 0 ? start : finish], slotIDX);
                                             --slotIDX;
                                         }
-                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 4 || mode == 0 & index3 == 1 & this.ddsa[5] == 4 || mode == 2 & this.ddsa[8] == 4)
+                                        else if (mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 4 || mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 4 || mode == 2 & this.dragdropScenarioAction[8] == 4)
                                         {
                                             if (tp[value].SlotCount > slotIDX)
                                             {
@@ -3283,7 +3284,7 @@ namespace Hero_Designer
                                                 --slotIDX;
                                             }
                                         }
-                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 5 || mode == 0 & index3 == 1 & this.ddsa[5] == 5 || mode == 2 & this.ddsa[8] == 5)
+                                        else if (mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 5 || mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 5 || mode == 2 & this.dragdropScenarioAction[8] == 5)
                                         {
                                             if (tp[value].SlotCount > slotIDX)
                                             {
@@ -3292,7 +3293,7 @@ namespace Hero_Designer
                                                 tp[index3 == 0 ? start : finish].Slots[slotIDX].Level = level2;
                                             }
                                         }
-                                        else if (mode < 2 & index3 == 0 & this.ddsa[2] == 6 || mode == 0 & index3 == 1 & this.ddsa[5] == 6 || mode == 2 & this.ddsa[8] == 6)
+                                        else if (mode < 2 & index3 == 0 & this.dragdropScenarioAction[2] == 6 || mode == 0 & index3 == 1 & this.dragdropScenarioAction[5] == 6 || mode == 2 & this.dragdropScenarioAction[8] == 6)
                                             this.RearrangeAllSlotsInBuild(tp, true);
                                     }
                                     else
@@ -3317,7 +3318,7 @@ namespace Hero_Designer
             int index = 0;
             do
             {
-                this.ddsa[index] = MidsContext.Config.DragDropScenarioAction[index];
+                this.dragdropScenarioAction[index] = MidsContext.Config.DragDropScenarioAction[index];
                 ++index;
             }
             while (index <= 19);
@@ -4140,20 +4141,20 @@ namespace Hero_Designer
             int index = 0;
             do
             {
-                this.ddsa[index] = MidsContext.Config.DragDropScenarioAction[index];
+                this.dragdropScenarioAction[index] = MidsContext.Config.DragDropScenarioAction[index];
                 ++index;
             }
             while (index <= 19);
             if (MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level < MidsContext.Character.CurrentBuild.Powers[destPower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[destPower].NIDPower].AllowFrontLoading)
             {
                 CheckInitDdsaValue(13, 0, "Slot being level-swapped is too low for the destination power", "Allow swap anyway (mark as invalid)");
-                if (this.ddsa[13] == 1)
+                if (this.dragdropScenarioAction[13] == 1)
                     return;
             }
             if (MidsContext.Character.CurrentBuild.Powers[destPower].Slots[destSlot].Level < MidsContext.Character.CurrentBuild.Powers[sourcePower].Level & !DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[sourcePower].NIDPower].AllowFrontLoading)
             {
                 CheckInitDdsaValue(14, 0, "Slot being level-swapped is too low for the source power", "Allow swap anyway (mark as invalid)");
-                if (this.ddsa[14] == (short)1)
+                if (this.dragdropScenarioAction[14] == (short)1)
                     return;
             }
             int level = MidsContext.Character.CurrentBuild.Powers[sourcePower].Slots[sourceSlot].Level;
