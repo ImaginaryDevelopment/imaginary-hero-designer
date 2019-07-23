@@ -1953,6 +1953,7 @@
     {
       "CastTimeReal": 2.03,
       "ToggleCost": 15.6,
+      "IsModified": true,
       "PowerIndex": 10430,
       "PowerSetID": 3572,
       "PowerSetIndex": 8,
@@ -2006,8 +2007,7 @@
       "DescShort": "Ranged (Targeted AoE), Foe Hold",
       "DescLong": "Tears at the mind of a target foe and those near him. Total Domination renders all affected foes helpless, lost in their own minds and unable to defend themselves. Recharge: Very Long",
       "SetTypes": [
-        10,
-        32
+        10
       ],
       "Level": 26,
       "VariableName": "",
@@ -2064,7 +2064,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 2,
           "Summon": "",
