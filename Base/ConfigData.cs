@@ -18,37 +18,90 @@ public interface ISerialize
 
 public class ConfigData
 {
-    public ConfigData.SDamageMath DamageMath;
-    public ConfigData.IncludeExclude Inc;
-    public ConfigData.Si9 I9;
-    public ConfigData.FontSettings RtFont;
-
-    public float BaseAcc = 0.75f;
-    public string UpdatePath = null;
-    public bool DoNotUpdateFileAssociation;
-    public Enums.eEnhGrade CalcEnhOrigin = Enums.eEnhGrade.SingleO;
-    public Enums.eEnhRelative CalcEnhLevel = Enums.eEnhRelative.Even;
-    public int ExempHigh = 50;
-    public int TeamSize = 1;
-    public int ExempLow = 50;
-    public int ForceLevel = 50;
-    public int ExportScheme = 1;
-    public int ExportTarget = 1;
-    public bool DataDamageGraph = true;
-    public Enums.eDDGraph DataGraphType = Enums.eDDGraph.Both;
-    public bool ShowVillainColours = true;
-    public bool FreshInstall = true;
-    public int Columns = 3;
-    public Size LastSize = new Size(1072, 760);
-    public Enums.GraphStyle StatGraphStyle = Enums.GraphStyle.Stacked;
-    public Enums.CompOverride[] CompOverride = Array.Empty<Enums.CompOverride>();
-    public PrintOptionProfile PrintProfile = PrintOptionProfile.SinglePage;
-    public bool PrintProfileEnh = true;
-    public string LastPrinter = string.Empty;
-    public bool LoadLastFileOnStart = true;
-    public string LastFileName = string.Empty;
-
     string _defaultSaveFolderOverride;
+    SDamageMath _damageMath = new SDamageMath();
+    IncludeExclude _inc = new IncludeExclude();
+    Si9 _i9 = new Si9();
+    FontSettings _rtFont = new FontSettings();
+    Size _lastSize = new Size(1072, 760);
+
+    // these properties require settings for deserialization
+    public SDamageMath DamageMath { get => _damageMath; private set => _damageMath = value; }
+    public IncludeExclude Inc { get => _inc; private set => _inc = value; }
+    public Si9 I9 { get => _i9; private set => _i9 = value; }
+    public FontSettings RtFont { get => _rtFont; private set => _rtFont = value; }
+    public Size LastSize { get => _lastSize; set => _lastSize = value; }
+
+    public float BaseAcc { get; set; } = 0.75f;
+    public string UpdatePath { get; set; } = null;
+    public bool DoNotUpdateFileAssociation { get; set; }
+    public int ExempHigh { get; set; } = 50;
+    public int TeamSize { get; set; } = 1;
+    public int ExempLow { get; set; } = 50;
+    public int ForceLevel { get; set; } = 50;
+    public int ExportScheme { get; set; } = 1;
+    public int ExportTarget { get; set; } = 1;
+    public bool DataDamageGraph { get; set; } = true;
+    public bool ShowVillainColours { get; set; } = true;
+    public bool FreshInstall { get => !IsInitialized; set => IsInitialized = (!value); }
+
+    // inverse of FreshInstall so it will stop being fresh after every save
+    public bool IsInitialized { get; set; }
+    public int Columns { get; set; } = 3;
+    public PrintOptionProfile PrintProfile { get; set; } = PrintOptionProfile.SinglePage;
+    public bool PrintProfileEnh { get; set; } = true;
+    public string LastPrinter { get; set; } = string.Empty;
+    public bool LoadLastFileOnStart { get; set; } = true;
+    public string LastFileName { get; set; } = string.Empty;
+    public Enums.eEnhGrade CalcEnhOrigin { get; set; } = Enums.eEnhGrade.SingleO;
+    public Enums.eEnhRelative CalcEnhLevel { get; set; } = Enums.eEnhRelative.Even;
+    public Enums.eDDGraph DataGraphType { get; set; } = Enums.eDDGraph.Both;
+    public Enums.GraphStyle StatGraphStyle { get; set; } = Enums.GraphStyle.Stacked;
+    public Enums.CompOverride[] CompOverride { get; set; } = Array.Empty<Enums.CompOverride>();
+
+    public string DNickName { get; set; }
+    public List<string> DServers { get; set; } = new List<string>();
+    public string DSelServer { get; set; }
+    public string DChannel { get; set; }
+    public bool DesaturateInherent { get; set; } = true;
+    public Enums.dmModes BuildMode { get; set; } = Enums.dmModes.Dynamic;
+    public Enums.dmItem BuildOption { get; set; } = Enums.dmItem.Slot;
+    public bool ShowPopup { get; set; } = true;
+    public bool ShowAlphaPopup { get; set; } = true;
+    public bool ReapeatOnMiddleClick { get; set; } = true;
+    public bool ExportHex { get; set; } = true;
+    public readonly short[] DragDropScenarioAction = new short[20]
+        {
+            3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
+        };
+    public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
+    static ConfigData _current { get; set; }
+
+    public bool ExportBonusTotals { get; set; }
+    public bool ExportBonusList { get; set; }
+    public bool NoToolTips { get; set; }
+    public bool DataDamageGraphPercentageOnly { get; set; }
+    public bool CheckForUpdates { get; set; }
+    public Enums.eVisibleSize DvState { get; set; }
+    public Enums.eSuppress Suppression { get; set; }
+    public bool UseArcanaTime { get; set; }
+    public ExportConfig Export { get; }
+    public bool PrintInColour { get; set; }
+
+    public bool PrintHistory { get; set; }
+    public bool SaveFolderChecked { get; set; }
+    public bool ShowSlotLevels { get; set; }
+    public bool ShowEnhRel { get; set; }
+    public bool ShowRelSymbols { get; set; }
+    public bool EnhanceVisibility { get; set; }
+    public Tips Tips { get; set; }
+    public bool PopupRecipes { get; set; }
+    public bool ShoppingListIncludesRecipes { get; set; }
+    public bool ExportChunkOnly { get; set; }
+    public bool LongExport { get; set; }
+    public bool MasterMode { get; set; }
+    public bool ShrinkFrmSets { get; set; }
+
     public string DefaultSaveFolderOverride
     {
         get { return _defaultSaveFolderOverride; }
@@ -66,50 +119,6 @@ public class ConfigData
             _defaultSaveFolderOverride = value;
         }
     }
-    public string DNickName;
-    public List<string> DServers { get; set; } = new List<string>();
-    public string DSelServer { get; set; }
-    public string DChannel;
-    public bool DesaturateInherent = true;
-    public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
-    public Enums.dmItem BuildOption = Enums.dmItem.Slot;
-    public bool ShowPopup = true;
-    public bool ShowAlphaPopup = true;
-    public bool ReapeatOnMiddleClick = true;
-    public bool ExportHex = true;
-    public readonly short[] DragDropScenarioAction = new short[20]
-        {
-            3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
-        };
-    public Enums.eSpeedMeasure SpeedFormat = Enums.eSpeedMeasure.MilesPerHour;
-    static ConfigData _current { get; set; }
-
-    public bool ExportBonusTotals { get; set; }
-    public bool ExportBonusList { get; set; }
-    public bool NoToolTips { get; set; }
-    public bool DataDamageGraphPercentageOnly { get; set; }
-
-    public bool CheckForUpdates { get; set; }
-    public Enums.eVisibleSize DvState { get; set; }
-    public Enums.eSuppress Suppression { get; set; }
-    public bool UseArcanaTime { get; set; }
-    public readonly ExportConfig Export;
-    public bool PrintInColour { get; set; }
-
-    public bool PrintHistory { get; set; }
-    public bool SaveFolderChecked { get; set; }
-    public bool ShowSlotLevels { get; set; }
-    public bool ShowEnhRel { get; set; }
-    public bool ShowRelSymbols { get; set; }
-    public bool EnhanceVisibility { get; set; }
-    public Tips Tips { get; set; }
-    public bool PopupRecipes { get; set; }
-    public bool ShoppingListIncludesRecipes { get; set; }
-    public bool ExportChunkOnly { get; set; }
-    public bool LongExport { get; set; }
-    public bool MasterMode { get; set; }
-    public bool ShrinkFrmSets { get; set; }
-
     internal static ConfigData Current
     {
         get
@@ -165,20 +174,20 @@ public class ConfigData
 
     ConfigData(bool deserializing, string iFilename)
     {
-        this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
-        this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
-        this.Inc.PvE = true;
-        this.I9.DefaultIOLevel = 49;
-        this.I9.DisplayIOLevels = true;
-        this.I9.CalculateEnahncementFX = true;
-        this.I9.CalculateSetBonusFX = true;
-        this.I9.PrintIOLevels = true;
-        this.I9.ExportIOLevels = false;
-        this.I9.ExportCompress = true;
-        this.I9.ExportDataChunk = true;
-        this.I9.ExportStripEnh = false;
-        this.I9.ExportStripSetNames = false;
-        this.I9.ExportExtraSep = false;
+        this._damageMath.Calculate = ConfigData.EDamageMath.Average;
+        this._damageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
+        this._inc.PvE = true;
+        this._i9.DefaultIOLevel = 49;
+        this._i9.DisplayIOLevels = true;
+        this._i9.CalculateEnahncementFX = true;
+        this._i9.CalculateSetBonusFX = true;
+        this._i9.PrintIOLevels = true;
+        this._i9.ExportIOLevels = false;
+        this._i9.ExportCompress = true;
+        this._i9.ExportDataChunk = true;
+        this._i9.ExportStripEnh = false;
+        this._i9.ExportStripSetNames = false;
+        this._i9.ExportExtraSep = false;
         this.UpdatePath = "";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
@@ -254,9 +263,9 @@ public class ConfigData
                 this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
                 this.ExempHigh = reader.ReadInt32();
                 this.ExempLow = reader.ReadInt32();
-                this.Inc.PvE = reader.ReadBoolean();
+                this._inc.PvE = reader.ReadBoolean();
                 reader.ReadBoolean();
-                this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
+                this._damageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
                 reader.ReadSingle();
                 if (version < 1.24000000953674)
                 {
@@ -264,7 +273,7 @@ public class ConfigData
                 }
                 else
                     reader.ReadInt32();
-                this.DamageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
+                this._damageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
                 this.DataDamageGraph = reader.ReadBoolean();
                 this.DataDamageGraphPercentageOnly = reader.ReadBoolean();
                 this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
@@ -280,67 +289,67 @@ public class ConfigData
                 this.ShowVillainColours = reader.ReadBoolean();
                 this.CheckForUpdates = reader.ReadBoolean();
                 this.Columns = reader.ReadInt32();
-                this.LastSize.Width = reader.ReadInt32();
-                this.LastSize.Height = reader.ReadInt32();
+                this._lastSize.Width = reader.ReadInt32();
+                this._lastSize.Height = reader.ReadInt32();
                 this.DvState = (Enums.eVisibleSize)reader.ReadInt32();
                 this.StatGraphStyle = (Enums.GraphStyle)reader.ReadInt32();
                 if (version >= 1.0)
-                    this.FreshInstall = reader.ReadBoolean();
+                    this.IsInitialized = !reader.ReadBoolean();
                 if (version >= 1.10000002384186)
                     this.ForceLevel = reader.ReadInt32();
                 if (version >= 1.20000004768372)
                 {
-                    this.I9.DefaultIOLevel = reader.ReadInt32();
-                    if (this.I9.DefaultIOLevel > 49)
-                        this.I9.DefaultIOLevel = 49;
-                    this.I9.DisplayIOLevels = reader.ReadBoolean();
-                    this.I9.CalculateEnahncementFX = reader.ReadBoolean();
-                    this.I9.CalculateSetBonusFX = reader.ReadBoolean();
-                    this.I9.ExportIOLevels = reader.ReadBoolean();
-                    this.I9.PrintIOLevels = reader.ReadBoolean();
-                    this.I9.ExportCompress = reader.ReadBoolean();
-                    this.I9.ExportDataChunk = reader.ReadBoolean();
-                    this.I9.ExportStripEnh = reader.ReadBoolean();
-                    this.I9.ExportStripSetNames = reader.ReadBoolean();
-                    this.I9.ExportExtraSep = reader.ReadBoolean();
+                    this._i9.DefaultIOLevel = reader.ReadInt32();
+                    if (this._i9.DefaultIOLevel > 49)
+                        this._i9.DefaultIOLevel = 49;
+                    this._i9.DisplayIOLevels = reader.ReadBoolean();
+                    this._i9.CalculateEnahncementFX = reader.ReadBoolean();
+                    this._i9.CalculateSetBonusFX = reader.ReadBoolean();
+                    this._i9.ExportIOLevels = reader.ReadBoolean();
+                    this._i9.PrintIOLevels = reader.ReadBoolean();
+                    this._i9.ExportCompress = reader.ReadBoolean();
+                    this._i9.ExportDataChunk = reader.ReadBoolean();
+                    this._i9.ExportStripEnh = reader.ReadBoolean();
+                    this._i9.ExportStripSetNames = reader.ReadBoolean();
+                    this._i9.ExportExtraSep = reader.ReadBoolean();
                     this.PrintInColour = reader.ReadBoolean();
                     //this._printScheme = 
                     reader.ReadInt32();
                 }
                 if (version >= 1.21000003814697)
                 {
-                    this.RtFont.PairedBase = reader.ReadSingle();
-                    this.RtFont.PairedBold = reader.ReadBoolean();
-                    this.RtFont.RTFBase = reader.ReadInt32();
-                    this.RtFont.RTFBold = reader.ReadBoolean();
-                    this.RtFont.ColorBackgroundHero = reader.ReadRGB();
-                    this.RtFont.ColorBackgroundVillain = reader.ReadRGB();
-                    this.RtFont.ColorEnhancement = reader.ReadRGB();
-                    this.RtFont.ColorFaded = reader.ReadRGB();
-                    this.RtFont.ColorInvention = reader.ReadRGB();
-                    this.RtFont.ColorInventionInv = reader.ReadRGB();
-                    this.RtFont.ColorText = reader.ReadRGB();
-                    this.RtFont.ColorWarning = reader.ReadRGB();
-                    this.RtFont.ColorPlName = reader.ReadRGB();
-                    this.RtFont.ColorPlSpecial = reader.ReadRGB();
+                    this._rtFont.PairedBase = reader.ReadSingle();
+                    this._rtFont.PairedBold = reader.ReadBoolean();
+                    this._rtFont.RTFBase = reader.ReadInt32();
+                    this._rtFont.RTFBold = reader.ReadBoolean();
+                    this._rtFont.ColorBackgroundHero = reader.ReadRGB();
+                    this._rtFont.ColorBackgroundVillain = reader.ReadRGB();
+                    this._rtFont.ColorEnhancement = reader.ReadRGB();
+                    this._rtFont.ColorFaded = reader.ReadRGB();
+                    this._rtFont.ColorInvention = reader.ReadRGB();
+                    this._rtFont.ColorInventionInv = reader.ReadRGB();
+                    this._rtFont.ColorText = reader.ReadRGB();
+                    this._rtFont.ColorWarning = reader.ReadRGB();
+                    this._rtFont.ColorPlName = reader.ReadRGB();
+                    this._rtFont.ColorPlSpecial = reader.ReadRGB();
                 }
-                if ((double)version >= 1.22000002861023)
+                if (version >= 1.22000002861023)
                 {
                     this.ShowSlotLevels = reader.ReadBoolean();
                     this.LoadLastFileOnStart = reader.ReadBoolean();
                     this.LastFileName = reader.ReadString();
-                    this.RtFont.ColorPowerAvailable = reader.ReadRGB();
-                    this.RtFont.ColorPowerTaken = reader.ReadRGB();
-                    this.RtFont.ColorPowerTakenDark = reader.ReadRGB();
-                    this.RtFont.ColorPowerDisabled = reader.ReadRGB();
-                    this.RtFont.ColorPowerHighlight = reader.ReadRGB();
+                    this._rtFont.ColorPowerAvailable = reader.ReadRGB();
+                    this._rtFont.ColorPowerTaken = reader.ReadRGB();
+                    this._rtFont.ColorPowerTakenDark = reader.ReadRGB();
+                    this._rtFont.ColorPowerDisabled = reader.ReadRGB();
+                    this._rtFont.ColorPowerHighlight = reader.ReadRGB();
                 }
-                if ((double)version >= 1.23000001907349)
+                if (version >= 1.23000001907349)
                 {
                     this.Tips = new Tips(reader);
                     this.DefaultSaveFolderOverride = reader.ReadString();
                 }
-                if ((double)version >= 1.24000000953674)
+                if (version >= 1.24000000953674)
                 {
                     this.EnhanceVisibility = reader.ReadBoolean();
                     reader.ReadBoolean();
@@ -350,12 +359,12 @@ public class ConfigData
                     if (string.IsNullOrEmpty(this.UpdatePath))
                         this.UpdatePath = "";
                 }
-                if ((double)version >= 1.25)
+                if (version >= 1.25)
                 {
                     this.ShowEnhRel = reader.ReadBoolean();
                     this.ShowRelSymbols = reader.ReadBoolean();
                     this.ShowPopup = reader.ReadBoolean();
-                    if ((double)version >= 1.32000005245209)
+                    if (version >= 1.32000005245209)
                         this.ShowAlphaPopup = reader.ReadBoolean();
                     this.PopupRecipes = reader.ReadBoolean();
                     this.ShoppingListIncludesRecipes = reader.ReadBoolean();
@@ -366,13 +375,13 @@ public class ConfigData
                     this.DesaturateInherent = reader.ReadBoolean();
                     this.ReapeatOnMiddleClick = reader.ReadBoolean();
                 }
-                if ((double)version >= 1.25999999046326)
+                if (version >= 1.25999999046326)
                     this.ExportHex = reader.ReadBoolean();
-                if ((double)version >= 1.26999998092651)
+                if (version >= 1.26999998092651)
                     this.SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
-                if ((double)version >= 1.27999997138977)
+                if (version >= 1.27999997138977)
                     this.SaveFolderChecked = reader.ReadBoolean();
-                if ((double)version >= 1.28999996185303)
+                if (version >= 1.28999996185303)
                     this.UseArcanaTime = reader.ReadBoolean(); //this is correct
                 /*Commented out to expidite release.... Will not load forum Export settings  or supression settings
                  * if ((double)version >= 1.29999995231628)
@@ -522,12 +531,14 @@ public class ConfigData
         public int Length { get; set; }
         public int Hash { get; set; }
     }
+
     public static (bool, T) LoadRawMhd<T>(ISerialize serializer, string fn)
     {
         if (!File.Exists(fn))
             return (false, default);
         return (true, serializer.Deserialize<T>(File.ReadAllText(fn)));
     }
+
     public static RawSaveResult SaveRawMhd(ISerialize serializer, object o, string fn, RawSaveResult lastSaveInfo)
     {
         try
@@ -609,53 +620,59 @@ public class ConfigData
         MultiPage,
     }
 
-    public struct SDamageMath
+    public class SDamageMath
     {
-        public ConfigData.EDamageMath Calculate;
-        public ConfigData.EDamageReturn ReturnValue;
+        public EDamageMath Calculate { get; set; }
+        public EDamageReturn ReturnValue { get; set; }
+        public SDamageMath() { }
+        public SDamageMath(EDamageMath dmgMath, EDamageReturn dmgRet)
+        {
+            this.Calculate = dmgMath;
+            this.ReturnValue = dmgRet;
+        }
     }
 
-    public struct IncludeExclude
+    public class IncludeExclude
     {
-        public bool PvE;
+        public bool PvE { get; set; }
     }
 
-    public struct Si9
+    public class Si9
     {
-        public int DefaultIOLevel;
-        public bool DisplayIOLevels;
-        public bool CalculateEnahncementFX;
-        public bool CalculateSetBonusFX;
-        public bool PrintIOLevels;
-        public bool ExportIOLevels;
-        public bool ExportStripSetNames;
-        public bool ExportStripEnh;
-        public bool ExportDataChunk;
-        public bool ExportCompress;
-        public bool ExportExtraSep;
+        public int DefaultIOLevel { get; set; }
+        public bool DisplayIOLevels { get; set; }
+        public bool CalculateEnahncementFX { get; set; }
+        public bool CalculateSetBonusFX { get; set; }
+        public bool PrintIOLevels { get; set; }
+        public bool ExportIOLevels { get; set; }
+        public bool ExportStripSetNames { get; set; }
+        public bool ExportStripEnh { get; set; }
+        public bool ExportDataChunk { get; set; }
+        public bool ExportCompress { get; set; }
+        public bool ExportExtraSep { get; set; }
     }
 
-    public struct FontSettings
+    public class FontSettings
     {
-        public int RTFBase;
-        public bool RTFBold;
-        public Color ColorBackgroundHero;
-        public Color ColorBackgroundVillain;
-        public Color ColorText;
-        public Color ColorInvention;
-        public Color ColorInventionInv;
-        public Color ColorFaded;
-        public Color ColorEnhancement;
-        public Color ColorWarning;
-        public Color ColorPlName;
-        public Color ColorPlSpecial;
-        public Color ColorPowerAvailable;
-        public Color ColorPowerTaken;
-        public Color ColorPowerTakenDark;
-        public Color ColorPowerHighlight;
-        public Color ColorPowerDisabled;
-        public bool PairedBold;
-        public float PairedBase;
+        public int RTFBase { get; set; }
+        public bool RTFBold { get; set; }
+        public Color ColorBackgroundHero { get; set; }
+        public Color ColorBackgroundVillain { get; set; }
+        public Color ColorText { get; set; }
+        public Color ColorInvention { get; set; }
+        public Color ColorInventionInv { get; set; }
+        public Color ColorFaded { get; set; }
+        public Color ColorEnhancement { get; set; }
+        public Color ColorWarning { get; set; }
+        public Color ColorPlName { get; set; }
+        public Color ColorPlSpecial { get; set; }
+        public Color ColorPowerAvailable { get; set; }
+        public Color ColorPowerTaken { get; set; }
+        public Color ColorPowerTakenDark { get; set; }
+        public Color ColorPowerHighlight { get; set; }
+        public Color ColorPowerDisabled { get; set; }
+        public bool PairedBold { get; set; }
+        public float PairedBase { get; set; }
 
         public void Assign(ConfigData.FontSettings iFs)
         {

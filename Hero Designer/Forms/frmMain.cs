@@ -213,7 +213,7 @@ namespace Hero_Designer
                     clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); // "https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
                     (chkResult, chkResultFailMsg) = clsXmlUpdate.UpdateCheck();
                 }
-                if (!this.IsInDesignMode() && MidsContext.Config.FreshInstall)
+                if (!this.IsInDesignMode() && !MidsContext.Config.IsInitialized)
                 {
                     MidsContext.Config.CheckForUpdates = false;
                     //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
@@ -221,7 +221,7 @@ namespace Hero_Designer
                     //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MessageBoxButtons.YesNo | MessageBoxIcon.Question, "Welcome!") == DialogResult.Yes;
                     MidsContext.Config.DefaultSaveFolderOverride = null;
                     MidsContext.Config.CreateDefaultSaveFolder();
-                    MidsContext.Config.FreshInstall = false;
+                    MidsContext.Config.IsInitialized = true;
                 }
                 string args = string.Join(" ", Environment.GetCommandLineArgs().Skip(1));
                 if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
