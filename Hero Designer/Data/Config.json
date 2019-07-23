@@ -1,6 +1,6 @@
 {
   "BaseAcc": 0.75,
-  "UpdatePath": "http://repo.cohtitan.com/mids_updates/",
+  "UpdatePath": "http://midsreborn.com/mids_updates/",
   "CalcEnhOrigin": 3,
   "CalcEnhLevel": 4,
   "ExempHigh": 50,

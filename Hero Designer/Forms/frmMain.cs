@@ -227,7 +227,7 @@ namespace Hero_Designer
                 if (args.IndexOf("RECOVERY", StringComparison.OrdinalIgnoreCase) > -1)
                 {
                     MessageBox.Show("As recovery mode has been invoked, you will be redirected to the download site for the most recent full install package.", "Recovery Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clsXMLUpdate.GoToCoHPlanner();
+                    clsXMLUpdate.GoToMidsReborn();
                     Application.Exit();
                     return;
                 }
@@ -4644,12 +4644,12 @@ namespace Hero_Designer
         void tsForumLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToForums();
 
-        void tsPlannerLink(object sender, EventArgs e)
-            => clsXMLUpdate.GoToCoHPlanner();
+        void tsRebornLink(object sender, EventArgs e)
+            => clsXMLUpdate.GoToMidsReborn();
 
         void tsUpdateCheck_Click(object sender, EventArgs e)
         {
-            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
+            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://midsreborn.com/mids_updates/");
             var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
             if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
             {

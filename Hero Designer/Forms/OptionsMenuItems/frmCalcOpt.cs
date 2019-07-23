@@ -97,7 +97,7 @@ namespace Hero_Designer
 
         void btnUpdatePathReset_Click(object sender, EventArgs e)
         {
-            this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
+            this.txtUpdatePath.Text = "http://midsreborn.com/mids_updates/";
         }
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
@@ -328,6 +328,11 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DChannel = dcChannel.Text;
             }
+        }
+
+        void richTextBox3_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)
@@ -566,7 +571,8 @@ namespace Hero_Designer
             foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
                 this.dcExList.Items.Add(item);
             if(!string.IsNullOrWhiteSpace(config.DSelServer))
-            this.dcExList.SelectedItem = config.DSelServer;
+                this.dcExList.SelectedItem = config.DSelServer;
+            this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = config.DesaturateInherent;
