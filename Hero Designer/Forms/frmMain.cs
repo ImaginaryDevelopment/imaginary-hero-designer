@@ -152,13 +152,13 @@ namespace Hero_Designer
             }
             this.InitializeComponent();
 
-            //disable menus that are no longer hooked up, but probably should be hooked back up
+            /*disable menus that are no longer hooked up, but probably should be hooked back up
             this.tsHelp.Visible = false;
             this.tsHelp.Enabled = false;
             this.tsPatchNotes.Visible = false;
             this.tsPatchNotes.Enabled = false;
             this.tsDonate.Visible = false;
-            this.tsDonate.Enabled = false;
+            this.tsDonate.Enabled = false;*/
 
             this.tmrGfx.Tick += new System.EventHandler(tmrGfx_Tick);
             //adding events
