@@ -190,7 +190,7 @@ public class ConfigData
         this.Export = new ExportConfig();
         this.CompOverride = Array.Empty<Enums.CompOverride>();
         if (deserializing) return;
-        if (!string.IsNullOrEmpty(iFilename))
+        if (!string.IsNullOrEmpty(iFilename) && File.Exists(iFilename))
         {
             try
             {
