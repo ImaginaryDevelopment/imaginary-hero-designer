@@ -727,9 +727,9 @@ namespace Hero_Designer
             // 
             this.GroupBox2.Controls.Add(this.clbSuppression);
             this.GroupBox2.Controls.Add(this.Label8);
-            this.GroupBox2.Location = new System.Drawing.Point(517, 4);
+            this.GroupBox2.Location = new System.Drawing.Point(510, 4);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(107, 283);
+            this.GroupBox2.Size = new System.Drawing.Size(114, 283);
             this.GroupBox2.TabIndex = 69;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Suppression";
@@ -738,9 +738,9 @@ namespace Hero_Designer
             // 
             this.clbSuppression.CheckOnClick = true;
             this.clbSuppression.FormattingEnabled = true;
-            this.clbSuppression.Location = new System.Drawing.Point(9, 104);
+            this.clbSuppression.Location = new System.Drawing.Point(6, 104);
             this.clbSuppression.Name = "clbSuppression";
-            this.clbSuppression.Size = new System.Drawing.Size(92, 169);
+            this.clbSuppression.Size = new System.Drawing.Size(102, 169);
             this.clbSuppression.TabIndex = 9;
             this.clbSuppression.SelectedIndexChanged += new System.EventHandler(this.clbSuppression_SelectedIndexChanged);
             // 
@@ -770,7 +770,7 @@ namespace Hero_Designer
             this.GroupBox15.Controls.Add(this.chkIOEffects);
             this.GroupBox15.Location = new System.Drawing.Point(316, 166);
             this.GroupBox15.Name = "GroupBox15";
-            this.GroupBox15.Size = new System.Drawing.Size(195, 121);
+            this.GroupBox15.Size = new System.Drawing.Size(188, 121);
             this.GroupBox15.TabIndex = 68;
             this.GroupBox15.TabStop = false;
             this.GroupBox15.Text = "Invention Effects:";
@@ -779,7 +779,7 @@ namespace Hero_Designer
             // 
             this.Label20.Location = new System.Drawing.Point(6, 17);
             this.Label20.Name = "Label20";
-            this.Label20.Size = new System.Drawing.Size(179, 49);
+            this.Label20.Size = new System.Drawing.Size(182, 53);
             this.Label20.TabIndex = 65;
             this.Label20.Text = "The effects of set bonusses and special IO enhancements can be included when stat" +
     "s are calculated.";
@@ -811,7 +811,7 @@ namespace Hero_Designer
             this.GroupBox8.Controls.Add(this.Label9);
             this.GroupBox8.Location = new System.Drawing.Point(4, 4);
             this.GroupBox8.Name = "GroupBox8";
-            this.GroupBox8.Size = new System.Drawing.Size(507, 156);
+            this.GroupBox8.Size = new System.Drawing.Size(500, 156);
             this.GroupBox8.TabIndex = 3;
             this.GroupBox8.TabStop = false;
             this.GroupBox8.Text = "Chance of Damage:";
@@ -1121,7 +1121,7 @@ namespace Hero_Designer
             this.GroupBox20.Size = new System.Drawing.Size(256, 100);
             this.GroupBox20.TabIndex = 3;
             this.GroupBox20.TabStop = false;
-            this.GroupBox20.Text = "Discord Channel";
+            this.GroupBox20.Text = "Discord Channel (without the #)";
             // 
             // dcChannel
             // 
@@ -1149,8 +1149,8 @@ namespace Hero_Designer
             this.richTextBox3.Size = new System.Drawing.Size(490, 51);
             this.richTextBox3.TabIndex = 2;
             this.richTextBox3.Text = "In order for the Discord export feature to work on your server you must first inv" +
-                                     "ite RebornBot.\n";
-            this.richTextBox3.LinkClicked += new LinkClickedEventHandler(this.richTextBox3_LinkClicked);
+    "ite RebornBot.\n";
+            this.richTextBox3.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox3_LinkClicked);
             // 
             // GroupBox19
             // 
@@ -1216,7 +1216,7 @@ namespace Hero_Designer
             this.richTextBox2.Size = new System.Drawing.Size(342, 33);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "Select a Discord server to export to below. You can add your own\nDiscord server n" +
-    "ame to the list below.";
+    "ame (case sensitive) to the list below.";
             // 
             // dcExList
             // 
@@ -1240,24 +1240,25 @@ namespace Hero_Designer
             this.GroupBox18.Size = new System.Drawing.Size(256, 97);
             this.GroupBox18.TabIndex = 0;
             this.GroupBox18.TabStop = false;
-            this.GroupBox18.Text = "Discord Nickname:";
+            this.GroupBox18.Text = "Discord Nickname (case sensitive):";
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Location = new System.Drawing.Point(31, 58);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 49);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(219, 33);
+            this.richTextBox1.Size = new System.Drawing.Size(244, 42);
             this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord. *It will be checked*";
+            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord without the #xxxx. *It" +
+    " will be checked*";
             // 
             // dcNickName
             // 
-            this.dcNickName.Location = new System.Drawing.Point(6, 32);
+            this.dcNickName.Location = new System.Drawing.Point(6, 23);
             this.dcNickName.Name = "dcNickName";
             this.dcNickName.Size = new System.Drawing.Size(244, 20);
             this.dcNickName.TabIndex = 0;

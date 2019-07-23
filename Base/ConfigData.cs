@@ -51,7 +51,7 @@ public class ConfigData
     string _defaultSaveFolderOverride;
     public string DefaultSaveFolderOverride
     {
-        get { return _defaultSaveFolderOverride; }
+        get => _defaultSaveFolderOverride;
         set
         {
             var osDefault = OS.GetDefaultSaveFolder();
@@ -67,9 +67,10 @@ public class ConfigData
         }
     }
     public string DNickName;
-    public List<string> DServers { get; set; } = new List<string>();
-    public string DSelServer { get; set; }
+    public string DSelServer;
     public string DChannel;
+    //public List<string> DServers;
+    public List<string> DServers { get; set; } = new List<string>();
     public bool DesaturateInherent = true;
     public Enums.dmModes BuildMode = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption = Enums.dmItem.Slot;

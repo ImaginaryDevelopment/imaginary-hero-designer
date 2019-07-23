@@ -364,7 +364,7 @@ namespace Hero_Designer
                         MessageBox.Show("Update available");
                     }
                     var exePath = typeof(frmMain).Assembly.Location;
-                    if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
+                    /*if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
                     {
                         if (MessageBox.Show("Associate .mhd and .mxd files with this application?", "File Assocation Setup", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
@@ -377,7 +377,7 @@ namespace Hero_Designer
                                 }
                             }
                         }
-                    }
+                    }*/
                 }
             }
             catch (Exception ex)

@@ -1,10 +1,11 @@
-
 using Base.IO_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -293,7 +294,13 @@ namespace Hero_Designer
             this.fcDisplay();
         }
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dcExList.SelectedIndex != -1 && !string.IsNullOrWhiteSpace(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+            }
+        }
 
         void dcAdd_Click(object sender, EventArgs e)
         {
@@ -311,7 +318,12 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DSelServer = "";
             }
+            if (MidsContext.Config.DServers.Contains(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DServers.Remove(dcExList.SelectedItem.ToString());
+            }
             dcExList.Items.Remove(dcExList.SelectedItem);
+
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
@@ -568,9 +580,9 @@ namespace Hero_Designer
             this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
-            foreach(var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
+            foreach (var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
                 this.dcExList.Items.Add(item);
-            if(!string.IsNullOrWhiteSpace(config.DSelServer))
+            if (!string.IsNullOrWhiteSpace(config.DSelServer))
                 this.dcExList.SelectedItem = config.DSelServer;
             this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
@@ -758,6 +770,7 @@ namespace Hero_Designer
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;
+            //config.DServers = dcExList.Items.Cast<string>().ToList();
             config.DesaturateInherent = this.chkColorInherent.Checked;
             config.ReapeatOnMiddleClick = this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;
