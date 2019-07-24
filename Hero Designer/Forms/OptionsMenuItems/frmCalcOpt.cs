@@ -275,7 +275,13 @@ namespace Hero_Designer
 
         void fcList_SelectedIndexChanged(object sender, EventArgs e) => this.fcDisplay();
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dcExList.SelectedIndex != -1 && !string.IsNullOrWhiteSpace(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+            }
+        }
 
         void dcAdd_Click(object sender, EventArgs e)
         {
@@ -293,7 +299,12 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DSelServer = "";
             }
+            if (MidsContext.Config.DServers.Contains(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DServers.Remove(dcExList.SelectedItem.ToString());
+            }
             dcExList.Items.Remove(dcExList.SelectedItem);
+
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
@@ -310,6 +321,11 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DChannel = dcChannel.Text;
             }
+        }
+
+        void richTextBox3_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)

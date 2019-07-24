@@ -1483,7 +1483,7 @@ namespace Hero_Designer
             this.GroupBox20.Size = new System.Drawing.Size(256, 100);
             this.GroupBox20.TabIndex = 3;
             this.GroupBox20.TabStop = false;
-            this.GroupBox20.Text = "Discord Channel";
+            this.GroupBox20.Text = "Discord Channel (without the #)";
 
             this.dcChannel.Location = new System.Drawing.Point(6, 54);
             this.dcChannel.Name = "dcChannel";
@@ -1504,7 +1504,9 @@ namespace Hero_Designer
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(201, 39);
             this.richTextBox3.TabIndex = 2;
-            this.richTextBox3.Text = "More Discord settings may be available\nin the future.";
+            this.richTextBox3.Text = "In order for the Discord export feature to work on your server you must first inv" +
+                                     "ite RebornBot.\n";
+            this.richTextBox3.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox3_LinkClicked);
 
             this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.Label18);
             this.GroupBox19.Controls.Add((System.Windows.Forms.Control)this.dcServerName);
@@ -1558,7 +1560,7 @@ namespace Hero_Designer
             this.richTextBox2.Size = new System.Drawing.Size(342, 33);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "Select a Discord server to export to below. You can add your own\nDiscord server n" +
-    "ame to the list below.";
+                                     "ame (case sensitive) to the list below.";
 
             this.dcExList.FormattingEnabled = true;
             this.dcExList.ItemHeight = 14;
@@ -1578,7 +1580,7 @@ namespace Hero_Designer
             this.GroupBox18.Size = new System.Drawing.Size(256, 97);
             this.GroupBox18.TabIndex = 0;
             this.GroupBox18.TabStop = false;
-            this.GroupBox18.Text = "Discord Nickname:";
+            this.GroupBox18.Text = "Discord Nickname (case sensitive):";
 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1589,7 +1591,8 @@ namespace Hero_Designer
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBox1.Size = new System.Drawing.Size(219, 33);
             this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord. *It will be checked*";
+            this.richTextBox1.Text = "This should be set to the same nickname\nyou use in Discord without the #xxxx. *It" +
+                                     " will be checked*";
 
             this.dcNickName.Location = new System.Drawing.Point(6, 32);
             this.dcNickName.Name = "dcNickName";
