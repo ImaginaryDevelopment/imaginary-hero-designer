@@ -45,8 +45,8 @@ namespace Hero_Designer
         {
             MidsContext.Config.LastPrinter = this._printer.Document.PrinterSettings.PrinterName;
             MidsContext.Config.PrintHistory = this.chkPrintHistory.Checked;
-            MidsContext.Config.PrintProfileEnh = this.chkProfileEnh.Checked;
-            MidsContext.Config.I9.PrintIOLevels = this.chkPrintHistoryEnh.Checked;
+            MidsContext.Config.DisablePrintProfileEnh = !this.chkProfileEnh.Checked;
+            MidsContext.Config.I9.DisablePrintIOLevels = !this.chkPrintHistoryEnh.Checked;
             MidsContext.Config.PrintProfile = !this.rbProfileShort.Checked ? (!this.rbProfileLong.Checked ? ConfigData.PrintOptionProfile.None : ConfigData.PrintOptionProfile.MultiPage) : ConfigData.PrintOptionProfile.SinglePage;
             if (this.rbProfileNone.Checked & !this.chkPrintHistory.Checked)
             {
@@ -117,9 +117,9 @@ namespace Hero_Designer
                     break;
             }
             this.chkPrintHistory.Checked = MidsContext.Config.PrintHistory;
-            this.chkPrintHistoryEnh.Checked = MidsContext.Config.I9.PrintIOLevels;
+            this.chkPrintHistoryEnh.Checked = !MidsContext.Config.I9.DisablePrintIOLevels;
             this.chkPrintHistoryEnh.Enabled = this.chkPrintHistory.Checked;
-            this.chkProfileEnh.Checked = MidsContext.Config.PrintProfileEnh;
+            this.chkProfileEnh.Checked = !MidsContext.Config.DisablePrintProfileEnh;
             this.chkProfileEnh.Enabled = this.rbProfileShort.Checked;
         }
 

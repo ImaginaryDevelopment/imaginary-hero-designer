@@ -29,7 +29,7 @@ public class ConfigData
     public Size LastSize { get => _lastSize; set => _lastSize = value; }
 
     public float BaseAcc { get; set; } = 0.75f;
-    public string UpdatePath { get; set; } = null;
+    public string UpdatePath { get; set; }
     public bool DoNotUpdateFileAssociation { get; set; }
     public int ExempHigh { get; set; } = 50;
     public int TeamSize { get; set; } = 1;
@@ -37,17 +37,14 @@ public class ConfigData
     public int ForceLevel { get; set; } = 50;
     public int ExportScheme { get; set; } = 1;
     public int ExportTarget { get; set; } = 1;
-    public bool DataDamageGraph { get; set; } = true;
-    public bool ShowVillainColours { get; set; } = true;
-    public bool FreshInstall { get => !IsInitialized; set => IsInitialized = (!value); }
-
-    // inverse of FreshInstall so it will stop being fresh after every save
+    public bool DisableDataDamageGraph { get; set; }
+    public bool DisableVillainColours { get; set; }
     public bool IsInitialized { get; set; }
     public int Columns { get; set; } = 3;
     public PrintOptionProfile PrintProfile { get; set; } = PrintOptionProfile.SinglePage;
-    public bool PrintProfileEnh { get; set; } = true;
+    public bool DisablePrintProfileEnh { get; set; }
     public string LastPrinter { get; set; } = string.Empty;
-    public bool LoadLastFileOnStart { get; set; } = true;
+    public bool DisableLoadLastFileOnStart { get; set; }
     public string LastFileName { get; set; } = string.Empty;
     public Enums.eEnhGrade CalcEnhOrigin { get; set; } = Enums.eEnhGrade.SingleO;
     public Enums.eEnhRelative CalcEnhLevel { get; set; } = Enums.eEnhRelative.Even;
@@ -59,13 +56,13 @@ public class ConfigData
     public List<string> DServers { get; set; } = new List<string>();
     public string DSelServer { get; set; }
     public string DChannel { get; set; }
-    public bool DesaturateInherent { get; set; } = true;
+    public bool DisableDesaturateInherent { get; set; }
     public Enums.dmModes BuildMode { get; set; } = Enums.dmModes.Dynamic;
     public Enums.dmItem BuildOption { get; set; } = Enums.dmItem.Slot;
-    public bool ShowPopup { get; set; } = true;
-    public bool ShowAlphaPopup { get; set; } = true;
-    public bool ReapeatOnMiddleClick { get; set; } = true;
-    public bool ExportHex { get; set; } = true;
+    public bool DisableShowPopup { get; set; }
+    public bool DisableAlphaPopup { get; set; }
+    public bool DisableRepeatOnMiddleClick { get; set; }
+    public bool DisableExportHex { get; set; }
     public readonly short[] DragDropScenarioAction = new short[20]
         {
             3, 0, 5, 0, 3, 5, 0, 0, 5, 0, 2, 3, 0, 2, 2, 0, 0, 0, 0, 0
@@ -172,18 +169,7 @@ public class ConfigData
     {
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
-        this.Inc.PvE = true;
         this.I9.DefaultIOLevel = 49;
-        this.I9.DisplayIOLevels = true;
-        this.I9.CalculateEnahncementFX = true;
-        this.I9.CalculateSetBonusFX = true;
-        this.I9.PrintIOLevels = true;
-        this.I9.ExportIOLevels = false;
-        this.I9.ExportCompress = true;
-        this.I9.ExportDataChunk = true;
-        this.I9.ExportStripEnh = false;
-        this.I9.ExportStripSetNames = false;
-        this.I9.ExportExtraSep = false;
         this.UpdatePath = "";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
@@ -215,7 +201,6 @@ public class ConfigData
         {
             MessageBox.Show(ex.Message);
         }
-
     }
 
     void LegacyForMigration(string iFilename)
@@ -259,7 +244,7 @@ public class ConfigData
                 this.CalcEnhOrigin = (Enums.eEnhGrade)reader.ReadInt32();
                 this.ExempHigh = reader.ReadInt32();
                 this.ExempLow = reader.ReadInt32();
-                this.Inc.PvE = reader.ReadBoolean();
+                this.Inc.DisablePvE = !reader.ReadBoolean();
                 reader.ReadBoolean();
                 this.DamageMath.Calculate = (ConfigData.EDamageMath)reader.ReadInt32();
                 reader.ReadSingle();
@@ -270,7 +255,7 @@ public class ConfigData
                 else
                     reader.ReadInt32();
                 this.DamageMath.ReturnValue = (ConfigData.EDamageReturn)reader.ReadInt32();
-                this.DataDamageGraph = reader.ReadBoolean();
+                this.DisableDataDamageGraph = !reader.ReadBoolean();
                 this.DataDamageGraphPercentageOnly = reader.ReadBoolean();
                 this.DataGraphType = (Enums.eDDGraph)reader.ReadInt32();
                 this.ExportScheme = reader.ReadInt32();
@@ -282,7 +267,7 @@ public class ConfigData
                 }
                 //this._hideOriginEnhancements =
                 reader.ReadBoolean();
-                this.ShowVillainColours = reader.ReadBoolean();
+                this.DisableVillainColours = !reader.ReadBoolean();
                 this.CheckForUpdates = reader.ReadBoolean();
                 this.Columns = reader.ReadInt32();
                 this._lastSize.Width = reader.ReadInt32();
@@ -298,13 +283,13 @@ public class ConfigData
                     this.I9.DefaultIOLevel = reader.ReadInt32();
                     if (this.I9.DefaultIOLevel > 49)
                         this.I9.DefaultIOLevel = 49;
-                    this.I9.DisplayIOLevels = reader.ReadBoolean();
-                    this.I9.CalculateEnahncementFX = reader.ReadBoolean();
-                    this.I9.CalculateSetBonusFX = reader.ReadBoolean();
+                    this.I9.HideIOLevels = !reader.ReadBoolean();
+                    this.I9.IgnoreEnhFX = !reader.ReadBoolean();
+                    this.I9.IgnoreSetBonusFX = !reader.ReadBoolean();
                     this.I9.ExportIOLevels = reader.ReadBoolean();
-                    this.I9.PrintIOLevels = reader.ReadBoolean();
-                    this.I9.ExportCompress = reader.ReadBoolean();
-                    this.I9.ExportDataChunk = reader.ReadBoolean();
+                    this.I9.DisablePrintIOLevels = !reader.ReadBoolean();
+                    this.I9.DisableExportCompress = !reader.ReadBoolean();
+                    this.I9.DisableExportDataChunk = !reader.ReadBoolean();
                     this.I9.ExportStripEnh = reader.ReadBoolean();
                     this.I9.ExportStripSetNames = reader.ReadBoolean();
                     this.I9.ExportExtraSep = reader.ReadBoolean();
@@ -332,7 +317,7 @@ public class ConfigData
                 if (version >= 1.22000002861023)
                 {
                     this.ShowSlotLevels = reader.ReadBoolean();
-                    this.LoadLastFileOnStart = reader.ReadBoolean();
+                    this.DisableLoadLastFileOnStart = !reader.ReadBoolean();
                     this.LastFileName = reader.ReadString();
                     this.RtFont.ColorPowerAvailable = reader.ReadRGB();
                     this.RtFont.ColorPowerTaken = reader.ReadRGB();
@@ -359,20 +344,20 @@ public class ConfigData
                 {
                     this.ShowEnhRel = reader.ReadBoolean();
                     this.ShowRelSymbols = reader.ReadBoolean();
-                    this.ShowPopup = reader.ReadBoolean();
+                    this.DisableShowPopup = !reader.ReadBoolean();
                     if (version >= 1.32000005245209)
-                        this.ShowAlphaPopup = reader.ReadBoolean();
+                        this.DisableAlphaPopup = !reader.ReadBoolean();
                     this.PopupRecipes = reader.ReadBoolean();
                     this.ShoppingListIncludesRecipes = reader.ReadBoolean();
                     this.PrintProfile = (ConfigData.PrintOptionProfile)reader.ReadInt32();
                     this.PrintHistory = reader.ReadBoolean();
                     this.LastPrinter = reader.ReadString();
-                    this.PrintProfileEnh = reader.ReadBoolean();
-                    this.DesaturateInherent = reader.ReadBoolean();
-                    this.ReapeatOnMiddleClick = reader.ReadBoolean();
+                    this.DisablePrintProfileEnh = !reader.ReadBoolean();
+                    this.DisableDesaturateInherent = !reader.ReadBoolean();
+                    this.DisableRepeatOnMiddleClick = !reader.ReadBoolean();
                 }
                 if (version >= 1.25999999046326)
-                    this.ExportHex = reader.ReadBoolean();
+                    this.DisableExportHex = !reader.ReadBoolean();
                 if (version >= 1.26999998092651)
                     this.SpeedFormat = (Enums.eSpeedMeasure)reader.ReadInt32();
                 if (version >= 1.27999997138977)
@@ -630,21 +615,21 @@ public class ConfigData
 
     public class IncludeExclude
     {
-        public bool PvE { get; set; }
+        public bool DisablePvE { get; set; }
     }
 
     public class Si9
     {
         public int DefaultIOLevel { get; set; }
-        public bool DisplayIOLevels { get; set; }
-        public bool CalculateEnahncementFX { get; set; }
-        public bool CalculateSetBonusFX { get; set; }
-        public bool PrintIOLevels { get; set; }
+        public bool HideIOLevels { get; set; }
+        public bool IgnoreEnhFX { get; set; }
+        public bool IgnoreSetBonusFX { get; set; }
+        public bool DisablePrintIOLevels { get; set; }
         public bool ExportIOLevels { get; set; }
         public bool ExportStripSetNames { get; set; }
         public bool ExportStripEnh { get; set; }
-        public bool ExportDataChunk { get; set; }
-        public bool ExportCompress { get; set; }
+        public bool DisableExportDataChunk { get; set; }
+        public bool DisableExportCompress { get; set; }
         public bool ExportExtraSep { get; set; }
     }
 

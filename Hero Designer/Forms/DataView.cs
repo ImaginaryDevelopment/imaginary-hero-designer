@@ -113,7 +113,7 @@ namespace Hero_Designer
             set
             {
                 this.VillainColour = value;
-                if (!MidsContext.Config.ShowVillainColours)
+                if (MidsContext.Config.DisableVillainColours)
                     this.VillainColour = false;
                 if (this.VillainColour)
                     this.pnlInfo.BackColor = System.Drawing.Color.Maroon;
@@ -193,7 +193,7 @@ namespace Hero_Designer
                 return !this.Compact ? Enums.eVisibleSize.Full : Enums.eVisibleSize.Compact;
             }
             // why is this ignored?
-            set {  }
+            set { }
         }
 
         public DataView()
@@ -838,7 +838,7 @@ namespace Hero_Designer
 
         void DisplayData(bool noLevel = false, int iEnhLevel = -1)
         {
-            if (MidsContext.Config.DataDamageGraph)
+            if (MidsContext.Config.DisableDataDamageGraph)
             {
                 this.info_Damage.GraphType = MidsContext.Config.DataGraphType;
                 switch (MidsContext.Config.DataGraphType)
@@ -1024,7 +1024,7 @@ namespace Hero_Designer
                         I9Gfx.DrawEnhancementAt(ref graphics1, iDest, DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID, MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Grade));
                         if (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh > -1)
                         {
-                            if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.InventO))
+                            if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].Enhancement.Enh].TypeID == Enums.eType.InventO))
                             {
                                 Bounds = iDest;
                                 Bounds.Y -= 3f;
@@ -1054,7 +1054,7 @@ namespace Hero_Designer
                         I9Gfx.DrawEnhancementAt(ref graphics1, rectangle2, DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].ImageIdx, I9Gfx.ToGfxGrade(DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID, MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Grade));
                         if (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh > -1)
                         {
-                            if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.InventO))
+                            if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.InventO))
                             {
                                 Bounds = (RectangleF)rectangle2;
                                 Bounds.Y -= 3f;
@@ -1823,7 +1823,7 @@ namespace Hero_Designer
                 int num2 = this.pBase.Effects.Length - 1;
                 for (int iTagID = 0; iTagID <= num2; ++iTagID)
                 {
-                    if (this.pBase.Effects[iTagID].PvMode != Enums.ePvX.PvP & MidsContext.Config.Inc.PvE | this.pBase.Effects[iTagID].PvMode != Enums.ePvX.PvE & !MidsContext.Config.Inc.PvE && this.pBase.Effects[iTagID].EffectType == Enums.eEffectType.MezResist & (double)this.pBase.Effects[iTagID].Probability > 0.0)
+                    if (this.pBase.Effects[iTagID].PvMode != Enums.ePvX.PvP & !MidsContext.Config.Inc.DisablePvE | this.pBase.Effects[iTagID].PvMode != Enums.ePvX.PvE & MidsContext.Config.Inc.DisablePvE && this.pBase.Effects[iTagID].EffectType == Enums.eEffectType.MezResist & (double)this.pBase.Effects[iTagID].Probability > 0.0)
                     {
                         string str = (double)this.pEnh.Effects[iTagID].Duration >= 15.0 ? " - " + Utilities.FixDP(this.pEnh.Effects[iTagID].Duration) + "s" : string.Empty;
                         string iValue = Conversions.ToString(this.pBase.Effects[iTagID].MagPercent) + "%" + str;
@@ -1985,8 +1985,8 @@ namespace Hero_Designer
         void EffectsRes(int index)
         {
             Enums.eDamage eDamage = Enums.eDamage.None;
-            float[] res1 = this.pBase.GetRes(MidsContext.Config.Inc.PvE);
-            float[] res2 = this.pEnh.GetRes(MidsContext.Config.Inc.PvE);
+            float[] res1 = this.pBase.GetRes(!MidsContext.Config.Inc.DisablePvE);
+            float[] res2 = this.pEnh.GetRes(!MidsContext.Config.Inc.DisablePvE);
             string[] names = Enum.GetNames(eDamage.GetType());
             Label label;
             ctlPairedList ctlPairedList;

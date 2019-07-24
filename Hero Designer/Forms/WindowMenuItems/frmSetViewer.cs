@@ -135,7 +135,7 @@ namespace Hero_Designer
                         int num3 = enhancementSet.Bonus.Length - 1;
                         for (int index4 = 0; index4 <= num3; ++index4)
                         {
-                            if (setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted & (enhancementSet.Bonus[index4].PvMode == Enums.ePvX.Any | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvP & !MidsContext.Config.Inc.PvE))
+                            if (setInfo[index3].SlottedCount >= enhancementSet.Bonus[index4].Slotted & (enhancementSet.Bonus[index4].PvMode == Enums.ePvX.Any | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[index4].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE))
                             {
                                 if (str4 != "")
                                     str4 += RTF.Crlf();

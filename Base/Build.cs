@@ -1013,7 +1013,7 @@ public class Build
                 for (int index2 = 0; index2 < this.Powers[index1].SlotCount; ++index2)
                     i9SetData.Add(ref this.Powers[index1].Slots[index2].Enhancement);
             }
-            i9SetData.BuildEffects(MidsContext.Config.Inc.PvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
+            i9SetData.BuildEffects(!MidsContext.Config.Inc.DisablePvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
             if (!i9SetData.Empty)
                 this.SetBonus.Add(i9SetData);
         }
@@ -1023,35 +1023,30 @@ public class Build
     IPower GetSetBonusVirtualPower()
     {
         IPower power1 = new Power();
-        if (!MidsContext.Config.I9.CalculateSetBonusFX)
-        {
+        if (MidsContext.Config.I9.IgnoreSetBonusFX)
             return power1;
-        }
-        else
-        {
-            var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
-            int[] setCount = new int[nidPowers.Length];
-            for (int index = 0; index < setCount.Length; ++index)
-                setCount[index] = 0;
-            var effectList = new List<IEffect>();
-            foreach (var setBonus in this.SetBonus)
-                foreach (var setInfo in setBonus.SetInfo)
-                    foreach (var power in setInfo.Powers.Where(x => x > -1))
+        var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
+        int[] setCount = new int[nidPowers.Length];
+        for (int index = 0; index < setCount.Length; ++index)
+            setCount[index] = 0;
+        var effectList = new List<IEffect>();
+        foreach (var setBonus in this.SetBonus)
+            foreach (var setInfo in setBonus.SetInfo)
+                foreach (var power in setInfo.Powers.Where(x => x > -1))
+                {
+                    if (power > setCount.Length - 1)
+                        throw new IndexOutOfRangeException("power to setBonusArray");
+                    ++setCount[power];
+                    if (setCount[power] < 6)
                     {
-                        if (power > setCount.Length - 1)
-                            throw new IndexOutOfRangeException("power to setBonusArray");
-                        ++setCount[power];
-                        if (setCount[power] < 6)
-                        {
-                            for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
-                                effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
+                        for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
+                            effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
 
-                        }
                     }
+                }
 
-            power1.Effects = effectList.ToArray();
-            return power1;
-        }
+        power1.Effects = effectList.ToArray();
+        return power1;
     }
 
     public IEffect[] GetCumulativeSetBonuses()

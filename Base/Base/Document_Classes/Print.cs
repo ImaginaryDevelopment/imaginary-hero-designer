@@ -136,7 +136,7 @@ namespace Base.Document_Classes
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Near
             };
-            HistoryMap[] historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, MidsContext.Config.I9.PrintIOLevels);
+            HistoryMap[] historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, !MidsContext.Config.I9.DisablePrintIOLevels);
             int num1 = 0;
             string s = ((int)MidsContext.Character.Alignment).ToString() + " CurrentBuild";
             RectangleF layoutRectangle = new RectangleF(bounds.Left + 15, top, bounds.Width, 12.5f);
@@ -459,7 +459,7 @@ namespace Base.Document_Classes
           bool kheldian,
           PrintPageEventArgs args)
         {
-            bool printIoLevels = MidsContext.Config.I9.PrintIOLevels;
+            bool printIoLevels = !MidsContext.Config.I9.DisablePrintIOLevels;
             StringFormat format = new StringFormat(StringFormatFlags.NoClip);
             SolidBrush solidBrush = new SolidBrush(Color.Black);
             for (int index1 = 0; index1 <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++index1)
@@ -495,7 +495,7 @@ namespace Base.Document_Classes
                         {
                             if (index2 > 0)
                                 str1 += ", ";
-                            if (MidsContext.Config.PrintProfileEnh)
+                            if (!MidsContext.Config.DisablePrintProfileEnh)
                             {
                                 if (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh > -1)
                                 {

@@ -29,12 +29,12 @@ namespace Hero_Designer
             if (MidsContext.Config.ExportTarget < 0 | MidsContext.Config.Export.FormatCode.Length == 0)
             {
                 MidsContext.Config.Export.ResetCodesToDefaults();
-                int num = (int)Interaction.MsgBox("No formatting codes found, resetting to defaults.", MsgBoxStyle.Information, "Huh");
+                Interaction.MsgBox("No formatting codes found, resetting to defaults.", MsgBoxStyle.Information, "Huh");
             }
             if (MidsContext.Config.ExportScheme < 0 | MidsContext.Config.Export.ColorSchemes.Length == 0)
             {
                 MidsContext.Config.Export.ResetColorsToDefaults();
-                int num = (int)Interaction.MsgBox("No colour schemes found, resetting to defaults.", MsgBoxStyle.Information, "Huh");
+                Interaction.MsgBox("No colour schemes found, resetting to defaults.", MsgBoxStyle.Information, "Huh");
             }
             if (MidsContext.Config.ExportTarget >= MidsContext.Config.Export.FormatCode.Length)
                 MidsContext.Config.ExportTarget = 0;

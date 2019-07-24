@@ -286,7 +286,7 @@ namespace Hero_Designer
                 this.tsView2Col.Checked = MidsContext.Config.Columns == 2;
                 this.tsView3Col.Checked = MidsContext.Config.Columns == 3;
                 this.tsView4Col.Checked = MidsContext.Config.Columns == 4;
-                this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
+                this.tsViewIOLevels.Checked = !MidsContext.Config.I9.HideIOLevels;
                 this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
                 this.tsIODefault.Text = "Default (" + (MidsContext.Config.I9.DefaultIOLevel + 1) + ")";
                 this.SetDamageMenuCheckMarks();
@@ -299,7 +299,7 @@ namespace Hero_Designer
                 this.tsViewSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
                 this.ibSlotLevels.Checked = MidsContext.Config.ShowSlotLevels;
                 this.tsViewRelative.Checked = MidsContext.Config.ShowEnhRel;
-                this.ibPopup.Checked = MidsContext.Config.ShowPopup;
+                this.ibPopup.Checked = !MidsContext.Config.DisableShowPopup;
                 this.ibRecipe.Checked = MidsContext.Config.PopupRecipes;
                 string rtfRelPath = Path.Combine(Files.FPathAppData, Files.PatchRtf);
                 if (File.Exists(rtfRelPath))
@@ -328,7 +328,7 @@ namespace Hero_Designer
 
                     }
                 }
-                if (!loadedFromArgs && MidsContext.Config.LoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
+                if (!loadedFromArgs && !MidsContext.Config.DisableLoadLastFileOnStart && !this.DoOpen(MidsContext.Config.LastFileName))
                     this.PowerModified(markModified: true);
                 if (MidsContext.Config.MasterMode)
                 {
@@ -1999,11 +1999,11 @@ namespace Hero_Designer
             this.pbDynMode.Refresh();
         }
 
-        void ibPopup_ButtonClicked() => MidsContext.Config.ShowPopup = this.ibPopup.Checked;
+        void ibPopup_ButtonClicked() => MidsContext.Config.DisableShowPopup = !this.ibPopup.Checked;
 
         void ibPvX_ButtonClicked()
         {
-            MidsContext.Config.Inc.PvE = !this.ibPvX.Checked;
+            MidsContext.Config.Inc.DisablePvE = this.ibPvX.Checked;
             this.RefreshInfo();
         }
 
@@ -2738,7 +2738,7 @@ namespace Hero_Designer
                                     this.LastClickPlacedSlot = false;
                                 }
                             }
-                            if (e.Button == MouseButtons.Middle & slotID > -1 & MidsContext.Config.ReapeatOnMiddleClick)
+                            if (e.Button == MouseButtons.Middle & slotID > -1 & !MidsContext.Config.DisableRepeatOnMiddleClick)
                             {
                                 this.EnhancingSlot = slotID;
                                 this.EnhancingPower = hIDPower;
@@ -2757,7 +2757,7 @@ namespace Hero_Designer
                                     this.I9Picker.SetData(-1, ref MidsContext.Character.CurrentBuild.Powers[hIDPower].Slots[slotID].Enhancement, ref this.drawing, enhancements);
 
 
-                                var point = new System.Drawing.Point((int)Math.Round((double)(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X) - (double)this.I9Picker.Width / 2.0), (int)Math.Round((double)(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y) - (double)this.I9Picker.Height / 2.0));
+                                var point = new System.Drawing.Point((int)Math.Round(this.pnlGFXFlow.Left - this.pnlGFXFlow.HorizontalScroll.Value + e.X - I9Picker.Width / 2.0), (int)Math.Round(this.pnlGFXFlow.Top - this.pnlGFXFlow.VerticalScroll.Value + e.Y - I9Picker.Height / 2.0));
                                 if (point.Y < this.MenuBar.Height)
                                     point.Y = this.MenuBar.Height;
                                 Size clientSize;
@@ -4003,7 +4003,7 @@ namespace Hero_Designer
 
         void ShowPopup(int nIDPowerset, int nIDClass, Rectangle rBounds, string ExtraString = "")
         {
-            if (!MidsContext.Config.ShowPopup)
+            if (MidsContext.Config.DisableShowPopup)
             {
                 this.HidePopup();
             }
@@ -4048,7 +4048,7 @@ namespace Hero_Designer
           I9Slot eSlot = null,
           int setIDX = -1)
         {
-            if (!MidsContext.Config.ShowPopup)
+            if (MidsContext.Config.DisableShowPopup)
             {
                 this.HidePopup();
             }
@@ -4276,19 +4276,19 @@ namespace Hero_Designer
         void tsAdvFreshInstall_Click(object sender, EventArgs e)
         {
             this.FloatTop(false);
-            if (MidsContext.Config.FreshInstall)
+            if (!MidsContext.Config.IsInitialized)
             {
-                MidsContext.Config.FreshInstall = false;
+                MidsContext.Config.IsInitialized = true;
                 MidsContext.Config.SaveFolderChecked = true;
                 MessageBox.Show("Fresh Install flag has been unset!", null, MessageBoxButtons.OK);
             }
             else
             {
-                MidsContext.Config.FreshInstall = true;
+                MidsContext.Config.IsInitialized = false;
                 MidsContext.Config.SaveFolderChecked = false;
                 MessageBox.Show("Fresh Install flag has been set!", null, MessageBoxButtons.OK);
             }
-            this.tsAdvFreshInstall.Checked = MidsContext.Config.FreshInstall;
+            this.tsAdvFreshInstall.Checked = !MidsContext.Config.IsInitialized;
             this.FloatTop(true);
         }
 
@@ -4703,8 +4703,8 @@ namespace Hero_Designer
 
         void tsViewIOLevels_Click(object sender, EventArgs e)
         {
-            MidsContext.Config.I9.DisplayIOLevels = !MidsContext.Config.I9.DisplayIOLevels;
-            this.tsViewIOLevels.Checked = MidsContext.Config.I9.DisplayIOLevels;
+            MidsContext.Config.I9.HideIOLevels = !MidsContext.Config.I9.HideIOLevels;
+            this.tsViewIOLevels.Checked = !MidsContext.Config.I9.HideIOLevels;
             this.DoRedraw();
         }
 
@@ -4754,17 +4754,17 @@ namespace Hero_Designer
         void UpdateColours(bool skipDraw = false)
         {
             this.myDataView.DrawVillain = !MidsContext.Character.IsHero();
-            bool flag;
+            bool draw;
             if (this.myDataView.DrawVillain)
             {
-                flag = this.I9Picker.ForeColor.R != byte.MaxValue;
+                draw = this.I9Picker.ForeColor.R != byte.MaxValue;
                 this.BackColor = Color.FromArgb(0, 0, 0);
                 this.lblATLocked.BackColor = Color.FromArgb((int)byte.MaxValue, 128, 128);
                 this.I9Picker.ForeColor = Color.FromArgb((int)byte.MaxValue, 0, 0);
             }
             else
             {
-                flag = this.I9Picker.ForeColor.R != (byte)96;
+                draw = this.I9Picker.ForeColor.R != (byte)96;
                 this.BackColor = Color.FromArgb(0, 0, 0);
                 this.lblATLocked.BackColor = Color.FromArgb(128, 128, (int)byte.MaxValue);
                 this.I9Picker.ForeColor = Color.FromArgb(96, 48, (int)byte.MaxValue);
@@ -4815,7 +4815,7 @@ namespace Hero_Designer
                 ib.SetImages(this.drawing.pImageAttributes, this.drawing.bxPower[2].Bitmap, this.drawing.bxPower[3].Bitmap);
 
 
-            if (!flag)
+            if (!draw)
                 return;
             if (!skipDraw)
                 this.DoRedraw();
@@ -4840,7 +4840,7 @@ namespace Hero_Designer
             //else if (Operators.ConditionalCompareObjectNotEqual(NewLateBinding.LateGet(cbAT.SelectedItem, null, "Idx", new object[0], null, (System.Type[])null, null), MidsContext.Character.Archetype.Idx, false))
             else if (cbAT.SelectedItem.Idx != MidsContext.Character.Archetype.Idx)
                 cbAT.SelectedItem = MidsContext.Character.Archetype;
-            this.ibPvX.Checked = !MidsContext.Config.Inc.PvE;
+            this.ibPvX.Checked = MidsContext.Config.Inc.DisablePvE;
             var cbOrigin = new ComboBoxT<string>(this.cbOrigin);
             if (this.ComboCheckOrigin())
             {

@@ -541,26 +541,26 @@ namespace Hero_Designer
             this.rbGraphTwoLine.Checked = config.DataGraphType == Enums.eDDGraph.Both;
             this.rbGraphStacked.Checked = config.DataGraphType == Enums.eDDGraph.Stacked;
             this.rbGraphSimple.Checked = config.DataGraphType == Enums.eDDGraph.Simple;
-            this.rbPvE.Checked = config.Inc.PvE;
-            this.rbPvP.Checked = !config.Inc.PvE;
+            this.rbPvE.Checked = !config.Inc.DisablePvE;
+            this.rbPvP.Checked = config.Inc.DisablePvE;
             this.rbChanceAverage.Checked = config.DamageMath.Calculate == ConfigData.EDamageMath.Average;
             this.rbChanceMax.Checked = config.DamageMath.Calculate == ConfigData.EDamageMath.Max;
             this.rbChanceIgnore.Checked = config.DamageMath.Calculate == ConfigData.EDamageMath.Minimum;
             this.udBaseToHit.Value = new Decimal(config.BaseAcc * 100f);
-            this.chkVillainColour.Checked = config.ShowVillainColours;
+            this.chkVillainColour.Checked = !config.DisableVillainColours;
             this.chkUpdates.Checked = config.CheckForUpdates;
             this.udIOLevel.Value = Decimal.Compare(new Decimal(config.I9.DefaultIOLevel + 1), this.udIOLevel.Maximum) <= 0 ? new Decimal(config.I9.DefaultIOLevel + 1) : this.udIOLevel.Maximum;
-            this.chkIOLevel.Checked = config.I9.DisplayIOLevels;
-            this.chkIOEffects.Checked = config.I9.CalculateEnahncementFX;
-            this.chkSetBonus.Checked = config.I9.CalculateSetBonusFX;
+            this.chkIOLevel.Checked = !config.I9.HideIOLevels;
+            this.chkIOEffects.Checked = !config.I9.IgnoreEnhFX;
+            this.chkSetBonus.Checked = !config.I9.IgnoreSetBonusFX;
             this.chkRelSignOnly.Checked = config.ShowRelSymbols;
-            this.chkIOPrintLevels.Checked = config.I9.PrintIOLevels;
+            this.chkIOPrintLevels.Checked = !config.I9.DisablePrintIOLevels;
             this.chkColourPrint.Checked = config.PrintInColour;
             this.udRTFSize.Value = new decimal(config.RtFont.RTFBase / 2.0);
             this.udStatSize.Value = new decimal(config.RtFont.PairedBase);
             this.chkTextBold.Checked = config.RtFont.RTFBold;
             this.chkStatBold.Checked = config.RtFont.PairedBold;
-            this.chkLoadLastFile.Checked = config.LoadLastFileOnStart;
+            this.chkLoadLastFile.Checked = !config.DisableLoadLastFileOnStart;
             this.dcNickName.Text = config.DNickName;
             this.dcChannel.Text = config.DChannel;
             foreach (var item in config.DServers.Append(config.DSelServer).Where(item => !string.IsNullOrWhiteSpace(item) && !this.dcExList.Items.Contains(config.DSelServer)).Distinct())
@@ -569,10 +569,10 @@ namespace Hero_Designer
                 this.dcExList.SelectedItem = config.DSelServer;
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
-            this.chkColorInherent.Checked = config.DesaturateInherent;
-            this.chkMiddle.Checked = config.ReapeatOnMiddleClick;
+            this.chkColorInherent.Checked = !config.DisableDesaturateInherent;
+            this.chkMiddle.Checked = !config.DisableRepeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
-            this.chkShowAlphaPopup.Checked = config.ShowAlphaPopup;
+            this.chkShowAlphaPopup.Checked = !config.DisableAlphaPopup;
             this.chkUseArcanaTime.Checked = config.UseArcanaTime;
             this.TeamSize.Value = new decimal(config.TeamSize);
             int index = 0;
@@ -722,7 +722,7 @@ namespace Hero_Designer
                 config.DataGraphType = Enums.eDDGraph.Stacked;
             else if (this.rbGraphSimple.Checked)
                 config.DataGraphType = Enums.eDDGraph.Simple;
-            config.Inc.PvE = this.rbPvE.Checked;
+            config.Inc.DisablePvE = !this.rbPvE.Checked;
             if (this.rbChanceAverage.Checked)
                 config.DamageMath.Calculate = ConfigData.EDamageMath.Average;
             else if (this.rbChanceMax.Checked)
@@ -730,20 +730,20 @@ namespace Hero_Designer
             else if (this.rbChanceIgnore.Checked)
                 config.DamageMath.Calculate = ConfigData.EDamageMath.Minimum;
             config.BaseAcc = Convert.ToSingle(decimal.Divide(this.udBaseToHit.Value, new decimal(100)));
-            config.ShowVillainColours = this.chkVillainColour.Checked;
+            config.DisableVillainColours = !this.chkVillainColour.Checked;
             config.CheckForUpdates = this.chkUpdates.Checked;
             config.I9.DefaultIOLevel = Convert.ToInt32(this.udIOLevel.Value) - 1;
-            config.I9.DisplayIOLevels = this.chkIOLevel.Checked;
-            config.I9.CalculateEnahncementFX = this.chkIOEffects.Checked;
-            config.I9.CalculateSetBonusFX = this.chkSetBonus.Checked;
+            config.I9.HideIOLevels = !this.chkIOLevel.Checked;
+            config.I9.IgnoreEnhFX = !this.chkIOEffects.Checked;
+            config.I9.IgnoreSetBonusFX = !this.chkSetBonus.Checked;
             config.ShowRelSymbols = this.chkRelSignOnly.Checked;
-            config.I9.PrintIOLevels = this.chkIOPrintLevels.Checked;
+            config.I9.DisablePrintIOLevels = !this.chkIOPrintLevels.Checked;
             config.PrintInColour = this.chkColourPrint.Checked;
             config.RtFont.RTFBase = Convert.ToInt32(decimal.Multiply(this.udRTFSize.Value, new decimal(2)));
             config.RtFont.PairedBase = Convert.ToSingle(this.udStatSize.Value);
             config.RtFont.RTFBold = this.chkTextBold.Checked;
             config.RtFont.PairedBold = this.chkStatBold.Checked;
-            config.LoadLastFileOnStart = this.chkLoadLastFile.Checked;
+            config.DisableLoadLastFileOnStart = !this.chkLoadLastFile.Checked;
             if (config.DefaultSaveFolderOverride != this.lblSaveFolder.Text)
             {
                 config.DefaultSaveFolderOverride = this.lblSaveFolder.Text;
@@ -752,10 +752,10 @@ namespace Hero_Designer
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
             config.UpdatePath = this.txtUpdatePath.Text;
-            config.DesaturateInherent = this.chkColorInherent.Checked;
-            config.ReapeatOnMiddleClick = this.chkMiddle.Checked;
+            config.DisableDesaturateInherent = !this.chkColorInherent.Checked;
+            config.DisableRepeatOnMiddleClick = !this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;
-            config.ShowAlphaPopup = this.chkShowAlphaPopup.Checked;
+            config.DisableAlphaPopup = !this.chkShowAlphaPopup.Checked;
             config.UseArcanaTime = this.chkUseArcanaTime.Checked;
             config.TeamSize = Convert.ToInt32(this.TeamSize.Value);
             int index = 0;
