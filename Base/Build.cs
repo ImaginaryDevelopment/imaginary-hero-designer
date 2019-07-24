@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -307,36 +308,36 @@ public class Build
 
     public HistoryMap[] BuildHistoryMap(bool enhNames, bool ioLevel = true)
     {
-        List<HistoryMap> historyMapList = new List<HistoryMap>();
+        var historyMapList = new List<HistoryMap>();
         for (int lvlIdx = 0; lvlIdx <= DatabaseAPI.Database.Levels.Length - 1; ++lvlIdx)
         {
             for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
             {
                 PowerEntry power = this.Powers[powerIdx];
-                if ((power.Chosen || power.SubPowers.Length == 0 || power.SlotCount == 0) && power.Level == lvlIdx & power.Power != null)
+                if ((power.Chosen || power.SubPowers.Length == 0 || power.SlotCount == 0) && power.Level == lvlIdx && power.Power != null)
                 {
-                    HistoryMap historyMap = new HistoryMap()
+                    var historyMap = new HistoryMap()
                     {
                         Level = lvlIdx,
                         HID = powerIdx
                     };
-                    string str1 = string.Empty;
-                    string str2 = power.Chosen ? "Added" : "Recieved";
+                    string appendText = string.Empty;
+                    string choiceText = power.Chosen ? "Added" : "Recieved";
                     if (power.Slots.Length > 0)
                     {
                         historyMap.SID = 0;
                         if (power.Slots[0].Enhancement.Enh > -1)
                         {
                             if (enhNames)
-                                str1 = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
+                                appendText = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
                             if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.SetO))
-                                str1 = str1 + "-" + power.Slots[0].Enhancement.IOLevel;
-                            str1 += "]";
+                                appendText = appendText + "-" + power.Slots[0].Enhancement.IOLevel;
+                            appendText += "]";
                         }
                         else if (enhNames)
-                            str1 = " [Empty]";
+                            appendText = " [Empty]";
                     }
-                    historyMap.Text = "Level " + (lvlIdx + 1) + ": " + str2 + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + str1;
+                    historyMap.Text = "Level " + (lvlIdx + 1) + ": " + choiceText + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + appendText;
                     historyMapList.Add(historyMap);
                 }
             }

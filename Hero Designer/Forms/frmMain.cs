@@ -637,7 +637,7 @@ namespace Hero_Designer
                     LineAlignment = StringAlignment.Center
                 };
                 RectangleF layoutRectangle = new RectangleF((float)e.Bounds.X + destRect.X + destRect.Width, (float)e.Bounds.Y, (float)e.Bounds.Width - (destRect.X + destRect.Width), (float)e.Bounds.Height);
-                e.Graphics.DrawString(cmbOrigin[e.Index], e.Font, (Brush)solidBrush, layoutRectangle, format);
+                e.Graphics.DrawString(cmbOrigin[e.Index], e.Font, solidBrush, layoutRectangle, format);
             }
             e.DrawFocusRectangle();
         }

@@ -428,10 +428,10 @@ public static class MidsCharacterFileFormat
         }
         string[] strArray1 = new string[4]
         {
-      "ABCD",
-      "0",
-      "0",
-      "0"
+              "ABCD",
+              "0",
+              "0",
+              "0"
         };
         string a = "";
         MidsCharacterFileFormat.eLoadReturnCode eLoadReturnCode;
@@ -454,7 +454,7 @@ public static class MidsCharacterFileFormat
                     if (startIndex < 0)
                         startIndex = strArray2[index].IndexOf(MagicCompressed, StringComparison.Ordinal);
                     if (startIndex < 0)
-                        startIndex = strArray2[index].IndexOf("MHDz", StringComparison.OrdinalIgnoreCase);
+                        startIndex = strArray2[index].IndexOf(Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase);
                     if (startIndex > -1)
                     {
                         strArray1 = strArray2[index].Substring(startIndex).Split(';');
@@ -465,14 +465,14 @@ public static class MidsCharacterFileFormat
                 }
                 if (num1 < 0)
                 {
-                    int num2 = (int)MessageBox.Show("Unable to locate data header - Magic Number not found!", "ExtractAndLoad Failed");
+                    MessageBox.Show("Unable to locate data header - Magic Number not found!", "ExtractAndLoad Failed");
                     eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.Failure;
                 }
-                else if (string.Equals(a, "MHDz", StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals(a, Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase))
                     eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.IsOldFormat;
                 else if (num1 + 1 == strArray2.Length)
                 {
-                    int num2 = (int)MessageBox.Show("Unable to locate data - Nothing beyond header!", "ExtractAndLoad Failed");
+                    MessageBox.Show("Unable to locate data - Nothing beyond header!", "ExtractAndLoad Failed");
                     eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.Failure;
                 }
                 else
@@ -490,7 +490,7 @@ public static class MidsCharacterFileFormat
                     streamReader.Close();
                     if (iBytes.Length < int32_3)
                     {
-                        int num2 = (int)MessageBox.Show("Data chunk was incomplete! Check that the entire chunk was copied to the clipboard.", "ExtractAndLoad Failed");
+                        MessageBox.Show("Data chunk was incomplete! Check that the entire chunk was copied to the clipboard.", "ExtractAndLoad Failed");
                         eLoadReturnCode = MidsCharacterFileFormat.eLoadReturnCode.Failure;
                     }
                     else

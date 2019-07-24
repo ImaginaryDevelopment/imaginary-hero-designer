@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 using Base;
+using HeroDesigner.Schema;
 
 public interface ISerialize
 {
@@ -80,7 +81,6 @@ public class ConfigData
     public bool UseArcanaTime { get; set; }
     public ExportConfig Export { get; }
     public bool PrintInColour { get; set; }
-
     public bool PrintHistory { get; set; }
     public bool SaveFolderChecked { get; set; }
     public bool ShowSlotLevels { get; set; }
@@ -364,52 +364,6 @@ public class ConfigData
                     this.SaveFolderChecked = reader.ReadBoolean();
                 if (version >= 1.28999996185303)
                     this.UseArcanaTime = reader.ReadBoolean(); //this is correct
-                /*Commented out to expidite release.... Will not load forum Export settings  or supression settings
-                 * if ((double)version >= 1.29999995231628)
-                {  // numbers seem really off which is screwing up the rest of the read
-                    tempNum = reader.ReadInt16();
-                    this.Suppression = (Enums.eSuppress)tempNum;
-                }
-                if ((double)version >= 1.30999994277954)
-                {
-                    for (int index = 0; index < 19; ++index) { 
-                        this.DragDropScenarioAction[index] = reader.ReadInt16();
-                }
-                }//589825 or 2305
-                 tempNum = reader.ReadInt16();
-                this.Export.ColorSchemes = new ExportConfig.ColorScheme[(int)tempNum];
-                for (int index = 0; index < this.Export.ColorSchemes.Length; ++index)
-                { //crashes at index 14
-                    this.Export.ColorSchemes[index].SchemeName = reader.ReadString();
-                    this.Export.ColorSchemes[index].Heading = ConfigData.ReadRGB(reader);
-                    this.Export.ColorSchemes[index].Level = ConfigData.ReadRGB(reader);
-                    this.Export.ColorSchemes[index].Slots = ConfigData.ReadRGB(reader);
-                    this.Export.ColorSchemes[index].Title = ConfigData.ReadRGB(reader);
-                    if ((double)version >= 1.20000004768372)
-                    {
-                        this.Export.ColorSchemes[index].IOColor = ConfigData.ReadRGB(reader);
-                        this.Export.ColorSchemes[index].SetColor = ConfigData.ReadRGB(reader);
-                        this.Export.ColorSchemes[index].HOColor = ConfigData.ReadRGB(reader);
-                        this.Export.ColorSchemes[index].Power = ConfigData.ReadRGB(reader);
-                    }
-                }
-                this.Export.FormatCode = new ExportConfig.FormatCodes[reader.ReadInt32() + 1];
-                for (int index = 0; index < this.Export.FormatCode.Length; ++index)
-                {
-                    this.Export.FormatCode[index].Name = reader.ReadString();
-                    this.Export.FormatCode[index].Notes = reader.ReadString();
-                    this.Export.FormatCode[index].BoldOff = reader.ReadString();
-                    this.Export.FormatCode[index].BoldOn = reader.ReadString();
-                    this.Export.FormatCode[index].ColourOff = reader.ReadString();
-                    this.Export.FormatCode[index].ColourOn = reader.ReadString();
-                    this.Export.FormatCode[index].ItalicOff = reader.ReadString();
-                    this.Export.FormatCode[index].ItalicOn = reader.ReadString();
-                    this.Export.FormatCode[index].SizeOff = reader.ReadString();
-                    this.Export.FormatCode[index].SizeOn = reader.ReadString();
-                    this.Export.FormatCode[index].UnderlineOff = reader.ReadString();
-                    this.Export.FormatCode[index].UnderlineOn = reader.ReadString();
-                    this.Export.FormatCode[index].Space = (ExportConfig.WhiteSpace)reader.ReadInt32();
-                } */
                 this.CreateDefaultSaveFolder();
             }
         }
@@ -507,12 +461,6 @@ public class ConfigData
         }
     }
 
-    public class RawSaveResult
-    {
-        public int Length { get; set; }
-        public int Hash { get; set; }
-    }
-
     public static (bool, T) LoadRawMhd<T>(ISerialize serializer, string fn)
     {
         if (!File.Exists(fn))
@@ -535,11 +483,7 @@ public class ConfigData
             if (lastSaveInfo != null)
                 Console.WriteLine("Writing out updated file: " + fn);
             File.WriteAllText(path, contents: text);
-            return new RawSaveResult()
-            {
-                Length = text?.Length ?? 0,
-                Hash = text?.GetHashCode() ?? 0
-            };
+            return new RawSaveResult(length: text?.Length ?? 0, hash: text?.GetHashCode() ?? 0);
         }
         catch (Exception ex)
         {

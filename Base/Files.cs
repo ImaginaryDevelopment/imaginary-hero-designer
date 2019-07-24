@@ -1,4 +1,3 @@
-
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -68,24 +67,10 @@ public static class Files
 
         }
     }
-    static string FNameConfig
-    {
-        get
-        {
-            //var fp = Path.Combine(Application.StartupPath, Path.Combine("Data", MxdbFileConfig));
-            //var fnamep = System.Diagnostics.Debugger.IsAttached ? SearchUp("Data", fp) : fp;
-            return SelectDataFileLoad(MxdbFileConfig);
-            //return fnamep;
-        }
-    }
 
-    public static string FPathAppData
-    {
-        get
-        {
-            return Path.Combine(Application.StartupPath, "Data");
-        }
-    }
+    static string FNameConfig => SelectDataFileLoad(MxdbFileConfig);
+
+    public static string FPathAppData => Path.Combine(Application.StartupPath, "Data");
 
     public static string SelectDataFileLoad(string iDataFile)
     {

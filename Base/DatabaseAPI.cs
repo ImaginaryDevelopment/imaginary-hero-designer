@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Base;
+using HeroDesigner.Schema;
 
 public static class DatabaseAPI
 {
@@ -498,37 +499,30 @@ public static class DatabaseAPI
 
     public static int NidFromUidRecipe(string uidRecipe, ref int subIndex)
     {
-        bool flag = subIndex > -1 & uidRecipe.Contains("_");
+        bool isSub = subIndex > -1 & uidRecipe.Contains("_");
         subIndex = -1;
-        string b = flag ? uidRecipe.Substring(0, uidRecipe.LastIndexOf("_", StringComparison.Ordinal)) : uidRecipe;
-        for (int index1 = 0; index1 < Database.Recipes.Length; ++index1)
+        string uid = isSub ? uidRecipe.Substring(0, uidRecipe.LastIndexOf("_", StringComparison.Ordinal)) : uidRecipe;
+        for (int recipeIdx = 0; recipeIdx < Database.Recipes.Length; ++recipeIdx)
         {
-            if (string.Equals(Database.Recipes[index1].InternalName, b, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Database.Recipes[recipeIdx].InternalName, uid, StringComparison.OrdinalIgnoreCase))
             {
-                int num;
-                if (!flag)
+                if (!isSub)
+                    return recipeIdx;
+                int startIndex = uidRecipe.LastIndexOf("_", StringComparison.Ordinal) + 1;
+                if (!(startIndex < 0 || startIndex > uidRecipe.Length - 1))
                 {
-                    num = index1;
-                }
-                else
-                {
-                    int startIndex = uidRecipe.LastIndexOf("_", StringComparison.Ordinal) + 1;
-                    if (!(startIndex < 0 | startIndex > uidRecipe.Length - 1))
+                    uid = uidRecipe.Substring(startIndex);
+                    for (int index2 = 0; index2 < Database.Recipes[recipeIdx].Item.Length; ++index2)
                     {
-                        b = uidRecipe.Substring(startIndex);
-                        for (int index2 = 0; index2 < Database.Recipes[index1].Item.Length; ++index2)
+                        if (Database.Recipes[recipeIdx].Item[index2].Level == startIndex)
                         {
-                            if (Database.Recipes[index1].Item[index2].Level == startIndex)
-                            {
-                                subIndex = index2;
-                                return index1;
-                            }
+                            subIndex = index2;
+                            return recipeIdx;
                         }
-                        continue;
                     }
-                    num = -1;
+                    continue;
                 }
-                return num;
+                return -1;
             }
         }
         return -1;
@@ -546,31 +540,17 @@ public static class DatabaseAPI
 
     public static int NidFromUidEnhExtended(string uidEnh)
     {
-        int num;
         if (!uidEnh.StartsWith("BOOSTS", true, CultureInfo.CurrentCulture))
+            return NidFromUidEnh(uidEnh);
+        for (int index = 0; index < Database.Enhancements.Length; ++index)
         {
-            num = NidFromUidEnh(uidEnh);
+            if (string.Equals("BOOSTS." + Database.Enhancements[index].UID + "." + Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
+                return index;
         }
-        else
-        {
-            for (int index = 0; index < Database.Enhancements.Length; ++index)
-            {
-                if (string.Equals("BOOSTS." + Database.Enhancements[index].UID + "." + Database.Enhancements[index].UID, uidEnh, StringComparison.OrdinalIgnoreCase))
-                    return index;
-            }
-            num = -1;
-        }
-        return num;
+        return -1;
     }
-    const string MainDbName = "Mids' Hero Designer Database MK II";
 
-    public class FHash
-    {
-        public string Archetype { get; set; }
-        public string Fullname { get; set; }
-        public int Hash { get; set; }
-        public int Length { get; set; }
-    }
+    const string MainDbName = "Mids' Hero Designer Database MK II";
 
     static void SaveMainDbRaw(ISerialize serializer, string fn, string name)
     {
@@ -628,15 +608,14 @@ public static class DatabaseAPI
                 continue;
             }
             var psPrevious = hasPrevious ? prev.FirstOrDefault(psm => psm.Fullname == ps.FullName && psm.Archetype == ps.ATClass) : null;
-            var lastSaveResult = hasPrevious && psPrevious != null ? new ConfigData.RawSaveResult() { Hash = psPrevious.Hash, Length = psPrevious.Length } : null;
+            var lastSaveResult = hasPrevious && psPrevious != null ? new RawSaveResult(hash: psPrevious.Hash, length: psPrevious.Length) : null;
             var saveresult = ConfigData.SaveRawMhd(serializer, ps, psFn, lastSaveResult);
-            toWrite.Add(new FHash()
-            {
-                Fullname = ps.FullName,
-                Archetype = ps.ATClass,
-                Hash = saveresult.Hash,
-                Length = saveresult.Length
-            });
+            toWrite.Add(new FHash(
+                fullname: ps.FullName,
+                archetype: ps.ATClass,
+                hash: saveresult.Hash,
+                length: saveresult.Length
+            ));
         }
         ConfigData.SaveRawMhd(serializer, toWrite, metadataPath, null);
     }
@@ -651,8 +630,9 @@ public static class DatabaseAPI
             fileStream = new FileStream(path, FileMode.Create);
             writer = new BinaryWriter(fileStream);
         }
-        catch
+        catch (Exception ex)
         {
+            MessageBox.Show("Main db save failed: " + ex.Message);
             return;
         }
         try
@@ -1870,36 +1850,36 @@ public static class DatabaseAPI
 
     public static void AssignStaticIndexValues(ISerialize serializer, bool save)
     {
-        int num1 = -2;
+        int lastStaticPowerIdx = -2;
         for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
-            if (Database.Power[index].StaticIndex > -1 && Database.Power[index].StaticIndex > num1)
-                num1 = Database.Power[index].StaticIndex;
+            if (Database.Power[index].StaticIndex > -1 && Database.Power[index].StaticIndex > lastStaticPowerIdx)
+                lastStaticPowerIdx = Database.Power[index].StaticIndex;
         }
-        if (num1 < -1)
-            num1 = -1;
+        if (lastStaticPowerIdx < -1)
+            lastStaticPowerIdx = -1;
         for (int index = 0; index <= Database.Power.Length - 1; ++index)
         {
             if (Database.Power[index].StaticIndex < 0)
             {
-                ++num1;
-                Database.Power[index].StaticIndex = num1;
+                ++lastStaticPowerIdx;
+                Database.Power[index].StaticIndex = lastStaticPowerIdx;
             }
         }
-        int num2 = -2;
+        int lastStaticEnhIdx = -2;
         for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
         {
-            if (Database.Enhancements[index].StaticIndex > -1 && Database.Enhancements[index].StaticIndex > num2)
-                num2 = Database.Enhancements[index].StaticIndex;
+            if (Database.Enhancements[index].StaticIndex > -1 && Database.Enhancements[index].StaticIndex > lastStaticEnhIdx)
+                lastStaticEnhIdx = Database.Enhancements[index].StaticIndex;
         }
-        if (num2 < -1)
-            num2 = -1;
+        if (lastStaticEnhIdx < -1)
+            lastStaticEnhIdx = -1;
         for (int index = 1; index <= Database.Enhancements.Length - 1; ++index)
         {
             if (Database.Enhancements[index].StaticIndex < 1)
             {
-                ++num2;
-                Database.Enhancements[index].StaticIndex = num2;
+                ++lastStaticEnhIdx;
+                Database.Enhancements[index].StaticIndex = lastStaticEnhIdx;
             }
         }
         if (save)

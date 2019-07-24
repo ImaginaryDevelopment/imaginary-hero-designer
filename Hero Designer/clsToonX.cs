@@ -2051,7 +2051,7 @@ namespace Hero_Designer
                     else
                         throw new Exception("Reached end of data wihout finding header.");
                 }
-                while (!(string.Equals(a, "HeroDataVersion", StringComparison.OrdinalIgnoreCase) | string.Equals(a, "MHDz", StringComparison.OrdinalIgnoreCase)));
+                while (!(string.Equals(a, Files.Headers.Save.Uncompressed, StringComparison.OrdinalIgnoreCase) | string.Equals(a, Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase)));
             }
             catch (Exception ex)
             {
@@ -2060,14 +2060,14 @@ namespace Hero_Designer
                 return false;
             }
 
-            if (string.Equals(a, "HeroDataVersion", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(a, Files.Headers.Save.Uncompressed, StringComparison.OrdinalIgnoreCase))
             {
                 iStream.BaseStream.Seek(0L, SeekOrigin.Begin);
                 return this.ReadInternalDataUC(iStream);
             }
             else
             {
-                if (string.Equals(a, "MHDz", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(a, Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase))
                 {
                     ASCIIEncoding asciiEncoding = new ASCIIEncoding();
                     int outSize = (int)Math.Round(Conversion.Val(strArray[1]));
@@ -2101,7 +2101,7 @@ namespace Hero_Designer
             {
                 strArray1 = clsToonX.IoGrab2(iStream, "|", char.MinValue);
             }
-            while (strArray1[0] != "HeroDataVersion");
+            while (strArray1[0] != Files.Headers.Save.Uncompressed);
             strArray1[1] = strArray1[1].Replace(",", ".");
             float nVer = (float)Conversion.Val(strArray1[1]);
             bool flag;
@@ -2268,7 +2268,7 @@ namespace Hero_Designer
         public bool StringToInternalData(string iString)
         {
             bool flag1;
-            if (iString.IndexOf("MHDz", StringComparison.Ordinal) == -1 & iString.IndexOf("HeroDataVersion", StringComparison.Ordinal) == -1)
+            if (iString.IndexOf(Files.Headers.Save.Compressed, StringComparison.Ordinal) == -1 & iString.IndexOf(Files.Headers.Save.Uncompressed, StringComparison.Ordinal) == -1)
             {
                 if (iString.IndexOf("Primary", StringComparison.Ordinal) > -1 & iString.IndexOf("Secondary", StringComparison.Ordinal) > -1)
                 {
@@ -2306,7 +2306,7 @@ namespace Hero_Designer
                 }
                 try
                 {
-                    if (iString.IndexOf("MHDz", StringComparison.Ordinal) < 0)
+                    if (iString.IndexOf(Files.Headers.Save.Compressed, StringComparison.Ordinal) < 0)
                     {
                         iString = iString.Replace("+\r\n+", "");
                         iString = iString.Replace("+ \r\n+", "");

@@ -993,9 +993,9 @@ namespace Hero_Designer
                 SolidBrush solidBrush1 = new SolidBrush(this.enhListing.NameColor);
                 format.Alignment = StringAlignment.Far;
                 format.LineAlignment = StringAlignment.Center;
-                this.bxFlip.Graphics.DrawString("Active Slotting:", this.pnlEnhActive.Font, (Brush)solidBrush1, (RectangleF)rectangle1, format);
+                this.bxFlip.Graphics.DrawString("Active Slotting:", this.pnlEnhActive.Font, solidBrush1, rectangle1, format);
                 rectangle1.Y += rectangle1.Height;
-                this.bxFlip.Graphics.DrawString("Alternate:", this.pnlEnhActive.Font, (Brush)solidBrush1, (RectangleF)rectangle1, format);
+                this.bxFlip.Graphics.DrawString("Alternate:", this.pnlEnhActive.Font, solidBrush1, rectangle1, format);
                 ImageAttributes recolourIa = clsDrawX.GetRecolourIa(MidsContext.Character.IsHero());
                 SolidBrush solidBrush2 = new SolidBrush(Color.FromArgb(160, 0, 0, 0));
                 int num2 = MidsContext.Character.CurrentBuild.Powers[inToonHistory].SlotCount - 1;
@@ -1056,7 +1056,7 @@ namespace Hero_Designer
                         {
                             if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SetO | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.InventO))
                             {
-                                Bounds = (RectangleF)rectangle2;
+                                Bounds = rectangle2;
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Graphics graphics2 = this.bxFlip.Graphics;
@@ -1064,7 +1064,7 @@ namespace Hero_Designer
                             }
                             else if (MidsContext.Config.ShowEnhRel & (DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.Enh].TypeID == Enums.eType.SpecialO))
                             {
-                                Bounds = (RectangleF)rectangle2;
+                                Bounds = rectangle2;
                                 Bounds.Y -= 3f;
                                 Bounds.Height = Control.DefaultFont.GetHeight(this.bxFlip.Graphics);
                                 Color Text = MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel != Enums.eEnhRelative.None ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel >= Enums.eEnhRelative.Even ? (MidsContext.Character.CurrentBuild.Powers[inToonHistory].Slots[index].FlippedEnhancement.RelativeLevel <= Enums.eEnhRelative.Even ? Color.White : Color.FromArgb(0, (int)byte.MaxValue, (int)byte.MaxValue)) : Color.Yellow) : Color.Red;
@@ -1079,7 +1079,7 @@ namespace Hero_Designer
                         this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, destRect, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                     }
                     rectangle2.Inflate(2, 2);
-                    this.bxFlip.Graphics.FillEllipse((Brush)solidBrush2, rectangle2);
+                    this.bxFlip.Graphics.FillEllipse(solidBrush2, rectangle2);
                 }
                 this.RedrawFlip();
             }
@@ -1203,7 +1203,7 @@ namespace Hero_Designer
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
             Rectangle rect = new Rectangle(0, 0, 75, this.pnlTabs.Height);
-            extendedBitmap.Graphics.FillRectangle((Brush)solidBrush2, extendedBitmap.ClipRect);
+            extendedBitmap.Graphics.FillRectangle(solidBrush2, extendedBitmap.ClipRect);
             switch (this.TabPage)
             {
                 case 0:
@@ -1250,13 +1250,13 @@ namespace Hero_Designer
                 rect = new Rectangle(rect.Width * index, 2, 70, this.pnlTabs.Height - 2);
                 layoutRectangle = new RectangleF((float)rect.X, (float)rect.Y + (float)(((double)rect.Height - (double)font1.GetHeight(graphics)) / 2.0), (float)rect.Width, font1.GetHeight(graphics));
                 extendedBitmap.Graphics.DrawRectangle(pen, rect);
-                extendedBitmap.Graphics.DrawString(this.Pages[index], font1, (Brush)solidBrush1, layoutRectangle, format);
+                extendedBitmap.Graphics.DrawString(this.Pages[index], font1, solidBrush1, layoutRectangle, format);
             }
             rect = new Rectangle(70 * this.TabPage, 0, 70, this.pnlTabs.Height);
             layoutRectangle = new RectangleF((float)rect.X, (float)(((double)rect.Height - (double)font1.GetHeight(graphics)) / 2.0), (float)rect.Width, font1.GetHeight(graphics));
-            extendedBitmap.Graphics.FillRectangle((Brush)solidBrush3, rect);
+            extendedBitmap.Graphics.FillRectangle(solidBrush3, rect);
             extendedBitmap.Graphics.DrawRectangle(pen, rect);
-            extendedBitmap.Graphics.DrawString(this.Pages[this.TabPage], font2, (Brush)solidBrush1, layoutRectangle, format);
+            extendedBitmap.Graphics.DrawString(this.Pages[this.TabPage], font2, solidBrush1, layoutRectangle, format);
             graphics.DrawImageUnscaled((Image)extendedBitmap.Bitmap, 0, 0);
         }
 
@@ -2245,7 +2245,7 @@ namespace Hero_Designer
                 int y1 = (int)Math.Round(((double)size.Height / 2.0 - 30.0) / 2.0);
                 local1 = new Rectangle(x, y1, 30, 30);
                 Rectangle destRect = rectangle1;
-                this.bxFlip.Graphics.FillRectangle((Brush)solidBrush1, rectangle1);
+                this.bxFlip.Graphics.FillRectangle(solidBrush1, rectangle1);
                 Rectangle rectangle2 = new Rectangle((int)Math.Round((double)rectangle1.X + (30.0 - 30.0 * (double)State) / 2.0), rectangle1.Y, (int)Math.Round(30.0 * (double)State), 30);
                 Graphics graphics;
                 if (Enh1 > -1)
@@ -2262,7 +2262,7 @@ namespace Hero_Designer
                 double num1 = (double)size.Height / 2.0;
                 int num2 = (int)Math.Round(y2 + num1);
                 local2.Y = num2;
-                this.bxFlip.Graphics.FillRectangle((Brush)solidBrush1, rectangle1);
+                this.bxFlip.Graphics.FillRectangle(solidBrush1, rectangle1);
                 rectangle2 = new Rectangle((int)Math.Round((double)rectangle1.X + (30.0 - 30.0 * (double)State) / 2.0), rectangle1.Y, (int)Math.Round(30.0 * (double)State), 30);
                 if (Enh2 > -1)
                 {
@@ -2272,7 +2272,7 @@ namespace Hero_Designer
                 else
                     this.bxFlip.Graphics.DrawImage((Image)I9Gfx.EnhTypes.Bitmap, rectangle2, 0, 0, 30, 30, System.Drawing.GraphicsUnit.Pixel, recolourIa);
                 rectangle2.Inflate(2, 2);
-                this.bxFlip.Graphics.FillEllipse((Brush)solidBrush2, rectangle2);
+                this.bxFlip.Graphics.FillEllipse(solidBrush2, rectangle2);
                 this.pnlEnhInactive.CreateGraphics().DrawImage((Image)this.bxFlip.Bitmap, destRect, rectangle1, System.Drawing.GraphicsUnit.Pixel);
             }
         }

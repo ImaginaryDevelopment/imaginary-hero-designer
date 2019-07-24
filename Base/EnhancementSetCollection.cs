@@ -11,10 +11,9 @@ public class EnhancementSetCollection : List<EnhancementSet>
 
     public static string GetSetInfoLongRTF(int iSet, int enhCount = -1)
     {
-        string str1;
         if (iSet < 0 | iSet > DatabaseAPI.Database.EnhancementSets.Count - 1)
         {
-            str1 = string.Empty;
+            return string.Empty;
         }
         else
         {
@@ -43,8 +42,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
                 if (!string.IsNullOrEmpty(effectString))
                     str3 = str3 + RTF.Crlf() + RTF.Color(RTF.ElementID.Enhancement) + RTF.Bold("  " + DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.EnhancementSets[iSet].Enhancements[index]].Name + ": ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
             }
-            str1 = str3;
+            return str3;
         }
-        return str1;
     }
 }
