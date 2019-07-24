@@ -4781,8 +4781,6 @@ namespace Hero_Designer
                 this.llAncillary,
                 this.lblName, this.lblAT, this.lblOrigin, this.lblHero,
                 this.pnlGFX,
-                this.lblLocked0, this.lblLocked1, this.lblLocked2, this.lblLocked3,
-                this.lblLockedAncillary, this.lblLockedSecondary, this.lblATLocked
             };
             foreach (var colorItem in toColor)
             {
@@ -4793,6 +4791,15 @@ namespace Hero_Designer
                     ll.Font = font;
                 }
 
+            }
+            var toOtherColor = new Control[]
+            {
+                this.lblLocked0, this.lblLocked1, this.lblLocked2, this.lblLocked3,
+                this.lblLockedAncillary, this.lblLockedSecondary//, this.lblATLocked
+            };
+            foreach (var colorItem in toOtherColor)
+            {
+                colorItem.BackColor = lblATLocked.BackColor;
             }
 
             var ibs = new ImageButton[]
