@@ -253,7 +253,7 @@ namespace Hero_Designer
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(638, 352);
+            this.TabControl1.Size = new System.Drawing.Size(757, 352);
             this.TabControl1.TabIndex = 0;
             // 
             // TabPage3
@@ -268,7 +268,7 @@ namespace Hero_Designer
             this.TabPage3.Controls.Add(this.GroupBox3);
             this.TabPage3.Location = new System.Drawing.Point(4, 23);
             this.TabPage3.Name = "TabPage3";
-            this.TabPage3.Size = new System.Drawing.Size(630, 325);
+            this.TabPage3.Size = new System.Drawing.Size(749, 325);
             this.TabPage3.TabIndex = 2;
             this.TabPage3.Text = "Enhancements & View";
             this.TabPage3.UseVisualStyleBackColor = true;
@@ -313,14 +313,14 @@ namespace Hero_Designer
             this.GroupBox17.Controls.Add(this.udRTFSize);
             this.GroupBox17.Location = new System.Drawing.Point(196, 136);
             this.GroupBox17.Name = "GroupBox17";
-            this.GroupBox17.Size = new System.Drawing.Size(380, 143);
+            this.GroupBox17.Size = new System.Drawing.Size(545, 143);
             this.GroupBox17.TabIndex = 76;
             this.GroupBox17.TabStop = false;
             this.GroupBox17.Text = "Font Size/Colors:";
             // 
             // chkColorInherent
             // 
-            this.chkColorInherent.Location = new System.Drawing.Point(10, 118);
+            this.chkColorInherent.Location = new System.Drawing.Point(144, 100);
             this.chkColorInherent.Name = "chkColorInherent";
             this.chkColorInherent.Size = new System.Drawing.Size(222, 20);
             this.chkColorInherent.TabIndex = 70;
@@ -366,7 +366,7 @@ namespace Hero_Designer
             // 
             // btnFontColour
             // 
-            this.btnFontColour.Location = new System.Drawing.Point(200, 19);
+            this.btnFontColour.Location = new System.Drawing.Point(312, 19);
             this.btnFontColour.Name = "btnFontColour";
             this.btnFontColour.Size = new System.Drawing.Size(172, 27);
             this.btnFontColour.TabIndex = 61;
@@ -385,7 +385,7 @@ namespace Hero_Designer
             // 
             // chkVillainColour
             // 
-            this.chkVillainColour.Location = new System.Drawing.Point(10, 96);
+            this.chkVillainColour.Location = new System.Drawing.Point(277, 74);
             this.chkVillainColour.Name = "chkVillainColour";
             this.chkVillainColour.Size = new System.Drawing.Size(222, 20);
             this.chkVillainColour.TabIndex = 68;
@@ -461,7 +461,7 @@ namespace Hero_Designer
             this.GroupBox5.Controls.Add(this.rbGraphTwoLine);
             this.GroupBox5.Location = new System.Drawing.Point(388, 4);
             this.GroupBox5.Name = "GroupBox5";
-            this.GroupBox5.Size = new System.Drawing.Size(188, 125);
+            this.GroupBox5.Size = new System.Drawing.Size(353, 125);
             this.GroupBox5.TabIndex = 72;
             this.GroupBox5.TabStop = false;
             this.GroupBox5.Text = "Damage Graph Style:";
@@ -479,7 +479,7 @@ namespace Hero_Designer
             // 
             this.rbGraphStacked.Location = new System.Drawing.Point(6, 53);
             this.rbGraphStacked.Name = "rbGraphStacked";
-            this.rbGraphStacked.Size = new System.Drawing.Size(164, 32);
+            this.rbGraphStacked.Size = new System.Drawing.Size(286, 32);
             this.rbGraphStacked.TabIndex = 4;
             this.rbGraphStacked.Text = "Base + Enhanced (stacked) against Max Enhancable";
             this.myTip.SetToolTip(this.rbGraphStacked, "\'Max Enhacable\' is damage if slotted with 6 +3 damage enhancements.");
@@ -489,7 +489,7 @@ namespace Hero_Designer
             this.rbGraphTwoLine.Checked = true;
             this.rbGraphTwoLine.Location = new System.Drawing.Point(6, 17);
             this.rbGraphTwoLine.Name = "rbGraphTwoLine";
-            this.rbGraphTwoLine.Size = new System.Drawing.Size(164, 32);
+            this.rbGraphTwoLine.Size = new System.Drawing.Size(286, 32);
             this.rbGraphTwoLine.TabIndex = 3;
             this.rbGraphTwoLine.TabStop = true;
             this.rbGraphTwoLine.Text = "Base / Enhanced against Max Enhancable (Default)";
@@ -686,14 +686,14 @@ namespace Hero_Designer
             this.TabPage2.Controls.Add(this.GroupBox6);
             this.TabPage2.Location = new System.Drawing.Point(4, 23);
             this.TabPage2.Name = "TabPage2";
-            this.TabPage2.Size = new System.Drawing.Size(630, 325);
+            this.TabPage2.Size = new System.Drawing.Size(749, 325);
             this.TabPage2.TabIndex = 1;
             this.TabPage2.Text = "Effects & Maths";
             this.TabPage2.UseVisualStyleBackColor = true;
             // 
             // Label16
             // 
-            this.Label16.Location = new System.Drawing.Point(473, 297);
+            this.Label16.Location = new System.Drawing.Point(587, 297);
             this.Label16.Name = "Label16";
             this.Label16.Size = new System.Drawing.Size(57, 18);
             this.Label16.TabIndex = 66;
@@ -701,7 +701,7 @@ namespace Hero_Designer
             // 
             // TeamSize
             // 
-            this.TeamSize.Location = new System.Drawing.Point(536, 296);
+            this.TeamSize.Location = new System.Drawing.Point(650, 295);
             this.TeamSize.Maximum = new decimal(new int[] {
             8,
             0,
@@ -728,7 +728,7 @@ namespace Hero_Designer
             this.GroupBox2.Controls.Add(this.Label8);
             this.GroupBox2.Location = new System.Drawing.Point(517, 4);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(107, 283);
+            this.GroupBox2.Size = new System.Drawing.Size(221, 283);
             this.GroupBox2.TabIndex = 69;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Suppression";
@@ -739,22 +739,22 @@ namespace Hero_Designer
             this.clbSuppression.FormattingEnabled = true;
             this.clbSuppression.Location = new System.Drawing.Point(9, 104);
             this.clbSuppression.Name = "clbSuppression";
-            this.clbSuppression.Size = new System.Drawing.Size(92, 169);
+            this.clbSuppression.Size = new System.Drawing.Size(206, 169);
             this.clbSuppression.TabIndex = 9;
             this.clbSuppression.SelectedIndexChanged += new System.EventHandler(this.clbSuppression_SelectedIndexChanged);
             // 
             // Label8
             // 
-            this.Label8.Location = new System.Drawing.Point(6, 17);
+            this.Label8.Location = new System.Drawing.Point(6, 28);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(95, 86);
+            this.Label8.Size = new System.Drawing.Size(209, 55);
             this.Label8.TabIndex = 65;
             this.Label8.Text = "Some effects are suppressed on specific conditions. You can enable those conditio" +
     "ns here.";
             // 
             // chkUseArcanaTime
             // 
-            this.chkUseArcanaTime.Location = new System.Drawing.Point(15, 294);
+            this.chkUseArcanaTime.Location = new System.Drawing.Point(8, 295);
             this.chkUseArcanaTime.Name = "chkUseArcanaTime";
             this.chkUseArcanaTime.Size = new System.Drawing.Size(204, 22);
             this.chkUseArcanaTime.TabIndex = 66;
@@ -896,7 +896,7 @@ namespace Hero_Designer
             this.TabPage6.Controls.Add(this.GroupBox4);
             this.TabPage6.Location = new System.Drawing.Point(4, 23);
             this.TabPage6.Name = "TabPage6";
-            this.TabPage6.Size = new System.Drawing.Size(630, 325);
+            this.TabPage6.Size = new System.Drawing.Size(749, 325);
             this.TabPage6.TabIndex = 5;
             this.TabPage6.Text = "Exemping & Base Values";
             this.TabPage6.UseVisualStyleBackColor = true;
@@ -905,7 +905,7 @@ namespace Hero_Designer
             // 
             this.Label6.Location = new System.Drawing.Point(401, 85);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(169, 119);
+            this.Label6.Size = new System.Drawing.Size(332, 119);
             this.Label6.TabIndex = 71;
             this.Label6.Text = "Exemplar and level-accurate scaling features will be added in the future!";
             this.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1106,7 +1106,7 @@ namespace Hero_Designer
             this.tabPage7.Location = new System.Drawing.Point(4, 23);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(630, 325);
+            this.tabPage7.Size = new System.Drawing.Size(749, 325);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Discord Export Settings";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1143,9 +1143,9 @@ namespace Hero_Designer
             // 
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox3.Location = new System.Drawing.Point(66, 254);
+            this.richTextBox3.Location = new System.Drawing.Point(159, 247);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(509, 39);
+            this.richTextBox3.Size = new System.Drawing.Size(459, 39);
             this.richTextBox3.TabIndex = 2;
             this.richTextBox3.Text = "In order for the Discord export feature to work on your server you must first inv" +
     "ite RebornBot.\n";
@@ -1161,7 +1161,7 @@ namespace Hero_Designer
             this.GroupBox19.Controls.Add(this.dcExList);
             this.GroupBox19.Location = new System.Drawing.Point(270, 6);
             this.GroupBox19.Name = "GroupBox19";
-            this.GroupBox19.Size = new System.Drawing.Size(354, 203);
+            this.GroupBox19.Size = new System.Drawing.Size(471, 203);
             this.GroupBox19.TabIndex = 1;
             this.GroupBox19.TabStop = false;
             this.GroupBox19.Text = "Discord Server:";
@@ -1169,7 +1169,7 @@ namespace Hero_Designer
             // Label18
             // 
             this.Label18.AutoSize = true;
-            this.Label18.Location = new System.Drawing.Point(206, 58);
+            this.Label18.Location = new System.Drawing.Point(318, 60);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(111, 14);
             this.Label18.TabIndex = 5;
@@ -1177,14 +1177,14 @@ namespace Hero_Designer
             // 
             // dcServerName
             // 
-            this.dcServerName.Location = new System.Drawing.Point(172, 77);
+            this.dcServerName.Location = new System.Drawing.Point(289, 77);
             this.dcServerName.Name = "dcServerName";
             this.dcServerName.Size = new System.Drawing.Size(176, 20);
             this.dcServerName.TabIndex = 4;
             // 
             // dcRemove
             // 
-            this.dcRemove.Location = new System.Drawing.Point(169, 165);
+            this.dcRemove.Location = new System.Drawing.Point(169, 136);
             this.dcRemove.Name = "dcRemove";
             this.dcRemove.Size = new System.Drawing.Size(75, 23);
             this.dcRemove.TabIndex = 3;
@@ -1194,7 +1194,7 @@ namespace Hero_Designer
             // 
             // dcAdd
             // 
-            this.dcAdd.Location = new System.Drawing.Point(169, 131);
+            this.dcAdd.Location = new System.Drawing.Point(169, 77);
             this.dcAdd.Name = "dcAdd";
             this.dcAdd.Size = new System.Drawing.Size(75, 23);
             this.dcAdd.TabIndex = 2;
@@ -1207,7 +1207,7 @@ namespace Hero_Designer
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox2.Location = new System.Drawing.Point(76, 19);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1269,7 +1269,7 @@ namespace Hero_Designer
             this.TabPage4.Controls.Add(this.GroupBox11);
             this.TabPage4.Location = new System.Drawing.Point(4, 23);
             this.TabPage4.Name = "TabPage4";
-            this.TabPage4.Size = new System.Drawing.Size(630, 325);
+            this.TabPage4.Size = new System.Drawing.Size(749, 325);
             this.TabPage4.TabIndex = 3;
             this.TabPage4.Text = "Forum Export Settings";
             this.TabPage4.UseVisualStyleBackColor = true;
@@ -1307,7 +1307,7 @@ namespace Hero_Designer
             this.GroupBox12.Controls.Add(this.Label33);
             this.GroupBox12.Location = new System.Drawing.Point(180, 8);
             this.GroupBox12.Name = "GroupBox12";
-            this.GroupBox12.Size = new System.Drawing.Size(392, 308);
+            this.GroupBox12.Size = new System.Drawing.Size(561, 308);
             this.GroupBox12.TabIndex = 1;
             this.GroupBox12.TabStop = false;
             this.GroupBox12.Text = "Formatting Codes:";
@@ -1539,7 +1539,7 @@ namespace Hero_Designer
             // 
             this.Label25.Location = new System.Drawing.Point(148, 224);
             this.Label25.Name = "Label25";
-            this.Label25.Size = new System.Drawing.Size(236, 76);
+            this.Label25.Size = new System.Drawing.Size(407, 76);
             this.Label25.TabIndex = 14;
             this.Label25.Text = "When defining a formatting code which takes a value, such as a color tag, use %VA" +
     "L% as a placeholder for the actual value, which will replace it when a build is " +
@@ -1633,14 +1633,14 @@ namespace Hero_Designer
             this.TabPage5.Controls.Add(this.GroupBox1);
             this.TabPage5.Location = new System.Drawing.Point(4, 23);
             this.TabPage5.Name = "TabPage5";
-            this.TabPage5.Size = new System.Drawing.Size(630, 325);
+            this.TabPage5.Size = new System.Drawing.Size(749, 325);
             this.TabPage5.TabIndex = 4;
             this.TabPage5.Text = "Updates & Paths";
             this.TabPage5.UseVisualStyleBackColor = true;
             // 
             // btnSaveFolderReset
             // 
-            this.btnSaveFolderReset.Location = new System.Drawing.Point(459, 298);
+            this.btnSaveFolderReset.Location = new System.Drawing.Point(616, 298);
             this.btnSaveFolderReset.Name = "btnSaveFolderReset";
             this.btnSaveFolderReset.Size = new System.Drawing.Size(105, 22);
             this.btnSaveFolderReset.TabIndex = 64;
@@ -1653,14 +1653,14 @@ namespace Hero_Designer
             this.lblSaveFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSaveFolder.Location = new System.Drawing.Point(17, 270);
             this.lblSaveFolder.Name = "lblSaveFolder";
-            this.lblSaveFolder.Size = new System.Drawing.Size(436, 22);
+            this.lblSaveFolder.Size = new System.Drawing.Size(593, 22);
             this.lblSaveFolder.TabIndex = 63;
             this.lblSaveFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblSaveFolder.UseMnemonic = false;
             // 
             // btnSaveFolder
             // 
-            this.btnSaveFolder.Location = new System.Drawing.Point(459, 270);
+            this.btnSaveFolder.Location = new System.Drawing.Point(616, 270);
             this.btnSaveFolder.Name = "btnSaveFolder";
             this.btnSaveFolder.Size = new System.Drawing.Size(105, 22);
             this.btnSaveFolder.TabIndex = 62;
@@ -1690,7 +1690,7 @@ namespace Hero_Designer
             this.GroupBox16.Controls.Add(this.Label19);
             this.GroupBox16.Location = new System.Drawing.Point(417, 3);
             this.GroupBox16.Name = "GroupBox16";
-            this.GroupBox16.Size = new System.Drawing.Size(153, 240);
+            this.GroupBox16.Size = new System.Drawing.Size(324, 240);
             this.GroupBox16.TabIndex = 6;
             this.GroupBox16.TabStop = false;
             this.GroupBox16.Text = "Panic Button:";
@@ -1700,7 +1700,7 @@ namespace Hero_Designer
             // 
             this.Label19.Location = new System.Drawing.Point(5, 21);
             this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(143, 117);
+            this.Label19.Size = new System.Drawing.Size(313, 117);
             this.Label19.TabIndex = 7;
             this.Label19.Text = "If the database is damaged and not working properly, you can force the applicatio" +
     "n to redownload the most recent version.";
@@ -1773,7 +1773,7 @@ namespace Hero_Designer
             this.TabPage1.Controls.Add(this.GroupBox7);
             this.TabPage1.Location = new System.Drawing.Point(4, 23);
             this.TabPage1.Name = "TabPage1";
-            this.TabPage1.Size = new System.Drawing.Size(630, 325);
+            this.TabPage1.Size = new System.Drawing.Size(749, 325);
             this.TabPage1.TabIndex = 6;
             this.TabPage1.Text = "Drag & Drop";
             this.TabPage1.UseVisualStyleBackColor = true;
@@ -1810,7 +1810,7 @@ namespace Hero_Designer
             this.GroupBox9.Controls.Add(this.lblExample);
             this.GroupBox9.Location = new System.Drawing.Point(403, 104);
             this.GroupBox9.Name = "GroupBox9";
-            this.GroupBox9.Size = new System.Drawing.Size(214, 161);
+            this.GroupBox9.Size = new System.Drawing.Size(338, 161);
             this.GroupBox9.TabIndex = 1;
             this.GroupBox9.TabStop = false;
             this.GroupBox9.Text = "Description / Example(s)";
@@ -1819,7 +1819,7 @@ namespace Hero_Designer
             // 
             this.lblExample.Location = new System.Drawing.Point(13, 17);
             this.lblExample.Name = "lblExample";
-            this.lblExample.Size = new System.Drawing.Size(188, 130);
+            this.lblExample.Size = new System.Drawing.Size(319, 130);
             this.lblExample.TabIndex = 0;
             // 
             // GroupBox7
@@ -1860,7 +1860,7 @@ namespace Hero_Designer
             // 
             // chkColourPrint
             // 
-            this.chkColourPrint.Location = new System.Drawing.Point(246, 354);
+            this.chkColourPrint.Location = new System.Drawing.Point(246, 367);
             this.chkColourPrint.Name = "chkColourPrint";
             this.chkColourPrint.Size = new System.Drawing.Size(156, 16);
             this.chkColourPrint.TabIndex = 2;
@@ -1883,7 +1883,7 @@ namespace Hero_Designer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(640, 392);
+            this.ClientSize = new System.Drawing.Size(757, 392);
             this.Controls.Add(this.chkColourPrint);
             this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.btnCancel);

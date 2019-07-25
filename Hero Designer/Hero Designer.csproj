@@ -74,11 +74,6 @@
     <Compile Include="clsHook.cs" />
     <Compile Include="FileAssocation.cs" />
     <Compile Include="Forms\MainUILogic.cs" />
-    <Compile Include="Forms\OptionsMenuItems\frmCalcOpt1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>frmCalcOpt.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
       <DependentUpon>frmTotals.cs</DependentUpon>
     </Compile>
@@ -450,8 +445,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OptionsMenuItems\frmCalcOpt.resx">
       <DependentUpon>frmCalcOpt.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>frmCalcOpt1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmColourSettings.resx">
       <DependentUpon>frmColourSettings.cs</DependentUpon>
