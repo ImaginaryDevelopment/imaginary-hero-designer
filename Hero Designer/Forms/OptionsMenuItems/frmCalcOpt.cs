@@ -34,7 +34,7 @@ namespace Hero_Designer
             this.defActs = new short[20];
             this.InitializeComponent();
             this.Name = nameof(frmCalcOpt);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCalcOpt));
+            var componentResourceManager = new ComponentResourceManager(typeof(frmCalcOpt));
             this.optTO.Image = (Image)componentResourceManager.GetObject("optTO.Image");
             this.optDO.Image = (Image)componentResourceManager.GetObject("optDO.Image");
             this.optSO.Image = (Image)componentResourceManager.GetObject("optSO.Image");
@@ -42,7 +42,7 @@ namespace Hero_Designer
             this.Label5.Text = componentResourceManager.GetString("Label5.Text");
             this.myTip.SetToolTip(udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
             this.Label15.Text = componentResourceManager.GetString("Label15.Text");
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Icon = (Icon)componentResourceManager.GetObject("reborn_wicon");
             this.myParent = iParent;
         }
 

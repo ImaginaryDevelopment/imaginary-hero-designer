@@ -74,6 +74,11 @@
     <Compile Include="clsHook.cs" />
     <Compile Include="FileAssocation.cs" />
     <Compile Include="Forms\MainUILogic.cs" />
+    <Compile Include="Forms\OptionsMenuItems\frmCalcOpt1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmCalcOpt.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WindowMenuItems\frmTotals.Designer.cs">
       <DependentUpon>frmTotals.cs</DependentUpon>
     </Compile>
@@ -236,6 +241,10 @@
     <Content Include="Images\**\*.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\reborn_wicon.ico" />
+    <None Include="Resources\optTO.Image.png" />
+    <None Include="Resources\optSO.Image.png" />
+    <None Include="Resources\optDO.Image.png" />
     <EmbeddedResource Include="reborn.ico" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -441,6 +450,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OptionsMenuItems\frmCalcOpt.resx">
       <DependentUpon>frmCalcOpt.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmCalcOpt1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmColourSettings.resx">
       <DependentUpon>frmColourSettings.cs</DependentUpon>
