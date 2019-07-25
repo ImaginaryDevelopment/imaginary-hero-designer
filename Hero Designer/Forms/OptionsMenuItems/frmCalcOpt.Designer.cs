@@ -1222,8 +1222,7 @@ namespace Hero_Designer
             this.dcExList.FormattingEnabled = true;
             this.dcExList.ItemHeight = 14;
             this.dcExList.Items.AddRange(new object[] {
-            "Mids Reborn (Default)",
-            "CoH: Homecoming"});
+            "Mids Reborn (Default)"});
             this.dcExList.Location = new System.Drawing.Point(6, 58);
             this.dcExList.Name = "dcExList";
             this.dcExList.Size = new System.Drawing.Size(157, 130);
