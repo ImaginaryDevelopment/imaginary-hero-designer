@@ -155,7 +155,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_LT",
-      "CastTime": 3.96,
+      "CastTime": 3.73,
       "AoEModifier": 2.73993444
     },
     {
@@ -289,7 +289,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_LT",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     }
   ]

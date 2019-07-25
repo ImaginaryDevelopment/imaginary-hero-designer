@@ -1560,7 +1560,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1960,7 +1960,6 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2098,7 +2097,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2380,7 +2379,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3554,7 +3553,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4164,7 +4163,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4290,7 +4289,6 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5376,7 +5374,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -6328,7 +6326,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Willpower",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     }

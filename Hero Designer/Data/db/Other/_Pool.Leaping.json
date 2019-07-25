@@ -1003,7 +1003,7 @@
         }
       ],
       "FullSetName": "Pool.Leaping",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1362,7 +1362,6 @@
         }
       ],
       "FullSetName": "Pool.Leaping",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2379,7 +2378,7 @@
         }
       ],
       "FullSetName": "Pool.Leaping",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2856,7 +2855,7 @@
         }
       ],
       "FullSetName": "Pool.Leaping",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3028,7 +3027,7 @@
         }
       ],
       "FullSetName": "Pool.Leaping",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     }

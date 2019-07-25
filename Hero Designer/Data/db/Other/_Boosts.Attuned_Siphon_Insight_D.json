@@ -180,7 +180,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Siphon_Insight_D",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

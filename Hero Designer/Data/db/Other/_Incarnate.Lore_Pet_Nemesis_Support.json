@@ -604,7 +604,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Support",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "AoEModifier": 1.0
     },
     {
@@ -701,7 +701,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Support",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 4.75
     }
   ]

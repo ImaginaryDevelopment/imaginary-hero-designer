@@ -426,7 +426,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Acid_Mortar",
-      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -1830,7 +1829,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Acid_Mortar",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

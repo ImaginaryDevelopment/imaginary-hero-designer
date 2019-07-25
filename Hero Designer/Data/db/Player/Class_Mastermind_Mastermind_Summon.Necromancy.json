@@ -205,7 +205,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -382,7 +382,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -569,7 +569,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1117,7 +1117,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1336,7 +1336,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1485,7 +1485,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1696,7 +1696,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1818,7 +1818,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2546,7 +2546,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Necromancy",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     }

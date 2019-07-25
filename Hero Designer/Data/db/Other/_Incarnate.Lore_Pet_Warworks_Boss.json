@@ -76,7 +76,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 1.0
     },
     {
@@ -279,7 +279,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 1.584,
+      "CastTime": 1.4,
       "AoEModifier": 1.0
     },
     {
@@ -336,7 +336,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 2.73993444
     },
     {
@@ -501,7 +501,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -555,7 +555,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -752,7 +752,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Warworks_Boss",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "AoEModifier": 1.0
     }
   ]

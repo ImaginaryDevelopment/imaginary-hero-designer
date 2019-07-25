@@ -103,7 +103,6 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -297,7 +296,6 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -491,7 +489,6 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny_Silent",
-      "CastTime": 0.132,
       "AoEModifier": 7.75000048
     }
   ]

@@ -171,7 +171,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Living_Hellfire",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -302,7 +301,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Living_Hellfire",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -384,7 +383,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Living_Hellfire",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

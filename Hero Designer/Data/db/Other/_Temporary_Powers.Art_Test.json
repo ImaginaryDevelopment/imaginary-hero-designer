@@ -118,7 +118,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -213,7 +213,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 2.5
     },
     {
@@ -308,7 +308,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 4.884,
+      "CastTime": 4.67,
       "AoEModifier": 1.0
     },
     {
@@ -407,7 +407,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 3.25
     },
     {
@@ -501,7 +501,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -597,7 +597,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 3.25
     },
     {
@@ -692,7 +692,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 4.884,
+      "CastTime": 4.67,
       "AoEModifier": 1.0
     },
     {
@@ -790,7 +790,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Art_Test",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     }
   ]

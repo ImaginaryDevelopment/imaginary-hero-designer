@@ -709,7 +709,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 2.376,
+      "CastTime": 2.2,
       "AoEModifier": 1.61999214
     },
     {
@@ -1074,7 +1074,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.61999214
     },
     {
@@ -1505,7 +1505,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 2.904,
+      "CastTime": 2.7,
       "AoEModifier": 1.61999214
     },
     {
@@ -1834,7 +1834,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 2.35000014
     },
     {
@@ -2229,7 +2229,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 2.35000014
     },
     {
@@ -2846,7 +2846,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.61999214
     },
     {
@@ -3448,7 +3448,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 1.452,
+      "CastTime": 1.3,
       "AoEModifier": 3.25
     },
     {
@@ -4116,7 +4116,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 2.508,
+      "CastTime": 2.3,
       "AoEModifier": 3.25
     },
     {
@@ -4480,7 +4480,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.61999214
     },
     {
@@ -4910,7 +4910,7 @@
         }
       ],
       "FullSetName": "Pets.Titan_Weapons_Tanker",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "AoEModifier": 1.61999214
     }
   ]

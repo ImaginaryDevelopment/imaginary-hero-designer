@@ -190,7 +190,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shadow_Field_Dominator",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -322,7 +321,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shadow_Field_Dominator",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

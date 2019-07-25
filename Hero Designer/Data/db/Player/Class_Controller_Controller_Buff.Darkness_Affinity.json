@@ -532,7 +532,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -639,7 +639,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1027,7 +1027,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1539,7 +1539,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2291,7 +2291,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -2881,7 +2881,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -3031,7 +3031,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3469,7 +3469,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3583,7 +3583,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Darkness_Affinity",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

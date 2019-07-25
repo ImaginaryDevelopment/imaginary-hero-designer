@@ -464,7 +464,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
     },
@@ -568,7 +568,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0,
       "DisplayLocation": 34
     },
@@ -1005,7 +1005,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0,
       "DisplayLocation": 35
     },
@@ -2541,7 +2541,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3283,7 +3283,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3777,7 +3777,6 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4761,7 +4760,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4849,7 +4848,6 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5113,7 +5111,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5657,7 +5655,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -6773,7 +6771,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -7704,7 +7702,7 @@
         }
       ],
       "FullSetName": "Stalker_Defense.Bio_Organic_Armor",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 3.25
     }

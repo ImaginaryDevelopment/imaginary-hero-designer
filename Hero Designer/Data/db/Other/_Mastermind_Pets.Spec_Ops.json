@@ -241,7 +241,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -340,7 +339,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -480,7 +479,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 2.376,
+      "CastTime": 2.2,
       "AoEModifier": 1.0
     },
     {
@@ -620,7 +619,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -842,7 +841,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1300,7 +1298,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 1.0
     }
   ]

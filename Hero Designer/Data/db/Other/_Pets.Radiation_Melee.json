@@ -277,7 +277,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Radiation_Melee",
-      "CastTime": 0.132,
       "AoEModifier": 2.2
     },
     {
@@ -359,7 +358,6 @@
         }
       ],
       "FullSetName": "Pets.Radiation_Melee",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

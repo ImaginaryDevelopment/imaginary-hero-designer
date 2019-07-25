@@ -303,7 +303,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -650,7 +650,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -997,7 +997,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1408,7 +1408,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1798,7 +1798,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2073,7 +2073,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2358,7 +2358,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 1.43498361
     },
@@ -2706,7 +2706,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3053,7 +3053,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Fiery_Melee",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.0
     }

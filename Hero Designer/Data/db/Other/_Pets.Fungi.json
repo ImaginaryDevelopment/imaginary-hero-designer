@@ -302,7 +302,6 @@
         }
       ],
       "FullSetName": "Pets.Fungi",
-      "CastTime": 0.132,
       "AoEModifier": 8.5
     },
     {
@@ -915,7 +914,7 @@
         }
       ],
       "FullSetName": "Pets.Fungi",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     }
   ]

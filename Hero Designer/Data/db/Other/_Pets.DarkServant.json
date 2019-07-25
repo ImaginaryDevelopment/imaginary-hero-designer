@@ -152,7 +152,7 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 2.5
     },
     {
@@ -822,7 +822,7 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 4.75
     },
     {
@@ -939,7 +939,6 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1737,7 +1736,7 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "AoEModifier": 1.0
     },
     {
@@ -1983,7 +1982,7 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 2.29195762
     },
     {
@@ -2118,7 +2117,7 @@
         }
       ],
       "FullSetName": "Pets.DarkServant",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

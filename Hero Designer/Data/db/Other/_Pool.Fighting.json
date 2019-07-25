@@ -2303,7 +2303,7 @@
         }
       ],
       "FullSetName": "Pool.Fighting",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4269,7 +4269,7 @@
         }
       ],
       "FullSetName": "Pool.Fighting",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5585,7 +5585,7 @@
         }
       ],
       "FullSetName": "Pool.Fighting",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.25432611
     },
@@ -6025,7 +6025,7 @@
         }
       ],
       "FullSetName": "Pool.Fighting",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -6885,7 +6885,7 @@
         }
       ],
       "FullSetName": "Pool.Fighting",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     }

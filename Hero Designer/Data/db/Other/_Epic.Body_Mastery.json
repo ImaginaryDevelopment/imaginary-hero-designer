@@ -122,7 +122,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -368,7 +368,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -785,7 +785,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -934,7 +934,6 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1480,7 +1479,7 @@
         }
       ],
       "FullSetName": "Epic.Body_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.37995839
     }

@@ -144,7 +144,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -425,7 +424,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 4.75
     },
     {
@@ -612,7 +611,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -816,7 +814,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     },
     {
@@ -1020,7 +1018,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -1102,7 +1100,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1203,7 +1200,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 1.0
     },
     {
@@ -1300,7 +1297,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Mu_Guardian",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     }
   ]

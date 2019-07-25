@@ -559,7 +559,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Leviathan_Mastery",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1079,7 +1079,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Leviathan_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -2095,7 +2095,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Leviathan_Mastery",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -2543,7 +2543,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Leviathan_Mastery",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -2698,7 +2698,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Leviathan_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

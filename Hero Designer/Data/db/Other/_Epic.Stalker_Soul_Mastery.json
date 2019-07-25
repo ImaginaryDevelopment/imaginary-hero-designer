@@ -345,7 +345,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Soul_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -740,7 +740,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Epic.Stalker_Soul_Mastery",
-      "CastTime": 7.524,
+      "CastTime": 7.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1205,7 +1205,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Soul_Mastery",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1447,7 +1447,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Soul_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1599,7 +1599,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Soul_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

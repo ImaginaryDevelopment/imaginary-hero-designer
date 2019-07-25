@@ -136,7 +136,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Ninja_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -322,7 +322,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Ninja_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -745,7 +745,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Ninja_Mastery",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -984,7 +984,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Ninja_Mastery",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1785,7 +1785,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Ninja_Mastery",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 4.0
     }

@@ -326,7 +326,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -579,7 +579,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -877,7 +877,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1101,7 +1101,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1328,7 +1328,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1612,7 +1612,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.13,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -1838,7 +1838,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2147,7 +2147,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.05994654
     },
@@ -2373,7 +2373,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Mind_Control",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 4.75
     }

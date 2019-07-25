@@ -153,7 +153,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_LT",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -287,7 +287,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_LT",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "AoEModifier": 1.0
     },
     {
@@ -464,7 +464,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_LT",
-      "CastTime": 0.264,
+      "CastTime": 0.13,
       "AoEModifier": 1.0
     }
   ]

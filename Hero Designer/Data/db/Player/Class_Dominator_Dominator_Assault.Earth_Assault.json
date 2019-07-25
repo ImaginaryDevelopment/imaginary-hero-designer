@@ -271,7 +271,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -513,7 +513,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.6,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -757,7 +757,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1040,7 +1040,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1967,7 +1967,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2209,7 +2209,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2535,7 +2535,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2887,7 +2887,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3294,7 +3294,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Earth_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 2.5
     }

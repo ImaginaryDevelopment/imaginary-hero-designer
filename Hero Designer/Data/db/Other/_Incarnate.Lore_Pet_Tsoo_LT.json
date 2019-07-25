@@ -188,7 +188,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_LT",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "AoEModifier": 3.25
     },
     {
@@ -320,7 +320,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_LT",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -417,7 +417,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_LT",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "AoEModifier": 1.0
     }
   ]

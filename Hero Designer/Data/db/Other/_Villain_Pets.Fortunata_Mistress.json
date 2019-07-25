@@ -422,7 +422,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -668,7 +667,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 4.75
     },
     {
@@ -846,7 +845,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 1.0
     },
     {
@@ -928,7 +927,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1106,7 +1104,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -1312,7 +1310,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -1492,7 +1490,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fortunata_Mistress",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "AoEModifier": 1.0
     }
   ]

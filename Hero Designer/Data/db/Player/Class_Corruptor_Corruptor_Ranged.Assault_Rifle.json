@@ -292,7 +292,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -582,7 +582,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -875,7 +875,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 1.056,
+      "CastTime": 0.9,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -1237,7 +1237,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1496,7 +1496,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 1.056,
+      "CastTime": 0.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1856,7 +1856,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2087,7 +2087,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -2199,7 +2199,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2464,7 +2464,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Assault_Rifle",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 3.02657676
     }

@@ -588,7 +588,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1132,7 +1132,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 0.97,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1238,7 +1238,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 3.696,
+      "CastTime": 3.47,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1797,7 +1797,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "Slottable": true,
       "AoEModifier": 1.24149275
     },
@@ -2773,7 +2773,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3402,7 +3402,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3842,7 +3842,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4285,7 +4285,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -4915,7 +4915,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Darkness_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

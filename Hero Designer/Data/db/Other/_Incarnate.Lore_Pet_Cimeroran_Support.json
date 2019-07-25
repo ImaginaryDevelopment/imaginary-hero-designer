@@ -115,7 +115,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Support",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 4.75
     },
     {
@@ -211,7 +211,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     }
   ]

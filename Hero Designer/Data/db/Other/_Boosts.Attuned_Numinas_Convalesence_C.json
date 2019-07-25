@@ -248,7 +248,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Numinas_Convalesence_C",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -107,7 +107,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Carnival_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     },
     {
@@ -469,7 +469,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Carnival_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     }
   ]

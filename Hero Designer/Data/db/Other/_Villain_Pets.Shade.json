@@ -257,7 +257,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "AoEModifier": 1.0
     },
     {
@@ -709,7 +709,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     },
     {
@@ -851,7 +851,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 1.0
     },
     {
@@ -933,7 +933,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shade",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

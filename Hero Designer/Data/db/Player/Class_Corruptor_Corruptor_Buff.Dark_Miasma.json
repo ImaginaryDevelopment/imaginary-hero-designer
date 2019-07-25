@@ -532,7 +532,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -639,7 +639,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1027,7 +1027,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1539,7 +1539,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2291,7 +2291,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -2516,7 +2516,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 3.414927
     },
@@ -2661,7 +2661,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3099,7 +3099,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3213,7 +3213,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Dark_Miasma",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

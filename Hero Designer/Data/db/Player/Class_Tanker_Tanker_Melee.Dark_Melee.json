@@ -670,7 +670,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 2.05
     },
@@ -1068,7 +1068,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 1.188,
+      "CastTime": 0.97,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -1482,7 +1482,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "Slottable": true,
       "AoEModifier": 1.24149275
     },
@@ -1698,7 +1698,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2066,7 +2066,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 2.23
     },
@@ -2438,7 +2438,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.23
     },
@@ -3259,7 +3259,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3553,7 +3553,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4033,7 +4033,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Dark_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 3.67
     }

@@ -84,7 +84,6 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.DisintegrateSpread",
-      "CastTime": 0.132,
       "AoEModifier": 3.25
     },
     {
@@ -326,7 +325,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.DisintegrateSpread",
-      "CastTime": 0.132,
       "AoEModifier": 3.25
     }
   ]

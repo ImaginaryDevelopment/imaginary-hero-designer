@@ -820,7 +820,7 @@
         }
       ],
       "FullSetName": "Pool.Leadership",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 10.0
     },
@@ -1236,7 +1236,7 @@
         }
       ],
       "FullSetName": "Pool.Leadership",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 10.0
     },
@@ -1572,7 +1572,7 @@
         }
       ],
       "FullSetName": "Pool.Leadership",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 10.0
     },
@@ -2799,7 +2799,7 @@
         }
       ],
       "FullSetName": "Pool.Leadership",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 16.0
     },
@@ -3121,7 +3121,7 @@
         }
       ],
       "FullSetName": "Pool.Leadership",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

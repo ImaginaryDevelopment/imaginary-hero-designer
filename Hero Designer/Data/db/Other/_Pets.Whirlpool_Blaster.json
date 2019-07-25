@@ -361,7 +361,6 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Blaster",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -449,7 +448,6 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Blaster",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

@@ -493,7 +493,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -962,7 +962,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1376,7 +1376,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -1766,7 +1766,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2165,7 +2165,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2278,7 +2278,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2787,7 +2787,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3402,7 +3402,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3519,7 +3519,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Ice_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

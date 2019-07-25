@@ -278,7 +278,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -608,7 +608,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1120,7 +1120,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1417,7 +1417,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1750,7 +1750,7 @@
         }
       ],
       "FullSetName": "Epic.Fire_Mastery",
-      "CastTime": 3.96,
+      "CastTime": 3.828,
       "Slottable": true,
       "AoEModifier": 4.0
     }

@@ -342,7 +342,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Dominator_RadioactiveAssault_Snipe",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 2.2
     },
     {
@@ -667,7 +667,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Dominator_RadioactiveAssault_Snipe",
-      "CastTime": 4.488,
+      "CastTime": 4.33,
       "AoEModifier": 2.2
     }
   ]

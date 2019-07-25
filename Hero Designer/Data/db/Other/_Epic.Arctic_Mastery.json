@@ -753,7 +753,7 @@
         }
       ],
       "FullSetName": "Epic.Arctic_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1440,7 +1440,7 @@
         }
       ],
       "FullSetName": "Epic.Arctic_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1994,7 +1994,7 @@
         }
       ],
       "FullSetName": "Epic.Arctic_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2445,7 +2445,7 @@
         }
       ],
       "FullSetName": "Epic.Arctic_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 5.04995537
     },
@@ -2632,7 +2632,7 @@
         }
       ],
       "FullSetName": "Epic.Arctic_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

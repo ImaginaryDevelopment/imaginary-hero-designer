@@ -817,7 +817,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1528,7 +1528,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2183,7 +2183,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2573,7 +2573,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2791,7 +2791,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3191,7 +3191,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3799,7 +3799,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -4184,7 +4184,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4899,7 +4899,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Radiation_Manipulation",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 1.0
     }

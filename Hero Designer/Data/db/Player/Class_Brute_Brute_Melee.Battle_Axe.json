@@ -384,7 +384,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -744,7 +744,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1104,7 +1104,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1494,7 +1494,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1854,7 +1854,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2070,7 +2070,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2431,7 +2431,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2792,7 +2792,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.25332212
     },
@@ -3155,7 +3155,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Battle_Axe",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.58799589
     }

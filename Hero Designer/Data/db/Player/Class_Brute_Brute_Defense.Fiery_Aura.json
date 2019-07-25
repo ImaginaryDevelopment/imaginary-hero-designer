@@ -446,7 +446,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -662,7 +662,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -801,7 +801,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1094,7 +1094,6 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1787,7 +1786,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2155,7 +2154,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2403,7 +2402,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2795,7 +2794,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3075,7 +3074,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Fiery_Aura",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     }

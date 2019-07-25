@@ -124,7 +124,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -332,7 +332,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -433,7 +433,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -607,7 +607,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -854,7 +854,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1519,7 +1519,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1893,7 +1893,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2486,7 +2486,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2866,7 +2866,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Thermal_Radiation",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 3.25
     }

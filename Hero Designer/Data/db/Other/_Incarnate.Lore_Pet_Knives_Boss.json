@@ -155,7 +155,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_Boss",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -611,7 +611,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -812,7 +812,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -2177,7 +2177,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

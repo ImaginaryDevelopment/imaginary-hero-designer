@@ -494,7 +494,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -862,7 +862,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -1094,7 +1094,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -1527,7 +1527,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -3774,7 +3774,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -6021,7 +6021,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -8203,7 +8203,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -8636,7 +8636,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -10883,7 +10883,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -13503,7 +13503,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 10.0
     },
     {
@@ -16058,7 +16058,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -18613,7 +18613,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -21233,7 +21233,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -23886,7 +23886,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -26539,7 +26539,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 10.0
     },
     {
@@ -29127,7 +29127,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -31747,7 +31747,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 10.0
     },
     {
@@ -34400,7 +34400,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -36280,7 +36280,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -38095,7 +38095,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 5.5
     },
     {
@@ -39910,7 +39910,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 5.5
     },
     {
@@ -41790,7 +41790,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 5.5
     },
     {
@@ -46307,7 +46307,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 5.5
     },
     {
@@ -50824,7 +50824,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -55276,7 +55276,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 5.5
     },
     {
@@ -57156,7 +57156,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -61673,7 +61673,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -61906,7 +61906,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -62074,7 +62074,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -62242,7 +62242,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -62475,7 +62475,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -62810,7 +62810,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -63280,7 +63280,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -63550,7 +63550,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -63783,7 +63783,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -64245,7 +64245,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.63999987,
+      "CastTime": 2.4,
       "AoEModifier": 1.0
     },
     {
@@ -64548,7 +64548,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -64646,7 +64646,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -64744,7 +64744,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -65047,7 +65047,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -65354,7 +65354,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -65661,7 +65661,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -65903,7 +65903,7 @@
         }
       ],
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -66206,7 +66206,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     },
     {
@@ -66513,7 +66513,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Destiny",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     }
   ]

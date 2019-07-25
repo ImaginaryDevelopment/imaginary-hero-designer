@@ -106,7 +106,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Arsonist",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -204,7 +203,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Arsonist",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -307,7 +306,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Arsonist",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "AoEModifier": 1.75
     },
     {
@@ -529,7 +528,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Arsonist",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

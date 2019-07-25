@@ -529,7 +529,6 @@
         }
       ],
       "FullSetName": "Pets.Blizzard",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -617,7 +616,6 @@
         }
       ],
       "FullSetName": "Pets.Blizzard",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -698,7 +696,6 @@
         }
       ],
       "FullSetName": "Pets.Blizzard",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

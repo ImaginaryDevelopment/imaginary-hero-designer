@@ -172,7 +172,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Psi_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -351,7 +351,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Psi_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -594,7 +594,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Psi_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -871,7 +871,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Psi_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1408,7 +1408,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Psi_Mastery",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 6.25
     }

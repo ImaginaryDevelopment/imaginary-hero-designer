@@ -366,7 +366,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Will_of_the_Controller_D",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

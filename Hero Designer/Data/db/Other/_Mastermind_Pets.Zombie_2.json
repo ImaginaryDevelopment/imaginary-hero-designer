@@ -157,7 +157,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Zombie_2",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.99862158
     },
     {
@@ -241,7 +241,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Zombie_2",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -380,7 +379,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Zombie_2",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.75
     }
   ]

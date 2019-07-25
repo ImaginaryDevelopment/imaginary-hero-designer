@@ -412,7 +412,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Dire_Wolf_2",
-      "CastTime": 3.036,
+      "CastTime": 2.83,
       "AoEModifier": 2.44994545
     },
     {
@@ -725,7 +725,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Dire_Wolf_2",
-      "CastTime": 2.63999987,
+      "CastTime": 2.47,
       "AoEModifier": 1.0
     },
     {
@@ -809,7 +809,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Dire_Wolf_2",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -893,7 +892,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Dire_Wolf_2",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -977,7 +975,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Dire_Wolf_2",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

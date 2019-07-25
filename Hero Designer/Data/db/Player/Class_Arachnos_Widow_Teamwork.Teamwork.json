@@ -297,7 +297,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -423,7 +423,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1223,7 +1223,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 13.0
     },
@@ -2180,7 +2180,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2596,7 +2596,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 13.0
     },
@@ -2985,7 +2985,7 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 13.0
     },
@@ -3712,7 +3712,6 @@
         }
       ],
       "FullSetName": "Teamwork.Teamwork",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     }

@@ -1199,7 +1199,6 @@
         }
       ],
       "FullSetName": "Pets.FreezingRain",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -1287,7 +1286,6 @@
         }
       ],
       "FullSetName": "Pets.FreezingRain",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

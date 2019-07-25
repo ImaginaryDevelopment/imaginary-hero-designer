@@ -568,7 +568,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1176,7 +1176,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1566,7 +1566,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2204,7 +2204,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2404,7 +2404,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2916,7 +2916,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.98,
+      "CastTime": 1.8,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3799,7 +3799,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3895,7 +3895,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4477,7 +4477,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Energy_Manipulation",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     }

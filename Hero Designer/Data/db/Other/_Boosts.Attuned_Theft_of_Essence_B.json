@@ -248,7 +248,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Theft_of_Essence_B",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

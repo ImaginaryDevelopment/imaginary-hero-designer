@@ -398,7 +398,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Poison_Poison_Gas",
-      "CastTime": 0.132,
       "AoEModifier": 3.25
     },
     {
@@ -540,7 +539,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Poison_Poison_Gas",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -622,7 +620,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Poison_Poison_Gas",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

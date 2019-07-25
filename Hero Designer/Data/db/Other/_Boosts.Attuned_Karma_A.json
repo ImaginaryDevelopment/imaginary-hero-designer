@@ -496,7 +496,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Karma_A",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

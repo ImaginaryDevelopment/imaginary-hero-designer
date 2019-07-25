@@ -224,7 +224,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Droid_2",
-      "CastTime": 3.564,
+      "CastTime": 3.33,
       "AoEModifier": 1.0
     },
     {
@@ -308,7 +308,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Droid_2",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

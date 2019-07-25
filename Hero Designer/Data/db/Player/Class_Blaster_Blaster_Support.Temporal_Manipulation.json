@@ -811,7 +811,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.6,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1397,7 +1397,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2022,7 +2022,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2557,7 +2557,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3187,7 +3187,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3556,7 +3556,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4147,7 +4147,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4866,7 +4866,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5334,7 +5334,6 @@
         }
       ],
       "FullSetName": "Blaster_Support.Temporal_Manipulation",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     }

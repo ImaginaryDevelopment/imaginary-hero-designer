@@ -890,7 +890,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1290,7 +1290,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.31999993,
+      "CastTime": 1.16,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2088,7 +2088,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2512,7 +2512,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3008,7 +3008,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -3315,7 +3315,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3576,7 +3576,6 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4110,7 +4109,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5252,7 +5251,6 @@
         }
       ],
       "FullSetName": "Blaster_Support.Tactical_Arrow",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     }

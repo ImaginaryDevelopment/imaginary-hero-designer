@@ -1803,7 +1803,7 @@
         }
       ],
       "FullSetName": "Pool.Invisibility",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2719,7 +2719,7 @@
         }
       ],
       "FullSetName": "Pool.Invisibility",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3638,7 +3638,7 @@
         }
       ],
       "FullSetName": "Pool.Invisibility",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4108,7 +4108,7 @@
         }
       ],
       "FullSetName": "Pool.Invisibility",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -4475,7 +4475,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pool.Invisibility",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "Slottable": true,
       "AoEModifier": 1.0
     }

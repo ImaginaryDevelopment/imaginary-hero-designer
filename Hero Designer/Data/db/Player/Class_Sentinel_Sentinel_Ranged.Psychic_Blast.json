@@ -633,7 +633,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1350,7 +1350,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1531,7 +1531,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73196149
     },
@@ -1755,7 +1755,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2182,7 +2182,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2361,7 +2361,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2584,7 +2584,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2806,7 +2806,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3096,7 +3096,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Psychic_Blast",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "Slottable": true,
       "AoEModifier": 4.0
     }

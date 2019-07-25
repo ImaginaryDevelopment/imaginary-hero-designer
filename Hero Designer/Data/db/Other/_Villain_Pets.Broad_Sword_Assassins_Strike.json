@@ -330,7 +330,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Broad_Sword_Assassins_Strike",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 1.0
     },
     {
@@ -564,7 +564,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Broad_Sword_Assassins_Strike",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

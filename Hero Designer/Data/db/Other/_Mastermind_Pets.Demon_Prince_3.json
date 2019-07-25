@@ -334,7 +334,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Demon_Prince_3",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "AoEModifier": 1.0
     },
     {
@@ -451,7 +451,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Demon_Prince_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -628,7 +627,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Demon_Prince_3",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "AoEModifier": 2.5
     }
   ]

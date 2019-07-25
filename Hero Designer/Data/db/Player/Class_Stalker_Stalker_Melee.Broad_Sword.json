@@ -377,7 +377,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -730,7 +730,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1086,7 +1086,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.45966136
     },
@@ -1467,7 +1467,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1857,7 +1857,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2132,7 +2132,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2525,7 +2525,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2952,7 +2952,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 1.98,
+      "CastTime": 1.8,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3382,7 +3382,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Broad_Sword",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.24965537
     }

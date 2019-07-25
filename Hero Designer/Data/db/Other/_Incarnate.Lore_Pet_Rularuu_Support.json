@@ -360,7 +360,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Support",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 6.25
     },
     {
@@ -456,7 +456,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Support",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "AoEModifier": 1.0
     }
   ]

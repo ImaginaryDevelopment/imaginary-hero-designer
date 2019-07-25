@@ -350,7 +350,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Brilliant_Leadership_F",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

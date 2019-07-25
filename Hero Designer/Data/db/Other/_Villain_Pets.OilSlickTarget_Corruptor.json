@@ -109,7 +109,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickTarget_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -193,7 +192,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickTarget_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1531,7 +1529,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickTarget_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1614,7 +1611,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.OilSlickTarget_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

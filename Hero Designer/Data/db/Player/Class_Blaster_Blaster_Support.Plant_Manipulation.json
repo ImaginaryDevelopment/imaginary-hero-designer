@@ -795,7 +795,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1338,7 +1338,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1823,7 +1823,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1956,7 +1956,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2452,7 +2452,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2660,7 +2660,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3311,7 +3311,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -3754,7 +3754,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4788,7 +4788,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Plant_Manipulation",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 2.5
     }

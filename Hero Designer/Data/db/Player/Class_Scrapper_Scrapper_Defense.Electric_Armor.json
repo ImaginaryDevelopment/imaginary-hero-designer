@@ -306,7 +306,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -485,7 +485,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -838,7 +838,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1525,7 +1525,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1827,7 +1827,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1994,7 +1994,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2254,7 +2254,6 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2501,7 +2500,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 3.96,
+      "CastTime": 3.828,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3751,7 +3750,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Electric_Armor",
-      "CastTime": 2.112,
+      "CastTime": 1.96,
       "Slottable": true,
       "AoEModifier": 1.0
     }

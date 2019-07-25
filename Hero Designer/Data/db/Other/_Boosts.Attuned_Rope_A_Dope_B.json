@@ -147,7 +147,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Rope_A_Dope_B",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

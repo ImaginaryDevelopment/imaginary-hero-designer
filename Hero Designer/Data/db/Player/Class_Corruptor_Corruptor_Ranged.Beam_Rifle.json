@@ -423,7 +423,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -823,7 +823,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1164,7 +1164,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -1523,7 +1523,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1913,7 +1913,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2316,7 +2316,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2793,7 +2793,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 4.62,
+      "CastTime": 4.4,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3364,7 +3364,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 2.557239
     },
@@ -3817,7 +3817,7 @@
         }
       ],
       "FullSetName": "Corruptor_Ranged.Beam_Rifle",
-      "CastTime": 3.036,
+      "CastTime": 2.9,
       "Slottable": true,
       "AoEModifier": 4.75
     }

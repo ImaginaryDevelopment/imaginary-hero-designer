@@ -527,7 +527,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.376,
+      "CastTime": 2.2,
       "Slottable": true,
       "AoEModifier": 1.61999214
     },
@@ -986,7 +986,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1472,7 +1472,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "Slottable": true,
       "AoEModifier": 1.61999214
     },
@@ -1938,7 +1938,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2393,7 +2393,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2607,7 +2607,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3329,7 +3329,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.508,
+      "CastTime": 2.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3718,7 +3718,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4168,7 +4168,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Scrapper_Melee.Titan_Weapons",
-      "CastTime": 2.904,
+      "CastTime": 2.7,
       "Slottable": true,
       "AoEModifier": 1.61999214
     }

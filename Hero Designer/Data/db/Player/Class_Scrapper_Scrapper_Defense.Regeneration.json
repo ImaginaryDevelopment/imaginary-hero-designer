@@ -151,7 +151,6 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -290,7 +289,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -383,7 +382,6 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -621,7 +619,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1623,7 +1621,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2058,7 +2056,6 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2261,7 +2258,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2496,7 +2493,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3525,7 +3522,7 @@
         }
       ],
       "FullSetName": "Scrapper_Defense.Regeneration",
-      "CastTime": 2.772,
+      "CastTime": 2.57,
       "Slottable": true,
       "AoEModifier": 1.0
     }

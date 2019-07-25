@@ -430,7 +430,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Vanguard_Support",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 10.0
     },
     {
@@ -875,7 +875,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Vanguard_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "AoEModifier": 1.0
     }
   ]

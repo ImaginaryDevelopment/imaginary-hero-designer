@@ -625,7 +625,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1212,7 +1212,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.584,
+      "CastTime": 1.4,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1921,7 +1921,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -2572,7 +2572,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3228,7 +3228,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4110,7 +4110,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.584,
+      "CastTime": 1.43,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5012,7 +5012,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5592,7 +5592,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -6402,7 +6402,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dual_Blades",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.509991
     }

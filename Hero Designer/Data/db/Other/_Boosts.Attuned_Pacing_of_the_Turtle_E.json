@@ -248,7 +248,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Pacing_of_the_Turtle_E",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

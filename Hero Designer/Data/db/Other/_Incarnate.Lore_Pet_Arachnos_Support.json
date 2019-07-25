@@ -254,7 +254,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Arachnos_Support",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 6.25
     },
     {
@@ -350,7 +350,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Arachnos_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     }
   ]
