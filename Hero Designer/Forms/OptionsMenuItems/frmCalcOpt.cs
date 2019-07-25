@@ -565,6 +565,7 @@ namespace Hero_Designer
                 this.dcExList.Items.Add(item);
             if (!string.IsNullOrWhiteSpace(config.DSelServer))
                 this.dcExList.SelectedItem = config.DSelServer;
+            this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
             this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = !config.DisableDesaturateInherent;
