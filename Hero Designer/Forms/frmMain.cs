@@ -2732,7 +2732,8 @@ namespace Hero_Designer
                                         // adding a slot by itself doesn't really change the build substantially without an enh going into it
                                         this.PowerModified(markModified: false);
                                         this.LastClickPlacedSlot = true;
-                                        MidsContext.Config.Tips.Show(Tips.TipType.FirstEnh);
+                                        /* Disabled until can find why it is not saving
+                                        MidsContext.Config.Tips.Show(Tips.TipType.FirstEnh);*/
                                         return;
                                     }
                                     this.LastClickPlacedSlot = false;
@@ -3053,14 +3054,18 @@ namespace Hero_Designer
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
             this.PowerModified(markModified: true);
-            MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+            /* Disabled
+             * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+             */
         }
 
         void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
             this.PowerModified(markModified: true);
-            MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+            /* Disabled
+             * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+             */
             this.DoRedraw();
         }
 
@@ -3771,7 +3776,9 @@ namespace Hero_Designer
             {
                 this.drawing.InterfaceMode = Enums.eInterfaceMode.PowerToggle;
                 this.DoRedraw();
-                MidsContext.Config.Tips.Show(Tips.TipType.TotalsTab);
+                /* Disabled
+                 * MidsContext.Config.Tips.Show(Tips.TipType.TotalsTab);
+                 */
             }
             else
             {
