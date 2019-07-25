@@ -59,9 +59,9 @@ public static class I9Gfx
             using (ExtendedBitmap extendedBitmap = new ExtendedBitmap(str))
             {
                 if (extendedBitmap.Size.Height > 16 | extendedBitmap.Size.Width > 16)
-                    I9Gfx.Powersets.Graphics.DrawImage((Image)extendedBitmap.Bitmap, x, 0, 16, 16);
+                    I9Gfx.Powersets.Graphics.DrawImage(extendedBitmap.Bitmap, x, 0, 16, 16);
                 else
-                    I9Gfx.Powersets.Graphics.DrawImage((Image)extendedBitmap.Bitmap, x, 0);
+                    I9Gfx.Powersets.Graphics.DrawImage(extendedBitmap.Bitmap, x, 0);
             }
         }
     }

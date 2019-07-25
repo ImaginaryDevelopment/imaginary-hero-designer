@@ -551,7 +551,7 @@ namespace Hero_Designer
                 int index = ArchetypeIndirectToIndex(e.Index);
                 RectangleF destRect = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
                 RectangleF srcRect = new RectangleF(index * 16, 0.0f, 16f, 16f);
-                e.Graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
