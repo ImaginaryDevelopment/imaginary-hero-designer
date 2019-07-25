@@ -1782,7 +1782,7 @@ namespace Hero_Designer
             // 
             this.Label15.Location = new System.Drawing.Point(14, 9);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(602, 92);
+            this.Label15.Size = new System.Drawing.Size(721, 92);
             this.Label15.TabIndex = 4;
             // 
             // Label10
