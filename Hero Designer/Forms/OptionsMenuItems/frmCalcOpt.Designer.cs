@@ -111,6 +111,7 @@ namespace Hero_Designer
             this.Label17 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.GroupBox19 = new System.Windows.Forms.GroupBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.Label18 = new System.Windows.Forms.Label();
             this.dcServerName = new System.Windows.Forms.TextBox();
             this.dcRemove = new System.Windows.Forms.Button();
@@ -1143,16 +1144,17 @@ namespace Hero_Designer
             // 
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox3.Location = new System.Drawing.Point(159, 247);
+            this.richTextBox3.Location = new System.Drawing.Point(38, 247);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(459, 39);
+            this.richTextBox3.Size = new System.Drawing.Size(677, 39);
             this.richTextBox3.TabIndex = 2;
             this.richTextBox3.Text = "In order for the Discord export feature to work on your server you must first inv" +
-    "ite RebornBot.\n";
+    "ite the Mids Reborn Discord bot.\n";
             this.richTextBox3.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox3_LinkClicked);
             // 
             // GroupBox19
             // 
+            this.GroupBox19.Controls.Add(this.richTextBox4);
             this.GroupBox19.Controls.Add(this.Label18);
             this.GroupBox19.Controls.Add(this.dcServerName);
             this.GroupBox19.Controls.Add(this.dcRemove);
@@ -1165,6 +1167,20 @@ namespace Hero_Designer
             this.GroupBox19.TabIndex = 1;
             this.GroupBox19.TabStop = false;
             this.GroupBox19.Text = "Discord Server:";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox4.Location = new System.Drawing.Point(289, 127);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox4.Size = new System.Drawing.Size(176, 61);
+            this.richTextBox4.TabIndex = 6;
+            this.richTextBox4.Text = "Don\'t forget to select your server from the list after adding it!";
             // 
             // Label18
             // 
@@ -2096,5 +2112,6 @@ namespace Hero_Designer
         System.Windows.Forms.NumericUpDown udIOLevel;
         System.Windows.Forms.NumericUpDown udRTFSize;
         System.Windows.Forms.NumericUpDown udStatSize;
+        private System.Windows.Forms.RichTextBox richTextBox4;
     }
 }
