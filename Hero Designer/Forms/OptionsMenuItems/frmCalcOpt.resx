@@ -577,7 +577,7 @@ Where an attack has a chance to do additional damage:</value>
         AAAAAAR//RAAAAAAHH/9+AAAAAA////8AAAAAH////wAAAAAf/8=
 </value>
   </data>
-  <data name="udExHigh.Tooltip" xml:space="preserve">
+  <data name="udExHigh.ToolTip" xml:space="preserve">
     <value>Set this to the level of your character. This setting will not reduce the number of slots/powers placed to match the level. Powers available after the level set ehre will still be calculated unless you disable them.</value>
   </data>
 </root>

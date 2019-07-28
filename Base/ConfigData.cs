@@ -6,7 +6,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
 using Base;
 using HeroDesigner.Schema;
 
@@ -112,6 +111,7 @@ public class ConfigData
             _defaultSaveFolderOverride = value;
         }
     }
+
     internal static ConfigData Current
     {
         get
@@ -170,7 +170,7 @@ public class ConfigData
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
         this.I9.DefaultIOLevel = 49;
-        this.UpdatePath = "";
+        this.UpdatePath = "http://midsreborn.com/mids_updates/";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
@@ -338,7 +338,7 @@ public class ConfigData
                     this.BuildOption = (Enums.dmItem)reader.ReadInt32();
                     this.UpdatePath = reader.ReadString();
                     if (string.IsNullOrEmpty(this.UpdatePath))
-                        this.UpdatePath = "";
+                        this.UpdatePath = "http://midsreborn.com/mids_updates/";
                 }
                 if (version >= 1.25)
                 {
@@ -400,7 +400,7 @@ public class ConfigData
             }
             if (Directory.Exists(this.DefaultSaveFolderOverride))
             {
-                if (MessageBox.Show("In order for Mids' Hero/Villain Designer to be better behaved in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("In order for Mids' Reborn : Designer to operate better in more recent versions of Windows, the recommended Save folder has been changed to appear inside the My Documents folder.\nThe application can automatically move your save folder and its contents to 'My Documents\\Hero & Villain Builds\\'.\nThis message will not appear again.\n\nMove your Save folder now?", "Save Folder Location", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     this.LastFileName = string.Empty;
                     string defaultSaveFolder = this.DefaultSaveFolderOverride;

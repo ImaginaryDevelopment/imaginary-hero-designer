@@ -167,8 +167,6 @@ namespace Hero_Designer
             this.GroupBox16 = new System.Windows.Forms.GroupBox();
             this.Label19 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.txtUpdatePath = new System.Windows.Forms.TextBox();
             this.Label37 = new System.Windows.Forms.Label();
             this.Label34 = new System.Windows.Forms.Label();
             this.chkUpdates = new System.Windows.Forms.CheckBox();
@@ -184,6 +182,7 @@ namespace Hero_Designer
             this.myTip = new System.Windows.Forms.ToolTip(this.components);
             this.cPicker = new System.Windows.Forms.ColorDialog();
             this.fbdSave = new System.Windows.Forms.FolderBrowserDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.TabControl1.SuspendLayout();
             this.TabPage3.SuspendLayout();
             this.GroupBox17.SuspendLayout();
@@ -1689,23 +1688,24 @@ namespace Hero_Designer
             this.chkLoadLastFile.Name = "chkLoadLastFile";
             this.chkLoadLastFile.Size = new System.Drawing.Size(156, 16);
             this.chkLoadLastFile.TabIndex = 61;
-            this.chkLoadLastFile.Text = "Load last file at startup";
+            this.chkLoadLastFile.Text = "Load last build on startup";
             // 
             // Label1
             // 
             this.Label1.Location = new System.Drawing.Point(5, 246);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(123, 24);
+            this.Label1.Size = new System.Drawing.Size(168, 24);
             this.Label1.TabIndex = 8;
-            this.Label1.Text = "Default Save Folder:";
+            this.Label1.Text = "Save Mids Builds To:";
             this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GroupBox16
             // 
+            this.GroupBox16.Controls.Add(this.button1);
             this.GroupBox16.Controls.Add(this.Label19);
             this.GroupBox16.Location = new System.Drawing.Point(417, 3);
             this.GroupBox16.Name = "GroupBox16";
-            this.GroupBox16.Size = new System.Drawing.Size(324, 240);
+            this.GroupBox16.Size = new System.Drawing.Size(324, 169);
             this.GroupBox16.TabIndex = 6;
             this.GroupBox16.TabStop = false;
             this.GroupBox16.Text = "Panic Button:";
@@ -1723,37 +1723,19 @@ namespace Hero_Designer
             // 
             // GroupBox1
             // 
-            this.GroupBox1.Controls.Add(this.Label2);
-            this.GroupBox1.Controls.Add(this.txtUpdatePath);
             this.GroupBox1.Controls.Add(this.Label37);
             this.GroupBox1.Controls.Add(this.Label34);
             this.GroupBox1.Controls.Add(this.chkUpdates);
             this.GroupBox1.Location = new System.Drawing.Point(8, 3);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(403, 240);
+            this.GroupBox1.Size = new System.Drawing.Size(403, 169);
             this.GroupBox1.TabIndex = 7;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Automatic Updates:";
             // 
-            // Label2
-            // 
-            this.Label2.Location = new System.Drawing.Point(6, 168);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(197, 20);
-            this.Label2.TabIndex = 10;
-            this.Label2.Text = "Address of update information data:";
-            this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtUpdatePath
-            // 
-            this.txtUpdatePath.Location = new System.Drawing.Point(9, 191);
-            this.txtUpdatePath.Name = "txtUpdatePath";
-            this.txtUpdatePath.Size = new System.Drawing.Size(391, 20);
-            this.txtUpdatePath.TabIndex = 9;
-            // 
             // Label37
             // 
-            this.Label37.Location = new System.Drawing.Point(6, 87);
+            this.Label37.Location = new System.Drawing.Point(13, 108);
             this.Label37.Name = "Label37";
             this.Label37.Size = new System.Drawing.Size(384, 43);
             this.Label37.TabIndex = 7;
@@ -1767,13 +1749,13 @@ namespace Hero_Designer
             this.Label34.Name = "Label34";
             this.Label34.Size = new System.Drawing.Size(384, 41);
             this.Label34.TabIndex = 5;
-            this.Label34.Text = "The hero designer can automatically check for updates and download newer versions" +
-    " when it starts. This feature requires an internet connection.";
+            this.Label34.Text = "Mids Reborn can automatically check for updates and download newer versions when " +
+    "it starts. This feature requires an internet connection.";
             this.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chkUpdates
             // 
-            this.chkUpdates.Location = new System.Drawing.Point(9, 60);
+            this.chkUpdates.Location = new System.Drawing.Point(9, 68);
             this.chkUpdates.Name = "chkUpdates";
             this.chkUpdates.Size = new System.Drawing.Size(304, 24);
             this.chkUpdates.TabIndex = 6;
@@ -1892,6 +1874,17 @@ namespace Hero_Designer
             // 
             this.cPicker.FullOpen = true;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(124, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "PANIC!";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmCalcOpt
             // 
             this.AcceptButton = this.btnOK;
@@ -1950,7 +1943,6 @@ namespace Hero_Designer
             this.TabPage5.ResumeLayout(false);
             this.GroupBox16.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
-            this.GroupBox1.PerformLayout();
             this.TabPage1.ResumeLayout(false);
             this.TabPage1.PerformLayout();
             this.GroupBox9.ResumeLayout(false);
@@ -2046,7 +2038,7 @@ namespace Hero_Designer
         System.Windows.Forms.Label Label17;
         System.Windows.Forms.Label Label18;
         System.Windows.Forms.Label Label19;
-        System.Windows.Forms.Label Label2;
+        //System.Windows.Forms.Label Label2;
         System.Windows.Forms.Label Label20;
         System.Windows.Forms.Label Label21;
         System.Windows.Forms.Label Label22;
@@ -2104,7 +2096,7 @@ namespace Hero_Designer
         System.Windows.Forms.TextBox dcChannel;
         System.Windows.Forms.TextBox dcNickName;
         System.Windows.Forms.TextBox dcServerName;
-        System.Windows.Forms.TextBox txtUpdatePath;
+        //System.Windows.Forms.TextBox txtUpdatePath;
         System.Windows.Forms.NumericUpDown udBaseToHit;
         System.Windows.Forms.NumericUpDown udExHigh;
         System.Windows.Forms.NumericUpDown udExLow;
@@ -2113,5 +2105,6 @@ namespace Hero_Designer
         System.Windows.Forms.NumericUpDown udRTFSize;
         System.Windows.Forms.NumericUpDown udStatSize;
         private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Button button1;
     }
 }

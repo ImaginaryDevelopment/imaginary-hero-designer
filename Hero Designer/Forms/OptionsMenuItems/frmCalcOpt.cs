@@ -88,7 +88,7 @@ namespace Hero_Designer
             this.lblSaveFolder.Text = MidsContext.Config.GetSaveFolder();
         }
 
-        void btnUpdatePathReset_Click(object sender, EventArgs e) => this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
+        //void btnUpdatePathReset_Click(object sender, EventArgs e) => this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -567,7 +567,7 @@ namespace Hero_Designer
                 this.dcExList.SelectedItem = config.DSelServer;
             this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
-            this.txtUpdatePath.Text = config.UpdatePath;
+            //this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = !config.DisableDesaturateInherent;
             this.chkMiddle.Checked = !config.DisableRepeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
@@ -750,7 +750,7 @@ namespace Hero_Designer
                 this.myParent.DlgSave.InitialDirectory = config.DefaultSaveFolderOverride;
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
-            config.UpdatePath = this.txtUpdatePath.Text;
+            //config.UpdatePath = this.txtUpdatePath.Text;
             config.DisableDesaturateInherent = !this.chkColorInherent.Checked;
             config.DisableRepeatOnMiddleClick = !this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;
