@@ -905,7 +905,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -991,7 +990,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1077,7 +1075,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1163,7 +1160,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1249,7 +1245,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1335,7 +1330,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1421,7 +1415,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1507,7 +1500,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1560,7 +1552,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1646,7 +1637,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1699,7 +1689,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1785,7 +1774,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1838,7 +1826,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2163,7 +2150,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2255,7 +2241,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2852,7 +2837,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2905,7 +2889,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3025,7 +3008,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3109,7 +3091,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3196,7 +3177,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3318,7 +3298,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3406,7 +3385,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -3493,7 +3471,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3580,7 +3557,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3667,7 +3643,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3754,7 +3729,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3841,7 +3815,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3928,7 +3901,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4015,7 +3987,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4100,7 +4071,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4185,7 +4155,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4270,7 +4239,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4355,7 +4323,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4440,7 +4407,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4525,7 +4491,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4610,7 +4575,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4703,7 +4667,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -5053,7 +5016,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5106,7 +5068,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5191,7 +5152,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5276,7 +5236,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5361,7 +5320,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5446,7 +5404,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5531,7 +5488,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5616,7 +5572,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5701,7 +5656,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6166,7 +6120,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6219,7 +6172,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6306,7 +6258,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -6392,7 +6343,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6478,7 +6428,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6564,7 +6513,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6650,7 +6598,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6736,7 +6683,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6822,7 +6768,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6908,7 +6853,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7224,7 +7168,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7540,7 +7483,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7856,7 +7798,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8172,7 +8113,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8488,7 +8428,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8804,7 +8743,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9120,7 +9058,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9237,7 +9174,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9331,7 +9267,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9649,7 +9584,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -9736,7 +9670,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9823,7 +9756,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9910,7 +9842,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9997,7 +9928,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10084,7 +10014,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10171,7 +10100,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10258,7 +10186,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10343,7 +10270,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10428,7 +10354,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10513,7 +10438,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10598,7 +10522,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10683,7 +10606,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10768,7 +10690,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10853,7 +10774,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11169,7 +11089,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11485,7 +11404,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11801,7 +11719,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12117,7 +12034,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12433,7 +12349,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -12749,7 +12664,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13065,7 +12979,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13152,7 +13065,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13205,7 +13117,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13322,7 +13233,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13407,7 +13317,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13799,7 +13708,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13885,7 +13793,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -13972,7 +13879,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14059,7 +13965,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14146,7 +14051,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14233,7 +14137,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14320,7 +14223,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14407,7 +14309,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14494,7 +14395,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14579,7 +14479,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14664,7 +14563,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14749,7 +14647,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14834,7 +14731,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14919,7 +14815,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15004,7 +14899,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15089,7 +14983,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15176,7 +15069,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15263,7 +15155,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15350,7 +15241,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15437,7 +15327,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15524,7 +15413,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15611,7 +15499,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15698,7 +15585,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15783,7 +15669,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15868,7 +15753,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15953,7 +15837,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16038,7 +15921,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16123,7 +16005,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16208,7 +16089,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16293,7 +16173,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16543,7 +16422,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16629,7 +16507,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16715,7 +16592,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16801,7 +16677,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16887,7 +16762,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16973,7 +16847,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17059,7 +16932,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17145,7 +17017,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17231,7 +17102,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17353,7 +17223,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17475,7 +17344,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17597,7 +17465,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17719,7 +17586,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17841,7 +17707,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17963,7 +17828,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18085,7 +17949,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18171,7 +18034,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18257,7 +18119,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18343,7 +18204,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18429,7 +18289,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18515,7 +18374,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18601,7 +18459,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18687,7 +18544,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18772,7 +18628,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18857,7 +18712,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18942,7 +18796,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19027,7 +18880,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19112,7 +18964,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19197,7 +19048,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19282,7 +19132,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19367,7 +19216,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19452,7 +19300,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19537,7 +19384,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19622,7 +19468,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19707,7 +19552,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19792,7 +19636,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19877,7 +19720,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19962,7 +19804,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20047,7 +19888,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20132,7 +19972,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20217,7 +20056,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20302,7 +20140,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20387,7 +20224,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20472,7 +20308,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20665,7 +20500,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -20858,7 +20692,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21051,7 +20884,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21244,7 +21076,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21437,7 +21268,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21630,7 +21460,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21823,7 +21652,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21908,7 +21736,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -21993,7 +21820,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22078,7 +21904,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22163,7 +21988,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22248,7 +22072,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22333,7 +22156,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22418,7 +22240,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22536,7 +22357,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22654,7 +22474,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22772,7 +22591,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22890,7 +22708,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23008,7 +22825,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23126,7 +22942,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23244,7 +23059,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23330,7 +23144,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23416,7 +23229,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23502,7 +23314,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23588,7 +23399,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23674,7 +23484,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23760,7 +23569,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -23846,7 +23654,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24000,7 +23807,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24154,7 +23960,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24308,7 +24113,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24462,7 +24266,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24616,7 +24419,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24770,7 +24572,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -24924,7 +24725,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25010,7 +24810,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25096,7 +24895,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25182,7 +24980,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25268,7 +25065,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25354,7 +25150,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25440,7 +25235,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25526,7 +25320,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25611,7 +25404,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25696,7 +25488,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25781,7 +25572,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25866,7 +25656,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -25951,7 +25740,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26036,7 +25824,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26121,7 +25908,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26445,7 +26231,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26769,7 +26554,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27093,7 +26877,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27417,7 +27200,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -27741,7 +27523,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28065,7 +27846,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28389,7 +28169,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28473,7 +28252,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28557,7 +28335,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28641,7 +28418,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28725,7 +28501,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28809,7 +28584,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28893,7 +28667,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -28977,7 +28750,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29063,7 +28835,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29149,7 +28920,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29235,7 +29005,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29321,7 +29090,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29407,7 +29175,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29493,7 +29260,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29579,7 +29345,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29733,7 +29498,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29887,7 +29651,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30041,7 +29804,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30195,7 +29957,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30349,7 +30110,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30503,7 +30263,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30657,7 +30416,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30742,7 +30500,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30827,7 +30584,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30912,7 +30668,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30997,7 +30752,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31082,7 +30836,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31167,7 +30920,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31252,7 +31004,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31406,7 +31157,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31560,7 +31310,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31714,7 +31463,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31868,7 +31616,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32022,7 +31769,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32176,7 +31922,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32330,7 +32075,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32450,7 +32194,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32570,7 +32313,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32690,7 +32432,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32810,7 +32551,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32930,7 +32670,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33050,7 +32789,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33170,7 +32908,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33288,7 +33025,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33406,7 +33142,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33524,7 +33259,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33642,7 +33376,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33760,7 +33493,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33878,7 +33610,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33996,7 +33727,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34082,7 +33812,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34168,7 +33897,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34254,7 +33982,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34340,7 +34067,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34426,7 +34152,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34512,7 +34237,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34598,7 +34322,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34683,7 +34406,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34768,7 +34490,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34853,7 +34574,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34938,7 +34658,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35023,7 +34742,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35108,7 +34826,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35193,7 +34910,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35277,7 +34993,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35361,7 +35076,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35445,7 +35159,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35529,7 +35242,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35613,7 +35325,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35697,7 +35408,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35781,7 +35491,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35867,7 +35576,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35953,7 +35661,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36039,7 +35746,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36125,7 +35831,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36211,7 +35916,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36297,7 +36001,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36383,7 +36086,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36468,7 +36170,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36553,7 +36254,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36638,7 +36338,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36723,7 +36422,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36808,7 +36506,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36893,7 +36590,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36978,7 +36674,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37132,7 +36827,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37286,7 +36980,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37440,7 +37133,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37594,7 +37286,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37748,7 +37439,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37902,7 +37592,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38056,7 +37745,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38142,7 +37830,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38228,7 +37915,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38314,7 +38000,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38400,7 +38085,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38486,7 +38170,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38572,7 +38255,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38658,7 +38340,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38812,7 +38493,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -38966,7 +38646,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39120,7 +38799,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39274,7 +38952,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39428,7 +39105,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39582,7 +39258,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39736,7 +39411,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -39920,7 +39594,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40104,7 +39777,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40288,7 +39960,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40472,7 +40143,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40656,7 +40326,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -40840,7 +40509,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41024,7 +40692,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41110,7 +40777,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41196,7 +40862,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41282,7 +40947,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41368,7 +41032,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41454,7 +41117,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41540,7 +41202,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41626,7 +41287,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41711,7 +41371,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41796,7 +41455,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41881,7 +41539,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -41966,7 +41623,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42051,7 +41707,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42136,7 +41791,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42221,7 +41875,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42341,7 +41994,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42461,7 +42113,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42581,7 +42232,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42701,7 +42351,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42821,7 +42470,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -42941,7 +42589,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43061,7 +42708,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43179,7 +42825,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43297,7 +42942,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43415,7 +43059,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43533,7 +43176,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43651,7 +43293,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43769,7 +43410,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43887,7 +43527,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -43973,7 +43612,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44059,7 +43697,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44145,7 +43782,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44231,7 +43867,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44317,7 +43952,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44403,7 +44037,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44489,7 +44122,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44574,7 +44206,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44659,7 +44290,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44744,7 +44374,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44829,7 +44458,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44914,7 +44542,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -44999,7 +44626,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45084,7 +44710,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45170,7 +44795,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45256,7 +44880,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45342,7 +44965,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45428,7 +45050,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45514,7 +45135,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45600,7 +45220,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45686,7 +45305,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45840,7 +45458,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -45994,7 +45611,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46148,7 +45764,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46302,7 +45917,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46456,7 +46070,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46610,7 +46223,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46764,7 +46376,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46850,7 +46461,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -46936,7 +46546,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47022,7 +46631,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47108,7 +46716,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47194,7 +46801,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47280,7 +46886,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47366,7 +46971,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47452,7 +47056,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47538,7 +47141,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47624,7 +47226,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47744,7 +47345,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47864,7 +47464,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -47984,7 +47583,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48104,7 +47702,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48224,7 +47821,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48344,7 +47940,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48464,7 +48059,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48582,7 +48176,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48700,7 +48293,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48818,7 +48410,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -48936,7 +48527,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49054,7 +48644,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49172,7 +48761,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49290,7 +48878,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49375,7 +48962,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49460,7 +49046,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49545,7 +49130,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49630,7 +49214,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49715,7 +49298,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49800,7 +49382,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -49885,7 +49466,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50003,7 +49583,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50121,7 +49700,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50239,7 +49817,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50357,7 +49934,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50475,7 +50051,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50593,7 +50168,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50711,7 +50285,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50796,7 +50369,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50881,7 +50453,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -50966,7 +50537,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51051,7 +50621,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51136,7 +50705,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51221,7 +50789,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51306,7 +50873,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51359,7 +50925,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51513,7 +51078,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -51633,7 +51197,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52261,7 +51824,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52379,7 +51941,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52497,7 +52058,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52615,7 +52175,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52733,7 +52292,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52851,7 +52409,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -52969,7 +52526,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53087,7 +52643,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53436,7 +52991,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -53752,7 +53306,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54068,7 +53621,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54384,7 +53936,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -54700,7 +54251,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55016,7 +54566,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55332,7 +54881,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55648,7 +55196,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -55734,7 +55281,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -56085,7 +55631,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -56337,7 +55882,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -56589,7 +56133,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -56841,7 +56384,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     },
     {
@@ -57166,7 +56708,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57284,7 +56825,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57337,7 +56877,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57454,7 +56993,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57602,7 +57140,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57910,7 +57447,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -57996,7 +57532,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58312,7 +57847,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58398,7 +57932,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58484,7 +58017,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58571,7 +58103,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58658,7 +58189,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58745,7 +58275,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58832,7 +58361,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -58919,7 +58447,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59006,7 +58533,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59093,7 +58619,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59178,7 +58703,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59263,7 +58787,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59348,7 +58871,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59433,7 +58955,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59518,7 +59039,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59603,7 +59123,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59688,7 +59207,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59843,7 +59361,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -59998,7 +59515,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60153,7 +59669,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60308,7 +59823,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60463,7 +59977,6 @@
       ],
       "BuffMode": 2,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -60812,7 +60325,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61130,7 +60642,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -61226,7 +60737,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61415,7 +60925,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61807,7 +61316,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -61927,7 +61435,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62014,7 +61521,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62101,7 +61607,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62188,7 +61693,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62275,7 +61779,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62362,7 +61865,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62449,7 +61951,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62536,7 +62037,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62621,7 +62121,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62706,7 +62205,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62791,7 +62289,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62876,7 +62373,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -62961,7 +62457,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63046,7 +62541,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63131,7 +62625,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63456,7 +62949,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63548,7 +63040,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63632,7 +63123,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63720,7 +63210,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -63773,7 +63262,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63890,7 +63378,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -63984,7 +63471,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -64101,7 +63587,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -64729,7 +64214,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65080,7 +64564,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 7.0
     },
     {
@@ -65405,7 +64888,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65501,7 +64983,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65624,7 +65105,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -65940,7 +65420,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66256,7 +65735,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66572,7 +66050,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -66888,7 +66365,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67204,7 +66680,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67520,7 +66995,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67836,7 +67310,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -67921,7 +67394,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -68044,7 +67516,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -68097,7 +67568,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -68248,7 +67718,6 @@
         }
       ],
       "FullSetName": "Set_Bonus.Set_Bonus",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

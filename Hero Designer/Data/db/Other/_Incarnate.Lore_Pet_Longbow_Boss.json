@@ -223,7 +223,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_Boss",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 2.5
     },
     {
@@ -432,7 +432,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_Boss",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 2.03496885
     },
     {
@@ -672,7 +672,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_Boss",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 1.0
     }
   ]

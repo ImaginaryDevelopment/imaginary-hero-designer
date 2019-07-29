@@ -111,7 +111,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Commanding_Presence_E",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

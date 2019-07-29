@@ -302,7 +302,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_TimeBomb",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -1542,7 +1541,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_TimeBomb",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1625,7 +1623,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_TimeBomb",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

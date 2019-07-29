@@ -358,7 +358,7 @@
         }
       ],
       "FullSetName": "Pets.Gremlin",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "AoEModifier": 1.0
     },
     {
@@ -674,7 +674,7 @@
         }
       ],
       "FullSetName": "Pets.Gremlin",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     },
     {
@@ -766,7 +766,6 @@
         }
       ],
       "FullSetName": "Pets.Gremlin",
-      "CastTime": 0.132,
       "AoEModifier": 2.05
     },
     {
@@ -1149,7 +1148,7 @@
         }
       ],
       "FullSetName": "Pets.Gremlin",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "AoEModifier": 1.0
     }
   ]

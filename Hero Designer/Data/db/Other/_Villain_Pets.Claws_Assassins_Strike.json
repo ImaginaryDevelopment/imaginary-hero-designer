@@ -330,7 +330,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Claws_Assassins_Strike",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 1.0
     },
     {
@@ -564,7 +564,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Claws_Assassins_Strike",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     }
   ]

@@ -239,7 +239,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -669,7 +669,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1099,7 +1099,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1321,7 +1321,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -1881,7 +1881,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2312,7 +2312,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2742,7 +2742,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2884,7 +2884,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Widow_Training",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     }

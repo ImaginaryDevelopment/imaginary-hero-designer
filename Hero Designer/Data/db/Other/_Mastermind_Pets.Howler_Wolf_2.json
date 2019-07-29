@@ -332,7 +332,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Howler_Wolf_2",
-      "CastTime": 2.63999987,
+      "CastTime": 2.47,
       "AoEModifier": 1.0
     },
     {
@@ -416,7 +416,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Pets.Howler_Wolf_2",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -500,7 +499,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Howler_Wolf_2",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

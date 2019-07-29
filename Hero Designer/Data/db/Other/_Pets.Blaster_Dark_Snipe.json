@@ -517,7 +517,7 @@
         }
       ],
       "FullSetName": "Pets.Blaster_Dark_Snipe",
-      "CastTime": 4.488,
+      "CastTime": 4.33,
       "AoEModifier": 1.0
     },
     {
@@ -1015,7 +1015,7 @@
         }
       ],
       "FullSetName": "Pets.Blaster_Dark_Snipe",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     }
   ]

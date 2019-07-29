@@ -798,7 +798,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1549,7 +1549,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1762,7 +1762,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2616,7 +2616,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3006,7 +3006,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3615,7 +3615,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4342,7 +4342,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -4833,7 +4833,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -5500,7 +5500,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Electricity_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

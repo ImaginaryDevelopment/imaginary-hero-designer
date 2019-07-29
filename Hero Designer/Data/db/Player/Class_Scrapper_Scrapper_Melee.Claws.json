@@ -412,7 +412,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -698,7 +698,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1116,7 +1116,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1393,7 +1393,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2009,7 +2009,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2223,7 +2223,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2573,7 +2573,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2815,7 +2815,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -3168,7 +3168,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Claws",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 2.52997327
     }

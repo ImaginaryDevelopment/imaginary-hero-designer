@@ -275,7 +275,7 @@
         }
       ],
       "FullSetName": "Epic.Psionic_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -742,7 +742,7 @@
         }
       ],
       "FullSetName": "Epic.Psionic_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1218,7 +1218,7 @@
         }
       ],
       "FullSetName": "Epic.Psionic_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1421,7 +1421,7 @@
         }
       ],
       "FullSetName": "Epic.Psionic_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1766,7 +1766,7 @@
         }
       ],
       "FullSetName": "Epic.Psionic_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 4.0
     }

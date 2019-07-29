@@ -180,7 +180,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Gladiators_Strike_D",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

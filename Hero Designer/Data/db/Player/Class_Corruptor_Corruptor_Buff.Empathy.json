@@ -125,7 +125,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -226,7 +226,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -431,7 +431,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -596,7 +596,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1192,7 +1192,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1919,7 +1919,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2022,7 +2022,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2124,7 +2124,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2462,7 +2462,7 @@
         }
       ],
       "FullSetName": "Corruptor_Buff.Empathy",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     }

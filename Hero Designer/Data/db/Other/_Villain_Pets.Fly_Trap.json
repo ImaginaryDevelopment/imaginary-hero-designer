@@ -420,7 +420,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fly_Trap",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 2.5
     },
     {
@@ -595,7 +595,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fly_Trap",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -778,7 +778,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fly_Trap",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 2.03496885
     },
     {
@@ -1103,7 +1103,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fly_Trap",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1279,7 +1278,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fly_Trap",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     }
   ]

@@ -290,7 +290,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic_3",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 1.0
     },
     {
@@ -488,7 +488,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic_3",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 3.25
     },
     {
@@ -573,7 +573,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Medic_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

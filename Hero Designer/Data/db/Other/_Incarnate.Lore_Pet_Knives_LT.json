@@ -372,7 +372,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_LT",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 2.03496885
     },
     {
@@ -576,7 +576,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_LT",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "AoEModifier": 1.0
     },
     {
@@ -844,7 +844,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Knives_LT",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     }
   ]

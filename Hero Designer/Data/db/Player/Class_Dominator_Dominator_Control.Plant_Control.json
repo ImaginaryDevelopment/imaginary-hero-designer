@@ -577,7 +577,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -881,7 +881,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1436,7 +1436,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1662,7 +1662,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1888,7 +1888,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.99995041
     },
@@ -1994,7 +1994,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2220,7 +2220,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2337,7 +2337,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2449,7 +2449,7 @@
         }
       ],
       "FullSetName": "Dominator_Control.Plant_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

@@ -423,7 +423,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corruptor_BeamRifle_Snipe",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -831,7 +831,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corruptor_BeamRifle_Snipe",
-      "CastTime": 4.62,
+      "CastTime": 4.4,
       "AoEModifier": 1.0
     }
   ]

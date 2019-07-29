@@ -643,7 +643,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1254,7 +1254,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1866,7 +1866,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2247,7 +2247,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2637,7 +2637,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2912,7 +2912,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3563,7 +3563,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4214,7 +4214,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -4828,7 +4828,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Spines",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 2.52997327
     }

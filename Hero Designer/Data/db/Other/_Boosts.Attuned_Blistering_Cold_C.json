@@ -418,7 +418,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Blistering_Cold_C",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

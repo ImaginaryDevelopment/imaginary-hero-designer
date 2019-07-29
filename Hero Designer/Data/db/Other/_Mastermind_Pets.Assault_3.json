@@ -196,7 +196,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Assault_3",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 4.0
     },
     {
@@ -335,7 +335,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Assault_3",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 4.0
     },
     {
@@ -419,7 +419,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Assault_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

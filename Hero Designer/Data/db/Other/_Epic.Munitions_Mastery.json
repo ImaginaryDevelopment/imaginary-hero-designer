@@ -434,7 +434,6 @@
         }
       ],
       "FullSetName": "Epic.Munitions_Mastery",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -759,7 +758,7 @@
         }
       ],
       "FullSetName": "Epic.Munitions_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -965,7 +964,7 @@
         }
       ],
       "FullSetName": "Epic.Munitions_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1393,7 +1392,7 @@
         }
       ],
       "FullSetName": "Epic.Munitions_Mastery",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1725,7 +1724,7 @@
         }
       ],
       "FullSetName": "Epic.Munitions_Mastery",
-      "CastTime": 6.072,
+      "CastTime": 5.87,
       "Slottable": true,
       "AoEModifier": 4.0
     }

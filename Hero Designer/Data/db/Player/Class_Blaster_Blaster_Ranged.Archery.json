@@ -462,7 +462,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -901,7 +901,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1326,7 +1326,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -1802,7 +1802,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2192,7 +2192,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2723,7 +2723,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3267,7 +3267,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 4.884,
+      "CastTime": 4.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3747,7 +3747,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4174,7 +4174,7 @@
         }
       ],
       "FullSetName": "Blaster_Ranged.Archery",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

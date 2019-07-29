@@ -229,7 +229,7 @@
         }
       ],
       "FullSetName": "Pets.Stone",
-      "CastTime": 0.792,
+      "CastTime": 0.57,
       "AoEModifier": 1.0
     },
     {
@@ -402,7 +402,7 @@
         }
       ],
       "FullSetName": "Pets.Stone",
-      "CastTime": 4.092,
+      "CastTime": 3.83,
       "AoEModifier": 1.0
     },
     {
@@ -1013,7 +1013,7 @@
         }
       ],
       "FullSetName": "Pets.Stone",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     },
     {
@@ -1223,7 +1223,7 @@
         }
       ],
       "FullSetName": "Pets.Stone",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -1334,7 +1334,7 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.Stone",
-      "CastTime": 3.036,
+      "CastTime": 2.904,
       "AoEModifier": 1.0
     }
   ]

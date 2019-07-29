@@ -107,7 +107,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Seers_Support",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "AoEModifier": 1.0
     },
     {
@@ -819,7 +819,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Seers_Support",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "AoEModifier": 1.0
     }
   ]

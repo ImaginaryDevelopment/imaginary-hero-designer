@@ -165,7 +165,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -340,7 +340,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -561,7 +561,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2391,7 +2391,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.452,
+      "CastTime": 1.3,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2615,7 +2615,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -2761,7 +2761,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3249,7 +3249,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3360,7 +3360,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5241,7 +5241,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Thugs",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 5.5
     }

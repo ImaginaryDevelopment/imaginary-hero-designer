@@ -150,7 +150,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -240,7 +240,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -405,7 +405,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 2.03496885
     },
     {
@@ -565,7 +565,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 3.25
     },
     {
@@ -724,7 +724,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 1.0
     },
     {
@@ -907,7 +907,6 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1030,7 +1029,7 @@
         }
       ],
       "FullSetName": "Pets.Longbow_Heavy",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     }
   ]

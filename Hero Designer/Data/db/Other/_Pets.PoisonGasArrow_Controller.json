@@ -71,7 +71,6 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.PoisonGasArrow_Controller",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -121,7 +120,6 @@
       "ForcedClass": "Class_Minion_Pets",
       "Effects": [],
       "FullSetName": "Pets.PoisonGasArrow_Controller",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

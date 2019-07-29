@@ -699,7 +699,6 @@
         }
       ],
       "FullSetName": "Pets.KineticTransferDebuff",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     }
   ]

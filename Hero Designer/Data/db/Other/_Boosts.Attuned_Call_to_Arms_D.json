@@ -418,7 +418,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Call_to_Arms_D",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

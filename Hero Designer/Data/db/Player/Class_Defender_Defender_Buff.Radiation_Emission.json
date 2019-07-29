@@ -124,7 +124,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -270,7 +270,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -952,7 +952,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2157,7 +2157,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3074,7 +3074,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3432,7 +3432,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -3610,7 +3610,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 3.696,
+      "CastTime": 3.47,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3761,7 +3761,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4159,7 +4159,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Radiation_Emission",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 10.0
     }

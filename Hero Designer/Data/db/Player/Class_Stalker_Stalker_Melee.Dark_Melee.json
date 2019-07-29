@@ -444,7 +444,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -864,7 +864,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 1.188,
+      "CastTime": 0.97,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1302,7 +1302,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "Slottable": true,
       "AoEModifier": 1.24149275
     },
@@ -1716,7 +1716,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2106,7 +2106,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2381,7 +2381,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2771,7 +2771,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2993,7 +2993,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3460,7 +3460,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Dark_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

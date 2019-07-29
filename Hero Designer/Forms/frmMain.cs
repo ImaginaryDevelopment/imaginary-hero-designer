@@ -1,4 +1,4 @@
-
+using AutoUpdaterDotNET;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -207,17 +207,12 @@ namespace Hero_Designer
                 this.myDataView = this.dvAnchored;
                 this.pnlGFX.BackColor = this.BackColor;
                 this.NoUpdate = true;
-                clsXMLUpdate.eCheckResponse? chkResult = null;
-                string chkResultFailMsg = null;
-                if (!this.IsInDesignMode() && MidsContext.Config.CheckForUpdates)
-                {
-                    clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); // "https://www.dropbox.com/sh/amsfzb91s88dvzh/AAB6AkjTgHto4neEmkWwLWQEa?dl=0");
-                    (chkResult, chkResultFailMsg) = clsXmlUpdate.UpdateCheck();
-                }
+                AutoUpdater.ApplicationExitEvent += AutoUpdater_ApplicationExitEvent;
+                AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
                 if (!this.IsInDesignMode() && !MidsContext.Config.IsInitialized)
                 {
                     MidsContext.Config.CheckForUpdates = false;
-                    //MessageBox.Show(("Welcome to Mid's Reborn Hero Designer "
+                    //MessageBox.Show(("Welcome to Mids' Reborn : Hero Designer "
                     //+ MidsContext.AppVersion 
                     //+ "! Please check the Readme/Help for quick instructions.\r\n\r\nMids' Hero Designer is able to check for and download updates automatically when it starts.\r\nIt's recommended that you turn on automatic updating. Do you want to?\r\n\r\n(If you don't, you can manually check from the 'Updates' tab in the options.)"), MessageBoxButtons.YesNo | MessageBoxIcon.Question, "Welcome!") == DialogResult.Yes;
                     MidsContext.Config.DefaultSaveFolderOverride = null;
@@ -353,32 +348,11 @@ namespace Hero_Designer
                 this.PriSec_ExpandChanged(true);
                 if (!this.IsInDesignMode())
                 {
-                    if (chkResult == clsXMLUpdate.eCheckResponse.FailedWithMessage && !string.IsNullOrEmpty(chkResultFailMsg))
+                    if (MidsContext.Config.CheckForUpdates)
                     {
-                        if (MessageBox.Show(chkResultFailMsg + "\r\nCheck again at next startup?", "Update check failed", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
-                        {
-                            MidsContext.Config.CheckForUpdates = false;
-                        }
-                    }
-                    else if (chkResult == clsXMLUpdate.eCheckResponse.Updates)
-                    {
-                        MessageBox.Show("Update available");
+                        AutoUpdater.Start(MidsContext.Config.UpdatePath + "update.xml");
                     }
                     var exePath = typeof(frmMain).Assembly.Location;
-                    if (!MidsContext.Config.DoNotUpdateFileAssociation && !FileAssocation.GetIsAssociated(exePath))
-                    {
-                        if (MessageBox.Show("Associate .mhd and .mxd files with this application?", "File Assocation Setup", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            var associationResult = FileAssocation.AddToOpenWithLists(exePath);
-                            if (associationResult == FileAssocation.AddToOpenResult.Unauthorized)
-                            {
-                                if (MessageBox.Show("Unable to associate application with build files, turn off future attempts?", "Assocation Failure", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
-                                    MidsContext.Config.DoNotUpdateFileAssociation = true;
-                                }
-                            }
-                        }
-                    }
                 }
             }
             catch (Exception ex)
@@ -551,7 +525,7 @@ namespace Hero_Designer
                 int index = ArchetypeIndirectToIndex(e.Index);
                 RectangleF destRect = new RectangleF(e.Bounds.X + 1, e.Bounds.Y, 16f, 16f);
                 RectangleF srcRect = new RectangleF(index * 16, 0.0f, 16f, 16f);
-                e.Graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, System.Drawing.GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(I9Gfx.Archetypes.Bitmap, destRect, srcRect, GraphicsUnit.Pixel);
                 StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
                     LineAlignment = StringAlignment.Center
@@ -2732,7 +2706,8 @@ namespace Hero_Designer
                                         // adding a slot by itself doesn't really change the build substantially without an enh going into it
                                         this.PowerModified(markModified: false);
                                         this.LastClickPlacedSlot = true;
-                                        MidsContext.Config.Tips.Show(Tips.TipType.FirstEnh);
+                                        /* Disabled until can find why it is not saving
+                                        MidsContext.Config.Tips.Show(Tips.TipType.FirstEnh);*/
                                         return;
                                     }
                                     this.LastClickPlacedSlot = false;
@@ -3053,14 +3028,18 @@ namespace Hero_Designer
         {
             MainModule.MidsController.Toon.BuildPower(MidsContext.Character.Powersets[(int)SetID].nID, nIDPower, false);
             this.PowerModified(markModified: true);
-            MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+            /* Disabled
+             * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+             */
         }
 
         void PowerPicked(int nIDPowerset, int nIDPower)
         {
             MainModule.MidsController.Toon.BuildPower(nIDPowerset, nIDPower, false);
             this.PowerModified(markModified: true);
-            MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+            /* Disabled
+             * MidsContext.Config.Tips.Show(Tips.TipType.FirstPower);
+             */
             this.DoRedraw();
         }
 
@@ -3771,7 +3750,9 @@ namespace Hero_Designer
             {
                 this.drawing.InterfaceMode = Enums.eInterfaceMode.PowerToggle;
                 this.DoRedraw();
-                MidsContext.Config.Tips.Show(Tips.TipType.TotalsTab);
+                /* Disabled
+                 * MidsContext.Config.Tips.Show(Tips.TipType.TotalsTab);
+                 */
             }
             else
             {
@@ -4648,33 +4629,76 @@ namespace Hero_Designer
         void tsPlannerLink(object sender, EventArgs e)
             => clsXMLUpdate.GoToCoHPlanner();
 
-        void tsUpdateCheck_Click(object sender, EventArgs e)
+        private void AutoUpdater_ApplicationExitEvent()
         {
-            clsXMLUpdate clsXmlUpdate = new clsXMLUpdate(); //"http://repo.cohtitan.com/mids_updates/");
-            var (eCheckResponse, msg) = clsXmlUpdate.UpdateCheck();
-            if (eCheckResponse != clsXMLUpdate.eCheckResponse.Updates & eCheckResponse != clsXMLUpdate.eCheckResponse.FailedWithMessage)
+            Text = @"Closing application...";
+            Thread.Sleep(5000);
+            Application.Exit();
+        }
+
+        private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        {
+            if (args != null)
             {
-                MessageBox.Show("No Updates: " + msg, "Update Check", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.Updates)
-            {
-                if (clsXmlUpdate.RestartNeeded && MessageBox.Show("Exit Now?", "Update Downloaded", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && !this.CloseCommand())
+                if (args.IsUpdateAvailable)
                 {
-                    Application.Exit();
-                    return;
+                    DialogResult dialogResult;
+                    if (args.Mandatory)
+                    {
+                        dialogResult =
+                            MessageBox.Show(
+                                $@"Update Detected! Version {args.CurrentVersion}. You are using version {
+                                        args.InstalledVersion
+                                    }. This is a mandatory update. Press OK to begin the update.",
+                                @"Update Available",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dialogResult =
+                            MessageBox.Show(
+                                $@"Update Detected! Version {args.CurrentVersion} is available. You are using version {
+                                        args.InstalledVersion
+                                    }. Would you like to update now?", @"Update Available",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Information);
+                    }
+
+
+                    if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
+                    {
+                        try
+                        {
+                            if (AutoUpdater.DownloadUpdate())
+                            {
+                                Application.Exit();
+                            }
+                        }
+                        catch (Exception exception)
+                        {
+                            MessageBox.Show(exception.Message, exception.GetType().ToString(), MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+                    }
                 }
-            }
-            if (eCheckResponse == clsXMLUpdate.eCheckResponse.FailedWithMessage)
-            {
-                if (!string.IsNullOrWhiteSpace(msg))
-                    frmLoading.ShowLinkDialog("Check failed", $"{msg}, click here to open site in browser", MidsContext.DownloadUrl);
                 else
                 {
-                    frmLoading.ShowLinkDialog("Error", "Unknown error checking for updates, check failed, click here to open site in browser", MidsContext.DownloadUrl);
-                    return;
+                    MessageBox.Show(@"There aren't any update(s) available at this time. Please try again later.", @"Update Unavailable",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            this.RefreshInfo();
+            else
+            {
+                MessageBox.Show(
+                    @"There was a problem attempting to reach the update server. Please check your internet connection and try again later.",
+                    @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void tsUpdateCheck_Click(object sender, EventArgs e)
+        {
+            AutoUpdater.Start(MidsContext.Config.UpdatePath + "update.xml");
         }
 
         void tsView2Col_Click(object sender, EventArgs e) => this.setColumns(2);

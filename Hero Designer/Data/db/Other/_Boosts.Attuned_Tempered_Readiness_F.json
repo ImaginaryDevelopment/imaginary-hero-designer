@@ -486,7 +486,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Tempered_Readiness_F",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

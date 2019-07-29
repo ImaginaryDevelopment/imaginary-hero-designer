@@ -248,7 +248,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Harmonized_Healing_A",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

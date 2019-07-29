@@ -377,7 +377,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -562,7 +562,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 3.696,
+      "CastTime": 3.47,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -983,7 +983,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1637,7 +1637,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1785,7 +1785,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2794,7 +2794,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2977,7 +2977,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3155,7 +3155,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3511,7 +3511,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Dark_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 4.75
     }

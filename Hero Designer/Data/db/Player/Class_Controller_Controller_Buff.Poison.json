@@ -158,7 +158,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 1.716,
+      "CastTime": 1.53,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1061,7 +1061,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3600,7 +3600,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3959,7 +3959,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -4949,7 +4949,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5614,7 +5614,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 1.716,
+      "CastTime": 1.53,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5759,7 +5759,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5873,7 +5873,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -6568,7 +6568,7 @@
         }
       ],
       "FullSetName": "Controller_Buff.Poison",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 3.25
     }

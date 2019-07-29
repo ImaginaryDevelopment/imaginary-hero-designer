@@ -432,7 +432,6 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -520,7 +519,6 @@
         }
       ],
       "FullSetName": "Pets.Whirlpool_Corruptor",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

@@ -580,7 +580,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Seeker1",
-      "CastTime": 0.132,
       "AoEModifier": 3.25
     },
     {
@@ -731,7 +730,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Seeker1",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -845,7 +843,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Traps_Seeker1",
-      "CastTime": 0.132,
       "AoEModifier": 2.5
     }
   ]

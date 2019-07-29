@@ -905,7 +905,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1618,7 +1618,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2362,7 +2362,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2995,7 +2995,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3385,7 +3385,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3781,7 +3781,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 3.696,
+      "CastTime": 3.47,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4348,7 +4348,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 5.04995537
     },
@@ -4968,7 +4968,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5392,7 +5392,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ice_Manipulation",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 2.5
     }

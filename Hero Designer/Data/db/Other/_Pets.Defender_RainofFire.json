@@ -317,7 +317,6 @@
         }
       ],
       "FullSetName": "Pets.Defender_RainofFire",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -405,7 +404,6 @@
         }
       ],
       "FullSetName": "Pets.Defender_RainofFire",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     }
   ]

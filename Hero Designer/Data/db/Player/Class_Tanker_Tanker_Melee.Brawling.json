@@ -866,7 +866,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.056,
+      "CastTime": 0.8,
       "Slottable": true,
       "AoEModifier": 1.45
     },
@@ -1386,7 +1386,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.75
     },
@@ -2364,7 +2364,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.25432611
     },
@@ -2580,7 +2580,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3061,7 +3061,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4643,7 +4643,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.9
     },
@@ -5910,7 +5910,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.98,
+      "CastTime": 1.8,
       "Slottable": true,
       "AoEModifier": 1.9
     },
@@ -6543,7 +6543,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -7523,7 +7523,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Brawling",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 3.25
     }

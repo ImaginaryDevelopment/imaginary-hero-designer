@@ -163,7 +163,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Soldier_3",
-      "CastTime": 6.204,
+      "CastTime": 6.0,
       "AoEModifier": 2.557239
     },
     {
@@ -303,7 +303,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Soldier_3",
-      "CastTime": 2.376,
+      "CastTime": 2.2,
       "AoEModifier": 1.0
     },
     {
@@ -443,7 +443,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Soldier_3",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -561,7 +561,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Soldier_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -199,7 +199,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 1.0
     },
     {
@@ -298,7 +298,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -469,7 +469,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 1.716,
+      "CastTime": 1.53,
       "AoEModifier": 1.0
     },
     {
@@ -657,7 +657,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -842,7 +841,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -924,7 +922,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1029,7 +1026,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 2.45329237
     },
     {
@@ -1487,7 +1484,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Blaster",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     }
   ]

@@ -418,7 +418,7 @@
         }
       ],
       "FullSetName": "Epic.Chill_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -648,7 +648,7 @@
         }
       ],
       "FullSetName": "Epic.Chill_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -874,7 +874,7 @@
         }
       ],
       "FullSetName": "Epic.Chill_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1566,7 +1566,7 @@
         }
       ],
       "FullSetName": "Epic.Chill_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2015,7 +2015,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Epic.Chill_Mastery",
-      "CastTime": 0.264,
+      "CastTime": 0.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

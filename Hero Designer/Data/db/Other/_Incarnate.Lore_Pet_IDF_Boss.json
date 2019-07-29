@@ -222,7 +222,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Boss",
-      "CastTime": 0.792,
+      "CastTime": 0.57,
       "AoEModifier": 1.0
     },
     {
@@ -427,7 +427,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Boss",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "AoEModifier": 1.0
     },
     {
@@ -632,7 +632,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Boss",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 2.2
     }
   ]

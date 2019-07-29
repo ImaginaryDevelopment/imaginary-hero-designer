@@ -155,7 +155,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -359,7 +359,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -599,7 +599,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 3.25
     },
     {
@@ -735,7 +735,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Lights_Boss",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 3.06993747
     }
   ]

@@ -650,7 +650,7 @@
         }
       ],
       "FullSetName": "Epic.Earth_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -988,7 +988,7 @@
         }
       ],
       "FullSetName": "Epic.Earth_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1406,7 +1406,7 @@
         }
       ],
       "FullSetName": "Epic.Earth_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1564,7 +1564,7 @@
         }
       ],
       "FullSetName": "Epic.Earth_Mastery",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2010,7 +2010,7 @@
         }
       ],
       "FullSetName": "Epic.Earth_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 3.25
     }

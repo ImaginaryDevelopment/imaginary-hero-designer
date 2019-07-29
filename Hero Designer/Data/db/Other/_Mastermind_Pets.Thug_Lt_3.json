@@ -171,7 +171,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 3.168,
+      "CastTime": 3.03,
       "AoEModifier": 2.52327943
     },
     {
@@ -500,7 +500,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 5.5
     },
     {
@@ -601,7 +600,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 3.25
     },
     {
@@ -685,7 +684,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -770,7 +768,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -855,7 +852,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -940,7 +936,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1025,7 +1020,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1110,7 +1104,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1195,7 +1188,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1280,7 +1272,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1365,7 +1356,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Thug_Lt_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -34,7 +34,7 @@ namespace Hero_Designer
             this.defActs = new short[20];
             this.InitializeComponent();
             this.Name = nameof(frmCalcOpt);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmCalcOpt));
+            var componentResourceManager = new ComponentResourceManager(typeof(frmCalcOpt));
             this.optTO.Image = (Image)componentResourceManager.GetObject("optTO.Image");
             this.optDO.Image = (Image)componentResourceManager.GetObject("optDO.Image");
             this.optSO.Image = (Image)componentResourceManager.GetObject("optSO.Image");
@@ -42,7 +42,7 @@ namespace Hero_Designer
             this.Label5.Text = componentResourceManager.GetString("Label5.Text");
             this.myTip.SetToolTip(udExHigh, componentResourceManager.GetString("udExHigh.ToolTip"));
             this.Label15.Text = componentResourceManager.GetString("Label15.Text");
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            this.Icon = (Icon)componentResourceManager.GetObject("reborn_wicon");
             this.myParent = iParent;
         }
 
@@ -88,7 +88,7 @@ namespace Hero_Designer
             this.lblSaveFolder.Text = MidsContext.Config.GetSaveFolder();
         }
 
-        void btnUpdatePathReset_Click(object sender, EventArgs e) => this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
+        //void btnUpdatePathReset_Click(object sender, EventArgs e) => this.txtUpdatePath.Text = "http://repo.cohtitan.com/mids_updates/";
 
         void clbSuppression_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -275,7 +275,13 @@ namespace Hero_Designer
 
         void fcList_SelectedIndexChanged(object sender, EventArgs e) => this.fcDisplay();
 
-        void dcExList_SelectedIndexChanged(object sender, EventArgs e) => MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+        void dcExList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dcExList.SelectedIndex != -1 && !string.IsNullOrWhiteSpace(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DSelServer = dcExList.SelectedItem.ToString();
+            }
+        }
 
         void dcAdd_Click(object sender, EventArgs e)
         {
@@ -293,7 +299,12 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DSelServer = "";
             }
+            if (MidsContext.Config.DServers.Contains(dcExList.SelectedItem.ToString()))
+            {
+                MidsContext.Config.DServers.Remove(dcExList.SelectedItem.ToString());
+            }
             dcExList.Items.Remove(dcExList.SelectedItem);
+
         }
 
         void dcNickName_TextChanged(object sender, EventArgs e)
@@ -310,6 +321,11 @@ namespace Hero_Designer
             {
                 MidsContext.Config.DChannel = dcChannel.Text;
             }
+        }
+
+        void richTextBox3_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
         }
 
         void fcNotes_TextChanged(object sender, EventArgs e)
@@ -549,8 +565,9 @@ namespace Hero_Designer
                 this.dcExList.Items.Add(item);
             if (!string.IsNullOrWhiteSpace(config.DSelServer))
                 this.dcExList.SelectedItem = config.DSelServer;
+            this.richTextBox3.AppendText("You can invite the bot by clicking -> " + Clshook.ShrinkTheDatalink("https://discordapp.com/api/oauth2/authorize?client_id=593333282234695701&permissions=18432&redirect_uri=https%3A%2F%2Fmidsreborn.com&scope=bot"));
             this.lblSaveFolder.Text = config.GetSaveFolder();
-            this.txtUpdatePath.Text = config.UpdatePath;
+            //this.txtUpdatePath.Text = config.UpdatePath;
             this.chkColorInherent.Checked = !config.DisableDesaturateInherent;
             this.chkMiddle.Checked = !config.DisableRepeatOnMiddleClick;
             this.chkNoTips.Checked = config.NoToolTips;
@@ -733,7 +750,7 @@ namespace Hero_Designer
                 this.myParent.DlgSave.InitialDirectory = config.DefaultSaveFolderOverride;
             }
             config.EnhanceVisibility = this.chkHighVis.Checked;
-            config.UpdatePath = this.txtUpdatePath.Text;
+            //config.UpdatePath = this.txtUpdatePath.Text;
             config.DisableDesaturateInherent = !this.chkColorInherent.Checked;
             config.DisableRepeatOnMiddleClick = !this.chkMiddle.Checked;
             config.NoToolTips = this.chkNoTips.Checked;

@@ -155,7 +155,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_LT",
-      "CastTime": 2.376,
+      "CastTime": 2.2,
       "AoEModifier": 1.0
     },
     {
@@ -359,7 +359,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_LT",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 3.25
     },
     {
@@ -527,7 +527,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Longbow_LT",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 1.0
     }
   ]

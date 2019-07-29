@@ -240,7 +240,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 36
     },
@@ -459,7 +458,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 37
     },
@@ -775,7 +773,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 43
     },
@@ -1091,7 +1088,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 40
     },
@@ -1472,7 +1468,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 41
     },
@@ -1691,7 +1686,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 38
     },
@@ -2202,7 +2196,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 44
     },
@@ -2583,7 +2576,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 42
     },
@@ -2736,7 +2728,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3051,7 +3042,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
     },
@@ -3205,7 +3195,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 45
     },
@@ -3424,7 +3413,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 46
     },
@@ -3740,7 +3728,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 52
     },
@@ -4056,7 +4043,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 49
     },
@@ -4437,7 +4423,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 50
     },
@@ -4656,7 +4641,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 47
     },
@@ -5167,7 +5151,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 53
     },
@@ -5418,7 +5401,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 48
     },
@@ -5799,7 +5781,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 51
     },
@@ -6077,7 +6058,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 39
     },
@@ -6295,7 +6275,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 1
     },
@@ -6610,7 +6589,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 4
     },
@@ -6990,7 +6968,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 5
     },
@@ -7208,7 +7185,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 2
     },
@@ -7718,7 +7694,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 8
     },
@@ -7968,7 +7943,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -8348,7 +8322,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -8501,7 +8474,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 9
     },
@@ -8719,7 +8691,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
     },
@@ -9034,7 +9005,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 16
     },
@@ -9349,7 +9319,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 13
     },
@@ -9729,7 +9698,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 14
     },
@@ -9947,7 +9915,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
     },
@@ -10457,7 +10424,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 17
     },
@@ -10707,7 +10673,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 12
     },
@@ -11087,7 +11052,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 15
     },
@@ -11240,7 +11204,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 18
     },
@@ -11458,7 +11421,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 19
     },
@@ -11773,7 +11735,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 25
     },
@@ -12088,7 +12049,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 22
     },
@@ -12468,7 +12428,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 23
     },
@@ -12686,7 +12645,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 20
     },
@@ -13196,7 +13154,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 26
     },
@@ -13446,7 +13403,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 21
     },
@@ -13826,7 +13782,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 24
     },
@@ -13979,7 +13934,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 54
     },
@@ -14197,7 +14151,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 55
     },
@@ -14512,7 +14465,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 61
     },
@@ -14827,7 +14779,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 58
     },
@@ -15207,7 +15158,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 59
     },
@@ -15425,7 +15375,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 56
     },
@@ -15935,7 +15884,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 62
     },
@@ -16185,7 +16133,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 57
     },
@@ -16565,7 +16512,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 60
     },
@@ -16718,7 +16664,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 27
     },
@@ -16936,7 +16881,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 28
     },
@@ -17251,7 +17195,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 34
     },
@@ -17566,7 +17509,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 31
     },
@@ -17946,7 +17888,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 32
     },
@@ -18164,7 +18105,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 29
     },
@@ -18674,7 +18614,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 35
     },
@@ -18924,7 +18863,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 30
     },
@@ -19304,7 +19242,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 33
     },
@@ -19457,7 +19394,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 63
     },
@@ -19675,7 +19611,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 64
     },
@@ -19990,7 +19925,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 70
     },
@@ -20305,7 +20239,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 67
     },
@@ -20685,7 +20618,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 68
     },
@@ -20903,7 +20835,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 65
     },
@@ -21413,7 +21344,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 71
     },
@@ -21663,7 +21593,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 66
     },
@@ -22043,7 +21972,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Alpha",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 69
     }

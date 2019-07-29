@@ -786,7 +786,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1178,7 +1178,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1655,7 +1655,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1894,7 +1894,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2394,7 +2394,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -3460,7 +3460,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3869,7 +3869,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 5.148,
+      "CastTime": 5.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4278,7 +4278,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 9.24,
+      "CastTime": 9.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4683,7 +4683,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Gadgets",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

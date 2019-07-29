@@ -304,7 +304,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -540,7 +539,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon",
-      "CastTime": 0.132,
       "AoEModifier": 10.0
     },
     {
@@ -678,7 +676,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -1083,7 +1081,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon",
-      "CastTime": 0.132,
       "AoEModifier": 10.0
     },
     {
@@ -1305,7 +1302,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -485,7 +485,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -691,7 +691,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2265,7 +2265,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2572,7 +2572,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2957,7 +2957,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3485,7 +3485,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3778,7 +3778,6 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4069,7 +4068,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4927,7 +4926,7 @@
         }
       ],
       "FullSetName": "Sentinel_Defense.Ice_Armor",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

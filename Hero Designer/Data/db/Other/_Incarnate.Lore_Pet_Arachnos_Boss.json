@@ -407,7 +407,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Arachnos_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 2.5
     },
     {
@@ -573,7 +573,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Arachnos_Boss",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -742,7 +742,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Arachnos_Boss",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "AoEModifier": 1.34498954
     }
   ]

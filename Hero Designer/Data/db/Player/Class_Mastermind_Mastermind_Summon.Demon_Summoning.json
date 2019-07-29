@@ -501,7 +501,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -694,7 +694,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1225,7 +1225,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 1.98,
+      "CastTime": 1.8,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1773,7 +1773,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2307,7 +2307,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.86996722
     },
@@ -2454,7 +2454,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3164,7 +3164,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 4.224,
+      "CastTime": 4.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3277,7 +3277,7 @@
         }
       ],
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3795,7 +3795,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Mastermind_Summon.Demon_Summoning",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     }

@@ -465,7 +465,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Dark_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.39994049
     },
@@ -717,7 +717,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Dark_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 0.97,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -954,7 +954,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Dark_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1232,7 +1232,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Dark_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1959,7 +1959,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Dark_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 4.75
     }

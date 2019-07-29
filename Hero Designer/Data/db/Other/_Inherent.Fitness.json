@@ -183,7 +183,6 @@
         }
       ],
       "FullSetName": "Inherent.Fitness",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 17
@@ -348,7 +347,6 @@
         }
       ],
       "FullSetName": "Inherent.Fitness",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 19
@@ -511,7 +509,6 @@
         }
       ],
       "FullSetName": "Inherent.Fitness",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 18
@@ -642,7 +639,6 @@
         }
       ],
       "FullSetName": "Inherent.Fitness",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 20

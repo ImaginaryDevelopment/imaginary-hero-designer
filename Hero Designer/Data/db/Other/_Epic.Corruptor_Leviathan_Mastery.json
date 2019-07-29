@@ -405,7 +405,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Leviathan_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -867,7 +867,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Leviathan_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1292,7 +1292,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Epic.Corruptor_Leviathan_Mastery",
-      "CastTime": 0.264,
+      "CastTime": 0.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1717,7 +1717,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Leviathan_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1875,7 +1875,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Leviathan_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

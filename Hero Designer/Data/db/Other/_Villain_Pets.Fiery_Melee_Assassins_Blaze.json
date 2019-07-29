@@ -329,7 +329,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Fiery_Melee_Assassins_Blaze",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 1.0
     },
     {
@@ -562,7 +562,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Fiery_Melee_Assassins_Blaze",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

@@ -124,7 +124,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Fiery_Demonling_3",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 2.15995646
     },
     {
@@ -208,7 +208,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Fiery_Demonling_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

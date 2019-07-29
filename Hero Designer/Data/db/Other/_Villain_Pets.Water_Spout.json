@@ -270,7 +270,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout",
-      "CastTime": 0.132,
       "AoEModifier": 2.05
     },
     {
@@ -454,7 +453,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -536,7 +534,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -621,7 +618,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -707,7 +703,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Water_Spout",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

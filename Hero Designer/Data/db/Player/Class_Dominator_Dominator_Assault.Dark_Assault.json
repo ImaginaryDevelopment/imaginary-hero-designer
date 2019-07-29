@@ -236,7 +236,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -514,7 +514,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 1.188,
+      "CastTime": 0.97,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -732,7 +732,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -953,7 +953,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 2.51993251
     },
@@ -2168,7 +2168,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2416,7 +2416,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2667,7 +2667,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2949,7 +2949,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 4.488,
+      "CastTime": 4.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3275,7 +3275,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Dark_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

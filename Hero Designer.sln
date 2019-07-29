@@ -12,12 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CleanInitialize.fsx = CleanInitialize.fsx
 		CreateDesigner.fsx = CreateDesigner.fsx
 		DesignerVarClean.fsx = DesignerVarClean.fsx
+		LICENSE.txt = LICENSE.txt
 		Reusable.fsx = Reusable.fsx
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "midsControls", "midsControls\midsControls.csproj", "{8B762616-CA1E-428A-A62D-E17DD738712D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HeroDesigner.Schema", "HeroDesigner.Schema\HeroDesigner.Schema.fsproj", "{7B1C2FFF-0399-4A7A-82EF-126660356121}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "HeroDesigner.Schema", "HeroDesigner.Schema\HeroDesigner.Schema.fsproj", "{7B1C2FFF-0399-4A7A-82EF-126660356121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

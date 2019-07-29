@@ -199,7 +199,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -600,7 +600,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -740,7 +740,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -1176,7 +1176,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1609,7 +1609,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -1790,7 +1790,7 @@
         }
       ],
       "FullSetName": "Widow_Training.Night_Widow_Training",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73993444
     }

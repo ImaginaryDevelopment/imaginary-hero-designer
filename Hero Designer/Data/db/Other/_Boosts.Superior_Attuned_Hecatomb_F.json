@@ -112,7 +112,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Superior_Attuned_Hecatomb_F",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

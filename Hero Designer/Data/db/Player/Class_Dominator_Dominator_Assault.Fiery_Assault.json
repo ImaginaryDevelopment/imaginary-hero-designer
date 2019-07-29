@@ -231,7 +231,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -436,7 +436,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -619,7 +619,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -830,7 +830,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1180,7 +1180,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1387,7 +1387,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1641,7 +1641,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1922,7 +1922,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 4.884,
+      "CastTime": 4.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2193,7 +2193,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Fiery_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

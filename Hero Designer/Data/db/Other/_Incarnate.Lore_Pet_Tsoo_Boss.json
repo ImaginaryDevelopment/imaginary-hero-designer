@@ -154,7 +154,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_Boss",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -665,7 +665,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_Boss",
-      "CastTime": 2.772,
+      "CastTime": 2.57,
       "AoEModifier": 2.2
     },
     {
@@ -799,7 +799,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_Boss",
-      "CastTime": 1.31999993,
+      "CastTime": 1.13,
       "AoEModifier": 1.0
     },
     {
@@ -929,7 +929,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Tsoo_Boss",
-      "CastTime": 1.98,
+      "CastTime": 1.77,
       "AoEModifier": 1.0
     }
   ]

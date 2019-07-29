@@ -382,7 +382,7 @@
         }
       ],
       "FullSetName": "Epic.Primal_Forces_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -484,7 +484,7 @@
         }
       ],
       "FullSetName": "Epic.Primal_Forces_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -865,7 +865,7 @@
         }
       ],
       "FullSetName": "Epic.Primal_Forces_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -1305,7 +1305,7 @@
         }
       ],
       "FullSetName": "Epic.Primal_Forces_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2239,7 +2239,7 @@
         }
       ],
       "FullSetName": "Epic.Primal_Forces_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

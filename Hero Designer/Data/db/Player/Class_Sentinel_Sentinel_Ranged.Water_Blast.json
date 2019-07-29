@@ -737,7 +737,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1631,7 +1631,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2533,7 +2533,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 1.98,
+      "CastTime": 1.73,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3186,7 +3186,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3643,7 +3643,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3791,7 +3791,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4249,7 +4249,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 1.584,
+      "CastTime": 1.43,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4509,7 +4509,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 2.772,
+      "CastTime": 2.53,
       "Slottable": true,
       "AoEModifier": 2.45329237
     },
@@ -5471,7 +5471,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Water_Blast",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 4.0
     }

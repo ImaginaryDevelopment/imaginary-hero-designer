@@ -204,7 +204,7 @@
         }
       ],
       "FullSetName": "Epic.Dark_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -387,7 +387,7 @@
         }
       ],
       "FullSetName": "Epic.Dark_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -899,7 +899,7 @@
         }
       ],
       "FullSetName": "Epic.Dark_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1270,7 +1270,7 @@
         }
       ],
       "FullSetName": "Epic.Dark_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2088,7 +2088,7 @@
         }
       ],
       "FullSetName": "Epic.Dark_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 3.25
     }

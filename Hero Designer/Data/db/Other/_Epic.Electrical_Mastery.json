@@ -239,7 +239,7 @@
         }
       ],
       "FullSetName": "Epic.Electrical_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -540,7 +540,7 @@
         }
       ],
       "FullSetName": "Epic.Electrical_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1016,7 +1016,7 @@
         }
       ],
       "FullSetName": "Epic.Electrical_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1572,7 +1572,7 @@
         }
       ],
       "FullSetName": "Epic.Electrical_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.96,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2012,7 +2012,7 @@
         }
       ],
       "FullSetName": "Epic.Electrical_Mastery",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 7.0
     }
