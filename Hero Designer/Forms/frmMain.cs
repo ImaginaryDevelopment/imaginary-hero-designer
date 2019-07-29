@@ -349,10 +349,7 @@ namespace Hero_Designer
                 if (!this.IsInDesignMode())
                 {
                     if (MidsContext.Config.CheckForUpdates)
-                    {
-                        AutoUpdater.Start(MidsContext.Config.UpdatePath + "update.xml");
-                    }
-                    var exePath = typeof(frmMain).Assembly.Location;
+                        TryUpdate();
                 }
             }
             catch (Exception ex)
@@ -4695,11 +4692,31 @@ namespace Hero_Designer
                     @"Update Check Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        void tsUpdateCheck_Click(object sender, EventArgs e)
+        void TryUpdate()
         {
-            AutoUpdater.Start(MidsContext.Config.UpdatePath + "update.xml");
+            try
+            {
+                var path = ConfigData.UpdatePath;
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    MessageBox.Show("Unable to check for updates, no update path found");
+                    return;
+                }
+                // prove it is also a valid URI
+                if (Uri.TryCreate(path, UriKind.Absolute, out var _))
+                    AutoUpdater.Start(path);
+                else
+                    MessageBox.Show("Unable to check for updates, bad update path found : " + path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
         }
+
+        void tsUpdateCheck_Click(object sender, EventArgs e) => TryUpdate();
 
         void tsView2Col_Click(object sender, EventArgs e) => this.setColumns(2);
 
