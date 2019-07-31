@@ -4683,9 +4683,6 @@ namespace Hero_Designer
                 {
                     MessageBox.Show(@"There aren't any update(s) available at this time. Please try again later.", @"Update Unavailable",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                {
-                    MessageBox.Show(@"There aren't any update(s) available at this time. Please try again later.", @"Update Unavailable",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
