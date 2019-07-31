@@ -29,7 +29,7 @@ public class ConfigData
     public Size LastSize { get => _lastSize; set => _lastSize = value; }
 
     public float BaseAcc { get; set; } = 0.75f;
-    public string UpdatePath { get; set; }
+    public const string UpdatePath = "http://midsreborn.com/mids_updates/update.xml";
     public bool DoNotUpdateFileAssociation { get; set; }
     public int ExempHigh { get; set; } = 50;
     public int TeamSize { get; set; } = 1;
@@ -170,7 +170,6 @@ public class ConfigData
         this.DamageMath.Calculate = ConfigData.EDamageMath.Average;
         this.DamageMath.ReturnValue = ConfigData.EDamageReturn.Numeric;
         this.I9.DefaultIOLevel = 49;
-        this.UpdatePath = "http://midsreborn.com/mids_updates/";
         this.RtFont.SetDefault();
         this.Tips = new Tips();
         this.Export = new ExportConfig();
@@ -336,9 +335,10 @@ public class ConfigData
                     reader.ReadBoolean();
                     this.BuildMode = (Enums.dmModes)reader.ReadInt32();
                     this.BuildOption = (Enums.dmItem)reader.ReadInt32();
-                    this.UpdatePath = reader.ReadString();
-                    if (string.IsNullOrEmpty(this.UpdatePath))
-                        this.UpdatePath = "http://midsreborn.com/mids_updates/";
+                    //this.UpdatePath =
+                        reader.ReadString();
+                    //if (string.IsNullOrEmpty(this.UpdatePath))
+                    //    this.UpdatePath = "http://midsreborn.com/mids_updates/";
                 }
                 if (version >= 1.25)
                 {
