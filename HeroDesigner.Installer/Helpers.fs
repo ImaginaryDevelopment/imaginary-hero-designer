@@ -1,5 +1,10 @@
 ﻿module Helpers
 
+let failNullOrEmpty name =
+    function
+    | null -> failwithf "%s should not be null" name
+    | "" -> failwithf "%s should not be empty" name
+    | _ -> ()
 let trim (x:string) = x.Trim()
 let trim1 chars (x:string) = x.Trim(chars)
 //let map f =
@@ -26,6 +31,12 @@ let before (delimiter:string) =
     | Before delimiter x -> 
         Some x
     | _ -> None
+let after d x =
+    failNullOrEmpty "d" d
+    failNullOrEmpty "x" x
+    let i = x.IndexOf d
+    if i < 0 then failwithf "%s was not found in %s" d x
+    x.[i+d.Length ..]
 module Serialization =
     open Newtonsoft.Json
     let serialize<'t>(x:'t) =

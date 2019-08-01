@@ -109,6 +109,49 @@ module Impl =
         else
             Error <| sprintf "Install finished, but application was not found at '%s'" exePath'
 module Updates =
+    let zipInstaller m =
+        if not System.Diagnostics.Debugger.IsAttached then
+            { m with Error="Bad state for zip installer"}
+        else
+            let here = Environment.CurrentDirectory
+            here
+            |> Impl.parentIs "bin"
+            |> Result.bind (Impl.parentIs "HeroDesigner.Installer")
+            |> Result.map Path.GetDirectoryName
+            |> function
+                |Ok targetDir ->
+                    let dtPart = DateTime.Today
+                    // D:\Projects\imaginary-hero-designer\src\Base\Base\Master_Classes\MidsContext.cs
+                    let appVer = 
+                        let midsContextFn = Path.Combine(targetDir,"Base", "Base", "Master_Classes", "MidsContext.cs")
+                        File.ReadLines midsContextFn
+                        |> Seq.find(fun l -> l.Contains(" AppAssemblyVersion "))
+                        |> after "\""
+                        |> before "\""
+                        |> Option.get
+                    let makeOutPath t =
+                        let fn =
+                            sprintf "HeroDesigner%s_%s_%s_F%i.%02i.%02i.00.zip"
+                                (if String.IsNullOrEmpty t then String.Empty else sprintf "_%s" t)
+                                #if DEBUG
+                                "Dbg"
+                                #else
+                                "Rel"
+                                #endif
+                                appVer dtPart.Year dtPart.Month dtPart.Day
+                        let path = Path.Combine(Path.GetDirectoryName targetDir,fn)
+                        path
+                    let instPath = makeOutPath "Installer"
+                    Compression.compress(FilePath instPath,DirPath here) |> ignore
+                    MessageBox.Show(sprintf "Compressed to %s" instPath) |> ignore
+                    // copy binaries zip out
+                    let binTgtFn = makeOutPath null
+                    let (FilePath binSrc) = DirPath here |> getFiles |> Seq.find(fun (FilePath x) -> x.EndsWith("binaries.zip"))
+                    IO.File.Copy(binSrc,binTgtFn)
+                    System.Diagnostics.Process.Start(Path.GetDirectoryName targetDir) |> ignore
+                    m
+                |Error e ->
+                    {m with Error=e}
     let update msg m =
         match msg with
         | Increment -> { m with Count = m.Count + m.StepSize }
@@ -123,24 +166,10 @@ module Updates =
             )
             |> Option.defaultValue m
         | ZipInstaller ->
-            if not System.Diagnostics.Debugger.IsAttached then
-                { m with Error="Bad state for zip installer"}
-            else
-                let here = Environment.CurrentDirectory
-                here
-                |> Impl.parentIs "bin"
-                |> Result.bind (Impl.parentIs "HeroDesigner.Installer")
-                |> Result.map Path.GetDirectoryName
-                |> function
-                    |Ok targetDir ->
-                        let dtPart = DateTime.Today
-                        let fn = Path.Combine(targetDir,sprintf "HeroDesignerInstaller.F%i.%02i.%02i.00.zip" dtPart.Year dtPart.Month dtPart.Day)
-                        Compression.compress(FilePath fn,DirPath here) |> ignore
-                        MessageBox.Show(sprintf "Compressed to %s" fn) |> ignore
-                        System.Diagnostics.Process.Start(targetDir) |> ignore
-                        m
-                    |Error e ->
-                        {m with Error=e}
+            try
+                zipInstaller m
+            with ex ->
+                {m with Error=ex.Message}
         | Cancel ->
             Application.Current.Shutdown(0)
             m
