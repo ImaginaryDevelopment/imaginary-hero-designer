@@ -485,7 +485,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1150,7 +1150,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -1705,7 +1705,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2153,7 +2153,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Mu_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -2306,7 +2306,7 @@
         }
       ],
       "FullSetName": "Epic.Brute_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

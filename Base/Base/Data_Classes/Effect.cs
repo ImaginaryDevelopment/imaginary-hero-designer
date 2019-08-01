@@ -1482,7 +1482,7 @@ namespace Base.Data_Classes
 
         public bool PvXInclude()
         {
-            return MidsContext.Archetype == null || (this.PvMode != Enums.ePvX.PvP && MidsContext.Config.Inc.PvE || this.PvMode != Enums.ePvX.PvE && !MidsContext.Config.Inc.PvE) && (this.nIDClassName == -1 || this.nIDClassName == MidsContext.Archetype.Idx);
+            return MidsContext.Archetype == null || (this.PvMode != Enums.ePvX.PvP && !MidsContext.Config.Inc.DisablePvE || this.PvMode != Enums.ePvX.PvE && MidsContext.Config.Inc.DisablePvE) && (this.nIDClassName == -1 || this.nIDClassName == MidsContext.Archetype.Idx);
         }
 
         float ParseMagnitudeExpression()

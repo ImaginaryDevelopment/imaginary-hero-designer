@@ -538,7 +538,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1052,7 +1052,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1604,7 +1604,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.47,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2078,7 +2078,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2467,7 +2467,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2742,7 +2742,7 @@
         }
       ],
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2919,7 +2919,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3550,7 +3550,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4037,7 +4037,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Stalker_Melee.Psionic_Melee",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.5
     }

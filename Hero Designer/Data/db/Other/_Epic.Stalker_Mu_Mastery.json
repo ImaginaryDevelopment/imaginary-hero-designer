@@ -446,7 +446,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -948,7 +948,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Epic.Stalker_Mu_Mastery",
-      "CastTime": 7.524,
+      "CastTime": 7.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1430,7 +1430,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1813,7 +1813,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Mu_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1968,7 +1968,7 @@
         }
       ],
       "FullSetName": "Epic.Stalker_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

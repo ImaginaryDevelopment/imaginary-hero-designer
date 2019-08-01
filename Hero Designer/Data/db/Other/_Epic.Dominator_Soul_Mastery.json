@@ -241,7 +241,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Soul_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -739,7 +739,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Soul_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1015,7 +1015,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Soul_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1845,7 +1845,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Soul_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1995,7 +1995,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Soul_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

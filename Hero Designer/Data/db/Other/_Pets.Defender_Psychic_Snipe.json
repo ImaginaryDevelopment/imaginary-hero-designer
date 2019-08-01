@@ -199,7 +199,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Psychic_Snipe",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 1.0
     },
     {
@@ -379,7 +379,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Psychic_Snipe",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     }
   ]

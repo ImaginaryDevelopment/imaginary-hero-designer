@@ -186,7 +186,7 @@
         }
       ],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -276,7 +276,7 @@
         }
       ],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 1.0
     },
     {
@@ -443,7 +443,7 @@
         }
       ],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "AoEModifier": 2.37995839
     },
     {
@@ -625,7 +625,6 @@
         }
       ],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -676,7 +675,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -860,7 +859,6 @@
         }
       ],
       "FullSetName": "Pets.Phantasm",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

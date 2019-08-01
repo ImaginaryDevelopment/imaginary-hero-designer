@@ -279,7 +279,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 3.3666203
     },
@@ -696,7 +696,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1011,7 +1011,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1762,7 +1762,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 7.0
     },
@@ -1878,7 +1878,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2200,7 +2200,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2346,7 +2346,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2464,7 +2464,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2576,7 +2576,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Storm_Summoning",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

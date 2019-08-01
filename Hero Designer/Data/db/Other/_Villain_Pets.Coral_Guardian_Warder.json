@@ -141,7 +141,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -240,7 +239,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "AoEModifier": 1.0
     },
     {
@@ -412,7 +411,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -514,7 +513,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 2.73993444
     },
     {
@@ -871,7 +870,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "AoEModifier": 1.0
     },
     {
@@ -953,7 +952,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1129,7 +1127,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -1413,7 +1411,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Coral_Guardian_Warder",
-      "CastTime": 1.056,
+      "CastTime": 0.9,
       "AoEModifier": 2.15995646
     }
   ]

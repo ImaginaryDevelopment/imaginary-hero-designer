@@ -187,7 +187,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Boss",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -388,7 +388,6 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Boss",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -492,7 +491,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Boss",
-      "CastTime": 6.468,
+      "CastTime": 6.33,
       "AoEModifier": 2.37995839
     },
     {
@@ -771,7 +770,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Nemesis_Boss",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 3.25
     }
   ]

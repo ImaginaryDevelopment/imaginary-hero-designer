@@ -212,7 +212,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -394,7 +394,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -650,7 +650,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1208,7 +1208,6 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1564,7 +1563,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1749,7 +1748,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -2463,7 +2462,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2721,7 +2720,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3155,7 +3154,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3336,7 +3335,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -3437,7 +3436,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3690,7 +3689,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3945,7 +3944,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -4122,7 +4121,7 @@
         }
       ],
       "FullSetName": "Peacebringer_Offensive.Luminous_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

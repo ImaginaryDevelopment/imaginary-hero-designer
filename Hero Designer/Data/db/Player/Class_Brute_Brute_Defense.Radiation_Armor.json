@@ -306,7 +306,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -532,7 +532,6 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -885,7 +884,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2062,7 +2061,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2525,13 +2524,14 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 4.0
     },
     {
       "CastTimeReal": 0.67,
       "ToggleCost": 0.208,
+      "IsModified": true,
       "PowerIndex": 2888,
       "PowerSetID": 2587,
       "PowerSetIndex": 5,
@@ -2650,7 +2650,6 @@
           "Reward": "",
           "EffectId": "InherentTaunt",
           "Special": "",
-          "nID": 1,
           "EffectType": 19,
           "MezType": 11,
           "Summon": "",
@@ -2688,7 +2687,6 @@
           "Reward": "",
           "EffectId": "DeBuff_ToHit",
           "Special": "",
-          "nID": 2,
           "EffectType": 40,
           "Summon": "",
           "nSummon": -1,
@@ -2723,7 +2721,6 @@
           "Reward": "",
           "EffectId": "Debuff_Def",
           "Special": "",
-          "nID": 3,
           "EffectType": 5,
           "Summon": "",
           "nSummon": -1,
@@ -2758,7 +2755,6 @@
           "Reward": "",
           "EffectId": "StealthOn",
           "Special": "",
-          "nID": 4,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -2793,7 +2789,6 @@
           "Reward": "",
           "EffectId": "StealthOn",
           "Special": "",
-          "nID": 5,
           "EffectType": 9,
           "ETModifies": 25,
           "Summon": "",
@@ -2819,7 +2814,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2984,7 +2979,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3321,7 +3316,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4134,7 +4129,7 @@
         }
       ],
       "FullSetName": "Brute_Defense.Radiation_Armor",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 1.0
     }

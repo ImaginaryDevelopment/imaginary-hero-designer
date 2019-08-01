@@ -223,7 +223,7 @@
         }
       ],
       "FullSetName": "Pets.Imp",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -473,7 +473,7 @@
         }
       ],
       "FullSetName": "Pets.Imp",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     }
   ]

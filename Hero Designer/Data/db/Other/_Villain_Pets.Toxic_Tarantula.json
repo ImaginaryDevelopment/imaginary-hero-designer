@@ -197,7 +197,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 1.716,
+      "CastTime": 1.53,
       "AoEModifier": 1.0
     },
     {
@@ -348,7 +348,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -430,7 +429,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -566,7 +564,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -705,7 +703,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "AoEModifier": 1.34498954
     },
     {
@@ -1065,7 +1063,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 2.5
     },
     {
@@ -1523,7 +1521,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Toxic_Tarantula",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     }
   ]

@@ -107,7 +107,7 @@
         }
       ],
       "FullSetName": "Pets.Team_Transport",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 3.25
     },
     {
@@ -190,7 +190,6 @@
         }
       ],
       "FullSetName": "Pets.Team_Transport",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

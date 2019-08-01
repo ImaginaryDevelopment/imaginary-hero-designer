@@ -765,7 +765,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.45
     },
@@ -1258,7 +1258,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.75
     },
@@ -1789,7 +1789,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.47,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -2005,7 +2005,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2652,7 +2652,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.98,
+      "CastTime": 1.77,
       "Slottable": true,
       "AoEModifier": 1.30309331
     },
@@ -3041,7 +3041,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3220,7 +3220,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3829,7 +3829,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4293,7 +4293,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Tanker_Melee.Psionic_Melee",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.5
     }

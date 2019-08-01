@@ -677,7 +677,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1334,7 +1334,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1991,7 +1991,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2129,7 +2129,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2550,7 +2550,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -2764,7 +2764,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3418,7 +3418,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4071,7 +4071,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4656,7 +4656,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Kinetic_Attack",
-      "CastTime": 3.036,
+      "CastTime": 2.83,
       "Slottable": true,
       "AoEModifier": 1.0
     }

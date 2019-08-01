@@ -172,7 +172,6 @@
         }
       ],
       "FullSetName": "Pets.PPD_Sergeant",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -368,7 +367,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Sergeant",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -567,7 +566,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Sergeant",
-      "CastTime": 0.792,
+      "CastTime": 0.57,
       "AoEModifier": 1.0
     },
     {
@@ -765,7 +764,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Sergeant",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "AoEModifier": 1.25499558
     },
     {
@@ -961,7 +960,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Sergeant",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     }
   ]

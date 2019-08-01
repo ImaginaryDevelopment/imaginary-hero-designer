@@ -930,7 +930,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1138,7 +1138,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 3.29495978
     },
@@ -1557,7 +1557,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2311,7 +2311,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2421,7 +2421,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2621,7 +2621,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2897,7 +2897,7 @@
       "HasGrantPowerEffect": true,
       "HasPowerOverrideEffect": true,
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3076,7 +3076,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3517,7 +3517,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Defender_Buff.Nature_Affinity",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 4.75
     }

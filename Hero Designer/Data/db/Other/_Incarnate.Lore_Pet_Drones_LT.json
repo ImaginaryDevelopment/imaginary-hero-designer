@@ -149,7 +149,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Drones_LT",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     },
     {
@@ -283,7 +283,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Drones_LT",
-      "CastTime": 3.696,
+      "CastTime": 3.5,
       "AoEModifier": 2.73993444
     }
   ]

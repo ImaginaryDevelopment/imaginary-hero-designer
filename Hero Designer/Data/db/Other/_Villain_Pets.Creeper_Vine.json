@@ -446,7 +446,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Creeper_Vine",
-      "CastTime": 1.056,
+      "CastTime": 0.9,
       "AoEModifier": 1.0
     },
     {
@@ -838,7 +838,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Creeper_Vine",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -920,7 +919,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Creeper_Vine",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1276,7 +1274,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Creeper_Vine",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "AoEModifier": 1.0
     }
   ]

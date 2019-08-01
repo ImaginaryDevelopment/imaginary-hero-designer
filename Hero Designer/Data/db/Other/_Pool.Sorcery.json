@@ -154,7 +154,7 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 1.0
     },
     {
@@ -548,7 +548,7 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1590,7 +1590,7 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2006,7 +2006,6 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2332,7 +2331,7 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3127,7 +3126,7 @@
         }
       ],
       "FullSetName": "Pool.Sorcery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

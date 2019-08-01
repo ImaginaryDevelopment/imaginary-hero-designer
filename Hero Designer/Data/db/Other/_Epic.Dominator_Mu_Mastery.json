@@ -238,7 +238,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Mu_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -700,7 +700,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Mu_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1120,7 +1120,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1676,7 +1676,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Mu_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.96,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1829,7 +1829,7 @@
         }
       ],
       "FullSetName": "Epic.Dominator_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

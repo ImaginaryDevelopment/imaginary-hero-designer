@@ -216,7 +216,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Soul_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 2.51993251
     },
@@ -714,7 +714,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Soul_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -941,7 +941,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Soul_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -1260,7 +1260,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Soul_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.08662224
     },
@@ -1528,7 +1528,7 @@
         }
       ],
       "FullSetName": "Epic.Mastermind_Soul_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

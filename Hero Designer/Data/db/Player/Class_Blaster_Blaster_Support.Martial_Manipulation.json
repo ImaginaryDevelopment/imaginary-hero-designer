@@ -132,7 +132,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -794,7 +793,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1380,7 +1379,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1466,7 +1465,6 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1972,7 +1970,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2469,7 +2467,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3027,7 +3025,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -3788,7 +3786,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4295,7 +4293,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -4879,7 +4877,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Martial_Manipulation",
-      "CastTime": 2.772,
+      "CastTime": 2.53,
       "Slottable": true,
       "AoEModifier": 1.0
     }

@@ -276,7 +276,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -671,7 +671,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -874,7 +874,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -1265,7 +1265,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1891,7 +1891,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2203,7 +2203,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2408,7 +2408,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2584,7 +2584,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2725,7 +2725,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Kinetics",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

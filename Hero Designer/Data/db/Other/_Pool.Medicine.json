@@ -189,7 +189,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Pool.Medicine",
-      "CastTime": 4.092,
+      "CastTime": 3.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1425,7 +1425,7 @@
         }
       ],
       "FullSetName": "Pool.Medicine",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1616,7 +1616,7 @@
         }
       ],
       "FullSetName": "Pool.Medicine",
-      "CastTime": 4.488,
+      "CastTime": 4.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1800,7 +1800,7 @@
         }
       ],
       "FullSetName": "Pool.Medicine",
-      "CastTime": 3.564,
+      "CastTime": 3.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1964,7 +1964,7 @@
         }
       ],
       "FullSetName": "Pool.Medicine",
-      "CastTime": 7.524,
+      "CastTime": 7.33,
       "Slottable": true,
       "AoEModifier": 1.0
     }

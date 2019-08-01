@@ -331,7 +331,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     },
     {
@@ -600,7 +600,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 2.5
     },
     {
@@ -914,7 +914,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -1223,7 +1223,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -1537,7 +1537,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -2092,7 +2092,7 @@
         }
       ],
       "FullSetName": "Pets.Jack",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     }
   ]

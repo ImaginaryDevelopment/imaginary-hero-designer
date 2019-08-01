@@ -339,7 +339,7 @@
         }
       ],
       "FullSetName": "Epic.Cold_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -569,7 +569,7 @@
         }
       ],
       "FullSetName": "Epic.Cold_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -1262,7 +1262,7 @@
         }
       ],
       "FullSetName": "Epic.Cold_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1488,7 +1488,7 @@
         }
       ],
       "FullSetName": "Epic.Cold_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1496,6 +1496,7 @@
       "CastTimeReal": 0.07,
       "ToggleCost": 0.325,
       "IsEpic": true,
+      "IsModified": true,
       "PowerIndex": 4099,
       "PowerSetID": 2720,
       "PowerSetIndex": 4,
@@ -1525,7 +1526,7 @@
             "Epic.Cold_Mastery.Hoarfrost"
           ],
           [
-            "Epic.Chill_Mastery.Flash_Freeze",
+            "Epic.Cold_Mastery.Flash_Freeze",
             "Epic.Cold_Mastery.Frozen_Armor"
           ],
           [
@@ -1550,7 +1551,7 @@
             4098
           ],
           [
-            4091,
+            4096,
             4097
           ],
           [
@@ -1648,7 +1649,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 1,
           "EffectType": 20,
           "MezType": 5,
           "Summon": "",
@@ -1680,7 +1680,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 2,
           "EffectType": 19,
           "MezType": 4,
           "Summon": "",
@@ -1714,7 +1713,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 3,
           "EffectType": 19,
           "MezType": 5,
           "Summon": "",
@@ -1748,7 +1746,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 4,
           "EffectType": 19,
           "MezType": 13,
           "Summon": "",
@@ -1781,7 +1778,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 5,
           "EffectType": 19,
           "MezType": 3,
           "Summon": "",
@@ -1814,7 +1810,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 6,
           "EffectType": 19,
           "MezType": 6,
           "Summon": "",
@@ -1848,7 +1843,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 7,
           "EffectType": 27,
           "Summon": "",
           "nSummon": -1,
@@ -1882,7 +1876,6 @@
           "Reward": "",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 8,
           "EffectType": 26,
           "Summon": "",
           "nSummon": -1,
@@ -1914,7 +1907,6 @@
           "Reward": "Temporary_Powers.Temporary_Powers.NoPhase",
           "EffectId": "Ones",
           "Special": "",
-          "nID": 9,
           "EffectType": 12,
           "Summon": "Temporary_Powers.Temporary_Powers.NoPhase",
           "nSummon": 9777,
@@ -1938,7 +1930,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Epic.Cold_Mastery",
-      "CastTime": 0.264,
+      "CastTime": 0.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

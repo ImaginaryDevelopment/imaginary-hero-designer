@@ -485,7 +485,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Street_Justice_Assassins_Strike",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "AoEModifier": 1.0
     },
     {
@@ -875,7 +875,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Street_Justice_Assassins_Strike",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     }
   ]

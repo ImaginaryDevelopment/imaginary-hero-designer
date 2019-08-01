@@ -154,7 +154,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -360,7 +360,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 4.356,
+      "CastTime": 4.2,
       "AoEModifier": 2.557239
     },
     {
@@ -457,7 +457,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 4.092,
+      "CastTime": 3.93,
       "AoEModifier": 1.0
     },
     {
@@ -519,7 +519,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Boss",
-      "CastTime": 4.092,
+      "CastTime": 3.83,
       "AoEModifier": 1.0
     }
   ]

@@ -193,7 +193,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon_3",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 3.25
     },
     {
@@ -310,7 +310,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -405,7 +404,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Ember_Demon_3",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 3.25
     }
   ]

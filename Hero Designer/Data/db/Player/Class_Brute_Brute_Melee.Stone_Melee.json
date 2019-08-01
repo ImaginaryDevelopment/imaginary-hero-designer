@@ -388,7 +388,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -747,7 +747,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.61,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1107,7 +1107,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1497,7 +1497,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1868,7 +1868,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2084,7 +2084,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2448,7 +2448,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2845,7 +2845,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3210,7 +3210,7 @@
         }
       ],
       "FullSetName": "Brute_Melee.Stone_Melee",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 3.25
     }

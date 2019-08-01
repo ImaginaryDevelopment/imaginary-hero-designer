@@ -160,7 +160,7 @@
         }
       ],
       "FullSetName": "Pool.Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -302,7 +302,7 @@
         }
       ],
       "FullSetName": "Pool.Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -619,7 +619,7 @@
         }
       ],
       "FullSetName": "Pool.Manipulation",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -906,7 +906,7 @@
         }
       ],
       "FullSetName": "Pool.Manipulation",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -1464,7 +1464,7 @@
         }
       ],
       "FullSetName": "Pool.Manipulation",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "Slottable": true,
       "AoEModifier": 1.0
     }

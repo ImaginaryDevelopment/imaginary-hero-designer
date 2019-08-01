@@ -1550,7 +1550,7 @@
         }
       ],
       "FullSetName": "Teamwork.Fortunata_Teamwork",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2036,7 +2036,7 @@
         }
       ],
       "FullSetName": "Teamwork.Fortunata_Teamwork",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "Slottable": true,
       "AoEModifier": 6.25
     },
@@ -2182,7 +2182,7 @@
         }
       ],
       "FullSetName": "Teamwork.Fortunata_Teamwork",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3416,7 +3416,7 @@
         }
       ],
       "FullSetName": "Teamwork.Fortunata_Teamwork",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 16.0
     },
@@ -3563,7 +3563,7 @@
         }
       ],
       "FullSetName": "Teamwork.Fortunata_Teamwork",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 4.75
     }

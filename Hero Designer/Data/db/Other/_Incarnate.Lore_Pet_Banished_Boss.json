@@ -257,7 +257,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Boss",
-      "CastTime": 5.016,
+      "CastTime": 4.83,
       "AoEModifier": 1.0
     },
     {
@@ -704,7 +704,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Boss",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "AoEModifier": 2.59996033
     },
     {
@@ -1053,7 +1053,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -1288,7 +1288,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Banished_Boss",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 4.0
     }
   ]

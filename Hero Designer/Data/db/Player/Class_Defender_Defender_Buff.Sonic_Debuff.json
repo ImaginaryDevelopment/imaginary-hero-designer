@@ -650,7 +650,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -824,7 +824,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1032,7 +1032,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1320,7 +1320,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1947,7 +1947,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 2.904,
+      "CastTime": 2.7,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2506,7 +2506,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2711,7 +2711,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3313,7 +3313,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3467,7 +3467,7 @@
         }
       ],
       "FullSetName": "Defender_Buff.Sonic_Debuff",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 1.0
     }

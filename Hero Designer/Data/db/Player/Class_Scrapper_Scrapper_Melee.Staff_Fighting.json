@@ -377,7 +377,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
     },
@@ -727,7 +727,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 32
     },
@@ -1077,7 +1077,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 33
     },
@@ -1842,7 +1842,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2643,7 +2643,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 1.31999993,
+      "CastTime": 1.13,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3446,7 +3446,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.458992
     },
@@ -5553,7 +5553,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 2.772,
+      "CastTime": 2.57,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -5639,7 +5639,6 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5852,7 +5851,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -6641,7 +6640,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 1.98,
+      "CastTime": 1.77,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -7591,7 +7590,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.458992
     },
@@ -9397,7 +9396,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Staff_Fighting",
-      "CastTime": 3.036,
+      "CastTime": 2.83,
       "Slottable": true,
       "AoEModifier": 1.0
     }

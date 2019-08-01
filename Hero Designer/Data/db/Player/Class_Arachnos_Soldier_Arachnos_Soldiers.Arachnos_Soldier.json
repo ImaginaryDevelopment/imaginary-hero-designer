@@ -201,7 +201,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.056,
+      "CastTime": 0.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -490,7 +490,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -677,7 +677,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1141,7 +1141,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -1331,7 +1331,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -1579,7 +1579,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2011,7 +2011,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -2309,7 +2309,7 @@
         }
       ],
       "FullSetName": "Arachnos_Soldiers.Arachnos_Soldier",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.5
     }

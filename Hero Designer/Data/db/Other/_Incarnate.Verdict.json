@@ -128,7 +128,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 5.5
     },
     {
@@ -410,7 +410,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 5.139875
     },
     {
@@ -769,7 +769,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 3.31991267
     },
     {
@@ -1122,7 +1122,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -1365,7 +1365,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -1508,7 +1508,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 7.0
     },
     {
@@ -1645,7 +1645,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 5.5
     },
     {
@@ -2028,7 +2028,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 5.5
     },
     {
@@ -2168,7 +2168,7 @@
         }
       ],
       "FullSetName": "Incarnate.Verdict",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 8.439905
     }
   ]

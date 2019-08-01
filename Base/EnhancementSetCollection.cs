@@ -11,10 +11,9 @@ public class EnhancementSetCollection : List<EnhancementSet>
 
     public static string GetSetInfoLongRTF(int iSet, int enhCount = -1)
     {
-        string str1;
         if (iSet < 0 | iSet > DatabaseAPI.Database.EnhancementSets.Count - 1)
         {
-            str1 = string.Empty;
+            return string.Empty;
         }
         else
         {
@@ -31,7 +30,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
                 {
                     if (DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP)
                         effectString += "(PvP)";
-                    if (enhCount >= DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted & (MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvE | !MidsContext.Config.Inc.PvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP | DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.Any))
+                    if (enhCount >= DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted & (!MidsContext.Config.Inc.DisablePvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvE | MidsContext.Config.Inc.DisablePvE & DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.PvP | DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].PvMode == Enums.ePvX.Any))
                         str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Invention) + effectString + RTF.Color(RTF.ElementID.Text);
                     else
                         str3 = str3 + RTF.Crlf() + RTF.Bold(RTF.Color(RTF.ElementID.Text) + "  " + DatabaseAPI.Database.EnhancementSets[iSet].Bonus[index].Slotted + " Slotted: ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
@@ -43,8 +42,7 @@ public class EnhancementSetCollection : List<EnhancementSet>
                 if (!string.IsNullOrEmpty(effectString))
                     str3 = str3 + RTF.Crlf() + RTF.Color(RTF.ElementID.Enhancement) + RTF.Bold("  " + DatabaseAPI.Database.Enhancements[DatabaseAPI.Database.EnhancementSets[iSet].Enhancements[index]].Name + ": ") + RTF.Color(RTF.ElementID.Faded) + effectString + RTF.Color(RTF.ElementID.Text);
             }
-            str1 = str3;
+            return str3;
         }
-        return str1;
     }
 }

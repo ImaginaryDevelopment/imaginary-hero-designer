@@ -219,7 +219,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -419,7 +419,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -591,7 +591,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rikti_LT",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     }
   ]

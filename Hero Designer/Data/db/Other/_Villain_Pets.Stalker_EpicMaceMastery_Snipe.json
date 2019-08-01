@@ -438,7 +438,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Stalker_EpicMaceMastery_Snipe",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 1.0
     },
     {
@@ -861,7 +861,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Stalker_EpicMaceMastery_Snipe",
-      "CastTime": 8.184,
+      "CastTime": 8.0,
       "AoEModifier": 1.0
     }
   ]

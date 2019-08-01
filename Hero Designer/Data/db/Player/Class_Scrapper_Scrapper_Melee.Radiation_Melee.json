@@ -543,7 +543,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1136,7 +1136,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1577,7 +1577,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.31592667
     },
@@ -2001,7 +2001,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2623,7 +2623,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 2.376,
+      "CastTime": 2.23,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -2837,7 +2837,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2947,7 +2947,7 @@
         }
       ],
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3507,7 +3507,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4003,7 +4003,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Scrapper_Melee.Radiation_Melee",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "Slottable": true,
       "AoEModifier": 2.5
     }

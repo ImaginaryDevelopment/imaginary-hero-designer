@@ -950,7 +950,7 @@
         }
       ],
       "FullSetName": "Epic.Force_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1127,7 +1127,7 @@
         }
       ],
       "FullSetName": "Epic.Force_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -1742,7 +1742,7 @@
         }
       ],
       "FullSetName": "Epic.Force_Mastery",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2182,7 +2182,7 @@
         }
       ],
       "FullSetName": "Epic.Force_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2719,7 +2719,7 @@
         }
       ],
       "FullSetName": "Epic.Force_Mastery",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     }

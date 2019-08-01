@@ -256,7 +256,7 @@
         }
       ],
       "FullSetName": "Pets.VoltaicSentinel_Sentinel",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -440,7 +440,6 @@
         }
       ],
       "FullSetName": "Pets.VoltaicSentinel_Sentinel",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

@@ -169,7 +169,7 @@ namespace midsControls
         {
             unchecked
             {
-                if (MidsContext.Config.I9.DisplayIOLevels & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SetO
+                if (!MidsContext.Config.I9.HideIOLevels & (DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.SetO
                     | DatabaseAPI.Database.Enhancements[slot.Enhancement.Enh].TypeID == Enums.eType.InventO))
                 {
                     RectangleF iValue2 = rect;
@@ -307,7 +307,7 @@ namespace midsControls
                 Rectangle iValue = new Rectangle(result.X, result.Y, this.bxPower[(int)ePowerState].Size.Width, this.bxPower[(int)ePowerState].Size.Height);
                 if (ePowerState == Enums.ePowerState.Used || toggling)
                 {
-                    if (MidsContext.Config.DesaturateInherent & !iSlot.Chosen)
+                    if (!MidsContext.Config.DisableDesaturateInherent & !iSlot.Chosen)
                     {
                         imageAttr = this.Desaturate(grey, ePowerState == Enums.ePowerState.Open);
                     }
@@ -970,7 +970,7 @@ namespace midsControls
             bool useHeroColors = true;
             if (MidsContext.Character != null)
                 useHeroColors = MidsContext.Character.IsHero();
-            if (!MidsContext.Config.ShowVillainColours)
+            if (MidsContext.Config.DisableVillainColours)
                 useHeroColors = true;
 
             this.VillainColor = !useHeroColors;

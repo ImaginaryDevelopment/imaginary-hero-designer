@@ -449,7 +449,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -900,7 +900,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1322,7 +1322,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1747,7 +1747,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2674,7 +2674,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3038,7 +3038,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -3283,7 +3283,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3764,7 +3764,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4229,7 +4229,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Icy_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     }

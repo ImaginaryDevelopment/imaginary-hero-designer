@@ -602,7 +602,7 @@
         }
       ],
       "FullSetName": "Epic.Weapon_Mastery",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -717,7 +717,7 @@
         }
       ],
       "FullSetName": "Epic.Weapon_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1094,7 +1094,7 @@
         }
       ],
       "FullSetName": "Epic.Weapon_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1355,7 +1355,7 @@
         }
       ],
       "FullSetName": "Epic.Weapon_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1758,7 +1758,7 @@
         }
       ],
       "FullSetName": "Epic.Weapon_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 2.5
     }

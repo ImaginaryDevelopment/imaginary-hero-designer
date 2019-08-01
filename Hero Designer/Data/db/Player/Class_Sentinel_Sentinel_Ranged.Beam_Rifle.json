@@ -349,7 +349,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -675,7 +675,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -942,7 +942,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -1227,7 +1227,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1617,7 +1617,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1946,7 +1946,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 2.112,
+      "CastTime": 1.9,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2011,6 +2011,7 @@
       "DescLong": "You carefully calibrate your rifle and shoot a refractor beam that will split up on impact dealing moderate energy damage to your target and 9 nearby foes, lowering their defense. The beam has a high chance to split again off the secondary targets hitting up to 10 foes. If the target is also suffering from the Disintegrating effect it will also suffer additional damage over time. Damage: Moderate, Recharge: Very Slow",
       "SetTypes": [
         3,
+        21,
         23,
         44,
         45
@@ -2173,7 +2174,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2744,7 +2745,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 2.18992949
     },
@@ -2781,7 +2782,7 @@
       "TargetLoS": true,
       "Range": 40.0,
       "EndCost": 20.8,
-      "RechargeTime": 125.0,
+      "RechargeTime": 90.0,
       "EffectArea": 2,
       "Radius": 20.0,
       "MaxTargets": 10,
@@ -3197,7 +3198,7 @@
         }
       ],
       "FullSetName": "Sentinel_Ranged.Beam_Rifle",
-      "CastTime": 3.036,
+      "CastTime": 2.9,
       "Slottable": true,
       "AoEModifier": 4.0
     }

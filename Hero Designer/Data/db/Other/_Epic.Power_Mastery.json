@@ -124,7 +124,7 @@
         }
       ],
       "FullSetName": "Epic.Power_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1289,7 +1289,7 @@
         }
       ],
       "FullSetName": "Epic.Power_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1801,7 +1801,7 @@
         }
       ],
       "FullSetName": "Epic.Power_Mastery",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2240,7 +2240,7 @@
         }
       ],
       "FullSetName": "Epic.Power_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2638,7 +2638,7 @@
         }
       ],
       "FullSetName": "Epic.Power_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "Slottable": true,
       "AoEModifier": 1.0
     }

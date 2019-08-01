@@ -227,7 +227,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Boss",
-      "CastTime": 3.432,
+      "CastTime": 3.3,
       "AoEModifier": 1.35699379
     },
     {
@@ -708,7 +708,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Boss",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "AoEModifier": 1.0
     },
     {
@@ -1052,7 +1052,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Boss",
-      "CastTime": 1.452,
+      "CastTime": 1.23,
       "AoEModifier": 1.76498663
     },
     {
@@ -1398,7 +1398,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Boss",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     }
   ]

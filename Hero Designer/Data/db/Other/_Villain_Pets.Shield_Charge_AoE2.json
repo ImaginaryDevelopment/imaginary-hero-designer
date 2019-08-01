@@ -83,7 +83,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Villain_Pets.Shield_Charge_AoE2",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 4.0
     },
     {
@@ -361,7 +361,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Shield_Charge_AoE2",
-      "CastTime": 0.132,
       "AoEModifier": 4.0
     }
   ]

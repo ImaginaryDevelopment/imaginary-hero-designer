@@ -317,7 +317,6 @@
         }
       ],
       "FullSetName": "Pets.OilSlickOil",
-      "CastTime": 0.132,
       "AoEModifier": 4.75
     },
     {
@@ -405,7 +404,6 @@
         }
       ],
       "FullSetName": "Pets.OilSlickOil",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -525,7 +523,6 @@
         }
       ],
       "FullSetName": "Pets.OilSlickOil",
-      "CastTime": 0.132,
       "AoEModifier": 1.75
     }
   ]

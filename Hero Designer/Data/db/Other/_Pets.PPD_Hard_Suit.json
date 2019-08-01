@@ -172,7 +172,6 @@
         }
       ],
       "FullSetName": "Pets.PPD_Hard_Suit",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -267,7 +266,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Hard_Suit",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "AoEModifier": 1.0
     },
     {
@@ -466,7 +465,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Hard_Suit",
-      "CastTime": 0.792,
+      "CastTime": 0.57,
       "AoEModifier": 1.0
     },
     {
@@ -563,7 +562,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Hard_Suit",
-      "CastTime": 4.092,
+      "CastTime": 3.87,
       "AoEModifier": 1.99862158
     },
     {
@@ -762,7 +761,7 @@
         }
       ],
       "FullSetName": "Pets.PPD_Hard_Suit",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     }
   ]

@@ -310,7 +310,7 @@
         }
       ],
       "FullSetName": "Epic.Stone_Mastery",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -721,7 +721,7 @@
         }
       ],
       "FullSetName": "Epic.Stone_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1029,7 +1029,7 @@
         }
       ],
       "FullSetName": "Epic.Stone_Mastery",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1727,7 +1727,7 @@
         }
       ],
       "FullSetName": "Epic.Stone_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1978,7 +1978,7 @@
         }
       ],
       "FullSetName": "Epic.Stone_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

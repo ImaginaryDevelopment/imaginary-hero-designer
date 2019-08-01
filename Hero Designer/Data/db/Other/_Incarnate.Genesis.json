@@ -112,7 +112,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "AoEModifier": 4.052773
     },
     {
@@ -295,7 +295,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -478,7 +477,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -661,7 +659,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -844,7 +841,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1027,7 +1023,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1210,7 +1205,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1393,7 +1387,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1576,7 +1569,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1759,7 +1751,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1942,7 +1933,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2125,7 +2115,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2308,7 +2297,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2491,7 +2479,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2674,7 +2661,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2857,7 +2843,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3040,7 +3025,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3223,7 +3207,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3406,7 +3389,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4114,7 +4096,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -4724,7 +4705,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5334,7 +5314,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6042,7 +6021,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6750,7 +6728,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -7458,7 +7435,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8165,7 +8141,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -8776,7 +8751,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9387,7 +9361,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9570,7 +9543,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9753,7 +9725,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9936,7 +9907,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10119,7 +10089,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10302,7 +10271,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10485,7 +10453,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10668,7 +10635,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10851,7 +10817,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11034,7 +10999,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Incarnate.Genesis",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

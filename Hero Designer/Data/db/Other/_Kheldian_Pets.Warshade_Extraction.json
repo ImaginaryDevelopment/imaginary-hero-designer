@@ -296,7 +296,7 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Warshade_Extraction",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -474,7 +474,6 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Warshade_Extraction",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -752,7 +751,7 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Warshade_Extraction",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 3.06993747
     },
     {
@@ -834,7 +833,6 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Warshade_Extraction",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1180,7 +1178,7 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Warshade_Extraction",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

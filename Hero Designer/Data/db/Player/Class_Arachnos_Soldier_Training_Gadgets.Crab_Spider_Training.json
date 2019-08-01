@@ -925,7 +925,6 @@
         }
       ],
       "FullSetName": "Training_Gadgets.Crab_Spider_Training",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1802,7 +1801,7 @@
         }
       ],
       "FullSetName": "Training_Gadgets.Crab_Spider_Training",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1970,7 +1969,7 @@
         }
       ],
       "FullSetName": "Training_Gadgets.Crab_Spider_Training",
-      "CastTime": 1.452,
+      "CastTime": 1.3,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2145,7 +2144,7 @@
         }
       ],
       "FullSetName": "Training_Gadgets.Crab_Spider_Training",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     }

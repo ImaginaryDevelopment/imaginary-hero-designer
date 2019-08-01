@@ -141,7 +141,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -313,7 +312,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -450,7 +449,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -622,7 +621,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "AoEModifier": 1.0
     },
     {
@@ -704,7 +703,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -882,7 +880,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     },
     {
@@ -1060,7 +1058,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Corolax_Red_Hybrid",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 1.0
     }
   ]

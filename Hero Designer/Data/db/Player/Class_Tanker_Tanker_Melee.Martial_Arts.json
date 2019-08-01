@@ -640,7 +640,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.6
     },
@@ -1198,7 +1198,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.9
     },
@@ -1566,7 +1566,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -1782,7 +1782,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2146,7 +2146,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2536,7 +2536,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3125,7 +3125,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.848,
+      "CastTime": 1.6,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -3490,7 +3490,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4139,7 +4139,7 @@
         }
       ],
       "FullSetName": "Tanker_Melee.Martial_Arts",
-      "CastTime": 2.772,
+      "CastTime": 2.53,
       "Slottable": true,
       "AoEModifier": 2.5
     }

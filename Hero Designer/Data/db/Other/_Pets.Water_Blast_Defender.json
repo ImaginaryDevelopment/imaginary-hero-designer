@@ -408,7 +408,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Water_Blast_Defender",
-      "CastTime": 1.584,
+      "CastTime": 1.43,
       "AoEModifier": 1.0
     },
     {
@@ -894,7 +894,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Pets.Water_Blast_Defender",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     }
   ]

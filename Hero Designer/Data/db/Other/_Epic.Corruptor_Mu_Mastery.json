@@ -239,7 +239,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mu_Mastery",
-      "CastTime": 3.96,
+      "CastTime": 3.828,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -701,7 +701,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mu_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -850,7 +850,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1315,7 +1315,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mu_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1470,7 +1470,7 @@
         }
       ],
       "FullSetName": "Epic.Corruptor_Mu_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     }

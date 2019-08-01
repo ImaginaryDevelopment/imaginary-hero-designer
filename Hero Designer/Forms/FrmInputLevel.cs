@@ -13,21 +13,21 @@ namespace Hero_Designer
     public partial class FrmInputLevel : Form
     {
 
-        bool LongFormat;
+        bool longFormat;
 
-        bool Mode2;
+        bool mode2;
 
         frmMain myparent;
 
-        public FrmInputLevel(ref frmMain iParent, bool iLF, bool iMode2)
+        public FrmInputLevel(frmMain iParent, bool iLF, bool iMode2)
         {
             this.InitializeComponent();
             this.Name = nameof(FrmInputLevel);
             System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(FrmInputLevel));
             this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.myparent = iParent;
-            this.LongFormat = iLF;
-            this.Mode2 = iMode2;
+            this.longFormat = iLF;
+            this.mode2 = iMode2;
         }
 
         void btnOK_Click(object sender, EventArgs e)
@@ -43,10 +43,10 @@ namespace Hero_Designer
             }
             else
                 num = Convert.ToInt32(this.udLevel.Value);
-            if (this.LongFormat)
-                this.myparent.smlRespecLong(num - 1, this.Mode2);
+            if (this.longFormat)
+                this.myparent.smlRespecLong(num - 1, this.mode2);
             else
-                this.myparent.smlRespecShort(num - 1, this.Mode2);
+                this.myparent.smlRespecShort(num - 1, this.mode2);
             this.Close();
         }
 

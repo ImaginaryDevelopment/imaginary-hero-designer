@@ -351,7 +351,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mace_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1107,7 +1107,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mace_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1414,7 +1414,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mace_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 2.54161286
     },
@@ -1610,7 +1610,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mace_Mastery",
-      "CastTime": 3.168,
+      "CastTime": 3.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1979,7 +1979,7 @@
         }
       ],
       "FullSetName": "Epic.Blaster_Mace_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

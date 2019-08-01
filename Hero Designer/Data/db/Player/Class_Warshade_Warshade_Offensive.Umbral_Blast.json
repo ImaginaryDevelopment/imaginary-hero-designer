@@ -282,7 +282,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -607,7 +607,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1090,7 +1090,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1648,7 +1648,6 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2047,7 +2046,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2479,7 +2478,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 4.092,
+      "CastTime": 3.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3133,7 +3132,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -3534,7 +3533,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4010,7 +4009,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4335,7 +4334,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4815,7 +4814,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 2.37995839
     },
@@ -5258,7 +5257,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 3.432,
+      "CastTime": 3.17,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5401,7 +5400,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5799,7 +5798,7 @@
         }
       ],
       "FullSetName": "Warshade_Offensive.Umbral_Blast",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 4.75
     }

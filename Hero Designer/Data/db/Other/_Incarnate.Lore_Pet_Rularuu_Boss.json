@@ -191,7 +191,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 4.93995428
     },
     {
@@ -287,7 +287,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -600,7 +600,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -738,7 +738,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Rularuu_Boss",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     }
   ]

@@ -191,7 +191,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "AoEModifier": 1.0
     },
     {
@@ -428,7 +428,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.584,
+      "CastTime": 1.4,
       "AoEModifier": 1.0
     },
     {
@@ -1008,7 +1008,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 0.659999967,
+      "CastTime": 0.5,
       "AoEModifier": 1.0
     },
     {
@@ -1439,7 +1439,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 3.036,
+      "CastTime": 2.83,
       "AoEModifier": 1.0
     },
     {
@@ -1679,7 +1679,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 1.584,
+      "CastTime": 1.4,
       "AoEModifier": 1.35699379
     },
     {
@@ -2004,7 +2004,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Umbra_Beast",
-      "CastTime": 3.036,
+      "CastTime": 2.83,
       "AoEModifier": 2.44994545
     }
   ]

@@ -262,7 +262,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Ice_Melee_Assassins_Frost",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 1.0
     },
     {
@@ -563,7 +563,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Ice_Melee_Assassins_Frost",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

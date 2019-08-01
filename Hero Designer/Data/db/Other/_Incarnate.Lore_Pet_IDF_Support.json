@@ -507,7 +507,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Support",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 4.75
     },
     {
@@ -1086,7 +1086,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_IDF_Support",
-      "CastTime": 3.168,
+      "CastTime": 2.93,
       "AoEModifier": 1.0
     }
   ]

@@ -757,7 +757,7 @@ namespace Hero_Designer
             SolidBrush solidBrush2 = new SolidBrush(Color.FromArgb(0, (int)byte.MaxValue, 0));
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
-            this.bxSet.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxSet.ClipRect);
+            this.bxSet.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxSet.ClipRect);
             int num = this.myPower.SetTypes.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
@@ -823,7 +823,7 @@ namespace Hero_Designer
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
             string[] names = Enum.GetNames(eSetType.GetType());
-            this.bxSetList.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxSetList.ClipRect);
+            this.bxSetList.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxSetList.ClipRect);
             int num2 = names.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
@@ -1727,7 +1727,7 @@ namespace Hero_Designer
             this.bxEnhPicked = new ExtendedBitmap(this.pbEnhancements.Width, this.pbEnhancements.Height);
             int enhPadding1 = this.enhPadding;
             int enhPadding2 = this.enhPadding;
-            this.bxEnhPicked.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxEnhPicked.ClipRect);
+            this.bxEnhPicked.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxEnhPicked.ClipRect);
             Graphics graphics = this.bxEnhPicked.Graphics;
             Pen pen = new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue), 1f);
             Size size = this.bxEnhPicked.Size;
@@ -1753,7 +1753,7 @@ namespace Hero_Designer
             int enhPadding1 = this.enhPadding;
             int enhPadding2 = this.enhPadding;
             int num1 = 0;
-            this.bxEnhPicker.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxEnhPicker.ClipRect);
+            this.bxEnhPicker.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxEnhPicker.ClipRect);
             Graphics graphics = this.bxEnhPicker.Graphics;
             Pen pen = new Pen(Color.FromArgb(0, 0, (int)byte.MaxValue), 1f);
             Size size = this.bxEnhPicker.Size;

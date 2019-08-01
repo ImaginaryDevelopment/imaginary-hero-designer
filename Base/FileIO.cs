@@ -1,4 +1,3 @@
-
 using System;
 using System.IO;
 using System.Text;
@@ -6,20 +5,14 @@ using System.Windows.Forms;
 
 public static class FileIO
 {
-    public static string AddSlash(string iPath)
-    {
-        return iPath.EndsWith("\\") ? iPath : iPath + "\\";
-    }
+    public static string AddSlash(string iPath) => iPath.EndsWith("\\") ? iPath : iPath + "\\";
 
-    public static string StripSlash(string iPath)
-    {
-        return iPath.EndsWith("\\") ? iPath.Substring(0, iPath.Length - 1) : iPath;
-    }
+    public static string StripSlash(string iPath) => iPath.EndsWith("\\") ? iPath.Substring(0, iPath.Length - 1) : iPath;
 
     public static string StripPath(string iFileName)
     {
-        int num = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
-        return num <= -1 ? iFileName : iFileName.Substring(num + 1);
+        int lastIdx = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
+        return lastIdx <= -1 ? iFileName : iFileName.Substring(lastIdx + 1);
     }
 
     public static string StripFileName(string iFileName)
@@ -30,25 +23,16 @@ public static class FileIO
 
     public static string[] IOGrab(StreamReader iStream)
     {
-        string[] strArray1;
         if (iStream == null)
-        {
-            strArray1 = new string[0];
-        }
-        else
-        {
-            string str = iStream.ReadLine();
-            if (!string.IsNullOrEmpty(str))
-            {
-                string[] strArray2 = str.Split('\t');
-                for (int index = 0; index <= strArray2.Length - 1; ++index)
-                    strArray2[index] = FileIO.IOStrip(strArray2[index]);
-                strArray1 = strArray2;
-            }
-            else
-                strArray1 = new string[0];
-        }
-        return strArray1;
+            return Array.Empty<string>();
+
+        string str = iStream.ReadLine();
+        if (string.IsNullOrEmpty(str))
+            return Array.Empty<string>();
+        string[] strArray2 = str.Split('\t');
+        for (int index = 0; index <= strArray2.Length - 1; ++index)
+            strArray2[index] = FileIO.IOStrip(strArray2[index]);
+        return strArray2;
     }
 
     public static string IOStrip(string iString)
@@ -79,74 +63,63 @@ public static class FileIO
 
     public static bool IOSeek(StreamReader iStream, string iString)
     {
-        bool flag;
         try
         {
             do
                 ;
             while (FileIO.IOGrab(iStream)[0] != iString);
-            flag = true;
+            return true;
         }
         catch (Exception ex)
         {
-            int num = (int)MessageBox.Show("An error has occured when reading the stream. Error: " + ex.Message);
-            flag = false;
+            MessageBox.Show("An error has occured when reading the stream. Error: " + ex.Message);
+            return false;
         }
-        return flag;
     }
 
     public static bool CopyFolder(string src, string dest)
     {
         bool flag;
         if (!Directory.Exists(src))
+            return false;
+
+        if (!Directory.Exists(dest))
         {
-            flag = false;
-        }
-        else
-        {
-            if (!Directory.Exists(dest))
+            try
             {
-                try
-                {
-                    Directory.CreateDirectory(dest);
-                }
-                catch (Exception ex)
-                {
-                    int num = (int)MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
+                Directory.CreateDirectory(dest);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
+                return false;
+            }
+        }
+        if (!FileIO.FolderCopy(new DirectoryInfo(src), dest))
+            return false;
+        try
+        {
+            string str = FileIO.StripSlash(src) + ".old";
+            src = FileIO.StripSlash(src);
+            int num = 0;
+            while (Directory.Exists(str))
+            {
+                ++num;
+                str = src + ".old." + num;
+                if (num > 100)
                     return false;
-                }
             }
-            if (FileIO.FolderCopy(new DirectoryInfo(src), dest))
-            {
-                try
-                {
-                    string str = FileIO.StripSlash(src) + ".old";
-                    src = FileIO.StripSlash(src);
-                    int num = 0;
-                    while (Directory.Exists(str))
-                    {
-                        ++num;
-                        str = src + ".old." + num;
-                        if (num > 100)
-                            return false;
-                    }
-                    Directory.Move(src, str);
-                }
-                catch (Exception ex)
-                {
-                    int num = (int)MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
-                    return true;
-                }
-                flag = true;
-            }
-            else
-                flag = false;
+            Directory.Move(src, str);
         }
-        return flag;
+        catch (Exception ex)
+        {
+            MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
+            return true;
+        }
+        return true;
     }
 
     static bool FolderCopy(DirectoryInfo iDi, string dest)
-
     {
         DirectoryInfo[] directories = iDi.GetDirectories();
         FileInfo[] files = iDi.GetFiles();
@@ -158,7 +131,7 @@ public static class FileIO
             }
             catch (Exception ex)
             {
-                int num = (int)MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
+                MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
                 return false;
             }
         }
@@ -176,7 +149,7 @@ public static class FileIO
             }
             catch (Exception ex)
             {
-                int num = (int)MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
+                MessageBox.Show("An error has occured when copying the folder. Error: " + ex.Message);
                 return false;
             }
         }

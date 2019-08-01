@@ -584,7 +584,7 @@
         }
       ],
       "FullSetName": "Pets.Blaster_AR_Snipe",
-      "CastTime": 3.828,
+      "CastTime": 3.67,
       "AoEModifier": 1.0
     },
     {
@@ -1147,7 +1147,7 @@
         }
       ],
       "FullSetName": "Pets.Blaster_AR_Snipe",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     }
   ]

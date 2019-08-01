@@ -184,7 +184,6 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Energy_Drone2",
-      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -335,7 +334,6 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Energy_Drone2",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -448,7 +446,6 @@
         }
       ],
       "FullSetName": "Kheldian_Pets.Energy_Drone2",
-      "CastTime": 0.132,
       "AoEModifier": 2.5
     }
   ]

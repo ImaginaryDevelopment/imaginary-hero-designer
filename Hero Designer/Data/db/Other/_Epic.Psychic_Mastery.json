@@ -319,7 +319,7 @@
         }
       ],
       "FullSetName": "Epic.Psychic_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -473,7 +473,7 @@
         }
       ],
       "FullSetName": "Epic.Psychic_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -948,7 +948,7 @@
         }
       ],
       "FullSetName": "Epic.Psychic_Mastery",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1115,7 +1115,7 @@
         }
       ],
       "FullSetName": "Epic.Psychic_Mastery",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -1367,7 +1367,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Epic.Psychic_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.13,
       "Slottable": true,
       "AoEModifier": 2.5
     }

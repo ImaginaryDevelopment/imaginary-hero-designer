@@ -143,7 +143,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Support",
-      "CastTime": 2.508,
+      "CastTime": 2.27,
       "AoEModifier": 1.0
     },
     {
@@ -514,7 +514,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Clockwork_Support",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "AoEModifier": 1.0
     }
   ]

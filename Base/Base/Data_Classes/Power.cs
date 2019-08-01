@@ -785,7 +785,7 @@ namespace Base.Data_Classes
             int[] numArray1 = new int[this.Effects.Length];
             for (int index1 = 0; index1 <= this.Effects.Length - 1; ++index1)
             {
-                if ((MidsContext.Config.Suppression & this.Effects[index1].Suppression) == Enums.eSuppress.None & (MidsContext.Config.Inc.PvE & this.Effects[index1].PvMode != Enums.ePvX.PvP | !MidsContext.Config.Inc.PvE & this.Effects[index1].PvMode != Enums.ePvX.PvE))
+                if ((MidsContext.Config.Suppression & this.Effects[index1].Suppression) == Enums.eSuppress.None & (!MidsContext.Config.Inc.DisablePvE & this.Effects[index1].PvMode != Enums.ePvX.PvP | MidsContext.Config.Inc.DisablePvE & this.Effects[index1].PvMode != Enums.ePvX.PvE))
                 {
                     numArray1[index1] = (int)(this.Effects[index1].EffectClass + 1);
                     if ((double)Math.Abs(this.Effects[index1].Probability - 1f) < 0.01)
@@ -975,82 +975,82 @@ namespace Base.Data_Classes
 
         public int GetDurationEffectID()
         {
-            int num1 = -1;
+            int idx = -1;
             Enums.eEffectClass eEffectClass = Enums.eEffectClass.Ignored;
-            float num2 = 0.0f;
-            float num3 = 0.0f;
-            bool flag1 = false;
+            float probability = 0.0f;
+            float duration = 0.0f;
+            bool isDmg = false;
             Enums.eEffectType eEffectType = Enums.eEffectType.None;
-            float num4 = 0.0f;
-            bool flag2 = false;
-            bool flag3 = false;
-            bool flag4 = false;
-            int num5 = int.MaxValue;
+            float mag = 0.0f;
+            bool buffable = false;
+            bool isDefiance = false;
+            bool isEntCreate = false;
+            int delayTime = int.MaxValue;
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
-                bool flag5 = false;
-                if (MidsContext.Config.Inc.PvE & this.Effects[index].PvMode != Enums.ePvX.PvP | !MidsContext.Config.Inc.PvE & this.Effects[index].PvMode != Enums.ePvX.PvE && ((double)this.Effects[index].Duration > 0.0 | this.Effects[index].EffectType == Enums.eEffectType.EntCreate) & this.Effects[index].EffectClass != Enums.eEffectClass.Ignored)
+                bool applies = false;
+                if (!MidsContext.Config.Inc.DisablePvE & this.Effects[index].PvMode != Enums.ePvX.PvP | MidsContext.Config.Inc.DisablePvE & this.Effects[index].PvMode != Enums.ePvX.PvE && (Effects[index].Duration > 0.0 | this.Effects[index].EffectType == Enums.eEffectType.EntCreate) & this.Effects[index].EffectClass != Enums.eEffectClass.Ignored)
                 {
                     if (this.Effects[index].EffectClass < eEffectClass)
-                        flag5 = true;
-                    if ((double)this.Effects[index].Probability > (double)num2 & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance)
-                        flag5 = true;
-                    if (this.Effects[index].Buffable & !flag2)
-                        flag5 = true;
-                    if (this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance & flag3)
-                        flag5 = true;
-                    if ((double)Math.Abs(this.Effects[index].Probability - num2) < 0.01 & (double)this.Effects[index].Duration > (double)num3 & !this.Effects[index].isEnhancementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
+                        applies = true;
+                    if (Effects[index].Probability > (double)probability & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance)
+                        applies = true;
+                    if (this.Effects[index].Buffable & !buffable)
+                        applies = true;
+                    if (this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance & isDefiance)
+                        applies = true;
+                    if (Math.Abs(this.Effects[index].Probability - probability) < 0.01 & Effects[index].Duration > (double)duration & !this.Effects[index].isEnhancementEffect & this.Effects[index].SpecialCase != Enums.eSpecialCase.Defiance && eEffectType != Enums.eEffectType.Mez | this.Effects[index].EffectType == Enums.eEffectType.Mez)
                     {
                         if (eEffectType == Enums.eEffectType.Mez & this.Effects[index].EffectType == Enums.eEffectType.Mez)
                         {
-                            if ((double)this.Effects[index].Mag > (double)num4 || this.Effects[index].SpecialCase == Enums.eSpecialCase.Domination && MidsContext.Character.Domination)
-                                flag5 = true;
+                            if (Effects[index].Mag > (double)mag || this.Effects[index].SpecialCase == Enums.eSpecialCase.Domination && MidsContext.Character.Domination)
+                                applies = true;
                         }
                         else
-                            flag5 = true;
+                            applies = true;
                     }
-                    if ((double)num5 > (double)this.Effects[index].DelayedTime & (double)this.Effects[index].DelayedTime > 5.0)
-                        flag5 = true;
-                    if ((double)Math.Abs(this.Effects[index].Probability - 1f) < 0.01 & flag1 & this.Effects[index].EffectType == Enums.eEffectType.Mez)
-                        flag5 = true;
-                    if (this.Effects[index].EffectType == Enums.eEffectType.Mez & this.Effects[index].MezType == Enums.eMez.Taunt & this.Effects[index].EffectClass != Enums.eEffectClass.Primary)
-                        flag5 = false;
+                    if (delayTime > (double)this.Effects[index].DelayedTime & Effects[index].DelayedTime > 5.0)
+                        applies = true;
+                    if (Math.Abs(this.Effects[index].Probability - 1f) < 0.01 & isDmg & this.Effects[index].EffectType == Enums.eEffectType.Mez)
+                        applies = true;
+                    if (this.Effects[index].EffectType == Enums.eEffectType.Mez && this.Effects[index].MezType == Enums.eMez.Taunt && this.Effects[index].EffectClass != Enums.eEffectClass.Primary)
+                        applies = false;
                     if (((this.Effects[index].EffectClass > eEffectClass ? 1 : 0) & (this.Effects[index].SpecialCase != Enums.eSpecialCase.Domination ? 1 : (!MidsContext.Character.Domination ? 1 : 0))) != 0)
-                        flag5 = false;
-                    if (this.Effects[index].EffectType == Enums.eEffectType.EntCreate & !flag4 & (double)this.Effects[index].DelayedTime < 20.0 & eEffectType != Enums.eEffectType.Mez)
-                        flag5 = true;
-                    if (flag4 & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & ((double)this.Effects[index].Duration < (double)num3 | (double)Math.Abs(num3) < 0.01 | (double)this.Effects[index].DelayedTime > (double)num5 | (double)this.Effects[index].Mag < 0.0 & this.Effects[index].ToWho == Enums.eToWho.Self))
-                        flag5 = false;
-                    if (flag4 & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & (double)this.Effects[index].Absorbed_Duration > (double)num3)
-                        flag5 = true;
-                    if (eEffectType == Enums.eEffectType.Mez & (double)num4 < 0.0 & (this.Effects[index].EffectType == Enums.eEffectType.Resistance | this.Effects[index].EffectType == Enums.eEffectType.Regeneration) & (double)this.Effects[index].Mag > 0.0)
-                        flag5 = true;
+                        applies = false;
+                    if (this.Effects[index].EffectType == Enums.eEffectType.EntCreate & !isEntCreate & Effects[index].DelayedTime < 20.0 & eEffectType != Enums.eEffectType.Mez)
+                        applies = true;
+                    if (isEntCreate & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & (Effects[index].Duration < (double)duration | Math.Abs(duration) < 0.01 | Effects[index].DelayedTime > (double)delayTime | Effects[index].Mag < 0.0 & this.Effects[index].ToWho == Enums.eToWho.Self))
+                        applies = false;
+                    if (isEntCreate & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & Effects[index].Absorbed_Duration > (double)duration)
+                        applies = true;
+                    if (eEffectType == Enums.eEffectType.Mez & mag < 0.0 & (this.Effects[index].EffectType == Enums.eEffectType.Resistance | this.Effects[index].EffectType == Enums.eEffectType.Regeneration) & Effects[index].Mag > 0.0)
+                        applies = true;
                     if (this.Effects[index].EffectType == Enums.eEffectType.SetMode)
-                        flag5 = false;
-                    if (flag5)
+                        applies = false;
+                    if (applies)
                     {
-                        num1 = index;
+                        idx = index;
                         eEffectClass = this.Effects[index].EffectClass;
-                        num2 = this.Effects[index].Probability;
-                        num3 = !(flag4 & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & (double)this.Effects[index].Absorbed_Duration > (double)num3) ? this.Effects[index].Duration : this.Effects[index].Absorbed_Duration;
-                        flag1 = this.Effects[index].EffectType == Enums.eEffectType.Damage;
+                        probability = this.Effects[index].Probability;
+                        duration = !(isEntCreate & this.Effects[index].EffectType != Enums.eEffectType.EntCreate & Effects[index].Absorbed_Duration > (double)duration) ? this.Effects[index].Duration : this.Effects[index].Absorbed_Duration;
+                        isDmg = this.Effects[index].EffectType == Enums.eEffectType.Damage;
                         eEffectType = this.Effects[index].EffectType;
-                        num4 = this.Effects[index].Mag;
-                        flag2 = this.Effects[index].Buffable;
-                        flag3 = this.Effects[index].SpecialCase == Enums.eSpecialCase.Defiance;
-                        flag4 = this.Effects[index].EffectType == Enums.eEffectType.EntCreate;
-                        num5 = (int)this.Effects[index].DelayedTime;
+                        mag = this.Effects[index].Mag;
+                        buffable = this.Effects[index].Buffable;
+                        isDefiance = this.Effects[index].SpecialCase == Enums.eSpecialCase.Defiance;
+                        isEntCreate = this.Effects[index].EffectType == Enums.eEffectType.EntCreate;
+                        delayTime = (int)this.Effects[index].DelayedTime;
                     }
                 }
             }
-            return num1;
+            return idx;
         }
 
         public float[] GetDef(int buffDebuff = 0)
         {
             float[] numArray = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
             bool flag = false;
-            Enums.ePvX ePvX = MidsContext.Config.Inc.PvE ? Enums.ePvX.PvE : Enums.ePvX.PvP;
+            Enums.ePvX ePvX = !MidsContext.Config.Inc.DisablePvE ? Enums.ePvX.PvE : Enums.ePvX.PvP;
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
                 if (this.Effects[index].EffectType == Enums.eEffectType.Defense & (double)this.Effects[index].Probability > 0.0 & this.Effects[index].CanInclude() && buffDebuff == 0 | buffDebuff < 0 & (double)this.Effects[index].Mag < 0.0 | buffDebuff > 0 & (double)this.Effects[index].Mag > 0.0 && (this.Effects[index].Suppression & MidsContext.Config.Suppression) == Enums.eSuppress.None && this.Effects[index].PvMode == ePvX | this.Effects[index].PvMode == Enums.ePvX.Any)
@@ -1071,31 +1071,31 @@ namespace Base.Data_Classes
 
         public float[] GetRes(bool pvE = true)
         {
-            float[] numArray = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-            bool flag = false;
+            float[] resists = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
+            bool hasDamage = false;
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
-                if (this.Effects[index].EffectType == Enums.eEffectType.Resistance & (double)this.Effects[index].Probability > 0.0 & this.Effects[index].CanInclude() && this.Effects[index].PvMode != Enums.ePvX.PvP & pvE | this.Effects[index].PvMode != Enums.ePvX.PvE & !pvE)
+                if (this.Effects[index].EffectType == Enums.eEffectType.Resistance & Effects[index].Probability > 0.0 & this.Effects[index].CanInclude() && (this.Effects[index].PvMode != Enums.ePvX.PvP & pvE) | this.Effects[index].PvMode != Enums.ePvX.PvE & !pvE)
                 {
-                    numArray[(int)this.Effects[index].DamageType] += this.Effects[index].Mag;
+                    resists[(int)this.Effects[index].DamageType] += this.Effects[index].Mag;
                     if (this.Effects[index].DamageType != Enums.eDamage.None)
-                        flag = true;
+                        hasDamage = true;
                 }
             }
-            if (!flag)
+            if (!hasDamage)
             {
-                float num = numArray[0];
-                for (int index = 0; index <= numArray.Length - 1; ++index)
-                    numArray[index] = num;
+                float num = resists[0];
+                for (int index = 0; index <= resists.Length - 1; ++index)
+                    resists[index] = num;
             }
-            return numArray;
+            return resists;
         }
 
         public bool HasDefEffects()
         {
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
-                if (this.Effects[index].EffectType == Enums.eEffectType.Defense & (double)this.Effects[index].Probability > 0.0 & (this.Effects[index].Suppression & MidsContext.Config.Suppression) == Enums.eSuppress.None & (this.Effects[index].PvMode != Enums.ePvX.PvP & MidsContext.Config.Inc.PvE | this.Effects[index].PvMode != Enums.ePvX.PvE & !MidsContext.Config.Inc.PvE))
+                if (this.Effects[index].EffectType == Enums.eEffectType.Defense & (double)this.Effects[index].Probability > 0.0 & (this.Effects[index].Suppression & MidsContext.Config.Suppression) == Enums.eSuppress.None & (this.Effects[index].PvMode != Enums.ePvX.PvP & !MidsContext.Config.Inc.DisablePvE | this.Effects[index].PvMode != Enums.ePvX.PvE & MidsContext.Config.Inc.DisablePvE))
                     return true;
             }
             return false;
@@ -1105,7 +1105,7 @@ namespace Base.Data_Classes
         {
             for (int index = 0; index <= this.Effects.Length - 1; ++index)
             {
-                if (this.Effects[index].EffectType == Enums.eEffectType.Resistance & (double)this.Effects[index].Probability > 0.0 & (this.Effects[index].Suppression & MidsContext.Config.Suppression) == Enums.eSuppress.None & (this.Effects[index].PvMode != Enums.ePvX.PvP & MidsContext.Config.Inc.PvE | this.Effects[index].PvMode != Enums.ePvX.PvE & !MidsContext.Config.Inc.PvE))
+                if (this.Effects[index].EffectType == Enums.eEffectType.Resistance & (double)this.Effects[index].Probability > 0.0 & (this.Effects[index].Suppression & MidsContext.Config.Suppression) == Enums.eSuppress.None & (this.Effects[index].PvMode != Enums.ePvX.PvP & !MidsContext.Config.Inc.DisablePvE | this.Effects[index].PvMode != Enums.ePvX.PvE & MidsContext.Config.Inc.DisablePvE))
                     return true;
             }
             return false;

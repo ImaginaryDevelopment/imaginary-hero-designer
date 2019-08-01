@@ -173,7 +173,6 @@
         }
       ],
       "FullSetName": "Pets.FlameThrower",
-      "CastTime": 0.132,
       "AoEModifier": 1.6
     },
     {
@@ -262,7 +261,6 @@
         }
       ],
       "FullSetName": "Pets.FlameThrower",
-      "CastTime": 0.132,
       "AoEModifier": 1.6
     }
   ]

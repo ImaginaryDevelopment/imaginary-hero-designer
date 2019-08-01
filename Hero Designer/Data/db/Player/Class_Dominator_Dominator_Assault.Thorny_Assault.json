@@ -275,7 +275,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -553,7 +553,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -807,7 +807,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 2.52997327
     },
@@ -1321,7 +1321,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 2.63999987,
+      "CastTime": 2.43,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1711,7 +1711,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1958,7 +1958,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -2069,7 +2069,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.63,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2455,7 +2455,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "Slottable": true,
       "AoEModifier": 1.35699379
     },
@@ -2789,7 +2789,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Thorny_Assault",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "Slottable": true,
       "AoEModifier": 1.0
     }

@@ -326,7 +326,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Achilles_Heel_C",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

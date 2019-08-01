@@ -148,7 +148,6 @@
       "HasGrantPowerEffect": true,
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Gauntleted_Fist_F",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

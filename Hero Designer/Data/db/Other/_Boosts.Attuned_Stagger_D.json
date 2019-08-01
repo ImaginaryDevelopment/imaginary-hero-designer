@@ -147,7 +147,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Stagger_D",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

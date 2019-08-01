@@ -19,14 +19,14 @@ namespace Hero_Designer
 {
     public class clsToonX : Character
     {
-        IPower[] _buffedPower = new IPower[0];
-        IPower[] _mathPower = new IPower[0];
+        IPower[] _buffedPower = Array.Empty<IPower>();
+        IPower[] _mathPower = Array.Empty<IPower>();
         Enums.BuffsX _selfBuffs;
         Enums.BuffsX _selfEnhance;
 
         void ApplyPvpDr()
         {
-            if (!MidsContext.Config.Inc.PvE) ;
+            if (!MidsContext.Config.Inc.DisablePvE) ;
         }
 
         static PopUp.StringValue BuildEDItem(
@@ -479,7 +479,7 @@ namespace Hero_Designer
 
         bool GBPA_AddEnhFX(ref IPower iPower, int iIndex)
         {
-            if (!MidsContext.Config.I9.CalculateEnahncementFX || iIndex < 0 || iPower == null)
+            if (MidsContext.Config.I9.IgnoreEnhFX || iIndex < 0 || iPower == null)
                 return false;
             for (int index1 = 0; index1 <= this.CurrentBuild.Powers[iIndex].SlotCount - 1; ++index1)
             {
@@ -1188,7 +1188,7 @@ namespace Hero_Designer
             }
             IPower bonusVirtualPower = this.CurrentBuild.SetBonusVirtualPower;
             clsToonX.GBD_Stage(ref bonusVirtualPower, ref nBuffs, enhancementPass);
-            if (MidsContext.Config.Inc.PvE)
+            if (!MidsContext.Config.Inc.DisablePvE)
                 return;
             int index1 = DatabaseAPI.NidFromUidPower("Temporary_Powers.Temporary_Powers.PVP_Resist_Bonus");
             if (index1 > -1)
@@ -1626,7 +1626,7 @@ namespace Hero_Designer
                             popupData.Sections[index1].Add(enhancementSet.DisplayName + " (" + Conversions.ToString(setInfo[senInfoIdx].SlottedCount) + "/" + Conversions.ToString(enhancementSet.Enhancements.Length) + ")", PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
                             for (int bonusIdx = 0; bonusIdx <= enhancementSet.Bonus.Length - 1; ++bonusIdx)
                             {
-                                if (setInfo[senInfoIdx].SlottedCount >= enhancementSet.Bonus[bonusIdx].Slotted & (enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvP & !MidsContext.Config.Inc.PvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvE & MidsContext.Config.Inc.PvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.Any))
+                                if (setInfo[senInfoIdx].SlottedCount >= enhancementSet.Bonus[bonusIdx].Slotted & (enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvP & MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.PvE & !MidsContext.Config.Inc.DisablePvE | enhancementSet.Bonus[bonusIdx].PvMode == Enums.ePvX.Any))
                                     popupData.Sections[index1].Add(enhancementSet.GetEffectString(bonusIdx, false, true), PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 1);
                             }
                             for (int enhIdx = 0; enhIdx <= this.CurrentBuild.SetBonus[index2].SetInfo[senInfoIdx].EnhIndexes.Length - 1; ++enhIdx)
@@ -1765,7 +1765,7 @@ namespace Hero_Designer
                         }
                     }
                 }
-                if (MidsContext.Config.ShowAlphaPopup)
+                if (!MidsContext.Config.DisableAlphaPopup)
                 {
                     for (int index1 = 0; index1 <= this.CurrentBuild.Powers.Count - 1; ++index1)
                     {
@@ -1939,7 +1939,7 @@ namespace Hero_Designer
                         section.Content[section.Content.Length - 1] = clsToonX.BuildEDItem(index, nMez, schedMez, Enum.GetName(eMez.GetType(), index), afterED4);
                     }
                 }
-                if (!MidsContext.Config.ShowAlphaPopup)
+                if (MidsContext.Config.DisableAlphaPopup)
                     section.Add("Enhancement values exclude Alpha ability (see Data View for full info, or change this option in the Configuration panel)", PopUp.Colors.Text, 0.8f, FontStyle.Regular, 1);
             }
             return section;
@@ -2051,7 +2051,7 @@ namespace Hero_Designer
                     else
                         throw new Exception("Reached end of data wihout finding header.");
                 }
-                while (!(string.Equals(a, "HeroDataVersion", StringComparison.OrdinalIgnoreCase) | string.Equals(a, "MHDz", StringComparison.OrdinalIgnoreCase)));
+                while (!(string.Equals(a, Files.Headers.Save.Uncompressed, StringComparison.OrdinalIgnoreCase) | string.Equals(a, Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase)));
             }
             catch (Exception ex)
             {
@@ -2060,14 +2060,14 @@ namespace Hero_Designer
                 return false;
             }
 
-            if (string.Equals(a, "HeroDataVersion", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(a, Files.Headers.Save.Uncompressed, StringComparison.OrdinalIgnoreCase))
             {
                 iStream.BaseStream.Seek(0L, SeekOrigin.Begin);
                 return this.ReadInternalDataUC(iStream);
             }
             else
             {
-                if (string.Equals(a, "MHDz", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(a, Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase))
                 {
                     ASCIIEncoding asciiEncoding = new ASCIIEncoding();
                     int outSize = (int)Math.Round(Conversion.Val(strArray[1]));
@@ -2101,7 +2101,7 @@ namespace Hero_Designer
             {
                 strArray1 = clsToonX.IoGrab2(iStream, "|", char.MinValue);
             }
-            while (strArray1[0] != "HeroDataVersion");
+            while (strArray1[0] != Files.Headers.Save.Uncompressed);
             strArray1[1] = strArray1[1].Replace(",", ".");
             float nVer = (float)Conversion.Val(strArray1[1]);
             bool flag;
@@ -2268,7 +2268,7 @@ namespace Hero_Designer
         public bool StringToInternalData(string iString)
         {
             bool flag1;
-            if (iString.IndexOf("MHDz", StringComparison.Ordinal) == -1 & iString.IndexOf("HeroDataVersion", StringComparison.Ordinal) == -1)
+            if (iString.IndexOf(Files.Headers.Save.Compressed, StringComparison.Ordinal) == -1 & iString.IndexOf(Files.Headers.Save.Uncompressed, StringComparison.Ordinal) == -1)
             {
                 if (iString.IndexOf("Primary", StringComparison.Ordinal) > -1 & iString.IndexOf("Secondary", StringComparison.Ordinal) > -1)
                 {
@@ -2306,7 +2306,7 @@ namespace Hero_Designer
                 }
                 try
                 {
-                    if (iString.IndexOf("MHDz", StringComparison.Ordinal) < 0)
+                    if (iString.IndexOf(Files.Headers.Save.Compressed, StringComparison.Ordinal) < 0)
                     {
                         iString = iString.Replace("+\r\n+", "");
                         iString = iString.Replace("+ \r\n+", "");

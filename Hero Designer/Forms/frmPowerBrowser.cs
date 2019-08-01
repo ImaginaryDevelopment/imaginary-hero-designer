@@ -677,7 +677,7 @@ namespace Hero_Designer
                         break;
                 }
                 extendedBitmap1.Graphics.DrawImageUnscaled((Image)extendedBitmap2.Bitmap, new System.Drawing.Point(1, 1));
-                extendedBitmap1.Graphics.DrawString(s, font, (Brush)solidBrush4, layoutRectangle, format);
+                extendedBitmap1.Graphics.DrawString(s, font, solidBrush4, layoutRectangle, format);
                 this.ilPS.Images.Add((Image)new Bitmap((Image)extendedBitmap1.Bitmap));
             }
         }

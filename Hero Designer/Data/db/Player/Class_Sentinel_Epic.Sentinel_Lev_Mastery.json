@@ -328,7 +328,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Lev_Mastery",
-      "CastTime": 2.508,
+      "CastTime": 2.37,
       "Slottable": true,
       "AoEModifier": 2.44994545
     },
@@ -514,7 +514,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Lev_Mastery",
-      "CastTime": 2.376,
+      "CastTime": 2.23,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1147,7 +1147,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Lev_Mastery",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.73993444
     },
@@ -1426,7 +1426,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Lev_Mastery",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1580,7 +1580,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Lev_Mastery",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

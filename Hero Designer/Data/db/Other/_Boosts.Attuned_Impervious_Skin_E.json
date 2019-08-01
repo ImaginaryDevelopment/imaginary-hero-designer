@@ -143,7 +143,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Impervious_Skin_E",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

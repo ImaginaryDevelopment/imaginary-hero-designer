@@ -233,7 +233,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 1.31999993,
+      "CastTime": 1.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -442,7 +442,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -789,7 +789,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1077,7 +1077,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2038,7 +2038,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2675,7 +2675,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2909,7 +2909,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 2.35000014
     },
@@ -3232,7 +3232,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "Slottable": true,
       "AoEModifier": 2.8
     },
@@ -3475,7 +3475,7 @@
         }
       ],
       "FullSetName": "Mastermind_Buff.Force_Field",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 8.5
     }

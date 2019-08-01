@@ -43,6 +43,10 @@
     <Compile Include="ZStatus.Designer.cs">
       <DependentUpon>ZStatus.cs</DependentUpon>
     </Compile>
+    <Reference Include="FSharp.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -72,7 +76,6 @@
     <Compile Include="I9Slot.cs" />
     <Compile Include="I9SetData.cs" />
     <Compile Include="I9Gfx.cs" />
-    <Compile Include="HistoryMap.cs" />
     <Compile Include="Files.cs" />
     <Compile Include="FileIO.cs" />
     <Compile Include="ExportConfig.cs" />
@@ -111,6 +114,15 @@
     <EmbeddedResource Include="ZStatus.resx">
       <DependentUpon>ZStatus.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeroDesigner.Schema\HeroDesigner.Schema.fsproj">
+      <Project>{7b1c2fff-0399-4a7a-82ef-126660356121}</Project>
+      <Name>HeroDesigner.Schema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

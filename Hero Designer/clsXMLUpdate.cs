@@ -124,7 +124,7 @@ namespace Hero_Designer
                 var runningVer = typeof(frmMain).Assembly.GetName().Version;
                 // I don't trust that != isn't reference comparison for the version type
                 if (runningVer.CompareTo(availVer) < 0) return (eCheckResponse.Updates, $"Version {remoteversion}, installed is {runningVer.ToString()}");
-                return (eCheckResponse.NoUpdates, null);
+                return (eCheckResponse.NoUpdates, $"Installed is {runningVer.ToString()}, remote is Version {remoteversion}");
             }
             catch (Exception ex)
             {

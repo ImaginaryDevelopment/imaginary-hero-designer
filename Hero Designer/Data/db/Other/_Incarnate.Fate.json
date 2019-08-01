@@ -255,7 +255,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -621,7 +621,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -2801,7 +2801,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -5387,7 +5387,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -7973,7 +7973,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 5.5
     },
     {
@@ -9785,7 +9785,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -14126,7 +14126,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.112,
+      "CastTime": 1.97,
       "AoEModifier": 10.0
     },
     {
@@ -14362,7 +14362,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 5.5
     },
     {
@@ -14598,7 +14598,7 @@
         }
       ],
       "FullSetName": "Incarnate.Fate",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 10.0
     }
   ]

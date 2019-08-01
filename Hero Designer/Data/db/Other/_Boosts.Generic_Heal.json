@@ -213,7 +213,6 @@
         }
       ],
       "FullSetName": "Boosts.Generic_Heal",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

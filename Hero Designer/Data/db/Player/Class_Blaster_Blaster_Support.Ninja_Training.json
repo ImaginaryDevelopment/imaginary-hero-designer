@@ -763,7 +763,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1239,7 +1239,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1761,7 +1761,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3295,7 +3295,6 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3794,7 +3793,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -4068,7 +4067,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4764,7 +4763,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 4.0
     },
@@ -5378,7 +5377,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.862474
     },
@@ -5878,7 +5877,7 @@
         }
       ],
       "FullSetName": "Blaster_Support.Ninja_Training",
-      "CastTime": 1.98,
+      "CastTime": 1.83,
       "Slottable": true,
       "AoEModifier": 1.24965537
     }

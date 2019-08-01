@@ -119,7 +119,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_3",
-      "CastTime": 4.092,
+      "CastTime": 3.83,
       "AoEModifier": 1.0
     },
     {
@@ -953,7 +953,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_3",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 1.0
     },
     {
@@ -1038,7 +1038,6 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_3",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -1460,7 +1459,7 @@
         }
       ],
       "FullSetName": "Mastermind_Pets.Spec_Ops_3",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 3.25
     }
   ]

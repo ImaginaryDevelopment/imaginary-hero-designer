@@ -154,7 +154,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Boss",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.27599168
     },
     {
@@ -287,7 +287,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Boss",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     },
     {
@@ -384,7 +384,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Boss",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -517,7 +517,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Boss",
-      "CastTime": 1.584,
+      "CastTime": 1.33,
       "AoEModifier": 1.0
     },
     {
@@ -653,7 +653,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Cimeroran_Boss",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 1.32832956
     }
   ]

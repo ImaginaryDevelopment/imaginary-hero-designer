@@ -208,7 +208,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Replacement_Powers",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 1.0
     },
     {
@@ -265,7 +265,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Replacement_Powers",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "AoEModifier": 2.5
     },
     {
@@ -319,7 +319,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Temporary_Powers.Replacement_Powers",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 1.0
     }
   ]

@@ -575,7 +575,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1079,7 +1079,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1634,7 +1634,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -1739,7 +1739,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 3.3,
+      "CastTime": 3.1,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1956,7 +1956,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -2289,7 +2289,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 4.75
     },
@@ -2400,7 +2400,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2721,7 +2721,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2831,7 +2831,7 @@
         }
       ],
       "FullSetName": "Controller_Control.Earth_Control",
-      "CastTime": 3.432,
+      "CastTime": 3.2,
       "Slottable": true,
       "AoEModifier": 1.0
     }

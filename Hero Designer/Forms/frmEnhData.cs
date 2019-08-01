@@ -560,7 +560,7 @@ namespace Hero_Designer
             int enhPadding1 = this.EnhPadding;
             int enhPadding2 = this.EnhPadding;
             int num1 = 0;
-            this.bxClass.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClass.ClipRect);
+            this.bxClass.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClass.ClipRect);
             int num2 = this.myEnh.ClassID.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
@@ -584,7 +584,7 @@ namespace Hero_Designer
             int enhPadding1 = this.EnhPadding;
             int enhPadding2 = this.EnhPadding;
             int num1 = 0;
-            this.bxClassList.Graphics.FillRectangle((Brush)new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClassList.ClipRect);
+            this.bxClassList.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClassList.ClipRect);
             int num2 = DatabaseAPI.Database.EnhancementClasses.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {

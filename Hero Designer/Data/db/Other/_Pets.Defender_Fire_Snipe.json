@@ -202,7 +202,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Fire_Snipe",
-      "CastTime": 4.884,
+      "CastTime": 4.67,
       "AoEModifier": 1.0
     },
     {
@@ -385,7 +385,7 @@
         }
       ],
       "FullSetName": "Pets.Defender_Fire_Snipe",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "AoEModifier": 1.0
     }
   ]

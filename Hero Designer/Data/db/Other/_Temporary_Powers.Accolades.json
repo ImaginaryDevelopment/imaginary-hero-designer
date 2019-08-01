@@ -151,7 +151,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -600,7 +599,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -1089,7 +1088,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 3.168,
+      "CastTime": 3.0,
       "AoEModifier": 1.0
     },
     {
@@ -1578,7 +1577,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -1766,7 +1765,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 1.0
     },
     {
@@ -1850,7 +1849,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2038,7 +2036,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 1.0
     },
     {
@@ -2122,7 +2120,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2206,7 +2203,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2321,7 +2317,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2405,7 +2400,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2668,7 +2662,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -2758,7 +2752,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 1.0
     },
     {
@@ -2873,7 +2867,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -2993,7 +2986,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "AoEModifier": 1.0
     },
     {
@@ -3442,7 +3435,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 1.0
     },
     {
@@ -3526,7 +3519,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3610,7 +3602,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3694,7 +3685,6 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -3957,7 +3947,7 @@
         }
       ],
       "FullSetName": "Temporary_Powers.Accolades",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     }
   ]

@@ -2,6 +2,7 @@
 using Base.Data_Classes;
 using Base.Display;
 using Base.Master_Classes;
+using HeroDesigner.Schema;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -307,36 +308,36 @@ public class Build
 
     public HistoryMap[] BuildHistoryMap(bool enhNames, bool ioLevel = true)
     {
-        List<HistoryMap> historyMapList = new List<HistoryMap>();
+        var historyMapList = new List<HistoryMap>();
         for (int lvlIdx = 0; lvlIdx <= DatabaseAPI.Database.Levels.Length - 1; ++lvlIdx)
         {
             for (int powerIdx = 0; powerIdx <= this.Powers.Count - 1; ++powerIdx)
             {
                 PowerEntry power = this.Powers[powerIdx];
-                if ((power.Chosen || power.SubPowers.Length == 0 || power.SlotCount == 0) && power.Level == lvlIdx & power.Power != null)
+                if ((power.Chosen || power.SubPowers.Length == 0 || power.SlotCount == 0) && power.Level == lvlIdx && power.Power != null)
                 {
-                    HistoryMap historyMap = new HistoryMap()
+                    var historyMap = new HistoryMap()
                     {
                         Level = lvlIdx,
                         HID = powerIdx
                     };
-                    string str1 = string.Empty;
-                    string str2 = power.Chosen ? "Added" : "Recieved";
+                    string appendText = string.Empty;
+                    string choiceText = power.Chosen ? "Added" : "Recieved";
                     if (power.Slots.Length > 0)
                     {
                         historyMap.SID = 0;
                         if (power.Slots[0].Enhancement.Enh > -1)
                         {
                             if (enhNames)
-                                str1 = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
+                                appendText = " [" + DatabaseAPI.GetEnhancementNameShortWSet(power.Slots[0].Enhancement.Enh);
                             if (ioLevel && (DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[power.Slots[0].Enhancement.Enh].TypeID == Enums.eType.SetO))
-                                str1 = str1 + "-" + power.Slots[0].Enhancement.IOLevel;
-                            str1 += "]";
+                                appendText = appendText + "-" + power.Slots[0].Enhancement.IOLevel;
+                            appendText += "]";
                         }
                         else if (enhNames)
-                            str1 = " [Empty]";
+                            appendText = " [Empty]";
                     }
-                    historyMap.Text = "Level " + (lvlIdx + 1) + ": " + str2 + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + str1;
+                    historyMap.Text = "Level " + (lvlIdx + 1) + ": " + choiceText + " " + power.Power.DisplayName + " (" + Enum.GetName(DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType.GetType(), DatabaseAPI.Database.Powersets[power.NIDPowerset].SetType) + ")" + appendText;
                     historyMapList.Add(historyMap);
                 }
             }
@@ -1013,7 +1014,7 @@ public class Build
                 for (int index2 = 0; index2 < this.Powers[index1].SlotCount; ++index2)
                     i9SetData.Add(ref this.Powers[index1].Slots[index2].Enhancement);
             }
-            i9SetData.BuildEffects(MidsContext.Config.Inc.PvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
+            i9SetData.BuildEffects(!MidsContext.Config.Inc.DisablePvE ? Enums.ePvX.PvE : Enums.ePvX.PvP);
             if (!i9SetData.Empty)
                 this.SetBonus.Add(i9SetData);
         }
@@ -1023,35 +1024,30 @@ public class Build
     IPower GetSetBonusVirtualPower()
     {
         IPower power1 = new Power();
-        if (!MidsContext.Config.I9.CalculateSetBonusFX)
-        {
+        if (MidsContext.Config.I9.IgnoreSetBonusFX)
             return power1;
-        }
-        else
-        {
-            var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
-            int[] setCount = new int[nidPowers.Length];
-            for (int index = 0; index < setCount.Length; ++index)
-                setCount[index] = 0;
-            var effectList = new List<IEffect>();
-            foreach (var setBonus in this.SetBonus)
-                foreach (var setInfo in setBonus.SetInfo)
-                    foreach (var power in setInfo.Powers.Where(x => x > -1))
+        var nidPowers = DatabaseAPI.NidPowers("set_bonus", "");
+        int[] setCount = new int[nidPowers.Length];
+        for (int index = 0; index < setCount.Length; ++index)
+            setCount[index] = 0;
+        var effectList = new List<IEffect>();
+        foreach (var setBonus in this.SetBonus)
+            foreach (var setInfo in setBonus.SetInfo)
+                foreach (var power in setInfo.Powers.Where(x => x > -1))
+                {
+                    if (power > setCount.Length - 1)
+                        throw new IndexOutOfRangeException("power to setBonusArray");
+                    ++setCount[power];
+                    if (setCount[power] < 6)
                     {
-                        if (power > setCount.Length - 1)
-                            throw new IndexOutOfRangeException("power to setBonusArray");
-                        ++setCount[power];
-                        if (setCount[power] < 6)
-                        {
-                            for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
-                                effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
+                        for (int i = 0; i < DatabaseAPI.Database.Power[power].Effects.Length; ++i)
+                            effectList.Add((IEffect)DatabaseAPI.Database.Power[power].Effects[i].Clone());
 
-                        }
                     }
+                }
 
-            power1.Effects = effectList.ToArray();
-            return power1;
-        }
+        power1.Effects = effectList.ToArray();
+        return power1;
     }
 
     public IEffect[] GetCumulativeSetBonuses()

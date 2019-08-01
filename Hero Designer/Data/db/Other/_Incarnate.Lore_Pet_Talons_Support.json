@@ -424,7 +424,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Support",
-      "CastTime": 2.244,
+      "CastTime": 2.0,
       "AoEModifier": 10.0
     },
     {
@@ -623,7 +623,7 @@
         }
       ],
       "FullSetName": "Incarnate.Lore_Pet_Talons_Support",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     }
   ]

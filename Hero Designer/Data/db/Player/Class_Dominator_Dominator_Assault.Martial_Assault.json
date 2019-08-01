@@ -304,7 +304,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -553,7 +553,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -832,7 +832,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1079,7 +1079,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.458992
     },
@@ -1251,7 +1251,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1498,7 +1498,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -1607,7 +1607,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1889,7 +1889,7 @@
       ],
       "HasPowerOverrideEffect": true,
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 4.224,
+      "CastTime": 4.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2143,7 +2143,7 @@
         }
       ],
       "FullSetName": "Dominator_Assault.Martial_Assault",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.5
     }

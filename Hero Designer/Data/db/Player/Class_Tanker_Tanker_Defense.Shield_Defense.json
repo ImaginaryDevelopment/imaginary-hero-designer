@@ -435,7 +435,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -764,7 +764,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1030,7 +1030,6 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -2237,7 +2236,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3255,7 +3254,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3534,7 +3533,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "Slottable": true,
       "AoEModifier": 2.2
     },
@@ -3997,7 +3996,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -4146,7 +4145,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -5099,7 +5098,7 @@
         }
       ],
       "FullSetName": "Tanker_Defense.Shield_Defense",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 1.0
     }

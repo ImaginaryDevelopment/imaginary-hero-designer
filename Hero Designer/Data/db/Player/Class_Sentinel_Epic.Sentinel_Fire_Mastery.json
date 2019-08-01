@@ -423,7 +423,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Fire_Mastery",
-      "CastTime": 1.188,
+      "CastTime": 1.03,
       "Slottable": true,
       "AoEModifier": 5.5
     },
@@ -671,7 +671,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Fire_Mastery",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -918,7 +918,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Fire_Mastery",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -1180,7 +1180,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Fire_Mastery",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "Slottable": true,
       "AoEModifier": 2.5
     },
@@ -1328,7 +1328,7 @@
         }
       ],
       "FullSetName": "Epic.Sentinel_Fire_Mastery",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "Slottable": true,
       "AoEModifier": 4.75
     }

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base;
 using Base.Data_Classes;
@@ -37,14 +38,14 @@ namespace Hero_Designer
             }
             return null;
         }*/
-   
-        private static string ShrinkTheDatalink(string strUrl)
+
+        public static string ShrinkTheDatalink(string strUrl)
         {
             var url = "http://tinyurl.com/api-create.php?url=" + strUrl;
 
-            var objWebRequest = (HttpWebRequest) WebRequest.Create(url);
+            var objWebRequest = (HttpWebRequest)WebRequest.Create(url);
             objWebRequest.Method = "GET";
-            using (var objWebResponse = (HttpWebResponse) objWebRequest.GetResponse())
+            using (var objWebResponse = (HttpWebResponse)objWebRequest.GetResponse())
             {
                 var srReader = new StreamReader(objWebResponse.GetResponseStream());
 
@@ -58,7 +59,7 @@ namespace Hero_Designer
             }
         }
 
-        internal static void DiscordExport()
+        internal static async Task DiscordExport()
         {
             //Set vars and shrink the link
             Statistics displayStats = MidsContext.Character.DisplayStats;
@@ -67,13 +68,14 @@ namespace Hero_Designer
 
             var discord = (
                 Server: MidsContext.Config.DSelServer.Replace(" (Default)", ""),
-                User: MidsContext.Config.DNickName, Channel: MidsContext.Config.DChannel);
+                User: MidsContext.Config.DNickName,
+                Channel: MidsContext.Config.DChannel);
             var mrb = (
-                Level: Conversions.ToString(num), 
-                Archetype: MidsContext.Character.Archetype.DisplayName, 
-                PriPowerSet: MidsContext.Character.Powersets[0].DisplayName, 
+                Level: Conversions.ToString(num),
+                Archetype: MidsContext.Character.Archetype.DisplayName,
+                PriPowerSet: MidsContext.Character.Powersets[0].DisplayName,
                 SecPowerSet: MidsContext.Character.Powersets[1].DisplayName,
-                GlobRecharge: Strings.Format((float)((double)displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
+                GlobRecharge: Strings.Format((float)(displayStats.BuffHaste(false) - 100.0), "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
                 EndRecovery: Strings.Format(displayStats.EnduranceRecoveryPercentage(false), "###0") + "% (" + Strings.Format(displayStats.EnduranceRecoveryNumeric, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##") + "/s)",
                 //HPRegen: Strings.Format(displayStats.HealthRegenPercent(false), "###0") + "%",
                 //TotalDamageBuff: Strings.Format(displayStats.BuffDamage(false) - 100f, "##0.#") + "%",
@@ -81,11 +83,11 @@ namespace Hero_Designer
                 //TotalToHit: Strings.Format(displayStats.BuffToHit, "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "#") + "%",
                 ToonName: MidsContext.Character.Name,
                 Datalink: MidsCharacterFileFormat.MxDBuildSaveHyperlink(false, true));
-                var shrunkData = ShrinkTheDatalink(mrb.Datalink);
+            var shrunkData = ShrinkTheDatalink(mrb.Datalink);
             var embedurl = $"[Click Here to Download]({shrunkData})";
             byte[] data = Convert.FromBase64String("aHR0cDovL2hvb2tzLm1pZHNyZWJvcm4uY29tOjMwMDAvYXBpP3Rva2VuPVVtUWhUNGtEclMwZ0E1TUY1YUdsaTh6YllDVW1RaFQ0a0RyUzBnQTVNRjVhR2xpOHpiWUM=");
             string wString = Encoding.UTF8.GetString(data);
-            var httpWebRequest = (HttpWebRequest) WebRequest.Create(wString);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(wString);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
@@ -111,27 +113,51 @@ namespace Hero_Designer
                 streamWriter.Write(json);
             }
 
-            var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+            var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
                 switch (result)
                 {
                     case "Nickname not found in discord":
-                    {
-                        const string message = "Submission Failed! Check the Discord settings under configuration.";
-                        const string title = "Discord Export";
-                        MessageBox.Show(message, title);
-                        break;
-                    }
+                        {
+                            string message = $"Submission Failed: Your discord nickname was not found in the {discord.Server} discord server.";
+                            string title = "Discord Export";
+                            MessageBox.Show(message, title);
+                            break;
+                        }
 
-                    case "Nickname found":
-                    {
-                        const string message = "Submission Successful!! Your build should now be posted.";
-                        const string title = "Discord Export";
-                        MessageBox.Show(message, title);
-                        break;
-                    }
+                    case "Export Successful":
+                        {
+                            string message = $"Submission Successful!! Your build should now be posted in {discord.Channel} on the {discord.Server} server.";
+                            string title = "Discord Export";
+                            MessageBox.Show(message, title);
+                            break;
+                        }
+
+                    case "Export Failed":
+                        {
+                            string message = $"Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
+                            string title = "Discord Export";
+                            MessageBox.Show(message, title);
+                            break;
+                        }
+
+                    case "Failed to add export to queue":
+                        {
+                            string message = $"Submission Failed: Possible server error, please contact the RebornTeam.";
+                            string title = "Discord Export";
+                            MessageBox.Show(message, title);
+                            break;
+                        }
+
+                    case "RebornBot is not in the discord server":
+                        {
+                            string message = $"Submission Failed: RebornBot was not found in the {discord.Server}.";
+                            string title = "Discord Export";
+                            MessageBox.Show(message, title);
+                            break;
+                        }
                 }
             }
         }

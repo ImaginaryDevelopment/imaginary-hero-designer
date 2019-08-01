@@ -363,7 +363,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Villain_Pets.Kinetic_Melee_Assassins_Strike",
-      "CastTime": 2.904,
+      "CastTime": 2.67,
       "AoEModifier": 1.0
     },
     {
@@ -665,7 +665,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Kinetic_Melee_Assassins_Strike",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     }
   ]

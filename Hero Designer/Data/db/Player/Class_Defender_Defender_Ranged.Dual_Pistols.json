@@ -527,7 +527,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -1028,7 +1028,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
     },
@@ -1529,7 +1529,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 0.792,
+      "CastTime": 0.63,
       "AoEModifier": 1.0,
       "DisplayLocation": 8
     },
@@ -2451,7 +2451,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.188,
+      "CastTime": 1.0,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -3409,7 +3409,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -4440,7 +4440,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 2.15995646
     },
@@ -4526,7 +4526,6 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -5515,7 +5514,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25
     },
@@ -6609,7 +6608,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -7607,7 +7606,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -8739,7 +8738,7 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 2.557239
     },
@@ -9907,7 +9906,6 @@
         }
       ],
       "FullSetName": "Defender_Ranged.Dual_Pistols",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 4.75
     }

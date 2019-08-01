@@ -13,9 +13,10 @@ public class Tips
     {
         this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
         for (int index = 0; index <= this._tipStatus.Length - 1; ++index)
-            this._tipStatus[index] = 0;
+            this._tipStatus[index] = 1;
     }
 
+    // legacy for migration only
     public Tips(BinaryReader reader)
     {
         this._tipStatus = new int[Enum.GetValues(Tips.TipType.TotalsTab.GetType()).Length];
@@ -23,19 +24,12 @@ public class Tips
         if (num > this._tipStatus.Length - 1)
             num = this._tipStatus.Length - 1;
         for (int index = 0; index <= num; ++index)
-            this._tipStatus[index] = reader.ReadInt32();
+            this._tipStatus[index] = reader.ReadInt32() == 0 ? 1 : 0;
     }
 
-    public void StoreTo(BinaryWriter writer)
+    public void Show(TipType tip)
     {
-        writer.Write(this._tipStatus.Length - 1);
-        for (int index = 0; index <= this._tipStatus.Length - 1; ++index)
-            writer.Write(this._tipStatus[index]);
-    }
-
-    public void Show(Tips.TipType tip)
-    {
-        if (this._tipStatus[(int)tip] > 0)
+        if (this._tipStatus[(int)tip] == 0)
             return;
         StringBuilder stringBuilder = new StringBuilder();
         switch (tip)
@@ -60,8 +54,8 @@ public class Tips
                 stringBuilder.AppendLine("the number into the enhancement picker before clicking on the enhancement.");
                 break;
         }
-        this._tipStatus[(int)tip] = 1;
-        stringBuilder.AppendLine("\nThis message will not appear again.");
+        this._tipStatus[(int)tip] = 0;
+        stringBuilder.AppendLine("\nThis message should not appear again.");
         MessageBox.Show(stringBuilder.ToString(), "Instructions");
     }
 
@@ -70,6 +64,7 @@ public class Tips
         TotalsTab,
         FirstPower,
         FirstEnh,
+        // nothing from here on out is used, but old config files may expect it to exist, so leave them for migration
         Tip3,
         Tip4,
         Tip5,

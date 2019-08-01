@@ -442,7 +442,6 @@
         }
       ],
       "FullSetName": "Pets.RiktiPortal",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -528,7 +527,6 @@
         }
       ],
       "FullSetName": "Pets.RiktiPortal",
-      "CastTime": 0.132,
       "AoEModifier": 1.6
     },
     {
@@ -1714,7 +1712,6 @@
         }
       ],
       "FullSetName": "Pets.RiktiPortal",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

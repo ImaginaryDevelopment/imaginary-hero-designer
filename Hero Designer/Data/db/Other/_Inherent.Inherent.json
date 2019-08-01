@@ -414,7 +414,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 15
@@ -835,7 +835,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.112,
+      "CastTime": 1.93,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 13
@@ -1254,7 +1254,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 12
@@ -1888,7 +1888,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
@@ -2179,7 +2179,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 14
@@ -2759,7 +2759,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
@@ -3030,7 +3030,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
@@ -3228,7 +3228,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
@@ -3567,7 +3567,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 9
@@ -3767,7 +3767,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 3.06993747,
       "DisplayLocation": 8
@@ -4144,7 +4144,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
@@ -4484,7 +4484,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
@@ -4863,7 +4863,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 9
@@ -5209,7 +5209,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 3.06993747,
       "DisplayLocation": 8
@@ -5992,7 +5992,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6481,7 +6480,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6691,7 +6689,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6742,7 +6739,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -6974,7 +6970,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 14
@@ -7286,7 +7282,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.244,
+      "CastTime": 2.1,
       "Slottable": true,
       "AoEModifier": 3.25,
       "DisplayLocation": 12
@@ -7777,7 +7773,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 11
@@ -8068,7 +8064,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 15
@@ -8505,7 +8501,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.452,
+      "CastTime": 1.2,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 10
@@ -8623,7 +8619,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.924,
+      "CastTime": 0.73,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 13
@@ -8832,7 +8828,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -9040,7 +9035,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 7
     },
@@ -9248,7 +9242,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 8
     },
@@ -9465,7 +9458,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -9557,7 +9549,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 6
     },
@@ -9609,7 +9600,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -9704,7 +9694,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.31999993,
+      "CastTime": 1.07,
       "AoEModifier": 1.0
     },
     {
@@ -9797,7 +9787,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -9849,7 +9839,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10091,7 +10080,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10551,7 +10539,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -10797,7 +10784,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -11103,7 +11089,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.056,
+      "CastTime": 0.83,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -11197,7 +11183,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -12082,7 +12068,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 46.0,
       "DisplayLocation": 3
     },
@@ -12176,7 +12162,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -13061,7 +13047,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 46.0,
       "DisplayLocation": 3
     },
@@ -13149,7 +13135,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14049,7 +14034,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14143,7 +14128,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 46.0
     },
     {
@@ -14233,7 +14217,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -14320,7 +14303,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14443,7 +14425,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14528,7 +14509,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -14947,7 +14927,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 4
@@ -15082,7 +15061,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15215,7 +15193,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15349,7 +15326,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15482,7 +15458,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15615,7 +15590,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15749,7 +15723,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -15882,7 +15855,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16015,7 +15987,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16149,7 +16120,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16282,7 +16252,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16415,7 +16384,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16548,7 +16516,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16681,7 +16648,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16814,7 +16780,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -16947,7 +16912,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17080,7 +17044,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17203,7 +17166,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17294,7 +17256,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -17521,7 +17482,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -17738,7 +17699,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -17792,7 +17752,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -17946,7 +17906,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -18040,7 +17999,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.112,
+      "CastTime": 1.87,
       "AoEModifier": 1.0
     },
     {
@@ -18123,7 +18082,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -18206,7 +18165,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -18284,7 +18243,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -18383,7 +18342,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -19103,7 +19062,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -19193,7 +19151,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -19664,7 +19621,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -19842,7 +19798,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 22
@@ -19938,7 +19893,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20033,7 +19988,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20138,7 +20093,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20242,7 +20197,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20336,7 +20291,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20430,7 +20385,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20525,7 +20480,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20619,7 +20574,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20713,7 +20668,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -20925,7 +20880,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 21
@@ -21104,7 +21058,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 23
@@ -21200,7 +21153,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -21294,7 +21247,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -21471,7 +21424,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 25
@@ -21650,7 +21602,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 24
@@ -21768,7 +21719,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.31999993,
+      "CastTime": 1.17,
       "AoEModifier": 1.0
     },
     {
@@ -21883,7 +21834,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22080,7 +22030,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -22186,7 +22135,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22291,7 +22240,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22396,7 +22345,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22490,7 +22439,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22584,7 +22533,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22678,7 +22627,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -22844,7 +22793,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -22977,7 +22926,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -23177,7 +23126,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -23344,7 +23293,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.63999987,
+      "CastTime": 2.5,
       "AoEModifier": 1.0
     },
     {
@@ -23519,7 +23468,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 3.3,
+      "CastTime": 3.07,
       "AoEModifier": 1.24149275
     },
     {
@@ -24048,7 +23997,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 10.164,
+      "CastTime": 10.0,
       "AoEModifier": 7.0
     },
     {
@@ -24209,7 +24158,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.376,
+      "CastTime": 2.17,
       "AoEModifier": 1.0
     },
     {
@@ -24304,7 +24253,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -24399,7 +24348,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -24574,7 +24523,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0
     },
@@ -24669,7 +24617,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -24764,7 +24712,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -24849,7 +24797,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -24943,7 +24891,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -25320,7 +25268,7 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -25415,7 +25363,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -25510,7 +25458,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -25615,7 +25563,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -25740,7 +25688,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.072,
+      "CastTime": 5.93,
       "AoEModifier": 1.0
     },
     {
@@ -25834,7 +25782,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -25939,7 +25887,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -26033,7 +25981,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.508,
+      "CastTime": 2.33,
       "AoEModifier": 1.0
     },
     {
@@ -26117,7 +26065,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26199,7 +26146,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -26317,7 +26263,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0
     },
     {
@@ -26695,7 +26641,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -26819,7 +26764,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -26947,7 +26891,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 2.5
     },
     {
@@ -27208,7 +27151,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.716,
+      "CastTime": 1.5,
       "AoEModifier": 1.0
     },
     {
@@ -27583,7 +27526,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -27681,7 +27624,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -27850,7 +27793,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 5.148,
+      "CastTime": 5.0,
       "AoEModifier": 1.0
     },
     {
@@ -28127,7 +28070,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.67,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 4
@@ -28221,7 +28164,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 3.564,
+      "CastTime": 3.33,
       "AoEModifier": 1.0
     },
     {
@@ -28374,7 +28317,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -28441,7 +28383,7 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.584,
+      "CastTime": 1.37,
       "AoEModifier": 1.0
     },
     {
@@ -28618,7 +28560,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 1
@@ -29052,7 +28993,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 10.0,
       "DisplayLocation": 3
     },
@@ -29434,7 +29375,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -29539,7 +29479,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 2.244,
+      "CastTime": 2.03,
       "AoEModifier": 1.0
     },
     {
@@ -30709,7 +30649,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -30762,7 +30701,6 @@
       "ForcedClass": "",
       "Effects": [],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -30853,7 +30791,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 46.0
     },
     {
@@ -31730,7 +31667,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -31883,7 +31819,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0,
       "DisplayLocation": 3
     },
@@ -32433,7 +32368,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -32982,7 +32916,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -33531,7 +33464,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34300,7 +34232,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.204,
+      "CastTime": 6.0,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 2
@@ -34467,7 +34399,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -34600,7 +34531,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.16,
+      "CastTime": 17.0,
       "AoEModifier": 1.0
     },
     {
@@ -34736,7 +34667,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.16,
+      "CastTime": 17.0,
       "AoEModifier": 1.0
     },
     {
@@ -34869,7 +34800,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 17.16,
+      "CastTime": 17.0,
       "AoEModifier": 1.0
     },
     {
@@ -35367,7 +35298,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -35876,7 +35806,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36434,7 +36363,6 @@
       ],
       "HasGrantPowerEffect": true,
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -36926,7 +36854,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37389,7 +37316,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 1.848,
+      "CastTime": 1.716,
       "AoEModifier": 1.0,
       "DisplayLocation": 16
     },
@@ -37620,7 +37547,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -37773,7 +37699,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.204,
+      "CastTime": 6.03,
       "AoEModifier": 1.0
     },
     {
@@ -38448,7 +38374,6 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 0.132,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 5
@@ -38592,7 +38517,7 @@
         }
       ],
       "FullSetName": "Inherent.Inherent",
-      "CastTime": 6.072,
+      "CastTime": 5.93,
       "Slottable": true,
       "AoEModifier": 1.0,
       "DisplayLocation": 5

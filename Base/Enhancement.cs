@@ -6,7 +6,6 @@ public class Enhancement : IEnhancement
 {
     IPower _power;
 
-
     public bool IsModified { get; set; }
 
     public bool IsNew { get; set; }

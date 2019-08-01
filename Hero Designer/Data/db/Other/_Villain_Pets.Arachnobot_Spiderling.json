@@ -161,7 +161,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 1.848,
+      "CastTime": 1.7,
       "AoEModifier": 1.0
     },
     {
@@ -260,7 +260,7 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 0.924,
+      "CastTime": 0.67,
       "AoEModifier": 1.0
     },
     {
@@ -448,7 +448,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -633,7 +632,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     },
     {
@@ -715,7 +713,6 @@
         }
       ],
       "FullSetName": "Villain_Pets.Arachnobot_Spiderling",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

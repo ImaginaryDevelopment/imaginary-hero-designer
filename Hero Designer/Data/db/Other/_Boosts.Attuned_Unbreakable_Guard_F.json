@@ -111,7 +111,6 @@
       ],
       "BoostUsePlayerLevel": true,
       "FullSetName": "Boosts.Attuned_Unbreakable_Guard_F",
-      "CastTime": 0.132,
       "AoEModifier": 1.0
     }
   ]

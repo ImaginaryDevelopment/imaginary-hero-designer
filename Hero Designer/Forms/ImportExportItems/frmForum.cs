@@ -109,7 +109,7 @@ namespace Hero_Designer
             this.lblCodeInf.Text = MidsContext.Config.Export.FormatCode[this.lstCodes.SelectedIndex].Notes;
             this.SetTips();
             ConfigData config = MidsContext.Config;
-            this.chkDataChunk.Checked = config.I9.ExportDataChunk;
+            this.chkDataChunk.Checked = !config.I9.DisableExportDataChunk;
             this.chkNoIOLevel.Checked = !config.I9.ExportIOLevels;
             this.chkNoSetName.Checked = config.I9.ExportStripSetNames;
             this.chkNoEnh.Checked = config.I9.ExportStripEnh;
@@ -148,9 +148,9 @@ namespace Hero_Designer
         {
             MidsContext.Config.ExportScheme = this.csList.SelectedIndex;
             MidsContext.Config.ExportTarget = this.lstCodes.SelectedIndex;
-            MidsContext.Config.ExportHex = true;
+            MidsContext.Config.DisableExportHex = false;
             ConfigData config = MidsContext.Config;
-            config.I9.ExportDataChunk = this.chkDataChunk.Checked;
+            config.I9.DisableExportDataChunk = !this.chkDataChunk.Checked;
             config.I9.ExportIOLevels = !this.chkNoIOLevel.Checked;
             config.I9.ExportStripSetNames = this.chkNoSetName.Checked;
             config.I9.ExportStripEnh = this.chkNoEnh.Checked;
