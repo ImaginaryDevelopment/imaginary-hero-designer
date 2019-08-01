@@ -15524,8 +15524,8 @@
   {
     "Archetype": "Class_Brute",
     "Fullname": "Brute_Defense.Radiation_Armor",
-    "Hash": 213138013,
-    "Length": 125673
+    "Hash": 1054455676,
+    "Length": 125595
   },
   {
     "Archetype": "Class_Brute",
@@ -16322,8 +16322,8 @@
   {
     "Archetype": "",
     "Fullname": "Epic.Cold_Mastery",
-    "Hash": -1110751156,
-    "Length": 57102
+    "Hash": 1053734786,
+    "Length": 56939
   },
   {
     "Archetype": "Class_Sentinel",
@@ -20000,8 +20000,8 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Defense.Invulnerability",
-    "Hash": -105778247,
-    "Length": 140591
+    "Hash": 2121467504,
+    "Length": 140606
   },
   {
     "Archetype": "Class_Sentinel",
@@ -20048,8 +20048,8 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Ranged.Beam_Rifle",
-    "Hash": 1729470420,
-    "Length": 97712
+    "Hash": -340655733,
+    "Length": 97711
   },
   {
     "Archetype": "Class_Sentinel",

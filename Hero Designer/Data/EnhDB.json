@@ -43220,7 +43220,6 @@
       "LongName": "Annihilation: Accuracy/Damage/Endurance/RechargeTime"
     },
     {
-      "IsModified": true,
       "StaticIndex": 999,
       "Name": "Chance for Res Debuff",
       "ShortName": "ResDeb%",
@@ -44667,6 +44666,7 @@
       "LongName": "Superior Defiant Barrage: RechargeTime/+Status"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1030,
       "Name": "Accuracy/Damage",
       "ShortName": "Acc/Dmg",
@@ -44696,6 +44696,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 2,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_A",
@@ -44703,6 +44704,7 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1031,
       "Name": "Damage/RechargeTime",
       "ShortName": "Dmg/Rchg",
@@ -44732,6 +44734,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 3,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_B",
@@ -44739,6 +44742,7 @@
       "LongName": "Unrelenting Fury: Damage/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1032,
       "Name": "Accuracy/Damage/RechargeTime",
       "ShortName": "Acc/Dmg/Rchg",
@@ -44775,6 +44779,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 4,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_C",
@@ -44782,6 +44787,7 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1033,
       "Name": "Damage/Endurance/RechargeTime",
       "ShortName": "Dmg/EndRdx/Rchg",
@@ -44818,6 +44824,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 5,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_D",
@@ -44825,6 +44832,7 @@
       "LongName": "Unrelenting Fury: Damage/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1034,
       "Name": "Accuracy/Damage/Endurance/RechargeTime",
       "ShortName": "Acc/Dmg/EndRdx/Rchg",
@@ -44868,6 +44876,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 6,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_E",
@@ -44875,6 +44884,7 @@
       "LongName": "Unrelenting Fury: Accuracy/Damage/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1035,
       "Name": "RechargeTime/+Regen/+End",
       "ShortName": "Rchg/+Regen/+End",
@@ -44932,6 +44942,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 7,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Attuned_Unrelenting_Fury_F",
@@ -44941,6 +44952,7 @@
       "LongName": "Unrelenting Fury: RechargeTime/+Regen/+End"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1036,
       "Name": "Accuracy/Damage",
       "ShortName": "Acc/Dmg",
@@ -44970,6 +44982,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 2,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_A",
@@ -44978,6 +44991,7 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1037,
       "Name": "Damage/RechargeTime",
       "ShortName": "Dmg/Rchg",
@@ -45007,6 +45021,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 3,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_B",
@@ -45015,6 +45030,7 @@
       "LongName": "Superior Unrelenting Fury: Damage/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1038,
       "Name": "Accuracy/Damage/RechargeTime",
       "ShortName": "Acc/Dmg/Rchg",
@@ -45051,6 +45067,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 4,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_C",
@@ -45059,6 +45076,7 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1039,
       "Name": "Damage/Endurance/RechargeTime",
       "ShortName": "Dmg/EndRdx/Rchg",
@@ -45095,6 +45113,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 5,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_D",
@@ -45103,6 +45122,7 @@
       "LongName": "Superior Unrelenting Fury: Damage/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1040,
       "Name": "Accuracy/Damage/Endurance/RechargeTime",
       "ShortName": "Acc/Dmg/EndRdx/Rchg",
@@ -45146,6 +45166,7 @@
       "EffectChance": 1.0,
       "LevelMax": -1,
       "Unique": true,
+      "MutExID": 6,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_E",
@@ -45154,6 +45175,7 @@
       "LongName": "Superior Unrelenting Fury: Accuracy/Damage/Endurance/RechargeTime"
     },
     {
+      "IsModified": true,
       "StaticIndex": 1041,
       "Name": "RechargeTime/+Regen/+End",
       "ShortName": "Rchg/+Regen/+End",
@@ -45258,6 +45280,7 @@
       "EffectChance": 1.0,
       "LevelMax": 49,
       "Unique": true,
+      "MutExID": 7,
       "RecipeName": "Alt",
       "RecipeIDX": 1072,
       "UID": "Superior_Attuned_Superior_Unrelenting_Fury_F",

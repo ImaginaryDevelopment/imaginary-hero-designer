@@ -2782,7 +2782,7 @@
       "TargetLoS": true,
       "Range": 40.0,
       "EndCost": 20.8,
-      "RechargeTime": 125.0,
+      "RechargeTime": 90.0,
       "EffectArea": 2,
       "Radius": 20.0,
       "MaxTargets": 10,
