@@ -7,5 +7,5 @@ permalink: /index.html
 
  - No Automatic Updates
    - No Installer and Installer based releases are found at https://github.com/ImaginaryDevelopment/imaginary-hero-designer/releases
- - Automatic Internet Required for updates
+ - Automatic Internet Required for updates(outdated/deprecated/obsolete/do not use)
    - https://imaginarydevelopment.github.io/imaginary-hero-designer/publish/publish.htm
