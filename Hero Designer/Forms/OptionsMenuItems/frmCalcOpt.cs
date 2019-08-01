@@ -290,6 +290,8 @@ namespace Hero_Designer
                 dcExList.Items.Add(dcServerName.Text);
                 if (!MidsContext.Config.DServers.Contains(dcServerName.Text))
                     MidsContext.Config.DServers.Add(dcServerName.Text);
+                MidsContext.Config.DSelServer = dcServerName.Text;
+                dcExList.SelectedItem = MidsContext.Config.DSelServer;
             }
         }
 
