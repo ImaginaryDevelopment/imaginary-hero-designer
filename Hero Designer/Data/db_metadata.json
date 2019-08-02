@@ -5888,8 +5888,8 @@
   {
     "Archetype": "",
     "Fullname": "Boosts.Crafted_Annihilation_F",
-    "Hash": 1054385727,
-    "Length": 3447
+    "Hash": -1106292385,
+    "Length": 3478
   },
   {
     "Archetype": "",
@@ -15524,8 +15524,8 @@
   {
     "Archetype": "Class_Brute",
     "Fullname": "Brute_Defense.Radiation_Armor",
-    "Hash": 1054455676,
-    "Length": 125595
+    "Hash": 213138013,
+    "Length": 125673
   },
   {
     "Archetype": "Class_Brute",
@@ -16322,8 +16322,8 @@
   {
     "Archetype": "",
     "Fullname": "Epic.Cold_Mastery",
-    "Hash": 1053734786,
-    "Length": 56939
+    "Hash": 128469435,
+    "Length": 57101
   },
   {
     "Archetype": "Class_Sentinel",
