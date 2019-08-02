@@ -21,7 +21,6 @@
   "GroupName": "Boosts",
   "Powers": [
     {
-      "IsModified": true,
       "PowerIndex": 1218,
       "PowerSetID": 981,
       "StaticIndex": 9301,
