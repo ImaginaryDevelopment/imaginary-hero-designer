@@ -14,8 +14,7 @@ namespace Hero_Designer
 
         public async Task GetIndexesFromJson()
         {
-            //List<string> DBIndexes = new List<string>();
-            const string output = @"data\\test.txt";
+            const string output = @"data\\PowerIndex.txt";
             string[] files = Directory.GetFiles("data\\db\\", "*.json", SearchOption.AllDirectories);
             foreach (var file in files)
             {
@@ -34,7 +33,6 @@ namespace Hero_Designer
                     if (!string.IsNullOrWhiteSpace(item.Index))
                     {
                         PowerIndexes.Add($"{item.Index}:{item.Name}");
-                        //MessageBox.Show($"{item.Index}:{item.Name}");
                     }
                 }
                 var ordered = PowerIndexes.OrderByDescending(s => long.Parse(Regex.Match(s, @"^(\d+)").Value)).ToList();
