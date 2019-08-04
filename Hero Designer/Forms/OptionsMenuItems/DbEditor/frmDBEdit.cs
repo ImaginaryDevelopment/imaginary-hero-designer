@@ -3,7 +3,9 @@ using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -89,6 +91,8 @@ namespace Hero_Designer
             this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
             this.Name = nameof(frmDBEdit);
         }
+
+        public ParseDb ParseDb = new ParseDb();
 
         void btnClose_Click(object sender, EventArgs e)
         {
@@ -176,6 +180,8 @@ namespace Hero_Designer
             this.btnDate.Visible = MidsContext.Config.MasterMode;
             this.btnCSV.Visible = MidsContext.Config.MasterMode;
             this.txtDBVer.Enabled = MidsContext.Config.MasterMode;
+            this.genIndex.Enabled = MidsContext.Config.MasterMode;
+            this.genIndex.Visible = MidsContext.Config.MasterMode;
             this.UdIssue.Enabled = MidsContext.Config.MasterMode;
             this.btnFileReport.Visible = MidsContext.Config.MasterMode;
             this.DisplayInfo();
@@ -201,6 +207,27 @@ namespace Hero_Designer
             if (!MainModule.MidsController.IsAppInitialized | !this.Initialized)
                 return;
             DatabaseAPI.Database.Issue = Convert.ToInt32(this.UdIssue.Value);
+        }
+
+        private async void GenIndex_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists("data\\PowerIndex.txt"))
+                {
+                    File.Delete("data\\PowerIndex.txt");
+                    await ParseDb.GetIndexesFromJson();
+                }
+                else
+                {
+                    await ParseDb.GetIndexesFromJson();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
