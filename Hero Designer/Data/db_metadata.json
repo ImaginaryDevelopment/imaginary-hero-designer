@@ -15734,8 +15734,8 @@
   {
     "Archetype": "Class_Controller",
     "Fullname": "Controller_Buff.Poison",
-    "Hash": 1769257170,
-    "Length": 198782
+    "Hash": -1447048631,
+    "Length": 199246
   },
   {
     "Archetype": "Class_Controller",
@@ -16410,10 +16410,10 @@
     "Length": 54573
   },
   {
-    "Archetype": "",
+    "Archetype": "Class_Defender",
     "Fullname": "Epic.Def_Flame_Mastery",
-    "Hash": 1024299749,
-    "Length": 57912
+    "Hash": -2034071340,
+    "Length": 57646
   },
   {
     "Archetype": "",
@@ -17366,8 +17366,8 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Buff.Kinetics",
-    "Hash": 441288223,
-    "Length": 81141
+    "Hash": 949273072,
+    "Length": 81954
   },
   {
     "Archetype": "Class_Mastermind",
@@ -17390,8 +17390,8 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Buff.Radiation_Emission",
-    "Hash": -1284158646,
-    "Length": 108236
+    "Hash": 1464836632,
+    "Length": 109575
   },
   {
     "Archetype": "Class_Mastermind",
@@ -19178,8 +19178,8 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Savage_Assault_Feral_Charge",
-    "Hash": 502009242,
-    "Length": 4584
+    "Hash": 762927845,
+    "Length": 4578
   },
   {
     "Archetype": "",
