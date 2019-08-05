@@ -164,7 +164,7 @@
   {
     "Archetype": "Class_Blaster",
     "Fullname": "Blaster_Support.Tactical_Arrow",
-    "Hash": -1463250866,
+    "Hash": -1384444322,
     "Length": 158973
   },
   {
@@ -15734,8 +15734,8 @@
   {
     "Archetype": "Class_Controller",
     "Fullname": "Controller_Buff.Poison",
-    "Hash": -331418400,
-    "Length": 199246
+    "Hash": 1769257170,
+    "Length": 198782
   },
   {
     "Archetype": "Class_Controller",
@@ -17366,8 +17366,8 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Buff.Kinetics",
-    "Hash": 594970429,
-    "Length": 81946
+    "Hash": 441288223,
+    "Length": 81141
   },
   {
     "Archetype": "Class_Mastermind",
@@ -17390,8 +17390,8 @@
   {
     "Archetype": "Class_Mastermind",
     "Fullname": "Mastermind_Buff.Radiation_Emission",
-    "Hash": -829067304,
-    "Length": 109566
+    "Hash": -1284158646,
+    "Length": 108236
   },
   {
     "Archetype": "Class_Mastermind",
@@ -18530,7 +18530,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Fallout_Mastermind",
-    "Hash": 1830126296,
+    "Hash": -415667267,
     "Length": 22498
   },
   {
@@ -18728,7 +18728,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.KineticTransferDebuff_Mastermind",
-    "Hash": -1763299234,
+    "Hash": -1226921661,
     "Length": 10947
   },
   {
@@ -18746,7 +18746,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.KineticTransferBuff_Mastermind",
-    "Hash": -2045734920,
+    "Hash": 2103923677,
     "Length": 10562
   },
   {
@@ -19178,8 +19178,8 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Savage_Assault_Feral_Charge",
-    "Hash": 1533791942,
-    "Length": 4578
+    "Hash": 502009242,
+    "Length": 4584
   },
   {
     "Archetype": "",
@@ -19256,7 +19256,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.SiphonPower_Mastermind",
-    "Hash": 936672625,
+    "Hash": -1403203956,
     "Length": 10430
   },
   {
@@ -19472,7 +19472,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Transference_Mastermind",
-    "Hash": 1413586846,
+    "Hash": -583597203,
     "Length": 3022
   },
   {
@@ -19496,7 +19496,7 @@
   {
     "Archetype": "",
     "Fullname": "Pets.Transfusion_Mastermind",
-    "Hash": 640536044,
+    "Hash": 1739999595,
     "Length": 3038
   },
   {
@@ -20048,8 +20048,8 @@
   {
     "Archetype": "Class_Sentinel",
     "Fullname": "Sentinel_Ranged.Beam_Rifle",
-    "Hash": 1505967160,
-    "Length": 97201
+    "Hash": 319839887,
+    "Length": 97748
   },
   {
     "Archetype": "Class_Sentinel",
