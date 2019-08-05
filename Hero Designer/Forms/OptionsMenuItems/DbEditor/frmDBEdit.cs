@@ -213,14 +213,15 @@ namespace Hero_Designer
         {
             try
             {
-                if (File.Exists("data\\PowerIndex.txt"))
+                const string output = "data\\PowerIndex.csv";
+                if (File.Exists(output))
                 {
-                    File.Delete("data\\PowerIndex.txt");
-                    await ParseDb.GetIndexesFromJson();
+                    File.Delete(output);
+                    await ParseDb.GetIndexesFromJson(output);
                 }
                 else
                 {
-                    await ParseDb.GetIndexesFromJson();
+                    await ParseDb.GetIndexesFromJson(output);
                 }
             }
             catch (Exception ex)
