@@ -29,7 +29,7 @@ namespace Hero_Designer
             if (!(Index > -1 & Index < DatabaseAPI.Database.Recipes.Length))
                 return;
             var recipe = DatabaseAPI.Database.Recipes[Index];
-            lvDPA.Items.Add(new ListViewItem(new string[4]
+            lvDPA.Items.Add(new ListViewItem(new[]
             {
                 recipe.InternalName,
                 recipe.EnhIdx <= -1 ? "None" : recipe.Enhancement + " (" + Conversions.ToString(recipe.EnhIdx) + ")",
@@ -101,7 +101,7 @@ namespace Hero_Designer
         {
             if (Interaction.MsgBox("Really erase all stored recipes and attempt import?", MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Careful...") != MsgBoxResult.Yes)
                 return;
-            char[] delimiter = new char[1] { '\r' };
+            char[] delimiter = { '\r' };
             string[] strArray1 = Clipboard.GetDataObject().GetData("System.String", true).ToString().Split(delimiter);
             delimiter[0] = '\t';
             DatabaseAPI.Database.Recipes = new Recipe[0];
@@ -434,8 +434,7 @@ namespace Hero_Designer
 
         protected int GetCostByLevel(int iLevelZB)
         {
-            int[] numArray = new int[53]
-            {
+            int[] numArray = {
                 0, 0, 0, 0,
                 0, 0, 0, 0,
                 0, 3600, 4380, 5160,

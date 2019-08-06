@@ -151,7 +151,7 @@ namespace Hero_Designer
                     int index3 = iPopup.Add();
                     iPopup.Sections[index3].Add("Effects:", PopUp.Colors.Title);
                     IPower power2 = new Power(DatabaseAPI.Database.Power[powerID]);
-                    char[] chArray = new char[1] { '^' };
+                    char[] chArray = { '^' };
                     int num1 = power1.Effects.Length - 1;
                     for (int index4 = 0; index4 <= num1; ++index4)
                     {

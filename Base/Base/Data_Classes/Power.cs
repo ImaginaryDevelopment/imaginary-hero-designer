@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using Base.Master_Classes;
 
@@ -968,7 +967,7 @@ namespace Base.Data_Classes
                     num3 = numArray1[iID2];
                 }
             }
-            return new int[2] { iID1, num1 };
+            return new[] { iID1, num1 };
         }
 
         bool GreOverride(int iID1, int iID2)
@@ -1247,17 +1246,17 @@ namespace Base.Data_Classes
         {
             for (int index = 0; index <= Effects.Length - 1; ++index)
             {
-                if (!(Effects[index].EffectType == iEffect & Effects[index].Mag > 0.0) ||
-                    Effects[index].EffectType == Enums.eEffectType.Damage &
-                    Effects[index].DamageType == Enums.eDamage.Special) continue;
-                bool flag;
-                if (iMez == Enums.eMez.None)
-                    flag = true;
-                else if (Effects[index].MezType == iMez)
-                    flag = true;
-                else
-                    continue;
-                return flag;
+                if (Effects[index].EffectType == iEffect & Effects[index].Mag > 0.0 && !(Effects[index].EffectType == Enums.eEffectType.Damage & Effects[index].DamageType == Enums.eDamage.Special))
+                {
+                    bool flag;
+                    if (iMez == Enums.eMez.None)
+                        flag = true;
+                    else if (Effects[index].MezType == iMez)
+                        flag = true;
+                    else
+                        continue;
+                    return flag;
+                }
             }
             return false;
         }
@@ -1279,20 +1278,11 @@ namespace Base.Data_Classes
                     int index2 = -1;
                     for (int index3 = 0; index3 <= array.Length - 1; ++index3)
                     {
-                        if (!(Math.Abs(iSfx.Value[index1] - array[index3].Value[0]) < 0.01) ||
-                            !(iPower.Effects[iSfx.Index[index1]].PvMode ==
-                              iPower.Effects[array[index3].Index[0]].PvMode &
-                              iPower.Effects[iSfx.Index[index1]].ToWho == iPower.Effects[array[index3].Index[0]].ToWho &
-                              iPower.Effects[iSfx.Index[index1]].Stacking ==
-                              iPower.Effects[array[index3].Index[0]].Stacking &
-                              iPower.Effects[iSfx.Index[index1]].Aspect ==
-                              iPower.Effects[array[index3].Index[0]].Aspect &
-                              iPower.Effects[iSfx.Index[index1]].Buffable ==
-                              iPower.Effects[array[index3].Index[0]].Buffable &
-                              iPower.Effects[iSfx.Index[index1]].Resistible ==
-                              iPower.Effects[array[index3].Index[0]].Resistible)) continue;
-                        index2 = index3;
-                        break;
+                        if (Math.Abs(iSfx.Value[index1] - array[index3].Value[0]) < 0.01 && iPower.Effects[iSfx.Index[index1]].PvMode == iPower.Effects[array[index3].Index[0]].PvMode & iPower.Effects[iSfx.Index[index1]].ToWho == iPower.Effects[array[index3].Index[0]].ToWho & iPower.Effects[iSfx.Index[index1]].Stacking == iPower.Effects[array[index3].Index[0]].Stacking & iPower.Effects[iSfx.Index[index1]].Aspect == iPower.Effects[array[index3].Index[0]].Aspect & iPower.Effects[iSfx.Index[index1]].Buffable == iPower.Effects[array[index3].Index[0]].Buffable & iPower.Effects[iSfx.Index[index1]].Resistible == iPower.Effects[array[index3].Index[0]].Resistible)
+                        {
+                            index2 = index3;
+                            break;
+                        }
                     }
                     if (index2 < 0)
                     {
@@ -1310,11 +1300,13 @@ namespace Base.Data_Classes
         {
             string str = iPower.Effects[iSfx.Index[0]].BuildEffectString(false, string.Empty, false, true);
             string newValue = string.Empty;
-            if (!iPower.Effects[iSfx.Index[0]].isDamage()) return str.Replace("%VALUE%", newValue);
-            bool[] iDamage = new bool[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-            for (int index = 0; index <= iSfx.Index.Length - 1; ++index)
-                iDamage[(int)iPower.Effects[iSfx.Index[index]].DamageType] = true;
-            newValue = !(iPower.Effects[iSfx.Index[0]].EffectType == Enums.eEffectType.Defense | iPower.Effects[iSfx.Index[0]].EffectType == Enums.eEffectType.Elusivity) ? Enums.GetGroupedDamage(iDamage, shortForm) : Enums.GetGroupedDefense(iDamage, shortForm);
+            if (iPower.Effects[iSfx.Index[0]].isDamage())
+            {
+                bool[] iDamage = new bool[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
+                for (int index = 0; index <= iSfx.Index.Length - 1; ++index)
+                    iDamage[(int)iPower.Effects[iSfx.Index[index]].DamageType] = true;
+                newValue = !(iPower.Effects[iSfx.Index[0]].EffectType == Enums.eEffectType.Defense | iPower.Effects[iSfx.Index[0]].EffectType == Enums.eEffectType.Elusivity) ? Enums.GetGroupedDamage(iDamage, shortForm) : Enums.GetGroupedDefense(iDamage, shortForm);
+            }
             return str.Replace("%VALUE%", newValue);
         }
 
@@ -1473,8 +1465,7 @@ namespace Base.Data_Classes
                             else
                                 iReq.Contains(str);
                         }
-
-                        if (!iReq.Contains(str)) continue;
+                        if (iReq.Contains(str))
                         {
                             int startIndex = iReq.IndexOf(str, StringComparison.Ordinal);
                             for (int index2 = startIndex + str.Length; index2 <= iReq.Length - 1; ++index2)
@@ -1495,122 +1486,114 @@ namespace Base.Data_Classes
                     for (int index1 = 0; index1 <= strArray2.Length - 1; ++index1)
                     {
                         strArray2[index1] = strArray2[index1].ToLower();
-                        switch (strArray2[index1])
+                        if (strArray2[index1] == "&&")
                         {
-                            case "&&" when index3 > 1 && strArray1[index3 - 1] == "true" & strArray1[index3 - 2] == "true":
+                            if (index3 > 1 && strArray1[index3 - 1] == "true" & strArray1[index3 - 2] == "true")
+                            {
                                 --index3;
                                 strArray1[index3] = string.Empty;
                                 strArray1[index3 - 1] = "true";
-                                break;
-                            case "&&" when index3 > 1 && strArray1[index3 - 1] == "true" & strArray1[index3 - 2] != "true":
+                            }
+                            else if (index3 > 1 && strArray1[index3 - 1] == "true" & strArray1[index3 - 2] != "true")
+                            {
                                 requirement2.AddPowers(strArray1[index3 - 2], string.Empty);
                                 --index3;
                                 strArray1[index3] = string.Empty;
                                 strArray1[index3 - 1] = "true";
-                                break;
-                            case "&&" when index3 > 1 && strArray1[index3 - 1] != "true" & strArray1[index3 - 2] == "true":
+                            }
+                            else if (index3 > 1 && strArray1[index3 - 1] != "true" & strArray1[index3 - 2] == "true")
+                            {
                                 requirement2.AddPowers(strArray1[index3 - 1], string.Empty);
                                 --index3;
                                 strArray1[index3] = string.Empty;
-                                break;
-                            case "&&":
+                            }
+                            else if (index3 > 1 && strArray1[index3 - 1] != "true" & strArray1[index3 - 2] != "true")
                             {
-                                if (index3 > 1 && strArray1[index3 - 1] != "true" & strArray1[index3 - 2] != "true")
+                                requirement2.AddPowers(strArray1[index3 - 2], strArray1[index3 - 1]);
+                                --index3;
+                                strArray1[index3] = string.Empty;
+                                strArray1[index3 - 1] = "true";
+                            }
+                        }
+                        else if (strArray2[index1] == "!")
+                            strArray1[index3 - 1] = "!" + strArray1[index3 - 1];
+                        else if (strArray2[index1] == "||")
+                        {
+                            if (index3 > 1)
+                            {
+                                if (strArray1[index3 - 1] == "true" & strArray1[index3 - 2] == "true")
                                 {
-                                    requirement2.AddPowers(strArray1[index3 - 2], strArray1[index3 - 1]);
                                     --index3;
                                     strArray1[index3] = string.Empty;
                                     strArray1[index3 - 1] = "true";
                                 }
-
-                                break;
-                            }
-
-                            case "!":
-                                strArray1[index3 - 1] = "!" + strArray1[index3 - 1];
-                                break;
-                            case "||":
-                            {
-                                if (index3 > 1)
+                                else if (strArray1[index3 - 1] != "true" & strArray1[index3 - 2] == "true")
                                 {
-                                    if (strArray1[index3 - 1] == "true" & strArray1[index3 - 2] == "true")
-                                    {
-                                        --index3;
-                                        strArray1[index3] = string.Empty;
-                                        strArray1[index3 - 1] = "true";
-                                    }
-                                    else if (strArray1[index3 - 1] != "true" & strArray1[index3 - 2] == "true")
-                                    {
-                                        requirement2.AddPowers(strArray1[index3 - 1], string.Empty);
-                                        --index3;
-                                        strArray1[index3] = string.Empty;
-                                    }
-                                    else if (strArray1[index3 - 1] == "true" & strArray1[index3 - 2] != "true")
-                                    {
-                                        requirement2.AddPowers(strArray1[index3 - 2], string.Empty);
-                                        --index3;
-                                        strArray1[index3] = string.Empty;
-                                        strArray1[index3 - 1] = "true";
-                                    }
-                                    else
-                                    {
-                                        requirement2.AddPowers(strArray1[index3 - 2], string.Empty);
-                                        requirement2.AddPowers(strArray1[index3 - 1], string.Empty);
-                                        --index3;
-                                        strArray1[index3] = string.Empty;
-                                        strArray1[index3 - 1] = "true";
-                                    }
+                                    requirement2.AddPowers(strArray1[index3 - 1], string.Empty);
+                                    --index3;
+                                    strArray1[index3] = string.Empty;
                                 }
-
-                                break;
-                            }
-
-                            case "owned?":
-                            case "auth>":
-                            case "productowned?":
-                            case "tokenowned?":
-                            case "char>":
-                                strArray1[index3 - 1] = "true";
-                                break;
-                            case ">=":
-                                --index3;
-                                strArray1[index3] = string.Empty;
-                                strArray1[index3 - 1] = "true";
-                                break;
-                            case ">":
-                                --index3;
-                                strArray1[index3] = string.Empty;
-                                strArray1[index3 - 1] = "true";
-                                break;
-                            case "source>":
-                                strArray1[index3 - 1] = "true";
-                                break;
-                            default:
-                            {
-                                if (strArray2[index1] != "eq")
+                                else if (strArray1[index3 - 1] == "true" & strArray1[index3 - 2] != "true")
                                 {
-                                    if (strArray2[index1] == "ispvpmap?")
-                                    {
-                                        if (index1 < strArray2.GetUpperBound(0) && strArray2[index1 + 1] == "!")
-                                            strArray2[index1 + 1] = string.Empty;
-                                        strArray1[index3] = "true";
-                                        ++index3;
-                                    }
-                                    else if (strArray2[index1] == "isarchitectmap?")
-                                    {
-                                        if (index1 < strArray2.GetUpperBound(0) && strArray2[index1 + 1] == "!")
-                                            strArray2[index1 + 1] = string.Empty;
-                                        strArray1[index3] = "true";
-                                        ++index3;
-                                    }
-                                    else if (!string.IsNullOrEmpty(strArray2[index1]))
-                                    {
-                                        strArray1[index3] = strArray2[index1];
-                                        ++index3;
-                                    }
+                                    requirement2.AddPowers(strArray1[index3 - 2], string.Empty);
+                                    --index3;
+                                    strArray1[index3] = string.Empty;
+                                    strArray1[index3 - 1] = "true";
                                 }
-
-                                break;
+                                else
+                                {
+                                    requirement2.AddPowers(strArray1[index3 - 2], string.Empty);
+                                    requirement2.AddPowers(strArray1[index3 - 1], string.Empty);
+                                    --index3;
+                                    strArray1[index3] = string.Empty;
+                                    strArray1[index3 - 1] = "true";
+                                }
+                            }
+                        }
+                        else if (strArray2[index1] == "owned?")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] == "auth>")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] == "productowned?")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] == "tokenowned?")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] == "char>")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] == ">=")
+                        {
+                            --index3;
+                            strArray1[index3] = string.Empty;
+                            strArray1[index3 - 1] = "true";
+                        }
+                        else if (strArray2[index1] == ">")
+                        {
+                            --index3;
+                            strArray1[index3] = string.Empty;
+                            strArray1[index3 - 1] = "true";
+                        }
+                        else if (strArray2[index1] == "source>")
+                            strArray1[index3 - 1] = "true";
+                        else if (strArray2[index1] != "eq")
+                        {
+                            if (strArray2[index1] == "ispvpmap?")
+                            {
+                                if (index1 < strArray2.GetUpperBound(0) && strArray2[index1 + 1] == "!")
+                                    strArray2[index1 + 1] = string.Empty;
+                                strArray1[index3] = "true";
+                                ++index3;
+                            }
+                            else if (strArray2[index1] == "isarchitectmap?")
+                            {
+                                if (index1 < strArray2.GetUpperBound(0) && strArray2[index1 + 1] == "!")
+                                    strArray2[index1 + 1] = string.Empty;
+                                strArray1[index3] = "true";
+                                ++index3;
+                            }
+                            else if (!string.IsNullOrEmpty(strArray2[index1]))
+                            {
+                                strArray1[index3] = strArray2[index1];
+                                ++index3;
                             }
                         }
                     }
@@ -1630,13 +1613,15 @@ namespace Base.Data_Classes
                     {
                         for (int index2 = 0; index2 <= requirement2.PowerID[index1].Length - 1; ++index2)
                         {
-                            if (string.IsNullOrEmpty(requirement2.PowerID[index1][index2])) continue;
-                            for (int index4 = 0; index4 <= DatabaseAPI.Database.Power.Length - 1; ++index4)
+                            if (!string.IsNullOrEmpty(requirement2.PowerID[index1][index2]))
                             {
-                                if (string.Equals(DatabaseAPI.Database.Power[index4].FullName, requirement2.PowerID[index1][index2], StringComparison.OrdinalIgnoreCase))
+                                for (int index4 = 0; index4 <= DatabaseAPI.Database.Power.Length - 1; ++index4)
                                 {
-                                    requirement2.PowerID[index1][index2] = DatabaseAPI.Database.Power[index4].FullName;
-                                    break;
+                                    if (string.Equals(DatabaseAPI.Database.Power[index4].FullName, requirement2.PowerID[index1][index2], StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        requirement2.PowerID[index1][index2] = DatabaseAPI.Database.Power[index4].FullName;
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -1687,7 +1672,8 @@ namespace Base.Data_Classes
 
         public int CompareTo(object obj)
         {
-            if (!(obj is Power power))
+            Power power = obj as Power;
+            if (power == null)
                 throw new ArgumentException("Comparison failed - Passed object was not an Archetype Class!");
             int num = string.Compare(FullSetName, power.FullSetName, StringComparison.OrdinalIgnoreCase);
             return num == 0 ? (Level <= power.Level ? (Level >= power.Level ? (Level != power.Level || !SortOverride || power.SortOverride ? (Level != power.Level || SortOverride || !power.SortOverride ? string.Compare(FullName, power.FullName, StringComparison.OrdinalIgnoreCase) : 1) : -1) : -1) : 1) : num;
@@ -1695,10 +1681,10 @@ namespace Base.Data_Classes
 
         public void SetMathMag()
         {
-            foreach (var t in Effects)
+            for (int index = 0; index < Effects.Length; ++index)
             {
-                t.Math_Duration = t.Duration;
-                t.Math_Mag = t.Mag;
+                Effects[index].Math_Duration = Effects[index].Duration;
+                Effects[index].Math_Mag = Effects[index].Mag;
             }
         }
 
@@ -1728,10 +1714,12 @@ namespace Base.Data_Classes
                         for (int index2 = 0; index2 <= iDamage.Length - 1; ++index2)
                         {
                             effect.DamageType = (Enums.eDamage)index2;
-                            if (effect.CompareTo(Effects[index1]) != 0) continue;
-                            iDamage[index2] = true;
-                            Array.Resize(ref array, array.Length + 1);
-                            array[array.Length - 1] = index1;
+                            if (effect.CompareTo(Effects[index1]) == 0)
+                            {
+                                iDamage[index2] = true;
+                                Array.Resize(ref array, array.Length + 1);
+                                array[array.Length - 1] = index1;
+                            }
                         }
                     }
                     if (array.Length <= 1)
@@ -1748,10 +1736,12 @@ namespace Base.Data_Classes
                         for (int index2 = 0; index2 <= iMez.Length - 1; ++index2)
                         {
                             effect.MezType = (Enums.eMez)index2;
-                            if (effect.CompareTo(Effects[index1]) != 0) continue;
-                            iMez[index2] = true;
-                            Array.Resize(ref array, array.Length + 1);
-                            array[array.Length - 1] = index1;
+                            if (effect.CompareTo(Effects[index1]) == 0)
+                            {
+                                iMez[index2] = true;
+                                Array.Resize(ref array, array.Length + 1);
+                                array[array.Length - 1] = index1;
+                            }
                         }
                     }
                     if (array.Length <= 1)
@@ -1761,24 +1751,17 @@ namespace Base.Data_Classes
                     if (newValue == "Knocked" && effect.Mag < 0.0)
                         newValue = "Knockback Protection";
                     str = shortForm ? effect.BuildEffectStringShort(noMag, simple).Replace("None", newValue) : effect.BuildEffectString(simple).Replace("None", newValue);
-                    switch (effect.EffectType)
+                    if (effect.EffectType == Enums.eEffectType.MezResist)
                     {
-                        case Enums.eEffectType.MezResist:
-                        {
-                            if (newValue == "Mez")
-                                str = str.Replace("MezResist(Mez)", "Status Resistance");
-                            break;
-                        }
-
-                        case Enums.eEffectType.Mez when newValue == "Mez" & effect.Mag < 0.0:
+                        if (newValue == "Mez")
+                            str = str.Replace("MezResist(Mez)", "Status Resistance");
+                    }
+                    else if (effect.EffectType == Enums.eEffectType.Mez)
+                    {
+                        if (newValue == "Mez" & effect.Mag < 0.0)
                             str = str.Replace("Mez", "Status Protection").Replace("-", string.Empty);
-                            break;
-                        case Enums.eEffectType.Mez:
-                        {
-                            if (newValue != "Knockback Protection")
-                                str = str.Replace("(Mag -", "protection (Mag ");
-                            break;
-                        }
+                        else if (newValue != "Knockback Protection")
+                            str = str.Replace("(Mag -", "protection (Mag ");
                     }
                 }
                 else if (effect.EffectType == Enums.eEffectType.Enhancement)
@@ -1842,39 +1825,40 @@ namespace Base.Data_Classes
             {
                 for (int index = 0; index <= source.Effects.Length - 1; ++index)
                 {
-                    if (!isGrantPower & (source.EntitiesAffected == Enums.eEntity.Caster &
-                                         source.Effects[index].EffectType != Enums.eEffectType.EntCreate)) continue;
-                    if (source.Effects[index].EffectType == Enums.eEffectType.EntCreate && source.Effects[index].nSummon > -1)
+                    if (!(!isGrantPower & (source.EntitiesAffected == Enums.eEntity.Caster & source.Effects[index].EffectType != Enums.eEffectType.EntCreate)))
                     {
-                        Array.Resize(ref array, array.Length + 1);
-                        array[array.Length - 1] = index;
+                        if (source.Effects[index].EffectType == Enums.eEffectType.EntCreate && source.Effects[index].nSummon > -1)
+                        {
+                            Array.Resize(ref array, array.Length + 1);
+                            array[array.Length - 1] = index;
+                        }
+                        ++num1;
+                        IEffect[] effects = Effects;
+                        Array.Resize(ref effects, num1 + length + 1);
+                        Effects = effects;
+                        IEffect effect = (IEffect)source.Effects[index].Clone();
+                        effect.Absorbed_Effect = true;
+                        effect.Absorbed_PowerType = source.PowerType;
+                        effect.Absorbed_Class_nID = archetype.Idx;
+                        effect.Absorbed_EffectID = fxid;
+                        effect.Absorbed_Power_nID = source.PowerIndex;
+                        if (source.PowerType == Enums.ePowerType.Auto_ || source.PowerType == Enums.ePowerType.Toggle)
+                            effect.SetTicks(nDuration, source.ActivatePeriod);
+                        if ((source.EntitiesAutoHit & Enums.eEntity.Friend) == Enums.eEntity.Friend)
+                        {
+                            effect.ToWho = Enums.eToWho.Self;
+                            if (effect.Stacking == Enums.eStacking.Yes)
+                                effect.Scale *= stacking;
+                        }
+                        effect.Absorbed_Duration = nDuration;
+                        if (source.RechargeTime > 0.0 & source.PowerType == Enums.ePowerType.Click)
+                            effect.Absorbed_Interval = source.RechargeTime + source.CastTime;
+                        if (nDelay > 0.0)
+                            effect.DelayedTime = nDelay;
+                        if (effect.Absorbed_Duration > 0.0 & num2 > 0.0)
+                            effect.nDuration = effect.Absorbed_Duration;
+                        Effects[num1 + length] = effect;
                     }
-                    ++num1;
-                    IEffect[] effects = Effects;
-                    Array.Resize(ref effects, num1 + length + 1);
-                    Effects = effects;
-                    IEffect effect = (IEffect)source.Effects[index].Clone();
-                    effect.Absorbed_Effect = true;
-                    effect.Absorbed_PowerType = source.PowerType;
-                    effect.Absorbed_Class_nID = archetype.Idx;
-                    effect.Absorbed_EffectID = fxid;
-                    effect.Absorbed_Power_nID = source.PowerIndex;
-                    if (source.PowerType == Enums.ePowerType.Auto_ || source.PowerType == Enums.ePowerType.Toggle)
-                        effect.SetTicks(nDuration, source.ActivatePeriod);
-                    if ((source.EntitiesAutoHit & Enums.eEntity.Friend) == Enums.eEntity.Friend)
-                    {
-                        effect.ToWho = Enums.eToWho.Self;
-                        if (effect.Stacking == Enums.eStacking.Yes)
-                            effect.Scale *= stacking;
-                    }
-                    effect.Absorbed_Duration = nDuration;
-                    if (source.RechargeTime > 0.0 & source.PowerType == Enums.ePowerType.Click)
-                        effect.Absorbed_Interval = source.RechargeTime + source.CastTime;
-                    if (nDelay > 0.0)
-                        effect.DelayedTime = nDelay;
-                    if (effect.Absorbed_Duration > 0.0 & num2 > 0.0)
-                        effect.nDuration = effect.Absorbed_Duration;
-                    Effects[num1 + length] = effect;
                 }
             }
             else if (isGrantPower || source.EntitiesAffected != Enums.eEntity.Caster || source.Effects[effectId].EffectType == Enums.eEffectType.EntCreate)
@@ -1928,13 +1912,13 @@ namespace Base.Data_Classes
                 int[] array2 = new int[0];
                 for (int index = num2; index < Effects.Length; ++index)
                 {
-                    if (Effects[index].EffectType != Enums.eEffectType.GrantPower ||
-                        Effects[index].EffectClass == Enums.eEffectClass.Ignored ||
-                        Effects[index].nSummon <= -1) continue;
-                    Array.Resize(ref array1, array1.Length + 1);
-                    Array.Resize(ref array2, array2.Length + 1);
-                    array1[array1.Length - 1] = index;
-                    array2[array2.Length - 1] = Effects[index].nSummon;
+                    if (Effects[index].EffectType == Enums.eEffectType.GrantPower && Effects[index].EffectClass != Enums.eEffectClass.Ignored && Effects[index].nSummon > -1)
+                    {
+                        Array.Resize(ref array1, array1.Length + 1);
+                        Array.Resize(ref array2, array2.Length + 1);
+                        array1[array1.Length - 1] = index;
+                        array2[array2.Length - 1] = Effects[index].nSummon;
+                    }
                 }
                 num2 = Effects.Length;
                 for (int index1 = 0; index1 <= array1.Length - 1; ++index1)
@@ -1965,10 +1949,20 @@ namespace Base.Data_Classes
             List<int> intList = new List<int>();
             foreach (EnhancementSet enhancementSet in DatabaseAPI.Database.EnhancementSets)
             {
-                bool flag = SetTypes.Any(setType => enhancementSet.SetType == setType);
-                if (!flag) continue;
-                foreach (int enhancement in enhancementSet.Enhancements)
-                    intList.Add(enhancement);
+                bool flag = false;
+                foreach (Enums.eSetType setType in SetTypes)
+                {
+                    if (enhancementSet.SetType == setType)
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                {
+                    foreach (int enhancement in enhancementSet.Enhancements)
+                        intList.Add(enhancement);
+                }
             }
             return intList.ToArray();
         }
@@ -1986,18 +1980,20 @@ namespace Base.Data_Classes
                 for (int index1 = 0; index1 <= DatabaseAPI.Database.Enhancements.Length - 1; ++index1)
                 {
                     IEnhancement enhancement1 = DatabaseAPI.Database.Enhancements[index1];
-                    if (enhancement1.TypeID != iType) continue;
-                    bool flag = false;
-                    foreach (int index2 in enhancement1.ClassID)
+                    if (enhancement1.TypeID == iType)
                     {
-                        foreach (int enhancement2 in Enhancements)
+                        bool flag = false;
+                        foreach (int index2 in enhancement1.ClassID)
                         {
-                            if (DatabaseAPI.Database.EnhancementClasses[index2].ID == enhancement2 && (enhancement1.SubTypeID == Enums.eSubtype.None || iSubType == Enums.eSubtype.None || enhancement1.SubTypeID == iSubType))
-                                flag = true;
+                            foreach (int enhancement2 in Enhancements)
+                            {
+                                if (DatabaseAPI.Database.EnhancementClasses[index2].ID == enhancement2 && (enhancement1.SubTypeID == Enums.eSubtype.None || iSubType == Enums.eSubtype.None || enhancement1.SubTypeID == iSubType))
+                                    flag = true;
+                            }
                         }
+                        if (flag)
+                            intList.Add(index1);
                     }
-                    if (flag)
-                        intList.Add(index1);
                 }
                 numArray = intList.ToArray();
             }
@@ -2013,11 +2009,11 @@ namespace Base.Data_Classes
             }
             else
             {
-                if (GetValidEnhancements(DatabaseAPI.Database.Enhancements[iEnh].TypeID).Any(validEnhancement => validEnhancement == iEnh))
+                foreach (int validEnhancement in GetValidEnhancements(DatabaseAPI.Database.Enhancements[iEnh].TypeID))
                 {
-                    return true;
+                    if (validEnhancement == iEnh)
+                        return true;
                 }
-
                 flag = false;
             }
             return flag;
@@ -2035,9 +2031,9 @@ namespace Base.Data_Classes
             }
             if (intList.Count > 0)
                 HasAbsorbedEffects = true;
-            foreach (var t in intList)
+            for (int index1 = 0; index1 < intList.Count; ++index1)
             {
-                IEffect effect = Effects[t];
+                IEffect effect = Effects[intList[index1]];
                 int nSummon1 = effect.nSummon;
                 int stacking = 1;
                 if (VariableEnabled && effect.VariableModified && (hIdx > -1 && MidsContext.Character != null) && MidsContext.Character.CurrentBuild.Powers[hIdx].VariableValue > stacking)

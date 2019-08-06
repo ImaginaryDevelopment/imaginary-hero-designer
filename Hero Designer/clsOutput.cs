@@ -282,12 +282,13 @@ namespace Hero_Designer
                         int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index.Length - 1;
                         for (int index5 = 0; index5 <= num4; ++index5)
                         {
-                            if (DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5] > -1)
-                            {
-                                ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]];
-                                if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]] > 5)
-                                    flag = true;
-                            }
+                            if (DatabaseAPI.Database
+                                    .EnhancementSets[
+                                        MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                    .Bonus[index4].Index[index5] <= -1) continue;
+                            ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]];
+                            if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].Bonus[index4].Index[index5]] > 5)
+                                flag = true;
                         }
                         if (flag)
                             str4 = formatItalic(formatColor(str4 + " (Exceeded 5 Bonus Cap)", ExportConfig.Element.Slots));

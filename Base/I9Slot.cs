@@ -256,25 +256,34 @@ public class I9Slot : ICloneable
                             }
                             else
                                 str2 = Enum.GetName(id.GetType(), id);
-                            if (sEffect.Enhance.ID == 7 || sEffect.Enhance.ID == 8 || sEffect.Enhance.ID == 17)
+                            switch (sEffect.Enhance.ID)
                             {
-                                str2 = !flag2 ? "Heal" : string.Empty;
-                                flag2 = true;
-                            }
-                            else if (sEffect.Enhance.ID == 10 || sEffect.Enhance.ID == 11 && !flag5)
-                            {
-                                str2 = !flag3 ? "Jump" : string.Empty;
-                                flag3 = true;
-                            }
-                            else if (sEffect.Enhance.ID == 5 || sEffect.Enhance.ID == 16)
-                            {
-                                str2 = !flag4 ? "EndMod" : string.Empty;
-                                flag4 = true;
-                            }
-                            else if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
-                            {
-                                str2 = !flag5 ? "Slow Movement" : string.Empty;
-                                flag5 = true;
+                                case 7:
+                                case 8:
+                                case 17:
+                                    str2 = !flag2 ? "Heal" : string.Empty;
+                                    flag2 = true;
+                                    break;
+                                case 10:
+                                case 11 when !flag5:
+                                    str2 = !flag3 ? "Jump" : string.Empty;
+                                    flag3 = true;
+                                    break;
+                                case 5:
+                                case 16:
+                                    str2 = !flag4 ? "EndMod" : string.Empty;
+                                    flag4 = true;
+                                    break;
+                                default:
+                                {
+                                    if (((enhancement.Name.IndexOf("Slow", StringComparison.Ordinal) > -1 ? 1 : 0) & (sEffect.BuffMode != Enums.eBuffDebuff.DeBuffOnly ? 0 : (sEffect.Enhance.ID == 6 || sEffect.Enhance.ID == 11 ? 1 : (sEffect.Enhance.ID == 19 ? 1 : 0)))) != 0 || sEffect.Enhance.ID == 21)
+                                    {
+                                        str2 = !flag5 ? "Slow Movement" : string.Empty;
+                                        flag5 = true;
+                                    }
+
+                                    break;
+                                }
                             }
                             if (!string.IsNullOrEmpty(str2))
                             {

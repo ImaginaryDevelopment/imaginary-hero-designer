@@ -59,7 +59,7 @@ namespace Hero_Designer
             GraphMax = 1f;
             Matching = false;
             Loaded = false;
-            DisplayValueStrings = new string[23]
+            DisplayValueStrings = new[]
             {
                 "Base Accuracy",
                 "Damage",
@@ -267,7 +267,7 @@ namespace Hero_Designer
             int index1 = 0;
             do
             {
-                string[] powerDisplays = new string[2] { "", "" };
+                string[] powerDisplays = { "", "" };
                 float[] values = new float[2];
                 string iTip = "";
                 int mapIdx = 0;
@@ -602,172 +602,172 @@ namespace Hero_Designer
                 }
             }
             mapOverride();
-            mapDescString(new string[1] { "summon" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "smash" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "energy" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "fire" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "ranged" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "melee" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+def", "aoe" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "smash" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "energy" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "fire" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "ranged" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "melee" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+def", "aoe" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+res", "smash" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+res", "energy" }, ref Placed);
-            mapDescString(new string[3] { "toggle", "+res", "fire" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+res", "smash" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+res", "energy" }, ref Placed);
-            mapDescString(new string[3] { "auto", "+res", "fire" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "+def" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "+res" }, ref Placed);
-            mapDescString(new string[2] { "auto", "+def" }, ref Placed);
-            mapDescString(new string[2] { "auto", "+res" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "disorient" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "stun" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "hold" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "sleep" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "summon" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "smash" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "energy" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "fire" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "ranged" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "melee" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def", "aoe" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "smash" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "energy" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "fire" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "ranged" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "melee" }, ref Placed);
+            mapDescString(new[] { "auto", "+def", "aoe" }, ref Placed);
+            mapDescString(new[] { "toggle", "+res", "smash" }, ref Placed);
+            mapDescString(new[] { "toggle", "+res", "energy" }, ref Placed);
+            mapDescString(new[] { "toggle", "+res", "fire" }, ref Placed);
+            mapDescString(new[] { "auto", "+res", "smash" }, ref Placed);
+            mapDescString(new[] { "auto", "+res", "energy" }, ref Placed);
+            mapDescString(new[] { "auto", "+res", "fire" }, ref Placed);
+            mapDescString(new[] { "toggle", "+def" }, ref Placed);
+            mapDescString(new[] { "toggle", "+res" }, ref Placed);
+            mapDescString(new[] { "auto", "+def" }, ref Placed);
+            mapDescString(new[] { "auto", "+res" }, ref Placed);
+            mapDescString(new[] { "AoE", "disorient" }, ref Placed);
+            mapDescString(new[] { "AoE", "stun" }, ref Placed);
+            mapDescString(new[] { "AoE", "hold" }, ref Placed);
+            mapDescString(new[] { "AoE", "sleep" }, ref Placed);
+            mapDescString(new[]
             {
         "AoE",
         "immobilize"
             }, ref Placed);
-            mapDescString(new string[2] { "AoE", "confuse" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "fear" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "AoE", "confuse" }, ref Placed);
+            mapDescString(new[] { "AoE", "fear" }, ref Placed);
+            mapDescString(new[]
             {
         "Cone",
         "disorient"
             }, ref Placed);
-            mapDescString(new string[2] { "Cone", "stun" }, ref Placed);
-            mapDescString(new string[2] { "Cone", "hold" }, ref Placed);
-            mapDescString(new string[2] { "Cone", "sleep" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "Cone", "stun" }, ref Placed);
+            mapDescString(new[] { "Cone", "hold" }, ref Placed);
+            mapDescString(new[] { "Cone", "sleep" }, ref Placed);
+            mapDescString(new[]
             {
         "Cone",
         "immobilize"
             }, ref Placed);
-            mapDescString(new string[2] { "Cone", "confuse" }, ref Placed);
-            mapDescString(new string[2] { "Cone", "fear" }, ref Placed);
-            mapDescString(new string[1] { "snipe" }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[] { "Cone", "confuse" }, ref Placed);
+            mapDescString(new[] { "Cone", "fear" }, ref Placed);
+            mapDescString(new[] { "snipe" }, ref Placed);
+            mapDescString(new[]
             {
         "AoE",
         "Extreme",
         "Self -Recovery"
             }, ref Placed);
-            mapDescString(new string[2] { "close", "high" }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[] { "close", "high" }, ref Placed);
+            mapDescString(new[]
             {
         "ranged",
         "disorient",
         "minor"
             }, ref Placed);
-            mapDescString(new string[2] { "ranged", "hold" }, ref Placed);
-            mapDescString(new string[2] { "cone", "extreme" }, ref Placed);
-            mapDescString(new string[2] { "cone", "superior" }, ref Placed);
-            mapDescString(new string[2] { "cone", "high" }, ref Placed);
-            mapDescString(new string[2] { "cone", "moderate" }, ref Placed);
-            mapDescString(new string[2] { "cone", "minor" }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[] { "ranged", "hold" }, ref Placed);
+            mapDescString(new[] { "cone", "extreme" }, ref Placed);
+            mapDescString(new[] { "cone", "superior" }, ref Placed);
+            mapDescString(new[] { "cone", "high" }, ref Placed);
+            mapDescString(new[] { "cone", "moderate" }, ref Placed);
+            mapDescString(new[] { "cone", "minor" }, ref Placed);
+            mapDescString(new[]
             {
         "ranged",
         "AoE",
         "extreme"
             }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[]
             {
         "ranged",
         "AoE",
         "superior"
             }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[]
             {
         "ranged",
         "AoE",
         "high"
             }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[]
             {
         "ranged",
         "AoE",
         "moderate"
             }, ref Placed);
-            mapDescString(new string[3]
+            mapDescString(new[]
             {
         "ranged",
         "AoE",
         "minor"
             }, ref Placed);
-            mapDescString(new string[2] { "AoE", "extreme" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "superior" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "high" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "moderate" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "minor" }, ref Placed);
-            mapDescString(new string[2] { "melee", "extreme" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "AoE", "extreme" }, ref Placed);
+            mapDescString(new[] { "AoE", "superior" }, ref Placed);
+            mapDescString(new[] { "AoE", "high" }, ref Placed);
+            mapDescString(new[] { "AoE", "moderate" }, ref Placed);
+            mapDescString(new[] { "AoE", "minor" }, ref Placed);
+            mapDescString(new[] { "melee", "extreme" }, ref Placed);
+            mapDescString(new[]
             {
         "melee",
         "superior"
             }, ref Placed);
-            mapDescString(new string[2] { "melee", "high" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "melee", "high" }, ref Placed);
+            mapDescString(new[]
             {
         "melee",
         "moderate"
             }, ref Placed);
-            mapDescString(new string[2] { "melee", "minor" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "melee", "minor" }, ref Placed);
+            mapDescString(new[]
             {
         "melee",
         "disorient"
             }, ref Placed);
-            mapDescString(new string[2] { "melee", "stun" }, ref Placed);
-            mapDescString(new string[2] { "melee", "hold" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "knockback" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "knockup" }, ref Placed);
-            mapDescString(new string[2]
+            mapDescString(new[] { "melee", "stun" }, ref Placed);
+            mapDescString(new[] { "melee", "hold" }, ref Placed);
+            mapDescString(new[] { "AoE", "knockback" }, ref Placed);
+            mapDescString(new[] { "AoE", "knockup" }, ref Placed);
+            mapDescString(new[]
             {
         "Cone",
         "knockback"
             }, ref Placed);
-            mapDescString(new string[2] { "Cone", "knockup" }, ref Placed);
-            mapDescString(new string[2] { "AoE", "stealth" }, ref Placed);
-            mapDescString(new string[1] { "stealth" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "-def" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "-res" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "-acc" }, ref Placed);
-            mapDescString(new string[2] { "toggle", "-dmg" }, ref Placed);
-            mapDescString(new string[1] { "-def" }, ref Placed);
-            mapDescString(new string[1] { "-res" }, ref Placed);
-            mapDescString(new string[1] { "-acc" }, ref Placed);
-            mapDescString(new string[1] { "-dmg" }, ref Placed);
-            mapDescString(new string[1] { "+dmg" }, ref Placed);
-            mapDescString(new string[1] { "+acc" }, ref Placed);
-            mapDescString(new string[2] { "heal", "team" }, ref Placed);
-            mapDescString(new string[2] { "heal", "ally" }, ref Placed);
-            mapDescString(new string[1] { "heal" }, ref Placed);
-            mapDescString(new string[1] { "+recovery" }, ref Placed);
-            mapDescString(new string[1] { "-recovery" }, ref Placed);
-            mapDescString(new string[1] { "-regen" }, ref Placed);
-            mapDescString(new string[1] { "extreme" }, ref Placed);
-            mapDescString(new string[1] { "superior" }, ref Placed);
-            mapDescString(new string[1] { "high" }, ref Placed);
-            mapDescString(new string[1] { "moderate" }, ref Placed);
-            mapDescString(new string[1] { "minor" }, ref Placed);
-            mapDescString(new string[1] { "disorient" }, ref Placed);
-            mapDescString(new string[1] { "stun" }, ref Placed);
-            mapDescString(new string[1] { "hold" }, ref Placed);
-            mapDescString(new string[1] { "sleep" }, ref Placed);
-            mapDescString(new string[1] { "immobilize" }, ref Placed);
-            mapDescString(new string[1] { "confuse" }, ref Placed);
-            mapDescString(new string[1] { "fear" }, ref Placed);
-            mapDescString(new string[1] { "cone" }, ref Placed);
-            mapDescString(new string[1] { "aoe" }, ref Placed);
-            mapDescString(new string[1] { "melee" }, ref Placed);
-            mapDescString(new string[1] { "ranged" }, ref Placed);
+            mapDescString(new[] { "Cone", "knockup" }, ref Placed);
+            mapDescString(new[] { "AoE", "stealth" }, ref Placed);
+            mapDescString(new[] { "stealth" }, ref Placed);
+            mapDescString(new[] { "toggle", "-def" }, ref Placed);
+            mapDescString(new[] { "toggle", "-res" }, ref Placed);
+            mapDescString(new[] { "toggle", "-acc" }, ref Placed);
+            mapDescString(new[] { "toggle", "-dmg" }, ref Placed);
+            mapDescString(new[] { "-def" }, ref Placed);
+            mapDescString(new[] { "-res" }, ref Placed);
+            mapDescString(new[] { "-acc" }, ref Placed);
+            mapDescString(new[] { "-dmg" }, ref Placed);
+            mapDescString(new[] { "+dmg" }, ref Placed);
+            mapDescString(new[] { "+acc" }, ref Placed);
+            mapDescString(new[] { "heal", "team" }, ref Placed);
+            mapDescString(new[] { "heal", "ally" }, ref Placed);
+            mapDescString(new[] { "heal" }, ref Placed);
+            mapDescString(new[] { "+recovery" }, ref Placed);
+            mapDescString(new[] { "-recovery" }, ref Placed);
+            mapDescString(new[] { "-regen" }, ref Placed);
+            mapDescString(new[] { "extreme" }, ref Placed);
+            mapDescString(new[] { "superior" }, ref Placed);
+            mapDescString(new[] { "high" }, ref Placed);
+            mapDescString(new[] { "moderate" }, ref Placed);
+            mapDescString(new[] { "minor" }, ref Placed);
+            mapDescString(new[] { "disorient" }, ref Placed);
+            mapDescString(new[] { "stun" }, ref Placed);
+            mapDescString(new[] { "hold" }, ref Placed);
+            mapDescString(new[] { "sleep" }, ref Placed);
+            mapDescString(new[] { "immobilize" }, ref Placed);
+            mapDescString(new[] { "confuse" }, ref Placed);
+            mapDescString(new[] { "fear" }, ref Placed);
+            mapDescString(new[] { "cone" }, ref Placed);
+            mapDescString(new[] { "aoe" }, ref Placed);
+            mapDescString(new[] { "melee" }, ref Placed);
+            mapDescString(new[] { "ranged" }, ref Placed);
             int num6 = Powers[1].Length - 1;
             for (int index = 0; index <= num6; ++index)
             {

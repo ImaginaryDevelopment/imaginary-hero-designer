@@ -118,8 +118,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvFX.SelectedIndices[0];
             if (selectedIndex > myPower.Effects.Length - 2) return;
-            IEffect[] effectArray = new IEffect[2]
-            {
+            IEffect[] effectArray = {
                 (IEffect) myPower.Effects[selectedIndex].Clone(),
                 (IEffect) myPower.Effects[selectedIndex + 1].Clone()
             };
@@ -412,7 +411,9 @@ namespace Hero_Designer
                 int num3 = lvSPSelected.Items.Count - 1;
             }
             else if (num2 >= 0)
-                ;
+            {
+            }
+
             SPFillList();
             if (lvSPSelected.Items.Count <= 0) return;
             lvSPSelected.Items[lvSPSelected.Items.Count - 1].Selected = true;

@@ -606,21 +606,21 @@ namespace Hero_Designer
                 "Rearrange all slots in build"
             };
             scenarioExample[3] = "A 6-slotted power taken at level 41 is moved to level 49.\r\n(Note: if the remaining slots have invalid levels after impossible slots are removed, the action set for that scenario will be taken.)";
-            scenActs[3] = new string[4] {
+            scenActs[3] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Remove impossible slots",
                 "Allow anyway (Mark slots as invalid)"
             };
             scenarioExample[4] = "Power taken at level 4 is swapped with power taken at level 14, which is a travel power.";
-            scenActs[4] = new string[4] {
+            scenActs[4] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Overwrite rather than swap",
                 "Allow power to be swapped anyway (mark as invalid)"
             };
             scenarioExample[5] = "Power taken at level 8 is swapped with power taken at level 2, when the level 2 power has level 3 slots.";
-            scenActs[5] = new string[7] {
+            scenActs[5] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Remove slots",
@@ -630,14 +630,14 @@ namespace Hero_Designer
                 "Rearrange all slots in build"
             };
             scenarioExample[6] = "Pool power taken at level 49 is swapped with a 6-slotted power at level 41.\r\n(Note: if the remaining slots have invalid levels after impossible slots are removed, the action set for that scenario will be taken.)";
-            scenActs[6] = new string[4] {
+            scenActs[6] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Remove impossible slots",
                 "Allow anyway (Mark slots as invalid)"
             };
             scenarioExample[7] = "Power taken at level 4 is moved to level 8 when the power taken at level 6 is a pool power.\r\n(Note: If the power in the destination slot fails to shift, the 'Moved or swapped too low' scenario applies.)";
-            scenActs[7] = new string[5] {
+            scenActs[7] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Shift other powers around it",
@@ -645,7 +645,7 @@ namespace Hero_Designer
                 "Allow anyway (mark as invalid)"
             };
             scenarioExample[8] = "Power taken at level 8 has level 9 slots, and a power is being moved from level 12 to level 6, so the power at 8 is shifting up to 10.";
-            scenActs[8] = new string[7] {
+            scenActs[8] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Remove slots",
@@ -655,28 +655,28 @@ namespace Hero_Designer
                 "Rearrange all slots in build"
             };
             scenarioExample[9] = "Power taken at level 47 has 6 slots, and a power is being moved from level 49 to level 44, so the power at 47 is shifting to 49.\r\n(Note: if the remaining slots have invalid levels after impossible slots are removed, the action set for that scenario will be taken.)";
-            scenActs[9] = new string[4] {
+            scenActs[9] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Remove impossible slots",
                 "Allow anyway (Mark slots as invalid)"
             };
             scenarioExample[10] = "Power taken at level 8 is being moved to 14, and the level 10 slot is blank.";
-            scenActs[10] = new string[4] {
+            scenActs[10] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Fill empty slot; don't move powers unnecessarily",
                 "Shift empty slot as if it were a power"
             };
             scenarioExample[11] = "Power placed at its minimum level is being shifted up.\r\n(Note: If and only the power in the destination slot fails to shift due to this setting, the next scenario applies.)";
-            scenActs[11] = new string[4] {
+            scenActs[11] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Shift it along with the other powers",
                 "Shift other powers around it"
             };
             scenarioExample[12] = "You chose to shift other powers around ones that are at their minimum levels, but you are moving a power in place of one that is at its minimum level. (This will never occur if you chose 'Cancel' or 'Shift it along with the other powers' from the previous scenario.)";
-            scenActs[12] = new string[5] {
+            scenActs[12] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Unlock and shift all level-locked powers",
@@ -684,13 +684,13 @@ namespace Hero_Designer
                 "Swap instead of move"
             };
             scenarioExample[13] = "Click and drag a level 21 slot from a level 20 power to a level 44 power.";
-            scenActs[13] = new string[3] {
+            scenActs[13] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Allow swap anyway (mark as invalid)"
             };
             scenarioExample[14] = "Click and drag a slot from a level 44 power to a level 20 power in place of a level 21 slot.";
-            scenActs[14] = new string[3] {
+            scenActs[14] = new[] {
                 "Show dialog",
                 "Cancel",
                 "Allow swap anyway (mark as invalid)"

@@ -30,7 +30,7 @@ namespace Hero_Designer
 
         public void AddListItem(int Index)
         {
-            lvPowers.Items.Add(new ListViewItem(new string[3]
+            lvPowers.Items.Add(new ListViewItem(new[]
             {
                 Conversions.ToString(DatabaseAPI.Database.Power[myPS.Power[Index]].Level),
                 DatabaseAPI.Database.Power[myPS.Power[Index]].DisplayName,

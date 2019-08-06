@@ -145,8 +145,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvGroup.SelectedIndices[0];
             if (selectedIndex >= lvGroup.Items.Count - 1) return;
-            Archetype[] archetypeArray = new Archetype[2]
-            {
+            Archetype[] archetypeArray = {
                 new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
                 new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
             };
@@ -193,8 +192,7 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvGroup.SelectedIndices[0];
             if (selectedIndex < 1) return;
-            Archetype[] archetypeArray = new Archetype[2]
-            {
+            Archetype[] archetypeArray = {
                 new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
                 new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
             };
@@ -509,8 +507,7 @@ namespace Hero_Designer
                 int num3 = DatabaseAPI.Database.Powersets.Length - 1;
                 for (int index3 = 0; index3 <= num3; ++index3)
                 {
-                    DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]);
-                    DatabaseAPI.Database.Powersets[index3].nID = index3;
+                    DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]) {nID = index3};
                 }
                 int Powerset = -1;
                 if (lvSet.Items.Count > 0)
@@ -976,7 +973,7 @@ namespace Hero_Designer
                     {
                         if (!(DatabaseAPI.Database.Powersets[index].GetGroup() == null |
                               string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))) continue;
-                        int[] iArray2 = new int[1] { index };
+                        int[] iArray2 = { index };
                         numArray3 = ConcatArray(numArray3, iArray2);
                     }
                     BuildPowersetImageList(numArray3);

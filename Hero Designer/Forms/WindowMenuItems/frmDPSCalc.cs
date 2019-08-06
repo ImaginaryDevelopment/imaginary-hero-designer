@@ -364,8 +364,9 @@ namespace Hero_Designer
             effectMag2.Multiply();
             float num2 = damageValue / num1;
             string[] strArray;
-            if (damageValue != 0.0)
-                strArray = new string[8]
+            const double tolerance = 0;
+            if (Math.Abs(damageValue) > tolerance)
+                strArray = new[]
                 {
           num2.ToString(CultureInfo.CurrentCulture),
           damageValue.ToString(CultureInfo.CurrentCulture),
@@ -377,7 +378,7 @@ namespace Hero_Designer
           powerLocation.ToString()
                 };
             else
-                strArray = new string[8]
+                strArray = new[]
                 {
                       "-",
                       "-",

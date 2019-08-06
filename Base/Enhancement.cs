@@ -419,8 +419,7 @@ public class Enhancement : IEnhancement
                     ed[index] = DatabaseAPI.Database.MultED[(int)iSched][index];
                 if (iVal <= (double)ed[0])
                     return iVal;
-                float[] edm = new float[3]
-                {
+                float[] edm = {
                     ed[0],
                     ed[0] + (float) (( ed[1] - (double) ed[0]) * 0.899999976158142),
                     (float) ( ed[0] + ( ed[1] - (double) ed[0]) * 0.899999976158142 + ( ed[2] - (double) ed[1]) * 0.699999988079071)

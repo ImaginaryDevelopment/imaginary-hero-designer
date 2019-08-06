@@ -113,16 +113,12 @@ public static class Enums
                 names[index] = names[index].ToUpper();
             foreach (var t in strArray2)
             {
-                if (t.Length > 0)
-                {
-                    int index2 = Array.IndexOf(names, t);
-                    if (index2 > -1)
-                    {
-                        if (noFlag)
-                            return (int)values.GetValue(index2);
-                        num1 += (int)values.GetValue(index2);
-                    }
-                }
+                if (t.Length <= 0) continue;
+                int index2 = Array.IndexOf(names, t);
+                if (index2 <= -1) continue;
+                if (noFlag)
+                    return (int)values.GetValue(index2);
+                num1 += (int)values.GetValue(index2);
             }
             num2 = num1;
         }
@@ -182,7 +178,7 @@ public static class Enums
         }
         else
         {
-            char[] chArray = new char[1] { ',' };
+            char[] chArray = { ',' };
             iStr = iStr.Replace(", ", ",");
             string[] array = iStr.Split(chArray);
             Array.Sort(array);

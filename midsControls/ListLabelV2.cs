@@ -741,7 +741,7 @@ namespace midsControls
         void DrawScrollBar()
         {
             if (ScrollWidth < 1 | !canScroll | ScrollSteps < 1) return;
-            SolidBrush brush = new SolidBrush(scBarColor);
+            SolidBrush brush;
             Pen pen = new Pen(scBarColor);
             Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
             Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
@@ -783,7 +783,7 @@ namespace midsControls
         void DrawExpandButton()
         {
             if (!canExpand | (!Expanded & ScrollSteps < 1)) return;
-            SolidBrush brush = new SolidBrush(scButtonColor);
+            SolidBrush brush;
             Pen pen = new Pen(scBarColor);
             Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
             Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);

@@ -369,17 +369,16 @@ namespace Base.Document_Classes
 
                     s3 = str1 + "[Empty]";
                 }
-                if (!string.IsNullOrEmpty(s1) || !string.IsNullOrEmpty(s2) || !string.IsNullOrEmpty(s3))
-                {
-                    var layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
-                    args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
-                    layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
-                    args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
-                    vPos += (int)(fontSize * 1.25);
-                    layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize * 1.25f);
-                    args.Graphics.DrawString(s3, font, solidBrush, layoutRectangle, format);
-                    vPos += (int)((fontSize * 1.25 * 1.1) + (fontSize * 1.25 * (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1)));
-                }
+
+                if (string.IsNullOrEmpty(s1) && string.IsNullOrEmpty(s2) && string.IsNullOrEmpty(s3)) continue;
+                var layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
+                args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
+                layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
+                args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
+                vPos += (int)(fontSize * 1.25);
+                layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize * 1.25f);
+                args.Graphics.DrawString(s3, font, solidBrush, layoutRectangle, format);
+                vPos += (int)((fontSize * 1.25 * 1.1) + (fontSize * 1.25 * (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1)));
             }
             _pIndex = pgIdx;
             if (isEnd)

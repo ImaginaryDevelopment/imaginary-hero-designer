@@ -64,11 +64,11 @@ namespace Hero_Designer
             var num = MidsContext.Character.Level + 1;
             if (num > 50) num = 50;
 
-            var (server, user, channel) = (
+            var (dserver, duser, dchannel) = (
                 MidsContext.Config.DSelServer.Replace(" (Default)", ""),
                 MidsContext.Config.DNickName,
                 MidsContext.Config.DChannel);
-            var (level, archetype, priPowerSet, secPowerSet, globRecharge, endRecovery, totalEndUse, toonName, datalink) = (
+            var (clevel, carchetype, priPowerSet, secPowerSet, globRecharge, endRecovery, totalEndUse, toonName, datalink) = (
                 Conversions.ToString(num),
                 MidsContext.Character.Archetype.DisplayName,
                 MidsContext.Character.Powersets[0].DisplayName,
@@ -92,12 +92,12 @@ namespace Hero_Designer
             {
                 var json = JsonConvert.SerializeObject(new
                 {
-                    guild = server,
-                    channel = channel,
-                    nickname = user,
-                    level = level,
+                    guild = dserver,
+                    channel = dchannel,
+                    nickname = duser,
+                    level = clevel,
                     name = toonName,
-                    archetype = archetype,
+                    archetype = carchetype,
                     primpowerset = priPowerSet,
                     secpowerset = secPowerSet,
                     recharge = globRecharge,
@@ -112,52 +112,57 @@ namespace Hero_Designer
             }
 
             var httpResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                switch (result)
+            if (httpResponse != null)
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream() ?? throw new InvalidOperationException()))
                 {
-                    case "Nickname not found in discord":
+                    var result = streamReader.ReadToEnd();
+                    switch (result)
+                    {
+                        case "Nickname not found in discord":
                         {
-                            string message = $"Submission Failed: Your discord nickname was not found in the {server} discord server.";
+                            string message =
+                                $"Submission Failed: Your discord nickname was not found in the {dserver} discord server.";
                             const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
-                    case "Export Successful":
+                        case "Export Successful":
                         {
-                            string message = $"Submission Successful!! Your build should now be posted in {channel} on the {server} server.";
+                            string message =
+                                $"Submission Successful!! Your build should now be posted in {dchannel} on the {dserver} server.";
                             const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
-                    case "Export Failed":
+                        case "Export Failed":
                         {
-                            const string message = "Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
+                            const string message =
+                                "Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
                             const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
-                    case "Failed to add export to queue":
+                        case "Failed to add export to queue":
                         {
-                            const string message = "Submission Failed: Possible server error, please contact the RebornTeam.";
+                            const string message =
+                                "Submission Failed: Possible server error, please contact the RebornTeam.";
                             const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
-                    case "RebornBot is not in the discord server":
+                        case "RebornBot is not in the discord server":
                         {
-                            string message = $"Submission Failed: RebornBot was not found in the {server}.";
+                            string message = $"Submission Failed: RebornBot was not found in {dserver}.";
                             const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
+                    }
                 }
-            }
         }
     }
 }

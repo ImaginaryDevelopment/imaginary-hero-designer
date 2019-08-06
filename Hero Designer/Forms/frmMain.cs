@@ -5305,22 +5305,17 @@ namespace Hero_Designer
                 List<SlotEntry> slotEntryList = new List<SlotEntry>();
                 foreach (var t in MidsContext.Character.CurrentBuild.Powers)
                 {
-                    const bool flag = false;
                     foreach (var t1 in powerEntryList)
                     {
-                        if (t1.Power.FullName == t.Power.FullName)
+                        if (t1.Power.FullName != t.Power.FullName) continue;
+                        if (t1.Slots.Length > 0)
+                            slotEntryList.Add(t1.Slots[0]);
+                        for (int index4 = 0; index4 < t1.Slots.Length - 1; ++index4)
                         {
-                            if (t1.Slots.Length > 0)
-                                slotEntryList.Add(t1.Slots[0]);
-                            for (int index4 = 0; index4 < t1.Slots.Length - 1; ++index4)
-                            {
-                                slotEntryList.Add(t1.Slots[index4 + 1]);
-                                t.AddSlot(49);
-                            }
-                            break;
+                            slotEntryList.Add(t1.Slots[index4 + 1]);
+                            t.AddSlot(49);
                         }
-                        if (flag)
-                            break;
+                        break;
                     }
                 }
                 int num5 = 0;

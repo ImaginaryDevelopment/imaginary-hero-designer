@@ -185,7 +185,7 @@ namespace Hero_Designer
         {
             MoveDisable = false;
             TabPage = 0;
-            Pages = new string[4]
+            Pages = new[]
             {
                 "Info",
                 "Effects",
@@ -532,11 +532,10 @@ namespace Hero_Designer
                                             afterED3[18] += effect.Mag;
                                             break;
                                         }
-                                        if (str.StartsWith("Damage"))
-                                        {
-                                            afterED3[2] += effect.Mag;
-                                            break;
-                                        }
+
+                                        if (!str.StartsWith("Damage")) continue;
+                                        afterED3[2] += effect.Mag;
+                                        break;
                                     }
                                 }
                                 else
@@ -863,14 +862,12 @@ namespace Hero_Designer
                 GFXLabel fxTitle = fx_Title;
                 fxTitle.Text = fxTitle.Text + " (Slot Level " + Conversions.ToString(iEnhLvl + 1) + ")";
             }
-            ctlPairedList[] ctlPairedListArray = new ctlPairedList[3]
-            {
+            ctlPairedList[] ctlPairedListArray = {
                 fx_List1,
                 fx_List2,
                 fx_List3
             };
-            Label[] labelArray = new Label[3]
-            {
+            Label[] labelArray = {
                 fx_lblHead1,
                 fx_lblHead2,
                 fx_LblHead3
@@ -1069,8 +1066,7 @@ namespace Hero_Designer
             Statistics displayStats = MidsContext.Character.DisplayStats;
             gDef1.Clear();
             gDef2.Clear();
-            int[] numArray1 = new int[16]
-            {
+            int[] numArray1 = {
                 0, 0, 0, 1,
                 1, 0, 0, 1,
                 0, 0, 1, 1,
@@ -1097,8 +1093,7 @@ namespace Hero_Designer
             string str = MidsContext.Character.Archetype.DisplayName + " resistance cap: " + Strings.Format((float)(MidsContext.Character.Archetype.ResCap * 100.0), "###0") + "%";
             gRes1.Clear();
             gRes2.Clear();
-            int[] numArray2 = new int[13]
-            {
+            int[] numArray2 = {
                 0, 0, 0, 1,
                 1, 0, 0, 1,
                 1, 0, 1, 1,
@@ -1461,8 +1456,7 @@ namespace Hero_Designer
                     iLabel.Text = "Elusivity (PvP)";
                 return num4;
             }
-            if (num1 > 0 && flag)
-                iLabel.Text = "Elusivity (PvP)";
+
             return num1;
         }
 
@@ -3174,8 +3168,8 @@ namespace Hero_Designer
             }
             else
                 str1 = "No Valid Tip";
-            object[] Arguments = new object[1] { str1 };
-            bool[] CopyBack = new bool[1] { true };
+            object[] Arguments = { str1 };
+            bool[] CopyBack = { true };
             NewLateBinding.LateCall(Sender, null, "SetTip", Arguments, null, null, CopyBack, true);
             if (!CopyBack[0])
                 return;

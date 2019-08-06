@@ -280,7 +280,7 @@ namespace Hero_Designer
                 if (power2.Effects.Length > 0)
                 {
                     iPopup.Sections[index2].Add("Effects:", PopUp.Colors.Title);
-                    char[] chArray = new char[1] { '^' };
+                    char[] chArray = { '^' };
                     int num1 = power2.Effects.Length - 1;
                     for (int index3 = 0; index3 <= num1; ++index3)
                     {

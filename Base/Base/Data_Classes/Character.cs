@@ -945,13 +945,11 @@ namespace Base.Data_Classes
                 return false;
             }
 
-            if (power.NIDPowerset == Powersets[1].nID & power.IDXPower == 0 & !allowSecondary)
-            {
-                if (CurrentBuild.PowersPlaced <= 1) return true;
-                message = "The first power from your secondary set is non-optional and can't be removed.";
-                return false;
-            }
-            return power.NIDPowerset >= 0;
+            if (!(power.NIDPowerset == Powersets[1].nID & power.IDXPower == 0 & !allowSecondary))
+                return power.NIDPowerset >= 0;
+            if (CurrentBuild.PowersPlaced <= 1) return true;
+            message = "The first power from your secondary set is non-optional and can't be removed.";
+            return false;
         }
 
         public void SwitchSets(IPowerset newPowerset, IPowerset oldPowerset)

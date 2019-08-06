@@ -56,7 +56,7 @@ namespace Hero_Designer
         void AddSetString(int nIDSet, int BonusID)
 
         {
-            lvSet.Items.Add(new ListViewItem(new string[4]
+            lvSet.Items.Add(new ListViewItem(new[]
             {
         DatabaseAPI.Database.EnhancementSets[nIDSet].DisplayName,
         Conversions.ToString(DatabaseAPI.Database.EnhancementSets[nIDSet].LevelMin + 1) + " - " + Conversions.ToString(DatabaseAPI.Database.EnhancementSets[nIDSet].LevelMax + 1),

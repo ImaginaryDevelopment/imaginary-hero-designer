@@ -601,8 +601,7 @@ namespace Hero_Designer
             const string str10 = "\r\nStatus resistance reduces the time you are affected by a status effect such as" + "\r\na Hold. Note that 100% resistance would make a 10s effect last 5s, and not 0s.";
             graphSProt.Clear();
             graphSRes.Clear();
-            Enums.eMez[] eMezArray = new Enums.eMez[11]
-            {
+            Enums.eMez[] eMezArray = {
                 Enums.eMez.Held,
                 Enums.eMez.Stunned,
                 Enums.eMez.Sleep,
@@ -659,8 +658,7 @@ namespace Hero_Designer
             graphSRes.Max = num3;
             graphSRes.Draw();
             graphSDeb.Clear();
-            Enums.eEffectType[] eEffectTypeArray = new Enums.eEffectType[7]
-            {
+            Enums.eEffectType[] eEffectTypeArray = {
                 Enums.eEffectType.Defense,
                 Enums.eEffectType.Endurance,
                 Enums.eEffectType.Recovery,

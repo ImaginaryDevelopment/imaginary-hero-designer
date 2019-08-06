@@ -108,7 +108,7 @@ public static class DatabaseAPI
         IPowerset[] powersetArray = Database.Powersets;
         if (group != null)
         {
-            powersetArray = @group.Powersets.Select(powerset => powerset.Value).ToArray();
+            powersetArray = group.Powersets.Select(powerset => powerset.Value).ToArray();
         }
 
         List<int> intList = new List<int>();
@@ -256,10 +256,7 @@ public static class DatabaseAPI
         if (string.IsNullOrEmpty(name))
             return null;
         IPowerset powersetByName = GetPowersetByName(name);
-        if (powersetByName == null)
-            return null;
-
-        return powersetByName.Powers.FirstOrDefault(power2 => string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase));
+        return powersetByName?.Powers.FirstOrDefault(power2 => string.Equals(power2.FullName, name, StringComparison.OrdinalIgnoreCase));
     }
 
     public static string[] GetPowersetNames(int iAT, Enums.ePowerSetType iSet)
@@ -293,7 +290,7 @@ public static class DatabaseAPI
 
     public static int[] GetPowersetIndexesByGroup(PowersetGroup group)
     {
-        return @group.Powersets.Select(powerset => powerset.Value.nID).ToArray();
+        return group.Powersets.Select(powerset => powerset.Value.nID).ToArray();
     }
 
     public static int[] GetPowersetIndexesByGroupName(string name)
@@ -475,20 +472,14 @@ public static class DatabaseAPI
             if (!isSub)
                 return recipeIdx;
             int startIndex = uidRecipe.LastIndexOf("_", StringComparison.Ordinal) + 1;
-            if (!(startIndex < 0 || startIndex > uidRecipe.Length - 1))
+            if (startIndex < 0 || startIndex > uidRecipe.Length - 1) return -1;
+            uid = uidRecipe.Substring(startIndex);
+            for (int index2 = 0; index2 < Database.Recipes[recipeIdx].Item.Length; ++index2)
             {
-                uid = uidRecipe.Substring(startIndex);
-                for (int index2 = 0; index2 < Database.Recipes[recipeIdx].Item.Length; ++index2)
-                {
-                    if (Database.Recipes[recipeIdx].Item[index2].Level == startIndex)
-                    {
-                        subIndex = index2;
-                        return recipeIdx;
-                    }
-                }
-                continue;
+                if (Database.Recipes[recipeIdx].Item[index2].Level != startIndex) continue;
+                subIndex = index2;
+                return recipeIdx;
             }
-            return -1;
         }
         return -1;
     }
@@ -928,11 +919,9 @@ public static class DatabaseAPI
         {
             if (enhancement.TypeID != Enums.eType.InventO && enhancement.TypeID != Enums.eType.SetO) continue;
             int recipeIdxByName = GetRecipeIdxByName(enhancement.UID);
-            if (recipeIdxByName > -1)
-            {
-                enhancement.RecipeIDX = recipeIdxByName;
-                enhancement.RecipeName = Database.Recipes[recipeIdxByName].InternalName;
-            }
+            if (recipeIdxByName <= -1) continue;
+            enhancement.RecipeIDX = recipeIdxByName;
+            enhancement.RecipeName = Database.Recipes[recipeIdxByName].InternalName;
         }
     }
 
@@ -983,13 +972,12 @@ public static class DatabaseAPI
             string recipeName = Database.Enhancements[index1].RecipeName;
             for (int index2 = 0; index2 <= Database.Recipes.Length - 1; ++index2)
             {
-                if (recipeName.Equals(Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
-                {
-                    Database.Recipes[index2].Enhancement = Database.Enhancements[index1].UID;
-                    Database.Recipes[index2].EnhIdx = index1;
-                    Database.Enhancements[index1].RecipeIDX = index2;
-                    break;
-                }
+                if (!recipeName.Equals(Database.Recipes[index2].InternalName, StringComparison.OrdinalIgnoreCase))
+                    continue;
+                Database.Recipes[index2].Enhancement = Database.Enhancements[index1].UID;
+                Database.Recipes[index2].EnhIdx = index1;
+                Database.Enhancements[index1].RecipeIDX = index2;
+                break;
             }
         }
     }

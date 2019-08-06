@@ -55,20 +55,16 @@ public class Modifiers
             iLine2 = FileIO.ReadLineUnlimited(iStream2, char.MinValue);
             if (iLine2 == null || iLine2.StartsWith("#")) continue;
             string[] array = CSV.ToArray(iLine2);
-            if (array.Length > 0)
+            if (array.Length <= 0) continue;
+            int num = int.Parse(array[0]) - 1;
+            for (int index1 = 0; index1 <= Modifier.Length - 1; ++index1)
             {
-                int num = int.Parse(array[0]) - 1;
-                for (int index1 = 0; index1 <= Modifier.Length - 1; ++index1)
-                {
-                    if (num >= Modifier[index1].BaseIndex & num <= Modifier[index1].BaseIndex + 55)
-                    {
-                        int index2 = num - Modifier[index1].BaseIndex;
-                        Modifier[index1].Table[index2] = new float[array.Length - 1];
-                        for (int index3 = 0; index3 <= array.Length - 2; ++index3)
-                            Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
-                        break;
-                    }
-                }
+                if (!(num >= Modifier[index1].BaseIndex & num <= Modifier[index1].BaseIndex + 55)) continue;
+                int index2 = num - Modifier[index1].BaseIndex;
+                Modifier[index1].Table[index2] = new float[array.Length - 1];
+                for (int index3 = 0; index3 <= array.Length - 2; ++index3)
+                    Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
+                break;
             }
         }
         while (iLine2 != null);

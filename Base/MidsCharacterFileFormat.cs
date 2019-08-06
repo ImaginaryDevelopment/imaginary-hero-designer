@@ -7,8 +7,7 @@ using Base.Master_Classes;
 
 public static class MidsCharacterFileFormat
 {
-    public static readonly byte[] MagicNumber = new byte[4]
-    {
+    public static readonly byte[] MagicNumber = {
         Convert.ToByte('M'),
         Convert.ToByte('x'),
         Convert.ToByte('D'),
@@ -413,8 +412,7 @@ public static class MidsCharacterFileFormat
             int num = (int)MessageBox.Show("Unable to read data - " + ex.Message, "ExtractAndLoad Failed");
             return MidsCharacterFileFormat.eLoadReturnCode.Failure;
         }
-        string[] strArray1 = new string[4]
-        {
+        string[] strArray1 = {
               "ABCD",
               "0",
               "0",
@@ -504,7 +502,7 @@ public static class MidsCharacterFileFormat
         catch (Exception ex)
         {
             MessageBox.Show("Unable to read data - " + ex.Message, "ExtractAndLoad Failed");
-            streamReader?.Close();
+            streamReader.Close();
             eLoadReturnCode = eLoadReturnCode.Failure;
         }
         return eLoadReturnCode;

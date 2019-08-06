@@ -161,30 +161,28 @@ namespace Hero_Designer
                     for (int index4 = 0; index4 <= num5; ++index4)
                     {
                         int index5 = DatabaseAPI.IsSpecialEnh(MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].EnhIndexes[index4]);
-                        if (index5 > -1)
+                        if (index5 <= -1) continue;
+                        if (str4 != "")
+                            str4 += RTF.Crlf();
+                        string str5 = str4 + RTF.Color(RTF.ElementID.Enhancement);
+                        bool localOverCap = false;
+                        string str6 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true);
+                        int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index.Length - 1;
+                        for (int index6 = 0; index6 <= num4; ++index6)
                         {
-                            if (str4 != "")
-                                str4 += RTF.Crlf();
-                            string str5 = str4 + RTF.Color(RTF.ElementID.Enhancement);
-                            bool localOverCap = false;
-                            string str6 = "  " + DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].GetEffectString(index5, true, true);
-                            int num4 = DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index.Length - 1;
-                            for (int index6 = 0; index6 <= num4; ++index6)
-                            {
-                                if (DatabaseAPI.Database
-                                        .EnhancementSets[
-                                            MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
-                                        .SpecialBonus[index5].Index[index6] <= -1) continue;
-                                ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]];
-                                if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]] > 5)
-                                    localOverCap = true;
-                            }
-                            if (localOverCap)
-                                str6 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str6 + " >Cap" + RTF.Color(RTF.ElementID.Text));
-                            if (localOverCap)
-                                hasOvercap = true;
-                            str4 = str5 + str6;
+                            if (DatabaseAPI.Database
+                                    .EnhancementSets[
+                                        MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX]
+                                    .SpecialBonus[index5].Index[index6] <= -1) continue;
+                            ++numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]];
+                            if (numArray[DatabaseAPI.Database.EnhancementSets[MidsContext.Character.CurrentBuild.SetBonus[index1].SetInfo[index2].SetIDX].SpecialBonus[index5].Index[index6]] > 5)
+                                localOverCap = true;
                         }
+                        if (localOverCap)
+                            str6 = RTF.Italic(RTF.Color(RTF.ElementID.Warning) + str6 + " >Cap" + RTF.Color(RTF.ElementID.Text));
+                        if (localOverCap)
+                            hasOvercap = true;
+                        str4 = str5 + str6;
                     }
                     str1 = str3 + str4 + RTF.Crlf() + RTF.Crlf();
                 }

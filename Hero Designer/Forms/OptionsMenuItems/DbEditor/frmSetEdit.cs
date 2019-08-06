@@ -151,7 +151,7 @@ namespace Hero_Designer
         void btnPaste_Click(object sender, EventArgs e)
         {
             string str = Conversions.ToString(Clipboard.GetData("System.String"));
-            char[] chArray = new char[1] { '^' };
+            char[] chArray = { '^' };
             string[] strArray1 = str.Replace("\r\n", Conversions.ToString(chArray[0])).Split(chArray);
             chArray[0] = '\t';
             mySet.InitBonus();

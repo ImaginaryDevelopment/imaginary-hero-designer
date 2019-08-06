@@ -185,6 +185,7 @@ namespace Hero_Designer
 
         static int FindValue(string needle, IReadOnlyList<string> haystack, ref string dest)
         {
+            if (dest == null) throw new ArgumentNullException(nameof(dest));
             for (int index = 0; index <= haystack.Count - 1; ++index)
             {
                 if (!haystack[index].StartsWith(needle)) continue;
@@ -204,7 +205,7 @@ namespace Hero_Designer
             try
             {
                 iPost = PowerNameFix(iPost);
-                char[] chArray = new char[1] { '`' };
+                char[] chArray = { '`' };
                 iPost = iPost.Replace("\r\n", "`");
                 iPost = iPost.Replace("\n", "`");
                 iPost = iPost.Replace("\r", "`");
@@ -475,8 +476,6 @@ namespace Hero_Designer
                     return index;
                 if (!char.IsLetterOrDigit(iStr, index + 1))
                     return index;
-                if (!readAhead)
-                    return index;
             }
             return -1;
         }
@@ -495,7 +494,7 @@ namespace Hero_Designer
 
         static string[] SmartBreak(string iStr, int nAT)
         {
-            string[] strArray = new string[3] { "", "", "" };
+            string[] strArray = { "", "", "" };
             int num1 = SeekNumber(iStr, 0);
             if (num1 <= -1) return strArray;
             int start1 = SeekSep(iStr, num1);
