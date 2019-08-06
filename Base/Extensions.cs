@@ -23,7 +23,7 @@ namespace Base
             => source.Where((_, i) => i != index).ToArray();
         public static T[] RemoveLast<T>(this T[] items)
             => items.Take(items.Length - 1).ToArray();
-        public static string ToStringOrNull(this object o) => o == null ? null : o.ToString();
+        public static string ToStringOrNull(this object o) => o?.ToString();
 
         // we use + 1 such that FirstOrDefault gives 0, which still isn't valid
         // so we take that back out if it didn't find one
@@ -88,9 +88,16 @@ namespace Base
             if (x == null) throw new ArgumentNullException(nameof(x));
             if (lineIndex < 0) throw new ArgumentOutOfRangeException($"{nameof(lineIndex)} must be 0 or greater");
             var strIndex = x.IndexOfAny(new[] { '\r', '\n' });
-            if (lineIndex == 0 && strIndex < 0) return x;
-            if (lineIndex == 0 && strIndex == 0) return string.Empty;
-            if (lineIndex == 0 && 0 < strIndex) return x.GetRange(0, strIndex - 1);
+            switch (lineIndex)
+            {
+                case 0 when strIndex < 0:
+                    return x;
+                case 0 when strIndex == 0:
+                    return string.Empty;
+                case 0 when 0 < strIndex:
+                    return x.GetRange(0, strIndex - 1);
+            }
+
             if (0 < lineIndex && strIndex < 0) throw new InvalidOperationException("Reached end of string before finding desired index");
             var rem = x.Substring(strIndex + 1);
             if (0 < rem.Length && x[strIndex] == '\r' && rem[0] == '\n')

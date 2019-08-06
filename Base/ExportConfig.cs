@@ -32,11 +32,9 @@ public class ExportConfig
         int index1 = 0;
         for (int index2 = 0; index2 < ColorSchemes.Length; ++index2)
         {
-            if (index2 != index)
-            {
-                colorSchemeArray[index1].Assign(ColorSchemes[index2]);
-                ++index1;
-            }
+            if (index2 == index) continue;
+            colorSchemeArray[index1].Assign(ColorSchemes[index2]);
+            ++index1;
         }
         ColorSchemes = new ColorScheme[colorSchemeArray.Length];
         for (int index2 = 0; index2 < colorSchemeArray.Length; ++index2)
@@ -51,11 +49,9 @@ public class ExportConfig
         int index1 = 0;
         for (int index2 = 0; index2 < FormatCode.Length; ++index2)
         {
-            if (index2 != index)
-            {
-                formatCodesArray[index1].Assign(FormatCode[index2]);
-                ++index1;
-            }
+            if (index2 == index) continue;
+            formatCodesArray[index1].Assign(FormatCode[index2]);
+            ++index1;
         }
         FormatCode = new FormatCodes[formatCodesArray.Length];
         for (int index2 = 0; index2 < formatCodesArray.Length; ++index2)
@@ -275,31 +271,29 @@ public class ExportConfig
             do
             {
                 ++num1;
-                if (str != "#END#" && str == "#CODE#")
+                if (str == "#END#" || str != "#CODE#") continue;
+                int index1 = -1;
+                FormatCodes iFc = new FormatCodes();
+                string dest;
+                flag = GrabString(out iFc.Name, ref reader) | GrabString(out iFc.Notes, ref reader) | GrabString(out iFc.ColourOn, ref reader) | GrabString(out iFc.ColourOff, ref reader) | GrabString(out iFc.SizeOn, ref reader) | GrabString(out iFc.SizeOff, ref reader) | GrabString(out iFc.BoldOn, ref reader) | GrabString(out iFc.BoldOff, ref reader) | GrabString(out iFc.ItalicOn, ref reader) | GrabString(out iFc.ItalicOff, ref reader) | GrabString(out iFc.UnderlineOn, ref reader) | GrabString(out iFc.UnderlineOff, ref reader) | GrabString(out dest, ref reader);
+                iFc.Space = dest.IndexOf(" ", StringComparison.Ordinal) > -1 ? WhiteSpace.Space : WhiteSpace.Tab;
+                if (!flag)
                 {
-                    int index1 = -1;
-                    FormatCodes iFc = new FormatCodes();
-                    string dest;
-                    flag = GrabString(out iFc.Name, ref reader) | GrabString(out iFc.Notes, ref reader) | GrabString(out iFc.ColourOn, ref reader) | GrabString(out iFc.ColourOff, ref reader) | GrabString(out iFc.SizeOn, ref reader) | GrabString(out iFc.SizeOff, ref reader) | GrabString(out iFc.BoldOn, ref reader) | GrabString(out iFc.BoldOff, ref reader) | GrabString(out iFc.ItalicOn, ref reader) | GrabString(out iFc.ItalicOff, ref reader) | GrabString(out iFc.UnderlineOn, ref reader) | GrabString(out iFc.UnderlineOff, ref reader) | GrabString(out dest, ref reader);
-                    iFc.Space = dest.IndexOf(" ", StringComparison.Ordinal) > -1 ? WhiteSpace.Space : WhiteSpace.Tab;
-                    if (!flag)
+                    for (int index2 = 0; index2 < FormatCode.Length; ++index2)
                     {
-                        for (int index2 = 0; index2 < FormatCode.Length; ++index2)
-                        {
-                            if (FormatCode[index2].Name == iFc.Name)
-                                index1 = index2;
-                        }
-                        if (index1 == -1)
-                        {
-                            Array.Resize(ref FormatCode, FormatCode.Length + 1);
-                            index1 = FormatCode.Length - 1;
-                        }
-                        FormatCode[index1].Assign(iFc);
-                        str = reader.ReadLine();
+                        if (FormatCode[index2].Name == iFc.Name)
+                            index1 = index2;
                     }
-                    else
-                        break;
+                    if (index1 == -1)
+                    {
+                        Array.Resize(ref FormatCode, FormatCode.Length + 1);
+                        index1 = FormatCode.Length - 1;
+                    }
+                    FormatCode[index1].Assign(iFc);
+                    str = reader.ReadLine();
                 }
+                else
+                    break;
             }
             while (!(str == "#END#" | num1 > 1024));
             if (num1 > 1024 & !flag)

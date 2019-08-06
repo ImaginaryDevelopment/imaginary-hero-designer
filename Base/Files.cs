@@ -44,8 +44,7 @@ public static class Files
             //if (Path.IsPathRooted(attempt)) return filename;
             var recursed = SearchUpRec(foldername, attempt);
             if (recursed != null && File.Exists(recursed)) return recursed;
-            if (File.Exists(filename)) return filename;
-            return null;
+            return File.Exists(filename) ? filename : null;
         }
         try
         {

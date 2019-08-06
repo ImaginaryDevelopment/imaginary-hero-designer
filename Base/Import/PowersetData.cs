@@ -23,12 +23,12 @@ namespace Import
       IsNew = true;
       for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
       {
-        if (!string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, Data.FullName, StringComparison.OrdinalIgnoreCase))
-        {
+          if (string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) || !string.Equals(
+                  DatabaseAPI.Database.Powersets[index].FullName, Data.FullName,
+                  StringComparison.OrdinalIgnoreCase)) continue;
           IsNew = false;
-          _index = index;
-          break;
-        }
+        _index = index;
+        break;
       }
     }
 
@@ -63,37 +63,37 @@ namespace Import
         flag = true;
       else if (DatabaseAPI.Database.Powersets[_index].FullName != Data.FullName)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].FullName,  Data.FullName);
+        message += $"Fullname: {DatabaseAPI.Database.Powersets[_index].FullName} => {Data.FullName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].SetName != Data.SetName)
       {
-        message += string.Format("SetName: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SetName,  Data.SetName);
+        message += $"SetName: {DatabaseAPI.Database.Powersets[_index].SetName} => {Data.SetName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].DisplayName,  Data.DisplayName);
+        message += $"DisplayName: {DatabaseAPI.Database.Powersets[_index].DisplayName} => {Data.DisplayName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].Description != Data.Description)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].Description,  Data.Description);
+        message += $"Fullname: {DatabaseAPI.Database.Powersets[_index].Description} => {Data.Description}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].SubName != Data.SubName)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SubName,  Data.SubName);
+        message += $"Fullname: {DatabaseAPI.Database.Powersets[_index].SubName} => {Data.SubName}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].ATClass != Data.ATClass)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].ATClass,  Data.ATClass);
+        message += $"Fullname: {DatabaseAPI.Database.Powersets[_index].ATClass} => {Data.ATClass}";
         flag = true;
       }
       else if (DatabaseAPI.Database.Powersets[_index].SetType != Data.SetType)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SetType,  Data.SetType);
+        message += $"Fullname: {DatabaseAPI.Database.Powersets[_index].SetType} => {Data.SetType}";
         flag = true;
       }
       else

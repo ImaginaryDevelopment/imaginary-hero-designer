@@ -29,8 +29,8 @@ namespace Hero_Designer
         {
             if (Label1.InvokeRequired)
             {
-                Action invoke = () => SetMessage(text);
-                Invoke(invoke);
+                void Action() => SetMessage(text);
+                Invoke((Action) Action);
             }
             else
             {
@@ -44,9 +44,7 @@ namespace Hero_Designer
 
         static void ShowPrettyError(string title, string text, Action onLabelClick = null)
         {
-            var frm = new frmLoading();
-            frm.Label1.Text = text;
-            frm.Text = title;
+            var frm = new frmLoading {Label1 = {Text = text}, Text = title};
             if (onLabelClick != null)
             {
                 frm.Label1.Font = new Font(frm.Label1.Font.Name, frm.Label1.Font.SizeInPoints, FontStyle.Underline);

@@ -189,17 +189,14 @@ namespace Hero_Designer
 
         bool CheckClassName()
         {
-            if (!ONDuplicate)
+            if (ONDuplicate) return true;
+            int num1 = DatabaseAPI.Database.Classes.Length - 1;
+            for (int index = 0; index <= num1; ++index)
             {
-                int num1 = DatabaseAPI.Database.Classes.Length - 1;
-                for (int index = 0; index <= num1; ++index)
-                {
-                    if (index != MyAT.Idx && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, txtClassName.Text, StringComparison.OrdinalIgnoreCase))
-                    {
-                        int num2 = (int)Interaction.MsgBox((txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, "Name in Use");
-                        return false;
-                    }
-                }
+                if (index == MyAT.Idx || !string.Equals(DatabaseAPI.Database.Classes[index].ClassName,
+                        txtClassName.Text, StringComparison.OrdinalIgnoreCase)) continue;
+                int num2 = (int)Interaction.MsgBox((txtClassName.Text + " is already in use, please select a unique class name."), MsgBoxStyle.Information, "Name in Use");
+                return false;
             }
             return true;
         }

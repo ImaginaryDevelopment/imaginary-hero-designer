@@ -207,11 +207,10 @@ namespace Base.Document_Classes
                 args.Graphics.DrawString("Power Pool: " + MidsContext.Character.Powersets[6].DisplayName + '\n', font, solidBrush, new RectangleF(bounds.Left + 25, y, bounds.Width, 15f), format);
                 y += 15;
             }
-            if (MidsContext.Character.PoolTaken(7))
-            {
-                args.Graphics.DrawString("Ancillary Pool: " + MidsContext.Character.Powersets[7].DisplayName + '\n', font, solidBrush, new RectangleF(bounds.Left + 25, y, bounds.Width, 15f), format);
-                y += 15;
-            }
+
+            if (!MidsContext.Character.PoolTaken(7)) return y;
+            args.Graphics.DrawString("Ancillary Pool: " + MidsContext.Character.Powersets[7].DisplayName + '\n', font, solidBrush, new RectangleF(bounds.Left + 25, y, bounds.Width, 15f), format);
+            y += 15;
             return y;
         }
 
@@ -311,77 +310,75 @@ namespace Base.Document_Classes
                 }
                 if (!MidsContext.Character.CurrentBuild.Powers[pIndex].Chosen & MidsContext.Character.CurrentBuild.Powers[pIndex].SubPowers.Length > 0)
                     include = false;
-                if (include)
+                if (!include) continue;
+                string s1 = "Level " + MidsContext.Character.CurrentBuild.Powers[pIndex].Level + 1 + ":";
+                string s2 = MidsContext.Character.CurrentBuild.Powers[pIndex].Power != null ? MidsContext.Character.CurrentBuild.Powers[pIndex].Power.DisplayName : "[No Power]";
+                string s3 = "";
+                if (vPos - (double)bounds.Top + (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length + 1) * fontSize * 1.25 > bounds.Height)
                 {
-                    string s1 = "Level " + MidsContext.Character.CurrentBuild.Powers[pIndex].Level + 1 + ":";
-                    string s2 = MidsContext.Character.CurrentBuild.Powers[pIndex].Power != null ? MidsContext.Character.CurrentBuild.Powers[pIndex].Power.DisplayName : "[No Power]";
-                    string s3 = "";
-                    if (vPos - (double)bounds.Top + (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length + 1) * fontSize * 1.25 > bounds.Height)
+                    pgIdx = pIndex;
+                    isEnd = true;
+                    break;
+                }
+                for (int index = 0; index <= MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1; ++index)
+                {
+                    if (!string.IsNullOrEmpty(s3))
+                        s3 += '\n';
+                    string str1;
+                    if (index == 0)
+                        str1 = s3 + "(A) ";
+                    else
+                        str1 = s3 + "(" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Level + 1 + ") ";
+                    if (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Enh > -1)
                     {
-                        pgIdx = pIndex;
-                        isEnd = true;
-                        break;
-                    }
-                    for (int index = 0; index <= MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1; ++index)
-                    {
-                        if (!string.IsNullOrEmpty(s3))
-                            s3 += '\n';
-                        string str1;
-                        if (index == 0)
-                            str1 = s3 + "(A) ";
-                        else
-                            str1 = s3 + "(" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Level + 1 + ") ";
-                        if (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Enh > -1)
+                        IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Enh];
+                        switch (enhancement.TypeID)
                         {
-                            IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Enh];
-                            switch (enhancement.TypeID)
-                            {
-                                case Enums.eType.Normal:
-                                    string relativeString1 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
-                                    string str2;
-                                    if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
-                                        str2 = str1 + relativeString1 + " " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
-                                    else
-                                        str2 = relativeString1 != "X" ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
-                                    str1 = str2 + " ";
-                                    break;
-                                case Enums.eType.SpecialO:
-                                    string relativeString2 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
-                                    string str3;
-                                    if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
-                                        str3 = str1 + relativeString2 + " " + enhancement.GetSpecialName() + " - ";
-                                    else
-                                        str3 = relativeString2 != "X" ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
-                                    str1 = str3 + " ";
-                                    break;
-                            }
-                            s3 = str1 + enhancement.LongName;
-                            switch (enhancement.TypeID)
-                            {
-                                case Enums.eType.InventO:
-                                    s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
-                                    continue;
-                                case Enums.eType.SetO:
-                                    s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
-                                    continue;
-                                default:
-                                    continue;
-                            }
+                            case Enums.eType.Normal:
+                                string relativeString1 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
+                                string str2;
+                                if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
+                                    str2 = str1 + relativeString1 + " " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
+                                else
+                                    str2 = relativeString1 != "X" ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
+                                str1 = str2 + " ";
+                                break;
+                            case Enums.eType.SpecialO:
+                                string relativeString2 = Enums.GetRelativeString(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.RelativeLevel, false);
+                                string str3;
+                                if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
+                                    str3 = str1 + relativeString2 + " " + enhancement.GetSpecialName() + " - ";
+                                else
+                                    str3 = relativeString2 != "X" ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
+                                str1 = str3 + " ";
+                                break;
                         }
+                        s3 = str1 + enhancement.LongName;
+                        switch (enhancement.TypeID)
+                        {
+                            case Enums.eType.InventO:
+                                s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
+                                continue;
+                            case Enums.eType.SetO:
+                                s3 = s3 + " - IO:" + MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.IOLevel + 1;
+                                continue;
+                            default:
+                                continue;
+                        }
+                    }
 
-                        s3 = str1 + "[Empty]";
-                    }
-                    if (!string.IsNullOrEmpty(s1) || !string.IsNullOrEmpty(s2) || !string.IsNullOrEmpty(s3))
-                    {
-                        var layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
-                        args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
-                        layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
-                        args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
-                        vPos += (int)(fontSize * 1.25);
-                        layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize * 1.25f);
-                        args.Graphics.DrawString(s3, font, solidBrush, layoutRectangle, format);
-                        vPos += (int)((fontSize * 1.25 * 1.1) + (fontSize * 1.25 * (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1)));
-                    }
+                    s3 = str1 + "[Empty]";
+                }
+                if (!string.IsNullOrEmpty(s1) || !string.IsNullOrEmpty(s2) || !string.IsNullOrEmpty(s3))
+                {
+                    var layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
+                    args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
+                    layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
+                    args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
+                    vPos += (int)(fontSize * 1.25);
+                    layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize * 1.25f);
+                    args.Graphics.DrawString(s3, font, solidBrush, layoutRectangle, format);
+                    vPos += (int)((fontSize * 1.25 * 1.1) + (fontSize * 1.25 * (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1)));
                 }
             }
             _pIndex = pgIdx;
@@ -450,96 +447,94 @@ namespace Base.Document_Classes
                     include = false;
                 if (isChosen & MidsContext.Character.CurrentBuild.Powers[index1].SubPowers.Length > 0)
                     include = false;
-                if (include)
+                if (!include) continue;
+                string s1 = "Level " + MidsContext.Character.CurrentBuild.Powers[index1].Level + 1 + ":";
+                RectangleF layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
+                args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
+                string s2 = MidsContext.Character.CurrentBuild.Powers[index1].Power != null ? MidsContext.Character.CurrentBuild.Powers[index1].Power.DisplayName : "[Empty]";
+                layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
+                args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
+                if (MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length > 0)
                 {
-                    string s1 = "Level " + MidsContext.Character.CurrentBuild.Powers[index1].Level + 1 + ":";
-                    RectangleF layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
-                    args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
-                    string s2 = MidsContext.Character.CurrentBuild.Powers[index1].Power != null ? MidsContext.Character.CurrentBuild.Powers[index1].Power.DisplayName : "[Empty]";
-                    layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
-                    args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
-                    if (MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length > 0)
+                    string str1 = string.Empty;
+                    for (int index2 = 0; index2 <= MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1; ++index2)
                     {
-                        string str1 = string.Empty;
-                        for (int index2 = 0; index2 <= MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length - 1; ++index2)
+                        if (index2 > 0)
+                            str1 += ", ";
+                        if (!MidsContext.Config.DisablePrintProfileEnh)
                         {
-                            if (index2 > 0)
-                                str1 += ", ";
-                            if (!MidsContext.Config.DisablePrintProfileEnh)
+                            if (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh > -1)
                             {
-                                if (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh > -1)
+                                IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh];
+                                switch (enhancement.TypeID)
                                 {
-                                    IEnhancement enhancement = DatabaseAPI.Database.Enhancements[MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.Enh];
-                                    switch (enhancement.TypeID)
-                                    {
-                                        case Enums.eType.Normal:
-                                            str1 += enhancement.ShortName;
-                                            break;
-                                        case Enums.eType.InventO:
-                                            str1 = str1 + enhancement.ShortName + "-I";
-                                            if (printIoLevels)
-                                            {
-                                                str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
-                                            }
-                                            break;
-                                        case Enums.eType.SpecialO:
-                                            string str2;
-                                            switch (enhancement.SubTypeID)
-                                            {
-                                                case Enums.eSubtype.Hamidon:
-                                                    str2 = "HO:";
-                                                    break;
-                                                case Enums.eSubtype.Hydra:
-                                                    str2 = "HY:";
-                                                    break;
-                                                case Enums.eSubtype.Titan:
-                                                    str2 = "TN:";
-                                                    break;
-                                                default:
-                                                    str2 = "X:";
-                                                    break;
-                                            }
-                                            str1 = str1 + str2 + enhancement.ShortName;
-                                            break;
-                                        case Enums.eType.SetO:
-                                            str1 = str1 + DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].ShortName + "-" + enhancement.ShortName;
-                                            if (printIoLevels)
-                                            {
-                                                str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
-                                            }
-                                            break;
-                                    }
+                                    case Enums.eType.Normal:
+                                        str1 += enhancement.ShortName;
+                                        break;
+                                    case Enums.eType.InventO:
+                                        str1 = str1 + enhancement.ShortName + "-I";
+                                        if (printIoLevels)
+                                        {
+                                            str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
+                                        }
+                                        break;
+                                    case Enums.eType.SpecialO:
+                                        string str2;
+                                        switch (enhancement.SubTypeID)
+                                        {
+                                            case Enums.eSubtype.Hamidon:
+                                                str2 = "HO:";
+                                                break;
+                                            case Enums.eSubtype.Hydra:
+                                                str2 = "HY:";
+                                                break;
+                                            case Enums.eSubtype.Titan:
+                                                str2 = "TN:";
+                                                break;
+                                            default:
+                                                str2 = "X:";
+                                                break;
+                                        }
+                                        str1 = str1 + str2 + enhancement.ShortName;
+                                        break;
+                                    case Enums.eType.SetO:
+                                        str1 = str1 + DatabaseAPI.Database.EnhancementSets[enhancement.nIDSet].ShortName + "-" + enhancement.ShortName;
+                                        if (printIoLevels)
+                                        {
+                                            str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
+                                        }
+                                        break;
                                 }
-                                else
-                                    str1 += "Empty";
                             }
-                            string str3 = str1 + "(";
-                            str1 = (index2 != 0 ? str3 + (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str3 + "A") + ")";
+                            else
+                                str1 += "Empty";
                         }
-                        layoutRectangle = new RectangleF(bounds.Left + 250f, vPos, bounds.Width, fontSize * 1.25f);
-                        layoutRectangle.Width -= layoutRectangle.Left;
-                        SizeF sizeF = args.Graphics.MeasureString(str1, font, (int)layoutRectangle.Width * 5, format);
-                        if (sizeF.Width > (double)layoutRectangle.Width)
-                        {
-                            int num = MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length / 2;
-                            int length = -1;
-                            for (int index2 = 0; index2 <= num - 1; ++index2)
-                                length = str1.IndexOf(", ", length + 1, StringComparison.Ordinal);
-                            if (length > -1)
-                            {
-                                str1 = str1.Substring(0, length) + "..." + '\n' + "..." + str1.Substring(length + 2);
-                                layoutRectangle.Height *= 2f;
-                                vPos += (int)(fontSize * 1.25);
-                            }
-                            sizeF = args.Graphics.MeasureString(str1, font, (int)(layoutRectangle.Width * 5.0), format);
-                            float width = sizeF.Width;
-                            if (width > (double)layoutRectangle.Width)
-                                font = new Font("Arial", Convert.ToSingle(fontSize) * (layoutRectangle.Width / width), FontStyle.Bold, GraphicsUnit.Pixel);
-                        }
-                        args.Graphics.DrawString(str1, font, solidBrush, layoutRectangle, format);
+                        string str3 = str1 + "(";
+                        str1 = (index2 != 0 ? str3 + (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str3 + "A") + ")";
                     }
-                    vPos += (int)(fontSize * 1.25 * 1.1);
+                    layoutRectangle = new RectangleF(bounds.Left + 250f, vPos, bounds.Width, fontSize * 1.25f);
+                    layoutRectangle.Width -= layoutRectangle.Left;
+                    SizeF sizeF = args.Graphics.MeasureString(str1, font, (int)layoutRectangle.Width * 5, format);
+                    if (sizeF.Width > (double)layoutRectangle.Width)
+                    {
+                        int num = MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length / 2;
+                        int length = -1;
+                        for (int index2 = 0; index2 <= num - 1; ++index2)
+                            length = str1.IndexOf(", ", length + 1, StringComparison.Ordinal);
+                        if (length > -1)
+                        {
+                            str1 = str1.Substring(0, length) + "..." + '\n' + "..." + str1.Substring(length + 2);
+                            layoutRectangle.Height *= 2f;
+                            vPos += (int)(fontSize * 1.25);
+                        }
+                        sizeF = args.Graphics.MeasureString(str1, font, (int)(layoutRectangle.Width * 5.0), format);
+                        float width = sizeF.Width;
+                        if (width > (double)layoutRectangle.Width)
+                            font = new Font("Arial", Convert.ToSingle(fontSize) * (layoutRectangle.Width / width), FontStyle.Bold, GraphicsUnit.Pixel);
+                    }
+                    args.Graphics.DrawString(str1, font, solidBrush, layoutRectangle, format);
                 }
+                vPos += (int)(fontSize * 1.25 * 1.1);
             }
         }
 

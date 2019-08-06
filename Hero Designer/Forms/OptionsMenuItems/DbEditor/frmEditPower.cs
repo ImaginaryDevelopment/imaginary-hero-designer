@@ -89,9 +89,7 @@ namespace Hero_Designer
             {
                 MemoryStream memoryStream = new MemoryStream((byte[])Clipboard.GetDataObject().GetData(format.Name));
                 BinaryReader reader = new BinaryReader(memoryStream);
-                myPower = new Power(reader);
-                myPower.GroupName = groupName;
-                myPower.SetName = setName;
+                myPower = new Power(reader) {GroupName = groupName, SetName = setName};
                 SetFullName();
                 refresh_PowerData();
                 reader.Close();
@@ -119,18 +117,16 @@ namespace Hero_Designer
             if (lvFX.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvFX.SelectedIndices[0];
-            if (selectedIndex <= myPower.Effects.Length - 2)
+            if (selectedIndex > myPower.Effects.Length - 2) return;
+            IEffect[] effectArray = new IEffect[2]
             {
-                IEffect[] effectArray = new IEffect[2]
-                {
-                      (IEffect) myPower.Effects[selectedIndex].Clone(),
-                      (IEffect) myPower.Effects[selectedIndex + 1].Clone()
-                };
-                myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
-                myPower.Effects[selectedIndex + 1] = (IEffect)effectArray[0].Clone();
-                RefreshFXData();
-                lvFX.SelectedIndex = selectedIndex + 1;
-            }
+                (IEffect) myPower.Effects[selectedIndex].Clone(),
+                (IEffect) myPower.Effects[selectedIndex + 1].Clone()
+            };
+            myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
+            myPower.Effects[selectedIndex + 1] = (IEffect)effectArray[0].Clone();
+            RefreshFXData();
+            lvFX.SelectedIndex = selectedIndex + 1;
         }
 
         void btnFXDuplicate_Click(object sender, EventArgs e)
@@ -139,16 +135,14 @@ namespace Hero_Designer
                 return;
             IEffect iFX = (IEffect)myPower.Effects[lvFX.SelectedIndices[0]].Clone();
             frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
-            if (frmPowerEffect.ShowDialog() == DialogResult.OK)
-            {
-                IPower power1 = myPower;
-                IPower power2 = power1;
-                IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
-                power2.Effects = effectArray;
-                power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
-                RefreshFXData();
-                lvFX.SelectedIndex = lvFX.Items.Count - 1;
-            }
+            if (frmPowerEffect.ShowDialog() != DialogResult.OK) return;
+            IPower power1 = myPower;
+            IPower power2 = power1;
+            IEffect[] effectArray = (IEffect[])Utils.CopyArray(power2.Effects, new IEffect[power1.Effects.Length + 1]);
+            power2.Effects = effectArray;
+            power1.Effects[power1.Effects.Length - 1] = (IEffect)frmPowerEffect.myFX.Clone();
+            RefreshFXData();
+            lvFX.SelectedIndex = lvFX.Items.Count - 1;
         }
 
         void btnFXEdit_Click(object sender, EventArgs e)
@@ -158,12 +152,10 @@ namespace Hero_Designer
             int selectedIndex = lvFX.SelectedIndices[0];
             IEffect iFX = (IEffect)myPower.Effects[selectedIndex].Clone();
             frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
-            if (frmPowerEffect.ShowDialog() == DialogResult.OK)
-            {
-                myPower.Effects[selectedIndex] = (IEffect)frmPowerEffect.myFX.Clone();
-                RefreshFXData();
-                lvFX.SelectedIndex = selectedIndex;
-            }
+            if (frmPowerEffect.ShowDialog() != DialogResult.OK) return;
+            myPower.Effects[selectedIndex] = (IEffect)frmPowerEffect.myFX.Clone();
+            RefreshFXData();
+            lvFX.SelectedIndex = selectedIndex;
         }
 
         void btnFXRemove_Click(object sender, EventArgs e)
@@ -180,11 +172,9 @@ namespace Hero_Designer
             int num2 = effectArray.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
             {
-                if (index2 != selectedIndex)
-                {
-                    myPower.Effects[index1] = effectArray[index2];
-                    ++index1;
-                }
+                if (index2 == selectedIndex) continue;
+                myPower.Effects[index1] = effectArray[index2];
+                ++index1;
             }
             RefreshFXData();
             if (lvFX.Items.Count > selectedIndex)
@@ -199,15 +189,13 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvFX.SelectedIndices[0];
             IEffect[] effectArray = new IEffect[2];
-            if (selectedIndex >= 1)
-            {
-                effectArray[0] = (IEffect)myPower.Effects[selectedIndex].Clone();
-                effectArray[1] = (IEffect)myPower.Effects[selectedIndex - 1].Clone();
-                myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
-                myPower.Effects[selectedIndex - 1] = (IEffect)effectArray[0].Clone();
-                RefreshFXData();
-                lvFX.SelectedIndex = selectedIndex - 1;
-            }
+            if (selectedIndex < 1) return;
+            effectArray[0] = (IEffect)myPower.Effects[selectedIndex].Clone();
+            effectArray[1] = (IEffect)myPower.Effects[selectedIndex - 1].Clone();
+            myPower.Effects[selectedIndex] = (IEffect)effectArray[1].Clone();
+            myPower.Effects[selectedIndex - 1] = (IEffect)effectArray[0].Clone();
+            RefreshFXData();
+            lvFX.SelectedIndex = selectedIndex - 1;
         }
 
         void btnMutexAdd_Click(object sender, EventArgs e)
@@ -345,42 +333,40 @@ namespace Hero_Designer
                 return;
             int num = (int)Math.Round(Conversion.Val(RuntimeHelpers.GetObjectValue(lvPrListing.SelectedItems[0].Tag)));
             bool flag = lvPrListing.SelectedIndices[0] > myPower.Requires.PowerID.Length - 1;
-            if (num >= 1)
+            if (num < 1) return;
+            int index1 = num;
+            int index2 = index1 - 1;
+            string[][] strArray1 = new string[2][];
+            string[] strArray2 = new string[2];
+            strArray1[0] = strArray2;
+            string[] strArray3 = new string[2];
+            strArray1[1] = strArray3;
+            if (flag)
             {
-                int index1 = num;
-                int index2 = index1 - 1;
-                string[][] strArray1 = new string[2][];
-                string[] strArray2 = new string[2];
-                strArray1[0] = strArray2;
-                string[] strArray3 = new string[2];
-                strArray1[1] = strArray3;
-                if (flag)
-                {
-                    strArray1[0][0] = myPower.Requires.PowerIDNot[index1][0];
-                    strArray1[0][1] = myPower.Requires.PowerIDNot[index1][1];
-                    strArray1[1][0] = myPower.Requires.PowerIDNot[index2][0];
-                    strArray1[1][1] = myPower.Requires.PowerIDNot[index2][1];
-                    myPower.Requires.PowerIDNot[index1][0] = strArray1[1][0];
-                    myPower.Requires.PowerIDNot[index1][1] = strArray1[1][1];
-                    myPower.Requires.PowerIDNot[index2][0] = strArray1[0][0];
-                    myPower.Requires.PowerIDNot[index2][1] = strArray1[0][1];
-                    index2 = lvPrListing.SelectedIndices[0] - 1;
-                }
-                else
-                {
-                    strArray1[0][0] = myPower.Requires.PowerID[index1][0];
-                    strArray1[0][1] = myPower.Requires.PowerID[index1][1];
-                    strArray1[1][0] = myPower.Requires.PowerID[index2][0];
-                    strArray1[1][1] = myPower.Requires.PowerID[index2][1];
-                    myPower.Requires.PowerID[index1][0] = strArray1[1][0];
-                    myPower.Requires.PowerID[index1][1] = strArray1[1][1];
-                    myPower.Requires.PowerID[index2][0] = strArray1[0][0];
-                    myPower.Requires.PowerID[index2][1] = strArray1[0][1];
-                }
-                FillTab_Req();
-                lvPrListing.Items[index2].Selected = true;
-                lvPrListing.Items[index2].EnsureVisible();
+                strArray1[0][0] = myPower.Requires.PowerIDNot[index1][0];
+                strArray1[0][1] = myPower.Requires.PowerIDNot[index1][1];
+                strArray1[1][0] = myPower.Requires.PowerIDNot[index2][0];
+                strArray1[1][1] = myPower.Requires.PowerIDNot[index2][1];
+                myPower.Requires.PowerIDNot[index1][0] = strArray1[1][0];
+                myPower.Requires.PowerIDNot[index1][1] = strArray1[1][1];
+                myPower.Requires.PowerIDNot[index2][0] = strArray1[0][0];
+                myPower.Requires.PowerIDNot[index2][1] = strArray1[0][1];
+                index2 = lvPrListing.SelectedIndices[0] - 1;
             }
+            else
+            {
+                strArray1[0][0] = myPower.Requires.PowerID[index1][0];
+                strArray1[0][1] = myPower.Requires.PowerID[index1][1];
+                strArray1[1][0] = myPower.Requires.PowerID[index2][0];
+                strArray1[1][1] = myPower.Requires.PowerID[index2][1];
+                myPower.Requires.PowerID[index1][0] = strArray1[1][0];
+                myPower.Requires.PowerID[index1][1] = strArray1[1][1];
+                myPower.Requires.PowerID[index2][0] = strArray1[0][0];
+                myPower.Requires.PowerID[index2][1] = strArray1[0][1];
+            }
+            FillTab_Req();
+            lvPrListing.Items[index2].Selected = true;
+            lvPrListing.Items[index2].EnsureVisible();
         }
 
         void btnSPAdd_Click(object sender, EventArgs e)
@@ -413,11 +399,9 @@ namespace Hero_Designer
             int subPowerCount = myPower.UIDSubPower.Length - 1;
             for (int index2 = 0; index2 <= subPowerCount; ++index2)
             {
-                if (!string.Equals(myPower.UIDSubPower[index2], text, StringComparison.OrdinalIgnoreCase))
-                {
-                    strArray[index1] = myPower.UIDSubPower[index2];
-                    ++index1;
-                }
+                if (string.Equals(myPower.UIDSubPower[index2], text, StringComparison.OrdinalIgnoreCase)) continue;
+                strArray[index1] = myPower.UIDSubPower[index2];
+                ++index1;
             }
             myPower.UIDSubPower = new string[strArray.Length - 1 + 1];
             Array.Copy(strArray, myPower.UIDSubPower, strArray.Length);
@@ -430,11 +414,9 @@ namespace Hero_Designer
             else if (num2 >= 0)
                 ;
             SPFillList();
-            if (lvSPSelected.Items.Count > 0)
-            {
-                lvSPSelected.Items[lvSPSelected.Items.Count - 1].Selected = true;
-                lvSPSelected.Items[lvSPSelected.Items.Count - 1].EnsureVisible();
-            }
+            if (lvSPSelected.Items.Count <= 0) return;
+            lvSPSelected.Items[lvSPSelected.Items.Count - 1].Selected = true;
+            lvSPSelected.Items[lvSPSelected.Items.Count - 1].EnsureVisible();
         }
 
         void cbEffectArea_SelectedIndexChanged(object sender, EventArgs e)
@@ -874,12 +856,10 @@ namespace Hero_Designer
                 bxSetList.Graphics.DrawString(s, font, solidBrush2, layoutRectangle, format);
                 enhPadding2 += 30 + enhPadding;
                 ++num1;
-                if (num1 == enhAcross)
-                {
-                    num1 = 0;
-                    enhPadding2 = enhPadding;
-                    enhPadding1 += 30 + enhPadding;
-                }
+                if (num1 != enhAcross) continue;
+                num1 = 0;
+                enhPadding2 = enhPadding;
+                enhPadding1 += 30 + enhPadding;
             }
             pbInvSetList.CreateGraphics().DrawImageUnscaled(bxSetList.Bitmap, 0, 0);
         }
@@ -1119,11 +1099,10 @@ namespace Hero_Designer
                 int num2 = myPower.GroupMembership.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (string.Equals(strArray[index1], myPower.GroupMembership[index2], StringComparison.OrdinalIgnoreCase))
-                    {
-                        isChecked = true;
-                        break;
-                    }
+                    if (!string.Equals(strArray[index1], myPower.GroupMembership[index2],
+                        StringComparison.OrdinalIgnoreCase)) continue;
+                    isChecked = true;
+                    break;
                 }
                 clbMutex.Items.Add(strArray[index1], isChecked);
             }
@@ -1139,37 +1118,33 @@ namespace Hero_Designer
             for (int index = 0; index <= num1; ++index)
             {
                 string[] items = new string[3];
-                if (myPower.Requires.PowerID[index].Length > 0)
+                if (myPower.Requires.PowerID[index].Length <= 0) continue;
+                items[0] = myPower.Requires.PowerID[index][0];
+                if (myPower.Requires.PowerID[index][1] != "")
                 {
-                    items[0] = myPower.Requires.PowerID[index][0];
-                    if (myPower.Requires.PowerID[index][1] != "")
-                    {
-                        items[1] = "AND";
-                        items[2] = myPower.Requires.PowerID[index][1];
-                    }
-                    lvPrListing.Items.Add(new ListViewItem(items)
-                    {
-                        Tag = index
-                    });
+                    items[1] = "AND";
+                    items[2] = myPower.Requires.PowerID[index][1];
                 }
+                lvPrListing.Items.Add(new ListViewItem(items)
+                {
+                    Tag = index
+                });
             }
             int num2 = myPower.Requires.PowerIDNot.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
                 string[] items = new string[3];
-                if (myPower.Requires.PowerIDNot[index].Length > 0)
+                if (myPower.Requires.PowerIDNot[index].Length <= 0) continue;
+                items[0] = "NOT " + myPower.Requires.PowerIDNot[index][0];
+                if (myPower.Requires.PowerIDNot[index][1] != "")
                 {
-                    items[0] = "NOT " + myPower.Requires.PowerIDNot[index][0];
-                    if (myPower.Requires.PowerIDNot[index][1] != "")
-                    {
-                        items[1] = "AND";
-                        items[2] = "NOT " + myPower.Requires.PowerIDNot[index][1];
-                    }
-                    lvPrListing.Items.Add(new ListViewItem(items)
-                    {
-                        Tag = index
-                    });
+                    items[1] = "AND";
+                    items[2] = "NOT " + myPower.Requires.PowerIDNot[index][1];
                 }
+                lvPrListing.Items.Add(new ListViewItem(items)
+                {
+                    Tag = index
+                });
             }
             lvPrListing.EndUpdate();
             ReqChanging = false;
@@ -1446,15 +1421,14 @@ namespace Hero_Designer
                 if (myPower.Enhancements[index2] == DatabaseAPI.Database.EnhancementClasses[index1].ID)
                     flag = true;
             }
-            if (!flag)
-            {
-                IPower power = myPower;
-                int[] numArray = (int[])Utils.CopyArray(power.Enhancements, new int[myPower.Enhancements.Length + 1]);
-                power.Enhancements = numArray;
-                myPower.Enhancements[myPower.Enhancements.Length - 1] = DatabaseAPI.Database.EnhancementClasses[index1].ID;
-                Array.Sort(myPower.Enhancements);
-                RedrawEnhList();
-            }
+
+            if (flag) return;
+            IPower power = myPower;
+            int[] numArray = (int[])Utils.CopyArray(power.Enhancements, new int[myPower.Enhancements.Length + 1]);
+            power.Enhancements = numArray;
+            myPower.Enhancements[myPower.Enhancements.Length - 1] = DatabaseAPI.Database.EnhancementClasses[index1].ID;
+            Array.Sort(myPower.Enhancements);
+            RedrawEnhList();
         }
 
         void pbEnhancementList_Paint(object sender, PaintEventArgs e)
@@ -1502,11 +1476,9 @@ namespace Hero_Designer
             int num4 = numArray.Length - 1;
             for (int index2 = 0; index2 <= num4; ++index2)
             {
-                if (index2 != num2)
-                {
-                    power.Enhancements[index1] = numArray[index2];
-                    ++index1;
-                }
+                if (index2 == num2) continue;
+                power.Enhancements[index1] = numArray[index2];
+                ++index1;
             }
             Array.Sort(power.Enhancements);
             RedrawEnhList();
@@ -1533,15 +1505,14 @@ namespace Hero_Designer
                 if (myPower.SetTypes[index] == (Enums.eSetType)invSetListIndex)
                     flag = true;
             }
-            if (!(flag | myPower.SetTypes.Length > 10))
-            {
-                IPower power = myPower;
-                Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray(power.SetTypes, new Enums.eSetType[myPower.SetTypes.Length + 1]);
-                power.SetTypes = eSetTypeArray;
-                myPower.SetTypes[myPower.SetTypes.Length - 1] = (Enums.eSetType)invSetListIndex;
-                Array.Sort(myPower.SetTypes);
-                DrawAcceptedSets();
-            }
+
+            if (flag | myPower.SetTypes.Length > 10) return;
+            IPower power = myPower;
+            Enums.eSetType[] eSetTypeArray = (Enums.eSetType[])Utils.CopyArray(power.SetTypes, new Enums.eSetType[myPower.SetTypes.Length + 1]);
+            power.SetTypes = eSetTypeArray;
+            myPower.SetTypes[myPower.SetTypes.Length - 1] = (Enums.eSetType)invSetListIndex;
+            Array.Sort(myPower.SetTypes);
+            DrawAcceptedSets();
         }
 
         void pbInvSetList_MouseMove(object sender, MouseEventArgs e)
@@ -1576,11 +1547,9 @@ namespace Hero_Designer
             int num2 = numArray.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
             {
-                if (index2 != invSetIndex)
-                {
-                    myPower.SetTypes[index1] = (Enums.eSetType)numArray[index2];
-                    ++index1;
-                }
+                if (index2 == invSetIndex) continue;
+                myPower.SetTypes[index1] = (Enums.eSetType)numArray[index2];
+                ++index1;
             }
             Array.Sort(myPower.SetTypes);
             DrawAcceptedSets();
@@ -1606,14 +1575,12 @@ namespace Hero_Designer
 
         static bool PowerFullNameIsUnique(string iFullName, int skipId = -1)
         {
-            if (!string.IsNullOrEmpty(iFullName))
+            if (string.IsNullOrEmpty(iFullName)) return true;
+            int num = DatabaseAPI.Database.Power.Length - 1;
+            for (int index = 0; index <= num; ++index)
             {
-                int num = DatabaseAPI.Database.Power.Length - 1;
-                for (int index = 0; index <= num; ++index)
-                {
-                    if (index != skipId && string.Equals(DatabaseAPI.Database.Power[index].FullName, iFullName, StringComparison.OrdinalIgnoreCase))
-                        return false;
-                }
+                if (index != skipId && string.Equals(DatabaseAPI.Database.Power[index].FullName, iFullName, StringComparison.OrdinalIgnoreCase))
+                    return false;
             }
             return true;
         }
@@ -1653,10 +1620,7 @@ namespace Hero_Designer
         {
             if (sender.GetType() == rbPrPowerB.GetType() && ((Control)sender).Text == "Power B")
                 return;
-            if (rbPrPowerA.Checked)
-                btnPrSetNone.Text = "Set Power A to None";
-            else
-                btnPrSetNone.Text = "Set Power B to None";
+            btnPrSetNone.Text = rbPrPowerA.Checked ? "Set Power A to None" : "Set Power B to None";
             Req_Listing_IndexChanged();
         }
 
@@ -1682,14 +1646,12 @@ namespace Hero_Designer
                 int num4 = strArray1.Length - 1;
                 for (int index2 = 0; index2 <= num4; ++index2)
                 {
-                    if (index2 != num2)
-                    {
-                        string[] strArray2 = new string[2];
-                        myPower.Requires.PowerIDNot[index1] = strArray2;
-                        myPower.Requires.PowerIDNot[index1][0] = strArray1[index2][0];
-                        myPower.Requires.PowerIDNot[index1][1] = strArray1[index2][1];
-                        ++index1;
-                    }
+                    if (index2 == num2) continue;
+                    string[] strArray2 = new string[2];
+                    myPower.Requires.PowerIDNot[index1] = strArray2;
+                    myPower.Requires.PowerIDNot[index1][0] = strArray1[index2][0];
+                    myPower.Requires.PowerIDNot[index1][1] = strArray1[index2][1];
+                    ++index1;
                 }
             }
             else
@@ -1709,13 +1671,11 @@ namespace Hero_Designer
                 int num4 = strArray1.Length - 1;
                 for (int index2 = 0; index2 <= num4; ++index2)
                 {
-                    if (index2 != num2)
-                    {
-                        myPower.Requires.PowerID[index1] = new string[2];
-                        myPower.Requires.PowerID[index1][0] = strArray1[index2][0];
-                        myPower.Requires.PowerID[index1][1] = strArray1[index2][1];
-                        ++index1;
-                    }
+                    if (index2 == num2) continue;
+                    myPower.Requires.PowerID[index1] = new string[2];
+                    myPower.Requires.PowerID[index1][0] = strArray1[index2][0];
+                    myPower.Requires.PowerID[index1][1] = strArray1[index2][1];
+                    ++index1;
                 }
             }
             FillTab_Req();
@@ -1767,12 +1727,10 @@ namespace Hero_Designer
                 bxEnhPicker.Graphics.DrawImage(I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), GraphicsUnit.Pixel);
                 enhPadding2 += 30 + enhPadding;
                 ++num1;
-                if (num1 == enhAcross)
-                {
-                    num1 = 0;
-                    enhPadding2 = enhPadding;
-                    enhPadding1 += 30 + enhPadding;
-                }
+                if (num1 != enhAcross) continue;
+                num1 = 0;
+                enhPadding2 = enhPadding;
+                enhPadding1 += 30 + enhPadding;
             }
             pbEnhancementList.CreateGraphics().DrawImageUnscaled(bxEnhPicker.Bitmap, 0, 0);
         }
@@ -1912,12 +1870,11 @@ namespace Hero_Designer
                 int num = lvPrGroup.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvPrGroup.Items[index].Text, strArray[0], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvPrGroup.Items[index].Selected = true;
-                        lvPrGroup.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvPrGroup.Items[index].Text, strArray[0],
+                        StringComparison.OrdinalIgnoreCase)) continue;
+                    lvPrGroup.Items[index].Selected = true;
+                    lvPrGroup.Items[index].EnsureVisible();
+                    break;
                 }
             }
             Req_SetList();
@@ -1926,12 +1883,11 @@ namespace Hero_Designer
                 int num = lvPrSet.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvPrSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvPrSet.Items[index].Selected = true;
-                        lvPrSet.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvPrSet.Items[index].Text, strArray[1], StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    lvPrSet.Items[index].Selected = true;
+                    lvPrSet.Items[index].EnsureVisible();
+                    break;
                 }
             }
             Req_PowerList();
@@ -1940,12 +1896,11 @@ namespace Hero_Designer
                 int num = lvPrPower.Items.Count - 1;
                 for (int index = 0; index <= num; ++index)
                 {
-                    if (string.Equals(lvPrPower.Items[index].Text, strArray[2], StringComparison.OrdinalIgnoreCase))
-                    {
-                        lvPrPower.Items[index].Selected = true;
-                        lvPrPower.Items[index].EnsureVisible();
-                        break;
-                    }
+                    if (!string.Equals(lvPrPower.Items[index].Text, strArray[2],
+                        StringComparison.OrdinalIgnoreCase)) continue;
+                    lvPrPower.Items[index].Selected = true;
+                    lvPrPower.Items[index].EnsureVisible();
+                    break;
                 }
             }
             ReqChanging = false;
@@ -1994,11 +1949,9 @@ namespace Hero_Designer
                     int num = DatabaseAPI.Database.Powersets[index1].Powers.Length - 1;
                     for (int index2 = 0; index2 <= num; ++index2)
                     {
-                        if (!DatabaseAPI.Database.Powersets[index1].Powers[index2].HiddenPower)
-                        {
-                            lvSPPower.Items.Add(DatabaseAPI.Database.Powersets[index1].Powers[index2].PowerName);
-                            lvSPPower.Items[lvSPPower.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[index1].Powers[index2].FullName;
-                        }
+                        if (DatabaseAPI.Database.Powersets[index1].Powers[index2].HiddenPower) continue;
+                        lvSPPower.Items.Add(DatabaseAPI.Database.Powersets[index1].Powers[index2].PowerName);
+                        lvSPPower.Items[lvSPPower.Items.Count - 1].Tag = DatabaseAPI.Database.Powersets[index1].Powers[index2].FullName;
                     }
                 }
                 lvSPPower.EndUpdate();

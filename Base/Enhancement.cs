@@ -34,9 +34,7 @@ public class Enhancement : IEnhancement
     public string UIDSet { get; set; }
     public IPower GetPower()
     {
-        if (_power == null)
-            _power = DatabaseAPI.GetPowerByName("Boosts." + UID + "." + UID);
-        return _power;
+        return _power ?? (_power = DatabaseAPI.GetPowerByName("Boosts." + UID + "." + UID));
     }
 
     void IEnhancement.SetPower(IPower power) => _power = power;
@@ -143,22 +141,26 @@ public class Enhancement : IEnhancement
         get
         {
             Enums.eSchedule eSchedule;
-            if (Effect.Length == 1)
-                eSchedule = Effect[0].Schedule;
-            else if (Effect.Length == 0)
+            switch (Effect.Length)
             {
-                eSchedule = Enums.eSchedule.None;
-            }
-            else
-            {
-                Enums.eSchedule schedule = Effect[0].Schedule;
-                bool flag = false;
-                for (int index = 0; index <= Effect.Length - 1; ++index)
+                case 1:
+                    eSchedule = Effect[0].Schedule;
+                    break;
+                case 0:
+                    eSchedule = Enums.eSchedule.None;
+                    break;
+                default:
                 {
-                    if (Effect[index].Schedule != schedule)
-                        flag = true;
+                    Enums.eSchedule schedule = Effect[0].Schedule;
+                    bool flag = false;
+                    for (int index = 0; index <= Effect.Length - 1; ++index)
+                    {
+                        if (Effect[index].Schedule != schedule)
+                            flag = true;
+                    }
+                    eSchedule = !flag ? schedule : Enums.eSchedule.Multiple;
+                    break;
                 }
-                eSchedule = !flag ? schedule : Enums.eSchedule.Multiple;
             }
             return eSchedule;
         }
@@ -393,12 +395,10 @@ public class Enhancement : IEnhancement
             level = iMax;
         if (level < iMin)
             level = iMin;
-        if (TypeID == Enums.eType.InventO)
-        {
-            if (iMax > 49)
-                iMax = 49;
-            level = GranularLevelZb(level, iMin, iMax);
-        }
+        if (TypeID != Enums.eType.InventO) return level;
+        if (iMax > 49)
+            iMax = 49;
+        level = GranularLevelZb(level, iMin, iMax);
         return level;
     }
 

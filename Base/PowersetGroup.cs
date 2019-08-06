@@ -16,8 +16,7 @@ public class PowersetGroup : IComparable
 
     public int CompareTo(object obj)
     {
-        PowersetGroup powersetGroup = obj as PowersetGroup;
-        if (powersetGroup != null)
+        if (obj is PowersetGroup powersetGroup)
             return string.Compare(Name, powersetGroup.Name, StringComparison.OrdinalIgnoreCase);
         throw new ArgumentException("Comparison failed - Passed object was not an Archetype Class!");
     }

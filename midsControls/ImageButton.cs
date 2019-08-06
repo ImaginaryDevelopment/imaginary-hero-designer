@@ -181,9 +181,9 @@ namespace midsControls
         {
             try
             {
-                if (disposing && components != null)
+                if (disposing)
                 {
-                    components.Dispose();
+                    components?.Dispose();
                 }
             }
             finally
@@ -334,16 +334,11 @@ namespace midsControls
         // Token: 0x060001BF RID: 447 RVA: 0x00010E10 File Offset: 0x0000F010
         public void DrawOutlineText(string iStr, RectangleF Bounds, Color Text, Color Outline, Font bFont, float OutlineSpace, ref Graphics Target, bool SmallMode = false, bool LeftAlign = false)
         {
-            StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap);
-            stringFormat.LineAlignment = StringAlignment.Near;
-            if (LeftAlign)
+            StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap)
             {
-                stringFormat.Alignment = StringAlignment.Near;
-            }
-            else
-            {
-                stringFormat.Alignment = StringAlignment.Center;
-            }
+                LineAlignment = StringAlignment.Near
+            };
+            stringFormat.Alignment = LeftAlign ? StringAlignment.Near : StringAlignment.Center;
             SolidBrush brush = new SolidBrush(Outline);
             RectangleF layoutRectangle = Bounds;
             RectangleF layoutRectangle2 = new RectangleF(layoutRectangle.X, layoutRectangle.Y, layoutRectangle.Width, bFont.GetHeight(Target));

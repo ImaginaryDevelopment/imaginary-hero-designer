@@ -19,30 +19,29 @@ namespace Hero_Designer
 
     public class ComboBoxT<T>
     {
-        readonly ComboBox _cb;
+        public ComboBoxT(ComboBox cb) => Value = cb;
 
-        public ComboBoxT(ComboBox cb) => _cb = cb;
-
-        public T SelectedItem { get => (T)_cb.SelectedItem; set => _cb.SelectedItem = value; }
-        public Rectangle Bounds => _cb.Bounds;
-        public int Count => _cb.Items.Count;
-        public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(_cb.Items.Cast<T>().ToList()); }
-        public void BeginUpdate() => _cb.BeginUpdate();
-        public void Clear() => _cb.Items.Clear();
+        public T SelectedItem { get => (T)Value.SelectedItem; set => Value.SelectedItem = value; }
+        public Rectangle Bounds => Value.Bounds;
+        public int Count => Value.Items.Count;
+        public IReadOnlyCollection<T> Items { get => new ReadOnlyCollection<T>(Value.Items.Cast<T>().ToList()); }
+        public void BeginUpdate() => Value.BeginUpdate();
+        public void Clear() => Value.Items.Clear();
         public void AddRange(IEnumerable<T> items)
         {
-            _cb.SuspendLayout();
-            _cb.Items.AddRange(items.Cast<object>().ToArray());
-            _cb.ResumeLayout();
+            Value.SuspendLayout();
+            Value.Items.AddRange(items.Cast<object>().ToArray());
+            Value.ResumeLayout();
         }
-        public void EndUpdate() => _cb.EndUpdate();
-        public bool Enabled { get => _cb.Enabled; set => _cb.Enabled = value; }
-        public int SelectedIndex { get => _cb.SelectedIndex; set => _cb.SelectedIndex = value; }
-        public ComboBox Value => _cb;
+        public void EndUpdate() => Value.EndUpdate();
+        public bool Enabled { get => Value.Enabled; set => Value.Enabled = value; }
+        public int SelectedIndex { get => Value.SelectedIndex; set => Value.SelectedIndex = value; }
+        public ComboBox Value { get; }
+
         public T this[int x]
         {
-            get => (T)_cb.Items[x];
-            set => _cb.Items[x] = value;
+            get => (T)Value.Items[x];
+            set => Value.Items[x] = value;
         }
     }
 
@@ -58,7 +57,7 @@ namespace Hero_Designer
             }
             catch (Exception ex)
             {
-                while (ex.InnerException != null && ex.InnerException.Message != null)
+                while (ex.InnerException?.Message != null)
                     ex = ex.InnerException;
                 MessageBox.Show(string.IsNullOrWhiteSpace(titlingOpt) ? ex.Message : (titlingOpt + ":" + ex.Message), captionOpt ?? ex.GetType().Name);
             }

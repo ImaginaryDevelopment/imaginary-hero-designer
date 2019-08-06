@@ -106,72 +106,68 @@ namespace Hero_Designer
                 do
                 {
                     iLine1 = FileIO.ReadLineUnlimited(iStream1, char.MinValue);
-                    if (iLine1 != null && !iLine1.StartsWith("#"))
+                    if (iLine1 == null || iLine1.StartsWith("#")) continue;
+                    ++num4;
+                    if (num4 >= 18)
                     {
-                        ++num4;
-                        if (num4 >= 18)
+                        BusyMsg(Strings.Format(num1, "###,##0") + " Recipes Created.");
+                        num4 = 0;
+                    }
+                    string[] array = CSV.ToArray(iLine1);
+                    if (array.Length < 18) continue;
+                    bool flag = false;
+                    string iName = array[0];
+                    if (iName.Contains("_Memorized"))
+                    {
+                        iName = iName.Replace("_Memorized", "");
+                        flag = true;
+                    }
+                    if (iName.LastIndexOf("_", StringComparison.Ordinal) > 0)
+                        iName = iName.Substring(0, iName.LastIndexOf("_", StringComparison.Ordinal));
+                    int num6 = (int)Math.Round(Conversion.Val(array[10]));
+                    Recipe recipe1 = DatabaseAPI.GetRecipeByName(iName);
+                    if (recipe1 == null)
+                    {
+                        recipe1 = new Recipe
                         {
-                            BusyMsg(Strings.Format(num1, "###,##0") + " Recipes Created.");
-                            num4 = 0;
-                        }
-                        string[] array = CSV.ToArray(iLine1);
-                        if (array.Length >= 18)
+                            InternalName = iName,
+                            ExternalName = array[1] == "" ? iName : array[1],
+                            Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(array[9]) - 1.0)
+                        };
+                        DatabaseAPI.Database.Recipes = DatabaseAPI.Database.Recipes.Append(recipe1).ToArray();
+                    }
+                    int index1 = -1;
+                    int num7 = recipe1.Item.Length - 1;
+                    for (int index2 = 0; index2 <= num7; ++index2)
+                    {
+                        if (recipe1.Item[index2].Level == num6 - 1)
+                            index1 = index2;
+                    }
+                    if (index1 < 0)
+                    {
+                        recipe1.Item = recipe1.Item.Append(new Recipe.RecipeEntry()).ToArray();
+                    }
+                    recipe1.Item[index1].Level = num6 - 1;
+                    if (flag)
+                    {
+                        recipe1.Item[index1].BuyCostM = (int)Math.Round(Conversion.Val(array[15]));
+                        recipe1.Item[index1].CraftCostM = (int)Math.Round(Conversion.Val(array[11]));
+                    }
+                    else
+                    {
+                        recipe1.Item[index1].BuyCost = (int)Math.Round(Conversion.Val(array[15]));
+                        recipe1.Item[index1].CraftCost = (int)Math.Round(Conversion.Val(array[11]));
+                    }
+                    if (array[7].Length > 0)
+                    {
+                        int index2 = DatabaseAPI.NidFromUidEnhExtended(array[7]);
+                        if (index2 > -1)
                         {
-                            bool flag = false;
-                            string iName = array[0];
-                            if (iName.Contains("_Memorized"))
-                            {
-                                iName = iName.Replace("_Memorized", "");
-                                flag = true;
-                            }
-                            if (iName.LastIndexOf("_", StringComparison.Ordinal) > 0)
-                                iName = iName.Substring(0, iName.LastIndexOf("_", StringComparison.Ordinal));
-                            int num6 = (int)Math.Round(Conversion.Val(array[10]));
-                            Recipe recipe1 = DatabaseAPI.GetRecipeByName(iName);
-                            if (recipe1 == null)
-                            {
-                                recipe1 = new Recipe
-                                {
-                                    InternalName = iName,
-                                    ExternalName = array[1] == "" ? iName : array[1],
-                                    Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(array[9]) - 1.0)
-                                };
-                                DatabaseAPI.Database.Recipes = DatabaseAPI.Database.Recipes.Append(recipe1).ToArray();
-                            }
-                            int index1 = -1;
-                            int num7 = recipe1.Item.Length - 1;
-                            for (int index2 = 0; index2 <= num7; ++index2)
-                            {
-                                if (recipe1.Item[index2].Level == num6 - 1)
-                                    index1 = index2;
-                            }
-                            if (index1 < 0)
-                            {
-                                recipe1.Item = recipe1.Item.Append(new Recipe.RecipeEntry()).ToArray();
-                            }
-                            recipe1.Item[index1].Level = num6 - 1;
-                            if (flag)
-                            {
-                                recipe1.Item[index1].BuyCostM = (int)Math.Round(Conversion.Val(array[15]));
-                                recipe1.Item[index1].CraftCostM = (int)Math.Round(Conversion.Val(array[11]));
-                            }
-                            else
-                            {
-                                recipe1.Item[index1].BuyCost = (int)Math.Round(Conversion.Val(array[15]));
-                                recipe1.Item[index1].CraftCost = (int)Math.Round(Conversion.Val(array[11]));
-                            }
-                            if (array[7].Length > 0)
-                            {
-                                int index2 = DatabaseAPI.NidFromUidEnhExtended(array[7]);
-                                if (index2 > -1)
-                                {
-                                    recipe1.Enhancement = DatabaseAPI.Database.Enhancements[index2].UID;
-                                    DatabaseAPI.Database.Enhancements[index2].RecipeName = recipe1.InternalName;
-                                }
-                            }
-                            ++num1;
+                            recipe1.Enhancement = DatabaseAPI.Database.Enhancements[index2].UID;
+                            DatabaseAPI.Database.Enhancements[index2].RecipeName = recipe1.InternalName;
                         }
                     }
+                    ++num1;
                 }
                 while (iLine1 != null);
                 iStream1.Close();
@@ -180,66 +176,57 @@ namespace Hero_Designer
                 do
                 {
                     iLine2 = FileIO.ReadLineUnlimited(iStream2, char.MinValue);
-                    if (iLine2 != null && !iLine2.StartsWith("#"))
+                    if (iLine2 == null || iLine2.StartsWith("#")) continue;
+                    ++num4;
+                    if (num4 >= 18)
                     {
-                        ++num4;
-                        if (num4 >= 18)
+                        BusyMsg(Strings.Format(num5, "###,##0") + " Recipes Created.");
+                        num4 = 0;
+                    }
+                    string[] array = CSV.ToArray(iLine2);
+                    if (array.Length < 3) continue;
+                    int num6 = -1;
+                    bool flag = false;
+                    string iName = array[0];
+                    if (iName.Contains("_Memorized"))
+                    {
+                        iName = iName.Replace("_Memorized", "");
+                        flag = true;
+                    }
+                    if (iName.LastIndexOf("_", StringComparison.Ordinal) > 0)
+                    {
+                        num6 = (int)Math.Round(Conversion.Val(iName.Substring(iName.LastIndexOf("_", StringComparison.Ordinal) + 1)));
+                        iName = iName.Substring(0, iName.LastIndexOf("_", StringComparison.Ordinal));
+                    }
+
+                    if (!(num6 > -1 & !flag)) continue;
+                    Recipe recipeByName = DatabaseAPI.GetRecipeByName(iName);
+                    if (recipeByName == null) continue;
+                    int index1 = -1;
+                    ++num5;
+                    Recipe recipe = recipeByName;
+                    int num7 = recipe.Item.Length - 1;
+                    for (int index2 = 0; index2 <= num7; ++index2)
+                    {
+                        if (recipe.Item[index2].Level == num6 - 1)
+                            index1 = index2;
+                    }
+
+                    if (index1 <= -1) continue;
+                    {
+                        int index2 = -1;
+                        int num8 = recipe.Item[index1].Salvage.Length - 1;
+                        for (int index3 = 0; index3 <= num8; ++index3)
                         {
-                            BusyMsg(Strings.Format(num5, "###,##0") + " Recipes Created.");
-                            num4 = 0;
+                            if (recipe.Item[index1].Salvage[index3] != "") continue;
+                            index2 = index3;
+                            break;
                         }
-                        string[] array = CSV.ToArray(iLine2);
-                        if (array.Length >= 3)
-                        {
-                            int num6 = -1;
-                            bool flag = false;
-                            string iName = array[0];
-                            if (iName.Contains("_Memorized"))
-                            {
-                                iName = iName.Replace("_Memorized", "");
-                                flag = true;
-                            }
-                            if (iName.LastIndexOf("_", StringComparison.Ordinal) > 0)
-                            {
-                                num6 = (int)Math.Round(Conversion.Val(iName.Substring(iName.LastIndexOf("_", StringComparison.Ordinal) + 1)));
-                                iName = iName.Substring(0, iName.LastIndexOf("_", StringComparison.Ordinal));
-                            }
-                            if (num6 > -1 & !flag)
-                            {
-                                Recipe recipeByName = DatabaseAPI.GetRecipeByName(iName);
-                                if (recipeByName != null)
-                                {
-                                    int index1 = -1;
-                                    ++num5;
-                                    Recipe recipe = recipeByName;
-                                    int num7 = recipe.Item.Length - 1;
-                                    for (int index2 = 0; index2 <= num7; ++index2)
-                                    {
-                                        if (recipe.Item[index2].Level == num6 - 1)
-                                            index1 = index2;
-                                    }
-                                    if (index1 > -1)
-                                    {
-                                        int index2 = -1;
-                                        int num8 = recipe.Item[index1].Salvage.Length - 1;
-                                        for (int index3 = 0; index3 <= num8; ++index3)
-                                        {
-                                            if (recipe.Item[index1].Salvage[index3] == "")
-                                            {
-                                                index2 = index3;
-                                                break;
-                                            }
-                                        }
-                                        if (index2 > -1)
-                                        {
-                                            recipe.Item[index1].Salvage[index2] = array[2];
-                                            recipe.Item[index1].Count[index2] = (int)Math.Round(Conversion.Val(array[1]));
-                                            recipe.Item[index1].SalvageIdx[index2] = -1;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+
+                        if (index2 <= -1) continue;
+                        recipe.Item[index1].Salvage[index2] = array[2];
+                        recipe.Item[index1].Count[index2] = (int)Math.Round(Conversion.Val(array[1]));
+                        recipe.Item[index1].SalvageIdx[index2] = -1;
                     }
                 }
                 while (iLine2 != null);

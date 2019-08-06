@@ -109,40 +109,38 @@ namespace Hero_Designer
             do
             {
                 iLine1 = FileIO.ReadLineUnlimited(iStream1, char.MinValue);
-                if (iLine1 != null && !iLine1.StartsWith("#"))
+                if (iLine1 == null || iLine1.StartsWith("#")) continue;
+                ++num5;
+                if (num5 >= 11)
                 {
-                    ++num5;
-                    if (num5 >= 11)
-                    {
-                        BusyMsg("Pass 1 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num1, "###,##0") + " records matched, " + Strings.Format(num4, "###,##0") + " records discarded.");
-                        num5 = 0;
-                    }
-                    string[] array = CSV.ToArray(iLine1);
-                    if (array.Length > 1)
-                    {
-                        int subIndex = 0;
-                        int index1 = DatabaseAPI.NidFromUidRecipe(array[0], ref subIndex);
-                        if (index1 > -1 & index1 < DatabaseAPI.Database.Recipes.Length & subIndex > -1)
-                        {
-                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage = new string[7];
-                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx = new int[7];
-                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count = new int[7];
-                            int index2 = 0;
-                            do
-                            {
-                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage[index2] = "";
-                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx[index2] = -1;
-                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index2] = 0;
-                                ++index2;
-                            }
-                            while (index2 <= 6);
-                            ++num1;
-                        }
-                        else
-                            ++num4;
-                    }
-                    ++num3;
+                    BusyMsg("Pass 1 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num1, "###,##0") + " records matched, " + Strings.Format(num4, "###,##0") + " records discarded.");
+                    num5 = 0;
                 }
+                string[] array = CSV.ToArray(iLine1);
+                if (array.Length > 1)
+                {
+                    int subIndex = 0;
+                    int index1 = DatabaseAPI.NidFromUidRecipe(array[0], ref subIndex);
+                    if (index1 > -1 & index1 < DatabaseAPI.Database.Recipes.Length & subIndex > -1)
+                    {
+                        DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage = new string[7];
+                        DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx = new int[7];
+                        DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count = new int[7];
+                        int index2 = 0;
+                        do
+                        {
+                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage[index2] = "";
+                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx[index2] = -1;
+                            DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index2] = 0;
+                            ++index2;
+                        }
+                        while (index2 <= 6);
+                        ++num1;
+                    }
+                    else
+                        ++num4;
+                }
+                ++num3;
             }
             while (iLine1 != null);
             iStream1.Close();
@@ -167,44 +165,40 @@ namespace Hero_Designer
                 do
                 {
                     iLine2 = FileIO.ReadLineUnlimited(iStream2, char.MinValue);
-                    if (iLine2 != null && !iLine2.StartsWith("#"))
+                    if (iLine2 == null || iLine2.StartsWith("#")) continue;
+                    ++num5;
+                    if (num5 >= 11)
                     {
-                        ++num5;
-                        if (num5 >= 11)
-                        {
-                            BusyMsg("Pass 2 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num6, "###,##0") + " records done, " + Strings.Format(num7, "###,##0") + " records discarded.");
-                            num5 = 0;
-                        }
-                        string[] array = CSV.ToArray(iLine2);
-                        if (array.Length > 1)
-                        {
-                            int subIndex = 0;
-                            int index1 = DatabaseAPI.NidFromUidRecipe(array[0], ref subIndex);
-                            if (index1 > -1 & index1 < DatabaseAPI.Database.Recipes.Length & subIndex > -1)
-                            {
-                                int index2 = -1;
-                                int num2 = DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count.Length - 1;
-                                for (int index3 = 0; index3 <= num2; ++index3)
-                                {
-                                    if (DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index3] == 0)
-                                    {
-                                        index2 = index3;
-                                        break;
-                                    }
-                                }
-                                if (index2 > -1)
-                                {
-                                    DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index2] = (int)Math.Round(Conversion.Val(array[1]));
-                                    DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage[index2] = array[2];
-                                    DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx[index2] = -1;
-                                }
-                                ++num6;
-                            }
-                            else
-                                ++num7;
-                        }
-                        ++num3;
+                        BusyMsg("Pass 2 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num6, "###,##0") + " records done, " + Strings.Format(num7, "###,##0") + " records discarded.");
+                        num5 = 0;
                     }
+                    string[] array = CSV.ToArray(iLine2);
+                    if (array.Length > 1)
+                    {
+                        int subIndex = 0;
+                        int index1 = DatabaseAPI.NidFromUidRecipe(array[0], ref subIndex);
+                        if (index1 > -1 & index1 < DatabaseAPI.Database.Recipes.Length & subIndex > -1)
+                        {
+                            int index2 = -1;
+                            int num2 = DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count.Length - 1;
+                            for (int index3 = 0; index3 <= num2; ++index3)
+                            {
+                                if (DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index3] != 0) continue;
+                                index2 = index3;
+                                break;
+                            }
+                            if (index2 > -1)
+                            {
+                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].Count[index2] = (int)Math.Round(Conversion.Val(array[1]));
+                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].Salvage[index2] = array[2];
+                                DatabaseAPI.Database.Recipes[index1].Item[subIndex].SalvageIdx[index2] = -1;
+                            }
+                            ++num6;
+                        }
+                        else
+                            ++num7;
+                    }
+                    ++num3;
                 }
                 while (iLine2 != null);
                 BusyMsg("Reassigning salvage IDs and saving...");

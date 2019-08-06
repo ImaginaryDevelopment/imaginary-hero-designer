@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Base.Data_Classes;
 using Base.Master_Classes;
@@ -61,18 +62,17 @@ namespace Hero_Designer
             int num1 = DatabaseAPI.Database.Powersets.Length - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
-                if (string.Equals(DatabaseAPI.Database.Powersets[index1].ATClass, "CLASS_BLASTER", StringComparison.OrdinalIgnoreCase))
+                if (!string.Equals(DatabaseAPI.Database.Powersets[index1].ATClass, "CLASS_BLASTER",
+                    StringComparison.OrdinalIgnoreCase)) continue;
+                int num2 = DatabaseAPI.Database.Powersets[index1].Powers.Length - 1;
+                for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    int num2 = DatabaseAPI.Database.Powersets[index1].Powers.Length - 1;
-                    for (int index2 = 0; index2 <= num2; ++index2)
+                    int num3 = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects.Length - 1;
+                    for (int index3 = 0; index3 <= num3; ++index3)
                     {
-                        int num3 = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects.Length - 1;
-                        for (int index3 = 0; index3 <= num3; ++index3)
-                        {
-                            IEffect effect = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects[index3];
-                            if (effect.EffectType == Enums.eEffectType.DamageBuff && effect.Mag < 0.4 & effect.Mag > 0.0 & effect.ToWho == Enums.eToWho.Self & effect.SpecialCase == Enums.eSpecialCase.None)
-                                effect.SpecialCase = Enums.eSpecialCase.Defiance;
-                        }
+                        IEffect effect = DatabaseAPI.Database.Powersets[index1].Powers[index2].Effects[index3];
+                        if (effect.EffectType == Enums.eEffectType.DamageBuff && effect.Mag < 0.4 & effect.Mag > 0.0 & effect.ToWho == Enums.eToWho.Self & effect.SpecialCase == Enums.eSpecialCase.None)
+                            effect.SpecialCase = Enums.eSpecialCase.Defiance;
                     }
                 }
             }
@@ -120,14 +120,7 @@ namespace Hero_Designer
         static void btnStaticExport_Click(object sender, EventArgs e)
         {
             string str1 = "Static Indexes, App version " + MidsContext.AppVersion + ", database version " + Conversions.ToString(DatabaseAPI.Database.Version) + ":\r\n";
-            foreach (Power power in DatabaseAPI.Database.Power)
-            {
-                if (power.GetPowerSet().SetType != Enums.ePowerSetType.Boost)
-                {
-                    string str2 = Conversions.ToString(power.StaticIndex) + "\t" + power.FullName + "\r\n";
-                    str1 += str2;
-                }
-            }
+            str1 = (from Power power in DatabaseAPI.Database.Power where power.GetPowerSet().SetType != Enums.ePowerSetType.Boost select Conversions.ToString(power.StaticIndex) + "\t" + power.FullName + "\r\n").Aggregate(str1, (current, str2) => current + str2);
             string text = str1 + "Enhancements\r\n";
             foreach (Enhancement enhancement in DatabaseAPI.Database.Enhancements)
             {
@@ -260,16 +253,16 @@ namespace Hero_Designer
             int num = DatabaseAPI.Database.Enhancements.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (DatabaseAPI.Database.Enhancements[index].TypeID == Enums.eType.SetO && DatabaseAPI.Database.Enhancements[index].RecipeIDX > -1 && DatabaseAPI.Database.Recipes.Length > DatabaseAPI.Database.Enhancements[index].RecipeIDX && DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length > 0)
-                {
-                    DatabaseAPI.Database.Enhancements[index].LevelMin = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[0].Level;
-                    DatabaseAPI.Database.Enhancements[index].LevelMax = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length - 1].Level;
-                    if (DatabaseAPI.Database.Enhancements[index].nIDSet > -1)
-                    {
-                        DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].LevelMin = DatabaseAPI.Database.Enhancements[index].LevelMin;
-                        DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].LevelMax = DatabaseAPI.Database.Enhancements[index].LevelMax;
-                    }
-                }
+                if (DatabaseAPI.Database.Enhancements[index].TypeID != Enums.eType.SetO ||
+                    DatabaseAPI.Database.Enhancements[index].RecipeIDX <= -1 ||
+                    DatabaseAPI.Database.Recipes.Length <= DatabaseAPI.Database.Enhancements[index].RecipeIDX ||
+                    DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length <=
+                    0) continue;
+                DatabaseAPI.Database.Enhancements[index].LevelMin = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[0].Level;
+                DatabaseAPI.Database.Enhancements[index].LevelMax = DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item[DatabaseAPI.Database.Recipes[DatabaseAPI.Database.Enhancements[index].RecipeIDX].Item.Length - 1].Level;
+                if (DatabaseAPI.Database.Enhancements[index].nIDSet <= -1) continue;
+                DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].LevelMin = DatabaseAPI.Database.Enhancements[index].LevelMin;
+                DatabaseAPI.Database.EnhancementSets[DatabaseAPI.Database.Enhancements[index].nIDSet].LevelMax = DatabaseAPI.Database.Enhancements[index].LevelMax;
             }
         }
     }

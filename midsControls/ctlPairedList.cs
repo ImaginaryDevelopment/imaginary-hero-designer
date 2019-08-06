@@ -26,17 +26,12 @@ namespace midsControls
         // Token: 0x1700003D RID: 61
         // (get) Token: 0x060000DA RID: 218 RVA: 0x000095E0 File Offset: 0x000077E0
         // (set) Token: 0x060000DB RID: 219 RVA: 0x000095F8 File Offset: 0x000077F8
+        [field: AccessedThroughProperty("myTip")]
         public virtual ToolTip myTip
         {
-            get
-            {
-                return _myTip;
-            }
+            get;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                _myTip = value;
-            }
+            set;
         }
 
         // Token: 0x1700003E RID: 62
@@ -50,11 +45,9 @@ namespace midsControls
             }
             set
             {
-                if (value >= 0 & value < 10)
-                {
-                    myColumns = value;
-                    Draw();
-                }
+                if (!(value >= 0 & value < 10)) return;
+                myColumns = value;
+                Draw();
             }
         }
 
@@ -246,9 +239,9 @@ namespace midsControls
         // Token: 0x060000F4 RID: 244 RVA: 0x000098D8 File Offset: 0x00007AD8
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -316,105 +309,101 @@ namespace midsControls
         {
             checked
             {
-                if (bxBuffer != null)
+                if (bxBuffer == null) return;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                Rectangle rect = new Rectangle(0, 0, Width, Height);
+                RectangleF rectangleF = new RectangleF(0f, 0f, 0f, 0f);
+                StringFormat stringFormat = new StringFormat();
+                FontStyle newStyle = FontStyle.Bold;
+                FontStyle newStyle2 = FontStyle.Regular;
+                if (myForceBold)
                 {
-                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    Rectangle rect = new Rectangle(0, 0, Width, Height);
-                    RectangleF rectangleF = new RectangleF(0f, 0f, 0f, 0f);
-                    StringFormat stringFormat = new StringFormat();
-                    FontStyle newStyle = FontStyle.Bold;
-                    FontStyle newStyle2 = FontStyle.Regular;
-                    if (myForceBold)
-                    {
-                        newStyle2 = FontStyle.Bold;
-                        newStyle = FontStyle.Bold;
-                    }
-                    Font font = new Font(Font, newStyle);
-                    Font font2 = new Font(Font, newStyle2);
-                    rectangleF.X = 0f;
-                    if (myColumns < 1)
-                    {
-                        myColumns = 1;
-                    }
-                    int num = (int)Math.Round(Width / (double)myColumns);
-                    int num2 = (int)Math.Round(num * (myValueWidth / 100f));
-                    int num3 = num - num2;
-                    rectangleF.Height = LineHeight;
-                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    Brush brush = new SolidBrush(BackColor);
-                    bxBuffer.Graphics.FillRectangle(brush, rect);
-                    if (MyItems == null)
-                    {
-                        myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
-                    }
-                    if (MyItems.Length < 1)
-                    {
-                        myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
-                    }
-                    int num4 = 0;
-                    int num5 = 0;
-                    const int num6 = 0;
-                    int num7 = MyItems.Length - 1;
-                    for (int i = num6; i <= num7; i++)
-                    {
-                        PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
-                        rectangleF.Location = location;
-                        rectangleF.Width = num3;
-                        stringFormat.Alignment = StringAlignment.Far;
-                        stringFormat.Trimming = StringTrimming.None;
-                        stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                        if (Highlightable & CurrentHighlight == i)
-                        {
-                            brush = new SolidBrush(myHighlightColor);
-                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                            brush = new SolidBrush(myHighlightTextColor);
-                        }
-                        else
-                        {
-                            brush = new SolidBrush(NameColour);
-                        }
-                        string text = MyItems[i].Name;
-                        if (Operators.CompareString(text, "", false) != 0 & !text.EndsWith(":"))
-                        {
-                            text += ":";
-                        }
-                        bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
-                        location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
-                        rectangleF.Location = location;
-                        rectangleF.Width = num2;
-                        if (Highlightable & CurrentHighlight == i)
-                        {
-                            brush = new SolidBrush(myHighlightColor);
-                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                            brush = new SolidBrush(myHighlightTextColor);
-                        }
-                        else if (MyItems[i].UniqueColour)
-                        {
-                            brush = new SolidBrush(ValueColorD);
-                        }
-                        else if (MyItems[i].AlternateColour)
-                        {
-                            brush = new SolidBrush(ValueColorA);
-                        }
-                        else if (MyItems[i].ProbColour)
-                        {
-                            brush = new SolidBrush(ValueColorB);
-                        }
-                        else
-                        {
-                            brush = new SolidBrush(ValueColor);
-                        }
-                        stringFormat.Alignment = StringAlignment.Near;
-                        bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
-                        num5++;
-                        if (num5 >= myColumns)
-                        {
-                            num5 = 0;
-                            num4++;
-                        }
-                    }
+                    newStyle2 = FontStyle.Bold;
+                    newStyle = FontStyle.Bold;
+                }
+                Font font = new Font(Font, newStyle);
+                Font font2 = new Font(Font, newStyle2);
+                rectangleF.X = 0f;
+                if (myColumns < 1)
+                {
+                    myColumns = 1;
+                }
+                int num = (int)Math.Round(Width / (double)myColumns);
+                int num2 = (int)Math.Round(num * (myValueWidth / 100f));
+                int num3 = num - num2;
+                rectangleF.Height = LineHeight;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                Brush brush = new SolidBrush(BackColor);
+                bxBuffer.Graphics.FillRectangle(brush, rect);
+                if (MyItems == null)
+                {
                     myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                 }
+                if (MyItems.Length < 1)
+                {
+                    myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
+                }
+                int num4 = 0;
+                int num5 = 0;
+                const int num6 = 0;
+                int num7 = MyItems.Length - 1;
+                for (int i = num6; i <= num7; i++)
+                {
+                    PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
+                    rectangleF.Location = location;
+                    rectangleF.Width = num3;
+                    stringFormat.Alignment = StringAlignment.Far;
+                    stringFormat.Trimming = StringTrimming.None;
+                    stringFormat.FormatFlags = StringFormatFlags.NoWrap;
+                    if (Highlightable & CurrentHighlight == i)
+                    {
+                        brush = new SolidBrush(myHighlightColor);
+                        bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                        brush = new SolidBrush(myHighlightTextColor);
+                    }
+                    else
+                    {
+                        brush = new SolidBrush(NameColour);
+                    }
+                    string text = MyItems[i].Name;
+                    if (Operators.CompareString(text, "", false) != 0 & !text.EndsWith(":"))
+                    {
+                        text += ":";
+                    }
+                    bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
+                    location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
+                    rectangleF.Location = location;
+                    rectangleF.Width = num2;
+                    if (Highlightable & CurrentHighlight == i)
+                    {
+                        brush = new SolidBrush(myHighlightColor);
+                        bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                        brush = new SolidBrush(myHighlightTextColor);
+                    }
+                    else if (MyItems[i].UniqueColour)
+                    {
+                        brush = new SolidBrush(ValueColorD);
+                    }
+                    else if (MyItems[i].AlternateColour)
+                    {
+                        brush = new SolidBrush(ValueColorA);
+                    }
+                    else if (MyItems[i].ProbColour)
+                    {
+                        brush = new SolidBrush(ValueColorB);
+                    }
+                    else
+                    {
+                        brush = new SolidBrush(ValueColor);
+                    }
+                    stringFormat.Alignment = StringAlignment.Near;
+                    bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
+                    num5++;
+                    if (num5 < myColumns) continue;
+                    num5 = 0;
+                    num4++;
+                }
+                myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
             }
         }
 
@@ -498,20 +487,13 @@ namespace midsControls
                         break;
                     }
                     num2++;
-                    if (num2 >= myColumns)
-                    {
-                        num2 = 0;
-                        num++;
-                    }
+                    if (num2 < myColumns) continue;
+                    num2 = 0;
+                    num++;
                 }
-                if (num3 > -1)
-                {
-                    ItemClickEventHandler itemClickEvent = ItemClick;
-                    if (itemClickEvent != null)
-                    {
-                        itemClickEvent(num3, e.Button);
-                    }
-                }
+
+                if (num3 <= -1) return;
+                ItemClick?.Invoke(num3, e.Button);
             }
         }
 
@@ -540,23 +522,20 @@ namespace midsControls
                         break;
                     }
                     num2++;
-                    if (num2 >= myColumns)
-                    {
-                        num2 = 0;
-                        num++;
-                    }
+                    if (num2 < myColumns) continue;
+                    num2 = 0;
+                    num++;
                 }
-                if (CurrentHighlight != num3)
+
+                if (CurrentHighlight == num3) return;
+                CurrentHighlight = num3;
+                if (Highlightable)
                 {
-                    CurrentHighlight = num3;
-                    if (Highlightable)
-                    {
-                        Draw();
-                    }
-                    if (num3 > -1)
-                    {
-                        ItemHover?.Invoke(this, num3, MyItems[num3].TagID);
-                    }
+                    Draw();
+                }
+                if (num3 > -1)
+                {
+                    ItemHover?.Invoke(this, num3, MyItems[num3].TagID);
                 }
             }
         }
@@ -642,8 +621,6 @@ namespace midsControls
         private IContainer components;
 
         // Token: 0x04000077 RID: 119
-        [AccessedThroughProperty("myTip")]
-        private ToolTip _myTip;
 
         // Token: 0x02000010 RID: 16
         public class ItemPair

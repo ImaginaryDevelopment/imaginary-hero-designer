@@ -103,42 +103,40 @@ namespace Hero_Designer
                 do
                 {
                     iLine = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iLine != null)
+                    if (iLine == null) continue;
+                    if (!iLine.StartsWith("#"))
                     {
-                        if (!iLine.StartsWith("#"))
+                        ++num5;
+                        if (num5 >= 9)
                         {
-                            ++num5;
-                            if (num5 >= 9)
-                            {
-                                BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                                num5 = 0;
-                            }
-                            string[] array = CSV.ToArray(iLine);
-                            string uidEntity = "";
-                            if (array.Length > 1)
-                            {
-                                int index = -2;
-                                if (array[0].StartsWith("Pets."))
-                                {
-                                    uidEntity = "Pets_" + array[1];
-                                    index = DatabaseAPI.NidFromUidEntity(uidEntity);
-                                }
-                                else if (array[0].StartsWith("Villain_Pets."))
-                                {
-                                    uidEntity = "Pets_" + array[1];
-                                    index = DatabaseAPI.NidFromUidEntity(uidEntity);
-                                }
-                                if (index > -2)
-                                {
-                                    SummonedEntity.Parse(index, array[0], array[2], uidEntity);
-                                    ++num1;
-                                }
-                                else
-                                    ++num4;
-                            }
+                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                            num5 = 0;
                         }
-                        ++num3;
+                        string[] array = CSV.ToArray(iLine);
+                        string uidEntity = "";
+                        if (array.Length > 1)
+                        {
+                            int index = -2;
+                            if (array[0].StartsWith("Pets."))
+                            {
+                                uidEntity = "Pets_" + array[1];
+                                index = DatabaseAPI.NidFromUidEntity(uidEntity);
+                            }
+                            else if (array[0].StartsWith("Villain_Pets."))
+                            {
+                                uidEntity = "Pets_" + array[1];
+                                index = DatabaseAPI.NidFromUidEntity(uidEntity);
+                            }
+                            if (index > -2)
+                            {
+                                SummonedEntity.Parse(index, array[0], array[2], uidEntity);
+                                ++num1;
+                            }
+                            else
+                                ++num4;
+                        }
                     }
+                    ++num3;
                 }
                 while (iLine != null);
             }

@@ -11,8 +11,6 @@ namespace Hero_Designer
     {
         public class MidsController
         {
-            static bool _appInitialized;
-
             public static Rectangle SzFrmCompare = new Rectangle();
             public static Rectangle SzFrmData = new Rectangle();
             public static Rectangle SzFrmRecipe = new Rectangle();
@@ -20,7 +18,7 @@ namespace Hero_Designer
             public static Rectangle SzFrmStats = new Rectangle();
             public static Rectangle SzFrmTotals = new Rectangle();
 
-            public static bool IsAppInitialized => _appInitialized;
+            public static bool IsAppInitialized { get; private set; }
 
             public static clsToonX Toon
             {
@@ -37,18 +35,16 @@ namespace Hero_Designer
             public static void LoadData(ref frmLoading iFrm)
             {
                 DatabaseAPI.LoadDatabaseVersion();
-                _appInitialized = true;
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Data...");
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Attribute Modifiers...");
+                IsAppInitialized = true;
+                iFrm?.SetMessage("Loading Data...");
+                iFrm?.SetMessage("Loading Attribute Modifiers...");
                 DatabaseAPI.Database.AttribMods = new Modifiers();
                 if (!DatabaseAPI.Database.AttribMods.Load())
                 {
 
                 }
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Powerset Database...");
+
+                iFrm?.SetMessage("Loading Powerset Database...");
                 if (!DatabaseAPI.LoadLevelsDatabase())
                 {
                     Interaction.MsgBox(
@@ -63,8 +59,7 @@ namespace Hero_Designer
                 }
                 if (!DatabaseAPI.LoadMaths())
                     ProjectData.EndApp();
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Enhancement Database...");
+                iFrm?.SetMessage("Loading Enhancement Database...");
                 if (!DatabaseAPI.LoadEnhancementClasses())
                     ProjectData.EndApp();
                 I9Gfx.LoadClasses();
@@ -74,12 +69,10 @@ namespace Hero_Designer
                 DatabaseAPI.LoadOrigins();
                 I9Gfx.LoadBorders();
                 DatabaseAPI.LoadSetTypeStrings();
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Recipe Database...");
+                iFrm?.SetMessage("Loading Recipe Database...");
                 DatabaseAPI.LoadSalvage();
                 DatabaseAPI.LoadRecipes();
-                if (iFrm != null)
-                    iFrm.SetMessage("Loading Graphics...");
+                iFrm?.SetMessage("Loading Graphics...");
                 I9Gfx.LoadSetTypes();
                 I9Gfx.LoadEnhTypes();
                 I9Gfx.LoadOriginImages();
@@ -88,11 +81,9 @@ namespace Hero_Designer
                 MidsContext.Config.Export.LoadCodes(Files.SelectDataFileLoad(Files.MxdbFileBbCodeUpdate));
                 iFrm.Opacity = 1.0;
                 DatabaseAPI.MatchAllIDs(iFrm);
-                if (iFrm != null)
-                    iFrm.SetMessage("Matching Set Bonus IDs...");
+                iFrm?.SetMessage("Matching Set Bonus IDs...");
                 DatabaseAPI.AssignSetBonusIndexes();
-                if (iFrm != null)
-                    iFrm.SetMessage("Matching Recipe IDs...");
+                iFrm?.SetMessage("Matching Recipe IDs...");
                 DatabaseAPI.AssignRecipeIDs();
                 GC.Collect();
             }

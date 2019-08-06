@@ -24,17 +24,12 @@ namespace midsControls
         // Token: 0x17000021 RID: 33
         // (get) Token: 0x0600007D RID: 125 RVA: 0x00007554 File Offset: 0x00005754
         // (set) Token: 0x0600007E RID: 126 RVA: 0x0000756C File Offset: 0x0000576C
+        [field: AccessedThroughProperty("tTip")]
         internal virtual ToolTip tTip
         {
-            get
-            {
-                return _tTip;
-            }
+            get;
             [MethodImpl(MethodImplOptions.Synchronized)]
-            set
-            {
-                _tTip = value;
-            }
+            set;
         }
 
         // Token: 0x17000022 RID: 34
@@ -510,9 +505,9 @@ namespace midsControls
         // Token: 0x060000B3 RID: 179 RVA: 0x00007C60 File Offset: 0x00005E60
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -522,10 +517,7 @@ namespace midsControls
         private void InitializeComponent()
         {
             components = new Container();
-            tTip = new ToolTip(components);
-            tTip.AutoPopDelay = 10000;
-            tTip.InitialDelay = 500;
-            tTip.ReshowDelay = 100;
+            tTip = new ToolTip(components) {AutoPopDelay = 10000, InitialDelay = 500, ReshowDelay = 100};
             Name = "ctlMultiGraph";
             Size size = new Size(332, 156);
             Size = size;
@@ -582,89 +574,86 @@ namespace midsControls
         {
             checked
             {
-                if (!NoDraw)
+                if (NoDraw) return;
+                if (!Loaded) return;
+                myGFX = null;
+                myGFX = CreateGraphics();
+                bxBuffer = new ExtendedBitmap(Size);
+                if (bxBuffer.Graphics == null) return;
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.FillRectangle(new SolidBrush(BackColor), 0, 0, bxBuffer.Size.Width, bxBuffer.Size.Height);
+                Rectangle rectangle = new Rectangle(nameWidth, 0, Width - nameWidth - 1, Height - 1);
+                LinearGradientBrush brush = new LinearGradientBrush(rectangle, pBlendColor1, pBlendColor2, 0f);
+                SolidBrush brush2 = new SolidBrush(ForeColor);
+                Pen pen = new Pen(pLineColor, 1f);
+                StringFormat stringFormat = new StringFormat
                 {
-                    if (Loaded)
+                    Alignment = StringAlignment.Far,
+                    FormatFlags = StringFormatFlags.NoWrap,
+                    Trimming = StringTrimming.None
+                };
+                bxBuffer.Graphics.FillRectangle(brush, rectangle);
+                Draw_Scale(ref rectangle);
+                Draw_Highlight(rectangle);
+                const int num = 0;
+                int num2 = Items.Length - 1;
+                for (int i = num; i <= num2; i++)
+                {
+                    int num3 = yPadding + i * (pItemHeight + yPadding);
+                    if (!DualName | Operators.CompareString(Items[i].Name, Items[i].Name2, false) == 0)
                     {
-                        myGFX = null;
-                        myGFX = CreateGraphics();
-                        bxBuffer = new ExtendedBitmap(Size);
-                        if (bxBuffer.Graphics != null)
+                        string text = Items[i].Name;
+                        if (Operators.CompareString(text, "", false) == 0)
                         {
-                            bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                            bxBuffer.Graphics.FillRectangle(new SolidBrush(BackColor), 0, 0, bxBuffer.Size.Width, bxBuffer.Size.Height);
-                            Rectangle rectangle = new Rectangle(nameWidth, 0, Width - nameWidth - 1, Height - 1);
-                            LinearGradientBrush brush = new LinearGradientBrush(rectangle, pBlendColor1, pBlendColor2, 0f);
-                            SolidBrush brush2 = new SolidBrush(ForeColor);
-                            Pen pen = new Pen(pLineColor, 1f);
-                            StringFormat stringFormat = new StringFormat();
+                            text = Items[i].Name2;
+                        }
+                        if (Operators.CompareString(text, "", false) != 0 && text.IndexOf(":", StringComparison.Ordinal) < 0)
+                        {
+                            text += ":";
+                        }
+                        int num4 = (int)Math.Round(checked(rectangle.Top + num3) + (pItemHeight - Font.GetHeight(bxBuffer.Graphics)) / 2f);
+                        int num5 = text.IndexOf("|", StringComparison.Ordinal);
+                        RectangleF layoutRectangle = new RectangleF(0f, num4, Width - rectangle.Width - xPadding, ItemHeight + yPadding * 2);
+                        if (num5 < 0)
+                        {
+                            bxBuffer.Graphics.DrawString(text, Font, brush2, layoutRectangle, stringFormat);
+                        }
+                        else
+                        {
+                            stringFormat.Alignment = StringAlignment.Near;
+                            bxBuffer.Graphics.DrawString(text.Substring(0, num5), Font, brush2, layoutRectangle, stringFormat);
                             stringFormat.Alignment = StringAlignment.Far;
-                            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                            stringFormat.Trimming = StringTrimming.None;
-                            bxBuffer.Graphics.FillRectangle(brush, rectangle);
-                            Draw_Scale(ref rectangle);
-                            Draw_Highlight(rectangle);
-                            const int num = 0;
-                            int num2 = Items.Length - 1;
-                            for (int i = num; i <= num2; i++)
-                            {
-                                int num3 = yPadding + i * (pItemHeight + yPadding);
-                                if (!DualName | Operators.CompareString(Items[i].Name, Items[i].Name2, false) == 0)
-                                {
-                                    string text = Items[i].Name;
-                                    if (Operators.CompareString(text, "", false) == 0)
-                                    {
-                                        text = Items[i].Name2;
-                                    }
-                                    if (Operators.CompareString(text, "", false) != 0 && text.IndexOf(":", StringComparison.Ordinal) < 0)
-                                    {
-                                        text += ":";
-                                    }
-                                    int num4 = (int)Math.Round(checked(rectangle.Top + num3) + (pItemHeight - Font.GetHeight(bxBuffer.Graphics)) / 2f);
-                                    int num5 = text.IndexOf("|", StringComparison.Ordinal);
-                                    RectangleF layoutRectangle = new RectangleF(0f, num4, Width - rectangle.Width - xPadding, ItemHeight + yPadding * 2);
-                                    if (num5 < 0)
-                                    {
-                                        bxBuffer.Graphics.DrawString(text, Font, brush2, layoutRectangle, stringFormat);
-                                    }
-                                    else
-                                    {
-                                        stringFormat.Alignment = StringAlignment.Near;
-                                        bxBuffer.Graphics.DrawString(text.Substring(0, num5), Font, brush2, layoutRectangle, stringFormat);
-                                        stringFormat.Alignment = StringAlignment.Far;
-                                        bxBuffer.Graphics.DrawString(text.Substring(num5 + 1), Font, brush2, layoutRectangle, stringFormat);
-                                    }
-                                }
-                                if (pStyle != Enums.GraphStyle.enhOnly & pStyle != Enums.GraphStyle.baseOnly)
-                                {
-                                    if (Items[i].valueBase > Items[i].valueEnh)
-                                    {
-                                        DrawBase(i, rectangle, num3);
-                                        DrawEnh(i, rectangle, num3);
-                                    }
-                                    else
-                                    {
-                                        DrawEnh(i, rectangle, num3);
-                                        DrawBase(i, rectangle, num3);
-                                    }
-                                }
-                                else if (pStyle == Enums.GraphStyle.baseOnly)
-                                {
-                                    DrawBase(i, rectangle, num3);
-                                }
-                                else if (pStyle == Enums.GraphStyle.enhOnly)
-                                {
-                                    DrawEnh(i, rectangle, num3);
-                                }
-                            }
-                            if (pBorder)
-                            {
-                                bxBuffer.Graphics.DrawRectangle(pen, rectangle);
-                            }
-                            myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
+                            bxBuffer.Graphics.DrawString(text.Substring(num5 + 1), Font, brush2, layoutRectangle, stringFormat);
                         }
                     }
+                    if (pStyle != Enums.GraphStyle.enhOnly & pStyle != Enums.GraphStyle.baseOnly)
+                    {
+                        if (Items[i].valueBase > Items[i].valueEnh)
+                        {
+                            DrawBase(i, rectangle, num3);
+                            DrawEnh(i, rectangle, num3);
+                        }
+                        else
+                        {
+                            DrawEnh(i, rectangle, num3);
+                            DrawBase(i, rectangle, num3);
+                        }
+                    }
+                    else switch (pStyle)
+                    {
+                        case Enums.GraphStyle.baseOnly:
+                            DrawBase(i, rectangle, num3);
+                            break;
+                        case Enums.GraphStyle.enhOnly:
+                            DrawEnh(i, rectangle, num3);
+                            break;
+                    }
                 }
+                if (pBorder)
+                {
+                    bxBuffer.Graphics.DrawRectangle(pen, rectangle);
+                }
+                myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
             }
         }
 
@@ -673,16 +662,14 @@ namespace midsControls
         {
             checked
             {
-                if (!(!pShowHighlight | pHighlight == -1))
-                {
-                    Color color = Color.FromArgb(128, pHighlightColor.R, pHighlightColor.G, pHighlightColor.B);
-                    SolidBrush brush = new SolidBrush(color);
-                    int width = Bounds.Width;
-                    int height = pItemHeight + yPadding * 2;
-                    int num = pHighlight * (pItemHeight + yPadding);
-                    Rectangle rect = new Rectangle(Bounds.Left, Bounds.Top + num, width, height);
-                    bxBuffer.Graphics.FillRectangle(brush, rect);
-                }
+                if (!pShowHighlight | pHighlight == -1) return;
+                Color color = Color.FromArgb(128, pHighlightColor.R, pHighlightColor.G, pHighlightColor.B);
+                SolidBrush brush = new SolidBrush(color);
+                int width = Bounds.Width;
+                int height = pItemHeight + yPadding * 2;
+                int num = pHighlight * (pItemHeight + yPadding);
+                Rectangle rect = new Rectangle(Bounds.Left, Bounds.Top + num, width, height);
+                bxBuffer.Graphics.FillRectangle(brush, rect);
             }
         }
 
@@ -691,67 +678,60 @@ namespace midsControls
         {
             checked
             {
-                if (pShowScale)
+                if (!pShowScale) return;
+                SolidBrush brush = new SolidBrush(ForeColor);
+                Pen pen = new Pen(ForeColor, 1f);
+                StringFormat stringFormat = new StringFormat();
+                Rectangle rect = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, pScaleHeight);
+                Bounds.Y += rect.Height;
+                Bounds.Height -= rect.Height;
+                bxBuffer.Graphics.FillRectangle(new SolidBrush(BackColor), rect);
+                bxBuffer.Graphics.DrawLine(pen, rect.X, rect.Y + rect.Height, rect.X + rect.Width, rect.Y + rect.Height);
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.FormatFlags = StringFormatFlags.NoWrap;
+                stringFormat.Trimming = StringTrimming.None;
+                string style;
+                if (Max >= 100f)
                 {
-                    SolidBrush brush = new SolidBrush(ForeColor);
-                    Pen pen = new Pen(ForeColor, 1f);
-                    StringFormat stringFormat = new StringFormat();
-                    Rectangle rect = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, pScaleHeight);
-                    Bounds.Y += rect.Height;
-                    Bounds.Height -= rect.Height;
-                    bxBuffer.Graphics.FillRectangle(new SolidBrush(BackColor), rect);
-                    bxBuffer.Graphics.DrawLine(pen, rect.X, rect.Y + rect.Height, rect.X + rect.Width, rect.Y + rect.Height);
-                    stringFormat.Alignment = StringAlignment.Center;
-                    stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                    stringFormat.Trimming = StringTrimming.None;
-                    string style;
-                    if (Max >= 100f)
-                    {
-                        style = "#,##0";
-                    }
-                    else if (Max >= 10f)
-                    {
-                        style = "#0";
-                    }
-                    else if (Max >= 5f)
-                    {
-                        style = "#0.#";
-                    }
-                    else
-                    {
-                        style = "#0.##";
-                    }
-                    int num = (int)Math.Round(rect.Width / 10.0);
-                    int num2 = (int)Math.Round(Font.GetHeight(bxBuffer.Graphics) + 1f);
-                    int num3 = nameWidth;
-                    int num4 = (int)Math.Round(rect.Y + rect.Height / 5.0 * 4.0);
-                    int num5 = 0;
-                    do
-                    {
-                        if (num3 > bxBuffer.Size.Width)
-                        {
-                            num3 = bxBuffer.Size.Width - 1;
-                        }
-                        bxBuffer.Graphics.DrawLine(pen, num3, num4, num3, rect.Y + rect.Height);
-                        RectangleF layoutRectangle = new RectangleF((float)(num3 - num / 2.0), num4 - num2, num, num2);
-                        if (num5 == 10)
-                        {
-                            layoutRectangle.X = num3 - num;
-                            stringFormat.Alignment = StringAlignment.Far;
-                        }
-                        if (num5 > 0)
-                        {
-                            bxBuffer.Graphics.DrawString(Strings.Format(pMaxValue / 10f * num5, style), Font, brush, layoutRectangle, stringFormat);
-                        }
-                        else
-                        {
-                            bxBuffer.Graphics.DrawString("0", Font, brush, layoutRectangle, stringFormat);
-                        }
-                        num3 += num;
-                        num5++;
-                    }
-                    while (num5 <= 10);
+                    style = "#,##0";
                 }
+                else if (Max >= 10f)
+                {
+                    style = "#0";
+                }
+                else if (Max >= 5f)
+                {
+                    style = "#0.#";
+                }
+                else
+                {
+                    style = "#0.##";
+                }
+                int num = (int)Math.Round(rect.Width / 10.0);
+                int num2 = (int)Math.Round(Font.GetHeight(bxBuffer.Graphics) + 1f);
+                int num3 = nameWidth;
+                int num4 = (int)Math.Round(rect.Y + rect.Height / 5.0 * 4.0);
+                int num5 = 0;
+                do
+                {
+                    if (num3 > bxBuffer.Size.Width)
+                    {
+                        num3 = bxBuffer.Size.Width - 1;
+                    }
+                    bxBuffer.Graphics.DrawLine(pen, num3, num4, num3, rect.Y + rect.Height);
+                    RectangleF layoutRectangle = new RectangleF((float)(num3 - num / 2.0), num4 - num2, num, num2);
+                    if (num5 == 10)
+                    {
+                        layoutRectangle.X = num3 - num;
+                        stringFormat.Alignment = StringAlignment.Far;
+                    }
+
+                    bxBuffer.Graphics.DrawString(num5 > 0 ? Strings.Format(pMaxValue / 10f * num5, style) : "0", Font,
+                        brush, layoutRectangle, stringFormat);
+                    num3 += num;
+                    num5++;
+                }
+                while (num5 <= 10);
             }
         }
 
@@ -761,10 +741,12 @@ namespace midsControls
             SolidBrush brush = new SolidBrush(pBaseColor);
             Pen pen = new Pen(pLineColor, 1f);
             SolidBrush brush2 = new SolidBrush(ForeColor);
-            StringFormat stringFormat = new StringFormat();
-            stringFormat.Alignment = StringAlignment.Far;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-            stringFormat.Trimming = StringTrimming.None;
+            StringFormat stringFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Far,
+                FormatFlags = StringFormatFlags.NoWrap,
+                Trimming = StringTrimming.None
+            };
             checked
             {
                 int width = (int)Math.Round(Bounds.Width * (Items[Index].valueBase / pMaxValue));
@@ -798,11 +780,11 @@ namespace midsControls
                     bxBuffer.Graphics.DrawLine(pen3, right - 1, rect.Top, right + 1, rect.Top);
                     bxBuffer.Graphics.DrawLine(pen3, right - 1, rect.Bottom, right + 1, rect.Bottom);
                 }
-                if (DualName & Operators.CompareString(Items[Index].Name, "", false) != 0 & Operators.CompareString(Items[Index].Name, Items[Index].Name2, false) != 0)
-                {
-                    RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - Bounds.Width - xPadding, rect.Height);
-                    bxBuffer.Graphics.DrawString(Items[Index].Name + ":", Font, brush2, layoutRectangle, stringFormat);
-                }
+
+                if (!(DualName & Operators.CompareString(Items[Index].Name, "", false) != 0 &
+                      Operators.CompareString(Items[Index].Name, Items[Index].Name2, false) != 0)) return;
+                RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - Bounds.Width - xPadding, rect.Height);
+                bxBuffer.Graphics.DrawString(Items[Index].Name + ":", Font, brush2, layoutRectangle, stringFormat);
             }
         }
 
@@ -812,10 +794,12 @@ namespace midsControls
             SolidBrush brush = new SolidBrush(pEnhColor);
             Pen pen = new Pen(pLineColor, 1f);
             SolidBrush brush2 = new SolidBrush(ForeColor);
-            StringFormat stringFormat = new StringFormat();
-            stringFormat.Alignment = StringAlignment.Far;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-            stringFormat.Trimming = StringTrimming.None;
+            StringFormat stringFormat = new StringFormat
+            {
+                Alignment = StringAlignment.Far,
+                FormatFlags = StringFormatFlags.NoWrap,
+                Trimming = StringTrimming.None
+            };
             checked
             {
                 int width = (int)Math.Round(Bounds.Width * (Items[Index].valueEnh / pMaxValue));
@@ -839,11 +823,11 @@ namespace midsControls
                     pen2 = new Pen(pMarkerColor, 1f);
                     bxBuffer.Graphics.DrawLine(pen2, num2, rect.Top + 1, num2, rect.Bottom);
                 }
-                if (DualName & Operators.CompareString(Items[Index].Name2, "", false) != 0 & Operators.CompareString(Items[Index].Name, Items[Index].Name2, false) != 0)
-                {
-                    RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - Bounds.Width - xPadding, rect.Height);
-                    bxBuffer.Graphics.DrawString(Items[Index].Name2 + ":", Font, brush2, layoutRectangle, stringFormat);
-                }
+
+                if (!(DualName & Operators.CompareString(Items[Index].Name2, "", false) != 0 &
+                      Operators.CompareString(Items[Index].Name, Items[Index].Name2, false) != 0)) return;
+                RectangleF layoutRectangle = new RectangleF(0f, rect.Top, Width - Bounds.Width - xPadding, rect.Height);
+                bxBuffer.Graphics.DrawString(Items[Index].Name2 + ":", Font, brush2, layoutRectangle, stringFormat);
             }
         }
 
@@ -894,11 +878,7 @@ namespace midsControls
                 if (pClickable & e.Button == MouseButtons.Left)
                 {
                     float valueAtXY = GetValueAtXY(e.X, e.Y);
-                    BarClickEventHandler barClickEvent = BarClick;
-                    if (barClickEvent != null)
-                    {
-                        barClickEvent(valueAtXY);
-                    }
+                    BarClick?.Invoke(valueAtXY);
                 }
                 else if (!(e.X == oldMouseX & e.Y == oldMouseY))
                 {
@@ -924,11 +904,8 @@ namespace midsControls
                         {
                             pHighlight = i;
                             tTip.SetToolTip(this, Items[i].Tip);
-                            if (num != pHighlight)
-                            {
-                                Draw();
-                                return;
-                            }
+                            if (num == pHighlight) return;
+                            Draw();
                             return;
                         }
 
@@ -1049,11 +1026,9 @@ namespace midsControls
                     int num2 = Scales.Length - 1;
                     for (int i = num; i <= num2; i++)
                     {
-                        if (Scales[i] >= iValue)
-                        {
-                            pMaxValue = Scales[i];
-                            return;
-                        }
+                        if (!(Scales[i] >= iValue)) continue;
+                        pMaxValue = Scales[i];
+                        return;
                     }
                     pMaxValue = Scales[Scales.Length - 1];
                 }
@@ -1081,11 +1056,9 @@ namespace midsControls
         // Token: 0x060000CD RID: 205 RVA: 0x00009334 File Offset: 0x00007534
         private void ctlMultiGraph_MouseDown(object sender, MouseEventArgs e)
         {
-            if (pClickable & e.Button == MouseButtons.Left)
-            {
-                float valueAtXY = GetValueAtXY(e.X, e.Y);
-                BarClick?.Invoke(valueAtXY);
-            }
+            if (!(pClickable & e.Button == MouseButtons.Left)) return;
+            float valueAtXY = GetValueAtXY(e.X, e.Y);
+            BarClick?.Invoke(valueAtXY);
         }
 
         // Token: 0x060000CE RID: 206 RVA: 0x0000938C File Offset: 0x0000758C
@@ -1107,21 +1080,21 @@ namespace midsControls
                 {
                     int num4 = (int)Math.Round(yPadding / 2.0 + checked(i * (pItemHeight + yPadding)));
                     Rectangle rectangle2 = new Rectangle(rectangle.Left, rectangle.Top + num4, num, height);
-                    if (iX >= rectangle2.X && ((iY >= rectangle2.Y & iY <= rectangle2.Y + rectangle2.Height) | Items.Length == 1))
+                    if (iX < rectangle2.X ||
+                        (!((iY >= rectangle2.Y & iY <= rectangle2.Y + rectangle2.Height) | Items.Length == 1)))
+                        continue;
+                    num -= TextWidth;
+                    float result;
+                    if (iX > TextWidth)
                     {
-                        num -= TextWidth;
-                        float result;
-                        if (iX > TextWidth)
-                        {
-                            iX -= TextWidth;
-                            result = (float)(iX / (double)num * pMaxValue);
-                        }
-                        else
-                        {
-                            result = 0f;
-                        }
-                        return result;
+                        iX -= TextWidth;
+                        result = (float)(iX / (double)num * pMaxValue);
                     }
+                    else
+                    {
+                        result = 0f;
+                    }
+                    return result;
                 }
                 return 0f;
             }
@@ -1136,8 +1109,6 @@ namespace midsControls
         private IContainer components;
 
         // Token: 0x0400003D RID: 61
-        [AccessedThroughProperty("tTip")]
-        private ToolTip _tTip;
 
         // Token: 0x0400003E RID: 62
         protected float[] Scales;

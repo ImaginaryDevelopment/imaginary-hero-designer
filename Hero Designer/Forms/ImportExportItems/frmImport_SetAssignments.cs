@@ -148,33 +148,31 @@ namespace Hero_Designer
                 do
                 {
                     iLine = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iLine != null && !iLine.StartsWith("#"))
+                    if (iLine == null || iLine.StartsWith("#")) continue;
+                    ++num5;
+                    if (num5 >= 9)
                     {
-                        ++num5;
-                        if (num5 >= 9)
-                        {
-                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                            num5 = 0;
-                        }
-                        string[] array = CSV.ToArray(iLine);
-                        if (array.Length > 1)
-                        {
-                            int num2 = DatabaseAPI.NidFromUidioSet(array[0]);
-                            if (num2 != index1 & index1 > -1)
-                                flagArray[(int)DatabaseAPI.Database.EnhancementSets[index1].SetType] = true;
-                            index1 = num2;
-                            if (index1 > -1 && !flagArray[(int)DatabaseAPI.Database.EnhancementSets[index1].SetType])
-                            {
-                                int nIDPower = DatabaseAPI.NidFromUidPower(array[1]);
-                                if (nIDPower > -1)
-                                    AddSetType(nIDPower, DatabaseAPI.Database.EnhancementSets[index1].SetType);
-                            }
-                            ++num1;
-                        }
-                        else
-                            ++num4;
-                        ++num3;
+                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                        num5 = 0;
                     }
+                    string[] array = CSV.ToArray(iLine);
+                    if (array.Length > 1)
+                    {
+                        int num2 = DatabaseAPI.NidFromUidioSet(array[0]);
+                        if (num2 != index1 & index1 > -1)
+                            flagArray[(int)DatabaseAPI.Database.EnhancementSets[index1].SetType] = true;
+                        index1 = num2;
+                        if (index1 > -1 && !flagArray[(int)DatabaseAPI.Database.EnhancementSets[index1].SetType])
+                        {
+                            int nIDPower = DatabaseAPI.NidFromUidPower(array[1]);
+                            if (nIDPower > -1)
+                                AddSetType(nIDPower, DatabaseAPI.Database.EnhancementSets[index1].SetType);
+                        }
+                        ++num1;
+                    }
+                    else
+                        ++num4;
+                    ++num3;
                 }
                 while (iLine != null);
             }

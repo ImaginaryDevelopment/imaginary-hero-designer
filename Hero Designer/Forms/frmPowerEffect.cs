@@ -326,8 +326,7 @@ namespace Hero_Designer
                     string powerFullName = myFX.PowerFullName;
                     IPower power = myFX.GetPower();
                     IEnhancement enhancement = myFX.Enhancement;
-                    myFX = new Effect(reader);
-                    myFX.PowerFullName = powerFullName;
+                    myFX = new Effect(reader) {PowerFullName = powerFullName};
                     myFX.SetPower(power);
                     myFX.Enhancement = enhancement;
                     DisplayEffectData();
@@ -361,14 +360,21 @@ namespace Hero_Designer
                 fx.DamageType = (Enums.eDamage)lvSubAttribute.SelectedIndices[0];
             else if (fx.EffectType == Enums.eEffectType.Mez | fx.EffectType == Enums.eEffectType.MezResist)
                 fx.MezType = (Enums.eMez)lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.ResEffect)
-                fx.ETModifies = (Enums.eEffectType)lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.EntCreate)
-                fx.Summon = lvSubAttribute.SelectedItems[0].Text;
-            else if (fx.EffectType == Enums.eEffectType.Enhancement)
-                fx.ETModifies = (Enums.eEffectType)lvSubAttribute.SelectedIndices[0];
-            else if (fx.EffectType == Enums.eEffectType.GlobalChanceMod)
-                fx.Reward = lvSubAttribute.SelectedItems[0].Text;
+            else switch (fx.EffectType)
+            {
+                case Enums.eEffectType.ResEffect:
+                    fx.ETModifies = (Enums.eEffectType)lvSubAttribute.SelectedIndices[0];
+                    break;
+                case Enums.eEffectType.EntCreate:
+                    fx.Summon = lvSubAttribute.SelectedItems[0].Text;
+                    break;
+                case Enums.eEffectType.Enhancement:
+                    fx.ETModifies = (Enums.eEffectType)lvSubAttribute.SelectedIndices[0];
+                    break;
+                case Enums.eEffectType.GlobalChanceMod:
+                    fx.Reward = lvSubAttribute.SelectedItems[0].Text;
+                    break;
+            }
             UpdateFXText();
             UpdateSubSubList();
         }
@@ -569,56 +575,62 @@ namespace Hero_Designer
                 index1 = (int)fx.MezType;
                 lvSubAttribute.Columns[0].Text = "Mez Type";
             }
-            else if (fx.EffectType == Enums.eEffectType.ResEffect)
+            else switch (fx.EffectType)
             {
-                strArray = Enum.GetNames(fx.EffectType.GetType());
-                index1 = (int)fx.ETModifies;
-                lvSubAttribute.Columns[0].Text = "Effect Type";
-            }
-            else if (fx.EffectType == Enums.eEffectType.EntCreate)
-            {
-                strArray = new string[DatabaseAPI.Database.Entities.Length - 1 + 1];
-                string lower = fx.Summon.ToLower();
-                int num = DatabaseAPI.Database.Entities.Length - 1;
-                for (int index2 = 0; index2 <= num; ++index2)
+                case Enums.eEffectType.ResEffect:
+                    strArray = Enum.GetNames(fx.EffectType.GetType());
+                    index1 = (int)fx.ETModifies;
+                    lvSubAttribute.Columns[0].Text = "Effect Type";
+                    break;
+                case Enums.eEffectType.EntCreate:
                 {
-                    strArray[index2] = DatabaseAPI.Database.Entities[index2].UID;
-                    if (strArray[index2].ToLower() == lower)
-                        index1 = index2;
+                    strArray = new string[DatabaseAPI.Database.Entities.Length - 1 + 1];
+                    string lower = fx.Summon.ToLower();
+                    int num = DatabaseAPI.Database.Entities.Length - 1;
+                    for (int index2 = 0; index2 <= num; ++index2)
+                    {
+                        strArray[index2] = DatabaseAPI.Database.Entities[index2].UID;
+                        if (strArray[index2].ToLower() == lower)
+                            index1 = index2;
+                    }
+                    lvSubAttribute.Columns[0].Text = "Entity Name";
+                    break;
                 }
-                lvSubAttribute.Columns[0].Text = "Entity Name";
-            }
-            else if (fx.EffectType == Enums.eEffectType.GrantPower)
-            {
-                strArray = new string[DatabaseAPI.Database.Power.Length - 1 + 1];
-                string lower = fx.Summon.ToLower();
-                int num = DatabaseAPI.Database.Power.Length - 1;
-                for (int index2 = 0; index2 <= num; ++index2)
+
+                case Enums.eEffectType.GrantPower:
                 {
-                    strArray[index2] = DatabaseAPI.Database.Power[index2].FullName;
-                    if (strArray[index2].ToLower() == lower)
-                        index1 = index2;
+                    strArray = new string[DatabaseAPI.Database.Power.Length - 1 + 1];
+                    string lower = fx.Summon.ToLower();
+                    int num = DatabaseAPI.Database.Power.Length - 1;
+                    for (int index2 = 0; index2 <= num; ++index2)
+                    {
+                        strArray[index2] = DatabaseAPI.Database.Power[index2].FullName;
+                        if (strArray[index2].ToLower() == lower)
+                            index1 = index2;
+                    }
+                    lvSubAttribute.Columns[0].Text = "Power Name";
+                    break;
                 }
-                lvSubAttribute.Columns[0].Text = "Power Name";
-            }
-            else if (fx.EffectType == Enums.eEffectType.Enhancement)
-            {
-                strArray = Enum.GetNames(fx.EffectType.GetType());
-                index1 = (int)fx.ETModifies;
-                lvSubAttribute.Columns[0].Text = "Effect Type";
-            }
-            else if (fx.EffectType == Enums.eEffectType.GlobalChanceMod)
-            {
-                strArray = new string[DatabaseAPI.Database.EffectIds.Count - 1 + 1];
-                string lower = fx.Reward.ToLower();
-                int num = DatabaseAPI.Database.EffectIds.Count - 1;
-                for (int index2 = 0; index2 <= num; ++index2)
+
+                case Enums.eEffectType.Enhancement:
+                    strArray = Enum.GetNames(fx.EffectType.GetType());
+                    index1 = (int)fx.ETModifies;
+                    lvSubAttribute.Columns[0].Text = "Effect Type";
+                    break;
+                case Enums.eEffectType.GlobalChanceMod:
                 {
-                    strArray[index2] = Conversions.ToString(DatabaseAPI.Database.EffectIds[index2]);
-                    if (strArray[index2].ToLower() == lower)
-                        index1 = index2;
+                    strArray = new string[DatabaseAPI.Database.EffectIds.Count - 1 + 1];
+                    string lower = fx.Reward.ToLower();
+                    int num = DatabaseAPI.Database.EffectIds.Count - 1;
+                    for (int index2 = 0; index2 <= num; ++index2)
+                    {
+                        strArray[index2] = Conversions.ToString(DatabaseAPI.Database.EffectIds[index2]);
+                        if (strArray[index2].ToLower() == lower)
+                            index1 = index2;
+                    }
+                    lvSubAttribute.Columns[0].Text = "GlobalChanceMod Flag";
+                    break;
                 }
-                lvSubAttribute.Columns[0].Text = "GlobalChanceMod Flag";
             }
             if (strArray.Length > 0)
             {

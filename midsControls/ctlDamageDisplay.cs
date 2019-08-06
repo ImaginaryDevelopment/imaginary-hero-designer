@@ -21,11 +21,9 @@ namespace midsControls
             }
             set
             {
-                if (value >= 0 & checked(value * 2 < Height - 5))
-                {
-                    pvPadding = value;
-                    Draw();
-                }
+                if (!(value >= 0 & checked(value * 2 < Height - 5))) return;
+                pvPadding = value;
+                Draw();
             }
         }
 
@@ -37,11 +35,9 @@ namespace midsControls
             }
             set
             {
-                if (value >= 0 & checked(value * 2 < Width - 5))
-                {
-                    phPadding = value;
-                    Draw();
-                }
+                if (!(value >= 0 & checked(value * 2 < Width - 5))) return;
+                phPadding = value;
+                Draw();
             }
         }
 
@@ -326,9 +322,9 @@ namespace midsControls
         // Token: 0x0600006E RID: 110 RVA: 0x000069AC File Offset: 0x00004BAC
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing)
             {
-                components.Dispose();
+                components?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -338,10 +334,7 @@ namespace midsControls
         private void InitializeComponent()
         {
             components = new Container();
-            myTip = new ToolTip(components);
-            myTip.AutoPopDelay = 20000;
-            myTip.InitialDelay = 350;
-            myTip.ReshowDelay = 100;
+            myTip = new ToolTip(components) {AutoPopDelay = 20000, InitialDelay = 350, ReshowDelay = 100};
             Name = "ctlDamageDisplay";
             Size size = new Size(312, 104);
             Size = size;
@@ -405,24 +398,25 @@ namespace midsControls
                 Rectangle rectangle2 = new Rectangle(phPadding, pvPadding, Width - phPadding * 2, rect.Height - pvPadding * 2);
                 LinearGradientBrush brush = new LinearGradientBrush(rect, pFadeBackStart, pFadeBackEnd, 0f);
                 bxBuffer.Graphics.FillRectangle(brush, rect);
-                if (nBase != 0f)
+                if (nBase == 0f) return;
+                unchecked
                 {
-                    unchecked
+                    if (nMaxEnhanced == 0f)
                     {
-                        if (nMaxEnhanced == 0f)
-                        {
-                            nMaxEnhanced = nBase * 2f;
-                        }
-                        if (nHighestEnhanced == 0f)
-                        {
-                            nHighestEnhanced = nBase * 2f;
-                        }
-                        if (nHighestBase == 0f)
-                        {
-                            nHighestBase = nBase * 2f;
-                        }
+                        nMaxEnhanced = nBase * 2f;
                     }
-                    if (pGraph == 0)
+                    if (nHighestEnhanced == 0f)
+                    {
+                        nHighestEnhanced = nBase * 2f;
+                    }
+                    if (nHighestBase == 0f)
+                    {
+                        nHighestBase = nBase * 2f;
+                    }
+                }
+                switch (pGraph)
+                {
+                    case 0:
                     {
                         int num = (int)Math.Round(nBase / nMaxEnhanced * rectangle2.Width);
                         SolidBrush brush2 = new SolidBrush(pFadeBaseStart);
@@ -444,8 +438,10 @@ namespace midsControls
                         rect3.Height = rectangle2.Height;
                         brush = new LinearGradientBrush(rect3, pFadeEnhStart, pFadeEnhEnd, 0f);
                         bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        break;
                     }
-                    else if (pGraph == (Enums.eDDGraph)3)
+
+                    case (Enums.eDDGraph)3:
                     {
                         int num = (int)Math.Round(nBase / nHighestEnhanced * rectangle2.Width);
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round(nBase / nHighestBase * rectangle2.Width), rectangle2.Height);
@@ -464,8 +460,10 @@ namespace midsControls
                         }
                         brush = new LinearGradientBrush(rectangle2, pFadeEnhStart, pFadeEnhEnd, 0f);
                         bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        break;
                     }
-                    else if (pGraph == (Enums.eDDGraph)2)
+
+                    case (Enums.eDDGraph)2:
                     {
                         int num2 = (int)Math.Round(rectangle2.Height / 2.0);
                         int num = (int)Math.Round(nBase / nHighestEnhanced * rectangle2.Width);
@@ -489,8 +487,10 @@ namespace midsControls
                         }
                         brush = new LinearGradientBrush(rectangle2, pFadeEnhStart, pFadeEnhEnd, 0f);
                         bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        break;
                     }
-                    else if (pGraph == (Enums.eDDGraph)1)
+
+                    case (Enums.eDDGraph)1:
                     {
                         int num = (int)Math.Round(nEnhanced / nHighestEnhanced * rectangle2.Width);
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, rectangle2.Height);
@@ -501,15 +501,19 @@ namespace midsControls
                         Rectangle rectangle3 = new Rectangle(rectangle2.X + num, rectangle2.Y, rectangle2.Width - num, rectangle2.Height);
                         brush = new LinearGradientBrush(rectangle3, pFadeEnhStart, pFadeEnhEnd, 0f);
                         bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        break;
                     }
-                    if (pStyle == (Enums.eDDStyle)2)
-                    {
+                }
+                switch (pStyle)
+                {
+                    case (Enums.eDDStyle)2:
                         DrawText(rectangle2);
-                    }
-                    else if (pStyle == (Enums.eDDStyle)3)
+                        break;
+                    case (Enums.eDDStyle)3:
                     {
                         Rectangle rectangle3 = new Rectangle(rectangle2.X, rectangle2.Y + rectangle2.Height, rectangle2.Width, rectangle.Height - (rectangle2.Y + rectangle2.Height));
                         DrawText(rectangle3);
+                        break;
                     }
                 }
             }
@@ -567,21 +571,19 @@ namespace midsControls
         // Token: 0x06000078 RID: 120 RVA: 0x00007474 File Offset: 0x00005674
         public void Draw()
         {
-            if (bxBuffer != null)
+            if (bxBuffer == null) return;
+            Rectangle rectangle = new Rectangle(0, 0, Width, Height);
+            Brush brush = new SolidBrush(BackColor);
+            bxBuffer.Graphics.FillRectangle(brush, rectangle);
+            if (pStyle != 0)
             {
-                Rectangle rectangle = new Rectangle(0, 0, Width, Height);
-                Brush brush = new SolidBrush(BackColor);
-                bxBuffer.Graphics.FillRectangle(brush, rectangle);
-                if (pStyle != 0)
-                {
-                    DrawGraph();
-                }
-                else
-                {
-                    DrawText(rectangle);
-                }
-                myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
+                DrawGraph();
             }
+            else
+            {
+                DrawText(rectangle);
+            }
+            myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
         }
 
         // Token: 0x06000079 RID: 121 RVA: 0x00007505 File Offset: 0x00005705

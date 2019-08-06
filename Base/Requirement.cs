@@ -1,6 +1,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 public class Requirement
@@ -85,22 +86,24 @@ public class Requirement
     public void StoreTo(BinaryWriter writer)
     {
         writer.Write(ClassName.Length - 1);
-        for (int index = 0; index < ClassName.Length; ++index)
-            writer.Write(ClassName[index]);
+        foreach (var t in ClassName)
+            writer.Write(t);
+
         writer.Write(ClassNameNot.Length - 1);
-        for (int index = 0; index < ClassNameNot.Length; ++index)
-            writer.Write(ClassNameNot[index]);
+        foreach (var t in ClassNameNot)
+            writer.Write(t);
+
         writer.Write(PowerID.Length - 1);
-        for (int index = 0; index < PowerID.Length; ++index)
+        foreach (var t in PowerID)
         {
-            writer.Write(PowerID[index][0]);
-            writer.Write(PowerID[index][1]);
+            writer.Write(t[0]);
+            writer.Write(t[1]);
         }
         writer.Write(PowerIDNot.Length - 1);
-        for (int index = 0; index < PowerIDNot.Length; ++index)
+        foreach (var t in PowerIDNot)
         {
-            writer.Write(PowerIDNot[index][0]);
-            writer.Write(PowerIDNot[index][1]);
+            writer.Write(t[0]);
+            writer.Write(t[1]);
         }
     }
 
@@ -119,22 +122,18 @@ public class Requirement
                 flag2 = false;
                 for (int index = 0; index <= ClassName.Length - 1; ++index)
                 {
-                    if (string.Equals(ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase))
-                    {
-                        flag2 = true;
-                        break;
-                    }
+                    if (!string.Equals(ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase)) continue;
+                    flag2 = true;
+                    break;
                 }
             }
             if (ClassNameNot.Length > 0)
             {
                 for (int index = 0; index <= ClassNameNot.Length - 1; ++index)
                 {
-                    if (string.Equals(ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase))
-                    {
-                        flag2 = false;
-                        break;
-                    }
+                    if (!string.Equals(ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase)) continue;
+                    flag2 = false;
+                    break;
                 }
             }
             flag1 = flag2;
@@ -154,25 +153,13 @@ public class Requirement
             bool flag2 = true;
             if (NClassName.Length > 0)
             {
-                flag2 = false;
-                for (int index = 0; index < NClassName.Length; ++index)
-                {
-                    if (NClassName[index] == nidClass)
-                    {
-                        flag2 = true;
-                        break;
-                    }
-                }
+                flag2 = NClassName.Any(t => t == nidClass);
             }
             if (NClassNameNot.Length > 0)
             {
-                for (int index = 0; index < NClassNameNot.Length; ++index)
+                if (NClassNameNot.Any(t => t == nidClass))
                 {
-                    if (NClassNameNot[index] == nidClass)
-                    {
-                        flag2 = false;
-                        break;
-                    }
+                    flag2 = false;
                 }
             }
             flag1 = flag2;
@@ -183,26 +170,22 @@ public class Requirement
     public bool ReferencesPower(string uidPower, string uidFix = "")
     {
         bool flag = false;
-        for (int index1 = 0; index1 < PowerID.Length; ++index1)
+        foreach (var t in PowerID)
         {
-            for (int index2 = 0; index2 < PowerID[index1].Length; ++index2)
+            for (int index2 = 0; index2 < t.Length; ++index2)
             {
-                if (string.Equals(PowerID[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
-                {
-                    flag = true;
-                    PowerID[index1][index2] = uidFix;
-                }
+                if (!string.Equals(t[index2], uidPower, StringComparison.OrdinalIgnoreCase)) continue;
+                flag = true;
+                t[index2] = uidFix;
             }
         }
-        for (int index1 = 0; index1 < PowerIDNot.Length; ++index1)
+        foreach (var t in PowerIDNot)
         {
-            for (int index2 = 0; index2 < PowerIDNot[index1].Length; ++index2)
+            for (int index2 = 0; index2 < t.Length; ++index2)
             {
-                if (string.Equals(PowerIDNot[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
-                {
-                    flag = true;
-                    PowerIDNot[index1][index2] = uidFix;
-                }
+                if (!string.Equals(t[index2], uidPower, StringComparison.OrdinalIgnoreCase)) continue;
+                flag = true;
+                t[index2] = uidFix;
             }
         }
         return flag;

@@ -64,11 +64,9 @@ namespace Hero_Designer
             int num1 = DatabaseAPI.Database.Salvage.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
             {
-                if (index2 != selectedIndex)
-                {
-                    ++index1;
-                    salvageArray[index1] = new Salvage(ref DatabaseAPI.Database.Salvage[index2]);
-                }
+                if (index2 == selectedIndex) continue;
+                ++index1;
+                salvageArray[index1] = new Salvage(ref DatabaseAPI.Database.Salvage[index2]);
             }
             DatabaseAPI.Database.Salvage = new Salvage[salvageArray.Length - 1 + 1];
             int num2 = DatabaseAPI.Database.Salvage.Length - 1;
@@ -93,35 +91,33 @@ namespace Hero_Designer
             for (int index = 0; index <= num; ++index)
             {
                 string[] strArray2 = strArray1[index].Split(chArray);
-                if (strArray2.Length > 7)
+                if (strArray2.Length <= 7) continue;
+                IDatabase database = DatabaseAPI.Database;
+                Salvage[] salvageArray = (Salvage[])Utils.CopyArray(database.Salvage, new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
+                database.Salvage = salvageArray;
+                DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1] = new Salvage();
+                Salvage salvage = DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1];
+                if (!strArray2[0].StartsWith("S") & strArray2[0].Length > 2)
+                    strArray2[0] = strArray2[0].Substring(1);
+                salvage.InternalName = strArray2[0];
+                salvage.ExternalName = strArray2[1];
+                if (strArray2[10].StartsWith("10"))
                 {
-                    IDatabase database = DatabaseAPI.Database;
-                    Salvage[] salvageArray = (Salvage[])Utils.CopyArray(database.Salvage, new Salvage[DatabaseAPI.Database.Salvage.Length + 1]);
-                    database.Salvage = salvageArray;
-                    DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1] = new Salvage();
-                    Salvage salvage = DatabaseAPI.Database.Salvage[DatabaseAPI.Database.Salvage.Length - 1];
-                    if (!strArray2[0].StartsWith("S") & strArray2[0].Length > 2)
-                        strArray2[0] = strArray2[0].Substring(1);
-                    salvage.InternalName = strArray2[0];
-                    salvage.ExternalName = strArray2[1];
-                    if (strArray2[10].StartsWith("10"))
-                    {
-                        salvage.LevelMin = 9;
-                        salvage.LevelMax = 24;
-                    }
-                    else if (strArray2[10].StartsWith("26"))
-                    {
-                        salvage.LevelMin = 25;
-                        salvage.LevelMax = 39;
-                    }
-                    else
-                    {
-                        salvage.LevelMin = 40;
-                        salvage.LevelMax = 52;
-                    }
-                    salvage.Origin = strArray2[9].IndexOf("Magic", StringComparison.Ordinal) <= -1 ? Salvage.SalvageOrigin.Tech : Salvage.SalvageOrigin.Magic;
-                    salvage.Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(strArray2[6]) - 1.0);
+                    salvage.LevelMin = 9;
+                    salvage.LevelMax = 24;
                 }
+                else if (strArray2[10].StartsWith("26"))
+                {
+                    salvage.LevelMin = 25;
+                    salvage.LevelMax = 39;
+                }
+                else
+                {
+                    salvage.LevelMin = 40;
+                    salvage.LevelMax = 52;
+                }
+                salvage.Origin = strArray2[9].IndexOf("Magic", StringComparison.Ordinal) <= -1 ? Salvage.SalvageOrigin.Tech : Salvage.SalvageOrigin.Magic;
+                salvage.Rarity = (Recipe.RecipeRarity)Math.Round(Conversion.Val(strArray2[6]) - 1.0);
             }
             FillList();
         }
@@ -137,20 +133,20 @@ namespace Hero_Designer
             if (lvSalvage.SelectedItems.Count < 1 || Updating)
                 return;
             int selectedIndex = lvSalvage.SelectedIndices[0];
-            if (cbLevel.SelectedIndex == 0)
+            switch (cbLevel.SelectedIndex)
             {
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 9;
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 24;
-            }
-            else if (cbLevel.SelectedIndex == 1)
-            {
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 25;
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 39;
-            }
-            else
-            {
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 40;
-                DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 52;
+                case 0:
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 9;
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 24;
+                    break;
+                case 1:
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 25;
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 39;
+                    break;
+                default:
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMin = 40;
+                    DatabaseAPI.Database.Salvage[selectedIndex].LevelMax = 52;
+                    break;
             }
             UpdateListItem(selectedIndex);
         }

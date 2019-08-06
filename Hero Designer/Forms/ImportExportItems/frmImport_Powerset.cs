@@ -122,19 +122,18 @@ namespace Hero_Designer
                     BusyMsg(Strings.Format(index, "###,##0") + " records checked.");
                     num1 = 0;
                 }
-                if (ImportBuffer[index].IsValid)
+
+                if (!ImportBuffer[index].IsValid) continue;
+                items[0] = ImportBuffer[index].Data.FullName;
+                items[1] = ImportBuffer[index].Data.GroupName;
+                items[2] = !ImportBuffer[index].IsNew ? "No" : "Yes";
+                bool flag = ImportBuffer[index].CheckDifference(out items[4]);
+                items[3] = !flag ? "No" : "Yes";
+                lstImport.Items.Add(new ListViewItem(items)
                 {
-                    items[0] = ImportBuffer[index].Data.FullName;
-                    items[1] = ImportBuffer[index].Data.GroupName;
-                    items[2] = !ImportBuffer[index].IsNew ? "No" : "Yes";
-                    bool flag = ImportBuffer[index].CheckDifference(out items[4]);
-                    items[3] = !flag ? "No" : "Yes";
-                    lstImport.Items.Add(new ListViewItem(items)
-                    {
-                        Checked = flag,
-                        Tag = index
-                    });
-                }
+                    Checked = flag,
+                    Tag = index
+                });
             }
             if (lstImport.Items.Count > 0)
                 lstImport.Items[0].EnsureVisible();
@@ -177,22 +176,20 @@ namespace Hero_Designer
                 do
                 {
                     iString = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iString != null && !iString.StartsWith("#"))
+                    if (iString == null || iString.StartsWith("#")) continue;
+                    ++num5;
+                    if (num5 >= 100)
                     {
-                        ++num5;
-                        if (num5 >= 100)
-                        {
-                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
-                            num5 = 0;
-                        }
-                        ImportBuffer = (PowersetData[])Utils.CopyArray(ImportBuffer, new PowersetData[ImportBuffer.Length + 1]);
-                        ImportBuffer[ImportBuffer.Length - 1] = new PowersetData(iString);
-                        ++num3;
-                        if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
-                            ++num1;
-                        else
-                            ++num4;
+                        BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                        num5 = 0;
                     }
+                    ImportBuffer = (PowersetData[])Utils.CopyArray(ImportBuffer, new PowersetData[ImportBuffer.Length + 1]);
+                    ImportBuffer[ImportBuffer.Length - 1] = new PowersetData(iString);
+                    ++num3;
+                    if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
+                        ++num1;
+                    else
+                        ++num4;
                 }
                 while (iString != null);
             }
@@ -219,11 +216,9 @@ namespace Hero_Designer
             int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (lstImport.Items[index].Checked)
-                {
-                    ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
-                    ++num1;
-                }
+                if (!lstImport.Items[index].Checked) continue;
+                ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
+                ++num1;
             }
             DatabaseAPI.Database.PowersetVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.PowersetVersion.RevisionDate = DateTime.Now;

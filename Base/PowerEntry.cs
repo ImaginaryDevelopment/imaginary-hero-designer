@@ -31,7 +31,7 @@ public class PowerEntry : ICloneable
 
     public bool Virtual => !Chosen && SubPowers.Length > 0;
 
-    public int SlotCount => Slots == null ? 0 : Slots.Length;
+    public int SlotCount => Slots?.Length ?? 0;
 
     public PowerEntry(IPower power)
     {
@@ -146,32 +146,31 @@ public class PowerEntry : ICloneable
             if (Slots[index1].Enhancement.Enh < 0) continue;
             var enh = DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh];
             var power = enh.GetPower();
-            if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
+            if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length <= 0 ||
+                power == null) continue;
+            foreach (var t in power.Effects)
             {
-                for (int index2 = 0; index2 < power.Effects.Length; ++index2)
+                int num;
+                switch (t.EffectType)
                 {
-                    int num;
-                    switch (power.Effects[index2].EffectType)
-                    {
-                        case Enums.eEffectType.None:
-                        case Enums.eEffectType.Damage:
-                        case Enums.eEffectType.DamageBuff:
-                        case Enums.eEffectType.Enhancement:
-                        case Enums.eEffectType.Heal:
-                            num = 1;
-                            break;
-                        case Enums.eEffectType.Mez:
-                            if (power.Effects[index2].Mag > 0.0)
-                                goto case Enums.eEffectType.None;
-                            else
-                                goto default;
-                        default:
-                            num = power.Effects[index2].ToWho == Enums.eToWho.Target ? 1 : 0;
-                            break;
-                    }
-                    if (num == 0)
-                        return true;
+                    case Enums.eEffectType.None:
+                    case Enums.eEffectType.Damage:
+                    case Enums.eEffectType.DamageBuff:
+                    case Enums.eEffectType.Enhancement:
+                    case Enums.eEffectType.Heal:
+                        num = 1;
+                        break;
+                    case Enums.eEffectType.Mez:
+                        if (t.Mag > 0.0)
+                            goto case Enums.eEffectType.None;
+                        else
+                            goto default;
+                    default:
+                        num = t.ToWho == Enums.eToWho.Target ? 1 : 0;
+                        break;
                 }
+                if (num == 0)
+                    return true;
             }
         }
         return false;
@@ -284,11 +283,9 @@ public class PowerEntry : ICloneable
                 int index3 = -1;
                 for (int index2 = 0; index2 < slotEntryArray.Length; ++index2)
                 {
-                    if (index2 != index1)
-                    {
-                        ++index3;
-                        slotEntryArray[index2].Assign(Slots[index3]);
-                    }
+                    if (index2 == index1) continue;
+                    ++index3;
+                    slotEntryArray[index2].Assign(Slots[index3]);
                 }
                 Slots = new SlotEntry[slotEntryArray.Length];
                 for (int index2 = 0; index2 < Slots.Length; ++index2)
@@ -319,11 +316,8 @@ public class PowerEntry : ICloneable
             return false;
         }
 
-        if (slotIdx == 0 && Slots.Length > 1)
-        {
-            message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
-            return false;
-        }
-        return true;
+        if (slotIdx != 0 || Slots.Length <= 1) return true;
+        message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
+        return false;
     }
 }

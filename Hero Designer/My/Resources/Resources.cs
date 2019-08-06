@@ -18,41 +18,23 @@ namespace Hero_Designer.My.Resources
     [DebuggerNonUserCode]
     internal sealed class Resources
     {
-        static CultureInfo resourceCulture;
-
         static ResourceManager resourceMan;
 
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static CultureInfo Culture
-        {
-            get
-            {
-                return resourceCulture;
-            }
-            set
-            {
-                resourceCulture = value;
-            }
-        }
+        internal static CultureInfo Culture { get; set; }
 
         internal static Bitmap Gradient
         {
             get
             {
-                return (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
+                return (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), Culture));
             }
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static ResourceManager ResourceManager
-        {
-            get
-            {
-                if (ReferenceEquals(resourceMan, null))
-                    resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Resources).Assembly);
-                return resourceMan;
-            }
-        }
+        internal static ResourceManager ResourceManager =>
+            resourceMan ??
+            (resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Resources).Assembly));
     }
 }

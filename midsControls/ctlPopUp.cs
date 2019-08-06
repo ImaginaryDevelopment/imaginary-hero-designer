@@ -104,12 +104,10 @@ namespace midsControls
 			}
 			set
 			{
-				if (pScroll != value)
-				{
-					pScroll = value;
-					Draw();
-				}
-			}
+                if (pScroll == value) return;
+                pScroll = value;
+                Draw();
+            }
 		}
 
 		// Token: 0x06000120 RID: 288 RVA: 0x0000A6C4 File Offset: 0x000088C4
@@ -118,9 +116,9 @@ namespace midsControls
 		{
 			try
 			{
-				if (disposing && components != null)
+				if (disposing)
 				{
-					components.Dispose();
+					components?.Dispose();
 				}
 			}
 			finally
@@ -209,76 +207,65 @@ namespace midsControls
 			float num = 0f;
 			checked
 			{
-				if (pData.Sections != null)
-				{
-					StringFormat stringFormat = new StringFormat(StringFormatFlags.NoClip);
-					float num2 = pColumnPosition;
-					bool flag = pRightAlignColumn;
-					if (pData.CustomSet)
-					{
-						pColumnPosition = pData.ColPos;
-						pRightAlignColumn = pData.ColRight;
-					}
-					stringFormat.LineAlignment = StringAlignment.Near;
-					stringFormat.Alignment = StringAlignment.Near;
-					stringFormat.Trimming = StringTrimming.None;
-					const int num3 = 0;
-					int num4 = pData.Sections.Length - 1;
-					for (int i = num3; i <= num4; i++)
-					{
-						if (pData.Sections[i].Content != null)
-						{
-							const int num5 = 0;
-							int num6 = pData.Sections[i].Content.Length - 1;
-							for (int j = num5; j <= num6; j++)
-							{
-								unchecked
-								{
-									Font font = new Font(Font.FontFamily, Font.Size * pData.Sections[i].Content[j].tSize, pData.Sections[i].Content[j].tFormat, Font.Unit);
-									RectangleF layoutRectangle = new RectangleF(pInternalPadding + pData.Sections[i].Content[j].tIndent * Font.Size, num + pInternalPadding, Width - (checked(pInternalPadding * 2) + pData.Sections[i].Content[j].tIndent * Font.Size), myBX.Size.Height);
-									if (pData.Sections[i].Content[j].HasColumn)
-									{
-										stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
-									}
-									SizeF sizeF;
-									if (Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0)
-									{
-										sizeF = myBX.Graphics.MeasureString("Null String", font, layoutRectangle.Size, stringFormat);
-									}
-									else
-									{
-										sizeF = myBX.Graphics.MeasureString(pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
-									}
-									SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
-									layoutRectangle.Height = sizeF.Height + 1f;
-									layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - pScroll, layoutRectangle.Width, layoutRectangle.Height);
-									myBX.Graphics.DrawString(pData.Sections[i].Content[j].Text, font, brush, layoutRectangle, stringFormat);
-									if (pData.Sections[i].Content[j].HasColumn)
-									{
-										if (pRightAlignColumn)
-										{
-											stringFormat.Alignment = StringAlignment.Far;
-										}
-										layoutRectangle.X = pInternalPadding + checked(Width - pInternalPadding * 2) * pColumnPosition;
-										layoutRectangle.Width = Width - (pInternalPadding + layoutRectangle.X);
-										brush = new SolidBrush(pData.Sections[i].Content[j].tColorColumn);
-										myBX.Graphics.DrawString(pData.Sections[i].Content[j].TextColumn, font, brush, layoutRectangle, stringFormat);
-										stringFormat.FormatFlags = StringFormatFlags.NoClip;
-									}
-									stringFormat.Alignment = StringAlignment.Near;
-									num += sizeF.Height + 1f;
-								}
-							}
+                if (pData.Sections == null) return;
+                StringFormat stringFormat = new StringFormat(StringFormatFlags.NoClip);
+                float num2 = pColumnPosition;
+                bool flag = pRightAlignColumn;
+                if (pData.CustomSet)
+                {
+                    pColumnPosition = pData.ColPos;
+                    pRightAlignColumn = pData.ColRight;
+                }
+                stringFormat.LineAlignment = StringAlignment.Near;
+                stringFormat.Alignment = StringAlignment.Near;
+                stringFormat.Trimming = StringTrimming.None;
+                const int num3 = 0;
+                int num4 = pData.Sections.Length - 1;
+                for (int i = num3; i <= num4; i++)
+                {
+                    if (pData.Sections[i].Content == null) continue;
+                    const int num5 = 0;
+                    int num6 = pData.Sections[i].Content.Length - 1;
+                    for (int j = num5; j <= num6; j++)
+                    {
+                        unchecked
+                        {
+                            Font font = new Font(Font.FontFamily, Font.Size * pData.Sections[i].Content[j].tSize, pData.Sections[i].Content[j].tFormat, Font.Unit);
+                            RectangleF layoutRectangle = new RectangleF(pInternalPadding + pData.Sections[i].Content[j].tIndent * Font.Size, num + pInternalPadding, Width - (checked(pInternalPadding * 2) + pData.Sections[i].Content[j].tIndent * Font.Size), myBX.Size.Height);
+                            if (pData.Sections[i].Content[j].HasColumn)
+                            {
+                                stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
+                            }
 
-                            num += pSectionPadding;
+                            var sizeF = myBX.Graphics.MeasureString(Operators.CompareString(pData.Sections[i].Content[j].Text, "", false) == 0 ? "Null String" : pData.Sections[i].Content[j].Text, font, layoutRectangle.Size, stringFormat);
+                            SolidBrush brush = new SolidBrush(pData.Sections[i].Content[j].tColor);
+                            layoutRectangle.Height = sizeF.Height + 1f;
+                            layoutRectangle = new RectangleF(layoutRectangle.X, layoutRectangle.Y - pScroll, layoutRectangle.Width, layoutRectangle.Height);
+                            myBX.Graphics.DrawString(pData.Sections[i].Content[j].Text, font, brush, layoutRectangle, stringFormat);
+                            if (pData.Sections[i].Content[j].HasColumn)
+                            {
+                                if (pRightAlignColumn)
+                                {
+                                    stringFormat.Alignment = StringAlignment.Far;
+                                }
+                                layoutRectangle.X = pInternalPadding + checked(Width - pInternalPadding * 2) * pColumnPosition;
+                                layoutRectangle.Width = Width - (pInternalPadding + layoutRectangle.X);
+                                brush = new SolidBrush(pData.Sections[i].Content[j].tColorColumn);
+                                myBX.Graphics.DrawString(pData.Sections[i].Content[j].TextColumn, font, brush, layoutRectangle, stringFormat);
+                                stringFormat.FormatFlags = StringFormatFlags.NoClip;
+                            }
+                            stringFormat.Alignment = StringAlignment.Near;
+                            num += sizeF.Height + 1f;
                         }
-					}
-					Height = (int)Math.Round(num);
-					lHeight = num;
-					pColumnPosition = num2;
-					pRightAlignColumn = flag;
-				}
-			}
+                    }
+
+                    num += pSectionPadding;
+                }
+                Height = (int)Math.Round(num);
+                lHeight = num;
+                pColumnPosition = num2;
+                pRightAlignColumn = flag;
+            }
 		}
 
 		// Token: 0x0600012A RID: 298 RVA: 0x0000AD94 File Offset: 0x00008F94

@@ -47,11 +47,13 @@ namespace Hero_Designer
 
         public void SetLocation()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.X = MainModule.MidsController.SzFrmData.X;
-            rectangle.Y = MainModule.MidsController.SzFrmData.Y;
-            rectangle.Width = MainModule.MidsController.SzFrmData.Width;
-            rectangle.Height = MainModule.MidsController.SzFrmData.Height;
+            Rectangle rectangle = new Rectangle
+            {
+                X = MainModule.MidsController.SzFrmData.X,
+                Y = MainModule.MidsController.SzFrmData.Y,
+                Width = MainModule.MidsController.SzFrmData.Width,
+                Height = MainModule.MidsController.SzFrmData.Height
+            };
             if (rectangle.Width < 1)
                 rectangle.Width = Width;
             if (rectangle.Height < 1)
@@ -109,18 +111,16 @@ namespace Hero_Designer
                     int num = values.Length - 1;
                     for (int index3 = 1; index3 <= num; ++index3)
                     {
-                        if ((power1.AttackTypes & (Enums.eVector)values[index3]) > Enums.eVector.None)
+                        if ((power1.AttackTypes & (Enums.eVector) values[index3]) <= Enums.eVector.None) continue;
+                        string iText;
+                        if (flag)
                         {
-                            string iText;
-                            if (flag)
-                            {
-                                iText = "Attack Type(s):";
-                                flag = false;
-                            }
-                            else
-                                iText = "";
-                            iPopup.Sections[index2].Add(iText, PopUp.Colors.Text, Enum.GetName(power1.AttackTypes.GetType(), values[index3]), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
+                            iText = "Attack Type(s):";
+                            flag = false;
                         }
+                        else
+                            iText = "";
+                        iPopup.Sections[index2].Add(iText, PopUp.Colors.Text, Enum.GetName(power1.AttackTypes.GetType(), values[index3]), PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
                     }
                 }
                 iPopup.Sections[index2].Add("Cast Time:", PopUp.Colors.Text, TwoDP(power1.CastTime) + "s", PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);

@@ -459,9 +459,7 @@ public class ConfigData
 
     public static (bool, T) LoadRawMhd<T>(ISerialize serializer, string fn)
     {
-        if (!File.Exists(fn))
-            return (false, default);
-        return (true, serializer.Deserialize<T>(File.ReadAllText(fn)));
+        return !File.Exists(fn) ? (false, default) : (true, serializer.Deserialize<T>(File.ReadAllText(fn)));
     }
 
     public static RawSaveResult SaveRawMhd(ISerialize serializer, object o, string fn, RawSaveResult lastSaveInfo)

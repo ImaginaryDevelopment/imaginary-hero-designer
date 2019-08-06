@@ -50,8 +50,9 @@ public static class MidsCharacterFileFormat
         writer.Write((int)MidsContext.Character.Alignment);
         writer.Write(MidsContext.Character.Name);
         writer.Write(MidsContext.Character.Powersets.Length - 1);
-        for (int index = 0; index < MidsContext.Character.Powersets.Length; ++index)
-            writer.Write(MidsContext.Character.Powersets[index] != null ? MidsContext.Character.Powersets[index].FullName : string.Empty);
+        foreach (var t in MidsContext.Character.Powersets)
+            writer.Write(t != null ? t.FullName : string.Empty);
+
         writer.Write(MidsContext.Character.CurrentBuild.LastPower + 1);
         writer.Write(MidsContext.Character.CurrentBuild.Powers.Count - 1);
         foreach (var power in MidsContext.Character.CurrentBuild.Powers)
@@ -67,13 +68,13 @@ public static class MidsCharacterFileFormat
                 writer.Write(Convert.ToBoolean(power.StatInclude));
                 writer.Write(power.VariableValue);
                 writer.Write(Convert.ToSByte(power.SubPowers.Length - 1));
-                for (int index2 = 0; index2 < power.SubPowers.Length; ++index2)
+                foreach (var t in power.SubPowers)
                 {
-                    if (power.SubPowers[index2].nIDPower > -1)
-                        writer.Write(DatabaseAPI.Database.Power[power.SubPowers[index2].nIDPower].StaticIndex);
+                    if (t.nIDPower > -1)
+                        writer.Write(DatabaseAPI.Database.Power[t.nIDPower].StaticIndex);
                     else
                         writer.Write(-1);
-                    writer.Write(power.SubPowers[index2].StatInclude);
+                    writer.Write(t.StatInclude);
                 }
             }
             writer.Write(Convert.ToSByte(power.Slots.Length - 1));
@@ -318,14 +319,12 @@ public static class MidsCharacterFileFormat
                                     powerSub.Power = DatabaseAPI.Database.Power[powerSub.nIDPower].PowerSetIndex;
                                 }
                                 powerSub.StatInclude = r.ReadBoolean();
-                                if (powerSub.nIDPower > -1 & powerSub.StatInclude)
+                                if (!(powerSub.nIDPower > -1 & powerSub.StatInclude)) continue;
+                                PowerEntry powerEntry2 = new PowerEntry(DatabaseAPI.Database.Power[powerSub.nIDPower])
                                 {
-                                    PowerEntry powerEntry2 = new PowerEntry(DatabaseAPI.Database.Power[powerSub.nIDPower])
-                                    {
-                                        StatInclude = true
-                                    };
-                                    MidsContext.Character.CurrentBuild.Powers.Add(powerEntry2);
-                                }
+                                    StatInclude = true
+                                };
+                                MidsContext.Character.CurrentBuild.Powers.Add(powerEntry2);
                             }
                         }
                     }
@@ -346,37 +345,35 @@ public static class MidsCharacterFileFormat
                     }
                     if (powerEntry1.SubPowers.Length > 0)
                         nId = -1;
-                    if (nId > -1)
+                    if (nId <= -1) continue;
+                    powerEntry1.NIDPower = nId;
+                    powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[nId].PowerSetID;
+                    powerEntry1.IDXPower = DatabaseAPI.Database.Power[nId].PowerSetIndex;
+                    if (powerEntry1.Level == 0 && powerEntry1.Power.FullSetName == "Pool.Fitness")
                     {
-                        powerEntry1.NIDPower = nId;
+                        if (powerEntry1.NIDPower == 2553)
+                            powerEntry1.NIDPower = 1521;
+                        if (powerEntry1.NIDPower == 2554)
+                            powerEntry1.NIDPower = 1523;
+                        if (powerEntry1.NIDPower == 2555)
+                            powerEntry1.NIDPower = 1522;
+                        if (powerEntry1.NIDPower == 2556)
+                            powerEntry1.NIDPower = 1524;
                         powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[nId].PowerSetID;
                         powerEntry1.IDXPower = DatabaseAPI.Database.Power[nId].PowerSetIndex;
-                        if (powerEntry1.Level == 0 && powerEntry1.Power.FullSetName == "Pool.Fitness")
-                        {
-                            if (powerEntry1.NIDPower == 2553)
-                                powerEntry1.NIDPower = 1521;
-                            if (powerEntry1.NIDPower == 2554)
-                                powerEntry1.NIDPower = 1523;
-                            if (powerEntry1.NIDPower == 2555)
-                                powerEntry1.NIDPower = 1522;
-                            if (powerEntry1.NIDPower == 2556)
-                                powerEntry1.NIDPower = 1524;
-                            powerEntry1.NIDPowerset = DatabaseAPI.Database.Power[nId].PowerSetID;
-                            powerEntry1.IDXPower = DatabaseAPI.Database.Power[nId].PowerSetIndex;
-                        }
-                        var ps = powerEntry1.Power?.GetPowerSet();
-                        if (powerIndex < MidsContext.Character.CurrentBuild.Powers.Count)
-                        {
-                            if (!(!MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
-                                flag5 = !MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen;
-                            else
-                                continue;
-                        }
-                        if (flag5)
-                            MidsContext.Character.CurrentBuild.Powers.Add(powerEntry1);
-                        else if ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")
-                            MidsContext.Character.CurrentBuild.Powers[powerIndex] = powerEntry1;
                     }
+                    var ps = powerEntry1.Power?.GetPowerSet();
+                    if (powerIndex < MidsContext.Character.CurrentBuild.Powers.Count)
+                    {
+                        if (!(!MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen & ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")))
+                            flag5 = !MidsContext.Character.CurrentBuild.Powers[powerIndex].Chosen;
+                        else
+                            continue;
+                    }
+                    if (flag5)
+                        MidsContext.Character.CurrentBuild.Powers.Add(powerEntry1);
+                    else if ((ps != null && ps.nArchetype > -1) || powerEntry1.Power.GroupName == "Pool")
+                        MidsContext.Character.CurrentBuild.Powers[powerIndex] = powerEntry1;
                 }
             }
             catch (Exception ex)
@@ -445,13 +442,11 @@ public static class MidsCharacterFileFormat
                         startIndex = strArray2[index].IndexOf(MagicCompressed, StringComparison.Ordinal);
                     if (startIndex < 0)
                         startIndex = strArray2[index].IndexOf(Files.Headers.Save.Compressed, StringComparison.OrdinalIgnoreCase);
-                    if (startIndex > -1)
-                    {
-                        strArray1 = strArray2[index].Substring(startIndex).Split(';');
-                        a = strArray1.Length > 0 ? strArray1[0] : string.Empty;
-                        num1 = index;
-                        break;
-                    }
+                    if (startIndex <= -1) continue;
+                    strArray1 = strArray2[index].Substring(startIndex).Split(';');
+                    a = strArray1.Length > 0 ? strArray1[0] : string.Empty;
+                    num1 = index;
+                    break;
                 }
                 if (num1 < 0)
                 {
@@ -526,18 +521,16 @@ public static class MidsCharacterFileFormat
             if (slot.Enh <= -1)
                 return;
             writer.Write(DatabaseAPI.Database.Enhancements[slot.Enh].StaticIndex);
-            if (DatabaseAPI.Database.Enhancements[slot.Enh].StaticIndex >= 0)
+            if (DatabaseAPI.Database.Enhancements[slot.Enh].StaticIndex < 0) return;
+            if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
             {
-                if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
-                {
-                    writer.Write(Convert.ToSByte(slot.RelativeLevel));
-                    writer.Write(Convert.ToSByte(slot.Grade));
-                }
-                else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
-                {
-                    writer.Write(Convert.ToSByte(slot.IOLevel));
-                    writer.Write(Convert.ToSByte(slot.RelativeLevel));
-                }
+                writer.Write(Convert.ToSByte(slot.RelativeLevel));
+                writer.Write(Convert.ToSByte(slot.Grade));
+            }
+            else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO | DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
+            {
+                writer.Write(Convert.ToSByte(slot.IOLevel));
+                writer.Write(Convert.ToSByte(slot.RelativeLevel));
             }
         }
     }
@@ -561,18 +554,23 @@ public static class MidsCharacterFileFormat
         if (num <= -1)
             return;
         slot.Enh = num;
-        if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.Normal || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SpecialO)
+        switch (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID)
         {
-            slot.RelativeLevel = (Enums.eEnhRelative)reader.ReadSByte();
-            slot.Grade = (Enums.eEnhGrade)reader.ReadSByte();
-        }
-        else if (DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.InventO || DatabaseAPI.Database.Enhancements[slot.Enh].TypeID == Enums.eType.SetO)
-        {
-            slot.IOLevel = reader.ReadSByte();
-            if (slot.IOLevel > 49)
-                slot.IOLevel = 49;
-            if (fVersion > 1.0)
+            case Enums.eType.Normal:
+            case Enums.eType.SpecialO:
                 slot.RelativeLevel = (Enums.eEnhRelative)reader.ReadSByte();
+                slot.Grade = (Enums.eEnhGrade)reader.ReadSByte();
+                break;
+            case Enums.eType.InventO:
+            case Enums.eType.SetO:
+            {
+                slot.IOLevel = reader.ReadSByte();
+                if (slot.IOLevel > 49)
+                    slot.IOLevel = 49;
+                if (fVersion > 1.0)
+                    slot.RelativeLevel = (Enums.eEnhRelative)reader.ReadSByte();
+                break;
+            }
         }
     }
 

@@ -62,14 +62,12 @@ namespace Hero_Designer
             if (lvEntity.SelectedIndices.Count <= 0)
                 return;
             frmEntityEdit frmEntityEdit = new frmEntityEdit(new SummonedEntity(DatabaseAPI.Database.Entities[lvEntity.SelectedIndices[0]], DatabaseAPI.Database.Entities.Length));
-            if (frmEntityEdit.ShowDialog() == DialogResult.OK)
-            {
-                IDatabase database = DatabaseAPI.Database;
-                SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
-                database.Entities = summonedEntityArray;
-                DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity);
-                ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
-            }
+            if (frmEntityEdit.ShowDialog() != DialogResult.OK) return;
+            IDatabase database = DatabaseAPI.Database;
+            SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
+            database.Entities = summonedEntityArray;
+            DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity);
+            ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
         }
 
         void btnDelete_Click(object sender, EventArgs e)
@@ -82,24 +80,20 @@ namespace Hero_Designer
             int num1 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
             {
-                if (index2 != selectedIndex)
-                {
-                    summonedEntityArray[index1] = new SummonedEntity(DatabaseAPI.Database.Entities[index2]);
-                    ++index1;
-                }
+                if (index2 == selectedIndex) continue;
+                summonedEntityArray[index1] = new SummonedEntity(DatabaseAPI.Database.Entities[index2]);
+                ++index1;
             }
             DatabaseAPI.Database.Entities = new SummonedEntity[DatabaseAPI.Database.Entities.Length - 2 + 1];
             int num2 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
                 DatabaseAPI.Database.Entities[index2] = new SummonedEntity(summonedEntityArray[index2]);
             DisplayList();
-            if (lvEntity.Items.Count > 0)
-            {
-                if (lvEntity.Items.Count > selectedIndex)
-                    lvEntity.Items[selectedIndex].Selected = true;
-                else if (lvEntity.Items.Count == selectedIndex)
-                    lvEntity.Items[selectedIndex - 1].Selected = true;
-            }
+            if (lvEntity.Items.Count <= 0) return;
+            if (lvEntity.Items.Count > selectedIndex)
+                lvEntity.Items[selectedIndex].Selected = true;
+            else if (lvEntity.Items.Count == selectedIndex)
+                lvEntity.Items[selectedIndex - 1].Selected = true;
         }
 
         void btnDown_Click(object sender, EventArgs e)
@@ -107,19 +101,17 @@ namespace Hero_Designer
             if (lvEntity.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvEntity.SelectedIndices[0];
-            if (selectedIndex < lvEntity.Items.Count - 1)
+            if (selectedIndex >= lvEntity.Items.Count - 1) return;
+            SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
             {
-                SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
-                {
-                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
-                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex + 1])
-                };
-                DatabaseAPI.Database.Entities[selectedIndex + 1] = new SummonedEntity(summonedEntityArray[0]);
-                DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
-                DisplayList();
-                lvEntity.Items[selectedIndex + 1].Selected = true;
-                lvEntity.Items[selectedIndex + 1].EnsureVisible();
-            }
+                new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
+                new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex + 1])
+            };
+            DatabaseAPI.Database.Entities[selectedIndex + 1] = new SummonedEntity(summonedEntityArray[0]);
+            DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
+            DisplayList();
+            lvEntity.Items[selectedIndex + 1].Selected = true;
+            lvEntity.Items[selectedIndex + 1].EnsureVisible();
         }
 
         void btnEdit_Click(object sender, EventArgs e)
@@ -128,11 +120,9 @@ namespace Hero_Designer
                 return;
             int selectedIndex = lvEntity.SelectedIndices[0];
             frmEntityEdit frmEntityEdit = new frmEntityEdit(DatabaseAPI.Database.Entities[lvEntity.SelectedIndices[0]]);
-            if (frmEntityEdit.ShowDialog() == DialogResult.OK)
-            {
-                DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(frmEntityEdit.myEntity);
-                ListUpdateItem(selectedIndex);
-            }
+            if (frmEntityEdit.ShowDialog() != DialogResult.OK) return;
+            DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(frmEntityEdit.myEntity);
+            ListUpdateItem(selectedIndex);
         }
 
         void btnOK_Click(object sender, EventArgs e)
@@ -148,19 +138,17 @@ namespace Hero_Designer
             if (lvEntity.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvEntity.SelectedIndices[0];
-            if (selectedIndex >= 1)
+            if (selectedIndex < 1) return;
+            SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
             {
-                SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
-                {
-                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
-                    new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex - 1])
-                };
-                DatabaseAPI.Database.Entities[selectedIndex - 1] = new SummonedEntity(summonedEntityArray[0]);
-                DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
-                DisplayList();
-                lvEntity.Items[selectedIndex - 1].Selected = true;
-                lvEntity.Items[selectedIndex - 1].EnsureVisible();
-            }
+                new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex]),
+                new SummonedEntity(DatabaseAPI.Database.Entities[selectedIndex - 1])
+            };
+            DatabaseAPI.Database.Entities[selectedIndex - 1] = new SummonedEntity(summonedEntityArray[0]);
+            DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
+            DisplayList();
+            lvEntity.Items[selectedIndex - 1].Selected = true;
+            lvEntity.Items[selectedIndex - 1].EnsureVisible();
         }
 
         void BusyHide()

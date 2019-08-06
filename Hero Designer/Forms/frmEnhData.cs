@@ -105,28 +105,26 @@ namespace Hero_Designer
             int num2 = myEnh.Effect.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (myEnh.Effect[index].Mode != Enums.eEffMode.Enhancement) continue;
+                ++num1;
+                Enums.eEnhance id = (Enums.eEnhance)myEnh.Effect[index].Enhance.ID;
+                if (id != Enums.eEnhance.Mez)
                 {
-                    ++num1;
-                    Enums.eEnhance id = (Enums.eEnhance)myEnh.Effect[index].Enhance.ID;
-                    if (id != Enums.eEnhance.Mez)
-                    {
-                        if (myEnh.Name != "")
-                            myEnh.Name += "/";
-                        myEnh.Name += names1[(int)id];
-                        if (myEnh.ShortName != "")
-                            myEnh.ShortName += "/";
-                        myEnh.ShortName += names2[(int)id];
-                    }
-                    else
-                    {
-                        if (myEnh.Name != "")
-                            myEnh.Name += "/";
-                        myEnh.Name += names3[myEnh.Effect[index].Enhance.SubID];
-                        if (myEnh.ShortName != "")
-                            myEnh.ShortName += "/";
-                        myEnh.ShortName += names4[myEnh.Effect[index].Enhance.SubID];
-                    }
+                    if (myEnh.Name != "")
+                        myEnh.Name += "/";
+                    myEnh.Name += names1[(int)id];
+                    if (myEnh.ShortName != "")
+                        myEnh.ShortName += "/";
+                    myEnh.ShortName += names2[(int)id];
+                }
+                else
+                {
+                    if (myEnh.Name != "")
+                        myEnh.Name += "/";
+                    myEnh.Name += names3[myEnh.Effect[index].Enhance.SubID];
+                    if (myEnh.ShortName != "")
+                        myEnh.ShortName += "/";
+                    myEnh.ShortName += names4[myEnh.Effect[index].Enhance.SubID];
                 }
             }
             float num3 = 1f;
@@ -164,17 +162,15 @@ namespace Hero_Designer
             if (lstSelected.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lstSelected.SelectedIndices[0];
-            if (selectedIndex < lstSelected.Items.Count - 1)
-            {
-                Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
-                sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
-                sEffectArray[1].Assign(myEnh.Effect[selectedIndex + 1]);
-                myEnh.Effect[selectedIndex + 1].Assign(sEffectArray[0]);
-                myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
-                FillEffectList();
-                ListSelectedEffects();
-                lstSelected.SelectedIndex = selectedIndex + 1;
-            }
+            if (selectedIndex >= lstSelected.Items.Count - 1) return;
+            Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
+            sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
+            sEffectArray[1].Assign(myEnh.Effect[selectedIndex + 1]);
+            myEnh.Effect[selectedIndex + 1].Assign(sEffectArray[0]);
+            myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
+            FillEffectList();
+            ListSelectedEffects();
+            lstSelected.SelectedIndex = selectedIndex + 1;
         }
 
         void btnEdit_Click(object sender, EventArgs e)
@@ -191,9 +187,8 @@ namespace Hero_Designer
             frmEditPower frmEditPower = new frmEditPower(power);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
                 return;
-            power = new Power(frmEditPower.myPower);
+            power = new Power(frmEditPower.myPower) {IsModified = true};
             // could really use structural equality here, but since we don't have it... we'll mark it as modified just because :/
-            power.IsModified = true;
             int num = power.Effects.Length - 1;
             for (int index = 0; index <= num; ++index)
                 power.Effects[index].PowerFullName = power.FullName;
@@ -207,19 +202,17 @@ namespace Hero_Designer
                 return;
             ImagePicker.InitialDirectory = I9Gfx.GetEnhancementsPath();
             ImagePicker.FileName = myEnh.Image;
-            if (ImagePicker.ShowDialog() == DialogResult.OK)
+            if (ImagePicker.ShowDialog() != DialogResult.OK) return;
+            string str = FileIO.StripPath(ImagePicker.FileName);
+            if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
             {
-                string str = FileIO.StripPath(ImagePicker.FileName);
-                if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
-                {
-                    int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
-                }
-                else
-                {
-                    myEnh.Image = str;
-                    DisplayIcon();
-                    SetTypeIcons();
-                }
+                int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
+            }
+            else
+            {
+                myEnh.Image = str;
+                DisplayIcon();
+                SetTypeIcons();
             }
         }
 
@@ -249,11 +242,9 @@ namespace Hero_Designer
             int num1 = myEnh.Effect.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
             {
-                if (index2 != selectedIndex)
-                {
-                    sEffectArray[index1].Assign(myEnh.Effect[index2]);
-                    ++index1;
-                }
+                if (index2 == selectedIndex) continue;
+                sEffectArray[index1].Assign(myEnh.Effect[index2]);
+                ++index1;
             }
             myEnh.Effect = new Enums.sEffect[myEnh.Effect.Length - 2 + 1];
             int num2 = myEnh.Effect.Length - 1;
@@ -273,17 +264,15 @@ namespace Hero_Designer
             if (lstSelected.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lstSelected.SelectedIndices[0];
-            if (selectedIndex >= 1)
-            {
-                Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
-                sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
-                sEffectArray[1].Assign(myEnh.Effect[selectedIndex - 1]);
-                myEnh.Effect[selectedIndex - 1].Assign(sEffectArray[0]);
-                myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
-                FillEffectList();
-                ListSelectedEffects();
-                lstSelected.SelectedIndex = selectedIndex - 1;
-            }
+            if (selectedIndex < 1) return;
+            Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
+            sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
+            sEffectArray[1].Assign(myEnh.Effect[selectedIndex - 1]);
+            myEnh.Effect[selectedIndex - 1].Assign(sEffectArray[0]);
+            myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
+            FillEffectList();
+            ListSelectedEffects();
+            lstSelected.SelectedIndex = selectedIndex - 1;
         }
 
         void cbMutEx_SelectedIndexChanged(object sender, EventArgs e)
@@ -442,10 +431,7 @@ namespace Hero_Designer
                 }
                 else
                 {
-                    if (myEnh.Effect[selectedIndex].Enhance.ID == 12)
-                        btnEdit.Enabled = true;
-                    else
-                        btnEdit.Enabled = false;
+                    btnEdit.Enabled = myEnh.Effect[selectedIndex].Enhance.ID == 12;
                     gbMod.Enabled = true;
                     cbSched.Enabled = true;
                     switch (myEnh.Effect[selectedIndex].Multiplier.ToString(CultureInfo.CurrentCulture))
@@ -567,12 +553,10 @@ namespace Hero_Designer
                 bxClass.Graphics.DrawImage(I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(myEnh.ClassID[index]), GraphicsUnit.Pixel);
                 enhPadding2 += ClassSize + EnhPadding;
                 ++num1;
-                if (num1 == 2)
-                {
-                    num1 = 0;
-                    enhPadding2 = EnhPadding;
-                    enhPadding1 += ClassSize + EnhPadding;
-                }
+                if (num1 != 2) continue;
+                num1 = 0;
+                enhPadding2 = EnhPadding;
+                enhPadding1 += ClassSize + EnhPadding;
             }
             pnlClass.CreateGraphics().DrawImageUnscaled(bxClass.Bitmap, 0, 0);
         }
@@ -591,12 +575,10 @@ namespace Hero_Designer
                 bxClassList.Graphics.DrawImage(I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), GraphicsUnit.Pixel);
                 enhPadding2 += 30 + EnhPadding;
                 ++num1;
-                if (num1 == EnhAcross)
-                {
-                    num1 = 0;
-                    enhPadding2 = EnhPadding;
-                    enhPadding1 += 30 + EnhPadding;
-                }
+                if (num1 != EnhAcross) continue;
+                num1 = 0;
+                enhPadding2 = EnhPadding;
+                enhPadding1 += 30 + EnhPadding;
             }
             pnlClassList.CreateGraphics().DrawImageUnscaled(bxClassList.Bitmap, 0, 0);
         }
@@ -874,26 +856,22 @@ namespace Hero_Designer
                 }
                 while (num4 <= 10);
                 int num5 = num1 + num2 * 2;
-                if (num5 < myEnh.ClassID.Length & num1 > -1 & num2 > -1)
+                if (!(num5 < myEnh.ClassID.Length & num1 > -1 & num2 > -1)) return;
+                int[] numArray = new int[myEnh.ClassID.Length - 1 + 1];
+                int num6 = myEnh.ClassID.Length - 1;
+                for (int index = 0; index <= num6; ++index)
+                    numArray[index] = myEnh.ClassID[index];
+                int index1 = 0;
+                myEnh.ClassID = new int[myEnh.ClassID.Length - 2 + 1];
+                int num7 = numArray.Length - 1;
+                for (int index2 = 0; index2 <= num7; ++index2)
                 {
-                    int[] numArray = new int[myEnh.ClassID.Length - 1 + 1];
-                    int num6 = myEnh.ClassID.Length - 1;
-                    for (int index = 0; index <= num6; ++index)
-                        numArray[index] = myEnh.ClassID[index];
-                    int index1 = 0;
-                    myEnh.ClassID = new int[myEnh.ClassID.Length - 2 + 1];
-                    int num7 = numArray.Length - 1;
-                    for (int index2 = 0; index2 <= num7; ++index2)
-                    {
-                        if (index2 != num5)
-                        {
-                            myEnh.ClassID[index1] = numArray[index2];
-                            ++index1;
-                        }
-                    }
-                    Array.Sort(myEnh.ClassID);
-                    DrawClasses();
+                    if (index2 == num5) continue;
+                    myEnh.ClassID[index1] = numArray[index2];
+                    ++index1;
                 }
+                Array.Sort(myEnh.ClassID);
+                DrawClasses();
             }
         }
 
@@ -921,10 +899,7 @@ namespace Hero_Designer
             int index = num1 + num2 * 2;
             if (index < myEnh.ClassID.Length & num1 > -1 & num2 > -1)
             {
-                if (gbClass.Width < 100)
-                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].ShortName;
-                else
-                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].Name;
+                lblClass.Text = gbClass.Width < 100 ? DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].ShortName : DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].Name;
             }
             else
                 lblClass.Text = "";
@@ -966,7 +941,7 @@ namespace Hero_Designer
                 }
                 while (num4 <= 10);
                 int num5 = num1 + num2 * EnhAcross;
-                if (num5 < DatabaseAPI.Database.EnhancementClasses.Length & num1 > -1 & num2 > -1)
+                if (!(num5 < DatabaseAPI.Database.EnhancementClasses.Length & num1 > -1 & num2 > -1)) return;
                 {
                     bool flag = false;
                     int num6 = myEnh.ClassID.Length - 1;
@@ -975,15 +950,14 @@ namespace Hero_Designer
                         if (myEnh.ClassID[index] == num5)
                             flag = true;
                     }
-                    if (!flag)
-                    {
-                        IEnhancement enh = myEnh;
-                        int[] numArray = (int[])Utils.CopyArray(enh.ClassID, new int[myEnh.ClassID.Length + 1]);
-                        enh.ClassID = numArray;
-                        myEnh.ClassID[myEnh.ClassID.Length - 1] = num5;
-                        Array.Sort(myEnh.ClassID);
-                        DrawClasses();
-                    }
+
+                    if (flag) return;
+                    IEnhancement enh = myEnh;
+                    int[] numArray = (int[])Utils.CopyArray(enh.ClassID, new int[myEnh.ClassID.Length + 1]);
+                    enh.ClassID = numArray;
+                    myEnh.ClassID[myEnh.ClassID.Length - 1] = num5;
+                    Array.Sort(myEnh.ClassID);
+                    DrawClasses();
                 }
             }
         }
@@ -1028,15 +1002,13 @@ namespace Hero_Designer
             if (Loading || lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = lstSelected.SelectedIndex;
-            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
-            {
-                if (rbBuff.Checked)
-                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.BuffOnly;
-                else if (rbDebuff.Checked)
-                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.DeBuffOnly;
-                else if (rbBoth.Checked)
-                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.Any;
-            }
+            if (myEnh.Effect[selectedIndex].Mode != Enums.eEffMode.Enhancement) return;
+            if (rbBuff.Checked)
+                myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.BuffOnly;
+            else if (rbDebuff.Checked)
+                myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.DeBuffOnly;
+            else if (rbBoth.Checked)
+                myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.Any;
         }
 
         void rbMod_CheckedChanged(object sender, EventArgs e)
@@ -1045,25 +1017,23 @@ namespace Hero_Designer
             if (lstSelected.SelectedIndex <= -1)
                 return;
             int selectedIndex = lstSelected.SelectedIndex;
-            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            if (myEnh.Effect[selectedIndex].Mode != Enums.eEffMode.Enhancement) return;
+            txtModOther.Enabled = false;
+            if (rbModOther.Checked)
             {
-                txtModOther.Enabled = false;
-                if (rbModOther.Checked)
-                {
-                    txtModOther.Enabled = true;
-                    myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(txtModOther.Text);
-                    txtModOther.SelectAll();
-                    txtModOther.Select();
-                }
-                else if (rbMod1.Checked)
-                    myEnh.Effect[selectedIndex].Multiplier = 1f;
-                else if (rbMod2.Checked)
-                    myEnh.Effect[selectedIndex].Multiplier = 0.625f;
-                else if (rbMod3.Checked)
-                    myEnh.Effect[selectedIndex].Multiplier = 0.5f;
-                else if (rbMod4.Checked)
-                    myEnh.Effect[selectedIndex].Multiplier = 7f / 16f;
+                txtModOther.Enabled = true;
+                myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(txtModOther.Text);
+                txtModOther.SelectAll();
+                txtModOther.Select();
             }
+            else if (rbMod1.Checked)
+                myEnh.Effect[selectedIndex].Multiplier = 1f;
+            else if (rbMod2.Checked)
+                myEnh.Effect[selectedIndex].Multiplier = 0.625f;
+            else if (rbMod3.Checked)
+                myEnh.Effect[selectedIndex].Multiplier = 0.5f;
+            else if (rbMod4.Checked)
+                myEnh.Effect[selectedIndex].Multiplier = 7f / 16f;
         }
 
         public void SetMaxLevel(int iValue)

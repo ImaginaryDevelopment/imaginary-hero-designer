@@ -159,12 +159,10 @@ namespace midsControls.My
 				get
 				{
 					T t = m_Context.Value;
-					if (t == null)
-					{
-						t = Activator.CreateInstance<T>();
-						m_Context.Value = t;
-					}
-					return t;
+                    if (t != null) return t;
+                    t = Activator.CreateInstance<T>();
+                    m_Context.Value = t;
+                    return t;
 				}
 			}
 

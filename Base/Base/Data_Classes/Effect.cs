@@ -523,15 +523,13 @@ namespace Base.Data_Classes
         static string BuildCs(string iValue, string iStr, bool noComma = false)
 
         {
-            if (!string.IsNullOrEmpty(iValue))
-            {
-                string str = ", ";
-                if (noComma)
-                    str = " ";
-                if (!string.IsNullOrEmpty(iStr))
-                    iStr += str;
-                iStr += iValue;
-            }
+            if (string.IsNullOrEmpty(iValue)) return iStr;
+            string str = ", ";
+            if (noComma)
+                str = " ";
+            if (!string.IsNullOrEmpty(iStr))
+                iStr += str;
+            iStr += iValue;
             return iStr;
         }
 
@@ -564,10 +562,16 @@ namespace Base.Data_Classes
             string effectName = Enums.GetEffectName(EffectType);
             if (!simple)
             {
-                if (ToWho == Enums.eToWho.Target)
-                    str3 = " to Target";
-                else if (ToWho == Enums.eToWho.Self)
-                    str3 = " to Self";
+                switch (ToWho)
+                {
+                    case Enums.eToWho.Target:
+                        str3 = " to Target";
+                        break;
+                    case Enums.eToWho.Self:
+                        str3 = " to Self";
+                        break;
+                }
+
                 if (RequiresToHitCheck)
                     iValue5 = " requires ToHit check";
             }
@@ -795,18 +799,17 @@ namespace Base.Data_Classes
                     break;
             }
             string iStr1 = string.Empty;
-            if (!string.IsNullOrEmpty(iValue1 + iValue4 + iValue2 + iValue3 + str6 + iValue5 + iValue6))
-            {
-                string iStr2 = BuildCs(iValue1, iStr1);
-                string iStr3 = BuildCs(iValue3, iStr2);
-                string iStr4 = BuildCs(iValue6, iStr3);
-                string iStr5 = BuildCs(iValue4, iStr4);
-                if (!string.IsNullOrEmpty(iValue2))
-                    iStr5 = !string.IsNullOrEmpty(str6) ? BuildCs(iValue2 + ", if " + str6, iStr5, noComma) : BuildCs(iValue2, iStr5, noComma);
-                else if (!string.IsNullOrEmpty(str6))
-                    iStr5 = BuildCs("if " + str6, iStr5);
-                iStr1 = " (" + BuildCs(iValue5, iStr5) + ")";
-            }
+            if (string.IsNullOrEmpty(iValue1 + iValue4 + iValue2 + iValue3 + str6 + iValue5 + iValue6))
+                return str8 + str10 + iStr1 + str5 + str7 + str4 + strCondition;
+            string iStr2 = BuildCs(iValue1, iStr1);
+            string iStr3 = BuildCs(iValue3, iStr2);
+            string iStr4 = BuildCs(iValue6, iStr3);
+            string iStr5 = BuildCs(iValue4, iStr4);
+            if (!string.IsNullOrEmpty(iValue2))
+                iStr5 = !string.IsNullOrEmpty(str6) ? BuildCs(iValue2 + ", if " + str6, iStr5, noComma) : BuildCs(iValue2, iStr5, noComma);
+            else if (!string.IsNullOrEmpty(str6))
+                iStr5 = BuildCs("if " + str6, iStr5);
+            iStr1 = " (" + BuildCs(iValue5, iStr5) + ")";
             return str8 + str10 + iStr1 + str5 + str7 + str4 + strCondition;
         }
 
@@ -1018,16 +1021,16 @@ namespace Base.Data_Classes
                                             string str;
                                             if ((str = lower) != null)
                                             {
-                                                if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !")
+                                                switch (str)
                                                 {
-                                                    SpecialCase = Enums.eSpecialCase.CriticalHit;
-                                                    goto label_77;
-                                                }
-
-                                                if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||")
-                                                {
-                                                    SpecialCase = Enums.eSpecialCase.CriticalMinion;
-                                                    goto label_77;
+                                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&":
+                                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !":
+                                                        SpecialCase = Enums.eSpecialCase.CriticalHit;
+                                                        goto label_77;
+                                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&":
+                                                    case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||":
+                                                        SpecialCase = Enums.eSpecialCase.CriticalMinion;
+                                                        goto label_77;
                                                 }
                                             }
                                             SpecialCase = Enums.eSpecialCase.CriticalHit;
@@ -1123,16 +1126,16 @@ namespace Base.Data_Classes
                                 string str;
                                 if ((str = lower) != null)
                                 {
-                                    if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !")
+                                    switch (str)
                                     {
-                                        SpecialCase = Enums.eSpecialCase.CriticalHit;
-                                        goto label_101;
-                                    }
-
-                                    if (str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&" || str == "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||")
-                                    {
-                                        SpecialCase = Enums.eSpecialCase.CriticalMinion;
-                                        goto label_101;
+                                        case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || ! arch source> class_scrapper == &&":
+                                        case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || enttype target> player eq || !":
+                                            SpecialCase = Enums.eSpecialCase.CriticalHit;
+                                            goto label_101;
+                                        case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq || arch source> class_scrapper == &&":
+                                        case "arch target> class_minion_grunt eq arch target> class_minion_small eq || arch target> class_minion_pets eq || arch target> class_minion_swarm eq ||":
+                                            SpecialCase = Enums.eSpecialCase.CriticalMinion;
+                                            goto label_101;
                                     }
                                 }
                                 SpecialCase = Enums.eSpecialCase.CriticalHit;
@@ -1506,8 +1509,7 @@ namespace Base.Data_Classes
             }
             else
             {
-                Effect effect = obj as Effect;
-                if (effect == null)
+                if (!(obj is Effect effect))
                     throw new ArgumentException("Compare failed, object is not a Power Effect class");
                 int num2 = 0;
                 if (VariableModified & !effect.VariableModified)

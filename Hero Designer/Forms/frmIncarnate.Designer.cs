@@ -37,8 +37,8 @@ namespace Hero_Designer
             this.PopInfo = new midsControls.ctlPopUp();
             this.lblLock = new System.Windows.Forms.Label();
             this.Panel2 = new frmIncarnate.CustomPanel();
-            this.llRight = new midsControls.ListLabelV2();
-            this.llLeft = new midsControls.ListLabelV2();
+            this.LLRight = new midsControls.ListLabelV2();
+            this.LLLeft = new midsControls.ListLabelV2();
             this.OmegaButton = new midsControls.ImageButton();
             this.VitaeButton = new midsControls.ImageButton();
             this.StanceButton = new midsControls.ImageButton();
@@ -97,8 +97,8 @@ namespace Hero_Designer
             this.lblLock.Visible = false;
             this.Panel2.AutoScroll = true;
             this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Panel2.Controls.Add((System.Windows.Forms.Control)this.llRight);
-            this.Panel2.Controls.Add((System.Windows.Forms.Control)this.llLeft);
+            this.Panel2.Controls.Add((System.Windows.Forms.Control)this.LLRight);
+            this.Panel2.Controls.Add((System.Windows.Forms.Control)this.LLLeft);
 
             this.Panel2.Location = new System.Drawing.Point(12, 96);
             this.Panel2.Name = "Panel2";
@@ -106,48 +106,48 @@ namespace Hero_Designer
             this.Panel2.Size = new System.Drawing.Size(440, 207);
             this.Panel2.TabIndex = 125;
             this.Panel2.TabStop = true;
-            this.llRight.AutoSize = true;
-            this.llRight.Expandable = true;
-            this.llRight.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.llRight.HighVis = true;
-            this.llRight.HoverColor = System.Drawing.Color.WhiteSmoke;
+            this.LLRight.AutoSize = true;
+            this.LLRight.Expandable = true;
+            this.LLRight.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.LLRight.HighVis = true;
+            this.LLRight.HoverColor = System.Drawing.Color.WhiteSmoke;
 
-            this.llRight.Location = new System.Drawing.Point(218, 0);
-            this.llRight.MaxHeight = 900;
-            this.llRight.Name = "llRight";
-            this.llRight.PaddingX = 2;
-            this.llRight.PaddingY = 2;
-            this.llRight.Scrollable = false;
-            this.llRight.ScrollBarColor = System.Drawing.Color.Red;
-            this.llRight.ScrollBarWidth = 11;
-            this.llRight.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
+            this.LLRight.Location = new System.Drawing.Point(218, 0);
+            this.LLRight.MaxHeight = 900;
+            this.LLRight.Name = "LLRight";
+            this.LLRight.PaddingX = 2;
+            this.LLRight.PaddingY = 2;
+            this.LLRight.Scrollable = false;
+            this.LLRight.ScrollBarColor = System.Drawing.Color.Red;
+            this.LLRight.ScrollBarWidth = 11;
+            this.LLRight.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
 
-            this.llRight.Size = new System.Drawing.Size(198, 414);
+            this.LLRight.Size = new System.Drawing.Size(198, 414);
 
-            this.llRight.SizeNormal = new System.Drawing.Size(198, 140);
-            this.llRight.SuspendRedraw = false;
-            this.llRight.TabIndex = 109;
-            this.llLeft.AutoSize = true;
-            this.llLeft.Expandable = true;
-            this.llLeft.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.llLeft.HighVis = true;
-            this.llLeft.HoverColor = System.Drawing.Color.WhiteSmoke;
+            this.LLRight.SizeNormal = new System.Drawing.Size(198, 140);
+            this.LLRight.SuspendRedraw = false;
+            this.LLRight.TabIndex = 109;
+            this.LLLeft.AutoSize = true;
+            this.LLLeft.Expandable = true;
+            this.LLLeft.Font = new System.Drawing.Font("Arial", 12f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.LLLeft.HighVis = true;
+            this.LLLeft.HoverColor = System.Drawing.Color.WhiteSmoke;
 
-            this.llLeft.Location = new System.Drawing.Point(0, 0);
-            this.llLeft.MaxHeight = 900;
-            this.llLeft.Name = "llLeft";
-            this.llLeft.PaddingX = 2;
-            this.llLeft.PaddingY = 2;
-            this.llLeft.Scrollable = false;
-            this.llLeft.ScrollBarColor = System.Drawing.Color.Red;
-            this.llLeft.ScrollBarWidth = 11;
-            this.llLeft.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
+            this.LLLeft.Location = new System.Drawing.Point(0, 0);
+            this.LLLeft.MaxHeight = 900;
+            this.LLLeft.Name = "LLLeft";
+            this.LLLeft.PaddingX = 2;
+            this.LLLeft.PaddingY = 2;
+            this.LLLeft.Scrollable = false;
+            this.LLLeft.ScrollBarColor = System.Drawing.Color.Red;
+            this.LLLeft.ScrollBarWidth = 11;
+            this.LLLeft.ScrollButtonColor = System.Drawing.Color.FromArgb(192, 0, 0);
 
-            this.llLeft.Size = new System.Drawing.Size(218, 414);
+            this.LLLeft.Size = new System.Drawing.Size(218, 414);
 
-            this.llLeft.SizeNormal = new System.Drawing.Size(218, 140);
-            this.llLeft.SuspendRedraw = false;
-            this.llLeft.TabIndex = 108;
+            this.LLLeft.SizeNormal = new System.Drawing.Size(218, 140);
+            this.LLLeft.SuspendRedraw = false;
+            this.LLLeft.TabIndex = 108;
             this.OmegaButton.Checked = false;
             this.OmegaButton.Font = new System.Drawing.Font("Arial", 11f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, (byte)0);
 

@@ -129,7 +129,7 @@ namespace Hero_Designer
 
         void PbClosePaint(object sender, PaintEventArgs e)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             const string iStr = "Close";
             Rectangle rectangle = new Rectangle();
@@ -163,7 +163,7 @@ namespace Hero_Designer
 
         void PbTopMostPaint(object sender, PaintEventArgs e)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             int index = 2;
             if (_keepOnTop)
@@ -384,7 +384,7 @@ namespace Hero_Designer
 
         void TabPaint(ref PictureBox iTab, PaintEventArgs e, string iString, bool iState)
         {
-            if (_myParent == null || _myParent.Drawing == null)
+            if (_myParent?.Drawing == null)
                 return;
             int index = 2;
             if (iState)
@@ -420,11 +420,9 @@ namespace Hero_Designer
             int num1 = names1.Length - 1;
             for (int dType = 1; dType <= num1; ++dType)
             {
-                if (dType != 9 & dType != 7)
-                {
-                    string iTip = Strings.Format(displayStats.Defense(dType), "##0.##") + "% " + names1[dType] + " defense";
-                    graphDef.AddItem(names1[dType] + ":|" + Strings.Format(displayStats.Defense(dType), "##0.#") + "%", displayStats.Defense(dType), 0.0f, iTip);
-                }
+                if (!(dType != 9 & dType != 7)) continue;
+                string iTip = Strings.Format(displayStats.Defense(dType), "##0.##") + "% " + names1[dType] + " defense";
+                graphDef.AddItem(names1[dType] + ":|" + Strings.Format(displayStats.Defense(dType), "##0.#") + "%", displayStats.Defense(dType), 0.0f, iTip);
             }
             graphDef.Max = 100f;
             graphDef.Draw();

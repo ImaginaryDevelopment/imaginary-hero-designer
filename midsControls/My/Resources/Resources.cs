@@ -24,12 +24,10 @@ namespace midsControls.My.Resources
 		{
 			get
 			{
-				if (ReferenceEquals(resourceMan, null))
-				{
-					ResourceManager resourceManager = new ResourceManager("midsControls.Resources", typeof(Resources).Assembly);
-					resourceMan = resourceManager;
-				}
-				return resourceMan;
+                if (!ReferenceEquals(resourceMan, null)) return resourceMan;
+                ResourceManager resourceManager = new ResourceManager("midsControls.Resources", typeof(Resources).Assembly);
+                resourceMan = resourceManager;
+                return resourceMan;
 			}
 		}
 
@@ -37,22 +35,11 @@ namespace midsControls.My.Resources
 		// (get) Token: 0x06000002 RID: 2 RVA: 0x0000209C File Offset: 0x0000029C
 		// (set) Token: 0x06000003 RID: 3 RVA: 0x000020B3 File Offset: 0x000002B3
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
-		internal static CultureInfo Culture
-		{
-			get
-			{
-				return resourceCulture;
-			}
-			set
-			{
-				resourceCulture = value;
-			}
-		}
+		internal static CultureInfo Culture { get; set; }
 
-		// Token: 0x04000001 RID: 1
+        // Token: 0x04000001 RID: 1
 		private static ResourceManager resourceMan;
 
 		// Token: 0x04000002 RID: 2
-		private static CultureInfo resourceCulture;
-	}
+    }
 }

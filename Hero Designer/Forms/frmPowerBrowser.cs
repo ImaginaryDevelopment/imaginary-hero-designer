@@ -67,8 +67,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
             database.Classes = archetypeArray;
-            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
-            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
+            DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] =
+                new Archetype(frmEditArchetype.MyAT) {IsNew = true};
             UpdateLists(lvGroup.Items.Count - 1);
         }
 
@@ -89,15 +89,13 @@ namespace Hero_Designer
                 iAT.DisplayName += " (Clone)";
                 frmEditArchetype frmEditArchetype = new frmEditArchetype(ref iAT);
                 int num2 = (int)frmEditArchetype.ShowDialog();
-                if (frmEditArchetype.DialogResult == DialogResult.OK)
-                {
-                    IDatabase database = DatabaseAPI.Database;
-                    Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
-                    database.Classes = archetypeArray;
-                    DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] = new Archetype(frmEditArchetype.MyAT);
-                    DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1].IsNew = true;
-                    UpdateLists(lvGroup.Items.Count - 1);
-                }
+                if (frmEditArchetype.DialogResult != DialogResult.OK) return;
+                IDatabase database = DatabaseAPI.Database;
+                Archetype[] archetypeArray = (Archetype[])Utils.CopyArray(database.Classes, new Archetype[DatabaseAPI.Database.Classes.Length + 1]);
+                database.Classes = archetypeArray;
+                DatabaseAPI.Database.Classes[DatabaseAPI.Database.Classes.Length - 1] =
+                    new Archetype(frmEditArchetype.MyAT) {IsNew = true};
+                UpdateLists(lvGroup.Items.Count - 1);
             }
         }
 
@@ -118,11 +116,9 @@ namespace Hero_Designer
                 int num3 = DatabaseAPI.Database.Classes.Length - 1;
                 for (int index3 = 0; index3 <= num3; ++index3)
                 {
-                    if (index3 != num2)
-                    {
-                        archetypeArray[index2] = new Archetype(DatabaseAPI.Database.Classes[index3]);
-                        ++index2;
-                    }
+                    if (index3 == num2) continue;
+                    archetypeArray[index2] = new Archetype(DatabaseAPI.Database.Classes[index3]);
+                    ++index2;
                 }
                 DatabaseAPI.Database.Classes = new Archetype[DatabaseAPI.Database.Classes.Length - 2 + 1];
                 int num4 = DatabaseAPI.Database.Classes.Length - 1;
@@ -148,20 +144,18 @@ namespace Hero_Designer
             if (lvGroup.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvGroup.SelectedIndices[0];
-            if (selectedIndex < lvGroup.Items.Count - 1)
+            if (selectedIndex >= lvGroup.Items.Count - 1) return;
+            Archetype[] archetypeArray = new Archetype[2]
             {
-                Archetype[] archetypeArray = new Archetype[2]
-                {
-                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
-                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
-                };
-                DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
-                DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
-                BusyMsg("Re-Indexing...");
-                DatabaseAPI.MatchAllIDs();
-                List_Groups(selectedIndex + 1);
-                BusyHide();
-            }
+                new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
+                new Archetype(DatabaseAPI.Database.Classes[selectedIndex + 1])
+            };
+            DatabaseAPI.Database.Classes[selectedIndex + 1] = new Archetype(archetypeArray[0]);
+            DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
+            BusyMsg("Re-Indexing...");
+            DatabaseAPI.MatchAllIDs();
+            List_Groups(selectedIndex + 1);
+            BusyHide();
         }
 
         void btnClassEdit_Click(object sender, EventArgs e)
@@ -177,13 +171,10 @@ namespace Hero_Designer
             {
                 string className = DatabaseAPI.Database.Classes[index].ClassName;
                 frmEditArchetype frmEditArchetype = new frmEditArchetype(ref DatabaseAPI.Database.Classes[index]);
-                if (frmEditArchetype.ShowDialog() == DialogResult.OK)
-                {
-                    DatabaseAPI.Database.Classes[index] = new Archetype(frmEditArchetype.MyAT);
-                    DatabaseAPI.Database.Classes[index].IsModified = true;
-                    if (DatabaseAPI.Database.Classes[index].ClassName != className)
-                        RefreshLists();
-                }
+                if (frmEditArchetype.ShowDialog() != DialogResult.OK) return;
+                DatabaseAPI.Database.Classes[index] = new Archetype(frmEditArchetype.MyAT) {IsModified = true};
+                if (DatabaseAPI.Database.Classes[index].ClassName != className)
+                    RefreshLists();
             }
         }
 
@@ -201,20 +192,18 @@ namespace Hero_Designer
             if (lvGroup.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvGroup.SelectedIndices[0];
-            if (selectedIndex >= 1)
+            if (selectedIndex < 1) return;
+            Archetype[] archetypeArray = new Archetype[2]
             {
-                Archetype[] archetypeArray = new Archetype[2]
-                {
-                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
-                  new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
-                };
-                DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
-                DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
-                BusyMsg("Re-Indexing...");
-                DatabaseAPI.MatchAllIDs();
-                List_Groups(selectedIndex - 1);
-                BusyHide();
-            }
+                new Archetype(DatabaseAPI.Database.Classes[selectedIndex]),
+                new Archetype(DatabaseAPI.Database.Classes[selectedIndex - 1])
+            };
+            DatabaseAPI.Database.Classes[selectedIndex - 1] = new Archetype(archetypeArray[0]);
+            DatabaseAPI.Database.Classes[selectedIndex] = new Archetype(archetypeArray[1]);
+            BusyMsg("Re-Indexing...");
+            DatabaseAPI.MatchAllIDs();
+            List_Groups(selectedIndex - 1);
+            BusyHide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
@@ -233,13 +222,19 @@ namespace Hero_Designer
         void btnPowerAdd_Click(object sender, EventArgs e)
         {
             IPower iPower = new Power();
-            if (cbFilter.SelectedIndex == 0)
+            switch (cbFilter.SelectedIndex)
             {
-                if (lvGroup.SelectedItems.Count > 0 & lvSet.SelectedItems.Count > 0)
-                    iPower.FullName = lvGroup.SelectedItems[0].SubItems[0].Text + lvSet.SelectedItems[0].SubItems[0].Text + ".New_Power";
+                case 0:
+                {
+                    if (lvGroup.SelectedItems.Count > 0 & lvSet.SelectedItems.Count > 0)
+                        iPower.FullName = lvGroup.SelectedItems[0].SubItems[0].Text + lvSet.SelectedItems[0].SubItems[0].Text + ".New_Power";
+                    break;
+                }
+
+                case 1 when lvGroup.SelectedItems.Count > 0 & lvSet.SelectedItems.Count > 0:
+                    iPower.FullName = DatabaseAPI.Database.Classes[lvGroup.SelectedIndices[0]].PrimaryGroup + lvSet.SelectedItems[0].SubItems[0].Text + ".New_Power";
+                    break;
             }
-            else if (cbFilter.SelectedIndex == 1 && lvGroup.SelectedItems.Count > 0 & lvSet.SelectedItems.Count > 0)
-                iPower.FullName = DatabaseAPI.Database.Classes[lvGroup.SelectedIndices[0]].PrimaryGroup + lvSet.SelectedItems[0].SubItems[0].Text + ".New_Power";
             iPower.DisplayName = "New Power";
             frmEditPower frmEditPower = new frmEditPower(iPower);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
@@ -247,8 +242,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
             database.Power = powerArray;
-            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
-            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
+            DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] =
+                new Power(frmEditPower.myPower) {IsNew = true};
             UpdateLists();
         }
 
@@ -265,15 +260,13 @@ namespace Hero_Designer
                 iPower.FullName += "_Clone";
                 iPower.DisplayName += " (Clone)";
                 frmEditPower frmEditPower = new frmEditPower(iPower);
-                if (frmEditPower.ShowDialog() == DialogResult.OK)
-                {
-                    IDatabase database = DatabaseAPI.Database;
-                    IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
-                    database.Power = powerArray;
-                    DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] = new Power(frmEditPower.myPower);
-                    DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1].IsNew = true;
-                    UpdateLists();
-                }
+                if (frmEditPower.ShowDialog() != DialogResult.OK) return;
+                IDatabase database = DatabaseAPI.Database;
+                IPower[] powerArray = (IPower[])Utils.CopyArray(database.Power, new IPower[DatabaseAPI.Database.Power.Length + 1]);
+                database.Power = powerArray;
+                DatabaseAPI.Database.Power[DatabaseAPI.Database.Power.Length - 1] =
+                    new Power(frmEditPower.myPower) {IsNew = true};
+                UpdateLists();
             }
         }
 
@@ -293,11 +286,9 @@ namespace Hero_Designer
                 int num3 = DatabaseAPI.Database.Power.Length - 1;
                 for (int index2 = 0; index2 <= num3; ++index2)
                 {
-                    if (index2 != num1)
-                    {
-                        powerArray[index1] = new Power(DatabaseAPI.Database.Power[index2]);
-                        ++index1;
-                    }
+                    if (index2 == num1) continue;
+                    powerArray[index1] = new Power(DatabaseAPI.Database.Power[index2]);
+                    ++index1;
                 }
                 DatabaseAPI.Database.Power = new IPower[DatabaseAPI.Database.Power.Length - 2 + 1];
                 int num4 = DatabaseAPI.Database.Power.Length - 1;
@@ -320,25 +311,23 @@ namespace Hero_Designer
             if (lvPower.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvPower.SelectedIndices[0];
-            if (selectedIndex < lvPower.Items.Count - 1)
+            if (selectedIndex >= lvPower.Items.Count - 1) return;
+            int SelIDX = lvPower.SelectedIndices[0] + 1;
+            int index1 = DatabaseAPI.NidFromUidPower(lvPower.Items[selectedIndex].SubItems[3].Text);
+            int index2 = DatabaseAPI.NidFromUidPower(lvPower.Items[SelIDX].SubItems[3].Text);
+            if (index1 < 0 | index2 < 0)
             {
-                int SelIDX = lvPower.SelectedIndices[0] + 1;
-                int index1 = DatabaseAPI.NidFromUidPower(lvPower.Items[selectedIndex].SubItems[3].Text);
-                int index2 = DatabaseAPI.NidFromUidPower(lvPower.Items[SelIDX].SubItems[3].Text);
-                if (index1 < 0 | index2 < 0)
-                {
-                    int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
-                }
-                else
-                {
-                    IPower template = new Power(DatabaseAPI.Database.Power[index1]);
-                    DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
-                    DatabaseAPI.Database.Power[index2] = new Power(template);
-                    BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs();
-                    List_Powers(SelIDX);
-                    BusyHide();
-                }
+                int num = (int)Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+            }
+            else
+            {
+                IPower template = new Power(DatabaseAPI.Database.Power[index1]);
+                DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
+                DatabaseAPI.Database.Power[index2] = new Power(template);
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                List_Powers(SelIDX);
+                BusyHide();
             }
         }
 
@@ -355,29 +344,24 @@ namespace Hero_Designer
             else
             {
                 frmEditPower frmEditPower = new frmEditPower(DatabaseAPI.Database.Power[index1]);
-                if (frmEditPower.ShowDialog() == DialogResult.OK)
+                if (frmEditPower.ShowDialog() != DialogResult.OK) return;
+                DatabaseAPI.Database.Power[index1] = new Power(frmEditPower.myPower) {IsModified = true};
+                if (text == DatabaseAPI.Database.Power[index1].FullName) return;
+                int num2 = DatabaseAPI.Database.Power[index1].Effects.Length - 1;
+                for (int index2 = 0; index2 <= num2; ++index2)
+                    DatabaseAPI.Database.Power[index1].Effects[index2].PowerFullName = DatabaseAPI.Database.Power[index1].FullName;
+                string[] strArray = DatabaseAPI.UidReferencingPowerFix(text, DatabaseAPI.Database.Power[index1].FullName);
+                string str1 = "";
+                int num3 = strArray.Length - 1;
+                for (int index2 = 0; index2 <= num3; ++index2)
+                    str1 = str1 + strArray[index2] + "\r\n";
+                if (strArray.Length > 0)
                 {
-                    DatabaseAPI.Database.Power[index1] = new Power(frmEditPower.myPower);
-                    DatabaseAPI.Database.Power[index1].IsModified = true;
-                    if (text != DatabaseAPI.Database.Power[index1].FullName)
-                    {
-                        int num2 = DatabaseAPI.Database.Power[index1].Effects.Length - 1;
-                        for (int index2 = 0; index2 <= num2; ++index2)
-                            DatabaseAPI.Database.Power[index1].Effects[index2].PowerFullName = DatabaseAPI.Database.Power[index1].FullName;
-                        string[] strArray = DatabaseAPI.UidReferencingPowerFix(text, DatabaseAPI.Database.Power[index1].FullName);
-                        string str1 = "";
-                        int num3 = strArray.Length - 1;
-                        for (int index2 = 0; index2 <= num3; ++index2)
-                            str1 = str1 + strArray[index2] + "\r\n";
-                        if (strArray.Length > 0)
-                        {
-                            string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
-                            Clipboard.SetDataObject(str2, true);
-                            int num4 = (int)Interaction.MsgBox(str2);
-                        }
-                        RefreshLists();
-                    }
+                    string str2 = "Power: " + text + " changed to " + DatabaseAPI.Database.Power[index1].FullName + "\r\nThe following powers referenced this power and were updated:\r\n" + str1 + "\r\n\r\nThis list has been placed on the clipboard.";
+                    Clipboard.SetDataObject(str2, true);
+                    int num4 = (int)Interaction.MsgBox(str2);
                 }
+                RefreshLists();
             }
         }
 
@@ -395,25 +379,23 @@ namespace Hero_Designer
             if (lvPower.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvPower.SelectedIndices[0];
-            if (selectedIndex >= 1)
+            if (selectedIndex < 1) return;
+            int SelIDX = lvPower.SelectedIndices[0] - 1;
+            int index1 = DatabaseAPI.NidFromUidPower(lvPower.Items[selectedIndex].SubItems[3].Text);
+            int index2 = DatabaseAPI.NidFromUidPower(lvPower.Items[SelIDX].SubItems[3].Text);
+            if (index1 < 0 | index2 < 0)
             {
-                int SelIDX = lvPower.SelectedIndices[0] - 1;
-                int index1 = DatabaseAPI.NidFromUidPower(lvPower.Items[selectedIndex].SubItems[3].Text);
-                int index2 = DatabaseAPI.NidFromUidPower(lvPower.Items[SelIDX].SubItems[3].Text);
-                if (index1 < 0 | index2 < 0)
-                {
-                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
-                }
-                else
-                {
-                    IPower template = new Power(DatabaseAPI.Database.Power[index1]);
-                    DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
-                    DatabaseAPI.Database.Power[index2] = new Power(template);
-                    BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs();
-                    List_Powers(SelIDX);
-                    BusyHide();
-                }
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+            }
+            else
+            {
+                IPower template = new Power(DatabaseAPI.Database.Power[index1]);
+                DatabaseAPI.Database.Power[index1] = new Power(DatabaseAPI.Database.Power[index2]);
+                DatabaseAPI.Database.Power[index2] = new Power(template);
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                List_Powers(SelIDX);
+                BusyHide();
             }
         }
 
@@ -422,25 +404,23 @@ namespace Hero_Designer
             if (lvSet.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvSet.SelectedIndices[0];
-            if (selectedIndex < lvSet.Items.Count - 1)
+            if (selectedIndex >= lvSet.Items.Count - 1) return;
+            int SelIDX = lvSet.SelectedIndices[0] + 1;
+            int index1 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[selectedIndex].SubItems[3].Text);
+            int index2 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[SelIDX].SubItems[3].Text);
+            if (index1 < 0 | index2 < 0)
             {
-                int SelIDX = lvSet.SelectedIndices[0] + 1;
-                int index1 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[selectedIndex].SubItems[3].Text);
-                int index2 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[SelIDX].SubItems[3].Text);
-                if (index1 < 0 | index2 < 0)
-                {
-                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
-                }
-                else
-                {
-                    IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
-                    DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
-                    DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
-                    BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs();
-                    List_Sets(SelIDX);
-                    BusyHide();
-                }
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+            }
+            else
+            {
+                IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
+                DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
+                DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                List_Sets(SelIDX);
+                BusyHide();
             }
         }
 
@@ -450,38 +430,42 @@ namespace Hero_Designer
             if (lvSet.SelectedIndices.Count <= 0)
                 return;
             int selectedIndex = lvSet.SelectedIndices[0];
-            if (selectedIndex >= 1)
+            if (selectedIndex < 1) return;
+            int SelIDX = lvSet.SelectedIndices[0] - 1;
+            int index1 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[selectedIndex].SubItems[3].Text);
+            int index2 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[SelIDX].SubItems[3].Text);
+            if (index1 < 0 | index2 < 0)
             {
-                int SelIDX = lvSet.SelectedIndices[0] - 1;
-                int index1 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[selectedIndex].SubItems[3].Text);
-                int index2 = DatabaseAPI.NidFromUidPowerset(lvSet.Items[SelIDX].SubItems[3].Text);
-                if (index1 < 0 | index2 < 0)
-                {
-                    Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
-                }
-                else
-                {
-                    IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
-                    DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
-                    DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
-                    BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs();
-                    List_Sets(SelIDX);
-                    BusyHide();
-                }
+                Interaction.MsgBox("Unknown error caused an invalid PowerIndex return value.", MsgBoxStyle.Exclamation, "Wha?");
+            }
+            else
+            {
+                IPowerset template = new Powerset(DatabaseAPI.Database.Powersets[index1]);
+                DatabaseAPI.Database.Powersets[index1] = new Powerset(DatabaseAPI.Database.Powersets[index2]);
+                DatabaseAPI.Database.Powersets[index2] = new Powerset(template);
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                List_Sets(SelIDX);
+                BusyHide();
             }
         }
 
         void btnSetAdd_Click(object sender, EventArgs e)
         {
             IPowerset iSet = new Powerset();
-            if (cbFilter.SelectedIndex == 0)
+            switch (cbFilter.SelectedIndex)
             {
-                if (lvGroup.SelectedItems.Count > 0)
-                    iSet.FullName = lvGroup.SelectedItems[0].SubItems[0].Text + ".New_Set";
+                case 0:
+                {
+                    if (lvGroup.SelectedItems.Count > 0)
+                        iSet.FullName = lvGroup.SelectedItems[0].SubItems[0].Text + ".New_Set";
+                    break;
+                }
+
+                case 1 when lvGroup.SelectedItems.Count > 0:
+                    iSet.FullName = DatabaseAPI.Database.Classes[lvGroup.SelectedIndices[0]].PrimaryGroup + ".New_Set";
+                    break;
             }
-            else if (cbFilter.SelectedIndex == 1 && lvGroup.SelectedItems.Count > 0)
-                iSet.FullName = DatabaseAPI.Database.Classes[lvGroup.SelectedIndices[0]].PrimaryGroup + ".New_Set";
             iSet.DisplayName = "New Set";
             frmEditPowerset frmEditPowerset = new frmEditPowerset(ref iSet);
             int num = (int)frmEditPowerset.ShowDialog();
@@ -490,9 +474,8 @@ namespace Hero_Designer
             IDatabase database = DatabaseAPI.Database;
             IPowerset[] powersetArray = (IPowerset[])Utils.CopyArray(database.Powersets, new IPowerset[DatabaseAPI.Database.Powersets.Length + 1]);
             database.Powersets = powersetArray;
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] = new Powerset(frmEditPowerset.myPS);
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].IsNew = true;
-            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1].nID = DatabaseAPI.Database.Powersets.Length - 1;
+            DatabaseAPI.Database.Powersets[DatabaseAPI.Database.Powersets.Length - 1] =
+                new Powerset(frmEditPowerset.myPS) {IsNew = true, nID = DatabaseAPI.Database.Powersets.Length - 1};
             UpdateLists();
         }
 
@@ -510,39 +493,37 @@ namespace Hero_Designer
                 string str = "";
                 if (DatabaseAPI.Database.Powersets[index1].Powers.Length > 0)
                     str = DatabaseAPI.Database.Powersets[index1].FullName + " still has powers attached to it.\r\nThese powers will be orphaned if you remove the set.\r\n\r\n";
-                if (Interaction.MsgBox((str + "Really delete Powerset: " + DatabaseAPI.Database.Powersets[index1].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") == MsgBoxResult.Yes)
+                if (Interaction.MsgBox(
+                        (str + "Really delete Powerset: " + DatabaseAPI.Database.Powersets[index1].DisplayName + "?"),
+                        MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes) return;
+                IPowerset[] powersetArray = new IPowerset[DatabaseAPI.Database.Powersets.Length - 1 + 1];
+                int index2 = 0;
+                int num2 = DatabaseAPI.Database.Powersets.Length - 1;
+                for (int index3 = 0; index3 <= num2; ++index3)
                 {
-                    IPowerset[] powersetArray = new IPowerset[DatabaseAPI.Database.Powersets.Length - 1 + 1];
-                    int index2 = 0;
-                    int num2 = DatabaseAPI.Database.Powersets.Length - 1;
-                    for (int index3 = 0; index3 <= num2; ++index3)
-                    {
-                        if (index3 != index1)
-                        {
-                            powersetArray[index2] = new Powerset(DatabaseAPI.Database.Powersets[index3]);
-                            ++index2;
-                        }
-                    }
-                    DatabaseAPI.Database.Powersets = new IPowerset[DatabaseAPI.Database.Powersets.Length - 2 + 1];
-                    int num3 = DatabaseAPI.Database.Powersets.Length - 1;
-                    for (int index3 = 0; index3 <= num3; ++index3)
-                    {
-                        DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]);
-                        DatabaseAPI.Database.Powersets[index3].nID = index3;
-                    }
-                    int Powerset = -1;
-                    if (lvSet.Items.Count > 0)
-                    {
-                        if (lvSet.Items.Count > index1)
-                            Powerset = index1;
-                        else if (lvSet.Items.Count == index1)
-                            Powerset = index1 - 1;
-                    }
-                    BusyMsg("Re-Indexing...");
-                    DatabaseAPI.MatchAllIDs();
-                    RefreshLists(-1, Powerset);
-                    BusyHide();
+                    if (index3 == index1) continue;
+                    powersetArray[index2] = new Powerset(DatabaseAPI.Database.Powersets[index3]);
+                    ++index2;
                 }
+                DatabaseAPI.Database.Powersets = new IPowerset[DatabaseAPI.Database.Powersets.Length - 2 + 1];
+                int num3 = DatabaseAPI.Database.Powersets.Length - 1;
+                for (int index3 = 0; index3 <= num3; ++index3)
+                {
+                    DatabaseAPI.Database.Powersets[index3] = new Powerset(powersetArray[index3]);
+                    DatabaseAPI.Database.Powersets[index3].nID = index3;
+                }
+                int Powerset = -1;
+                if (lvSet.Items.Count > 0)
+                {
+                    if (lvSet.Items.Count > index1)
+                        Powerset = index1;
+                    else if (lvSet.Items.Count == index1)
+                        Powerset = index1 - 1;
+                }
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                RefreshLists(-1, Powerset);
+                BusyHide();
             }
         }
 
@@ -560,18 +541,16 @@ namespace Hero_Designer
                 IPowerset powerset = DatabaseAPI.Database.Powersets[Powerset];
                 string fullName = powerset.FullName;
                 frmEditPowerset frmEditPowerset = new frmEditPowerset(ref powerset);
-                if (frmEditPowerset.ShowDialog() == DialogResult.OK)
+                if (frmEditPowerset.ShowDialog() != DialogResult.OK) return;
+                DatabaseAPI.Database.Powersets[Powerset] = new Powerset(frmEditPowerset.myPS)
                 {
-                    DatabaseAPI.Database.Powersets[Powerset] = new Powerset(frmEditPowerset.myPS);
-                    DatabaseAPI.Database.Powersets[Powerset].IsModified = true;
-                    if (DatabaseAPI.Database.Powersets[Powerset].FullName != fullName)
-                    {
-                        BusyMsg("Re-Indexing...");
-                        DatabaseAPI.MatchAllIDs();
-                        RefreshLists(-1, Powerset);
-                        BusyHide();
-                    }
-                }
+                    IsModified = true
+                };
+                if (DatabaseAPI.Database.Powersets[Powerset].FullName == fullName) return;
+                BusyMsg("Re-Indexing...");
+                DatabaseAPI.MatchAllIDs();
+                RefreshLists(-1, Powerset);
+                BusyHide();
             }
         }
 
@@ -759,43 +738,50 @@ namespace Hero_Designer
             lvGroup.BeginUpdate();
             lvGroup.Items.Clear();
             BuildATImageList();
-            if (cbFilter.SelectedIndex == 0)
+            switch (cbFilter.SelectedIndex)
             {
-                foreach (PowersetGroup powersetGroup in DatabaseAPI.Database.PowersetGroups.Values)
+                case 0:
                 {
-                    int imageIndex = -1;
-                    int num = DatabaseAPI.Database.Classes.Length - 1;
-                    for (int index = 0; index <= num; ++index)
+                    foreach (PowersetGroup powersetGroup in DatabaseAPI.Database.PowersetGroups.Values)
                     {
-                        if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, powersetGroup.Name, StringComparison.OrdinalIgnoreCase) | string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, powersetGroup.Name, StringComparison.OrdinalIgnoreCase))
+                        int imageIndex = -1;
+                        int num = DatabaseAPI.Database.Classes.Length - 1;
+                        for (int index = 0; index <= num; ++index)
                         {
+                            if (!(string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, powersetGroup.Name,
+                                      StringComparison.OrdinalIgnoreCase) |
+                                  string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, powersetGroup.Name,
+                                      StringComparison.OrdinalIgnoreCase))) continue;
                             imageIndex = index;
                             break;
                         }
+                        if (imageIndex > -1)
+                            lvGroup.Items.Add(new ListViewItem(powersetGroup.Name, imageIndex));
+                        else
+                            lvGroup.Items.Add(powersetGroup.Name);
                     }
-                    if (imageIndex > -1)
-                        lvGroup.Items.Add(new ListViewItem(powersetGroup.Name, imageIndex));
-                    else
-                        lvGroup.Items.Add(powersetGroup.Name);
+                    lvGroup.Columns[0].Text = "Group";
+                    lvGroup.Enabled = true;
+                    pnlGroup.Enabled = false;
+                    break;
                 }
-                lvGroup.Columns[0].Text = "Group";
-                lvGroup.Enabled = true;
-                pnlGroup.Enabled = false;
-            }
-            else if (cbFilter.SelectedIndex == 1)
-            {
-                int num = DatabaseAPI.Database.Classes.Length - 1;
-                for (int imageIndex = 0; imageIndex <= num; ++imageIndex)
-                    lvGroup.Items.Add(new ListViewItem(DatabaseAPI.Database.Classes[imageIndex].ClassName, imageIndex));
-                lvGroup.Columns[0].Text = "Class";
-                lvGroup.Enabled = true;
-                pnlGroup.Enabled = true;
-            }
-            else
-            {
-                lvGroup.Columns[0].Text = "";
-                lvGroup.Enabled = false;
-                pnlGroup.Enabled = false;
+
+                case 1:
+                {
+                    int num = DatabaseAPI.Database.Classes.Length - 1;
+                    for (int imageIndex = 0; imageIndex <= num; ++imageIndex)
+                        lvGroup.Items.Add(new ListViewItem(DatabaseAPI.Database.Classes[imageIndex].ClassName, imageIndex));
+                    lvGroup.Columns[0].Text = "Class";
+                    lvGroup.Enabled = true;
+                    pnlGroup.Enabled = true;
+                    break;
+                }
+
+                default:
+                    lvGroup.Columns[0].Text = "";
+                    lvGroup.Enabled = false;
+                    pnlGroup.Enabled = false;
+                    break;
             }
             if (lvGroup.Items.Count > 0)
             {
@@ -822,17 +808,15 @@ namespace Hero_Designer
             int num = iPowers.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (iPowers[index] > -1 && !DatabaseAPI.Database.Power[iPowers[index]].HiddenPower)
+                if (iPowers[index] <= -1 || DatabaseAPI.Database.Power[iPowers[index]].HiddenPower) continue;
+                items[0] = !DisplayFullName ? DatabaseAPI.Database.Power[iPowers[index]].PowerName : DatabaseAPI.Database.Power[iPowers[index]].FullName;
+                items[1] = DatabaseAPI.Database.Power[iPowers[index]].DisplayName;
+                items[2] = Conversions.ToString(DatabaseAPI.Database.Power[iPowers[index]].Level);
+                items[3] = DatabaseAPI.Database.Power[iPowers[index]].FullName;
+                lvPower.Items.Add(new ListViewItem(items)
                 {
-                    items[0] = !DisplayFullName ? DatabaseAPI.Database.Power[iPowers[index]].PowerName : DatabaseAPI.Database.Power[iPowers[index]].FullName;
-                    items[1] = DatabaseAPI.Database.Power[iPowers[index]].DisplayName;
-                    items[2] = Conversions.ToString(DatabaseAPI.Database.Power[iPowers[index]].Level);
-                    items[3] = DatabaseAPI.Database.Power[iPowers[index]].FullName;
-                    lvPower.Items.Add(new ListViewItem(items)
-                    {
-                        Tag = iPowers[index]
-                    });
-                }
+                    Tag = iPowers[index]
+                });
             }
         }
 
@@ -845,14 +829,12 @@ namespace Hero_Designer
             for (int index1 = 0; index1 <= num; ++index1)
             {
                 int index2 = DatabaseAPI.NidFromUidPower(iPowers[index1]);
-                if (index2 > -1 && !DatabaseAPI.Database.Power[index2].HiddenPower)
-                {
-                    items[0] = !DisplayFullName ? DatabaseAPI.Database.Power[index2].PowerName : DatabaseAPI.Database.Power[index2].FullName;
-                    items[1] = DatabaseAPI.Database.Power[index2].DisplayName;
-                    items[2] = Conversions.ToString(DatabaseAPI.Database.Power[index2].Level);
-                    items[3] = DatabaseAPI.Database.Power[index2].FullName;
-                    lvPower.Items.Add(new ListViewItem(items));
-                }
+                if (index2 <= -1 || DatabaseAPI.Database.Power[index2].HiddenPower) continue;
+                items[0] = !DisplayFullName ? DatabaseAPI.Database.Power[index2].PowerName : DatabaseAPI.Database.Power[index2].FullName;
+                items[1] = DatabaseAPI.Database.Power[index2].DisplayName;
+                items[2] = Conversions.ToString(DatabaseAPI.Database.Power[index2].Level);
+                items[3] = DatabaseAPI.Database.Power[index2].FullName;
+                lvPower.Items.Add(new ListViewItem(items));
             }
         }
 
@@ -861,64 +843,81 @@ namespace Hero_Designer
             int[] iPowers1 = new int[0];
             string[] iPowers2 = new string[0];
             bool DisplayFullName = false;
-            if (cbFilter.SelectedIndex == 0)
+            switch (cbFilter.SelectedIndex)
             {
-                if (lvSet.SelectedItems.Count > 0)
-                    iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text);
-            }
-            else if (cbFilter.SelectedIndex == 1)
-            {
-                if (lvSet.SelectedItems.Count > 0)
+                case 0:
                 {
-                    string uidClass = "";
-                    if (lvGroup.SelectedItems.Count > 0)
-                        uidClass = lvGroup.SelectedItems[0].SubItems[0].Text;
-                    iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text, uidClass);
-                }
-            }
-            else if (cbFilter.SelectedIndex == 2)
-            {
-                if (lvSet.SelectedItems.Count > 0)
-                {
-                    if (lvSet.SelectedItems[0].SubItems[3].Text != "")
+                    if (lvSet.SelectedItems.Count > 0)
                         iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text);
-                    else if (lvSet.SelectedItems[0].SubItems[4].Text != "")
-                        iPowers1 = DatabaseAPI.NidPowers((int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text)));
+                    break;
                 }
-            }
-            else if (cbFilter.SelectedIndex == 4)
-            {
-                if (lvSet.SelectedItems.Count > 0)
+
+                case 1:
                 {
-                    int index = lvSet.SelectedItems[0].SubItems[4].Text == "" ? -1 : (int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text));
-                    if (index > -1)
+                    if (lvSet.SelectedItems.Count > 0)
                     {
-                        iPowers1 = new int[DatabaseAPI.Database.Powersets[index].Power.Length - 1 + 1];
-                        Array.Copy(DatabaseAPI.Database.Powersets[index].Power, iPowers1, iPowers1.Length);
+                        string uidClass = "";
+                        if (lvGroup.SelectedItems.Count > 0)
+                            uidClass = lvGroup.SelectedItems[0].SubItems[0].Text;
+                        iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text, uidClass);
                     }
+
+                    break;
                 }
-            }
-            else if (cbFilter.SelectedIndex == 5)
-            {
-                int num = DatabaseAPI.Database.Power.Length - 1;
-                for (int index = 0; index <= num; ++index)
+
+                case 2:
                 {
-                    if (DatabaseAPI.Database.Power[index].GroupName == "" | DatabaseAPI.Database.Power[index].SetName == "" | DatabaseAPI.Database.Power[index].GetPowerSet() == null)
+                    if (lvSet.SelectedItems.Count > 0)
                     {
+                        if (lvSet.SelectedItems[0].SubItems[3].Text != "")
+                            iPowers2 = DatabaseAPI.UidPowers(lvSet.SelectedItems[0].SubItems[3].Text);
+                        else if (lvSet.SelectedItems[0].SubItems[4].Text != "")
+                            iPowers1 = DatabaseAPI.NidPowers((int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text)));
+                    }
+
+                    break;
+                }
+
+                case 4:
+                {
+                    if (lvSet.SelectedItems.Count > 0)
+                    {
+                        int index = lvSet.SelectedItems[0].SubItems[4].Text == "" ? -1 : (int)Math.Round(Conversion.Val(lvSet.SelectedItems[0].SubItems[4].Text));
+                        if (index > -1)
+                        {
+                            iPowers1 = new int[DatabaseAPI.Database.Powersets[index].Power.Length - 1 + 1];
+                            Array.Copy(DatabaseAPI.Database.Powersets[index].Power, iPowers1, iPowers1.Length);
+                        }
+                    }
+
+                    break;
+                }
+
+                case 5:
+                {
+                    int num = DatabaseAPI.Database.Power.Length - 1;
+                    for (int index = 0; index <= num; ++index)
+                    {
+                        if (!(DatabaseAPI.Database.Power[index].GroupName == "" |
+                              DatabaseAPI.Database.Power[index].SetName == "" |
+                              DatabaseAPI.Database.Power[index].GetPowerSet() == null)) continue;
                         iPowers1 = (int[])Utils.CopyArray(iPowers1, new int[iPowers1.Length + 1]);
                         iPowers1[iPowers1.Length - 1] = index;
                     }
+                    DisplayFullName = true;
+                    break;
                 }
-                DisplayFullName = true;
-            }
-            else if (cbFilter.SelectedIndex == 3)
-            {
-                BusyMsg("Building List...");
-                iPowers1 = new int[DatabaseAPI.Database.Power.Length - 1 + 1];
-                int num = DatabaseAPI.Database.Power.Length - 1;
-                for (int index = 0; index <= num; ++index)
-                    iPowers1[index] = index;
-                DisplayFullName = true;
+
+                case 3:
+                {
+                    BusyMsg("Building List...");
+                    iPowers1 = new int[DatabaseAPI.Database.Power.Length - 1 + 1];
+                    int num = DatabaseAPI.Database.Power.Length - 1;
+                    for (int index = 0; index <= num; ++index)
+                        iPowers1[index] = index;
+                    DisplayFullName = true;
+                    break;
+                }
             }
             lvPower.BeginUpdate();
             lvPower.Items.Clear();
@@ -967,32 +966,39 @@ namespace Hero_Designer
                 List_Sets_AddBlock(iSets);
                 lvSet.Enabled = true;
             }
-            else if (cbFilter.SelectedIndex == 4)
+            else switch (cbFilter.SelectedIndex)
             {
-                int[] numArray3 = new int[0];
-                int num = DatabaseAPI.Database.Powersets.Length - 1;
-                for (int index = 0; index <= num; ++index)
+                case 4:
                 {
-                    if (DatabaseAPI.Database.Powersets[index].GetGroup() == null | string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))
+                    int[] numArray3 = new int[0];
+                    int num = DatabaseAPI.Database.Powersets.Length - 1;
+                    for (int index = 0; index <= num; ++index)
                     {
+                        if (!(DatabaseAPI.Database.Powersets[index].GetGroup() == null |
+                              string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].GroupName))) continue;
                         int[] iArray2 = new int[1] { index };
                         numArray3 = ConcatArray(numArray3, iArray2);
                     }
+                    BuildPowersetImageList(numArray3);
+                    List_Sets_AddBlock(numArray3);
+                    lvSet.Enabled = true;
+                    break;
                 }
-                BuildPowersetImageList(numArray3);
-                List_Sets_AddBlock(numArray3);
-                lvSet.Enabled = true;
+
+                case 2:
+                {
+                    BusyMsg("Building List...");
+                    int[] iSets = DatabaseAPI.NidSets("", "", Enums.ePowerSetType.None);
+                    BuildPowersetImageList(iSets);
+                    List_Sets_AddBlock(iSets);
+                    lvSet.Enabled = true;
+                    break;
+                }
+
+                default:
+                    lvSet.Enabled = false;
+                    break;
             }
-            else if (cbFilter.SelectedIndex == 2)
-            {
-                BusyMsg("Building List...");
-                int[] iSets = DatabaseAPI.NidSets("", "", Enums.ePowerSetType.None);
-                BuildPowersetImageList(iSets);
-                List_Sets_AddBlock(iSets);
-                lvSet.Enabled = true;
-            }
-            else
-                lvSet.Enabled = false;
             if (lvSet.Items.Count > 0)
             {
                 if (lvSet.Items.Count > SelIDX & SelIDX > -1)
@@ -1020,38 +1026,36 @@ namespace Hero_Designer
             int num = iSets.Length - 1;
             for (int imageIndex = 0; imageIndex <= num; ++imageIndex)
             {
-                if (iSets[imageIndex] > -1)
+                if (iSets[imageIndex] <= -1) continue;
+                items[0] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].SetName;
+                items[1] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].DisplayName;
+                switch (DatabaseAPI.Database.Powersets[iSets[imageIndex]].SetType)
                 {
-                    items[0] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].SetName;
-                    items[1] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].DisplayName;
-                    switch (DatabaseAPI.Database.Powersets[iSets[imageIndex]].SetType)
-                    {
-                        case Enums.ePowerSetType.Primary:
-                            items[2] = "Pri";
-                            break;
-                        case Enums.ePowerSetType.Secondary:
-                            items[2] = "Sec";
-                            break;
-                        case Enums.ePowerSetType.Ancillary:
-                            items[2] = "Epic";
-                            break;
-                        case Enums.ePowerSetType.Inherent:
-                            items[2] = "Inh";
-                            break;
-                        case Enums.ePowerSetType.Pool:
-                            items[2] = "Pool";
-                            break;
-                        case Enums.ePowerSetType.Accolade:
-                            items[2] = "Acc";
-                            break;
-                        default:
-                            items[2] = "";
-                            break;
-                    }
-                    items[3] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].FullName;
-                    items[4] = Conversions.ToString(iSets[imageIndex]);
-                    lvSet.Items.Add(new ListViewItem(items, imageIndex));
+                    case Enums.ePowerSetType.Primary:
+                        items[2] = "Pri";
+                        break;
+                    case Enums.ePowerSetType.Secondary:
+                        items[2] = "Sec";
+                        break;
+                    case Enums.ePowerSetType.Ancillary:
+                        items[2] = "Epic";
+                        break;
+                    case Enums.ePowerSetType.Inherent:
+                        items[2] = "Inh";
+                        break;
+                    case Enums.ePowerSetType.Pool:
+                        items[2] = "Pool";
+                        break;
+                    case Enums.ePowerSetType.Accolade:
+                        items[2] = "Acc";
+                        break;
+                    default:
+                        items[2] = "";
+                        break;
                 }
+                items[3] = DatabaseAPI.Database.Powersets[iSets[imageIndex]].FullName;
+                items[4] = Conversions.ToString(iSets[imageIndex]);
+                lvSet.Items.Add(new ListViewItem(items, imageIndex));
             }
         }
 

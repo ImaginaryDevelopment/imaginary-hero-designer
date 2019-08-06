@@ -72,20 +72,18 @@ namespace Hero_Designer
             int num = ImportBuffer.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (ImportBuffer[index].IsValid)
+                if (!ImportBuffer[index].IsValid) continue;
+                items[0] = ImportBuffer[index].Data.DisplayName;
+                items[1] = ImportBuffer[index].Data.ClassName;
+                items[2] = !ImportBuffer[index].Data.Playable ? "No" : "Yes";
+                items[3] = !ImportBuffer[index].IsNew ? "No" : "Yes";
+                bool flag = ImportBuffer[index].CheckDifference(out items[5]);
+                items[4] = !flag ? "No" : "Yes";
+                lstImport.Items.Add(new ListViewItem(items)
                 {
-                    items[0] = ImportBuffer[index].Data.DisplayName;
-                    items[1] = ImportBuffer[index].Data.ClassName;
-                    items[2] = !ImportBuffer[index].Data.Playable ? "No" : "Yes";
-                    items[3] = !ImportBuffer[index].IsNew ? "No" : "Yes";
-                    bool flag = ImportBuffer[index].CheckDifference(out items[5]);
-                    items[4] = !flag ? "No" : "Yes";
-                    lstImport.Items.Add(new ListViewItem(items)
-                    {
-                        Checked = flag,
-                        Tag = index
-                    });
-                }
+                    Checked = flag,
+                    Tag = index
+                });
             }
             if (lstImport.Items.Count > 0)
                 lstImport.Items[0].EnsureVisible();
@@ -127,16 +125,14 @@ namespace Hero_Designer
                 do
                 {
                     iString = FileIO.ReadLineUnlimited(iStream, char.MinValue);
-                    if (iString != null && !iString.StartsWith("#"))
-                    {
-                        ImportBuffer = (ArchetypeData[])Utils.CopyArray(ImportBuffer, new ArchetypeData[ImportBuffer.Length + 1]);
-                        ImportBuffer[ImportBuffer.Length - 1] = new ArchetypeData(iString);
-                        ++num3;
-                        if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
-                            ++num1;
-                        else
-                            ++num4;
-                    }
+                    if (iString == null || iString.StartsWith("#")) continue;
+                    ImportBuffer = (ArchetypeData[])Utils.CopyArray(ImportBuffer, new ArchetypeData[ImportBuffer.Length + 1]);
+                    ImportBuffer[ImportBuffer.Length - 1] = new ArchetypeData(iString);
+                    ++num3;
+                    if (ImportBuffer[ImportBuffer.Length - 1].IsValid)
+                        ++num1;
+                    else
+                        ++num4;
                 }
                 while (iString != null);
             }
@@ -163,11 +159,9 @@ namespace Hero_Designer
             int num2 = lstImport.Items.Count - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (lstImport.Items[index].Checked)
-                {
-                    ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
-                    ++num1;
-                }
+                if (!lstImport.Items[index].Checked) continue;
+                ImportBuffer[Conversions.ToInteger(lstImport.Items[index].Tag)].Apply();
+                ++num1;
             }
             DatabaseAPI.Database.ArchetypeVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.ArchetypeVersion.RevisionDate = DateTime.Now;
