@@ -1,8 +1,8 @@
 
-using Base.Display;
 using System;
 using System.Drawing;
 using System.Linq;
+using Base.Display;
 
 public class PowerEntry : ICloneable
 {
@@ -17,136 +17,136 @@ public class PowerEntry : ICloneable
     public SlotEntry[] Slots { get; set; }
     public PowerSubEntry[] SubPowers { get; set; }
 
-    public bool Chosen { get; private set; }
+    public bool Chosen { get; }
 
-    public Enums.ePowerState State => this.Power == null ? (this.Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
+    public Enums.ePowerState State => Power == null ? (Chosen ? Enums.ePowerState.Empty : Enums.ePowerState.Disabled) : Enums.ePowerState.Used;
 
-    public IPower Power => this.NIDPower >= 0 && this.NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[this.NIDPower] : null;
+    public IPower Power => NIDPower >= 0 && NIDPower <= DatabaseAPI.Database.Power.Length - 1 ? DatabaseAPI.Database.Power[NIDPower] : null;
 
-    public IPowerset PowerSet => this.Power != null ? DatabaseAPI.Database.Powersets[this.Power.PowerSetID] : null;
+    public IPowerset PowerSet => Power != null ? DatabaseAPI.Database.Powersets[Power.PowerSetID] : null;
 
-    public bool AllowFrontLoading => this.Power != null && this.Power.AllowFrontLoading;
+    public bool AllowFrontLoading => Power != null && Power.AllowFrontLoading;
 
-    public string Name => this.Power != null ? this.Power.DisplayName : "";
+    public string Name => Power != null ? Power.DisplayName : "";
 
-    public bool Virtual => !this.Chosen && this.SubPowers.Length > 0;
+    public bool Virtual => !Chosen && SubPowers.Length > 0;
 
-    public int SlotCount => this.Slots == null ? 0 : this.Slots.Length;
+    public int SlotCount => Slots == null ? 0 : Slots.Length;
 
     public PowerEntry(IPower power)
     {
-        this.StatInclude = false;
-        this.Level = -1;
+        StatInclude = false;
+        Level = -1;
         if (power == null)
         {
-            this.IDXPower = -1;
-            this.NIDPowerset = -1;
-            this.NIDPower = -1;
+            IDXPower = -1;
+            NIDPowerset = -1;
+            NIDPower = -1;
         }
         else
         {
-            this.IDXPower = power.PowerSetIndex;
-            this.NIDPower = power.PowerIndex;
-            this.NIDPowerset = power.PowerSetID;
+            IDXPower = power.PowerSetIndex;
+            NIDPower = power.PowerIndex;
+            NIDPowerset = power.PowerSetID;
         }
-        this.Tag = false;
-        this.Slots = new SlotEntry[0];
-        this.SubPowers = new PowerSubEntry[0];
-        this.VariableValue = 0;
+        Tag = false;
+        Slots = new SlotEntry[0];
+        SubPowers = new PowerSubEntry[0];
+        VariableValue = 0;
     }
 
     public PowerEntry(int iLevel = -1, IPower power = null, bool chosen = false)
     {
-        this.StatInclude = false;
-        this.Level = iLevel;
-        this.Chosen = chosen;
+        StatInclude = false;
+        Level = iLevel;
+        Chosen = chosen;
         if (power != null)
         {
-            this.NIDPowerset = power.PowerSetID;
-            this.IDXPower = power.PowerSetIndex;
-            this.NIDPower = power.PowerIndex;
+            NIDPowerset = power.PowerSetID;
+            IDXPower = power.PowerSetIndex;
+            NIDPower = power.PowerIndex;
             if (power.NIDSubPower.Length > 0)
             {
-                this.SubPowers = new PowerSubEntry[power.NIDSubPower.Length];
-                for (int index = 0; index <= this.SubPowers.Length - 1; ++index)
+                SubPowers = new PowerSubEntry[power.NIDSubPower.Length];
+                for (int index = 0; index <= SubPowers.Length - 1; ++index)
                 {
-                    this.SubPowers[index] = new PowerSubEntry()
+                    SubPowers[index] = new PowerSubEntry
                     {
                         nIDPower = power.NIDSubPower[index]
                     };
-                    this.SubPowers[index].Powerset = DatabaseAPI.Database.Power[this.SubPowers[index].nIDPower].PowerSetID;
-                    this.SubPowers[index].Power = DatabaseAPI.Database.Power[this.SubPowers[index].nIDPower].PowerSetIndex;
+                    SubPowers[index].Powerset = DatabaseAPI.Database.Power[SubPowers[index].nIDPower].PowerSetID;
+                    SubPowers[index].Power = DatabaseAPI.Database.Power[SubPowers[index].nIDPower].PowerSetIndex;
                 }
             }
             else
-                this.SubPowers = new PowerSubEntry[0];
+                SubPowers = new PowerSubEntry[0];
             if (power.Slottable & power.GetPowerSet().GroupName != "Incarnate")
             {
-                this.Slots = new SlotEntry[1];
-                this.Slots[0].Enhancement = new I9Slot();
-                this.Slots[0].FlippedEnhancement = new I9Slot();
-                this.Slots[0].Level = iLevel;
+                Slots = new SlotEntry[1];
+                Slots[0].Enhancement = new I9Slot();
+                Slots[0].FlippedEnhancement = new I9Slot();
+                Slots[0].Level = iLevel;
             }
             else
-                this.Slots = new SlotEntry[0];
+                Slots = new SlotEntry[0];
             if (power.AlwaysToggle | power.PowerType == Enums.ePowerType.Auto_)
-                this.StatInclude = true;
+                StatInclude = true;
         }
         else
         {
-            this.IDXPower = -1;
-            this.NIDPowerset = -1;
-            this.NIDPower = -1;
-            this.Slots = new SlotEntry[0];
-            this.SubPowers = new PowerSubEntry[0];
+            IDXPower = -1;
+            NIDPowerset = -1;
+            NIDPower = -1;
+            Slots = new SlotEntry[0];
+            SubPowers = new PowerSubEntry[0];
         }
-        this.Tag = false;
-        this.VariableValue = 0;
+        Tag = false;
+        VariableValue = 0;
     }
 
     public void ClearInvisibleSlots()
     {
-        if (this.SlotCount > 0 && (this.Power == null && !this.Chosen || this.Power != null && !this.Power.Slottable))
-            this.Slots = Array.Empty<SlotEntry>();
-        else if (this.SlotCount > 6)
-            this.Slots = this.Slots.Take(6).ToArray();
+        if (SlotCount > 0 && (Power == null && !Chosen || Power != null && !Power.Slottable))
+            Slots = Array.Empty<SlotEntry>();
+        else if (SlotCount > 6)
+            Slots = Slots.Take(6).ToArray();
     }
 
     public void Assign(PowerEntry iPe)
     {
-        this.Level = iPe.Level;
-        this.NIDPowerset = iPe.NIDPowerset;
-        this.IDXPower = iPe.IDXPower;
-        this.NIDPower = iPe.NIDPower;
-        this.Tag = iPe.Tag;
-        this.StatInclude = iPe.StatInclude;
-        this.VariableValue = iPe.VariableValue;
+        Level = iPe.Level;
+        NIDPowerset = iPe.NIDPowerset;
+        IDXPower = iPe.IDXPower;
+        NIDPower = iPe.NIDPower;
+        Tag = iPe.Tag;
+        StatInclude = iPe.StatInclude;
+        VariableValue = iPe.VariableValue;
         if (iPe.Slots != null)
         {
-            this.Slots = new SlotEntry[iPe.Slots.Length];
-            for (int index = 0; index <= this.Slots.Length - 1; ++index)
-                this.Slots[index].Assign(iPe.Slots[index]);
+            Slots = new SlotEntry[iPe.Slots.Length];
+            for (int index = 0; index <= Slots.Length - 1; ++index)
+                Slots[index].Assign(iPe.Slots[index]);
         }
         else
-            this.Slots = new SlotEntry[0];
+            Slots = new SlotEntry[0];
         if (iPe.SubPowers != null)
         {
-            this.SubPowers = new PowerSubEntry[iPe.SubPowers.Length];
-            for (int index = 0; index <= this.SubPowers.Length - 1; ++index)
-                this.SubPowers[index].Assign(iPe.SubPowers[index]);
+            SubPowers = new PowerSubEntry[iPe.SubPowers.Length];
+            for (int index = 0; index <= SubPowers.Length - 1; ++index)
+                SubPowers[index].Assign(iPe.SubPowers[index]);
         }
         else
-            this.SubPowers = new PowerSubEntry[0];
+            SubPowers = new PowerSubEntry[0];
     }
 
     public bool HasProc()
     {
-        for (int index1 = 0; index1 <= this.SlotCount - 1; ++index1)
+        for (int index1 = 0; index1 <= SlotCount - 1; ++index1)
         {
-            if (this.Slots[index1].Enhancement.Enh < 0) continue;
-            var enh = DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh];
+            if (Slots[index1].Enhancement.Enh < 0) continue;
+            var enh = DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh];
             var power = enh.GetPower();
-            if (DatabaseAPI.Database.Enhancements[this.Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
+            if (DatabaseAPI.Database.Enhancements[Slots[index1].Enhancement.Enh].Effect.Length > 0 && power != null)
             {
                 for (int index2 = 0; index2 < power.Effects.Length; ++index2)
                 {
@@ -161,7 +161,7 @@ public class PowerEntry : ICloneable
                             num = 1;
                             break;
                         case Enums.eEffectType.Mez:
-                            if ((double)power.Effects[index2].Mag > 0.0)
+                            if (power.Effects[index2].Mag > 0.0)
                                 goto case Enums.eEffectType.None;
                             else
                                 goto default;
@@ -179,64 +179,64 @@ public class PowerEntry : ICloneable
 
     public bool CanIncludeForStats()
     {
-        return this.NIDPowerset > -1 & this.IDXPower > -1 && (this.HasProc() || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Toggle || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Click && DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].ClickBuff || DatabaseAPI.Database.Powersets[this.NIDPowerset].Powers[this.IDXPower].PowerType == Enums.ePowerType.Auto_);
+        return NIDPowerset > -1 & IDXPower > -1 && (HasProc() || DatabaseAPI.Database.Powersets[NIDPowerset].Powers[IDXPower].PowerType == Enums.ePowerType.Toggle || DatabaseAPI.Database.Powersets[NIDPowerset].Powers[IDXPower].PowerType == Enums.ePowerType.Click && DatabaseAPI.Database.Powersets[NIDPowerset].Powers[IDXPower].ClickBuff || DatabaseAPI.Database.Powersets[NIDPowerset].Powers[IDXPower].PowerType == Enums.ePowerType.Auto_);
     }
 
     public void CheckVariableBounds()
     {
-        if (this.Power == null || !this.Power.VariableEnabled)
-            this.VariableValue = 0;
-        else if (this.Power.VariableMin > this.VariableValue)
+        if (Power == null || !Power.VariableEnabled)
+            VariableValue = 0;
+        else if (Power.VariableMin > VariableValue)
         {
-            this.VariableValue = this.Power.VariableMin;
+            VariableValue = Power.VariableMin;
         }
         else
         {
-            if (this.Power.VariableMax >= this.VariableValue)
+            if (Power.VariableMax >= VariableValue)
                 return;
-            this.VariableValue = this.Power.VariableMax;
+            VariableValue = Power.VariableMax;
         }
     }
 
     public void ValidateSlots()
     {
-        for (int index = 0; index <= this.Slots.Length - 1; ++index)
+        for (int index = 0; index <= Slots.Length - 1; ++index)
         {
-            if (!this.Power.IsEnhancementValid(this.Slots[index].Enhancement.Enh))
-                this.Slots[index].Enhancement = new I9Slot();
-            if (!this.Power.IsEnhancementValid(this.Slots[index].FlippedEnhancement.Enh))
-                this.Slots[index].FlippedEnhancement = new I9Slot();
+            if (!Power.IsEnhancementValid(Slots[index].Enhancement.Enh))
+                Slots[index].Enhancement = new I9Slot();
+            if (!Power.IsEnhancementValid(Slots[index].FlippedEnhancement.Enh))
+                Slots[index].FlippedEnhancement = new I9Slot();
         }
     }
 
     public void Reset()
     {
-        this.NIDPowerset = -1;
-        this.IDXPower = -1;
-        this.NIDPower = -1;
-        this.Tag = false;
-        this.StatInclude = false;
-        this.SubPowers = new PowerSubEntry[0];
-        if (this.Slots.Length != 1 || this.Slots[0].Enhancement.Enh != -1)
+        NIDPowerset = -1;
+        IDXPower = -1;
+        NIDPower = -1;
+        Tag = false;
+        StatInclude = false;
+        SubPowers = new PowerSubEntry[0];
+        if (Slots.Length != 1 || Slots[0].Enhancement.Enh != -1)
             return;
-        this.Slots = new SlotEntry[0];
+        Slots = new SlotEntry[0];
     }
 
     public object Clone()
     {
-        PowerEntry powerEntry = new PowerEntry(this.Level, this.Power, this.Chosen)
+        PowerEntry powerEntry = new PowerEntry(Level, Power, Chosen)
         {
-            StatInclude = this.StatInclude,
-            Tag = this.Tag,
-            VariableValue = this.VariableValue,
-            SubPowers = (PowerSubEntry[])this.SubPowers.Clone(),
-            Slots = new SlotEntry[this.Slots.Length]
+            StatInclude = StatInclude,
+            Tag = Tag,
+            VariableValue = VariableValue,
+            SubPowers = (PowerSubEntry[])SubPowers.Clone(),
+            Slots = new SlotEntry[Slots.Length]
         };
-        for (int index = 0; index < this.SlotCount; ++index)
+        for (int index = 0; index < SlotCount; ++index)
         {
-            powerEntry.Slots[index].Level = this.Slots[index].Level;
-            powerEntry.Slots[index].Enhancement = this.Slots[index].Enhancement.Clone() as I9Slot;
-            powerEntry.Slots[index].FlippedEnhancement = this.Slots[index].FlippedEnhancement.Clone() as I9Slot;
+            powerEntry.Slots[index].Level = Slots[index].Level;
+            powerEntry.Slots[index].Enhancement = Slots[index].Enhancement.Clone() as I9Slot;
+            powerEntry.Slots[index].FlippedEnhancement = Slots[index].FlippedEnhancement.Clone() as I9Slot;
         }
         return powerEntry;
     }
@@ -247,8 +247,8 @@ public class PowerEntry : ICloneable
       Color enabledColor)
     {
         PopUp.Section section = new PopUp.Section();
-        section.Add(sTitle, PopUp.Colors.Title, 1f, FontStyle.Bold, 0);
-        foreach (PowerSubEntry subPower in this.SubPowers)
+        section.Add(sTitle, PopUp.Colors.Title);
+        foreach (PowerSubEntry subPower in SubPowers)
         {
             if (subPower.nIDPower > -1)
                 section.Add(DatabaseAPI.Database.Power[subPower.nIDPower].DisplayName, subPower.StatInclude ? enabledColor : disabledColor, 0.9f, FontStyle.Bold, 1);
@@ -259,47 +259,47 @@ public class PowerEntry : ICloneable
     public int AddSlot(int iLevel)
     {
         int num1;
-        if (this.Slots.Length > 5 | !DatabaseAPI.Database.Power[this.NIDPower].Slottable)
+        if (Slots.Length > 5 | !DatabaseAPI.Database.Power[NIDPower].Slottable)
         {
             num1 = -1;
         }
         else
         {
             int index1;
-            if (this.Slots.Length == 0)
+            if (Slots.Length == 0)
             {
-                this.Slots = new SlotEntry[1];
+                Slots = new SlotEntry[1];
                 index1 = 0;
             }
             else
             {
                 int num2 = 0;
-                for (int index2 = 1; index2 < this.Slots.Length; ++index2)
+                for (int index2 = 1; index2 < Slots.Length; ++index2)
                 {
-                    if (this.Slots[index2].Level <= iLevel)
+                    if (Slots[index2].Level <= iLevel)
                         num2 = index2;
                 }
                 index1 = num2 + 1;
-                SlotEntry[] slotEntryArray = new SlotEntry[this.Slots.Length + 1];
+                SlotEntry[] slotEntryArray = new SlotEntry[Slots.Length + 1];
                 int index3 = -1;
                 for (int index2 = 0; index2 < slotEntryArray.Length; ++index2)
                 {
                     if (index2 != index1)
                     {
                         ++index3;
-                        slotEntryArray[index2].Assign(this.Slots[index3]);
+                        slotEntryArray[index2].Assign(Slots[index3]);
                     }
                 }
-                this.Slots = new SlotEntry[slotEntryArray.Length];
-                for (int index2 = 0; index2 < this.Slots.Length; ++index2)
+                Slots = new SlotEntry[slotEntryArray.Length];
+                for (int index2 = 0; index2 < Slots.Length; ++index2)
                 {
                     if (index2 != index1)
-                        this.Slots[index2].Assign(slotEntryArray[index2]);
+                        Slots[index2].Assign(slotEntryArray[index2]);
                 }
             }
-            this.Slots[index1].Enhancement = new I9Slot();
-            this.Slots[index1].FlippedEnhancement = new I9Slot();
-            this.Slots[index1].Level = iLevel;
+            Slots[index1].Enhancement = new I9Slot();
+            Slots[index1].FlippedEnhancement = new I9Slot();
+            Slots[index1].Level = iLevel;
             num1 = index1;
         }
         return num1;
@@ -308,23 +308,22 @@ public class PowerEntry : ICloneable
     public bool CanRemoveSlot(int slotIdx, out string message)
     {
         message = string.Empty;
-        if (slotIdx < 0 || slotIdx > this.Slots.Length - 1)
+        if (slotIdx < 0 || slotIdx > Slots.Length - 1)
         {
             return false;
         }
-        else
+
+        if (slotIdx == 0 & NIDPowerset > -1)
         {
-            if (slotIdx == 0 & this.NIDPowerset > -1)
-            {
-                message = "This slot was added automatically and can't be removed without also removing the power.";
-                return false;
-            }
-            else if (slotIdx == 0 && this.Slots.Length > 1)
-            {
-                message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
-                return false;
-            }
-            return true;
+            message = "This slot was added automatically and can't be removed without also removing the power.";
+            return false;
         }
+
+        if (slotIdx == 0 && Slots.Length > 1)
+        {
+            message = "This slot was added automatically with a power, and can't be removed until you've removed all other slots from this power.";
+            return false;
+        }
+        return true;
     }
 }

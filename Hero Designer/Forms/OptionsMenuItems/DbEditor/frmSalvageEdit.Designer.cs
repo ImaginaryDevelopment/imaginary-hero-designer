@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmSalvageEdit
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -237,25 +240,25 @@ namespace Hero_Designer
             this.PerformLayout();
         }
         #endregion
-        System.Windows.Forms.Button btnAdd;
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnDelete;
-        System.Windows.Forms.Button btnImport;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.ComboBox cbLevel;
-        System.Windows.Forms.ComboBox cbOrigin;
-        System.Windows.Forms.ComboBox cbRarity;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.ListView lvSalvage;
-        System.Windows.Forms.TextBox txtExternal;
-        System.Windows.Forms.TextBox txtInternal;
+        Button btnAdd;
+        Button btnCancel;
+        Button btnDelete;
+        Button btnImport;
+        Button btnOK;
+        ComboBox cbLevel;
+        ComboBox cbOrigin;
+        ComboBox cbRarity;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        Label Label1;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        ListView lvSalvage;
+        TextBox txtExternal;
+        TextBox txtInternal;
     }
 }

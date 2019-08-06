@@ -14,33 +14,33 @@ namespace Hero_Designer
 
         public frmZStatus()
         {
-            this.VisibleChanged += new EventHandler(this.frmZStatus_VisibleChanged);
-            this.InitializeComponent();
-            this.Name = nameof(frmZStatus);
+            VisibleChanged += frmZStatus_VisibleChanged;
+            InitializeComponent();
+            Name = nameof(frmZStatus);
             var componentResourceManager = new ComponentResourceManager(typeof(frmZStatus));
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.PictureBox1.Image = (Image)componentResourceManager.GetObject("PictureBox1.Image");
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            PictureBox1.Image = (Image)componentResourceManager.GetObject("PictureBox1.Image");
         }
 
         void frmZStatus_VisibleChanged(object sender, EventArgs e)
         {
-            this.Refresh();
+            Refresh();
         }
 
         public void SetText1(string text)
         {
-            if (this.lblStatus1.InvokeRequired)
-                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), text);
+            if (lblStatus1.InvokeRequired)
+                Invoke(new SetTextCallback(SetText1), text);
             else
-                this.lblStatus1.Text = text;
+                lblStatus1.Text = text;
         }
 
         public void SetText2(string text)
         {
-            if (this.lblStatus2.InvokeRequired)
-                this.Invoke((Delegate)new frmZStatus.SetTextCallback(this.SetText1), text);
+            if (lblStatus2.InvokeRequired)
+                Invoke(new SetTextCallback(SetText1), text);
             else
-                this.lblStatus2.Text = text;
+                lblStatus2.Text = text;
         }
 
         public delegate void SetTextCallback(string text);

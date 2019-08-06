@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmTotals
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -1028,29 +1031,29 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Label lblDef;
-        System.Windows.Forms.Label lblMisc;
-        System.Windows.Forms.Label lblMovement;
-        System.Windows.Forms.Label lblRegenRec;
-        System.Windows.Forms.Label lblRes;
-        System.Windows.Forms.Label lblSDeb;
-        System.Windows.Forms.Label lblSProt;
-        System.Windows.Forms.Label lblSRes;
-        System.Windows.Forms.Label lblStealth;
-        System.Windows.Forms.Panel Panel1;
-        System.Windows.Forms.Panel Panel2;
-        System.Windows.Forms.PictureBox pbClose;
-        System.Windows.Forms.PictureBox pbTopMost;
-        System.Windows.Forms.Panel pnlDRHE;
-        System.Windows.Forms.Panel pnlMisc;
-        System.Windows.Forms.Panel pnlStatus;
-        System.Windows.Forms.RadioButton rbFPS;
-        System.Windows.Forms.RadioButton rbKPH;
-        System.Windows.Forms.RadioButton rbMPH;
-        System.Windows.Forms.RadioButton rbMSec;
-        System.Windows.Forms.PictureBox tab0;
-        System.Windows.Forms.PictureBox tab1;
-        System.Windows.Forms.PictureBox tab2;
-        private System.Windows.Forms.ToolTip toolTip1;
+        Label lblDef;
+        Label lblMisc;
+        Label lblMovement;
+        Label lblRegenRec;
+        Label lblRes;
+        Label lblSDeb;
+        Label lblSProt;
+        Label lblSRes;
+        Label lblStealth;
+        Panel Panel1;
+        Panel Panel2;
+        PictureBox pbClose;
+        PictureBox pbTopMost;
+        Panel pnlDRHE;
+        Panel pnlMisc;
+        Panel pnlStatus;
+        RadioButton rbFPS;
+        RadioButton rbKPH;
+        RadioButton rbMPH;
+        RadioButton rbMSec;
+        PictureBox tab0;
+        PictureBox tab1;
+        PictureBox tab2;
+        private ToolTip toolTip1;
     }
 }

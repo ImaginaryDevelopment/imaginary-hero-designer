@@ -1,9 +1,12 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -12,30 +15,30 @@ namespace Hero_Designer
 
         public frmImport_mod()
         {
-            this.Load += new EventHandler(this.frmImport_mod_Load);
-            this.InitializeComponent();
-            this.Name = nameof(frmImport_mod);
-            var componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_mod));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmImport_mod_Load;
+            InitializeComponent();
+            Name = nameof(frmImport_mod);
+            var componentResourceManager = new ComponentResourceManager(typeof(frmImport_mod));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnAttribIndex_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.lblAttribIndex.Text;
-            if (this.dlgBrowse.ShowDialog(this) != DialogResult.OK)
+            dlgBrowse.FileName = lblAttribIndex.Text;
+            if (dlgBrowse.ShowDialog(this) != DialogResult.OK)
                 return;
-            this.lblAttribIndex.Text = this.dlgBrowse.FileName;
+            lblAttribIndex.Text = dlgBrowse.FileName;
         }
 
         void btnAttribLoad_Click(object sender, EventArgs e)
         {
-            if (this.lblAttribIndex.Text != "" & this.lblAttribTables.Text != "")
+            if (lblAttribIndex.Text != "" & lblAttribTables.Text != "")
             {
-                if (File.Exists(this.lblAttribIndex.Text) & File.Exists(this.lblAttribTables.Text))
+                if (File.Exists(lblAttribIndex.Text) & File.Exists(lblAttribTables.Text))
                 {
-                    if (DatabaseAPI.Database.AttribMods.ImportModifierTablefromCSV(this.lblAttribIndex.Text, this.lblAttribTables.Text, Convert.ToInt32(this.udAttribRevision.Value)))
+                    if (DatabaseAPI.Database.AttribMods.ImportModifierTablefromCSV(lblAttribIndex.Text, lblAttribTables.Text, Convert.ToInt32(udAttribRevision.Value)))
                     {
-                        DatabaseAPI.Database.AttribMods.Store(My.MyApplication.GetSerializer());
+                        DatabaseAPI.Database.AttribMods.Store(MyApplication.GetSerializer());
                         Interaction.MsgBox((Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length) + " modifier tables imported and saved."), MsgBoxStyle.Information, "Done.");
                     }
                     else
@@ -56,34 +59,34 @@ namespace Hero_Designer
             {
                 Interaction.MsgBox("Files not selected!", MsgBoxStyle.Exclamation, "No Can Do");
             }
-            this.DisplayInfo();
+            DisplayInfo();
         }
 
         void btnAttribTable_Click(object sender, EventArgs e)
         {
-            this.dlgBrowse.FileName = this.lblAttribTables.Text;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) != DialogResult.OK)
+            dlgBrowse.FileName = lblAttribTables.Text;
+            if (dlgBrowse.ShowDialog(this) != DialogResult.OK)
                 return;
-            this.lblAttribTables.Text = this.dlgBrowse.FileName;
+            lblAttribTables.Text = dlgBrowse.FileName;
         }
 
         void Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         void DisplayInfo()
         {
-            this.lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
-            this.lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
-            this.lblAttribDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.udAttribRevision.Value = new Decimal(DatabaseAPI.Database.AttribMods.Revision);
-            this.lblAttribTableCount.Text = "Tables: " + Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
+            lblAttribIndex.Text = DatabaseAPI.Database.AttribMods.SourceIndex;
+            lblAttribTables.Text = DatabaseAPI.Database.AttribMods.SourceTables;
+            lblAttribDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.AttribMods.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            udAttribRevision.Value = new Decimal(DatabaseAPI.Database.AttribMods.Revision);
+            lblAttribTableCount.Text = "Tables: " + Conversions.ToString(DatabaseAPI.Database.AttribMods.Modifier.Length);
         }
 
         void frmImport_mod_Load(object sender, EventArgs e)
         {
-            this.DisplayInfo();
+            DisplayInfo();
         }
     }
 }

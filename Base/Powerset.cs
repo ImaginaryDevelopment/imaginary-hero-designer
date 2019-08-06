@@ -22,12 +22,12 @@ public class Powerset : IPowerset, IComparable
     {
         get
         {
-            return this._fullName;
+            return _fullName;
         }
         set
         {
-            this._fullName = value;
-            this._groupName = null;
+            _fullName = value;
+            _groupName = null;
         }
     }
 
@@ -68,13 +68,13 @@ public class Powerset : IPowerset, IComparable
         get
         {
             string str;
-            if ((str = this._groupName) == null)
-                str = this._groupName = this.FullName.Contains(".") ? this.FullName.Substring(0, this.FullName.IndexOf(".", StringComparison.Ordinal)) : string.Empty;
+            if ((str = _groupName) == null)
+                str = _groupName = FullName.Contains(".") ? FullName.Substring(0, FullName.IndexOf(".", StringComparison.Ordinal)) : string.Empty;
             return str;
         }
         set
         {
-            this._groupName = value;
+            _groupName = value;
         }
     }
 
@@ -82,105 +82,105 @@ public class Powerset : IPowerset, IComparable
 
     public bool ClassOk(int nIDClass)
     {
-        return this.Powers.Length > 0 && this.Powers[0].Requires.ClassOk(nIDClass);
+        return Powers.Length > 0 && Powers[0].Requires.ClassOk(nIDClass);
     }
 
     public Powerset()
     {
-        this.nID = -1;
-        this.nArchetype = -1;
-        this.DisplayName = "New Powerset";
-        this.SetType = Enums.ePowerSetType.None;
-        this.ImageName = string.Empty;
-        this.FullName = string.Empty;
-        this.SetName = string.Empty;
-        this.Description = string.Empty;
-        this.SubName = string.Empty;
-        this.ATClass = string.Empty;
-        this.UIDTrunkSet = string.Empty;
-        this.nIDTrunkSet = -1;
-        this.nIDLinkSecondary = -1;
-        this.UIDLinkSecondary = string.Empty;
-        this.Powers = new IPower[0];
-        this.Power = new int[0];
-        this.nIDMutexSets = new int[0];
-        this.UIDMutexSets = new string[0];
+        nID = -1;
+        nArchetype = -1;
+        DisplayName = "New Powerset";
+        SetType = Enums.ePowerSetType.None;
+        ImageName = string.Empty;
+        FullName = string.Empty;
+        SetName = string.Empty;
+        Description = string.Empty;
+        SubName = string.Empty;
+        ATClass = string.Empty;
+        UIDTrunkSet = string.Empty;
+        nIDTrunkSet = -1;
+        nIDLinkSecondary = -1;
+        UIDLinkSecondary = string.Empty;
+        Powers = new IPower[0];
+        Power = new int[0];
+        nIDMutexSets = new int[0];
+        UIDMutexSets = new string[0];
     }
 
     public Powerset(IPowerset template)
     {
-        this.nID = template.nID;
-        this.nArchetype = template.nArchetype;
-        this.DisplayName = template.DisplayName;
-        this.SetType = template.SetType;
-        this.ImageName = template.ImageName;
-        this.FullName = template.FullName;
-        this.SetName = template.SetName;
-        this.Description = template.Description;
-        this.SubName = template.SubName;
-        this.ATClass = template.ATClass;
-        this._powersetGroup = template.GetGroup();
-        this.GroupName = template.GroupName;
-        this.UIDTrunkSet = template.UIDTrunkSet;
-        this.nIDTrunkSet = template.nIDTrunkSet;
-        this.nIDLinkSecondary = template.nIDLinkSecondary;
-        this.UIDLinkSecondary = template.UIDLinkSecondary;
-        this.Powers = new IPower[template.Powers.Length];
-        this.Power = new int[template.Power.Length];
-        Array.Copy((Array)template.Power, (Array)this.Power, this.Power.Length);
-        for (int index = 0; index < this.Powers.Length; ++index)
-            this.Powers[index] = template.Powers[index];
-        this.nIDMutexSets = new int[template.nIDMutexSets.Length];
-        this.UIDMutexSets = new string[template.UIDMutexSets.Length];
-        Array.Copy((Array)template.nIDMutexSets, (Array)this.nIDMutexSets, this.nIDMutexSets.Length);
-        Array.Copy((Array)template.UIDMutexSets, (Array)this.UIDMutexSets, this.UIDMutexSets.Length);
+        nID = template.nID;
+        nArchetype = template.nArchetype;
+        DisplayName = template.DisplayName;
+        SetType = template.SetType;
+        ImageName = template.ImageName;
+        FullName = template.FullName;
+        SetName = template.SetName;
+        Description = template.Description;
+        SubName = template.SubName;
+        ATClass = template.ATClass;
+        _powersetGroup = template.GetGroup();
+        GroupName = template.GroupName;
+        UIDTrunkSet = template.UIDTrunkSet;
+        nIDTrunkSet = template.nIDTrunkSet;
+        nIDLinkSecondary = template.nIDLinkSecondary;
+        UIDLinkSecondary = template.UIDLinkSecondary;
+        Powers = new IPower[template.Powers.Length];
+        Power = new int[template.Power.Length];
+        Array.Copy(template.Power, Power, Power.Length);
+        for (int index = 0; index < Powers.Length; ++index)
+            Powers[index] = template.Powers[index];
+        nIDMutexSets = new int[template.nIDMutexSets.Length];
+        UIDMutexSets = new string[template.UIDMutexSets.Length];
+        Array.Copy(template.nIDMutexSets, nIDMutexSets, nIDMutexSets.Length);
+        Array.Copy(template.UIDMutexSets, UIDMutexSets, UIDMutexSets.Length);
     }
 
     public Powerset(BinaryReader reader)
     {
-        this.nID = -1;
-        this.Powers = new IPower[0];
-        this.DisplayName = reader.ReadString();
-        this.nArchetype = reader.ReadInt32();
-        this.SetType = (Enums.ePowerSetType)reader.ReadInt32();
-        this.ImageName = reader.ReadString();
-        this.FullName = reader.ReadString();
-        if (string.IsNullOrEmpty(this.FullName))
-            this.FullName = "Orphan." + this.DisplayName.Replace(" ", "_");
-        this.SetName = reader.ReadString();
-        this.Description = reader.ReadString();
-        this.SubName = reader.ReadString();
-        this.ATClass = reader.ReadString();
-        this.UIDTrunkSet = reader.ReadString();
-        this.UIDLinkSecondary = reader.ReadString();
+        nID = -1;
+        Powers = new IPower[0];
+        DisplayName = reader.ReadString();
+        nArchetype = reader.ReadInt32();
+        SetType = (Enums.ePowerSetType)reader.ReadInt32();
+        ImageName = reader.ReadString();
+        FullName = reader.ReadString();
+        if (string.IsNullOrEmpty(FullName))
+            FullName = "Orphan." + DisplayName.Replace(" ", "_");
+        SetName = reader.ReadString();
+        Description = reader.ReadString();
+        SubName = reader.ReadString();
+        ATClass = reader.ReadString();
+        UIDTrunkSet = reader.ReadString();
+        UIDLinkSecondary = reader.ReadString();
         int num = reader.ReadInt32();
-        this.UIDMutexSets = new string[num + 1];
-        this.nIDMutexSets = new int[num + 1];
+        UIDMutexSets = new string[num + 1];
+        nIDMutexSets = new int[num + 1];
         for (int index = 0; index <= num; ++index)
         {
-            this.UIDMutexSets[index] = reader.ReadString();
-            this.nIDMutexSets[index] = reader.ReadInt32();
+            UIDMutexSets[index] = reader.ReadString();
+            nIDMutexSets[index] = reader.ReadInt32();
         }
     }
 
     public void StoreTo(ref BinaryWriter writer)
     {
-        writer.Write(this.DisplayName);
-        writer.Write(this.nArchetype);
-        writer.Write((int)this.SetType);
-        writer.Write(this.ImageName);
-        writer.Write(this.FullName);
-        writer.Write(this.SetName);
-        writer.Write(this.Description);
-        writer.Write(this.SubName);
-        writer.Write(this.ATClass);
-        writer.Write(this.UIDTrunkSet);
-        writer.Write(this.UIDLinkSecondary);
-        writer.Write(this.UIDMutexSets.Length - 1);
-        for (int index = 0; index < this.UIDMutexSets.Length; ++index)
+        writer.Write(DisplayName);
+        writer.Write(nArchetype);
+        writer.Write((int)SetType);
+        writer.Write(ImageName);
+        writer.Write(FullName);
+        writer.Write(SetName);
+        writer.Write(Description);
+        writer.Write(SubName);
+        writer.Write(ATClass);
+        writer.Write(UIDTrunkSet);
+        writer.Write(UIDLinkSecondary);
+        writer.Write(UIDMutexSets.Length - 1);
+        for (int index = 0; index < UIDMutexSets.Length; ++index)
         {
-            writer.Write(this.UIDMutexSets[index]);
-            writer.Write(this.nIDMutexSets[index]);
+            writer.Write(UIDMutexSets[index]);
+            writer.Write(nIDMutexSets[index]);
         }
     }
 
@@ -189,9 +189,9 @@ public class Powerset : IPowerset, IComparable
         IPowerset powerset = obj as IPowerset;
         if (powerset == null)
             throw new ArgumentException("Comparison failed - Passed object was not a Powerset Class!");
-        int num = string.Compare(this.GroupName, powerset.GroupName, StringComparison.OrdinalIgnoreCase);
+        int num = string.Compare(GroupName, powerset.GroupName, StringComparison.OrdinalIgnoreCase);
         if (num == 0)
-            num = string.Compare(this.DisplayName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase);
+            num = string.Compare(DisplayName, powerset.DisplayName, StringComparison.OrdinalIgnoreCase);
         return num;
     }
 
@@ -205,59 +205,59 @@ public class Powerset : IPowerset, IComparable
         else
         {
             string[] array = CSV.ToArray(csv);
-            this.FullName = array[0];
-            this.SetName = array[1];
-            this.DisplayName = array[2];
-            this.Description = array[3];
-            this.SubName = array[4];
+            FullName = array[0];
+            SetName = array[1];
+            DisplayName = array[2];
+            Description = array[3];
+            SubName = array[4];
             for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
             {
                 if (DatabaseAPI.Database.Classes[index].Playable)
                 {
-                    if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, this.GroupName, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(DatabaseAPI.Database.Classes[index].PrimaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
                     {
-                        this.ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        this.SetType = Enums.ePowerSetType.Primary;
+                        ATClass = DatabaseAPI.Database.Classes[index].ClassName;
+                        SetType = Enums.ePowerSetType.Primary;
                         break;
                     }
-                    if (string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, this.GroupName, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(DatabaseAPI.Database.Classes[index].SecondaryGroup, GroupName, StringComparison.OrdinalIgnoreCase))
                     {
-                        this.ATClass = DatabaseAPI.Database.Classes[index].ClassName;
-                        this.SetType = Enums.ePowerSetType.Secondary;
+                        ATClass = DatabaseAPI.Database.Classes[index].ClassName;
+                        SetType = Enums.ePowerSetType.Secondary;
                         break;
                     }
                 }
             }
-            if (this.SetType == Enums.ePowerSetType.None)
+            if (SetType == Enums.ePowerSetType.None)
             {
-                switch (this.GroupName.ToUpper())
+                switch (GroupName.ToUpper())
                 {
                     case "EPIC":
-                        this.SetType = Enums.ePowerSetType.Ancillary;
+                        SetType = Enums.ePowerSetType.Ancillary;
                         return true;
                     case "POOL":
-                        this.SetType = Enums.ePowerSetType.Pool;
+                        SetType = Enums.ePowerSetType.Pool;
                         return true;
                     case "MASTERMIND_PETS":
                     case "PETS":
                     case "VILLAIN_PETS":
                     case "KHELDIAN_PETS":
-                        this.SetType = Enums.ePowerSetType.Pet;
+                        SetType = Enums.ePowerSetType.Pet;
                         return true;
                     case "SET_BONUS":
-                        this.SetType = Enums.ePowerSetType.SetBonus;
+                        SetType = Enums.ePowerSetType.SetBonus;
                         return true;
                     case "TEMPORARY_POWERS":
-                        this.SetType = string.Equals(this.FullName, "TEMPORARY_POWERS.ACCOLADES", StringComparison.OrdinalIgnoreCase) ? Enums.ePowerSetType.Accolade : Enums.ePowerSetType.Temp;
+                        SetType = string.Equals(FullName, "TEMPORARY_POWERS.ACCOLADES", StringComparison.OrdinalIgnoreCase) ? Enums.ePowerSetType.Accolade : Enums.ePowerSetType.Temp;
                         return true;
                     case "INHERENT":
-                        this.SetType = Enums.ePowerSetType.Inherent;
+                        SetType = Enums.ePowerSetType.Inherent;
                         return true;
                     case "INCARNATE":
-                        this.SetType = Enums.ePowerSetType.Incarnate;
+                        SetType = Enums.ePowerSetType.Incarnate;
                         return true;
                     case "BOOSTS":
-                        this.SetType = Enums.ePowerSetType.Boost;
+                        SetType = Enums.ePowerSetType.Boost;
                         return true;
                     default:
                         flag = false;

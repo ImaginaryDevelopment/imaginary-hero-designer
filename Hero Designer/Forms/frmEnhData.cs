@@ -1,16 +1,15 @@
 
-using Base.Data_Classes;
-using Base.Display;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Data_Classes;
+using Base.Display;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -28,34 +27,34 @@ namespace Hero_Designer
 
         public frmEnhData(ref IEnhancement iEnh)
         {
-            this.Load += new EventHandler(this.frmEnhData_Load);
-            this.ClassSize = 15;
-            this.EnhPadding = 3;
-            this.EnhAcross = 5;
-            this.Loading = true;
-            this.InitializeComponent();
-            this.pnlClass.MouseMove += pnlClass_MouseMove;
-            this.pnlClass.Paint += pnlClass_Paint;
-            this.pnlClass.MouseDown += pnlClass_MouseDown;
-            this.pnlClassList.MouseMove += pnlClassList_MouseMove;
-            this.pnlClassList.Paint += pnlClassList_Paint;
-            this.pnlClassList.MouseDown += pnlClassList_MouseDown;
+            Load += frmEnhData_Load;
+            ClassSize = 15;
+            EnhPadding = 3;
+            EnhAcross = 5;
+            Loading = true;
+            InitializeComponent();
+            pnlClass.MouseMove += pnlClass_MouseMove;
+            pnlClass.Paint += pnlClass_Paint;
+            pnlClass.MouseDown += pnlClass_MouseDown;
+            pnlClassList.MouseMove += pnlClassList_MouseMove;
+            pnlClassList.Paint += pnlClassList_Paint;
+            pnlClassList.MouseDown += pnlClassList_MouseDown;
             var componentResourceManager = new ComponentResourceManager(typeof(frmEnhData));
-            this.btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
-            this.typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
-            this.typeIO.Image = (Image)componentResourceManager.GetObject("typeIO.Image");
-            this.typeRegular.Image = (Image)componentResourceManager.GetObject("typeRegular.Image");
-            this.typeHO.Image = (Image)componentResourceManager.GetObject("typeHO.Image");
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmEnhData);
-            this.myEnh = (IEnhancement)new Enhancement(iEnh);
-            this.ClassSize = 22;
+            btnImage.Image = (Image)componentResourceManager.GetObject("btnImage.Image");
+            typeSet.Image = (Image)componentResourceManager.GetObject("typeSet.Image");
+            typeIO.Image = (Image)componentResourceManager.GetObject("typeIO.Image");
+            typeRegular.Image = (Image)componentResourceManager.GetObject("typeRegular.Image");
+            typeHO.Image = (Image)componentResourceManager.GetObject("typeHO.Image");
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmEnhData);
+            myEnh = new Enhancement(iEnh);
+            ClassSize = 22;
         }
 
         void btnAdd_Click(object sender, EventArgs e)
 
         {
-            this.EffectList_Add();
+            EffectList_Add();
         }
 
         void btnAddFX_Click(object sender, EventArgs e)
@@ -65,11 +64,11 @@ namespace Hero_Designer
             frmPowerEffect frmPowerEffect = new frmPowerEffect(iFX);
             if (frmPowerEffect.ShowDialog() != DialogResult.OK)
                 return;
-            IEnhancement enh = this.myEnh;
-            Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
+            IEnhancement enh = myEnh;
+            Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, new Enums.sEffect[myEnh.Effect.Length + 1]);
             enh.Effect = sEffectArray;
-            Enums.sEffect[] effect = this.myEnh.Effect;
-            int index = this.myEnh.Effect.Length - 1;
+            Enums.sEffect[] effect = myEnh.Effect;
+            int index = myEnh.Effect.Length - 1;
             effect[index].Mode = Enums.eEffMode.FX;
             effect[index].Enhance.ID = -1;
             effect[index].Enhance.SubID = -1;
@@ -77,56 +76,56 @@ namespace Hero_Designer
             effect[index].Schedule = Enums.eSchedule.A;
             effect[index].FX = (IEffect)frmPowerEffect.myFX.Clone();
             effect[index].FX.isEnhancementEffect = true;
-            this.ListSelectedEffects();
-            this.lstSelected.SelectedIndex = this.lstSelected.Items.Count - 1;
+            ListSelectedEffects();
+            lstSelected.SelectedIndex = lstSelected.Items.Count - 1;
         }
 
         void btnAutoFill_Click(object sender, EventArgs e)
 
         {
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
-            Enums.eEnhanceShort eEnhanceShort = Enums.eEnhanceShort.None;
-            Enums.eMez eMez = Enums.eMez.None;
-            Enums.eMezShort eMezShort = Enums.eMezShort.None;
+            const Enums.eEnhance eEnhance = Enums.eEnhance.None;
+            const Enums.eEnhanceShort eEnhanceShort = Enums.eEnhanceShort.None;
+            const Enums.eMez eMez = Enums.eMez.None;
+            const Enums.eMezShort eMezShort = Enums.eMezShort.None;
             string[] names1 = Enum.GetNames(eEnhance.GetType());
             string[] names2 = Enum.GetNames(eEnhanceShort.GetType());
             string[] names3 = Enum.GetNames(eMez.GetType());
             string[] names4 = Enum.GetNames(eMezShort.GetType());
-            this.myEnh.Name = "";
-            this.myEnh.ShortName = "";
+            myEnh.Name = "";
+            myEnh.ShortName = "";
             names1[4] = "Endurance";
             names1[18] = "Resistance";
             names1[5] = "EndMod";
             names2[18] = "ResDam";
             names3[2] = "Hold";
             names4[2] = "Hold";
-            if (this.myEnh.TypeID == Enums.eType.SetO & this.myEnh.nIDSet > -1 & this.myEnh.nIDSet < DatabaseAPI.Database.EnhancementSets.Count - 1)
-                this.myEnh.UID = DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].DisplayName.Replace(" ", "_") + "_";
+            if (myEnh.TypeID == Enums.eType.SetO & myEnh.nIDSet > -1 & myEnh.nIDSet < DatabaseAPI.Database.EnhancementSets.Count - 1)
+                myEnh.UID = DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].DisplayName.Replace(" ", "_") + "_";
             int num1 = 0;
-            int num2 = this.myEnh.Effect.Length - 1;
+            int num2 = myEnh.Effect.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
                 {
                     ++num1;
-                    Enums.eEnhance id = (Enums.eEnhance)this.myEnh.Effect[index].Enhance.ID;
+                    Enums.eEnhance id = (Enums.eEnhance)myEnh.Effect[index].Enhance.ID;
                     if (id != Enums.eEnhance.Mez)
                     {
-                        if (this.myEnh.Name != "")
-                            this.myEnh.Name += "/";
-                        this.myEnh.Name += names1[(int)id];
-                        if (this.myEnh.ShortName != "")
-                            this.myEnh.ShortName += "/";
-                        this.myEnh.ShortName += names2[(int)id];
+                        if (myEnh.Name != "")
+                            myEnh.Name += "/";
+                        myEnh.Name += names1[(int)id];
+                        if (myEnh.ShortName != "")
+                            myEnh.ShortName += "/";
+                        myEnh.ShortName += names2[(int)id];
                     }
                     else
                     {
-                        if (this.myEnh.Name != "")
-                            this.myEnh.Name += "/";
-                        this.myEnh.Name += names3[this.myEnh.Effect[index].Enhance.SubID];
-                        if (this.myEnh.ShortName != "")
-                            this.myEnh.ShortName += "/";
-                        this.myEnh.ShortName += names4[this.myEnh.Effect[index].Enhance.SubID];
+                        if (myEnh.Name != "")
+                            myEnh.Name += "/";
+                        myEnh.Name += names3[myEnh.Effect[index].Enhance.SubID];
+                        if (myEnh.ShortName != "")
+                            myEnh.ShortName += "/";
+                        myEnh.ShortName += names4[myEnh.Effect[index].Enhance.SubID];
                     }
                 }
             }
@@ -143,51 +142,51 @@ namespace Hero_Designer
                     num3 = 7f / 16f;
                     break;
             }
-            int num4 = this.myEnh.Effect.Length - 1;
+            int num4 = myEnh.Effect.Length - 1;
             for (int index = 0; index <= num4; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
-                    this.myEnh.Effect[index].Multiplier = num3;
+                if (myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                    myEnh.Effect[index].Multiplier = num3;
             }
-            this.DisplayAll();
+            DisplayAll();
         }
 
         void btnCancel_Click(object sender, EventArgs e)
 
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Hide();
+            DialogResult = DialogResult.Cancel;
+            Hide();
         }
 
         void btnDown_Click(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndices.Count <= 0)
+            if (lstSelected.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndices[0];
-            if (selectedIndex < this.lstSelected.Items.Count - 1)
+            int selectedIndex = lstSelected.SelectedIndices[0];
+            if (selectedIndex < lstSelected.Items.Count - 1)
             {
                 Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
-                sEffectArray[0].Assign(this.myEnh.Effect[selectedIndex]);
-                sEffectArray[1].Assign(this.myEnh.Effect[selectedIndex + 1]);
-                this.myEnh.Effect[selectedIndex + 1].Assign(sEffectArray[0]);
-                this.myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
-                this.FillEffectList();
-                this.ListSelectedEffects();
-                this.lstSelected.SelectedIndex = selectedIndex + 1;
+                sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
+                sEffectArray[1].Assign(myEnh.Effect[selectedIndex + 1]);
+                myEnh.Effect[selectedIndex + 1].Assign(sEffectArray[0]);
+                myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
+                FillEffectList();
+                ListSelectedEffects();
+                lstSelected.SelectedIndex = selectedIndex + 1;
             }
         }
 
         void btnEdit_Click(object sender, EventArgs e)
 
         {
-            this.EditClick();
+            EditClick();
         }
 
         void btnEditPowerData_Click(object sender, EventArgs e)
 
         {
-            IEnhancement enh = this.myEnh;
+            IEnhancement enh = myEnh;
             IPower power = enh.GetPower();
             frmEditPower frmEditPower = new frmEditPower(power);
             if (frmEditPower.ShowDialog() != DialogResult.OK)
@@ -198,28 +197,28 @@ namespace Hero_Designer
             int num = power.Effects.Length - 1;
             for (int index = 0; index <= num; ++index)
                 power.Effects[index].PowerFullName = power.FullName;
-            this.myEnh.SetPower(power);
+            myEnh.SetPower(power);
         }
 
         void btnImage_Click(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.ImagePicker.InitialDirectory = I9Gfx.GetEnhancementsPath();
-            this.ImagePicker.FileName = this.myEnh.Image;
-            if (this.ImagePicker.ShowDialog() == DialogResult.OK)
+            ImagePicker.InitialDirectory = I9Gfx.GetEnhancementsPath();
+            ImagePicker.FileName = myEnh.Image;
+            if (ImagePicker.ShowDialog() == DialogResult.OK)
             {
-                string str = FileIO.StripPath(this.ImagePicker.FileName);
-                if (!File.Exists(FileIO.AddSlash(this.ImagePicker.InitialDirectory) + str))
+                string str = FileIO.StripPath(ImagePicker.FileName);
+                if (!File.Exists(FileIO.AddSlash(ImagePicker.InitialDirectory) + str))
                 {
                     int num = (int)Interaction.MsgBox(("You must select an image from the " + I9Gfx.GetEnhancementsPath() + " folder!\r\n\r\nIf you are adding a new image, you should copy it to the folder and then select it."), MsgBoxStyle.Information, "Ah...");
                 }
                 else
                 {
-                    this.myEnh.Image = str;
-                    this.DisplayIcon();
-                    this.SetTypeIcons();
+                    myEnh.Image = str;
+                    DisplayIcon();
+                    SetTypeIcons();
                 }
             }
         }
@@ -227,400 +226,400 @@ namespace Hero_Designer
         void btnNoImage_Click(object sender, EventArgs e)
 
         {
-            this.myEnh.Image = "";
-            this.SetTypeIcons();
-            this.DisplayIcon();
+            myEnh.Image = "";
+            SetTypeIcons();
+            DisplayIcon();
         }
 
         void btnOK_Click(object sender, EventArgs e)
 
         {
-            this.DialogResult = DialogResult.OK;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+            Hide();
         }
 
         void btnRemove_Click(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
                 return;
-            Enums.sEffect[] sEffectArray = new Enums.sEffect[this.myEnh.Effect.Length - 1 + 1];
-            int selectedIndex = this.lstSelected.SelectedIndex;
+            Enums.sEffect[] sEffectArray = new Enums.sEffect[myEnh.Effect.Length - 1 + 1];
+            int selectedIndex = lstSelected.SelectedIndex;
             int index1 = 0;
-            int num1 = this.myEnh.Effect.Length - 1;
+            int num1 = myEnh.Effect.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
             {
                 if (index2 != selectedIndex)
                 {
-                    sEffectArray[index1].Assign(this.myEnh.Effect[index2]);
+                    sEffectArray[index1].Assign(myEnh.Effect[index2]);
                     ++index1;
                 }
             }
-            this.myEnh.Effect = new Enums.sEffect[this.myEnh.Effect.Length - 2 + 1];
-            int num2 = this.myEnh.Effect.Length - 1;
+            myEnh.Effect = new Enums.sEffect[myEnh.Effect.Length - 2 + 1];
+            int num2 = myEnh.Effect.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
-                this.myEnh.Effect[index2].Assign(sEffectArray[index2]);
-            this.FillEffectList();
-            this.ListSelectedEffects();
-            if (this.lstSelected.Items.Count > selectedIndex)
-                this.lstSelected.SelectedIndex = selectedIndex;
-            else if (this.lstSelected.Items.Count == selectedIndex)
-                this.lstSelected.SelectedIndex = selectedIndex - 1;
+                myEnh.Effect[index2].Assign(sEffectArray[index2]);
+            FillEffectList();
+            ListSelectedEffects();
+            if (lstSelected.Items.Count > selectedIndex)
+                lstSelected.SelectedIndex = selectedIndex;
+            else if (lstSelected.Items.Count == selectedIndex)
+                lstSelected.SelectedIndex = selectedIndex - 1;
         }
 
         void btnUp_Click(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndices.Count <= 0)
+            if (lstSelected.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndices[0];
+            int selectedIndex = lstSelected.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
                 Enums.sEffect[] sEffectArray = new Enums.sEffect[2];
-                sEffectArray[0].Assign(this.myEnh.Effect[selectedIndex]);
-                sEffectArray[1].Assign(this.myEnh.Effect[selectedIndex - 1]);
-                this.myEnh.Effect[selectedIndex - 1].Assign(sEffectArray[0]);
-                this.myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
-                this.FillEffectList();
-                this.ListSelectedEffects();
-                this.lstSelected.SelectedIndex = selectedIndex - 1;
+                sEffectArray[0].Assign(myEnh.Effect[selectedIndex]);
+                sEffectArray[1].Assign(myEnh.Effect[selectedIndex - 1]);
+                myEnh.Effect[selectedIndex - 1].Assign(sEffectArray[0]);
+                myEnh.Effect[selectedIndex].Assign(sEffectArray[1]);
+                FillEffectList();
+                ListSelectedEffects();
+                lstSelected.SelectedIndex = selectedIndex - 1;
             }
         }
 
         void cbMutEx_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.MutExID = (Enums.eEnhMutex)this.cbMutEx.SelectedIndex;
+            myEnh.MutExID = (Enums.eEnhMutex)cbMutEx.SelectedIndex;
         }
 
         void cbRecipe_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.cbRecipe.SelectedIndex > 0)
+            if (cbRecipe.SelectedIndex > 0)
             {
-                this.myEnh.RecipeName = this.cbRecipe.Text;
-                this.myEnh.RecipeIDX = this.cbRecipe.SelectedIndex - 1;
+                myEnh.RecipeName = cbRecipe.Text;
+                myEnh.RecipeIDX = cbRecipe.SelectedIndex - 1;
             }
             else
             {
-                this.myEnh.RecipeName = "";
-                this.myEnh.RecipeIDX = -1;
+                myEnh.RecipeName = "";
+                myEnh.RecipeIDX = -1;
             }
         }
 
         void cbSched_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
-                this.myEnh.Effect[selectedIndex].Schedule = (Enums.eSchedule)this.cbSched.SelectedIndex;
+            int selectedIndex = lstSelected.SelectedIndex;
+            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+                myEnh.Effect[selectedIndex].Schedule = (Enums.eSchedule)cbSched.SelectedIndex;
         }
 
         void cbSet_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.nIDSet = this.cbSet.SelectedIndex - 1;
-            this.myEnh.UIDSet = this.myEnh.nIDSet <= -1 ? string.Empty : DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].Uid;
-            this.UpdateTitle();
-            this.DisplaySetImage();
+            myEnh.nIDSet = cbSet.SelectedIndex - 1;
+            myEnh.UIDSet = myEnh.nIDSet <= -1 ? string.Empty : DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].Uid;
+            UpdateTitle();
+            DisplaySetImage();
         }
 
         void cbSubType_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            this.myEnh.SubTypeID = (Enums.eSubtype)this.cbSubType.SelectedIndex;
+            myEnh.SubTypeID = (Enums.eSubtype)cbSubType.SelectedIndex;
         }
 
         void chkSuperior_CheckedChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.Superior = this.chkSuperior.Checked;
-            if (this.chkSuperior.Checked)
+            myEnh.Superior = chkSuperior.Checked;
+            if (chkSuperior.Checked)
             {
-                this.myEnh.LevelMin = 49;
-                this.myEnh.LevelMax = 49;
-                this.udMinLevel.Value = new Decimal(50);
-                this.udMaxLevel.Value = new Decimal(50);
+                myEnh.LevelMin = 49;
+                myEnh.LevelMax = 49;
+                udMinLevel.Value = new Decimal(50);
+                udMaxLevel.Value = new Decimal(50);
             }
-            this.chkUnique.Checked = true;
+            chkUnique.Checked = true;
         }
 
         void chkUnique_CheckedChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.Unique = this.chkUnique.Checked;
+            myEnh.Unique = chkUnique.Checked;
         }
 
         public void DisplayAll()
         {
-            this.txtNameFull.Text = this.myEnh.Name;
-            this.txtNameShort.Text = this.myEnh.ShortName;
-            this.txtDesc.Text = this.myEnh.Desc;
-            this.txtProb.Text = Conversions.ToString(this.myEnh.EffectChance);
-            this.txtInternal.Text = this.myEnh.UID;
-            this.StaticIndex.Text = Conversions.ToString(this.myEnh.StaticIndex);
-            this.SetMinLevel(this.myEnh.LevelMin + 1);
-            this.SetMaxLevel(this.myEnh.LevelMax + 1);
-            this.udMaxLevel.Minimum = this.udMinLevel.Value;
-            this.udMinLevel.Maximum = this.udMaxLevel.Value;
-            this.chkUnique.Checked = this.myEnh.Unique;
-            this.cbMutEx.SelectedIndex = (int)this.myEnh.MutExID;
-            this.chkSuperior.Checked = this.myEnh.Superior;
-            switch (this.myEnh.TypeID)
+            txtNameFull.Text = myEnh.Name;
+            txtNameShort.Text = myEnh.ShortName;
+            txtDesc.Text = myEnh.Desc;
+            txtProb.Text = Conversions.ToString(myEnh.EffectChance);
+            txtInternal.Text = myEnh.UID;
+            StaticIndex.Text = Conversions.ToString(myEnh.StaticIndex);
+            SetMinLevel(myEnh.LevelMin + 1);
+            SetMaxLevel(myEnh.LevelMax + 1);
+            udMaxLevel.Minimum = udMinLevel.Value;
+            udMinLevel.Maximum = udMaxLevel.Value;
+            chkUnique.Checked = myEnh.Unique;
+            cbMutEx.SelectedIndex = (int)myEnh.MutExID;
+            chkSuperior.Checked = myEnh.Superior;
+            switch (myEnh.TypeID)
             {
                 case Enums.eType.Normal:
-                    this.typeRegular.Checked = true;
-                    this.cbSubType.SelectedIndex = -1;
-                    this.cbSubType.Enabled = false;
-                    this.cbRecipe.SelectedIndex = 0;
-                    this.cbRecipe.Enabled = false;
+                    typeRegular.Checked = true;
+                    cbSubType.SelectedIndex = -1;
+                    cbSubType.Enabled = false;
+                    cbRecipe.SelectedIndex = 0;
+                    cbRecipe.Enabled = false;
                     break;
                 case Enums.eType.InventO:
-                    this.typeIO.Checked = true;
-                    this.cbSubType.SelectedIndex = -1;
-                    this.cbSubType.Enabled = false;
-                    this.cbRecipe.SelectedIndex = this.myEnh.RecipeIDX + 1;
-                    this.cbRecipe.Enabled = true;
+                    typeIO.Checked = true;
+                    cbSubType.SelectedIndex = -1;
+                    cbSubType.Enabled = false;
+                    cbRecipe.SelectedIndex = myEnh.RecipeIDX + 1;
+                    cbRecipe.Enabled = true;
                     break;
                 case Enums.eType.SpecialO:
-                    this.typeHO.Checked = true;
-                    this.cbSubType.SelectedIndex = (int)this.myEnh.SubTypeID;
-                    this.cbSubType.Enabled = true;
-                    this.cbRecipe.Enabled = false;
-                    this.cbRecipe.SelectedIndex = 0;
+                    typeHO.Checked = true;
+                    cbSubType.SelectedIndex = (int)myEnh.SubTypeID;
+                    cbSubType.Enabled = true;
+                    cbRecipe.Enabled = false;
+                    cbRecipe.SelectedIndex = 0;
                     break;
                 case Enums.eType.SetO:
-                    this.cbSubType.SelectedIndex = -1;
-                    this.cbSubType.Enabled = false;
-                    this.typeSet.Checked = true;
-                    this.cbRecipe.SelectedIndex = this.myEnh.RecipeIDX + 1;
-                    this.cbRecipe.Enabled = true;
+                    cbSubType.SelectedIndex = -1;
+                    cbSubType.Enabled = false;
+                    typeSet.Checked = true;
+                    cbRecipe.SelectedIndex = myEnh.RecipeIDX + 1;
+                    cbRecipe.Enabled = true;
                     break;
                 default:
-                    this.typeRegular.Checked = true;
-                    this.cbSubType.SelectedIndex = -1;
-                    this.cbSubType.Enabled = false;
-                    this.cbRecipe.Enabled = false;
+                    typeRegular.Checked = true;
+                    cbSubType.SelectedIndex = -1;
+                    cbSubType.Enabled = false;
+                    cbRecipe.Enabled = false;
                     break;
             }
-            this.DisplaySet();
-            this.btnImage.Text = this.myEnh.Image;
-            this.DisplayIcon();
-            this.DisplaySetImage();
-            this.DrawClasses();
-            this.ListSelectedEffects();
-            this.DisplayEnhanceData();
+            DisplaySet();
+            btnImage.Text = myEnh.Image;
+            DisplayIcon();
+            DisplaySetImage();
+            DrawClasses();
+            ListSelectedEffects();
+            DisplayEnhanceData();
         }
 
         public void DisplayEnhanceData()
         {
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
             {
-                this.btnRemove.Enabled = false;
-                this.gbMod.Enabled = false;
-                this.cbSched.Enabled = false;
-                this.btnEdit.Enabled = false;
+                btnRemove.Enabled = false;
+                gbMod.Enabled = false;
+                cbSched.Enabled = false;
+                btnEdit.Enabled = false;
             }
             else
             {
-                this.btnRemove.Enabled = true;
-                int selectedIndex = this.lstSelected.SelectedIndex;
-                if (this.myEnh.Effect[selectedIndex].Mode != Enums.eEffMode.Enhancement)
+                btnRemove.Enabled = true;
+                int selectedIndex = lstSelected.SelectedIndex;
+                if (myEnh.Effect[selectedIndex].Mode != Enums.eEffMode.Enhancement)
                 {
-                    this.btnEdit.Enabled = true;
-                    this.gbMod.Enabled = false;
-                    this.cbSched.Enabled = false;
+                    btnEdit.Enabled = true;
+                    gbMod.Enabled = false;
+                    cbSched.Enabled = false;
                 }
                 else
                 {
-                    if (this.myEnh.Effect[selectedIndex].Enhance.ID == 12)
-                        this.btnEdit.Enabled = true;
+                    if (myEnh.Effect[selectedIndex].Enhance.ID == 12)
+                        btnEdit.Enabled = true;
                     else
-                        this.btnEdit.Enabled = false;
-                    this.gbMod.Enabled = true;
-                    this.cbSched.Enabled = true;
-                    switch (this.myEnh.Effect[selectedIndex].Multiplier.ToString())
+                        btnEdit.Enabled = false;
+                    gbMod.Enabled = true;
+                    cbSched.Enabled = true;
+                    switch (myEnh.Effect[selectedIndex].Multiplier.ToString(CultureInfo.CurrentCulture))
                     {
                         case "1":
-                            this.rbMod1.Checked = true;
-                            this.txtModOther.Text = "";
-                            this.txtModOther.Enabled = false;
+                            rbMod1.Checked = true;
+                            txtModOther.Text = "";
+                            txtModOther.Enabled = false;
                             break;
                         case "0.625":
-                            this.rbMod2.Checked = true;
-                            this.txtModOther.Text = "";
-                            this.txtModOther.Enabled = false;
+                            rbMod2.Checked = true;
+                            txtModOther.Text = "";
+                            txtModOther.Enabled = false;
                             break;
                         case "0.5":
-                            this.rbMod3.Checked = true;
-                            this.txtModOther.Text = "";
-                            this.txtModOther.Enabled = false;
+                            rbMod3.Checked = true;
+                            txtModOther.Text = "";
+                            txtModOther.Enabled = false;
                             break;
                         default:
-                            this.txtModOther.Text = Conversions.ToString(this.myEnh.Effect[selectedIndex].Multiplier);
-                            this.rbModOther.Checked = true;
-                            this.txtModOther.Enabled = true;
+                            txtModOther.Text = Conversions.ToString(myEnh.Effect[selectedIndex].Multiplier);
+                            rbModOther.Checked = true;
+                            txtModOther.Enabled = true;
                             break;
                     }
-                    switch (this.myEnh.Effect[selectedIndex].BuffMode)
+                    switch (myEnh.Effect[selectedIndex].BuffMode)
                     {
                         case Enums.eBuffDebuff.BuffOnly:
-                            this.rbBuff.Checked = true;
+                            rbBuff.Checked = true;
                             break;
                         case Enums.eBuffDebuff.DeBuffOnly:
-                            this.rbDebuff.Checked = true;
+                            rbDebuff.Checked = true;
                             break;
                         default:
-                            this.rbBoth.Checked = true;
+                            rbBoth.Checked = true;
                             break;
                     }
-                    this.cbSched.SelectedIndex = (int)this.myEnh.Effect[selectedIndex].Schedule;
+                    cbSched.SelectedIndex = (int)myEnh.Effect[selectedIndex].Schedule;
                 }
             }
         }
 
         public void DisplayIcon()
         {
-            if (this.myEnh.Image != string.Empty)
+            if (myEnh.Image != string.Empty)
             {
-                ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + this.myEnh.Image);
+                ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + myEnh.Image);
                 ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(30, 30);
-                extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(this.myEnh.TypeID)), System.Drawing.GraphicsUnit.Pixel);
-                extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, System.Drawing.GraphicsUnit.Pixel);
-                this.btnImage.Image = (Image)new Bitmap((Image)extendedBitmap2.Bitmap);
-                this.btnImage.Text = this.myEnh.Image;
+                extendedBitmap2.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(myEnh.TypeID)), GraphicsUnit.Pixel);
+                extendedBitmap2.Graphics.DrawImage(extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, GraphicsUnit.Pixel);
+                btnImage.Image = new Bitmap(extendedBitmap2.Bitmap);
+                btnImage.Text = myEnh.Image;
             }
             else
             {
-                switch (this.myEnh.TypeID)
+                switch (myEnh.TypeID)
                 {
                     case Enums.eType.Normal:
-                        this.btnImage.Image = this.typeRegular.Image;
+                        btnImage.Image = typeRegular.Image;
                         break;
                     case Enums.eType.InventO:
-                        this.btnImage.Image = this.typeIO.Image;
+                        btnImage.Image = typeIO.Image;
                         break;
                     case Enums.eType.SpecialO:
-                        this.btnImage.Image = this.typeHO.Image;
+                        btnImage.Image = typeHO.Image;
                         break;
                     case Enums.eType.SetO:
-                        this.btnImage.Image = this.typeSet.Image;
+                        btnImage.Image = typeSet.Image;
                         break;
                 }
-                this.btnImage.Text = "Select Image";
+                btnImage.Text = "Select Image";
             }
         }
 
         public void DisplaySet()
         {
-            this.gbSet.Enabled = this.myEnh.TypeID == Enums.eType.SetO;
-            this.cbSet.SelectedIndex = this.myEnh.nIDSet + 1;
-            this.DisplaySetImage();
+            gbSet.Enabled = myEnh.TypeID == Enums.eType.SetO;
+            cbSet.SelectedIndex = myEnh.nIDSet + 1;
+            DisplaySetImage();
         }
 
         public void DisplaySetImage()
         {
-            if (this.myEnh.nIDSet > -1)
+            if (myEnh.nIDSet > -1)
             {
-                this.myEnh.Image = DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].Image;
-                this.DisplayIcon();
-                this.SetTypeIcons();
-                if (DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].Image != "")
+                myEnh.Image = DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].Image;
+                DisplayIcon();
+                SetTypeIcons();
+                if (DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].Image != "")
                 {
-                    ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].Image);
+                    ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].Image);
                     ExtendedBitmap extendedBitmap2 = new ExtendedBitmap(30, 30);
-                    extendedBitmap2.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), System.Drawing.GraphicsUnit.Pixel);
-                    extendedBitmap2.Graphics.DrawImage((Image)extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, System.Drawing.GraphicsUnit.Pixel);
-                    this.pbSet.Image = (Image)new Bitmap((Image)extendedBitmap2.Bitmap);
+                    extendedBitmap2.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
+                    extendedBitmap2.Graphics.DrawImage(extendedBitmap1.Bitmap, extendedBitmap2.ClipRect, extendedBitmap2.ClipRect, GraphicsUnit.Pixel);
+                    pbSet.Image = new Bitmap(extendedBitmap2.Bitmap);
                 }
                 else
                 {
                     ExtendedBitmap extendedBitmap = new ExtendedBitmap(30, 30);
-                    extendedBitmap.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), System.Drawing.GraphicsUnit.Pixel);
-                    this.pbSet.Image = (Image)new Bitmap((Image)extendedBitmap.Bitmap);
+                    extendedBitmap.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap.ClipRect, I9Gfx.GetOverlayRect(Origin.Grade.SetO), GraphicsUnit.Pixel);
+                    pbSet.Image = new Bitmap(extendedBitmap.Bitmap);
                 }
             }
             else
-                this.pbSet.Image = (Image)new Bitmap(this.pbSet.Width, this.pbSet.Height);
+                pbSet.Image = new Bitmap(pbSet.Width, pbSet.Height);
         }
 
         public void DrawClasses()
         {
-            this.bxClass = new ExtendedBitmap(this.pnlClass.Width, this.pnlClass.Height);
-            int enhPadding1 = this.EnhPadding;
-            int enhPadding2 = this.EnhPadding;
+            bxClass = new ExtendedBitmap(pnlClass.Width, pnlClass.Height);
+            int enhPadding1 = EnhPadding;
+            int enhPadding2 = EnhPadding;
             int num1 = 0;
-            this.bxClass.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClass.ClipRect);
-            int num2 = this.myEnh.ClassID.Length - 1;
+            bxClass.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), bxClass.ClipRect);
+            int num2 = myEnh.ClassID.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
-                Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, this.ClassSize, this.ClassSize);
-                this.bxClass.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(this.myEnh.ClassID[index]), System.Drawing.GraphicsUnit.Pixel);
-                enhPadding2 += this.ClassSize + this.EnhPadding;
+                Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, ClassSize, ClassSize);
+                bxClass.Graphics.DrawImage(I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(myEnh.ClassID[index]), GraphicsUnit.Pixel);
+                enhPadding2 += ClassSize + EnhPadding;
                 ++num1;
                 if (num1 == 2)
                 {
                     num1 = 0;
-                    enhPadding2 = this.EnhPadding;
-                    enhPadding1 += this.ClassSize + this.EnhPadding;
+                    enhPadding2 = EnhPadding;
+                    enhPadding1 += ClassSize + EnhPadding;
                 }
             }
-            this.pnlClass.CreateGraphics().DrawImageUnscaled((Image)this.bxClass.Bitmap, 0, 0);
+            pnlClass.CreateGraphics().DrawImageUnscaled(bxClass.Bitmap, 0, 0);
         }
 
         public void DrawClassList()
         {
-            this.bxClassList = new ExtendedBitmap(this.pnlClassList.Width, this.pnlClassList.Height);
-            int enhPadding1 = this.EnhPadding;
-            int enhPadding2 = this.EnhPadding;
+            bxClassList = new ExtendedBitmap(pnlClassList.Width, pnlClassList.Height);
+            int enhPadding1 = EnhPadding;
+            int enhPadding2 = EnhPadding;
             int num1 = 0;
-            this.bxClassList.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), this.bxClassList.ClipRect);
+            bxClassList.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 0, 0)), bxClassList.ClipRect);
             int num2 = DatabaseAPI.Database.EnhancementClasses.Length - 1;
             for (int index = 0; index <= num2; ++index)
             {
                 Rectangle destRect = new Rectangle(enhPadding2, enhPadding1, 30, 30);
-                this.bxClassList.Graphics.DrawImage((Image)I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), System.Drawing.GraphicsUnit.Pixel);
-                enhPadding2 += 30 + this.EnhPadding;
+                bxClassList.Graphics.DrawImage(I9Gfx.Classes.Bitmap, destRect, I9Gfx.GetImageRect(index), GraphicsUnit.Pixel);
+                enhPadding2 += 30 + EnhPadding;
                 ++num1;
-                if (num1 == this.EnhAcross)
+                if (num1 == EnhAcross)
                 {
                     num1 = 0;
-                    enhPadding2 = this.EnhPadding;
-                    enhPadding1 += 30 + this.EnhPadding;
+                    enhPadding2 = EnhPadding;
+                    enhPadding1 += 30 + EnhPadding;
                 }
             }
-            this.pnlClassList.CreateGraphics().DrawImageUnscaled((Image)this.bxClassList.Bitmap, 0, 0);
+            pnlClassList.CreateGraphics().DrawImageUnscaled(bxClassList.Bitmap, 0, 0);
         }
 
         public void EditClick()
         {
             bool flag = true;
             int num1 = -1;
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            int selectedIndex = lstSelected.SelectedIndex;
+            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
             {
-                if (this.myEnh.Effect[selectedIndex].Enhance.ID == 12)
+                if (myEnh.Effect[selectedIndex].Enhance.ID == 12)
                 {
-                    int subId = this.myEnh.Effect[selectedIndex].Enhance.SubID;
-                    num1 = this.MezPicker(subId);
+                    int subId = myEnh.Effect[selectedIndex].Enhance.SubID;
+                    num1 = MezPicker(subId);
                     if (num1 == subId)
                         return;
-                    int num2 = this.myEnh.Effect.Length - 1;
+                    int num2 = myEnh.Effect.Length - 1;
                     for (int index1 = 0; index1 <= num2; ++index1)
                     {
-                        Enums.sEffect[] effect = this.myEnh.Effect;
+                        Enums.sEffect[] effect = myEnh.Effect;
                         int index2 = index1;
                         if (effect[index2].Mode == Enums.eEffMode.Enhancement & effect[index2].Enhance.SubID == num1)
                             flag = false;
@@ -631,14 +630,14 @@ namespace Hero_Designer
                     int num2 = (int)Interaction.MsgBox("This effect has already been added!", MsgBoxStyle.Information, "There can be only one.");
                     return;
                 }
-                this.myEnh.Effect[selectedIndex].Enhance.SubID = num1;
+                myEnh.Effect[selectedIndex].Enhance.SubID = num1;
             }
             else
             {
-                frmPowerEffect frmPowerEffect = new frmPowerEffect(this.myEnh.Effect[selectedIndex].FX);
+                frmPowerEffect frmPowerEffect = new frmPowerEffect(myEnh.Effect[selectedIndex].FX);
                 if (frmPowerEffect.ShowDialog() == DialogResult.OK)
                 {
-                    Enums.sEffect[] effect = this.myEnh.Effect;
+                    Enums.sEffect[] effect = myEnh.Effect;
                     int index = selectedIndex;
                     effect[index].Mode = Enums.eEffMode.FX;
                     effect[index].Enhance.ID = -1;
@@ -648,25 +647,25 @@ namespace Hero_Designer
                     effect[index].FX = (IEffect)frmPowerEffect.myFX.Clone();
                 }
             }
-            this.ListSelectedEffects();
-            this.lstSelected.SelectedIndex = selectedIndex;
+            ListSelectedEffects();
+            lstSelected.SelectedIndex = selectedIndex;
         }
 
         public void EffectList_Add()
         {
-            if (this.lstAvailable.SelectedIndex <= -1)
+            if (lstAvailable.SelectedIndex <= -1)
                 return;
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
+            const Enums.eEnhance eEnhance = Enums.eEnhance.None;
             bool flag = true;
             int tSub = -1;
-            Enums.eEnhance integer = (Enums.eEnhance)Conversions.ToInteger(Enum.Parse(eEnhance.GetType(), Conversions.ToString(this.lstAvailable.Items[this.lstAvailable.SelectedIndex])));
+            Enums.eEnhance integer = (Enums.eEnhance)Conversions.ToInteger(Enum.Parse(eEnhance.GetType(), Conversions.ToString(lstAvailable.Items[lstAvailable.SelectedIndex])));
             if (integer == Enums.eEnhance.Mez)
             {
-                tSub = this.MezPicker(1);
-                int num = this.myEnh.Effect.Length - 1;
+                tSub = MezPicker();
+                int num = myEnh.Effect.Length - 1;
                 for (int index1 = 0; index1 <= num; ++index1)
                 {
-                    Enums.sEffect[] effect = this.myEnh.Effect;
+                    Enums.sEffect[] effect = myEnh.Effect;
                     int index2 = index1;
                     if (effect[index2].Mode == Enums.eEffMode.Enhancement & effect[index2].Enhance.SubID == tSub)
                         flag = false;
@@ -678,151 +677,151 @@ namespace Hero_Designer
             }
             else
             {
-                IEnhancement enh = this.myEnh;
-                Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, (Array)new Enums.sEffect[this.myEnh.Effect.Length + 1]);
+                IEnhancement enh = myEnh;
+                Enums.sEffect[] sEffectArray = (Enums.sEffect[])Utils.CopyArray(enh.Effect, new Enums.sEffect[myEnh.Effect.Length + 1]);
                 enh.Effect = sEffectArray;
-                Enums.sEffect[] effect = this.myEnh.Effect;
-                int index = this.myEnh.Effect.Length - 1;
+                Enums.sEffect[] effect = myEnh.Effect;
+                int index = myEnh.Effect.Length - 1;
                 effect[index].Mode = Enums.eEffMode.Enhancement;
                 effect[index].Enhance.ID = (int)integer;
                 effect[index].Enhance.SubID = tSub;
                 effect[index].Multiplier = 1f;
                 effect[index].Schedule = Enhancement.GetSchedule(integer, tSub);
-                this.FillEffectList();
-                this.ListSelectedEffects();
-                this.lstSelected.SelectedIndex = this.lstSelected.Items.Count - 1;
+                FillEffectList();
+                ListSelectedEffects();
+                lstSelected.SelectedIndex = lstSelected.Items.Count - 1;
             }
         }
 
         public void FillEffectList()
         {
-            Enums.eEnhance eEnhance1 = Enums.eEnhance.None;
-            this.lstAvailable.BeginUpdate();
-            this.lstAvailable.Items.Clear();
+            const Enums.eEnhance eEnhance1 = Enums.eEnhance.None;
+            lstAvailable.BeginUpdate();
+            lstAvailable.Items.Clear();
             string[] names = Enum.GetNames(eEnhance1.GetType());
             int num1 = names.Length - 1;
             for (int index1 = 1; index1 <= num1; ++index1)
             {
                 Enums.eEnhance eEnhance2 = (Enums.eEnhance)index1;
                 bool flag = false;
-                int num2 = this.myEnh.Effect.Length - 1;
+                int num2 = myEnh.Effect.Length - 1;
                 for (int index2 = 0; index2 <= num2; ++index2)
                 {
-                    if (this.myEnh.Effect[index2].Mode == Enums.eEffMode.Enhancement && this.myEnh.Effect[index2].Enhance.ID == index1 & eEnhance2 != Enums.eEnhance.Mez)
+                    if (myEnh.Effect[index2].Mode == Enums.eEffMode.Enhancement && myEnh.Effect[index2].Enhance.ID == index1 & eEnhance2 != Enums.eEnhance.Mez)
                         flag = true;
                 }
                 if (!flag)
-                    this.lstAvailable.Items.Add(names[index1]);
+                    lstAvailable.Items.Add(names[index1]);
             }
-            this.btnAdd.Enabled = this.lstAvailable.Items.Count > 0;
-            this.lstAvailable.EndUpdate();
+            btnAdd.Enabled = lstAvailable.Items.Count > 0;
+            lstAvailable.EndUpdate();
         }
 
         public void FillMutExList()
         {
             string[] names = Enum.GetNames(Enums.eEnhMutex.None.GetType());
-            this.cbMutEx.BeginUpdate();
-            this.cbMutEx.Items.Clear();
-            this.cbMutEx.Items.AddRange((object[])names);
-            this.cbMutEx.EndUpdate();
+            cbMutEx.BeginUpdate();
+            cbMutEx.Items.Clear();
+            cbMutEx.Items.AddRange(names);
+            cbMutEx.EndUpdate();
         }
 
         public void FillRecipeList()
         {
-            this.cbRecipe.BeginUpdate();
-            this.cbRecipe.Items.Clear();
-            this.cbRecipe.Items.Add("None");
+            cbRecipe.BeginUpdate();
+            cbRecipe.Items.Clear();
+            cbRecipe.Items.Add("None");
             int num = DatabaseAPI.Database.Recipes.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbRecipe.Items.Add(DatabaseAPI.Database.Recipes[index].InternalName);
-            this.cbRecipe.EndUpdate();
+                cbRecipe.Items.Add(DatabaseAPI.Database.Recipes[index].InternalName);
+            cbRecipe.EndUpdate();
         }
 
         public void FillSchedules()
         {
-            this.cbSched.BeginUpdate();
-            this.cbSched.Items.Clear();
+            cbSched.BeginUpdate();
+            cbSched.Items.Clear();
             string Style = "##0" + NumberFormatInfo.CurrentInfo.NumberDecimalSeparator + "##";
-            this.cbSched.Items.Add(("A (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][0] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add(("B (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][1] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add(("C (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][2] * 100.0), Style) + "%)"));
-            this.cbSched.Items.Add(("D (" + Strings.Format((float)((double)DatabaseAPI.Database.MultSO[0][3] * 100.0), Style) + "%)"));
-            this.cbSched.EndUpdate();
+            cbSched.Items.Add(("A (" + Strings.Format((float)(DatabaseAPI.Database.MultSO[0][0] * 100.0), Style) + "%)"));
+            cbSched.Items.Add(("B (" + Strings.Format((float)(DatabaseAPI.Database.MultSO[0][1] * 100.0), Style) + "%)"));
+            cbSched.Items.Add(("C (" + Strings.Format((float)(DatabaseAPI.Database.MultSO[0][2] * 100.0), Style) + "%)"));
+            cbSched.Items.Add(("D (" + Strings.Format((float)(DatabaseAPI.Database.MultSO[0][3] * 100.0), Style) + "%)"));
+            cbSched.EndUpdate();
         }
 
         public void FillSetList()
         {
-            this.cbSet.BeginUpdate();
-            this.cbSet.Items.Clear();
-            this.cbSet.Items.Add("None");
+            cbSet.BeginUpdate();
+            cbSet.Items.Clear();
+            cbSet.Items.Add("None");
             int num = DatabaseAPI.Database.EnhancementSets.Count - 1;
             for (int index = 0; index <= num; ++index)
-                this.cbSet.Items.Add(DatabaseAPI.Database.EnhancementSets[index].Uid);
-            this.cbSet.EndUpdate();
+                cbSet.Items.Add(DatabaseAPI.Database.EnhancementSets[index].Uid);
+            cbSet.EndUpdate();
         }
 
         public void FillSubTypeList()
         {
             string[] names = Enum.GetNames(Enums.eSubtype.None.GetType());
-            this.cbSubType.BeginUpdate();
-            this.cbSubType.Items.Clear();
-            this.cbSubType.Items.AddRange((object[])names);
-            this.cbSubType.EndUpdate();
+            cbSubType.BeginUpdate();
+            cbSubType.Items.Clear();
+            cbSubType.Items.AddRange(names);
+            cbSubType.EndUpdate();
         }
 
         void frmEnhData_Load(object sender, EventArgs e)
 
         {
-            this.FillSetList();
-            this.FillEffectList();
-            this.FillMutExList();
-            this.FillSubTypeList();
-            this.FillRecipeList();
-            this.DisplayAll();
-            this.SetTypeIcons();
-            this.DrawClassList();
-            this.FillSchedules();
-            this.UpdateTitle();
-            this.Loading = false;
+            FillSetList();
+            FillEffectList();
+            FillMutExList();
+            FillSubTypeList();
+            FillRecipeList();
+            DisplayAll();
+            SetTypeIcons();
+            DrawClassList();
+            FillSchedules();
+            UpdateTitle();
+            Loading = false;
         }
 
         [DebuggerStepThrough]
 
         public void ListSelectedEffects()
         {
-            Enums.eEnhance eEnhance = Enums.eEnhance.None;
-            Enums.eMez eMez = Enums.eMez.None;
+            const Enums.eEnhance eEnhance = Enums.eEnhance.None;
+            const Enums.eMez eMez = Enums.eMez.None;
             string[] names1 = Enum.GetNames(eEnhance.GetType());
             string[] names2 = Enum.GetNames(eMez.GetType());
-            this.lstSelected.BeginUpdate();
-            this.lstSelected.Items.Clear();
-            int num = this.myEnh.Effect.Length - 1;
+            lstSelected.BeginUpdate();
+            lstSelected.Items.Clear();
+            int num = myEnh.Effect.Length - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (this.myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
+                if (myEnh.Effect[index].Mode == Enums.eEffMode.Enhancement)
                 {
-                    string str = names1[this.myEnh.Effect[index].Enhance.ID];
-                    if (this.myEnh.Effect[index].Enhance.SubID > -1)
-                        str = str + ":" + names2[this.myEnh.Effect[index].Enhance.SubID];
-                    this.lstSelected.Items.Add(str);
+                    string str = names1[myEnh.Effect[index].Enhance.ID];
+                    if (myEnh.Effect[index].Enhance.SubID > -1)
+                        str = str + ":" + names2[myEnh.Effect[index].Enhance.SubID];
+                    lstSelected.Items.Add(str);
                 }
                 else
-                    this.lstSelected.Items.Add(("Special: " + this.myEnh.Effect[index].FX.BuildEffectString(false, "", false, false, false)));
+                    lstSelected.Items.Add(("Special: " + myEnh.Effect[index].FX.BuildEffectString()));
             }
-            this.lstSelected.EndUpdate();
+            lstSelected.EndUpdate();
         }
 
         void lstAvailable_DoubleClick(object sender, EventArgs e)
 
         {
-            this.EffectList_Add();
+            EffectList_Add();
         }
 
         void lstSelected_SelectedIndexChanged(object sender, EventArgs e)
 
         {
-            this.DisplayEnhanceData();
-            this.tTip.SetToolTip((Control)this.lstSelected, Conversions.ToString(this.lstSelected.SelectedItem));
+            DisplayEnhanceData();
+            tTip.SetToolTip(lstSelected, Conversions.ToString(lstSelected.SelectedItem));
         }
 
         public int MezPicker(int index = 1)
@@ -831,17 +830,17 @@ namespace Hero_Designer
         void PickerExpand()
 
         {
-            if (this.gbClass.Width == 84)
+            if (gbClass.Width == 84)
             {
-                this.gbClass.Width = 272;
-                this.gbClass.Left -= 188;
-                this.lblClass.Width = 256;
+                gbClass.Width = 272;
+                gbClass.Left -= 188;
+                lblClass.Width = 256;
             }
             else
             {
-                this.gbClass.Width = 84;
-                this.gbClass.Left = 596;
-                this.lblClass.Width = this.pnlClass.Width;
+                gbClass.Width = 84;
+                gbClass.Left = 596;
+                lblClass.Width = pnlClass.Width;
             }
         }
 
@@ -850,18 +849,18 @@ namespace Hero_Designer
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.PickerExpand();
+                PickerExpand();
             }
             else
             {
-                if (this.gbClass.Width <= 84 || this.Loading)
+                if (gbClass.Width <= 84 || Loading)
                     return;
                 int num1 = -1;
                 int num2 = -1;
                 int num3 = 0;
                 do
                 {
-                    if (e.X > (this.EnhPadding + this.ClassSize) * num3 & e.X < (this.EnhPadding + this.ClassSize) * (num3 + 1))
+                    if (e.X > (EnhPadding + ClassSize) * num3 & e.X < (EnhPadding + ClassSize) * (num3 + 1))
                         num1 = num3;
                     ++num3;
                 }
@@ -869,31 +868,31 @@ namespace Hero_Designer
                 int num4 = 0;
                 do
                 {
-                    if (e.Y > (this.EnhPadding + this.ClassSize) * num4 & e.Y < (this.EnhPadding + this.ClassSize) * (num4 + 1))
+                    if (e.Y > (EnhPadding + ClassSize) * num4 & e.Y < (EnhPadding + ClassSize) * (num4 + 1))
                         num2 = num4;
                     ++num4;
                 }
                 while (num4 <= 10);
                 int num5 = num1 + num2 * 2;
-                if (num5 < this.myEnh.ClassID.Length & num1 > -1 & num2 > -1)
+                if (num5 < myEnh.ClassID.Length & num1 > -1 & num2 > -1)
                 {
-                    int[] numArray = new int[this.myEnh.ClassID.Length - 1 + 1];
-                    int num6 = this.myEnh.ClassID.Length - 1;
+                    int[] numArray = new int[myEnh.ClassID.Length - 1 + 1];
+                    int num6 = myEnh.ClassID.Length - 1;
                     for (int index = 0; index <= num6; ++index)
-                        numArray[index] = this.myEnh.ClassID[index];
+                        numArray[index] = myEnh.ClassID[index];
                     int index1 = 0;
-                    this.myEnh.ClassID = new int[this.myEnh.ClassID.Length - 2 + 1];
+                    myEnh.ClassID = new int[myEnh.ClassID.Length - 2 + 1];
                     int num7 = numArray.Length - 1;
                     for (int index2 = 0; index2 <= num7; ++index2)
                     {
                         if (index2 != num5)
                         {
-                            this.myEnh.ClassID[index1] = numArray[index2];
+                            myEnh.ClassID[index1] = numArray[index2];
                             ++index1;
                         }
                     }
-                    Array.Sort<int>(this.myEnh.ClassID);
-                    this.DrawClasses();
+                    Array.Sort(myEnh.ClassID);
+                    DrawClasses();
                 }
             }
         }
@@ -906,7 +905,7 @@ namespace Hero_Designer
             int num3 = 0;
             do
             {
-                if (e.X > (this.EnhPadding + this.ClassSize) * num3 & e.X < (this.EnhPadding + this.ClassSize) * (num3 + 1))
+                if (e.X > (EnhPadding + ClassSize) * num3 & e.X < (EnhPadding + ClassSize) * (num3 + 1))
                     num1 = num3;
                 ++num3;
             }
@@ -914,29 +913,29 @@ namespace Hero_Designer
             int num4 = 0;
             do
             {
-                if (e.Y > (this.EnhPadding + this.ClassSize) * num4 & e.Y < (this.EnhPadding + this.ClassSize) * (num4 + 1))
+                if (e.Y > (EnhPadding + ClassSize) * num4 & e.Y < (EnhPadding + ClassSize) * (num4 + 1))
                     num2 = num4;
                 ++num4;
             }
             while (num4 <= 10);
             int index = num1 + num2 * 2;
-            if (index < this.myEnh.ClassID.Length & num1 > -1 & num2 > -1)
+            if (index < myEnh.ClassID.Length & num1 > -1 & num2 > -1)
             {
-                if (this.gbClass.Width < 100)
-                    this.lblClass.Text = DatabaseAPI.Database.EnhancementClasses[this.myEnh.ClassID[index]].ShortName;
+                if (gbClass.Width < 100)
+                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].ShortName;
                 else
-                    this.lblClass.Text = DatabaseAPI.Database.EnhancementClasses[this.myEnh.ClassID[index]].Name;
+                    lblClass.Text = DatabaseAPI.Database.EnhancementClasses[myEnh.ClassID[index]].Name;
             }
             else
-                this.lblClass.Text = "";
+                lblClass.Text = "";
         }
 
         void pnlClass_Paint(object sender, PaintEventArgs e)
 
         {
-            if (this.bxClass == null)
+            if (bxClass == null)
                 return;
-            e.Graphics.DrawImageUnscaled((Image)this.bxClass.Bitmap, 0, 0);
+            e.Graphics.DrawImageUnscaled(bxClass.Bitmap, 0, 0);
         }
 
         void pnlClassList_MouseDown(object sender, MouseEventArgs e)
@@ -944,46 +943,46 @@ namespace Hero_Designer
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.PickerExpand();
+                PickerExpand();
             }
             else
             {
-                if (this.gbClass.Width <= 84 || this.Loading)
+                if (gbClass.Width <= 84 || Loading)
                     return;
                 int num1 = -1;
                 int num2 = -1;
-                int num3 = this.EnhAcross - 1;
+                int num3 = EnhAcross - 1;
                 for (int index = 0; index <= num3; ++index)
                 {
-                    if (e.X > (this.EnhPadding + 30) * index & e.X < (this.EnhPadding + 30) * (index + 1))
+                    if (e.X > (EnhPadding + 30) * index & e.X < (EnhPadding + 30) * (index + 1))
                         num1 = index;
                 }
                 int num4 = 0;
                 do
                 {
-                    if (e.Y > (this.EnhPadding + 30) * num4 & e.Y < (this.EnhPadding + 30) * (num4 + 1))
+                    if (e.Y > (EnhPadding + 30) * num4 & e.Y < (EnhPadding + 30) * (num4 + 1))
                         num2 = num4;
                     ++num4;
                 }
                 while (num4 <= 10);
-                int num5 = num1 + num2 * this.EnhAcross;
+                int num5 = num1 + num2 * EnhAcross;
                 if (num5 < DatabaseAPI.Database.EnhancementClasses.Length & num1 > -1 & num2 > -1)
                 {
                     bool flag = false;
-                    int num6 = this.myEnh.ClassID.Length - 1;
+                    int num6 = myEnh.ClassID.Length - 1;
                     for (int index = 0; index <= num6; ++index)
                     {
-                        if (this.myEnh.ClassID[index] == num5)
+                        if (myEnh.ClassID[index] == num5)
                             flag = true;
                     }
                     if (!flag)
                     {
-                        IEnhancement enh = this.myEnh;
-                        int[] numArray = (int[])Utils.CopyArray(enh.ClassID, (Array)new int[this.myEnh.ClassID.Length + 1]);
+                        IEnhancement enh = myEnh;
+                        int[] numArray = (int[])Utils.CopyArray(enh.ClassID, new int[myEnh.ClassID.Length + 1]);
                         enh.ClassID = numArray;
-                        this.myEnh.ClassID[this.myEnh.ClassID.Length - 1] = num5;
-                        Array.Sort<int>(this.myEnh.ClassID);
-                        this.DrawClasses();
+                        myEnh.ClassID[myEnh.ClassID.Length - 1] = num5;
+                        Array.Sort(myEnh.ClassID);
+                        DrawClasses();
                     }
                 }
             }
@@ -994,272 +993,272 @@ namespace Hero_Designer
         {
             int num1 = -1;
             int num2 = -1;
-            int num3 = this.EnhAcross - 1;
+            int num3 = EnhAcross - 1;
             for (int index = 0; index <= num3; ++index)
             {
-                if (e.X > (this.EnhPadding + 30) * index & e.X < (this.EnhPadding + 30) * (index + 1))
+                if (e.X > (EnhPadding + 30) * index & e.X < (EnhPadding + 30) * (index + 1))
                     num1 = index;
             }
             int num4 = 0;
             do
             {
-                if (e.Y > (this.EnhPadding + 30) * num4 & e.Y < (this.EnhPadding + 30) * (num4 + 1))
+                if (e.Y > (EnhPadding + 30) * num4 & e.Y < (EnhPadding + 30) * (num4 + 1))
                     num2 = num4;
                 ++num4;
             }
             while (num4 <= 10);
-            int index1 = num1 + num2 * this.EnhAcross;
+            int index1 = num1 + num2 * EnhAcross;
             if (index1 < DatabaseAPI.Database.EnhancementClasses.Length & num1 > -1 & num2 > -1)
-                this.lblClass.Text = DatabaseAPI.Database.EnhancementClasses[index1].Name;
+                lblClass.Text = DatabaseAPI.Database.EnhancementClasses[index1].Name;
             else
-                this.lblClass.Text = string.Empty;
+                lblClass.Text = string.Empty;
         }
 
         void pnlClassList_Paint(object sender, PaintEventArgs e)
 
         {
-            if (this.bxClassList == null)
+            if (bxClassList == null)
                 return;
-            e.Graphics.DrawImageUnscaled((Image)this.bxClassList.Bitmap, 0, 0);
+            e.Graphics.DrawImageUnscaled(bxClassList.Bitmap, 0, 0);
         }
 
         void rbBuffDebuff_CheckedChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading || this.lstSelected.SelectedIndex <= -1)
+            if (Loading || lstSelected.SelectedIndex <= -1)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            int selectedIndex = lstSelected.SelectedIndex;
+            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
             {
-                if (this.rbBuff.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.BuffOnly;
-                else if (this.rbDebuff.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.DeBuffOnly;
-                else if (this.rbBoth.Checked)
-                    this.myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.Any;
+                if (rbBuff.Checked)
+                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.BuffOnly;
+                else if (rbDebuff.Checked)
+                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.DeBuffOnly;
+                else if (rbBoth.Checked)
+                    myEnh.Effect[selectedIndex].BuffMode = Enums.eBuffDebuff.Any;
             }
         }
 
         void rbMod_CheckedChanged(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
+            int selectedIndex = lstSelected.SelectedIndex;
+            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement)
             {
-                this.txtModOther.Enabled = false;
-                if (this.rbModOther.Checked)
+                txtModOther.Enabled = false;
+                if (rbModOther.Checked)
                 {
-                    this.txtModOther.Enabled = true;
-                    this.myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(this.txtModOther.Text);
-                    this.txtModOther.SelectAll();
-                    this.txtModOther.Select();
+                    txtModOther.Enabled = true;
+                    myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(txtModOther.Text);
+                    txtModOther.SelectAll();
+                    txtModOther.Select();
                 }
-                else if (this.rbMod1.Checked)
-                    this.myEnh.Effect[selectedIndex].Multiplier = 1f;
-                else if (this.rbMod2.Checked)
-                    this.myEnh.Effect[selectedIndex].Multiplier = 0.625f;
-                else if (this.rbMod3.Checked)
-                    this.myEnh.Effect[selectedIndex].Multiplier = 0.5f;
-                else if (this.rbMod4.Checked)
-                    this.myEnh.Effect[selectedIndex].Multiplier = 7f / 16f;
+                else if (rbMod1.Checked)
+                    myEnh.Effect[selectedIndex].Multiplier = 1f;
+                else if (rbMod2.Checked)
+                    myEnh.Effect[selectedIndex].Multiplier = 0.625f;
+                else if (rbMod3.Checked)
+                    myEnh.Effect[selectedIndex].Multiplier = 0.5f;
+                else if (rbMod4.Checked)
+                    myEnh.Effect[selectedIndex].Multiplier = 7f / 16f;
             }
         }
 
         public void SetMaxLevel(int iValue)
         {
-            if (Decimal.Compare(new Decimal(iValue), this.udMaxLevel.Minimum) < 0)
-                iValue = Convert.ToInt32(this.udMaxLevel.Minimum);
-            if (Decimal.Compare(new Decimal(iValue), this.udMaxLevel.Maximum) > 0)
-                iValue = Convert.ToInt32(this.udMaxLevel.Maximum);
-            this.udMaxLevel.Value = new Decimal(iValue);
+            if (Decimal.Compare(new Decimal(iValue), udMaxLevel.Minimum) < 0)
+                iValue = Convert.ToInt32(udMaxLevel.Minimum);
+            if (Decimal.Compare(new Decimal(iValue), udMaxLevel.Maximum) > 0)
+                iValue = Convert.ToInt32(udMaxLevel.Maximum);
+            udMaxLevel.Value = new Decimal(iValue);
         }
 
         public void SetMinLevel(int iValue)
         {
-            if (Decimal.Compare(new Decimal(iValue), this.udMinLevel.Minimum) < 0)
-                iValue = Convert.ToInt32(this.udMinLevel.Minimum);
-            if (Decimal.Compare(new Decimal(iValue), this.udMinLevel.Maximum) > 0)
-                iValue = Convert.ToInt32(this.udMinLevel.Maximum);
-            this.udMinLevel.Value = new Decimal(iValue);
+            if (Decimal.Compare(new Decimal(iValue), udMinLevel.Minimum) < 0)
+                iValue = Convert.ToInt32(udMinLevel.Minimum);
+            if (Decimal.Compare(new Decimal(iValue), udMinLevel.Maximum) > 0)
+                iValue = Convert.ToInt32(udMinLevel.Maximum);
+            udMinLevel.Value = new Decimal(iValue);
         }
 
         public void SetTypeIcons()
         {
             ExtendedBitmap extendedBitmap1 = new ExtendedBitmap(30, 30);
-            ExtendedBitmap extendedBitmap2 = !(this.myEnh.Image != "") ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + this.myEnh.Image);
+            ExtendedBitmap extendedBitmap2 = myEnh.Image == "" ? new ExtendedBitmap(30, 30) : new ExtendedBitmap(I9Gfx.GetEnhancementsPath() + myEnh.Image);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), System.Drawing.GraphicsUnit.Pixel);
-            extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
-            this.typeRegular.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
+            extendedBitmap1.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.Normal)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage(extendedBitmap2.Bitmap, 0, 0);
+            typeRegular.Image = new Bitmap(extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.InventO)), System.Drawing.GraphicsUnit.Pixel);
-            extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
-            this.typeIO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
+            extendedBitmap1.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.InventO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage(extendedBitmap2.Bitmap, 0, 0);
+            typeIO.Image = new Bitmap(extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SpecialO)), System.Drawing.GraphicsUnit.Pixel);
-            extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
-            this.typeHO.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
+            extendedBitmap1.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SpecialO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage(extendedBitmap2.Bitmap, 0, 0);
+            typeHO.Image = new Bitmap(extendedBitmap1.Bitmap);
             extendedBitmap1.Graphics.Clear(Color.Transparent);
-            extendedBitmap1.Graphics.DrawImage((Image)I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SetO)), System.Drawing.GraphicsUnit.Pixel);
-            extendedBitmap1.Graphics.DrawImage((Image)extendedBitmap2.Bitmap, 0, 0);
-            this.typeSet.Image = (Image)new Bitmap((Image)extendedBitmap1.Bitmap);
+            extendedBitmap1.Graphics.DrawImage(I9Gfx.Borders.Bitmap, extendedBitmap2.ClipRect, I9Gfx.GetOverlayRect(I9Gfx.ToGfxGrade(Enums.eType.SetO)), GraphicsUnit.Pixel);
+            extendedBitmap1.Graphics.DrawImage(extendedBitmap2.Bitmap, 0, 0);
+            typeSet.Image = new Bitmap(extendedBitmap1.Bitmap);
         }
 
         void StaticIndex_TextChanged(object sender, EventArgs e)
 
         {
-            this.myEnh.StaticIndex = Conversions.ToInteger(this.StaticIndex.Text);
+            myEnh.StaticIndex = Conversions.ToInteger(StaticIndex.Text);
         }
 
         void txtDesc_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.Desc = this.txtDesc.Text;
+            myEnh.Desc = txtDesc.Text;
         }
 
         void txtInternal_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.UID = this.txtInternal.Text;
+            myEnh.UID = txtInternal.Text;
         }
 
         void txtModOther_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.lstSelected.SelectedIndex <= -1)
+            if (lstSelected.SelectedIndex <= -1)
                 return;
-            int selectedIndex = this.lstSelected.SelectedIndex;
-            if (this.myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement && this.rbModOther.Checked)
-                this.myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(this.txtModOther.Text);
+            int selectedIndex = lstSelected.SelectedIndex;
+            if (myEnh.Effect[selectedIndex].Mode == Enums.eEffMode.Enhancement && rbModOther.Checked)
+                myEnh.Effect[selectedIndex].Multiplier = (float)Conversion.Val(txtModOther.Text);
         }
 
         void txtNameFull_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.Name = this.txtNameFull.Text;
-            this.UpdateTitle();
+            myEnh.Name = txtNameFull.Text;
+            UpdateTitle();
         }
 
         void txtNameShort_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.ShortName = this.txtNameShort.Text;
+            myEnh.ShortName = txtNameShort.Text;
         }
 
         void txtProb_Leave(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.txtProb.Text = Conversions.ToString(this.myEnh.EffectChance);
+            txtProb.Text = Conversions.ToString(myEnh.EffectChance);
         }
 
         void txtProb_TextChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            float num = (float)Conversion.Val(this.txtProb.Text);
-            if ((double)num > 1.0)
+            float num = (float)Conversion.Val(txtProb.Text);
+            if (num > 1.0)
                 num = 1f;
-            if ((double)num < 0.0)
+            if (num < 0.0)
                 num = 0.0f;
-            this.myEnh.EffectChance = num;
+            myEnh.EffectChance = num;
         }
 
         void type_CheckedChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            if (this.typeRegular.Checked)
+            if (typeRegular.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.Normal;
-                this.chkUnique.Checked = false;
-                this.cbSubType.Enabled = false;
-                this.cbSubType.SelectedIndex = -1;
-                this.cbRecipe.SelectedIndex = -1;
-                this.cbRecipe.Enabled = false;
+                myEnh.TypeID = Enums.eType.Normal;
+                chkUnique.Checked = false;
+                cbSubType.Enabled = false;
+                cbSubType.SelectedIndex = -1;
+                cbRecipe.SelectedIndex = -1;
+                cbRecipe.Enabled = false;
             }
-            else if (this.typeIO.Checked)
+            else if (typeIO.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.InventO;
-                this.chkUnique.Checked = false;
-                this.cbSubType.Enabled = false;
-                this.cbSubType.SelectedIndex = -1;
-                this.cbRecipe.SelectedIndex = 0;
-                this.cbRecipe.Enabled = true;
+                myEnh.TypeID = Enums.eType.InventO;
+                chkUnique.Checked = false;
+                cbSubType.Enabled = false;
+                cbSubType.SelectedIndex = -1;
+                cbRecipe.SelectedIndex = 0;
+                cbRecipe.Enabled = true;
             }
-            else if (this.typeHO.Checked)
+            else if (typeHO.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.SpecialO;
-                this.chkUnique.Checked = false;
-                this.cbSubType.Enabled = true;
-                this.cbSubType.SelectedIndex = 0;
-                this.cbRecipe.SelectedIndex = -1;
-                this.cbRecipe.Enabled = false;
+                myEnh.TypeID = Enums.eType.SpecialO;
+                chkUnique.Checked = false;
+                cbSubType.Enabled = true;
+                cbSubType.SelectedIndex = 0;
+                cbRecipe.SelectedIndex = -1;
+                cbRecipe.Enabled = false;
             }
-            else if (this.typeSet.Checked)
+            else if (typeSet.Checked)
             {
-                this.myEnh.TypeID = Enums.eType.SetO;
-                this.cbSet.Select();
-                this.cbSubType.Enabled = false;
-                this.cbSubType.SelectedIndex = -1;
-                this.cbRecipe.SelectedIndex = 0;
-                this.cbRecipe.Enabled = true;
+                myEnh.TypeID = Enums.eType.SetO;
+                cbSet.Select();
+                cbSubType.Enabled = false;
+                cbSubType.SelectedIndex = -1;
+                cbRecipe.SelectedIndex = 0;
+                cbRecipe.Enabled = true;
             }
-            this.DisplaySet();
-            this.UpdateTitle();
-            this.DisplayIcon();
+            DisplaySet();
+            UpdateTitle();
+            DisplayIcon();
         }
 
         void udMaxLevel_Leave(object sender, EventArgs e)
 
         {
-            this.SetMaxLevel((int)Math.Round(Conversion.Val(this.udMaxLevel.Text)));
-            this.myEnh.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
+            SetMaxLevel((int)Math.Round(Conversion.Val(udMaxLevel.Text)));
+            myEnh.LevelMax = Convert.ToInt32(Decimal.Subtract(udMaxLevel.Value, new Decimal(1)));
         }
 
         void udMaxLevel_ValueChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.LevelMax = Convert.ToInt32(Decimal.Subtract(this.udMaxLevel.Value, new Decimal(1)));
-            this.udMinLevel.Maximum = this.udMaxLevel.Value;
+            myEnh.LevelMax = Convert.ToInt32(Decimal.Subtract(udMaxLevel.Value, new Decimal(1)));
+            udMinLevel.Maximum = udMaxLevel.Value;
         }
 
         void udMinLevel_Leave(object sender, EventArgs e)
 
         {
-            this.SetMinLevel((int)Math.Round(Conversion.Val(this.udMinLevel.Text)));
-            this.myEnh.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
+            SetMinLevel((int)Math.Round(Conversion.Val(udMinLevel.Text)));
+            myEnh.LevelMin = Convert.ToInt32(Decimal.Subtract(udMinLevel.Value, new Decimal(1)));
         }
 
         void udMinLevel_ValueChanged(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            this.myEnh.LevelMin = Convert.ToInt32(Decimal.Subtract(this.udMinLevel.Value, new Decimal(1)));
-            this.udMaxLevel.Minimum = this.udMinLevel.Value;
+            myEnh.LevelMin = Convert.ToInt32(Decimal.Subtract(udMinLevel.Value, new Decimal(1)));
+            udMaxLevel.Minimum = udMinLevel.Value;
         }
 
         public void UpdateTitle()
         {
-            string str1 = "Edit ";
+            const string str1 = "Edit ";
             string str2;
-            switch (this.myEnh.TypeID)
+            switch (myEnh.TypeID)
             {
                 case Enums.eType.InventO:
                     str2 = str1 + "Invention: ";
@@ -1268,13 +1267,13 @@ namespace Hero_Designer
                     str2 = str1 + "HO: ";
                     break;
                 case Enums.eType.SetO:
-                    str2 = this.myEnh.nIDSet > -1 ? str1 + DatabaseAPI.Database.EnhancementSets[this.myEnh.nIDSet].DisplayName + ": " : str1 + "Set Invention: ";
+                    str2 = myEnh.nIDSet > -1 ? str1 + DatabaseAPI.Database.EnhancementSets[myEnh.nIDSet].DisplayName + ": " : str1 + "Set Invention: ";
                     break;
                 default:
                     str2 = str1 + "Enhancement: ";
                     break;
             }
-            this.Text = str2 + this.myEnh.Name;
+            Text = str2 + myEnh.Name;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace midsControls.My
 			[DebuggerHidden]
 			get
 			{
-				return MyProject.m_ComputerObjectProvider.GetInstance;
+				return m_ComputerObjectProvider.GetInstance;
 			}
 		}
 
@@ -38,7 +38,7 @@ namespace midsControls.My
 			[DebuggerHidden]
 			get
 			{
-				return MyProject.m_AppObjectProvider.GetInstance;
+				return m_AppObjectProvider.GetInstance;
 			}
 		}
 
@@ -50,33 +50,33 @@ namespace midsControls.My
 			[DebuggerHidden]
 			get
 			{
-				return MyProject.m_UserObjectProvider.GetInstance;
+				return m_UserObjectProvider.GetInstance;
 			}
 		}
 
 		// Token: 0x17000006 RID: 6
 		// (get) Token: 0x0600000A RID: 10 RVA: 0x0000212C File Offset: 0x0000032C
 		[HelpKeyword("My.WebServices")]
-		internal static MyProject.MyWebServices WebServices
+		internal static MyWebServices WebServices
 		{
 			[DebuggerHidden]
 			get
 			{
-				return MyProject.m_MyWebServicesObjectProvider.GetInstance;
+				return m_MyWebServicesObjectProvider.GetInstance;
 			}
 		}
 
 		// Token: 0x04000003 RID: 3
-		private static readonly MyProject.ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new MyProject.ThreadSafeObjectProvider<MyComputer>();
+		private static readonly ThreadSafeObjectProvider<MyComputer> m_ComputerObjectProvider = new ThreadSafeObjectProvider<MyComputer>();
 
 		// Token: 0x04000004 RID: 4
-		private static readonly MyProject.ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new MyProject.ThreadSafeObjectProvider<MyApplication>();
+		private static readonly ThreadSafeObjectProvider<MyApplication> m_AppObjectProvider = new ThreadSafeObjectProvider<MyApplication>();
 
 		// Token: 0x04000005 RID: 5
-		private static readonly MyProject.ThreadSafeObjectProvider<User> m_UserObjectProvider = new MyProject.ThreadSafeObjectProvider<User>();
+		private static readonly ThreadSafeObjectProvider<User> m_UserObjectProvider = new ThreadSafeObjectProvider<User>();
 
 		// Token: 0x04000006 RID: 6
-		private static readonly MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices> m_MyWebServicesObjectProvider = new MyProject.ThreadSafeObjectProvider<MyProject.MyWebServices>();
+		private static readonly ThreadSafeObjectProvider<MyWebServices> m_MyWebServicesObjectProvider = new ThreadSafeObjectProvider<MyWebServices>();
 
 		// Token: 0x02000006 RID: 6
 		[MyGroupCollection("System.Web.Services.Protocols.SoapHttpClientProtocol", "Create__Instance__", "Dispose__Instance__", "")]
@@ -104,7 +104,7 @@ namespace midsControls.My
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			internal new Type GetType()
 			{
-				return typeof(MyProject.MyWebServices);
+				return typeof(MyWebServices);
 			}
 
 			// Token: 0x06000010 RID: 16 RVA: 0x000021D0 File Offset: 0x000003D0
@@ -135,7 +135,7 @@ namespace midsControls.My
 			[DebuggerHidden]
 			private void Dispose__Instance__<T>(ref T instance)
 			{
-				instance = default(T);
+				instance = default;
 			}
 
 			// Token: 0x06000013 RID: 19 RVA: 0x0000221E File Offset: 0x0000041E
@@ -158,11 +158,11 @@ namespace midsControls.My
 				[DebuggerHidden]
 				get
 				{
-					T t = this.m_Context.Value;
+					T t = m_Context.Value;
 					if (t == null)
 					{
 						t = Activator.CreateInstance<T>();
-						this.m_Context.Value = t;
+						m_Context.Value = t;
 					}
 					return t;
 				}
@@ -173,7 +173,7 @@ namespace midsControls.My
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			public ThreadSafeObjectProvider()
 			{
-				this.m_Context = new ContextValue<T>();
+				m_Context = new ContextValue<T>();
 			}
 
 			// Token: 0x04000007 RID: 7

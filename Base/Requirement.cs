@@ -20,87 +20,87 @@ public class Requirement
 
     public Requirement(Requirement iReq)
     {
-        this.ClassName = new string[iReq.ClassName.Length];
-        Array.Copy((Array)iReq.ClassName, (Array)this.ClassName, iReq.ClassName.Length);
-        this.ClassNameNot = new string[iReq.ClassNameNot.Length];
-        Array.Copy((Array)iReq.ClassNameNot, (Array)this.ClassNameNot, iReq.ClassNameNot.Length);
-        this.NClassName = new int[iReq.NClassName.Length];
-        Array.Copy((Array)iReq.NClassName, (Array)this.NClassName, iReq.NClassName.Length);
-        this.NClassNameNot = new int[iReq.NClassNameNot.Length];
-        Array.Copy((Array)iReq.NClassNameNot, (Array)this.NClassNameNot, iReq.NClassNameNot.Length);
-        this.PowerID = new string[iReq.PowerID.Length][];
-        for (int index = 0; index <= this.PowerID.Length - 1; ++index)
+        ClassName = new string[iReq.ClassName.Length];
+        Array.Copy(iReq.ClassName, ClassName, iReq.ClassName.Length);
+        ClassNameNot = new string[iReq.ClassNameNot.Length];
+        Array.Copy(iReq.ClassNameNot, ClassNameNot, iReq.ClassNameNot.Length);
+        NClassName = new int[iReq.NClassName.Length];
+        Array.Copy(iReq.NClassName, NClassName, iReq.NClassName.Length);
+        NClassNameNot = new int[iReq.NClassNameNot.Length];
+        Array.Copy(iReq.NClassNameNot, NClassNameNot, iReq.NClassNameNot.Length);
+        PowerID = new string[iReq.PowerID.Length][];
+        for (int index = 0; index <= PowerID.Length - 1; ++index)
         {
-            this.PowerID[index] = new string[2];
-            this.PowerID[index][0] = iReq.PowerID[index][0];
-            this.PowerID[index][1] = iReq.PowerID[index][1];
+            PowerID[index] = new string[2];
+            PowerID[index][0] = iReq.PowerID[index][0];
+            PowerID[index][1] = iReq.PowerID[index][1];
         }
-        this.PowerIDNot = new string[iReq.PowerIDNot.Length][];
-        for (int index = 0; index <= this.PowerIDNot.Length - 1; ++index)
+        PowerIDNot = new string[iReq.PowerIDNot.Length][];
+        for (int index = 0; index <= PowerIDNot.Length - 1; ++index)
         {
-            this.PowerIDNot[index] = new string[2];
-            this.PowerIDNot[index][0] = iReq.PowerIDNot[index][0];
-            this.PowerIDNot[index][1] = iReq.PowerIDNot[index][1];
+            PowerIDNot[index] = new string[2];
+            PowerIDNot[index][0] = iReq.PowerIDNot[index][0];
+            PowerIDNot[index][1] = iReq.PowerIDNot[index][1];
         }
-        this.NPowerID = new int[iReq.NPowerID.Length][];
-        for (int index = 0; index <= this.NPowerID.Length - 1; ++index)
+        NPowerID = new int[iReq.NPowerID.Length][];
+        for (int index = 0; index <= NPowerID.Length - 1; ++index)
         {
-            this.NPowerID[index] = new int[2];
-            this.NPowerID[index][0] = iReq.NPowerID[index][0];
-            this.NPowerID[index][1] = iReq.NPowerID[index][1];
+            NPowerID[index] = new int[2];
+            NPowerID[index][0] = iReq.NPowerID[index][0];
+            NPowerID[index][1] = iReq.NPowerID[index][1];
         }
-        this.NPowerIDNot = new int[iReq.NPowerIDNot.Length][];
-        for (int index = 0; index <= this.NPowerIDNot.Length - 1; ++index)
+        NPowerIDNot = new int[iReq.NPowerIDNot.Length][];
+        for (int index = 0; index <= NPowerIDNot.Length - 1; ++index)
         {
-            this.NPowerIDNot[index] = new int[2];
-            this.NPowerIDNot[index][0] = iReq.NPowerIDNot[index][0];
-            this.NPowerIDNot[index][1] = iReq.NPowerIDNot[index][1];
+            NPowerIDNot[index] = new int[2];
+            NPowerIDNot[index][0] = iReq.NPowerIDNot[index][0];
+            NPowerIDNot[index][1] = iReq.NPowerIDNot[index][1];
         }
     }
 
     public Requirement(BinaryReader reader)
     {
-        this.ClassName = new string[reader.ReadInt32() + 1];
-        for (int index = 0; index < this.ClassName.Length; ++index)
-            this.ClassName[index] = reader.ReadString();
-        this.ClassNameNot = new string[reader.ReadInt32() + 1];
-        for (int index = 0; index < this.ClassNameNot.Length; ++index)
-            this.ClassNameNot[index] = reader.ReadString();
-        this.PowerID = new string[reader.ReadInt32() + 1][];
-        for (int index = 0; index < this.PowerID.Length; ++index)
+        ClassName = new string[reader.ReadInt32() + 1];
+        for (int index = 0; index < ClassName.Length; ++index)
+            ClassName[index] = reader.ReadString();
+        ClassNameNot = new string[reader.ReadInt32() + 1];
+        for (int index = 0; index < ClassNameNot.Length; ++index)
+            ClassNameNot[index] = reader.ReadString();
+        PowerID = new string[reader.ReadInt32() + 1][];
+        for (int index = 0; index < PowerID.Length; ++index)
         {
-            this.PowerID[index] = new string[2];
-            this.PowerID[index][0] = reader.ReadString();
-            this.PowerID[index][1] = reader.ReadString();
+            PowerID[index] = new string[2];
+            PowerID[index][0] = reader.ReadString();
+            PowerID[index][1] = reader.ReadString();
         }
-        this.PowerIDNot = new string[reader.ReadInt32() + 1][];
-        for (int index = 0; index < this.PowerIDNot.Length; ++index)
+        PowerIDNot = new string[reader.ReadInt32() + 1][];
+        for (int index = 0; index < PowerIDNot.Length; ++index)
         {
-            this.PowerIDNot[index] = new string[2];
-            this.PowerIDNot[index][0] = reader.ReadString();
-            this.PowerIDNot[index][1] = reader.ReadString();
+            PowerIDNot[index] = new string[2];
+            PowerIDNot[index][0] = reader.ReadString();
+            PowerIDNot[index][1] = reader.ReadString();
         }
     }
 
     public void StoreTo(BinaryWriter writer)
     {
-        writer.Write(this.ClassName.Length - 1);
-        for (int index = 0; index < this.ClassName.Length; ++index)
-            writer.Write(this.ClassName[index]);
-        writer.Write(this.ClassNameNot.Length - 1);
-        for (int index = 0; index < this.ClassNameNot.Length; ++index)
-            writer.Write(this.ClassNameNot[index]);
-        writer.Write(this.PowerID.Length - 1);
-        for (int index = 0; index < this.PowerID.Length; ++index)
+        writer.Write(ClassName.Length - 1);
+        for (int index = 0; index < ClassName.Length; ++index)
+            writer.Write(ClassName[index]);
+        writer.Write(ClassNameNot.Length - 1);
+        for (int index = 0; index < ClassNameNot.Length; ++index)
+            writer.Write(ClassNameNot[index]);
+        writer.Write(PowerID.Length - 1);
+        for (int index = 0; index < PowerID.Length; ++index)
         {
-            writer.Write(this.PowerID[index][0]);
-            writer.Write(this.PowerID[index][1]);
+            writer.Write(PowerID[index][0]);
+            writer.Write(PowerID[index][1]);
         }
-        writer.Write(this.PowerIDNot.Length - 1);
-        for (int index = 0; index < this.PowerIDNot.Length; ++index)
+        writer.Write(PowerIDNot.Length - 1);
+        for (int index = 0; index < PowerIDNot.Length; ++index)
         {
-            writer.Write(this.PowerIDNot[index][0]);
-            writer.Write(this.PowerIDNot[index][1]);
+            writer.Write(PowerIDNot[index][0]);
+            writer.Write(PowerIDNot[index][1]);
         }
     }
 
@@ -114,23 +114,23 @@ public class Requirement
         else
         {
             bool flag2 = true;
-            if (this.ClassName.Length > 0)
+            if (ClassName.Length > 0)
             {
                 flag2 = false;
-                for (int index = 0; index <= this.ClassName.Length - 1; ++index)
+                for (int index = 0; index <= ClassName.Length - 1; ++index)
                 {
-                    if (string.Equals(this.ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(ClassName[index], uidClass, StringComparison.OrdinalIgnoreCase))
                     {
                         flag2 = true;
                         break;
                     }
                 }
             }
-            if (this.ClassNameNot.Length > 0)
+            if (ClassNameNot.Length > 0)
             {
-                for (int index = 0; index <= this.ClassNameNot.Length - 1; ++index)
+                for (int index = 0; index <= ClassNameNot.Length - 1; ++index)
                 {
-                    if (string.Equals(this.ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(ClassNameNot[index], uidClass, StringComparison.OrdinalIgnoreCase))
                     {
                         flag2 = false;
                         break;
@@ -152,23 +152,23 @@ public class Requirement
         else
         {
             bool flag2 = true;
-            if (this.NClassName.Length > 0)
+            if (NClassName.Length > 0)
             {
                 flag2 = false;
-                for (int index = 0; index < this.NClassName.Length; ++index)
+                for (int index = 0; index < NClassName.Length; ++index)
                 {
-                    if (this.NClassName[index] == nidClass)
+                    if (NClassName[index] == nidClass)
                     {
                         flag2 = true;
                         break;
                     }
                 }
             }
-            if (this.NClassNameNot.Length > 0)
+            if (NClassNameNot.Length > 0)
             {
-                for (int index = 0; index < this.NClassNameNot.Length; ++index)
+                for (int index = 0; index < NClassNameNot.Length; ++index)
                 {
-                    if (this.NClassNameNot[index] == nidClass)
+                    if (NClassNameNot[index] == nidClass)
                     {
                         flag2 = false;
                         break;
@@ -183,25 +183,25 @@ public class Requirement
     public bool ReferencesPower(string uidPower, string uidFix = "")
     {
         bool flag = false;
-        for (int index1 = 0; index1 < this.PowerID.Length; ++index1)
+        for (int index1 = 0; index1 < PowerID.Length; ++index1)
         {
-            for (int index2 = 0; index2 < this.PowerID[index1].Length; ++index2)
+            for (int index2 = 0; index2 < PowerID[index1].Length; ++index2)
             {
-                if (string.Equals(this.PowerID[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(PowerID[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
                 {
                     flag = true;
-                    this.PowerID[index1][index2] = uidFix;
+                    PowerID[index1][index2] = uidFix;
                 }
             }
         }
-        for (int index1 = 0; index1 < this.PowerIDNot.Length; ++index1)
+        for (int index1 = 0; index1 < PowerIDNot.Length; ++index1)
         {
-            for (int index2 = 0; index2 < this.PowerIDNot[index1].Length; ++index2)
+            for (int index2 = 0; index2 < PowerIDNot[index1].Length; ++index2)
             {
-                if (string.Equals(this.PowerIDNot[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(PowerIDNot[index1][index2], uidPower, StringComparison.OrdinalIgnoreCase))
                 {
                     flag = true;
-                    this.PowerIDNot[index1][index2] = uidFix;
+                    PowerIDNot[index1][index2] = uidFix;
                 }
             }
         }
@@ -212,17 +212,17 @@ public class Requirement
     {
         if (power1.StartsWith("!") & (power2.StartsWith("!") | string.IsNullOrEmpty(power2)))
         {
-            Array.Resize<string[]>(ref this.PowerIDNot, this.PowerIDNot.Length + 1);
-            this.PowerIDNot[this.PowerIDNot.Length - 1] = new string[2];
-            this.PowerIDNot[this.PowerIDNot.Length - 1][0] = power1;
-            this.PowerIDNot[this.PowerIDNot.Length - 1][1] = power2;
+            Array.Resize(ref PowerIDNot, PowerIDNot.Length + 1);
+            PowerIDNot[PowerIDNot.Length - 1] = new string[2];
+            PowerIDNot[PowerIDNot.Length - 1][0] = power1;
+            PowerIDNot[PowerIDNot.Length - 1][1] = power2;
         }
         else if (!power1.StartsWith("!") & (!power2.StartsWith("!") | string.IsNullOrEmpty(power2)))
         {
-            Array.Resize<string[]>(ref this.PowerID, this.PowerID.Length + 1);
-            this.PowerID[this.PowerID.Length - 1] = new string[2];
-            this.PowerID[this.PowerID.Length - 1][0] = power1;
-            this.PowerID[this.PowerID.Length - 1][1] = power2;
+            Array.Resize(ref PowerID, PowerID.Length + 1);
+            PowerID[PowerID.Length - 1] = new string[2];
+            PowerID[PowerID.Length - 1][0] = power1;
+            PowerID[PowerID.Length - 1][1] = power2;
         }
         else
         {

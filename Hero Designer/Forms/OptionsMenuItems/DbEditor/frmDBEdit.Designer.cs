@@ -1,4 +1,7 @@
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmDBEdit
@@ -6,7 +9,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -509,6 +512,6 @@ namespace Hero_Designer
         System.Windows.Forms.NumericUpDown udIssue;
         #endregion
 
-        private System.Windows.Forms.Button genIndex;
+        private Button genIndex;
     }
 }

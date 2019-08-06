@@ -1,8 +1,8 @@
 
-using Base.Display;
 using System;
 using System.Drawing;
 using System.IO;
+using Base.Display;
 
 namespace Base.Data_Classes
 {
@@ -69,7 +69,7 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this.ClassType == Enums.eClassType.Hero || this.ClassType == Enums.eClassType.HeroEpic;
+                return ClassType == Enums.eClassType.Hero || ClassType == Enums.eClassType.HeroEpic;
             }
         }
 
@@ -77,38 +77,38 @@ namespace Base.Data_Classes
         {
             get
             {
-                return this.ClassType == Enums.eClassType.HeroEpic || this.ClassType == Enums.eClassType.VillainEpic;
+                return ClassType == Enums.eClassType.HeroEpic || ClassType == Enums.eClassType.VillainEpic;
             }
         }
 
         public Archetype()
         {
-            this.BaseThreat = 1f;
-            this.BaseRegen = 1f;
-            this.BaseRecovery = 1.67f;
-            this.Playable = true;
-            this.PoolGroup = "POOL";
-            this.EpicGroup = "EPIC";
-            this.SecondaryGroup = string.Empty;
-            this.PrimaryGroup = string.Empty;
-            this.ClassName = string.Empty;
-            this.PerceptionCap = 1153f;
-            this.Ancillary = Array.Empty<int>();
-            this.Secondary = Array.Empty<int>();
-            this.Primary = Array.Empty<int>();
-            this.Origin = Array.Empty<string>();
-            this.RecoveryCap = 5f;
-            this.RegenCap = 20f;
-            this.DamageCap = 4f;
-            this.RechargeCap = 5f;
-            this.ResCap = 90f;
-            this.DescShort = string.Empty;
-            this.DescLong = string.Empty;
-            this.HPCap = 5000f;
-            this.Hitpoints = 5000;
-            this.ClassType = Enums.eClassType.None;
-            this.DisplayName = string.Empty;
-            this.Origin = new string[5]
+            BaseThreat = 1f;
+            BaseRegen = 1f;
+            BaseRecovery = 1.67f;
+            Playable = true;
+            PoolGroup = "POOL";
+            EpicGroup = "EPIC";
+            SecondaryGroup = string.Empty;
+            PrimaryGroup = string.Empty;
+            ClassName = string.Empty;
+            PerceptionCap = 1153f;
+            Ancillary = Array.Empty<int>();
+            Secondary = Array.Empty<int>();
+            Primary = Array.Empty<int>();
+            Origin = Array.Empty<string>();
+            RecoveryCap = 5f;
+            RegenCap = 20f;
+            DamageCap = 4f;
+            RechargeCap = 5f;
+            ResCap = 90f;
+            DescShort = string.Empty;
+            DescLong = string.Empty;
+            HPCap = 5000f;
+            Hitpoints = 5000;
+            ClassType = Enums.eClassType.None;
+            DisplayName = string.Empty;
+            Origin = new string[5]
             {
                 "Magic",
                 "Mutation",
@@ -116,94 +116,94 @@ namespace Base.Data_Classes
                 "Science",
                 "Technology"
             };
-            this.DisplayName = "New Archetype";
-            this.ClassName = "NewClass";
+            DisplayName = "New Archetype";
+            ClassName = "NewClass";
         }
 
         public Archetype(Archetype template)
           : this()
         {
-            this.Idx = template.Idx;
-            this.DisplayName = template.DisplayName;
-            this.HPCap = template.HPCap;
-            this.Hitpoints = template.Hitpoints;
-            this.DescLong = template.DescLong;
-            this.DescShort = template.DescShort;
-            this.ResCap = template.ResCap;
-            this.Origin = (string[])template.Origin.Clone();
-            this.Primary = (int[])template.Primary.Clone();
-            this.Secondary = (int[])template.Secondary.Clone();
-            this.Ancillary = (int[])template.Ancillary.Clone();
-            this.ClassName = template.ClassName;
-            this.ClassType = template.ClassType;
-            this.Column = template.Column;
-            this.PrimaryGroup = template.PrimaryGroup;
-            this.SecondaryGroup = template.SecondaryGroup;
-            this.Playable = template.Playable;
-            this.RechargeCap = template.RechargeCap;
-            this.DamageCap = template.DamageCap;
-            this.RecoveryCap = template.RecoveryCap;
-            this.RegenCap = template.RegenCap;
-            this.BaseRecovery = template.BaseRecovery;
-            this.BaseRegen = template.BaseRegen;
-            this.BaseThreat = template.BaseThreat;
-            this.PerceptionCap = template.PerceptionCap;
+            Idx = template.Idx;
+            DisplayName = template.DisplayName;
+            HPCap = template.HPCap;
+            Hitpoints = template.Hitpoints;
+            DescLong = template.DescLong;
+            DescShort = template.DescShort;
+            ResCap = template.ResCap;
+            Origin = (string[])template.Origin.Clone();
+            Primary = (int[])template.Primary.Clone();
+            Secondary = (int[])template.Secondary.Clone();
+            Ancillary = (int[])template.Ancillary.Clone();
+            ClassName = template.ClassName;
+            ClassType = template.ClassType;
+            Column = template.Column;
+            PrimaryGroup = template.PrimaryGroup;
+            SecondaryGroup = template.SecondaryGroup;
+            Playable = template.Playable;
+            RechargeCap = template.RechargeCap;
+            DamageCap = template.DamageCap;
+            RecoveryCap = template.RecoveryCap;
+            RegenCap = template.RegenCap;
+            BaseRecovery = template.BaseRecovery;
+            BaseRegen = template.BaseRegen;
+            BaseThreat = template.BaseThreat;
+            PerceptionCap = template.PerceptionCap;
         }
 
         public Archetype(BinaryReader reader)
           : this()
         {
-            this.DisplayName = reader.ReadString();
-            this.Hitpoints = reader.ReadInt32();
-            this.HPCap = reader.ReadSingle();
-            this.DescLong = reader.ReadString();
-            this.ResCap = reader.ReadSingle();
+            DisplayName = reader.ReadString();
+            Hitpoints = reader.ReadInt32();
+            HPCap = reader.ReadSingle();
+            DescLong = reader.ReadString();
+            ResCap = reader.ReadSingle();
             int num = reader.ReadInt32();
-            this.Origin = new string[num + 1];
+            Origin = new string[num + 1];
             for (int index = 0; index <= num; ++index)
-                this.Origin[index] = reader.ReadString();
-            this.ClassName = reader.ReadString();
-            this.ClassType = (Enums.eClassType)reader.ReadInt32();
-            this.Column = reader.ReadInt32();
-            this.DescShort = reader.ReadString();
-            this.PrimaryGroup = reader.ReadString();
-            this.SecondaryGroup = reader.ReadString();
-            this.Playable = reader.ReadBoolean();
-            this.RechargeCap = reader.ReadSingle();
-            this.DamageCap = reader.ReadSingle();
-            this.RecoveryCap = reader.ReadSingle();
-            this.RegenCap = reader.ReadSingle();
-            this.BaseRecovery = reader.ReadSingle();
-            this.BaseRegen = reader.ReadSingle();
-            this.BaseThreat = reader.ReadSingle();
-            this.PerceptionCap = reader.ReadSingle();
+                Origin[index] = reader.ReadString();
+            ClassName = reader.ReadString();
+            ClassType = (Enums.eClassType)reader.ReadInt32();
+            Column = reader.ReadInt32();
+            DescShort = reader.ReadString();
+            PrimaryGroup = reader.ReadString();
+            SecondaryGroup = reader.ReadString();
+            Playable = reader.ReadBoolean();
+            RechargeCap = reader.ReadSingle();
+            DamageCap = reader.ReadSingle();
+            RecoveryCap = reader.ReadSingle();
+            RegenCap = reader.ReadSingle();
+            BaseRecovery = reader.ReadSingle();
+            BaseRegen = reader.ReadSingle();
+            BaseThreat = reader.ReadSingle();
+            PerceptionCap = reader.ReadSingle();
         }
 
         public void StoreTo(ref BinaryWriter writer)
         {
-            writer.Write(this.DisplayName);
-            writer.Write(this.Hitpoints);
-            writer.Write(this.HPCap);
-            writer.Write(this.DescLong);
-            writer.Write(this.ResCap);
-            writer.Write(this.Origin.Length - 1);
-            for (int index = 0; index < this.Origin.Length; ++index)
-                writer.Write(this.Origin[index]);
-            writer.Write(this.ClassName);
-            writer.Write((int)this.ClassType);
-            writer.Write(this.Column);
-            writer.Write(this.DescShort);
-            writer.Write(this.PrimaryGroup);
-            writer.Write(this.SecondaryGroup);
-            writer.Write(this.Playable);
-            writer.Write(this.RechargeCap);
-            writer.Write(this.DamageCap);
-            writer.Write(this.RecoveryCap);
-            writer.Write(this.RegenCap);
-            writer.Write(this.BaseRecovery);
-            writer.Write(this.BaseRegen);
-            writer.Write(this.BaseThreat);
-            writer.Write(this.PerceptionCap);
+            writer.Write(DisplayName);
+            writer.Write(Hitpoints);
+            writer.Write(HPCap);
+            writer.Write(DescLong);
+            writer.Write(ResCap);
+            writer.Write(Origin.Length - 1);
+            for (int index = 0; index < Origin.Length; ++index)
+                writer.Write(Origin[index]);
+            writer.Write(ClassName);
+            writer.Write((int)ClassType);
+            writer.Write(Column);
+            writer.Write(DescShort);
+            writer.Write(PrimaryGroup);
+            writer.Write(SecondaryGroup);
+            writer.Write(Playable);
+            writer.Write(RechargeCap);
+            writer.Write(DamageCap);
+            writer.Write(RecoveryCap);
+            writer.Write(RegenCap);
+            writer.Write(BaseRecovery);
+            writer.Write(BaseRegen);
+            writer.Write(BaseThreat);
+            writer.Write(PerceptionCap);
         }
 
         public int CompareTo(object obj)
@@ -212,33 +212,33 @@ namespace Base.Data_Classes
                 throw new ArgumentNullException(nameof(obj));
 
             if (!(obj is Archetype archetype)) throw new ArgumentException("Comparison failed - Passed object was not an Archetype Class!");
-            if (this.Playable & !archetype.Playable)
+            if (Playable & !archetype.Playable)
                 return -1;
-            if (!this.Playable & archetype.Playable)
+            if (!Playable & archetype.Playable)
                 return 1;
-            if (this.ClassType == Enums.eClassType.None & archetype.ClassType != Enums.eClassType.None)
+            if (ClassType == Enums.eClassType.None & archetype.ClassType != Enums.eClassType.None)
                 return 1;
-            if (this.ClassType != Enums.eClassType.None & archetype.ClassType == Enums.eClassType.None)
+            if (ClassType != Enums.eClassType.None & archetype.ClassType == Enums.eClassType.None)
                 return -1;
-            if (this.ClassType > archetype.ClassType)
+            if (ClassType > archetype.ClassType)
                 return 1;
-            if (this.ClassType < archetype.ClassType)
+            if (ClassType < archetype.ClassType)
                 return -1;
-            int classNameMatch = string.Compare(this.ClassName, archetype.ClassName, StringComparison.OrdinalIgnoreCase);
+            int classNameMatch = string.Compare(ClassName, archetype.ClassName, StringComparison.OrdinalIgnoreCase);
             if (classNameMatch != 0) return classNameMatch;
-            if (this.Column > archetype.Column) return 1;
-            return this.Column < archetype.Column ? 1 : 0;
+            if (Column > archetype.Column) return 1;
+            return Column < archetype.Column ? 1 : 0;
         }
 
         public PopUp.PopupData PopInfo()
         {
             PopUp.PopupData popupData = new PopUp.PopupData();
-            int index1 = popupData.Add(null);
-            popupData.Sections[index1].Add(this.DisplayName, PopUp.Colors.Title, 1.25f, FontStyle.Bold, 0);
-            popupData.Sections[index1].Add(this.DescShort, PopUp.Colors.Effect, 1f, FontStyle.Bold, 0);
-            popupData.Sections[index1].Add(this.DescLong, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
-            int index2 = popupData.Add(null);
-            popupData.Sections[index2].Add("You can't change archetype once a build has been started.\nIf you want to pick a different archetype, you need to clear the current build and start a new one.", PopUp.Colors.Effect, 0.9f, FontStyle.Bold, 0);
+            int index1 = popupData.Add();
+            popupData.Sections[index1].Add(DisplayName, PopUp.Colors.Title, 1.25f);
+            popupData.Sections[index1].Add(DescShort, PopUp.Colors.Effect);
+            popupData.Sections[index1].Add(DescLong, PopUp.Colors.Text, 0.9f, FontStyle.Bold, 1);
+            int index2 = popupData.Add();
+            popupData.Sections[index2].Add("You can't change archetype once a build has been started.\nIf you want to pick a different archetype, you need to clear the current build and start a new one.", PopUp.Colors.Effect, 0.9f);
             return popupData;
         }
 
@@ -251,25 +251,25 @@ namespace Base.Data_Classes
             if (array.Length < 11)
                 return false;
 
-            this.ClassName = array[0];
-            this.Column = int.Parse(array[1]) - 2;
-            this.DisplayName = array[2];
-            this.DescLong = array[3];
-            this.Origin = array[4].Split(Convert.ToChar(" "));
+            ClassName = array[0];
+            Column = int.Parse(array[1]) - 2;
+            DisplayName = array[2];
+            DescLong = array[3];
+            Origin = array[4].Split(Convert.ToChar(" "));
             string str = array[5];
             if (str.IndexOf("KHELDIAN HERO", StringComparison.OrdinalIgnoreCase) > -1)
-                this.ClassType = Enums.eClassType.HeroEpic;
+                ClassType = Enums.eClassType.HeroEpic;
             else if (str.IndexOf("ARACHNOSSOLDIER VILLAIN", StringComparison.OrdinalIgnoreCase) > -1 || str.IndexOf("ARACHNOSWIDOW VILLAIN", StringComparison.OrdinalIgnoreCase) > -1)
-                this.ClassType = Enums.eClassType.VillainEpic;
+                ClassType = Enums.eClassType.VillainEpic;
             else if (str.IndexOf("HERO", StringComparison.OrdinalIgnoreCase) > -1)
-                this.ClassType = Enums.eClassType.Hero;
+                ClassType = Enums.eClassType.Hero;
             else if (str.IndexOf("VILLAIN", StringComparison.OrdinalIgnoreCase) > -1)
-                this.ClassType = Enums.eClassType.Villain;
-            this.Playable = !string.IsNullOrWhiteSpace(str);
-            this.DescShort = array[6];
-            this.PrimaryGroup = array[8];
-            this.SecondaryGroup = array[9];
-            this.PoolGroup = array[10];
+                ClassType = Enums.eClassType.Villain;
+            Playable = !string.IsNullOrWhiteSpace(str);
+            DescShort = array[6];
+            PrimaryGroup = array[8];
+            SecondaryGroup = array[9];
+            PoolGroup = array[10];
             return true;
         }
     }

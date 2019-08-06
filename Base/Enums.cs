@@ -5,64 +5,64 @@ using System.IO;
 
 public static class Enums
 {
-    public static bool MezDurationEnhancable(Enums.eMez mezEnum)
+    public static bool MezDurationEnhancable(eMez mezEnum)
     {
-        return mezEnum == Enums.eMez.Confused || mezEnum == Enums.eMez.Held || (mezEnum == Enums.eMez.Immobilized || mezEnum == Enums.eMez.Placate) || (mezEnum == Enums.eMez.Sleep || mezEnum == Enums.eMez.Stunned || (mezEnum == Enums.eMez.Taunt || mezEnum == Enums.eMez.Terrorized)) || mezEnum == Enums.eMez.Untouchable;
+        return mezEnum == eMez.Confused || mezEnum == eMez.Held || (mezEnum == eMez.Immobilized || mezEnum == eMez.Placate) || (mezEnum == eMez.Sleep || mezEnum == eMez.Stunned || (mezEnum == eMez.Taunt || mezEnum == eMez.Terrorized)) || mezEnum == eMez.Untouchable;
     }
 
-    public static string GetEffectName(Enums.eEffectType iID)
-    {
-        return iID.ToString();
-    }
-
-    public static string GetEffectNameShort(Enums.eEffectType iID)
-    {
-        return iID != Enums.eEffectType.Endurance ? ((Enums.eEffectTypeShort)iID).ToString() : "End";
-    }
-
-    public static string GetMezName(Enums.eMezShort iID)
-    {
-        return ((Enums.eMez)iID).ToString();
-    }
-
-    public static string GetMezNameShort(Enums.eMezShort iID)
+    public static string GetEffectName(eEffectType iID)
     {
         return iID.ToString();
     }
 
-    public static string GetDamageName(Enums.eDamage iID)
+    public static string GetEffectNameShort(eEffectType iID)
+    {
+        return iID != eEffectType.Endurance ? ((eEffectTypeShort)iID).ToString() : "End";
+    }
+
+    public static string GetMezName(eMezShort iID)
+    {
+        return ((eMez)iID).ToString();
+    }
+
+    public static string GetMezNameShort(eMezShort iID)
     {
         return iID.ToString();
     }
 
-    public static string GetDamageNameShort(Enums.eDamage iID)
+    public static string GetDamageName(eDamage iID)
     {
-        return ((Enums.eDamageShort)iID).ToString();
+        return iID.ToString();
     }
 
-    public static string GetRelativeString(Enums.eEnhRelative iRel, bool onlySign)
+    public static string GetDamageNameShort(eDamage iID)
+    {
+        return ((eDamageShort)iID).ToString();
+    }
+
+    public static string GetRelativeString(eEnhRelative iRel, bool onlySign)
     {
         if (onlySign)
         {
             switch (iRel)
             {
-                case Enums.eEnhRelative.MinusThree:
+                case eEnhRelative.MinusThree:
                     return "---";
-                case Enums.eEnhRelative.MinusTwo:
+                case eEnhRelative.MinusTwo:
                     return "--";
-                case Enums.eEnhRelative.MinusOne:
+                case eEnhRelative.MinusOne:
                     return "-";
-                case Enums.eEnhRelative.Even:
+                case eEnhRelative.Even:
                     return "";
-                case Enums.eEnhRelative.PlusOne:
+                case eEnhRelative.PlusOne:
                     return "+";
-                case Enums.eEnhRelative.PlusTwo:
+                case eEnhRelative.PlusTwo:
                     return "++";
-                case Enums.eEnhRelative.PlusThree:
+                case eEnhRelative.PlusThree:
                     return "+++";
-                case Enums.eEnhRelative.PlusFour:
+                case eEnhRelative.PlusFour:
                     return "+4";
-                case Enums.eEnhRelative.PlusFive:
+                case eEnhRelative.PlusFive:
                     return "+5";
             }
         }
@@ -70,23 +70,23 @@ public static class Enums
         {
             switch (iRel)
             {
-                case Enums.eEnhRelative.MinusThree:
+                case eEnhRelative.MinusThree:
                     return "-3";
-                case Enums.eEnhRelative.MinusTwo:
+                case eEnhRelative.MinusTwo:
                     return "-2";
-                case Enums.eEnhRelative.MinusOne:
+                case eEnhRelative.MinusOne:
                     return "-1";
-                case Enums.eEnhRelative.Even:
+                case eEnhRelative.Even:
                     return "";
-                case Enums.eEnhRelative.PlusOne:
+                case eEnhRelative.PlusOne:
                     return "+1";
-                case Enums.eEnhRelative.PlusTwo:
+                case eEnhRelative.PlusTwo:
                     return "+2";
-                case Enums.eEnhRelative.PlusThree:
+                case eEnhRelative.PlusThree:
                     return "+3";
-                case Enums.eEnhRelative.PlusFour:
+                case eEnhRelative.PlusFour:
                     return "+4";
-                case Enums.eEnhRelative.PlusFive:
+                case eEnhRelative.PlusFive:
                     return "+5";
             }
         }
@@ -101,7 +101,7 @@ public static class Enums
         if (!iStr.Contains(","))
             strArray1 = iStr.Split(' ');
         else
-            strArray1 = Enums.StringToArray(iStr);
+            strArray1 = StringToArray(iStr);
         string[] strArray2 = strArray1;
         int num2;
         if (strArray2.Length < 1)
@@ -118,7 +118,7 @@ public static class Enums
             {
                 if (strArray2[index1].Length > 0)
                 {
-                    int index2 = Array.IndexOf<string>(names, strArray2[index1]);
+                    int index2 = Array.IndexOf(names, strArray2[index1]);
                     if (index2 > -1)
                     {
                         if (noFlag)
@@ -140,7 +140,7 @@ public static class Enums
         if (!iStr.Contains(","))
             strArray1 = iStr.Split(' ');
         else
-            strArray1 = Enums.StringToArray(iStr);
+            strArray1 = StringToArray(iStr);
         string[] strArray2 = strArray1;
         T[] array;
         if (strArray2.Length < 1)
@@ -157,7 +157,7 @@ public static class Enums
             {
                 if (strArray2[index1].Length > 0)
                 {
-                    int index2 = Array.IndexOf<string>(names, strArray2[index1]);
+                    int index2 = Array.IndexOf(names, strArray2[index1]);
                     if (index2 > -1)
                         objList.Add((T)values.GetValue(index2));
                 }
@@ -180,7 +180,7 @@ public static class Enums
             iStr = iStr.ToUpper();
             for (int index = 0; index < names.Length; ++index)
                 names[index] = names[index].ToUpper();
-            flag = Array.IndexOf<string>(names, iStr) > -1;
+            flag = Array.IndexOf(names, iStr) > -1;
         }
         return flag;
     }
@@ -200,7 +200,7 @@ public static class Enums
             char[] chArray = new char[1] { ',' };
             iStr = iStr.Replace(", ", ",");
             string[] array = iStr.Split(chArray);
-            Array.Sort<string>(array);
+            Array.Sort(array);
             strArray2 = array;
         }
         return strArray2;
@@ -209,7 +209,7 @@ public static class Enums
     public static string GetGroupedDamage(bool[] iDamage, bool shortForm)
     {
         string str1;
-        if (iDamage.Length < Enum.GetValues(Enums.eDamage.None.GetType()).Length - 1)
+        if (iDamage.Length < Enum.GetValues(eDamage.None.GetType()).Length - 1)
         {
             str1 = "Error: Array Length Mismatch";
         }
@@ -226,7 +226,7 @@ public static class Enums
                 {
                     if (iDamage[index])
                     {
-                        string str3 = shortForm ? Enums.GetDamageNameShort((Enums.eDamage)index) : Enums.GetDamageName((Enums.eDamage)index);
+                        string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
                         if (!string.IsNullOrEmpty(str2))
                             str2 += ",";
                         str2 += str3;
@@ -241,7 +241,7 @@ public static class Enums
     public static string GetGroupedDefense(bool[] iDamage, bool shortForm)
     {
         string str1;
-        if (iDamage.Length < Enum.GetValues(Enums.eDamage.None.GetType()).Length - 1)
+        if (iDamage.Length < Enum.GetValues(eDamage.None.GetType()).Length - 1)
         {
             str1 = "Error: Array Length Mismatch";
         }
@@ -260,7 +260,7 @@ public static class Enums
                 {
                     if (iDamage[index])
                     {
-                        string str3 = shortForm ? Enums.GetDamageNameShort((Enums.eDamage)index) : Enums.GetDamageName((Enums.eDamage)index);
+                        string str3 = shortForm ? GetDamageNameShort((eDamage)index) : GetDamageName((eDamage)index);
                         if (!string.IsNullOrEmpty(str2))
                             str2 += ",";
                         str2 += str3;
@@ -275,7 +275,7 @@ public static class Enums
     public static string GetGroupedMez(bool[] iMez, bool shortForm)
     {
         string str1;
-        if (iMez.Length < Enum.GetValues(Enums.eMez.None.GetType()).Length - 1)
+        if (iMez.Length < Enum.GetValues(eMez.None.GetType()).Length - 1)
         {
             str1 = "Error: Array Length Mismatch";
         }
@@ -294,7 +294,7 @@ public static class Enums
                 {
                     if (iMez[index])
                     {
-                        string str3 = shortForm ? Enums.GetMezNameShort((Enums.eMezShort)index) : Enums.GetMezName((Enums.eMezShort)index);
+                        string str3 = shortForm ? GetMezNameShort((eMezShort)index) : GetMezName((eMezShort)index);
                         if (!string.IsNullOrEmpty(str2))
                             str2 += ",";
                         str2 += str3;
@@ -330,7 +330,7 @@ public static class Enums
         SpeedRunning,
         ToHit,
         Slow,
-        Absorb,
+        Absorb
     }
 
     public enum eEnhanceShort
@@ -356,7 +356,7 @@ public static class Enums
         Res,
         RunSpd,
         ToHit,
-        Slow,
+        Slow
     }
 
     public enum eSetType
@@ -418,7 +418,7 @@ public static class Enums
         ArchetypeC,
         ArchetypeD,
         ArchetypeE,
-        ArchetypeF,
+        ArchetypeF
     }
 
     public struct sEnhClass
@@ -437,7 +437,7 @@ public static class Enums
         B = 1,
         C = 2,
         D = 3,
-        Multiple = 4,
+        Multiple = 4
     }
 
     public enum eType
@@ -446,7 +446,7 @@ public static class Enums
         Normal,
         InventO,
         SpecialO,
-        SetO,
+        SetO
     }
 
     public enum eSubtype
@@ -454,7 +454,7 @@ public static class Enums
         None,
         Hamidon,
         Hydra,
-        Titan,
+        Titan
     }
 
     public enum eEffMode
@@ -462,14 +462,14 @@ public static class Enums
         Enhancement,
         FX,
         PowerEnh,
-        PowerProc,
+        PowerProc
     }
 
     public enum eBuffDebuff
     {
         Any,
         BuffOnly,
-        DeBuffOnly,
+        DeBuffOnly
     }
 
     public struct sTwinID
@@ -480,24 +480,24 @@ public static class Enums
 
     public struct sEffect
     {
-        public Enums.eEffMode Mode;
-        public Enums.eBuffDebuff BuffMode;
-        public Enums.sTwinID Enhance;
-        public Enums.eSchedule Schedule;
+        public eEffMode Mode;
+        public eBuffDebuff BuffMode;
+        public sTwinID Enhance;
+        public eSchedule Schedule;
         public float Multiplier;
         public IEffect FX;
 
-        public void Assign(Enums.sEffect effect)
+        public void Assign(sEffect effect)
         {
-            this.Mode = effect.Mode;
-            this.BuffMode = effect.BuffMode;
-            this.Enhance.ID = effect.Enhance.ID;
-            this.Enhance.SubID = effect.Enhance.SubID;
-            this.Schedule = effect.Schedule;
-            this.Multiplier = effect.Multiplier;
+            Mode = effect.Mode;
+            BuffMode = effect.BuffMode;
+            Enhance.ID = effect.Enhance.ID;
+            Enhance.SubID = effect.Enhance.SubID;
+            Schedule = effect.Schedule;
+            Multiplier = effect.Multiplier;
             if (effect.FX == null)
                 return;
-            this.FX = (IEffect)effect.FX.Clone();
+            FX = (IEffect)effect.FX.Clone();
         }
     }
 
@@ -511,7 +511,7 @@ public static class Enums
         Pool1 = 4,
         Pool2 = 5,
         Pool3 = 6,
-        Ancillary = 7,
+        Ancillary = 7
     }
 
     public enum ePowerState
@@ -519,7 +519,7 @@ public static class Enums
         Disabled,
         Empty,
         Used,
-        Open,
+        Open
     }
 
     public enum eMutex
@@ -528,34 +528,34 @@ public static class Enums
         NoConflict,
         MutexFound,
         DetoggleMaster,
-        DetoggleSlave,
+        DetoggleSlave
     }
 
     public enum eSummonEntity
     {
         Pet,
-        Henchman,
+        Henchman
     }
 
     public enum eOverrideBoolean
     {
         NoOverride,
         TrueOverride,
-        FalseOverride,
+        FalseOverride
     }
 
     public enum eAttribType
     {
         Magnitude,
         Duration,
-        Expression,
+        Expression
     }
 
     public enum ePvX
     {
         Any,
         PvE,
-        PvP,
+        PvP
     }
 
     public enum eToWho
@@ -563,7 +563,7 @@ public static class Enums
         Unspecified,
         Target,
         Self,
-        All,
+        All
     }
 
     public enum eAspect
@@ -572,13 +572,13 @@ public static class Enums
         Max,
         Abs,
         Str,
-        Cur,
+        Cur
     }
 
     public enum eStacking
     {
         No,
-        Yes,
+        Yes
     }
 
     public enum eClassType
@@ -589,7 +589,7 @@ public static class Enums
         Villain,
         VillainEpic,
         Henchman,
-        Pet,
+        Pet
     }
 
     public enum Alignment
@@ -599,7 +599,7 @@ public static class Enums
         Vigilante,
         Villain,
         Loyalist,
-        Resistance,
+        Resistance
     }
 
     [Flags]
@@ -618,7 +618,7 @@ public static class Enums
         ActivateAttackClick = 512, // 0x00000200
         Damaged = 1024, // 0x00000400
         Phased1 = 2048, // 0x00000800
-        Confused = 4096, // 0x00001000
+        Confused = 4096 // 0x00001000
     }
 
     public enum ePowerSetType
@@ -634,7 +634,7 @@ public static class Enums
         Pet,
         SetBonus,
         Boost,
-        Incarnate,
+        Incarnate
     }
 
     public enum ePowerType
@@ -644,7 +644,7 @@ public static class Enums
         Toggle,
         Boost,
         Inspiration,
-        GlobalBoost,
+        GlobalBoost
     }
 
     [Flags]
@@ -660,7 +660,7 @@ public static class Enums
         Fire_Attack = 64, // 0x00000040
         Energy_Attack = 128, // 0x00000080
         Negative_Energy_Attack = 256, // 0x00000100
-        Psionic_Attack = 512, // 0x00000200
+        Psionic_Attack = 512 // 0x00000200
     }
 
     public enum eEffectArea
@@ -673,7 +673,7 @@ public static class Enums
         Volume,
         Map,
         Room,
-        Touch,
+        Touch
     }
 
     [Flags]
@@ -682,7 +682,7 @@ public static class Enums
         None = 0,
         NearGround = 1,
         TargetNearGround = 2,
-        CastableAfterDeath = 4,
+        CastableAfterDeath = 4
     }
 
     [Flags]
@@ -709,7 +709,7 @@ public static class Enums
         Shivan_Mode = 131072, // 0x00020000
         Unknown18 = 262144, // 0x00040000
         Warshade_Blaster_Mode = 524288, // 0x00080000
-        Warshade_Tanker_Mode = 1048576, // 0x00100000
+        Warshade_Tanker_Mode = 1048576 // 0x00100000
     }
 
     public enum eEnhGrade
@@ -717,7 +717,7 @@ public static class Enums
         None,
         TrainingO,
         DualO,
-        SingleO,
+        SingleO
     }
 
     public enum eEnhRelative
@@ -731,7 +731,7 @@ public static class Enums
         PlusTwo,
         PlusThree,
         PlusFour,
-        PlusFive,
+        PlusFive
     }
 
     public enum eDamage
@@ -751,7 +751,7 @@ public static class Enums
         AoE,
         Unique1,
         Unique2,
-        Unique3,
+        Unique3
     }
 
     public enum eCSVImport_Damage
@@ -771,7 +771,7 @@ public static class Enums
         AoE,
         Unique1,
         Unique2,
-        Unique3,
+        Unique3
     }
 
     public enum eCSVImport_Damage_Def
@@ -788,7 +788,7 @@ public static class Enums
         Special,
         Melee_Attack,
         Ranged_Attack,
-        AoE_Attack,
+        AoE_Attack
     }
 
     public enum eCSVImport_Damage_Elusivity
@@ -805,7 +805,7 @@ public static class Enums
         Special_Elude,
         Melee_Elude,
         Ranged_Elude,
-        AoE_Elude,
+        AoE_Elude
     }
 
     public enum eDamageShort
@@ -822,14 +822,14 @@ public static class Enums
         Spec,
         Melee,
         Rngd,
-        AoE,
+        AoE
     }
 
     public enum eBuffMode
     {
         Normal,
         Buff,
-        Debuff,
+        Debuff
     }
 
     [Flags]
@@ -862,7 +862,7 @@ public static class Enums
         DeadOrAliveFoe = 16777216, // 0x01000000
         DeadOrAliveLeaguemate = 33554432, // 0x02000000
         DeadPlayerFriend = 67108864, // 0x04000000
-        MyOwner = 134217728, // 0x08000000
+        MyOwner = 134217728 // 0x08000000
     }
 
     public enum eNotify
@@ -870,7 +870,7 @@ public static class Enums
         Always,
         Never,
         MissOnly,
-        HitOnly,
+        HitOnly
     }
 
     public enum eMez
@@ -894,7 +894,7 @@ public static class Enums
         Afraid,
         Avoid,
         CombatPhase,
-        Intangible,
+        Intangible
     }
 
     public enum eMezShort
@@ -918,7 +918,7 @@ public static class Enums
         Afraid,
         Avoid,
         Phased,
-        Intan,
+        Intan
     }
 
     public enum eEffectType
@@ -1006,7 +1006,7 @@ public static class Enums
         SteamJump,
         Walk,
         XPDebt,
-        ForceMove,
+        ForceMove
     }
 
     public enum eEffectTypeShort
@@ -1094,7 +1094,7 @@ public static class Enums
         SteamJump,
         Walk,
         XPDebt,
-        ForceMove,
+        ForceMove
     }
 
     public enum eEffectClass
@@ -1104,7 +1104,7 @@ public static class Enums
         Tertiary,
         Special,
         Ignored,
-        DisplayOnly,
+        DisplayOnly
     }
 
     public enum eSpecialCase
@@ -1157,7 +1157,7 @@ public static class Enums
         EfficientAdaptation,
         OffensiveAdaptation,
         NotDefensiveAdaptation,
-        NotDefensiveNorOffensiveAdaptation,
+        NotDefensiveNorOffensiveAdaptation
     }
 
     public enum eDDStyle
@@ -1165,7 +1165,7 @@ public static class Enums
         Text,
         Graph,
         TextOnGraph,
-        TextUnderGraph,
+        TextUnderGraph
     }
 
     public enum eDDText
@@ -1176,7 +1176,7 @@ public static class Enums
         pcOfBase,
         pcMaxBase,
         pcMaxEnh,
-        DPS,
+        DPS
     }
 
     public enum eDDGraph
@@ -1184,14 +1184,14 @@ public static class Enums
         Simple,
         Enhanced,
         Both,
-        Stacked,
+        Stacked
     }
 
     public enum eDDAlign
     {
         Left,
         Center,
-        Right,
+        Right
     }
 
     public enum eVisibleSize
@@ -1199,7 +1199,7 @@ public static class Enums
         Full,
         Small,
         VerySmall,
-        Compact,
+        Compact
     }
 
     public enum GraphStyle
@@ -1207,27 +1207,27 @@ public static class Enums
         Twin,
         Stacked,
         baseOnly,
-        enhOnly,
+        enhOnly
     }
 
     public enum dmItem
     {
         None,
         Power,
-        Slot,
+        Slot
     }
 
     public enum dmModes
     {
         LevelUp,
         Dynamic,
-        Respec,
+        Respec
     }
 
     public enum eInterfaceMode
     {
         Normal,
-        PowerToggle,
+        PowerToggle
     }
 
     public enum eSpeedMeasure
@@ -1235,7 +1235,7 @@ public static class Enums
         FeetPerSecond,
         MetersPerSecond,
         MilesPerHour,
-        KilometersPerHour,
+        KilometersPerHour
     }
 
     public struct ShortFX
@@ -1248,7 +1248,7 @@ public static class Enums
         {
             get
             {
-                return this.Index != null && this.Index.Length >= 1 && this.Index[0] != -1;
+                return Index != null && Index.Length >= 1 && Index[0] != -1;
             }
         }
 
@@ -1256,7 +1256,7 @@ public static class Enums
         {
             get
             {
-                return this.Index != null && this.Index.Length > 1;
+                return Index != null && Index.Length > 1;
             }
         }
 
@@ -1267,13 +1267,13 @@ public static class Enums
                 float num1 = 0.0f;
                 int num2 = 0;
                 int num3;
-                if (this.Present)
+                if (Present)
                 {
-                    for (int index = 0; index < this.Value.Length; ++index)
+                    for (int index = 0; index < Value.Length; ++index)
                     {
-                        if ((double)this.Value[index] > (double)num1)
+                        if (Value[index] > (double)num1)
                         {
-                            num1 = this.Value[index];
+                            num1 = Value[index];
                             num2 = index;
                         }
                     }
@@ -1287,67 +1287,67 @@ public static class Enums
 
         public void Add(int iIndex, float iValue)
         {
-            if (this.Value == null)
+            if (Value == null)
             {
-                this.Value = new float[0];
-                this.Index = new int[0];
-                this.Sum = 0.0f;
+                Value = new float[0];
+                Index = new int[0];
+                Sum = 0.0f;
             }
-            Array.Resize<float>(ref this.Value, this.Value.Length + 1);
-            Array.Resize<int>(ref this.Index, this.Index.Length + 1);
-            this.Value[this.Value.Length - 1] = iValue;
-            this.Index[this.Index.Length - 1] = iIndex;
-            this.Sum += iValue;
+            Array.Resize(ref Value, Value.Length + 1);
+            Array.Resize(ref Index, Index.Length + 1);
+            Value[Value.Length - 1] = iValue;
+            Index[Index.Length - 1] = iIndex;
+            Sum += iValue;
         }
 
         public void Remove(int iIndex)
         {
-            float[] numArray1 = new float[this.Value.Length - 1];
-            int[] numArray2 = new int[this.Index.Length - 1];
+            float[] numArray1 = new float[Value.Length - 1];
+            int[] numArray2 = new int[Index.Length - 1];
             int index1 = 0;
-            for (int index2 = 0; index2 <= this.Index.Length - 1; ++index2)
+            for (int index2 = 0; index2 <= Index.Length - 1; ++index2)
             {
                 if (index2 != iIndex)
                 {
-                    numArray1[index1] = this.Value[index2];
-                    numArray2[index1] = this.Index[index2];
+                    numArray1[index1] = Value[index2];
+                    numArray2[index1] = Index[index2];
                     ++index1;
                 }
             }
-            this.Value = numArray1;
-            this.Index = numArray2;
+            Value = numArray1;
+            Index = numArray2;
         }
 
-        public void Assign(Enums.ShortFX iFX)
+        public void Assign(ShortFX iFX)
         {
             if (iFX.Present)
             {
-                this.Index = iFX.Index;
-                this.Value = iFX.Value;
-                this.Sum = iFX.Sum;
+                Index = iFX.Index;
+                Value = iFX.Value;
+                Sum = iFX.Sum;
             }
             else
             {
-                this.Index = new int[0];
-                this.Value = new float[0];
-                this.Sum = 0.0f;
+                Index = new int[0];
+                Value = new float[0];
+                Sum = 0.0f;
             }
         }
 
         public void Multiply()
         {
-            if (this.Value == null)
+            if (Value == null)
                 return;
-            for (int index = 0; index <= this.Value.Length - 1; ++index)
-                this.Value[index] *= 100f;
-            this.Sum *= 100f;
+            for (int index = 0; index <= Value.Length - 1; ++index)
+                Value[index] *= 100f;
+            Sum *= 100f;
         }
 
         public void ReSum()
         {
-            this.Sum = 0.0f;
-            for (int index = 0; index < this.Value.Length; ++index)
-                this.Sum += this.Value[index];
+            Sum = 0.0f;
+            for (int index = 0; index < Value.Length; ++index)
+                Sum += Value[index];
         }
     }
 
@@ -1360,13 +1360,13 @@ public static class Enums
 
         public void Init()
         {
-            this.IdxAT = new int[2];
-            this.IdxSet = new int[2];
-            this.Map = new int[21, 2];
+            IdxAT = new int[2];
+            IdxSet = new int[2];
+            Map = new int[21, 2];
             for (int index = 0; index < 21; ++index)
             {
-                this.Map[index, 0] = -1;
-                this.Map[index, 1] = -1;
+                Map[index, 0] = -1;
+                Map[index, 1] = -1;
             }
         }
     }
@@ -1394,17 +1394,17 @@ public static class Enums
 
         public void Reset()
         {
-            this.MaxEnd = 0.0f;
-            this.Effect = new float[Enum.GetValues(Enums.eEffectType.None.GetType()).Length];
-            this.EffectAux = new float[this.Effect.Length - 1];
-            this.Mez = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-            this.MezRes = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-            this.Damage = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-            this.Defense = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-            this.Resistance = new float[Enum.GetValues(Enums.eDamage.None.GetType()).Length];
-            this.StatusProtection = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-            this.StatusResistance = new float[Enum.GetValues(Enums.eMez.None.GetType()).Length];
-            this.DebuffResistance = new float[Enum.GetValues(Enums.eEffectType.None.GetType()).Length];
+            MaxEnd = 0.0f;
+            Effect = new float[Enum.GetValues(eEffectType.None.GetType()).Length];
+            EffectAux = new float[Effect.Length - 1];
+            Mez = new float[Enum.GetValues(eMez.None.GetType()).Length];
+            MezRes = new float[Enum.GetValues(eMez.None.GetType()).Length];
+            Damage = new float[Enum.GetValues(eDamage.None.GetType()).Length];
+            Defense = new float[Enum.GetValues(eDamage.None.GetType()).Length];
+            Resistance = new float[Enum.GetValues(eDamage.None.GetType()).Length];
+            StatusProtection = new float[Enum.GetValues(eMez.None.GetType()).Length];
+            StatusResistance = new float[Enum.GetValues(eMez.None.GetType()).Length];
+            DebuffResistance = new float[Enum.GetValues(eEffectType.None.GetType()).Length];
         }
     }
 
@@ -1416,16 +1416,16 @@ public static class Enums
 
         public void Load(BinaryReader reader)
         {
-            this.Revision = reader.ReadInt32();
-            this.RevisionDate = DateTime.FromBinary(reader.ReadInt64());
-            this.SourceFile = reader.ReadString();
+            Revision = reader.ReadInt32();
+            RevisionDate = DateTime.FromBinary(reader.ReadInt64());
+            SourceFile = reader.ReadString();
         }
 
         public void StoreTo(BinaryWriter writer)
         {
-            writer.Write(this.Revision);
-            writer.Write(this.RevisionDate.ToBinary());
-            writer.Write(FileIO.StripPath(this.SourceFile));
+            writer.Write(Revision);
+            writer.Write(RevisionDate.ToBinary());
+            writer.Write(FileIO.StripPath(SourceFile));
         }
     }
 }

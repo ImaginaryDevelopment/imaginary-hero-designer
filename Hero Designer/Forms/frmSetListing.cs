@@ -1,13 +1,14 @@
 
-using Base.Display;
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base.Display;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -16,11 +17,11 @@ namespace Hero_Designer
 
         public frmSetListing()
         {
-            this.Load += new EventHandler(this.frmSetListing_Load);
-            this.InitializeComponent();
-            this.Name = nameof(frmSetListing);
+            Load += frmSetListing_Load;
+            InitializeComponent();
+            Name = nameof(frmSetListing);
             var componentResourceManager = new ComponentResourceManager(typeof(frmSetListing));
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         public void AddListItem(int Index)
@@ -40,9 +41,9 @@ namespace Hero_Designer
                     ++num1;
             }
             items[5] = Conversions.ToString(num1);
-            this.lvSets.Items.Add(new ListViewItem(items, Index));
-            this.lvSets.Items[this.lvSets.Items.Count - 1].Selected = true;
-            this.lvSets.Items[this.lvSets.Items.Count - 1].EnsureVisible();
+            lvSets.Items.Add(new ListViewItem(items, Index));
+            lvSets.Items[lvSets.Items.Count - 1].Selected = true;
+            lvSets.Items[lvSets.Items.Count - 1].EnsureVisible();
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -54,58 +55,58 @@ namespace Hero_Designer
             if (frmSetEdit.DialogResult != DialogResult.OK)
                 return;
             DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEdit.mySet));
-            this.ImageUpdate();
-            this.AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
+            ImageUpdate();
+            AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
 
         {
-            this.Hide();
+            Hide();
         }
 
         void btnClone_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0)
+            if (lvSets.SelectedIndices.Count <= 0)
                 return;
-            EnhancementSet iSet = new EnhancementSet(DatabaseAPI.Database.EnhancementSets[this.lvSets.SelectedIndices[0]]);
+            EnhancementSet iSet = new EnhancementSet(DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]]);
             iSet.DisplayName += " Copy";
             frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
             int num = (int)frmSetEdit.ShowDialog();
             if (frmSetEdit.DialogResult == DialogResult.OK)
             {
                 DatabaseAPI.Database.EnhancementSets.Add(new EnhancementSet(frmSetEdit.mySet));
-                this.ImageUpdate();
-                this.AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
+                ImageUpdate();
+                AddListItem(DatabaseAPI.Database.EnhancementSets.Count - 1);
             }
         }
 
         void btnDelete_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete set: " + this.lvSets.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
+            if (lvSets.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete set: " + lvSets.SelectedItems[0].Text + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
-            int selectedIndex = this.lvSets.SelectedIndices[0];
+            int selectedIndex = lvSets.SelectedIndices[0];
             DatabaseAPI.Database.EnhancementSets.RemoveAt(selectedIndex);
             DatabaseAPI.MatchEnhancementIDs();
-            this.DisplayList();
-            if (this.lvSets.Items.Count > 0)
+            DisplayList();
+            if (lvSets.Items.Count > 0)
             {
-                if (this.lvSets.Items.Count > selectedIndex)
-                    this.lvSets.Items[selectedIndex].Selected = true;
-                else if (this.lvSets.Items.Count == selectedIndex)
-                    this.lvSets.Items[selectedIndex - 1].Selected = true;
+                if (lvSets.Items.Count > selectedIndex)
+                    lvSets.Items[selectedIndex].Selected = true;
+                else if (lvSets.Items.Count == selectedIndex)
+                    lvSets.Items[selectedIndex - 1].Selected = true;
             }
         }
 
         void btnDown_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0)
+            if (lvSets.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvSets.SelectedIndices[0];
-            if (selectedIndex < this.lvSets.Items.Count - 1)
+            int selectedIndex = lvSets.SelectedIndices[0];
+            if (selectedIndex < lvSets.Items.Count - 1)
             {
                 EnhancementSet[] enhancementSetArray = new EnhancementSet[2]
                 {
@@ -115,42 +116,42 @@ namespace Hero_Designer
                 DatabaseAPI.Database.EnhancementSets[selectedIndex + 1] = new EnhancementSet(enhancementSetArray[0]);
                 DatabaseAPI.Database.EnhancementSets[selectedIndex] = new EnhancementSet(enhancementSetArray[1]);
                 DatabaseAPI.MatchEnhancementIDs();
-                ListViewItem listViewItem1 = (ListViewItem)this.lvSets.Items[selectedIndex].Clone();
-                ListViewItem listViewItem2 = (ListViewItem)this.lvSets.Items[selectedIndex + 1].Clone();
-                this.lvSets.Items[selectedIndex] = listViewItem2;
-                this.lvSets.Items[selectedIndex + 1] = listViewItem1;
-                this.lvSets.Items[selectedIndex + 1].Selected = true;
-                this.lvSets.Items[selectedIndex + 1].EnsureVisible();
+                ListViewItem listViewItem1 = (ListViewItem)lvSets.Items[selectedIndex].Clone();
+                ListViewItem listViewItem2 = (ListViewItem)lvSets.Items[selectedIndex + 1].Clone();
+                lvSets.Items[selectedIndex] = listViewItem2;
+                lvSets.Items[selectedIndex + 1] = listViewItem1;
+                lvSets.Items[selectedIndex + 1].Selected = true;
+                lvSets.Items[selectedIndex + 1].EnsureVisible();
             }
         }
 
         void btnEdit_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0)
+            if (lvSets.SelectedIndices.Count <= 0)
                 return;
             bool flag = false;
             string uidOld = "";
-            int selectedIndex1 = this.lvSets.SelectedIndices[0];
+            int selectedIndex1 = lvSets.SelectedIndices[0];
             EnhancementSetCollection enhancementSets = DatabaseAPI.Database.EnhancementSets;
-            int selectedIndex2 = this.lvSets.SelectedIndices[0];
+            int selectedIndex2 = lvSets.SelectedIndices[0];
             EnhancementSet iSet = enhancementSets[selectedIndex2];
             enhancementSets[selectedIndex2] = iSet;
             frmSetEdit frmSetEdit = new frmSetEdit(ref iSet);
             int num = (int)frmSetEdit.ShowDialog();
             if (frmSetEdit.DialogResult == DialogResult.OK)
             {
-                if (frmSetEdit.mySet.Uid != DatabaseAPI.Database.EnhancementSets[this.lvSets.SelectedIndices[0]].Uid)
+                if (frmSetEdit.mySet.Uid != DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]].Uid)
                 {
                     flag = true;
-                    uidOld = DatabaseAPI.Database.EnhancementSets[this.lvSets.SelectedIndices[0]].Uid;
+                    uidOld = DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]].Uid;
                 }
-                DatabaseAPI.Database.EnhancementSets[this.lvSets.SelectedIndices[0]] = new EnhancementSet(frmSetEdit.mySet);
-                this.ImageUpdate();
-                this.UpdateListItem(selectedIndex1);
+                DatabaseAPI.Database.EnhancementSets[lvSets.SelectedIndices[0]] = new EnhancementSet(frmSetEdit.mySet);
+                ImageUpdate();
+                UpdateListItem(selectedIndex1);
                 if (flag)
                 {
-                    frmSetListing.RenameIOSet(uidOld, frmSetEdit.mySet.Uid);
+                    RenameIOSet(uidOld, frmSetEdit.mySet.Uid);
                     DatabaseAPI.MatchEnhancementIDs();
                 }
             }
@@ -158,17 +159,17 @@ namespace Hero_Designer
 
         void btnSave_Click(object sender, EventArgs e)
         {
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveEnhancementDb(serializer);
-            this.Hide();
+            Hide();
         }
 
         void btnUp_Click(object sender, EventArgs e)
 
         {
-            if (this.lvSets.SelectedIndices.Count <= 0)
+            if (lvSets.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvSets.SelectedIndices[0];
+            int selectedIndex = lvSets.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
                 EnhancementSet[] enhancementSetArray = new EnhancementSet[2]
@@ -179,39 +180,39 @@ namespace Hero_Designer
                 DatabaseAPI.Database.EnhancementSets[selectedIndex - 1] = new EnhancementSet(enhancementSetArray[0]);
                 DatabaseAPI.Database.EnhancementSets[selectedIndex] = new EnhancementSet(enhancementSetArray[1]);
                 DatabaseAPI.MatchEnhancementIDs();
-                ListViewItem listViewItem1 = (ListViewItem)this.lvSets.Items[selectedIndex].Clone();
-                ListViewItem listViewItem2 = (ListViewItem)this.lvSets.Items[selectedIndex - 1].Clone();
-                this.lvSets.Items[selectedIndex] = listViewItem2;
-                this.lvSets.Items[selectedIndex - 1] = listViewItem1;
-                this.lvSets.Items[selectedIndex - 1].Selected = true;
-                this.lvSets.Items[selectedIndex - 1].EnsureVisible();
+                ListViewItem listViewItem1 = (ListViewItem)lvSets.Items[selectedIndex].Clone();
+                ListViewItem listViewItem2 = (ListViewItem)lvSets.Items[selectedIndex - 1].Clone();
+                lvSets.Items[selectedIndex] = listViewItem2;
+                lvSets.Items[selectedIndex - 1] = listViewItem1;
+                lvSets.Items[selectedIndex - 1].Selected = true;
+                lvSets.Items[selectedIndex - 1].EnsureVisible();
             }
         }
 
         public void DisplayList()
         {
-            this.lvSets.BeginUpdate();
-            this.lvSets.Items.Clear();
-            this.ImageUpdate();
+            lvSets.BeginUpdate();
+            lvSets.Items.Clear();
+            ImageUpdate();
             int num = DatabaseAPI.Database.EnhancementSets.Count - 1;
             for (int Index = 0; Index <= num; ++Index)
-                this.AddListItem(Index);
-            if (this.lvSets.Items.Count > 0)
+                AddListItem(Index);
+            if (lvSets.Items.Count > 0)
             {
-                this.lvSets.Items[0].Selected = true;
-                this.lvSets.Items[0].EnsureVisible();
+                lvSets.Items[0].Selected = true;
+                lvSets.Items[0].EnsureVisible();
             }
-            this.lvSets.EndUpdate();
+            lvSets.EndUpdate();
         }
 
         public void FillImageList()
         {
-            Size imageSize1 = this.ilSets.ImageSize;
+            Size imageSize1 = ilSets.ImageSize;
             int width1 = imageSize1.Width;
-            imageSize1 = this.ilSets.ImageSize;
+            imageSize1 = ilSets.ImageSize;
             int height1 = imageSize1.Height;
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(width1, height1);
-            this.ilSets.Images.Clear();
+            ilSets.Images.Clear();
             int num = DatabaseAPI.Database.EnhancementSets.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
@@ -220,17 +221,17 @@ namespace Hero_Designer
                     extendedBitmap.Graphics.Clear(Color.White);
                     Graphics graphics = extendedBitmap.Graphics;
                     I9Gfx.DrawEnhancementSet(ref graphics, DatabaseAPI.Database.EnhancementSets[index].ImageIdx);
-                    this.ilSets.Images.Add((Image)extendedBitmap.Bitmap);
+                    ilSets.Images.Add(extendedBitmap.Bitmap);
                 }
                 else
                 {
-                    ImageList.ImageCollection images = this.ilSets.Images;
-                    Size imageSize2 = this.ilSets.ImageSize;
+                    ImageList.ImageCollection images = ilSets.Images;
+                    Size imageSize2 = ilSets.ImageSize;
                     int width2 = imageSize2.Width;
-                    imageSize2 = this.ilSets.ImageSize;
+                    imageSize2 = ilSets.ImageSize;
                     int height2 = imageSize2.Height;
                     Bitmap bitmap = new Bitmap(width2, height2);
-                    images.Add((Image)bitmap);
+                    images.Add(bitmap);
                 }
             }
         }
@@ -238,15 +239,15 @@ namespace Hero_Designer
         void frmSetListing_Load(object sender, EventArgs e)
 
         {
-            this.DisplayList();
+            DisplayList();
         }
 
         public void ImageUpdate()
         {
-            if (this.NoReload.Checked)
+            if (NoReload.Checked)
                 return;
             I9Gfx.LoadSets();
-            this.FillImageList();
+            FillImageList();
         }
 
         [DebuggerStepThrough]
@@ -254,7 +255,7 @@ namespace Hero_Designer
         void lvSets_DoubleClick(object sender, EventArgs e)
 
         {
-            this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
+            btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         void lvSets_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,7 +266,7 @@ namespace Hero_Designer
         void NoReload_CheckedChanged(object sender, EventArgs e)
 
         {
-            this.ImageUpdate();
+            ImageUpdate();
         }
 
         static void RenameIOSet(string uidOld, string uidNew)
@@ -298,9 +299,9 @@ namespace Hero_Designer
             strArray[5] = Conversions.ToString(num1);
             int num3 = strArray.Length - 1;
             for (int index = 0; index <= num3; ++index)
-                this.lvSets.Items[Index].SubItems[index].Text = strArray[index];
-            this.lvSets.Items[Index].ImageIndex = Index;
-            this.lvSets.Refresh();
+                lvSets.Items[Index].SubItems[index].Text = strArray[index];
+            lvSets.Items[Index].ImageIndex = Index;
+            lvSets.Refresh();
         }
     }
 }

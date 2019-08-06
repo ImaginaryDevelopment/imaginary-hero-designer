@@ -1,11 +1,9 @@
-﻿using Base.Master_Classes;
-using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.AccessControl;
+using Base.Master_Classes;
+using Microsoft.Win32;
 
 namespace Hero_Designer
 {
@@ -109,21 +107,18 @@ namespace Hero_Designer
                 // error condition-ish
                 if (itemNames.Any(name => name.Length > 1))
                     return false;
-                var nextLetter = itemNames.Any() ? (char)((int)itemNames.Max()[0] + 1) : 'a';
+                var nextLetter = itemNames.Any() ? (char)(itemNames.Max()[0] + 1) : 'a';
                 if (itemNames.Length == 0)
                 {
 
                 }
-                else
-                {
 
-                }
                 var mruListValue = (string)owlKey.GetValue(MRUListValueName);
                 // error condition
                 if (mruListValue != null && mruListValue.Contains(nextLetter))
                     return false;
                 owlKey.SetValue(nextLetter.ToString(), MidsContext.AssemblyName);
-                owlKey.SetValue(MRUListValueName, nextLetter.ToString() + mruListValue);
+                owlKey.SetValue(MRUListValueName, nextLetter + mruListValue);
             }
             return true;
         }
@@ -140,34 +135,46 @@ namespace Hero_Designer
         // example : SetAssociation(".ucs", "UCS_Editor_File", Application.ExecutablePath, "UCS File"); 
         static void SetAssociation(string extension, string keyName, string openWith, string fileDescription)
         {
-            RegistryKey baseKey;
-            RegistryKey openMethod;
-            RegistryKey shell;
-            RegistryKey currentUser;
-
-            baseKey = Registry.ClassesRoot.CreateSubKey(extension);
-            baseKey.SetValue("", keyName);
-
-            openMethod = Registry.ClassesRoot.CreateSubKey(keyName);
-            openMethod.SetValue("", fileDescription);
-            openMethod.CreateSubKey("DefaultIcon").SetValue("", "\"" + openWith + "\",0");
-            shell = openMethod.CreateSubKey("Shell");
-            shell.CreateSubKey("edit").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
-            shell.CreateSubKey("open").CreateSubKey("command").SetValue("", "\"" + openWith + "\"" + " \"%1\"");
-            baseKey.Close();
-            openMethod.Close();
-            shell.Close();
-
-            currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
-            using (var uc = currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree, System.Security.AccessControl.RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+            var baseKey = Registry.ClassesRoot.CreateSubKey(extension);
+            if (baseKey != null)
             {
-                uc.SetValue("Progid", keyName, RegistryValueKind.String);
+                baseKey.SetValue("", keyName);
+
+                var openMethod = Registry.ClassesRoot.CreateSubKey(keyName);
+                if (openMethod != null)
+                {
+                    openMethod.SetValue("", fileDescription);
+                    openMethod.CreateSubKey("DefaultIcon")?.SetValue("", "\"" + openWith + "\",0");
+                    var shell = openMethod.CreateSubKey("Shell");
+                    if (shell != null)
+                    {
+                        shell.CreateSubKey("edit")?.CreateSubKey("command")
+                            ?.SetValue("", "\"" + openWith + "\"" + " \"%1\"");
+                        shell.CreateSubKey("open")?.CreateSubKey("command")
+                            ?.SetValue("", "\"" + openWith + "\"" + " \"%1\"");
+                        baseKey.Close();
+                        openMethod.Close();
+                        shell.Close();
+                    }
+                }
             }
+
+            var currentUser = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\" + extension);
+            if (currentUser != null)
+                using (var uc =
+                    currentUser.OpenSubKey("UserChoice", RegistryKeyPermissionCheck.ReadWriteSubTree,
+                        RegistryRights.FullControl) ?? currentUser.CreateSubKey("UserChoice", true))
+                {
+                    uc.SetValue("Progid", keyName, RegistryValueKind.String);
+                }
 
             // Delete the key instead of trying to change it
             currentUser = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts\\" + extension, true);
-            currentUser.DeleteSubKey("UserChoice", false);
-            currentUser.Close();
+            if (currentUser != null)
+            {
+                currentUser.DeleteSubKey("UserChoice", false);
+                currentUser.Close();
+            }
 
             // Tell explorer the file association has been changed
             SHChangeNotify(0x08000000, 0x0000, IntPtr.Zero, IntPtr.Zero);

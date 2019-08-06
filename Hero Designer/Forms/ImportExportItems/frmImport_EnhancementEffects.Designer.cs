@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmImport_EnhancementEffects
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -100,10 +103,10 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnClose;
-        System.Windows.Forms.Button btnFile;
-        System.Windows.Forms.Button btnImport;
-        System.Windows.Forms.OpenFileDialog dlgBrowse;
-        System.Windows.Forms.Label lblFile;
+        Button btnClose;
+        Button btnFile;
+        Button btnImport;
+        OpenFileDialog dlgBrowse;
+        Label lblFile;
     }
 }

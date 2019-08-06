@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class FrmInputLevel
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -101,8 +104,8 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.NumericUpDown udLevel;
+        Button btnOK;
+        Label Label1;
+        NumericUpDown udLevel;
     }
 }

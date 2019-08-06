@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmTweakMatching
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -205,19 +208,19 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnAdd;
-        System.Windows.Forms.Button btnDel;
-        System.Windows.Forms.Button Button1;
-        System.Windows.Forms.Button Button2;
-        System.Windows.Forms.ComboBox cbAT1;
-        System.Windows.Forms.ComboBox cbPower;
-        System.Windows.Forms.ComboBox cbSet1;
-        System.Windows.Forms.ComboBox cbType1;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.ListBox lstTweaks;
-        System.Windows.Forms.TextBox txtAddActual;
-        System.Windows.Forms.TextBox txtAddOvr;
-        System.Windows.Forms.TextBox txtOvr;
+        Button btnAdd;
+        Button btnDel;
+        Button Button1;
+        Button Button2;
+        ComboBox cbAT1;
+        ComboBox cbPower;
+        ComboBox cbSet1;
+        ComboBox cbType1;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        ListBox lstTweaks;
+        TextBox txtAddActual;
+        TextBox txtAddOvr;
+        TextBox txtOvr;
     }
 }

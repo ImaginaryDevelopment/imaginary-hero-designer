@@ -1,12 +1,11 @@
 
-using Base;
-using Base.IO_Classes;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Base;
+using Base.IO_Classes;
 
 namespace Hero_Designer
 {
@@ -18,28 +17,28 @@ namespace Hero_Designer
 
         public frmLoading()
         {
-            this.InitializeComponent();
-            this.Text = nameof(frmLoading);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmLoading));
-            this.PictureBox1.Image = (System.Drawing.Image)componentResourceManager.GetObject("PictureBox1.Image");
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmLoading);
+            InitializeComponent();
+            Text = nameof(frmLoading);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmLoading));
+            PictureBox1.Image = (Image)componentResourceManager.GetObject("PictureBox1.Image");
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmLoading);
         }
 
         public void SetMessage(string text)
         {
-            if (this.Label1.InvokeRequired)
+            if (Label1.InvokeRequired)
             {
-                Action invoke = () => this.SetMessage(text);
-                this.Invoke(invoke);
+                Action invoke = () => SetMessage(text);
+                Invoke(invoke);
             }
             else
             {
-                if (!(this.Label1.Text != text))
+                if (Label1.Text == text)
                     return;
-                this.Label1.Text = text;
-                this.Label1.Refresh();
-                this.Refresh();
+                Label1.Text = text;
+                Label1.Refresh();
+                Refresh();
             }
         }
 
@@ -70,10 +69,10 @@ namespace Hero_Designer
 
         void tmrOpacity_Tick(object sender, EventArgs e)
         {
-            if (this.Opacity < 1.0)
-                this.Opacity += 0.05;
+            if (Opacity < 1.0)
+                Opacity += 0.05;
             else
-                this.tmrOpacity.Enabled = false;
+                tmrOpacity.Enabled = false;
         }
     }
 }

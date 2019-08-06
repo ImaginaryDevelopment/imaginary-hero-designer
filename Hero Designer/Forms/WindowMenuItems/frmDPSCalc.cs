@@ -1,15 +1,14 @@
 
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Globalization;
+using System.Windows.Forms;
 using Base.Display;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Hero_Designer
 {
@@ -49,31 +48,31 @@ namespace Hero_Designer
 
         protected ExtendedBitmap bxRecipe;
 
-        frmMain myParent;
-        frmDPSCalc.PowerList[] GlobalPowerList;
+        readonly frmMain myParent;
+        PowerList[] GlobalPowerList;
 
         float GlobalDamageBuff;
 
         public frmDPSCalc(frmMain iParent)
         {
-            this.FormClosed += new FormClosedEventHandler(this.frmDPSCalc_FormClosed);
-            this.Load += new EventHandler(this.frmDPSCalc_Load);
-            this.InitializeComponent();
-            this.Name = nameof(frmDPSCalc);
+            FormClosed += frmDPSCalc_FormClosed;
+            Load += frmDPSCalc_Load;
+            InitializeComponent();
+            Name = nameof(frmDPSCalc);
             var componentResourceManager = new ComponentResourceManager(typeof(frmDPSCalc));
-            this.Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            this.myParent = iParent;
-            this.bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            myParent = iParent;
+            bxRecipe = new ExtendedBitmap(I9Gfx.GetRecipeName());
         }
 
         void chkSortByLevel_CheckedChanged(object sender, EventArgs e)
         {
-            this.FillPowerList();
+            FillPowerList();
         }
 
-        void FillAttackChainWindow(frmDPSCalc.PowerList[] AttackChain)
+        void FillAttackChainWindow(PowerList[] AttackChain)
         {
-            if (this.chkSortByLevel.Checked)
+            if (chkSortByLevel.Checked)
             {
                 for (int index = 0; (double)AttackChain[index].DPA != 0.0; ++index)
                 {
@@ -92,145 +91,143 @@ namespace Hero_Designer
                 animation += AttackChain[index].Animation;
                 endurance += AttackChain[index].Endurance;
             }
-            Label lblDpsNum = this.lblDPSNum;
+            Label lblDpsNum = lblDPSNum;
             float num = damage / animation;
-            string str2 = num.ToString();
+            string str2 = num.ToString(CultureInfo.CurrentCulture);
             lblDpsNum.Text = str2;
-            Label lblEpsNum = this.lblEPSNum;
+            Label lblEpsNum = lblEPSNum;
             num = endurance / animation;
-            string str3 = num.ToString();
+            string str3 = num.ToString(CultureInfo.CurrentCulture);
             lblEpsNum.Text = str3;
-            this.tbDPSOutput.Text = str1;
+            tbDPSOutput.Text = str1;
         }
 
         void FillPowerList()
         {
-            this.GlobalDamageBuff = 0.0f;
-            this.lvPower.BeginUpdate();
-            this.lvPower.Items.Clear();
-            this.lvPower.Sorting = SortOrder.None;
-            this.lvPower.Items.Add(" - All Powers - ");
-            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = -1;
+            GlobalDamageBuff = 0.0f;
+            lvPower.BeginUpdate();
+            lvPower.Items.Clear();
+            lvPower.Sorting = SortOrder.None;
+            lvPower.Items.Add(" - All Powers - ");
+            lvPower.Items[lvPower.Items.Count - 1].Tag = -1;
             int num = MidsContext.Character.CurrentBuild.Powers.Count - 1;
             for (int powerLocation = 0; powerLocation <= num; ++powerLocation)
             {
                 if (MidsContext.Character.CurrentBuild.Powers[powerLocation].NIDPower > -1)
                 {
-                    bool flag = false;
-                    if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.DisplayName == "Rest")
-                        flag = true;
+                    bool flag = MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.DisplayName == "Rest";
                     for (int index = 0; index < MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects.Length && !flag; ++index)
                     {
-                        if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Damage || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Resistance && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].MagPercent < 0.0 || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.DamageBuff && (double)MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Mag > 0.0 && !MidsContext.Character.CurrentBuild.Powers[powerLocation].StatInclude || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.EntCreate)
+                        if (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Damage || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.Resistance && MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].MagPercent < 0.0 || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.DamageBuff && MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Mag > 0.0 && !MidsContext.Character.CurrentBuild.Powers[powerLocation].StatInclude || MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].EffectType == Enums.eEffectType.EntCreate)
                         {
                             string text = DatabaseAPI.Database.Power[MidsContext.Character.CurrentBuild.Powers[powerLocation].NIDPower].DisplayName;
-                            if (this.chkSortByLevel.Checked)
+                            if (chkSortByLevel.Checked)
                                 text = Strings.Format((MidsContext.Character.CurrentBuild.Powers[powerLocation].Level + 1), "00") + " - " + text;
-                            string[] damageData = this.GetDamageData(powerLocation);
-                            this.lvPower.Items.Add(text).SubItems.AddRange(damageData);
-                            this.GlobalDamageBuff += float.Parse(damageData[5]) * (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Duration / float.Parse(damageData[2]));
-                            this.lvPower.Items[this.lvPower.Items.Count - 1].Tag = powerLocation;
+                            string[] damageData = GetDamageData(powerLocation);
+                            lvPower.Items.Add(text).SubItems.AddRange(damageData);
+                            GlobalDamageBuff += float.Parse(damageData[5]) * (MidsContext.Character.CurrentBuild.Powers[powerLocation].Power.Effects[index].Duration / float.Parse(damageData[2]));
+                            lvPower.Items[lvPower.Items.Count - 1].Tag = powerLocation;
                             flag = true;
                         }
                     }
                 }
             }
-            this.lvPower.Sorting = SortOrder.Ascending;
-            this.lvPower.Sort();
-            if (this.lvPower.Items.Count > 0)
+            lvPower.Sorting = SortOrder.Ascending;
+            lvPower.Sort();
+            if (lvPower.Items.Count > 0)
             {
-                this.lvPower.Items[0].Selected = true;
-                this.lvPower.Items[0].Checked = true;
+                lvPower.Items[0].Selected = true;
+                lvPower.Items[0].Checked = true;
             }
-            this.lvPower.EndUpdate();
+            lvPower.EndUpdate();
         }
 
         void frmDPSCalc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.StoreLocation();
-            this.myParent.FloatDPSCalc(false);
+            StoreLocation();
+            myParent.FloatDPSCalc(false);
         }
 
         void frmDPSCalc_Load(object sender, EventArgs e)
         {
-            this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibTopmost.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibTopmost.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
+            ibClose.IA = myParent.Drawing.pImageAttributes;
+            ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibTopmost.IA = myParent.Drawing.pImageAttributes;
+            ibTopmost.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibTopmost.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
         }
 
         void ibClear_ButtonClicked()
         {
-            this.ibClear.Checked = true;
-            for (int index = 1; index < this.lvPower.Items.Count; ++index)
-                this.lvPower.Items[index].Checked = false;
-            this.lvPower.Items[0].Checked = true;
-            this.lvPower.Items[0].Selected = true;
-            this.GlobalPowerList = new frmDPSCalc.PowerList[0];
-            this.tbDPSOutput.Text = "";
-            this.lblDPSNum.Text = " - Null - ";
-            this.lblEPSNum.Text = " - Null - ";
-            this.ibClear.Checked = false;
-            this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
-            this.lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
-            if (!(this.ibAutoMode.TextOff == "Automagical"))
+            ibClear.Checked = true;
+            for (int index = 1; index < lvPower.Items.Count; ++index)
+                lvPower.Items[index].Checked = false;
+            lvPower.Items[0].Checked = true;
+            lvPower.Items[0].Selected = true;
+            GlobalPowerList = new PowerList[0];
+            tbDPSOutput.Text = "";
+            lblDPSNum.Text = " - Null - ";
+            lblEPSNum.Text = " - Null - ";
+            ibClear.Checked = false;
+            lblHeader.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
+            lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
+            if (ibAutoMode.TextOff != "Automagical")
                 return;
-            this.CalculateDPS();
+            CalculateDPS();
         }
 
         void ibClose_ButtonClicked()
         {
-            this.Close();
+            Close();
         }
 
         void ibAutoMode_ButtonClicked()
         {
-            if (this.ibAutoMode.TextOff == "Automagical")
+            if (ibAutoMode.TextOff == "Automagical")
             {
-                this.ToolTip1.SetToolTip((Control)this.ibAutoMode, "Click to enable Automagical Mode");
-                this.ibAutoMode.TextOff = "Manual";
-                this.lvPower.Items[0].Selected = true;
-                if (this.GlobalPowerList.Length > 0)
+                ToolTip1.SetToolTip(ibAutoMode, "Click to enable Automagical Mode");
+                ibAutoMode.TextOff = "Manual";
+                lvPower.Items[0].Selected = true;
+                if (GlobalPowerList.Length > 0)
                 {
                     string powerName1;
-                    if (!this.chkSortByLevel.Checked)
-                        powerName1 = this.GlobalPowerList[0].PowerName;
+                    if (!chkSortByLevel.Checked)
+                        powerName1 = GlobalPowerList[0].PowerName;
                     else
-                        powerName1 = this.GlobalPowerList[0].PowerName.Split('-')[1];
-                    this.tbDPSOutput.Text = powerName1;
-                    for (int index = 1; index < this.GlobalPowerList.Length; ++index)
+                        powerName1 = GlobalPowerList[0].PowerName.Split('-')[1];
+                    tbDPSOutput.Text = powerName1;
+                    for (int index = 1; index < GlobalPowerList.Length; ++index)
                     {
                         string powerName2;
-                        if (!this.chkSortByLevel.Checked)
-                            powerName2 = this.GlobalPowerList[index].PowerName;
+                        if (!chkSortByLevel.Checked)
+                            powerName2 = GlobalPowerList[index].PowerName;
                         else
-                            powerName2 = this.GlobalPowerList[index].PowerName.Split('-')[1];
-                        TextBox tbDpsOutput = this.tbDPSOutput;
+                            powerName2 = GlobalPowerList[index].PowerName.Split('-')[1];
+                        TextBox tbDpsOutput = tbDPSOutput;
                         tbDpsOutput.Text = tbDpsOutput.Text + " --> " + powerName2;
                     }
                 }
                 else
-                    this.ibClear_ButtonClicked();
+                    ibClear_ButtonClicked();
                 int num = 1;
-                while (num < this.GlobalPowerList.Length)
+                while (num < GlobalPowerList.Length)
                     ++num;
             }
             else
             {
-                this.ibAutoMode.TextOff = "Automagical";
-                this.ToolTip1.SetToolTip((Control)this.ibAutoMode, "Click to enable Manual Mode");
+                ibAutoMode.TextOff = "Automagical";
+                ToolTip1.SetToolTip(ibAutoMode, "Click to enable Manual Mode");
             }
-            this.CalculateDPS();
+            CalculateDPS();
         }
 
         void ibTopmost_ButtonClicked()
         {
-            this.TopMost = this.ibTopmost.Checked;
-            if (!this.TopMost)
+            TopMost = ibTopmost.Checked;
+            if (!TopMost)
                 return;
-            this.BringToFront();
+            BringToFront();
         }
 
         void lvPower_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -239,57 +236,57 @@ namespace Hero_Designer
             {
                 if (Operators.ConditionalCompareObjectLess(e.Item.Tag, 0, false) && e.Item.Checked)
                 {
-                    int num = this.lvPower.Items.Count - 1;
+                    int num = lvPower.Items.Count - 1;
                     for (int index = 1; index <= num; ++index)
-                        this.lvPower.Items[index].Checked = false;
+                        lvPower.Items[index].Checked = false;
                 }
             }
             else if (e.Item.Checked)
-                this.lvPower.Items[0].Checked = false;
-            this.CalculateDPS();
+                lvPower.Items[0].Checked = false;
+            CalculateDPS();
         }
 
         void lvPower_Clicked(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            if (this.ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
+            if (ibAutoMode.TextOff == "Manual" && e.Item.Index != 0 && e.Item.Selected)
             {
                 e.Item.Checked = true;
-                frmDPSCalc.PowerList[] globalPowerList = this.GlobalPowerList;
-                this.GlobalPowerList = new frmDPSCalc.PowerList[globalPowerList.Length + 1];
+                PowerList[] globalPowerList = GlobalPowerList;
+                GlobalPowerList = new PowerList[globalPowerList.Length + 1];
                 for (int index = 0; index < globalPowerList.Length; ++index)
-                    this.GlobalPowerList[index] = globalPowerList[index];
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].PowerName = e.Item.Text;
+                    GlobalPowerList[index] = globalPowerList[index];
+                GlobalPowerList[GlobalPowerList.Length - 1].PowerName = e.Item.Text;
                 string text;
-                if (!this.chkSortByLevel.Checked)
+                if (!chkSortByLevel.Checked)
                     text = e.Item.Text;
                 else
                     text = e.Item.Text.Split('-')[1];
-                if (this.tbDPSOutput.Text == "")
+                if (tbDPSOutput.Text == "")
                 {
-                    this.tbDPSOutput.Text = text;
+                    tbDPSOutput.Text = text;
                 }
                 else
                 {
-                    TextBox tbDpsOutput = this.tbDPSOutput;
+                    TextBox tbDpsOutput = tbDPSOutput;
                     tbDpsOutput.Text = tbDpsOutput.Text + " -->" + text;
                 }
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].Damage = !(e.Item.SubItems[2].Text != "-") ? 0.0f : float.Parse(e.Item.SubItems[2].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].Endurance = float.Parse(e.Item.SubItems[5].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].Recharge = float.Parse(e.Item.SubItems[3].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].DamageBuff = float.Parse(e.Item.SubItems[6].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].ResistanceDeBuff = float.Parse(e.Item.SubItems[7].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].Animation = float.Parse(e.Item.SubItems[4].Text);
-                this.GlobalPowerList[this.GlobalPowerList.Length - 1].RechargeTimer = 0.0f;
+                GlobalPowerList[GlobalPowerList.Length - 1].Damage = !(e.Item.SubItems[2].Text != "-") ? 0.0f : float.Parse(e.Item.SubItems[2].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].Endurance = float.Parse(e.Item.SubItems[5].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].Recharge = float.Parse(e.Item.SubItems[3].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].DamageBuff = float.Parse(e.Item.SubItems[6].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].ResistanceDeBuff = float.Parse(e.Item.SubItems[7].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].Animation = float.Parse(e.Item.SubItems[4].Text);
+                GlobalPowerList[GlobalPowerList.Length - 1].RechargeTimer = 0.0f;
             }
-            this.CalculateDPS();
+            CalculateDPS();
         }
 
         void lvPower_MouseEnter(object sender, EventArgs e)
         {
-            this.lvPower.Focus();
+            lvPower.Focus();
         }
 
-        static void putInList(ref frmDPSCalc.CountingList[] tl, string item)
+        static void putInList(ref CountingList[] tl, string item)
         {
             int num = tl.Length - 1;
             for (int index = 0; index <= num; ++index)
@@ -300,7 +297,7 @@ namespace Hero_Designer
                     return;
                 }
             }
-            tl = (frmDPSCalc.CountingList[])Utils.CopyArray(tl, (Array)new frmDPSCalc.CountingList[tl.Length + 1]);
+            tl = (CountingList[])Utils.CopyArray(tl, new CountingList[tl.Length + 1]);
             tl[tl.Length - 1].Count = 1;
             tl[tl.Length - 1].Text = item;
         }
@@ -313,60 +310,60 @@ namespace Hero_Designer
             rectangle.Width = 800;
             rectangle.Height = MainModule.MidsController.SzFrmRecipe.Height;
             if (rectangle.Width < 1)
-                rectangle.Width = this.Width;
+                rectangle.Width = Width;
             if (rectangle.Height < 1)
-                rectangle.Height = this.Height;
-            if (rectangle.Width < this.MinimumSize.Width)
-                rectangle.Width = this.MinimumSize.Width;
-            if (rectangle.Height < this.MinimumSize.Height)
-                rectangle.Height = this.MinimumSize.Height;
+                rectangle.Height = Height;
+            if (rectangle.Width < MinimumSize.Width)
+                rectangle.Width = MinimumSize.Width;
+            if (rectangle.Height < MinimumSize.Height)
+                rectangle.Height = MinimumSize.Height;
             if (rectangle.X < 1)
-                rectangle.X = (int)Math.Round((double)(Screen.PrimaryScreen.Bounds.Width - this.Width) / 2.0);
+                rectangle.X = (int)Math.Round((Screen.PrimaryScreen.Bounds.Width - Width) / 2.0);
             if (rectangle.Y < 32)
-                rectangle.Y = (int)Math.Round((double)(Screen.PrimaryScreen.Bounds.Height - this.Height) / 2.0);
-            this.Top = rectangle.Y;
-            this.Left = rectangle.X;
-            this.Height = rectangle.Height;
-            this.Width = rectangle.Width;
+                rectangle.Y = (int)Math.Round((Screen.PrimaryScreen.Bounds.Height - Height) / 2.0);
+            Top = rectangle.Y;
+            Left = rectangle.X;
+            Height = rectangle.Height;
+            Width = rectangle.Width;
         }
 
         void StoreLocation()
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
-            MainModule.MidsController.SzFrmRecipe.X = this.Left;
-            MainModule.MidsController.SzFrmRecipe.Y = this.Top;
-            MainModule.MidsController.SzFrmRecipe.Width = this.Width;
-            MainModule.MidsController.SzFrmRecipe.Height = this.Height;
+            MainModule.MidsController.SzFrmRecipe.X = Left;
+            MainModule.MidsController.SzFrmRecipe.Y = Top;
+            MainModule.MidsController.SzFrmRecipe.Width = Width;
+            MainModule.MidsController.SzFrmRecipe.Height = Height;
         }
 
         public void UpdateData()
         {
-            this.BackColor = this.myParent.BackColor;
-            this.ibClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibTopmost.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibTopmost.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibTopmost.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibClear.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibClear.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibClear.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.ibAutoMode.IA = this.myParent.Drawing.pImageAttributes;
-            this.ibAutoMode.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.ibAutoMode.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.FillPowerList();
+            BackColor = myParent.BackColor;
+            ibClose.IA = myParent.Drawing.pImageAttributes;
+            ibClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibTopmost.IA = myParent.Drawing.pImageAttributes;
+            ibTopmost.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibTopmost.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibClear.IA = myParent.Drawing.pImageAttributes;
+            ibClear.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibClear.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            ibAutoMode.IA = myParent.Drawing.pImageAttributes;
+            ibAutoMode.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            ibAutoMode.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            FillPowerList();
         }
 
-        string[] GetDamageData(int powerLocation)
+        static string[] GetDamageData(int powerLocation)
         {
             IPower enhancedPower = MainModule.MidsController.Toon.GetEnhancedPower(powerLocation);
             float damageValue = enhancedPower.FXGetDamageValue();
             float rechargeTime = enhancedPower.RechargeTime;
-            float num1 = (float)(Math.Ceiling((double)enhancedPower.CastTimeReal / 0.131999999284744) + 1.0) * 0.132f;
+            float num1 = (float)(Math.Ceiling(enhancedPower.CastTimeReal / 0.131999999284744) + 1.0) * 0.132f;
             float endCost = enhancedPower.EndCost;
-            Enums.ShortFX effectMag1 = enhancedPower.GetEffectMag(Enums.eEffectType.DamageBuff, Enums.eToWho.Self, false);
-            Enums.ShortFX effectMag2 = enhancedPower.GetEffectMag(Enums.eEffectType.Resistance, Enums.eToWho.Target, false);
+            Enums.ShortFX effectMag1 = enhancedPower.GetEffectMag(Enums.eEffectType.DamageBuff, Enums.eToWho.Self);
+            Enums.ShortFX effectMag2 = enhancedPower.GetEffectMag(Enums.eEffectType.Resistance, Enums.eToWho.Target);
             effectMag1.Multiply();
             effectMag2.Multiply();
             float num2 = damageValue / num1;
@@ -374,13 +371,13 @@ namespace Hero_Designer
             if (damageValue != 0.0)
                 strArray = new string[8]
                 {
-          num2.ToString(),
-          damageValue.ToString(),
-          rechargeTime.ToString(),
-          num1.ToString(),
-          endCost.ToString(),
-          effectMag1.Sum.ToString(),
-          effectMag2.Sum.ToString(),
+          num2.ToString(CultureInfo.CurrentCulture),
+          damageValue.ToString(CultureInfo.CurrentCulture),
+          rechargeTime.ToString(CultureInfo.CurrentCulture),
+          num1.ToString(CultureInfo.CurrentCulture),
+          endCost.ToString(CultureInfo.CurrentCulture),
+          effectMag1.Sum.ToString(CultureInfo.CurrentCulture),
+          effectMag2.Sum.ToString(CultureInfo.CurrentCulture),
           powerLocation.ToString()
                 };
             else
@@ -388,11 +385,11 @@ namespace Hero_Designer
                 {
                       "-",
                       "-",
-                      rechargeTime.ToString(),
-                      num1.ToString(),
-                      endCost.ToString(),
-                      effectMag1.Sum.ToString(),
-                      effectMag2.Sum.ToString(),
+                      rechargeTime.ToString(CultureInfo.CurrentCulture),
+                      num1.ToString(CultureInfo.CurrentCulture),
+                      endCost.ToString(CultureInfo.CurrentCulture),
+                      effectMag1.Sum.ToString(CultureInfo.CurrentCulture),
+                      effectMag2.Sum.ToString(CultureInfo.CurrentCulture),
                       powerLocation.ToString()
                 };
             return strArray;
@@ -400,11 +397,11 @@ namespace Hero_Designer
 
         void lvPower_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            this.lvPower.Sort();
+            lvPower.Sort();
         }
 
-        frmDPSCalc.PowerList[] IncrementRecharge(
-          frmDPSCalc.PowerList[] List,
+        static PowerList[] IncrementRecharge(
+          PowerList[] List,
           float Time)
         {
             for (int index1 = 0; index1 < List.Length; ++index1)
@@ -417,45 +414,45 @@ namespace Hero_Designer
 
         void CalculateDPS()
         {
-            if (this.ibAutoMode.TextOff == "Automagical")
+            if (ibAutoMode.TextOff == "Automagical")
             {
-                frmDPSCalc.PowerList[] array = new frmDPSCalc.PowerList[this.lvPower.Items.Count - 1];
+                PowerList[] array = new PowerList[lvPower.Items.Count - 1];
                 int length = 0;
-                for (int index = 1; index < this.lvPower.Items.Count; ++index)
+                for (int index = 1; index < lvPower.Items.Count; ++index)
                 {
-                    if (this.lvPower.Items[0].Checked || this.lvPower.Items[index].Checked)
+                    if (lvPower.Items[0].Checked || lvPower.Items[index].Checked)
                     {
-                        array[length].PowerName = this.lvPower.Items[index].Text;
-                        if (this.lvPower.Items[index].SubItems[1].Text != "-")
+                        array[length].PowerName = lvPower.Items[index].Text;
+                        if (lvPower.Items[index].SubItems[1].Text != "-")
                         {
-                            array[length].Damage = float.Parse(this.lvPower.Items[index].SubItems[2].Text);
-                            if (!this.chkDamageBuffs.Checked)
+                            array[length].Damage = float.Parse(lvPower.Items[index].SubItems[2].Text);
+                            if (!chkDamageBuffs.Checked)
                             {
-                                IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(this.lvPower.Items[index].SubItems[8].Text), -1);
-                                array[length].Damage += basePower.FXGetDamageValue() * (this.GlobalDamageBuff / 100f);
+                                IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text));
+                                array[length].Damage += basePower.FXGetDamageValue() * (GlobalDamageBuff / 100f);
                             }
-                            array[length].DPA = float.Parse(this.lvPower.Items[index].SubItems[1].Text);
-                            array[length].HidenDPA = float.Parse(this.lvPower.Items[index].SubItems[1].Text);
+                            array[length].DPA = float.Parse(lvPower.Items[index].SubItems[1].Text);
+                            array[length].HidenDPA = float.Parse(lvPower.Items[index].SubItems[1].Text);
                         }
-                        array[length].Recharge = float.Parse(this.lvPower.Items[index].SubItems[3].Text);
-                        array[length].Animation = float.Parse(this.lvPower.Items[index].SubItems[4].Text);
-                        array[length].Endurance = float.Parse(this.lvPower.Items[index].SubItems[5].Text);
-                        array[length].DamageBuff = float.Parse(this.lvPower.Items[index].SubItems[6].Text);
-                        array[length].ResistanceDeBuff = float.Parse(this.lvPower.Items[index].SubItems[7].Text);
+                        array[length].Recharge = float.Parse(lvPower.Items[index].SubItems[3].Text);
+                        array[length].Animation = float.Parse(lvPower.Items[index].SubItems[4].Text);
+                        array[length].Endurance = float.Parse(lvPower.Items[index].SubItems[5].Text);
+                        array[length].DamageBuff = float.Parse(lvPower.Items[index].SubItems[6].Text);
+                        array[length].ResistanceDeBuff = float.Parse(lvPower.Items[index].SubItems[7].Text);
                         array[length].RechargeTimer = -1f;
-                        if ((double)array[length].DamageBuff > 0.0 && (double)array[length].DPA != 0.0)
+                        if (array[length].DamageBuff > 0.0 && array[length].DPA != 0.0)
                         {
-                            IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(this.lvPower.Items[index].SubItems[8].Text), -1);
+                            IPower basePower = MainModule.MidsController.Toon.GetBasePower(int.Parse(lvPower.Items[index].SubItems[8].Text));
                             array[length].HidenDPA = basePower.FXGetDamageValue();
                             array[length].HidenDPA = array[length].HidenDPA * (array[length].DamageBuff / array[length].Recharge) / array[length].Animation;
                         }
                         ++length;
                     }
                 }
-                if (length < this.lvPower.Items.Count - 1)
+                if (length < lvPower.Items.Count - 1)
                 {
-                    frmDPSCalc.PowerList[] powerListArray = array;
-                    array = new frmDPSCalc.PowerList[length];
+                    PowerList[] powerListArray = array;
+                    array = new PowerList[length];
                     for (int index = 0; index < length; ++index)
                         array[index] = powerListArray[index];
                 }
@@ -464,68 +461,68 @@ namespace Hero_Designer
                     Array.Sort(array, (x, y) => x.HidenDPA.CompareTo(y.HidenDPA));
                     float num1 = array[length - 1].Recharge + 5f;
                     int num2 = length - 1;
-                    while ((double)num1 > 0.0 && num2 > 0)
+                    while (num1 > 0.0 && num2 > 0)
                         num1 -= array[num2--].Animation;
-                    frmDPSCalc.PowerList[] List = new frmDPSCalc.PowerList[length - num2];
+                    PowerList[] List = new PowerList[length - num2];
                     int num3 = 0;
                     for (int index = 0; index < length - num2; ++index)
                     {
-                        if ((double)array[length - 1 - index].Recharge <= 20.0)
+                        if (array[length - 1 - index].Recharge <= 20.0)
                             List[num3++] = array[length - 1 - index];
                     }
                     float num4 = 0.0f;
                     for (int index = 0; index < List.Length; ++index)
                     {
-                        if ((double)num4 < (double)List[index].Recharge)
+                        if (num4 < (double)List[index].Recharge)
                             num4 = List[index].Recharge;
                     }
-                    frmDPSCalc.PowerList[] AttackChain = new frmDPSCalc.PowerList[20];
+                    PowerList[] AttackChain = new PowerList[20];
                     int index1 = 1;
                     int index2 = 1;
                     AttackChain[0] = List[0];
                     float animation = AttackChain[0].Animation;
                     List[0].RechargeTimer = List[0].Recharge;
-                    while ((double)animation < (double)num4 + 1.0)
+                    while (animation < num4 + 1.0)
                     {
                         for (int index3 = index1; index3 >= 0; --index3)
                         {
                             if (index1 >= List.Length)
                             {
                                 animation += 0.01f;
-                                List = this.IncrementRecharge(List, 0.01f);
+                                List = IncrementRecharge(List, 0.01f);
                             }
-                            else if ((double)List[index3].RechargeTimer <= 0.0)
+                            else if (List[index3].RechargeTimer <= 0.0)
                                 index1 = index3;
                         }
                         if (index1 >= List.Length)
                         {
                             --index1;
                             animation += 0.01f;
-                            List = this.IncrementRecharge(List, 0.01f);
+                            List = IncrementRecharge(List, 0.01f);
                         }
-                        while ((double)List[index1].RechargeTimer > 0.0)
+                        while (List[index1].RechargeTimer > 0.0)
                         {
                             ++index1;
                             if (index1 >= List.Length)
                             {
                                 index1 = 0;
                                 animation += 0.01f;
-                                List = this.IncrementRecharge(List, 0.01f);
+                                List = IncrementRecharge(List, 0.01f);
                             }
                         }
                         AttackChain[index2] = List[index1];
                         animation += AttackChain[index2].Animation;
-                        List = this.IncrementRecharge(List, AttackChain[index2].Animation);
+                        List = IncrementRecharge(List, AttackChain[index2].Animation);
                         List[index1].RechargeTimer = List[index1].Recharge;
                         ++index1;
                         ++index2;
                     }
-                    this.FillAttackChainWindow(AttackChain);
+                    FillAttackChainWindow(AttackChain);
                 }
                 else if (array.Length == 1)
-                    this.tbDPSOutput.Text = "You cannot make an attack chain from one attack";
+                    tbDPSOutput.Text = "You cannot make an attack chain from one attack";
                 else
-                    this.tbDPSOutput.Text = "Come on Kiddo, gotta pick something :)";
+                    tbDPSOutput.Text = "Come on Kiddo, gotta pick something :)";
             }
             else
             {
@@ -533,24 +530,24 @@ namespace Hero_Designer
                 float num2 = 0.0f;
                 float num3 = 0.0f;
                 bool flag = true;
-                for (int index = 0; index < this.GlobalPowerList.Length; ++index)
+                for (int index = 0; index < GlobalPowerList.Length; ++index)
                 {
-                    if ((double)this.GlobalPowerList[index].Damage > 0.0)
+                    if (GlobalPowerList[index].Damage > 0.0)
                     {
-                        num1 += this.GlobalPowerList[index].Damage;
-                        num2 += this.GlobalPowerList[index].Endurance;
-                        num3 += this.GlobalPowerList[index].Animation;
-                        this.GlobalPowerList[index].RechargeTimer = this.GlobalPowerList[index].Recharge;
+                        num1 += GlobalPowerList[index].Damage;
+                        num2 += GlobalPowerList[index].Endurance;
+                        num3 += GlobalPowerList[index].Animation;
+                        GlobalPowerList[index].RechargeTimer = GlobalPowerList[index].Recharge;
                     }
-                    float animation = this.GlobalPowerList[index].Animation;
+                    float animation = GlobalPowerList[index].Animation;
                 }
-                var powerListArray = new PowerList[this.GlobalPowerList.Length * 2];
+                var powerListArray = new PowerList[GlobalPowerList.Length * 2];
                 int num4 = 0;
                 for (int index = 0; index < powerListArray.Length; ++index)
                 {
-                    if (index > this.GlobalPowerList.Length - 1)
-                        num4 = index - (this.GlobalPowerList.Length - 1) - 1;
-                    powerListArray[index] = this.GlobalPowerList[num4++];
+                    if (index > GlobalPowerList.Length - 1)
+                        num4 = index - (GlobalPowerList.Length - 1) - 1;
+                    powerListArray[index] = GlobalPowerList[num4++];
                 }
                 for (int index1 = 0; index1 < powerListArray.Length; ++index1)
                 {
@@ -558,7 +555,7 @@ namespace Hero_Designer
                     {
                         if (powerListArray[index1].PowerName != powerListArray[index2].PowerName)
                             powerListArray[index1].RechargeTimer -= powerListArray[index2].Animation;
-                        else if ((double)powerListArray[index1].RechargeTimer > 0.0)
+                        else if (powerListArray[index1].RechargeTimer > 0.0)
                             flag = false;
                     }
                 }
@@ -568,22 +565,22 @@ namespace Hero_Designer
                     {
                         if (powerListArray[index1].PowerName != powerListArray[index2].PowerName)
                             powerListArray[index1].RechargeTimer -= powerListArray[index2].Animation;
-                        else if ((double)powerListArray[index1].RechargeTimer > 0.0)
+                        else if (powerListArray[index1].RechargeTimer > 0.0)
                             flag = false;
                     }
                 }
                 if (!flag)
                 {
-                    this.lblHeader.ForeColor = System.Drawing.Color.Red;
-                    this.lblHeader.Text = "Impossible Chain";
+                    lblHeader.ForeColor = Color.Red;
+                    lblHeader.Text = "Impossible Chain";
                 }
                 else
                 {
-                    this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(192, 192, (int)byte.MaxValue);
-                    this.lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
+                    lblHeader.ForeColor = Color.FromArgb(192, 192, byte.MaxValue);
+                    lblHeader.Text = "You may select -All Powers- or just the powers you want to consider.";
                 }
-                this.lblDPSNum.Text = (num1 / num3).ToString();
-                this.lblEPSNum.Text = (num2 / num3).ToString();
+                lblDPSNum.Text = (num1 / num3).ToString(CultureInfo.CurrentCulture);
+                lblEPSNum.Text = (num2 / num3).ToString(CultureInfo.CurrentCulture);
             }
         }
 

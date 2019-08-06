@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmEntityEdit
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -425,41 +428,41 @@ namespace Hero_Designer
             this.PerformLayout();
         }
         #endregion
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnPAdd;
-        System.Windows.Forms.Button btnPDelete;
-        System.Windows.Forms.Button btnPDown;
-        System.Windows.Forms.Button btnPUp;
-        System.Windows.Forms.Button btnUGAdd;
-        System.Windows.Forms.Button btnUGDelete;
-        System.Windows.Forms.Button btnUGDown;
-        System.Windows.Forms.Button btnUGUp;
-        System.Windows.Forms.ComboBox cbClass;
-        System.Windows.Forms.ComboBox cbEntType;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader10;
-        System.Windows.Forms.ColumnHeader ColumnHeader11;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.ListView lvPower;
-        System.Windows.Forms.ListView lvPSGroup;
-        System.Windows.Forms.ListView lvPSSet;
-        System.Windows.Forms.ListView lvUGGroup;
-        System.Windows.Forms.ListView lvUGPower;
-        System.Windows.Forms.ListView lvUGSet;
-        System.Windows.Forms.ListView lvUpgrade;
-        System.Windows.Forms.TextBox txtDisplayName;
-        System.Windows.Forms.TextBox txtEntName;
+        Button btnCancel;
+        Button btnOK;
+        Button btnPAdd;
+        Button btnPDelete;
+        Button btnPDown;
+        Button btnPUp;
+        Button btnUGAdd;
+        Button btnUGDelete;
+        Button btnUGDown;
+        Button btnUGUp;
+        ComboBox cbClass;
+        ComboBox cbEntType;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader10;
+        ColumnHeader ColumnHeader11;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label Label1;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        ListView lvPower;
+        ListView lvPSGroup;
+        ListView lvPSSet;
+        ListView lvUGGroup;
+        ListView lvUGPower;
+        ListView lvUGSet;
+        ListView lvUpgrade;
+        TextBox txtDisplayName;
+        TextBox txtEntName;
     }
 
 

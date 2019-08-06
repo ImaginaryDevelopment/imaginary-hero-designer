@@ -1,7 +1,7 @@
 
-using Base.Master_Classes;
 using System;
 using System.Text;
+using Base.Master_Classes;
 
 public static class RTF
 {
@@ -29,7 +29,7 @@ public static class RTF
         return iStr.Replace(Environment.NewLine, "\\par ").Replace("\t", "\\tab ");
     }
 
-    public static string Size(RTF.SizeID iSize)
+    public static string Size(SizeID iSize)
     {
         StringBuilder stringBuilder = new StringBuilder("\\fs");
         stringBuilder.Append(MidsContext.Config.RtFont.RTFBase);
@@ -60,7 +60,7 @@ public static class RTF
         StringBuilder stringBuilder = new StringBuilder("{\\*\\generator MHD_RTFClass;}\\viewkind4\\uc1\\pard\\f0\\fs");
         stringBuilder.Append(MidsContext.Config.RtFont.RTFBase);
         stringBuilder.Append(" ");
-        stringBuilder.Append(RTF.Color(RTF.ElementID.Text));
+        stringBuilder.Append(Color(ElementID.Text));
         if (MidsContext.Config.RtFont.RTFBold)
             stringBuilder.Append("\\b ");
         return stringBuilder.ToString();
@@ -80,17 +80,17 @@ public static class RTF
     {
         StringBuilder stringBuilder = new StringBuilder("{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang2057{\\fonttbl{\\f0\\fswiss\\fcharset0 Arial;}{\\f1\\fnil\\fcharset2 Symbol;}}");
         stringBuilder.Append(Environment.NewLine);
-        stringBuilder.Append(RTF.GetColorTable());
+        stringBuilder.Append(GetColorTable());
         stringBuilder.Append(Environment.NewLine);
-        stringBuilder.Append(RTF.GetInitialLine());
+        stringBuilder.Append(GetInitialLine());
         return stringBuilder.ToString();
     }
 
     public static string EndRTF()
     {
-        StringBuilder stringBuilder = new StringBuilder(RTF.Size(RTF.SizeID.Regular));
-        stringBuilder.Append(RTF.Color(RTF.ElementID.Text));
-        stringBuilder.Append(RTF.GetFooter());
+        StringBuilder stringBuilder = new StringBuilder(Size(SizeID.Regular));
+        stringBuilder.Append(Color(ElementID.Text));
+        stringBuilder.Append(GetFooter());
         return stringBuilder.ToString();
     }
 
@@ -132,7 +132,7 @@ public static class RTF
         return "\\par ";
     }
 
-    public static string Color(RTF.ElementID iElement)
+    public static string Color(ElementID iElement)
     {
         StringBuilder stringBuilder = new StringBuilder("\\cf");
         stringBuilder.Append((int)iElement);
@@ -150,7 +150,7 @@ public static class RTF
         Text,
         Warning,
         BackgroundHero,
-        BackgroundVillain,
+        BackgroundVillain
     }
 
     public enum SizeID
@@ -160,6 +160,6 @@ public static class RTF
         Regular = 0,
         Larger = 2,
         Large = 4,
-        Huge = 8,
+        Huge = 8
     }
 }

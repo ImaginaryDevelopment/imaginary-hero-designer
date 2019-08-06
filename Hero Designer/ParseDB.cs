@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Base;
+using Newtonsoft.Json.Linq;
 
 namespace Hero_Designer
 {
@@ -24,7 +24,7 @@ namespace Hero_Designer
                     from p in jItems["Powers"]
                     select new
                     {
-                        Index = (string) p["StaticIndex"].ToStringOrNull(),
+                        Index = p["StaticIndex"].ToStringOrNull(),
                         Name = (string) p["FullName"]
                     };
                 foreach (var item in indexes)

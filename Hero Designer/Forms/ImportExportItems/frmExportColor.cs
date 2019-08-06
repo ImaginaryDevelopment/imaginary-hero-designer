@@ -1,8 +1,6 @@
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Hero_Designer
@@ -14,110 +12,110 @@ namespace Hero_Designer
 
         public frmExportColor(ref ExportConfig.ColorScheme iScheme)
         {
-            this.Load += new EventHandler(this.frmExportColor_Load);
-            this.InitializeComponent();
+            Load += frmExportColor_Load;
+            InitializeComponent();
             ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmExportColor));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmExportColor);
-            this.myScheme.Assign(iScheme);
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmExportColor);
+            myScheme.Assign(iScheme);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
         }
 
         void btnOK_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+            Hide();
         }
 
         void csHeading_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.Heading;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.Heading = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.Heading;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.Heading = cPicker.Color;
+            updateColours();
         }
 
         void csHO_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.HOColor;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.HOColor = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.HOColor;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.HOColor = cPicker.Color;
+            updateColours();
         }
 
         void csIO_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.IOColor;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.IOColor = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.IOColor;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.IOColor = cPicker.Color;
+            updateColours();
         }
 
         void csLevel_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.Level;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.Level = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.Level;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.Level = cPicker.Color;
+            updateColours();
         }
 
         void csPower_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.Power;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.Power = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.Power;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.Power = cPicker.Color;
+            updateColours();
         }
 
         void csSet_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.SetColor;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.SetColor = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.SetColor;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.SetColor = cPicker.Color;
+            updateColours();
         }
 
         void csSlots_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.Slots;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.Slots = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.Slots;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.Slots = cPicker.Color;
+            updateColours();
         }
 
         void csTitle_Click(object sender, EventArgs e)
         {
-            this.cPicker.Color = this.myScheme.Title;
-            if (this.cPicker.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.myScheme.Title = this.cPicker.Color;
-            this.updateColours();
+            cPicker.Color = myScheme.Title;
+            if (cPicker.ShowDialog(this) == DialogResult.OK)
+                myScheme.Title = cPicker.Color;
+            updateColours();
         }
 
         void frmExportColor_Load(object sender, EventArgs e)
         {
-            this.txtName.Text = this.myScheme.SchemeName;
-            this.updateColours();
+            txtName.Text = myScheme.SchemeName;
+            updateColours();
         }
 
         void txtName_TextChanged(object sender, EventArgs e)
         {
-            this.myScheme.SchemeName = this.txtName.Text;
+            myScheme.SchemeName = txtName.Text;
         }
 
         public void updateColours()
         {
-            this.csTitle.BackColor = this.myScheme.Title;
-            this.csHeading.BackColor = this.myScheme.Heading;
-            this.csLevel.BackColor = this.myScheme.Level;
-            this.csSlots.BackColor = this.myScheme.Slots;
-            this.csIO.BackColor = this.myScheme.IOColor;
-            this.csSet.BackColor = this.myScheme.SetColor;
-            this.csHO.BackColor = this.myScheme.HOColor;
-            this.csPower.BackColor = this.myScheme.Power;
+            csTitle.BackColor = myScheme.Title;
+            csHeading.BackColor = myScheme.Heading;
+            csLevel.BackColor = myScheme.Level;
+            csSlots.BackColor = myScheme.Slots;
+            csIO.BackColor = myScheme.IOColor;
+            csSet.BackColor = myScheme.SetColor;
+            csHO.BackColor = myScheme.HOColor;
+            csPower.BackColor = myScheme.Power;
         }
     }
 }

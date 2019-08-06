@@ -16,12 +16,12 @@ namespace midsControls
         // Token: 0x14000002 RID: 2
         // (add) Token: 0x060000D6 RID: 214 RVA: 0x00009577 File Offset: 0x00007777
         // (remove) Token: 0x060000D7 RID: 215 RVA: 0x00009591 File Offset: 0x00007791
-        public event ctlPairedList.ItemClickEventHandler ItemClick;
+        public event ItemClickEventHandler ItemClick;
 
         // Token: 0x14000003 RID: 3
         // (add) Token: 0x060000D8 RID: 216 RVA: 0x000095AB File Offset: 0x000077AB
         // (remove) Token: 0x060000D9 RID: 217 RVA: 0x000095C5 File Offset: 0x000077C5
-        public event ctlPairedList.ItemHoverEventHandler ItemHover;
+        public event ItemHoverEventHandler ItemHover;
 
         // Token: 0x1700003D RID: 61
         // (get) Token: 0x060000DA RID: 218 RVA: 0x000095E0 File Offset: 0x000077E0
@@ -30,12 +30,12 @@ namespace midsControls
         {
             get
             {
-                return this._myTip;
+                return _myTip;
             }
             [MethodImpl(MethodImplOptions.Synchronized)]
             set
             {
-                this._myTip = value;
+                _myTip = value;
             }
         }
 
@@ -46,14 +46,14 @@ namespace midsControls
         {
             get
             {
-                return this.myColumns;
+                return myColumns;
             }
             set
             {
                 if (value >= 0 & value < 10)
                 {
-                    this.myColumns = value;
-                    this.Draw();
+                    myColumns = value;
+                    Draw();
                 }
             }
         }
@@ -65,17 +65,17 @@ namespace midsControls
         {
             get
             {
-                return this.myValueWidth;
+                return myValueWidth;
             }
             set
             {
-                if (this.myColumns < 1)
+                if (myColumns < 1)
                 {
-                    this.myColumns = 1;
+                    myColumns = 1;
                 }
                 if (value > 0 & value < 100)
                 {
-                    this.myValueWidth = value;
+                    myValueWidth = value;
                 }
             }
         }
@@ -87,12 +87,12 @@ namespace midsControls
         {
             get
             {
-                return this.Highlightable;
+                return Highlightable;
             }
             set
             {
-                this.Highlightable = value;
-                this.Draw();
+                Highlightable = value;
+                Draw();
             }
         }
 
@@ -103,11 +103,11 @@ namespace midsControls
         {
             get
             {
-                return this.myHighlightColor;
+                return myHighlightColor;
             }
             set
             {
-                this.myHighlightColor = value;
+                myHighlightColor = value;
             }
         }
 
@@ -118,11 +118,11 @@ namespace midsControls
         {
             get
             {
-                return this.myHighlightTextColor;
+                return myHighlightTextColor;
             }
             set
             {
-                this.myHighlightTextColor = value;
+                myHighlightTextColor = value;
             }
         }
 
@@ -133,11 +133,11 @@ namespace midsControls
         {
             get
             {
-                return this.NameColour;
+                return NameColour;
             }
             set
             {
-                this.NameColour = value;
+                NameColour = value;
             }
         }
 
@@ -148,11 +148,11 @@ namespace midsControls
         {
             get
             {
-                return this.ValueColor;
+                return ValueColor;
             }
             set
             {
-                this.ValueColor = value;
+                ValueColor = value;
             }
         }
 
@@ -163,11 +163,11 @@ namespace midsControls
         {
             get
             {
-                return this.ValueColorA;
+                return ValueColorA;
             }
             set
             {
-                this.ValueColorA = value;
+                ValueColorA = value;
             }
         }
 
@@ -178,11 +178,11 @@ namespace midsControls
         {
             get
             {
-                return this.ValueColorB;
+                return ValueColorB;
             }
             set
             {
-                this.ValueColorB = value;
+                ValueColorB = value;
             }
         }
 
@@ -193,11 +193,11 @@ namespace midsControls
         {
             get
             {
-                return this.ValueColorC;
+                return ValueColorC;
             }
             set
             {
-                this.ValueColorC = value;
+                ValueColorC = value;
             }
         }
 
@@ -207,7 +207,7 @@ namespace midsControls
         {
             get
             {
-                return this.MyItems.Length;
+                return MyItems.Length;
             }
         }
 
@@ -218,37 +218,37 @@ namespace midsControls
         {
             get
             {
-                return this.myForceBold;
+                return myForceBold;
             }
             set
             {
-                this.myForceBold = value;
-                this.Draw();
+                myForceBold = value;
+                Draw();
             }
         }
 
         // Token: 0x060000F3 RID: 243 RVA: 0x0000981C File Offset: 0x00007A1C
         public ctlPairedList()
         {
-            base.FontChanged += this.ctlPairedList_FontChanged;
-            base.Load += this.ctlPairedList_Load;
-            base.Paint += this.ctlPairedList_Paint;
-            base.MouseDown += this.Listlabel_MouseDown;
-            base.MouseMove += this.Listlabel_MouseMove;
-            base.MouseLeave += this.Listlabel_MouseLeave;
-            base.BackColorChanged += this.ctlPairedList_BackColorChanged;
-            this.ValueColorD = Color.Aqua;
-            this.LinePadding = 3;
-            this.myForceBold = false;
-            this.InitializeComponent();
+            FontChanged += ctlPairedList_FontChanged;
+            Load += ctlPairedList_Load;
+            Paint += ctlPairedList_Paint;
+            MouseDown += Listlabel_MouseDown;
+            MouseMove += Listlabel_MouseMove;
+            MouseLeave += Listlabel_MouseLeave;
+            BackColorChanged += ctlPairedList_BackColorChanged;
+            ValueColorD = Color.Aqua;
+            LinePadding = 3;
+            myForceBold = false;
+            InitializeComponent();
         }
 
         // Token: 0x060000F4 RID: 244 RVA: 0x000098D8 File Offset: 0x00007AD8
         protected override void Dispose(bool disposing)
         {
-            if (disposing && this.components != null)
+            if (disposing && components != null)
             {
-                this.components.Dispose();
+                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -257,58 +257,58 @@ namespace midsControls
         [DebuggerStepThrough]
         private void InitializeComponent()
         {
-            this.components = new Container();
-            this.myTip = new ToolTip(this.components);
-            base.Name = "ctlPairedList";
+            components = new Container();
+            myTip = new ToolTip(components);
+            Name = "ctlPairedList";
         }
 
         // Token: 0x060000F6 RID: 246 RVA: 0x0000993C File Offset: 0x00007B3C
         public void SetUnique()
         {
-            if (this.MyItems.Length > 0)
+            if (MyItems.Length > 0)
             {
-                this.MyItems[checked(this.MyItems.Length - 1)].UniqueColour = true;
+                MyItems[checked(MyItems.Length - 1)].UniqueColour = true;
             }
         }
 
         // Token: 0x060000F7 RID: 247 RVA: 0x00009978 File Offset: 0x00007B78
         public bool IsSpecialColor()
         {
-            return this.MyItems[this.MyItems.Length - 1].VerySpecialColour;
+            return MyItems[MyItems.Length - 1].VerySpecialColour;
         }
 
         // Token: 0x060000F8 RID: 248 RVA: 0x000099AE File Offset: 0x00007BAE
         private void ctlPairedList_FontChanged(object sender, EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x060000F9 RID: 249 RVA: 0x000099B8 File Offset: 0x00007BB8
         private void ctlPairedList_Load(object sender, EventArgs e)
         {
-            this.SetLineHeight();
-            this.CurrentHighlight = -1;
-            this.MyItems = new ctlPairedList.ItemPair[0];
-            this.myGFX = base.CreateGraphics();
-            this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
-            this.AddItem(new ctlPairedList.ItemPair("Item 1:", "Value", false, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("Item 2:", "Alternate", true, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("Item 3:", "1000", false, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("Item 4:", "1,000", false, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("1234567890:", "12345678901234567890", false, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("1234567890:", "12345678901234567890", true, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", false, false, false, -1));
-            this.AddItem(new ctlPairedList.ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", true, false, false, -1));
-            this.Draw();
+            SetLineHeight();
+            CurrentHighlight = -1;
+            MyItems = new ItemPair[0];
+            myGFX = CreateGraphics();
+            bxBuffer = new ExtendedBitmap(Width, Height);
+            AddItem(new ItemPair("Item 1:", "Value", false));
+            AddItem(new ItemPair("Item 2:", "Alternate", true));
+            AddItem(new ItemPair("Item 3:", "1000", false));
+            AddItem(new ItemPair("Item 4:", "1,000", false));
+            AddItem(new ItemPair("1234567890:", "12345678901234567890", false));
+            AddItem(new ItemPair("1234567890:", "12345678901234567890", true));
+            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", false));
+            AddItem(new ItemPair("1 2 3 4 5 6 7 8 9 0:", "1 2 3 4 5 6 7 8 9 0", true));
+            Draw();
         }
 
         // Token: 0x060000FA RID: 250 RVA: 0x00009ADA File Offset: 0x00007CDA
         public void FullUpdate()
         {
-            this.SetLineHeight();
-            this.myGFX = base.CreateGraphics();
-            this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
-            this.Draw();
+            SetLineHeight();
+            myGFX = CreateGraphics();
+            bxBuffer = new ExtendedBitmap(Width, Height);
+            Draw();
         }
 
         // Token: 0x060000FB RID: 251 RVA: 0x00009B10 File Offset: 0x00007D10
@@ -316,104 +316,104 @@ namespace midsControls
         {
             checked
             {
-                if (this.bxBuffer != null)
+                if (bxBuffer != null)
                 {
-                    this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    Rectangle rect = new Rectangle(0, 0, base.Width, base.Height);
+                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                    Rectangle rect = new Rectangle(0, 0, Width, Height);
                     RectangleF rectangleF = new RectangleF(0f, 0f, 0f, 0f);
                     StringFormat stringFormat = new StringFormat();
                     FontStyle newStyle = FontStyle.Bold;
                     FontStyle newStyle2 = FontStyle.Regular;
-                    if (this.myForceBold)
+                    if (myForceBold)
                     {
                         newStyle2 = FontStyle.Bold;
                         newStyle = FontStyle.Bold;
                     }
-                    Font font = new Font(this.Font, newStyle);
-                    Font font2 = new Font(this.Font, newStyle2);
+                    Font font = new Font(Font, newStyle);
+                    Font font2 = new Font(Font, newStyle2);
                     rectangleF.X = 0f;
-                    if (this.myColumns < 1)
+                    if (myColumns < 1)
                     {
-                        this.myColumns = 1;
+                        myColumns = 1;
                     }
-                    int num = (int)Math.Round((double)base.Width / (double)this.myColumns);
-                    int num2 = (int)Math.Round((double)(unchecked((float)num * ((float)this.myValueWidth / 100f))));
+                    int num = (int)Math.Round(Width / (double)myColumns);
+                    int num2 = (int)Math.Round(num * (myValueWidth / 100f));
                     int num3 = num - num2;
-                    rectangleF.Height = (float)this.LineHeight;
-                    this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    Brush brush = new SolidBrush(this.BackColor);
-                    this.bxBuffer.Graphics.FillRectangle(brush, rect);
-                    if (this.MyItems == null)
+                    rectangleF.Height = LineHeight;
+                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                    Brush brush = new SolidBrush(BackColor);
+                    bxBuffer.Graphics.FillRectangle(brush, rect);
+                    if (MyItems == null)
                     {
-                        this.myGFX.DrawImageUnscaled(this.bxBuffer.Bitmap, 0, 0);
+                        myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                     }
-                    if (this.MyItems.Length < 1)
+                    if (MyItems.Length < 1)
                     {
-                        this.myGFX.DrawImageUnscaled(this.bxBuffer.Bitmap, 0, 0);
+                        myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                     }
                     int num4 = 0;
                     int num5 = 0;
-                    int num6 = 0;
-                    int num7 = this.MyItems.Length - 1;
+                    const int num6 = 0;
+                    int num7 = MyItems.Length - 1;
                     for (int i = num6; i <= num7; i++)
                     {
-                        PointF location = new PointF((float)(num * num5), unchecked(rectangleF.Height * (float)num4 + (float)(checked(this.LinePadding * num4))));
+                        PointF location = new PointF(num * num5, rectangleF.Height * num4 + checked(LinePadding * num4));
                         rectangleF.Location = location;
-                        rectangleF.Width = (float)num3;
+                        rectangleF.Width = num3;
                         stringFormat.Alignment = StringAlignment.Far;
                         stringFormat.Trimming = StringTrimming.None;
                         stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-                        if (this.Highlightable & this.CurrentHighlight == i)
+                        if (Highlightable & CurrentHighlight == i)
                         {
-                            brush = new SolidBrush(this.myHighlightColor);
-                            this.bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                            brush = new SolidBrush(this.myHighlightTextColor);
+                            brush = new SolidBrush(myHighlightColor);
+                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                            brush = new SolidBrush(myHighlightTextColor);
                         }
                         else
                         {
-                            brush = new SolidBrush(this.NameColour);
+                            brush = new SolidBrush(NameColour);
                         }
-                        string text = this.MyItems[i].Name;
+                        string text = MyItems[i].Name;
                         if (Operators.CompareString(text, "", false) != 0 & !text.EndsWith(":"))
                         {
                             text += ":";
                         }
-                        this.bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
-                        location = new PointF((float)(num * num5 + num3), unchecked(rectangleF.Height * (float)num4 + (float)(checked(this.LinePadding * num4))));
+                        bxBuffer.Graphics.DrawString(text, font, brush, rectangleF, stringFormat);
+                        location = new PointF(num * num5 + num3, rectangleF.Height * num4 + checked(LinePadding * num4));
                         rectangleF.Location = location;
-                        rectangleF.Width = (float)num2;
-                        if (this.Highlightable & this.CurrentHighlight == i)
+                        rectangleF.Width = num2;
+                        if (Highlightable & CurrentHighlight == i)
                         {
-                            brush = new SolidBrush(this.myHighlightColor);
-                            this.bxBuffer.Graphics.FillRectangle(brush, rectangleF);
-                            brush = new SolidBrush(this.myHighlightTextColor);
+                            brush = new SolidBrush(myHighlightColor);
+                            bxBuffer.Graphics.FillRectangle(brush, rectangleF);
+                            brush = new SolidBrush(myHighlightTextColor);
                         }
-                        else if (this.MyItems[i].UniqueColour)
+                        else if (MyItems[i].UniqueColour)
                         {
-                            brush = new SolidBrush(this.ValueColorD);
+                            brush = new SolidBrush(ValueColorD);
                         }
-                        else if (this.MyItems[i].AlternateColour)
+                        else if (MyItems[i].AlternateColour)
                         {
-                            brush = new SolidBrush(this.ValueColorA);
+                            brush = new SolidBrush(ValueColorA);
                         }
-                        else if (this.MyItems[i].ProbColour)
+                        else if (MyItems[i].ProbColour)
                         {
-                            brush = new SolidBrush(this.ValueColorB);
+                            brush = new SolidBrush(ValueColorB);
                         }
                         else
                         {
-                            brush = new SolidBrush(this.ValueColor);
+                            brush = new SolidBrush(ValueColor);
                         }
                         stringFormat.Alignment = StringAlignment.Near;
-                        this.bxBuffer.Graphics.DrawString(this.MyItems[i].Value, font2, brush, rectangleF, stringFormat);
+                        bxBuffer.Graphics.DrawString(MyItems[i].Value, font2, brush, rectangleF, stringFormat);
                         num5++;
-                        if (num5 >= this.myColumns)
+                        if (num5 >= myColumns)
                         {
                             num5 = 0;
                             num4++;
                         }
                     }
-                    this.myGFX.DrawImageUnscaled(this.bxBuffer.Bitmap, 0, 0);
+                    myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                 }
             }
         }
@@ -421,55 +421,55 @@ namespace midsControls
         // Token: 0x060000FC RID: 252 RVA: 0x00009F80 File Offset: 0x00008180
         private void ctlPairedList_Paint(object sender, PaintEventArgs e)
         {
-            if (this.bxBuffer != null)
+            if (bxBuffer != null)
             {
-                this.myGFX.DrawImage(this.bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
+                myGFX.DrawImage(bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
             }
         }
 
         // Token: 0x060000FD RID: 253 RVA: 0x00009FC5 File Offset: 0x000081C5
         protected override void OnFontChanged(EventArgs e)
         {
-            this.SetLineHeight();
-            this.Draw();
+            SetLineHeight();
+            Draw();
         }
 
         // Token: 0x060000FE RID: 254 RVA: 0x00009FD6 File Offset: 0x000081D6
         protected override void OnForeColorChanged(EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x060000FF RID: 255 RVA: 0x00009FE0 File Offset: 0x000081E0
         protected override void OnResize(EventArgs e)
         {
-            this.FullUpdate();
+            FullUpdate();
         }
 
         // Token: 0x06000100 RID: 256 RVA: 0x00009FEC File Offset: 0x000081EC
         private void SetLineHeight()
         {
-            Font font = new Font(this.Font, this.Font.Style);
-            this.LineHeight = checked((int)Math.Round((double)(unchecked(font.GetHeight() + (float)this.LinePadding))));
+            Font font = new Font(Font, Font.Style);
+            LineHeight = checked((int)Math.Round(font.GetHeight() + LinePadding));
         }
 
         // Token: 0x06000101 RID: 257 RVA: 0x0000A02C File Offset: 0x0000822C
-        public void AddItem(ctlPairedList.ItemPair iItem)
+        public void AddItem(ItemPair iItem)
         {
             checked
             {
-                this.MyItems = (ctlPairedList.ItemPair[])Utils.CopyArray(this.MyItems, new ctlPairedList.ItemPair[this.MyItems.Length + 1]);
-                this.MyItems[this.MyItems.Length - 1] = new ctlPairedList.ItemPair(iItem);
+                MyItems = (ItemPair[])Utils.CopyArray(MyItems, new ItemPair[MyItems.Length + 1]);
+                MyItems[MyItems.Length - 1] = new ItemPair(iItem);
             }
         }
 
         // Token: 0x06000102 RID: 258 RVA: 0x0000A078 File Offset: 0x00008278
         public void Clear(bool Redraw = false)
         {
-            this.MyItems = (ctlPairedList.ItemPair[])Utils.CopyArray(this.MyItems, new ctlPairedList.ItemPair[0]);
+            MyItems = (ItemPair[])Utils.CopyArray(MyItems, new ItemPair[0]);
             if (Redraw)
             {
-                this.Draw();
+                Draw();
             }
         }
 
@@ -479,26 +479,26 @@ namespace midsControls
             int num = 0;
             int num2 = 0;
             int num3 = -1;
-            Rectangle rectangle = default(Rectangle);
+            Rectangle rectangle = default;
             rectangle.X = 0;
             rectangle.Y = 0;
-            rectangle.Height = this.LineHeight;
+            rectangle.Height = LineHeight;
             checked
             {
-                rectangle.Width = (int)Math.Round((double)base.Width / (double)this.myColumns);
-                int num4 = 0;
-                int num5 = this.MyItems.Length - 1;
+                rectangle.Width = (int)Math.Round(Width / (double)myColumns);
+                const int num4 = 0;
+                int num5 = MyItems.Length - 1;
                 for (int i = num4; i <= num5; i++)
                 {
                     rectangle.X = rectangle.Width * num2;
-                    rectangle.Y = (rectangle.Height + this.LinePadding) * num;
+                    rectangle.Y = (rectangle.Height + LinePadding) * num;
                     if ((e.Y >= rectangle.Y & e.Y <= rectangle.Height + rectangle.Y) && (e.X >= rectangle.X & e.X <= rectangle.Width + rectangle.X))
                     {
                         num3 = i;
                         break;
                     }
                     num2++;
-                    if (num2 >= this.myColumns)
+                    if (num2 >= myColumns)
                     {
                         num2 = 0;
                         num++;
@@ -506,7 +506,7 @@ namespace midsControls
                 }
                 if (num3 > -1)
                 {
-                    ctlPairedList.ItemClickEventHandler itemClickEvent = this.ItemClick;
+                    ItemClickEventHandler itemClickEvent = ItemClick;
                     if (itemClickEvent != null)
                     {
                         itemClickEvent(num3, e.Button);
@@ -521,41 +521,41 @@ namespace midsControls
             int num = 0;
             int num2 = 0;
             int num3 = -1;
-            Rectangle rectangle = default(Rectangle);
+            Rectangle rectangle = default;
             rectangle.X = 0;
             rectangle.Y = 0;
-            rectangle.Height = this.LineHeight;
+            rectangle.Height = LineHeight;
             checked
             {
-                rectangle.Width = (int)Math.Round((double)base.Width / (double)this.myColumns);
-                int num4 = 0;
-                int num5 = this.MyItems.Length - 1;
+                rectangle.Width = (int)Math.Round(Width / (double)myColumns);
+                const int num4 = 0;
+                int num5 = MyItems.Length - 1;
                 for (int i = num4; i <= num5; i++)
                 {
                     rectangle.X = rectangle.Width * num2;
-                    rectangle.Y = (rectangle.Height + this.LinePadding) * num;
+                    rectangle.Y = (rectangle.Height + LinePadding) * num;
                     if ((e.Y >= rectangle.Y & e.Y <= rectangle.Height + rectangle.Y) && (e.X >= rectangle.X & e.X <= rectangle.Width + rectangle.X))
                     {
                         num3 = i;
                         break;
                     }
                     num2++;
-                    if (num2 >= this.myColumns)
+                    if (num2 >= myColumns)
                     {
                         num2 = 0;
                         num++;
                     }
                 }
-                if (this.CurrentHighlight != num3)
+                if (CurrentHighlight != num3)
                 {
-                    this.CurrentHighlight = num3;
-                    if (this.Highlightable)
+                    CurrentHighlight = num3;
+                    if (Highlightable)
                     {
-                        this.Draw();
+                        Draw();
                     }
                     if (num3 > -1)
                     {
-                        this.ItemHover?.Invoke(this, num3, this.MyItems[num3].TagID);
+                        ItemHover?.Invoke(this, num3, MyItems[num3].TagID);
                     }
                 }
             }
@@ -564,28 +564,28 @@ namespace midsControls
         // Token: 0x06000105 RID: 261 RVA: 0x0000A3D4 File Offset: 0x000085D4
         private void Listlabel_MouseLeave(object sender, EventArgs e)
         {
-            this.CurrentHighlight = -1;
-            if (this.Highlightable)
+            CurrentHighlight = -1;
+            if (Highlightable)
             {
-                this.Draw();
+                Draw();
             }
-            this.myTip.SetToolTip(this, "");
+            myTip.SetToolTip(this, "");
         }
 
         // Token: 0x06000106 RID: 262 RVA: 0x0000A411 File Offset: 0x00008611
         public void SetTip(string iTip)
         {
-            this.myTip.SetToolTip(this, iTip);
+            myTip.SetToolTip(this, iTip);
         }
 
         // Token: 0x06000107 RID: 263 RVA: 0x0000A422 File Offset: 0x00008622
         private void ctlPairedList_BackColorChanged(object sender, EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x04000064 RID: 100
-        protected ctlPairedList.ItemPair[] MyItems;
+        protected ItemPair[] MyItems;
 
         // Token: 0x04000065 RID: 101
         private int LineHeight;
@@ -651,49 +651,49 @@ namespace midsControls
             // Token: 0x06000108 RID: 264 RVA: 0x0000A42C File Offset: 0x0000862C
             public ItemPair(string iName, string iValue, bool iAlternate, bool iProbability, bool iSpecialCase, string iTip)
             {
-                this.Name = iName;
-                this.Value = iValue;
-                this.AlternateColour = iAlternate;
-                this.ProbColour = iProbability;
-                this.VerySpecialColour = iSpecialCase;
-                this.TagID.Add(-1, 0f);
-                this.SpecialTip = iTip;
+                Name = iName;
+                Value = iValue;
+                AlternateColour = iAlternate;
+                ProbColour = iProbability;
+                VerySpecialColour = iSpecialCase;
+                TagID.Add(-1, 0f);
+                SpecialTip = iTip;
             }
 
             // Token: 0x06000109 RID: 265 RVA: 0x0000A484 File Offset: 0x00008684
             public ItemPair(string iName, string iValue, bool iAlternate, bool iProbability = false, bool iSpecialCase = false, int iTagID = -1)
             {
-                this.Name = iName;
-                this.Value = iValue;
-                this.AlternateColour = iAlternate;
-                this.ProbColour = iProbability;
-                this.VerySpecialColour = iSpecialCase;
-                this.TagID.Add(iTagID, 0f);
-                this.SpecialTip = "";
+                Name = iName;
+                Value = iValue;
+                AlternateColour = iAlternate;
+                ProbColour = iProbability;
+                VerySpecialColour = iSpecialCase;
+                TagID.Add(iTagID, 0f);
+                SpecialTip = "";
             }
 
             // Token: 0x0600010A RID: 266 RVA: 0x0000A4E0 File Offset: 0x000086E0
             public ItemPair(string iName, string iValue, bool iAlternate, bool iProbability, bool iSpecialCase, Enums.ShortFX iTagID)
             {
-                this.Name = iName;
-                this.Value = iValue;
-                this.AlternateColour = iAlternate;
-                this.ProbColour = iProbability;
-                this.VerySpecialColour = iSpecialCase;
-                this.TagID.Assign(iTagID);
-                this.SpecialTip = "";
+                Name = iName;
+                Value = iValue;
+                AlternateColour = iAlternate;
+                ProbColour = iProbability;
+                VerySpecialColour = iSpecialCase;
+                TagID.Assign(iTagID);
+                SpecialTip = "";
             }
 
             // Token: 0x0600010B RID: 267 RVA: 0x0000A534 File Offset: 0x00008734
-            public ItemPair(ctlPairedList.ItemPair iItem)
+            public ItemPair(ItemPair iItem)
             {
-                this.Name = iItem.Name;
-                this.Value = iItem.Value;
-                this.AlternateColour = iItem.AlternateColour;
-                this.ProbColour = iItem.ProbColour;
-                this.VerySpecialColour = iItem.VerySpecialColour;
-                this.TagID.Assign(iItem.TagID);
-                this.SpecialTip = iItem.SpecialTip;
+                Name = iItem.Name;
+                Value = iItem.Value;
+                AlternateColour = iItem.AlternateColour;
+                ProbColour = iItem.ProbColour;
+                VerySpecialColour = iItem.VerySpecialColour;
+                TagID.Assign(iItem.TagID);
+                SpecialTip = iItem.SpecialTip;
             }
 
             // Token: 0x0400007A RID: 122

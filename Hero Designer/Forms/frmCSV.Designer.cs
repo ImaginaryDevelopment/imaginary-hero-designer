@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmCSV
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -733,7 +736,7 @@ namespace Hero_Designer
             this.btnStaticExport.TabIndex = 24;
             this.btnStaticExport.Text = "Export StaticIndex values";
             this.btnStaticExport.UseVisualStyleBackColor = true;
-            this.btnStaticExport.Click += frmCSV.btnStaticExport_Click;
+            this.btnStaticExport.Click += btnStaticExport_Click;
 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -769,73 +772,73 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Label at_Count;
-        System.Windows.Forms.Label at_Date;
-        System.Windows.Forms.Button at_Import;
-        System.Windows.Forms.Label at_Revision;
-        System.Windows.Forms.Button btnBonusLookup;
-        System.Windows.Forms.Button btnClearSI;
-        System.Windows.Forms.Button btnDefiance;
-        System.Windows.Forms.Button btnEnhEffects;
-        System.Windows.Forms.Button btnEntities;
-        System.Windows.Forms.Button btnImportRecipes;
-        System.Windows.Forms.Button btnIOLevels;
-        System.Windows.Forms.Button btnSalvageUpdate;
-        System.Windows.Forms.Button btnStaticExport;
-        System.Windows.Forms.Button btnStaticIndex;
-        System.Windows.Forms.Label fx_Count;
-        System.Windows.Forms.Label fx_Date;
-        System.Windows.Forms.Button fx_Import;
-        System.Windows.Forms.Label fx_Revision;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.GroupBox GroupBox3;
-        System.Windows.Forms.GroupBox GroupBox4;
-        System.Windows.Forms.GroupBox GroupBox5;
-        System.Windows.Forms.GroupBox GroupBox6;
-        System.Windows.Forms.GroupBox GroupBox7;
-        System.Windows.Forms.GroupBox GroupBox8;
-        System.Windows.Forms.Label invent_Date;
-        System.Windows.Forms.Button invent_Import;
-        System.Windows.Forms.Label invent_RecipeDate;
-        System.Windows.Forms.Label invent_Revision;
-        System.Windows.Forms.Button inventSetImport;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label10;
-        System.Windows.Forms.Label Label11;
-        System.Windows.Forms.Label Label12;
-        System.Windows.Forms.Label Label13;
-        System.Windows.Forms.Label Label14;
-        System.Windows.Forms.Label Label15;
-        System.Windows.Forms.Label Label16;
-        System.Windows.Forms.Label Label17;
-        System.Windows.Forms.Label Label19;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label21;
-        System.Windows.Forms.Label Label22;
-        System.Windows.Forms.Label Label23;
-        System.Windows.Forms.Label Label24;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label Label9;
-        System.Windows.Forms.Label lev_Count;
-        System.Windows.Forms.Label lev_date;
-        System.Windows.Forms.Label lev_Revision;
-        System.Windows.Forms.Button level_import;
-        System.Windows.Forms.Label mod_Count;
-        System.Windows.Forms.Label mod_Date;
-        System.Windows.Forms.Button mod_Import;
-        System.Windows.Forms.Label mod_Revision;
-        System.Windows.Forms.Label pow_Count;
-        System.Windows.Forms.Label pow_Date;
-        System.Windows.Forms.Button pow_Import;
-        System.Windows.Forms.Label pow_Revision;
-        System.Windows.Forms.Label set_Count;
-        System.Windows.Forms.Label set_Date;
-        System.Windows.Forms.Button set_Import;
-        System.Windows.Forms.Label set_Revision;
+        Label at_Count;
+        Label at_Date;
+        Button at_Import;
+        Label at_Revision;
+        Button btnBonusLookup;
+        Button btnClearSI;
+        Button btnDefiance;
+        Button btnEnhEffects;
+        Button btnEntities;
+        Button btnImportRecipes;
+        Button btnIOLevels;
+        Button btnSalvageUpdate;
+        Button btnStaticExport;
+        Button btnStaticIndex;
+        Label fx_Count;
+        Label fx_Date;
+        Button fx_Import;
+        Label fx_Revision;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        GroupBox GroupBox4;
+        GroupBox GroupBox5;
+        GroupBox GroupBox6;
+        GroupBox GroupBox7;
+        GroupBox GroupBox8;
+        Label invent_Date;
+        Button invent_Import;
+        Label invent_RecipeDate;
+        Label invent_Revision;
+        Button inventSetImport;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label16;
+        Label Label17;
+        Label Label19;
+        Label Label2;
+        Label Label21;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lev_Count;
+        Label lev_date;
+        Label lev_Revision;
+        Button level_import;
+        Label mod_Count;
+        Label mod_Date;
+        Button mod_Import;
+        Label mod_Revision;
+        Label pow_Count;
+        Label pow_Date;
+        Button pow_Import;
+        Label pow_Revision;
+        Label set_Count;
+        Label set_Date;
+        Button set_Import;
+        Label set_Revision;
     }
 }

@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmRecipeEdit
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -746,68 +749,68 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnAdd;
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnDel;
-        System.Windows.Forms.Button btnDown;
-        System.Windows.Forms.Button btnGuessCost;
-        System.Windows.Forms.Button btnI20;
-        System.Windows.Forms.Button btnI25;
-        System.Windows.Forms.Button btnI40;
-        System.Windows.Forms.Button btnI50;
-        System.Windows.Forms.Button btnImport;
-        System.Windows.Forms.Button btnImportUpdate;
-        System.Windows.Forms.Button btnIncrement;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnRAdd;
-        System.Windows.Forms.Button btnRDel;
-        System.Windows.Forms.Button btnRDown;
-        System.Windows.Forms.Button btnReGuess;
-        System.Windows.Forms.Button btnRunSeq;
-        System.Windows.Forms.Button btnRUp;
-        System.Windows.Forms.Button btnUp;
-        System.Windows.Forms.ComboBox cbEnh;
-        System.Windows.Forms.ComboBox cbRarity;
-        System.Windows.Forms.ComboBox cbSal0;
-        System.Windows.Forms.ComboBox cbSal1;
-        System.Windows.Forms.ComboBox cbSal2;
-        System.Windows.Forms.ComboBox cbSal3;
-        System.Windows.Forms.ComboBox cbSal4;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.GroupBox GroupBox1;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label10;
-        System.Windows.Forms.Label Label11;
-        System.Windows.Forms.Label Label12;
-        System.Windows.Forms.Label Label13;
-        System.Windows.Forms.Label Label14;
-        System.Windows.Forms.Label Label15;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label Label9;
-        System.Windows.Forms.Label lblEnh;
-        System.Windows.Forms.ListBox lstItems;
-        System.Windows.Forms.ListView lvDPA;
-        System.Windows.Forms.TextBox txtExtern;
-        System.Windows.Forms.TextBox txtRecipeName;
-        System.Windows.Forms.NumericUpDown udBuy;
-        System.Windows.Forms.NumericUpDown udBuyM;
-        System.Windows.Forms.NumericUpDown udCraft;
-        System.Windows.Forms.NumericUpDown udCraftM;
-        System.Windows.Forms.NumericUpDown udLevel;
-        System.Windows.Forms.NumericUpDown udSal0;
-        System.Windows.Forms.NumericUpDown udSal1;
-        System.Windows.Forms.NumericUpDown udSal2;
-        System.Windows.Forms.NumericUpDown udSal3;
-        System.Windows.Forms.NumericUpDown udSal4;
+        Button btnAdd;
+        Button btnCancel;
+        Button btnDel;
+        Button btnDown;
+        Button btnGuessCost;
+        Button btnI20;
+        Button btnI25;
+        Button btnI40;
+        Button btnI50;
+        Button btnImport;
+        Button btnImportUpdate;
+        Button btnIncrement;
+        Button btnOK;
+        Button btnRAdd;
+        Button btnRDel;
+        Button btnRDown;
+        Button btnReGuess;
+        Button btnRunSeq;
+        Button btnRUp;
+        Button btnUp;
+        ComboBox cbEnh;
+        ComboBox cbRarity;
+        ComboBox cbSal0;
+        ComboBox cbSal1;
+        ComboBox cbSal2;
+        ComboBox cbSal3;
+        ComboBox cbSal4;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        GroupBox GroupBox1;
+        GroupBox GroupBox2;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label12;
+        Label Label13;
+        Label Label14;
+        Label Label15;
+        Label Label2;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblEnh;
+        ListBox lstItems;
+        ListView lvDPA;
+        TextBox txtExtern;
+        TextBox txtRecipeName;
+        NumericUpDown udBuy;
+        NumericUpDown udBuyM;
+        NumericUpDown udCraft;
+        NumericUpDown udCraftM;
+        NumericUpDown udLevel;
+        NumericUpDown udSal0;
+        NumericUpDown udSal1;
+        NumericUpDown udSal2;
+        NumericUpDown udSal3;
+        NumericUpDown udSal4;
     }
 }

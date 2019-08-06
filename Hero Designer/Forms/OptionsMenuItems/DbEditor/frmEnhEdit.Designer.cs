@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmEnhEdit
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -226,22 +229,22 @@ namespace Hero_Designer
             this.ResumeLayout(false);
         }
         #endregion
-        System.Windows.Forms.Button btnAdd;
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnClone;
-        System.Windows.Forms.Button btnDelete;
-        System.Windows.Forms.Button btnDown;
-        System.Windows.Forms.Button btnEdit;
-        System.Windows.Forms.Button btnSave;
-        System.Windows.Forms.Button btnUp;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ImageList ilEnh;
-        System.Windows.Forms.Label lblLoading;
-        System.Windows.Forms.ListView lvEnh;
-        System.Windows.Forms.CheckBox NoReload;
+        Button btnAdd;
+        Button btnCancel;
+        Button btnClone;
+        Button btnDelete;
+        Button btnDown;
+        Button btnEdit;
+        Button btnSave;
+        Button btnUp;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ImageList ilEnh;
+        Label lblLoading;
+        ListView lvEnh;
+        CheckBox NoReload;
     }
 }

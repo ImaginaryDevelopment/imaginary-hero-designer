@@ -19,7 +19,7 @@ namespace midsControls
         // Token: 0x14000008 RID: 8
         // (add) Token: 0x060001A7 RID: 423 RVA: 0x00010566 File Offset: 0x0000E766
         // (remove) Token: 0x060001A8 RID: 424 RVA: 0x00010580 File Offset: 0x0000E780
-        public event ImageButton.ButtonClickedEventHandler ButtonClicked;
+        public event ButtonClickedEventHandler ButtonClicked;
 
         // Token: 0x17000059 RID: 89
         // (get) Token: 0x060001A9 RID: 425 RVA: 0x0001059C File Offset: 0x0000E79C
@@ -28,12 +28,12 @@ namespace midsControls
         {
             get
             {
-                return this.pTextOff;
+                return pTextOff;
             }
             set
             {
-                this.pTextOff = value;
-                this.Redraw();
+                pTextOff = value;
+                Redraw();
             }
         }
 
@@ -44,12 +44,12 @@ namespace midsControls
         {
             get
             {
-                return this.pTextOn;
+                return pTextOn;
             }
             set
             {
-                this.pTextOn = value;
-                this.Redraw();
+                pTextOn = value;
+                Redraw();
             }
         }
 
@@ -60,12 +60,12 @@ namespace midsControls
         {
             get
             {
-                return this.pToggle;
+                return pToggle;
             }
             set
             {
-                this.pToggle = value;
-                this.Redraw();
+                pToggle = value;
+                Redraw();
             }
         }
 
@@ -76,12 +76,12 @@ namespace midsControls
         {
             get
             {
-                return this.pAltState;
+                return pAltState;
             }
             set
             {
-                this.pAltState = value;
-                this.Redraw();
+                pAltState = value;
+                Redraw();
             }
         }
 
@@ -91,7 +91,7 @@ namespace midsControls
         {
             set
             {
-                this.myIA = value;
+                myIA = value;
             }
         }
 
@@ -101,10 +101,10 @@ namespace midsControls
         {
             set
             {
-                this.bxImage = new ExtendedBitmap(base.Width, base.Height);
-                this.bxImage.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                this.bxImage.Graphics.DrawImage(value, 0, 0, this.bxImage.Size.Width, this.bxImage.Size.Height);
-                this.Redraw();
+                bxImage = new ExtendedBitmap(Width, Height);
+                bxImage.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                bxImage.Graphics.DrawImage(value, 0, 0, bxImage.Size.Width, bxImage.Size.Height);
+                Redraw();
             }
         }
 
@@ -114,10 +114,10 @@ namespace midsControls
         {
             set
             {
-                this.bxAltImage = new ExtendedBitmap(base.Width, base.Height);
-                this.bxImage.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                this.bxAltImage.Graphics.DrawImage(value, 0, 0, this.bxAltImage.Size.Width, this.bxAltImage.Size.Height);
-                this.Redraw();
+                bxAltImage = new ExtendedBitmap(Width, Height);
+                bxImage.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                bxAltImage.Graphics.DrawImage(value, 0, 0, bxAltImage.Size.Width, bxAltImage.Size.Height);
+                Redraw();
             }
         }
 
@@ -127,8 +127,8 @@ namespace midsControls
         {
             set
             {
-                this.Knockout = value;
-                this.Redraw();
+                Knockout = value;
+                Redraw();
             }
         }
 
@@ -139,14 +139,14 @@ namespace midsControls
         {
             get
             {
-                return this.KnockoutLocation;
+                return KnockoutLocation;
             }
             set
             {
-                this.KnockoutLocation = value;
-                if (this.Knockout != null)
+                KnockoutLocation = value;
+                if (Knockout != null)
                 {
-                    this.Redraw();
+                    Redraw();
                 }
             }
         }
@@ -154,25 +154,25 @@ namespace midsControls
         // Token: 0x060001B7 RID: 439 RVA: 0x0001079C File Offset: 0x0000E99C
         public ImageButton()
         {
-            base.MouseDown += this.ImageButton_MouseDown;
-            base.MouseLeave += this.ImageButton_MouseLeave;
-            base.MouseUp += this.ImageButton_MouseUp;
-            base.Paint += this.ImageButton_Paint;
-            base.SizeChanged += this.ImageButton_SizeChanged;
-            base.BackColorChanged += this.ImageButton_BackColorChanged;
-            base.FontChanged += this.ImageButton_FontChanged;
-            this.bxImage = null;
-            this.bxAltImage = null;
-            this.bxOut = null;
-            this.pTextOff = "Button Text";
-            this.pTextOn = "Alt Text";
-            this.pToggle = false;
-            this.pAltState = false;
-            this.pTogState = false;
-            this.myIA = null;
-            this.Knockout = null;
-            this.KnockoutLocation = new Point(0, 0);
-            this.InitializeComponent();
+            MouseDown += ImageButton_MouseDown;
+            MouseLeave += ImageButton_MouseLeave;
+            MouseUp += ImageButton_MouseUp;
+            Paint += ImageButton_Paint;
+            SizeChanged += ImageButton_SizeChanged;
+            BackColorChanged += ImageButton_BackColorChanged;
+            FontChanged += ImageButton_FontChanged;
+            bxImage = null;
+            bxAltImage = null;
+            bxOut = null;
+            pTextOff = "Button Text";
+            pTextOn = "Alt Text";
+            pToggle = false;
+            pAltState = false;
+            pTogState = false;
+            myIA = null;
+            Knockout = null;
+            KnockoutLocation = new Point(0, 0);
+            InitializeComponent();
         }
 
         // Token: 0x060001B8 RID: 440 RVA: 0x0001089C File Offset: 0x0000EA9C
@@ -181,9 +181,9 @@ namespace midsControls
         {
             try
             {
-                if (disposing && this.components != null)
+                if (disposing && components != null)
                 {
-                    this.components.Dispose();
+                    components.Dispose();
                 }
             }
             finally
@@ -196,21 +196,21 @@ namespace midsControls
         [DebuggerStepThrough]
         private void InitializeComponent()
         {
-            base.SuspendLayout();
+            SuspendLayout();
             SizeF autoScaleDimensions = new SizeF(6f, 13f);
-            base.AutoScaleDimensions = autoScaleDimensions;
-            base.AutoScaleMode = AutoScaleMode.Font;
-            base.Name = "ImageButton";
-            base.ResumeLayout(false);
+            AutoScaleDimensions = autoScaleDimensions;
+            AutoScaleMode = AutoScaleMode.Font;
+            Name = "ImageButton";
+            ResumeLayout(false);
         }
 
         // Token: 0x060001BA RID: 442 RVA: 0x00010938 File Offset: 0x0000EB38
         private void Redraw()
         {
-            this.Draw();
-            if (this.bxOut.Bitmap != null)
+            Draw();
+            if (bxOut.Bitmap != null)
             {
-                base.CreateGraphics().DrawImage(this.bxOut.Bitmap, 0, 0);
+                CreateGraphics().DrawImage(bxOut.Bitmap, 0, 0);
             }
         }
 
@@ -220,115 +220,115 @@ namespace midsControls
             this.IA = IA;
             this.ImageOff = ImageOff;
             this.ImageOn = ImageOn;
-            this.Redraw();
+            Redraw();
         }
 
         // Token: 0x060001BC RID: 444 RVA: 0x0001099C File Offset: 0x0000EB9C
         private void ImageButton_BackColorChanged(object sender, EventArgs e)
         {
-            this.Redraw();
+            Redraw();
         }
 
         // Token: 0x060001BD RID: 445 RVA: 0x000109A6 File Offset: 0x0000EBA6
         private void ImageButton_FontChanged(object sender, EventArgs e)
         {
-            this.Redraw();
+            Redraw();
         }
 
         // Token: 0x060001BE RID: 446 RVA: 0x000109B0 File Offset: 0x0000EBB0
         private void Draw()
         {
             StringFormat stringFormat = new StringFormat();
-            if (this.bxOut == null)
+            if (bxOut == null)
             {
-                if (base.Width == 0 | base.Height == 0)
+                if (Width == 0 | Height == 0)
                 {
-                    this.bxOut = null;
+                    bxOut = null;
                     return;
                 }
-                this.bxOut = new ExtendedBitmap(base.Width, base.Height);
+                bxOut = new ExtendedBitmap(Width, Height);
             }
-            this.bxOut.Graphics.TextContrast = 0;
-            this.bxOut.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            bxOut.Graphics.TextContrast = 0;
+            bxOut.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             stringFormat.Alignment = StringAlignment.Center;
             stringFormat.LineAlignment = StringAlignment.Center;
-            this.bxOut.Graphics.Clear(this.BackColor);
-            if (this.Knockout != null && (this.KnockoutLocation.X > -1 & this.KnockoutLocation.Y > -1))
+            bxOut.Graphics.Clear(BackColor);
+            if (Knockout != null && (KnockoutLocation.X > -1 & KnockoutLocation.Y > -1))
             {
-                Rectangle srcRect = new Rectangle(this.KnockoutLocation, base.Size);
-                Graphics graphics = this.bxOut.Graphics;
-                Image image = this.Knockout.Image;
+                Rectangle srcRect = new Rectangle(KnockoutLocation, Size);
+                Graphics graphics = bxOut.Graphics;
+                Image image = Knockout.Image;
                 Point location = new Point(0, 0);
-                Rectangle bounds = new Rectangle(location, this.bxOut.Size);
+                Rectangle bounds = new Rectangle(location, bxOut.Size);
                 graphics.DrawImage(image, bounds, srcRect, GraphicsUnit.Pixel);
             }
             checked
             {
-                if (!(this.bxImage == null | this.bxAltImage == null))
+                if (!(bxImage == null | bxAltImage == null))
                 {
-                    if (this.pAltState | (this.pToggle & this.pTogState))
+                    if (pAltState | (pToggle & pTogState))
                     {
-                        this.bxOut.Graphics.DrawImageUnscaled(this.bxAltImage.Bitmap, 0, 0);
+                        bxOut.Graphics.DrawImageUnscaled(bxAltImage.Bitmap, 0, 0);
                     }
-                    else if (this.myIA != null)
+                    else if (myIA != null)
                     {
-                        Graphics graphics2 = this.bxOut.Graphics;
-                        Image bitmap = this.bxImage.Bitmap;
+                        Graphics graphics2 = bxOut.Graphics;
+                        Image bitmap = bxImage.Bitmap;
                         Point location = new Point(0, 0);
-                        Rectangle bounds = new Rectangle(location, this.bxOut.Size);
-                        graphics2.DrawImage(bitmap, bounds, 0, 0, this.bxOut.Size.Width, this.bxOut.Size.Height, GraphicsUnit.Pixel, this.myIA);
+                        Rectangle bounds = new Rectangle(location, bxOut.Size);
+                        graphics2.DrawImage(bitmap, bounds, 0, 0, bxOut.Size.Width, bxOut.Size.Height, GraphicsUnit.Pixel, myIA);
                     }
                     else
                     {
-                        Graphics graphics3 = this.bxOut.Graphics;
-                        Image bitmap2 = this.bxImage.Bitmap;
+                        Graphics graphics3 = bxOut.Graphics;
+                        Image bitmap2 = bxImage.Bitmap;
                         Point location = new Point(0, 0);
-                        Rectangle bounds = new Rectangle(location, this.bxOut.Size);
-                        graphics3.DrawImage(bitmap2, bounds, 0, 0, this.bxOut.Size.Width, this.bxOut.Size.Height, GraphicsUnit.Pixel);
+                        Rectangle bounds = new Rectangle(location, bxOut.Size);
+                        graphics3.DrawImage(bitmap2, bounds, 0, 0, bxOut.Size.Width, bxOut.Size.Height, GraphicsUnit.Pixel);
                     }
                 }
-                else if (this.pAltState | (this.pToggle & this.pTogState))
+                else if (pAltState | (pToggle & pTogState))
                 {
-                    this.bxOut.Graphics.Clear(Color.LightCoral);
-                    Graphics graphics4 = this.bxOut.Graphics;
+                    bxOut.Graphics.Clear(Color.LightCoral);
+                    Graphics graphics4 = bxOut.Graphics;
                     Pen red = Pens.Red;
-                    int x = 0;
-                    int y = 0;
-                    Rectangle bounds = base.Bounds;
-                    Rectangle bounds2 = new Rectangle(x, y, bounds.Width - 1, base.Bounds.Height - 1);
+                    const int x = 0;
+                    const int y = 0;
+                    Rectangle bounds = Bounds;
+                    Rectangle bounds2 = new Rectangle(x, y, bounds.Width - 1, Bounds.Height - 1);
                     graphics4.DrawRectangle(red, bounds2);
                 }
                 else
                 {
-                    this.bxOut.Graphics.Clear(Color.LavenderBlush);
-                    Graphics graphics5 = this.bxOut.Graphics;
+                    bxOut.Graphics.Clear(Color.LavenderBlush);
+                    Graphics graphics5 = bxOut.Graphics;
                     Pen red2 = Pens.Red;
-                    int x2 = 0;
-                    int y2 = 0;
-                    Rectangle bounds2 = base.Bounds;
-                    Rectangle bounds = new Rectangle(x2, y2, bounds2.Width - 1, base.Bounds.Height - 1);
+                    const int x2 = 0;
+                    const int y2 = 0;
+                    Rectangle bounds2 = Bounds;
+                    Rectangle bounds = new Rectangle(x2, y2, bounds2.Width - 1, Bounds.Height - 1);
                     graphics5.DrawRectangle(red2, bounds);
                 }
             }
-            float num = this.Font.GetHeight(this.bxOut.Graphics) + 2f;
-            RectangleF rectangleF = new RectangleF(0f, ((float)base.Height - num) / 2f, (float)base.Width, num);
+            float num = Font.GetHeight(bxOut.Graphics) + 2f;
+            RectangleF rectangleF = new RectangleF(0f, (Height - num) / 2f, Width, num);
             string text;
-            if (!this.pAltState | !this.pToggle)
+            if (!pAltState | !pToggle)
             {
-                text = this.pTextOff;
+                text = pTextOff;
             }
             else
             {
-                text = this.pTextOn;
+                text = pTextOn;
             }
             string iStr = text;
             RectangleF bounds3 = rectangleF;
             Color whiteSmoke = Color.WhiteSmoke;
             Color outline = Color.FromArgb(192, 0, 0, 0);
-            Font font = this.Font;
-            float outlineSpace = 1f;
-            Graphics graphics6 = this.bxOut.Graphics;
-            this.DrawOutlineText(iStr, bounds3, whiteSmoke, outline, font, outlineSpace, ref graphics6, false, false);
+            Font font = Font;
+            const float outlineSpace = 1f;
+            Graphics graphics6 = bxOut.Graphics;
+            DrawOutlineText(iStr, bounds3, whiteSmoke, outline, font, outlineSpace, ref graphics6);
         }
 
         // Token: 0x060001BF RID: 447 RVA: 0x00010E10 File Offset: 0x0000F010
@@ -387,77 +387,77 @@ namespace midsControls
         // Token: 0x060001C0 RID: 448 RVA: 0x00010FEC File Offset: 0x0000F1EC
         private void ImageButton_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!this.pToggle)
+            if (!pToggle)
             {
-                this.pAltState = true;
-                this.Redraw();
+                pAltState = true;
+                Redraw();
             }
             else
             {
-                this.pTogState = true;
-                this.Redraw();
+                pTogState = true;
+                Redraw();
             }
         }
 
         // Token: 0x060001C1 RID: 449 RVA: 0x00011028 File Offset: 0x0000F228
         private void ImageButton_MouseLeave(object sender, EventArgs e)
         {
-            if (!this.pToggle)
+            if (!pToggle)
             {
-                this.pAltState = false;
-                this.Redraw();
+                pAltState = false;
+                Redraw();
             }
             else
             {
-                this.pTogState = false;
-                this.Redraw();
+                pTogState = false;
+                Redraw();
             }
         }
 
         // Token: 0x060001C2 RID: 450 RVA: 0x00011064 File Offset: 0x0000F264
         private void ImageButton_MouseUp(object sender, MouseEventArgs e)
         {
-            if (!this.pToggle)
+            if (!pToggle)
             {
-                this.pAltState = false;
-                this.Redraw();
-                if (e.X >= 0 & e.Y >= 0 & e.X <= base.Width & e.Y <= base.Height)
+                pAltState = false;
+                Redraw();
+                if (e.X >= 0 & e.Y >= 0 & e.X <= Width & e.Y <= Height)
                 {
-                    this.ButtonClicked?.Invoke();
+                    ButtonClicked?.Invoke();
                 }
             }
-            else if (e.X >= 0 & e.Y >= 0 & e.X <= base.Width & e.Y <= base.Height)
+            else if (e.X >= 0 & e.Y >= 0 & e.X <= Width & e.Y <= Height)
             {
-                this.pAltState = !this.pAltState;
-                this.pTogState = false;
-                this.Redraw();
-                this.ButtonClicked?.Invoke();
+                pAltState = !pAltState;
+                pTogState = false;
+                Redraw();
+                ButtonClicked?.Invoke();
             }
         }
 
         // Token: 0x060001C3 RID: 451 RVA: 0x00011168 File Offset: 0x0000F368
         private void ImageButton_Paint(object sender, PaintEventArgs e)
         {
-            if (this.bxOut == null)
+            if (bxOut == null)
             {
-                this.Draw();
+                Draw();
             }
-            if (this.bxOut != null)
+            if (bxOut != null)
             {
-                e.Graphics.DrawImage(this.bxOut.Bitmap, 0, 0);
+                e.Graphics.DrawImage(bxOut.Bitmap, 0, 0);
             }
         }
 
         // Token: 0x060001C4 RID: 452 RVA: 0x000111BC File Offset: 0x0000F3BC
         private void ImageButton_SizeChanged(object sender, EventArgs e)
         {
-            if (base.Size.Width != 105 | base.Size.Height != 22)
+            if (Size.Width != 105 | Size.Height != 22)
             {
                 Size size = new Size(105, 22);
-                base.Size = size;
+                Size = size;
             }
-            this.bxOut = new ExtendedBitmap(base.Width, base.Height);
-            this.Redraw();
+            bxOut = new ExtendedBitmap(Width, Height);
+            Redraw();
         }
 
         // Token: 0x040000CA RID: 202

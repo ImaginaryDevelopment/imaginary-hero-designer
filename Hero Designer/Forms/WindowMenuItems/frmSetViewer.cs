@@ -1,14 +1,12 @@
 
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 using Base.Display;
 using Base.Master_Classes;
 using Microsoft.VisualBasic.CompilerServices;
 using midsControls;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Hero_Designer
 {
@@ -35,60 +33,60 @@ namespace Hero_Designer
 
         public frmSetViewer(frmMain iParent)
         {
-            this.Move += new EventHandler(this.frmSetViewer_Move);
-            this.FormClosed += new FormClosedEventHandler(this.frmSetViewer_FormClosed);
-            this.Load += new EventHandler(this.frmSetViewer_Load);
-            this.InitializeComponent();
+            Move += frmSetViewer_Move;
+            FormClosed += frmSetViewer_FormClosed;
+            Load += frmSetViewer_Load;
+            InitializeComponent();
             var componentResourceManager = new ComponentResourceManager(typeof(frmSetViewer));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmSetViewer);
-            this.myParent = iParent;
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmSetViewer);
+            myParent = iParent;
         }
 
         void btnClose_Click()
         {
-            this.Close();
+            Close();
         }
 
         void btnSmall_Click()
         {
-            if (this.Width > 600)
+            if (Width > 600)
             {
-                this.Width = 387;
-                this.rtxtInfo.Height = this.btnClose.Top - (this.rtxtInfo.Top + 8);
-                this.btnSmall.Left = this.rtxtInfo.Width + this.rtxtInfo.Left - this.btnSmall.Width;
-                this.btnClose.Left = this.btnSmall.Left - (this.btnClose.Width + 8);
-                this.chkOnTop.Left = this.btnClose.Left - (this.chkOnTop.Width + 4);
-                this.chkOnTop.Top = (int)Math.Round((double)this.btnClose.Top + (double)(this.btnClose.Height - this.chkOnTop.Height) / 2.0);
-                this.btnSmall.TextOff = "Expand >>";
+                Width = 387;
+                rtxtInfo.Height = btnClose.Top - (rtxtInfo.Top + 8);
+                btnSmall.Left = rtxtInfo.Width + rtxtInfo.Left - btnSmall.Width;
+                btnClose.Left = btnSmall.Left - (btnClose.Width + 8);
+                chkOnTop.Left = btnClose.Left - (chkOnTop.Width + 4);
+                chkOnTop.Top = (int)Math.Round(btnClose.Top + (btnClose.Height - chkOnTop.Height) / 2.0);
+                btnSmall.TextOff = "Expand >>";
             }
             else
             {
-                this.Width = 681;
-                this.rtxtInfo.Height = 132;
-                this.btnClose.Left = 558;
-                this.btnClose.Top = 418;
-                this.btnSmall.Left = 384;
-                this.btnSmall.Top = 418;
-                this.chkOnTop.Left = 558;
-                this.chkOnTop.Top = 392;
-                this.btnSmall.TextOff = "<< Shrink";
+                Width = 681;
+                rtxtInfo.Height = 132;
+                btnClose.Left = 558;
+                btnClose.Top = 418;
+                btnSmall.Left = 384;
+                btnSmall.Top = 418;
+                chkOnTop.Left = 558;
+                chkOnTop.Top = 392;
+                btnSmall.TextOff = "<< Shrink";
             }
-            this.StoreLocation();
+            StoreLocation();
         }
 
         void chkOnTop_CheckedChanged()
         {
-            this.TopMost = this.chkOnTop.Checked;
+            TopMost = chkOnTop.Checked;
         }
 
         public void DisplayList()
         {
             string[] items = new string[3];
-            this.lstSets.BeginUpdate();
-            this.lstSets.Items.Clear();
+            lstSets.BeginUpdate();
+            lstSets.Items.Clear();
             int imageIndex = -1;
-            this.FillImageList();
+            FillImageList();
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
@@ -101,20 +99,20 @@ namespace Hero_Designer
                     items[1] = MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset <= -1 ? "" : DatabaseAPI.Database.Powersets[MidsContext.Character.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].NIDPowerset].Powers[MainModule.MidsController.Toon.CurrentBuild.Powers[MidsContext.Character.CurrentBuild.SetBonus[index1].PowerIndex].IDXPower].DisplayName;
                     items[2] = Conversions.ToString(setInfo[index3].SlottedCount);
                     ++imageIndex;
-                    this.lstSets.Items.Add(new ListViewItem(items, imageIndex));
-                    this.lstSets.Items[this.lstSets.Items.Count - 1].Tag = setInfo[index3].SetIDX;
+                    lstSets.Items.Add(new ListViewItem(items, imageIndex));
+                    lstSets.Items[lstSets.Items.Count - 1].Tag = setInfo[index3].SetIDX;
                 }
             }
-            this.lstSets.EndUpdate();
-            if (this.lstSets.Items.Count > 0)
-                this.lstSets.Items[0].Selected = true;
-            this.FillEffectView();
+            lstSets.EndUpdate();
+            if (lstSets.Items.Count > 0)
+                lstSets.Items[0].Selected = true;
+            FillEffectView();
         }
 
         void FillEffectView()
         {
             string str1 = "";
-            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus", "").Length - 1 + 1];
+            int[] numArray = new int[DatabaseAPI.NidPowers("set_bonus").Length - 1 + 1];
             bool hasOvercap = false;
             int num1 = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
@@ -196,37 +194,37 @@ namespace Hero_Designer
             else
                 str7 = "";
             string str8 = RTF.StartRTF() + str7 + str1 + RTF.EndRTF();
-            if (this.rtxtFX.Rtf != str8)
-                this.rtxtFX.Rtf = str8;
+            if (rtxtFX.Rtf != str8)
+                rtxtFX.Rtf = str8;
             IEffect[] cumulativeSetBonuses = MidsContext.Character.CurrentBuild.GetCumulativeSetBonuses();
-            Array.Sort<IEffect>(cumulativeSetBonuses);
+            Array.Sort(cumulativeSetBonuses);
             string iStr = "";
             int num6 = cumulativeSetBonuses.Length - 1;
             for (int index = 0; index <= num6; ++index)
             {
                 if (iStr != "")
                     iStr += RTF.Crlf();
-                string str2 = cumulativeSetBonuses[index].BuildEffectString(true, "", false, false, false);
+                string str2 = cumulativeSetBonuses[index].BuildEffectString(true);
                 if (!str2.StartsWith("+"))
                     str2 = "+" + str2;
-                if (str2.IndexOf("Endurance") > -1)
+                if (str2.IndexOf("Endurance", StringComparison.Ordinal) > -1)
                     str2 = str2.Replace("Endurance", "Max Endurance");
                 iStr += str2;
             }
             string str9 = RTF.StartRTF() + RTF.ToRTF(iStr) + RTF.EndRTF();
-            if (!(this.rtApplied.Rtf != str9))
+            if (rtApplied.Rtf == str9)
                 return;
-            this.rtApplied.Rtf = str9;
+            rtApplied.Rtf = str9;
         }
 
         void FillImageList()
         {
-            Size imageSize1 = this.ilSet.ImageSize;
+            Size imageSize1 = ilSet.ImageSize;
             int width1 = imageSize1.Width;
-            imageSize1 = this.ilSet.ImageSize;
+            imageSize1 = ilSet.ImageSize;
             int height1 = imageSize1.Height;
             ExtendedBitmap extendedBitmap = new ExtendedBitmap(width1, height1);
-            this.ilSet.Images.Clear();
+            ilSet.Images.Clear();
             int setBonusCount = MidsContext.Character.CurrentBuild.SetBonus.Count - 1;
             for (int index1 = 0; index1 <= setBonusCount; ++index1)
             {
@@ -241,14 +239,14 @@ namespace Hero_Designer
                             extendedBitmap.Graphics.Clear(Color.White);
                             Graphics graphics = extendedBitmap.Graphics;
                             I9Gfx.DrawEnhancementSet(ref graphics, enhancementSet.ImageIdx);
-                            this.ilSet.Images.Add(extendedBitmap.Bitmap);
+                            ilSet.Images.Add(extendedBitmap.Bitmap);
                         }
                         else
                         {
-                            ImageList.ImageCollection images = this.ilSet.Images;
-                            Size imageSize2 = this.ilSet.ImageSize;
+                            ImageList.ImageCollection images = ilSet.Images;
+                            Size imageSize2 = ilSet.ImageSize;
                             int width2 = imageSize2.Width;
-                            imageSize2 = this.ilSet.ImageSize;
+                            imageSize2 = ilSet.ImageSize;
                             int height2 = imageSize2.Height;
                             Bitmap bitmap = new Bitmap(width2, height2);
                             images.Add(bitmap);
@@ -260,23 +258,23 @@ namespace Hero_Designer
 
         void frmSetViewer_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.myParent.FloatSets(false);
+            myParent.FloatSets(false);
         }
 
-        void frmSetViewer_Load(object sender, EventArgs e)
+        static void frmSetViewer_Load(object sender, EventArgs e)
         {
         }
 
         void frmSetViewer_Move(object sender, EventArgs e)
         {
-            this.StoreLocation();
+            StoreLocation();
         }
 
         void lstSets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.lstSets.SelectedItems.Count < 1)
+            if (lstSets.SelectedItems.Count < 1)
                 return;
-            this.rtxtInfo.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(Conversions.ToInteger(this.lstSets.SelectedItems[0].Tag), Conversions.ToInteger(this.lstSets.SelectedItems[0].SubItems[2].Text)) + RTF.EndRTF();
+            rtxtInfo.Rtf = RTF.StartRTF() + EnhancementSetCollection.GetSetInfoLongRTF(Conversions.ToInteger(lstSets.SelectedItems[0].Tag), Conversions.ToInteger(lstSets.SelectedItems[0].SubItems[2].Text)) + RTF.EndRTF();
         }
 
         public void SetLocation()
@@ -287,47 +285,47 @@ namespace Hero_Designer
                 Y = MainModule.MidsController.SzFrmSets.Y
             };
             if (rectangle.X < 1)
-                rectangle.X = this.myParent.Left + 8;
+                rectangle.X = myParent.Left + 8;
             if (rectangle.Y < 32)
-                rectangle.Y = this.myParent.Top + (this.myParent.Height - this.myParent.ClientSize.Height) + this.myParent.GetPrimaryBottom();
-            if (MidsContext.Config.ShrinkFrmSets & this.Width > 600)
-                this.btnSmall_Click();
-            else if (!MidsContext.Config.ShrinkFrmSets & this.Width < 600)
-                this.btnSmall_Click();
-            this.Top = rectangle.Y;
-            this.Left = rectangle.X;
+                rectangle.Y = myParent.Top + (myParent.Height - myParent.ClientSize.Height) + myParent.GetPrimaryBottom();
+            if (MidsContext.Config.ShrinkFrmSets & Width > 600)
+                btnSmall_Click();
+            else if (!MidsContext.Config.ShrinkFrmSets & Width < 600)
+                btnSmall_Click();
+            Top = rectangle.Y;
+            Left = rectangle.X;
         }
 
         void StoreLocation()
         {
             if (!MainModule.MidsController.IsAppInitialized)
                 return;
-            MainModule.MidsController.SzFrmSets.X = this.Left;
-            MainModule.MidsController.SzFrmSets.Y = this.Top;
-            MidsContext.Config.ShrinkFrmSets = this.Width < 600;
+            MainModule.MidsController.SzFrmSets.X = Left;
+            MainModule.MidsController.SzFrmSets.Y = Top;
+            MidsContext.Config.ShrinkFrmSets = Width < 600;
         }
 
         public void UpdateData()
         {
-            if (this.myParent == null)
+            if (myParent == null)
                 return;
-            this.BackColor = this.myParent.BackColor;
-            if (this.rtApplied.BackColor != this.BackColor)
-                this.rtApplied.BackColor = this.BackColor;
-            if (this.rtxtFX.BackColor != this.BackColor)
-                this.rtxtFX.BackColor = this.BackColor;
-            if (this.rtxtInfo.BackColor != this.BackColor)
-                this.rtxtInfo.BackColor = this.BackColor;
-            this.btnClose.IA = this.myParent.Drawing.pImageAttributes;
-            this.btnClose.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.btnClose.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.chkOnTop.IA = this.myParent.Drawing.pImageAttributes;
-            this.chkOnTop.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.chkOnTop.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.btnSmall.IA = this.myParent.Drawing.pImageAttributes;
-            this.btnSmall.ImageOff = this.myParent.Drawing.bxPower[2].Bitmap;
-            this.btnSmall.ImageOn = this.myParent.Drawing.bxPower[3].Bitmap;
-            this.DisplayList();
+            BackColor = myParent.BackColor;
+            if (rtApplied.BackColor != BackColor)
+                rtApplied.BackColor = BackColor;
+            if (rtxtFX.BackColor != BackColor)
+                rtxtFX.BackColor = BackColor;
+            if (rtxtInfo.BackColor != BackColor)
+                rtxtInfo.BackColor = BackColor;
+            btnClose.IA = myParent.Drawing.pImageAttributes;
+            btnClose.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            btnClose.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            chkOnTop.IA = myParent.Drawing.pImageAttributes;
+            chkOnTop.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            chkOnTop.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            btnSmall.IA = myParent.Drawing.pImageAttributes;
+            btnSmall.ImageOff = myParent.Drawing.bxPower[2].Bitmap;
+            btnSmall.ImageOn = myParent.Drawing.bxPower[3].Bitmap;
+            DisplayList();
         }
     }
 }

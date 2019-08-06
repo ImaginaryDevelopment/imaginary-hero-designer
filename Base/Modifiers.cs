@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 public class Modifiers
 {
-    public Modifiers.ModifierTable[] Modifier = new Modifiers.ModifierTable[0];
+    public ModifierTable[] Modifier = new ModifierTable[0];
     public DateTime RevisionDate = new DateTime(0L);
     public string SourceIndex = string.Empty;
     public string SourceTables = string.Empty;
@@ -23,7 +23,7 @@ public class Modifiers
             MessageBox.Show(ex.Message);
             return false;
         }
-        this.Modifier = new Modifiers.ModifierTable[0];
+        Modifier = new ModifierTable[0];
         string iLine1;
         do
         {
@@ -31,8 +31,8 @@ public class Modifiers
             if (iLine1 != null && !iLine1.StartsWith("#"))
             {
                 string[] array = CSV.ToArray(iLine1);
-                Array.Resize<Modifiers.ModifierTable>(ref this.Modifier, this.Modifier.Length + 1);
-                this.Modifier[this.Modifier.Length - 1] = new Modifiers.ModifierTable()
+                Array.Resize(ref Modifier, Modifier.Length + 1);
+                Modifier[Modifier.Length - 1] = new ModifierTable
                 {
                     BaseIndex = Convert.ToInt32(array[0]),
                     ID = array[1]
@@ -61,14 +61,14 @@ public class Modifiers
                 if (array.Length > 0)
                 {
                     int num = int.Parse(array[0]) - 1;
-                    for (int index1 = 0; index1 <= this.Modifier.Length - 1; ++index1)
+                    for (int index1 = 0; index1 <= Modifier.Length - 1; ++index1)
                     {
-                        if (num >= this.Modifier[index1].BaseIndex & num <= this.Modifier[index1].BaseIndex + 55)
+                        if (num >= Modifier[index1].BaseIndex & num <= Modifier[index1].BaseIndex + 55)
                         {
-                            int index2 = num - this.Modifier[index1].BaseIndex;
-                            this.Modifier[index1].Table[index2] = new float[array.Length - 1];
+                            int index2 = num - Modifier[index1].BaseIndex;
+                            Modifier[index1].Table[index2] = new float[array.Length - 1];
                             for (int index3 = 0; index3 <= array.Length - 2; ++index3)
-                                this.Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
+                                Modifier[index1].Table[index2][index3] = float.Parse(array[index3 + 1]);
                             break;
                         }
                     }
@@ -77,12 +77,12 @@ public class Modifiers
         }
         while (iLine2 != null);
         bool flag;
-        if (this.Modifier.Length > 0)
+        if (Modifier.Length > 0)
         {
-            this.SourceIndex = baseFn;
-            this.SourceTables = tableFn;
-            this.RevisionDate = DateTime.Now;
-            this.Revision = iRevision;
+            SourceIndex = baseFn;
+            SourceTables = tableFn;
+            RevisionDate = DateTime.Now;
+            Revision = iRevision;
             flag = true;
         }
         else
@@ -93,13 +93,13 @@ public class Modifiers
     public bool Load()
     {
         string path = Files.SelectDataFileLoad("AttribMod.mhd");
-        this.Modifier = new Modifiers.ModifierTable[0];
+        Modifier = new ModifierTable[0];
         FileStream fileStream;
         BinaryReader reader;
         try
         {
             fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            reader = new BinaryReader((Stream)fileStream);
+            reader = new BinaryReader(fileStream);
         }
         catch (Exception ex)
         {
@@ -115,31 +115,29 @@ public class Modifiers
                 fileStream.Close();
                 return false;
             }
-            else
+
+            Revision = reader.ReadInt32();
+            RevisionDate = DateTime.FromBinary(reader.ReadInt64());
+            SourceIndex = reader.ReadString();
+            SourceTables = reader.ReadString();
+            int num = 0;
+            Modifier = new ModifierTable[reader.ReadInt32() + 1];
+            for (int index = 0; index <= Modifier.Length - 1; ++index)
             {
-                this.Revision = reader.ReadInt32();
-                this.RevisionDate = DateTime.FromBinary(reader.ReadInt64());
-                this.SourceIndex = reader.ReadString();
-                this.SourceTables = reader.ReadString();
-                int num = 0;
-                this.Modifier = new Modifiers.ModifierTable[reader.ReadInt32() + 1];
-                for (int index = 0; index <= this.Modifier.Length - 1; ++index)
+                Modifier[index] = new ModifierTable();
+                Modifier[index].Load(reader);
+                if (num > 5)
                 {
-                    this.Modifier[index] = new Modifiers.ModifierTable();
-                    this.Modifier[index].Load(reader);
-                    if (num > 5)
-                    {
-                        num = 0;
-                        Application.DoEvents();
-                    }
+                    num = 0;
+                    Application.DoEvents();
                 }
-                return true;
             }
+            return true;
         }
         catch (Exception ex)
         {
             MessageBox.Show("Modifier table file isn't how it should be (" + ex.Message + ")" + '\n' + "No modifiers loaded.");
-            this.Modifier = new Modifiers.ModifierTable[0];
+            Modifier = new ModifierTable[0];
             reader.Close();
             fileStream.Close();
             return false;
@@ -151,11 +149,11 @@ public class Modifiers
         var toSerialize = new
         {
             name,
-            this.Revision,
-            this.RevisionDate,
-            this.SourceIndex,
-            this.SourceTables,
-            this.Modifier
+            Revision,
+            RevisionDate,
+            SourceIndex,
+            SourceTables,
+            Modifier
         };
         ConfigData.SaveRawMhd(serializer, toSerialize, path, null);
     }
@@ -170,7 +168,7 @@ public class Modifiers
         try
         {
             fileStream = new FileStream(path, FileMode.Create);
-            writer = new BinaryWriter((Stream)fileStream);
+            writer = new BinaryWriter(fileStream);
         }
         catch (Exception ex)
         {
@@ -180,13 +178,13 @@ public class Modifiers
         try
         {
             writer.Write(StoreName);
-            writer.Write(this.Revision);
-            writer.Write(this.RevisionDate.ToBinary());
-            writer.Write(this.SourceIndex);
-            writer.Write(this.SourceTables);
-            writer.Write(this.Modifier.Length - 1);
-            for (int index = 0; index <= this.Modifier.Length - 1; ++index)
-                this.Modifier[index].StoreTo(writer);
+            writer.Write(Revision);
+            writer.Write(RevisionDate.ToBinary());
+            writer.Write(SourceIndex);
+            writer.Write(SourceTables);
+            writer.Write(Modifier.Length - 1);
+            for (int index = 0; index <= Modifier.Length - 1; ++index)
+                Modifier[index].StoreTo(writer);
         }
         catch (Exception ex)
         {
@@ -207,31 +205,31 @@ public class Modifiers
 
         public ModifierTable()
         {
-            for (int index = 0; index < this.Table.Length; ++index)
-                this.Table[index] = new float[0];
+            for (int index = 0; index < Table.Length; ++index)
+                Table[index] = new float[0];
         }
 
         public void StoreTo(BinaryWriter writer)
         {
-            writer.Write(this.ID);
-            writer.Write(this.BaseIndex);
-            for (int index1 = 0; index1 <= this.Table.Length - 1; ++index1)
+            writer.Write(ID);
+            writer.Write(BaseIndex);
+            for (int index1 = 0; index1 <= Table.Length - 1; ++index1)
             {
-                writer.Write(this.Table[index1].Length - 1);
-                for (int index2 = 0; index2 <= this.Table[index1].Length - 1; ++index2)
-                    writer.Write(this.Table[index1][index2]);
+                writer.Write(Table[index1].Length - 1);
+                for (int index2 = 0; index2 <= Table[index1].Length - 1; ++index2)
+                    writer.Write(Table[index1][index2]);
             }
         }
 
         public void Load(BinaryReader reader)
         {
-            this.ID = reader.ReadString();
-            this.BaseIndex = reader.ReadInt32();
-            for (int index1 = 0; index1 <= this.Table.Length - 1; ++index1)
+            ID = reader.ReadString();
+            BaseIndex = reader.ReadInt32();
+            for (int index1 = 0; index1 <= Table.Length - 1; ++index1)
             {
-                this.Table[index1] = new float[reader.ReadInt32() + 1];
-                for (int index2 = 0; index2 <= this.Table[index1].Length - 1; ++index2)
-                    this.Table[index1][index2] = reader.ReadSingle();
+                Table[index1] = new float[reader.ReadInt32() + 1];
+                for (int index2 = 0; index2 <= Table[index1].Length - 1; ++index2)
+                    Table[index1][index2] = reader.ReadSingle();
             }
         }
     }

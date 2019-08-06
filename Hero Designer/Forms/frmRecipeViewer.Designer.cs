@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmRecipeViewer
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -256,20 +259,20 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.CheckBox chkRecipe;
-        System.Windows.Forms.CheckBox chkSortByLevel;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ImageList ilSets;
-        System.Windows.Forms.Label lblHeader;
-        System.Windows.Forms.ListView lvPower;
-        System.Windows.Forms.ListView lvDPA;
-        System.Windows.Forms.Panel Panel1;
-        System.Windows.Forms.Panel Panel2;
-        System.Windows.Forms.PictureBox pbRecipe;
-        System.Windows.Forms.ToolTip ToolTip1;
-        System.Windows.Forms.VScrollBar VScrollBar1;
+        CheckBox chkRecipe;
+        CheckBox chkSortByLevel;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ImageList ilSets;
+        Label lblHeader;
+        ListView lvPower;
+        ListView lvDPA;
+        Panel Panel1;
+        Panel Panel2;
+        PictureBox pbRecipe;
+        ToolTip ToolTip1;
+        VScrollBar VScrollBar1;
     }
 }

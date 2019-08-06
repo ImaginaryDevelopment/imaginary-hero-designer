@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmPowerEffect
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -735,65 +738,65 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnCopy;
-        System.Windows.Forms.Button btnCSV;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnPaste;
-        System.Windows.Forms.ComboBox cbAffects;
-        System.Windows.Forms.ComboBox cbAspect;
-        System.Windows.Forms.ComboBox cbAttribute;
-        System.Windows.Forms.ComboBox cbFXClass;
-        System.Windows.Forms.ComboBox cbFXSpecialCase;
-        System.Windows.Forms.ComboBox cbModifier;
-        System.Windows.Forms.ComboBox cbPercentageOverride;
-        System.Windows.Forms.CheckBox chkFXBuffable;
-        System.Windows.Forms.CheckBox chkFXResistable;
-        System.Windows.Forms.CheckBox chkNearGround;
-        System.Windows.Forms.CheckBox chkStack;
-        System.Windows.Forms.CheckBox chkVariable;
-        System.Windows.Forms.ColumnHeader chSub;
-        System.Windows.Forms.ColumnHeader chSubSub;
-        System.Windows.Forms.CheckedListBox clbSuppression;
-        System.Windows.Forms.ComboBox cmbEffectId;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.GroupBox GroupBox3;
-        System.Windows.Forms.CheckBox IgnoreED;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label10;
-        System.Windows.Forms.Label Label11;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label22;
-        System.Windows.Forms.Label Label23;
-        System.Windows.Forms.Label Label24;
-        System.Windows.Forms.Label Label25;
-        System.Windows.Forms.Label Label26;
-        System.Windows.Forms.Label Label27;
-        System.Windows.Forms.Label Label28;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label30;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label Label9;
-        System.Windows.Forms.Label lblAffectsCaster;
-        System.Windows.Forms.Label lblEffectDescription;
-        System.Windows.Forms.Label lblProb;
-        System.Windows.Forms.ListView lvEffectType;
-        System.Windows.Forms.ListView lvSubAttribute;
-        System.Windows.Forms.ListView lvSubSub;
-        System.Windows.Forms.RadioButton rbIfAny;
-        System.Windows.Forms.RadioButton rbIfCritter;
-        System.Windows.Forms.RadioButton rbIfPlayer;
-        System.Windows.Forms.TextBox txtFXDelay;
-        System.Windows.Forms.TextBox txtFXDuration;
-        System.Windows.Forms.TextBox txtFXMag;
-        System.Windows.Forms.TextBox txtFXProb;
-        System.Windows.Forms.TextBox txtFXScale;
-        System.Windows.Forms.TextBox txtFXTicks;
-        System.Windows.Forms.TextBox txtOverride;
-        System.Windows.Forms.TextBox txtPPM;
+        Button btnCancel;
+        Button btnCopy;
+        Button btnCSV;
+        Button btnOK;
+        Button btnPaste;
+        ComboBox cbAffects;
+        ComboBox cbAspect;
+        ComboBox cbAttribute;
+        ComboBox cbFXClass;
+        ComboBox cbFXSpecialCase;
+        ComboBox cbModifier;
+        ComboBox cbPercentageOverride;
+        CheckBox chkFXBuffable;
+        CheckBox chkFXResistable;
+        CheckBox chkNearGround;
+        CheckBox chkStack;
+        CheckBox chkVariable;
+        ColumnHeader chSub;
+        ColumnHeader chSubSub;
+        CheckedListBox clbSuppression;
+        ComboBox cmbEffectId;
+        ColumnHeader ColumnHeader1;
+        GroupBox GroupBox3;
+        CheckBox IgnoreED;
+        Label Label1;
+        Label Label10;
+        Label Label11;
+        Label Label2;
+        Label Label22;
+        Label Label23;
+        Label Label24;
+        Label Label25;
+        Label Label26;
+        Label Label27;
+        Label Label28;
+        Label Label3;
+        Label Label30;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label8;
+        Label Label9;
+        Label lblAffectsCaster;
+        Label lblEffectDescription;
+        Label lblProb;
+        ListView lvEffectType;
+        ListView lvSubAttribute;
+        ListView lvSubSub;
+        RadioButton rbIfAny;
+        RadioButton rbIfCritter;
+        RadioButton rbIfPlayer;
+        TextBox txtFXDelay;
+        TextBox txtFXDuration;
+        TextBox txtFXMag;
+        TextBox txtFXProb;
+        TextBox txtFXScale;
+        TextBox txtFXTicks;
+        TextBox txtOverride;
+        TextBox txtPPM;
     }
 }

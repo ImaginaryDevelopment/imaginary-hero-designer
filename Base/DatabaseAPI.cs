@@ -1,13 +1,14 @@
-using Base.Data_Classes;
-using Base.IO_Classes;
-using Base.Master_Classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Base;
+using Base.Data_Classes;
+using Base.IO_Classes;
+using Base.Master_Classes;
 using HeroDesigner.Schema;
 
 public static class DatabaseAPI
@@ -390,7 +391,7 @@ public static class DatabaseAPI
         //        where string.Equals(shortname, iName, StringComparison.OrdinalIgnoreCase)
         //        select (int?)es.Enhancements[enhSubId] ).FirstOrDefault()
         //        ?? -1;
-        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)Database.EnhancementSets)
+        foreach (EnhancementSet enhancementSet in Database.EnhancementSets)
         {
             if (string.Equals(enhancementSet.ShortName, iSet, StringComparison.OrdinalIgnoreCase))
             {
@@ -452,7 +453,7 @@ public static class DatabaseAPI
         {
             if (Database.Power[index1].Requires.ReferencesPower(uidPower, uidNew))
             {
-                Array.Resize<string>(ref array, array.Length + 1);
+                Array.Resize(ref array, array.Length + 1);
                 array[array.Length - 1] = Database.Power[index1].FullName + " (Requirement)";
             }
             for (int index2 = 0; index2 <= Database.Power[index1].Effects.Length - 1; ++index2)
@@ -460,7 +461,7 @@ public static class DatabaseAPI
                 if (Database.Power[index1].Effects[index2].Summon == uidPower)
                 {
                     Database.Power[index1].Effects[index2].Summon = uidNew;
-                    Array.Resize<string>(ref array, array.Length + 1);
+                    Array.Resize(ref array, array.Length + 1);
                     array[array.Length - 1] = Database.Power[index1].FullName + " (GrantPower)";
                 }
             }
@@ -684,7 +685,7 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            reader = new BinaryReader((Stream)fileStream);
+            reader = new BinaryReader(fileStream);
         }
         catch
         {
@@ -733,7 +734,7 @@ public static class DatabaseAPI
             Database.Powersets = new IPowerset[reader.ReadInt32() + 1];
             for (int index = 0; index < Database.Powersets.Length; ++index)
             {
-                Database.Powersets[index] = (IPowerset)new Powerset(reader)
+                Database.Powersets[index] = new Powerset(reader)
                 {
                     nID = index
                 };
@@ -758,7 +759,7 @@ public static class DatabaseAPI
             Database.Power = new IPower[reader.ReadInt32() + 1];
             for (int index = 0; index <= Database.Power.Length - 1; ++index)
             {
-                Database.Power[index] = (IPower)new Power(reader);
+                Database.Power[index] = new Power(reader);
                 ++num3;
                 if (num3 > 50)
                 {
@@ -794,7 +795,7 @@ public static class DatabaseAPI
 
     static float GetDatabaseVersion(string fp)
     {
-        var fName = System.Diagnostics.Debugger.IsAttached ? Files.SearchUp("Data", fp) : fp;
+        var fName = Debugger.IsAttached ? Files.SearchUp("Data", fp) : fp;
         float num1 = -1f;
         float num2;
         if (!File.Exists(fName))
@@ -805,7 +806,7 @@ public static class DatabaseAPI
         {
             using (FileStream fileStream = new FileStream(fName, FileMode.Open, FileAccess.Read))
             {
-                using (BinaryReader binaryReader = new BinaryReader((Stream)fileStream))
+                using (BinaryReader binaryReader = new BinaryReader(fileStream))
                 {
                     try
                     {
@@ -847,8 +848,8 @@ public static class DatabaseAPI
             strArray = FileIO.IOGrab(iStream);
         Database.Levels = new LevelMap[50];
         for (int index = 0; index < 50; ++index)
-            Database.Levels[index] = new LevelMap((IList<string>)FileIO.IOGrab(iStream));
-        List<int> intList = new List<int>() { 0 };
+            Database.Levels[index] = new LevelMap(FileIO.IOGrab(iStream));
+        List<int> intList = new List<int> { 0 };
         for (int index = 0; index <= Database.Levels.Length - 1; ++index)
         {
             if (Database.Levels[index].Powers > 0)
@@ -883,7 +884,7 @@ public static class DatabaseAPI
             do
             {
                 strArray = FileIO.IOGrab(streamReader);
-                if (!(strArray[0] == "End"))
+                if (strArray[0] != "End")
                     Database.Origins.Add(new Origin(strArray[0], strArray[1], strArray[2]));
                 else
                     break;
@@ -1047,14 +1048,14 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            reader = new BinaryReader((Stream)fileStream);
+            reader = new BinaryReader(fileStream);
         }
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message + "\n\nRecipe database couldn't be loaded.");
             return;
         }
-        if (!(reader.ReadString() != "Mids' Hero Designer Recipe Database"))
+        if (reader.ReadString() == "Mids' Hero Designer Recipe Database")
         {
             Database.RecipeSource1 = reader.ReadString();
             Database.RecipeSource2 = reader.ReadString();
@@ -1189,7 +1190,7 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Create);
-            writer = new BinaryWriter((Stream)fileStream);
+            writer = new BinaryWriter(fileStream);
         }
         catch (Exception ex)
         {
@@ -1272,7 +1273,7 @@ public static class DatabaseAPI
         try
         {
             fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            reader = new BinaryReader((Stream)fileStream);
+            reader = new BinaryReader(fileStream);
         }
         catch (Exception ex)
         {
@@ -1295,7 +1296,7 @@ public static class DatabaseAPI
                 Database.Enhancements = new IEnhancement[reader.ReadInt32() + 1];
                 for (int index = 0; index < Database.Enhancements.Length; ++index)
                 {
-                    Database.Enhancements[index] = (IEnhancement)new Enhancement(reader);
+                    Database.Enhancements[index] = new Enhancement(reader);
                     ++num1;
                     if (num1 > 5)
                     {
@@ -1344,9 +1345,9 @@ public static class DatabaseAPI
                 do
                 {
                     strArray = FileIO.IOGrab(streamReader);
-                    if (!(strArray[0] == "End"))
+                    if (strArray[0] != "End")
                     {
-                        Array.Resize<Enums.sEnhClass>(ref enhancementClasses, enhancementClasses.Length + 1);
+                        Array.Resize(ref enhancementClasses, enhancementClasses.Length + 1);
                         enhancementClasses[enhancementClasses.Length - 1].ID = int.Parse(strArray[0]);
                         enhancementClasses[enhancementClasses.Length - 1].Name = strArray[1];
                         enhancementClasses[enhancementClasses.Length - 1].ShortName = strArray[2];
@@ -1400,8 +1401,8 @@ public static class DatabaseAPI
                 strArray = FileIO.IOGrab(streamReader);
                 if (strArray[0] != "End")
                 {
-                    Array.Resize<string>(ref setTypeStringLong, setTypeStringLong.Length + 1);
-                    Array.Resize<string>(ref setTypeStringShort, setTypeStringShort.Length + 1);
+                    Array.Resize(ref setTypeStringLong, setTypeStringLong.Length + 1);
+                    Array.Resize(ref setTypeStringShort, setTypeStringShort.Length + 1);
                     setTypeStringShort[setTypeStringShort.Length - 1] = strArray[1];
                     setTypeStringLong[setTypeStringLong.Length - 1] = strArray[2];
                 }
@@ -1516,7 +1517,7 @@ public static class DatabaseAPI
 
     public static void AssignSetBonusIndexes()
     {
-        foreach (EnhancementSet enhancementSet in (List<EnhancementSet>)Database.EnhancementSets)
+        foreach (EnhancementSet enhancementSet in Database.EnhancementSets)
         {
             foreach (EnhancementSet.BonusItem bonu in enhancementSet.Bonus)
             {
@@ -1602,7 +1603,7 @@ public static class DatabaseAPI
         for (int index = 0; index <= Database.Classes.Length - 1; ++index)
         {
             Database.Classes[index].Idx = index;
-            Array.Sort<string>(Database.Classes[index].Origin);
+            Array.Sort(Database.Classes[index].Origin);
             Database.Classes[index].Primary = new int[0];
             Database.Classes[index].Secondary = new int[0];
             Database.Classes[index].Ancillary = new int[0];
@@ -1646,10 +1647,10 @@ public static class DatabaseAPI
                 int length = ps.Powers.Length;
                 power1.PowerSetIndex = length;
                 int[] power2 = ps.Power;
-                Array.Resize<int>(ref power2, length + 1);
+                Array.Resize(ref power2, length + 1);
                 ps.Power = power2;
                 IPower[] powers = ps.Powers;
-                Array.Resize<IPower>(ref powers, length + 1);
+                Array.Resize(ref powers, length + 1);
                 ps.Powers = powers;
                 ps.Power[length] = index;
                 ps.Powers[length] = power1;
@@ -1802,7 +1803,7 @@ public static class DatabaseAPI
                 if (index2 > -1)
                 {
                     enhancement.nIDSet = index2;
-                    Array.Resize<int>(ref Database.EnhancementSets[index2].Enhancements, Database.EnhancementSets[index2].Enhancements.Length + 1);
+                    Array.Resize(ref Database.EnhancementSets[index2].Enhancements, Database.EnhancementSets[index2].Enhancements.Length + 1);
                     Database.EnhancementSets[index2].Enhancements[Database.EnhancementSets[index2].Enhancements.Length - 1] = index1;
                 }
                 else

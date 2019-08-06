@@ -1,13 +1,13 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -19,68 +19,68 @@ namespace Hero_Designer
 
         public frmImport_SalvageReq()
         {
-            this.Load += new EventHandler(this.frmImport_SalvageReq_Load);
-            this.FullFileName = "";
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImport_SalvageReq));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmImport_SalvageReq);
+            Load += frmImport_SalvageReq_Load;
+            FullFileName = "";
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImport_SalvageReq));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmImport_SalvageReq);
         }
 
         void btnClose_Click(object sender, EventArgs e)
 
         {
-            this.Close();
+            Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
 
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.FullFileName = this.dlgBrowse.FileName;
-            this.BusyHide();
-            this.DisplayInfo();
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
+                FullFileName = dlgBrowse.FileName;
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
 
         {
-            this.ParseClasses(this.FullFileName);
-            this.BusyHide();
-            this.DisplayInfo();
+            ParseClasses(FullFileName);
+            BusyHide();
+            DisplayInfo();
         }
 
         void BusyHide()
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
+            lblFile.Text = FileIO.StripPath(FullFileName);
         }
 
         void frmImport_SalvageReq_Load(object sender, EventArgs e)
 
         {
-            this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets", "baserecipes");
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile.Replace("powersets", "baserecipes");
+            DisplayInfo();
         }
 
         [DebuggerStepThrough]
@@ -98,7 +98,7 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
-                bool flag = false;
+                const bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
@@ -114,7 +114,7 @@ namespace Hero_Designer
                     ++num5;
                     if (num5 >= 11)
                     {
-                        this.BusyMsg("Pass 1 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num1, "###,##0") + " records matched, " + Strings.Format(num4, "###,##0") + " records discarded.");
+                        BusyMsg("Pass 1 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num1, "###,##0") + " records matched, " + Strings.Format(num4, "###,##0") + " records discarded.");
                         num5 = 0;
                     }
                     string[] array = CSV.ToArray(iLine1);
@@ -155,7 +155,7 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "IO CSV Not Opened");
-                bool flag = false;
+                const bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
@@ -172,7 +172,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 11)
                         {
-                            this.BusyMsg("Pass 2 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num6, "###,##0") + " records done, " + Strings.Format(num7, "###,##0") + " records discarded.");
+                            BusyMsg("Pass 2 of 2: " + Strings.Format(num3, "###,##0") + " records scanned.\r\n" + Strings.Format(num6, "###,##0") + " records done, " + Strings.Format(num7, "###,##0") + " records discarded.");
                             num5 = 0;
                         }
                         string[] array = CSV.ToArray(iLine2);
@@ -207,7 +207,7 @@ namespace Hero_Designer
                     }
                 }
                 while (iLine2 != null);
-                this.BusyMsg("Reassigning salvage IDs and saving...");
+                BusyMsg("Reassigning salvage IDs and saving...");
                 DatabaseAPI.AssignRecipeSalvageIDs();
             }
             catch (Exception ex)
@@ -216,13 +216,13 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream2.Close();
                 int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "IO CSV Parse Error");
-                bool flag = false;
+                const bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveRecipes(serializer);
-            this.DisplayInfo();
+            DisplayInfo();
             int num8 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num6) + "\r\nRejected: " + Conversions.ToString(num7)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }

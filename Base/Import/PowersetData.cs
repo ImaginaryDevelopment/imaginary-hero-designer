@@ -17,16 +17,16 @@ namespace Import
     {
       if (string.IsNullOrEmpty(iString))
         return;
-      this._csvString = iString;
-      this.Data = new Powerset();
-      this.IsValid = this.Data.ImportFromCSV(iString);
-      this.IsNew = true;
+      _csvString = iString;
+      Data = new Powerset();
+      IsValid = Data.ImportFromCSV(iString);
+      IsNew = true;
       for (int index = 0; index <= DatabaseAPI.Database.Powersets.Length - 1; ++index)
       {
-        if (!string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, this.Data.FullName, StringComparison.OrdinalIgnoreCase))
+        if (!string.IsNullOrEmpty(DatabaseAPI.Database.Powersets[index].FullName) && string.Equals(DatabaseAPI.Database.Powersets[index].FullName, Data.FullName, StringComparison.OrdinalIgnoreCase))
         {
-          this.IsNew = false;
-          this._index = index;
+          IsNew = false;
+          _index = index;
           break;
         }
       }
@@ -34,66 +34,66 @@ namespace Import
 
     public void Apply()
     {
-      if (!this.IsValid)
+      if (!IsValid)
         return;
-      if (this.IsNew)
+      if (IsNew)
       {
         IPowerset[] powersets = DatabaseAPI.Database.Powersets;
-        Array.Resize<IPowerset>(ref powersets, DatabaseAPI.Database.Powersets.Length + 1);
+        Array.Resize(ref powersets, DatabaseAPI.Database.Powersets.Length + 1);
         DatabaseAPI.Database.Powersets = powersets;
-        this._index = DatabaseAPI.Database.Powersets.Length - 1;
-        DatabaseAPI.Database.Powersets[this._index] = (IPowerset) new Powerset();
+        _index = DatabaseAPI.Database.Powersets.Length - 1;
+        DatabaseAPI.Database.Powersets[_index] = new Powerset();
       }
-      if (!(!this.IsNew & this._index < 0))
-        DatabaseAPI.Database.Powersets[this._index].ImportFromCSV(this._csvString);
+      if (!(!IsNew & _index < 0))
+        DatabaseAPI.Database.Powersets[_index].ImportFromCSV(_csvString);
     }
 
     public bool CheckDifference(out string message)
     {
       message = string.Empty;
       bool flag;
-      if (!this.IsValid)
+      if (!IsValid)
         flag = false;
-      else if (this.IsNew)
+      else if (IsNew)
       {
         message = "New";
         flag = true;
       }
-      else if (this._index < 0 | this._index > DatabaseAPI.Database.Powersets.Length - 1)
+      else if (_index < 0 | _index > DatabaseAPI.Database.Powersets.Length - 1)
         flag = true;
-      else if (DatabaseAPI.Database.Powersets[this._index].FullName != this.Data.FullName)
+      else if (DatabaseAPI.Database.Powersets[_index].FullName != Data.FullName)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].FullName,  this.Data.FullName);
-        flag = true;
-      }
-      else if (DatabaseAPI.Database.Powersets[this._index].SetName != this.Data.SetName)
-      {
-        message += string.Format("SetName: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SetName,  this.Data.SetName);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].FullName,  Data.FullName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Powersets[this._index].DisplayName != this.Data.DisplayName)
+      else if (DatabaseAPI.Database.Powersets[_index].SetName != Data.SetName)
       {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].DisplayName,  this.Data.DisplayName);
+        message += string.Format("SetName: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SetName,  Data.SetName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Powersets[this._index].Description != this.Data.Description)
+      else if (DatabaseAPI.Database.Powersets[_index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].Description,  this.Data.Description);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].DisplayName,  Data.DisplayName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Powersets[this._index].SubName != this.Data.SubName)
+      else if (DatabaseAPI.Database.Powersets[_index].Description != Data.Description)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SubName,  this.Data.SubName);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].Description,  Data.Description);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Powersets[this._index].ATClass != this.Data.ATClass)
+      else if (DatabaseAPI.Database.Powersets[_index].SubName != Data.SubName)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].ATClass,  this.Data.ATClass);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SubName,  Data.SubName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Powersets[this._index].SetType != this.Data.SetType)
+      else if (DatabaseAPI.Database.Powersets[_index].ATClass != Data.ATClass)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[this._index].SetType,  this.Data.SetType);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].ATClass,  Data.ATClass);
+        flag = true;
+      }
+      else if (DatabaseAPI.Database.Powersets[_index].SetType != Data.SetType)
+      {
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Powersets[_index].SetType,  Data.SetType);
         flag = true;
       }
       else

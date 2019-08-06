@@ -1,9 +1,9 @@
 
-using Base.Master_Classes;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using Base.Master_Classes;
 
 namespace Base.Document_Classes
 {
@@ -16,76 +16,76 @@ namespace Base.Document_Classes
         bool _printingHistory;
         bool _endOfPage;
 
-        Print.PrintWhat _sectionCompleted;
+        PrintWhat _sectionCompleted;
 
 
         public Print()
         {
-            this.Document = new PrintDocument();
-            this.Document.PrinterSettings.DefaultPageSettings.Margins.Bottom = 25;
-            this.Document.PrinterSettings.DefaultPageSettings.Margins.Top = 25;
-            this.Document.PrinterSettings.DefaultPageSettings.Margins.Left = 25;
-            this.Document.PrinterSettings.DefaultPageSettings.Margins.Right = 25;
-            this.Document.PrinterSettings.DefaultPageSettings.Landscape = false;
+            Document = new PrintDocument();
+            Document.PrinterSettings.DefaultPageSettings.Margins.Bottom = 25;
+            Document.PrinterSettings.DefaultPageSettings.Margins.Top = 25;
+            Document.PrinterSettings.DefaultPageSettings.Margins.Left = 25;
+            Document.PrinterSettings.DefaultPageSettings.Margins.Right = 25;
+            Document.PrinterSettings.DefaultPageSettings.Landscape = false;
         }
 
         public void InitiatePrint()
         {
-            if (!this.Document.PrinterSettings.IsValid)
+            if (!Document.PrinterSettings.IsValid)
             {
-                int num = (int)MessageBox.Show(this.Document.PrinterSettings.PrinterName + " is not a valid printer!");
-                this.Document = null;
+                int num = (int)MessageBox.Show(Document.PrinterSettings.PrinterName + " is not a valid printer!");
+                Document = null;
             }
             else
             {
-                this.Document.DocumentName = string.IsNullOrEmpty(MidsContext.Character.Name) ? MidsContext.Character.Alignment.ToString() + " Plan (" + MidsContext.Character.Archetype.DisplayName + ")" : MidsContext.Character.Alignment.ToString() + " Plan (" + MidsContext.Character.Name + ")";
-                this.Document.PrinterSettings.DefaultPageSettings.Margins.Bottom = 25;
-                this.Document.PrinterSettings.DefaultPageSettings.Margins.Top = 25;
-                this.Document.PrinterSettings.DefaultPageSettings.Margins.Left = 25;
-                this.Document.PrinterSettings.DefaultPageSettings.Margins.Right = 25;
-                this.Document.BeginPrint += new PrintEventHandler(this.PrintBegin);
-                this.Document.EndPrint += new PrintEventHandler(this.PrintEnd);
-                this.Document.PrintPage += new PrintPageEventHandler(this.PrintPage);
+                Document.DocumentName = string.IsNullOrEmpty(MidsContext.Character.Name) ? MidsContext.Character.Alignment + " Plan (" + MidsContext.Character.Archetype.DisplayName + ")" : MidsContext.Character.Alignment + " Plan (" + MidsContext.Character.Name + ")";
+                Document.PrinterSettings.DefaultPageSettings.Margins.Bottom = 25;
+                Document.PrinterSettings.DefaultPageSettings.Margins.Top = 25;
+                Document.PrinterSettings.DefaultPageSettings.Margins.Left = 25;
+                Document.PrinterSettings.DefaultPageSettings.Margins.Right = 25;
+                Document.BeginPrint += PrintBegin;
+                Document.EndPrint += PrintEnd;
+                Document.PrintPage += PrintPage;
                 try
                 {
-                    this.Document.Print();
+                    Document.Print();
                 }
                 catch (Exception ex)
                 {
                     int num = (int)MessageBox.Show("An error occurred while attempting to print: \n\n" + ex.Message + "\n\nYou should save your work, exit and then re-launch the application.");
-                    this.Document = new PrintDocument();
+                    Document = new PrintDocument();
                 }
             }
         }
 
         void PrintBegin(object sender, PrintEventArgs e)
         {
-            this._pageNumber = 0;
-            this._pIndex = 0;
-            this._printingProfile = MidsContext.Config.PrintProfile != ConfigData.PrintOptionProfile.None;
-            this._printingHistory = MidsContext.Config.PrintHistory;
-            this._sectionCompleted = Print.PrintWhat.None;
+            _pageNumber = 0;
+            _pIndex = 0;
+            _printingProfile = MidsContext.Config.PrintProfile != ConfigData.PrintOptionProfile.None;
+            _printingHistory = MidsContext.Config.PrintHistory;
+            _sectionCompleted = PrintWhat.None;
         }
 
         void PrintEnd(object sender, PrintEventArgs e)
         {
-            this.Document = new PrintDocument();
+            Document = new PrintDocument();
         }
 
         void PrintPage(object sender, PrintPageEventArgs args)
         {
             RectangleF visibleClipBounds = args.Graphics.VisibleClipBounds;
-            ++this._pageNumber;
-            int num = this.PageBorder(Print.RectConvert(visibleClipBounds), args);
-            visibleClipBounds.Y += (float)num;
-            visibleClipBounds.Height -= (float)num;
-            if (MidsContext.Config.PrintProfile == ConfigData.PrintOptionProfile.SinglePage & this._printingProfile)
-                this.PrintProfileShort(Print.RectConvert(visibleClipBounds), args);
-            else if (MidsContext.Config.PrintProfile == ConfigData.PrintOptionProfile.MultiPage & this._printingProfile)
-                this.PrintProfileLong(Print.RectConvert(visibleClipBounds), args);
-            else if (MidsContext.Config.PrintHistory & this._printingHistory)
-                this.PrintHistory(Print.RectConvert(visibleClipBounds), args);
-            if (this._printingProfile | this._printingHistory)
+            ++_pageNumber;
+            int num = PageBorder(RectConvert(visibleClipBounds), args);
+            visibleClipBounds.Y += num;
+            visibleClipBounds.Height -= num;
+            if (MidsContext.Config.PrintProfile == ConfigData.PrintOptionProfile.SinglePage & _printingProfile)
+                PrintProfileShort(RectConvert(visibleClipBounds), args);
+            else if (MidsContext.Config.PrintProfile == ConfigData.PrintOptionProfile.MultiPage & _printingProfile)
+                PrintProfileLong(RectConvert(visibleClipBounds), args);
+            else if (MidsContext.Config.PrintHistory & _printingHistory)
+                PrintHistory(RectConvert(visibleClipBounds), args);
+            if (_printingProfile | _printingHistory)
                 args.HasMorePages = true;
             else
                 args.HasMorePages = false;
@@ -99,11 +99,11 @@ namespace Base.Document_Classes
             StringFormat format = new StringFormat(StringFormatFlags.NoClip);
             args.Graphics.DrawRectangle(pen, bounds.Left, bounds.Top, bounds.Width, bounds.Height);
             int num1 = top + 8;
-            int num2 = 28;
-            Font font1 = new Font("Arial", (float)num2, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
+            const int num2 = 28;
+            Font font1 = new Font("Arial", num2, FontStyle.Bold, GraphicsUnit.Pixel, 0);
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Near;
-            RectangleF layoutRectangle = new RectangleF((float)bounds.Left, (float)num1, (float)bounds.Width, (float)Convert.ToInt32((double)num2 * 1.25));
+            RectangleF layoutRectangle = new RectangleF(bounds.Left, num1, bounds.Width, Convert.ToInt32(num2 * 1.25));
             int num3 = MidsContext.Character.Level + 1;
             if (num3 > 50)
                 num3 = 50;
@@ -118,11 +118,11 @@ namespace Base.Document_Classes
             format.Alignment = StringAlignment.Near;
             format.LineAlignment = StringAlignment.Center;
             int int32 = Convert.ToInt32(12.8);
-            layoutRectangle = new RectangleF((float)bounds.Left + 5.28f, (float)bounds.Top, (float)bounds.Width, (float)(num4 - bounds.Top));
-            Font font2 = new Font("Arial", (float)int32, FontStyle.Bold, GraphicsUnit.Pixel, (byte)0);
-            args.Graphics.DrawString("Page " + this._pageNumber, font2, solidBrush, layoutRectangle, format);
+            layoutRectangle = new RectangleF(bounds.Left + 5.28f, bounds.Top, bounds.Width, num4 - bounds.Top);
+            Font font2 = new Font("Arial", int32, FontStyle.Bold, GraphicsUnit.Pixel, 0);
+            args.Graphics.DrawString("Page " + _pageNumber, font2, solidBrush, layoutRectangle, format);
             format.Alignment = StringAlignment.Far;
-            layoutRectangle = new RectangleF((float)bounds.Left, (float)bounds.Top, (float)bounds.Width - 5.28f, (float)(num4 - bounds.Top));
+            layoutRectangle = new RectangleF(bounds.Left, bounds.Top, bounds.Width - 5.28f, num4 - bounds.Top);
             args.Graphics.DrawString(DateTime.Now.ToShortDateString() + "\n" + DateTime.Now.ToShortTimeString(), font2, solidBrush, layoutRectangle, format);
             return Convert.ToInt32(num4 + 8);
         }
@@ -138,7 +138,7 @@ namespace Base.Document_Classes
             };
             var historyMapArray = MidsContext.Character.CurrentBuild.BuildHistoryMap(true, !MidsContext.Config.I9.DisablePrintIOLevels);
             int lvl = 0;
-            string s = ((int)MidsContext.Character.Alignment).ToString() + " CurrentBuild";
+            string s = ((int)MidsContext.Character.Alignment) + " CurrentBuild";
             RectangleF layoutRectangle = new RectangleF(bounds.Left + 15, top, bounds.Width, 12.5f);
             Font font1 = new Font("Arial", 10f, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Pixel);
             args.Graphics.DrawString(s, font1, solidBrush, layoutRectangle, format);
@@ -170,7 +170,7 @@ namespace Base.Document_Classes
                 }
                 args.Graphics.DrawString(historyMapArray[index].Text, font2, solidBrush, layoutRectangle, format);
             }
-            this._printingHistory = false;
+            _printingHistory = false;
         }
 
         static int PpInfo(Rectangle bounds, PrintPageEventArgs args)
@@ -224,61 +224,61 @@ namespace Base.Document_Classes
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Near
             };
-            if (this._pageNumber == 1)
+            if (_pageNumber == 1)
             {
-                int num = Print.PpInfo(bounds, args) + 6;
+                int num = PpInfo(bounds, args) + 6;
                 Font font = new Font("Arial", 12f, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Pixel);
-                args.Graphics.DrawString("Extended " + MidsContext.Character.Alignment.ToString() + " Profile", font, solidBrush, new RectangleF(bounds.Left + 15, num, bounds.Width, 15f), format);
+                args.Graphics.DrawString("Extended " + MidsContext.Character.Alignment + " Profile", font, solidBrush, new RectangleF(bounds.Left + 15, num, bounds.Width, 15f), format);
                 vPos = num + 15;
             }
             Font font1 = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
-            if (this._sectionCompleted == Print.PrintWhat.None)
+            if (_sectionCompleted == PrintWhat.None)
             {
-                this._endOfPage = false;
+                _endOfPage = false;
                 // mutates vPos
-                int num = this.BuildPowerListLong(ref vPos, bounds, 12, Print.PrintWhat.Powers, args);
-                if (this._endOfPage)
+                int num = BuildPowerListLong(ref vPos, bounds, 12, PrintWhat.Powers, args);
+                if (_endOfPage)
                     return;
-                string s = "------------";
+                const string s = "------------";
                 args.Graphics.DrawString(s, font1, solidBrush, new RectangleF(bounds.Left + 15, num, bounds.Width, 15f), format);
                 vPos = num + 15;
-                this._sectionCompleted = Print.PrintWhat.Powers;
+                _sectionCompleted = PrintWhat.Powers;
             }
-            if (this._sectionCompleted == Print.PrintWhat.Powers)
+            if (_sectionCompleted == PrintWhat.Powers)
             {
-                this._endOfPage = false;
-                vPos = this.BuildPowerListLong(ref vPos, bounds, 12, Print.PrintWhat.Inherent, args);
-                if (this._endOfPage)
+                _endOfPage = false;
+                vPos = BuildPowerListLong(ref vPos, bounds, 12, PrintWhat.Inherent, args);
+                if (_endOfPage)
                     return;
-                this._sectionCompleted = Print.PrintWhat.Inherent;
+                _sectionCompleted = PrintWhat.Inherent;
                 if (MidsContext.Character.Archetype.Epic)
                 {
-                    string s = "------------";
+                    const string s = "------------";
                     args.Graphics.DrawString(s, font1, solidBrush, new RectangleF((bounds.Left + 15), vPos, bounds.Width, 15f), format);
                     vPos += 15;
                 }
             }
-            if (this._sectionCompleted == Print.PrintWhat.Inherent && MidsContext.Character.Archetype.Epic)
+            if (_sectionCompleted == PrintWhat.Inherent && MidsContext.Character.Archetype.Epic)
             {
-                this._endOfPage = false;
-                this.BuildPowerListLong(ref vPos, bounds, 12, Print.PrintWhat.EpicInherent, args);
-                if (this._endOfPage)
+                _endOfPage = false;
+                BuildPowerListLong(ref vPos, bounds, 12, PrintWhat.EpicInherent, args);
+                if (_endOfPage)
                     return;
             }
-            this._printingProfile = false;
+            _printingProfile = false;
         }
 
         int BuildPowerListLong(
           ref int vPos,
           RectangleF bounds,
           int fontSize,
-          Print.PrintWhat selection,
+          PrintWhat selection,
           PrintPageEventArgs args)
         {
-            if (this._pIndex < 0)
+            if (_pIndex < 0)
             {
-                this._endOfPage = true;
-                this._printingProfile = false;
+                _endOfPage = true;
+                _printingProfile = false;
                 return vPos;
             }
 
@@ -287,25 +287,24 @@ namespace Base.Document_Classes
             int pgIdx = -1;
             var font = new Font("Arial", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
             bool isEnd = false;
-            for (int pIndex = this._pIndex; pIndex <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++pIndex)
+            for (int pIndex = _pIndex; pIndex <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++pIndex)
             {
                 bool include = false;
                 switch (selection)
                 {
-                    case Print.PrintWhat.Powers:
+                    case PrintWhat.Powers:
                         if (MidsContext.Character.CurrentBuild.Powers[pIndex].Chosen)
                             include = true;
                         break;
-                    case Print.PrintWhat.Inherent:
+                    case PrintWhat.Inherent:
                         if (!MidsContext.Character.CurrentBuild.Powers[pIndex].Chosen && MidsContext.Character.CurrentBuild.Powers[pIndex].Power != null)
                         {
                             include = !MidsContext.Character.CurrentBuild.Powers[pIndex].Power.IsEpic;
                             if (include && MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length < 1)
                                 include = false;
-                            break;
                         }
                         break;
-                    case Print.PrintWhat.EpicInherent:
+                    case PrintWhat.EpicInherent:
                         if (!MidsContext.Character.CurrentBuild.Powers[pIndex].Chosen && MidsContext.Character.CurrentBuild.Powers[pIndex].Power != null)
                             include = MidsContext.Character.CurrentBuild.Powers[pIndex].Power.IsEpic;
                         break;
@@ -343,7 +342,7 @@ namespace Base.Document_Classes
                                     if (!string.IsNullOrEmpty(relativeString1) & relativeString1 != "X")
                                         str2 = str1 + relativeString1 + " " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
                                     else
-                                        str2 = !(relativeString1 == "X") ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
+                                        str2 = relativeString1 != "X" ? str1 + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - " : str1 + "Disabled " + DatabaseAPI.Database.EnhGradeStringLong[(int)MidsContext.Character.CurrentBuild.Powers[pIndex].Slots[index].Enhancement.Grade] + " - ";
                                     str1 = str2 + " ";
                                     break;
                                 case Enums.eType.SpecialO:
@@ -352,7 +351,7 @@ namespace Base.Document_Classes
                                     if (!string.IsNullOrEmpty(relativeString2) & relativeString2 != "X")
                                         str3 = str1 + relativeString2 + " " + enhancement.GetSpecialName() + " - ";
                                     else
-                                        str3 = !(relativeString2 == "X") ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
+                                        str3 = relativeString2 != "X" ? str1 + enhancement.GetSpecialName() + " - " : str1 + "Disabled " + enhancement.GetSpecialName() + " - ";
                                     str1 = str3 + " ";
                                     break;
                             }
@@ -369,8 +368,8 @@ namespace Base.Document_Classes
                                     continue;
                             }
                         }
-                        else
-                            s3 = str1 + "[Empty]";
+
+                        s3 = str1 + "[Empty]";
                     }
                     if (!string.IsNullOrEmpty(s1) || !string.IsNullOrEmpty(s2) || !string.IsNullOrEmpty(s3))
                     {
@@ -379,46 +378,46 @@ namespace Base.Document_Classes
                         layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
                         args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
                         vPos += (int)(fontSize * 1.25);
-                        layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, (float)(MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize) * 1.25f);
+                        layoutRectangle = new RectangleF(bounds.Left + 90f, vPos, bounds.Width, MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length * fontSize * 1.25f);
                         args.Graphics.DrawString(s3, font, solidBrush, layoutRectangle, format);
                         vPos += (int)((fontSize * 1.25 * 1.1) + (fontSize * 1.25 * (MidsContext.Character.CurrentBuild.Powers[pIndex].Slots.Length - 1)));
                     }
                 }
             }
-            this._pIndex = pgIdx;
+            _pIndex = pgIdx;
             if (isEnd)
-                this._endOfPage = true;
+                _endOfPage = true;
             else
-                this._pIndex = 0;
+                _pIndex = 0;
             return vPos;
         }
 
         void PrintProfileShort(Rectangle bounds, PrintPageEventArgs args)
 
         {
-            this._printingProfile = false;
+            _printingProfile = false;
             var solidBrush = new SolidBrush(Color.Black);
             var format = new StringFormat(StringFormatFlags.NoClip)
             {
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Near
             };
-            int vPos = Print.PpInfo(bounds, args) + 6;
+            int vPos = PpInfo(bounds, args) + 6;
             Font font1 = new Font("Arial", 12f, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Pixel);
-            args.Graphics.DrawString(MidsContext.Character.Alignment.ToString() + " Profile", font1, solidBrush, new RectangleF(bounds.Left + 15, vPos, bounds.Width, 15f), format);
+            args.Graphics.DrawString(MidsContext.Character.Alignment + " Profile", font1, solidBrush, new RectangleF(bounds.Left + 15, vPos, bounds.Width, 15f), format);
             vPos += 15;
             Font font2 = new Font("Arial", 12f, FontStyle.Bold, GraphicsUnit.Pixel);
-            Print.BuildPowerListShort(ref vPos, bounds, 12, true, false, false, args);
-            string s2 = "------------";
+            BuildPowerListShort(ref vPos, bounds, 12, true, false, false, args);
+            const string s2 = "------------";
             args.Graphics.DrawString(s2, font2, solidBrush, new RectangleF((bounds.Left + 15), vPos, bounds.Width, 15f), format);
             vPos += 15;
-            Print.BuildPowerListShort(ref vPos, bounds, 12, false, true, false, args);
+            BuildPowerListShort(ref vPos, bounds, 12, false, true, false, args);
             if (!MidsContext.Character.Archetype.Epic)
                 return;
-            string s3 = "------------";
+            const string s3 = "------------";
             args.Graphics.DrawString(s3, font2, solidBrush, new RectangleF((bounds.Left + 15), vPos, bounds.Width, 15f), format);
             vPos += 15;
-            Print.BuildPowerListShort(ref vPos, bounds, 12, false, true, true, args);
+            BuildPowerListShort(ref vPos, bounds, 12, false, true, true, args);
         }
 
         static void BuildPowerListShort(
@@ -435,7 +434,7 @@ namespace Base.Document_Classes
             SolidBrush solidBrush = new SolidBrush(Color.Black);
             for (int index1 = 0; index1 <= MidsContext.Character.CurrentBuild.Powers.Count - 1; ++index1)
             {
-                Font font = new Font("Arial", (float)fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
+                Font font = new Font("Arial", fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
                 bool isChosen = !MidsContext.Character.CurrentBuild.Powers[index1].Chosen;
                 bool include = false;
                 if (!skipInherent && isChosen && MidsContext.Character.CurrentBuild.Powers[index1].Power != null)
@@ -454,10 +453,10 @@ namespace Base.Document_Classes
                 if (include)
                 {
                     string s1 = "Level " + MidsContext.Character.CurrentBuild.Powers[index1].Level + 1 + ":";
-                    RectangleF layoutRectangle = new RectangleF(bounds.Left + 15f, (float)vPos, bounds.Width, (float)fontSize * 1.25f);
+                    RectangleF layoutRectangle = new RectangleF(bounds.Left + 15f, vPos, bounds.Width, fontSize * 1.25f);
                     args.Graphics.DrawString(s1, font, solidBrush, layoutRectangle, format);
                     string s2 = MidsContext.Character.CurrentBuild.Powers[index1].Power != null ? MidsContext.Character.CurrentBuild.Powers[index1].Power.DisplayName : "[Empty]";
-                    layoutRectangle = new RectangleF(bounds.Left + 80f, (float)vPos, bounds.Width, (float)fontSize * 1.25f);
+                    layoutRectangle = new RectangleF(bounds.Left + 80f, vPos, bounds.Width, fontSize * 1.25f);
                     args.Graphics.DrawString(s2, font, solidBrush, layoutRectangle, format);
                     if (MidsContext.Character.CurrentBuild.Powers[index1].Slots.Length > 0)
                     {
@@ -481,7 +480,6 @@ namespace Base.Document_Classes
                                             if (printIoLevels)
                                             {
                                                 str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
-                                                break;
                                             }
                                             break;
                                         case Enums.eType.SpecialO:
@@ -508,7 +506,6 @@ namespace Base.Document_Classes
                                             if (printIoLevels)
                                             {
                                                 str1 = str1 + ":" + Convert.ToString(MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Enhancement.IOLevel + 1);
-                                                break;
                                             }
                                             break;
                                     }
@@ -519,7 +516,7 @@ namespace Base.Document_Classes
                             string str3 = str1 + "(";
                             str1 = (index2 != 0 ? str3 + (MidsContext.Character.CurrentBuild.Powers[index1].Slots[index2].Level + 1) : str3 + "A") + ")";
                         }
-                        layoutRectangle = new RectangleF(bounds.Left + 250f, (float)vPos, bounds.Width, (float)fontSize * 1.25f);
+                        layoutRectangle = new RectangleF(bounds.Left + 250f, vPos, bounds.Width, fontSize * 1.25f);
                         layoutRectangle.Width -= layoutRectangle.Left;
                         SizeF sizeF = args.Graphics.MeasureString(str1, font, (int)layoutRectangle.Width * 5, format);
                         if (sizeF.Width > (double)layoutRectangle.Width)
@@ -550,16 +547,16 @@ namespace Base.Document_Classes
 
         public void Dispose()
         {
-            this.Dispose(true);
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposing || this.Document == null)
+            if (!disposing || Document == null)
                 return;
-            this.Document.Dispose();
-            this.Document = null;
+            Document.Dispose();
+            Document = null;
         }
 
         enum PrintWhat
@@ -567,7 +564,7 @@ namespace Base.Document_Classes
             None = -1,
             Powers = 0,
             Inherent = 1,
-            EpicInherent = 2,
+            EpicInherent = 2
         }
     }
 }

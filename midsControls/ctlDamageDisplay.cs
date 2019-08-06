@@ -17,14 +17,14 @@ namespace midsControls
         {
             get
             {
-                return this.pvPadding;
+                return pvPadding;
             }
             set
             {
-                if (value >= 0 & checked(value * 2 < base.Height - 5))
+                if (value >= 0 & checked(value * 2 < Height - 5))
                 {
-                    this.pvPadding = value;
-                    this.Draw();
+                    pvPadding = value;
+                    Draw();
                 }
             }
         }
@@ -33,14 +33,14 @@ namespace midsControls
         {
             get
             {
-                return this.phPadding;
+                return phPadding;
             }
             set
             {
-                if (value >= 0 & checked(value * 2 < base.Width - 5))
+                if (value >= 0 & checked(value * 2 < Width - 5))
                 {
-                    this.phPadding = value;
-                    this.Draw();
+                    phPadding = value;
+                    Draw();
                 }
             }
         }
@@ -49,12 +49,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeBackStart;
+                return pFadeBackStart;
             }
             set
             {
-                this.pFadeBackStart = value;
-                this.Draw();
+                pFadeBackStart = value;
+                Draw();
             }
         }
 
@@ -62,12 +62,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeBackEnd;
+                return pFadeBackEnd;
             }
             set
             {
-                this.pFadeBackEnd = value;
-                this.Draw();
+                pFadeBackEnd = value;
+                Draw();
             }
         }
 
@@ -78,12 +78,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeBaseStart;
+                return pFadeBaseStart;
             }
             set
             {
-                this.pFadeBaseStart = value;
-                this.Draw();
+                pFadeBaseStart = value;
+                Draw();
             }
         }
 
@@ -94,12 +94,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeBaseEnd;
+                return pFadeBaseEnd;
             }
             set
             {
-                this.pFadeBaseEnd = value;
-                this.Draw();
+                pFadeBaseEnd = value;
+                Draw();
             }
         }
 
@@ -110,12 +110,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeEnhStart;
+                return pFadeEnhStart;
             }
             set
             {
-                this.pFadeEnhStart = value;
-                this.Draw();
+                pFadeEnhStart = value;
+                Draw();
             }
         }
 
@@ -126,12 +126,12 @@ namespace midsControls
         {
             get
             {
-                return this.pFadeEnhEnd;
+                return pFadeEnhEnd;
             }
             set
             {
-                this.pFadeEnhEnd = value;
-                this.Draw();
+                pFadeEnhEnd = value;
+                Draw();
             }
         }
 
@@ -142,12 +142,12 @@ namespace midsControls
         {
             get
             {
-                return this.pTextColor;
+                return pTextColor;
             }
             set
             {
-                this.pTextColor = value;
-                this.Draw();
+                pTextColor = value;
+                Draw();
             }
         }
 
@@ -158,12 +158,12 @@ namespace midsControls
         {
             get
             {
-                return this.pAlign;
+                return pAlign;
             }
             set
             {
-                this.pAlign = value;
-                this.Draw();
+                pAlign = value;
+                Draw();
             }
         }
 
@@ -174,12 +174,12 @@ namespace midsControls
         {
             get
             {
-                return this.pStyle;
+                return pStyle;
             }
             set
             {
-                this.pStyle = value;
-                this.Draw();
+                pStyle = value;
+                Draw();
             }
         }
 
@@ -190,12 +190,12 @@ namespace midsControls
         {
             get
             {
-                return this.pGraph;
+                return pGraph;
             }
             set
             {
-                this.pGraph = value;
-                this.Draw();
+                pGraph = value;
+                Draw();
             }
         }
 
@@ -206,12 +206,12 @@ namespace midsControls
         {
             get
             {
-                return this.nBase;
+                return nBase;
             }
             set
             {
-                this.nBase = value;
-                this.Draw();
+                nBase = value;
+                Draw();
             }
         }
 
@@ -222,12 +222,12 @@ namespace midsControls
         {
             get
             {
-                return this.nEnhanced;
+                return nEnhanced;
             }
             set
             {
-                this.nEnhanced = value;
-                this.Draw();
+                nEnhanced = value;
+                Draw();
             }
         }
 
@@ -238,12 +238,12 @@ namespace midsControls
         {
             get
             {
-                return this.nMaxEnhanced;
+                return nMaxEnhanced;
             }
             set
             {
-                this.nMaxEnhanced = value;
-                this.Draw();
+                nMaxEnhanced = value;
+                Draw();
             }
         }
 
@@ -254,12 +254,12 @@ namespace midsControls
         {
             get
             {
-                return this.nHighestBase;
+                return nHighestBase;
             }
             set
             {
-                this.nHighestBase = value;
-                this.Draw();
+                nHighestBase = value;
+                Draw();
             }
         }
 
@@ -270,12 +270,12 @@ namespace midsControls
         {
             get
             {
-                return this.nHighestEnhanced;
+                return nHighestEnhanced;
             }
             set
             {
-                this.nHighestEnhanced = value;
-                this.Draw();
+                nHighestEnhanced = value;
+                Draw();
             }
         }
 
@@ -286,49 +286,49 @@ namespace midsControls
         {
             get
             {
-                return this.pString;
+                return pString;
             }
             set
             {
-                this.pString = value;
-                this.Draw();
+                pString = value;
+                Draw();
             }
         }
 
         // Token: 0x0600006D RID: 109 RVA: 0x0000689C File Offset: 0x00004A9C
         public ctlDamageDisplay()
         {
-            base.BackColorChanged += this.ctlDamageDisplay_BackColorChanged;
-            base.Load += this.ctlDamageDisplay_Load;
-            base.Paint += this.ctlDamageDisplayt_Paint;
-            this.pStyle = (Enums.eDDStyle)3;
-            this.pText = 0;
-            this.pGraph = (Enums.eDDGraph)2;
-            this.pFadeBackStart = Color.Lime;
-            this.pFadeBackEnd = Color.Yellow;
-            this.pFadeBaseStart = Color.Blue;
-            this.pFadeBaseEnd = Color.LightBlue;
-            this.pFadeEnhStart = Color.Blue;
-            this.pFadeEnhEnd = Color.Red;
-            this.pTextColor = Color.Black;
-            this.pvPadding = 6;
-            this.phPadding = 3;
-            this.pAlign = (Enums.eDDAlign)1;
-            this.nBase = 100f;
-            this.nEnhanced = 196f;
-            this.nMaxEnhanced = 207f;
-            this.nHighestBase = 200f;
-            this.nHighestEnhanced = 414f;
-            this.pString = "196 (100)";
-            this.InitializeComponent();
+            BackColorChanged += ctlDamageDisplay_BackColorChanged;
+            Load += ctlDamageDisplay_Load;
+            Paint += ctlDamageDisplayt_Paint;
+            pStyle = (Enums.eDDStyle)3;
+            pText = 0;
+            pGraph = (Enums.eDDGraph)2;
+            pFadeBackStart = Color.Lime;
+            pFadeBackEnd = Color.Yellow;
+            pFadeBaseStart = Color.Blue;
+            pFadeBaseEnd = Color.LightBlue;
+            pFadeEnhStart = Color.Blue;
+            pFadeEnhEnd = Color.Red;
+            pTextColor = Color.Black;
+            pvPadding = 6;
+            phPadding = 3;
+            pAlign = (Enums.eDDAlign)1;
+            nBase = 100f;
+            nEnhanced = 196f;
+            nMaxEnhanced = 207f;
+            nHighestBase = 200f;
+            nHighestEnhanced = 414f;
+            pString = "196 (100)";
+            InitializeComponent();
         }
 
         // Token: 0x0600006E RID: 110 RVA: 0x000069AC File Offset: 0x00004BAC
         protected override void Dispose(bool disposing)
         {
-            if (disposing && this.components != null)
+            if (disposing && components != null)
             {
-                this.components.Dispose();
+                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -337,100 +337,100 @@ namespace midsControls
         [DebuggerStepThrough]
         private void InitializeComponent()
         {
-            this.components = new Container();
-            this.myTip = new ToolTip(this.components);
-            this.myTip.AutoPopDelay = 20000;
-            this.myTip.InitialDelay = 350;
-            this.myTip.ReshowDelay = 100;
-            base.Name = "ctlDamageDisplay";
+            components = new Container();
+            myTip = new ToolTip(components);
+            myTip.AutoPopDelay = 20000;
+            myTip.InitialDelay = 350;
+            myTip.ReshowDelay = 100;
+            Name = "ctlDamageDisplay";
             Size size = new Size(312, 104);
-            base.Size = size;
+            Size = size;
         }
 
         // Token: 0x06000070 RID: 112 RVA: 0x00006A62 File Offset: 0x00004C62
         private void ctlDamageDisplay_Load(object sender, EventArgs e)
         {
-            this.myGFX = base.CreateGraphics();
-            this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
-            this.Draw();
+            myGFX = CreateGraphics();
+            bxBuffer = new ExtendedBitmap(Width, Height);
+            Draw();
         }
 
         // Token: 0x06000071 RID: 113 RVA: 0x00006A8F File Offset: 0x00004C8F
         public void FullUpdate()
         {
-            this.myGFX = base.CreateGraphics();
-            this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
-            this.Draw();
+            myGFX = CreateGraphics();
+            bxBuffer = new ExtendedBitmap(Width, Height);
+            Draw();
         }
 
         // Token: 0x06000072 RID: 114 RVA: 0x00006ABC File Offset: 0x00004CBC
         private void ctlDamageDisplayt_Paint(object sender, PaintEventArgs e)
         {
-            if (this.bxBuffer != null)
+            if (bxBuffer != null)
             {
-                this.myGFX.DrawImage(this.bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
+                myGFX.DrawImage(bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
             }
         }
 
         // Token: 0x06000073 RID: 115 RVA: 0x00006B01 File Offset: 0x00004D01
         protected override void OnFontChanged(EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x06000074 RID: 116 RVA: 0x00006B0B File Offset: 0x00004D0B
         protected override void OnForeColorChanged(EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x06000075 RID: 117 RVA: 0x00006B15 File Offset: 0x00004D15
         protected override void OnResize(EventArgs e)
         {
-            this.FullUpdate();
+            FullUpdate();
         }
 
         // Token: 0x06000076 RID: 118 RVA: 0x00006B20 File Offset: 0x00004D20
         public void DrawGraph()
         {
-            float height = this.Font.GetHeight(this.bxBuffer.Graphics);
-            Rectangle rectangle = new Rectangle(0, 0, base.Width, base.Height);
-            Rectangle rect = new Rectangle(0, 0, base.Width, base.Height);
+            float height = Font.GetHeight(bxBuffer.Graphics);
+            Rectangle rectangle = new Rectangle(0, 0, Width, Height);
+            Rectangle rect = new Rectangle(0, 0, Width, Height);
             checked
             {
-                if (this.pStyle == (Enums.eDDStyle)3)
+                if (pStyle == (Enums.eDDStyle)3)
                 {
-                    rect.Height = (int)Math.Round((double)(unchecked((float)rect.Height - height)));
+                    rect.Height = (int)Math.Round(rect.Height - height);
                 }
-                Rectangle rectangle2 = new Rectangle(this.phPadding, this.pvPadding, base.Width - this.phPadding * 2, rect.Height - this.pvPadding * 2);
-                LinearGradientBrush brush = new LinearGradientBrush(rect, this.pFadeBackStart, this.pFadeBackEnd, 0f);
-                this.bxBuffer.Graphics.FillRectangle(brush, rect);
-                if (this.nBase != 0f)
+                Rectangle rectangle2 = new Rectangle(phPadding, pvPadding, Width - phPadding * 2, rect.Height - pvPadding * 2);
+                LinearGradientBrush brush = new LinearGradientBrush(rect, pFadeBackStart, pFadeBackEnd, 0f);
+                bxBuffer.Graphics.FillRectangle(brush, rect);
+                if (nBase != 0f)
                 {
                     unchecked
                     {
-                        if (this.nMaxEnhanced == 0f)
+                        if (nMaxEnhanced == 0f)
                         {
-                            this.nMaxEnhanced = this.nBase * 2f;
+                            nMaxEnhanced = nBase * 2f;
                         }
-                        if (this.nHighestEnhanced == 0f)
+                        if (nHighestEnhanced == 0f)
                         {
-                            this.nHighestEnhanced = this.nBase * 2f;
+                            nHighestEnhanced = nBase * 2f;
                         }
-                        if (this.nHighestBase == 0f)
+                        if (nHighestBase == 0f)
                         {
-                            this.nHighestBase = this.nBase * 2f;
+                            nHighestBase = nBase * 2f;
                         }
                     }
-                    if (this.pGraph == 0)
+                    if (pGraph == 0)
                     {
-                        int num = (int)Math.Round((double)(unchecked(this.nBase / this.nMaxEnhanced * (float)rectangle2.Width)));
-                        SolidBrush brush2 = new SolidBrush(this.pFadeBaseStart);
+                        int num = (int)Math.Round(nBase / nMaxEnhanced * rectangle2.Width);
+                        SolidBrush brush2 = new SolidBrush(pFadeBaseStart);
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, rectangle2.Height);
-                        this.bxBuffer.Graphics.FillRectangle(brush2, rect2);
-                        int width = (int)Math.Round((double)(unchecked(this.nEnhanced / this.nMaxEnhanced * (float)rectangle2.Width - (float)num)));
+                        bxBuffer.Graphics.FillRectangle(brush2, rect2);
+                        int width = (int)Math.Round(nEnhanced / nMaxEnhanced * rectangle2.Width - num);
                         rect2 = new Rectangle(rectangle2.X + num, rectangle2.Y, width, rectangle2.Height);
-                        Rectangle rect3 = default(Rectangle);
+                        Rectangle rect3 = default;
                         rect3.X = rectangle2.X + num;
                         rect3.Y = rectangle2.Y;
                         if (rectangle2.Width - num > 0)
@@ -442,74 +442,74 @@ namespace midsControls
                             rect3.Width = 1;
                         }
                         rect3.Height = rectangle2.Height;
-                        brush = new LinearGradientBrush(rect3, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        brush = new LinearGradientBrush(rect3, pFadeEnhStart, pFadeEnhEnd, 0f);
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)3)
+                    else if (pGraph == (Enums.eDDGraph)3)
                     {
-                        int num = (int)Math.Round((double)(unchecked(this.nBase / this.nHighestEnhanced * (float)rectangle2.Width)));
-                        Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round((double)(unchecked(this.nBase / this.nHighestBase * (float)rectangle2.Width))), rectangle2.Height);
+                        int num = (int)Math.Round(nBase / nHighestEnhanced * rectangle2.Width);
+                        Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round(nBase / nHighestBase * rectangle2.Width), rectangle2.Height);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
-                        brush = new LinearGradientBrush(rect2, this.pFadeBaseStart, this.pFadeBaseEnd, 0f);
+                        brush = new LinearGradientBrush(rect2, pFadeBaseStart, pFadeBaseEnd, 0f);
                         rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, rectangle2.Height);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
-                        int width = (int)Math.Round((double)(unchecked((this.nEnhanced - this.nBase) / this.nHighestEnhanced * (float)rectangle2.Width)));
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        int width = (int)Math.Round((nEnhanced - nBase) / nHighestEnhanced * rectangle2.Width);
                         rect2 = new Rectangle(rectangle2.X + num, rectangle2.Y, width, rectangle2.Height);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
-                        brush = new LinearGradientBrush(rectangle2, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        brush = new LinearGradientBrush(rectangle2, pFadeEnhStart, pFadeEnhEnd, 0f);
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)2)
+                    else if (pGraph == (Enums.eDDGraph)2)
                     {
-                        int num2 = (int)Math.Round((double)rectangle2.Height / 2.0);
-                        int num = (int)Math.Round((double)(unchecked(this.nBase / this.nHighestEnhanced * (float)rectangle2.Width)));
-                        Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round(unchecked(0.5 * (double)rectangle2.Width)), num2);
+                        int num2 = (int)Math.Round(rectangle2.Height / 2.0);
+                        int num = (int)Math.Round(nBase / nHighestEnhanced * rectangle2.Width);
+                        Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, (int)Math.Round(0.5 * rectangle2.Width), num2);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
-                        brush = new LinearGradientBrush(rectangle2, this.pFadeBaseStart, this.pFadeBaseEnd, 0f);
+                        brush = new LinearGradientBrush(rectangle2, pFadeBaseStart, pFadeBaseEnd, 0f);
                         rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, num2);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
-                        int width = (int)Math.Round((double)(unchecked(this.nEnhanced / this.nHighestEnhanced * (float)rectangle2.Width)));
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        int width = (int)Math.Round(nEnhanced / nHighestEnhanced * rectangle2.Width);
                         rect2 = new Rectangle(rectangle2.X, num2 + rectangle2.Y, width, num2);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
-                        brush = new LinearGradientBrush(rectangle2, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        brush = new LinearGradientBrush(rectangle2, pFadeEnhStart, pFadeEnhEnd, 0f);
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    else if (this.pGraph == (Enums.eDDGraph)1)
+                    else if (pGraph == (Enums.eDDGraph)1)
                     {
-                        int num = (int)Math.Round((double)(unchecked(this.nEnhanced / this.nHighestEnhanced * (float)rectangle2.Width)));
+                        int num = (int)Math.Round(nEnhanced / nHighestEnhanced * rectangle2.Width);
                         Rectangle rect2 = new Rectangle(rectangle2.X, rectangle2.Y, num, rectangle2.Height);
                         if (rect2.Width < 1)
                         {
                             rect2.Width = 1;
                         }
                         Rectangle rectangle3 = new Rectangle(rectangle2.X + num, rectangle2.Y, rectangle2.Width - num, rectangle2.Height);
-                        brush = new LinearGradientBrush(rectangle3, this.pFadeEnhStart, this.pFadeEnhEnd, 0f);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect2);
+                        brush = new LinearGradientBrush(rectangle3, pFadeEnhStart, pFadeEnhEnd, 0f);
+                        bxBuffer.Graphics.FillRectangle(brush, rect2);
                     }
-                    if (this.pStyle == (Enums.eDDStyle)2)
+                    if (pStyle == (Enums.eDDStyle)2)
                     {
-                        this.DrawText(rectangle2);
+                        DrawText(rectangle2);
                     }
-                    else if (this.pStyle == (Enums.eDDStyle)3)
+                    else if (pStyle == (Enums.eDDStyle)3)
                     {
                         Rectangle rectangle3 = new Rectangle(rectangle2.X, rectangle2.Y + rectangle2.Height, rectangle2.Width, rectangle.Height - (rectangle2.Y + rectangle2.Height));
-                        this.DrawText(rectangle3);
+                        DrawText(rectangle3);
                     }
                 }
             }
@@ -520,21 +520,21 @@ namespace midsControls
         {
             RectangleF layoutRectangle = new RectangleF(0f, 0f, 0f, 0f);
             StringFormat stringFormat = new StringFormat();
-            float height = this.Font.GetHeight(this.myGFX);
-            this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-            layoutRectangle.X = (float)(checked(Bounds.X + this.phPadding));
-            if (this.pStyle == (Enums.eDDStyle)3)
+            float height = Font.GetHeight(myGFX);
+            bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+            layoutRectangle.X = checked(Bounds.X + phPadding);
+            if (pStyle == (Enums.eDDStyle)3)
             {
-                layoutRectangle.Y = (float)Bounds.Y + ((float)Bounds.Height - height) / 2f + 2f;
+                layoutRectangle.Y = Bounds.Y + (Bounds.Height - height) / 2f + 2f;
             }
             else
             {
-                layoutRectangle.Y = (float)Bounds.Y + ((float)Bounds.Height - height) / 2f - 1f;
+                layoutRectangle.Y = Bounds.Y + (Bounds.Height - height) / 2f - 1f;
             }
-            layoutRectangle.Width = (float)(checked(Bounds.Width - this.phPadding * 2));
-            layoutRectangle.Height = (float)Bounds.Height;
-            Brush brush = new SolidBrush(this.pTextColor);
-            switch (this.pAlign)
+            layoutRectangle.Width = checked(Bounds.Width - phPadding * 2);
+            layoutRectangle.Height = Bounds.Height;
+            Brush brush = new SolidBrush(pTextColor);
+            switch (pAlign)
             {
                 case Enums.eDDAlign.Left:
                     stringFormat.Alignment = StringAlignment.Near;
@@ -546,54 +546,54 @@ namespace midsControls
                     stringFormat.Alignment = StringAlignment.Far;
                     break;
             }
-            Enums.eDDText eDDText = this.pText;
+            Enums.eDDText eDDText = pText;
             if (eDDText == 0)
             {
             }
-            SizeF sizeF = this.bxBuffer.Graphics.MeasureString(this.pString, this.Font);
+            SizeF sizeF = bxBuffer.Graphics.MeasureString(pString, Font);
             if (sizeF.Width > layoutRectangle.Width)
             {
-                this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-                Font font = new Font(this.Font.Name, this.Font.Size * (layoutRectangle.Width / sizeF.Width), this.Font.Style, GraphicsUnit.Point);
-                this.bxBuffer.Graphics.DrawString(this.pString, font, brush, layoutRectangle, stringFormat);
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                Font font = new Font(Font.Name, Font.Size * (layoutRectangle.Width / sizeF.Width), Font.Style, GraphicsUnit.Point);
+                bxBuffer.Graphics.DrawString(pString, font, brush, layoutRectangle, stringFormat);
             }
             else
             {
-                this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                this.bxBuffer.Graphics.DrawString(this.pString, this.Font, brush, layoutRectangle, stringFormat);
+                bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                bxBuffer.Graphics.DrawString(pString, Font, brush, layoutRectangle, stringFormat);
             }
         }
 
         // Token: 0x06000078 RID: 120 RVA: 0x00007474 File Offset: 0x00005674
         public void Draw()
         {
-            if (this.bxBuffer != null)
+            if (bxBuffer != null)
             {
-                Rectangle rectangle = new Rectangle(0, 0, base.Width, base.Height);
-                Brush brush = new SolidBrush(this.BackColor);
-                this.bxBuffer.Graphics.FillRectangle(brush, rectangle);
-                if (this.pStyle != 0)
+                Rectangle rectangle = new Rectangle(0, 0, Width, Height);
+                Brush brush = new SolidBrush(BackColor);
+                bxBuffer.Graphics.FillRectangle(brush, rectangle);
+                if (pStyle != 0)
                 {
-                    this.DrawGraph();
+                    DrawGraph();
                 }
                 else
                 {
-                    this.DrawText(rectangle);
+                    DrawText(rectangle);
                 }
-                this.myGFX.DrawImageUnscaled(this.bxBuffer.Bitmap, 0, 0);
+                myGFX.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
             }
         }
 
         // Token: 0x06000079 RID: 121 RVA: 0x00007505 File Offset: 0x00005705
         public void SetTip(string iTip)
         {
-            this.myTip.SetToolTip(this, iTip);
+            myTip.SetToolTip(this, iTip);
         }
 
         // Token: 0x0600007A RID: 122 RVA: 0x00007516 File Offset: 0x00005716
         private void ctlDamageDisplay_BackColorChanged(object sender, EventArgs e)
         {
-            this.Draw();
+            Draw();
         }
 
         // Token: 0x04000025 RID: 37

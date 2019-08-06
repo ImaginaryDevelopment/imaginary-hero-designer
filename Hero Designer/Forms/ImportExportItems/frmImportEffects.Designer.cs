@@ -1,4 +1,7 @@
 
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmImportEffects
@@ -6,7 +9,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -265,26 +268,26 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnCheckAll;
-        System.Windows.Forms.Button btnClose;
-        System.Windows.Forms.Button btnEraseAll;
-        System.Windows.Forms.Button btnFile;
-        System.Windows.Forms.Button btnImport;
-        System.Windows.Forms.Button btnUncheckAll;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ColumnHeader ColumnHeader6;
-        System.Windows.Forms.OpenFileDialog dlgBrowse;
-        System.Windows.Forms.Button HideUnchanged;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label lblDate;
-        System.Windows.Forms.Label lblFile;
-        System.Windows.Forms.ListView lstImport;
-        System.Windows.Forms.Label txtNoAU;
-        System.Windows.Forms.NumericUpDown udRevision;
+        Button btnCheckAll;
+        Button btnClose;
+        Button btnEraseAll;
+        Button btnFile;
+        Button btnImport;
+        Button btnUncheckAll;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        OpenFileDialog dlgBrowse;
+        Button HideUnchanged;
+        Label Label6;
+        Label Label8;
+        Label lblDate;
+        Label lblFile;
+        ListView lstImport;
+        Label txtNoAU;
+        NumericUpDown udRevision;
     }
 }

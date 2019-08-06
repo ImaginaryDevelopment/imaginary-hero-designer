@@ -1,9 +1,10 @@
 
+using System;
+using System.Collections.Generic;
 using Base.Data_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
-using System;
 
 namespace Hero_Designer
 {
@@ -12,10 +13,10 @@ namespace Hero_Designer
         public const string MarkerA = "Primary";
         public const string MarkerB = "Secondary";
 
-        static clsUniversalImport.sPowerLine BreakLine(string iLine, int nAT)
+        static sPowerLine BreakLine(string iLine, int nAT)
         {
-            clsUniversalImport.sPowerLine sPowerLine = new clsUniversalImport.sPowerLine();
-            string[] strArray1 = clsUniversalImport.SmartBreak(iLine, nAT);
+            sPowerLine sPowerLine = new sPowerLine();
+            string[] strArray1 = SmartBreak(iLine, nAT);
             sPowerLine.Level = (int)Math.Round(Conversion.Val(strArray1[0]));
             sPowerLine.Power = strArray1[1];
             sPowerLine.Slots = Array.Empty<sSlot>();
@@ -23,11 +24,11 @@ namespace Hero_Designer
             int num1 = strArray2.Length - 1;
             for (int index = 0; index <= num1; ++index)
             {
-                string iStr = clsUniversalImport.EnhNameFix(strArray2[index]);
+                string iStr = EnhNameFix(strArray2[index]);
                 bool flag1 = false;
-                bool flag2 = iStr.IndexOf("-I") > -1;
-                iStr.IndexOf("-S");
-                if (flag2 | iStr.IndexOf(":") > -1)
+                bool flag2 = iStr.IndexOf("-I", StringComparison.Ordinal) > -1;
+                iStr.IndexOf("-S", StringComparison.Ordinal);
+                if (flag2 | iStr.IndexOf(":", StringComparison.Ordinal) > -1)
                     flag1 = true;
                 if (iStr.Length > 0)
                 {
@@ -42,20 +43,20 @@ namespace Hero_Designer
                     {
                         if (flag1)
                         {
-                            num2 = clsUniversalImport.SeekSepSpecial(iStr, 0);
-                            startIndex = clsUniversalImport.SeekNumberSpecial(iStr, num2);
+                            num2 = SeekSepSpecial(iStr, 0);
+                            startIndex = SeekNumberSpecial(iStr, num2);
                         }
                         else
                         {
-                            num2 = clsUniversalImport.SeekSep(iStr, 0, false);
-                            startIndex = clsUniversalImport.SeekNumber(iStr, num2);
+                            num2 = SeekSep(iStr, 0, false);
+                            startIndex = SeekNumber(iStr, num2);
                         }
                         if (startIndex < 0)
-                            startIndex = clsUniversalImport.SeekAn(iStr, num2);
+                            startIndex = SeekAn(iStr, num2);
                     }
                     if (num2 > -1 & startIndex > -1)
                     {
-                        sPowerLine.Slots = (clsUniversalImport.sSlot[])Utils.CopyArray(sPowerLine.Slots, (Array)new clsUniversalImport.sSlot[sPowerLine.Slots.Length + 1]);
+                        sPowerLine.Slots = (sSlot[])Utils.CopyArray(sPowerLine.Slots, new sSlot[sPowerLine.Slots.Length + 1]);
                         sPowerLine.Slots[sPowerLine.Slots.Length - 1].Enh = iStr.Substring(0, num2).Trim();
                         sPowerLine.Slots[sPowerLine.Slots.Length - 1].Level = (int)Math.Round(Conversion.Val(iStr.Substring(startIndex).Trim()));
                         if (iStr.Substring(startIndex).Trim().StartsWith("A"))
@@ -75,7 +76,7 @@ namespace Hero_Designer
             iStr = iStr.Replace("TH_DeBuf", "ToHitDeb");
             iStr = iStr.Replace("DmgRes", "ResDam");
             iStr = iStr.Replace("ConfDur", "Conf");
-            if (iStr.IndexOf("DefBuff") < 0)
+            if (iStr.IndexOf("DefBuff", StringComparison.Ordinal) < 0)
                 iStr = iStr.Replace("DefBuf", "DefBuff");
             iStr = iStr.Replace("DefDeBuf", "DefDeb");
             iStr = iStr.Replace("DisDur", "Dsrnt");
@@ -107,31 +108,31 @@ namespace Hero_Designer
             iStr = iStr.Replace("rng", "Range");
             iStr = iStr.Replace("kbkdis", "KDBist");
             iStr = iStr.Replace("defdbf", "DefDeb");
-            if (iStr.IndexOf("DefBuff") < 0)
+            if (iStr.IndexOf("DefBuff", StringComparison.Ordinal) < 0)
                 iStr = iStr.Replace("defbuf", "DefBuff");
             return iStr;
         }
 
-        static int FindFirstPower(string[] haystack, int iAT)
+        static int FindFirstPower(IReadOnlyList<string> haystack, int iAT)
         {
-            int num = haystack.Length - 1;
+            int num = haystack.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
-                string[] strArray = clsUniversalImport.SmartBreak(haystack[index], iAT);
-                if (Conversion.Val(strArray[0]) > 0.0 && strArray[1].Length > 0 && clsUniversalImport.FindPower(strArray[1], iAT).Powerset > -1)
+                string[] strArray = SmartBreak(haystack[index], iAT);
+                if (Conversion.Val(strArray[0]) > 0.0 && strArray[1].Length > 0 && FindPower(strArray[1], iAT).Powerset > -1)
                     return index;
             }
             return -1;
         }
 
-        static clsUniversalImport.SetPair FindPower(string iName, int nAT)
+        static SetPair FindPower(string iName, int nAT)
         {
             IPowerset[] sets = new IPowerset[2];
             if (MidsContext.Character != null)
             {
                 sets[0] = MidsContext.Character.Powersets[0];
                 sets[1] = MidsContext.Character.Powersets[1];
-                clsUniversalImport.SetPair setPair = clsUniversalImport.ScanSetArray(iName, sets);
+                SetPair setPair = ScanSetArray(iName, sets);
                 if (setPair.Powerset > -1)
                     return setPair;
             }
@@ -140,32 +141,28 @@ namespace Hero_Designer
                 powerByName = DatabaseAPI.GetPowerByName(iName.Replace("'", ""), nAT);
             if (powerByName > -1)
             {
-                return new clsUniversalImport.SetPair(DatabaseAPI.Database.Power[powerByName].PowerSetID, DatabaseAPI.Database.Power[powerByName].PowerSetIndex);
+                return new SetPair(DatabaseAPI.Database.Power[powerByName].PowerSetID, DatabaseAPI.Database.Power[powerByName].PowerSetIndex);
             }
-            else
+
+            IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Ancillary);
+            SetPair setPair2 = ScanSetArray(iName, powersetIndexes1);
+            if (setPair2.Powerset > -1)
             {
-                IPowerset[] powersetIndexes1 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Ancillary);
-                clsUniversalImport.SetPair setPair2 = clsUniversalImport.ScanSetArray(iName, powersetIndexes1);
-                if (setPair2.Powerset > -1)
-                {
-                    return setPair2;
-                }
-                else
-                {
-                    IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Pool);
-                    setPair2 = clsUniversalImport.ScanSetArray(iName, powersetIndexes2);
-                    return setPair2.Powerset <= -1 ? new clsUniversalImport.SetPair(-1, -1) : setPair2;
-                }
+                return setPair2;
             }
+
+            IPowerset[] powersetIndexes2 = DatabaseAPI.GetPowersetIndexes(nAT, Enums.ePowerSetType.Pool);
+            setPair2 = ScanSetArray(iName, powersetIndexes2);
+            return setPair2.Powerset <= -1 ? new SetPair(-1, -1) : setPair2;
         }
 
         static int FindPowerSetAdvanced(
           string sSetType,
           Enums.ePowerSetType nSetType,
           int nAT,
-          string[] haystack)
+          IReadOnlyList<string> haystack)
         {
-            for (int index1 = 0; index1 <= haystack.Length - 1; ++index1)
+            for (int index1 = 0; index1 <= haystack.Count - 1; ++index1)
             {
                 if (haystack[index1].IndexOf(sSetType, StringComparison.OrdinalIgnoreCase) > -1)
                 {
@@ -180,24 +177,24 @@ namespace Hero_Designer
             return -1;
         }
 
-        static int FindString(string needle, string[] haystack)
+        static int FindString(string needle, IReadOnlyList<string> haystack)
         {
-            int num = haystack.Length - 1;
+            int num = haystack.Count - 1;
             for (int index = 0; index <= num; ++index)
             {
-                if (haystack[index].IndexOf(needle) > -1)
+                if (haystack[index].IndexOf(needle, StringComparison.Ordinal) > -1)
                     return index;
             }
             return -1;
         }
 
-        static int FindValue(string needle, string[] haystack, ref string dest)
+        static int FindValue(string needle, IReadOnlyList<string> haystack, ref string dest)
         {
-            for (int index = 0; index <= haystack.Length - 1; ++index)
+            for (int index = 0; index <= haystack.Count - 1; ++index)
             {
                 if (haystack[index].StartsWith(needle))
                 {
-                    string[] strArray = haystack[index].Replace(")", ":").Replace("-", ":").Replace("=", ":").Split(new[] { ':' });
+                    string[] strArray = haystack[index].Replace(")", ":").Replace("-", ":").Replace("=", ":").Split(':');
                     if (strArray.Length > 1)
                     {
                         dest = strArray[1].Trim();
@@ -215,7 +212,7 @@ namespace Hero_Designer
             MidsContext.Config.BuildMode = Enums.dmModes.Dynamic;
             try
             {
-                iPost = clsUniversalImport.PowerNameFix(iPost);
+                iPost = PowerNameFix(iPost);
                 char[] chArray = new char[1] { '`' };
                 iPost = iPost.Replace("\r\n", "`");
                 iPost = iPost.Replace("\n", "`");
@@ -223,19 +220,19 @@ namespace Hero_Designer
                 string[] haystack = iPost.Split(chArray);
                 int num1 = 0;
                 string dest = "";
-                MidsContext.Character.Reset(null, 0);
+                MidsContext.Character.Reset();
                 Character character = MidsContext.Character;
                 string name = character.Name;
                 character.Name = name;
-                if (clsUniversalImport.FindValue("Name", haystack, ref name) < 0)
+                if (FindValue("Name", haystack, ref name) < 0)
                     MidsContext.Character.Name = "Unknown";
-                if (clsUniversalImport.SmartFind("Archetype", haystack, ref dest) < 0)
+                if (SmartFind("Archetype", haystack, ref dest) < 0)
                 {
                     int index1 = -1;
                     int num2 = DatabaseAPI.Database.Classes.Length - 1;
                     for (int index2 = 0; index2 <= num2; ++index2)
                     {
-                        if (clsUniversalImport.FindString(DatabaseAPI.Database.Classes[index2].DisplayName, haystack) > -1)
+                        if (FindString(DatabaseAPI.Database.Classes[index2].DisplayName, haystack) > -1)
                         {
                             index1 = index2;
                             break;
@@ -248,39 +245,39 @@ namespace Hero_Designer
                 else
                     MidsContext.Character.Archetype = DatabaseAPI.GetArchetypeByName(dest);
                 int index3 = -1;
-                if (clsUniversalImport.FindValue("Primary", haystack, ref dest) > -1)
+                if (FindValue("Primary", haystack, ref dest) > -1)
                     index3 = DatabaseAPI.GetPowersetByName(dest, MidsContext.Character.Archetype.DisplayName).nID;
                 if (index3 < 0)
                 {
-                    index3 = clsUniversalImport.FindPowerSetAdvanced("Primary", Enums.ePowerSetType.Primary, MidsContext.Character.Archetype.Idx, haystack);
+                    index3 = FindPowerSetAdvanced("Primary", Enums.ePowerSetType.Primary, MidsContext.Character.Archetype.Idx, haystack);
                     if (index3 < 0)
                         throw new Exception("Primary Powerset value not found.");
                 }
                 MidsContext.Character.Powersets[0] = DatabaseAPI.Database.Powersets[index3];
                 int index4 = -1;
-                if (clsUniversalImport.FindValue("Secondary", haystack, ref dest) > -1)
+                if (FindValue("Secondary", haystack, ref dest) > -1)
                     index4 = DatabaseAPI.GetPowersetByName(dest, MidsContext.Character.Archetype.DisplayName).nID;
                 if (index4 < 0)
                 {
-                    index4 = clsUniversalImport.FindPowerSetAdvanced("Secondary", Enums.ePowerSetType.Secondary, MidsContext.Character.Archetype.Idx, haystack);
+                    index4 = FindPowerSetAdvanced("Secondary", Enums.ePowerSetType.Secondary, MidsContext.Character.Archetype.Idx, haystack);
                     if (index4 < 0)
                         throw new Exception("Secondary Powerset value not found.");
                 }
                 MidsContext.Character.Powersets[1] = DatabaseAPI.Database.Powersets[index4];
                 if (MidsContext.Character.Powersets[0] == null | MidsContext.Character.Powersets[1] == null)
                     throw new Exception("Powerset Name value couldn't be interpreted.");
-                int firstPower = clsUniversalImport.FindFirstPower(haystack, MidsContext.Character.Archetype.Idx);
+                int firstPower = FindFirstPower(haystack, MidsContext.Character.Archetype.Idx);
                 if (firstPower < 0)
                     throw new Exception("First power entry couldn't be located.");
-                clsUniversalImport.sPowerLine[] sPowerLineArray = new clsUniversalImport.sPowerLine[0];
-                clsUniversalImport.sPowerLine iPL = new clsUniversalImport.sPowerLine();
+                sPowerLine[] sPowerLineArray = new sPowerLine[0];
+                sPowerLine iPL = new sPowerLine();
                 int num3 = haystack.Length - 1;
                 for (int index1 = firstPower; index1 <= num3; ++index1)
                 {
-                    iPL.Assign(clsUniversalImport.BreakLine(haystack[index1], MidsContext.Character.Archetype.Idx));
+                    iPL.Assign(BreakLine(haystack[index1], MidsContext.Character.Archetype.Idx));
                     if (iPL.Level > 0 & iPL.Power != "")
                     {
-                        sPowerLineArray = (clsUniversalImport.sPowerLine[])Utils.CopyArray(sPowerLineArray, (Array)new clsUniversalImport.sPowerLine[sPowerLineArray.Length + 1]);
+                        sPowerLineArray = (sPowerLine[])Utils.CopyArray(sPowerLineArray, new sPowerLine[sPowerLineArray.Length + 1]);
                         sPowerLineArray[sPowerLineArray.Length - 1].Assign(iPL);
                     }
                 }
@@ -303,7 +300,7 @@ namespace Hero_Designer
                 {
                     sPowerLineArray[index1].HistoryID = -1;
                     bool flag2 = false;
-                    clsUniversalImport.SetPair power = clsUniversalImport.FindPower(sPowerLineArray[index1].Power, MidsContext.Character.Archetype.Idx);
+                    SetPair power = FindPower(sPowerLineArray[index1].Power, MidsContext.Character.Archetype.Idx);
                     if (power.Powerset > -1 && DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Inherent)
                         flag2 = true;
                     if (power.Powerset < 0)
@@ -313,7 +310,7 @@ namespace Hero_Designer
                     if (!flag2)
                     {
                         MainModule.MidsController.Toon.RequestedLevel = sPowerLineArray[index1].Level - 1;
-                        MainModule.MidsController.Toon.BuildPower(power.Powerset, power.Power, false);
+                        MainModule.MidsController.Toon.BuildPower(power.Powerset, power.Power);
                         if (DatabaseAPI.Database.Powersets[power.Powerset].SetType == Enums.ePowerSetType.Pool)
                         {
                             int num2 = MainModule.MidsController.Toon.PoolLocked.Length - 2;
@@ -353,9 +350,9 @@ namespace Hero_Designer
                                 int index5 = index2;
                                 slots[index5].Enhancement = new I9Slot();
                                 slots[index5].FlippedEnhancement = new I9Slot();
-                                slots[index5].Enhancement.Enh = clsUniversalImport.MatchEnhancement(sPowerLineArray[index1].Slots[index2].Enh);
+                                slots[index5].Enhancement.Enh = MatchEnhancement(sPowerLineArray[index1].Slots[index2].Enh);
                                 slots[index5].Enhancement.Grade = Enums.eEnhGrade.SingleO;
-                                slots[index5].Enhancement.IOLevel = sPowerLineArray[index1].Slots[index2].Enh.IndexOf("-I:") <= -1 ? (sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") <= -1 ? MidsContext.Config.I9.DefaultIOLevel : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0)) : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":") + 1)) - 1.0);
+                                slots[index5].Enhancement.IOLevel = sPowerLineArray[index1].Slots[index2].Enh.IndexOf("-I:", StringComparison.Ordinal) <= -1 ? sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) <= -1 ? MidsContext.Config.I9.DefaultIOLevel : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) + 1)) - 1.0) : (int)Math.Round(Conversion.Val(sPowerLineArray[index1].Slots[index2].Enh.Substring(sPowerLineArray[index1].Slots[index2].Enh.IndexOf(":", StringComparison.Ordinal) + 1)) - 1.0);
                                 slots[index5].Level = index2 != 0 ? sPowerLineArray[index1].Slots[index2].Level - 1 : MidsContext.Character.CurrentBuild.Powers[sPowerLineArray[index1].HistoryID].Level;
                                 if (slots[index5].Level < 0)
                                     slots[index5].Level = 0;
@@ -377,18 +374,18 @@ namespace Hero_Designer
 
         static int MatchEnhancement(string iEnh)
         {
-            if (iEnh.IndexOf("-I") > -1)
+            if (iEnh.IndexOf("-I", StringComparison.Ordinal) > -1)
             {
-                int startIndex = 0;
-                int length = iEnh.IndexOf("-");
+                const int startIndex = 0;
+                int length = iEnh.IndexOf("-", StringComparison.Ordinal);
                 return DatabaseAPI.GetEnhancementByName(iEnh.Substring(startIndex, length), Enums.eType.InventO);
             }
 
-            if (iEnh.IndexOf("-") > -1 & iEnh.IndexOf("-S") < 0)
+            if (iEnh.IndexOf("-", StringComparison.Ordinal) > -1 & iEnh.IndexOf("-S", StringComparison.Ordinal) < 0)
             {
-                string iSet = iEnh.Substring(0, iEnh.IndexOf("-"));
-                int num = iEnh.IndexOf(":");
-                return DatabaseAPI.GetEnhancementByName(num >= 0 ? iEnh.Substring(iEnh.IndexOf("-") + 1, num - (iEnh.IndexOf("-") + 1)) : iEnh.Substring(iEnh.IndexOf("-") + 1), iSet);
+                string iSet = iEnh.Substring(0, iEnh.IndexOf("-", StringComparison.Ordinal));
+                int num = iEnh.IndexOf(":", StringComparison.Ordinal);
+                return DatabaseAPI.GetEnhancementByName(num >= 0 ? iEnh.Substring(iEnh.IndexOf("-", StringComparison.Ordinal) + 1, num - (iEnh.IndexOf("-", StringComparison.Ordinal) + 1)) : iEnh.Substring(iEnh.IndexOf("-", StringComparison.Ordinal) + 1), iSet);
             }
             return DatabaseAPI.GetEnhancementByName(iEnh);
         }
@@ -399,11 +396,11 @@ namespace Hero_Designer
             .Replace("Dark Matter Detonation", "Dark Detonation")
             .Replace("Dark Nova Emmanation", "Dark Nova Emanation");
 
-        static clsUniversalImport.SetPair ScanSetArray(
+        static SetPair ScanSetArray(
           string iName,
-          IPowerset[] sets)
+          IReadOnlyList<IPowerset> sets)
         {
-            for (int index = 0; index <= sets.Length - 1; ++index)
+            for (int index = 0; index <= sets.Count - 1; ++index)
             {
                 if (sets[index] != null)
                 {
@@ -411,11 +408,11 @@ namespace Hero_Designer
                     for (int iPower = 0; iPower <= num2; ++iPower)
                     {
                         if (string.Equals(sets[index].Powers[iPower].DisplayName, iName, StringComparison.OrdinalIgnoreCase))
-                            return new clsUniversalImport.SetPair(sets[index].nID, iPower);
+                            return new SetPair(sets[index].nID, iPower);
                     }
                 }
             }
-            return new clsUniversalImport.SetPair(-1, -1);
+            return new SetPair(-1, -1);
         }
 
         static int SeekAn(string iStr, int start)
@@ -453,7 +450,7 @@ namespace Hero_Designer
                 {
                     if (index <= 0)
                         return index;
-                    else if (iStr.Substring(index - 1, 1) != ":" & !char.IsDigit(iStr, index - 1))
+                    if (iStr.Substring(index - 1, 1) != ":" & !char.IsDigit(iStr, index - 1))
                         return index;
                 }
             }
@@ -498,9 +495,9 @@ namespace Hero_Designer
                 {
                     if (!(iStr.Length > index + 1 & readAhead))
                         return index;
-                    else if (!char.IsLetterOrDigit(iStr, index + 1))
+                    if (!char.IsLetterOrDigit(iStr, index + 1))
                         return index;
-                    else if (!readAhead)
+                    if (!readAhead)
                         return index;
                 }
             }
@@ -522,15 +519,15 @@ namespace Hero_Designer
         static string[] SmartBreak(string iStr, int nAT)
         {
             string[] strArray = new string[3] { "", "", "" };
-            int num1 = clsUniversalImport.SeekNumber(iStr, 0);
+            int num1 = SeekNumber(iStr, 0);
             if (num1 > -1)
             {
-                int start1 = clsUniversalImport.SeekSep(iStr, num1, true);
+                int start1 = SeekSep(iStr, num1);
                 if (start1 > -1)
                 {
                     strArray[0] = iStr.Substring(num1, start1 - num1).Trim();
-                    int num2 = clsUniversalImport.SeekAn(iStr, start1);
-                    int index = clsUniversalImport.SeekPowerAdvanced(iStr, nAT);
+                    int num2 = SeekAn(iStr, start1);
+                    int index = SeekPowerAdvanced(iStr, nAT);
                     int start2;
                     if (index > -1)
                     {
@@ -538,10 +535,10 @@ namespace Hero_Designer
                         start2 = num2 + displayName.Length;
                     }
                     else
-                        start2 = clsUniversalImport.SeekSep(iStr, num2, true);
+                        start2 = SeekSep(iStr, num2);
                     if (num2 > -1 & start2 > -1)
                         strArray[1] = iStr.Substring(num2, start2 - num2).Trim();
-                    int startIndex = clsUniversalImport.SeekAn(iStr, start2);
+                    int startIndex = SeekAn(iStr, start2);
                     if (startIndex > -1)
                         strArray[2] = iStr.Substring(startIndex);
                     return strArray;
@@ -550,9 +547,9 @@ namespace Hero_Designer
             return strArray;
         }
 
-        static int SmartFind(string valueName, string[] haystack, ref string dest)
+        static int SmartFind(string valueName, IReadOnlyList<string> haystack, ref string dest)
         {
-            int num1 = haystack.Length - 1;
+            int num1 = haystack.Count - 1;
             for (int index1 = 0; index1 <= num1; ++index1)
             {
                 int start = 0;
@@ -560,11 +557,11 @@ namespace Hero_Designer
                 int num2;
                 for (bool flag = true; flag; flag = num2 > -1 & start > -1)
                 {
-                    num2 = clsUniversalImport.SeekAn(haystack[index1], start);
-                    start = clsUniversalImport.SeekSep(haystack[index1], num2, false);
+                    num2 = SeekAn(haystack[index1], start);
+                    start = SeekSep(haystack[index1], num2, false);
                     if (num2 > -1)
                     {
-                        strArray = (string[])Utils.CopyArray(strArray, (Array)new string[strArray.Length + 1]);
+                        strArray = (string[])Utils.CopyArray(strArray, new string[strArray.Length + 1]);
                         strArray[strArray.Length - 1] = start <= -1 ? haystack[index1].Substring(num2).Trim() : haystack[index1].Substring(num2, start - num2).Trim();
                     }
                 }
@@ -588,9 +585,9 @@ namespace Hero_Designer
 
             public SetPair(int iSet, int iPower)
             {
-                this = new clsUniversalImport.SetPair();
-                this.Powerset = iSet;
-                this.Power = iPower;
+                this = new SetPair();
+                Powerset = iSet;
+                Power = iPower;
             }
         }
 
@@ -599,17 +596,17 @@ namespace Hero_Designer
             public int Level;
             public string Power;
             public int HistoryID;
-            public clsUniversalImport.sSlot[] Slots;
+            public sSlot[] Slots;
 
-            public void Assign(clsUniversalImport.sPowerLine iPL)
+            public void Assign(sPowerLine iPL)
             {
-                this.Level = iPL.Level;
-                this.Power = iPL.Power;
-                this.Slots = new clsUniversalImport.sSlot[iPL.Slots.Length - 1 + 1];
-                this.HistoryID = iPL.HistoryID;
-                int num = this.Slots.Length - 1;
+                Level = iPL.Level;
+                Power = iPL.Power;
+                Slots = new sSlot[iPL.Slots.Length - 1 + 1];
+                HistoryID = iPL.HistoryID;
+                int num = Slots.Length - 1;
                 for (int index = 0; index <= num; ++index)
-                    this.Slots[index].Assign(iPL.Slots[index]);
+                    Slots[index].Assign(iPL.Slots[index]);
             }
         }
 
@@ -619,11 +616,11 @@ namespace Hero_Designer
             public string Enh;
             public string PowerName;
 
-            public void Assign(clsUniversalImport.sSlot iSlot)
+            public void Assign(sSlot iSlot)
             {
-                this.Level = iSlot.Level;
-                this.Enh = iSlot.Enh;
-                this.PowerName = iSlot.PowerName;
+                Level = iSlot.Level;
+                Enh = iSlot.Enh;
+                PowerName = iSlot.PowerName;
             }
         }
     }

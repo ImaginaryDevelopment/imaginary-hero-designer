@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmColourSettings
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -354,33 +357,33 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnReset;
-        System.Windows.Forms.ColorDialog cPicker;
-        System.Windows.Forms.Label csAlert;
-        System.Windows.Forms.Label csEnh;
-        System.Windows.Forms.Label csFade;
-        System.Windows.Forms.Label csHero;
-        System.Windows.Forms.Label csInv;
-        System.Windows.Forms.Label csInvInv;
-        System.Windows.Forms.Label csSpecial;
-        System.Windows.Forms.Label csText;
-        System.Windows.Forms.Label csValue;
-        System.Windows.Forms.Label csVillain;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label10;
-        System.Windows.Forms.Label Label19;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label20;
-        System.Windows.Forms.Label Label21;
-        System.Windows.Forms.Label Label22;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.Label Label9;
-        System.Windows.Forms.RichTextBox rtPreview;
+        Button btnCancel;
+        Button btnOK;
+        Button btnReset;
+        ColorDialog cPicker;
+        Label csAlert;
+        Label csEnh;
+        Label csFade;
+        Label csHero;
+        Label csInv;
+        Label csInvInv;
+        Label csSpecial;
+        Label csText;
+        Label csValue;
+        Label csVillain;
+        Label Label1;
+        Label Label10;
+        Label Label19;
+        Label Label2;
+        Label Label20;
+        Label Label21;
+        Label Label22;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        Label Label9;
+        RichTextBox rtPreview;
     }
 }

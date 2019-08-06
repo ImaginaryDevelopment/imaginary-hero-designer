@@ -18,66 +18,66 @@ public class Statistics
     readonly Character _character;
 
 
-    public float EnduranceMaxEnd => this._character.Totals.EndMax + 100f;
+    public float EnduranceMaxEnd => _character.Totals.EndMax + 100f;
 
     public float EnduranceRecoveryNumeric
-            => (float)(this.EnduranceRecovery(false) * (double)(this._character.Archetype.BaseRecovery * BaseMagic) * (_character.TotalsCapped.EndMax / 100.0 + 1.0));
+            => (float)(EnduranceRecovery(false) * (double)(_character.Archetype.BaseRecovery * BaseMagic) * (_character.TotalsCapped.EndMax / 100.0 + 1.0));
 
-    public float EnduranceTimeToFull => this.EnduranceMaxEnd / this.EnduranceRecoveryNumeric;
+    public float EnduranceTimeToFull => EnduranceMaxEnd / EnduranceRecoveryNumeric;
 
-    public float EnduranceRecoveryNet => this.EnduranceRecoveryNumeric - this.EnduranceUsage;
+    public float EnduranceRecoveryNet => EnduranceRecoveryNumeric - EnduranceUsage;
 
-    public float EnduranceRecoveryLossNet => (float)-(EnduranceRecoveryNumeric - (double)this.EnduranceUsage);
+    public float EnduranceRecoveryLossNet => (float)-(EnduranceRecoveryNumeric - (double)EnduranceUsage);
 
-    public float EnduranceTimeToZero =>this.EnduranceMaxEnd / (float)-((double)this.EnduranceRecoveryNumeric - (double)this.EnduranceUsage);
+    public float EnduranceTimeToZero =>EnduranceMaxEnd / (float)-(EnduranceRecoveryNumeric - (double)EnduranceUsage);
 
-    public float EnduranceTimeToFullNet =>this.EnduranceMaxEnd / (this.EnduranceRecoveryNumeric - this.EnduranceUsage);
+    public float EnduranceTimeToFullNet =>EnduranceMaxEnd / (EnduranceRecoveryNumeric - EnduranceUsage);
 
-    public float EnduranceUsage => this._character.Totals.EndUse;
+    public float EnduranceUsage => _character.Totals.EndUse;
 
-    public float HealthRegenHealthPerSec =>(float)((double)this.HealthRegen(false) * (double)this._character.Archetype.BaseRegen * 1.66666662693024);
+    public float HealthRegenHealthPerSec =>(float)(HealthRegen(false) * (double)_character.Archetype.BaseRegen * 1.66666662693024);
 
     public float HealthRegenHPPerSec =>
-        (float)(this.HealthRegen(false) * (double)this._character.Archetype.BaseRegen * 1.66666662693024 * this.HealthHitpointsNumeric(false)
+        (float)(HealthRegen(false) * (double)_character.Archetype.BaseRegen * 1.66666662693024 * HealthHitpointsNumeric(false)
         / 100.0);
 
-    public float HealthRegenTimeToFull => this.HealthHitpointsNumeric(false) / this.HealthRegenHPPerSec;
+    public float HealthRegenTimeToFull => HealthHitpointsNumeric(false) / HealthRegenHPPerSec;
 
-    public float HealthHitpointsPercentage => (float)(_character.TotalsCapped.HPMax / (double)this._character.Archetype.Hitpoints * 100.0);
+    public float HealthHitpointsPercentage => (float)(_character.TotalsCapped.HPMax / (double)_character.Archetype.Hitpoints * 100.0);
 
-    public float BuffToHit => this._character.Totals.BuffToHit * 100f;
+    public float BuffToHit => _character.Totals.BuffToHit * 100f;
 
-    public float BuffAccuracy => this._character.Totals.BuffAcc * 100f;
+    public float BuffAccuracy => _character.Totals.BuffAcc * 100f;
 
-    public float BuffEndRdx => this._character.Totals.BuffEndRdx * 100f;
+    public float BuffEndRdx => _character.Totals.BuffEndRdx * 100f;
 
-    public float ThreatLevel => (float)((_character.Totals.ThreatLevel + (double)this._character.Archetype.BaseThreat) * 100.0);
+    public float ThreatLevel => (float)((_character.Totals.ThreatLevel + (double)_character.Archetype.BaseThreat) * 100.0);
 
-    internal Statistics(Character character) => this._character = character;
+    internal Statistics(Character character) => _character = character;
 
     float EnduranceRecovery(bool uncapped)
-        => uncapped ? this._character.Totals.EndRec + 1f : this._character.TotalsCapped.EndRec + 1f;
+        => uncapped ? _character.Totals.EndRec + 1f : _character.TotalsCapped.EndRec + 1f;
 
     public float EnduranceRecoveryPercentage(bool uncapped)
-        => this.EnduranceRecovery(uncapped) * 100f;
+        => EnduranceRecovery(uncapped) * 100f;
 
     float HealthRegen(bool uncapped)
-        => uncapped ? this._character.Totals.HPRegen + 1f : this._character.TotalsCapped.HPRegen + 1f;
+        => uncapped ? _character.Totals.HPRegen + 1f : _character.TotalsCapped.HPRegen + 1f;
 
     public float HealthRegenPercent(bool uncapped)
-        => this.HealthRegen(uncapped) * 100f;
+        => HealthRegen(uncapped) * 100f;
 
     public float HealthHitpointsNumeric(bool uncapped)
-        => uncapped ? this._character.Totals.HPMax : this._character.TotalsCapped.HPMax;
+        => uncapped ? _character.Totals.HPMax : _character.TotalsCapped.HPMax;
 
     public float DamageResistance(int dType, bool uncapped)
-        => uncapped ? this._character.Totals.Res[dType] * 100f : this._character.TotalsCapped.Res[dType] * 100f;
+        => uncapped ? _character.Totals.Res[dType] * 100f : _character.TotalsCapped.Res[dType] * 100f;
 
     public float Perception(bool uncapped)
-        => uncapped ? this._character.Totals.Perception : this._character.TotalsCapped.Perception;
+        => uncapped ? _character.Totals.Perception : _character.TotalsCapped.Perception;
 
     public float Defense(int dType)
-        => this._character.Totals.Def[dType] * 100f;
+        => _character.Totals.Def[dType] * 100f;
 
     public float Speed(float iSpeed, Enums.eSpeedMeasure unit)
     {
@@ -129,30 +129,30 @@ public class Statistics
 
     public float MovementRunSpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
-        float iSpeed = this._character.Totals.RunSpd;
-        if (!uncapped && _character.Totals.RunSpd > (double)this._character.Totals.MaxRunSpd)
-            iSpeed = this._character.Totals.MaxRunSpd;
-        return this.Speed(iSpeed, sType);
+        float iSpeed = _character.Totals.RunSpd;
+        if (!uncapped && _character.Totals.RunSpd > (double)_character.Totals.MaxRunSpd)
+            iSpeed = _character.Totals.MaxRunSpd;
+        return Speed(iSpeed, sType);
     }
 
     public float MovementFlySpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
-        float iSpeed = this._character.Totals.FlySpd;
-        if (!uncapped && _character.Totals.FlySpd > (double)this._character.Totals.MaxFlySpd)
-            iSpeed = this._character.Totals.MaxFlySpd;
-        return this.Speed(iSpeed, sType);
+        float iSpeed = _character.Totals.FlySpd;
+        if (!uncapped && _character.Totals.FlySpd > (double)_character.Totals.MaxFlySpd)
+            iSpeed = _character.Totals.MaxFlySpd;
+        return Speed(iSpeed, sType);
     }
 
     public float MovementJumpSpeed(Enums.eSpeedMeasure sType, bool uncapped)
     {
-        float iSpeed = this._character.Totals.JumpSpd;
-        if (!uncapped && _character.Totals.JumpSpd > (double)this._character.Totals.MaxJumpSpd)
-            iSpeed = this._character.Totals.MaxJumpSpd;
-        return this.Speed(iSpeed, sType);
+        float iSpeed = _character.Totals.JumpSpd;
+        if (!uncapped && _character.Totals.JumpSpd > (double)_character.Totals.MaxJumpSpd)
+            iSpeed = _character.Totals.MaxJumpSpd;
+        return Speed(iSpeed, sType);
     }
 
     public float MovementJumpHeight(Enums.eSpeedMeasure sType)
-        => sType == Enums.eSpeedMeasure.KilometersPerHour | sType == Enums.eSpeedMeasure.MetersPerSecond ? this._character.TotalsCapped.JumpHeight * 0.3048f : this._character.TotalsCapped.JumpHeight;
+        => sType == Enums.eSpeedMeasure.KilometersPerHour | sType == Enums.eSpeedMeasure.MetersPerSecond ? _character.TotalsCapped.JumpHeight * 0.3048f : _character.TotalsCapped.JumpHeight;
 
     public float BuffHaste(bool uncapped)
      => !uncapped ? (float)((_character.TotalsCapped.BuffHaste + 1.0) * 100.0) : (float)((_character.Totals.BuffHaste + 1.0) * 100.0);

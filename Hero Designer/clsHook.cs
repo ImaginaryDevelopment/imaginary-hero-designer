@@ -5,8 +5,6 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Base;
-using Base.Data_Classes;
 using Base.Master_Classes;
 using Microsoft.VisualBasic;
 using Microsoft.VisualBasic.CompilerServices;
@@ -122,7 +120,7 @@ namespace Hero_Designer
                     case "Nickname not found in discord":
                         {
                             string message = $"Submission Failed: Your discord nickname was not found in the {discord.Server} discord server.";
-                            string title = "Discord Export";
+                            const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
@@ -130,23 +128,23 @@ namespace Hero_Designer
                     case "Export Successful":
                         {
                             string message = $"Submission Successful!! Your build should now be posted in {discord.Channel} on the {discord.Server} server.";
-                            string title = "Discord Export";
+                            const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
                     case "Export Failed":
                         {
-                            string message = $"Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
-                            string title = "Discord Export";
+                            const string message = "Submission Failed: Please check your discord export settings and make sure you have the latest version of Mids' Reborn : Hero Designer.";
+                            const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
 
                     case "Failed to add export to queue":
                         {
-                            string message = $"Submission Failed: Possible server error, please contact the RebornTeam.";
-                            string title = "Discord Export";
+                            const string message = "Submission Failed: Possible server error, please contact the RebornTeam.";
+                            const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }
@@ -154,7 +152,7 @@ namespace Hero_Designer
                     case "RebornBot is not in the discord server":
                         {
                             string message = $"Submission Failed: RebornBot was not found in the {discord.Server}.";
-                            string title = "Discord Export";
+                            const string title = "Discord Export";
                             MessageBox.Show(message, title);
                             break;
                         }

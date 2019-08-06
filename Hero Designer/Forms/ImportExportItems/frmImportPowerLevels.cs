@@ -1,13 +1,13 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -20,70 +20,70 @@ namespace Hero_Designer
 
         public frmImportPowerLevels()
         {
-            this.Load += new EventHandler(this.frmImportPowerLevels_Load);
-            this.FullFileName = "";
-            this.InitializeComponent();
-            this.Name = nameof(frmImportPowerLevels);
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmImportPowerLevels));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
+            Load += frmImportPowerLevels_Load;
+            FullFileName = "";
+            InitializeComponent();
+            Name = nameof(frmImportPowerLevels);
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmImportPowerLevels));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
         }
 
         void btnClose_Click(object sender, EventArgs e)
 
         {
-            this.Close();
+            Close();
         }
 
         void btnFile_Click(object sender, EventArgs e)
 
         {
-            this.dlgBrowse.FileName = this.FullFileName;
-            if (this.dlgBrowse.ShowDialog((IWin32Window)this) == DialogResult.OK)
-                this.FullFileName = this.dlgBrowse.FileName;
-            this.BusyHide();
-            this.DisplayInfo();
+            dlgBrowse.FileName = FullFileName;
+            if (dlgBrowse.ShowDialog(this) == DialogResult.OK)
+                FullFileName = dlgBrowse.FileName;
+            BusyHide();
+            DisplayInfo();
         }
 
         void btnImport_Click(object sender, EventArgs e)
 
         {
-            this.ParseClasses(this.FullFileName);
-            this.BusyHide();
-            this.DisplayInfo();
+            ParseClasses(FullFileName);
+            BusyHide();
+            DisplayInfo();
         }
 
         void BusyHide()
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
 
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayInfo()
         {
-            this.lblFile.Text = FileIO.StripPath(this.FullFileName);
-            this.lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
-            this.udRevision.Value = new Decimal(DatabaseAPI.Database.PowerLevelVersion.Revision);
+            lblFile.Text = FileIO.StripPath(FullFileName);
+            lblDate.Text = "Date: " + Strings.Format(DatabaseAPI.Database.PowerLevelVersion.RevisionDate, "dd/MMM/yy HH:mm:ss");
+            udRevision.Value = new Decimal(DatabaseAPI.Database.PowerLevelVersion.Revision);
         }
 
         void frmImportPowerLevels_Load(object sender, EventArgs e)
 
         {
-            this.FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile;
-            this.DisplayInfo();
+            FullFileName = DatabaseAPI.Database.PowerLevelVersion.SourceFile;
+            DisplayInfo();
         }
 
         [DebuggerStepThrough]
@@ -101,7 +101,7 @@ namespace Hero_Designer
             {
                 ProjectData.SetProjectError(ex);
                 int num2 = (int)Interaction.MsgBox(ex.Message, MsgBoxStyle.Critical, "Power CSV Not Opened");
-                bool flag = false;
+                const bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
@@ -119,7 +119,7 @@ namespace Hero_Designer
                         ++num5;
                         if (num5 >= 9)
                         {
-                            this.BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
+                            BusyMsg(Strings.Format(num3, "###,##0") + " records parsed.");
                             num5 = 0;
                         }
                         string[] array = CSV.ToArray(iLine);
@@ -145,17 +145,17 @@ namespace Hero_Designer
                 Exception exception = ex;
                 iStream.Close();
                 int num2 = (int)Interaction.MsgBox(exception.Message, MsgBoxStyle.Critical, "Power Class CSV Parse Error");
-                bool flag = false;
+                const bool flag = false;
                 ProjectData.ClearProjectError();
                 return flag;
             }
             iStream.Close();
-            DatabaseAPI.Database.PowerLevelVersion.SourceFile = this.dlgBrowse.FileName;
+            DatabaseAPI.Database.PowerLevelVersion.SourceFile = dlgBrowse.FileName;
             DatabaseAPI.Database.PowerLevelVersion.RevisionDate = DateTime.Now;
-            DatabaseAPI.Database.PowerLevelVersion.Revision = Convert.ToInt32(this.udRevision.Value);
-            var serializer = My.MyApplication.GetSerializer();
+            DatabaseAPI.Database.PowerLevelVersion.Revision = Convert.ToInt32(udRevision.Value);
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            this.DisplayInfo();
+            DisplayInfo();
             int num6 = (int)Interaction.MsgBox(("Parse Completed!\r\nTotal Records: " + Conversions.ToString(num3) + "\r\nGood: " + Conversions.ToString(num1) + "\r\nRejected: " + Conversions.ToString(num4)), MsgBoxStyle.Information, "File Parsed");
             return true;
         }

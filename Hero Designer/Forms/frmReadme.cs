@@ -1,12 +1,11 @@
 
-using Microsoft.VisualBasic.CompilerServices;
-using midsControls;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using midsControls;
 
 namespace Hero_Designer
 {
@@ -19,7 +18,7 @@ namespace Hero_Designer
         int btnY;
         bool Loading;
         Point mouse_offset;
-        string myFile;
+        readonly string myFile;
         int rtH;
         int rtW;
 
@@ -31,14 +30,14 @@ namespace Hero_Designer
 
         public frmReadme(string iFile)
         {
-            this.Loading = true;
-            this.myFile = "";
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmReadme));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.pbBottom.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbBottom.Image");
-            this.pbBackground.Image = (System.Drawing.Image)componentResourceManager.GetObject("pbBackground.Image");
-            this.myFile = iFile;
+            Loading = true;
+            myFile = "";
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmReadme));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            pbBottom.Image = (Image)componentResourceManager.GetObject("pbBottom.Image");
+            pbBackground.Image = (Image)componentResourceManager.GetObject("pbBackground.Image");
+            myFile = iFile;
         }
 
         void All_MouseMove(MouseEventArgs e)
@@ -46,14 +45,14 @@ namespace Hero_Designer
         {
             if (e.Button != MouseButtons.Left)
                 return;
-            Point mousePosition = Control.MousePosition;
-            mousePosition.Offset(this.mouse_offset.X, this.mouse_offset.Y);
-            this.Location = mousePosition;
+            Point mousePosition = MousePosition;
+            mousePosition.Offset(mouse_offset.X, mouse_offset.Y);
+            Location = mousePosition;
         }
 
         void btnClose_ButtonClicked()
         {
-            this.Close();
+            Close();
         }
 
         void btnClose_Load(object sender, EventArgs e)
@@ -63,55 +62,55 @@ namespace Hero_Designer
         void frmReadme_Load(object sender, EventArgs e)
 
         {
-            this.rtW = this.Size.Width - (this.rtfRead.Width + this.rtfRead.Left);
-            this.rtH = this.Size.Height - (this.rtfRead.Height + this.rtfRead.Top);
-            this.BtnClose.KnockoutLocationPoint = new System.Drawing.Point(this.BtnClose.Left, this.BtnClose.Top - this.pbBottom.Top);
-            this.BtnClose.KnockoutPB = this.pbBottom;
-            this.BtnClose.Refresh();
-            this.btnY = this.Size.Height - this.BtnClose.Top;
+            rtW = Size.Width - (rtfRead.Width + rtfRead.Left);
+            rtH = Size.Height - (rtfRead.Height + rtfRead.Top);
+            BtnClose.KnockoutLocationPoint = new Point(BtnClose.Left, BtnClose.Top - pbBottom.Top);
+            BtnClose.KnockoutPB = pbBottom;
+            BtnClose.Refresh();
+            btnY = Size.Height - BtnClose.Top;
             try
             {
-                this.rtfRead.LoadFile(this.myFile);
+                rtfRead.LoadFile(myFile);
             }
             catch (Exception ex)
             {
-                this.rtfRead.Text = "Unable to find " + this.myFile + "!";
+                rtfRead.Text = "Unable to find " + myFile + "!";
             }
-            this.Loading = false;
+            Loading = false;
         }
 
         void frmReadme_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.pbBackground_MouseDown(RuntimeHelpers.GetObjectValue(sender), e);
+            pbBackground_MouseDown(RuntimeHelpers.GetObjectValue(sender), e);
         }
 
         void frmReadme_MouseMove(object sender, MouseEventArgs e)
 
         {
-            this.All_MouseMove(e);
+            All_MouseMove(e);
         }
 
         void frmReadme_Resize(object sender, EventArgs e)
 
         {
-            if (this.Loading)
+            if (Loading)
                 return;
-            RichTextBox rtfRead1 = this.rtfRead;
-            Size size = this.Size;
-            int num1 = size.Height - (this.rtH + this.rtfRead.Top);
+            RichTextBox rtfRead1 = rtfRead;
+            Size size = Size;
+            int num1 = size.Height - (rtH + rtfRead.Top);
             rtfRead1.Height = num1;
-            RichTextBox rtfRead2 = this.rtfRead;
-            size = this.Size;
-            int num2 = size.Width - (this.rtW + this.rtfRead.Left);
+            RichTextBox rtfRead2 = rtfRead;
+            size = Size;
+            int num2 = size.Width - (rtW + rtfRead.Left);
             rtfRead2.Width = num2;
-            ImageButton btnClose1 = this.BtnClose;
-            size = this.Size;
-            int num3 = size.Height - this.btnY;
+            ImageButton btnClose1 = BtnClose;
+            size = Size;
+            int num3 = size.Height - btnY;
             btnClose1.Top = num3;
-            ImageButton btnClose2 = this.BtnClose;
-            size = this.Size;
-            int num4 = (int)Math.Round((double)(size.Width - this.BtnClose.Width) / 2.0);
+            ImageButton btnClose2 = BtnClose;
+            size = Size;
+            int num4 = (int)Math.Round((size.Width - BtnClose.Width) / 2.0);
             btnClose2.Left = num4;
         }
 
@@ -125,25 +124,25 @@ namespace Hero_Designer
         void pbBackground_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new System.Drawing.Point(-e.X, -e.Y);
+            mouse_offset = new Point(-e.X, -e.Y);
         }
 
         void pbBackground_MouseMove(object sender, MouseEventArgs e)
 
         {
-            this.All_MouseMove(e);
+            All_MouseMove(e);
         }
 
         void pbBottom_MouseDown(object sender, MouseEventArgs e)
 
         {
-            this.mouse_offset = new System.Drawing.Point(-e.X, -this.pbBottom.Top + -e.Y);
+            mouse_offset = new Point(-e.X, -pbBottom.Top + -e.Y);
         }
 
         void pbBottom_MouseMove(object sender, MouseEventArgs e)
 
         {
-            this.All_MouseMove(e);
+            All_MouseMove(e);
         }
     }
 }

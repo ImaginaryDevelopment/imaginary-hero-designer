@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmImport_Archetype
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -215,22 +218,22 @@ namespace Hero_Designer
 
         #endregion
 
-        System.Windows.Forms.Button btnATFile;
-        System.Windows.Forms.Button btnClose;
-        System.Windows.Forms.Button btnImport;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ColumnHeader ColumnHeader6;
-        System.Windows.Forms.OpenFileDialog dlgBrowse;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label8;
-        System.Windows.Forms.Label lblATCount;
-        System.Windows.Forms.Label lblATDate;
-        System.Windows.Forms.Label lblATFile;
-        System.Windows.Forms.ListView lstImport;
-        System.Windows.Forms.NumericUpDown udATRevision;
+        Button btnATFile;
+        Button btnClose;
+        Button btnImport;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        OpenFileDialog dlgBrowse;
+        Label Label6;
+        Label Label8;
+        Label lblATCount;
+        Label lblATDate;
+        Label lblATFile;
+        ListView lstImport;
+        NumericUpDown udATRevision;
     }
 }

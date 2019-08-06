@@ -1,6 +1,4 @@
 
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -8,6 +6,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer.My.Resources
 {
@@ -28,11 +28,11 @@ namespace Hero_Designer.My.Resources
         {
             get
             {
-                return Hero_Designer.My.Resources.Resources.resourceCulture;
+                return resourceCulture;
             }
             set
             {
-                Hero_Designer.My.Resources.Resources.resourceCulture = value;
+                resourceCulture = value;
             }
         }
 
@@ -40,7 +40,7 @@ namespace Hero_Designer.My.Resources
         {
             get
             {
-                return (Bitmap)RuntimeHelpers.GetObjectValue(Hero_Designer.My.Resources.Resources.ResourceManager.GetObject(nameof(Gradient), Hero_Designer.My.Resources.Resources.resourceCulture));
+                return (Bitmap)RuntimeHelpers.GetObjectValue(ResourceManager.GetObject(nameof(Gradient), resourceCulture));
             }
         }
 
@@ -49,9 +49,9 @@ namespace Hero_Designer.My.Resources
         {
             get
             {
-                if (object.ReferenceEquals(Hero_Designer.My.Resources.Resources.resourceMan, null))
-                    Hero_Designer.My.Resources.Resources.resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Hero_Designer.My.Resources.Resources).Assembly);
-                return Hero_Designer.My.Resources.Resources.resourceMan;
+                if (ReferenceEquals(resourceMan, null))
+                    resourceMan = new ResourceManager("Hero_Designer.Resources", typeof(Resources).Assembly);
+                return resourceMan;
             }
         }
     }

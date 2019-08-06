@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Base.Master_Classes;
 
 namespace Hero_Designer
 {
@@ -19,7 +16,7 @@ namespace Hero_Designer
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Base.Master_Classes.MidsContext.AssertVersioning();
+                MidsContext.AssertVersioning();
                 Application.Run(new frmMain());
             }
             catch (Exception ex)

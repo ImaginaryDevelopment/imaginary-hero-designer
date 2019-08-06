@@ -1,11 +1,11 @@
-using Microsoft.VisualBasic;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using Hero_Designer.My;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Hero_Designer
 {
@@ -27,11 +27,11 @@ namespace Hero_Designer
 
         public frmEntityListing()
         {
-            this.Load += new EventHandler(this.frmEntityListing_Load);
-            this.InitializeComponent();
-            System.ComponentModel.ComponentResourceManager componentResourceManager = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityListing));
-            this.Icon = (System.Drawing.Icon)componentResourceManager.GetObject("$this.Icon");
-            this.Name = nameof(frmEntityListing);
+            Load += frmEntityListing_Load;
+            InitializeComponent();
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmEntityListing));
+            Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
+            Name = nameof(frmEntityListing);
         }
 
         void btnAdd_Click(object sender, EventArgs e)
@@ -45,39 +45,39 @@ namespace Hero_Designer
             SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
             database.Entities = summonedEntityArray;
             DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity, DatabaseAPI.Database.Entities.Length - 1);
-            this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
+            ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
         }
 
         void btnCancel_Click(object sender, EventArgs e)
         {
-            this.BusyMsg("Re-Indexing...");
+            BusyMsg("Re-Indexing...");
             DatabaseAPI.LoadMainDatabase();
-            DatabaseAPI.MatchAllIDs(null);
-            this.BusyHide();
-            this.Hide();
+            DatabaseAPI.MatchAllIDs();
+            BusyHide();
+            Hide();
         }
 
         void btnClone_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0)
+            if (lvEntity.SelectedIndices.Count <= 0)
                 return;
-            frmEntityEdit frmEntityEdit = new frmEntityEdit(new SummonedEntity(DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]], DatabaseAPI.Database.Entities.Length));
+            frmEntityEdit frmEntityEdit = new frmEntityEdit(new SummonedEntity(DatabaseAPI.Database.Entities[lvEntity.SelectedIndices[0]], DatabaseAPI.Database.Entities.Length));
             if (frmEntityEdit.ShowDialog() == DialogResult.OK)
             {
                 IDatabase database = DatabaseAPI.Database;
                 SummonedEntity[] summonedEntityArray = (SummonedEntity[])Utils.CopyArray(database.Entities, new SummonedEntity[DatabaseAPI.Database.Entities.Length + 1]);
                 database.Entities = summonedEntityArray;
                 DatabaseAPI.Database.Entities[DatabaseAPI.Database.Entities.Length - 1] = new SummonedEntity(frmEntityEdit.myEntity);
-                this.ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
+                ListAddItem(DatabaseAPI.Database.Entities.Length - 1);
             }
         }
 
         void btnDelete_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete entity: " + DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
+            if (lvEntity.SelectedIndices.Count <= 0 || Interaction.MsgBox(("Really delete entity: " + DatabaseAPI.Database.Entities[lvEntity.SelectedIndices[0]].DisplayName + "?"), MsgBoxStyle.YesNo | MsgBoxStyle.Question, "Are you sure?") != MsgBoxResult.Yes)
                 return;
             SummonedEntity[] summonedEntityArray = new SummonedEntity[DatabaseAPI.Database.Entities.Length - 1 + 1];
-            int selectedIndex = this.lvEntity.SelectedIndices[0];
+            int selectedIndex = lvEntity.SelectedIndices[0];
             int index1 = 0;
             int num1 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index2 = 0; index2 <= num1; ++index2)
@@ -92,22 +92,22 @@ namespace Hero_Designer
             int num2 = DatabaseAPI.Database.Entities.Length - 1;
             for (int index2 = 0; index2 <= num2; ++index2)
                 DatabaseAPI.Database.Entities[index2] = new SummonedEntity(summonedEntityArray[index2]);
-            this.DisplayList();
-            if (this.lvEntity.Items.Count > 0)
+            DisplayList();
+            if (lvEntity.Items.Count > 0)
             {
-                if (this.lvEntity.Items.Count > selectedIndex)
-                    this.lvEntity.Items[selectedIndex].Selected = true;
-                else if (this.lvEntity.Items.Count == selectedIndex)
-                    this.lvEntity.Items[selectedIndex - 1].Selected = true;
+                if (lvEntity.Items.Count > selectedIndex)
+                    lvEntity.Items[selectedIndex].Selected = true;
+                else if (lvEntity.Items.Count == selectedIndex)
+                    lvEntity.Items[selectedIndex - 1].Selected = true;
             }
         }
 
         void btnDown_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0)
+            if (lvEntity.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEntity.SelectedIndices[0];
-            if (selectedIndex < this.lvEntity.Items.Count - 1)
+            int selectedIndex = lvEntity.SelectedIndices[0];
+            if (selectedIndex < lvEntity.Items.Count - 1)
             {
                 SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
                 {
@@ -116,38 +116,38 @@ namespace Hero_Designer
                 };
                 DatabaseAPI.Database.Entities[selectedIndex + 1] = new SummonedEntity(summonedEntityArray[0]);
                 DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
-                this.DisplayList();
-                this.lvEntity.Items[selectedIndex + 1].Selected = true;
-                this.lvEntity.Items[selectedIndex + 1].EnsureVisible();
+                DisplayList();
+                lvEntity.Items[selectedIndex + 1].Selected = true;
+                lvEntity.Items[selectedIndex + 1].EnsureVisible();
             }
         }
 
         void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0)
+            if (lvEntity.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEntity.SelectedIndices[0];
-            frmEntityEdit frmEntityEdit = new frmEntityEdit(DatabaseAPI.Database.Entities[this.lvEntity.SelectedIndices[0]]);
+            int selectedIndex = lvEntity.SelectedIndices[0];
+            frmEntityEdit frmEntityEdit = new frmEntityEdit(DatabaseAPI.Database.Entities[lvEntity.SelectedIndices[0]]);
             if (frmEntityEdit.ShowDialog() == DialogResult.OK)
             {
                 DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(frmEntityEdit.myEntity);
-                this.ListUpdateItem(selectedIndex);
+                ListUpdateItem(selectedIndex);
             }
         }
 
         void btnOK_Click(object sender, EventArgs e)
         {
             DatabaseAPI.MatchSummonIDs();
-            var serializer = My.MyApplication.GetSerializer();
+            var serializer = MyApplication.GetSerializer();
             DatabaseAPI.SaveMainDatabase(serializer);
-            this.Hide();
+            Hide();
         }
 
         void btnUp_Click(object sender, EventArgs e)
         {
-            if (this.lvEntity.SelectedIndices.Count <= 0)
+            if (lvEntity.SelectedIndices.Count <= 0)
                 return;
-            int selectedIndex = this.lvEntity.SelectedIndices[0];
+            int selectedIndex = lvEntity.SelectedIndices[0];
             if (selectedIndex >= 1)
             {
                 SummonedEntity[] summonedEntityArray = new SummonedEntity[2]
@@ -157,60 +157,60 @@ namespace Hero_Designer
                 };
                 DatabaseAPI.Database.Entities[selectedIndex - 1] = new SummonedEntity(summonedEntityArray[0]);
                 DatabaseAPI.Database.Entities[selectedIndex] = new SummonedEntity(summonedEntityArray[1]);
-                this.DisplayList();
-                this.lvEntity.Items[selectedIndex - 1].Selected = true;
-                this.lvEntity.Items[selectedIndex - 1].EnsureVisible();
+                DisplayList();
+                lvEntity.Items[selectedIndex - 1].Selected = true;
+                lvEntity.Items[selectedIndex - 1].EnsureVisible();
             }
         }
 
         void BusyHide()
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
                 return;
-            this.bFrm.Close();
-            this.bFrm = null;
+            bFrm.Close();
+            bFrm = null;
         }
 
         void BusyMsg(string sMessage)
         {
-            if (this.bFrm == null)
+            if (bFrm == null)
             {
-                this.bFrm = new frmBusy();
-                this.bFrm.Show((IWin32Window)this);
+                bFrm = new frmBusy();
+                bFrm.Show(this);
             }
-            this.bFrm.SetMessage(sMessage);
+            bFrm.SetMessage(sMessage);
         }
 
         public void DisplayList()
         {
-            this.lvEntity.BeginUpdate();
-            this.lvEntity.Items.Clear();
+            lvEntity.BeginUpdate();
+            lvEntity.Items.Clear();
             int num = DatabaseAPI.Database.Entities.Length - 1;
             for (int Index = 0; Index <= num; ++Index)
-                this.ListAddItem(Index);
-            if (this.lvEntity.Items.Count > 0)
+                ListAddItem(Index);
+            if (lvEntity.Items.Count > 0)
             {
-                this.lvEntity.Items[0].Selected = true;
-                this.lvEntity.Items[0].EnsureVisible();
+                lvEntity.Items[0].Selected = true;
+                lvEntity.Items[0].EnsureVisible();
             }
-            this.lvEntity.EndUpdate();
+            lvEntity.EndUpdate();
         }
 
         void frmEntityListing_Load(object sender, EventArgs e)
         {
-            this.DisplayList();
+            DisplayList();
         }
 
         public void ListAddItem(int Index)
         {
-            this.lvEntity.Items.Add(new ListViewItem(new string[3]
+            lvEntity.Items.Add(new ListViewItem(new string[3]
             {
                 DatabaseAPI.Database.Entities[Index].UID,
                 DatabaseAPI.Database.Entities[Index].DisplayName,
                 Enum.GetName(DatabaseAPI.Database.Entities[Index].EntityType.GetType(),  DatabaseAPI.Database.Entities[Index].EntityType)
             }, Index));
-            this.lvEntity.Items[this.lvEntity.Items.Count - 1].Selected = true;
-            this.lvEntity.Items[this.lvEntity.Items.Count - 1].EnsureVisible();
+            lvEntity.Items[lvEntity.Items.Count - 1].Selected = true;
+            lvEntity.Items[lvEntity.Items.Count - 1].EnsureVisible();
         }
 
         public void ListUpdateItem(int Index)
@@ -223,15 +223,15 @@ namespace Hero_Designer
             };
             int num = strArray.Length - 1;
             for (int index = 0; index <= num; ++index)
-                this.lvEntity.Items[Index].SubItems[index].Text = strArray[index];
-            this.lvEntity.Items[Index].EnsureVisible();
-            this.lvEntity.Refresh();
+                lvEntity.Items[Index].SubItems[index].Text = strArray[index];
+            lvEntity.Items[Index].EnsureVisible();
+            lvEntity.Refresh();
         }
 
         void lvEntity_DoubleClick(object sender, EventArgs e)
 
         {
-            this.btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
+            btnEdit_Click(RuntimeHelpers.GetObjectValue(sender), e);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -43,9 +44,8 @@ public static class Files
             //if (Path.IsPathRooted(attempt)) return filename;
             var recursed = SearchUpRec(foldername, attempt);
             if (recursed != null && File.Exists(recursed)) return recursed;
-            else if (File.Exists(filename)) return filename;
-            else return null;
-
+            if (File.Exists(filename)) return filename;
+            return null;
         }
         try
         {
@@ -63,7 +63,7 @@ public static class Files
         get
         {
             var fp = Path.Combine(Application.StartupPath, Path.Combine("Data", JsonFileConfig));
-            return System.Diagnostics.Debugger.IsAttached ? SearchUp("Data", fp) : fp;
+            return Debugger.IsAttached ? SearchUp("Data", fp) : fp;
 
         }
     }
@@ -74,10 +74,10 @@ public static class Files
 
     public static string SelectDataFileLoad(string iDataFile)
     {
-        string str = Path.Combine(Files.FPathAppData, iDataFile);
-        if (System.Diagnostics.Debugger.IsAttached)
+        string str = Path.Combine(FPathAppData, iDataFile);
+        if (Debugger.IsAttached)
             str = SearchUp("Data", str);
-        Files.FileData = Files.FileData + str + '\n';
+        FileData = FileData + str + '\n';
         return str;
     }
 
@@ -85,8 +85,8 @@ public static class Files
     {
         try
         {
-            var str = Path.Combine(Files.FPathAppData, iDataFile);
-            if (System.Diagnostics.Debugger.IsAttached)
+            var str = Path.Combine(FPathAppData, iDataFile);
+            if (Debugger.IsAttached)
                 str = SearchUp("Data", str);
             if (!Directory.Exists(FileIO.StripFileName(str)))
                 Directory.CreateDirectory(FileIO.StripFileName(str));
@@ -103,30 +103,30 @@ public static class Files
     {
         try
         {
-            if (!forceMhd && File.Exists(Files.FNameJsonConfig)) return Files.FNameJsonConfig;
-            if (File.Exists(Files.FNameConfig) || !File.Exists(OS.GetApplicationPath() + "Data\\Config.mhd"))
-                return Files.FNameConfig;
+            if (!forceMhd && File.Exists(FNameJsonConfig)) return FNameJsonConfig;
+            if (File.Exists(FNameConfig) || !File.Exists(OS.GetApplicationPath() + "Data\\Config.mhd"))
+                return FNameConfig;
             return OS.GetApplicationPath() + "Data\\Config.mhd";
         }
         catch (Exception ex)
         {
             MessageBox.Show("Config folder doesn't exist. Creating new one.");
         }
-        return Files.FNameConfig;
+        return FNameConfig;
     }
 
     internal static string SelectConfigFileSave()
     {
         try
         {
-            if (!Directory.Exists(FileIO.StripFileName(Files.FNameConfig)))
-                Directory.CreateDirectory(FileIO.StripFileName(Files.FNameConfig));
+            if (!Directory.Exists(FileIO.StripFileName(FNameConfig)))
+                Directory.CreateDirectory(FileIO.StripFileName(FNameConfig));
         }
         catch (Exception ex)
         {
             MessageBox.Show("Unable to create output folder: " + ex.Message);
         }
-        return Files.FNameConfig;
+        return FNameConfig;
     }
 
     public static class Headers

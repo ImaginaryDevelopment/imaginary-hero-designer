@@ -28,7 +28,7 @@ namespace midsControls
         {
             get
             {
-                return this.Expanded;
+                return Expanded;
             }
         }
 
@@ -37,32 +37,32 @@ namespace midsControls
             get
             {
                 Color result;
-                if (this.Item.ItemState < ListLabelV2.LLItemState.Enabled | this.Item.ItemState > ListLabelV2.LLItemState.Heading)
+                if (Item.ItemState < LLItemState.Enabled | Item.ItemState > LLItemState.Heading)
                 {
                     result = Color.Black;
                 }
                 else
                 {
-                    result = this.Colours[(int)this.Item.ItemState];
+                    result = Colours[(int)Item.ItemState];
                 }
                 return result;
             }
             set
             {
-                if (!(this.Item.ItemState < ListLabelV2.LLItemState.Enabled | this.Item.ItemState > ListLabelV2.LLItemState.Heading))
+                if (!(Item.ItemState < LLItemState.Enabled | Item.ItemState > LLItemState.Heading))
                 {
-                    this.Colours[(int)this.Item.ItemState] = value;
-                    this.Draw();
+                    Colours[(int)Item.ItemState] = value;
+                    Draw();
                 }
             }
         }
 
-        public void UpdateTextColors(ListLabelV2.LLItemState State, Color color)
+        public void UpdateTextColors(LLItemState State, Color color)
         {
             if (!(State < LLItemState.Enabled | State > LLItemState.Heading))
             {
-                this.Colours[(int)State] = color;
-                this.Draw();
+                Colours[(int)State] = color;
+                Draw();
             }
         }
 
@@ -70,17 +70,16 @@ namespace midsControls
         {
             get
             {
-                if (this.Item.Index < 0 | this.Item.Index > checked(this.Items.Length - 1))
+                if (Item.Index < 0 | Item.Index > checked(Items.Length - 1))
                     return new ListLabelItemV2();
-                else
-                    return this.Items[this.Item.Index];
+                return Items[Item.Index];
             }
             set
             {
-                if (!(this.Item.Index < 0 | this.Item.Index > checked(this.Items.Length - 1)))
+                if (!(Item.Index < 0 | Item.Index > checked(Items.Length - 1)))
                 {
-                    this.Items[this.Item.Index] = new ListLabelItemV2(value);
-                    this.Draw();
+                    Items[Item.Index] = new ListLabelItemV2(value);
+                    Draw();
                 }
             }
         }
@@ -89,12 +88,12 @@ namespace midsControls
         {
             get
             {
-                return this.bgColor;
+                return bgColor;
             }
             set
             {
-                this.bgColor = value;
-                this.Draw();
+                bgColor = value;
+                Draw();
             }
         }
 
@@ -102,70 +101,70 @@ namespace midsControls
         {
             get
             {
-                return this.hvrColor;
+                return hvrColor;
             }
             set
             {
-                this.hvrColor = value;
-                this.Draw();
+                hvrColor = value;
+                Draw();
             }
         }
 
         public int PaddingX
         {
-            get => this.xPadding;
+            get => xPadding;
             set
             {
-                if (value >= 0 & checked(value * 2 < base.Width - 5))
+                if (value >= 0 & checked(value * 2 < Width - 5))
                 {
-                    this.xPadding = value;
-                    this.Draw();
+                    xPadding = value;
+                    Draw();
                 }
             }
         }
 
         public int PaddingY
         {
-            get => this.yPadding;
+            get => yPadding;
             set
             {
-                if (value >= 0 & (double)value < (double)base.Height / 3.0)
+                if (value >= 0 & value < Height / 3.0)
                 {
-                    this.yPadding = value;
-                    this.SetLineHeight();
-                    this.Draw();
+                    yPadding = value;
+                    SetLineHeight();
+                    Draw();
                 }
             }
         }
 
         public bool HighVis
         {
-            get => this.TextOutline;
+            get => TextOutline;
             set
             {
-                this.TextOutline = value;
-                this.Draw();
+                TextOutline = value;
+                Draw();
             }
         }
 
-        public int HoverID => this.HoverIndex;
+        public int HoverID => HoverIndex;
 
         public bool SuspendRedraw
         {
-            get => this.DisableRedraw;
+            get => DisableRedraw;
             set
             {
-                this.DisableRedraw = value;
+                DisableRedraw = value;
                 if (!value)
                 {
-                    if (this.Expanded)
+                    if (Expanded)
                     {
-                        this.RecomputeExpand();
+                        RecomputeExpand();
                     }
-                    if (!this.Expanded)
+                    if (!Expanded)
                     {
-                        this.Recalculate(false);
-                        this.Draw();
+                        Recalculate();
+                        Draw();
                     }
                 }
             }
@@ -175,33 +174,33 @@ namespace midsControls
         {
             get
             {
-                return this.canScroll;
+                return canScroll;
             }
             set
             {
-                this.canScroll = value;
-                this.Draw();
+                canScroll = value;
+                Draw();
             }
         }
 
         public bool Expandable
         {
-            get => this.canExpand;
+            get => canExpand;
             set
             {
-                this.canExpand = value;
-                this.Draw();
+                canExpand = value;
+                Draw();
             }
         }
 
         public Size SizeNormal
         {
-            get => this.szNormal;
+            get => szNormal;
             set
             {
-                this.szNormal = value;
-                this.Expand(this.Expanded);
-                this.Draw();
+                szNormal = value;
+                Expand(Expanded);
+                Draw();
             }
         }
 
@@ -212,16 +211,16 @@ namespace midsControls
         {
             get
             {
-                return this.expandMaxY;
+                return expandMaxY;
             }
             set
             {
-                if (value >= this.szNormal.Height)
+                if (value >= szNormal.Height)
                 {
                     if (value <= 2000)
                     {
-                        this.expandMaxY = value;
-                        this.Draw();
+                        expandMaxY = value;
+                        Draw();
                     }
                 }
             }
@@ -234,16 +233,16 @@ namespace midsControls
         {
             get
             {
-                return this.ScrollWidth;
+                return ScrollWidth;
             }
             set
             {
-                if (value > 0 & (double)value < (double)base.Width / 2.0)
+                if (value > 0 & value < Width / 2.0)
                 {
-                    this.ScrollWidth = value;
+                    ScrollWidth = value;
                 }
-                this.Recalculate(false);
-                this.Draw();
+                Recalculate();
+                Draw();
             }
         }
 
@@ -254,12 +253,12 @@ namespace midsControls
         {
             get
             {
-                return this.scBarColor;
+                return scBarColor;
             }
             set
             {
-                this.scBarColor = value;
-                this.Draw();
+                scBarColor = value;
+                Draw();
             }
         }
 
@@ -270,12 +269,12 @@ namespace midsControls
         {
             get
             {
-                return this.scButtonColor;
+                return scButtonColor;
             }
             set
             {
-                this.scButtonColor = value;
-                this.Draw();
+                scButtonColor = value;
+                Draw();
             }
         }
 
@@ -285,7 +284,7 @@ namespace midsControls
         {
             get
             {
-                return base.Height;
+                return Height;
             }
         }
 
@@ -295,7 +294,7 @@ namespace midsControls
         {
             get
             {
-                return checked(this.GetTotalLineCount() * this.LineHeight);
+                return checked(GetTotalLineCount() * LineHeight);
             }
         }
 
@@ -305,7 +304,7 @@ namespace midsControls
         {
             get
             {
-                return this.LineHeight;
+                return LineHeight;
             }
         }
 
@@ -315,9 +314,9 @@ namespace midsControls
         {
             try
             {
-                if (disposing && this.components != null)
+                if (disposing && components != null)
                 {
-                    this.components.Dispose();
+                    components.Dispose();
                 }
             }
             finally
@@ -330,129 +329,129 @@ namespace midsControls
         [DebuggerStepThrough]
         void InitializeComponent()
         {
-            base.SuspendLayout();
-            base.AutoScaleMode = AutoScaleMode.Inherit;
-            this.DoubleBuffered = true;
-            base.Name = "ListLabelV2";
+            SuspendLayout();
+            AutoScaleMode = AutoScaleMode.Inherit;
+            DoubleBuffered = true;
+            Name = "ListLabelV2";
             Size size = new Size(150, 210);
-            base.Size = size;
-            base.ResumeLayout(false);
+            Size = size;
+            ResumeLayout(false);
         }
 
         // Token: 0x060001F7 RID: 503 RVA: 0x0001191B File Offset: 0x0000FB1B
         void ListLabelV2_FontChanged(object sender, EventArgs e)
         {
-            this.Recalculate(false);
-            this.Draw();
+            Recalculate();
+            Draw();
         }
 
         // Token: 0x060001F8 RID: 504 RVA: 0x0001192D File Offset: 0x0000FB2D
         void ListLabelV2_Load(object sender, EventArgs e)
         {
-            this.szNormal = base.Size;
-            this.DisableRedraw = true;
-            this.InitBuffer();
-            this.Recalculate(false);
-            this.FillDefaultItems();
-            this.DisableRedraw = false;
+            szNormal = Size;
+            DisableRedraw = true;
+            InitBuffer();
+            Recalculate();
+            FillDefaultItems();
+            DisableRedraw = false;
         }
 
         // Token: 0x060001F9 RID: 505 RVA: 0x00011960 File Offset: 0x0000FB60
         void FillDefaultItems()
         {
-            this.ClearItems();
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Header Item", ListLabelV2.LLItemState.Heading, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Enabled", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Disabled Item", ListLabelV2.LLItemState.Disabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Selected Item", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold | ListLabelV2.LLFontFlags.Italic, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("SD Item", ListLabelV2.LLItemState.SelectedDisabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Invalid Item", ListLabelV2.LLItemState.Invalid, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Automatic multiline Item", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Scrollable", ListLabelV2.LLItemState.Heading, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Center));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 1", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 2", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 3", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 4", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 5", ListLabelV2.LLItemState.Disabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 6", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 7", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 8", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 9", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 10", ListLabelV2.LLItemState.Disabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 11", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 12", ListLabelV2.LLItemState.Selected, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 13", ListLabelV2.LLItemState.Invalid, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 14", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.AddItem(new ListLabelV2.ListLabelItemV2("Item 15", ListLabelV2.LLItemState.Enabled, -1, -1, -1, "", ListLabelV2.LLFontFlags.Bold, ListLabelV2.LLTextAlign.Left));
-            this.Draw();
+            ClearItems();
+            AddItem(new ListLabelItemV2("Header Item", LLItemState.Heading, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Center));
+            AddItem(new ListLabelItemV2("Enabled", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Disabled Item", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Selected Item", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold | LLFontFlags.Italic));
+            AddItem(new ListLabelItemV2("SD Item", LLItemState.SelectedDisabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Invalid Item", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Automatic multiline Item", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Scrollable", LLItemState.Heading, -1, -1, -1, "", LLFontFlags.Bold, LLTextAlign.Center));
+            AddItem(new ListLabelItemV2("Item 1", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 2", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 3", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 4", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 5", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 6", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 7", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 8", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 9", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 10", LLItemState.Disabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 11", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 12", LLItemState.Selected, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 13", LLItemState.Invalid, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 14", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            AddItem(new ListLabelItemV2("Item 15", LLItemState.Enabled, -1, -1, -1, "", LLFontFlags.Bold));
+            Draw();
         }
 
         // Token: 0x060001FA RID: 506 RVA: 0x00011C00 File Offset: 0x0000FE00
-        public void AddItem(ListLabelV2.ListLabelItemV2 iItem)
+        public void AddItem(ListLabelItemV2 iItem)
         {
-            this.DisableEvents = true;
-            int num = this.Items.Length;
-            this.Items = (ListLabelV2.ListLabelItemV2[])Utils.CopyArray(this.Items, new ListLabelV2.ListLabelItemV2[checked(num + 1)]);
-            this.Items[num] = iItem;
-            this.Items[num].Index = num;
-            this.WrapString(num);
-            this.GetScrollSteps();
-            this.DisableEvents = false;
+            DisableEvents = true;
+            int num = Items.Length;
+            Items = (ListLabelItemV2[])Utils.CopyArray(Items, new ListLabelItemV2[checked(num + 1)]);
+            Items[num] = iItem;
+            Items[num].Index = num;
+            WrapString(num);
+            GetScrollSteps();
+            DisableEvents = false;
         }
 
         // Token: 0x060001FB RID: 507 RVA: 0x00011C69 File Offset: 0x0000FE69
         public void ClearItems()
         {
-            this.Items = new ListLabelV2.ListLabelItemV2[0];
-            this.ScrollOffset = 0;
-            this.HoverIndex = -1;
+            Items = new ListLabelItemV2[0];
+            ScrollOffset = 0;
+            HoverIndex = -1;
         }
 
         void SetLineHeight()
         {
-            Font font = new Font(this.Font, this.Font.Style);
-            this.LineHeight = checked((int)Math.Round((double)(unchecked(font.GetHeight() + (float)(checked(this.yPadding * 2))))));
-            this.VisibleLineCount = this.GetVisibleLineCount();
+            Font font = new Font(Font, Font.Style);
+            LineHeight = checked((int)Math.Round(font.GetHeight() + checked(yPadding * 2)));
+            VisibleLineCount = GetVisibleLineCount();
         }
 
         void Recalculate(bool Expanded = false)
         {
             checked
             {
-                if (this.Items.Length != 0)
+                if (Items.Length != 0)
                 {
-                    this.InitBuffer();
-                    if (this.AutoSize)
+                    InitBuffer();
+                    if (AutoSize)
                     {
-                        if (base.AutoSizeMode == AutoSizeMode.GrowAndShrink)
+                        if (AutoSizeMode == AutoSizeMode.GrowAndShrink)
                         {
-                            base.Height = this.DesiredHeight;
+                            Height = DesiredHeight;
                         }
-                        else if (this.DesiredHeight > this.SizeNormal.Height)
+                        else if (DesiredHeight > SizeNormal.Height)
                         {
-                            base.Height = this.DesiredHeight;
+                            Height = DesiredHeight;
                         }
                         else
                         {
-                            base.Height = this.SizeNormal.Height;
+                            Height = SizeNormal.Height;
                         }
                     }
-                    Rectangle bRect = new Rectangle(this.xPadding, 0, base.Width - this.xPadding * 2, base.Height);
-                    this.RecalcLines(bRect);
-                    if (this.ScrollSteps > 0 | this.Expanded)
+                    Rectangle bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height);
+                    RecalcLines(bRect);
+                    if (ScrollSteps > 0 | this.Expanded)
                     {
-                        bRect = new Rectangle(this.xPadding, 0, base.Width - this.xPadding * 2, base.Height - (this.ScrollWidth + this.yPadding));
-                        this.RecalcLines(bRect);
+                        bRect = new Rectangle(xPadding, 0, Width - xPadding * 2, Height - (ScrollWidth + yPadding));
+                        RecalcLines(bRect);
                     }
-                    if (!Expanded && this.ScrollSteps > 0)
+                    if (!Expanded && ScrollSteps > 0)
                     {
                         int num = 0;
-                        if (this.canExpand)
+                        if (canExpand)
                         {
-                            num = this.ScrollWidth + this.yPadding;
+                            num = ScrollWidth + yPadding;
                         }
-                        bRect = new Rectangle(this.xPadding, 0, base.Width - (this.xPadding * 2 + this.ScrollWidth), base.Height - num);
-                        this.RecalcLines(bRect);
+                        bRect = new Rectangle(xPadding, 0, Width - (xPadding * 2 + ScrollWidth), Height - num);
+                        RecalcLines(bRect);
                     }
                 }
             }
@@ -460,18 +459,18 @@ namespace midsControls
 
         void RecalcLines(Rectangle bRect)
         {
-            this.TextArea = bRect;
-            this.SetLineHeight();
-            int num = 0;
+            TextArea = bRect;
+            SetLineHeight();
+            const int num = 0;
             checked
             {
-                int num2 = this.Items.Length - 1;
+                int num2 = Items.Length - 1;
                 for (int i = num; i <= num2; i++)
                 {
-                    this.WrapString(i);
+                    WrapString(i);
                 }
-                this.GetTotalLineCount();
-                this.GetScrollSteps();
+                GetTotalLineCount();
+                GetScrollSteps();
             }
         }
 
@@ -479,32 +478,32 @@ namespace midsControls
         {
             checked
             {
-                if (Operators.CompareString(this.Items[Index].Text, "", false) != 0)
+                if (Operators.CompareString(Items[Index].Text, "", false) != 0)
                 {
-                    this.InitBuffer();
+                    InitBuffer();
                     int num = 1;
-                    if (this.Items[Index].Text.Contains(" "))
+                    if (Items[Index].Text.Contains(" "))
                     {
-                        string[] array = this.Items[Index].Text.Split(" ".ToCharArray());
+                        string[] array = Items[Index].Text.Split(" ".ToCharArray());
                         StringFormat stringFormat = new StringFormat(StringFormatFlags.NoWrap);
-                        Font font = new Font(this.Font, (FontStyle)this.Items[Index].FontFlags);
+                        Font font = new Font(Font, (FontStyle)Items[Index].FontFlags);
                         string str = "";
-                        if (this.Items[Index].ItemState == ListLabelV2.LLItemState.Heading)
+                        if (Items[Index].ItemState == LLItemState.Heading)
                         {
                             str = "~  ~";
                         }
                         string text = array[0];
-                        int num2 = 1;
+                        const int num2 = 1;
                         int num3 = array.Length - 1;
                         for (int i = num2; i <= num3; i++)
                         {
-                            Graphics graphics = this.bxBuffer.Graphics;
+                            Graphics graphics = bxBuffer.Graphics;
                             string text2 = text + " " + array[i] + str;
                             Font font2 = font;
-                            SizeF layoutArea = new SizeF(1024f, (float)base.Height);
-                            if (Math.Ceiling((double)graphics.MeasureString(text2, font2, layoutArea, stringFormat).Width) > (double)this.TextArea.Width)
+                            SizeF layoutArea = new SizeF(1024f, Height);
+                            if (Math.Ceiling(graphics.MeasureString(text2, font2, layoutArea, stringFormat).Width) > TextArea.Width)
                             {
-                                if (this.Items[Index].ItemState == ListLabelV2.LLItemState.Heading)
+                                if (Items[Index].ItemState == LLItemState.Heading)
                                 {
                                     text = text + " ~\r\n~ " + array[i];
                                 }
@@ -519,45 +518,45 @@ namespace midsControls
                                 text = text + " " + array[i];
                             }
                         }
-                        this.Items[Index].WrappedText = text;
+                        Items[Index].WrappedText = text;
                     }
                     else
                     {
-                        this.Items[Index].WrappedText = this.Items[Index].Text;
+                        Items[Index].WrappedText = Items[Index].Text;
                     }
-                    if (this.Items[Index].ItemState == ListLabelV2.LLItemState.Heading)
+                    if (Items[Index].ItemState == LLItemState.Heading)
                     {
-                        this.Items[Index].WrappedText = "~ " + this.Items[Index].WrappedText + " ~";
+                        Items[Index].WrappedText = "~ " + Items[Index].WrappedText + " ~";
                     }
-                    this.Items[Index].LineCount = num;
-                    this.Items[Index].ItemHeight = num * (this.LineHeight - this.yPadding * 2) + this.yPadding * 2;
+                    Items[Index].LineCount = num;
+                    Items[Index].ItemHeight = num * (LineHeight - yPadding * 2) + yPadding * 2;
                 }
             }
         }
 
         void InitBuffer()
         {
-            if (!this.DisableRedraw)
+            if (!DisableRedraw)
             {
-                if (!((base.Width == 0 | base.Height == 0) & this.bxBuffer == null))
+                if (!((Width == 0 | Height == 0) & bxBuffer == null))
                 {
-                    if (this.bxBuffer == null)
+                    if (bxBuffer == null)
                     {
-                        this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
+                        bxBuffer = new ExtendedBitmap(Width, Height);
                     }
-                    if (this.bxBuffer.Size.Width != base.Width | this.bxBuffer.Size.Height != base.Height)
+                    if (bxBuffer.Size.Width != Width | bxBuffer.Size.Height != Height)
                     {
-                        this.bxBuffer.Dispose();
-                        this.bxBuffer = null;
+                        bxBuffer.Dispose();
+                        bxBuffer = null;
                         GC.Collect();
-                        if (base.Height == 0 | base.Width == 0)
+                        if (Height == 0 | Width == 0)
                         {
                             return;
                         }
-                        this.bxBuffer = new ExtendedBitmap(base.Width, base.Height);
+                        bxBuffer = new ExtendedBitmap(Width, Height);
                     }
-                    this.bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    this.bxBuffer.Graphics.TextContrast = 0;
+                    bxBuffer.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                    bxBuffer.Graphics.TextContrast = 0;
                 }
             }
         }
@@ -565,13 +564,13 @@ namespace midsControls
         int GetRealTotalHeight()
         {
             int num = 0;
-            int num2 = 0;
+            const int num2 = 0;
             checked
             {
-                int num3 = this.Items.Length - 1;
+                int num3 = Items.Length - 1;
                 for (int i = num2; i <= num3; i++)
                 {
-                    num += this.Items[i].ItemHeight;
+                    num += Items[i].ItemHeight;
                 }
                 return num;
             }
@@ -581,31 +580,31 @@ namespace midsControls
         {
             checked
             {
-                if (!this.DisableRedraw)
+                if (!DisableRedraw)
                 {
-                    if (base.Visible)
+                    if (Visible)
                     {
-                        this.InitBuffer();
-                        if (!(base.Width == 0 | base.Height == 0))
+                        InitBuffer();
+                        if (!(Width == 0 | Height == 0))
                         {
-                            if (this.Expanded)
+                            if (Expanded)
                             {
-                                this.bxBuffer.Graphics.Clear(Color.Black);
+                                bxBuffer.Graphics.Clear(Color.Black);
                             }
                             else
                             {
-                                this.bxBuffer.Graphics.Clear(this.BackColor);
+                                bxBuffer.Graphics.Clear(BackColor);
                             }
-                            int scrollOffset = this.ScrollOffset;
-                            int num = this.Items.Length - 1;
+                            int scrollOffset = ScrollOffset;
+                            int num = Items.Length - 1;
                             for (int i = scrollOffset; i <= num; i++)
                             {
-                                this.DrawItem(i);
+                                DrawItem(i);
                             }
-                            this.DrawScrollBar();
-                            this.DrawExpandButton();
-                            Graphics graphics = base.CreateGraphics();
-                            graphics.DrawImageUnscaled(this.bxBuffer.Bitmap, 0, 0);
+                            DrawScrollBar();
+                            DrawExpandButton();
+                            Graphics graphics = CreateGraphics();
+                            graphics.DrawImageUnscaled(bxBuffer.Bitmap, 0, 0);
                         }
                     }
                 }
@@ -618,97 +617,97 @@ namespace midsControls
             {
                 if (Index >= 0)
                 {
-                    if (Index >= this.ScrollOffset)
+                    if (Index >= ScrollOffset)
                     {
-                        if (Index <= this.Items.Length - 1)
+                        if (Index <= Items.Length - 1)
                         {
                             int num = 0;
-                            int scrollOffset = this.ScrollOffset;
+                            int scrollOffset = ScrollOffset;
                             int num2 = Index - 1;
                             for (int i = scrollOffset; i <= num2; i++)
                             {
-                                num += this.Items[i].ItemHeight;
-                                if (num > base.Height)
+                                num += Items[i].ItemHeight;
+                                if (num > Height)
                                 {
                                     return;
                                 }
                             }
-                            int height = this.Items[Index].ItemHeight;
-                            if (this.Items[Index].LineCount == 1)
+                            int height = Items[Index].ItemHeight;
+                            if (Items[Index].LineCount == 1)
                             {
-                                if (num + this.Items[Index].ItemHeight > this.TextArea.Height)
+                                if (num + Items[Index].ItemHeight > TextArea.Height)
                                 {
                                     return;
                                 }
                             }
-                            else if (num + this.Items[Index].ItemHeight > this.TextArea.Height)
+                            else if (num + Items[Index].ItemHeight > TextArea.Height)
                             {
-                                if (num + this.LineHeight > this.TextArea.Height)
+                                if (num + LineHeight > TextArea.Height)
                                 {
                                     return;
                                 }
-                                height = this.LineHeight - this.yPadding;
+                                height = LineHeight - yPadding;
                             }
-                            Rectangle rectangle = new Rectangle(this.TextArea.Left, num, this.TextArea.Width, height);
+                            Rectangle rectangle = new Rectangle(TextArea.Left, num, TextArea.Width, height);
                             StringFormat stringFormat = new StringFormat();
-                            switch (this.Items[Index].TextAlign)
+                            switch (Items[Index].TextAlign)
                             {
-                                case ListLabelV2.LLTextAlign.Left:
+                                case LLTextAlign.Left:
                                     stringFormat.Alignment = StringAlignment.Near;
                                     break;
-                                case ListLabelV2.LLTextAlign.Center:
+                                case LLTextAlign.Center:
                                     stringFormat.Alignment = StringAlignment.Center;
                                     break;
-                                case ListLabelV2.LLTextAlign.Right:
+                                case LLTextAlign.Right:
                                     stringFormat.Alignment = StringAlignment.Far;
                                     break;
                             }
                             FontStyle fontStyle = FontStyle.Regular;
-                            if (this.Items[Index].Bold)
+                            if (Items[Index].Bold)
                             {
                                 fontStyle++;
                             }
-                            if (this.Items[Index].Italic)
+                            if (Items[Index].Italic)
                             {
                                 fontStyle += 2;
                             }
-                            if (this.Items[Index].Underline)
+                            if (Items[Index].Underline)
                             {
                                 fontStyle += 4;
                             }
-                            if (this.Items[Index].Strikethrough)
+                            if (Items[Index].Strikethrough)
                             {
                                 fontStyle += 8;
                             }
-                            Font font = new Font(this.Font, fontStyle);
-                            if (Index == this.HoverID && this.HighlightOn[(int)this.Items[Index].ItemState])
+                            Font font = new Font(Font, fontStyle);
+                            if (Index == HoverID && HighlightOn[(int)Items[Index].ItemState])
                             {
-                                SolidBrush brush = new SolidBrush(this.hvrColor);
-                                this.bxBuffer.Graphics.FillRectangle(brush, rectangle);
+                                SolidBrush brush = new SolidBrush(hvrColor);
+                                bxBuffer.Graphics.FillRectangle(brush, rectangle);
                             }
                             SolidBrush brush2 = new SolidBrush(Color.Black);
-                            if (this.TextOutline)
+                            if (TextOutline)
                             {
                                 Rectangle r = rectangle;
                                 r.X--;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.Y--;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.X++;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.X++;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.Y++;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.Y++;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.X--;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                                 r.X--;
-                                this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, r, stringFormat);
+                                bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, r, stringFormat);
                             }
-                            brush2 = new SolidBrush(this.Colours[(int)this.Items[Index].ItemState]);
-                            this.bxBuffer.Graphics.DrawString(this.Items[Index].WrappedText, font, brush2, rectangle, stringFormat);
+                            brush2 = new SolidBrush(Colours[(int)Items[Index].ItemState]);
+                            bxBuffer.Graphics.DrawString(Items[Index].WrappedText, font, brush2, rectangle, stringFormat);
                         }
                     }
                 }
@@ -718,18 +717,18 @@ namespace midsControls
         int GetVisibleLineCount()
         {
             int result;
-            if (!this.canScroll)
+            if (!canScroll)
             {
-                this.ScrollSteps = 0;
+                ScrollSteps = 0;
                 result = 0;
             }
-            else if (this.Expanded)
+            else if (Expanded)
             {
-                result = this.GetTotalLineCount();
+                result = GetTotalLineCount();
             }
             else
             {
-                result = checked((int)Math.Round(Conversion.Int((double)this.TextArea.Height / (double)this.LineHeight)));
+                result = checked((int)Math.Round(Conversion.Int(TextArea.Height / (double)LineHeight)));
             }
             return result;
         }
@@ -737,13 +736,13 @@ namespace midsControls
         int GetTotalLineCount()
         {
             int num = 0;
-            int num2 = 0;
+            const int num2 = 0;
             checked
             {
-                int num3 = this.Items.Length - 1;
+                int num3 = Items.Length - 1;
                 for (int i = num2; i <= num3; i++)
                 {
-                    num += this.Items[i].LineCount;
+                    num += Items[i].LineCount;
                 }
                 return num;
             }
@@ -753,20 +752,20 @@ namespace midsControls
         {
             checked
             {
-                if (!this.canScroll)
+                if (!canScroll)
                 {
-                    this.ScrollSteps = 0;
+                    ScrollSteps = 0;
                     return 0;
                 }
 
                 int num = 0;
                 int wrapCount = 0;
-                int num3 = 0;
-                int num4 = this.Items.Length - 1;
+                const int num3 = 0;
+                int num4 = Items.Length - 1;
                 for (int i = num3; i <= num4; i++)
                 {
-                    num += this.Items[i].LineCount;
-                    if (num > this.VisibleLineCount)
+                    num += Items[i].LineCount;
+                    if (num > VisibleLineCount)
                     {
                         wrapCount++;
                     }
@@ -775,93 +774,93 @@ namespace midsControls
                 {
                     wrapCount++;
                 }
-                this.ScrollSteps = wrapCount;
-                if (this.ScrollSteps <= 1)
+                ScrollSteps = wrapCount;
+                if (ScrollSteps <= 1)
                 {
-                    this.ScrollSteps = 0;
+                    ScrollSteps = 0;
                 }
-                return this.ScrollSteps;
+                return ScrollSteps;
             }
         }
 
         void DrawScrollBar()
         {
-            if (!(this.ScrollWidth < 1 | !this.canScroll | this.ScrollSteps < 1))
+            if (!(ScrollWidth < 1 | !canScroll | ScrollSteps < 1))
             {
-                SolidBrush brush = new SolidBrush(this.scBarColor);
-                Pen pen = new Pen(this.scBarColor);
+                SolidBrush brush = new SolidBrush(scBarColor);
+                Pen pen = new Pen(scBarColor);
                 Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
                 Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
                 PointF[] array;
                 Rectangle rect;
                 checked
                 {
-                    this.bxBuffer.Graphics.DrawLine(pen, (int)Math.Round(unchecked((double)this.TextArea.Right + (double)this.ScrollWidth / 2.0)), this.yPadding + this.ScrollWidth, (int)Math.Round(unchecked((double)this.TextArea.Right + (double)this.ScrollWidth / 2.0)), base.Height - (this.ScrollWidth + this.yPadding));
-                    brush = new SolidBrush(this.scButtonColor);
+                    bxBuffer.Graphics.DrawLine(pen, (int)Math.Round(TextArea.Right + ScrollWidth / 2.0), yPadding + ScrollWidth, (int)Math.Round(TextArea.Right + ScrollWidth / 2.0), Height - (ScrollWidth + yPadding));
+                    brush = new SolidBrush(scButtonColor);
                     array = new PointF[3];
-                    if (this.ScrollSteps > 0)
+                    if (ScrollSteps > 0)
                     {
-                        int num = base.Height - (this.yPadding + this.ScrollWidth) * 2 - this.yPadding * 2;
-                        int y = (int)Math.Round(unchecked((double)(checked(this.ScrollWidth + this.yPadding * 2)) + (double)num / (double)this.ScrollSteps * (double)this.ScrollOffset));
-                        int height = (int)Math.Round((double)num / (double)this.ScrollSteps);
-                        rect = new Rectangle(this.TextArea.Right, y, this.ScrollWidth, height);
-                        this.bxBuffer.Graphics.FillRectangle(brush, rect);
-                        this.bxBuffer.Graphics.DrawLine(pen2, rect.Left, rect.Top, rect.Left, rect.Bottom);
-                        this.bxBuffer.Graphics.DrawLine(pen2, rect.Left + 1, rect.Top, rect.Right, rect.Top);
-                        this.bxBuffer.Graphics.DrawLine(pen3, rect.Right, rect.Top, rect.Right, rect.Bottom);
-                        this.bxBuffer.Graphics.DrawLine(pen3, rect.Left + 1, rect.Bottom, rect.Right - 1, rect.Bottom);
+                        int num = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
+                        int y = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double)ScrollSteps * ScrollOffset);
+                        int height = (int)Math.Round(num / (double)ScrollSteps);
+                        rect = new Rectangle(TextArea.Right, y, ScrollWidth, height);
+                        bxBuffer.Graphics.FillRectangle(brush, rect);
+                        bxBuffer.Graphics.DrawLine(pen2, rect.Left, rect.Top, rect.Left, rect.Bottom);
+                        bxBuffer.Graphics.DrawLine(pen2, rect.Left + 1, rect.Top, rect.Right, rect.Top);
+                        bxBuffer.Graphics.DrawLine(pen3, rect.Right, rect.Top, rect.Right, rect.Bottom);
+                        bxBuffer.Graphics.DrawLine(pen3, rect.Left + 1, rect.Bottom, rect.Right - 1, rect.Bottom);
                     }
-                    rect = new Rectangle(this.TextArea.Right, this.yPadding + this.ScrollWidth, this.ScrollWidth, base.Height - (this.ScrollWidth + this.yPadding) * 2);
-                    array[0] = new PointF((float)rect.Left, (float)rect.Top);
-                    array[1] = new PointF((float)rect.Right, (float)rect.Top);
+                    rect = new Rectangle(TextArea.Right, yPadding + ScrollWidth, ScrollWidth, Height - (ScrollWidth + yPadding) * 2);
+                    array[0] = new PointF(rect.Left, rect.Top);
+                    array[1] = new PointF(rect.Right, rect.Top);
                 }
-                array[2] = new PointF((float)rect.Left + (float)rect.Width / 2f, (float)this.yPadding);
-                this.bxBuffer.Graphics.FillPolygon(brush, array);
-                this.bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
-                this.bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
-                array[0] = new PointF((float)rect.Left, (float)rect.Bottom);
-                array[1] = new PointF((float)rect.Right, (float)rect.Bottom);
-                array[2] = new PointF((float)rect.Left + (float)rect.Width / 2f, (float)(checked(base.Height - this.yPadding)));
-                this.bxBuffer.Graphics.FillPolygon(brush, array);
-                this.bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
-                this.bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
+                array[2] = new PointF(rect.Left + rect.Width / 2f, yPadding);
+                bxBuffer.Graphics.FillPolygon(brush, array);
+                bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
+                bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
+                array[0] = new PointF(rect.Left, rect.Bottom);
+                array[1] = new PointF(rect.Right, rect.Bottom);
+                array[2] = new PointF(rect.Left + rect.Width / 2f, checked(Height - yPadding));
+                bxBuffer.Graphics.FillPolygon(brush, array);
+                bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
+                bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
             }
         }
 
         void DrawExpandButton()
         {
-            if (!(!this.canExpand | (!this.Expanded & this.ScrollSteps < 1)))
+            if (!(!canExpand | (!Expanded & ScrollSteps < 1)))
             {
-                SolidBrush brush = new SolidBrush(this.scButtonColor);
-                Pen pen = new Pen(this.scBarColor);
+                SolidBrush brush = new SolidBrush(scButtonColor);
+                Pen pen = new Pen(scBarColor);
                 Pen pen2 = new Pen(Color.FromArgb(96, 255, 255, 255), 1f);
                 Pen pen3 = new Pen(Color.FromArgb(128, 0, 0, 0), 1f);
-                brush = new SolidBrush(this.scButtonColor);
+                brush = new SolidBrush(scButtonColor);
                 PointF[] array = new PointF[3];
-                Rectangle rectangle = checked(new Rectangle((int)Math.Round((double)base.Width / 3.0), base.Height - (this.ScrollWidth + this.yPadding), (int)Math.Round((double)base.Width / 3.0), this.ScrollWidth - this.yPadding));
-                if (this.Expanded)
+                Rectangle rectangle = checked(new Rectangle((int)Math.Round(Width / 3.0), Height - (ScrollWidth + yPadding), (int)Math.Round(Width / 3.0), ScrollWidth - yPadding));
+                if (Expanded)
                 {
-                    array[0] = new PointF((float)rectangle.Left, (float)rectangle.Bottom);
-                    array[1] = new PointF((float)rectangle.Right, (float)rectangle.Bottom);
-                    array[2] = new PointF((float)rectangle.Left + (float)rectangle.Width / 2f, (float)rectangle.Top);
-                    this.bxBuffer.Graphics.FillPolygon(brush, array);
-                    this.bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
-                    this.bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
+                    array[0] = new PointF(rectangle.Left, rectangle.Bottom);
+                    array[1] = new PointF(rectangle.Right, rectangle.Bottom);
+                    array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Top);
+                    bxBuffer.Graphics.FillPolygon(brush, array);
+                    bxBuffer.Graphics.DrawLine(pen2, array[0], array[2]);
+                    bxBuffer.Graphics.DrawLine(pen3, array[0], array[1]);
                     checked
                     {
-                        this.bxBuffer.Graphics.DrawLine(pen, 0, 0, 0, base.Height - 1);
-                        this.bxBuffer.Graphics.DrawLine(pen, 0, base.Height - 1, base.Width - 1, base.Height - 1);
-                        this.bxBuffer.Graphics.DrawLine(pen, base.Width - 1, base.Height, base.Width - 1, 0);
+                        bxBuffer.Graphics.DrawLine(pen, 0, 0, 0, Height - 1);
+                        bxBuffer.Graphics.DrawLine(pen, 0, Height - 1, Width - 1, Height - 1);
+                        bxBuffer.Graphics.DrawLine(pen, Width - 1, Height, Width - 1, 0);
                     }
                 }
                 else
                 {
-                    array[0] = new PointF((float)rectangle.Left, (float)rectangle.Top);
-                    array[1] = new PointF((float)rectangle.Right, (float)rectangle.Top);
-                    array[2] = new PointF((float)rectangle.Left + (float)rectangle.Width / 2f, (float)rectangle.Bottom);
-                    this.bxBuffer.Graphics.FillPolygon(brush, array);
-                    this.bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
-                    this.bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
+                    array[0] = new PointF(rectangle.Left, rectangle.Top);
+                    array[1] = new PointF(rectangle.Right, rectangle.Top);
+                    array[2] = new PointF(rectangle.Left + rectangle.Width / 2f, rectangle.Bottom);
+                    bxBuffer.Graphics.FillPolygon(brush, array);
+                    bxBuffer.Graphics.DrawLine(pen2, array[0], array[1]);
+                    bxBuffer.Graphics.DrawLine(pen3, array[2], array[1]);
                 }
             }
         }
@@ -872,17 +871,17 @@ namespace midsControls
             checked
             {
                 int result;
-                if (Y > base.Height)
+                if (Y > Height)
                 {
                     result = -1;
                 }
                 else
                 {
-                    int scrollOffset = this.ScrollOffset;
-                    int num2 = this.Items.Length - 1;
+                    int scrollOffset = ScrollOffset;
+                    int num2 = Items.Length - 1;
                     for (int i = scrollOffset; i <= num2; i++)
                     {
-                        num += this.Items[i].ItemHeight;
+                        num += Items[i].ItemHeight;
                         if (Y < num)
                         {
                             return i;
@@ -895,47 +894,47 @@ namespace midsControls
         }
 
         // Token: 0x0600020A RID: 522 RVA: 0x00013248 File Offset: 0x00011448
-        ListLabelV2.eMouseTarget GetMouseTarget(int X, int Y)
+        eMouseTarget GetMouseTarget(int X, int Y)
         {
             checked
             {
-                ListLabelV2.eMouseTarget result;
-                if (X >= this.TextArea.Left & X <= this.TextArea.Right & Y <= this.TextArea.Bottom)
+                eMouseTarget result;
+                if (X >= TextArea.Left & X <= TextArea.Right & Y <= TextArea.Bottom)
                 {
-                    result = ListLabelV2.eMouseTarget.Item;
+                    result = eMouseTarget.Item;
                 }
-                else if (X >= this.TextArea.Left & X <= this.TextArea.Right & Y > this.TextArea.Bottom)
+                else if (X >= TextArea.Left & X <= TextArea.Right & Y > TextArea.Bottom)
                 {
-                    result = ListLabelV2.eMouseTarget.ExpandButton;
+                    result = eMouseTarget.ExpandButton;
                 }
-                else if (X > this.TextArea.Right & Y <= this.ScrollWidth + this.yPadding)
+                else if (X > TextArea.Right & Y <= ScrollWidth + yPadding)
                 {
-                    result = ListLabelV2.eMouseTarget.UpButton;
+                    result = eMouseTarget.UpButton;
                 }
-                else if (X > this.TextArea.Right & Y >= base.Height - (this.ScrollWidth + this.yPadding))
+                else if (X > TextArea.Right & Y >= Height - (ScrollWidth + yPadding))
                 {
-                    result = ListLabelV2.eMouseTarget.DownButton;
+                    result = eMouseTarget.DownButton;
                 }
-                else if (!(X > this.TextArea.Right & this.ScrollSteps > 0))
+                else if (!(X > TextArea.Right & ScrollSteps > 0))
                 {
-                    result = ListLabelV2.eMouseTarget.None;
+                    result = eMouseTarget.None;
                 }
                 else
                 {
-                    int num = base.Height - (this.yPadding + this.ScrollWidth) * 2 - this.yPadding * 2;
-                    int num2 = (int)Math.Round(unchecked((double)(checked(this.ScrollWidth + this.yPadding * 2)) + (double)num / (double)this.ScrollSteps * (double)this.ScrollOffset));
-                    int num3 = (int)Math.Round((double)num / (double)this.ScrollSteps);
+                    int num = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
+                    int num2 = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num / (double)ScrollSteps * ScrollOffset);
+                    int num3 = (int)Math.Round(num / (double)ScrollSteps);
                     if (Y < num2)
                     {
-                        result = ListLabelV2.eMouseTarget.ScrollBarUp;
+                        result = eMouseTarget.ScrollBarUp;
                     }
                     else if (Y > num2 + num3)
                     {
-                        result = ListLabelV2.eMouseTarget.ScrollBarDown;
+                        result = eMouseTarget.ScrollBarDown;
                     }
                     else
                     {
-                        result = ListLabelV2.eMouseTarget.ScrollBlock;
+                        result = eMouseTarget.ScrollBlock;
                     }
                 }
                 return result;
@@ -947,109 +946,109 @@ namespace midsControls
         {
             checked
             {
-                if (e.Button == MouseButtons.Left & Control.ModifierKeys == (Keys.Shift | Keys.Control | Keys.Alt))
+                if (e.Button == MouseButtons.Left & ModifierKeys == (Keys.Shift | Keys.Control | Keys.Alt))
                 {
-                    this.DisableEvents = false;
-                    this.DisableRedraw = false;
-                    this.Recalculate(false);
-                    this.Draw();
-                    Graphics graphics = base.CreateGraphics();
+                    DisableEvents = false;
+                    DisableRedraw = false;
+                    Recalculate();
+                    Draw();
+                    Graphics graphics = CreateGraphics();
                     Pen powderBlue = Pens.PowderBlue;
-                    Rectangle rect = new Rectangle(0, 0, base.Width - 1, base.Height - 1);
+                    Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
                     graphics.DrawRectangle(powderBlue, rect);
                 }
-                else if (!this.DisableEvents)
+                else if (!DisableEvents)
                 {
                     int num;
-                    if ((double)this.ScrollSteps / 3.0 < 5.0)
+                    if (ScrollSteps / 3.0 < 5.0)
                     {
-                        num = (int)Math.Round((double)this.ScrollSteps / 3.0);
+                        num = (int)Math.Round(ScrollSteps / 3.0);
                     }
                     else
                     {
                         num = 5;
                     }
-                    switch (this.GetMouseTarget(e.X, e.Y))
+                    switch (GetMouseTarget(e.X, e.Y))
                     {
-                        case ListLabelV2.eMouseTarget.Item:
+                        case eMouseTarget.Item:
                             {
-                                int itemAtY = this.GetItemAtY(e.Y);
+                                int itemAtY = GetItemAtY(e.Y);
                                 if (itemAtY > -1)
                                 {
                                     int num2 = 0;
-                                    int scrollOffset = this.ScrollOffset;
+                                    int scrollOffset = ScrollOffset;
                                     int num3 = itemAtY - 1;
                                     for (int i = scrollOffset; i <= num3; i++)
                                     {
-                                        num2 += this.Items[i].ItemHeight;
+                                        num2 += Items[i].ItemHeight;
                                     }
-                                    if ((num2 + this.Items[itemAtY].ItemHeight >= e.Y & num2 + this.Items[itemAtY].ItemHeight <= this.TextArea.Height) | (this.Items[itemAtY].LineCount > 1 & num2 + this.LineHeight >= e.Y & num2 + this.LineHeight <= this.TextArea.Height))
+                                    if ((num2 + Items[itemAtY].ItemHeight >= e.Y & num2 + Items[itemAtY].ItemHeight <= TextArea.Height) | (Items[itemAtY].LineCount > 1 & num2 + LineHeight >= e.Y & num2 + LineHeight <= TextArea.Height))
                                     {
-                                        this.ItemClick?.Invoke(this.Items[itemAtY], e.Button);
+                                        ItemClick?.Invoke(Items[itemAtY], e.Button);
                                     }
                                 }
                                 break;
                             }
-                        case ListLabelV2.eMouseTarget.UpButton:
-                            if (this.ScrollSteps > 0 & this.ScrollOffset > 0)
+                        case eMouseTarget.UpButton:
+                            if (ScrollSteps > 0 & ScrollOffset > 0)
                             {
-                                this.ScrollOffset--;
-                                this.Draw();
+                                ScrollOffset--;
+                                Draw();
                             }
                             break;
-                        case ListLabelV2.eMouseTarget.DownButton:
-                            if (this.ScrollSteps > 0 & this.ScrollOffset + 1 < this.ScrollSteps)
+                        case eMouseTarget.DownButton:
+                            if (ScrollSteps > 0 & ScrollOffset + 1 < ScrollSteps)
                             {
-                                this.ScrollOffset++;
-                                this.Draw();
+                                ScrollOffset++;
+                                Draw();
                             }
                             break;
-                        case ListLabelV2.eMouseTarget.ScrollBarUp:
-                            if (this.ScrollSteps > 0)
+                        case eMouseTarget.ScrollBarUp:
+                            if (ScrollSteps > 0)
                             {
-                                this.ScrollOffset -= num;
-                                if (this.ScrollOffset < 0)
+                                ScrollOffset -= num;
+                                if (ScrollOffset < 0)
                                 {
-                                    this.ScrollOffset = 0;
+                                    ScrollOffset = 0;
                                 }
-                                this.Draw();
+                                Draw();
                             }
                             break;
-                        case ListLabelV2.eMouseTarget.ScrollBarDown:
-                            if (this.ScrollSteps > 0)
+                        case eMouseTarget.ScrollBarDown:
+                            if (ScrollSteps > 0)
                             {
-                                this.ScrollOffset += num;
-                                if (this.ScrollOffset >= this.ScrollSteps)
+                                ScrollOffset += num;
+                                if (ScrollOffset >= ScrollSteps)
                                 {
-                                    this.ScrollOffset = this.ScrollSteps - 1;
+                                    ScrollOffset = ScrollSteps - 1;
                                 }
-                                this.Draw();
+                                Draw();
                             }
                             break;
-                        case ListLabelV2.eMouseTarget.ScrollBlock:
-                            if (this.ScrollSteps > 0)
+                        case eMouseTarget.ScrollBlock:
+                            if (ScrollSteps > 0)
                             {
-                                this.DragMode = true;
+                                DragMode = true;
                             }
                             break;
-                        case ListLabelV2.eMouseTarget.ExpandButton:
+                        case eMouseTarget.ExpandButton:
                             {
-                                if (!this.Expanded)
+                                if (!Expanded)
                                 {
-                                    this.Expanded = true;
-                                    this.ScrollOffset = 0;
-                                    this.RecomputeExpand();
+                                    Expanded = true;
+                                    ScrollOffset = 0;
+                                    RecomputeExpand();
                                 }
                                 else
                                 {
-                                    this.DisableRedraw = true;
-                                    base.Height = this.szNormal.Height;
-                                    this.Expanded = false;
-                                    this.Recalculate(false);
-                                    this.DisableRedraw = false;
-                                    this.Draw();
+                                    DisableRedraw = true;
+                                    Height = szNormal.Height;
+                                    Expanded = false;
+                                    Recalculate();
+                                    DisableRedraw = false;
+                                    Draw();
                                 }
-                                this.ExpandChanged?.Invoke(this.Expanded);
+                                ExpandChanged?.Invoke(Expanded);
                                 break;
                             }
                     }
@@ -1062,144 +1061,140 @@ namespace midsControls
         {
             if (State)
             {
-                this.Expanded = true;
-                this.ScrollOffset = 0;
-                this.RecomputeExpand();
+                Expanded = true;
+                ScrollOffset = 0;
+                RecomputeExpand();
             }
             else
             {
-                this.DisableRedraw = true;
-                base.Height = this.szNormal.Height;
-                this.Expanded = false;
-                this.Recalculate(false);
-                this.DisableRedraw = false;
-                this.Draw();
+                DisableRedraw = true;
+                Height = szNormal.Height;
+                Expanded = false;
+                Recalculate();
+                DisableRedraw = false;
+                Draw();
             }
-            this.ExpandChanged?.Invoke(this.Expanded);
+            ExpandChanged?.Invoke(Expanded);
         }
 
         // Token: 0x0600020D RID: 525 RVA: 0x00013878 File Offset: 0x00011A78
         void RecomputeExpand()
         {
-            if (this.Expanded)
+            if (Expanded)
             {
-                int num = this.expandMaxY;
-                this.Recalculate(true);
-                int num2 = checked(this.GetRealTotalHeight() + this.ScrollWidth + this.yPadding * 3);
+                int num = expandMaxY;
+                Recalculate(true);
+                int num2 = checked(GetRealTotalHeight() + ScrollWidth + yPadding * 3);
                 if (num2 < num)
                 {
                     num = num2;
                 }
-                this.DisableRedraw = true;
-                base.Height = num;
-                this.Recalculate(false);
-                this.DisableRedraw = false;
-                this.Draw();
+                DisableRedraw = true;
+                Height = num;
+                Recalculate();
+                DisableRedraw = false;
+                Draw();
             }
         }
 
         // Token: 0x0600020E RID: 526 RVA: 0x000138F0 File Offset: 0x00011AF0
         void ListLabelV2_MouseLeave(object sender, EventArgs e)
         {
-            this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LastMouseMovetarget = ListLabelV2.eMouseTarget.None;
-            this.HoverIndex = -1;
-            this.Draw();
-            this.EmptyHover?.Invoke();
+            Cursor = System.Windows.Forms.Cursors.Default;
+            LastMouseMovetarget = eMouseTarget.None;
+            HoverIndex = -1;
+            Draw();
+            EmptyHover?.Invoke();
         }
 
         // Token: 0x0600020F RID: 527 RVA: 0x00013938 File Offset: 0x00011B38
         void ListLabelV2_MouseMove(object sender, MouseEventArgs e)
         {
             Cursor cursor = System.Windows.Forms.Cursors.Default;
-            ListLabelV2.eMouseTarget mouseTarget = this.GetMouseTarget(e.X, e.Y);
+            eMouseTarget mouseTarget = GetMouseTarget(e.X, e.Y);
             bool flag = false;
             checked
             {
-                if (!this.DragMode)
+                if (!DragMode)
                 {
-                    ListLabelV2.EmptyHoverEventHandler emptyHoverEvent;
+                    EmptyHoverEventHandler emptyHoverEvent;
                     switch (mouseTarget)
                     {
-                        case ListLabelV2.eMouseTarget.Item:
+                        case eMouseTarget.Item:
                             {
-                                int itemAtY = this.GetItemAtY(e.Y);
+                                int itemAtY = GetItemAtY(e.Y);
                                 if (itemAtY <= -1)
                                 {
-                                    if (this.HoverIndex != -1)
+                                    if (HoverIndex != -1)
                                     {
                                         flag = true;
                                     }
-                                    this.HoverIndex = -1;
-                                    this.EmptyHover?.Invoke();
+                                    HoverIndex = -1;
+                                    EmptyHover?.Invoke();
                                     goto IL_3EA;
                                 }
                                 int num = 0;
-                                int scrollOffset = this.ScrollOffset;
+                                int scrollOffset = ScrollOffset;
                                 int num2 = itemAtY - 1;
                                 for (int i = scrollOffset; i <= num2; i++)
                                 {
-                                    num += this.Items[i].ItemHeight;
+                                    num += Items[i].ItemHeight;
                                 }
-                                if (!((num + this.Items[itemAtY].ItemHeight >= e.Y & num + this.Items[itemAtY].ItemHeight <= this.TextArea.Height) | (this.Items[itemAtY].LineCount > 1 & num + this.LineHeight >= e.Y & num + this.LineHeight <= this.TextArea.Height)))
+                                if (!((num + Items[itemAtY].ItemHeight >= e.Y & num + Items[itemAtY].ItemHeight <= TextArea.Height) | (Items[itemAtY].LineCount > 1 & num + LineHeight >= e.Y & num + LineHeight <= TextArea.Height)))
                                 {
-                                    if (this.HoverIndex != -1)
+                                    if (HoverIndex != -1)
                                     {
                                         flag = true;
                                     }
-                                    this.HoverIndex = -1;
-                                    this.EmptyHover?.Invoke();
+                                    HoverIndex = -1;
+                                    EmptyHover?.Invoke();
                                     goto IL_3EA;
                                 }
-                                cursor = this.Cursors[(int)this.Items[itemAtY].ItemState];
-                                if (itemAtY != this.HoverIndex)
+                                cursor = Cursors[(int)Items[itemAtY].ItemState];
+                                if (itemAtY != HoverIndex)
                                 {
-                                    this.HoverIndex = itemAtY;
+                                    HoverIndex = itemAtY;
                                 }
-                                this.Draw();
-                                var itemHoverEvent = this.ItemHover;
+                                Draw();
+                                var itemHoverEvent = ItemHover;
                                 if (itemHoverEvent != null)
                                 {
-                                    itemHoverEvent(this.Items[itemAtY]);
-                                    goto IL_3EA;
+                                    itemHoverEvent(Items[itemAtY]);
                                 }
                                 goto IL_3EA;
                             }
-                        case ListLabelV2.eMouseTarget.UpButton:
-                            if (this.LastMouseMovetarget != mouseTarget)
+                        case eMouseTarget.UpButton:
+                            if (LastMouseMovetarget != mouseTarget)
                             {
-                                this.Draw();
+                                Draw();
                             }
-                            emptyHoverEvent = this.EmptyHover;
+                            emptyHoverEvent = EmptyHover;
                             if (emptyHoverEvent != null)
                             {
                                 emptyHoverEvent();
-                                goto IL_3EA;
                             }
                             goto IL_3EA;
-                        case ListLabelV2.eMouseTarget.DownButton:
-                            if (this.LastMouseMovetarget != mouseTarget)
+                        case eMouseTarget.DownButton:
+                            if (LastMouseMovetarget != mouseTarget)
                             {
-                                this.Draw();
+                                Draw();
                             }
-                            emptyHoverEvent = this.EmptyHover;
+                            emptyHoverEvent = EmptyHover;
                             if (emptyHoverEvent != null)
                             {
                                 emptyHoverEvent();
-                                goto IL_3EA;
                             }
                             goto IL_3EA;
-                        case ListLabelV2.eMouseTarget.ExpandButton:
-                            this.HoverIndex = -1;
-                            emptyHoverEvent = this.EmptyHover;
+                        case eMouseTarget.ExpandButton:
+                            HoverIndex = -1;
+                            emptyHoverEvent = EmptyHover;
                             if (emptyHoverEvent != null)
                             {
                                 emptyHoverEvent();
-                                goto IL_3EA;
                             }
                             goto IL_3EA;
                     }
-                    emptyHoverEvent = this.EmptyHover;
+                    emptyHoverEvent = EmptyHover;
                     if (emptyHoverEvent != null)
                     {
                         emptyHoverEvent();
@@ -1207,85 +1202,85 @@ namespace midsControls
                 }
                 else if (e.Button == MouseButtons.None)
                 {
-                    this.DragMode = false;
+                    DragMode = false;
                 }
                 else
                 {
                     cursor = System.Windows.Forms.Cursors.SizeNS;
-                    int num3 = base.Height - (this.yPadding + this.ScrollWidth) * 2 - this.yPadding * 2;
-                    int num4 = (int)Math.Round(unchecked((double)(checked(this.ScrollWidth + this.yPadding * 2)) + (double)num3 / (double)this.ScrollSteps * (double)this.ScrollOffset));
-                    int num5 = (int)Math.Round((double)num3 / (double)this.ScrollSteps);
-                    if (e.Y < num4 & this.ScrollOffset > 0)
+                    int num3 = Height - (yPadding + ScrollWidth) * 2 - yPadding * 2;
+                    int num4 = (int)Math.Round(checked(ScrollWidth + yPadding * 2) + num3 / (double)ScrollSteps * ScrollOffset);
+                    int num5 = (int)Math.Round(num3 / (double)ScrollSteps);
+                    if (e.Y < num4 & ScrollOffset > 0)
                     {
-                        this.ScrollOffset--;
-                        this.Draw();
+                        ScrollOffset--;
+                        Draw();
                     }
-                    else if (e.Y > num4 + num5 & this.ScrollOffset + 1 < this.ScrollSteps)
+                    else if (e.Y > num4 + num5 & ScrollOffset + 1 < ScrollSteps)
                     {
-                        this.ScrollOffset++;
-                        this.Draw();
+                        ScrollOffset++;
+                        Draw();
                     }
-                    ListLabelV2.EmptyHoverEventHandler emptyHoverEvent = this.EmptyHover;
+                    EmptyHoverEventHandler emptyHoverEvent = EmptyHover;
                     if (emptyHoverEvent != null)
                     {
                         emptyHoverEvent();
                     }
                 }
-            IL_3EA:
+                IL_3EA:
                 if (flag)
                 {
-                    this.Draw();
+                    Draw();
                 }
-                this.Cursor = cursor;
-                this.LastMouseMovetarget = mouseTarget;
+                Cursor = cursor;
+                LastMouseMovetarget = mouseTarget;
             }
         }
 
         // Token: 0x06000210 RID: 528 RVA: 0x00013D54 File Offset: 0x00011F54
         void ListLabelV2_MouseUp(object sender, MouseEventArgs e)
         {
-            this.DragMode = false;
-            if (this.Cursor == System.Windows.Forms.Cursors.SizeNS)
+            DragMode = false;
+            if (Cursor == System.Windows.Forms.Cursors.SizeNS)
             {
-                this.Cursor = System.Windows.Forms.Cursors.Default;
+                Cursor = System.Windows.Forms.Cursors.Default;
             }
         }
 
         // Token: 0x06000211 RID: 529 RVA: 0x00013D90 File Offset: 0x00011F90
         void ListLabelV2_Paint(object sender, PaintEventArgs e)
         {
-            if (this.bxBuffer == null)
+            if (bxBuffer == null)
             {
-                this.Draw();
+                Draw();
             }
-            if (this.bxBuffer != null)
+            if (bxBuffer != null)
             {
-                e.Graphics.DrawImage(this.bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(bxBuffer.Bitmap, e.ClipRectangle, e.ClipRectangle, GraphicsUnit.Pixel);
             }
         }
 
         // Token: 0x06000212 RID: 530 RVA: 0x00013DEE File Offset: 0x00011FEE
         void ListLabelV2_Resize(object sender, EventArgs e)
         {
-            this.ScrollOffset = 0;
-            this.Recalculate(false);
-            this.Draw();
+            ScrollOffset = 0;
+            Recalculate();
+            Draw();
         }
 
         // Token: 0x06000213 RID: 531 RVA: 0x00013E10 File Offset: 0x00012010
         public ListLabelV2()
         {
-            base.MouseLeave += this.ListLabelV2_MouseLeave;
-            base.MouseMove += this.ListLabelV2_MouseMove;
-            base.MouseUp += this.ListLabelV2_MouseUp;
-            base.Paint += this.ListLabelV2_Paint;
-            base.Resize += this.ListLabelV2_Resize;
-            base.FontChanged += this.ListLabelV2_FontChanged;
-            base.Load += this.ListLabelV2_Load;
-            base.MouseDown += this.ListLabelV2_MouseDown;
-            this.bxBuffer = null;
-            this.Items = new ListLabelV2.ListLabelItemV2[0];
-            this.Colours = new Color[]
+            MouseLeave += ListLabelV2_MouseLeave;
+            MouseMove += ListLabelV2_MouseMove;
+            MouseUp += ListLabelV2_MouseUp;
+            Paint += ListLabelV2_Paint;
+            Resize += ListLabelV2_Resize;
+            FontChanged += ListLabelV2_FontChanged;
+            Load += ListLabelV2_Load;
+            MouseDown += ListLabelV2_MouseDown;
+            bxBuffer = null;
+            Items = new ListLabelItemV2[0];
+            Colours = new[]
             {
                 Color.LightBlue,
                 Color.LightGreen,
@@ -1294,7 +1289,7 @@ namespace midsControls
                 Color.Red,
                 Color.Orange
             };
-            this.Cursors = new Cursor[]
+            Cursors = new[]
             {
                 System.Windows.Forms.Cursors.Hand,
                 System.Windows.Forms.Cursors.Hand,
@@ -1303,7 +1298,7 @@ namespace midsControls
                 System.Windows.Forms.Cursors.Hand,
                 System.Windows.Forms.Cursors.Default
             };
-            this.HighlightOn = new bool[]
+            HighlightOn = new[]
             {
                 true,
                 true,
@@ -1313,30 +1308,30 @@ namespace midsControls
                 true,
                 false
             };
-            this.bgColor = Color.Black;
-            this.hvrColor = Color.WhiteSmoke;
-            this.TextOutline = true;
-            this.xPadding = 1;
-            this.yPadding = 1;
-            this.LineHeight = 8;
-            this.HoverIndex = -1;
-            this.DisableRedraw = true;
-            this.DisableEvents = false;
-            this.canScroll = true;
-            this.ScrollOffset = 0;
-            this.canExpand = false;
-            this.Expanded = false;
-            this.szNormal = base.Size;
-            this.expandMaxY = 400;
-            this.TextArea = new Rectangle(0, 0, base.Width, base.Height);
-            this.ScrollWidth = 8;
-            this.scBarColor = Color.FromArgb(128, 96, 192);
-            this.scButtonColor = Color.FromArgb(96, 0, 192);
-            this.ScrollSteps = 0;
-            this.DragMode = false;
-            this.LastMouseMovetarget = ListLabelV2.eMouseTarget.None;
-            this.VisibleLineCount = 0;
-            this.InitializeComponent();
+            bgColor = Color.Black;
+            hvrColor = Color.WhiteSmoke;
+            TextOutline = true;
+            xPadding = 1;
+            yPadding = 1;
+            LineHeight = 8;
+            HoverIndex = -1;
+            DisableRedraw = true;
+            DisableEvents = false;
+            canScroll = true;
+            ScrollOffset = 0;
+            canExpand = false;
+            Expanded = false;
+            szNormal = Size;
+            expandMaxY = 400;
+            TextArea = new Rectangle(0, 0, Width, Height);
+            ScrollWidth = 8;
+            scBarColor = Color.FromArgb(128, 96, 192);
+            scButtonColor = Color.FromArgb(96, 0, 192);
+            ScrollSteps = 0;
+            DragMode = false;
+            LastMouseMovetarget = eMouseTarget.None;
+            VisibleLineCount = 0;
+            InitializeComponent();
         }
 
         // Token: 0x040000D7 RID: 215
@@ -1346,7 +1341,7 @@ namespace midsControls
         ExtendedBitmap bxBuffer;
 
         // Token: 0x040000D9 RID: 217
-        public ListLabelV2.ListLabelItemV2[] Items;
+        public ListLabelItemV2[] Items;
 
         // Token: 0x040000DA RID: 218
         protected Color[] Colours;
@@ -1421,7 +1416,7 @@ namespace midsControls
         protected bool DragMode;
 
         // Token: 0x040000F2 RID: 242
-        ListLabelV2.eMouseTarget LastMouseMovetarget;
+        eMouseTarget LastMouseMovetarget;
 
         // Token: 0x040000F3 RID: 243
         int VisibleLineCount;
@@ -1501,26 +1496,26 @@ namespace midsControls
             {
                 get
                 {
-                    return this.Txt;
+                    return Txt;
                 }
                 set
                 {
-                    this.Txt = value;
+                    Txt = value;
                 }
             }
 
             // Token: 0x17000077 RID: 119
             // (get) Token: 0x06000216 RID: 534 RVA: 0x000140A8 File Offset: 0x000122A8
             // (set) Token: 0x06000217 RID: 535 RVA: 0x000140C0 File Offset: 0x000122C0
-            public ListLabelV2.LLItemState ItemState
+            public LLItemState ItemState
             {
                 get
                 {
-                    return this.State;
+                    return State;
                 }
                 set
                 {
-                    this.State = value;
+                    State = value;
                 }
             }
 
@@ -1531,7 +1526,7 @@ namespace midsControls
             {
                 get
                 {
-                    return (this.FontFlags & ListLabelV2.LLFontFlags.Bold) > ListLabelV2.LLFontFlags.Normal;
+                    return (FontFlags & LLFontFlags.Bold) > LLFontFlags.Normal;
                 }
                 set
                 {
@@ -1539,14 +1534,14 @@ namespace midsControls
                     {
                         if (value)
                         {
-                            if ((~this.FontFlags & ListLabelV2.LLFontFlags.Bold) > ListLabelV2.LLFontFlags.Normal)
+                            if ((~FontFlags & LLFontFlags.Bold) > LLFontFlags.Normal)
                             {
-                                this.FontFlags++;
+                                FontFlags++;
                             }
                         }
-                        else if ((this.FontFlags & ListLabelV2.LLFontFlags.Bold) > ListLabelV2.LLFontFlags.Normal)
+                        else if ((FontFlags & LLFontFlags.Bold) > LLFontFlags.Normal)
                         {
-                            this.FontFlags--;
+                            FontFlags--;
                         }
                     }
                 }
@@ -1559,7 +1554,7 @@ namespace midsControls
             {
                 get
                 {
-                    return (this.FontFlags & ListLabelV2.LLFontFlags.Italic) > ListLabelV2.LLFontFlags.Normal;
+                    return (FontFlags & LLFontFlags.Italic) > LLFontFlags.Normal;
                 }
                 set
                 {
@@ -1567,14 +1562,14 @@ namespace midsControls
                     {
                         if (value)
                         {
-                            if ((~this.FontFlags & ListLabelV2.LLFontFlags.Italic) > ListLabelV2.LLFontFlags.Normal)
+                            if ((~FontFlags & LLFontFlags.Italic) > LLFontFlags.Normal)
                             {
-                                this.FontFlags += 2;
+                                FontFlags += 2;
                             }
                         }
-                        else if ((this.FontFlags & ListLabelV2.LLFontFlags.Italic) > ListLabelV2.LLFontFlags.Normal)
+                        else if ((FontFlags & LLFontFlags.Italic) > LLFontFlags.Normal)
                         {
-                            this.FontFlags -= 2;
+                            FontFlags -= 2;
                         }
                     }
                 }
@@ -1587,7 +1582,7 @@ namespace midsControls
             {
                 get
                 {
-                    return (this.FontFlags & ListLabelV2.LLFontFlags.Underline) > ListLabelV2.LLFontFlags.Normal;
+                    return (FontFlags & LLFontFlags.Underline) > LLFontFlags.Normal;
                 }
                 set
                 {
@@ -1595,14 +1590,14 @@ namespace midsControls
                     {
                         if (value)
                         {
-                            if ((~this.FontFlags & ListLabelV2.LLFontFlags.Underline) > ListLabelV2.LLFontFlags.Normal)
+                            if ((~FontFlags & LLFontFlags.Underline) > LLFontFlags.Normal)
                             {
-                                this.FontFlags += 4;
+                                FontFlags += 4;
                             }
                         }
-                        else if ((this.FontFlags & ListLabelV2.LLFontFlags.Underline) > ListLabelV2.LLFontFlags.Normal)
+                        else if ((FontFlags & LLFontFlags.Underline) > LLFontFlags.Normal)
                         {
-                            this.FontFlags -= 4;
+                            FontFlags -= 4;
                         }
                     }
                 }
@@ -1615,7 +1610,7 @@ namespace midsControls
             {
                 get
                 {
-                    return (this.FontFlags & ListLabelV2.LLFontFlags.Strikethrough) > ListLabelV2.LLFontFlags.Normal;
+                    return (FontFlags & LLFontFlags.Strikethrough) > LLFontFlags.Normal;
                 }
                 set
                 {
@@ -1623,14 +1618,14 @@ namespace midsControls
                     {
                         if (value)
                         {
-                            if ((~this.FontFlags & ListLabelV2.LLFontFlags.Strikethrough) > ListLabelV2.LLFontFlags.Normal)
+                            if ((~FontFlags & LLFontFlags.Strikethrough) > LLFontFlags.Normal)
                             {
-                                this.FontFlags += 8;
+                                FontFlags += 8;
                             }
                         }
-                        else if ((this.FontFlags & ListLabelV2.LLFontFlags.Strikethrough) > ListLabelV2.LLFontFlags.Normal)
+                        else if ((FontFlags & LLFontFlags.Strikethrough) > LLFontFlags.Normal)
                         {
-                            this.FontFlags -= 8;
+                            FontFlags -= 8;
                         }
                     }
                 }
@@ -1639,85 +1634,85 @@ namespace midsControls
             // Token: 0x1700007C RID: 124
             // (get) Token: 0x06000220 RID: 544 RVA: 0x000142DC File Offset: 0x000124DC
             // (set) Token: 0x06000221 RID: 545 RVA: 0x000142F4 File Offset: 0x000124F4
-            public ListLabelV2.LLTextAlign TextAlign
+            public LLTextAlign TextAlign
             {
                 get
                 {
-                    return this.Alignment;
+                    return Alignment;
                 }
                 set
                 {
-                    this.Alignment = value;
+                    Alignment = value;
                 }
             }
 
             // Token: 0x06000222 RID: 546 RVA: 0x00014300 File Offset: 0x00012500
             public ListLabelItemV2()
             {
-                this.Txt = "";
-                this.WrappedText = "";
-                this.State = ListLabelV2.LLItemState.Enabled;
-                this.FontFlags = ListLabelV2.LLFontFlags.Normal;
-                this.Alignment = ListLabelV2.LLTextAlign.Left;
-                this.nIDSet = -1;
-                this.IDXPower = -1;
-                this.nIDPower = -1;
-                this.sTag = "";
-                this.LineCount = 1;
-                this.ItemHeight = 1;
-                this.Index = -1;
+                Txt = "";
+                WrappedText = "";
+                State = LLItemState.Enabled;
+                FontFlags = LLFontFlags.Normal;
+                Alignment = LLTextAlign.Left;
+                nIDSet = -1;
+                IDXPower = -1;
+                nIDPower = -1;
+                sTag = "";
+                LineCount = 1;
+                ItemHeight = 1;
+                Index = -1;
             }
 
             // Token: 0x06000223 RID: 547 RVA: 0x00014378 File Offset: 0x00012578
-            public ListLabelItemV2(string iText, ListLabelV2.LLItemState iState, int inIDSet = -1, int iIDXPower = -1, int inIDPower = -1, string iStringTag = "", ListLabelV2.LLFontFlags iFont = ListLabelV2.LLFontFlags.Normal, ListLabelV2.LLTextAlign iAlign = ListLabelV2.LLTextAlign.Left)
+            public ListLabelItemV2(string iText, LLItemState iState, int inIDSet = -1, int iIDXPower = -1, int inIDPower = -1, string iStringTag = "", LLFontFlags iFont = LLFontFlags.Normal, LLTextAlign iAlign = LLTextAlign.Left)
             {
-                this.Txt = "";
-                this.WrappedText = "";
-                this.State = ListLabelV2.LLItemState.Enabled;
-                this.FontFlags = ListLabelV2.LLFontFlags.Normal;
-                this.Alignment = ListLabelV2.LLTextAlign.Left;
-                this.nIDSet = -1;
-                this.IDXPower = -1;
-                this.nIDPower = -1;
-                this.sTag = "";
-                this.LineCount = 1;
-                this.ItemHeight = 1;
-                this.Index = -1;
-                this.Txt = iText;
-                this.State = iState;
-                this.nIDSet = inIDSet;
-                this.IDXPower = iIDXPower;
-                this.nIDPower = inIDPower;
-                this.sTag = iStringTag;
-                this.FontFlags = iFont;
-                this.Alignment = iAlign;
+                Txt = "";
+                WrappedText = "";
+                State = LLItemState.Enabled;
+                FontFlags = LLFontFlags.Normal;
+                Alignment = LLTextAlign.Left;
+                nIDSet = -1;
+                IDXPower = -1;
+                nIDPower = -1;
+                sTag = "";
+                LineCount = 1;
+                ItemHeight = 1;
+                Index = -1;
+                Txt = iText;
+                State = iState;
+                nIDSet = inIDSet;
+                IDXPower = iIDXPower;
+                nIDPower = inIDPower;
+                sTag = iStringTag;
+                FontFlags = iFont;
+                Alignment = iAlign;
             }
 
             // Token: 0x06000224 RID: 548 RVA: 0x0001442C File Offset: 0x0001262C
-            public ListLabelItemV2(ListLabelV2.ListLabelItemV2 Template)
+            public ListLabelItemV2(ListLabelItemV2 Template)
             {
-                this.Txt = "";
-                this.WrappedText = "";
-                this.State = ListLabelV2.LLItemState.Enabled;
-                this.FontFlags = ListLabelV2.LLFontFlags.Normal;
-                this.Alignment = ListLabelV2.LLTextAlign.Left;
-                this.nIDSet = -1;
-                this.IDXPower = -1;
-                this.nIDPower = -1;
-                this.sTag = "";
-                this.LineCount = 1;
-                this.ItemHeight = 1;
-                this.Index = -1;
-                this.Txt = Template.Txt;
-                this.State = Template.State;
-                this.FontFlags = Template.FontFlags;
-                this.Alignment = Template.Alignment;
-                this.LineCount = Template.LineCount;
-                this.ItemHeight = Template.ItemHeight;
-                this.nIDSet = Template.nIDSet;
-                this.IDXPower = Template.IDXPower;
-                this.nIDPower = Template.nIDPower;
-                this.sTag = Template.sTag;
+                Txt = "";
+                WrappedText = "";
+                State = LLItemState.Enabled;
+                FontFlags = LLFontFlags.Normal;
+                Alignment = LLTextAlign.Left;
+                nIDSet = -1;
+                IDXPower = -1;
+                nIDPower = -1;
+                sTag = "";
+                LineCount = 1;
+                ItemHeight = 1;
+                Index = -1;
+                Txt = Template.Txt;
+                State = Template.State;
+                FontFlags = Template.FontFlags;
+                Alignment = Template.Alignment;
+                LineCount = Template.LineCount;
+                ItemHeight = Template.ItemHeight;
+                nIDSet = Template.nIDSet;
+                IDXPower = Template.IDXPower;
+                nIDPower = Template.nIDPower;
+                sTag = Template.sTag;
             }
 
             // Token: 0x04000112 RID: 274
@@ -1727,13 +1722,13 @@ namespace midsControls
             public string WrappedText;
 
             // Token: 0x04000114 RID: 276
-            protected ListLabelV2.LLItemState State;
+            protected LLItemState State;
 
             // Token: 0x04000115 RID: 277
-            public ListLabelV2.LLFontFlags FontFlags;
+            public LLFontFlags FontFlags;
 
             // Token: 0x04000116 RID: 278
-            protected ListLabelV2.LLTextAlign Alignment;
+            protected LLTextAlign Alignment;
 
             // Token: 0x04000117 RID: 279
             public int nIDSet;

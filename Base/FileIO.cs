@@ -18,7 +18,7 @@ public static class FileIO
     public static string StripFileName(string iFileName)
     {
         int length = iFileName.LastIndexOf("\\", StringComparison.Ordinal);
-        return length <= -1 ? FileIO.AddSlash(iFileName) : iFileName.Substring(0, length);
+        return length <= -1 ? AddSlash(iFileName) : iFileName.Substring(0, length);
     }
 
     public static string[] IOGrab(StreamReader iStream)
@@ -31,7 +31,7 @@ public static class FileIO
             return Array.Empty<string>();
         string[] strArray2 = str.Split('\t');
         for (int index = 0; index <= strArray2.Length - 1; ++index)
-            strArray2[index] = FileIO.IOStrip(strArray2[index]);
+            strArray2[index] = IOStrip(strArray2[index]);
         return strArray2;
     }
 
@@ -48,7 +48,7 @@ public static class FileIO
             string[] strArray;
             do
             {
-                strArray = FileIO.IOGrab(istream);
+                strArray = IOGrab(istream);
             }
             while (strArray[0] != iString);
             str = strArray.Length > 1 ? strArray[1] : "";
@@ -66,8 +66,8 @@ public static class FileIO
         try
         {
             do
-                ;
-            while (FileIO.IOGrab(iStream)[0] != iString);
+            {
+            } while (IOGrab(iStream)[0] != iString);
             return true;
         }
         catch (Exception ex)
@@ -95,12 +95,12 @@ public static class FileIO
                 return false;
             }
         }
-        if (!FileIO.FolderCopy(new DirectoryInfo(src), dest))
+        if (!FolderCopy(new DirectoryInfo(src), dest))
             return false;
         try
         {
-            string str = FileIO.StripSlash(src) + ".old";
-            src = FileIO.StripSlash(src);
+            string str = StripSlash(src) + ".old";
+            src = StripSlash(src);
             int num = 0;
             while (Directory.Exists(str))
             {
@@ -137,10 +137,10 @@ public static class FileIO
         }
         for (int index = 0; index <= directories.Length - 1; ++index)
         {
-            if (!FileIO.FolderCopy(directories[index], FileIO.AddSlash(dest) + directories[index].Name))
+            if (!FolderCopy(directories[index], AddSlash(dest) + directories[index].Name))
                 return false;
         }
-        dest = FileIO.AddSlash(dest);
+        dest = AddSlash(dest);
         for (int index = 0; index <= files.Length - 1; ++index)
         {
             try
@@ -167,7 +167,7 @@ public static class FileIO
             num = iStream.Read();
             if (num == -1)
                 flag = true;
-            if (FakeLF != char.MinValue & num == (int)FakeLF)
+            if (FakeLF != char.MinValue & num == FakeLF)
             {
                 num = -1;
                 if (iStream.Peek() == 13)
@@ -191,17 +191,15 @@ public static class FileIO
                         if (iStream.Peek() == 10)
                         {
                             iStream.Read();
-                            break;
                         }
                         break;
                     default:
                         if (num > -1)
                         {
-                            if (num > (int)byte.MaxValue | num < 0)
+                            if (num > byte.MaxValue | num < 0)
                                 num = 0;
                             bytes[count] = (byte)num;
                             ++count;
-                            break;
                         }
                         break;
                 }

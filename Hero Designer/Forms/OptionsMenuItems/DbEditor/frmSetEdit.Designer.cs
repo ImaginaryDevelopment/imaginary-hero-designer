@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmSetEdit
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -451,44 +454,44 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.Button btnCancel;
-        System.Windows.Forms.Button btnImage;
-        System.Windows.Forms.Button btnNoImage;
-        System.Windows.Forms.Button btnOK;
-        System.Windows.Forms.Button btnPaste;
-        System.Windows.Forms.ComboBox cbSetType;
-        System.Windows.Forms.ComboBox cbSlotCount;
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.GroupBox gbBasic;
-        System.Windows.Forms.GroupBox GroupBox2;
-        System.Windows.Forms.GroupBox GroupBox3;
-        System.Windows.Forms.ImageList ilEnh;
-        System.Windows.Forms.OpenFileDialog ImagePicker;
-        System.Windows.Forms.Label Label1;
-        System.Windows.Forms.Label Label16;
-        System.Windows.Forms.Label Label2;
-        System.Windows.Forms.Label Label27;
-        System.Windows.Forms.Label Label3;
-        System.Windows.Forms.Label Label4;
-        System.Windows.Forms.Label Label5;
-        System.Windows.Forms.Label Label6;
-        System.Windows.Forms.Label Label7;
-        System.Windows.Forms.ListBox lstBonus;
-        System.Windows.Forms.ListView _lvBonusList;
-        System.Windows.Forms.ListView lvEnh;
-        System.Windows.Forms.RadioButton rbIfAny;
-        System.Windows.Forms.RadioButton rbIfCritter;
-        System.Windows.Forms.RadioButton rbIfPlayer;
-        System.Windows.Forms.RichTextBox rtbBonus;
-        System.Windows.Forms.TextBox txtAlternate;
-        System.Windows.Forms.TextBox txtDesc;
-        System.Windows.Forms.TextBox txtInternal;
-        System.Windows.Forms.TextBox txtNameFull;
-        System.Windows.Forms.TextBox txtNameShort;
-        System.Windows.Forms.NumericUpDown _udMaxLevel;
-        System.Windows.Forms.NumericUpDown _udMinLevel;
+        Button btnCancel;
+        Button btnImage;
+        Button btnNoImage;
+        Button btnOK;
+        Button btnPaste;
+        ComboBox cbSetType;
+        ComboBox cbSlotCount;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        GroupBox gbBasic;
+        GroupBox GroupBox2;
+        GroupBox GroupBox3;
+        ImageList ilEnh;
+        OpenFileDialog ImagePicker;
+        Label Label1;
+        Label Label16;
+        Label Label2;
+        Label Label27;
+        Label Label3;
+        Label Label4;
+        Label Label5;
+        Label Label6;
+        Label Label7;
+        ListBox lstBonus;
+        ListView _lvBonusList;
+        ListView lvEnh;
+        RadioButton rbIfAny;
+        RadioButton rbIfCritter;
+        RadioButton rbIfPlayer;
+        RichTextBox rtbBonus;
+        TextBox txtAlternate;
+        TextBox txtDesc;
+        TextBox txtInternal;
+        TextBox txtNameFull;
+        TextBox txtNameShort;
+        NumericUpDown _udMaxLevel;
+        NumericUpDown _udMinLevel;
     }
 }

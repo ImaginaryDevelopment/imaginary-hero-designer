@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace Hero_Designer
 {
     public partial class frmSetFind
@@ -5,7 +8,7 @@ namespace Hero_Designer
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -178,16 +181,16 @@ namespace Hero_Designer
         }
         #endregion
 
-        System.Windows.Forms.ColumnHeader ColumnHeader1;
-        System.Windows.Forms.ColumnHeader ColumnHeader2;
-        System.Windows.Forms.ColumnHeader ColumnHeader3;
-        System.Windows.Forms.ColumnHeader ColumnHeader4;
-        System.Windows.Forms.ColumnHeader ColumnHeader5;
-        System.Windows.Forms.ColumnHeader ColumnHeader6;
-        System.Windows.Forms.ImageList ilSets;
-        System.Windows.Forms.ListView lvBonus;
-        System.Windows.Forms.ListView lvMag;
-        System.Windows.Forms.ListView lvSet;
-        System.Windows.Forms.Panel Panel1;
+        ColumnHeader ColumnHeader1;
+        ColumnHeader ColumnHeader2;
+        ColumnHeader ColumnHeader3;
+        ColumnHeader ColumnHeader4;
+        ColumnHeader ColumnHeader5;
+        ColumnHeader ColumnHeader6;
+        ImageList ilSets;
+        ListView lvBonus;
+        ListView lvMag;
+        ListView lvSet;
+        Panel Panel1;
     }
 }

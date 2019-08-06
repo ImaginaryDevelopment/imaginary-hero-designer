@@ -1,11 +1,8 @@
 using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Linq;
-using System.Text;
 
 public class Zlib
 {
@@ -31,7 +28,7 @@ public class Zlib
         int length = iBytes.Length;
         int destLength = (int)(length + (length * 0.001) + 12.0);
         byte[] array = new byte[destLength];
-        int num1 = Zlib.Compress(ref array[0], ref destLength, ref iBytes[0], length, 9);
+        int num1 = Compress(ref array[0], ref destLength, ref iBytes[0], length, 9);
         switch (num1)
         {
             case -5:
@@ -47,7 +44,7 @@ public class Zlib
                 MessageBox.Show("Unable to compress data chunk, compression level was invalid.", "Compression Error");
                 break;
             case 0:
-                Array.Resize<byte>(ref array, destLength);
+                Array.Resize(ref array, destLength);
                 return array;
             default:
                 MessageBox.Show("Unable to compress data chunk, unknown Zlib error: " + num1 + ".", "Compression Error");
@@ -82,13 +79,13 @@ public class Zlib
         int destLength = outSize;
         byte[] array = new byte[destLength];
 
-        if (Zlib.Uncompress(ref array[0], ref destLength, ref iBytes[0], length) == 0)
+        if (Uncompress(ref array[0], ref destLength, ref iBytes[0], length) == 0)
         {
             Array.Resize(ref array, destLength);
             return array;
         }
-        else
-            return Array.Empty<byte>();
+
+        return Array.Empty<byte>();
     }
     public static byte[] UUDecodeBytes(byte[] iBytes)
     {
@@ -148,7 +145,7 @@ public class Zlib
     public static byte[] HexEncodeBytes(byte[] iBytes)
     {
         MemoryStream memoryStream = new MemoryStream();
-        BinaryWriter binaryWriter = new BinaryWriter((Stream)memoryStream);
+        BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
         for (int index = 0; index <= iBytes.Length - 1; ++index)
         {
             string str = iBytes[index].ToString("X");
@@ -262,6 +259,6 @@ public class Zlib
         DefaultCompress = -1,
         None = 0,
         Fast = 1,
-        Best = 9,
+        Best = 9
     }
 }

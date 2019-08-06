@@ -1,6 +1,6 @@
 
-using Base.Data_Classes;
 using System;
+using Base.Data_Classes;
 
 namespace Import
 {
@@ -20,36 +20,36 @@ namespace Import
     {
       if (iString == null)
       {
-        this.IsValid = false;
+        IsValid = false;
       }
       else
       {
         string[] array = CSV.ToArray(iString);
         if (array.Length < 35)
         {
-          this.IsValid = false;
+          IsValid = false;
         }
         else
         {
-          this.IsValid = true;
+          IsValid = true;
           if (!DatabaseAPI.Database.PowersetGroups.ContainsKey(array[0].Split(".".ToCharArray())[0]))
           {
-            this.IsValid = false;
+            IsValid = false;
           }
           else
           {
-            this.Index = DatabaseAPI.NidFromUidPower(array[0]);
-            if (this.Index < 0)
+            Index = DatabaseAPI.NidFromUidPower(array[0]);
+            if (Index < 0)
             {
-              this.IsValid = false;
+              IsValid = false;
             }
             else
             {
-              this.Data = (IEffect) new Effect(DatabaseAPI.Database.Power[this.Index]);
-              this.Data.ImportFromCSV(iString);
-              if (DatabaseAPI.Database.Power[this.Index].NeverAutoUpdate)
-                this.IsLocked = true;
-              this._csvString = iString;
+              Data = new Effect(DatabaseAPI.Database.Power[Index]);
+              Data.ImportFromCSV(iString);
+              if (DatabaseAPI.Database.Power[Index].NeverAutoUpdate)
+                IsLocked = true;
+              _csvString = iString;
             }
           }
         }
@@ -59,27 +59,27 @@ namespace Import
     public bool Apply()
     {
       bool flag;
-      if (!this.IsValid)
+      if (!IsValid)
       {
         flag = false;
       }
       else
       {
-        if (this.IsNew)
+        if (IsNew)
         {
-          IEffect[] effects = DatabaseAPI.Database.Power[this.Index].Effects;
-          Array.Resize<IEffect>(ref effects, DatabaseAPI.Database.Power[this.Index].Effects.Length + 1);
-          DatabaseAPI.Database.Power[this.Index].Effects = effects;
-          this.Nid = DatabaseAPI.Database.Power[this.Index].Effects.Length - 1;
-          DatabaseAPI.Database.Power[this.Index].Effects[this.Nid] = (IEffect) new Effect(DatabaseAPI.Database.Power[this.Index]);
+          IEffect[] effects = DatabaseAPI.Database.Power[Index].Effects;
+          Array.Resize(ref effects, DatabaseAPI.Database.Power[Index].Effects.Length + 1);
+          DatabaseAPI.Database.Power[Index].Effects = effects;
+          Nid = DatabaseAPI.Database.Power[Index].Effects.Length - 1;
+          DatabaseAPI.Database.Power[Index].Effects[Nid] = new Effect(DatabaseAPI.Database.Power[Index]);
         }
-        if (!this.IsNew & this.Index < 0)
+        if (!IsNew & Index < 0)
         {
           flag = false;
         }
         else
         {
-          DatabaseAPI.Database.Power[this.Index].Effects[this.Nid].ImportFromCSV(this._csvString);
+          DatabaseAPI.Database.Power[Index].Effects[Nid].ImportFromCSV(_csvString);
           flag = true;
         }
       }
@@ -88,16 +88,16 @@ namespace Import
 
     public bool CheckSimilar(ref IEffect iEffect)
     {
-      return this.IsValid && iEffect.EffectType == this.Data.EffectType && (iEffect.DamageType == this.Data.DamageType && iEffect.MezType == this.Data.MezType) && (iEffect.ETModifies == this.Data.ETModifies && iEffect.PvMode == this.Data.PvMode && (iEffect.ToWho == this.Data.ToWho && iEffect.SpecialCase == this.Data.SpecialCase)) && (iEffect.AttribType == this.Data.AttribType && iEffect.Aspect == this.Data.Aspect && (iEffect.Reward == this.Data.Reward && iEffect.EffectId == this.Data.EffectId)) && iEffect.Summon == this.Data.Summon;
+      return IsValid && iEffect.EffectType == Data.EffectType && (iEffect.DamageType == Data.DamageType && iEffect.MezType == Data.MezType) && (iEffect.ETModifies == Data.ETModifies && iEffect.PvMode == Data.PvMode && (iEffect.ToWho == Data.ToWho && iEffect.SpecialCase == Data.SpecialCase)) && (iEffect.AttribType == Data.AttribType && iEffect.Aspect == Data.Aspect && (iEffect.Reward == Data.Reward && iEffect.EffectId == Data.EffectId)) && iEffect.Summon == Data.Summon;
     }
 
     public bool CheckDifference(ref IEffect iEffect, out string message)
     {
       message = string.Empty;
       bool flag1;
-      if (!this.IsValid)
+      if (!IsValid)
         flag1 = false;
-      else if (this.IsNew)
+      else if (IsNew)
       {
         message = "New";
         flag1 = true;
@@ -105,154 +105,154 @@ namespace Import
       else
       {
         bool flag2 = false;
-        if (iEffect.EffectType != this.Data.EffectType)
+        if (iEffect.EffectType != Data.EffectType)
         {
-          message += string.Format("EffectType: {0} => {1}",  iEffect.EffectType,  this.Data.EffectType);
+          message += string.Format("EffectType: {0} => {1}",  iEffect.EffectType,  Data.EffectType);
           flag2 = true;
         }
-        if (iEffect.DisplayPercentage != this.Data.DisplayPercentage)
+        if (iEffect.DisplayPercentage != Data.DisplayPercentage)
         {
-          message += string.Format("DisplayPercentage: {0} => {1}",  iEffect.DisplayPercentage,  this.Data.DisplayPercentage);
+          message += string.Format("DisplayPercentage: {0} => {1}",  iEffect.DisplayPercentage,  Data.DisplayPercentage);
           flag2 = true;
         }
-        if (iEffect.DamageType != this.Data.DamageType)
+        if (iEffect.DamageType != Data.DamageType)
         {
-          message += string.Format("DamageType: {0} => {1}",  iEffect.DamageType,  this.Data.DamageType);
+          message += string.Format("DamageType: {0} => {1}",  iEffect.DamageType,  Data.DamageType);
           flag2 = true;
         }
-        if (iEffect.MezType != this.Data.MezType)
+        if (iEffect.MezType != Data.MezType)
         {
-          message += string.Format("MezType: {0} => {1}",  iEffect.MezType,  this.Data.MezType);
+          message += string.Format("MezType: {0} => {1}",  iEffect.MezType,  Data.MezType);
           flag2 = true;
         }
-        if (iEffect.ETModifies != this.Data.ETModifies)
+        if (iEffect.ETModifies != Data.ETModifies)
         {
-          message += string.Format("ETModifies: {0} => {1}",  iEffect.ETModifies,  this.Data.ETModifies);
+          message += string.Format("ETModifies: {0} => {1}",  iEffect.ETModifies,  Data.ETModifies);
           flag2 = true;
         }
-        if (iEffect.Summon != this.Data.Summon)
+        if (iEffect.Summon != Data.Summon)
         {
-          message += string.Format("Summon: {0} => {1}",  iEffect.Summon,  this.Data.Summon);
+          message += string.Format("Summon: {0} => {1}",  iEffect.Summon,  Data.Summon);
           flag2 = true;
         }
-        if (iEffect.Ticks != this.Data.Ticks)
+        if (iEffect.Ticks != Data.Ticks)
         {
-          message += string.Format("Ticks: {0} => {1}",  iEffect.Ticks,  this.Data.Ticks);
+          message += string.Format("Ticks: {0} => {1}",  iEffect.Ticks,  Data.Ticks);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.DelayedTime - this.Data.DelayedTime) > 0.001)
+        if (Math.Abs(iEffect.DelayedTime - Data.DelayedTime) > 0.001)
         {
-          message += string.Format("DelayedTime: {0} => {1}",  iEffect.DelayedTime,  this.Data.DelayedTime);
+          message += string.Format("DelayedTime: {0} => {1}",  iEffect.DelayedTime,  Data.DelayedTime);
           flag2 = true;
         }
-        if (iEffect.Stacking != this.Data.Stacking)
+        if (iEffect.Stacking != Data.Stacking)
         {
-          message += string.Format("Stacking: {0} => {1}",  iEffect.Stacking,  this.Data.Stacking);
+          message += string.Format("Stacking: {0} => {1}",  iEffect.Stacking,  Data.Stacking);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.BaseProbability - this.Data.BaseProbability) > 0.001)
+        if (Math.Abs(iEffect.BaseProbability - Data.BaseProbability) > 0.001)
         {
-          message += string.Format("BaseProbability: {0} => {1}",  iEffect.BaseProbability,  this.Data.BaseProbability);
+          message += string.Format("BaseProbability: {0} => {1}",  iEffect.BaseProbability,  Data.BaseProbability);
           flag2 = true;
         }
-        if (iEffect.CancelOnMiss != this.Data.CancelOnMiss)
+        if (iEffect.CancelOnMiss != Data.CancelOnMiss)
         {
-          message += string.Format("CancelOnMiss: {0} => {1}",  iEffect.CancelOnMiss,  this.Data.CancelOnMiss);
+          message += string.Format("CancelOnMiss: {0} => {1}",  iEffect.CancelOnMiss,  Data.CancelOnMiss);
           flag2 = true;
         }
-        if (iEffect.Suppression != this.Data.Suppression)
+        if (iEffect.Suppression != Data.Suppression)
         {
-          message += string.Format("Suppression: {0} => {1}",  iEffect.Suppression,  this.Data.Suppression);
+          message += string.Format("Suppression: {0} => {1}",  iEffect.Suppression,  Data.Suppression);
           flag2 = true;
         }
-        if (iEffect.Buffable != this.Data.Buffable)
+        if (iEffect.Buffable != Data.Buffable)
         {
-          message += string.Format("Buffable: {0} => {1}",  iEffect.Buffable,  this.Data.Buffable);
+          message += string.Format("Buffable: {0} => {1}",  iEffect.Buffable,  Data.Buffable);
           flag2 = true;
         }
-        if (iEffect.Resistible != this.Data.Resistible)
+        if (iEffect.Resistible != Data.Resistible)
         {
-          message += string.Format("Resistible: {0} => {1}",  iEffect.Resistible,  this.Data.Resistible);
+          message += string.Format("Resistible: {0} => {1}",  iEffect.Resistible,  Data.Resistible);
           flag2 = true;
         }
-        if (iEffect.SpecialCase != this.Data.SpecialCase)
+        if (iEffect.SpecialCase != Data.SpecialCase)
         {
-          message += string.Format("SpecialCase: {0} => {1}",  iEffect.SpecialCase,  this.Data.SpecialCase);
+          message += string.Format("SpecialCase: {0} => {1}",  iEffect.SpecialCase,  Data.SpecialCase);
           flag2 = true;
         }
-        if (iEffect.PvMode != this.Data.PvMode)
+        if (iEffect.PvMode != Data.PvMode)
         {
-          message += string.Format("PvMode: {0} => {1}",  iEffect.PvMode,  this.Data.PvMode);
+          message += string.Format("PvMode: {0} => {1}",  iEffect.PvMode,  Data.PvMode);
           flag2 = true;
         }
-        if (iEffect.ToWho != this.Data.ToWho)
+        if (iEffect.ToWho != Data.ToWho)
         {
-          message += string.Format("ToWho: {0} => {1}",  iEffect.ToWho,  this.Data.ToWho);
+          message += string.Format("ToWho: {0} => {1}",  iEffect.ToWho,  Data.ToWho);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.Scale - this.Data.Scale) > 0.001)
+        if (Math.Abs(iEffect.Scale - Data.Scale) > 0.001)
         {
-          message += string.Format("Scale: {0} => {1}",  iEffect.Scale,  this.Data.Scale);
+          message += string.Format("Scale: {0} => {1}",  iEffect.Scale,  Data.Scale);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.nMagnitude - this.Data.nMagnitude) > 0.001)
+        if (Math.Abs(iEffect.nMagnitude - Data.nMagnitude) > 0.001)
         {
-          message += string.Format("nMagnitude: {0} => {1}",  iEffect.nMagnitude,  this.Data.nMagnitude);
+          message += string.Format("nMagnitude: {0} => {1}",  iEffect.nMagnitude,  Data.nMagnitude);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.nDuration - this.Data.nDuration) > 0.001)
+        if (Math.Abs(iEffect.nDuration - Data.nDuration) > 0.001)
         {
-          message += string.Format("nDuration: {0} => {1}",  iEffect.nDuration,  this.Data.nDuration);
+          message += string.Format("nDuration: {0} => {1}",  iEffect.nDuration,  Data.nDuration);
           flag2 = true;
         }
-        if (iEffect.AttribType != this.Data.AttribType)
+        if (iEffect.AttribType != Data.AttribType)
         {
-          message += string.Format("AttribType: {0} => {1}",  iEffect.AttribType,  this.Data.AttribType);
+          message += string.Format("AttribType: {0} => {1}",  iEffect.AttribType,  Data.AttribType);
           flag2 = true;
         }
-        if (iEffect.Aspect != this.Data.Aspect)
+        if (iEffect.Aspect != Data.Aspect)
         {
-          message += string.Format("Aspect: {0} => {1}",  iEffect.Aspect,  this.Data.Aspect);
+          message += string.Format("Aspect: {0} => {1}",  iEffect.Aspect,  Data.Aspect);
           flag2 = true;
         }
-        if (iEffect.ModifierTable != this.Data.ModifierTable)
+        if (iEffect.ModifierTable != Data.ModifierTable)
         {
-          message += string.Format("ModifierTable: {0} => {1}",  iEffect.ModifierTable,  this.Data.ModifierTable);
+          message += string.Format("ModifierTable: {0} => {1}",  iEffect.ModifierTable,  Data.ModifierTable);
           flag2 = true;
         }
-        if (iEffect.NearGround != this.Data.NearGround)
+        if (iEffect.NearGround != Data.NearGround)
         {
-          message += string.Format("NearGround: {0} => {1}",  iEffect.NearGround,  this.Data.NearGround);
+          message += string.Format("NearGround: {0} => {1}",  iEffect.NearGround,  Data.NearGround);
           flag2 = true;
         }
-        if (iEffect.Reward != this.Data.Reward)
+        if (iEffect.Reward != Data.Reward)
         {
-          message += string.Format("Reward: {0} => {1}",  iEffect.Reward,  this.Data.Reward);
+          message += string.Format("Reward: {0} => {1}",  iEffect.Reward,  Data.Reward);
           flag2 = true;
         }
-        if (iEffect.EffectId != this.Data.EffectId)
+        if (iEffect.EffectId != Data.EffectId)
         {
-          message += string.Format("EffectId: {0} => {1}",  iEffect.EffectId,  this.Data.EffectId);
+          message += string.Format("EffectId: {0} => {1}",  iEffect.EffectId,  Data.EffectId);
           flag2 = true;
         }
-        if (iEffect.IgnoreED != this.Data.IgnoreED)
+        if (iEffect.IgnoreED != Data.IgnoreED)
         {
-          message += string.Format("IgnoreED: {0} => {1}",  iEffect.IgnoreED,  this.Data.IgnoreED);
+          message += string.Format("IgnoreED: {0} => {1}",  iEffect.IgnoreED,  Data.IgnoreED);
           flag2 = true;
         }
-        if (iEffect.Override != this.Data.Override)
+        if (iEffect.Override != Data.Override)
         {
-          message += string.Format("Override: {0} => {1}",  iEffect.Override,  this.Data.Override);
+          message += string.Format("Override: {0} => {1}",  iEffect.Override,  Data.Override);
           flag2 = true;
         }
-        if (iEffect.MagnitudeExpression != this.Data.MagnitudeExpression)
+        if (iEffect.MagnitudeExpression != Data.MagnitudeExpression)
         {
-          message += string.Format("MagnitudeExpression: {0} => {1}",  iEffect.MagnitudeExpression,  this.Data.MagnitudeExpression);
+          message += string.Format("MagnitudeExpression: {0} => {1}",  iEffect.MagnitudeExpression,  Data.MagnitudeExpression);
           flag2 = true;
         }
-        if ((double) Math.Abs(iEffect.ProcsPerMinute - this.Data.ProcsPerMinute) > 1.40129846432482E-45)
+        if (Math.Abs(iEffect.ProcsPerMinute - Data.ProcsPerMinute) > 1.40129846432482E-45)
         {
-          message += string.Format("PPM: {0} => {1}",  iEffect.ProcsPerMinute,  this.Data.ProcsPerMinute);
+          message += string.Format("PPM: {0} => {1}",  iEffect.ProcsPerMinute,  Data.ProcsPerMinute);
           flag1 = true;
         }
         else

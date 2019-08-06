@@ -1,6 +1,6 @@
 
-using Base.Data_Classes;
 using System;
+using Base.Data_Classes;
 
 namespace Import
 {
@@ -18,20 +18,20 @@ namespace Import
     {
       if (iString == null)
       {
-        this.IsValid = false;
+        IsValid = false;
       }
       else
       {
-        this._csvString = iString;
-        this.Data = new Archetype();
-        this.IsValid = this.Data.UpdateFromCSV(this._csvString);
-        this.IsNew = true;
+        _csvString = iString;
+        Data = new Archetype();
+        IsValid = Data.UpdateFromCSV(_csvString);
+        IsNew = true;
         for (int index = 0; index <= DatabaseAPI.Database.Classes.Length - 1; ++index)
         {
-          if (!string.IsNullOrEmpty(DatabaseAPI.Database.Classes[index].ClassName) && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, this.Data.ClassName, StringComparison.OrdinalIgnoreCase))
+          if (!string.IsNullOrEmpty(DatabaseAPI.Database.Classes[index].ClassName) && string.Equals(DatabaseAPI.Database.Classes[index].ClassName, Data.ClassName, StringComparison.OrdinalIgnoreCase))
           {
-            this.IsNew = false;
-            this._index = index;
+            IsNew = false;
+            _index = index;
             break;
           }
         }
@@ -40,21 +40,21 @@ namespace Import
 
     public void Apply()
     {
-      if (!this.IsValid)
+      if (!IsValid)
         return;
-      if (this.IsNew)
+      if (IsNew)
       {
         Archetype[] classes = DatabaseAPI.Database.Classes;
-        Array.Resize<Archetype>(ref classes, DatabaseAPI.Database.Classes.Length + 1);
+        Array.Resize(ref classes, DatabaseAPI.Database.Classes.Length + 1);
         DatabaseAPI.Database.Classes = classes;
-        this._index = DatabaseAPI.Database.Classes.Length - 1;
-        DatabaseAPI.Database.Classes[this._index] = new Archetype();
+        _index = DatabaseAPI.Database.Classes.Length - 1;
+        DatabaseAPI.Database.Classes[_index] = new Archetype();
       }
-      if (!(!this.IsNew & this._index < 0))
+      if (!(!IsNew & _index < 0))
       {
-        DatabaseAPI.Database.Classes[this._index].IsNew = this.IsNew;
-        DatabaseAPI.Database.Classes[this._index].IsModified = true;
-        DatabaseAPI.Database.Classes[this._index].UpdateFromCSV(this._csvString);
+        DatabaseAPI.Database.Classes[_index].IsNew = IsNew;
+        DatabaseAPI.Database.Classes[_index].IsModified = true;
+        DatabaseAPI.Database.Classes[_index].UpdateFromCSV(_csvString);
       }
     }
 
@@ -62,68 +62,68 @@ namespace Import
     {
       message = string.Empty;
       bool flag;
-      if (!this.IsValid)
+      if (!IsValid)
         flag = false;
-      else if (this.IsNew)
+      else if (IsNew)
       {
         message = "New";
         flag = true;
       }
-      else if (this._index < 0 || this._index > DatabaseAPI.Database.Classes.Length - 1)
+      else if (_index < 0 || _index > DatabaseAPI.Database.Classes.Length - 1)
         flag = true;
-      else if (DatabaseAPI.Database.Classes[this._index].DisplayName != this.Data.DisplayName)
+      else if (DatabaseAPI.Database.Classes[_index].DisplayName != Data.DisplayName)
       {
-        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DisplayName,  this.Data.DisplayName);
-        flag = true;
-      }
-      else if (DatabaseAPI.Database.Classes[this._index].Hero != this.Data.Hero)
-      {
-        message += string.Format("isHero: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Hero,  this.Data.Hero);
+        message += string.Format("DisplayName: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DisplayName,  Data.DisplayName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].Epic != this.Data.Epic)
+      else if (DatabaseAPI.Database.Classes[_index].Hero != Data.Hero)
       {
-        message += string.Format("isEpic: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Epic,  this.Data.Epic);
+        message += string.Format("isHero: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Hero,  Data.Hero);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].DescLong != this.Data.DescLong)
+      else if (DatabaseAPI.Database.Classes[_index].Epic != Data.Epic)
       {
-        message += string.Format("Description: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DescLong,  this.Data.DescLong);
+        message += string.Format("isEpic: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Epic,  Data.Epic);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].DescShort != this.Data.DescShort)
+      else if (DatabaseAPI.Database.Classes[_index].DescLong != Data.DescLong)
       {
-        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].DescShort,  this.Data.DescShort);
+        message += string.Format("Description: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DescLong,  Data.DescLong);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].Origin.Length != this.Data.Origin.Length)
+      else if (DatabaseAPI.Database.Classes[_index].DescShort != Data.DescShort)
       {
-        message += string.Format("Origins: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Origin.Length,  this.Data.Origin.Length);
+        message += string.Format("Fullname: {0} => {1}",  DatabaseAPI.Database.Classes[_index].DescShort,  Data.DescShort);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].ClassName != this.Data.ClassName)
+      else if (DatabaseAPI.Database.Classes[_index].Origin.Length != Data.Origin.Length)
       {
-        message += string.Format("ClassID: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].ClassName,  this.Data.ClassName);
+        message += string.Format("Origins: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Origin.Length,  Data.Origin.Length);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].Column != this.Data.Column)
+      else if (DatabaseAPI.Database.Classes[_index].ClassName != Data.ClassName)
       {
-        message += string.Format("ColumnIndex: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Column,  this.Data.Column);
+        message += string.Format("ClassID: {0} => {1}",  DatabaseAPI.Database.Classes[_index].ClassName,  Data.ClassName);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].PrimaryGroup.ToLower() != this.Data.PrimaryGroup.ToLower())
+      else if (DatabaseAPI.Database.Classes[_index].Column != Data.Column)
       {
-        message += string.Format("Primary: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].PrimaryGroup.ToLower(),  this.Data.PrimaryGroup.ToLower());
+        message += string.Format("ColumnIndex: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Column,  Data.Column);
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].SecondaryGroup.ToLower() != this.Data.SecondaryGroup.ToLower())
+      else if (!String.Equals(DatabaseAPI.Database.Classes[_index].PrimaryGroup, Data.PrimaryGroup, StringComparison.CurrentCultureIgnoreCase))
       {
-        message += string.Format("Secondary: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].SecondaryGroup.ToLower(),  this.Data.SecondaryGroup.ToLower());
+        message += string.Format("Primary: {0} => {1}",  DatabaseAPI.Database.Classes[_index].PrimaryGroup.ToLower(),  Data.PrimaryGroup.ToLower());
         flag = true;
       }
-      else if (DatabaseAPI.Database.Classes[this._index].Playable != this.Data.Playable)
+      else if (!String.Equals(DatabaseAPI.Database.Classes[_index].SecondaryGroup, Data.SecondaryGroup, StringComparison.CurrentCultureIgnoreCase))
       {
-        message += string.Format("Playable: {0} => {1}",  DatabaseAPI.Database.Classes[this._index].Playable,  this.Data.Playable);
+        message += string.Format("Secondary: {0} => {1}",  DatabaseAPI.Database.Classes[_index].SecondaryGroup.ToLower(),  Data.SecondaryGroup.ToLower());
+        flag = true;
+      }
+      else if (DatabaseAPI.Database.Classes[_index].Playable != Data.Playable)
+      {
+        message += string.Format("Playable: {0} => {1}",  DatabaseAPI.Database.Classes[_index].Playable,  Data.Playable);
         flag = true;
       }
       else

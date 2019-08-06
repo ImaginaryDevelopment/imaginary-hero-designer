@@ -1,9 +1,9 @@
 
-using Base.Data_Classes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Base.Data_Classes;
 
 public interface IDatabase
 {
@@ -61,7 +61,7 @@ public interface IDatabase
 
     string RecipeSource2 { get; set; }
 
-    global::Salvage[] Salvage { get; set; }
+    Salvage[] Salvage { get; set; }
 
     List<Origin> Origins { get; set; }
 
