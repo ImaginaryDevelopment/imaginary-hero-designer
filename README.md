@@ -15,9 +15,9 @@ https://discord.gg/pG5TCEg
 
 **_Lastest Release Binaries: 2.6.0.2 - Released on 2019-07-31_**
 
-[Setup Installer](https://midsreborn.com/download/MRB_Setup.exe)
-
 [Click Once Installer](https://github.com/ImaginaryDevelopment/imaginary-hero-designer/tree/Release2.6.0.2)
+
+[Setup Installer](https://midsreborn.com/download/MRB_Setup.exe)
 
 **_Latest Update 2.6.0.3 - Released on 2019-08-06_**
 
