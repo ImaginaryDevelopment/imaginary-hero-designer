@@ -236,6 +236,8 @@ public class Powerset : IPowerset, IComparable
                         SetType = Enums.ePowerSetType.Pool;
                         return true;
                     case "MASTERMIND_PETS":
+                        SetType = Enums.ePowerSetType.Pet;
+                        return true;
                     case "PETS":
                     case "VILLAIN_PETS":
                     case "KHELDIAN_PETS":

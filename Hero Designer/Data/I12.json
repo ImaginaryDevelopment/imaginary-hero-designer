@@ -7946,6 +7946,24 @@
       "PowersetFullName": [],
       "UpgradePowerFullName": [],
       "ClassName": ""
+    },
+    {
+      "UID": "Pets_Ember_Demon1",
+      "DisplayName": "Ember Demon",
+      "PowersetFullName": [
+        "Mastermind_Pets.Ember_Demon"
+      ],
+      "UpgradePowerFullName": [],
+      "ClassName": "Class_Minion_Pets"
+    },
+    {
+      "UID": "Pets_Protector_Bot1",
+      "DisplayName": "Protector Bot",
+      "PowersetFullName": [
+        "Mastermind_Pets.Protector"
+      ],
+      "UpgradePowerFullName": [],
+      "ClassName": "Class_Minion_Pets"
     }
   ]
 }
