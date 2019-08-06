@@ -11,7 +11,11 @@ The project is reborn once more with a new name, new features..*DISCORD EXPORT!*
 ### Official Discord Server
 https://discord.gg/pG5TCEg
 
-## Releases/Install/Downloads
+## Requirements
+
+[.NET 4.7.2](https://dotnet.microsoft.com/download/thank-you/net472)
+
+## Releases/Downloads
 
 **_Lastest Release Binaries: 2.6.0.2 - Released on 2019-07-31_**
 
