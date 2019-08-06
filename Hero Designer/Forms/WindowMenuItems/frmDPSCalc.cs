@@ -199,13 +199,11 @@ namespace Hero_Designer
                 lvPower.Items[0].Selected = true;
                 if (GlobalPowerList.Length > 0)
                 {
-                    string powerName1;
-                    powerName1 = !chkSortByLevel.Checked ? GlobalPowerList[0].PowerName : GlobalPowerList[0].PowerName.Split('-')[1];
+                    var powerName1 = !chkSortByLevel.Checked ? GlobalPowerList[0].PowerName : GlobalPowerList[0].PowerName.Split('-')[1];
                     tbDPSOutput.Text = powerName1;
                     for (int index = 1; index < GlobalPowerList.Length; ++index)
                     {
-                        string powerName2;
-                        powerName2 = !chkSortByLevel.Checked ? GlobalPowerList[index].PowerName : GlobalPowerList[index].PowerName.Split('-')[1];
+                        var powerName2 = !chkSortByLevel.Checked ? GlobalPowerList[index].PowerName : GlobalPowerList[index].PowerName.Split('-')[1];
                         TextBox tbDpsOutput = tbDPSOutput;
                         tbDpsOutput.Text = tbDpsOutput.Text + " --> " + powerName2;
                     }
@@ -258,8 +256,7 @@ namespace Hero_Designer
                 for (int index = 0; index < globalPowerList.Length; ++index)
                     GlobalPowerList[index] = globalPowerList[index];
                 GlobalPowerList[GlobalPowerList.Length - 1].PowerName = e.Item.Text;
-                string text;
-                text = !chkSortByLevel.Checked ? e.Item.Text : e.Item.Text.Split('-')[1];
+                var text = !chkSortByLevel.Checked ? e.Item.Text : e.Item.Text.Split('-')[1];
                 if (tbDPSOutput.Text == "")
                 {
                     tbDPSOutput.Text = text;

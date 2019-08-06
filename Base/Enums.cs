@@ -98,8 +98,7 @@ public static class Enums
     {
         int num1 = 0;
         iStr = iStr.ToUpper();
-        string[] strArray1;
-        strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
+        var strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
         string[] strArray2 = strArray1;
         int num2;
         if (strArray2.Length < 1)
@@ -134,8 +133,7 @@ public static class Enums
     {
         List<T> objList = new List<T>();
         iStr = iStr.ToUpper();
-        string[] strArray1;
-        strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
+        var strArray1 = !iStr.Contains(",") ? iStr.Split(' ') : StringToArray(iStr);
         string[] strArray2 = strArray1;
         T[] array;
         if (strArray2.Length < 1)

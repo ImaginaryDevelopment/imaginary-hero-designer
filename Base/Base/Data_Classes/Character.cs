@@ -544,8 +544,7 @@ namespace Base.Data_Classes
                         string[] strArray3 = BreakByNewLine(iSlot.GetEnhancementStringLong());
                         for (int index3 = 0; index3 <= strArray3.Length - 1; ++index3)
                         {
-                            string[] strArray2;
-                            strArray2 = !enhancement.HasPowerEffect ? BreakByBracket(strArray3[index3]) : new[] { strArray3[index3], string.Empty };
+                            var strArray2 = !enhancement.HasPowerEffect ? BreakByBracket(strArray3[index3]) : new[] { strArray3[index3], string.Empty };
                             string[] strArray4 = strArray2;
                             popupData1.Sections[index4].Add(strArray4[0], Color.FromArgb(0, byte.MaxValue, 0), strArray4[1], Color.FromArgb(0, byte.MaxValue, 0), 0.9f);
                         }
