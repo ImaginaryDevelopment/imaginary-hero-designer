@@ -1,8 +1,8 @@
+# Welcome to Mids' Reborn : Hero Designer
+
 Mids' Hero/Villain Designer was designed by Matt Bauer, Titan Network continued its development until 2012 when the last 'City of Heroes' server shut down. The project was abandoned, and no further development continued. 
 
 The project is reborn once more with a new name, new features, and a new team.
-
-# Welcome to Mids' Reborn : Hero Designer
 
 ### Development Team
 - Crytilis
